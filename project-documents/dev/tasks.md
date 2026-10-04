@@ -19,7 +19,7 @@ The session IDs remain stable; active question sessions are S27 and S29–S38. E
 3. Create review entries for assessment wording/periods, history fields/severity, DDI aliases/coverage, each clinical question, and workflow bundles. Include the BN-06 restriction, LAI scope decision, FR-14 regimen mismatch, and reference-table assumptions.
 4. Define each review package's deliverables and exact approval record; prepare owner questions only for substantive missing content, with concrete proposed choices. Infrastructure remains eligible while responses are pending.
 
-**Verify/exit:** ledger covers every question in plan.md §7.1 and names the owner as reviewer without claiming approval. Handoff identifies the first engineering session and content tasks.
+**Verify/exit:** ledger covers every question in plan.md §7.1 and names the owner as reviewer for content requiring review, without claiming approval. S08 assessments have no owner reviewer or approval requirement. Handoff identifies the first engineering session and content tasks.
 
 ### S01 — Bootstrap a reproducible development loop
 
@@ -124,6 +124,7 @@ The session IDs remain stable; active question sessions are S27 and S29–S38. E
 2. At T2 implement validated definition loading and `evaluate(definition, answers)` using a tiny synthetic definition first. Red: unanswered/partial/complete/not-assessed are distinguishable and no missing answer becomes zero.
 3. Reject undeclared item IDs, invalid values, unknown rule operators and arbitrary executable expressions. Release definitions after schema/rule validation and passing independent reference examples, recording version, source hashes, assumptions and validation results. Expose released definitions through authenticated content routes; reviewer identity and approval records are not required for assessment release.
 4. Prepare independently derived examples for S09–S11 and verify the concrete forms/rules against them. Release each validated assessment package for its implementation session. Record gaps and chosen experimental defaults in the definitions and handoff; they do not create an owner-response dependency.
+5. Resolve wording, form/version, periods, scoring, branching, completeness, source-derived diagnostic thresholds and alerts autonomously within the experimental scope. Do not turn these choices or source gaps into owner questions or approval requests. Correct failed validation and rerun checks; do not substitute owner sign-off. Later consumers use the released definitions without requiring assessment approval again.
 
 **Exit:** executable definition contract and all three versioned assessment packages are released with passing validation/reference examples. S08 completes without any owner review, approval, sign-off, or response; neither S08 nor its assessment packages may be marked `awaiting_review`. The project is experimental, so implementation validation replaces owner approval for these assessments. This does not establish clinical validation or introduce treatment thresholds. This exception also governs S00's ledger and later assessment dependencies; other content-review gates retain their existing scope.
 
@@ -354,7 +355,7 @@ The session IDs remain stable; active question sessions are S27 and S29–S38. E
 
 ### Common contract for S27 and S29–S38
 
-These are **content-authoring sessions with implementation-ready outputs**, not permission to activate clinical models. Each depends on S25 and its relevant reviewed assessment/history meanings. If those meanings are pending, draft alternatives and flag them instead of silently choosing.
+These are **content-authoring sessions with implementation-ready outputs**, not permission to activate clinical models. Each depends on S25, the relevant S08 validated released assessments (no owner review), and owner-reviewed history/adverse-effect meanings. If required content is pending, draft alternatives and flag them instead of silently choosing; do not add an owner-approval dependency for S08 assessments.
 
 For each session create `content/questions/<key>/{manifest.json,network.xml,prompt.txt,template.json,examples.json,review.json}`. Preserve supplied original BNs. Cover plan.md §7.2: CPT-context-only patient mappings, fixed empty-evidence execution, true/false/unknown gates, missing/conflict policy, templates, complete CPTs including roots, and reviewed source/reference-table provenance. Propose necessary history additions as versioned changes for review.
 
@@ -373,7 +374,7 @@ Run the S25 validator and S23 inference harness on independently worked examples
 
 ### S29 — Draft high-suicide clozapine question
 
-**Key:** `high_suicide_clozapine` (R4). **Requirements:** FR-13, FR-30–35. **Sources:** BN-08, STATEMENT-08, approved C-SSRS/history.
+**Key:** `high_suicide_clozapine` (R4). **Requirements:** FR-13, FR-30–35. **Sources:** BN-08, STATEMENT-08, S08 validated released C-SSRS (no owner approval), owner-reviewed history.
 
 1. Distinguish current urgent findings, high-risk gate, persistent risk despite prior treatment, and the network's review output. Specify periods and structured provenance; a scale level alone is not an unreviewed treatment rule.
 2. If BN-08 is supplied, resolve missing priors and fixed-table assumptions under all-CPT estimation. Record retained/changed states and CPT-context-only mappings; no observation evidence is permitted.
@@ -461,7 +462,7 @@ Run the S25 validator and S23 inference harness on independently worked examples
 
 ### S37 — Draft no-improvement clozapine follow-up question
 
-**Key:** `no_improvement_clozapine` (F5). **Requirements:** FR-20, FR-30–35. **Sources:** BN-07, treatment-resistance guidance, approved PANSS/history/baseline rules.
+**Key:** `no_improvement_clozapine` (F5). **Requirements:** FR-20, FR-30–35. **Sources:** BN-07, treatment-resistance guidance, S08 validated released PANSS (no owner approval), owner-reviewed history/baseline rules.
 
 1. Draft an explicit no-improvement definition: baseline encounter/window, instrument/context and adequate-treatment information. Do not guess a percent-change cutoff or treat missing follow-up score as no improvement.
 2. Create a package separate from R7, with its own gate, prompt, network identity and template even if source concepts are reused.
@@ -807,7 +808,7 @@ Reserve separate job classes and capacity for local calculation. S48b proves pro
 
 **Depends:** S39, S48a–S48d, S50, S53, S57. **Requirements:** FR-10–16, FR-20–22, FR-30–37, FR-50–59, NFR-03–06. **Seams:** T1/T5–T9. **Tests:** `e2e/clinical-workflows.spec.ts` plus existing scoped suites.
 
-1. Run registration and follow-up through assessment, catalog medications/DDI, automatic sequential original generation, all-CPT inspection, optional adjustment/comparison, explicit acceptance and signing. Use reviewed released packages and controlled external provider; missing content is a named blocker.
+1. Run registration and follow-up through assessment, catalog medications/DDI, automatic sequential original generation, all-CPT inspection, optional adjustment/comparison, explicit acceptance and signing. Use S08 validated released assessments without owner approval and reviewed released packages for other content, with a controlled external provider; missing content is a named blocker.
 2. Cover unchanged, adjusted, adjusted-then-reset and unchanged recommendation cases. Verify complete original/final signed snapshots and printable tables with versions, inputs and attribution.
 3. Change a relevant patient variable before sign: affected-only regeneration retains history/new original baseline, with no silent adjustment transfer. Note-only edits leave algorithms/acceptance unchanged. Follow-up creates a new encounter without modifying prior accepted CPTs.
 4. Verify refresh/restart resumes saved adjustments/state, pending/failed/stale values cannot sign, and other physicians see only demographics/signed records with any-physician attributed addenda. The patient's one draft remains private.

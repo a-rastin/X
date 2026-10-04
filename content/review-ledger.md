@@ -2,24 +2,34 @@
 
 Documentation only. Covers every question in plan.md §7.1 plus assessments, history/severity, DDI, and workflow bundles.
 
-- **Reviewer:** content owner. Drafting and release-policy decisions below were confirmed on 2026-10-04; no concrete package is approved.
-- **Status values:** `draft` (authored, not review-ready) / `awaiting_review` (dossier complete, owner decision pending). No item is approved. Assessment packages are the exception: tasks.md S08 releases them after validation with no owner review, so they are never marked `awaiting_review`.
-- **Approval record shape** (per package `review.json`, plan.md §7.2): `{assumptions, reviewer: "owner", decision, date, source_hashes}`. A bare `reviewed=true` flag is insufficient (tasks.md S22).
+- **Reviewer for §§2–7:** content owner. Drafting and release-policy decisions below were confirmed on 2026-10-04; no concrete package is approved. Section 1 has no owner-review requirement.
+- **Status values:** S08 assessments use `draft` → `released` after technical validation, with no `awaiting_review` state. Other packages use `draft` (not review-ready) / `awaiting_review` (dossier complete, owner decision pending). No item is approved or released yet.
+- **Approval record shape for owner-reviewed packages in §§2–7** (per package `review.json`, plan.md §7.2): `{assumptions, reviewer: "owner", decision, date, source_hashes}`. A bare `reviewed=true` flag is insufficient (tasks.md S22). S08 assessment packages require version/source/assumption/validation records instead of owner approval records.
 - **Medical and BN sources under `project-documents/medical-documents/` are never edited** for review; packages are new derived versions with pinned hashes.
 - Product rules reused here (empty evidence, all-CPT estimation incl. roots, full CPT review, exact-result acceptance) are confirmed per plan.md §§1.1, 9.1–9.2; stack/numerical/seam choices are proposals. No clinical thresholds are invented in this ledger.
-- No `content/assessments|history|questions/<key>/{manifest.json,network.xml,prompt.txt,template.json,examples.json,review.json}|bundles|ddi` files exist yet (content/ held only this ledger at S00 close); all are missing and due in S08/S12/S18/S25–S39.
+- No assessment definitions, history/question packages, workflow bundles or DDI releases exist yet (content/ held only this ledger at S00 close); they are due in S08/S12/S18/S25–S39. Assessment definitions do not require a network, prompt, treatment template or owner `review.json`.
 
 ## 1. Assessments — wording, periods, scoring (S08; no owner review)
 
-Source leads: `schizophrenia-criteria.md`, `PANSS.md`, `CSSRS.md` (verify actual paths in S08; inherited names only).
+**Scope:** S08 is the implementation session that authors and validates the three assessment definitions; S09–S11 implement their pages. The current plan delegates assessment-release decisions to the implementing agent. No assessment package exists yet, so `draft` below means planned work, not a completed definition or a released form.
+
+**Verified source paths:**
+
+- Diagnosis: [schizophrenia-criteria.md](../project-documents/medical-documents/schizophrenia-criteria.md).
+- PANSS: [PANSS.md](../project-documents/medical-documents/PANSS.md).
+- C-SSRS: [CSSRS.md](../project-documents/medical-documents/CSSRS.md).
 
 | Package | Deliverables | Status |
 |---|---|---|
-| Diagnosis criteria + threshold/bypass behavior | `content/assessments/diagnosis/` versioned definition + independent threshold examples; served via released-definition routes | draft → S08 validates, releases without owner review |
-| PANSS (30 items, subscale arithmetic; all-1 → 7/7/16/30, all-7 → 49/49/112/210) | `content/assessments/panss/` definition + literal fixtures | draft → S08, no owner review |
-| C-SSRS (form + time windows selected in S08; severity/intensity/behavior/lethality kept separate, no composite risk score) | `content/assessments/cssrs/` definition + branching/alert examples | draft → S08, no owner review |
+| Diagnosis: all six source criteria and subconditions, including duration and exclusions | `content/assessments/diagnosis/` versioned definition + independently derived qualifying, below-threshold, incomplete and bypass examples. A symptom count alone is insufficient. Completed below-threshold answers require an attributed warning acknowledgment to proceed; bypass requires no reason and is recorded separately from completion. | draft → S08 validates and releases without owner review |
+| PANSS: 30 clinician-rated items, each 1–7, covering the previous 7 days | `content/assessments/panss/` definition + literal expected-result fixtures. Results are ordered positive / negative / general / total: all-1 → 7/7/16/30; all-7 → 49/49/112/210. Items start unanswered; a missing required item suppresses the total, and skip means `not_assessed`. | draft → S08 validates and releases without owner review |
+| C-SSRS: explicit form/version, administration windows, branching and alerts | `content/assessments/cssrs/` definition + independently derived branching, completeness, current/historical and alert examples. Ideation severity, the five intensity dimensions, behavior and lethality remain separate; no composite risk score. Unanswered is distinct from negative; a higher-level answer does not populate lower-level responses. | draft → S08 validates and releases without owner review |
 
-No owner questions: S08 selects form/time-window choices, documents gaps and experimental defaults, and releases on schema/rule validation + independent examples (plan.md §§1.4, 5).
+**C-SSRS source gap:** the supplied document explicitly uses paraphrased questions and refers to an authorized form for exact administration wording/probes and lethality coding. It describes recent windows as typically past month for ideation and past 3 months for behavior; it does not select an exact administration form/version. S08 must record its selected form and windows, preserve paraphrase status, and identify unavailable source details and experimental defaults explicitly. The requirement for a standard questionnaire (FR-13) is not established merely by validating this paraphrase.
+
+**Release gate under the current policy:** S08 records the definition version, source hashes, assumptions/gaps and validation results; validates the schema and allowed rules; and checks results against independently derived examples with literal expected outcomes. Released definitions are served through authenticated content routes for S09–S11. Technical release does not establish clinical validation or authorize new treatment thresholds. Assessment-to-treatment gates and mappings remain subject to the later question-package owner reviews.
+
+**Owner involvement:** none is required for authoring, validation or release of these three S08 packages under [plan.md §§1.4, 5](../project-documents/dev/plan.md) and [tasks.md S08](../project-documents/dev/tasks.md). The implementing agent resolves wording, form/version, time-window, scoring, branching, completeness, source-derived threshold and alert choices, records gaps and experimental defaults, and releases after the checks above. These choices and source gaps must not become owner questions, approval requests or owner-response dependencies. Failed validation requires correction and rerunning checks, not owner sign-off. S09–S11 and later consumers use the validated released assessments without seeking assessment approval again. History/adverse-effect instruments, DDI and question packages retain their separate owner-review gates.
 
 ## 2. History fields and adverse-effect severity (S12; owner review required)
 
@@ -50,7 +60,7 @@ Common deliverables (tasks.md S27 and S29–S38): `content/questions/<key>/{mani
 
 ### R4 `high_suicide_clozapine` (S29)
 
-- Source lead BN-08 (14 vars, 0 DEFINITIONs — template). Align assessment period and treatment-history meanings with approved C-SSRS/history.
+- Source lead BN-08 (14 vars, 0 DEFINITIONs — template). Align assessment period with the S08 validated released C-SSRS definition and treatment-history meanings with owner-reviewed history. C-SSRS itself needs no owner approval.
 - Owner questions: (a) approve gate definitions (current urgent findings vs high-risk gate vs persistent risk despite prior treatment) with periods and structured provenance; (b) approve result-rendering examples. A scale level alone is not an unreviewed treatment rule; urgent handling is independent of LLM latency.
 
 ### R5 `lai_indication_choice` (S30)

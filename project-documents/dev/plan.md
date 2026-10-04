@@ -53,7 +53,7 @@ Registration pages: demographics → diagnosis → severity → suicide → hist
 
 - Names: Unicode letters after NFC normalization, nonempty, no whitespace/digits/punctuation; preserve casing. Sex `M|F`; integer age 18–99. Patient ID is exactly ten **ASCII digits stored as text**, globally unique even among archived patients. Clinical status `first_time|established` is required. Phone is optional text, not a number; do not invent country validation.
 - Valid demographics atomically create patient plus registration draft. A duplicate race yields one creation and a clear conflict for the other; never automatically merge records.
-- Diagnosis is distinct from a calculated diagnostic claim: unanswered, partial, complete, or bypassed. Live threshold display follows reviewed criteria. Complete below-threshold answers can proceed after an attributed warning acknowledgment. Bypass is allowed without a reason. Partial answers cannot masquerade as below-threshold completion.
+- Diagnosis is distinct from a calculated diagnostic claim: unanswered, partial, complete, or bypassed. Live threshold display follows the S08 validated released criteria, without owner review. Complete below-threshold answers can proceed after an attributed warning acknowledgment. Bypass is allowed without a reason. Partial answers cannot masquerade as below-threshold completion.
 - PANSS and C-SSRS begin unanswered. Skip records `not_assessed`, not zero/minimum. Scores/results exist only when the definition's required items are complete.
 - History is structured, with only expressly defined analysis-visible fields. Medications contain bundled demo-catalog references only; no free-text medication addition, dose, unit, route, frequency, or active/stopped fields. A catalog medication can lack interaction coverage and must show “coverage unavailable”.
 - Entry into proposal review flushes saves and automatically requests generation once prerequisites are met. Re-entry must not duplicate a run. Show configuration or required-input errors rather than inventing defaults.
@@ -142,7 +142,7 @@ web/
   src/{app,features,shared}/
   tests/           # browser journeys and necessary browser-only behavior
 content/
-  assessments/     # reviewed definitions and reference examples
+  assessments/     # validated released definitions and reference examples; no owner review
   history/         # structured fields and adverse-effect definitions
   questions/<question_key>/
     manifest.json, network.xml, prompt.txt, template.json, examples.json, review.json
@@ -235,6 +235,8 @@ An assessment definition contains stable item IDs, source locators, version, per
 `evaluate(definition, answers)` returns `{status, missing_item_ids, item_errors, scores, findings, definition_version}`. Partial/skipped answers have null unavailable scores. Keep observed negatives distinct from unanswered. The server is authoritative; the browser may preview the same validated rules, with contract fixtures preventing drift.
 
 For the experimental assessments in S08, the implementing agent selects form/time windows and documents source gaps, assumptions and experimental defaults. Schema/rule validation and independent reference examples determine release; reviewer identity, approval records and `awaiting_review` are not assessment-release requirements. These releases satisfy S09–S11 and later assessment dependencies without owner review. History, adverse-effect, DDI and question-package reviews retain their existing scope.
+
+This delegation covers wording, form/version, periods, scoring, branching, completeness, source-derived diagnostic thresholds and alerts. The implementing agent resolves these choices and records missing source details and experimental defaults without owner questions or approval requests. Failed validation requires correction and rerunning checks; owner sign-off cannot replace validation. Later consumers must not require assessment approval again. Review of treatment gates or history mappings remains part of the separate question/history packages.
 
 Source-specific drafting instructions:
 
