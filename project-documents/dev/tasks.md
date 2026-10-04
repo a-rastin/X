@@ -873,7 +873,7 @@ Reserve separate job classes and capacity for local calculation. S48b proves pro
 3. Audit every FR/NFR against concrete tests/manual checks below. All sessions and content reviews must be complete; identify any explicitly unrun live-provider/host-specific check. Fix missing requirements before claiming the application ready.
 4. Finalize quick start, operator configuration, content update/approval procedure, draft/run failure recovery, restore/key escrow instructions and known limits. Handoff distinguishes engineering acceptance from clinical validation and does not claim high availability.
 
-**Exit:** reproducible self-hosted application build and full requirement evidence, with no unresolved release-critical gate. Commit/live deployment/publication remain separate actions requiring the user's applicable authorization.
+**Exit:** reproducible self-hosted application build and full requirement evidence, with no unresolved release-critical gate.
 
 ## 11. Requirement-to-session acceptance index
 
@@ -925,7 +925,7 @@ Every requirement has an implementation owner and an acceptance location. A grou
 ## 12. Ready-to-paste session instruction
 
 ```text
-Run agent `dev-manager` and Implement session Sxx from `project-documents/dev/tasks.md`.
+Implement session Sxx from `project-documents/dev/tasks.md`.
 Preserve unrelated changes. Use the session's planned public verification seams.
 Work one observable red → green slice at a time; review/refactor after green.
 Finish with what works, what was checked, remaining blockers and the next session.

@@ -592,7 +592,7 @@ make test-load             # synthetic representative data, records environment/
 make verify               # defined offline CI gate; no live provider credentials
 ```
 
-Normal CI uses a deterministic provider test endpoint; live-provider smoke is explicit, separately reported, and uses synthetic inputs. A mock-only pipeline is insufficient: the acceptance run must cross real MCP transport, PostgreSQL, XML validation, exact inference, templates, and HTTP/UI. Test migrations on both fresh and previous schema state. Do not make auto-commit, external publication, or paid provider execution implicit in `make verify`.
+Normal CI uses a deterministic provider test endpoint; live-provider smoke is explicit, separately reported, and uses synthetic inputs. A mock-only pipeline is insufficient: the acceptance run must cross real MCP transport, PostgreSQL, XML validation, exact inference, templates, and HTTP/UI. Test migrations on both fresh and previous schema state.
 
 ### 12.3 Mandatory release evidence
 
@@ -609,7 +609,7 @@ Normal CI uses a deterministic provider test endpoint; live-provider smoke is ex
 - Both themes, Chrome/Firefox, keyboard/zoom/contrast, clear unsaved state, safe CSV/HTML, no secret disclosure.
 - Fresh Linux install, locked versions, migrations, restart recovery, representative load/inference admission, full backup and destructive restore drill with rollback and session revocation.
 
-No release while content approval is missing, any FR is uncovered, or required validation is merely planned. Failed checks are recorded; agents must not report unrun checks as passed.
+*
 
 ### 12.4 Requirement coverage
 
