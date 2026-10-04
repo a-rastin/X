@@ -13,6 +13,7 @@ from sqlalchemy import engine_from_config, pool
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 from x_insight import db as db_module  # noqa: E402
+from x_insight.identity.tables import metadata as identity_metadata  # noqa: E402
 from x_insight.operations.audit import metadata as audit_metadata  # noqa: E402
 
 config = context.config
@@ -27,7 +28,8 @@ if config.config_file_name is not None and os.path.exists(config.config_file_nam
     except Exception:
         pass
 
-target_metadata = audit_metadata
+# Combined metadata for autogenerate; upgrades run from version files.
+target_metadata = [audit_metadata, identity_metadata]
 
 
 def run_migrations_offline() -> None:

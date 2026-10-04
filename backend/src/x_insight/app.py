@@ -1,4 +1,4 @@
-"""FastAPI application: S01 health check plus S02 request contracts.
+"""FastAPI application: S01 health check plus S02 request contracts + S03 identity.
 
 S01 behavior is preserved exactly: ``GET /api/v1/health`` still returns
 ``{"status": "ok", "service": "x-insight"}`` with no database access.
@@ -13,6 +13,10 @@ S02 additions (plan.md §§4.3, 11):
 - Size limits (``contracts.MAX_BODY_BYTES``) and ``Idempotency-Key`` format
   enforcement at the edge; revision conventions live in ``contracts`` for
   S03+ command routes (no test-only production endpoint is added here).
+
+S03 additions (plan.md §§2.1, 4.3, 11): identity router
+(``/api/v1/auth/*``, ``/api/v1/me*``) with singleton admin seeding,
+opaque hashed sessions, CSRF, throttling, and revision revocation.
 """
 
 from __future__ import annotations
@@ -235,7 +239,15 @@ class IdempotencyKeyMiddleware:
 
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> AsyncIterator[None]:
-    """Dispose the shared engine on shutdown; no-op when never created."""
+    """Seed the singleton admin once, then dispose the engine on shutdown."""
+    try:
+        from x_insight.identity import service as identity_service
+
+        identity_service.ensure_default_admin()
+    except Exception:
+        # Seeding is best-effort at startup (DB may be unavailable);
+        # readiness stays the safe signal and login seeds lazily via tests.
+        logger.exception("identity seeding failed at startup")
     yield
     db.reset_engine()
 
@@ -296,6 +308,10 @@ def create_app() -> FastAPI:
         request_id = get_request_id(request)
         logger.exception("unhandled error request_id=%s", request_id)
         return error_response(500, "INTERNAL_ERROR", "Internal server error.", request_id)
+
+    from x_insight.identity.router import router as identity_router
+
+    app.include_router(identity_router, prefix="/api/v1")
 
     @app.get("/api/v1/health")
     def health() -> dict[str, str]:

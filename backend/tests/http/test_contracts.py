@@ -242,7 +242,7 @@ def test_migration_records_single_head_version(migrated_test_engine) -> None:
     from x_insight import db as db_module
 
     with migrated_test_engine.connect() as connection:
-        assert db_module.get_applied_versions(connection) == ["0001"]
+        assert db_module.get_applied_versions(connection) == ["0002"]
 
 
 def test_ready_ok_against_real_database(
@@ -258,7 +258,7 @@ def test_ready_ok_against_real_database(
     payload = response.json()
     assert payload["status"] == "ready"
     assert payload["service"] == "x-insight"
-    assert payload["schema_version"] == "0001"
+    assert payload["schema_version"] == "0002"
     moment = contracts.parse_utc(payload["checked_at"])
     assert moment.tzinfo is not None
     assert response.headers["x-request-id"] == sent
@@ -475,7 +475,7 @@ def test_ready_ok_body_shape_against_real_database(
     payload = response.json()
     assert payload["status"] == "ready"
     assert payload["service"] == "x-insight"
-    assert payload["schema_version"] == "0001"
+    assert payload["schema_version"] == "0002"
     assert payload["checked_at"].endswith("Z")
     moment = contracts.parse_utc(payload["checked_at"])
     assert moment.tzinfo is not None
@@ -556,7 +556,7 @@ def test_audit_list_ordered_by_time(migrated_test_engine, clean_audit) -> None:
 
 
 def test_only_s02_tables_exist(migrated_test_engine) -> None:
-    """S02 adds only audit storage; domain tables land with S03+ features."""
+    """S02 audit storage persists; S03 adds identity tables (no other domains)."""
     from sqlalchemy import text
 
     with migrated_test_engine.connect() as connection:
@@ -566,7 +566,7 @@ def test_only_s02_tables_exist(migrated_test_engine) -> None:
                 text("SELECT tablename FROM pg_tables WHERE schemaname = 'public'")
             )
         )
-    assert tables == ["alembic_version", "audit_events"]
+    assert tables == ["alembic_version", "audit_events", "sessions", "users"]
 
 
 def test_audit_roles_and_append_only_grants(migrated_test_engine) -> None:
