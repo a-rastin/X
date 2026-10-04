@@ -59,7 +59,7 @@ Registration pages: demographics → diagnosis → severity → suicide → hist
 - Entry into proposal review flushes saves and automatically requests generation once prerequisites are met. Re-entry must not duplicate a run. Show configuration or required-input errors rather than inventing defaults.
 - The initial proposal is immutable system output. Per-question original CPTs/results remain separate from locally adjusted CPTs/results. The secondary plan is a separately revisioned physician edit, with probability acceptance, changes, and sign-off recorded.
 
-Follow-up starts from a chosen current signed baseline, copies relevant history/medications with provenance, requires reconciliation, updates phone, captures new PANSS/C-SSRS, and records all four adverse effects. Prior scores are shown as historical, never as newly completed answers. Each effect has `present|absent|not_assessed`; severity is required only when present, under the reviewed severity definition. Do not add a standardized scale merely because a reference discusses one.
+Follow-up starts from a chosen current signed baseline, copies relevant history/medications with provenance, requires reconciliation, updates phone, captures new PANSS/C-SSRS, and records all four adverse effects. Prior scores are shown as historical, never as newly completed answers. Each effect has `present|absent|not_assessed`; severity is required only when present, under the reviewed severity definition. The 2026-10-04 owner decision requires full standardized adverse-effect questionnaires. Preserve versioned item responses and completeness separately from effect status; full questionnaire completion is required only when the corresponding effect is present. The acute-dystonia form is named “Acute Dystonia Dx Criteria”.
 
 ### 2.3 Records, notes, and concurrency
 
@@ -171,7 +171,7 @@ Use relational columns for identifiers, ownership, state, uniqueness, revisions,
 | Users/sessions | UUID, normalized unique username, immutable admin identity, role, active, hash, credential revision, theme; hashed opaque session token, created/revoked time, no timeout |
 | Patients/revisions | Unique ten-digit text ID, names, sex, age, clinical status, phone, archive flag, revision; changed fields/actor/time history |
 | Encounters | Patient, kind, author, visit time, prior signed source, lifecycle (`draft`, `signed`, `discarded`), revision; partial unique constraint on patient for `draft`; derived generation/review readiness |
-| Assessments/history/medications/effects | Encounter and definition version; explicit completeness/status, typed answers and nullable results; drug-only entries; effect status plus nullable severity |
+| Assessments/history/medications/effects | Encounter and definition version; explicit completeness/status, typed answers and nullable results; drug-only entries; effect status plus nullable severity, versioned adverse-effect questionnaire item responses/completeness/results |
 | Notes | Encounter/page, immutable note ID, author snapshot, time/text; separate from analysis-visible history |
 | Plans/signed snapshots/addenda | Immutable initial proposal reference; revisioned secondary text/change history; full signed snapshot/hash, signer/time; append-only attributed correction |
 | Content/network versions/bundles | Immutable payload/XML/manifest, source hash, status and review record; versions retained; activation pointer revision per workflow |
@@ -241,8 +241,8 @@ Source-specific drafting instructions:
 - Diagnosis: represent the six criteria and their subconditions in `schizophrenia-criteria.md`; a symptom count alone cannot satisfy the full document. Include unknown and bypass behavior. Derive and validate independent threshold examples.
 - PANSS: source contains 30 items and subscale arithmetic. Fully answered all-1 fixture has positive 7, negative 7, general 16, total 30; all-7 has 49, 49, 112, 210. Do not initialize answers to 1. One missing required item suppresses the total. Any follow-up change formula must specify its denominator and zero case; no treatment threshold is inferred from score bands.
 - C-SSRS: select and document exact administration form and time windows in S08. Ideation severity, intensity dimensions, behavior, and lethality remain separate; do not produce a composite risk score. Do not infer lower-level recorded answers from a higher-level answer. Define and validate branching and alerts in S08 without owner review; keep unanswered items distinct from negative answers.
-- History: derive the minimum typed field inventory from approved question mappings, with explicit source provenance, dates/windows, tri-state values, and reconciliation. Drug regimen details excluded by FR-14 remain excluded even when source network drafts mention them; resolve that mismatch in model design.
-- Adverse effects: present/absent/not-assessed plus reviewed severity definitions. Existing BARS/SAS discussion is supporting source material, not permission to invent common severity bands or add mandatory full scales to FR-21.
+- History: the 2026-10-04 owner decision permits drafting exposure, duration, trial-adequacy, prior-response, and monitoring fields for review, excluding dose, route, and frequency. Derive the minimum typed field inventory from approved question mappings, with explicit source provenance, dates/windows, tri-state values, and reconciliation. Drug regimen details excluded by FR-14 remain excluded even when source network drafts mention them; resolve that mismatch in model design.
+- Adverse effects: present/absent/not-assessed plus full standardized questionnaires and reviewed severity mappings, selected in the 2026-10-04 Q/A. S12 drafts complete versioned forms, administration/completeness/scoring contracts, source hashes and independent examples for owner review. BARS/SAS instrument sections are supplied; the complete AIMS form/source remains open. The acute-dystonia form is named “Acute Dystonia Dx Criteria”, drafted from the supplied criteria; item/completeness/severity mappings still require review, with no invented total score. Do not invent summed BARS severity rules, universal SAS severity bands, diagnosis from an AIMS total, or network mappings. Full completion is required only when the corresponding effect is present; absent/not-assessed effects have no questionnaire-completion requirement. These instruments are under S12 review, separate from the S08 assessment-release exception.
 
 When a form is skipped, optional analysis inputs remain explicitly missing. A required input can stop generation for clarification; the UI must explain the specific question/field instead of silently undoing the skip or generating a score.
 
@@ -305,15 +305,13 @@ Recompute for changed reconciled medications, pin the dataset for each run, and 
 
 ### 7.1 Required inventory and ordering
 
-Each row is a distinct clinical question with one network and prompt. Candidate sources below are **drafting leads**, not approved assignments. Preserve exactly seven registration questions and six follow-up questions. Do not add independent LAI indication and choice runs.
+Each row is a distinct clinical question with one network and prompt. Candidate sources below are **drafting leads**, not approved assignments. Preserve exactly five registration questions and six follow-up questions. Existing question IDs remain stable; registration order is R2, R4, R5, R6, R7. Preserve BN-10's LAI discussion/review scope in one question step; no specific LAI product selection is required.
 
 | Order/key | Applicability to draft for review | Source starting point / known gap |
 |---|---|---|
-| R1 `hospitalization` | All registration encounters | No matching executable network; draft a new question package |
-| R2 `pharmacotherapy` | All registration encounters | BN-04 reviews established treatment; initial selection needs explicit redesigned scope |
-| R3 `involuntary_care` | All registration encounters | No matching network; jurisdiction and criteria must be supplied/reviewed; do not invent legal rules |
+| R2 `pharmacotherapy` | All registration encounters | Preserve BN-04 established-treatment review scope (owner decision 2026-10-04); question stays applicable without established treatment; concrete mappings and unknown required inputs need resolution |
 | R4 `high_suicide_clozapine` | Reviewed high-risk/persistence gate | BN-08; align assessment period and treatment-history meanings |
-| R5 `lai_indication_choice` | Evaluate indication; choice only when permitted | BN-10 has discussion/review outputs; it does not establish a complete product-choice contract |
+| R5 `lai_indication_choice` | Retained BN-10 discussion/review pathway | Preserve existing scope (owner decision 2026-10-04); no specific LAI product selection. Key retained for stable references |
 | R6 `aggression_clozapine` | Reviewed aggression gate | BN-09; do not substitute PANSS hostility for an unreviewed aggression threshold |
 | R7 `established_case_clozapine` | Established clinical status and reviewed criteria | BN-07 is a lead; define trial adequacy and inputs without excluded regimen fields |
 | F1 `tardive_dyskinesia` | Effect present | BN-14 and tardive-dyskinesia criteria |
@@ -321,7 +319,7 @@ Each row is a distinct clinical question with one network and prompt. Candidate 
 | F3 `parkinsonism` | Effect present | BN-12 and parkinsonism criteria |
 | F4 `acute_dystonia` | Effect present | BN-11 and acute-dystonia criteria |
 | F5 `no_improvement_clozapine` | Reviewed no-improvement gate | BN-07 may inform a **separate** package; define baseline/window/adequate trial |
-| F6 `continue_or_adjust` | All follow-up encounters | BN-04/05/06 overlap; draft one network. BN-06 records an electronic decision-support restriction that must be resolved during review |
+| F6 `continue_or_adjust` | All follow-up encounters | BN-04/05/06 overlap; draft one network. BN-06-derived content retained for experimental/educational scope (owner decision 2026-10-04); document the STATEMENT-06 electronic decision-support/quality-measure limitation and review concrete graph/templates |
 
 True gate executes; false gate records `not_applicable` with reason. Unknown is not false. Required unknown/missing/conflict yields `needs_clarification`, stopping later questions. Optional unknown behavior must be explicit in the manifest and visible in the final proposal. No implicit chaining of one question's posterior into the next question's inputs.
 
@@ -533,7 +531,7 @@ Provider destinations use operator allowlists, permitted schemes, DNS/resolved-a
 
 Configuration inventory: database URLs/roles, encryption key, public origin/TLS, allowed provider hosts, worker/provider limits, lease/heartbeat/retry budgets, XML/request/context limits, inference CPU/memory/time budget, backup staging path/limits, application/deployment generation, environment mode. `.env.example` contains placeholders only. Readiness requires database/schema; missing LLM/content disables generation, not basic record access. Separate live/readiness endpoints must not disclose configuration.
 
-Planning load: up to nine physicians plus admin, 10,000 synthetic patients, roughly 20 ordinary HTTP requests/second, two simultaneous provider requests, seven sequential registration or six follow-up questions. Start benchmarking on 2 vCPU/4 GB RAM/20 GB persistent disk; these are assumptions, not proven capacity. Ordinary reads/acknowledged saves and patient search target p95 below one second at this load. Measure provider latency separately. Model admission must benchmark CPT size and inference complexity; user count alone is insufficient.
+Planning load: up to nine physicians plus admin, 10,000 synthetic patients, roughly 20 ordinary HTTP requests/second, two simultaneous provider requests, five sequential registration or six follow-up questions. Start benchmarking on 2 vCPU/4 GB RAM/20 GB persistent disk; these are assumptions, not proven capacity. Ordinary reads/acknowledged saves and patient search target p95 below one second at this load. Measure provider latency separately. Model admission must benchmark CPT size and inference complexity; user count alone is insufficient.
 
 Record request latency/errors, save failure, database/disk health, queue age, heartbeat, provider attempt/validation failures, inference duration/resource failures, and last successful backup. Safe structured logs use request/run/question IDs. Initial alerts: missing heartbeat over two minutes, eligible queue age over five minutes, repeated provider auth failure, disk over 80%. Manual backups satisfy requirements; no automatic schedule, numerical RPO, or high-availability promise is implied. Proposed restore drill target is under 30 minutes on the reference dataset, subject to measurement.
 
@@ -634,7 +632,7 @@ The session-level mapping is in tasks.md. This matrix prevents scope loss.
 | FR-21 | §2.2, §5 four tri-state effects and severity |
 | FR-22 | §2.1–2.3, §4, §9 ownership, immutable signatures, addenda |
 | FR-23 | §2.3 shared directory, clinical-status/search/archive |
-| FR-30 | §7.1 thirteen questions, one combined LAI network |
+| FR-30 | §7.1 eleven questions, one LAI discussion/review network |
 | FR-31 | §7.2–7.3 question prompt/XMLBIF/XSD |
 | FR-32 | §7–8 fixed definitions, sequential processing, scoped input |
 | FR-33 | §7.4, §8 MCP-mediated all-CPT estimation |

@@ -26,6 +26,8 @@
 
 ## C
 
+- [content-scope.md](content-scope.md) — Registration workflow scope and unavailable-network rationale.
+
 ## D
 
 ## E

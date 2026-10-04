@@ -118,7 +118,7 @@ Each module requires an authorized analysis context and versioned definitions. N
 
 **Boundary:** S3 owns original/adjusted calculation artifacts, not the physician's final plan. Original generation uses the LLM and MCP; local recalculation uses saved artifacts and neither external mechanism. A failed recalculation preserves both the new unsolved values and prior successful result as distinct states. S3 never labels an old result as belonging to current unsolved values.
 
-Registration covers hospitalization, pharmacotherapy, involuntary care, high-suicide Clozapine, LAI indication/choice, aggression Clozapine and established-case Clozapine. Follow-up covers tardive dyskinesia, akathisia, parkinsonism, acute dystonia, no-improvement Clozapine and continue-versus-adjust. These are configured clinical questions, each with one network, rather than separate subsystems.
+Registration covers pharmacotherapy, high-suicide Clozapine, LAI discussion/review, aggression Clozapine and established-case Clozapine. Follow-up covers tardive dyskinesia, akathisia, parkinsonism, acute dystonia, no-improvement Clozapine and continue-versus-adjust. These are configured clinical questions, each with one network, rather than separate subsystems.
 
 ### 4.4 S4 — Administration and Governance
 

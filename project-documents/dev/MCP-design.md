@@ -8,7 +8,7 @@ This component design implements the [reasoning pipeline](user-requirements.md#r
 
 | Requirement | Design responsibility |
 |---|---|
-| FR-30 | One network for each of seven registration and six follow-up questions; use the inventory in system-design.md Section 7.1 |
+| FR-30 | One network for each of five registration and six follow-up questions; use the inventory in system-design.md Section 7.1 |
 | FR-31 | Each question has a predefined prompt and a corresponding XMLBIF network; XSD validates structure only |
 | FR-32 | Process questions sequentially; supply the question prompt, fixed network structure and only represented patient variables |
 | FR-33 | LLM estimates CPT percentages in the MCP environment; it neither executes the network nor modifies its structure |
@@ -91,7 +91,7 @@ Example result shape (illustrative variable names, not a supplied clinical netwo
 
 ```json
 {
-  "question_key": "hospitalization",
+  "question_key": "pharmacotherapy",
   "network_version": 4,
   "projection_hash": "<stored-content-hash>",
   "variables": [
@@ -217,7 +217,7 @@ Patient facts never map to inference evidence under the confirmed design. The ma
 
 Choose two retries after the initial LLM attempt: three attempts total across transport and validation failures. Do not multiply separate repair and request retry budgets. Rate limits, tool loops and worker recovery cannot create unlimited retries. A manual retry creates a new bounded attempt batch for the failed stage, retaining previous history.
 
-The failed-step message identifies the question and cause, for example: “Hospitalization question failed: CPT values were invalid after three attempts. Saved data and completed results are retained. Retry this question.” Subsequent questions remain pending.
+The failed-step message identifies the question and cause, for example: “Pharmacotherapy question failed: CPT values were invalid after three attempts. Saved data and completed results are retained. Retry this question.” Subsequent questions remain pending.
 
 Retry on unchanged inputs resumes the failed stage with pinned versions and saved validation/inference/rendering artifacts; successful earlier questions are not repeated. Relevant patient/applicability changes mark only affected questions and adjustments stale, clear their acceptances and regenerate affected applicable questions sequentially with new QuestionRun identities. Preserve old history, unaffected current references and the encounter's pinned bundle. New originals do not inherit old physician adjustments. Configuration repair records new estimation provenance rather than silently swapping settings; activation does not rebase pinned encounters. Notes never trigger regeneration.
 
@@ -282,7 +282,7 @@ The application also audits completed slider edits/redistribution, resets, local
 
 ## 11. Capacity, trade-offs and growth
 
-A registration has up to seven sequential LLM estimation steps; follow-up has up to six. Each has one initial estimation attempt plus at most two retries, excluding optional tool exchanges and later explicit manual retry batches. There is no separate LLM extraction or proposal-writing phase. Measure latency, payload sizes, retry counts and inference cost against representative networks; user count alone does not predict full-CPT output size.
+A registration has up to five sequential LLM estimation steps; follow-up has up to six. Each has one initial estimation attempt plus at most two retries, excluding optional tool exchanges and later explicit manual retry batches. There is no separate LLM extraction or proposal-writing phase. Measure latency, payload sizes, retry counts and inference cost against representative networks; user count alone does not predict full-CPT output size.
 
 | Decision | Benefit | Cost / revisit trigger |
 |---|---|---|
@@ -299,7 +299,7 @@ Before integration, obtain each network's complete contract, prompt, patient map
 
 ## 12. Verification criteria
 
-- Cover all FR-30 questions, including one LAI indication-and-choice network.
+- Cover all FR-30 questions, including one LAI discussion/review network.
 - Assert question B cannot start before question A completes or is marked not applicable; a failed question pauses later ones.
 - Inspect requests and MCP results to prove exclusion of nonrepresented variables and page notes, including mixed-content history and connection reuse across questions/patients.
 - Verify every node's CPT is required, including root distributions; reject missing/duplicate cells, structural changes, invalid numbers and invalid sums without default substitution or normalization.

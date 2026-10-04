@@ -4,7 +4,7 @@ Aligned 2026-10-03 to [user-requirements.md](user-requirements.md), [system-desi
 
 Path shorthand: `B/` = `backend/src/x_insight/`, `BT/` = `backend/tests/`, `W/` = `web/src/`. Project documents are under `project-documents/dev/`. Medical/BN paths, counts, and named-source examples below are inherited drafting leads: verify actual supplied content before use. They are not findings established by this document review.
 
-The session IDs remain stable. Execute S25 before S24, S44 before S41, and the added S48a–S48d probability work before signing. Clinical content gates do not block generic mechanics using clearly separate synthetic fixtures.
+The session IDs remain stable; active question sessions are S27 and S29–S38. Execute S25 before S24, S44 before S41, and the added S48a–S48d probability work before signing. Clinical content gates do not block generic mechanics using clearly separate synthetic fixtures.
 
 ## Foundation and identity
 
@@ -16,7 +16,7 @@ The session IDs remain stable. Execute S25 before S24, S44 before S41, and the a
 
 1. Record the confirmed product rules from the three baseline documents: empty inference evidence, private single draft, any-physician addenda, full CPT review and exact-result acceptance. Label stack, numerical choices and test seams as proposals; carry forward remaining policy inputs.
 2. Inventory actual supplied XML, clinical content and DDI files with hashes, structural versus executable status, and missing prompts/mappings/templates. Verify inherited counts (11 XML/128 DDI) only if that material exists; do not report them as current inventory without evidence.
-3. Create review entries for assessment wording/periods, history fields/severity, DDI aliases/coverage, each clinical question, and workflow bundles. Include the BN-06 restriction, LAI choice gap, FR-14 regimen mismatch, missing hospitalization/involuntary-care networks, and reference-table assumptions.
+3. Create review entries for assessment wording/periods, history fields/severity, DDI aliases/coverage, each clinical question, and workflow bundles. Include the BN-06 restriction, LAI scope decision, FR-14 regimen mismatch, and reference-table assumptions.
 4. Define each review package's deliverables and exact approval record; prepare owner questions only for substantive missing content, with concrete proposed choices. Infrastructure remains eligible while responses are pending.
 
 **Verify/exit:** ledger covers every question in plan.md §7.1 and names the owner as reviewer without claiming approval. Handoff identifies the first engineering session and content tasks.
@@ -172,10 +172,10 @@ The session IDs remain stable. Execute S25 before S24, S44 before S41, and the a
 
 **Read/files:** plan.md §5 and question-input leads, four adverse-effect criteria documents; `content/history/`, `B/cases/` history/effects, history UI.
 
-1. Draft the minimum typed history fields, clinical periods, analysis-visible text label and severity definitions for owner review. Include mapping gaps required by networks; do not add FR-14-excluded medication regimen fields.
+1. Draft the minimum typed history fields, clinical periods and analysis-visible text label for owner review. The 2026-10-04 owner decision selects full standardized adverse-effect questionnaires. Draft versioned full instrument definitions with item wording, administration/completeness/scoring contracts, source hashes, independent examples and severity/network mappings for owner review. Confirm the complete AIMS form/source. Name the acute-dystonia form “Acute Dystonia Dx Criteria” and draft its full criteria-based definition from the supplied source for review; do not invent missing definitions or a total score. Full completion applies only when the corresponding effect is present. Include mapping gaps required by networks; the 2026-10-04 owner decision permits drafting exposure, duration, trial-adequacy, prior-response, and monitoring fields for review. Do not add FR-14-excluded medication regimen fields.
 2. Red after review: history values persist with provenance, unknown/not-assessed distinct from false; undeclared/excluded fields fail validation.
-3. Red: each of four effects accepts present/absent/not-assessed; present requires reviewed severity, absent/not-assessed has null severity. Changing status must explicitly clear an obsolete severity.
-4. Add optional phone update and history reconciliation state for follow-up; clearly distinguish analysis-visible history from page notes. Do not automatically mandate complete BARS/SAS/AIMS questionnaires.
+3. Red: each of four effects accepts present/absent/not-assessed; present requires the corresponding complete reviewed questionnaire and reviewed severity; absent/not-assessed has null severity and no questionnaire-completion requirement. Changing status must explicitly clear an obsolete severity.
+4. Add optional phone update and history reconciliation state for follow-up; clearly distinguish analysis-visible history from page notes. Implement complete standardized questionnaires under the reviewed S12 definitions. Preserve item responses, definition version, completeness and nullable results; missing required items suppress calculated results unless a reviewed source explicitly defines a missing-data rule. Keep urgent handling independent of questionnaire completion. Enforce questionnaire completeness only for present effects, including the “Acute Dystonia Dx Criteria” form.
 
 **Verify/exit:** author/revision rules inherited from S07, reviewed field fixtures, browser saved-state behavior. Mapping additions later must update the content version and these public checks.
 
@@ -254,7 +254,7 @@ The session IDs remain stable. Execute S25 before S24, S44 before S41, and the a
 
 1. Red: publication rejects count failures, unresolved entities needed by the release, absent provenance and required unreviewed evidence. Implement dataset staging/import as one coherent operation.
 2. Draft the corpus report: discovered/processed/pass/fail documents, severity counts, unique pairs, duplicates/conflicts, unknown names, hashes and parser version. Give the owner concrete high-risk/conflict/anomaly review records.
-3. Incorporate approved corrections without modifying originals. Preserve independent duplicate-direction evidence and separate source severity from management. Publish only an explicitly approved complete or limited-coverage release.
+3. Incorporate approved corrections without modifying originals. Preserve independent duplicate-direction evidence and separate source severity from management. Publish only an explicitly approved complete or limited-coverage release. The 2026-10-04 owner decision permits a reviewed limited-coverage release before full-corpus review; uncovered pairs remain `coverage_unavailable`.
 4. Red: repeated publication of identical content is idempotent; changing a source creates a new candidate version; interrupted/invalid publication leaves the previous released dataset available.
 
 **Verify/exit:** owner-reviewed release hash, reproducible import report and source/alias inventory. If review is pending, mark awaiting_review and continue with synthetic DDI fixtures; do not claim the corpus is ready or omit excluded sources from limitations.
@@ -347,12 +347,12 @@ The session IDs remain stable. Execute S25 before S24, S44 before S41, and the a
 
 1. Red: a complete synthetic package validates fixed variables/types/states/order, typed patient mappings, gate/missingness rules, all-CPT contract, query, prompt, template, and review references.
 2. Red: unknown/note source paths, implicit posterior chaining, any patient-evidence mapping, incomplete CPT schema, or arbitrary expression is rejected. Patient mappings are estimation context only; review cannot enable evidence under the confirmed contract.
-3. Define the review dossier used in S26–S38: source comparison, explicit graph, complete reference-table provenance, estimation instructions, result mapping/wording, independent numerical and clinical examples, admission measurements and open assumptions.
+3. Define the review dossier used in S27 and S29–S38: source comparison, explicit graph, complete reference-table provenance, estimation instructions, result mapping/wording, independent numerical and clinical examples, admission measurements and open assumptions.
 4. Define template content with escaped-value slots and explicit branches; no LLM prose or unreviewed argmax treatment selection. Through package validation, reject references to undeclared output states and unsupported operators. Runtime section rendering is implemented and tested through the pipeline in S45.
 
-**Verify/exit:** future question sessions change content, not thirteen separate Python pipelines. Draft packages can be validated without being activated; owner review is a separate recorded decision.
+**Verify/exit:** future question sessions change content, not eleven separate Python pipelines. Draft packages can be validated without being activated; owner review is a separate recorded decision.
 
-### Common contract for S26–S38
+### Common contract for S27 and S29–S38
 
 These are **content-authoring sessions with implementation-ready outputs**, not permission to activate clinical models. Each depends on S25 and its relevant reviewed assessment/history meanings. If those meanings are pending, draft alternatives and flag them instead of silently choosing.
 
@@ -360,38 +360,16 @@ For each session create `content/questions/<key>/{manifest.json,network.xml,prom
 
 Run the S25 validator and S23 inference harness on independently worked examples through T5. Add one meaningful behavior fixture at a time when expected behavior is agreed. Agent-drafted clinical expected outputs are review candidates until approved; they cannot validate themselves. Hand off a readable rationale and the exact package hash. Use `awaiting_review` until the owner approves. Approval may be batched in S39 after all dossiers are concrete. Unanswered clinical/legal choices block package release, not generic engineering.
 
-### S26 — Draft hospitalization question
-
-**Key:** `hospitalization` (R1). **Requirements:** FR-30–35. **Sources:** guideline assessment/treatment-planning documents, approved diagnosis/suicide/history definitions; no existing corresponding BN.
-
-1. Enumerate the specific hospitalization question, intended setting/time horizon, observed inputs and output meanings. Ask for unresolved setting/disposition policy using a concrete proposal; do not infer admission law or a universal risk cutoff.
-2. Draft one fixed discrete graph with stable states and reviewed input definitions. Include only collected patient variables; propose missing structured fields for owner review.
-3. Draft estimation prompt, complete reference/response tables with provenance, and predefined physician-review wording for each output/gap. The LLM supplies all CPTs, never the disposition text.
-4. Prepare ordinary/urgent/required-missing cases and an independently worked small numerical case. No urgent guidance may depend on waiting for a successful LLM request.
-
-**Exit:** complete review dossier or precise unresolved inputs, not an active placeholder. S39 decides workflow admission after review.
-
 ### S27 — Draft pharmacotherapy question
 
 **Key:** `pharmacotherapy` (R2). **Requirements:** FR-14, FR-30–35. **Sources:** BN-04, STATEMENT-04, reviewed catalog/history.
 
-1. Compare BN-04's established-treatment review scope with registration pharmacotherapy selection. Document which nodes/edges cannot satisfy the required question as written, including metadata-only parents.
-2. Draft a fixed scope and graph, explicit medication output identifiers tied to the catalog, and source-backed treatment-context definitions. Resolve excluded dose/route/etc. inputs through content redesign, not hidden form fields.
+1. Preserve BN-04's established-treatment review scope under the 2026-10-04 owner decision. Document retained variables/states/edges and output meanings, including metadata-only parents. The question stays applicable when registration has no established treatment (owner decision 2026-10-04). Define source-compatible mappings for that case; unknown required inputs pause execution rather than being guessed; do not redesign this question for initial medication selection.
+2. Draft a fixed graph and source-backed treatment-context definitions consistent with established-treatment review; catalog identifiers are used only where the retained network outputs require them. Resolve excluded dose/route/etc. inputs through content redesign, not hidden form fields.
 3. Draft outcome-to-template mapping, missing-data behavior and all-CPT estimation instructions. DDI findings remain a separate report; do not substitute DDI lookup for pharmacotherapy inference.
 4. Supply worked cases for different relevant patient contexts and unknown required input, with proposed clinical expectations labeled for review and separate independent mathematical fixtures.
 
 **Exit:** new versioned package and source-diff rationale; original BN-04 remains untouched. Do not call the existing draft a complete initial-choice network.
-
-### S28 — Draft involuntary-care question
-
-**Key:** `involuntary_care` (R3). **Requirements:** FR-30–35. **Sources:** owner-supplied jurisdiction/setting criteria plus relevant local clinical documents; no matching BN.
-
-1. Prepare a concrete list of required legal/clinical context and ask the owner for jurisdiction and authoritative criteria. Do not turn a generic symptom or suicide score into legal eligibility.
-2. Draft the information-collection graph and explicit unknown behavior. If legal inputs remain unavailable, retain a nonactivatable draft and enumerate exactly what is missing.
-3. After source selection, draft fixed states, complete CPT contract, prompt and review-oriented template with source date/version. Clinical and legal review assumptions remain explicit.
-4. Prepare meets/does-not-meet/unknown examples supplied or reviewed by the owner, plus independent numerical checks. Seek up-to-date primary legal sources if this session must interpret jurisdictional rules.
-
-**Exit:** reviewed criteria attached before release; no invented legal rule, automatic detention action, or successful “not applicable” used to hide missing content.
 
 ### S29 — Draft high-suicide clozapine question
 
@@ -404,16 +382,16 @@ Run the S25 validator and S23 inference harness on independently worked examples
 
 **Exit:** complete package ready for owner review, with urgent assessment handling independent of LLM latency and no fabricated risk percentage presented as scale output.
 
-### S30 — Draft combined LAI indication and choice question
+### S30 — Draft LAI discussion/review question
 
 **Key:** `lai_indication_choice` (R5). **Requirements:** FR-30–35. **Sources:** BN-10, STATEMENT-10, reviewed catalog/history/preferences.
 
-1. Identify the exact indication and choice outputs required by FR-30. BN-10's discussion pathway alone is insufficient; draft the missing choice contract and admissible catalog identifiers.
-2. Keep one XMLBIF network, one prompt and one question step. Define when choice is rendered after indication, and what absence/uncertainty of preference or prior exposure means.
-3. Resolve source input needs without introducing excluded medication regimen fields. Draft full CPT estimation, explicit state ordering and result-to-template branches for indication/no-indication/uncertain choice.
-4. Prepare independent fixtures proving choice is suppressed or shown under the reviewed condition while other review findings remain visible. Record owner decisions on product-choice assumptions.
+1. Preserve BN-10's existing discussion/review scope under the 2026-10-04 owner decision. Document retained variables/states/edges and output meanings. No specific LAI product selection or new product-choice contract is required; retain the existing package key for stable references.
+2. Keep one XMLBIF network, one prompt and one question step. Define source-compatible discussion/review template mappings and what absent/uncertain preference or prior exposure means.
+3. Resolve source input needs without introducing excluded medication regimen fields. Draft full CPT estimation, explicit state ordering and result-to-template branches for the retained BN-10 discussion/review outputs.
+4. Prepare independent fixtures for retained outputs and required-missing inputs, keeping all relevant review findings visible. Record the owner scope decision and submit concrete graph/template mappings for review.
 
-**Exit:** one reviewed combined package, not two networks or a runtime LLM recommendation.
+**Exit:** one reviewed LAI discussion/review package preserving BN-10 scope.
 
 ### S31 — Draft aggression clozapine question
 
@@ -441,7 +419,7 @@ Run the S25 validator and S23 inference harness on independently worked examples
 
 **Key:** `tardive_dyskinesia` (F1). **Requirements:** FR-20–21, FR-30–35. **Sources:** BN-14, STATEMENT-14, tardive-dyskinesia criteria and approved severity definition.
 
-1. Map explicit effect presence and reviewed severity to the network; distinguish absent from not assessed. Do not infer the diagnosis from an unreviewed AIMS total.
+1. Consume the reviewed full AIMS instrument definition and item responses. Map explicit effect presence and reviewed severity to the network; distinguish absent from not assessed. Do not infer the diagnosis from an unreviewed AIMS total.
 2. Resolve source-required context/alternative explanations and missing input policy. Draft any new field for review before using it in a projection.
 3. Draft fixed graph, full CPT estimation and templates with all relevant findings retained, avoiding unsupported treatment thresholds.
 4. Provide effect-present/absent/not-assessed gate cases and severity/result cases. Validate explicit node/state ordering and one complete package, not copied BN-14 activation metadata.
@@ -452,7 +430,7 @@ Run the S25 validator and S23 inference harness on independently worked examples
 
 **Key:** `akathisia` (F2). **Requirements:** FR-20–21, FR-30–35. **Sources:** BN-13, STATEMENT-13, akathisia criteria.
 
-1. Define how the approved present/absent/not-assessed and severity fields relate to source concepts. BARS item discussion does not authorize an invented summed severity rule.
+1. Consume the reviewed full BARS instrument definition and item responses. Define how the approved present/absent/not-assessed and severity fields relate to source concepts. BARS item discussion does not authorize an invented summed severity rule.
 2. Draft required context, fixed graph/states, missingness and CPT-context-only mappings, distinguishing motor restlessness from unreviewed differential assumptions.
 3. Create full-CPT prompt and deterministic result/template mapping. Preserve source reasoning provenance and parallel review needs.
 4. Provide true/false/unknown gates and approved severity/result examples plus numerical checks; request owner resolution for unsupported scoring or treatment mappings.
@@ -463,7 +441,7 @@ Run the S25 validator and S23 inference harness on independently worked examples
 
 **Key:** `parkinsonism` (F3). **Requirements:** FR-20–21, FR-30–35. **Sources:** BN-12, STATEMENT-12, parkinsonism criteria.
 
-1. Map reviewed effect/severity/context fields. The SAS source does not define universal mild/moderate/severe score bands; do not create them from historical thresholds.
+1. Consume the reviewed full SAS instrument definition and item responses. Map reviewed effect/severity/context fields. The SAS source does not define universal mild/moderate/severe score bands; do not create them from historical thresholds.
 2. Resolve onset/alternative-cause and other required facts through approved structured history, never page notes. Missing context remains explicit.
 3. Draft fixed graph, every CPT contract, prompt, query and result-to-template branches with source-provenance rationale.
 4. Prepare present/absent/not-assessed and severity/unknown fixtures. Keep numerical engine evidence separate from owner review of clinical interpretation.
@@ -474,7 +452,7 @@ Run the S25 validator and S23 inference harness on independently worked examples
 
 **Key:** `acute_dystonia` (F4). **Requirements:** FR-20–21, FR-30–35. **Sources:** BN-11, STATEMENT-11, acute-dystonia criteria.
 
-1. Define reviewed presence/severity/onset/context fields and explicit urgent concerns. Do not require completion of inference before displaying a source-approved urgent assessment message.
+1. Consume the reviewed full “Acute Dystonia Dx Criteria” definition and item responses, drafted from the supplied acute-dystonia criteria. Require completion only when acute dystonia is present; do not invent a total score. Define reviewed presence/severity/onset/context fields and explicit urgent concerns. Do not require completion of inference before displaying a source-approved urgent assessment message.
 2. Draft the fixed graph and distinguish source review flags from probabilistic output semantics. Resolve missing priors/all-CPT replacement assumptions in the dossier.
 3. Write scoped estimation prompt and predefined result mapping, preserving multiple concerns and no autonomous intervention.
 4. Supply effect present/absent/not-assessed and required-context-missing cases, with reviewed clinical expectations and independent CPT/inference fixtures.
@@ -496,22 +474,22 @@ Run the S25 validator and S23 inference harness on independently worked examples
 
 **Key:** `continue_or_adjust` (F6). **Requirements:** FR-20, FR-30–35. **Sources:** BN-04/05/06, STATEMENT-04/05/06, approved history/effects/preferences.
 
-1. Compare overlapping source drafts and propose one clinical question/graph. Specifically present BN-06's electronic decision-support restriction to the owner and obtain an explicit scope/source resolution; copying the draft is not resolution.
+1. Compare overlapping source drafts and propose one clinical question/graph. Apply the 2026-10-04 owner decision retaining BN-06-derived content within the experimental/educational scope. Record that decision and the supplied STATEMENT-06 §Quality Measurement Considerations limitation in the derived package; current XML lacks its literal restriction text. Retention does not remove the source limitation or approve the concrete graph/templates.
 2. Draft review outcomes for continuation versus adjustment, with fixed states, CPT-context-only patient mappings and required missingness. Execution has no patient evidence or causal intervention conditioning.
 3. Supply complete all-CPT prompt and template branches retaining adverse effects/preferences/parallel concerns. No runtime merge of three models.
 4. Prepare continuation/adjustment/insufficient-information and stale-baseline cases, plus independent numerical examples.
 
-**Exit:** one package with documented source-resolution decision. If the restriction cannot be resolved, mark the package blocked and preserve the engineering pipeline without claiming FR-30 complete.
+**Exit:** one package with the documented owner retention decision, source limitation and reviewed experimental/educational wording. Pending concrete graph/template review blocks release; no runtime merge or unreviewed activation.
 
 ### S39 — Review and release both complete workflow bundles
 
-**Depends:** S24–S38; owner decisions on all content. **Requirements:** FR-30–37, NFR-05. **Seams:** T1/T5. **Tests:** `BT/models/test_bundles.py`.
+**Depends:** S24–S25, S27, S29–S38; owner decisions on all content. **Requirements:** FR-30–37, NFR-05. **Seams:** T1/T5. **Tests:** `BT/models/test_bundles.py`.
 
 **Files/read:** plan.md §§1.4, 7; all question dossiers; `content/bundles/registration.json`, `followup.json`, content release manifest.
 
-1. Present the thirteen concrete packages and cross-package assumptions for owner review. Record exact hashes/decisions; revise rejected packages and rerun their scoped checks. Do not batch-approve on the owner's behalf.
+1. Present the eleven concrete packages and cross-package assumptions for owner review. Record exact hashes/decisions; revise rejected packages and rerun their scoped checks. Do not batch-approve on the owner's behalf.
 2. Red: a workflow with a missing/unreviewed question, duplicate key, incompatible mapping/content, unresolved query/template or nonexecutable network cannot activate.
-3. Build ordered bundles with seven/six question identities, one combined LAI network, no implicit result chaining, and pinned assessment/history/DDI/template/prompt references.
+3. Build ordered bundles with five/six question identities, one LAI discussion/review network, no implicit result chaining, and pinned assessment/history/DDI/template/prompt references.
 4. Run admission measurements and independent fixtures for every package; add explicit gate coverage inventory and reviewed reference-table provenance. Activate only through the registry command, recording a new versioned event.
 
 **Verify/exit:** both reviewed complete bundles, reproducible hashes and admission report. If content review is pending, S40–S58 may proceed synthetically; S59/release remains blocked, with specific missing package IDs.
@@ -604,10 +582,10 @@ Reserve separate job classes and capacity for local calculation. S48b proves pro
 
 **Files/read:** plan.md §§7.1, 8.4, 9; coordinator, proposal assembly and DDI snapshot integration.
 
-1. Red: synthetic seven/six-question workflows emit external provider requests in pinned order; next request is absent until prior inference and section commit. No intra-run parallelism.
+1. Red: synthetic five/six-question workflows emit external provider requests in pinned order; next request is absent until prior inference and section commit. No intra-run parallelism.
 2. Red: false gate records not-applicable without a provider call; required-unknown stops progression; unrelated applicability facts and previous posteriors are absent from later requests.
 3. Red: final proposal succeeds only after every applicable question and a valid pinned DDI report; include skipped reasons and coverage warnings. Partial sections remain readable but incomplete.
-4. Red: changed medications/data cannot use an old report or proposal; activating new content does not mutate an already pinned run. One combined LAI step renders both outputs under its mapping.
+4. Red: changed medications/data cannot use an old report or proposal; activating new content does not mutate an already pinned run. One LAI step renders only the retained discussion/review outputs under its reviewed mapping.
 
 **Verify/exit:** sequential external-request evidence, persisted proposal/section identities, valid limited-coverage DDI versus failed/unavailable dataset distinction. No LLM proposal-writing request exists.
 
@@ -893,10 +871,10 @@ Every requirement has an implementation owner and an acceptance location. A grou
 | FR-15 | S46, S48–S50, S48a–S48d | Original proposal, local CPT review/adjusted recommendations, separate plan/sign-off |
 | FR-16 | S07, S13, S40–S41, S48a–S48d | Saved draft/CPT/calculation state, confirmed discard and end-to-end notes exclusion; S59–S60 |
 | FR-20 | S14, S33–S38, S50, S59 | Complete new follow-up assessment/history/medications/effects/proposal/sign/chronology |
-| FR-21 | S12, S33–S36 | Four explicit tri-state effects with reviewed severity |
+| FR-21 | S12, S33–S36 | Four tri-state effects with full standardized questionnaires and reviewed severity mappings |
 | FR-22 | S07, S14, S48a–S48c, S49–S51 | Private single draft and author-only probability/sign operations, immutable snapshots, any-physician addenda |
 | FR-23 | S06, S51 | Name/ID search, clinical-status/archive filters, archive/unarchive without deletion |
-| FR-30 | S25–S39, S46, S59 | All seven registration/six follow-up questions and one combined LAI model |
+| FR-30 | S25–S39, S46, S59 | All five registration/six follow-up questions and one LAI discussion/review model |
 | FR-31 | S21, S25–S39 | One predefined prompt/XMLBIF per question; separate structural validation |
 | FR-32 | S22, S40, S43, S46 | Fixed structures/types/states/relevance, scoped inputs and sequential progression |
 | FR-33 | S23, S41, S43, S45 | MCP-mediated estimation of every CPT, LLM cannot modify graph or execute it |

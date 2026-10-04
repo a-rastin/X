@@ -53,7 +53,7 @@ MCP provides the tool-access environment. The LLM estimates CPT values; the appl
 
 **FR-20:** A follow-up encounter allows the physician to update the phone number, re-assess severity and suicide, update history and medications, record adverse effects, review the initial proposal, inspect and adjust CPT values, edit the plan, and sign the secondary treatment plan. The encounter is logged.
 
-**FR-21:** Adverse effects include tardive dyskinesia, akathisia, parkinsonism, and acute dystonia. Each supports present, absent, and not-assessed states, plus severity.
+**FR-21:** Adverse effects include tardive dyskinesia, akathisia, parkinsonism, and acute dystonia. Each supports present, absent, and not-assessed states, plus severity. Require the full adverse-effect questionnaire only when its corresponding effect is present, with versioned item responses, completeness and source-defined scoring. Instrument forms, administration requirements and mappings to network variables require review; incomplete/not-assessed responses do not produce guessed scores. The acute-dystonia form is named “Acute Dystonia Dx Criteria”; concrete form/severity mappings and the complete AIMS source remain subject to review in `content/review-ledger.md` §2. Absent/not-assessed effects do not require questionnaire completion.
 
 **FR-22:** Any physician may create encounters and update demographics. Only the draft author may edit or sign that draft, including changing its CPT sliders, resetting its probabilities, or accepting its results. Signed encounters are immutable, including their accepted CPT values and network results. Corrections use dated, attributed addenda; follow-ups are new encounters.
 
@@ -63,8 +63,8 @@ MCP provides the tool-access environment. The LLM estimates CPT values; the appl
 
 **FR-30:** Each clinical question has one Bayesian network.
 
-- **Registration:** Hospitalization, pharmacotherapy, involuntary care, high-suicide Clozapine, LAI indication and choice, aggression Clozapine, and established-case Clozapine.
-- **Follow-up:** Tardive dyskinesia, akathisia, parkinsonism, acute dystonia, no-improvement Clozapine, and continue-versus-adjust.
+- **Registration:** Pharmacotherapy (established-treatment review, preserving BN-04 scope), high-suicide Clozapine, LAI discussion/review, aggression Clozapine, and established-case Clozapine.
+- **Follow-up:** Tardive dyskinesia, akathisia, parkinsonism, acute dystonia, no-improvement Clozapine, and continue-versus-adjust. BN-06-derived continuation content is retained within the experimental/educational scope, with its guideline source limitation documented; concrete packages remain subject to review.
 
 **FR-31:** Each clinical question has a predefined prompt and a corresponding Bayesian network stored as XMLBIF. XSD validation covers structure only, including nodes, states, and CPT syntax. Separate application validation checks CPT completeness, correspondence to network states and parent-state combinations, numeric validity, probability bounds, and row totals before execution.
 

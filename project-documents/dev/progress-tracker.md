@@ -42,13 +42,13 @@ Archive handling, discarded-content retention, physician print permission, name/
 
 ### Content review ledger
 
-Created `content/review-ledger.md`: index + per-item entries for assessments, history/severity, DDI, all 13 questions (plan.md §7.1), and workflow bundles. All items: status draft/`awaiting_review`, **none approved** (assessments excepted: S08 releases after validation with no `awaiting_review` flag per tasks.md S08). Reviewer named as owner; no approval claimed. No `content/assessments|history|questions/<key>/{manifest.json,network.xml,prompt.txt,template.json,examples.json,review.json}|bundles|ddi` files exist yet (content/ was empty before this ledger); all are missing and due in S08/S12/S18/S25–S39.
+Created `content/review-ledger.md`: index + per-item entries for assessments, history/severity, DDI, all 11 questions (plan.md §7.1), and workflow bundles. All items: status draft/`awaiting_review`, **none approved** (assessments excepted: S08 releases after validation with no `awaiting_review` flag per tasks.md S08). Reviewer named as owner; no approval claimed. No `content/assessments|history|questions/<key>/{manifest.json,network.xml,prompt.txt,template.json,examples.json,review.json}|bundles|ddi` files exist yet (content/ was empty before this ledger); all are missing and due in S08/S12/S18/S25–S39.
 
 ### Handoff
 
 - **First engineering session: S01** (bootstrap reproducible dev loop) — depends on S00, seams T1/T9 smoke only.
-- **Content tasks:** S08 assessments (no owner review) → S12 history → S15–S18 DDI → S25 contract → S26–S38 question packages → S39 bundle review/release.
-- **Remaining blockers:** owner decisions enumerated in `content/review-ledger.md` §§2–7 (R1 setting/disposition, R3 jurisdiction/criteria, R5 product-choice contract, F6/BN-06 scope resolution, FR-14 regimen mismatch, history fields, DDI aliases/coverage, reference-table provenance). Infrastructure may proceed on synthetic fixtures while responses are pending.
+- **Content tasks:** S08 assessments (no owner review) → S12 history → S15–S18 DDI → S25 contract → S27 and S29–S38 question packages → S39 bundle review/release.
+- **Remaining blockers:** owner decisions enumerated in `content/review-ledger.md` §§2–7 (R5 concrete discussion/review mappings, F6 concrete graph/template and limitation-wording review, concrete history/severity definitions, DDI aliases/release evidence, reference-table provenance). Infrastructure may proceed on synthetic fixtures while responses are pending.
 
 ### Hash appendix (verified by `sha256sum` this session; Sitagliptin 0/4/92/70 + Ofloxacin counts are plan.md §6.2 source expectations to be validated in S15, not verified here)
 
@@ -148,7 +148,7 @@ Created `content/review-ledger.md`: index + per-item entries for assessments, hi
 
 ### Remaining blockers
 
-- Owner decisions enumerated in `content/review-ledger.md` §§2–7 (R1 setting/disposition, R3 jurisdiction/criteria, R5 product-choice contract, F6/BN-06 scope resolution, FR-14 regimen mismatch, history fields, DDI aliases/coverage, reference-table provenance). Infrastructure proceeds on synthetic fixtures while responses are pending; S02 adds no new clinical blocker.
+- Owner decisions enumerated in `content/review-ledger.md` §§2–7 (R5 concrete discussion/review mappings, F6 concrete graph/template and limitation-wording review, concrete history/severity definitions, DDI aliases/release evidence, reference-table provenance). Infrastructure proceeds on synthetic fixtures while responses are pending; S02 adds no new clinical blocker.
 - S02 exit met: all future modules can use one transaction context; audit permissions prepared without a generic repository layer (`test_audit_module_has_no_generic_repository`, `test_only_s02_tables_exist`).
 
 ## S03 — Implement login, sessions, and own credentials (2026-10-04)
@@ -208,6 +208,43 @@ Created `content/review-ledger.md`: index + per-item entries for assessments, hi
 
 ### Remaining blockers
 
-- Owner decisions enumerated in `content/review-ledger.md` §§2–7 (R1 setting/disposition, R3 jurisdiction/criteria, R5 product-choice contract, F6/BN-06 scope resolution, FR-14 regimen mismatch, history fields, DDI aliases/coverage, reference-table provenance). Infrastructure proceeds on synthetic fixtures while responses are pending; S03 adds no new clinical blocker.
+- Owner decisions enumerated in `content/review-ledger.md` §§2–7 (R5 concrete discussion/review mappings, F6 concrete graph/template and limitation-wording review, concrete history/severity definitions, DDI aliases/release evidence, reference-table provenance). Infrastructure proceeds on synthetic fixtures while responses are pending; S03 adds no new clinical blocker.
 - Env caveat this session: `db-test` on `5433` was down during the S03 implementation session, so the `5432` override was used for the test DB; next agent should restore default `5432`/`5433` ports or record the override in `.env` before running `make test-backend`.
 - S03 exit met: fresh DB permits `admin/admin` once, login issues opaque cookie sessions with CSRF/throttling, logout/credential change revokes via `revoked_at` + `credential_revision` with no timeout, and the `admin_client` fixture is available for S04.
+
+## Content Q/A decisions — 2026-10-04
+
+- S12 may draft structured exposure, duration, trial-adequacy, prior-response, and monitoring fields for review; dose, route, and frequency remain excluded. Concrete inventory and severity definitions still require review.
+- Reviewed limited-coverage DDI releases are permitted before full-corpus review; explicit coverage declarations and `coverage_unavailable` behavior remain required.
+- Current inventory after scope revisions: five registration questions (R2, R4–R7) and six follow-up questions. Active question sessions are S27 and S29–S38; remaining identifiers retain their meanings. Development requirements, architecture/design, plan, tasks, ledger and blocker counts reflect eleven packages. No concrete package was approved.
+
+### Content Q/A follow-up — 2026-10-04
+
+- The short per-effect severity-definition proposal needs clarification: the earlier “No” was interpreted as rejection, and a subsequent question asks why. No rejection rationale or replacement severity/instrument contract is established. Full instruments and severity removal have not been authorized.
+- The earlier scope reduction resulted from an unavailable Bayesian network; subsequent removal leaves five registration and six follow-up questions. Scope rationale and its history are recorded in `context/content-scope.md`.
+
+### Current content scope — 2026-10-04
+
+- Registration contains five questions (R2, R4–R7), with six follow-up questions and eleven packages total. Active authoring sessions are S27 and S29–S38. Removed questions have no workflow, review, activation, or generation dependency; remaining identifiers remain stable.
+- Severity proposal and its rejection rationale require clarification; no clinical reason for rejecting it has been established.
+
+### Adverse-effect questionnaire decision — 2026-10-04
+
+- Full standardized questionnaires are selected over short custom severity definitions and network-state-only inputs. S12 authors complete versioned instrument contracts and independent examples for owner review; no concrete instrument package is approved. This review is outside the S08 exception.
+- Supplied criteria contain BARS/SAS instrument sections; the tardive-dyskinesia criteria reference AIMS without a complete form. Complete AIMS sourcing, acute-dystonia instrument/source and required-completion applicability remain open. No new score bands, diagnostic thresholds or missing-data rules were chosen.
+
+### Adverse-effect form applicability and naming — 2026-10-04
+
+- Full questionnaire completion is required only for the corresponding present effect; absent/not-assessed effects have no completion requirement. This resolves the earlier applicability question.
+- The acute-dystonia form name is “Acute Dystonia Dx Criteria”. Supplied acute-dystonia criteria are the drafting lead; concrete items, completeness, severity and network mappings remain for review. Naming does not establish a validated numeric scale or authorize an invented score.
+- Complete AIMS sourcing and concrete instrument-package review remain open. No concrete package was approved.
+
+### Pharmacotherapy scope and BN-06 retention — 2026-10-04
+
+- Registration pharmacotherapy preserves BN-04's established-treatment review scope; initial medication selection is outside this question. Retained graph/mappings and applicability when no established treatment exists still require review.
+- BN-06-derived continuation content is retained within the experimental/educational scope. Derived packages record the owner decision and the supplied STATEMENT-06 electronic decision-support/quality-measure limitation; the limitation remains explicit. Concrete graph, templates and wording still require review; no package was approved.
+
+### Pharmacotherapy applicability and LAI scope — 2026-10-04
+
+- No established treatment does not mark registration pharmacotherapy not_applicable. The question remains applicable; S27 defines source-compatible mappings for that case. Missing/unknown required network inputs still pause rather than being guessed.
+- LAI preserves BN-10's existing discussion/review scope; specific product selection and a new product-choice contract are outside the question. Existing package identity is retained, while displayed wording and template outputs use the preserved scope. Concrete packages still require review.

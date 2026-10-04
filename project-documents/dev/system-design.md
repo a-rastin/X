@@ -188,10 +188,10 @@ Recompute DDI findings on medication changes and retain prior reports as history
 
 | Workflow | Ordered clinical questions |
 |---|---|
-| Registration | Hospitalization; pharmacotherapy; involuntary care; high-suicide Clozapine; LAI indication and choice; aggression Clozapine; established-case Clozapine |
+| Registration | Pharmacotherapy; high-suicide Clozapine; LAI discussion/review; aggression Clozapine; established-case Clozapine |
 | Follow-up | Tardive dyskinesia; akathisia; parkinsonism; acute dystonia; no-improvement Clozapine; continue-versus-adjust |
 
-Each question maps to one XMLBIF network, one prompt and a recommendation template. Treat LAI indication and choice as one question with its corresponding network. A versioned manifest fixes node identities, states/order, parent relationships, variable types, patient-variable mappings, output queries, applicability, missing-data policy, CPT layout and template result mappings. Clinical gates and treatment thresholds must be supplied; names of questions alone do not define thresholds.
+Each question maps to one XMLBIF network, one prompt and a recommendation template. Treat LAI discussion/review as one question with its corresponding network. A versioned manifest fixes node identities, states/order, parent relationships, variable types, patient-variable mappings, output queries, applicability, missing-data policy, CPT layout and template result mappings. Clinical gates and treatment thresholds must be supplied; names of questions alone do not define thresholds.
 
 Process applicable questions sequentially in the bundle's declared order. Record false gates as not applicable with a reason; missing information is not automatically false. Unknown required applicability pauses generation for clarification. No question result becomes another question's patient input unless requirements are explicitly revised; slider recalculation always remains independent.
 
