@@ -121,11 +121,15 @@ async function request<T>(path: string, options: RequestOptions = {}): Promise<T
   return (payload ?? {}) as T;
 }
 
-function idempotencyKey(): string {
+export function newIdempotencyKey(): string {
   if (typeof crypto !== "undefined" && "randomUUID" in crypto) {
     return crypto.randomUUID();
   }
   return `key-${Date.now()}-${Math.floor(Math.random() * 1e9)}`;
+}
+
+function idempotencyKey(): string {
+  return newIdempotencyKey();
 }
 
 export interface LoginResult {

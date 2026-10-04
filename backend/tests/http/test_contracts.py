@@ -242,7 +242,7 @@ def test_migration_records_single_head_version(migrated_test_engine) -> None:
     from x_insight import db as db_module
 
     with migrated_test_engine.connect() as connection:
-        assert db_module.get_applied_versions(connection) == ["0003"]
+        assert db_module.get_applied_versions(connection) == ["0004"]
 
 
 def test_ready_ok_against_real_database(
@@ -258,7 +258,7 @@ def test_ready_ok_against_real_database(
     payload = response.json()
     assert payload["status"] == "ready"
     assert payload["service"] == "x-insight"
-    assert payload["schema_version"] == "0003"
+    assert payload["schema_version"] == "0004"
     moment = contracts.parse_utc(payload["checked_at"])
     assert moment.tzinfo is not None
     assert response.headers["x-request-id"] == sent
@@ -475,7 +475,7 @@ def test_ready_ok_body_shape_against_real_database(
     payload = response.json()
     assert payload["status"] == "ready"
     assert payload["service"] == "x-insight"
-    assert payload["schema_version"] == "0003"
+    assert payload["schema_version"] == "0004"
     assert payload["checked_at"].endswith("Z")
     moment = contracts.parse_utc(payload["checked_at"])
     assert moment.tzinfo is not None
@@ -557,7 +557,8 @@ def test_audit_list_ordered_by_time(migrated_test_engine, clean_audit) -> None:
 
 def test_only_s02_tables_exist(migrated_test_engine) -> None:
     """S02 audit storage persists; S03 adds identity tables; S04 adds only the
-    idempotency store (no draft/clinical tables)."""
+    idempotency store; S06 adds patients + encounters (no draft-content, notes,
+    runs, or jobs tables)."""
     from sqlalchemy import text
 
     with migrated_test_engine.connect() as connection:
@@ -570,7 +571,9 @@ def test_only_s02_tables_exist(migrated_test_engine) -> None:
     assert tables == [
         "alembic_version",
         "audit_events",
+        "encounters",
         "idempotency_records",
+        "patients",
         "sessions",
         "users",
     ]

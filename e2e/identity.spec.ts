@@ -321,7 +321,7 @@ test("unauthenticated physicians route degrades to sign-in", async ({
   ).toHaveCount(0);
 });
 
-test("physician dashboard shows no placeholder clinical content", async ({
+test("physician dashboard shows the patient directory without recommendations", async ({
   page,
   request,
 }) => {
@@ -332,7 +332,9 @@ test("physician dashboard shows no placeholder clinical content", async ({
   await expect(
     page.getByRole("heading", { name: "Physician dashboard" }),
   ).toBeVisible();
-  await expect(page.getByText(/No clinical content/)).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Patient directory" }),
+  ).toBeVisible();
   await expect(page.getByText(/recommendation/i)).toHaveCount(0);
 });
 

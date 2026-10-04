@@ -453,7 +453,7 @@ def test_health_and_ready_preserved_with_new_schema(clean_identity, monkeypatch)
     assert health.json() == {"status": "ok", "service": "x-insight"}
     ready = client.get("/api/v1/ready")
     assert ready.status_code == 200
-    assert ready.json()["schema_version"] == "0003"
+    assert ready.json()["schema_version"] == "0004"
 
 
 def test_real_postgresql_only(clean_identity) -> None:

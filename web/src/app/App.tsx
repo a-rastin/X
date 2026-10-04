@@ -2,7 +2,9 @@ import { useAuth } from "../features/identity/auth";
 import { LoginPage } from "../features/identity/LoginPage";
 import { ResearchWarningGate } from "../features/identity/ResearchWarning";
 import { ThemeToggle } from "../features/identity/ThemeToggle";
-import { useRoute, type Route } from "./router";
+import { PatientsPage } from "../features/patients/DirectoryPage";
+import { RegistrationPage } from "../features/patients/RegistrationForm";
+import { useRoute, routeToHash, type Route } from "./router";
 import {
   AccountPage,
   AdminDashboard,
@@ -23,7 +25,7 @@ function NavLink({
 }) {
   return (
     <a
-      href={`#/${route}`}
+      href={routeToHash(route)}
       aria-current={current === route ? "page" : undefined}
       onClick={(event) => {
         event.preventDefault();
@@ -65,6 +67,9 @@ export function App() {
           <nav className="xi-nav" aria-label="Primary">
             <NavLink route="dashboard" current={route} navigate={navigate}>
               Dashboard
+            </NavLink>
+            <NavLink route="patients" current={route} navigate={navigate}>
+              Patients
             </NavLink>
             {user.role === "admin" && (
               <NavLink route="physicians" current={route} navigate={navigate}>
@@ -108,6 +113,8 @@ export function App() {
             {!showWarningGate && route === "dashboard" && user.role === "physician" && (
               <PhysicianDashboard />
             )}
+            {!showWarningGate && route === "patients" && <PatientsPage />}
+            {!showWarningGate && route === "patients-new" && <RegistrationPage />}
             {!showWarningGate && route === "physicians" && <PhysiciansPage />}
             {!showWarningGate && route === "account" && <AccountPage />}
           </>

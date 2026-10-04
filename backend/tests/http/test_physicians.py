@@ -486,7 +486,11 @@ def test_deactivation_stale_draft_set_revision_conflicts(admin_client) -> None:
 
 
 def test_no_draft_tables_fabricated_for_deactivation(clean_identity) -> None:
-    """S04 must not create draft/encounter tables (S51 owns Cases)."""
+    """S04 must not create draft-content tables (S51 owns Cases integration).
+
+    S06 legitimately adds the patient registry (patients + encounters); this
+    pins that scope: no notes/runs/jobs/drafts tables beyond S06.
+    """
     from sqlalchemy import text
 
     with clean_identity.connect() as connection:
@@ -500,8 +504,10 @@ def test_no_draft_tables_fabricated_for_deactivation(clean_identity) -> None:
     assert "audit_events" in tables
     assert "users" in tables
     assert "sessions" in tables
-    for fabricated in ("encounters", "drafts", "patients", "notes", "runs", "jobs"):
-        assert fabricated not in tables, f"S04 fabricated {fabricated}"
+    assert "patients" in tables
+    assert "encounters" in tables
+    for fabricated in ("drafts", "notes", "runs", "jobs"):
+        assert fabricated not in tables, f"unexpected table {fabricated}"
 
 
 # --- Slice 4: idempotency/conflicts/audit/no secrets ---

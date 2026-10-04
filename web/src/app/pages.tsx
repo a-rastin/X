@@ -1,6 +1,7 @@
 import { useAuth } from "../features/identity/auth";
 import { PasswordForm } from "../features/identity/PasswordForm";
 import { PhysiciansPanel } from "../features/identity/PhysiciansPanel";
+import { PatientDirectory } from "../features/patients/DirectoryPage";
 
 export function AdminDashboard() {
   return (
@@ -12,9 +13,10 @@ export function AdminDashboard() {
         </h3>
         <p>
           Manage physician accounts, review identity settings, and adjust the
-          workspace theme. Patient workspaces land in later sessions.
+          workspace theme. The patient directory below is read-only.
         </p>
       </section>
+      <PatientDirectory />
     </div>
   );
 }
@@ -29,16 +31,7 @@ export function PhysicianDashboard() {
           <p style={{ margin: 0 }}>{researchWarning}</p>
         </div>
       )}
-      <section className="xi-card" aria-labelledby="workspace-heading">
-        <h3 className="xi-section-title" id="workspace-heading">
-          Clinical workspace
-        </h3>
-        <p>
-          Patient registration and encounter workspaces are not part of this
-          session; they land in later sessions. No clinical content is shown
-          here.
-        </p>
-      </section>
+      <PatientDirectory />
     </div>
   );
 }

@@ -76,7 +76,7 @@ test("theme toggle is keyboard-focusable, operable, and visibly focused", async 
   await loginAs(page, "physician", username, "secret123");
   await acknowledgeWarning(page);
 
-  // Pure keyboard path: skip link, Dashboard, Account, theme toggle.
+  // Pure keyboard path: skip link, Dashboard, Patients, Account, theme toggle.
   await page.reload();
   await expect(page.getByRole("alertdialog")).toHaveCount(0);
   // Wait for the authenticated header before tabbing: the toggle only
@@ -88,6 +88,7 @@ test("theme toggle is keyboard-focusable, operable, and visibly focused", async 
   await page.keyboard.press("Tab"); // skip link
   await expect(page.getByRole("link", { name: "Skip to content" })).toBeFocused();
   await page.keyboard.press("Tab"); // Dashboard
+  await page.keyboard.press("Tab"); // Patients (S06 directory navigation)
   await page.keyboard.press("Tab"); // Account
   await page.keyboard.press("Tab"); // theme toggle
   await expect(toggle).toBeFocused();
