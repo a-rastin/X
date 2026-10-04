@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="unqualified" attributeFormDefault="unqualified"
+           version="1.0">
+  <xs:annotation>
+    <xs:documentation xml:lang="en"><![CDATA[
+XMLBIF 0.3 — CDSS authoring profile, revision 1 (2026-09-16)
+
+PURPOSE AND USE
+This file is an XML Schema 1.0 validator, despite its requested .xml suffix.
+It validates future XMLBIF documents, not the clinical content of a network.
+One NETWORK per clinical question is recommended; multiple NETWORK elements
+may share a BIF document. No clinical networks or probabilities are supplied.
+Instance elements have no namespace. Validate explicitly, for example:
+  xmllint --nonet --noout --schema schema.xml model.xmlbif
+Alternatively set xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" and
+xsi:noNamespaceSchemaLocation="schema.xml" on the instance's BIF element.
+The validator must actually load this schema; a schema-location hint alone
+does not perform validation. Disable external entities and network fetching.
+
+PROFILE BOUNDARY
+Based on raw/md/The Interchange Format for Bayesian Networks.md, sections
+"The XMLBIF format" and "Outside XML", and the corresponding wiki source note.
+Online specification checked 2026-09-16:
+https://www.cs.cmu.edu/afs/cs/user/fgcozman/www/Research/InterchangeFormat/
+This is a deliberately stricter authoring subset, not an exact DTD translation:
+* VERSION is exactly 0.3 and at least one NETWORK is required.
+* Identifiers follow the written ASCII rule [A-Za-z_][A-Za-z0-9_]*.
+  The original Dog-Problem example contradicts that rule by using hyphens;
+  those identifiers need consistent renaming to validate against this profile.
+* Each DEFINITION has exactly one FOR and one nonempty TABLE. The original
+  permits repeated TABLE elements with last-table-wins semantics; this profile
+  rejects them to avoid silent replacement of clinical parameters.
+* Tables contain finite IEEE-754 double values in decimal/scientific notation.
+  Negative utility values are allowed; NaN, infinities and overflow are not.
+* Network names are unique per document; variable names and definition targets
+  are unique per network; outcomes are unique per variable; GIVEN names are
+  unique per definition. FOR and GIVEN must name a variable in the same network.
+NETWORK children after NAME, VARIABLE children after NAME, and DEFINITION
+children may be interleaved. GIVEN and OUTCOME order remain semantically
+significant. PROPERTY remains arbitrary Unicode text, with no custom tags.
+
+CORPUS ANALYSIS AND MODELING CONSEQUENCES
+medical-knowledge/02-md/guideline-statement-summary.md, sections Assessment
+and Determination of Treatment Plan, Pharmacotherapy, and Psychosocial
+Interventions, distinguishes 24 statements. Standalone STATEMENT-01.md through
+STATEMENT-14.md cover assessment, quantitative measurement, treatment planning,
+antipsychotic selection/continuation, clozapine, LAIs, and movement adverse
+effects. Appendix-C.md includes evidence sections for statements 1 through 24;
+Appendix-D.md has intervention-specific strength-of-evidence tables. Glossary,
+acronyms, development process and appendices are supporting sources, not each
+a separate clinical question. The schema therefore does not enumerate a fixed
+set of network names, drugs, diagnoses, scales, states or treatment thresholds.
+
+STATEMENT-02.md, Implementation: scales, observers and observation windows
+differ. Store instrument/version, units, time window and discretization in
+variable properties; do not turn a score into a diagnosis by schema fiat.
+STATEMENT-03.md, Implementation and Aims of Treatment Planning: person-centered
+planning includes preferences and changing treatment context. Accordingly,
+nature, decision and utility variables are all supported. An observed treatment
+is a nature variable; a controllable action in an influence diagram is decision.
+A deterministic guideline rule is a nature variable with a deterministic CPT,
+not automatically an influence-diagram decision node. A posterior probability
+of an action is not an expected-utility recommendation.
+
+Guideline-Development-Process.md, Rating the Strength of Supporting Research
+Evidence and Rating the Strength of Guideline Statements: the 1/2 recommendation
+strength and A/B/C evidence rating are distinct. Preserve both as metadata;
+neither is a patient probability. Appendix-C.md, STATEMENT 4 and Table C-1,
+and Appendix-D.md, Table D-1: aggregate effect estimates need population,
+comparator and time-horizon information before any conversion to CPT values.
+STATEMENT-04.md, Tables 5 and 6: receptor-affinity and side-effect symbols are
+ordinal descriptions, not probability values.
+
+wiki/concepts/BN model structure for clinical decisions.md, TreLynCa's fourth
+type and Identifier grammar: PD/A/ED/DD are clinical roles, not XMLBIF TYPE
+values. They may be recorded in PROPERTY; their oncology-specific edge rules
+are not imposed on psychiatric networks. wiki/concepts/Clinical terminology
+and identifiers.md, The reconciliation used later: keep readable labels and
+verified terminology codes separate from stable machine identifiers.
+wiki/concepts/Conditional probability tables.md, Elicitation, and
+wiki/concepts/Quantitative model validation.md, Limitations carried forward:
+parameter provenance and independent validation remain separate requirements.
+
+OPTIONAL PROPERTY CONVENTION (DESIGN PROPOSAL, NOT XSD-ENFORCED)
+Use one key=value entry per PROPERTY; repeat source entries when needed.
+Network: clinical_question, source_path, source_locator, source_sha256,
+source_version, statement_id, recommendation_strength, evidence_quality,
+population, setting, time_horizon, model_version, validation_status.
+Variable: label, clinical_role, definition, terminology_system,
+terminology_code, instrument, units, time_window, discretization,
+missingness_policy, source_path, source_locator.
+Definition: parameter_method, parameter_status, source_path, source_locator,
+population, time_horizon, elicitation_date, reviewer, uncertainty_description.
+For example: source_path=medical-knowledge/02-md/STATEMENT-07.md and
+source_locator=Identification of Treatment-Resistant Schizophrenia.
+Use source_reported, elicited or modeler_assumption in parameter_method to
+distinguish evidence from inference; never invent a terminology code or locator.
+These keys are advisory. PROPERTY syntax, presence, clinical meaning, and
+source freshness are not checked here. Doses and monitoring schedules from
+the historical guideline are not embedded as current prescribing rules.
+
+CHECKS REQUIRED OUTSIDE THIS XSD BEFORE INFERENCE
+1. At least one variable per network; an acyclic graph without self-parenting.
+   No cross-network edges; combine networks explicitly if dependencies exist.
+2. Nature and decision variables need a nonempty, mutually exclusive and
+   exhaustive outcome set. Utility variables use scalar utility tables, not
+   categorical probability distributions; check engine-specific conventions.
+3. Every nature variable needs a definition (including root priors). Decision
+   nodes may omit a probability table; informational parents/policies and
+   utility definitions need engine-specific influence-diagram validation.
+4. For nature X with ordered parents P1,...,Pk, TABLE length must equal
+   |X| times the product of |Pi|. X changes fastest, Pk next, P1 slowest,
+   following declaration order. Each conditional row must lie in [0,1] and
+   sum to 1 within a documented tolerance. Utility tables have one real value
+   per parent configuration and are not normalized as probabilities.
+5. Do not fill unknown CPTs with arbitrary uniform values to pass validation.
+   A named but empty NETWORK or an undefined nature variable can pass this
+   format validator; neither is a complete executable model.
+6. Missing patient evidence normally means no observation is entered, not a
+   disease OUTCOME named unknown. Model an explicit missingness/measurement
+   state only when its meaning and parameters are defined. Record evidence
+   separately; XMLBIF 0.3 has no standard patient-observation element.
+]]></xs:documentation>
+  </xs:annotation>
+
+  <xs:simpleType name="Identifier">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Za-z_][A-Za-z0-9_]*"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="VariableKind">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="nature"/>
+      <xs:enumeration value="decision"/>
+      <xs:enumeration value="utility"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="FiniteReal">
+    <xs:restriction base="xs:double">
+      <xs:minExclusive value="-INF"/>
+      <xs:maxExclusive value="INF"/>
+      <xs:pattern value="[+\-]?([0-9]+(\.[0-9]*)?|\.[0-9]+)([eE][+\-]?[0-9]+)?"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="RealList">
+    <xs:list itemType="FiniteReal"/>
+  </xs:simpleType>
+
+  <xs:simpleType name="NonemptyTable">
+    <xs:restriction base="RealList">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:group name="DefinitionMetadataAndParents">
+    <xs:choice>
+      <xs:element name="GIVEN" type="Identifier"/>
+      <xs:element name="PROPERTY" type="xs:string"/>
+    </xs:choice>
+  </xs:group>
+
+  <xs:complexType name="DefinitionType">
+    <xs:sequence>
+      <xs:group ref="DefinitionMetadataAndParents" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:choice>
+        <xs:sequence>
+          <xs:element name="FOR" type="Identifier"/>
+          <xs:group ref="DefinitionMetadataAndParents" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="TABLE" type="NonemptyTable"/>
+        </xs:sequence>
+        <xs:sequence>
+          <xs:element name="TABLE" type="NonemptyTable"/>
+          <xs:group ref="DefinitionMetadataAndParents" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="FOR" type="Identifier"/>
+        </xs:sequence>
+      </xs:choice>
+      <xs:group ref="DefinitionMetadataAndParents" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="BIF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="NETWORK" minOccurs="1" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NAME" type="Identifier"/>
+              <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="PROPERTY" type="xs:string"/>
+                <xs:element name="VARIABLE">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="NAME" type="Identifier"/>
+                      <xs:choice minOccurs="0" maxOccurs="unbounded">
+                        <xs:element name="OUTCOME" type="Identifier"/>
+                        <xs:element name="PROPERTY" type="xs:string"/>
+                      </xs:choice>
+                    </xs:sequence>
+                    <xs:attribute name="TYPE" type="VariableKind" default="nature"/>
+                  </xs:complexType>
+                  <xs:unique name="uniqueOutcomes">
+                    <xs:selector xpath="OUTCOME"/>
+                    <xs:field xpath="."/>
+                  </xs:unique>
+                </xs:element>
+                <xs:element name="DEFINITION" type="DefinitionType">
+                  <xs:unique name="uniqueParents">
+                    <xs:selector xpath="GIVEN"/>
+                    <xs:field xpath="."/>
+                  </xs:unique>
+                </xs:element>
+              </xs:choice>
+            </xs:sequence>
+          </xs:complexType>
+          <xs:key name="variableNames">
+            <xs:selector xpath="VARIABLE"/>
+            <xs:field xpath="NAME"/>
+          </xs:key>
+          <xs:key name="definitionTargets">
+            <xs:selector xpath="DEFINITION"/>
+            <xs:field xpath="FOR"/>
+          </xs:key>
+          <xs:keyref name="definedVariableExists" refer="variableNames">
+            <xs:selector xpath="DEFINITION/FOR"/>
+            <xs:field xpath="."/>
+          </xs:keyref>
+          <xs:keyref name="parentVariableExists" refer="variableNames">
+            <xs:selector xpath="DEFINITION/GIVEN"/>
+            <xs:field xpath="."/>
+          </xs:keyref>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="VERSION" type="xs:string" use="required" fixed="0.3"/>
+    </xs:complexType>
+    <xs:key name="networkNames">
+      <xs:selector xpath="NETWORK"/>
+      <xs:field xpath="NAME"/>
+    </xs:key>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,1979 @@
+﻿6/22/26, 5:02 PM Diovan (valsartan) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+valsartan (Rx)
+Brand and Other Names: Diovan
+Classes: ARBs
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+tablet
+
+40mg
+
+80mg
+
+160mg
+
+320mg
+
+Hypertension
+
+Indicated for treatment of hypertension by lowering blood pressure (BP)
+
+Patients who are not volume-depleted: 80-160 mg PO qDay initially; dosing range 80-
+320 mg qDay
+
+May increase to a maximum of 320 mg/day or a diuretic may be added if additional
+antihypertensive effect is required
+
+Antihypertensive effect is substantially present within 2 weeks and maximal reduction is
+generally attained after 4 weeks
+
+Addition of a diuretic has a greater effect than dose increases >80 mg
+
+Heart Failure
+
+Indicated to reduce risk of hospitalization for patients with heartfailure (NYHA class II-IV)
+
+40 mg PO BID initially; may titrate to 80-160 mg BID, as tolerated
+
+Consider reducing dose of concomitant diuretics
+
+https://reference.medscape.com/drug/diovan-valsartan-342325 1/34
+
+
+
+6/22/26, 5:02 PM Diovan (valsartan) dosing, indications, interactions, adverse effects, and more
+
+In clinical trials, maximum daily dose administered 320 mg in divided doses
+
+Post-Myocardial Infarction
+
+Indicated to reduce the risk of cardiovascular death in clinically stable patients with left
+ventricular failure or left ventricular dysfunction following myocardial infarction (MI)
+
+May be initiated as early as 12 hr after MI
+
+20 mg PO BID initially; may increase to 40 mg PO BID within 7 days, with subsequent
+titrations to target maintenance dose of 160 mg BID as tolerated
+
+If symptomatic hypotension or renal dysfunction occurs, consider dose reduction
+
+May administer with other standard post-MI treatment (eg, thrombolytics, aspirin, beta-
+blockers, statins)
+
+Dosage Modifications
+
+Renal impairment
+
+CrCl ≥30 mL/min: No dose adjustment necessary
+
+CrCl <30 mL/min: No dosage adjustments provided in the manufacturer’s labeling;
+use caution
+
+Dialysis: Drug is not significantly removed through dialysis
+
+Hepatic impairment
+
+Mild-to-moderate liver impairment: No dosage adjustments necessary
+
+Severe liver impairment: No dosage adjustments provided in the manufacturer’s
+labeling
+
+Dosing Considerations
+
+Generally, adjust dosage monthly (maximal reduction of BP attained after 4 weeks);
+adjust more aggressively in high-risk patients and patients with comorbidities
+
+PEDIATRIC
+Dosage Forms & Strengths
+
+tablet
+
+40mg
+
+https://reference.medscape.com/drug/diovan-valsartan-342325 2/34
+
+
+
+6/22/26, 5:02 PM Diovan (valsartan) dosing, indications, interactions, adverse effects, and more
+
+80mg
+
+160mg
+
+320mg
+
+Hypertension
+
+Indicated for treatment of hypertension by lowering blood pressure (BP) in children aged
+≥1 year
+
+<1 year: Not recommended
+
+≥1 years
+
+1 mg/kg PO qDay (up to 40 mg total); adjust dosage according to BP response 
+
+Consider higher starting dose of 2 mg/kg in selected cases when a greater BP
+reduction is needed
+
+Adjust according to BP response and tolerability, not to exceed 4 mg/kg qDay (160
+mg/day)
+
+Dosage Modifications
+
+Renal impairment
+
+GFR ≥30 mL/min/1.73m2: No dosage adjustment necessary
+
+GFR <30 mL/min/1.73m2 or hemodialysis: No data available
+
+Hepatic impairment
+
+Mild-to-moderate: Limited clinical experience; not dosage adjustment necessary
+
+Severe: No dosing recommendation can be provided
+
+Dosing Considerations
+
+Tablets and oral suspension are not substitutable on a mg-per-mg basis; systemic
+exposure (AUC) is 60% higher with suspension compared with tablets
+
+Do not combine 2 dosage forms to achieve total dose
+
+Oral suspension recommended for the following patients
+
+Aged 1-5 years
+
+Aged >5 years unable to swallow tablets
+
+Whom calculated dose (mg/kg) does not correspond to available tablet strengths
+
+When switching between suspension and tablets, dose adjustment may be necessary
+
+https://reference.medscape.com/drug/diovan-valsartan-342325 3/34
+
+
+
+6/22/26, 5:02 PM Diovan (valsartan) dosing, indications, interactions, adverse effects, and more
+
+Interactions
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and valsartan
+No Interactions Found
+Interactions Found
+Contraindicated
+
+Serious
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+Contraindicated (2)
+
+aliskiren
+valsartan decreases effects of aliskiren by Other (see comment). Contraindicated.
+Comment: Aliskiren use contraindicated with ARBs in patients with diabetes; avoid
+coadministration with ARBs if GFR. In patients who are elderly, volume-depleted
+(including those on diuretic therapy), or with compromised renal function,
+coadministration of ARBS with drugs that affect RAAS may increase the risk of
+renal impairment (including acute renal failure) and cause loss of antihypertensive
+effect. Monitor renal function periodically.
+
+sparsentan
+sparsentan, valsartan. Either increases toxicity of the other by pharmacodynamic
+synergism. Contraindicated. Coadministration of ARBs with sparsentan is
+associated with increased risks of hypotension, syncope, hyperkalemia, and
+changes in renal function (eg, acute renal failure).
+
+Serious (19)
+
+baricitinib
+valsartan will increase the level or effect of baricitinib by decreasing elimination.
+Avoid or Use Alternate Drug. Coadministration of baricitinib with strong organic
+anion transporter 3 (OAT3) inhibitors is not recommended.
+
+benazepril
+valsartan, benazepril. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Dual blockade of renin-angiotensin system
+increases risks of hypotension, hyperkalemia, and renal impairment.
+
+captopril
+valsartan, captopril. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Dual blockade of renin-angiotensin system
+increases risks of hypotension, hyperkalemia, and renal impairment.
+
+https://reference.medscape.com/drug/diovan-valsartan-342325 4/34
+
+
+
+6/22/26, 5:02 PM Diovan (valsartan) dosing, indications, interactions, adverse effects, and more
+
+ceftobiprole medocaril sodium
+ceftobiprole medocaril sodium will increase the level or effect of valsartan by Other
+(see comment). Avoid or Use Alternate Drug. Ceftobiprole (an OATP1B1/1B3
+inhibitor) may increase plasma concentrations of OATP1B1 and OATP1B3
+substrates.
+
+eluxadoline
+valsartan increases levels of eluxadoline by decreasing metabolism. Avoid or Use
+Alternate Drug. Decrease eluxadoline dose to 75 mg PO BID if coadministered with
+OATP1B1 inhibitors. .
+
+enalapril
+valsartan, enalapril. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Dual blockade of renin-angiotensin system
+increases risks of hypotension, hyperkalemia, and renal impairment.
+
+enasidenib
+enasidenib will increase the level or effect of valsartan by Other (see comment).
+Avoid or Use Alternate Drug. Avoid coadministration of enasidenib with sensitive
+OATP1B1, OATP1B3, or BCRP substrates, for which minimal concentration
+changes may lead to serious toxicities. If unavoidable, decrease the substrate(s)
+dosage in accordance with their Prescribing Information.
+
+fosinopril
+valsartan, fosinopril. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Dual blockade of renin-angiotensin system
+increases risks of hypotension, hyperkalemia, and renal impairment.
+
+leniolisib
+leniolisib will increase the level or effect of valsartan by Other (see comment).
+Avoid or Use Alternate Drug. Leniolisib, an OATP1B1 and OATP1B3 inhibitor, may
+increase systemic exposure of these substrates
+
+lisinopril
+valsartan, lisinopril. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Dual blockade of renin-angiotensin system
+increases risks of hypotension, hyperkalemia, and renal impairment.
+
+lithium
+valsartan increases toxicity of lithium by decreasing renal clearance. Avoid or Use
+Alternate Drug.
+
+lofexidine
+lofexidine, valsartan. Either increases effects of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Avoid coadministration with other drugs
+that decrease pulse or blood pressure to mitigate risk of excessive bradycardia and
+hypotension.
+
+moexipril
+valsartan, moexipril. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Dual blockade of renin-angiotensin system
+increases risks of hypotension, hyperkalemia, and renal impairment.
+
+https://reference.medscape.com/drug/diovan-valsartan-342325 5/34
+
+
+
+6/22/26, 5:02 PM Diovan (valsartan) dosing, indications, interactions, adverse effects, and more
+
+perindopril
+valsartan, perindopril. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Dual blockade of renin-angiotensin system
+increases risks of hypotension, hyperkalemia, and renal impairment.
+
+potassium phosphates, IV
+valsartan and potassium phosphates, IV both increase serum potassium. Avoid or
+Use Alternate Drug.
+
+quinapril
+valsartan, quinapril. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Dual blockade of renin-angiotensin system
+increases risks of hypotension, hyperkalemia, and renal impairment.
+
+ramipril
+valsartan, ramipril. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Dual blockade of renin-angiotensin system
+increases risks of hypotension, hyperkalemia, and renal impairment.
+
+trandolapril
+valsartan, trandolapril. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Dual blockade of renin-angiotensin system
+increases risks of hypotension, hyperkalemia, and renal impairment.
+
+trofinetide
+trofinetide will increase the level or effect of valsartan by Other (see comment).
+Avoid or Use Alternate Drug. Trofinetide (an OATP131 and OATP13B inhibitor)
+may increase plasma levels of OATP131 or OATP13B substrates. Avoid
+coadministration with sensitive substrates.
+
+Monitor Closely (172)
+
+acebutolol
+valsartan and acebutolol both increase serum potassium. Use Caution/Monitor.
+
+acebutolol, valsartan. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of fetal compromise if given during pregnancy.
+
+aceclofenac
+valsartan and aceclofenac both increase serum potassium. Use Caution/Monitor.
+
+acemetacin
+valsartan and acemetacin both increase serum potassium. Use Caution/Monitor.
+
+albuterol
+albuterol decreases effects of valsartan by pharmacodynamic antagonism. Use
+Caution/Monitor. Monitor BP.
+
+albuterol inhaled
+albuterol inhaled decreases effects of valsartan by pharmacodynamic antagonism.
+Use Caution/Monitor. Monitor BP.
+
+https://reference.medscape.com/drug/diovan-valsartan-342325 6/34
+
+
+
+6/22/26, 5:02 PM Diovan (valsartan) dosing, indications, interactions, adverse effects, and more
+
+aldesleukin
+aldesleukin increases effects of valsartan by pharmacodynamic synergism. Use
+Caution/Monitor. Risk of hypotension.
+
+amifostine
+amifostine, valsartan. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration with blood pressure
+lowering agents may increase the risk and severity of hypotension associated with
+amifostine. When amifostine is used at chemotherapeutic doses, withhold blood
+pressure lowering medications for 24 hr prior to amifostine; if blood pressure
+lowering medication cannot be withheld, do not administer amifostine.
+
+amiloride
+valsartan and amiloride both increase serum potassium. Modify Therapy/Monitor
+Closely.
+
+apalutamide
+apalutamide will decrease the level or effect of valsartan by increasing elimination.
+Use Caution/Monitor. Apalutamide weakly induces OATP1B1 and may decrease
+systemic exposure of drugs that are OATP1B1 substrates.
+
+arformoterol
+arformoterol decreases effects of valsartan by pharmacodynamic antagonism. Use
+Caution/Monitor. Monitor BP.
+
+aspirin
+valsartan and aspirin both increase serum potassium. Use Caution/Monitor.
+
+aspirin decreases effects of valsartan by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+valsartan, aspirin. Either increases toxicity of the other by Other (see comment). Use
+Caution/Monitor. Comment: May result in renal function deterioration, particularly in
+elderly or volume depleted individuals.
+
+aspirin rectal
+valsartan and aspirin rectal both increase serum potassium. Use Caution/Monitor.
+
+aspirin/citric acid/sodium bicarbonate
+aspirin/citric acid/sodium bicarbonate decreases effects of valsartan by
+pharmacodynamic antagonism. Modify Therapy/Monitor Closely. NSAIDs decrease
+synthesis of vasodilating renal prostaglandins, and thus affect fluid homeostasis
+and may diminish antihypertensive effect.
+
+valsartan and aspirin/citric acid/sodium bicarbonate both increase serum potassium.
+Use Caution/Monitor.
+
+valsartan, aspirin/citric acid/sodium bicarbonate. Either increases toxicity of the
+other by Other (see comment). Use Caution/Monitor. Comment: May result in renal
+function deterioration, particularly in elderly or volume depleted individuals.
+
+https://reference.medscape.com/drug/diovan-valsartan-342325 7/34
+
+
+
+6/22/26, 5:02 PM Diovan (valsartan) dosing, indications, interactions, adverse effects, and more
+
+atenolol
+valsartan and atenolol both increase serum potassium. Use Caution/Monitor.
+
+atenolol, valsartan. Mechanism: pharmacodynamic synergism. Use Caution/Monitor.
+Risk of fetal compromise if given during pregnancy.
+
+atorvastatin
+atorvastatin will increase the level or effect of valsartan by Other (see comment).
+Use Caution/Monitor. The results from an in vitro study with human liver tissue
+indicate that valsartan is a substrate of the hepatic uptake transporter OATP1B1;
+coadministration with OATP1B1 inhibitors may increase valsartan systemic
+exposure
+
+valsartan increases toxicity of atorvastatin by Other (see comment). Use
+Caution/Monitor. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+avanafil
+avanafil increases effects of valsartan by pharmacodynamic synergism. Use
+Caution/Monitor. Risk of hypotension.
+
+baxdrostat
+baxdrostat and valsartan both increase serum potassium. Use Caution/Monitor. Risk
+of hyperkalemia.
+
+betaxolol
+valsartan and betaxolol both increase serum potassium. Use Caution/Monitor.
+
+betaxolol, valsartan. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of fetal compromise if given during pregnancy.
+
+bisoprolol
+valsartan and bisoprolol both increase serum potassium. Use Caution/Monitor.
+
+bisoprolol, valsartan. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of fetal compromise if given during pregnancy.
+
+bretylium
+valsartan, bretylium. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Each drug may cause hypotension.
+
+brimonidine
+brimonidine increases effects of valsartan by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+brimonidine topical
+brimonidine topical increases effects of valsartan by pharmacodynamic synergism.
+Use Caution/Monitor.
+
+bumetanide
+valsartan increases and bumetanide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+bumetanide intranasal
+
+https://reference.medscape.com/drug/diovan-valsartan-342325 8/34
+
+
+
+6/22/26, 5:02 PM Diovan (valsartan) dosing, indications, interactions, adverse effects, and more
+
+valsartan increases and bumetanide intranasal decreases serum potassium. Effect
+of interaction is not clear, use caution. Use Caution/Monitor.
+
+canagliflozin
+valsartan and canagliflozin both increase serum potassium. Use Caution/Monitor.
+
+carbachol/brimonidine ophthalmic
+carbachol/brimonidine ophthalmic increases effects of valsartan by
+pharmacodynamic synergism. Use Caution/Monitor.
+
+carbamazepine
+carbamazepine will increase the level or effect of valsartan by Other (see
+comment). Use Caution/Monitor. The results from an in vitro study with human liver
+tissue indicate that valsartan is a substrate of the hepatic uptake transporter
+OATP1B1; coadministration with OATP1B1 inhibitors may increase valsartan
+systemic exposure
+
+carbenoxolone
+valsartan increases and carbenoxolone decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+carvedilol
+valsartan and carvedilol both increase serum potassium. Use Caution/Monitor.
+
+carvedilol, valsartan. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of fetal compromise if given during pregnancy.
+
+caspofungin
+caspofungin will increase the level or effect of valsartan by Other (see comment).
+Use Caution/Monitor. The results from an in vitro study with human liver tissue
+indicate that valsartan is a substrate of the hepatic uptake transporter OATP1B1;
+coadministration with OATP1B1 inhibitors may increase valsartan systemic
+exposure
+
+celecoxib
+valsartan and celecoxib both increase serum potassium. Use Caution/Monitor.
+
+celecoxib decreases effects of valsartan by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+valsartan, celecoxib. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+celiprolol
+valsartan and celiprolol both increase serum potassium. Use Caution/Monitor.
+
+celiprolol, valsartan. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of fetal compromise if given during pregnancy.
+
+chlorothiazide
+
+https://reference.medscape.com/drug/diovan-valsartan-342325 9/34
+
+
+
+6/22/26, 5:02 PM Diovan (valsartan) dosing, indications, interactions, adverse effects, and more
+
+valsartan increases and chlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+chlorthalidone
+valsartan increases and chlorthalidone decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+choline magnesium trisalicylate
+valsartan and choline magnesium trisalicylate both increase serum potassium. Use
+Caution/Monitor.
+
+choline magnesium trisalicylate decreases effects of valsartan by pharmacodynamic
+antagonism. Modify Therapy/Monitor Closely. NSAIDs decrease synthesis of
+vasodilating renal prostaglandins, and thus affect fluid homeostasis and may
+diminish antihypertensive effect.
+
+valsartan, choline magnesium trisalicylate. Either increases toxicity of the other by
+Other (see comment). Use Caution/Monitor. Comment: May result in renal function
+deterioration, particularly in elderly or volume depleted individuals.
+
+clarithromycin
+clarithromycin will increase the level or effect of valsartan by Other (see comment).
+Use Caution/Monitor. The results from an in vitro study with human liver tissue
+indicate that valsartan is a substrate of the hepatic uptake transporter OATP1B1;
+coadministration with OATP1B1 inhibitors may increase valsartan systemic
+exposure
+
+cyclopenthiazide
+valsartan increases and cyclopenthiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+cyclosporine
+cyclosporine and valsartan both increase Other (see comment). Use
+Caution/Monitor. Cyclosporine and valsartan both increase the risk of hyperkalemia
+and nephrotoxicity.
+
+dalteparin
+dalteparin increases toxicity of valsartan by Other (see comment). Use
+Caution/Monitor. Comment: Low molecular weight heparins may suppress adrenal
+aldosterone secretion, which can potentially cause hyperkalemia.
+
+diclofenac
+valsartan and diclofenac both increase serum potassium. Use Caution/Monitor.
+
+diclofenac decreases effects of valsartan by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+valsartan, diclofenac. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+https://reference.medscape.com/drug/diovan-valsartan-342325 10/34
+
+
+
+6/22/26, 5:02 PM Diovan (valsartan) dosing, indications, interactions, adverse effects, and more
+
+diflunisal
+valsartan and diflunisal both increase serum potassium. Use Caution/Monitor.
+
+diflunisal decreases effects of valsartan by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+valsartan, diflunisal. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+digoxin
+valsartan will increase the level or effect of digoxin by decreasing renal clearance.
+Use Caution/Monitor. Monitor digoxin levels closely when coadministered with
+drugs that may decrease glomerular filtration or tubular secretion.
+
+dobutamine
+valsartan increases and dobutamine decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+dopexamine
+valsartan increases and dopexamine decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+drospirenone
+valsartan and drospirenone both increase serum potassium. Modify
+Therapy/Monitor Closely.
+
+eltrombopag
+eltrombopag will decrease the level or effect of valsartan by Other (see comment).
+Use Caution/Monitor. The results from an in vitro study with human liver tissue
+indicate that valsartan is a substrate of the hepatic uptake transporter OATP1B1;
+coadministration with OATP1B1 inhibitors may increase valsartan systemic
+exposure
+
+encorafenib
+encorafenib will increase the level or effect of valsartan by Other (see comment).
+Modify Therapy/Monitor Closely. Encorafenib (a OATP1B1 and OATP1B3 inhibitor)
+may increase the concentration and toxicities of OATP1B1 and OATP1B3
+substrates. Closely monitor for signs and symptoms of increased exposure and
+consider adjusting the dose of these substrates.
+
+enoxaparin
+enoxaparin increases toxicity of valsartan by Other (see comment). Use
+Caution/Monitor. Comment: Low molecular weight heparins may suppress adrenal
+aldosterone secretion, which can potentially cause hyperkalemia.
+
+eplerenone
+valsartan, eplerenone. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of hyperkalemia.
+
+eprosartan
+
+https://reference.medscape.com/drug/diovan-valsartan-342325 11/34
+
+
+
+6/22/26, 5:02 PM Diovan (valsartan) dosing, indications, interactions, adverse effects, and more
+
+eprosartan and valsartan both increase serum potassium. Use Caution/Monitor.
+
+erythromycin base
+erythromycin base will increase the level or effect of valsartan by Other (see
+comment). Use Caution/Monitor. The results from an in vitro study with human liver
+tissue indicate that valsartan is a substrate of the hepatic uptake transporter
+OATP1B1; coadministration with OATP1B1 inhibitors may increase valsartan
+systemic exposure
+
+erythromycin ethylsuccinate
+erythromycin ethylsuccinate will increase the level or effect of valsartan by Other
+(see comment). Use Caution/Monitor. The results from an in vitro study with human
+liver tissue indicate that valsartan is a substrate of the hepatic uptake transporter
+OATP1B1; coadministration with OATP1B1 inhibitors may increase valsartan
+systemic exposure
+
+erythromycin lactobionate
+erythromycin lactobionate will increase the level or effect of valsartan by Other (see
+comment). Use Caution/Monitor. The results from an in vitro study with human liver
+tissue indicate that valsartan is a substrate of the hepatic uptake transporter
+OATP1B1; coadministration with OATP1B1 inhibitors may increase valsartan
+systemic exposure
+
+erythromycin stearate
+erythromycin stearate will increase the level or effect of valsartan by Other (see
+comment). Use Caution/Monitor. The results from an in vitro study with human liver
+tissue indicate that valsartan is a substrate of the hepatic uptake transporter
+OATP1B1; coadministration with OATP1B1 inhibitors may increase valsartan
+systemic exposure
+
+esmolol
+valsartan and esmolol both increase serum potassium. Use Caution/Monitor.
+
+esmolol, valsartan. Mechanism: pharmacodynamic synergism. Use Caution/Monitor.
+Risk of fetal compromise if given during pregnancy.
+
+ethacrynic acid
+valsartan increases and ethacrynic acid decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+etodolac
+valsartan and etodolac both increase serum potassium. Use Caution/Monitor.
+
+etodolac decreases effects of valsartan by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+valsartan, etodolac. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+exenatide injectable solution
+
+https://reference.medscape.com/drug/diovan-valsartan-342325 12/34
+
+
+
+6/22/26, 5:02 PM Diovan (valsartan) dosing, indications, interactions, adverse effects, and more
+
+valsartan increases effects of exenatide injectable solution by Other (see comment).
+Use Caution/Monitor. Comment: Angiotensin II receptor antagonists may enhance
+hypoglycemic effects of antidiabetic agents by improving insulin sensitivity. Monitor
+patients for changes in glycemic control.
+
+exenatide injectable suspension
+valsartan increases effects of exenatide injectable suspension by Other (see
+comment). Use Caution/Monitor. Comment: Angiotensin II receptor antagonists may
+enhance hypoglycemic effects of antidiabetic agents by improving insulin sensitivity.
+Monitor patients for changes in glycemic control.
+
+fenbufen
+valsartan and fenbufen both increase serum potassium. Use Caution/Monitor.
+
+fenoprofen
+valsartan and fenoprofen both increase serum potassium. Use Caution/Monitor.
+
+fenoprofen decreases effects of valsartan by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+valsartan, fenoprofen. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+flurbiprofen
+valsartan and flurbiprofen both increase serum potassium. Use Caution/Monitor.
+
+flurbiprofen decreases effects of valsartan by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+valsartan, flurbiprofen. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: May result in renal function
+deterioration, particularly in elderly or volume depleted individuals.
+
+fluvastatin
+valsartan increases toxicity of fluvastatin by Other (see comment). Use
+Caution/Monitor. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+formoterol
+formoterol decreases effects of valsartan by pharmacodynamic antagonism. Use
+Caution/Monitor. Monitor BP.
+
+foscarbidopa/foslevodopa
+foscarbidopa/foslevodopa increases effects of valsartan by pharmacodynamic
+synergism. Use Caution/Monitor. Consider decreasing dosage of antihypertensive
+agent.
+
+fostemsavir
+
+https://reference.medscape.com/drug/diovan-valsartan-342325 13/34
+
+
+
+6/22/26, 5:02 PM Diovan (valsartan) dosing, indications, interactions, adverse effects, and more
+
+fostemsavir will increase the level or effect of valsartan by Other (see comment).
+Modify Therapy/Monitor Closely. Fostemsavir inhibits OATP1B1/3 transporter. If
+possible, avoid coadministration or modify dose of OATP1B1/3 substrates
+coadministered with fostemsavir.
+
+furosemide
+valsartan increases and furosemide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+gemfibrozil
+gemfibrozil will increase the level or effect of valsartan by Other (see comment).
+Use Caution/Monitor. The results from an in vitro study with human liver tissue
+indicate that valsartan is a substrate of the hepatic uptake transporter OATP1B1;
+coadministration with OATP1B1 inhibitors may increase valsartan systemic
+exposure
+
+gentamicin
+valsartan increases and gentamicin decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+glyburide
+glyburide will increase the level or effect of valsartan by Other (see comment). Use
+Caution/Monitor. The results from an in vitro study with human liver tissue indicate
+that valsartan is a substrate of the hepatic uptake transporter OATP1B1;
+coadministration with OATP1B1 inhibitors may increase valsartan systemic
+exposure
+
+heparin
+heparin increases toxicity of valsartan by Other (see comment). Use
+Caution/Monitor. Comment: Low molecular weight heparins may suppress adrenal
+aldosterone secretion, which can potentially cause hyperkalemia.
+
+hydrochlorothiazide
+valsartan increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+ibuprofen
+valsartan and ibuprofen both increase serum potassium. Use Caution/Monitor.
+
+ibuprofen decreases effects of valsartan by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+valsartan, ibuprofen. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+ibuprofen IV
+ibuprofen IV decreases effects of valsartan by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+https://reference.medscape.com/drug/diovan-valsartan-342325 14/34
+
+
+
+6/22/26, 5:02 PM Diovan (valsartan) dosing, indications, interactions, adverse effects, and more
+
+valsartan and ibuprofen IV both increase serum potassium. Use Caution/Monitor.
+
+valsartan, ibuprofen IV. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: May result in renal function
+deterioration, particularly in elderly or volume depleted individuals.
+
+iloperidone
+valsartan, iloperidone. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of iloperidone with
+drugs that lower blood pressure may cause additive effects. Consider lowering
+dosage of other drugs that lower blood pressure.
+
+indapamide
+valsartan increases and indapamide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+indomethacin
+valsartan and indomethacin both increase serum potassium. Use Caution/Monitor.
+
+indomethacin decreases effects of valsartan by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+valsartan, indomethacin. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: May result in renal function
+deterioration, particularly in elderly or volume depleted individuals.
+
+insulin aspart
+valsartan increases effects of insulin aspart by unspecified interaction mechanism.
+Use Caution/Monitor. Concomitant use of insulin and ARBs may require insulin
+dosage adjustment and increased glucose monitoring.
+
+insulin aspart protamine/insulin aspart
+valsartan increases effects of insulin aspart protamine/insulin aspart by unspecified
+interaction mechanism. Use Caution/Monitor. Concomitant use of insulin and ARBs
+may require insulin dosage adjustment and increased glucose monitoring.
+
+insulin degludec
+valsartan, insulin degludec. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Both drugs decrease blood
+glucose.
+
+valsartan increases effects of insulin degludec by unspecified interaction
+mechanism. Use Caution/Monitor. Concomitant use of insulin and ARBs may require
+insulin dosage adjustment and increased glucose monitoring.
+
+insulin degludec/insulin aspart
+valsartan, insulin degludec/insulin aspart. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Both drugs decrease blood
+glucose.
+
+https://reference.medscape.com/drug/diovan-valsartan-342325 15/34
+
+
+
+6/22/26, 5:02 PM Diovan (valsartan) dosing, indications, interactions, adverse effects, and more
+
+insulin detemir
+valsartan increases effects of insulin detemir by unspecified interaction mechanism.
+Use Caution/Monitor. Concomitant use of insulin and ARBs may require insulin
+dosage adjustment and increased glucose monitoring.
+
+insulin glargine
+valsartan increases effects of insulin glargine by unspecified interaction mechanism.
+Use Caution/Monitor. Concomitant use of insulin and ARBs may require insulin
+dosage adjustment and increased glucose monitoring.
+
+insulin glulisine
+valsartan increases effects of insulin glulisine by unspecified interaction mechanism.
+Use Caution/Monitor. Concomitant use of insulin and ARBs may require insulin
+dosage adjustment and increased glucose monitoring.
+
+insulin icodec
+valsartan increases effects of insulin icodec by pharmacodynamic synergism. Use
+Caution/Monitor. Concomitant use of insulin and ARBs may require insulin dosage
+adjustment and increased glucose monitoring.
+
+insulin inhaled
+valsartan, insulin inhaled. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Both drugs decrease blood glucose.
+
+valsartan increases effects of insulin inhaled by unspecified interaction mechanism.
+Use Caution/Monitor. Concomitant use of insulin and ARBs may require insulin
+dosage adjustment and increased glucose monitoring.
+
+insulin isophane human/insulin regular human
+valsartan increases effects of insulin isophane human/insulin regular human by
+unspecified interaction mechanism. Use Caution/Monitor. Concomitant use of insulin
+and ARBs may require insulin dosage adjustment and increased glucose
+monitoring.
+
+insulin lispro
+valsartan increases effects of insulin lispro by unspecified interaction mechanism.
+Use Caution/Monitor. Concomitant use of insulin and ARBs may require insulin
+dosage adjustment and increased glucose monitoring.
+
+insulin lispro protamine/insulin lispro
+valsartan increases effects of insulin lispro protamine/insulin lispro by unspecified
+interaction mechanism. Use Caution/Monitor. Concomitant use of insulin and ARBs
+may require insulin dosage adjustment and increased glucose monitoring.
+
+insulin NPH
+valsartan increases effects of insulin NPH by unspecified interaction mechanism.
+Use Caution/Monitor. Concomitant use of insulin and ARBs may require insulin
+dosage adjustment and increased glucose monitoring.
+
+insulin regular human
+valsartan increases effects of insulin regular human by unspecified interaction
+mechanism. Use Caution/Monitor. Concomitant use of insulin and ARBs may require
+
+https://reference.medscape.com/drug/diovan-valsartan-342325 16/34
+
+
+
+6/22/26, 5:02 PM Diovan (valsartan) dosing, indications, interactions, adverse effects, and more
+
+insulin dosage adjustment and increased glucose monitoring.
+
+ketoconazole
+ketoconazole will increase the level or effect of valsartan by Other (see comment).
+Use Caution/Monitor. The results from an in vitro study with human liver tissue
+indicate that valsartan is a substrate of the hepatic uptake transporter OATP1B1;
+coadministration with OATP1B1 inhibitors may increase valsartan systemic
+exposure
+
+ketoprofen
+valsartan and ketoprofen both increase serum potassium. Use Caution/Monitor.
+
+ketoprofen decreases effects of valsartan by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+valsartan, ketoprofen. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+ketorolac
+valsartan and ketorolac both increase serum potassium. Use Caution/Monitor.
+
+ketorolac decreases effects of valsartan by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+valsartan, ketorolac. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+ketorolac intranasal
+valsartan and ketorolac intranasal both increase serum potassium. Use
+Caution/Monitor.
+
+ketorolac intranasal decreases effects of valsartan by pharmacodynamic
+antagonism. Modify Therapy/Monitor Closely. NSAIDs decrease synthesis of
+vasodilating renal prostaglandins, and thus affect fluid homeostasis and may
+diminish antihypertensive effect.
+
+valsartan, ketorolac intranasal. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: May result in renal function
+deterioration, particularly in elderly or volume depleted individuals.
+
+labetalol
+valsartan and labetalol both increase serum potassium. Use Caution/Monitor.
+
+labetalol, valsartan. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of fetal compromise if given during pregnancy.
+
+letermovir
+
+https://reference.medscape.com/drug/diovan-valsartan-342325 17/34
+
+
+
+6/22/26, 5:02 PM Diovan (valsartan) dosing, indications, interactions, adverse effects, and more
+
+valsartan increases levels of letermovir by decreasing metabolism. Use
+Caution/Monitor. Coadminstration of letermovir, an OATP1B1/3 substrate, with
+OATP1B1/3 inhibitors may increase letermovir plasma concentrations.
+
+letermovir increases levels of valsartan by Other (see comment). Use
+Caution/Monitor. Comment: Letermovir, an OATP1B1/3 inhibitor may increase
+plasma concentrations of coadministered OATP1B1/3 substrates.
+
+levalbuterol
+levalbuterol decreases effects of valsartan by pharmacodynamic antagonism. Use
+Caution/Monitor. Monitor BP.
+
+levodopa
+levodopa increases effects of valsartan by pharmacodynamic synergism. Use
+Caution/Monitor. Consider decreasing dosage of antihypertensive agent.
+
+levoketoconazole
+levoketoconazole will increase the level or effect of valsartan by Other (see
+comment). Use Caution/Monitor. The results from an in vitro study with human liver
+tissue indicate that valsartan is a substrate of the hepatic uptake transporter
+OATP1B1; coadministration with OATP1B1 inhibitors may increase valsartan
+systemic exposure
+
+liraglutide
+valsartan increases effects of liraglutide by Other (see comment). Use
+Caution/Monitor. Comment: Angiotensin II receptor antagonists may enhance
+hypoglycemic effects of antidiabetic agents by improving insulin sensitivity. Monitor
+patients for changes in glycemic control.
+
+lornoxicam
+valsartan and lornoxicam both increase serum potassium. Use Caution/Monitor.
+
+lovastatin
+lovastatin will increase the level or effect of valsartan by Other (see comment). Use
+Caution/Monitor. The results from an in vitro study with human liver tissue indicate
+that valsartan is a substrate of the hepatic uptake transporter OATP1B1;
+coadministration with OATP1B1 inhibitors may increase valsartan systemic
+exposure
+
+lurasidone
+lurasidone increases effects of valsartan by Other (see comment). Use
+Caution/Monitor. Comment: Potential for increased risk of hypotension with
+concurrent use. Monitor blood pressure and adjust dose of antihypertensive agent
+as needed.
+
+maitake
+maitake increases effects of valsartan by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+maraviroc
+maraviroc, valsartan. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of orthostatic hypotension.
+
+https://reference.medscape.com/drug/diovan-valsartan-342325 18/34
+
+
+
+6/22/26, 5:02 PM Diovan (valsartan) dosing, indications, interactions, adverse effects, and more
+
+meclofenamate
+meclofenamate decreases effects of valsartan by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+valsartan and meclofenamate both increase serum potassium. Use Caution/Monitor.
+
+valsartan, meclofenamate. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: May result in renal function
+deterioration, particularly in elderly or volume depleted individuals.
+
+mefenamic acid
+valsartan and mefenamic acid both increase serum potassium. Use Caution/Monitor.
+
+mefenamic acid decreases effects of valsartan by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+valsartan, mefenamic acid. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: May result in renal function
+deterioration, particularly in elderly or volume depleted individuals.
+
+meloxicam
+valsartan and meloxicam both increase serum potassium. Use Caution/Monitor.
+
+meloxicam decreases effects of valsartan by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+valsartan, meloxicam. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+methyclothiazide
+valsartan increases and methyclothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor. .
+
+methylphenidate
+methylphenidate will decrease the level or effect of valsartan by pharmacodynamic
+antagonism. Use Caution/Monitor. Methylphenidate may diminish antihypertensive
+effects. Monitor BP.
+
+methylphenidate transdermal
+methylphenidate transdermal decreases effects of valsartan by anti-hypertensive
+channel blocking. Use Caution/Monitor.
+
+metolazone
+valsartan increases and metolazone decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/diovan-valsartan-342325 19/34
+
+
+
+6/22/26, 5:02 PM Diovan (valsartan) dosing, indications, interactions, adverse effects, and more
+
+metoprolol
+valsartan and metoprolol both increase serum potassium. Use Caution/Monitor.
+
+metoprolol, valsartan. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of fetal compromise if given during pregnancy.
+
+metyrapone
+metyrapone will increase the level or effect of valsartan by Other (see comment).
+Use Caution/Monitor. The results from an in vitro study with human liver tissue
+indicate that valsartan is a substrate of the hepatic uptake transporter OATP1B1;
+coadministration with OATP1B1 inhibitors may increase valsartan systemic
+exposure
+
+mifepristone
+mifepristone will increase the level or effect of valsartan by Other (see comment).
+Use Caution/Monitor. The results from an in vitro study with human liver tissue
+indicate that valsartan is a substrate of the hepatic uptake transporter OATP1B1;
+coadministration with OATP1B1 inhibitors may increase valsartan systemic
+exposure
+
+milsaperidone
+valsartan, milsaperidone. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of milsaperidone with
+drugs that lower blood pressure may cause additive effects. Consider lowering
+dosage of other drugs that lower blood pressure.
+
+nabumetone
+valsartan and nabumetone both increase serum potassium. Use Caution/Monitor.
+
+nabumetone decreases effects of valsartan by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+valsartan, nabumetone. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: May result in renal function
+deterioration, particularly in elderly or volume depleted individuals.
+
+nadolol
+valsartan and nadolol both increase serum potassium. Use Caution/Monitor.
+
+nadolol, valsartan. Mechanism: pharmacodynamic synergism. Use Caution/Monitor.
+Risk of fetal compromise if given during pregnancy.
+
+naproxen
+valsartan and naproxen both increase serum potassium. Use Caution/Monitor.
+
+naproxen decreases effects of valsartan by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+valsartan, naproxen. Either increases toxicity of the other by Other (see comment).
+
+https://reference.medscape.com/drug/diovan-valsartan-342325 20/34
+
+
+
+6/22/26, 5:02 PM Diovan (valsartan) dosing, indications, interactions, adverse effects, and more
+
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+nebivolol
+valsartan and nebivolol both increase serum potassium. Use Caution/Monitor.
+
+nebivolol, valsartan. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of fetal compromise if given during pregnancy.
+
+nelfinavir
+nelfinavir will increase the level or effect of valsartan by Other (see comment). Use
+Caution/Monitor. The results from an in vitro study with human liver tissue indicate
+that valsartan is a substrate of the hepatic uptake transporter OATP1B1;
+coadministration with OATP1B1 inhibitors may increase valsartan systemic
+exposure
+
+nitroglycerin rectal
+nitroglycerin rectal, valsartan. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Observe for possible additive
+hypotensive effects during concomitant use. .
+
+olanzapine/samidorphan
+olanzapine/samidorphan increases effects of valsartan by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Monitor blood pressure and reduce
+antihypertensive drug dosage in accordance with its product labeling.
+
+ombitasvir/paritaprevir/ritonavir & dasabuvir (DSC)
+ombitasvir/paritaprevir/ritonavir & dasabuvir (DSC) will increase the level or effect
+of valsartan by Other (see comment). Use Caution/Monitor. May inhibit organic
+anion transporter polypeptides; decrease dose of angiotensin receptor blockers and
+monitor patients for signs and symptoms of hypotension and/or worsening renal
+function; if such events occur, consider further dose reduction of angiotensin
+receptor blocker or switching to alternative to angiotensin receptor blocker
+
+oxaprozin
+valsartan and oxaprozin both increase serum potassium. Use Caution/Monitor.
+
+oxaprozin decreases effects of valsartan by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+valsartan, oxaprozin. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+paclitaxel
+paclitaxel will increase the level or effect of valsartan by Other (see comment). Use
+Caution/Monitor. The results from an in vitro study with human liver tissue indicate
+that valsartan is a substrate of the hepatic uptake transporter OATP1B1;
+coadministration with OATP1B1 inhibitors may increase valsartan systemic
+exposure
+
+https://reference.medscape.com/drug/diovan-valsartan-342325 21/34
+
+
+
+6/22/26, 5:02 PM Diovan (valsartan) dosing, indications, interactions, adverse effects, and more
+
+paclitaxel protein bound
+paclitaxel protein bound will increase the level or effect of valsartan by Other (see
+comment). Use Caution/Monitor. The results from an in vitro study with human liver
+tissue indicate that valsartan is a substrate of the hepatic uptake transporter
+OATP1B1; coadministration with OATP1B1 inhibitors may increase valsartan
+systemic exposure
+
+parecoxib
+valsartan and parecoxib both increase serum potassium. Use Caution/Monitor.
+
+pazopanib
+pazopanib will increase the level or effect of valsartan by Other (see comment). Use
+Caution/Monitor. The results from an in vitro study with human liver tissue indicate
+that valsartan is a substrate of the hepatic uptake transporter OATP1B1;
+coadministration with OATP1B1 inhibitors may increase valsartan systemic
+exposure
+
+pindolol
+valsartan and pindolol both increase serum potassium. Use Caution/Monitor.
+
+pindolol, valsartan. Mechanism: pharmacodynamic synergism. Use Caution/Monitor.
+Risk of fetal compromise if given during pregnancy.
+
+pioglitazone
+pioglitazone will increase the level or effect of valsartan by Other (see comment).
+Use Caution/Monitor. The results from an in vitro study with human liver tissue
+indicate that valsartan is a substrate of the hepatic uptake transporter OATP1B1;
+coadministration with OATP1B1 inhibitors may increase valsartan systemic
+exposure
+
+piroxicam
+valsartan and piroxicam both increase serum potassium. Use Caution/Monitor.
+
+piroxicam decreases effects of valsartan by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+valsartan, piroxicam. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+pitavastatin
+valsartan increases toxicity of pitavastatin by Other (see comment). Use
+Caution/Monitor. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+potassium acid phosphate
+valsartan and potassium acid phosphate both increase serum potassium. Use
+Caution/Monitor.
+
+potassium chloride
+valsartan and potassium chloride both increase serum potassium. Use
+
+https://reference.medscape.com/drug/diovan-valsartan-342325 22/34
+
+
+
+6/22/26, 5:02 PM Diovan (valsartan) dosing, indications, interactions, adverse effects, and more
+
+Caution/Monitor.
+
+potassium citrate
+valsartan and potassium citrate both increase serum potassium. Use
+Caution/Monitor.
+
+potassium citrate/citric acid
+valsartan and potassium citrate/citric acid both increase serum potassium. Use
+Caution/Monitor.
+
+potassium iodide
+potassium iodide and valsartan both increase serum potassium. Use
+Caution/Monitor. Potassium salts may increase the hyperkalemic effects of ARBs;
+the effect may be the result of aldosterone suppression in patients receiving ARBs.
+
+pravastatin
+pravastatin will increase the level or effect of valsartan by Other (see comment).
+Use Caution/Monitor. The results from an in vitro study with human liver tissue
+indicate that valsartan is a substrate of the hepatic uptake transporter OATP1B1;
+coadministration with OATP1B1 inhibitors may increase valsartan systemic
+exposure
+
+valsartan increases toxicity of pravastatin by Other (see comment). Use
+Caution/Monitor. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+pretomanid
+pretomanid will increase the level or effect of valsartan by Other (see comment).
+Use Caution/Monitor. Increase monitoring for drug-related adverse effects if
+pretomanid is coadministered with sensitive OATP1B3 substrates.
+
+propranolol
+valsartan and propranolol both increase serum potassium. Use Caution/Monitor.
+
+propranolol, valsartan. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of fetal compromise if given during pregnancy.
+
+repaglinide
+repaglinide will increase the level or effect of valsartan by Other (see comment).
+Use Caution/Monitor. The results from an in vitro study with human liver tissue
+indicate that valsartan is a substrate of the hepatic uptake transporter OATP1B1;
+coadministration with OATP1B1 inhibitors may increase valsartan systemic
+exposure
+
+rifampin
+rifampin will increase the level or effect of valsartan by Other (see comment). Use
+Caution/Monitor. The results from an in vitro study with human liver tissue indicate
+that valsartan is a substrate of the hepatic uptake transporter OATP1B1;
+coadministration with OATP1B1 inhibitors may increase valsartan systemic
+exposure
+
+rilzabrutinib
+rilzabrutinib increases levels of valsartan by Other (see comment). Use
+Caution/Monitor. Comment: Increases exposure and adverse effects of OATP1B1
+
+https://reference.medscape.com/drug/diovan-valsartan-342325 23/34
+
+
+
+6/22/26, 5:02 PM Diovan (valsartan) dosing, indications, interactions, adverse effects, and more
+
+substrates.
+
+ritonavir
+ritonavir will increase the level or effect of valsartan by Other (see comment). Use
+Caution/Monitor. The results from an in vitro study with human liver tissue indicate
+that valsartan is a substrate of the hepatic uptake transporter OATP1B1;
+coadministration with OATP1B1 inhibitors may increase valsartan systemic
+exposure
+
+ritonavir will increase the level or effect of valsartan by Mechanism: decreasing
+hepatic clearance. Use Caution/Monitor. The results from an in vitro study with
+human liver tissue indicate that valsartan is a substrate of the hepatic efflux
+transporter MRP2; coadministration of inhibitors of the efflux transporter may
+increase the systemic exposure to valsartan
+
+rosiglitazone
+rosiglitazone will increase the level or effect of valsartan by Other (see comment).
+Use Caution/Monitor. The results from an in vitro study with human liver tissue
+indicate that valsartan is a substrate of the hepatic uptake transporter OATP1B1;
+coadministration with OATP1B1 inhibitors may increase valsartan systemic
+exposure
+
+salicylates (non-asa)
+valsartan and salicylates (non-asa) both increase serum potassium. Use
+Caution/Monitor.
+
+salsalate
+valsartan and salsalate both increase serum potassium. Use Caution/Monitor.
+
+salsalate decreases effects of valsartan by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+valsartan, salsalate. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+simvastatin
+simvastatin will increase the level or effect of valsartan by Other (see comment).
+Use Caution/Monitor. The results from an in vitro study with human liver tissue
+indicate that valsartan is a substrate of the hepatic uptake transporter OATP1B1;
+coadministration with OATP1B1 inhibitors may increase valsartan systemic
+exposure
+
+sodium sulfate/?magnesium sulfate/potassium chloride
+sodium sulfate/?magnesium sulfate/potassium chloride increases toxicity of
+valsartan by Other (see comment). Use Caution/Monitor. Comment:
+Coadministration with medications that cause fluid and electrolyte abnormalities
+may increase the risk of adverse events of seizure, arrhythmias, and renal
+impairment.
+
+sodium sulfate/potassium sulfate/magnesium sulfate
+
+https://reference.medscape.com/drug/diovan-valsartan-342325 24/34
+
+
+
+6/22/26, 5:02 PM Diovan (valsartan) dosing, indications, interactions, adverse effects, and more
+
+sodium sulfate/potassium sulfate/magnesium sulfate increases toxicity of valsartan
+by Other (see comment). Use Caution/Monitor. Comment: Coadministration with
+medications that cause fluid and electrolyte abnormalities may increase the risk of
+adverse events of seizure, arrhythmias, and renal impairment.
+
+sofosbuvir/velpatasvir
+sofosbuvir/velpatasvir increases levels of valsartan by Other (see comment). Use
+Caution/Monitor. Comment: Velpatasvir inhibits OATP1B1, OATP1B3, and
+OATP2B1 transporters. .
+
+sotalol
+valsartan and sotalol both increase serum potassium. Use Caution/Monitor.
+
+sotalol, valsartan. Mechanism: pharmacodynamic synergism. Use Caution/Monitor.
+Risk of fetal compromise if given during pregnancy.
+
+spironolactone
+valsartan and spironolactone both increase serum potassium. Modify
+Therapy/Monitor Closely.
+
+sulfasalazine
+valsartan and sulfasalazine both increase serum potassium. Use Caution/Monitor.
+
+sulfasalazine decreases effects of valsartan by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+valsartan, sulfasalazine. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: May result in renal function
+deterioration, particularly in elderly or volume depleted individuals.
+
+sulindac
+valsartan and sulindac both increase serum potassium. Use Caution/Monitor.
+
+sulindac decreases effects of valsartan by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+valsartan, sulindac. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+synthetic human angiotensin II
+valsartan decreases effects of synthetic human angiotensin II by pharmacodynamic
+antagonism. Use Caution/Monitor.
+
+tadalafil
+tadalafil increases effects of valsartan by pharmacodynamic synergism. Use
+Caution/Monitor. Risk of hypotension.
+
+terbutaline
+
+https://reference.medscape.com/drug/diovan-valsartan-342325 25/34
+
+
+
+6/22/26, 5:02 PM Diovan (valsartan) dosing, indications, interactions, adverse effects, and more
+
+valsartan increases and terbutaline decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+timolol
+valsartan and timolol both increase serum potassium. Use Caution/Monitor.
+
+timolol, valsartan. Mechanism: pharmacodynamic synergism. Use Caution/Monitor.
+Risk of fetal compromise if given during pregnancy.
+
+tizanidine
+tizanidine increases effects of valsartan by pharmacodynamic synergism. Use
+Caution/Monitor. Risk of hypotension.
+
+tolfenamic acid
+valsartan and tolfenamic acid both increase serum potassium. Use Caution/Monitor.
+
+tolmetin
+valsartan and tolmetin both increase serum potassium. Use Caution/Monitor.
+
+tolmetin decreases effects of valsartan by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+valsartan, tolmetin. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+tolvaptan
+valsartan and tolvaptan both increase serum potassium. Use Caution/Monitor.
+
+torsemide
+valsartan increases and torsemide decreases serum potassium. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+treprostinil
+treprostinil increases effects of valsartan by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+triamterene
+valsartan and triamterene both increase serum potassium. Modify Therapy/Monitor
+Closely.
+
+trimethoprim
+valsartan and trimethoprim both increase serum potassium. Use Caution/Monitor.
+Trimethoprim decreases urinary potassium excretion. May cause hyperkalemia,
+particularly with high doses, renal insufficiency, or when combined with other drugs
+that cause hyperkalemia.
+
+vadadustat
+valsartan will increase the level or effect of vadadustat by Other (see comment).
+Use Caution/Monitor. OAT1/OAT3 inhibitors may increase vadadustat AUC. Closely
+
+https://reference.medscape.com/drug/diovan-valsartan-342325 26/34
+
+
+
+6/22/26, 5:02 PM Diovan (valsartan) dosing, indications, interactions, adverse effects, and more
+
+monitor for too large or too rapid an increase in hemoglobin response and for
+adverse reactions.
+
+voclosporin
+voclosporin and valsartan both increase serum potassium. Use Caution/Monitor.
+
+voclosporin, valsartan. Either increases toxicity of the other by nephrotoxicity and/or
+ototoxicity. Modify Therapy/Monitor Closely. Coadministration with drugs
+associated with nephrotoxicity may increase the risk for acute and/or chronic
+nephrotoxicity.
+
+xipamide
+xipamide increases effects of valsartan by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+Minor (13)
+
+agrimony
+agrimony increases effects of valsartan by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+cornsilk
+cornsilk increases effects of valsartan by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+entecavir
+valsartan, entecavir. Either increases effects of the other by decreasing renal
+clearance. Minor/Significance Unknown. Coadministration with drugs that reduce
+renal function or compete for active tubular secretion may increase serum
+concentrations of either entecavir or the coadministered drug.
+
+food
+food decreases levels of valsartan by inhibition of GI absorption. Applies only to
+oral form of both agents. Minor/Significance Unknown.
+
+nirmatrelvir/ritonavir
+nirmatrelvir/ritonavir will increase the level or effect of valsartan by Other (see
+comment). Minor/Significance Unknown. Valsartan is a substrate of the hepatic
+uptake transporters OATP1B1 and MRP2. Ritonavir inhibits these transporters. No
+dosage modification needed since induction reaches maximal effect after several
+days and the short duration of nirmatrelvir/ritonavir treatment.
+
+noni juice
+valsartan and noni juice both increase serum potassium. Minor/Significance
+Unknown.
+
+octacosanol
+octacosanol increases effects of valsartan by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+ombitasvir/paritaprevir/ritonavir & dasabuvir (DSC)
+
+https://reference.medscape.com/drug/diovan-valsartan-342325 27/34
+
+
+
+6/22/26, 5:02 PM Diovan (valsartan) dosing, indications, interactions, adverse effects, and more
+
+ombitasvir/paritaprevir/ritonavir & dasabuvir (DSC) will increase the level or effect
+of valsartan by decreasing elimination. Minor/Significance Unknown. May inhibit
+hepatic efflux transporter MRP2; decrease dose of angiotensin receptor blockers
+and monitor patients for signs and symptoms of hypotension and/or worsening
+renal function; if such events occur, consider further dose reduction of angiotensin
+receptor blocker or switching to alternative to angiotensin receptor blocker
+
+patiromer
+patiromer, valsartan. cation binding in GI tract. Minor/Significance Unknown. No
+observed clinically important interaction. No separation of dosing required.
+
+reishi
+reishi increases effects of valsartan by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+shepherd's purse
+shepherd's purse, valsartan. Other (see comment). Minor/Significance Unknown.
+Comment: Theoretically, shepherd's purse may interfere with BP control.
+
+simvastatin
+valsartan increases toxicity of simvastatin by Other (see comment).
+Minor/Significance Unknown. Comment: OATP1B1 inhibitors may increase risk of
+myopathy.
+
+voclosporin
+voclosporin will increase the level or effect of valsartan by Other (see comment).
+Minor/Significance Unknown. Information suggests voclosporin (an OATP1B1
+inhibitor) may increase in the concentration of OATP1B1 substrates is possible.
+Monitor for adverse reactions of OATP1B1 substrates when coadministered with
+voclosporin.
+
+Adverse Effects
+
+>10%
+
+Hypertension, adult
+
+Dry cough
+
+Heart failure
+
+Increased BUN ≥50% (16.6%)
+
+Dizziness (17%)
+
+Hypotension (7%)
+
+Diarrhea (5%)
+
+Arthralgia (3%)
+
+Fatigue (3%)
+
+Back pain (3%)
+
+https://reference.medscape.com/drug/diovan-valsartan-342325 28/34
+
+
+
+6/22/26, 5:02 PM Diovan (valsartan) dosing, indications, interactions, adverse effects, and more
+
+Dizziness, postural (2%)
+
+Hyperkalemia (2%)
+
+Hypotension, postural (2%)
+
+1-10%
+
+Heart failure
+
+Increased serum creatinine ≥50% (3.9%)
+
+>1%
+Headache
+
+Nausea
+
+Renal impairment
+
+Syncope
+
+Blurred vision
+
+Upper abdominal pain
+
+Vertigo
+
+Post MI H4
+
+Increased serum creatinine ≥50% (4.2%)
+
+Neutropenia (1.9%)
+
+Hypotension NOS (1.4%)
+
+<1%
+
+Post MI
+
+Cough (0.6%)
+
+Increased blood creatinine (0.6%)
+
+Rash NOS (0.2%)
+
+Postmarketing Reports
+
+Hypersensitivity: Angioedema reported
+
+Digestive: Elevated liver enzymes and very rare reports of hepatitis
+
+Musculoskeletal: Rhabdomyolysis
+
+Renal: Impaired renal function, renal failure
+
+Dermatologic: Alopecia, bullous dermatitis
+
+Blood and Lymphatic: Thrombocytopenia
+
+Vascular: Vasculitis
+
+Warnings
+
+https://reference.medscape.com/drug/diovan-valsartan-342325 29/34
+
+
+
+6/22/26, 5:02 PM Diovan (valsartan) dosing, indications, interactions, adverse effects, and more
+
+Black Box Warnings
+
+Fetal toxicity
+
+Discontinue immediately when pregnancy is detected
+
+Drugs that act directly on the renin-angiotensin system can cause injury and death
+to the developing fetus
+
+Contraindications
+
+Hypersensitivity
+
+Coadministration with aliskiren in patients with diabetes mellitus
+
+Cautions
+
+May cause fetal harm when administered to pregnant females
+
+Changes in renal function including acute renal failure may occur; monitor renal function
+periodically
+
+Some patients with heart failure have developed increases in potassium; effects are
+more likely to occur in patients with pre-existing renal impairment; consider a dosage
+reduction and/or discontinuation
+
+Hypotension
+
+Excessive hypotension rarely occurs in patients with uncomplicated hypertension
+
+Symptomatic hypotension may occur in patients with an activated renin-angiotensin
+system, such as volume- and/or salt-depleted patients receiving high doses of
+diuretics, symptomatic hypotension may occur
+
+If excessive hypotension occurs, place patient in supine position and, if necessary,
+give IV 0.9 NaCl
+
+A transient hypotensive response is not a contraindication to further treatment,
+which usually can be continued without difficulty once stabilized
+
+Drug interaction overview
+
+Agents increasing serum potassium
+Potassium-sparing diuretics, potassium supplements or salt substitutes may
+lead to increases in serum potassium, and in heart failure patients, increases in
+serum creatinine
+
+Non-steroidal anti-inflammatory agents (NSAIDs)
+NSAID, including selective cyclooxygenase-2 inhibitors (COX-2 Inhibitors), use
+may lead to increased risk of renal impairment and loss of antihypertensive
+effect
+
+Dual inhibition of the renin-angiotensin system
+Avoid use
+
+Dual blockade of renin-angiotensin system (RAS) with angiotensin receptor
+blockers, ACE inhibitors, or aliskiren is associated with increased risks of
+
+https://reference.medscape.com/drug/diovan-valsartan-342325 30/34
+
+
+
+6/22/26, 5:02 PM Diovan (valsartan) dosing, indications, interactions, adverse effects, and more
+
+hypotension, hyperkalemia, and changes in renal function
+
+Closely monitor BP, renal function and electrolytes when treated with agents
+that affect the RAS
+
+Do not coadminister with aliskiren in patients with diabetes or patients with
+renal impairment (GFR <60 mL/min)
+
+Lithium
+Increases in serum lithium level and lithium toxicity reported; monitor serum
+lithium levels
+
+Pregnancy & Lactation
+
+Pregnancy
+
+Fetal harm may occur when administer in pregnant females
+
+Use of drug that act on the RAS during second and third trimesters of pregnancy reduces
+fetal renal function and increases fetal and neonatal morbidity and death
+
+When pregnancy is detected, discontinue therapy as soon as possible
+
+Disease-associated maternal and/or embryofetal risk
+
+Hypertension in pregnancy increases maternal risk for pre-eclampsia, gestational
+diabetes, premature delivery, and delivery complications (eg, need for cesarean
+section, and postpartum hemorrhage)
+
+Hypertension increases fetal risk for intrauterine growth restriction and intrauterine
+death; carefully monitor pregnant women with hypertension and managed
+accordingly
+
+Fetal/neonatal adverse reactions
+
+Oligohydramnios in pregnant women who use drugs affecting the RAS in second
+and third trimesters of pregnancy can result in reduced fetal renal function leading
+to anuria and renal failure, fetal lung hypoplasia, skeletal deformations, including
+skull hypoplasia, hypotension and death
+
+Perform serial ultrasound examinations to assess the intra-amniotic environment;
+fetal testing may be appropriate, based on gestation week; oligohydramnios may
+not appear until after the fetus has sustained irreversible injury
+
+If oligohydramnios is observed, consider alternative therapy; closely observe
+neonates with histories of in utero exposure to the drug for hypotension, oliguria,
+and hyperkalemia; in neonates with a history of in utero exposure to the drug, if
+oliguria or hypotension occurs, support BP and renal perfusion
+
+Exchange transfusions or dialysis may be required as a means of reversing
+hypotension and replacing renal function
+
+Lactation
+
+https://reference.medscape.com/drug/diovan-valsartan-342325 31/34
+
+
+
+6/22/26, 5:02 PM Diovan (valsartan) dosing, indications, interactions, adverse effects, and more
+
+There is limited information on drug presence in human milk, effects on breastfed infant,
+or on milk production
+
+Detected in milk of lactating rats 15 min after oral administration of a 3 mg/kg-dose
+
+Breastfeeding is not recommended during treatment
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+Blocks binding of angiotensin II to type 1 angiotensin II receptors, causing a lowering in
+blood pressure; blocks vasoconstrictor and aldosterone-secreting effects of angiotensin
+II
+
+Absorption
+
+Peak plasma time: 2-4 hr
+
+Absolute bioavailability: ~25%
+
+Effect of food
+
+Tablet: Food decreases AUC by ~40% and peak plasma concentration by ~50%
+
+Distribution
+
+Vd (steady-state); 17 L (IV)
+
+Protein bound: 95% (mainly albumin)
+
+Metabolism
+
+Metabolized by CYP2C9
+
+Primary metabolite: Valeryl 4-hydroxy valsartan (~9% of dose)
+
+https://reference.medscape.com/drug/diovan-valsartan-342325 32/34
+
+
+
+6/22/26, 5:02 PM Diovan (valsartan) dosing, indications, interactions, adverse effects, and more
+
+Elimination
+
+Half-life (IV): ~6 hr
+
+Excretion (oral solution): ~83% (feces); ~13% (urine); recovery is mainly as unchanged
+drug, with only about 20% of dose recovered as metabolite
+
+Clearance
+
+IV: 0.62 L/hr (renal); 2 L/hr (plasma)
+
+PO: 4.5 L/hr
+
+Administration
+
+Extemporaneous oral suspension preparation
+
+Add 80 mL of Ora-Plus to an amber glass bottle containing 8 valsartan 80-mg tablets,
+and shake for a minimum of 2 min
+
+Allow suspension to stand for a minimum of 1 hr
+
+After, shake suspension for a minimum of 1 additional min
+
+Add 80 mL of Ora-Sweet SF to the bottle and shake suspension for at least 10 sec to
+disperse the ingredients; suspension is homogenous
+
+Shake bottle well (at least 10 sec) before dispensing suspension
+
+Oral Administration
+
+May take with or without food
+
+Missed dose: Administer as soon as possible, unless it is almost time for next dose; do
+not double the dose to make up for a missed dose
+
+Extemporaneous oral suspension
+
+For patients who cannot swallow tablets, or children for whom calculated dosage
+(mg/kg) does not correspond to the available tablet strengths
+
+Note: When replacing tablet for suspension, valsartan dose may have to be
+increased
+
+Exposure to valsartan with suspension is 1.6x greater than with tablet
+
+Storage
+
+Extemporaneous oral suspension
+
+Store at room temperature (<30ºC/86ºF) for up to 30 days OR
+
+Refrigerate at 2-8ºC (35-46ºF) for up to 75 days in the glass bottle with a child-
+resistant screw-cap closure
+
+https://reference.medscape.com/drug/diovan-valsartan-342325 33/34
+
+
+
+6/22/26, 5:02 PM Diovan (valsartan) dosing, indications, interactions, adverse effects, and more
+
+Tablets
+
+Store at 25ºC (77ºF); excursions permitted to 15-30ºC (59-86ºF)
+
+Protect from moisture
+
+Dispense in tight container
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/diovan-valsartan-342325 34/34

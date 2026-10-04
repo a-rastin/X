@@ -1,0 +1,492 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<BIF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="0.3" xsi:noNamespaceSchemaLocation="../schema.xml">
+  <NETWORK>
+    <NAME>Statement12_Parkinsonism_Research</NAME>
+    <PROPERTY>clinical_question=Which clinician reviews are relevant to established or suspected antipsychotic-associated parkinsonism and its treatment tradeoffs?</PROPERTY>
+    <PROPERTY>statement_id=12</PROPERTY>
+    <PROPERTY>recommendation_strength=2</PROPERTY>
+    <PROPERTY>evidence_quality=C</PROPERTY>
+    <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-12.md</PROPERTY>
+    <PROPERTY>source_locator=STATEMENT 12: Treatments for Parkinsonism; Implementation; Quality Measurement Considerations</PROPERTY>
+    <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+    <PROPERTY>source_version=APA schizophrenia guideline 2020; local Markdown derivative; original PDF not independently verified</PROPERTY>
+    <PROPERTY>model_version=0.1</PROPERTY>
+    <PROPERTY>created=2026-09-16</PROPERTY>
+    <PROPERTY>population=Adults undergoing clinician-led antipsychotic adverse-effect assessment; modeler-proposed scope</PROPERTY>
+    <PROPERTY>setting=Research authoring only</PROPERTY>
+    <PROPERTY>time_horizon=Current dated assessment; no prospective treatment-outcome horizon</PROPERTY>
+    <PROPERTY>validation_status=UNPARAMETERIZED_NOT_FOR_CLINICAL_INFERENCE</PROPERTY>
+    <PROPERTY>inference_allowed=false</PROPERTY>
+    <PROPERTY>deployment_allowed=false</PROPERTY>
+    <PROPERTY>guideline_cdss_restriction=Quality Measurement Considerations explicitly says this statement is not appropriate for electronic decision support or quality measurement</PROPERTY>
+    <PROPERTY>parameter_inventory=13 missing root distributions; 27 entries under provisional independent-root structure; seven deterministic review definitions</PROPERTY>
+    <PROPERTY>graph_semantics=Author-proposed clinician-review mappings; not disease causation, diagnostic inference, treatment-effect estimates or utility optimization</PROPERTY>
+    <PROPERTY>root_independence=Unvalidated provisional structure; dependencies and measurement error must be reviewed before parameterization</PROPERTY>
+    <PROPERTY>execution_contract=Importer must reject incomplete nature-node definitions for inference and must never invent default priors; PROPERTY flags are advisory, not enforcement</PROPERTY>
+    <PROPERTY>missingness_policy=Missing evidence is unobserved, never Absent or NotEstablished; no partial-evidence inference provided</PROPERTY>
+    <PROPERTY>display_contract=All review outputs and individual concerns remain visible in parallel; no output authorizes or prohibits treatment</PROPERTY>
+    <PROPERTY>clinical_limit=No automatic prescribing, dosing, discontinuation, routine prophylaxis, efficacy ranking or treatment-response prediction</PROPERTY>
+    <PROPERTY>evidence_contract=Dated clinician-verified inputs only; derived outputs are not independent observations; conflicting assessments require reconciliation</PROPERTY>
+    <PROPERTY>design_note=wiki/questions/Statement 12 Bayesian network design.md</PROPERTY>
+    <VARIABLE TYPE="nature">
+      <NAME>ParkinsonismAssessment</NAME>
+      <PROPERTY>label=Parkinsonism Assessment</PROPERTY>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <OUTCOME>Unresolved</OUTCOME>
+      <PROPERTY>definition=Clinician assessment of current parkinsonism, including motor, cognitive and emotional manifestations. Unresolved means an assessed differential remains unresolved, not missing data.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; TABLE 10. Medications for treatment of medication-induced parkinsonism; Patient Preferences</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment; prior history explicitly distinguished</PROPERTY>
+      <PROPERTY>missingness_policy=Missing evidence stays unobserved; assessed states are not missing-data codes</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=3 entries after dependence and measurement review; data or expert elicitation required</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ParkinsonismAntipsychoticAssociation</NAME>
+      <PROPERTY>label=Parkinsonism Antipsychotic Association</PROPERTY>
+      <OUTCOME>Established</OUTCOME>
+      <OUTCOME>NotEstablished</OUTCOME>
+      <PROPERTY>definition=Clinician assessment of medication association using timing, dose changes and alternative causes; not inferred from symptoms alone.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; TABLE 10. Medications for treatment of medication-induced parkinsonism; Patient Preferences</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment; prior history explicitly distinguished</PROPERTY>
+      <PROPERTY>missingness_policy=Missing evidence stays unobserved; assessed states are not missing-data codes</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 entries after dependence and measurement review; data or expert elicitation required</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>TardiveDyskinesiaConcern</NAME>
+      <PROPERTY>label=Tardive Dyskinesia Concern</PROPERTY>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>definition=Assessed possible or coexisting tardive dyskinesia; not mutually exclusive with parkinsonism. Anticholinergics can worsen TD.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; TABLE 10. Medications for treatment of medication-induced parkinsonism; Patient Preferences</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment; prior history explicitly distinguished</PROPERTY>
+      <PROPERTY>missingness_policy=Missing evidence stays unobserved; assessed states are not missing-data codes</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 entries after dependence and measurement review; data or expert elicitation required</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>DoseReductionFeasible</NAME>
+      <PROPERTY>label=Dose Reduction Feasible</PROPERTY>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>definition=Clinician-assessed feasibility of dose reduction; no numerical reduction or automatic action implied.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; TABLE 10. Medications for treatment of medication-induced parkinsonism; Patient Preferences</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment; prior history explicitly distinguished</PROPERTY>
+      <PROPERTY>missingness_policy=Missing evidence stays unobserved; assessed states are not missing-data codes</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 entries after dependence and measurement review; data or expert elicitation required</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>LowerParkinsonismRiskSwitchFeasible</NAME>
+      <PROPERTY>label=Lower Parkinsonism Risk Switch Feasible</PROPERTY>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>definition=Clinician-assessed feasibility of switching to an antipsychotic with lower parkinsonism propensity; candidate review required.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; TABLE 10. Medications for treatment of medication-induced parkinsonism; Patient Preferences</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment; prior history explicitly distinguished</PROPERTY>
+      <PROPERTY>missingness_policy=Missing evidence stays unobserved; assessed states are not missing-data codes</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 entries after dependence and measurement review; data or expert elicitation required</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>PsychoticWorseningConcern</NAME>
+      <PROPERTY>label=Psychotic Worsening Concern</PROPERTY>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>definition=Patient-specific concern about psychotic worsening with dose reduction or switching. Absent does not mean zero risk.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; TABLE 10. Medications for treatment of medication-induced parkinsonism; Patient Preferences</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment; prior history explicitly distinguished</PROPERTY>
+      <PROPERTY>missingness_policy=Missing evidence stays unobserved; assessed states are not missing-data codes</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 entries after dependence and measurement review; data or expert elicitation required</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ParkinsonismMedicationPreferenceConcern</NAME>
+      <PROPERTY>label=Parkinsonism Medication Preference Concern</PROPERTY>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>definition=Patient expresses concern or reluctance about symptomatic medication; Absent does not establish consent. All options still require shared decisions.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; TABLE 10. Medications for treatment of medication-induced parkinsonism; Patient Preferences</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment; prior history explicitly distinguished</PROPERTY>
+      <PROPERTY>missingness_policy=Missing evidence stays unobserved; assessed states are not missing-data codes</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 entries after dependence and measurement review; data or expert elicitation required</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>OlderAgeVulnerability</NAME>
+      <PROPERTY>label=Older Age Vulnerability</PROPERTY>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>definition=Clinician-assessed vulnerability related to older age; no invented age cutoff.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; TABLE 10. Medications for treatment of medication-induced parkinsonism; Patient Preferences</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment; prior history explicitly distinguished</PROPERTY>
+      <PROPERTY>missingness_policy=Missing evidence stays unobserved; assessed states are not missing-data codes</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 entries after dependence and measurement review; data or expert elicitation required</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>OtherAnticholinergicBurden</NAME>
+      <PROPERTY>label=Other Anticholinergic Burden</PROPERTY>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>definition=Clinically relevant anticholinergic burden from concomitant medications, excluding the target parkinsonism treatment.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; TABLE 10. Medications for treatment of medication-induced parkinsonism; Patient Preferences</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment; prior history explicitly distinguished</PROPERTY>
+      <PROPERTY>missingness_policy=Missing evidence stays unobserved; assessed states are not missing-data codes</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 entries after dependence and measurement review; data or expert elicitation required</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AnticholinergicSafetyConcern</NAME>
+      <PROPERTY>label=Anticholinergic Safety Concern</PROPERTY>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>definition=Assessed cognitive, urinary, bowel, ocular, cardiac, thermoregulatory or other anticholinergic safety concern. Treated glaucoma is not a blanket prohibition.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; TABLE 10. Medications for treatment of medication-induced parkinsonism; Patient Preferences</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment; prior history explicitly distinguished</PROPERTY>
+      <PROPERTY>missingness_policy=Missing evidence stays unobserved; assessed states are not missing-data codes</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 entries after dependence and measurement review; data or expert elicitation required</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>CurrentParkinsonismAnticholinergicUse</NAME>
+      <PROPERTY>label=Current Parkinsonism Anticholinergic Use</PROPERTY>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>definition=Current anticholinergic medication specifically used for parkinsonism or its prevention, assessed at this encounter.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; TABLE 10. Medications for treatment of medication-induced parkinsonism; Patient Preferences</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment; prior history explicitly distinguished</PROPERTY>
+      <PROPERTY>missingness_policy=Missing evidence stays unobserved; assessed states are not missing-data codes</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 entries after dependence and measurement review; data or expert elicitation required</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>PriorSignificantParkinsonism</NAME>
+      <PROPERTY>label=Prior Significant Parkinsonism</PROPERTY>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>definition=Assessed history of significant parkinsonism with prior treatment; illustrative risk context, not a complete risk model.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; TABLE 10. Medications for treatment of medication-induced parkinsonism; Patient Preferences</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment; prior history explicitly distinguished</PROPERTY>
+      <PROPERTY>missingness_policy=Missing evidence stays unobserved; assessed states are not missing-data codes</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 entries after dependence and measurement review; data or expert elicitation required</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AmantadineSafetyConcern</NAME>
+      <PROPERTY>label=Amantadine Safety Concern</PROPERTY>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>definition=Clinician concern including renal impairment, hallucinations, suicidal thoughts, seizure disorder or tolerability; details require current product-label review.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; TABLE 10. Medications for treatment of medication-induced parkinsonism; Patient Preferences</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment; prior history explicitly distinguished</PROPERTY>
+      <PROPERTY>missingness_policy=Missing evidence stays unobserved; assessed states are not missing-data codes</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 entries after dependence and measurement review; data or expert elicitation required</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ParkinsonismIndicationReview</NAME>
+      <PROPERTY>label=Parkinsonism Indication Review</PROPERTY>
+      <OUTCOME>EstablishedCurrentAssociation</OUTCOME>
+      <OUTCOME>AssessDifferentialAndAssociation</OUTCOME>
+      <OUTCOME>NoCurrentTreatmentRule</OUTCOME>
+      <PROPERTY>definition=Present parkinsonism with established association prompts option discussion; unresolved findings prompt differential assessment. Absence gives no current-treatment rule.</PROPERTY>
+      <PROPERTY>clinical_role=proposed_deterministic_review</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Patient Preferences; Review of Available Guidelines From Other Organizations</PROPERTY>
+      <PROPERTY>parameter_status=modeler_assumption_deterministic</PROPERTY>
+      <PROPERTY>interpretation=Review topic only; no treatment choice, clearance or withholding rule</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ParkinsonismAntipsychoticRegimenReview</NAME>
+      <PROPERTY>label=Parkinsonism Antipsychotic Regimen Review</PROPERTY>
+      <OUTCOME>ReviewDoseAndSwitch</OUTCOME>
+      <OUTCOME>ReviewDose</OUTCOME>
+      <OUTCOME>ReviewSwitch</OUTCOME>
+      <OUTCOME>ReviewConstraints</OUTCOME>
+      <OUTCOME>PrioritizePsychosisTradeoff</OUTCOME>
+      <OUTCOME>EstablishIndicationFirst</OUTCOME>
+      <PROPERTY>definition=Discuss feasible antipsychotic changes and psychotic worsening risk. PrioritizePsychosisTradeoff does not prohibit change; all changes require symptom monitoring. Feasibility inputs remain visible.</PROPERTY>
+      <PROPERTY>clinical_role=proposed_deterministic_review</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Patient Preferences; Review of Available Guidelines From Other Organizations</PROPERTY>
+      <PROPERTY>parameter_status=modeler_assumption_deterministic</PROPERTY>
+      <PROPERTY>interpretation=Review topic only; no treatment choice, clearance or withholding rule</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AnticholinergicSafetyReview</NAME>
+      <PROPERTY>label=Anticholinergic Safety Review</PROPERTY>
+      <OUTCOME>EnhancedIndividualizedReview</OUTCOME>
+      <OUTCOME>RoutineIndividualizedReview</OUTCOME>
+      <PROPERTY>definition=Review patient-specific concerns, age vulnerability and cumulative burden in parallel. Routine review is not medical clearance; each concern remains separately visible.</PROPERTY>
+      <PROPERTY>clinical_role=proposed_deterministic_review</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Patient Preferences; Review of Available Guidelines From Other Organizations</PROPERTY>
+      <PROPERTY>parameter_status=modeler_assumption_deterministic</PROPERTY>
+      <PROPERTY>interpretation=Review topic only; no treatment choice, clearance or withholding rule</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>SymptomaticMedicationReview</NAME>
+      <PROPERTY>label=Symptomatic Medication Review</PROPERTY>
+      <OUTCOME>ReviewTardiveDifferential</OUTCOME>
+      <OUTCOME>DiscussPatientConcerns</OUTCOME>
+      <OUTCOME>DiscussAnticholinergicOption</OUTCOME>
+      <OUTCOME>EstablishIndicationFirst</OUTCOME>
+      <PROPERTY>definition=TD concern is reviewed independently of established association; preferences and safety remain parallel. Discussion is not a recommendation to start medication.</PROPERTY>
+      <PROPERTY>clinical_role=proposed_deterministic_review</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Patient Preferences; Review of Available Guidelines From Other Organizations</PROPERTY>
+      <PROPERTY>parameter_status=modeler_assumption_deterministic</PROPERTY>
+      <PROPERTY>interpretation=Review topic only; no treatment choice, clearance or withholding rule</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ParkinsonismAnticholinergicContinuationReview</NAME>
+      <PROPERTY>label=Parkinsonism Anticholinergic Continuation Review</PROPERTY>
+      <OUTCOME>ReviewLowestDoseAndDuration</OUTCOME>
+      <OUTCOME>ReassessNeedAndDifferential</OUTCOME>
+      <OUTCOME>NoCurrentContinuationRule</OUTCOME>
+      <PROPERTY>definition=Existing use prompts review of need, lowest effective dose and shortest necessary duration. Reassessment does not mandate abrupt withdrawal or infer resolution as a treatment effect.</PROPERTY>
+      <PROPERTY>clinical_role=proposed_deterministic_review</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Patient Preferences; Review of Available Guidelines From Other Organizations</PROPERTY>
+      <PROPERTY>parameter_status=modeler_assumption_deterministic</PROPERTY>
+      <PROPERTY>interpretation=Review topic only; no treatment choice, clearance or withholding rule</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AmantadineReview</NAME>
+      <PROPERTY>label=Amantadine Review</PROPERTY>
+      <OUTCOME>DiscussAlternativeAndSafety</OUTCOME>
+      <OUTCOME>ReviewSpecificSafetyConcerns</OUTCOME>
+      <OUTCOME>EstablishIndicationFirst</OUTCOME>
+      <PROPERTY>definition=Amantadine is an alternative for discussion, not a preferred or risk-free treatment; specific safety concerns remain visible even without established indication.</PROPERTY>
+      <PROPERTY>clinical_role=proposed_deterministic_review</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Patient Preferences; Review of Available Guidelines From Other Organizations</PROPERTY>
+      <PROPERTY>parameter_status=modeler_assumption_deterministic</PROPERTY>
+      <PROPERTY>interpretation=Review topic only; no treatment choice, clearance or withholding rule</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ProphylaxisReview</NAME>
+      <PROPERTY>label=Prophylaxis Review</PROPERTY>
+      <OUTCOME>IndividualizedExceptionalRiskReview</OUTCOME>
+      <OUTCOME>NoRoutineProphylaxisRule</OUTCOME>
+      <OUTCOME>AddressCurrentAssessment</OUTCOME>
+      <PROPERTY>definition=APA allows occasional individualized prophylaxis in high-risk patients; other cited guidelines differ. Prior history is illustrative, not sufficient authorization or an exhaustive risk screen.</PROPERTY>
+      <PROPERTY>clinical_role=proposed_deterministic_review</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Patient Preferences; Review of Available Guidelines From Other Organizations</PROPERTY>
+      <PROPERTY>parameter_status=modeler_assumption_deterministic</PROPERTY>
+      <PROPERTY>interpretation=Review topic only; no treatment choice, clearance or withholding rule</PROPERTY>
+    </VARIABLE>
+    <DEFINITION>
+      <FOR>ParkinsonismIndicationReview</FOR>
+      <GIVEN>ParkinsonismAssessment</GIVEN>
+      <GIVEN>ParkinsonismAntipsychoticAssociation</GIVEN>
+      <TABLE>
+        1 0 0
+        0 1 0
+        0 0 1
+        0 0 1
+        0 1 0
+        0 1 0
+      </TABLE>
+      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
+      <PROPERTY>parameter_status=proposed_deterministic_review_mapping</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Patient Preferences; Review of Available Guidelines From Other Organizations</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>uncertainty_description=Certainty of the encoded review mapping only, not certainty of clinical findings, efficacy or safety</PROPERTY>
+      <PROPERTY>table_order=Child outcome fastest; last GIVEN next; declaration order</PROPERTY>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>ParkinsonismAntipsychoticRegimenReview</FOR>
+      <GIVEN>ParkinsonismIndicationReview</GIVEN>
+      <GIVEN>DoseReductionFeasible</GIVEN>
+      <GIVEN>LowerParkinsonismRiskSwitchFeasible</GIVEN>
+      <GIVEN>PsychoticWorseningConcern</GIVEN>
+      <TABLE>
+        0 0 0 0 1 0
+        1 0 0 0 0 0
+        0 0 0 0 1 0
+        0 1 0 0 0 0
+        0 0 0 0 1 0
+        0 0 1 0 0 0
+        0 0 0 0 1 0
+        0 0 0 1 0 0
+        0 0 0 0 0 1
+        0 0 0 0 0 1
+        0 0 0 0 0 1
+        0 0 0 0 0 1
+        0 0 0 0 0 1
+        0 0 0 0 0 1
+        0 0 0 0 0 1
+        0 0 0 0 0 1
+        0 0 0 0 0 1
+        0 0 0 0 0 1
+        0 0 0 0 0 1
+        0 0 0 0 0 1
+        0 0 0 0 0 1
+        0 0 0 0 0 1
+        0 0 0 0 0 1
+        0 0 0 0 0 1
+      </TABLE>
+      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
+      <PROPERTY>parameter_status=proposed_deterministic_review_mapping</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Patient Preferences; Review of Available Guidelines From Other Organizations</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>uncertainty_description=Certainty of the encoded review mapping only, not certainty of clinical findings, efficacy or safety</PROPERTY>
+      <PROPERTY>table_order=Child outcome fastest; last GIVEN next; declaration order</PROPERTY>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>AnticholinergicSafetyReview</FOR>
+      <GIVEN>AnticholinergicSafetyConcern</GIVEN>
+      <GIVEN>OlderAgeVulnerability</GIVEN>
+      <GIVEN>OtherAnticholinergicBurden</GIVEN>
+      <TABLE>
+        1 0
+        1 0
+        1 0
+        1 0
+        1 0
+        1 0
+        1 0
+        0 1
+      </TABLE>
+      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
+      <PROPERTY>parameter_status=proposed_deterministic_review_mapping</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Patient Preferences; Review of Available Guidelines From Other Organizations</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>uncertainty_description=Certainty of the encoded review mapping only, not certainty of clinical findings, efficacy or safety</PROPERTY>
+      <PROPERTY>table_order=Child outcome fastest; last GIVEN next; declaration order</PROPERTY>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>SymptomaticMedicationReview</FOR>
+      <GIVEN>ParkinsonismIndicationReview</GIVEN>
+      <GIVEN>TardiveDyskinesiaConcern</GIVEN>
+      <GIVEN>ParkinsonismMedicationPreferenceConcern</GIVEN>
+      <TABLE>
+        1 0 0 0
+        1 0 0 0
+        0 1 0 0
+        0 0 1 0
+        1 0 0 0
+        1 0 0 0
+        0 0 0 1
+        0 0 0 1
+        1 0 0 0
+        1 0 0 0
+        0 0 0 1
+        0 0 0 1
+      </TABLE>
+      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
+      <PROPERTY>parameter_status=proposed_deterministic_review_mapping</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Patient Preferences; Review of Available Guidelines From Other Organizations</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>uncertainty_description=Certainty of the encoded review mapping only, not certainty of clinical findings, efficacy or safety</PROPERTY>
+      <PROPERTY>table_order=Child outcome fastest; last GIVEN next; declaration order</PROPERTY>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>ParkinsonismAnticholinergicContinuationReview</FOR>
+      <GIVEN>CurrentParkinsonismAnticholinergicUse</GIVEN>
+      <GIVEN>ParkinsonismAssessment</GIVEN>
+      <TABLE>
+        1 0 0
+        0 1 0
+        0 1 0
+        0 0 1
+        0 0 1
+        0 0 1
+      </TABLE>
+      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
+      <PROPERTY>parameter_status=proposed_deterministic_review_mapping</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Patient Preferences; Review of Available Guidelines From Other Organizations</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>uncertainty_description=Certainty of the encoded review mapping only, not certainty of clinical findings, efficacy or safety</PROPERTY>
+      <PROPERTY>table_order=Child outcome fastest; last GIVEN next; declaration order</PROPERTY>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>AmantadineReview</FOR>
+      <GIVEN>ParkinsonismIndicationReview</GIVEN>
+      <GIVEN>AmantadineSafetyConcern</GIVEN>
+      <TABLE>
+        0 1 0
+        1 0 0
+        0 1 0
+        0 0 1
+        0 1 0
+        0 0 1
+      </TABLE>
+      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
+      <PROPERTY>parameter_status=proposed_deterministic_review_mapping</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Patient Preferences; Review of Available Guidelines From Other Organizations</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>uncertainty_description=Certainty of the encoded review mapping only, not certainty of clinical findings, efficacy or safety</PROPERTY>
+      <PROPERTY>table_order=Child outcome fastest; last GIVEN next; declaration order</PROPERTY>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>ProphylaxisReview</FOR>
+      <GIVEN>ParkinsonismAssessment</GIVEN>
+      <GIVEN>PriorSignificantParkinsonism</GIVEN>
+      <TABLE>
+        0 0 1
+        0 0 1
+        1 0 0
+        0 1 0
+        0 0 1
+        0 0 1
+      </TABLE>
+      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
+      <PROPERTY>parameter_status=proposed_deterministic_review_mapping</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Patient Preferences; Review of Available Guidelines From Other Organizations</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>uncertainty_description=Certainty of the encoded review mapping only, not certainty of clinical findings, efficacy or safety</PROPERTY>
+      <PROPERTY>table_order=Child outcome fastest; last GIVEN next; declaration order</PROPERTY>
+    </DEFINITION>
+  </NETWORK>
+</BIF>

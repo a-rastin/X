@@ -1,0 +1,1390 @@
+﻿6/22/26, 5:19 PM Victoza, Saxenda (liraglutide) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+liraglutide (Rx)
+Brand and Other Names: Victoza, Saxenda
+Classes: Antidiabetics, Glucagon-like Peptide-1 Agonists
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+SC solution multidose pen
+
+18mg/3mL (Victoza; generic); delivers doses of 0.6mg, 1.2mg, or 1.8mg
+
+18mg/3mL (Saxenda; generic); delivers doses of 0.6mg, 1.2mg, 1.8mg, 2.4mg, or
+3mg
+
+Type 2 Diabetes Mellitus
+
+Victoza only
+
+0.6 mg SC qDay for 1 week initially, THEN increase to 1.2 mg qDay
+
+If glycemic control not achieved, can increase to 1.8 mg qDay
+
+Initial dose of 0.6 mg SC qDay is only to decrease GI adverse effects and does not
+provide glycemic control
+
+Indications
+
+As an adjunct to diet and exercise to improve glycemic control in adults with type 2
+diabetes mellitus
+
+To reduce the risk of major adverse cardiovascular events (cardiovascular death,
+nonfatal myocardial infarction, or nonfatal stroke) in adults with type 2 diabetes
+mellitus and established cardiovascular disease
+
+Obesity
+
+Saxenda only
+
+Adjunctive therapy to a reduced-calorie diet and increased physical activity for chronic
+weight management in adults with a body mass index (BMI) of ≥30 kg/m2 (obese) or a
+BMI of ≥27 kg/m2 (overweight) who have at least 1 weight-related condition (eg,
+hypertension, type 2 diabetes, dyslipidemia)
+
+https://reference.medscape.com/drug/victoza-saxenda-liraglutide-999449 1/24
+
+
+
+6/22/26, 5:19 PM Victoza, Saxenda (liraglutide) dosing, indications, interactions, adverse effects, and more
+
+Initiate at 0.6 mg SC qDay for 1 week; increase by 0.6 mg/day in weekly intervals until a
+dose of 3 mg/day achieved
+
+If patients do not tolerate an increased dose during dose escalation, consider delaying
+dose escalation for ~1 additional week
+
+Discontinue if a patient cannot tolerate the 3-mg dose, as efficacy has not been
+established at lower doses (eg, 0.6, 1.2, 1.8, 2.4 mg)
+
+Evaluate change in body weight 16 weeks after initiating Saxenda
+
+Discontinue Saxenda if the patient has not lost at least 4% of baseline body weight
+
+Dosage Modifications
+
+Saxenda
+
+Initiating Saxenda in patients taking insulin or insulin secretagogues (eg,
+sulfonylureas)
+
+Consider reducing dose of the insulin secretagogue (eg, by one-half) or insulin
+to reduce the risk for hypoglycemia, and monitor blood glucose
+
+Conversely, if discontinuing Saxenda in patients with type 2 diabetes, monitor
+for an increase in blood glucose
+
+Renal impairment
+Mild-to-severe, including patients with end-stage renal disease (ESRD):
+Limited experience
+
+There have been postmarketing reports of acute renal failure and worsening of
+chronic renal failure with liraglutide, which may sometimes require
+hemodialysis; use with caution in these patients
+
+Hepatic impairment
+Mild-to-severe: Use caution; limited experience
+
+Victoza
+
+Renal impairment
+Mild-to-severe: No dosage adjustment necessary
+
+Patients with ESRD: Limited experience; there have been postmarketing
+reports of acute renal failure and worsening of chronic renal failure, which may
+
+https://reference.medscape.com/drug/victoza-saxenda-liraglutide-999449 2/24
+
+
+
+6/22/26, 5:19 PM Victoza, Saxenda (liraglutide) dosing, indications, interactions, adverse effects, and more
+
+sometimes require hemodialysis; use caution in patients who experience
+dehydration
+
+Hepatic impairment
+Mild-to-severe: Limited experience; no dosage adjustment necessary
+
+Dosing Considerations
+
+Saxenda slows gastric emptying; has not been studied in patients with pre-existing
+gastroparesis
+
+Limitations of use for Victoza
+
+Not for treatment of type 1 diabetes mellitus or diabetic ketoacidosis (not effective
+for these conditions)
+
+Not studied in combination with prandial insulin
+
+Limitations of use for Saxenda
+
+Not indicated for the treatment of type 2 diabetes mellitus
+
+Saxenda and Victoza both contain liraglutide, and therefore should not be used
+together or in combination with any other GLP-1 receptor agonist
+
+Safety and effectiveness in combination with other products intended for weight
+loss, including prescription drugs, OTCs, and herbal products, have not been
+established
+
+PEDIATRIC
+Dosage Forms & Strengths
+
+SC solution multidose pen
+
+18mg/3mL (Victoza; generic); delivers doses of 0.6mg, 1.2mg, or 1.8mg
+
+18mg/3mL (Saxenda; generic); delivers doses of 0.6mg, 1.2mg, 1.8mg, 2.4mg, or
+3mg
+
+Type 2 Diabetes Mellitus
+
+Victoza only
+
+Indicated as an adjunct to diet and exercise to improve glycemic control in patients aged
+≥10 years with type 2 diabetes mellitus
+
+<10 years: Safety and efficacy not studied
+
+≥10 years
+
+Victoza only
+
+Indicated as an adjunct to diet and exercise to improve glycemic control in patients
+aged ≥10 years with type 2 diabetes mellitus
+
+https://reference.medscape.com/drug/victoza-saxenda-liraglutide-999449 3/24
+
+
+
+6/22/26, 5:19 PM Victoza, Saxenda (liraglutide) dosing, indications, interactions, adverse effects, and more
+
+0.6 mg SC qDay
+
+After at least 1 week at 0.6 mg qDay, may increase dose to 1.2 mg/day if additional
+glycemic control required
+
+If additional glycemic control required, may increase to 1.8 mg qDay after at least 1
+week after 1.2 mg qDay dose
+
+Obesity
+
+Saxenda only
+
+Adjunctive therapy to a reduced-calorie diet and increased physical activity for chronic
+weight management in adolescents aged ≥12 years with weight >60 kg and an initial
+body mass index (BMI) corresponding to ≥30 kg/m2 for adults (obese) by international
+cutoffs
+
+Initiate at 0.6 mg SC qDay for 1 week; increase by 0.6 mg/day in weekly intervals until a
+dose of 3 mg/day achieved
+
+Recommended maintenance dose is 3 mg/day; if unable to tolerate, may reduce to 2.4
+mg/day; discontinue if 2.4 mg not tolerated
+
+If pediatric patients do not tolerate an increased dose during dose escalation, may lower
+dose to previous level; dose escalation for pediatric patients may take up to 8 weeks
+
+Evaluate change in BMI after 12 weeks on maintenance dose
+
+Discontinue Saxenda if the patient has not reduced BMI by at least 1% from baseline,
+since it is unlikely that the patient will achieve and sustain clinically meaningful weight
+loss with continued treatment
+
+Dosage Modifications
+
+Victoza
+
+Renal impairment
+Mild-to-severe: No dosage adjustment necessary
+
+Patients with ESRD: Limited experience; there have been postmarketing
+reports of acute renal failure and worsening of chronic renal failure, which may
+sometimes require hemodialysis; use caution in patients who experience
+dehydration
+
+Hepatic impairment
+Mild-to-severe: Use caution; limited experience
+
+Saxenda
+
+Renal impairment
+Mild-to-severe, including patients with end-stage renal disease (ESRD):
+Limited experience
+
+https://reference.medscape.com/drug/victoza-saxenda-liraglutide-999449 4/24
+
+
+
+6/22/26, 5:19 PM Victoza, Saxenda (liraglutide) dosing, indications, interactions, adverse effects, and more
+
+There have been postmarketing reports of acute renal failure and worsening of
+chronic renal failure with liraglutide, which may sometimes require
+hemodialysis; use with caution in these patients
+
+Hepatic impairment
+Mild-to-severe: Use caution; limited experience
+
+Dosing Considerations
+
+Saxenda slows gastric emptying; has not been studied in patients with pre-existing
+gastroparesis
+
+Limitations of use for Victoza
+
+Not for treatment of type 1 diabetes mellitus or diabetic ketoacidosis (not effective
+for these conditions)
+
+Has not been studied in combination with prandial insulin
+
+Interactions
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and liraglutide
+No Interactions Found
+Interactions Found
+Contraindicated
+
+Serious
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+Contraindicated (0)
+
+Serious (0)
+
+Monitor Closely (108)
+
+acarbose
+
+https://reference.medscape.com/drug/victoza-saxenda-liraglutide-999449 5/24
+
+
+
+6/22/26, 5:19 PM Victoza, Saxenda (liraglutide) dosing, indications, interactions, adverse effects, and more
+
+liraglutide, acarbose. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Concurrent use may increase risk of hypoglycemia;
+monitor glucose levels.
+
+aripiprazole
+aripiprazole, liraglutide. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+asenapine
+asenapine, liraglutide. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+atazanavir
+atazanavir decreases effects of liraglutide by Other (see comment). Use
+Caution/Monitor. Comment: Reports of hyperglycemia due to insulin resistance with
+protease inhibitors. .
+
+atorvastatin
+liraglutide will decrease the level or effect of atorvastatin by Other (see comment).
+Use Caution/Monitor. Based on pharmacokinetic studies liraglutide decreased
+atorvastatin Cmax by 38% and median Tmax delayed from 1h to 3h with liraglutide
+and the AUC did not change.
+
+azilsartan
+azilsartan increases effects of liraglutide by Other (see comment). Use
+Caution/Monitor. Comment: Angiotensin II receptor antagonists may enhance
+hypoglycemic effects of antidiabetic agents by improving insulin sensitivity. Monitor
+patients for changes in glycemic control.
+
+bazedoxifene/conjugated estrogens
+bazedoxifene/conjugated estrogens decreases effects of liraglutide by
+pharmacodynamic antagonism. Use Caution/Monitor. Estrogens may decrease
+hypoglycemic effects of antidiabetics by impairing glucose tolerance. Monitor for
+glycemic control in diabetic patients.
+
+benazepril
+benazepril increases effects of liraglutide by unknown mechanism. Use
+Caution/Monitor. ACE inhibitors may increase hypoglycemic effect. Monitor glycemic
+control especially during the first month of treatment with an ACE inhibitor. .
+
+betamethasone
+betamethasone decreases effects of liraglutide by pharmacodynamic antagonism.
+Use Caution/Monitor. Corticosteroids may diminish hypoglycemic effect of
+antidiabetic agents. Monitor blood glucose levels carefully. .
+
+candesartan
+candesartan increases effects of liraglutide by Other (see comment). Use
+Caution/Monitor. Comment: Angiotensin II receptor antagonists may enhance
+hypoglycemic effects of antidiabetic agents by improving insulin sensitivity. Monitor
+patients for changes in glycemic control.
+
+https://reference.medscape.com/drug/victoza-saxenda-liraglutide-999449 6/24
+
+
+
+6/22/26, 5:19 PM Victoza, Saxenda (liraglutide) dosing, indications, interactions, adverse effects, and more
+
+captopril
+captopril increases effects of liraglutide by unknown mechanism. Use
+Caution/Monitor. ACE inhibitors may increase hypoglycemic effect. Monitor glycemic
+control especially during the first month of treatment with an ACE inhibitor. .
+
+chlorothiazide
+chlorothiazide decreases effects of liraglutide by pharmacodynamic antagonism.
+Use Caution/Monitor. Thiazide diuretics can decrease insulin sensitivity thereby
+leading to glucose intolerance and hyperglycemia. Monitor glycemic control
+especially when initiating, discontinuing, or increasing thiazide diuretic dose.
+
+chlorpromazine
+chlorpromazine, liraglutide. Other (see comment). Use Caution/Monitor. Comment:
+Phenothiazines may increase or decrease glucose levels, monitor therapy closely
+when these agents are concurrently administered.
+
+chlorthalidone
+chlorthalidone decreases effects of liraglutide by pharmacodynamic antagonism.
+Use Caution/Monitor. Thiazide diuretics can decrease insulin sensitivity thereby
+leading to glucose intolerance and hyperglycemia. Monitor glycemic control
+especially when initiating, discontinuing, or increasing thiazide diuretic dose.
+
+cinnamon
+cinnamon increases effects of liraglutide by pharmacodynamic synergism. Use
+Caution/Monitor. Potential for hypoglycemia.
+
+clozapine
+clozapine, liraglutide. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+conjugated estrogens
+conjugated estrogens decreases effects of liraglutide by pharmacodynamic
+antagonism. Use Caution/Monitor. Estrogens may decrease hypoglycemic effects of
+antidiabetics by impairing glucose tolerance. Monitor for glycemic control in diabetic
+patients.
+
+conjugated estrogens, vaginal
+conjugated estrogens, vaginal decreases effects of liraglutide by pharmacodynamic
+antagonism. Use Caution/Monitor. Estrogens may decrease hypoglycemic effects of
+antidiabetics by impairing glucose tolerance. Monitor for glycemic control in diabetic
+patients.
+
+cortisone
+cortisone decreases effects of liraglutide by pharmacodynamic antagonism. Use
+Caution/Monitor. Corticosteroids may diminish hypoglycemic effect of antidiabetic
+agents. Monitor blood glucose levels carefully. .
+
+darunavir
+darunavir decreases effects of liraglutide by Other (see comment). Use
+Caution/Monitor. Comment: Reports of hyperglycemia due to insulin resistance with
+protease inhibitors. .
+
+https://reference.medscape.com/drug/victoza-saxenda-liraglutide-999449 7/24
+
+
+
+6/22/26, 5:19 PM Victoza, Saxenda (liraglutide) dosing, indications, interactions, adverse effects, and more
+
+desogestrel
+desogestrel decreases effects of liraglutide by pharmacodynamic antagonism. Use
+Caution/Monitor. Oral contraceptives may decrease hypoglycemic effects of
+antidiabetics by impairing glucose tolerance. Monitor for glycemic control in diabetic
+patients.
+
+dexamethasone
+dexamethasone decreases effects of liraglutide by pharmacodynamic antagonism.
+Use Caution/Monitor. Corticosteroids may diminish hypoglycemic effect of
+antidiabetic agents. Monitor blood glucose levels carefully. .
+
+drospirenone
+drospirenone decreases effects of liraglutide by passive renal tubular reabsorption
+due to increased pH. Use Caution/Monitor. Oral contraceptives may decrease
+hypoglycemic effects of antidiabetics by impairing glucose tolerance. Monitor for
+glycemic control in diabetic patients.
+
+enalapril
+enalapril increases effects of liraglutide by unknown mechanism. Use
+Caution/Monitor. ACE inhibitors may increase hypoglycemic effect. Monitor glycemic
+control especially during the first month of treatment with an ACE inhibitor. .
+
+eprosartan
+eprosartan increases effects of liraglutide by Other (see comment). Use
+Caution/Monitor. Comment: Angiotensin II receptor antagonists may enhance
+hypoglycemic effects of antidiabetic agents by improving insulin sensitivity. Monitor
+patients for changes in glycemic control.
+
+estradiol
+estradiol decreases effects of liraglutide by pharmacodynamic antagonism. Use
+Caution/Monitor. Estradiol may decrease hypoglycemic effects of antidiabetics by
+impairing glucose tolerance. Monitor for glycemic control in diabetic patients.
+
+estradiol combos
+estradiol combos decreases effects of liraglutide by pharmacodynamic antagonism.
+Use Caution/Monitor. Oral contraceptives may decrease hypoglycemic effects of
+antidiabetics by impairing glucose tolerance. Monitor for glycemic control in diabetic
+patients.
+
+estrogens conjugated synthetic
+estrogens conjugated synthetic decreases effects of liraglutide by
+pharmacodynamic antagonism. Use Caution/Monitor. Estrogens may decrease
+hypoglycemic effects of antidiabetics by impairing glucose tolerance. Monitor for
+glycemic control in diabetic patients.
+
+estrogens esterified
+estrogens esterified decreases effects of liraglutide by pharmacodynamic
+antagonism. Use Caution/Monitor. Estrogens may decrease hypoglycemic effects of
+antidiabetics by impairing glucose tolerance. Monitor for glycemic control in diabetic
+patients.
+
+estropipate
+
+https://reference.medscape.com/drug/victoza-saxenda-liraglutide-999449 8/24
+
+
+
+6/22/26, 5:19 PM Victoza, Saxenda (liraglutide) dosing, indications, interactions, adverse effects, and more
+
+estropipate decreases effects of liraglutide by pharmacodynamic antagonism. Use
+Caution/Monitor. Estropipate may decrease hypoglycemic effects of antidiabetics by
+impairing glucose tolerance. Monitor for glycemic control in diabetic patients.
+
+ethinylestradiol
+ethinylestradiol decreases effects of liraglutide by pharmacodynamic antagonism.
+Use Caution/Monitor. Oral contraceptives may decrease hypoglycemic effects of
+antidiabetics by impairing glucose tolerance. Monitor for glycemic control in diabetic
+patients.
+
+etonogestrel
+etonogestrel decreases effects of liraglutide by pharmacodynamic antagonism. Use
+Caution/Monitor. Etonogestrel may decrease hypoglycemic effects of antidiabetics
+by impairing glucose tolerance. Monitor for glycemic control in diabetic patients.
+
+fludrocortisone
+fludrocortisone decreases effects of liraglutide by pharmacodynamic antagonism.
+Use Caution/Monitor. Corticosteroids may diminish hypoglycemic effect of
+antidiabetic agents. Monitor blood glucose levels carefully. .
+
+fluphenazine
+fluphenazine, liraglutide. Other (see comment). Use Caution/Monitor. Comment:
+Phenothiazines may increase or decrease glucose levels, monitor therapy closely
+when these agents are concurrently administered.
+
+fosamprenavir
+fosamprenavir decreases effects of liraglutide by Other (see comment). Use
+Caution/Monitor. Comment: Reports of hyperglycemia due to insulin resistance with
+protease inhibitors. .
+
+fosinopril
+fosinopril increases effects of liraglutide by unknown mechanism. Use
+Caution/Monitor. ACE inhibitors may increase hypoglycemic effect. Monitor glycemic
+control especially during the first month of treatment with an ACE inhibitor. .
+
+glimepiride
+liraglutide, glimepiride. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Serious hypoglycemia may occur when insulin
+secretagogues and GLP-1 agonists are concurrently administered. Consider
+lowering the dose of insulin secretagogue to reduce the risk of hypoglycemia. .
+
+glipizide
+liraglutide, glipizide. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Serious hypoglycemia may occur when insulin
+secretagogues and GLP-1 agonists are concurrently administered. Consider
+lowering the dose of insulin secretagogue to reduce the risk of hypoglycemia. .
+
+glyburide
+liraglutide, glyburide. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Serious hypoglycemia may occur when insulin
+secretagogues and GLP-1 agonists are concurrently administered. Consider
+lowering the dose of insulin secretagogue to reduce the risk of hypoglycemia. .
+
+https://reference.medscape.com/drug/victoza-saxenda-liraglutide-999449 9/24
+
+
+
+6/22/26, 5:19 PM Victoza, Saxenda (liraglutide) dosing, indications, interactions, adverse effects, and more
+
+hydrochlorothiazide
+hydrochlorothiazide decreases effects of liraglutide by pharmacodynamic
+antagonism. Use Caution/Monitor. Thiazide diuretics can decrease insulin sensitivity
+thereby leading to glucose intolerance and hyperglycemia. Monitor glycemic control
+especially when initiating, discontinuing, or increasing thiazide diuretic dose.
+
+hydrocortisone
+hydrocortisone decreases effects of liraglutide by pharmacodynamic antagonism.
+Use Caution/Monitor. Corticosteroids may diminish hypoglycemic effect of
+antidiabetic agents. Monitor blood glucose levels carefully. .
+
+indapamide
+indapamide decreases effects of liraglutide by pharmacodynamic antagonism. Use
+Caution/Monitor. Thiazide diuretics can decrease insulin sensitivity thereby leading
+to glucose intolerance and hyperglycemia. Monitor glycemic control especially
+when initiating, discontinuing, or increasing thiazide diuretic dose.
+
+insulin aspart
+liraglutide, insulin aspart. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Antidiabetic agents are often used in combination;
+dosage adjustments may be required when initiating or discontinuing antidiabetic
+agents.
+
+insulin aspart protamine/insulin aspart
+liraglutide, insulin aspart protamine/insulin aspart. Either increases effects of the
+other by pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents
+are often used in combination; dosage adjustments may be required when initiating
+or discontinuing antidiabetic agents.
+
+insulin degludec
+liraglutide, insulin degludec. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+insulin degludec/insulin aspart
+liraglutide, insulin degludec/insulin aspart. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+insulin detemir
+liraglutide, insulin detemir. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+insulin glargine
+liraglutide, insulin glargine. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+https://reference.medscape.com/drug/victoza-saxenda-liraglutide-999449 10/24
+
+
+
+6/22/26, 5:19 PM Victoza, Saxenda (liraglutide) dosing, indications, interactions, adverse effects, and more
+
+insulin glulisine
+liraglutide, insulin glulisine. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+insulin icodec
+liraglutide, insulin icodec. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Consider dose adjustment when insulin
+is coadministered with a GLP-1 agonist; concomitant use may require increased
+glucose monitoring.
+
+insulin inhaled
+liraglutide, insulin inhaled. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+insulin isophane human/insulin regular human
+liraglutide, insulin isophane human/insulin regular human. Either increases effects
+of the other by pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic
+agents are often used in combination; dosage adjustments may be required when
+initiating or discontinuing antidiabetic agents.
+
+insulin lispro
+liraglutide, insulin lispro. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Antidiabetic agents are often used in combination;
+dosage adjustments may be required when initiating or discontinuing antidiabetic
+agents.
+
+insulin lispro protamine/insulin lispro
+liraglutide, insulin lispro protamine/insulin lispro. Either increases effects of the
+other by pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents
+are often used in combination; dosage adjustments may be required when initiating
+or discontinuing antidiabetic agents.
+
+insulin NPH
+liraglutide, insulin NPH. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Antidiabetic agents are often used in combination;
+dosage adjustments may be required when initiating or discontinuing antidiabetic
+agents.
+
+insulin regular human
+liraglutide, insulin regular human. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+irbesartan
+irbesartan increases effects of liraglutide by Other (see comment). Use
+Caution/Monitor. Comment: Angiotensin II receptor antagonists may enhance
+
+https://reference.medscape.com/drug/victoza-saxenda-liraglutide-999449 11/24
+
+
+
+6/22/26, 5:19 PM Victoza, Saxenda (liraglutide) dosing, indications, interactions, adverse effects, and more
+
+hypoglycemic effects of antidiabetic agents by improving insulin sensitivity. Monitor
+patients for changes in glycemic control.
+
+levonorgestrel oral
+levonorgestrel oral decreases effects of liraglutide by pharmacodynamic
+antagonism. Use Caution/Monitor. Oral contraceptives may decrease hypoglycemic
+effects of antidiabetics by impairing glucose tolerance. Monitor for glycemic control
+in diabetic patients.
+
+lisinopril
+lisinopril increases effects of liraglutide by unknown mechanism. Use
+Caution/Monitor. ACE inhibitors may increase hypoglycemic effect. Monitor glycemic
+control especially during the first month of treatment with an ACE inhibitor. .
+
+lonapegsomatropin
+lonapegsomatropin decreases effects of liraglutide by Other (see comment). Use
+Caution/Monitor. Comment: Closely monitor blood glucose when treated with
+antidiabetic agents. Lonapegsomatropin may decrease insulin sensitivity,
+particularly at higher doses. Patients with diabetes mellitus may require adjustment
+of their doses of insulin and/or other antihyperglycemic agents.
+
+lonapegsomatropin decreases effects of liraglutide by pharmacodynamic
+antagonism. Modify Therapy/Monitor Closely. Growth hormone (GH) analogs may
+decrease insulin sensitivity, particularly at higher doses. Antidiabetic agents may
+require dose adjustment after initiating growth hormone.
+
+lopinavir
+lopinavir decreases effects of liraglutide by Other (see comment). Use
+Caution/Monitor. Comment: Reports of hyperglycemia due to insulin resistance with
+protease inhibitors. .
+
+losartan
+losartan increases effects of liraglutide by Other (see comment). Use
+Caution/Monitor. Comment: Angiotensin II receptor antagonists may enhance
+hypoglycemic effects of antidiabetic agents by improving insulin sensitivity. Monitor
+patients for changes in glycemic control.
+
+lurasidone
+lurasidone, liraglutide. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+medroxyprogesterone
+medroxyprogesterone decreases effects of liraglutide by pharmacodynamic
+antagonism. Use Caution/Monitor. Medroxyprogesterone may decrease
+hypoglycemic effects of antidiabetics by impairing glucose tolerance. Monitor for
+glycemic control in diabetic patients.
+
+mestranol
+mestranol decreases effects of liraglutide by pharmacodynamic antagonism. Use
+Caution/Monitor. Oral contraceptives may decrease hypoglycemic effects of
+
+https://reference.medscape.com/drug/victoza-saxenda-liraglutide-999449 12/24
+
+
+
+6/22/26, 5:19 PM Victoza, Saxenda (liraglutide) dosing, indications, interactions, adverse effects, and more
+
+antidiabetics by impairing glucose tolerance. Monitor for glycemic control in diabetic
+patients.
+
+metformin
+liraglutide, metformin. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Antidiabetic agents are often used in combination;
+dosage adjustments may be required when initiating or discontinuing antidiabetic
+agents.
+
+methyclothiazide
+methyclothiazide decreases effects of liraglutide by pharmacodynamic antagonism.
+Use Caution/Monitor. Thiazide diuretics can decrease insulin sensitivity thereby
+leading to glucose intolerance and hyperglycemia. Monitor glycemic control
+especially when initiating, discontinuing, or increasing thiazide diuretic dose.
+
+methylprednisolone
+methylprednisolone decreases effects of liraglutide by pharmacodynamic
+antagonism. Use Caution/Monitor. Corticosteroids may diminish hypoglycemic effect
+of antidiabetic agents. Monitor blood glucose levels carefully. .
+
+methyltestosterone
+methyltestosterone increases effects of liraglutide by pharmacodynamic synergism.
+Use Caution/Monitor. It is important to monitor all patients with type 2 diabetes on
+antidiabetic agents receiving androgens for changes in glycemic control. Potential
+for hypoglycemia.
+
+metolazone
+metolazone decreases effects of liraglutide by pharmacodynamic antagonism. Use
+Caution/Monitor. Thiazide diuretics can decrease insulin sensitivity thereby leading
+to glucose intolerance and hyperglycemia. Monitor glycemic control especially
+when initiating, discontinuing, or increasing thiazide diuretic dose.
+
+miglitol
+liraglutide, miglitol. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Concurrent use may increase risk of hypoglycemia;
+monitor glucose levels.
+
+moexipril
+moexipril increases effects of liraglutide by unknown mechanism. Use
+Caution/Monitor. ACE inhibitors may increase hypoglycemic effect. Monitor glycemic
+control especially during the first month of treatment with an ACE inhibitor. .
+
+nateglinide
+liraglutide, nateglinide. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Concurrent use may increase risk of hypoglycemia;
+monitor glucose levels.
+
+nelfinavir
+nelfinavir decreases effects of liraglutide by Other (see comment). Use
+Caution/Monitor. Comment: Reports of hyperglycemia due to insulin resistance with
+protease inhibitors. .
+
+norethindrone acetate
+
+https://reference.medscape.com/drug/victoza-saxenda-liraglutide-999449 13/24
+
+
+
+6/22/26, 5:19 PM Victoza, Saxenda (liraglutide) dosing, indications, interactions, adverse effects, and more
+
+norethindrone acetate decreases effects of liraglutide by pharmacodynamic
+antagonism. Use Caution/Monitor. Oral contraceptives may decrease hypoglycemic
+effects of antidiabetics by impairing glucose tolerance. Monitor for glycemic control
+in diabetic patients.
+
+norgestimate
+norgestimate decreases effects of liraglutide by pharmacodynamic antagonism. Use
+Caution/Monitor. Oral contraceptives may decrease hypoglycemic effects of
+antidiabetics by impairing glucose tolerance. Monitor for glycemic control in diabetic
+patients.
+
+olanzapine
+olanzapine, liraglutide. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+olmesartan
+olmesartan increases effects of liraglutide by Other (see comment). Use
+Caution/Monitor. Comment: Angiotensin II receptor antagonists may enhance
+hypoglycemic effects of antidiabetic agents by improving insulin sensitivity. Monitor
+patients for changes in glycemic control.
+
+paliperidone
+paliperidone, liraglutide. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+pegvisomant
+pegvisomant increases effects of liraglutide by Other (see comment). Use
+Caution/Monitor. Comment: Pegvisomant may increase glucose tolerance. Dosage
+reductions of antidiabetic agents may be needed to avoid potential hypoglycemia.
+
+perindopril
+perindopril increases effects of liraglutide by unknown mechanism. Use
+Caution/Monitor. ACE inhibitors may increase hypoglycemic effect. Monitor glycemic
+control especially during the first month of treatment with an ACE inhibitor. .
+
+perphenazine
+perphenazine, liraglutide. Other (see comment). Use Caution/Monitor. Comment:
+Phenothiazines may increase or decrease glucose levels, monitor therapy closely
+when these agents are concurrently administered.
+
+pioglitazone
+liraglutide, pioglitazone. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Concurrent use may increase risk of hypoglycemia;
+monitor glucose levels.
+
+pramlintide
+liraglutide, pramlintide. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Concurrent use may increase risk of hypoglycemia;
+monitor glucose levels.
+
+prednisolone
+
+https://reference.medscape.com/drug/victoza-saxenda-liraglutide-999449 14/24
+
+
+
+6/22/26, 5:19 PM Victoza, Saxenda (liraglutide) dosing, indications, interactions, adverse effects, and more
+
+prednisolone decreases effects of liraglutide by pharmacodynamic antagonism. Use
+Caution/Monitor. Corticosteroids may diminish hypoglycemic effect of antidiabetic
+agents. Monitor blood glucose levels carefully. .
+
+prednisone
+prednisone decreases effects of liraglutide by pharmacodynamic antagonism. Use
+Caution/Monitor. Corticosteroids may diminish hypoglycemic effect of antidiabetic
+agents. Monitor blood glucose levels carefully. .
+
+prochlorperazine
+prochlorperazine, liraglutide. Other (see comment). Use Caution/Monitor. Comment:
+Phenothiazines may increase or decrease glucose levels, monitor therapy closely
+when these agents are concurrently administered.
+
+promethazine
+promethazine, liraglutide. Other (see comment). Use Caution/Monitor. Comment:
+Phenothiazines may increase or decrease glucose levels, monitor therapy closely
+when these agents are concurrently administered.
+
+quetiapine
+quetiapine, liraglutide. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+quinapril
+quinapril increases effects of liraglutide by unknown mechanism. Use
+Caution/Monitor. ACE inhibitors may increase hypoglycemic effect. Monitor glycemic
+control especially during the first month of treatment with an ACE inhibitor. .
+
+ramipril
+ramipril increases effects of liraglutide by unknown mechanism. Use
+Caution/Monitor. ACE inhibitors may increase hypoglycemic effect. Monitor glycemic
+control especially during the first month of treatment with an ACE inhibitor. .
+
+repaglinide
+liraglutide, repaglinide. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Concurrent use may increase risk of hypoglycemia;
+monitor glucose levels.
+
+risperidone
+risperidone, liraglutide. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+ritonavir
+ritonavir decreases effects of liraglutide by Other (see comment). Use
+Caution/Monitor. Comment: Reports of hyperglycemia due to insulin resistance with
+protease inhibitors. .
+
+rosiglitazone
+liraglutide, rosiglitazone. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Concurrent use may increase risk of hypoglycemia;
+
+https://reference.medscape.com/drug/victoza-saxenda-liraglutide-999449 15/24
+
+
+
+6/22/26, 5:19 PM Victoza, Saxenda (liraglutide) dosing, indications, interactions, adverse effects, and more
+
+monitor glucose levels.
+
+sacubitril/valsartan
+sacubitril/valsartan increases effects of liraglutide by Other (see comment). Use
+Caution/Monitor. Comment: Angiotensin II receptor antagonists may enhance
+hypoglycemic effects of antidiabetic agents by improving insulin sensitivity. Monitor
+patients for changes in glycemic control.
+
+saxagliptin
+liraglutide, saxagliptin. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Concurrent use may increase risk of hypoglycemia;
+monitor glucose levels.
+
+sitagliptin
+liraglutide, sitagliptin. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Concurrent use may increase risk of hypoglycemia;
+monitor glucose levels.
+
+somapacitan
+somapacitan decreases effects of liraglutide by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely. Growth hormone (GH) analogs may decrease
+insulin sensitivity, particularly at higher doses. Antidiabetic agents may require dose
+adjustment after initiating growth hormone.
+
+somatrogon
+somatrogon decreases effects of liraglutide by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely. Growth hormone (GH) analogs may decrease
+insulin sensitivity, particularly at higher doses. Antidiabetic agents may require dose
+adjustment after initiating growth hormone.
+
+somatropin
+somatropin decreases effects of liraglutide by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely. Growth hormone (GH) analogs may decrease
+insulin sensitivity, particularly at higher doses. Antidiabetic agents may require dose
+adjustment after initiating growth hormone.
+
+telmisartan
+telmisartan increases effects of liraglutide by Other (see comment). Use
+Caution/Monitor. Comment: Angiotensin II receptor antagonists may enhance
+hypoglycemic effects of antidiabetic agents by improving insulin sensitivity. Monitor
+patients for changes in glycemic control.
+
+thioridazine
+thioridazine, liraglutide. Other (see comment). Use Caution/Monitor. Comment:
+Phenothiazines may increase or decrease glucose levels, monitor therapy closely
+when these agents are concurrently administered.
+
+tipranavir
+tipranavir decreases effects of liraglutide by Other (see comment). Use
+Caution/Monitor. Comment: Reports of hyperglycemia due to insulin resistance with
+protease inhibitors. .
+
+triamcinolone acetonide injectable suspension
+
+https://reference.medscape.com/drug/victoza-saxenda-liraglutide-999449 16/24
+
+
+
+6/22/26, 5:19 PM Victoza, Saxenda (liraglutide) dosing, indications, interactions, adverse effects, and more
+
+triamcinolone acetonide injectable suspension decreases effects of liraglutide by
+pharmacodynamic antagonism. Use Caution/Monitor. Corticosteroids may diminish
+hypoglycemic effect of antidiabetic agents. Monitor blood glucose levels carefully. .
+
+trifluoperazine
+trifluoperazine, liraglutide. Other (see comment). Use Caution/Monitor. Comment:
+Phenothiazines may increase or decrease glucose levels, monitor therapy closely
+when these agents are concurrently administered.
+
+valsartan
+valsartan increases effects of liraglutide by Other (see comment). Use
+Caution/Monitor. Comment: Angiotensin II receptor antagonists may enhance
+hypoglycemic effects of antidiabetic agents by improving insulin sensitivity. Monitor
+patients for changes in glycemic control.
+
+ziprasidone
+ziprasidone, liraglutide. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+Minor (4)
+
+acetaminophen
+liraglutide decreases levels of acetaminophen by unspecified interaction
+mechanism. Minor/Significance Unknown.
+
+acetaminophen IV
+liraglutide decreases levels of acetaminophen IV by unspecified interaction
+mechanism. Minor/Significance Unknown.
+
+digoxin
+liraglutide decreases levels of digoxin by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+lovastatin
+liraglutide decreases levels of lovastatin by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+Adverse Effects
+
+>10% (Victoza)
+
+Nausea (26%)
+
+Diarrhea (17%)
+
+Vomiting (11%)
+
+>10% (Saxenda)
+
+https://reference.medscape.com/drug/victoza-saxenda-liraglutide-999449 17/24
+
+
+
+6/22/26, 5:19 PM Victoza, Saxenda (liraglutide) dosing, indications, interactions, adverse effects, and more
+
+Nausea (39.3%)
+
+Hypoglycemia in T2DM (23%)
+
+Diarrhea (20.9%)
+
+Constipation (19.4%)
+
+Vomiting (15.7%)
+
+Headache (13.6%)
+
+1-10% (Victoza)
+
+Constipation (10%)
+
+Headache (9%)
+
+Antiliraglutide antibodies (7%)
+
+Injection-site reactions (2%)
+
+1-10% (Saxenda)
+
+Decreased appetite (10%)
+
+Dyspepsia (9.6%)
+
+Fatigue (7.5%)
+
+Dizziness (6.9%)
+
+Abdominal pain (5.4%)
+
+Increased lipase (5.3%)
+
+Upper abdominal pain (5.1%)
+
+Gastroesophageal reflux disease (4.7%)
+
+Gastroenteritis (4.7%)
+
+Abdominal distension (4.5%)
+
+Eructation (4.5%)
+
+Urinary tract infection (4.3%)
+
+Flatulence (4%)
+
+Viral gastroenteritis (2.8%)
+
+Injection site erythema (2.5%)
+
+Injection site reaction (2.5%)
+
+Insomnia (2.4%)
+
+Dry mouth (2.3%)
+
+https://reference.medscape.com/drug/victoza-saxenda-liraglutide-999449 18/24
+
+
+
+6/22/26, 5:19 PM Victoza, Saxenda (liraglutide) dosing, indications, interactions, adverse effects, and more
+
+Asthenia (2.1%)
+
+Anxiety (2%)
+
+<1% (Victoza)
+
+Urticaria
+
+Upper respiratory tract infection
+
+UTI
+
+Dizziness
+
+Sinusitis
+
+Nasopharyngitis
+
+Back pain
+
+Hypertension
+
+Hypoglycemia (mostly in combination therapy)
+
+Pancreatitis
+
+Papillary thyroid carcinoma
+
+Thyroid C-cell hyperplasia
+
+Postmarketing Reports
+
+Dehydration resulting from nausea, vomiting, and diarrhea
+
+Increased serum creatinine, acute renal failure, and worsening chronic renal failure,
+sometimes requiring hemodialysis
+
+Hypersensitivity reactions (anaphylactic and angioedema)
+
+Allergic reactions: Rash, pruritus
+
+Acute pancreatitis, including fatal and nonfatal hemorrhagic or necrotizing pancreatitis
+
+Breast cancer
+
+Colorectal neoplasms
+
+Skin and subcutaneous tissue disorder: cutaneous amyloidosis
+
+Hepatobiliary disorders: Hyperbilirubinemia, elevations of liver enzymes, cholestasis,
+hepatitis, cholecystitis, cholelithiasis requiring cholecystectomy
+
+Intestinal obstruction, severe constipation including fecal impaction. Ileus
+
+Pulmonary: Pulmonary aspiration in patients receiving GLP-1 receptor agonists
+undergoing elective surgeries or procedures requiring general anesthesia or deep
+sedation
+
+https://reference.medscape.com/drug/victoza-saxenda-liraglutide-999449 19/24
+
+
+
+6/22/26, 5:19 PM Victoza, Saxenda (liraglutide) dosing, indications, interactions, adverse effects, and more
+
+Warnings
+
+Black Box Warnings
+
+Risk of thyroid C-cell tumors
+
+Causes thyroid C-cell tumors in rodents; human risk could not be determined
+
+Contraindicated in patients with personal or family history of medullary thyroid
+carcinoma (MTC) or in patients with multiple endocrine neoplasia syndrome type 2
+(MEN 2)
+
+Routine monitoring of serum calcitonin or using thyroid ultrasound monitoring is of
+uncertain value for early detection of MTC in patients treated with liraglutide
+
+Counsel patients regarding the potential risk of MTC with therapy
+
+Contraindications
+
+Hypersensitivity to liraglutide or its components
+
+Patients with a personal or family history of medullary thyroid carcinoma (MTC) or
+patients with multiple endocrine neoplasia syndrome type 2 (MEN 2)
+
+Cautions
+
+Acute pancreatitis, including fatal and non-fatal hemorrhagic or necrotizing pancreatitis,
+has been observed; studied in a limited number of patients with a history of pancreatitis;
+unknown if patients with a history of pancreatitis are at higher risk for development of
+pancreatitis
+
+Therapy has been associated with gastrointestinal adverse reactions, sometimes severe;
+in clinical trials, severe gastrointestinal adverse reactions were reported more frequently
+among patients receiving this drug than placebo; severe gastrointestinal adverse
+reactions have also been reported postmarketing with GLP-1 receptor agonists; therapy
+is not recommended in patients with severe gastroparesis
+
+Acute events of gallbladder disease such as cholelithiasis or cholecystitis reported in
+GLP-1 receptor agonist trials and postmarketing; if cholelithiasis suspected, gallbladder
+studies and appropriate clinical follow-up indicated
+
+May cause dose-dependent and treatment-duration-dependent thyroid C-cell tumors
+(adenomas and/or carcinomas) at clinically relevant exposures in both genders of rats
+and mice; if serum calcitonin is elevated, evaluate further; patients with thyroid nodules
+noted on physical examination or neck imaging should also be further evaluated
+
+Renal Impairment reported in association with nausea, vomiting, diarrhea, or
+dehydration, which may sometimes require hemodialysis; altered renal function has been
+reversed in many of reported cases with supportive treatment and discontinuation of
+potentially causative agents; use caution when initiating or escalating doses of in these
+patients
+
+There have been postmarketing reports of serious hypersensitivity reactions (eg,
+anaphylactic reactions, angioedema)
+
+Never share pen between patients even if needle is changed
+
+https://reference.medscape.com/drug/victoza-saxenda-liraglutide-999449 20/24
+
+
+
+6/22/26, 5:19 PM Victoza, Saxenda (liraglutide) dosing, indications, interactions, adverse effects, and more
+
+Pulmonary aspirations
+
+Therapy delays gastric emptying there have been rare postmarketing reports of
+pulmonary aspiration in patients receiving GLP-1 receptor agonists undergoing
+elective surgeries or procedures requiring general anesthesia or deep sedation who
+had residual gastric contents despite reported adherence to preoperative fasting
+recommendations
+
+Available data are insufficient to inform recommendations to mitigate risk of
+pulmonary aspiration during general anesthesia or deep sedation in patients
+receiving therapy, including whether modifying preoperative fasting
+recommendations or temporarily discontinuing therapy could reduce incidence of
+retained gastric contents; instruct patients to inform healthcare providers prior to
+any planned surgeries or procedures if they are receiving this therapy
+
+Acute kidney injury
+
+This drug has not been found to be directly nephrotoxic in animal studies or clinical
+trials; there have been postmarketing reports of acute renal failure and worsening
+of chronic renal failure, which may sometimes require hemodialysis in treated
+patients
+
+Some of these events were reported in patients without known underlying renal
+disease; a majority of the reported events occurred in patients who had experienced
+nausea, vomiting, diarrhea, or dehydration
+
+Some of the reported events occurred in patients receiving one or more medications
+known to affect renal function or hydration status; altered renal function has been
+reversed in many of the reported cases with supportive treatment and
+discontinuation of potentially causative agents, including this drug; use caution
+when initiating or escalating doses of this drug in patients with renal impairment
+
+Saxenda only
+
+Resting heart rate may increase by 2-3 bpm; up to 10-20 bpm increases also
+reported
+
+Drug interactions overview
+
+May cause a delay of gastric emptying, and thereby has the potential to impact the
+absorption of concomitantly administered oral medications; exercise caution when
+oral medications are concomitantly administered with liraglutide
+
+Risk for Hypoglycemia with Concomitant Use of Antidiabetic Therapy
+Risk for hypoglycemia is increased when Saxenda is used in combination with
+insulin secretagogues (ie, sulfonylureas) or insulin in patients with type 2 DM
+
+In patients with type 2 diabetes, monitor blood glucose prior to starting
+therapy and during treatment
+
+Therefore, patients may require a lower dose of sulfonylurea (or other
+concomitantly administered insulin secretagogues) or insulin in this setting
+
+Victoza only: In pediatric patients ≥10 years, the risk of hypoglycemia was
+higher regardless of concomitant antidiabetic therapies
+
+https://reference.medscape.com/drug/victoza-saxenda-liraglutide-999449 21/24
+
+
+
+6/22/26, 5:19 PM Victoza, Saxenda (liraglutide) dosing, indications, interactions, adverse effects, and more
+
+Pregnancy & Lactation
+
+Pregnancy
+
+Based on animal reproduction studies, there may be risks to the fetus from exposure
+during pregnancy
+
+Use during pregnancy only if the potential benefit justifies the potential risk to the fetus
+
+Saxenda: Weight loss offers no benefit to pregnant patients and may cause fetal harm;
+discontinue when pregnancy is recognized and advise patients of fetal risk
+
+Animal data
+Animal reproduction studies identified increased adverse developmental
+outcomes from exposure during pregnancy
+
+Liraglutide exposure was associated with early embryonic deaths and an
+imbalance in some fetal abnormalities in pregnant rats administered liraglutide
+during organogenesis at doses that approximate clinical exposures at the
+maximum recommended human dose (MRHD) of 1.8 mg/day
+
+In pregnant rabbits administered liraglutide during organogenesis, decreased
+fetal weight and an increased incidence of major fetal abnormalities were seen
+at exposures below the human exposures at the MRHD
+
+Clinical considerations
+
+Disease-associated maternal and/or embryo/fetal risk
+
+Poorly controlled diabetes in pregnancy increases maternal risk for diabetic
+ketoacidosis, preeclampsia, spontaneous abortions, preterm delivery, and delivery
+complications
+
+Poorly controlled diabetes increases fetal risk for major birth defects, still birth, and
+macrosomia related morbidity
+
+Lactation
+
+There are no data on the presence of drug in human milk, the effects on the breastfed
+infant, or the effects on milk production
+
+Present in milk of lactating rats
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+https://reference.medscape.com/drug/victoza-saxenda-liraglutide-999449 22/24
+
+
+
+6/22/26, 5:19 PM Victoza, Saxenda (liraglutide) dosing, indications, interactions, adverse effects, and more
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+Incretin mimetic; analogue of human glucagonlike peptide-1 (GLP-1); acts as GLP-1
+receptor agonist to increase insulin secretion in the presence of elevated blood glucose;
+delays gastric emptying to decrease postprandial glucose; also decreases glucagon
+secretion
+
+Absorption
+
+Peak plasma time: 11 hr (Saxenda)
+
+Peak plasma concentration: 35 ng/mL (Victoza)
+
+AUC: 960 ng·hr/mL (Victoza)
+
+Average steady state concentration over 24 hr: 128 ng/mL (at 1.8 mg dose)
+
+Absolute bioavailability: 55%
+
+Distribution
+
+Protein bound: >98%
+
+Vd: 13 L (Victoza); 20-25 L (Saxenda); 0.07 L/kg (IV)
+
+Metabolism
+
+Endogenously metabolized to large proteins without a specific organ route
+
+Elimination
+
+Half-life: 13 hr
+
+Mean apparent clearance: 1.2 L/hr (Victoza); 0.9-1.4 L/hr (Saxenda)
+
+Excretion (metabolites): 5% feces, 6% urine
+
+Administration
+
+SC Administration
+
+Administer SC in abdomen, thigh, or upper arm; rotate injection site
+
+Administer SC qDay at any time, independent of meals
+
+https://reference.medscape.com/drug/victoza-saxenda-liraglutide-999449 23/24
+
+
+
+6/22/26, 5:19 PM Victoza, Saxenda (liraglutide) dosing, indications, interactions, adverse effects, and more
+
+Must not be administered IV or IM
+
+Injection site and time of administration can be changed without dose adjustment
+
+Visually inspect each injection; solution should be used only if it is clear, colorless, and
+contains no particles
+
+Missed dose
+
+If dose missed, resume the once-daily regimen with the next scheduled dose; do
+not give an extra dose or a higher dose
+
+If missed dose more than 3 days elapsed since the last dose, initiate therapy at 0.6
+mg/day to avoid GI symptoms
+
+Storage
+
+All formulations
+
+Unused pens: Refrigerate at 2-8°C (36-46°F); do not freeze; do not use if frozen
+
+Used injectable pens: Store at room temperature (15-30°C [59-86°F]) or refrigerate
+(2-8°C [36-46°F]); protect from excessive heat and sunlight; discard 30 days after
+first use
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/victoza-saxenda-liraglutide-999449 24/24

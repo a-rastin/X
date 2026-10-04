@@ -1,0 +1,1896 @@
+﻿6/22/26, 4:53 PM Lyrica (pregabalin) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+pregabalin (Rx)
+Brand and Other Names: Lyrica, Lyrica CR
+Classes: Analgesics, Other; Anticonvulsants, Other; Fibromyalgia Agents
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+capsule: Schedule V
+
+25mg
+
+50mg
+
+75mg
+
+100mg
+
+150mg
+
+200mg
+
+225mg
+
+300mg
+
+oral solution: Schedule V
+
+20mg/mL
+
+tablet, extended-release: Schedule V
+
+82.5 mg
+
+165 mg
+
+330 mg
+
+Diabetic Peripheral Neuropathic Pain
+
+Regular-release capsules
+
+Initial: 50 mg PO q8hr
+
+https://reference.medscape.com/drug/lyrica-cr-pregabalin-343368 1/32
+
+
+
+6/22/26, 4:53 PM Lyrica (pregabalin) dosing, indications, interactions, adverse effects, and more
+
+Maintenance: May increase to 100 mg PO q8hr within 1 week, as needed; not to
+exceed 300 mg/day
+
+Extended-release tablets
+
+Initial: 165 mg PO qDay
+
+Maintenance: May increase to 330 mg PO qDay within 1 week based on response
+and tolerability; not to exceed 330 mg PO qDay
+
+See also Administration
+
+Postherpetic Neuralgia
+
+Regular-release capsules
+
+Initial: 150-300 mg/day PO divided q8-12hr
+
+Maintenance: May increase to 300 mg/day divided q8-12hr after 1 week, as needed
+
+Extended-release tablets
+
+Initial: 165 mg PO qDay
+
+Maintenance: May increase to 330 mg PO qDay within 1 week based on response
+and tolerability; not to exceed 330 mg PO qDay
+
+Patients experiencing insufficient pain relief following 2-4 weeks of treatment with
+330 mg PO qDay and tolerate the ER tablets, may be treated with up to 660 mg PO
+qDay
+
+Fibromyalgia
+
+Regular-release capsules and oral solution only
+
+Initial: 75 mg PO q12hr (150 mg/day)
+
+Maintenance: May increase to 150mg q12hr after 1 week as needed; recommended dose
+is 300-400 mg/day
+
+Owing to dose-dependent adverse reactions, doses >450 mg/day are not recommended
+
+Partial Onset Seizures
+
+Regular-release capsules and oral solution only
+
+Indicated as adjunctive therapy for treatment of partial onset seizures
+
+https://reference.medscape.com/drug/lyrica-cr-pregabalin-343368 2/32
+
+
+
+6/22/26, 4:53 PM Lyrica (pregabalin) dosing, indications, interactions, adverse effects, and more
+
+Initial: 150 mg/day PO divided q8-12hr
+
+Maintenance: Based on clinical response and tolerability, may increase dose in weekly
+increments, not to exceed 600 mg/day
+
+Efficacy of adjunctive pregabalin in patients taking gabapentin has not been evaluated in
+controlled trials; consequently, no dosing recommendations can be made when
+pregabalin is used with gabapentin
+
+Neuropathic Pain With Spinal Cord Injury
+
+Regular-release capsules and oral solution only
+
+Initial: 75 mg PO q12hr (150 mg/day); may increase within 1 week to 300 mg/day PO
+divided q12hr
+
+If there is insufficient pain relief after 2-3 weeks and 300 mg/day dose is tolerated, may
+increase dose again up to 600 mg/day PO divided q12hr
+
+Dosage Modifications
+
+Renal impairment (capsules/oral solution)
+
+CrCl 30-60 mL/min
+Decrease dose by 50% divided BID/TID
+
+CrCl 15-30 mL/min
+If 150 mg/day in normal renal function: Decrease dose to 25-50 mg/day;
+administer qDay or BID
+
+If 300 mg/day in normal renal function: Decrease dose to 75 mg/day;
+administer qDay or BID
+
+If 450 mg/day in normal renal function: Decrease dose to 100-150 mg/day;
+administer qDay or BID
+
+If 600 mg/day in normal renal function: Decrease dose to 150 mg/day;
+administer qDay or BID
+
+CrCl <15 mL/min
+If 150 mg/day in normal renal function: Decrease dose to 25 mg/day; qDay
+
+If 300 mg/day in normal renal function: Decrease dose to 25-50 mg/day; qDay
+
+If 450 mg/day in normal renal function: Decrease dose to 50-75 mg/day; qDay
+
+If 600 mg/day in normal renal function: Decrease dose to 75 mg/day; qDay
+
+Supplemental dosage following hemodialysis
+25 mg qDay regimen: Take 1 supplemental dose of 25 mg or 50 mg
+
+25-50 mg qDay regimen: Take 1 supplemental dose of 50 mg or 75 mg
+
+50-75 mg qDay regimen: Take 1 supplemental dose of 75 mg or 100 mg
+
+75 mg qDay regimen: Take 1 supplemental dose of 100 mg or 150 mg
+
+Renal impairment (ER tablets)
+
+https://reference.medscape.com/drug/lyrica-cr-pregabalin-343368 3/32
+
+
+
+6/22/26, 4:53 PM Lyrica (pregabalin) dosing, indications, interactions, adverse effects, and more
+
+CrCl 30-60 mL/min
+If 165 mg/day in normal renal function: Decrease dose to 82.5 mg/day
+
+If 330 mg/day in normal renal function: Decrease dose to 165 mg/day
+
+If 495 mg/day in normal renal function: Decrease dose to 247.5 mg/day
+
+If 660 mg/day in normal renal function: Decrease dose to 330 mg/day
+
+CrCl <30 mL/min or hemodialysis
+Not recommended
+
+Patients should only receive capsules or oral solution
+
+Dosing Considerations
+
+Conversion from capsules or oral solution (Lyrica) to ER tablets (Lyrica CR)
+
+Lyrica total daily dose (TDD) 75 mg/day = Lyrica CR 82.5 mg/day
+
+Lyrica TDD 150 mg/day = Lyrica CR 165 mg/day
+
+Lyrica TDD 225 mg/day = Lyrica CR 247.5 mg/day
+
+Lyrica TDD 300 mg/day = Lyrica CR 330 mg/day (3 × 82.5 mg tablets)
+
+Lyrica TDD 450 mg/day = Lyrica CR 495 mg/day (3 × 165 mg tablets)
+
+Lyrica TDD 600 mg/day = Lyrica CR 660 mg/day (2 × 330 mg tablets)
+
+PEDIATRIC
+Dosage Forms & Strengths
+
+capsule: Schedule V
+
+25mg
+
+50mg
+
+75mg
+
+100mg
+
+150mg
+
+200mg
+
+225mg
+
+300mg
+
+oral solution: Schedule V
+
+20mg/mL
+
+Partial Onset Seizures
+
+https://reference.medscape.com/drug/lyrica-cr-pregabalin-343368 4/32
+
+
+
+6/22/26, 4:53 PM Lyrica (pregabalin) dosing, indications, interactions, adverse effects, and more
+
+Regular-release capsules and oral solution only
+
+Indicated as adjunctive therapy for treatment of partial onset seizures in patients aged
+≥1 month
+
+<1 month: Safety and efficacy not established
+
+≥1 month to <17 years
+
+11 kg to <30 kg
+Initial: 3.5 mg/kg/day PO divided q8hr (for 1 month to 4 years) or q8-12hr (for
+≥4 years)
+
+Maintenance: Based on clinical response and tolerability, may increase dose in
+weekly increments, not to exceed 14 mg/kg/day
+
+≥30 kg
+Initial: 2.5 mg/kg/day PO divided q8-12hr
+
+Maintenance: Based on clinical response and tolerability, may increase dose in
+weekly increments up to 10 mg/kg/day (not to exceed 600 mg/day)
+
+≥17 years
+
+Initial: 150 mg/day PO divided q8-12hr
+
+Maintenance: Based on clinical response and tolerability, may increase dose in
+weekly increments, not to exceed 600 mg/day
+
+Fibromyalgia
+
+Safety and efficacy not established
+
+A 15-week, placebo-controlled trial (n=107) was conducted in pediatric patients with
+fibromyalgia aged 12-17 yr with pregabalin (75-450 mg/day)
+
+The primary efficacy endpoint of change from baseline to Week 15 in mean pain
+intensity (derived from an 11-point numeric rating scale) showed numerically greater
+improvement for the pregabalin-treated patients compared to placebo-treated patients,
+but did not reach statistical significance
+
+Dosage Modifications
+
+Renal impairment: Use in children with compromised renal function has not been studied
+
+Interactions
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and pregabalin
+No Interactions Found
+Interactions Found
+Contraindicated
+
+https://reference.medscape.com/drug/lyrica-cr-pregabalin-343368 5/32
+
+
+
+6/22/26, 4:53 PM Lyrica (pregabalin) dosing, indications, interactions, adverse effects, and more
+
+Serious
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+Contraindicated (0)
+
+Serious (32)
+
+benazepril
+benazepril, pregabalin. Either increases toxicity of the other by Other (see
+comment). Avoid or Use Alternate Drug. Comment: Coadministration results in
+additive risk of developing angioedema of face, mouth, and neck. Angioedema may
+result in respiratory compromise.
+
+benzhydrocodone/acetaminophen
+benzhydrocodone/acetaminophen and pregabalin both increase sedation. Avoid or
+Use Alternate Drug. Limit use to patients for whom alternative treatment options
+are inadequate
+
+buprenorphine subdermal implant
+buprenorphine subdermal implant and pregabalin both increase sedation. Avoid or
+Use Alternate Drug. Limit use to patients for whom alternative treatment options
+are inadequate
+
+buprenorphine transdermal
+buprenorphine transdermal and pregabalin both increase sedation. Avoid or Use
+Alternate Drug. Limit use to patients for whom alternative treatment options are
+inadequate
+
+buprenorphine, long-acting injection
+buprenorphine, long-acting injection and pregabalin both increase sedation. Avoid
+or Use Alternate Drug. Limit use to patients for whom alternative treatment options
+are inadequate
+
+captopril
+captopril, pregabalin. Either increases toxicity of the other by Other (see comment).
+Avoid or Use Alternate Drug. Comment: Coadministration results in additive risk of
+developing angioedema of face, mouth, and neck. Angioedema may result in
+respiratory compromise.
+
+enalapril
+enalapril, pregabalin. Either increases toxicity of the other by Other (see comment).
+Avoid or Use Alternate Drug. Comment: Coadministration results in additive risk of
+developing angioedema of face, mouth, and neck. Angioedema may result in
+respiratory compromise.
+
+everolimus
+
+https://reference.medscape.com/drug/lyrica-cr-pregabalin-343368 6/32
+
+
+
+6/22/26, 4:53 PM Lyrica (pregabalin) dosing, indications, interactions, adverse effects, and more
+
+everolimus, pregabalin. Either increases toxicity of the other by Other (see
+comment). Avoid or Use Alternate Drug. Comment: Coadministration results in
+additive risk of developing angioedema of face, mouth, and neck. Angioedema may
+result in respiratory compromise.
+
+fentanyl
+fentanyl and pregabalin both increase sedation. Avoid or Use Alternate Drug. Limit
+use to patients for whom alternative treatment options are inadequate
+
+fentanyl intranasal
+fentanyl intranasal and pregabalin both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+fentanyl iontophoretic transdermal system
+fentanyl iontophoretic transdermal system and pregabalin both increase sedation.
+Avoid or Use Alternate Drug. Limit use to patients for whom alternative treatment
+options are inadequate
+
+fentanyl transdermal
+fentanyl transdermal and pregabalin both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+fentanyl transmucosal
+fentanyl transmucosal and pregabalin both increase sedation. Avoid or Use
+Alternate Drug. Limit use to patients for whom alternative treatment options are
+inadequate
+
+fosinopril
+fosinopril, pregabalin. Either increases toxicity of the other by Other (see comment).
+Avoid or Use Alternate Drug. Comment: Coadministration results in additive risk of
+developing angioedema of face, mouth, and neck. Angioedema may result in
+respiratory compromise.
+
+imidapril
+imidapril, pregabalin. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Additive risk of developing angioedema of
+face, mouth, and neck, including respiratory compromise.
+
+lisinopril
+lisinopril, pregabalin. Either increases toxicity of the other by Other (see comment).
+Avoid or Use Alternate Drug. Comment: Coadministration results in additive risk of
+developing angioedema of face, mouth, and neck. Angioedema may result in
+respiratory compromise.
+
+methohexital
+methohexital and pregabalin both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+metoclopramide intranasal
+pregabalin, metoclopramide intranasal. Either increases effects of the other by
+Other (see comment). Avoid or Use Alternate Drug. Comment: Avoid use of
+
+https://reference.medscape.com/drug/lyrica-cr-pregabalin-343368 7/32
+
+
+
+6/22/26, 4:53 PM Lyrica (pregabalin) dosing, indications, interactions, adverse effects, and more
+
+metoclopramide intranasal or interacting drug, depending on importance of drug to
+patient.
+
+moexipril
+moexipril, pregabalin. Either increases toxicity of the other by Other (see comment).
+Avoid or Use Alternate Drug. Comment: Coadministration results in additive risk of
+developing angioedema of face, mouth, and neck. Angioedema may result in
+respiratory compromise.
+
+olopatadine intranasal
+pregabalin and olopatadine intranasal both increase sedation. Avoid or Use
+Alternate Drug. Coadministration increases risk of CNS depression, which can lead
+to additive impairment of psychomotor performance and cause daytime impairment.
+
+opicapone
+opicapone and pregabalin both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+perindopril
+perindopril, pregabalin. Either increases toxicity of the other by Other (see
+comment). Avoid or Use Alternate Drug. Comment: Coadministration results in
+additive risk of developing angioedema of face, mouth, and neck. Angioedema may
+result in respiratory compromise.
+
+quinapril
+quinapril, pregabalin. Either increases toxicity of the other by Other (see comment).
+Avoid or Use Alternate Drug. Comment: Coadministration results in additive risk of
+developing angioedema of face, mouth, and neck. Angioedema may result in
+respiratory compromise.
+
+ramipril
+ramipril, pregabalin. Either increases toxicity of the other by Other (see comment).
+Avoid or Use Alternate Drug. Comment: Coadministration results in additive risk of
+developing angioedema of face, mouth, and neck. Angioedema may result in
+respiratory compromise.
+
+remifentanil
+remifentanil and pregabalin both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+sirolimus
+sirolimus, pregabalin. Either increases toxicity of the other by Other (see comment).
+Avoid or Use Alternate Drug. Comment: Coadministration results in additive risk of
+developing angioedema of face, mouth, and neck. Angioedema may result in
+respiratory compromise.
+
+sodium oxybate
+sodium oxybate and pregabalin both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+temsirolimus
+temsirolimus, pregabalin. Either increases toxicity of the other by Other (see
+comment). Avoid or Use Alternate Drug. Comment: Coadministration results in
+
+https://reference.medscape.com/drug/lyrica-cr-pregabalin-343368 8/32
+
+
+
+6/22/26, 4:53 PM Lyrica (pregabalin) dosing, indications, interactions, adverse effects, and more
+
+additive risk of developing angioedema of face, mouth, and neck. Angioedema may
+result in respiratory compromise.
+
+thalidomide
+thalidomide and pregabalin both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+tolcapone
+tolcapone and pregabalin both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+trandolapril
+trandolapril, pregabalin. Either increases toxicity of the other by Other (see
+comment). Avoid or Use Alternate Drug. Comment: Coadministration results in
+additive risk of developing angioedema of face, mouth, and neck. Angioedema may
+result in respiratory compromise.
+
+zuranolone
+pregabalin, zuranolone. Either increases effects of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Coadministration of zuranolone with other
+CNS depressants may increase impairment of psychomotor performance or CNS
+depressant effects. If unavoidable, consider dose reduction. .
+
+Monitor Closely (152)
+
+acetaminophen/phenyltoloxamine
+acetaminophen/phenyltoloxamine and pregabalin both increase sedation. Use
+Caution/Monitor.
+
+acrivastine
+acrivastine and pregabalin both increase sedation. Use Caution/Monitor.
+
+alprazolam
+pregabalin, alprazolam. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+amisulpride
+amisulpride and pregabalin both increase sedation. Use Caution/Monitor.
+
+amitriptyline
+pregabalin, amitriptyline. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+amoxapine
+pregabalin, amoxapine. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+
+https://reference.medscape.com/drug/lyrica-cr-pregabalin-343368 9/32
+
+
+
+6/22/26, 4:53 PM Lyrica (pregabalin) dosing, indications, interactions, adverse effects, and more
+
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+asenapine
+asenapine and pregabalin both increase sedation. Use Caution/Monitor.
+
+asenapine transdermal
+asenapine transdermal and pregabalin both increase sedation. Use Caution/Monitor.
+
+avapritinib
+avapritinib and pregabalin both increase sedation. Use Caution/Monitor.
+
+belladonna and opium
+pregabalin, belladonna and opium. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+benzhydrocodone/acetaminophen
+pregabalin, benzhydrocodone/acetaminophen. Either increases effects of the other
+by pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration
+of CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+brexanolone
+brexanolone, pregabalin. Either increases toxicity of the other by sedation. Use
+Caution/Monitor.
+
+pregabalin, brexanolone. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+brexpiprazole
+pregabalin, brexpiprazole. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+brexpiprazole and pregabalin both increase sedation. Use Caution/Monitor.
+
+brimonidine
+brimonidine and pregabalin both increase sedation. Use Caution/Monitor.
+
+brimonidine topical
+brimonidine topical and pregabalin both increase sedation. Use Caution/Monitor.
+
+brivaracetam
+brivaracetam and pregabalin both increase sedation. Use Caution/Monitor.
+
+brompheniramine
+
+https://reference.medscape.com/drug/lyrica-cr-pregabalin-343368 10/32
+
+
+
+6/22/26, 4:53 PM Lyrica (pregabalin) dosing, indications, interactions, adverse effects, and more
+
+pregabalin, brompheniramine. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+buprenorphine
+pregabalin, buprenorphine. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+buprenorphine buccal
+pregabalin, buprenorphine buccal. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+buprenorphine subdermal implant
+pregabalin, buprenorphine subdermal implant. Either increases effects of the other
+by pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration
+of CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+buprenorphine transdermal
+pregabalin, buprenorphine transdermal. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+buprenorphine, long-acting injection
+pregabalin, buprenorphine, long-acting injection. Either increases effects of the
+other by pharmacodynamic synergism. Modify Therapy/Monitor Closely.
+Coadministration of CNS depressants can result in serious, life-threatening, and
+fatal respiratory depression. Use lowest dose possible and monitor for respiratory
+depression and sedation.
+
+bupropion
+pregabalin, bupropion. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+buspirone
+pregabalin, buspirone. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+https://reference.medscape.com/drug/lyrica-cr-pregabalin-343368 11/32
+
+
+
+6/22/26, 4:53 PM Lyrica (pregabalin) dosing, indications, interactions, adverse effects, and more
+
+butalbital
+pregabalin, butalbital. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+butorphanol
+pregabalin, butorphanol. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+carbachol/brimonidine ophthalmic
+carbachol/brimonidine ophthalmic and pregabalin both increase sedation. Use
+Caution/Monitor.
+
+carbinoxamine
+pregabalin, carbinoxamine. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+cariprazine
+cariprazine and pregabalin both increase sedation. Use Caution/Monitor.
+
+cenobamate
+cenobamate, pregabalin. Either increases effects of the other by sedation. Use
+Caution/Monitor.
+
+cetirizine
+pregabalin, cetirizine. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+chlordiazepoxide
+pregabalin, chlordiazepoxide. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+chlorpheniramine
+pregabalin, chlorpheniramine. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+citalopram
+pregabalin, citalopram. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+
+https://reference.medscape.com/drug/lyrica-cr-pregabalin-343368 12/32
+
+
+
+6/22/26, 4:53 PM Lyrica (pregabalin) dosing, indications, interactions, adverse effects, and more
+
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+clemastine
+pregabalin, clemastine. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+clobazam
+pregabalin, clobazam. Either increases effects of the other by Other (see comment).
+Modify Therapy/Monitor Closely. Comment: Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+pregabalin, clobazam. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+clobazam and pregabalin both increase sedation. Use Caution/Monitor.
+
+clomipramine
+pregabalin, clomipramine. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+clonazepam
+pregabalin, clonazepam. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+clonidine
+clonidine and pregabalin both increase sedation. Use Caution/Monitor.
+
+clorazepate
+pregabalin, clorazepate. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+codeine
+pregabalin, codeine. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+cyproheptadine
+pregabalin, cyproheptadine. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+
+https://reference.medscape.com/drug/lyrica-cr-pregabalin-343368 13/32
+
+
+
+6/22/26, 4:53 PM Lyrica (pregabalin) dosing, indications, interactions, adverse effects, and more
+
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+daridorexant
+pregabalin and daridorexant both increase sedation. Modify Therapy/Monitor
+Closely. Coadministration increases risk of CNS depression, which can lead to
+additive impairment of psychomotor performance and cause daytime impairment.
+
+desipramine
+pregabalin, desipramine. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+desloratadine
+pregabalin, desloratadine. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+desloratadine and pregabalin both increase sedation. Use Caution/Monitor.
+
+desvenlafaxine
+pregabalin, desvenlafaxine. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+deutetrabenazine
+pregabalin and deutetrabenazine both increase sedation. Use Caution/Monitor.
+
+dexbrompheniramine
+dexbrompheniramine and pregabalin both increase sedation. Use Caution/Monitor.
+
+dexchlorpheniramine
+pregabalin, dexchlorpheniramine. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+diazepam
+pregabalin, diazepam. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+diazepam buccal
+diazepam buccal and pregabalin both increase sedation. Use Caution/Monitor.
+
+pregabalin, diazepam buccal. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+
+https://reference.medscape.com/drug/lyrica-cr-pregabalin-343368 14/32
+
+
+
+6/22/26, 4:53 PM Lyrica (pregabalin) dosing, indications, interactions, adverse effects, and more
+
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+diazepam intranasal
+pregabalin, diazepam intranasal. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+diazepam intranasal and pregabalin both increase sedation. Use Caution/Monitor.
+
+difelikefalin
+difelikefalin and pregabalin both increase sedation. Use Caution/Monitor.
+
+dimenhydrinate
+pregabalin, dimenhydrinate. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+diphenhydramine
+pregabalin, diphenhydramine. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+doxepin
+pregabalin, doxepin. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+doxylamine
+pregabalin, doxylamine. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+duloxetine
+pregabalin, duloxetine. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+escitalopram
+pregabalin, escitalopram. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+
+https://reference.medscape.com/drug/lyrica-cr-pregabalin-343368 15/32
+
+
+
+6/22/26, 4:53 PM Lyrica (pregabalin) dosing, indications, interactions, adverse effects, and more
+
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+esketamine intranasal
+esketamine intranasal, pregabalin. Either increases toxicity of the other by sedation.
+Modify Therapy/Monitor Closely.
+
+pregabalin, esketamine intranasal. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+estazolam
+pregabalin, estazolam. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+eszopiclone
+pregabalin, eszopiclone. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+eszopiclone and pregabalin both increase sedation. Use Caution/Monitor.
+
+ethanol
+pregabalin, ethanol. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+fentanyl
+pregabalin, fentanyl. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+fentanyl intranasal
+pregabalin, fentanyl intranasal. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+fentanyl transdermal
+pregabalin, fentanyl transdermal. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+https://reference.medscape.com/drug/lyrica-cr-pregabalin-343368 16/32
+
+
+
+6/22/26, 4:53 PM Lyrica (pregabalin) dosing, indications, interactions, adverse effects, and more
+
+fentanyl transmucosal
+pregabalin, fentanyl transmucosal. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+fexofenadine
+pregabalin, fexofenadine. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+fluoxetine
+pregabalin, fluoxetine. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+flurazepam
+pregabalin, flurazepam. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+fluvoxamine
+fluvoxamine, pregabalin. Either increases toxicity of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration may result in life-
+threatening, and fatal respiratory depression; use lowest dose possible and monitor
+for respiratory depression and sedation.
+
+gabapentin
+gabapentin and pregabalin both increase sedation. Use Caution/Monitor.
+
+gabapentin enacarbil
+gabapentin enacarbil and pregabalin both increase sedation. Use Caution/Monitor.
+
+ganaxolone
+pregabalin and ganaxolone both increase sedation. Use Caution/Monitor.
+
+gepirone
+pregabalin, gepirone. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+guanfacine
+guanfacine and pregabalin both increase sedation. Use Caution/Monitor.
+
+hydrocodone
+pregabalin, hydrocodone. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+
+https://reference.medscape.com/drug/lyrica-cr-pregabalin-343368 17/32
+
+
+
+6/22/26, 4:53 PM Lyrica (pregabalin) dosing, indications, interactions, adverse effects, and more
+
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+hydromorphone
+pregabalin, hydromorphone. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+hydroxyzine
+pregabalin, hydroxyzine. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+imipramine
+pregabalin, imipramine. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+isocarboxazid
+pregabalin, isocarboxazid. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+lamotrigine
+lamotrigine and pregabalin both increase sedation. Use Caution/Monitor.
+
+lemborexant
+lemborexant, pregabalin. Either increases effects of the other by sedation. Modify
+Therapy/Monitor Closely. Dosage adjustment may be necessary if lemborexant is
+coadministered with other CNS depressants because of potentially additive effects.
+
+pregabalin, lemborexant. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+levetiracetam
+levetiracetam and pregabalin both increase sedation. Use Caution/Monitor.
+
+levocetirizine
+pregabalin, levocetirizine. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+levocetirizine and pregabalin both increase sedation. Use Caution/Monitor.
+
+levomilnacipran
+
+https://reference.medscape.com/drug/lyrica-cr-pregabalin-343368 18/32
+
+
+
+6/22/26, 4:53 PM Lyrica (pregabalin) dosing, indications, interactions, adverse effects, and more
+
+pregabalin, levomilnacipran. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+levorphanol
+pregabalin, levorphanol. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+loratadine
+pregabalin, loratadine. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+loratadine and pregabalin both increase sedation. Use Caution/Monitor.
+
+lorazepam
+pregabalin, lorazepam. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+loxicodegol
+pregabalin, loxicodegol. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+lumateperone
+pregabalin, lumateperone. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+lumateperone and pregabalin both increase sedation. Use Caution/Monitor.
+
+lurasidone
+lurasidone, pregabalin. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: Potential for increased CNS depressant
+effects when used concurrently; monitor for increased adverse effects and toxicity.
+
+lurasidone and pregabalin both increase sedation. Use Caution/Monitor.
+
+meclizine
+meclizine and pregabalin both increase sedation. Use Caution/Monitor.
+
+meperidine
+
+https://reference.medscape.com/drug/lyrica-cr-pregabalin-343368 19/32
+
+
+
+6/22/26, 4:53 PM Lyrica (pregabalin) dosing, indications, interactions, adverse effects, and more
+
+pregabalin, meperidine. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+meprobamate
+pregabalin, meprobamate. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+methadone
+pregabalin, methadone. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+methsuximide
+methsuximide and pregabalin both increase sedation. Use Caution/Monitor.
+
+methylphenidate transdermal
+methylphenidate transdermal will increase the level or effect of pregabalin by
+decreasing metabolism. Modify Therapy/Monitor Closely. Consider decreasing the
+dose of these drugs when given coadministered with methylphenidate. Monitor for
+drug toxiticities when initiating or discontinuing methylphenidate.
+
+midazolam
+pregabalin, midazolam. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+midazolam intranasal
+midazolam intranasal, pregabalin. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Concomitant use of
+other CNS depressants may increase the risk of hypoventilation, airway obstruction,
+desaturation, or apnea and may contribute to profound and/or prolonged drug
+effect.
+
+pregabalin, midazolam intranasal. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+milnacipran
+pregabalin, milnacipran. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+mirtazapine
+
+https://reference.medscape.com/drug/lyrica-cr-pregabalin-343368 20/32
+
+
+
+6/22/26, 4:53 PM Lyrica (pregabalin) dosing, indications, interactions, adverse effects, and more
+
+pregabalin, mirtazapine. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+molindone
+molindone and pregabalin both increase sedation. Use Caution/Monitor.
+
+morphine
+pregabalin, morphine. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+nalbuphine
+pregabalin, nalbuphine. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+nefazodone
+pregabalin, nefazodone. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+nitrous oxide
+nitrous oxide and pregabalin both increase sedation. Use Caution/Monitor.
+
+nortriptyline
+pregabalin, nortriptyline. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+orlistat
+orlistat decreases levels of pregabalin by inhibition of GI absorption. Applies only to
+oral form of both agents. Modify Therapy/Monitor Closely. Risk of convulsions.
+
+oxazepam
+pregabalin, oxazepam. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+oxycodone
+pregabalin, oxycodone. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+oxymorphone
+
+https://reference.medscape.com/drug/lyrica-cr-pregabalin-343368 21/32
+
+
+
+6/22/26, 4:53 PM Lyrica (pregabalin) dosing, indications, interactions, adverse effects, and more
+
+pregabalin, oxymorphone. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+paroxetine
+pregabalin, paroxetine. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+pentazocine
+pregabalin, pentazocine. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+pentobarbital
+pregabalin, pentobarbital. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+phenelzine
+pregabalin, phenelzine. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+promethazine
+pregabalin, promethazine. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+protriptyline
+pregabalin, protriptyline. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+pyrilamine
+pyrilamine and pregabalin both increase sedation. Use Caution/Monitor.
+
+quazepam
+pregabalin, quazepam. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+ramelteon
+pregabalin, ramelteon. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+
+https://reference.medscape.com/drug/lyrica-cr-pregabalin-343368 22/32
+
+
+
+6/22/26, 4:53 PM Lyrica (pregabalin) dosing, indications, interactions, adverse effects, and more
+
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+remifentanil
+pregabalin, remifentanil. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+remimazolam
+pregabalin, remimazolam. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+samidorphan
+pregabalin, samidorphan. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+scopolamine
+scopolamine and pregabalin both increase sedation. Use Caution/Monitor.
+
+scopolamine intranasal
+scopolamine intranasal and pregabalin both increase sedation. Use
+Caution/Monitor.
+
+sertraline
+pregabalin, sertraline. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+stiripentol
+stiripentol, pregabalin. Either increases effects of the other by sedation. Modify
+Therapy/Monitor Closely. Coadministration of CNS depressants can result in
+serious, life-threatening, and fatal respiratory depression. Use lowest dose possible
+and monitor for respiratory depression and sedation.
+
+sufentanil
+pregabalin, sufentanil. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+sufentanil SL
+pregabalin, sufentanil SL. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+suvorexant
+
+https://reference.medscape.com/drug/lyrica-cr-pregabalin-343368 23/32
+
+
+
+6/22/26, 4:53 PM Lyrica (pregabalin) dosing, indications, interactions, adverse effects, and more
+
+pregabalin, suvorexant. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+tapentadol
+pregabalin, tapentadol. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+tasimelteon
+pregabalin, tasimelteon. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+tasimelteon and pregabalin both increase sedation. Use Caution/Monitor.
+
+temazepam
+pregabalin, temazepam. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+tetrabenazine
+tetrabenazine and pregabalin both increase sedation. Use Caution/Monitor.
+
+tiagabine
+tiagabine and pregabalin both increase sedation. Use Caution/Monitor.
+
+tizanidine
+tizanidine and pregabalin both increase sedation. Use Caution/Monitor.
+
+tramadol
+pregabalin, tramadol. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+tranylcypromine
+pregabalin, tranylcypromine. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+trazodone
+pregabalin, trazodone. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+https://reference.medscape.com/drug/lyrica-cr-pregabalin-343368 24/32
+
+
+
+6/22/26, 4:53 PM Lyrica (pregabalin) dosing, indications, interactions, adverse effects, and more
+
+triazolam
+pregabalin, triazolam. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+trimipramine
+pregabalin, trimipramine. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+triprolidine
+pregabalin, triprolidine. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+valproic acid
+valproic acid and pregabalin both increase sedation. Use Caution/Monitor.
+
+venlafaxine
+pregabalin, venlafaxine. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+vigabatrin
+vigabatrin and pregabalin both increase sedation. Use Caution/Monitor.
+
+vilazodone
+pregabalin, vilazodone. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+vortioxetine
+pregabalin, vortioxetine. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+zaleplon
+pregabalin, zaleplon. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+zaleplon and pregabalin both increase sedation. Use Caution/Monitor.
+
+zolpidem
+pregabalin, zolpidem. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+
+https://reference.medscape.com/drug/lyrica-cr-pregabalin-343368 25/32
+
+
+
+6/22/26, 4:53 PM Lyrica (pregabalin) dosing, indications, interactions, adverse effects, and more
+
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+zolpidem and pregabalin both increase sedation. Use Caution/Monitor.
+
+zonisamide
+zonisamide and pregabalin both increase sedation. Use Caution/Monitor.
+
+zuranolone
+zuranolone and pregabalin both increase sedation. Use Caution/Monitor.
+
+Minor (0)
+
+Adverse Effects
+
+Dose-dependent; percentages according to highest reported
+
+>10%
+
+Lyrica CR
+
+Dizziness (3.4-17.1%)
+
+Somnolence (0.5-11.4%)
+
+Lyrica
+
+Dizziness (8-45%)
+
+Somnolence (lethargy, sluggishness, hypersomnia; 4-36%)
+
+Peripheral edema (16%)
+
+Ataxia (1-20%)
+
+Fatigue (5-11%)
+
+Xerostomia (1-15%)
+
+Weight gain (16%)
+
+Tremor (11%)
+
+Blurred vision (1-12%)
+
+Diplopia (12%)
+
+1-10%
+
+Lyrica CR
+
+Vertigo (1-3.9%)
+
+Headache (1.9-3.9%)
+
+Vision blurred (0.5-3.7%)
+
+Balance disorder (0.5-2.6%)
+
+https://reference.medscape.com/drug/lyrica-cr-pregabalin-343368 26/32
+
+
+
+6/22/26, 4:53 PM Lyrica (pregabalin) dosing, indications, interactions, adverse effects, and more
+
+Weight increased (2.5-3.8%)
+
+Fatigue (2.4-3.9%)
+
+Constipation (2.7%)
+
+Dry mouth (0.5-3.7%)
+
+Nausea (3-3.4%)
+
+Peripheral edema (3.8-4.9%)
+
+Fatigue (1.4 -3.9%)
+
+Joint swelling (1.9%)
+
+Nasopharyngitis (1.4-1.5%)
+
+ALT/AST increased (0.2-1.4%)
+
+Diarrhea (1-1.4%)
+
+Lyrica
+
+Asthenia (5%)
+
+Edema (8%)
+
+Facial edema (<3%)
+
+Hypotension (2%)
+
+Neuropathy (2-9%)
+
+Pain (5%)
+
+Disorientation (<2%)
+
+Constipation (5%)
+
+Weight gain (4%)
+
+Accidental injury (4%)
+
+Abnormal thinking (2%)
+
+Confusion (<7%)
+
+Amnesia (<6%)
+
+Vertigo (1-4%)
+
+<1%
+
+Addiction
+
+Anemia
+
+Diarrhea
+
+Gynecomastia and breast enlargement
+
+Epididymitis
+
+Esophagitis
+
+Dysmenorrhea
+
+Dystonia
+
+Heart failure
+
+https://reference.medscape.com/drug/lyrica-cr-pregabalin-343368 27/32
+
+
+
+6/22/26, 4:53 PM Lyrica (pregabalin) dosing, indications, interactions, adverse effects, and more
+
+Hirsutism
+
+Uveitis
+
+Postmarketing Reports
+
+Angioedema
+
+Suicidal behavior and ideation
+
+Creatinine kinase
+
+Decreased platelet count
+
+Pneumonia
+
+Viral infection
+
+Bullous pemphigoid
+
+Respiratory depression
+
+Warnings
+
+Contraindications
+
+Hypersensitivity
+
+Cautions
+
+Peripheral edema may occur; higher frequencies of weight gain and peripheral edema
+were observed in patients taking both pregabalin and a thiazolidinedione antidiabetic
+agent compared to patients taking either drug alone; monitor these patients for possible
+exacerbation of congestive heart failure symptoms when using pregabalin
+
+Pregabalin may cause dizziness and somnolence; inform patients that pregabalin may
+impair their ability to perform tasks such as driving or operating machinery; concomitant
+use of pregabalin with other central nervous system (CNS) depressants may exacerbate
+these effects; for patients 1 month to less than 4 years of age, somnolence includes
+related terms lethargy, sluggishness, and hypersomnia
+
+Weight gain may occur; long-term cardiovascular effects of pregabalin-associated
+weight gain are unknown
+
+Symptoms including, insomnia, nausea, headache, anxiety, and diarrhea were reported
+following abrupt or rapid discontinuation of treatment; increased seizure frequency may
+occur in patients with seizure disorders and have rapid discontinued treatment; taper
+pregabalin gradually over a minimum of 1 week rather than discontinuing the drug
+abruptly
+
+Unexpectedly high incidence of hemangiosarcoma was identified in 2 different strains of
+mice; the clinical significance of this finding is unknown
+
+In controlled studies, blurred vision and other vision-related events were reported with
+treatment; clinical significance of the ophthalmologic findings is unknown, inform
+
+https://reference.medscape.com/drug/lyrica-cr-pregabalin-343368 28/32
+
+
+
+6/22/26, 4:53 PM Lyrica (pregabalin) dosing, indications, interactions, adverse effects, and more
+
+patients to notify their physician if changes in vision occur; if visual disturbance persists,
+consider further assessment
+
+Creatine kinase elevations has been associated with treatment; monitor for symptoms
+(eg, unexplained muscle pain, tenderness, or weakness, particularly if these muscle
+symptoms are accompanied by malaise or fever); discontinue treatment if myopathy is
+diagnosed or suspected or if markedly elevated creatine kinase levels occur
+
+Serious, life-threatening, or fatal respiratory depression reported when coadministered
+with central nervous system depressants, including opioids, or in the setting of
+underlying respiratory impairment; consider initiating therapy at low dose and monitor
+for symptoms of respiratory depression and sedation if co-prescribing of another CNS
+depressant, like opioid, or prescribing to patients with underlying respiratory impairment
+
+Monitor for decreased platelet count (rare)
+
+May cause prolongation of PR interval
+
+Suicidal thoughts or behaviors
+
+Antiepileptic drugs increase risk of suicidal thoughts or behavior in patients taking
+these drugs for any indication; monitor for emergence or worsening of depression,
+suicidal thoughts or behavior, and/or any unusual changes in mood or behavior
+
+Inform patients, their caregivers, and families of the increase the risk of suicidal
+thoughts and behavior; advise to be alert for the emergence or worsening of signs
+and symptoms
+
+Angioedema
+
+Angioedema of the face, extremities, lips, tongue, glottis, and larynx has been
+reported during initial and chronic treatment, including reports of life-threatening
+angioedema with respiratory compromise requiring emergency intervention
+
+If laryngeal stridor or angioedema of the face, tongue, or glottis occurs, discontinue
+therapy and institute appropriate therapy immediately
+
+Coadministration of ACE inhibitors or mTOR (mammalian target of rapamycin)
+inhibitors (eg, temsirolimus, sirolimus, everolimus), or previous history of
+angioedema may increase risk
+
+Pregnancy & Lactation
+
+Pregnancy
+
+Observational studies on use of this drug during pregnancy suggest a possible small
+increase in rate of overall major birth defects, but there was no consistent or specific
+pattern of major birth defects identified
+
+Available postmarketing data on miscarriage and other maternal, fetal, and long-term
+developmental adverse effects were insufficient to identify risk associated with
+pregabalin
+
+Animal data
+
+https://reference.medscape.com/drug/lyrica-cr-pregabalin-343368 29/32
+
+
+
+6/22/26, 4:53 PM Lyrica (pregabalin) dosing, indications, interactions, adverse effects, and more
+
+In the animal fertility study with pregabalin in male rats, adverse reproductive and
+developmental effects were observed
+
+In animal reproduction studies, increased incidences of fetal structural
+abnormalities and other manifestations of developmental toxicity, including skeletal
+malformations, retarded ossification, and decreased fetal body weight were
+observed in the offspring of rats and rabbits given pregabalin orally during
+organogenesis, at doses that produced plasma pregabalin exposures (AUC) greater
+than or equal to 16 times human exposure at the maximum recommended dose
+(MRD) of 600 mg/day
+
+Pregnancy Registry
+
+Monitors pregnancy outcomes in women exposed to pregabalin during pregnancy
+
+Enroll pregnant patients in the North American Antiepileptic Drug (NAAED)
+Pregnancy Registry; contact 1-888-233-2334 or find more information at
+https://www.aedpregnancyregistry.org/
+
+Lactation
+
+Small amounts of pregabalin have been detected in the milk of lactating women
+
+Based on animal studies, there is a potential risk of tumorigenicity with pregabalin
+exposure via breast milk to the breastfed infant
+
+Available clinical study data in patients greater than 12 years of age do not provide a
+clear conclusion about the potential risk of tumorigenicity with pregabalin
+
+Because of the potential risk of tumorigenicity, breastfeeding is not recommended during
+treatment
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+https://reference.medscape.com/drug/lyrica-cr-pregabalin-343368 30/32
+
+
+
+6/22/26, 4:53 PM Lyrica (pregabalin) dosing, indications, interactions, adverse effects, and more
+
+Precise mechanism of action unknown but is a GABA analogue that binds to a subunit of
+voltage-gated calcium channels in CNS; does not affect sodium channels, opiate
+receptors, or cyclo-oxygenase enzyme activity; interactions with descending
+noradrenergic and serotonergic pathways originating from the brain stem appear to
+reduce neuropathic pain transmission from spinal cord
+
+Absorption
+
+Bioavailability: >90%
+
+AUC (24 hr): 31.5 mcg·h/mL (75 mg capsule BID); 29.4 mcg·h/mL (165 mg ER tablet)
+
+Peak plasma concentration: 3.2 mcg/mL (75 mg capsule BID); 2 mcg/mL (165 mg ER
+tablet)
+
+Peak plasma time, fasting: 1.5 hr (capsule)
+
+Peak plasma time, with food: 3 hr (ER tablet)
+
+Steady-state is achieved within 24-48 hr
+
+Distribution
+
+Vd: 0.5 L/kg
+
+Protein bound: None
+
+Although there are no data in humans, pregabalin has been shown to cross the blood
+brain barrier in mice, rats, and monkeys
+
+Metabolism
+
+Minimal
+
+Elimination
+
+Half-life: 6.3 hr
+
+Clearance: 67-80.9 mL/min
+
+Excretion: Urine
+
+Administration
+
+Oral Administration
+
+Capsules/oral solution
+
+Take orally with or without food
+
+When discontinuing treatment, taper gradually over a minimum of 1 week
+
+ER tablets
+
+Take once daily after an evening meal
+
+https://reference.medscape.com/drug/lyrica-cr-pregabalin-343368 31/32
+
+
+
+6/22/26, 4:53 PM Lyrica (pregabalin) dosing, indications, interactions, adverse effects, and more
+
+Swallow whole and should not be split, crushed, or chewed
+
+When discontinuing treatment, taper gradually over a minimum of 1 week
+
+Missed dose after an evening meal, then take usual dose prior to bedtime following
+a snack
+
+Missed dose prior to bedtime, then take usual dose following a morning meal
+
+Missed dose following the morning meal, then take usual dose at the usual time
+that evening following an evening meal
+
+Storage
+
+Store at 20-25°C (68-77°F), excursions permitted between 15-30°C (between 59-86°F)
+in the original package
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/lyrica-cr-pregabalin-343368 32/32

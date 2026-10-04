@@ -1,0 +1,223 @@
+thioridazine (Rx)
+Brand and Other Names: Mellaril
+Classes: Antipsychotics, Phenothiazines
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+tablet: • 10mg • 25mg • 50mg • 100mg
+
+Schizophrenia
+Initial 50-100 mg PO q8hr, THEN 200-800 mg/day PO divided q6-12hr
+
+Depressive Disorders
+25 mg PO q8hr; may titrate to effect (20-200 mg/day)
+
+Renal Impairment
+Dose adjustment not necessary in dialysis
+
+Hepatic Disease
+Initiate treatment at lower dose and titrate to effect (monitor)
+
+Other Indications & Uses
+Psychotic disorders, geriatric psychoneurotic manifestations, pediatric behavioral disorders
+
+PEDIATRIC
+Dosage Forms & Strengths
+tablet: • 10mg • 25mg • 50mg • 100mg
+
+Schizophrenia
+<2 years: Safety and efficacy not established
+2-12 years: 0.5-3 mg/kg/day divided q8hr PO, no more than 3 mg/kg/day
+>12 years: Initial 50-100 mg PO q8hr; titrate to 200-800 mg/day PO divided q6-12hr
+Potential toxic dose <6 years old: 3 mg/kg
+
+GERIATRIC
+Initiate treatment at lower dose and titrate to effect (monitor)
+
+Schizophrenia
+Initial 50-100 mg PO q8hr, THEN 200-800 mg/day PO divided q6-12hr
+Debilitated patients: Initiate treatment at lower dose
+
+Depressive disorders
+25 mg PO q8hr; may titrate to effect (20-200 mg/day)
+
+Interactions
+
+Contraindicated (71)
+• alfuzosin: alfuzosin and thioridazine both increase QTc interval. Contraindicated.
+• amiodarone: thioridazine and amiodarone both increase QTc interval. Contraindicated.
+• amisulpride: amisulpride and thioridazine both increase QTc interval. Contraindicated. Either increases toxicity of the other by Other. Comment: Increases risk of neuroleptic malignant syndrome.
+• anagrelide: anagrelide and thioridazine both increase QTc interval. Contraindicated.
+• apomorphine: apomorphine and thioridazine both increase QTc interval. Contraindicated.
+• aripiprazole: aripiprazole and thioridazine both increase QTc interval. Contraindicated.
+• artemether: artemether and thioridazine both increase QTc interval. Contraindicated.
+• asenapine: asenapine and thioridazine both increase QTc interval. Contraindicated.
+• asenapine transdermal: asenapine transdermal and thioridazine both increase QTc interval. Contraindicated.
+• atomoxetine: atomoxetine and thioridazine both increase QTc interval. Contraindicated.
+• buprenorphine (all forms): buprenorphine and thioridazine both increase QTc interval. Contraindicated.
+• ceritinib: ceritinib and thioridazine both increase QTc interval. Contraindicated.
+• clomipramine: thioridazine will increase the level or effect of clomipramine by affecting hepatic enzyme CYP2D6 metabolism. Contraindicated.
+• clozapine: clozapine and thioridazine both increase QTc interval. Contraindicated.
+• crizotinib: crizotinib and thioridazine both increase QTc interval. Contraindicated.
+• degarelix: degarelix and thioridazine both increase QTc interval. Contraindicated.
+• desipramine: thioridazine will increase the level or effect of desipramine by affecting hepatic enzyme CYP2D6 metabolism. Contraindicated.
+• disopyramide: thioridazine and disopyramide both increase QTc interval. Contraindicated.
+• dofetilide: dofetilide increases toxicity of thioridazine by QTc interval. Contraindicated.
+• donepezil: donepezil and thioridazine both increase QTc interval. Contraindicated.
+• doxepin: thioridazine will increase the level or effect of doxepin by affecting hepatic enzyme CYP2D6 metabolism. Contraindicated.
+• eliglustat: thioridazine increases levels of eliglustat by affecting hepatic enzyme CYP2D6 metabolism. Contraindicated. eliglustat and thioridazine both increase QTc interval. Contraindicated.
+• escitalopram: escitalopram increases toxicity of thioridazine by QTc interval. Contraindicated.
+• fingolimod: fingolimod and thioridazine both increase QTc interval. Contraindicated.
+• fluoxetine: thioridazine will increase the level or effect of fluoxetine by affecting hepatic enzyme CYP2D6 metabolism. thioridazine and fluoxetine both increase QTc interval. fluoxetine increases levels of thioridazine by decreasing metabolism. Contraindicated. Risk of long QT syndrome.
+• gemifloxacin: gemifloxacin and thioridazine both increase QTc interval. Contraindicated.
+• gilteritinib: gilteritinib and thioridazine both increase QTc interval. Contraindicated.
+• goserelin: goserelin increases toxicity of thioridazine by QTc interval. Contraindicated.
+• granisetron: granisetron and thioridazine both increase QTc interval. Contraindicated.
+• hydroxyzine: hydroxyzine and thioridazine both increase QTc interval. Contraindicated.
+• ibutilide: thioridazine and ibutilide both increase QTc interval. Contraindicated.
+• iloperidone: thioridazine and iloperidone both increase QTc interval. Contraindicated.
+• imipramine: thioridazine will increase the level or effect of imipramine by affecting hepatic enzyme CYP2D6 metabolism. Contraindicated.
+• indapamide: thioridazine and indapamide both increase QTc interval. Contraindicated.
+• isoflurane: isoflurane and thioridazine both increase QTc interval. Contraindicated.
+• leuprolide: leuprolide increases toxicity of thioridazine by QTc interval. Contraindicated.
+• lithium: lithium and thioridazine both increase QTc interval. Contraindicated.
+• mavorixafor: mavorixafor will increase the level or effect of thioridazine by affecting hepatic enzyme CYP2D6 metabolism. Contraindicated.
+• metrizamide: thioridazine, metrizamide. Mechanism: unknown. Contraindicated. Risk of seizure.
+• mifepristone: mifepristone, thioridazine. QTc interval. Contraindicated.
+• milsaperidone: thioridazine and milsaperidone both increase QTc interval. Contraindicated.
+• mirtazapine: mirtazapine and thioridazine both increase QTc interval. Contraindicated.
+• nortriptyline: thioridazine will increase the level or effect of nortriptyline by affecting hepatic enzyme CYP2D6 metabolism. Contraindicated.
+• olanzapine: olanzapine and thioridazine both increase QTc interval. Contraindicated.
+• oxaliplatin: oxaliplatin and thioridazine both increase QTc interval. Contraindicated.
+• paroxetine: paroxetine increases levels of thioridazine by decreasing metabolism. Contraindicated. Risk of long QT syndrome.
+• pasireotide: thioridazine and pasireotide both increase QTc interval. Contraindicated.
+• pentamidine: thioridazine and pentamidine both increase QTc interval. Contraindicated.
+• pimozide: thioridazine and pimozide both increase QTc interval. Contraindicated.
+• primaquine: primaquine and thioridazine both increase QTc interval. Contraindicated.
+• procainamide: thioridazine and procainamide both increase QTc interval. Contraindicated.
+• quinidine: thioridazine and quinidine both increase QTc interval. Contraindicated.
+• quinine: thioridazine and quinine both increase QTc interval. Contraindicated.
+• rolapitant: rolapitant will increase the level or effect of thioridazine by affecting hepatic enzyme CYP2D6 metabolism. Contraindicated.
+• selpercatinib: selpercatinib and thioridazine both increase QTc interval. Contraindicated.
+• sertraline: sertraline increases levels of thioridazine by decreasing metabolism. Contraindicated. Risk of long QT syndrome. sertraline and thioridazine both increase QTc interval. Contraindicated.
+• sevoflurane: sevoflurane and thioridazine both increase QTc interval. Contraindicated.
+• siponimod: siponimod and thioridazine both increase QTc interval. Contraindicated.
+• solifenacin: solifenacin and thioridazine both increase QTc interval. Contraindicated.
+• sorafenib: sorafenib and thioridazine both increase QTc interval. Contraindicated.
+• sotalol: thioridazine and sotalol both increase QTc interval. Contraindicated.
+• sunitinib: sunitinib and thioridazine both increase QTc interval. Contraindicated.
+• tacrolimus: tacrolimus and thioridazine both increase QTc interval. Contraindicated.
+• tetrabenazine: tetrabenazine and thioridazine both increase QTc interval. Contraindicated.
+• toremifene: thioridazine and toremifene both increase QTc interval. Contraindicated.
+• vorinostat: vorinostat and thioridazine both increase QTc interval. Contraindicated.
+• ziftomenib: thioridazine and ziftomenib both increase QTc interval. Contraindicated.
+
+Serious (146)
+• Multiple drugs interact with thioridazine by increasing the QTc interval (e.g., amiodarone, amitriptyline, amoxapine, arsenic trioxide, chlorpromazine, citalopram, clarithromycin, dofetilide, droperidol, encorafenib, entrectinib, erythromycin, fluconazole, haloperidol, methadone, moxifloxacin, ondansetron, ziprasidone, etc.). Avoid or Use Alternate Drug.
+• Multiple drugs interact via CYP2D6 metabolism affecting levels of thioridazine (e.g., adagrasib, amiodarone, artemether/lumefantrine, asenapine, bupropion, celecoxib, chloroquine, cimetidine, dacomitinib, duloxetine, fluoxetine, haloperidol, imatinib, paroxetine, propafenone, ritonavir). Avoid or Use Alternate Drug.
+• CNS depressants / Opioids (e.g., benzhydrocodone/acetaminophen, buprenorphine, fentanyl, hydrocodone, remifentanil): Either increases toxicity of the other by pharmacodynamic synergism (profound sedation, respiratory depression, coma, death). Avoid or Use Alternate Drug.
+• Dopamine antagonists/agonists (e.g., apomorphine, bromocriptine, cabergoline, dopamine, levodopa, pramipexole, ropinirole, methyldopa): Thioridazine decreases effects by pharmacodynamic antagonism. Contraindicated / Avoid or Use Alternate Drug.
+
+Monitor Closely (356)
+• Abiraterone, cobicistat, darifenacin, elvitegravir, mirabegron, panobinostat, terbinafine: Alters metabolism via CYP2D6. Modify Therapy/Monitor Closely.
+• Anticholinergics/Sedatives (e.g., diphenhydramine, alprazolam, diazepam, zolpidem, gabapentin): Additive sedation and anticholinergic effects. Use Caution/Monitor.
+• Other QTc prolonging agents requiring close monitoring and ECG evaluation (e.g., bedaquiline, ciprofloxacin, dasatinib, foscarnet, lapatinib, levofloxacin, paliperidone, ranolazine, romidepsin). Use Caution/Monitor.
+• Stimulants/Sympathomimetics (e.g., amphetamine, dextroamphetamine, methylphenidate, epinephrine, pseudoephedrine): Effect on sedation is unclear. Risk of cardiac arrhythmia or sudden death. Use Caution/Monitor.
+
+Minor (64)
+• Minor interactions typically involve additive anticholinergic effects, mild changes in metabolism (e.g., chloroquine, ethanol, codeine, tramadol), or minor pharmacodynamic antagonism/synergism (e.g., amantadine, captopril). Minor/Significance Unknown.
+
+Adverse Effects
+Frequency Not Defined
+• EPS (muscle stiffness, dystonia, parkinsonism, tardive dyskinesia, akathisia) (60%)
+• NMS (infrequent but serious)
+• Sedation
+• Anticholinergic effects
+• Weight gain
+• Oligomenorrhea/amenorrhea
+• Erectile dysfunction
+• Insomnia
+• Restlessness
+• Anxiety
+• Euphoria
+• Agitation
+• Depression
+• Weakness
+• Headache
+• Cerebral edema
+• Poikilothermia
+• Orthostatic hypotension
+• Tachycardia
+• Dizziness
+• Lens opacities (prolonged use)
+• Anorexia
+• Dyspepsia
+• Constipation
+• Ileus
+• Blood dyscrasia
+• ECG changes
+• Photosensitivity
+• Pruritis
+• Diarrhea
+• Galactorrhea
+• Ejaculatory disorder
+• Seizure (rare)
+• Priapism (rare)
+• Cholestatic jaundice (rare)
+
+Warnings
+Black Box Warnings
+• Patients with dementia-related psychosis who are treated with antipsychotic drugs are at an increased risk of death as shown in short-term controlled trials; the deaths appeared to be either cardiovascular (eg, heart failure, sudden death) or infectious (eg, pneumonia) in nature; this drug is not approved for the treatment of patients with dementia-related psychosis.
+• Shown to prolong QTc interval in a dose-related manner; drugs with this potential have been associated with Torsades de pointes type arrhythmias and sudden death; due to potential for significant, possibly life-threatening, proarrhythmic effects, therapy should be reserved for use in treatment of schizophrenic patients who fail to show acceptable response to adequate courses of treatment with other antipsychotic drugs.
+
+Contraindications
+• Documented hypersensitivity to phenothiazines
+• Coadministration with cytochrome P450 2D6 isozyme inhibitors (eg, fluoxetine and paroxetine) and certain other drugs (eg, fluvoxamine, propranolol, and pindolol)
+• Patients who are known to have a genetic defect leading to reduced levels of activity of P450 2D6
+• Patients with hypertensive or hypotensive heart disease of extreme degree
+• Patients in comatose state
+• Severe CNS depression
+• Severe hyper-/hypotensive heart disease
+
+Cautions
+• Avoid using in children with suspected Reye's syndrome
+• Hypotension may be particularly severe in patients with pheochromocytoma or mitral insufficiency
+• Depresses hypothalamic thermoregulatory mechanism; exposure to extreme temperatures may cause hypo- or hyperthermia
+• Leukopenia and/or agranulocytosis and convulsive seizures reported but infrequent; in schizophrenic patients with epilepsy, anticonvulsant medication should be maintained during treatment
+• Pigmentary retinopathy has been observed primarily in patients taking larger than recommended doses.
+• Patients participating in activities requiring complete mental alertness (eg, driving) should be advised to administer cautiously.
+• Female patients appear to have a greater tendency to orthostatic hypotension than male patients. Avoid epinephrine in treatment of drug-induced hypotension.
+• Prolactin levels may be elevated.
+• Proarrhythmic effects: baseline ECG and serum potassium levels should be measured. Discontinue if QTc interval is over 500 msec.
+• Tardive dyskinesia: potentially irreversible, involuntary, dyskinetic movements may develop.
+• Neuroleptic malignant syndrome (NMS): potentially fatal symptom complex reported. Discontinue antipsychotic immediately if NMS occurs.
+
+Pregnancy & Lactation
+Pregnancy
+• Category C (based on general descriptive context; specific letter category context listed below).
+• Use during pregnancy only if potential benefit justifies potential risk to fetus.
+• Neonates exposed to antipsychotic drugs during third trimester are at risk for extrapyramidal and/or withdrawal symptoms following delivery.
+
+Lactation
+• Not known whether the drug is present in the milk; infants exposed should be monitored for signs of adverse effects; routine monitoring of infant serum concentrations not recommended.
+
+Pregnancy Categories
+A: Generally acceptable.
+B: May be acceptable.
+C: Use with caution if benefits outweigh risks.
+D: Use in LIFE-THREATENING emergencies when no safer drug available.
+X: Do not use in pregnancy.
+NA: Information not available.
+
+Pharmacology
+Mechanism of Action
+Piperazine phenothiazine agent; antagonist for the postsynaptic mesolimbic dopaminergic D2 receptors in the brain; decreases the release of hypothalamic and hypophyseal hormones.
+
+Pharmacokinetics
+Half-Life elimination: 24 hr
+Metabolism: Hepatic P450 enzyme CYP2D6
+Enzymes inhibited: CYP2D6
+Protein bound: 95%
+Duration: 4-5 days

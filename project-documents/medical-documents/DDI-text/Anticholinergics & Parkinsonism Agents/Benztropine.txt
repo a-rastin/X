@@ -1,0 +1,777 @@
+﻿6/22/26, 4:44 PM Cogentin (benztropine) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+benztropine (Rx)
+Brand and Other Names: Cogentin
+Classes: Antiparkinson Agents, Anticholinergics
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+tablet
+
+0.5mg
+
+1mg
+
+2mg
+
+injectable solution
+
+1mg/mL
+
+Parkinsonism
+
+Postencephalitic parkinsonism: 1-2 mg/day (range, 0.5-6 mg/day) PO/IV/IM at bedtime or
+divided q6-12hr; may consider lower dose or 0.5 mg at bedtime in highly sensitive
+patients; titrate dose in 0.5-mg increments every 5-6 days (range 0.5-6 mg daily); not to
+exceed 6 mg/day
+
+Idiopathic parkinsonism: 0.5-1 mg qHS initially; titrate dose in 0.5-mg increments every
+5-6 days (range 0.5-6 mg daily; some patients may need 4-6 mg/day); not to exceed 6
+mg/day
+
+Drug-Induced Extrapyramidal Disorders
+
+1-2 mg IV/IM/PO q8-12hr; titrate gradually at 0.5 mg increments at 5-6 day intervals
+based on response and tolerability; not to exceed 6 mg/day; reevaluate after 1-2 weeks;
+may reinitiate therapy if symptoms recur
+
+Acute dystonia: 1-2 mg IV, then 1-2 mg PO once or twice daily for 7-28 days to prevent
+
+https://reference.medscape.com/drug/cogentin-benztropine-343072 1/14
+
+
+
+6/22/26, 4:44 PM Cogentin (benztropine) dosing, indications, interactions, adverse effects, and more
+
+recurrence
+
+PEDIATRIC
+Dosage Forms & Strengths
+
+tablet
+
+0.5mg
+
+1mg
+
+2mg
+
+injectable solution
+
+1mg/mL
+
+Drug-Induced Extrapyramidal Disorders
+
+<3 years: Not recommended
+
+>3 years: 0.02-0.05 mg/kg IV/IM/PO once daily or q12hr 
+
+Adolescents (off-label): 1-4 mg IV/IM/PO qDay or q12hr
+
+GERIATRIC
+Nonanticholinergic antiparkinson agents should be considered first for treatment of
+Parkinson disease (Beers criteria)
+
+Not well tolerated in elderly, because of bowel, bladder, and CNS effects; avoid use if
+possible
+
+Should not be used as prophylaxis against extrapyramidal symptoms in elderly
+
+Parkinsonism
+
+0.5 mg PO once daily or q12hr; titrate dose in 0.5-mg increments every 5-6 days; not to
+exceed 4 mg/day
+
+Interactions
+
+Interaction Checker
+
+https://reference.medscape.com/drug/cogentin-benztropine-343072 2/14
+
+
+
+6/22/26, 4:44 PM Cogentin (benztropine) dosing, indications, interactions, adverse effects, and more
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and
+benztropine
+No Interactions Found
+Interactions Found
+Contraindicated
+
+Serious
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+Contraindicated (0)
+
+Serious (7)
+
+glucagon
+glucagon increases toxicity of benztropine by Other (see comment). Avoid or Use
+Alternate Drug. Comment: Coadministration of anticholinergic drugs and glucagon
+increase the risk of gastrointestinal adverse reactions due to additive effects on
+inhibition of gastrointestinal motility. .
+
+glucagon intranasal
+glucagon intranasal increases toxicity of benztropine by Other (see comment).
+Avoid or Use Alternate Drug. Comment: Coadministration of anticholinergic drugs
+and glucagon increase the risk of gastrointestinal adverse reactions due to additive
+effects on inhibition of gastrointestinal motility. .
+
+glycopyrronium tosylate topical
+glycopyrronium tosylate topical, benztropine. Either increases effects of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Coadministration of
+glycopyrronium tosylate topical with other anticholinergic medications may result in
+additive anticholinergic adverse effects.
+
+revefenacin
+revefenacin and benztropine both decrease cholinergic effects/transmission. Avoid
+or Use Alternate Drug. Coadministration may cause additive anticholinergic effects.
+
+secretin
+benztropine decreases effects of secretin by pharmacodynamic antagonism. Avoid
+or Use Alternate Drug. Concomitant use of anticholinergic drugs may cause a
+hyporesponse to stimulation testing with secretin. Discontinue anticholinergic drugs
+at least 5 half-lives before administering secretin.
+
+sofpironium topical
+sofpironium topical and benztropine both increase pharmacodynamic synergism.
+Avoid or Use Alternate Drug. Additive anticholinergic adverse effects may occur.
+
+umeclidinium bromide/vilanterol inhaled
+
+https://reference.medscape.com/drug/cogentin-benztropine-343072 3/14
+
+
+
+6/22/26, 4:44 PM Cogentin (benztropine) dosing, indications, interactions, adverse effects, and more
+
+benztropine, umeclidinium bromide/vilanterol inhaled. Either increases toxicity of
+the other by pharmacodynamic synergism. Avoid or Use Alternate Drug.
+Concomitant use with other anticholinergic-containing drugs may lead to additive
+anticholinergic adverse effects.
+
+Monitor Closely (75)
+
+abobotulinumtoxinA
+benztropine increases effects of abobotulinumtoxinA by pharmacodynamic
+synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate
+botulinum toxin effects, which may result in excessive neuromuscular weakness
+and heighten systemic anticholinergic effects.
+
+aclidinium
+benztropine and aclidinium both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+amantadine
+benztropine, amantadine. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Potential for increased anticholinergic adverse effects.
+
+amitriptyline
+benztropine and amitriptyline both decrease cholinergic effects/transmission.
+Modify Therapy/Monitor Closely. Additive anticholinergic adverse effects may be
+seen with concurrent use.
+
+amoxapine
+benztropine and amoxapine both decrease cholinergic effects/transmission. Use
+Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use.
+
+anticholinergic/sedative combos
+anticholinergic/sedative combos and benztropine both decrease cholinergic
+effects/transmission. Use Caution/Monitor. Additive anticholinergic adverse effects
+may be seen with concurrent use.
+
+atropine
+atropine and benztropine both decrease cholinergic effects/transmission. Use
+Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use.
+
+atropine IV/IM
+atropine IV/IM and benztropine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+belladonna alkaloids
+belladonna alkaloids and benztropine both decrease cholinergic
+effects/transmission. Use Caution/Monitor. Additive anticholinergic adverse effects
+may be seen with concurrent use.
+
+belladonna and opium
+
+https://reference.medscape.com/drug/cogentin-benztropine-343072 4/14
+
+
+
+6/22/26, 4:44 PM Cogentin (benztropine) dosing, indications, interactions, adverse effects, and more
+
+benztropine and belladonna and opium both decrease cholinergic
+effects/transmission. Use Caution/Monitor. Additive anticholinergic adverse effects
+may be seen with concurrent use.
+
+benzgalantamine
+benzgalantamine, benztropine. Either decreases effects of the other by
+pharmacodynamic antagonism. Use Caution/Monitor. Galantamine, an
+acetylcholinesterase inhibitor, enhances cholinergic effects. Coadministration with
+drugs that elicit anticholinergic effects may antagonize one another.
+
+chlorpromazine
+chlorpromazine increases effects of benztropine by pharmacodynamic synergism.
+Use Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use. .
+
+clomipramine
+benztropine and clomipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+clozapine
+clozapine increases effects of benztropine by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use. .
+
+cyclobenzaprine
+benztropine and cyclobenzaprine both decrease cholinergic effects/transmission.
+Use Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use.
+
+darifenacin
+benztropine and darifenacin both decrease cholinergic effects/transmission. Use
+Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use.
+
+daxibotulinumtoxinA
+benztropine increases effects of daxibotulinumtoxinA by pharmacodynamic
+synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate
+botulinum toxin effects, which may result in excessive neuromuscular weakness
+and heighten systemic anticholinergic effects.
+
+dicyclomine
+benztropine and dicyclomine both decrease cholinergic effects/transmission. Use
+Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use.
+
+dimenhydrinate
+dimenhydrinate increases toxicity of benztropine by pharmacodynamic synergism.
+Use Caution/Monitor. Additive anticholinergic effects.
+
+diphenhydramine
+benztropine and diphenhydramine both decrease cholinergic effects/transmission.
+Use Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+
+https://reference.medscape.com/drug/cogentin-benztropine-343072 5/14
+
+
+
+6/22/26, 4:44 PM Cogentin (benztropine) dosing, indications, interactions, adverse effects, and more
+
+concurrent use.
+
+donepezil
+donepezil decreases effects of benztropine by pharmacodynamic antagonism. Use
+Caution/Monitor.
+
+doxepin
+benztropine and doxepin both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+droperidol
+droperidol increases effects of benztropine by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use. .
+
+echothiophate iodide
+echothiophate iodide increases and benztropine decreases cholinergic
+effects/transmission. Effect of interaction is not clear, use caution. Use
+Caution/Monitor.
+
+fesoterodine
+benztropine and fesoterodine both decrease cholinergic effects/transmission. Use
+Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use.
+
+flavoxate
+benztropine and flavoxate both decrease cholinergic effects/transmission. Use
+Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use.
+
+fluphenazine
+fluphenazine increases effects of benztropine by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use. .
+
+galantamine
+galantamine decreases effects of benztropine by pharmacodynamic antagonism.
+Use Caution/Monitor. Galantamine may interfere with anticholinergic medication
+activity.
+
+gepotidacin
+gepotidacin increases and benztropine decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Use Caution/Monitor. Gepotidacin is an
+acetylcholinesterase inhibitor. Potential for an antagonistic effect with systemic
+anticholinergic medications or nondepolarizing neuromuscular blocking agents.
+
+glycopyrrolate inhaled
+benztropine and glycopyrrolate inhaled both decrease cholinergic
+effects/transmission. Use Caution/Monitor.
+
+haloperidol
+haloperidol increases effects of benztropine by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+
+https://reference.medscape.com/drug/cogentin-benztropine-343072 6/14
+
+
+
+6/22/26, 4:44 PM Cogentin (benztropine) dosing, indications, interactions, adverse effects, and more
+
+concurrent use. .
+
+homatropine
+benztropine and homatropine both decrease cholinergic effects/transmission. Use
+Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use.
+
+hyoscyamine
+benztropine and hyoscyamine both decrease cholinergic effects/transmission. Use
+Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use.
+
+hyoscyamine spray
+benztropine and hyoscyamine spray both decrease cholinergic effects/transmission.
+Use Caution/Monitor.
+
+imipramine
+benztropine and imipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use.
+
+incobotulinumtoxinA
+benztropine increases effects of incobotulinumtoxinA by pharmacodynamic
+synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate
+botulinum toxin effects, which may result in excessive neuromuscular weakness
+and heighten systemic anticholinergic effects.
+
+ioflupane I 123
+benztropine decreases effects of ioflupane I 123 by receptor binding competition.
+Use Caution/Monitor. Drugs that bind to dopamine transporter with high affinity
+may interfere with image interpretation. If clinically appropriate, consider
+discontinuing interacting medication at least 5 half-lives prior to ioflupane I 123
+administration.
+
+ipratropium
+benztropine and ipratropium both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+letibotulinumtoxinA
+benztropine increases effects of letibotulinumtoxinA by pharmacodynamic
+synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate
+botulinum toxin effects, which may result in excessive neuromuscular weakness
+and heighten systemic anticholinergic effects.
+
+loxapine
+loxapine increases effects of benztropine by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+
+loxapine inhaled
+loxapine inhaled increases effects of benztropine by pharmacodynamic synergism.
+Use Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+
+https://reference.medscape.com/drug/cogentin-benztropine-343072 7/14
+
+
+
+6/22/26, 4:44 PM Cogentin (benztropine) dosing, indications, interactions, adverse effects, and more
+
+benztropine decreases levels of loxapine inhaled by pharmacodynamic antagonism.
+Use Caution/Monitor.
+
+meclizine
+benztropine and meclizine both decrease cholinergic effects/transmission. Use
+Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use.
+
+methscopolamine
+benztropine and methscopolamine both decrease cholinergic effects/transmission.
+Use Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use.
+
+nortriptyline
+benztropine and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use.
+
+olanzapine
+olanzapine increases effects of benztropine by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use. .
+
+olanzapine/samidorphan
+benztropine, olanzapine/samidorphan. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration of olanzapine
+and other drugs with anticholinergic (antimuiscarinic) activity can increase risk for
+severe gastrointestinal adverse reactions related to hypomotility. .
+
+onabotulinumtoxinA
+benztropine increases effects of onabotulinumtoxinA by pharmacodynamic
+synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate
+botulinum toxin effects, which may result in excessive neuromuscular weakness
+and heighten systemic anticholinergic effects.
+
+orphenadrine
+benztropine and orphenadrine both decrease cholinergic effects/transmission. Use
+Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use.
+
+oxybutynin
+benztropine and oxybutynin both decrease cholinergic effects/transmission. Use
+Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use.
+
+oxybutynin topical
+benztropine and oxybutynin topical both decrease cholinergic effects/transmission.
+Use Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use.
+
+oxybutynin transdermal
+benztropine and oxybutynin transdermal both decrease cholinergic
+effects/transmission. Use Caution/Monitor. Additive anticholinergic adverse effects
+
+https://reference.medscape.com/drug/cogentin-benztropine-343072 8/14
+
+
+
+6/22/26, 4:44 PM Cogentin (benztropine) dosing, indications, interactions, adverse effects, and more
+
+may be seen with concurrent use.
+
+perphenazine
+perphenazine increases effects of benztropine by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use. .
+
+pimozide
+pimozide increases effects of benztropine by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use. .
+
+prabotulinumtoxinA
+benztropine increases effects of prabotulinumtoxinA by pharmacodynamic
+synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate
+botulinum toxin effects, which may result in excessive neuromuscular weakness
+and heighten systemic anticholinergic effects.
+
+pralidoxime
+benztropine and pralidoxime both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+pramlintide
+pramlintide, benztropine. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Synergistic inhibition of GI motility.
+
+prochlorperazine
+prochlorperazine increases effects of benztropine by pharmacodynamic synergism.
+Use Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use. .
+
+promethazine
+promethazine increases effects of benztropine by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use. .
+
+propantheline
+benztropine and propantheline both decrease cholinergic effects/transmission. Use
+Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use.
+
+protriptyline
+benztropine and protriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+quetiapine
+quetiapine increases effects of benztropine by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use. .
+
+rimabotulinumtoxinB
+benztropine increases effects of rimabotulinumtoxinB by pharmacodynamic
+synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate
+
+https://reference.medscape.com/drug/cogentin-benztropine-343072 9/14
+
+
+
+6/22/26, 4:44 PM Cogentin (benztropine) dosing, indications, interactions, adverse effects, and more
+
+botulinum toxin effects, which may result in excessive neuromuscular weakness
+and heighten systemic anticholinergic effects.
+
+risperidone
+risperidone increases effects of benztropine by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use. .
+
+scopolamine
+benztropine and scopolamine both decrease cholinergic effects/transmission. Use
+Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use.
+
+solifenacin
+benztropine and solifenacin both decrease cholinergic effects/transmission. Use
+Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use.
+
+thioridazine
+thioridazine increases effects of benztropine by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use. .
+
+thiothixene
+thiothixene increases effects of benztropine by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use. .
+
+tiotropium
+benztropine and tiotropium both decrease cholinergic effects/transmission. Use
+Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use.
+
+tolterodine
+benztropine and tolterodine both decrease cholinergic effects/transmission. Use
+Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use.
+
+tranylcypromine
+tranylcypromine, benztropine. Other (see comment). Use Caution/Monitor.
+Comment: Anti-parkinsonism drugs should be used with caution in patients
+receiving tranylcypromine since severe reactions have been reported.
+
+trifluoperazine
+trifluoperazine increases effects of benztropine by pharmacodynamic synergism.
+Use Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use. .
+
+trihexyphenidyl
+benztropine and trihexyphenidyl both decrease cholinergic effects/transmission.
+Use Caution/Monitor. Potential for additive anticholinergic effects.
+
+trimipramine
+
+https://reference.medscape.com/drug/cogentin-benztropine-343072 10/14
+
+
+
+6/22/26, 4:44 PM Cogentin (benztropine) dosing, indications, interactions, adverse effects, and more
+
+benztropine and trimipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use.
+
+trospium chloride
+benztropine and trospium chloride both decrease cholinergic effects/transmission.
+Use Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use.
+
+xanomeline/trospium
+xanomeline/trospium, benztropine. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration of
+antimuscarinic drugs that produce anticholinergic adverse reactions (eg, dry mouth,
+constipation) may increase the frequency and/or severity of such effects.
+
+Minor (4)
+
+desipramine
+benztropine and desipramine both decrease cholinergic effects/transmission.
+Minor/Significance Unknown.
+
+foscarbidopa/foslevodopa
+benztropine, foscarbidopa/foslevodopa. Other (see comment). Minor/Significance
+Unknown. Comment: Anticholinergic agents may enhance the therapeutic effects of
+levodopa; however, anticholinergic agents can exacerbate tardive dyskinesia. In
+high dosage, anticholinergics may decrease the effects of levodopa by delaying its
+GI absorption. .
+
+levodopa
+benztropine, levodopa. Other (see comment). Minor/Significance Unknown.
+Comment: Anticholinergic agents may enhance the therapeutic effects of levodopa;
+however, anticholinergic agents can exacerbate tardive dyskinesia. In high dosage,
+anticholinergics may decrease the effects of levodopa by delaying its GI absorption.
+.
+
+trazodone
+benztropine and trazodone both decrease cholinergic effects/transmission.
+Minor/Significance Unknown.
+
+Adverse Effects
+
+Frequency Not Defined
+
+Blurred vision
+
+Confusion
+
+Constipation
+
+https://reference.medscape.com/drug/cogentin-benztropine-343072 11/14
+
+
+
+6/22/26, 4:44 PM Cogentin (benztropine) dosing, indications, interactions, adverse effects, and more
+
+Disorientation
+
+Dry mouth or throat
+
+Hyperthermia
+
+Mydriasis
+
+Nausea
+
+Paralytic ileus
+
+Psychosis
+
+Tachycardia
+
+Urinary retention
+
+Visual hallucinations
+
+Vomiting
+
+Warnings
+
+Contraindications
+
+Hypersensitivity
+
+Age <3 years
+
+Cautions
+
+May cause anhidrosis/hyperthermia, which may become severe; use with catuion in hot
+weather and during exercise; risk is increased in hot environment; consider lowering the
+dose to prevent impairing heat equilibrium by perspiration
+
+May cause anticholinergic effects (constipation, xerostomia, blurred vision, urinary
+retention)
+
+At higher doses, may be associated with confusion, visual hallucinations or excitement;
+intensification of symptoms or toxic psychosis may occur in patients with mental
+disorders
+
+May cause CNS depression, which may impair ability to operate heavy machinery and
+tasks that require mental alertness
+
+In susceptible patients, large doses may cause weakness and inability to move perticular
+muscles
+
+Use caution in patients with GI obstruction, tachycardia, prostatic hyperplasia/urinary
+stricture, and glaucoma
+
+Response in the elderly >65 years of age may be altered; initiate at low doses and
+increase PRN while monitoring adverse effects
+
+Use with caution in children >3 years of age due to anticholinergic effects
+
+https://reference.medscape.com/drug/cogentin-benztropine-343072 12/14
+
+
+
+6/22/26, 4:44 PM Cogentin (benztropine) dosing, indications, interactions, adverse effects, and more
+
+Not recommended for patients with tardive dyskinesia; does not relieve symptoms and
+may potentially exacerbate symptoms
+
+Pregnancy & Lactation
+
+Pregnancy
+
+Use in pregnancy not established; paralytic ileus reported in newborns exposed to a
+combination of benztropine and chlorpromazine during the second and third trimesters
+of pregnancy
+
+Lactation
+
+Excretion in milk unknown; use with caution
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+Exerts anticholinergic and antihistaminic effects; may prolong action of dopamine by
+inhibiting its reuptake and storage
+
+Absorption
+
+Bioavailability: 29%
+
+Onset: PO, 1 hr; parenteral, 15 min
+
+Duration: 6-48 hr
+
+Distribution
+
+Protein bound: 95%
+
+https://reference.medscape.com/drug/cogentin-benztropine-343072 13/14
+
+
+
+6/22/26, 4:44 PM Cogentin (benztropine) dosing, indications, interactions, adverse effects, and more
+
+Elimination
+
+Trace amounts found unchanged in feces
+
+Administration
+
+IV Incompatibilities
+
+Syringe: Haloperidol
+
+IV Compatibilities
+
+Syringe: Chlorpromazine, fluphenazine, metoclopramide, perphenazine
+
+Y-site: Tacrolimus, fluconazole
+
+IV Administration
+
+IV route rarely necessary; use only when PO and IM routes unavailable
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/cogentin-benztropine-343072 14/14

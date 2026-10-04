@@ -1,0 +1,1297 @@
+﻿6/22/26, 4:53 PM Trileptal, Oxtellar XR (oxcarbazepine) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+oxcarbazepine (Rx)
+Brand and Other Names: Trileptal, Oxtellar XR
+Classes: Anticonvulsants, Other
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+tablet, film-coated (Trileptal, generic)
+
+150mg
+
+300mg
+
+600mg
+
+tablet, extended-release (Oxtellar XR)
+
+150mg
+
+300mg
+
+600mg
+
+oral suspension (Trileptal, generic)
+
+300mg/5mL
+
+Partial Seizures
+
+Adjunctive treatment
+
+Trileptal: 300 mg PO q12hr initially; may increase at weekly intervals by 600
+mg/day up to 1200 mg/day
+
+Oxtellar XR: 600 mg PO daily initially; may increase at weekly intervals by 600
+mg/day increments to target dosage range of 1200-2400 mg daily
+
+Monotherapy (if converting from other AED)
+
+https://reference.medscape.com/drug/trileptal-oxtellar-xr-oxcarbazepine-343014 1/22
+
+
+
+6/22/26, 4:53 PM Trileptal, Oxtellar XR (oxcarbazepine) dosing, indications, interactions, adverse effects, and more
+
+Initial: 300 mg PO q12hr; increase by 600 mg/day qWeek up to 2400 mg/day
+
+Reduce and withdraw concomitant antiepileptic drugs (AEDs) over 3-6 weeks while
+reaching maximum oxcarbazepine dose in 2-4 weeks
+
+Monotherapy (if AED naive)
+
+Initial: 300 mg PO q12hr; increase by 300 mg/day every 3 days to 1200 mg/day
+divided q12hr
+
+Bipolar Disorder (Off-label)
+
+300 mg/day PO initially; may titrate to 1800-2400 mg/day maximum
+
+Diabetic Neuropathy (Off-label)
+
+150-300 mg/day PO initially; may increase to 900-1200 mg/day (general
+recommendation)
+
+Doses up to 1800 mg/day studied, with positive results
+
+Neuralgia/Neuropathy (Off-label)
+
+300 mg PO q8-12hr initially; may adjust dose to 400-2000 mg divided q8-12hr
+(maximum tolerated or effective dose)
+
+Dosage Modifications
+
+Strong CYP3A4 inducers or UGT inducers
+
+Strong CYP3A4 inducers and/or UGT inducers decrease systemic exposure to 10-
+monohydroxy derivative (MHD), the active metabolite
+
+Dosage adjustment of oxcarbazepine may be required after initiation, dosage
+modification, or discontinuation of such induce
+
+Oxtellar XR: Initiate at 900 mg daily
+
+Renal impairment
+
+There is a linear correlation between creatinine clearance (CrCl) and the renal
+clearance of MHD
+
+Severe (CrCl <30 mL/min)
+Oxtellar XR: Administer lower starting dosage and increase, if necessary, at a
+slower than usual rate until the desired clinical response is achieved
+
+https://reference.medscape.com/drug/trileptal-oxtellar-xr-oxcarbazepine-343014 2/22
+
+
+
+6/22/26, 4:53 PM Trileptal, Oxtellar XR (oxcarbazepine) dosing, indications, interactions, adverse effects, and more
+
+Trileptal: Decrease usual starting dose by 50% and increase slowly to achieve
+desired clinical response
+
+ESRD: Use immediate-release oxcarbazepine instead of long-acting
+
+Hepatic impairment
+
+Mild-to-moderate: No dose adjustment required
+
+Severe: Not evaluated, and therefore is not recommended
+
+Dosing Considerations
+
+Conversion from immediate release to Oxtellar XR: Higher doses of Oxtellar XR may be
+required
+
+PEDIATRIC
+Dosage Forms & Strengths
+
+tablet, film-coated (Trileptal, generic)
+
+150mg
+
+300mg
+
+600mg
+
+tablet, extended-release (Oxtellar XR)
+
+150mg
+
+300mg
+
+600mg
+
+oral suspension (Trileptal, generic)
+
+300mg/5mL
+
+Partial Seizures (Adjunctive Treatment)
+
+Trileptal (age 2-4 years)
+
+Initial: 8-10 mg/kg/day PO divided q12hr; not to exceed 600 mg/day 
+
+<20 kg: May consider starting with 16-20 mg/kg/day; may titrate to higher dose
+over 2-4 weeks; not to exceed 60 mg/kg/day
+
+Trileptal (age 4-16 years)
+
+Initial: 8-10 mg/kg/day PO divided q12hr; not to exceed 600 mg/day 
+
+Target maintenance dose: May titrate to higher dose over 2 weeks to reach the
+following dosage ranges
+
+20-29 kg: 450 mg PO q12hr
+
+29.1-39 kg: 600 mg PO q12hr
+
+https://reference.medscape.com/drug/trileptal-oxtellar-xr-oxcarbazepine-343014 3/22
+
+
+
+6/22/26, 4:53 PM Trileptal, Oxtellar XR (oxcarbazepine) dosing, indications, interactions, adverse effects, and more
+
+>39 kg: 900 mg PO q12hr
+
+Oxtellar XR (age 6-17 years)
+
+Initial: 8-10 mg/kg PO daily; not to exceed 600 mg/day in the first week 
+
+Target maintenance dose
+May titrate to higher dose at weekly intervals in 8-10 mg/kg/day increments
+(not to exceed 600 mg) to reach following target maintenance dosage ranges
+over 2-3 weeks
+
+20-29 kg: 900 mg PO daily
+
+>29-39 kg: 1200 mg PO daily
+
+>39 kg: 1800 mg PO daily
+
+Partial Seizures (Monotherapy)
+
+Trileptal (age 4-16 years)
+
+Conversion to monotherapy in patients receiving concomitant AEDs: 8-10
+mg/kg/day PO divided q12hr intially, while simultaneously reducing concomitant
+AEDs dose(s) over 3-6 weeks; may increase Triletpa dose qWeek by maximum
+increment of 10 mg/kg/day 
+
+AED-naive: Initial 8-10 mg/kg/day PO divided q12hr; may increase every 3 days by
+5 mg/kg/day
+
+Target maintenance dose
+20-24.99 kg: 600-900 mg/day
+
+25-34.99 kg: 900-1200 mg/day
+
+35-44.99 kg: 900-1500 mg/day
+
+45-49.99 kg: 1200-1500 mg/day
+
+50-59.99 kg: 1200-1800 mg/day
+
+60-69.99 kg: 1200-2100 mg/day
+
+70 kg: 1500-2100 mg/day
+
+Oxtellar XR (age 6-17 years)
+
+Initial: 8-10 mg/kg PO daily; not to exceed 600 mg/day in first week 
+
+Target maintenance dose
+May titrate to higher dose at weekly intervals in 8-10 mg/kg/day increments
+(not to exceed 600 mg) to reach following target maintenance dosage ranges
+over 2-3 weeks
+
+20-29 kg: 900 mg PO daily
+
+>29-39 kg: 1200 mg PO daily
+
+https://reference.medscape.com/drug/trileptal-oxtellar-xr-oxcarbazepine-343014 4/22
+
+
+
+6/22/26, 4:53 PM Trileptal, Oxtellar XR (oxcarbazepine) dosing, indications, interactions, adverse effects, and more
+
+>39 kg: 1800 mg PO daily
+
+Dosage Modifications
+
+Strong CYP3A4 inducers or UGT inducers
+
+Strong CYP3A4 inducers and/or UGT inducers decrease systemic exposure to 10-
+monohydroxy derivative (MHD), the active metabolite
+
+Dosage adjustment of oxcarbazepine may be required after initiation, dosage
+modification, or discontinuation
+
+Oxtellar XR: Initiate at 12-15 mg/kg daily (not to exceed 900 mg/day in first week)
+
+Renal impairment
+
+There is a linear correlation between creatinine clearance and the renal clearance of
+MHD (active metabolite)
+
+Recommendations for children with renal impairment are not available
+
+Hepatic impairment
+
+Mild to moderate: No dose adjustment required
+
+Severe: Unknown if dosage adjustment necessary for immediate release dosage
+form; extended release, not recommended
+
+Dosing Considerations
+
+Conversion from immediate-release to Oxtellar XR: Higher doses of Oxtellar XR may be
+required
+
+GERIATRIC
+For extended-release dosage administration consider initial dose of 300-450 mg/day
+
+May increase at weekly intervals to desired effect; not to exceed 2400 mg/day
+
+Interactions
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and
+oxcarbazepine
+No Interactions Found
+Interactions Found
+Contraindicated
+
+Serious
+
+https://reference.medscape.com/drug/trileptal-oxtellar-xr-oxcarbazepine-343014 5/22
+
+
+
+6/22/26, 4:53 PM Trileptal, Oxtellar XR (oxcarbazepine) dosing, indications, interactions, adverse effects, and more
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+Contraindicated (9)
+
+dienogest/estradiol valerate
+oxcarbazepine will decrease the level or effect of dienogest/estradiol valerate by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Women
+should not choose estradiol valerate/dienogest as their contraceptive while using
+strong CYP3A4 inducers due to potential decrease in contraceptive efficacy.
+Estradiol valerate/dienogest should not be used for at least 28 days after
+discontinuation of the inducer due to possibility of decreased contraceptive efficacy.
+
+elvitegravir/cobicistat/emtricitabine/tenofovir DF
+oxcarbazepine decreases levels of elvitegravir/cobicistat/emtricitabine/tenofovir DF
+by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. May
+lead to loss of virologic response and possible resistance.
+
+eslicarbazepine acetate
+oxcarbazepine, eslicarbazepine acetate. Either increases effects of the other by
+pharmacodynamic synergism. Contraindicated.
+
+ledipasvir/sofosbuvir
+oxcarbazepine will decrease the level or effect of ledipasvir/sofosbuvir by P-
+glycoprotein (MDR1) efflux transporter. Contraindicated. P-gp inducers decrease
+sofosbuvir levels, and therefore decrease conversion to sofosbuvir's active
+metabolite (GS-331007) responsible for 90% of pharmacologic effect
+
+lurasidone
+oxcarbazepine decreases levels of lurasidone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Contraindicated. Contraindicated.
+
+panobinostat
+oxcarbazepine decreases levels of panobinostat by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Contraindicated. Strong CYP3A4 inducers can reduce
+panobinostat levels by ~70% and lead to treatment failure.
+
+praziquantel
+oxcarbazepine decreases levels of praziquantel by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Contraindicated. Strong CYP450 inducers
+significantly decrease praziquantel blood levels.
+
+regorafenib
+oxcarbazepine, regorafenib. affecting hepatic/intestinal enzyme CYP3A4
+metabolism. Contraindicated. Strong CYP3A4 inducers decrease regorafenib levels
+and increase exposure of the active metabolite M-5.
+
+rilpivirine
+oxcarbazepine decreases levels of rilpivirine by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Contraindicated. Contraindicated. Rilpivirine should not be co-
+
+https://reference.medscape.com/drug/trileptal-oxtellar-xr-oxcarbazepine-343014 6/22
+
+
+
+6/22/26, 4:53 PM Trileptal, Oxtellar XR (oxcarbazepine) dosing, indications, interactions, adverse effects, and more
+
+administered with strong CYP 3A4 inducers. Potential for loss of virologic response
+and possible resistance to rilpivirine or to the NNRTI class.
+
+Serious (18)
+
+acoramidis
+oxcarbazepine decreases levels of acoramidis by increasing metabolism. Avoid or
+Use Alternate Drug. Acoramidis is metabolized by UGT enzyme-mediated
+glucuronidation. Coadministration with UGT inducers can potentially decrease
+acoramidis exposure. .
+
+axitinib
+oxcarbazepine decreases levels of axitinib by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug. Selection of concomitant
+medication with no or minimal CYP3A4 induction potential is recommended.
+
+bosutinib
+oxcarbazepine decreases levels of bosutinib by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug. Strong CYP3A4 inducers
+decreased bosutinib plasma concentration by ~85%.
+
+ceritinib
+oxcarbazepine decreases levels of ceritinib by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+clopidogrel
+oxcarbazepine decreases effects of clopidogrel by affecting hepatic enzyme
+CYP2C19 metabolism. Avoid or Use Alternate Drug. Clopidogrel efficacy may be
+reduced by drugs that inhibit CYP2C19. Inhibition of platelet aggregation by
+clopidogrel is entirely due to an active metabolite. Clopidogrel is metabolized to
+this active metabolite in part by CYP2C19. .
+
+dabrafenib
+oxcarbazepine decreases levels of dabrafenib by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+dolutegravir
+oxcarbazepine will decrease the level or effect of dolutegravir by increasing
+metabolism. Avoid or Use Alternate Drug. Avoid coadministration; insufficient data
+to recommend dosage adjustment
+
+ethinylestradiol
+oxcarbazepine will decrease the level or effect of ethinylestradiol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. The
+efficacy of hormonal contraceptives may be reduced. Use of a nonhormonal
+contraceptive is recommended.
+
+ibrutinib
+oxcarbazepine decreases levels of ibrutinib by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug. Strong CYP3A inducers
+decrease ibrutinib plasma concentrations by ~10-fold.
+
+https://reference.medscape.com/drug/trileptal-oxtellar-xr-oxcarbazepine-343014 7/22
+
+
+
+6/22/26, 4:53 PM Trileptal, Oxtellar XR (oxcarbazepine) dosing, indications, interactions, adverse effects, and more
+
+ivacaftor
+oxcarbazepine decreases levels of ivacaftor by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid coadministration with
+strong CYP3A4 inducers; systemic exposure of ivacaftor substantially reduced (ie,
+~9-fold).
+
+letermovir
+oxcarbazepine will decrease the level or effect of letermovir by Other (see
+comment). Avoid or Use Alternate Drug. Coadministration of letermovir with
+UCT1A1/3 inducers is not recommended.
+
+metoclopramide intranasal
+oxcarbazepine, metoclopramide intranasal. Either increases effects of the other by
+Other (see comment). Avoid or Use Alternate Drug. Comment: Avoid use of
+metoclopramide intranasal or interacting drug, depending on importance of drug to
+patient.
+
+olopatadine intranasal
+oxcarbazepine and olopatadine intranasal both increase sedation. Avoid or Use
+Alternate Drug. Coadministration increases risk of CNS depression, which can lead
+to additive impairment of psychomotor performance and cause daytime impairment.
+
+ponatinib
+oxcarbazepine decreases levels of ponatinib by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid unless the
+coadministration outweighs the possible risk of ponatinib underexposure; monitor
+for signs of reduced efficacy.
+
+sofosbuvir
+oxcarbazepine will decrease the level or effect of sofosbuvir by P-glycoprotein
+(MDR1) efflux transporter. Avoid or Use Alternate Drug. P-gp inducers decrease
+sofosbuvir levels, and therefore decrease conversion to sofosbuvir's active
+metabolite (GS-331007) responsible for 90% of pharmacologic effect
+
+vemurafenib
+oxcarbazepine decreases levels of vemurafenib by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+vorapaxar
+oxcarbazepine decreases levels of vorapaxar by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+zuranolone
+oxcarbazepine, zuranolone. Either increases effects of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Coadministration of
+zuranolone with other CNS depressants may increase impairment of psychomotor
+performance or CNS depressant effects. If unavoidable, consider dose reduction. .
+
+Monitor Closely (42)
+
+abiraterone
+
+https://reference.medscape.com/drug/trileptal-oxtellar-xr-oxcarbazepine-343014 8/22
+
+
+
+6/22/26, 4:53 PM Trileptal, Oxtellar XR (oxcarbazepine) dosing, indications, interactions, adverse effects, and more
+
+oxcarbazepine decreases levels of abiraterone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely. Avoid
+coadministration of abiraterone with strong CYP3A4 inducers; if a strong CYP3A4
+inducer must be used, increase abiraterone dosage frequency from once daily to
+twice daily.
+
+brentuximab vedotin
+oxcarbazepine decreases levels of brentuximab vedotin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+calcifediol
+oxcarbazepine, calcifediol. affecting hepatic/intestinal enzyme CYP3A4 metabolism.
+Modify Therapy/Monitor Closely. Drugs that stimulate microsomal hydroxylation
+reduce the half-life of calcifediol.
+
+cenobamate
+cenobamate, oxcarbazepine. Either increases effects of the other by sedation. Use
+Caution/Monitor.
+
+clobazam
+oxcarbazepine, clobazam. Other (see comment). Use Caution/Monitor. Comment:
+Concomitant administration can increase the potential for CNS effects (e.g.,
+increased sedation or respiratory depression).
+
+clopidogrel
+oxcarbazepine decreases effects of clopidogrel by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor. Clopidogrel efficacy may be
+reduced by drugs that inhibit CYP3A4. Inhibition of platelet aggregation by
+clopidogrel is entirely due to an active metabolite. Clopidogrel is metabolized to
+this active metabolite in part by CYP3A4. .
+
+conjugated estrogens
+oxcarbazepine will decrease the level or effect of conjugated estrogens by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+crizotinib
+oxcarbazepine decreases levels of crizotinib by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Concomitant use of strong CYP3A
+inducers should be avoided. .
+
+daridorexant
+oxcarbazepine and daridorexant both increase sedation. Modify Therapy/Monitor
+Closely. Coadministration increases risk of CNS depression, which can lead to
+additive impairment of psychomotor performance and cause daytime impairment.
+
+deutetrabenazine
+oxcarbazepine and deutetrabenazine both increase sedation. Use Caution/Monitor.
+
+dichlorphenamide
+dichlorphenamide and oxcarbazepine both decrease serum potassium. Use
+Caution/Monitor.
+
+difelikefalin
+
+https://reference.medscape.com/drug/trileptal-oxtellar-xr-oxcarbazepine-343014 9/22
+
+
+
+6/22/26, 4:53 PM Trileptal, Oxtellar XR (oxcarbazepine) dosing, indications, interactions, adverse effects, and more
+
+difelikefalin and oxcarbazepine both increase sedation. Use Caution/Monitor.
+
+doxycycline
+oxcarbazepine decreases levels of doxycycline by increasing metabolism. Use
+Caution/Monitor.
+
+escitalopram
+oxcarbazepine will increase the level or effect of escitalopram by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+estradiol
+oxcarbazepine will decrease the level or effect of estradiol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+estrogens conjugated synthetic
+oxcarbazepine will decrease the level or effect of estrogens conjugated synthetic by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+estrogens esterified
+oxcarbazepine will decrease the level or effect of estrogens esterified by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+estropipate
+oxcarbazepine will decrease the level or effect of estropipate by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+etonogestrel
+oxcarbazepine will decrease the level or effect of etonogestrel by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+etravirine
+oxcarbazepine will increase the level or effect of etravirine by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+fosphenytoin
+oxcarbazepine will increase the level or effect of fosphenytoin by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+ifosfamide
+oxcarbazepine increases toxicity of ifosfamide by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor. CYP3A4 inducers may increase
+the metabolism of ifosfamide to its active alkylating metabolites. CYP3A4 inducers
+may increase the formation of the neurotoxic/nephrotoxic ifosfamide metabolite,
+chloroacetaldehyde. Closely monitor patients taking ifosfamide with CYP3A4
+inducers for toxicities and consider dose adjustment.
+
+imipramine
+oxcarbazepine will increase the level or effect of imipramine by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+levonorgestrel intrauterine
+oxcarbazepine decreases levels of levonorgestrel intrauterine by affecting
+
+https://reference.medscape.com/drug/trileptal-oxtellar-xr-oxcarbazepine-343014 10/22
+
+
+
+6/22/26, 4:53 PM Trileptal, Oxtellar XR (oxcarbazepine) dosing, indications, interactions, adverse effects, and more
+
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+levonorgestrel oral
+oxcarbazepine decreases levels of levonorgestrel oral by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+levonorgestrel oral/ethinylestradiol/ferrous bisglycinate
+oxcarbazepine will decrease the level or effect of levonorgestrel
+oral/ethinylestradiol/ferrous bisglycinate by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Modify Therapy/Monitor Closely. The efficacy of hormonal
+contraceptives may be reduced. Use an alternative method of contraception or a
+backup method when enzyme inducers are used with combined hormonal
+contraceptives (CHCs), and continue backup contraception for 28 days after
+discontinuing enzyme inducer to ensure contraceptive reliability.
+
+linagliptin
+oxcarbazepine decreases levels of linagliptin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Use of alternative treatments is strongly
+recommended when linagliptin is to be administered with a CYP3A4 inducer.
+
+mavacamten
+oxcarbazepine increases levels of mavacamten by affecting hepatic enzyme
+CYP2C19 metabolism. Modify Therapy/Monitor Closely. Modify mavacamten dose if
+coadministered with weak or moderate CYP2C19 inhibitors.
+
+medroxyprogesterone
+oxcarbazepine will decrease the level or effect of medroxyprogesterone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+Contraceptirve failure possible. Use alternative if available.
+
+methylphenidate transdermal
+methylphenidate transdermal will increase the level or effect of oxcarbazepine by
+decreasing metabolism. Modify Therapy/Monitor Closely. Consider decreasing the
+dose of these drugs when given coadministered with methylphenidate. Monitor for
+drug toxiticities when initiating or discontinuing methylphenidate.
+
+midazolam intranasal
+midazolam intranasal, oxcarbazepine. Either increases toxicity of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Concomitant use of
+barbiturates, alcohol, or other CNS depressants may increase the risk of
+hypoventilation, airway obstruction, desaturation, or apnea and may contribute to
+profound and/or prolonged drug effect.
+
+mitapivat
+mitapivat decreases levels of oxcarbazepine by increasing metabolism. Use
+Caution/Monitor. Mitapivat induces UGT1A1 in vitro and may decrease systemic
+concentrations of UGT1A1 substrates.
+
+omeprazole
+oxcarbazepine will increase the level or effect of omeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+orlistat
+
+https://reference.medscape.com/drug/trileptal-oxtellar-xr-oxcarbazepine-343014 11/22
+
+
+
+6/22/26, 4:53 PM Trileptal, Oxtellar XR (oxcarbazepine) dosing, indications, interactions, adverse effects, and more
+
+orlistat decreases levels of oxcarbazepine by inhibition of GI absorption. Applies
+only to oral form of both agents. Modify Therapy/Monitor Closely. Risk of
+convulsions.
+
+ospemifene
+oxcarbazepine decreases levels of ospemifene by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+oxycodone
+oxcarbazepine decreases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+
+phenytoin
+oxcarbazepine increases levels of phenytoin by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor. Oxcarbazepine increases levels of
+phenytoin at doses >1200 mg/day; monitor phenytoin levels during oxcarbazepine
+titration period and dosage modification; may require a decrease in phenytoin dose.
+
+sevelamer
+sevelamer decreases levels of oxcarbazepine by increasing elimination. Use
+Caution/Monitor.
+
+sorafenib
+oxcarbazepine decreases levels of sorafenib by increasing metabolism. Use
+Caution/Monitor.
+
+toremifene
+oxcarbazepine decreases levels of toremifene by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. CYP3A4 inducers increase rate of
+toremifene metabolism, lowering the steady-state concentration in serum.
+
+vilazodone
+oxcarbazepine decreases levels of vilazodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Consider increasing vilazodone dose up
+to 2-fold (not to exceed 80 mg/day) when coadministered with strong CYP3A4
+inducers for >14 days.
+
+vortioxetine
+oxcarbazepine increases levels of vortioxetine by increasing metabolism. Modify
+Therapy/Monitor Closely. Consider increasing the vortioxetine dose when
+coadministered with strong CYP inducers for >14 days; not to exceed 3 times
+original vortioxetine dose.
+
+Minor (31)
+
+acetaminophen
+oxcarbazepine decreases levels of acetaminophen by increasing metabolism.
+Minor/Significance Unknown. Enhanced metabolism incr levels of hepatotoxic
+metabolites.
+
+acetaminophen IV
+
+https://reference.medscape.com/drug/trileptal-oxtellar-xr-oxcarbazepine-343014 12/22
+
+
+
+6/22/26, 4:53 PM Trileptal, Oxtellar XR (oxcarbazepine) dosing, indications, interactions, adverse effects, and more
+
+oxcarbazepine decreases levels of acetaminophen IV by increasing metabolism.
+Minor/Significance Unknown. Enhanced metabolism incr levels of hepatotoxic
+metabolites.
+
+acetaminophen rectal
+oxcarbazepine decreases levels of acetaminophen rectal by increasing metabolism.
+Minor/Significance Unknown. Enhanced metabolism incr levels of hepatotoxic
+metabolites.
+
+amitriptyline
+oxcarbazepine will increase the level or effect of amitriptyline by affecting hepatic
+enzyme CYP2C19 metabolism. Minor/Significance Unknown.
+
+atracurium
+oxcarbazepine decreases effects of atracurium by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+biotin
+oxcarbazepine decreases levels of biotin by unspecified interaction mechanism.
+Minor/Significance Unknown. Biotin supplementation may be necessary.
+
+carbamazepine
+carbamazepine decreases levels of oxcarbazepine by increasing metabolism.
+Minor/Significance Unknown.
+
+cimetidine
+oxcarbazepine will increase the level or effect of cimetidine by affecting hepatic
+enzyme CYP2C19 metabolism. Minor/Significance Unknown.
+
+cisatracurium
+oxcarbazepine decreases effects of cisatracurium by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+cyanocobalamin
+oxcarbazepine decreases levels of cyanocobalamin by inhibition of GI absorption.
+Applies only to oral form of both agents. Minor/Significance Unknown.
+
+dexmethylphenidate
+dexmethylphenidate increases effects of oxcarbazepine by decreasing metabolism.
+Minor/Significance Unknown.
+
+diazepam
+oxcarbazepine will increase the level or effect of diazepam by affecting hepatic
+enzyme CYP2C19 metabolism. Minor/Significance Unknown.
+
+fosphenytoin
+fosphenytoin decreases levels of oxcarbazepine by increasing metabolism.
+Minor/Significance Unknown.
+
+lansoprazole
+oxcarbazepine will increase the level or effect of lansoprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Minor/Significance Unknown.
+
+https://reference.medscape.com/drug/trileptal-oxtellar-xr-oxcarbazepine-343014 13/22
+
+
+
+6/22/26, 4:53 PM Trileptal, Oxtellar XR (oxcarbazepine) dosing, indications, interactions, adverse effects, and more
+
+levocarnitine
+oxcarbazepine decreases levels of levocarnitine by unspecified interaction
+mechanism. Minor/Significance Unknown.
+
+levothyroxine
+oxcarbazepine decreases levels of levothyroxine by increasing metabolism.
+Minor/Significance Unknown.
+
+liothyronine
+oxcarbazepine decreases levels of liothyronine by increasing metabolism.
+Minor/Significance Unknown.
+
+pancuronium
+oxcarbazepine decreases effects of pancuronium by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+pantoprazole
+oxcarbazepine will increase the level or effect of pantoprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Minor/Significance Unknown. Unclear on net effect
+of pantoprazole action due to opposing effects by CYP450 enzymes; monitor
+
+perampanel
+perampanel increases levels of oxcarbazepine by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+phenobarbital
+phenobarbital decreases levels of oxcarbazepine by increasing metabolism.
+Minor/Significance Unknown.
+
+phenytoin
+phenytoin decreases levels of oxcarbazepine by increasing metabolism.
+Minor/Significance Unknown.
+
+rapacuronium
+oxcarbazepine decreases effects of rapacuronium by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+rocuronium
+oxcarbazepine decreases effects of rocuronium by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+sage
+sage decreases effects of oxcarbazepine by pharmacodynamic antagonism.
+Minor/Significance Unknown. Theoretical interaction; some species of sage may
+cause convulsions.
+
+serdexmethylphenidate/dexmethylphenidate
+serdexmethylphenidate/dexmethylphenidate increases effects of oxcarbazepine by
+decreasing metabolism. Minor/Significance Unknown.
+
+succinylcholine
+oxcarbazepine decreases effects of succinylcholine by pharmacodynamic
+
+https://reference.medscape.com/drug/trileptal-oxtellar-xr-oxcarbazepine-343014 14/22
+
+
+
+6/22/26, 4:53 PM Trileptal, Oxtellar XR (oxcarbazepine) dosing, indications, interactions, adverse effects, and more
+
+antagonism. Minor/Significance Unknown.
+
+thyroid desiccated
+oxcarbazepine decreases levels of thyroid desiccated by increasing metabolism.
+Minor/Significance Unknown.
+
+vecuronium
+oxcarbazepine decreases effects of vecuronium by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+verapamil
+verapamil decreases levels of oxcarbazepine by increasing metabolism.
+Minor/Significance Unknown.
+
+voriconazole
+oxcarbazepine will increase the level or effect of voriconazole by affecting hepatic
+enzyme CYP2C19 metabolism. Minor/Significance Unknown.
+
+Adverse Effects
+
+>10%
+
+Dizziness (30-50%)
+
+Diplopia (30-50%)
+
+Headache (26-30%)
+
+Nausea/vomiting (26-30%)
+
+Nystagmus (26-30%)
+
+Somnolence (26-30%)
+
+Ataxia (10-30%)
+
+Abnormal gait (16-20%)
+
+Tremor (16-20%)
+
+Abdominal pain (11-15%)
+
+Fatigue (11-15%)
+
+Vertigo (11-15%)
+
+Vision abnormalities (11-15%)
+
+1-10%
+
+Dyspepsia (5-6%)
+
+Rash (4%)
+
+https://reference.medscape.com/drug/trileptal-oxtellar-xr-oxcarbazepine-343014 15/22
+
+
+
+6/22/26, 4:53 PM Trileptal, Oxtellar XR (oxcarbazepine) dosing, indications, interactions, adverse effects, and more
+
+Insomnia (2-4%)
+
+Abnormal thinking (<4%)
+
+Hyponatremia (1-3%); varies widely (see Warnings)
+
+Muscle weakness (1-2%)
+
+Hypotension (<2%)
+
+Speech disorder (1%)
+
+Asthenia
+
+Postmarketing Reports
+
+Angioedema
+
+Anaphylaxis
+
+Multiorgan immune hypersensitivity reaction
+
+Hematic and lymphatic systems: Bone marrow depression, agranulocytosis, aplastic
+anemia, pancytopenia, neutropenia
+
+Digestive system: Pancreatitis and/or lipase and/or amylase increased
+
+Metabolism and nutrition disorders: Folic acid deficiency, hypothyroidism
+
+Skin and appendages: Erythema multiforme, Stevens-Johnson syndrome, toxic epidermal
+necrolysis
+
+Skeletal: Fractures, decreased bone mineral, osteoporosis
+
+Body as a whole: Multiorgan hypersensitivity disorders characterized by features such as
+rash, fever, lymphadenopathy, abnormal liver function tests, eosinophilia, and arthralgia
+
+Drug Reaction with Eosinophilia and Systemic Symptoms (DRESS)/Multi-Organ
+Hypersensitivity
+
+Warnings
+
+Contraindications
+
+Known hypersensitivity to oxcarbazepine or any of its components, or to eslicarbazepine
+acetate
+
+Cautions
+
+Hypersensitivity reactions may occur; approximately 25% to 30% of patients who have
+had hypersensitivity reactions to carbamazepine will experience hypersensitivity
+reactions with this drug; for this reason, patients should be specifically questioned about
+any prior experience with carbamazepine, and patients with a history of hypersensitivity
+reactions to carbamazepine should ordinarily be treated with this drug only if potential
+
+https://reference.medscape.com/drug/trileptal-oxtellar-xr-oxcarbazepine-343014 16/22
+
+
+
+6/22/26, 4:53 PM Trileptal, Oxtellar XR (oxcarbazepine) dosing, indications, interactions, adverse effects, and more
+
+benefit justifies potential risk; discontinue therapy immediately if signs or symptoms of
+hypersensitivity develop
+
+Rare cases of anaphylaxis and angioedema involving larynx, glottis, lips and eyelids
+have been reported in patients after taking the first or subsequent doses of immediate-
+release oxcarbazepine; angioedema associated with laryngeal edema can be fatal; if a
+patient develops any of these reactions after treatment with this drug, discontinue drug
+and initiate an alternative treatment; do not rechallenge these patients with this drug
+
+Caution performing tasks that require mental alertness
+
+Hypothyroidism reported; monitor thyroid function, especially in children; discontinuation
+of therapy associated with return of normal thyroxine levels
+
+Half-life of primary active metabolite is prolonged 3- to 4-fold and AUC is doubled in
+patients with CrCl <30 mL/min; adjust dose in these patients
+
+Exacerbation of or new onset of primary generalized seizures reported; risk of
+aggravation of primary generalized seizures is seen especially in children but may also
+occur in adults; discontinue therapy if it occurs
+
+Do not discontinue anticonvulsants abruptly; withdraw gradually because of risk of
+increased seizure frequency and status epilepticus; if withdrawal is needed because of
+serious adverse event, rapid discontinuation can be considered
+
+Antiepileptic drugs (AEDs) increase risk of suicidal thoughts or behavior in patients
+receiving therapy; anyone considering prescribing this drug or any other AED must
+balance risk of suicidal thoughts or behavior with risk of untreated Illness; monitor for
+emergence or worsening of depression, suicidal thoughts or behavior, and/or any
+unusual changes in mood or behavior; should suicidal thoughts and behavior emerge
+during treatment, the prescriber needs to consider whether emergence of these
+symptoms in any given patient may be related to illness being treated
+
+Rare reports of pancytopenia, agranulocytosis, and leukopenia seen in patients treated
+with immediate-release oxcarbazepine during post-marketing experience;
+discontinuation of this drug should be considered if any evidence of these hematologic
+reactions develops
+
+Dosage adjustment according to obesity status not necessary
+
+Hyponatremia
+
+Reported incidence of oxcarbazepine-induced hyponatremia varies greatly in the
+literature; compared with other antiepileptic agents, oxcarbazepine has higher
+reported incidences of asymptomatic hyponatremia (27-64%) and symptomatic
+hyponatremia (5-22%) as have been described in various studies since its approval
+
+Clinically significant hyponatremia (sodium <125 mmol/L) may develop during
+therapy; serum sodium levels <125 mmol/L have occurred generally within several
+months of initiating; however, clinically significant hyponatremia may develop after
+more than a year
+
+Most patients who developed hyponatremia were asymptomatic in clinical trials;
+however, some of these patients had their dosage reduced, discontinued, or had
+their fluid intake restricted for hyponatremia
+
+Serum sodium levels returned toward normal when with dosage reduction or
+discontinuation, or when patients were treated conservatively (eg, fluid restriction)
+
+https://reference.medscape.com/drug/trileptal-oxtellar-xr-oxcarbazepine-343014 17/22
+
+
+
+6/22/26, 4:53 PM Trileptal, Oxtellar XR (oxcarbazepine) dosing, indications, interactions, adverse effects, and more
+
+Cases of symptomatic hyponatremia and syndrome of inappropriate antidiuretic
+hormone secretion (SIADH) have been reported during post-marketing use
+
+Among treated patients in a controlled trial of adjunctive therapy with extended-
+release tablets, overall incidence of clinically significant hyponatremia was 1.2%,
+although slight shifts in serum sodium concentrations from normal to low (<135
+mEq/L) were observed for treated groups compared to placebo (1.7%)
+
+Measure serum sodium concentrations if patients develop symptoms of
+hyponatremia (eg, nausea, malaise, headache, lethargy, confusion, obtunded
+consciousness, or increase in seizure frequency or severity)
+
+Measure serum sodium concentrations during treatment, particularly if concomitant
+medications known to decrease serum sodium levels are also taken
+
+Dermatological reactions
+
+Serious dermatological reactions, including Stevens-Johnson syndrome (SJS) and
+toxic epidermal necrolysis (TEN), reported in both children and adults treated with
+immediate-release oxcarbazepine use; the median time of onset for reported cases
+was 19 days; such serious skin reactions may be life threatening, and some patients
+have required hospitalization with very rare reports of fatal outcome
+
+Recurrence of serious skin reactions following rechallenge with immediate-release
+oxcarbazepine also reported; reporting rate of TEN and SJS associated with
+immediate-release oxcarbazepine use, which is generally accepted to be an
+underestimate due to underreporting, exceeds background incidence rate estimates
+by a factor of 3- to 10-fold
+
+Association with HLA-B*1502
+
+Patients carrying the HLA-B*1502 allele may be at increased risk for SJS/TEN with
+therapy; human Leukocyte Antigen (HLA) allele B*1502 increases risk for
+developing SJS/TEN in patients treated with carbamazepine; the chemical
+structures of immediate-release oxcarbazepine and extended-release are similar to
+that of carbamazepine
+
+Available clinical evidence, and data from nonclinical studies showing a direct
+interaction between immediate-release oxcarbazepine and HLA-B*1502 protein,
+suggest that the HLA-B*1502 allele may also increase risk for SJS/TEN with
+extended release
+
+The frequency of HLA-B*1502 allele ranges from 2 to 12% in Han Chinese
+populations, is about 8% in Thai populations, and above 15% in the Philippines and
+in some Malaysian populations
+
+Allele frequencies up to about 2% and 6% reported in Korea and India, respectively;
+the frequency of HLA-B*1502 allele is negligible in people from European descent,
+several African populations, indigenous peoples of the Americas, Hispanic
+populations, and in Japanese (<1%)
+
+Testing for presence of HLA-B*1502 allele should be considered in patients with
+ancestry in genetically at-risk populations, prior toinitiating treatment with this
+drug; the use of this drug should be avoided in patients positive for HLA-B*1502
+unless benefits clearly outweigh risks
+
+Consideration should also be given to avoid use of other drugs associated with
+SJS/TEN in HLA-B*1502 positive patients, when alternative therapies are
+otherwise equally acceptable; screening is not generally recommended in patients
+
+https://reference.medscape.com/drug/trileptal-oxtellar-xr-oxcarbazepine-343014 18/22
+
+
+
+6/22/26, 4:53 PM Trileptal, Oxtellar XR (oxcarbazepine) dosing, indications, interactions, adverse effects, and more
+
+from populations in which prevalence of HLA-B*1502 is low, or in current users of
+this drug, as the risk of SJS/TEN is largely confined to the first few months of
+therapy, regardless of HLA-B*1502 status
+
+The use of HLA-B*1502 genotyping has important limitations and must never
+substitute for appropriate clinical vigilance and patient management; the role of
+other possible factors in the development of, and morbidity from, SJS/TEN, such as
+antiepileptic drug (AED) dosage, compliance, concomitant medications,
+comorbidities, and the level of dermatologic monitoring have not been well
+characterized
+
+Long term
+
+Associated with decreased mineral density, osteopenia, osteoporosis, and fractures
+
+CNS-related adverse effects including difficulty with concentration, psychomotor
+slowing, speech or language problems, somnolence or fatigue, reported
+
+Coordination abnormalities, including ataxia and gait disturbances
+
+Pregnancy effects
+
+Plasma levels of active metabolite of oxcarbazepine, the 10¬ monohydroxy
+derivative (MHD), may gradually decrease throughout pregnancy
+
+Recommend patients be monitored carefully during pregnancy
+
+Close monitoring should continue through postpartum period because MHD levels
+may return after delivery (see Pregnancy)
+
+DRESS
+
+Drug reaction with eosinophilia and systemic symptoms (DRESS), also known as
+multi-organ hypersensitivity, reported
+
+Some of these events have been fatal or life-threatening
+
+DRESS typically, although not exclusively, presents with fever, rash, and/or
+lymphadenopathy, in association with other organ system involvement (eg,
+hepatitis, nephritis, hematologic abnormalities, myocarditis, or myositis), sometimes
+resembling an acute viral infection
+
+Drug interactions overview
+
+Phenytoin levels have been shown to increase with concomitant use of
+oxcarbazepine at doses >1200 mg/day; therefore, it is recommended that the
+plasma levels of phenytoin be monitored during oxcarbazepine titration and dosage
+modification; a dose reduction of phenytoin may be required
+
+Strong CYP450 enzymes and/or UGT inducers (eg, rifampin, carbamazepine,
+phenytoin and phenobarbital) have been shown to decrease the plasma/serum
+levels of MHD, the active metabolite of oxcarbazepine (25% to 49%) (see Dosage
+Considerations)
+
+Concurrent use of oxcarbazepine with hormonal contraceptives may render these
+contraceptives less effective
+
+https://reference.medscape.com/drug/trileptal-oxtellar-xr-oxcarbazepine-343014 19/22
+
+
+
+6/22/26, 4:53 PM Trileptal, Oxtellar XR (oxcarbazepine) dosing, indications, interactions, adverse effects, and more
+
+Pregnancy & Lactation
+
+Pregnancy
+
+There is a pregnancy exposure registry that monitors pregnancy outcomes in women
+exposed to AEDs, such as TRILEPTAL, during pregnancy. Encourage women who are
+taking TRILEPTAL during pregnancy to enroll in the North American Antiepileptic Drug
+(NAAED) Pregnancy Registry by calling 1-888-233-2334 or visiting
+https://www.aedpregnancyregistry.org/
+
+No adequate and well-controlled clinical studies of oxcarbazepine in pregnant women;
+however, oxcarbazepine is closely related structurally to carbamazepine, which is
+considered to be teratogenic in humans
+
+Data on a limited number of pregnancies from pregnancy registries suggest congenital
+malformations associated with oxcarbazepine monotherapy use (eg, craniofacial defects
+such as oral clefts and cardiac malformations such as ventricular septal defects)
+
+Use of drug with hormonal contraceptives containing ethinylestradiol or levonorgestrel
+associated with decreased plasma concentrations of these hormones and may result in a
+failure of therapeutic effect of oral contraceptive drug; advise women of reproductive
+potential taking drug who are using a contraceptive containing ethinylestradiol or
+levonorgestrel to use additional or alternative non-hormonal birth control
+
+Use during pregnancy only if the potential benefit justifies the potential risk to the fetus
+
+Oxcarbazepine levels may decrease during pregnancy
+
+Lactation
+
+Oxcarbazepine and its active metabolite (MHD) are excreted in human milk
+
+A milk-to-plasma concentration ratio of 0.5 was found for oxcarbazepine and MHD
+
+Owing to potential serious adverse reactions to oxcarbazepine in nursing infants,
+developmental and health benefits of breastfeeding should be considered along with
+mother’s clinical need for drug and any potential adverse effects on breastfed infant from
+drug or from underlying maternal
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+https://reference.medscape.com/drug/trileptal-oxtellar-xr-oxcarbazepine-343014 20/22
+
+
+
+6/22/26, 4:53 PM Trileptal, Oxtellar XR (oxcarbazepine) dosing, indications, interactions, adverse effects, and more
+
+Pharmacology
+
+Mechanism of Action
+
+MHD stabilizes neuronal membranes by blocking Na+ channels; this may inhibit
+repetitive firing and may decrease the propagation of synaptic impulses; may also
+increase potassium conductance and modulate the activity of high-voltage activated
+calcium channels
+
+Absorption
+
+Bioavailability: Complete
+
+Peak serum time: 4.5 hr (tablet); 6 hr (suspension)
+
+Steady-state reached within 2-3 days
+
+Food: No effect on rate/extent of absorption
+
+Distribution
+
+Protein bound: 40% (MHD); primarily bound to albumin
+
+Vd: 49 L
+
+Metabolism
+
+Rapidly reduces by cytosolic enzymes in the liver to active metabolite
+
+Metabolites (active): MHD
+
+Enzymes induced: CYP3A4
+
+Enzymes inhibited: CYP2C19
+
+Elimination
+
+Half-life: 2 hr (immediate-release parent drug); 9 hr (immediate-release derivative
+MHD); 7-11 hr (extended-release parent drug); 9-11 hr (extended-release derivative
+MHD)
+
+Excretion: Urine (>95%)
+
+Clearance
+
+Children aged 2 to <4 years: ~80% higher than adults
+
+Children aged 4-12 years: ~40% higher than adults
+
+Obese children aged ≤18 years: Steady-state MHD similar between obese and non-
+obese; dosage adjustment according to obesity is not necessary
+
+https://reference.medscape.com/drug/trileptal-oxtellar-xr-oxcarbazepine-343014 21/22
+
+
+
+6/22/26, 4:53 PM Trileptal, Oxtellar XR (oxcarbazepine) dosing, indications, interactions, adverse effects, and more
+
+Administration
+
+Oral Suspension Preparation
+
+Shake bottle well and prepare dose immediately afterwards
+
+Withdraw prescribed dose from bottle using oral syringes provided; a household
+teaspoon or tablespoon is not an adequate measuring device and should not be used
+
+Mix in a small glass of water just prior to administration or, alternatively, may be
+swallowed directly from syringe
+
+After each use, close bottle and rinse the syringe with warm water and allow it to dry
+thoroughly
+
+Oral Administration
+
+Take with or without food
+
+Oral suspension and film-coated tablets may be interchanged at equal doses
+
+Storage
+
+Oral suspension
+
+Store at room temperature, 25°C (77°F); excursions permitted to 15-30°C (59-86°F)
+
+Use within 7 weeks of first opening bottle
+
+Tablets
+
+Store at room temperature, 25°C (77°F); excursions permitted to 15-30°C (59-86°F)
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/trileptal-oxtellar-xr-oxcarbazepine-343014 22/22

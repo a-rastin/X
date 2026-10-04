@@ -1,0 +1,423 @@
+Brand and Other Names: Latuda
+Classes: Antipsychotics, 2nd Generation
+
+Dosing & Uses
+ADULT
+Dosage Forms & Strengths
+tablet
+• 20mg
+• 40mg
+• 60mg
+• 80mg
+• 120mg
+
+Schizophrenia
+Indicated for schizophrenia
+40 mg PO qDay initially; not to exceed 160 mg/day
+Initial dose titration is not required; shown to be effective in a dose range of 40-160 mg/day
+
+Bipolar Depression
+Monotherapy
+• Indicated as monotherapy for adults with major depressive episode associated with bipolar I disorder (bipolar depression)
+• 20 mg PO qDay initially; may increase dose if needed, not to exceed 120 mg/day
+In monotherapy study, higher dose range (80-120 mg/day) did not provide additional efficacy compared to the lower dose range (20-60 mg/day)
+
+Adjunctive therapy
+• Indicated as adjunctive therapy for major depressive episodes associated with bipolar I disorder with lithium or valproate
+• 20 mg PO qDay initially; may increase dose if needed, not to exceed 120 mg/day
+
+Dosage Modifications
+CYP3A4 inhibitors or inducers
+• Coadministration with CYP3A4 inhibitors
+• Strong CYP3A4 inhibitor: Contraindicated; do not coadminister (see Contraindications)
+• Moderate CYP3A4 inhibitor (eg, diltiazem, atazanavir, erythromycin, fluconazole, verapamil): Reduce dose to 50% of original dose, not to exceed 80 mg/day starting dose is 20 mg/day
+• Grapefruit and grapefruit juice: Avoid coadministration
+• Coadministration with CYP3A4 inducers
+• Strong CYP3A4 inducer: Contraindicated; do not coadminister (see Contraindications)
+• Moderate CYP3A4 inducer (eg, bosentan, efavirenz, etravirine, modafinil, nafcillin): It may be necessary to increase lurasidone dose after chronic treatment (ie, ≥7 days) with the inducer
+
+Renal impairment
+• Mild (CrCl≥50 mL/min): No dosage adjustment required
+• Moderate-to-severe (CrCl<50 mL/min): 20 mg/day initially; not to exceed 80 mg/day
+
+Hepatic impairment
+• Mild (Child-Pugh class A): No dosage adjustment necessary
+• Moderate (Child-Pugh class B [Score 7-9]): 20 mg/day initially; not to exceed 80 mg/day
+• Severe (Child-Pugh class C [Score 10-15]): 20 mg/day initially; not to exceed 40 mg/day
+
+Dosing Considerations
+Effectiveness for longer-term use (ie, >6 weeks) has not been established in controlled studies; therefore, the physician who elects to use lurasidone for extended periods should periodically re-evaluate the long-term usefulness of the drug for the individual patient
+
+PEDIATRIC
+Schizophrenia
+Indicated for treatment of schizophrenia in adolescents aged 13-17 years
+<13 years: Safety and efficacy not established
+13-17 years
+• Starting dose: 40 mg PO qDay; initial dose titration is not required
+• Effective dosage range: 40-80 mg/day not to exceed 80 mg/day
+
+Bipolar Depression
+Indicated as monotherapy for major depressive episode associated with bipolar I disorder (bipolar depression) in adolescents aged 10-17 yr
+20 mg PO qDay; initial dose titration is not required
+May increase dose after 1 week based on clinical response; not to exceed 80 mg qDay
+Effective dose range is 20-80 mg/day
+Clinical studies found most patients (67%) received 20-40 mg/day
+
+Dosage Modifications
+CYP3A4 inhibitors or inducers
+• Coadministration with CYP3A4 inhibitors
+• Strong CYP3A4 inhibitor: Contraindicated; do not coadminister (see Contraindications)
+• Moderate CYP3A4 inhibitor (eg, diltiazem, atazanavir, erythromycin, fluconazole, verapamil): Reduce dose to 50% of original dose, not to exceed 80 mg/day starting dose is 20 mg/day
+• Grapefruit and grapefruit juice: Avoid coadministration
+• Coadministration with CYP3A4 inducers
+• Strong CYP3A4 inducer: Contraindicated; do not coadminister (see Contraindications)
+
+Renal impairment
+• Mild (CrCl≥50 mL/min): No dosage adjustment required
+• Moderate-to-severe (CrCl<50 mL/min): 20 mg/day initially; not to exceed 80 mg/day
+
+Hepatic impairment
+• Mild (Child-Pugh class A): No dosage adjustment necessary
+• Moderate (Child-Pugh class B [Score 7-9]): 20 mg/day initially; not to exceed 80 mg/day
+• Severe (Child-Pugh class C [Score 10-15]): 20 mg/day initially; not to exceed 40 mg/day
+
+Dosing Considerations
+Effectiveness for longer-term use (ie, >6 weeks) has not been established in controlled studies; therefore, the physician who elects to use lurasidone for extended periods should periodically re-evaluate the long-term usefulness of the drug for the individual patient
+
+Interactions
+Interaction Checker
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal and lurasidone
+No Interactions Found
+Interactions Found
+Contraindicated
+Serious
+Significant - Monitor Closely
+Minor
+All Interactions Sort By: Severity
+
+Contraindicated
+
+carbamazepine
+carbamazepine decreases levels of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated; decreases lurasidone Cmax by ~85%.
+
+ceritinib
+ceritinib will increase the level or effect of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+
+chloramphenicol
+chloramphenicol increases levels of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Coadministration of lurasidone and strong CYP3A4 inhibitors is contraindicated.
+
+• clarithromycin
+clarithromycin will increase the level or effect of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. May results in an increase in lurasidone exposure and the potential for serious adverse reactions
+
+• cobicistat
+cobicistat will increase the level or effect of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Potential for increased systemic exposure of lurasidone resulting in increased risk for QT prolongation.
+
+• conivaptan
+conivaptan increases levels of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Coadministration of lurasidone and strong CYP3A4 inhibitors is contraindicated.
+
+darunavir
+darunavir increases levels of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Coadministration of lurasidone and strong CYP3A4 inhibitors is contraindicated.
+
+dexamethasone
+dexamethasone decreases levels of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated; decreases lurasidone Cmax by ~85%.
+
+• dopamine
+dopamine increases toxicity of lurasidone by Other (see comment). Contraindicated. Comment: Interaction applies only in setting of acute lurasidone overdose. Epinephrine may enhance hypotensive effects of lurasidone in overdose setting.
+
+• epinephrine
+epinephrine increases toxicity of lurasidone by pharmacodynamic synergism. Contraindicated. Interaction applies only in setting of acute lurasidone overdose. Epinephrine may enhance hypotensive effects of lurasidone in overdose setting.
+
+• eslicarbazepine acetate
+eslicarbazepine acetate will decrease the level or effect of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+
+• fosamprenavir
+fosamprenavir increases levels of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Coadministration of lurasidone and strong CYP3A4 inhibitors is contraindicated.
+
+• fosphenytoin
+fosphenytoin decreases levels of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated; decreases lurasidone Cmax by ~85%.
+
+idelalisib
+idelalisib will increase the level or effect of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+
+imatinib
+imatinib increases levels of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Coadministration of lurasidone and strong CYP3A4 inhibitors is contraindicated.
+
+• isoniazid
+isoniazid will increase the level or effect of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Coadministration of lurasidone and strong CYP3A4 inhibitors is contraindicated.
+
+• itraconazole
+itraconazole will increase the level or effect of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Coadministration of lurasidone and strong CYP3A4 inhibitors is contraindicated.
+
+ketoconazole
+ketoconazole will increase the level or effect of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Coadministration of lurasidone and strong CYP3A4 inhibitors is contraindicated.
+
+• levoketoconazole
+levoketoconazole will increase the level or effect of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+
+• nefazodone
+nefazodone increases levels of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Coadministration of lurasidone and strong CYP3A4 inhibitors is contraindicated.
+
+• nelfinavir
+nelfinavir increases levels of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Coadministration of lurasidone and strong CYP3A4 inhibitors is contraindicated.
+
+• nevirapine
+nevirapine decreases levels of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+
+• nicardipine
+nicardipine increases levels of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Coadministration of lurasidone and strong CYP3A4 inhibitors is contraindicated.
+
+nirmatrelvir/ritonavir
+nirmatrelvir/ritonavir will increase the level or effect of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Nirmatrelvir/ritonavir is contraindicated with drugs that are highly dependent on CYP3A for clearance and for which elevated concentrations are associated with serious and/or life-threatening reactions.
+
+• oxcarbazepine
+oxcarbazepine decreases levels of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+
+• pentobarbital
+pentobarbital decreases levels of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+
+• phenobarbital
+phenobarbital decreases levels of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+
+• phenytoin
+phenytoin decreases levels of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+
+primidone
+primidone decreases levels of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+
+• relacorilant
+relacorilant increases levels of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+
+• rifabutin
+rifabutin decreases levels of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+
+• rifampin
+rifampin decreases levels of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Coadministration of lurasidone with strong CYP3A4 inducers is contraindicated.
+
+• rifapentine
+rifapentine decreases levels of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+
+ritonavir
+ritonavir will increase the level or effect of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Coadministration of lurasidone and strong CYP3A4 inhibitors is contraindicated.
+
+St John's Wort
+St John's Wort decreases levels of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+
+• thalidomide
+lurasidone and thalidomide both increase sedation. Contraindicated.
+
+• tipranavir
+tipranavir will increase the level or effect of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Coadministration of lurasidone and strong CYP3A4 inhibitors is contraindicated.
+
+• voriconazole
+voriconazole increases levels of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Coadministration of lurasidone and strong CYP3A4 inhibitors is contraindicated.
+
+Serious
+
+apalutamide
+apalutamide will decrease the level or effect of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+benzhydrocodone/acetaminophen
+benzhydrocodone/acetaminophen, lurasidone. Either increases toxicity of the other by pharmacodynamic synergism. Avoid or Use Alternate Drug. Profound sedation, respiratory depression, coma, and death may result if coadministered. Reserve concomitant prescribing of these drugs in patients for whom other treatment options are inadequate. Limit dosages and durations to the minimum required. Monitor closely for signs of respiratory depression and sedation.
+
+enzalutamide
+enzalutamide will decrease the level or effect of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+
+• grapefruit
+grapefruit will increase the level or effect of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid grapefruit and grapefruit juice when taking lurasidone.
+
+• hydrocodone
+hydrocodone, lurasidone. Either increases toxicity of the other by pharmacodynamic synergism. Avoid or Use Alternate Drug. Profound sedation, respiratory depression, coma, and death may result if coadministered. Reserve concomitant prescribing of these drugs in patients for whom other treatment options are inadequate. Limit dosages and durations to the minimum required. Monitor closely for signs of respiratory depression and sedation.
+
+• iloperidone
+lurasidone and iloperidone both increase QTc interval. Avoid or Use Alternate Drug.
+
+ivosidenib
+ivosidenib will decrease the level or effect of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid coadministration of sensitive CYP3A4 substrates with ivosidenib or replace with alternative therapies. If coadministration is unavoidable, monitor patients for loss of therapeutic effect of these drugs.
+
+• levodopa inhaled
+lurasidone decreases effects of levodopa inhaled by pharmacodynamic antagonism. Avoid or Use Alternate Drug. Atypical (2nd generation) antipsychotics inhibit dopamine D2 receptors in varying degrees (clozapine and quetiapine are lower risk).
+
+• lonafarnib
+lurasidone will increase the level or effect of lonafarnib by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. If coadministration of lonafarnib (a sensitive CYP3A substrate) with weak CYP3A inhibitors is unavoidable, reduce to, or continue lonafarnib at starting dose.
+
+• lorlatinib
+lorlatinib will decrease the level or effect of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+metoclopramide intranasal
+lurasidone, metoclopramide intranasal. Either increases effects of the other by Other (see comment). Avoid or Use Alternate Drug. Comment: Avoid use of metoclopramide intranasal or interacting drug, depending on importance of drug to patient. lurasidone increases toxicity of metoclopramide intranasal by pharmacodynamic synergism. Avoid or Use Alternate Drug. Potential for additive effects, including increased frequency and severity of tardive dyskinesia, other extrapyramidal symptoms, and neuroleptic malignant syndrome.
+
+• milsaperidone
+lurasidone and milsaperidone both increase QTc interval. Avoid or Use Alternate Drug.
+
+• olopatadine intranasal
+lurasidone and olopatadine intranasal both increase sedation. Avoid or Use Alternate Drug. Coadministration increases risk of CNS depression, which can lead to additive impairment of psychomotor performance and cause daytime impairment.
+
+• quinidine
+lurasidone increases toxicity of quinidine by Other (see comment). Avoid or Use Alternate Drug. Comment: Interaction applies only in setting of acute lurasidone overdose. Lurasidone may enhance QTc prolonging effects of quinidine in overdose setting.
+
+safinamide
+lurasidone decreases effects of safinamide by pharmacodynamic antagonism. Avoid or Use Alternate Drug. Dopamine antagonists may decrease safinamide effects and exacerbate Parkinson disease symptoms.
+
+• selinexor
+selinexor, lurasidone. unspecified interaction mechanism. Avoid or Use Alternate Drug. Patients treated with selinexor may experience neurological toxicities. Avoid taking selinexor with other medications that may cause dizziness or confusion.
+
+• sufentanil SL
+sufentanil SL, lurasidone. Either increases toxicity of the other by pharmacodynamic synergism. Avoid or Use Alternate Drug. Coadministration may result in hypotension, profound sedation, respiratory depression, coma, and death. Reserve concomitant prescribing of these drugs in patients for whom other treatment options are inadequate. 
+
+• tucatinib
+tucatinib will increase the level or effect of lurasidone by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid concomitant use of tucatinib with CYP3A substrates, where minimal concentration changes may lead to serious or life-threatening toxicities. If unavoidable, reduce CYP3A substrate dose according to product labeling.
+
+• ziftomenib
+lurasidone and ziftomenib both increase QTc interval. Avoid or Use Alternate Drug. Avoid coadministration of ziftomenib with other drugs known to prolong the QTc interval. If unavoidable, obtain ECGs when initiating, during concomitant use, and as clinically indicated. Interrupt ziftomenib with QTc interval > 500 ms or a change from baseline is > 60 ms.
+
+zuranolone
+lurasidone, zuranolone. Either increases effects of the other by pharmacodynamic synergism. Avoid or Use Alternate Drug. Coadministration of zuranolone with other CNS depressants may increase impairment of psychomotor performance or CNS depressant effects. If unavoidable, consider dose reduction.
+
+Monitor Closely 
+
+(A significant number of moderate interactions exist mainly due to CNS depression, hypotensive effects, QTc prolongation, and altered glucose metabolism. Examples include anti-hypertensives, other antipsychotics, benzodiazepines, opioids, and antidiabetic agents. Monitor closely.)
+
+Adverse Effects
+>10%
+Somnolence, dose related (15-26%)
+Akathisia, dose related (6-22%)
+Extrapyramidal disorder, dose related (6-22%)
+Parkinsonism, dose related (6-17%)
+Fasting glucose increased, dose related (10-14%)
+Nausea, dose related (9-13%)
+Insomnia, dose-related (7-11%)
+
+1-10%
+Dyspepsia, dose related (5-8%)
+Anxiety, dose related (3-8%)
+Elevated serum creatinine, dose related (1-7.2%)
+Dystonia (5%)
+Dizziness, dose related (4-6%)
+Fatigue (4%)
+Back pain, dose related (2-4%)
+Restlessness (3%)
+Salivary hypersecretion, dose related (1-4%)
+Hypertension
+Rash
+Pruritus
+CPK increased
+Abdominal pain
+Diarrhea
+Blurred vision
+Tachycardia
+
+<1%
+Anemia
+AV block 1st degree
+Angina pectoris
+Bradycardia
+Vertigo
+Gastritis
+Rhabdomyolysis
+Cerebrovascular accident
+Dysarthria
+Dysuria
+Renal failure
+Amenorrhea
+Dysmenorrhea
+Breast enlargement
+Breast pain
+Galactorrhea
+Erectile dysfunction
+Angioedema
+
+Postmarketing Reports
+Hypersensitivity (urticaria, throat swelling, tongue swelling, and dyspnea)
+Hyponatremia
+
+Warnings
+Black Box Warnings
+Increased mortality in elderly patients with dementia-related psychosis
+• Not indicated for dementia-related psychosis
+• Elderly patients with dementia-related psychosis treated with antipsychotic drugs are at an increased risk of death; lurasidone is not approved for the treatment of patients with dementia-related psychosis; placebo-controlled trials with other atypical antipsychotics showed higher incidence of cerebrovascular adverse reactions (eg, CVA, TIA), including fatalities, compared with placebo
+
+Suicidal thoughts and behaviors
+• Antidepressants increased the risk of suicidal thoughts and behavior in children and young adults in short-term studies; closely monitor all antidepressant-treated patients for clinical worsening, and for emergence of suicidal thoughts and behaviors
+
+Contraindications
+Hypersensitivity
+Coadministration with strong CYP3A4 inhibitors (eg, ketoconazole, clarithromycin, ritonavir, voriconazole, mibefradil) 
+Coadministration with strong CYP3A4 inducers (eg, rifampin, avasimibe, St. John's wort, phenytoin, carbamazepine) 
+
+Cautions
+Possibility of suicide attempt inherent to psychotic illness; close supervision required when therapy is initiated, dosage is changed, or drug is discontinued; the risk of suicidal thoughts and behaviors in pediatric and young adult patients extends to longer-term use (eg, >4 months) is unknown; there is substantial evidence from placebo-controlled maintenance studies in adults with MDD that antidepressants delay the recurrence of depression
+Antidepressant treatment can increase the risk of developing a manic or hypomanic episode, particularly in patients with bipolar disorder
+Patients with Parkinson's disease or dementia with Lewy bodies are reported to have an increased sensitivity to antipsychotic medication
+Orthostatic hypotension and syncope reported, possibly due to its alpha-1receptor antagonism
+Risk of neuroleptic malignant syndrome (NMS) reported in association with administration of antipsychotic drugs, including lurasidone; clinical manifestations of NMS (eg, hyperpyrexia, muscle rigidity, altered mental status, evidence of autonomic instability); additional symptoms (eg, elevated creatine phosphokinase, myoglobinuria [rhabdomyolysis), acute renal failure); the syndrome can develop, although much less commonly, after relatively brief treatment periods at low doses or may even arise after discontinuation of treatment; if NMS is suspected, immediately discontinue therapy and provide intensive symptomatic treatment and monitoring
+Exercise caution in patients with a history of seizures or with conditions that lower the seizure threshold (eg, Alzheimer's dementia); conditions that lower the seizure threshold may be more prevalent in patients ≥65 years
+May cause leukopenia, neutropenia, and agranulocytosis; monitor patients with neutropenia should for fever or other signs of infection and treat promptly if symptoms occur; discontinue treatment in patients with severe neutropenia (ANC<1,000/mm³) and follow WBC until recovery
+May disrupt body temperature regulation
+May lead to cognitive and motor impairment; caution patients about operating hazardous machinery
+Incidence of cerebrovascular effects (eg, transient ischemic attacks, stroke) may increase
+Esophageal dysmotility or aspiration may occur
+May increase QT interval: In trials, increase in baseline adjusted QTc intervals did not exceed mean based on individual correction method (QTcl) was 7.5 ms (120-mg dose) and 4.6 ms (600-mg dose) observed at 2-4 hours after dosing; additionally, in separate trial, QTc did not increase by >60 msec from baseline or exceed 500 msec with supratherapeutic doses (ie, 120 mg/day, 600 mg/day)
+
+Metabolic changes with atypical antipsychotic use
+• Hyperglycemia, some cases extreme and associated with ketoacidosis or hyperosmolar coma or death, reported; monitor glucose control in patients with an established diagnosis of diabetes mellitus who are started on atypical antipsychotics
+• Monitor symptoms of hyperglycemia (eg, polydipsia, polyuria, polyphagia, weakness)
+• In the 6-week, placebo-controlled study of pediatric patients with bipolar depression, mean change in fasting glucose was +1.6 mg/dL for lurasidone 20-80 mg/day
+• Undesirable alterations in lipids observed
+• Weight gain observed; clinically monitor weight
+
+Hyperprolactinemia
+• As with other drugs that antagonize dopamine D2 receptors, this drug elevates prolactin levels and the elevation persists during chronic administration
+• This drug is associated with higher levels of prolactin elevation than other antipsychotic agents; hyperprolactinemia may suppress hypothalamic GnRH, resulting in reduced pituitary gonadotropin secretion; this, in turn, may inhibit reproductive function by impairing gonadal steroidogenesis in both female and male patients
+• Galactorrhea, amenorrhea, gynecomastia, and impotence reported in patients receiving prolactin-elevating compounds; long-standing hyperprolactinemia when associated with hypogonadism may lead to decreased bone density in both female and male subjects
+• Tissue culture experiments indicate that approximately one-third of human breast cancers are prolactin dependent in vitro, a factor of potential importance if the prescription of these drugs is contemplated in a patient with previously detected breast cancer
+• An increase in pituitary gland, mammary gland, and pancreatic islet cell neoplasia (mammary adenocarcinomas, pituitary and pancreatic adenomas) was observed in the risperidone carcinogenicity studies conducted in mice and rats
+• Published epidemiologic studies have shown inconsistent results when exploring the potential association between hyperprolactinemia and breast cancer
+
+Tardive dyskinesia
+• Extrapyramidal symptoms, including pseudoparkinsonism, acute dystonic reactions, akathisia, and tardive dyskinesia may occur; risk of tardive dyskinesia may increase in the elderly; risk of dystonia may increase with high doses
+
+Pregnancy & Lactation
+Pregnancy
+Neonates exposed to antipsychotic drugs during 3rd trimester of pregnancy are at risk for extrapyramidal symptoms (EPS) and/or withdrawal symptoms after delivery; these complications vary in severity, with some being self-limited and others requiring ICU support and prolonged hospitalization
+There is a pregnancy exposure registry that monitors pregnancy outcomes in women exposed to lurasidone during pregnancy
+National Pregnancy Registry for Atypical Antipsychotics at 1-866-961-2388 or visit https://womensmentalhealth.org/clinical-andresearchprograms/pregnancyregistry
+
+Lactation
+Unknown whether drug is distributed in breast milk
+Lurasidone is present in rat milk
+Consider development and health benefits of breastfeeding along with mother's clinical need for drug and any potential adverse effects on breastfed infant from therapy or from underlying maternal condition
+
+Pregnancy Categories
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of fetal risk.
+B: May be acceptable. Either animal studies show no risk but human studies not available or animal studies showed minor risks and human studies done and showed no risk.
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human studies not available or neither animal nor human studies done.
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive evidence of human fetal risk.
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives exist.
+
+Mechanism of Action
+Atypical antipsychotic; precise mechanism is unknown; efficacy suggested to involve mediation of central dopamine type 2 and serotonin type 2 (5HT-2A) receptor antagonism
+
+Pharmacokinetics
+Absorption
+Bioavailability: 9-19%
+Peak plasma time: 1-3 hr
+Mean peak plasma concentrations and AUC were ~3x and 2x when administered with food compared to levels observed under fasting conditions
+
+Distribution
+Protein bound: 99%
+Vd: 6173 L
+
+Metabolism
+Metabolized by CYP3A4; biotransformation pathways are oxidative N-dealkylation, hydroxylation of norbornane ring, and S-oxidation
+Metabolites: 2 active (ID-14283, ID-14326) and 2 inactive (ID-20219, ID-20220)
+
+Elimination
+Half-life: 18 hr
+Clearance: 3902 mL/min
+Excretion: Feces (80%), urine (9%)
+
+Administration
+Oral Administration
+Take with food (at least 350 calories)
+Food substantially increases absorption; increases AUC~2-fold and Cmax ~3-fold
+Initial dose titration not required

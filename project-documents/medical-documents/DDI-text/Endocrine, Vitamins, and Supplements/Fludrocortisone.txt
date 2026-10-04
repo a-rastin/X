@@ -1,0 +1,2428 @@
+﻿6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+fludrocortisone (Rx)
+Brand and Other Names: Florinef, Florinef Acetate
+Classes: Corticosteroids
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+tablet
+
+0.1mg
+
+Adrenocortical Insufficiency/Addison Disease
+
+Primary and secondary adrenocortical insufficiency in Addison disease
+
+Usual, 0.1 mg/day PO; range, 0.1 mg PO 3 times weekly to 0.2 mg/day PO
+
+If hypertension occurs: 0.05 mg/day PO
+
+Salt-Losing Forms of Congenital Adrenogenital Syndrome
+
+0.1-0.2 mg/day PO
+
+Severe Orthostatic Hypotension (Off-label)
+
+0.1 mg/day PO in combination with high salt diet and adequate fluid intake; may be
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 1/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+increased in increments of 0.1 mg/wk; not to exceed 1 mg/day
+
+Dosages >0.3 mg/day have not been shown to be beneficial and predispose patient to
+adverse effects
+
+PEDIATRIC
+Dosage Forms & Strengths
+
+tablet
+
+0.1mg
+
+Not FDA-approved for use in children
+
+Adrenocortical Insufficiency/Addison Disease (Off-label)
+
+0.05-0.1 mg/day PO in single daily dose or divided q12hr in combination with sodium
+chloride supplementation
+
+Congenital Adrenal Hyperplasia (Off-label)
+
+0.05-0.3 mg/day PO
+
+Interactions
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and
+fludrocortisone
+No Interactions Found
+Interactions Found
+Contraindicated
+
+Serious
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+Contraindicated (2)
+
+mifepristone
+mifepristone, fludrocortisone. Mechanism: unknown. Contraindicated. Mfr. states
+that mifepristone is contraindicated in pts. on long term corticosteroid Tx.
+
+relacorilant
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 2/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+relacorilant decreases effects of fludrocortisone by pharmacodynamic antagonism.
+Contraindicated. Relacorilant is contraindicated in patients receiving systemic
+glucocorticoids for lifesaving purposes (eg, immunosuppression after organ
+transplantation) because relacorilant antagonizes effect of glucocorticoids.
+
+Serious (66)
+
+aldesleukin
+fludrocortisone decreases effects of aldesleukin by pharmacodynamic antagonism.
+Avoid or Use Alternate Drug. Avoid combination because corticosteroids can
+potentially diminish the antineoplastic effects of aldesleukin.
+
+anthrax vaccine
+fludrocortisone decreases effects of anthrax vaccine by pharmacodynamic
+antagonism. Contraindicated. Corticosteroids also increase risk of infection with
+concomitant live vaccines.
+
+axicabtagene ciloleucel
+fludrocortisone, axicabtagene ciloleucel. Either increases effects of the other by
+immunosuppressive effects; risk of infection. Avoid or Use Alternate Drug. Consider
+the use of prophylactic corticosteroid in patients after weighing the potential
+benefits and risks. Corticosteroids may, however, be required for treatment of
+cytokine release syndrome or neurologic toxicity.
+
+BCG vaccine live
+fludrocortisone decreases effects of BCG vaccine live by pharmacodynamic
+antagonism. Contraindicated. Corticosteroids also increase risk of infection with
+concomitant live vaccines.
+
+brexucabtagene autoleucel
+fludrocortisone, brexucabtagene autoleucel. Either increases effects of the other by
+immunosuppressive effects; risk of infection. Avoid or Use Alternate Drug. Avoid
+prophylactic use of systemic corticosteroids as premedication before CAR-T cell
+therapy. Corticosteroids may, however, be required for treatment of cytokine release
+syndrome or neurologic toxicity.
+
+carbamazepine
+carbamazepine will decrease the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+ciltacabtagene autoleucel
+fludrocortisone, ciltacabtagene autoleucel. Either increases effects of the other by
+immunosuppressive effects; risk of infection. Avoid or Use Alternate Drug. Avoid
+prophylactic use of systemic corticosteroids as premedication before CAR-T cell
+therapy. Corticosteroids may, however, be required for treatment of cytokine release
+syndrome or neurologic toxicity.
+
+cimetidine
+cimetidine will increase the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+clarithromycin
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 3/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+clarithromycin will increase the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+dihydroergotamine
+fludrocortisone will decrease the level or effect of dihydroergotamine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+dihydroergotamine intranasal
+fludrocortisone will decrease the level or effect of dihydroergotamine intranasal by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate
+Drug.
+
+diphtheria & tetanus toxoids
+fludrocortisone decreases effects of diphtheria & tetanus toxoids by
+pharmacodynamic antagonism. Contraindicated. Corticosteroids also increase risk of
+infection with concomitant live vaccines.
+
+diphtheria & tetanus toxoids/ acellular pertussis vaccine
+fludrocortisone decreases effects of diphtheria & tetanus toxoids/ acellular
+pertussis vaccine by pharmacodynamic antagonism. Contraindicated.
+Corticosteroids also increase risk of infection with concomitant live vaccines.
+
+diphtheria & tetanus toxoids/acellular pertussis/poliovirus, inactivated vaccine
+fludrocortisone decreases effects of diphtheria & tetanus toxoids/acellular
+pertussis/poliovirus, inactivated vaccine by pharmacodynamic antagonism.
+Contraindicated. Corticosteroids also increase risk of infection with concomitant live
+vaccines.
+
+dronedarone
+fludrocortisone will decrease the level or effect of dronedarone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+ergotamine
+fludrocortisone will decrease the level or effect of ergotamine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+erythromycin base
+erythromycin base will increase the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+fludrocortisone will decrease the level or effect of erythromycin base by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+erythromycin ethylsuccinate
+erythromycin ethylsuccinate will increase the level or effect of fludrocortisone by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate
+Drug.
+
+fludrocortisone will decrease the level or effect of erythromycin ethylsuccinate by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate
+Drug.
+
+erythromycin lactobionate
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 4/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+erythromycin lactobionate will increase the level or effect of fludrocortisone by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate
+Drug.
+
+fludrocortisone will decrease the level or effect of erythromycin lactobionate by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate
+Drug.
+
+erythromycin stearate
+erythromycin stearate will increase the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+fludrocortisone will decrease the level or effect of erythromycin stearate by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate
+Drug.
+
+hepatitis A vaccine inactivated
+fludrocortisone decreases effects of hepatitis A vaccine inactivated by
+pharmacodynamic antagonism. Contraindicated. Corticosteroids also increase risk of
+infection with concomitant live vaccines.
+
+hepatitis a/b vaccine
+fludrocortisone decreases effects of hepatitis a/b vaccine by pharmacodynamic
+antagonism. Contraindicated. Corticosteroids also increase risk of infection with
+concomitant live vaccines.
+
+hepatitis a/typhoid vaccine
+fludrocortisone decreases effects of hepatitis a/typhoid vaccine by
+pharmacodynamic antagonism. Contraindicated. Corticosteroids also increase risk of
+infection with concomitant live vaccines.
+
+hepatitis b vaccine
+fludrocortisone decreases effects of hepatitis b vaccine by pharmacodynamic
+antagonism. Contraindicated. Corticosteroids also increase risk of infection with
+concomitant live vaccines.
+
+human papillomavirus vaccine, nonavalent
+fludrocortisone decreases effects of human papillomavirus vaccine, nonavalent by
+pharmacodynamic antagonism. Avoid or Use Alternate Drug. Immunosuppressive
+therapies, including irradiation, antimetabolites, alkylating agents, cytotoxic drugs,
+and corticosteroids (used in greater than physiologic doses), may reduce the
+immune responses to vaccines.
+
+idecabtagene vicleucel
+fludrocortisone, idecabtagene vicleucel. Either increases effects of the other by
+immunosuppressive effects; risk of infection. Avoid or Use Alternate Drug. Avoid
+prophylactic use of systemic corticosteroids as premedication before CAR-T cell
+therapy. Corticosteroids may, however, be required for treatment of cytokine release
+syndrome or neurologic toxicity.
+
+influenza virus vaccine quadrivalent
+fludrocortisone decreases effects of influenza virus vaccine quadrivalent by
+pharmacodynamic antagonism. Contraindicated. Corticosteroids also increase risk of
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 5/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+infection with concomitant live vaccines.
+
+influenza virus vaccine quadrivalent, adjuvanted
+fludrocortisone decreases effects of influenza virus vaccine quadrivalent,
+adjuvanted by pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Immunosuppressive drugs may reduce the immune response to influenza vaccine.
+
+influenza virus vaccine quadrivalent, cell-cultured
+fludrocortisone decreases effects of influenza virus vaccine quadrivalent, cell-
+cultured by pharmacodynamic antagonism. Contraindicated. Corticosteroids also
+increase risk of infection with concomitant live vaccines.
+
+influenza virus vaccine quadrivalent, intranasal
+fludrocortisone decreases effects of influenza virus vaccine quadrivalent, intranasal
+by pharmacodynamic antagonism. Contraindicated. Corticosteroids also increase
+risk of infection with concomitant live vaccines.
+
+influenza virus vaccine trivalent
+fludrocortisone decreases effects of influenza virus vaccine trivalent by
+pharmacodynamic antagonism. Contraindicated. Corticosteroids also increase risk of
+infection with concomitant live vaccines.
+
+influenza virus vaccine trivalent, adjuvanted
+fludrocortisone decreases effects of influenza virus vaccine trivalent, adjuvanted by
+pharmacodynamic antagonism. Avoid or Use Alternate Drug. Immunosuppressive
+drugs may reduce the immune response to influenza vaccine.
+
+influenza virus vaccine trivalent, intranasal
+fludrocortisone decreases effects of influenza virus vaccine trivalent, intranasal by
+pharmacodynamic antagonism. Contraindicated. Corticosteroids also increase risk of
+infection with concomitant live vaccines.
+
+Japanese encephalitis virus vaccine
+fludrocortisone decreases effects of Japanese encephalitis virus vaccine by
+pharmacodynamic antagonism. Contraindicated. Corticosteroids also increase risk of
+infection with concomitant live vaccines.
+
+lisocabtagene maraleucel
+fludrocortisone, lisocabtagene maraleucel. Either increases effects of the other by
+immunosuppressive effects; risk of infection. Avoid or Use Alternate Drug. Avoid
+prophylactic use of systemic corticosteroids as premedication before CAR-T cell
+therapy. Corticosteroids may, however, be required for treatment of cytokine release
+syndrome or neurologic toxicity.
+
+macimorelin
+fludrocortisone, macimorelin. unspecified interaction mechanism. Avoid or Use
+Alternate Drug. Drugs that directly affect the pituitary secretion of growth hormone
+(GH) may impact the accuracy of the macimorelin diagnostic test. Allow sufficient
+washout time of drugs affecting GH release before administering macimorelin. .
+
+measles mumps and rubella vaccine, live
+fludrocortisone decreases effects of measles mumps and rubella vaccine, live by
+pharmacodynamic antagonism. Contraindicated. Corticosteroids also increase risk of
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 6/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+infection with concomitant live vaccines.
+
+measles, mumps, rubella and varicella vaccine, live
+fludrocortisone decreases effects of measles, mumps, rubella and varicella vaccine,
+live by pharmacodynamic antagonism. Contraindicated. Corticosteroids also
+increase risk of infection with concomitant live vaccines.
+
+meningococcal A C Y and W-135 polysaccharide vaccine combined
+fludrocortisone decreases effects of meningococcal A C Y and W-135
+polysaccharide vaccine combined by pharmacodynamic antagonism.
+Contraindicated. Corticosteroids also increase risk of infection with concomitant live
+vaccines.
+
+nefazodone
+nefazodone will increase the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+pneumococcal vaccine 13-valent
+fludrocortisone decreases effects of pneumococcal vaccine 13-valent by
+pharmacodynamic antagonism. Contraindicated. Corticosteroids also increase risk of
+infection with concomitant live vaccines.
+
+pneumococcal vaccine polyvalent
+fludrocortisone decreases effects of pneumococcal vaccine polyvalent by
+pharmacodynamic antagonism. Contraindicated. Corticosteroids also increase risk of
+infection with concomitant live vaccines.
+
+quinidine
+quinidine will increase the level or effect of fludrocortisone by P-glycoprotein
+(MDR1) efflux transporter. Avoid or Use Alternate Drug.
+
+rabies vaccine
+fludrocortisone decreases effects of rabies vaccine by pharmacodynamic
+antagonism. Contraindicated. Corticosteroids may interfere with development of
+active immunity.
+
+rabies vaccine chick embryo cell derived
+fludrocortisone decreases effects of rabies vaccine chick embryo cell derived by
+pharmacodynamic antagonism. Contraindicated. Corticosteroids also increase risk of
+infection with concomitant live vaccines.
+
+ranolazine
+fludrocortisone will decrease the level or effect of ranolazine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+rifabutin
+rifabutin will decrease the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+rifampin
+rifampin will decrease the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 7/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+rotavirus oral vaccine, live
+fludrocortisone decreases effects of rotavirus oral vaccine, live by pharmacodynamic
+antagonism. Contraindicated. Corticosteroids also increase risk of infection with
+concomitant live vaccines.
+
+silodosin
+fludrocortisone will decrease the level or effect of silodosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+sirolimus
+fludrocortisone will decrease the level or effect of sirolimus by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+smallpox and mpox (vaccinia) vaccine, live
+fludrocortisone decreases effects of smallpox and mpox (vaccinia) vaccine, live by
+pharmacodynamic antagonism. Contraindicated. Corticosteroids also increase risk of
+infection with concomitant live vaccines.
+
+squill
+fludrocortisone increases toxicity of squill by unspecified interaction mechanism.
+Avoid or Use Alternate Drug.
+
+St John's Wort
+St John's Wort will decrease the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+testosterone intranasal
+testosterone intranasal, fludrocortisone. Either increases effects of the other by
+Other (see comment). Avoid or Use Alternate Drug. Comment: Coadministration
+increases risk for edema, particularly in patients with cardiac, renal, or hepatic
+disease.
+
+tetanus toxoid adsorbed or fluid
+fludrocortisone decreases effects of tetanus toxoid adsorbed or fluid by
+pharmacodynamic antagonism. Contraindicated. Corticosteroids also increase risk of
+infection with concomitant live vaccines.
+
+tick-borne encephalitis vaccine
+fludrocortisone decreases effects of tick-borne encephalitis vaccine by
+pharmacodynamic antagonism. Contraindicated. Corticosteroids also increase risk of
+infection with concomitant live vaccines.
+
+tisagenlecleucel
+fludrocortisone, tisagenlecleucel. Either increases effects of the other by
+immunosuppressive effects; risk of infection. Avoid or Use Alternate Drug. Avoid
+prophylactic use of systemic corticosteroids as premedication before CAR-T cell
+therapy. Corticosteroids may, however, be required for treatment of cytokine release
+syndrome or neurologic toxicity.
+
+tofacitinib
+fludrocortisone, tofacitinib. Either increases toxicity of the other by
+immunosuppressive effects; risk of infection. Avoid or Use Alternate Drug.
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 8/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+tolvaptan
+fludrocortisone will decrease the level or effect of tolvaptan by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+travelers diarrhea and cholera vaccine inactivated
+fludrocortisone decreases effects of travelers diarrhea and cholera vaccine
+inactivated by pharmacodynamic antagonism. Contraindicated. Corticosteroids also
+increase risk of infection with concomitant live vaccines.
+
+typhoid polysaccharide vaccine
+fludrocortisone decreases effects of typhoid polysaccharide vaccine by
+pharmacodynamic antagonism. Contraindicated. Corticosteroids also increase risk of
+infection with concomitant live vaccines.
+
+typhoid vaccine live
+fludrocortisone decreases effects of typhoid vaccine live by pharmacodynamic
+antagonism. Contraindicated. Corticosteroids also increase risk of infection with
+concomitant live vaccines.
+
+varicella virus vaccine live
+fludrocortisone decreases effects of varicella virus vaccine live by pharmacodynamic
+antagonism. Contraindicated. Corticosteroids also increase risk of infection with
+concomitant live vaccines.
+
+yellow fever vaccine
+fludrocortisone decreases effects of yellow fever vaccine by pharmacodynamic
+antagonism. Contraindicated. Corticosteroids also increase risk of infection with
+concomitant live vaccines.
+
+zoster vaccine live
+fludrocortisone decreases effects of zoster vaccine live by pharmacodynamic
+antagonism. Contraindicated. Corticosteroids also increase risk of infection with
+concomitant live vaccines.
+
+Monitor Closely (219)
+
+aceclofenac
+aceclofenac, fludrocortisone. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of GI ulceration.
+
+acemetacin
+acemetacin, fludrocortisone. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of GI ulceration.
+
+albuterol
+fludrocortisone and albuterol both decrease serum potassium. Use Caution/Monitor.
+
+albuterol inhaled
+fludrocortisone and albuterol inhaled both decrease serum potassium. Use
+Caution/Monitor.
+
+almotriptan
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 9/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+fludrocortisone will decrease the level or effect of almotriptan by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+alprazolam
+fludrocortisone will decrease the level or effect of alprazolam by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+amiodarone
+fludrocortisone will decrease the level or effect of amiodarone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+amiodarone will increase the level or effect of fludrocortisone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+antithrombin alfa
+fludrocortisone, antithrombin alfa. Other (see comment). Use Caution/Monitor.
+Comment: Corticosteroids may decrease anticoagulant effects by increasing blood
+coagulability; conversely, they may impair vascular integrity, thus increasing
+bleeding risk. Monitor INR closely.
+
+antithrombin III
+fludrocortisone, antithrombin III. Other (see comment). Use Caution/Monitor.
+Comment: Corticosteroids may decrease anticoagulant effects by increasing blood
+coagulability; conversely, they may impair vascular integrity, thus increasing
+bleeding risk. Monitor INR closely.
+
+aprepitant
+aprepitant will increase the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+fludrocortisone will decrease the level or effect of aprepitant by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+arformoterol
+fludrocortisone and arformoterol both decrease serum potassium. Use
+Caution/Monitor.
+
+argatroban
+fludrocortisone, argatroban. Other (see comment). Use Caution/Monitor. Comment:
+Corticosteroids may decrease anticoagulant effects by increasing blood
+coagulability; conversely, they may impair vascular integrity, thus increasing
+bleeding risk. Monitor INR closely.
+
+aripiprazole
+fludrocortisone will decrease the level or effect of aripiprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+armodafinil
+armodafinil will decrease the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+artemether/lumefantrine
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 10/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+artemether/lumefantrine will decrease the level or effect of fludrocortisone by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+fludrocortisone will decrease the level or effect of artemether/lumefantrine by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+aspirin
+aspirin, fludrocortisone. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of GI ulceration.
+
+aspirin rectal
+aspirin rectal, fludrocortisone. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of GI ulceration.
+
+aspirin/citric acid/sodium bicarbonate
+aspirin/citric acid/sodium bicarbonate, fludrocortisone. Either increases toxicity of
+the other by pharmacodynamic synergism. Use Caution/Monitor. Increased risk of GI
+ulceration.
+
+atazanavir
+atazanavir will increase the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+atorvastatin
+atorvastatin will increase the level or effect of fludrocortisone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+atracurium
+atracurium, fludrocortisone. Other (see comment). Use Caution/Monitor. Comment:
+Coadministration of corticosteroids and neuromuscular blockers may increase risk of
+developing acute myopathy.
+
+bazedoxifene/conjugated estrogens
+fludrocortisone will decrease the level or effect of bazedoxifene/conjugated
+estrogens by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Use
+Caution/Monitor.
+
+bemiparin
+fludrocortisone, bemiparin. Other (see comment). Use Caution/Monitor. Comment:
+Corticosteroids may decrease anticoagulant effects by increasing blood
+coagulability; conversely, they may impair vascular integrity, thus increasing
+bleeding risk. Monitor INR closely.
+
+bivalirudin
+fludrocortisone, bivalirudin. Other (see comment). Use Caution/Monitor. Comment:
+Corticosteroids may decrease anticoagulant effects by increasing blood
+coagulability; conversely, they may impair vascular integrity, thus increasing
+bleeding risk. Monitor INR closely.
+
+bosentan
+bosentan will decrease the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 11/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+budesonide
+budesonide will decrease the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+buspirone
+fludrocortisone will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+butalbital
+butalbital will decrease the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+carbamazepine
+fludrocortisone will decrease the level or effect of carbamazepine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+celecoxib
+celecoxib, fludrocortisone. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of GI ulceration.
+
+cholera vaccine
+fludrocortisone decreases effects of cholera vaccine by immunosuppressive effects;
+risk of infection. Modify Therapy/Monitor Closely. Immunosuppressive therapies,
+including irradiation, antimetabolites, alkylating agents, cytotoxic drugs and
+corticosteroids (used in greater than physiologic doses), may reduce the immune
+response to cholera vaccine.
+
+cholestyramine
+cholestyramine decreases levels of fludrocortisone by inhibition of GI absorption.
+Applies only to oral form of both agents. Use Caution/Monitor.
+
+choline magnesium trisalicylate
+choline magnesium trisalicylate, fludrocortisone. Either increases toxicity of the
+other by pharmacodynamic synergism. Use Caution/Monitor. Increased risk of GI
+ulceration.
+
+cilostazol
+fludrocortisone will decrease the level or effect of cilostazol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+cinacalcet
+fludrocortisone will decrease the level or effect of cinacalcet by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+ciprofloxacin
+fludrocortisone and ciprofloxacin both increase Other (see comment). Use
+Caution/Monitor. Coadministration of quinolone antibiotics and corticosteroids may
+increase risk of tendon rupture.
+
+cisatracurium
+cisatracurium, fludrocortisone. Other (see comment). Use Caution/Monitor.
+Comment: Coadministration of corticosteroids and neuromuscular blockers may
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 12/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+increase risk of developing acute myopathy.
+
+clarithromycin
+clarithromycin will increase the level or effect of fludrocortisone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+clopidogrel
+fludrocortisone will increase the level or effect of clopidogrel by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. CYP3A4
+inducers may increase the metabolism of clopidogrel to its active metabolite.
+Monitor patients for potential increase in antiplatelet effects when CYP3A4
+inducers are used in combination with clopidogrel
+
+clotrimazole
+clotrimazole will decrease the level or effect of fludrocortisone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+clozapine
+fludrocortisone will decrease the level or effect of clozapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+colchicine
+fludrocortisone will decrease the level or effect of colchicine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+conivaptan
+conivaptan will increase the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+fludrocortisone will decrease the level or effect of conivaptan by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+conjugated estrogens
+fludrocortisone will decrease the level or effect of conjugated estrogens by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+conjugated estrogens, vaginal
+fludrocortisone will decrease the level or effect of conjugated estrogens, vaginal by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+cortisone
+cortisone will decrease the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+cosyntropin
+fludrocortisone and cosyntropin both increase Other (see comment). Modify
+Therapy/Monitor Closely. may falsely elevate plasma cortisol levels; stop these
+drugs on day of cosyntropin injection testing
+
+cyclosporine
+cyclosporine will increase the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 13/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+cyclosporine will increase the level or effect of fludrocortisone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+fludrocortisone, cyclosporine. Other (see comment). Use Caution/Monitor.
+Comment: Corticosteroids may increase or decrease cyclosporine concentrations.
+Also, cyclosporine may increase the plasma concentrations of the corticosteroids.
+Monitor for changes in cyclosporine concentrations and for toxicities of
+corticosteroids and/or cyclosporine.
+
+dalteparin
+fludrocortisone, dalteparin. Other (see comment). Use Caution/Monitor. Comment:
+Corticosteroids may decrease anticoagulant effects by increasing blood
+coagulability; conversely, they may impair vascular integrity, thus increasing
+bleeding risk. Monitor INR closely.
+
+darifenacin
+darifenacin will increase the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+darunavir
+darunavir will increase the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+fludrocortisone will decrease the level or effect of darunavir by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+dasatinib
+dasatinib will increase the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+deferasirox
+deferasirox will decrease the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+dengue vaccine
+fludrocortisone decreases effects of dengue vaccine by immunosuppressive effects;
+risk of infection. Use Caution/Monitor. Immunosuppressive therapies (eg, irradiation,
+antimetabolites, alkylating agents, cytotoxic drugs, corticosteroids [greater than
+physiologic doses]) may reduce immune response to dengue vaccine.
+
+denosumab
+fludrocortisone, denosumab. Other (see comment). Use Caution/Monitor. Comment:
+Caution should be taken in patients on concomitant immunosuppressants or with
+impaired immune systems because of increased risk for serious infections.
+
+dexamethasone
+dexamethasone will decrease the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+DHEA, herbal
+DHEA, herbal will increase the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 14/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+diazepam
+fludrocortisone will decrease the level or effect of diazepam by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+dichlorphenamide
+dichlorphenamide and fludrocortisone both decrease serum potassium. Use
+Caution/Monitor.
+
+diclofenac
+diclofenac, fludrocortisone. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of GI ulceration.
+
+diflunisal
+diflunisal, fludrocortisone. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of GI ulceration.
+
+diltiazem
+diltiazem will increase the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+dronedarone
+dronedarone will increase the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+dronedarone will increase the level or effect of fludrocortisone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+efavirenz
+efavirenz will decrease the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+eletriptan
+fludrocortisone will decrease the level or effect of eletriptan by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+enoxaparin
+fludrocortisone, enoxaparin. Other (see comment). Use Caution/Monitor. Comment:
+Corticosteroids may decrease anticoagulant effects by increasing blood
+coagulability; conversely, they may impair vascular integrity, thus increasing
+bleeding risk. Monitor INR closely.
+
+erythromycin base
+erythromycin base will increase the level or effect of fludrocortisone by P-
+glycoprotein (MDR1) efflux transporter. Use Caution/Monitor.
+
+erythromycin ethylsuccinate
+erythromycin ethylsuccinate will increase the level or effect of fludrocortisone by P-
+glycoprotein (MDR1) efflux transporter. Use Caution/Monitor.
+
+erythromycin lactobionate
+erythromycin lactobionate will increase the level or effect of fludrocortisone by P-
+glycoprotein (MDR1) efflux transporter. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 15/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+erythromycin stearate
+erythromycin stearate will increase the level or effect of fludrocortisone by P-
+glycoprotein (MDR1) efflux transporter. Use Caution/Monitor.
+
+estradiol
+fludrocortisone will decrease the level or effect of estradiol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+estrogens conjugated synthetic
+fludrocortisone will decrease the level or effect of estrogens conjugated synthetic
+by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+estropipate
+fludrocortisone will decrease the level or effect of estropipate by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+etodolac
+etodolac, fludrocortisone. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of GI ulceration.
+
+etravirine
+fludrocortisone will decrease the level or effect of etravirine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+etravirine will decrease the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+exenatide injectable solution
+fludrocortisone decreases effects of exenatide injectable solution by
+pharmacodynamic antagonism. Use Caution/Monitor. Corticosteroids may diminish
+hypoglycemic effect of antidiabetic agents. Monitor blood glucose levels carefully. .
+
+exenatide injectable suspension
+fludrocortisone decreases effects of exenatide injectable suspension by
+pharmacodynamic antagonism. Use Caution/Monitor. Corticosteroids may diminish
+hypoglycemic effect of antidiabetic agents. Monitor blood glucose levels carefully.
+
+felodipine
+fludrocortisone will decrease the level or effect of felodipine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+felodipine will increase the level or effect of fludrocortisone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+fenoprofen
+fenoprofen, fludrocortisone. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of GI ulceration.
+
+fesoterodine
+fludrocortisone will decrease the level or effect of fesoterodine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+fingolimod
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 16/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+fludrocortisone increases effects of fingolimod by immunosuppressive effects; risk
+of infection. Modify Therapy/Monitor Closely. Concomitant therapy is expected to
+increase the risk of immunosuppression. Use caution when switching patients from
+long-acting therapies with immune effects. .
+
+fluconazole
+fluconazole will increase the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+flurbiprofen
+flurbiprofen, fludrocortisone. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of GI ulceration.
+
+fondaparinux
+fludrocortisone, fondaparinux. Other (see comment). Use Caution/Monitor.
+Comment: Corticosteroids may decrease anticoagulant effects by increasing blood
+coagulability; conversely, they may impair vascular integrity, thus increasing
+bleeding risk. Monitor INR closely.
+
+formoterol
+fludrocortisone and formoterol both decrease serum potassium. Use
+Caution/Monitor.
+
+fosamprenavir
+fosamprenavir will increase the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+fludrocortisone will decrease the level or effect of fosamprenavir by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+fosaprepitant
+fosaprepitant will increase the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+fludrocortisone will decrease the level or effect of fosaprepitant by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+fosphenytoin
+fosphenytoin will decrease the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+fosphenytoin will decrease the level or effect of fludrocortisone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+gemifloxacin
+fludrocortisone and gemifloxacin both increase Other (see comment). Use
+Caution/Monitor. Coadministration of quinolone antibiotics and corticosteroids may
+increase risk of tendon rupture.
+
+glycerol phenylbutyrate
+fludrocortisone decreases effects of glycerol phenylbutyrate by Other (see
+comment). Use Caution/Monitor. Comment: Corticosteroids may cause the
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 17/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+breakdown of body protein and increase plasma ammonia levels; monitor ammonia
+levels closely when glycerol phenylbutyrate is coadministered with corticosteroids.
+
+grapefruit
+grapefruit will increase the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+griseofulvin
+griseofulvin will decrease the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+haemophilus influenzae type b vaccine
+fludrocortisone decreases effects of haemophilus influenzae type b vaccine by
+pharmacodynamic antagonism. Modify Therapy/Monitor Closely. Avoid vaccination
+during chemotherapy or radiation therapy if possible because antibody response
+might be suboptimal. Patients vaccinated within a 14-day period before starting or
+during immunosuppressive therapy should be revaccinated =3 months after therapy
+is discontinued if immune competence has been restored.
+
+hemin
+fludrocortisone decreases effects of hemin by pharmacodynamic antagonism. Use
+Caution/Monitor. Drugs that increase delta-aminolevulinic acid synthetase may
+decrease hemin effect.
+
+heparin
+fludrocortisone, heparin. Other (see comment). Use Caution/Monitor. Comment:
+Corticosteroids may decrease anticoagulant effects by increasing blood
+coagulability; conversely, they may impair vascular integrity, thus increasing
+bleeding risk. Monitor INR closely.
+
+hydrocortisone
+fludrocortisone will decrease the level or effect of hydrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+hydroxyprogesterone caproate (DSC)
+fludrocortisone will decrease the level or effect of hydroxyprogesterone caproate
+(DSC) by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Use
+Caution/Monitor.
+
+ibuprofen
+ibuprofen, fludrocortisone. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of GI ulceration.
+
+ibuprofen IV
+ibuprofen IV, fludrocortisone. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of GI ulceration.
+
+indomethacin
+indomethacin, fludrocortisone. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of GI ulceration.
+
+influenza A (H5) vaccine, adjuvanted
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 18/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+fludrocortisone decreases effects of influenza A (H5) vaccine, adjuvanted by
+pharmacodynamic antagonism. Use Caution/Monitor. Corticosteroids used in
+greater than physiologic doses may reduce immune response to H5N1 vaccine.
+
+influenza A (H5N1) vaccine
+fludrocortisone decreases effects of influenza A (H5N1) vaccine by
+pharmacodynamic antagonism. Use Caution/Monitor. Corticosteroids used in
+greater than physiologic doses may reduce immune response to H5N1 vaccine.
+
+influenza virus vaccine quadrivalent, recombinant
+fludrocortisone decreases effects of influenza virus vaccine quadrivalent,
+recombinant by pharmacodynamic antagonism. Use Caution/Monitor. Immune
+response to vaccine may be decreased in immunocompromised individuals.
+
+influenza virus vaccine trivalent, recombinant
+fludrocortisone decreases effects of influenza virus vaccine trivalent, recombinant
+by pharmacodynamic antagonism. Use Caution/Monitor. Immune response to
+vaccine may be decreased in immunocompromised individuals.
+
+insulin degludec
+fludrocortisone decreases effects of insulin degludec by pharmacodynamic
+antagonism. Modify Therapy/Monitor Closely. Endogneous cortisol is a regulatory
+hormone that increases blood glucose levels; exogenous systemic corticosteroids
+have been associated with hyperglycemia and may cause diabetes with chronic,
+high dose use; dose of antidiabetic agents may need adjustment and increased
+frequency of glucose monitoring may be required.
+
+insulin degludec/insulin aspart
+fludrocortisone decreases effects of insulin degludec/insulin aspart by
+pharmacodynamic antagonism. Modify Therapy/Monitor Closely. Endogneous
+cortisol is a regulatory hormone that increases blood glucose levels; exogenous
+systemic corticosteroids have been associated with hyperglycemia and may cause
+diabetes with chronic, high dose use; dose of antidiabetic agents may need
+adjustment and increased frequency of glucose monitoring may be required.
+
+insulin icodec
+fludrocortisone, insulin icodec. Other (see comment). Use Caution/Monitor.
+Comment: Concomitant use of insulin and corticosteroids may increase the risk of
+hypokalemia. Corticosteroids may also reduce the hypoglycemic effects of insulin,
+requiring increased glucose monitoring.
+
+insulin inhaled
+fludrocortisone decreases effects of insulin inhaled by pharmacodynamic
+antagonism. Modify Therapy/Monitor Closely. Endogneous cortisol is a regulatory
+hormone that increases blood glucose levels; exogenous systemic corticosteroids
+have been associated with hyperglycemia and may cause diabetes with chronic,
+high dose use; dose of antidiabetic agents may need adjustment and increased
+frequency of glucose monitoring may be required.
+
+isavuconazonium sulfate
+fludrocortisone and isavuconazonium sulfate both decrease immunosuppressive
+effects; risk of infection. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 19/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+isoniazid
+isoniazid will increase the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+itraconazole
+itraconazole will increase the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+ketoconazole
+ketoconazole will increase the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+ketoconazole will increase the level or effect of fludrocortisone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+ketoprofen
+ketoprofen, fludrocortisone. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of GI ulceration.
+
+ketorolac
+ketorolac, fludrocortisone. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of GI ulceration.
+
+ketorolac intranasal
+ketorolac intranasal, fludrocortisone. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of GI ulceration.
+
+lapatinib
+lapatinib will increase the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+lapatinib will increase the level or effect of fludrocortisone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+levalbuterol
+fludrocortisone and levalbuterol both decrease serum potassium. Use
+Caution/Monitor.
+
+levofloxacin
+fludrocortisone and levofloxacin both increase Other (see comment). Use
+Caution/Monitor. Coadministration of quinolone antibiotics and corticosteroids may
+increase risk of tendon rupture.
+
+levoketoconazole
+levoketoconazole will increase the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+levoketoconazole will increase the level or effect of fludrocortisone by P-
+glycoprotein (MDR1) efflux transporter. Use Caution/Monitor.
+
+liraglutide
+fludrocortisone decreases effects of liraglutide by pharmacodynamic antagonism.
+Use Caution/Monitor. Corticosteroids may diminish hypoglycemic effect of
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 20/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+antidiabetic agents. Monitor blood glucose levels carefully. .
+
+lonapegsomatropin
+lonapegsomatropin decreases effects of fludrocortisone by Other (see comment).
+Use Caution/Monitor. Comment: Growth hormone (GH) inhibits microsomal enzyme
+11 beta-hydroxysteroid dehydrogenase type 1, which converts cortisone to its
+active metabolite, cortisol. Patients with untreated GH deficiency may have
+increases in serum cortisol, and initiation of lonapegsomatropin may result
+decreased serum cortisol. Patients with hypoadrenalism treated with
+glucocorticoids may require an increase glucocorticoid stress or maintenance doses
+following lonapegsomatropin initiation.
+
+fludrocortisone decreases effects of lonapegsomatropin by Other (see comment).
+Use Caution/Monitor. Comment: Glucocorticoid therapy and supraphysiologic
+glucocorticoid treatment may attenuate the growth promoting effects of
+lonapegsomatropin in children. Carefully adjust glucocorticoid replacement dosing
+in children receiving glucocorticoid treatments to avoid both hypoadrenalism and an
+inhibitory effect on growth.
+
+fludrocortisone decreases effects of lonapegsomatropin by pharmacodynamic
+antagonism. Use Caution/Monitor. Supraphysiologic glucocorticoid treatment may
+attenuate growth-promoting effects of growth hormone (GH). Microsomal enzyme
+11-beta-hydroxysteroid dehydrogenase type 1 (11-beta-HSD-1) is required for
+conversion of cortisone to its active metabolite, cortisol, in hepatic and adipose
+tissue. GH inhibits 11-beta-HSD-1. Consequently, individuals with untreated GH
+deficiency have relative increases in 11-beta-HSD-1 and serum cortisol. Initiation of
+GH analogs may result in inhibition of 11-beta-HSD-1 and reduced serum cortisol
+concentrations.
+
+lopinavir
+fludrocortisone will decrease the level or effect of lopinavir by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+loratadine
+fludrocortisone will decrease the level or effect of loratadine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+loratadine will increase the level or effect of fludrocortisone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+lornoxicam
+lornoxicam, fludrocortisone. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of GI ulceration.
+
+lumefantrine
+fludrocortisone will decrease the level or effect of lumefantrine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+lumefantrine will decrease the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+maraviroc
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 21/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+fludrocortisone will decrease the level or effect of maraviroc by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+marijuana
+marijuana will increase the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+meclofenamate
+meclofenamate, fludrocortisone. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of GI ulceration.
+
+mefenamic acid
+mefenamic acid, fludrocortisone. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of GI ulceration.
+
+meloxicam
+meloxicam, fludrocortisone. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of GI ulceration.
+
+mestranol
+fludrocortisone will decrease the level or effect of mestranol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+metformin
+fludrocortisone decreases effects of metformin by pharmacodynamic antagonism.
+Use Caution/Monitor. Corticosteroids may reduce the hypoglycemic effects of
+metformin, requiring increased glucose monitoring.
+
+methacholine inhaled
+fludrocortisone decreases effects of methacholine inhaled by pharmacodynamic
+antagonism. Use Caution/Monitor. Regular use of oral or inhaled corticosteroids
+may acutely decrease bronchial responsiveness to methacholine. However, these
+drugs may be continued with methacholine use.
+
+methadone
+fludrocortisone will decrease the level or effect of methadone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+methylprednisolone
+fludrocortisone will decrease the level or effect of methylprednisolone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+metronidazole
+metronidazole will increase the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+miconazole vaginal
+miconazole vaginal will increase the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+midazolam
+fludrocortisone will decrease the level or effect of midazolam by affecting
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 22/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+moxifloxacin
+fludrocortisone and moxifloxacin both increase Other (see comment). Use
+Caution/Monitor. Coadministration of quinolone antibiotics and corticosteroids may
+increase risk of tendon rupture.
+
+nabumetone
+nabumetone, fludrocortisone. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of GI ulceration.
+
+naproxen
+naproxen, fludrocortisone. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of GI ulceration.
+
+nefazodone
+nefazodone will increase the level or effect of fludrocortisone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+nelfinavir
+nelfinavir will increase the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+nevirapine
+nevirapine will decrease the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+nicardipine
+fludrocortisone will decrease the level or effect of nicardipine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+nicardipine will increase the level or effect of fludrocortisone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+nifedipine
+nifedipine will increase the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+nifedipine will decrease the level or effect of fludrocortisone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+nilotinib
+nilotinib will increase the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+nilotinib will increase the level or effect of fludrocortisone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+nisoldipine
+fludrocortisone will decrease the level or effect of nisoldipine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+ocrelizumab
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 23/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+fludrocortisone and ocrelizumab both increase immunosuppressive effects; risk of
+infection. Use Caution/Monitor. Coadministration of ocrelizumab with high doses of
+corticosteroids is expected to increase the risk of immunosuppression.
+
+ocrelizumab/hyaluronidase
+fludrocortisone and ocrelizumab/hyaluronidase both increase immunosuppressive
+effects; risk of infection. Use Caution/Monitor. Coadministration of ocrelizumab with
+high doses of corticosteroids is expected to increase the risk of immunosuppression.
+
+ofatumumab SC
+ofatumumab SC, fludrocortisone. Either increases effects of the other by
+immunosuppressive effects; risk of infection. Use Caution/Monitor. Consider the risk
+of additive immune system effects when coadministering immunosuppressive
+therapies with coadministration. When switching from therapies with immune
+effects, take into account the duration and mechanism of action of these therapies
+when initiating ofatumumab SC.
+
+ofloxacin
+fludrocortisone and ofloxacin both increase Other (see comment). Use
+Caution/Monitor. Coadministration of quinolone antibiotics and corticosteroids may
+increase risk of tendon rupture.
+
+olodaterol inhaled
+fludrocortisone and olodaterol inhaled both decrease serum potassium. Use
+Caution/Monitor.
+
+oxaprozin
+oxaprozin, fludrocortisone. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of GI ulceration.
+
+ozanimod
+ozanimod, fludrocortisone. Either increases effects of the other by
+immunosuppressive effects; risk of infection. Use Caution/Monitor. Coadministration
+with immunosuppressive therapies may increase the risk of additive immune effects
+during therapy and in the weeks following administration. When switching from
+drugs with prolonged immune effects, consider the half-life and mode of action of
+these drugs in order to avoid unintended additive immunosuppressive effects.
+
+pancuronium
+pancuronium, fludrocortisone. Other (see comment). Use Caution/Monitor.
+Comment: Coadministration of corticosteroids and neuromuscular blockers may
+increase risk of developing acute myopathy.
+
+parecoxib
+parecoxib, fludrocortisone. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of GI ulceration.
+
+pentobarbital
+pentobarbital will decrease the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+phenindione
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 24/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+fludrocortisone, phenindione. Other (see comment). Use Caution/Monitor.
+Comment: Corticosteroids may decrease anticoagulant effects by increasing blood
+coagulability; conversely, they may impair vascular integrity, thus increasing
+bleeding risk. Monitor INR closely.
+
+phenobarbital
+phenobarbital will decrease the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+phenobarbital will decrease the level or effect of fludrocortisone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+phenytoin
+phenytoin will decrease the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+phenytoin will decrease the level or effect of fludrocortisone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+piroxicam
+piroxicam, fludrocortisone. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of GI ulceration.
+
+poliovirus vaccine inactivated
+fludrocortisone decreases effects of poliovirus vaccine inactivated by
+pharmacodynamic antagonism. Modify Therapy/Monitor Closely. Avoid vaccination
+during chemotherapy or radiation therapy if possible because antibody response
+might be suboptimal. Patients vaccinated within a 14-day period before starting or
+during immunosuppressive therapy should be revaccinated =3 months after therapy
+is discontinued if immune competence has been restored. .
+
+ponesimod
+ponesimod and fludrocortisone both increase immunosuppressive effects; risk of
+infection. Use Caution/Monitor. Caution if coadministered because of additive
+immunosuppressive effects during such therapy and in the weeks following
+administration. When switching from drugs with prolonged immune effects,
+consider the half-life and mode of action of these drugs to avoid unintended
+additive immunosuppressive effects.
+
+posaconazole
+posaconazole will increase the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+prednisone
+fludrocortisone will decrease the level or effect of prednisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+primidone
+primidone will decrease the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+protamine
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 25/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+fludrocortisone, protamine. Other (see comment). Use Caution/Monitor. Comment:
+Corticosteroids may decrease anticoagulant effects by increasing blood
+coagulability; conversely, they may impair vascular integrity, thus increasing
+bleeding risk. Monitor INR closely.
+
+quercetin
+quercetin will decrease the level or effect of fludrocortisone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+quetiapine
+fludrocortisone will decrease the level or effect of quetiapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+quinidine
+fludrocortisone will decrease the level or effect of quinidine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+ranolazine
+ranolazine will increase the level or effect of fludrocortisone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+repaglinide
+fludrocortisone will decrease the level or effect of repaglinide by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+rifampin
+rifampin will decrease the level or effect of fludrocortisone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+rifapentine
+rifapentine will decrease the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+ritonavir
+ritonavir will increase the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+fludrocortisone will decrease the level or effect of ritonavir by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+ritonavir will increase the level or effect of fludrocortisone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+rocuronium
+rocuronium, fludrocortisone. Other (see comment). Use Caution/Monitor. Comment:
+Coadministration of corticosteroids and neuromuscular blockers may increase risk of
+developing acute myopathy.
+
+rufinamide
+rufinamide will decrease the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+salicylates (non-asa)
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 26/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+salicylates (non-asa), fludrocortisone. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of GI ulceration.
+
+salsalate
+salsalate, fludrocortisone. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of GI ulceration.
+
+simvastatin
+simvastatin will increase the level or effect of fludrocortisone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+sipuleucel-T
+fludrocortisone decreases effects of sipuleucel-T by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely.
+
+sirolimus
+sirolimus will increase the level or effect of fludrocortisone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+sodium picosulfate/magnesium oxide/anhydrous citric acid
+fludrocortisone, sodium picosulfate/magnesium oxide/anhydrous citric acid. Either
+increases toxicity of the other by Other (see comment). Use Caution/Monitor.
+Comment: May be associated with fluid and electrolyte imbalances such as
+hypokalemia.
+
+sodium sulfate/?magnesium sulfate/potassium chloride
+sodium sulfate/?magnesium sulfate/potassium chloride increases toxicity of
+fludrocortisone by Other (see comment). Use Caution/Monitor. Comment:
+Coadministration with medications that cause fluid and electrolyte abnormalities
+may increase the risk of adverse events of seizure, arrhythmias, and renal
+impairment.
+
+sodium sulfate/potassium chloride/magnesium sulfate/polyethylene glycol
+fludrocortisone and sodium sulfate/potassium chloride/magnesium
+sulfate/polyethylene glycol both decrease serum potassium. Modify
+Therapy/Monitor Closely.
+
+sodium sulfate/potassium sulfate/magnesium sulfate
+sodium sulfate/potassium sulfate/magnesium sulfate increases toxicity of
+fludrocortisone by Other (see comment). Use Caution/Monitor. Comment:
+Coadministration with medications that cause fluid and electrolyte abnormalities
+may increase the risk of adverse events of seizure, arrhythmias, and renal
+impairment.
+
+solifenacin
+fludrocortisone will decrease the level or effect of solifenacin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+somapacitan
+somapacitan decreases effects of fludrocortisone by Other (see comment). Modify
+Therapy/Monitor Closely. Comment: Microsomal enzyme 11-beta-hydroxysteroid
+dehydrogenase type 1 (11-beta-HSD-1) required for cortisone conversion to its
+active metabolite, cortisol, in hepatic and adipose tissue. GH inhibits 11-beta-HSD-
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 27/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+1. Patients treated with glucocorticoid for hypoadrenalism may require increased
+maintenance or stress doses after initiating somapacitan.
+
+fludrocortisone decreases effects of somapacitan by pharmacodynamic antagonism.
+Use Caution/Monitor. Supraphysiologic glucocorticoid treatment may attenuate
+growth-promoting effects of growth hormone (GH). Microsomal enzyme 11-beta-
+hydroxysteroid dehydrogenase type 1 (11-beta-HSD-1) is required for conversion
+of cortisone to its active metabolite, cortisol, in hepatic and adipose tissue. GH
+inhibits 11-beta-HSD-1. Consequently, individuals with untreated GH deficiency
+have relative increases in 11-beta-HSD-1 and serum cortisol. Initiation of GH
+analogs may result in inhibition of 11-beta-HSD-1 and reduced serum cortisol
+concentrations.
+
+somatrem
+fludrocortisone decreases effects of somatrem by pharmacodynamic antagonism.
+Use Caution/Monitor.
+
+somatrogon
+fludrocortisone decreases effects of somatrogon by pharmacodynamic antagonism.
+Use Caution/Monitor. Supraphysiologic glucocorticoid treatment may attenuate
+growth-promoting effects of growth hormone (GH). Microsomal enzyme 11-beta-
+hydroxysteroid dehydrogenase type 1 (11-beta-HSD-1) is required for conversion
+of cortisone to its active metabolite, cortisol, in hepatic and adipose tissue. GH
+inhibits 11-beta-HSD-1. Consequently, individuals with untreated GH deficiency
+have relative increases in 11-beta-HSD-1 and serum cortisol. Initiation of GH
+analogs may result in inhibition of 11-beta-HSD-1 and reduced serum cortisol
+concentrations.
+
+somatropin
+fludrocortisone decreases effects of somatropin by pharmacodynamic antagonism.
+Use Caution/Monitor. Supraphysiologic glucocorticoid treatment may attenuate
+growth-promoting effects of growth hormone (GH). Microsomal enzyme 11-beta-
+hydroxysteroid dehydrogenase type 1 (11-beta-HSD-1) is required for conversion
+of cortisone to its active metabolite, cortisol, in hepatic and adipose tissue. GH
+inhibits 11-beta-HSD-1. Consequently, individuals with untreated GH deficiency
+have relative increases in 11-beta-HSD-1 and serum cortisol. Initiation of GH
+analogs may result in inhibition of 11-beta-HSD-1 and reduced serum cortisol
+concentrations.
+
+sorafenib
+fludrocortisone decreases levels of sorafenib by increasing metabolism. Use
+Caution/Monitor.
+
+St John's Wort
+St John's Wort will decrease the level or effect of fludrocortisone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+succinylcholine
+succinylcholine, fludrocortisone. Other (see comment). Use Caution/Monitor.
+Comment: Coadministration of corticosteroids and neuromuscular blockers may
+increase risk of developing acute myopathy.
+
+sulfasalazine
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 28/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+sulfasalazine, fludrocortisone. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of GI ulceration.
+
+sulindac
+sulindac, fludrocortisone. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of GI ulceration.
+
+tacrolimus
+fludrocortisone will decrease the level or effect of tacrolimus by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+tacrolimus will increase the level or effect of fludrocortisone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+theophylline
+fludrocortisone will decrease the level or effect of theophylline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+tipranavir
+fludrocortisone will decrease the level or effect of tipranavir by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+tolfenamic acid
+tolfenamic acid, fludrocortisone. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of GI ulceration.
+
+tolmetin
+tolmetin, fludrocortisone. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of GI ulceration.
+
+tolterodine
+fludrocortisone will decrease the level or effect of tolterodine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+tolvaptan
+tolvaptan will increase the level or effect of fludrocortisone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+topiramate
+topiramate will decrease the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+trastuzumab
+trastuzumab, fludrocortisone. Either increases toxicity of the other by
+immunosuppressive effects; risk of infection. Use Caution/Monitor. Neutropenia or
+febrile neutropenia incidence were increased when trastuzumab was
+coadministered with myelosuppressive chemotherapy. .
+
+trastuzumab deruxtecan
+trastuzumab deruxtecan, fludrocortisone. Either increases toxicity of the other by
+immunosuppressive effects; risk of infection. Use Caution/Monitor. Neutropenia or
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 29/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+febrile neutropenia incidence were increased when trastuzumab was
+coadministered with myelosuppressive chemotherapy. .
+
+trazodone
+fludrocortisone will decrease the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+trazodone will decrease the level or effect of fludrocortisone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+triamcinolone acetonide injectable suspension
+fludrocortisone will decrease the level or effect of triamcinolone acetonide
+injectable suspension by affecting hepatic/intestinal enzyme CYP3A4 metabolism.
+Use Caution/Monitor.
+
+triazolam
+fludrocortisone will decrease the level or effect of triazolam by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+ublituximab
+ublituximab and fludrocortisone both increase immunosuppressive effects; risk of
+infection. Modify Therapy/Monitor Closely. Owing to potential additive
+immunosuppressive effects, consider duration of effect and mechanism of action of
+these therapies if coadministered
+
+vardenafil
+fludrocortisone will decrease the level or effect of vardenafil by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+vecuronium
+vecuronium, fludrocortisone. Other (see comment). Use Caution/Monitor. Comment:
+Coadministration of corticosteroids and neuromuscular blockers may increase risk of
+developing acute myopathy.
+
+verapamil
+verapamil will increase the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+fludrocortisone will decrease the level or effect of verapamil by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+verapamil will increase the level or effect of fludrocortisone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+voriconazole
+voriconazole will increase the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+warfarin
+fludrocortisone increases effects of warfarin by unspecified interaction mechanism.
+Use Caution/Monitor.
+
+xipamide
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 30/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+xipamide, fludrocortisone. pharmacodynamic synergism. Use Caution/Monitor. Risk
+of hypokalemia.
+
+zafirlukast
+zafirlukast will increase the level or effect of fludrocortisone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+zoster vaccine recombinant
+fludrocortisone decreases effects of zoster vaccine recombinant by
+pharmacodynamic antagonism. Use Caution/Monitor. Immunosuppressive therapies
+may reduce the effectiveness of zoster vaccine recombinant.
+
+Minor (102)
+
+acarbose
+fludrocortisone decreases effects of acarbose by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+alfentanil
+fludrocortisone will decrease the level or effect of alfentanil by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+alfuzosin
+fludrocortisone will decrease the level or effect of alfuzosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+alosetron
+fludrocortisone will decrease the level or effect of alosetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+amitriptyline
+fludrocortisone will decrease the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+amphotericin B deoxycholate
+amphotericin B deoxycholate, fludrocortisone. Mechanism: unspecified interaction
+mechanism. Minor/Significance Unknown. Potential for hypokalemia.
+
+armodafinil
+fludrocortisone will decrease the level or effect of armodafinil by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+aspirin
+fludrocortisone decreases levels of aspirin by increasing renal clearance.
+Minor/Significance Unknown.
+
+aspirin rectal
+fludrocortisone decreases levels of aspirin rectal by increasing renal clearance.
+Minor/Significance Unknown.
+
+aspirin/citric acid/sodium bicarbonate
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 31/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+fludrocortisone decreases levels of aspirin/citric acid/sodium bicarbonate by
+increasing renal clearance. Minor/Significance Unknown.
+
+atazanavir
+fludrocortisone will decrease the level or effect of atazanavir by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+balsalazide
+fludrocortisone decreases levels of balsalazide by increasing renal clearance.
+Minor/Significance Unknown.
+
+bosentan
+fludrocortisone will decrease the level or effect of bosentan by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+bumetanide
+fludrocortisone, bumetanide. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Risk of hypokalemia, especially with strong
+glucocorticoid activity.
+
+bumetanide intranasal
+fludrocortisone, bumetanide intranasal. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Risk of hypokalemia, especially with strong
+glucocorticoid activity.
+
+calcium acetate
+fludrocortisone decreases levels of calcium acetate by increasing elimination.
+Minor/Significance Unknown.
+
+calcium carbonate
+fludrocortisone decreases levels of calcium carbonate by increasing elimination.
+Minor/Significance Unknown.
+
+calcium chloride
+fludrocortisone decreases levels of calcium chloride by increasing elimination.
+Minor/Significance Unknown.
+
+calcium citrate
+fludrocortisone decreases levels of calcium citrate by increasing elimination.
+Minor/Significance Unknown.
+
+calcium gluconate
+fludrocortisone decreases levels of calcium gluconate by increasing elimination.
+Minor/Significance Unknown.
+
+cevimeline
+fludrocortisone will decrease the level or effect of cevimeline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+chlorothiazide
+fludrocortisone, chlorothiazide. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Risk of hypokalemia, especially with strong
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 32/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+glucocorticoid activity.
+
+chlorthalidone
+fludrocortisone, chlorthalidone. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Risk of hypokalemia, especially with strong
+glucocorticoid activity.
+
+choline magnesium trisalicylate
+fludrocortisone decreases levels of choline magnesium trisalicylate by increasing
+renal clearance. Minor/Significance Unknown.
+
+chromium
+fludrocortisone decreases levels of chromium by increasing renal clearance.
+Minor/Significance Unknown.
+
+clarithromycin
+fludrocortisone will decrease the level or effect of clarithromycin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+clomipramine
+fludrocortisone will decrease the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+colestipol
+colestipol decreases levels of fludrocortisone by inhibition of GI absorption. Applies
+only to oral form of both agents. Minor/Significance Unknown.
+
+cyclopenthiazide
+fludrocortisone, cyclopenthiazide. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Risk of hypokalemia, especially with strong
+glucocorticoid activity.
+
+danazol
+danazol, fludrocortisone. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. May enhance edema formation.
+
+dapsone
+fludrocortisone will decrease the level or effect of dapsone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+diflunisal
+fludrocortisone decreases levels of diflunisal by increasing renal clearance.
+Minor/Significance Unknown.
+
+disopyramide
+fludrocortisone will decrease the level or effect of disopyramide by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+donepezil
+fludrocortisone will decrease the level or effect of donepezil by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+dutasteride
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 33/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+fludrocortisone will decrease the level or effect of dutasteride by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+efavirenz
+fludrocortisone will decrease the level or effect of efavirenz by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+eplerenone
+fludrocortisone will decrease the level or effect of eplerenone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+ethacrynic acid
+fludrocortisone, ethacrynic acid. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Risk of hypokalemia, especially with strong
+glucocorticoid activity.
+
+eucalyptus
+fludrocortisone will decrease the level or effect of eucalyptus by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+feverfew
+fludrocortisone decreases effects of feverfew by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+finasteride
+fludrocortisone will decrease the level or effect of finasteride by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+fluoxymesterone
+fluoxymesterone, fludrocortisone. Either increases effects of the other by
+pharmacodynamic synergism. Minor/Significance Unknown. May enhance edema
+formation.
+
+furosemide
+fludrocortisone, furosemide. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Risk of hypokalemia, especially with strong
+glucocorticoid activity.
+
+glimepiride
+fludrocortisone decreases effects of glimepiride by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+glipizide
+fludrocortisone decreases effects of glipizide by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+glyburide
+fludrocortisone decreases effects of glyburide by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+hydrochlorothiazide
+fludrocortisone, hydrochlorothiazide. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Risk of hypokalemia, especially with strong
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 34/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+glucocorticoid activity.
+
+imipramine
+fludrocortisone will decrease the level or effect of imipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+indapamide
+fludrocortisone, indapamide. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Risk of hypokalemia, especially with strong
+glucocorticoid activity.
+
+insulin aspart
+fludrocortisone decreases effects of insulin aspart by pharmacodynamic
+antagonism. Minor/Significance Unknown.
+
+insulin detemir
+fludrocortisone decreases effects of insulin detemir by pharmacodynamic
+antagonism. Minor/Significance Unknown.
+
+insulin glargine
+fludrocortisone decreases effects of insulin glargine by pharmacodynamic
+antagonism. Minor/Significance Unknown.
+
+insulin glulisine
+fludrocortisone decreases effects of insulin glulisine by pharmacodynamic
+antagonism. Minor/Significance Unknown.
+
+insulin lispro
+fludrocortisone decreases effects of insulin lispro by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+insulin NPH
+fludrocortisone decreases effects of insulin NPH by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+insulin regular human
+fludrocortisone decreases effects of insulin regular human by pharmacodynamic
+antagonism. Minor/Significance Unknown.
+
+isoniazid
+fludrocortisone decreases effects of isoniazid by unknown mechanism.
+Minor/Significance Unknown.
+
+isradipine
+fludrocortisone will decrease the level or effect of isradipine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+ketoconazole
+fludrocortisone will decrease the level or effect of ketoconazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+levoketoconazole
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 35/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+fludrocortisone will decrease the level or effect of levoketoconazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+mesalamine
+fludrocortisone decreases levels of mesalamine by increasing renal clearance.
+Minor/Significance Unknown.
+
+mesterolone
+mesterolone, fludrocortisone. Either increases effects of the other by
+pharmacodynamic synergism. Minor/Significance Unknown. May enhance edema
+formation.
+
+methyclothiazide
+fludrocortisone, methyclothiazide. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Risk of hypokalemia, especially with strong
+glucocorticoid activity.
+
+methyltestosterone
+methyltestosterone, fludrocortisone. Either increases effects of the other by
+pharmacodynamic synergism. Minor/Significance Unknown. May enhance edema
+formation.
+
+metolazone
+fludrocortisone, metolazone. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Risk of hypokalemia, especially with strong
+glucocorticoid activity.
+
+metyrapone
+fludrocortisone decreases effects of metyrapone by unspecified interaction
+mechanism. Minor/Significance Unknown.
+
+miglitol
+fludrocortisone decreases effects of miglitol by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+montelukast
+fludrocortisone will decrease the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+nateglinide
+fludrocortisone decreases effects of nateglinide by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+nifedipine
+fludrocortisone will decrease the level or effect of nifedipine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+nimodipine
+fludrocortisone will decrease the level or effect of nimodipine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+nitrendipine
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 36/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+fludrocortisone will decrease the level or effect of nitrendipine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+oxandrolone
+oxandrolone, fludrocortisone. Either increases effects of the other by
+pharmacodynamic synergism. Minor/Significance Unknown. May enhance edema
+formation.
+
+oxybutynin
+fludrocortisone will decrease the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+oxymetholone
+oxymetholone, fludrocortisone. Either increases effects of the other by
+pharmacodynamic synergism. Minor/Significance Unknown. May enhance edema
+formation.
+
+paclitaxel
+fludrocortisone will decrease the level or effect of paclitaxel by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+paclitaxel protein bound
+fludrocortisone will decrease the level or effect of paclitaxel protein bound by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance
+Unknown.
+
+parecoxib
+fludrocortisone will decrease the level or effect of parecoxib by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+pimozide
+fludrocortisone will decrease the level or effect of pimozide by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+pioglitazone
+fludrocortisone will decrease the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+fludrocortisone decreases effects of pioglitazone by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+propafenone
+fludrocortisone will decrease the level or effect of propafenone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+quinine
+fludrocortisone will decrease the level or effect of quinine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+repaglinide
+fludrocortisone decreases effects of repaglinide by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 37/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+rosiglitazone
+fludrocortisone decreases effects of rosiglitazone by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+salicylates (non-asa)
+fludrocortisone decreases levels of salicylates (non-asa) by increasing renal
+clearance. Minor/Significance Unknown.
+
+salsalate
+fludrocortisone decreases levels of salsalate by increasing renal clearance.
+Minor/Significance Unknown.
+
+sargramostim
+fludrocortisone increases effects of sargramostim by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+saxagliptin
+fludrocortisone will decrease the level or effect of saxagliptin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+fludrocortisone decreases effects of saxagliptin by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+sitagliptin
+fludrocortisone decreases effects of sitagliptin by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+sufentanil
+fludrocortisone will decrease the level or effect of sufentanil by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+sulfasalazine
+fludrocortisone decreases levels of sulfasalazine by increasing renal clearance.
+Minor/Significance Unknown.
+
+tacrolimus
+fludrocortisone, tacrolimus. Either increases levels of the other by decreasing
+metabolism. Minor/Significance Unknown.
+
+testosterone
+testosterone, fludrocortisone. Either increases effects of the other by
+pharmacodynamic synergism. Minor/Significance Unknown. May enhance edema
+formation.
+
+testosterone buccal system
+testosterone buccal system, fludrocortisone. Either increases effects of the other by
+pharmacodynamic synergism. Minor/Significance Unknown. May enhance edema
+formation.
+
+testosterone topical
+testosterone topical, fludrocortisone. Either increases effects of the other by
+pharmacodynamic synergism. Minor/Significance Unknown. May enhance edema
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 38/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+formation.
+
+torsemide
+fludrocortisone, torsemide. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Risk of hypokalemia, especially with strong
+glucocorticoid activity.
+
+vasopressin
+fludrocortisone increases effects of vasopressin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+vildagliptin
+fludrocortisone decreases effects of vildagliptin by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+vincristine liposomal
+fludrocortisone will decrease the level or effect of vincristine liposomal by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+willow bark
+fludrocortisone decreases levels of willow bark by increasing renal clearance.
+Minor/Significance Unknown.
+
+ziprasidone
+fludrocortisone will decrease the level or effect of ziprasidone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+zonisamide
+fludrocortisone will decrease the level or effect of zonisamide by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+Adverse Effects
+
+Frequency Not Defined
+
+Acne
+
+Adrenal suppression
+
+Change in spermatogenesis
+
+Delayed wound healing
+
+Diabetes mellitus
+
+GI perforation
+
+Glucose intolerance
+
+Hepatomegaly
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 39/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+Hypokalemic alkalosis
+
+Increased transaminases
+
+Insomnia
+
+Menstrual irregularity
+
+Myopathy
+
+Neuritis
+
+Osteoporosis
+
+Peptic ulcer
+
+Perianal pruritus
+
+Pituitary adrenal axis suppression
+
+Pseudotumor cerebri (on withdrawal)
+
+Psychosis
+
+Seizure
+
+Ulcerative esophagitis
+
+Urticaria
+
+Vertigo
+
+Weight gain
+
+Warnings
+
+Contraindications
+
+Systemic fungal infection
+
+Documented hypersensitivity
+
+Receipt of live or attenuated live vaccine; Advisory Committee on Immunization Practices
+(ACIP) and American Academy of Family Physicians (AAFP) state that administration of
+live virus vaccines usually is not contraindicated in patients receiving corticosteroid
+therapy as short-term (<2 weeks) treatment, in low-to-moderate dosages, as long-term
+alternate-day treatment with short-acting preparations, or in maintenance of physiologic
+dosages (replacement therapy)
+
+Cautions
+
+Use with caution in diabetes mellitus, hypertension, hypothyroidism, electrolyte
+abnormalities, sodium and water retention, infections, immunizations, ocular herpes
+simplex, myasthenia gravis, peptic ulcer disease, psychosis, renal insufficiency
+
+Thromboembolic disorders and myopathy may occur
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 40/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+Delayed wound healing is possible
+
+Patients receiving corticosteroids should avoid chickenpox or measles-infected persons if
+unvaccinated
+
+Latent tuberculosis may be reactivated (patients with positive tuberculin test should be
+monitored)
+
+Some suggestion (not fully substantiated) of slightly increased cleft palate risk if
+corticosteroids are used in pregnancy
+
+Prolonged corticosteroid use may result in elevated intraocular pressure, glaucoma, or
+cataracts and has been associated with development of Kaposi sarcoma
+
+Myopathy has been reported
+
+Pregnancy & Lactation
+
+Pregnancy category: C
+
+Lactation: Unknown whether drug is excreted in milk; use with caution
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+Potent mineralocorticoid with high glucocorticoid activity; promotes increased
+reabsorption of sodium and excretion of potassium from renal distal tubules
+
+Absorption
+
+Bioavailability: 100%
+
+Peak plasma time: ≤1.7 hr
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 41/42
+
+
+
+6/22/26, 1:03 PM Florinef, Florinef Acetate (fludrocortisone) dosing, indications, interactions, adverse effects, and more
+
+Distribution
+
+Protein bound: 42%
+
+Metabolism
+
+Metabolized in liver
+
+Elimination
+
+Half-life: Plasma, 3.5 hr; biologic, 18-36 hr
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/florinef-fludrocortisone-342743 42/42

@@ -1,0 +1,378 @@
+haloperidol (Rx)
+Brand and Other Names: Haldol, Haldol Decanoate, Haloperidol LA, Peridol
+Classes: Antipsychotics, 1st Generation
+
+Dosing & Uses
+
+ADULT
+
+Dosage Forms & Strengths
+tablet
+• 0.5mg
+• 1mg
+• 2mg
+• 5mg
+• 10mg
+• 20mg
+
+oral concentrate
+• 2mg/mL
+
+injectable solution, lactate
+• 5mg/mL
+
+injectable solution, decanoate
+• 50mg/mL
+• 100mg/mL
+
+Schizophrenia, Psychosis
+PO
+• Moderate disease, 0.5-2 mg q8-12hr initially
+• Severe disease, 3-5 mg q8-12hr initially; not to exceed 30 mg/day
+
+IM lactate (prompt-acting)
+• 2-5 mg q4-8hr PRN; may require q1hr in acute agitation; not to exceed 20 mg/day
+
+IM decanoate (depot)
+• Initial: IM dose 10-20 times daily PO dose administered monthly; not to exceed 100 mg; if conversion requires initial dose >100 mg, administer in 2 injections (eg, 100 mg initially, then remainder in 3-7 days)
+• Maintenance: Monthly dose 10-15 times daily PO dose
+
+IV (Off-label)
+• May be needed for ICU delirium; use only haloperidol lactate for IV administration; do not use haloperidol decanoate
+• 2-10 mg initially, depending on degree of agitation; if response inadequate, may repeat bolus q15-30min, sequentially doubling initial bolus dose; when calm achieved, administer 25% of last bolus dose q6hr; taper dose after patient is controlled
+• Monitor ECG and QT interval (QT prolongation may occur with cumulative doses >=35 mg; torsades de pointes reported with single doses >=20 mg)
+
+Tourette Disorder
+• 0.5-2 mg PO q8-12hr initially; if severe symptoms necessitate increased dosage, titrate upward to 3-5 mg PO q8-12hr; if patient remains inadequately controlled, daily doses up to 100 mg have been used (safety not determined)
+
+PEDIATRIC
+
+Dosage Forms & Strengths
+tablet
+• 0.5mg
+• 1mg
+• 2mg
+• 5mg
+• 10mg
+• 20mg
+
+oral concentrate
+• 2 mg/mL
+
+injectable solution, lactate
+• 5mg/mL
+
+injectable solution, decanoate
+• 50mg/mL
+• 100mg/mL
+
+Schizophrenia, Psychosis/Sedation
+• <3 years: Safety and efficacy not established
+• 3-12 years (15-40 kg): 0.25-0.5 mg/day PO divided q8-12hr initially; may be increased by 0.5 mg/day every 5-7 days PRN; maintenance: 0.05-0.15 mg/kg/day PO divided q8-12hr
+• 6-12 years: Lactate (prompt-acting): 1-3 mg IM q4-8hr PRN; not to exceed 0.15 mg/kg/day
+• >12 years: Moderate disease, 0.5-2 mg PO q8-12hr initially; severe disease, 3-5 mg PO q8-12hr; not to exceed 30 mg/day
+
+Tourette Disorder
+• <3 years: Safety and efficacy not established
+• 3-12 years: 0.5 mg/day PO initially; dose increased by 0.5 mg every 5-7 days until therapeutic effect achieved, then reduced to lowest effective maintenance level of 0.05-0.075 mg/kg/day PO divided q8-12hr
+• >12 years: 0.5-2 mg PO q8-12hr initially; if severe symptoms necessitate increased dosage, titrate upward to 3-5 mg PO q8-12hr; if patient remains inadequately controlled, daily doses up to 100 mg have been used (safety not determined)
+
+Behavioral Disorders
+• <3 years: Safety and efficacy not established
+• 3-12 years: 0.5 mg/day PO initially; dose increased PRN by 0.5 mg every 5-7 days until therapeutic effect achieved, then reduced to lowest effective maintenance level of 0.05-0.075 mg/kg/day PO divided q8-12hr
+
+Acute Agitation
+• <12 years: Safety and efficacy not established
+• >12 years: 0.5-3 mg PO, repeated in 1 hour PRN; alternatively, 2-5 mg IM, repeated in 1 hr PRN
+
+GERIATRIC
+
+Schizophrenia, Psychosis
+• PO: Lower initial doses and more gradual adjustments recommended; 0.25-0.5 mg PO q8-12hr initially
+• IM lactate (prompt-acting): Lower adult doses and longer dosing intervals recommended compared with typical adult doses
+• IM decanoate (depot): Lower initial doses and more gradual adjustments recommended; monthly dose 10-15 times daily PO dose
+• IV (off-label): 0.25-0.5 mg IV q4hr; use only lactate (not decanoate) for IV administration; monitor with ECG for prolonged QT interval
+• Not approved for dementia-related psychosis, because of increased risk of cardiovascular or infectious related deaths (see Black Box Warnings)
+
+Tourette Disorder
+• Lower initial doses and more gradual adjustments recommended; 0.25-0.5 mg PO q8-12hr initially
+
+Dosing Considerations
+• Elderly at higher risk for tardive dyskinesia associated with higher-potency antipsychotic agents such as haloperidol because of higher ratios of dopaminergic blockage to adrenergic/anticholinergic blockade
+
+Interactions
+
+Contraindicated (12)
+• amisulpride: Increases toxicity of the other by Other (see comment). Contraindicated. Comment: Increases risk of neuroleptic malignant syndrome.
+• disopyramide: Both increase QTc interval. Contraindicated.
+• eliglustat: haloperidol increases levels of eliglustat by affecting hepatic enzyme CYP2D6 metabolism. Contraindicated. If coadministered with strong or moderate CYP2D6 inhibitors, reduce eliglustat dose from 84 mg BID to 84 mg once daily in extensive and intermediate metabolizers; eliglustat is contraindiated if strong or moderate CYP2D6 inhibitors are given concomitantly with strong or moderate CYP3A inhibitors.
+• ibutilide: Both increase QTc interval. Contraindicated.
+• indapamide: Both increase QTc interval. Contraindicated.
+• lefamulin: lefamulin will increase the level or effect of haloperidol by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Lefamulin is contraindicated with CYP3A substrates know to prolong the QT interval.
+• mavorixafor: mavorixafor will increase the level or effect of haloperidol by affecting hepatic enzyme CYP2D6 metabolism. Contraindicated. Mavorixafor (a strong CYP2D6 inhibitor) is contraindicated with drugs that are highly dependent on CYP2D6 for clearance.
+• pentamidine: Both increase QTc interval. Contraindicated.
+• pimozide: Both increase QTc interval. Contraindicated.
+• procainamide: Both increase QTc interval. Contraindicated.
+• quinidine: Both increase QTc interval. Contraindicated.
+• sotalol: Both increase QTc interval. Contraindicated.
+
+Serious (128)
+• adagrasib: Either increases effects of the other by QTc interval. Avoid or Use Alternate Drug. Each drug prolongs the QTc interval, which may increased the risk of Torsade de pointes, other serious arryhthmias, and sudden death. If coadministration unavoidable, more frequent monitoring is recommended for such patients.
+• amiodarone: Both increase QTc interval. Avoid or Use Alternate Drug.
+• amisulpride: Both increase QTc interval. Avoid or Use Alternate Drug. ECG monitoring is recommended if coadministered.
+• amitriptyline: Both increase QTc interval. Avoid or Use Alternate Drug.
+• amoxapine: Both increase QTc interval. Avoid or Use Alternate Drug.
+• anagrelide: Both increase QTc interval. Avoid or Use Alternate Drug.
+• apalutamide: apalutamide will decrease the level or effect of haloperidol by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Coadministration of apalutamide, a strong CYP3A4 inducer, with drugs that are CYP3A4 substrates can result in lower exposure to these medications. Avoid or substitute another drug for these medications when possible. Evaluate for loss of therapeutic effect if medication must be coadministered. Adjust dose according to prescribing information if needed.
+• apomorphine: haloperidol decreases effects of apomorphine by pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+• arsenic trioxide: Both increase QTc interval. Avoid or Use Alternate Drug.
+• artemether/lumefantrine: artemether/lumefantrine will increase the level or effect of haloperidol by affecting hepatic enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug. Both increase QTc interval. Avoid or Use Alternate Drug.
+• benzhydrocodone/acetaminophen: Either increases toxicity of the other by pharmacodynamic synergism. Avoid or Use Alternate Drug. Profound sedation, respiratory depression, coma, and death may result if coadministered. Reserve concomitant prescribing of these drugs in patients for whom other treatment options are inadequate. Limit dosages and durations to the minimum required. Monitor closely for signs of respiratory depression and sedation.
+• bromocriptine: haloperidol decreases effects of bromocriptine by pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+• buprenorphine (all forms): Both increase QTc interval. Avoid or Use Alternate Drug.
+• cabergoline: haloperidol decreases effects of cabergoline by pharmacodynamic antagonism. Contraindicated.
+• calcium/magnesium/potassium/sodium oxybates: Either increases effects of the other by pharmacodynamic synergism. Avoid or Use Alternate Drug. Profound sedation, respiratory depression, coma, and death may result if coadministered.
+• carbamazepine: carbamazepine will decrease the level or effect of haloperidol by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+• ceritinib: Both increase QTc interval. Avoid or Use Alternate Drug. Will increase the level or effect of haloperidol by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+• chloramphenicol: Will increase the level or effect of haloperidol by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+• chlorpromazine: Both increase QTc interval. Avoid or Use Alternate Drug.
+• citalopram: Will increase the level or effect of haloperidol by affecting hepatic enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug. Increased risk of serotonin syndrome or neuroleptic malignant syndrome. Potential risk for QT prolongation. ECG monitoring is recommended. Both increase QTc interval.
+• clarithromycin: Both increase QTc interval. Avoid or Use Alternate Drug. Will increase the level or effect of haloperidol by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+• clomipramine: haloperidol will increase the level or effect of clomipramine by affecting hepatic enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug. Both increase QTc interval.
+• crizotinib: Both increase QTc interval. Avoid or Use Alternate Drug.
+• dacomitinib: Will increase the level or effect of haloperidol by affecting hepatic enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+• desflurane: Both increase QTc interval. Avoid or Use Alternate Drug.
+• desipramine: haloperidol will increase the level or effect of desipramine by affecting hepatic enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug. Both increase QTc interval.
+• dofetilide: Both increase QTc interval. Avoid or Use Alternate Drug.
+• dopamine: haloperidol decreases effects of dopamine by pharmacodynamic antagonism. Contraindicated.
+• dordaviprone: Both increase QTc interval. Avoid or Use Alternate Drug. Additive QTc interval prolongation may increase the risk for ventricular tachyarrhythmias (eg, Torsades de pointes) or sudden death. If coadministration cannot be avoided, separate the administration time of these agents and increase the frequency of ECG and electrolyte monitoring.
+• doxepin: haloperidol will increase the level or effect of doxepin by affecting hepatic enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug. Both increase QTc interval.
+• dronedarone: Both increase QTc interval. Avoid or Use Alternate Drug.
+• droperidol: Both increase QTc interval. Avoid or Use Alternate Drug.
+• eliglustat: Both increase QTc interval. Avoid or Use Alternate Drug.
+• encorafenib: Both increase QTc interval. Avoid or Use Alternate Drug.
+• entrectinib: Both increase QTc interval. Avoid or Use Alternate Drug.
+• epinephrine (including racemic): Both increase QTc interval. Avoid or Use Alternate Drug.
+• eribulin: Both increase QTc interval. Avoid or Use Alternate Drug. Potential for enhanced QTc-prolonging effects; if concurrent use is necessary then ECG monitoring is recommended.
+• erythromycin (all forms): Both increase QTc interval. Avoid or Use Alternate Drug.
+• fentanyl (all forms): Either increases effects of the other by pharmacodynamic synergism. Avoid or Use Alternate Drug. Coadministration with other CNS depressants, such as skeletal muscle relaxants, may cause respiratory depression, hypotension, profound sedation, coma, and/or death.
+• fexinidazole: Both increase QTc interval. Avoid or Use Alternate Drug. Avoid coadministration of fexinidazole with drugs known to block potassium channels or prolong QT interval.
+• fingolimod: Both increase QTc interval. Avoid or Use Alternate Drug.
+• fluconazole: Both increase QTc interval. Avoid or Use Alternate Drug.
+• fluoxetine: fluoxetine will increase the level or effect of haloperidol by affecting hepatic enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug. haloperidol will increase the level or effect of fluoxetine by affecting hepatic enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+• fluphenazine: Both increase QTc interval. Avoid or Use Alternate Drug.
+• foscarbidopa/foslevodopa: haloperidol decreases effects of foscarbidopa/foslevodopa by pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+• fosfomycin: Both increase QTc interval. Avoid or Use Alternate Drug. The risk of QT prolongation may increase in patients with electrolyte abnormalities (such as hypokalemia and hypocalcemia), patients with conditions that have potential to cause electrolyte imbalance (such as renal impairment), or patients taking other drugs affecting electrolyte balance or QT prolongation; avoid this drug in patients with known QT prolongation or ventricular arrhythmias, including a history of torsade de pointes; monitor electrolytes during treatment.
+• fosphenytoin: fosphenytoin will decrease the level or effect of haloperidol by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+• givinostat: Both increase QTc interval. Avoid or Use Alternate Drug. If unable to avoid coadministration, obtain ECGs when initiating, during concomitant use, and as clinically indicated. Withhold if QTc interval >500 ms or a change from baseline >60 ms.
+• givosiran: givosiran will increase the level or effect of haloperidol by affecting hepatic enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug. Avoid coadministration of sensitive CYP2D6 substrates with givosiran. If unavoidable, decrease the CYP2D6 substrate dosage in accordance with approved product labeling.
+• glasdegib: Both increase QTc interval. Avoid or Use Alternate Drug. If coadministration unavoidable, monitor for increased risk of QTc interval prolongation.
+• hydrocodone: Either increases toxicity of the other by pharmacodynamic synergism. Avoid or Use Alternate Drug. Profound sedation, respiratory depression, coma, and death may result if coadministered.
+• hydroxychloroquine sulfate: Both increase QTc interval. Avoid or Use Alternate Drug.
+• idelalisib: Will increase the level or effect of haloperidol by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Idelalisib is a strong CYP3A inhibitor; avoid coadministration with sensitive CYP3A substrates.
+• iloperidone: Both increase QTc interval. Avoid or Use Alternate Drug.
+• imipramine: haloperidol will increase the level or effect of imipramine by affecting hepatic enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug. Both increase QTc interval. Avoid or Use Alternate Drug.
+• inotuzumab: Both increase QTc interval. Avoid or Use Alternate Drug. If unable to avoid concomitant use, obtain ECGs and electrolytes before and after initiation of any drug known to prolong QTc, and periodically monitor as clinically indicated during treatment.
+• isoflurane: Both increase QTc interval. Avoid or Use Alternate Drug.
+• ivosidenib: Both increase QTc interval. Avoid or Use Alternate Drug. Avoid coadministration of QTc prolonging drugs with ivosidenib or replace with alternate therapies. ivosidenib will decrease the level or effect of haloperidol by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+• ketoconazole: Both increase QTc interval. Avoid or Use Alternate Drug.
+• levodopa: haloperidol decreases effects of levodopa by pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+• Levoketoconazole: Both increase QTc interval. Avoid or Use Alternate Drug.
+• lisuride: haloperidol decreases effects of lisuride by pharmacodynamic antagonism. Contraindicated.
+• lofepramine: Both increase QTc interval. Avoid or Use Alternate Drug.
+• lopinavir: Will increase the level or effect of haloperidol by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+• Lumefantrine: Will increase the level or effect of haloperidol by affecting hepatic enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug. Both increase QTc interval. Avoid or Use Alternate Drug.
+• macimorelin: Both increase QTc interval. Avoid or Use Alternate Drug. Macimorelin causes an increase of ~11 msec in the corrected QT interval. Avoid coadministration with drugs that prolong QT interval, which could increase risk for developing torsade de pointes-type ventricular tachycardia. Allow sufficient washout time of drugs that are known to prolong the QT interval before administering macimorelin.
+• methyldopa: haloperidol decreases effects of methyldopa by pharmacodynamic antagonism. Contraindicated.
+• metoclopramide intranasal: Either increases effects of the other by Other (see comment). Avoid or Use Alternate Drug. Comment: Avoid use of metoclopramide intranasal or interacting drug, depending on importance of drug to patient. haloperidol increases toxicity of metoclopramide intranasal by pharmacodynamic synergism. Avoid or Use Alternate Drug. Potential for additive effects, including increased frequency and severity of tardive dyskinesia, other extrapyramidal symptoms, and neuroleptic malignant syndrome.
+• mifepristone: Will increase the level or effect of haloperidol by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+• milsaperidone: Both increase QTc interval. Avoid or Use Alternate Drug.
+• moxifloxacin: Both increase QTc interval. Avoid or Use Alternate Drug.
+• nilotinib: Both increase QTc interval. Avoid or Use Alternate Drug.
+• nortriptyline: haloperidol will increase the level or effect of nortriptyline by affecting hepatic enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug. Both increase QTc interval. Avoid or Use Alternate Drug.
+• octreotide (including Antidote): Both increase QTc interval. Avoid or Use Alternate Drug.
+• olopatadine intranasal: Both increase sedation. Avoid or Use Alternate Drug. Coadministration increases risk of CNS depression, which can lead to additive impairment of psychomotor performance and cause daytime impairment.
+• ondansetron: Both increase QTc interval. Avoid or Use Alternate Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with concomitant medications that prolong QT interval, electrolyte abnormalities, CHF, or bradyarrhythmias.
+• oxaliplatin: Both increase QTc interval. Avoid or Use Alternate Drug.
+• pacritinib: haloperidol will increase the level or effect of pacritinib by affecting hepatic enzyme CYP2E1 metabolism. Avoid or Use Alternate Drug.
+• panobinostat: Both increase QTc interval. Avoid or Use Alternate Drug. Panobinostat is known to significantly prolong QT interval. Panobinostat prescribing information states use with drugs known to prolong QTc is not recommended.
+• paroxetine: Will increase the level or effect of haloperidol by affecting hepatic enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+• perphenazine: Both increase QTc interval. Avoid or Use Alternate Drug.
+• phenytoin: Will decrease the level or effect of haloperidol by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+• pitolisant: Both increase QTc interval. Avoid or Use Alternate Drug.
+• posaconazole: Will increase the level or effect of haloperidol by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+• pramipexole: haloperidol decreases effects of pramipexole by pharmacodynamic antagonism. Contraindicated.
+• prochlorperazine: Both increase QTc interval. Avoid or Use Alternate Drug.
+• promazine: Both increase QTc interval. Avoid or Use Alternate Drug.
+• promethazine: Both increase QTc interval. Avoid or Use Alternate Drug.
+• protriptyline: Both increase QTc interval. Avoid or Use Alternate Drug.
+• quinidine: Will increase the level or effect of haloperidol by affecting hepatic enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+• revumenib: Both increase QTc interval. Avoid or Use Alternate Drug. ECG monitoring recommended if concomitant use can't be avoided and withhold therapy if QTc interval is >480 msec; restart therapy after QTc interval returns to <480 msec.
+• ribociclib: Both increase QTc interval. Avoid or Use Alternate Drug.
+• romidepsin: Both increase QTc interval. Avoid or Use Alternate Drug.
+• ropeginterferon alfa 2b: Either increases toxicity of the other by Other (see comment). Avoid or Use Alternate Drug. Comment: Myelosuppressive agents can produce additive myelosuppression. Avoid use and monitor patients receiving the combination for effects of excessive myelosuppression.
+• ropinirole: haloperidol decreases effects of ropinirole by pharmacodynamic antagonism. Contraindicated.
+• safinamide: haloperidol decreases effects of safinamide by pharmacodynamic antagonism. Avoid or Use Alternate Drug. Dopamine antagonists may decrease safinamide effects and exacerbate Parkinson disease symptoms.
+• selinexor: Unspecified interaction mechanism. Avoid or Use Alternate Drug. Patients treated with selinexor may experience neurological toxicities. Avoid taking selinexor with other medications that may cause dizziness or confusion.
+• sevoflurane: Both increase QTc interval. Avoid or Use Alternate Drug.
+• siponimod: Both increase QTc interval. Avoid or Use Alternate Drug.
+• sodium oxybate: Either increases effects of the other by pharmacodynamic synergism. Avoid or Use Alternate Drug. Profound sedation, respiratory depression, coma, and death may result if coadministered.
+• sofpironium topical: Both increase pharmacodynamic synergism. Avoid or Use Alternate Drug. Additive anticholinergic adverse effects may occur.
+• sufentanil SL: Either increases toxicity of the other by pharmacodynamic synergism. Avoid or Use Alternate Drug. Coadministration may result in hypotension, profound sedation, respiratory depression, coma, and death.
+• taletrectinib: Both increase QTc interval. Avoid or Use Alternate Drug. Concomitant use may result in additive QTc interval prolongation, which can increase the risk for ventricular tachyarrhythmias (eg, Torsades de pointes) or sudden death.
+• tetrabenazine: Both increase QTc interval. Avoid or Use Alternate Drug.
+• thioridazine: haloperidol will increase the level or effect of thioridazine by affecting hepatic enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug. Both increase QTc interval. Avoid or Use Alternate Drug.
+• toremifene: Both increase QTc interval. Avoid or Use Alternate Drug. Concurrent use of toremifene with agents causing QT prolongation should be avoided. If concomitant use is required it's recommended that toremifene be interrupted. If interruption not possible, patients requiring therapy with a drug that prolongs QT should be closely monitored. ECGs should be obtained for high risk patients.
+• trazodone: Both increase QTc interval. Avoid or Use Alternate Drug.
+• trifluoperazine: Both increase QTc interval. Avoid or Use Alternate Drug.
+• trimipramine: Both increase QTc interval. Avoid or Use Alternate Drug.
+• tucatinib: Will increase the level or effect of haloperidol by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid concomitant use of tucatinib with CYP3A substrates, where minimal concentration changes may lead to serious or life-threatening toxicities. If unavoidable, reduce CYP3A substrate dose according to product labeling.
+• umeclidinium bromide/vilanterol inhaled: haloperidol increases toxicity of umeclidinium bromide/vilanterol inhaled by QTc interval. Avoid or Use Alternate Drug. Exercise extreme caution when vilanterol coadministered with drugs that prolong QTc interval; adrenergic agonist effects on the cardiovascular system may be potentiated.
+• vandetanib: Either increases toxicity of the other by QTc interval. Avoid or Use Alternate Drug. Avoid coadministration with drugs known to prolong QT interval; if a drug known to prolong QT interval must be used, more frequent ECG monitoring is recommended.
+• vemurafenib: Both increase QTc interval. Avoid or Use Alternate Drug. Concomitant use of vemurafenib with drugs that prolong QT interval is not recommended.
+• vilanterol/fluticasone furoate inhaled: haloperidol increases toxicity of vilanterol/fluticasone furoate inhaled by QTc interval. Avoid or Use Alternate Drug. Exercise extreme caution when vilanterol coadministered with drugs that prolong QTc interval; adrenergic agonist effects on the cardiovascular system may be potentiated.
+• ziftomenib: Both increase QTc interval. Avoid or Use Alternate Drug. Avoid coadministration of ziftomenib with other drugs known to prolong the QTc interval. If unavoidable, obtain ECGs when initiating, during concomitant use, and as clinically indicated. Interrupt ziftomenib with QTc interval > 500 ms or a change from baseline is >60 ms.
+• ziprasidone: Both increase QTc interval. Avoid or Use Alternate Drug.
+
+Monitor Closely (443)
+(Selected examples from the list, primarily involving CNS depressants, anticholinergics, QTc prolongers, and CYP inhibitors/inducers)
+• abiraterone, abobotulinumtoxin A, acalabrutinib, acetaminophen/phenyltoloxamine, aclidinium, acrivastine, albuterol, alfentanil, alfuzosin, almotriptan, alprazolam, amifampridine, amitriptyline, amoxapine, amphetamine, anticholinergic/sedative combos, apomorphine, arformoterol, aripiprazole, armodafinil, artemether, asenapine, atazanavir, atomoxetine, atracurium, atropine, avapritinib, azelastine, azithromycin, baclofen, bedaquiline, belladonna alkaloids, belzutifan, benperidol, benzhydrocodone/acetaminophen, benzphetamine, benztropine, bosentan, bosutinib, brexanolone, brexpiprazole, brimonidine, brivaracetam, brompheniramine, buprenorphine, bupropion, butalbital, butorphanol, caffeine, capecitabine, carbachol/brimonidine ophthalmic, carbamazepine, carbinoxamine, cariprazine, carisoprodol, carvedilol, celecoxib, cenobamate, chlordiazepoxide, chloroquine, chlorpheniramine, chlorpromazine, chlorzoxazone, cimetidine, cinnarizine, ciprofloxacin, cisatracurium, clemastine, clobazam, clomipramine, clonazepam, clonidine, clorazepate, clozapine, cobicistat, codeine, conivaptan, crizotinib, crofelemer, cyclobenzaprine, cyproheptadine, dabrafenib, danazol, dantrolene, daridorexant, darifenacin, darunavir, dasatinib, daxibotulinumtoxin A, deferasirox, degarelix, desflurane, desipramine, desloratadine, desvenlafaxine, deutetrabenazine, dexbrompheniramine, dexchlorpheniramine, dexfenfluramine, dexmedetomidine, dexmethylphenidate, dextroamphetamine, dextromethorphan, dextromoramide, diamorphine, diazepam, dicyclomine, diethylpropion, difelikefalin, difenoxin hcl, dihydroergotamine, dimenhydrinate, diphenhydramine, diphenoxylate hcl, dipipanone, dobutamine, dolasetron, donepezil, dopamine, dopexamine, dosulepin, doxepin, doxylamine, dronedarone, droperidol, duvelisib, efavirenz, elagolix, eletriptan, eliglustat, elvitegravir/cobicistat/emtricitabine/tenofovir DF, encorafenib, enzalutamide, ephedrine, epinephrine, ergoloid mesylates, ergotamine, escitalopram, esketamine intranasal, estazolam, eszopiclone, ethanol, etomidate, etravirine, ezogabine, fedratinib, fenfluramine, fentanyl, fesoterodine, flavoxate, flecainide, flibanserin, fluoxetine, fluphenazine, flurazepam, fluvoxamine, formoterol, foscarnet, fostemsavir, frovatriptan, gabapentin, gadobenate, ganaxolone, gemifloxacin, gemtuzumab, gepirone, gilteritinib, glycerol phenylbutyrate, glycopyrrolate, goserelin, granisetron, guanfacine, henbane, histrelin, homatropine, hydrocodone, hydromorphone, hydroxyzine, hyoscyamine, imatinib, imipramine, incobotulinumtoxinA, indacaterol, ipratropium, isoniazid, isoproterenol, isradipine, istradefylline, itraconazole, ketamine, ketoconazole, ketotifen, lamotrigine, lapatinib, lemborexant, lenacapavir, lenvatinib, letermovir, letibotulinumtoxin A, Leuprolide, levalbuterol, levetiracetam, levocetirizine, Levofloxacin, levoketoconazole, levomilnacipran, levorphanol, linezolid, lisdexamfetamine, lithium, lofepramine, Lofexidine, loprazolam, Loratadine, lorazepam, Lorcaserin, Lorlatinib, lormetazepam, loxapine, lumateperone, lurasidone, maraviroc, marijuana, mavorixafor, meclizine, mefloquine, melatonin, meperidine, meprobamate, metaproterenol, metaxalone, methadone, methamphetamine, methocarbamol, methohexital, methscopolamine, methsuximide, methylenedioxymethamphetamine, methylergonovine, methylphenidate, metoclopramide, metoprolol, mexiletine, midazolam, midodrine, mifepristone, milnacipran, mirabegron, mirtazapine, mitotane, modafinil, molindone, morphine, motherwort, moxonidine, nabilone, nafcillin, nalbuphine, naratriptan, nebivolol, nefazodone, nelfinavir, nilotinib, nitrous oxide, norepinephrine, nortriptyline, ofloxacin, olanzapine, olodaterol, onabotulinumtoxinA, opicapone, opium tincture, orphenadrine, osilodrostat, osimertinib, oxaliplatin, oxazepam, oxybutynin, oxycodone, oxymorphone, ozanimod, paliperidone, pancuronium, papaveretum, papaverine, parecoxib, paroxetine, pasireotide, pazopanib, peginterferon alfa 2b, pentazocine, pentobarbital, perphenazine, phendimetrazine, phenelzine, phenobarbital, phentermine, phenylephrine, pholcodine, pimozide, pirbuterol, posaconazole, prabotulinumtoxinA, pralidoxime, primaquine, primidone, procarbazine, prochlorperazine, promethazine, propafenone, propantheline, propofol, propranolol, propylhexedrine, protriptyline, pyrilamine, quazepam, quetiapine, quinacrine, quinine, quizartinib, ramelteon, ranolazine, rapacuronium, remifentanil, remimazolam, ribociclib, rifabutin, rifampin, rifapentine, rilpivirine, rilzabrutinib, rimabotulinumtoxinB, risperidone, ritonavir, rizatriptan, rocuronium, rolapitant, rucaparib, salmeterol, scopolamine, scullcap, selegiline, selpercatinib, sertraline, sevoflurane, shepherd's purse, sodium oxybate, solifenacin, sorafenib, stiripentol, sufentanil, sulfamethoxazole, sumatriptan, sunitinib, tacrolimus, tamoxifen, tamsulosin, tapentadol, tasimelteon, tecovirimat, teduglutide, telavancin, temazepam, terbinafine, terbutaline, tetrabenazine, thalidomide, thioridazine, thiothixene, tiagabine, timolol, tiotropium, tipranavir, tizanidine, tolcapone, tolterodine, topiramate, tramadol, tranylcypromine, trazodone, triazolam, triclabendazole, triclofos, trifluoperazine, trihexyphenidyl, trimethoprim, trimipramine, triprolidine, triptorelin, tropisetron, trospium chloride, valbenazine, valproic acid, vardenafil, vecuronium, venlafaxine, vigabatrin, vilazodone, viloxazine, voclosporin, voriconazole, vorinostat, xylometazoline, yohimbine, zaleplon, ziconotide, ziprasidone, zolmitriptan, zolpidem, zonisamide, zotepine, zuranolone.
+
+Minor (37)
+• acetazolamide, amphetamine, anastrozole, aripiprazole, butalbital, chasteberry, chlorpromazine, cyclophosphamide, dexfenfluramine, dextroamphetamine, dextromethorphan, donepezil, drospirenone, duloxetine, encainide, ethanol, eucalyptus, fesoterodine, fluphenazine, indomethacin, larotrectinib, loratadine, metyrosine, oxycodone, pentobarbital, perhexiline, perphenazine, phenobarbital, primidone, prochlorperazine, promazine, promethazine, risperidone, sage, tolterodine, trifluoperazine, tropisetron.
+
+Adverse Effects
+
+Frequency Not Defined
+Extrapyramidal symptoms
+• Akathisia
+• Dystonia
+• Muscle stiffness
+• Neuroleptic malignant syndrome (NMS; infrequent but serious)
+• Parkinsonism
+• Tardive dyskinesia
+
+Common
+• Anticholinergic effects
+• Sedation
+• Weight gain
+• Erectile dysfunction
+• Oligomenorrhea or amenorrhea
+
+Less common
+• Orthostatic hypotension (after IM injection), tachycardia
+• Agitation, anxiety, cerebral edema, depression, dizziness, euphoria, headache, insomnia, poikilothermia, restlessness, weakness, confusion
+• Anorexia, constipation, dyspepsia, ileus, decreased gag reflex
+• Lens opacities (prolonged use)
+
+Uncommon
+• ECG changes
+• Photosensitivity
+• Pruritus
+• Diarrhea
+• Blood dyscrasia
+• Ejaculatory disorder
+• Galactorrhea
+
+Rare
+• Seizure
+• Cholestatic jaundice
+• Priapism
+
+Postmarketing Reports
+• Rhabdomyolysis
+• Falls
+• Hypersensitivity
+
+Warnings
+
+Black Box Warnings
+• Patients with dementia-related psychosis who are treated with antipsychotic drugs are at an increased risk for death, as shown in short-term controlled trials; deaths in trials appeared to be either cardiovascular (eg, heart failure, sudden death) or infectious (eg, pneumonia) in nature
+• Not approved for treatment of patients with dementia-related psychosis
+
+Contraindications
+• Documented hypersensitivity
+• Severe toxic central nervous system depression or comatose states from any cause
+• Parkinson disease
+• Dementia with Lewy bodies
+
+Cautions
+• Safety of prolonged administration of 100 mg/day PO not established
+• Avoid use in narrow-angle glaucoma, bone marrow suppression, and severe hypotension
+• FDA warning regarding off-label use for dementia in elderly
+• Cerebrovascular adverse reactions (eg, stroke, transient ischemic attack), including fatalities reported in elderly patients with dementia-related psychosis; mechanism for increased risk is not known; an increased risk cannot be excluded for antipsychotics; use with caution in patients with risk factors for cerebrovascular adverse reactions
+• Leukopenia/neutropenia and agranulocytosis reported; possible risk factors include preexisting low white blood cell (WBC) count and history of drug-induced leukopenia/neutropenia
+• If patient has history of clinically significant presence of either risk factor, monitor complete blood count (CBC) frequently during first few months of therapy; discontinue drug at first sign of clinically significant WBC decline <1000/mcL in absence of other causative factors, and continue monitoring WBC count until recovery
+• Severe neurotoxicity manifesting as rigidity or inability to walk or talk may occur in patients with thyrotoxicosis also receiving antipsychotics
+• If administering IV or IM, watch for hypotension; use with caution in diagnosed CNS depression, subcortical brain damage, or cardiac disease; if history of seizures, benefits must outweigh risks; significant increase in body temperature may indicate intolerance to antipsychotics (discontinue if this occurs)
+• Use caution in patients at risk of pneumonia (eg, Alzheimer's patients); antipsychotic use reported to be associated with esophageal dysmotility and aspiration
+• Extrapyramidal symptoms may occur including acute dystonic reactions, akathisia, tardive dyskinesia, and pseudoparkinsonism; some patients on maintenance treatment experience transient dyskinetic signs after abrupt withdrawal; in certain cases dyskinetic movements are indistinguishable from tardive dyskinesia except for duration; not known whether gradual withdrawal will reduce rate of occurrence of withdrawal emergent neurological signs but until further evidence becomes available, gradually withdraw therapy
+• Hyperprolactinemia may occur
+• Monitor for mental status changes, muscle rigidity, fever, and/or autonomic instability; neuroleptic malignant syndrome may occur
+• Motor instability, somnolence, and orthostatic hypotension reported, which may lead to falls and, consequently, fractures or other fall-related injuries; assess risk of falls when initiating treatment and recurrently for patients receiving repeated doses, particularly the elderly, with diseases, conditions, or medications that could exacerbate these effects
+• Association with increased risk of pigmentary retinopathy reported
+• Impairment of core body temperature regulation reported; use caution with activities that may increase body temperature including strenuous exercise, heat exposure, dehydration, and concomitant medications with anticholinergic effects
+• Caution in patients receiving anticoagulants; isolated instance of interference occurred with effects of one anticoagulant (phenindione)
+• When used to control mania in cyclic disorders, there may be rapid mood swing to depression
+• May cause anticholinergic effects; use caution in patients with xerostomia, urinary retention, BPH, decreased gastrointestinal motility, paralytic ileus, or visual problems
+• May cause CNS depression; may impair ability to operate heavy machinery or driving
+• Decreased sensation of thirst due to central inhibition may lead to dehydration, hemoconcentration and reduced pulmonary ventilation; a number of cases of bronchopneumonia, some fatal, reported; if signs and symptoms appear, especially in the elderly, institute remedial therapy promptly
+• Use caution in patients with severe cardiovascular disorders, because of possibility of transient hypotension and/or precipitation of anginal pain; should hypotension occur and a vasopressor be required, epinephrine should not be used since haloperidol may block its vasopressor activity and paradoxical further lowering of the blood pressure may occur; use metaraminol, phenylephrine or norepinephrine instead
+• Use caution in patients receiving anticonvulsant medications, with a history of seizures, or with EEG abnormalities; haloperidol may lower convulsive threshold; if indicated, adequate anticonvulsant therapy should be concomitantly maintained
+• Patients with Parkinson's disease or dementia with Lewy Bodies are reported to have increased sensitivity to antipsychotic medication; manifestations include severe extrapyramidal symptoms, confusion, sedation, and falls; therapy may impair antiparkinson effects of levodopa and other dopamine agonists
+
+Cardiovascular effects
+• Cases of sudden death, QTc interval-prolongation, and Torsades de Pointes reported in patients receiving therapy; higher than recommended doses of any formulation and intravenous administration appear to be associated with a higher risk of QTc interval-prolongation and Torsades de Pointes; also, a QTc interval that exceeds 500 msec is associated with an increased risk of Torsades de Pointes
+• Although cases reported even in absence of predisposing factors, particular caution is advised in treating patients with other QTc prolonging conditions (including electrolyte imbalance [particularly hypokalemia and hypomagnesemia], drugs known to prolong QTc, underlying cardiac abnormalities, hypothyroidism, and familial long QT-syndrome)
+• Haloperidol injection is not approved for intravenous administration; if administered intravenously, the ECG should be monitored for QTc prolongation and arrhythmias; tachycardia and hypotension (including orthostatic hypotension) have also been reported in occasional patients
+
+Pregnancy & Lactation
+
+Pregnancy
+• There are no well controlled studies in pregnant women; there are reports of cases of limb malformations observed following maternal use with drug along with other drugs which have suspected teratogenic potential during first trimester of pregnancy; causal relationships were not established in these cases; however, such experience does not exclude possibility of fetal damage due to therapy; drug should be used during pregnancy or in women likely to become pregnant only if benefit clearly justifies a potential risk to fetus; infants should not be nursed during drug treatment
+• Neonates exposed to antipsychotic drugs during third trimester of pregnancy are at risk for extrapyramidal and/or withdrawal symptoms following delivery; there have been reports of agitation, hypertonia, hypotonia, tremor, somnolence, respiratory distress, and feeding disorder in these neonates; these complications have varied in severity; while in some cases symptoms have been self-limited, in other cases neonates have required intensive care unit support and prolonged hospitalization
+
+Animal data
+• Rodents given 2- 20 times usual maximum human dose by oral or parenteral routes showed increase in incidence of resorption, reduced fertility, delayed delivery and pup mortality; no teratogenic effect reported in rats, rabbits or dogs at dosages within this range, but cleft palate has been observed in mice given 15 times usual maximum human dose
+• Rats or rabbits administered oral haloperidol at doses of 0.5 to 7.5 mg/kg, which are approximately 0.2 to 7 times maximum recommended human dose (MRHD) of 20 mg/day based on mg/m2 body surface area, showed increase in incidence of resorption, reduced fertility, delayed delivery and pup mortality; no fetal abnormalities were observed at these doses in rats or rabbits
+• Cleft palate observed in mice administered oral haloperidol at dose of 0.5 mg/kg, which is approximately 0.1 times MRHD based on mg/m2 body surface area
+
+Lactation
+• Drug is excreted in human breast milk; infants should not be nursed during drug treatment
+
+Pregnancy Categories
+• A: Generally acceptable. Controlled studies in pregnant women show no evidence of fetal risk.
+• B: May be acceptable. Either animal studies show no risk but human studies not available or animal studies showed minor risks and human studies done and showed no risk.
+• C: Use with caution if benefits outweigh risks. Animal studies show risk and human studies not available or neither animal nor human studies done.
+• D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive evidence of human fetal risk.
+• X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives exist.
+• NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+• Phenylbutylpiperadine; antagonizes dopamine D1 and D2 receptors in brain; depresses reticular activating system and inhibits release of hypothalamic and hypophyseal hormones
+
+Absorption
+• Bioavailability: 60-70%
+• Onset: 30-60 min (IM/IV)
+• Duration: 2-4 weeks (decanoate)
+• Peak plasma time: 2-6 hr (PO); 10-20 minutes (IM); 6-7 days (decanoate)
+
+Distribution
+• Protein bound: 90%
+• Vd: 8-18 L/kg
+
+Metabolism
+• Metabolized by hepatic P450 enzyme CYP3A4
+• Metabolites: Hydroxyhaloperidol
+• Enzymes inhibited: CYP2D6
+
+Elimination
+• Half-life: 18 hr; 3 weeks (decanoate)
+• Excretion: Urine (30%), feces (15%)
+
+Administration
+
+IV/IM Administration
+• Haloperidol lactate and haloperidol decanoate are both administered IM; haloperidol lactate has also been administered IV (off-label); haloperidol decanoate should not be administered IV

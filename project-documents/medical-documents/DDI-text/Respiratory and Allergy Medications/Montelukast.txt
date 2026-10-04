@@ -1,0 +1,1010 @@
+﻿6/22/26, 8:05 PM Singulair (montelukast) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+montelukast (Rx)
+Brand and Other Names: Singulair
+Classes: Leukotriene Receptor Antagonists
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+tablet
+
+10mg
+
+tablet, chewable
+
+4mg
+
+5mg
+
+oral granules
+
+4mg/packet
+
+Asthma
+
+Indicated for prophylaxis and chronic treatment of asthma
+
+10 mg (single 10-mg tablet) PO qPM
+
+Exercise-Induced Bronchospasm
+
+Indicated for prevention of exercise-induced bronchoconstriction (EIB)
+
+10 mg PO 2 hr before exercise; do not take additional dose within 24 hours
+
+If taking montelukast for another indication, do not take additional dose to prevent
+exercise-induced bronchospasm (EIB)
+
+https://reference.medscape.com/drug/singulair-montelukast-343440 1/18
+
+
+
+6/22/26, 8:05 PM Singulair (montelukast) dosing, indications, interactions, adverse effects, and more
+
+Allergic or Perennial Rhinitis
+
+Indicated for symptomatic relief of seasonal or perennial allergic rhinitis
+
+10 mg (single 10-mg tablet) PO qDay
+
+Dosage Modifications
+
+Renal impairment
+
+Since montelukast and its metabolites are not excreted in the urine, the
+pharmacokinetics of montelukast were not evaluated
+
+No dosage adjustment recommended in patients with renal insufficiency
+
+Hepatic impairment
+
+Mild-to-moderate: No dosage adjustment necessary
+
+Severe: Not evaluated
+
+PEDIATRIC
+Dosage Forms & Strengths
+
+tablet
+
+10mg
+
+tablet, chewable
+
+4mg
+
+5mg
+
+oral granules
+
+4mg/packet
+
+Asthma
+
+Prophylaxis and maintenance treatment in patients aged ≥12 months
+
+<12 months: Safety and efficacy not established
+
+12-24 months: 4 mg (granules) PO once daily in evening
+
+2-6 years: 4 mg (chewable tablet or granules) PO once daily in evening
+
+https://reference.medscape.com/drug/singulair-montelukast-343440 2/18
+
+
+
+6/22/26, 8:05 PM Singulair (montelukast) dosing, indications, interactions, adverse effects, and more
+
+6-15 years: 5 mg (chewable tablet) PO once daily in evening
+
+>15 years: 10 mg (conventional tablet) PO once daily in evening
+
+Exercise-Induced Bronchospasm
+
+Prophylaxis
+
+6-15 years: 5 mg (chewable tablet) PO 2 hours before exercise; do not take additional
+dose within 24 hours
+
+>15 years: 10 mg PO 2 hours before exercise; do not take additional dose within 24
+hours
+
+If taking drug for another indication, do not take additional dose to prevent EIB
+
+Perennial Allergic Rhinitis
+
+<6 months: Safety and efficacy not established
+
+6-24 months: 4 mg (granules) PO once daily
+
+2-6 years: 4 mg (chewable tablet or granules) PO once daily
+
+6-15 years: 5 mg (chewable tablet) PO once daily
+
+>15 years: 10 mg (conventional tablet) PO once daily
+
+Seasonal Allergic Rhinitis
+
+<2 years: Safety and efficacy not established
+
+2-6 years: 5 mg (chewable tablet) or 4 mg (granules) PO once daily
+
+6-15 years: 5 mg (chewable tablet) PO once daily
+
+>15 years: 10 mg (conventional tablet) PO once daily
+
+Dosage Modifications
+
+Renal impairment
+
+Since montelukast and its metabolites are not excreted in the urine, the
+pharmacokinetics of montelukast were not evaluated
+
+No dosage adjustment recommended in patients with renal insufficiency
+
+Hepatic impairment
+
+Mild-to-moderate: No dosage adjustment necessary
+
+Severe: Not evaluated
+
+https://reference.medscape.com/drug/singulair-montelukast-343440 3/18
+
+
+
+6/22/26, 8:05 PM Singulair (montelukast) dosing, indications, interactions, adverse effects, and more
+
+Interactions
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and
+montelukast
+No Interactions Found
+Interactions Found
+Contraindicated
+
+Serious
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+Contraindicated (0)
+
+Serious (4)
+
+apalutamide
+apalutamide will decrease the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+Coadministration of apalutamide, a strong CYP3A4 inducer, with drugs that are
+CYP3A4 substrates can result in lower exposure to these medications. Avoid or
+substitute another drug for these medications when possible. Evaluate for loss of
+therapeutic effect if medication must be coadministered. Adjust dose according to
+prescribing information if needed.
+
+idelalisib
+idelalisib will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+Idelalisib is a strong CYP3A inhibitor; avoid coadministration with sensitive CYP3A
+substrates
+
+ivosidenib
+ivosidenib will decrease the level or effect of montelukast by affecting hepatic
+enzyme CYP2C9/10 metabolism. Avoid or Use Alternate Drug. Avoid
+coadministration of sensitive CYP2C9 substrates with ivosidenib or replace with
+alternate therapies. If coadministration is unavoidable, monitor patients for loss of
+therapeutic effect of these drugs.
+
+tucatinib
+tucatinib will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid
+concomitant use of tucatinib with CYP3A substrates, where minimal concentration
+changes may lead to serious or life-threatening toxicities. If unavoidable, reduce
+CYP3A substrate dose according to product labeling.
+
+https://reference.medscape.com/drug/singulair-montelukast-343440 4/18
+
+
+
+6/22/26, 8:05 PM Singulair (montelukast) dosing, indications, interactions, adverse effects, and more
+
+Monitor Closely (38)
+
+alpelisib
+alpelisib will decrease the level or effect of montelukast by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely.
+
+apalutamide
+apalutamide will decrease the level or effect of montelukast by affecting hepatic
+enzyme CYP2C9/10 metabolism. Use Caution/Monitor. Coadministration of
+apalutamide, a weak CYP2C9 inducer, with drugs that are CYP2C9 substrates can
+result in lower exposure to these medications. Evaluate for loss of therapeutic effect
+if medication must be coadministered.
+
+cannabidiol
+cannabidiol will increase the level or effect of montelukast by decreasing
+metabolism. Modify Therapy/Monitor Closely. Cannabidiol may potentially inhibit
+CYP2C9 activity. Consider reducing the dose when concomitantly using CYP2C9
+substrates.
+
+carbamazepine
+carbamazepine will decrease the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+cenobamate
+cenobamate will decrease the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Increase dose of CYP3A4 substrate, as needed, when coadministered with
+cenobamate.
+
+chloramphenicol
+chloramphenicol will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+clarithromycin
+clarithromycin will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+crofelemer
+crofelemer increases levels of montelukast by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Crofelemer has the potential to inhibit
+CYP3A4 at concentrations expected in the gut; unlikely to inhibit systemically
+because minimally absorbed.
+
+dabrafenib
+dabrafenib will decrease the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+
+deferasirox
+deferasirox will decrease the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+elagolix
+
+https://reference.medscape.com/drug/singulair-montelukast-343440 5/18
+
+
+
+6/22/26, 8:05 PM Singulair (montelukast) dosing, indications, interactions, adverse effects, and more
+
+elagolix decreases levels of montelukast by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Modify Therapy/Monitor Closely. Elagolix is a weak-to-
+moderate CYP3A4 inducer. Monitor CYP3A substrates if coadministered. Consider
+increasing CYP3A substrate dose if needed.
+
+elvitegravir/cobicistat/emtricitabine/tenofovir DF
+elvitegravir/cobicistat/emtricitabine/tenofovir DF increases levels of montelukast by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor
+Closely. Cobicistat is a CYP3A4 inhibitor; contraindicated with CYP3A4 substrates
+for which elevated plasma concentrations are associated with serious and/or life-
+threatening events.
+
+elvitegravir/cobicistat/emtricitabine/tenofovir DF decreases levels of montelukast by
+affecting hepatic enzyme CYP2C9/10 metabolism. Use Caution/Monitor. Elvitegravir
+is a moderate CYP2C9 inducer.
+
+enzalutamide
+enzalutamide will decrease the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+erythromycin base
+erythromycin base will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+erythromycin ethylsuccinate
+erythromycin ethylsuccinate will increase the level or effect of montelukast by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+erythromycin lactobionate
+erythromycin lactobionate will increase the level or effect of montelukast by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+erythromycin stearate
+erythromycin stearate will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+fedratinib
+fedratinib will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Adjust dose
+of drugs that are CYP3A4 substrates as necessary.
+
+gemfibrozil
+gemfibrozil will increase the level or effect of montelukast by decreasing
+metabolism. Use Caution/Monitor.
+
+istradefylline
+istradefylline will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Istradefylline
+40 mg/day increased peak levels and AUC of CYP3A4 substrates in clinical trials.
+This effect was not observed with istradefylline 20 mg/day. Consider dose reduction
+of sensitive CYP3A4 substrates.
+
+itraconazole
+
+https://reference.medscape.com/drug/singulair-montelukast-343440 6/18
+
+
+
+6/22/26, 8:05 PM Singulair (montelukast) dosing, indications, interactions, adverse effects, and more
+
+itraconazole will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+ketoconazole
+ketoconazole will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+lenacapavir
+lenacapavir will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Lencapavir
+may increase CYP3A4 substrates initiated within 9 months after last SC dose of
+lenacapavir, which may increase potential risk of adverse reactions of CYP3A4
+substrates.
+
+letermovir
+letermovir increases levels of montelukast by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+
+levoketoconazole
+levoketoconazole will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+lumacaftor/ivacaftor
+lumacaftor/ivacaftor, montelukast. affecting hepatic enzyme CYP2C9/10
+metabolism. Use Caution/Monitor. In vitro studies suggest that lumacaftor may
+induce and ivacaftor may inhibit CYP2C9 substrates. .
+
+lumacaftor/ivacaftor decreases levels of montelukast by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor. No dose adjustment for
+montelukast is recommended.
+
+mitapivat
+mitapivat decreases levels of montelukast by affecting hepatic enzyme CYP2C9/10
+metabolism. Use Caution/Monitor. Monitor patients for loss of therapeutic effect if
+taking sensitive CYP2C9/10 substrates.
+
+mitotane
+mitotane decreases levels of montelukast by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Mitotane is a strong inducer of
+cytochrome P-4503A4; monitor when coadministered with CYP3A4 substrates for
+possible dosage adjustments.
+
+nefazodone
+nefazodone will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+nitisinone
+nitisinone will increase the level or effect of montelukast by affecting hepatic
+enzyme CYP2C9/10 metabolism. Use Caution/Monitor. Nitisinone inhibits CYP2C9.
+Caution if CYP2C9 substrate coadministered, particularly those with a narrow
+therapeutic index.
+
+peginterferon alfa 2b
+
+https://reference.medscape.com/drug/singulair-montelukast-343440 7/18
+
+
+
+6/22/26, 8:05 PM Singulair (montelukast) dosing, indications, interactions, adverse effects, and more
+
+peginterferon alfa 2b decreases levels of montelukast by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor. When patients are administered
+peginterferon alpha-2b with CYP2C9 substrates, the therapeutic effect of these
+drugs may be altered. .
+
+rifabutin
+rifabutin will decrease the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+rifampin
+rifampin will decrease the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+sparsentan
+sparsentan will decrease the level or effect of montelukast by affecting hepatic
+enzyme CYP2C9/10 metabolism. Use Caution/Monitor. Sparsentan (a CYP2C9
+inducer) decreases exposure of CYP2C9 substrates and reduces efficacy related to
+these substrates.
+
+St John's Wort
+St John's Wort will decrease the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+stiripentol
+stiripentol, montelukast. affecting hepatic/intestinal enzyme CYP3A4 metabolism.
+Modify Therapy/Monitor Closely. Stiripentol is a CYP3A4 inhibitor and inducer.
+Monitor CYP3A4 substrates coadministered with stiripentol for increased or
+decreased effects. CYP3A4 substrates may require dosage adjustment.
+
+tecovirimat
+tecovirimat will decrease the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Tecovirimat is
+a weak CYP3A4 inducer. Monitor sensitive CYP3A4 substrates for effectiveness if
+coadministered.
+
+vanzacaftor/tezacaftor/deutivacaftor
+vanzacaftor/tezacaftor/deutivacaftor increases levels of montelukast by affecting
+hepatic enzyme CYP2C9/10 metabolism. Use Caution/Monitor. Deutivacaftor
+inhibits CYP2C9 in vitro. Caution advised if coadministered with CYP2C9
+substrates.
+
+Minor (58)
+
+acetazolamide
+acetazolamide will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+anastrozole
+anastrozole will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+aprepitant
+
+https://reference.medscape.com/drug/singulair-montelukast-343440 8/18
+
+
+
+6/22/26, 8:05 PM Singulair (montelukast) dosing, indications, interactions, adverse effects, and more
+
+aprepitant will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+armodafinil
+armodafinil will decrease the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+artemether/lumefantrine
+artemether/lumefantrine will decrease the level or effect of montelukast by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance
+Unknown.
+
+atazanavir
+atazanavir will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+bosentan
+bosentan will decrease the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+budesonide
+budesonide will decrease the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+butalbital
+butalbital will decrease the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+conivaptan
+conivaptan will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+cortisone
+cortisone will decrease the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+cyclophosphamide
+cyclophosphamide will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+cyclosporine
+cyclosporine will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+danazol
+danazol will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+darifenacin
+darifenacin will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+darunavir
+
+https://reference.medscape.com/drug/singulair-montelukast-343440 9/18
+
+
+
+6/22/26, 8:05 PM Singulair (montelukast) dosing, indications, interactions, adverse effects, and more
+
+darunavir will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+dasatinib
+dasatinib will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+dexamethasone
+dexamethasone will decrease the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+DHEA, herbal
+DHEA, herbal will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+dronedarone
+dronedarone will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+drospirenone
+drospirenone will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+efavirenz
+efavirenz will decrease the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+eslicarbazepine acetate
+eslicarbazepine acetate will decrease the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+etravirine
+etravirine will decrease the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+fluconazole
+fluconazole will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+fludrocortisone
+fludrocortisone will decrease the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+fosamprenavir
+fosamprenavir will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+fosaprepitant
+fosaprepitant will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+fosphenytoin
+
+https://reference.medscape.com/drug/singulair-montelukast-343440 10/18
+
+
+
+6/22/26, 8:05 PM Singulair (montelukast) dosing, indications, interactions, adverse effects, and more
+
+fosphenytoin will decrease the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+grapefruit
+grapefruit will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+griseofulvin
+griseofulvin will decrease the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+hydrocortisone
+hydrocortisone will decrease the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+isoniazid
+isoniazid will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+lapatinib
+lapatinib will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+larotrectinib
+larotrectinib will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+lumefantrine
+lumefantrine will decrease the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+marijuana
+marijuana will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+methylprednisolone
+methylprednisolone will decrease the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+metronidazole
+metronidazole will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+miconazole vaginal
+miconazole vaginal will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+nelfinavir
+nelfinavir will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+nevirapine
+
+https://reference.medscape.com/drug/singulair-montelukast-343440 11/18
+
+
+
+6/22/26, 8:05 PM Singulair (montelukast) dosing, indications, interactions, adverse effects, and more
+
+nevirapine will decrease the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+nifedipine
+nifedipine will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+nilotinib
+nilotinib will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+pentobarbital
+pentobarbital will decrease the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+phenobarbital
+phenobarbital will decrease the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+phenytoin
+phenytoin will decrease the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+posaconazole
+posaconazole will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+prednisone
+prednisone will decrease the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+primidone
+primidone will decrease the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+ribociclib
+ribociclib will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+rifapentine
+rifapentine will decrease the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+ritonavir
+ritonavir will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+rufinamide
+rufinamide will decrease the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+topiramate
+
+https://reference.medscape.com/drug/singulair-montelukast-343440 12/18
+
+
+
+6/22/26, 8:05 PM Singulair (montelukast) dosing, indications, interactions, adverse effects, and more
+
+topiramate will decrease the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+verapamil
+verapamil will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+voriconazole
+voriconazole will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+zafirlukast
+zafirlukast will increase the level or effect of montelukast by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+Adverse Effects
+
+Some adverse drug reactions vary by age group
+
+>10%
+
+Headache (18.4%; similar to placebo)
+
+1-10%
+
+Abdominal pain (≥2%)
+
+Eczema (≥2%)
+
+Influenza (≥2%)
+
+Laryngitis (≥2%)
+
+Pharyngitis (≥2%)
+
+Viral infection (≥2%)
+
+Wheezing (≥2%)
+
+Dental pain (2%)
+
+Dizziness (2%)
+
+Dyspepsia (2%)
+
+Elevated liver function tests (2%)
+
+Fever (2%)
+
+Gastroenteritis (2%)
+
+Nasal congestion (2%)
+
+Otitis (2%)
+
+https://reference.medscape.com/drug/singulair-montelukast-343440 13/18
+
+
+
+6/22/26, 8:05 PM Singulair (montelukast) dosing, indications, interactions, adverse effects, and more
+
+Rash (2%)
+
+Urticaria (2%)
+
+Bronchitis (≥1%)
+
+Cough (≥1%)
+
+Sinusitis (≥1%)
+
+Upper respiratory tract infection (≥1%)
+
+<1%
+
+Allergic granulomatous angiitis (Churg-Strauss syndrome; rare)
+
+Cholestatic hepatitis (rare)
+
+Aggressive behavior, altered behavior, suicidal thoughts
+
+Postmarketing Reports
+
+Hematologic: Increased bleeding tendency, thrombocytopenia
+
+Immunologic: Hypersensitivity reactions (eg, anaphylaxis, hepatic eosinophilic
+infiltration)
+
+Psychiatric: Agitation, including aggressive behavior or hostility, anxiousness, depression,
+disorientation, dream abnormalities, hallucinations, insomnia, tic, irritability, restlessness,
+somnambulism, suicidal thinking and behavior (including suicide), tremor, obsessive
+compulsive disorders
+
+Neurologic: Drowsiness, paresthesia or hypesthesia, seizures, dysphemia (stuttering)
+
+Cardiac: Palpitations
+
+Respiratory, thoracic, mediastinal: Epistaxis, pulmonary eosinophilia
+
+Gastrointestinal: Diarrhea, dyspepsia, nausea, pancreatitis, vomiting
+
+Hepatobiliary: Cases of cholestatic hepatitis, hepatocellular liver injury, and mixed-
+pattern liver injury have been reported, mostly occurring in combination with other
+confounding factors (eg, use of other medications, administration to patients who had
+underlying potential for liver disease [eg, alcohol use or other forms of hepatitis])
+
+Dermatologic: Angioedema, bruising, erythema multiforme, erythema nodosum, pruritus,
+urticaria
+
+Musculoskeletal: Arthralgia, myalgia (including muscle cramps)
+
+General: Edema
+
+Warnings
+
+Black Box Warnings
+
+https://reference.medscape.com/drug/singulair-montelukast-343440 14/18
+
+
+
+6/22/26, 8:05 PM Singulair (montelukast) dosing, indications, interactions, adverse effects, and more
+
+FDA announcement March 4, 2020
+
+Serious neuropsychiatric events that may include suicidal thoughts or actions have
+been reported in patients taking montelukast
+
+Only use montelukast for allergic rhinitis in patients who have an inadequate
+response or intolerance to alternative therapies
+
+Consider risks and benefits when prescribing or continuing treatment
+
+Advise all patients of the risk of neuropsychiatric events when prescribing
+
+Discontinue and contact a health care professional immediately if changes in
+behavior or new neuropsychiatric symptoms, suicidal thoughts, or behavior occur
+
+Monitor for neuropsychiatric symptoms
+
+Events have occurred in patients with and without pre-existing psychiatric disease
+
+Contraindications
+
+Hypersensitivity
+
+Cautions
+
+Not to be given for acute asthma attacks, including status asthmaticus
+
+Advise patients to have appropriate rescue medication available
+
+Inhaled corticosteroid may be reduced gradually; do not abruptly substitute montelukast
+for inhaled or oral corticosteroids
+
+Patients with known aspirin sensitivity should continue to avoid aspirin or nonsteroidal
+anti-inflammatory drugs (NSAIDs) while taking montelukast; not to be given for
+treatment of bronchoconstriction resulting from aspirin or NSAID intake
+
+Neuropsychiatric events reported, including agitation, aggressive behavior or hostility,
+anxiousness, depression, disorientation, disturbance in attention, dream abnormalities,
+hallucinations, insomnia, irritability, memory impairment, restlessness, somnambulism,
+suicidal thinking and behavior (including suicide), tic, and tremor; prescribers should
+carefully evaluate the risks and benefits of continuing treatment if such events occur
+
+Systemic eosinophilia reported, sometimes presenting with clinical features of vasculitis
+consistent with Churg-Strauss syndrome; these events are usually (but not always)
+associated with tapering of PO corticosteroid therapy
+
+Use with caution in phenylketonuria; 4-mg and 5-mg chewable tablets contain
+phenylalanine; before prescribing to a patient with PKU, consider combined daily amount
+of phenylalanine from all sources, including amount in drug
+
+Pregnancy & Lactation
+
+Pregnancy
+
+Available data from published prospective and retrospective cohort studies over decades
+in pregnant women have not established a drug-associated risk of major birth defects
+
+https://reference.medscape.com/drug/singulair-montelukast-343440 15/18
+
+
+
+6/22/26, 8:05 PM Singulair (montelukast) dosing, indications, interactions, adverse effects, and more
+
+Animal data
+
+In animal reproduction studies, no adverse developmental effects were observed
+with oral administration to pregnant rats and rabbits during organogenesis at doses
+approximately 100 and 110 times, respectively, the maximum recommended
+human daily oral dose (MRHDOD) based on AUCs
+
+Poorly or moderately controlled asthma in pregnancy increases maternal risk of
+perinatal adverse outcomes such as preeclampsia and infant prematurity, low birth
+weight, and small for gestational age
+
+Lactation
+
+A published clinical lactation study reports presence of montelukast in human milk; data
+available on effects of drug on infants, either directly or through breast milk, do not
+suggest a significant risk of adverse events from exposure; effects of drug on milk
+production are unknown; developmental and health benefits of breastfeeding should be
+considered along with mother’s clinical need for therapy and any potential adverse
+effects on breastfed infant from treatment or from underlying maternal condition
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+Blocks binding of leukotriene D4 to its receptor; alters pathophysiology associated with
+inflammatory process that contributes to signs and symptoms of asthma
+
+Absorption
+
+Bioavailability: 64% (mean)
+
+Peak plasma time: Tablet, 3-4 hr; chewable tablet, 2-2.5 hr; granules, 1-3 hr
+
+Distribution
+
+https://reference.medscape.com/drug/singulair-montelukast-343440 16/18
+
+
+
+6/22/26, 8:05 PM Singulair (montelukast) dosing, indications, interactions, adverse effects, and more
+
+Protein bound: >99%
+
+Vd: 8-11 L
+
+Metabolism
+
+Metabolized by CYP3A4 and CYP2C9
+
+Elimination
+
+Half-life: 2.7-5.5 hr
+
+Clearance: 45 mL/min
+
+Excretion: Feces (86%), urine (0.2%)
+
+Administration
+
+Oral Administration
+
+Take with or without food
+
+Patients with both asthma and allergic rhinitis should take only 1 dose qPM
+
+Asthma or EIB: Administer in the evening
+
+Allergic rhinitis: Individualize administration time to suit patient’s needs
+
+Oral granules
+
+Administer either directly in the mouth, dissolve in 1 teaspoonful (5 mL) of cold or
+room temperature baby formula or breast milk, or mix with a spoonful of cold or
+room temperature soft foods
+
+Based on stability studies, only applesauce, carrots, rice, or ice cream should be
+used
+
+Do not open packet until ready to use
+
+After opening, the full dose (with or without mixing with baby formula, breast milk,
+or food) must be administered within 15 min
+
+If mixed with baby formula, breast milk, or food, do not store oral granules for
+future use; discard any unused portion
+
+Oral granules are not intended to be dissolved in any liquid other than baby formula
+or breast milk for administration; however, liquids may be taken subsequent to
+administration
+
+Storage
+
+All formulations: Store at 25ºC (77°ºF), excursions permitted to 15-30ºC (59-86ºF)
+
+Protect from moisture and light
+
+Store in original package
+
+https://reference.medscape.com/drug/singulair-montelukast-343440 17/18
+
+
+
+6/22/26, 8:05 PM Singulair (montelukast) dosing, indications, interactions, adverse effects, and more
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/singulair-montelukast-343440 18/18

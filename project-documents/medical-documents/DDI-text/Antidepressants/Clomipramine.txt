@@ -1,0 +1,4569 @@
+﻿6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+clomipramine (Rx)
+Brand and Other Names: Anafranil
+Classes: Antidepressants, TCAs
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+capsule
+
+25mg
+
+50mg
+
+75mg
+
+Obsessive-Compulsive Disorder
+
+25 mg PO qDay initially
+
+Gradually increase to 100 mg/day (divided with meals) over 2 weeks, THEN
+
+May increase further to 250 mg/day maximum; may give as single daily dose qHS once
+tolerated
+
+Other Indications & Uses
+
+Off-label: premature ejaculation
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 1/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+PEDIATRIC
+Dosage Forms & Strengths
+
+capsule
+
+25mg
+
+50mg
+
+75mg
+
+Obsessive-Compulsive Disorder
+
+<10 years: Safety and efficacy not established
+
+≥10 years: 25 mg PO qDay initially
+
+Gradually increase to maximum 3 mg/kg/day or 100 mg/day, whichever is less 
+
+May further increase to maximum 3 mg/kg/day or 200 mg/day, whichever is less; may
+give as single dose qHS once tolerated
+
+GERIATRIC
+Avoid; strong anticholinergic and sedative effects; may cause orthostatic hypotension
+(Beers criteria)
+
+Consider alternatives; if must use, initiate with lower initial dose
+
+25 mg PO qDay initially
+
+Gradually increase to 100 mg/day (divided with meals) over 2 weeks, THEN
+
+May increase further to 250 mg/day maximum; may give as single daily dose qHS once
+tolerated
+
+Interactions
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and
+clomipramine
+No Interactions Found
+Interactions Found
+Contraindicated
+
+Serious
+
+Significant - Monitor Closely
+
+Minor
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 2/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+All Interactions Sort By: Severity
+Contraindicated (21)
+
+artemether/lumefantrine
+artemether/lumefantrine will increase the level or effect of clomipramine by
+affecting hepatic enzyme CYP2D6 metabolism. Contraindicated.
+
+disopyramide
+clomipramine and disopyramide both increase QTc interval. Contraindicated.
+
+dronedarone
+dronedarone will increase the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+
+eliglustat
+clomipramine increases levels of eliglustat by affecting hepatic enzyme CYP2D6
+metabolism. Contraindicated. If coadministered with strong or moderate CYP2D6
+inhibitors, reduce eliglustat dose from 84 mg BID to 84 mg once daily in extensive
+and intermediate metabolizers; eliglustat is contraindiated if strong or moderate
+CYP2D6 inhibitors are given concomitantly with strong or moderate CYP3A
+inhibitors.
+
+ibutilide
+clomipramine and ibutilide both increase QTc interval. Contraindicated.
+
+indapamide
+clomipramine and indapamide both increase QTc interval. Contraindicated.
+
+iobenguane I 123
+clomipramine decreases effects of iobenguane I 123 by pharmacodynamic
+antagonism. Contraindicated. If clinically appropriate, discontinue drugs that
+decrease uptake of NE for at least 5 half-lives; may cause false-negative imaging
+results.
+
+isocarboxazid
+isocarboxazid and clomipramine both increase serotonin levels. Contraindicated.
+
+lumefantrine
+lumefantrine will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Contraindicated.
+
+mavorixafor
+mavorixafor will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Contraindicated. Mavorixafor (a strong CYP2D6
+inhibitor) is contraindicated with drugs that are highly dependent on CYP2D6 for
+clearance.
+
+pentamidine
+clomipramine and pentamidine both increase QTc interval. Contraindicated.
+
+phenelzine
+phenelzine and clomipramine both increase serotonin levels. Contraindicated.
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 3/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+pimozide
+clomipramine and pimozide both increase QTc interval. Contraindicated.
+
+procainamide
+clomipramine and procainamide both increase QTc interval. Contraindicated.
+
+procarbazine
+procarbazine and clomipramine both increase serotonin levels. Contraindicated.
+Combination is contraindicated within 2 weeks of MAOI use.
+
+quinidine
+quinidine and clomipramine both increase QTc interval. Contraindicated.
+
+safinamide
+clomipramine, safinamide. Either increases toxicity of the other by serotonin levels.
+Contraindicated. Concomitant use could result in life-threatening serotonin
+syndrome.
+
+selegiline
+selegiline and clomipramine both increase serotonin levels. Contraindicated.
+Concurrent use or use within 14 days of selegiline treatment is contraindicated
+
+sotalol
+clomipramine and sotalol both increase QTc interval. Contraindicated.
+
+thioridazine
+thioridazine will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Contraindicated.
+
+tranylcypromine
+tranylcypromine and clomipramine both increase serotonin levels. Contraindicated.
+
+Serious (161)
+
+adagrasib
+adagrasib, clomipramine. Either increases effects of the other by QTc interval. Avoid
+or Use Alternate Drug. Each drug prolongs the QTc interval, which may increased
+the risk of Torsade de pointes, other serious arryhthmias, and sudden death. If
+coadministration unavoidable, more frequent monitoring is recommended for such
+patients.
+
+albuterol
+clomipramine increases toxicity of albuterol by sympathetic (adrenergic) effects,
+including increased blood pressure and heart rate. Avoid or Use Alternate Drug.
+Concomitant use may increase risk of cardiovascular adverse effects. Use
+alternative therapy; if concomitant use is unavoidable, monitor BP and HR during
+and for 2 weeks after discontinuing clomipramine.
+
+albuterol inhaled
+clomipramine increases toxicity of albuterol inhaled by sympathetic (adrenergic)
+effects, including increased blood pressure and heart rate. Avoid or Use Alternate
+Drug. Concomitant use may increase risk of cardiovascular adverse effects. Use
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 4/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+alternative therapy; if concomitant use is unavoidable, monitor BP and HR during
+and for 2 weeks after discontinuing clomipramine.
+
+amiodarone
+clomipramine and amiodarone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+amitriptyline
+amitriptyline and clomipramine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+amitriptyline and clomipramine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+amoxapine
+amoxapine and clomipramine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+amoxapine and clomipramine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+amphetamine
+clomipramine, amphetamine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+apalutamide
+apalutamide will decrease the level or effect of clomipramine by affecting hepatic
+enzyme CYP2C19 metabolism. Avoid or Use Alternate Drug. Coadministration of
+apalutamide, a strong CYP2C19 inducer, with drugs that are CYP2C19 substrates
+can result in lower exposure to these medications. Avoid or substitute another drug
+for these medications when possible. Evaluate for loss of therapeutic effect if
+medication must be coadministered.
+
+arformoterol
+clomipramine increases toxicity of arformoterol by sympathetic (adrenergic) effects,
+including increased blood pressure and heart rate. Avoid or Use Alternate Drug.
+Concomitant use may increase risk of cardiovascular adverse effects. Use
+alternative therapy; if concomitant use is unavoidable, monitor BP and HR during
+and for 2 weeks after discontinuing clomipramine.
+
+arsenic trioxide
+clomipramine and arsenic trioxide both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+artemether/lumefantrine
+clomipramine and artemether/lumefantrine both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+benzhydrocodone/acetaminophen
+benzhydrocodone/acetaminophen and clomipramine both increase sedation. Avoid
+or Use Alternate Drug. Limit use to patients for whom alternative treatment options
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 5/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+are inadequate
+
+benzphetamine
+clomipramine, benzphetamine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+buprenorphine
+buprenorphine and clomipramine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+buprenorphine buccal
+buprenorphine buccal and clomipramine both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+buprenorphine subdermal implant
+buprenorphine subdermal implant and clomipramine both increase QTc interval.
+Avoid or Use Alternate Drug.
+
+buprenorphine subdermal implant and clomipramine both increase sedation. Avoid
+or Use Alternate Drug. Limit use to patients for whom alternative treatment options
+are inadequate
+
+buprenorphine transdermal
+buprenorphine transdermal and clomipramine both increase QTc interval. Avoid or
+Use Alternate Drug.
+
+buprenorphine transdermal and clomipramine both increase sedation. Avoid or Use
+Alternate Drug. Limit use to patients for whom alternative treatment options are
+inadequate
+
+buprenorphine, long-acting injection
+buprenorphine, long-acting injection and clomipramine both increase QTc interval.
+Avoid or Use Alternate Drug.
+
+buprenorphine, long-acting injection and clomipramine both increase sedation.
+Avoid or Use Alternate Drug. Limit use to patients for whom alternative treatment
+options are inadequate
+
+bupropion
+bupropion will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+buspirone
+clomipramine and buspirone both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+calcium/magnesium/potassium/sodium oxybates
+clomipramine, calcium/magnesium/potassium/sodium oxybates. Either increases
+effects of the other by pharmacodynamic synergism. Avoid or Use Alternate Drug.
+Profound sedation, respiratory depression, coma, and death may result if
+coadministered. Reserve concomitant prescribing of these drugs in patients for
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 6/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+whom other treatment options are inadequate. Limit dosages and durations to the
+minimum required. Monitor closely for signs of respiratory depression and sedation.
+
+chlorpromazine
+chlorpromazine and clomipramine both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+ciprofloxacin
+ciprofloxacin will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP1A2 metabolism. Avoid or Use Alternate Drug. Concurrent use of
+drugs that can cause QT interval prolongation may result in additive effects and
+increased risk of ventricular arrhythmias. It is important to monitor therapy carefully.
+
+citalopram
+citalopram and clomipramine both increase serotonin levels. Avoid or Use Alternate
+Drug. Citalopram may increase TCA levels. Increased risk of serotonin syndrome or
+neuroleptic malignant syndrome. Potential risk for QT prolongation. ECG monitoring
+is recommended.
+
+citalopram and clomipramine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+clarithromycin
+clarithromycin will increase the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+clomipramine and clarithromycin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+clonidine
+clomipramine decreases effects of clonidine by Other (see comment). Avoid or Use
+Alternate Drug. Comment: Inhibition of uptake by adrenergic neurons.
+
+cyclobenzaprine
+clomipramine and cyclobenzaprine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+dacomitinib
+dacomitinib will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug. Avoid use with
+CYP2D6 substrates where minimal increases in concentration of the CYP2D6
+substrate may lead to serious or life-threatening toxicities.
+
+dasatinib
+dasatinib will increase the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+degarelix
+degarelix and clomipramine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+desipramine
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 7/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+clomipramine and desipramine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+clomipramine and desipramine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+desvenlafaxine
+clomipramine and desvenlafaxine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+dexfenfluramine
+clomipramine, dexfenfluramine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+dexmethylphenidate
+clomipramine, dexmethylphenidate. Other (see comment). Avoid or Use Alternate
+Drug. Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+dextroamphetamine
+clomipramine, dextroamphetamine. Other (see comment). Avoid or Use Alternate
+Drug. Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+dextromethorphan
+clomipramine and dextromethorphan both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+diethylpropion
+clomipramine, diethylpropion. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+dobutamine
+clomipramine, dobutamine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+dofetilide
+clomipramine and dofetilide both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+dofetilide increases toxicity of clomipramine by QTc interval. Avoid or Use Alternate
+Drug.
+
+dolasetron
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 8/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+dolasetron, clomipramine. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+
+dopamine
+clomipramine, dopamine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+dopexamine
+clomipramine, dopexamine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+dosulepin
+clomipramine and dosulepin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+clomipramine and dosulepin both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+doxepin
+clomipramine and doxepin both increase QTc interval. Avoid or Use Alternate Drug.
+
+clomipramine and doxepin both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+dronedarone
+clomipramine and dronedarone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+droperidol
+clomipramine and droperidol both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+duloxetine
+duloxetine will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+duloxetine and clomipramine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+encorafenib
+encorafenib and clomipramine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+ephedrine
+clomipramine, ephedrine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 9/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+epinephrine
+epinephrine and clomipramine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+clomipramine, epinephrine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+epinephrine racemic
+epinephrine racemic and clomipramine both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+clomipramine, epinephrine racemic. Other (see comment). Avoid or Use Alternate
+Drug. Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+erythromycin base
+erythromycin base will increase the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+clomipramine and erythromycin base both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+erythromycin ethylsuccinate
+erythromycin ethylsuccinate will increase the level or effect of clomipramine by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate
+Drug.
+
+clomipramine and erythromycin ethylsuccinate both increase QTc interval. Avoid or
+Use Alternate Drug.
+
+erythromycin lactobionate
+erythromycin lactobionate will increase the level or effect of clomipramine by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate
+Drug.
+
+clomipramine and erythromycin lactobionate both increase QTc interval. Avoid or
+Use Alternate Drug.
+
+erythromycin stearate
+erythromycin stearate will increase the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+clomipramine and erythromycin stearate both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+escitalopram
+escitalopram and clomipramine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+fenfluramine
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 10/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+clomipramine, fenfluramine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+fentanyl
+fentanyl and clomipramine both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+fentanyl intranasal
+fentanyl intranasal and clomipramine both increase sedation. Avoid or Use
+Alternate Drug. Limit use to patients for whom alternative treatment options are
+inadequate
+
+fentanyl iontophoretic transdermal system
+fentanyl iontophoretic transdermal system and clomipramine both increase
+sedation. Avoid or Use Alternate Drug. Limit use to patients for whom alternative
+treatment options are inadequate
+
+fentanyl transdermal
+fentanyl transdermal and clomipramine both increase sedation. Avoid or Use
+Alternate Drug. Limit use to patients for whom alternative treatment options are
+inadequate
+
+fentanyl transmucosal
+fentanyl transmucosal and clomipramine both increase sedation. Avoid or Use
+Alternate Drug. Limit use to patients for whom alternative treatment options are
+inadequate
+
+fexinidazole
+fexinidazole and clomipramine both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid coadministration of fexinidazole with drugs known to block potassium
+channels or prolong QT interval.
+
+fluconazole
+fluconazole will increase the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+clomipramine and fluconazole both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+fluoxetine
+fluoxetine will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+fluoxetine and clomipramine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+fluphenazine
+fluphenazine and clomipramine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+fluvoxamine
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 11/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+fluvoxamine and clomipramine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+formoterol
+clomipramine increases toxicity of formoterol by sympathetic (adrenergic) effects,
+including increased blood pressure and heart rate. Avoid or Use Alternate Drug.
+Concomitant use may increase risk of cardiovascular adverse effects. Use
+alternative therapy; if concomitant use is unavoidable, monitor BP and HR during
+and for 2 weeks after discontinuing clomipramine.
+
+fosamprenavir
+fosamprenavir increases levels of clomipramine by decreasing metabolism. Avoid or
+Use Alternate Drug.
+
+gepotidacin
+gepotidacin and clomipramine both increase QTc interval. Avoid or Use Alternate
+Drug. If coadministration unavoidable, monitor and correct serum electrolyte
+abnormalities and obtain ECG before administration and during treatment, as
+clinically indicated
+
+givinostat
+clomipramine and givinostat both increase QTc interval. Avoid or Use Alternate
+Drug. If unable to avoid coadministration, obtain ECGs when initiating, during
+concomitant use, and as clinically indicated. Withhold if QTc interval >500 ms or a
+change from baseline >60 ms.
+
+givosiran
+givosiran will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP1A2 metabolism. Avoid or Use Alternate Drug. Avoid coadministration
+of sensitive CYP1A2 substrates with givosiran. If unavoidable, decrease the
+CYP1A2 substrate dosage in accordance with approved product labeling.
+
+givosiran will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug. Avoid coadministration
+of sensitive CYP2D6 substrates with givosiran. If unavoidable, decrease the
+CYP2D6 substrate dosage in accordance with approved product labeling.
+
+granisetron
+granisetron, clomipramine. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+
+granisetron and clomipramine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+guanfacine
+clomipramine decreases effects of guanfacine by Other (see comment). Avoid or
+Use Alternate Drug. Comment: Inhibition of uptake by adrenergic neurons.
+
+haloperidol
+haloperidol will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 12/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+clomipramine and haloperidol both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+hydroxychloroquine sulfate
+hydroxychloroquine sulfate and clomipramine both increase QTc interval. Avoid or
+Use Alternate Drug.
+
+imipramine
+clomipramine and imipramine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+clomipramine and imipramine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+iobenguane I 131
+clomipramine will decrease the level or effect of iobenguane I 131 by Other (see
+comment). Avoid or Use Alternate Drug. Based on the mechanism of action of
+iobenguane, drugs that reduce catecholamine uptake or that deplete catecholamine
+stores may interfere with iobenguane uptake into cells, and thus, reduce
+iobenguane efficacy. Discontinue interfering drugs for at least 5 half-lives before
+administration of either the dosimetry or an iobenguane dose. Do not administer
+these drugs until at least 7 days after each iobenguane dose.
+
+isoproterenol
+clomipramine, isoproterenol. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+ivosidenib
+ivosidenib and clomipramine both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid coadministration of QTc prolonging drugs with ivosidenib or replace
+with alternate therapies. If coadministration of a QTc prolonging drug is
+unavoidable, monitor for increased risk of QTc interval prolongation.
+
+ketoconazole
+clomipramine and ketoconazole both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+levalbuterol
+clomipramine increases toxicity of levalbuterol by sympathetic (adrenergic) effects,
+including increased blood pressure and heart rate. Avoid or Use Alternate Drug.
+Concomitant use may increase risk of cardiovascular adverse effects. Use
+alternative therapy; if concomitant use is unavoidable, monitor BP and HR during
+and for 2 weeks after discontinuing clomipramine.
+
+levoketoconazole
+clomipramine and levoketoconazole both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+levomilnacipran
+levomilnacipran and clomipramine both increase serotonin levels. Avoid or Use
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 13/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+Alternate Drug.
+
+linezolid
+linezolid and clomipramine both increase serotonin levels. Avoid or Use Alternate
+Drug. Linezolid may increase serotonin as a result of MAO-A inhibition. If linezolid
+must be administered, discontinue serotonergic drug immediately and monitor for
+CNS toxicity. Serotonergic therapy may be resumed 24 hours after last linezolid
+dose or after 2 weeks of monitoring, whichever comes first.
+
+lisdexamfetamine
+clomipramine, lisdexamfetamine. Other (see comment). Avoid or Use Alternate
+Drug. Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+lofepramine
+clomipramine and lofepramine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+clomipramine and lofepramine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+lonafarnib
+lonafarnib will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2C19 metabolism. Avoid or Use Alternate Drug. Lonafarnib may
+increase the AUC and peak concentration of CYP2C19 substrates. If
+coadministration unavoidable, monitor for adverse reactions and reduce the
+CYP2C19 substrate dose in accordance with its approved product labeling.
+
+lorcaserin
+clomipramine and lorcaserin both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+lumefantrine
+clomipramine and lumefantrine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+macimorelin
+macimorelin and clomipramine both increase QTc interval. Avoid or Use Alternate
+Drug. Macimorelin causes an increase of ~11 msec in the corrected QT interval.
+Avoid coadministration with drugs that prolong QT interval, which could increase
+risk for developing torsade de pointes-type ventricular tachycardia. Allow sufficient
+washout time of drugs that are known to prolong the QT interval before
+administering macimorelin.
+
+mefloquine
+mefloquine increases toxicity of clomipramine by QTc interval. Avoid or Use
+Alternate Drug. Mefloquine may enhance the QTc prolonging effect of high risk QTc
+prolonging agents.
+
+meperidine
+clomipramine and meperidine both increase serotonin levels. Avoid or Use
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 14/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+Alternate Drug.
+
+metaproterenol
+clomipramine, metaproterenol. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+methamphetamine
+clomipramine, methamphetamine. Other (see comment). Avoid or Use Alternate
+Drug. Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+methohexital
+methohexital and clomipramine both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+methylene blue
+methylene blue and clomipramine both increase serotonin levels. Avoid or Use
+Alternate Drug. Methylene blue may increase serotonin as a result of MAO-A
+inhibition. If methylene blue must be administered, discontinue serotonergic drug
+immediately and monitor for CNS toxicity. Serotonergic therapy may be resumed 24
+hours after last methylene blue dose or after 2 weeks of monitoring, whichever
+comes first.
+
+methylenedioxymethamphetamine
+clomipramine, methylenedioxymethamphetamine. Other (see comment). Avoid or
+Use Alternate Drug. Comment: Tricyclic antidepressants increase or decrease
+effects of sympathomimetics, by blocking reuptake of NE, or blocking uptake of
+indirect sympathomimetics into the adrenergic neuron.
+
+metoclopramide intranasal
+clomipramine, metoclopramide intranasal. Either increases effects of the other by
+Other (see comment). Avoid or Use Alternate Drug. Comment: Avoid use of
+metoclopramide intranasal or interacting drug, depending on importance of drug to
+patient.
+
+midodrine
+clomipramine, midodrine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+milnacipran
+milnacipran and clomipramine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+mirtazapine
+mirtazapine and clomipramine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+moxifloxacin
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 15/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+clomipramine and moxifloxacin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+nefazodone
+nefazodone will increase the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+nefazodone and clomipramine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+netupitant/palonosetron
+netupitant/palonosetron, clomipramine. Either increases toxicity of the other by
+serotonin levels. Avoid or Use Alternate Drug.
+
+nilotinib
+clomipramine and nilotinib both increase QTc interval. Avoid or Use Alternate Drug.
+
+norepinephrine
+clomipramine, norepinephrine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+nortriptyline
+clomipramine and nortriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+clomipramine and nortriptyline both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+octreotide
+clomipramine and octreotide both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+octreotide (Antidote)
+clomipramine and octreotide (Antidote) both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+olopatadine intranasal
+clomipramine and olopatadine intranasal both increase sedation. Avoid or Use
+Alternate Drug. Coadministration increases risk of CNS depression, which can lead
+to additive impairment of psychomotor performance and cause daytime impairment.
+
+ondansetron
+clomipramine and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+
+ondansetron, clomipramine. Either increases toxicity of the other by serotonin
+levels. Avoid or Use Alternate Drug.
+
+opicapone
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 16/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+opicapone and clomipramine both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+ozanimod
+ozanimod increases toxicity of clomipramine by sympathetic (adrenergic) effects,
+including increased blood pressure and heart rate. Avoid or Use Alternate Drug.
+Because the active metabolite of ozanimod inhibits MAO-B in vitro, there is a
+potential for serious adverse reactions, including hypertensive crisis. Therefore,
+coadministration of ozanimod with drugs that can increase norepinephrine or
+serotonin is not recommended. Monitor for hypertension with concomitant use.
+
+palonosetron
+palonosetron, clomipramine. Either increases toxicity of the other by serotonin
+levels. Avoid or Use Alternate Drug.
+
+paroxetine
+paroxetine will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+paroxetine and clomipramine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+pefloxacin
+pefloxacin will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP1A2 metabolism. Avoid or Use Alternate Drug.
+
+perphenazine
+perphenazine and clomipramine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+phendimetrazine
+clomipramine, phendimetrazine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+phentermine
+clomipramine, phentermine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+phenylephrine
+clomipramine, phenylephrine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+phenylephrine PO
+clomipramine, phenylephrine PO. Other (see comment). Avoid or Use Alternate
+Drug. Comment: Tricyclic antidepressants increase or decrease effects of
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 17/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+pirbuterol
+clomipramine, pirbuterol. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+pitolisant
+clomipramine decreases effects of pitolisant by Other (see comment). Avoid or Use
+Alternate Drug. Comment: Pitolisant increases histamine levels in the brain;
+therefore, H1 receptor antagonists that cross the blood-brain barrier may reduce
+the efficacy of pitolisant.
+
+promazine
+promazine and clomipramine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+promethazine
+promethazine and clomipramine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+propylhexedrine
+clomipramine, propylhexedrine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+protriptyline
+clomipramine and protriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+clomipramine and protriptyline both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+pseudoephedrine
+clomipramine increases effects of pseudoephedrine by sympathetic (adrenergic)
+effects, including increased blood pressure and heart rate. Avoid or Use Alternate
+Drug. Tricyclic antidepressants increase or decrease effects of sympathomimetics,
+by blocking reuptake of NE, or blocking uptake of indirect sympathomimetics into
+the adrenergic neuron.
+
+quinidine
+quinidine will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+rasagiline
+rasagiline and clomipramine both increase serotonin levels. Avoid or Use Alternate
+Drug. Avoid combination within 14 days of MAOI use.
+
+remifentanil
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 18/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+remifentanil and clomipramine both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+ribociclib
+ribociclib increases toxicity of clomipramine by QTc interval. Avoid or Use Alternate
+Drug.
+
+salmeterol
+clomipramine, salmeterol. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+selegiline transdermal
+selegiline transdermal and clomipramine both increase serotonin levels. Avoid or
+Use Alternate Drug.
+
+selinexor
+selinexor, clomipramine. unspecified interaction mechanism. Avoid or Use Alternate
+Drug. Patients treated with selinexor may experience neurological toxicities. Avoid
+taking selinexor with other medications that may cause dizziness or confusion.
+
+serdexmethylphenidate/dexmethylphenidate
+clomipramine, serdexmethylphenidate/dexmethylphenidate. Other (see comment).
+Avoid or Use Alternate Drug. Comment: Tricyclic antidepressants increase or
+decrease effects of sympathomimetics, by blocking reuptake of NE, or blocking
+uptake of indirect sympathomimetics into the adrenergic neuron.
+
+sertraline
+sertraline and clomipramine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+sertraline and clomipramine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+sodium oxybate
+clomipramine, sodium oxybate. Either increases effects of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Profound sedation,
+respiratory depression, coma, and death may result if coadministered. Reserve
+concomitant prescribing of these drugs in patients for whom other treatment
+options are inadequate. Limit dosages and durations to the minimum required.
+Monitor closely for signs of respiratory depression and sedation.
+
+sodium oxybate and clomipramine both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+St John's Wort
+clomipramine and St John's Wort both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+tedizolid
+tedizolid, clomipramine. Either increases effects of the other by Mechanism:
+pharmacodynamic synergism. Avoid or Use Alternate Drug. both increase serotonin
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 19/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+levels; increased risk of serotonin syndrome.
+
+terbutaline
+clomipramine, terbutaline. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+thalidomide
+thalidomide and clomipramine both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+thioridazine
+thioridazine and clomipramine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+tolcapone
+tolcapone and clomipramine both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+toremifene
+clomipramine and toremifene both increase QTc interval. Avoid or Use Alternate
+Drug. Concurrent use of toremifene with agents causing QT prolongation should be
+avoided. If concomitant use is required it's recommended that toremifene be
+interrupted. If interruption not possible, patients requiring therapy with a drug that
+prolongs QT should be closely monitored. ECGs should be obtained for high risk
+patients.
+
+trazodone
+clomipramine and trazodone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+trazodone and clomipramine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+trifluoperazine
+trifluoperazine and clomipramine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+trimipramine
+clomipramine and trimipramine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+clomipramine and trimipramine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+umeclidinium bromide/vilanterol inhaled
+clomipramine increases toxicity of umeclidinium bromide/vilanterol inhaled by QTc
+interval. Avoid or Use Alternate Drug. Exercise extreme caution when vilanterol
+coadministered with drugs that prolong QTc interval; adrenergic agonist effects on
+the cardiovascular system may be potentiated.
+
+clomipramine and umeclidinium bromide/vilanterol inhaled both increase
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 20/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+sympathetic (adrenergic) effects, including increased blood pressure and heart rate.
+Avoid or Use Alternate Drug. Exercise extreme caution if vilanterol coadministered
+with MAOIs or TCAs, or within 2 weeks of discontinuation of these drugs;
+adrenergic agonist effects on the cardiovascular system may be potentiated
+
+vandetanib
+clomipramine, vandetanib. Either increases toxicity of the other by QTc interval.
+Avoid or Use Alternate Drug. Avoid coadministration with drugs known to prolong
+QT interval; if a drug known to prolong QT interval must be used, more frequent
+ECG monitoring is recommended.
+
+vemurafenib
+vemurafenib and clomipramine both increase QTc interval. Avoid or Use Alternate
+Drug. Concomitant use of vemurafenib with drugs that prolong QT interval is not
+recommended.
+
+venlafaxine
+venlafaxine and clomipramine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+vilanterol/fluticasone furoate inhaled
+clomipramine and vilanterol/fluticasone furoate inhaled both increase sympathetic
+(adrenergic) effects, including increased blood pressure and heart rate. Avoid or Use
+Alternate Drug. Exercise extreme caution if vilanterol coadministered with MAOIs or
+TCAs, or within 2 weeks of discontinuation of these drugs; adrenergic agonist
+effects on the cardiovascular system may be potentiated
+
+clomipramine increases toxicity of vilanterol/fluticasone furoate inhaled by QTc
+interval. Avoid or Use Alternate Drug. Exercise extreme caution when vilanterol
+coadministered with drugs that prolong QTc interval; adrenergic agonist effects on
+the cardiovascular system may be potentiated.
+
+vilazodone
+clomipramine, vilazodone. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug. Concomitant therapy should be discontinued
+immediately if signs or symptoms of serotonin syndrome emerge and supportive
+symptomatic treatment should be initiated. .
+
+vortioxetine
+clomipramine, vortioxetine. Either increases effects of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+
+xylometazoline
+clomipramine, xylometazoline. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+yohimbe
+yohimbe, clomipramine. Mechanism: unspecified interaction mechanism.
+Contraindicated. May cause increase or decrease in blood pressure.
+
+yohimbine
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 21/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+clomipramine, yohimbine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+ziprasidone
+clomipramine and ziprasidone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+zuranolone
+clomipramine, zuranolone. Either increases effects of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Coadministration of
+zuranolone with other CNS depressants may increase impairment of psychomotor
+performance or CNS depressant effects. If unavoidable, consider dose reduction. .
+
+Monitor Closely (485)
+
+5-HTP
+clomipramine and 5-HTP both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+abiraterone
+abiraterone increases levels of clomipramine by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor. Avoid coadministration of abiraterone with
+substrates of CYP2D6. If alternative therapy cannot be used, exercise caution and
+consider a dose reduction of the CYP2D6 substrate.
+
+abobotulinumtoxinA
+clomipramine increases effects of abobotulinumtoxinA by pharmacodynamic
+synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate
+botulinum toxin effects, which may result in excessive neuromuscular weakness
+and heighten systemic anticholinergic effects.
+
+aceclofenac
+clomipramine, aceclofenac. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. Clomipramine inhib. serotonin uptake by platelets.
+
+acemetacin
+clomipramine, acemetacin. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. Clomipramine inhib. serotonin uptake by platelets.
+
+acetaminophen/phenyltoloxamine
+acetaminophen/phenyltoloxamine and clomipramine both increase sedation. Use
+Caution/Monitor.
+
+aclidinium
+aclidinium and clomipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+acrivastine
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 22/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+acrivastine and clomipramine both increase sedation. Use Caution/Monitor.
+
+alfentanil
+alfentanil and clomipramine both increase sedation. Use Caution/Monitor.
+
+alfuzosin
+clomipramine and alfuzosin both increase QTc interval. Use Caution/Monitor.
+
+almotriptan
+almotriptan and clomipramine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+alprazolam
+alprazolam and clomipramine both increase sedation. Use Caution/Monitor.
+
+amifampridine
+clomipramine increases toxicity of amifampridine by Other (see comment). Modify
+Therapy/Monitor Closely. Comment: Amifampridine can cause seizures.
+Coadministration with drugs that lower seizure threshold may increase this risk.
+
+amiodarone
+amiodarone will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+amisulpride
+clomipramine and amisulpride both increase QTc interval. Use Caution/Monitor. ECG
+monitoring is recommended if coadministered.
+
+amitriptyline
+amitriptyline and clomipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+amitriptyline and clomipramine both increase sedation. Use Caution/Monitor.
+
+amlodipine
+clomipramine, amlodipine. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Monitor for hypotension and
+orthostasis.
+
+amoxapine
+amoxapine and clomipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+amoxapine and clomipramine both increase sedation. Use Caution/Monitor.
+
+amphetamine
+clomipramine increases and amphetamine decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+clomipramine and amphetamine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 23/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+clomipramine increases effects of amphetamine by unknown mechanism. Use
+Caution/Monitor.
+
+anagrelide
+anagrelide and clomipramine both increase QTc interval. Use Caution/Monitor.
+
+anticholinergic/sedative combos
+anticholinergic/sedative combos and clomipramine both decrease cholinergic
+effects/transmission. Use Caution/Monitor.
+
+apomorphine
+clomipramine and apomorphine both increase sedation. Use Caution/Monitor.
+
+aprepitant
+aprepitant will increase the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+aripiprazole
+aripiprazole and clomipramine both increase sedation. Use Caution/Monitor.
+
+aripiprazole and clomipramine both increase QTc interval. Use Caution/Monitor.
+
+armodafinil
+armodafinil will decrease the level or effect of clomipramine by affecting hepatic
+enzyme CYP1A2 metabolism. Use Caution/Monitor.
+
+clomipramine increases and armodafinil decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+asenapine
+asenapine will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+asenapine and clomipramine both increase QTc interval. Use Caution/Monitor.
+
+asenapine and clomipramine both increase sedation. Use Caution/Monitor.
+
+asenapine transdermal
+asenapine transdermal and clomipramine both increase QTc interval. Use
+Caution/Monitor.
+
+asenapine transdermal and clomipramine both increase sedation. Use
+Caution/Monitor.
+
+aspirin
+clomipramine, aspirin. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. Clomipramine
+inhib. serotonin uptake by platelets.
+
+aspirin rectal
+clomipramine, aspirin rectal. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 24/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+bleeding. Clomipramine inhib. serotonin uptake by platelets.
+
+aspirin/citric acid/sodium bicarbonate
+clomipramine, aspirin/citric acid/sodium bicarbonate. Either increases toxicity of the
+other by pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper
+GI bleeding. Clomipramine inhib. serotonin uptake by platelets.
+
+atazanavir
+atazanavir will increase the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+atazanavir increases levels of clomipramine by unspecified interaction mechanism.
+Use Caution/Monitor.
+
+atomoxetine
+clomipramine increases levels of atomoxetine by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+atomoxetine and clomipramine both increase QTc interval. Use Caution/Monitor.
+
+atracurium
+atracurium and clomipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+atropine
+atropine and clomipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+atropine IV/IM
+atropine IV/IM and clomipramine both decrease cholinergic effects/transmission.
+Use Caution/Monitor.
+
+avapritinib
+avapritinib and clomipramine both increase sedation. Use Caution/Monitor.
+
+azelastine
+azelastine and clomipramine both increase sedation. Use Caution/Monitor.
+
+azithromycin
+clomipramine and azithromycin both increase QTc interval. Use Caution/Monitor.
+
+baclofen
+baclofen and clomipramine both increase sedation. Use Caution/Monitor.
+
+bedaquiline
+clomipramine and bedaquiline both increase QTc interval. Modify Therapy/Monitor
+Closely. ECG should be monitored closely
+
+belladonna alkaloids
+belladonna alkaloids and clomipramine both decrease cholinergic
+effects/transmission. Use Caution/Monitor.
+
+belladonna and opium
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 25/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+belladonna and opium and clomipramine both decrease cholinergic
+effects/transmission. Use Caution/Monitor.
+
+belladonna and opium and clomipramine both increase sedation. Use
+Caution/Monitor.
+
+benazepril
+clomipramine, benazepril. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increases risk of hypotension.
+
+benperidol
+benperidol and clomipramine both increase sedation. Use Caution/Monitor.
+
+benzgalantamine
+benzgalantamine, clomipramine. Either decreases effects of the other by
+pharmacodynamic antagonism. Use Caution/Monitor. Galantamine, an
+acetylcholinesterase inhibitor, enhances cholinergic effects. Coadministration with
+drugs that elicit anticholinergic effects may antagonize one another.
+
+benzhydrocodone/acetaminophen
+benzhydrocodone/acetaminophen, clomipramine. Either increases effects of the
+other by serotonin levels. Use Caution/Monitor. Coadministration of drugs that
+affect the serotonergic neurotransmitter system may result in serotonin syndrome. If
+concomitant use is warranted, carefully observe the patient, particularly during
+treatment initiation and dose adjustment.
+
+benzphetamine
+clomipramine increases and benzphetamine decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+benztropine
+benztropine and clomipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+bethanechol
+bethanechol increases and clomipramine decreases cholinergic
+effects/transmission. Effect of interaction is not clear, use caution. Use
+Caution/Monitor.
+
+brexpiprazole
+clomipramine will increase the level or effect of brexpiprazole by affecting hepatic
+enzyme CYP2D6 metabolism. Modify Therapy/Monitor Closely. Administer a
+quarter of brexpiprazole dose if coadministered with a moderate CYP2D6 inhibitor
+PLUS a strong/moderate CYP3A4 inhibitor.
+
+brexpiprazole and clomipramine both increase sedation. Use Caution/Monitor.
+
+brimonidine
+brimonidine and clomipramine both increase sedation. Use Caution/Monitor.
+
+brimonidine topical
+brimonidine topical and clomipramine both increase sedation. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 26/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+brivaracetam
+brivaracetam and clomipramine both increase sedation. Use Caution/Monitor.
+
+brompheniramine
+brompheniramine and clomipramine both increase sedation. Use Caution/Monitor.
+
+buprenorphine
+buprenorphine and clomipramine both increase sedation. Use Caution/Monitor.
+
+buprenorphine buccal
+buprenorphine buccal and clomipramine both increase sedation. Use
+Caution/Monitor.
+
+buprenorphine subdermal implant
+clomipramine, buprenorphine subdermal implant. Either increases toxicity of the
+other by serotonin levels. Use Caution/Monitor. Concomitant use could result in life-
+threatening serotonin syndrome. If concomitant use is warranted, carefully observe
+the patient, particularly during treatment initiation, and during dose adjustment of
+the serotonergic drug. Discontinue buprenorphine if serotonin syndrome is
+suspected.
+
+buprenorphine, long-acting injection
+clomipramine, buprenorphine, long-acting injection. Either increases toxicity of the
+other by serotonin levels. Use Caution/Monitor. Concomitant use could result in life-
+threatening serotonin syndrome. If concomitant use is warranted, carefully observe
+the patient, particularly during treatment initiation, and during dose adjustment of
+the serotonergic drug. Discontinue buprenorphine if serotonin syndrome is
+suspected.
+
+bupropion
+clomipramine increases toxicity of bupropion by unspecified interaction mechanism.
+Use Caution/Monitor. May lower seizure threshold; keep bupropion dose as low as
+possible.
+
+butalbital
+butalbital will decrease the level or effect of clomipramine by affecting hepatic
+enzyme CYP1A2 metabolism. Use Caution/Monitor.
+
+butalbital will decrease the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+
+butalbital and clomipramine both increase sedation. Use Caution/Monitor.
+
+butorphanol
+butorphanol and clomipramine both increase sedation. Use Caution/Monitor.
+
+caffeine
+clomipramine increases and caffeine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+cannabidiol
+cannabidiol will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2C19 metabolism. Modify Therapy/Monitor Closely. Consider reducing
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 27/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+the dose of sensitive CYP2C19 substrates, as clinically appropriate, when
+coadministered with cannabidiol.
+
+captopril
+clomipramine, captopril. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Both drugs lower blood pressure. Monitor blood
+pressure.
+
+carbachol
+carbachol increases and clomipramine decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+carbachol/brimonidine ophthalmic
+carbachol/brimonidine ophthalmic and clomipramine both increase sedation. Use
+Caution/Monitor.
+
+carbamazepine
+carbamazepine will decrease the level or effect of clomipramine by affecting hepatic
+enzyme CYP1A2 metabolism. Use Caution/Monitor.
+
+carbamazepine will decrease the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+carbinoxamine
+carbinoxamine and clomipramine both increase sedation. Use Caution/Monitor.
+
+cariprazine
+cariprazine and clomipramine both increase sedation. Use Caution/Monitor.
+
+carisoprodol
+carisoprodol and clomipramine both increase sedation. Use Caution/Monitor.
+
+celecoxib
+celecoxib will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+clomipramine, celecoxib. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. Clomipramine
+inhib. serotonin uptake by platelets.
+
+cenobamate
+cenobamate, clomipramine. Either increases effects of the other by sedation. Use
+Caution/Monitor.
+
+ceritinib
+ceritinib and clomipramine both increase QTc interval. Use Caution/Monitor.
+
+cevimeline
+cevimeline increases and clomipramine decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+chlordiazepoxide
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 28/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+chlordiazepoxide and clomipramine both increase sedation. Use Caution/Monitor.
+
+chloroquine
+chloroquine will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+chloroquine increases toxicity of clomipramine by QTc interval. Use Caution/Monitor.
+
+chlorpheniramine
+chlorpheniramine and clomipramine both increase sedation. Use Caution/Monitor.
+
+chlorpromazine
+chlorpromazine and clomipramine both increase sedation. Use Caution/Monitor.
+
+chlorzoxazone
+chlorzoxazone and clomipramine both increase sedation. Use Caution/Monitor.
+
+choline magnesium trisalicylate
+clomipramine, choline magnesium trisalicylate. Either increases toxicity of the other
+by pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. Clomipramine inhib. serotonin uptake by platelets.
+
+cigarette smoking
+cigarette smoking will decrease the level or effect of clomipramine by affecting
+hepatic enzyme CYP1A2 metabolism. Use Caution/Monitor.
+
+cimetidine
+cimetidine will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP1A2 metabolism. Use Caution/Monitor.
+
+cimetidine will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+cimetidine will increase the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+cinnarizine
+cinnarizine and clomipramine both increase sedation. Use Caution/Monitor.
+
+cisatracurium
+cisatracurium and clomipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+clemastine
+clemastine and clomipramine both increase sedation. Use Caution/Monitor.
+
+clobazam
+clobazam will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor. Lower doses of drugs
+metabolized by CYP2D6 may be required when used concomitantly.
+
+clomipramine, clobazam. Other (see comment). Use Caution/Monitor. Comment:
+Concomitant administration can increase the potential for CNS effects (e.g.,
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 29/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+increased sedation or respiratory depression).
+
+clobazam and clomipramine both increase sedation. Use Caution/Monitor.
+
+clonazepam
+clonazepam and clomipramine both increase sedation. Use Caution/Monitor.
+
+clonidine
+clonidine and clomipramine both increase sedation. Use Caution/Monitor.
+
+clorazepate
+clorazepate and clomipramine both increase sedation. Use Caution/Monitor.
+
+clozapine
+clozapine and clomipramine both increase sedation. Use Caution/Monitor.
+
+cobicistat
+cobicistat will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor. Carefully titrate antidepressant
+to the desired effect, including using the lowest feasible initial or maintenance dose,
+and monitoring for antidepressant response
+
+cobicistat will increase the level or effect of clomipramine by Other (see comment).
+Use Caution/Monitor. Carefully titrate dose of the antidepressant to the desired
+effect, including using the lowest feasible initial or maintenance dose, and monitor
+its response during coadministration with TCAs and cobicistat.
+
+cocaine topical
+clomipramine and cocaine topical both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+codeine
+codeine and clomipramine both increase sedation. Use Caution/Monitor.
+
+clomipramine decreases effects of codeine by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor. Prevents conversion of codeine to its active
+metabolite morphine.
+
+conivaptan
+conivaptan will increase the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+crizotinib
+crizotinib and clomipramine both increase QTc interval. Use Caution/Monitor. ECG
+monitoring is recommended, along with drugs that may prolong the QT interval.
+
+cyclobenzaprine
+cyclobenzaprine and clomipramine both decrease cholinergic effects/transmission.
+Use Caution/Monitor.
+
+cyclobenzaprine and clomipramine both increase sedation. Use Caution/Monitor.
+
+cyclosporine
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 30/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+cyclosporine will increase the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+cyproheptadine
+cyproheptadine and clomipramine both increase sedation. Use Caution/Monitor.
+
+dantrolene
+dantrolene and clomipramine both increase sedation. Use Caution/Monitor.
+
+daridorexant
+clomipramine and daridorexant both increase sedation. Modify Therapy/Monitor
+Closely. Coadministration increases risk of CNS depression, which can lead to
+additive impairment of psychomotor performance and cause daytime impairment.
+
+darifenacin
+darifenacin will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+darifenacin will increase the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+darifenacin and clomipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+darunavir
+darunavir will increase the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+dasatinib
+clomipramine and dasatinib both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+daxibotulinumtoxinA
+clomipramine increases effects of daxibotulinumtoxinA by pharmacodynamic
+synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate
+botulinum toxin effects, which may result in excessive neuromuscular weakness
+and heighten systemic anticholinergic effects.
+
+debrisoquine
+clomipramine decreases effects of debrisoquine by Other (see comment). Use
+Caution/Monitor. Comment: Inhibition of uptake by adrenergic neurons.
+
+deferasirox
+deferasirox increases levels of clomipramine by affecting hepatic enzyme CYP1A2
+metabolism. Use Caution/Monitor.
+
+desflurane
+desflurane and clomipramine both increase sedation. Use Caution/Monitor.
+
+desflurane and clomipramine both increase QTc interval. Use Caution/Monitor.
+
+desipramine
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 31/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+clomipramine and desipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+clomipramine and desipramine both increase sedation. Use Caution/Monitor.
+
+desloratadine
+desloratadine and clomipramine both increase sedation. Use Caution/Monitor.
+
+desvenlafaxine
+desvenlafaxine will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor. Desvenlafaxine inhibits
+CYP2D6; with higher desvenlafaxine doses (ie, 400 mg) decrease the CYP2D6
+substrate dose by up to 50%; no dosage adjustment needed with desvenlafaxine
+doses <100 mg
+
+deutetrabenazine
+clomipramine and deutetrabenazine both increase sedation. Use Caution/Monitor.
+
+deutetrabenazine and clomipramine both increase QTc interval. Use
+Caution/Monitor. At the maximum recommended dose, deutetrabenazine does not
+prolong QT interval to a clinically relevant extent. Certain circumstances may
+increase risk of torsade de pointes and/or sudden death in association with drugs
+that prolong the QTc interval (eg, bradycardia, hypokalemia or hypomagnesemia,
+coadministration with other drugs that prolong QTc interval, presence of congenital
+QT prolongation).
+
+dexbrompheniramine
+dexbrompheniramine and clomipramine both increase sedation. Use
+Caution/Monitor.
+
+dexchlorpheniramine
+dexchlorpheniramine and clomipramine both increase sedation. Use
+Caution/Monitor.
+
+dexfenfluramine
+clomipramine increases and dexfenfluramine decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+clomipramine and dexfenfluramine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+dexmedetomidine
+dexmedetomidine and clomipramine both increase sedation. Use Caution/Monitor.
+
+dexmethylphenidate
+clomipramine increases and dexmethylphenidate decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+dextroamphetamine
+clomipramine increases and dextroamphetamine decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+clomipramine and dextroamphetamine both increase serotonin levels. Modify
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 32/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+Therapy/Monitor Closely.
+
+clomipramine increases effects of dextroamphetamine by unknown mechanism. Use
+Caution/Monitor.
+
+dextroamphetamine transdermal
+clomipramine will increase the level or effect of dextroamphetamine transdermal by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. May enhance the
+activity of tricyclic or sympathomimetic agents causing striking and sustained
+increases in dextroamphetamine levels in brain; May be potentiate cardiovascular
+effects. Monitor frequently and adjust or use an alternant based on clinical
+response.
+
+dextromoramide
+dextromoramide and clomipramine both increase sedation. Use Caution/Monitor.
+
+diamorphine
+diamorphine and clomipramine both increase sedation. Use Caution/Monitor.
+
+diazepam
+diazepam and clomipramine both increase sedation. Use Caution/Monitor.
+
+diazepam buccal
+diazepam buccal and clomipramine both increase sedation. Use Caution/Monitor.
+
+diazepam buccal, clomipramine. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration may
+potentiate the CNS-depressant effects of each drug.
+
+diazepam intranasal
+diazepam intranasal, clomipramine. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration may
+potentiate the CNS-depressant effects of each drug.
+
+diazepam intranasal and clomipramine both increase sedation. Use Caution/Monitor.
+
+diazoxide choline
+diazoxide choline increases levels of clomipramine by affecting hepatic enzyme
+CYP1A2 metabolism. Use Caution/Monitor. Monitor clomipramine for adverse
+effects if coadministered with CYP1A2 inhibitors.
+
+dichlorphenamide
+dichlorphenamide and clomipramine both decrease serum potassium. Use
+Caution/Monitor.
+
+diclofenac
+clomipramine, diclofenac. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. Clomipramine
+inhib. serotonin uptake by platelets.
+
+dicyclomine
+dicyclomine and clomipramine both decrease cholinergic effects/transmission. Use
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 33/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+Caution/Monitor.
+
+diethylpropion
+clomipramine increases and diethylpropion decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+difelikefalin
+difelikefalin and clomipramine both increase sedation. Use Caution/Monitor.
+
+difenoxin hcl
+difenoxin hcl and clomipramine both increase sedation. Use Caution/Monitor.
+
+diflunisal
+clomipramine, diflunisal. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. Clomipramine
+inhib. serotonin uptake by platelets.
+
+dihydroergotamine
+clomipramine and dihydroergotamine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+dihydroergotamine intranasal
+clomipramine and dihydroergotamine intranasal both increase serotonin levels.
+Modify Therapy/Monitor Closely.
+
+dimenhydrinate
+dimenhydrinate and clomipramine both increase sedation. Use Caution/Monitor.
+
+diphenhydramine
+diphenhydramine will increase the level or effect of clomipramine by affecting
+hepatic enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+diphenhydramine and clomipramine both decrease cholinergic effects/transmission.
+Use Caution/Monitor.
+
+diphenhydramine and clomipramine both increase sedation. Use Caution/Monitor.
+
+diphenoxylate hcl
+diphenoxylate hcl and clomipramine both increase sedation. Use Caution/Monitor.
+
+dipipanone
+dipipanone and clomipramine both increase sedation. Use Caution/Monitor.
+
+dobutamine
+clomipramine increases and dobutamine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+dolasetron
+clomipramine and dolasetron both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+donepezil
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 34/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+donepezil increases and clomipramine decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+donepezil and clomipramine both increase QTc interval. Use Caution/Monitor.
+
+dopamine
+clomipramine increases and dopamine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+dopexamine
+clomipramine increases and dopexamine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+dordaviprone
+dordaviprone and clomipramine both increase QTc interval. Use Caution/Monitor.
+Increase the frequency of ECG and electrolyte monitoring.
+
+dosulepin
+clomipramine and dosulepin both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+clomipramine and dosulepin both increase sedation. Use Caution/Monitor.
+
+doxepin
+clomipramine and doxepin both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+clomipramine and doxepin both increase sedation. Use Caution/Monitor.
+
+doxylamine
+doxylamine and clomipramine both increase sedation. Use Caution/Monitor.
+
+dronedarone
+dronedarone will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+droperidol
+droperidol and clomipramine both increase sedation. Use Caution/Monitor.
+
+echothiophate iodide
+echothiophate iodide increases and clomipramine decreases cholinergic
+effects/transmission. Effect of interaction is not clear, use caution. Use
+Caution/Monitor.
+
+efavirenz
+efavirenz and clomipramine both increase QTc interval. Use Caution/Monitor.
+
+elagolix
+elagolix will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2C19 metabolism. Modify Therapy/Monitor Closely. Elagolix is a weak
+CYP2C19 inhibitor. Caution with sensitive CYP2C19 substrates.
+
+eletriptan
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 35/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+eletriptan and clomipramine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+eliglustat
+eliglustat increases levels of clomipramine by affecting hepatic enzyme CYP2D6
+metabolism. Modify Therapy/Monitor Closely. Monitor therapeutic drug
+concentrations, as indicated, or consider reducing the dosage of the concomitant
+drug and titrate to clinical effect.
+
+eliglustat and clomipramine both increase QTc interval. Use Caution/Monitor.
+
+elranatamab
+elranatamab will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP1A2 metabolism. Use Caution/Monitor. Elranatamab causes cytokine
+release syndrome (CRS) that may suppress activity of CYP enzymes, resulting in
+increased exposure of CYP substrates. This is more likely to occur from initiation of
+elranatamab step-up dosing up to 14 days after the first treatment dose and during
+and after CRS.
+
+elvitegravir/cobicistat/emtricitabine/tenofovir DF
+elvitegravir/cobicistat/emtricitabine/tenofovir DF increases levels of clomipramine by
+affecting hepatic enzyme CYP2D6 metabolism. Modify Therapy/Monitor Closely.
+Cobicistat is a CYP2D6 inhibitor; caution with CYP2D6 substrates for which
+elevated plasma concentrations are associated with serious and/or life-threatening
+events.
+
+enasidenib
+enasidenib will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP1A2 metabolism. Modify Therapy/Monitor Closely. Enasidenib (a strong
+CYP1A2 inhibitor) significantly increases systemic exposure of CYP1A2 substrates.
+If unable to avoid, dosage reduction of the CYP1A2 substrate may be warranted.
+
+entrectinib
+entrectinib and clomipramine both increase QTc interval. Use Caution/Monitor.
+
+epcoritamab
+epcoritamab, clomipramine. affecting hepatic enzyme CYP1A2 metabolism. Use
+Caution/Monitor. Epcoritamab causes release of cytokines that may suppress
+activity of CYP enzymes, resulting in increased exposure of CYP substrates. For
+certain CYP substrates, minimal changes in their concentration may lead to serious
+adverse reactions. If needed, modify therapy as recommended in the substrate's
+prescribing information. .
+
+ephedrine
+clomipramine increases and ephedrine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+clomipramine increases effects of ephedrine by unknown mechanism. Use
+Caution/Monitor.
+
+epinephrine
+clomipramine increases and epinephrine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 36/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+clomipramine increases effects of epinephrine by unknown mechanism. Use
+Caution/Monitor.
+
+epinephrine inhaled
+clomipramine and epinephrine inhaled both increase sympathetic (adrenergic)
+effects, including increased blood pressure and heart rate. Use Caution/Monitor.
+Tricyclic antidepressants may potentiate epinephrine effect on cardiovascular
+system.
+
+epinephrine intranasal
+clomipramine increases effects of epinephrine intranasal by pharmacodynamic
+synergism. Use Caution/Monitor.
+
+epinephrine racemic
+clomipramine increases and epinephrine racemic decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+clomipramine increases effects of epinephrine racemic by unknown mechanism. Use
+Caution/Monitor.
+
+ergotamine
+clomipramine and ergotamine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+eribulin
+eribulin and clomipramine both increase QTc interval. Use Caution/Monitor.
+
+escitalopram
+escitalopram increases toxicity of clomipramine by QTc interval. Use
+Caution/Monitor.
+
+esketamine intranasal
+esketamine intranasal, clomipramine. Either increases toxicity of the other by
+sedation. Modify Therapy/Monitor Closely.
+
+eslicarbazepine acetate
+eslicarbazepine acetate will increase the level or effect of clomipramine by affecting
+hepatic enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+estazolam
+estazolam and clomipramine both increase sedation. Use Caution/Monitor.
+
+eszopiclone
+eszopiclone and clomipramine both increase sedation. Use Caution/Monitor.
+
+ethanol
+clomipramine and ethanol both increase sedation. Use Caution/Monitor.
+
+etodolac
+clomipramine, etodolac. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. Clomipramine
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 37/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+inhib. serotonin uptake by platelets.
+
+etomidate
+etomidate and clomipramine both increase sedation. Use Caution/Monitor.
+
+ezogabine
+ezogabine, clomipramine. Either increases toxicity of the other by QTc interval. Use
+Caution/Monitor. Slight and transient QT-prolongation observed with ezogabine,
+particularly when dose titrated to 1200 mg/day. QT interval should be monitored
+when ezogabine is prescribed with agents known to increase QT interval.
+
+fedratinib
+fedratinib will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor. Adjust dose of drugs that are
+CYP2C19 substrates as necessary.
+
+fedratinib will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor. Adjust dose of drugs that are
+CYP2D6 substrates as necessary.
+
+fenbufen
+clomipramine, fenbufen. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. Clomipramine
+inhib. serotonin uptake by platelets.
+
+fenfluramine
+clomipramine increases and fenfluramine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+clomipramine and fenfluramine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+fenfluramine, clomipramine. Either increases effects of the other by serotonin levels.
+Use Caution/Monitor. Coadministration with drugs that increase serotoninergic
+effects may increase the risk of serotonin syndrome.
+
+fenoprofen
+clomipramine, fenoprofen. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. Clomipramine inhib. serotonin uptake by platelets.
+
+fesoterodine
+fesoterodine and clomipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+fexinidazole
+fexinidazole will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP1A2 metabolism. Use Caution/Monitor.
+
+fexinidazole will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+fingolimod
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 38/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+fingolimod and clomipramine both increase QTc interval. Use Caution/Monitor.
+
+flavoxate
+flavoxate and clomipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+flecainide
+clomipramine and flecainide both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+fluoxetine
+clomipramine and fluoxetine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+fluphenazine
+fluphenazine and clomipramine both increase sedation. Use Caution/Monitor.
+
+flurazepam
+flurazepam and clomipramine both increase sedation. Use Caution/Monitor.
+
+flurbiprofen
+clomipramine, flurbiprofen. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. Clomipramine inhib. serotonin uptake by platelets.
+
+fluvoxamine
+fluvoxamine and clomipramine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+fosamprenavir
+fosamprenavir will increase the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+fosaprepitant
+fosaprepitant will increase the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+foscarbidopa/foslevodopa
+clomipramine and foscarbidopa/foslevodopa both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+foscarnet
+clomipramine and foscarnet both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+fosphenytoin
+fosphenytoin will decrease the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+frovatriptan
+frovatriptan and clomipramine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 39/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+gabapentin
+gabapentin, clomipramine. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+gabapentin and clomipramine both increase sedation. Use Caution/Monitor.
+
+gabapentin enacarbil
+gabapentin enacarbil, clomipramine. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+gabapentin enacarbil and clomipramine both increase sedation. Use
+Caution/Monitor.
+
+ganaxolone
+clomipramine and ganaxolone both increase sedation. Use Caution/Monitor.
+
+gemifloxacin
+gemifloxacin and clomipramine both increase QTc interval. Use Caution/Monitor.
+
+gepirone
+gepirone and clomipramine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+gepirone and clomipramine both increase serotonin levels. Use Caution/Monitor.
+Monitor for symptoms of serotonin syndrome when gepirone is used gepirone with
+other drugs that may affect the serotonergic neurotransmitter systems. If serotonin
+syndrome occurs, consider discontinue gepirone and/or concomitant serotonergic
+drug.
+
+gilteritinib
+gilteritinib and clomipramine both increase QTc interval. Use Caution/Monitor.
+
+glofitamab
+glofitamab, clomipramine. affecting hepatic enzyme CYP1A2 metabolism. Use
+Caution/Monitor. Glofitamab causes release of cytokines that may suppress activity
+of CYP enzymes, resulting in increased exposure of CYP substrates. For certain CYP
+substrates, minimal changes in their concentration may lead to serious adverse
+reactions. If needed, modify therapy as recommended in the substrate's prescribing
+information. .
+
+glycopyrrolate
+glycopyrrolate and clomipramine both decrease cholinergic effects/transmission.
+Use Caution/Monitor.
+
+clomipramine increases levels of glycopyrrolate by unknown mechanism. Use
+Caution/Monitor.
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 40/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+glycopyrrolate inhaled
+clomipramine and glycopyrrolate inhaled both decrease cholinergic
+effects/transmission. Use Caution/Monitor.
+
+glycopyrronium tosylate topical
+glycopyrronium tosylate topical, clomipramine. Either increases effects of the other
+by pharmacodynamic synergism. Use Caution/Monitor. Coadministration of
+glycopyrronium tosylate topical with other anticholinergic medications may result in
+additive anticholinergic adverse effects.
+
+grapefruit
+grapefruit will increase the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+guanfacine
+guanfacine and clomipramine both increase sedation. Use Caution/Monitor.
+
+haloperidol
+haloperidol and clomipramine both increase sedation. Use Caution/Monitor.
+
+henbane
+henbane and clomipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+homatropine
+homatropine and clomipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+huperzine A
+huperzine A increases and clomipramine decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+hydrocodone
+hydrocodone, clomipramine. Either increases effects of the other by serotonin levels.
+Use Caution/Monitor. Coadministration of drugs that affect the serotonergic
+neurotransmitter system may result in serotonin syndrome. If concomitant use is
+warranted, carefully observe the patient, particularly during treatment initiation and
+dose adjustment.
+
+hydromorphone
+hydromorphone and clomipramine both increase sedation. Use Caution/Monitor.
+
+hydroxyzine
+hydroxyzine and clomipramine both increase sedation. Use Caution/Monitor.
+
+hydroxyzine and clomipramine both increase QTc interval. Use Caution/Monitor.
+
+hyoscyamine
+hyoscyamine and clomipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+hyoscyamine spray
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 41/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+hyoscyamine spray and clomipramine both decrease cholinergic
+effects/transmission. Use Caution/Monitor.
+
+ibuprofen
+clomipramine, ibuprofen. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. Clomipramine
+inhib. serotonin uptake by platelets.
+
+ibuprofen IV
+clomipramine, ibuprofen IV. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. Clomipramine inhib. serotonin uptake by platelets.
+
+icosapent ethyl
+icosapent ethyl, clomipramine. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Icosapent may prolong
+bleeding time. Periodically monitor if coadministered with other drugs that affect
+bleeding.
+
+iloprost
+iloprost, clomipramine. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. When administering iloprost IV,
+consider temporary discontinuation of concomitant vasodilators or other
+medications that reduce blood pressure to mitigate potential additive hypotensive
+effects. If hypotension persists despite discontinuing other antihypertensives and
+fluid resuscitation, consider iloprost dose reduction or discontinuation.
+
+imatinib
+imatinib will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+imipramine
+clomipramine and imipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+clomipramine and imipramine both increase sedation. Use Caution/Monitor.
+
+incobotulinumtoxinA
+clomipramine increases effects of incobotulinumtoxinA by pharmacodynamic
+synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate
+botulinum toxin effects, which may result in excessive neuromuscular weakness
+and heighten systemic anticholinergic effects.
+
+indacaterol, inhaled
+indacaterol, inhaled, clomipramine. QTc interval. Use Caution/Monitor. Indacaterol
+should be administered with extreme caution to patients treated with TCAs. Drugs
+that are known to prolong the QTc interval may have an increased the risk of
+ventricular arrhythmias.
+
+indomethacin
+clomipramine, indomethacin. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 42/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+bleeding. Clomipramine inhib. serotonin uptake by platelets.
+
+ipratropium
+clomipramine and ipratropium both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+isoflurane
+isoflurane and clomipramine both increase QTc interval. Use Caution/Monitor.
+
+isoniazid
+clomipramine and isoniazid both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+isoproterenol
+clomipramine increases and isoproterenol decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+itraconazole
+itraconazole and clomipramine both increase QTc interval. Use Caution/Monitor.
+
+ketamine
+ketamine and clomipramine both increase sedation. Use Caution/Monitor.
+
+ketoconazole
+ketoconazole will increase the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+ketoprofen
+clomipramine, ketoprofen. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. Clomipramine inhib. serotonin uptake by platelets.
+
+ketorolac
+clomipramine, ketorolac. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. Clomipramine
+inhib. serotonin uptake by platelets.
+
+ketorolac intranasal
+clomipramine, ketorolac intranasal. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. Clomipramine inhib. serotonin uptake by platelets.
+
+ketotifen, ophthalmic
+clomipramine and ketotifen, ophthalmic both increase sedation. Use
+Caution/Monitor.
+
+L-tryptophan
+clomipramine and L-tryptophan both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+lamotrigine
+lamotrigine and clomipramine both increase sedation. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 43/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+lapatinib
+clomipramine and lapatinib both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+lemborexant
+lemborexant, clomipramine. Either increases effects of the other by sedation. Modify
+Therapy/Monitor Closely. Dosage adjustment may be necessary if lemborexant is
+coadministered with other CNS depressants because of potentially additive effects.
+
+letermovir
+letermovir increases levels of clomipramine by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+
+letibotulinumtoxinA
+clomipramine increases effects of letibotulinumtoxinA by pharmacodynamic
+synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate
+botulinum toxin effects, which may result in excessive neuromuscular weakness
+and heighten systemic anticholinergic effects.
+
+levetiracetam
+levetiracetam and clomipramine both increase sedation. Use Caution/Monitor.
+
+levocetirizine
+levocetirizine and clomipramine both increase sedation. Use Caution/Monitor.
+
+levofloxacin
+clomipramine and levofloxacin both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+levoketoconazole
+levoketoconazole will increase the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+levorphanol
+levorphanol and clomipramine both increase sedation. Use Caution/Monitor.
+
+levothyroxine
+levothyroxine increases effects of clomipramine by Other (see comment). Use
+Caution/Monitor. Comment: Increased catecholamine receptor sensitivity; may
+increase CNS and cardiovascular effects, including arrhythmias.
+
+liothyronine
+liothyronine increases effects of clomipramine by Other (see comment). Use
+Caution/Monitor. Comment: Increased catecholamine receptor sensitivity; may
+increase CNS and cardiovascular effects, including arrhythmias.
+
+liotrix
+liotrix increases effects of clomipramine by Other (see comment). Use
+Caution/Monitor. Comment: Increased catecholamine receptor sensitivity; may
+increase CNS and cardiovascular effects, including arrhythmias.
+
+lisdexamfetamine
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 44/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+clomipramine increases and lisdexamfetamine decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+clomipramine, lisdexamfetamine. Either increases effects of the other by serotonin
+levels. Use Caution/Monitor. Initiate with lower doses and monitor for signs and
+symptoms of serotonin syndrome, particularly during initiation or dosage increase. If
+serotonin syndrome occurs, discontinue along with concomitant serotonergic
+drug(s).
+
+lithium
+clomipramine and lithium both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+lithium and clomipramine both increase QTc interval. Use Caution/Monitor.
+
+lofepramine
+clomipramine and lofepramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+clomipramine and lofepramine both increase sedation. Use Caution/Monitor.
+
+lofexidine
+clomipramine and lofexidine both increase sedation. Use Caution/Monitor.
+
+clomipramine decreases effects of lofexidine by unspecified interaction mechanism.
+Use Caution/Monitor.
+
+lonapegsomatropin
+lonapegsomatropin will decrease the level or effect of clomipramine by affecting
+hepatic enzyme CYP1A2 metabolism. Use Caution/Monitor. Limited published data
+indicate that growth hormone treatment increases cytochrome P450 (CYP450)-
+mediated antipyrine clearance. Caution with sensitive CYP substrates
+
+loprazolam
+loprazolam and clomipramine both increase sedation. Use Caution/Monitor.
+
+loratadine
+loratadine and clomipramine both increase sedation. Use Caution/Monitor.
+
+lorazepam
+lorazepam and clomipramine both increase sedation. Use Caution/Monitor.
+
+lorcaserin
+lorcaserin will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+lormetazepam
+lormetazepam and clomipramine both increase sedation. Use Caution/Monitor.
+
+lornoxicam
+clomipramine, lornoxicam. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 45/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+bleeding. Clomipramine inhib. serotonin uptake by platelets.
+
+loxapine
+loxapine and clomipramine both increase sedation. Use Caution/Monitor.
+
+loxapine inhaled
+loxapine inhaled and clomipramine both increase sedation. Use Caution/Monitor.
+
+lsd
+clomipramine and lsd both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+lumacaftor/ivacaftor
+lumacaftor/ivacaftor, clomipramine. affecting hepatic enzyme CYP2C19 metabolism.
+Modify Therapy/Monitor Closely. In vitro studies suggest that lumacaftor may
+induce and ivacaftor may inhibit CYP2C19 substrates. .
+
+lumateperone
+lumateperone and clomipramine both increase sedation. Use Caution/Monitor.
+
+lurasidone
+lurasidone increases effects of clomipramine by Other (see comment). Use
+Caution/Monitor. Comment: Potential for increased risk of hypotension with
+concurrent use. Monitor blood pressure and adjust dose of antihypertensive agent
+as needed.
+
+lurasidone and clomipramine both increase sedation. Use Caution/Monitor.
+
+maraviroc
+maraviroc will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+marijuana
+marijuana will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+clomipramine and marijuana both increase sedation. Use Caution/Monitor.
+
+mavorixafor
+mavorixafor and clomipramine both increase QTc interval. Modify Therapy/Monitor
+Closely. Mavorixafor causes concentration-dependent QTc prolongation. Monitor
+QTc during treatment in patients with risk factors for QTc prolongation (eg,
+coadministered medications that increase mavorixafor exposure or other drugs with
+a high risk to prolong the QTc interval). Mavorixafor dose reduction or
+discontinuation may be required.
+
+meclizine
+meclizine and clomipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+meclizine and clomipramine both increase sedation. Use Caution/Monitor.
+
+meclofenamate
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 46/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+clomipramine, meclofenamate. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. Clomipramine inhib. serotonin uptake by platelets.
+
+mefenamic acid
+clomipramine, mefenamic acid. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. Clomipramine inhib. serotonin uptake by platelets.
+
+melatonin
+clomipramine and melatonin both increase sedation. Use Caution/Monitor.
+
+meloxicam
+clomipramine, meloxicam. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. Clomipramine inhib. serotonin uptake by platelets.
+
+meperidine
+meperidine and clomipramine both increase sedation. Use Caution/Monitor.
+
+meprobamate
+clomipramine and meprobamate both increase sedation. Use Caution/Monitor.
+
+metaproterenol
+clomipramine increases and metaproterenol decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+metaxalone
+metaxalone and clomipramine both increase sedation. Use Caution/Monitor.
+
+methadone
+clomipramine and methadone both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+methadone and clomipramine both increase sedation. Use Caution/Monitor.
+
+methamphetamine
+clomipramine increases and methamphetamine decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+methocarbamol
+methocarbamol and clomipramine both increase sedation. Use Caution/Monitor.
+
+methscopolamine
+methscopolamine and clomipramine both decrease cholinergic effects/transmission.
+Use Caution/Monitor.
+
+methsuximide
+methsuximide and clomipramine both increase sedation. Use Caution/Monitor.
+
+methylenedioxymethamphetamine
+clomipramine increases and methylenedioxymethamphetamine decreases sedation.
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 47/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+methylphenidate
+clomipramine, methylphenidate. Other (see comment). Use Caution/Monitor.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+methylphenidate transdermal
+methylphenidate transdermal will increase the level or effect of clomipramine by
+decreasing elimination. Modify Therapy/Monitor Closely. Consider decreasing the
+dose of these drugs when given coadministered with methylphenidate. Monitor for
+drug toxiticities when initiating or discontinuing methylphenidate.
+
+mexiletine
+mexiletine will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP1A2 metabolism. Use Caution/Monitor.
+
+midazolam
+midazolam and clomipramine both increase sedation. Use Caution/Monitor.
+
+midazolam intranasal
+midazolam intranasal, clomipramine. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Concomitant use of
+barbiturates, alcohol, or other CNS depressants may increase the risk of
+hypoventilation, airway obstruction, desaturation, or apnea and may contribute to
+profound and/or prolonged drug effect.
+
+midodrine
+clomipramine increases and midodrine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+mifepristone
+mifepristone, clomipramine. QTc interval. Modify Therapy/Monitor Closely. Use
+alternatives if available.
+
+milnacipran
+milnacipran, clomipramine. Mechanism: unspecified interaction mechanism. Use
+Caution/Monitor. Risk of euphoria, postural hypot'n when switching from
+clomipramine to milnacipran.
+
+mirabegron
+mirabegron will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+mirtazapine
+clomipramine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+clomipramine and mirtazapine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+mitapivat
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 48/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+mitapivat decreases levels of clomipramine by affecting hepatic enzyme CYP2C19
+metabolism. Use Caution/Monitor. Monitor patients for loss of therapeutic effect if
+taking sensitive CYP2C19 substrates. .
+
+modafinil
+clomipramine increases and modafinil decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+molindone
+molindone and clomipramine both increase sedation. Use Caution/Monitor.
+
+morphine
+morphine and clomipramine both increase sedation. Use Caution/Monitor.
+
+clomipramine and morphine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+motherwort
+clomipramine and motherwort both increase sedation. Use Caution/Monitor.
+
+moxonidine
+clomipramine and moxonidine both increase sedation. Use Caution/Monitor.
+
+nabilone
+clomipramine and nabilone both increase sedation. Use Caution/Monitor.
+
+nabumetone
+clomipramine, nabumetone. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. Clomipramine inhib. serotonin uptake by platelets.
+
+nalbuphine
+nalbuphine and clomipramine both increase sedation. Use Caution/Monitor.
+
+naproxen
+clomipramine, naproxen. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. Clomipramine
+inhib. serotonin uptake by platelets.
+
+naratriptan
+naratriptan and clomipramine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+nefopam
+nefopam, clomipramine. Mechanism: unspecified interaction mechanism. Use
+Caution/Monitor. Use combination with caution.
+
+nelfinavir
+nelfinavir will increase the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+neostigmine
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 49/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+neostigmine increases and clomipramine decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+nilotinib
+nilotinib will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+nitrous oxide
+nitrous oxide and clomipramine both increase sedation. Use Caution/Monitor.
+
+norepinephrine
+clomipramine increases and norepinephrine decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+clomipramine increases effects of norepinephrine by unknown mechanism. Use
+Caution/Monitor.
+
+nortriptyline
+clomipramine and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+clomipramine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+ofloxacin
+clomipramine and ofloxacin both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+olanzapine
+olanzapine and clomipramine both increase sedation. Use Caution/Monitor.
+
+olanzapine and clomipramine both increase QTc interval. Use Caution/Monitor.
+
+olanzapine/samidorphan
+clomipramine, olanzapine/samidorphan. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration of diazepam,
+alcohol, or other CNS acting drugs may potentiate orthostatic hypotension
+observed with olanzapine. Additive sedation may also occur.
+
+olodaterol inhaled
+clomipramine and olodaterol inhaled both increase QTc interval. Use
+Caution/Monitor. TCAs prolong the QTc interval and may potentiate the effects of
+beta2 agonists on the cardiovascular system; increased risk of ventricular
+arrhythmias
+
+onabotulinumtoxinA
+clomipramine increases effects of onabotulinumtoxinA by pharmacodynamic
+synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate
+botulinum toxin effects, which may result in excessive neuromuscular weakness
+and heighten systemic anticholinergic effects.
+
+opium tincture
+opium tincture and clomipramine both increase sedation. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 50/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+orphenadrine
+clomipramine and orphenadrine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+orphenadrine and clomipramine both increase sedation. Use Caution/Monitor.
+
+osimertinib
+osimertinib and clomipramine both increase QTc interval. Use Caution/Monitor.
+Conduct periodic monitoring with ECGs and electrolytes in patients taking drugs
+known to prolong the QTc interval.
+
+oxaprozin
+clomipramine, oxaprozin. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. Clomipramine
+inhib. serotonin uptake by platelets.
+
+oxazepam
+oxazepam and clomipramine both increase sedation. Use Caution/Monitor.
+
+oxybutynin
+oxybutynin and clomipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+oxybutynin topical
+oxybutynin topical and clomipramine both decrease cholinergic
+effects/transmission. Use Caution/Monitor.
+
+oxybutynin transdermal
+oxybutynin transdermal and clomipramine both decrease cholinergic
+effects/transmission. Use Caution/Monitor.
+
+oxycodone
+oxycodone and clomipramine both increase sedation. Use Caution/Monitor.
+
+oxymetazoline intranasal
+clomipramine increases effects of oxymetazoline intranasal by pharmacodynamic
+synergism. Use Caution/Monitor. TCAs inhibit norepinephrine uptake in adrenergic
+neurons, thereby increasing synaptic norepinephrine levels. Coadministration with
+alpha1 agonists may cause increased adrenergic receptor stimulation. When
+oxymetazoline is combined with intranasal tetracaine for dental anesthesia, avoid or
+use alternant anesthetic in patients taking TCAs.
+
+oxymorphone
+oxymorphone and clomipramine both increase sedation. Use Caution/Monitor.
+
+ozanimod
+ozanimod and clomipramine both increase QTc interval. Modify Therapy/Monitor
+Closely. The potential additive effects on heart rate, treatment with ozanimod
+should generally not be initiated in patients who are concurrently treated with QT
+prolonging drugs with known arrhythmogenic properties.
+
+paliperidone
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 51/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+clomipramine and paliperidone both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+paliperidone and clomipramine both increase sedation. Use Caution/Monitor.
+
+pancuronium
+pancuronium and clomipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+papaveretum
+papaveretum and clomipramine both increase sedation. Use Caution/Monitor.
+
+papaverine
+clomipramine and papaverine both increase sedation. Use Caution/Monitor.
+
+parecoxib
+parecoxib will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+clomipramine, parecoxib. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. Clomipramine
+inhib. serotonin uptake by platelets.
+
+paroxetine
+clomipramine and paroxetine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+pasireotide
+clomipramine and pasireotide both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+pazopanib
+clomipramine and pazopanib both increase QTc interval. Use Caution/Monitor.
+
+peginterferon alfa 2a
+peginterferon alfa 2a will increase the level or effect of clomipramine by affecting
+hepatic enzyme CYP1A2 metabolism. Use Caution/Monitor.
+
+peginterferon alfa 2b
+peginterferon alfa 2b, clomipramine. Other (see comment). Use Caution/Monitor.
+Comment: When patients are administered peginterferon alpha-2b with CYP2D6
+substrates, the therapeutic effect of these drugs may be altered. Peginterferon
+alpha-2b may increase or decrease levels of CYP2D6 substrate.
+
+pentazocine
+pentazocine and clomipramine both increase sedation. Use Caution/Monitor.
+
+clomipramine and pentazocine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+pentobarbital
+pentobarbital will decrease the level or effect of clomipramine by affecting hepatic
+enzyme CYP1A2 metabolism. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 52/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+pentobarbital will decrease the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+
+pentobarbital and clomipramine both increase sedation. Use Caution/Monitor.
+
+perphenazine
+perphenazine will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+perphenazine and clomipramine both increase sedation. Use Caution/Monitor.
+
+phendimetrazine
+clomipramine increases and phendimetrazine decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+phenobarbital
+phenobarbital will decrease the level or effect of clomipramine by affecting hepatic
+enzyme CYP1A2 metabolism. Use Caution/Monitor.
+
+phenobarbital will decrease the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+
+phenobarbital and clomipramine both increase sedation. Use Caution/Monitor.
+
+phentermine
+clomipramine increases and phentermine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+phenylephrine
+clomipramine increases and phenylephrine decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+phenylephrine ophthalmic
+clomipramine, phenylephrine ophthalmic. Other (see comment). Use
+Caution/Monitor. Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+phenylephrine PO
+clomipramine increases and phenylephrine PO decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor. .
+
+phenytoin
+phenytoin will decrease the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+pholcodine
+clomipramine and pholcodine both increase sedation. Use Caution/Monitor.
+
+physostigmine
+physostigmine increases and clomipramine decreases cholinergic
+effects/transmission. Effect of interaction is not clear, use caution. Use
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 53/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+Caution/Monitor.
+
+pilocarpine
+pilocarpine increases and clomipramine decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+pimozide
+pimozide and clomipramine both increase sedation. Use Caution/Monitor.
+
+pipemidic acid
+pipemidic acid will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP1A2 metabolism. Use Caution/Monitor.
+
+pirbuterol
+clomipramine increases and pirbuterol decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+piroxicam
+clomipramine, piroxicam. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. Clomipramine
+inhib. serotonin uptake by platelets.
+
+posaconazole
+clomipramine and posaconazole both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+prabotulinumtoxinA
+clomipramine increases effects of prabotulinumtoxinA by pharmacodynamic
+synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate
+botulinum toxin effects, which may result in excessive neuromuscular weakness
+and heighten systemic anticholinergic effects.
+
+pralidoxime
+pralidoxime and clomipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+pregabalin
+pregabalin, clomipramine. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+primidone
+primidone will decrease the level or effect of clomipramine by affecting hepatic
+enzyme CYP1A2 metabolism. Use Caution/Monitor.
+
+primidone will decrease the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+
+primidone and clomipramine both increase sedation. Use Caution/Monitor.
+
+prochlorperazine
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 54/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+prochlorperazine and clomipramine both increase QTc interval. Use
+Caution/Monitor.
+
+prochlorperazine and clomipramine both increase sedation. Use Caution/Monitor.
+
+promethazine
+promethazine and clomipramine both increase sedation. Use Caution/Monitor.
+
+propafenone
+propafenone will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+propantheline
+propantheline and clomipramine both decrease cholinergic effects/transmission.
+Use Caution/Monitor.
+
+propofol
+propofol and clomipramine both increase sedation. Use Caution/Monitor.
+
+propylhexedrine
+clomipramine increases and propylhexedrine decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+protriptyline
+clomipramine and protriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+clomipramine and protriptyline both increase sedation. Use Caution/Monitor.
+
+pyridostigmine
+pyridostigmine increases and clomipramine decreases cholinergic
+effects/transmission. Effect of interaction is not clear, use caution. Use
+Caution/Monitor.
+
+pyrilamine
+pyrilamine and clomipramine both increase sedation. Use Caution/Monitor.
+
+quazepam
+quazepam and clomipramine both increase sedation. Use Caution/Monitor.
+
+quetiapine
+quetiapine and clomipramine both increase sedation. Use Caution/Monitor.
+
+quetiapine, clomipramine. Either increases toxicity of the other by QTc interval. Use
+Caution/Monitor. Avoid use with drugs that prolong QT and in patients with risk
+factors for prolonged QT interval. Postmarketing cases show QT prolongation with
+overdose in patients with concomitant illness or with drugs known to cause
+electrolyte imbalance or prolong QT.
+
+quinacrine
+quinacrine will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 55/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+quinine
+clomipramine and quinine both increase QTc interval. Use Caution/Monitor.
+
+quizartinib
+quizartinib, clomipramine. Either increases effects of the other by QTc interval.
+Modify Therapy/Monitor Closely. Monitor patients more frequently with ECG if
+coadministered with QT prolonging drugs.
+
+ramelteon
+clomipramine and ramelteon both increase sedation. Use Caution/Monitor.
+
+ranolazine
+ranolazine will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+clomipramine and ranolazine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+rapacuronium
+rapacuronium and clomipramine both decrease cholinergic effects/transmission.
+Use Caution/Monitor.
+
+remifentanil
+clomipramine, remifentanil. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. May also increase
+risk of serotonin syndrome.
+
+remimazolam
+remimazolam, clomipramine. Either increases toxicity of the other by sedation.
+Modify Therapy/Monitor Closely. Coadministration may result in profound sedation,
+respiratory depression, coma, and/or death. Continuously monitor vital signs during
+sedation and recovery period if coadministered. Carefully titrate remimazolam dose
+if administered with opioid analgesics and/or sedative/hypnotics.
+
+revumenib
+revumenib and clomipramine both increase QTc interval. Use Caution/Monitor. ECG
+monitoring recommended if concomitant use can?t be avoided and withhold
+therapy if QTc interval is >480 msec; restart therapy after QTc interval returns to
+<480 msec
+
+rifabutin
+rifabutin will decrease the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+rifabutin decreases levels of clomipramine by increasing metabolism. Use
+Caution/Monitor.
+
+rifampin
+rifampin will decrease the level or effect of clomipramine by affecting hepatic
+enzyme CYP1A2 metabolism. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 56/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+rifampin will decrease the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+rifapentine
+rifapentine will decrease the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+rilpivirine
+rilpivirine increases toxicity of clomipramine by QTc interval. Use Caution/Monitor.
+Rilpivirine should be used with caution when co-administered with a drug with a
+known risk of Torsades de Pointes.
+
+rimabotulinumtoxinB
+clomipramine increases effects of rimabotulinumtoxinB by pharmacodynamic
+synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate
+botulinum toxin effects, which may result in excessive neuromuscular weakness
+and heighten systemic anticholinergic effects.
+
+risperidone
+clomipramine and risperidone both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+risperidone and clomipramine both increase sedation. Use Caution/Monitor.
+
+ritlecitinib
+ritlecitinib will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP1A2 metabolism. Modify Therapy/Monitor Closely. Ritlecitinib inhibits
+CYP1A2 substrates; coadministration increases AUC and peak plasma
+concentration sensitive substrates, which may increase risk of adverse reactions.
+Additional monitoring and dosage adjustment may be needed in accordance with
+product labeling of CYP1A2 substrates.
+
+ritonavir
+ritonavir will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+ritonavir will increase the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+rivastigmine
+rivastigmine increases and clomipramine decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+rizatriptan
+rizatriptan and clomipramine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+rocuronium
+rocuronium and clomipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+rolapitant
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 57/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+rolapitant will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor. Rolapitant may increase
+plasma concentrations of CYP2D6 substrates for at least 28 days following
+rolapitant administration.
+
+romidepsin
+clomipramine and romidepsin both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+salicylates (non-asa)
+clomipramine, salicylates (non-asa). Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. Clomipramine inhib. serotonin uptake by platelets.
+
+salmeterol
+clomipramine increases and salmeterol decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+salsalate
+clomipramine, salsalate. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. Clomipramine
+inhib. serotonin uptake by platelets.
+
+SAMe
+clomipramine and SAMe both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+scopolamine
+scopolamine and clomipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+scopolamine and clomipramine both increase sedation. Use Caution/Monitor.
+
+scopolamine intranasal
+scopolamine intranasal and clomipramine both increase sedation. Use
+Caution/Monitor.
+
+scullcap
+clomipramine and scullcap both increase sedation. Use Caution/Monitor.
+
+selpercatinib
+selpercatinib increases toxicity of clomipramine by QTc interval. Use
+Caution/Monitor.
+
+sertraline
+sertraline will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Modify Therapy/Monitor Closely.
+
+sevoflurane
+sevoflurane and clomipramine both increase sedation. Use Caution/Monitor.
+
+sevoflurane and clomipramine both increase QTc interval. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 58/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+shepherd's purse
+clomipramine and shepherd's purse both increase sedation. Use Caution/Monitor.
+
+smoking
+smoking will decrease the level or effect of clomipramine by affecting hepatic
+enzyme CYP1A2 metabolism. Use Caution/Monitor.
+
+sodium sulfate/?magnesium sulfate/potassium chloride
+sodium sulfate/?magnesium sulfate/potassium chloride increases effects of
+clomipramine by unknown mechanism. Use Caution/Monitor. Closely monitor for
+evidence of seizures when using higher dose of magnesium sulfate together with
+drugs that lower the seizure threshold.
+
+sodium sulfate/potassium chloride/magnesium sulfate/polyethylene glycol
+clomipramine, sodium sulfate/potassium chloride/magnesium sulfate/polyethylene
+glycol. Other (see comment). Use Caution/Monitor. Comment: Caution when bowel
+preps are used with drugs that cause SIADH or NSAIDs; increased risk for water
+retention or electrolyte imbalance.
+
+sodium sulfate/potassium sulfate/magnesium sulfate
+sodium sulfate/potassium sulfate/magnesium sulfate increases effects of
+clomipramine by unknown mechanism. Use Caution/Monitor. Closely monitor for
+evidence of seizures when using higher dose of magnesium sulfate together with
+drugs that lower the seizure threshold.
+
+solifenacin
+solifenacin and clomipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+solifenacin and clomipramine both increase QTc interval. Use Caution/Monitor.
+
+somapacitan
+somapacitan will decrease the level or effect of clomipramine by affecting hepatic
+enzyme CYP1A2 metabolism. Use Caution/Monitor. Limited published data indicate
+that growth hormone treatment increases cytochrome P450 (CYP450)-mediated
+antipyrine clearance. Caution with sensitive CYP substrates
+
+somatrogon
+somatrogon will decrease the level or effect of clomipramine by affecting hepatic
+enzyme CYP1A2 metabolism. Use Caution/Monitor. Limited published data indicate
+that growth hormone treatment increases cytochrome P450 (CYP450)-mediated
+antipyrine clearance. Caution with sensitive CYP substrates
+
+somatropin
+somatropin will decrease the level or effect of clomipramine by affecting hepatic
+enzyme CYP1A2 metabolism. Use Caution/Monitor. Limited published data indicate
+that growth hormone treatment increases cytochrome P450 (CYP450)-mediated
+antipyrine clearance. Caution with sensitive CYP substrates
+
+sorafenib
+sorafenib and clomipramine both increase QTc interval. Use Caution/Monitor.
+
+sparsentan
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 59/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+sparsentan will decrease the level or effect of clomipramine by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor. Sparsentan (a CYP2C19
+inducer) decreases exposure of CYP2C19 substrates and reduces efficacy related to
+these substrates.
+
+St John's Wort
+St John's Wort will decrease the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+
+stiripentol
+stiripentol, clomipramine. affecting hepatic enzyme CYP1A2 metabolism. Modify
+Therapy/Monitor Closely. Stiripentol is a CYP1A2 inhibitor and inducer. Monitor
+CYP1A2 substrates coadministered with stiripentol for increased or decreased
+effects. CYP1A2 substrates may require dosage adjustment.
+
+stiripentol will decrease the level or effect of clomipramine by affecting hepatic
+enzyme CYP2C19 metabolism. Modify Therapy/Monitor Closely. Consider reducing
+the dose of CYP2C19 substrates, if adverse reactions are experienced when
+administered concomitantly with stiripentol.
+
+stiripentol, clomipramine. Either increases effects of the other by sedation. Use
+Caution/Monitor. Concomitant use stiripentol with other CNS depressants, including
+alcohol, may increase the risk of sedation and somnolence.
+
+succinylcholine
+succinylcholine increases and clomipramine decreases cholinergic
+effects/transmission. Effect of interaction is not clear, use caution. Use
+Caution/Monitor.
+
+sufentanil
+sufentanil and clomipramine both increase sedation. Use Caution/Monitor.
+
+sufentanil SL
+sufentanil SL, clomipramine. Either increases effects of the other by serotonin
+levels. Use Caution/Monitor. Coadministration of drugs that affect the serotonergic
+neurotransmitter system may result in serotonin syndrome. If concomitant use is
+warranted, carefully observe the patient, particularly during treatment initiation and
+dose adjustment.
+
+sulfamethoxazole
+clomipramine and sulfamethoxazole both increase QTc interval. Modify
+Therapy/Monitor Closely.
+
+sulfasalazine
+clomipramine, sulfasalazine. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. Clomipramine inhib. serotonin uptake by platelets.
+
+sulindac
+clomipramine, sulindac. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. Clomipramine
+inhib. serotonin uptake by platelets.
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 60/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+sumatriptan
+sumatriptan and clomipramine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+sumatriptan intranasal
+sumatriptan intranasal and clomipramine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+suvorexant
+suvorexant and clomipramine both increase sedation. Modify Therapy/Monitor
+Closely. Dosage adjustments of suvorexant and concomitant CNS depressants may
+be necessary
+
+tacrolimus
+tacrolimus and clomipramine both increase QTc interval. Use Caution/Monitor.
+
+taletrectinib
+taletrectinib and clomipramine both increase QTc interval. Use Caution/Monitor.
+Concomitant use may increase the risk of QTc interval prolongation. If concomitant
+use is unavoidable, adjust the frequency of ECG and electrolyte monitoring.
+
+talquetamab
+talquetamab will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP1A2 metabolism. Use Caution/Monitor. Talquetamab causes cytokine
+release syndrome (CRS) that may suppress activity of CYP enzymes, resulting in
+increased exposure of CYP substrates. This is more likely to occur from initiation of
+talquetamab step-up dosing up to 14 days after the first treatment dose and during
+and after CRS.
+
+tamsulosin
+clomipramine increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+tapentadol
+tapentadol and clomipramine both increase sedation. Use Caution/Monitor.
+
+clomipramine and tapentadol both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+tasimelteon
+tasimelteon and clomipramine both increase sedation. Use Caution/Monitor.
+
+tecovirimat
+tecovirimat will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor. Tecovirimat is a weak inhibitor
+of CYP2C8 and CYP2C19. Monitor for adverse effects if coadministered with
+sensitive substrates of these enzymes.
+
+telavancin
+clomipramine and telavancin both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+temazepam
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 61/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+temazepam and clomipramine both increase sedation. Use Caution/Monitor.
+
+terbinafine
+terbinafine will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Modify Therapy/Monitor Closely. Assess need to
+reduce dose of CYP2D6-metabolized drug.
+
+terbutaline
+clomipramine increases and terbutaline decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+teriflunomide
+teriflunomide decreases levels of clomipramine by affecting hepatic enzyme
+CYP1A2 metabolism. Use Caution/Monitor.
+
+tetrabenazine
+tetrabenazine and clomipramine both increase QTc interval. Use Caution/Monitor.
+
+tetrabenazine and clomipramine both increase sedation. Use Caution/Monitor.
+
+thioridazine
+thioridazine and clomipramine both increase sedation. Use Caution/Monitor.
+
+thiothixene
+thiothixene and clomipramine both increase sedation. Use Caution/Monitor.
+
+thyroid desiccated
+thyroid desiccated increases effects of clomipramine by Other (see comment). Use
+Caution/Monitor. Comment: Increased catecholamine receptor sensitivity; may
+increase CNS and cardiovascular effects, including arrhythmias.
+
+tiagabine
+tiagabine and clomipramine both increase sedation. Use Caution/Monitor.
+
+tiotropium
+tiotropium and clomipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+tipranavir
+tipranavir will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+tizanidine
+tizanidine and clomipramine both increase sedation. Use Caution/Monitor.
+
+tobacco use
+tobacco use will decrease the level or effect of clomipramine by affecting hepatic
+enzyme CYP1A2 metabolism. Use Caution/Monitor.
+
+tolfenamic acid
+clomipramine, tolfenamic acid. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 62/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+bleeding. Clomipramine inhib. serotonin uptake by platelets.
+
+tolmetin
+clomipramine, tolmetin. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. Clomipramine
+inhib. serotonin uptake by platelets.
+
+tolterodine
+tolterodine and clomipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+topiramate
+clomipramine and topiramate both increase sedation. Modify Therapy/Monitor
+Closely.
+
+tramadol
+tramadol and clomipramine both increase sedation. Use Caution/Monitor.
+
+clomipramine and tramadol both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+trazodone
+clomipramine and trazodone both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+clomipramine and trazodone both increase sedation. Use Caution/Monitor.
+
+triazolam
+triazolam and clomipramine both increase sedation. Use Caution/Monitor.
+
+triclabendazole
+triclabendazole will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor. If plasma concentrations of
+the CYP2C19 substrates are elevated during triclabendazole, recheck plasma
+concentration of the CYP2C19 substrates after discontinuation of triclabendazole.
+
+triclofos
+triclofos and clomipramine both increase sedation. Use Caution/Monitor.
+
+trifluoperazine
+trifluoperazine and clomipramine both increase sedation. Use Caution/Monitor.
+
+trihexyphenidyl
+trihexyphenidyl and clomipramine both decrease cholinergic effects/transmission.
+Use Caution/Monitor. Potential for additive anticholinergic effects.
+
+trimethoprim
+clomipramine and trimethoprim both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+trimipramine
+clomipramine and trimipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 63/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+clomipramine and trimipramine both increase sedation. Use Caution/Monitor.
+
+triprolidine
+triprolidine and clomipramine both increase sedation. Use Caution/Monitor.
+
+tropisetron
+clomipramine and tropisetron both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+trospium chloride
+trospium chloride and clomipramine both decrease cholinergic effects/transmission.
+Use Caution/Monitor.
+
+valbenazine
+valbenazine and clomipramine both increase QTc interval. Use Caution/Monitor.
+
+valerian
+valerian and clomipramine both increase sedation. Use Caution/Monitor.
+
+valproic acid
+valproic acid and clomipramine both increase sedation. Use Caution/Monitor.
+
+vecuronium
+vecuronium and clomipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+venlafaxine
+venlafaxine will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+clomipramine and venlafaxine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+verapamil
+verapamil will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP1A2 metabolism. Use Caution/Monitor.
+
+vigabatrin
+vigabatrin and clomipramine both increase sedation. Use Caution/Monitor.
+
+viloxazine
+viloxazine will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP1A2 metabolism. Modify Therapy/Monitor Closely. Viloxazine (a strong
+CYP1A2 inhibitor) significantly increases systemic exposure of CYP1A2 substrates.
+If unable to avoid, dosage reduction of the CYP1A2 substrate may be warranted.
+
+viloxazine will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor. Viloxazine (a weak CYP2D6
+inhibitor) may increase systemic exposure of CYP2D6 substrates. Monitor and
+adjust dose of substrate as clinically indicated.
+
+voclosporin
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 64/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+voclosporin, clomipramine. Either increases effects of the other by QTc interval. Use
+Caution/Monitor.
+
+voriconazole
+clomipramine and voriconazole both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+xanomeline/trospium
+xanomeline/trospium, clomipramine. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration of
+antimuscarinic drugs that produce anticholinergic adverse reactions (eg, dry mouth,
+constipation) may increase the frequency and/or severity of such effects.
+
+xylometazoline
+clomipramine increases and xylometazoline decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+yohimbine
+clomipramine increases and yohimbine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+zaleplon
+zaleplon and clomipramine both increase sedation. Use Caution/Monitor.
+
+ziconotide
+clomipramine and ziconotide both increase sedation. Use Caution/Monitor.
+
+ziftomenib
+clomipramine, ziftomenib. QTc interval. Use Caution/Monitor. Caution if ziftomenib is
+coadministered with drugs that exacerbated risk of QT prolongation (eg,
+hypokalemia, orthostatic hypotension, inhibits metabolism of ziftomenib).
+
+zileuton
+zileuton will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP1A2 metabolism. Use Caution/Monitor.
+
+ziprasidone
+ziprasidone and clomipramine both increase sedation. Use Caution/Monitor.
+
+zolmitriptan
+zolmitriptan and clomipramine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+zolpidem
+zolpidem and clomipramine both increase sedation. Use Caution/Monitor.
+
+zonisamide
+zonisamide and clomipramine both increase sedation. Use Caution/Monitor.
+
+zuranolone
+zuranolone and clomipramine both increase sedation. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 65/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+Minor (95)
+
+acarbose
+clomipramine increases effects of acarbose by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+armodafinil
+armodafinil will decrease the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+artemether/lumefantrine
+artemether/lumefantrine will decrease the level or effect of clomipramine by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance
+Unknown.
+
+atropine
+clomipramine increases levels of atropine by unknown mechanism.
+Minor/Significance Unknown.
+
+atropine IV/IM
+clomipramine increases levels of atropine IV/IM by unknown mechanism.
+Minor/Significance Unknown.
+
+bazedoxifene/conjugated estrogens
+bazedoxifene/conjugated estrogens, clomipramine. Mechanism: unspecified
+interaction mechanism. Minor/Significance Unknown. Estrogens and progestins may
+decr tricyclic antidepressant effects, while increasing TCA plasma concentration and
+adverse effects.
+
+bosentan
+bosentan will decrease the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+brimonidine topical
+clomipramine decreases effects of brimonidine topical by pharmacodynamic
+antagonism. Minor/Significance Unknown.
+
+budesonide
+budesonide will decrease the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+butalbital
+butalbital, clomipramine. Other (see comment). Minor/Significance Unknown.
+Comment: Barbiturates may increase adverse effects, including respiratory
+depression, produced by toxic doses of TCAs. With therapeutic doses of TCAs,
+barbiturates increase metabolism and decrease blood concentrations of TCAs.
+
+carbachol/brimonidine ophthalmic
+clomipramine decreases effects of carbachol/brimonidine ophthalmic by
+pharmacodynamic antagonism. Minor/Significance Unknown.
+
+carbamazepine
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 66/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+carbamazepine decreases levels of clomipramine by increasing metabolism.
+Minor/Significance Unknown.
+
+chlorpromazine
+clomipramine, chlorpromazine. Either increases levels of the other by decreasing
+metabolism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+clomipramine, chlorpromazine. Either increases levels of the other by
+pharmacodynamic synergism. Minor/Significance Unknown. Additive anticholinergic
+effects.
+
+conjugated estrogens
+conjugated estrogens, clomipramine. Mechanism: unspecified interaction
+mechanism. Minor/Significance Unknown. Estrogens and progestins may decr
+tricyclic antidepressant effects, while increasing TCA plasma concentration and
+adverse effects.
+
+conjugated estrogens, vaginal
+conjugated estrogens, vaginal, clomipramine. Mechanism: unspecified interaction
+mechanism. Minor/Significance Unknown. Estrogens and progestins may decr
+tricyclic antidepressant effects, while increasing TCA plasma concentration and
+adverse effects.
+
+cortisone
+cortisone will decrease the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+desflurane
+desflurane, clomipramine. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Risk of arrhythmias or hypotension.
+
+dexamethasone
+dexamethasone will decrease the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+dexmethylphenidate
+dexmethylphenidate increases effects of clomipramine by decreasing metabolism.
+Minor/Significance Unknown.
+
+DHEA, herbal
+DHEA, herbal will increase the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+efavirenz
+efavirenz will decrease the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+eslicarbazepine acetate
+eslicarbazepine acetate will decrease the level or effect of clomipramine by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance
+Unknown.
+
+esomeprazole
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 67/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+esomeprazole will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2C19 metabolism. Minor/Significance Unknown.
+
+estradiol
+estradiol, clomipramine. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Estrogens and progestins may decr tricyclic
+antidepressant effects, while increasing TCA plasma concentration and adverse
+effects.
+
+estrogens conjugated synthetic
+estrogens conjugated synthetic, clomipramine. Mechanism: unspecified interaction
+mechanism. Minor/Significance Unknown. Estrogens and progestins may decr
+tricyclic antidepressant effects, while increasing TCA plasma concentration and
+adverse effects.
+
+estrogens esterified
+estrogens esterified, clomipramine. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Estrogens may inhibit hepatic metabolism of tricyclic
+antidepressants. However, interactions are not common.
+
+estropipate
+estropipate, clomipramine. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Estrogens and progestins may decr tricyclic
+antidepressant effects, while increasing TCA plasma concentration and adverse
+effects.
+
+ethinylestradiol
+ethinylestradiol will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP1A2 metabolism. Minor/Significance Unknown.
+
+etomidate
+etomidate, clomipramine. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Risk of arrhythmias or hypotension.
+
+etravirine
+etravirine will decrease the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+eucalyptus
+clomipramine and eucalyptus both increase sedation. Minor/Significance Unknown.
+
+fludrocortisone
+fludrocortisone will decrease the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+fluphenazine
+clomipramine, fluphenazine. Either increases levels of the other by decreasing
+metabolism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+clomipramine, fluphenazine. Either increases levels of the other by
+pharmacodynamic synergism. Minor/Significance Unknown. Additive anticholinergic
+effects.
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 68/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+glimepiride
+clomipramine increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+glipizide
+clomipramine increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+glyburide
+clomipramine increases effects of glyburide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+griseofulvin
+griseofulvin will decrease the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+hydrocortisone
+hydrocortisone will decrease the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+hydroxyprogesterone caproate (DSC)
+hydroxyprogesterone caproate (DSC), clomipramine. Mechanism: unspecified
+interaction mechanism. Minor/Significance Unknown. Estrogens and progestins may
+decr tricyclic antidepressant effects, while increasing TCA plasma concentration and
+adverse effects.
+
+insulin aspart
+clomipramine increases effects of insulin aspart by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+insulin detemir
+clomipramine increases effects of insulin detemir by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+insulin glargine
+clomipramine increases effects of insulin glargine by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+insulin glulisine
+clomipramine increases effects of insulin glulisine by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+insulin lispro
+clomipramine increases effects of insulin lispro by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+insulin NPH
+clomipramine increases effects of insulin NPH by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+insulin regular human
+clomipramine increases effects of insulin regular human by pharmacodynamic
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 69/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+synergism. Minor/Significance Unknown.
+
+isoniazid
+isoniazid will increase the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+isoproterenol
+isoproterenol, clomipramine. Mechanism: unknown. Minor/Significance Unknown.
+Risk of cardiac arrhythmias.
+
+itraconazole
+itraconazole will increase the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+ketamine
+ketamine, clomipramine. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Risk of arrhythmias or hypotension.
+
+lithium
+lithium, clomipramine. Other (see comment). Minor/Significance Unknown.
+Comment: Risk of neurotoxicity in geriatric pts. Multiple mechanisms involved.
+
+lumefantrine
+lumefantrine will decrease the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+marijuana
+marijuana will increase the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+mestranol
+mestranol, clomipramine. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Estrogens and progestins may decr tricyclic
+antidepressant effects, while increasing TCA plasma concentration and adverse
+effects.
+
+methylprednisolone
+methylprednisolone will decrease the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+metronidazole
+metronidazole will increase the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+miconazole vaginal
+miconazole vaginal will increase the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+miglitol
+clomipramine increases effects of miglitol by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+nateglinide
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 70/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+clomipramine increases effects of nateglinide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+nevirapine
+nevirapine will decrease the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+nifedipine
+nifedipine will increase the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+nilotinib
+nilotinib will increase the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+omeprazole
+omeprazole will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2C19 metabolism. Minor/Significance Unknown.
+
+panax ginseng
+panax ginseng increases effects of clomipramine by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+pentobarbital
+pentobarbital, clomipramine. Other (see comment). Minor/Significance Unknown.
+Comment: Barbiturates may increase adverse effects, including respiratory
+depression, produced by toxic doses of TCAs. With therapeutic doses of TCAs,
+barbiturates increase metabolism and decrease blood concentrations of TCAs.
+
+perphenazine
+clomipramine, perphenazine. Either increases levels of the other by decreasing
+metabolism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+clomipramine, perphenazine. Either increases levels of the other by
+pharmacodynamic synergism. Minor/Significance Unknown. Additive anticholinergic
+effects.
+
+phenobarbital
+phenobarbital, clomipramine. Other (see comment). Minor/Significance Unknown.
+Comment: Barbiturates may increase adverse effects, including respiratory
+depression, produced by toxic doses of TCAs. With therapeutic doses of TCAs,
+barbiturates increase metabolism and decrease blood concentrations of TCAs.
+
+pioglitazone
+clomipramine increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+pleurisy root
+pleurisy root decreases effects of clomipramine by unspecified interaction
+mechanism. Minor/Significance Unknown. Theoretical interaction.
+
+posaconazole
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 71/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+posaconazole will increase the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+prednisone
+prednisone will decrease the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+primidone
+primidone, clomipramine. Other (see comment). Minor/Significance Unknown.
+Comment: Barbiturates may increase adverse effects, including respiratory
+depression, produced by toxic doses of TCAs. With therapeutic doses of TCAs,
+barbiturates increase metabolism and decrease blood concentrations of TCAs.
+
+prochlorperazine
+clomipramine, prochlorperazine. Either increases levels of the other by decreasing
+metabolism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+clomipramine, prochlorperazine. Either increases levels of the other by
+pharmacodynamic synergism. Minor/Significance Unknown. Additive anticholinergic
+effects.
+
+progesterone micronized
+progesterone micronized, clomipramine. Mechanism: unspecified interaction
+mechanism. Minor/Significance Unknown. Estrogens and progestins may decr
+tricyclic antidepressant effects, while increasing TCA plasma concentration and
+adverse effects.
+
+promazine
+clomipramine, promazine. Either increases levels of the other by decreasing
+metabolism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+clomipramine, promazine. Either increases levels of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+promethazine
+clomipramine, promethazine. Either increases levels of the other by decreasing
+metabolism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+clomipramine, promethazine. Either increases levels of the other by
+pharmacodynamic synergism. Minor/Significance Unknown. Additive anticholinergic
+effects.
+
+propofol
+propofol, clomipramine. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Risk of arrhythmias or hypotension.
+
+repaglinide
+clomipramine increases effects of repaglinide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+rosiglitazone
+clomipramine increases effects of rosiglitazone by pharmacodynamic synergism.
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 72/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+Minor/Significance Unknown.
+
+rufinamide
+rufinamide will decrease the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+sage
+clomipramine and sage both increase sedation. Minor/Significance Unknown.
+
+saxagliptin
+clomipramine increases effects of saxagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+serdexmethylphenidate/dexmethylphenidate
+serdexmethylphenidate/dexmethylphenidate increases effects of clomipramine by
+decreasing metabolism. Minor/Significance Unknown.
+
+sevoflurane
+sevoflurane, clomipramine. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Risk of arrhythmias or hypotension.
+
+sitagliptin
+clomipramine increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+sulfamethoxazole
+sulfamethoxazole decreases levels of clomipramine by unspecified interaction
+mechanism. Minor/Significance Unknown.
+
+thioridazine
+clomipramine, thioridazine. Either increases levels of the other by decreasing
+metabolism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+clomipramine, thioridazine. Either increases levels of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+topiramate
+topiramate will decrease the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+trifluoperazine
+clomipramine, trifluoperazine. Either increases levels of the other by decreasing
+metabolism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+clomipramine, trifluoperazine. Either increases levels of the other by
+pharmacodynamic synergism. Minor/Significance Unknown. Additive anticholinergic
+effects.
+
+vasopressin
+clomipramine increases effects of vasopressin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+verapamil
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 73/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+verapamil will increase the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+verapamil increases levels of clomipramine by decreasing metabolism.
+Minor/Significance Unknown.
+
+vildagliptin
+clomipramine increases effects of vildagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+voriconazole
+voriconazole will increase the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+zafirlukast
+zafirlukast will increase the level or effect of clomipramine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+zolpidem
+zolpidem, clomipramine. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive CNS depression.
+
+Adverse Effects
+
+>10%
+
+Xerostomia (84%)
+
+Headache (50-55%)
+
+Constipation (47%)
+
+Ejaculation failure (42%)
+
+Fatigue (35-40%)
+
+Nausea (30-35%)
+
+Impotence (20-25%)
+
+Weight gain (18%)
+
+1-10%
+
+Weight loss (5%)
+
+Hepatotoxicity (1-3%)
+
+Frequency Not Defined
+
+Common
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 74/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+Dizziness, mainia, somnolence, tremor
+
+Dyspepsia
+
+Blurred vision
+
+Urinary retention
+
+Orgasm incapacity, libido change
+
+Rare
+
+Myocardial infarction, orthostatic hypotension
+
+Depression worsening, suicidal thoughts suicide, seizure
+
+Hyperglycemia
+
+Agranulocytosis, leukopenia, pancytopenia, thrombocytopenia
+
+Body temperature above normal
+
+Drug rash with eosinophilia and systemic symptoms (DRESS)
+
+Postmarketing Reports
+
+Metabolism and Nutrition Disorders: Hyponatremia
+
+Endocrine Disorders: Syndrome of inappropriate antidiuretic hormone secretion (SIADH)
+
+Warnings
+
+Black Box Warnings
+
+In short-term studies, antidepressants increased the risk of suicidal thinking and
+behavior in children, adolescents, and young adults (<24 yr of age) taking
+antidepressants for major depressive disorders and other psychiatric illnesses
+
+This increase was not seen in patients aged >24 years; a slight decrease in suicidal
+thinking was seen in adults >65 years
+
+In children and young adults, risks must be weighed against the benefits of taking
+antidepressants
+
+Patients should be monitored closely for changes in behavior, clinical worsening, and
+suicidal tendencies; this should be done during initial 1-2 months of therapy and dosage
+adjustments
+
+The patient’s family should communicate any abrupt changes in behavior to the
+healthcare provider
+
+Worsening behavior and suicidal tendencies that are not part of the presenting
+symptoms may require discontinuation of therapy
+
+This drug is not approved for use in pediatric patients
+
+Contraindications
+
+Hypersensitivity
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 75/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+Severe cardiovascular disorder
+
+Narrow angle glaucoma
+
+Any drugs or conditions that prolong QT interval
+
+Acute recovery post-MI
+
+Coadministration with serotonergic drugs
+
+Concomitant with or within 14 d of MAOIs (serotonin syndrome)
+
+Starting clomipramine in a patient who is being treated with linezolid or IV
+methylene blue is contraindicated because of an increased risk of serotonin
+syndrome
+
+If linezolid or IV methylene blue must be administered, discontinue clomipramine
+immediately and monitor for CNS toxicity; may resume clomipramine 24 hr after
+last linezolid or methylene blue dose or after 2 weeks of monitoring, whichever
+comes first
+
+Cautions
+
+BPH, urinary/GI retention, hyperthyroidism, seizure disorder, brain tumor, respiratory
+impairment
+
+Risk of mydriasis; may trigger angle closure attack in patients with angle closure
+glaucoma with anatomically narrow angles without a patent iridectomy
+
+Clinical worsening and suicide ideation may occur despite medication in adolescents and
+young adults (18-24 yr)
+
+Potentially life-threatening serotonin syndrome reported when coadministered with
+drugs that impair serotonin metabolism (in particular, MAOIs, including nonpsychiatric
+MAOIs, such as linezolid and IV methylene blue)
+
+Risk of anticholinergic side-effects
+
+Rare cases of drug rash with eosinophilia and systemic symptoms (DRESS) reported
+with use; in event of severe acute reactions such as DRESS, discontinue clomipramine
+therapy immediately and institute appropriate treatment
+
+Hyponatremia
+
+Appears to be the result of syndrome of inappropriate antidiuretic hormone
+secretion (SIADH)
+
+Elderly patients may be at greater risk of developing hyponatremia, especially with
+a serotonergic antidepressant
+
+Patients taking diuretics or who are otherwise volume-depleted can be at greater
+risk
+
+Discontinue therapy in patients with symptomatic hyponatremia and institute
+appropriate medical intervention
+
+Signs and symptoms of hyponatremia include headache, difficulty concentrating,
+memory impairment, confusion, weakness, and unsteadiness, which can lead to
+falls
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 76/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+More severe and/or acute cases have included hallucination, syncope, seizure, coma,
+respiratory arrest, and death
+
+Pregnancy & Lactation
+
+Pregnancy Category: C
+
+Lactation: distributed in breast milk, do not nurse (AAP states effect on nursing infants is
+unknown but may be of concern)
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+Parent drug may affect serotonin uptake; active metabolite may may affect
+norepinephrine uptake
+
+Pharmacokinetics
+
+Peak Plasma Time: 2-6 hr
+
+Concentration: 56-154 ng/mL
+
+Half-Life: 32 hr (parent drug), 69 hr (metabolite)
+
+Excretion: Urine (60%); feces (32%)
+
+Steady-state therpaeutic plasma concentration: 100-250 ng/mL (parent drug), 230-550
+ng/mL (metabolite)
+
+Bioavailability: 50%
+
+Protein Bound: 97-98%
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 77/78
+
+
+
+6/22/26, 4:28 PM Anafranil (clomipramine) dosing, indications, interactions, adverse effects, and more
+
+Vd: 17 L/kg
+
+Metabolism: Hepatic CYP2D6
+
+Metabolites: Desmethylclomipramine
+
+Dialyzable: No
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/anafranil-clomipramine-342938 78/78

@@ -1,0 +1,501 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<BIF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="0.3" xsi:noNamespaceSchemaLocation="../schema.xml">
+  <NETWORK>
+    <NAME>BN_06_Continuing_Same_Antipsychotic</NAME>
+    <PROPERTY>clinical_question=Which considerations inform clinician review of continuing the same antipsychotic after improvement?</PROPERTY>
+    <PROPERTY>statement_id=6</PROPERTY>
+    <PROPERTY>recommendation_strength=2</PROPERTY>
+    <PROPERTY>evidence_quality=B</PROPERTY>
+    <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-06.md</PROPERTY>
+    <PROPERTY>source_locator=STATEMENT 6: Continuing the Same Medications; Implementation; Quality Measurement Considerations</PROPERTY>
+    <PROPERTY>source_sha256=8cdf5bf124996870dd1212f9851a36fc1e1bbb88b7de6fcdd2a00a6365d37f60</PROPERTY>
+    <PROPERTY>model_version=0.1_unparameterized_design_draft</PROPERTY>
+    <PROPERTY>validation_status=STRUCTURAL_ONLY_NOT_FOR_CLINICAL_USE</PROPERTY>
+    <PROPERTY>inference_enabled=false</PROPERTY>
+    <PROPERTY>deployment_gate=Consumer MUST reject this incomplete model; metadata does not enforce a runtime block</PROPERTY>
+    <PROPERTY>guideline_restriction=Statement 6 explicitly says this suggestion is not appropriate for electronic decision support or use as a quality measure</PROPERTY>
+    <PROPERTY>population=Proposed adult schizophrenia population; local population and setting require agreement</PROPERTY>
+    <PROPERTY>time_horizon=Baseline review; proposed outcome horizon 24 weeks, a modeler assumption</PROPERTY>
+    <PROPERTY>parameter_policy=No invented priors or clinical CPTs; missing DEFINITION means incomplete</PROPERTY>
+    <PROPERTY>causal_status=Observational hypotheses only; conditioning on strategy does not identify intervention effects</PROPERTY>
+    <PROPERTY>missingness_policy=Unassessed inputs remain unobserved; never substitute No; do not display workflow outputs with missing required inputs</PROPERTY>
+    <PROPERTY>table_order=Child fastest, last GIVEN next, first GIVEN slowest; OUTCOME declaration order</PROPERTY>
+    <PROPERTY>scope=Research authoring only; no medication choice, dose, taper schedule, treatment ranking, utilities or automated recommendation</PROPERTY>
+    <PROPERTY>source_version=Supplied Markdown derivative of APA 2020 guideline; PDF not verified</PROPERTY>
+    <VARIABLE TYPE="nature">
+      <NAME>SchizophreniaEstablished</NAME>
+      <PROPERTY>label=Schizophrenia Established</PROPERTY>
+      <OUTCOME>No</OUTCOME>
+      <OUTCOME>Yes</OUTCOME>
+      <PROPERTY>definition=Clinician-confirmed schizophrenia. No means assessed as not established; not an automated diagnosis.</PROPERTY>
+      <PROPERTY>clinical_role=clinical_variable</PROPERTY>
+      <PROPERTY>time_window=Baseline clinician review</PROPERTY>
+      <PROPERTY>discretization=Proposed categories; measurement criteria and reliability require clinical review</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>parameter_status=missing_requires_data_or_elicitation</PROPERTY>
+      <PROPERTY>missingness_policy=Do not enter evidence when unassessed; workflow outputs are not patient observations</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>SymptomImprovementOnCurrentAntipsychotic</NAME>
+      <PROPERTY>label=Symptom Improvement On Current Antipsychotic</PROPERTY>
+      <OUTCOME>No</OUTCOME>
+      <OUTCOME>Yes</OUTCOME>
+      <PROPERTY>definition=Documented symptom improvement attributable to the current antipsychotic; assessment period and scale to be agreed.</PROPERTY>
+      <PROPERTY>clinical_role=clinical_variable</PROPERTY>
+      <PROPERTY>time_window=Baseline clinician review</PROPERTY>
+      <PROPERTY>discretization=Proposed categories; measurement criteria and reliability require clinical review</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>parameter_status=missing_requires_data_or_elicitation</PROPERTY>
+      <PROPERTY>missingness_policy=Do not enter evidence when unassessed; workflow outputs are not patient observations</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>UrgentSafetyConcern</NAME>
+      <PROPERTY>label=Urgent Safety Concern</PROPERTY>
+      <OUTCOME>Absent</OUTCOME>
+      <OUTCOME>Present</OUTCOME>
+      <PROPERTY>definition=Clinician identifies an urgent safety concern requiring a separate assessment pathway; this model does not detect emergencies. Modeler safety boundary.</PROPERTY>
+      <PROPERTY>clinical_role=clinical_variable</PROPERTY>
+      <PROPERTY>time_window=Baseline clinician review</PROPERTY>
+      <PROPERTY>discretization=Proposed categories; measurement criteria and reliability require clinical review</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>parameter_status=missing_requires_data_or_elicitation</PROPERTY>
+      <PROPERTY>missingness_policy=Do not enter evidence when unassessed; workflow outputs are not patient observations</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ResidualClinicalBurden</NAME>
+      <PROPERTY>label=Residual Clinical Burden</PROPERTY>
+      <OUTCOME>No</OUTCOME>
+      <OUTCOME>Yes</OUTCOME>
+      <PROPERTY>definition=Significant residual symptoms or functional difficulties despite some response; composite requires operational criteria.</PROPERTY>
+      <PROPERTY>clinical_role=clinical_variable</PROPERTY>
+      <PROPERTY>time_window=Baseline clinician review</PROPERTY>
+      <PROPERTY>discretization=Proposed categories; measurement criteria and reliability require clinical review</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>parameter_status=missing_requires_data_or_elicitation</PROPERTY>
+      <PROPERTY>missingness_policy=Do not enter evidence when unassessed; workflow outputs are not patient observations</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>MetabolicConcern</NAME>
+      <PROPERTY>label=Metabolic Concern</PROPERTY>
+      <OUTCOME>No</OUTCOME>
+      <OUTCOME>Yes</OUTCOME>
+      <PROPERTY>definition=Clinically significant weight gain, diabetes or metabolic syndrome prompting benefit-harm review; no numeric diagnostic thresholds supplied.</PROPERTY>
+      <PROPERTY>clinical_role=clinical_variable</PROPERTY>
+      <PROPERTY>time_window=Baseline clinician review</PROPERTY>
+      <PROPERTY>discretization=Proposed categories; measurement criteria and reliability require clinical review</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>parameter_status=missing_requires_data_or_elicitation</PROPERTY>
+      <PROPERTY>missingness_policy=Do not enter evidence when unassessed; workflow outputs are not patient observations</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>OtherTolerabilityConcern</NAME>
+      <PROPERTY>label=Other Tolerability Concern</PROPERTY>
+      <OUTCOME>No</OUTCOME>
+      <OUTCOME>Yes</OUTCOME>
+      <PROPERTY>definition=Clinically significant nonmetabolic adverse effects, including possible tardive syndromes; not a diagnosis.</PROPERTY>
+      <PROPERTY>clinical_role=clinical_variable</PROPERTY>
+      <PROPERTY>time_window=Baseline clinician review</PROPERTY>
+      <PROPERTY>discretization=Proposed categories; measurement criteria and reliability require clinical review</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>parameter_status=missing_requires_data_or_elicitation</PROPERTY>
+      <PROPERTY>missingness_policy=Do not enter evidence when unassessed; workflow outputs are not patient observations</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>SameAntipsychoticContinuationPreference</NAME>
+      <PROPERTY>label=Same Antipsychotic Continuation Preference</PROPERTY>
+      <OUTCOME>ContinueSame</OUTCOME>
+      <OUTCOME>DiscussChange</OUTCOME>
+      <OUTCOME>NoExpressedPreference</OUTCOME>
+      <PROPERTY>definition=Assessed preference regarding the same molecule; NoExpressedPreference is an assessed response, not missing data.</PROPERTY>
+      <PROPERTY>clinical_role=clinical_variable</PROPERTY>
+      <PROPERTY>time_window=Baseline clinician review</PROPERTY>
+      <PROPERTY>discretization=Proposed categories; measurement criteria and reliability require clinical review</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=Patient Preferences</PROPERTY>
+      <PROPERTY>parameter_status=missing_requires_data_or_elicitation</PROPERTY>
+      <PROPERTY>missingness_policy=Do not enter evidence when unassessed; workflow outputs are not patient observations</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>CurrentAgentAvailable</NAME>
+      <PROPERTY>label=Current Agent Available</PROPERTY>
+      <OUTCOME>No</OUTCOME>
+      <OUTCOME>Yes</OUTCOME>
+      <PROPERTY>definition=Same active antipsychotic remains accessible; includes access/formulary barriers, not just stock.</PROPERTY>
+      <PROPERTY>clinical_role=clinical_variable</PROPERTY>
+      <PROPERTY>time_window=Baseline clinician review</PROPERTY>
+      <PROPERTY>discretization=Proposed categories; measurement criteria and reliability require clinical review</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>parameter_status=missing_requires_data_or_elicitation</PROPERTY>
+      <PROPERTY>missingness_policy=Do not enter evidence when unassessed; workflow outputs are not patient observations</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>LAIUnderConsideration</NAME>
+      <PROPERTY>label=LAI Under Consideration</PROPERTY>
+      <OUTCOME>No</OUTCOME>
+      <OUTCOME>Yes</OUTCOME>
+      <PROPERTY>definition=LAI formulation is being considered through clinical discussion; does not itself establish an indication.</PROPERTY>
+      <PROPERTY>clinical_role=clinical_variable</PROPERTY>
+      <PROPERTY>time_window=Baseline clinician review</PROPERTY>
+      <PROPERTY>discretization=Proposed categories; measurement criteria and reliability require clinical review</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>parameter_status=missing_requires_data_or_elicitation</PROPERTY>
+      <PROPERTY>missingness_policy=Do not enter evidence when unassessed; workflow outputs are not patient observations</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>SameAgentLAIAvailable</NAME>
+      <PROPERTY>label=Same Agent LAI Available</PROPERTY>
+      <OUTCOME>No</OUTCOME>
+      <OUTCOME>Yes</OUTCOME>
+      <PROPERTY>definition=An appropriate LAI of the current active molecule is available; independently verified formulary information.</PROPERTY>
+      <PROPERTY>clinical_role=clinical_variable</PROPERTY>
+      <PROPERTY>time_window=Baseline clinician review</PROPERTY>
+      <PROPERTY>discretization=Proposed categories; measurement criteria and reliability require clinical review</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>parameter_status=missing_requires_data_or_elicitation</PROPERTY>
+      <PROPERTY>missingness_policy=Do not enter evidence when unassessed; workflow outputs are not patient observations</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>SameAntipsychoticContinuationScope</NAME>
+      <PROPERTY>label=Same Antipsychotic Continuation Scope</PROPERTY>
+      <OUTCOME>OutsideScope</OUTCOME>
+      <OUTCOME>WithinScope</OUTCOME>
+      <OUTCOME>UrgentSeparateAssessment</OUTCOME>
+      <PROPERTY>definition=Eligibility context only; outside scope never means stop medication.</PROPERTY>
+      <PROPERTY>clinical_role=workflow_context</PROPERTY>
+      <PROPERTY>time_window=Baseline clinician review</PROPERTY>
+      <PROPERTY>discretization=Proposed categories; measurement criteria and reliability require clinical review</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_modeler_formalization</PROPERTY>
+      <PROPERTY>missingness_policy=Do not enter evidence when unassessed; workflow outputs are not patient observations</PROPERTY>
+      <PROPERTY>proposed_parent=SchizophreniaEstablished</PROPERTY>
+      <PROPERTY>proposed_parent=SymptomImprovementOnCurrentAntipsychotic</PROPERTY>
+      <PROPERTY>proposed_parent=UrgentSafetyConcern</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>LAIAgentMismatch</NAME>
+      <PROPERTY>label=LAI Agent Mismatch</PROPERTY>
+      <OUTCOME>No</OUTCOME>
+      <OUTCOME>Yes</OUTCOME>
+      <PROPERTY>definition=An LAI is considered but the same molecule has no available appropriate LAI; formulation change alone is not molecule change.</PROPERTY>
+      <PROPERTY>clinical_role=workflow_context</PROPERTY>
+      <PROPERTY>time_window=Baseline clinician review</PROPERTY>
+      <PROPERTY>discretization=Proposed categories; measurement criteria and reliability require clinical review</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_modeler_formalization</PROPERTY>
+      <PROPERTY>missingness_policy=Do not enter evidence when unassessed; workflow outputs are not patient observations</PROPERTY>
+      <PROPERTY>proposed_parent=LAIUnderConsideration</PROPERTY>
+      <PROPERTY>proposed_parent=SameAgentLAIAvailable</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>TolerabilityReview</NAME>
+      <PROPERTY>label=Tolerability Review</PROPERTY>
+      <OUTCOME>No</OUTCOME>
+      <OUTCOME>Yes</OUTCOME>
+      <PROPERTY>definition=Either metabolic or other tolerability concerns warrant discussion, without selecting treatment.</PROPERTY>
+      <PROPERTY>clinical_role=workflow_context</PROPERTY>
+      <PROPERTY>time_window=Baseline clinician review</PROPERTY>
+      <PROPERTY>discretization=Proposed categories; measurement criteria and reliability require clinical review</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_modeler_formalization</PROPERTY>
+      <PROPERTY>missingness_policy=Do not enter evidence when unassessed; workflow outputs are not patient observations</PROPERTY>
+      <PROPERTY>proposed_parent=MetabolicConcern</PROPERTY>
+      <PROPERTY>proposed_parent=OtherTolerabilityConcern</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ClinicalChangeReason</NAME>
+      <PROPERTY>label=Clinical Change Reason</PROPERTY>
+      <OUTCOME>No</OUTCOME>
+      <OUTCOME>Yes</OUTCOME>
+      <PROPERTY>definition=Residual clinical burden or tolerability concerns provide a reason to review alternatives; not an instruction to switch.</PROPERTY>
+      <PROPERTY>clinical_role=workflow_context</PROPERTY>
+      <PROPERTY>time_window=Baseline clinician review</PROPERTY>
+      <PROPERTY>discretization=Proposed categories; measurement criteria and reliability require clinical review</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_modeler_formalization</PROPERTY>
+      <PROPERTY>missingness_policy=Do not enter evidence when unassessed; workflow outputs are not patient observations</PROPERTY>
+      <PROPERTY>proposed_parent=ResidualClinicalBurden</PROPERTY>
+      <PROPERTY>proposed_parent=TolerabilityReview</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>PracticalChangeReason</NAME>
+      <PROPERTY>label=Practical Change Reason</PROPERTY>
+      <OUTCOME>No</OUTCOME>
+      <OUTCOME>Yes</OUTCOME>
+      <PROPERTY>definition=Access barrier or LAI molecule mismatch warrants review; does not endorse nonclinical switching.</PROPERTY>
+      <PROPERTY>clinical_role=workflow_context</PROPERTY>
+      <PROPERTY>time_window=Baseline clinician review</PROPERTY>
+      <PROPERTY>discretization=Proposed categories; measurement criteria and reliability require clinical review</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_modeler_formalization</PROPERTY>
+      <PROPERTY>missingness_policy=Do not enter evidence when unassessed; workflow outputs are not patient observations</PROPERTY>
+      <PROPERTY>proposed_parent=CurrentAgentAvailable</PROPERTY>
+      <PROPERTY>proposed_parent=LAIAgentMismatch</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>SameAgentDiscussion</NAME>
+      <PROPERTY>label=Same Agent Discussion</PROPERTY>
+      <OUTCOME>OutsideScope</OUTCOME>
+      <OUTCOME>ContinuationDiscussion</OUTCOME>
+      <OUTCOME>IndividualizedChangeReview</OUTCOME>
+      <OUTCOME>UrgentSeparateAssessment</OUTCOME>
+      <PROPERTY>definition=Current discussion context. All in-scope cases require shared decision-making and review of recovery goals; no treatment is authorized.</PROPERTY>
+      <PROPERTY>clinical_role=workflow_context</PROPERTY>
+      <PROPERTY>time_window=Baseline clinician review</PROPERTY>
+      <PROPERTY>discretization=Proposed categories; measurement criteria and reliability require clinical review</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_modeler_formalization</PROPERTY>
+      <PROPERTY>missingness_policy=Do not enter evidence when unassessed; workflow outputs are not patient observations</PROPERTY>
+      <PROPERTY>proposed_parent=SameAntipsychoticContinuationScope</PROPERTY>
+      <PROPERTY>proposed_parent=ClinicalChangeReason</PROPERTY>
+      <PROPERTY>proposed_parent=PracticalChangeReason</PROPERTY>
+      <PROPERTY>proposed_parent=SameAntipsychoticContinuationPreference</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ObservedSameAntipsychoticStrategy</NAME>
+      <PROPERTY>label=Observed Same Antipsychotic Strategy</PROPERTY>
+      <OUTCOME>ContinueSameAgent</OUTCOME>
+      <OUTCOME>SwitchAgent</OUTCOME>
+      <OUTCOME>OtherStrategy</OUTCOME>
+      <PROPERTY>definition=Observed baseline plan, not a controllable decision or utility optimum. Same-agent formulation change belongs to ContinueSameAgent; combinations and cessation belong to OtherStrategy. Restrict outcome research to in-scope nonurgent patients.</PROPERTY>
+      <PROPERTY>clinical_role=clinical_variable</PROPERTY>
+      <PROPERTY>time_window=Baseline clinician review</PROPERTY>
+      <PROPERTY>discretization=Proposed categories; measurement criteria and reliability require clinical review</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>parameter_status=missing_requires_data_or_elicitation</PROPERTY>
+      <PROPERTY>missingness_policy=Do not enter evidence when unassessed; workflow outputs are not patient observations</PROPERTY>
+      <PROPERTY>proposed_parent=ClinicalChangeReason</PROPERTY>
+      <PROPERTY>proposed_parent=PracticalChangeReason</PROPERTY>
+      <PROPERTY>proposed_parent=SameAntipsychoticContinuationPreference</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>SwitchMonitoringContext</NAME>
+      <PROPERTY>label=Switch Monitoring Context</PROPERTY>
+      <OUTCOME>RoutineReview</OUTCOME>
+      <OUTCOME>SwitchMonitoringDiscussion</OUTCOME>
+      <OUTCOME>SeparatePlanReview</OUTCOME>
+      <PROPERTY>definition=All strategies require ongoing monitoring. Switching highlights adherence, destabilization and withdrawal/emergent effects; no schedule or taper is prescribed.</PROPERTY>
+      <PROPERTY>clinical_role=workflow_context</PROPERTY>
+      <PROPERTY>time_window=Baseline clinician review</PROPERTY>
+      <PROPERTY>discretization=Proposed categories; measurement criteria and reliability require clinical review</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_modeler_formalization</PROPERTY>
+      <PROPERTY>missingness_policy=Do not enter evidence when unassessed; workflow outputs are not patient observations</PROPERTY>
+      <PROPERTY>proposed_parent=ObservedSameAntipsychoticStrategy</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AssignedRegimenDiscontinued</NAME>
+      <PROPERTY>label=Assigned Regimen Discontinued</PROPERTY>
+      <OUTCOME>No</OUTCOME>
+      <OUTCOME>Yes</OUTCOME>
+      <PROPERTY>definition=All-cause discontinuation of the regimen assigned at baseline within 24 weeks; switching off that regimen counts, not necessarily cessation of all antipsychotic therapy. Event ascertainment and censoring rules unresolved.</PROPERTY>
+      <PROPERTY>clinical_role=clinical_variable</PROPERTY>
+      <PROPERTY>time_window=Within 24 weeks after baseline, proposed</PROPERTY>
+      <PROPERTY>discretization=Proposed categories; measurement criteria and reliability require clinical review</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>parameter_status=missing_requires_data_or_elicitation</PROPERTY>
+      <PROPERTY>missingness_policy=Do not enter evidence when unassessed; workflow outputs are not patient observations</PROPERTY>
+      <PROPERTY>proposed_parent=ObservedSameAntipsychoticStrategy</PROPERTY>
+      <PROPERTY>proposed_parent=SameAntipsychoticContinuationPreference</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ClinicalDestabilization</NAME>
+      <PROPERTY>label=Clinical Destabilization</PROPERTY>
+      <OUTCOME>No</OUTCOME>
+      <OUTCOME>Yes</OUTCOME>
+      <PROPERTY>definition=Clinically meaningful symptom worsening during follow-up; scale and threshold unresolved. Distinct from all-cause regimen discontinuation.</PROPERTY>
+      <PROPERTY>clinical_role=clinical_variable</PROPERTY>
+      <PROPERTY>time_window=Within 24 weeks after baseline, proposed</PROPERTY>
+      <PROPERTY>discretization=Proposed categories; measurement criteria and reliability require clinical review</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>parameter_status=missing_requires_data_or_elicitation</PROPERTY>
+      <PROPERTY>missingness_policy=Do not enter evidence when unassessed; workflow outputs are not patient observations</PROPERTY>
+      <PROPERTY>proposed_parent=ObservedSameAntipsychoticStrategy</PROPERTY>
+      <PROPERTY>proposed_parent=ResidualClinicalBurden</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>MetabolicTrajectory</NAME>
+      <PROPERTY>label=Metabolic Trajectory</PROPERTY>
+      <OUTCOME>Improved</OUTCOME>
+      <OUTCOME>NoMeaningfulChange</OUTCOME>
+      <OUTCOME>Worsened</OUTCOME>
+      <PROPERTY>definition=Change in a prespecified metabolic endpoint from baseline to 24 weeks. Endpoint and thresholds unresolved; cannot combine discordant weight/lipid/glycemic changes without an agreed rule.</PROPERTY>
+      <PROPERTY>clinical_role=clinical_variable</PROPERTY>
+      <PROPERTY>time_window=Baseline to week 24, proposed</PROPERTY>
+      <PROPERTY>discretization=Proposed categories; measurement criteria and reliability require clinical review</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>parameter_status=missing_requires_data_or_elicitation</PROPERTY>
+      <PROPERTY>missingness_policy=Do not enter evidence when unassessed; workflow outputs are not patient observations</PROPERTY>
+      <PROPERTY>proposed_parent=ObservedSameAntipsychoticStrategy</PROPERTY>
+      <PROPERTY>proposed_parent=MetabolicConcern</PROPERTY>
+    </VARIABLE>
+    <DEFINITION>
+      <FOR>SameAntipsychoticContinuationScope</FOR>
+      <GIVEN>SchizophreniaEstablished</GIVEN>
+      <GIVEN>SymptomImprovementOnCurrentAntipsychotic</GIVEN>
+      <GIVEN>UrgentSafetyConcern</GIVEN>
+      <TABLE>
+      1 0 0
+      0 0 1
+      1 0 0
+      0 0 1
+      1 0 0
+      0 0 1
+      0 1 0
+      0 0 1
+    </TABLE>
+      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_workflow_not_clinical_probability</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Quality Measurement Considerations</PROPERTY>
+      <PROPERTY>uncertainty_description=Formalization of prose for research review; not validated decision support</PROPERTY>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>LAIAgentMismatch</FOR>
+      <GIVEN>LAIUnderConsideration</GIVEN>
+      <GIVEN>SameAgentLAIAvailable</GIVEN>
+      <TABLE>
+      1 0
+      1 0
+      0 1
+      1 0
+    </TABLE>
+      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_workflow_not_clinical_probability</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Quality Measurement Considerations</PROPERTY>
+      <PROPERTY>uncertainty_description=Formalization of prose for research review; not validated decision support</PROPERTY>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>TolerabilityReview</FOR>
+      <GIVEN>MetabolicConcern</GIVEN>
+      <GIVEN>OtherTolerabilityConcern</GIVEN>
+      <TABLE>
+      1 0
+      0 1
+      0 1
+      0 1
+    </TABLE>
+      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_workflow_not_clinical_probability</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Quality Measurement Considerations</PROPERTY>
+      <PROPERTY>uncertainty_description=Formalization of prose for research review; not validated decision support</PROPERTY>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>ClinicalChangeReason</FOR>
+      <GIVEN>ResidualClinicalBurden</GIVEN>
+      <GIVEN>TolerabilityReview</GIVEN>
+      <TABLE>
+      1 0
+      0 1
+      0 1
+      0 1
+    </TABLE>
+      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_workflow_not_clinical_probability</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Quality Measurement Considerations</PROPERTY>
+      <PROPERTY>uncertainty_description=Formalization of prose for research review; not validated decision support</PROPERTY>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>PracticalChangeReason</FOR>
+      <GIVEN>CurrentAgentAvailable</GIVEN>
+      <GIVEN>LAIAgentMismatch</GIVEN>
+      <TABLE>
+      0 1
+      0 1
+      1 0
+      0 1
+    </TABLE>
+      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_workflow_not_clinical_probability</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Quality Measurement Considerations</PROPERTY>
+      <PROPERTY>uncertainty_description=Formalization of prose for research review; not validated decision support</PROPERTY>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>SameAgentDiscussion</FOR>
+      <GIVEN>SameAntipsychoticContinuationScope</GIVEN>
+      <GIVEN>ClinicalChangeReason</GIVEN>
+      <GIVEN>PracticalChangeReason</GIVEN>
+      <GIVEN>SameAntipsychoticContinuationPreference</GIVEN>
+      <TABLE>
+      1 0 0 0
+      1 0 0 0
+      1 0 0 0
+      1 0 0 0
+      1 0 0 0
+      1 0 0 0
+      1 0 0 0
+      1 0 0 0
+      1 0 0 0
+      1 0 0 0
+      1 0 0 0
+      1 0 0 0
+      0 1 0 0
+      0 0 1 0
+      0 1 0 0
+      0 0 1 0
+      0 0 1 0
+      0 0 1 0
+      0 0 1 0
+      0 0 1 0
+      0 0 1 0
+      0 0 1 0
+      0 0 1 0
+      0 0 1 0
+      0 0 0 1
+      0 0 0 1
+      0 0 0 1
+      0 0 0 1
+      0 0 0 1
+      0 0 0 1
+      0 0 0 1
+      0 0 0 1
+      0 0 0 1
+      0 0 0 1
+      0 0 0 1
+      0 0 0 1
+    </TABLE>
+      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_workflow_not_clinical_probability</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Quality Measurement Considerations</PROPERTY>
+      <PROPERTY>uncertainty_description=Formalization of prose for research review; not validated decision support</PROPERTY>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>SwitchMonitoringContext</FOR>
+      <GIVEN>ObservedSameAntipsychoticStrategy</GIVEN>
+      <TABLE>
+      1 0 0
+      0 1 0
+      0 0 1
+    </TABLE>
+      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_workflow_not_clinical_probability</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Quality Measurement Considerations</PROPERTY>
+      <PROPERTY>uncertainty_description=Formalization of prose for research review; not validated decision support</PROPERTY>
+    </DEFINITION>
+  </NETWORK>
+</BIF>

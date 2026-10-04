@@ -1,0 +1,3245 @@
+﻿6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+escitalopram (Rx)
+Brand and Other Names: Lexapro
+Classes: Antidepressants, SSRIs
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+tablet
+
+5mg
+
+10mg
+
+20mg
+
+capsule
+
+15mg
+
+oral solution
+
+5mg/5mL
+
+Major Depressive Disorder
+
+Indicated for acute and maintenance treatment of major depressive disorder (MDD)
+
+10 mg PO daily; may increase up to 20 mg/day after 1 week
+
+Generalized Anxiety Disorder
+
+Indicated for acute treatment of generalized anxiety disorder (GAD)
+
+10 mg PO daily; may increase up to 20 mg/day after 1 week; maintain at lowest effective
+dose and assess need of therapy periodically if extended therapy required
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 1/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+Obsessive-Compulsive Disorder (Off-label)
+
+10 mg PO daily; may increase to 20 mg/day after 1 week; maintain at lowest effective
+dose and assess need of therapy periodically if extended therapy required
+
+Insomnia (Off-label)
+
+Secondary to depression: 5-20 mg PO over 8 week period
+
+Secondary to panic disorder in women: 5-10 mg PO over 8 week period
+
+Vasomotor Symptoms Associated with Menopause (Off-label)
+
+10 mg PO daily; may increase to 20 mg PO daily after 4 weeks if symptoms not
+adequately controlled
+
+Dosage Modifications
+
+Renal impairment
+
+Mild-to-moderate: No dosage adjustment necessary
+
+Severe: Use with caution; insufficient number of patients have been evaluated
+during chronic escitalopram treatment
+
+Hepatic impairment
+
+Mild-to-severe: 10 mg/day; racemic citalopram clearance decreased resulting in
+increased plasma concentration
+
+Dosing Considerations
+
+For extended therapy, maintain at lowest effective dose and assess periodically the need
+for continued therapy
+
+Before initiating
+
+Before initiating treatment with antidepressants, screen patients for personal family
+history of bipolar disorder, mania, or hypomania
+
+Discontinuation of treatment
+
+Symptoms associated with discontinuation of SSRIs and SNRIs have been; monitor
+for symptoms when discontinuing treatment
+
+Gradual dose reduction rather than abrupt cessation is recommended
+
+If intolerable symptoms occur following a dose reduction or discontinuation of
+treatment, then consider resuming the previously prescribed dose; subsequently,
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 2/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+continue decreasing the dose at a more gradual rate
+
+Switching to or from a monoamine oxidase inhibitor (MAOI) used to treat for
+
+psychiatric disorders
+
+At least 14 days should elapse between discontinuation of an MAOI intended to
+treat psychiatric disorders and initiation of escitalopram
+
+Conversely, allow at least 14 days after stopping escitalopram before starting an
+MAOI
+
+PEDIATRIC
+Dosage Forms & Strengths
+
+tablet
+
+5mg
+
+10mg
+
+20mg
+
+capsule
+
+15mg
+
+oral solution
+
+5mg/5mL
+
+Major Depressive Disorder
+
+<12 years: Safety and efficacy not established
+
+≥12 years: 10 mg PO daily; may increase dose after at least 3 weeks; not to exceed 20
+mg/day
+
+Generalized Anxiety Disorder
+
+Indicated for generalized anxiety disorder (GAD) in patients aged ≥7 years
+
+Initial: 10 mg PO daily
+
+Depending on clinical response and tolerability, may increase dose after at least 2 weeks
+up to maximum of 20 mg daily
+
+Dosage Modifications
+
+Renal impairment
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 3/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+Mild-to-moderate: No dosage adjustment necessary
+
+Severe: Use with caution; insufficient number of patients have been evaluated
+during chronic escitalopram treatment
+
+Hepatic impairment
+
+Mild-to-severe: 10 mg/day; clearance of racemic citalopram was decreased and
+plasma concentration were increased.
+
+Dosing Considerations
+
+For extended therapy, maintain at lowest effective dose and assess periodically the need
+for continued therapy
+
+Before initiating
+
+Before initiating treatment with antidepressants, screen patients for personal family
+history of bipolar disorder, mania, or hypomania
+
+Discontinuation of treatment
+
+Symptoms associated with discontinuation of SSRIs and SNRIs have been; monitor
+for symptoms when discontinuing treatment
+
+Gradual dose reduction rather than abrupt cessation is recommended
+
+If intolerable symptoms occur following a dose reduction or discontinuation of
+treatment, then consider resuming the previously prescribed dose; subsequently,
+continue decreasing the dose at a more gradual rate
+
+Switching to or from a monoamine oxidase inhibitor (MAOI) used to treat for
+
+psychiatric disorders
+
+At least 14 days should elapse between discontinuation of an MAOI intended to
+treat psychiatric disorders and initiation of escitalopram
+
+Conversely, allow at least 14 days after stopping escitalopram before starting an
+MAOI
+
+GERIATRIC
+Major Depressive Disorders/Generalized Anxiety Disorder
+
+10 mg PO daily; no additional benefits observed with 20 mg/day
+
+Dosing Considerations
+
+Older patients are more prone to SSRI/SNRI-induced hyponatremia; also, patients taking
+diuretics or are otherwise volume depleted may be at greater risk
+
+Interactions
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 4/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and
+escitalopram
+No Interactions Found
+Interactions Found
+Contraindicated
+
+Serious
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+Contraindicated (12)
+
+dronedarone
+escitalopram increases toxicity of dronedarone by QTc interval. Contraindicated.
+
+goserelin
+goserelin increases toxicity of escitalopram by QTc interval. Contraindicated.
+Increases risk of torsades de pointes.
+
+isocarboxazid
+isocarboxazid and escitalopram both increase serotonin levels. Contraindicated.
+
+lefamulin
+lefamulin will increase the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Lefamulin is
+contraindicated with CYP3A substrates know to prolong the QT interval.
+
+leuprolide
+leuprolide increases toxicity of escitalopram by QTc interval. Contraindicated.
+Increases risk of torsades de pointes.
+
+phenelzine
+phenelzine and escitalopram both increase serotonin levels. Contraindicated.
+
+pimozide
+escitalopram and pimozide both increase QTc interval. Contraindicated.
+
+procarbazine
+procarbazine and escitalopram both increase serotonin levels. Contraindicated.
+Combination is contraindicated within 2 weeks of MAOI use.
+
+selegiline
+selegiline and escitalopram both increase serotonin levels. Contraindicated. At least
+14 days should elapse between discontinuation of selegiline and initiation of
+treatment with a serotonergic drug.
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 5/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+thioridazine
+escitalopram increases toxicity of thioridazine by QTc interval. Contraindicated.
+
+tranylcypromine
+tranylcypromine and escitalopram both increase serotonin levels. Contraindicated.
+
+ziprasidone
+escitalopram and ziprasidone both increase QTc interval. Contraindicated.
+
+ziprasidone and escitalopram both increase QTc interval. Contraindicated.
+
+Serious (140)
+
+adagrasib
+adagrasib, escitalopram. Either increases effects of the other by QTc interval. Avoid
+or Use Alternate Drug. Each drug prolongs the QTc interval, which may increased
+the risk of Torsade de pointes, other serious arryhthmias, and sudden death. If
+coadministration unavoidable, more frequent monitoring is recommended for such
+patients.
+
+alfentanil
+alfentanil, escitalopram. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+
+amiodarone
+escitalopram increases toxicity of amiodarone by QTc interval. Avoid or Use
+Alternate Drug.
+
+amisulpride
+amisulpride and escitalopram both increase QTc interval. Avoid or Use Alternate
+Drug. ECG monitoring is recommended if coadministered.
+
+amitriptyline
+escitalopram and amitriptyline both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+escitalopram increases toxicity of amitriptyline by QTc interval. Avoid or Use
+Alternate Drug.
+
+amoxapine
+escitalopram and amoxapine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+apalutamide
+apalutamide will decrease the level or effect of escitalopram by affecting hepatic
+enzyme CYP2C19 metabolism. Avoid or Use Alternate Drug. Coadministration of
+apalutamide, a strong CYP2C19 inducer, with drugs that are CYP2C19 substrates
+can result in lower exposure to these medications. Avoid or substitute another drug
+for these medications when possible. Evaluate for loss of therapeutic effect if
+medication must be coadministered.
+
+apalutamide will decrease the level or effect of escitalopram by affecting
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 6/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+Coadministration of apalutamide, a strong CYP3A4 inducer, with drugs that are
+CYP3A4 substrates can result in lower exposure to these medications. Avoid or
+substitute another drug for these medications when possible. Evaluate for loss of
+therapeutic effect if medication must be coadministered. Adjust dose according to
+prescribing information if needed.
+
+arsenic trioxide
+escitalopram increases toxicity of arsenic trioxide by QTc interval. Avoid or Use
+Alternate Drug.
+
+artemether
+artemether and escitalopram both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+artemether/lumefantrine
+escitalopram increases toxicity of artemether/lumefantrine by QTc interval. Avoid or
+Use Alternate Drug.
+
+asenapine
+escitalopram increases toxicity of asenapine by QTc interval. Avoid or Use Alternate
+Drug.
+
+asenapine transdermal
+asenapine transdermal and escitalopram both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+azithromycin
+escitalopram increases toxicity of azithromycin by QTc interval. Avoid or Use
+Alternate Drug.
+
+buprenorphine
+buprenorphine and escitalopram both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+buprenorphine buccal
+buprenorphine buccal and escitalopram both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+buprenorphine subdermal implant
+buprenorphine subdermal implant and escitalopram both increase QTc interval.
+Avoid or Use Alternate Drug.
+
+buprenorphine transdermal
+buprenorphine transdermal and escitalopram both increase QTc interval. Avoid or
+Use Alternate Drug.
+
+buprenorphine, long-acting injection
+buprenorphine, long-acting injection and escitalopram both increase QTc interval.
+Avoid or Use Alternate Drug.
+
+bupropion
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 7/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+escitalopram increases toxicity of bupropion by unspecified interaction mechanism.
+Avoid or Use Alternate Drug. May lower seizure threshold; keep bupropion dose as
+low as possible.
+
+buspirone
+escitalopram and buspirone both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+ceritinib
+ceritinib and escitalopram both increase QTc interval. Avoid or Use Alternate Drug.
+
+ceritinib will increase the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+chlorpromazine
+escitalopram increases toxicity of chlorpromazine by QTc interval. Avoid or Use
+Alternate Drug.
+
+citalopram
+citalopram and escitalopram both increase serotonin levels. Avoid or Use Alternate
+Drug. Combination may increase risk of serotonin syndrome or neuroleptic
+malignant syndrome-like reactions. ECG monitoring is recommended, along with
+drugs that may prolong the QT interval.
+
+clarithromycin
+clarithromycin, escitalopram. Either increases toxicity of the other by QTc interval.
+Avoid or Use Alternate Drug. To monitor for the prolongation of QT/QTc and/or
+development of ventricular tachyarrhythmias the labeling recommends monitoring
+QT interval or ECG.
+
+escitalopram increases toxicity of clarithromycin by QTc interval. Avoid or Use
+Alternate Drug.
+
+clarithromycin will increase the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+clomipramine
+escitalopram and clomipramine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+crizotinib
+escitalopram increases toxicity of crizotinib by QTc interval. Avoid or Use Alternate
+Drug.
+
+cyclobenzaprine
+escitalopram and cyclobenzaprine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+desflurane
+desflurane and escitalopram both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+desipramine
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 8/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+escitalopram and desipramine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+desvenlafaxine
+escitalopram and desvenlafaxine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+dextromethorphan
+escitalopram and dextromethorphan both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+disopyramide
+escitalopram increases toxicity of disopyramide by QTc interval. Avoid or Use
+Alternate Drug.
+
+dofetilide
+dofetilide increases toxicity of escitalopram by QTc interval. Avoid or Use Alternate
+Drug.
+
+escitalopram increases toxicity of dofetilide by QTc interval. Avoid or Use Alternate
+Drug.
+
+dordaviprone
+dordaviprone and escitalopram both increase QTc interval. Avoid or Use Alternate
+Drug. Additive QTc interval prolongation may increase the risk for ventricular
+tachyarrhythmias (eg, Torsades de pointes) or sudden death. If coadministration
+cannot be avoided, separate the administration time of these agents and increase
+the frequency of ECG and electrolyte monitoring.
+
+dosulepin
+escitalopram and dosulepin both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+doxepin
+escitalopram and doxepin both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+doxepin and escitalopram both increase QTc interval. Avoid or Use Alternate Drug.
+
+droperidol
+escitalopram increases toxicity of droperidol by QTc interval. Avoid or Use Alternate
+Drug.
+
+encorafenib
+escitalopram increases toxicity of encorafenib by QTc interval. Avoid or Use
+Alternate Drug.
+
+entrectinib
+escitalopram and entrectinib both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+enzalutamide
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 9/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+enzalutamide will decrease the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+eribulin
+escitalopram increases toxicity of eribulin by QTc interval. Avoid or Use Alternate
+Drug.
+
+erythromycin base
+escitalopram increases toxicity of erythromycin base by QTc interval. Avoid or Use
+Alternate Drug.
+
+erythromycin ethylsuccinate
+escitalopram increases toxicity of erythromycin ethylsuccinate by QTc interval.
+Avoid or Use Alternate Drug.
+
+erythromycin lactobionate
+escitalopram increases toxicity of erythromycin lactobionate by QTc interval. Avoid
+or Use Alternate Drug.
+
+erythromycin stearate
+escitalopram increases toxicity of erythromycin stearate by QTc interval. Avoid or
+Use Alternate Drug.
+
+fentanyl
+fentanyl, escitalopram. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+
+fentanyl intranasal
+fentanyl intranasal, escitalopram. Either increases toxicity of the other by serotonin
+levels. Avoid or Use Alternate Drug.
+
+fentanyl transdermal
+fentanyl transdermal, escitalopram. Either increases toxicity of the other by
+serotonin levels. Avoid or Use Alternate Drug.
+
+fentanyl transmucosal
+fentanyl transmucosal, escitalopram. Either increases toxicity of the other by
+serotonin levels. Avoid or Use Alternate Drug.
+
+fexinidazole
+fexinidazole and escitalopram both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid coadministration of fexinidazole with drugs known to block potassium
+channels or prolong QT interval.
+
+flecainide
+escitalopram increases toxicity of flecainide by QTc interval. Avoid or Use Alternate
+Drug.
+
+fluoxetine
+fluoxetine will increase the level or effect of escitalopram by affecting hepatic
+enzyme CYP2C19 metabolism. Avoid or Use Alternate Drug.
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 10/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+escitalopram and fluoxetine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+fluvoxamine
+fluvoxamine and escitalopram both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+foscarnet
+escitalopram increases toxicity of foscarnet by QTc interval. Avoid or Use Alternate
+Drug.
+
+fosfomycin
+fosfomycin and escitalopram both increase QTc interval. Avoid or Use Alternate
+Drug. The risk of QT prolongation may increase in patients with electrolyte
+abnormalities (such as hypokalemia and hypocalcemia), patients with conditions
+that have potential to cause electrolyte imbalance (such as renal impairment), or
+patients taking other drugs affecting electrolyte balance or QT prolongation; avoid
+this drug in patients with known QT prolongation or ventricular arrhythmias,
+including a history of torsade de pointes; monitor electrolytes during treatment
+
+gepotidacin
+gepotidacin and escitalopram both increase QTc interval. Avoid or Use Alternate
+Drug. If coadministration unavoidable, monitor and correct serum electrolyte
+abnormalities and obtain ECG before administration and during treatment, as
+clinically indicated
+
+gilteritinib
+gilteritinib will decrease the level or effect of escitalopram by Other (see comment).
+Avoid or Use Alternate Drug. Coadministration of gilteritinib with drugs that inhibit
+5HT2B or sigma nonspecific receptors. Avoid use of these drugs with gilteritinib
+unless coadministration is necessary.
+
+gilteritinib and escitalopram both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+givinostat
+escitalopram and givinostat both increase QTc interval. Avoid or Use Alternate
+Drug. If unable to avoid coadministration, obtain ECGs when initiating, during
+concomitant use, and as clinically indicated. Withhold if QTc interval >500 ms or a
+change from baseline >60 ms.
+
+glasdegib
+escitalopram and glasdegib both increase QTc interval. Avoid or Use Alternate
+Drug. If coadministration unavoidable, monitor for increased risk of QTc interval
+prolongation.
+
+granisetron
+granisetron, escitalopram. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+
+histrelin
+histrelin increases toxicity of escitalopram by QTc interval. Avoid or Use Alternate
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 11/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+Drug. Increases risk of torsades de pointes.
+
+hydromorphone
+hydromorphone, escitalopram. Either increases toxicity of the other by serotonin
+levels. Avoid or Use Alternate Drug.
+
+hydroxychloroquine sulfate
+hydroxychloroquine sulfate and escitalopram both increase QTc interval. Avoid or
+Use Alternate Drug.
+
+escitalopram increases toxicity of hydroxychloroquine sulfate by QTc interval. Avoid
+or Use Alternate Drug.
+
+ibutilide
+escitalopram increases toxicity of ibutilide by QTc interval. Avoid or Use Alternate
+Drug.
+
+idelalisib
+idelalisib will increase the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+Idelalisib is a strong CYP3A inhibitor; avoid coadministration with sensitive CYP3A
+substrates
+
+iloperidone
+escitalopram and iloperidone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+imipramine
+escitalopram and imipramine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+inotuzumab
+escitalopram increases toxicity of inotuzumab by QTc interval. Avoid or Use
+Alternate Drug.
+
+isoflurane
+isoflurane and escitalopram both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+ivosidenib
+ivosidenib and escitalopram both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid coadministration of QTc prolonging drugs with ivosidenib or replace
+with alternate therapies. If coadministration of a QTc prolonging drug is
+unavoidable, monitor for increased risk of QTc interval prolongation.
+
+ivosidenib will decrease the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid
+coadministration of sensitive CYP3A4 substrates with ivosidenib or replace with
+alternate therapies. If coadministration is unavoidable, monitor patients for loss of
+therapeutic effect of these drugs.
+
+levomilnacipran
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 12/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+escitalopram and levomilnacipran both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+linezolid
+linezolid and escitalopram both increase serotonin levels. Avoid or Use Alternate
+Drug. Linezolid may increase serotonin as a result of MAO-A inhibition. If linezolid
+must be administered, discontinue serotonergic drug immediately and monitor for
+CNS toxicity. Serotonergic therapy may be resumed 24 hours after last linezolid
+dose or after 2 weeks of monitoring, whichever comes first.
+
+lofepramine
+escitalopram and lofepramine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+lonafarnib
+lonafarnib will increase the level or effect of escitalopram by affecting hepatic
+enzyme CYP2C19 metabolism. Avoid or Use Alternate Drug. Lonafarnib may
+increase the AUC and peak concentration of CYP2C19 substrates. If
+coadministration unavoidable, monitor for adverse reactions and reduce the
+CYP2C19 substrate dose in accordance with its approved product labeling.
+
+lopinavir
+escitalopram increases toxicity of lopinavir by QTc interval. Avoid or Use Alternate
+Drug.
+
+lorcaserin
+escitalopram and lorcaserin both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+macimorelin
+macimorelin and escitalopram both increase QTc interval. Avoid or Use Alternate
+Drug. Macimorelin causes an increase of ~11 msec in the corrected QT interval.
+Avoid coadministration with drugs that prolong QT interval, which could increase
+risk for developing torsade de pointes-type ventricular tachycardia. Allow sufficient
+washout time of drugs that are known to prolong the QT interval before
+administering macimorelin.
+
+mefloquine
+mefloquine increases toxicity of escitalopram by QTc interval. Avoid or Use
+Alternate Drug. Mefloquine may enhance the QTc prolonging effect of high risk QTc
+prolonging agents.
+
+meperidine
+escitalopram and meperidine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+meperidine, escitalopram. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+
+methadone
+escitalopram increases toxicity of methadone by QTc interval. Avoid or Use
+Alternate Drug.
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 13/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+methylene blue
+methylene blue and escitalopram both increase serotonin levels. Avoid or Use
+Alternate Drug. Methylene blue may increase serotonin as a result of MAO-A
+inhibition. If methylene blue must be administered, discontinue serotonergic drug
+immediately and monitor for CNS toxicity. Serotonergic therapy may be resumed 24
+hours after last methylene blue dose or after 2 weeks of monitoring, whichever
+comes first.
+
+metoclopramide
+metoclopramide and escitalopram both increase serotonin levels. Avoid or Use
+Alternate Drug. Additive effects; increased risk for serotonin syndrome, neuroleptic
+malignant syndrome, dystonia, or other extrapyramidal reactions
+
+metoclopramide intranasal
+escitalopram, metoclopramide intranasal. Either increases effects of the other by
+Other (see comment). Avoid or Use Alternate Drug. Comment: Avoid use of
+metoclopramide intranasal or interacting drug, depending on importance of drug to
+patient.
+
+milnacipran
+escitalopram and milnacipran both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+milsaperidone
+escitalopram and milsaperidone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+mirtazapine
+mirtazapine and escitalopram both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+morphine
+morphine, escitalopram. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+
+nefazodone
+escitalopram and nefazodone both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+nefazodone will increase the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+netupitant/palonosetron
+netupitant/palonosetron, escitalopram. Either increases toxicity of the other by
+serotonin levels. Avoid or Use Alternate Drug.
+
+nilotinib
+escitalopram increases toxicity of nilotinib by QTc interval. Avoid or Use Alternate
+Drug.
+
+nortriptyline
+escitalopram and nortriptyline both increase serotonin levels. Avoid or Use
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 14/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+Alternate Drug.
+
+olopatadine intranasal
+escitalopram and olopatadine intranasal both increase sedation. Avoid or Use
+Alternate Drug. Coadministration increases risk of CNS depression, which can lead
+to additive impairment of psychomotor performance and cause daytime impairment.
+
+ondansetron
+escitalopram and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+
+ondansetron, escitalopram. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+
+osimertinib
+escitalopram increases toxicity of osimertinib by QTc interval. Avoid or Use
+Alternate Drug.
+
+oxaliplatin
+oxaliplatin and escitalopram both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+ozanimod
+ozanimod increases toxicity of escitalopram by sympathetic (adrenergic) effects,
+including increased blood pressure and heart rate. Avoid or Use Alternate Drug.
+Because the active metabolite of ozanimod inhibits MAO-B in vitro, there is a
+potential for serious adverse reactions, including hypertensive crisis. Therefore,
+coadministration of ozanimod with drugs that can increase norepinephrine or
+serotonin is not recommended. Monitor for hypertension with concomitant use.
+
+paliperidone
+escitalopram increases toxicity of paliperidone by QTc interval. Avoid or Use
+Alternate Drug.
+
+palonosetron
+palonosetron, escitalopram. Either increases toxicity of the other by serotonin
+levels. Avoid or Use Alternate Drug.
+
+panobinostat
+escitalopram and panobinostat both increase QTc interval. Avoid or Use Alternate
+Drug. Panobinostat is known to significantly prolong QT interval. Panobinostat
+prescribing information states use with drugs known to prolong QTc is not
+recommended.
+
+paroxetine
+escitalopram and paroxetine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+pazopanib
+escitalopram increases toxicity of pazopanib by QTc interval. Avoid or Use Alternate
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 15/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+Drug.
+
+pentamidine
+escitalopram increases toxicity of pentamidine by QTc interval. Avoid or Use
+Alternate Drug.
+
+phentermine
+escitalopram, phentermine. Either increases toxicity of the other by Mechanism:
+unknown. Avoid or Use Alternate Drug. Risk of serotonin syndrome.
+
+pimavanserin
+escitalopram increases toxicity of pimavanserin by QTc interval. Avoid or Use
+Alternate Drug.
+
+pitolisant
+escitalopram and pitolisant both increase QTc interval. Avoid or Use Alternate Drug.
+
+procainamide
+escitalopram increases toxicity of procainamide by QTc interval. Avoid or Use
+Alternate Drug.
+
+protriptyline
+escitalopram and protriptyline both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+quetiapine
+escitalopram increases toxicity of quetiapine by QTc interval. Avoid or Use Alternate
+Drug.
+
+quinidine
+escitalopram increases toxicity of quinidine by QTc interval. Avoid or Use Alternate
+Drug.
+
+rasagiline
+rasagiline and escitalopram both increase serotonin levels. Avoid or Use Alternate
+Drug. Severe CNS toxicity associated with hyperpyrexia has been reported with the
+combined treatment of an antidepressant and rasagiline. Avoid combination within
+14 days of MAOI use.
+
+remifentanil
+remifentanil, escitalopram. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+
+revumenib
+revumenib and escitalopram both increase QTc interval. Avoid or Use Alternate
+Drug. ECG monitoring recommended if concomitant use can?t be avoided and
+withhold therapy if QTc interval is >480 msec; restart therapy after QTc interval
+returns to <480 msec
+
+ribociclib
+ribociclib increases toxicity of escitalopram by QTc interval. Avoid or Use Alternate
+Drug.
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 16/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+escitalopram increases toxicity of ribociclib by QTc interval. Avoid or Use Alternate
+Drug.
+
+ropeginterferon alfa 2b
+ropeginterferon alfa 2b, escitalopram. Either increases toxicity of the other by Other
+(see comment). Avoid or Use Alternate Drug. Comment: Myelosuppressive agents
+can produce additive myelosuppression. Avoid use and monitor patients receiving
+the combination for effects of excessive myelosuppression.
+
+selegiline transdermal
+selegiline transdermal and escitalopram both increase serotonin levels. Avoid or
+Use Alternate Drug.
+
+selinexor
+selinexor, escitalopram. unspecified interaction mechanism. Avoid or Use Alternate
+Drug. Patients treated with selinexor may experience neurological toxicities. Avoid
+taking selinexor with other medications that may cause dizziness or confusion.
+
+sertraline
+escitalopram and sertraline both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+escitalopram increases toxicity of sertraline by QTc interval. Avoid or Use Alternate
+Drug.
+
+sevoflurane
+sevoflurane and escitalopram both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+siponimod
+siponimod and escitalopram both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+sorafenib
+escitalopram increases toxicity of sorafenib by QTc interval. Avoid or Use Alternate
+Drug.
+
+sotalol
+escitalopram and sotalol both increase QTc interval. Avoid or Use Alternate Drug.
+
+St John's Wort
+escitalopram and St John's Wort both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+sufentanil
+sufentanil, escitalopram. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+
+taletrectinib
+taletrectinib and escitalopram both increase QTc interval. Avoid or Use Alternate
+Drug. Concomitant use may result in additive QTc interval prolongation, which can
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 17/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+increase the risk for ventricular tachyarrhythmias (eg, Torsades de pointes) or
+sudden death.
+
+tedizolid
+tedizolid, escitalopram. Either increases effects of the other by Mechanism:
+pharmacodynamic synergism. Avoid or Use Alternate Drug. both increase serotonin
+levels; increased risk of serotonin syndrome.
+
+tetrabenazine
+escitalopram increases toxicity of tetrabenazine by QTc interval. Avoid or Use
+Alternate Drug.
+
+toremifene
+escitalopram increases toxicity of toremifene by QTc interval. Avoid or Use
+Alternate Drug.
+
+trazodone
+escitalopram and trazodone both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+trimipramine
+escitalopram and trimipramine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+triptorelin
+triptorelin increases toxicity of escitalopram by QTc interval. Avoid or Use Alternate
+Drug. Increases risk of torsades de pointes.
+
+tucatinib
+tucatinib will increase the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid
+concomitant use of tucatinib with CYP3A substrates, where minimal concentration
+changes may lead to serious or life-threatening toxicities. If unavoidable, reduce
+CYP3A substrate dose according to product labeling.
+
+umeclidinium bromide/vilanterol inhaled
+escitalopram increases toxicity of umeclidinium bromide/vilanterol inhaled by QTc
+interval. Avoid or Use Alternate Drug. Exercise extreme caution when vilanterol
+coadministered with drugs that prolong QTc interval; adrenergic agonist effects on
+the cardiovascular system may be potentiated.
+
+vandetanib
+escitalopram, vandetanib. Either increases toxicity of the other by QTc interval.
+Avoid or Use Alternate Drug. Avoid coadministration with drugs known to prolong
+QT interval; if a drug known to prolong QT interval must be used, more frequent
+ECG monitoring is recommended.
+
+vemurafenib
+vemurafenib and escitalopram both increase QTc interval. Avoid or Use Alternate
+Drug. Concomitant use of vemurafenib with drugs that prolong QT interval is not
+recommended.
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 18/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+escitalopram increases toxicity of vemurafenib by QTc interval. Avoid or Use
+Alternate Drug.
+
+venlafaxine
+escitalopram and venlafaxine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+vilanterol/fluticasone furoate inhaled
+escitalopram increases toxicity of vilanterol/fluticasone furoate inhaled by QTc
+interval. Avoid or Use Alternate Drug. Exercise extreme caution when vilanterol
+coadministered with drugs that prolong QTc interval; adrenergic agonist effects on
+the cardiovascular system may be potentiated.
+
+vilazodone
+escitalopram, vilazodone. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug. Concomitant therapy should be discontinued
+immediately if signs or symptoms of serotonin syndrome emerge and supportive
+symptomatic treatment should be initiated. .
+
+vortioxetine
+escitalopram, vortioxetine. Either increases effects of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+
+ziftomenib
+escitalopram and ziftomenib both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid coadministration of ziftomenib with other drugs known to prolong the
+QTc interval. If unavoidable, obtain ECGs when initiating, during concomitant use,
+and as clinically indicated. Interrupt ziftomenib with QTc interval > 500 ms or a
+change from baseline is > 60 ms
+
+zuranolone
+escitalopram, zuranolone. Either increases effects of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Coadministration of zuranolone with other
+CNS depressants may increase impairment of psychomotor performance or CNS
+depressant effects. If unavoidable, consider dose reduction. .
+
+Monitor Closely (246)
+
+5-HTP
+escitalopram and 5-HTP both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+aceclofenac
+escitalopram, aceclofenac. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. SSRIs inhib. serotonin uptake by platelets.
+
+acemetacin
+escitalopram, acemetacin. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. SSRIs inhib. serotonin uptake by platelets.
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 19/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+albuterol
+escitalopram and albuterol both increase QTc interval. Use Caution/Monitor.
+Combination may increase risk of QT prolongation; monitor electrolytes and ECG
+changes
+
+albuterol inhaled
+escitalopram and albuterol inhaled both increase QTc interval. Use Caution/Monitor.
+Combination may increase risk of QT prolongation; monitor electrolytes and ECG
+changes
+
+alfuzosin
+escitalopram and alfuzosin both increase QTc interval. Use Caution/Monitor.
+
+alfuzosin and escitalopram both increase QTc interval. Use Caution/Monitor.
+
+almotriptan
+almotriptan, escitalopram. Either increases toxicity of the other by serotonin levels.
+Modify Therapy/Monitor Closely. Exercise caution when concomitantly using agents
+that enhance serotonin activity. Monitor for the development of serotonin
+toxicity/serotonin syndrome during such therapy.
+
+amifampridine
+escitalopram increases toxicity of amifampridine by Other (see comment). Modify
+Therapy/Monitor Closely. Comment: Amifampridine can cause seizures.
+Coadministration with drugs that lower seizure threshold may increase this risk.
+
+amoxapine
+escitalopram increases toxicity of amoxapine by QTc interval. Use Caution/Monitor.
+
+amphetamine
+escitalopram and amphetamine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+anagrelide
+anagrelide and escitalopram both increase QTc interval. Use Caution/Monitor.
+
+apixaban
+escitalopram increases effects of apixaban by anticoagulation. Use Caution/Monitor.
+SSRIs may inhibit platelet aggregation, thus increase bleeding risk when
+coadministered with anticoagulants.
+
+apomorphine
+escitalopram increases toxicity of apomorphine by QTc interval. Use
+Caution/Monitor.
+
+arformoterol
+escitalopram and arformoterol both increase QTc interval. Use Caution/Monitor.
+Combination may increase risk of QT prolongation; monitor electrolytes and ECG
+changes
+
+aripiprazole
+aripiprazole and escitalopram both increase QTc interval. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 20/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+aspirin
+escitalopram, aspirin. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+aspirin rectal
+escitalopram, aspirin rectal. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. SSRIs inhib. serotonin uptake by platelets.
+
+aspirin/citric acid/sodium bicarbonate
+escitalopram, aspirin/citric acid/sodium bicarbonate. Either increases toxicity of the
+other by pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper
+GI bleeding. SSRIs inhib. serotonin uptake by platelets.
+
+atazanavir
+atazanavir increases levels of escitalopram by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Increased risk of serotonin syndrome.
+
+atomoxetine
+escitalopram increases levels of atomoxetine by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+atomoxetine and escitalopram both increase QTc interval. Use Caution/Monitor.
+
+azithromycin
+azithromycin increases toxicity of escitalopram by QTc interval. Use
+Caution/Monitor.
+
+bedaquiline
+escitalopram and bedaquiline both increase QTc interval. Modify Therapy/Monitor
+Closely. ECG should be monitored closely
+
+belzutifan
+belzutifan will decrease the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely. If
+unable to avoid coadministration of belzutifan with sensitive CYP3A4 substrates,
+consider increasing the sensitive CYP3A4 substrate dose in accordance with its
+prescribing information.
+
+benzhydrocodone/acetaminophen
+benzhydrocodone/acetaminophen, escitalopram. Either increases effects of the
+other by serotonin levels. Use Caution/Monitor. Coadministration of drugs that
+affect the serotonergic neurotransmitter system may result in serotonin syndrome. If
+concomitant use is warranted, carefully observe the patient, particularly during
+treatment initiation and dose adjustment.
+
+buprenorphine subdermal implant
+escitalopram, buprenorphine subdermal implant. Either increases toxicity of the
+other by serotonin levels. Use Caution/Monitor. Concomitant use could result in life-
+threatening serotonin syndrome. If concomitant use is warranted, carefully observe
+the patient, particularly during treatment initiation, and during dose adjustment of
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 21/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+the serotonergic drug. Discontinue buprenorphine if serotonin syndrome is
+suspected.
+
+buprenorphine, long-acting injection
+escitalopram, buprenorphine, long-acting injection. Either increases toxicity of the
+other by serotonin levels. Use Caution/Monitor. Concomitant use could result in life-
+threatening serotonin syndrome. If concomitant use is warranted, carefully observe
+the patient, particularly during treatment initiation, and during dose adjustment of
+the serotonergic drug. Discontinue buprenorphine if serotonin syndrome is
+suspected.
+
+butalbital
+butalbital will decrease the level or effect of escitalopram by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+cannabidiol
+cannabidiol will increase the level or effect of escitalopram by affecting hepatic
+enzyme CYP2C19 metabolism. Modify Therapy/Monitor Closely. Consider reducing
+the dose of sensitive CYP2C19 substrates, as clinically appropriate, when
+coadministered with cannabidiol.
+
+carbamazepine
+carbamazepine will decrease the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+celecoxib
+escitalopram, celecoxib. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+cenobamate
+cenobamate will decrease the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Increase dose of CYP3A4 substrate, as needed, when coadministered with
+cenobamate.
+
+cenobamate will increase the level or effect of escitalopram by affecting hepatic
+enzyme CYP2C19 metabolism. Modify Therapy/Monitor Closely. Consider a dose
+reduction of CYP2C19 substrates, as clinically appropriate, when used
+concomitantly with cenobamate.
+
+cenobamate, escitalopram. Either increases effects of the other by sedation. Use
+Caution/Monitor.
+
+chloramphenicol
+chloramphenicol will increase the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+chloroquine
+chloroquine increases toxicity of escitalopram by QTc interval. Use Caution/Monitor.
+
+choline magnesium trisalicylate
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 22/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+escitalopram, choline magnesium trisalicylate. Either increases toxicity of the other
+by pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. SSRIs inhib. serotonin uptake by platelets.
+
+ciprofloxacin
+escitalopram increases toxicity of ciprofloxacin by QTc interval. Use
+Caution/Monitor.
+
+clofazimine
+escitalopram increases toxicity of clofazimine by QTc interval. Modify
+Therapy/Monitor Closely.
+
+clomipramine
+escitalopram increases toxicity of clomipramine by QTc interval. Use
+Caution/Monitor.
+
+clonidine
+clonidine, escitalopram. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Coadministration enhances CNS depressant
+effects.
+
+clopidogrel
+escitalopram increases effects of clopidogrel by pharmacodynamic synergism. Use
+Caution/Monitor. SSRIs affect platelet activation; coadministration of SSRIs with
+clopidogrel may increase the risk of bleeding.
+
+clozapine
+escitalopram increases levels of clozapine by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor. Plasma levels of clozapine may be increased,
+resulting in increased pharmacologic and toxic effects. Adjust clozapine dose as
+needed when initiating or discontinuing certain SSRIs. .
+
+escitalopram increases toxicity of clozapine by QTc interval. Use Caution/Monitor.
+
+cobicistat
+cobicistat will increase the level or effect of escitalopram by Other (see comment).
+Use Caution/Monitor. Carefully titrate dose of the antidepressant to the desired
+effect, including using the lowest feasible initial or maintenance dose, and monitor
+its response during coadministration with SSRIs and cobicistat.
+
+cobicistat will increase the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+cocaine topical
+escitalopram and cocaine topical both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+crizotinib
+crizotinib increases levels of escitalopram by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Dose reduction may be needed for
+coadministered drugs that are predominantly metabolized by CYP3A.
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 23/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+crizotinib and escitalopram both increase QTc interval. Use Caution/Monitor. ECG
+monitoring is recommended, along with drugs that may prolong the QT interval.
+
+cyproheptadine
+cyproheptadine decreases effects of escitalopram by pharmacodynamic
+antagonism. Use Caution/Monitor. Cyproheptadine may diminish the serotonergic
+effect of SSRIs.
+
+dabrafenib
+dabrafenib will decrease the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+
+daridorexant
+escitalopram and daridorexant both increase sedation. Modify Therapy/Monitor
+Closely. Coadministration increases risk of CNS depression, which can lead to
+additive impairment of psychomotor performance and cause daytime impairment.
+
+dasatinib
+escitalopram increases toxicity of dasatinib by QTc interval. Use Caution/Monitor.
+
+defibrotide
+defibrotide increases effects of escitalopram by Other (see comment). Use
+Caution/Monitor. Comment: Defibrotide may enhance effects of platelet inhibitors.
+
+degarelix
+escitalopram increases toxicity of degarelix by QTc interval. Use Caution/Monitor.
+
+desipramine
+escitalopram increases toxicity of desipramine by QTc interval. Use Caution/Monitor.
+
+deutetrabenazine
+escitalopram increases toxicity of deutetrabenazine by QTc interval. Use
+Caution/Monitor. At the maximum recommended dose, deutetrabenazine does not
+prolong QT interval to a clinically relevant extent. Certain circumstances may
+increase risk of torsade de pointes and/or sudden death in association with drugs
+that prolong the QTc interval (eg, bradycardia, hypokalemia or hypomagnesemia,
+coadministration with other drugs that prolong QTc interval, presence of congenital
+QT prolongation).
+
+dexfenfluramine
+escitalopram and dexfenfluramine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+dexmethylphenidate
+dexmethylphenidate increases effects of escitalopram by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+dextroamphetamine
+escitalopram and dextroamphetamine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+dextroamphetamine transdermal
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 24/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+escitalopram, dextroamphetamine transdermal. Either increases effects of the other
+by serotonin levels. Modify Therapy/Monitor Closely. Initiate with lower doses and
+monitor for signs and symptoms of serotonin syndrome, particularly during
+initiation or dosage increase. If serotonin syndrome occurs, discontinue
+dextroamphetamine transdermal and concomitant serotonergic drug(s).
+
+diazepam buccal
+diazepam buccal, escitalopram. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration may
+potentiate the CNS-depressant effects of each drug.
+
+diazepam intranasal
+diazepam intranasal, escitalopram. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration may
+potentiate the CNS-depressant effects of each drug.
+
+dichlorphenamide
+dichlorphenamide, escitalopram. sedation. Use Caution/Monitor.
+
+diclofenac
+escitalopram, diclofenac. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+difelikefalin
+difelikefalin and escitalopram both increase sedation. Use Caution/Monitor.
+
+diflunisal
+escitalopram, diflunisal. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+dihydroergotamine
+escitalopram and dihydroergotamine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+dihydroergotamine intranasal
+escitalopram and dihydroergotamine intranasal both increase serotonin levels.
+Modify Therapy/Monitor Closely.
+
+dolasetron
+dolasetron, escitalopram. Either increases toxicity of the other by serotonin levels.
+Use Caution/Monitor. Monitor ECG, symptoms of serotonin syndrome especially
+during initiation/titration.
+
+escitalopram increases toxicity of dolasetron by QTc interval. Use Caution/Monitor.
+
+donepezil
+donepezil and escitalopram both increase QTc interval. Use Caution/Monitor.
+
+duloxetine
+duloxetine and escitalopram both increase serotonin levels. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 25/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+duvelisib
+duvelisib will increase the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Coadministration with duvelisib increases AUC of a sensitive CYP3A4 substrate
+which may increase the risk of toxicities of these drugs. Consider reducing the dose
+of the sensitive CYP3A4 substrate and monitor for signs of toxicities of the
+coadministered sensitive CYP3A substrate.
+
+edoxaban
+escitalopram increases effects of edoxaban by anticoagulation. Use
+Caution/Monitor. SSRIs may inhibit platelet aggregation, thus increase bleeding risk
+when coadministered with anticoagulants.
+
+efavirenz
+efavirenz will increase the level or effect of escitalopram by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+efavirenz will decrease the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+efavirenz and escitalopram both increase QTc interval. Use Caution/Monitor.
+
+elagolix
+elagolix will increase the level or effect of escitalopram by affecting hepatic enzyme
+CYP2C19 metabolism. Modify Therapy/Monitor Closely. Elagolix is a weak
+CYP2C19 inhibitor. Caution with sensitive CYP2C19 substrates.
+
+elagolix will decrease the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Elagolix is a weak-to-moderate CYP3A4 inducer. Monitor CYP3A substrates if
+coadministered. Consider increasing CYP3A substrate dose if needed.
+
+eletriptan
+eletriptan and escitalopram both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+eliglustat
+eliglustat and escitalopram both increase QTc interval. Use Caution/Monitor.
+
+elvitegravir/cobicistat/emtricitabine/tenofovir DF
+elvitegravir/cobicistat/emtricitabine/tenofovir DF increases levels of escitalopram by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor
+Closely. Cobicistat is a CYP3A4 inhibitor; contraindicated with CYP3A4 substrates
+for which elevated plasma concentrations are associated with serious and/or life-
+threatening events.
+
+encorafenib
+encorafenib, escitalopram. affecting hepatic/intestinal enzyme CYP3A4 metabolism.
+Use Caution/Monitor. Encorafenib both inhibits and induces CYP3A4 at clinically
+relevant plasma concentrations. Coadministration of encorafenib with sensitive
+CYP3A4 substrates may result in increased toxicity or decreased efficacy of these
+agents.
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 26/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+ergotamine
+escitalopram and ergotamine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+eslicarbazepine acetate
+eslicarbazepine acetate will increase the level or effect of escitalopram by affecting
+hepatic enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+esomeprazole
+esomeprazole will increase the level or effect of escitalopram by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+etodolac
+escitalopram, etodolac. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+etravirine
+etravirine will increase the level or effect of escitalopram by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+etravirine will decrease the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+ezogabine
+ezogabine, escitalopram. Either increases toxicity of the other by QTc interval. Use
+Caution/Monitor. Slight and transient QT-prolongation observed with ezogabine,
+particularly when dose titrated to 1200 mg/day. QT interval should be monitored
+when ezogabine is prescribed with agents known to increase QT interval.
+
+escitalopram increases toxicity of ezogabine by QTc interval. Use Caution/Monitor.
+Slight and transient QT-prolongation observed, particularly when dose titrated to
+1200mg/day. QT interval should be monitored when ezogabine is prescribed with
+agents known to increase QT interval.
+
+fedratinib
+fedratinib will increase the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Adjust dose
+of drugs that are CYP3A4 substrates as necessary.
+
+fedratinib will increase the level or effect of escitalopram by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor. Adjust dose of drugs that are
+CYP2C19 substrates as necessary.
+
+felbamate
+felbamate will increase the level or effect of escitalopram by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+fenbufen
+escitalopram, fenbufen. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 27/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+fenfluramine
+escitalopram and fenfluramine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+fenfluramine, escitalopram. Either increases effects of the other by serotonin levels.
+Use Caution/Monitor. Coadministration with drugs that increase serotoninergic
+effects may increase the risk of serotonin syndrome.
+
+fenoprofen
+escitalopram, fenoprofen. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+fexinidazole
+fexinidazole will increase the level or effect of escitalopram by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+fingolimod
+fingolimod and escitalopram both increase QTc interval. Use Caution/Monitor.
+
+fish oil triglycerides
+fish oil triglycerides will increase the level or effect of escitalopram by
+anticoagulation. Use Caution/Monitor. Prolonged bleeding reported in patients
+taking antiplatelet agents or anticoagulants and oral omega-3 fatty acids.
+Periodically monitor bleeding time in patients receiving fish oil triglycerides and
+concomitant antiplatelet agents or anticoagulants.
+
+fluconazole
+fluconazole will increase the level or effect of escitalopram by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+escitalopram increases toxicity of fluconazole by QTc interval. Use Caution/Monitor.
+
+fluoxetine
+escitalopram and fluoxetine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+fluphenazine
+escitalopram increases toxicity of fluphenazine by QTc interval. Use
+Caution/Monitor.
+
+flurbiprofen
+escitalopram, flurbiprofen. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. SSRIs inhib. serotonin uptake by platelets.
+
+fondaparinux
+escitalopram increases effects of fondaparinux by anticoagulation. Use
+Caution/Monitor. SSRIs may inhibit platelet aggregation, thus increase bleeding risk
+when coadministered with anticoagulants.
+
+formoterol
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 28/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+escitalopram and formoterol both increase QTc interval. Use Caution/Monitor.
+Combination may increase risk of QT prolongation; monitor electrolytes and ECG
+changes
+
+fosamprenavir
+fosamprenavir increases levels of escitalopram by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor. Potential for increased toxicity.
+Increased risk of serotonin syndrome.
+
+fosphenytoin
+fosphenytoin will decrease the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+fostemsavir
+escitalopram and fostemsavir both increase QTc interval. Use Caution/Monitor. QTc
+prolongation reported with higher than recommended doses of fostemsavir.
+
+frovatriptan
+frovatriptan and escitalopram both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+gabapentin
+gabapentin, escitalopram. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+gabapentin enacarbil
+gabapentin enacarbil, escitalopram. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+gadobenate
+gadobenate and escitalopram both increase QTc interval. Use Caution/Monitor.
+
+ganaxolone
+escitalopram and ganaxolone both increase sedation. Use Caution/Monitor.
+
+gemifloxacin
+escitalopram increases toxicity of gemifloxacin by QTc interval. Use
+Caution/Monitor.
+
+gemtuzumab
+escitalopram increases toxicity of gemtuzumab by QTc interval. Use
+Caution/Monitor.
+
+gepirone
+gepirone and escitalopram both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+gepirone and escitalopram both increase serotonin levels. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 29/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+Monitor for symptoms of serotonin syndrome when gepirone is used gepirone with
+other drugs that may affect the serotonergic neurotransmitter systems. If serotonin
+syndrome occurs, consider discontinue gepirone and/or concomitant serotonergic
+drug.
+
+granisetron
+granisetron and escitalopram both increase QTc interval. Use Caution/Monitor.
+
+green tea
+green tea, escitalopram. Other (see comment). Use Caution/Monitor. Comment:
+Combination may increase risk of bleeding.
+
+haloperidol
+haloperidol and escitalopram both increase QTc interval. Use Caution/Monitor.
+
+escitalopram increases toxicity of haloperidol by QTc interval. Use Caution/Monitor.
+
+hydrocodone
+hydrocodone, escitalopram. Either increases effects of the other by serotonin levels.
+Use Caution/Monitor. Coadministration of drugs that affect the serotonergic
+neurotransmitter system may result in serotonin syndrome. If concomitant use is
+warranted, carefully observe the patient, particularly during treatment initiation and
+dose adjustment.
+
+hydroxyurea
+escitalopram, hydroxyurea. Other (see comment). Use Caution/Monitor. Comment:
+Combination may increase risk of myelosuppression.
+
+hydroxyzine
+hydroxyzine and escitalopram both increase QTc interval. Use Caution/Monitor.
+
+ibrutinib
+ibrutinib will increase the level or effect of escitalopram by anticoagulation. Use
+Caution/Monitor. Ibrutinib may increase the risk of hemorrhage in patients receiving
+antiplatelet or anticoagulant therapies and monitor for signs of bleeding.
+
+ibuprofen
+escitalopram, ibuprofen. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+ibuprofen IV
+escitalopram, ibuprofen IV. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. SSRIs inhib. serotonin uptake by platelets.
+
+icosapent ethyl
+icosapent ethyl, escitalopram. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Icosapent may prolong
+bleeding time. Periodically monitor if coadministered with other drugs that affect
+bleeding.
+
+indacaterol, inhaled
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 30/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+indacaterol, inhaled, escitalopram. QTc interval. Use Caution/Monitor. Drugs that are
+known to prolong the QTc interval may have an increased the risk of ventricular
+arrhythmias.
+
+escitalopram increases toxicity of indacaterol, inhaled by QTc interval. Use
+Caution/Monitor.
+
+indapamide
+escitalopram increases toxicity of indapamide by QTc interval. Use Caution/Monitor.
+
+indomethacin
+escitalopram, indomethacin. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. SSRIs inhib. serotonin uptake by platelets.
+
+ioflupane I 123
+escitalopram decreases effects of ioflupane I 123 by receptor binding competition.
+Use Caution/Monitor. Selective serotonin reuptake inhibitors (SSRIs) may alter
+binding of ioflupane I 123 to dopamine transporter, interfering with image
+interpretation. If clinically appropriate, consider discontinuing SSRI at least 5 half-
+lives prior to ioflupane I 123 administration.
+
+isoniazid
+isoniazid will increase the level or effect of escitalopram by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+escitalopram and isoniazid both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+isradipine
+escitalopram increases toxicity of isradipine by QTc interval. Use Caution/Monitor.
+
+istradefylline
+istradefylline will increase the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Istradefylline
+40 mg/day increased peak levels and AUC of CYP3A4 substrates in clinical trials.
+This effect was not observed with istradefylline 20 mg/day. Consider dose reduction
+of sensitive CYP3A4 substrates.
+
+itraconazole
+itraconazole will increase the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+itraconazole and escitalopram both increase QTc interval. Use Caution/Monitor.
+
+ketoprofen
+escitalopram, ketoprofen. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+ketorolac
+escitalopram, ketorolac. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 31/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+serotonin uptake by platelets.
+
+ketorolac intranasal
+escitalopram, ketorolac intranasal. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. SSRIs inhib. serotonin uptake by platelets.
+
+L-tryptophan
+escitalopram and L-tryptophan both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+lamotrigine
+lamotrigine increases toxicity of escitalopram by unspecified interaction mechanism.
+Modify Therapy/Monitor Closely. CNS depressants may increase the toxic effects of
+selective serotonin reuptake inhibitors; psychomotor impairment may be enhanced.
+
+lapatinib
+escitalopram increases toxicity of lapatinib by QTc interval. Use Caution/Monitor.
+
+lemborexant
+lemborexant, escitalopram. Either increases effects of the other by sedation. Modify
+Therapy/Monitor Closely. Dosage adjustment may be necessary if lemborexant is
+coadministered with other CNS depressants because of potentially additive effects.
+
+lenacapavir
+lenacapavir will increase the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Lencapavir (a
+moderate CYP3A4 inhibitor) may increase CYP3A4 substrates initiated within 9
+months after last SC dose of lenacapavir, which may increase potential risk of
+adverse reactions of CYP3A4 substrates.
+
+lenvatinib
+escitalopram and lenvatinib both increase QTc interval. Use Caution/Monitor.
+Lenvatinib prescribing information recommends monitoring ECG closely when
+coadministered with QT prolonging drugs.
+
+levalbuterol
+escitalopram and levalbuterol both increase QTc interval. Use Caution/Monitor.
+Combination may increase risk of QT prolongation; monitor electrolytes and ECG
+changes
+
+levofloxacin
+escitalopram increases toxicity of levofloxacin by QTc interval. Use Caution/Monitor.
+
+lisdexamfetamine
+escitalopram, lisdexamfetamine. Either increases effects of the other by serotonin
+levels. Use Caution/Monitor. Initiate with lower doses and monitor for signs and
+symptoms of serotonin syndrome, particularly during initiation or dosage increase. If
+serotonin syndrome occurs, discontinue along with concomitant serotonergic
+drug(s).
+
+lithium
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 32/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+escitalopram and lithium both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+lithium and escitalopram both increase QTc interval. Use Caution/Monitor.
+
+lofexidine
+escitalopram increases toxicity of lofexidine by QTc interval. Use Caution/Monitor.
+
+lopinavir
+lopinavir increases levels of escitalopram by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Potential for increased toxicity.
+Increased risk of serotinin syndrome.
+
+lorlatinib
+lorlatinib will decrease the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+lornoxicam
+escitalopram, lornoxicam. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+lsd
+escitalopram and lsd both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+lumacaftor/ivacaftor
+lumacaftor/ivacaftor, escitalopram. affecting hepatic enzyme CYP2C19 metabolism.
+Use Caution/Monitor. In vitro studies suggest that lumacaftor may induce and
+ivacaftor may inhibit CYP2C19 substrates. .
+
+lumacaftor/ivacaftor will decrease the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. A higher dose
+of escitalopram may be required to obtain desired therapeutic effect. Escitalopram
+is a CYP3A and CYP2C19 substrate. Lumacaftor/ivacaftor is a strong inducer of
+CYP3A and has the potential to induce CYP2C19.
+
+lurasidone
+lurasidone, escitalopram. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: Potential for increased CNS depressant
+effects when used concurrently; monitor for increased adverse effects and toxicity.
+
+mavorixafor
+mavorixafor and escitalopram both increase QTc interval. Modify Therapy/Monitor
+Closely. Mavorixafor causes concentration-dependent QTc prolongation. Monitor
+QTc during treatment in patients with risk factors for QTc prolongation (eg,
+coadministered medications that increase mavorixafor exposure or other drugs with
+a high risk to prolong the QTc interval). Mavorixafor dose reduction or
+discontinuation may be required.
+
+meclofenamate
+escitalopram, meclofenamate. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 33/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+bleeding. SSRIs inhib. serotonin uptake by platelets.
+
+mefenamic acid
+escitalopram, mefenamic acid. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. SSRIs inhib. serotonin uptake by platelets.
+
+mefloquine
+escitalopram increases toxicity of mefloquine by QTc interval. Use Caution/Monitor.
+
+meloxicam
+escitalopram, meloxicam. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+methylphenidate transdermal
+methylphenidate transdermal will increase the level or effect of escitalopram by
+decreasing metabolism. Modify Therapy/Monitor Closely. Consider decreasing the
+dose of these drugs when given coadministered with methylphenidate. Monitor for
+drug toxiticities when initiating or discontinuing methylphenidate.
+
+midazolam intranasal
+midazolam intranasal, escitalopram. Either increases toxicity of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Concomitant use of
+barbiturates, alcohol, or other CNS depressants may increase the risk of
+hypoventilation, airway obstruction, desaturation, or apnea and may contribute to
+profound and/or prolonged drug effect.
+
+mifepristone
+mifepristone, escitalopram. QTc interval. Modify Therapy/Monitor Closely. Use
+alternatives if available.
+
+mifepristone will increase the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+escitalopram increases toxicity of mifepristone by QTc interval. Use
+Caution/Monitor.
+
+mirtazapine
+escitalopram and mirtazapine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+mitapivat
+mitapivat decreases levels of escitalopram by affecting hepatic enzyme CYP2C19
+metabolism. Use Caution/Monitor. Monitor patients for loss of therapeutic effect if
+taking sensitive CYP2C19 substrates. .
+
+mitotane
+mitotane decreases levels of escitalopram by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Mitotane is a strong inducer of
+cytochrome P-4503A4; monitor when coadministered with CYP3A4 substrates for
+possible dosage adjustments.
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 34/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+modafinil
+modafinil will increase the level or effect of escitalopram by affecting hepatic
+enzyme CYP2C19 metabolism. Modify Therapy/Monitor Closely.
+
+morphine
+escitalopram and morphine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+moxifloxacin
+escitalopram and moxifloxacin both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+moxifloxacin and escitalopram both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+nabumetone
+escitalopram, nabumetone. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. SSRIs inhib. serotonin uptake by platelets.
+
+nafcillin
+nafcillin will decrease the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+naproxen
+escitalopram, naproxen. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+naratriptan
+naratriptan and escitalopram both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+nelfinavir
+nelfinavir increases levels of escitalopram by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Potential for increased toxicity.
+Increased risk of serotonin syndrome.
+
+nortriptyline
+escitalopram increases toxicity of nortriptyline by QTc interval. Use Caution/Monitor.
+
+octreotide
+escitalopram increases toxicity of octreotide by QTc interval. Use Caution/Monitor.
+
+ofloxacin
+escitalopram increases toxicity of ofloxacin by QTc interval. Use Caution/Monitor.
+
+olanzapine
+escitalopram increases toxicity of olanzapine by QTc interval. Use Caution/Monitor.
+Limited data, including some case reports, suggest that olanzapine may be
+associated with a significant prolongation of the QTc interval in rare instances.
+
+olanzapine/samidorphan
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 35/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+escitalopram, olanzapine/samidorphan. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration of diazepam,
+alcohol, or other CNS acting drugs may potentiate orthostatic hypotension
+observed with olanzapine. Additive sedation may also occur.
+
+olodaterol inhaled
+escitalopram and olodaterol inhaled both increase QTc interval. Use
+Caution/Monitor. Drugs that prolong the QTc interval and may potentiate the effects
+of beta2 agonists on the cardiovascular system; increased risk of ventricular
+arrhythmias
+
+omeprazole
+omeprazole will increase the level or effect of escitalopram by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+osilodrostat
+osilodrostat and escitalopram both increase QTc interval. Use Caution/Monitor.
+
+escitalopram and osilodrostat both increase QTc interval. Use Caution/Monitor.
+Dose dependent QT prolongation - avoid drugs known to prolong the QT interval
+
+osimertinib
+osimertinib and escitalopram both increase QTc interval. Use Caution/Monitor.
+Conduct periodic monitoring with ECGs and electrolytes in patients taking drugs
+known to prolong the QTc interval.
+
+oxaliplatin
+oxaliplatin will increase the level or effect of escitalopram by Other (see comment).
+Use Caution/Monitor. Monitor for ECG changes if therapy is initiated in patients with
+drugs known to prolong QT interval.
+
+oxaprozin
+escitalopram, oxaprozin. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+oxcarbazepine
+oxcarbazepine will increase the level or effect of escitalopram by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+oxycodone
+oxycodone increases effects of escitalopram by pharmacodynamic synergism.
+Modify Therapy/Monitor Closely. Opioids may enhance the serotonergic effects of
+SSRIs and increase risk for serotonergic syndrome.
+
+ozanimod
+ozanimod and escitalopram both increase QTc interval. Modify Therapy/Monitor
+Closely. The potential additive effects on heart rate, treatment with ozanimod
+should generally not be initiated in patients who are concurrently treated with QT
+prolonging drugs with known arrhythmogenic properties.
+
+parecoxib
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 36/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+escitalopram, parecoxib. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+pasireotide
+escitalopram and pasireotide both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+pentazocine
+escitalopram and pentazocine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+pentobarbital
+pentobarbital will decrease the level or effect of escitalopram by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+perphenazine
+escitalopram increases toxicity of perphenazine by QTc interval. Use
+Caution/Monitor.
+
+phenobarbital
+phenobarbital will decrease the level or effect of escitalopram by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+phenobarbital will decrease the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+phenytoin
+phenytoin will decrease the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+piroxicam
+escitalopram, piroxicam. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+posaconazole
+escitalopram increases toxicity of posaconazole by QTc interval. Use
+Caution/Monitor.
+
+posaconazole will increase the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+pregabalin
+pregabalin, escitalopram. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+primaquine
+primaquine and escitalopram both increase QTc interval. Use Caution/Monitor.
+
+primidone
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 37/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+primidone will decrease the level or effect of escitalopram by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+primidone will decrease the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+propafenone
+escitalopram increases toxicity of propafenone by QTc interval. Use
+Caution/Monitor.
+
+protriptyline
+escitalopram increases toxicity of protriptyline by QTc interval. Use Caution/Monitor.
+
+quetiapine
+quetiapine, escitalopram. Either increases toxicity of the other by QTc interval. Use
+Caution/Monitor. Avoid use with drugs that prolong QT and in patients with risk
+factors for prolonged QT interval. Postmarketing cases show QT prolongation with
+overdose in patients with concomitant illness or with drugs known to cause
+electrolyte imbalance or prolong QT.
+
+quinine
+escitalopram and quinine both increase QTc interval. Use Caution/Monitor.
+
+quizartinib
+quizartinib, escitalopram. Either increases effects of the other by QTc interval.
+Modify Therapy/Monitor Closely. Monitor patients more frequently with ECG if
+coadministered with QT prolonging drugs.
+
+ranolazine
+escitalopram increases toxicity of ranolazine by QTc interval. Use Caution/Monitor.
+
+remimazolam
+remimazolam, escitalopram. Either increases toxicity of the other by sedation.
+Modify Therapy/Monitor Closely. Coadministration may result in profound sedation,
+respiratory depression, coma, and/or death. Continuously monitor vital signs during
+sedation and recovery period if coadministered. Carefully titrate remimazolam dose
+if administered with opioid analgesics and/or sedative/hypnotics.
+
+ribociclib
+ribociclib will increase the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+rifabutin
+rifabutin will decrease the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+rifampin
+rifampin will decrease the level or effect of escitalopram by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+rifampin will decrease the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 38/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+rifapentine
+rifapentine will decrease the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+rilpivirine
+rilpivirine increases toxicity of escitalopram by QTc interval. Use Caution/Monitor.
+Rilpivirine should be used with caution when co-administered with a drug with a
+known risk of Torsades de Pointes.
+
+escitalopram increases toxicity of rilpivirine by QTc interval. Use Caution/Monitor.
+
+rilzabrutinib
+rilzabrutinib will increase the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Follow
+substrate recommendations for use with moderate CYP3A inhibitors
+
+risperidone
+escitalopram increases toxicity of risperidone by QTc interval. Use Caution/Monitor.
+
+ritonavir
+ritonavir increases levels of escitalopram by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Potential for increased toxicity.
+Increased risk of serotonin syndrome.
+
+rivaroxaban
+escitalopram increases effects of rivaroxaban by pharmacodynamic synergism. Use
+Caution/Monitor. Combination may increase risk of bleeding.
+
+rizatriptan
+rizatriptan and escitalopram both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+romidepsin
+escitalopram increases toxicity of romidepsin by QTc interval. Use Caution/Monitor.
+
+safinamide
+escitalopram, safinamide. Either increases toxicity of the other by serotonin levels.
+Use Caution/Monitor. Monitor patients for symptoms of serotonin syndrome if SSRIs
+are coadministered with safinamide.
+
+salicylates (non-asa)
+escitalopram, salicylates (non-asa). Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. SSRIs inhib. serotonin uptake by platelets.
+
+salsalate
+escitalopram, salsalate. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+SAMe
+escitalopram and SAMe both increase serotonin levels. Modify Therapy/Monitor
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 39/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+Closely.
+
+selpercatinib
+selpercatinib increases toxicity of escitalopram by QTc interval. Use
+Caution/Monitor.
+
+serdexmethylphenidate/dexmethylphenidate
+serdexmethylphenidate/dexmethylphenidate increases effects of escitalopram by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+sodium sulfate/?magnesium sulfate/potassium chloride
+sodium sulfate/?magnesium sulfate/potassium chloride increases effects of
+escitalopram by unknown mechanism. Use Caution/Monitor. Closely monitor for
+evidence of seizures when using bowel preps together with drugs that lower the
+seizure threshold.
+
+sodium sulfate/potassium chloride/magnesium sulfate/polyethylene glycol
+escitalopram, sodium sulfate/potassium chloride/magnesium sulfate/polyethylene
+glycol. Other (see comment). Use Caution/Monitor. Comment: Caution when bowel
+preps are used with drugs that cause SIADH or NSAIDs; increased risk for water
+retention or electrolyte imbalance.
+
+sodium sulfate/potassium sulfate/magnesium sulfate
+sodium sulfate/potassium sulfate/magnesium sulfate increases effects of
+escitalopram by unknown mechanism. Use Caution/Monitor. Closely monitor for
+evidence of seizures when using bowel preps together with drugs that lower the
+seizure threshold.
+
+solifenacin
+escitalopram increases toxicity of solifenacin by QTc interval. Use Caution/Monitor.
+
+sorafenib
+sorafenib and escitalopram both increase QTc interval. Use Caution/Monitor.
+
+sparsentan
+sparsentan will decrease the level or effect of escitalopram by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor. Sparsentan (a CYP2C19
+inducer) decreases exposure of CYP2C19 substrates and reduces efficacy related to
+these substrates.
+
+stiripentol
+stiripentol will decrease the level or effect of escitalopram by affecting hepatic
+enzyme CYP2C19 metabolism. Modify Therapy/Monitor Closely. Consider reducing
+the dose of CYP2C19 substrates, if adverse reactions are experienced when
+administered concomitantly with stiripentol.
+
+sufentanil SL
+sufentanil SL, escitalopram. Either increases effects of the other by serotonin levels.
+Use Caution/Monitor. Coadministration of drugs that affect the serotonergic
+neurotransmitter system may result in serotonin syndrome. If concomitant use is
+warranted, carefully observe the patient, particularly during treatment initiation and
+dose adjustment.
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 40/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+sulfasalazine
+escitalopram, sulfasalazine. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. SSRIs inhib. serotonin uptake by platelets.
+
+sulindac
+escitalopram, sulindac. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+sumatriptan
+sumatriptan and escitalopram both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+sumatriptan intranasal
+sumatriptan intranasal and escitalopram both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+sunitinib
+escitalopram increases toxicity of sunitinib by QTc interval. Use Caution/Monitor.
+
+tacrolimus
+escitalopram increases toxicity of tacrolimus by QTc interval. Use Caution/Monitor.
+
+tapentadol
+escitalopram and tapentadol both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+tecovirimat
+tecovirimat will increase the level or effect of escitalopram by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor. Tecovirimat is a weak inhibitor
+of CYP2C8 and CYP2C19. Monitor for adverse effects if coadministered with
+sensitive substrates of these enzymes.
+
+tecovirimat will decrease the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Tecovirimat is
+a weak CYP3A4 inducer. Monitor sensitive CYP3A4 substrates for effectiveness if
+coadministered.
+
+telavancin
+escitalopram increases toxicity of telavancin by QTc interval. Use Caution/Monitor.
+
+tipranavir
+tipranavir will increase the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+tizanidine
+tizanidine increases toxicity of escitalopram by pharmacodynamic synergism. Use
+Caution/Monitor. CNS depressants may enhance the psychomotor impairment of
+escitalopram.
+
+tolfenamic acid
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 41/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+escitalopram, tolfenamic acid. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. SSRIs inhib. serotonin uptake by platelets.
+
+tolmetin
+escitalopram, tolmetin. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+tramadol
+escitalopram and tramadol both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+triclabendazole
+triclabendazole will increase the level or effect of escitalopram by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor. If plasma concentrations of
+the CYP2C19 substrates are elevated during triclabendazole, recheck plasma
+concentration of the CYP2C19 substrates after discontinuation of triclabendazole.
+
+trimipramine
+escitalopram increases toxicity of trimipramine by QTc interval. Use
+Caution/Monitor.
+
+valbenazine
+valbenazine and escitalopram both increase QTc interval. Use Caution/Monitor.
+
+valerian
+valerian and escitalopram both increase sedation. Use Caution/Monitor.
+
+vardenafil
+escitalopram increases toxicity of vardenafil by QTc interval. Use Caution/Monitor.
+
+voclosporin
+voclosporin, escitalopram. Either increases effects of the other by QTc interval. Use
+Caution/Monitor.
+
+vorapaxar
+escitalopram, vorapaxar. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Additive antiplatelet effect may occur; SSRIs and
+SNRIs may cause platelet serotonin depletion .
+
+voriconazole
+voriconazole will increase the level or effect of escitalopram by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+escitalopram increases toxicity of voriconazole by QTc interval. Use
+Caution/Monitor.
+
+voriconazole will increase the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+vorinostat
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 42/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+escitalopram increases toxicity of vorinostat by QTc interval. Use Caution/Monitor.
+
+warfarin
+escitalopram, warfarin. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Serotonin release by platelets plays an important
+role in hemostasis. SSRIs and SNRIs may increase anticoagulation effect of
+warfarin. .
+
+zanubrutinib
+escitalopram, zanubrutinib. Either increases effects of the other by anticoagulation.
+Modify Therapy/Monitor Closely. Zanubrutinib-induced cytopenias increases risk of
+hemorrhage. Coadministration of zanubritinib with antiplatelets or anticoagulants
+may further increase this risk.
+
+zolmitriptan
+zolmitriptan and escitalopram both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+Minor (43)
+
+acebutolol
+escitalopram increases levels of acebutolol by decreasing metabolism.
+Minor/Significance Unknown.
+
+acetazolamide
+acetazolamide will increase the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+almotriptan
+escitalopram, almotriptan. Mechanism: unknown. Minor/Significance Unknown. Risk
+of weakness, dyspnea, chest pain.
+
+anastrozole
+anastrozole will increase the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+atenolol
+escitalopram increases levels of atenolol by decreasing metabolism.
+Minor/Significance Unknown.
+
+betaxolol
+escitalopram increases levels of betaxolol by decreasing metabolism.
+Minor/Significance Unknown.
+
+bisoprolol
+escitalopram increases levels of bisoprolol by decreasing metabolism.
+Minor/Significance Unknown.
+
+bortezomib
+bortezomib will increase the level or effect of escitalopram by affecting hepatic
+enzyme CYP2C19 metabolism. Minor/Significance Unknown.
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 43/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+bumetanide
+bumetanide, escitalopram. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Possible additive hyponatremia.
+
+bumetanide intranasal
+bumetanide intranasal, escitalopram. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Possible additive hyponatremia.
+
+carvedilol
+escitalopram increases levels of carvedilol by decreasing metabolism.
+Minor/Significance Unknown.
+
+celiprolol
+escitalopram increases levels of celiprolol by decreasing metabolism.
+Minor/Significance Unknown.
+
+cyclophosphamide
+cyclophosphamide will increase the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+danazol
+danazol will increase the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+darunavir
+darunavir will increase the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+Coadministration with SSRIs, TCAs, or trazodone may require dose titration of
+antidepressant to desired effect (eg, using the lowest feasible initial or maintenance
+dose). Monitor for antidepressant response.
+
+drospirenone
+drospirenone will increase the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+eletriptan
+escitalopram, eletriptan. Mechanism: unknown. Minor/Significance Unknown. Risk
+of weakness, dyspnea, chest pain.
+
+esmolol
+escitalopram increases levels of esmolol by decreasing metabolism.
+Minor/Significance Unknown.
+
+ethacrynic acid
+ethacrynic acid, escitalopram. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Possible additive hyponatremia.
+
+felodipine
+felodipine will increase the level or effect of escitalopram by affecting hepatic
+enzyme CYP2C19 metabolism. Minor/Significance Unknown.
+
+frovatriptan
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 44/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+escitalopram, frovatriptan. Mechanism: unknown. Minor/Significance Unknown. Risk
+of weakness, dyspnea, chest pain.
+
+furosemide
+furosemide, escitalopram. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Possible additive hyponatremia.
+
+labetalol
+escitalopram increases levels of labetalol by decreasing metabolism.
+Minor/Significance Unknown.
+
+larotrectinib
+larotrectinib will increase the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+levoketoconazole
+levoketoconazole will increase the level or effect of escitalopram by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+lithium
+escitalopram, lithium. Mechanism: unknown. Minor/Significance Unknown. Risk of
+neurotoxicity.
+
+metoprolol
+escitalopram increases levels of metoprolol by decreasing metabolism.
+Minor/Significance Unknown.
+
+nadolol
+escitalopram increases levels of nadolol by decreasing metabolism.
+Minor/Significance Unknown.
+
+naratriptan
+escitalopram, naratriptan. Mechanism: unknown. Minor/Significance Unknown. Risk
+of weakness, dyspnea, chest pain.
+
+nebivolol
+escitalopram increases levels of nebivolol by decreasing metabolism.
+Minor/Significance Unknown.
+
+panax ginseng
+panax ginseng increases effects of escitalopram by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+parecoxib
+parecoxib will increase the level or effect of escitalopram by affecting hepatic
+enzyme CYP2C19 metabolism. Minor/Significance Unknown.
+
+pindolol
+escitalopram increases levels of pindolol by decreasing metabolism.
+Minor/Significance Unknown.
+
+pleurisy root
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 45/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+pleurisy root decreases effects of escitalopram by unspecified interaction
+mechanism. Minor/Significance Unknown. Theoretical interaction.
+
+propranolol
+escitalopram increases levels of propranolol by decreasing metabolism.
+Minor/Significance Unknown.
+
+rizatriptan
+escitalopram, rizatriptan. Mechanism: unknown. Minor/Significance Unknown. Risk
+of weakness, dyspnea, chest pain.
+
+serdexmethylphenidate/dexmethylphenidate
+serdexmethylphenidate/dexmethylphenidate increases effects of escitalopram by
+decreasing metabolism. Minor/Significance Unknown.
+
+sotalol
+escitalopram increases levels of sotalol by decreasing metabolism.
+Minor/Significance Unknown.
+
+sumatriptan
+escitalopram, sumatriptan. Mechanism: unknown. Minor/Significance Unknown. Risk
+of weakness, dyspnea, chest pain.
+
+sumatriptan intranasal
+escitalopram, sumatriptan intranasal. Mechanism: unknown. Minor/Significance
+Unknown. Risk of weakness, dyspnea, chest pain.
+
+timolol
+escitalopram increases levels of timolol by decreasing metabolism.
+Minor/Significance Unknown.
+
+torsemide
+torsemide, escitalopram. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Possible additive hyponatremia.
+
+zolmitriptan
+escitalopram, zolmitriptan. Mechanism: unknown. Minor/Significance Unknown. Risk
+of weakness, dyspnea, chest pain.
+
+Adverse Effects
+
+>10%
+
+Headache (24%)
+
+Nausea (15-18%)
+
+Insomnia (7-14%)
+
+Diarrhea (6-14%)
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 46/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+Somnolence (4-13%)
+
+Ejaculation disorder (9-12%)
+
+1-10%
+
+Xerostomia (4-9%)
+
+Constipation (3-6%)
+
+Fatigue (2-8%)
+
+Dizziness (4-7%)
+
+Libido decrease (3-7%)
+
+Anorgasmia (2-6%)
+
+Indigestion (2-6%)
+
+Sweating increased (4-5%)
+
+Rhinitis (5%)
+
+Flu-like syndrome (5%)
+
+Abnormal dreaming (3%)
+
+Neck/shoulder pain (3%)
+
+Decreased appetite (3%)
+
+Vomiting (3%)
+
+Sinusitis (3%)
+
+Lethargy (3%)
+
+Impotence (3%)
+
+Menstrual disorder (1-2%)
+
+Flatulence (2%)
+
+Toothache (2%)
+
+Yawning (2%)
+
+Abdominal pain (2%)
+
+Weight gain (1%)
+
+Postmarketing Reports
+
+Blood and lymphatic system disorders: Anemia, agranulocytosis, aplastic anemia,
+hemolytic anemia, idiopathic thrombocytopenia purpura, leukopenia, thrombocytopenia
+
+Cardiac disorders: Atrial fibrillation, bradycardia, cardiac failure, myocardial infarction,
+tachycardia, torsades de pointes, ventricular arrhythmia, ventricular tachycardia
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 47/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+Ear and labyrinth disorders: Vertigo
+
+Endocrine disorders: Diabetes mellitus, hyperprolactinemia, SIADH
+
+Eye disorders: Angle closure glaucoma, diplopia, mydriasis, visual disturbance
+
+Gastrointestinal disorder: Dysphagia, gastrointestinal hemorrhage, gastroesophageal
+reflux, pancreatitis, rectal hemorrhage
+
+General disorders and administration site conditions: Abnormal gait, asthenia, edema,
+fall, feeling abnormal, malaise
+
+Hepatobiliary disorders: Fulminant hepatitis, hepatic failure, hepatic necrosis, hepatitis
+
+Immune system disorders: Allergic reaction, anaphylaxis
+
+Investigations: Bilirubin increased, decreased weight, QT prolongation, hepatic enzymes
+increased, hypercholesterolemia, INR increased, prothrombin decreased
+
+Metabolism and nutrition disorders: Hyperglycemia, hypoglycemia, hypokalemia,
+hyponatremia
+
+Musculoskeletal and connective tissue disorders: Muscle cramp, muscle stiffness, muscle
+weakness, rhabdomyolysis
+
+Nervous system disorders: Akathisia, amnesia, ataxia, choreoathetosis, cerebrovascular
+accident, dysarthria, dyskinesia, dystonia, extrapyramidal disorders, grand mal seizures
+(or convulsions), myoclonus, nystagmus, Parkinsonism, restless legs, seizures, syncope,
+tardive dyskinesia, tremor
+
+Pregnancy, puerperium and perinatal conditions: Spontaneous abortion
+
+Psychiatric disorders: Acute psychosis, aggression, agitation, anger, anxiety, apathy,
+completed suicide, confusion, depersonalization, depression aggravated, delirium,
+delusion, disorientation, feeling unreal, hallucinations (visual and auditory), mood
+swings, nervousness, nightmare, panic reaction, paranoia, restlessness, self-harm or
+thoughts of self-harm, suicide attempt, suicidal ideation, suicidal tendency
+
+Renal and urinary disorders: Acute renal failure, dysuria, urinary retention
+
+Reproductive system and breast disorders: Menorrhagia, priapism
+
+Respiratory, thoracic and mediastinal disorders: Dyspnea, epistaxis, pulmonary
+embolism, anosmia, hyposmia, pulmonary hypertension of the newborn
+
+Skin and SC tissue disorders: Alopecia, angioedema, dermatitis, ecchymosis, erythema
+multiforme, photosensitivity reaction, Stevens Johnson syndrome, drug reaction with
+eosinophilia and systemic symptoms (DRESS), toxic epidermal necrolysis, urticaria
+
+Vascular Disorders: Deep vein thrombosis, flushing, hypertensive crisis, hypotension,
+orthostatic hypotension, phlebitis, thrombosis
+
+Pediatric patients
+
+≥2% MDD
+Back pain
+
+Urinary tract infection
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 48/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+Vomiting
+
+Nasal congestion
+
+GAD
+Dizziness (3%)
+
+Nasopharyngitis (3%)
+
+Abdominal discomfort (3%)
+
+Anxiety (3%)
+
+Irritability (2%)
+
+Anger (2%)
+
+Warnings
+
+Black Box Warnings
+
+Suicidality and antidepressants
+
+In short-term studies, antidepressants increased the risk of suicidal thinking and
+behavior in children, adolescents, and young adults (<24 years) taking
+antidepressants for major depressive disorders and other psychiatric illnesses
+
+This increase was not seen in patients >24 years; a slight decrease in suicidal
+thinking was seen in adults >65 years
+
+Depression and certain other psychiatric disorders are themselves associated with
+increases in the risk of suicide
+
+Monitor patients of all ages initiating antidepressant therapy and closely observe
+for clinical worsening, suicidality, or unusual changes in behavior
+
+Advise families and caregivers of the need for close observation and communication
+with the prescriber
+
+Not approved children aged <12 years
+
+Contraindications
+
+Hypersensitivity to escitalopram or citalopram
+
+Pimozide
+
+Monoamine oxidase inhibitors (MAOIs)
+
+Use of MAOIs intended to treat psychiatric disorders with escitalopram or within 14
+days of discontinuation
+
+Use of escitalopram within 14 days of stopping an MAOI intended to treat
+psychiatric disorders
+
+Starting escitalopram in a patients being treated with MAOIs such as linezolid or IV
+methylene blue
+
+Cautions
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 49/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+Increased risk of suicidal thoughts and behaviors in adolescents and young adults;
+monitor all antidepressant-treated patients for any indication for clinical worsening and
+emergence of suicidal thoughts and behaviors, especially during initial few months of
+drug therapy
+
+Risk of mydriasis; may trigger angle closure attack in patients with angle closure
+glaucoma with anatomically narrow angles without a patent iridectomy
+
+In a study in normal volunteers, escitalopram10 mg/day did not impair intellectual
+function or psychomotor performance; because any psychoactive drug may impair
+judgment, thinking, or motor skills, caution patients about operating hazardous
+machinery, including automobiles, until they are they know how the drug affects their
+cognition
+
+Increased risk of bleeding events related to drugs that interfere with serotonin reuptake;
+symptoms may include ecchymoses, hematomas, epistaxis, and petechiae to life-
+threatening hemorrhages; for patients taking warfarin, carefully monitor international
+normalized ratio
+
+Limited information on use in patients with concomitant illness; caution advised with
+diseases or conditions that alter metabolism or hemodynamic responses
+
+Serotonin syndrome
+
+Serotonin syndrome reported with SNRIs and SSRIs, particularly when
+coadministered with other serotonergic drugs
+
+Serotonin syndrome symptoms may include mental status changes (eg, agitation,
+hallucinations, delirium, and coma), autonomic instability (eg, tachycardia, labile
+blood pressure, dizziness, diaphoresis, flushing, hyperthermia), neuromuscular
+symptoms (eg, tremor, rigidity, myoclonus, hyperreflexia, incoordination), seizures,
+and/or gastrointestinal symptoms (eg, nausea, vomiting, diarrhea); monitor for
+emergence of serotonin syndrome
+
+Hyponatremia
+
+Hyponatremia may occur with SSRIs and SNRIs
+
+In many cases, hyponatremia appears to be result of syndrome of inappropriate
+antidiuretic hormone secretion (SIADH), and was reversible when discontinued
+
+Cases with serum sodium <110 mmol/L reported
+
+Elderly patients may be at greater risk of developing hyponatremia with SSRIs and
+SNRIs; also, patients taking diuretics or are otherwise volume depleted may be at
+greater risk
+
+Consider discontinuation if symptomatic hyponatremia occurs and institute
+appropriate medical intervention
+
+Signs and symptoms include headache, difficulty concentrating, memory
+impairment, confusion, weakness, and unsteadiness, which may lead to falls
+
+Signs and symptoms associated with more severe and/or acute cases include
+hallucination, syncope, seizure, coma, respiratory arrest, and death
+
+Seizures
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 50/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+Anticonvulsant effects of racemic citalopram observed in animal studies; however,
+escitalopram has not been systematically evaluated in patients with a seizure
+disorder
+
+Patients with seizures were excluded from clinical studies during the product's
+premarketing testing
+
+In clinical trials, cases of convulsion reported in association with escitalopram
+treatment
+
+Introduce SSRIs and SNRIs with care in patients with history of seizures
+
+Sexual dysfunction
+
+Use may cause symptoms of sexual dysfunction in both male and female patients;
+inform patients that they should discuss any changes in sexual function and
+potential management strategies with their healthcare provider
+
+In males, SSRI use may result in ejaculatory delay or failure, decreased libido, and
+erectile dysfunction
+
+In females SSRI use may result in decreased libido and delayed or absent orgasm
+
+Inquire about sexual function before initiating therapy and inquire specifically about
+changes in sexual function during treatment, as it may not be spontaneously
+reported
+
+Obtain detailed history (including timing of symptom onset) to assess other causes,
+including underlying psychiatric disorder
+
+Discuss potential management strategies to support patients in making informed
+decisions about treatment
+
+Discontinuation syndrome
+
+Spontaneous reports of adverse events occurring upon discontinuation of SSRIs and
+SRNIs, particularly when abrupt
+
+Symptoms may include dysphoric mood, irritability, agitation, dizziness, sensory
+disturbances (eg, paresthesia such as electric shock sensations), anxiety, confusion,
+headache, lethargy, emotional lability, insomnia, and hypomania
+
+Although these events are generally self-limiting, there have been reports of
+serious discontinuation symptoms
+
+Monitor for these symptoms when discontinuing; gradually reduce dose rather than
+abruptly discontinue when possible
+
+If intolerable symptoms occur after decreasing dose or upon discontinuation,
+consider resuming previously prescribed dose and subsequently decreasing dose at
+a more gradual rate
+
+Activation of mania or hypomania
+
+Activation of mania/hypomania reported in a small proportion of patients with
+major affective disorders treated with antidepressants
+
+Before initiating, screen for any personal or family history of bipolar disorder, mania,
+or hypomania
+
+Drug interaction overview
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 51/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+Escitalopram is a CYP3A4 and CYP2C19 substrate
+
+MAOIs
+Contraindicated
+
+Coadministration or within 14 days of stopping either a MAOI or escitalopram
+is contraindicated owing to increased risk for serotonin syndrome
+
+Pimozide
+Contraindicated
+
+A single dose of pimozide 2 mg coadministered with racemic citalopram 40 mg
+given once daily for 11 days was associated with a mean increase in QTc
+values of ~10 msec compared with pimozide given alone
+
+Racemic citalopram did not alter the mean AUC or Cmax of pimozide;
+mechanism of this pharmacodynamic interaction is unknown
+
+Serotonergic drugs
+Caution, monitor
+
+Risk of serotonin syndrome or neuroleptic malignant syndrome (NMS)-like
+reactions have been reported with SSRIs and SNRIs both when taken alone,
+but especially when coadministered with other serotonergic agents (including
+triptans, tricyclic antidepressants, fentanyl, lithium, tramadol, tryptophan,
+buspirone, meperidine, methadone, amphetamines, and St. John’s Wort); if
+symptoms occur, discontinue therapy and initiate supportive treatment;
+serotonin syndrome can also occur when these drugs are used alone
+
+If concomitant use of escitalopram with other serotonergic drugs is clinically
+warranted, be aware of the increased risk for serotonin syndrome, particularly
+during treatment initiation and dose increases
+
+Antiplatelet agents or anticoagulants
+Caution, monitor
+
+May impair platelet aggregation that can result in increased risk of bleeding
+events including GI bleeding especially if taken concomitantly with aspirin,
+warfarin, or NSAIDs
+
+CNS depressants
+Caution, monitor
+
+Owing to primary CNS effects, caution when coadministered with other
+centrally acting drugs
+
+Did not potentiate cognitive and motor effects of alcohol in a clinical trial;
+however, as with other psychotropic medications, alcohol is not recommended
+
+CYP3A4 and -2C19 inhibitors
+Insignificant interaction
+
+Coadministration of escitalopram 20 mg and ritonavir 600 mg, a potent
+CYP3A4 inhibitor, did not significantly affect escitalopram pharmacokinetics
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 52/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+Pregnancy & Lactation
+
+Pregnancy
+
+Available data from published epidemiologic studies and postmarketing reports have not
+established an increased risk of major birth defects or miscarriage
+
+There are risks of persistent pulmonary hypertension of the newborn (PPHN) and poor
+neonatal adaptation with exposure to selective serotonin reuptake inhibitors (SSRIs)
+during pregnancy
+
+There are risks associated with untreated depression in pregnancy
+
+Exposure to SSRIs, particularly in month before delivery, associated with <2-fold
+increase in risk of postpartum hemorrhage; bleeding events related to drugs that
+interfere with serotonin reuptake have ranged from ecchymosis, hematoma, epistaxis,
+and petechiae to life-threatening hemorrhages
+
+Use in the month before delivery may be associated with an increased risk of postpartum
+hemorrhage
+
+Pregnancy exposure registry
+
+There is a pregnancy exposure registry that monitors outcomes in women exposed
+to antidepressants during pregnancy
+
+Healthcare providers are encouraged to advise patients to register by calling the
+National Pregnancy Registry for Antidepressants at 1-844-405-6185 or at
+womensmentalhealth.org/research/pregnancyregistry/antidepressants
+
+Neonates exposed to escitalopram and other SSRIs/SNRIs
+
+Neonates exposed to SSRIs/SNRIs late in third trimester have developed
+complications requiring prolonged hospitalization, respiratory support, and tube
+feeding
+
+Such complications can arise immediately upon delivery
+
+Reported clinical findings include respiratory distress, cyanosis, apnea, seizures,
+temperature instability, feeding difficulty, vomiting, hypoglycemia, hypotonia,
+hypertonia, hyperreflexia, tremor, jitteriness, irritability, and constant crying
+
+These features are consistent with toxic effects of SSRIs and SNRIs or, possibly,
+drug discontinuation syndrome
+
+Disease-associated maternal risk and/or embryo/fetal risk
+
+Women who discontinue antidepressants are more likely to experience a relapse of
+major depression than women who continue antidepressants
+
+This finding is from a prospective longitudinal study of 201 pregnant women with a
+history of major depression, who were euthymic and taking antidepressants at the
+beginning of pregnancy
+
+Consider risk of untreated depression when discontinuing or changing treatment
+with antidepressant medication during pregnancy and postpartum
+
+Lactation
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 53/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+Escitalopram is excreted in human breast milk
+
+There are reports of excessive sedation, restlessness, agitation, poor feeding and poor
+weight gain in infants exposed to escitalopram, through breast milk
+
+Limited data from women taking 10-20 mg escitalopram showed that exclusively
+breast-fed infants receive a ~3.9% of the maternal weight-adjusted dose of escitalopram
+and 1.7% of the maternal weight-adjusted dose of desmethylcitalopram
+
+Caution should be exercised and breastfeeding infants should be observed for adverse
+reactions when administered to a nursing woman
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+S-enantiomer of racemic citalopram; inhibits the reuptake of serotonin, with little or no
+effect on norepinephrine or dopamine reuptake
+
+Absorption
+
+Peak plasma time: 5 hr (single 20-mg dose)
+
+Bioavailability: 80% (IV citalopram)
+
+Distribution
+
+Protein bound: 56%
+
+Vd: 12 L/kg (citalopram)
+
+Metabolism
+
+CYP3A4, CYP2C19
+
+Metabolites: Insignificant potency
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 54/55
+
+
+
+6/22/26, 4:20 PM Lexapro (escitalopram) dosing, indications, interactions, adverse effects, and more
+
+Enzymes inhibited: CYP2D6 (moderate)
+
+Elimination
+
+Half-life: 27-32 hr
+
+Dialyzable: No
+
+Renal clearance: 42 mL/min
+
+Total body clearance: 600 mL/min
+
+Excretion: Urine (8%)
+
+Administration
+
+Oral Administrationº
+
+Administer once daily, in the morning or evening, with or without food
+
+Storage
+
+Store at 20-25ºC (68-77ºF); excursions permitted to 15-30°C (59-86ºF)
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/lexapro-escitalopram-342961 55/55

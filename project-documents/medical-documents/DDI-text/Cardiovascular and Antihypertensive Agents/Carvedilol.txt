@@ -1,0 +1,2417 @@
+﻿6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+carvedilol (Rx)
+Brand and Other Names: Coreg, Coreg CR
+Classes: Beta-Blockers, Alpha Activity
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+capsule, extended release
+
+10mg
+
+20mg
+
+40mg
+
+80mg
+
+tablet
+
+3.125mg
+
+6.25mg
+
+12.5mg
+
+25mg
+
+Congestive Heart Failure
+
+Immediate release
+
+3.125 mg PO q12hr for 2 weeks, then increased every 2 weeks as tolerated to 6.25
+mg, 12.5 mg, or 25 mg PO twice daily
+
+Maximum recommended dosage (mild-to-moderate heart failure): <85 kg, 25 mg
+PO q12hr; >85 kg: 50 mg PO twice daily
+
+Maximum recommended dosage (severe heart failure): 25 mg PO twice daily
+
+Extended release
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 1/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+10 mg/day PO; maintained for 1-2 weeks if tolerated; may be increased to 20
+mg/day, 40 mg/day, or 80 mg/day PO if necessary
+
+Hypertension
+
+Immediate release: 6.25 mg PO twice daily initially; after 7-14 days, increased as
+tolerated, first to 12.5 mg PO twice daily and then to 25 mg PO twice daily
+
+Extended release: 20 mg/day PO; maintained for 1-2 weeks if tolerated; may be
+increased to 40 mg/day PO if necessary; not to exceed 80 mg/day PO
+
+Left Ventricular Dysfunction Following Myocardial Infarction
+
+Immediate release: 3.125-6.25 mg PO q12hr initially; after 3-10 days, increased as
+tolerated, first to 12.5 mg PO q12hr and then to 25 mg PO q12hr (target dosage)
+
+Extended release: 10-20 mg/day PO; increased every 3-10 days as tolerated up to 80
+mg/day PO (target dosage)
+
+Angina pectoris
+
+25-50 mg PO twice daily
+
+Dosing Modifications
+
+Renal impairment: No dosage adjustments necessary
+
+Hepatic impairment: Contraindicated in severe liver impairment
+
+Conversion to Extended Release Form
+
+3.125 mg twice daily: Administer 10 mg PO qDay
+
+6.25 mg twice daily: Administer 20 mg PO qDay
+
+12.5 mg twice daily: Administer 40 mg PO qDay
+
+25 mg twice daily: Administer 80 mg PO qDay
+
+Administration
+
+To be taken with food
+
+May break capsule and sprinkle on spoonful of applesauce; to be eaten immediately
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 2/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+PEDIATRIC
+Safety and efficacy not established
+
+Interactions
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and carvedilol
+No Interactions Found
+Interactions Found
+Contraindicated
+
+Serious
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+Contraindicated (1)
+
+mavorixafor
+mavorixafor will increase the level or effect of carvedilol by affecting hepatic
+enzyme CYP2D6 metabolism. Contraindicated. Mavorixafor (a strong CYP2D6
+inhibitor) is contraindicated with drugs that are highly dependent on CYP2D6 for
+clearance.
+
+Serious (49)
+
+acebutolol
+acebutolol and carvedilol both increase anti-hypertensive channel blocking. Avoid
+or Use Alternate Drug.
+
+afatinib
+carvedilol increases levels of afatinib by P-glycoprotein (MDR1) efflux transporter.
+Avoid or Use Alternate Drug. Reduce afatinib daily dose by 10 mg if not tolerated
+when coadministered with P-gp inhibitors.
+
+albuterol
+carvedilol, albuterol. Either decreases effects of the other by pharmacodynamic
+antagonism. Avoid or Use Alternate Drug. Use alternative treatment, such as a
+cardioselective beta-blocker; if concomitant use is unavoidable, closely monitor BP,
+HR, and asthma symptoms.
+
+albuterol inhaled
+carvedilol, albuterol inhaled. Either decreases effects of the other by
+pharmacodynamic antagonism. Avoid or Use Alternate Drug. Use alternative
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 3/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+treatment, such as a cardioselective beta-blocker; if concomitant use is unavoidable,
+closely monitor BP, HR, and asthma symptoms.
+
+arformoterol
+carvedilol, arformoterol. Either decreases effects of the other by pharmacodynamic
+antagonism. Avoid or Use Alternate Drug. Use alternative treatment, such as a
+cardioselective beta-blocker; if concomitant use is unavoidable, closely monitor BP,
+HR, and asthma symptoms.
+
+artemether/lumefantrine
+artemether/lumefantrine will increase the level or effect of carvedilol by affecting
+hepatic enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+atenolol
+atenolol and carvedilol both increase anti-hypertensive channel blocking. Avoid or
+Use Alternate Drug.
+
+betaxolol
+betaxolol and carvedilol both increase anti-hypertensive channel blocking. Avoid or
+Use Alternate Drug.
+
+bisoprolol
+bisoprolol and carvedilol both increase anti-hypertensive channel blocking. Avoid
+or Use Alternate Drug.
+
+bosutinib
+carvedilol increases levels of bosutinib by P-glycoprotein (MDR1) efflux
+transporter. Avoid or Use Alternate Drug.
+
+celiprolol
+carvedilol and celiprolol both increase anti-hypertensive channel blocking. Avoid or
+Use Alternate Drug.
+
+chlorpromazine
+carvedilol, chlorpromazine. Either increases levels of the other by decreasing
+metabolism. Contraindicated. Not all beta blockers share this interaction (e.g.,
+atenolol, nadolol, sotalol do not interact).
+
+colchicine
+carvedilol will increase the level or effect of colchicine by P-glycoprotein (MDR1)
+efflux transporter. Avoid or Use Alternate Drug. Avoid use of colchicine with P-gp
+inhibitors. If coadministration is necessary, decrease colchicine dose or frequency as
+recommended in prescribing information. Use of any colchicine product in
+conjunction with P-gp inhibitors is contraindicated in patients with renal or hepatic
+impairment.
+
+dacomitinib
+dacomitinib will increase the level or effect of carvedilol by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug. Avoid use with
+CYP2D6 substrates where minimal increases in concentration of the CYP2D6
+substrate may lead to serious or life-threatening toxicities.
+
+edoxaban
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 4/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+carvedilol will increase the level or effect of edoxaban by P-glycoprotein (MDR1)
+efflux transporter. Avoid or Use Alternate Drug. Dose adjustment may be required
+with strong P-gp inhibitors. DVT/PE treatment: Decrease dose to 30 mg PO once
+daily. NVAF: No dose reduction recommended
+
+efavirenz
+efavirenz will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2C9/10 metabolism. Avoid or Use Alternate Drug.
+
+erdafitinib
+erdafitinib will increase the level or effect of carvedilol by P-glycoprotein (MDR1)
+efflux transporter. Avoid or Use Alternate Drug. If coadministration unavoidable,
+separate administration by at least 6 hr before or after administration of P-gp
+substrates with narrow therapeutic index.
+
+esmolol
+carvedilol and esmolol both increase anti-hypertensive channel blocking. Avoid or
+Use Alternate Drug.
+
+fluoxetine
+fluoxetine will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+formoterol
+carvedilol, formoterol. Either decreases effects of the other by pharmacodynamic
+antagonism. Avoid or Use Alternate Drug. Use alternative treatment, such as a
+cardioselective beta-blocker; if concomitant use is unavoidable, closely monitor BP,
+HR, and asthma symptoms.
+
+givosiran
+givosiran will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2D6 metabolism. Avoid or Use Alternate Drug. Avoid coadministration of
+sensitive CYP2D6 substrates with givosiran. If unavoidable, decrease the CYP2D6
+substrate dosage in accordance with approved product labeling.
+
+iobenguane I 131
+carvedilol will decrease the level or effect of iobenguane I 131 by Other (see
+comment). Avoid or Use Alternate Drug. Based on the mechanism of action of
+iobenguane, drugs that reduce catecholamine uptake or that deplete catecholamine
+stores may interfere with iobenguane uptake into cells, and thus, reduce
+iobenguane efficacy. Discontinue interfering drugs for at least 5 half-lives before
+administration of either the dosimetry or an iobenguane dose. Do not administer
+these drugs until at least 7 days after each iobenguane dose.
+
+ivosidenib
+ivosidenib will decrease the level or effect of carvedilol by affecting hepatic enzyme
+CYP2C9/10 metabolism. Avoid or Use Alternate Drug. Avoid coadministration of
+sensitive CYP2C9 substrates with ivosidenib or replace with alternate therapies. If
+coadministration is unavoidable, monitor patients for loss of therapeutic effect of
+these drugs.
+
+labetalol
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 5/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+carvedilol and labetalol both increase anti-hypertensive channel blocking. Avoid or
+Use Alternate Drug.
+
+landiolol
+landiolol, carvedilol. Either increases effects of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Coadministration of beta blockers with
+other negative inotropes or chronotropes may augment myocardial contractility
+depression and increase risk of bradycardia or heart block.
+
+levalbuterol
+carvedilol, levalbuterol. Either decreases effects of the other by pharmacodynamic
+antagonism. Avoid or Use Alternate Drug. Use alternative treatment, such as a
+cardioselective beta-blocker; if concomitant use is unavoidable, closely monitor BP,
+HR, and asthma symptoms.
+
+lofexidine
+lofexidine, carvedilol. Either increases effects of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Avoid coadministration with other drugs
+that decrease pulse or blood pressure to mitigate risk of excessive bradycardia and
+hypotension.
+
+lumefantrine
+lumefantrine will increase the level or effect of carvedilol by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+metoprolol
+carvedilol and metoprolol both increase anti-hypertensive channel blocking. Avoid
+or Use Alternate Drug.
+
+nadolol
+carvedilol and nadolol both increase anti-hypertensive channel blocking. Avoid or
+Use Alternate Drug.
+
+nebivolol
+carvedilol and nebivolol both increase anti-hypertensive channel blocking. Avoid or
+Use Alternate Drug.
+
+paroxetine
+paroxetine will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+pindolol
+carvedilol and pindolol both increase anti-hypertensive channel blocking. Avoid or
+Use Alternate Drug.
+
+propranolol
+carvedilol and propranolol both increase anti-hypertensive channel blocking. Avoid
+or Use Alternate Drug.
+
+quinidine
+quinidine will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 6/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+repotrectinib
+carvedilol will increase the level or effect of repotrectinib by P-glycoprotein (MDR1)
+efflux transporter. Avoid or Use Alternate Drug.
+
+rimegepant
+carvedilol will increase the level or effect of rimegepant by P-glycoprotein (MDR1)
+efflux transporter. Avoid or Use Alternate Drug.
+
+riociguat
+carvedilol will increase the level or effect of riociguat by decreasing metabolism.
+Avoid or Use Alternate Drug. Coadministration of riociguat (substrate of CYP
+isoenzymes 1A1, 2C8, 3A, 2J2) with strong CYP inhibitors may require a decreased
+initial dose of 0.5 mg PO TID; monitor for signs of hypotension and reduce dose if
+needed
+
+sotalol
+carvedilol and sotalol both increase anti-hypertensive channel blocking. Avoid or
+Use Alternate Drug.
+
+sotorasib
+sotorasib will decrease the level or effect of carvedilol by P-glycoprotein (MDR1)
+efflux transporter. Avoid or Use Alternate Drug. If use is unavoidable, refer to the
+prescribing information of the P-gp substrate for dosage modifications.
+
+talazoparib
+carvedilol increases levels of talazoparib by P-glycoprotein (MDR1) efflux
+transporter. Avoid or Use Alternate Drug. Breast cancer: Coadministration with
+carvedilol (P-gp inhibitor) increases talazoparib exposure by 45%. If concomitant
+use cannot be avoided, reduce the talazoparib dose as recommended (see Dosage).
+Increase the dose of talazoparib when carvedilol is discontinued. mCRPC:
+Coadministration with P-gp inhibitors may increase talazoparib exposure. Monitor
+for increased talazoparib adverse reactions and adjust dose as necessary.
+
+tepotinib
+tepotinib will increase the level or effect of carvedilol by P-glycoprotein (MDR1)
+efflux transporter. Avoid or Use Alternate Drug. If concomitant use unavoidable,
+reduce the P-gp substrate dosage if recommended in its approved product labeling.
+
+thioridazine
+carvedilol, thioridazine. Either increases levels of the other by decreasing
+metabolism. Contraindicated. Not all beta blockers share this interaction (e.g.,
+atenolol, nadolol, sotalol do not interact).
+
+thiothixene
+carvedilol, thiothixene. Either increases levels of the other by decreasing
+metabolism. Contraindicated. Not all beta blockers share this interaction (e.g.,
+atenolol, nadolol, sotalol do not interact).
+
+timolol
+carvedilol and timolol both increase anti-hypertensive channel blocking. Avoid or
+Use Alternate Drug.
+
+topotecan
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 7/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+carvedilol will increase the level or effect of topotecan by P-glycoprotein (MDR1)
+efflux transporter. Avoid or Use Alternate Drug. Product labeling for PO topotecan
+recommends avoiding concomitant use of P-gp inhibitors; the interaction with IV
+topotecan may be less severe but is still likely of clinical significance
+
+umeclidinium bromide/vilanterol inhaled
+carvedilol, umeclidinium bromide/vilanterol inhaled. pharmacodynamic antagonism.
+Avoid or Use Alternate Drug. If a beta-blocker must be used in patients with COPD
+taking a beta-agonist, consider using a beta-blocker that is beta-1 selective .
+
+venetoclax
+carvedilol will increase the level or effect of venetoclax by P-glycoprotein (MDR1)
+efflux transporter. Avoid or Use Alternate Drug. If a P-gp inhibitor must be used,
+reduce the venetoclax dose by at least 50%. Monitor more closely for signs of
+venetoclax toxicities.
+
+vilanterol/fluticasone furoate inhaled
+carvedilol, vilanterol/fluticasone furoate inhaled. pharmacodynamic antagonism.
+Avoid or Use Alternate Drug. If a beta-blocker must be used in patients with COPD
+taking a beta-agonist, consider using a beta-blocker that is beta-1 selective .
+
+Monitor Closely (263)
+
+abemaciclib
+abemaciclib will increase the level or effect of carvedilol by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+abiraterone
+abiraterone increases levels of carvedilol by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor. Avoid coadministration of abiraterone with
+substrates of CYP2D6. If alternative therapy cannot be used, exercise caution and
+consider a dose reduction of the CYP2D6 substrate.
+
+abrocitinib
+abrocitinib will increase the level or effect of carvedilol by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+acebutolol
+acebutolol and carvedilol both increase serum potassium. Use Caution/Monitor.
+
+aceclofenac
+carvedilol and aceclofenac both increase serum potassium. Use Caution/Monitor.
+
+aceclofenac decreases effects of carvedilol by pharmacodynamic antagonism. Use
+Caution/Monitor. Long term (>1 wk) NSAID use. NSAIDs decrease prostaglandin
+synthesis.
+
+acemetacin
+carvedilol and acemetacin both increase serum potassium. Use Caution/Monitor.
+
+acemetacin decreases effects of carvedilol by pharmacodynamic antagonism. Use
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 8/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+Caution/Monitor. Long term (>1 wk) NSAID use. NSAIDs decrease prostaglandin
+synthesis.
+
+adagrasib
+adagrasib will increase the level or effect of carvedilol by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+aficamten
+aficamten will increase the level or effect of carvedilol by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+aldesleukin
+aldesleukin increases effects of carvedilol by pharmacodynamic synergism. Use
+Caution/Monitor. Risk of hypotension.
+
+alfuzosin
+alfuzosin and carvedilol both increase anti-hypertensive channel blocking. Modify
+Therapy/Monitor Closely.
+
+aluminum hydroxide
+aluminum hydroxide decreases levels of carvedilol by inhibition of GI absorption.
+Applies only to oral form of both agents. Use Caution/Monitor. Separate by 2 hours.
+
+amifostine
+amifostine, carvedilol. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration with blood pressure
+lowering agents may increase the risk and severity of hypotension associated with
+amifostine. When amifostine is used at chemotherapeutic doses, withhold blood
+pressure lowering medications for 24 hr prior to amifostine; if blood pressure
+lowering medication cannot be withheld, do not administer amifostine.
+
+amiloride
+carvedilol and amiloride both increase serum potassium. Modify Therapy/Monitor
+Closely.
+
+amiodarone
+amiodarone will increase the level or effect of carvedilol by affecting hepatic
+enzyme CYP2C9/10 metabolism. Use Caution/Monitor.
+
+amiodarone will increase the level or effect of carvedilol by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor. Monitor for signs of bradycardia
+or heart block when amiodarone and a beta adrenergic blocker are coadministered.
+Amiodarone should be used with caution in patients receiving a beta adrenergic
+blocker, particularly if there is suspicion of underlying dysfunction of the sinus node,
+such as bradycardia or sick sinus syndrome, or if there is partial AV block.
+
+amiodarone, carvedilol. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of cardiotoxicity with bradycardia.
+
+apalutamide
+apalutamide will decrease the level or effect of carvedilol by affecting hepatic
+enzyme CYP2C9/10 metabolism. Use Caution/Monitor. Coadministration of
+apalutamide, a weak CYP2C9 inducer, with drugs that are CYP2C9 substrates can
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 9/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+result in lower exposure to these medications. Evaluate for loss of therapeutic effect
+if medication must be coadministered.
+
+apalutamide will decrease the level or effect of carvedilol by increasing elimination.
+Use Caution/Monitor. Apalutamide induces UGT and may decrease systemic
+exposure of drugs that are UGT substrates.
+
+apixaban
+apixaban will increase the level or effect of carvedilol by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+asenapine
+asenapine will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+asenapine and carvedilol both increase anti-hypertensive channel blocking. Modify
+Therapy/Monitor Closely.
+
+aspirin
+carvedilol and aspirin both increase serum potassium. Use Caution/Monitor.
+
+aspirin decreases effects of carvedilol by pharmacodynamic antagonism. Use
+Caution/Monitor. Long term (>1 wk) NSAID use. NSAIDs decrease prostaglandin
+synthesis.
+
+aspirin rectal
+carvedilol and aspirin rectal both increase serum potassium. Use Caution/Monitor.
+
+aspirin rectal decreases effects of carvedilol by pharmacodynamic antagonism. Use
+Caution/Monitor. Long term (>1 wk) NSAID use. NSAIDs decrease prostaglandin
+synthesis.
+
+aspirin/citric acid/sodium bicarbonate
+aspirin/citric acid/sodium bicarbonate decreases effects of carvedilol by
+pharmacodynamic antagonism. Use Caution/Monitor. Long term (>1 wk) NSAID
+use. NSAIDs decrease prostaglandin synthesis.
+
+carvedilol and aspirin/citric acid/sodium bicarbonate both increase serum potassium.
+Use Caution/Monitor.
+
+atazanavir
+atazanavir increases effects of carvedilol by pharmacodynamic synergism. Use
+Caution/Monitor. Increased risk of hypotension, bradycardia, AV block, and
+prolonged PR interval. Consider lowering beta blocker dose.
+
+atenolol
+atenolol and carvedilol both increase serum potassium. Use Caution/Monitor.
+
+avanafil
+avanafil increases effects of carvedilol by pharmacodynamic synergism. Use
+Caution/Monitor. Risk of hypotension.
+
+azithromycin
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 10/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+azithromycin will increase the level or effect of carvedilol by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+belumosudil
+belumosudil will increase the level or effect of carvedilol by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+benzgalantamine
+benzgalantamine, carvedilol. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Galantamine, an
+acetylcholinesterase inhibitor, has vagotonic effects on the SA and AV nodes,
+leading to bradycardia. Consider consulting a cardiolist before initiating other drugs
+that may cause bradycardia.
+
+berotralstat
+carvedilol increases levels of berotralstat by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor.
+
+berotralstat will increase the level or effect of carvedilol by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor. Monitor or titrate P-gp substrate dose if
+coadministered.
+
+betaxolol
+betaxolol and carvedilol both increase serum potassium. Use Caution/Monitor.
+
+bismuth subsalicylate
+bismuth subsalicylate, carvedilol. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Blockage of renal prostaglandin synthesis; may cause severe
+hypertension.
+
+bisoprolol
+bisoprolol and carvedilol both increase serum potassium. Use Caution/Monitor.
+
+bosentan
+bosentan will decrease the level or effect of carvedilol by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor.
+
+bosutinib
+bosutinib increases levels of carvedilol by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor.
+
+bretylium
+carvedilol, bretylium. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Each drug may cause hypotension.
+
+brimonidine
+brimonidine increases effects of carvedilol by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+brimonidine topical
+brimonidine topical increases effects of carvedilol by pharmacodynamic synergism.
+Use Caution/Monitor.
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 11/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+bumetanide
+carvedilol increases and bumetanide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+bumetanide intranasal
+carvedilol increases and bumetanide intranasal decreases serum potassium. Effect
+of interaction is not clear, use caution. Use Caution/Monitor.
+
+bupropion
+bupropion will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+butalbital
+butalbital will decrease the level or effect of carvedilol by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor.
+
+butalbital decreases levels of carvedilol by increasing metabolism. Use
+Caution/Monitor. Consider a higher beta-blocker dose during coadministration of
+butalbital. Atenolol, sotalol, nadolol less likely to be affected than other beta
+blockers.
+
+calcium acetate
+calcium acetate decreases effects of carvedilol by unspecified interaction
+mechanism. Use Caution/Monitor.
+
+calcium carbonate
+calcium carbonate decreases effects of carvedilol by unspecified interaction
+mechanism. Use Caution/Monitor.
+
+calcium carbonate decreases levels of carvedilol by inhibition of GI absorption.
+Applies only to oral form of both agents. Use Caution/Monitor. Separate by 2 hours.
+
+calcium chloride
+calcium chloride decreases effects of carvedilol by unspecified interaction
+mechanism. Use Caution/Monitor.
+
+calcium citrate
+calcium citrate decreases effects of carvedilol by unspecified interaction mechanism.
+Use Caution/Monitor.
+
+calcium gluconate
+calcium gluconate decreases effects of carvedilol by unspecified interaction
+mechanism. Use Caution/Monitor.
+
+candesartan
+candesartan and carvedilol both increase serum potassium. Use Caution/Monitor.
+
+carvedilol, candesartan. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of fetal compromise if given during pregnancy.
+
+cannabidiol
+cannabidiol will increase the level or effect of carvedilol by decreasing metabolism.
+Modify Therapy/Monitor Closely. Cannabidiol may potentially inhibit CYP2C9
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 12/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+activity. Consider reducing the dose when concomitantly using CYP2C9 substrates.
+
+cannabidiol increases levels of carvedilol by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor.
+
+capmatinib
+capmatinib will increase the level or effect of carvedilol by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+carbachol/brimonidine ophthalmic
+carbachol/brimonidine ophthalmic increases effects of carvedilol by
+pharmacodynamic synergism. Use Caution/Monitor.
+
+carbamazepine
+carbamazepine will decrease the level or effect of carvedilol by affecting hepatic
+enzyme CYP2C9/10 metabolism. Use Caution/Monitor.
+
+carbenoxolone
+carvedilol increases and carbenoxolone decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+carbidopa
+carbidopa increases effects of carvedilol by pharmacodynamic synergism. Use
+Caution/Monitor. Therapy with carbidopa, given with or without levodopa or
+carbidopa-levodopa combination products, is started, dosage adjustment of the
+antihypertensive drug may be required.
+
+carfilzomib
+carfilzomib will increase the level or effect of carvedilol by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+celecoxib
+celecoxib will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+carvedilol and celecoxib both increase serum potassium. Use Caution/Monitor.
+
+celecoxib decreases effects of carvedilol by pharmacodynamic antagonism. Use
+Caution/Monitor. Long term (>1 wk) NSAID use. NSAIDs decrease prostaglandin
+synthesis.
+
+celiprolol
+carvedilol and celiprolol both increase serum potassium. Use Caution/Monitor.
+
+ceritinib
+carvedilol increases levels of ceritinib by P-glycoprotein (MDR1) efflux transporter.
+Use Caution/Monitor.
+
+chloroquine
+chloroquine will increase the level or effect of carvedilol by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+chlorothiazide
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 13/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+carvedilol increases and chlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+chlorthalidone
+carvedilol increases and chlorthalidone decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+choline magnesium trisalicylate
+carvedilol and choline magnesium trisalicylate both increase serum potassium. Use
+Caution/Monitor.
+
+choline magnesium trisalicylate decreases effects of carvedilol by
+pharmacodynamic antagonism. Use Caution/Monitor. Long term (>1 wk) NSAID
+use. NSAIDs decrease prostaglandin synthesis.
+
+cimetidine
+cimetidine will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor.
+
+cimetidine will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+citalopram
+citalopram increases levels of carvedilol by decreasing metabolism. Use
+Caution/Monitor.
+
+clevidipine
+carvedilol and clevidipine both increase anti-hypertensive channel blocking. Modify
+Therapy/Monitor Closely.
+
+clobazam
+clobazam will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor. Lower doses of drugs metabolized by
+CYP2D6 may be required when used concomitantly.
+
+cobicistat
+cobicistat will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+cobicistat will increase the level or effect of carvedilol by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+crizotinib
+crizotinib increases levels of carvedilol by P-glycoprotein (MDR1) efflux transporter.
+Use Caution/Monitor.
+
+cyclopenthiazide
+carvedilol increases and cyclopenthiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+dabigatran
+carvedilol will increase the level or effect of dabigatran by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor. Atrial fibrillation: Avoid coadministering
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 14/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+dabigatran with P-gp inhibitors if CrCl <30 mL/min. DVT/PE treatment: Avoid
+coadministering dabigatran with P-gp inhibitors if CrCl <50 mL/min
+
+danicopan
+danicopan will increase the level or effect of carvedilol by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor. Danicopan increases plasma
+concentrations of P-gp substrates; consider dose reduction of P-gp substrates
+where minimal concentration changes may lead to serious adverse reactions.
+
+daridorexant
+daridorexant will increase the level or effect of carvedilol by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+darifenacin
+darifenacin will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+darunavir
+darunavir will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+desflurane
+desflurane, carvedilol. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Risk of hypotension.
+
+desvenlafaxine
+desvenlafaxine will increase the level or effect of carvedilol by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor. Desvenlafaxine inhibits
+CYP2D6; with higher desvenlafaxine doses (ie, 400 mg) decrease the CYP2D6
+substrate dose by up to 50%; no dosage adjustment needed with desvenlafaxine
+doses <100 mg
+
+dichlorphenamide
+dichlorphenamide and carvedilol both decrease serum potassium. Use
+Caution/Monitor.
+
+diclofenac
+carvedilol and diclofenac both increase serum potassium. Use Caution/Monitor.
+
+diclofenac decreases effects of carvedilol by pharmacodynamic antagonism. Use
+Caution/Monitor. Long term (>1 wk) NSAID use. NSAIDs decrease prostaglandin
+synthesis.
+
+diflunisal
+carvedilol and diflunisal both increase serum potassium. Use Caution/Monitor.
+
+diflunisal decreases effects of carvedilol by pharmacodynamic antagonism. Use
+Caution/Monitor. Long term (>1 wk) NSAID use. NSAIDs decrease prostaglandin
+synthesis.
+
+digoxin
+carvedilol and digoxin both increase serum potassium. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 15/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+carvedilol increases levels of digoxin by enhancing GI absorption. Applies only to
+oral form of both agents. Use Caution/Monitor.
+
+carvedilol increases levels of digoxin by decreasing renal clearance. Use
+Caution/Monitor.
+
+carvedilol increases effects of digoxin by pharmacodynamic synergism. Use
+Caution/Monitor. Enhanced bradycardia.
+
+diltiazem
+carvedilol and diltiazem both increase anti-hypertensive channel blocking. Modify
+Therapy/Monitor Closely.
+
+diphenhydramine
+diphenhydramine will increase the level or effect of carvedilol by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+dobutamine
+carvedilol increases and dobutamine decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+carvedilol decreases effects of dobutamine by pharmacodynamic antagonism. Use
+Caution/Monitor.
+
+dopexamine
+carvedilol increases and dopexamine decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+carvedilol decreases effects of dopexamine by pharmacodynamic antagonism. Use
+Caution/Monitor.
+
+doxazosin
+doxazosin and carvedilol both increase anti-hypertensive channel blocking. Modify
+Therapy/Monitor Closely.
+
+dronedarone
+dronedarone will increase the level or effect of carvedilol by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+dronedarone will increase the level or effect of carvedilol by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+drospirenone
+carvedilol and drospirenone both increase serum potassium. Modify
+Therapy/Monitor Closely.
+
+duvelisib
+carvedilol will increase the level or effect of duvelisib by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+elagolix
+elagolix will increase the level or effect of carvedilol by P-glycoprotein (MDR1)
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 16/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+efflux transporter. Use Caution/Monitor.
+
+eliglustat
+eliglustat increases levels of carvedilol by P-glycoprotein (MDR1) efflux
+transporter. Modify Therapy/Monitor Closely. Monitor therapeutic drug
+concentrations, as indicated, or consider reducing the dosage of the P-gp substrate
+and titrate to clinical effect.
+
+eliglustat increases levels of carvedilol by affecting hepatic enzyme CYP2D6
+metabolism. Modify Therapy/Monitor Closely. Monitor therapeutic drug
+concentrations, as indicated, or consider reducing the dosage of the concomitant
+drug and titrate to clinical effect.
+
+elvitegravir/cobicistat/emtricitabine/tenofovir DF
+elvitegravir/cobicistat/emtricitabine/tenofovir DF increases levels of carvedilol by
+affecting hepatic enzyme CYP2D6 metabolism. Modify Therapy/Monitor Closely.
+Cobicistat is a CYP2D6 inhibitor; caution with CYP2D6 substrates for which
+elevated plasma concentrations are associated with serious and/or life-threatening
+events.
+
+elvitegravir/cobicistat/emtricitabine/tenofovir DF decreases levels of carvedilol by
+affecting hepatic enzyme CYP2C9/10 metabolism. Use Caution/Monitor. Elvitegravir
+is a moderate CYP2C9 inducer.
+
+ephedrine
+carvedilol increases and ephedrine decreases serum potassium. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+carvedilol decreases effects of ephedrine by pharmacodynamic antagonism. Use
+Caution/Monitor.
+
+epinephrine
+carvedilol increases and epinephrine decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+carvedilol decreases effects of epinephrine by pharmacodynamic antagonism. Use
+Caution/Monitor.
+
+epinephrine racemic
+carvedilol increases and epinephrine racemic decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+carvedilol decreases effects of epinephrine racemic by pharmacodynamic
+antagonism. Use Caution/Monitor.
+
+eprosartan
+eprosartan and carvedilol both increase serum potassium. Use Caution/Monitor.
+
+carvedilol, eprosartan. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of fetal compromise if given during pregnancy.
+
+esmolol
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 17/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+carvedilol and esmolol both increase serum potassium. Use Caution/Monitor.
+
+ethacrynic acid
+carvedilol increases and ethacrynic acid decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+ethanol
+ethanol increases levels of carvedilol by Other (see comment). Use
+Caution/Monitor. Comment: ETOH may affect the release rate of extended-release
+carvedilol (Coreg CR), resulting in higher peak plasma concentration. Separate by 2
+hr. Immediate-release carvedilol (Coreg) not affected.
+
+ether
+carvedilol, ether. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Both beta blockers and ether depress the
+myocardium; consider lowering beta blocker dose if ether used for anesthesia.
+
+etodolac
+carvedilol and etodolac both increase serum potassium. Use Caution/Monitor.
+
+etodolac decreases effects of carvedilol by pharmacodynamic antagonism. Use
+Caution/Monitor. Long term (>1 wk) NSAID use. NSAIDs decrease prostaglandin
+synthesis.
+
+etomidate
+etomidate, carvedilol. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Risk of hypotension.
+
+etrasimod
+etrasimod, carvedilol. pharmacodynamic synergism. Use Caution/Monitor. Transient
+decrease in heart rate and AV conduction delays may occur when initiating
+etrasimod. Concomitant use of etrasimod in patients receiving stable beta-blocker
+treatment did not result in additive effects on heart rate reduction. However, risk of
+additive heart rate reduction following initiation of beta-blocker therapy with stable
+etrasimod treatment or concomitant use with other drugs that may decrease heart
+rate is unknown. .
+
+etravirine
+etravirine will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor.
+
+fedratinib
+fedratinib will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor. Adjust dose of drugs that are CYP2D6
+substrates as necessary.
+
+felbamate
+felbamate will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor.
+
+felodipine
+carvedilol and felodipine both increase anti-hypertensive channel blocking. Modify
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 18/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+Therapy/Monitor Closely.
+
+fenbufen
+carvedilol and fenbufen both increase serum potassium. Use Caution/Monitor.
+
+fenoprofen
+carvedilol and fenoprofen both increase serum potassium. Use Caution/Monitor.
+
+fenoprofen decreases effects of carvedilol by pharmacodynamic antagonism. Use
+Caution/Monitor. Long term (>1 wk) NSAID use. NSAIDs decrease prostaglandin
+synthesis.
+
+fingolimod
+carvedilol increases effects of fingolimod by pharmacodynamic synergism. Use
+Caution/Monitor. Both medications decrease heart rate. Monitor patients on
+concomitant therapy, particularly in the first 6 hours after fingolimod is initiated or
+after a treatment interruption of at least two weeks, for bradycardia and
+atrioventricular block. To identify underlying risk factors of bradycardia and AV
+block, obtain a new or recent ECG in patients using beta-blockers prior to starting
+fingolimod.
+
+flibanserin
+flibanserin will increase the level or effect of carvedilol by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+fluconazole
+fluconazole will increase the level or effect of carvedilol by affecting hepatic
+enzyme CYP2C9/10 metabolism. Use Caution/Monitor.
+
+fluoxetine
+fluoxetine will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor.
+
+flurbiprofen
+carvedilol and flurbiprofen both increase serum potassium. Use Caution/Monitor.
+
+flurbiprofen decreases effects of carvedilol by pharmacodynamic antagonism. Use
+Caution/Monitor. Long term (>1 wk) NSAID use. NSAIDs decrease prostaglandin
+synthesis.
+
+fluvoxamine
+fluvoxamine will increase the level or effect of carvedilol by affecting hepatic
+enzyme CYP2C9/10 metabolism. Use Caution/Monitor.
+
+foscarbidopa/foslevodopa
+foscarbidopa/foslevodopa increases effects of carvedilol by pharmacodynamic
+synergism. Use Caution/Monitor. Consider decreasing dosage of antihypertensive
+agent.
+
+fostamatinib
+fostamatinib will increase the level or effect of carvedilol by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor. Concomitant use of fostamatinib may
+increase concentrations of P-gp substrates. Monitor for toxicities of the P-gp
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 19/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+substrate drug that may require dosage reduction when given concurrently with
+fostamatinib.
+
+furosemide
+carvedilol increases and furosemide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+galantamine
+galantamine, carvedilol. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Galantamine, an acetylcholinesterase
+inhibitor, has vagotonic effects on the SA and AV nodes, leading to bradycardia.
+Consider consulting a cardiolist before initiating other drugs that may cause
+bradycardia.
+
+gentamicin
+carvedilol increases and gentamicin decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+glecaprevir/pibrentasvir
+carvedilol will increase the level or effect of glecaprevir/pibrentasvir by P-
+glycoprotein (MDR1) efflux transporter. Use Caution/Monitor.
+
+glecaprevir/pibrentasvir will increase the level or effect of carvedilol by P-
+glycoprotein (MDR1) efflux transporter. Use Caution/Monitor.
+
+glucagon
+glucagon decreases toxicity of carvedilol by sympathetic (adrenergic) effects,
+including increased blood pressure and heart rate. Use Caution/Monitor.
+Coadministration of glucagon with beta-blockers may have transiently increased
+pulse and blood pressure.
+
+glucagon intranasal
+glucagon intranasal decreases toxicity of carvedilol by sympathetic (adrenergic)
+effects, including increased blood pressure and heart rate. Use Caution/Monitor.
+Coadministration of glucagon with beta-blockers may have transiently increased
+pulse and blood pressure.
+
+haloperidol
+haloperidol will increase the level or effect of carvedilol by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+hydralazine
+carvedilol, hydralazine. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Additive hypotensive effects.
+
+hydrochlorothiazide
+carvedilol increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+ibuprofen
+carvedilol and ibuprofen both increase serum potassium. Use Caution/Monitor.
+
+ibuprofen decreases effects of carvedilol by pharmacodynamic antagonism. Use
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 20/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+Caution/Monitor. Long term (>1 wk) NSAID use. NSAIDs decrease prostaglandin
+synthesis.
+
+ibuprofen IV
+ibuprofen IV decreases effects of carvedilol by pharmacodynamic antagonism. Use
+Caution/Monitor. Long term (>1 wk) NSAID use. NSAIDs decrease prostaglandin
+synthesis.
+
+carvedilol and ibuprofen IV both increase serum potassium. Use Caution/Monitor.
+
+imatinib
+imatinib will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor.
+
+imatinib will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+indapamide
+carvedilol increases and indapamide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+indomethacin
+carvedilol and indomethacin both increase serum potassium. Use Caution/Monitor.
+
+indomethacin decreases effects of carvedilol by pharmacodynamic antagonism. Use
+Caution/Monitor. Long term (>1 wk) NSAID use. NSAIDs decrease prostaglandin
+synthesis.
+
+insulin degludec
+carvedilol, insulin degludec. Other (see comment). Modify Therapy/Monitor Closely.
+Comment: Beta-blockers may either increase or decrease the blood glucose
+lowering effect of insulin; beta-blockers can prolong hypoglycemia (interference
+with glycogenolysis) or cause hyperglycemia (insulin secretion inhibited).
+
+insulin degludec/insulin aspart
+carvedilol, insulin degludec/insulin aspart. Other (see comment). Modify
+Therapy/Monitor Closely. Comment: Beta-blockers may either increase or decrease
+the blood glucose lowering effect of insulin; beta-blockers can prolong
+hypoglycemia (interference with glycogenolysis) or cause hyperglycemia (insulin
+secretion inhibited).
+
+insulin inhaled
+carvedilol, insulin inhaled. Other (see comment). Modify Therapy/Monitor Closely.
+Comment: Beta-blockers may either increase or decrease the blood glucose
+lowering effect of insulin; beta-blockers can prolong hypoglycemia (interference
+with glycogenolysis) or cause hyperglycemia (insulin secretion inhibited).
+
+iodixanol
+carvedilol increases toxicity of iodixanol by unspecified interaction mechanism. Use
+Caution/Monitor. Use of beta-blockers lowers the threshold for and increases the
+severity of contrast reactions, and reduces the responsiveness of treatment of
+hypersensitivity reactions with epinephrine. .
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 21/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+irbesartan
+irbesartan and carvedilol both increase serum potassium. Use Caution/Monitor.
+
+carvedilol, irbesartan. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of fetal compromise if given during pregnancy.
+
+isoproterenol
+carvedilol increases and isoproterenol decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+carvedilol decreases effects of isoproterenol by pharmacodynamic antagonism. Use
+Caution/Monitor.
+
+isradipine
+carvedilol and isradipine both increase anti-hypertensive channel blocking. Modify
+Therapy/Monitor Closely.
+
+istradefylline
+istradefylline will increase the level or effect of carvedilol by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor. Istradefylline 40 mg/day increased peak
+levels and AUC of P-gp substrates in clinical trials. Consider dose reduction of
+sensitive P-gp substrates.
+
+ivabradine
+ivabradine, carvedilol. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Most patients receiving ivabradine will
+also be treated with a beta-blocker. The risk of bradycardia increases with
+coadministration of drugs that slow heart rate (eg, digoxin, amiodarone, beta-
+blockers). Monitor heart rate in patients taking ivabradine with other negative
+chronotropes.
+
+ivacaftor
+ivacaftor increases levels of carvedilol by P-glycoprotein (MDR1) efflux transporter.
+Use Caution/Monitor. Ivacaftor and its M1 metabolite has the potential to inhibit P-
+gp; may significantly increase systemic exposure to sensitive P-gp substrates with a
+narrow therapeutic index.
+
+ketamine
+ketamine, carvedilol. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Risk of hypotension.
+
+ketoconazole
+ketoconazole will increase the level or effect of carvedilol by affecting hepatic
+enzyme CYP2C9/10 metabolism. Use Caution/Monitor.
+
+ketoprofen
+carvedilol and ketoprofen both increase serum potassium. Use Caution/Monitor.
+
+ketoprofen decreases effects of carvedilol by pharmacodynamic antagonism. Use
+Caution/Monitor. Long term (>1 wk) NSAID use. NSAIDs decrease prostaglandin
+synthesis.
+
+ketorolac
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 22/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+carvedilol and ketorolac both increase serum potassium. Use Caution/Monitor.
+
+ketorolac decreases effects of carvedilol by pharmacodynamic antagonism. Use
+Caution/Monitor. Long term (>1 wk) NSAID use. NSAIDs decrease prostaglandin
+synthesis.
+
+ketorolac intranasal
+carvedilol and ketorolac intranasal both increase serum potassium. Use
+Caution/Monitor.
+
+ketorolac intranasal decreases effects of carvedilol by pharmacodynamic
+antagonism. Use Caution/Monitor. Long term (>1 wk) NSAID use. NSAIDs decrease
+prostaglandin synthesis.
+
+labetalol
+carvedilol and labetalol both increase serum potassium. Use Caution/Monitor.
+
+leflunomide
+leflunomide will increase the level or effect of carvedilol by affecting hepatic
+enzyme CYP2C9/10 metabolism. Use Caution/Monitor.
+
+levodopa
+levodopa increases effects of carvedilol by pharmacodynamic synergism. Use
+Caution/Monitor. Consider decreasing dosage of antihypertensive agent.
+
+levoketoconazole
+levoketoconazole will increase the level or effect of carvedilol by affecting hepatic
+enzyme CYP2C9/10 metabolism. Use Caution/Monitor.
+
+lorcaserin
+lorcaserin will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+lornoxicam
+carvedilol and lornoxicam both increase serum potassium. Use Caution/Monitor.
+
+lornoxicam decreases effects of carvedilol by pharmacodynamic antagonism. Use
+Caution/Monitor. Long term (>1 wk) NSAID use. NSAIDs decrease prostaglandin
+synthesis.
+
+losartan
+losartan and carvedilol both increase serum potassium. Use Caution/Monitor.
+
+carvedilol, losartan. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of fetal compromise if given during pregnancy.
+
+lumacaftor/ivacaftor
+lumacaftor/ivacaftor, carvedilol. affecting hepatic enzyme CYP2C9/10 metabolism.
+Use Caution/Monitor. In vitro studies suggest that lumacaftor may induce and
+ivacaftor may inhibit CYP2C9 substrates. .
+
+lurasidone
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 23/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+lurasidone increases effects of carvedilol by Other (see comment). Use
+Caution/Monitor. Comment: Potential for increased risk of hypotension with
+concurrent use. Monitor blood pressure and adjust dose of antihypertensive agent
+as needed.
+
+maraviroc
+maraviroc will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+marijuana
+marijuana will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+mavorixafor
+mavorixafor will increase the level or effect of carvedilol by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor. Caution if mavorixafor (a P-gp inhibitor) is
+coadministered with a sensitive P-gp substrate where minimal substrate
+concentration changes may lead to serious adverse effects.
+
+meclofenamate
+meclofenamate decreases effects of carvedilol by pharmacodynamic antagonism.
+Use Caution/Monitor. Long term (>1 wk) NSAID use. NSAIDs decrease
+prostaglandin synthesis.
+
+carvedilol and meclofenamate both increase serum potassium. Use
+Caution/Monitor.
+
+mefenamic acid
+carvedilol and mefenamic acid both increase serum potassium. Use
+Caution/Monitor.
+
+mefenamic acid decreases effects of carvedilol by pharmacodynamic antagonism.
+Use Caution/Monitor. Long term (>1 wk) NSAID use. NSAIDs decrease
+prostaglandin synthesis.
+
+mefloquine
+mefloquine increases levels of carvedilol by decreasing metabolism. Use
+Caution/Monitor. Risk of arrhythmia.
+
+meloxicam
+carvedilol and meloxicam both increase serum potassium. Use Caution/Monitor.
+
+meloxicam decreases effects of carvedilol by pharmacodynamic antagonism. Use
+Caution/Monitor. Long term (>1 wk) NSAID use. NSAIDs decrease prostaglandin
+synthesis.
+
+metaproterenol
+carvedilol increases and metaproterenol decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+carvedilol decreases effects of metaproterenol by pharmacodynamic antagonism.
+Use Caution/Monitor.
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 24/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+methacholine inhaled
+carvedilol increases toxicity of methacholine inhaled by Other (see comment). Use
+Caution/Monitor. Comment: Beta-blockers may impair reversal of methacholine-
+induced bronchoconstriction.
+
+methyclothiazide
+carvedilol increases and methyclothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor. .
+
+metolazone
+carvedilol increases and metolazone decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+metoprolol
+carvedilol and metoprolol both increase serum potassium. Use Caution/Monitor.
+
+metronidazole
+metronidazole will increase the level or effect of carvedilol by affecting hepatic
+enzyme CYP2C9/10 metabolism. Use Caution/Monitor.
+
+miconazole vaginal
+miconazole vaginal will increase the level or effect of carvedilol by affecting hepatic
+enzyme CYP2C9/10 metabolism. Use Caution/Monitor.
+
+mirabegron
+mirabegron will increase the level or effect of carvedilol by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+mitapivat
+mitapivat decreases levels of carvedilol by affecting hepatic enzyme CYP2C9/10
+metabolism. Use Caution/Monitor. Monitor patients for loss of therapeutic effect if
+taking sensitive CYP2C9/10 substrates.
+
+mitapivat decreases levels of carvedilol by increasing metabolism. Use
+Caution/Monitor. Mitapivat induces UGT1A1 in vitro and may decrease systemic
+concentrations of UGT1A1 substrates.
+
+moxisylyte
+moxisylyte and carvedilol both increase anti-hypertensive channel blocking. Modify
+Therapy/Monitor Closely.
+
+nabumetone
+carvedilol and nabumetone both increase serum potassium. Use Caution/Monitor.
+
+nabumetone decreases effects of carvedilol by pharmacodynamic antagonism. Use
+Caution/Monitor. Long term (>1 wk) NSAID use. NSAIDs decrease prostaglandin
+synthesis.
+
+nadolol
+carvedilol and nadolol both increase serum potassium. Use Caution/Monitor.
+
+naldemedine
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 25/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+carvedilol increases levels of naldemedine by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor. Monitor naldemedine for potential adverse effects
+if coadministered with P-gp inhibitors.
+
+naproxen
+carvedilol and naproxen both increase serum potassium. Use Caution/Monitor.
+
+naproxen decreases effects of carvedilol by pharmacodynamic antagonism. Use
+Caution/Monitor. Long term (>1 wk) NSAID use. NSAIDs decrease prostaglandin
+synthesis.
+
+nateglinide
+nateglinide will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor.
+
+nebivolol
+carvedilol and nebivolol both increase serum potassium. Use Caution/Monitor.
+
+nicardipine
+carvedilol and nicardipine both increase anti-hypertensive channel blocking. Modify
+Therapy/Monitor Closely.
+
+nifedipine
+carvedilol and nifedipine both increase anti-hypertensive channel blocking. Modify
+Therapy/Monitor Closely.
+
+nilotinib
+nilotinib will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor.
+
+nilotinib will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+nintedanib
+carvedilol increases levels of nintedanib by P-glycoprotein (MDR1) efflux
+transporter. Modify Therapy/Monitor Closely. If nintedanib adverse effects occur,
+management may require interruption, dose reduction, or discontinuation of
+therapy.
+
+nisoldipine
+carvedilol and nisoldipine both increase anti-hypertensive channel blocking. Modify
+Therapy/Monitor Closely.
+
+nitisinone
+nitisinone will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor. Nitisinone inhibits CYP2C9. Caution
+if CYP2C9 substrate coadministered, particularly those with a narrow therapeutic
+index.
+
+nitroglycerin rectal
+nitroglycerin rectal, carvedilol. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Beta-blockers blunt the reflex
+tachycardia produced by nitroglycerin without preventing its hypotensive effects. If
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 26/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+beta-blockers are used with nitroglycerin in patients with angina pectoris,
+additional hypotensive effects may occur.
+
+norepinephrine
+carvedilol increases and norepinephrine decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+carvedilol decreases effects of norepinephrine by pharmacodynamic antagonism.
+Use Caution/Monitor.
+
+olanzapine/samidorphan
+olanzapine/samidorphan increases effects of carvedilol by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Monitor blood pressure and reduce
+antihypertensive drug dosage in accordance with its product labeling.
+
+olmesartan
+olmesartan and carvedilol both increase serum potassium. Use Caution/Monitor.
+
+carvedilol, olmesartan. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of fetal compromise if given during pregnancy.
+
+olodaterol inhaled
+carvedilol, olodaterol inhaled. Either decreases effects of the other by
+pharmacodynamic antagonism. Use Caution/Monitor. Beta-blockers and olodaterol
+may interfere with the effect of each other when administered concurrently. Beta-
+blockers may produce severe bronchospasm in COPD patients. Therefore, patients
+with COPD should not normally be treated with beta-blockers. However, under
+certain circumstances, e.g. as prophylaxis after myocardial infarction, there may be
+no acceptable alternatives to the use of beta-blockers in patients with COPD. In this
+setting, cardioselective beta-blockers could be considered, although they should be
+administered with caution.
+
+oxaprozin
+carvedilol and oxaprozin both increase serum potassium. Use Caution/Monitor.
+
+oxaprozin decreases effects of carvedilol by pharmacodynamic antagonism. Use
+Caution/Monitor. Long term (>1 wk) NSAID use. NSAIDs decrease prostaglandin
+synthesis.
+
+oxymetazoline topical
+oxymetazoline topical increases and carvedilol decreases sympathetic (adrenergic)
+effects, including increased blood pressure and heart rate. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+parecoxib
+parecoxib will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+carvedilol and parecoxib both increase serum potassium. Use Caution/Monitor.
+
+parecoxib decreases effects of carvedilol by pharmacodynamic antagonism. Use
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 27/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+Caution/Monitor. Long term (>1 wk) NSAID use. NSAIDs decrease prostaglandin
+synthesis.
+
+patiromer
+patiromer will decrease the level or effect of carvedilol by cation binding in GI tract.
+Modify Therapy/Monitor Closely. Separate administration by at least 3 hr from
+patiromer
+
+pentobarbital
+pentobarbital will decrease the level or effect of carvedilol by affecting hepatic
+enzyme CYP2C9/10 metabolism. Use Caution/Monitor.
+
+pentobarbital decreases levels of carvedilol by increasing metabolism. Use
+Caution/Monitor. Consider a higher beta-blocker dose during coadministration of
+pentobarbital. Atenolol, sotalol, nadolol less likely to be affected than other beta
+blockers.
+
+perphenazine
+perphenazine will increase the level or effect of carvedilol by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+phenobarbital
+phenobarbital will decrease the level or effect of carvedilol by affecting hepatic
+enzyme CYP2C9/10 metabolism. Use Caution/Monitor.
+
+phenobarbital decreases levels of carvedilol by increasing metabolism. Use
+Caution/Monitor. Consider a higher beta-blocker dose during coadministration of
+phenobarbital. Atenolol, sotalol, nadolol less likely to be affected than other beta
+blockers.
+
+phenoxybenzamine
+phenoxybenzamine and carvedilol both increase anti-hypertensive channel
+blocking. Modify Therapy/Monitor Closely.
+
+phentolamine
+phentolamine and carvedilol both increase anti-hypertensive channel blocking.
+Modify Therapy/Monitor Closely.
+
+pindolol
+carvedilol and pindolol both increase serum potassium. Use Caution/Monitor.
+
+pirbuterol
+carvedilol increases and pirbuterol decreases serum potassium. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+carvedilol decreases effects of pirbuterol by pharmacodynamic antagonism. Use
+Caution/Monitor.
+
+piroxicam
+carvedilol and piroxicam both increase serum potassium. Use Caution/Monitor.
+
+piroxicam decreases effects of carvedilol by pharmacodynamic antagonism. Use
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 28/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+Caution/Monitor. Long term (>1 wk) NSAID use. NSAIDs decrease prostaglandin
+synthesis.
+
+ponatinib
+ponatinib increases levels of carvedilol by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor.
+
+ponesimod
+ponesimod and carvedilol both increase pharmacodynamic synergism. Use
+Caution/Monitor. Beta-blockers may have additive effects on lowering HR. Consider
+resting HR before initiating ponesimod in patients on stable dose of beta-blocker.
+Refer to the ponesimod prescribing information for more dosing information.
+
+potassium acid phosphate
+carvedilol and potassium acid phosphate both increase serum potassium. Modify
+Therapy/Monitor Closely.
+
+potassium chloride
+carvedilol and potassium chloride both increase serum potassium. Modify
+Therapy/Monitor Closely.
+
+potassium citrate
+carvedilol and potassium citrate both increase serum potassium. Modify
+Therapy/Monitor Closely.
+
+prazosin
+prazosin and carvedilol both increase anti-hypertensive channel blocking. Modify
+Therapy/Monitor Closely.
+
+primidone
+primidone will decrease the level or effect of carvedilol by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor.
+
+primidone decreases levels of carvedilol by increasing metabolism. Use
+Caution/Monitor. Consider a higher beta-blocker dose during coadministration of
+primidone. Atenolol, sotalol, nadolol less likely to be affected than other beta
+blockers.
+
+propafenone
+propafenone will increase the level or effect of carvedilol by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+propofol
+propofol, carvedilol. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Risk of hypotension.
+
+propranolol
+carvedilol and propranolol both increase serum potassium. Use Caution/Monitor.
+
+quinacrine
+quinacrine will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 29/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+ranolazine
+ranolazine will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+rifabutin
+rifabutin decreases levels of carvedilol by increasing metabolism. Use
+Caution/Monitor.
+
+rifampin
+rifampin will decrease the level or effect of carvedilol by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor.
+
+rifampin decreases levels of carvedilol by increasing metabolism. Use
+Caution/Monitor.
+
+rifapentine
+rifapentine will decrease the level or effect of carvedilol by affecting hepatic
+enzyme CYP2C9/10 metabolism. Use Caution/Monitor.
+
+rifapentine decreases levels of carvedilol by increasing metabolism. Use
+Caution/Monitor.
+
+rifaximin
+carvedilol increases levels of rifaximin by P-glycoprotein (MDR1) efflux transporter.
+Use Caution/Monitor.
+
+ritonavir
+ritonavir will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+rolapitant
+rolapitant will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor. Rolapitant may increase plasma
+concentrations of CYP2D6 substrates for at least 28 days following rolapitant
+administration.
+
+rucaparib
+rucaparib will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2C9/10 metabolism. Modify Therapy/Monitor Closely. Adjust dosage of
+CYP2C9 substrates, if clinically indicated.
+
+sacubitril/valsartan
+sacubitril/valsartan and carvedilol both increase serum potassium. Use
+Caution/Monitor.
+
+carvedilol, sacubitril/valsartan. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of fetal compromise if given during pregnancy.
+
+salicylates (non-asa)
+carvedilol and salicylates (non-asa) both increase serum potassium. Use
+Caution/Monitor.
+
+salicylates (non-asa) decreases effects of carvedilol by pharmacodynamic
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 30/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+antagonism. Use Caution/Monitor. Long term (>1 wk) NSAID use. NSAIDs decrease
+prostaglandin synthesis.
+
+salmeterol
+carvedilol increases and salmeterol decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+carvedilol decreases effects of salmeterol by pharmacodynamic antagonism. Use
+Caution/Monitor.
+
+salsalate
+carvedilol and salsalate both increase serum potassium. Use Caution/Monitor.
+
+salsalate decreases effects of carvedilol by pharmacodynamic antagonism. Use
+Caution/Monitor. Long term (>1 wk) NSAID use. NSAIDs decrease prostaglandin
+synthesis.
+
+sarecycline
+sarecycline will increase the level or effect of carvedilol by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor. Monitor for toxicities of P-gp substrates
+that may require dosage reduction when coadministered with P-gp inhibitors.
+
+sertraline
+sertraline will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+sevoflurane
+sevoflurane, carvedilol. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Risk of hypotension.
+
+sildenafil
+carvedilol increases effects of sildenafil by additive vasodilation. Use
+Caution/Monitor. Sildenafil has systemic vasodilatory properties and may further
+lower blood pressure in patients taking antihypertensive medications. Monitor
+blood pressure response to sildenafil in patients receiving concurrent blood
+pressure lowering therapy.
+
+silodosin
+silodosin and carvedilol both increase anti-hypertensive channel blocking. Modify
+Therapy/Monitor Closely.
+
+siponimod
+siponimod, carvedilol. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Caution when siponimod is initiated in
+patients receiving beta-blocker treatment because of additive effects on lowering
+heart rate. Temporary interruption of beta-blocker may be needed before initiating
+siponimod. Beta-blocker treatment can be initiated in patients receiving stable
+doses of siponimod.
+
+sodium bicarbonate
+sodium bicarbonate decreases levels of carvedilol by inhibition of GI absorption.
+Applies only to oral form of both agents. Use Caution/Monitor. Separate by 2 hours.
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 31/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+sodium citrate/citric acid
+sodium citrate/citric acid decreases levels of carvedilol by inhibition of GI
+absorption. Applies only to oral form of both agents. Use Caution/Monitor. Separate
+by 2 hours.
+
+sotalol
+carvedilol and sotalol both increase serum potassium. Use Caution/Monitor.
+
+sparsentan
+sparsentan will decrease the level or effect of carvedilol by affecting hepatic
+enzyme CYP2C9/10 metabolism. Use Caution/Monitor. Sparsentan (a CYP2C9
+inducer) decreases exposure of CYP2C9 substrates and reduces efficacy related to
+these substrates.
+
+spironolactone
+carvedilol and spironolactone both increase serum potassium. Modify
+Therapy/Monitor Closely.
+
+stiripentol
+stiripentol will increase the level or effect of carvedilol by P-glycoprotein (MDR1)
+efflux transporter. Modify Therapy/Monitor Closely. Consider reducing the dose of
+P-glycoprotein (P-gp) substrates, if adverse reactions are experienced when
+administered concomitantly with stiripentol.
+
+succinylcholine
+carvedilol and succinylcholine both increase serum potassium. Use Caution/Monitor.
+
+sulfamethoxazole
+sulfamethoxazole will increase the level or effect of carvedilol by affecting hepatic
+enzyme CYP2C9/10 metabolism. Use Caution/Monitor.
+
+sulfasalazine
+carvedilol and sulfasalazine both increase serum potassium. Use Caution/Monitor.
+
+sulfasalazine decreases effects of carvedilol by pharmacodynamic antagonism. Use
+Caution/Monitor. Long term (>1 wk) NSAID use. NSAIDs decrease prostaglandin
+synthesis.
+
+sulindac
+carvedilol and sulindac both increase serum potassium. Use Caution/Monitor.
+
+sulindac decreases effects of carvedilol by pharmacodynamic antagonism. Use
+Caution/Monitor. Long term (>1 wk) NSAID use. NSAIDs decrease prostaglandin
+synthesis.
+
+sunvozertinib
+sunvozertinib increases levels of carvedilol by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor. Follow substrate recommendations.
+
+tadalafil
+tadalafil increases effects of carvedilol by pharmacodynamic synergism. Use
+Caution/Monitor. Risk of hypotension.
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 32/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+telmisartan
+telmisartan and carvedilol both increase serum potassium. Use Caution/Monitor.
+
+carvedilol, telmisartan. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of fetal compromise if given during pregnancy.
+
+terazosin
+terazosin and carvedilol both increase anti-hypertensive channel blocking. Modify
+Therapy/Monitor Closely.
+
+terbinafine
+terbinafine will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2D6 metabolism. Modify Therapy/Monitor Closely. Assess need to reduce dose
+of CYP2D6-metabolized drug.
+
+terbutaline
+carvedilol increases and terbutaline decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+carvedilol decreases effects of terbutaline by pharmacodynamic antagonism. Use
+Caution/Monitor.
+
+theophylline
+carvedilol, theophylline. Other (see comment). Use Caution/Monitor. Comment:
+Beta blockers (esp. non selective) antagonize theophylline effects, while at the
+same time increasing theophylline levels and toxicity (mechanism: decreased
+theophylline metabolism). Smoking increases risk of interaction.
+
+thioridazine
+thioridazine will increase the level or effect of carvedilol by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+timolol
+carvedilol and timolol both increase serum potassium. Use Caution/Monitor.
+
+tipranavir
+tipranavir will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+tolfenamic acid
+carvedilol and tolfenamic acid both increase serum potassium. Use Caution/Monitor.
+
+tolfenamic acid decreases effects of carvedilol by pharmacodynamic antagonism.
+Use Caution/Monitor. Long term (>1 wk) NSAID use. NSAIDs decrease
+prostaglandin synthesis.
+
+tolmetin
+carvedilol and tolmetin both increase serum potassium. Use Caution/Monitor.
+
+tolmetin decreases effects of carvedilol by pharmacodynamic antagonism. Use
+Caution/Monitor. Long term (>1 wk) NSAID use. NSAIDs decrease prostaglandin
+synthesis.
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 33/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+tolvaptan
+carvedilol and tolvaptan both increase serum potassium. Use Caution/Monitor.
+
+torsemide
+carvedilol increases and torsemide decreases serum potassium. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+triamterene
+carvedilol and triamterene both increase serum potassium. Modify Therapy/Monitor
+Closely.
+
+tucatinib
+tucatinib will increase the level or effect of carvedilol by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor. Consider reducing the dosage of P-gp
+substrates, where minimal concentration changes may lead to serious or life-
+threatening toxicities.
+
+valproic acid
+valproic acid will increase the level or effect of carvedilol by affecting hepatic
+enzyme CYP2C9/10 metabolism. Use Caution/Monitor.
+
+valsartan
+valsartan and carvedilol both increase serum potassium. Use Caution/Monitor.
+
+carvedilol, valsartan. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of fetal compromise if given during pregnancy.
+
+vanzacaftor/tezacaftor/deutivacaftor
+vanzacaftor/tezacaftor/deutivacaftor increases levels of carvedilol by affecting
+hepatic enzyme CYP2C9/10 metabolism. Use Caution/Monitor. Deutivacaftor
+inhibits CYP2C9 in vitro. Caution advised if coadministered with CYP2C9
+substrates.
+
+vemurafenib
+vemurafenib increases levels of carvedilol by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor.
+
+venlafaxine
+venlafaxine will increase the level or effect of carvedilol by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+verapamil
+carvedilol and verapamil both increase anti-hypertensive channel blocking. Modify
+Therapy/Monitor Closely.
+
+viloxazine
+viloxazine will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor. Viloxazine (a weak CYP2D6 inhibitor)
+may increase systemic exposure of CYP2D6 substrates. Monitor and adjust dose of
+substrate as clinically indicated.
+
+vimseltinib
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 34/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+vimseltinib increases levels of carvedilol by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor. If coadministration cannot be avoided, take the
+drug 4 hours before taking the P-gp substrate; may increase risk of hyptension,
+bradycardia.
+
+voriconazole
+voriconazole will increase the level or effect of carvedilol by affecting hepatic
+enzyme CYP2C9/10 metabolism. Use Caution/Monitor.
+
+xipamide
+xipamide increases effects of carvedilol by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+zafirlukast
+zafirlukast will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor.
+
+Minor (28)
+
+adenosine
+carvedilol, adenosine. Mechanism: pharmacodynamic synergism. Minor/Significance
+Unknown. Bradycardia.
+
+agrimony
+agrimony increases effects of carvedilol by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+cevimeline
+cevimeline increases effects of carvedilol by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+ciprofloxacin
+ciprofloxacin increases levels of carvedilol by decreasing metabolism.
+Minor/Significance Unknown. May also rarely decrease beta blocker levels.
+
+cocaine topical
+carvedilol increases effects of cocaine topical by pharmacodynamic synergism.
+Minor/Significance Unknown. Risk of angina.
+
+cornsilk
+cornsilk increases effects of carvedilol by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+dihydroergotamine
+dihydroergotamine, carvedilol. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Additive vasospasm.
+
+dihydroergotamine intranasal
+dihydroergotamine intranasal, carvedilol. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Additive vasospasm.
+
+dipyridamole
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 35/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+dipyridamole, carvedilol. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Risk of bradycardia.
+
+duloxetine
+duloxetine will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2D6 metabolism. Minor/Significance Unknown.
+
+escitalopram
+escitalopram increases levels of carvedilol by decreasing metabolism.
+Minor/Significance Unknown.
+
+fenoldopam
+fenoldopam increases effects of carvedilol by pharmacodynamic synergism.
+Minor/Significance Unknown. Additive hypotensive effects.
+
+forskolin
+forskolin increases effects of carvedilol by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+imaging agents (gadolinium)
+carvedilol, imaging agents (gadolinium). Mechanism: unknown. Minor/Significance
+Unknown. Increased risk of anaphylaxis from contrast media.
+
+levobetaxolol
+levobetaxolol increases effects of carvedilol by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+maitake
+maitake increases effects of carvedilol by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+metipranolol ophthalmic
+metipranolol ophthalmic increases effects of carvedilol by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+neostigmine
+carvedilol, neostigmine. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive bradycardia.
+
+noni juice
+carvedilol and noni juice both increase serum potassium. Minor/Significance
+Unknown.
+
+octacosanol
+octacosanol increases effects of carvedilol by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+physostigmine
+carvedilol, physostigmine. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive bradycardia.
+
+pilocarpine
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 36/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+pilocarpine increases effects of carvedilol by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+reishi
+reishi increases effects of carvedilol by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+shepherd's purse
+shepherd's purse, carvedilol. Other (see comment). Minor/Significance Unknown.
+Comment: Theoretically, shepherd's purse may interfere with BP control.
+
+tizanidine
+tizanidine increases effects of carvedilol by pharmacodynamic synergism.
+Minor/Significance Unknown. Risk of hypotension.
+
+treprostinil
+treprostinil increases effects of carvedilol by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+vardenafil
+vardenafil increases effects of carvedilol by pharmacodynamic synergism.
+Minor/Significance Unknown. Risk of hypotension.
+
+yohimbe
+carvedilol decreases toxicity of yohimbe by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+Adverse Effects
+
+>10%
+
+Dizziness (2-32%)
+
+Fatigue (4-24%)
+
+Hypotension (9-20%)
+
+Weight gain (10-12%)
+
+Hyperglycemia (5-12%)
+
+Diarrhea (1-12%)
+
+1-10% (selected)
+
+Bradycardia (2-10%)
+
+Nausea (2-9%)
+
+Cough (5-8%)
+
+Headache (5-8%)
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 37/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+Atrioventricular block, edema (1-7%)
+
+Angina (1-6%)
+
+Hpercholesterolemia (1-4%)
+
+Hypertriglyceredemia (1%)
+
+Vomiting (1-6%)
+
+Dyspnea (>3%)
+
+Syncope (3%)
+
+Rhinitis (2%)
+
+Frequency Not Defined (selected)
+
+Hypertension
+
+Palpitations
+
+Insomnia
+
+Somnolence
+
+Skin rash
+
+Hepatotoxicity
+
+Impotence
+
+Bronchospasm
+
+Rales
+
+Depression
+
+Decreased exercise tolerance
+
+Raynaud phenomenon
+
+Increased triglyceride levels and insulin resistance with decreased high-density
+lipoprotein (HDL) levels
+
+Postmarketing Reports
+
+Blood and lymphatic system: Aplastic anemia
+
+Immune system: Hypersensitivity (eg, anaphylactic reactions, angioedema, urticaria) with
+Coreg and Coreg CR, including cases occurring after initiation of Coreg CR in patients
+previously treated with Coreg
+
+Kidneys and urinary tract: Urinary incontinence
+
+Respiratory system, thorax, and mediastinum: Interstitial pneumonitis
+
+Skin and subcutaneous tissue: Stevens-Johnson syndrome, toxic epidermal necrolysis,
+erythema multiforme
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 38/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+Warnings
+
+Contraindications
+
+History of serious hypersensitivity reaction (eg, Stevens-Johnson syndrome, anaphylactic
+reaction, angioedema) to any component of this medication or other medications
+containing carvedilol
+
+Bronchial asthma, bronchospasm
+
+Chronic obstructive pulmonary disease (COPD)
+
+2°/3° AV block, sick sinus syndrome without permanent pacemaker, cardiogenic shock,
+severe bradycardia, decompensated heart failure requiring IV inotropic medication
+
+Severe hepatic impairment
+
+Cautions
+
+Use cautioin in anesthesia or surgery (myocardial depression), cerebrovascular
+insufficiency, diabetes mellitus, hyperthyroidism or thyrotoxicosis, liver disease,
+peripheral vascular disease (monitor for progression of arterial obstruction),
+compromised left ventricular function, heart failure, pheochromocytoma, and myasthenia
+gravis
+
+Avoid beta-blocker use in non-allergic bronchospasm (e.g., chronic bronchitis and
+emphysema); if deemed necessary, use with caution and at lowest effective dose
+
+Combined incidence of hypotension, syncope, or dizziness reported in elderly patients
+(>65 years) switched from highest dose of immediate-release carvedilol (25 mg q12hr)
+to extended-release carvedilol 80 mg/day
+
+When elderly patients are switched from higher doses of immediate-release carvedilol
+to extended-release carvedilol, a lower starting dose is recommended
+
+Sudden discontinuance can exacerbate angina and lead to myocardial infarction
+
+Increased risk of stroke after surgery
+
+Dosage should be reduced if bradycardia (HR <55 beats/min) develops
+
+May mask hyperthyroidism
+
+May worsen arterial insufficiency in patients with peripheral vascular disease
+
+Use caution in patients with mild to moderate hepatic impairment
+
+Heart failure patients may experience a worsening of renal function, especially during
+upward titration; dose reduction or temporary discontinuation may be necessary; may
+also need to adjust other medications
+
+Separate any form of alcohol intake by at least 2 hours (extended-release)
+
+Elderly (liver function)
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 39/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+Intraoperative floppy iris syndrome observed during cataract surgery in some patients
+treated with alpha1-blocking agents
+
+Beta-blockers may cause induction or exacerbation of psoriasis
+
+Beta-blockers may prevent early warning signs of hypoglycemia, such as tachycardia,
+and increase risk for severe or prolonged hypoglycemia at any time during treatment,
+especially in patients with diabetes mellitus or children and patients who are fasting (eg,
+surgery, not eating regularly, or are vomiting); if severe hypoglycemia occurs, patients
+should be instructed to seek emergency treatment
+
+Pregnancy & Lactation
+
+Pregnancy
+
+Available data in pregnant women are insufficient to determine whether there are drug-
+associated risks of adverse developmental outcomes; there are risks to mother and fetus
+associated with poorly controlled hypertension in pregnancy; the use of beta blockers
+during third trimester of pregnancy may increase risk of hypotension, bradycardia,
+hypoglycemia, and respiratory depression in neonates; in animal reproduction studies,
+there was no evidence of adverse developmental outcomes at clinically relevant doses;
+observe newborns for symptoms of hypotension, bradycardia, hypoglycemia, and
+respiratory depression and manage accordingly
+
+Hypertension in pregnancy increases maternal risk for pre-eclampsia, gestational
+diabetes, premature delivery, and delivery complications (e.g., need for cesarean section
+and post-partum hemorrhage); hypertension increases fetal risk for intrauterine growth
+restriction and intrauterine death; pregnant women with hypertension should be
+carefully monitored and managed accordingly
+
+Lactation
+
+There are no data on presence of carvedilol in human milk, effects on breastfed infant, or
+on milk production; drug is present in the milk of lactating rats; developmental and
+health benefits of breastfeeding should be considered along with mother’s clinical need
+for therapy and any potential adverse effects on breastfed infant from treatment or from
+underlying maternal condition
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 40/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+Nonselective beta-adrenergic and alpha1-adrenergic blocking agent with no intrinsic
+activity for use in congestive heart failure and hypertension
+
+Absorption
+
+Bioavailability: 25-35% (immediate release)
+
+Onset (antihypertensive): Initial response, 1 hr; peak response, 1-2 hr
+
+Duration: 24 hr
+
+Peak plasma time: 5 hr
+
+Distribution
+
+Protein bound: >98%
+
+Vd: 115-132 L
+
+Metabolism
+
+Metabolized by CYP2D6 and CYP2C9 and, to a lesser extent, by CYP3A4, 2C19, 1A2,
+and 2E1
+
+Metabolites: 4'-Hydroxyphenyl metabolite is approximately 13 times more potent than
+carvedilol for beta blockade
+
+Elimination
+
+Half-life: 7-10 hr
+
+Dialyzable: HD, no
+
+Excretion: Feces (60%), urine (16%)
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 41/42
+
+
+
+6/22/26, 5:00 PM Coreg, Coreg CR (carvedilol) dosing, indications, interactions, adverse effects, and more
+
+https://reference.medscape.com/drug/coreg-cr-carvedilol-342357 42/42

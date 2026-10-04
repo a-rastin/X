@@ -1,0 +1,1762 @@
+﻿6/22/26, 5:17 PM Glucotrol, Glucotrol XL (glipizide) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+glipizide (Rx)
+Brand and Other Names: Glucotrol XL, Minodiab
+Classes: Antidiabetics, Sulfonylureas
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+tablet
+
+5mg
+
+10mg
+
+tablet, extended-release
+
+2.5mg
+
+5mg
+
+10mg
+
+Type 2 Diabetes Mellitus
+
+Immediate-release tablet
+
+5 mg PO qDay initially; increase by 2.5-5 mg PRN every several days based on
+blood glucose
+
+Maintenance range: 2.5-20 mg PO qDay or q12hr; not to exceed 40 mg/day
+
+Extended-release tablets (Glucotrol XL)
+
+Initial: 5 mg/day PO given with breakfast; dose adjustment based on blood glucose
+should not be done more frequently than every 7 days
+
+Maintenance range: 5-10 mg PO qDay; not to exceed 20 mg/day
+
+Dosing considerations
+
+https://reference.medscape.com/drug/glucotrol-glipizide-342708 1/31
+
+
+
+6/22/26, 5:17 PM Glucotrol, Glucotrol XL (glipizide) dosing, indications, interactions, adverse effects, and more
+
+Doses >15 mg: PO divided q12hr recommended
+
+Conversion From Immediate Release to Extended Release
+
+Administer the nearest equivalent immediate-release daily dose as extended-release
+tablet once daily
+
+Alternatively, administer 5 mg PO initially; titrate as necessary
+
+Conversion From Long Half-Life Agents
+
+Observe patients carefully for 1-2 weeks when being converted from long half-life
+sulfonylureas to glipizide, because of potential for overlapping of hypoglycemic effects
+
+Transferring From Insulin Therapy to Glipizide IR or ER
+
+Current insulin dose <20 units: Discontinue insulin and initiate glipizide therapy at
+recommended dose
+
+Current insulin dose >20 units: Decrease insulin dose by 50% and initiate glipizide at
+recommended dose; decrease insulin dose gradually based on patient’s response
+
+Dosing Modifications
+
+Hepatic impairment: 2.5 mg PO qDay initially (immediate release); extended release not
+studied
+
+Renal impairment: Not studied; if GFR <50 mL/min, may decrease dose by 50%
+(suggested)
+
+PEDIATRIC
+Safety and efficacy not established
+
+GERIATRIC
+Diabetes
+
+2.5 mg PO qDay initially; increase by 2.5-5 mg/day every 1-2 weeks as determined by
+blood glucose response at intervals of several days
+
+May switch to extended release once daily tablets at the nearest equivalent total daily
+dose or lower end of recommended range; not to exceed 20 mg/day
+
+Dosing considerations
+
+https://reference.medscape.com/drug/glucotrol-glipizide-342708 2/31
+
+
+
+6/22/26, 5:17 PM Glucotrol, Glucotrol XL (glipizide) dosing, indications, interactions, adverse effects, and more
+
+Because elderly patients are susceptible to the hypoglycemic effects of glucose-
+lowering drugs, the question of how tightly glucose levels should be controlled in the
+elderly is controversial
+
+Recognizing hypoglycemia in elderly patients may be challenging
+
+Monitoring other parameters associated with cardiovascular disease, such as blood
+pressure and cholesterol, may be more important than normalized glycemic control
+
+Initial and maintenance dosing should be conservative
+
+Interactions
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and glipizide
+No Interactions Found
+Interactions Found
+Contraindicated
+
+Serious
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+Contraindicated (0)
+
+Serious (6)
+
+aminolevulinic acid oral
+aminolevulinic acid oral, glipizide. Either increases toxicity of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Avoid administering
+other phototoxic drugs with aminolevulinic acid oral for 24 hr during perioperative
+period.
+
+aminolevulinic acid topical
+glipizide increases toxicity of aminolevulinic acid topical by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Coadministration of photosensitizing drugs
+may enhance the phototoxic reaction to photodynamic therapy with aminolevulinic
+acid.
+
+ethanol
+ethanol, glipizide. Other (see comment). Contraindicated. Comment: Excessive
+EtOH consumption may alter glycemic control. Some sulfonylureas may produce a
+disulfiram like rxn.
+
+ivosidenib
+
+https://reference.medscape.com/drug/glucotrol-glipizide-342708 3/31
+
+
+
+6/22/26, 5:17 PM Glucotrol, Glucotrol XL (glipizide) dosing, indications, interactions, adverse effects, and more
+
+ivosidenib will decrease the level or effect of glipizide by affecting hepatic enzyme
+CYP2C9/10 metabolism. Avoid or Use Alternate Drug. Avoid coadministration of
+sensitive CYP2C9 substrates with ivosidenib or replace with alternate therapies. If
+coadministration is unavoidable, monitor patients for loss of therapeutic effect of
+these drugs.
+
+lumacaftor/ivacaftor
+lumacaftor/ivacaftor will decrease the level or effect of glipizide by affecting hepatic
+enzyme CYP2C9/10 metabolism. Avoid or Use Alternate Drug. Sulfonylureas are
+CYP2C9 substrates. Lumacaftor/ivacaftor has the potential to induce CYP2C9.
+
+methyl aminolevulinate
+glipizide, methyl aminolevulinate. Either increases toxicity of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Each drug may increase
+the photosensitizing effect of the other.
+
+Monitor Closely (172)
+
+aceclofenac
+aceclofenac increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+acemetacin
+acemetacin increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+alogliptin
+alogliptin, glipizide. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Coadministration of alogliptin with insulin and/or
+insulin secretagogues (eg, sulfonylureas, meglitinide derivatives) may increase risk
+for hypoglycemia; may require lower dose of insulin or insulin secretagogue .
+
+alpelisib
+alpelisib will decrease the level or effect of glipizide by affecting hepatic enzyme
+CYP2C9/10 metabolism. Modify Therapy/Monitor Closely.
+
+aluminum hydroxide
+aluminum hydroxide will increase the level or effect of glipizide by increasing
+gastric pH. Applies only to oral form of both agents. Use Caution/Monitor.
+
+apalutamide
+apalutamide will decrease the level or effect of glipizide by affecting hepatic
+enzyme CYP2C9/10 metabolism. Use Caution/Monitor. Coadministration of
+apalutamide, a weak CYP2C9 inducer, with drugs that are CYP2C9 substrates can
+result in lower exposure to these medications. Evaluate for loss of therapeutic effect
+if medication must be coadministered.
+
+aripiprazole
+aripiprazole, glipizide. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+https://reference.medscape.com/drug/glucotrol-glipizide-342708 4/31
+
+
+
+6/22/26, 5:17 PM Glucotrol, Glucotrol XL (glipizide) dosing, indications, interactions, adverse effects, and more
+
+asenapine
+asenapine, glipizide. Other (see comment). Use Caution/Monitor. Comment: Atypical
+antipsychotics have been associated with hyperglycemia that may alter blood
+glucose control; monitor glucose levels closely.
+
+aspirin
+aspirin increases effects of glipizide by unknown mechanism. Use Caution/Monitor.
+Risk of hypoglycemia.
+
+aspirin rectal
+aspirin rectal increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+aspirin/citric acid/sodium bicarbonate
+aspirin/citric acid/sodium bicarbonate increases effects of glipizide by unknown
+mechanism. Use Caution/Monitor. Risk of hypoglycemia.
+
+atazanavir
+atazanavir decreases effects of glipizide by Other (see comment). Use
+Caution/Monitor. Comment: Reports of hyperglycemia due to insulin resistance with
+protease inhibitors. .
+
+benazepril
+benazepril increases effects of glipizide by pharmacodynamic synergism. Use
+Caution/Monitor. Additive hypogylcemic effects.
+
+bexagliflozin
+bexagliflozin, glipizide. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Consider a lower dose of insulin
+secretagogue to avoid hypoglycemia when coadministered with bexagliflozin.
+
+bexarotene
+bexarotene increases effects of glipizide by pharmacodynamic synergism. Use
+Caution/Monitor. Based on the mechanism of action, bexarotene capsules may
+increase the action of insulin enhancing agents, resulting in hypoglycemia.
+Hypoglycemia has not been associated with bexarotene monotherapy.
+
+bitter melon
+bitter melon increases effects of glipizide by pharmacodynamic synergism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+calcium carbonate
+calcium carbonate will increase the level or effect of glipizide by increasing gastric
+pH. Applies only to oral form of both agents. Use Caution/Monitor.
+
+canagliflozin
+glipizide, canagliflozin. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Consider a lower dose of insulin or
+insulin secretagogue to avoid hypoglycemia when coadministered with
+canagliflozin.
+
+cannabidiol
+
+https://reference.medscape.com/drug/glucotrol-glipizide-342708 5/31
+
+
+
+6/22/26, 5:17 PM Glucotrol, Glucotrol XL (glipizide) dosing, indications, interactions, adverse effects, and more
+
+cannabidiol will increase the level or effect of glipizide by decreasing metabolism.
+Modify Therapy/Monitor Closely. Cannabidiol may potentially inhibit CYP2C9
+activity. Consider reducing the dose when concomitantly using CYP2C9 substrates.
+
+captopril
+captopril increases effects of glipizide by pharmacodynamic synergism. Use
+Caution/Monitor. Both drugs lower blood glucose. Monitor blood glucose.
+
+celecoxib
+celecoxib increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+choline magnesium trisalicylate
+choline magnesium trisalicylate increases effects of glipizide by unknown
+mechanism. Use Caution/Monitor. Risk of hypoglycemia.
+
+cimetidine
+cimetidine will increase the level or effect of glipizide by increasing gastric pH.
+Applies only to oral form of both agents. Use Caution/Monitor.
+
+cinnamon
+cinnamon increases effects of glipizide by pharmacodynamic synergism. Use
+Caution/Monitor. Potential for hypoglycemia.
+
+ciprofibrate
+ciprofibrate increases effects of glipizide by plasma protein binding competition.
+Use Caution/Monitor. Hypoglycemia; increased risk in hypoalbuminemia.
+
+ciprofloxacin
+ciprofloxacin increases effects of glipizide by pharmacodynamic synergism. Use
+Caution/Monitor. Hyper and hypoglycemia have been reported in patients treated
+concomitantly with quinolones and antidiabetic agents. Careful monitoring of blood
+glucose is recommended.
+
+clarithromycin
+clarithromycin increases levels of glipizide by plasma protein binding competition.
+Use Caution/Monitor. Risk of hypoglycemia.
+
+clotrimazole
+clotrimazole increases levels of glipizide by decreasing metabolism. Use
+Caution/Monitor.
+
+clozapine
+clozapine, glipizide. Other (see comment). Use Caution/Monitor. Comment: Atypical
+antipsychotics have been associated with hyperglycemia that may alter blood
+glucose control; monitor glucose levels closely.
+
+colesevelam
+colesevelam decreases levels of glipizide by drug binding in GI tract. Use
+Caution/Monitor. Concomitant administration decreases glipizide absorption;
+however, absorption is not reduced when glipizide is administered 4 hr before
+colesevelam.
+
+https://reference.medscape.com/drug/glucotrol-glipizide-342708 6/31
+
+
+
+6/22/26, 5:17 PM Glucotrol, Glucotrol XL (glipizide) dosing, indications, interactions, adverse effects, and more
+
+cyclosporine
+glipizide, cyclosporine. unknown mechanism. Use Caution/Monitor. Cyclosporine
+may decrease the effects of sulfonylureas. Sulfonylureas may increase the effects of
+cyclosporine.
+
+dapagliflozin
+glipizide, dapagliflozin. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Consider a lower dose of insulin or
+insulin secretagogue to avoid hypoglycemia when coadministered with
+dapagliflozin.
+
+darunavir
+darunavir, glipizide. Other (see comment). Use Caution/Monitor. Comment:
+Darunavir may increase or decrease levels of glipizide. Use alternatives if available.
+Reports of hyperglycemia due to insulin resistance with protease inhibitors. .
+
+diclofenac
+diclofenac increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+diflunisal
+diflunisal increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+disopyramide
+disopyramide increases effects of glipizide by unspecified interaction mechanism.
+Use Caution/Monitor. Risk of hypoglycemia.
+
+dulaglutide
+dulaglutide, glipizide. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Antidiabetic agents are often used in combination;
+dosage adjustments may be required when initiating or discontinuing antidiabetic
+agents.
+
+elvitegravir/cobicistat/emtricitabine/tenofovir DF
+elvitegravir/cobicistat/emtricitabine/tenofovir DF decreases levels of glipizide by
+affecting hepatic enzyme CYP2C9/10 metabolism. Use Caution/Monitor. Elvitegravir
+is a moderate CYP2C9 inducer.
+
+empagliflozin
+empagliflozin, glipizide. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Consider a lower dose of insulin or
+insulin secretagogue to avoid hypoglycemia when coadministered with SGLT2
+inhibitors.
+
+enalapril
+enalapril increases effects of glipizide by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+ertugliflozin
+ertugliflozin, glipizide. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Consider a lower dose of insulin or
+
+https://reference.medscape.com/drug/glucotrol-glipizide-342708 7/31
+
+
+
+6/22/26, 5:17 PM Glucotrol, Glucotrol XL (glipizide) dosing, indications, interactions, adverse effects, and more
+
+insulin secretagogue to avoid hypoglycemia when coadministered with ertugliflozin.
+
+esomeprazole
+esomeprazole will increase the level or effect of glipizide by increasing gastric pH.
+Applies only to oral form of both agents. Use Caution/Monitor.
+
+etodolac
+etodolac increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+exenatide injectable solution
+exenatide injectable solution, glipizide. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of hypoglycemia
+when exenatide is used in combination with agents that induce hypoglycemia.
+Consider lowering dose of sulfonylureas to reduce risk of hypoglycemia. .
+
+exenatide injectable suspension
+exenatide injectable suspension, glipizide. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of hypoglycemia
+when exenatide is used in combination with agents that induce hypoglycemia.
+Consider lowering dose of sulfonylureas to reduce risk of hypoglycemia.
+
+famotidine
+famotidine will increase the level or effect of glipizide by increasing gastric pH.
+Applies only to oral form of both agents. Use Caution/Monitor.
+
+fenofibrate
+fenofibrate increases effects of glipizide by plasma protein binding competition. Use
+Caution/Monitor. Hypoglycemia; increased risk in hypoalbuminemia.
+
+fenofibrate micronized
+fenofibrate micronized increases effects of glipizide by plasma protein binding
+competition. Use Caution/Monitor. Hypoglycemia; increased risk in
+hypoalbuminemia.
+
+fenofibric acid
+fenofibric acid increases effects of glipizide by plasma protein binding competition.
+Use Caution/Monitor. Hypoglycemia; increased risk in hypoalbuminemia.
+
+fenoprofen
+fenoprofen increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+fleroxacin
+fleroxacin increases effects of glipizide by pharmacodynamic synergism. Use
+Caution/Monitor. Quinolone antibiotic administration may result in hyper- or
+hypoglycemia. Gatifloxacin is most likely to produce dysglycemia; moxifloxacin is
+least likely.
+
+fluconazole
+fluconazole increases levels of glipizide by decreasing metabolism. Use
+Caution/Monitor.
+
+https://reference.medscape.com/drug/glucotrol-glipizide-342708 8/31
+
+
+
+6/22/26, 5:17 PM Glucotrol, Glucotrol XL (glipizide) dosing, indications, interactions, adverse effects, and more
+
+fluoxetine
+fluoxetine increases effects of glipizide by unspecified interaction mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+flurbiprofen
+flurbiprofen increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+fosamprenavir
+fosamprenavir, glipizide. Other (see comment). Use Caution/Monitor. Comment:
+Fosamprenavir may increase or decrease levels of glipizide. Use alternatives if
+available. Reports of hyperglycemia due to insulin resistance with protease
+inhibitors. .
+
+fosinopril
+fosinopril increases effects of glipizide by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+gemfibrozil
+gemfibrozil increases effects of glipizide by plasma protein binding competition. Use
+Caution/Monitor. Hypoglycemia; increased risk in hypoalbuminemia.
+
+gemifloxacin
+gemifloxacin increases effects of glipizide by pharmacodynamic synergism. Use
+Caution/Monitor. Quinolone antibiotic administration may result in hyper- or
+hypoglycemia. Gatifloxacin is most likely to produce dysglycemia; moxifloxacin is
+least likely.
+
+ibuprofen
+ibuprofen increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+ibuprofen IV
+ibuprofen IV increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+ibuprofen/famotidine
+ibuprofen/famotidine will increase the level or effect of glipizide by increasing
+gastric pH. Applies only to oral form of both agents. Use Caution/Monitor.
+
+imidapril
+imidapril increases effects of glipizide by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+indomethacin
+indomethacin increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+insulin aspart
+glipizide, insulin aspart. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Antidiabetic agents are often used in combination;
+
+https://reference.medscape.com/drug/glucotrol-glipizide-342708 9/31
+
+
+
+6/22/26, 5:17 PM Glucotrol, Glucotrol XL (glipizide) dosing, indications, interactions, adverse effects, and more
+
+dosage adjustments may be required when initiating or discontinuing antidiabetic
+agents.
+
+insulin aspart protamine/insulin aspart
+glipizide, insulin aspart protamine/insulin aspart. Either increases effects of the
+other by pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents
+are often used in combination; dosage adjustments may be required when initiating
+or discontinuing antidiabetic agents.
+
+insulin degludec
+glipizide, insulin degludec. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+insulin degludec/insulin aspart
+glipizide, insulin degludec/insulin aspart. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+insulin detemir
+glipizide, insulin detemir. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Antidiabetic agents are often used in combination;
+dosage adjustments may be required when initiating or discontinuing antidiabetic
+agents.
+
+insulin glargine
+glipizide, insulin glargine. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Antidiabetic agents are often used in combination;
+dosage adjustments may be required when initiating or discontinuing antidiabetic
+agents.
+
+insulin glulisine
+glipizide, insulin glulisine. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Antidiabetic agents are often used in combination;
+dosage adjustments may be required when initiating or discontinuing antidiabetic
+agents.
+
+insulin icodec
+glipizide, insulin icodec. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Consider dose adjustment when insulin
+is coadministered with glipizide; concomitant use may require increased glucose
+monitoring.
+
+insulin inhaled
+glipizide, insulin inhaled. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Antidiabetic agents are often used in combination;
+dosage adjustments may be required when initiating or discontinuing antidiabetic
+agents.
+
+insulin isophane human/insulin regular human
+
+https://reference.medscape.com/drug/glucotrol-glipizide-342708 10/31
+
+
+
+6/22/26, 5:17 PM Glucotrol, Glucotrol XL (glipizide) dosing, indications, interactions, adverse effects, and more
+
+glipizide, insulin isophane human/insulin regular human. Either increases effects of
+the other by pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic
+agents are often used in combination; dosage adjustments may be required when
+initiating or discontinuing antidiabetic agents.
+
+insulin lispro
+glipizide, insulin lispro. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Antidiabetic agents are often used in combination;
+dosage adjustments may be required when initiating or discontinuing antidiabetic
+agents.
+
+insulin lispro protamine/insulin lispro
+glipizide, insulin lispro protamine/insulin lispro. Either increases effects of the other
+by pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+insulin NPH
+glipizide, insulin NPH. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Antidiabetic agents are often used in combination;
+dosage adjustments may be required when initiating or discontinuing antidiabetic
+agents.
+
+insulin regular human
+glipizide, insulin regular human. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+isocarboxazid
+isocarboxazid increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor.
+
+ketoconazole
+ketoconazole increases levels of glipizide by decreasing metabolism. Use
+Caution/Monitor.
+
+ketoprofen
+ketoprofen increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+ketorolac
+ketorolac increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+ketorolac intranasal
+ketorolac intranasal increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+ketotifen, ophthalmic
+ketotifen, ophthalmic, glipizide. Other (see comment). Use Caution/Monitor.
+Comment: Combination may result in thrombocytopenia (rare). Monitor CBC.
+
+https://reference.medscape.com/drug/glucotrol-glipizide-342708 11/31
+
+
+
+6/22/26, 5:17 PM Glucotrol, Glucotrol XL (glipizide) dosing, indications, interactions, adverse effects, and more
+
+levofloxacin
+levofloxacin increases effects of glipizide by pharmacodynamic synergism. Use
+Caution/Monitor. Quinolone antibiotic administration may result in hyper- or
+hypoglycemia. Gatifloxacin is most likely to produce dysglycemia; moxifloxacin is
+least likely.
+
+levoketoconazole
+levoketoconazole increases levels of glipizide by decreasing metabolism. Use
+Caution/Monitor.
+
+linagliptin
+glipizide, linagliptin. Other (see comment). Use Caution/Monitor. Comment: When
+linagliptin is used in combination with sulfonylureas, a lower dose of the
+sulfonylurea may be required to reduce risk of hypoglycemia.
+
+linezolid
+linezolid increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor.
+
+liraglutide
+liraglutide, glipizide. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Serious hypoglycemia may occur when insulin
+secretagogues and GLP-1 agonists are concurrently administered. Consider
+lowering the dose of insulin secretagogue to reduce the risk of hypoglycemia. .
+
+lisinopril
+lisinopril increases effects of glipizide by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+lixisenatide (DSC)
+lixisenatide (DSC), glipizide. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Risk of
+hypoglycemia increased when coadministered with sulfonylureas. Sulfonylurea
+dosage reduction may be required.
+
+lonapegsomatropin
+lonapegsomatropin decreases effects of glipizide by Other (see comment). Use
+Caution/Monitor. Comment: Closely monitor blood glucose when treated with
+antidiabetic agents. Lonapegsomatropin may decrease insulin sensitivity,
+particularly at higher doses. Patients with diabetes mellitus may require adjustment
+of their doses of insulin and/or other antihyperglycemic agents.
+
+lonapegsomatropin decreases effects of glipizide by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely. Growth hormone (GH) analogs may decrease
+insulin sensitivity, particularly at higher doses. Antidiabetic agents may require dose
+adjustment after initiating growth hormone.
+
+lopinavir
+lopinavir, glipizide. Other (see comment). Use Caution/Monitor. Comment: Lopinavir
+may increase or decrease levels of glipizide. Reports of hyperglycemia due to
+insulin resistance with protease inhibitors. .
+
+lornoxicam
+
+https://reference.medscape.com/drug/glucotrol-glipizide-342708 12/31
+
+
+
+6/22/26, 5:17 PM Glucotrol, Glucotrol XL (glipizide) dosing, indications, interactions, adverse effects, and more
+
+lornoxicam increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+lurasidone
+lurasidone, glipizide. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+marijuana
+marijuana decreases effects of glipizide by pharmacodynamic antagonism. Use
+Caution/Monitor.
+
+mecasermin
+mecasermin increases effects of glipizide by pharmacodynamic synergism. Use
+Caution/Monitor. Additive hypoglycemic effects.
+
+meclofenamate
+meclofenamate increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+mefenamic acid
+mefenamic acid increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+meloxicam
+meloxicam increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+metformin
+glipizide, metformin. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Antidiabetic agents are often used in
+combination; dosage adjustments may be required when initiating or discontinuing
+antidiabetic agents.
+
+metreleptin
+glipizide, metreleptin. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Coadministration of metreleptin with insulin and/or
+insulin secretagogues (eg, sulfonylureas, meglitinide derivatives) may increase risk
+for hypoglycemia; may require lower dose of insulin or insulin secretagogue.
+
+miconazole vaginal
+miconazole vaginal increases levels of glipizide by decreasing metabolism. Use
+Caution/Monitor.
+
+mipomersen
+mipomersen, glipizide. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: Both drugs have potential to increase
+hepatic enzymes; monitor LFTs.
+
+mitapivat
+mitapivat decreases levels of glipizide by affecting hepatic enzyme CYP2C19
+metabolism. Use Caution/Monitor. Monitor patients for loss of therapeutic effect if
+taking sensitive CYP2C9/10 substrates.
+
+https://reference.medscape.com/drug/glucotrol-glipizide-342708 13/31
+
+
+
+6/22/26, 5:17 PM Glucotrol, Glucotrol XL (glipizide) dosing, indications, interactions, adverse effects, and more
+
+mitapivat decreases levels of glipizide by increasing metabolism. Use
+Caution/Monitor. Mitapivat induces UGT1A1 in vitro and may decrease systemic
+concentrations of UGT1A1 substrates.
+
+moexipril
+moexipril increases effects of glipizide by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+moxifloxacin
+moxifloxacin increases effects of glipizide by pharmacodynamic synergism. Use
+Caution/Monitor. Quinolone antibiotic administration may result in hyper- or
+hypoglycemia. Gatifloxacin is most likely to produce dysglycemia; moxifloxacin is
+least likely.
+
+nabumetone
+nabumetone increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+nadolol
+nadolol decreases effects of glipizide by pharmacodynamic antagonism. Use
+Caution/Monitor. Non selective beta blockers may also mask the symptoms of
+hypoglycemia.
+
+naproxen
+naproxen increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+nelfinavir
+nelfinavir decreases effects of glipizide by Other (see comment). Use
+Caution/Monitor. Comment: Reports of hyperglycemia due to insulin resistance with
+protease inhibitors. .
+
+nitazoxanide
+nitazoxanide, glipizide. Either increases levels of the other by Mechanism: plasma
+protein binding competition. Use Caution/Monitor.
+
+nitisinone
+nitisinone will increase the level or effect of glipizide by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor. Nitisinone inhibits CYP2C9. Caution
+if CYP2C9 substrate coadministered, particularly those with a narrow therapeutic
+index.
+
+ofloxacin
+ofloxacin increases effects of glipizide by pharmacodynamic synergism. Use
+Caution/Monitor. Quinolone antibiotic administration may result in hyper- or
+hypoglycemia. Gatifloxacin is most likely to produce dysglycemia; moxifloxacin is
+least likely.
+
+olanzapine
+olanzapine, glipizide. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+
+https://reference.medscape.com/drug/glucotrol-glipizide-342708 14/31
+
+
+
+6/22/26, 5:17 PM Glucotrol, Glucotrol XL (glipizide) dosing, indications, interactions, adverse effects, and more
+
+blood glucose control; monitor glucose levels closely.
+
+opuntia ficus indica
+opuntia ficus indica increases effects of glipizide by pharmacodynamic synergism.
+Use Caution/Monitor.
+
+orforglipron
+orforglipron, glipizide. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of insulin
+secretagogues with GLP-1 agonists may increase hypoglycemia risk. Lowering the
+insulin secretagogue dose may reduce hypoglycemia risk.
+
+ospemifene
+glipizide, ospemifene. Either increases levels of the other by plasma protein binding
+competition. Modify Therapy/Monitor Closely.
+
+oxaprozin
+oxaprozin increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+paliperidone
+paliperidone, glipizide. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+parecoxib
+parecoxib increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+peginterferon alfa 2b
+peginterferon alfa 2b decreases levels of glipizide by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor. When patients are administered
+peginterferon alpha-2b with CYP2C9 substrates, the therapeutic effect of these
+drugs may be altered. .
+
+perindopril
+perindopril increases effects of glipizide by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+phenelzine
+phenelzine increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor.
+
+pindolol
+pindolol decreases effects of glipizide by pharmacodynamic antagonism. Use
+Caution/Monitor. Non selective beta blockers may also mask the symptoms of
+hypoglycemia.
+
+piroxicam
+piroxicam increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+posaconazole
+
+https://reference.medscape.com/drug/glucotrol-glipizide-342708 15/31
+
+
+
+6/22/26, 5:17 PM Glucotrol, Glucotrol XL (glipizide) dosing, indications, interactions, adverse effects, and more
+
+posaconazole increases levels of glipizide by decreasing metabolism. Use
+Caution/Monitor.
+
+probenecid
+probenecid increases levels of glipizide by unspecified interaction mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+propranolol
+propranolol decreases effects of glipizide by pharmacodynamic antagonism. Use
+Caution/Monitor. Non selective beta blockers may also mask the symptoms of
+hypoglycemia.
+
+quetiapine
+quetiapine, glipizide. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+quinapril
+quinapril increases effects of glipizide by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+ramipril
+ramipril increases effects of glipizide by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+rasagiline
+rasagiline increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor.
+
+rifabutin
+rifabutin decreases levels of glipizide by increasing metabolism. Use
+Caution/Monitor.
+
+rifampin
+rifampin decreases levels of glipizide by increasing metabolism. Use
+Caution/Monitor.
+
+rifapentine
+rifapentine decreases levels of glipizide by increasing metabolism. Use
+Caution/Monitor.
+
+risperidone
+risperidone, glipizide. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+ritonavir
+ritonavir, glipizide. Other (see comment). Use Caution/Monitor. Comment: Ritonavir
+may increase or decrease levels of glipizide. Reports of hyperglycemia due to
+insulin resistance with protease inhibitors. .
+
+rucaparib
+
+https://reference.medscape.com/drug/glucotrol-glipizide-342708 16/31
+
+
+
+6/22/26, 5:17 PM Glucotrol, Glucotrol XL (glipizide) dosing, indications, interactions, adverse effects, and more
+
+rucaparib will increase the level or effect of glipizide by affecting hepatic enzyme
+CYP2C9/10 metabolism. Modify Therapy/Monitor Closely. Adjust dosage of
+CYP2C9 substrates, if clinically indicated.
+
+salicylates (non-asa)
+salicylates (non-asa) increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+salsalate
+salsalate increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+selegiline
+selegiline increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor. Serum glucose should be monitored closely when MAOIs are
+added to any regimen containing antidiabetic medications. Hypoglycemic effects
+may be increased.
+
+selegiline transdermal
+selegiline transdermal increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor.
+
+semaglutide
+semaglutide, glipizide. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of insulin
+secretagogues with GLP-1 agonists may increase hypoglycemia risk. Lowering the
+insulin secretagogue dose may reduce hypoglycemia risk. .
+
+shark cartilage
+shark cartilage increases effects of glipizide by pharmacodynamic synergism. Use
+Caution/Monitor. Theoretical interaction.
+
+sodium bicarbonate
+sodium bicarbonate will increase the level or effect of glipizide by increasing gastric
+pH. Applies only to oral form of both agents. Use Caution/Monitor.
+
+sodium citrate/citric acid
+sodium citrate/citric acid will increase the level or effect of glipizide by increasing
+gastric pH. Applies only to oral form of both agents. Use Caution/Monitor.
+
+somapacitan
+somapacitan decreases effects of glipizide by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely. Growth hormone (GH) analogs may decrease
+insulin sensitivity, particularly at higher doses. Antidiabetic agents may require dose
+adjustment after initiating growth hormone.
+
+somatrogon
+somatrogon decreases effects of glipizide by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. Growth hormone (GH) analogs may decrease insulin
+sensitivity, particularly at higher doses. Antidiabetic agents may require dose
+adjustment after initiating growth hormone.
+
+somatropin
+
+https://reference.medscape.com/drug/glucotrol-glipizide-342708 17/31
+
+
+
+6/22/26, 5:17 PM Glucotrol, Glucotrol XL (glipizide) dosing, indications, interactions, adverse effects, and more
+
+somatropin decreases effects of glipizide by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. Growth hormone (GH) analogs may decrease insulin
+sensitivity, particularly at higher doses. Antidiabetic agents may require dose
+adjustment after initiating growth hormone.
+
+sotagliflozin
+sotagliflozin increases effects of glipizide by pharmacodynamic synergism. Modify
+Therapy/Monitor Closely. Hypoglycemia risk increased. Lower dose of sulfonylurea
+may be required.
+
+sparsentan
+sparsentan will decrease the level or effect of glipizide by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor. Sparsentan (a CYP2C9 inducer)
+decreases exposure of CYP2C9 substrates and reduces efficacy related to these
+substrates.
+
+sulfadiazine
+sulfadiazine increases levels of glipizide by plasma protein binding competition. Use
+Caution/Monitor.
+
+sulfamethoxazole
+sulfamethoxazole increases levels of glipizide by plasma protein binding
+competition. Use Caution/Monitor.
+
+sulfamethoxypyridazine
+sulfamethoxypyridazine increases effects of glipizide by unspecified interaction
+mechanism. Use Caution/Monitor. Risk of hypoglycemia.
+
+sulfasalazine
+sulfasalazine increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+sulfisoxazole
+sulfisoxazole increases levels of glipizide by plasma protein binding competition.
+Use Caution/Monitor.
+
+sulindac
+sulindac increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+sulopenem etzadroxil/probenecid
+sulopenem etzadroxil/probenecid increases levels of glipizide by decreasing
+metabolism. Modify Therapy/Monitor Closely. Probenecid is an OAT1/3 inhibitor and
+may increase plasma concentrations of drugs that are substrates of OAT1/3. May
+increase risk of adverse reactions. Refer to substrate-specific prescribing
+information for dosage adjustment instructions. Monitor more frequently for
+hypoglycemia.
+
+timolol
+timolol decreases effects of glipizide by pharmacodynamic antagonism. Use
+Caution/Monitor. Non selective beta blockers may also mask the symptoms of
+hypoglycemia.
+
+https://reference.medscape.com/drug/glucotrol-glipizide-342708 18/31
+
+
+
+6/22/26, 5:17 PM Glucotrol, Glucotrol XL (glipizide) dosing, indications, interactions, adverse effects, and more
+
+tipranavir
+tipranavir decreases effects of glipizide by Other (see comment). Use
+Caution/Monitor. Comment: Reports of hyperglycemia due to insulin resistance with
+protease inhibitors. .
+
+tirzepatide
+tirzepatide, glipizide. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of insulin
+secretagogues with GLP-1 agonists may increase hypoglycemia risk. Lowering the
+insulin secretagogue dose may reduce hypoglycemia risk.
+
+tolfenamic acid
+tolfenamic acid increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+tolmetin
+tolmetin increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+trandolapril
+trandolapril increases effects of glipizide by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+tranylcypromine
+tranylcypromine increases effects of glipizide by unknown mechanism. Use
+Caution/Monitor.
+
+triamcinolone acetonide injectable suspension
+triamcinolone acetonide injectable suspension decreases effects of glipizide by
+pharmacodynamic antagonism. Use Caution/Monitor. Corticosteroids may diminish
+hypoglycemic effect of antidiabetic agents. Monitor blood glucose levels carefully.
+
+trimagnesium citrate anhydrous
+trimagnesium citrate anhydrous increases levels of glipizide by enhancing GI
+absorption. Applies only to oral form of both agents. Use Caution/Monitor.
+
+vanzacaftor/tezacaftor/deutivacaftor
+vanzacaftor/tezacaftor/deutivacaftor increases levels of glipizide by affecting hepatic
+enzyme CYP2C9/10 metabolism. Use Caution/Monitor. Deutivacaftor inhibits
+CYP2C9 in vitro. Caution advised if coadministered with CYP2C9 substrates.
+
+voriconazole
+voriconazole increases levels of glipizide by decreasing metabolism. Use
+Caution/Monitor.
+
+warfarin
+glipizide, warfarin. Either increases effects of the other by receptor binding
+competition. Use Caution/Monitor. Monitor for decreased vitamin K antagonist
+effects (eg, decreased INR, thrombosis) when combined with metformin.
+Additionally, consider increased monitoring for hypoglycemia with this combination.
+Competitive inhibition of CYP2C9-mediated metabolism may also contribute to
+mechanism.
+
+https://reference.medscape.com/drug/glucotrol-glipizide-342708 19/31
+
+
+
+6/22/26, 5:17 PM Glucotrol, Glucotrol XL (glipizide) dosing, indications, interactions, adverse effects, and more
+
+xipamide
+xipamide decreases levels of glipizide by increasing renal clearance. Use
+Caution/Monitor.
+
+ziprasidone
+ziprasidone, glipizide. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+Minor (83)
+
+agrimony
+agrimony increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+American ginseng
+American ginseng increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+amitriptyline
+amitriptyline increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+amoxapine
+amoxapine increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+anamu
+anamu increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown. Theoretical interaction.
+
+aspirin
+aspirin increases effects of glipizide by plasma protein binding competition.
+Minor/Significance Unknown. Large dose of salicylate.
+
+aspirin rectal
+aspirin rectal increases effects of glipizide by plasma protein binding competition.
+Minor/Significance Unknown. Large dose of salicylate.
+
+aspirin/citric acid/sodium bicarbonate
+aspirin/citric acid/sodium bicarbonate increases effects of glipizide by plasma
+protein binding competition. Minor/Significance Unknown. Large dose of salicylate.
+
+balsalazide
+balsalazide increases effects of glipizide by plasma protein binding competition.
+Minor/Significance Unknown. Large dose of salicylate.
+
+budesonide
+budesonide decreases effects of glipizide by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+chloramphenicol
+
+https://reference.medscape.com/drug/glucotrol-glipizide-342708 20/31
+
+
+
+6/22/26, 5:17 PM Glucotrol, Glucotrol XL (glipizide) dosing, indications, interactions, adverse effects, and more
+
+chloramphenicol increases levels of glipizide by decreasing metabolism.
+Minor/Significance Unknown.
+
+chlorothiazide
+chlorothiazide decreases effects of glipizide by pharmacodynamic antagonism.
+Minor/Significance Unknown. Thiazide dosage >50 mg/day may increase blood
+glucose.
+
+chlorthalidone
+chlorthalidone decreases effects of glipizide by pharmacodynamic antagonism.
+Minor/Significance Unknown. Thiazide dosage >50 mg/day may increase blood
+glucose.
+
+choline magnesium trisalicylate
+choline magnesium trisalicylate increases effects of glipizide by plasma protein
+binding competition. Minor/Significance Unknown. Large dose of salicylate.
+
+chromium
+chromium increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+clomipramine
+clomipramine increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+clonidine
+clonidine decreases effects of glipizide by pharmacodynamic antagonism.
+Minor/Significance Unknown. Diminished symptoms of hypoglycemia.
+
+clonidine, glipizide. Other (see comment). Minor/Significance Unknown. Comment:
+Decreased symptoms of hypoglycemia. Mechanism: decreased hypoglycemia
+induced catecholamine production.
+
+cornsilk
+cornsilk increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown. Increased risk of hypoglycemia (theoretical
+interaction).
+
+cortisone
+cortisone decreases effects of glipizide by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+cyclopenthiazide
+cyclopenthiazide decreases effects of glipizide by pharmacodynamic antagonism.
+Minor/Significance Unknown. Thiazide dosage >50 mg/day may increase blood
+glucose.
+
+damiana
+damiana decreases effects of glipizide by pharmacodynamic antagonism.
+Minor/Significance Unknown. Theoretical interaction.
+
+danazol
+
+https://reference.medscape.com/drug/glucotrol-glipizide-342708 21/31
+
+
+
+6/22/26, 5:17 PM Glucotrol, Glucotrol XL (glipizide) dosing, indications, interactions, adverse effects, and more
+
+danazol increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+deflazacort
+deflazacort decreases effects of glipizide by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+desipramine
+desipramine increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+devil's claw
+devil's claw increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+dexamethasone
+dexamethasone decreases effects of glipizide by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+diflunisal
+diflunisal increases effects of glipizide by plasma protein binding competition.
+Minor/Significance Unknown. Large dose of salicylate.
+
+doxepin
+doxepin increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+elderberry
+elderberry increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown. Increased risk of hypoglycemia (in vitro research).
+
+eucalyptus
+eucalyptus increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown. Theoretical interaction.
+
+fludrocortisone
+fludrocortisone decreases effects of glipizide by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+fluoxymesterone
+fluoxymesterone increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+fo-ti
+fo-ti increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+forskolin
+forskolin increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown. Colenol, a compound found in Coleus root, may
+stimulate insulin release.
+
+gotu kola
+
+https://reference.medscape.com/drug/glucotrol-glipizide-342708 22/31
+
+
+
+6/22/26, 5:17 PM Glucotrol, Glucotrol XL (glipizide) dosing, indications, interactions, adverse effects, and more
+
+gotu kola increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown. (Theoretical interaction).
+
+guanfacine
+guanfacine decreases effects of glipizide by pharmacodynamic antagonism.
+Minor/Significance Unknown. Diminished symptoms of hypoglycemia.
+
+guanfacine, glipizide. Other (see comment). Minor/Significance Unknown. Comment:
+Decreased symptoms of hypoglycemia. Mechanism: decreased hypoglycemia
+induced catecholamine production.
+
+gymnema
+gymnema increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+horse chestnut seed
+horse chestnut seed increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+hydrochlorothiazide
+hydrochlorothiazide decreases effects of glipizide by pharmacodynamic antagonism.
+Minor/Significance Unknown. Thiazide dosage >50 mg/day may increase blood
+glucose.
+
+hydrocortisone
+hydrocortisone decreases effects of glipizide by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+imipramine
+imipramine increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+indapamide
+indapamide decreases effects of glipizide by pharmacodynamic antagonism.
+Minor/Significance Unknown. Thiazide dosage >50 mg/day may increase blood
+glucose.
+
+isoniazid
+isoniazid decreases effects of glipizide by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+juniper
+juniper increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown. Increased risk of hypoglycemia (theoretical
+interaction).
+
+lofepramine
+lofepramine increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+lycopus
+lycopus increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown. Increased risk of hypoglycemia (theoretical
+
+https://reference.medscape.com/drug/glucotrol-glipizide-342708 23/31
+
+
+
+6/22/26, 5:17 PM Glucotrol, Glucotrol XL (glipizide) dosing, indications, interactions, adverse effects, and more
+
+interaction).
+
+maitake
+maitake increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown. Increased risk of hypoglycemia (animal research).
+
+mesalamine
+mesalamine increases effects of glipizide by plasma protein binding competition.
+Minor/Significance Unknown. Large dose of salicylate.
+
+mesterolone
+mesterolone increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+methyclothiazide
+methyclothiazide decreases effects of glipizide by pharmacodynamic antagonism.
+Minor/Significance Unknown. Thiazide dosage >50 mg/day may increase blood
+glucose.
+
+methylprednisolone
+methylprednisolone decreases effects of glipizide by pharmacodynamic
+antagonism. Minor/Significance Unknown.
+
+methyltestosterone
+methyltestosterone increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+metolazone
+metolazone decreases effects of glipizide by pharmacodynamic antagonism.
+Minor/Significance Unknown. Thiazide dosage >50 mg/day may increase blood
+glucose.
+
+nettle
+nettle increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown. (Theoretical interaction).
+
+nizatidine
+nizatidine will increase the level or effect of glipizide by increasing gastric pH.
+Applies only to oral form of both agents. Minor/Significance Unknown.
+
+nortriptyline
+nortriptyline increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+ofloxacin
+ofloxacin, glipizide. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Potential dysglycemia.
+
+omeprazole
+omeprazole will increase the level or effect of glipizide by affecting hepatic enzyme
+CYP2C19 metabolism. Minor/Significance Unknown.
+
+orlistat
+
+https://reference.medscape.com/drug/glucotrol-glipizide-342708 24/31
+
+
+
+6/22/26, 5:17 PM Glucotrol, Glucotrol XL (glipizide) dosing, indications, interactions, adverse effects, and more
+
+orlistat increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+oxandrolone
+oxandrolone increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+oxymetholone
+oxymetholone increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+pegvisomant
+pegvisomant increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+potassium acid phosphate
+potassium acid phosphate increases effects of glipizide by pharmacodynamic
+synergism. Minor/Significance Unknown. Interaction especially seen in the
+treatment of hypokalemia.
+
+potassium chloride
+potassium chloride increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown. Interaction especially seen in the treatment of
+hypokalemia.
+
+potassium citrate
+potassium citrate increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown. Interaction especially seen in the treatment of
+hypokalemia.
+
+prednisolone
+prednisolone decreases effects of glipizide by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+prednisone
+prednisone decreases effects of glipizide by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+protriptyline
+protriptyline increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+sage
+sage increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+salicylates (non-asa)
+salicylates (non-asa) increases effects of glipizide by plasma protein binding
+competition. Minor/Significance Unknown. Large dose of salicylate.
+
+salsalate
+salsalate increases effects of glipizide by plasma protein binding competition.
+
+https://reference.medscape.com/drug/glucotrol-glipizide-342708 25/31
+
+
+
+6/22/26, 5:17 PM Glucotrol, Glucotrol XL (glipizide) dosing, indications, interactions, adverse effects, and more
+
+Minor/Significance Unknown. Large dose of salicylate.
+
+sitagliptin
+sitagliptin, glipizide. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Risk of hypoglycemia with combination is
+unknown.
+
+stevia
+stevia increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+sulfasalazine
+sulfasalazine increases effects of glipizide by plasma protein binding competition.
+Minor/Significance Unknown. Large dose of salicylate.
+
+tacrolimus
+glipizide increases levels of tacrolimus by unknown mechanism. Minor/Significance
+Unknown.
+
+testosterone
+testosterone increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+testosterone buccal system
+testosterone buccal system increases effects of glipizide by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+testosterone topical
+testosterone topical increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+tongkat ali
+tongkat ali increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown. Risk of hypoglycemia.
+
+trazodone
+trazodone increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+trimipramine
+trimipramine increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+vanadium
+vanadium increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+willow bark
+willow bark increases effects of glipizide by plasma protein binding competition.
+Minor/Significance Unknown. Large dose of salicylate.
+
+https://reference.medscape.com/drug/glucotrol-glipizide-342708 26/31
+
+
+
+6/22/26, 5:17 PM Glucotrol, Glucotrol XL (glipizide) dosing, indications, interactions, adverse effects, and more
+
+Adverse Effects
+
+Frequency Not Defined
+
+Dermatologic reactions
+
+Abdominal pain
+
+Diarrhea
+
+Syncope
+
+Constipation
+
+Flatulence
+
+Dizziness
+
+Nervousness
+
+Headache
+
+Anxiety
+
+Depression
+
+Drowsiness
+
+Erythema
+
+Heartburn
+
+Maculopapular eruptions
+
+Hypoglycemia
+
+Morbilliform eruptions
+
+Nausea/vomiting
+
+Urticaria
+
+Cholestatic jaundice and hepatitis occur rarely but may progress to liver failure
+
+Warnings
+
+Contraindications
+
+Hypersensitivity; sulfa allergy
+
+Type 1 diabetes
+
+Diabetic ketoacidosis with or without coma
+
+Cautions
+
+https://reference.medscape.com/drug/glucotrol-glipizide-342708 27/31
+
+
+
+6/22/26, 5:17 PM Glucotrol, Glucotrol XL (glipizide) dosing, indications, interactions, adverse effects, and more
+
+Patients with risk of severe hypoglycemia include the elderly, debilitated, or
+malnourished; adrenal or pituitary insufficiency; stress due to infection, fever, trauma, or
+surgery; concomitant use with beta-blockers or other sympatholytic agents may impair
+the patient's ability to recognize the signs and symptoms of hypoglycemia; use with
+caution
+
+If patient is exposed to stress (fever, trauma, infection, surgery), it may be necessary to
+discontinue glipizide and initiate insulin
+
+Use caution in hepatic/renal impairment
+
+Use with caution in pregnancy and lactation
+
+Increased risk of cardiovascular mortality suggested by product labeling but data is
+limited
+
+FDA-approved product labeling for many medications have included a broad
+contraindication in patients with a prior allregic reaction to sulfonamides; however,
+recent studies have suggested that crossreactivity between antibiotic sulfonamides and
+nonantibiotic sulfonamides is unlikely to occur; increase in cardiovascular mortality
+suggested by product labeling but data is limited
+
+Hypoglycemia is more likely to occur when caloric intake is deficient, after severe or
+prolonged exercise, when alcohol is ingested, or when more than one glucose-lowering
+drug is used
+
+Hypoglycemia may be difficult to recognize in patients with autonomic neuropathy
+
+Hemolytic anemia may occur with glucose 6-phosphate dehydrogenase (G6PD)
+deficiency when treated with sulfonylurea agents; consider a nonsulfonylurea alternative
+
+Avoid using the extended-release tablets in patients with severe gastrointestinal
+narrowing of esophageal dysmotility
+
+Clinical studies have not found conclusive evidence that anti-diabetic drugs reduce
+macrovascular risk
+
+Loss of efficacy following prolonged use possible; if no contributing factors, to explain
+loss of efficacy identified, consider discontinuing therapy; additional antidiabetic therapy
+will be required
+
+Drug interactions overview
+
+The hypoglycemic action of sulfonylureas may be potentiated by certain drugs
+including nonsteroidal anti-inflammatory agents, some azoles, and other drugs that
+are highly protein bound, salicylates, sulfonamides, chloramphenicol, probenecid,
+coumarins, monoamine oxidase inhibitors, quinolones and beta adrenergic blocking
+agents; conversely, certain drugs tend to produce hyperglycemia and may lead to
+loss of control, including thiazides and other diuretics, corticosteroids,
+phenothiazines, thyroid products, estrogens, oral contraceptives, phenytoin,
+nicotinic acid, sympathomimetics, calcium channel blocking drugs, and isoniazid;
+when coadministering glipizide with such drugs, patient should be observed closely
+for hypoglycemia or hyperglycemia; when such drugs are withdrawn, observe
+patient closely for loss of control
+
+https://reference.medscape.com/drug/glucotrol-glipizide-342708 28/31
+
+
+
+6/22/26, 5:17 PM Glucotrol, Glucotrol XL (glipizide) dosing, indications, interactions, adverse effects, and more
+
+Pregnancy & Lactation
+
+Pregnancy
+
+Available data from a small number of published studies and postmarketing experience
+with in pregnancy over decades have not identified any drug associated risks for major
+birth defects, miscarriage, or adverse maternal outcomes
+
+However, sulfonylureas (including glipizide) cross the placenta and have been associated
+with neonatal adverse reactions such as hypoglycemia; therefore, therapy should be
+discontinued at least two weeks before expected delivery; poorly-controlled diabetes in
+pregnancy increases maternal risk for diabetic ketoacidosis, pre-eclampsia, miscarriage,
+preterm delivery, stillbirth, and delivery complications; poorly controlled diabetes
+increases fetal risk for major birth defects, stillbirth, and macrosomia related morbidity
+
+Neonates of women with gestational diabetes who are treated with sulfonylureas during
+pregnancy may be at increased risk for neonatal intensive care admission and may
+develop respiratory distress, hypoglycemia, birth injury, and be large for gestational age;
+prolonged severe hypoglycemia, lasting 4-10 days, has been reported in neonates born
+to mothers receiving a sulfonylurea at the time of delivery and has been reported with
+the use of agents with a prolonged half-life; observe newborns for symptoms of
+hypoglycemia and respiratory distress and manage accordingly
+
+Due to reports of prolonged severe hypoglycemia in neonates born to mothers receiving
+a sulfonylurea at time of delivery, therapy should be discontinued at least two weeks
+before expected delivery
+
+Animal data
+
+No effects on embryofetal development reported in animal studies following
+administration of drug to pregnant rats and rabbits during organogenesis at doses
+833 times and 8 times the human dose based on body surface area, respectively;
+however, increased pup mortality was observed in rats administered glipizide from
+gestation day 15 throughout lactation at doses 2 times the maximum human dose
+based on body surface area
+
+Lactation
+
+Breastfed infants of lactating women on therapy should be monitored for symptoms of
+hypoglycemia; although glipizide was undetectable in human milk in one small clinical
+lactation study; this result is not conclusive because of limitations of assay used in the
+study; there are no data on effects of glipizide on milk production; the developmental
+and health benefits of breastfeeding should be considered along with the mother’s
+clinical need for therapy and any potential adverse effects on the breastfed child from
+therapy or from the underlying maternal condition
+
+Monitor breastfed infants for signs of hypoglycemia (e.g., jitters, cyanosis, apnea,
+hypothermia, excessive sleepiness, poor feeding, seizures)
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+https://reference.medscape.com/drug/glucotrol-glipizide-342708 29/31
+
+
+
+6/22/26, 5:17 PM Glucotrol, Glucotrol XL (glipizide) dosing, indications, interactions, adverse effects, and more
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+Initial effect to increase insulin secretion from pancreatic beta cells; may also decrease
+rate of hepatic glucose production and increase insulin receptor sensitivity
+
+Absorption
+
+Bioavailability: 100% (Glucotrol)
+
+Onset: Initial effect (30 min); max effect: (2-3 hr) (Glucotrol)
+
+Duration: 12-24 hr (Glucotrol)
+
+Peak plasma time: 1-3 hr (IR); 6-12 hr (ER)
+
+Distribution
+
+Protein bound: 99% (Glucotrol)
+
+Vd: 10-11 L (Glucotrol)
+
+Metabolism
+
+Extensively metabolized in liver to inactive metabolites
+
+Metabolites: Hydroxycyclohexyl derivatives (inactive)
+
+Elimination
+
+Half-life: 2-5 hr (Glucotrol)
+
+Excretion: Urine (63-90%); feces: (10%)
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+https://reference.medscape.com/drug/glucotrol-glipizide-342708 30/31
+
+
+
+6/22/26, 5:17 PM Glucotrol, Glucotrol XL (glipizide) dosing, indications, interactions, adverse effects, and more
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/glucotrol-glipizide-342708 31/31

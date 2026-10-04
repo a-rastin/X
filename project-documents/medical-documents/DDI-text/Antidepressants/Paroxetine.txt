@@ -1,0 +1,2975 @@
+﻿6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+paroxetine (Rx)
+Brand and Other Names: Paxil, Brisdelle, Paxil CR, Pexeva
+Classes: Antidepressants, SSRIs
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+tablet
+
+10mg
+
+20mg
+
+30mg
+
+40mg
+
+capsule
+
+7.5mg
+
+tablet, extended-release
+
+12.5mg
+
+25mg
+
+37.5mg
+
+oral suspension
+
+10mg/5mL
+
+Depression
+
+Conventional: 20 mg PO qDay initially; may increase by 10 mg/day qWeek not to exceed
+50 mg/day
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 1/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+Paxil CR: 25 mg PO qDay initially; may increase by 12.5 mg/day qWeek not to exceed
+62.5 mg/day
+
+Obsessive-Compulsive Disorder
+
+20 mg PO qDay initially; may increase by 10 mg qWeek, not to exceed 60 mg/day
+
+Panic Disorder
+
+10 mg PO qDay initially; may increase by 10 mg qWeek (target dose 40 mg/day), not to
+exceed 60 mg/day, OR
+
+Paxil CR: 12.5 mg PO qDay initial, increase by 12.5 mg qWeek not to exceed 75 mg/day
+
+Social Phobia
+
+20 mg PO qDay OR
+
+Paxil CR: 12.5 mg PO qDay initially; may increase by 12.5 mg qWeek, not to exceed 37.5
+mg/day
+
+Generalized Anxiety Disorder
+
+20 mg PO qDay initially, may increase by 10 mg qWeek, up to 50 mg/day doses have
+been used but no increase in benefit seen at doses >20 mg/day
+
+Posttraumatic Stress Disorder
+
+20 mg PO qDay initially; may increase by 10 mg qWeek, up to 50 mg/day doses have
+been used but no increase in benefit seen at doses >20 mg/day
+
+Premenstrual Dysphoric Disorder
+
+Paxil CR: 12.5 mg PO qDay initially; may increase at 1 week intervals not to exceed 25
+mg/day
+
+Menopausal Vasomotor Symptoms
+
+Brisdelle: Indicated to treat moderate-to-severe vasomotor symptoms associated with
+menopause
+
+Brisdelle: 7.5 mg PO qHS
+
+Paxil CR (Off-label): 12.5-25 mg PO qDay
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 2/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+Dosing Modifications
+
+Severe renal impairment (CrCl <30 mL/min)
+
+Conventional: 10 mg PO qDay initially; may titrate; not to exceed 40 mg/day
+
+Paxil CR: 12.5 mg PO qDay initially; may titrate; not to exceed 50 mg/day
+
+Stuttering (Off-label)
+
+20 mg PO qDay
+
+Vasovagal Syncope (Off-label)
+
+20 mg/day PO
+
+Diabetic Neuropathy (Off-label)
+
+10 mg/day PO initially; may increase to 20-60 mg/day
+
+Limitation of use
+
+The low dose in capsules is not indicated for the treatment of any psychiatric condition;
+this drug has a lower recommended paroxetine dosage than that used to treat major
+depressive disorder, obsessive compulsive disorder, panic disorder, generalized anxiety
+disorder, social anxiety disorder, and post-traumatic stress disorder
+
+The safety and effectiveness of the lower dosage has not been established for any
+psychiatric condition; patients who require paroxetine for treatment of a psychiatric
+condition should discontinue taking the low dose capsules and initiate a paroxetine-
+containing product that is indicated for such use
+
+PEDIATRIC
+Safety and efficacy not established
+
+GERIATRIC
+Caution should be used in the elderly because paroxetine is the most sedating and
+anticholinergic of the selective serotonin reuptake inhibitors
+
+The elderly are prone to SSRI/SNRI-induced hyponatremia; monitor closely
+
+Interactions
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and paroxetine
+No Interactions Found
+Interactions Found
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 3/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+Contraindicated
+
+Serious
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+Contraindicated (9)
+
+eliglustat
+paroxetine increases levels of eliglustat by affecting hepatic enzyme CYP2D6
+metabolism. Contraindicated. If coadministered with strong or moderate CYP2D6
+inhibitors, reduce eliglustat dose from 84 mg BID to 84 mg once daily in extensive
+and intermediate metabolizers; eliglustat is contraindiated if strong or moderate
+CYP2D6 inhibitors are given concomitantly with strong or moderate CYP3A
+inhibitors.
+
+isocarboxazid
+isocarboxazid and paroxetine both increase serotonin levels. Contraindicated.
+
+mavorixafor
+mavorixafor will increase the level or effect of paroxetine by affecting hepatic
+enzyme CYP2D6 metabolism. Contraindicated. Mavorixafor (a strong CYP2D6
+inhibitor) is contraindicated with drugs that are highly dependent on CYP2D6 for
+clearance.
+
+phenelzine
+phenelzine and paroxetine both increase serotonin levels. Contraindicated.
+
+pimozide
+paroxetine increases levels of pimozide by affecting hepatic enzyme CYP2D6
+metabolism. Contraindicated. Contraindicated. Coadministration increases pimozide
+AUC and Cmax and may result in prolonged QT interval.
+
+procarbazine
+procarbazine and paroxetine both increase serotonin levels. Contraindicated.
+Combination is contraindicated within 2 weeks of MAOI use.
+
+selegiline
+selegiline and paroxetine both increase serotonin levels. Contraindicated. At least
+14 days should elapse between discontinuation of selegiline and initiation of
+treatment with a serotonergic drug.
+
+thioridazine
+paroxetine increases levels of thioridazine by decreasing metabolism.
+Contraindicated. Risk of long QT syndrome.
+
+tranylcypromine
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 4/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+tranylcypromine and paroxetine both increase serotonin levels. Contraindicated.
+
+Serious (100)
+
+alfentanil
+alfentanil, paroxetine. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+
+amiodarone
+amiodarone and paroxetine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+amitriptyline
+paroxetine and amitriptyline both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+amoxapine
+paroxetine and amoxapine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+aripiprazole
+paroxetine will increase the level or effect of aripiprazole by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+arsenic trioxide
+arsenic trioxide and paroxetine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+asenapine
+asenapine and paroxetine both increase QTc interval. Avoid or Use Alternate Drug.
+
+asenapine transdermal
+asenapine transdermal and paroxetine both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+buprenorphine subdermal implant
+buprenorphine subdermal implant and paroxetine both increase QTc interval. Avoid
+or Use Alternate Drug.
+
+bupropion
+bupropion will increase the level or effect of paroxetine by affecting hepatic enzyme
+CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+paroxetine increases toxicity of bupropion by unspecified interaction mechanism.
+Avoid or Use Alternate Drug. May lower seizure threshold; keep bupropion dose as
+low as possible.
+
+buspirone
+paroxetine and buspirone both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+carvedilol
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 5/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+paroxetine will increase the level or effect of carvedilol by affecting hepatic enzyme
+CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+chlorpromazine
+paroxetine will increase the level or effect of chlorpromazine by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+citalopram
+citalopram and paroxetine both increase serotonin levels. Avoid or Use Alternate
+Drug. Combination may increase risk of serotonin syndrome or neuroleptic
+malignant syndrome-like reactions.
+
+clomipramine
+paroxetine will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+paroxetine and clomipramine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+cyclobenzaprine
+paroxetine and cyclobenzaprine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+dacomitinib
+dacomitinib will increase the level or effect of paroxetine by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug. Avoid use with
+CYP2D6 substrates where minimal increases in concentration of the CYP2D6
+substrate may lead to serious or life-threatening toxicities.
+
+desipramine
+paroxetine will increase the level or effect of desipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+paroxetine and desipramine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+desvenlafaxine
+paroxetine and desvenlafaxine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+dextromethorphan
+paroxetine will increase the level or effect of dextromethorphan by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+paroxetine and dextromethorphan both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+disopyramide
+disopyramide and paroxetine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+dolasetron
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 6/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+dolasetron, paroxetine. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+
+dosulepin
+paroxetine and dosulepin both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+doxepin
+paroxetine will increase the level or effect of doxepin by affecting hepatic enzyme
+CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+paroxetine and doxepin both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+duloxetine
+paroxetine will increase the level or effect of duloxetine by affecting hepatic enzyme
+CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+duloxetine and paroxetine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+eliglustat
+eliglustat and paroxetine both increase QTc interval. Avoid or Use Alternate Drug.
+
+escitalopram
+escitalopram and paroxetine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+fedratinib
+paroxetine will increase the level or effect of fedratinib by Other (see comment).
+Avoid or Use Alternate Drug. Avoid coadministration of fedratinib (a CYP3A4 and
+CYP2C19 substrate) with dual CYP3A4 and CYP2C19 inhibitor. Effect of
+coadministration of a dual CYP3A4 and CYP2C19 inhibitor with fedratinib has not
+been studied.
+
+fentanyl
+fentanyl, paroxetine. Either increases toxicity of the other by serotonin levels. Avoid
+or Use Alternate Drug.
+
+fentanyl intranasal
+fentanyl intranasal, paroxetine. Either increases toxicity of the other by serotonin
+levels. Avoid or Use Alternate Drug.
+
+fentanyl transdermal
+fentanyl transdermal, paroxetine. Either increases toxicity of the other by serotonin
+levels. Avoid or Use Alternate Drug.
+
+fentanyl transmucosal
+fentanyl transmucosal, paroxetine. Either increases toxicity of the other by serotonin
+levels. Avoid or Use Alternate Drug.
+
+flecainide
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 7/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+paroxetine will increase the level or effect of flecainide by affecting hepatic enzyme
+CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+fluoxetine
+fluoxetine will increase the level or effect of paroxetine by affecting hepatic enzyme
+CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+fluoxetine and paroxetine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+fluphenazine
+paroxetine will increase the level or effect of fluphenazine by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+fluphenazine and paroxetine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+fluvoxamine
+fluvoxamine and paroxetine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+gilteritinib
+gilteritinib will decrease the level or effect of paroxetine by Other (see comment).
+Avoid or Use Alternate Drug. Coadministration of gilteritinib with drugs that inhibit
+5HT2B or sigma nonspecific receptors. Avoid use of these drugs with gilteritinib
+unless coadministration is necessary.
+
+gilteritinib and paroxetine both increase QTc interval. Avoid or Use Alternate Drug.
+
+givosiran
+givosiran will increase the level or effect of paroxetine by affecting hepatic enzyme
+CYP2D6 metabolism. Avoid or Use Alternate Drug. Avoid coadministration of
+sensitive CYP2D6 substrates with givosiran. If unavoidable, decrease the CYP2D6
+substrate dosage in accordance with approved product labeling.
+
+granisetron
+granisetron, paroxetine. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+
+granisetron and paroxetine both increase QTc interval. Avoid or Use Alternate Drug.
+
+haloperidol
+paroxetine will increase the level or effect of haloperidol by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+hydromorphone
+paroxetine will increase the level or effect of hydromorphone by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+hydromorphone, paroxetine. Either increases toxicity of the other by serotonin
+levels. Avoid or Use Alternate Drug.
+
+ibutilide
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 8/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+ibutilide and paroxetine both increase QTc interval. Avoid or Use Alternate Drug.
+
+imipramine
+paroxetine will increase the level or effect of imipramine by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+paroxetine and imipramine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+indapamide
+indapamide and paroxetine both increase QTc interval. Avoid or Use Alternate Drug.
+
+levomilnacipran
+levomilnacipran and paroxetine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+linezolid
+linezolid and paroxetine both increase serotonin levels. Avoid or Use Alternate
+Drug. Linezolid may increase serotonin as a result of MAO-A inhibition. If linezolid
+must be administered, discontinue serotonergic drug immediately and monitor for
+CNS toxicity. Serotonergic therapy may be resumed 24 hours after last linezolid
+dose or after 2 weeks of monitoring, whichever comes first.
+
+lofepramine
+paroxetine will increase the level or effect of lofepramine by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+paroxetine and lofepramine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+lonafarnib
+paroxetine will increase the level or effect of lonafarnib by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. If
+coadministration of lonafarnib (a sensitive CYP3A substrate) with weak CYP3A
+inhibitors is unavoidable, reduce to, or continue lonafarnib at starting dose. Closely
+monitor for arrhythmias and events (eg, syncope, heart palpitations) since
+lonafarnib effect on QT interval is unknown.
+
+lorcaserin
+paroxetine and lorcaserin both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+mefloquine
+mefloquine increases toxicity of paroxetine by QTc interval. Avoid or Use Alternate
+Drug. Mefloquine may enhance the QTc prolonging effect of high risk QTc
+prolonging agents.
+
+meperidine
+paroxetine and meperidine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 9/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+meperidine, paroxetine. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+
+methamphetamine
+paroxetine will increase the level or effect of methamphetamine by affecting
+hepatic enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+methylene blue
+methylene blue and paroxetine both increase serotonin levels. Avoid or Use
+Alternate Drug. Methylene blue may increase serotonin as a result of MAO-A
+inhibition. If methylene blue must be administered, discontinue serotonergic drug
+immediately and monitor for CNS toxicity. Serotonergic therapy may be resumed 24
+hours after last methylene blue dose or after 2 weeks of monitoring, whichever
+comes first.
+
+metoclopramide
+metoclopramide and paroxetine both increase serotonin levels. Avoid or Use
+Alternate Drug. Additive effects; increased risk for serotonin syndrome, neuroleptic
+malignant syndrome, dystonia, or other extrapyramidal reactions
+
+metoclopramide intranasal
+paroxetine will increase the level or effect of metoclopramide intranasal by
+affecting hepatic enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+Concurrent use of metoclopramide intranasal and strong CYP2D6 inhibitors is not
+recommended since the metoclopramide intranasal dose cannot be adjusted.
+
+paroxetine, metoclopramide intranasal. Either increases effects of the other by
+Other (see comment). Avoid or Use Alternate Drug. Comment: Avoid use of
+metoclopramide intranasal or interacting drug, depending on importance of drug to
+patient.
+
+metoprolol
+paroxetine will increase the level or effect of metoprolol by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+mexiletine
+paroxetine will increase the level or effect of mexiletine by affecting hepatic enzyme
+CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+milnacipran
+milnacipran and paroxetine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+morphine
+paroxetine will increase the level or effect of morphine by affecting hepatic enzyme
+CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+morphine, paroxetine. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+
+nebivolol
+paroxetine will increase the level or effect of nebivolol by affecting hepatic enzyme
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 10/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+nefazodone
+nefazodone and paroxetine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+netupitant/palonosetron
+netupitant/palonosetron, paroxetine. Either increases toxicity of the other by
+serotonin levels. Avoid or Use Alternate Drug.
+
+nortriptyline
+paroxetine will increase the level or effect of nortriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+paroxetine and nortriptyline both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+olanzapine
+olanzapine and paroxetine both increase QTc interval. Avoid or Use Alternate Drug.
+
+olopatadine intranasal
+paroxetine and olopatadine intranasal both increase sedation. Avoid or Use
+Alternate Drug. Coadministration increases risk of CNS depression, which can lead
+to additive impairment of psychomotor performance and cause daytime impairment.
+
+ondansetron
+ondansetron, paroxetine. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+
+oxycodone
+paroxetine will increase the level or effect of oxycodone by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+oxymorphone
+paroxetine will increase the level or effect of oxymorphone by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+ozanimod
+ozanimod increases toxicity of paroxetine by sympathetic (adrenergic) effects,
+including increased blood pressure and heart rate. Avoid or Use Alternate Drug.
+Because the active metabolite of ozanimod inhibits MAO-B in vitro, there is a
+potential for serious adverse reactions, including hypertensive crisis. Therefore,
+coadministration of ozanimod with drugs that can increase norepinephrine or
+serotonin is not recommended. Monitor for hypertension with concomitant use.
+
+palonosetron
+palonosetron, paroxetine. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+
+pentamidine
+paroxetine and pentamidine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 11/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+perphenazine
+paroxetine will increase the level or effect of perphenazine by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+perphenazine will increase the level or effect of paroxetine by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+perphenazine and paroxetine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+phentermine
+paroxetine, phentermine. Either increases toxicity of the other by Mechanism:
+unknown. Avoid or Use Alternate Drug. Risk of serotonin syndrome.
+
+procainamide
+paroxetine and procainamide both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+promethazine
+paroxetine will increase the level or effect of promethazine by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+propafenone
+paroxetine will increase the level or effect of propafenone by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+propafenone will increase the level or effect of paroxetine by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug. Monitor heart rate and
+EKG in patients receiving concurrent paroxetine and propafenone. Doses may need
+to be reduced.
+
+propranolol
+paroxetine will increase the level or effect of propranolol by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+protriptyline
+paroxetine and protriptyline both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+quinidine
+quinidine and paroxetine both increase QTc interval. Avoid or Use Alternate Drug.
+
+rasagiline
+rasagiline and paroxetine both increase serotonin levels. Avoid or Use Alternate
+Drug. Severe CNS toxicity associated with hyperpyrexia has been reported with the
+combined treatment of an antidepressant and rasagiline. Avoid combination within
+14 days of MAOI use.
+
+remifentanil
+remifentanil, paroxetine. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+
+selegiline transdermal
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 12/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+selegiline transdermal and paroxetine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+selinexor
+selinexor, paroxetine. unspecified interaction mechanism. Avoid or Use Alternate
+Drug. Patients treated with selinexor may experience neurological toxicities. Avoid
+taking selinexor with other medications that may cause dizziness or confusion.
+
+sertraline
+sertraline will increase the level or effect of paroxetine by affecting hepatic enzyme
+CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+paroxetine and sertraline both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+sofpironium topical
+paroxetine will increase the level or effect of sofpironium topical by affecting
+hepatic enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug. Avoid
+concomitant use of sofpironium (CYP2D6 substrate) with strong CYP2D6 inhibitors.
+Coadministration may result in increased sofpironium levels and risk of adverse
+effects.
+
+sotalol
+paroxetine and sotalol both increase QTc interval. Avoid or Use Alternate Drug.
+
+St John's Wort
+paroxetine and St John's Wort both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+sufentanil
+sufentanil, paroxetine. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+
+tedizolid
+tedizolid, paroxetine. Either increases effects of the other by Mechanism:
+pharmacodynamic synergism. Avoid or Use Alternate Drug. both increase serotonin
+levels; increased risk of serotonin syndrome.
+
+tetrabenazine
+tetrabenazine and paroxetine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+thioridazine
+paroxetine will increase the level or effect of thioridazine by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+thioridazine will increase the level or effect of paroxetine by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+thioridazine and paroxetine both increase QTc interval. Avoid or Use Alternate Drug.
+
+timolol
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 13/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+paroxetine will increase the level or effect of timolol by affecting hepatic enzyme
+CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+tipranavir
+tipranavir will increase the level or effect of paroxetine by affecting hepatic enzyme
+CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+tolterodine
+paroxetine will increase the level or effect of tolterodine by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+trazodone
+paroxetine and trazodone both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+trimipramine
+paroxetine and trimipramine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+venlafaxine
+paroxetine and venlafaxine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+vilazodone
+paroxetine, vilazodone. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug. Concomitant therapy should be discontinued
+immediately if signs or symptoms of serotonin syndrome emerge and supportive
+symptomatic treatment should be initiated. .
+
+vortioxetine
+paroxetine, vortioxetine. Either increases effects of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+
+zuranolone
+paroxetine, zuranolone. Either increases effects of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Coadministration of zuranolone with other
+CNS depressants may increase impairment of psychomotor performance or CNS
+depressant effects. If unavoidable, consider dose reduction. .
+
+Monitor Closely (243)
+
+5-HTP
+paroxetine and 5-HTP both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+abiraterone
+abiraterone increases levels of paroxetine by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor. Avoid coadministration of abiraterone with
+substrates of CYP2D6. If alternative therapy cannot be used, exercise caution and
+consider a dose reduction of the CYP2D6 substrate.
+
+aceclofenac
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 14/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+paroxetine, aceclofenac. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+acemetacin
+paroxetine, acemetacin. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+alfuzosin
+paroxetine and alfuzosin both increase QTc interval. Use Caution/Monitor.
+
+almotriptan
+almotriptan and paroxetine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+American ginseng
+American ginseng increases toxicity of paroxetine by pharmacodynamic synergism.
+Use Caution/Monitor. May have anticoagulant/antiplatelet effects.
+
+amifampridine
+paroxetine increases toxicity of amifampridine by Other (see comment). Modify
+Therapy/Monitor Closely. Comment: Amifampridine can cause seizures.
+Coadministration with drugs that lower seizure threshold may increase this risk.
+
+amiodarone
+amiodarone will increase the level or effect of paroxetine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+amitriptyline
+amitriptyline and paroxetine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+amoxapine
+amoxapine and paroxetine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+amphetamine
+paroxetine will increase the level or effect of amphetamine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+paroxetine and amphetamine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+anagrelide
+anagrelide and paroxetine both increase QTc interval. Use Caution/Monitor.
+
+apixaban
+paroxetine increases effects of apixaban by anticoagulation. Use Caution/Monitor.
+SSRIs may inhibit platelet aggregation, thus increase bleeding risk when
+coadministered with anticoagulants.
+
+aripiprazole
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 15/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+paroxetine, aripiprazole. unspecified interaction mechanism. Use Caution/Monitor.
+Serotonin modulators may enhance dopamine blockade, possibly increasing the risk
+for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic
+effect of serotonin modulators, which may result in serotonin syndrome. Monitor for
+evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and
+neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia,
+muscle rigidity, autonomic dysfunction).
+
+artemether/lumefantrine
+artemether/lumefantrine will increase the level or effect of paroxetine by affecting
+hepatic enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+artemether/lumefantrine and paroxetine both increase QTc interval. Modify
+Therapy/Monitor Closely.
+
+asenapine
+asenapine will increase the level or effect of paroxetine by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+paroxetine, asenapine. unspecified interaction mechanism. Use Caution/Monitor.
+Serotonin modulators may enhance dopamine blockade, possibly increasing the risk
+for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic
+effect of serotonin modulators, which may result in serotonin syndrome. Monitor for
+evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and
+neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia,
+muscle rigidity, autonomic dysfunction).
+
+aspirin
+paroxetine, aspirin. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+aspirin rectal
+paroxetine, aspirin rectal. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+aspirin/citric acid/sodium bicarbonate
+paroxetine, aspirin/citric acid/sodium bicarbonate. Either increases toxicity of the
+other by pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper
+GI bleeding. SSRIs inhib. serotonin uptake by platelets.
+
+atomoxetine
+paroxetine will increase the level or effect of atomoxetine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor. Reduced initial doses of
+atomoxetine are recommended with strong CYP2D6 inhibitors.
+
+avapritinib
+paroxetine will increase the level or effect of avapritinib by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+axitinib
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 16/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+paroxetine increases levels of axitinib by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+
+benzhydrocodone/acetaminophen
+benzhydrocodone/acetaminophen, paroxetine. Either increases effects of the other
+by serotonin levels. Use Caution/Monitor. Coadministration of drugs that affect the
+serotonergic neurotransmitter system may result in serotonin syndrome. If
+concomitant use is warranted, carefully observe the patient, particularly during
+treatment initiation and dose adjustment.
+
+brexpiprazole
+paroxetine will increase the level or effect of brexpiprazole by affecting hepatic
+enzyme CYP2D6 metabolism. Modify Therapy/Monitor Closely. Administer half of
+the usual brexpiprazole dose when coadministered with strong CYP2D6 inhibitors.
+If also administered with a strong/moderate CYP3A4 inhibitor, administer a quarter
+of brexpiprazole dose. NOTE: In MDD clinical trials, brexpiprazole dosage was not
+adjusted for strong CYP2D6 inhibitors (eg, paroxetine, fluoxetine); thus, CYP
+considerations are already factored into general dosing recommendations and
+brexpiprazole may be administered without dosage adjustment in patients with
+MDD.
+
+buprenorphine
+buprenorphine and paroxetine both increase QTc interval. Use Caution/Monitor.
+
+buprenorphine buccal
+buprenorphine buccal and paroxetine both increase QTc interval. Use
+Caution/Monitor.
+
+buprenorphine subdermal implant
+paroxetine, buprenorphine subdermal implant. Either increases toxicity of the other
+by serotonin levels. Use Caution/Monitor. Concomitant use could result in life-
+threatening serotonin syndrome. If concomitant use is warranted, carefully observe
+the patient, particularly during treatment initiation, and during dose adjustment of
+the serotonergic drug. Discontinue buprenorphine if serotonin syndrome is
+suspected.
+
+buprenorphine transdermal
+buprenorphine transdermal and paroxetine both increase QTc interval. Use
+Caution/Monitor.
+
+buprenorphine, long-acting injection
+paroxetine, buprenorphine, long-acting injection. Either increases toxicity of the
+other by serotonin levels. Use Caution/Monitor. Concomitant use could result in life-
+threatening serotonin syndrome. If concomitant use is warranted, carefully observe
+the patient, particularly during treatment initiation, and during dose adjustment of
+the serotonergic drug. Discontinue buprenorphine if serotonin syndrome is
+suspected.
+
+buprenorphine, long-acting injection and paroxetine both increase QTc interval. Use
+Caution/Monitor.
+
+cariprazine
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 17/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+paroxetine, cariprazine. unspecified interaction mechanism. Use Caution/Monitor.
+Serotonin modulators may enhance dopamine blockade, possibly increasing the risk
+for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic
+effect of serotonin modulators, which may result in serotonin syndrome. Monitor for
+evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and
+neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia,
+muscle rigidity, autonomic dysfunction).
+
+celecoxib
+paroxetine, celecoxib. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+cenobamate
+cenobamate, paroxetine. Either increases effects of the other by sedation. Use
+Caution/Monitor.
+
+chlorpromazine
+chlorpromazine and paroxetine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+choline magnesium trisalicylate
+paroxetine, choline magnesium trisalicylate. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. SSRIs inhib. serotonin uptake by platelets.
+
+cimetidine
+cimetidine will increase the level or effect of paroxetine by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+clarithromycin
+clarithromycin and paroxetine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+clobazam
+clobazam will increase the level or effect of paroxetine by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor. Lower doses of drugs metabolized by
+CYP2D6 may be required when used concomitantly.
+
+clomipramine
+clomipramine and paroxetine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+clonidine
+clonidine, paroxetine. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Coadministration enhances CNS depressant
+effects.
+
+clopidogrel
+paroxetine increases effects of clopidogrel by pharmacodynamic synergism. Use
+Caution/Monitor. SSRIs affect platelet activation; coadministration of SSRIs with
+clopidogrel may increase the risk of bleeding.
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 18/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+clozapine
+paroxetine increases levels of clozapine by decreasing metabolism. Use
+Caution/Monitor. Plasma levels of clozapine may be increased, resulting in
+increased pharmacologic and toxic effects. Adjust clozapine dose as needed when
+initiating or discontinuing certain SSRIs. .
+
+paroxetine, clozapine. unspecified interaction mechanism. Use Caution/Monitor.
+Serotonin modulators may enhance dopamine blockade, possibly increasing the risk
+for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic
+effect of serotonin modulators, which may result in serotonin syndrome. Monitor for
+evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and
+neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia,
+muscle rigidity, autonomic dysfunction).
+
+cobicistat
+cobicistat will increase the level or effect of paroxetine by Other (see comment).
+Use Caution/Monitor. Carefully titrate dose of the antidepressant to the desired
+effect, including using the lowest feasible initial or maintenance dose, and monitor
+its response during coadministration with SSRIs and cobicistat.
+
+cocaine topical
+paroxetine and cocaine topical both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+codeine
+paroxetine will decrease the level or effect of codeine by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor. Prevents conversion of codeine to its
+active metabolite morphine.
+
+cyproheptadine
+cyproheptadine decreases effects of paroxetine by pharmacodynamic antagonism.
+Use Caution/Monitor. Cyproheptadine may diminish the serotonergic effect of SSRIs.
+
+daridorexant
+paroxetine and daridorexant both increase sedation. Modify Therapy/Monitor
+Closely. Coadministration increases risk of CNS depression, which can lead to
+additive impairment of psychomotor performance and cause daytime impairment.
+
+darunavir
+darunavir decreases levels of paroxetine by Mechanism: unspecified interaction
+mechanism. Use Caution/Monitor. Carefully titrate SSRI dose based on clinical
+assessment of antidepressant response.
+
+darunavir will increase the level or effect of paroxetine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+Coadministration with SSRIs, TCAs, or trazodone may require dose titration of
+antidepressant to desired effect (eg, using the lowest feasible initial or maintenance
+dose). Monitor for antidepressant response.
+
+dasatinib
+dasatinib and paroxetine both increase QTc interval. Use Caution/Monitor.
+
+defibrotide
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 19/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+defibrotide increases effects of paroxetine by Other (see comment). Use
+Caution/Monitor. Comment: Defibrotide may enhance effects of platelet inhibitors.
+
+desipramine
+desipramine and paroxetine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+desvenlafaxine
+desvenlafaxine will increase the level or effect of paroxetine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor. Desvenlafaxine inhibits
+CYP2D6; with higher desvenlafaxine doses (ie, 400 mg) decrease the CYP2D6
+substrate dose by up to 50%; no dosage adjustment needed with desvenlafaxine
+doses <100 mg
+
+deutetrabenazine
+paroxetine will increase the level or effect of deutetrabenazine by affecting hepatic
+enzyme CYP2D6 metabolism. Modify Therapy/Monitor Closely. Strong CYP2D6
+inhibitors increase the systemic exposure to the active dihydro-metabolites of
+deutetrabenazine by approximately 3-fold. Do not exceed 18 mg/dose and 36
+mg/day of deutetrabenazine if coadministered with strong CYP2D6 inhibitors.
+
+deutetrabenazine and paroxetine both increase QTc interval. Use Caution/Monitor.
+At the maximum recommended dose, deutetrabenazine does not prolong QT
+interval to a clinically relevant extent. Certain circumstances may increase risk of
+torsade de pointes and/or sudden death in association with drugs that prolong the
+QTc interval (eg, bradycardia, hypokalemia or hypomagnesemia, coadministration
+with other drugs that prolong QTc interval, presence of congenital QT
+prolongation).
+
+dexfenfluramine
+paroxetine will increase the level or effect of dexfenfluramine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+paroxetine and dexfenfluramine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+dextroamphetamine
+paroxetine will increase the level or effect of dextroamphetamine by affecting
+hepatic enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+paroxetine and dextroamphetamine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+dextroamphetamine transdermal
+paroxetine, dextroamphetamine transdermal. Either increases effects of the other
+by serotonin levels. Modify Therapy/Monitor Closely. Initiate with lower doses and
+monitor for signs and symptoms of serotonin syndrome, particularly during
+initiation or dosage increase. If serotonin syndrome occurs, discontinue
+dextroamphetamine transdermal and concomitant serotonergic drug(s).
+
+paroxetine will increase the level or effect of dextroamphetamine transdermal by
+affecting hepatic enzyme CYP2D6 metabolism. Modify Therapy/Monitor Closely.
+Initiate with lower doses and monitor patients for signs and symptoms of serotonin
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 20/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+syndrome, particularly during dextroamphetamine initiation and after a dosage
+increase. If serotonin syndrome occurs, discontinue dextroamphetamine
+transdermal and CYP2D6 inhibitor.
+
+diazepam buccal
+diazepam buccal, paroxetine. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration may
+potentiate the CNS-depressant effects of each drug.
+
+diazepam intranasal
+diazepam intranasal, paroxetine. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration may
+potentiate the CNS-depressant effects of each drug.
+
+dichlorphenamide
+dichlorphenamide and paroxetine both decrease serum potassium. Use
+Caution/Monitor.
+
+diclofenac
+paroxetine, diclofenac. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+difelikefalin
+difelikefalin and paroxetine both increase sedation. Use Caution/Monitor.
+
+diflunisal
+paroxetine, diflunisal. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+dihydroergotamine
+paroxetine and dihydroergotamine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+dihydroergotamine intranasal
+paroxetine and dihydroergotamine intranasal both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+dofetilide
+dofetilide and paroxetine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+dolasetron
+dolasetron and paroxetine both increase QTc interval. Use Caution/Monitor.
+
+donepezil
+paroxetine will increase the level or effect of donepezil by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+donepezil and paroxetine both increase QTc interval. Use Caution/Monitor.
+
+dordaviprone
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 21/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+dordaviprone and paroxetine both increase QTc interval. Use Caution/Monitor.
+Increase the frequency of ECG and electrolyte monitoring.
+
+doxepin
+doxepin and paroxetine both increase QTc interval. Modify Therapy/Monitor Closely.
+
+dronedarone
+dronedarone will increase the level or effect of paroxetine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+dronedarone and paroxetine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+droperidol
+droperidol and paroxetine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+edoxaban
+paroxetine increases effects of edoxaban by anticoagulation. Use Caution/Monitor.
+SSRIs may inhibit platelet aggregation, thus increase bleeding risk when
+coadministered with anticoagulants.
+
+eletriptan
+eletriptan and paroxetine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+eliglustat
+eliglustat increases levels of paroxetine by affecting hepatic enzyme CYP2D6
+metabolism. Modify Therapy/Monitor Closely. Monitor therapeutic drug
+concentrations, as indicated, or consider reducing the dosage of the concomitant
+drug and titrate to clinical effect.
+
+eluxadoline
+paroxetine increases levels of eluxadoline by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor. As a precautionary measure due to incomplete
+information on the metabolism of eluxadoline, use caution when coadministered
+with strong CYP2D6 inhibitors.
+
+elvitegravir/cobicistat/emtricitabine/tenofovir DF
+elvitegravir/cobicistat/emtricitabine/tenofovir DF increases levels of paroxetine by
+affecting hepatic enzyme CYP2D6 metabolism. Modify Therapy/Monitor Closely.
+Cobicistat is a CYP2D6 inhibitor; caution with CYP2D6 substrates for which
+elevated plasma concentrations are associated with serious and/or life-threatening
+events.
+
+encainide
+paroxetine will increase the level or effect of encainide by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+epinephrine
+epinephrine and paroxetine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 22/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+epinephrine racemic
+epinephrine racemic and paroxetine both increase QTc interval. Modify
+Therapy/Monitor Closely.
+
+ergotamine
+paroxetine and ergotamine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+erythromycin base
+erythromycin base and paroxetine both increase QTc interval. Modify
+Therapy/Monitor Closely.
+
+erythromycin ethylsuccinate
+erythromycin ethylsuccinate and paroxetine both increase QTc interval. Modify
+Therapy/Monitor Closely.
+
+erythromycin lactobionate
+erythromycin lactobionate and paroxetine both increase QTc interval. Modify
+Therapy/Monitor Closely.
+
+erythromycin stearate
+erythromycin stearate and paroxetine both increase QTc interval. Modify
+Therapy/Monitor Closely.
+
+etodolac
+paroxetine, etodolac. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+fedratinib
+fedratinib will increase the level or effect of paroxetine by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor. Adjust dose of drugs that are CYP2D6
+substrates as necessary.
+
+fenbufen
+paroxetine, fenbufen. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+fenfluramine
+paroxetine and fenfluramine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+fenfluramine, paroxetine. Either increases effects of the other by serotonin levels.
+Use Caution/Monitor. Coadministration with drugs that increase serotoninergic
+effects may increase the risk of serotonin syndrome.
+
+fenoprofen
+paroxetine, fenoprofen. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+finerenone
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 23/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+paroxetine will increase the level or effect of finerenone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Monitor serum potassium during initiation and dosage adjustment of either
+finererone or weak CYP3A4 inhibitors. Adjust finererone dosage as needed.
+
+fish oil triglycerides
+fish oil triglycerides will increase the level or effect of paroxetine by anticoagulation.
+Use Caution/Monitor. Prolonged bleeding reported in patients taking antiplatelet
+agents or anticoagulants and oral omega-3 fatty acids. Periodically monitor
+bleeding time in patients receiving fish oil triglycerides and concomitant antiplatelet
+agents or anticoagulants.
+
+flecainide
+flecainide and paroxetine both increase QTc interval. Use Caution/Monitor.
+
+flibanserin
+paroxetine will increase the level or effect of flibanserin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Increased
+flibanserin adverse effects may occur if coadministered with multiple weak CYP3A4
+inhibitors.
+
+fluconazole
+fluconazole and paroxetine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+fluoxetine
+fluoxetine and paroxetine both increase QTc interval. Use Caution/Monitor.
+
+fluphenazine
+paroxetine, fluphenazine. unspecified interaction mechanism. Use Caution/Monitor.
+Serotonin modulators may enhance dopamine blockade, possibly increasing the risk
+for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic
+effect of serotonin modulators, which may result in serotonin syndrome. Monitor for
+evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and
+neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia,
+muscle rigidity, autonomic dysfunction).
+
+flurbiprofen
+paroxetine, flurbiprofen. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+fluvoxamine
+fluvoxamine and paroxetine both increase QTc interval. Use Caution/Monitor.
+
+fondaparinux
+paroxetine increases effects of fondaparinux by anticoagulation. Use
+Caution/Monitor. SSRIs may inhibit platelet aggregation, thus increase bleeding risk
+when coadministered with anticoagulants.
+
+fosamprenavir
+fosamprenavir will decrease the level or effect of paroxetine by increasing
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 24/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+elimination. Use Caution/Monitor. Monitor response to paroxetine therapy closely
+
+foscarnet
+foscarnet and paroxetine both increase QTc interval. Use Caution/Monitor.
+
+frovatriptan
+frovatriptan and paroxetine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+gabapentin
+gabapentin, paroxetine. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+gabapentin enacarbil
+gabapentin enacarbil, paroxetine. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+ganaxolone
+paroxetine and ganaxolone both increase sedation. Use Caution/Monitor.
+
+gepirone
+gepirone and paroxetine both increase serotonin levels. Use Caution/Monitor.
+Monitor for symptoms of serotonin syndrome when gepirone is used gepirone with
+other drugs that may affect the serotonergic neurotransmitter systems. If serotonin
+syndrome occurs, consider discontinue gepirone and/or concomitant serotonergic
+drug.
+
+givinostat
+paroxetine and givinostat both increase QTc interval. Use Caution/Monitor. If
+coadministered, obtain ECGs when initiating, during concomitant use, and as
+clinically indicated. Withhold if QTc interval >500 ms or a change from baseline
+>60 ms.
+
+glycopyrrolate inhaled
+paroxetine and glycopyrrolate inhaled both decrease cholinergic
+effects/transmission. Use Caution/Monitor.
+
+green tea
+green tea, paroxetine. Other (see comment). Use Caution/Monitor. Comment:
+Combination may increase risk of bleeding.
+
+haloperidol
+haloperidol will increase the level or effect of paroxetine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+haloperidol and paroxetine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 25/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+paroxetine, haloperidol. unspecified interaction mechanism. Use Caution/Monitor.
+Serotonin modulators may enhance dopamine blockade, possibly increasing the risk
+for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic
+effect of serotonin modulators, which may result in serotonin syndrome. Monitor for
+evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and
+neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia,
+muscle rigidity, autonomic dysfunction).
+
+hydrocodone
+paroxetine will increase the level or effect of hydrocodone by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor. Hydromorphone (<3% of the
+circulating parent hydrocodone) is mainly formed by CYP2D6 mediated O-
+demethylation of hydrocodone. Hydromorphone may contribute to the total
+analgesic effect of hydrocodone.
+
+hydrocodone, paroxetine. Either increases effects of the other by serotonin levels.
+Use Caution/Monitor. Coadministration of drugs that affect the serotonergic
+neurotransmitter system may result in serotonin syndrome. If concomitant use is
+warranted, carefully observe the patient, particularly during treatment initiation and
+dose adjustment.
+
+hydroxyzine
+hydroxyzine and paroxetine both increase QTc interval. Use Caution/Monitor.
+
+ibrutinib
+ibrutinib will increase the level or effect of paroxetine by anticoagulation. Use
+Caution/Monitor. Ibrutinib may increase the risk of hemorrhage in patients receiving
+antiplatelet or anticoagulant therapies and monitor for signs of bleeding.
+
+ibuprofen
+paroxetine, ibuprofen. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+ibuprofen IV
+paroxetine, ibuprofen IV. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+icosapent ethyl
+icosapent ethyl, paroxetine. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Icosapent may prolong
+bleeding time. Periodically monitor if coadministered with other drugs that affect
+bleeding.
+
+iloperidone
+paroxetine increases levels of iloperidone by affecting hepatic enzyme CYP2D6
+metabolism. Modify Therapy/Monitor Closely. Reduce iloperidone dose if
+coadministered with a strong CYP2D6 inhibitor (see Dosage Modifications in drug
+monograph).
+
+imatinib
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 26/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+imatinib will increase the level or effect of paroxetine by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+imipramine
+imipramine and paroxetine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+indomethacin
+paroxetine, indomethacin. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. SSRIs inhib. serotonin uptake by platelets.
+
+ioflupane I 123
+paroxetine decreases effects of ioflupane I 123 by receptor binding competition.
+Use Caution/Monitor. Selective serotonin reuptake inhibitors (SSRIs) may alter
+binding of ioflupane I 123 to dopamine transporter, interfering with image
+interpretation. If clinically appropriate, consider discontinuing SSRI at least 5 half-
+lives prior to ioflupane I 123 administration.
+
+ipratropium
+paroxetine and ipratropium both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+isavuconazonium sulfate
+paroxetine will increase the level or effect of isavuconazonium sulfate by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+isoniazid
+paroxetine and isoniazid both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+itraconazole
+itraconazole and paroxetine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+ivacaftor
+paroxetine increases levels of ivacaftor by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Monitor when coadministered with
+weak CYP3A4 inhibitors .
+
+ketoconazole
+ketoconazole and paroxetine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+ketoprofen
+paroxetine, ketoprofen. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+ketorolac
+paroxetine, ketorolac. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 27/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+serotonin uptake by platelets.
+
+ketorolac intranasal
+paroxetine, ketorolac intranasal. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. SSRIs inhib. serotonin uptake by platelets.
+
+L-tryptophan
+paroxetine and L-tryptophan both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+lamotrigine
+lamotrigine increases toxicity of paroxetine by unspecified interaction mechanism.
+Modify Therapy/Monitor Closely. CNS depressants may increase the toxic effects of
+selective serotonin reuptake inhibitors; psychomotor impairment may be enhanced.
+
+lapatinib
+lapatinib and paroxetine both increase QTc interval. Use Caution/Monitor.
+
+lemborexant
+paroxetine will increase the level or effect of lemborexant by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Lower nightly dose of lemborexant recommended if coadministered with weak
+CYP3A4 inhibitors. See drug monograph for specific dosage modification.
+
+lemborexant, paroxetine. Either increases effects of the other by sedation. Modify
+Therapy/Monitor Closely. Dosage adjustment may be necessary if lemborexant is
+coadministered with other CNS depressants because of potentially additive effects.
+
+levofloxacin
+levofloxacin and paroxetine both increase QTc interval. Use Caution/Monitor.
+
+levoketoconazole
+levoketoconazole and paroxetine both increase QTc interval. Modify
+Therapy/Monitor Closely.
+
+lisdexamfetamine
+paroxetine, lisdexamfetamine. Either increases effects of the other by serotonin
+levels. Use Caution/Monitor. Initiate with lower doses and monitor for signs and
+symptoms of serotonin syndrome, particularly during initiation or dosage increase. If
+serotonin syndrome occurs, discontinue along with concomitant serotonergic
+drug(s).
+
+lithium
+paroxetine and lithium both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+lithium and paroxetine both increase QTc interval. Use Caution/Monitor.
+
+lofepramine
+lofepramine and paroxetine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 28/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+lofexidine
+paroxetine will increase the level or effect of lofexidine by affecting hepatic enzyme
+CYP2D6 metabolism. Modify Therapy/Monitor Closely. Concomitant use of
+lofexidine with strong CYP2D6 inhibitors may increase lofexidine plasma levels.
+Monitor for symptoms of orthostasis and bradycardia if coadministered with a
+CYP2D6 inhibitor. Consider lofexidine dose reduction.
+
+loratadine
+paroxetine will increase the level or effect of loratadine by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+lorcaserin
+lorcaserin will increase the level or effect of paroxetine by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+lornoxicam
+paroxetine, lornoxicam. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+loxapine
+paroxetine, loxapine. unspecified interaction mechanism. Use Caution/Monitor.
+Serotonin modulators may enhance dopamine blockade, possibly increasing the risk
+for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic
+effect of serotonin modulators, which may result in serotonin syndrome. Monitor for
+evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and
+neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia,
+muscle rigidity, autonomic dysfunction).
+
+loxapine inhaled
+paroxetine, loxapine inhaled. unspecified interaction mechanism. Use
+Caution/Monitor. Serotonin modulators may enhance dopamine blockade, possibly
+increasing the risk for neuroleptic malignant syndrome. Antipsychotics may enhance
+serotonergic effect of serotonin modulators, which may result in serotonin
+syndrome. Monitor for evidence of serotonin toxicity (eg, mental status changes,
+autonomic instability, and neuromuscular hyperactivity) or neuroleptic malignant
+syndrome (eg, hyperthermia, muscle rigidity, autonomic dysfunction).
+
+lsd
+paroxetine and lsd both increase serotonin levels. Modify Therapy/Monitor Closely.
+
+lumefantrine
+lumefantrine will increase the level or effect of paroxetine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+lumefantrine and paroxetine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+lurasidone
+lurasidone, paroxetine. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: Potential for increased CNS depressant
+effects when used concurrently; monitor for increased adverse effects and toxicity.
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 29/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+paroxetine, lurasidone. unspecified interaction mechanism. Use Caution/Monitor.
+Serotonin modulators may enhance dopamine blockade, possibly increasing the risk
+for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic
+effect of serotonin modulators, which may result in serotonin syndrome. Monitor for
+evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and
+neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia,
+muscle rigidity, autonomic dysfunction).
+
+meclofenamate
+paroxetine, meclofenamate. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. SSRIs inhib. serotonin uptake by platelets.
+
+mefenamic acid
+paroxetine, mefenamic acid. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. SSRIs inhib. serotonin uptake by platelets.
+
+meloxicam
+paroxetine, meloxicam. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+methadone
+methadone and paroxetine both increase QTc interval. Use Caution/Monitor.
+
+methylphenidate transdermal
+methylphenidate transdermal will increase the level or effect of paroxetine by
+decreasing metabolism. Modify Therapy/Monitor Closely. Consider decreasing the
+dose of these drugs when given coadministered with methylphenidate. Monitor for
+drug toxiticities when initiating or discontinuing methylphenidate.
+
+midazolam intranasal
+paroxetine will increase the level or effect of midazolam intranasal by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+Coadministration of mild CYP3A4 inhibitors with midazolam intranasal may cause
+higher midazolam systemic exposure, which may prolong sedation.
+
+midazolam intranasal, paroxetine. Either increases toxicity of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Concomitant use of
+barbiturates, alcohol, or other CNS depressants may increase the risk of
+hypoventilation, airway obstruction, desaturation, or apnea and may contribute to
+profound and/or prolonged drug effect.
+
+milsaperidone
+paroxetine increases levels of milsaperidone by affecting hepatic enzyme CYP2D6
+metabolism. Modify Therapy/Monitor Closely. Reduce miIsaperidone dose if
+coadministered with a strong CYP2D6 inhibitor (see Dosage Modifications in drug
+monograph).
+
+mipomersen
+mipomersen, paroxetine. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: Both drugs have potential to increase
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 30/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+hepatic enzymes; monitor LFTs.
+
+mirabegron
+mirabegron will increase the level or effect of paroxetine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+mirtazapine
+paroxetine and mirtazapine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+mirtazapine and paroxetine both increase QTc interval. Use Caution/Monitor.
+
+molindone
+paroxetine, molindone. unspecified interaction mechanism. Use Caution/Monitor.
+Serotonin modulators may enhance dopamine blockade, possibly increasing the risk
+for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic
+effect of serotonin modulators, which may result in serotonin syndrome. Monitor for
+evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and
+neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia,
+muscle rigidity, autonomic dysfunction).
+
+morphine
+paroxetine and morphine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+moxifloxacin
+moxifloxacin and paroxetine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+paroxetine and moxifloxacin both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+nabumetone
+paroxetine, nabumetone. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+naproxen
+paroxetine, naproxen. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+naratriptan
+naratriptan and paroxetine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+nilotinib
+nilotinib and paroxetine both increase QTc interval. Modify Therapy/Monitor Closely.
+
+nortriptyline
+nortriptyline and paroxetine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 31/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+octreotide
+octreotide and paroxetine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+octreotide (Antidote)
+octreotide (Antidote) and paroxetine both increase QTc interval. Modify
+Therapy/Monitor Closely.
+
+ofloxacin
+ofloxacin and paroxetine both increase QTc interval. Use Caution/Monitor.
+
+olanzapine
+paroxetine, olanzapine. unspecified interaction mechanism. Use Caution/Monitor.
+Serotonin modulators may enhance dopamine blockade, possibly increasing the risk
+for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic
+effect of serotonin modulators, which may result in serotonin syndrome. Monitor for
+evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and
+neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia,
+muscle rigidity, autonomic dysfunction).
+
+olanzapine/samidorphan
+paroxetine, olanzapine/samidorphan. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration of diazepam,
+alcohol, or other CNS acting drugs may potentiate orthostatic hypotension
+observed with olanzapine. Additive sedation may also occur.
+
+oxaprozin
+paroxetine, oxaprozin. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+oxycodone
+oxycodone increases effects of paroxetine by pharmacodynamic synergism. Modify
+Therapy/Monitor Closely. Opioids may enhance the serotonergic effects of SSRIs
+and increase risk for serotonergic syndrome.
+
+paliperidone
+paliperidone and paroxetine both increase QTc interval. Use Caution/Monitor.
+
+paroxetine, paliperidone. unspecified interaction mechanism. Use Caution/Monitor.
+Serotonin modulators may enhance dopamine blockade, possibly increasing the risk
+for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic
+effect of serotonin modulators, which may result in serotonin syndrome. Monitor for
+evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and
+neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia,
+muscle rigidity, autonomic dysfunction).
+
+panax ginseng
+panax ginseng decreases toxicity of paroxetine by pharmacodynamic synergism.
+Use Caution/Monitor. May have anticoagulant/antiplatelet effects.
+
+parecoxib
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 32/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+paroxetine, parecoxib. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+peginterferon alfa 2b
+peginterferon alfa 2b, paroxetine. Other (see comment). Use Caution/Monitor.
+Comment: When patients are administered peginterferon alpha-2b with CYP2D6
+substrates, the therapeutic effect of these drugs may be altered. Peginterferon
+alpha-2b may increase or decrease levels of CYP2D6 substrate.
+
+pentazocine
+paroxetine and pentazocine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+perhexiline
+paroxetine will increase the level or effect of perhexiline by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+perphenazine
+paroxetine, perphenazine. unspecified interaction mechanism. Use Caution/Monitor.
+Serotonin modulators may enhance dopamine blockade, possibly increasing the risk
+for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic
+effect of serotonin modulators, which may result in serotonin syndrome. Monitor for
+evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and
+neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia,
+muscle rigidity, autonomic dysfunction).
+
+pimavanserin
+paroxetine, pimavanserin. unspecified interaction mechanism. Use Caution/Monitor.
+Serotonin modulators may enhance dopamine blockade, possibly increasing the risk
+for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic
+effect of serotonin modulators, which may result in serotonin syndrome. Monitor for
+evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and
+neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia,
+muscle rigidity, autonomic dysfunction).
+
+pimozide
+paroxetine, pimozide. unspecified interaction mechanism. Use Caution/Monitor.
+Serotonin modulators may enhance dopamine blockade, possibly increasing the risk
+for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic
+effect of serotonin modulators, which may result in serotonin syndrome. Monitor for
+evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and
+neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia,
+muscle rigidity, autonomic dysfunction).
+
+piroxicam
+paroxetine, piroxicam. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+pitolisant
+paroxetine and pitolisant both increase affecting hepatic enzyme CYP2D6
+metabolism. Modify Therapy/Monitor Closely. If coadministered with strong
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 33/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+CYP2D6 inhibitors, initiate pitolisant at 8.9 mg/day and increase after 7 days to
+maximum of 17.8 mg/day. For patients currently taking pitolisant, reduce pitolisant
+dose by half upon initiating strong CYP2D6 inhibitors.
+
+posaconazole
+paroxetine and posaconazole both increase QTc interval. Use Caution/Monitor.
+
+pregabalin
+pregabalin, paroxetine. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+prochlorperazine
+paroxetine will increase the level or effect of prochlorperazine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+prochlorperazine and paroxetine both increase QTc interval. Use Caution/Monitor.
+
+promazine
+paroxetine will increase the level or effect of promazine by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+promazine and paroxetine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+promethazine
+promethazine and paroxetine both increase QTc interval. Use Caution/Monitor.
+
+protriptyline
+protriptyline and paroxetine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+quetiapine
+paroxetine, quetiapine. unspecified interaction mechanism. Use Caution/Monitor.
+Serotonin modulators may enhance dopamine blockade, possibly increasing the risk
+for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic
+effect of serotonin modulators, which may result in serotonin syndrome. Monitor for
+evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and
+neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia,
+muscle rigidity, autonomic dysfunction).
+
+quinidine
+quinidine will increase the level or effect of paroxetine by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor. Monitor patients for signs of paroxetine
+toxicity. Paroxetine doses may need to be reduced.
+
+ranolazine
+paroxetine and ranolazine both increase QTc interval. Use Caution/Monitor.
+
+remimazolam
+remimazolam, paroxetine. Either increases toxicity of the other by sedation. Modify
+Therapy/Monitor Closely. Coadministration may result in profound sedation,
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 34/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+respiratory depression, coma, and/or death. Continuously monitor vital signs during
+sedation and recovery period if coadministered. Carefully titrate remimazolam dose
+if administered with opioid analgesics and/or sedative/hypnotics.
+
+revumenib
+revumenib and paroxetine both increase QTc interval. Use Caution/Monitor. ECG
+monitoring recommended if concomitant use can?t be avoided and withhold
+therapy if QTc interval is >480 msec; restart therapy after QTc interval returns to
+<480 msec
+
+risperidone
+paroxetine will increase the level or effect of risperidone by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+paroxetine and risperidone both increase QTc interval. Use Caution/Monitor.
+
+paroxetine increases levels of risperidone by decreasing metabolism. Use
+Caution/Monitor.
+
+paroxetine, risperidone. unspecified interaction mechanism. Use Caution/Monitor.
+Serotonin modulators may enhance dopamine blockade, possibly increasing the risk
+for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic
+effect of serotonin modulators, which may result in serotonin syndrome. Monitor for
+evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and
+neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia,
+muscle rigidity, autonomic dysfunction).
+
+ritonavir
+ritonavir will increase the level or effect of paroxetine by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+rivaroxaban
+paroxetine increases effects of rivaroxaban by pharmacodynamic synergism. Use
+Caution/Monitor. Combination may increase risk of bleeding.
+
+rizatriptan
+rizatriptan and paroxetine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+rolapitant
+rolapitant will increase the level or effect of paroxetine by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor. Rolapitant may increase plasma
+concentrations of CYP2D6 substrates for at least 28 days following rolapitant
+administration.
+
+safinamide
+paroxetine, safinamide. Either increases toxicity of the other by serotonin levels. Use
+Caution/Monitor. Monitor patients for symptoms of serotonin syndrome if SSRIs are
+coadministered with safinamide.
+
+salicylates (non-asa)
+paroxetine, salicylates (non-asa). Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 35/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+bleeding. SSRIs inhib. serotonin uptake by platelets.
+
+salsalate
+paroxetine, salsalate. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+SAMe
+paroxetine and SAMe both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+sertraline
+sertraline and paroxetine both increase QTc interval. Use Caution/Monitor.
+
+Siberian ginseng
+Siberian ginseng increases toxicity of paroxetine by pharmacodynamic synergism.
+Use Caution/Monitor. May have anticoagulant/antiplatelet effects.
+
+sodium sulfate/?magnesium sulfate/potassium chloride
+sodium sulfate/?magnesium sulfate/potassium chloride increases effects of
+paroxetine by unknown mechanism. Use Caution/Monitor. Closely monitor for
+evidence of seizures when using bowel preps together with drugs that lower the
+seizure threshold.
+
+sodium sulfate/potassium chloride/magnesium sulfate/polyethylene glycol
+paroxetine, sodium sulfate/potassium chloride/magnesium sulfate/polyethylene
+glycol. Other (see comment). Use Caution/Monitor. Comment: Caution when bowel
+preps are used with drugs that cause SIADH or NSAIDs; increased risk for water
+retention or electrolyte imbalance.
+
+sodium sulfate/potassium sulfate/magnesium sulfate
+sodium sulfate/potassium sulfate/magnesium sulfate increases effects of paroxetine
+by unknown mechanism. Use Caution/Monitor. Closely monitor for evidence of
+seizures when using bowel preps together with drugs that lower the seizure
+threshold.
+
+sufentanil SL
+sufentanil SL, paroxetine. Either increases effects of the other by serotonin levels.
+Use Caution/Monitor. Coadministration of drugs that affect the serotonergic
+neurotransmitter system may result in serotonin syndrome. If concomitant use is
+warranted, carefully observe the patient, particularly during treatment initiation and
+dose adjustment.
+
+sulfamethoxazole
+sulfamethoxazole and paroxetine both increase QTc interval. Use Caution/Monitor.
+
+sulfasalazine
+paroxetine, sulfasalazine. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+sulindac
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 36/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+paroxetine, sulindac. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+sumatriptan
+sumatriptan and paroxetine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+sumatriptan intranasal
+sumatriptan intranasal and paroxetine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+taletrectinib
+taletrectinib and paroxetine both increase QTc interval. Use Caution/Monitor.
+Concomitant use may increase the risk of QTc interval prolongation. If concomitant
+use is unavoidable, adjust the frequency of ECG and electrolyte monitoring.
+
+tamoxifen
+paroxetine decreases effects of tamoxifen by decreasing metabolism. Use
+Caution/Monitor. Inhibition of CYP2D6 metabolism to tamoxifen's active metabolite,
+endoxifen.
+
+tamsulosin
+paroxetine increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+tapentadol
+paroxetine and tapentadol both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+telavancin
+paroxetine and telavancin both increase QTc interval. Use Caution/Monitor.
+
+terbinafine
+terbinafine will increase the level or effect of paroxetine by affecting hepatic
+enzyme CYP2D6 metabolism. Modify Therapy/Monitor Closely. Assess need to
+reduce dose of CYP2D6-metabolized drug.
+
+tetrabenazine
+paroxetine increases effects of tetrabenazine by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor. Decrease tetrabenazine dose by 50% when
+coadministered with strong CYP2D6 inhibitors.
+
+thiothixene
+paroxetine, thiothixene. unspecified interaction mechanism. Use Caution/Monitor.
+Serotonin modulators may enhance dopamine blockade, possibly increasing the risk
+for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic
+effect of serotonin modulators, which may result in serotonin syndrome. Monitor for
+evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and
+neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia,
+muscle rigidity, autonomic dysfunction).
+
+tinidazole
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 37/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+paroxetine will increase the level or effect of tinidazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+tolfenamic acid
+paroxetine, tolfenamic acid. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. SSRIs inhib. serotonin uptake by platelets.
+
+tolmetin
+paroxetine, tolmetin. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+tramadol
+paroxetine decreases effects of tramadol by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor. Decreased conversion of tramadol to active
+metabolite.
+
+paroxetine and tramadol both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+trazodone
+trazodone and paroxetine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+trifluoperazine
+paroxetine will increase the level or effect of trifluoperazine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+trifluoperazine and paroxetine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+paroxetine, trifluoperazine. unspecified interaction mechanism. Use
+Caution/Monitor. Serotonin modulators may enhance dopamine blockade, possibly
+increasing the risk for neuroleptic malignant syndrome. Antipsychotics may enhance
+serotonergic effect of serotonin modulators, which may result in serotonin
+syndrome. Monitor for evidence of serotonin toxicity (eg, mental status changes,
+autonomic instability, and neuromuscular hyperactivity) or neuroleptic malignant
+syndrome (eg, hyperthermia, muscle rigidity, autonomic dysfunction).
+
+trimethoprim
+paroxetine and trimethoprim both increase QTc interval. Use Caution/Monitor.
+
+trimipramine
+trimipramine and paroxetine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+tropisetron
+paroxetine will increase the level or effect of tropisetron by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+paroxetine and tropisetron both increase QTc interval. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 38/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+valbenazine
+paroxetine will increase the level or effect of valbenazine by affecting hepatic
+enzyme CYP2D6 metabolism. Modify Therapy/Monitor Closely. Consider reducing
+valbenazine dose based on tolerability if coadministered with a strong CYP2D6
+inhibitor.
+
+valbenazine and paroxetine both increase QTc interval. Use Caution/Monitor.
+
+valerian
+valerian and paroxetine both increase sedation. Use Caution/Monitor.
+
+venlafaxine
+paroxetine and venlafaxine both increase QTc interval. Use Caution/Monitor.
+
+viloxazine
+viloxazine will increase the level or effect of paroxetine by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor. Viloxazine (a weak CYP2D6 inhibitor)
+may increase systemic exposure of CYP2D6 substrates. Monitor and adjust dose of
+substrate as clinically indicated.
+
+vorapaxar
+paroxetine, vorapaxar. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Additive antiplatelet effect may occur; SSRIs and
+SNRIs may cause platelet serotonin depletion .
+
+voriconazole
+paroxetine and voriconazole both increase QTc interval. Use Caution/Monitor.
+
+warfarin
+paroxetine, warfarin. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Serotonin release by platelets plays an important
+role in hemostasis. SSRIs and SNRIs may increase anticoagulation effect of
+warfarin. .
+
+xanomeline/trospium
+paroxetine increases levels of xanomeline/trospium by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+zanubrutinib
+paroxetine, zanubrutinib. Either increases effects of the other by anticoagulation.
+Modify Therapy/Monitor Closely. Zanubrutinib-induced cytopenias increases risk of
+hemorrhage. Coadministration of zanubritinib with antiplatelets or anticoagulants
+may further increase this risk.
+
+ziprasidone
+paroxetine and ziprasidone both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+paroxetine, ziprasidone. unspecified interaction mechanism. Use Caution/Monitor.
+Serotonin modulators may enhance dopamine blockade, possibly increasing the risk
+for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic
+effect of serotonin modulators, which may result in serotonin syndrome. Monitor for
+evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 39/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia,
+muscle rigidity, autonomic dysfunction).
+
+zolmitriptan
+zolmitriptan and paroxetine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+Minor (39)
+
+almotriptan
+paroxetine, almotriptan. Mechanism: unknown. Minor/Significance Unknown. Risk of
+weakness, dyspnea, chest pain.
+
+aprepitant
+aprepitant, paroxetine. Either decreases levels of the other by unspecified
+interaction mechanism. Minor/Significance Unknown.
+
+azithromycin
+azithromycin and paroxetine both increase QTc interval. Minor/Significance
+Unknown.
+
+bumetanide
+bumetanide, paroxetine. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Possible additive hyponatremia.
+
+bumetanide intranasal
+bumetanide intranasal, paroxetine. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Possible additive hyponatremia.
+
+celandine
+celandine decreases effects of paroxetine by pharmacodynamic antagonism.
+Minor/Significance Unknown. Based on animal studies.
+
+celecoxib
+celecoxib will increase the level or effect of paroxetine by affecting hepatic enzyme
+CYP2D6 metabolism. Minor/Significance Unknown.
+
+chloroquine
+chloroquine will increase the level or effect of paroxetine by affecting hepatic
+enzyme CYP2D6 metabolism. Minor/Significance Unknown.
+
+darifenacin
+darifenacin will increase the level or effect of paroxetine by affecting hepatic
+enzyme CYP2D6 metabolism. Minor/Significance Unknown.
+
+dexmethylphenidate
+dexmethylphenidate increases effects of paroxetine by decreasing metabolism.
+Minor/Significance Unknown.
+
+diphenhydramine
+diphenhydramine will increase the level or effect of paroxetine by affecting hepatic
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 40/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+enzyme CYP2D6 metabolism. Minor/Significance Unknown.
+
+duloxetine
+duloxetine will increase the level or effect of paroxetine by affecting hepatic enzyme
+CYP2D6 metabolism. Minor/Significance Unknown.
+
+eletriptan
+paroxetine, eletriptan. Mechanism: unknown. Minor/Significance Unknown. Risk of
+weakness, dyspnea, chest pain.
+
+ethacrynic acid
+ethacrynic acid, paroxetine. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Possible additive hyponatremia.
+
+fesoterodine
+paroxetine will increase the level or effect of fesoterodine by affecting hepatic
+enzyme CYP2D6 metabolism. Minor/Significance Unknown.
+
+fosaprepitant
+fosaprepitant, paroxetine. Either decreases levels of the other by unspecified
+interaction mechanism. Minor/Significance Unknown.
+
+frovatriptan
+paroxetine, frovatriptan. Mechanism: unknown. Minor/Significance Unknown. Risk of
+weakness, dyspnea, chest pain.
+
+furosemide
+furosemide, paroxetine. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Possible additive hyponatremia.
+
+lithium
+paroxetine, lithium. Mechanism: unknown. Minor/Significance Unknown. Risk of
+neurotoxicity.
+
+maraviroc
+maraviroc will increase the level or effect of paroxetine by affecting hepatic enzyme
+CYP2D6 metabolism. Minor/Significance Unknown.
+
+marijuana
+marijuana will increase the level or effect of paroxetine by affecting hepatic enzyme
+CYP2D6 metabolism. Minor/Significance Unknown.
+
+naratriptan
+paroxetine, naratriptan. Mechanism: unknown. Minor/Significance Unknown. Risk of
+weakness, dyspnea, chest pain.
+
+nilotinib
+nilotinib will increase the level or effect of paroxetine by affecting hepatic enzyme
+CYP2D6 metabolism. Minor/Significance Unknown.
+
+oxycodone
+paroxetine decreases effects of oxycodone by decreasing metabolism.
+Minor/Significance Unknown. Decreased conversion of oxycodone to active
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 41/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+metabolite morphine.
+
+parecoxib
+parecoxib will increase the level or effect of paroxetine by affecting hepatic enzyme
+CYP2D6 metabolism. Minor/Significance Unknown.
+
+pazopanib
+paroxetine and pazopanib both increase QTc interval. Minor/Significance Unknown.
+
+pleurisy root
+pleurisy root decreases effects of paroxetine by unspecified interaction mechanism.
+Minor/Significance Unknown. Theoretical interaction.
+
+quinacrine
+quinacrine will increase the level or effect of paroxetine by affecting hepatic enzyme
+CYP2D6 metabolism. Minor/Significance Unknown.
+
+ranolazine
+ranolazine will increase the level or effect of paroxetine by affecting hepatic enzyme
+CYP2D6 metabolism. Minor/Significance Unknown.
+
+rizatriptan
+paroxetine, rizatriptan. Mechanism: unknown. Minor/Significance Unknown. Risk of
+weakness, dyspnea, chest pain.
+
+ruxolitinib
+paroxetine will increase the level or effect of ruxolitinib by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+ruxolitinib topical
+paroxetine will increase the level or effect of ruxolitinib topical by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+serdexmethylphenidate/dexmethylphenidate
+serdexmethylphenidate/dexmethylphenidate increases effects of paroxetine by
+decreasing metabolism. Minor/Significance Unknown.
+
+sumatriptan
+paroxetine, sumatriptan. Mechanism: unknown. Minor/Significance Unknown. Risk
+of weakness, dyspnea, chest pain.
+
+sumatriptan intranasal
+paroxetine, sumatriptan intranasal. Mechanism: unknown. Minor/Significance
+Unknown. Risk of weakness, dyspnea, chest pain.
+
+torsemide
+torsemide, paroxetine. Mechanism: pharmacodynamic synergism. Minor/Significance
+Unknown. Possible additive hyponatremia.
+
+tramadol
+paroxetine decreases effects of tramadol by decreasing metabolism.
+Minor/Significance Unknown. Decreased conversion of tramadol to active
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 42/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+metabolite.
+
+venlafaxine
+venlafaxine will increase the level or effect of paroxetine by affecting hepatic
+enzyme CYP2D6 metabolism. Minor/Significance Unknown.
+
+zolmitriptan
+paroxetine, zolmitriptan. Mechanism: unknown. Minor/Significance Unknown. Risk
+of weakness, dyspnea, chest pain.
+
+Adverse Effects
+
+>10% (Based on 40 mg Dose)
+
+Nausea (15-24%)
+
+Insomnia (11-24%)
+
+Dry mouth (9-18%)
+
+Headache (17%)
+
+Asthenia (10-15%)
+
+Constipation (10-15%)
+
+Diarrhea (9-12%)
+
+Dizziness (6-14%)
+
+Ejaculation disorder (10-15%)
+
+Tremor (4-11%)
+
+1-10% (Based on 40 mg Dose)
+
+Anxiety (5-10%)
+
+Blurred vision (5-10%)
+
+Decreased appetite (5-10%)
+
+Impotence (2-9%)
+
+Nervousness (2-5%)
+
+Paresthesia (2-5%)
+
+Hypomania (0.3 to 2.2%)
+
+Frequency Not Defined (Based on 40 mg Dose)
+
+Hypertension
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 43/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+Tachycardia
+
+Emotional lability
+
+Pruritus
+
+Weight gain
+
+Arthralgia
+
+Tinnitus
+
+Vertigo
+
+Angle clossure glaucoma
+
+Serious
+
+Depression exacerbation
+
+Mania (rare)
+
+Serotonin syndrome
+
+Suicidal thoughts (rare)
+
+Suicide (rare)
+
+Seizure (rare)
+
+Toxic epidermal necrolysis
+
+Hyponatremia (rare)
+
+Bleeding, abnormal (rare)
+
+Acute hepatitis (rare)
+
+Stevens-Johnson Syndrome
+
+Bone fracture
+
+Akathisia
+
+Postmarketing Reports
+
+Anosmia, hyposmia, somnolence, neuroleptic malignant syndrome
+
+Warnings
+
+Black Box Warnings
+
+In short-term studies, antidepressants increased the risk of suicidal thinking and
+behavior in children, adolescents, and young adults (<24 years) taking antidepressants
+for major depressive disorders and other psychiatric illnesses
+
+This increase was not seen in patients aged >24 years; a slight decrease in suicidal
+thinking was seen in adults >65 years
+
+In children and young adults, risks must be weighed against the benefits of taking
+antidepressants
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 44/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+Patients should be monitored closely for changes in behavior, clinical worsening, and
+suicidal tendencies; this should be done during the initial 1-2 months of therapy and
+dosage adjustments
+
+The patient’s family should communicate any abrupt changes in behavior to the
+healthcare provider
+
+Worsening behavior and suicidal tendencies that are not part of the presenting
+symptoms may require discontinuation of therapy
+
+This drug is not approved for use in any psychiatric condition or in pediatric and young
+adult patients
+
+Contraindications
+
+Hypersensitivity
+
+Concomitant administration with pimozide or thioridazine
+
+Coadministration with serotonergic drugs
+
+Concomitant use or within 14 days of MAOIs increases risk of serotonin syndrome
+
+Reactions to concomitant administration with MAOIs include tremor, myoclonus,
+diaphoresis, nausea, vomiting, flushing, dizziness, hyperthermia with features
+resembling neuroleptic malignant syndrome, seizures, rigidity, autonomic instability
+with possible rapid fluctuations of vital signs, and mental status changes that
+include extreme agitation progressing to delirium and coma
+
+Starting paroxetine in a patient who is being treated with linezolid or IV methylene
+blue is contraindicated because of an increased risk of serotonin syndrome
+
+If linezolid or IV methylene blue must be administered, discontinue SSRI
+immediately and monitor for CNS toxicity; may resume 24 hr after last linezolid or
+methylene blue dose, or after 2 weeks of monitoring (5 weeks for fluoxetine),
+whichever comes first
+
+Cautions
+
+Clinical worsening and suicidal ideation may occur despite medication in adolescents
+and young adults (18-24 years)
+
+Use caution in patients with history of seizure or suicidal thought/behavior; discontinue
+therapy in patients who develop seizures
+
+Adverse reactions after discontinuation of serotonergic antidepressants, particularly after
+abrupt discontinuation, include, nausea, sweating, dysphoric mood, irritability, agitation,
+dizziness, sensory disturbances (eg, paresthesia, such as electric shock sensations),
+tremor, anxiety, confusion, headache, lethargy, emotional lability, insomnia, hypomania,
+tinnitus, and seizures; a gradual reduction in dosage rather than abrupt cessation is
+recommended whenever possible
+
+Life-threatening serotonin syndrome reported with SNRIs and SSRIs alone; also with
+concomitant use of other serotonergic drugs (including triptans, tricyclic antidepressants,
+fentanyl, lithium, tramadol, tryptophan, buspirone, amphetamines, and St. John’s Wort)
+
+Risk of mydriasis; may trigger angle closure attack in patients with angle closure
+glaucoma with anatomically narrow angles without a patent iridectomy; avoid use in
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 45/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+patients with untreated anatomically narrow angles
+
+Conflicting evidence regarding use of SSRIs during pregnancy and increased risk of
+persistent pulmonary hypertension of the newborn (see Pregnancy)
+
+Risk of complications such as feeding difficulties, irritability, and respiratory problems
+reported in neonates exposed to SNRIs/SSRIs late in third trimester
+
+Based on meta-analyses of epidemiological studies, exposure to paroxetine in the first
+trimester of pregnancy is associated with < 2-fold increase in rate of cardiovascular
+malformations among infants; for women who intend to become pregnant or who are in
+their first trimester of pregnancy, therapy, should be initiated only after consideration of
+the other available treatment options
+
+Withdraw gradually
+
+Use lower starting dose in renal impairment (CrCl <30 mL/min) or severe hepatic
+impairment
+
+Inability to remain still due to feelings of agitation or restlessness reported; may occur
+within first few weeks of therapy
+
+Consider risk of serotonin syndrome if administered concomitantly with other
+serotonergic drugs including triptans, tricyclic antidepressants, fentanyl, lithium,
+tramadol, tryptophan, buspirone, amphetamines, and St. John’s Wort
+
+Bipolar disorder and monitoring
+
+Low dose paroxetine capsule is only indicated for the treatment of moderate to
+severe VMS and is not approved for use in treating either depression or bipolar
+depression
+
+However, prior to initiating treatment, all patients should be adequately screened to
+determine if they are at risk for bipolar disorder; such screening should include a
+detailed psychiatric history, including a family history of suicide, bipolar disorder,
+and depression; it is generally believed (though not established in controlled trials)
+that use of an antidepressant alone may increase the likelihood of precipitation of a
+mixed/manic episode in patients at risk for bipolar disorder
+
+Bone fracture
+
+Epidemiological studies on bone fracture risk following exposure to SSRIs have
+reported an association between SSRI treatment and fractures
+
+It is unknown to what extent fracture risk is directly attributable to SSRI treatment;
+if a treated patient presents with unexplained bone pain, point tenderness,
+swelling, or bruising, consider the possibility of a fragility fracture; bone fractures
+reported to be associated with antidepresant use
+
+Hyponatremia
+
+Hyponatremia may occur as a result of treatment with SSRIs, including this
+medication; cases with serum sodium lower than 110 mmol/L have been reported
+in patients using SSRIs; geriatric patients, patients taking diuretics, and those who
+are volume-depleted may be at greater risk of developing hyponatremia with
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 46/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+Signs and symptoms of hyponatremia include headache, difficulty concentrating,
+memory impairment, confusion, weakness, and unsteadiness, which can lead to
+falls
+
+Signs and symptoms associated with more severe and/or acute cases have included
+hallucination, syncope, seizure, coma, respiratory arrest, and death; in many cases,
+the hyponatremia appears to be the result of the syndrome of inappropriate
+antidiuretic hormone secretion (SIADH); in patients with symptomatic
+hyponatremia, discontinue therapy and institute appropriate medical intervention
+
+Sexual dysfunction
+
+Use may cause symptoms of sexual dysfunction in both male and female patients;
+inform patients that they should discuss any changes in sexual function and
+potential management strategies with their healthcare provider
+
+Use of SSRIs, may cause symptoms of sexual dysfunction; in male patients, SSRI
+use may result in ejaculatory delay or failure, decreased libido, and erectile
+dysfunction
+
+In female patients, SSRI/SNRI use may result in decreased libido and delayed or
+absent orgasm
+
+Important for prescribers to inquire about sexual function prior to initiation of
+therapy and to inquire specifically about changes in sexual function during
+treatment, because sexual function may not be spontaneously reported
+
+When evaluating changes in sexual function, obtaining a detailed history (including
+timing of symptom onset) is important because sexual symptoms may have other
+causes, including underlying psychiatric disorder
+
+Discuss potential management strategies to support patients in making informed
+decisions about treatment
+
+Drug interaction overview
+
+SSRIs, including this drug, increased the risk of bleeding events; concomitant use of
+aspirin, nonsteroidal anti-inflammatory drugs (NSAIDs), other antiplatelet drugs,
+warfarin, and other anticoagulants may add to this risk
+
+Case reports and epidemiological studies (case-control and cohort design) have
+demonstrated an association between use of drugs that interfere with serotonin
+reuptake and the occurrence of gastrointestinal bleeding
+
+Bleeding events related to SSRIs have ranged from ecchymosis, hematoma,
+epistaxis, and petechiae to life-threatening hemorrhages; inform patients about risk
+of bleeding associated with concomitant use of this drug and antiplatelet agents or
+anticoagulants for patients taking warfarin, carefully monitor international
+normalized ratio
+
+Some studies have shown that the efficacy of tamoxifen, as measured by the risk of
+breast cancer relapse/ mortality, may be reduced when concomitantly administered
+with paroxetine as a result of paroxetine’s irreversible inhibition of CYP2D6 and
+lower tamoxifen blood
+
+However, other studies have failed to demonstrate such a risk; when tamoxifen is
+used for the treatment or prevention of breast cancer, weigh the likely benefit of
+low dose paroxetine for treating moderate to severe VMS associated with
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 47/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+menopause vs. the risk of possible decreased tamoxifen effectiveness, and consider
+avoiding concomitant use of low dose paroxetine
+
+Pregnancy & Lactation
+
+Pregnancy
+
+There is a pregnancy exposure registry that monitors pregnancy outcomes in women
+exposed to antidepressants, including this drug, during pregnancy; healthcare providers
+are encouraged to advise patients to register by calling the National Pregnancy Registry
+for Antidepressants 1-866-961-2388 or visiting online at
+https://womensmentalhealth.org/clinical-and-research-
+programs/pregnancyregistry/antidepressants/
+
+Based on data from published observational studies, exposure to SSRIs, particularly in
+the month before delivery, has been associated with a less than 2-fold increase in the
+risk of postpartum hemorrhage
+
+This drug is associated with a < 2-fold increase in cardiovascular malformations when
+administered to a pregnant woman during the first trimester; while individual
+epidemiological studies on the association between paroxetine use and cardiac
+malformations have reported inconsistent findings, some meta-analyses of
+epidemiological studies have identified an increased risk of cardiovascular malformations
+
+There are risks of persistent pulmonary hypertension of the newborn (PPHN) and/or
+poor neonatal adaptation with exposure to selective serotonin reuptake inhibitors
+(SSRIs), including this drug during pregnancy
+
+There also are risks associated with untreated depression in pregnancy; for women who
+intend to become pregnant or who are in their first trimester of pregnancy, paroxetine
+should be initiated only after consideration of the other available treatment options
+
+No evidence of treatment related malformations was observed in animal reproduction
+studies, when paroxetine was administered during the period of organogenesis at doses
+up to 50 mg/kg/day in rats and 6 mg/kg/day in rabbits; these doses are approximately 8
+(rat) and less than 2 (rabbit) times the maximum recommended human dose (MRHD –
+60 mg) on an mg/m2 basis
+
+When paroxetine was administered to female rats during last trimester of gestation and
+continued through lactation, there was an increase in number of pup deaths during first
+four days of lactation; this effect occurred at dose of 1 mg/kg/day which is less than the
+MRHD on an mg/m2 basis
+
+Women who discontinue antidepressants during pregnancy are more likely to experience
+a relapse of major depression than women who continue antidepressants; consider risk
+of untreated depression when discontinuing or changing treatment with antidepressant
+medication during pregnancy and postpartum
+
+Use of in the month before delivery may be associated with an increased risk of
+postpartum hemorrhage
+
+Neonates exposed to this drug and other SSRIs late in third trimester have developed
+complications requiring prolonged hospitalization, respiratory support, and tube feeding;
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 48/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+such complications can arise immediately upon delivery
+
+Reported clinical findings have included respiratory distress, cyanosis, apnea, seizures,
+temperature instability, feeding difficulty, vomiting, hypoglycemia, hypotonia, hypertonia,
+hyperreflexia, tremors, jitteriness, irritability, and constant crying
+
+These findings are consistent with either a direct toxic effect of SSRIs or possibly a drug
+discontinuation syndrome; should be noted that, in some cases, the clinical picture is
+consistent with serotonin syndrome
+
+Lactation
+
+Data from the published literature report the presence of paroxetine in human milk; there
+are reports of agitation, irritability, poor feeding and poor weight gain in infants exposed
+to paroxetine through breast milk
+
+There are no data on effect of therapy on milk production; developmental and health
+benefits of breastfeeding should be considered along with mother’s clinical need for
+therapy and any potential adverse effects on breastfed child from therapy or from
+underlying maternal condition
+
+Infants exposed to this drug should be monitored for agitation, irritability, poor feeding
+and poor weight gain
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+SSRI; little or no affinity for alpha-adrenergic histamine or cholinergic receptor
+
+Absorption
+
+Peak plasma time: 5.2-8.1 hr (immediate-release); 6-10 hr (controlled-release)
+
+Peak plasma concentration: 61.7 ng/mL
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 49/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+Distribution
+
+Protein bound: 93-95%
+
+Vd: 8.7 L/kg
+
+Metabolism
+
+Metabolism: Hepatic P450 enzyme CYP2D6
+
+Enzymes inhibited: CYP2D6
+
+Metabolites: Inactive
+
+Elimination
+
+Half-life: 21 hr
+
+Dialyzable: No
+
+Excretion: Urine (64%); feces (36%)
+
+Pharmacogenomics
+
+Several SSRIs (eg, fluoxetine, fluvoxamine, paroxetine, sertraline) are metabolized by
+CYP2D6
+
+CYP2D6 is involved in the metabolism of approximately 20% of drugs in clinical use, and
+it displays large individual-to-individual variability in activity due to genetic
+polymorphisms
+
+More than 80 CYP2D6 variant alleles have been identified; however, 4 of the most
+prevalent alleles, CYP2D6*3, *4, *5, and *6, account for 93-97% of CYP2D6 poor
+metabolizers (PMs)
+
+CYP2D6*4, the most common variant (~25% frequency in whites), causes a splicing
+defect; CYP2D6*3 (2.7% frequency) causes a frameshift mutation; and CYP3D6*5
+(2.6%) is an entire deletion of the CYP2D6 gene; individuals homozygous for these
+alleles have no CYP2D6 activity
+
+The impact of CYP2D6 activity is further complicated in some SSRIs (eg, fluoxetine,
+fluvoxamine, paroxetine, sertraline) that in addition to being substrates for CYP2D6, are
+also known to moderately inhibit CYP2D6 activity
+
+Genetic testing laboratories
+
+Genotyping tests for CYP2D6 variants are commercially available through the
+following companies
+
+Applied Biosystems (https://www.appliedbiosystems.com/)
+
+GenPath Diagnostics (https://www.genpathdiagnostics.com/)
+
+Formulary
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 50/51
+
+
+
+6/22/26, 4:23 PM Paxil, Paxil CR (paroxetine) dosing, indications, interactions, adverse effects, and more
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/paxil-brisdelle-paroxetine-342959 51/51

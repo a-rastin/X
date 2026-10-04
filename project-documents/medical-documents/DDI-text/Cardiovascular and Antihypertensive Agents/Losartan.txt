@@ -1,0 +1,2228 @@
+﻿6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+losartan (Rx)
+Brand and Other Names: Cozaar, Arbli
+Classes: ARBs
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+tablet (Cozaar; generic)
+
+25mg
+
+50mg
+
+100mg
+
+oral suspension (Arbli)
+
+10mg/mL
+
+Hypertension
+
+50 mg PO qDay initially; may increase to up to 100 mg/day
+
+Patients with possible intravascular depletion or receiving diuretics (eg, on diuretic
+therapy): 25 mg PO qDay initially
+
+Hypertension with Left Ventricular Hypertrophy
+
+Indicated to reduce risk of stroke in patients with hypertension and left ventricular
+hypertrophy, but there is evidence that this benefit does not apply to Black patients
+
+50 mg PO qDay initially; may increase to up to 100 mg/day
+
+Hydrochlorothiazide 12.5 mg PO qDay may be added in combination; may increase to up
+to 25 mg/day
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 1/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+Nephropathy in Type 2 Diabetes
+
+Indicated for diabetic nephropathy with an elevated serum creatinine and proteinuria
+(urinary albumin to creatinine ratio ≥300 mg/g) in patients with type 2 diabetes and a
+history of hypertension
+
+50 mg PO qDay initially; may increase to up to 100 mg/day
+
+Dosage Modifications
+
+Renal impairment
+
+Mild, moderate, or severe: No dosage adjustment necessary, except if the patient is
+volume depleted
+
+Hepatic impairment
+
+Mild-to-moderate: 25 mg PO qDay initially
+
+Severe: Not studied
+
+Marfan Syndrome (Orphan)
+
+Orphan designation for treatment of Marfan syndrome
+
+Orphan sponsor
+
+National Marfan Foundation, 22 Manhasset Ave, Port Washington, NY 11050
+
+Epidermolysis Bullosa (Orphan)
+
+Orphan designation for treatment of epidermolysis bullosa
+
+Orphan sponsor
+
+3R Pharma Consulting GmbH; 3 Wildbader Strabe; Dobel, Germany
+
+PEDIATRIC
+Dosage Forms & Strengths
+
+tablet (Cozaar; generic)
+
+25mg
+
+50mg
+
+100mg
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 2/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+oral suspension (Arbli)
+
+10mg/mL
+
+Hypertension
+
+<6 years: Safety and efficacy not established
+
+≥6 years
+
+0.7 mg/kg PO qDay (up to 50 mg total); adjust dosage according to blood pressure
+response 
+
+Doses >1.4 mg/kg (or in excess of 100 mg) daily have not been studied
+
+Dosage Modifications
+
+Renal impairment
+
+CrCl <30 mL/min/1.73m2: Not recommended
+
+Interactions
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and losartan
+No Interactions Found
+Interactions Found
+Contraindicated
+
+Serious
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+Contraindicated (2)
+
+aliskiren
+losartan decreases effects of aliskiren by Other (see comment). Contraindicated.
+Comment: Aliskiren use contraindicated with ARBs in patients with diabetes; avoid
+coadministration with ARBs if GFR. In patients who are elderly, volume-depleted
+(including those on diuretic therapy), or with compromised renal function,
+coadministration of ARBS with drugs that affect RAAS may increase the risk of
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 3/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+renal impairment (including acute renal failure) and cause loss of antihypertensive
+effect. Monitor renal function periodically.
+
+sparsentan
+sparsentan, losartan. Either increases toxicity of the other by pharmacodynamic
+synergism. Contraindicated. Coadministration of ARBs with sparsentan is
+associated with increased risks of hypotension, syncope, hyperkalemia, and
+changes in renal function (eg, acute renal failure).
+
+Serious (27)
+
+apalutamide
+apalutamide will decrease the level or effect of losartan by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+Coadministration of apalutamide, a strong CYP3A4 inducer, with drugs that are
+CYP3A4 substrates can result in lower exposure to these medications. Avoid or
+substitute another drug for these medications when possible. Evaluate for loss of
+therapeutic effect if medication must be coadministered. Adjust dose according to
+prescribing information if needed.
+
+benazepril
+losartan, benazepril. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Dual blockade of renin-angiotensin system
+increases risks of hypotension, hyperkalemia, and renal impairment.
+
+captopril
+losartan, captopril. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Dual blockade of renin-angiotensin system
+increases risks of hypotension, hyperkalemia, and renal impairment.
+
+carbamazepine
+carbamazepine will decrease the level or effect of losartan by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+enalapril
+losartan, enalapril. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Dual blockade of renin-angiotensin system
+increases risks of hypotension, hyperkalemia, and renal impairment.
+
+enzalutamide
+enzalutamide will decrease the level or effect of losartan by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+erdafitinib
+losartan will increase the level or effect of erdafitinib by affecting hepatic enzyme
+CYP2C9/10 metabolism. Avoid or Use Alternate Drug. If coadministration of a
+strong CYP2C9 inhibitors is unavoidable, closely monitor adverse reactions and
+modify dose of erdafitinib accordingly. If strong CYP2C9 inhibitor is discontinued,
+consider increasing erdafitinib dose in the absence of any drug-related toxicities.
+
+etrasimod
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 4/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+losartan will increase the level or effect of etrasimod by Other (see comment).
+Avoid or Use Alternate Drug. Increased exposure of etrasimod expected in patients
+who are CYP2C9 poor metabolizers if coadministered with moderate to strong
+CYP2C8 inhibitors.
+
+fedratinib
+losartan will increase the level or effect of fedratinib by Other (see comment). Avoid
+or Use Alternate Drug. Avoid coadministration of fedratinib (a CYP3A4 and
+CYP2C19 substrate) with dual CYP3A4 and CYP2C19 inhibitor. Effect of
+coadministration of a dual CYP3A4 and CYP2C19 inhibitor with fedratinib has not
+been studied.
+
+fosinopril
+losartan, fosinopril. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Dual blockade of renin-angiotensin system
+increases risks of hypotension, hyperkalemia, and renal impairment.
+
+idelalisib
+idelalisib will increase the level or effect of losartan by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Idelalisib is a strong
+CYP3A inhibitor; avoid coadministration with sensitive CYP3A substrates
+
+ivosidenib
+ivosidenib will decrease the level or effect of losartan by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid coadministration
+of sensitive CYP3A4 substrates with ivosidenib or replace with alternative
+therapies. If coadministration is unavoidable, monitor patients for loss of therapeutic
+effect of these drugs.
+
+ivosidenib will decrease the level or effect of losartan by affecting hepatic enzyme
+CYP2C9/10 metabolism. Avoid or Use Alternate Drug. Avoid coadministration of
+sensitive CYP2C9 substrates with ivosidenib or replace with alternate therapies. If
+coadministration is unavoidable, monitor patients for loss of therapeutic effect of
+these drugs.
+
+lisinopril
+losartan, lisinopril. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Dual blockade of renin-angiotensin system
+increases risks of hypotension, hyperkalemia, and renal impairment.
+
+lithium
+losartan increases toxicity of lithium by decreasing renal clearance. Avoid or Use
+Alternate Drug.
+
+lofexidine
+lofexidine, losartan. Either increases effects of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Avoid coadministration with other drugs
+that decrease pulse or blood pressure to mitigate risk of excessive bradycardia and
+hypotension.
+
+lonafarnib
+losartan will increase the level or effect of lonafarnib by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. If coadministration of
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 5/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+lonafarnib (a sensitive CYP3A substrate) with weak CYP3A inhibitors is
+unavoidable, reduce to, or continue lonafarnib at starting dose. Closely monitor for
+arrhythmias and events (eg, syncope, heart palpitations) since lonafarnib effect on
+QT interval is unknown.
+
+moexipril
+losartan, moexipril. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Dual blockade of renin-angiotensin system
+increases risks of hypotension, hyperkalemia, and renal impairment.
+
+perindopril
+losartan, perindopril. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Dual blockade of renin-angiotensin system
+increases risks of hypotension, hyperkalemia, and renal impairment.
+
+phenytoin
+phenytoin will decrease the level or effect of losartan by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+potassium phosphates, IV
+losartan and potassium phosphates, IV both increase serum potassium. Avoid or
+Use Alternate Drug.
+
+primidone
+primidone will decrease the level or effect of losartan by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+quinapril
+losartan, quinapril. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Dual blockade of renin-angiotensin system
+increases risks of hypotension, hyperkalemia, and renal impairment.
+
+ramipril
+losartan, ramipril. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Dual blockade of renin-angiotensin system
+increases risks of hypotension, hyperkalemia, and renal impairment.
+
+siponimod
+losartan will increase the level or effect of siponimod by affecting hepatic enzyme
+CYP2C9/10 metabolism. Avoid or Use Alternate Drug. Coadministration of
+siponimod with drugs that cause moderate CYP2C9 AND a moderate or strong
+CYP3A4 inhibition is not recommended. Caution if siponimod coadministered with
+moderate CYP2C9 inhibitors alone.
+
+tovorafenib
+losartan will increase the level or effect of tovorafenib by decreasing metabolism.
+Avoid or Use Alternate Drug. Avoid coadministration of tovorafenib (a CYP2C8
+substrate) with strong or moderate CYP2C8 inhibitors.
+
+trandolapril
+losartan, trandolapril. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Dual blockade of renin-angiotensin system
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 6/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+increases risks of hypotension, hyperkalemia, and renal impairment.
+
+tucatinib
+losartan will increase the level or effect of tucatinib by Other (see comment). Avoid
+or Use Alternate Drug. Coadministration of tucatinib (a CYP2C8 substrate) with a
+strong or moderate CYP2C8 inhibitors increases tucatinib plasma concentrations
+and risk of toxicities.
+
+tucatinib will increase the level or effect of losartan by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid concomitant use
+of tucatinib with CYP3A substrates, where minimal concentration changes may lead
+to serious or life-threatening toxicities. If unavoidable, reduce CYP3A substrate
+dose according to product labeling.
+
+Monitor Closely (202)
+
+acebutolol
+losartan and acebutolol both increase serum potassium. Use Caution/Monitor.
+
+acebutolol, losartan. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of fetal compromise if given during pregnancy.
+
+aceclofenac
+losartan and aceclofenac both increase serum potassium. Use Caution/Monitor.
+
+acemetacin
+losartan and acemetacin both increase serum potassium. Use Caution/Monitor.
+
+albuterol
+albuterol decreases effects of losartan by pharmacodynamic antagonism. Use
+Caution/Monitor. Monitor BP.
+
+albuterol inhaled
+albuterol inhaled decreases effects of losartan by pharmacodynamic antagonism.
+Use Caution/Monitor. Monitor BP.
+
+aldesleukin
+aldesleukin increases effects of losartan by pharmacodynamic synergism. Use
+Caution/Monitor. Risk of hypotension.
+
+alpelisib
+alpelisib will decrease the level or effect of losartan by affecting hepatic enzyme
+CYP2C9/10 metabolism. Modify Therapy/Monitor Closely.
+
+amifostine
+amifostine, losartan. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration with blood pressure
+lowering agents may increase the risk and severity of hypotension associated with
+amifostine. When amifostine is used at chemotherapeutic doses, withhold blood
+pressure lowering medications for 24 hr prior to amifostine; if blood pressure
+lowering medication cannot be withheld, do not administer amifostine.
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 7/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+amiloride
+losartan and amiloride both increase serum potassium. Modify Therapy/Monitor
+Closely.
+
+amiodarone
+amiodarone will increase the level or effect of losartan by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor. May inhibit the conversion of
+losartan to its active metabolite E-3174. Importance of interaction not established;
+monitor individual therapeutic response to determine losartan dosage.
+
+amiodarone decreases effects of losartan by decreasing metabolism. Use
+Caution/Monitor. May inhibit the conversion of losartan to its active metabolite E-
+3174. Importance of interaction not established; monitor individual therapeutic
+response to determine losartan dosage.
+
+apalutamide
+apalutamide will decrease the level or effect of losartan by affecting hepatic
+enzyme CYP2C9/10 metabolism. Use Caution/Monitor. Coadministration of
+apalutamide, a weak CYP2C9 inducer, with drugs that are CYP2C9 substrates can
+result in lower exposure to these medications. Evaluate for loss of therapeutic effect
+if medication must be coadministered.
+
+apalutamide will decrease the level or effect of losartan by increasing elimination.
+Use Caution/Monitor. Apalutamide induces UGT and may decrease systemic
+exposure of drugs that are UGT substrates.
+
+arformoterol
+arformoterol decreases effects of losartan by pharmacodynamic antagonism. Use
+Caution/Monitor. Monitor BP.
+
+aspirin
+losartan and aspirin both increase serum potassium. Use Caution/Monitor.
+
+aspirin decreases effects of losartan by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+losartan, aspirin. Either increases toxicity of the other by Other (see comment). Use
+Caution/Monitor. Comment: May result in renal function deterioration, particularly in
+elderly or volume depleted individuals.
+
+aspirin rectal
+losartan and aspirin rectal both increase serum potassium. Use Caution/Monitor.
+
+aspirin/citric acid/sodium bicarbonate
+aspirin/citric acid/sodium bicarbonate decreases effects of losartan by
+pharmacodynamic antagonism. Modify Therapy/Monitor Closely. NSAIDs decrease
+synthesis of vasodilating renal prostaglandins, and thus affect fluid homeostasis
+and may diminish antihypertensive effect.
+
+losartan and aspirin/citric acid/sodium bicarbonate both increase serum potassium.
+Use Caution/Monitor.
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 8/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+losartan, aspirin/citric acid/sodium bicarbonate. Either increases toxicity of the other
+by Other (see comment). Use Caution/Monitor. Comment: May result in renal
+function deterioration, particularly in elderly or volume depleted individuals.
+
+atazanavir
+atazanavir will increase the level or effect of losartan by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+atenolol
+losartan and atenolol both increase serum potassium. Use Caution/Monitor.
+
+atenolol, losartan. Mechanism: pharmacodynamic synergism. Use Caution/Monitor.
+Risk of fetal compromise if given during pregnancy.
+
+avanafil
+avanafil increases effects of losartan by pharmacodynamic synergism. Use
+Caution/Monitor. Risk of hypotension.
+
+avapritinib
+losartan will increase the level or effect of avapritinib by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+axitinib
+losartan increases levels of axitinib by affecting hepatic/intestinal enzyme CYP3A4
+metabolism. Use Caution/Monitor.
+
+baxdrostat
+baxdrostat and losartan both increase serum potassium. Use Caution/Monitor. Risk
+of hyperkalemia.
+
+betaxolol
+losartan and betaxolol both increase serum potassium. Use Caution/Monitor.
+
+betaxolol, losartan. Mechanism: pharmacodynamic synergism. Use Caution/Monitor.
+Risk of fetal compromise if given during pregnancy.
+
+bisoprolol
+losartan and bisoprolol both increase serum potassium. Use Caution/Monitor.
+
+bisoprolol, losartan. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of fetal compromise if given during pregnancy.
+
+bosentan
+bosentan will decrease the level or effect of losartan by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor.
+
+bosentan will decrease the level or effect of losartan by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+bretylium
+losartan, bretylium. Either increases effects of the other by pharmacodynamic
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 9/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+synergism. Modify Therapy/Monitor Closely. Each drug may cause hypotension.
+
+brimonidine
+brimonidine increases effects of losartan by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+brimonidine topical
+brimonidine topical increases effects of losartan by pharmacodynamic synergism.
+Use Caution/Monitor.
+
+bumetanide
+losartan increases and bumetanide decreases serum potassium. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+bumetanide intranasal
+losartan increases and bumetanide intranasal decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+canagliflozin
+losartan and canagliflozin both increase serum potassium. Use Caution/Monitor.
+
+cannabidiol
+cannabidiol will increase the level or effect of losartan by decreasing metabolism.
+Modify Therapy/Monitor Closely. Cannabidiol may potentially inhibit CYP2C9
+activity. Consider reducing the dose when concomitantly using CYP2C9 substrates.
+
+carbachol/brimonidine ophthalmic
+carbachol/brimonidine ophthalmic increases effects of losartan by
+pharmacodynamic synergism. Use Caution/Monitor.
+
+carbamazepine
+carbamazepine will decrease the level or effect of losartan by affecting hepatic
+enzyme CYP2C9/10 metabolism. Use Caution/Monitor.
+
+carbenoxolone
+losartan increases and carbenoxolone decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+carvedilol
+losartan and carvedilol both increase serum potassium. Use Caution/Monitor.
+
+carvedilol, losartan. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of fetal compromise if given during pregnancy.
+
+celecoxib
+losartan and celecoxib both increase serum potassium. Use Caution/Monitor.
+
+celecoxib decreases effects of losartan by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+losartan, celecoxib. Either increases toxicity of the other by Other (see comment).
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 10/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+celiprolol
+losartan and celiprolol both increase serum potassium. Use Caution/Monitor.
+
+celiprolol, losartan. Mechanism: pharmacodynamic synergism. Use Caution/Monitor.
+Risk of fetal compromise if given during pregnancy.
+
+cenobamate
+cenobamate will decrease the level or effect of losartan by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Increase dose of CYP3A4 substrate, as needed, when coadministered with
+cenobamate.
+
+chlorothiazide
+losartan increases and chlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+chlorthalidone
+losartan increases and chlorthalidone decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+cholic acid
+losartan increases toxicity of cholic acid by decreasing elimination. Modify
+Therapy/Monitor Closely. Avoid concomitant use of inhibitors of the bile salt efflux
+pump (BSEP). May exacerbate accumulation of conjugated bile salts in the liver and
+result in clinical symptoms. If concomitant use is necessary, monitor serum
+transaminases and bilirubin.
+
+choline magnesium trisalicylate
+losartan and choline magnesium trisalicylate both increase serum potassium. Use
+Caution/Monitor.
+
+choline magnesium trisalicylate decreases effects of losartan by pharmacodynamic
+antagonism. Modify Therapy/Monitor Closely. NSAIDs decrease synthesis of
+vasodilating renal prostaglandins, and thus affect fluid homeostasis and may
+diminish antihypertensive effect.
+
+losartan, choline magnesium trisalicylate. Either increases toxicity of the other by
+Other (see comment). Use Caution/Monitor. Comment: May result in renal function
+deterioration, particularly in elderly or volume depleted individuals.
+
+cobicistat
+cobicistat will increase the level or effect of losartan by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+conivaptan
+conivaptan will increase the level or effect of losartan by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+crofelemer
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 11/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+crofelemer increases levels of losartan by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Crofelemer has the potential to inhibit
+CYP3A4 at concentrations expected in the gut; unlikely to inhibit systemically
+because minimally absorbed.
+
+cyclopenthiazide
+losartan increases and cyclopenthiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+dabrafenib
+dabrafenib will decrease the level or effect of losartan by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+
+dalteparin
+dalteparin increases toxicity of losartan by Other (see comment). Use
+Caution/Monitor. Comment: Low molecular weight heparins may suppress adrenal
+aldosterone secretion, which can potentially cause hyperkalemia.
+
+darunavir
+darunavir will increase the level or effect of losartan by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+diclofenac
+losartan and diclofenac both increase serum potassium. Use Caution/Monitor.
+
+diclofenac decreases effects of losartan by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+losartan, diclofenac. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+diflunisal
+losartan and diflunisal both increase serum potassium. Use Caution/Monitor.
+
+diflunisal decreases effects of losartan by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+losartan, diflunisal. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+digoxin
+losartan and digoxin both increase serum potassium. Use Caution/Monitor.
+
+dopexamine
+losartan increases and dopexamine decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 12/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+drospirenone
+losartan and drospirenone both increase serum potassium. Modify Therapy/Monitor
+Closely.
+
+efavirenz
+efavirenz will increase the level or effect of losartan by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor. May inhibit the conversion of
+losartan to its active metabolite E-3174. Importance of interaction not established;
+monitor individual therapeutic response to determine losartan dosage.
+
+efavirenz will decrease the level or effect of losartan by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+elagolix
+elagolix decreases levels of losartan by affecting hepatic/intestinal enzyme CYP3A4
+metabolism. Modify Therapy/Monitor Closely. Elagolix is a weak-to-moderate
+CYP3A4 inducer. Monitor CYP3A substrates if coadministered. Consider increasing
+CYP3A substrate dose if needed.
+
+elvitegravir/cobicistat/emtricitabine/tenofovir DF
+elvitegravir/cobicistat/emtricitabine/tenofovir DF increases levels of losartan by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor
+Closely. Cobicistat is a CYP3A4 inhibitor; contraindicated with CYP3A4 substrates
+for which elevated plasma concentrations are associated with serious and/or life-
+threatening events.
+
+elvitegravir/cobicistat/emtricitabine/tenofovir DF decreases levels of losartan by
+affecting hepatic enzyme CYP2C9/10 metabolism. Use Caution/Monitor. Elvitegravir
+is a moderate CYP2C9 inducer.
+
+encorafenib
+encorafenib, losartan. affecting hepatic/intestinal enzyme CYP3A4 metabolism. Use
+Caution/Monitor. Encorafenib both inhibits and induces CYP3A4 at clinically
+relevant plasma concentrations. Coadministration of encorafenib with sensitive
+CYP3A4 substrates may result in increased toxicity or decreased efficacy of these
+agents.
+
+enoxaparin
+enoxaparin increases toxicity of losartan by Other (see comment). Use
+Caution/Monitor. Comment: Low molecular weight heparins may suppress adrenal
+aldosterone secretion, which can potentially cause hyperkalemia.
+
+eplerenone
+losartan, eplerenone. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of hyperkalemia.
+
+esmolol
+losartan and esmolol both increase serum potassium. Use Caution/Monitor.
+
+esmolol, losartan. Mechanism: pharmacodynamic synergism. Use Caution/Monitor.
+Risk of fetal compromise if given during pregnancy.
+
+ethacrynic acid
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 13/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+losartan increases and ethacrynic acid decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+etodolac
+losartan and etodolac both increase serum potassium. Use Caution/Monitor.
+
+etodolac decreases effects of losartan by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+losartan, etodolac. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+etravirine
+etravirine will increase the level or effect of losartan by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor.
+
+etravirine will decrease the level or effect of losartan by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+exenatide injectable solution
+losartan increases effects of exenatide injectable solution by Other (see comment).
+Use Caution/Monitor. Comment: Angiotensin II receptor antagonists may enhance
+hypoglycemic effects of antidiabetic agents by improving insulin sensitivity. Monitor
+patients for changes in glycemic control.
+
+exenatide injectable suspension
+losartan increases effects of exenatide injectable suspension by Other (see
+comment). Use Caution/Monitor. Comment: Angiotensin II receptor antagonists may
+enhance hypoglycemic effects of antidiabetic agents by improving insulin sensitivity.
+Monitor patients for changes in glycemic control.
+
+felbamate
+felbamate will increase the level or effect of losartan by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor. May inhibit the conversion of
+losartan to its active metabolite E-3174. Importance of interaction not established;
+monitor individual therapeutic response to determine losartan dosage.
+
+fenbufen
+losartan and fenbufen both increase serum potassium. Use Caution/Monitor.
+
+fenoprofen
+losartan and fenoprofen both increase serum potassium. Use Caution/Monitor.
+
+fenoprofen decreases effects of losartan by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+losartan, fenoprofen. Either increases toxicity of the other by Other (see comment).
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 14/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+finerenone
+losartan will increase the level or effect of finerenone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely. Monitor serum
+potassium during initiation and dosage adjustment of either finererone or weak
+CYP3A4 inhibitors. Adjust finererone dosage as needed.
+
+flibanserin
+losartan will increase the level or effect of flibanserin by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor. Increased flibanserin adverse
+effects may occur if coadministered with multiple weak CYP3A4 inhibitors.
+
+fluconazole
+fluconazole will increase the level or effect of losartan by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor. May inhibit the conversion of
+losartan to its active metabolite E-3174. Importance of interaction not established;
+monitor individual therapeutic response to determine losartan dosage.
+
+fluoxetine
+fluoxetine will increase the level or effect of losartan by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor. May inhibit the conversion of
+losartan to its active metabolite E-3174. Importance of interaction not established;
+monitor individual therapeutic response to determine losartan dosage.
+
+flurbiprofen
+losartan and flurbiprofen both increase serum potassium. Use Caution/Monitor.
+
+flurbiprofen decreases effects of losartan by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+losartan, flurbiprofen. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+formoterol
+formoterol decreases effects of losartan by pharmacodynamic antagonism. Use
+Caution/Monitor. Monitor BP.
+
+foscarbidopa/foslevodopa
+foscarbidopa/foslevodopa increases effects of losartan by pharmacodynamic
+synergism. Use Caution/Monitor. Consider decreasing dosage of antihypertensive
+agent.
+
+fosphenytoin
+fosphenytoin will decrease the level or effect of losartan by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+furosemide
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 15/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+losartan increases and furosemide decreases serum potassium. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+gentamicin
+losartan increases and gentamicin decreases serum potassium. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+heparin
+heparin increases toxicity of losartan by Other (see comment). Use Caution/Monitor.
+Comment: Low molecular weight heparins may suppress adrenal aldosterone
+secretion, which can potentially cause hyperkalemia.
+
+hydrochlorothiazide
+losartan increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+ibuprofen
+losartan and ibuprofen both increase serum potassium. Use Caution/Monitor.
+
+ibuprofen decreases effects of losartan by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+losartan, ibuprofen. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+ibuprofen IV
+ibuprofen IV decreases effects of losartan by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+losartan and ibuprofen IV both increase serum potassium. Use Caution/Monitor.
+
+losartan, ibuprofen IV. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+iloperidone
+losartan, iloperidone. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of iloperidone with
+drugs that lower blood pressure may cause additive effects. Consider lowering
+dosage of other drugs that lower blood pressure.
+
+imatinib
+imatinib will increase the level or effect of losartan by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor. May inhibit the conversion of
+losartan to its active metabolite E-3174. Importance of interaction not established;
+monitor individual therapeutic response to determine losartan dosage.
+
+indapamide
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 16/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+losartan increases and indapamide decreases serum potassium. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+indomethacin
+losartan and indomethacin both increase serum potassium. Use Caution/Monitor.
+
+indomethacin decreases effects of losartan by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+losartan, indomethacin. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: May result in renal function
+deterioration, particularly in elderly or volume depleted individuals.
+
+insulin aspart
+losartan increases effects of insulin aspart by unspecified interaction mechanism.
+Use Caution/Monitor. Concomitant use of insulin and ARBs may require insulin
+dosage adjustment and increased glucose monitoring.
+
+insulin aspart protamine/insulin aspart
+losartan increases effects of insulin aspart protamine/insulin aspart by unspecified
+interaction mechanism. Use Caution/Monitor. Concomitant use of insulin and ARBs
+may require insulin dosage adjustment and increased glucose monitoring.
+
+insulin degludec
+losartan, insulin degludec. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Both drugs decrease blood
+glucose.
+
+losartan increases effects of insulin degludec by unspecified interaction mechanism.
+Use Caution/Monitor. Concomitant use of insulin and ARBs may require insulin
+dosage adjustment and increased glucose monitoring.
+
+insulin degludec/insulin aspart
+losartan, insulin degludec/insulin aspart. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Both drugs decrease blood
+glucose.
+
+insulin detemir
+losartan increases effects of insulin detemir by unspecified interaction mechanism.
+Use Caution/Monitor. Concomitant use of insulin and ARBs may require insulin
+dosage adjustment and increased glucose monitoring.
+
+insulin glargine
+losartan increases effects of insulin glargine by unspecified interaction mechanism.
+Use Caution/Monitor. Concomitant use of insulin and ARBs may require insulin
+dosage adjustment and increased glucose monitoring.
+
+insulin glulisine
+losartan increases effects of insulin glulisine by unspecified interaction mechanism.
+Use Caution/Monitor. Concomitant use of insulin and ARBs may require insulin
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 17/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+dosage adjustment and increased glucose monitoring.
+
+insulin icodec
+losartan increases effects of insulin icodec by pharmacodynamic synergism. Use
+Caution/Monitor. Concomitant use of insulin and ARBs may require insulin dosage
+adjustment and increased glucose monitoring.
+
+insulin inhaled
+losartan, insulin inhaled. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Both drugs decrease blood glucose.
+
+losartan increases effects of insulin inhaled by unspecified interaction mechanism.
+Use Caution/Monitor. Concomitant use of insulin and ARBs may require insulin
+dosage adjustment and increased glucose monitoring.
+
+insulin isophane human/insulin regular human
+losartan increases effects of insulin isophane human/insulin regular human by
+unspecified interaction mechanism. Use Caution/Monitor. Concomitant use of insulin
+and ARBs may require insulin dosage adjustment and increased glucose
+monitoring.
+
+insulin lispro
+losartan increases effects of insulin lispro by unspecified interaction mechanism.
+Use Caution/Monitor. Concomitant use of insulin and ARBs may require insulin
+dosage adjustment and increased glucose monitoring.
+
+insulin lispro protamine/insulin lispro
+losartan increases effects of insulin lispro protamine/insulin lispro by unspecified
+interaction mechanism. Use Caution/Monitor. Concomitant use of insulin and ARBs
+may require insulin dosage adjustment and increased glucose monitoring.
+
+insulin NPH
+losartan increases effects of insulin NPH by unspecified interaction mechanism. Use
+Caution/Monitor. Concomitant use of insulin and ARBs may require insulin dosage
+adjustment and increased glucose monitoring.
+
+insulin regular human
+losartan increases effects of insulin regular human by unspecified interaction
+mechanism. Use Caution/Monitor. Concomitant use of insulin and ARBs may require
+insulin dosage adjustment and increased glucose monitoring.
+
+isavuconazonium sulfate
+losartan will increase the level or effect of isavuconazonium sulfate by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+istradefylline
+istradefylline will increase the level or effect of losartan by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Istradefylline
+40 mg/day increased peak levels and AUC of CYP3A4 substrates in clinical trials.
+This effect was not observed with istradefylline 20 mg/day. Consider dose reduction
+of sensitive CYP3A4 substrates.
+
+itraconazole
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 18/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+itraconazole decreases effects of losartan by decreasing metabolism. Use
+Caution/Monitor. May inhibit the conversion of losartan to its active metabolite E-
+3174. Importance of interaction not established; monitor individual therapeutic
+response to determine losartan dosage.
+
+ketoconazole
+ketoconazole will increase the level or effect of losartan by affecting hepatic
+enzyme CYP2C9/10 metabolism. Use Caution/Monitor. May inhibit the conversion of
+losartan to its active metabolite E-3174. Importance of interaction not established;
+monitor individual therapeutic response to determine losartan dosage.
+
+ketoprofen
+losartan and ketoprofen both increase serum potassium. Use Caution/Monitor.
+
+ketoprofen decreases effects of losartan by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+losartan, ketoprofen. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+ketorolac
+losartan and ketorolac both increase serum potassium. Use Caution/Monitor.
+
+ketorolac decreases effects of losartan by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+losartan, ketorolac. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+ketorolac intranasal
+losartan and ketorolac intranasal both increase serum potassium. Use
+Caution/Monitor.
+
+ketorolac intranasal decreases effects of losartan by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+losartan, ketorolac intranasal. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: May result in renal function
+deterioration, particularly in elderly or volume depleted individuals.
+
+labetalol
+losartan and labetalol both increase serum potassium. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 19/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+labetalol, losartan. Mechanism: pharmacodynamic synergism. Use Caution/Monitor.
+Risk of fetal compromise if given during pregnancy.
+
+leflunomide
+leflunomide will increase the level or effect of losartan by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor. May inhibit the conversion of
+losartan to its active metabolite E-3174. Importance of interaction not established;
+monitor individual therapeutic response to determine losartan dosage.
+
+leflunomide decreases effects of losartan by decreasing metabolism. Use
+Caution/Monitor. May inhibit the conversion of losartan to its active metabolite E-
+3174. Importance of interaction not established; monitor individual therapeutic
+response to determine losartan dosage.
+
+lemborexant
+losartan will increase the level or effect of lemborexant by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Lower nightly dose of lemborexant recommended if coadministered with weak
+CYP3A4 inhibitors. See drug monograph for specific dosage modification.
+
+lenacapavir
+lenacapavir will increase the level or effect of losartan by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Lencapavir may increase CYP3A4 substrates initiated within 9 months after last SC
+dose of lenacapavir, which may increase potential risk of adverse reactions of
+CYP3A4 substrates.
+
+levalbuterol
+levalbuterol decreases effects of losartan by pharmacodynamic antagonism. Use
+Caution/Monitor. Monitor BP.
+
+levodopa
+levodopa increases effects of losartan by pharmacodynamic synergism. Use
+Caution/Monitor. Consider decreasing dosage of antihypertensive agent.
+
+levoketoconazole
+levoketoconazole will increase the level or effect of losartan by affecting hepatic
+enzyme CYP2C9/10 metabolism. Use Caution/Monitor. May inhibit the conversion of
+losartan to its active metabolite E-3174. Importance of interaction not established;
+monitor individual therapeutic response to determine losartan dosage.
+
+liraglutide
+losartan increases effects of liraglutide by Other (see comment). Use
+Caution/Monitor. Comment: Angiotensin II receptor antagonists may enhance
+hypoglycemic effects of antidiabetic agents by improving insulin sensitivity. Monitor
+patients for changes in glycemic control.
+
+lorlatinib
+lorlatinib will decrease the level or effect of losartan by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+lornoxicam
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 20/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+losartan and lornoxicam both increase serum potassium. Use Caution/Monitor.
+
+lumacaftor/ivacaftor
+lumacaftor/ivacaftor, losartan. affecting hepatic enzyme CYP2C9/10 metabolism.
+Use Caution/Monitor. In vitro studies suggest that lumacaftor may induce and
+ivacaftor may inhibit CYP2C9 substrates. .
+
+lurasidone
+lurasidone increases effects of losartan by Other (see comment). Use
+Caution/Monitor. Comment: Potential for increased risk of hypotension with
+concurrent use. Monitor blood pressure and adjust dose of antihypertensive agent
+as needed.
+
+maitake
+maitake increases effects of losartan by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+maraviroc
+maraviroc, losartan. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of orthostatic hypotension.
+
+meclofenamate
+meclofenamate decreases effects of losartan by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+losartan and meclofenamate both increase serum potassium. Use Caution/Monitor.
+
+losartan, meclofenamate. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: May result in renal function
+deterioration, particularly in elderly or volume depleted individuals.
+
+mefenamic acid
+losartan and mefenamic acid both increase serum potassium. Use Caution/Monitor.
+
+mefenamic acid decreases effects of losartan by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+losartan, mefenamic acid. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: May result in renal function
+deterioration, particularly in elderly or volume depleted individuals.
+
+meloxicam
+losartan and meloxicam both increase serum potassium. Use Caution/Monitor.
+
+meloxicam decreases effects of losartan by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 21/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+losartan, meloxicam. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+methyclothiazide
+losartan increases and methyclothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor. .
+
+methylphenidate
+methylphenidate will decrease the level or effect of losartan by pharmacodynamic
+antagonism. Use Caution/Monitor. Methylphenidate may diminish antihypertensive
+effects. Monitor BP.
+
+methylphenidate transdermal
+methylphenidate transdermal decreases effects of losartan by anti-hypertensive
+channel blocking. Use Caution/Monitor.
+
+metolazone
+losartan increases and metolazone decreases serum potassium. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+metoprolol
+losartan and metoprolol both increase serum potassium. Use Caution/Monitor.
+
+metoprolol, losartan. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of fetal compromise if given during pregnancy.
+
+metronidazole
+metronidazole will increase the level or effect of losartan by affecting hepatic
+enzyme CYP2C9/10 metabolism. Use Caution/Monitor. May inhibit the conversion of
+losartan to its active metabolite E-3174. Importance of interaction not established;
+monitor individual therapeutic response to determine losartan dosage.
+
+miconazole vaginal
+miconazole vaginal will increase the level or effect of losartan by affecting hepatic
+enzyme CYP2C9/10 metabolism. Use Caution/Monitor. May inhibit the conversion of
+losartan to its active metabolite E-3174. Importance of interaction not established;
+monitor individual therapeutic response to determine losartan dosage.
+
+miconazole vaginal decreases effects of losartan by decreasing metabolism. Use
+Caution/Monitor. May inhibit the conversion of losartan to its active metabolite E-
+3174. Importance of interaction not established; monitor individual therapeutic
+response to determine losartan dosage.
+
+midazolam intranasal
+losartan will increase the level or effect of midazolam intranasal by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+Coadministration of mild CYP3A4 inhibitors with midazolam intranasal may cause
+higher midazolam systemic exposure, which may prolong sedation.
+
+mifepristone
+mifepristone will increase the level or effect of losartan by affecting
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 22/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+milsaperidone
+losartan, milsaperidone. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of milsaperidone with
+drugs that lower blood pressure may cause additive effects. Consider lowering
+dosage of other drugs that lower blood pressure.
+
+mipomersen
+mipomersen, losartan. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: Both drugs have potential to increase
+hepatic enzymes; monitor LFTs.
+
+mitapivat
+mitapivat decreases levels of losartan by affecting hepatic enzyme CYP2C9/10
+metabolism. Use Caution/Monitor. Monitor patients for loss of therapeutic effect if
+taking sensitive CYP2C9/10 substrates.
+
+mitapivat decreases levels of losartan by increasing metabolism. Use
+Caution/Monitor. Mitapivat induces UGT1A1 in vitro and may decrease systemic
+concentrations of UGT1A1 substrates.
+
+mitotane
+mitotane decreases levels of losartan by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Mitotane is a strong inducer of
+cytochrome P-4503A4; monitor when coadministered with CYP3A4 substrates for
+possible dosage adjustments.
+
+nabumetone
+losartan and nabumetone both increase serum potassium. Use Caution/Monitor.
+
+nabumetone decreases effects of losartan by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+losartan, nabumetone. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: May result in renal function
+deterioration, particularly in elderly or volume depleted individuals.
+
+nadolol
+losartan and nadolol both increase serum potassium. Use Caution/Monitor.
+
+nadolol, losartan. Mechanism: pharmacodynamic synergism. Use Caution/Monitor.
+Risk of fetal compromise if given during pregnancy.
+
+nafcillin
+nafcillin will decrease the level or effect of losartan by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+naproxen
+losartan and naproxen both increase serum potassium. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 23/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+naproxen decreases effects of losartan by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+losartan, naproxen. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+nateglinide
+nateglinide will increase the level or effect of losartan by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor. May inhibit the conversion of
+losartan to its active metabolite E-3174. Importance of interaction not established;
+monitor individual therapeutic response to determine losartan dosage.
+
+nebivolol
+losartan and nebivolol both increase serum potassium. Use Caution/Monitor.
+
+nebivolol, losartan. Mechanism: pharmacodynamic synergism. Use Caution/Monitor.
+Risk of fetal compromise if given during pregnancy.
+
+nefazodone
+nefazodone will increase the level or effect of losartan by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+nevirapine
+nevirapine will decrease the level or effect of losartan by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+nitisinone
+nitisinone will increase the level or effect of losartan by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor. Nitisinone inhibits CYP2C9. Caution
+if CYP2C9 substrate coadministered, particularly those with a narrow therapeutic
+index.
+
+nitroglycerin rectal
+nitroglycerin rectal, losartan. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Observe for possible additive
+hypotensive effects during concomitant use. .
+
+olanzapine/samidorphan
+olanzapine/samidorphan increases effects of losartan by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Monitor blood pressure and reduce
+antihypertensive drug dosage in accordance with its product labeling.
+
+ombitasvir/paritaprevir/ritonavir & dasabuvir (DSC)
+ombitasvir/paritaprevir/ritonavir & dasabuvir (DSC) will increase the level or effect
+of losartan by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Use
+Caution/Monitor. Decrease dose of angiotensin receptor blockers and monitor
+patients for signs and symptoms of hypotension and/or worsening renal function; if
+such events occur, consider further dose reduction of angiotensin receptor blocker
+or switching to alternative to angiotensin receptor blocker
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 24/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+oxaprozin
+losartan and oxaprozin both increase serum potassium. Use Caution/Monitor.
+
+oxaprozin decreases effects of losartan by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+losartan, oxaprozin. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+paclitaxel
+losartan will increase the level or effect of paclitaxel by Other (see comment). Use
+Caution/Monitor. Paclitaxel levels/toxicity may increase when coadministered with
+CYP2C8 inhibitors
+
+paclitaxel protein bound
+losartan will increase the level or effect of paclitaxel protein bound by Other (see
+comment). Use Caution/Monitor. Paclitaxel levels/toxicity may increase when
+coadministered with CYP2C8 inhibitors
+
+parecoxib
+losartan and parecoxib both increase serum potassium. Use Caution/Monitor.
+
+peginterferon alfa 2b
+peginterferon alfa 2b decreases levels of losartan by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor. When patients are administered
+peginterferon alpha-2b with CYP2C9 substrates, the therapeutic effect of these
+drugs may be altered. .
+
+phenobarbital
+phenobarbital will decrease the level or effect of losartan by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+pindolol
+losartan and pindolol both increase serum potassium. Use Caution/Monitor.
+
+pindolol, losartan. Mechanism: pharmacodynamic synergism. Use Caution/Monitor.
+Risk of fetal compromise if given during pregnancy.
+
+piroxicam
+losartan and piroxicam both increase serum potassium. Use Caution/Monitor.
+
+piroxicam decreases effects of losartan by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+losartan, piroxicam. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 25/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+potassium acid phosphate
+losartan and potassium acid phosphate both increase serum potassium. Use
+Caution/Monitor.
+
+potassium chloride
+losartan and potassium chloride both increase serum potassium. Use
+Caution/Monitor.
+
+potassium citrate
+losartan and potassium citrate both increase serum potassium. Use
+Caution/Monitor.
+
+potassium citrate/citric acid
+losartan and potassium citrate/citric acid both increase serum potassium. Modify
+Therapy/Monitor Closely.
+
+potassium iodide
+potassium iodide and losartan both increase serum potassium. Use
+Caution/Monitor. Potassium salts may increase the hyperkalemic effects of ARBs;
+the effect may be the result of aldosterone suppression in patients receiving ARBs.
+
+propranolol
+losartan and propranolol both increase serum potassium. Use Caution/Monitor.
+
+propranolol, losartan. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of fetal compromise if given during pregnancy.
+
+resmetirom
+losartan will increase the level or effect of resmetirom by Other (see comment).
+Modify Therapy/Monitor Closely. Reduce dose of resmetirom (a CYP2C8 substrate)
+with moderate CYP2C8 inhibitors
+
+rifabutin
+rifabutin will decrease the level or effect of losartan by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+rifampin
+rifampin will decrease the level or effect of losartan by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor.
+
+rifampin will decrease the level or effect of losartan by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+rifapentine
+rifapentine will decrease the level or effect of losartan by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor.
+
+rifapentine will decrease the level or effect of losartan by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+ritonavir
+ritonavir will increase the level or effect of losartan by affecting hepatic/intestinal
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 26/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+sacubitril/valsartan
+losartan and sacubitril/valsartan both increase serum potassium. Use
+Caution/Monitor.
+
+salicylates (non-asa)
+losartan and salicylates (non-asa) both increase serum potassium. Use
+Caution/Monitor.
+
+salsalate
+losartan and salsalate both increase serum potassium. Use Caution/Monitor.
+
+salsalate decreases effects of losartan by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+losartan, salsalate. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+selexipag
+losartan will increase the level or effect of selexipag by decreasing metabolism.
+Modify Therapy/Monitor Closely. Reduce selexipag dose to once daily if
+coadministered with moderate CYP2C8 inhibitors.
+
+sodium sulfate/?magnesium sulfate/potassium chloride
+sodium sulfate/?magnesium sulfate/potassium chloride increases toxicity of
+losartan by Other (see comment). Use Caution/Monitor. Comment: Coadministration
+with medications that cause fluid and electrolyte abnormalities may increase the
+risk of adverse events of seizure, arrhythmias, and renal impairment.
+
+sodium sulfate/potassium sulfate/magnesium sulfate
+sodium sulfate/potassium sulfate/magnesium sulfate increases toxicity of losartan
+by Other (see comment). Use Caution/Monitor. Comment: Coadministration with
+medications that cause fluid and electrolyte abnormalities may increase the risk of
+adverse events of seizure, arrhythmias, and renal impairment.
+
+sotalol
+losartan and sotalol both increase serum potassium. Use Caution/Monitor.
+
+sotalol, losartan. Mechanism: pharmacodynamic synergism. Use Caution/Monitor.
+Risk of fetal compromise if given during pregnancy.
+
+sparsentan
+sparsentan will decrease the level or effect of losartan by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor. Sparsentan (a CYP2C9 inducer)
+decreases exposure of CYP2C9 substrates and reduces efficacy related to these
+substrates.
+
+spironolactone
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 27/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+losartan and spironolactone both increase serum potassium. Modify
+Therapy/Monitor Closely.
+
+stiripentol
+stiripentol, losartan. affecting hepatic/intestinal enzyme CYP3A4 metabolism.
+Modify Therapy/Monitor Closely. Stiripentol is a CYP3A4 inhibitor and inducer.
+Monitor CYP3A4 substrates coadministered with stiripentol for increased or
+decreased effects. CYP3A4 substrates may require dosage adjustment.
+
+sulfamethoxazole
+sulfamethoxazole will increase the level or effect of losartan by affecting hepatic
+enzyme CYP2C9/10 metabolism. Use Caution/Monitor. May inhibit the conversion of
+losartan to its active metabolite E-3174. Importance of interaction not established;
+monitor individual therapeutic response to determine losartan dosage.
+
+sulfasalazine
+losartan and sulfasalazine both increase serum potassium. Use Caution/Monitor.
+
+sulfasalazine decreases effects of losartan by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+losartan, sulfasalazine. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: May result in renal function
+deterioration, particularly in elderly or volume depleted individuals.
+
+sulindac
+losartan and sulindac both increase serum potassium. Use Caution/Monitor.
+
+sulindac decreases effects of losartan by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+losartan, sulindac. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+synthetic human angiotensin II
+losartan decreases effects of synthetic human angiotensin II by pharmacodynamic
+antagonism. Use Caution/Monitor.
+
+tadalafil
+tadalafil increases effects of losartan by pharmacodynamic synergism. Use
+Caution/Monitor. Risk of hypotension.
+
+tecovirimat
+tecovirimat will decrease the level or effect of losartan by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Tecovirimat is
+a weak CYP3A4 inducer. Monitor sensitive CYP3A4 substrates for effectiveness if
+coadministered.
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 28/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+terbutaline
+losartan increases and terbutaline decreases serum potassium. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+timolol
+losartan and timolol both increase serum potassium. Use Caution/Monitor.
+
+timolol, losartan. Mechanism: pharmacodynamic synergism. Use Caution/Monitor.
+Risk of fetal compromise if given during pregnancy.
+
+tinidazole
+losartan will increase the level or effect of tinidazole by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+tizanidine
+tizanidine increases effects of losartan by pharmacodynamic synergism. Use
+Caution/Monitor. Risk of hypotension.
+
+tolfenamic acid
+losartan and tolfenamic acid both increase serum potassium. Use Caution/Monitor.
+
+tolmetin
+losartan and tolmetin both increase serum potassium. Use Caution/Monitor.
+
+tolmetin decreases effects of losartan by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+losartan, tolmetin. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+tolvaptan
+losartan and tolvaptan both increase serum potassium. Use Caution/Monitor.
+
+torsemide
+losartan increases and torsemide decreases serum potassium. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+treprostinil
+treprostinil increases effects of losartan by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+triamterene
+losartan and triamterene both increase serum potassium. Modify Therapy/Monitor
+Closely.
+
+trimethoprim
+trimethoprim and losartan both increase serum potassium. Use Caution/Monitor.
+Trimethoprim decreases urinary potassium excretion. May cause hyperkalemia,
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 29/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+particularly with high doses, renal insufficiency, or when combined with other drugs
+that cause hyperkalemia.
+
+vanzacaftor/tezacaftor/deutivacaftor
+vanzacaftor/tezacaftor/deutivacaftor increases levels of losartan by affecting hepatic
+enzyme CYP2C9/10 metabolism. Use Caution/Monitor. Deutivacaftor inhibits
+CYP2C9 in vitro. Caution advised if coadministered with CYP2C9 substrates.
+
+voclosporin
+voclosporin and losartan both increase serum potassium. Use Caution/Monitor.
+
+voclosporin, losartan. Either increases toxicity of the other by nephrotoxicity and/or
+ototoxicity. Modify Therapy/Monitor Closely. Coadministration with drugs
+associated with nephrotoxicity may increase the risk for acute and/or chronic
+nephrotoxicity.
+
+voriconazole
+voriconazole will increase the level or effect of losartan by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor. May inhibit the conversion of
+losartan to its active metabolite E-3174. Importance of interaction not established;
+monitor individual therapeutic response to determine losartan dosage.
+
+voriconazole decreases effects of losartan by decreasing metabolism. Use
+Caution/Monitor. May inhibit the conversion of losartan to its active metabolite E-
+3174. Importance of interaction not established; monitor individual therapeutic
+response to determine losartan dosage.
+
+voriconazole will increase the level or effect of losartan by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+warfarin
+losartan will increase the level or effect of warfarin by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor.
+
+xipamide
+xipamide increases effects of losartan by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+zafirlukast
+zafirlukast will increase the level or effect of losartan by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor. May inhibit the conversion of
+losartan to its active metabolite E-3174. Importance of interaction not established;
+monitor individual therapeutic response to determine losartan dosage.
+
+zafirlukast decreases effects of losartan by decreasing metabolism. Use
+Caution/Monitor. May inhibit the conversion of losartan to its active metabolite E-
+3174. Importance of interaction not established; monitor individual therapeutic
+response to determine losartan dosage.
+
+Minor (34)
+
+acetazolamide
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 30/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+acetazolamide will increase the level or effect of losartan by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+agrimony
+agrimony increases effects of losartan by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+anastrozole
+anastrozole will increase the level or effect of losartan by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+butalbital
+butalbital will decrease the level or effect of losartan by affecting hepatic enzyme
+CYP2C9/10 metabolism. Minor/Significance Unknown.
+
+cimetidine
+cimetidine will increase the level or effect of losartan by affecting hepatic enzyme
+CYP2C9/10 metabolism. Minor/Significance Unknown. May inhibit the conversion of
+losartan to its active metabolite E-3174. Importance of interaction not established;
+monitor individual therapeutic response to determine losartan dosage.
+
+cornsilk
+cornsilk increases effects of losartan by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+cyclophosphamide
+cyclophosphamide will increase the level or effect of losartan by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+danazol
+danazol will increase the level or effect of losartan by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+drospirenone
+drospirenone will increase the level or effect of losartan by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+efavirenz
+efavirenz decreases effects of losartan by decreasing metabolism.
+Minor/Significance Unknown. May inhibit the conversion of losartan to its active
+metabolite E-3174. Importance of interaction not established; monitor individual
+therapeutic response to determine losartan dosage.
+
+entecavir
+losartan, entecavir. Either increases effects of the other by decreasing renal
+clearance. Minor/Significance Unknown. Coadministration with drugs that reduce
+renal function or compete for active tubular secretion may increase serum
+concentrations of either entecavir or the coadministered drug.
+
+felbamate
+felbamate decreases effects of losartan by decreasing metabolism.
+Minor/Significance Unknown. May inhibit the conversion of losartan to its active
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 31/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+metabolite E-3174. Importance of interaction not established; monitor individual
+therapeutic response to determine losartan dosage.
+
+fluconazole
+fluconazole decreases effects of losartan by decreasing metabolism.
+Minor/Significance Unknown. May inhibit the conversion of losartan to its active
+metabolite E-3174. Importance of interaction not established; monitor individual
+therapeutic response to determine losartan dosage.
+
+fluoxetine
+fluoxetine decreases effects of losartan by decreasing metabolism.
+Minor/Significance Unknown. May inhibit the conversion of losartan to its active
+metabolite E-3174. Importance of interaction not established; monitor individual
+therapeutic response to determine losartan dosage.
+
+grapefruit
+grapefruit will decrease the level or effect of losartan by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Minor/Significance Unknown. Losartan metabolized
+to active metabolite by CYP3A4 and CYP2C9
+
+imatinib
+imatinib decreases effects of losartan by decreasing metabolism. Minor/Significance
+Unknown. May inhibit the conversion of losartan to its active metabolite E-3174.
+Importance of interaction not established; monitor individual therapeutic response
+to determine losartan dosage.
+
+ketoconazole
+ketoconazole decreases effects of losartan by decreasing metabolism.
+Minor/Significance Unknown. May inhibit the conversion of losartan to its active
+metabolite E-3174. Importance of interaction not established; monitor individual
+therapeutic response to determine losartan dosage.
+
+larotrectinib
+larotrectinib will increase the level or effect of losartan by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+levoketoconazole
+levoketoconazole will increase the level or effect of losartan by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+levoketoconazole decreases effects of losartan by decreasing metabolism.
+Minor/Significance Unknown. May inhibit the conversion of losartan to its active
+metabolite E-3174. Importance of interaction not established; monitor individual
+therapeutic response to determine losartan dosage.
+
+nateglinide
+nateglinide decreases effects of losartan by decreasing metabolism.
+Minor/Significance Unknown. May inhibit the conversion of losartan to its active
+metabolite E-3174. Importance of interaction not established; monitor individual
+therapeutic response to determine losartan dosage.
+
+nirmatrelvir/ritonavir
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 32/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+nirmatrelvir/ritonavir will increase the level or effect of losartan by affecting hepatic
+enzyme CYP2C9/10 metabolism. Minor/Significance Unknown. Losartan is
+converted to its active metabolite mainly by CYP2C9 in the range of clinical
+concentrations. In vitro and in vivo data indicate that ritonavir is a weak inducer of
+CYP2C9. Nirmatrelvir/ritonavir could potentially increase the conversion to the more
+pharmacologically active metabolite.
+
+noni juice
+losartan and noni juice both increase serum potassium. Minor/Significance
+Unknown.
+
+octacosanol
+octacosanol increases effects of losartan by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+patiromer
+patiromer, losartan. cation binding in GI tract. Minor/Significance Unknown. No
+observed clinically important interaction. No separation of dosing required.
+
+pentobarbital
+pentobarbital will decrease the level or effect of losartan by affecting hepatic
+enzyme CYP2C9/10 metabolism. Minor/Significance Unknown.
+
+phenobarbital
+phenobarbital will decrease the level or effect of losartan by affecting hepatic
+enzyme CYP2C9/10 metabolism. Minor/Significance Unknown.
+
+primidone
+primidone will decrease the level or effect of losartan by affecting hepatic enzyme
+CYP2C9/10 metabolism. Minor/Significance Unknown.
+
+reishi
+reishi increases effects of losartan by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+ribociclib
+ribociclib will increase the level or effect of losartan by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+rifabutin
+rifabutin decreases levels of losartan by increasing metabolism. Minor/Significance
+Unknown.
+
+ruxolitinib
+losartan will increase the level or effect of ruxolitinib by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+ruxolitinib topical
+losartan will increase the level or effect of ruxolitinib topical by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+shepherd's purse
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 33/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+shepherd's purse, losartan. Other (see comment). Minor/Significance Unknown.
+Comment: Theoretically, shepherd's purse may interfere with BP control.
+
+sulfamethoxazole
+sulfamethoxazole decreases effects of losartan by decreasing metabolism.
+Minor/Significance Unknown. May inhibit the conversion of losartan to its active
+metabolite E-3174. Importance of interaction not established; monitor individual
+therapeutic response to determine losartan dosage.
+
+Adverse Effects
+
+>10%
+
+Cough (17-29%); placebo (35%)
+
+1-10%
+
+Upper respiratory tract infection (8%)
+
+Dizziness (3%)
+
+Nasal congestion (2%)
+
+Back pain (2%)
+
+Frequency Not Defined
+
+Blood and lymphatic system disorders: Anemia
+
+Psychiatric disorders: Depression
+
+Nervous system disorders: Somnolence, headache, sleep disorders, paresthesia,
+migraine
+
+Ear and labyrinth disorders: Vertigo, tinnitus
+
+Cardiac disorders: Palpitations, syncope, atrial fibrillation, CVA
+
+Respiratory, thoracic and mediastinal disorders: Dyspnea
+
+Gastrointestinal disorders: Abdominal pain, constipation, nausea, vomiting
+
+Skin and subcutaneous tissue disorders: Urticaria, pruritus, rash, photosensitivity
+
+Musculoskeletal and connective tissue disorders: Myalgia, arthralgia
+
+Reproductive system and breast disorders: Impotence
+
+General disorders and administration site conditions: Edema
+
+Postmarketing Reports
+
+Digestive: Hepatitis
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 34/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+General disorders and administration site conditions: Malaise
+
+Hematologic: Thrombocytopenia
+
+Hypersensitivity: Angioedema, vasculitis, anaphylactic reactions
+
+Metabolic and nutrition: Hyponatremia
+
+Musculoskeletal: Rhabdomyolysis
+
+Nervous system disorders: Dysgeusia
+
+Skin: Erythroderma
+
+Warnings
+
+Black Box Warnings
+
+Discontinue as soon as possible when pregnancy is detected; drug affects renin-
+angiotensin system, causing oligohydramnios, which may result in fetal injury or death
+(see Pregnancy & Lactation)
+
+Contraindications
+
+Hypersensitivity
+
+Coadministration with aliskiren in patients with diabetes mellitus
+
+Cautions
+
+Use of drugs that act on the renin-angiotensin system during the second and third
+trimesters of pregnancy reduces fetal renal function and increases fetal and neonatal
+morbidity and death
+
+In volume- or salt-depleted patients (eg, those being treated with high doses of
+diuretics), symptomatic hypotension may occur after initiation of treatment; correct
+volume or salt depletion before administration
+
+Monitor serum potassium periodically and treat appropriately; dosage reduction or
+discontinuation of treatment may be required
+
+Renal function deterioration
+
+Patients whose renal function may depend in part on the activity of the renin-
+angiotensin system (eg, patients with renal artery stenosis, chronic kidney disease,
+severe congestive heart failure, or volume depletion) may be at risk of developing
+acute renal failure
+
+Monitor renal function periodically in these patients; consider withholding or
+discontinuing therapy in patients who develop a clinically significant decrease in
+renal function
+
+Drug interaction overview
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 35/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+Coadministration with other drugs that raise serum potassium levels may result in
+hyperkalemia
+
+Increases in serum lithium concentrations and toxicities have been reported during
+coadministration of lithium with angiotensin II receptor antagonists; monitor serum
+lithium levels during concomitant use
+
+Coadministration of NSAIDs, including selective COX-2 inhibitors, with angiotensin
+II receptor antagonists (including losartan) in patients who are elderly, volume-
+depleted (including those on diuretic therapy), or with compromised renal function
+may result in deterioration of renal function, including possible acute renal failure;
+these effects are usually reversible
+
+Do not coadminister aliskiren with losartan in patients with diabetes; avoid use of
+aliskiren with losartan in patients with renal impairment (GFR <60 mL/min)
+
+Pregnancy & Lactation
+
+Pregnancy
+
+Can cause fetal harm when administered to a pregnant woman; use of drugs that act on
+the renin-angiotensin system during the second and third trimesters of pregnancy
+reduces fetal renal function and increases fetal and neonatal morbidity and death
+
+Hypertension in pregnancy increases maternal risk for pre-eclampsia, gestational
+diabetes, premature delivery, and delivery complications (eg, need for cesarean section,
+postpartum hemorrhage); hypertension increases the fetal risk for intrauterine growth
+restriction and intrauterine death; pregnant women with hypertension should be
+carefully monitored and managed accordingly
+
+Oligohydramnios in pregnant women who use drugs affecting the renin-angiotensin
+system in second and third trimesters of pregnancy can result in reduced fetal renal
+function leading to anuria and renal failure, fetal lung hypoplasia, skeletal deformations,
+including skull hypoplasia, hypotension, and death
+
+In the unusual case that there is no appropriate alternative to therapy with drugs
+affecting the renin- angiotensin system for a particular patient, apprise the mother of the
+potential risk to the fetus
+
+In patients taking the drug during pregnancy, perform serial ultrasound examinations to
+assess the intra- amniotic environment; fetal testing may be appropriate, based on the
+week of gestation
+
+If oligohydramnios is observed, discontinue therapy, unless it is considered lifesaving for
+the mother; patients and physicians should be aware, however, that oligohydramnios
+may not appear until after the fetus has sustained irreversible injury
+
+Closely observe neonates with histories of in utero exposure to the drug for hypotension,
+oliguria, and hyperkalemia; in neonates with a history of in utero exposure to therapy, if
+oliguria or hypotension occurs, support blood pressure and renal perfusion; exchange
+transfusions or dialysis may be required as a means of reversing hypotension and
+replacing renal function
+
+Animal data
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 36/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+May produce adverse effects in rat fetuses and neonates, including decreased body
+weight, delayed physical and behavioral development, mortality and renal toxicity
+
+With the exception of neonatal weight gain (which was affected at doses as low as
+10 mg/kg/day), doses associated with these effects exceeded 25 mg/kg/day (~3x
+the maximum recommended human dose of 100 mg on a mg/m2 basis)
+
+Significant levels of losartan and its active metabolite were present in rat fetal
+plasma during late gestation and in rat milk
+
+Lactation
+
+Unknown whether drug is excreted in human milk, but significant levels of losartan and
+its active metabolite were shown to be present in rat milk; because of potential for
+adverse effects on the nursing infant, a decision should be made whether to discontinue
+nursing or discontinue the drug, taking into account the importance of the drug to the
+mother
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+Blocks binding of angiotensin II to type 1 angiotensin II receptors; blocks the
+vasoconstrictor and aldosterone-secreting effects of angiotensin II
+
+Absorption
+
+Bioavailability: 25%
+
+Onset: 6 hr
+
+Duration: 24 hr
+
+Peak plasma time: 1-1.5 hr
+
+Distribution
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 37/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+Protein bound: Losartan, 98.7%; E-3174, 99.8%
+
+Vd: Losartan, 34 L; E-3174, 12 L
+
+Metabolism
+
+Metabolized by hepatic P450 enzyme CYP2C9
+
+Metabolites: 5-Carboxylic acid (E-3174) (active metabolite; 40 times as potent as
+losartan in angiotensin II-blocking activity)
+
+Elimination
+
+Half-life: Losartan, 1.5-2 hr; E-3174, 6-9 hr; increased in end-stage renal failure or CHF
+
+Dialyzable: HD, no; PD, no
+
+Renal clearance: Losartan, 43-75 mL/min; E-3174, 18-25 mL/min
+
+Total plasma clearance: Losartan, 600 mL/min; E-3174, 50 mL/min
+
+Excretion: Urine (4%)
+
+Administration
+
+Oral Administration
+
+May take with or without food
+
+Suspension: Shake for 20 seconds prior to each use
+
+Storage
+
+Tablets: Store at 25ºC (77ºF); excursions permitted to 15-30ºC (59-86ºF)
+
+Oral suspension
+
+Store at 20-25ºC (68-77ºF); excursions permitted between 15-30ºC (59-86ºF)
+
+Keep container tightly closed
+
+Protect from light
+
+Store and dispense in original container; once bottle is opened, use it within 60
+days
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 38/39
+
+
+
+6/22/26, 4:58 PM Cozaar, Arbli (losartan) dosing, indications, interactions, adverse effects, and more
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/cozaar-arbli-losartan-342323 39/39

@@ -1,0 +1,1714 @@
+﻿6/22/26, 5:17 PM Amaryl, (glimepiride) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+glimepiride (Rx)
+Brand and Other Names: Amaryl
+Classes: Antidiabetics, Sulfonylureas
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+tablet
+
+1mg
+
+2mg
+
+3mg
+
+4mg
+
+6mg
+
+8mg
+
+Type 2 Diabetes Mellitus
+
+Initial: 1-2 mg PO qAM after breakfast or with first meal; may increase dose by 1-2 mg
+every 1-2 weeks; not to exceed 8 mg/day
+
+Conversion from other oral hypoglycemic agents
+
+Observe patients carefully for 1-2 weeks when being converted from long half-life
+sulfonylureas to glimepiride, because of potential for overlapping of hypoglycemic
+effects
+
+Dosing considerations
+
+Use in monotherapy or, if glycemic response to glimepiride is inadequate at
+maximum dose, with insulin or metformin
+
+Dosing Modifications
+
+https://reference.medscape.com/drug/amaryl-glimepiride-342707 1/30
+
+
+
+6/22/26, 5:17 PM Amaryl, (glimepiride) dosing, indications, interactions, adverse effects, and more
+
+Renal impairment: 1 mg PO qDay; titrate dose based on fasting blood glucose levels
+
+Hepatic impairment: Not studied; not recommended in severe impairment; initiate
+therapy with 1 mg PO qDay and titrate carefully
+
+PEDIATRIC
+Safety and efficacy not established
+
+GERIATRIC
+Prolonged hypoglycemia reported with use; titrate dose conservatively; monitor for
+hypoglycemic or hyperglycemic symptoms
+
+Type 2 Diabetes Mellitus
+
+1 mg PO qDay; titrate dose at weekly intervals to avoid hypoglycemia
+
+Interactions
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and glimepiride
+No Interactions Found
+Interactions Found
+Contraindicated
+
+Serious
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+Contraindicated (0)
+
+Serious (6)
+
+aminolevulinic acid oral
+
+https://reference.medscape.com/drug/amaryl-glimepiride-342707 2/30
+
+
+
+6/22/26, 5:17 PM Amaryl, (glimepiride) dosing, indications, interactions, adverse effects, and more
+
+aminolevulinic acid oral, glimepiride. Either increases toxicity of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Avoid administering
+other phototoxic drugs with aminolevulinic acid oral for 24 hr during perioperative
+period.
+
+aminolevulinic acid topical
+glimepiride increases toxicity of aminolevulinic acid topical by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Coadministration of photosensitizing drugs
+may enhance the phototoxic reaction to photodynamic therapy with aminolevulinic
+acid.
+
+ethanol
+ethanol, glimepiride. Other (see comment). Contraindicated. Comment: Excessive
+EtOH consumption may alter glycemic control. Some sulfonylureas may produce a
+disulfiram like rxn.
+
+ivosidenib
+ivosidenib will decrease the level or effect of glimepiride by affecting hepatic
+enzyme CYP2C9/10 metabolism. Avoid or Use Alternate Drug. Avoid
+coadministration of sensitive CYP2C9 substrates with ivosidenib or replace with
+alternate therapies. If coadministration is unavoidable, monitor patients for loss of
+therapeutic effect of these drugs.
+
+lumacaftor/ivacaftor
+lumacaftor/ivacaftor will decrease the level or effect of glimepiride by affecting
+hepatic enzyme CYP2C9/10 metabolism. Avoid or Use Alternate Drug.
+Sulfonylureas are CYP2C9 substrates. Lumacaftor/ivacaftor has the potential to
+induce CYP2C9.
+
+methyl aminolevulinate
+glimepiride, methyl aminolevulinate. Either increases toxicity of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Each drug may increase
+the photosensitizing effect of the other.
+
+Monitor Closely (163)
+
+aceclofenac
+aceclofenac increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+acemetacin
+acemetacin increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+acoramidis
+acoramidis increases levels of glimepiride by affecting hepatic enzyme CYP2C9/10
+metabolism. Use Caution/Monitor. Consider more frequent monitoring for potential
+increased exposure of CYP2C9 substrates. May affect glycemic control by
+increasing glimepiride plasma concentrations. .
+
+alogliptin
+
+https://reference.medscape.com/drug/amaryl-glimepiride-342707 3/30
+
+
+
+6/22/26, 5:17 PM Amaryl, (glimepiride) dosing, indications, interactions, adverse effects, and more
+
+alogliptin, glimepiride. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Coadministration of alogliptin with insulin and/or
+insulin secretagogues (eg, sulfonylureas, meglitinide derivatives) may increase risk
+for hypoglycemia; may require lower dose of insulin or insulin secretagogue .
+
+alpelisib
+alpelisib will decrease the level or effect of glimepiride by affecting hepatic enzyme
+CYP2C9/10 metabolism. Modify Therapy/Monitor Closely.
+
+apalutamide
+apalutamide will decrease the level or effect of glimepiride by affecting hepatic
+enzyme CYP2C9/10 metabolism. Use Caution/Monitor. Coadministration of
+apalutamide, a weak CYP2C9 inducer, with drugs that are CYP2C9 substrates can
+result in lower exposure to these medications. Evaluate for loss of therapeutic effect
+if medication must be coadministered.
+
+aripiprazole
+aripiprazole, glimepiride. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+asenapine
+asenapine, glimepiride. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+aspirin
+aspirin increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+aspirin rectal
+aspirin rectal increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+aspirin/citric acid/sodium bicarbonate
+aspirin/citric acid/sodium bicarbonate increases effects of glimepiride by unknown
+mechanism. Use Caution/Monitor. Risk of hypoglycemia.
+
+atazanavir
+atazanavir decreases effects of glimepiride by Other (see comment). Use
+Caution/Monitor. Comment: Reports of hyperglycemia due to insulin resistance with
+protease inhibitors. .
+
+benazepril
+benazepril increases effects of glimepiride by pharmacodynamic synergism. Use
+Caution/Monitor. Additive hypoglycemic effects.
+
+bexagliflozin
+bexagliflozin, glimepiride. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Consider a lower dose of insulin
+secretagogue to avoid hypoglycemia when coadministered with bexagliflozin.
+
+bexarotene
+
+https://reference.medscape.com/drug/amaryl-glimepiride-342707 4/30
+
+
+
+6/22/26, 5:17 PM Amaryl, (glimepiride) dosing, indications, interactions, adverse effects, and more
+
+bexarotene increases effects of glimepiride by pharmacodynamic synergism. Use
+Caution/Monitor. Based on the mechanism of action, bexarotene capsules may
+increase the action of insulin enhancing agents, resulting in hypoglycemia.
+Hypoglycemia has not been associated with bexarotene monotherapy.
+
+bitter melon
+bitter melon increases effects of glimepiride by pharmacodynamic synergism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+canagliflozin
+glimepiride, canagliflozin. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Consider a lower dose of insulin or
+insulin secretagogue to avoid hypoglycemia when coadministered with
+canagliflozin.
+
+cannabidiol
+cannabidiol will increase the level or effect of glimepiride by decreasing
+metabolism. Modify Therapy/Monitor Closely. Cannabidiol may potentially inhibit
+CYP2C9 activity. Consider reducing the dose when concomitantly using CYP2C9
+substrates.
+
+captopril
+captopril increases effects of glimepiride by pharmacodynamic synergism. Use
+Caution/Monitor. Both drugs lower blood glucose. Monitor blood glucose.
+
+celecoxib
+celecoxib increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+cholic acid
+glimepiride increases toxicity of cholic acid by decreasing elimination. Modify
+Therapy/Monitor Closely. Avoid concomitant use of inhibitors of the bile salt efflux
+pump (BSEP). May exacerbate accumulation of conjugated bile salts in the liver and
+result in clinical symptoms. If concomitant use is necessary, monitor serum
+transaminases and bilirubin.
+
+choline magnesium trisalicylate
+choline magnesium trisalicylate increases effects of glimepiride by unknown
+mechanism. Use Caution/Monitor. Risk of hypoglycemia.
+
+cinnamon
+cinnamon increases effects of glimepiride by pharmacodynamic synergism. Use
+Caution/Monitor. Potential for hypoglycemia.
+
+ciprofibrate
+ciprofibrate increases effects of glimepiride by plasma protein binding competition.
+Use Caution/Monitor. Hypoglycemia; increased risk in hypoalbuminemia.
+
+ciprofloxacin
+ciprofloxacin increases effects of glimepiride by pharmacodynamic synergism. Use
+Caution/Monitor. Hyper and hypoglycemia have been reported in patients treated
+
+https://reference.medscape.com/drug/amaryl-glimepiride-342707 5/30
+
+
+
+6/22/26, 5:17 PM Amaryl, (glimepiride) dosing, indications, interactions, adverse effects, and more
+
+concomitantly with quinolones and antidiabetic agents. Careful monitoring of blood
+glucose is recommended.
+
+clarithromycin
+clarithromycin increases levels of glimepiride by plasma protein binding
+competition. Use Caution/Monitor. Risk of hypoglycemia.
+
+clotrimazole
+clotrimazole increases levels of glimepiride by decreasing metabolism. Use
+Caution/Monitor.
+
+clozapine
+clozapine, glimepiride. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+colesevelam
+colesevelam decreases levels of glimepiride by drug binding in GI tract. Use
+Caution/Monitor. Concomitant administration decreases glimepiride absorption;
+however, absorption is not reduced when glimepiride is administered 4 hr before
+colesevelam.
+
+cyclosporine
+glimepiride, cyclosporine. unknown mechanism. Use Caution/Monitor. Cyclosporine
+may decrease the effects of sulfonylureas. Sulfonylureas may increase the effects of
+cyclosporine.
+
+dapagliflozin
+glimepiride, dapagliflozin. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Consider a lower dose of insulin or
+insulin secretagogue to avoid hypoglycemia when coadministered with
+dapagliflozin.
+
+darunavir
+darunavir decreases effects of glimepiride by Other (see comment). Use
+Caution/Monitor. Comment: Reports of hyperglycemia due to insulin resistance with
+protease inhibitors. .
+
+diclofenac
+diclofenac increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+diflunisal
+diflunisal increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+disopyramide
+disopyramide increases effects of glimepiride by unspecified interaction mechanism.
+Use Caution/Monitor. Risk of hypoglycemia.
+
+dulaglutide
+dulaglutide, glimepiride. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Antidiabetic agents are often used in combination;
+
+https://reference.medscape.com/drug/amaryl-glimepiride-342707 6/30
+
+
+
+6/22/26, 5:17 PM Amaryl, (glimepiride) dosing, indications, interactions, adverse effects, and more
+
+dosage adjustments may be required when initiating or discontinuing antidiabetic
+agents.
+
+elvitegravir/cobicistat/emtricitabine/tenofovir DF
+elvitegravir/cobicistat/emtricitabine/tenofovir DF decreases levels of glimepiride by
+affecting hepatic enzyme CYP2C9/10 metabolism. Modify Therapy/Monitor Closely.
+Elvitegravir is a moderate CYP2C9 inducer.
+
+empagliflozin
+empagliflozin, glimepiride. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Consider a lower
+dose of insulin or insulin secretagogue to avoid hypoglycemia when coadministered
+with SGLT2 inhibitors.
+
+enalapril
+enalapril increases effects of glimepiride by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+ertugliflozin
+ertugliflozin, glimepiride. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Consider a lower dose of insulin or
+insulin secretagogue to avoid hypoglycemia when coadministered with ertugliflozin.
+
+etodolac
+etodolac increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+exenatide injectable solution
+exenatide injectable solution, glimepiride. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of hypoglycemia
+when exenatide is used in combination with agents that induce hypoglycemia.
+Consider lowering dose of sulfonylureas to reduce risk of hypoglycemia. .
+
+exenatide injectable suspension
+exenatide injectable suspension, glimepiride. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of hypoglycemia
+when exenatide is used in combination with agents that induce hypoglycemia.
+Consider lowering dose of sulfonylureas to reduce risk of hypoglycemia.
+
+fenofibrate
+fenofibrate increases effects of glimepiride by plasma protein binding competition.
+Use Caution/Monitor. Hypoglycemia; increased risk in hypoalbuminemia.
+
+fenofibrate micronized
+fenofibrate micronized increases effects of glimepiride by plasma protein binding
+competition. Use Caution/Monitor. Hypoglycemia; increased risk in
+hypoalbuminemia.
+
+fenofibric acid
+fenofibric acid increases effects of glimepiride by plasma protein binding
+competition. Use Caution/Monitor. Hypoglycemia; increased risk in
+hypoalbuminemia.
+
+https://reference.medscape.com/drug/amaryl-glimepiride-342707 7/30
+
+
+
+6/22/26, 5:17 PM Amaryl, (glimepiride) dosing, indications, interactions, adverse effects, and more
+
+fenoprofen
+fenoprofen increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+fleroxacin
+fleroxacin increases effects of glimepiride by pharmacodynamic synergism. Use
+Caution/Monitor. Quinolone antibiotic administration may result in hyper- or
+hypoglycemia. Gatifloxacin is most likely to produce dysglycemia; moxifloxacin is
+least likely.
+
+fluconazole
+fluconazole increases levels of glimepiride by decreasing metabolism. Use
+Caution/Monitor.
+
+fluoxetine
+fluoxetine increases effects of glimepiride by unspecified interaction mechanism.
+Use Caution/Monitor. Risk of hypoglycemia.
+
+flurbiprofen
+flurbiprofen increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+fosamprenavir
+fosamprenavir decreases effects of glimepiride by Other (see comment). Use
+Caution/Monitor. Comment: Reports of hyperglycemia due to insulin resistance with
+protease inhibitors. .
+
+fosinopril
+fosinopril increases effects of glimepiride by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+gemfibrozil
+gemfibrozil increases effects of glimepiride by plasma protein binding competition.
+Use Caution/Monitor. Hypoglycemia; increased risk in hypoalbuminemia.
+
+gemifloxacin
+gemifloxacin increases effects of glimepiride by pharmacodynamic synergism. Use
+Caution/Monitor. Quinolone antibiotic administration may result in hyper- or
+hypoglycemia. Gatifloxacin is most likely to produce dysglycemia; moxifloxacin is
+least likely.
+
+ibuprofen
+ibuprofen increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+ibuprofen IV
+ibuprofen IV increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+imidapril
+imidapril increases effects of glimepiride by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+https://reference.medscape.com/drug/amaryl-glimepiride-342707 8/30
+
+
+
+6/22/26, 5:17 PM Amaryl, (glimepiride) dosing, indications, interactions, adverse effects, and more
+
+indomethacin
+indomethacin increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+insulin aspart
+glimepiride, insulin aspart. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+insulin aspart protamine/insulin aspart
+glimepiride, insulin aspart protamine/insulin aspart. Either increases effects of the
+other by pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents
+are often used in combination; dosage adjustments may be required when initiating
+or discontinuing antidiabetic agents.
+
+insulin degludec
+glimepiride, insulin degludec. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+insulin degludec/insulin aspart
+glimepiride, insulin degludec/insulin aspart. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+insulin detemir
+glimepiride, insulin detemir. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+insulin glargine
+glimepiride, insulin glargine. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+insulin glulisine
+glimepiride, insulin glulisine. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+insulin icodec
+glimepiride, insulin icodec. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Consider dose
+adjustment when insulin is coadministered with glimepiride; concomitant use may
+require increased glucose monitoring.
+
+insulin inhaled
+
+https://reference.medscape.com/drug/amaryl-glimepiride-342707 9/30
+
+
+
+6/22/26, 5:17 PM Amaryl, (glimepiride) dosing, indications, interactions, adverse effects, and more
+
+glimepiride, insulin inhaled. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+insulin isophane human/insulin regular human
+glimepiride, insulin isophane human/insulin regular human. Either increases effects
+of the other by pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic
+agents are often used in combination; dosage adjustments may be required when
+initiating or discontinuing antidiabetic agents.
+
+insulin lispro
+glimepiride, insulin lispro. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Antidiabetic agents are often used in combination;
+dosage adjustments may be required when initiating or discontinuing antidiabetic
+agents.
+
+insulin lispro protamine/insulin lispro
+glimepiride, insulin lispro protamine/insulin lispro. Either increases effects of the
+other by pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents
+are often used in combination; dosage adjustments may be required when initiating
+or discontinuing antidiabetic agents.
+
+insulin NPH
+glimepiride, insulin NPH. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Antidiabetic agents are often used in combination;
+dosage adjustments may be required when initiating or discontinuing antidiabetic
+agents.
+
+insulin regular human
+glimepiride, insulin regular human. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+isocarboxazid
+isocarboxazid increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor.
+
+ketoconazole
+ketoconazole increases levels of glimepiride by decreasing metabolism. Use
+Caution/Monitor.
+
+ketoprofen
+ketoprofen increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+ketorolac
+ketorolac increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+ketorolac intranasal
+
+https://reference.medscape.com/drug/amaryl-glimepiride-342707 10/30
+
+
+
+6/22/26, 5:17 PM Amaryl, (glimepiride) dosing, indications, interactions, adverse effects, and more
+
+ketorolac intranasal increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+ketotifen, ophthalmic
+ketotifen, ophthalmic, glimepiride. Other (see comment). Use Caution/Monitor.
+Comment: Combination may result in thrombocytopenia (rare). Monitor CBC.
+
+levofloxacin
+levofloxacin increases effects of glimepiride by pharmacodynamic synergism. Use
+Caution/Monitor. Quinolone antibiotic administration may result in hyper- or
+hypoglycemia. Gatifloxacin is most likely to produce dysglycemia; moxifloxacin is
+least likely.
+
+levoketoconazole
+levoketoconazole increases levels of glimepiride by decreasing metabolism. Use
+Caution/Monitor.
+
+linagliptin
+glimepiride, linagliptin. Other (see comment). Use Caution/Monitor. Comment:
+When linagliptin is used in combination with sulfonylureas, a lower dose of the
+sulfonylurea may be required to reduce risk of hypoglycemia.
+
+linezolid
+linezolid increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor.
+
+liraglutide
+liraglutide, glimepiride. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Serious hypoglycemia may occur when insulin
+secretagogues and GLP-1 agonists are concurrently administered. Consider
+lowering the dose of insulin secretagogue to reduce the risk of hypoglycemia. .
+
+lisinopril
+lisinopril increases effects of glimepiride by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+lixisenatide (DSC)
+lixisenatide (DSC), glimepiride. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Risk of
+hypoglycemia increased when coadministered with sulfonylureas. Sulfonylurea
+dosage reduction may be required.
+
+lonapegsomatropin
+lonapegsomatropin decreases effects of glimepiride by Other (see comment). Use
+Caution/Monitor. Comment: Closely monitor blood glucose when treated with
+antidiabetic agents. Lonapegsomatropin may decrease insulin sensitivity,
+particularly at higher doses. Patients with diabetes mellitus may require adjustment
+of their doses of insulin and/or other antihyperglycemic agents.
+
+lonapegsomatropin decreases effects of glimepiride by pharmacodynamic
+antagonism. Modify Therapy/Monitor Closely. Growth hormone (GH) analogs may
+
+https://reference.medscape.com/drug/amaryl-glimepiride-342707 11/30
+
+
+
+6/22/26, 5:17 PM Amaryl, (glimepiride) dosing, indications, interactions, adverse effects, and more
+
+decrease insulin sensitivity, particularly at higher doses. Antidiabetic agents may
+require dose adjustment after initiating growth hormone.
+
+lopinavir
+lopinavir decreases effects of glimepiride by Other (see comment). Use
+Caution/Monitor. Comment: Reports of hyperglycemia due to insulin resistance with
+protease inhibitors. .
+
+lornoxicam
+lornoxicam increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+lurasidone
+lurasidone, glimepiride. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+marijuana
+marijuana decreases effects of glimepiride by pharmacodynamic antagonism. Use
+Caution/Monitor.
+
+mecasermin
+mecasermin increases effects of glimepiride by pharmacodynamic synergism. Use
+Caution/Monitor. Additive hypoglycemic effects.
+
+meclofenamate
+meclofenamate increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+mefenamic acid
+mefenamic acid increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+meloxicam
+meloxicam increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+metformin
+glimepiride, metformin. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Antidiabetic agents are often used in
+combination; dosage adjustments may be required when initiating or discontinuing
+antidiabetic agents.
+
+metreleptin
+glimepiride, metreleptin. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Coadministration of metreleptin with insulin and/or
+insulin secretagogues (eg, sulfonylureas, meglitinide derivatives) may increase risk
+for hypoglycemia; may require lower dose of insulin or insulin secretagogue.
+
+miconazole vaginal
+miconazole vaginal increases levels of glimepiride by decreasing metabolism. Use
+Caution/Monitor.
+
+https://reference.medscape.com/drug/amaryl-glimepiride-342707 12/30
+
+
+
+6/22/26, 5:17 PM Amaryl, (glimepiride) dosing, indications, interactions, adverse effects, and more
+
+mipomersen
+mipomersen, glimepiride. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: Both drugs have potential to increase
+hepatic enzymes; monitor LFTs.
+
+mitapivat
+mitapivat decreases levels of glimepiride by affecting hepatic enzyme CYP2C9/10
+metabolism. Use Caution/Monitor. Monitor patients for loss of therapeutic effect if
+taking sensitive CYP2C9/10 substrates.
+
+moexipril
+moexipril increases effects of glimepiride by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+moxifloxacin
+moxifloxacin increases effects of glimepiride by pharmacodynamic synergism. Use
+Caution/Monitor. Quinolone antibiotic administration may result in hyper- or
+hypoglycemia. Gatifloxacin is most likely to produce dysglycemia; moxifloxacin is
+least likely.
+
+nabumetone
+nabumetone increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+nadolol
+nadolol decreases effects of glimepiride by pharmacodynamic antagonism. Use
+Caution/Monitor. Non selective beta blockers may also mask the symptoms of
+hypoglycemia.
+
+naproxen
+naproxen increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+nelfinavir
+nelfinavir decreases effects of glimepiride by Other (see comment). Use
+Caution/Monitor. Comment: Reports of hyperglycemia due to insulin resistance with
+protease inhibitors. .
+
+nitisinone
+nitisinone will increase the level or effect of glimepiride by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor. Nitisinone inhibits CYP2C9. Caution
+if CYP2C9 substrate coadministered, particularly those with a narrow therapeutic
+index.
+
+ofloxacin
+ofloxacin increases effects of glimepiride by pharmacodynamic synergism. Use
+Caution/Monitor. Quinolone antibiotic administration may result in hyper- or
+hypoglycemia. Gatifloxacin is most likely to produce dysglycemia; moxifloxacin is
+least likely.
+
+olanzapine
+olanzapine, glimepiride. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+
+https://reference.medscape.com/drug/amaryl-glimepiride-342707 13/30
+
+
+
+6/22/26, 5:17 PM Amaryl, (glimepiride) dosing, indications, interactions, adverse effects, and more
+
+blood glucose control; monitor glucose levels closely.
+
+opuntia ficus indica
+opuntia ficus indica increases effects of glimepiride by pharmacodynamic
+synergism. Use Caution/Monitor.
+
+orforglipron
+orforglipron, glimepiride. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of insulin
+secretagogues with GLP-1 agonists may increase hypoglycemia risk. Lowering the
+insulin secretagogue dose may reduce hypoglycemia risk.
+
+oxaprozin
+oxaprozin increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+paliperidone
+paliperidone, glimepiride. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+parecoxib
+parecoxib increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+peginterferon alfa 2b
+peginterferon alfa 2b decreases levels of glimepiride by affecting hepatic enzyme
+CYP2C9/10 metabolism. Use Caution/Monitor. When patients are administered
+peginterferon alpha-2b with CYP2C9 substrates, the therapeutic effect of these
+drugs may be altered. .
+
+perindopril
+perindopril increases effects of glimepiride by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+phenelzine
+phenelzine increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor.
+
+pindolol
+pindolol decreases effects of glimepiride by pharmacodynamic antagonism. Use
+Caution/Monitor. Non selective beta blockers may also mask the symptoms of
+hypoglycemia.
+
+piroxicam
+piroxicam increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+posaconazole
+posaconazole increases levels of glimepiride by decreasing metabolism. Use
+Caution/Monitor.
+
+probenecid
+
+https://reference.medscape.com/drug/amaryl-glimepiride-342707 14/30
+
+
+
+6/22/26, 5:17 PM Amaryl, (glimepiride) dosing, indications, interactions, adverse effects, and more
+
+probenecid increases levels of glimepiride by unspecified interaction mechanism.
+Use Caution/Monitor. Risk of hypoglycemia.
+
+propranolol
+propranolol decreases effects of glimepiride by pharmacodynamic antagonism. Use
+Caution/Monitor. Non selective beta blockers may also mask the symptoms of
+hypoglycemia.
+
+quetiapine
+quetiapine, glimepiride. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+quinapril
+quinapril increases effects of glimepiride by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+ramipril
+ramipril increases effects of glimepiride by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+rifabutin
+rifabutin decreases levels of glimepiride by increasing metabolism. Use
+Caution/Monitor.
+
+rifampin
+rifampin decreases levels of glimepiride by increasing metabolism. Use
+Caution/Monitor.
+
+rifapentine
+rifapentine decreases levels of glimepiride by increasing metabolism. Use
+Caution/Monitor.
+
+risperidone
+risperidone, glimepiride. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+ritonavir
+ritonavir, glimepiride. Other (see comment). Use Caution/Monitor. Comment:
+Ritonavir may increase or decrease levels of glimepiride. Use alternatives if
+available. Reports of hyperglycemia due to insulin resistance with protease
+inhibitors. .
+
+rucaparib
+rucaparib will increase the level or effect of glimepiride by affecting hepatic enzyme
+CYP2C9/10 metabolism. Modify Therapy/Monitor Closely. Adjust dosage of
+CYP2C9 substrates, if clinically indicated.
+
+salicylates (non-asa)
+salicylates (non-asa) increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+https://reference.medscape.com/drug/amaryl-glimepiride-342707 15/30
+
+
+
+6/22/26, 5:17 PM Amaryl, (glimepiride) dosing, indications, interactions, adverse effects, and more
+
+salsalate
+salsalate increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+selegiline
+selegiline increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor. Serum glucose should be monitored closely when MAOIs are
+added to any regimen containing antidiabetic medications. Hypoglycemic effects
+may be increased.
+
+selegiline transdermal
+selegiline transdermal increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor.
+
+semaglutide
+semaglutide, glimepiride. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of insulin
+secretagogues with GLP-1 agonists may increase hypoglycemia risk. Lowering the
+insulin secretagogue dose may reduce hypoglycemia risk. .
+
+shark cartilage
+shark cartilage increases effects of glimepiride by pharmacodynamic synergism.
+Use Caution/Monitor. Theoretical interaction.
+
+somapacitan
+somapacitan decreases effects of glimepiride by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely. Growth hormone (GH) analogs may decrease
+insulin sensitivity, particularly at higher doses. Antidiabetic agents may require dose
+adjustment after initiating growth hormone.
+
+somatrogon
+somatrogon decreases effects of glimepiride by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely. Growth hormone (GH) analogs may decrease
+insulin sensitivity, particularly at higher doses. Antidiabetic agents may require dose
+adjustment after initiating growth hormone.
+
+somatropin
+somatropin decreases effects of glimepiride by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely. Growth hormone (GH) analogs may decrease
+insulin sensitivity, particularly at higher doses. Antidiabetic agents may require dose
+adjustment after initiating growth hormone.
+
+sotagliflozin
+sotagliflozin increases effects of glimepiride by pharmacodynamic synergism.
+Modify Therapy/Monitor Closely. Hypoglycemia risk increased. Lower dose of
+sulfonylurea may be required.
+
+sparsentan
+sparsentan will decrease the level or effect of glimepiride by affecting hepatic
+enzyme CYP2C9/10 metabolism. Use Caution/Monitor. Sparsentan (a CYP2C9
+inducer) decreases exposure of CYP2C9 substrates and reduces efficacy related to
+these substrates.
+
+https://reference.medscape.com/drug/amaryl-glimepiride-342707 16/30
+
+
+
+6/22/26, 5:17 PM Amaryl, (glimepiride) dosing, indications, interactions, adverse effects, and more
+
+sulfadiazine
+sulfadiazine increases levels of glimepiride by plasma protein binding competition.
+Use Caution/Monitor.
+
+sulfamethoxazole
+sulfamethoxazole increases levels of glimepiride by plasma protein binding
+competition. Use Caution/Monitor.
+
+sulfamethoxypyridazine
+sulfamethoxypyridazine increases effects of glimepiride by unspecified interaction
+mechanism. Use Caution/Monitor. Risk of hypoglycemia.
+
+sulfasalazine
+sulfasalazine increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+sulfisoxazole
+sulfisoxazole increases levels of glimepiride by plasma protein binding competition.
+Use Caution/Monitor.
+
+sulindac
+sulindac increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+sulopenem etzadroxil/probenecid
+sulopenem etzadroxil/probenecid increases levels of glimepiride by decreasing
+metabolism. Modify Therapy/Monitor Closely. Probenecid is an OAT1/3 inhibitor and
+may increase plasma concentrations of drugs that are substrates of OAT1/3. May
+increase risk of adverse reactions. Refer to substrate-specific prescribing
+information for dosage adjustment instructions. Monitor more frequently for
+hypoglycemia.
+
+timolol
+timolol decreases effects of glimepiride by pharmacodynamic antagonism. Use
+Caution/Monitor. Non selective beta blockers may also mask the symptoms of
+hypoglycemia.
+
+tipranavir
+tipranavir decreases effects of glimepiride by Other (see comment). Use
+Caution/Monitor. Comment: Reports of hyperglycemia due to insulin resistance with
+protease inhibitors. .
+
+tirzepatide
+tirzepatide, glimepiride. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of insulin
+secretagogues with GLP-1 agonists may increase hypoglycemia risk. Lowering the
+insulin secretagogue dose may reduce hypoglycemia risk.
+
+tolfenamic acid
+tolfenamic acid increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+tolmetin
+
+https://reference.medscape.com/drug/amaryl-glimepiride-342707 17/30
+
+
+
+6/22/26, 5:17 PM Amaryl, (glimepiride) dosing, indications, interactions, adverse effects, and more
+
+tolmetin increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+trandolapril
+trandolapril increases effects of glimepiride by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+tranylcypromine
+tranylcypromine increases effects of glimepiride by unknown mechanism. Use
+Caution/Monitor.
+
+triamcinolone acetonide injectable suspension
+triamcinolone acetonide injectable suspension decreases effects of glimepiride by
+pharmacodynamic antagonism. Use Caution/Monitor. Corticosteroids may diminish
+hypoglycemic effect of antidiabetic agents. Monitor blood glucose levels carefully.
+
+trimagnesium citrate anhydrous
+trimagnesium citrate anhydrous increases levels of glimepiride by enhancing GI
+absorption. Applies only to oral form of both agents. Use Caution/Monitor.
+
+vanzacaftor/tezacaftor/deutivacaftor
+vanzacaftor/tezacaftor/deutivacaftor increases levels of glimepiride by affecting
+hepatic enzyme CYP2C9/10 metabolism. Use Caution/Monitor. Deutivacaftor
+inhibits CYP2C9 in vitro. Caution advised if coadministered with CYP2C9
+substrates.
+
+voriconazole
+voriconazole increases levels of glimepiride by decreasing metabolism. Use
+Caution/Monitor.
+
+warfarin
+glimepiride, warfarin. Either increases effects of the other by receptor binding
+competition. Use Caution/Monitor. Monitor for decreased vitamin K antagonist
+effects (eg, decreased INR, thrombosis) when combined with metformin.
+Additionally, consider increased monitoring for hypoglycemia with this combination.
+Competitive inhibition of CYP2C9-mediated metabolism may also contribute to
+mechanism.
+
+xipamide
+xipamide decreases levels of glimepiride by increasing renal clearance. Use
+Caution/Monitor.
+
+ziprasidone
+ziprasidone, glimepiride. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+Minor (81)
+
+agrimony
+agrimony increases effects of glimepiride by pharmacodynamic synergism.
+
+https://reference.medscape.com/drug/amaryl-glimepiride-342707 18/30
+
+
+
+6/22/26, 5:17 PM Amaryl, (glimepiride) dosing, indications, interactions, adverse effects, and more
+
+Minor/Significance Unknown.
+
+American ginseng
+American ginseng increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+amitriptyline
+amitriptyline increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+amoxapine
+amoxapine increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+anamu
+anamu increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown. Theoretical interaction.
+
+aspirin
+aspirin increases effects of glimepiride by plasma protein binding competition.
+Minor/Significance Unknown. Large dose of salicylate.
+
+aspirin rectal
+aspirin rectal increases effects of glimepiride by plasma protein binding
+competition. Minor/Significance Unknown. Large dose of salicylate.
+
+aspirin/citric acid/sodium bicarbonate
+aspirin/citric acid/sodium bicarbonate increases effects of glimepiride by plasma
+protein binding competition. Minor/Significance Unknown. Large dose of salicylate.
+
+balsalazide
+balsalazide increases effects of glimepiride by plasma protein binding competition.
+Minor/Significance Unknown. Large dose of salicylate.
+
+budesonide
+budesonide decreases effects of glimepiride by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+chloramphenicol
+chloramphenicol increases levels of glimepiride by decreasing metabolism.
+Minor/Significance Unknown.
+
+chlorothiazide
+chlorothiazide decreases effects of glimepiride by pharmacodynamic antagonism.
+Minor/Significance Unknown. Thiazide dosage >50 mg/day may increase blood
+glucose.
+
+chlorthalidone
+chlorthalidone decreases effects of glimepiride by pharmacodynamic antagonism.
+Minor/Significance Unknown. Thiazide dosage >50 mg/day may increase blood
+glucose.
+
+choline magnesium trisalicylate
+
+https://reference.medscape.com/drug/amaryl-glimepiride-342707 19/30
+
+
+
+6/22/26, 5:17 PM Amaryl, (glimepiride) dosing, indications, interactions, adverse effects, and more
+
+choline magnesium trisalicylate increases effects of glimepiride by plasma protein
+binding competition. Minor/Significance Unknown. Large dose of salicylate.
+
+chromium
+chromium increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+clomipramine
+clomipramine increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+clonidine
+clonidine decreases effects of glimepiride by pharmacodynamic antagonism.
+Minor/Significance Unknown. Diminished symptoms of hypoglycemia.
+
+clonidine, glimepiride. Other (see comment). Minor/Significance Unknown.
+Comment: Decreased symptoms of hypoglycemia. Mechanism: decreased
+hypoglycemia induced catecholamine production.
+
+cornsilk
+cornsilk increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown. Increased risk of hypoglycemia (theoretical
+interaction).
+
+cortisone
+cortisone decreases effects of glimepiride by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+cyclopenthiazide
+cyclopenthiazide decreases effects of glimepiride by pharmacodynamic antagonism.
+Minor/Significance Unknown. Thiazide dosage >50 mg/day may increase blood
+glucose.
+
+damiana
+damiana decreases effects of glimepiride by pharmacodynamic antagonism.
+Minor/Significance Unknown. Theoretical interaction.
+
+danazol
+danazol increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+deflazacort
+deflazacort decreases effects of glimepiride by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+desipramine
+desipramine increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+devil's claw
+devil's claw increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+https://reference.medscape.com/drug/amaryl-glimepiride-342707 20/30
+
+
+
+6/22/26, 5:17 PM Amaryl, (glimepiride) dosing, indications, interactions, adverse effects, and more
+
+dexamethasone
+dexamethasone decreases effects of glimepiride by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+diflunisal
+diflunisal increases effects of glimepiride by plasma protein binding competition.
+Minor/Significance Unknown. Large dose of salicylate.
+
+doxepin
+doxepin increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+elderberry
+elderberry increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown. Increased risk of hypoglycemia (in vitro research).
+
+eucalyptus
+eucalyptus increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown. Theoretical interaction.
+
+fludrocortisone
+fludrocortisone decreases effects of glimepiride by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+fluoxymesterone
+fluoxymesterone increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+fo-ti
+fo-ti increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+forskolin
+forskolin increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown. Colenol, a compound found in Coleus root, may
+stimulate insulin release.
+
+gotu kola
+gotu kola increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown. (Theoretical interaction).
+
+guanfacine
+guanfacine decreases effects of glimepiride by pharmacodynamic antagonism.
+Minor/Significance Unknown. Diminished symptoms of hypoglycemia.
+
+guanfacine, glimepiride. Other (see comment). Minor/Significance Unknown.
+Comment: Decreased symptoms of hypoglycemia. Mechanism: decreased
+hypoglycemia induced catecholamine production.
+
+gymnema
+gymnema increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+https://reference.medscape.com/drug/amaryl-glimepiride-342707 21/30
+
+
+
+6/22/26, 5:17 PM Amaryl, (glimepiride) dosing, indications, interactions, adverse effects, and more
+
+horse chestnut seed
+horse chestnut seed increases effects of glimepiride by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+hydrochlorothiazide
+hydrochlorothiazide decreases effects of glimepiride by pharmacodynamic
+antagonism. Minor/Significance Unknown. Thiazide dosage >50 mg/day may
+increase blood glucose.
+
+hydrocortisone
+hydrocortisone decreases effects of glimepiride by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+imipramine
+imipramine increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+indapamide
+indapamide decreases effects of glimepiride by pharmacodynamic antagonism.
+Minor/Significance Unknown. Thiazide dosage >50 mg/day may increase blood
+glucose.
+
+isoniazid
+isoniazid decreases effects of glimepiride by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+juniper
+juniper increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown. Increased risk of hypoglycemia (theoretical
+interaction).
+
+lofepramine
+lofepramine increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+lycopus
+lycopus increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown. Increased risk of hypoglycemia (theoretical
+interaction).
+
+maitake
+maitake increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown. Increased risk of hypoglycemia (animal research).
+
+mesalamine
+mesalamine increases effects of glimepiride by plasma protein binding competition.
+Minor/Significance Unknown. Large dose of salicylate.
+
+mesterolone
+mesterolone increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+methyclothiazide
+
+https://reference.medscape.com/drug/amaryl-glimepiride-342707 22/30
+
+
+
+6/22/26, 5:17 PM Amaryl, (glimepiride) dosing, indications, interactions, adverse effects, and more
+
+methyclothiazide decreases effects of glimepiride by pharmacodynamic
+antagonism. Minor/Significance Unknown. Thiazide dosage >50 mg/day may
+increase blood glucose.
+
+methylprednisolone
+methylprednisolone decreases effects of glimepiride by pharmacodynamic
+antagonism. Minor/Significance Unknown.
+
+methyltestosterone
+methyltestosterone increases effects of glimepiride by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+metolazone
+metolazone decreases effects of glimepiride by pharmacodynamic antagonism.
+Minor/Significance Unknown. Thiazide dosage >50 mg/day may increase blood
+glucose.
+
+nettle
+nettle increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown. (Theoretical interaction).
+
+nortriptyline
+nortriptyline increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+ofloxacin
+ofloxacin, glimepiride. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Potential dysglycemia.
+
+orlistat
+orlistat increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+oxandrolone
+oxandrolone increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+oxymetholone
+oxymetholone increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+pegvisomant
+pegvisomant increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+potassium acid phosphate
+potassium acid phosphate increases effects of glimepiride by pharmacodynamic
+synergism. Minor/Significance Unknown. Interaction especially seen in the
+treatment of hypokalemia.
+
+potassium chloride
+potassium chloride increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown. Interaction especially seen in the treatment of
+
+https://reference.medscape.com/drug/amaryl-glimepiride-342707 23/30
+
+
+
+6/22/26, 5:17 PM Amaryl, (glimepiride) dosing, indications, interactions, adverse effects, and more
+
+hypokalemia.
+
+potassium citrate
+potassium citrate increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown. Interaction especially seen in the treatment of
+hypokalemia.
+
+prednisolone
+prednisolone decreases effects of glimepiride by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+prednisone
+prednisone decreases effects of glimepiride by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+protriptyline
+protriptyline increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+sage
+sage increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+salicylates (non-asa)
+salicylates (non-asa) increases effects of glimepiride by plasma protein binding
+competition. Minor/Significance Unknown. Large dose of salicylate.
+
+salsalate
+salsalate increases effects of glimepiride by plasma protein binding competition.
+Minor/Significance Unknown. Large dose of salicylate.
+
+sitagliptin
+sitagliptin, glimepiride. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Risk of hypoglycemia with combination is
+unknown.
+
+stevia
+stevia increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+sulfasalazine
+sulfasalazine increases effects of glimepiride by plasma protein binding
+competition. Minor/Significance Unknown. Large dose of salicylate.
+
+tacrolimus
+glimepiride increases levels of tacrolimus by unknown mechanism.
+Minor/Significance Unknown.
+
+testosterone
+testosterone increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+testosterone buccal system
+
+https://reference.medscape.com/drug/amaryl-glimepiride-342707 24/30
+
+
+
+6/22/26, 5:17 PM Amaryl, (glimepiride) dosing, indications, interactions, adverse effects, and more
+
+testosterone buccal system increases effects of glimepiride by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+testosterone topical
+testosterone topical increases effects of glimepiride by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+tongkat ali
+tongkat ali increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown. Risk of hypoglycemia.
+
+trazodone
+trazodone increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+trimipramine
+trimipramine increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+vanadium
+vanadium increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+willow bark
+willow bark increases effects of glimepiride by plasma protein binding competition.
+Minor/Significance Unknown. Large dose of salicylate.
+
+Adverse Effects
+
+>10%
+
+Hypoglycemia (4-20%)
+
+1-10%
+
+Dizziness (1.7%)
+
+Asthenia (1.6%)
+
+Headache (1.5%)
+
+Nausea (1.1%)
+
+<1%
+
+Allergic skin reactions
+
+Erythema
+
+Morbilliform or maculopapular eruptions
+
+https://reference.medscape.com/drug/amaryl-glimepiride-342707 25/30
+
+
+
+6/22/26, 5:17 PM Amaryl, (glimepiride) dosing, indications, interactions, adverse effects, and more
+
+Pruritus
+
+Urticaria
+
+Diarrhea
+
+Gastrointestinal pain
+
+Vomiting
+
+Agranulocytosis
+
+Anemia
+
+Aplastic anemia
+
+Leukopenia
+
+Pancytopenia
+
+Thrombocytopenia, hemolytic
+
+Cholestasis
+
+Elevation of liver enzyme levels
+
+Hepatic porphyria reactions
+
+Jaundice (rare)
+
+Disulfiram-like reactions
+
+Hyponatremia
+
+Postmarketing Reports
+
+Serious hypersensitivity reactions, including anaphylaxis, angioedema, and Stevens-
+Johnson Syndrome
+
+Hemolytic anemia in patients with and without G6PD deficiency
+
+Hepatic impairment (eg, cholestasis, jaundice), as well as hepatitis, which may progress
+to liver failure
+
+Porphyria cutanea tarda, photosensitivity reactions and allergic vasculitis
+
+Leukopenia, agranulocytosis, aplastic anemia, and pancytopenia
+
+Thrombocytopenia (including severe cases with platelet count <10,000/mcL) and
+thrombocytopenic purpura
+
+Hepatic porphyria reactions and disulfiram-like reactions
+
+Hyponatremia and SIADH, most often in patients on other medications or have medical
+conditions known to cause hyponatremia or increase release of antidiuretic hormone
+
+Dysgeusia
+
+Alopecia
+
+https://reference.medscape.com/drug/amaryl-glimepiride-342707 26/30
+
+
+
+6/22/26, 5:17 PM Amaryl, (glimepiride) dosing, indications, interactions, adverse effects, and more
+
+Warnings
+
+Contraindications
+
+Hypersensitivity; sulfa allergy
+
+Type 1 diabetes
+
+Diabetic ketoacidosis (with or without coma)
+
+Complicated gestational diabetes mellitus
+
+Cautions
+
+Patients with risk of severe hypoglycemia: Elderly, debilitated, or malnourished; adrenal
+or pituitary insufficiency; patients with stress due to infection, fever, trauma, or surgery
+
+If patient is exposed to stress, it may be necessary to discontinue glimepiride and initiate
+insulin
+
+Use caution in hepatic/renal impairment
+
+Pregnancy, lactation
+
+Increased risk of cardiovascular mortality
+
+Persons allergic to other sulfonamide derivatives may develop allergic reaction to
+glimepiride
+
+Hypoglycemia may be difficult to recognize in patients with autonomic neuropathy
+
+Hemolytic anemia may occur with glucose 6-phosphate dehydrogenase (G6PD)
+deficiency when treated with sulfonylurea agents
+
+Fluid retention, which may exacerbate or lead to heart failure, may occur
+
+Combination use with insulin and use in congestive heart failure NYHA Class I and II may
+increase risk of other cardiovascular effects
+
+Potential risk of ischemic cardiovascular (CV) events relative to placebo reported in
+meta-analysis studies, but not confirmed in long-term CV outcome trial versus
+metformin or sulfonylurea
+
+Dose-related edema, weight gain, and anemia may occur
+
+Macular edema reported
+
+Increased incidence of bone fracture reported
+
+Postmarketing reports for glimepiride include anaphylaxis, angioedema, and Stevens-
+Johnson syndrome; promptly discontinue glimepiride, assess for other causes, institute
+appropriate monitoring and treatment, and initiate alternative treatment for diabetes
+
+https://reference.medscape.com/drug/amaryl-glimepiride-342707 27/30
+
+
+
+6/22/26, 5:17 PM Amaryl, (glimepiride) dosing, indications, interactions, adverse effects, and more
+
+Pregnancy & Lactation
+
+Pregnancy
+
+Available data from a small number of published studies and postmarketing experience
+in pregnancy over decades have not identified any drug associated risks for major birth
+defects, miscarriage, or adverse maternal outcomes. However, sulfonylureas (including
+glimepiride) cross the placenta and have been associated with neonatal adverse
+reactions such as hypoglycemia; therefore, therapy should be discontinued at least two
+weeks before expected delivery; poorly controlled diabetes in pregnancy is also
+associated with risks to mother and fetus
+
+Animal data
+
+In animal studies (see Data), there were no effects on embryo-fetal development
+following administration of glimepiride to pregnant rats and rabbits at oral doses
+approximately 4000 times and 60 times maximum human dose based on body
+surface area, respectively; however, fetotoxicity was observed in rats and rabbits at
+doses 50 times and 0.1 times the maximum human dose, respectively
+
+Poorly controlled diabetes in pregnancy increases maternal risk for diabetic
+ketoacidosis, preeclampsia, spontaneous abortions, preterm delivery, and delivery
+complications; poorly controlled diabetes increases fetal risk for major birth defects,
+still birth, and macrosomia- related morbidity
+
+Fetal neonatal adverse reactions
+
+Neonates of women with gestational diabetes who are treated with sulfonylureas
+during pregnancy may be at increased risk for neonatal intensive care admission
+and may develop respiratory distress, hypoglycemia, birth injury, and be large for
+gestational age; prolonged severe hypoglycemia, lasting 4–10 days, reported in
+neonates born to mothers receiving a sulfonylurea at time of delivery and has been
+reported with use of agents with prolonged half-life; observe newborns for
+symptoms of hypoglycemia and respiratory distress and manage accordingly
+
+Dose adjustments during pregnancy and postpartum period
+
+Due to reports of prolonged severe hypoglycemia in neonates born to mothers
+receiving sulfonylurea at time of delivery, therapy should be discontinued at least
+two weeks before expected delivery
+
+Lactation
+
+Breastfed infants of lactating women in therapy should be monitored for symptoms of
+hypoglycemia; not known whether drug is excreted in human milk and there are no data
+on effects of drug on milk production; drug is present in rat milk; developmental and
+health benefits of breastfeeding should be considered along with mother's clinical need
+for drug and any potential adverse effects on breastfed child from drug or from
+underlying maternal condition
+
+Monitor breastfed infants for signs of hypoglycemia (e.g., jitters, cyanosis, apnea,
+hypothermia, excessive sleepiness, poor feeding, seizures)
+
+Pregnancy Categories
+
+https://reference.medscape.com/drug/amaryl-glimepiride-342707 28/30
+
+
+
+6/22/26, 5:17 PM Amaryl, (glimepiride) dosing, indications, interactions, adverse effects, and more
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+Initial effect to increase insulin secretion from beta cells; may also decrease rate of
+hepatic glucose production and increase insulin receptor sensitivity
+
+Absorption
+
+Bioavailability: 100%
+
+Initial effect: 1 hr
+
+Peak plasma time: 2-3 hr
+
+Max effect: 2-4 hr
+
+Duration: 24 hr
+
+Distribution
+
+Vd: 8.8 L
+
+Protein bound: 99.5%
+
+Metabolism
+
+Metabolized extensively by hepatic P450 enzyme CYP2C9 to less-active metabolites
+
+Metabolites: Cyclohexyl hydroxy methyl derivative (M1; mildly active) and the carboxyl
+derivative (M2; inactive)
+
+Elimination
+
+Half-life: 5-9 hr
+
+Total body clearance: 47.8 mL/min
+
+https://reference.medscape.com/drug/amaryl-glimepiride-342707 29/30
+
+
+
+6/22/26, 5:17 PM Amaryl, (glimepiride) dosing, indications, interactions, adverse effects, and more
+
+Excretion: Urine (60%); feces (40%)
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/amaryl-glimepiride-342707 30/30

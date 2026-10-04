@@ -1,0 +1,1170 @@
+This site is intended for healthcare professionals
+esomeprazole (Rx, OTC)
+Brand and Other Names: Nexium, Nexium 24HR
+Classes: Proton Pump Inhibitors
+Dosing & Uses
+ADULT
+Dosage Forms & Strengths
+capsule, delayed-release (as magnesium)
+20mg (Rx/OTC)
+40mg
+24.65mg (strontium salt)
+49.3mg (strontium salt)
+tablet delayed release (as magnesium)
+20 mg
+injection, powder for reconstitution
+20mg/vial
+40mg/vial
+packets for oral suspension
+10mg
+20mg
+40mg
+GERD Without Erosive Esophagitis
+20 mg PO qDay for 4 weeks; consider an additional 4 weeks of treatment if symptoms
+do not resolve completely in the first 4 weeks
+6/22/26, 5:30 PM
+Nexium, Nexium 24HR (esomeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/nexium-nexium-24hr-esomeprazole-341998
+1/28
+
+GERD With Erosive Esophagitis
+20-40 mg PO qDay for 4-8 weeks
+If oral therapy inappropriate or not possible: 20-40 mg qDay IV up to 10 days; switch to
+PO once patient able to swallow
+Maintenance: 20 mg PO qDay for up to 6 months
+Helicobacter Pylori Eradication
+Combination therapy (with amoxicillin and clarithromycin) for eradication of H pylori in
+patients with duodenal ulcer
+40 mg PO qDay for 10 days, PLUS
+Amoxicillin 1000 mg PO q12hr for 10 days, PLUS
+Clarithromycin 500 mg PO q12hr for 10 days
+Risk Reduction of NSAID-Associated Gastric Ulcer
+20-40 mg PO qDay for up to 6 months
+NSAID-Induced Gastric Ulcer
+20 mg PO qDay for 4-8 weeks
+Zollinger-Ellison Syndrome
+80 mg PO divided q12hr (initial); adjust regimen to efficacy; up to 240 mg PO qDay, OR
+120 mg PO q12hr administered to patients
+Gastric or Duodenal Ulcers Following Therapeutic Endoscopy
+IV indicated for risk reduction of rebleeding of gastric or duodenal ulcers following
+therapeutic endoscopy in adults
+80 mg IV infused over 30 min, THEN continuous IV infusion of 8 mg/hr for total
+treatment duration of 72 hr
+Follow IV therapy with oral acid suppressive therapy
+Frequent Heartburn
+6/22/26, 5:30 PM
+Nexium, Nexium 24HR (esomeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/nexium-nexium-24hr-esomeprazole-341998
+2/28
+
+OTC: 20 mg PO qDay x14 days
+Hepatic Impairment
+Oral administration
+Mild to moderate (Child-Pugh A/B): No dosage adjustment required
+Severe (Child-Pugh C): Not to exceed 20 mg/day
+GERD (IV)
+Mild to moderate (Child-Pugh A/B): No dosage adjustment required
+Severe (Child-Pugh C): Not to exceed 20 mg/day IV
+Bleeding gastric or duodenal ulcers (IV)
+No dosage adjustment required with initial 80 mg/30 min IV dose
+Adjust dose for continuous IV infusion
+Mild-to-moderate (Child Pugh A/B): Not to exceed 6 mg/hr
+Severe (Child Pugh C): Not to exceed 4 mg/hr
+Eosinophilic Esophagitis (Orphan)
+Orphan designation for treatment of eosinophilic esophagitis
+Orphan sponsor
+Adare Pharmaceuticals, Inc; 845 Center Drive; Vandalia, Ohio 45377
+PEDIATRIC
+Dosage Forms & Strengths
+capsule, delayed-release
+20mg
+40mg
+tablet delayed release
+20mg
+injection, powder for reconstitution
+20mg/vial
+6/22/26, 5:30 PM
+Nexium, Nexium 24HR (esomeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/nexium-nexium-24hr-esomeprazole-341998
+3/28
+
+40mg/vial
+packets for oral suspension
+10mg
+20mg
+40mg
+GERD Without Erosive Esophagitis
+Oral
+<1 year: Safety and efficacy not established
+1-12 years: 10-20 mg PO qDay for up to 8 weeks
+>12 years: 20-40 mg PO qDay for up to 8 weeks
+Short-term Treatment of GERD
+IV
+Short-term treatment of GERD with erosive esophagitis when oral therapy is not
+possible or appropriate
+<1 month: Safety and efficacy not established
+1 month to 1 year: 0.5 mg/kg IV qDay 
+≥1 year (<55 kg): 10 mg IV qDay
+≥1 year (≥55 kg): 20 mg IV qDay
+GERD With Erosive Esophagitis (Healing)
+<1 month: Safety and efficacy not established
+1 month to 1 year
+3.5 kg: 2.5 mg PO qDay for up to 6 weeks
+>3.5-7.5 kg: 5 mg PO qDay for up to 6 weeks
+>7.5 kg: 10 mg PO qDay for up to 6 weeks
+1-12 years
+<20 kg: 10 mg PO qDay for 8 weeks
+≥20 kg: 10-20 mg qDay for 8 weeks
+>12 years
+20-40 mg PO qDay for 4-8 weeks
+Maintenance: 20 mg PO qDay up to 6 months
+6/22/26, 5:30 PM
+Nexium, Nexium 24HR (esomeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/nexium-nexium-24hr-esomeprazole-341998
+4/28
+
+Interactions
+Interaction Checker
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and
+esomeprazole
+No Interactions Found
+Interactions Found
+Contraindicated
+Serious
+Significant - Monitor Closely
+Minor
+All Interactions Sort By: Severity
+Contraindicated (2)
+nelfinavir
+esomeprazole decreases levels of nelfinavir by unspecified interaction mechanism.
+Contraindicated. Coadministration may lead to loss of nelfinavir virologic response
+and development of resistance; mechanism may be CYP2C19 inhibition of nelfinavir
+conversion to active M8 metabolite, and also PPIs decreasing gastric pH resulting in
+decreased nelfinavir absorption.
+rilpivirine
+esomeprazole decreases levels of rilpivirine by increasing gastric pH. Applies only
+to oral form of both agents. Contraindicated. Concurrent use may cause treatment
+failure and/or the development of rilpivirine or NNRTI resistance owing to
+decreased levels.
+Serious (36)
+acalabrutinib
+esomeprazole decreases levels of acalabrutinib by increasing gastric pH. Applies
+only to oral form of both agents. Avoid or Use Alternate Drug. Acalabrutinib
+solubility decreases with increasing gastric pH. Due to the long-lasting effect of
+PPIs, separation of doses may not eliminate the interaction.
+apalutamide
+apalutamide will decrease the level or effect of esomeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Avoid or Use Alternate Drug. Coadministration of
+apalutamide, a strong CYP2C19 inducer, with drugs that are CYP2C19 substrates
+can result in lower exposure to these medications. Avoid or substitute another drug
+for these medications when possible. Evaluate for loss of therapeutic effect if
+medication must be coadministered.
+apalutamide will decrease the level or effect of esomeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+6/22/26, 5:30 PM
+Nexium, Nexium 24HR (esomeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/nexium-nexium-24hr-esomeprazole-341998
+5/28
+
+Coadministration of apalutamide, a strong CYP3A4 inducer, with drugs that are
+CYP3A4 substrates can result in lower exposure to these medications. Avoid or
+substitute another drug for these medications when possible. Evaluate for loss of
+therapeutic effect if medication must be coadministered. Adjust dose according to
+prescribing information if needed.
+atazanavir
+esomeprazole will decrease the level or effect of atazanavir by increasing gastric
+pH. Applies only to oral form of both agents. Avoid or Use Alternate Drug.
+Atazanavir solubility decreases as pH increases. Substantially reduced plasma
+concentrations of atazanavir are expected if PPIs are coadministered. PPI dose
+should not exceed a dose comparable to omeprazole 20 mg and must be taken ~12
+h before atazanavir/ritonavir in treatment naive-patients. PPIs are not recommended
+in treatment-experienced taking atazanavir.
+carbamazepine
+carbamazepine will decrease the level or effect of esomeprazole by affecting
+hepatic enzyme CYP2C19 metabolism. Avoid or Use Alternate Drug.
+ceritinib
+esomeprazole will decrease the level or effect of ceritinib by increasing gastric pH.
+Applies only to oral form of both agents. Avoid or Use Alternate Drug.
+cilostazol
+esomeprazole increases toxicity of cilostazol by affecting hepatic enzyme CYP2C19
+metabolism. Avoid or Use Alternate Drug. Decrease cilostazol dose by 50%; 3,4-
+dehydrocilostazol, an active metabolite, increased by 69% as a result of omeprazole
+inhibition of CYP2C19.
+clopidogrel
+esomeprazole decreases effects of clopidogrel by affecting hepatic enzyme
+CYP2C19 metabolism. Avoid or Use Alternate Drug. Clopidogrel efficacy may be
+reduced by drugs that inhibit CYP2C19. Inhibition of platelet aggregation by
+clopidogrel is entirely due to an active metabolite. Clopidogrel is metabolized to
+this active metabolite in part by CYP2C19. .
+dacomitinib
+esomeprazole will increase the level or effect of dacomitinib by unspecified
+interaction mechanism. Avoid or Use Alternate Drug. Concomitant use with a PPI
+decreases dacomitinib concentrations, which may reduce dacomitinib efficacy. Avoid
+use of PPIs with dacomitinib. As an alternative to PPIs, use locally-acting antacids
+or an H2-receptor antagonist. Administer at least 6 hours before or 10 hours after
+taking an H2-receptor antagonist.
+dasatinib
+esomeprazole will decrease the level or effect of dasatinib by increasing gastric pH.
+Applies only to oral form of both agents. Avoid or Use Alternate Drug.
+defactinib
+esomeprazole decreases levels of defactinib by increasing gastric pH. Applies only
+to oral form of both agents. Avoid or Use Alternate Drug. Defactinib exposure may
+be decreased when coadministered with proton pump inhibitors (PPIs). If
+6/22/26, 5:30 PM
+Nexium, Nexium 24HR (esomeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/nexium-nexium-24hr-esomeprazole-341998
+6/28
+
+concomitant use with PPIs cannot be avoided, separate administration by at least 2
+hr.
+digoxin
+esomeprazole will increase the level or effect of digoxin by increasing gastric pH.
+Applies only to oral form of both agents. Avoid or Use Alternate Drug.
+enzalutamide
+enzalutamide will decrease the level or effect of esomeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+erlotinib
+esomeprazole decreases levels of erlotinib by increasing gastric pH. Applies only to
+oral form of both agents. Avoid or Use Alternate Drug. Coadministration of proton
+pump inhibitors and erlotinib may decrease erlotinib exposure and reduce its
+efficacy. Consider alternate acid reducing agents.
+fluvoxamine
+fluvoxamine will increase the level or effect of esomeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Avoid or Use Alternate Drug.
+idelalisib
+idelalisib will increase the level or effect of esomeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+Idelalisib is a strong CYP3A inhibitor; avoid coadministration with sensitive CYP3A
+substrates
+infigratinib (DSC)
+esomeprazole will decrease the level or effect of infigratinib (DSC) by inhibition of
+GI absorption. Applies only to oral form of both agents. Avoid or Use Alternate
+Drug.
+isoniazid
+isoniazid will increase the level or effect of esomeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Avoid or Use Alternate Drug.
+itraconazole
+esomeprazole will decrease the level or effect of itraconazole by increasing gastric
+pH. Applies only to oral form of both agents. Avoid or Use Alternate Drug.
+ketoconazole
+esomeprazole will decrease the level or effect of ketoconazole by increasing gastric
+pH. Applies only to oral form of both agents. Avoid or Use Alternate Drug.
+levoketoconazole
+esomeprazole will decrease the level or effect of levoketoconazole by increasing
+gastric pH. Applies only to oral form of both agents. Avoid or Use Alternate Drug.
+lonafarnib
+lonafarnib will increase the level or effect of esomeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Avoid or Use Alternate Drug. Lonafarnib may
+increase the AUC and peak concentration of CYP2C19 substrates. If
+6/22/26, 5:30 PM
+Nexium, Nexium 24HR (esomeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/nexium-nexium-24hr-esomeprazole-341998
+7/28
+
+coadministration unavoidable, monitor for adverse reactions and reduce the
+CYP2C19 substrate dose in accordance with its approved product labeling.
+mesalamine
+esomeprazole decreases effects of mesalamine by increasing gastric pH. Applies
+only to oral form of both agents. Avoid or Use Alternate Drug. Applies only to
+sustained release dosage form.
+neratinib
+esomeprazole will decrease the level or effect of neratinib by increasing gastric pH.
+Applies only to oral form of both agents. Avoid or Use Alternate Drug.
+nilotinib
+esomeprazole decreases levels of nilotinib by increasing gastric pH. Applies only to
+oral form of both agents. Avoid or Use Alternate Drug. As an alternative to PPIs,
+use H2-blockers ~10 hr before or ~2 hr after nilotinib, or use antacids ~2 hr before
+or ~2 hr after nilotinib (does not apply if using ODT nilotinib).
+nisoldipine
+esomeprazole will increase the level or effect of nisoldipine by increasing gastric
+pH. Applies only to oral form of both agents. Avoid or Use Alternate Drug.
+pazopanib
+esomeprazole will decrease the level or effect of pazopanib by increasing gastric
+pH. Applies only to oral form of both agents. Avoid or Use Alternate Drug. Avoid
+coadministration of pazopanib with drugs that raise gastric pH; consider short-
+acting antacids in place of PPIs and H2 antagonists; separate antacid and
+pazopanib dosing by several hours
+pexidartinib
+esomeprazole will decrease the level or effect of pexidartinib by inhibition of GI
+absorption. Applies only to oral form of both agents. Avoid or Use Alternate Drug.
+Avoid coadministration of proton pump inhibitors (PPIs) with pexidartinib. Use H2-
+receptor antagonists or antacids if needed. When using alternatives to PPIs,
+administer pexidartinib 2 hr before or after taking locally-acting antacids OR
+administer pexidartinib at least 2 hr before or 10 hr after taking an H2-receptor
+antagonist.
+phenobarbital
+phenobarbital will decrease the level or effect of esomeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+rilzabrutinib
+esomeprazole decreases levels of rilzabrutinib by increasing gastric pH. Applies
+only to oral form of both agents. Avoid or Use Alternate Drug. Coadministration
+may decrease rilzabrutinib exposure, resulting in reduced efficacy.
+secretin
+esomeprazole, secretin. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Concomitant use of PPIs may cause a hyperresponse in gastrin secretion
+in response to stimulation testing with secretin, falsely suggesting gastrinoma. The
+time it takes for serum gastrin concentrations to return to baseline following
+discontinuation of PPIs is specific to the individual PPI. Temporarily stop
+6/22/26, 5:30 PM
+Nexium, Nexium 24HR (esomeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/nexium-nexium-24hr-esomeprazole-341998
+8/28
+
+esomeprazole treatment at least 14 days before assessing to allow gastrin levels to
+return to baseline.
+sofosbuvir/velpatasvir
+esomeprazole will decrease the level or effect of sofosbuvir/velpatasvir by
+increasing gastric pH. Applies only to oral form of both agents. Avoid or Use
+Alternate Drug. Velpatasvir solubility decreases as gastric pH increases (practically
+insoluble at pH >5). Coadministration of sofosbuvir/velpatasvir with omeprazole or
+other PPIs is not recommended. If considered medically necessary, give
+sofosbuvir/velpatasvir with food 4 hr before omeprazole 20 mg. Use with other PPIs
+has not been studied.
+sotorasib
+esomeprazole will decrease the level or effect of sotorasib by inhibition of GI
+absorption. Applies only to oral form of both agents. Avoid or Use Alternate Drug. If
+use with an acid-reducing agent cannot be avoided, administer sotorasib 4 hr
+before or 10 hr after administration of a locally-acting antacid.
+sparsentan
+esomeprazole decreases effects of sparsentan by increasing gastric pH. Applies
+only to oral form of both agents. Avoid or Use Alternate Drug. Proton pump
+inhibitors may decrease sparsentan exposure which may reduce efficacy of
+sparsentan.
+taletrectinib
+esomeprazole decreases levels of taletrectinib by increasing gastric pH. Applies
+only to oral form of both agents. Avoid or Use Alternate Drug. Coadministration
+may decrease taletrectinib exposure and reduce its efficacy.
+tucatinib
+tucatinib will increase the level or effect of esomeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid
+concomitant use of tucatinib with CYP3A substrates, where minimal concentration
+changes may lead to serious or life-threatening toxicities. If unavoidable, reduce
+CYP3A substrate dose according to product labeling.
+ziftomenib
+esomeprazole decreases levels of ziftomenib by unspecified interaction mechanism.
+Avoid or Use Alternate Drug. Proton pump inhibitors decrease zifomenib peak
+plasma concentations by 70%.
+Monitor Closely (84)
+amitriptyline
+esomeprazole will increase the level or effect of amitriptyline by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+amphetamine
+esomeprazole, amphetamine. Other (see comment). Use Caution/Monitor.
+Comment: Reduced gastric acidity caused by proton pump inhibitors decreases time
+to Tmax for amphetamine and dextroamphetamine. AUC was unaffected. .
+6/22/26, 5:30 PM
+Nexium, Nexium 24HR (esomeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/nexium-nexium-24hr-esomeprazole-341998
+9/28
+
+ampicillin
+esomeprazole will decrease the level or effect of ampicillin by increasing gastric pH.
+Applies only to oral form of both agents. Use Caution/Monitor.
+armodafinil
+armodafinil will increase the level or effect of esomeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+axitinib
+esomeprazole will increase the level or effect of axitinib by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+belumosudil
+esomeprazole will decrease the level or effect of belumosudil by increasing gastric
+pH. Applies only to oral form of both agents. Modify Therapy/Monitor Closely.
+Increase belumosudil dosage to 200 mg PO BID when coadministered with proton
+pump inhibitors.
+belzutifan
+belzutifan will decrease the level or effect of esomeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely. If
+unable to avoid coadministration of belzutifan with sensitive CYP3A4 substrates,
+consider increasing the sensitive CYP3A4 substrate dose in accordance with its
+prescribing information.
+bortezomib
+bortezomib will increase the level or effect of esomeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+bosentan
+bosentan will decrease the level or effect of esomeprazole by increasing
+metabolism. Use Caution/Monitor.
+bosentan will decrease the level or effect of esomeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+bosutinib
+esomeprazole will decrease the level or effect of bosutinib by increasing gastric pH.
+Applies only to oral form of both agents. Modify Therapy/Monitor Closely. Bosutinib
+displays pH dependent solubility
+budesonide
+esomeprazole decreases effects of budesonide by increasing gastric pH. Applies
+only to oral form of both agents. Modify Therapy/Monitor Closely. Enteric-coated
+budesonide dissolves at pH >5.5. Also, dissolution of extended-release budesonide
+tablets is pH dependent. Coadministration with drugs that increase gastric pH may
+cause these budesonide products to prematurely dissolve, and possibly affect
+release properties and absorption of the drug in the duodenum.
+cannabidiol
+esomeprazole will increase the level or effect of cannabidiol by affecting hepatic
+enzyme CYP2C19 metabolism. Modify Therapy/Monitor Closely. Consider reducing
+the cannabidiol dose when coadministered with a moderate CYP2C19 inhibitor.
+6/22/26, 5:30 PM
+Nexium, Nexium 24HR (esomeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/nexium-nexium-24hr-esomeprazole-341998
+10/28
+
+cannabidiol will increase the level or effect of esomeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Modify Therapy/Monitor Closely. Consider reducing
+the dose of sensitive CYP2C19 substrates, as clinically appropriate, when
+coadministered with cannabidiol.
+carbamazepine
+carbamazepine will decrease the level or effect of esomeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+carbonyl iron
+esomeprazole will decrease the level or effect of carbonyl iron by increasing gastric
+pH. Applies only to oral form of both agents. Use Caution/Monitor.
+cefpodoxime
+esomeprazole will decrease the level or effect of cefpodoxime by increasing gastric
+pH. Applies only to oral form of both agents. Use Caution/Monitor.
+cefuroxime
+esomeprazole will decrease the level or effect of cefuroxime by increasing gastric
+pH. Applies only to oral form of both agents. Use Caution/Monitor.
+cenobamate
+cenobamate will decrease the level or effect of esomeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Increase dose of CYP3A4 substrate, as needed, when coadministered with
+cenobamate.
+cenobamate will increase the level or effect of esomeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Modify Therapy/Monitor Closely. Consider a dose
+reduction of CYP2C19 substrates, as clinically appropriate, when used
+concomitantly with cenobamate.
+citalopram
+esomeprazole will increase the level or effect of citalopram by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor. Citalopram 20 mg/day is the
+maximum recommended dose for patients taking CYP2C19 inhibitors because of
+the risk of QT prolongation.
+clobazam
+esomeprazole will increase the level or effect of clobazam by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor. Dosage adjustment may be
+required; CYP2C19 inhibitors may result in increased exposure to N-
+desmethylclobazam (active metabolite).
+clozapine
+esomeprazole will decrease the level or effect of clozapine by affecting hepatic
+enzyme CYP1A2 metabolism. Use Caution/Monitor.
+cobicistat
+cobicistat will increase the level or effect of esomeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+6/22/26, 5:30 PM
+Nexium, Nexium 24HR (esomeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/nexium-nexium-24hr-esomeprazole-341998
+11/28
+
+crizotinib
+esomeprazole decreases levels of crizotinib by increasing gastric pH. Applies only
+to oral form of both agents. Use Caution/Monitor. Drugs that elevate the gastric pH
+may decrease the solubility of crizotinib and subsequently reduce its bioavailability.
+However, no formal studies have been conducted. .
+crofelemer
+crofelemer increases levels of esomeprazole by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Crofelemer has the potential to inhibit
+CYP3A4 at concentrations expected in the gut; unlikely to inhibit systemically
+because minimally absorbed.
+cyclosporine
+cyclosporine, esomeprazole. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: When used for prolonged periods of
+time PPIs may cause hypomagnesemia and the risk is further increased when used
+concomitantly with drugs that also have the same effects.
+dabrafenib
+esomeprazole will decrease the level or effect of dabrafenib by increasing gastric
+pH. Applies only to oral form of both agents. Use Caution/Monitor. Drugs that alter
+upper GI tract pH (eg, PPIs, H2-blockers, antacids) may decrease dabrafenib
+solubility and reduce its bioavailability
+dabrafenib will decrease the level or effect of esomeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Modify Therapy/Monitor Closely. Use alternative if
+available
+dextroamphetamine
+esomeprazole, dextroamphetamine. Other (see comment). Use Caution/Monitor.
+Comment: Reduced gastric acidity caused by proton pump inhibitors decreases time
+to Tmax for amphetamine and dextroamphetamine. AUC was unaffected. .
+diazepam buccal
+esomeprazole will increase the level or effect of diazepam buccal by affecting
+hepatic enzyme CYP2C19 metabolism. Use Caution/Monitor. Strong or moderate
+CYP2C19 inhibitors may decrease rate of diazepam elimination, thereby increasing
+adverse reactions to diazepam.
+diazepam intranasal
+esomeprazole will increase the level or effect of diazepam intranasal by affecting
+hepatic enzyme CYP2C19 metabolism. Use Caution/Monitor. Strong or moderate
+CYP2C19 inhibitors may decrease rate of diazepam elimination, thereby increasing
+adverse reactions to diazepam.
+dichlorphenamide
+dichlorphenamide and esomeprazole both decrease serum potassium. Use
+Caution/Monitor.
+digoxin
+esomeprazole increases toxicity of digoxin by Other (see comment). Use
+Caution/Monitor. Comment: Prolonged use of PPIs may cause hypomagnesemia and
+6/22/26, 5:30 PM
+Nexium, Nexium 24HR (esomeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/nexium-nexium-24hr-esomeprazole-341998
+12/28
+
+increase risk for digoxin toxicity.
+dordaviprone
+dordaviprone and esomeprazole both increase QTc interval. Use Caution/Monitor.
+Increase the frequency of ECG and electrolyte monitoring.
+duloxetine
+esomeprazole will decrease the level or effect of duloxetine by increasing gastric
+pH. Applies only to oral form of both agents. Use Caution/Monitor.
+efavirenz
+efavirenz will decrease the level or effect of esomeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+elagolix
+elagolix will increase the level or effect of esomeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Modify Therapy/Monitor Closely. Elagolix is a weak
+CYP2C19 inhibitor. Caution with sensitive CYP2C19 substrates.
+elagolix will decrease the level or effect of esomeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Elagolix is a weak-to-moderate CYP3A4 inducer. Monitor CYP3A substrates if
+coadministered. Consider increasing CYP3A substrate dose if needed.
+eltrombopag
+esomeprazole will decrease the level or effect of eltrombopag by affecting hepatic
+enzyme CYP1A2 metabolism. Use Caution/Monitor.
+escitalopram
+esomeprazole will increase the level or effect of escitalopram by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+eslicarbazepine acetate
+eslicarbazepine acetate will increase the level or effect of esomeprazole by
+affecting hepatic enzyme CYP2C19 metabolism. Use Caution/Monitor.
+etravirine
+esomeprazole will increase the level or effect of etravirine by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+etravirine will increase the level or effect of esomeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+fedratinib
+fedratinib will increase the level or effect of esomeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Adjust dose
+of drugs that are CYP3A4 substrates as necessary.
+fedratinib will increase the level or effect of esomeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor. Adjust dose of drugs that are
+CYP2C19 substrates as necessary.
+ferric gluconate
+6/22/26, 5:30 PM
+Nexium, Nexium 24HR (esomeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/nexium-nexium-24hr-esomeprazole-341998
+13/28
+
+esomeprazole will decrease the level or effect of ferric gluconate by increasing
+gastric pH. Applies only to oral form of both agents. Use Caution/Monitor.
+ferric maltol
+esomeprazole will decrease the level or effect of ferric maltol by increasing gastric
+pH. Applies only to oral form of both agents. Use Caution/Monitor.
+ferrous fumarate
+esomeprazole will decrease the level or effect of ferrous fumarate by increasing
+gastric pH. Applies only to oral form of both agents. Use Caution/Monitor.
+ferrous gluconate
+esomeprazole will decrease the level or effect of ferrous gluconate by increasing
+gastric pH. Applies only to oral form of both agents. Use Caution/Monitor.
+ferrous sulfate
+esomeprazole will decrease the level or effect of ferrous sulfate by increasing
+gastric pH. Applies only to oral form of both agents. Use Caution/Monitor.
+fexinidazole
+fexinidazole will increase the level or effect of esomeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+fluconazole
+fluconazole will increase the level or effect of esomeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+fosamprenavir
+esomeprazole will decrease the level or effect of fosamprenavir by increasing
+gastric pH. Applies only to oral form of both agents. Use Caution/Monitor.
+fosphenytoin
+esomeprazole will increase the level or effect of fosphenytoin by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+fosphenytoin will decrease the level or effect of esomeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+gefitinib
+esomeprazole decreases levels of gefitinib by increasing gastric pH. Applies only to
+oral form of both agents. Use Caution/Monitor. Avoid coadministration of gefitinib
+with PPIs if possible. If treatment with a PPI is required, separate gefitinib and PPI
+doses by 12 hr.
+glipizide
+esomeprazole will increase the level or effect of glipizide by increasing gastric pH.
+Applies only to oral form of both agents. Use Caution/Monitor.
+glyburide
+esomeprazole will increase the level or effect of glyburide by increasing gastric pH.
+Applies only to oral form of both agents. Use Caution/Monitor.
+imipramine
+6/22/26, 5:30 PM
+Nexium, Nexium 24HR (esomeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/nexium-nexium-24hr-esomeprazole-341998
+14/28
+
+esomeprazole will increase the level or effect of imipramine by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+iron dextran complex
+esomeprazole will decrease the level or effect of iron dextran complex by increasing
+gastric pH. Applies only to oral form of both agents. Use Caution/Monitor.
+iron sucrose
+esomeprazole will decrease the level or effect of iron sucrose by increasing gastric
+pH. Applies only to oral form of both agents. Use Caution/Monitor.
+istradefylline
+istradefylline will increase the level or effect of esomeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Istradefylline
+40 mg/day increased peak levels and AUC of CYP3A4 substrates in clinical trials.
+This effect was not observed with istradefylline 20 mg/day. Consider dose reduction
+of sensitive CYP3A4 substrates.
+ledipasvir/sofosbuvir
+esomeprazole decreases levels of ledipasvir/sofosbuvir by Other (see comment).
+Use Caution/Monitor. Comment: Ledipasvir solubility decreases as pH increases;
+drugs that increase gastric pH are expected to decrease levels of ledipasvir; proton-
+pump inhibitor doses comparable to omeprazole <20 mg can be administered
+simultaneously with ledipasvir/sofosbuvir under fasted conditions.
+lenacapavir
+lenacapavir will increase the level or effect of esomeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Lencapavir (a
+moderate CYP3A4 inhibitor) may increase CYP3A4 substrates initiated within 9
+months after last SC dose of lenacapavir, which may increase potential risk of
+adverse reactions of CYP3A4 substrates.
+letermovir
+letermovir increases levels of esomeprazole by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+lumacaftor/ivacaftor
+lumacaftor/ivacaftor, esomeprazole. affecting hepatic enzyme CYP2C19
+metabolism. Use Caution/Monitor. In vitro studies suggest that lumacaftor may
+induce and ivacaftor may inhibit CYP2C19 substrates. .
+lumacaftor/ivacaftor will decrease the level or effect of esomeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+Lumacaftor/ivacaftor is a strong CYP3A4 inhibitor and also has the potential to
+induce CYP2C19 and both induce and inhibitor P-gp.
+mavacamten
+esomeprazole increases levels of mavacamten by affecting hepatic enzyme
+CYP2C19 metabolism. Modify Therapy/Monitor Closely. Modify mavacamten dose if
+coadministered with weak or moderate CYP2C19 inhibitors.
+methotrexate
+6/22/26, 5:30 PM
+Nexium, Nexium 24HR (esomeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/nexium-nexium-24hr-esomeprazole-341998
+15/28
+
+esomeprazole increases levels of methotrexate by decreasing renal clearance. Use
+Caution/Monitor. Increased risk of toxicity with higher doses.
+methylphenidate
+esomeprazole decreases effects of methylphenidate by enhancing GI absorption.
+Applies only to oral form of both agents. Modify Therapy/Monitor Closely. Since the
+characteristics of methylphenidate extended release capsules (Ritalin LA) are pH
+dependent, coadministration of antacids or acid suppressants could alter the
+release of methylphenidate. Consider separating the administration of the antacid
+and the methylphenidate extended-release capsules may be avoided.
+mitapivat
+mitapivat decreases levels of esomeprazole by affecting hepatic enzyme CYP2C19
+metabolism. Use Caution/Monitor. Monitor patients for loss of therapeutic effect if
+taking sensitive CYP2C19 substrates. .
+mitotane
+mitotane decreases levels of esomeprazole by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Mitotane is a strong inducer of
+cytochrome P-4503A4; monitor when coadministered with CYP3A4 substrates for
+possible dosage adjustments.
+mycophenolate
+esomeprazole will decrease the level or effect of mycophenolate by increasing
+gastric pH. Applies only to oral form of both agents. Use Caution/Monitor. Potential
+interaction applies to mycophenolate mofetil. Enteric coated mycophenolate sodium
+formulation is less sensitive to this interaction. Clinical significance unclear.
+paltusotine
+esomeprazole decreases levels of paltusotine by increasing gastric pH. Applies only
+to oral form of both agents. Modify Therapy/Monitor Closely. Coadministration
+demonstrated a dose-dependent decrease in paltusotine exposure owing to
+decreased paltusotine solubility at elevated gastric pH. May require increased
+paltusotine dose. Avoid coadministration if patient is already taking paltusotine 60
+mg.
+pentobarbital
+pentobarbital will decrease the level or effect of esomeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+phenobarbital
+phenobarbital will decrease the level or effect of esomeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+phenytoin
+esomeprazole will increase the level or effect of phenytoin by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+phenytoin will decrease the level or effect of esomeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+polysaccharide iron
+6/22/26, 5:30 PM
+Nexium, Nexium 24HR (esomeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/nexium-nexium-24hr-esomeprazole-341998
+16/28
+
+esomeprazole will decrease the level or effect of polysaccharide iron by increasing
+gastric pH. Applies only to oral form of both agents. Use Caution/Monitor.
+posaconazole
+esomeprazole will decrease the level or effect of posaconazole by increasing gastric
+pH. Applies only to oral form of both agents. Use Caution/Monitor.
+posaconazole will increase the level or effect of esomeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+primidone
+primidone will decrease the level or effect of esomeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+rifampin
+rifampin will decrease the level or effect of esomeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+rifampin will decrease the level or effect of esomeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+riociguat
+esomeprazole will decrease the level or effect of riociguat by increasing gastric pH.
+Applies only to oral form of both agents. Use Caution/Monitor.
+ritonavir
+ritonavir will increase the level or effect of esomeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+rose hips
+esomeprazole will decrease the level or effect of rose hips by increasing gastric pH.
+Applies only to oral form of both agents. Use Caution/Monitor.
+sparsentan
+sparsentan will decrease the level or effect of esomeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor. Sparsentan (a CYP2C19
+inducer) decreases exposure of CYP2C19 substrates and reduces efficacy related to
+these substrates.
+St John's Wort
+St John's Wort will decrease the level or effect of esomeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+St John's Wort will decrease the level or effect of esomeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+stiripentol
+stiripentol will decrease the level or effect of esomeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Modify Therapy/Monitor Closely. Consider reducing
+the dose of CYP2C19 substrates, if adverse reactions are experienced when
+administered concomitantly with stiripentol.
+tacrolimus
+6/22/26, 5:30 PM
+Nexium, Nexium 24HR (esomeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/nexium-nexium-24hr-esomeprazole-341998
+17/28
+
+esomeprazole will increase the level or effect of tacrolimus by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor. Concomitant administration
+may increase tacrolimus whole blood concentrations, particularly in intermediate or
+poor metabolizers of CYP2C19
+taletrectinib
+taletrectinib and esomeprazole both increase QTc interval. Use Caution/Monitor.
+Concomitant use may increase the risk of QTc interval prolongation. If concomitant
+use is unavoidable, adjust the frequency of ECG and electrolyte monitoring.
+triclabendazole
+triclabendazole will increase the level or effect of esomeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor. If plasma concentrations of
+the CYP2C19 substrates are elevated during triclabendazole, recheck plasma
+concentration of the CYP2C19 substrates after discontinuation of triclabendazole.
+voriconazole
+voriconazole will increase the level or effect of esomeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+voriconazole will increase the level or effect of esomeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+ziftomenib
+esomeprazole, ziftomenib. QTc interval. Use Caution/Monitor. Caution if ziftomenib
+is coadministered with drugs that exacerbated risk of QT prolongation (eg,
+hypokalemia, orthostatic hypotension, inhibits metabolism of ziftomenib).
+Minor (46)
+acetazolamide
+acetazolamide will increase the level or effect of esomeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+alosetron
+esomeprazole will decrease the level or effect of alosetron by increasing
+metabolism. Minor/Significance Unknown.
+alprazolam
+esomeprazole increases levels of alprazolam by decreasing metabolism.
+Minor/Significance Unknown.
+ambrisentan
+esomeprazole will increase the level or effect of ambrisentan by affecting hepatic
+enzyme CYP2C19 metabolism. Minor/Significance Unknown.
+anastrozole
+anastrozole will increase the level or effect of esomeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+bismuth subsalicylate
+6/22/26, 5:30 PM
+Nexium, Nexium 24HR (esomeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/nexium-nexium-24hr-esomeprazole-341998
+18/28
+
+esomeprazole increases levels of bismuth subsalicylate by enhancing GI absorption.
+Applies only to oral form of both agents. Minor/Significance Unknown.
+blessed thistle
+blessed thistle decreases effects of esomeprazole by pharmacodynamic
+antagonism. Minor/Significance Unknown. Theoretical interaction.
+bosentan
+esomeprazole will increase the level or effect of bosentan by affecting hepatic
+enzyme CYP2C9/10 metabolism. Minor/Significance Unknown.
+capecitabine
+esomeprazole decreases effects of capecitabine by unknown mechanism.
+Minor/Significance Unknown. Retrospective data suggest elevated gastric pH
+caused by PPI use may impair capecitabine tablet dissolution and/or reduce
+absorption. However, a randomized crossover study found esomeprazole did not
+affect capecitabine systemic exposure.
+chlordiazepoxide
+esomeprazole will increase the level or effect of chlordiazepoxide by decreasing
+metabolism. Minor/Significance Unknown.
+clomipramine
+esomeprazole will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2C19 metabolism. Minor/Significance Unknown.
+clonazepam
+esomeprazole will increase the level or effect of clonazepam by affecting hepatic
+enzyme CYP2C19 metabolism. Minor/Significance Unknown.
+cyanocobalamin
+esomeprazole decreases levels of cyanocobalamin by inhibition of GI absorption.
+Applies only to oral form of both agents. Minor/Significance Unknown.
+cyclophosphamide
+cyclophosphamide will increase the level or effect of esomeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+danazol
+danazol will increase the level or effect of esomeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+darifenacin
+darifenacin will decrease the level or effect of esomeprazole by Other (see
+comment). Minor/Significance Unknown. Effectiveness of proton pump inhibitors
+may be decreased theoretically if administered with other antisecretory agents
+devil's claw
+devil's claw decreases effects of esomeprazole by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+dexamethasone
+6/22/26, 5:30 PM
+Nexium, Nexium 24HR (esomeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/nexium-nexium-24hr-esomeprazole-341998
+19/28
+
+dexamethasone will decrease the level or effect of esomeprazole by increasing
+metabolism. Minor/Significance Unknown.
+diazepam
+esomeprazole will increase the level or effect of diazepam by affecting hepatic
+enzyme CYP2C19 metabolism. Minor/Significance Unknown.
+dronedarone
+dronedarone will increase the level or effect of esomeprazole by decreasing
+metabolism. Minor/Significance Unknown.
+drospirenone
+drospirenone will increase the level or effect of esomeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+efavirenz
+efavirenz will increase the level or effect of esomeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Minor/Significance Unknown.
+elvitegravir/cobicistat/emtricitabine/tenofovir DF
+elvitegravir/cobicistat/emtricitabine/tenofovir DF, esomeprazole. affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+Based on drug interaction studies conducted with the components of Stribild, no
+clinically significant drug interactions have been either observed or are expected
+when coadministered with PPIs.
+eslicarbazepine acetate
+eslicarbazepine acetate decreases levels of esomeprazole by increasing
+metabolism. Minor/Significance Unknown. Monitor for GI symptoms; net increased
+or decreased effect on PPI action unclear due to opposing CYP450 actions.
+estazolam
+esomeprazole will increase the level or effect of estazolam by affecting hepatic
+enzyme CYP2C19 metabolism. Minor/Significance Unknown.
+ferric carboxymaltose
+esomeprazole will decrease the level or effect of ferric carboxymaltose by
+increasing gastric pH. Applies only to oral form of both agents. Minor/Significance
+Unknown.
+fluoxetine
+fluoxetine will increase the level or effect of esomeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Minor/Significance Unknown.
+flurazepam
+esomeprazole increases levels of flurazepam by decreasing metabolism.
+Minor/Significance Unknown.
+fluvastatin
+esomeprazole will increase the level or effect of fluvastatin by affecting hepatic
+enzyme CYP2C9/10 metabolism. Minor/Significance Unknown.
+itraconazole
+6/22/26, 5:30 PM
+Nexium, Nexium 24HR (esomeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/nexium-nexium-24hr-esomeprazole-341998
+20/28
+
+itraconazole will increase the level or effect of esomeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+larotrectinib
+larotrectinib will increase the level or effect of esomeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+levoketoconazole
+levoketoconazole will increase the level or effect of esomeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+levothyroxine
+esomeprazole decreases levels of levothyroxine by increasing gastric pH. Applies
+only to oral form of both agents. Minor/Significance Unknown. Conflicting evidence
+regarding this interaction exists.
+liothyronine
+esomeprazole decreases levels of liothyronine by increasing gastric pH. Applies
+only to oral form of both agents. Minor/Significance Unknown. Conflicting evidence
+regarding this interaction exists.
+liotrix
+esomeprazole decreases levels of liotrix by increasing gastric pH. Applies only to
+oral form of both agents. Minor/Significance Unknown. Conflicting evidence
+regarding this interaction exists.
+lisdexamfetamine
+esomeprazole, lisdexamfetamine. Other (see comment). Minor/Significance
+Unknown. Comment: Reduced gastric acidity caused by proton pump inhibitors
+decreases time to Tmax for amphetamine and dextroamphetamine. AUC was
+unaffected. .
+lorazepam
+esomeprazole increases levels of lorazepam by decreasing metabolism.
+Minor/Significance Unknown.
+methamphetamine
+esomeprazole decreases levels of methamphetamine by Other (see comment).
+Minor/Significance Unknown. Comment: Time to maximum concentration (Tmax) of
+amphetamine is decreased compared to when administered alone; monitor patients
+for changes in clinical effect and adjust therapy based on clinical response.
+midazolam
+esomeprazole increases levels of midazolam by decreasing metabolism.
+Minor/Significance Unknown.
+phytoestrogens
+esomeprazole decreases levels of phytoestrogens by inhibition of GI absorption.
+Applies only to oral form of both agents. Minor/Significance Unknown.
+ponatinib
+esomeprazole decreases levels of ponatinib by increasing gastric pH. Applies only
+6/22/26, 5:30 PM
+Nexium, Nexium 24HR (esomeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/nexium-nexium-24hr-esomeprazole-341998
+21/28
+
+to oral form of both agents. Minor/Significance Unknown.
+ribociclib
+ribociclib will increase the level or effect of esomeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+theophylline
+esomeprazole increases toxicity of theophylline by Other (see comment).
+Minor/Significance Unknown. Comment: Prolonged use of proton pump inhibitors
+can cause hypochlorhydria, which in turn causes peristalsis in small intestine to
+increase and peristalsis in the proximal colon to decrease; monitor for toxicity.
+thyroid desiccated
+esomeprazole decreases levels of thyroid desiccated by increasing gastric pH.
+Applies only to oral form of both agents. Minor/Significance Unknown. Conflicting
+evidence regarding this interaction exists.
+triazolam
+esomeprazole increases levels of triazolam by affecting hepatic enzyme CYP2C19
+metabolism. Minor/Significance Unknown.
+voriconazole
+esomeprazole will increase the level or effect of voriconazole by affecting hepatic
+enzyme CYP2C19 metabolism. Minor/Significance Unknown.
+Adverse Effects
+>10%
+Headache (2-11%)
+1-10%
+Flatulence (10%)
+Indigestion (6%)
+Nausea (6%)
+Abdominal pain (1-6%)
+Diarrhea (2-4%)
+Xerostomia (3-4%)
+Dizziness (2-3%)
+Constipation (2-3%)
+Somnolence (1-2%)
+Pruritus (1%)
+6/22/26, 5:30 PM
+Nexium, Nexium 24HR (esomeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/nexium-nexium-24hr-esomeprazole-341998
+22/28
+
+<1%
+Blood and lymphatic system disorders: Agranulocytosis, pancytopenia
+Blurred vision
+GI disorders: Pancreatitis, stomatitis, microscopic colitis
+Hepatobiliary disorders: Hepatic failure, hepatitis with or without jaundice
+Anaphylactic reaction/shock
+GI candidiasis
+Hypomagnesemia
+Musculoskeletal disorders: Muscular weakness, myalgia, bone fracture
+Nervous system disorders: Hepatic encephalopathy, taste disturbance
+Psychiatric disorders: Aggression, agitation, depression, hallucination
+Interstitial nephritis
+Gynecomastia
+Bronchospasm
+Skin and subcutaneous tissue disorders: Alopecia, erythema multiforme, hyperhidrosis,
+photosensitivity, Stevens-Johnson syndrome, toxic epidermal necrolysis (sometimes fatal
+fatal)
+Postmarketing Reports
+Cutaneous and systemic lupus erythematosus
+Cyanocobalamin (vitamin B-12) deficiency
+Clostridium difficile-associated diarrhea
+Fundic gland polyps
+Acute tubulointerstitial nephritis
+Hypocalcemia
+Drug reaction with eosinophilia and systemic symptoms (DRESS), acute generalized
+exanthematous pustulosis (AGEP)
+Erectile dysfunction
+Warnings
+Contraindications
+Hypersensitivity to esomeprazole or other proton pump inhibitors (PPIs)
+6/22/26, 5:30 PM
+Nexium, Nexium 24HR (esomeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/nexium-nexium-24hr-esomeprazole-341998
+23/28
+
+Patients receiving rilpivirine- containing products
+Cautions
+Do not use if allergic to the drug; may cause severe skin reactions; symptoms may
+include, skin reddening, blisters, rash; if allergic reaction occurs, discontinue use and seek
+medical help immediately
+PPIs are possibly associated with increased incidence of Clostridium difficile-associated
+diarrhea (CDAD); consider diagnosis of CDAD for patients taking PPIs who have diarrhea
+that does not improve
+PPIs may decrease the efficacy of clopidogrel by reducing the formation of the active
+metabolite
+Severe hepatic impairment
+Cutaneous lupus erythematosus (CLE) and systemic lupus erythematosus (SLE) reported
+with PPIs; avoid using for longer than medically indicated; discontinue if signs or
+symptoms consistent with CLE or SLE are observed and refer patient to specialist; most
+patients improve with discontinuation of PPI alone in 4-12 weeks; serological testing
+(e.g. ANA) may be positive and elevated serological test results may take longer to
+resolve than clinical manifestations
+Severe cutaneous adverse reactions, including Stevens-Johnson syndrome (SJS) and
+toxic epidermal necrolysis (TEN), drug reaction with eosinophilia and systemic symptoms
+(DRESS), and acute generalized exanthematous pustulosis (AGEP) reported in
+association with use of PPIs; discontinue therapy at first signs or symptoms of severe
+cutaneous adverse reactions or other signs of hypersensitivity and consider further
+evaluation
+Relief of symptoms does not eliminate the possibility of a gastric malignancy; consider
+additional follow-up and diagnostic testing in adult patients who have suboptimal
+response or early symptomatic relapse after completing treatment with a PPI
+Therapy increases risk of Salmonella, Campylobacter, and other infections
+Contains enteric coated granules (acid labile); do not chew or crush; take 1 hr before
+meals
+Published observational studies suggest that PPI therapy may be associated with an
+increased risk for osteoporosis-related fractures of the hip, wrist, or spine; particularly
+with prolonged (>1 yr), high-dose therapy
+Decreased gastric acidity increases serum chromogranin A (CgA) levels and may cause
+false-positive diagnostic results for neuroendocrine tumors; temporarily discontinue PPIs
+before assessing CgA levels
+Daily long-term use (e.g., longer than 3 years) may lead to malabsorption or a deficiency
+of cyanocobalamin
+If patient taking a prescription drug, the patient should ask a doctor or a pharmacist
+whether acid reducers can be taken concomitantly with it
+Acute interstitial nephritis reported in patients taking proton pump inhibitors
+6/22/26, 5:30 PM
+Nexium, Nexium 24HR (esomeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/nexium-nexium-24hr-esomeprazole-341998
+24/28
+
+May elevate and/or prolong serum concentrations of methotrexate and/or its metabolite
+when administered concomitantly with PPIs, possibly leading to toxicity; consider a
+temporary withdrawal of PPI therapy with high dose methotrexate administration
+Stop use and inform a healthcare professional if rash or joint pain develops
+PPI therapy is associated with increased risk of fundic gland polyp; risk increases with
+long-term use >1 year; patient may be asymptomatic; problem usually identified
+incidentally on endoscopy; use shortest duration of therapy appropriate to condition
+being treated
+Acute tubulointerstitial nephritis (TIN) reported in patients taking PPIs; may occur at any
+point during PPI therapy; patients may present with varying signs and symptoms from
+symptomatic hypersensitivity reactions to non-specific symptoms of decreased renal
+function (e.g., malaise, nausea, anorexia); in reported case series, some patients were
+diagnosed on biopsy and in absence of extra-renal manifestations (eg, fever, rash or
+arthralgia); discontinue therapy and evaluate patients with suspected acute TIN
+Hypomagnesemia and mineral metabolism
+Hypomagnesemia may occur with prolonged use (ie, >1 yr; adverse effects may
+result and include tetany, arrhythmias, and seizures; in 25% of cases reviewed,
+magnesium supplementation alone did not improve low serum magnesium levels,
+and the PPI had to be discontinued; consider monitoring magnesium levels prior to
+initiation of PPI treatment and periodically
+Hypomagnesemia may lead to hypocalcemia and/or hypokalemia and may
+exacerbate underlying hypocalcemia in at-risk patients; in most patients, treatment
+of hypomagnesemia required magnesium replacement and discontinuation of the
+PPI
+Consider monitoring magnesium and calcium levels prior to initiation of therapy and
+periodically while on treatment in patients with a preexisting risk of hypocalcemia
+(eg, hypoparathyroidism); supplement with magnesium and/or calcium as
+necessary. If hypocalcemia is refractory to treatment, consider discontinuing the PPI
+Pregnancy & Lactation
+Pregnancy
+There are no adequate and well-controlled studies in pregnant women; esomeprazole is
+the S-isomer of omeprazole; available epidemiologic data fail to demonstrate an
+increased risk of major congenital malformations or other adverse pregnancy outcomes
+with first trimester omeprazole use; reproduction studies in rats and rabbits resulted in
+dose-dependent embryo-lethality at omeprazole doses that were approximately 3.4 to
+34 times an oral human dose of 40 mg (based on a body surface area for a 60 kg person)
+Lactation
+Esomeprazole is the S-isomer of omeprazole and limited data suggest that omeprazole
+may be present in human milk; there are no clinical data on effects of esomeprazole on
+breastfed infant or on milk production; developmental and health benefits of
+breastfeeding should be considered along with mother’s clinical need for therapy and
+6/22/26, 5:30 PM
+Nexium, Nexium 24HR (esomeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/nexium-nexium-24hr-esomeprazole-341998
+25/28
+
+any potential adverse effects on breastfed infant from treatment or from underlying
+maternal condition
+Pregnancy Categories
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+NA: Information not available.
+Pharmacology
+Mechanism of Action
+S-isomer of omeprazole; PPI; binds to H+/K+-exchanging ATPase (proton pump) in
+gastric parietal cells, resulting in blockage of acid secretion
+Absorption
+Bioavailability: PO: 89-90%; food decreases AUC by 33-53%; take 1 hr before meal
+Onset: 1-2 hr (gastric acid inhibition); within 4 wk (GERD)
+Duration (multiple dose): Gastric acid inhibition; PO: 17 hr
+Peak plasma time: PO: 1-1.6 hr
+Distribution
+Protein bound: 97%
+Vd: 16 L
+Metabolism
+Liver; extensively metabolized by hepatic P450 enzyme; major metabolic pathway is via
+CYP2C19; the rest is via CYP3A4
+Metabolites: 5-hydroxyesomeprazole (inactive), esomeprazole sulfone (inactive),
+desmethyl-esomeprazole (activity unknown)
+Enzymes inhibited: CYP2C19
+6/22/26, 5:30 PM
+Nexium, Nexium 24HR (esomeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/nexium-nexium-24hr-esomeprazole-341998
+26/28
+
+Slow metabolizers (3% of Caucasians and African-Americans) are deficient in CPY2C19
+enzyme system; plasma concentration can be higher than in persons who have the
+enzyme
+Elimination
+Half-life: 1.2-1.5 hr
+Total body clearance: 9-16 L/hr
+Excretion: Urine (80%); feces (20%)
+Pharmacogenomics
+Metabolites of esomeprazole lack antisecretory activity
+The major part of esomeprazole’s metabolism is dependent on the CYP2C19 isoenzyme,
+which forms the hydroxy and desmethyl metabolites
+CYP2C19 isoenzyme exhibits polymorphism in the metabolism of esomeprazole, since
+some 3% of Caucasians and 15-20% of Asians lack CYP2C19 and are termed poor
+metabolizers
+At steady state, the ratio of AUC in poor metabolizers to AUC in the rest of the
+population (extensive metabolizers) is approximately 2
+Administration
+Oral Administration
+If unable to swallow capsule whole, capsule can be opened, emptied on applesauce,
+mixed, and swallowed immediately
+IV Compatibilities
+Solution: NS, LR, D5W
+IV Preparation
+IV injection
+Reconstitute contents of 1 vial with 5 mL NS
+Store at room temp (no refrigeration required) and administer within 12 hr
+Intermittent IV infusion
+Reconstitute 1 vial with 5 mL NS, LR, or D5W
+Further dilute to 50 mL
+Store at room temp (no refrigeration required) and administer within 12 hr if diluted
+in NS or LR, and within 6 hr if diluted in D5W
+6/22/26, 5:30 PM
+Nexium, Nexium 24HR (esomeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/nexium-nexium-24hr-esomeprazole-341998
+27/28
+
+Continuous IV infusion
+Reconstitute two 40 mg vials with 5 mL each of 0.9% NaCl
+Further dilute the 2 reconstituted vials in 100 mL 0.9% NaCl
+IV Administration
+IV injection
+Injection: Over no less than 3 min
+Intermittent IV infusion
+Infuse over 10-30 min regardless of amount
+Flush IV line with NS, LR, or D5W prior to and after administration
+Do not administer with any other drugs
+Continuous IV infusion
+Administer initial 80 mg IV dose over 30 min, THEN follow with
+Continuous IV infusion of 8 mg/hr for total treatment duration of 72 hr
+Formulary
+Adding plans allows you to compare formulary status to other drugs in the same class.
+Formulary information is available for health plans only in the United States.
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+6/22/26, 5:30 PM
+Nexium, Nexium 24HR (esomeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/nexium-nexium-24hr-esomeprazole-341998
+28/28

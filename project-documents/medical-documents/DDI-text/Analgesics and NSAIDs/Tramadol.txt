@@ -1,0 +1,3454 @@
+﻿6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+tramadol (Rx)
+Brand and Other Names: ConZip, Ultram (DSC)
+Classes: Opioid Analgesics
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+tablet, immediate-release: Schedule IV
+
+25mg (generic)
+
+50mg (generic)
+
+100mg (generic)
+
+capsule, extended release: Schedule IV
+
+100mg (ConZip)
+
+150mg (ConZip)
+
+200mg (ConZip)
+
+300mg (ConZip)
+
+solution, oral: Schedule IV
+
+5mg/mL
+
+Equivalent to tramadol 4.4 mg/mL
+
+Pain
+
+Indicated for management of severe and persistent pain that requires an opioid analgesic
+and that cannot be adequately treated with alternative options, including immediate-
+release opioids
+
+Initiate dosing regimen for each patient individually, taking into account the patient's
+severity of pain, patient response, prior analgesic treatment experience, and risk factors
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 1/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+for addiction, abuse, and misuse
+
+Not indicated as an as-needed (PRN) analgesic
+
+Immediate release
+
+Chronic: 25 mg PO every morning initially; increased by 25-50 mg/day every 3 days
+up to 50-100 mg PO q4-6hr PRN; not to exceed 400 mg/day
+
+Acute: 50-100 mg PO q4-6hr PRN; not to exceed 400 mg/day
+
+Extended release
+
+100 mg PO once daily initially; increased by 100 mg/day every 5 days; not to
+exceed 300 mg/day
+
+Conversion from immediate release to extended release
+Round total daily dose down to nearest 100 mg; titrate subsequent dose base
+on individual need
+
+Oral solution
+
+25 mg/day PO initially; may titrate in 25-mg increments as separate doses every 3
+days to 100 mg/day (25 mg QID), THEN
+
+May increase total daily dose by 50-mg increments as tolerated every 3 days to
+200 mg/day (50 mg QID)
+
+After titration, 50-100 mg q4-6 hr PRN for pain relief, not to exceed 400 mg/day
+
+For rapid onset of analgesic effect and benefits outweigh risks of discontinuation
+due to adverse events associated with high initial doses: 50-100 mg q4-6 hr PRN
+for pain relief, not to exceed 400 mg/day
+
+Dosage Modifications
+
+Renal impairment
+
+CrCl ≥30 mL/minute: No dosage adjustments necessary; use with caution
+
+Severe (CrCl <30 mL/min)
+Oral solution: Increase dosing interval to q12hr, not to exceed 200 mg/day
+
+Immediate release: 50-100 mg PO q12hr
+
+Extended release: Not recommended
+
+Patients on dialysis
+May receive regular dose on dialysis days; only 7% of dose is removed by
+hemodialysis
+
+Hepatic impairment
+
+Mild-to-moderate: No dosage adjustments necessary; use with caution
+
+Severe
+Oral solution and immediate release: 50 mg PO q12hr
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 2/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+Extended release: Not recommended
+
+Dosing Considerations
+
+It is safer to underestimate a patient’s 24-hour tramadol requirements and provide
+rescue medication (eg, immediate-release opioid) than to overestimate the 24-hour
+tramadol dosage and manage an adverse reaction due to an overdose; while useful
+tables of opioid equivalents are readily available, there is inter-patient variability in the
+potency of opioid drugs and opioid formulations; frequently reevaluate patients for signs
+and symptoms of opioid withdrawal and for signs of oversedation/toxicity after
+converting patients to this medication
+
+Closely monitor for respiratory depression, especially within the first 24–72 hr of
+initiating therapy and following dosage increases and adjust dosage accordingly
+
+Do not use concomitantly with other tramadol-containing products
+
+Access to naloxone for opioid overdose
+
+Assess need for naloxone upon initiating and renewing treatment
+
+Consider prescribing naloxone
+Based on patient’s risk factors for overdose (eg, concomitant use of CNS
+depressants, a history of opioid use disorder, prior opioid overdose); presence
+of risk factors should not prevent proper pain management
+
+Inform patients and caregivers about opioid overdose reversal agents (eg,
+naloxone, nalmefene)
+
+Discuss the importance of having access to an opioid overdose reversal agent,
+especially if the patient has risk factors for overdose (eg, concomitant use of
+CNS depressants, a history of opioid use disorder, or prior opioid overdose) or
+if there are household members (including children) or other close contacts at
+risk for accidental ingestion or opioid overdose; the presence of risk factors for
+overdose should not prevent the management of pain in any patient
+
+There are important differences among the opioid overdose reversal agents,
+such as route of administration, product strength, approved patient age range,
+and pharmacokinetics; be familiar with these differences, as outlined in the
+approved labeling for those products, prior to recommending or prescribing
+such an agent
+
+Household members (including children) or other close contacts at risk for
+accidental ingestion or overdose
+
+Consult patients and caregivers on the following:
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 3/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+Availability of naloxone for emergency treatment of opioid overdose
+
+Ways to obtain naloxone as permitted by individual state dispensing and
+prescribing requirements or guidelines (eg, by prescription, directly from a
+pharmacist, as part of a community-based program)
+
+There are important differences among the opioid overdose reversal agents,
+such as route of administration, product strength, approved patient age range,
+and pharmacokinetics. Be familiar with these differences, as outlined in the
+approved labeling for those products, prior to recommending or prescribing
+such an agent
+
+Discontinuation
+
+Do not abruptly discontinue in patients who may be physically dependent on
+opioids
+
+Rapid discontinuation of opioid analgesics has resulted in serious withdrawal
+symptoms, uncontrolled pain, and suicide
+
+Rapid reduction or abrupt discontinuation has also been associated with attempts
+to find other sources of opioid analgesics, which may be confused with drug-
+seeking for abuse; patients may also attempt to treat their pain or withdrawal
+symptoms with illicit opioids, such as heroin, and other substances
+
+For physically opioid-dependent: Initiate small increment taper (eg, ≥10-25% of
+total daily dose) to avoid withdrawal symptoms, and proceed with decreasing the
+dose every 2-4 weeks
+
+Avoid the use of mixed agonist/antagonist (eg, pentazocine, nalbuphine, and
+butorphanol) or partial agonist (eg, buprenorphine) analgesics in patients who are
+receiving a full opioid agonist analgesic, including this drug; in these patients, mixed
+agonist/ antagonist and partial agonist analgesics may reduce analgesic effect
+and/or may precipitate withdrawal symptoms
+
+Patients who have been taking opioids for shorter periods of time may tolerate a
+more rapid taper
+
+Limitations of use
+
+Owing to risks of addiction, abuse, and misuse with opioids, reserve use in
+patients for whom alternative treatment options [eg, non-opioid
+analgesics]
+
+Are not or not expected to be tolerated
+
+Have not or are not expected to provide adequate analgesia
+
+HIV-Associated Neuropathy (Orphan)
+
+Orphan indication sponsor
+
+TheraQuest Biosciences, LLC, 146 Medinah Drive, Blue Bell, PA 19422-3212
+
+Postherpetic Neuralgia (Orphan)
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 4/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+Orphan indication sponsor
+
+TheraQuest Biosciences, LLC, 146 Medinah Drive, Blue Bell, PA 19422-3212
+
+PEDIATRIC
+Safety and efficacy not established
+
+Life-threatening respiratory depression and death have occurred in children who
+received tramadol
+
+Tramadol is subject to variability in metabolism based upon CYP2D6 genotype, which
+can lead to increased exposure to an active metabolite
+
+GERIATRIC
+Pain
+
+>65 years: Initiate at lower end of dosing range; not to exceed 300 mg/day if >75 years
+
+>75 years
+
+Immediate release or oral solution: Not to exceed 300 mg/day
+
+Extended release: Use with caution
+
+Dosage Modifications
+
+Renal impairment
+
+CrCl ≥30 mL/minute: No dosage adjustments necessary; use with caution
+
+Severe (CrCl <30 mL/min)
+Oral solution: Increase dosing interval to q12hr, not to exceed 200 mg/day
+
+Immediate release: 50-100 mg PO q12hr
+
+Extended release: Not recommended
+
+Patients on dialysis
+May receive regular dose on dialysis days; only 7% of dose is removed by
+hemodialysis
+
+Hepatic impairment
+
+Mild-to-moderate: No dosage adjustments necessary; use with caution
+
+Severe
+Oral solution and immediate release: 50 mg PO q12hr
+
+Extended release: Not recommended
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 5/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+Interactions
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and tramadol
+No Interactions Found
+Interactions Found
+Contraindicated
+
+Serious
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+Contraindicated (7)
+
+alvimopan
+alvimopan, tramadol. receptor binding competition. Contraindicated. Alvimopan is
+contraindicated in opioid tolerant patients (ie, those who have taken therapeutic
+doses of opioids for >7 consecutive days immediately prior to taking alvimopan).
+Patients recently exposed to opioids are expected to be more sensitive to the
+effects of alvimopan and therefore may experience abdominal pain, nausea and
+vomiting, and diarrhea. No significant interaction is expected with concurrent use of
+opioid analgesics and alvimopan in patients who received opioid analgesics for 7 or
+fewer consecutive days prior to alvimopan.
+
+mavorixafor
+mavorixafor will increase the level or effect of tramadol by affecting hepatic enzyme
+CYP2D6 metabolism. Contraindicated. Mavorixafor (a strong CYP2D6 inhibitor) is
+contraindicated with drugs that are highly dependent on CYP2D6 for clearance.
+
+olanzapine/samidorphan
+olanzapine/samidorphan decreases effects of tramadol by pharmacodynamic
+antagonism. Contraindicated. Samidorphan elicits opioid antagonistic effects and
+increases risk of precipitating acute opioid withdrawal in patients dependent on
+opioids. Prescribing information recommends at least a 7-day opioid-free interval
+for short-acting opioids and at least a 14-day opioid-free interval for long-acting
+opioids before starting olanzapine/samidorphan. .
+
+procarbazine
+procarbazine and tramadol both increase serotonin levels. Contraindicated.
+
+rasagiline
+rasagiline and tramadol both increase serotonin levels. Contraindicated.
+
+safinamide
+tramadol, safinamide. Either increases toxicity of the other by serotonin levels.
+Contraindicated. Concomitant use could result in life-threatening serotonin
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 6/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+syndrome.
+
+selegiline
+selegiline and tramadol both increase serotonin levels. Contraindicated. At least 14
+days should elapse between discontinuation of selegiline and initiation of analgesic.
+
+Serious (87)
+
+acrivastine
+acrivastine and tramadol both increase sedation. Avoid or Use Alternate Drug.
+
+alfentanil
+tramadol, alfentanil. Other (see comment). Avoid or Use Alternate Drug. Comment:
+Tramadol may reinitiate opiate dependence in pts. previously addicted to other
+opiates; it may also provoke withdrawal Sx. in pts. who are currently opiate
+dependent.
+
+amisulpride
+amisulpride and tramadol both increase sedation. Avoid or Use Alternate Drug.
+
+apalutamide
+apalutamide will decrease the level or effect of tramadol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+Coadministration of apalutamide, a strong CYP3A4 inducer, with drugs that are
+CYP3A4 substrates can result in lower exposure to these medications. Avoid or
+substitute another drug for these medications when possible. Evaluate for loss of
+therapeutic effect if medication must be coadministered. Adjust dose according to
+prescribing information if needed.
+
+asenapine transdermal
+asenapine transdermal and tramadol both increase sedation. Avoid or Use
+Alternate Drug.
+
+belladonna and opium
+tramadol, belladonna and opium. Other (see comment). Avoid or Use Alternate
+Drug. Comment: Tramadol may reinitiate opiate dependence in pts. previously
+addicted to other opiates; it may also provoke withdrawal Sx. in pts. who are
+currently opiate dependent.
+
+benzhydrocodone/acetaminophen
+benzhydrocodone/acetaminophen, tramadol. Either increases toxicity of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Profound sedation,
+respiratory depression, coma, and death may result if coadministered. Reserve
+concomitant prescribing of these drugs in patients for whom other treatment
+options are inadequate. Limit dosages and durations to the minimum required.
+Monitor closely for signs of respiratory depression and sedation.
+
+benzhydrocodone/acetaminophen and tramadol both increase sedation. Avoid or
+Use Alternate Drug.
+
+bremelanotide
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 7/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+bremelanotide will decrease the level or effect of tramadol by Other (see
+comment). Avoid or Use Alternate Drug. Bremelanotide may slow gastric emptying
+and potentially reduces the rate and extent of absorption of concomitantly
+administered oral medications. Avoid use when taking any oral drug that is
+dependent on threshold concentrations for efficacy. Interactions listed are
+representative examples and do not include all possible clinical examples.
+
+buprenorphine
+tramadol, buprenorphine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tramadol may reinitiate opiate dependence in pts. previously addicted to
+other opiates; it may also provoke withdrawal Sx. in pts. who are currently opiate
+dependent.
+
+buprenorphine, tramadol. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Mixed opiate agonist/antagonists usually produce additive sedation with
+narcotics; however, in narcotic addicted pts., the antagonist activity may provoke
+withdrawal Sx.
+
+buprenorphine buccal
+buprenorphine buccal, tramadol. Other (see comment). Avoid or Use Alternate
+Drug. Comment: Mixed opiate agonist/antagonists usually produce additive
+sedation with narcotics; however, in narcotic addicted pts., the antagonist activity
+may provoke withdrawal Sx.
+
+tramadol, buprenorphine buccal. Other (see comment). Avoid or Use Alternate
+Drug. Comment: Tramadol may reinitiate opiate dependence in pts. previously
+addicted to other opiates; it may also provoke withdrawal Sx. in pts. who are
+currently opiate dependent.
+
+buprenorphine subdermal implant
+buprenorphine subdermal implant and tramadol both increase sedation. Avoid or
+Use Alternate Drug.
+
+buprenorphine transdermal
+buprenorphine transdermal and tramadol both increase sedation. Avoid or Use
+Alternate Drug.
+
+buprenorphine, long-acting injection
+buprenorphine, long-acting injection and tramadol both increase sedation. Avoid or
+Use Alternate Drug.
+
+butorphanol
+tramadol, butorphanol. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tramadol may reinitiate opiate dependence in pts. previously addicted to
+other opiates; it may also provoke withdrawal Sx. in pts. who are currently opiate
+dependent.
+
+butorphanol, tramadol. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Mixed opiate agonist/antagonists usually produce additive sedation with
+narcotics; however, in narcotic addicted pts., the antagonist activity may provoke
+withdrawal Sx.
+
+calcium/magnesium/potassium/sodium oxybates
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 8/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+tramadol, calcium/magnesium/potassium/sodium oxybates. Either increases effects
+of the other by pharmacodynamic synergism. Avoid or Use Alternate Drug.
+Profound sedation, respiratory depression, coma, and death may result if
+coadministered. Reserve concomitant prescribing of these drugs in patients for
+whom other treatment options are inadequate. Limit dosages and durations to the
+minimum required. Monitor closely for signs of respiratory depression and sedation.
+
+clobazam
+clobazam and tramadol both increase sedation. Avoid or Use Alternate Drug.
+
+clonidine
+clonidine, tramadol. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Coadministration enhances CNS
+depressant effects.
+
+codeine
+tramadol, codeine. Other (see comment). Avoid or Use Alternate Drug. Comment:
+Tramadol may reinitiate opiate dependence in pts. previously addicted to other
+opiates; it may also provoke withdrawal Sx. in pts. who are currently opiate
+dependent.
+
+cyclobenzaprine
+tramadol and cyclobenzaprine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+dacomitinib
+dacomitinib will increase the level or effect of tramadol by affecting hepatic enzyme
+CYP2D6 metabolism. Avoid or Use Alternate Drug. Avoid use with CYP2D6
+substrates where minimal increases in concentration of the CYP2D6 substrate may
+lead to serious or life-threatening toxicities.
+
+desvenlafaxine
+tramadol and desvenlafaxine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+dextromoramide
+tramadol, dextromoramide. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tramadol may reinitiate opiate dependence in pts. previously addicted to
+other opiates; it may also provoke withdrawal Sx. in pts. who are currently opiate
+dependent.
+
+diamorphine
+tramadol, diamorphine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tramadol may reinitiate opiate dependence in pts. previously addicted to
+other opiates; it may also provoke withdrawal Sx. in pts. who are currently opiate
+dependent.
+
+diazepam buccal
+diazepam buccal, tramadol. Either increases toxicity of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Profound sedation,
+respiratory depression, coma, and death may result if coadministered. Reserve
+concomitant prescribing of these drugs in patients for whom other treatment
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 9/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+options are inadequate. Limit dosages and durations to the minimum required.
+Monitor closely for signs of respiratory depression and sedation.
+
+diazepam intranasal
+diazepam intranasal, tramadol. Either increases toxicity of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Profound sedation,
+respiratory depression, coma, and death may result if coadministered. Reserve
+concomitant prescribing of these drugs in patients for whom other treatment
+options are inadequate. Limit dosages and durations to the minimum required.
+Monitor closely for signs of respiratory depression and sedation.
+
+difenoxin hcl
+tramadol, difenoxin hcl. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tramadol may reinitiate opiate dependence in pts. previously addicted to
+other opiates; it may also provoke withdrawal Sx. in pts. who are currently opiate
+dependent.
+
+diphenoxylate hcl
+tramadol, diphenoxylate hcl. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tramadol may reinitiate opiate dependence in pts. previously addicted to
+other opiates; it may also provoke withdrawal Sx. in pts. who are currently opiate
+dependent.
+
+dipipanone
+tramadol, dipipanone. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tramadol may reinitiate opiate dependence in pts. previously addicted to
+other opiates; it may also provoke withdrawal Sx. in pts. who are currently opiate
+dependent.
+
+duloxetine
+duloxetine will increase the level or effect of tramadol by affecting hepatic enzyme
+CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+eluxadoline
+tramadol, eluxadoline. Either increases effects of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Avoid coadministration with other drugs
+that cause constipation. Increases risk for constipation related serious adverse
+reactions. .
+
+fentanyl
+fentanyl, tramadol. Either increases effects of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Coadministration with other CNS
+depressants, such as skeletal muscle relaxants, may cause respiratory depression,
+hypotension, profound sedation, coma, and/or death. Consider dose reduction of
+either or both agents to avoid serious adverse effects. Monitor for hypotension,
+respiratory depression, and profound sedation.
+
+fentanyl and tramadol both increase sedation. Avoid or Use Alternate Drug.
+
+fentanyl intranasal
+fentanyl intranasal, tramadol. Either increases effects of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Coadministration with
+other CNS depressants, such as skeletal muscle relaxants, may cause respiratory
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 10/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+depression, hypotension, profound sedation, coma, and/or death. Consider dose
+reduction of either or both agents to avoid serious adverse effects. Monitor for
+hypotension, respiratory depression, and profound sedation.
+
+fentanyl intranasal and tramadol both increase sedation. Avoid or Use Alternate
+Drug.
+
+fentanyl iontophoretic transdermal system
+fentanyl iontophoretic transdermal system and tramadol both increase sedation.
+Avoid or Use Alternate Drug.
+
+fentanyl transdermal
+fentanyl transdermal, tramadol. Either increases effects of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Coadministration with
+other CNS depressants, such as skeletal muscle relaxants, may cause respiratory
+depression, hypotension, profound sedation, coma, and/or death. Consider dose
+reduction of either or both agents to avoid serious adverse effects. Monitor for
+hypotension, respiratory depression, and profound sedation.
+
+fentanyl transdermal and tramadol both increase sedation. Avoid or Use Alternate
+Drug.
+
+fentanyl transmucosal
+fentanyl transmucosal, tramadol. Either increases effects of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Coadministration with
+other CNS depressants, such as skeletal muscle relaxants, may cause respiratory
+depression, hypotension, profound sedation, coma, and/or death. Consider dose
+reduction of either or both agents to avoid serious adverse effects. Monitor for
+hypotension, respiratory depression, and profound sedation.
+
+fentanyl transmucosal and tramadol both increase sedation. Avoid or Use Alternate
+Drug.
+
+givosiran
+givosiran will increase the level or effect of tramadol by affecting hepatic enzyme
+CYP2D6 metabolism. Avoid or Use Alternate Drug. Avoid coadministration of
+sensitive CYP2D6 substrates with givosiran. If unavoidable, decrease the CYP2D6
+substrate dosage in accordance with approved product labeling.
+
+hydrocodone
+tramadol, hydrocodone. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tramadol may reinitiate opiate dependence in pts. previously addicted to
+other opiates; it may also provoke withdrawal Sx. in pts. who are currently opiate
+dependent.
+
+hydrocodone, tramadol. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Profound sedation, respiratory depression,
+coma, and death may result if coadministered. Reserve concomitant prescribing of
+these drugs in patients for whom other treatment options are inadequate. Limit
+dosages and durations to the minimum required. Monitor closely for signs of
+respiratory depression and sedation.
+
+hydromorphone
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 11/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+tramadol, hydromorphone. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tramadol may reinitiate opiate dependence in pts. previously addicted to
+other opiates; it may also provoke withdrawal Sx. in pts. who are currently opiate
+dependent.
+
+idelalisib
+idelalisib will increase the level or effect of tramadol by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Idelalisib is a strong
+CYP3A inhibitor; avoid coadministration with sensitive CYP3A substrates
+
+iloperidone
+tramadol and iloperidone both increase QTc interval. Avoid or Use Alternate Drug.
+
+iobenguane I 131
+tramadol will decrease the level or effect of iobenguane I 131 by Other (see
+comment). Avoid or Use Alternate Drug. Based on the mechanism of action of
+iobenguane, drugs that reduce catecholamine uptake or that deplete catecholamine
+stores may interfere with iobenguane uptake into cells, and thus, reduce
+iobenguane efficacy. Discontinue interfering drugs for at least 5 half-lives before
+administration of either the dosimetry or an iobenguane dose. Do not administer
+these drugs until at least 7 days after each iobenguane dose.
+
+isocarboxazid
+isocarboxazid and tramadol both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+isocarboxazid increases toxicity of tramadol by unknown mechanism. Avoid or Use
+Alternate Drug. Risk of hypotension, hyperpyrexia, somnolence, or death; separate
+by 14 d.
+
+ivosidenib
+ivosidenib will decrease the level or effect of tramadol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid
+coadministration of sensitive CYP3A4 substrates with ivosidenib or replace with
+alternative therapies. If coadministration is unavoidable, monitor patients for loss of
+therapeutic effect of these drugs.
+
+levetiracetam
+levetiracetam and tramadol both increase sedation. Avoid or Use Alternate Drug.
+
+levocetirizine
+levocetirizine and tramadol both increase sedation. Avoid or Use Alternate Drug.
+
+levorphanol
+tramadol, levorphanol. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tramadol may reinitiate opiate dependence in pts. previously addicted to
+other opiates; it may also provoke withdrawal Sx. in pts. who are currently opiate
+dependent.
+
+linezolid
+linezolid and tramadol both increase serotonin levels. Avoid or Use Alternate Drug.
+Linezolid may increase serotonin as a result of MAO-A inhibition. If linezolid must
+be administered, discontinue serotonergic drug immediately and monitor for CNS
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 12/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+toxicity. Serotonergic therapy may be resumed 24 hours after last linezolid dose or
+after 2 weeks of monitoring, whichever comes first.
+
+linezolid increases toxicity of tramadol by unknown mechanism. Avoid or Use
+Alternate Drug. Risk of hypotension, hyperpyrexia, somnolence, or death; separate
+by 14 d.
+
+lonafarnib
+lonafarnib will increase the level or effect of tramadol by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid coadministration
+with sensitive CYP3A substrates. If coadministration unavoidable, monitor for
+adverse reactions and reduce CYP3A substrate dose in accordance with product
+labeling.
+
+loratadine
+loratadine and tramadol both increase sedation. Avoid or Use Alternate Drug.
+
+lorcaserin
+tramadol and lorcaserin both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+meperidine
+tramadol, meperidine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tramadol may reinitiate opiate dependence in pts. previously addicted to
+other opiates; it may also provoke withdrawal Sx. in pts. who are currently opiate
+dependent.
+
+methadone
+tramadol, methadone. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tramadol may reinitiate opiate dependence in pts. previously addicted to
+other opiates; it may also provoke withdrawal Sx. in pts. who are currently opiate
+dependent.
+
+methohexital
+methohexital and tramadol both increase sedation. Avoid or Use Alternate Drug.
+
+methylene blue
+methylene blue and tramadol both increase serotonin levels. Avoid or Use
+Alternate Drug. Methylene blue may increase serotonin as a result of MAO-A
+inhibition. If methylene blue must be administered, discontinue serotonergic drug
+immediately and monitor for CNS toxicity. Serotonergic therapy may be resumed 24
+hours after last methylene blue dose or after 2 weeks of monitoring, whichever
+comes first.
+
+metoclopramide intranasal
+tramadol, metoclopramide intranasal. Either increases effects of the other by Other
+(see comment). Avoid or Use Alternate Drug. Comment: Avoid use of
+metoclopramide intranasal or interacting drug, depending on importance of drug to
+patient.
+
+milsaperidone
+tramadol and milsaperidone both increase QTc interval. Avoid or Use Alternate
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 13/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+Drug.
+
+morphine
+tramadol, morphine. Other (see comment). Avoid or Use Alternate Drug. Comment:
+Tramadol may reinitiate opiate dependence in pts. previously addicted to other
+opiates; it may also provoke withdrawal Sx. in pts. who are currently opiate
+dependent.
+
+nalbuphine
+tramadol, nalbuphine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tramadol may reinitiate opiate dependence in pts. previously addicted to
+other opiates; it may also provoke withdrawal Sx. in pts. who are currently opiate
+dependent.
+
+nalbuphine, tramadol. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Mixed opiate agonist/antagonists usually produce additive sedation with
+narcotics; however, in narcotic addicted pts., the antagonist activity may provoke
+withdrawal Sx.
+
+olopatadine intranasal
+tramadol and olopatadine intranasal both increase sedation. Avoid or Use Alternate
+Drug. Coadministration increases risk of CNS depression, which can lead to additive
+impairment of psychomotor performance and cause daytime impairment.
+
+opicapone
+opicapone and tramadol both increase sedation. Avoid or Use Alternate Drug.
+
+opium tincture
+tramadol, opium tincture. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tramadol may reinitiate opiate dependence in pts. previously addicted to
+other opiates; it may also provoke withdrawal Sx. in pts. who are currently opiate
+dependent.
+
+oxycodone
+tramadol, oxycodone. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tramadol may reinitiate opiate dependence in pts. previously addicted to
+other opiates; it may also provoke withdrawal Sx. in pts. who are currently opiate
+dependent.
+
+oxymorphone
+tramadol, oxymorphone. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tramadol may reinitiate opiate dependence in pts. previously addicted to
+other opiates; it may also provoke withdrawal Sx. in pts. who are currently opiate
+dependent.
+
+ozanimod
+ozanimod increases toxicity of tramadol by sympathetic (adrenergic) effects,
+including increased blood pressure and heart rate. Avoid or Use Alternate Drug.
+Because the active metabolite of ozanimod inhibits MAO-B in vitro, there is a
+potential for serious adverse reactions, including hypertensive crisis. Therefore,
+coadministration of ozanimod with drugs that can increase norepinephrine or
+serotonin is not recommended. Monitor for hypertension with concomitant use.
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 14/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+papaveretum
+tramadol, papaveretum. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tramadol may reinitiate opiate dependence in pts. previously addicted to
+other opiates; it may also provoke withdrawal Sx. in pts. who are currently opiate
+dependent.
+
+pentazocine
+tramadol, pentazocine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tramadol may reinitiate opiate dependence in pts. previously addicted to
+other opiates; it may also provoke withdrawal Sx. in pts. who are currently opiate
+dependent.
+
+pentazocine, tramadol. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Mixed opiate agonist/antagonists usually produce additive sedation with
+narcotics; however, in narcotic addicted pts., the antagonist activity may provoke
+withdrawal Sx.
+
+phenelzine
+phenelzine and tramadol both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+phenelzine increases toxicity of tramadol by unknown mechanism. Avoid or Use
+Alternate Drug. Risk of hypotension, hyperpyrexia, somnolence, or death; separate
+by 14 d.
+
+posaconazole
+posaconazole will increase the level or effect of tramadol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+procarbazine
+procarbazine increases toxicity of tramadol by unknown mechanism. Avoid or Use
+Alternate Drug. MAOIs may potentiate CNS depression and hypotension. Do not
+use within 14 days of MAOI use. .
+
+remifentanil
+remifentanil and tramadol both increase sedation. Avoid or Use Alternate Drug.
+
+ribociclib
+ribociclib will increase the level or effect of tramadol by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+selegiline transdermal
+selegiline transdermal increases toxicity of tramadol by unknown mechanism. Avoid
+or Use Alternate Drug. Risk of hypotension, hyperpyrexia, somnolence, or death.
+
+selinexor
+selinexor, tramadol. unspecified interaction mechanism. Avoid or Use Alternate
+Drug. Patients treated with selinexor may experience neurological toxicities. Avoid
+taking selinexor with other medications that may cause dizziness or confusion.
+
+sodium oxybate
+tramadol, sodium oxybate. Either increases effects of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Profound sedation,
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 15/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+respiratory depression, coma, and death may result if coadministered. Reserve
+concomitant prescribing of these drugs in patients for whom other treatment
+options are inadequate. Limit dosages and durations to the minimum required.
+Monitor closely for signs of respiratory depression and sedation.
+
+sodium oxybate and tramadol both increase sedation. Avoid or Use Alternate Drug.
+
+sufentanil
+tramadol, sufentanil. Other (see comment). Avoid or Use Alternate Drug. Comment:
+Tramadol may reinitiate opiate dependence in pts. previously addicted to other
+opiates; it may also provoke withdrawal Sx. in pts. who are currently opiate
+dependent.
+
+sufentanil SL
+sufentanil SL, tramadol. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Coadministration may result in
+hypotension, profound sedation, respiratory depression, coma, and death. Reserve
+concomitant prescribing of these drugs in patients for whom other treatment
+options are inadequate. Limit dosages and durations to the minimum required.
+Monitor closely for signs of respiratory depression and sedation.
+
+tapentadol
+tramadol, tapentadol. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tramadol may reinitiate opiate dependence in pts. previously addicted to
+other opiates; it may also provoke withdrawal Sx. in pts. who are currently opiate
+dependent.
+
+tedizolid
+tedizolid, tramadol. Either increases levels of the other by Mechanism:
+pharmacodynamic synergism. Avoid or Use Alternate Drug. both increase serotonin
+levels; increased risk of serotonin syndrome.
+
+thalidomide
+thalidomide and tramadol both increase sedation. Avoid or Use Alternate Drug.
+
+tolcapone
+tolcapone and tramadol both increase sedation. Avoid or Use Alternate Drug.
+
+tranylcypromine
+tranylcypromine and tramadol both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+tranylcypromine increases toxicity of tramadol by unknown mechanism. Avoid or
+Use Alternate Drug. Risk of hypotension, hyperpyrexia, somnolence, or death;
+separate by 14 d.
+
+tucatinib
+tucatinib will increase the level or effect of tramadol by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid concomitant use
+of tucatinib with CYP3A substrates, where minimal concentration changes may lead
+to serious or life-threatening toxicities. If unavoidable, reduce CYP3A substrate
+dose according to product labeling.
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 16/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+valerian
+valerian and tramadol both increase sedation. Avoid or Use Alternate Drug.
+
+vilazodone
+tramadol, vilazodone. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug. Concomitant therapy should be discontinued
+immediately if signs or symptoms of serotonin syndrome emerge and supportive
+symptomatic treatment should be initiated.
+
+vortioxetine
+tramadol, vortioxetine. Either increases effects of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+
+ziftomenib
+tramadol and ziftomenib both increase QTc interval. Avoid or Use Alternate Drug.
+Avoid coadministration of ziftomenib with other drugs known to prolong the QTc
+interval. If unavoidable, obtain ECGs when initiating, during concomitant use, and as
+clinically indicated. Interrupt ziftomenib with QTc interval > 500 ms or a change
+from baseline is > 60 ms
+
+zuranolone
+tramadol, zuranolone. Either increases effects of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Coadministration of zuranolone with other
+CNS depressants may increase impairment of psychomotor performance or CNS
+depressant effects. If unavoidable, consider dose reduction. .
+
+Monitor Closely (322)
+
+5-HTP
+5-HTP and tramadol both increase serotonin levels. Use Caution/Monitor.
+
+abiraterone
+abiraterone increases levels of tramadol by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor. Avoid coadministration of abiraterone with
+substrates of CYP2D6. If alternative therapy cannot be used, exercise caution and
+consider increasing tramadol dose if clinically appropriate; if abiraterone is
+discontinued, consider reducing tramadol dose and frequently monitor for signs of
+respiratory depression and sedation.
+
+acetaminophen/phenyltoloxamine
+acetaminophen/phenyltoloxamine and tramadol both increase sedation. Use
+Caution/Monitor.
+
+alfentanil
+alfentanil and tramadol both increase sedation. Use Caution/Monitor.
+
+almotriptan
+almotriptan and tramadol both increase serotonin levels. Use Caution/Monitor.
+
+alprazolam
+alprazolam and tramadol both increase sedation. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 17/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+amifampridine
+tramadol increases toxicity of amifampridine by Other (see comment). Modify
+Therapy/Monitor Closely. Comment: Amifampridine can cause seizures.
+Coadministration with drugs that lower seizure threshold may increase this risk.
+
+amiodarone
+amiodarone decreases effects of tramadol by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor. Decreased conversion of tramadol to active
+metabolite.
+
+amiodarone decreases effects of tramadol by decreasing metabolism. Use
+Caution/Monitor. Decreased conversion of tramadol to active metabolite.
+
+amitriptyline
+tramadol and amitriptyline both increase sedation. Use Caution/Monitor.
+
+amitriptyline and tramadol both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+amoxapine
+tramadol and amoxapine both increase sedation. Use Caution/Monitor.
+
+amoxapine and tramadol both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+amphetamine
+amphetamine and tramadol both increase serotonin levels. Use Caution/Monitor.
+
+tramadol increases and amphetamine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+apomorphine
+tramadol and apomorphine both increase sedation. Use Caution/Monitor.
+
+aripiprazole
+tramadol and aripiprazole both increase sedation. Use Caution/Monitor.
+
+armodafinil
+tramadol increases and armodafinil decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+artemether/lumefantrine
+artemether/lumefantrine will increase the level or effect of tramadol by affecting
+hepatic enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+asenapine
+asenapine and tramadol both increase sedation. Use Caution/Monitor.
+
+atazanavir
+atazanavir increases levels of tramadol by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Potential for increased toxicity. .
+
+avapritinib
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 18/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+avapritinib and tramadol both increase sedation. Use Caution/Monitor.
+
+azelastine
+azelastine and tramadol both increase sedation. Use Caution/Monitor.
+
+baclofen
+baclofen and tramadol both increase sedation. Use Caution/Monitor.
+
+belladonna and opium
+belladonna and opium and tramadol both increase sedation. Use Caution/Monitor.
+
+benperidol
+tramadol and benperidol both increase sedation. Use Caution/Monitor.
+
+benzphetamine
+tramadol increases and benzphetamine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+bosentan
+bosentan will decrease the level or effect of tramadol by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor. Decreased AUC of tramadol
+and the active metabolite (O-desmethyltramadol) when coadministered with strong
+CYP3A4 and CYP2B6 inducers
+
+brexanolone
+brexanolone, tramadol. Either increases toxicity of the other by sedation. Use
+Caution/Monitor.
+
+brexpiprazole
+brexpiprazole and tramadol both increase sedation. Use Caution/Monitor.
+
+brimonidine
+brimonidine and tramadol both increase sedation. Use Caution/Monitor.
+
+brimonidine topical
+brimonidine topical and tramadol both increase sedation. Use Caution/Monitor.
+
+brivaracetam
+brivaracetam and tramadol both increase sedation. Use Caution/Monitor.
+
+brompheniramine
+brompheniramine and tramadol both increase sedation. Use Caution/Monitor.
+
+buprenorphine
+buprenorphine and tramadol both increase sedation. Use Caution/Monitor.
+
+buprenorphine buccal
+buprenorphine buccal and tramadol both increase sedation. Use Caution/Monitor.
+
+buprenorphine, long-acting injection
+tramadol increases toxicity of buprenorphine, long-acting injection by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+buprenorphine and benzodiazepines or other CNS depressants increases risk of
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 19/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+adverse reactions including overdose, respiratory depression, and death. Cessation
+of benzodiazepines or other CNS depressants is preferred in most cases. In some
+cases, monitoring at a higher level of care for tapering CNS depressants may be
+appropriate. In others, gradually tapering a patient off of a prescribed
+benzodiazepine or other CNS depressant or decreasing to the lowest effective dose
+may be appropriate.
+
+bupropion
+bupropion will increase the level or effect of tramadol by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+buspirone
+buspirone and tramadol both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+butalbital
+butalbital and tramadol both increase sedation. Use Caution/Monitor.
+
+butorphanol
+butorphanol and tramadol both increase sedation. Use Caution/Monitor.
+
+caffeine
+tramadol increases and caffeine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+carbachol/brimonidine ophthalmic
+carbachol/brimonidine ophthalmic and tramadol both increase sedation. Use
+Caution/Monitor.
+
+carbamazepine
+carbamazepine will decrease the level or effect of tramadol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Decreased
+AUC of tramadol and the active metabolite (O-desmethyltramadol) when
+coadministered with strong CYP3A4 and CYP2B6 inducers
+
+carbinoxamine
+carbinoxamine and tramadol both increase sedation. Use Caution/Monitor.
+
+cariprazine
+cariprazine and tramadol both increase sedation. Use Caution/Monitor.
+
+carisoprodol
+carisoprodol and tramadol both increase sedation. Use Caution/Monitor.
+
+celecoxib
+celecoxib decreases effects of tramadol by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor. Decreased conversion of tramadol to active
+metabolite.
+
+celecoxib decreases effects of tramadol by decreasing metabolism. Use
+Caution/Monitor. Decreased conversion of tramadol to active metabolite.
+
+cenobamate
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 20/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+cenobamate, tramadol. Either increases effects of the other by sedation. Use
+Caution/Monitor.
+
+ceritinib
+ceritinib will increase the level or effect of tramadol by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+chlordiazepoxide
+chlordiazepoxide and tramadol both increase sedation. Use Caution/Monitor.
+
+chloroquine
+chloroquine decreases effects of tramadol by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor. Decreased conversion of tramadol to active
+metabolite.
+
+chloroquine decreases effects of tramadol by decreasing metabolism. Use
+Caution/Monitor. Decreased conversion of tramadol to active metabolite.
+
+chlorpheniramine
+chlorpheniramine and tramadol both increase sedation. Use Caution/Monitor.
+
+chlorpromazine
+tramadol and chlorpromazine both increase sedation. Use Caution/Monitor.
+
+chlorzoxazone
+chlorzoxazone and tramadol both increase sedation. Use Caution/Monitor.
+
+cimetidine
+cimetidine decreases effects of tramadol by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor. Decreased conversion of tramadol to active
+metabolite.
+
+cimetidine decreases effects of tramadol by decreasing metabolism. Use
+Caution/Monitor. Decreased conversion of tramadol to active metabolite.
+
+cinnarizine
+cinnarizine and tramadol both increase sedation. Use Caution/Monitor.
+
+citalopram
+citalopram and tramadol both increase serotonin levels. Use Caution/Monitor.
+Combination may increase risk of serotonin syndrome or neuroleptic malignant
+syndrome-like reactions.
+
+clarithromycin
+clarithromycin will increase the level or effect of tramadol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+clemastine
+clemastine and tramadol both increase sedation. Use Caution/Monitor.
+
+clobazam
+clobazam will increase the level or effect of tramadol by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor. Lower doses of drugs metabolized by
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 21/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+CYP2D6 may be required when used concomitantly.
+
+tramadol, clobazam. Other (see comment). Use Caution/Monitor. Comment:
+Concomitant administration can increase the potential for CNS effects (e.g.,
+increased sedation or respiratory depression).
+
+clomipramine
+tramadol and clomipramine both increase sedation. Use Caution/Monitor.
+
+clomipramine and tramadol both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+clonazepam
+clonazepam and tramadol both increase sedation. Use Caution/Monitor.
+
+clonidine
+clonidine and tramadol both increase sedation. Use Caution/Monitor.
+
+clorazepate
+clorazepate and tramadol both increase sedation. Use Caution/Monitor.
+
+clozapine
+tramadol and clozapine both increase sedation. Use Caution/Monitor.
+
+cobicistat
+cobicistat will increase the level or effect of tramadol by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely. A decreased dose of
+tramadol may be required
+
+cobicistat will increase the level or effect of tramadol by affecting hepatic enzyme
+CYP2D6 metabolism. Modify Therapy/Monitor Closely. A decreased dose of
+tramadol may be required
+
+cocaine topical
+cocaine topical and tramadol both increase serotonin levels. Use Caution/Monitor.
+
+codeine
+codeine and tramadol both increase sedation. Use Caution/Monitor.
+
+crizotinib
+crizotinib increases levels of tramadol by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Dose reduction may be needed for
+coadministered drugs that are predominantly metabolized by CYP3A.
+
+crofelemer
+crofelemer increases levels of tramadol by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Crofelemer has the potential to inhibit
+CYP3A4 at concentrations expected in the gut; unlikely to inhibit systemically
+because minimally absorbed.
+
+cyclobenzaprine
+cyclobenzaprine and tramadol both increase sedation. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 22/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+cyproheptadine
+cyproheptadine and tramadol both increase sedation. Use Caution/Monitor.
+
+dabrafenib
+dabrafenib will decrease the level or effect of tramadol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+dantrolene
+dantrolene and tramadol both increase sedation. Use Caution/Monitor.
+
+daridorexant
+tramadol and daridorexant both increase sedation. Modify Therapy/Monitor Closely.
+Coadministration increases risk of CNS depression, which can lead to additive
+impairment of psychomotor performance and cause daytime impairment.
+
+darunavir
+darunavir will increase the level or effect of tramadol by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely. A decreased dose of
+tramadol may be required
+
+desflurane
+desflurane and tramadol both increase sedation. Use Caution/Monitor. Opioids may
+decrease MAC requirements, less inhalation anesthetic may be required.
+
+desipramine
+tramadol and desipramine both increase sedation. Use Caution/Monitor.
+
+desipramine and tramadol both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+desloratadine
+desloratadine and tramadol both increase sedation. Use Caution/Monitor.
+
+desvenlafaxine
+desvenlafaxine will increase the level or effect of tramadol by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor. Desvenlafaxine inhibits
+CYP2D6; with higher desvenlafaxine doses (ie, 400 mg) decrease the CYP2D6
+substrate dose by up to 50%; no dosage adjustment needed with desvenlafaxine
+doses <100 mg
+
+deutetrabenazine
+tramadol and deutetrabenazine both increase sedation. Use Caution/Monitor.
+
+dexamethasone
+dexamethasone will decrease the level or effect of tramadol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Decreased
+AUC of tramadol and the active metabolite (O-desmethyltramadol) when
+coadministered with strong CYP3A4 and CYP2B6 inducers
+
+dexbrompheniramine
+dexbrompheniramine and tramadol both increase sedation. Use Caution/Monitor.
+
+dexchlorpheniramine
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 23/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+dexchlorpheniramine and tramadol both increase sedation. Use Caution/Monitor.
+
+dexfenfluramine
+tramadol increases and dexfenfluramine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+dexfenfluramine and tramadol both increase serotonin levels. Use Caution/Monitor.
+
+dexmedetomidine
+dexmedetomidine and tramadol both increase sedation. Use Caution/Monitor.
+
+dexmethylphenidate
+tramadol increases and dexmethylphenidate decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+dextroamphetamine
+tramadol increases and dextroamphetamine decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+dextroamphetamine and tramadol both increase serotonin levels. Use
+Caution/Monitor.
+
+dextroamphetamine transdermal
+tramadol, dextroamphetamine transdermal. Either increases effects of the other by
+serotonin levels. Modify Therapy/Monitor Closely. Initiate with lower doses and
+monitor for signs and symptoms of serotonin syndrome, particularly during
+initiation or dosage increase. If serotonin syndrome occurs, discontinue
+dextroamphetamine transdermal and concomitant serotonergic drug(s).
+
+dextromethorphan
+dextromethorphan and tramadol both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+dextromoramide
+dextromoramide and tramadol both increase sedation. Use Caution/Monitor.
+
+diamorphine
+diamorphine and tramadol both increase sedation. Use Caution/Monitor.
+
+diazepam
+diazepam and tramadol both increase sedation. Use Caution/Monitor.
+
+diazepam buccal
+diazepam buccal and tramadol both increase sedation. Use Caution/Monitor.
+
+diazepam intranasal
+diazepam intranasal and tramadol both increase sedation. Use Caution/Monitor.
+
+diethylpropion
+tramadol increases and diethylpropion decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+difelikefalin
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 24/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+difelikefalin and tramadol both increase sedation. Use Caution/Monitor.
+
+difenoxin hcl
+difenoxin hcl and tramadol both increase sedation. Use Caution/Monitor.
+
+dihydroergotamine
+dihydroergotamine and tramadol both increase serotonin levels. Use
+Caution/Monitor.
+
+dihydroergotamine intranasal
+dihydroergotamine intranasal and tramadol both increase serotonin levels. Use
+Caution/Monitor.
+
+dimenhydrinate
+dimenhydrinate and tramadol both increase sedation. Use Caution/Monitor.
+
+diphenhydramine
+diphenhydramine decreases effects of tramadol by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor. Decreased conversion of tramadol to
+active metabolite.
+
+diphenhydramine and tramadol both increase sedation. Use Caution/Monitor.
+
+diphenhydramine decreases effects of tramadol by decreasing metabolism. Use
+Caution/Monitor. Decreased conversion of tramadol to active metabolite.
+
+diphenoxylate hcl
+diphenoxylate hcl and tramadol both increase sedation. Use Caution/Monitor.
+
+dipipanone
+dipipanone and tramadol both increase sedation. Use Caution/Monitor.
+
+dobutamine
+tramadol increases and dobutamine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+dopamine
+tramadol increases and dopamine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+dopexamine
+tramadol increases and dopexamine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+dordaviprone
+dordaviprone and tramadol both increase QTc interval. Use Caution/Monitor.
+Increase the frequency of ECG and electrolyte monitoring.
+
+dosulepin
+tramadol and dosulepin both increase sedation. Use Caution/Monitor.
+
+doxepin
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 25/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+tramadol and doxepin both increase sedation. Use Caution/Monitor.
+
+doxepin and tramadol both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+doxylamine
+doxylamine and tramadol both increase sedation. Use Caution/Monitor.
+
+droperidol
+tramadol and droperidol both increase sedation. Use Caution/Monitor.
+
+duloxetine
+duloxetine and tramadol both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+efavirenz
+efavirenz will decrease the level or effect of tramadol by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+elagolix
+elagolix decreases levels of tramadol by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Modify Therapy/Monitor Closely. Elagolix is a weak-to-
+moderate CYP3A4 inducer. Monitor CYP3A substrates if coadministered. Consider
+increasing CYP3A substrate dose if needed.
+
+eletriptan
+eletriptan and tramadol both increase serotonin levels. Use Caution/Monitor.
+
+eliglustat
+eliglustat increases levels of tramadol by affecting hepatic enzyme CYP2D6
+metabolism. Modify Therapy/Monitor Closely. Monitor therapeutic drug
+concentrations, as indicated, or consider reducing the dosage of the concomitant
+drug and titrate to clinical effect.
+
+elvitegravir/cobicistat/emtricitabine/tenofovir DF
+elvitegravir/cobicistat/emtricitabine/tenofovir DF increases levels of tramadol by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor
+Closely. Cobicistat is a CYP3A4 inhibitor; contraindicated with CYP3A4 substrates
+for which elevated plasma concentrations are associated with serious and/or life-
+threatening events.
+
+elvitegravir/cobicistat/emtricitabine/tenofovir DF increases levels of tramadol by
+affecting hepatic enzyme CYP2D6 metabolism. Modify Therapy/Monitor Closely.
+Cobicistat is a CYP2D6 inhibitor; caution with CYP2D6 substrates for which
+elevated plasma concentrations are associated with serious and/or life-threatening
+events.
+
+encorafenib
+encorafenib, tramadol. affecting hepatic/intestinal enzyme CYP3A4 metabolism.
+Use Caution/Monitor. Encorafenib both inhibits and induces CYP3A4 at clinically
+relevant plasma concentrations. Coadministration of encorafenib with sensitive
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 26/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+CYP3A4 substrates may result in increased toxicity or decreased efficacy of these
+agents.
+
+enzalutamide
+enzalutamide will decrease the level or effect of tramadol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Decreased
+AUC of tramadol and the active metabolite (O-desmethyltramadol) when
+coadministered with strong CYP3A4 and CYP2B6 inducers
+
+ephedrine
+tramadol increases and ephedrine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+epinephrine
+tramadol increases and epinephrine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+epinephrine racemic
+tramadol increases and epinephrine racemic decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+ergotamine
+ergotamine and tramadol both increase serotonin levels. Use Caution/Monitor.
+
+erythromycin base
+erythromycin base will increase the level or effect of tramadol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. May require
+decreased tramadol dose or adjustment of dosing interval; increased risk for serious
+adverse events including seizures and serotonin syndrome
+
+erythromycin ethylsuccinate
+erythromycin ethylsuccinate will increase the level or effect of tramadol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. May require
+decreased tramadol dose or adjustment of dosing interval; increased risk for serious
+adverse events including seizures and serotonin syndrome
+
+erythromycin lactobionate
+erythromycin lactobionate will increase the level or effect of tramadol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. May require
+decreased tramadol dose or adjustment of dosing interval; increased risk for serious
+adverse events including seizures and serotonin syndrome
+
+erythromycin stearate
+erythromycin stearate will increase the level or effect of tramadol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. May require
+decreased tramadol dose or adjustment of dosing interval; increased risk for serious
+adverse events including seizures and serotonin syndrome
+
+escitalopram
+escitalopram and tramadol both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+esketamine intranasal
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 27/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+esketamine intranasal, tramadol. Either increases toxicity of the other by sedation.
+Modify Therapy/Monitor Closely.
+
+eslicarbazepine acetate
+eslicarbazepine acetate will decrease the level or effect of tramadol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Decreased
+AUC of tramadol and the active metabolite (O-desmethyltramadol) when
+coadministered with strong CYP3A4 and CYP2B6 inducers
+
+estazolam
+estazolam and tramadol both increase sedation. Use Caution/Monitor.
+
+eszopiclone
+eszopiclone and tramadol both increase sedation. Use Caution/Monitor.
+
+ethanol
+tramadol and ethanol both increase sedation. Use Caution/Monitor.
+
+etomidate
+etomidate and tramadol both increase sedation. Use Caution/Monitor.
+
+etravirine
+etravirine will decrease the level or effect of tramadol by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+fedratinib
+fedratinib will increase the level or effect of tramadol by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor. Adjust dose of drugs that are
+CYP3A4 substrates as necessary.
+
+fenfluramine
+tramadol increases and fenfluramine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+fenfluramine and tramadol both increase serotonin levels. Use Caution/Monitor.
+
+fexinidazole
+fexinidazole decreases levels of tramadol by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Modify Therapy/Monitor Closely. If coadministration of
+tramadol with a strong or moderate CYP3A4 inducer is necessary, consider
+increasing tramadol dose until stable drug effects are achieved and monitor for
+opioid withdrawal symptoms.
+
+flibanserin
+tramadol and flibanserin both increase sedation. Modify Therapy/Monitor Closely.
+Risk for sedation increased if flibanserin is coadministration with other CNS
+depressants.
+
+fluoxetine
+fluoxetine and tramadol both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+fluphenazine
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 28/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+tramadol and fluphenazine both increase sedation. Use Caution/Monitor.
+
+flurazepam
+flurazepam and tramadol both increase sedation. Use Caution/Monitor.
+
+fluvoxamine
+fluvoxamine and tramadol both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+fosfomycin
+fosfomycin and tramadol both increase QTc interval. Use Caution/Monitor. The risk
+of QT prolongation may increase in patients with electrolyte abnormalities (such as
+hypokalemia and hypocalcemia), patients with conditions that have potential to
+cause electrolyte imbalance (such as renal impairment), or patients taking other
+drugs affecting electrolyte balance or QT prolongation; avoid this drug in patients
+with known QT prolongation or ventricular arrhythmias, including a history of
+torsade de pointes; monitor electrolytes during treatment
+
+fosphenytoin
+fosphenytoin will decrease the level or effect of tramadol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Decreased
+AUC of tramadol and the active metabolite (O-desmethyltramadol) when
+coadministered with strong CYP3A4 and CYP2B6 inducers
+
+frovatriptan
+frovatriptan and tramadol both increase serotonin levels. Use Caution/Monitor.
+
+gabapentin
+gabapentin, tramadol. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+gabapentin and tramadol both increase sedation. Use Caution/Monitor.
+
+gabapentin enacarbil
+gabapentin enacarbil, tramadol. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+gabapentin enacarbil and tramadol both increase sedation. Use Caution/Monitor.
+
+ganaxolone
+tramadol and ganaxolone both increase sedation. Use Caution/Monitor.
+
+gepirone
+gepirone and tramadol both increase serotonin levels. Use Caution/Monitor. Monitor
+for symptoms of serotonin syndrome when gepirone is used gepirone with other
+drugs that may affect the serotonergic neurotransmitter systems. If serotonin
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 29/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+syndrome occurs, consider discontinue gepirone and/or concomitant serotonergic
+drug.
+
+glycopyrrolate
+glycopyrrolate, tramadol. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Concomitant use may increase the risk for severe
+constipation, paralytic ileus, or urinary retention.
+
+guanfacine
+guanfacine and tramadol both increase sedation. Use Caution/Monitor.
+
+haloperidol
+tramadol and haloperidol both increase sedation. Use Caution/Monitor.
+
+hydromorphone
+hydromorphone and tramadol both increase sedation. Use Caution/Monitor.
+
+hydroxyzine
+hydroxyzine and tramadol both increase sedation. Use Caution/Monitor.
+
+imipramine
+tramadol and imipramine both increase sedation. Use Caution/Monitor.
+
+imipramine and tramadol both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+isoniazid
+isoniazid and tramadol both increase serotonin levels. Use Caution/Monitor.
+
+isoproterenol
+tramadol increases and isoproterenol decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+istradefylline
+istradefylline will increase the level or effect of tramadol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Istradefylline
+40 mg/day increased peak levels and AUC of CYP3A4 substrates in clinical trials.
+This effect was not observed with istradefylline 20 mg/day. Consider dose reduction
+of sensitive CYP3A4 substrates.
+
+itraconazole
+itraconazole will increase the level or effect of tramadol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+ketamine
+ketamine and tramadol both increase sedation. Use Caution/Monitor.
+
+ketoconazole
+ketoconazole will increase the level or effect of tramadol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. May require
+decreased tramadol dose or adjustment of dosing interval; increased risk for serious
+adverse events including seizures and serotonin syndrome
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 30/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+ketotifen, ophthalmic
+tramadol and ketotifen, ophthalmic both increase sedation. Use Caution/Monitor.
+
+L-tryptophan
+L-tryptophan and tramadol both increase serotonin levels. Use Caution/Monitor.
+
+lamotrigine
+lamotrigine and tramadol both increase sedation. Use Caution/Monitor.
+
+larotrectinib
+larotrectinib will increase the level or effect of tramadol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+lemborexant
+lemborexant, tramadol. Either increases effects of the other by sedation. Modify
+Therapy/Monitor Closely. Dosage adjustment may be necessary if lemborexant is
+coadministered with other CNS depressants because of potentially additive effects.
+
+lenacapavir
+lenacapavir will increase the level or effect of tramadol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Coadministration of tramadol and lenacapavir may require decrease in dose for
+tramadol.
+
+levoketoconazole
+levoketoconazole will increase the level or effect of tramadol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. May require
+decreased tramadol dose or adjustment of dosing interval; increased risk for serious
+adverse events including seizures and serotonin syndrome
+
+levomilnacipran
+levomilnacipran and tramadol both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+levorphanol
+levorphanol and tramadol both increase sedation. Use Caution/Monitor.
+
+lisdexamfetamine
+tramadol increases and lisdexamfetamine decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+tramadol, lisdexamfetamine. Either increases effects of the other by serotonin
+levels. Use Caution/Monitor. Initiate with lower doses and monitor for signs and
+symptoms of serotonin syndrome, particularly during initiation or dosage increase. If
+serotonin syndrome occurs, discontinue along with concomitant serotonergic
+drug(s).
+
+lithium
+lithium and tramadol both increase serotonin levels. Use Caution/Monitor.
+
+lofepramine
+tramadol and lofepramine both increase sedation. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 31/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+lofepramine and tramadol both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+lofexidine
+tramadol and lofexidine both increase sedation. Use Caution/Monitor.
+
+lopinavir
+lopinavir will increase the level or effect of tramadol by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+loprazolam
+loprazolam and tramadol both increase sedation. Use Caution/Monitor.
+
+lorazepam
+lorazepam and tramadol both increase sedation. Use Caution/Monitor.
+
+lorcaserin
+lorcaserin will increase the level or effect of tramadol by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+lorlatinib
+lorlatinib will decrease the level or effect of tramadol by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+lormetazepam
+lormetazepam and tramadol both increase sedation. Use Caution/Monitor.
+
+loxapine
+tramadol and loxapine both increase sedation. Use Caution/Monitor.
+
+loxapine inhaled
+tramadol and loxapine inhaled both increase sedation. Use Caution/Monitor.
+
+lsd
+lsd and tramadol both increase serotonin levels. Use Caution/Monitor.
+
+lumateperone
+lumateperone and tramadol both increase sedation. Use Caution/Monitor.
+
+lumefantrine
+lumefantrine will increase the level or effect of tramadol by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+lurasidone
+lurasidone, tramadol. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: Potential for increased CNS depressant effects
+when used concurrently; monitor for increased adverse effects and toxicity.
+
+lurasidone and tramadol both increase sedation. Use Caution/Monitor.
+
+marijuana
+tramadol and marijuana both increase sedation. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 32/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+meclizine
+meclizine and tramadol both increase sedation. Use Caution/Monitor.
+
+melatonin
+tramadol and melatonin both increase sedation. Use Caution/Monitor.
+
+meperidine
+meperidine and tramadol both increase sedation. Use Caution/Monitor.
+
+meperidine and tramadol both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+meprobamate
+tramadol and meprobamate both increase sedation. Use Caution/Monitor.
+
+metaproterenol
+tramadol increases and metaproterenol decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+metaxalone
+metaxalone and tramadol both increase sedation. Use Caution/Monitor.
+
+methadone
+methadone and tramadol both increase sedation. Use Caution/Monitor.
+
+methamphetamine
+tramadol increases and methamphetamine decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+methocarbamol
+methocarbamol and tramadol both increase sedation. Use Caution/Monitor.
+
+methsuximide
+methsuximide and tramadol both increase sedation. Use Caution/Monitor.
+
+methylenedioxymethamphetamine
+tramadol increases and methylenedioxymethamphetamine decreases sedation.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+midazolam
+midazolam and tramadol both increase sedation. Use Caution/Monitor.
+
+midazolam intranasal
+midazolam intranasal, tramadol. Either increases toxicity of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Concomitant use of
+barbiturates, alcohol, or other CNS depressants may increase the risk of
+hypoventilation, airway obstruction, desaturation, or apnea and may contribute to
+profound and/or prolonged drug effect.
+
+midodrine
+tramadol increases and midodrine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 33/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+mifepristone
+mifepristone will increase the level or effect of tramadol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+milnacipran
+milnacipran and tramadol both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+mirabegron
+mirabegron will increase the level or effect of tramadol by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+mirtazapine
+tramadol and mirtazapine both increase sedation. Use Caution/Monitor.
+
+mirtazapine and tramadol both increase serotonin levels. Use Caution/Monitor.
+
+mitapivat
+mitapivat decreases levels of tramadol by increasing metabolism. Use
+Caution/Monitor. Mitapivat induces UGT1A1 in vitro and may decrease systemic
+concentrations of UGT1A1 substrates.
+
+mitotane
+mitotane decreases levels of tramadol by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Mitotane is a strong inducer of
+cytochrome P-4503A4; monitor when coadministered with CYP3A4 substrates for
+possible dosage adjustments.
+
+modafinil
+tramadol increases and modafinil decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+molindone
+molindone and tramadol both increase sedation. Use Caution/Monitor.
+
+morphine
+morphine and tramadol both increase sedation. Use Caution/Monitor.
+
+morphine and tramadol both increase serotonin levels. Use Caution/Monitor.
+
+motherwort
+tramadol and motherwort both increase sedation. Use Caution/Monitor.
+
+moxonidine
+tramadol and moxonidine both increase sedation. Use Caution/Monitor.
+
+nabilone
+tramadol and nabilone both increase sedation. Use Caution/Monitor.
+
+nafcillin
+nafcillin will decrease the level or effect of tramadol by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor. Decreased AUC of tramadol
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 34/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+and the active metabolite (O-desmethyltramadol) when coadministered with strong
+CYP3A4 and CYP2B6 inducers
+
+nalbuphine
+nalbuphine and tramadol both increase sedation. Use Caution/Monitor.
+
+naratriptan
+naratriptan and tramadol both increase serotonin levels. Use Caution/Monitor.
+
+nefazodone
+nefazodone and tramadol both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+nefazodone will increase the level or effect of tramadol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+nelfinavir
+nelfinavir increases levels of tramadol by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Potential for increased toxicity. .
+
+nevirapine
+nevirapine will decrease the level or effect of tramadol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Decreased
+AUC of tramadol and the active metabolite (O-desmethyltramadol) when
+coadministered with strong CYP3A4 and CYP2B6 inducers
+
+nitrous oxide
+nitrous oxide and tramadol both increase sedation. Use Caution/Monitor.
+
+norepinephrine
+tramadol increases and norepinephrine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+nortriptyline
+tramadol and nortriptyline both increase sedation. Use Caution/Monitor.
+
+nortriptyline and tramadol both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+olanzapine
+tramadol and olanzapine both increase sedation. Use Caution/Monitor.
+
+ondansetron
+ondansetron decreases effects of tramadol by Other (see comment). Use
+Caution/Monitor. Comment: Ondansetron may decrease therapeutic effects of
+tramadol. Ondansetron may increase serotonergic effects of tramadol. This could
+result in serotonin syndrome. Tramadol dose requirement was significantly greater
+postoperatively among those who had received ondansetron than among those
+receiving a control.
+
+opium tincture
+opium tincture and tramadol both increase sedation. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 35/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+orphenadrine
+orphenadrine and tramadol both increase sedation. Use Caution/Monitor.
+
+oxazepam
+oxazepam and tramadol both increase sedation. Use Caution/Monitor.
+
+oxycodone
+oxycodone and tramadol both increase sedation. Use Caution/Monitor.
+
+oxymorphone
+oxymorphone and tramadol both increase sedation. Use Caution/Monitor.
+
+paliperidone
+tramadol and paliperidone both increase sedation. Use Caution/Monitor.
+
+papaveretum
+papaveretum and tramadol both increase sedation. Use Caution/Monitor.
+
+papaverine
+tramadol and papaverine both increase sedation. Use Caution/Monitor.
+
+paroxetine
+paroxetine decreases effects of tramadol by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor. Decreased conversion of tramadol to active
+metabolite.
+
+paroxetine and tramadol both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+peginterferon alfa 2b
+peginterferon alfa 2b, tramadol. Other (see comment). Use Caution/Monitor.
+Comment: When patients are administered peginterferon alpha-2b with CYP2D6
+substrates, the therapeutic effect of these drugs may be altered. Peginterferon
+alpha-2b may increase or decrease levels of CYP2D6 substrate.
+
+pegvisomant
+tramadol decreases effects of pegvisomant by unknown mechanism. Use
+Caution/Monitor.
+
+pentazocine
+pentazocine and tramadol both increase sedation. Use Caution/Monitor.
+
+pentazocine and tramadol both increase serotonin levels. Use Caution/Monitor.
+
+pentobarbital
+pentobarbital and tramadol both increase sedation. Use Caution/Monitor.
+
+pentobarbital will decrease the level or effect of tramadol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Decreased
+AUC of tramadol and the active metabolite (O-desmethyltramadol) when
+coadministered with strong CYP3A4 and CYP2B6 inducers
+
+perampanel
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 36/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+perampanel and tramadol both increase sedation. Use Caution/Monitor.
+
+perphenazine
+tramadol and perphenazine both increase sedation. Use Caution/Monitor.
+
+phendimetrazine
+tramadol increases and phendimetrazine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+phenobarbital
+phenobarbital and tramadol both increase sedation. Use Caution/Monitor.
+
+phenobarbital will decrease the level or effect of tramadol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Decreased
+AUC of tramadol and the active metabolite (O-desmethyltramadol) when
+coadministered with strong CYP3A4 and CYP2B6 inducers
+
+phentermine
+tramadol increases and phentermine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+phenylephrine
+tramadol increases and phenylephrine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+phenytoin
+phenytoin will decrease the level or effect of tramadol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Decreased
+AUC of tramadol and the active metabolite (O-desmethyltramadol) when
+coadministered with strong CYP3A4 and CYP2B6 inducers
+
+pholcodine
+tramadol and pholcodine both increase sedation. Use Caution/Monitor.
+
+pimozide
+tramadol and pimozide both increase sedation. Use Caution/Monitor.
+
+pirbuterol
+tramadol increases and pirbuterol decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+pregabalin
+pregabalin, tramadol. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+primidone
+primidone and tramadol both increase sedation. Use Caution/Monitor.
+
+primidone will decrease the level or effect of tramadol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Decreased
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 37/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+AUC of tramadol and the active metabolite (O-desmethyltramadol) when
+coadministered with strong CYP3A4 and CYP2B6 inducers
+
+prochlorperazine
+tramadol and prochlorperazine both increase sedation. Use Caution/Monitor.
+
+promethazine
+promethazine and tramadol both increase sedation. Use Caution/Monitor.
+
+propafenone
+propafenone decreases effects of tramadol by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor. Decreased conversion of tramadol to active
+metabolite.
+
+propafenone decreases effects of tramadol by decreasing metabolism. Use
+Caution/Monitor. Decreased conversion of tramadol to active metabolite.
+
+propofol
+propofol and tramadol both increase sedation. Use Caution/Monitor.
+
+propylhexedrine
+tramadol increases and propylhexedrine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+protriptyline
+tramadol and protriptyline both increase sedation. Use Caution/Monitor.
+
+protriptyline and tramadol both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+pyrilamine
+pyrilamine and tramadol both increase sedation. Use Caution/Monitor.
+
+quazepam
+quazepam and tramadol both increase sedation. Use Caution/Monitor.
+
+quetiapine
+tramadol and quetiapine both increase sedation. Use Caution/Monitor.
+
+quinacrine
+quinacrine decreases effects of tramadol by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor. Decreased conversion of tramadol to active
+metabolite.
+
+quinacrine decreases effects of tramadol by decreasing metabolism. Use
+Caution/Monitor. Decreased conversion of tramadol to active metabolite.
+
+quinidine
+quinidine decreases effects of tramadol by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor. Decreased conversion of tramadol to active
+metabolite.
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 38/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+quinidine decreases effects of tramadol by decreasing metabolism. Use
+Caution/Monitor. Decreased conversion of tramadol to active metabolite.
+
+ramelteon
+tramadol and ramelteon both increase sedation. Use Caution/Monitor.
+
+remifentanil
+tramadol, remifentanil. Either increases toxicity of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Increases risk of serotonin syndrome.
+
+remimazolam
+remimazolam, tramadol. Either increases toxicity of the other by sedation. Modify
+Therapy/Monitor Closely. Coadministration may result in profound sedation,
+respiratory depression, coma, and/or death. Continuously monitor vital signs during
+sedation and recovery period if coadministered. Carefully titrate remimazolam dose
+if administered with opioid analgesics and/or sedative/hypnotics.
+
+revumenib
+revumenib and tramadol both increase QTc interval. Use Caution/Monitor. ECG
+monitoring recommended if concomitant use can?t be avoided and withhold
+therapy if QTc interval is >480 msec; restart therapy after QTc interval returns to
+<480 msec
+
+rifabutin
+rifabutin will decrease the level or effect of tramadol by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor. Decreased AUC of tramadol
+and the active metabolite (O-desmethyltramadol) when coadministered with strong
+CYP3A4 and CYP2B6 inducers
+
+rifampin
+rifampin will decrease the level or effect of tramadol by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor. Decreased AUC of tramadol
+and the active metabolite (O-desmethyltramadol) when coadministered with strong
+CYP3A4 and CYP2B6 inducers
+
+rifapentine
+rifapentine will decrease the level or effect of tramadol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Decreased
+AUC of tramadol and the active metabolite (O-desmethyltramadol) when
+coadministered with strong CYP3A4 and CYP2B6 inducers
+
+rilzabrutinib
+rilzabrutinib increases levels of tramadol by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Modify Therapy/Monitor Closely. If coadministration of
+tramadol with a strong or moderate CYP3A4 inhibitor is necessary, consider
+reducing tramadol dose until stable drug effects are achieved and monitor for
+increased adverse effects.
+
+risperidone
+tramadol and risperidone both increase sedation. Use Caution/Monitor.
+
+ritonavir
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 39/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+ritonavir will increase the level or effect of tramadol by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor. May require decreased
+tramadol dose or adjustment of dosing interval; increased risk for serious adverse
+events including seizures and serotonin syndrome
+
+rizatriptan
+rizatriptan and tramadol both increase serotonin levels. Use Caution/Monitor.
+
+rolapitant
+rolapitant will increase the level or effect of tramadol by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor. Rolapitant may increase plasma
+concentrations of CYP2D6 substrates for at least 28 days following rolapitant
+administration.
+
+rucaparib
+rucaparib will increase the level or effect of tramadol by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely. Adjust dosage of
+CYP3A4 substrates, if clinically indicated.
+
+salmeterol
+tramadol increases and salmeterol decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+SAMe
+SAMe and tramadol both increase serotonin levels. Use Caution/Monitor.
+
+scopolamine
+scopolamine and tramadol both increase sedation. Use Caution/Monitor.
+
+scopolamine intranasal
+scopolamine intranasal and tramadol both increase sedation. Use Caution/Monitor.
+
+scullcap
+tramadol and scullcap both increase sedation. Use Caution/Monitor.
+
+selegiline transdermal
+selegiline transdermal and tramadol both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+sertraline
+sertraline decreases effects of tramadol by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor. Decreased conversion of tramadol to active
+metabolite.
+
+sertraline and tramadol both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+sertraline decreases effects of tramadol by decreasing metabolism. Use
+Caution/Monitor. Decreased conversion of tramadol to active metabolite.
+
+sevoflurane
+sevoflurane and tramadol both increase sedation. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 40/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+shepherd's purse
+tramadol and shepherd's purse both increase sedation. Use Caution/Monitor.
+
+St John's Wort
+St John's Wort and tramadol both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+stiripentol
+stiripentol, tramadol. affecting hepatic/intestinal enzyme CYP3A4 metabolism.
+Modify Therapy/Monitor Closely. Stiripentol is a CYP3A4 inhibitor and inducer.
+Monitor CYP3A4 substrates coadministered with stiripentol for increased or
+decreased effects. CYP3A4 substrates may require dosage adjustment.
+
+stiripentol, tramadol. Either increases effects of the other by sedation. Use
+Caution/Monitor. Concomitant use stiripentol with other CNS depressants, including
+alcohol, may increase the risk of sedation and somnolence.
+
+sufentanil
+sufentanil and tramadol both increase sedation. Use Caution/Monitor.
+
+sumatriptan
+sumatriptan and tramadol both increase serotonin levels. Use Caution/Monitor.
+
+sumatriptan intranasal
+sumatriptan intranasal and tramadol both increase serotonin levels. Use
+Caution/Monitor.
+
+suvorexant
+suvorexant and tramadol both increase sedation. Modify Therapy/Monitor Closely.
+Dosage adjustments of suvorexant and concomitant CNS depressants may be
+necessary
+
+taletrectinib
+taletrectinib and tramadol both increase QTc interval. Use Caution/Monitor.
+Concomitant use may increase the risk of QTc interval prolongation. If concomitant
+use is unavoidable, adjust the frequency of ECG and electrolyte monitoring.
+
+tapentadol
+tapentadol and tramadol both increase sedation. Use Caution/Monitor.
+
+tramadol and tapentadol both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+tasimelteon
+tasimelteon and tramadol both increase sedation. Use Caution/Monitor.
+
+tecovirimat
+tecovirimat will decrease the level or effect of tramadol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Tecovirimat is
+a weak CYP3A4 inducer. Monitor sensitive CYP3A4 substrates for effectiveness if
+coadministered.
+
+temazepam
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 41/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+temazepam and tramadol both increase sedation. Use Caution/Monitor.
+
+terbinafine
+terbinafine will increase the level or effect of tramadol by affecting hepatic enzyme
+CYP2D6 metabolism. Modify Therapy/Monitor Closely. Assess need to reduce dose
+of CYP2D6-metabolized drug.
+
+terbutaline
+tramadol increases and terbutaline decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+tetrabenazine
+tetrabenazine and tramadol both increase sedation. Use Caution/Monitor.
+
+thioridazine
+thioridazine decreases effects of tramadol by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor. Decreased conversion of tramadol to active
+metabolite.
+
+tramadol and thioridazine both increase sedation. Use Caution/Monitor.
+
+thioridazine decreases effects of tramadol by decreasing metabolism. Use
+Caution/Monitor. Decreased conversion of tramadol to active metabolite.
+
+thiothixene
+tramadol and thiothixene both increase sedation. Use Caution/Monitor.
+
+tiagabine
+tiagabine and tramadol both increase sedation. Use Caution/Monitor.
+
+tipranavir
+tipranavir will increase the level or effect of tramadol by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+tizanidine
+tizanidine and tramadol both increase sedation. Use Caution/Monitor.
+
+topiramate
+tramadol and topiramate both increase sedation. Modify Therapy/Monitor Closely.
+
+trazodone
+tramadol and trazodone both increase sedation. Use Caution/Monitor.
+
+trazodone and tramadol both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+triazolam
+triazolam and tramadol both increase sedation. Use Caution/Monitor.
+
+triclofos
+triclofos and tramadol both increase sedation. Use Caution/Monitor.
+
+trifluoperazine
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 42/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+tramadol and trifluoperazine both increase sedation. Use Caution/Monitor.
+
+trimipramine
+tramadol and trimipramine both increase sedation. Use Caution/Monitor.
+
+trimipramine and tramadol both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+triprolidine
+triprolidine and tramadol both increase sedation. Use Caution/Monitor.
+
+valproic acid
+valproic acid and tramadol both increase sedation. Use Caution/Monitor.
+
+venlafaxine
+venlafaxine and tramadol both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+vigabatrin
+vigabatrin and tramadol both increase sedation. Use Caution/Monitor.
+
+viloxazine
+viloxazine will increase the level or effect of tramadol by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor. Viloxazine (a weak CYP2D6 inhibitor)
+may increase systemic exposure of CYP2D6 substrates. Monitor and adjust dose of
+substrate as clinically indicated.
+
+voriconazole
+voriconazole will increase the level or effect of tramadol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+xylometazoline
+tramadol increases and xylometazoline decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+yohimbine
+tramadol increases and yohimbine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+zaleplon
+zaleplon and tramadol both increase sedation. Use Caution/Monitor.
+
+ziconotide
+tramadol and ziconotide both increase sedation. Use Caution/Monitor.
+
+ziprasidone
+tramadol and ziprasidone both increase sedation. Use Caution/Monitor.
+
+zolmitriptan
+zolmitriptan and tramadol both increase serotonin levels. Use Caution/Monitor.
+
+zolpidem
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 43/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+zolpidem and tramadol both increase sedation. Use Caution/Monitor.
+
+zonisamide
+zonisamide and tramadol both increase sedation. Use Caution/Monitor.
+
+zotepine
+tramadol and zotepine both increase sedation. Use Caution/Monitor.
+
+zuranolone
+zuranolone and tramadol both increase sedation. Use Caution/Monitor.
+
+Minor (21)
+
+acetazolamide
+acetazolamide will increase the level or effect of tramadol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+amphetamine
+amphetamine increases effects of tramadol by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+anastrozole
+anastrozole will increase the level or effect of tramadol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+asenapine
+asenapine will increase the level or effect of tramadol by affecting hepatic enzyme
+CYP2D6 metabolism. Minor/Significance Unknown.
+
+cyclophosphamide
+cyclophosphamide will increase the level or effect of tramadol by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+danazol
+danazol will increase the level or effect of tramadol by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+darifenacin
+darifenacin will increase the level or effect of tramadol by affecting hepatic enzyme
+CYP2D6 metabolism. Minor/Significance Unknown.
+
+dextroamphetamine
+dextroamphetamine increases effects of tramadol by unspecified interaction
+mechanism. Minor/Significance Unknown.
+
+dronedarone
+dronedarone will increase the level or effect of tramadol by affecting hepatic
+enzyme CYP2D6 metabolism. Minor/Significance Unknown.
+
+drospirenone
+drospirenone will increase the level or effect of tramadol by affecting
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 44/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+eucalyptus
+tramadol and eucalyptus both increase sedation. Minor/Significance Unknown.
+
+lidocaine
+lidocaine increases toxicity of tramadol by pharmacodynamic synergism.
+Minor/Significance Unknown. Risk of increased CNS depression.
+
+maraviroc
+maraviroc will increase the level or effect of tramadol by affecting hepatic enzyme
+CYP2D6 metabolism. Minor/Significance Unknown.
+
+marijuana
+marijuana will increase the level or effect of tramadol by affecting hepatic enzyme
+CYP2D6 metabolism. Minor/Significance Unknown.
+
+nilotinib
+nilotinib will increase the level or effect of tramadol by affecting hepatic enzyme
+CYP2D6 metabolism. Minor/Significance Unknown.
+
+parecoxib
+parecoxib will increase the level or effect of tramadol by affecting hepatic enzyme
+CYP2D6 metabolism. Minor/Significance Unknown.
+
+paroxetine
+paroxetine decreases effects of tramadol by decreasing metabolism.
+Minor/Significance Unknown. Decreased conversion of tramadol to active
+metabolite.
+
+ranolazine
+ranolazine will increase the level or effect of tramadol by affecting hepatic enzyme
+CYP2D6 metabolism. Minor/Significance Unknown.
+
+sage
+tramadol and sage both increase sedation. Minor/Significance Unknown.
+
+tipranavir
+tipranavir will increase the level or effect of tramadol by affecting hepatic enzyme
+CYP2D6 metabolism. Minor/Significance Unknown.
+
+ziconotide
+ziconotide, tramadol. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Additive decreased GI motility. Additive analgesia.
+Ziconotide does NOT potentiate opioid induced respiratory depression.
+
+Adverse Effects
+
+>10%
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 45/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+Immediate release
+
+Constipation (24-46%)
+
+Nausea (24-40%)
+
+Dizziness/vertigo (26-33%)
+
+Headache (18-32%)
+
+Somnolence (16-25%)
+
+Vomiting (9-17%)
+
+CNS stimulation (7-14%)
+
+Dyspepsia (5-13%)
+
+Asthenia (6-12%)
+
+Pruritus (8-11%)
+
+Extended release
+
+Nausea (5.7-25.1%)
+
+Headache (19-23.1%)
+
+Constipation (4.2-21.3%)
+
+Somnolence (4-16.1%)
+
+Dizziness (4.8-13.6%)
+
+Dry mouth (3.4-13.1%)
+
+Vomiting (1.9-10.4%)
+
+1-10%
+
+Immediate release
+
+Dry mouth (5-10%)
+
+Diarrhea (5-10%)
+
+Sweating (6-9%)
+
+1 to <5%
+Malaise
+
+Vasodilation
+
+Anxiety
+
+Confusion
+
+Coordination disturbance
+
+Euphoria
+
+Miosis
+
+Nervousness
+
+Sleep disorder
+
+Abdominal pain
+
+Anorexia
+
+Flatulence
+
+Hypertonia
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 46/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+Rash
+
+Visual disturbance
+
+Menopausal symptoms
+
+Urinary frequency
+
+Urinary retention
+
+Extended release
+
+Asthenia (2.6-8.6%)
+
+Pruritus (1.9-7.3%)
+
+Anorexia (0.2-5.7%)
+
+Arthralgia 23 (5-5.4%)
+
+Sweating (0.6-5.3%)
+
+Insomnia (1.7-5%)
+
+1 to <5%
+Cardiac disorders: Hypertension
+
+Gastrointestinal disorders: Dyspepsia, flatulence
+
+General disorders: Abdominal pain, accidental injury, chills, fever, flu
+syndrome, neck pain, pelvic pain
+
+Investigations: Hyperglycemia, urine abnormality
+
+Metabolism and nutrition disorders: Peripheral edema, weight loss
+
+Musculoskeletal, connective tissue and bone disorders: Myalgia
+
+Nervous system disorders: Paresthesia, tremor, withdrawal syndrome
+
+Psychiatric disorders: Agitation, anxiety, apathy, confusion, depersonalization,
+depression, euphoria, nervousness
+
+Respiratory, thoracic and mediastinal disorders: Bronchitis, pharyngitis, rhinitis,
+sinusitis
+
+Skin and subcutaneous tissue disorders: Rash
+
+Urogenital disorders: Prostatic disorder, urinary tract infection
+
+Vascular disorders: Vasodilatation
+
+<1%
+
+Immediate release
+
+Body as a whole: Accidental injury, allergic reaction, anaphylaxis, death, suicidal
+tendency, weight loss, Serotonin syndrome
+
+Cardiovascular: Orthostatic hypotension, syncope, tachycardia
+
+Central Nervous System: Abnormal gait, amnesia, cognitive dysfunction,
+depression, difficulty in concentration, hallucinations, paresthesia, seizure, tremor
+
+Respiratory: Dyspnea
+
+Skin: Stevens Johnson syndrome, toxic epidermal necrolysis, urticaria, vesicles
+
+Special senses: Dysgeusia
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 47/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+Urogenital: Dysuria, menstrual disorder
+
+Extended release
+
+Cardiac disorders: EKG abnormal, hypotension, tachycardia
+
+Gastrointestinal disorders: Gastroenteritis
+
+General disorders: Neck rigidity, viral infection
+
+Hematologic/Lymphatic disorders: Anemia, ecchymoses
+
+Metabolism and nutrition disorders: Blood urea nitrogen increased, GGT increased,
+gout, SGPT increased
+
+Musculoskeletal disorders: Arthritis, arthrosis, joint disorder, leg cramps
+
+Nervous system disorders: Emotional lability, hyperkinesia, hypertonia, thinking
+abnormal, twitching, vertigo
+
+Respiratory disorders: Pneumonia
+
+Skin and SC tissue disorders: Hair disorder, skin disorder, urticaria
+
+Special senses: Eye disorder, lacrimation disorder
+
+Urogenital disorders: Cystitis, dysuria, sexual function abnormality, urinary retention
+
+Frequency Not Defined
+
+Cardiovascular: Abnormal ECG, hypertension, hypotension, myocardial ischemia,
+palpitations, pulmonary edema, pulmonary embolism
+
+Central nervous system: Migraine
+
+Gastrointestinal: Gastrointestinal bleeding, hepatitis, stomatitis, liver failure
+
+Laboratory abnormalities: Creatinine increase, elevated liver enzymes, hemoglobin
+decrease, proteinuria
+
+Sensory: Cataracts, deafness, tinnitus
+
+Postmarketing Reports
+
+Serotonin syndrome
+
+Adrenal insufficiency
+
+Androgen deficiency
+
+QT prolongation/torsade de pointes
+
+Mydriasis
+
+Hypoglycemia
+
+Nervous system disorders: Movement disorder, speech disorder
+
+Psychiatric disorders: Delirium
+
+Hyponatremia
+
+Hyperalgesia and allodynia
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 48/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+Warnings
+
+Black Box Warnings
+
+Opioid analgesic risk evaluation and mitigation strategy (REMS)
+
+To ensure that benefits of opioid analgesics outweigh risks of addiction, abuse, and
+misuse, the Food and Drug Administration (FDA) has required a REMS for these
+products; under requirements of the REMS, drug companies with approved opioid
+analgesic products must make REMS-compliant education programs available to
+healthcare providers
+
+Consider using other tools to improve patient, household, and community safety,
+such as patient-prescriber agreements that reinforce patient-prescriber
+responsibilities
+
+To obtain further information on opioid analgesic REMS and for a list of accredited
+REMS CME/CE, call 1-800-503-0784, or log on to www.opioidanalgesicrems.com.
+FDA Blueprint can be found at www.fda.gov/OpioidAnalgesicREMSBlueprint
+
+Healthcare providers are strongly encouraged to:
+Complete a REMS-compliant education program
+
+Counsel patients and/or their caregivers, with every prescription, on safe use,
+serious risks, storage, and disposal of these products
+
+Emphasize to patients and their caregivers the importance of reading the
+Medication Guide every time it is provided by their pharmacist
+
+Consider other tools to improve patient, household, and community safety
+
+Addiction, abuse, and misuse
+
+Risk of opioid addiction, abuse, and misuse, which can lead to overdose and death;
+assess each patient’s risk prior to prescribing and reassess all patients regularly for
+development of these behaviors and conditions
+
+Life-threatening respiratory depression
+
+Serious, life-threatening, or fatal respiratory depression may occur
+
+Monitor for respiratory depression, especially during initiation or following a dose
+increase
+
+Accidental ingestion
+
+Accidental ingestion of even 1 dose, especially by children, can result in a fatal
+overdose
+
+Neonatal opioid withdrawal syndrome
+
+Prolonged use during pregnancy can result in neonatal opioid withdrawal
+syndrome, which may be life-threatening if not recognized and treated, and requires
+management according to protocols developed by neonatology experts
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 49/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+If opioid use is required for a prolonged period in a pregnant woman, advise the
+patient of the risk of neonatal opioid withdrawal syndrome and ensure that
+management by neonatology experts will be available at delivery
+
+Ultra-rapid metabolism and other risk factors for life-threatening respiratory
+
+depression in children
+
+Life-threatening respiratory depression reported in children who received tramadol;
+some reported cases occurred following tonsillectomy and/or adenoidectomy, and
+at least one case, the child had evidence of being an ultra-rapid metabolizer of
+tramadol due to a CYP2D6 polymorphism; therapy is contraindicated in children
+<12 years and in children <18 years of age following tonsillectomy and/or
+adenoidectomy; avoid use in adolescents 12-18 years who have other risk factors
+that may increase sensitivity to respiratory depressant effects
+
+Management of respiratory depression may include close observation, supportive
+measures, and use of opioid antagonists, depending on patient’s clinical status;
+carbon dioxide (CO2) retention from opioid-induced respiratory depression can
+exacerbate sedating effects of opioids
+
+Interactions with drugs affecting Cytochrome P450 Isoenzymes
+
+Effects of concomitant use or discontinuation of cytochrome P450 3A4 inducers,
+3A4 inhibitors, or 2D6 inhibitors with tramadol are complex.
+
+Use of cytochrome P450 3A4 inducers, 3A4 inhibitors, or 2D6 inhibitors requires
+careful consideration of the effects on the parent drug, tramadol, and the active
+metabolite, M1
+
+Risks from concomitant use with benzodiazepines or other CNS depressants
+
+Concomitant use of opioids with benzodiazepines or other central nervous system
+(CNS) depressants, including alcohol, may result in profound sedation, respiratory
+depression, coma, and death; reserve concomitant prescribing for use in patients for
+whom alternative treatment options are inadequate; limit dosages and durations to
+minimum required; follow patients for signs and symptoms of respiratory
+depression and sedation
+
+Contraindications
+
+Hypersensitivity to tramadol or opioids
+
+Known or suspected gastrointestinal obstruction, including paralytic ileus
+
+Concurrent use of monoamine oxidase inhibitors (MAOIs) or use within last 14 days
+
+Children <12 years
+
+Postoperative management in children <18 years following tonsillectomy and/or
+adenoidectomy
+
+Severe/acute bronchial asthma in an unmonitored setting or in absence of resuscitative
+equipment
+
+Significant respiratory depression
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 50/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+Cautions
+
+Contains a Schedule IV controlled substance; exposes users to risks of addiction, abuse,
+and misuse; risks are increased in patients with a personal or family history of substance
+abuse (including drug or alcohol abuse or addiction) or mental illness (eg, major
+depression); the potential for these risks should not, prevent proper management of pain
+in any given patient; patients at increased risk may be prescribed this medication, but use
+in such patients necessitates intensive counseling about risks and proper use along with
+intensive monitoring for signs of addiction, abuse, and misuse
+
+Opioids are sought by drug abusers and people with addiction disorders and are subject
+to criminal diversion; consider these risks when prescribing or dispensing this
+medication; strategies to reduce risks include prescribing drug in smallest appropriate
+quantity and advising patient on proper disposal of unused drug; contact local state
+professional licensing board or state controlled substances authority for information on
+how to prevent and detect abuse or diversion of this product
+
+Serotonin syndrome may occur; may be life-threatening; may occur with use of tramadol
+alone, with concomitant use of serotonergic drugs, with drugs that impair metabolism of
+serotonin or tramadol
+
+Serious, life-threatening, or fatal respiratory depression has been reported; also occurred
+in children treated with tramadol
+
+Opioids can cause sleep-related breathing disorders including central sleep apnea and
+sleep-related hypoxemia; opioid use increases risk of CSA in a dose-dependent fashion;
+in patients who present with CSA, consider decreasing opioid dosage using best
+practices for opioid taper
+
+Prolonged use during pregnancy can result in withdrawal in the neonate
+
+Seizures have been reported; spontaneous postmarketing reports indicate that seizure
+risk is increased with doses
+
+May increase the risk of suicide
+
+Cases of adrenal insufficiency have been reported with opioid use, more often following
+>1 month of use; if adrenal insufficiency is diagnosed, treat with physiologic replacement
+doses of corticosteroids
+
+May cause severe hypotension including orthostatic hypotension and syncope in
+ambulatory patients; monitor for signs of hypotension after initiating or titrating
+
+May impair mental or physical abilities needed to perform potentially hazardous
+activities such as driving a car or operating machinery; advise not to drive or operate
+dangerous machinery unless tolerant to effects and aware of reaction to medication
+
+Spasm of the sphincter of Oddi reported; opioids may cause increases in serum amylase;
+monitor with biliary tract disease, including acute pancreatitis for worsening symptoms
+
+Serious and rarely fatal anaphylactic reactions have been reported
+
+Cases of tramadol-associated hypoglycemia reported; some resulting in hospitalization;
+in most cases, patients had predisposing risk factors (eg, diabetes); if hypoglycemia
+suspected, monitor blood glucose levels and consider drug discontinuation as
+appropriate
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 51/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+Hyponatremia
+
+Hyponatremia reported, many cases severe; most cases occurred in females over 65
+and within first week of therapy; in some reports, hyponatremia resulted from
+syndrome of inappropriate antidiuretic hormone secretion (SIADH)
+
+Monitor for signs and symptoms of hyponatremia (eg, confusion, disorientation),
+during treatment, especially during initiation of therapy; if signs and symptoms of
+hyponatremia are present, initiate appropriate treatment (eg, fluid restriction) and
+discontinue therapy
+
+Risks of gastrointestinal complications
+
+This drug is contraindicated in patients with known or suspected gastrointestinal
+obstruction, including paralytic ileus
+
+This drug may cause spasm of the sphincter of Oddi; opioids may cause increases in
+serum
+
+Amylase; regularly evaluate patients with biliary tract disease, including acute
+pancreatitis, for worsening symptoms; cases of opioid-induced esophageal
+dysfunction (OIED) have been reported in patients taking opioids; the risk of OIED
+may increase as the dose and/or duration of opioids increases; regularly evaluate
+patients for signs and symptoms of OIED (eg, dysphagia, regurgitation, non-cardiac
+chest pain), and if necessary, adjust opioid therapy as clinically appropriate
+
+Opioid-induce hyperalgesia and allodynia
+
+Opioid-induced hyperalgesia (OIH) occurs when opioid analgesic paradoxically
+causes increase in pain, or increase in sensitivity to pain; this condition differs from
+tolerance, which is the need for increasing doses of opioids to maintain a defined
+effect
+
+Symptoms include (but may not be limited to) increased levels of pain upon opioid
+dosage increase, decreased levels of pain upon opioid dosage decrease, or pain
+from ordinarily non-painful stimuli (allodynia); these symptoms may suggest OIH
+only if there is no evidence of underlying disease progression, opioid tolerance,
+opioid withdrawal, or addictive behavior
+
+Cases of OIH reported, both with short-term and longer-term use of opioid
+analgesics; though the mechanism of OIH is not fully understood, multiple
+biochemical pathways have been implicated; medical literature suggests a strong
+biologic plausibility between opioid analgesics and OIH and allodynia; if a patient is
+suspected to be experiencing OIH, carefully consider appropriately decreasing dose
+of current opioid analgesic or opioid rotation (safely switching the patient to a
+different opioid moiety)
+
+FDA-approved safety considerations for immediate-release (IR) and extended-
+
+release/long-acting (ER/LA) opioid analgesics addressing opioid crisis
+
+The risk of overdose increases as the dosage increases for all opioid pain medicines
+
+IR opioids should not be used for an extended period of time unless a patient’s pain
+remains severe enough to require them and alternative treatment options continue
+to be inadequate
+
+Numerous acute pain conditions treated in the outpatient setting require no more
+than a few days of an opioid pain medicine
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 52/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+It is recommended to reserve ER/LA opioid pain medicines for severe and persistent
+pain that requires an extended treatment period with a daily opioid pain medicine
+and for which alternative treatment options are inadequate
+
+Patient access to naloxone for emergency treatment of opioid overdose
+
+Assess potential need for naloxone; consider prescribing for emergency treatment
+of opioid overdose
+
+Consult on availability and ways to obtain naloxone as permitted by individual state
+naloxone dispensing and prescribing requirements or guidelines
+
+Educate patients regarding the signs and symptoms of respiratory depression and
+to call 911 or seek immediate emergency medical help in the event of a known or
+suspected overdose
+
+Management of respiratory depression may include close observation, supportive
+measures, and use of opioid antagonists, depending on patient’s clinical status;
+carbon dioxide (CO2) retention from opioid-induced respiratory depression can
+exacerbate sedating effects of opioids
+
+Drug interaction overview
+
+Substrate of CYP2B6, CYP2D6, CYP3A4
+
+CYP2D6 Inhibitors
+Coadministration with CYP2D6 inhibitors (eg, amiodarone, quinidine) may
+result in increased tramadol plasma levels and decreased levels of the active
+metabolite, M1
+
+May result in signs and symptoms of opioid withdrawal and reduced efficacy;
+increased tramadol levels and toxicities including seizures and serotonin
+syndrome
+
+CYP3A4 inhibitors or inducers
+Coadministration with CYP3A4 inhibitors or discontinuation CYP3A4 inducers
+may result in an increase in tramadol plasma concentrations and toxicities
+
+Coadministration of CYP3A4 inducers or discontinuation of CYP3A4 inhibitors
+may result in lower tramadol levels
+
+CNS depressants
+Coadministration of opioids with benzodiazepines or other CNS depressants,
+including alcohol, may result in profound sedation, respiratory depression,
+coma, and death; if an opioid analgesic is initiated in a patient already taking a
+benzodiazepine and/or other CNS depressants, including alcohol (eg, non-
+benzodiazepine sedatives/ hypnotics, anxiolytics, tranquilizers, muscle
+relaxants, general anesthetics, antipsychotics, gabapentinoids [gabapentin and
+pregabalin], and other opioids) or other CNS depressant, prescribe a lower
+initial dose of the opioid analgesic, and titrate based on clinical response;
+follow patients closely for signs and symptoms of respiratory depression and
+sedation; if concomitant use with benzodiazepine is warranted, consider
+prescribing naloxone for the emergency treatment of opioid overdose
+
+If the decision is made to prescribe a benzodiazepine or other CNS depressant
+concomitantly with an opioid analgesic, prescribe the lowest effective dosages
+and minimum durations of concomitant use; in patients already receiving an
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 53/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+opioid analgesic, prescribe a lower initial dose of the benzodiazepine or other
+CNS depressant than indicated in the absence of an opioid, and titrate based
+on clinical response; if an opioid analgesic is initiated in a patient already
+taking a benzodiazepine or other CNS depressant, prescribe a lower initial
+dose of the opioid analgesic, and titrate based on clinical response; inform
+patients and caregivers of this potential interaction and educate them on the
+signs and symptoms of respiratory depression (including sedation); if
+concomitant use is warranted, consider recommending or prescribing an opioid
+overdose reversal agent
+
+Due to risk of respiratory depression with concomitant use of skeletal muscle
+relaxants and opioids, consider prescribing naloxone for the emergency
+treatment of opioid overdose
+
+Serotonergic drugs
+Coadministration with serotonergic drugs may increase the risk for serotonin
+syndrome
+
+Serotonergic drugs include selective serotonin reuptake inhibitors (SSRIs),
+serotonin and norepinephrine reuptake inhibitors (SNRIs), tricyclic
+antidepressants (TCAs), triptans, 5-HT3 receptor antagonists, drugs that affect
+the serotonergic neurotransmitter system (eg, mirtazapine, trazodone,
+tramadol), and drugs that impair metabolism of serotonin (including MAO-I)
+
+Mixed agonist/antagonist and partial agonist opioid analgesics
+Avoid coadministration
+
+May reduce analgesic effect of tramadol or precipitate withdrawal symptoms
+
+Pregnancy & Lactation
+
+Pregnancy
+
+Prolonged use of opioid analgesics during pregnancy may cause neonatal opioid
+withdrawal syndrome
+
+Available data in pregnant women are insufficient to inform a drug-associated risk for
+major birth defects and miscarriage; observe newborns for symptoms of neonatal opioid
+withdrawal syndrome and manage accordingly
+
+Females and males reproductive potential
+
+Use of opioids for an extended period of time may cause reduced fertility in females
+and males of reproductive potential; not known whether these effects on fertility
+are reversible
+
+Labor and delivery
+
+Use of tramadol during labor may lead to respiratory depression in the neonate
+
+Opioids cross the placenta and may produce respiratory depression and psycho-
+physiologic effects in neonates
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 54/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+An opioid antagonist, such as naloxone, must be available for reversal of opioid-
+induced respiratory depression in the neonate
+
+Use is not recommended in pregnant women during or immediately prior to labor,
+when other analgesic techniques are more appropriate
+
+Opioid analgesics can prolong labor through actions which temporarily reduce the
+strength, duration, and frequency of uterine contractions
+
+Lactation
+
+Tramadol and its active metabolite, O-desmethyltramadol (M1), are present in human
+milk
+
+Published studies and cases reported excessive sedation, respiratory depression, and
+death in infants exposed to codeine via breast milk
+
+Women who are ultra-rapid metabolizers of tramadol achieve higher than expected
+serum levels of opioids, potentially leading to higher levels of M1 in breast milk that can
+be dangerous in their breastfed infants
+
+In women with normal tramadol metabolism (normal CYP2D6 activity), the amount of
+tramadol secreted into human milk is low and dose-dependent
+
+Owing to the potential for serious adverse reactions, including excess sedation,
+respiratory depression, and death in a breastfed infant, breastfeeding is not
+recommended during treatment
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+Non-opioid-derived synthetic opioid; centrally acting analgesic, but may act at least
+partially by binding to opioid mu receptors, causing inhibition of ascending pain
+pathways
+
+Absorption
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 55/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+Mean absolute bioavailability: ~75% (100-mg dose)
+
+Steady-state of both tramadol and M1 are reached
+
+Immediate release: 2 days (QID dosing)
+
+Peak plasma concentration
+
+Oral solution: 180.20 ng/mL (tramadol); 47.77 ng/mL (M1 metabolite)
+
+Immediate release: 173.51 ng/mL; 46.14 ng/mL (M1 metabolite)
+
+Extended release: 308 ng/mL (single 300-mg dose)
+
+Peak plasma time
+
+Oral solution: 1.5 hr (tramadol); 2 hr (M1 metabolite)
+
+Immediate release: 1.5 hr (tramadol); 2.25 hr (M1 metabolite)
+
+Extended release: 10-12 hr (single-dose)
+
+AUC
+
+Oral solution: 1623.93 ng·hr/mL (tramadol); 624.12 ng·hr/mL (M1 metabolite)
+
+Immediate release: 1681.64 ng·hr/mL ; 624.1 ng·hr/mL (M1 metabolite)
+
+Extended release: 6777 ng·hr/mL (single 300-mg dose)
+
+Distribution
+
+Protein bound: ~20% (IV)
+
+Vd
+
+IV: 2.6L/kg (males); 2.9 L/kg (females)
+
+Metabolism
+
+Extensively metabolized via CYP2D6 and CYP3A4, as well as by conjugation of parent
+and metabolites
+
+Elimination
+
+Tramadol metabolites are eliminated primarily by kidneys
+
+Excretion: ~30% (urine as unchanged drug); 60% as metabolites; remainder is excreted
+either as unidentified or as unextractable metabolites
+
+Half-life
+
+Oral solution: 7.65 hr (tramadol); 7.94 hr (M1 metabolite)
+
+Immediate release: 7.61 hr (tramadol); 8.06 hr (M1 metabolite)
+
+Extended release: ~10 hr (tramadol); 11 hr (M1 metabolite)
+
+Pharmacogenomics
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 56/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+Poor CYP2D6 metabolizers
+
+Formation of the active metabolite, M1, is mediated by CYP2D6, a polymorphic
+enzyme
+
+Based on a population PK analysis of Phase 1 studies with IR tablets in healthy
+subjects, tramadol concentrations were ~20% higher in "poor metabolizers" versus
+"extensive metabolizers," while M1 concentrations were 40% lower
+
+Administration
+
+Conversion from other opioids to extended release
+
+When therapy is initiated, discontinue all opioid analgesics other than those used on an
+as needed basis for breakthrough pain when appropriate; there are no established
+conversion ratios for conversion from other opioids to this drug defined by clinical trials
+
+Initiate 100 mg PO qDay
+
+No established conversion ratios for conversion from other opioids have been defined by
+clinical trials. Initiate
+
+Conversion from oral solution to extended release
+
+Calculate the 24-hour tramadol IR dose and initiate a total daily dose of this drug
+rounded down to the next lowest 100 mg increment; the dose should be taken once
+daily; the dose may subsequently be individualized according to patient need
+
+Due to limitations in flexibility of dose selection with this medication, some patients
+maintained on tramadol IR products may not be able to convert to tramadol ER
+
+Bioavailability of oral solution compared to extended release tramadol is unknown
+
+Closely monitor for signs of excessive sedation and respiratory depression when
+converting formulations
+
+Oral Administration
+
+Immediate release: Administer without regard to meals
+
+Oral solution: Strongly advise to always use calibrated oral syringes or other oral dosing
+device, with metric units of measurements (ie, mL), to correctly measure prescribed dose
+
+Extended release
+
+Swallow whole; do not crush, chew, dissolve, or split
+
+Administer without regard to meals
+
+Storage
+
+Store securely and dispose of properly
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 57/58
+
+
+
+6/22/26, 5:51 PM Ultram (DSC), ConZip (tramadol) dosing, indications, interactions, adverse effects, and more
+
+All formulations: Store at 20-25ºC (68-77ºF); excursions permitted to 15-30ºC (59-86ºF)
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/ultram-conzip-tramadol-343324 58/58

@@ -1,0 +1,3110 @@
+﻿6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+Choose mesh that cares about the body as much as you do. Backed by long-term
+evidence.
+
+oxycodone (Rx)
+Brand and Other Names: OxyContin, Xtampza ER, Roxicodone, Oxaydo, RoxyBond
+Classes: Opioid Analgesics
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+capsule, immediate-release: Schedule II
+
+5mg
+
+tablet, immediate-release: Schedule II
+
+5mg
+
+10mg
+
+15mg
+
+20mg
+
+30mg
+
+abuse deterrent tablet, immediate-release (Oxaydo): Schedule II
+
+5mg
+
+7.5mg
+
+Discourages intranasal abuse
+
+abuse deterrent tablet, immediate-release (RoxyBond): Schedule II
+
+5mg
+
+10mg
+
+15mg
+
+30mg
+
+Creates viscous material if mixed with liquid that does not pass through a needle
+
+abuse deterrent tablet, controlled-release (OxyContin): Schedule II
+
+10mg
+
+15mg
+
+20mg
+
+30mg
+
+40mg
+
+60mg
+
+80mg
+
+abuse deterrent capsule, controlled-release (Xtampza ER): Schedule II
+
+9mg (equivalent to 10 mg oxycodone HCl)
+
+13.5mg (equivalent to 15 mg oxycodone HCl)
+
+18mg (equivalent to 20 mg oxycodone HCl)
+
+27mg (equivalent to 30 mg oxycodone HCl)
+
+36mg (equivalent to 40 mg oxycodone HCl)
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 1/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+Abuse-deterrent capsule utilizing DETERx technology platform to maintain its
+extended-release profile after being subjected to common methods of tampering
+
+oral concentrate: Schedule II
+
+20mg/mL
+
+oral solution: Schedule II
+
+5mg/5mL
+
+Moderate-to-Severe Pain
+
+Immediate-release
+
+Opioid-tolerant:: 10-30 mg PO q4-6hr
+
+Opioid-naïve (initial dose): 5-15 mg PO q4-6hr
+
+Chronic Severe Pain
+
+Controlled-release products (eg, OxyContin, Xtampza ER) are indicated for the
+management of severe and persistent pain that requires an opioid analgesic and cannot
+be adequately treated with alternative options, including
+
+immediate-release opioids
+
+Also see Administration
+
+Initial dosing
+
+It is safer to underestimate a patient’s 24-hour oral oxycodone requirements and provide
+rescue medication (eg, immediate-release opioid) than to overestimate the 24-hour oral
+oxycodone dosage and manage an adverse reaction due to an overdose; while useful
+tables of opioid equivalents are readily available, there is substantial inter-patient
+variability in the relative potency of different opioids; frequently reevaluate patients for
+signs and symptoms of opioid withdrawal and for signs of oversedation/toxicity after
+converting patients to this drug
+
+OxyContin
+Opioid-naïve patients: 10 mg PO q12hr initially; titrate gradually every 1-2
+days, increasing by 25-50% increments, with q12hr dosing interval
+maintained
+
+A single dose >40 mg ER or total dose >80 mg ER are for use only in opioid-
+tolerant patients
+
+Xtampza ER
+Opioid-naïve patients: 9 mg PO q12hr with food
+
+Dosage Modifications
+
+Coadministration with other CNS depressants: Initiate long-acting oxycodone with one-
+third to one-half the recommended starting dose; monitor for signs of respiratory
+depression, sedation, and hypotension
+
+Conversion from other opioids to OxyContin
+
+Provide immediate-release opioids for breakthrough pain
+
+Monitor patient closely for adverse effects or breakthrough pain during conversion
+and for several days following
+
+Also see Medscape reference topic - Opioid Equivalents
+
+Conversion from other oral oxycodone formulations
+Conversion from other oral oxycodone formulations: Administer one-half of the
+patient's total daily PO oxycodone dose as q12hr
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 2/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+Conversion from fentanyl transdermal: Wait 18 hr after patch removed, then
+initiate conservative dose of ~10 mg q12hr oxycodone controlled-release for
+each 25 mcg/hr fentanyl transdermal patch
+
+Conversion from fentanyl transdermal
+Wait 18 hr after patch removed, then initiate conservative dose of ~10 mg
+q12hr oxycodone controlled-release for each 25 mcg/hr fentanyl transdermal
+patch
+
+Follow the patient closely during conversion from fentanyl transdermal system
+to oxycodone, as there is limited documented experience with this conversion
+
+Conversion from other opioids to Xtampza ER
+
+Conversion from other oral oxycodone formulations
+Administer one-half of the patient's total daily PO oxycodone dose as q12hr
+with food
+
+Because Xtampza ER is not bioequivalent to other oxycodone extended-
+release products
+
+Monitor patients for possible dosage adjustment
+
+Conversion from other opioids
+Discontinue all other opioid analgesics other than those used on an as needed
+basis for breakthrough pain when appropriate
+
+There are no established conversion ratios for conversion from other opioids to
+Xtampza ER defined by clinical trials
+
+Initiate dosing using 10 mg PO q12hr with food and provide immediate-
+release rescue medication while stabilizing patient on Xtampza ER
+
+Conversion from methadone
+Close monitoring is of particular importance when converting from methadone
+to other opioid agonists; the ratio between methadone and other opioid
+agonists may vary widely as a function of previous dose exposure and
+methadone has a long half-life and can accumulate in the plasma
+
+Conversion from fentanyl transdermal
+18 hr following the removal of the transdermal fentanyl patch, initiate
+Xtampza ER; there has been no systematic assessment of such conversion, a
+conservative oxycodone dose, ~9 mg (equivalent to 10 mg oxycodone HCl)
+q12hr should be initially substituted for each 25 mcg/hr fentanyl transdermal
+patch
+
+Renal impairment
+
+CrCl <60 mL/min: Serum concentration may increase by 50%; adjust dosage to
+response
+
+Hepatic impairment
+
+Reduce dosage in liver disease; decrease dosage of extended-release form to 1/3 or
+1/2 of usual starting dosage; titrate to response
+
+Alternative analgesics are recommended for patients who require a dose of
+Xtampza ER <9 mg
+
+Dosing Considerations
+
+Access to naloxone for opioid overdose
+
+Assess need for naloxone upon initiating and renewing treatment
+
+Consider prescribing naloxone
+Based on patient’s risk factors for overdose (eg, concomitant use of CNS
+depressants, a history of opioid use disorder, prior opioid overdose); presence
+of risk factors should not prevent proper pain management
+
+Discuss options for obtaining an opioid overdose reversal agent (eg,
+prescription, over-the-counter, or as part of a community-based program)
+
+There are important differences among opioid overdose reversal agents, such
+as route of administration, product strength, approved patient age range, and
+pharmacokinetics; be familiar with these differences, as outlined in the
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 3/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+approved labeling for those products, prior to recommending or prescribing
+such an agent
+
+Household members (including children) or other close contacts at risk for
+accidental ingestion or overdose
+
+Consult patients and caregivers on the following:
+Availability of naloxone for emergency treatment of opioid overdose
+
+Ways differ on how to obtain naloxone as permitted by individual state
+dispensing and prescribing requirements or guidelines (eg, by prescription,
+directly from a pharmacist, as part of a community-based program)
+
+Discontinuation
+
+Use a gradual downward titration of the dosage to avoid signs and symptoms of
+withdrawal in the physically-dependent patient
+
+Do not abruptly discontinue Xtampza ER
+
+Opioid-tolerant definition
+
+Use of higher starting doses in patients who are not opioid tolerant may cause fatal
+respiratory depression
+
+Patients who are opioid tolerant are those receiving, for 1 week or longer, at least
+60 mg/day PO morphine, 25 mcg/hr transdermal fentanyl, 30 mg/day PO
+oxycodone, 8 mg/day PO hydromorphone, 25 mg/day PO oxymorphone, or an
+equianalgesic dose of another opioid
+
+Limitations of use
+
+Because of the risks of addiction, abuse, and misuse with opioids, even at
+recommended doses, and because of the greater risks of overdose and death with
+extended-release opioid formulations, reserve for patients whom alternative
+treatment options (eg, nonopioid analgesics or immediate-release opioids) are
+ineffective, not tolerated, or would be otherwise inadequate to provide sufficient
+management of pain
+
+Long-acting opioids are not indicated as a PRN analgesic
+
+PEDIATRIC
+Dosage Forms & Strengths
+
+tablet, immediate release: Schedule II
+
+5mg
+
+10mg
+
+15mg
+
+20mg
+
+30mg
+
+capsule, immediate-release: Schedule II
+
+5mg
+
+oral concentrate: Schedule II
+
+20mg/mL
+
+oral solution: Schedule II
+
+5mg/5mL
+
+abuse deterrent tablet, controlled-release (OxyContin): Schedule II
+
+10mg
+
+15mg
+
+20mg
+
+30mg
+
+40mg
+
+60mg
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 4/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+80mg
+
+Moderate-to-Severe Pain
+
+Immediate-release: 0.05-0.15 mg/kg PO q4-6hr PRN 
+
+Chronic Severe Pain
+
+Controlled-release (ie, OxyContin) is indicated for the management of pain severe
+enough to require daily, around-the-clock, long-term opioid treatment and for which
+alternative treatment options are inadequate in opioid-tolerant pediatric patients aged
+≥11 yr who are already receiving and tolerate a minimum daily opioid dose of at least 20
+mg oxycodone orally or its equivalent
+
+Note: Xtampza ER is not approved for children or adolescents younger than 18 yr
+
+Initial dose
+
+Dosing information is only for children ≥11 yr who are already receiving and
+tolerating opioids for at least 5 consecutive days, and for the 2 days immediately
+preceding dosing with OxyContin, patients must be taking a minimum of 20 mg/day
+of oxycodone or its equivalent
+
+Not appropriate for use in pediatric patients requiring <20 mg/day
+
+Discontinue all other around-the-clock opioid drugs when OxyContin is initiated
+
+Also see Administration
+
+Converting to OxyContin in children ≥11 yr
+
+Although tables of oral and parenteral equivalents are readily available, there is
+substantial interpatient variability in the relative potency of different opioid drugs
+and formulations
+
+As such, it is preferable to underestimate a patient’s 24-hr oral oxycodone
+requirements and provide rescue medication (eg, immediate-release opioid) than to
+overestimate the 24-hr oral oxycodone requirements and manage adverse effects
+
+Conversion factors of prior opioid
+Oxycodone PO: 1
+
+Hydrocodone PO: 0.9
+
+Hydromorphone PO: 4
+
+Hydromorphone parenteral: 20
+
+Morphine PO: 0.5
+
+Morphine parenteral: 3
+
+Tramadol PO 0.17
+
+Tramadol parenteral: 0.2
+
+NOTE: For patients receiving high-dose parenteral opioids, a more
+conservative conversion is warranted; for example, for high-dose parenteral
+morphine, use 1.5 instead of 3 as a multiplication factor
+
+Conversion steps to OxyContin
+
+Use the conversions listed above
+
+Step 1 – calculate daily opioid dose(s)
+Pediatric patients taking a single opioid: Add the current total daily dosage of
+the opioid and then multiply the total daily dosage by the approximate
+conversion factor to calculate the estimated OxyContin daily dose
+
+Pediatric patients on a regimen of >1 opioid: Calculate the approximate
+oxycodone daily dose for each opioid and add the daily totals to obtain the
+approximate OxyContin dose/day
+
+Pediatric patients on a regimen of fixed-ratio opioid/nonopioid analgesic
+products: Use only the opioid component of these products in the conversion
+
+Step 2 – round dose down
+If rounding is necessary, always round the dosage down to the nearest tablet
+strength available and initiate OxyContin therapy with that dose
+
+If the calculated oxycodone daily dosage is <20 mg, there is no safe strength
+for conversion and do not initiate
+
+Example: Conversion from a single opioid (eg, hydrocodone) to OxyContin;
+using the conversion factor of 0.9 for oral hydrocodone, a total daily
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 5/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+hydrocodone dosage of 50 mg is converted to 45 mg/day of oxycodone or 22.5
+mg q12hr of OxyContin
+
+After rounding down to the nearest strength available, the recommended
+OxyContin starting dosage is 20 mg q12hr
+
+Step 3 – closely observe and titrate
+Following conversion, observation and titration are warranted until pain
+management is stable
+
+Monitor for signs and symptoms of opioid withdrawal or for signs of
+oversedation/toxicity
+
+OxyContin titration and maintenance
+
+Individually titrate to a dosage that provides adequate analgesia and minimizes
+adverse reactions
+
+Continually re-evaluate pain control, signs and symptoms of opioid withdrawal, and
+adverse reactions, as well as monitoring for the development of addiction, abuse
+and misuse
+
+If breakthrough pain occurs, may require a dosage increase of OxyContin or a short-
+acting rescue analgesic
+
+If the level of pain increases after dose stabilization, attempt to identify the source
+of increased pain before increasing the OxyContin
+
+Because steady-state plasma concentrations are approximated in 1 day, may adjust
+OxyContin dose every 1-2 days
+
+As a guideline for children ≥11 yr, the total daily oxycodone dosage usually can be
+increased by 25% of the current total daily dosage
+
+Dosage Modifications
+
+Coadministration with other CNS depressants: Initiate OxyContin with one-third to one-
+half the recommended starting dose; monitor for signs of respiratory depression,
+sedation, and hypotension
+
+Dosing Considerations
+
+Long-acting or controlled-release oxycodone is not indicated for PRN analgesic dosing
+
+GERIATRIC
+Reduce starting dose to one-third to one-half of usual starting dosage; titrate cautiously
+
+Interactions
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and oxycodone
+No Interactions Found
+Interactions Found
+Contraindicated
+
+Serious
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+Contraindicated (2)
+
+alvimopan
+alvimopan, oxycodone. receptor binding competition. Contraindicated. Alvimopan is
+contraindicated in opioid tolerant patients (ie, those who have taken therapeutic
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 6/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+doses of opioids for >7 consecutive days immediately prior to taking alvimopan).
+Patients recently exposed to opioids are expected to be more sensitive to the
+effects of alvimopan and therefore may experience abdominal pain, nausea and
+vomiting, and diarrhea. No significant interaction is expected with concurrent use of
+opioid analgesics and alvimopan in patients who received opioid analgesics for 7 or
+fewer consecutive days prior to alvimopan.
+
+olanzapine/samidorphan
+olanzapine/samidorphan decreases effects of oxycodone by pharmacodynamic
+antagonism. Contraindicated. Samidorphan elicits opioid antagonistic effects and
+increases risk of precipitating acute opioid withdrawal in patients dependent on
+opioids. Prescribing information recommends at least a 7-day opioid-free interval
+for short-acting opioids and at least a 14-day opioid-free interval for long-acting
+opioids before starting olanzapine/samidorphan. .
+
+Serious (108)
+
+acetaminophen/phenyltoloxamine
+acetaminophen/phenyltoloxamine and oxycodone both increase sedation. Avoid or
+Use Alternate Drug. Limit use to patients for whom alternative treatment options
+are inadequate
+
+acrivastine
+acrivastine and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+amisulpride
+amisulpride and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+apalutamide
+apalutamide will decrease the level or effect of oxycodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+Coadministration of apalutamide, a strong CYP3A4 inducer, with drugs that are
+CYP3A4 substrates can result in lower exposure to these medications. Avoid or
+substitute another drug for these medications when possible. Evaluate for loss of
+therapeutic effect if medication must be coadministered. Adjust dose according to
+prescribing information if needed.
+
+artemether/lumefantrine
+artemether/lumefantrine will increase the level or effect of oxycodone by affecting
+hepatic enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+asenapine
+asenapine and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+asenapine transdermal
+asenapine transdermal and oxycodone both increase sedation. Avoid or Use
+Alternate Drug. Limit use to patients for whom alternative treatment options are
+inadequate
+
+atazanavir
+atazanavir increases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug. Oxycodone dose reduction may
+be warranted when coadministered with strong CYP3A4 inhibitors.
+
+avapritinib
+avapritinib and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+benzhydrocodone/acetaminophen
+benzhydrocodone/acetaminophen, oxycodone. Either increases toxicity of the other
+by pharmacodynamic synergism. Avoid or Use Alternate Drug. Profound sedation,
+respiratory depression, coma, and death may result if coadministered. Reserve
+concomitant prescribing of these drugs in patients for whom other treatment
+options are inadequate. Limit dosages and durations to the minimum required.
+Monitor closely for signs of respiratory depression and sedation.
+
+benzhydrocodone/acetaminophen and oxycodone both increase sedation. Avoid or
+Use Alternate Drug. Limit use to patients for whom alternative treatment options
+are inadequate
+
+bremelanotide
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 7/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+bremelanotide will decrease the level or effect of oxycodone by Other (see
+comment). Avoid or Use Alternate Drug. Bremelanotide may slow gastric emptying
+and potentially reduces the rate and extent of absorption of concomitantly
+administered oral medications. Avoid use when taking any oral drug that is
+dependent on threshold concentrations for efficacy. Interactions listed are
+representative examples and do not include all possible clinical examples.
+
+brexpiprazole
+brexpiprazole and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+brimonidine
+brimonidine and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+brimonidine topical
+brimonidine topical and oxycodone both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+brivaracetam
+brivaracetam and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+buprenorphine
+buprenorphine, oxycodone. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Mixed opiate agonist/antagonists usually produce additive sedation with
+narcotics; however, in narcotic addicted pts., the antagonist activity may provoke
+withdrawal Sx.
+
+buprenorphine buccal
+buprenorphine buccal, oxycodone. Other (see comment). Avoid or Use Alternate
+Drug. Comment: Mixed opiate agonist/antagonists usually produce additive
+sedation with narcotics; however, in narcotic addicted pts., the antagonist activity
+may provoke withdrawal Sx.
+
+buprenorphine subdermal implant
+buprenorphine subdermal implant and oxycodone both increase sedation. Avoid or
+Use Alternate Drug. Limit use to patients for whom alternative treatment options
+are inadequate
+
+buprenorphine transdermal
+buprenorphine transdermal and oxycodone both increase sedation. Avoid or Use
+Alternate Drug. Limit use to patients for whom alternative treatment options are
+inadequate
+
+buprenorphine, long-acting injection
+buprenorphine, long-acting injection and oxycodone both increase sedation. Avoid
+or Use Alternate Drug. Limit use to patients for whom alternative treatment options
+are inadequate
+
+butorphanol
+butorphanol, oxycodone. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Mixed opiate agonist/antagonists usually produce additive sedation with
+narcotics; however, in narcotic addicted pts., the antagonist activity may provoke
+withdrawal Sx.
+
+calcium/magnesium/potassium/sodium oxybates
+oxycodone, calcium/magnesium/potassium/sodium oxybates. Either increases
+effects of the other by pharmacodynamic synergism. Avoid or Use Alternate Drug.
+Profound sedation, respiratory depression, coma, and death may result if
+coadministered. Reserve concomitant prescribing of these drugs in patients for
+whom other treatment options are inadequate. Limit dosages and durations to the
+minimum required. Monitor closely for signs of respiratory depression and sedation.
+
+carbachol/brimonidine ophthalmic
+carbachol/brimonidine ophthalmic and oxycodone both increase sedation. Avoid or
+Use Alternate Drug. Limit use to patients for whom alternative treatment options
+are inadequate
+
+cariprazine
+cariprazine and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+cimetidine
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 8/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+cimetidine increases effects of oxycodone by decreasing metabolism. Avoid or Use
+Alternate Drug.
+
+clarithromycin
+clarithromycin increases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug. Oxycodone dose reduction may
+be warranted when coadministered with strong CYP3A4 inhibitors.
+
+clobazam
+clobazam and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+clonidine
+clonidine, oxycodone. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Coadministration enhances CNS
+depressant effects.
+
+clonidine and oxycodone both increase sedation. Avoid or Use Alternate Drug. Limit
+use to patients for whom alternative treatment options are inadequate
+
+conivaptan
+conivaptan increases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug. Oxycodone dose reduction may
+be warranted when coadministered with strong CYP3A4 inhibitors.
+
+desloratadine
+desloratadine and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+diazepam buccal
+diazepam buccal and oxycodone both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+diazepam buccal, oxycodone. Either increases toxicity of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Profound sedation,
+respiratory depression, coma, and death may result if coadministered. Reserve
+concomitant prescribing of these drugs in patients for whom other treatment
+options are inadequate. Limit dosages and durations to the minimum required.
+Monitor closely for signs of respiratory depression and sedation.
+
+diazepam intranasal
+diazepam intranasal, oxycodone. Either increases toxicity of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Profound sedation,
+respiratory depression, coma, and death may result if coadministered. Reserve
+concomitant prescribing of these drugs in patients for whom other treatment
+options are inadequate. Limit dosages and durations to the minimum required.
+Monitor closely for signs of respiratory depression and sedation.
+
+diazepam intranasal and oxycodone both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+eluxadoline
+oxycodone, eluxadoline. Either increases effects of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Avoid coadministration with other drugs
+that cause constipation. Increases risk for constipation related serious adverse
+reactions. .
+
+eszopiclone
+eszopiclone and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Additive CNS depression may lead to hypotension, profound sedation, respiratory
+depression, or coma
+
+fentanyl
+fentanyl, oxycodone. Either increases effects of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Coadministration with other CNS
+depressants, such as skeletal muscle relaxants, may cause respiratory depression,
+hypotension, profound sedation, coma, and/or death. Consider dose reduction of
+either or both agents to avoid serious adverse effects. Monitor for hypotension,
+respiratory depression, and profound sedation.
+
+fentanyl and oxycodone both increase sedation. Avoid or Use Alternate Drug. Limit
+use to patients for whom alternative treatment options are inadequate
+
+fentanyl intranasal
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 9/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+fentanyl intranasal, oxycodone. Either increases effects of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Coadministration with
+other CNS depressants, such as skeletal muscle relaxants, may cause respiratory
+depression, hypotension, profound sedation, coma, and/or death. Consider dose
+reduction of either or both agents to avoid serious adverse effects. Monitor for
+hypotension, respiratory depression, and profound sedation.
+
+fentanyl intranasal and oxycodone both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+fentanyl iontophoretic transdermal system
+fentanyl iontophoretic transdermal system and oxycodone both increase sedation.
+Avoid or Use Alternate Drug. Limit use to patients for whom alternative treatment
+options are inadequate
+
+fentanyl transdermal
+fentanyl transdermal, oxycodone. Either increases effects of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Coadministration with
+other CNS depressants, such as skeletal muscle relaxants, may cause respiratory
+depression, hypotension, profound sedation, coma, and/or death. Consider dose
+reduction of either or both agents to avoid serious adverse effects. Monitor for
+hypotension, respiratory depression, and profound sedation.
+
+fentanyl transdermal and oxycodone both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+fentanyl transmucosal
+fentanyl transmucosal, oxycodone. Either increases effects of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Coadministration with
+other CNS depressants, such as skeletal muscle relaxants, may cause respiratory
+depression, hypotension, profound sedation, coma, and/or death. Consider dose
+reduction of either or both agents to avoid serious adverse effects. Monitor for
+hypotension, respiratory depression, and profound sedation.
+
+fentanyl transmucosal and oxycodone both increase sedation. Avoid or Use
+Alternate Drug. Limit use to patients for whom alternative treatment options are
+inadequate
+
+fluoxetine
+oxycodone will increase the level or effect of fluoxetine by affecting hepatic enzyme
+CYP2D6 metabolism. Avoid or Use Alternate Drug. Opioids may enhance the
+serotonergic effects of SSRIs and increase risk for serotonergic syndrome
+
+fosamprenavir
+fosamprenavir increases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug. Oxycodone dose reduction may
+be warranted when coadministered with strong CYP3A4 inhibitors .
+
+gabapentin
+gabapentin and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+gabapentin enacarbil
+gabapentin enacarbil and oxycodone both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+grapefruit
+grapefruit will increase the level or effect of oxycodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+hydrocodone
+hydrocodone, oxycodone. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Profound sedation, respiratory depression,
+coma, and death may result if coadministered. Reserve concomitant prescribing of
+these drugs in patients for whom other treatment options are inadequate. Limit
+dosages and durations to the minimum required. Monitor closely for signs of
+respiratory depression and sedation.
+
+idelalisib
+idelalisib will increase the level or effect of oxycodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+Idelalisib is a strong CYP3A inhibitor; avoid coadministration with sensitive CYP3A
+substrates
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 10/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+imatinib
+imatinib increases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug. Oxycodone dose reduction may
+be warranted when coadministered with strong CYP3A4 inhibitors.
+
+isocarboxazid
+isocarboxazid increases toxicity of oxycodone by unknown mechanism. Avoid or
+Use Alternate Drug. Risk of hypotension, hyperpyrexia, somnolence, or death;
+separate by 14 d.
+
+isoniazid
+isoniazid increases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug. Oxycodone dose reduction may
+be warranted when coadministered with strong CYP3A4 inhibitors.
+
+ivosidenib
+ivosidenib will decrease the level or effect of oxycodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid
+coadministration of sensitive CYP3A4 substrates with ivosidenib or replace with
+alternative therapies. If coadministration is unavoidable, monitor patients for loss of
+therapeutic effect of these drugs.
+
+lamotrigine
+lamotrigine and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+larotrectinib
+larotrectinib will increase the level or effect of oxycodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+levetiracetam
+levetiracetam and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+levocetirizine
+levocetirizine and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+linezolid
+linezolid increases toxicity of oxycodone by unknown mechanism. Avoid or Use
+Alternate Drug. Risk of hypotension, hyperpyrexia, somnolence, or death; separate
+by 14 d.
+
+lopinavir
+lopinavir increases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug. Oxycodone dose reduction may
+be warranted when coadministered with strong CYP3A4 inhibitors.
+
+loratadine
+loratadine and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+lumefantrine
+lumefantrine will increase the level or effect of oxycodone by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+meclizine
+meclizine and oxycodone both increase sedation. Avoid or Use Alternate Drug. Limit
+use to patients for whom alternative treatment options are inadequate
+
+methohexital
+methohexital and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+methsuximide
+methsuximide and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+methylene blue
+methylene blue and oxycodone both increase serotonin levels. Avoid or Use
+Alternate Drug. If drug combination must be administered, monitor for evidence of
+serotonergic or opioid-related toxicities
+
+metoclopramide intranasal
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 11/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+oxycodone, metoclopramide intranasal. Either increases effects of the other by
+Other (see comment). Avoid or Use Alternate Drug. Comment: Avoid use of
+metoclopramide intranasal or interacting drug, depending on importance of drug to
+patient.
+
+molindone
+molindone and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+nalbuphine
+nalbuphine, oxycodone. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Mixed opiate agonist/antagonists usually produce additive sedation with
+narcotics; however, in narcotic addicted pts., the antagonist activity may provoke
+withdrawal Sx.
+
+nefazodone
+nefazodone increases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug. Oxycodone dose reduction may
+be warranted when coadministered with strong CYP3A4 inhibitors.
+
+nelfinavir
+nelfinavir increases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug. Oxycodone dose reduction may
+be warranted when coadministered with strong CYP3A4 inhibitors.
+
+nicardipine
+nicardipine increases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug. Oxycodone dose reduction may
+be warranted when coadministered with strong CYP3A4 inhibitors.
+
+nitrous oxide
+nitrous oxide and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+olopatadine intranasal
+oxycodone and olopatadine intranasal both increase sedation. Avoid or Use
+Alternate Drug. Coadministration increases risk of CNS depression, which can lead
+to additive impairment of psychomotor performance and cause daytime impairment.
+
+opicapone
+opicapone and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+ozanimod
+ozanimod and oxycodone both increase sympathetic (adrenergic) effects, including
+increased blood pressure and heart rate. Avoid or Use Alternate Drug. Because the
+active metabolite of ozanimod inhibits MAO-B in vitro, there is a potential for
+serious adverse reactions, including hypertensive crisis. Therefore, coadministration
+of ozanimod with drugs that can increase norepinephrine or serotonin is not
+recommended. Monitor for hypertension with concomitant use.
+
+paroxetine
+paroxetine will increase the level or effect of oxycodone by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+pentazocine
+pentazocine, oxycodone. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Mixed opiate agonist/antagonists usually produce additive sedation with
+narcotics; however, in narcotic addicted pts., the antagonist activity may provoke
+withdrawal Sx.
+
+phenelzine
+phenelzine increases toxicity of oxycodone by unknown mechanism. Avoid or Use
+Alternate Drug. Risk of hypotension, hyperpyrexia, somnolence, or death; separate
+by 14 d.
+
+posaconazole
+posaconazole increases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug. Oxycodone dose reduction may
+be warranted when coadministered with strong CYP3A4 inhibitors.
+
+prasugrel
+oxycodone will decrease the level or effect of prasugrel by inhibition of GI
+absorption. Applies only to oral form of both agents. Avoid or Use Alternate Drug.
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 12/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+Co-administration of opioid agonists delay and reduce absorption of prasugrel and
+its active metabolite presumably by slowing gastric emptying; consider the use of a
+parenteral anti-platelet agent in acute coronary syndrome patients requiring co-
+administration of opioid agonists
+
+procarbazine
+procarbazine increases toxicity of oxycodone by unknown mechanism. Avoid or Use
+Alternate Drug. MAOIs may potentiate CNS depression and hypotension. Do not
+use within 14 days of MAOI use. .
+
+pyrilamine
+pyrilamine and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+quinidine
+quinidine will increase the level or effect of oxycodone by affecting hepatic enzyme
+CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+quinidine increases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug. Oxycodone dose reduction may
+be warranted when coadministered with strong CYP3A4 inhibitors.
+
+ramelteon
+ramelteon and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Additive CNS depression may lead to hypotension, profound sedation, respiratory
+depression, or coma
+
+rasagiline
+rasagiline increases toxicity of oxycodone by unknown mechanism. Avoid or Use
+Alternate Drug. May cause additive CNS depression, drowsiness, dizziness or
+hypotension, so use with MAOIs should be cautious; lower initial dosages of the
+analgesic are recommended followed by careful titration. Avoid combination within
+14 days of MAOI use.
+
+remifentanil
+remifentanil and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+ritonavir
+ritonavir increases levels of oxycodone by affecting hepatic enzyme CYP2D6
+metabolism. Avoid or Use Alternate Drug. Oxycodone dose reduction may be
+warranted when coadministered with strong CYP3A4 inhibitors.
+
+ritonavir increases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug. Oxycodone dose reduction may
+be warranted when coadministered with strong CYP3A4 inhibitors.
+
+scopolamine
+scopolamine and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+scopolamine intranasal
+scopolamine intranasal and oxycodone both increase sedation. Avoid or Use
+Alternate Drug. Limit use to patients for whom alternative treatment options are
+inadequate
+
+selegiline transdermal
+selegiline transdermal increases toxicity of oxycodone by unknown mechanism.
+Avoid or Use Alternate Drug. Risk of hypotension, hyperpyrexia, somnolence, or
+death.
+
+selinexor
+selinexor, oxycodone. unspecified interaction mechanism. Avoid or Use Alternate
+Drug. Patients treated with selinexor may experience neurological toxicities. Avoid
+taking selinexor with other medications that may cause dizziness or confusion.
+
+sodium oxybate
+oxycodone, sodium oxybate. Either increases effects of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Profound sedation,
+respiratory depression, coma, and death may result if coadministered. Reserve
+concomitant prescribing of these drugs in patients for whom other treatment
+options are inadequate. Limit dosages and durations to the minimum required.
+Monitor closely for signs of respiratory depression and sedation.
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 13/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+sodium oxybate and oxycodone both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+sufentanil SL
+sufentanil SL, oxycodone. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Coadministration may result in
+hypotension, profound sedation, respiratory depression, coma, and death. Reserve
+concomitant prescribing of these drugs in patients for whom other treatment
+options are inadequate. Limit dosages and durations to the minimum required.
+Monitor closely for signs of respiratory depression and sedation.
+
+suvorexant
+suvorexant and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Additive CNS depression may lead to hypotension, profound sedation, respiratory
+depression, or coma
+
+tasimelteon
+tasimelteon and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Additive CNS depression may lead to hypotension, profound sedation, respiratory
+depression, or coma
+
+tetrabenazine
+tetrabenazine and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+thalidomide
+thalidomide and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+ticagrelor
+oxycodone will decrease the level or effect of ticagrelor by inhibition of GI
+absorption. Applies only to oral form of both agents. Avoid or Use Alternate Drug.
+Co-administration of opioid agonists delay and reduce absorption of ticagrelor and
+its active metabolite presumably by slowing gastric emptying; consider the use of a
+parenteral anti-platelet agent in acute coronary syndrome patients requiring co-
+administration of opioid agonists
+
+tipranavir
+tipranavir increases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug. Oxycodone dose reduction may
+be warranted when coadministered with strong CYP3A4 inhibitors.
+
+tizanidine
+tizanidine and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+tolcapone
+tolcapone and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+tramadol
+tramadol, oxycodone. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tramadol may reinitiate opiate dependence in pts. previously addicted to
+other opiates; it may also provoke withdrawal Sx. in pts. who are currently opiate
+dependent.
+
+tranylcypromine
+tranylcypromine increases toxicity of oxycodone by unknown mechanism. Avoid or
+Use Alternate Drug. Risk of hypotension, hyperpyrexia, somnolence, or death;
+separate by 14 d.
+
+tucatinib
+tucatinib will increase the level or effect of oxycodone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid concomitant use
+of tucatinib with CYP3A substrates, where minimal concentration changes may lead
+to serious or life-threatening toxicities. If unavoidable, reduce CYP3A substrate
+dose according to product labeling.
+
+valerian
+valerian and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+
+valproic acid
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 14/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+valproic acid and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+vigabatrin
+vigabatrin and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+voriconazole
+voriconazole increases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug. Oxycodone dose reduction may
+be warranted when coadministered with strong CYP3A4 inhibitors.
+
+zaleplon
+zaleplon and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Additive CNS depression may lead to hypotension, profound sedation, respiratory
+depression, or coma
+
+zolpidem
+zolpidem and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Additive CNS depression may lead to hypotension, profound sedation, respiratory
+depression, or coma
+
+zuranolone
+oxycodone, zuranolone. Either increases effects of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Coadministration of zuranolone with other
+CNS depressants may increase impairment of psychomotor performance or CNS
+depressant effects. If unavoidable, consider dose reduction. .
+
+zuranolone and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+Monitor Closely (260)
+
+alfentanil
+alfentanil and oxycodone both increase sedation. Use Caution/Monitor.
+
+alprazolam
+alprazolam and oxycodone both increase sedation. Use Caution/Monitor.
+
+amiodarone
+amiodarone will increase the level or effect of oxycodone by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+amitriptyline
+oxycodone and amitriptyline both increase sedation. Use Caution/Monitor.
+
+amoxapine
+oxycodone and amoxapine both increase sedation. Use Caution/Monitor.
+
+amphetamine
+oxycodone increases and amphetamine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+apomorphine
+oxycodone and apomorphine both increase sedation. Use Caution/Monitor.
+
+aripiprazole
+oxycodone and aripiprazole both increase sedation. Use Caution/Monitor.
+
+armodafinil
+oxycodone increases and armodafinil decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+asenapine
+asenapine will increase the level or effect of oxycodone by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+atracurium
+oxycodone increases effects of atracurium by unspecified interaction mechanism.
+Modify Therapy/Monitor Closely. Oxycodone may enhance the neuromuscular
+blocking action of true skeletal muscle relaxants and produce an increased degree
+of respiratory depression.
+
+azelastine
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 15/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+azelastine and oxycodone both increase sedation. Use Caution/Monitor.
+
+baclofen
+baclofen and oxycodone both increase sedation. Use Caution/Monitor.
+
+belladonna and opium
+belladonna and opium and oxycodone both increase sedation. Use Caution/Monitor.
+
+benperidol
+oxycodone and benperidol both increase sedation. Use Caution/Monitor.
+
+benzphetamine
+oxycodone increases and benzphetamine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+bosentan
+bosentan decreases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+
+brexanolone
+brexanolone, oxycodone. Either increases toxicity of the other by sedation. Use
+Caution/Monitor.
+
+brompheniramine
+brompheniramine and oxycodone both increase sedation. Use Caution/Monitor.
+
+buprenorphine
+buprenorphine and oxycodone both increase sedation. Use Caution/Monitor.
+
+buprenorphine buccal
+buprenorphine buccal and oxycodone both increase sedation. Use Caution/Monitor.
+
+buprenorphine, long-acting injection
+oxycodone increases toxicity of buprenorphine, long-acting injection by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+buprenorphine and benzodiazepines or other CNS depressants increases risk of
+adverse reactions including overdose, respiratory depression, and death. Cessation
+of benzodiazepines or other CNS depressants is preferred in most cases. In some
+cases, monitoring at a higher level of care for tapering CNS depressants may be
+appropriate. In others, gradually tapering a patient off of a prescribed
+benzodiazepine or other CNS depressant or decreasing to the lowest effective dose
+may be appropriate.
+
+bupropion
+bupropion will increase the level or effect of oxycodone by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+butalbital
+butalbital and oxycodone both increase sedation. Use Caution/Monitor.
+
+butorphanol
+butorphanol and oxycodone both increase sedation. Use Caution/Monitor.
+
+caffeine
+oxycodone increases and caffeine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+carbamazepine
+carbamazepine decreases levels of oxycodone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+carbinoxamine
+carbinoxamine and oxycodone both increase sedation. Use Caution/Monitor.
+
+carisoprodol
+carisoprodol and oxycodone both increase sedation. Use Caution/Monitor.
+
+celecoxib
+celecoxib will increase the level or effect of oxycodone by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+cenobamate
+cenobamate will decrease the level or effect of oxycodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 16/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+Increase dose of CYP3A4 substrate, as needed, when coadministered with
+cenobamate.
+
+cenobamate, oxycodone. Either increases effects of the other by sedation. Use
+Caution/Monitor.
+
+ceritinib
+ceritinib will increase the level or effect of oxycodone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+chloramphenicol
+chloramphenicol will increase the level or effect of oxycodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+chlordiazepoxide
+chlordiazepoxide and oxycodone both increase sedation. Use Caution/Monitor.
+
+chloroquine
+chloroquine will increase the level or effect of oxycodone by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+chlorpheniramine
+chlorpheniramine and oxycodone both increase sedation. Use Caution/Monitor.
+
+chlorpromazine
+oxycodone and chlorpromazine both increase sedation. Use Caution/Monitor.
+
+chlorzoxazone
+chlorzoxazone and oxycodone both increase sedation. Use Caution/Monitor.
+
+cimetidine
+cimetidine will increase the level or effect of oxycodone by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+cinnarizine
+cinnarizine and oxycodone both increase sedation. Use Caution/Monitor.
+
+cisatracurium
+oxycodone increases effects of cisatracurium by unspecified interaction mechanism.
+Modify Therapy/Monitor Closely. Oxycodone may enhance the neuromuscular
+blocking action of true skeletal muscle relaxants and produce an increased degree
+of respiratory depression.
+
+citalopram
+oxycodone increases effects of citalopram by pharmacodynamic synergism. Modify
+Therapy/Monitor Closely. Opioids may enhance the serotonergic effects of SSRIs
+and increase risk for serotonergic syndrome.
+
+clemastine
+clemastine and oxycodone both increase sedation. Use Caution/Monitor.
+
+clobazam
+oxycodone, clobazam. Other (see comment). Use Caution/Monitor. Comment:
+Concomitant administration can increase the potential for CNS effects (e.g.,
+increased sedation or respiratory depression).
+
+clomipramine
+oxycodone and clomipramine both increase sedation. Use Caution/Monitor.
+
+clonazepam
+clonazepam and oxycodone both increase sedation. Use Caution/Monitor.
+
+clorazepate
+clorazepate and oxycodone both increase sedation. Use Caution/Monitor.
+
+clozapine
+oxycodone and clozapine both increase sedation. Use Caution/Monitor.
+
+cobicistat
+cobicistat will increase the level or effect of oxycodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely. If
+coadministration of CYP3A4 inhibitors with fentanyl is necessary, monitor for
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 17/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+respiratory depression and sedation at frequent intervals and consider fentanyl
+dose adjustments until stable drug effects are achieved.
+
+codeine
+codeine and oxycodone both increase sedation. Use Caution/Monitor.
+
+crizotinib
+crizotinib increases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Dose reduction may be needed for
+coadministered drugs that are predominantly metabolized by CYP3A.
+
+crofelemer
+crofelemer increases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Crofelemer has the potential to inhibit
+CYP3A4 at concentrations expected in the gut; unlikely to inhibit systemically
+because minimally absorbed.
+
+cyclobenzaprine
+cyclobenzaprine and oxycodone both increase sedation. Use Caution/Monitor.
+
+cyproheptadine
+cyproheptadine and oxycodone both increase sedation. Use Caution/Monitor.
+
+dabrafenib
+dabrafenib decreases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+
+danazol
+danazol will increase the level or effect of oxycodone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+dantrolene
+dantrolene and oxycodone both increase sedation. Use Caution/Monitor.
+
+daridorexant
+oxycodone and daridorexant both increase sedation. Modify Therapy/Monitor
+Closely. Coadministration increases risk of CNS depression, which can lead to
+additive impairment of psychomotor performance and cause daytime impairment.
+
+darifenacin
+darifenacin will increase the level or effect of oxycodone by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+darunavir
+darunavir increases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Modify Therapy/Monitor Closely. Oxycodone dose reduction
+may be warranted when coadministered with strong CYP3A4 inhibitors.
+
+desflurane
+desflurane and oxycodone both increase sedation. Use Caution/Monitor. Opioids
+may decrease MAC requirements, less inhalation anesthetic may be required.
+
+desipramine
+oxycodone and desipramine both increase sedation. Use Caution/Monitor.
+
+desvenlafaxine
+desvenlafaxine will increase the level or effect of oxycodone by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor. Desvenlafaxine inhibits
+CYP2D6; with higher desvenlafaxine doses (ie, 400 mg) decrease the CYP2D6
+substrate dose by up to 50%; no dosage adjustment needed with desvenlafaxine
+doses <100 mg
+
+deutetrabenazine
+oxycodone and deutetrabenazine both increase sedation. Use Caution/Monitor.
+
+dexamethasone
+dexamethasone decreases levels of oxycodone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+dexbrompheniramine
+dexbrompheniramine and oxycodone both increase sedation. Use Caution/Monitor.
+
+dexchlorpheniramine
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 18/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+dexchlorpheniramine and oxycodone both increase sedation. Use Caution/Monitor.
+
+dexfenfluramine
+oxycodone increases and dexfenfluramine decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+dexmedetomidine
+dexmedetomidine and oxycodone both increase sedation. Use Caution/Monitor.
+
+dexmethylphenidate
+oxycodone increases and dexmethylphenidate decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+dextroamphetamine
+oxycodone increases and dextroamphetamine decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+dextromoramide
+dextromoramide and oxycodone both increase sedation. Use Caution/Monitor.
+
+diamorphine
+diamorphine and oxycodone both increase sedation. Use Caution/Monitor.
+
+diazepam
+diazepam and oxycodone both increase sedation. Use Caution/Monitor.
+
+dichlorphenamide
+dichlorphenamide, oxycodone. Either increases toxicity of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Both drugs can
+cause metabolic acidosis.
+
+diethylpropion
+oxycodone increases and diethylpropion decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+difelikefalin
+difelikefalin and oxycodone both increase sedation. Use Caution/Monitor.
+
+difenoxin hcl
+difenoxin hcl and oxycodone both increase sedation. Use Caution/Monitor.
+
+diltiazem
+diltiazem will increase the level or effect of oxycodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+dimenhydrinate
+dimenhydrinate and oxycodone both increase sedation. Use Caution/Monitor.
+
+diphenhydramine
+diphenhydramine will increase the level or effect of oxycodone by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+diphenhydramine and oxycodone both increase sedation. Use Caution/Monitor.
+
+diphenoxylate hcl
+diphenoxylate hcl and oxycodone both increase sedation. Use Caution/Monitor.
+
+dipipanone
+dipipanone and oxycodone both increase sedation. Use Caution/Monitor.
+
+dobutamine
+oxycodone increases and dobutamine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+dopamine
+oxycodone increases and dopamine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+dopexamine
+oxycodone increases and dopexamine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+dosulepin
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 19/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+oxycodone and dosulepin both increase sedation. Use Caution/Monitor.
+
+doxepin
+oxycodone and doxepin both increase sedation. Use Caution/Monitor.
+
+doxylamine
+doxylamine and oxycodone both increase sedation. Use Caution/Monitor.
+
+dronedarone
+dronedarone will increase the level or effect of oxycodone by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+droperidol
+oxycodone and droperidol both increase sedation. Use Caution/Monitor.
+
+duloxetine
+duloxetine will increase the level or effect of oxycodone by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+duvelisib
+duvelisib will increase the level or effect of oxycodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Coadministration with duvelisib increases AUC of a sensitive CYP3A4 substrate
+which may increase the risk of toxicities of these drugs. Consider reducing the dose
+of the sensitive CYP3A4 substrate and monitor for signs of toxicities of the
+coadministered sensitive CYP3A substrate.
+
+efavirenz
+efavirenz decreases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+
+elagolix
+elagolix decreases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Modify Therapy/Monitor Closely. Elagolix is a weak-to-
+moderate CYP3A4 inducer. Monitor CYP3A substrates if coadministered. Consider
+increasing CYP3A substrate dose if needed.
+
+eltrombopag
+eltrombopag increases levels of oxycodone by decreasing metabolism. Use
+Caution/Monitor. UGT inhibition; significance of interaction unclear.
+
+elvitegravir/cobicistat/emtricitabine/tenofovir DF
+elvitegravir/cobicistat/emtricitabine/tenofovir DF increases levels of oxycodone by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor
+Closely. Cobicistat is a CYP3A4 inhibitor; contraindicated with CYP3A4 substrates
+for which elevated plasma concentrations are associated with serious and/or life-
+threatening events.
+
+encorafenib
+encorafenib, oxycodone. affecting hepatic/intestinal enzyme CYP3A4 metabolism.
+Use Caution/Monitor. Encorafenib both inhibits and induces CYP3A4 at clinically
+relevant plasma concentrations. Coadministration of encorafenib with sensitive
+CYP3A4 substrates may result in increased toxicity or decreased efficacy of these
+agents.
+
+enzalutamide
+enzalutamide decreases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+
+ephedrine
+oxycodone increases and ephedrine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+epinephrine
+oxycodone increases and epinephrine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+epinephrine racemic
+oxycodone increases and epinephrine racemic decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+escitalopram
+oxycodone increases effects of escitalopram by pharmacodynamic synergism.
+Modify Therapy/Monitor Closely. Opioids may enhance the serotonergic effects of
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 20/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+SSRIs and increase risk for serotonergic syndrome.
+
+esketamine intranasal
+esketamine intranasal, oxycodone. Either increases toxicity of the other by sedation.
+Modify Therapy/Monitor Closely.
+
+eslicarbazepine acetate
+eslicarbazepine acetate will decrease the level or effect of oxycodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+estazolam
+estazolam and oxycodone both increase sedation. Use Caution/Monitor.
+
+ethanol
+oxycodone and ethanol both increase sedation. Use Caution/Monitor.
+
+etomidate
+etomidate and oxycodone both increase sedation. Use Caution/Monitor.
+
+etravirine
+etravirine decreases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+
+fedratinib
+fedratinib will increase the level or effect of oxycodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Adjust dose
+of drugs that are CYP3A4 substrates as necessary.
+
+fenfluramine
+oxycodone increases and fenfluramine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+flibanserin
+oxycodone and flibanserin both increase sedation. Modify Therapy/Monitor Closely.
+Risk for sedation increased if flibanserin is coadministration with other CNS
+depressants.
+
+fluphenazine
+oxycodone and fluphenazine both increase sedation. Use Caution/Monitor.
+
+flurazepam
+flurazepam and oxycodone both increase sedation. Use Caution/Monitor.
+
+fluvoxamine
+fluvoxamine and oxycodone both increase serotonin levels. Use Caution/Monitor.
+
+fosphenytoin
+fosphenytoin decreases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+
+gabapentin
+gabapentin, oxycodone. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+gabapentin enacarbil
+gabapentin enacarbil, oxycodone. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+ganaxolone
+oxycodone and ganaxolone both increase sedation. Use Caution/Monitor.
+
+glycopyrrolate
+glycopyrrolate, oxycodone. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Concomitant use may increase
+the risk for severe constipation, paralytic ileus, or urinary retention.
+
+guanfacine
+guanfacine and oxycodone both increase sedation. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 21/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+haloperidol
+haloperidol will increase the level or effect of oxycodone by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+oxycodone and haloperidol both increase sedation. Use Caution/Monitor.
+
+hydromorphone
+hydromorphone and oxycodone both increase sedation. Use Caution/Monitor.
+
+hydroxyzine
+hydroxyzine and oxycodone both increase sedation. Use Caution/Monitor.
+
+imatinib
+imatinib will increase the level or effect of oxycodone by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+imipramine
+oxycodone and imipramine both increase sedation. Use Caution/Monitor.
+
+isoproterenol
+oxycodone increases and isoproterenol decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+istradefylline
+istradefylline will increase the level or effect of oxycodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Istradefylline
+40 mg/day increased peak levels and AUC of CYP3A4 substrates in clinical trials.
+This effect was not observed with istradefylline 20 mg/day. Consider dose reduction
+of sensitive CYP3A4 substrates.
+
+itraconazole
+itraconazole increases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Modify Therapy/Monitor Closely. Oxycodone dose reduction
+may be warranted when coadministered with strong CYP3A4 inhibitors.
+
+ketamine
+ketamine and oxycodone both increase sedation. Use Caution/Monitor.
+
+ketoconazole
+ketoconazole increases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Modify Therapy/Monitor Closely. Oxycodone dose reduction
+may be warranted when coadministered with strong CYP3A4 inhibitors.
+
+ketotifen, ophthalmic
+oxycodone and ketotifen, ophthalmic both increase sedation. Use Caution/Monitor.
+
+lemborexant
+lemborexant, oxycodone. Either increases effects of the other by sedation. Modify
+Therapy/Monitor Closely. Dosage adjustment may be necessary if lemborexant is
+coadministered with other CNS depressants because of potentially additive effects.
+
+lenacapavir
+lenacapavir will increase the level or effect of oxycodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Careful monitoring of therapeutic effects
+
+letermovir
+letermovir increases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+
+levoketoconazole
+levoketoconazole increases levels of oxycodone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely. Oxycodone dose
+reduction may be warranted when coadministered with strong CYP3A4 inhibitors.
+
+levorphanol
+levorphanol and oxycodone both increase sedation. Use Caution/Monitor.
+
+lisdexamfetamine
+oxycodone increases and lisdexamfetamine decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+lofepramine
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 22/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+oxycodone and lofepramine both increase sedation. Use Caution/Monitor.
+
+lofexidine
+oxycodone and lofexidine both increase sedation. Use Caution/Monitor.
+
+loprazolam
+loprazolam and oxycodone both increase sedation. Use Caution/Monitor.
+
+lorazepam
+lorazepam and oxycodone both increase sedation. Use Caution/Monitor.
+
+lorlatinib
+lorlatinib will decrease the level or effect of oxycodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+lormetazepam
+lormetazepam and oxycodone both increase sedation. Use Caution/Monitor.
+
+loxapine
+oxycodone and loxapine both increase sedation. Use Caution/Monitor.
+
+loxapine inhaled
+oxycodone and loxapine inhaled both increase sedation. Use Caution/Monitor.
+
+lumateperone
+lumateperone and oxycodone both increase sedation. Use Caution/Monitor.
+
+lurasidone
+lurasidone, oxycodone. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: Potential for increased CNS depressant
+effects when used concurrently; monitor for increased adverse effects and toxicity.
+
+lurasidone and oxycodone both increase sedation. Use Caution/Monitor.
+
+maraviroc
+maraviroc will increase the level or effect of oxycodone by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+marijuana
+marijuana will increase the level or effect of oxycodone by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+oxycodone and marijuana both increase sedation. Use Caution/Monitor.
+
+melatonin
+oxycodone and melatonin both increase sedation. Use Caution/Monitor.
+
+meperidine
+meperidine and oxycodone both increase sedation. Use Caution/Monitor.
+
+meprobamate
+oxycodone and meprobamate both increase sedation. Use Caution/Monitor.
+
+metaproterenol
+oxycodone increases and metaproterenol decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+metaxalone
+metaxalone and oxycodone both increase sedation. Use Caution/Monitor.
+
+methadone
+methadone and oxycodone both increase sedation. Use Caution/Monitor.
+
+methamphetamine
+oxycodone increases and methamphetamine decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+methocarbamol
+methocarbamol and oxycodone both increase sedation. Use Caution/Monitor.
+
+methylenedioxymethamphetamine
+oxycodone increases and methylenedioxymethamphetamine decreases sedation.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 23/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+midazolam
+midazolam and oxycodone both increase sedation. Use Caution/Monitor.
+
+midazolam intranasal
+midazolam intranasal, oxycodone. Either increases toxicity of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Concomitant use of
+barbiturates, alcohol, or other CNS depressants may increase the risk of
+hypoventilation, airway obstruction, desaturation, or apnea and may contribute to
+profound and/or prolonged drug effect.
+
+midodrine
+oxycodone increases and midodrine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+mifepristone
+mifepristone will increase the level or effect of oxycodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+mirtazapine
+oxycodone and mirtazapine both increase sedation. Use Caution/Monitor.
+
+mitotane
+mitotane decreases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+
+modafinil
+oxycodone increases and modafinil decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+morphine
+morphine and oxycodone both increase sedation. Use Caution/Monitor.
+
+motherwort
+oxycodone and motherwort both increase sedation. Use Caution/Monitor.
+
+moxonidine
+oxycodone and moxonidine both increase sedation. Use Caution/Monitor.
+
+nabilone
+oxycodone and nabilone both increase sedation. Use Caution/Monitor.
+
+nafcillin
+nafcillin decreases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+
+nalbuphine
+nalbuphine and oxycodone both increase sedation. Use Caution/Monitor.
+
+nevirapine
+nevirapine decreases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+
+nilotinib
+nilotinib will increase the level or effect of oxycodone by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+nirmatrelvir/ritonavir
+nirmatrelvir/ritonavir will increase the level or effect of oxycodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Careful monitoring of oxycodone therapeutic and adverse effects (including
+potentially fatal respiratory depression) recommended when coadministered.
+Reduce oxycodone dose if necessary.
+
+norepinephrine
+oxycodone increases and norepinephrine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+nortriptyline
+oxycodone and nortriptyline both increase sedation. Use Caution/Monitor.
+
+olanzapine
+oxycodone and olanzapine both increase sedation. Use Caution/Monitor.
+
+opium tincture
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 24/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+opium tincture and oxycodone both increase sedation. Use Caution/Monitor.
+
+orphenadrine
+orphenadrine and oxycodone both increase sedation. Use Caution/Monitor.
+
+oxazepam
+oxazepam and oxycodone both increase sedation. Use Caution/Monitor.
+
+oxcarbazepine
+oxcarbazepine decreases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+
+oxymorphone
+oxycodone and oxymorphone both increase sedation. Use Caution/Monitor.
+
+paliperidone
+oxycodone and paliperidone both increase sedation. Use Caution/Monitor.
+
+pancuronium
+oxycodone increases effects of pancuronium by unspecified interaction mechanism.
+Modify Therapy/Monitor Closely. Oxycodone may enhance the neuromuscular
+blocking action of true skeletal muscle relaxants and produce an increased degree
+of respiratory depression.
+
+papaveretum
+oxycodone and papaveretum both increase sedation. Use Caution/Monitor.
+
+papaverine
+oxycodone and papaverine both increase sedation. Use Caution/Monitor.
+
+parecoxib
+parecoxib will increase the level or effect of oxycodone by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+paroxetine
+oxycodone increases effects of paroxetine by pharmacodynamic synergism. Modify
+Therapy/Monitor Closely. Opioids may enhance the serotonergic effects of SSRIs
+and increase risk for serotonergic syndrome.
+
+pegvisomant
+oxycodone decreases effects of pegvisomant by unknown mechanism. Use
+Caution/Monitor.
+
+pentazocine
+oxycodone and pentazocine both increase sedation. Use Caution/Monitor.
+
+pentobarbital
+pentobarbital and oxycodone both increase sedation. Use Caution/Monitor.
+
+pentobarbital decreases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+
+perampanel
+perampanel and oxycodone both decrease sedation. Use Caution/Monitor.
+
+perphenazine
+perphenazine will increase the level or effect of oxycodone by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+oxycodone and perphenazine both increase sedation. Use Caution/Monitor.
+
+phendimetrazine
+oxycodone increases and phendimetrazine decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+phenobarbital
+phenobarbital and oxycodone both increase sedation. Use Caution/Monitor.
+
+phenobarbital decreases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+
+phentermine
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 25/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+oxycodone increases and phentermine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+phenylephrine
+oxycodone increases and phenylephrine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+phenylephrine PO
+oxycodone increases and phenylephrine PO decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor. .
+
+phenytoin
+phenytoin decreases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+
+pholcodine
+oxycodone and pholcodine both increase sedation. Use Caution/Monitor.
+
+pimozide
+oxycodone and pimozide both increase sedation. Use Caution/Monitor.
+
+pirbuterol
+oxycodone increases and pirbuterol decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+pregabalin
+pregabalin, oxycodone. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+primidone
+primidone and oxycodone both increase sedation. Use Caution/Monitor.
+
+primidone decreases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+
+prochlorperazine
+oxycodone and prochlorperazine both increase sedation. Use Caution/Monitor.
+
+promethazine
+promethazine and oxycodone both increase sedation. Use Caution/Monitor.
+
+propafenone
+propafenone will increase the level or effect of oxycodone by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+propofol
+propofol and oxycodone both increase sedation. Use Caution/Monitor.
+
+propylhexedrine
+oxycodone increases and propylhexedrine decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+protriptyline
+oxycodone and protriptyline both increase sedation. Use Caution/Monitor.
+
+quazepam
+quazepam and oxycodone both increase sedation. Use Caution/Monitor.
+
+quetiapine
+oxycodone and quetiapine both increase sedation. Use Caution/Monitor.
+
+quinacrine
+quinacrine will increase the level or effect of oxycodone by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+quinidine
+quinidine decreases effects of oxycodone by decreasing metabolism. Use
+Caution/Monitor. Decreased conversion of hydrocodone to active metabolite
+morphine.
+
+ramelteon
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 26/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+oxycodone and ramelteon both increase sedation. Use Caution/Monitor.
+
+ranolazine
+ranolazine will increase the level or effect of oxycodone by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+remimazolam
+remimazolam, oxycodone. Either increases toxicity of the other by sedation. Modify
+Therapy/Monitor Closely. Coadministration may result in profound sedation,
+respiratory depression, coma, and/or death. Continuously monitor vital signs during
+sedation and recovery period if coadministered. Carefully titrate remimazolam dose
+if administered with opioid analgesics and/or sedative/hypnotics.
+
+ribociclib
+ribociclib will increase the level or effect of oxycodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+rifabutin
+rifabutin decreases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+
+rifampin
+rifampin decreases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+
+rifapentine
+rifapentine decreases levels of oxycodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+
+rilzabrutinib
+rilzabrutinib will increase the level or effect of oxycodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Follow
+substrate recommendations for use with moderate CYP3A inhibitors
+
+risperidone
+oxycodone and risperidone both increase sedation. Use Caution/Monitor.
+
+rocuronium
+oxycodone increases effects of rocuronium by unspecified interaction mechanism.
+Modify Therapy/Monitor Closely. Oxycodone may enhance the neuromuscular
+blocking action of true skeletal muscle relaxants and produce an increased degree
+of respiratory depression.
+
+rucaparib
+rucaparib will increase the level or effect of oxycodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+salmeterol
+oxycodone increases and salmeterol decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+scullcap
+oxycodone and scullcap both increase sedation. Use Caution/Monitor.
+
+selegiline
+selegiline increases toxicity of oxycodone by unknown mechanism. Modify
+Therapy/Monitor Closely. Potential for increased CNS depression, drowsiness,
+dizziness or hypotension, so use with any MAOI should be cautious.
+
+sertraline
+sertraline will increase the level or effect of oxycodone by affecting hepatic enzyme
+CYP2B6 metabolism. Use Caution/Monitor.
+
+oxycodone increases effects of sertraline by pharmacodynamic synergism. Modify
+Therapy/Monitor Closely. Opioids may enhance the serotonergic effects of SSRIs
+and increase risk for serotonergic syndrome.
+
+sevoflurane
+sevoflurane and oxycodone both increase sedation. Use Caution/Monitor.
+
+shepherd's purse
+oxycodone and shepherd's purse both increase sedation. Use Caution/Monitor.
+
+St John's Wort
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 27/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+St John's Wort decreases levels of oxycodone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+stiripentol
+stiripentol, oxycodone. affecting hepatic/intestinal enzyme CYP3A4 metabolism.
+Modify Therapy/Monitor Closely. Stiripentol is a CYP3A4 inhibitor and inducer.
+Monitor CYP3A4 substrates coadministered with stiripentol for increased or
+decreased effects. CYP3A4 substrates may require dosage adjustment.
+
+stiripentol, oxycodone. Either increases effects of the other by sedation. Use
+Caution/Monitor. Concomitant use stiripentol with other CNS depressants, including
+alcohol, may increase the risk of sedation and somnolence.
+
+succinylcholine
+oxycodone increases effects of succinylcholine by unspecified interaction
+mechanism. Modify Therapy/Monitor Closely. Oxycodone may enhance the
+neuromuscular blocking action of true skeletal muscle relaxants and produce an
+increased degree of respiratory depression.
+
+sufentanil
+oxycodone and sufentanil both increase sedation. Use Caution/Monitor.
+
+tapentadol
+oxycodone and tapentadol both increase sedation. Use Caution/Monitor.
+
+tecovirimat
+tecovirimat will decrease the level or effect of oxycodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Tecovirimat is
+a weak CYP3A4 inducer. Monitor sensitive CYP3A4 substrates for effectiveness if
+coadministered.
+
+temazepam
+temazepam and oxycodone both increase sedation. Use Caution/Monitor.
+
+terbutaline
+oxycodone increases and terbutaline decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+thioridazine
+thioridazine will increase the level or effect of oxycodone by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+oxycodone and thioridazine both increase sedation. Use Caution/Monitor.
+
+thiothixene
+oxycodone and thiothixene both increase sedation. Use Caution/Monitor.
+
+tiagabine
+tiagabine and oxycodone both increase sedation. Use Caution/Monitor.
+
+tipranavir
+tipranavir will increase the level or effect of oxycodone by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+topiramate
+oxycodone and topiramate both increase sedation. Modify Therapy/Monitor Closely.
+
+tramadol
+oxycodone and tramadol both increase sedation. Use Caution/Monitor.
+
+trazodone
+oxycodone and trazodone both increase sedation. Use Caution/Monitor.
+
+triazolam
+triazolam and oxycodone both increase sedation. Use Caution/Monitor.
+
+triclofos
+triclofos and oxycodone both increase sedation. Use Caution/Monitor.
+
+trifluoperazine
+oxycodone and trifluoperazine both increase sedation. Use Caution/Monitor.
+
+trimipramine
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 28/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+oxycodone and trimipramine both increase sedation. Use Caution/Monitor.
+
+triprolidine
+triprolidine and oxycodone both increase sedation. Use Caution/Monitor.
+
+vecuronium
+oxycodone increases effects of vecuronium by unspecified interaction mechanism.
+Modify Therapy/Monitor Closely. Oxycodone may enhance the neuromuscular
+blocking action of true skeletal muscle relaxants and produce an increased degree
+of respiratory depression.
+
+venlafaxine
+venlafaxine will increase the level or effect of oxycodone by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+vilazodone
+oxycodone increases effects of vilazodone by pharmacodynamic synergism. Modify
+Therapy/Monitor Closely. Opioids may enhance the serotonergic effects of SSRIs
+and increase risk for serotonergic syndrome.
+
+xylometazoline
+oxycodone increases and xylometazoline decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+yohimbine
+oxycodone increases and yohimbine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+ziconotide
+oxycodone and ziconotide both increase sedation. Use Caution/Monitor.
+
+ziprasidone
+oxycodone and ziprasidone both increase sedation. Use Caution/Monitor.
+
+zotepine
+oxycodone and zotepine both increase sedation. Use Caution/Monitor.
+
+Minor (22)
+
+acetazolamide
+acetazolamide will increase the level or effect of oxycodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+amiodarone
+amiodarone decreases effects of oxycodone by decreasing metabolism.
+Minor/Significance Unknown. Decreased conversion of oxycodone to active
+metabolite morphine.
+
+amphetamine
+amphetamine increases effects of oxycodone by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+anastrozole
+anastrozole will increase the level or effect of oxycodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+celecoxib
+celecoxib decreases effects of oxycodone by decreasing metabolism.
+Minor/Significance Unknown. Decreased conversion of oxycodone to active
+metabolite morphine.
+
+chloroquine
+chloroquine decreases effects of oxycodone by decreasing metabolism.
+Minor/Significance Unknown. Decreased conversion of oxycodone to active
+metabolite morphine.
+
+cyclophosphamide
+cyclophosphamide will increase the level or effect of oxycodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+dextroamphetamine
+dextroamphetamine increases effects of oxycodone by unspecified interaction
+mechanism. Minor/Significance Unknown.
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 29/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+diphenhydramine
+diphenhydramine decreases effects of oxycodone by decreasing metabolism.
+Minor/Significance Unknown. Decreased conversion of oxycodone to active
+metabolite morphine.
+
+drospirenone
+drospirenone will increase the level or effect of oxycodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+eucalyptus
+oxycodone and eucalyptus both increase sedation. Minor/Significance Unknown.
+
+haloperidol
+haloperidol decreases effects of oxycodone by decreasing metabolism.
+Minor/Significance Unknown. Decreased conversion of oxycodone to active
+metabolite morphine.
+
+imatinib
+imatinib decreases effects of oxycodone by decreasing metabolism.
+Minor/Significance Unknown. Decreased conversion of oxycodone to active
+metabolite morphine.
+
+lidocaine
+lidocaine increases toxicity of oxycodone by pharmacodynamic synergism.
+Minor/Significance Unknown. Risk of increased CNS depression.
+
+paroxetine
+paroxetine decreases effects of oxycodone by decreasing metabolism.
+Minor/Significance Unknown. Decreased conversion of oxycodone to active
+metabolite morphine.
+
+perphenazine
+perphenazine decreases effects of oxycodone by decreasing metabolism.
+Minor/Significance Unknown. Decreased conversion of oxycodone to active
+metabolite morphine.
+
+propafenone
+propafenone decreases effects of oxycodone by decreasing metabolism.
+Minor/Significance Unknown. Decreased conversion of oxycodone to active
+metabolite morphine.
+
+quinacrine
+quinacrine decreases effects of oxycodone by decreasing metabolism.
+Minor/Significance Unknown. Decreased conversion of oxycodone to active
+metabolite morphine.
+
+sage
+oxycodone and sage both increase sedation. Minor/Significance Unknown.
+
+thioridazine
+thioridazine decreases effects of oxycodone by decreasing metabolism.
+Minor/Significance Unknown. Decreased conversion of oxycodone to active
+metabolite morphine.
+
+venlafaxine
+venlafaxine decreases effects of oxycodone by decreasing metabolism.
+Minor/Significance Unknown. Decreased conversion of oxycodone to active
+metabolite morphine.
+
+ziconotide
+ziconotide, oxycodone. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Additive decreased GI motility. Additive analgesia.
+Ziconotide does NOT potentiate opioid induced respiratory depression.
+
+Adverse Effects
+
+Frequency Not Defined
+
+Agitation
+
+Angina pectoris
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 30/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+Anticholinergic effects (dry mouth, palpitation, tachycardia)
+
+Bradycardia
+
+Cardiac arrest
+
+Coma
+
+Constipation
+
+Dizziness
+
+Dysphoria
+
+Euphoria
+
+Faintness
+
+Mental clouding/depression
+
+Myocardial infarction
+
+Nausea
+
+Nervousness
+
+Pruritus, urticaria
+
+QT-interval prolongation
+
+Respiratory arrest
+
+Respiratory/circulatory depression
+
+Restlessness
+
+Sedation
+
+Seizures
+
+Severe cardiac arrhythmias
+
+Shock
+
+ST-segment elevation
+
+Sweating, flushing, warmness of face/neck/upper thorax
+
+Syncope
+
+Urinary retention, oliguria
+
+Ventricular tachycardia
+
+Visual disturbances
+
+Vomiting
+
+Weakness
+
+Warnings
+
+Black Box Warnings
+
+Opioid analgesic risk evaluation and mitigation strategy (REMS)
+
+To ensure that benefits of opioid analgesics outweigh risks of addiction, abuse, and
+misuse, the Food and Drug Administration (FDA) has required a REMS for these
+products; under requirements of the REMS, drug companies with approved opioid
+analgesic products must make REMS-compliant education programs available to
+healthcare providers
+
+Healthcare providers are strongly encouraged to:
+Complete a REMS-compliant education program
+
+Counsel patients and/or their caregivers, with every prescription, on safe use,
+serious risks, storage, and disposal of these products
+
+Emphasize to patients and their caregivers the importance of reading the
+Medication Guide every time it is provided by their pharmacist
+
+Consider other tools to improve patient, household, and community safety
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 31/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+Addiction, abuse, and misuse
+
+Risk of opioid addiction, abuse, and misuse, which can lead to overdose and death
+
+Assess each patient’s risk prior to prescribing and monitor all patients regularly for
+the development of these behaviors or conditions
+
+Life-threatening respiratory depression
+
+Serious, life-threatening, or fatal respiratory depression may occur
+
+Monitor for respiratory depression, especially during initiation or following a dose
+increase
+
+Instruct patients to swallow tablet/capsule whole; crushing, chewing, or dissolving
+can cause rapid release and absorption of a potentially fatal dose
+
+Accidental exposure
+
+Accidental of even 1 dose, especially by children, can result in a fatal overdose
+
+Neonatal opioid withdrawal syndrome
+
+Prolonged use during pregnancy can result in neonatal opioid withdrawal
+syndrome, which may be life-threatening if not recognized and treated, and requires
+management according to protocols developed by neonatology experts
+
+Syndrome presents as irritability, hyperactivity and abnormal sleep pattern, high
+pitched cry, tremor, vomiting, diarrhea and failure to gain weight
+
+Onset, duration, and severity of neonatal opioid withdrawal syndrome vary based
+on the specific opioid used, duration of use, timing and amount of last maternal use,
+and rate of elimination of the drug by the newborn
+
+If opioid use is required for a prolonged period in a pregnant woman, advise the
+patient of the risk of neonatal opioid withdrawal syndrome and ensure that
+management by neonatology experts will be available at delivery
+
+Cytochrome P450 3A4 interaction
+
+Concomitant use of oxycodone ER with all cytochrome P450 (CYP-450) 3A4
+inhibitors may result in an increase in oxycodone plasma concentrations, which
+could increase or prolong adverse drug effects and may cause potentially fatal
+respiratory depression
+
+Interaction with central nervous system (CNS) depressants
+
+Coadministration with benzodiazepines or other CNS depressants, including
+alcohol, may result in profound sedation, respiratory depression, coma, and death
+
+Reserve concomitant prescribing for use in patients for whom alternative treatment
+options are inadequate; limit dosages and durations to the minimum required; and
+follow patients for signs and symptoms of respiratory depression and sedation
+
+Instruct patients not to consume alcoholic beverages or use alcohol-containing drug
+products while taking morphine due to risk of additive sedation and respiratory
+depression
+
+Oral solutions
+
+Concentrated oral solution is available as a 20 mg/mL concentration is indicated for
+use in opioid-tolerant patients only
+
+Take care when prescribing and administering oxycodone oral solution to avoid
+dosing errors due to confusion between milligrams and milliliter, and other
+oxycodone solutions with different concentrations
+
+Contraindications
+
+Known or suspected GI obstruction, including paralytic ileus
+
+Hypersensitivity (eg, anaphylaxis) to oxycodone
+
+Acute or severe bronchial asthma in an unmonitored setting or in the absence of
+resuscitative equipment
+
+Cautions
+
+Use caution in patients with anemia, cardiac arrhythmias, drug abuse or dependence,
+emotional lability, gallbladder disease, gout, head injury, renal/hepatic disease or
+impairment, hypoprothrombinemia, toxic psychosis, hypothyroidism, increased
+intracranial pressure, prostatic hypertrophy, renal impairment, seizures with epilepsy,
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 32/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+thyrotoxicosis, urethral stricture, urinary tract surgery, vitamin K deficiency, anoxia,
+central nervous system (CNS) depression, hypercapmia, respiratory depression or
+disease, hypersensitivity to phenantrene-derivative opioid agonists, morbid obesity,
+untreated myxedema, adrenocrotical insufficiency including Addison disease
+
+If crushed, extended-release preparation (OxyContin) can deliver large opiate dose with
+potential for abuse or overdose; OxyContin reformulated in April 2010 to prevent tablet
+from being cut, broken, crushed, or dissolved to release more medication; inability to
+tamper with product reduces potential for abuse
+
+Caution with OxyContin in patients who have difficulty swallowing or have underlying GI
+disorders that may predispose to obstruction
+
+May obscure diagnosis of acute abdominal conditions
+
+Avoid use of mixed agonist/antagonist (e.g., pentazocine, nalbuphine, and butorphanol)
+or partial agonist (e.g., buprenorphine) analgesics in patients who are receiving a full
+opioid agonist analgesic; mixed agonist/antagonist and partial agonist analgesics may
+reduce analgesic effect and/or precipitate withdrawal symptoms; when discontinuing
+therapy in physically-dependent patient, gradually taper dosage; do not abruptly
+discontinue therapy in these patients
+
+Therapy may cause severe hypotension including orthostatic hypotension and syncope in
+ambulatory patients; there is increased risk in patients whose ability to maintain blood
+pressure has already been compromised by a reduced blood volume or concurrent
+administration of certain CNS depressant drugs (e.g., phenothiazines or general
+anesthetics); monitor patients for signs of hypotension after initiating or titrating dosage;
+in patients with circulatory shock, therapy may cause vasodilation that can further
+reduce cardiac output and blood pressure; avoid therapy in patients with circulatory
+shock A single dose >40 mg or total dose >80 mg are for use only in opioid-tolerant
+patients
+
+May cause constipation, which may be problematic in patients with unstable angina and
+patients post-myocardial infarction; reduce potential for constipation by administering
+stool softener or increasing fiber in diet in patients following myocaridal infarction and
+unstable angina
+
+Use with caution in patients with biliary tract dysfunction, including acute pancreatitis;
+may cause constriction of sphincter of Oddi
+
+Use caution in patients who re morbidly obese
+
+Use caution in patients with thyroid dysfunction
+
+Dose adjustment required when initiating extended release therapy in patients taking
+other CNS depressants
+
+Use with caution in perioperative setting; individualize treatment when transitioning from
+parenteral to oral analgesics
+
+Some dosage forms may contain sodium benzoic acid (benzoate), a metabolite of benzyl
+alcohol; large amounts of benzyl alcohol have been associated with potentially fatal
+toxicity (gasping syndrome) in neonates
+
+Extended release tablets may be difficult to swallow and could become lodged in throat;
+patients with swallowing difficulties may be at risk; intestinal obstruction or diverticulitis
+exacerbation also reported
+
+Cases of serotonin syndrome, a potentially life-threatening condition, reported with
+concomitant use of serotonergic drugs; this may occur within the recommended dosage
+range; the onset of symptoms generally occur within several hours to a few days of
+concomitant use, but may occur later than that; discontinue therapy immediately if
+serotonin syndrome is suspected
+
+Management of respiratory depression may include close observation, supportive
+measures, and use of opioid overdose reversal agents, depending on patient’s clinical
+status; carbon dioxide (CO2) retention from opioid-induced respiratory depression can
+exacerbate sedating effects of opioids
+
+There are important differences among opioid overdose reversal agents, such as route of
+administration, product strength, approved patient age range, and pharmacokinetics; be
+familiar with these differences, prior to recommending or prescribing such an agent;
+educate patients and caregivers on how to recognize respiratory depression, and how to
+use an opioid overdose reversal agent for emergency treatment of opioid overdose;
+emphasize the importance of calling 911 or getting emergency medical help, even if an
+opioid overdose reversal agent is administered
+
+In patients who may be susceptible to intracranial effects of CO2 retention (e.g., those
+with evidence of increased intracranial pressure or brain tumors), therapy may reduce
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 33/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+respiratory drive, and resultant CO2 retention can further increase intracranial pressure;
+monitor such patients for signs of sedation and respiratory depression, particularly when
+initiating therapy; opioids may obscure clinical course in a patient with a head injury;
+avoid the use in patients with impaired consciousness or coma
+
+Therapy may increase frequency of seizures in patients with seizure disorders and in
+other clinical settings associated with seizures; monitor patients for worsened seizure
+control during therapy
+
+Warn patients not to drive or operate dangerous machinery unless they are tolerant to
+effects of drug and know how they will react to medication
+
+While serious, life-threatening, or fatal respiratory depression can occur at any time
+during therapy, risk is greatest during initiation of therapy or following dosage increase;
+monitor patients closely for respiratory depression, especially within first 24 to 72 hr of
+initiating therapy with and following dosage increases; accidental ingestion of even one
+dose, especially by children, can result in respiratory depression and death due to
+overdose of opioid
+
+Opioids can cause sleep-related breathing disorders including central sleep apnea (CSA)
+and sleep-related hypoxemia; opioid use increases risk of CSA in a dose-dependent
+fashion; in patients who present with CSA, consider decreasing opioid dosage using best
+practices for opioid taper
+
+Profound sedation, respiratory depression, coma, and death may result from concomitant
+administration with benzodiazepines or other CNS depressants (e.g., non-
+benzodiazepine sedatives/hypnotics, anxiolytics, tranquilizers, muscle relaxants, general
+anesthetics, antipsychotics, gabapentinoids [gabapentin or pregabalin], and other
+opioids, other opioids, alcohol); because of these risks, reserve concomitant prescribing
+of these drugs for use in patients for whom alternative treatment options are inadequate;
+if an opioid analgesic is initiated in a patient already taking a benzodiazepine or other
+CNS depressant, prescribe a lower initial dose of the opioid analgesic, and titrate based
+on clinical response; follow patients closely for signs and symptoms of respiratory
+depression and sedation; if concomitant use with benzodiazepine or muscle relaxant
+warranted, consider prescribing an opioid overdose reversal agent for the emergency
+treatment of opioid overdose
+
+Use in patients with acute or severe bronchial asthma in an unmonitored setting or in
+absence of resuscitative equipment is contraindicated; patients with significant chronic
+obstructive pulmonary disease or cor pulmonale, and with substantially decreased
+respiratory reserve, hypoxia, hypercapnia, or pre-existing respiratory depression are at
+increased risk of decreased respiratory drive including apnea, even at recommended
+dosages
+
+Life-threatening respiratory depression is more likely to occur in elderly, cachectic, or
+debilitated patients because they may have altered pharmacokinetics or altered
+clearance compared to younger, healthier patients; monitor closely
+
+Monoamine oxidase inhibitors (MAOIs) may potentiate effects of opioid, opioid’s active
+metabolite, including respiratory depression, coma, and confusion; therapy should not be
+administered within 14 days of initiating or stopping MAOIs
+
+Cases of adrenal insufficiency reported with opioid use, more often following greater
+than one month of use; symptoms may include nausea, vomiting, anorexia, fatigue,
+weakness, dizziness, and low blood pressure; if adrenal insufficiency is diagnosed, treat
+with physiologic replacement doses of corticosteroids; wean patient off of opioid to
+allow adrenal function to recover and continue corticosteroid treatment until adrenal
+function recovers; other opioids may be tried as some cases reported use of a different
+opioid without recurrence of adrenal insufficiency
+
+Use caution when selecting dosage for an elderly patient, usually starting at low end of
+dosing range, reflecting greater frequency of decreased hepatic, renal, or cardiac function
+and of concomitant disease or other drug therapy; because elderly patients are more
+likely to have decreased renal function, care should be taken in dose selection, and may
+be useful to monitor renal function
+
+Opioid pharmacokinetics may be altered in patients with renal failure; clearance may be
+decreased and metabolites may accumulate much higher plasma levels in patients with
+renal failure as compared to patients with normal renal function; start with a lower than
+normal dosage or with longer dosing intervals and titrate slowly while monitoring for
+signs of respiratory depression, sedation, and hypotension
+
+Do not abruptly discontinue therapy in a patient physically dependent on opioids; when
+discontinuing therapy, in a physically dependent patient, gradually taper the dosage;
+rapid tapering in a patient physically dependent on opioids may lead to a withdrawal
+syndrome and return of pain
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 34/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+Concomitant use with a CYP3A4 inhibitor, such as macrolide antibiotics (e.g.,
+erythromycin), azole-antifungal agents (e.g., ketoconazole), and protease inhibitors (e.g.,
+ritonavir), may increase plasma concentrations of oxycodone and prolong opioid adverse
+reactions, which may cause potentially fatal respiratory depression, particularly when an
+inhibitor is added after a stable dose of oxycodone is achieved; similarly, discontinuation
+of a CYP3A4 inducer, such as rifampin, carbamazepine, and phenytoin, in oxycodone-
+treated patients may increase oxycodone plasma concentrations and prolong opioid
+adverse reactions; when using drug with CYP3A4 inhibitors or discontinuing CYP3A4
+inducers in oxycodone treated patients, monitor patients closely at frequent intervals and
+consider dosage reduction of oxycodone until stable drug effects are achieved
+
+Concomitant use of oxycodone with CYP3A4 inducers or discontinuation of a CYP3A4
+inhibitor could decrease oxycodone plasma concentrations, decrease opioid efficacy or,
+possibly, lead to a withdrawal syndrome in a patient who had developed physical
+dependence to oxycodone; when using oxycodone with CYP3A4 inducers or
+discontinuing CYP3A4 inhibitors, monitor patients closely at frequent intervals and
+consider increasing opioid dosage if needed to maintain adequate analgesia or if
+symptoms of opioid withdrawal occur
+
+Gastrointestinal complications
+
+May cause spasm of the sphincter of Oddi; opioids may cause increases in serum
+amylase; regularly evaluate patients with biliary tract disease, including acute
+pancreatitis, for worsening symptoms; cases of opioid-induced esophageal
+dysfunction (OIED) have been reported in patients taking opioids
+
+The risk of OIED may increase as the dose and/or duration of opioids increases;
+regularly evaluate patients for signs and symptoms of OIED (eg, dysphagia,
+regurgitation, non-cardiac chest pain) and, if necessary, adjust opioid therapy as
+clinically appropriate
+
+Contraindicated in patients with known or suspected gastrointestinal obstruction,
+including paralytic ileus; may cause spasm of sphincter of Oddi; opioids may cause
+increases in serum amylase; monitor patients with biliary tract disease, including
+acute pancreatitis, for worsening symptoms
+
+Opioid-induce hyperalgesia and allodynia
+
+Opioid-induced hyperalgesia (OIH) occurs when opioid analgesic paradoxically
+causes increase in pain, or increase in sensitivity to pain; this condition differs from
+tolerance, which is the need for increasing doses of opioids to maintain a defined
+effect
+
+Symptoms include (but may not be limited to) increased levels of pain upon opioid
+dosage increase, decreased levels of pain upon opioid dosage decrease, or pain
+from ordinarily non-painful stimuli (allodynia); these symptoms may suggest OIH
+only if there is no evidence of underlying disease progression, opioid tolerance,
+opioid withdrawal, or addictive behavior
+
+Cases of OIH reported, both with short-term and longer-term use of opioid
+analgesics; though the mechanism of OIH is not fully understood, multiple
+biochemical pathways have been implicated; medical literature suggests a strong
+biologic plausibility between opioid analgesics and OIH and allodynia; if a patient is
+suspected to be experiencing OIH, carefully consider appropriately decreasing dose
+of current opioid analgesic or opioid rotation (safely switching the patient to a
+different opioid moiety)
+
+Gastrointestinal complications
+
+May cause spasm of the sphincter of Oddi; opioids may cause increases in serum
+amylase; regularly evaluate patients with biliary tract disease, including acute
+pancreatitis, for worsening symptoms; cases of opioid-induced esophageal
+dysfunction (OIED) have been reported in patients taking opioids
+
+The risk of OIED may increase as the dose and/or duration of opioids increases;
+regularly evaluate patients for signs and symptoms of OIED (eg, dysphagia,
+regurgitation, non-cardiac chest pain) and, if necessary, adjust opioid therapy as
+clinically appropriate
+
+Contraindicated in patients with known or suspected gastrointestinal obstruction,
+including paralytic ileus; may cause spasm of sphincter of Oddi; opioids may cause
+increases in serum amylase; monitor patients with biliary tract disease, including
+acute pancreatitis, for worsening symptoms
+
+Addiction, abuse, and misuse
+
+As an opioid, oxycodone exposes users to risks of addiction, abuse, and misuse;
+although the risk of addiction in any individual is unknown, it can occur in patients
+appropriately prescribed oxycodone; addiction can occur at recommended doses
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 35/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+and if the drug is misused or abused; the risk of opioid-related overdose or
+overdose-related death is increased with higher opioid doses, and this risk persists
+over the course of therapy
+
+In postmarketing studies, addiction, abuse, misuse, and fatal and non-fatal opioid
+overdose were observed in patients with long-term opioid use
+
+Assess each patient’s risk for opioid addiction, abuse, or misuse prior to prescribing
+this drug, and reassess all patients for the development of these behaviors and
+conditions; risks are increased in patients with a personal or family history of
+substance abuse (including drug or alcohol abuse or addiction) or mental illness
+(eg, major depression)
+
+The potential for these risks should not, however, prevent the proper management
+of pain in any given patient; patients at increased risk may be prescribed opioids
+such as this drug but use in such patients necessitates intensive counseling about
+the risks and proper use of oxycodone along with frequent reevaluation for signs of
+addiction, abuse, and misuse; consider recommending or prescribing an opioid
+overdose reversal agent for the emergency treatment of opioid overdose
+
+Abuse or misuse of this drug by crushing, chewing, snorting, or injecting the
+dissolved product will result in the uncontrolled delivery of oxycodone and can
+result in overdose and death
+
+Opioids are sought for nonmedical use and are subject to diversion from legitimate
+prescribed use; consider these risks when prescribing or dispensing to reduce these
+risks; include prescribing the drug in the smallest appropriate quantity and advising
+the patient on careful storage of the drug during the course of treatment and the
+proper disposal of unused drug
+
+Contact local state professional licensing board or state-controlled substances
+authority for information on how to prevent and detect abuse or diversion of this
+product
+
+FDA-approved safety considerations for immediate-release (IR) and extended-
+
+release/long-acting (ER/LA) opioid analgesics addressing opioid crisis
+
+The risk of overdose increases as the dosage increases for all opioid pain medicines
+
+IR opioids should not be used for an extended period of time unless a patient’s pain
+remains severe enough to require them and alternative treatment options continue
+to be inadequate
+
+Numerous acute pain conditions treated in the outpatient setting require no more
+than a few days of an opioid pain medicine
+
+It is recommended to reserve ER/LA opioid pain medicines for severe and persistent
+pain that requires an extended treatment period with a daily opioid pain medicine
+and for which alternative treatment options are inadequate
+
+Opioid analgesic risk evaluation and mitigation strategy (REMS)
+
+To ensure that benefits of opioid analgesics outweigh risks of addiction, abuse, and
+misuse, the Food and Drug Administration (FDA) has required a Risk Evaluation and
+Mitigation Strategy (REMS) for these products
+
+Discuss the safe use, serious risks, and proper storage and disposal of opioid
+analgesics with patients and/or their caregivers every time these medicines are
+prescribed; use the following link to obtain the Patient Counseling Guide (PCG):
+www.fda.gov/OpioidAnalgesicREMSPCG
+
+Emphasize to patients and their caregivers the importance of reading the
+Medication Guide that they will receive from their pharmacist every time an opioid
+analgesic is dispensed to them
+
+Consider using other tools to improve patient, household, and community safety,
+such as patient-prescriber agreements that reinforce patient-prescriber
+responsibilities
+
+To obtain further information on opioid analgesic REMS and for a list of accredited
+REMS CME/CE, call 1-800-503-0784, or log on to www.opioidanalgesicrems.com;
+the FDA Blueprint can be found at www.fda.gov/OpioidAnalgesicREMSBlueprint
+
+Patient access to naloxone for emergency treatment of opioid overdose
+
+Assess potential need for naloxone; consider prescribing for emergency treatment
+of opioid overdose
+
+Consult on availability and ways to obtain naloxone as permitted by individual state
+naloxone dispensing and prescribing requirements or guidelines
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 36/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+Educate patients regarding the signs and symptoms of respiratory depression and
+to call 911 or seek immediate emergency medical help in the event of a known or
+suspected overdose
+
+Pregnancy & Lactation
+
+Pregnancy
+
+Prolonged use of opioid analgesics during pregnancy can cause neonatal opioid
+withdrawal syndrome; there are no available data in pregnant women to inform a drug
+associated risk for major birth defects and miscarriage; published studies with morphine
+use during pregnancy have not reported a clear association with morphine and major
+birth defects
+
+Labor or delivery
+
+Opioids cross placenta and may produce respiratory depression and psycho-
+physiologic effects in neonates; an opioid antagonist, such as naloxone, must be
+available for reversal of opioid induced respiratory depression in neonate; drug is
+not recommended for use in women during and immediately prior to labor, when
+use of shorter-acting analgesics or other analgesic techniques are more
+appropriate; opioid analgesics can prolong labor through actions that temporarily
+reduce strength, duration, and frequency of uterine contractions; however, this
+effect is not consistent and may be offset by an increased rate of cervical dilatation,
+which tends to shorten labor; monitor neonates exposed to opioid analgesics
+during labor for signs of excess sedation and respiratory depression
+
+Infertility
+
+Due to effects of androgen deficiency, chronic use of opioids may cause reduced
+fertility in females and males of reproductive potential; it is not known whether
+effects on fertility are reversible
+
+Lactation
+
+Available data from lactation studies indicate that oxycodone is present in breastmilk
+and that doses of <60 mg/day of immediate-release formulation are unlikely to result in
+clinically relevant exposures in breastfed infants
+
+The developmental and health benefits of breastfeeding should be considered along
+with mother’s clinical need for therapy; capsules and any potential adverse effects on
+breastfed infant from therapy or from underlying maternal condition
+
+Monitor infants exposed to drug through breast milk for excess sedation and respiratory
+depression; withdrawal symptoms can occur in breastfed infants when maternal
+administration of an opioid analgesic is stopped, or when breast- feeding is stopped
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+Narcotic agonist-analgesic of opiate receptors; inhibits ascending pain pathways, thus
+altering response to pain; produces analgesia, respiratory depression, and sedation
+
+Absorption
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 37/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+Bioavailability: 60-87%
+
+Increases in peak plasma concentration by 100-150% and AUC by 50-60% following a
+high-fat and high-calorie meal
+
+Onset:10-15 min (immediate-release)
+
+Duration: 3-6 hr (immediate release); ≤12 hr (controlled release)
+
+Peak plasma time: 1.5-1.9 hr (immediate-release); 4-5 hr (OxyContin 10-80 mg); 4.5 hr
+(Xtampza ER)
+
+Steady state: 24-36 hr (Xtampza ER)
+
+Distribution
+
+Once absorbed, oxycodone is distributed to skeletal muscle, liver, intestinal tract, lungs,
+spleen, and brain
+
+Protein bound: 45%
+
+Vd: 2.6 L/kg
+
+Metabolism
+
+Metabolized in liver by CYP3A mediated N-demethylation to noroxycodone is the
+primary metabolic pathway of oxycodone with a lower contribution from CYP2D6
+mediated O-demethylation to oxymorphone
+
+Metabolites: Noroxycodone, oxymorphone (and glucuronide conjugates)
+
+CYP2D6 poor metabolizers may not achieve adequate analgesia; ultra-rapid
+metabolizers (≤7% of Caucasians and ≤30% of Asian and African populations) may have
+increased toxicity as consequence of rapid conversion
+
+Elimination
+
+Half-life: 2-4 hr; 4.5 hr (OxyContin)
+
+Excreted, urine: Free and conjugated oxycodone (8.9%), free noroxycodone (23%), free
+oxymorphone less than (1%), conjugated oxymorphone (10%), free and conjugated
+noroxymorphone (14%), reduced free and conjugated metabolites (up to 18%)
+
+Clearance: 1.4 L/min
+
+Administration
+
+Oral Administration, Controlled-release
+
+Do not discontinue abruptly, use gradually downward titration
+
+OxyContin
+
+May take with or without food
+
+Swallow whole, do not chew, crush, dissolve, or break
+
+OxyContin is manufactured with abuse deterrence ingredients
+
+The abuse-deterrent formulation is an immediate-release preparation with "abuse
+aversion" technology (if crushed, crumbles into chunks instead of powder and
+foams if mixed with liquid)
+
+Xtampza ER
+
+Must be taken with food in order to ensure consistent plasma levels are achieved
+
+Xtampza ER utilizing DETERx technology platform to maintain its extended-release
+profile after being subjected to common methods of tampering
+
+Difficulty swallowing
+Open the capsule
+
+Sprinkle the capsule contents (microspheres) onto soft food (eg, applesauce,
+pudding, yogurt, ice cream, or jam) or into a cup and then administer directly
+into the mouth and swallow immediately
+
+Rinse mouth to ensure all capsule contents (microspheres) have been
+swallowed
+
+Discard Xtampza ER capsule shells
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 38/39
+
+
+
+6/22/26, 5:52 PM OxyContin, Xtampza ER (oxycodone) dosing, indications, interactions, adverse effects, and more
+Nasogastric or gastrostomy tube
+
+Flush the tube with water
+
+Open an Xtampza ER capsule and carefully pour the microspheres directly into
+the tube
+
+Do not premix the capsule contents with the liquid that you will be using to
+flush them through the tube
+
+Draw up 15 mL of water into a syringe, insert the syringe into the tube, and
+flush microspheres through tube
+
+Repeat the flushing two more times, each with 10 mL of water, to ensure no
+microspheres remain in the tube
+
+Storage
+
+Tablets and capsules: Store at 25°C (77°F); excursions permitted between 15-30°C (59-
+86°F); dispense in tight, light-resistant container, with child-resistant closure
+
+Abuse deterrent tablet, immediate-release and controlled-release: Store at 25°C (77°F);
+excursions permitted between 15-30°C (59-86°F); dispense in tight, light-resistant
+container
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/oxycontin-xtampza-er-oxycodone-343321 39/39

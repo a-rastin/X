@@ -1,0 +1,1686 @@
+﻿6/22/26, 4:57 PM Zestril (lisinopril) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+lisinopril (Rx)
+Brand and Other Names: Zestril, Qbrelis
+Classes: ACE Inhibitors
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+tablet (generic)
+
+2.5mg
+
+5mg
+
+10mg
+
+20mg
+
+30mg
+
+40mg
+
+oral solution
+
+1mg/mL (Qbrelis)
+
+Acute Myocardial Infarction
+
+5 mg PO within 24 hours of onset of symptoms of acute MI, THEN 5 mg after 24 hours,
+10 mg after 48 hours, and 10 mg qDay for 6 weeks
+
+If patient has low systolic blood pressure (ie, ≤120 mm Hg) when treatment initiated or
+during the first 3 days, administer a lower dose of 2.5 mg
+
+If hypotension occurs (systolic BP ≤100 mm Hg), a daily maintenance dose of 5 mg may
+be given, with temporary reductions to 2.5 mg if needed
+
+Dosing considerations
+
+Discontinue with prolonged hypotension (ie, systolic BP <90 mm Hg for >1 hr)
+
+https://reference.medscape.com/drug/prinivil-zestril-lisinopril-342321 1/29
+
+
+
+6/22/26, 4:57 PM Zestril (lisinopril) dosing, indications, interactions, adverse effects, and more
+
+Hypertension
+
+Uncomplicated essential hypertension
+
+Not taking diuretic: 10 mg PO qDay initially; usual range is 20-40 mg/day as single daily
+dose
+
+Dosing considerations
+
+Taking diuretic: Discontinue diuretic for 2-3 days before initiating lisinopril to reduce
+chance of hypotension; may resume diuretic if blood pressure is not controlled; if
+diuretic cannot be discontinued, initial dose of lisinopril 5 mg should be used under
+supervision for at least 2 hours and until blood pressure has stabilized for at least 1
+hour
+
+Heart Failure
+
+Adjunctive therapy with diuretics and (usually) digitalis
+
+5 mg PO qDay initially; increase by ≤10 mg no more frequent than 2 week intervals to
+20-40 mg PO qDay
+
+Patients with hypnatremia (<130 mEq/L serum sodium): 2.5 mg PO qDay initially;
+increase by ≤10 mg no more frequent than 2 week intervals to 20-40 mg PO qDay
+
+Usual effective dosage range: 5-40 mg PO qDay (Zestril); 5-20 mg PO qDay (Prinivil)
+
+Dosage Modifications
+
+Renal impairment
+
+Acute myocardial infarction: Use caution in renal dysfunction (serum creatinine >2
+mg/dL)
+
+Hypertension and CrCl >30 mL/min: 10 mg PO qDay initially; not to exceed 40
+mg/day
+
+Hypertension and CrCl 10-30 mL/min: 5 mg PO qDay initially; not to exceed 40
+mg/day
+
+Hypertension and CrCl <10 mL/min or hemodialysis: 2.5 mg PO qDay initially; not
+to exceed 40 mg/day
+
+Heart failure and CrCl <30 mL/min: 2.5 mg PO qDay initially; not to exceed 40
+mg/day
+
+Diabetic Nephropathy (Off-label)
+
+https://reference.medscape.com/drug/prinivil-zestril-lisinopril-342321 2/29
+
+
+
+6/22/26, 4:57 PM Zestril (lisinopril) dosing, indications, interactions, adverse effects, and more
+
+Initial: 5 mg PO qDay (with diuretic)
+
+May gradually increase dose according to blood pressure response; dosage range is 20-
+40 mg/day
+
+Dosing considerations
+
+Long-term treatment with ACE inhibitors, usually combined with diuretics, reduces
+blood pressure and albuminuria and protects kidney function in patients with
+hypertension, diabetes mellitus, and nephropathy
+
+PEDIATRIC
+Dosage Forms & Strengths
+
+tablet (generic)
+
+2.5mg
+
+5mg
+
+10mg
+
+20mg
+
+30mg
+
+40mg
+
+oral solution
+
+1mg/mL (Qbrelis)
+
+Hypertension
+
+Indicated for hypertension in pediatric patients aged ≥6 yr to lower blood pressure
+
+Age <6 years or GFR <30 mL/min/1.73m²: Safety and efficacy not established
+
+≥6 years and GFR ≥30 mL/min/1.73m²: 0.07 mg/kg PO qDay initially, not to exceed 5
+mg/day; may slowly titrate upward and adjusted according to blood pressure; not to
+exceed 0.61 mg/kg/day or >40 mg/day 
+
+Primary Hypertension (Orphan)
+
+Oral solution: Orphan designation for treatment of primary hypertension with
+complications and secondary hypertension in pediatric patients (ages 0 through 16 years
+of age)
+
+Sponsors
+
+codaDose, Inc; 5659 Southfield Drive; Flowery Branch, GA 30542
+
+Silvergate Pharmaceuticals, Inc; 6251 Greenwood Plaza Blvd, Suite 101;
+Greenwood Village, CO 80111
+
+https://reference.medscape.com/drug/prinivil-zestril-lisinopril-342321 3/29
+
+
+
+6/22/26, 4:57 PM Zestril (lisinopril) dosing, indications, interactions, adverse effects, and more
+
+GERIATRIC
+Hypertension
+
+Uncomplicated essential hypertension
+
+Consider lower initial dose of 2.5-5 mg and titrate to response in the elderly
+
+Usual range is 20-40 mg/day as single daily dose
+
+Adjust dose to blood pressure response; doses up to 80 mg have been used but do not
+appear to have a greater effect
+
+Dosing considerations
+
+Taking diuretic: Discontinue diuretic for 2-3 days before initiating lisinopril to reduce
+chance of hypotension; may resume diuretic if blood pressure is not controlled; if diuretic
+cannot be discontinued, initial dose of lisinopril 2.5 mg should be used under supervision
+for at least 2 hours and until blood pressure has stabilized for at least 1 hour
+
+Interactions
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and lisinopril
+No Interactions Found
+Interactions Found
+Contraindicated
+
+Serious
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+Contraindicated (3)
+
+aliskiren
+lisinopril decreases effects of aliskiren by Other (see comment). Contraindicated.
+Comment: Aliskiren use contraindicated with ACE-inhibitors in patients with
+diabetes; avoid coadministration with ACE-inhibitors if GFR. In patients who are
+elderly, volume-depleted (including those on diuretic therapy), or with
+compromised renal function, coadministration of ACE-inhibitors with drugs that
+affect RAAS may increase the risk of renal impairment (including acute renal failure)
+and cause loss of antihypertensive effect. Monitor renal function periodically.
+
+protein a column
+
+https://reference.medscape.com/drug/prinivil-zestril-lisinopril-342321 4/29
+
+
+
+6/22/26, 4:57 PM Zestril (lisinopril) dosing, indications, interactions, adverse effects, and more
+
+lisinopril, protein a column. Other (see comment). Contraindicated. Comment: Risk
+of anaphylactic reaction. Mechanism: buildup of bradykinin d/t deactivation of
+kininase by ACE inhibitors. D/C ACE inhibitor 72h prior to use of protein A column.
+
+sacubitril/valsartan
+sacubitril/valsartan, lisinopril. Either increases toxicity of the other by Other (see
+comment). Contraindicated. Comment: Coadministration of neprilysin inhibitors (eg,
+sacubitril) with ACE inhibitors may increase angioedema risk; do not administer
+ACE inhibitors within 36 hr of switching to or from sacubitril/valsartan.
+
+Serious (37)
+
+aspirin
+aspirin, lisinopril. pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Coadministration may result in a significant decrease in renal function. NSAIDs may
+diminish the antihypertensive effect of ACE inhibitors. The mechanism of these
+interactions is likely related to the ability of NSAIDs to reduce the synthesis of
+vasodilating renal prostaglandins.
+
+aspirin rectal
+aspirin rectal, lisinopril. pharmacodynamic antagonism. Avoid or Use Alternate
+Drug. Coadministration may result in a significant decrease in renal function.
+NSAIDs may diminish the antihypertensive effect of ACE inhibitors. The mechanism
+of these interactions is likely related to the ability of NSAIDs to reduce the synthesis
+of vasodilating renal prostaglandins.
+
+azilsartan
+azilsartan, lisinopril. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Dual blockade of renin-angiotensin system
+increases risks of hypotension, hyperkalemia, and renal impairment.
+
+candesartan
+candesartan, lisinopril. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Dual blockade of renin-angiotensin system
+increases risks of hypotension, hyperkalemia, and renal impairment.
+
+celecoxib
+celecoxib, lisinopril. pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Coadministration may result in a significant decrease in renal function. NSAIDs may
+diminish the antihypertensive effect of ACE inhibitors. The mechanism of these
+interactions is likely related to the ability of NSAIDs to reduce the synthesis of
+vasodilating renal prostaglandins.
+
+choline magnesium trisalicylate
+choline magnesium trisalicylate, lisinopril. pharmacodynamic antagonism. Avoid or
+Use Alternate Drug. Coadministration may result in a significant decrease in renal
+function. NSAIDs may diminish the antihypertensive effect of ACE inhibitors. The
+mechanism of these interactions is likely related to the ability of NSAIDs to reduce
+the synthesis of vasodilating renal prostaglandins.
+
+diclofenac
+
+https://reference.medscape.com/drug/prinivil-zestril-lisinopril-342321 5/29
+
+
+
+6/22/26, 4:57 PM Zestril (lisinopril) dosing, indications, interactions, adverse effects, and more
+
+diclofenac, lisinopril. pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Coadministration may result in a significant decrease in renal function. NSAIDs may
+diminish the antihypertensive effect of ACE inhibitors. The mechanism of these
+interactions is likely related to the ability of NSAIDs to reduce the synthesis of
+vasodilating renal prostaglandins.
+
+diflunisal
+diflunisal, lisinopril. pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Coadministration may result in a significant decrease in renal function. NSAIDs may
+diminish the antihypertensive effect of ACE inhibitors. The mechanism of these
+interactions is likely related to the ability of NSAIDs to reduce the synthesis of
+vasodilating renal prostaglandins.
+
+eprosartan
+eprosartan, lisinopril. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Dual blockade of renin-angiotensin system
+increases risks of hypotension, hyperkalemia, and renal impairment.
+
+etodolac
+etodolac, lisinopril. pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Coadministration may result in a significant decrease in renal function. NSAIDs may
+diminish the antihypertensive effect of ACE inhibitors. The mechanism of these
+interactions is likely related to the ability of NSAIDs to reduce the synthesis of
+vasodilating renal prostaglandins.
+
+fenoprofen
+fenoprofen, lisinopril. pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Coadministration may result in a significant decrease in renal function. NSAIDs may
+diminish the antihypertensive effect of ACE inhibitors. The mechanism of these
+interactions is likely related to the ability of NSAIDs to reduce the synthesis of
+vasodilating renal prostaglandins.
+
+flurbiprofen
+flurbiprofen, lisinopril. pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Coadministration may result in a significant decrease in renal function. NSAIDs may
+diminish the antihypertensive effect of ACE inhibitors. The mechanism of these
+interactions is likely related to the ability of NSAIDs to reduce the synthesis of
+vasodilating renal prostaglandins.
+
+ibuprofen
+ibuprofen, lisinopril. pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Coadministration may result in a significant decrease in renal function. NSAIDs may
+diminish the antihypertensive effect of ACE inhibitors. The mechanism of these
+interactions is likely related to the ability of NSAIDs to reduce the synthesis of
+vasodilating renal prostaglandins.
+
+ibuprofen IV
+ibuprofen IV, lisinopril. pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Coadministration may result in a significant decrease in renal function. NSAIDs may
+diminish the antihypertensive effect of ACE inhibitors. The mechanism of these
+interactions is likely related to the ability of NSAIDs to reduce the synthesis of
+vasodilating renal prostaglandins.
+
+https://reference.medscape.com/drug/prinivil-zestril-lisinopril-342321 6/29
+
+
+
+6/22/26, 4:57 PM Zestril (lisinopril) dosing, indications, interactions, adverse effects, and more
+
+indomethacin
+indomethacin, lisinopril. pharmacodynamic antagonism. Avoid or Use Alternate
+Drug. Coadministration may result in a significant decrease in renal function.
+NSAIDs may diminish the antihypertensive effect of ACE inhibitors. The mechanism
+of these interactions is likely related to the ability of NSAIDs to reduce the synthesis
+of vasodilating renal prostaglandins.
+
+irbesartan
+irbesartan, lisinopril. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Dual blockade of renin-angiotensin system
+increases risks of hypotension, hyperkalemia, and renal impairment.
+
+ketoprofen
+ketoprofen, lisinopril. pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Coadministration may result in a significant decrease in renal function. NSAIDs may
+diminish the antihypertensive effect of ACE inhibitors. The mechanism of these
+interactions is likely related to the ability of NSAIDs to reduce the synthesis of
+vasodilating renal prostaglandins.
+
+ketorolac
+ketorolac, lisinopril. pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Coadministration may result in a significant decrease in renal function. NSAIDs may
+diminish the antihypertensive effect of ACE inhibitors. The mechanism of these
+interactions is likely related to the ability of NSAIDs to reduce the synthesis of
+vasodilating renal prostaglandins.
+
+ketorolac intranasal
+ketorolac intranasal, lisinopril. pharmacodynamic antagonism. Avoid or Use
+Alternate Drug. Coadministration may result in a significant decrease in renal
+function. NSAIDs may diminish the antihypertensive effect of ACE inhibitors. The
+mechanism of these interactions is likely related to the ability of NSAIDs to reduce
+the synthesis of vasodilating renal prostaglandins.
+
+lofexidine
+lofexidine, lisinopril. Either increases effects of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Avoid coadministration with other drugs
+that decrease pulse or blood pressure to mitigate risk of excessive bradycardia and
+hypotension.
+
+losartan
+losartan, lisinopril. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Dual blockade of renin-angiotensin system
+increases risks of hypotension, hyperkalemia, and renal impairment.
+
+meclofenamate
+meclofenamate, lisinopril. pharmacodynamic antagonism. Avoid or Use Alternate
+Drug. Coadministration may result in a significant decrease in renal function.
+NSAIDs may diminish the antihypertensive effect of ACE inhibitors. The mechanism
+of these interactions is likely related to the ability of NSAIDs to reduce the synthesis
+of vasodilating renal prostaglandins.
+
+mefenamic acid
+
+https://reference.medscape.com/drug/prinivil-zestril-lisinopril-342321 7/29
+
+
+
+6/22/26, 4:57 PM Zestril (lisinopril) dosing, indications, interactions, adverse effects, and more
+
+mefenamic acid, lisinopril. pharmacodynamic antagonism. Avoid or Use Alternate
+Drug. Coadministration may result in a significant decrease in renal function.
+NSAIDs may diminish the antihypertensive effect of ACE inhibitors. The mechanism
+of these interactions is likely related to the ability of NSAIDs to reduce the synthesis
+of vasodilating renal prostaglandins.
+
+meloxicam
+meloxicam, lisinopril. pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Coadministration may result in a significant decrease in renal function. NSAIDs may
+diminish the antihypertensive effect of ACE inhibitors. The mechanism of these
+interactions is likely related to the ability of NSAIDs to reduce the synthesis of
+vasodilating renal prostaglandins.
+
+nabumetone
+nabumetone, lisinopril. pharmacodynamic antagonism. Avoid or Use Alternate
+Drug. Coadministration may result in a significant decrease in renal function.
+NSAIDs may diminish the antihypertensive effect of ACE inhibitors. The mechanism
+of these interactions is likely related to the ability of NSAIDs to reduce the synthesis
+of vasodilating renal prostaglandins.
+
+naproxen
+naproxen, lisinopril. pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Coadministration may result in a significant decrease in renal function. NSAIDs may
+diminish the antihypertensive effect of ACE inhibitors. The mechanism of these
+interactions is likely related to the ability of NSAIDs to reduce the synthesis of
+vasodilating renal prostaglandins.
+
+olmesartan
+olmesartan, lisinopril. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Dual blockade of renin-angiotensin system
+increases risks of hypotension, hyperkalemia, and renal impairment.
+
+oxaprozin
+oxaprozin, lisinopril. pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Coadministration may result in a significant decrease in renal function. NSAIDs may
+diminish the antihypertensive effect of ACE inhibitors. The mechanism of these
+interactions is likely related to the ability of NSAIDs to reduce the synthesis of
+vasodilating renal prostaglandins.
+
+piroxicam
+piroxicam, lisinopril. pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Coadministration may result in a significant decrease in renal function. NSAIDs may
+diminish the antihypertensive effect of ACE inhibitors. The mechanism of these
+interactions is likely related to the ability of NSAIDs to reduce the synthesis of
+vasodilating renal prostaglandins.
+
+potassium phosphates, IV
+lisinopril and potassium phosphates, IV both increase serum potassium. Avoid or
+Use Alternate Drug.
+
+pregabalin
+lisinopril, pregabalin. Either increases toxicity of the other by Other (see comment).
+Avoid or Use Alternate Drug. Comment: Coadministration results in additive risk of
+
+https://reference.medscape.com/drug/prinivil-zestril-lisinopril-342321 8/29
+
+
+
+6/22/26, 4:57 PM Zestril (lisinopril) dosing, indications, interactions, adverse effects, and more
+
+developing angioedema of face, mouth, and neck. Angioedema may result in
+respiratory compromise.
+
+sacubitril/valsartan
+sacubitril/valsartan, lisinopril. Either increases toxicity of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Dual blockade of renin-
+angiotensin system increases risks of hypotension, hyperkalemia, and renal
+impairment.
+
+salsalate
+salsalate, lisinopril. pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Coadministration may result in a significant decrease in renal function. NSAIDs may
+diminish the antihypertensive effect of ACE inhibitors. The mechanism of these
+interactions is likely related to the ability of NSAIDs to reduce the synthesis of
+vasodilating renal prostaglandins.
+
+sulindac
+sulindac, lisinopril. pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Coadministration may result in a significant decrease in renal function. NSAIDs may
+diminish the antihypertensive effect of ACE inhibitors. The mechanism of these
+interactions is likely related to the ability of NSAIDs to reduce the synthesis of
+vasodilating renal prostaglandins.
+
+telmisartan
+telmisartan, lisinopril. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Dual blockade of renin-angiotensin system
+increases risks of hypotension, hyperkalemia, and renal impairment.
+
+tolmetin
+tolmetin, lisinopril. pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Coadministration may result in a significant decrease in renal function. NSAIDs may
+diminish the antihypertensive effect of ACE inhibitors. The mechanism of these
+interactions is likely related to the ability of NSAIDs to reduce the synthesis of
+vasodilating renal prostaglandins.
+
+valsartan
+valsartan, lisinopril. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Dual blockade of renin-angiotensin system
+increases risks of hypotension, hyperkalemia, and renal impairment.
+
+Monitor Closely (118)
+
+albuterol
+albuterol decreases effects of lisinopril by pharmacodynamic antagonism. Use
+Caution/Monitor. Monitor BP.
+
+albuterol inhaled
+albuterol inhaled decreases effects of lisinopril by pharmacodynamic antagonism.
+Use Caution/Monitor. Monitor BP.
+
+aldesleukin
+
+https://reference.medscape.com/drug/prinivil-zestril-lisinopril-342321 9/29
+
+
+
+6/22/26, 4:57 PM Zestril (lisinopril) dosing, indications, interactions, adverse effects, and more
+
+aldesleukin increases effects of lisinopril by pharmacodynamic synergism. Use
+Caution/Monitor. Risk of hypotension.
+
+alfuzosin
+lisinopril, alfuzosin. Mechanism: pharmacodynamic synergism. Use Caution/Monitor.
+Exaggerated first dose hypotensive response.
+
+aluminum hydroxide
+aluminum hydroxide decreases effects of lisinopril by unspecified interaction
+mechanism. Use Caution/Monitor.
+
+amifostine
+amifostine, lisinopril. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration with blood pressure
+lowering agents may increase the risk and severity of hypotension associated with
+amifostine. When amifostine is used at chemotherapeutic doses, withhold blood
+pressure lowering medications for 24 hr prior to amifostine; if blood pressure
+lowering medication cannot be withheld, do not administer amifostine.
+
+amiloride
+lisinopril, amiloride. Mechanism: pharmacodynamic synergism. Use Caution/Monitor.
+Risk of hyperkalemia.
+
+arformoterol
+arformoterol decreases effects of lisinopril by pharmacodynamic antagonism. Use
+Caution/Monitor. Monitor BP.
+
+asenapine
+lisinopril, asenapine. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Exaggerated first dose hypotensive response.
+
+aspirin
+lisinopril, aspirin. Either increases toxicity of the other by Other (see comment). Use
+Caution/Monitor. Comment: May result in renal function deterioration, particularly
+with high dose aspirin, in elderly or volume depleted individuals.
+
+aspirin/citric acid/sodium bicarbonate
+aspirin/citric acid/sodium bicarbonate decreases effects of lisinopril by
+pharmacodynamic antagonism. Modify Therapy/Monitor Closely. NSAIDs decrease
+synthesis of vasodilating renal prostaglandins, and thus affect fluid homeostasis
+and may diminish antihypertensive effect.
+
+lisinopril, aspirin/citric acid/sodium bicarbonate. Either increases toxicity of the other
+by Other (see comment). Use Caution/Monitor. Comment: May result in renal
+function deterioration, particularly in elderly or volume depleted individuals.
+
+avanafil
+avanafil increases effects of lisinopril by pharmacodynamic synergism. Use
+Caution/Monitor. Risk of hypotension.
+
+azathioprine
+lisinopril, azathioprine. Mechanism: pharmacodynamic synergism. Use
+
+https://reference.medscape.com/drug/prinivil-zestril-lisinopril-342321 10/29
+
+
+
+6/22/26, 4:57 PM Zestril (lisinopril) dosing, indications, interactions, adverse effects, and more
+
+Caution/Monitor. Risk of neutropenia.
+
+baxdrostat
+baxdrostat and lisinopril both increase serum potassium. Use Caution/Monitor. Risk
+of hyperkalemia.
+
+bretylium
+lisinopril, bretylium. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Each drug may cause hypotension.
+
+brimonidine
+brimonidine increases effects of lisinopril by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+brimonidine topical
+brimonidine topical increases effects of lisinopril by pharmacodynamic synergism.
+Use Caution/Monitor.
+
+bumetanide
+lisinopril, bumetanide. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of acute hypotension, renal insufficiency.
+
+bumetanide intranasal
+lisinopril, bumetanide intranasal. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of acute hypotension, renal insufficiency.
+
+calcium carbonate
+calcium carbonate decreases effects of lisinopril by unspecified interaction
+mechanism. Use Caution/Monitor.
+
+canagliflozin
+lisinopril and canagliflozin both increase serum potassium. Use Caution/Monitor.
+
+carbachol/brimonidine ophthalmic
+carbachol/brimonidine ophthalmic increases effects of lisinopril by
+pharmacodynamic synergism. Use Caution/Monitor.
+
+carbidopa
+carbidopa increases effects of lisinopril by pharmacodynamic synergism. Use
+Caution/Monitor. Therapy with carbidopa, given with or without levodopa or
+carbidopa-levodopa combination products, is started, dosage adjustment of the
+antihypertensive drug may be required.
+
+celecoxib
+lisinopril, celecoxib. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+choline magnesium trisalicylate
+lisinopril, choline magnesium trisalicylate. Either increases toxicity of the other by
+Other (see comment). Use Caution/Monitor. Comment: May result in renal function
+deterioration, particularly in elderly or volume depleted individuals.
+
+https://reference.medscape.com/drug/prinivil-zestril-lisinopril-342321 11/29
+
+
+
+6/22/26, 4:57 PM Zestril (lisinopril) dosing, indications, interactions, adverse effects, and more
+
+dalteparin
+dalteparin increases toxicity of lisinopril by Other (see comment). Use
+Caution/Monitor. Comment: Low molecular weight heparins may suppress adrenal
+aldosterone secretion, which can potentially cause hyperkalemia.
+
+diclofenac
+lisinopril, diclofenac. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+diflunisal
+lisinopril, diflunisal. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+digoxin
+lisinopril increases levels of digoxin by unspecified interaction mechanism. Use
+Caution/Monitor.
+
+doxazosin
+lisinopril, doxazosin. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Exaggerated first dose hypotensive response.
+
+drospirenone
+lisinopril, drospirenone. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of hyperkalemia.
+
+enoxaparin
+enoxaparin increases toxicity of lisinopril by Other (see comment). Use
+Caution/Monitor. Comment: Low molecular weight heparins may suppress adrenal
+aldosterone secretion, which can potentially cause hyperkalemia.
+
+eplerenone
+lisinopril, eplerenone. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of hyperkalemia.
+
+ethacrynic acid
+lisinopril, ethacrynic acid. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of acute hypotension, renal insufficiency.
+
+etodolac
+lisinopril, etodolac. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+everolimus
+lisinopril, everolimus. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: Coadministration increases risk of angioedema.
+
+exenatide injectable solution
+lisinopril increases effects of exenatide injectable solution by Other (see comment).
+Use Caution/Monitor. Comment: ACE inhibitors may increase hypoglycemic effect.
+
+https://reference.medscape.com/drug/prinivil-zestril-lisinopril-342321 12/29
+
+
+
+6/22/26, 4:57 PM Zestril (lisinopril) dosing, indications, interactions, adverse effects, and more
+
+Monitor glycemic control especially during the first month of treatment with an ACE
+inhibitor. .
+
+exenatide injectable suspension
+lisinopril increases effects of exenatide injectable suspension by Other (see
+comment). Use Caution/Monitor. Comment: ACE inhibitors may increase
+hypoglycemic effect. Monitor glycemic control especially during the first month of
+treatment with an ACE inhibitor.
+
+fenoprofen
+lisinopril, fenoprofen. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+finerenone
+lisinopril and finerenone both increase serum potassium. Modify Therapy/Monitor
+Closely. Finerenone dose adjustment based on current serum potassium
+concentration. Monitor serum potassium and adjust finerenone dose as described in
+the prescribing information as necessary.
+
+flurbiprofen
+lisinopril, flurbiprofen. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+formoterol
+formoterol decreases effects of lisinopril by pharmacodynamic antagonism. Use
+Caution/Monitor. Monitor BP.
+
+foscarbidopa/foslevodopa
+foscarbidopa/foslevodopa increases effects of lisinopril by pharmacodynamic
+synergism. Use Caution/Monitor. Consider decreasing dosage of antihypertensive
+agent.
+
+furosemide
+lisinopril, furosemide. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of acute hypotension, renal insufficiency.
+
+glimepiride
+lisinopril increases effects of glimepiride by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+glipizide
+lisinopril increases effects of glipizide by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+glyburide
+lisinopril increases effects of glyburide by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+gold sodium thiomalate
+lisinopril, gold sodium thiomalate. Mechanism: unspecified interaction mechanism.
+Use Caution/Monitor. Combo of ACE inhibitors and injectable gold has caused rare
+
+https://reference.medscape.com/drug/prinivil-zestril-lisinopril-342321 13/29
+
+
+
+6/22/26, 4:57 PM Zestril (lisinopril) dosing, indications, interactions, adverse effects, and more
+
+cases of nitritoid reaction (flushing, N/V, hypot'n).
+
+heparin
+heparin increases toxicity of lisinopril by Other (see comment). Use
+Caution/Monitor. Comment: Low molecular weight heparins may suppress adrenal
+aldosterone secretion, which can potentially cause hyperkalemia.
+
+ibuprofen
+lisinopril, ibuprofen. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+ibuprofen IV
+lisinopril, ibuprofen IV. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: May result in renal function
+deterioration, particularly in elderly or volume depleted individuals.
+
+iloperidone
+lisinopril, iloperidone. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of iloperidone with
+drugs that lower blood pressure may cause additive effects. Consider lowering
+dosage of other drugs that lower blood pressure.
+
+indomethacin
+lisinopril, indomethacin. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: May result in renal function
+deterioration, particularly in elderly or volume depleted individuals.
+
+insulin aspart
+lisinopril increases effects of insulin aspart by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+insulin degludec
+lisinopril, insulin degludec. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Both drugs decrease blood
+glucose.
+
+insulin degludec/insulin aspart
+lisinopril, insulin degludec/insulin aspart. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Both drugs decrease blood
+glucose.
+
+insulin detemir
+lisinopril increases effects of insulin detemir by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+insulin glargine
+lisinopril increases effects of insulin glargine by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+insulin glulisine
+lisinopril increases effects of insulin glulisine by pharmacodynamic synergism. Use
+
+https://reference.medscape.com/drug/prinivil-zestril-lisinopril-342321 14/29
+
+
+
+6/22/26, 4:57 PM Zestril (lisinopril) dosing, indications, interactions, adverse effects, and more
+
+Caution/Monitor.
+
+insulin icodec
+lisinopril increases effects of insulin icodec by pharmacodynamic synergism. Use
+Caution/Monitor. Concomitant use of insulin and ACE inhibitors may require insulin
+dosage adjustment and increased glucose monitoring.
+
+insulin inhaled
+lisinopril, insulin inhaled. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Both drugs decrease blood glucose.
+
+insulin lispro
+lisinopril increases effects of insulin lispro by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+insulin NPH
+lisinopril increases effects of insulin NPH by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+insulin regular human
+lisinopril increases effects of insulin regular human by pharmacodynamic
+synergism. Use Caution/Monitor.
+
+ketoprofen
+lisinopril, ketoprofen. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+ketorolac
+lisinopril, ketorolac. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+ketorolac intranasal
+lisinopril, ketorolac intranasal. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: May result in renal function
+deterioration, particularly in elderly or volume depleted individuals.
+
+lanthanum carbonate
+lanthanum carbonate decreases levels of lisinopril by cation binding in GI tract. Use
+Caution/Monitor. Administer ACE inhibitor at least 2 hr before or after lanthanum.
+
+levalbuterol
+levalbuterol decreases effects of lisinopril by pharmacodynamic antagonism. Use
+Caution/Monitor. Monitor BP.
+
+levodopa
+levodopa increases effects of lisinopril by pharmacodynamic synergism. Use
+Caution/Monitor. Consider decreasing dosage of antihypertensive agent.
+
+liraglutide
+lisinopril increases effects of liraglutide by unknown mechanism. Use
+Caution/Monitor. ACE inhibitors may increase hypoglycemic effect. Monitor glycemic
+
+https://reference.medscape.com/drug/prinivil-zestril-lisinopril-342321 15/29
+
+
+
+6/22/26, 4:57 PM Zestril (lisinopril) dosing, indications, interactions, adverse effects, and more
+
+control especially during the first month of treatment with an ACE inhibitor. .
+
+lithium
+lisinopril increases toxicity of lithium by unknown mechanism. Use Caution/Monitor.
+ACE inhibitor induced Na+ depletion may increase reabsorption of lithium from
+renal tubule.
+
+lurasidone
+lurasidone increases effects of lisinopril by Other (see comment). Use
+Caution/Monitor. Comment: Potential for increased risk of hypotension with
+concurrent use. Monitor blood pressure and adjust dose of antihypertensive agent
+as needed.
+
+maraviroc
+maraviroc, lisinopril. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of orthostatic hypotension.
+
+meclofenamate
+lisinopril, meclofenamate. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: May result in renal function
+deterioration, particularly in elderly or volume depleted individuals.
+
+mefenamic acid
+lisinopril, mefenamic acid. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: May result in renal function
+deterioration, particularly in elderly or volume depleted individuals.
+
+meloxicam
+lisinopril, meloxicam. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+methylphenidate
+methylphenidate will decrease the level or effect of lisinopril by pharmacodynamic
+antagonism. Use Caution/Monitor. Methylphenidate may diminish antihypertensive
+effects. Monitor BP.
+
+methylphenidate transdermal
+methylphenidate transdermal decreases effects of lisinopril by anti-hypertensive
+channel blocking. Use Caution/Monitor.
+
+milsaperidone
+lisinopril, milsaperidone. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of milsaperidone with
+drugs that lower blood pressure may cause additive effects. Consider lowering
+dosage of other drugs that lower blood pressure.
+
+mipomersen
+mipomersen, lisinopril. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: Both drugs have potential to increase
+hepatic enzymes; monitor LFTs.
+
+moxisylyte
+
+https://reference.medscape.com/drug/prinivil-zestril-lisinopril-342321 16/29
+
+
+
+6/22/26, 4:57 PM Zestril (lisinopril) dosing, indications, interactions, adverse effects, and more
+
+lisinopril, moxisylyte. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Exaggerated first dose hypotensive response.
+
+nabumetone
+lisinopril, nabumetone. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: May result in renal function
+deterioration, particularly in elderly or volume depleted individuals.
+
+naproxen
+lisinopril, naproxen. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+nesiritide
+nesiritide, lisinopril. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Additive hypotensive effects.
+
+nitroglycerin rectal
+nitroglycerin rectal, lisinopril. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Observe for possible additive
+hypotensive effects during concomitant use. .
+
+olanzapine/samidorphan
+olanzapine/samidorphan increases effects of lisinopril by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Monitor blood pressure and reduce
+antihypertensive drug dosage in accordance with its product labeling.
+
+oxaprozin
+lisinopril, oxaprozin. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+phenoxybenzamine
+lisinopril, phenoxybenzamine. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Exaggerated first dose hypotensive response.
+
+phentolamine
+lisinopril, phentolamine. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Exaggerated first dose hypotensive response.
+
+piroxicam
+lisinopril, piroxicam. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+potassium acid phosphate
+lisinopril increases levels of potassium acid phosphate by decreasing elimination.
+Use Caution/Monitor. Risk of hyperkalemia.
+
+potassium chloride
+lisinopril increases levels of potassium chloride by decreasing elimination. Use
+Caution/Monitor. Risk of hyperkalemia.
+
+https://reference.medscape.com/drug/prinivil-zestril-lisinopril-342321 17/29
+
+
+
+6/22/26, 4:57 PM Zestril (lisinopril) dosing, indications, interactions, adverse effects, and more
+
+potassium citrate
+lisinopril increases levels of potassium citrate by decreasing elimination. Use
+Caution/Monitor. Risk of hyperkalemia.
+
+potassium citrate/citric acid
+lisinopril and potassium citrate/citric acid both increase serum potassium. Use
+Caution/Monitor.
+
+potassium iodide
+potassium iodide and lisinopril both increase serum potassium. Use
+Caution/Monitor. Potassium salts may increase the hyperkalemic effects of ACE
+inhibitors; the effect may be the result of aldosterone suppression in patients
+receiving ACE inhibitors.
+
+prazosin
+lisinopril, prazosin. Mechanism: pharmacodynamic synergism. Use Caution/Monitor.
+Exaggerated first dose hypotensive response.
+
+salsalate
+lisinopril, salsalate. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+silodosin
+lisinopril, silodosin. Mechanism: pharmacodynamic synergism. Use Caution/Monitor.
+Exaggerated first dose hypotensive response.
+
+sirolimus
+lisinopril, sirolimus. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: Coadministration increases risk of angioedema.
+
+sodium bicarbonate
+sodium bicarbonate decreases effects of lisinopril by unspecified interaction
+mechanism. Use Caution/Monitor.
+
+sodium citrate/citric acid
+sodium citrate/citric acid decreases effects of lisinopril by unspecified interaction
+mechanism. Use Caution/Monitor.
+
+sodium sulfate/?magnesium sulfate/potassium chloride
+sodium sulfate/?magnesium sulfate/potassium chloride increases toxicity of
+lisinopril by Other (see comment). Use Caution/Monitor. Comment:
+Coadministration with medications that cause fluid and electrolyte abnormalities
+may increase the risk of adverse events of seizure, arrhythmias, and renal
+impairment.
+
+sodium sulfate/potassium sulfate/magnesium sulfate
+sodium sulfate/potassium sulfate/magnesium sulfate increases toxicity of lisinopril
+by Other (see comment). Use Caution/Monitor. Comment: Coadministration with
+medications that cause fluid and electrolyte abnormalities may increase the risk of
+adverse events of seizure, arrhythmias, and renal impairment.
+
+spironolactone
+
+https://reference.medscape.com/drug/prinivil-zestril-lisinopril-342321 18/29
+
+
+
+6/22/26, 4:57 PM Zestril (lisinopril) dosing, indications, interactions, adverse effects, and more
+
+lisinopril, spironolactone. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of hyperkalemia.
+
+sulfasalazine
+sulfasalazine decreases effects of lisinopril by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+lisinopril, sulfasalazine. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: May result in renal function
+deterioration, particularly in elderly or volume depleted individuals.
+
+sulindac
+lisinopril, sulindac. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+synthetic human angiotensin II
+lisinopril increases effects of synthetic human angiotensin II by unspecified
+interaction mechanism. Use Caution/Monitor.
+
+tadalafil
+tadalafil increases effects of lisinopril by pharmacodynamic synergism. Use
+Caution/Monitor. Risk of hypotension.
+
+temsirolimus
+lisinopril, temsirolimus. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: Coadministration increases risk of
+angioedema.
+
+terazosin
+lisinopril, terazosin. Mechanism: pharmacodynamic synergism. Use Caution/Monitor.
+Exaggerated first dose hypotensive response.
+
+tolmetin
+lisinopril, tolmetin. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+torsemide
+lisinopril, torsemide. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of acute hypotension, renal insufficiency.
+
+triamterene
+lisinopril, triamterene. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of hyperkalemia.
+
+trimethoprim
+trimethoprim and lisinopril both increase serum potassium. Use Caution/Monitor.
+Trimethoprim decreases urinary potassium excretion. May cause hyperkalemia,
+
+https://reference.medscape.com/drug/prinivil-zestril-lisinopril-342321 19/29
+
+
+
+6/22/26, 4:57 PM Zestril (lisinopril) dosing, indications, interactions, adverse effects, and more
+
+particularly with high doses, renal insufficiency, or when combined with other drugs
+that cause hyperkalemia.
+
+voclosporin
+voclosporin and lisinopril both increase serum potassium. Use Caution/Monitor.
+
+voclosporin, lisinopril. Either increases toxicity of the other by nephrotoxicity and/or
+ototoxicity. Modify Therapy/Monitor Closely. Coadministration with drugs
+associated with nephrotoxicity may increase the risk for acute and/or chronic
+nephrotoxicity.
+
+xipamide
+xipamide increases effects of lisinopril by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+zotepine
+lisinopril, zotepine. Mechanism: pharmacodynamic synergism. Use Caution/Monitor.
+Exaggerated first dose hypotensive response.
+
+Minor (28)
+
+aceclofenac
+aceclofenac decreases effects of lisinopril by pharmacodynamic antagonism.
+Minor/Significance Unknown. NSAIDs decrease prostaglandin synthesis.
+
+acemetacin
+acemetacin decreases effects of lisinopril by pharmacodynamic antagonism.
+Minor/Significance Unknown. NSAIDs decrease prostaglandin synthesis.
+
+agrimony
+agrimony increases effects of lisinopril by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+capsicum
+capsicum, lisinopril. Mechanism: pharmacodynamic synergism. Minor/Significance
+Unknown. Increase ACE inhibitor induced cough.
+
+chlorpromazine
+chlorpromazine increases effects of lisinopril by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+cornsilk
+cornsilk increases effects of lisinopril by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+creatine
+creatine, lisinopril. Mechanism: pharmacodynamic synergism. Minor/Significance
+Unknown. (Theoretical interaction) Combination may have additive nephrotoxic
+effects.
+
+entecavir
+
+https://reference.medscape.com/drug/prinivil-zestril-lisinopril-342321 20/29
+
+
+
+6/22/26, 4:57 PM Zestril (lisinopril) dosing, indications, interactions, adverse effects, and more
+
+lisinopril, entecavir. Either increases effects of the other by decreasing renal
+clearance. Minor/Significance Unknown. Coadministration with drugs that reduce
+renal function or compete for active tubular secretion may increase serum
+concentrations of either entecavir or the coadministered drug.
+
+fluphenazine
+fluphenazine increases effects of lisinopril by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+lornoxicam
+lornoxicam decreases effects of lisinopril by pharmacodynamic antagonism.
+Minor/Significance Unknown. NSAIDs decrease prostaglandin synthesis.
+
+maitake
+maitake increases effects of lisinopril by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+octacosanol
+octacosanol increases effects of lisinopril by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+parecoxib
+parecoxib decreases effects of lisinopril by pharmacodynamic antagonism.
+Minor/Significance Unknown. NSAIDs decrease prostaglandin synthesis.
+
+patiromer
+patiromer, lisinopril. cation binding in GI tract. Minor/Significance Unknown. No
+observed clinically important interaction. No separation of dosing required.
+
+perphenazine
+perphenazine increases effects of lisinopril by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+probenecid
+probenecid increases effects of lisinopril by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+prochlorperazine
+prochlorperazine increases effects of lisinopril by unspecified interaction
+mechanism. Minor/Significance Unknown.
+
+promazine
+promazine increases effects of lisinopril by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+promethazine
+promethazine increases effects of lisinopril by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+reishi
+reishi increases effects of lisinopril by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+https://reference.medscape.com/drug/prinivil-zestril-lisinopril-342321 21/29
+
+
+
+6/22/26, 4:57 PM Zestril (lisinopril) dosing, indications, interactions, adverse effects, and more
+
+rifampin
+rifampin decreases levels of lisinopril by increasing metabolism. Minor/Significance
+Unknown.
+
+salicylates (non-asa)
+salicylates (non-asa) decreases effects of lisinopril by pharmacodynamic
+antagonism. Minor/Significance Unknown. NSAIDs decrease prostaglandin
+synthesis.
+
+shepherd's purse
+shepherd's purse, lisinopril. Other (see comment). Minor/Significance Unknown.
+Comment: Theoretically, shepherd's purse may interfere with BP control.
+
+thioridazine
+thioridazine increases effects of lisinopril by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+tizanidine
+tizanidine increases effects of lisinopril by pharmacodynamic synergism.
+Minor/Significance Unknown. Risk of hypotension.
+
+tolfenamic acid
+tolfenamic acid decreases effects of lisinopril by pharmacodynamic antagonism.
+Minor/Significance Unknown. NSAIDs decrease prostaglandin synthesis.
+
+treprostinil
+treprostinil increases effects of lisinopril by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+trifluoperazine
+trifluoperazine increases effects of lisinopril by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+Adverse Effects
+
+>10%
+
+Heart failure
+
+Dizziness (19%)
+
+Hypotension (11%)
+
+Hypertension
+
+Cough (3.5-69%)
+
+1-10%
+
+Heart failure
+
+https://reference.medscape.com/drug/prinivil-zestril-lisinopril-342321 22/29
+
+
+
+6/22/26, 4:57 PM Zestril (lisinopril) dosing, indications, interactions, adverse effects, and more
+
+Creatinine increased (10%)
+
+Syncope (7%)
+
+Hyperkalemia (4.8-6%)
+
+Hypotension (4.4%)
+
+Diarrhea (3.7%)
+
+Chest pain (3.4%)
+
+Abdominal pain (2.2%)
+
+Rash (1.7%)
+
+Infection (1.5%)
+
+≥1%
+Asthenia
+
+Angina pectoris
+
+Nausea
+
+Dyspnea
+
+Cough
+
+Pruritus
+
+Hypertension
+
+Headache (5.7%)
+
+Dizziness (5.4%)
+
+Hyperkalemia (serum potassium >5.7 mEq/L) (2.2%)
+
+Increased BUN and serum creatinine (2%)
+
+Acute myocardial infarction
+
+Hypotension (9%)
+
+Renal dysfunction (2.4%)
+
+≥1%
+Body as a whole: Fatigue, asthenia, orthostatic effects
+
+Digestive: Pancreatitis, constipation, flatulence, dry mouth, diarrhea
+
+Hematologic: Rare cases of bone marrow depression, hemolytic anemia,
+leukopenia/neutropenia and thrombocytopenia
+
+Endocrine: Diabetes mellitus, inappropriate antidiuretic hormone secretion
+
+Metabolic: Gout
+
+Skin: Urticaria, alopecia, photosensitivity, erythema, flushing, diaphoresis,
+cutaneous pseudolymphoma, toxic epidermal necrolysis, Stevens Johnson
+syndrome, and pruritus
+
+Special senses: Visual loss, diplopia, blurred vision, tinnitus, photophobia,
+taste disturbances, olfactory disturbances
+
+Urogenital: Impotence
+
+Miscellaneous: A symptom complex has been reported which may include a
+positive ANA, an elevated erythrocyte sedimentation rate, arthralgia/arthritis,
+myalgia, fever, vasculitis, eosinophilia, leukocytosis, paresthesia and vertigo
+
+https://reference.medscape.com/drug/prinivil-zestril-lisinopril-342321 23/29
+
+
+
+6/22/26, 4:57 PM Zestril (lisinopril) dosing, indications, interactions, adverse effects, and more
+
+Rash, photosensitivity or other dermatological manifestations may occur alone
+or in combination with these symptoms
+
+<1%
+
+Acute myocardial infarction
+
+Cough (0.5%)
+
+Generalized edema (0.01%)
+
+Angioedema (0.01%)
+
+Postmarketing Reports
+
+Metabolism and nutrition disorders: Hyponatremia, cases of hypoglycemia in
+diabetic patients on oral antidiabetic agents or insulin
+
+Nervous system and psychiatric disorders: Mood alterations (including depressive
+symptoms), mental confusion
+
+Warnings
+
+Black Box Warnings
+
+Discontinue as soon as possible when pregnancy is detected; affects renin-angiotensin
+system, causing oligohydramnios, which may result in fetal injury and/or death
+
+Contraindications
+
+Hypersensitivity to lisinopril/other ACE inhibitors
+
+History of ACE inhibitor-induced angioedema, hereditary or idiopathic angioedema
+
+Coadministration of neprilysin inhibitors (eg, sacubitril)
+
+Coadministration with aliskiren in patients with diabetes mellitus or with renal
+impairment (ie, GFR <60 mL/min/1.73m²
+
+Cautions
+
+Anaphylactoid reactions reported in some patients dialyzed with high-flux membranes
+
+Hematologic effects including agranulocytosis and neutropenia/agranulocytosis reported
+especially in patients with renal impairment and collagen vascular disease; monitor CBC
+periodically with differential
+
+Less effective in African Americans
+
+Excessive hypotension with concomitant diuretics, hypovolemia, hyponatremia may occur
+
+Neprilysin inhibitors (eg, sacubitril) with ACE inhibitors may increase angioedema risk; do
+not administer ACE inhibitors within 36 hr of switching to or from sacubitril/valsartan
+
+https://reference.medscape.com/drug/prinivil-zestril-lisinopril-342321 24/29
+
+
+
+6/22/26, 4:57 PM Zestril (lisinopril) dosing, indications, interactions, adverse effects, and more
+
+Risk of hyperkalemia, especially in patients with renal impairment or DM or in patients
+taking concomitant K+-elevating drugs
+
+ACE inhibition also causes an increase in bradykinin levels, which putatively mediates
+angioedema; in comparison with other patients, a higher incidence of angioedema
+caused by ACE inhibitors has been observed in black patients
+
+A dry hacking cough may occur within a few months of initiating drug therapy with ACE
+inhibitors; exclude other causes of cough before discontinuing therapy
+
+Cholestatic jaundice associated with ACE inhibitors; discontinue if marked elevation of
+hepatic transaminases or jaundice occurs
+
+Coadministration with mTOR inhibitors (eg, temsirolimus, everolimus) may increased risk
+for angioedema
+
+Discontinue STAT if patient becomes pregnant
+
+Use caution in patients with renal impairment; renal deterioration reported in patients
+with low renal blood flow
+
+Use caution in patients with severe aortic stenosis, cardiovascular disease, collagen
+vascular disease, hypertrophic cardiomyopathy
+
+Dual blockade of the renin-angiotensin-aldosterone system (ie, ARB plus an ACE
+inhibitor) in patients with established atherosclerotic disease or heart failure or with
+diabetes with end organ damage is associated with a higher frequency of hypotension,
+syncope, hyperkalemia, and changes in renal function (including acute renal failure), as
+compared with use of a single renin-angiotensin-aldosterone system agent; limit dual
+blockade to individually defined cases, with close monitoring of renal function
+
+Neonates with history of in utero exposure: If oliguria or hypotension occurs, support of
+blood pressure and renal perfusion; exchange transfusions or dialysis may be required
+
+Angioedema of the face, extremities, lips, tongue, glottis and/or larynx, including some
+fatal reactions, at any time during treatment; patients with involvement of the tongue,
+glottis or larynx are likely to experience airway obstruction, especially patients with
+history of airway surgery; promptly discontinue and provide appropriate therapy and
+monitoring until complete and sustained resolution of signs and symptoms of
+angioedema has occurred
+
+Intestinal angioedema reported; patients presented with abdominal pain (with or
+without nausea or vomiting); in some cases there was no prior history of facial
+angioedema and C-1 esterase levels were normal; symptoms resolved after stopping the
+ACE inhibitor
+
+Hypotension may occur sometimes complicated by oliguria, progressive azotemia, acute
+renal failure or death; patients at risk of excessive hypotension include heart failure with
+systolic blood pressure below 100 mmHg, ischemic heart disease, cerebrovascular
+disease, hyponatremia, high dose diuretic therapy, renal dialysis, or severe volume and/or
+salt depletion of any etiology; in such patients initiate therapy under medical supervision
+and follow such patients for the first two weeks of treatment and whenever dose of
+lisinopril and/or diuretic is increased; avoid use in patients who are hemodynamically
+unstable after acute MI; symptomatic hypotension also possible in patients with severe
+aortic stenosis or hypertrophic cardiomyopathy
+
+https://reference.medscape.com/drug/prinivil-zestril-lisinopril-342321 25/29
+
+
+
+6/22/26, 4:57 PM Zestril (lisinopril) dosing, indications, interactions, adverse effects, and more
+
+Patients undergoing major surgery or during anesthesia with agents that produce
+hypotension, lisinopril may block angiotensin II formation secondary to compensatory
+renin release; if hypotension occurs and considered to be due to this mechanism, it can
+be corrected by volume expansion
+
+Monitor renal function periodically; changes in renal function including acute renal failure
+can be caused by drugs that inhibit renin-angiotensin system; patients whose renal
+function may depend in part on activity of the renin-angiotensin system (eg, patients
+with renal artery stenosis, chronic kidney disease, severe congestive heart failure, post-
+myocardial infarction or volume depletion) may be at particular risk of developing acute
+renal failure; consider withholding or discontinuing therapy in patients who develop a
+clinically significant decrease in renal function
+
+Pregnancy & Lactation
+
+Pregnancy
+
+Therapy can cause fetal harm when administered to a pregnant woman; use of drugs
+that act on renin- angiotensin system during second and third trimesters of pregnancy
+reduces fetal renal function and increases fetal and neonatal morbidity and death
+
+Most epidemiologic studies examining fetal abnormalities after exposure to
+antihypertensive use in first trimester have not distinguished drugs affecting renin-
+angiotensin system from other antihypertensive agents; when pregnancy is detected,
+discontinue therapy as soon as possible
+
+Disease-associated maternal and/or embryo/fetal risk
+
+Hypertension in pregnancy increases maternal risk for pre-eclampsia, gestational
+diabetes, premature delivery, and delivery complications (eg, need for cesarean
+section, and post-partum hemorrhage)
+
+Hypertension increases fetal risk for intrauterine growth restriction and intrauterine
+death; pregnant women with hypertension should be carefully monitored and
+managed accordingly
+
+Fetal/Neonatal adverse reactions
+
+Oligohydramnios in pregnant women who use drugs affecting renin-angiotensin
+system in second and third trimesters of pregnancy can result in the following:
+reduced fetal renal function leading to anuria and renal failure, fetal lung
+hypoplasia and skeletal deformations, including skull hypoplasia, hypotension, and
+death; in the unusual case that there is no appropriate alternative therapy to drugs
+affecting the renin-angiotensin system for a particular patient, apprise the mother
+of potential risk to fetus
+
+In patients taking drug during pregnancy, perform serial ultrasound examinations to
+assess the intra- amniotic environment; fetal testing may be appropriate, based on
+the week of gestation; if oligohydramnios is observed, discontinue therapy, unless it
+is considered lifesaving for the mother
+
+Patients and physicians should be aware, however, that oligohydramnios may not
+appear until after the fetus has sustained irreversible injury
+
+https://reference.medscape.com/drug/prinivil-zestril-lisinopril-342321 26/29
+
+
+
+6/22/26, 4:57 PM Zestril (lisinopril) dosing, indications, interactions, adverse effects, and more
+
+Closely observe infants with histories of in utero exposure to the drug for
+hypotension, oliguria, and hyperkalemia; in neonates with a history of in utero
+exposure to the drug, if oliguria or hypotension occurs, support blood pressure and
+renal perfusion; exchange transfusions or dialysis may be required as a means of
+reversing hypotension and/or substituting for disordered renal function
+
+Lactation
+
+Because of potential for serious adverse effects in breastfed infants, the manufacturer
+does not recommend breastfeeding
+
+However, other recommendations (eg, LactMed) differ owing to low levels of lisinopril in
+breastmilk, and considering amounts ingested by infant are small and would not be
+expected to cause any adverse effects in breastfed infants
+
+Consider an alternate drug if high doses are required
+
+Guidelines from AHA/ACC/HFSA state: “Within a construct of multidisciplinary shared
+decision-making, medications that may be appropriate during breastfeeding include ACE
+inhibitors (enalapril or captopril preferred, monitor neonatal weight)”
+
+For more information see Drugs and Lactation (LactMed)
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+Angiotensin converting enzyme (ACE) inhibitors dilate arteries and veins by
+competitively inhibiting the conversion of angiotensin I to angiotensin II (a potent
+endogenous vasoconstrictor) and by inhibiting bradykinin metabolism; these actions
+result in preload and afterload reductions on the heart
+
+ACE inhibitors also promote sodium and water excretion by inhibiting angiotensin-II
+induced aldosterone secretion; elevation in potassium may also be observed
+
+ACE inhibitors also elicit renoprotective effects through vasodilation of renal arterioles
+
+https://reference.medscape.com/drug/prinivil-zestril-lisinopril-342321 27/29
+
+
+
+6/22/26, 4:57 PM Zestril (lisinopril) dosing, indications, interactions, adverse effects, and more
+
+ACE inhibitors reduce cardiac and vascular remodeling associated with chronic
+hypertension, heart failure, and myocardial infarction
+
+Absorption
+
+Bioavailability: 25%
+
+Onset: 1 hr (initial); 6 hr (peak)
+
+Duration: 24 hr
+
+Peak plasma time: 6-8 hr
+
+Therapeutic plasma concentration: 1-5 ng/mL
+
+Distribution
+
+Protein bound: 25%
+
+Vd: 124 L
+
+Metabolism
+
+Does not undergo metabolism
+
+Elimination
+
+Half-life: 12 hr
+
+Renal clearance: 106 mL/min
+
+Total body clearance: 250 mL/min
+
+Excretion: Excreted unchanged entirely in the urine
+
+Dialysis: Removed by hemodialysis
+
+Administration
+
+Extemporaneous Preparation
+
+To make 200 mL of suspension at 1.0 mg/mL, add 10 mL of Purified Water USP to a
+polyethylene terephthalate (PET) bottle containing ten 20-mg tablets of lisinopril
+
+Shake for at least one min; add 30 mL of sodium citrate and citric acid oral solution or
+cytra-2 diluent and 160 mL of Ora-Sweet SF to concentrate in PET bottle
+
+Gently shake for several seconds to disperse ingredientsShake suspension before each
+use
+
+Oral Administration
+
+Take with or without food
+
+https://reference.medscape.com/drug/prinivil-zestril-lisinopril-342321 28/29
+
+
+
+6/22/26, 4:57 PM Zestril (lisinopril) dosing, indications, interactions, adverse effects, and more
+
+Missed dose
+
+Take as soon as possible
+
+Do not take the missed dose if it is too close to the next scheduled dose; just take
+the next dose at the regular scheduled time
+
+Storage
+
+Prepared suspension: Refrigerate 2-8ºC(36-36ºF) for up to 4 weeks
+
+Tablets: Store at 15-30ºC (59-86ºF), protect from moisture; dispense in a tight container
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/prinivil-zestril-lisinopril-342321 29/29

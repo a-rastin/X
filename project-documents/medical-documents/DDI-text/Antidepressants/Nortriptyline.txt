@@ -1,0 +1,3803 @@
+﻿6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+nortriptyline (Rx)
+Brand and Other Names: Pamelor
+Classes: Antidepressants, TCAs
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+capsule
+
+10mg
+
+25mg
+
+50mg
+
+75mg
+
+oral solution
+
+10mg/5mL
+
+Depression
+
+25mg PO q6-8hr
+
+No more than 150 mg/day
+
+Dosing considerations
+
+Total daily dose can be given HS
+
+To discontinue therapy, gradually taper dose to minimize incidence of withdrawal
+symptoms and allow for detection of re-emerging symptoms
+
+Chronic Urticaria, Nocturnal Pruritus, Angioedema (Off-label)
+
+75mg/day PO
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 1/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+Smoking Cessation (Off-label)
+
+25 mg PO qDay; start 1-2 weeks before quit date; may titrate to 75-100 mg/day 10-28
+days prior to selected quit date; titrate dose to 75-100 mg/day; continue therapy for 12
+weeks or more after quit day
+
+ADHD (Off-label)
+
+25 mg PO q6-8hr
+
+Postherpetic Neuralgia (Off-label)
+
+10-25 mg PO qHS; may increase q3-5days in 10 mg increments qDay up to 160 mg
+qHS or divided q12hr if tolerated
+
+Dosing Modifications
+
+Hepatic impairment: Administer lower dose and titrate at a slower rate
+
+PEDIATRIC
+Dosage Forms & Strengths
+
+capsule
+
+10mg
+
+25mg
+
+50mg
+
+75mg
+
+oral solution
+
+10mg/5mL
+
+Depression (Off-label)
+
+<6 years: Safety and efficacy not established
+
+6-12 years: 1-3 mg/kg/day PO divided q6-8hr, OR 10-20 mg/day PO divided q6-8hr 
+
+>12 years: 30-50 mg PO qDay, divided or single dose
+
+See Black Box Warning
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 2/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+Nocturnal Enuresis (Off-label)
+
+6-7 years (20-25 kg): 10 mg PO qHS
+
+8-11 years (26-35 kg): 10-20 mg PO qHS
+
+>11 years (36-54 kg): 25-35 mg PO qHS
+
+ADHD (Off-label)
+
+0.5 mg/kg/day PO, titrated to maximum 2 mg/kg/day or 100 mg, whichever is less
+
+GERIATRIC
+Depression
+
+Initial: 30-50 mg PO qDay or in divided doses
+
+May increase to 75-100 mg/day if tolerated
+
+Interactions
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and nortriptyline
+No Interactions Found
+Interactions Found
+Contraindicated
+
+Serious
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+Contraindicated (18)
+
+disopyramide
+nortriptyline and disopyramide both increase QTc interval. Contraindicated.
+
+dronedarone
+dronedarone will increase the level or effect of nortriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Contraindicated.
+
+ibutilide
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 3/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+nortriptyline and ibutilide both increase QTc interval. Contraindicated.
+
+indapamide
+nortriptyline and indapamide both increase QTc interval. Contraindicated.
+
+iobenguane I 123
+nortriptyline decreases effects of iobenguane I 123 by pharmacodynamic
+antagonism. Contraindicated. If clinically appropriate, discontinue drugs that
+decrease uptake of NE for at least 5 half-lives; may cause false-negative imaging
+results.
+
+isocarboxazid
+isocarboxazid and nortriptyline both increase serotonin levels. Contraindicated.
+
+mavorixafor
+mavorixafor will increase the level or effect of nortriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Contraindicated. Mavorixafor (a strong CYP2D6
+inhibitor) is contraindicated with drugs that are highly dependent on CYP2D6 for
+clearance.
+
+pentamidine
+nortriptyline and pentamidine both increase QTc interval. Contraindicated.
+
+phenelzine
+phenelzine and nortriptyline both increase serotonin levels. Contraindicated.
+
+pimozide
+nortriptyline and pimozide both increase QTc interval. Contraindicated.
+
+procainamide
+nortriptyline and procainamide both increase QTc interval. Contraindicated.
+
+procarbazine
+procarbazine and nortriptyline both increase serotonin levels. Contraindicated.
+Combination is contraindicated within 2 weeks of MAOI use.
+
+quinidine
+quinidine and nortriptyline both increase QTc interval. Contraindicated.
+
+safinamide
+nortriptyline, safinamide. Either increases toxicity of the other by serotonin levels.
+Contraindicated. Concomitant use could result in life-threatening serotonin
+syndrome.
+
+selegiline
+selegiline and nortriptyline both increase serotonin levels. Contraindicated.
+Concurrent use or use within 14 days of selegiline treatment is contraindicated
+
+sotalol
+nortriptyline and sotalol both increase QTc interval. Contraindicated.
+
+thioridazine
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 4/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+thioridazine will increase the level or effect of nortriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Contraindicated.
+
+tranylcypromine
+tranylcypromine and nortriptyline both increase serotonin levels. Contraindicated.
+
+Serious (159)
+
+adagrasib
+adagrasib, nortriptyline. Either increases effects of the other by QTc interval. Avoid
+or Use Alternate Drug. Each drug prolongs the QTc interval, which may increased
+the risk of Torsade de pointes, other serious arryhthmias, and sudden death. If
+coadministration unavoidable, more frequent monitoring is recommended for such
+patients.
+
+albuterol
+nortriptyline increases toxicity of albuterol by sympathetic (adrenergic) effects,
+including increased blood pressure and heart rate. Avoid or Use Alternate Drug.
+Concomitant use may increase risk of cardiovascular adverse effects. Use
+alternative therapy; if concomitant use is unavoidable, monitor BP and HR during
+and for 2 weeks after discontinuing nortriptyline.
+
+albuterol inhaled
+nortriptyline increases toxicity of albuterol inhaled by sympathetic (adrenergic)
+effects, including increased blood pressure and heart rate. Avoid or Use Alternate
+Drug. Concomitant use may increase risk of cardiovascular adverse effects. Use
+alternative therapy; if concomitant use is unavoidable, monitor BP and HR during
+and for 2 weeks after discontinuing nortriptyline.
+
+amiodarone
+nortriptyline and amiodarone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+amitriptyline
+amitriptyline and nortriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+amitriptyline and nortriptyline both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+amoxapine
+amoxapine and nortriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+amoxapine and nortriptyline both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+amphetamine
+nortriptyline, amphetamine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 5/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+arformoterol
+nortriptyline increases toxicity of arformoterol by sympathetic (adrenergic) effects,
+including increased blood pressure and heart rate. Avoid or Use Alternate Drug.
+Concomitant use may increase risk of cardiovascular adverse effects. Use
+alternative therapy; if concomitant use is unavoidable, monitor BP and HR during
+and for 2 weeks after discontinuing nortriptyline.
+
+arsenic trioxide
+nortriptyline and arsenic trioxide both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+artemether
+artemether and nortriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+artemether/lumefantrine
+artemether/lumefantrine will increase the level or effect of nortriptyline by affecting
+hepatic enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+nortriptyline and artemether/lumefantrine both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+benzhydrocodone/acetaminophen
+benzhydrocodone/acetaminophen and nortriptyline both increase sedation. Avoid or
+Use Alternate Drug. Limit use to patients for whom alternative treatment options
+are inadequate
+
+benzphetamine
+nortriptyline, benzphetamine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+buprenorphine
+buprenorphine and nortriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+buprenorphine buccal
+buprenorphine buccal and nortriptyline both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+buprenorphine subdermal implant
+buprenorphine subdermal implant and nortriptyline both increase QTc interval.
+Avoid or Use Alternate Drug.
+
+buprenorphine subdermal implant and nortriptyline both increase sedation. Avoid
+or Use Alternate Drug. Limit use to patients for whom alternative treatment options
+are inadequate
+
+buprenorphine transdermal
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 6/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+buprenorphine transdermal and nortriptyline both increase QTc interval. Avoid or
+Use Alternate Drug.
+
+buprenorphine transdermal and nortriptyline both increase sedation. Avoid or Use
+Alternate Drug. Limit use to patients for whom alternative treatment options are
+inadequate
+
+buprenorphine, long-acting injection
+buprenorphine, long-acting injection and nortriptyline both increase QTc interval.
+Avoid or Use Alternate Drug.
+
+buprenorphine, long-acting injection and nortriptyline both increase sedation. Avoid
+or Use Alternate Drug. Limit use to patients for whom alternative treatment options
+are inadequate
+
+buspirone
+nortriptyline and buspirone both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+calcium/magnesium/potassium/sodium oxybates
+nortriptyline, calcium/magnesium/potassium/sodium oxybates. Either increases
+effects of the other by pharmacodynamic synergism. Avoid or Use Alternate Drug.
+Profound sedation, respiratory depression, coma, and death may result if
+coadministered. Reserve concomitant prescribing of these drugs in patients for
+whom other treatment options are inadequate. Limit dosages and durations to the
+minimum required. Monitor closely for signs of respiratory depression and sedation.
+
+chlorpromazine
+chlorpromazine and nortriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+citalopram
+citalopram and nortriptyline both increase serotonin levels. Avoid or Use Alternate
+Drug. Citalopram may increase TCA levels. Increased risk of serotonin syndrome or
+neuroleptic malignant syndrome. Potential risk for QT prolongation. ECG monitoring
+is recommended.
+
+citalopram and nortriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+clarithromycin
+nortriptyline and clarithromycin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+clomipramine
+clomipramine and nortriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+clomipramine and nortriptyline both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+clonidine
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 7/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+nortriptyline decreases effects of clonidine by Other (see comment). Avoid or Use
+Alternate Drug. Comment: Inhibition of uptake by adrenergic neurons.
+
+cyclobenzaprine
+nortriptyline and cyclobenzaprine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+dacomitinib
+dacomitinib will increase the level or effect of nortriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug. Avoid use with
+CYP2D6 substrates where minimal increases in concentration of the CYP2D6
+substrate may lead to serious or life-threatening toxicities.
+
+desipramine
+desipramine and nortriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+desipramine and nortriptyline both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+desvenlafaxine
+nortriptyline and desvenlafaxine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+dexfenfluramine
+nortriptyline, dexfenfluramine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+dexmethylphenidate
+nortriptyline, dexmethylphenidate. Other (see comment). Avoid or Use Alternate
+Drug. Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+dextroamphetamine
+nortriptyline, dextroamphetamine. Other (see comment). Avoid or Use Alternate
+Drug. Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+dextromethorphan
+nortriptyline and dextromethorphan both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+diazepam buccal
+diazepam buccal and nortriptyline both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+diazepam intranasal
+diazepam intranasal and nortriptyline both increase sedation. Avoid or Use
+Alternate Drug. Limit use to patients for whom alternative treatment options are
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 8/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+inadequate
+
+diethylpropion
+nortriptyline, diethylpropion. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+dobutamine
+nortriptyline, dobutamine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+dofetilide
+nortriptyline and dofetilide both increase QTc interval. Avoid or Use Alternate Drug.
+
+dofetilide increases toxicity of nortriptyline by QTc interval. Avoid or Use Alternate
+Drug.
+
+dolasetron
+dolasetron, nortriptyline. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+
+dopamine
+nortriptyline, dopamine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+dopexamine
+nortriptyline, dopexamine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+doxepin
+doxepin and nortriptyline both increase QTc interval. Avoid or Use Alternate Drug.
+
+doxepin and nortriptyline both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+dronedarone
+nortriptyline and dronedarone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+droperidol
+nortriptyline and droperidol both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+duloxetine
+duloxetine and nortriptyline both increase serotonin levels. Avoid or Use Alternate
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 9/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+Drug.
+
+elvitegravir/cobicistat/emtricitabine/tenofovir DF
+elvitegravir/cobicistat/emtricitabine/tenofovir DF increases levels of nortriptyline by
+affecting hepatic enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+Cobicistat is a CYP2D6 inhibitor; caution with CYP2D6 substrates for which
+elevated plasma concentrations are associated with serious and/or life-threatening
+events.
+
+encorafenib
+encorafenib and nortriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+ephedrine
+nortriptyline, ephedrine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+epinephrine
+epinephrine and nortriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+nortriptyline, epinephrine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+epinephrine racemic
+epinephrine racemic and nortriptyline both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+nortriptyline, epinephrine racemic. Other (see comment). Avoid or Use Alternate
+Drug. Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+erythromycin base
+nortriptyline and erythromycin base both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+erythromycin ethylsuccinate
+nortriptyline and erythromycin ethylsuccinate both increase QTc interval. Avoid or
+Use Alternate Drug.
+
+erythromycin lactobionate
+nortriptyline and erythromycin lactobionate both increase QTc interval. Avoid or
+Use Alternate Drug.
+
+erythromycin stearate
+nortriptyline and erythromycin stearate both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 10/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+escitalopram
+escitalopram and nortriptyline both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+fenfluramine
+nortriptyline, fenfluramine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+fentanyl
+fentanyl and nortriptyline both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+fentanyl intranasal
+fentanyl intranasal and nortriptyline both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+fentanyl iontophoretic transdermal system
+fentanyl iontophoretic transdermal system and nortriptyline both increase sedation.
+Avoid or Use Alternate Drug. Limit use to patients for whom alternative treatment
+options are inadequate
+
+fentanyl transdermal
+fentanyl transdermal and nortriptyline both increase sedation. Avoid or Use
+Alternate Drug. Limit use to patients for whom alternative treatment options are
+inadequate
+
+fentanyl transmucosal
+fentanyl transmucosal and nortriptyline both increase sedation. Avoid or Use
+Alternate Drug. Limit use to patients for whom alternative treatment options are
+inadequate
+
+fexinidazole
+fexinidazole and nortriptyline both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid coadministration of fexinidazole with drugs known to block potassium
+channels or prolong QT interval.
+
+fluconazole
+nortriptyline and fluconazole both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+fluoxetine
+fluoxetine will increase the level or effect of nortriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+fluoxetine and nortriptyline both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+fluphenazine
+fluphenazine and nortriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 11/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+fluvoxamine
+fluvoxamine and nortriptyline both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+formoterol
+nortriptyline increases toxicity of formoterol by sympathetic (adrenergic) effects,
+including increased blood pressure and heart rate. Avoid or Use Alternate Drug.
+Concomitant use may increase risk of cardiovascular adverse effects. Use
+alternative therapy; if concomitant use is unavoidable, monitor BP and HR during
+and for 2 weeks after discontinuing nortriptyline.
+
+fosamprenavir
+fosamprenavir increases levels of nortriptyline by decreasing metabolism. Avoid or
+Use Alternate Drug.
+
+givosiran
+givosiran will increase the level or effect of nortriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug. Avoid coadministration
+of sensitive CYP2D6 substrates with givosiran. If unavoidable, decrease the
+CYP2D6 substrate dosage in accordance with approved product labeling.
+
+granisetron
+granisetron, nortriptyline. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+
+guanfacine
+nortriptyline decreases effects of guanfacine by Other (see comment). Avoid or Use
+Alternate Drug. Comment: Inhibition of uptake by adrenergic neurons.
+
+haloperidol
+haloperidol will increase the level or effect of nortriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+nortriptyline and haloperidol both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+hydroxychloroquine sulfate
+hydroxychloroquine sulfate and nortriptyline both increase QTc interval. Avoid or
+Use Alternate Drug.
+
+iloperidone
+nortriptyline and iloperidone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+imipramine
+imipramine and nortriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+imipramine and nortriptyline both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+iobenguane I 131
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 12/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+nortriptyline will decrease the level or effect of iobenguane I 131 by Other (see
+comment). Avoid or Use Alternate Drug. Based on the mechanism of action of
+iobenguane, drugs that reduce catecholamine uptake or that deplete catecholamine
+stores may interfere with iobenguane uptake into cells, and thus, reduce
+iobenguane efficacy. Discontinue interfering drugs for at least 5 half-lives before
+administration of either the dosimetry or an iobenguane dose. Do not administer
+these drugs until at least 7 days after each iobenguane dose.
+
+isoproterenol
+nortriptyline, isoproterenol. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+itraconazole
+nortriptyline and itraconazole both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+ivosidenib
+ivosidenib and nortriptyline both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid coadministration of QTc prolonging drugs with ivosidenib or replace
+with alternate therapies. If coadministration of a QTc prolonging drug is
+unavoidable, monitor for increased risk of QTc interval prolongation.
+
+ketoconazole
+nortriptyline and ketoconazole both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+lefamulin
+lefamulin and nortriptyline both increase QTc interval. Avoid or Use Alternate Drug.
+
+levalbuterol
+nortriptyline increases toxicity of levalbuterol by sympathetic (adrenergic) effects,
+including increased blood pressure and heart rate. Avoid or Use Alternate Drug.
+Concomitant use may increase risk of cardiovascular adverse effects. Use
+alternative therapy; if concomitant use is unavoidable, monitor BP and HR during
+and for 2 weeks after discontinuing nortriptyline.
+
+levoketoconazole
+nortriptyline and levoketoconazole both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+levomilnacipran
+levomilnacipran and nortriptyline both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+linezolid
+linezolid and nortriptyline both increase serotonin levels. Avoid or Use Alternate
+Drug. Linezolid may increase serotonin as a result of MAO-A inhibition. If linezolid
+must be administered, discontinue serotonergic drug immediately and monitor for
+CNS toxicity. Serotonergic therapy may be resumed 24 hours after last linezolid
+dose or after 2 weeks of monitoring, whichever comes first.
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 13/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+lisdexamfetamine
+nortriptyline, lisdexamfetamine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+lofepramine
+lofepramine and nortriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+lofepramine and nortriptyline both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+lorcaserin
+nortriptyline and lorcaserin both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+lumefantrine
+lumefantrine will increase the level or effect of nortriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+nortriptyline and lumefantrine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+macimorelin
+macimorelin and nortriptyline both increase QTc interval. Avoid or Use Alternate
+Drug. Macimorelin causes an increase of ~11 msec in the corrected QT interval.
+Avoid coadministration with drugs that prolong QT interval, which could increase
+risk for developing torsade de pointes-type ventricular tachycardia. Allow sufficient
+washout time of drugs that are known to prolong the QT interval before
+administering macimorelin.
+
+mefloquine
+mefloquine increases toxicity of nortriptyline by QTc interval. Avoid or Use
+Alternate Drug. Mefloquine may enhance the QTc prolonging effect of high risk QTc
+prolonging agents.
+
+meperidine
+nortriptyline and meperidine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+metaproterenol
+nortriptyline, metaproterenol. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+methamphetamine
+nortriptyline, methamphetamine. Other (see comment). Avoid or Use Alternate
+Drug. Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 14/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+methohexital
+methohexital and nortriptyline both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+methylene blue
+methylene blue and nortriptyline both increase serotonin levels. Avoid or Use
+Alternate Drug. Methylene blue may increase serotonin as a result of MAO-A
+inhibition. If methylene blue must be administered, discontinue serotonergic drug
+immediately and monitor for CNS toxicity. Serotonergic therapy may be resumed 24
+hours after last methylene blue dose or after 2 weeks of monitoring, whichever
+comes first.
+
+methylenedioxymethamphetamine
+nortriptyline, methylenedioxymethamphetamine. Other (see comment). Avoid or
+Use Alternate Drug. Comment: Tricyclic antidepressants increase or decrease
+effects of sympathomimetics, by blocking reuptake of NE, or blocking uptake of
+indirect sympathomimetics into the adrenergic neuron.
+
+metoclopramide intranasal
+nortriptyline, metoclopramide intranasal. Either increases effects of the other by
+Other (see comment). Avoid or Use Alternate Drug. Comment: Avoid use of
+metoclopramide intranasal or interacting drug, depending on importance of drug to
+patient.
+
+midodrine
+nortriptyline, midodrine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+milnacipran
+milnacipran and nortriptyline both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+milsaperidone
+nortriptyline and milsaperidone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+mirtazapine
+mirtazapine and nortriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+moxifloxacin
+nortriptyline and moxifloxacin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+nefazodone
+nefazodone and nortriptyline both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+netupitant/palonosetron
+netupitant/palonosetron, nortriptyline. Either increases toxicity of the other by
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 15/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+serotonin levels. Avoid or Use Alternate Drug.
+
+nilotinib
+nortriptyline and nilotinib both increase QTc interval. Avoid or Use Alternate Drug.
+
+norepinephrine
+nortriptyline, norepinephrine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+octreotide
+nortriptyline and octreotide both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+octreotide (Antidote)
+nortriptyline and octreotide (Antidote) both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+olopatadine intranasal
+nortriptyline and olopatadine intranasal both increase sedation. Avoid or Use
+Alternate Drug. Coadministration increases risk of CNS depression, which can lead
+to additive impairment of psychomotor performance and cause daytime impairment.
+
+ondansetron
+nortriptyline and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+
+ondansetron, nortriptyline. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+
+opicapone
+opicapone and nortriptyline both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+ozanimod
+ozanimod increases toxicity of nortriptyline by sympathetic (adrenergic) effects,
+including increased blood pressure and heart rate. Avoid or Use Alternate Drug.
+Because the active metabolite of ozanimod inhibits MAO-B in vitro, there is a
+potential for serious adverse reactions, including hypertensive crisis. Therefore,
+coadministration of ozanimod with drugs that can increase norepinephrine or
+serotonin is not recommended. Monitor for hypertension with concomitant use.
+
+palonosetron
+palonosetron, nortriptyline. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+
+paroxetine
+paroxetine will increase the level or effect of nortriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 16/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+paroxetine and nortriptyline both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+perphenazine
+perphenazine and nortriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+phendimetrazine
+nortriptyline, phendimetrazine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+phentermine
+nortriptyline, phentermine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+phenylephrine
+nortriptyline, phenylephrine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+phenylephrine PO
+nortriptyline, phenylephrine PO. Other (see comment). Avoid or Use Alternate
+Drug. Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+pirbuterol
+nortriptyline, pirbuterol. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+pitolisant
+nortriptyline decreases effects of pitolisant by Other (see comment). Avoid or Use
+Alternate Drug. Comment: Pitolisant increases histamine levels in the brain;
+therefore, H1 receptor antagonists that cross the blood-brain barrier may reduce
+the efficacy of pitolisant.
+
+promazine
+promazine and nortriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+propylhexedrine
+nortriptyline, propylhexedrine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 17/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+protriptyline
+nortriptyline and protriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+nortriptyline and protriptyline both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+pseudoephedrine
+nortriptyline increases effects of pseudoephedrine by sympathetic (adrenergic)
+effects, including increased blood pressure and heart rate. Avoid or Use Alternate
+Drug. Tricyclic antidepressants increase or decrease effects of sympathomimetics,
+by blocking reuptake of NE, or blocking uptake of indirect sympathomimetics into
+the adrenergic neuron.
+
+quinidine
+quinidine will increase the level or effect of nortriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+rasagiline
+rasagiline and nortriptyline both increase serotonin levels. Avoid or Use Alternate
+Drug. Severe CNS toxicity associated with hyperpyrexia has been reported with the
+combined treatment of an antidepressant and rasagiline. Avoid combination within
+14 days of MAOI use.
+
+remifentanil
+remifentanil and nortriptyline both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+ribociclib
+ribociclib will increase the level or effect of nortriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+ribociclib increases toxicity of nortriptyline by QTc interval. Avoid or Use Alternate
+Drug.
+
+salmeterol
+nortriptyline, salmeterol. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+selegiline transdermal
+selegiline transdermal and nortriptyline both increase serotonin levels. Avoid or
+Use Alternate Drug.
+
+selinexor
+selinexor, nortriptyline. unspecified interaction mechanism. Avoid or Use Alternate
+Drug. Patients treated with selinexor may experience neurological toxicities. Avoid
+taking selinexor with other medications that may cause dizziness or confusion.
+
+serdexmethylphenidate/dexmethylphenidate
+nortriptyline, serdexmethylphenidate/dexmethylphenidate. Other (see comment).
+Avoid or Use Alternate Drug. Comment: Tricyclic antidepressants increase or
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 18/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+decrease effects of sympathomimetics, by blocking reuptake of NE, or blocking
+uptake of indirect sympathomimetics into the adrenergic neuron.
+
+sertraline
+sertraline and nortriptyline both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+sertraline and nortriptyline both increase QTc interval. Avoid or Use Alternate Drug.
+
+sodium oxybate
+nortriptyline, sodium oxybate. Either increases effects of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Profound sedation,
+respiratory depression, coma, and death may result if coadministered. Reserve
+concomitant prescribing of these drugs in patients for whom other treatment
+options are inadequate. Limit dosages and durations to the minimum required.
+Monitor closely for signs of respiratory depression and sedation.
+
+sodium oxybate and nortriptyline both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+St John's Wort
+nortriptyline and St John's Wort both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+tedizolid
+tedizolid, nortriptyline. Either increases effects of the other by Mechanism:
+pharmacodynamic synergism. Avoid or Use Alternate Drug. both increase serotonin
+levels; increased risk of serotonin syndrome.
+
+terbutaline
+nortriptyline, terbutaline. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+thalidomide
+thalidomide and nortriptyline both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+thioridazine
+thioridazine and nortriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+tolcapone
+tolcapone and nortriptyline both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+toremifene
+nortriptyline and toremifene both increase QTc interval. Avoid or Use Alternate
+Drug. Concurrent use of toremifene with agents causing QT prolongation should be
+avoided. If concomitant use is required it's recommended that toremifene be
+interrupted. If interruption not possible, patients requiring therapy with a drug that
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 19/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+prolongs QT should be closely monitored. ECGs should be obtained for high risk
+patients.
+
+trazodone
+nortriptyline and trazodone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+trazodone and nortriptyline both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+trifluoperazine
+trifluoperazine and nortriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+trimipramine
+nortriptyline and trimipramine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+nortriptyline and trimipramine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+umeclidinium bromide/vilanterol inhaled
+nortriptyline increases toxicity of umeclidinium bromide/vilanterol inhaled by QTc
+interval. Avoid or Use Alternate Drug. Exercise extreme caution when vilanterol
+coadministered with drugs that prolong QTc interval; adrenergic agonist effects on
+the cardiovascular system may be potentiated.
+
+nortriptyline and umeclidinium bromide/vilanterol inhaled both increase
+sympathetic (adrenergic) effects, including increased blood pressure and heart rate.
+Avoid or Use Alternate Drug. Exercise extreme caution if vilanterol coadministered
+with MAOIs or TCAs, or within 2 weeks of discontinuation of these drugs;
+adrenergic agonist effects on the cardiovascular system may be potentiated
+
+vandetanib
+nortriptyline, vandetanib. Either increases toxicity of the other by QTc interval. Avoid
+or Use Alternate Drug. Avoid coadministration with drugs known to prolong QT
+interval; if a drug known to prolong QT interval must be used, more frequent ECG
+monitoring is recommended.
+
+vemurafenib
+vemurafenib and nortriptyline both increase QTc interval. Avoid or Use Alternate
+Drug. Concomitant use of vemurafenib with drugs that prolong QT interval is not
+recommended.
+
+venlafaxine
+venlafaxine will increase the level or effect of nortriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug.
+
+venlafaxine and nortriptyline both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+vilanterol/fluticasone furoate inhaled
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 20/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+nortriptyline and vilanterol/fluticasone furoate inhaled both increase sympathetic
+(adrenergic) effects, including increased blood pressure and heart rate. Avoid or Use
+Alternate Drug. Exercise extreme caution if vilanterol coadministered with MAOIs or
+TCAs, or within 2 weeks of discontinuation of these drugs; adrenergic agonist
+effects on the cardiovascular system may be potentiated
+
+nortriptyline increases toxicity of vilanterol/fluticasone furoate inhaled by QTc
+interval. Avoid or Use Alternate Drug. Exercise extreme caution when vilanterol
+coadministered with drugs that prolong QTc interval; adrenergic agonist effects on
+the cardiovascular system may be potentiated.
+
+vilazodone
+nortriptyline, vilazodone. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug. Concomitant therapy should be discontinued
+immediately if signs or symptoms of serotonin syndrome emerge and supportive
+symptomatic treatment should be initiated. .
+
+vortioxetine
+nortriptyline, vortioxetine. Either increases effects of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+
+xylometazoline
+nortriptyline, xylometazoline. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+yohimbe
+yohimbe, nortriptyline. Mechanism: unspecified interaction mechanism.
+Contraindicated. May cause increase or decrease in blood pressure.
+
+yohimbine
+nortriptyline, yohimbine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+ziftomenib
+nortriptyline and ziftomenib both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid coadministration of ziftomenib with other drugs known to prolong the
+QTc interval. If unavoidable, obtain ECGs when initiating, during concomitant use,
+and as clinically indicated. Interrupt ziftomenib with QTc interval > 500 ms or a
+change from baseline is > 60 ms
+
+ziprasidone
+nortriptyline and ziprasidone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+zuranolone
+nortriptyline, zuranolone. Either increases effects of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Coadministration of zuranolone with other
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 21/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+CNS depressants may increase impairment of psychomotor performance or CNS
+depressant effects. If unavoidable, consider dose reduction. .
+
+Monitor Closely (399)
+
+5-HTP
+nortriptyline and 5-HTP both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+abiraterone
+abiraterone increases levels of nortriptyline by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor. Avoid coadministration of abiraterone with
+substrates of CYP2D6. If alternative therapy cannot be used, exercise caution and
+consider a dose reduction of the CYP2D6 substrate.
+
+abobotulinumtoxinA
+nortriptyline increases effects of abobotulinumtoxinA by pharmacodynamic
+synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate
+botulinum toxin effects, which may result in excessive neuromuscular weakness
+and heighten systemic anticholinergic effects.
+
+acetaminophen/phenyltoloxamine
+acetaminophen/phenyltoloxamine and nortriptyline both increase sedation. Use
+Caution/Monitor.
+
+aclidinium
+aclidinium and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+acrivastine
+acrivastine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+alfentanil
+alfentanil and nortriptyline both increase sedation. Use Caution/Monitor.
+
+alfuzosin
+nortriptyline and alfuzosin both increase QTc interval. Use Caution/Monitor.
+
+alfuzosin and nortriptyline both increase QTc interval. Use Caution/Monitor.
+
+almotriptan
+almotriptan and nortriptyline both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+alprazolam
+alprazolam and nortriptyline both increase sedation. Use Caution/Monitor.
+
+amifampridine
+nortriptyline increases toxicity of amifampridine by Other (see comment). Modify
+Therapy/Monitor Closely. Comment: Amifampridine can cause seizures.
+Coadministration with drugs that lower seizure threshold may increase this risk.
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 22/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+amiodarone
+amiodarone will increase the level or effect of nortriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+amisulpride
+nortriptyline and amisulpride both increase QTc interval. Use Caution/Monitor. ECG
+monitoring is recommended if coadministered.
+
+amisulpride and nortriptyline both increase sedation. Use Caution/Monitor.
+
+amitriptyline
+amitriptyline and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+amitriptyline and nortriptyline both increase sedation. Use Caution/Monitor.
+
+amlodipine
+nortriptyline, amlodipine. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Monitor for hypotension and orthostasis.
+
+amoxapine
+amoxapine and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+amoxapine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+amphetamine
+nortriptyline increases and amphetamine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+nortriptyline and amphetamine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+nortriptyline increases effects of amphetamine by unknown mechanism. Use
+Caution/Monitor.
+
+anagrelide
+anagrelide and nortriptyline both increase QTc interval. Use Caution/Monitor.
+
+anticholinergic/sedative combos
+anticholinergic/sedative combos and nortriptyline both decrease cholinergic
+effects/transmission. Use Caution/Monitor.
+
+apomorphine
+nortriptyline and apomorphine both increase sedation. Use Caution/Monitor.
+
+apomorphine and nortriptyline both increase QTc interval. Use Caution/Monitor.
+
+aripiprazole
+aripiprazole and nortriptyline both increase sedation. Use Caution/Monitor.
+
+aripiprazole and nortriptyline both increase QTc interval. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 23/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+armodafinil
+nortriptyline increases and armodafinil decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+asenapine
+asenapine will increase the level or effect of nortriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+asenapine and nortriptyline both increase QTc interval. Use Caution/Monitor.
+
+asenapine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+asenapine transdermal
+asenapine transdermal and nortriptyline both increase QTc interval. Use
+Caution/Monitor.
+
+asenapine transdermal and nortriptyline both increase sedation. Use
+Caution/Monitor.
+
+atazanavir
+atazanavir increases levels of nortriptyline by unspecified interaction mechanism.
+Use Caution/Monitor.
+
+atomoxetine
+atomoxetine and nortriptyline both increase QTc interval. Use Caution/Monitor.
+
+atracurium
+atracurium and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+atropine
+atropine and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+atropine IV/IM
+atropine IV/IM and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+avapritinib
+avapritinib and nortriptyline both increase sedation. Use Caution/Monitor.
+
+azelastine
+azelastine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+azithromycin
+nortriptyline and azithromycin both increase QTc interval. Use Caution/Monitor.
+
+baclofen
+baclofen and nortriptyline both increase sedation. Use Caution/Monitor.
+
+bedaquiline
+nortriptyline and bedaquiline both increase QTc interval. Modify Therapy/Monitor
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 24/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+Closely. ECG should be monitored closely
+
+belladonna alkaloids
+belladonna alkaloids and nortriptyline both decrease cholinergic
+effects/transmission. Use Caution/Monitor.
+
+belladonna and opium
+belladonna and opium and nortriptyline both decrease cholinergic
+effects/transmission. Use Caution/Monitor.
+
+belladonna and opium and nortriptyline both increase sedation. Use
+Caution/Monitor.
+
+benperidol
+benperidol and nortriptyline both increase sedation. Use Caution/Monitor.
+
+benzgalantamine
+benzgalantamine, nortriptyline. Either decreases effects of the other by
+pharmacodynamic antagonism. Use Caution/Monitor. Galantamine, an
+acetylcholinesterase inhibitor, enhances cholinergic effects. Coadministration with
+drugs that elicit anticholinergic effects may antagonize one another.
+
+benzhydrocodone/acetaminophen
+benzhydrocodone/acetaminophen, nortriptyline. Either increases effects of the other
+by serotonin levels. Use Caution/Monitor. Coadministration of drugs that affect the
+serotonergic neurotransmitter system may result in serotonin syndrome. If
+concomitant use is warranted, carefully observe the patient, particularly during
+treatment initiation and dose adjustment.
+
+benzphetamine
+nortriptyline increases and benzphetamine decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+benztropine
+benztropine and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use.
+
+bethanechol
+bethanechol increases and nortriptyline decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+brexpiprazole
+brexpiprazole and nortriptyline both increase sedation. Use Caution/Monitor.
+
+brimonidine
+brimonidine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+brimonidine topical
+brimonidine topical and nortriptyline both increase sedation. Use Caution/Monitor.
+
+brivaracetam
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 25/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+brivaracetam and nortriptyline both increase sedation. Use Caution/Monitor.
+
+brompheniramine
+brompheniramine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+buprenorphine
+buprenorphine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+buprenorphine buccal
+buprenorphine buccal and nortriptyline both increase sedation. Use
+Caution/Monitor.
+
+buprenorphine subdermal implant
+nortriptyline, buprenorphine subdermal implant. Either increases toxicity of the
+other by serotonin levels. Use Caution/Monitor. Concomitant use could result in life-
+threatening serotonin syndrome. If concomitant use is warranted, carefully observe
+the patient, particularly during treatment initiation, and during dose adjustment of
+the serotonergic drug. Discontinue buprenorphine if serotonin syndrome is
+suspected.
+
+buprenorphine, long-acting injection
+nortriptyline, buprenorphine, long-acting injection. Either increases toxicity of the
+other by serotonin levels. Use Caution/Monitor. Concomitant use could result in life-
+threatening serotonin syndrome. If concomitant use is warranted, carefully observe
+the patient, particularly during treatment initiation, and during dose adjustment of
+the serotonergic drug. Discontinue buprenorphine if serotonin syndrome is
+suspected.
+
+bupropion
+bupropion will increase the level or effect of nortriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+nortriptyline increases toxicity of bupropion by unspecified interaction mechanism.
+Use Caution/Monitor. May lower seizure threshold; keep bupropion dose as low as
+possible.
+
+butalbital
+butalbital and nortriptyline both increase sedation. Use Caution/Monitor.
+
+butorphanol
+butorphanol and nortriptyline both increase sedation. Use Caution/Monitor.
+
+caffeine
+nortriptyline increases and caffeine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+carbachol
+carbachol increases and nortriptyline decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+carbachol/brimonidine ophthalmic
+carbachol/brimonidine ophthalmic and nortriptyline both increase sedation. Use
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 26/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+Caution/Monitor.
+
+carbinoxamine
+carbinoxamine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+cariprazine
+cariprazine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+carisoprodol
+carisoprodol and nortriptyline both increase sedation. Use Caution/Monitor.
+
+celecoxib
+celecoxib will increase the level or effect of nortriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+cenobamate
+cenobamate, nortriptyline. Either increases effects of the other by sedation. Use
+Caution/Monitor.
+
+ceritinib
+ceritinib and nortriptyline both increase QTc interval. Use Caution/Monitor.
+
+cevimeline
+cevimeline increases and nortriptyline decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+chlordiazepoxide
+chlordiazepoxide and nortriptyline both increase sedation. Use Caution/Monitor.
+
+chloroquine
+chloroquine will increase the level or effect of nortriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+chloroquine increases toxicity of nortriptyline by QTc interval. Use Caution/Monitor.
+
+chlorpheniramine
+chlorpheniramine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+chlorpromazine
+chlorpromazine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+chlorzoxazone
+chlorzoxazone and nortriptyline both increase sedation. Use Caution/Monitor.
+
+cimetidine
+cimetidine will increase the level or effect of nortriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+cinnarizine
+cinnarizine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+cisatracurium
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 27/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+cisatracurium and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+clemastine
+clemastine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+clobazam
+clobazam will increase the level or effect of nortriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor. Lower doses of drugs
+metabolized by CYP2D6 may be required when used concomitantly.
+
+nortriptyline, clobazam. Other (see comment). Use Caution/Monitor. Comment:
+Concomitant administration can increase the potential for CNS effects (e.g.,
+increased sedation or respiratory depression).
+
+clobazam and nortriptyline both increase sedation. Use Caution/Monitor.
+
+clomipramine
+clomipramine and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+clomipramine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+clonazepam
+clonazepam and nortriptyline both increase sedation. Use Caution/Monitor.
+
+clonidine
+clonidine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+clorazepate
+clorazepate and nortriptyline both increase sedation. Use Caution/Monitor.
+
+clozapine
+clozapine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+clozapine and nortriptyline both increase QTc interval. Use Caution/Monitor.
+
+cobicistat
+cobicistat will increase the level or effect of nortriptyline by Other (see comment).
+Use Caution/Monitor. Carefully titrate dose of the antidepressant to the desired
+effect, including using the lowest feasible initial or maintenance dose, and monitor
+its response during coadministration with TCAs and cobicistat.
+
+cocaine topical
+nortriptyline and cocaine topical both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+codeine
+codeine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+crizotinib
+crizotinib and nortriptyline both increase QTc interval. Use Caution/Monitor. ECG
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 28/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+monitoring is recommended, along with drugs that may prolong the QT interval.
+
+cyclobenzaprine
+cyclobenzaprine and nortriptyline both decrease cholinergic effects/transmission.
+Use Caution/Monitor.
+
+cyclobenzaprine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+cyclosporine
+cyclosporine will increase the level or effect of nortriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+cyproheptadine
+cyproheptadine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+dantrolene
+dantrolene and nortriptyline both increase sedation. Use Caution/Monitor.
+
+daridorexant
+nortriptyline and daridorexant both increase sedation. Modify Therapy/Monitor
+Closely. Coadministration increases risk of CNS depression, which can lead to
+additive impairment of psychomotor performance and cause daytime impairment.
+
+darifenacin
+darifenacin will increase the level or effect of nortriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+darifenacin and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+dasatinib
+nortriptyline and dasatinib both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+daxibotulinumtoxinA
+nortriptyline increases effects of daxibotulinumtoxinA by pharmacodynamic
+synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate
+botulinum toxin effects, which may result in excessive neuromuscular weakness
+and heighten systemic anticholinergic effects.
+
+debrisoquine
+nortriptyline decreases effects of debrisoquine by Other (see comment). Use
+Caution/Monitor. Comment: Inhibition of uptake by adrenergic neurons.
+
+degarelix
+degarelix and nortriptyline both increase QTc interval. Use Caution/Monitor.
+
+desflurane
+desflurane and nortriptyline both increase sedation. Use Caution/Monitor.
+
+desflurane and nortriptyline both increase QTc interval. Use Caution/Monitor.
+
+desipramine
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 29/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+desipramine and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+desipramine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+desloratadine
+desloratadine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+desvenlafaxine
+desvenlafaxine will increase the level or effect of nortriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor. Desvenlafaxine inhibits
+CYP2D6; with higher desvenlafaxine doses (ie, 400 mg) decrease the CYP2D6
+substrate dose by up to 50%; no dosage adjustment needed with desvenlafaxine
+doses <100 mg
+
+deutetrabenazine
+nortriptyline and deutetrabenazine both increase sedation. Use Caution/Monitor.
+
+deutetrabenazine and nortriptyline both increase QTc interval. Use Caution/Monitor.
+At the maximum recommended dose, deutetrabenazine does not prolong QT
+interval to a clinically relevant extent. Certain circumstances may increase risk of
+torsade de pointes and/or sudden death in association with drugs that prolong the
+QTc interval (eg, bradycardia, hypokalemia or hypomagnesemia, coadministration
+with other drugs that prolong QTc interval, presence of congenital QT
+prolongation).
+
+dexbrompheniramine
+dexbrompheniramine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+dexchlorpheniramine
+dexchlorpheniramine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+dexfenfluramine
+nortriptyline increases and dexfenfluramine decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+nortriptyline and dexfenfluramine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+dexmedetomidine
+dexmedetomidine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+dexmethylphenidate
+nortriptyline increases and dexmethylphenidate decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+dextroamphetamine
+nortriptyline increases and dextroamphetamine decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+nortriptyline and dextroamphetamine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 30/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+nortriptyline increases effects of dextroamphetamine by unknown mechanism. Use
+Caution/Monitor.
+
+dextroamphetamine transdermal
+nortriptyline will increase the level or effect of dextroamphetamine transdermal by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. May enhance the
+activity of tricyclic or sympathomimetic agents causing striking and sustained
+increases in dextroamphetamine levels in brain; May be potentiate cardiovascular
+effects. Monitor frequently and adjust or use an alternant based on clinical
+response.
+
+dextromoramide
+dextromoramide and nortriptyline both increase sedation. Use Caution/Monitor.
+
+diamorphine
+diamorphine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+diazepam
+diazepam and nortriptyline both increase sedation. Use Caution/Monitor.
+
+diazepam buccal
+diazepam buccal, nortriptyline. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration may
+potentiate the CNS-depressant effects of each drug.
+
+diazepam intranasal
+diazepam intranasal, nortriptyline. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration may
+potentiate the CNS-depressant effects of each drug.
+
+dicyclomine
+dicyclomine and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+diethylpropion
+nortriptyline increases and diethylpropion decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+difelikefalin
+difelikefalin and nortriptyline both increase sedation. Use Caution/Monitor.
+
+difenoxin hcl
+difenoxin hcl and nortriptyline both increase sedation. Use Caution/Monitor.
+
+dihydroergotamine
+nortriptyline and dihydroergotamine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+dihydroergotamine intranasal
+nortriptyline and dihydroergotamine intranasal both increase serotonin levels.
+Modify Therapy/Monitor Closely.
+
+dimenhydrinate
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 31/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+dimenhydrinate and nortriptyline both increase sedation. Use Caution/Monitor.
+
+diphenhydramine
+diphenhydramine will increase the level or effect of nortriptyline by affecting
+hepatic enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+diphenhydramine and nortriptyline both decrease cholinergic effects/transmission.
+Use Caution/Monitor.
+
+diphenhydramine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+diphenoxylate hcl
+diphenoxylate hcl and nortriptyline both increase sedation. Use Caution/Monitor.
+
+dipipanone
+dipipanone and nortriptyline both increase sedation. Use Caution/Monitor.
+
+dobutamine
+nortriptyline increases and dobutamine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+dolasetron
+nortriptyline and dolasetron both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+donepezil
+donepezil increases and nortriptyline decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+donepezil and nortriptyline both increase QTc interval. Use Caution/Monitor.
+
+dopamine
+nortriptyline increases and dopamine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+dopexamine
+nortriptyline increases and dopexamine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+dordaviprone
+dordaviprone and nortriptyline both increase QTc interval. Use Caution/Monitor.
+Increase the frequency of ECG and electrolyte monitoring.
+
+doxepin
+doxepin and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+doxepin and nortriptyline both increase sedation. Use Caution/Monitor.
+
+doxylamine
+doxylamine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+droperidol
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 32/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+droperidol and nortriptyline both increase sedation. Use Caution/Monitor.
+
+duloxetine
+duloxetine will increase the level or effect of nortriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+echothiophate iodide
+echothiophate iodide increases and nortriptyline decreases cholinergic
+effects/transmission. Effect of interaction is not clear, use caution. Use
+Caution/Monitor.
+
+efavirenz
+efavirenz and nortriptyline both increase QTc interval. Use Caution/Monitor.
+
+eletriptan
+eletriptan and nortriptyline both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+eliglustat
+eliglustat increases levels of nortriptyline by affecting hepatic enzyme CYP2D6
+metabolism. Modify Therapy/Monitor Closely. Monitor therapeutic drug
+concentrations, as indicated, or consider reducing the dosage of the concomitant
+drug and titrate to clinical effect.
+
+eliglustat and nortriptyline both increase QTc interval. Use Caution/Monitor.
+
+entrectinib
+entrectinib and nortriptyline both increase QTc interval. Use Caution/Monitor.
+
+ephedrine
+nortriptyline increases and ephedrine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+nortriptyline increases effects of ephedrine by unknown mechanism. Use
+Caution/Monitor.
+
+epinephrine
+nortriptyline increases and epinephrine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+nortriptyline increases effects of epinephrine by unknown mechanism. Use
+Caution/Monitor.
+
+epinephrine inhaled
+nortriptyline and epinephrine inhaled both increase sympathetic (adrenergic)
+effects, including increased blood pressure and heart rate. Use Caution/Monitor.
+Tricyclic antidepressants may potentiate epinephrine effect on cardiovascular
+system.
+
+epinephrine intranasal
+nortriptyline increases effects of epinephrine intranasal by pharmacodynamic
+synergism. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 33/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+epinephrine racemic
+nortriptyline increases and epinephrine racemic decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+nortriptyline increases effects of epinephrine racemic by unknown mechanism. Use
+Caution/Monitor.
+
+ergotamine
+nortriptyline and ergotamine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+eribulin
+eribulin and nortriptyline both increase QTc interval. Use Caution/Monitor.
+
+escitalopram
+escitalopram increases toxicity of nortriptyline by QTc interval. Use Caution/Monitor.
+
+esketamine intranasal
+esketamine intranasal, nortriptyline. Either increases toxicity of the other by
+sedation. Modify Therapy/Monitor Closely.
+
+estazolam
+estazolam and nortriptyline both increase sedation. Use Caution/Monitor.
+
+eszopiclone
+eszopiclone and nortriptyline both increase sedation. Use Caution/Monitor.
+
+ethanol
+nortriptyline and ethanol both increase sedation. Use Caution/Monitor.
+
+etomidate
+etomidate and nortriptyline both increase sedation. Use Caution/Monitor.
+
+ezogabine
+ezogabine, nortriptyline. Either increases toxicity of the other by QTc interval. Use
+Caution/Monitor. Slight and transient QT-prolongation observed with ezogabine,
+particularly when dose titrated to 1200 mg/day. QT interval should be monitored
+when ezogabine is prescribed with agents known to increase QT interval.
+
+fedratinib
+fedratinib will increase the level or effect of nortriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor. Adjust dose of drugs that are
+CYP2D6 substrates as necessary.
+
+fenfluramine
+nortriptyline increases and fenfluramine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+nortriptyline and fenfluramine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+fenfluramine, nortriptyline. Either increases effects of the other by serotonin levels.
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 34/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+Use Caution/Monitor. Coadministration with drugs that increase serotoninergic
+effects may increase the risk of serotonin syndrome.
+
+fesoterodine
+fesoterodine and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+fingolimod
+fingolimod and nortriptyline both increase QTc interval. Use Caution/Monitor.
+
+flavoxate
+flavoxate and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+flecainide
+nortriptyline and flecainide both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+fluoxetine
+nortriptyline and fluoxetine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+fluphenazine
+fluphenazine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+flurazepam
+flurazepam and nortriptyline both increase sedation. Use Caution/Monitor.
+
+fluvoxamine
+fluvoxamine and nortriptyline both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+foscarnet
+nortriptyline and foscarnet both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+fosfomycin
+fosfomycin and nortriptyline both increase QTc interval. Use Caution/Monitor. The
+risk of QT prolongation may increase in patients with electrolyte abnormalities
+(such as hypokalemia and hypocalcemia), patients with conditions that have
+potential to cause electrolyte imbalance (such as renal impairment), or patients
+taking other drugs affecting electrolyte balance or QT prolongation; avoid this drug
+in patients with known QT prolongation or ventricular arrhythmias, including a
+history of torsade de pointes; monitor electrolytes during treatment
+
+fostemsavir
+nortriptyline and fostemsavir both increase QTc interval. Use Caution/Monitor. QTc
+prolongation reported with higher than recommended doses of fostemsavir.
+
+frovatriptan
+frovatriptan and nortriptyline both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 35/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+gabapentin
+gabapentin, nortriptyline. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+gabapentin and nortriptyline both increase sedation. Use Caution/Monitor.
+
+gabapentin enacarbil
+gabapentin enacarbil, nortriptyline. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+gabapentin enacarbil and nortriptyline both increase sedation. Use Caution/Monitor.
+
+ganaxolone
+nortriptyline and ganaxolone both increase sedation. Use Caution/Monitor.
+
+gemifloxacin
+gemifloxacin and nortriptyline both increase QTc interval. Use Caution/Monitor.
+
+gepirone
+gepirone and nortriptyline both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+gepirone and nortriptyline both increase serotonin levels. Use Caution/Monitor.
+Monitor for symptoms of serotonin syndrome when gepirone is used gepirone with
+other drugs that may affect the serotonergic neurotransmitter systems. If serotonin
+syndrome occurs, consider discontinue gepirone and/or concomitant serotonergic
+drug.
+
+gilteritinib
+gilteritinib and nortriptyline both increase QTc interval. Use Caution/Monitor.
+
+givinostat
+nortriptyline and givinostat both increase QTc interval. Use Caution/Monitor. If
+coadministered, obtain ECGs when initiating, during concomitant use, and as
+clinically indicated. Withhold if QTc interval >500 ms or a change from baseline
+>60 ms.
+
+glycopyrrolate
+glycopyrrolate and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+nortriptyline increases levels of glycopyrrolate by unknown mechanism. Use
+Caution/Monitor.
+
+glycopyrrolate inhaled
+nortriptyline and glycopyrrolate inhaled both decrease cholinergic
+effects/transmission. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 36/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+glycopyrronium tosylate topical
+glycopyrronium tosylate topical, nortriptyline. Either increases effects of the other
+by pharmacodynamic synergism. Use Caution/Monitor. Coadministration of
+glycopyrronium tosylate topical with other anticholinergic medications may result in
+additive anticholinergic adverse effects.
+
+granisetron
+granisetron and nortriptyline both increase QTc interval. Use Caution/Monitor.
+
+guanfacine
+guanfacine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+haloperidol
+haloperidol and nortriptyline both increase sedation. Use Caution/Monitor.
+
+henbane
+henbane and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+homatropine
+homatropine and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+huperzine A
+huperzine A increases and nortriptyline decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+hydrocodone
+hydrocodone, nortriptyline. Either increases effects of the other by serotonin levels.
+Use Caution/Monitor. Coadministration of drugs that affect the serotonergic
+neurotransmitter system may result in serotonin syndrome. If concomitant use is
+warranted, carefully observe the patient, particularly during treatment initiation and
+dose adjustment.
+
+hydromorphone
+hydromorphone and nortriptyline both increase sedation. Use Caution/Monitor.
+
+hydroxyzine
+hydroxyzine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+hydroxyzine and nortriptyline both increase QTc interval. Use Caution/Monitor.
+
+hyoscyamine
+hyoscyamine and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+hyoscyamine spray
+hyoscyamine spray and nortriptyline both decrease cholinergic effects/transmission.
+Use Caution/Monitor.
+
+icosapent ethyl
+icosapent ethyl, nortriptyline. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Icosapent may prolong
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 37/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+bleeding time. Periodically monitor if coadministered with other drugs that affect
+bleeding.
+
+imatinib
+imatinib will increase the level or effect of nortriptyline by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+imipramine
+imipramine and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+imipramine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+incobotulinumtoxinA
+nortriptyline increases effects of incobotulinumtoxinA by pharmacodynamic
+synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate
+botulinum toxin effects, which may result in excessive neuromuscular weakness
+and heighten systemic anticholinergic effects.
+
+indacaterol, inhaled
+indacaterol, inhaled, nortriptyline. QTc interval. Use Caution/Monitor. Indacaterol
+should be administered with extreme caution to patients treated with TCAs. Drugs
+that are known to prolong the QTc interval may have an increased the risk of
+ventricular arrhythmias.
+
+ipratropium
+nortriptyline and ipratropium both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+isoflurane
+isoflurane and nortriptyline both increase QTc interval. Use Caution/Monitor.
+
+isoniazid
+nortriptyline and isoniazid both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+isoproterenol
+nortriptyline increases and isoproterenol decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+itraconazole
+itraconazole and nortriptyline both increase QTc interval. Use Caution/Monitor.
+
+ketamine
+ketamine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+ketotifen, ophthalmic
+nortriptyline and ketotifen, ophthalmic both increase sedation. Use Caution/Monitor.
+
+L-tryptophan
+nortriptyline and L-tryptophan both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 38/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+lamotrigine
+lamotrigine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+lapatinib
+nortriptyline and lapatinib both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+lemborexant
+lemborexant, nortriptyline. Either increases effects of the other by sedation. Modify
+Therapy/Monitor Closely. Dosage adjustment may be necessary if lemborexant is
+coadministered with other CNS depressants because of potentially additive effects.
+
+letibotulinumtoxinA
+nortriptyline increases effects of letibotulinumtoxinA by pharmacodynamic
+synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate
+botulinum toxin effects, which may result in excessive neuromuscular weakness
+and heighten systemic anticholinergic effects.
+
+levetiracetam
+levetiracetam and nortriptyline both increase sedation. Use Caution/Monitor.
+
+levocetirizine
+levocetirizine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+levofloxacin
+nortriptyline and levofloxacin both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+levoketoconazole
+levoketoconazole will increase the level or effect of nortriptyline by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+levorphanol
+levorphanol and nortriptyline both increase sedation. Use Caution/Monitor.
+
+levothyroxine
+levothyroxine increases effects of nortriptyline by Other (see comment). Use
+Caution/Monitor. Comment: Increased catecholamine receptor sensitivity; may
+increase CNS and cardiovascular effects, including arrhythmias.
+
+liothyronine
+liothyronine increases effects of nortriptyline by Other (see comment). Use
+Caution/Monitor. Comment: Increased catecholamine receptor sensitivity; may
+increase CNS and cardiovascular effects, including arrhythmias.
+
+liotrix
+liotrix increases effects of nortriptyline by Other (see comment). Use
+Caution/Monitor. Comment: Increased catecholamine receptor sensitivity; may
+increase CNS and cardiovascular effects, including arrhythmias.
+
+lisdexamfetamine
+nortriptyline increases and lisdexamfetamine decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 39/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+nortriptyline, lisdexamfetamine. Either increases effects of the other by serotonin
+levels. Use Caution/Monitor. Initiate with lower doses and monitor for signs and
+symptoms of serotonin syndrome, particularly during initiation or dosage increase. If
+serotonin syndrome occurs, discontinue along with concomitant serotonergic
+drug(s).
+
+lithium
+nortriptyline and lithium both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+lithium and nortriptyline both increase QTc interval. Use Caution/Monitor.
+
+lofepramine
+lofepramine and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+lofepramine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+lofexidine
+nortriptyline and lofexidine both increase sedation. Use Caution/Monitor.
+
+nortriptyline decreases effects of lofexidine by unspecified interaction mechanism.
+Use Caution/Monitor.
+
+loprazolam
+loprazolam and nortriptyline both increase sedation. Use Caution/Monitor.
+
+loratadine
+loratadine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+lorazepam
+lorazepam and nortriptyline both increase sedation. Use Caution/Monitor.
+
+lorcaserin
+lorcaserin will increase the level or effect of nortriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+lormetazepam
+lormetazepam and nortriptyline both increase sedation. Use Caution/Monitor.
+
+loxapine
+loxapine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+loxapine inhaled
+loxapine inhaled and nortriptyline both increase sedation. Use Caution/Monitor.
+
+lsd
+nortriptyline and lsd both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+lumateperone
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 40/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+lumateperone and nortriptyline both increase sedation. Use Caution/Monitor.
+
+lurasidone
+lurasidone increases effects of nortriptyline by Other (see comment). Use
+Caution/Monitor. Comment: Potential for additive CNS effects .
+
+lurasidone and nortriptyline both increase sedation. Use Caution/Monitor.
+
+maraviroc
+maraviroc will increase the level or effect of nortriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+marijuana
+marijuana will increase the level or effect of nortriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+nortriptyline and marijuana both increase sedation. Use Caution/Monitor.
+
+meclizine
+meclizine and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+meclizine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+melatonin
+nortriptyline and melatonin both increase sedation. Use Caution/Monitor.
+
+meperidine
+meperidine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+meprobamate
+nortriptyline and meprobamate both increase sedation. Use Caution/Monitor.
+
+metaproterenol
+nortriptyline increases and metaproterenol decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+metaxalone
+metaxalone and nortriptyline both increase sedation. Use Caution/Monitor.
+
+methadone
+nortriptyline and methadone both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+methadone and nortriptyline both increase sedation. Use Caution/Monitor.
+
+methamphetamine
+nortriptyline increases and methamphetamine decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+methocarbamol
+methocarbamol and nortriptyline both increase sedation. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 41/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+methscopolamine
+methscopolamine and nortriptyline both decrease cholinergic effects/transmission.
+Use Caution/Monitor.
+
+methsuximide
+methsuximide and nortriptyline both increase sedation. Use Caution/Monitor.
+
+methylenedioxymethamphetamine
+nortriptyline increases and methylenedioxymethamphetamine decreases sedation.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+methylphenidate
+nortriptyline, methylphenidate. Other (see comment). Use Caution/Monitor.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+methylphenidate transdermal
+methylphenidate transdermal will increase the level or effect of nortriptyline by
+decreasing elimination. Modify Therapy/Monitor Closely. Consider decreasing the
+dose of these drugs when given coadministered with methylphenidate. Monitor for
+drug toxiticities when initiating or discontinuing methylphenidate.
+
+midazolam
+midazolam and nortriptyline both increase sedation. Use Caution/Monitor.
+
+midazolam intranasal
+midazolam intranasal, nortriptyline. Either increases toxicity of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Concomitant use of
+barbiturates, alcohol, or other CNS depressants may increase the risk of
+hypoventilation, airway obstruction, desaturation, or apnea and may contribute to
+profound and/or prolonged drug effect.
+
+midodrine
+nortriptyline increases and midodrine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+mifepristone
+mifepristone, nortriptyline. QTc interval. Modify Therapy/Monitor Closely. Use
+alternatives if available.
+
+mirabegron
+mirabegron will increase the level or effect of nortriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+mirtazapine
+nortriptyline and mirtazapine both increase sedation. Use Caution/Monitor.
+
+nortriptyline and mirtazapine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+modafinil
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 42/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+nortriptyline increases and modafinil decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+molindone
+molindone and nortriptyline both increase sedation. Use Caution/Monitor.
+
+morphine
+morphine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+nortriptyline and morphine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+motherwort
+nortriptyline and motherwort both increase sedation. Use Caution/Monitor.
+
+moxonidine
+nortriptyline and moxonidine both increase sedation. Use Caution/Monitor.
+
+nabilone
+nortriptyline and nabilone both increase sedation. Use Caution/Monitor.
+
+nalbuphine
+nalbuphine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+naratriptan
+naratriptan and nortriptyline both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+nefopam
+nefopam, nortriptyline. Mechanism: unspecified interaction mechanism. Use
+Caution/Monitor. Use combination with caution.
+
+neostigmine
+neostigmine increases and nortriptyline decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+nilotinib
+nilotinib will increase the level or effect of nortriptyline by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+nitrous oxide
+nitrous oxide and nortriptyline both increase sedation. Use Caution/Monitor.
+
+norepinephrine
+nortriptyline increases and norepinephrine decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+nortriptyline increases effects of norepinephrine by unknown mechanism. Use
+Caution/Monitor.
+
+ofloxacin
+nortriptyline and ofloxacin both increase QTc interval. Modify Therapy/Monitor
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 43/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+Closely.
+
+olanzapine
+olanzapine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+olanzapine and nortriptyline both increase QTc interval. Use Caution/Monitor.
+
+olanzapine/samidorphan
+nortriptyline, olanzapine/samidorphan. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration of diazepam,
+alcohol, or other CNS acting drugs may potentiate orthostatic hypotension
+observed with olanzapine. Additive sedation may also occur.
+
+olodaterol inhaled
+nortriptyline and olodaterol inhaled both increase QTc interval. Use
+Caution/Monitor. TCAs prolong the QTc interval and may potentiate the effects of
+beta2 agonists on the cardiovascular system; increased risk of ventricular
+arrhythmias
+
+onabotulinumtoxinA
+nortriptyline increases effects of onabotulinumtoxinA by pharmacodynamic
+synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate
+botulinum toxin effects, which may result in excessive neuromuscular weakness
+and heighten systemic anticholinergic effects.
+
+opium tincture
+opium tincture and nortriptyline both increase sedation. Use Caution/Monitor.
+
+orphenadrine
+nortriptyline and orphenadrine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+orphenadrine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+osilodrostat
+osilodrostat and nortriptyline both increase QTc interval. Use Caution/Monitor.
+
+osimertinib
+osimertinib and nortriptyline both increase QTc interval. Use Caution/Monitor.
+Conduct periodic monitoring with ECGs and electrolytes in patients taking drugs
+known to prolong the QTc interval.
+
+oxazepam
+oxazepam and nortriptyline both increase sedation. Use Caution/Monitor.
+
+oxybutynin
+oxybutynin and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+oxybutynin topical
+oxybutynin topical and nortriptyline both decrease cholinergic effects/transmission.
+Use Caution/Monitor.
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 44/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+oxybutynin transdermal
+oxybutynin transdermal and nortriptyline both decrease cholinergic
+effects/transmission. Use Caution/Monitor.
+
+oxycodone
+oxycodone and nortriptyline both increase sedation. Use Caution/Monitor.
+
+oxymetazoline intranasal
+nortriptyline increases effects of oxymetazoline intranasal by pharmacodynamic
+synergism. Use Caution/Monitor. TCAs inhibit norepinephrine uptake in adrenergic
+neurons, thereby increasing synaptic norepinephrine levels. Coadministration with
+alpha1 agonists may cause increased adrenergic receptor stimulation. When
+oxymetazoline is combined with intranasal tetracaine for dental anesthesia, avoid or
+use alternant anesthetic in patients taking TCAs.
+
+oxymorphone
+oxymorphone and nortriptyline both increase sedation. Use Caution/Monitor.
+
+ozanimod
+ozanimod and nortriptyline both increase QTc interval. Modify Therapy/Monitor
+Closely. The potential additive effects on heart rate, treatment with ozanimod
+should generally not be initiated in patients who are concurrently treated with QT
+prolonging drugs with known arrhythmogenic properties.
+
+paliperidone
+nortriptyline and paliperidone both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+paliperidone and nortriptyline both increase sedation. Use Caution/Monitor.
+
+pancuronium
+pancuronium and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+papaveretum
+papaveretum and nortriptyline both increase sedation. Use Caution/Monitor.
+
+papaverine
+nortriptyline and papaverine both increase sedation. Use Caution/Monitor.
+
+parecoxib
+parecoxib will increase the level or effect of nortriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+paroxetine
+nortriptyline and paroxetine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+pasireotide
+nortriptyline and pasireotide both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+pazopanib
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 45/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+nortriptyline and pazopanib both increase QTc interval. Use Caution/Monitor.
+
+peginterferon alfa 2b
+peginterferon alfa 2b, nortriptyline. Other (see comment). Use Caution/Monitor.
+Comment: When patients are administered peginterferon alpha-2b with CYP2D6
+substrates, the therapeutic effect of these drugs may be altered. Peginterferon
+alpha-2b may increase or decrease levels of CYP2D6 substrate.
+
+pentazocine
+pentazocine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+nortriptyline and pentazocine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+pentobarbital
+pentobarbital and nortriptyline both increase sedation. Use Caution/Monitor.
+
+perphenazine
+perphenazine will increase the level or effect of nortriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+perphenazine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+phendimetrazine
+nortriptyline increases and phendimetrazine decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+phenobarbital
+phenobarbital and nortriptyline both increase sedation. Use Caution/Monitor.
+
+phentermine
+nortriptyline increases and phentermine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+phenylephrine
+nortriptyline increases and phenylephrine decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+phenylephrine ophthalmic
+nortriptyline, phenylephrine ophthalmic. Other (see comment). Use
+Caution/Monitor. Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+phenylephrine PO
+nortriptyline increases and phenylephrine PO decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor. .
+
+pholcodine
+nortriptyline and pholcodine both increase sedation. Use Caution/Monitor.
+
+physostigmine
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 46/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+physostigmine increases and nortriptyline decreases cholinergic
+effects/transmission. Effect of interaction is not clear, use caution. Use
+Caution/Monitor.
+
+pilocarpine
+pilocarpine increases and nortriptyline decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+pimozide
+pimozide and nortriptyline both increase sedation. Use Caution/Monitor.
+
+pirbuterol
+nortriptyline increases and pirbuterol decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+posaconazole
+nortriptyline and posaconazole both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+prabotulinumtoxinA
+nortriptyline increases effects of prabotulinumtoxinA by pharmacodynamic
+synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate
+botulinum toxin effects, which may result in excessive neuromuscular weakness
+and heighten systemic anticholinergic effects.
+
+pralidoxime
+pralidoxime and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+pregabalin
+pregabalin, nortriptyline. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+primidone
+primidone and nortriptyline both increase sedation. Use Caution/Monitor.
+
+prochlorperazine
+prochlorperazine and nortriptyline both increase QTc interval. Use Caution/Monitor.
+
+prochlorperazine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+promethazine
+promethazine and nortriptyline both increase QTc interval. Use Caution/Monitor.
+
+promethazine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+propafenone
+propafenone will increase the level or effect of nortriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+propantheline
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 47/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+propantheline and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+propofol
+propofol and nortriptyline both increase sedation. Use Caution/Monitor.
+
+propylhexedrine
+nortriptyline increases and propylhexedrine decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+protriptyline
+nortriptyline and protriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+nortriptyline and protriptyline both increase sedation. Use Caution/Monitor.
+
+pyridostigmine
+pyridostigmine increases and nortriptyline decreases cholinergic
+effects/transmission. Effect of interaction is not clear, use caution. Use
+Caution/Monitor.
+
+pyrilamine
+pyrilamine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+quazepam
+quazepam and nortriptyline both increase sedation. Use Caution/Monitor.
+
+quetiapine
+quetiapine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+quetiapine, nortriptyline. Either increases toxicity of the other by QTc interval. Use
+Caution/Monitor. Avoid use with drugs that prolong QT and in patients with risk
+factors for prolonged QT interval. Postmarketing cases show QT prolongation with
+overdose in patients with concomitant illness or with drugs known to cause
+electrolyte imbalance or prolong QT.
+
+quinacrine
+quinacrine will increase the level or effect of nortriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+quinine
+nortriptyline and quinine both increase QTc interval. Use Caution/Monitor.
+
+quizartinib
+quizartinib, nortriptyline. Either increases effects of the other by QTc interval. Modify
+Therapy/Monitor Closely. Monitor patients more frequently with ECG if
+coadministered with QT prolonging drugs.
+
+ramelteon
+nortriptyline and ramelteon both increase sedation. Use Caution/Monitor.
+
+ranolazine
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 48/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+ranolazine will increase the level or effect of nortriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+nortriptyline and ranolazine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+rapacuronium
+rapacuronium and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+remimazolam
+remimazolam, nortriptyline. Either increases toxicity of the other by sedation.
+Modify Therapy/Monitor Closely. Coadministration may result in profound sedation,
+respiratory depression, coma, and/or death. Continuously monitor vital signs during
+sedation and recovery period if coadministered. Carefully titrate remimazolam dose
+if administered with opioid analgesics and/or sedative/hypnotics.
+
+revumenib
+revumenib and nortriptyline both increase QTc interval. Use Caution/Monitor. ECG
+monitoring recommended if concomitant use can?t be avoided and withhold
+therapy if QTc interval is >480 msec; restart therapy after QTc interval returns to
+<480 msec
+
+rifabutin
+rifabutin decreases levels of nortriptyline by increasing metabolism. Use
+Caution/Monitor.
+
+rilpivirine
+rilpivirine increases toxicity of nortriptyline by QTc interval. Use Caution/Monitor.
+Rilpivirine should be used with caution when co-administered with a drug with a
+known risk of Torsade de Pointes.
+
+rimabotulinumtoxinB
+nortriptyline increases effects of rimabotulinumtoxinB by pharmacodynamic
+synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate
+botulinum toxin effects, which may result in excessive neuromuscular weakness
+and heighten systemic anticholinergic effects.
+
+risperidone
+nortriptyline and risperidone both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+risperidone and nortriptyline both increase sedation. Use Caution/Monitor.
+
+ritonavir
+ritonavir will increase the level or effect of nortriptyline by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+rizatriptan
+rizatriptan and nortriptyline both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+rocuronium
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 49/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+rocuronium and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+romidepsin
+nortriptyline and romidepsin both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+salmeterol
+nortriptyline increases and salmeterol decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+SAMe
+nortriptyline and SAMe both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+scopolamine
+scopolamine and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+scopolamine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+scopolamine intranasal
+scopolamine intranasal and nortriptyline both increase sedation. Use
+Caution/Monitor.
+
+scullcap
+nortriptyline and scullcap both increase sedation. Use Caution/Monitor.
+
+selpercatinib
+selpercatinib increases toxicity of nortriptyline by QTc interval. Use Caution/Monitor.
+
+sertraline
+sertraline will increase the level or effect of nortriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Modify Therapy/Monitor Closely.
+
+sevoflurane
+sevoflurane and nortriptyline both increase sedation. Use Caution/Monitor.
+
+sevoflurane and nortriptyline both increase QTc interval. Use Caution/Monitor.
+
+shepherd's purse
+nortriptyline and shepherd's purse both increase sedation. Use Caution/Monitor.
+
+sodium sulfate/?magnesium sulfate/potassium chloride
+sodium sulfate/?magnesium sulfate/potassium chloride increases effects of
+nortriptyline by unknown mechanism. Use Caution/Monitor. Closely monitor for
+evidence of seizures when using higher dose of magnesium sulfate together with
+drugs that lower the seizure threshold.
+
+sodium sulfate/potassium chloride/magnesium sulfate/polyethylene glycol
+nortriptyline, sodium sulfate/potassium chloride/magnesium sulfate/polyethylene
+glycol. Other (see comment). Use Caution/Monitor. Comment: Caution when bowel
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 50/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+preps are used with drugs that cause SIADH or NSAIDs; increased risk for water
+retention or electrolyte imbalance.
+
+sodium sulfate/potassium sulfate/magnesium sulfate
+sodium sulfate/potassium sulfate/magnesium sulfate increases effects of
+nortriptyline by unknown mechanism. Use Caution/Monitor. Closely monitor for
+evidence of seizures when using higher dose of magnesium sulfate together with
+drugs that lower the seizure threshold.
+
+solifenacin
+solifenacin and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+solifenacin and nortriptyline both increase QTc interval. Use Caution/Monitor.
+
+sorafenib
+sorafenib and nortriptyline both increase QTc interval. Use Caution/Monitor.
+
+stiripentol
+stiripentol, nortriptyline. Either increases effects of the other by sedation. Use
+Caution/Monitor. Concomitant use stiripentol with other CNS depressants, including
+alcohol, may increase the risk of sedation and somnolence.
+
+succinylcholine
+succinylcholine increases and nortriptyline decreases cholinergic
+effects/transmission. Effect of interaction is not clear, use caution. Use
+Caution/Monitor.
+
+sufentanil
+sufentanil and nortriptyline both increase sedation. Use Caution/Monitor.
+
+sufentanil SL
+sufentanil SL, nortriptyline. Either increases effects of the other by serotonin levels.
+Use Caution/Monitor. Coadministration of drugs that affect the serotonergic
+neurotransmitter system may result in serotonin syndrome. If concomitant use is
+warranted, carefully observe the patient, particularly during treatment initiation and
+dose adjustment.
+
+sulfamethoxazole
+nortriptyline and sulfamethoxazole both increase QTc interval. Modify
+Therapy/Monitor Closely.
+
+sumatriptan
+sumatriptan and nortriptyline both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+sumatriptan intranasal
+sumatriptan intranasal and nortriptyline both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+suvorexant
+suvorexant and nortriptyline both increase sedation. Modify Therapy/Monitor
+Closely. Dosage adjustments of suvorexant and concomitant CNS depressants may
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 51/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+be necessary
+
+tacrolimus
+tacrolimus and nortriptyline both increase QTc interval. Use Caution/Monitor.
+
+taletrectinib
+taletrectinib and nortriptyline both increase QTc interval. Use Caution/Monitor.
+Concomitant use may increase the risk of QTc interval prolongation. If concomitant
+use is unavoidable, adjust the frequency of ECG and electrolyte monitoring.
+
+tapentadol
+tapentadol and nortriptyline both increase sedation. Use Caution/Monitor.
+
+nortriptyline and tapentadol both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+tasimelteon
+tasimelteon and nortriptyline both increase sedation. Use Caution/Monitor.
+
+telavancin
+nortriptyline and telavancin both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+temazepam
+temazepam and nortriptyline both increase sedation. Use Caution/Monitor.
+
+terbutaline
+nortriptyline increases and terbutaline decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+tetrabenazine
+tetrabenazine and nortriptyline both increase QTc interval. Use Caution/Monitor.
+
+tetrabenazine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+thioridazine
+thioridazine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+thiothixene
+thiothixene and nortriptyline both increase sedation. Use Caution/Monitor.
+
+thyroid desiccated
+thyroid desiccated increases effects of nortriptyline by Other (see comment). Use
+Caution/Monitor. Comment: Increased catecholamine receptor sensitivity; may
+increase CNS and cardiovascular effects, including arrhythmias.
+
+tiagabine
+tiagabine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+tiotropium
+tiotropium and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 52/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+tipranavir
+tipranavir will increase the level or effect of nortriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+tizanidine
+tizanidine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+tolterodine
+tolterodine and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+topiramate
+nortriptyline and topiramate both increase sedation. Modify Therapy/Monitor
+Closely.
+
+tramadol
+tramadol and nortriptyline both increase sedation. Use Caution/Monitor.
+
+nortriptyline and tramadol both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+trazodone
+nortriptyline and trazodone both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+nortriptyline and trazodone both increase sedation. Use Caution/Monitor.
+
+triazolam
+triazolam and nortriptyline both increase sedation. Use Caution/Monitor.
+
+triclofos
+triclofos and nortriptyline both increase sedation. Use Caution/Monitor.
+
+trifluoperazine
+trifluoperazine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+trihexyphenidyl
+trihexyphenidyl and nortriptyline both decrease cholinergic effects/transmission.
+Use Caution/Monitor. Potential for additive anticholinergic effects.
+
+trimethoprim
+nortriptyline and trimethoprim both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+trimipramine
+nortriptyline and trimipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+nortriptyline and trimipramine both increase sedation. Use Caution/Monitor.
+
+triprolidine
+triprolidine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 53/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+tropisetron
+nortriptyline and tropisetron both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+trospium chloride
+trospium chloride and nortriptyline both decrease cholinergic effects/transmission.
+Use Caution/Monitor.
+
+valbenazine
+valbenazine and nortriptyline both increase QTc interval. Use Caution/Monitor.
+
+valerian
+valerian and nortriptyline both increase sedation. Use Caution/Monitor.
+
+valproic acid
+valproic acid and nortriptyline both increase sedation. Use Caution/Monitor.
+
+vecuronium
+vecuronium and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+venlafaxine
+nortriptyline and venlafaxine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+vigabatrin
+vigabatrin and nortriptyline both increase sedation. Use Caution/Monitor.
+
+viloxazine
+viloxazine will increase the level or effect of nortriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor. Viloxazine (a weak CYP2D6
+inhibitor) may increase systemic exposure of CYP2D6 substrates. Monitor and
+adjust dose of substrate as clinically indicated.
+
+voclosporin
+voclosporin, nortriptyline. Either increases effects of the other by QTc interval. Use
+Caution/Monitor.
+
+voriconazole
+nortriptyline and voriconazole both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+xanomeline/trospium
+xanomeline/trospium, nortriptyline. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration of
+antimuscarinic drugs that produce anticholinergic adverse reactions (eg, dry mouth,
+constipation) may increase the frequency and/or severity of such effects.
+
+xylometazoline
+nortriptyline increases and xylometazoline decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+yohimbine
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 54/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+nortriptyline increases and yohimbine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+zaleplon
+zaleplon and nortriptyline both increase sedation. Use Caution/Monitor.
+
+ziconotide
+nortriptyline and ziconotide both increase sedation. Use Caution/Monitor.
+
+ziprasidone
+ziprasidone and nortriptyline both increase sedation. Use Caution/Monitor.
+
+zolmitriptan
+zolmitriptan and nortriptyline both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+zolpidem
+zolpidem and nortriptyline both increase sedation. Use Caution/Monitor.
+
+zonisamide
+zonisamide and nortriptyline both increase sedation. Use Caution/Monitor.
+
+zuranolone
+zuranolone and nortriptyline both increase sedation. Use Caution/Monitor.
+
+Minor (65)
+
+acarbose
+nortriptyline increases effects of acarbose by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+atropine
+nortriptyline increases levels of atropine by unknown mechanism.
+Minor/Significance Unknown.
+
+atropine IV/IM
+nortriptyline increases levels of atropine IV/IM by unknown mechanism.
+Minor/Significance Unknown.
+
+bazedoxifene/conjugated estrogens
+bazedoxifene/conjugated estrogens, nortriptyline. Mechanism: unspecified
+interaction mechanism. Minor/Significance Unknown. Estrogens and progestins may
+decr tricyclic antidepressant effects, while increasing TCA plasma concentration and
+adverse effects.
+
+brimonidine topical
+nortriptyline decreases effects of brimonidine topical by pharmacodynamic
+antagonism. Minor/Significance Unknown.
+
+butalbital
+butalbital, nortriptyline. Other (see comment). Minor/Significance Unknown.
+Comment: Barbiturates may increase adverse effects, including respiratory
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 55/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+depression, produced by toxic doses of TCAs. With therapeutic doses of TCAs,
+barbiturates increase metabolism and decrease blood concentrations of TCAs.
+
+carbachol/brimonidine ophthalmic
+nortriptyline decreases effects of carbachol/brimonidine ophthalmic by
+pharmacodynamic antagonism. Minor/Significance Unknown.
+
+carbamazepine
+carbamazepine decreases levels of nortriptyline by increasing metabolism.
+Minor/Significance Unknown.
+
+chlorpromazine
+nortriptyline, chlorpromazine. Either increases levels of the other by decreasing
+metabolism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+nortriptyline, chlorpromazine. Either increases levels of the other by
+pharmacodynamic synergism. Minor/Significance Unknown. Additive anticholinergic
+effects.
+
+conjugated estrogens
+conjugated estrogens, nortriptyline. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Estrogens and progestins may decr tricyclic
+antidepressant effects, while increasing TCA plasma concentration and adverse
+effects.
+
+conjugated estrogens, vaginal
+conjugated estrogens, vaginal, nortriptyline. Mechanism: unspecified interaction
+mechanism. Minor/Significance Unknown. Estrogens and progestins may decr
+tricyclic antidepressant effects, while increasing TCA plasma concentration and
+adverse effects.
+
+desflurane
+desflurane, nortriptyline. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Risk of arrhythmias or hypotension.
+
+dexmethylphenidate
+dexmethylphenidate increases effects of nortriptyline by decreasing metabolism.
+Minor/Significance Unknown.
+
+estradiol
+estradiol, nortriptyline. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Estrogens and progestins may decr tricyclic
+antidepressant effects, while increasing TCA plasma concentration and adverse
+effects.
+
+estrogens conjugated synthetic
+estrogens conjugated synthetic, nortriptyline. Mechanism: unspecified interaction
+mechanism. Minor/Significance Unknown. Estrogens and progestins may decr
+tricyclic antidepressant effects, while increasing TCA plasma concentration and
+adverse effects.
+
+estrogens esterified
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 56/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+estrogens esterified, nortriptyline. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Estrogens may inhibit hepatic metabolism of tricyclic
+antidepressants. However, interactions are not common.
+
+estropipate
+estropipate, nortriptyline. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Estrogens and progestins may decr tricyclic
+antidepressant effects, while increasing TCA plasma concentration and adverse
+effects.
+
+ethinylestradiol
+ethinylestradiol, nortriptyline. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Oxidative metabolism of TCAs may be decreased by
+ethinyl estradiol. Increased antidepressant serum concentrations may occur.
+Potential for increased TCA adverse effects.
+
+etomidate
+etomidate, nortriptyline. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Risk of arrhythmias or hypotension.
+
+eucalyptus
+nortriptyline and eucalyptus both increase sedation. Minor/Significance Unknown.
+
+fluphenazine
+nortriptyline, fluphenazine. Either increases levels of the other by decreasing
+metabolism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+nortriptyline, fluphenazine. Either increases levels of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+glimepiride
+nortriptyline increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+glipizide
+nortriptyline increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+glyburide
+nortriptyline increases effects of glyburide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+hydroxyprogesterone caproate (DSC)
+hydroxyprogesterone caproate (DSC), nortriptyline. Mechanism: unspecified
+interaction mechanism. Minor/Significance Unknown. Estrogens and progestins may
+decr tricyclic antidepressant effects, while increasing TCA plasma concentration and
+adverse effects.
+
+insulin aspart
+nortriptyline increases effects of insulin aspart by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+insulin detemir
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 57/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+nortriptyline increases effects of insulin detemir by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+insulin glargine
+nortriptyline increases effects of insulin glargine by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+insulin glulisine
+nortriptyline increases effects of insulin glulisine by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+insulin lispro
+nortriptyline increases effects of insulin lispro by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+insulin NPH
+nortriptyline increases effects of insulin NPH by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+insulin regular human
+nortriptyline increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+isoproterenol
+isoproterenol, nortriptyline. Mechanism: unknown. Minor/Significance Unknown.
+Risk of cardiac arrhythmias.
+
+ketamine
+ketamine, nortriptyline. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Risk of arrhythmias or hypotension.
+
+lithium
+lithium, nortriptyline. Other (see comment). Minor/Significance Unknown. Comment:
+Risk of neurotoxicity in geriatric pts. Multiple mechanisms involved.
+
+mestranol
+mestranol, nortriptyline. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Estrogens and progestins may decr tricyclic
+antidepressant effects, while increasing TCA plasma concentration and adverse
+effects.
+
+miglitol
+nortriptyline increases effects of miglitol by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+nateglinide
+nortriptyline increases effects of nateglinide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+panax ginseng
+panax ginseng increases effects of nortriptyline by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 58/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+pentobarbital
+pentobarbital, nortriptyline. Other (see comment). Minor/Significance Unknown.
+Comment: Barbiturates may increase adverse effects, including respiratory
+depression, produced by toxic doses of TCAs. With therapeutic doses of TCAs,
+barbiturates increase metabolism and decrease blood concentrations of TCAs.
+
+perphenazine
+nortriptyline, perphenazine. Either increases levels of the other by decreasing
+metabolism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+nortriptyline, perphenazine. Either increases levels of the other by
+pharmacodynamic synergism. Minor/Significance Unknown. Additive anticholinergic
+effects.
+
+phenobarbital
+phenobarbital, nortriptyline. Other (see comment). Minor/Significance Unknown.
+Comment: Barbiturates may increase adverse effects, including respiratory
+depression, produced by toxic doses of TCAs. With therapeutic doses of TCAs,
+barbiturates increase metabolism and decrease blood concentrations of TCAs.
+
+pioglitazone
+nortriptyline increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+pleurisy root
+pleurisy root decreases effects of nortriptyline by unspecified interaction
+mechanism. Minor/Significance Unknown. Theoretical interaction.
+
+primidone
+primidone, nortriptyline. Other (see comment). Minor/Significance Unknown.
+Comment: Barbiturates may increase adverse effects, including respiratory
+depression, produced by toxic doses of TCAs. With therapeutic doses of TCAs,
+barbiturates increase metabolism and decrease blood concentrations of TCAs.
+
+prochlorperazine
+nortriptyline, prochlorperazine. Either increases levels of the other by decreasing
+metabolism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+nortriptyline, prochlorperazine. Either increases levels of the other by
+pharmacodynamic synergism. Minor/Significance Unknown. Additive anticholinergic
+effects.
+
+progesterone micronized
+progesterone micronized, nortriptyline. Mechanism: unspecified interaction
+mechanism. Minor/Significance Unknown. Estrogens and progestins may decr
+tricyclic antidepressant effects, while increasing TCA plasma concentration and
+adverse effects.
+
+promazine
+nortriptyline, promazine. Either increases levels of the other by decreasing
+metabolism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 59/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+nortriptyline, promazine. Either increases levels of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+promethazine
+nortriptyline, promethazine. Either increases levels of the other by decreasing
+metabolism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+nortriptyline, promethazine. Either increases levels of the other by
+pharmacodynamic synergism. Minor/Significance Unknown. Additive anticholinergic
+effects.
+
+propofol
+propofol, nortriptyline. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Risk of arrhythmias or hypotension.
+
+repaglinide
+nortriptyline increases effects of repaglinide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+rifampin
+rifampin decreases levels of nortriptyline by increasing metabolism.
+Minor/Significance Unknown.
+
+rosiglitazone
+nortriptyline increases effects of rosiglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+sage
+nortriptyline and sage both increase sedation. Minor/Significance Unknown.
+
+saxagliptin
+nortriptyline increases effects of saxagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+serdexmethylphenidate/dexmethylphenidate
+serdexmethylphenidate/dexmethylphenidate increases effects of nortriptyline by
+decreasing metabolism. Minor/Significance Unknown.
+
+sevoflurane
+sevoflurane, nortriptyline. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Risk of arrhythmias or hypotension.
+
+sitagliptin
+nortriptyline increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+sulfamethoxazole
+sulfamethoxazole decreases levels of nortriptyline by unspecified interaction
+mechanism. Minor/Significance Unknown.
+
+thioridazine
+nortriptyline, thioridazine. Either increases levels of the other by decreasing
+metabolism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 60/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+nortriptyline, thioridazine. Either increases levels of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+trifluoperazine
+nortriptyline, trifluoperazine. Either increases levels of the other by decreasing
+metabolism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+nortriptyline, trifluoperazine. Either increases levels of the other by
+pharmacodynamic synergism. Minor/Significance Unknown. Additive anticholinergic
+effects.
+
+vasopressin
+nortriptyline increases effects of vasopressin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+verapamil
+verapamil increases levels of nortriptyline by decreasing metabolism.
+Minor/Significance Unknown.
+
+vildagliptin
+nortriptyline increases effects of vildagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+zolpidem
+zolpidem, nortriptyline. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive CNS depression.
+
+Adverse Effects
+
+Frequency Not Defined
+
+Fatigue
+
+Lethargy
+
+Sedation
+
+Weakness
+
+Dry mouth
+
+Constipation
+
+Blurred vision
+
+Agitation
+
+Anxiety
+
+Headache
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 61/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+Insomnia
+
+Nausea
+
+Vomiting
+
+Sweating
+
+Orthostatic hypotension, ECG changes, tachycardia
+
+Confusion, extrapyramidal symptoms, dizziness, paresthesia, tinnitus
+
+Rash
+
+Increased LFTs
+
+Sexual dysfunction
+
+Seizure
+
+Agranulocytosis
+
+Eosinophilia
+
+Leukopenia
+
+Thrombocytopenia
+
+SIADH
+
+Postmarketing
+
+Brugada syndrome
+
+Warnings
+
+Black Box Warnings
+
+In short-term studies, antidepressants increased the risk of suicidal thinking and
+behavior in children, adolescents, and young adults (<24 years) taking antidepressants
+for major depressive disorders or other psychiatric illnesses
+
+This increase was not seen in patients aged over age 24 years; a slight decrease in
+suicidal thinking was seen in adults over age 65 years
+
+In children and young adults, risks must be weighed against the benefits of taking
+antidepressants
+
+Patients should be monitored closely for changes in behavior, clinical worsening, and
+suicidal tendencies; this should be done during the initial 1-2 months of therapy and
+dosage adjustments
+
+The patient’s family should communicate any abrupt changes in behavior to the
+healthcare provider
+
+Worsening behavior and suicidal tendencies that are not part of the presenting
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 62/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+symptoms may require discontinuation of therapy
+
+This drug is not approved for use in pediatric patients
+
+Contraindications
+
+Hypersensitivity
+
+Any drugs or conditions that prolong QT interval
+
+Acute recovery post-MI
+
+Coadministration with serotonergic drugs
+
+Concomitant with or within 14 days of MAOIs (serotonin syndrome)
+
+Starting nortriptyline in a patient who is being treated with linezolid or IV
+methylene blue is contraindicated because of an increased risk of serotonin
+syndrome
+
+If linezolid or IV methylene blue must be administered, discontinue nortriptyline
+immediately and monitor for CNS toxicity; may resume nortriptyline 24 hours after
+last linezolid or methylene blue dose or after 2 weeks of monitoring, whichever
+comes first
+
+Cautions
+
+Use cautioni in patients with BPH, urinary/GI retention, hyperthyroidism, seizure disorder,
+brain tumor, respiratory impairment, bipolar/mania (may worsen psychosis)
+
+Clinical worsening and suicidal ideation may occur despite medication in adolescents
+and young adults (18-24 years)
+
+Potentially life-threatening serotonin syndrome reported when coadministered with
+drugs that impair serotonin metabolism (in particular, MAOIs, including nonpsychiatric
+MAOIs, such as linezolid and IV methylene blue)
+
+Risk of anticholinergic side effects
+
+May cause bone marrow suppression (rare)
+
+May cause orthostatic hypotension
+
+May cause sedation, which may impair physical or mental abilities; use caution when
+performing tasks that require mental alertness (eg, operating heavy machinery)
+
+Risk of mydriasis; may trigger angle closure attack in patients with angle closure
+glaucoma with anatomically narrow angles without a patent iridectomy
+
+May cause sedation and impair physical or mental abilities
+
+Withdraw gradually
+
+Bone fractures have been associated with antidepressant treatment; consider possibility
+of bone fractures in patients if antidepressant treated patient presents with unexplained
+bone pain, swelling, bruising or point tenderness
+
+Use with caution in patients who would not tolerate frequent hypotensive episodes,
+including patients with cardiovascular disease, hypovolemia or with concurrent
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 63/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+medication that predisposes for hypotension/bradycardia
+
+Use caution in patients with cardiovascular disease, diabetes mellitus (may alter glucose
+regulation), hepatic/renal impairment, and the elderly
+
+Abrupt discontinuation or interruption of antidepressant therapy has been associated
+with a discontinuation syndrome, which may include vomiting, diarrhea, headaches,
+dizziness, chills, tremors, paresthesias, somnolence, fatigue, and sleep disturbances
+
+May increase the risk of adverse effects associated with electroconvulsive therapy;
+discontinue therapy prior to electroconvulsive therapy if possible
+
+Due to risk of drug interaction with anesthesia and of cardiac arrhythmia, discontinuation
+of therapy prior to elective surgery recommended
+
+Association between treatment and the unmasking of Brugada syndrome with some
+resulting in death reported; therapy should generally be avoided in patients with
+Brugada syndrome or those suspected of having Brugada syndrome
+
+Pregnancy & Lactation
+
+Pregnancy category: D
+
+Lactation: Excreted in breast milk; do not nurse (AAP states effect on nursing infants is
+unknown but may be of concern)
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+Neurotransmitter (especially norepinephrine and serotonin) reuptake inhibitor; increases
+concentration of neurotransmitter in the CNS
+
+Absorption
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 64/65
+
+
+
+6/22/26, 4:27 PM Pamelor, Aventyl (nortriptyline) dosing, indications, interactions, adverse effects, and more
+
+Onset of action: 1-3 weeks
+
+Peak plasma time: 7-8.5 hr
+
+Steady-state therapeutic plasma concentration: 50-150 ng/mL
+
+Distribution
+
+Protein bound: 93-95%
+
+Vd: 21 L/kg
+
+Metabolism
+
+Hepatic CYP2D6
+
+Elimination
+
+Half-life: 28-31 hr
+
+Excretion: Urine, feces
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/pamelor-nortriptyline-342944 65/65

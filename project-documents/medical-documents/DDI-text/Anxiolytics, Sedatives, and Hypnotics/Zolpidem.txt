@@ -1,0 +1,2033 @@
+﻿6/22/26, 4:37 PM Ambien, Ambien CR (zolpidem) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+zolpidem (Rx)
+Brand and Other Names: Ambien, Ambien CR, Edluar, Intermezzo (DSC), Zolpimist
+(DSC)
+Classes: Sedative/Hypnotics; Insomnia
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+tablet, immediate-release: Schedule IV
+
+5mg (Ambien)
+
+10mg (Ambien)
+
+tablet, extended-release: Schedule IV
+
+6.25mg (Ambien CR)
+
+12.5mg (Ambien CR)
+
+tablet, sublingual: Schedule IV
+
+1.75mg
+
+3.5mg
+
+5mg (Edluar)
+
+10mg (Edluar)
+
+capsule: Schedule IV
+
+7.5mg
+
+Insomnia (Sleep Onset & Maintenance)
+
+Indicated for insomnia characterized by difficulties with sleep onset and/or sleep
+maintenance (as measured by wake time after sleep onset)
+
+https://reference.medscape.com/drug/ambien-cr-zolpidem-342931 1/35
+
+
+
+6/22/26, 4:37 PM Ambien, Ambien CR (zolpidem) dosing, indications, interactions, adverse effects, and more
+
+Immediate-release tablet, sublingual tablet, and oral spray
+
+Dosing for PO (Ambien), SL (Edluar), and oral spray (Zolpimist)
+
+Women: 5 mg PO/SL/oral spray qHS
+
+Men: Consider 5 mg PO/SL/oral spray qHS; may use 10 mg PO/SL/oral spray qHS if
+needed
+
+Extended-release (Ambien CR)
+
+Women: 6.25 mg PO qHS
+
+Men: Consider 6.25 mg PO qHS; may use 12.5 mg PO qHS; not to exceed 12.5
+mg/day
+
+Dosing considerations (Ambien, Ambien CR)
+
+Use lowest effective dose; take only once per night immediately before bedtime
+with at least 7-8 hr remaining before the planned time of awakening
+
+In some patients, higher morning blood levels following use of 10 mg dose increase
+the risk of next day impairment of driving and other activities that require full
+alertness
+
+Total dose should not exceed 10 mg once daily immediately before bedtime; should
+be taken as single dose and should not be readministered during same night
+
+Insomnia (Middle of Night Awakening)
+
+Intermezzo only
+
+Indicated for insomnia when a middle of the night awakening is followed by difficulty
+returning to sleep
+
+Women: 1.75 mg SL PRN; not to exceed 1 dose/night
+
+Men: 3.5 mg SL PRN; not to exceed 1 dose/night
+
+Dosing considerations (Intermezzo)
+
+Use only when ≥4 hr of bedtime remain before awakening
+
+Do not take if alcohol has been consumed or with any other sleep aid
+
+Concomitant with CNS depressants: 1.75 mg SL PRN; not to exceed 1 dose/night
+
+Dosage Modifications
+
+https://reference.medscape.com/drug/ambien-cr-zolpidem-342931 2/35
+
+
+
+6/22/26, 4:37 PM Ambien, Ambien CR (zolpidem) dosing, indications, interactions, adverse effects, and more
+
+Renal impairment
+
+Dose adjustment may not be necessary; monitor
+
+Hepatic impairment
+
+Immediate-release: 5 mg immediately before bedtime
+
+Extended-release: 6.25 mg immediately before bedtime
+
+Sublingual (Edluar): 5 mg immediately before bedtime
+
+Sublingual (Intermezzo): 1.75 mg once at night if ≥4 hr remain before awakening
+
+PEDIATRIC
+Not recommended
+
+GERIATRIC
+Drug of choice when hypnotic indicated in elderly
+
+Insomnia (Sleep Onset & Sleep Maintenance)
+
+Indicated for insomnia characterized by difficulties with sleep onset and/or sleep
+maintenance (as measured by wake time after sleep onset)
+
+Immediate-release, oral spray: 5 mg PO/SL immediately before bedtime
+
+Extended-release: 6.25 mg PO immediately before bedtime
+
+Dosing considerations
+
+Ambien, Ambien CR: Use lowest effective dose; take only once per night immediately
+before bedtime with at least 7-8 hr remaining before the planned time of awakening
+
+Insomnia (Middle of Night Awakening)
+
+Intermezzo only
+
+Indicated for insomnia when a middle of the night awakening is followed by difficulty
+returning to sleep
+
+Men and women: 1.75 mg SL PRN; not to exceed 1 dose/night
+
+Dosing considerations
+
+Intermezzo: Use only when ≥4 hr of bedtime remain before awakening; do not take if
+alcohol has been consumed or with any other sleep aid
+
+Interactions
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and zolpidem
+https://reference.medscape.com/drug/ambien-cr-zolpidem-342931 3/35
+
+
+
+6/22/26, 4:37 PM Ambien, Ambien CR (zolpidem) dosing, indications, interactions, adverse effects, and more
+No Interactions Found
+Interactions Found
+Contraindicated
+
+Serious
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+Contraindicated (3)
+
+calcium/magnesium/potassium/sodium oxybates
+zolpidem, calcium/magnesium/potassium/sodium oxybates. Either increases effects
+of the other by pharmacodynamic synergism. Contraindicated. Coadministration
+with alcohol or sedative hypnotics are contraindicated because of additive CNS
+depression.
+
+sodium oxybate
+zolpidem, sodium oxybate. Either increases effects of the other by
+pharmacodynamic synergism. Contraindicated. Coadministration with alcohol or
+sedative hypnotics are contraindicated because of additive CNS depression.
+
+thalidomide
+zolpidem and thalidomide both increase sedation. Contraindicated.
+
+Serious (33)
+
+alfentanil
+zolpidem and alfentanil both increase sedation. Avoid or Use Alternate Drug. Limit
+use to patients for whom alternative treatment options are inadequate
+
+apalutamide
+apalutamide will decrease the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+Coadministration of apalutamide, a strong CYP3A4 inducer, with drugs that are
+CYP3A4 substrates can result in lower exposure to these medications. Avoid or
+substitute another drug for these medications when possible. Evaluate for loss of
+therapeutic effect if medication must be coadministered. Adjust dose according to
+prescribing information if needed.
+
+benzhydrocodone/acetaminophen
+benzhydrocodone/acetaminophen, zolpidem. Either increases toxicity of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Profound sedation,
+respiratory depression, coma, and death may result if coadministered. Reserve
+concomitant prescribing of these drugs in patients for whom other treatment
+options are inadequate. Limit dosages and durations to the minimum required.
+Monitor closely for signs of respiratory depression and sedation.
+
+https://reference.medscape.com/drug/ambien-cr-zolpidem-342931 4/35
+
+
+
+6/22/26, 4:37 PM Ambien, Ambien CR (zolpidem) dosing, indications, interactions, adverse effects, and more
+
+buprenorphine
+zolpidem and buprenorphine both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+buprenorphine buccal
+zolpidem and buprenorphine buccal both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+chlorpheniramine
+zolpidem and chlorpheniramine both increase sedation. Avoid or Use Alternate
+Drug.
+
+clonidine
+clonidine, zolpidem. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Coadministration enhances CNS
+depressant effects.
+
+cobicistat
+cobicistat will increase the level or effect of zolpidem by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+codeine
+zolpidem and codeine both increase sedation. Avoid or Use Alternate Drug. Limit
+use to patients for whom alternative treatment options are inadequate
+
+enzalutamide
+enzalutamide will decrease the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+fentanyl
+fentanyl, zolpidem. Either increases effects of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Coadministration with other CNS
+depressants, such as skeletal muscle relaxants, may cause respiratory depression,
+hypotension, profound sedation, coma, and/or death. Consider dose reduction of
+either or both agents to avoid serious adverse effects. Monitor for hypotension,
+respiratory depression, and profound sedation.
+
+fentanyl intranasal
+fentanyl intranasal, zolpidem. Either increases effects of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Coadministration with
+other CNS depressants, such as skeletal muscle relaxants, may cause respiratory
+depression, hypotension, profound sedation, coma, and/or death. Consider dose
+reduction of either or both agents to avoid serious adverse effects. Monitor for
+hypotension, respiratory depression, and profound sedation.
+
+fentanyl transdermal
+fentanyl transdermal, zolpidem. Either increases effects of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Coadministration with
+other CNS depressants, such as skeletal muscle relaxants, may cause respiratory
+depression, hypotension, profound sedation, coma, and/or death. Consider dose
+reduction of either or both agents to avoid serious adverse effects. Monitor for
+hypotension, respiratory depression, and profound sedation.
+
+https://reference.medscape.com/drug/ambien-cr-zolpidem-342931 5/35
+
+
+
+6/22/26, 4:37 PM Ambien, Ambien CR (zolpidem) dosing, indications, interactions, adverse effects, and more
+
+fentanyl transmucosal
+fentanyl transmucosal, zolpidem. Either increases effects of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Coadministration with
+other CNS depressants, such as skeletal muscle relaxants, may cause respiratory
+depression, hypotension, profound sedation, coma, and/or death. Consider dose
+reduction of either or both agents to avoid serious adverse effects. Monitor for
+hypotension, respiratory depression, and profound sedation.
+
+hydrocodone
+hydrocodone, zolpidem. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Profound sedation, respiratory depression,
+coma, and death may result if coadministered. Reserve concomitant prescribing of
+these drugs in patients for whom other treatment options are inadequate. Limit
+dosages and durations to the minimum required. Monitor closely for signs of
+respiratory depression and sedation.
+
+zolpidem and hydrocodone both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+hydromorphone
+zolpidem and hydromorphone both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+idelalisib
+idelalisib will increase the level or effect of zolpidem by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Idelalisib is a strong
+CYP3A inhibitor; avoid coadministration with sensitive CYP3A substrates
+
+ivosidenib
+ivosidenib will decrease the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid
+coadministration of sensitive CYP3A4 substrates with ivosidenib or replace with
+alternative therapies. If coadministration is unavoidable, monitor patients for loss of
+therapeutic effect of these drugs.
+
+lemborexant
+lemborexant, zolpidem. Either increases effects of the other by sedation. Avoid or
+Use Alternate Drug. Use of lemborexant with other drugs to treat insomnia is not
+recommended.
+
+lonafarnib
+lonafarnib will increase the level or effect of zolpidem by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid coadministration
+with sensitive CYP3A substrates. If coadministration unavoidable, monitor for
+adverse reactions and reduce CYP3A substrate dose in accordance with product
+labeling.
+
+methadone
+zolpidem and methadone both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+metoclopramide intranasal
+
+https://reference.medscape.com/drug/ambien-cr-zolpidem-342931 6/35
+
+
+
+6/22/26, 4:37 PM Ambien, Ambien CR (zolpidem) dosing, indications, interactions, adverse effects, and more
+
+zolpidem, metoclopramide intranasal. Either increases effects of the other by Other
+(see comment). Avoid or Use Alternate Drug. Comment: Avoid use of
+metoclopramide intranasal or interacting drug, depending on importance of drug to
+patient.
+
+morphine
+zolpidem and morphine both increase sedation. Avoid or Use Alternate Drug. Limit
+use to patients for whom alternative treatment options are inadequate
+
+nefazodone
+nefazodone will increase the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+olopatadine intranasal
+zolpidem and olopatadine intranasal both increase sedation. Avoid or Use Alternate
+Drug. Coadministration increases risk of CNS depression, which can lead to additive
+impairment of psychomotor performance and cause daytime impairment.
+
+oxycodone
+zolpidem and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+Additive CNS depression may lead to hypotension, profound sedation, respiratory
+depression, or coma
+
+oxymorphone
+zolpidem and oxymorphone both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+remifentanil
+zolpidem and remifentanil both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+selinexor
+selinexor, zolpidem. unspecified interaction mechanism. Avoid or Use Alternate
+Drug. Patients treated with selinexor may experience neurological toxicities. Avoid
+taking selinexor with other medications that may cause dizziness or confusion.
+
+sufentanil SL
+sufentanil SL, zolpidem. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Coadministration may result in
+hypotension, profound sedation, respiratory depression, coma, and death. Reserve
+concomitant prescribing of these drugs in patients for whom other treatment
+options are inadequate. Limit dosages and durations to the minimum required.
+Monitor closely for signs of respiratory depression and sedation.
+
+tucatinib
+tucatinib will increase the level or effect of zolpidem by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid concomitant use
+of tucatinib with CYP3A substrates, where minimal concentration changes may lead
+to serious or life-threatening toxicities. If unavoidable, reduce CYP3A substrate
+dose according to product labeling.
+
+valerian
+
+https://reference.medscape.com/drug/ambien-cr-zolpidem-342931 7/35
+
+
+
+6/22/26, 4:37 PM Ambien, Ambien CR (zolpidem) dosing, indications, interactions, adverse effects, and more
+
+valerian and zolpidem both increase sedation. Avoid or Use Alternate Drug.
+
+zuranolone
+zolpidem, zuranolone. Either increases effects of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Coadministration of zuranolone with other
+CNS depressants may increase impairment of psychomotor performance or CNS
+depressant effects. If unavoidable, consider dose reduction. .
+
+Monitor Closely (206)
+
+acetaminophen/phenyltoloxamine
+zolpidem and acetaminophen/phenyltoloxamine both increase sedation. Use
+Caution/Monitor.
+
+acrivastine
+acrivastine and zolpidem both increase sedation. Use Caution/Monitor.
+
+alprazolam
+zolpidem and alprazolam both increase sedation. Use Caution/Monitor.
+
+amisulpride
+amisulpride and zolpidem both increase sedation. Use Caution/Monitor.
+
+amitriptyline
+zolpidem and amitriptyline both increase sedation. Use Caution/Monitor.
+
+amoxapine
+zolpidem and amoxapine both increase sedation. Use Caution/Monitor.
+
+aripiprazole
+zolpidem and aripiprazole both increase sedation. Use Caution/Monitor.
+
+asenapine
+asenapine and zolpidem both increase sedation. Use Caution/Monitor.
+
+asenapine transdermal
+asenapine transdermal and zolpidem both increase sedation. Use Caution/Monitor.
+
+avapritinib
+avapritinib and zolpidem both increase sedation. Use Caution/Monitor.
+
+baclofen
+zolpidem and baclofen both increase sedation. Use Caution/Monitor.
+
+benzhydrocodone/acetaminophen
+benzhydrocodone/acetaminophen and zolpidem both increase sedation. Use
+Caution/Monitor.
+
+brexanolone
+brexanolone, zolpidem. Either increases toxicity of the other by sedation. Use
+Caution/Monitor.
+
+https://reference.medscape.com/drug/ambien-cr-zolpidem-342931 8/35
+
+
+
+6/22/26, 4:37 PM Ambien, Ambien CR (zolpidem) dosing, indications, interactions, adverse effects, and more
+
+zolpidem and brexanolone both increase sedation. Use Caution/Monitor.
+
+brexpiprazole
+brexpiprazole and zolpidem both increase sedation. Use Caution/Monitor.
+
+brimonidine
+brimonidine and zolpidem both increase sedation. Use Caution/Monitor.
+
+brimonidine topical
+brimonidine topical and zolpidem both increase sedation. Use Caution/Monitor.
+
+zolpidem and brimonidine topical both increase sedation. Use Caution/Monitor.
+
+brivaracetam
+brivaracetam and zolpidem both increase sedation. Use Caution/Monitor.
+
+brompheniramine
+zolpidem and brompheniramine both increase sedation. Use Caution/Monitor.
+
+buprenorphine subdermal implant
+buprenorphine subdermal implant and zolpidem both increase sedation. Use
+Caution/Monitor.
+
+buprenorphine transdermal
+buprenorphine transdermal and zolpidem both increase sedation. Use
+Caution/Monitor.
+
+buprenorphine, long-acting injection
+zolpidem increases toxicity of buprenorphine, long-acting injection by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+buprenorphine and benzodiazepines or other CNS depressants increases risk of
+adverse reactions including overdose, respiratory depression, and death. Cessation
+of benzodiazepines or other CNS depressants is preferred in most cases. In some
+cases, monitoring at a higher level of care for tapering CNS depressants may be
+appropriate. In others, gradually tapering a patient off of a prescribed
+benzodiazepine or other CNS depressant or decreasing to the lowest effective dose
+may be appropriate.
+
+buprenorphine, long-acting injection and zolpidem both increase sedation. Use
+Caution/Monitor.
+
+butalbital
+zolpidem and butalbital both increase sedation. Use Caution/Monitor.
+
+butorphanol
+zolpidem and butorphanol both increase sedation. Use Caution/Monitor.
+
+carbachol/brimonidine ophthalmic
+carbachol/brimonidine ophthalmic and zolpidem both increase sedation. Use
+Caution/Monitor.
+
+https://reference.medscape.com/drug/ambien-cr-zolpidem-342931 9/35
+
+
+
+6/22/26, 4:37 PM Ambien, Ambien CR (zolpidem) dosing, indications, interactions, adverse effects, and more
+
+zolpidem and carbachol/brimonidine ophthalmic both increase sedation. Use
+Caution/Monitor.
+
+carbamazepine
+carbamazepine will decrease the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+carbinoxamine
+zolpidem and carbinoxamine both increase sedation. Use Caution/Monitor.
+
+cariprazine
+cariprazine and zolpidem both increase sedation. Use Caution/Monitor.
+
+carisoprodol
+zolpidem and carisoprodol both increase sedation. Use Caution/Monitor.
+
+cenobamate
+cenobamate, zolpidem. Either increases effects of the other by sedation. Use
+Caution/Monitor.
+
+ceritinib
+ceritinib will increase the level or effect of zolpidem by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+cetirizine
+zolpidem and cetirizine both increase sedation. Use Caution/Monitor.
+
+chloramphenicol
+chloramphenicol will increase the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Consider reducing the zolpidem dose when zolpidem is given with a CYP3A4
+inhibitor.
+
+chlordiazepoxide
+zolpidem and chlordiazepoxide both increase sedation. Use Caution/Monitor.
+
+chlorpromazine
+chlorpromazine will increase the level or effect of zolpidem by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Additive effect of decreased alertness
+and psychomotor performance
+
+zolpidem and chlorpromazine both increase sedation. Use Caution/Monitor.
+
+chlorzoxazone
+zolpidem and chlorzoxazone both increase sedation. Use Caution/Monitor.
+
+cimetidine
+cimetidine will increase the level or effect of zolpidem by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+ciprofloxacin
+ciprofloxacin will increase the level or effect of zolpidem by affecting hepatic
+enzyme CYP1A2 metabolism. Modify Therapy/Monitor Closely.
+
+https://reference.medscape.com/drug/ambien-cr-zolpidem-342931 10/35
+
+
+
+6/22/26, 4:37 PM Ambien, Ambien CR (zolpidem) dosing, indications, interactions, adverse effects, and more
+
+ciprofloxacin will increase the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+
+clemastine
+zolpidem and clemastine both increase sedation. Use Caution/Monitor.
+
+clobazam
+zolpidem, clobazam. Other (see comment). Use Caution/Monitor. Comment:
+Concomitant administration can increase the potential for CNS effects (e.g.,
+increased sedation or respiratory depression).
+
+clobazam and zolpidem both increase sedation. Use Caution/Monitor.
+
+zolpidem and clobazam both increase sedation. Use Caution/Monitor.
+
+clomipramine
+zolpidem and clomipramine both increase sedation. Use Caution/Monitor.
+
+clonazepam
+zolpidem and clonazepam both increase sedation. Use Caution/Monitor.
+
+clonidine
+clonidine and zolpidem both increase sedation. Use Caution/Monitor.
+
+zolpidem and clonidine both increase sedation. Use Caution/Monitor.
+
+clorazepate
+zolpidem and clorazepate both increase sedation. Use Caution/Monitor.
+
+clozapine
+zolpidem and clozapine both increase sedation. Use Caution/Monitor.
+
+crizotinib
+crizotinib increases levels of zolpidem by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Dose reduction may be needed for
+coadministered drugs that are predominantly metabolized by CYP3A.
+
+crofelemer
+crofelemer increases levels of zolpidem by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Modify Therapy/Monitor Closely. Crofelemer has the potential
+to inhibit CYP3A4 at concentrations expected in the gut; unlikely to inhibit
+systemically because minimally absorbed.
+
+cyclobenzaprine
+zolpidem and cyclobenzaprine both increase sedation. Use Caution/Monitor.
+
+cyproheptadine
+zolpidem and cyproheptadine both increase sedation. Use Caution/Monitor.
+
+dabrafenib
+dabrafenib will decrease the level or effect of zolpidem by affecting
+
+https://reference.medscape.com/drug/ambien-cr-zolpidem-342931 11/35
+
+
+
+6/22/26, 4:37 PM Ambien, Ambien CR (zolpidem) dosing, indications, interactions, adverse effects, and more
+
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+
+danazol
+danazol will increase the level or effect of zolpidem by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+dantrolene
+zolpidem and dantrolene both increase sedation. Use Caution/Monitor.
+
+daridorexant
+zolpidem and daridorexant both increase sedation. Modify Therapy/Monitor Closely.
+Coadministration increases risk of CNS depression, which can lead to additive
+impairment of psychomotor performance and cause daytime impairment.
+
+deferasirox
+deferasirox will decrease the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+desflurane
+zolpidem and desflurane both increase sedation. Use Caution/Monitor.
+
+desipramine
+zolpidem and desipramine both increase sedation. Use Caution/Monitor.
+
+desloratadine
+desloratadine and zolpidem both increase sedation. Use Caution/Monitor.
+
+deutetrabenazine
+zolpidem and deutetrabenazine both increase sedation. Use Caution/Monitor.
+
+dexbrompheniramine
+dexbrompheniramine and zolpidem both increase sedation. Use Caution/Monitor.
+
+zolpidem and dexbrompheniramine both increase sedation. Use Caution/Monitor.
+
+dexchlorpheniramine
+zolpidem and dexchlorpheniramine both increase sedation. Use Caution/Monitor.
+
+diazepam
+zolpidem and diazepam both increase sedation. Use Caution/Monitor.
+
+diazepam buccal
+diazepam buccal and zolpidem both increase sedation. Use Caution/Monitor.
+
+diazepam buccal, zolpidem. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration may
+potentiate the CNS-depressant effects of each drug.
+
+diazepam intranasal
+diazepam intranasal, zolpidem. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration may
+potentiate the CNS-depressant effects of each drug.
+
+https://reference.medscape.com/drug/ambien-cr-zolpidem-342931 12/35
+
+
+
+6/22/26, 4:37 PM Ambien, Ambien CR (zolpidem) dosing, indications, interactions, adverse effects, and more
+
+diazepam intranasal and zolpidem both increase sedation. Use Caution/Monitor.
+
+difelikefalin
+difelikefalin and zolpidem both increase sedation. Use Caution/Monitor.
+
+difenoxin hcl
+zolpidem and difenoxin hcl both increase sedation. Use Caution/Monitor.
+
+dimenhydrinate
+zolpidem and dimenhydrinate both increase sedation. Use Caution/Monitor.
+
+diphenhydramine
+zolpidem and diphenhydramine both increase sedation. Use Caution/Monitor.
+
+diphenoxylate hcl
+zolpidem and diphenoxylate hcl both increase sedation. Use Caution/Monitor.
+
+doxepin
+zolpidem and doxepin both increase sedation. Use Caution/Monitor.
+
+doxylamine
+zolpidem and doxylamine both increase sedation. Use Caution/Monitor.
+
+droperidol
+zolpidem and droperidol both increase sedation. Use Caution/Monitor.
+
+efavirenz
+zolpidem and efavirenz both increase sedation. Use Caution/Monitor.
+
+elagolix
+elagolix decreases levels of zolpidem by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Modify Therapy/Monitor Closely. Elagolix is a weak-to-
+moderate CYP3A4 inducer. Monitor CYP3A substrates if coadministered. Consider
+increasing CYP3A substrate dose if needed.
+
+elvitegravir/cobicistat/emtricitabine/tenofovir DF
+elvitegravir/cobicistat/emtricitabine/tenofovir DF increases levels of zolpidem by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor
+Closely. Cobicistat is a CYP3A4 inhibitor; contraindicated with CYP3A4 substrates
+for which elevated plasma concentrations are associated with serious and/or life-
+threatening events.
+
+encorafenib
+encorafenib, zolpidem. affecting hepatic/intestinal enzyme CYP3A4 metabolism.
+Use Caution/Monitor. Encorafenib both inhibits and induces CYP3A4 at clinically
+relevant plasma concentrations. Coadministration of encorafenib with sensitive
+CYP3A4 substrates may result in increased toxicity or decreased efficacy of these
+agents.
+
+entacapone
+zolpidem and entacapone both increase sedation. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/ambien-cr-zolpidem-342931 13/35
+
+
+
+6/22/26, 4:37 PM Ambien, Ambien CR (zolpidem) dosing, indications, interactions, adverse effects, and more
+
+erythromycin base
+erythromycin base will increase the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+erythromycin ethylsuccinate
+erythromycin ethylsuccinate will increase the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+erythromycin lactobionate
+erythromycin lactobionate will increase the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+erythromycin stearate
+erythromycin stearate will increase the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+esketamine intranasal
+esketamine intranasal, zolpidem. Either increases toxicity of the other by sedation.
+Modify Therapy/Monitor Closely.
+
+estazolam
+zolpidem and estazolam both increase sedation. Use Caution/Monitor.
+
+eszopiclone
+eszopiclone and zolpidem both increase sedation. Use Caution/Monitor.
+
+zolpidem and eszopiclone both increase sedation. Use Caution/Monitor.
+
+ethanol
+zolpidem and ethanol both increase sedation. Use Caution/Monitor.
+
+ethosuximide
+zolpidem and ethosuximide both increase sedation. Use Caution/Monitor.
+
+fedratinib
+fedratinib will increase the level or effect of zolpidem by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor. Adjust dose of drugs that are
+CYP3A4 substrates as necessary.
+
+felbamate
+zolpidem and felbamate both increase sedation. Use Caution/Monitor.
+
+fenfluramine
+zolpidem and fenfluramine both increase sedation. Use Caution/Monitor.
+
+fentanyl
+fentanyl and zolpidem both increase sedation. Use Caution/Monitor.
+
+fentanyl intranasal
+fentanyl intranasal and zolpidem both increase sedation. Use Caution/Monitor.
+
+fentanyl iontophoretic transdermal system
+
+https://reference.medscape.com/drug/ambien-cr-zolpidem-342931 14/35
+
+
+
+6/22/26, 4:37 PM Ambien, Ambien CR (zolpidem) dosing, indications, interactions, adverse effects, and more
+
+fentanyl iontophoretic transdermal system and zolpidem both increase sedation.
+Use Caution/Monitor.
+
+fentanyl transdermal
+fentanyl transdermal and zolpidem both increase sedation. Use Caution/Monitor.
+
+fentanyl transmucosal
+fentanyl transmucosal and zolpidem both increase sedation. Use Caution/Monitor.
+
+fexofenadine
+zolpidem and fexofenadine both increase sedation. Use Caution/Monitor.
+
+flibanserin
+zolpidem and flibanserin both increase sedation. Modify Therapy/Monitor Closely.
+Risk for sedation increased if flibanserin is coadministration with other CNS
+depressants.
+
+fluphenazine
+fluphenazine will increase the level or effect of zolpidem by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Additive effect of decreased alertness
+and psychomotor performance
+
+zolpidem and fluphenazine both increase sedation. Use Caution/Monitor.
+
+flurazepam
+zolpidem and flurazepam both increase sedation. Use Caution/Monitor.
+
+fluvoxamine
+fluvoxamine will increase the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+gabapentin
+gabapentin, zolpidem. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+zolpidem and gabapentin both increase sedation. Use Caution/Monitor.
+
+gabapentin enacarbil
+gabapentin enacarbil, zolpidem. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+gabapentin enacarbil and zolpidem both increase sedation. Use Caution/Monitor.
+
+ganaxolone
+zolpidem and ganaxolone both increase sedation. Use Caution/Monitor.
+
+guanfacine
+
+https://reference.medscape.com/drug/ambien-cr-zolpidem-342931 15/35
+
+
+
+6/22/26, 4:37 PM Ambien, Ambien CR (zolpidem) dosing, indications, interactions, adverse effects, and more
+
+zolpidem and guanfacine both increase sedation. Use Caution/Monitor.
+
+haloperidol
+zolpidem and haloperidol both increase sedation. Use Caution/Monitor.
+
+hydroxyzine
+zolpidem and hydroxyzine both increase sedation. Use Caution/Monitor.
+
+imipramine
+zolpidem and imipramine both increase sedation. Use Caution/Monitor.
+
+isoflurane
+zolpidem and isoflurane both increase sedation. Use Caution/Monitor.
+
+istradefylline
+istradefylline will increase the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Istradefylline
+40 mg/day increased peak levels and AUC of CYP3A4 substrates in clinical trials.
+This effect was not observed with istradefylline 20 mg/day. Consider dose reduction
+of sensitive CYP3A4 substrates.
+
+itraconazole
+itraconazole will increase the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+ketamine
+zolpidem and ketamine both increase sedation. Use Caution/Monitor.
+
+ketoconazole
+ketoconazole will increase the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+ketotifen, drug-eluting contact lens
+zolpidem and ketotifen, drug-eluting contact lens both increase sedation. Use
+Caution/Monitor.
+
+lamotrigine
+zolpidem and lamotrigine both increase sedation. Use Caution/Monitor.
+
+lenacapavir
+lenacapavir will increase the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Lencapavir
+may increase CYP3A4 substrates initiated within 9 months after last SC dose of
+lenacapavir, which may increase potential risk of adverse reactions of CYP3A4
+substrates.
+
+letermovir
+letermovir increases levels of zolpidem by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+
+levetiracetam
+levetiracetam and zolpidem both increase sedation. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/ambien-cr-zolpidem-342931 16/35
+
+
+
+6/22/26, 4:37 PM Ambien, Ambien CR (zolpidem) dosing, indications, interactions, adverse effects, and more
+
+levocetirizine
+levocetirizine and zolpidem both increase sedation. Use Caution/Monitor.
+
+zolpidem and levocetirizine both increase sedation. Use Caution/Monitor.
+
+levoketoconazole
+levoketoconazole will increase the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+levorphanol
+zolpidem and levorphanol both increase sedation. Use Caution/Monitor.
+
+lopinavir
+lopinavir will increase the level or effect of zolpidem by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+loratadine
+loratadine and zolpidem both increase sedation. Use Caution/Monitor.
+
+zolpidem and loratadine both increase sedation. Use Caution/Monitor.
+
+lorazepam
+zolpidem and lorazepam both increase sedation. Use Caution/Monitor.
+
+lorlatinib
+lorlatinib will decrease the level or effect of zolpidem by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+loxapine
+zolpidem and loxapine both increase sedation. Use Caution/Monitor.
+
+lumateperone
+lumateperone and zolpidem both increase sedation. Use Caution/Monitor.
+
+zolpidem and lumateperone both increase sedation. Use Caution/Monitor.
+
+lurasidone
+lurasidone, zolpidem. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: Potential for increased CNS depressant effects
+when used concurrently; monitor for increased adverse effects and toxicity.
+
+lurasidone and zolpidem both increase sedation. Use Caution/Monitor.
+
+zolpidem and lurasidone both increase sedation. Use Caution/Monitor.
+
+meclizine
+meclizine and zolpidem both increase sedation. Use Caution/Monitor.
+
+zolpidem and meclizine both increase sedation. Use Caution/Monitor.
+
+meperidine
+zolpidem and meperidine both increase sedation. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/ambien-cr-zolpidem-342931 17/35
+
+
+
+6/22/26, 4:37 PM Ambien, Ambien CR (zolpidem) dosing, indications, interactions, adverse effects, and more
+
+meprobamate
+zolpidem and meprobamate both increase sedation. Use Caution/Monitor.
+
+metaxalone
+zolpidem and metaxalone both increase sedation. Use Caution/Monitor.
+
+methocarbamol
+zolpidem and methocarbamol both increase sedation. Use Caution/Monitor.
+
+methohexital
+methohexital and zolpidem both increase sedation. Use Caution/Monitor.
+
+methsuximide
+methsuximide and zolpidem both increase sedation. Use Caution/Monitor.
+
+zolpidem and methsuximide both increase sedation. Use Caution/Monitor.
+
+midazolam
+zolpidem and midazolam both increase sedation. Use Caution/Monitor.
+
+midazolam intranasal
+midazolam intranasal, zolpidem. Either increases toxicity of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Concomitant use of
+barbiturates, alcohol, or other CNS depressants may increase the risk of
+hypoventilation, airway obstruction, desaturation, or apnea and may contribute to
+profound and/or prolonged drug effect.
+
+mifepristone
+mifepristone will increase the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+mirtazapine
+zolpidem and mirtazapine both increase sedation. Use Caution/Monitor.
+
+mitotane
+mitotane decreases levels of zolpidem by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Mitotane is a strong inducer of
+cytochrome P-4503A4; monitor when coadministered with CYP3A4 substrates for
+possible dosage adjustments.
+
+molindone
+molindone and zolpidem both increase sedation. Use Caution/Monitor.
+
+zolpidem and molindone both increase sedation. Use Caution/Monitor.
+
+nalbuphine
+zolpidem and nalbuphine both increase sedation. Use Caution/Monitor.
+
+nitrous oxide
+nitrous oxide and zolpidem both increase sedation. Use Caution/Monitor.
+
+zolpidem and nitrous oxide both increase sedation. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/ambien-cr-zolpidem-342931 18/35
+
+
+
+6/22/26, 4:37 PM Ambien, Ambien CR (zolpidem) dosing, indications, interactions, adverse effects, and more
+
+nortriptyline
+zolpidem and nortriptyline both increase sedation. Use Caution/Monitor.
+
+olanzapine
+zolpidem and olanzapine both increase sedation. Use Caution/Monitor.
+
+olanzapine/samidorphan
+zolpidem, olanzapine/samidorphan. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration of diazepam,
+alcohol, or other CNS acting drugs may potentiate orthostatic hypotension
+observed with olanzapine. Additive sedation may also occur.
+
+zolpidem and olanzapine/samidorphan both increase sedation. Use Caution/Monitor.
+
+opicapone
+opicapone and zolpidem both increase sedation. Use Caution/Monitor.
+
+zolpidem and opicapone both increase sedation. Use Caution/Monitor.
+
+opium tincture
+zolpidem and opium tincture both increase sedation. Use Caution/Monitor.
+
+orphenadrine
+zolpidem and orphenadrine both increase sedation. Use Caution/Monitor.
+
+oxazepam
+zolpidem and oxazepam both increase sedation. Use Caution/Monitor.
+
+paliperidone
+zolpidem and paliperidone both increase sedation. Use Caution/Monitor.
+
+pentazocine
+zolpidem and pentazocine both increase sedation. Use Caution/Monitor.
+
+pentobarbital
+zolpidem and pentobarbital both increase sedation. Use Caution/Monitor.
+
+perampanel
+zolpidem and perampanel both increase sedation. Use Caution/Monitor.
+
+perphenazine
+perphenazine will increase the level or effect of zolpidem by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Additive effect of decreased alertness
+and psychomotor performance
+
+zolpidem and perphenazine both increase sedation. Use Caution/Monitor.
+
+pheniramine
+zolpidem and pheniramine both increase sedation. Use Caution/Monitor.
+
+phenobarbital
+zolpidem and phenobarbital both increase sedation. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/ambien-cr-zolpidem-342931 19/35
+
+
+
+6/22/26, 4:37 PM Ambien, Ambien CR (zolpidem) dosing, indications, interactions, adverse effects, and more
+
+pimozide
+zolpidem and pimozide both increase sedation. Use Caution/Monitor.
+
+pomalidomide
+zolpidem and pomalidomide both increase sedation. Use Caution/Monitor.
+
+pregabalin
+pregabalin, zolpidem. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+zolpidem and pregabalin both increase sedation. Use Caution/Monitor.
+
+primidone
+zolpidem and primidone both increase sedation. Use Caution/Monitor.
+
+prochlorperazine
+prochlorperazine will increase the level or effect of zolpidem by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Additive effect of decreased alertness
+and psychomotor performance
+
+zolpidem and prochlorperazine both increase sedation. Use Caution/Monitor.
+
+promethazine
+zolpidem and promethazine both increase sedation. Use Caution/Monitor.
+
+propofol
+zolpidem and propofol both increase sedation. Use Caution/Monitor.
+
+protriptyline
+zolpidem and protriptyline both increase sedation. Use Caution/Monitor.
+
+pyrilamine
+zolpidem and pyrilamine both increase sedation. Use Caution/Monitor.
+
+quazepam
+zolpidem and quazepam both increase sedation. Use Caution/Monitor.
+
+quetiapine
+zolpidem and quetiapine both increase sedation. Use Caution/Monitor.
+
+ramelteon
+zolpidem and ramelteon both increase sedation. Use Caution/Monitor.
+
+remifentanil
+remifentanil and zolpidem both increase sedation. Use Caution/Monitor.
+
+remimazolam
+remimazolam, zolpidem. Either increases toxicity of the other by sedation. Modify
+Therapy/Monitor Closely. Coadministration may result in profound sedation,
+respiratory depression, coma, and/or death. Continuously monitor vital signs during
+
+https://reference.medscape.com/drug/ambien-cr-zolpidem-342931 20/35
+
+
+
+6/22/26, 4:37 PM Ambien, Ambien CR (zolpidem) dosing, indications, interactions, adverse effects, and more
+
+sedation and recovery period if coadministered. Carefully titrate remimazolam dose
+if administered with opioid analgesics and/or sedative/hypnotics.
+
+reserpine (DSC)
+zolpidem and reserpine (DSC) both increase sedation. Use Caution/Monitor.
+
+ribociclib
+ribociclib will increase the level or effect of zolpidem by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+rifabutin
+rifabutin will decrease the level or effect of zolpidem by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+rifampin
+rifampin will decrease the level or effect of zolpidem by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+risperidone
+zolpidem and risperidone both increase sedation. Use Caution/Monitor.
+
+rucaparib
+rucaparib will increase the level or effect of zolpidem by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely. Adjust dosage of
+CYP3A4 substrates, if clinically indicated.
+
+scopolamine
+zolpidem and scopolamine both increase sedation. Use Caution/Monitor.
+
+scopolamine intranasal
+scopolamine intranasal and zolpidem both increase sedation. Use Caution/Monitor.
+
+sevoflurane
+zolpidem and sevoflurane both increase sedation. Use Caution/Monitor.
+
+sodium oxybate
+zolpidem and sodium oxybate both increase sedation. Use Caution/Monitor.
+
+sodium oxybate and zolpidem both increase sedation. Use Caution/Monitor.
+
+St John's Wort
+St John's Wort will decrease the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+stiripentol
+stiripentol, zolpidem. affecting hepatic/intestinal enzyme CYP3A4 metabolism.
+Modify Therapy/Monitor Closely. Stiripentol is a CYP3A4 inhibitor and inducer.
+Monitor CYP3A4 substrates coadministered with stiripentol for increased or
+decreased effects. CYP3A4 substrates may require dosage adjustment.
+
+stiripentol, zolpidem. Either increases effects of the other by sedation. Use
+
+https://reference.medscape.com/drug/ambien-cr-zolpidem-342931 21/35
+
+
+
+6/22/26, 4:37 PM Ambien, Ambien CR (zolpidem) dosing, indications, interactions, adverse effects, and more
+
+Caution/Monitor. Concomitant use stiripentol with other CNS depressants, including
+alcohol, may increase the risk of sedation and somnolence.
+
+sufentanil
+zolpidem and sufentanil both increase sedation. Use Caution/Monitor.
+
+sufentanil SL
+zolpidem and sufentanil SL both increase sedation. Use Caution/Monitor.
+
+suvorexant
+zolpidem and suvorexant both increase sedation. Use Caution/Monitor.
+
+tapentadol
+zolpidem and tapentadol both increase sedation. Use Caution/Monitor.
+
+tasimelteon
+tasimelteon and zolpidem both increase sedation. Use Caution/Monitor.
+
+zolpidem and tasimelteon both increase sedation. Use Caution/Monitor.
+
+tecovirimat
+tecovirimat will decrease the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Tecovirimat is
+a weak CYP3A4 inducer. Monitor sensitive CYP3A4 substrates for effectiveness if
+coadministered.
+
+temazepam
+zolpidem and temazepam both increase sedation. Use Caution/Monitor.
+
+tetrabenazine
+tetrabenazine and zolpidem both increase sedation. Use Caution/Monitor.
+
+zolpidem and tetrabenazine both increase sedation. Use Caution/Monitor.
+
+thalidomide
+thalidomide and zolpidem both increase sedation. Use Caution/Monitor.
+
+thioridazine
+thioridazine will increase the level or effect of zolpidem by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Additive effect of decreased alertness
+and psychomotor performance
+
+zolpidem and thioridazine both increase sedation. Use Caution/Monitor.
+
+thiothixene
+zolpidem and thiothixene both increase sedation. Use Caution/Monitor.
+
+tiagabine
+tiagabine and zolpidem both increase sedation. Use Caution/Monitor.
+
+zolpidem and tiagabine both increase sedation. Use Caution/Monitor.
+
+tizanidine
+
+https://reference.medscape.com/drug/ambien-cr-zolpidem-342931 22/35
+
+
+
+6/22/26, 4:37 PM Ambien, Ambien CR (zolpidem) dosing, indications, interactions, adverse effects, and more
+
+tizanidine and zolpidem both increase sedation. Use Caution/Monitor.
+
+zolpidem and tizanidine both increase sedation. Use Caution/Monitor.
+
+tolcapone
+tolcapone and zolpidem both increase sedation. Use Caution/Monitor.
+
+zolpidem and tolcapone both increase sedation. Use Caution/Monitor.
+
+topiramate
+zolpidem and topiramate both increase sedation. Use Caution/Monitor.
+
+tramadol
+zolpidem and tramadol both increase sedation. Use Caution/Monitor.
+
+trazodone
+zolpidem and trazodone both increase sedation. Use Caution/Monitor.
+
+triazolam
+zolpidem and triazolam both increase sedation. Use Caution/Monitor.
+
+trifluoperazine
+trifluoperazine will increase the level or effect of zolpidem by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Additive effect of decreased alertness
+and psychomotor performance
+
+zolpidem and trifluoperazine both increase sedation. Use Caution/Monitor.
+
+triprolidine
+zolpidem and triprolidine both increase sedation. Use Caution/Monitor.
+
+valproic acid
+valproic acid and zolpidem both increase sedation. Use Caution/Monitor.
+
+zolpidem and valproic acid both increase sedation. Use Caution/Monitor.
+
+vigabatrin
+vigabatrin and zolpidem both increase sedation. Use Caution/Monitor.
+
+zolpidem and vigabatrin both increase sedation. Use Caution/Monitor.
+
+zaleplon
+zaleplon and zolpidem both increase sedation. Use Caution/Monitor.
+
+zolpidem and zaleplon both increase sedation. Use Caution/Monitor.
+
+ziconotide
+zolpidem and ziconotide both increase sedation. Use Caution/Monitor.
+
+ziprasidone
+zolpidem and ziprasidone both increase sedation. Use Caution/Monitor.
+
+zonisamide
+
+https://reference.medscape.com/drug/ambien-cr-zolpidem-342931 23/35
+
+
+
+6/22/26, 4:37 PM Ambien, Ambien CR (zolpidem) dosing, indications, interactions, adverse effects, and more
+
+zolpidem and zonisamide both increase sedation. Use Caution/Monitor.
+
+zonisamide and zolpidem both increase sedation. Use Caution/Monitor.
+
+zuranolone
+zuranolone and zolpidem both increase sedation. Use Caution/Monitor.
+
+Minor (81)
+
+acetazolamide
+acetazolamide will increase the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+alprazolam
+zolpidem, alprazolam. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive CNS depression.
+
+amitriptyline
+zolpidem, amitriptyline. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive CNS depression.
+
+amoxapine
+zolpidem, amoxapine. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive CNS depression.
+
+anastrozole
+anastrozole will increase the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+aprepitant
+aprepitant will increase the level or effect of zolpidem by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+armodafinil
+armodafinil will decrease the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+artemether/lumefantrine
+artemether/lumefantrine will decrease the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+atazanavir
+atazanavir will increase the level or effect of zolpidem by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+bosentan
+bosentan will decrease the level or effect of zolpidem by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+butalbital
+butalbital will decrease the level or effect of zolpidem by affecting hepatic/intestinal
+
+https://reference.medscape.com/drug/ambien-cr-zolpidem-342931 24/35
+
+
+
+6/22/26, 4:37 PM Ambien, Ambien CR (zolpidem) dosing, indications, interactions, adverse effects, and more
+
+enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+chlordiazepoxide
+zolpidem, chlordiazepoxide. Either increases effects of the other by
+pharmacodynamic synergism. Minor/Significance Unknown. Additive CNS
+depression.
+
+clarithromycin
+clarithromycin will increase the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+clomipramine
+zolpidem, clomipramine. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive CNS depression.
+
+clonazepam
+zolpidem, clonazepam. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive CNS depression.
+
+clorazepate
+zolpidem, clorazepate. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive CNS depression.
+
+conivaptan
+conivaptan will increase the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+cyclophosphamide
+cyclophosphamide will increase the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+darifenacin
+darifenacin will increase the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+darunavir
+darunavir will increase the level or effect of zolpidem by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+dasatinib
+dasatinib will increase the level or effect of zolpidem by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+desipramine
+zolpidem, desipramine. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive CNS depression.
+
+dexamethasone
+dexamethasone will decrease the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+DHEA, herbal
+
+https://reference.medscape.com/drug/ambien-cr-zolpidem-342931 25/35
+
+
+
+6/22/26, 4:37 PM Ambien, Ambien CR (zolpidem) dosing, indications, interactions, adverse effects, and more
+
+DHEA, herbal will increase the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+diazepam
+zolpidem, diazepam. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive CNS depression.
+
+dosulepin
+zolpidem, dosulepin. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive CNS depression.
+
+doxepin
+zolpidem, doxepin. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive CNS depression.
+
+dronedarone
+dronedarone will increase the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+drospirenone
+drospirenone will increase the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+efavirenz
+efavirenz will decrease the level or effect of zolpidem by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+eslicarbazepine acetate
+eslicarbazepine acetate will decrease the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+estazolam
+zolpidem, estazolam. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive CNS depression.
+
+ethanol
+zolpidem, ethanol. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive CNS depression.
+
+etravirine
+etravirine will decrease the level or effect of zolpidem by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+fluconazole
+fluconazole will increase the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+flurazepam
+zolpidem, flurazepam. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive CNS depression.
+
+fosamprenavir
+
+https://reference.medscape.com/drug/ambien-cr-zolpidem-342931 26/35
+
+
+
+6/22/26, 4:37 PM Ambien, Ambien CR (zolpidem) dosing, indications, interactions, adverse effects, and more
+
+fosamprenavir will increase the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+fosaprepitant
+fosaprepitant will increase the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+fosphenytoin
+fosphenytoin will decrease the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+grapefruit
+grapefruit will increase the level or effect of zolpidem by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+green tea
+green tea decreases effects of zolpidem by pharmacodynamic antagonism.
+Minor/Significance Unknown. Caffeine component of green tea may decrease
+sedative effects of zolpidem.
+
+griseofulvin
+griseofulvin will decrease the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+hydrocortisone
+hydrocortisone will decrease the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+imipramine
+zolpidem, imipramine. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive CNS depression.
+
+isoniazid
+isoniazid will increase the level or effect of zolpidem by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+lapatinib
+lapatinib will increase the level or effect of zolpidem by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+larotrectinib
+larotrectinib will increase the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+lofepramine
+zolpidem, lofepramine. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive CNS depression.
+
+loprazolam
+zolpidem, loprazolam. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive CNS depression.
+
+lorazepam
+
+https://reference.medscape.com/drug/ambien-cr-zolpidem-342931 27/35
+
+
+
+6/22/26, 4:37 PM Ambien, Ambien CR (zolpidem) dosing, indications, interactions, adverse effects, and more
+
+zolpidem, lorazepam. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive CNS depression.
+
+lormetazepam
+zolpidem, lormetazepam. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive CNS depression.
+
+lumefantrine
+lumefantrine will decrease the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+marijuana
+marijuana will increase the level or effect of zolpidem by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+metronidazole
+metronidazole will increase the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+miconazole vaginal
+miconazole vaginal will increase the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+midazolam
+zolpidem, midazolam. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive CNS depression.
+
+nafcillin
+nafcillin will decrease the level or effect of zolpidem by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+nelfinavir
+nelfinavir will increase the level or effect of zolpidem by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+nevirapine
+nevirapine will decrease the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+nifedipine
+nifedipine will increase the level or effect of zolpidem by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+nilotinib
+nilotinib will increase the level or effect of zolpidem by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+nortriptyline
+zolpidem, nortriptyline. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive CNS depression.
+
+oxazepam
+
+https://reference.medscape.com/drug/ambien-cr-zolpidem-342931 28/35
+
+
+
+6/22/26, 4:37 PM Ambien, Ambien CR (zolpidem) dosing, indications, interactions, adverse effects, and more
+
+zolpidem, oxazepam. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive CNS depression.
+
+pentobarbital
+pentobarbital will decrease the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+phenobarbital
+phenobarbital will decrease the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+phenytoin
+phenytoin will decrease the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+posaconazole
+posaconazole will increase the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+primidone
+primidone will decrease the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+protriptyline
+zolpidem, protriptyline. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive CNS depression.
+
+quazepam
+zolpidem, quazepam. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive CNS depression.
+
+rifapentine
+rifapentine will decrease the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+ritonavir
+ritonavir will increase the level or effect of zolpidem by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+rufinamide
+rufinamide will decrease the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+temazepam
+zolpidem, temazepam. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive CNS depression.
+
+topiramate
+topiramate will decrease the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+trazodone
+
+https://reference.medscape.com/drug/ambien-cr-zolpidem-342931 29/35
+
+
+
+6/22/26, 4:37 PM Ambien, Ambien CR (zolpidem) dosing, indications, interactions, adverse effects, and more
+
+zolpidem, trazodone. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive CNS depression.
+
+triazolam
+zolpidem, triazolam. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive CNS depression.
+
+trimipramine
+zolpidem, trimipramine. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive CNS depression.
+
+verapamil
+verapamil will increase the level or effect of zolpidem by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+voriconazole
+voriconazole will increase the level or effect of zolpidem by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+zafirlukast
+zafirlukast will increase the level or effect of zolpidem by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+Adverse Effects
+
+>10%
+
+Dizziness (5-12%)
+
+Headache (7-19%)
+
+Drowsiness (6-15%)
+
+1-10%
+
+Allergy (4%)
+
+Hallucinations (4%)
+
+Myalgia (4%)
+
+Sinusitis (4%)
+
+Memory disorder (3%)
+
+Visual disturbance (3%)
+
+Pharyngitis (3%)
+
+Lightheadedness (2%)
+
+Palpitation (2%)
+
+https://reference.medscape.com/drug/ambien-cr-zolpidem-342931 30/35
+
+
+
+6/22/26, 4:37 PM Ambien, Ambien CR (zolpidem) dosing, indications, interactions, adverse effects, and more
+
+Rash (2%)
+
+Constipation (2%)
+
+Depression (2%)
+
+Drowsiness (2%)
+
+Asthenia (1%)
+
+Diarrhea (1%)
+
+Dry mouth (1%)
+
+Flu-like symptoms (1%)
+
+Postmarketing reports
+
+Respiratory depression
+
+Complex sleep behaviors
+
+Sublingual tablet: Oral ulcers, blisters, and mucosal inflammation
+
+Liver and biliary system: Acute hepatocellular, cholestatic or mixed liver injury with or
+without jaundice (i.e., bilirubin greater than 2x ULN, alkaline phosphatase greater than or
+equal to 2x ULN, transaminase greater than or equal to 5x ULN).
+
+Warnings
+
+Black Box Warnings
+
+Complex sleep behaviors including sleep-walking, sleep-driving, and engaging in other
+activities while not fully awake may occur; some of these events may result in serious
+injuries, including death
+
+Discontinue therapy immediately if a patient experiences complex sleep behavior
+
+Contraindications
+
+Contraindicated in patients with known hypersensitivity to zolpidem; observed reactions
+include anaphylaxis and angioedema
+
+Patients who have experienced complex sleep behaviors after receiving therapy
+
+Cautions
+
+The risk of next-day psychomotor impairment, including impaired driving, is increased if
+taken with less than a full night of sleep remaining (7 to 8 hours); if a higher than the
+recommended dose is taken; if co-administered with other CNS depressants or alcohol;
+or if co-administered with other drugs that increase blood levels of zolpidem; patients
+should be warned against driving and other activities requiring complete mental
+alertness if drug taken in these circumstances
+
+https://reference.medscape.com/drug/ambien-cr-zolpidem-342931 31/35
+
+
+
+6/22/26, 4:37 PM Ambien, Ambien CR (zolpidem) dosing, indications, interactions, adverse effects, and more
+
+Co-administration with other CNS depressants (eg, benzodiazepines, opioids, tricyclic
+antidepressants, alcohol) increases the risk of CNS depression; dosage adjustments of
+zolpidem and of other concomitant CNS depressants may be necessary when zolpidem
+is administered with such agents because of the potentially additive effects; the use of
+zolpidem with other sedative-hypnotics (including other zolpidem products) at bedtime
+or the middle of the night is not recommended
+
+Postmarketing reports of respiratory insufficiency in patients receiving 10 mg dose, most
+of whom had preexisting respiratory impairment, reported; risk of respiratory depression
+should be considered prior to prescribing this drug in patients with respiratory
+impairment including sleep apnea and myasthenia gravis or with concomitant opioid use
+
+Vehicle drivers and machine operators should be warned that, there may be a possible
+risk of adverse reactions including drowsiness, prolonged reaction time, dizziness,
+sleepiness, blurred/double vision, reduced alertness and impaired driving the morning
+after therapy; to minimize risk, a full night of sleep (7-8 hours) recommended; this next-
+morning impairment is highest for the extended-release dosage form and is more
+prevalent in women because they eliminate more slowly than men
+
+Can cause drowsiness and a decreased level of consciousness, which may lead to falls
+and consequently to severe injuries; severe injuries such as hip fractures and intracranial
+hemorrhage have been reported
+
+Use caution in patients with history of drug dependence (increases risk of abuse)
+
+Food increases time to attain peak plasma level and decreases peak plasma
+concentration
+
+Need to evaluate for comorbid diagnoses; reevaluate if insomnia persists after 7-10 days
+of use
+
+Severe anaphylactic/anaphylactoid reactions including angioedema and anaphylaxis
+reported; do not rechallenge if such reactions occur
+
+Abnormal thinking, behavioral changes, complex behaviors: May include “sleep driving”
+and hallucinations; coadministration of alcohol and other CNS depressants appears to
+increase the risk of such behaviors
+
+Do not use with alcohol
+
+Use can impair respiratory drive, alertness, and motor coordination; if used in
+combination with other CNS depressants, dose reductions of 50% may be needed due to
+additive effects
+
+Consider risk of respiratory depression before prescribing in patients with compromised
+regulatory functions
+
+Worsening of depression or suicidal thinking may occur; prescribe the least amount
+feasible to avoid intentional overdose
+
+Withdrawal symptoms may occur with rapid dose reduction or discontinuation
+
+Use lower dose in elderly/debilitated patients due to impaired motor, cognitive
+performance and increased sensitivity
+
+Use with caution and monitor closely in patients with hepatic impairment, mild to
+
+https://reference.medscape.com/drug/ambien-cr-zolpidem-342931 32/35
+
+
+
+6/22/26, 4:37 PM Ambien, Ambien CR (zolpidem) dosing, indications, interactions, adverse effects, and more
+
+moderate COPD, impaired drug metabolism or hemodynamic responses
+
+GABA agonists such as zolpidem tartrate have been associated with precipitation of
+hepatic encephalopathy in patients with hepatic insufficiency; patients with hepatic
+insufficiency do not clear zolpidem tartrate as rapidly as patients with normal hepatic
+function; avoid zolpidem use in patients with severe hepatic impairment as it may
+contribute to encephalopathy
+
+Pregnancy & Lactation
+
+Pregnancy
+
+Neonates born to mothers using zolpidem late in the third trimester of pregnancy
+reported to experience symptoms of respiratory depression and sedation; published data
+on use of zolpidem during pregnancy have not reported clear association with zolpidem
+and major birth defects
+
+There are limited postmarketing reports of severe to moderate cases of respiratory
+depression that occurred after birth in neonates whose mothers had taken zolpidem
+during pregnancy; these cases required artificial ventilation or intratracheal intubation;
+the majority of neonates recovered within hours to a few weeks after birth once treated
+Zolpidem has been shown to cross the placenta
+
+Animal data
+
+Oral administration of zolpidem to pregnant rats and rabbits did not indicate a risk
+for adverse effects on fetal development at clinically relevant doses
+
+Lactation
+
+Limited data report presence of zolpidem in human milk; there are reports of excess
+sedation in infants exposed to zolpidem through breastmilk; there is no information on
+effects on milk production; consider developmental and health benefits of breastfeeding
+along with mother’s clinical need for therapy and any potential adverse effects on
+breastfed infant from therapy or from underlying maternal condition
+
+Monitor, for excess sedation, infants exposed to drug through breastmilk, hypotonia, and
+respiratory depression; a lactating woman may consider interrupting breastfeeding and
+pumping and discarding breast milk during treatment and for 23 hours (approximately 5
+elimination half-lives) after drug administration in order to minimize drug exposure to a
+breast fed infant
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+https://reference.medscape.com/drug/ambien-cr-zolpidem-342931 33/35
+
+
+
+6/22/26, 4:37 PM Ambien, Ambien CR (zolpidem) dosing, indications, interactions, adverse effects, and more
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+Imidazopyridine; modulates omega-1 type GABA receptor via selective antagonism,
+resulting in increased chloride conductance, neuronal hyperpolarization, inhibition of
+action potential, and a decrease in neuronal excitability that in turn produce sedative and
+hypnotic effects
+
+Absorption
+
+Bioavailability: 70%
+
+Peak plasma time
+
+1.6 hr (immediate-release)
+
+1.5 hr (extended-release)
+
+1.4 hr (sublingual Edluar)
+
+1 hr (7.5 mg capsule)
+
+1.4 hr (10 mg SL)
+
+Peak plasma time delayed by food intake
+
+Peak plasma concentration
+
+59 mg/mL (5 mg tablet)
+
+(10 mg) 121 ng/mL (10 mg tablet)
+
+134 ng/mL (12.5 mg CR tablet)
+
+230 ng/mL (7.5 mg capsule)
+
+106 ng/mL (10 mg SL)
+
+AUC
+
+740 ngh/mL (extended-release tablet)
+
+942 ngh/mL (7.5 mg capsule)
+
+Distribution
+
+Protein bound: 92.5%
+
+Metabolism
+
+https://reference.medscape.com/drug/ambien-cr-zolpidem-342931 34/35
+
+
+
+6/22/26, 4:37 PM Ambien, Ambien CR (zolpidem) dosing, indications, interactions, adverse effects, and more
+
+Metabolized by CYP3A4 (60%), CYP2C9 (22%), CYP1A2 (14%), CYP2D6 (3%), CYP2C
+(3%)
+
+Metabolized to inactive metabolites
+
+Elimination
+
+Half-life
+
+Immediate release: 2.5 hr (normal liver function); 9.9 hr (cirrhosis)
+
+Capsule: 3.7 hr
+
+Sublingual: 1.4-6.7 hr
+
+Excretion
+
+Urine (48-67%)
+
+Feces (29-42%)
+
+Administration
+
+Oral Administration
+
+Extended-release tablet: Swallow whole; do not chew, crush, or split
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/ambien-cr-zolpidem-342931 35/35

@@ -1,0 +1,1210 @@
+This site is intended for healthcare professionals
+omeprazole (Rx, OTC)
+Brand and Other Names: Prilosec, Prilosec OTC, OmepraCare, OmepraCare DR
+Classes: Proton Pump Inhibitors
+Dosing & Uses
+ADULT
+Dosage Forms & Strengths
+packet
+2.5mg
+10mg
+tablet, delayed release
+20mg (Prilosec OTC, OmepraCare)
+capsule, delayed release
+10mg (generic)
+20mg (OmepraCare DR, generic)
+40mg (generic)
+oral disintegrating tablets
+20mg
+Duodenal Ulcer
+20 mg PO qDay for 4-8 weeks
+Safety and efficacy of omeprazole for maintenance treatment past 1 year not established
+Helicobacter Pylori Infection
+6/22/26, 5:24 PM
+Prilosec (omeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/prilosec-omeprazole-341997
+1/28
+
+
+Various regimens exist of PPIs combined with antibiotics, an example is listed below
+20 mg PO q12hr for 10 days, WITH
+Amoxicillin 1000 mg PO q12hr, AND
+Clarithromycin 500 mg PO q12hr for 10-14 days
+Dosing considerations
+This regimen is available as a prepackaged 10-day supply of omeprazole,
+amoxicillin, and clarithromycin from Dava Pharms Inc, for eradication of H pylori
+Gastric Ulcer
+40 mg PO qDay for 4-8 weeks
+GERD
+20 mg PO qDay for 4 weeks
+Erosive Esophagitis
+20 mg PO qDay for 4-8 weeks
+Maintenance: 20 mg PO qDay for up to 1 year
+Hypersecretory Conditions (eg, Zollinger-Ellison Syndrome)
+60 mg PO qDay (initial) up to 360 mg/day divided q8hr PO
+If dose >80 mg, divide it
+Dosage Modifications
+Hepatic impairment: Not studied; expert analysis recommends a reduction in dose,
+especially for maintenance of healing of erosive esophagitis
+Renal impairment: Dose adjustments not necessary
+PEDIATRIC
+Dosage Forms & Strengths
+packet
+6/22/26, 5:24 PM
+Prilosec (omeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/prilosec-omeprazole-341997
+2/28
+
+
+2.5mg
+10mg
+tablet, delayed release
+20mg (Prilosec OTC, OmepraCare)
+capsule, delayed release
+10mg (generic)
+20mg (OmepraCare DR, generic)
+40mg (generic)
+oral disintegrating tablets
+20mg
+GERD
+Indicated for treatment of GERD
+<1 year: Safety and efficacy not established
+5-10 kg: 5 mg PO qDay
+10-20 kg: 10 mg PO qDay
+>20 kg: 20 mg PO qDay
+Erosive Esophagitis
+Indicated for treatment and to maintain healing of erosive esophagitis caused by acid-
+mediated GERD
+Treatment
+<1 month: Safety and efficacy not established
+Aged 1 month to <1 year
+3 to <5 kg: 2.5 mg qDay
+5 to <10 kg: 5 mg qDay
+≥10 kg: 10 mg qDay
+May treat for up to 6 weeks
+Aged 1-16 years
+5 to <10 kg: 5 mg PO qDay
+10 to <20 kg: 10 mg PO qDay
+≥20 kg: 20 mg PO qDay
+6/22/26, 5:24 PM
+Prilosec (omeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/prilosec-omeprazole-341997
+3/28
+
+
+Interactions
+Interaction Checker
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and
+omeprazole
+No Interactions Found
+Interactions Found
+Contraindicated
+Serious
+Significant - Monitor Closely
+Minor
+All Interactions Sort By: Severity
+Contraindicated (2)
+nelfinavir
+omeprazole decreases levels of nelfinavir by unspecified interaction mechanism.
+Contraindicated. Coadministration may lead to loss of nelfinavir virologic response
+and development of resistance; mechanism may be CYP2C19 inhibition of nelfinavir
+conversion to active M8 metabolite, and also PPIs decreasing gastric pH resulting in
+decreased nelfinavir absorption.
+rilpivirine
+omeprazole decreases levels of rilpivirine by increasing gastric pH. Applies only to
+oral form of both agents. Contraindicated. Concurrent use may cause treatment
+failure and/or the development of rilpivirine or NNRTI resistance owing to
+decreased levels.
+Serious (41)
+abrocitinib
+May treat for 4-8 weeks
+Maintenance of healing
+<1 year: Safety and efficacy not established
+≥1 year: Controlled trials for maintenance do not extend beyond 12 months
+Neonates (Off-label)
+Refractory duodenal ulcer or reflux esophagitis: 0.5-1.5 mg/kg PO qDay for up to 8
+weeks 
+6/22/26, 5:24 PM
+Prilosec (omeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/prilosec-omeprazole-341997
+4/28
+
+
+omeprazole will increase the level or effect of abrocitinib by decreasing metabolism.
+Avoid or Use Alternate Drug. Abrocitinib is a CYP2C9 and CYP2C19 substrate.
+Drugs that are moderate-to-strong inhibitors of both CYP2C9 and CYP2C19
+increase systemic exposure of abrocitinib and its active metabolites, which may
+increase adverse effects.
+acalabrutinib
+omeprazole decreases levels of acalabrutinib by increasing gastric pH. Applies only
+to oral form of both agents. Avoid or Use Alternate Drug. Acalabrutinib solubility
+decreases with increasing gastric pH. Due to the long-lasting effect of PPIs,
+separation of doses may not eliminate the interaction.
+apalutamide
+apalutamide will decrease the level or effect of omeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Avoid or Use Alternate Drug. Coadministration of
+apalutamide, a strong CYP2C19 inducer, with drugs that are CYP2C19 substrates
+can result in lower exposure to these medications. Avoid or substitute another drug
+for these medications when possible. Evaluate for loss of therapeutic effect if
+medication must be coadministered.
+apalutamide will decrease the level or effect of omeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+Coadministration of apalutamide, a strong CYP3A4 inducer, with drugs that are
+CYP3A4 substrates can result in lower exposure to these medications. Avoid or
+substitute another drug for these medications when possible. Evaluate for loss of
+therapeutic effect if medication must be coadministered. Adjust dose according to
+prescribing information if needed.
+atazanavir
+omeprazole will decrease the level or effect of atazanavir by increasing gastric pH.
+Applies only to oral form of both agents. Avoid or Use Alternate Drug. Atazanavir
+solubility decreases as pH increases. Substantially reduced plasma concentrations
+of atazanavir are expected if PPIs are coadministered. PPI dose should not exceed a
+dose comparable to omeprazole 20 mg and must be taken ~12 h before
+atazanavir/ritonavir in treatment naive-patients. PPIs are not recommended in
+treatment-experienced taking atazanavir.
+carbamazepine
+carbamazepine will decrease the level or effect of omeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Avoid or Use Alternate Drug.
+ceritinib
+omeprazole decreases effects of ceritinib by increasing gastric pH. Applies only to
+oral form of both agents. Avoid or Use Alternate Drug.
+cilostazol
+omeprazole will increase the level or effect of cilostazol by affecting hepatic enzyme
+CYP2C19 metabolism. Avoid or Use Alternate Drug.
+clopidogrel
+omeprazole decreases effects of clopidogrel by affecting hepatic enzyme CYP2C19
+metabolism. Avoid or Use Alternate Drug. Clopidogrel efficacy may be reduced by
+drugs that inhibit CYP2C19. Inhibition of platelet aggregation by clopidogrel is
+6/22/26, 5:24 PM
+Prilosec (omeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/prilosec-omeprazole-341997
+5/28
+
+
+entirely due to an active metabolite. Clopidogrel is metabolized to this active
+metabolite in part by CYP2C19. .
+dacomitinib
+omeprazole will increase the level or effect of dacomitinib by unspecified interaction
+mechanism. Avoid or Use Alternate Drug. Concomitant use with a PPI decreases
+dacomitinib concentrations, which may reduce dacomitinib efficacy. Avoid use of
+PPIs with dacomitinib. As an alternative to PPIs, use locally-acting antacids or an
+H2-receptor antagonist. Administer at least 6 hours before or 10 hours after taking
+an H2-receptor antagonist.
+dasatinib
+omeprazole will decrease the level or effect of dasatinib by increasing gastric pH.
+Applies only to oral form of both agents. Avoid or Use Alternate Drug.
+defactinib
+omeprazole decreases levels of defactinib by increasing gastric pH. Applies only to
+oral form of both agents. Avoid or Use Alternate Drug. Defactinib exposure
+decreases by 79% following concomitant use of multiple doses of omeprazole 40
+mg PO daily. If concomitant use with PPIs cannot be avoided, separate
+administration by at least 2 hr.
+digoxin
+omeprazole will increase the level or effect of digoxin by increasing gastric pH.
+Applies only to oral form of both agents. Avoid or Use Alternate Drug.
+enzalutamide
+enzalutamide will decrease the level or effect of omeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+erlotinib
+omeprazole decreases levels of erlotinib by increasing gastric pH. Applies only to
+oral form of both agents. Avoid or Use Alternate Drug. Coadministration of proton
+pump inhibitors and erlotinib may decrease erlotinib exposure and reduce its
+efficacy. Consider alternate acid reducing agents.
+fedratinib
+omeprazole will increase the level or effect of fedratinib by Other (see comment).
+Avoid or Use Alternate Drug. Avoid coadministration of fedratinib (a CYP3A4 and
+CYP2C19 substrate) with dual CYP3A4 and CYP2C19 inhibitor. Effect of
+coadministration of a dual CYP3A4 and CYP2C19 inhibitor with fedratinib has not
+been studied.
+fluvoxamine
+fluvoxamine will increase the level or effect of omeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Avoid or Use Alternate Drug.
+idelalisib
+idelalisib will increase the level or effect of omeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+Idelalisib is a strong CYP3A inhibitor; avoid coadministration with sensitive CYP3A
+substrates
+6/22/26, 5:24 PM
+Prilosec (omeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/prilosec-omeprazole-341997
+6/28
+
+
+infigratinib (DSC)
+omeprazole will decrease the level or effect of infigratinib (DSC) by inhibition of GI
+absorption. Applies only to oral form of both agents. Avoid or Use Alternate Drug.
+isoniazid
+isoniazid will increase the level or effect of omeprazole by affecting hepatic enzyme
+CYP2C19 metabolism. Avoid or Use Alternate Drug.
+itraconazole
+omeprazole will decrease the level or effect of itraconazole by increasing gastric
+pH. Applies only to oral form of both agents. Avoid or Use Alternate Drug.
+ivosidenib
+ivosidenib will decrease the level or effect of omeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid
+coadministration of sensitive CYP3A4 substrates with ivosidenib or replace with
+alternative therapies. If coadministration is unavoidable, monitor patients for loss of
+therapeutic effect of these drugs.
+ketoconazole
+omeprazole will decrease the level or effect of ketoconazole by increasing gastric
+pH. Applies only to oral form of both agents. Avoid or Use Alternate Drug.
+levoketoconazole
+omeprazole will decrease the level or effect of levoketoconazole by increasing
+gastric pH. Applies only to oral form of both agents. Avoid or Use Alternate Drug.
+lonafarnib
+omeprazole will increase the level or effect of lonafarnib by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. If
+coadministration of lonafarnib (a sensitive CYP3A substrate) with weak CYP3A
+inhibitors is unavoidable, reduce to, or continue lonafarnib at starting dose. Closely
+monitor for arrhythmias and events (eg, syncope, heart palpitations) since
+lonafarnib effect on QT interval is unknown.
+lonafarnib will increase the level or effect of omeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Avoid or Use Alternate Drug. Lonafarnib may
+increase the AUC and peak concentration of CYP2C19 substrates. If
+coadministration unavoidable, monitor for adverse reactions and reduce the
+CYP2C19 substrate dose in accordance with its approved product labeling.
+mesalamine
+omeprazole decreases effects of mesalamine by increasing gastric pH. Applies only
+to oral form of both agents. Avoid or Use Alternate Drug. Applies only to sustained
+release dosage form.
+neratinib
+omeprazole will decrease the level or effect of neratinib by increasing gastric pH.
+Applies only to oral form of both agents. Avoid or Use Alternate Drug.
+nilotinib
+omeprazole decreases levels of nilotinib by increasing gastric pH. Applies only to
+oral form of both agents. Avoid or Use Alternate Drug. As an alternative to PPIs,
+6/22/26, 5:24 PM
+Prilosec (omeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/prilosec-omeprazole-341997
+7/28
+
+
+use H2-blockers ~10 hr before or ~2 hr after nilotinib, or use antacids ~2 hr before
+or ~2 hr after nilotinib (does not apply if using ODT nilotinib).
+nisoldipine
+omeprazole will increase the level or effect of nisoldipine by increasing gastric pH.
+Applies only to oral form of both agents. Avoid or Use Alternate Drug.
+pazopanib
+omeprazole will decrease the level or effect of pazopanib by increasing gastric pH.
+Applies only to oral form of both agents. Avoid or Use Alternate Drug. Avoid
+coadministration of pazopanib with drugs that raise gastric pH; consider short-
+acting antacids in place of PPIs and H2 antagonists; separate antacid and
+pazopanib dosing by several hours
+pexidartinib
+omeprazole will decrease the level or effect of pexidartinib by inhibition of GI
+absorption. Applies only to oral form of both agents. Avoid or Use Alternate Drug.
+Avoid coadministration of proton pump inhibitors (PPIs) with pexidartinib. Use H2-
+receptor antagonists or antacids if needed. When using alternatives to PPIs,
+administer pexidartinib 2 hr before or after taking locally-acting antacids OR
+administer pexidartinib at least 2 hr before or 10 hr after taking an H2-receptor
+antagonist.
+phenobarbital
+phenobarbital will decrease the level or effect of omeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+rifampin
+rifampin will decrease the level or effect of omeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+rifapentine
+rifapentine will decrease the level or effect of omeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+rilzabrutinib
+omeprazole decreases levels of rilzabrutinib by increasing gastric pH. Applies only
+to oral form of both agents. Avoid or Use Alternate Drug. Coadministration may
+decrease rilzabrutinib exposure, resulting in reduced efficacy.
+secretin
+omeprazole, secretin. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Concomitant use of PPIs may cause a hyperresponse in gastrin secretion
+in response to stimulation testing with secretin, falsely suggesting gastrinoma. The
+time it takes for serum gastrin concentrations to return to baseline following
+discontinuation of PPIs is specific to the individual PPI. Temporarily stop
+omeprazole treatment at least 14 days before assessing to allow gastrin levels to
+return to baseline.
+sofosbuvir/velpatasvir
+omeprazole will decrease the level or effect of sofosbuvir/velpatasvir by increasing
+gastric pH. Applies only to oral form of both agents. Avoid or Use Alternate Drug.
+Velpatasvir solubility decreases as gastric pH increases (practically insoluble at pH
+6/22/26, 5:24 PM
+Prilosec (omeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/prilosec-omeprazole-341997
+8/28
+
+
+>5). Coadministration of sofosbuvir/velpatasvir with omeprazole or other PPIs is not
+recommended. If considered medically necessary, give sofosbuvir/velpatasvir with
+food 4 hr before omeprazole 20 mg. Use with other PPIs has not been studied.
+sotorasib
+omeprazole will decrease the level or effect of sotorasib by inhibition of GI
+absorption. Applies only to oral form of both agents. Avoid or Use Alternate Drug. If
+use with an acid-reducing agent cannot be avoided, administer sotorasib 4 hr
+before or 10 hr after administration of a locally-acting antacid.
+sparsentan
+omeprazole decreases effects of sparsentan by increasing gastric pH. Applies only
+to oral form of both agents. Avoid or Use Alternate Drug. Proton pump inhibitors
+may decrease sparsentan exposure which may reduce efficacy of sparsentan.
+taletrectinib
+omeprazole decreases levels of taletrectinib by increasing gastric pH. Applies only
+to oral form of both agents. Avoid or Use Alternate Drug. Coadministration may
+decrease taletrectinib exposure and reduce its efficacy.
+tucatinib
+tucatinib will increase the level or effect of omeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid
+concomitant use of tucatinib with CYP3A substrates, where minimal concentration
+changes may lead to serious or life-threatening toxicities. If unavoidable, reduce
+CYP3A substrate dose according to product labeling.
+ziftomenib
+omeprazole decreases levels of ziftomenib by unspecified interaction mechanism.
+Avoid or Use Alternate Drug. Proton pump inhibitors decrease zifomenib peak
+plasma concentations by 70%.
+Monitor Closely (94)
+abrocitinib
+omeprazole will increase the level or effect of abrocitinib by affecting hepatic
+enzyme CYP2C19 metabolism. Modify Therapy/Monitor Closely. Start abrocitinib 50
+mg qDay when coadministered with CYP2C19 inhibitors. If adequate response not
+achieved after 12 weeks, may increase to 100 mg qDay. Discontinue if inadequate
+response after dosage increase.
+amphetamine
+omeprazole, amphetamine. Other (see comment). Use Caution/Monitor. Comment:
+Reduced gastric acidity caused by proton pump inhibitors decreases time to Tmax
+for amphetamine and dextroamphetamine. AUC was unaffected. .
+ampicillin
+omeprazole will decrease the level or effect of ampicillin by increasing gastric pH.
+Applies only to oral form of both agents. Use Caution/Monitor.
+armodafinil
+6/22/26, 5:24 PM
+Prilosec (omeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/prilosec-omeprazole-341997
+9/28
+
+
+armodafinil will increase the level or effect of omeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+avapritinib
+omeprazole will increase the level or effect of avapritinib by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+axitinib
+omeprazole increases levels of axitinib by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+belumosudil
+omeprazole will decrease the level or effect of belumosudil by increasing gastric
+pH. Applies only to oral form of both agents. Modify Therapy/Monitor Closely.
+Increase belumosudil dosage to 200 mg PO BID when coadministered with proton
+pump inhibitors.
+belzutifan
+omeprazole will increase the level or effect of belzutifan by affecting hepatic
+enzyme CYP2C19 metabolism. Modify Therapy/Monitor Closely. Belzutifan is a
+CYP2C19 substrate. Coadministration with CYP2C19 inhibitors may increase
+incidence or severity of adverse effects. Monitor for anemia and hypoxia and reduce
+belzutifan dose as recommended.
+bortezomib
+bortezomib will increase the level or effect of omeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+bosutinib
+omeprazole decreases levels of bosutinib by Other (see comment). Use
+Caution/Monitor. Comment: PPIs may decrease bosutinib concentration by ~45%;
+bosutinib displays pH-dependent solubility.
+budesonide
+omeprazole decreases effects of budesonide by increasing gastric pH. Applies only
+to oral form of both agents. Modify Therapy/Monitor Closely. Enteric-coated
+budesonide dissolves at pH >5.5. Also, dissolution of extended-release budesonide
+tablets is pH dependent. Coadministration with drugs that increase gastric pH may
+cause these budesonide products to prematurely dissolve, and possibly affect
+release properties and absorption of the drug in the duodenum.
+butalbital
+butalbital will decrease the level or effect of omeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+cannabidiol
+omeprazole will increase the level or effect of cannabidiol by affecting hepatic
+enzyme CYP2C19 metabolism. Modify Therapy/Monitor Closely. Consider reducing
+the cannabidiol dose when coadministered with a strong CYP2C19 inhibitor.
+cannabidiol will increase the level or effect of omeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Modify Therapy/Monitor Closely. Consider reducing
+6/22/26, 5:24 PM
+Prilosec (omeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/prilosec-omeprazole-341997
+10/28
+
+
+the dose of sensitive CYP2C19 substrates, as clinically appropriate, when
+coadministered with cannabidiol.
+capecitabine
+omeprazole decreases effects of capecitabine by unknown mechanism. Use
+Caution/Monitor. Retrospective data suggest elevated gastric pH caused by PPI use
+may impair capecitabine tablet dissolution and/or reduce absorption.
+carbamazepine
+carbamazepine will decrease the level or effect of omeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+carbonyl iron
+omeprazole will decrease the level or effect of carbonyl iron by increasing gastric
+pH. Applies only to oral form of both agents. Use Caution/Monitor.
+cefpodoxime
+omeprazole decreases effects of cefpodoxime by increasing gastric pH. Applies only
+to oral form of both agents. Use Caution/Monitor.
+cefuroxime
+omeprazole decreases effects of cefuroxime by increasing gastric pH. Applies only
+to oral form of both agents. Use Caution/Monitor.
+cenobamate
+cenobamate will decrease the level or effect of omeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Increase dose of CYP3A4 substrate, as needed, when coadministered with
+cenobamate.
+cenobamate will increase the level or effect of omeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Modify Therapy/Monitor Closely. Consider a dose
+reduction of CYP2C19 substrates, as clinically appropriate, when used
+concomitantly with cenobamate.
+ciprofloxacin
+omeprazole will decrease the level or effect of ciprofloxacin by unknown
+mechanism. Use Caution/Monitor. Absorption of the ciprofloxacin ER tablet was
+slightly diminished (20%) when coadministered with omeprazole.
+citalopram
+omeprazole will increase the level or effect of citalopram by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor. Citalopram 20 mg/day is the
+maximum recommended dose for patients taking CYP2C19 inhibitors because of
+the risk of QT prolongation.
+clobazam
+omeprazole will increase the level or effect of clobazam by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor. Dosage adjustment may be
+required; CYP2C19 inhibitors may result in increased exposure to N-
+desmethylclobazam (active metabolite).
+cobicistat
+6/22/26, 5:24 PM
+Prilosec (omeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/prilosec-omeprazole-341997
+11/28
+
+
+cobicistat will increase the level or effect of omeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+conivaptan
+conivaptan will increase the level or effect of omeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+crizotinib
+omeprazole will decrease the level or effect of crizotinib by increasing gastric pH.
+Applies only to oral form of both agents. Use Caution/Monitor. Drugs that elevate
+the gastric pH may decrease the solubility of crizotinib and subsequently reduce its
+bioavailability. However, no formal studies have been conducted.
+cyclosporine
+omeprazole, cyclosporine. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: Long-term use of PPIs may cause
+hypomagnesemia and increase this risk when coadministered with drugs that may
+also decrease magnesium levels.
+dabrafenib
+omeprazole will decrease the level or effect of dabrafenib by increasing gastric pH.
+Applies only to oral form of both agents. Use Caution/Monitor. Drugs that alter
+upper GI tract pH (eg, PPIs, H2-blockers, antacids) may decrease dabrafenib
+solubility and reduce its bioavailability
+dabrafenib will decrease the level or effect of omeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Modify Therapy/Monitor Closely. Use alternative if
+available
+dextroamphetamine
+omeprazole, dextroamphetamine. Other (see comment). Use Caution/Monitor.
+Comment: Reduced gastric acidity caused by proton pump inhibitors decreases time
+to Tmax for amphetamine and dextroamphetamine. AUC was unaffected. .
+diazepam buccal
+omeprazole will increase the level or effect of diazepam buccal by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor. Strong or moderate CYP2C19
+inhibitors may decrease rate of diazepam elimination, thereby increasing adverse
+reactions to diazepam.
+diazepam intranasal
+omeprazole will increase the level or effect of diazepam intranasal by affecting
+hepatic enzyme CYP2C19 metabolism. Use Caution/Monitor. Strong or moderate
+CYP2C19 inhibitors may decrease rate of diazepam elimination, thereby increasing
+adverse reactions to diazepam.
+dichlorphenamide
+dichlorphenamide and omeprazole both decrease serum potassium. Use
+Caution/Monitor.
+digoxin
+omeprazole increases toxicity of digoxin by Other (see comment). Use
+Caution/Monitor. Comment: Prolonged use of PPIs may cause hypomagnesemia and
+6/22/26, 5:24 PM
+Prilosec (omeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/prilosec-omeprazole-341997
+12/28
+
+
+increase risk for digoxin toxicity.
+dordaviprone
+dordaviprone and omeprazole both increase QTc interval. Use Caution/Monitor.
+Increase the frequency of ECG and electrolyte monitoring.
+efavirenz
+efavirenz will increase the level or effect of omeprazole by affecting hepatic enzyme
+CYP2C19 metabolism. Use Caution/Monitor.
+efavirenz will decrease the level or effect of omeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+elagolix
+elagolix will increase the level or effect of omeprazole by affecting hepatic enzyme
+CYP2C19 metabolism. Modify Therapy/Monitor Closely. Elagolix is a weak inhibitor
+of CYP2C19. No dose adjustments are needed for omeprazole with 40 mg/day or
+less. Consider omeprazole dose reduction with higher omeprazole doses (eg, dose
+for Zollinger-Ellison) if coadministered with elagolix.
+elagolix decreases levels of omeprazole by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Modify Therapy/Monitor Closely. Elagolix is a weak-to-
+moderate CYP3A4 inducer. Monitor CYP3A substrates if coadministered. Consider
+increasing CYP3A substrate dose if needed.
+eluxadoline
+omeprazole increases levels of eluxadoline by affecting hepatic enzyme CYP2C19
+metabolism. Use Caution/Monitor. As a precautionary measure due to incomplete
+information on the metabolism of eluxadoline, use caution when coadministered
+with strong CYP2C19 inhibitors.
+encorafenib
+encorafenib, omeprazole. affecting hepatic/intestinal enzyme CYP3A4 metabolism.
+Use Caution/Monitor. Encorafenib both inhibits and induces CYP3A4 at clinically
+relevant plasma concentrations. Coadministration of encorafenib with sensitive
+CYP3A4 substrates may result in increased toxicity or decreased efficacy of these
+agents.
+escitalopram
+omeprazole will increase the level or effect of escitalopram by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+eslicarbazepine acetate
+eslicarbazepine acetate will increase the level or effect of omeprazole by affecting
+hepatic enzyme CYP2C19 metabolism. Use Caution/Monitor.
+etravirine
+etravirine will increase the level or effect of omeprazole by affecting hepatic enzyme
+CYP2C19 metabolism. Use Caution/Monitor.
+fedratinib
+fedratinib will increase the level or effect of omeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Adjust dose
+6/22/26, 5:24 PM
+Prilosec (omeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/prilosec-omeprazole-341997
+13/28
+
+
+of drugs that are CYP3A4 substrates as necessary.
+ferric gluconate
+omeprazole will decrease the level or effect of ferric gluconate by increasing gastric
+pH. Applies only to oral form of both agents. Use Caution/Monitor.
+ferric maltol
+omeprazole will decrease the level or effect of ferric maltol by increasing gastric pH.
+Applies only to oral form of both agents. Use Caution/Monitor.
+ferrous fumarate
+omeprazole will decrease the level or effect of ferrous fumarate by increasing
+gastric pH. Applies only to oral form of both agents. Use Caution/Monitor.
+ferrous gluconate
+omeprazole will decrease the level or effect of ferrous gluconate by increasing
+gastric pH. Applies only to oral form of both agents. Use Caution/Monitor.
+ferrous sulfate
+omeprazole will decrease the level or effect of ferrous sulfate by increasing gastric
+pH. Applies only to oral form of both agents. Use Caution/Monitor.
+fexinidazole
+fexinidazole will increase the level or effect of omeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+finerenone
+omeprazole will increase the level or effect of finerenone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Monitor serum potassium during initiation and dosage adjustment of either
+finererone or weak CYP3A4 inhibitors. Adjust finererone dosage as needed.
+flibanserin
+omeprazole will increase the level or effect of flibanserin by affecting hepatic
+enzyme CYP2C19 metabolism. Modify Therapy/Monitor Closely. Coadministration
+of flibanserin with strong CYP2C19 inhibitors may increase flibanserin exposure
+and increase the risk of hypotension, syncope, and CNS depression.
+omeprazole will increase the level or effect of flibanserin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Increased
+flibanserin adverse effects may occur if coadministered with multiple weak CYP3A4
+inhibitors.
+fluconazole
+fluconazole will increase the level or effect of omeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+fosamprenavir
+omeprazole will decrease the level or effect of fosamprenavir by increasing gastric
+pH. Applies only to oral form of both agents. Use Caution/Monitor.
+fosphenytoin
+6/22/26, 5:24 PM
+Prilosec (omeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/prilosec-omeprazole-341997
+14/28
+
+
+fosphenytoin will decrease the level or effect of omeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+gefitinib
+omeprazole decreases levels of gefitinib by increasing gastric pH. Applies only to
+oral form of both agents. Use Caution/Monitor. Avoid coadministration of gefitinib
+with PPIs if possible. If treatment with a PPI is required, separate gefitinib and PPI
+doses by 12 hr.
+imipramine
+omeprazole will increase the level or effect of imipramine by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+iron dextran complex
+omeprazole will decrease the level or effect of iron dextran complex by increasing
+gastric pH. Applies only to oral form of both agents. Use Caution/Monitor.
+iron sucrose
+omeprazole will decrease the level or effect of iron sucrose by increasing gastric pH.
+Applies only to oral form of both agents. Use Caution/Monitor.
+isavuconazonium sulfate
+omeprazole will increase the level or effect of isavuconazonium sulfate by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+istradefylline
+istradefylline will increase the level or effect of omeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Istradefylline
+40 mg/day increased peak levels and AUC of CYP3A4 substrates in clinical trials.
+This effect was not observed with istradefylline 20 mg/day. Consider dose reduction
+of sensitive CYP3A4 substrates.
+ledipasvir/sofosbuvir
+omeprazole decreases levels of ledipasvir/sofosbuvir by Other (see comment). Use
+Caution/Monitor. Comment: Ledipasvir solubility decreases as pH increases; drugs
+that increase gastric pH are expected to decrease levels of ledipasvir; proton-pump
+inhibitor doses comparable to omeprazole <20 mg can be administered
+simultaneously with ledipasvir/sofosbuvir under fasted conditions.
+lemborexant
+omeprazole will increase the level or effect of lemborexant by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Lower nightly dose of lemborexant recommended if coadministered with weak
+CYP3A4 inhibitors. See drug monograph for specific dosage modification.
+letermovir
+letermovir increases levels of omeprazole by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Monitor and dose adjustment may be
+necessary.
+lumacaftor/ivacaftor
+lumacaftor/ivacaftor, omeprazole. affecting hepatic enzyme CYP2C19 metabolism.
+Use Caution/Monitor. In vitro studies suggest that lumacaftor may induce and
+6/22/26, 5:24 PM
+Prilosec (omeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/prilosec-omeprazole-341997
+15/28
+
+
+ivacaftor may inhibit CYP2C19 substrates. .
+lumacaftor/ivacaftor will decrease the level or effect of omeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+Lumacaftor/ivacaftor is a strong CYP3A4 inhibitor and also has the potential to
+induce CYP2C19 and both induce and inhibitor P-gp.
+mavacamten
+omeprazole increases levels of mavacamten by affecting hepatic enzyme CYP2C19
+metabolism. Modify Therapy/Monitor Closely. Modify mavacamten dose if
+coadministered with weak or moderate CYP2C19 inhibitors.
+methotrexate
+omeprazole increases levels of methotrexate by decreasing renal clearance. Use
+Caution/Monitor. Temporary withdrawal of PPI may be considered in some patients.
+methylphenidate
+omeprazole decreases effects of methylphenidate by enhancing GI absorption.
+Applies only to oral form of both agents. Modify Therapy/Monitor Closely. Since the
+characteristics of methylphenidate extended release capsules (Ritalin LA) are pH
+dependent, coadministration of antacids or acid suppressants could alter the
+release of methylphenidate. Consider separating the administration of the antacid
+and the methylphenidate extended-release capsules may be avoided.
+midazolam intranasal
+omeprazole will increase the level or effect of midazolam intranasal by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+Coadministration of mild CYP3A4 inhibitors with midazolam intranasal may cause
+higher midazolam systemic exposure, which may prolong sedation.
+mitapivat
+mitapivat decreases levels of omeprazole by affecting hepatic enzyme CYP2C19
+metabolism. Use Caution/Monitor. Monitor patients for loss of therapeutic effect if
+taking sensitive CYP2C19 substrates. .
+modafinil
+modafinil will increase the level or effect of omeprazole by affecting hepatic enzyme
+CYP2C19 metabolism. Use Caution/Monitor.
+mycophenolate
+omeprazole will decrease the level or effect of mycophenolate by increasing gastric
+pH. Applies only to oral form of both agents. Use Caution/Monitor. Potential
+interaction applies to mycophenolate mofetil. Enteric coated mycophenolate sodium
+formulation is less sensitive to this interaction. Clinical significance unclear.
+ombitasvir/paritaprevir/ritonavir & dasabuvir (DSC)
+ombitasvir/paritaprevir/ritonavir & dasabuvir (DSC) will decrease the level or effect
+of omeprazole by unspecified interaction mechanism. Use Caution/Monitor. Monitor
+for decreased omeprazole efficacy; consider increasing omeprazole dose in patients
+whose symptoms are not well controlled (not to exceed 40 mg/day)
+oxcarbazepine
+6/22/26, 5:24 PM
+Prilosec (omeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/prilosec-omeprazole-341997
+16/28
+
+
+oxcarbazepine will increase the level or effect of omeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+paltusotine
+omeprazole decreases levels of paltusotine by increasing gastric pH. Applies only
+to oral form of both agents. Modify Therapy/Monitor Closely. Coadministration
+demonstrated a dose-dependent decrease in paltusotine exposure owing to
+decreased paltusotine solubility at elevated gastric pH. May require increased
+paltusotine dose. Avoid coadministration if patient is already taking paltusotine 60
+mg.
+pentobarbital
+pentobarbital will decrease the level or effect of omeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+phenobarbital
+phenobarbital will decrease the level or effect of omeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+phenytoin
+phenytoin will decrease the level or effect of omeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+polysaccharide iron
+omeprazole will decrease the level or effect of polysaccharide iron by increasing
+gastric pH. Applies only to oral form of both agents. Use Caution/Monitor.
+posaconazole
+omeprazole will decrease the level or effect of posaconazole by increasing gastric
+pH. Applies only to oral form of both agents. Use Caution/Monitor.
+posaconazole will increase the level or effect of omeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+primidone
+primidone will decrease the level or effect of omeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+primidone will decrease the level or effect of omeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+revumenib
+revumenib and omeprazole both increase QTc interval. Use Caution/Monitor. ECG
+monitoring recommended if concomitant use can?t be avoided and withhold
+therapy if QTc interval is >480 msec; restart therapy after QTc interval returns to
+<480 msec
+rifampin
+rifampin will decrease the level or effect of omeprazole by affecting hepatic enzyme
+CYP2C19 metabolism. Use Caution/Monitor.
+riociguat
+6/22/26, 5:24 PM
+Prilosec (omeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/prilosec-omeprazole-341997
+17/28
+
+
+omeprazole will decrease the level or effect of riociguat by increasing gastric pH.
+Applies only to oral form of both agents. Use Caution/Monitor.
+ritonavir
+ritonavir will increase the level or effect of omeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+rose hips
+omeprazole will decrease the level or effect of rose hips by increasing gastric pH.
+Applies only to oral form of both agents. Use Caution/Monitor.
+sparsentan
+sparsentan will decrease the level or effect of omeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor. Sparsentan (a CYP2C19
+inducer) decreases exposure of CYP2C19 substrates and reduces efficacy related to
+these substrates.
+St John's Wort
+St John's Wort will decrease the level or effect of omeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+stiripentol
+stiripentol, omeprazole. affecting hepatic/intestinal enzyme CYP3A4 metabolism.
+Modify Therapy/Monitor Closely. Stiripentol is a CYP3A4 inhibitor and inducer.
+Monitor CYP3A4 substrates coadministered with stiripentol for increased or
+decreased effects. CYP3A4 substrates may require dosage adjustment.
+stiripentol will increase the level or effect of omeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Modify Therapy/Monitor Closely. Consider reducing
+the dose of CYP2C19 substrates, if adverse reactions are experienced when
+administered concomitantly with stiripentol.
+tacrolimus
+omeprazole will increase the level or effect of tacrolimus by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor. Concomitant administration
+may increase tacrolimus whole blood concentrations, particularly in intermediate or
+poor metabolizers of CYP2C19
+taletrectinib
+taletrectinib and omeprazole both increase QTc interval. Use Caution/Monitor.
+Concomitant use may increase the risk of QTc interval prolongation. If concomitant
+use is unavoidable, adjust the frequency of ECG and electrolyte monitoring.
+tinidazole
+omeprazole will increase the level or effect of tinidazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+tofacitinib
+omeprazole increases levels of tofacitinib by affecting hepatic enzyme CYP2C19
+metabolism. Use Caution/Monitor. No specific dose adjustment recommended when
+tofacitinib coadministered with potent CYP2C19 inhibitors; decrease tofacitinib
+6/22/26, 5:24 PM
+Prilosec (omeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/prilosec-omeprazole-341997
+18/28
+
+
+dose if coadministered with both moderate CYP3A4 and potent CYP2C19 inhibitors
+.
+triclabendazole
+triclabendazole will increase the level or effect of omeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+voriconazole
+voriconazole will increase the level or effect of omeprazole by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+voriconazole will increase the level or effect of omeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+warfarin
+omeprazole will increase the level or effect of warfarin by Other (see comment).
+Use Caution/Monitor. Warfarin's less potent R-enantiomer is metabolized in part by
+CYP3A4 (and also CYP1A2 and CYP2C19). Monitor INR more frequently if
+coadministered with inhibitors of these isoenzymes and adjust warfarin dose if
+needed.
+ziftomenib
+omeprazole, ziftomenib. QTc interval. Use Caution/Monitor. Caution if ziftomenib is
+coadministered with drugs that exacerbated risk of QT prolongation (eg,
+hypokalemia, orthostatic hypotension, inhibits metabolism of ziftomenib).
+Minor (50)
+acetazolamide
+acetazolamide will increase the level or effect of omeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+alprazolam
+omeprazole increases levels of alprazolam by decreasing metabolism.
+Minor/Significance Unknown.
+ambrisentan
+omeprazole will increase the level or effect of ambrisentan by affecting hepatic
+enzyme CYP2C19 metabolism. Minor/Significance Unknown.
+anastrozole
+anastrozole will increase the level or effect of omeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+bismuth subsalicylate
+omeprazole increases levels of bismuth subsalicylate by enhancing GI absorption.
+Applies only to oral form of both agents. Minor/Significance Unknown.
+blessed thistle
+blessed thistle decreases effects of omeprazole by pharmacodynamic antagonism.
+Minor/Significance Unknown. Theoretical interaction.
+6/22/26, 5:24 PM
+Prilosec (omeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/prilosec-omeprazole-341997
+19/28
+
+
+bosentan
+bosentan will decrease the level or effect of omeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+carbamazepine
+omeprazole increases levels of carbamazepine by decreasing metabolism.
+Minor/Significance Unknown. Monitor plasma levels when used concomitantly.
+chlordiazepoxide
+omeprazole increases levels of chlordiazepoxide by decreasing metabolism.
+Minor/Significance Unknown.
+clomipramine
+omeprazole will increase the level or effect of clomipramine by affecting hepatic
+enzyme CYP2C19 metabolism. Minor/Significance Unknown.
+clonazepam
+omeprazole increases levels of clonazepam by decreasing metabolism.
+Minor/Significance Unknown.
+clorazepate
+omeprazole increases levels of clorazepate by decreasing metabolism.
+Minor/Significance Unknown.
+cyanocobalamin
+omeprazole decreases levels of cyanocobalamin by inhibition of GI absorption.
+Applies only to oral form of both agents. Minor/Significance Unknown.
+cyclophosphamide
+cyclophosphamide will increase the level or effect of omeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+danazol
+danazol will increase the level or effect of omeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+darifenacin
+darifenacin will decrease the level or effect of omeprazole by Other (see comment).
+Minor/Significance Unknown. Effectiveness of proton pump inhibitors may be
+decreased theoretically if administered with other antisecretory agents
+devil's claw
+devil's claw decreases effects of omeprazole by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+dexamethasone
+dexamethasone will decrease the level or effect of omeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+diazepam
+omeprazole will increase the level or effect of diazepam by affecting hepatic
+enzyme CYP2C19 metabolism. Minor/Significance Unknown.
+6/22/26, 5:24 PM
+Prilosec (omeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/prilosec-omeprazole-341997
+20/28
+
+
+dronedarone
+dronedarone will increase the level or effect of omeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+drospirenone
+drospirenone will increase the level or effect of omeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+elvitegravir/cobicistat/emtricitabine/tenofovir DF
+elvitegravir/cobicistat/emtricitabine/tenofovir DF, omeprazole. affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+Based on drug interaction studies conducted with the components of Stribild, no
+clinically significant drug interactions have been either observed or are expected
+when coadministered with PPIs.
+eslicarbazepine acetate
+eslicarbazepine acetate decreases effects of omeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+Monitor for GI symptoms; net increased or decreased effect on PPI action unclear
+due to opposing CYP450 actions.
+estazolam
+omeprazole increases levels of estazolam by decreasing metabolism.
+Minor/Significance Unknown.
+etravirine
+omeprazole will increase the level or effect of etravirine by affecting hepatic enzyme
+CYP2C19 metabolism. Minor/Significance Unknown.
+ferric carboxymaltose
+omeprazole will decrease the level or effect of ferric carboxymaltose by increasing
+gastric pH. Applies only to oral form of both agents. Minor/Significance Unknown.
+fluoxetine
+fluoxetine will increase the level or effect of omeprazole by affecting hepatic
+enzyme CYP2C9/10 metabolism. Minor/Significance Unknown.
+flurazepam
+omeprazole increases levels of flurazepam by decreasing metabolism.
+Minor/Significance Unknown.
+glipizide
+omeprazole will increase the level or effect of glipizide by affecting hepatic enzyme
+CYP2C19 metabolism. Minor/Significance Unknown.
+larotrectinib
+larotrectinib will increase the level or effect of omeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+levoketoconazole
+levoketoconazole will increase the level or effect of omeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+6/22/26, 5:24 PM
+Prilosec (omeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/prilosec-omeprazole-341997
+21/28
+
+
+levothyroxine
+omeprazole decreases levels of levothyroxine by increasing gastric pH. Applies only
+to oral form of both agents. Minor/Significance Unknown. Conflicting evidence
+regarding this interaction exists.
+liothyronine
+omeprazole decreases levels of liothyronine by increasing gastric pH. Applies only
+to oral form of both agents. Minor/Significance Unknown. Conflicting evidence
+regarding this interaction exists.
+liotrix
+omeprazole decreases levels of liotrix by increasing gastric pH. Applies only to oral
+form of both agents. Minor/Significance Unknown. Conflicting evidence regarding
+this interaction exists.
+lisdexamfetamine
+omeprazole, lisdexamfetamine. Other (see comment). Minor/Significance Unknown.
+Comment: Reduced gastric acidity caused by proton pump inhibitors decreases time
+to Tmax for amphetamine and dextroamphetamine. AUC was unaffected. .
+lorazepam
+omeprazole increases levels of lorazepam by decreasing metabolism.
+Minor/Significance Unknown.
+methamphetamine
+omeprazole decreases levels of methamphetamine by Other (see comment).
+Minor/Significance Unknown. Comment: Time to maximum concentration (Tmax) of
+amphetamine is decreased compared to when administered alone; monitor patients
+for changes in clinical effect and adjust therapy based on clinical response.
+midazolam
+omeprazole increases levels of midazolam by decreasing metabolism.
+Minor/Significance Unknown.
+mitotane
+mitotane decreases levels of omeprazole by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Minor/Significance Unknown. Mitotane is a strong inducer of
+cytochrome P-4503A4; monitor when coadministered with CYP3A4 substrates for
+possible dosage adjustments.
+ospemifene
+omeprazole increases levels of ospemifene by affecting hepatic enzyme CYP2C19
+metabolism. Minor/Significance Unknown.
+phytoestrogens
+omeprazole decreases levels of phytoestrogens by inhibition of GI absorption.
+Applies only to oral form of both agents. Minor/Significance Unknown.
+ponatinib
+omeprazole decreases levels of ponatinib by increasing gastric pH. Applies only to
+oral form of both agents. Minor/Significance Unknown.
+quazepam
+6/22/26, 5:24 PM
+Prilosec (omeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/prilosec-omeprazole-341997
+22/28
+
+
+omeprazole increases levels of quazepam by decreasing metabolism.
+Minor/Significance Unknown.
+ribociclib
+ribociclib will increase the level or effect of omeprazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+ruxolitinib
+omeprazole will increase the level or effect of ruxolitinib by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+ruxolitinib topical
+omeprazole will increase the level or effect of ruxolitinib topical by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+theophylline
+omeprazole increases toxicity of theophylline by Other (see comment).
+Minor/Significance Unknown. Comment: Prolonged use of proton pump inhibitors
+can cause hypochlorhydria, which in turn causes peristalsis in small intestine to
+increase and peristalsis in the proximal colon to decrease; monitor for toxicity.
+thyroid desiccated
+omeprazole decreases levels of thyroid desiccated by increasing gastric pH. Applies
+only to oral form of both agents. Minor/Significance Unknown. Conflicting evidence
+regarding this interaction exists.
+triazolam
+omeprazole increases levels of triazolam by decreasing metabolism.
+Minor/Significance Unknown.
+voriconazole
+omeprazole will increase the level or effect of voriconazole by affecting hepatic
+enzyme CYP2C19 metabolism. Minor/Significance Unknown.
+Adverse Effects
+1-10%
+Headache (7%)
+Abdominal pain (5%)
+Diarrhea (4%)
+Nausea (4%)
+Vomiting (3%)
+Flatulence (3%)
+Dizziness (2%)
+6/22/26, 5:24 PM
+Prilosec (omeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/prilosec-omeprazole-341997
+23/28
+
+
+Upper respiratory infection (2%)
+Acid regurgitation (2%)
+Constipation (2%)
+Rash (2%)
+Cough (1%)
+Frequency Not Defined
+Fracture of bone, osteoporosis-related
+Hepatotoxicity (rare)
+Agranulocytosis
+Anorexia
+Gastric polyps
+Hip fracture
+Alopecia
+Atrophic gastritis
+Interstitial nephritis (rare)
+Pancreatitis (rare)
+Rhabdomyolysis
+Taste perversion
+Abnormal dreams
+Toxic epidermal necrolysis (rare)
+Postmarketing Reports
+Bone fracture
+Fundic gland polyps
+Acute tubulointerstitial nephritis
+Erectile dysfunction
+Warnings
+Contraindications
+Hypersensitivity to omeprazole or other proton pump inhibitors (PPIs)
+Cautions
+6/22/26, 5:24 PM
+Prilosec (omeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/prilosec-omeprazole-341997
+24/28
+
+
+PPIs are possibly associated with increased incidence of Clostridium difficile-associated
+diarrhea (CDAD); consider diagnosis of CDAD for patients taking PPIs who have diarrhea
+that does not improve
+May require dosage reduction with liver disease
+Cutaneous lupus erythematosus (CLE) and systemic lupus erythematosus (SLE) reported
+with PPIs; avoid using for longer than medically indicated; discontinue if signs or
+symptoms consistent with CLE or SLE are observed and refer patient to specialist
+Shown to cause gastric carcinoid tumors in rats with increased doses, but risk in humans
+unconfirmed
+Published observational studies suggest that PPI therapy may be associated with an
+increased risk for osteoporosis-related fractures of the hip, wrist, or spine, particularly
+with prolonged (>1 yr), high-dose therapy
+Hypomagnesemia may occur with prolonged use (>1 year); adverse effects may result
+and include tetany, arrhythmias, and seizures; in 25% of cases reviewed, magnesium
+supplementation alone did not improve low serum magnesium levels and the PPI had to
+be discontinued
+Decreased gastric acidity increases serum chromogranin A (CgA) levels and may cause
+false-positive diagnostic results for neuroendocrine tumors; temporarily discontinue PPIs
+before assessing CgA levels
+Inhibits hepatic isoenzyme CYP2C19 and may alter metabolism of drugs that are
+CYP2C19 substrates
+PPIs may decrease the efficacy of clopidogrel by reducing the formation of the active
+metabolite
+Stop use and inform a healthcare professional if rash or joint pain develops
+Daily long-term use (e.g., longer than 3 years) may lead to malabsorption or a deficiency
+of cyanocobalamin
+Acute interstitial nephritis has been observed in patients taking PPIs
+Relief of symptoms does not eliminate the possibility of a gastric malignancy
+Therapy increases risk of Salmonella, Campylobacter, and other infections
+May elevate and/or prolong serum concentrations of methotrexate and/or its metabolite
+when administered concomitantly with PPIs, possibly leading to toxicity; consider a
+temporary withdrawal of PPI therapy therapy with high dose methotrexate
+administration
+PPI therapy is associated with increased risk of fundic gland polyp; risk increases with
+long-term use >1 year; patient may be asymptomatic; problem usually identified
+incidentally on endoscopy; use shortest duration of therapy appropriate to condition
+being treated
+If patient taking a prescription drug, the patient should ask a doctor or a pharmacist
+whether acid reducers can be taken concomitantly with it
+Therapy may cause severe skin reactions, including skin reddening, blisters, rash; if an
+6/22/26, 5:24 PM
+Prilosec (omeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/prilosec-omeprazole-341997
+25/28
+
+
+allergic reaction occurs, stop use and seek medical help right away
+Acute tubulointerstitial nephritis (TIN) reported in patients taking PPIs; may occur at any
+point during PPI therapy; patients may present with varying signs and symptoms from
+symptomatic hypersensitivity reactions to non-specific symptoms of decreased renal
+function (eg, malaise, nausea, anorexia); in reported case series, some patients were
+diagnosed on biopsy and in absence of extra-renal manifestations (eg, fever, rash or
+arthralgia); discontinue therapy and evaluate patients with suspected acute TIN
+Pregnancy & Lactation
+Pregnancy
+There are no adequate and well-controlled studies in pregnant women; available
+epidemiologic data fail to demonstrate an increased risk of major congenital
+malformations or other adverse pregnancy outcomes with first trimester omeprazole use;
+reproduction studies in rats and rabbits resulted in dose-dependent embryo-lethality at
+omeprazole doses that were approximately 3.4 to 34 times an oral human dose of 40
+mg (based on a body surface area for a 60 kg person)
+Teratogenicity was not observed in animal reproduction studies with administration of
+oral esomeprazole (an enantiomer of omeprazole) magnesium in rats and rabbits during
+organogenesis with doses about 68 times and 42 times, respectively, an oral human
+dose of 40 mg esomeprazole or 40 mg omeprazole (based on body surface area for a 60
+kg person); changes in bone morphology were observed in offspring of rats dosed
+through most of pregnancy and lactation at doses equal to or greater than approximately
+34 times an oral human dose of 40 mg esomeprazole or 40 mg omeprazole; when
+maternal administration was confined to gestation only, there were no effects on bone
+physeal morphology in offspring at any age
+Lactation
+Limited data suggest omeprazole may be present in human milk; there are no clinical
+data on effects of omeprazole on breastfed infant or on milk production; developmental
+and health benefits of breastfeeding should be considered along with mother's clinical
+need for therapy and any potential adverse effects on breastfed infant from treatment or
+from underlying maternal condition
+Pregnancy Categories
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+6/22/26, 5:24 PM
+Prilosec (omeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/prilosec-omeprazole-341997
+26/28
+
+
+NA: Information not available.
+Pharmacology
+Mechanism of Action
+PPI; binds to H+/K+-exchanging ATPase (proton pump) in gastric parietal cells, resulting
+in suppression of basal and stimulated acid secretion
+Absorption
+Bioavailability: 30-40%
+Onset of action: 1 hr (antisecretory effect)
+Duration: 73 hr
+Peak plasma time: 0.5-3.5 hr
+Peak response (PUD): 2 hr (initial); 5 days (peak)
+Distribution
+Protein bound: 95-96%
+Vd: 0.39 L/kg
+Metabolism
+Metabolized extensively by hepatic CYP2C19; slow metabolizers are deficient in
+CYP2C19 enzyme system; plasma concentration can increase by 5-fold or higher in
+comparison with that found in persons with the enzyme
+Metabolites: Hydroxyomeprazole, omeprazole sulfone, omeprazole sulfide (inactive)
+Enzymes inhibited: CYP2C19
+Elimination
+Half-life: 0.5-1 hr; increases to 3 hr with hepatic impairment
+Dialyzable: No
+Total body clearance: 500-600 mL/min
+Excretion: Urine (77%); feces (16-19%; mainly in bile)
+Pharmacogenomics
+CYP2C19 poor metabolizers
+Asians have ~4-fold higher exposure to omeprazole than whites
+CYP2C19, a polymorphic enzyme, is involved in the metabolism of omeprazole
+6/22/26, 5:24 PM
+Prilosec (omeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/prilosec-omeprazole-341997
+27/28
+
+
+~15-20% of Asians are CYP2C19 poor metabolizers
+Tests are available to identify a patient’s CYP2C19 genotype
+Avoid use in Asian patients with unknown CYP2C19 genotype or those who are
+known to be poor metabolizers
+Formulary
+Adding plans allows you to compare formulary status to other drugs in the same class.
+Formulary information is available for health plans only in the United States.
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+6/22/26, 5:24 PM
+Prilosec (omeprazole) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/prilosec-omeprazole-341997
+28/28

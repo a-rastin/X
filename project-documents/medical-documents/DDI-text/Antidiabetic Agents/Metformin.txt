@@ -1,0 +1,2005 @@
+﻿6/22/26, 2:24 PM Glucophage, Glucophage XR (metformin) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+metformin (Rx)
+Brand and Other Names: Glucophage, Glucophage XR, Glumetza, Riomet, Riomet ER
+Classes: Antidiabetics, Biguanides
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+tablet, immediate-release
+
+500mg (generic)
+
+850mg (generic)
+
+1000mg (generic)
+
+tablet, extended-release
+
+500mg (generic, Glumetza)
+
+750mg (generic)
+
+1000mg (generic, Glumetza)
+
+oral solution
+
+100mg/mL (Riomet)
+
+oral suspension, extended-release
+
+47.31g/473mL per bottle (Riomet ER)
+
+Reconstituted suspension is 500mg/5mL
+
+Type 2 Diabetes Mellitus
+
+Adjunctive therapy to diet and exercise to improve glycemic control in adults with type 2
+diabetes
+
+https://reference.medscape.com/drug/glucophage-metformin-342717 1/35
+
+
+
+6/22/26, 2:24 PM Glucophage, Glucophage XR (metformin) dosing, indications, interactions, adverse effects, and more
+
+Monotherapy or with sulfonylurea
+
+Immediate-release tablet or solution
+
+Initial: 500 mg PO q12hr or 850 mg PO qDay with meals; increase dose in
+increments of 500 mg/week or 850 mg q2Weeks on the basis of glycemic control
+and tolerability
+
+Maintenance: 1500-2550 mg/day PO divided q8-12hr with meal
+
+Not to exceed 2550 mg/day
+
+Extended-release tablet or suspension
+
+500 mg PO qDay with dinner; titrate by 500 mg/day qWeek; not to exceed 2000
+mg/day
+
+Type 2 Diabetes Prevention (Off-label)
+
+850 mg PO qDay
+
+Target dosing: 850 mg PO q12hr
+
+Dosage Modifications
+
+Hepatic impairment: Avoid use; risk of lactic acidosis
+
+Renal impairment
+
+Obtain eGFR before starting metformin
+
+eGFR <30 mL/min/1.73 m²: Contraindicated
+
+eGFR 30-45 mL/min/1.73 m²: Not recommended to initiate treatment
+
+Monitor eGFR at least annually or more often for those at risk for renal impairment
+(eg, elderly)
+
+If eGFR falls below 45mL/min/1.73 m² while taking metformin, risks and benefits of
+continuing therapy should be evaluated
+
+If eGFR falls below 30 mL/min/1.73 m² while taking metformin, discontinue drug
+
+Discontinuation for iodinated contrast imaging procedures
+
+FDA-approved prescribing information
+Discontinue metformin at time of, or prior to, iodinated contrast administration in
+patients with eGFR 30-60 mL/min/1.73 m2; in patients with a history of liver
+
+https://reference.medscape.com/drug/glucophage-metformin-342717 2/35
+
+
+
+6/22/26, 2:24 PM Glucophage, Glucophage XR (metformin) dosing, indications, interactions, adverse effects, and more
+
+disease, alcoholism, or heart failure; or in patients who will be administered intra-
+arterial iodinated contrast
+
+Re-evaluate eGFR 48 hr after imaging procedure; restart metformin if renal function
+is stable
+
+American College of Radiology (ACR) Manual on Contrast Media (2026)
+No dose adjustment or discontinuation required in patients with eGFR ≥30
+mL/min/1.73 m2 and without evidence of acute kidney injury (AKI)
+
+Discontinue metformin at time of, or prior to, iodinated contrast administration in
+patients with AKI or eGFR <30 mL/min/1.73 m2; or in patients receiving intra-
+arterial iodinated contrast
+
+Re-evaluate eGFR 48 hours after contrast administration; restart metformin if
+renal function is stable
+
+Dosing Consideration
+
+Switching from metformin immediate-release to metformin extended-release
+
+Patients receiving metformin immediate-release may be switched to metformin
+extended-release at the same total daily dose, up to 2,000 mg/day
+
+Polycystic Ovary Syndrome (Orphan)
+
+Orphan designation for treatment of pediatric polycystic ovary syndrome
+
+Sponsor
+
+EffRx Pharmaceuticals SA; Wolleraustrass 41 B; 8807 Freienbach (SZ);
+SWITZERLAND
+
+PEDIATRIC
+Dosage Forms & Strengths
+
+tablet, immediate-release
+
+500mg (generic)
+
+850mg (generic)
+
+1000mg (generic)
+
+oral solution
+
+100mg/mL (Riomet)
+
+oral suspension, extended-release
+
+47.31g/473mL per bottle (Riomet ER)
+
+Reconstituted suspension is 500mg/5mL
+
+https://reference.medscape.com/drug/glucophage-metformin-342717 3/35
+
+
+
+6/22/26, 2:24 PM Glucophage, Glucophage XR (metformin) dosing, indications, interactions, adverse effects, and more
+
+Type 2 Diabetes Mellitus
+
+Indicated as an adjunct to diet and exercise to improve glycemic control in adults and
+pediatric patients (≥10 years) with type 2 diabetes mellitus.
+
+10 to <17 years
+
+Immediate-release
+Initial: 500 mg PO q12hr
+
+Maintenance: Titrate qWeek by 500 mg; no more than 2000 mg/day in divided
+doses
+
+Extended-release
+500 mg PO qDay with dinner; increase the dose in increments of 500 mg (5
+mL) weekly, up to a maximum dose of 2,000 mg (20 mL) once daily, with the
+evening meal
+
+Dosage Modifications
+
+Renal impairment
+
+Obtain eGFR before initiating metformin
+
+eGFR <30 mL/min/1.73 m²: Contraindicated
+
+eGFR 30-45 mL/min/1.73 m²: Initiating not recommended
+
+Obtain GFR at least annually in all patients taking metformin; assess eGFR more
+frequently in patients at increased risk for renal impairment (eg, elderly)
+
+If eGFR falls to <45 mL/min/1.73 m² during treatment: Assess the benefits and risks
+of continuing treatment
+
+If eGFR falls to <30 mL/min/1.73 m² during treatment: Discontinue
+
+GERIATRIC
+Elderly patients are more likely to have decreased renal function; contraindicated in
+patients with renal impairment, carefully monitor renal function in the elderly and use
+with caution as age increases
+
+Not for use in patients >80 years unless normal renal function establishedInitial and
+maintenance dosing of metformin should be conservative in patients with advanced age
+due to the potential for decreased renal function in this population
+
+Controlled clinical studies of metformin did not include sufficient numbers of elderly
+patients to determine whether they respond differently from younger patients
+
+https://reference.medscape.com/drug/glucophage-metformin-342717 4/35
+
+
+
+6/22/26, 2:24 PM Glucophage, Glucophage XR (metformin) dosing, indications, interactions, adverse effects, and more
+
+Interactions
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and metformin
+No Interactions Found
+Interactions Found
+Contraindicated
+
+Serious
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+Contraindicated (0)
+
+Serious (6)
+
+cimetidine
+cimetidine increases levels of metformin by Other (see comment). Avoid or Use
+Alternate Drug. Comment: Cimetidine inhibits organic cation transporter-2 (OCT2),
+increasing exposure to metformin. Consider alternative acid suppressor treatment
+options.
+
+fexinidazole
+fexinidazole increases levels of metformin by Other (see comment). Avoid or Use
+Alternate Drug. Comment: Fexinidazole inhibits organic cation transporter-2 (OCT2)
+and multidrug and toxin extrusion (MATE) transporters, increasing exposure to
+metformin. Consider alternatives; if concomitant use unavoidable, monitor for
+metformin-related toxicities, including lactic acidosis, and consider metformin dose
+reduction.
+
+ranolazine
+ranolazine increases levels of metformin by Other (see comment). Avoid or Use
+Alternate Drug. Comment: Ranolazine inhibits organic cation transporter-2 (OCT2),
+increasing exposure to metformin. Limit metformin dose to 1700 mg/day when used
+together with ranolazine 1000 mg twice daily; monitor for metformin-related
+toxicities.
+
+risdiplam
+risdiplam increases levels of metformin by decreasing elimination. Avoid or Use
+Alternate Drug. Risdiplam inhibits multidrug and toxin extrusion (MATE)
+transporters 1 and 2-K, possibly increasing exposure to metformin. Consider
+alternatives; if coadministration cannot be avoided, monitor for metformin-related
+toxicities, including lactic acidosis, and consider metformin dose reduction.
+
+tafenoquine
+
+https://reference.medscape.com/drug/glucophage-metformin-342717 5/35
+
+
+
+6/22/26, 2:24 PM Glucophage, Glucophage XR (metformin) dosing, indications, interactions, adverse effects, and more
+
+tafenoquine increases levels of metformin by Other (see comment). Avoid or Use
+Alternate Drug. Comment: Tafenoquine inhibits organic cation transporter-2 (OCT2)
+and multidrug and toxin extrusion (MATE) transporters in vitro, possibly increasing
+metformin exposure. Consider alternatives; if coadministration cannot be avoided,
+monitor for metformin-related toxicities and consider dose reduction.
+
+vimseltinib
+vimseltinib increases levels of metformin by Other (see comment). Avoid or Use
+Alternate Drug. Comment: Vimseltinib inhibits organic cation transporter-2 (OCT2),
+possibly increasing exposure to metformin. Consider alternatives; if concomitant use
+unavoidable, monitor for metformin-related toxicities, including lactic acidosis.
+
+Monitor Closely (207)
+
+abemaciclib
+abemaciclib increases levels of metformin by Other (see comment). Use
+Caution/Monitor. Comment: Abemaciclib inhibits organic cation transporter-2
+(OCT2) and multidrug and toxin extrusion (MATE) transporters, increasing exposure
+to metformin. Monitor for metformin-related toxicities, including lactic acidosis.
+
+acetazolamide
+acetazolamide increases toxicity of metformin by Other (see comment). Use
+Caution/Monitor. Comment: Concomitant use may increase risk of lactic acidosis;
+consider more frequent monitoring.
+
+albiglutide
+albiglutide, metformin. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Antidiabetic agents are often used in combination;
+dosage adjustments may be required when initiating or discontinuing antidiabetic
+agents.
+
+alpelisib
+alpelisib decreases effects of metformin by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. Concomitant use requires increased glucose monitoring.
+
+arimoclomol
+arimoclomol increases levels of metformin by Other (see comment). Modify
+Therapy/Monitor Closely. Comment: Arimoclomol inhibits organic cation
+transporter-2 (OCT2), which may increase exposure to metformin. Use caution and
+monitor for metformin-related toxicities, including lactic acidosis.
+
+aripiprazole
+aripiprazole decreases effects of metformin by Other (see comment). Use
+Caution/Monitor. Comment: Atypical antipsychotics have been associated with
+hyperglycemia that may alter blood glucose control; monitor glucose levels closely.
+
+asenapine
+asenapine decreases effects of metformin by Other (see comment). Use
+Caution/Monitor. Comment: Atypical antipsychotics have been associated with
+hyperglycemia that may alter blood glucose control; monitor glucose levels closely.
+
+asenapine transdermal
+
+https://reference.medscape.com/drug/glucophage-metformin-342717 6/35
+
+
+
+6/22/26, 2:24 PM Glucophage, Glucophage XR (metformin) dosing, indications, interactions, adverse effects, and more
+
+asenapine transdermal decreases effects of metformin by Other (see comment).
+Use Caution/Monitor. Comment: Atypical antipsychotics have been associated with
+hyperglycemia that may alter blood glucose control; monitor glucose levels closely.
+
+atazanavir
+atazanavir decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Protease inhibitors may increase insulin resistance, reducing the
+hypoglycemic effects of metformin. Concomitant use may require increased glucose
+monitoring.
+
+betamethasone
+betamethasone decreases effects of metformin by pharmacodynamic antagonism.
+Use Caution/Monitor. Corticosteroids may reduce the hypoglycemic effects of
+metformin, requiring increased glucose monitoring.
+
+bictegravir
+bictegravir increases levels of metformin by Other (see comment). Use
+Caution/Monitor. Comment: Bictegravir inhibits organic cation transporter-2 (OCT2)
+and multidrug and toxin extrusion (MATE) transporters in vitro, possibly increasing
+exposure to metformin. Monitor for metformin-related toxicities, including lactic
+acidosis.
+
+bitter melon
+bitter melon increases effects of metformin by pharmacodynamic synergism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+bortezomib
+bortezomib decreases effects of metformin by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely. Concomitant use requires increased glucose
+monitoring and possible dose adjustment as clinically indicated.
+
+brentuximab vedotin
+brentuximab vedotin decreases effects of metformin by pharmacodynamic
+antagonism. Modify Therapy/Monitor Closely. Concomitant use requires increased
+glucose monitoring and possible metformin dose adjustment as clinically indicated.
+
+brexpiprazole
+brexpiprazole decreases effects of metformin by Other (see comment). Use
+Caution/Monitor. Comment: Atypical antipsychotics have been associated with
+hyperglycemia that may alter blood glucose control; monitor glucose levels closely.
+
+brigatinib
+brigatinib decreases effects of metformin by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. Concomitant use requires increased glucose monitoring.
+
+bumetanide
+bumetanide decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Concomitant use may require increased glucose monitoring.
+
+bumetanide intranasal
+bumetanide intranasal decreases effects of metformin by pharmacodynamic
+antagonism. Use Caution/Monitor. Concomitant use may require increased glucose
+
+https://reference.medscape.com/drug/glucophage-metformin-342717 7/35
+
+
+
+6/22/26, 2:24 PM Glucophage, Glucophage XR (metformin) dosing, indications, interactions, adverse effects, and more
+
+monitoring.
+
+capivasertib
+capivasertib decreases effects of metformin by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely. Concomitant use requires increased glucose
+monitoring.
+
+capmatinib
+capmatinib increases levels of metformin by Other (see comment). Modify
+Therapy/Monitor Closely. Comment: Capmatinib inhibits multidrug and toxin
+extrusion (MATE) transporters 1 and 2-K, possibly increasing exposure to
+metformin. Consider alternatives; if coadministration cannot be avoided, monitor for
+metformin-related toxicities, including lactic acidosis, and consider metformin dose
+reduction.
+
+cariprazine
+cariprazine decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Atypical antipsychotics have been associated with hyperglycemia
+that may alter blood glucose control; monitor glucose levels closely.
+
+cephalexin
+cephalexin increases levels of metformin by decreasing renal clearance. Use
+Caution/Monitor. Concomitant use may increase metformin exposure; consider
+increased monitoring for metformin-related toxicities, including lactic acidosis.
+
+ceritinib
+ceritinib decreases effects of metformin by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. Concomitant use requires increased glucose monitoring.
+
+chlorothiazide
+chlorothiazide decreases effects of metformin by pharmacodynamic antagonism.
+Use Caution/Monitor. Concomitant use may require increased glucose monitoring.
+
+chlorthalidone
+chlorthalidone decreases effects of metformin by pharmacodynamic antagonism.
+Use Caution/Monitor. Concomitant use may require increased glucose monitoring.
+
+cholestyramine
+cholestyramine decreases levels of metformin by drug binding in GI tract. Modify
+Therapy/Monitor Closely. Administer metformin at least 1 hour before or 4-6 hours
+after cholestyramine.
+
+ciprofloxacin
+ciprofloxacin, metformin. Other (see comment). Use Caution/Monitor. Comment:
+Quinolone antibiotics may cause either hypoglycemia or hyperglycemia;
+concomitant use may require increased glucose monitoring.
+
+clozapine
+clozapine decreases effects of metformin by Other (see comment). Use
+Caution/Monitor. Comment: Atypical antipsychotics have been associated with
+hyperglycemia that may alter blood glucose control; monitor glucose levels closely.
+
+cobicistat
+
+https://reference.medscape.com/drug/glucophage-metformin-342717 8/35
+
+
+
+6/22/26, 2:24 PM Glucophage, Glucophage XR (metformin) dosing, indications, interactions, adverse effects, and more
+
+cobicistat increases levels of metformin by Other (see comment). Use
+Caution/Monitor. Comment: Cobicistat inhibits multidrug and toxin extrusion (MATE)
+transporter 1, possibly increasing exposure to metformin. Monitor for metformin-
+related toxicities, including lactic acidosis.
+
+colesevelam
+colesevelam increases levels of metformin by unknown mechanism. Use
+Caution/Monitor. Concomitant use of colosevelam and extended-release metformin
+may increase metformin exposure; monitor blood glucose and for metformin-
+related toxicities, including lactic acidosis.
+
+conjugated estrogens
+conjugated estrogens decreases effects of metformin by pharmacodynamic
+antagonism. Use Caution/Monitor. Estrogen therapy may impair glucose tolerance;
+concomitant use may require increased glucose monitoring.
+
+corticotropin
+corticotropin decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Corticosteroids may reduce the hypoglycemic effects of metformin,
+requiring increased glucose monitoring.
+
+cortisone
+cortisone decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Corticosteroids may reduce the hypoglycemic effects of metformin,
+requiring increased glucose monitoring.
+
+cyanocobalamin
+metformin decreases levels of cyanocobalamin by unspecified interaction
+mechanism. Use Caution/Monitor. Monitor hematologic parameters annually;
+monitor B12 levels every 2-3 years. Metformin-related B12 depletion appears to
+resolve rapidy with B12 supplementation.
+
+dabrafenib
+dabrafenib decreases effects of metformin by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely. Concomitant use may require increased glucose
+monitoring and metformin dose adjustment.
+
+danazol
+danazol increases effects of metformin by pharmacodynamic synergism. Use
+Caution/Monitor. Androgens may alter insulin sensitivity and glycemic control.
+Concomitant use may produce additive effects; monitor blood glucose closely.
+
+darunavir
+darunavir decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Protease inhibitors may increase insulin resistance, reducing the
+hypoglycemic effects of metformin. Concomitant use may require increased glucose
+monitoring.
+
+dasiglucagon
+dasiglucagon decreases effects of metformin by pharmacodynamic antagonism.
+Use Caution/Monitor. Endogenous glucagon is a regulatory hormone that increases
+
+https://reference.medscape.com/drug/glucophage-metformin-342717 9/35
+
+
+
+6/22/26, 2:24 PM Glucophage, Glucophage XR (metformin) dosing, indications, interactions, adverse effects, and more
+
+blood glucose levels; dasiglucagon is often used in the treatment of severe
+hypoglycemia.
+
+deflazacort
+deflazacort decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Corticosteroids may reduce the hypoglycemic effects of metformin,
+requiring increased glucose monitoring.
+
+delafloxacin
+delafloxacin, metformin. Other (see comment). Use Caution/Monitor. Comment:
+Quinolone antibiotics may cause either hypoglycemia or hyperglycemia;
+concomitant use may require increased glucose monitoring.
+
+desogestrel
+desogestrel decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Oral contraceptives may impair glucose tolerance; concomitant use
+may require increased glucose monitoring.
+
+dexamethasone
+dexamethasone decreases effects of metformin by pharmacodynamic antagonism.
+Use Caution/Monitor. Corticosteroids may reduce the hypoglycemic effects of
+metformin, requiring increased glucose monitoring.
+
+diatrizoate
+diatrizoate increases toxicity of metformin by decreasing renal clearance. Modify
+Therapy/Monitor Closely. Iodinated contrast may worsen renal function in those w/
+existing dysfunction, increasing risk of metformin-induced lactic acidosis. Per 2026
+ACR Guidelines, no dose adjustment needed in patients w/o evidence of acute
+kidney injury (AKI) and eGFR >=30 mL/min/1.73 m2. In patients with AKI or eGFR
+<30 mL/min/1.73 m2, or who are undergoing arterial catheter studies, stop
+metformin at time of or prior to contrast administration. Hold metformin until
+confirmation of normal renal function at least 48 hours after contrast
+administration.
+
+diatrizoate meglumine/diatrizoate sodium
+diatrizoate meglumine/diatrizoate sodium increases toxicity of metformin by
+decreasing renal clearance. Modify Therapy/Monitor Closely. Iodinated contrast may
+worsen renal function in those w/ existing dysfunction, increasing risk of metformin-
+induced lactic acidosis. Per 2026 ACR Guidelines, no dose adjustment needed in
+patients w/o evidence of acute kidney injury (AKI) and eGFR >=30 mL/min/1.73 m2.
+In patients with AKI or eGFR <30 mL/min/1.73 m2, or who are undergoing arterial
+catheter studies, stop metformin at time of or prior to contrast administration. Hold
+metformin until confirmation of normal renal function at least 48 hours after
+contrast administration.
+
+diazoxide
+diazoxide decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Concomitant use may require increased glucose monitoring.
+
+diazoxide choline
+diazoxide choline decreases effects of metformin by pharmacodynamic antagonism.
+Use Caution/Monitor. Concomitant use may require increased glucose monitoring.
+
+https://reference.medscape.com/drug/glucophage-metformin-342717 10/35
+
+
+
+6/22/26, 2:24 PM Glucophage, Glucophage XR (metformin) dosing, indications, interactions, adverse effects, and more
+
+dichlorphenamide
+dichlorphenamide increases toxicity of metformin by Other (see comment). Use
+Caution/Monitor. Comment: Concomitant use may increase risk of lactic acidosis;
+consider more frequent monitoring.
+
+dienogest/estradiol valerate
+dienogest/estradiol valerate decreases effects of metformin by pharmacodynamic
+antagonism. Use Caution/Monitor. Oral contraceptives may impair glucose
+tolerance; concomitant use may require increased glucose monitoring.
+
+dolutegravir
+dolutegravir increases levels of metformin by Other (see comment). Modify
+Therapy/Monitor Closely. Comment: Dolutegravir inhibits organic cation
+transporter-2 (OCT2), increasing exposure to metformin. If used concomitantly, limit
+total daily dose of metformin to 1,000 mg and monitor blood glucose. If stopping
+dolutegravir, monitor blood glucose and adjust metformin dose as clinically
+indicated.
+
+drospirenone
+drospirenone decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Oral contraceptives may impair glucose tolerance; concomitant use
+may require increased glucose monitoring.
+
+dulaglutide
+dulaglutide, metformin. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Antidiabetic agents are often used in combination;
+dosage adjustments may be required when initiating or discontinuing antidiabetic
+agents.
+
+elvitegravir/cobicistat/emtricitabine/tenofovir DF
+elvitegravir/cobicistat/emtricitabine/tenofovir DF, metformin. Either increases toxicity
+of the other by Other (see comment). Use Caution/Monitor. Comment: Concomitant
+use may increase risk of lactic acidosis; monitor for signs and symptoms.
+
+enfortumab vedotin
+enfortumab vedotin decreases effects of metformin by pharmacodynamic
+antagonism. Modify Therapy/Monitor Closely. Concomitant use requires increased
+glucose monitoring.
+
+ensartinib
+ensartinib decreases effects of metformin by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. Concomitant use requires increased glucose monitoring.
+
+entecavir
+entecavir, metformin. Either increases levels of the other by Other (see comment).
+Modify Therapy/Monitor Closely. Comment: Coadministration may increase the risk
+of lactic acidosis; monitor closely for signs and symptoms .
+
+estradiol
+estradiol decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Estrogen therapy may impair glucose tolerance; concomitant use
+may require increased glucose monitoring.
+
+https://reference.medscape.com/drug/glucophage-metformin-342717 11/35
+
+
+
+6/22/26, 2:24 PM Glucophage, Glucophage XR (metformin) dosing, indications, interactions, adverse effects, and more
+
+estrogens conjugated synthetic
+estrogens conjugated synthetic decreases effects of metformin by
+pharmacodynamic antagonism. Use Caution/Monitor. Oral contraceptives may
+impair glucose tolerance; concomitant use may require increased glucose
+monitoring.
+
+estrogens esterified
+estrogens esterified decreases effects of metformin by Other (see comment). Use
+Caution/Monitor. Comment: Estrogen therapy may impair glucose tolerance;
+concomitant use may require increased glucose monitoring.
+
+estropipate
+estropipate decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Oral contraceptives may impair glucose tolerance; concomitant use
+may require increased glucose monitoring.
+
+ethacrynic acid
+ethacrynic acid decreases effects of metformin by pharmacodynamic antagonism.
+Use Caution/Monitor. Concomitant use may require increased glucose monitoring.
+
+ethanol
+ethanol increases toxicity of metformin by Other (see comment). Modify
+Therapy/Monitor Closely. Comment: Alcohol intake may affect glycemic control;
+large quantities of alcohol may increase the risk of lactic acidosis. Avoid excessive
+alcohol consumption; monitor glucose levels and for metformin-related toxicity.
+
+ethinylestradiol
+ethinylestradiol decreases effects of metformin by pharmacodynamic antagonism.
+Use Caution/Monitor. Oral contraceptives may impair glucose tolerance;
+concomitant use may require increased glucose monitoring.
+
+ethiodized oil
+ethiodized oil increases toxicity of metformin by decreasing renal clearance. Modify
+Therapy/Monitor Closely. Iodinated contrast may worsen renal function in those w/
+existing dysfunction, increasing risk of metformin-induced lactic acidosis. Per 2026
+ACR Guidelines, no dose adjustment needed in patients w/o evidence of acute
+kidney injury (AKI) and eGFR >=30 mL/min/1.73 m2. In patients with AKI or eGFR
+<30 mL/min/1.73 m2, or who are undergoing arterial catheter studies, stop
+metformin at time of or prior to contrast administration. Hold metformin until
+confirmation of normal renal function at least 48 hours after contrast
+administration.
+
+etonogestrel
+etonogestrel decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Oral contraceptives may impair glucose tolerance; concomitant use
+may require increased glucose monitoring.
+
+etynodiol
+etynodiol decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Oral contraceptives may impair glucose tolerance; concomitant use
+may require increased glucose monitoring.
+
+everolimus
+
+https://reference.medscape.com/drug/glucophage-metformin-342717 12/35
+
+
+
+6/22/26, 2:24 PM Glucophage, Glucophage XR (metformin) dosing, indications, interactions, adverse effects, and more
+
+everolimus decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Concomitant use may require increased glucose monitoring.
+
+exenatide injectable solution
+exenatide injectable solution, metformin. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+exenatide injectable suspension
+exenatide injectable suspension, metformin. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+exenatide subdermal implant
+exenatide subdermal implant, metformin. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+famotidine
+famotidine increases levels of metformin by Other (see comment). Use
+Caution/Monitor. Comment: Famotidine inhibits multidrug and toxin extrusion
+(MATE) transporter 1, possibly increasing exposure to metformin. Monitor for
+metformin-related toxicities, including lactic acidosis.
+
+fedratinib
+fedratinib increases levels of metformin by Other (see comment). Modify
+Therapy/Monitor Closely. Comment: Fedratinib inhibits organic cation transporter-2
+(OCT2) and multidrug and toxin extrusion (MATE) transporters, increasing exposure
+to metformin. Monitor for metformin-related toxicities, including lactic acidosis, and
+consider metformin dose reduction.
+
+fludrocortisone
+fludrocortisone decreases effects of metformin by pharmacodynamic antagonism.
+Use Caution/Monitor. Corticosteroids may reduce the hypoglycemic effects of
+metformin, requiring increased glucose monitoring.
+
+fosamprenavir
+fosamprenavir decreases effects of metformin by pharmacodynamic antagonism.
+Use Caution/Monitor. Protease inhibitors may increase insulin resistance, reducing
+the hypoglycemic effects of metformin. Concomitant use may require increased
+glucose monitoring.
+
+fosphenytoin
+fosphenytoin decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Concomitant use may require increased glucose monitoring.
+
+furosemide
+furosemide decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Concomitant use may require increased glucose monitoring.
+
+https://reference.medscape.com/drug/glucophage-metformin-342717 13/35
+
+
+
+6/22/26, 2:24 PM Glucophage, Glucophage XR (metformin) dosing, indications, interactions, adverse effects, and more
+
+gemifloxacin
+gemifloxacin, metformin. Other (see comment). Use Caution/Monitor. Comment:
+Quinolone antibiotics may cause either hypoglycemia or hyperglycemia;
+concomitant use may require increased glucose monitoring.
+
+glimepiride
+glimepiride, metformin. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Antidiabetic agents are often used in
+combination; dosage adjustments may be required when initiating or discontinuing
+antidiabetic agents.
+
+glipizide
+glipizide, metformin. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Antidiabetic agents are often used in
+combination; dosage adjustments may be required when initiating or discontinuing
+antidiabetic agents.
+
+glucagon intranasal
+glucagon intranasal decreases effects of metformin by pharmacodynamic
+antagonism. Use Caution/Monitor. Endogenous glucagon is a regulatory hormone
+that increases blood glucose levels; exogenous glucagon is often used in the
+treatment of severe hypoglycemia.
+
+glyburide
+glyburide, metformin. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Antidiabetic agents are often used in
+combination; dosage adjustments may be required when initiating or discontinuing
+antidiabetic agents.
+
+glycopyrrolate
+glycopyrrolate increases toxicity of metformin by unspecified interaction
+mechanism. Use Caution/Monitor. Monitor for signs of metformin-related toxicity,
+including lactic acidosis.
+
+goserelin
+goserelin decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Concomitant use may require increased glucose monitoring.
+
+hydrochlorothiazide
+hydrochlorothiazide decreases effects of metformin by pharmacodynamic
+antagonism. Use Caution/Monitor. Concomitant use may require increased glucose
+monitoring.
+
+hydrocortisone
+hydrocortisone decreases effects of metformin by pharmacodynamic antagonism.
+Use Caution/Monitor. Corticosteroids may reduce the hypoglycemic effects of
+metformin, requiring increased glucose monitoring.
+
+iloperidone
+iloperidone decreases effects of metformin by Other (see comment). Use
+Caution/Monitor. Comment: Atypical antipsychotics have been associated with
+hyperglycemia that may alter blood glucose control; monitor glucose levels closely.
+
+https://reference.medscape.com/drug/glucophage-metformin-342717 14/35
+
+
+
+6/22/26, 2:24 PM Glucophage, Glucophage XR (metformin) dosing, indications, interactions, adverse effects, and more
+
+inavolisib
+inavolisib decreases effects of metformin by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. Concomitant use requires increased glucose monitoring.
+
+indapamide
+indapamide decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Concomitant use may require increased glucose monitoring.
+
+insulin aspart
+metformin, insulin aspart. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Antidiabetic agents are often used in combination;
+dosage adjustments may be required when initiating or discontinuing antidiabetic
+agents.
+
+insulin aspart protamine/insulin aspart
+metformin, insulin aspart protamine/insulin aspart. Either increases effects of the
+other by pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents
+are often used in combination; dosage adjustments may be required when initiating
+or discontinuing antidiabetic agents.
+
+insulin degludec
+metformin, insulin degludec. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+insulin degludec/insulin aspart
+metformin, insulin degludec/insulin aspart. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+insulin detemir
+metformin, insulin detemir. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+insulin glargine
+metformin, insulin glargine. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+insulin glulisine
+metformin, insulin glulisine. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+insulin icodec
+metformin, insulin icodec. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Antidiabetic agents are often used in combination;
+
+https://reference.medscape.com/drug/glucophage-metformin-342717 15/35
+
+
+
+6/22/26, 2:24 PM Glucophage, Glucophage XR (metformin) dosing, indications, interactions, adverse effects, and more
+
+dosage adjustments may be required when initiating or discontinuing antidiabetic
+agents.
+
+insulin inhaled
+metformin, insulin inhaled. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+insulin isophane human/insulin regular human
+metformin, insulin isophane human/insulin regular human. Either increases effects
+of the other by pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic
+agents are often used in combination; dosage adjustments may be required when
+initiating or discontinuing antidiabetic agents.
+
+insulin lispro
+metformin, insulin lispro. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Antidiabetic agents are often used in combination;
+dosage adjustments may be required when initiating or discontinuing antidiabetic
+agents.
+
+insulin lispro protamine/insulin lispro
+metformin, insulin lispro protamine/insulin lispro. Either increases effects of the
+other by pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents
+are often used in combination; dosage adjustments may be required when initiating
+or discontinuing antidiabetic agents.
+
+insulin NPH
+metformin, insulin NPH. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Antidiabetic agents are often used in combination;
+dosage adjustments may be required when initiating or discontinuing antidiabetic
+agents.
+
+insulin regular human
+metformin, insulin regular human. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+iodixanol
+iodixanol increases toxicity of metformin by decreasing renal clearance. Modify
+Therapy/Monitor Closely. Iodinated contrast may worsen renal function in those w/
+existing dysfunction, increasing risk of metformin-induced lactic acidosis. Per 2026
+ACR Guidelines, no dose adjustment needed in patients w/o evidence of acute
+kidney injury (AKI) and eGFR >=30 mL/min/1.73 m2. In patients with AKI or eGFR
+<30 mL/min/1.73 m2, or who are undergoing arterial catheter studies, stop
+metformin at time of or prior to contrast administration. Hold metformin until
+confirmation of normal renal function at least 48 hours after contrast
+administration.
+
+ioflupane I 123
+ioflupane I 123 increases toxicity of metformin by decreasing renal clearance.
+Modify Therapy/Monitor Closely. Iodinated contrast may worsen renal function in
+
+https://reference.medscape.com/drug/glucophage-metformin-342717 16/35
+
+
+
+6/22/26, 2:24 PM Glucophage, Glucophage XR (metformin) dosing, indications, interactions, adverse effects, and more
+
+those w/ existing dysfunction, increasing risk of metformin-induced lactic acidosis.
+Per 2026 ACR Guidelines, no dose adjustment needed in patients w/o evidence of
+acute kidney injury (AKI) and eGFR >=30 mL/min/1.73 m2. In patients with AKI or
+eGFR <30 mL/min/1.73 m2, or who are undergoing arterial catheter studies, stop
+metformin at time of or prior to contrast administration. Hold metformin until
+confirmation of normal renal function at least 48 hours after contrast
+administration.
+
+iohexol
+iohexol increases toxicity of metformin by decreasing renal clearance. Modify
+Therapy/Monitor Closely. Iodinated contrast may worsen renal function in those w/
+existing dysfunction, increasing risk of metformin-induced lactic acidosis. Per 2026
+ACR Guidelines, no dose adjustment needed in patients w/o evidence of acute
+kidney injury (AKI) and eGFR >=30 mL/min/1.73 m2. In patients with AKI or eGFR
+<30 mL/min/1.73 m2, or who are undergoing arterial catheter studies, stop
+metformin at time of or prior to contrast administration. Hold metformin until
+confirmation of normal renal function at least 48 hours after contrast
+administration.
+
+iomeprol
+iomeprol increases toxicity of metformin by decreasing renal clearance. Modify
+Therapy/Monitor Closely. Iodinated contrast may worsen renal function in those w/
+existing dysfunction, increasing risk of metformin-induced lactic acidosis. Per 2026
+ACR Guidelines, no dose adjustment needed in patients w/o evidence of acute
+kidney injury (AKI) and eGFR >=30 mL/min/1.73 m2. In patients with AKI or eGFR
+<30 mL/min/1.73 m2, or who are undergoing arterial catheter studies, stop
+metformin at time of or prior to contrast administration. Hold metformin until
+confirmation of normal renal function at least 48 hours after contrast
+administration.
+
+iopamidol
+iopamidol increases toxicity of metformin by decreasing renal clearance. Modify
+Therapy/Monitor Closely. Iodinated contrast may worsen renal function in those w/
+existing dysfunction, increasing risk of metformin-induced lactic acidosis. Per 2026
+ACR Guidelines, no dose adjustment needed in patients w/o evidence of acute
+kidney injury (AKI) and eGFR >=30 mL/min/1.73 m2. In patients with AKI or eGFR
+<30 mL/min/1.73 m2, or who are undergoing arterial catheter studies, stop
+metformin at time of or prior to contrast administration. Hold metformin until
+confirmation of normal renal function at least 48 hours after contrast
+administration.
+
+iopromide
+iopromide increases toxicity of metformin by decreasing renal clearance. Modify
+Therapy/Monitor Closely. Iodinated contrast may worsen renal function in those w/
+existing dysfunction, increasing risk of metformin-induced lactic acidosis. Per 2026
+ACR Guidelines, no dose adjustment needed in patients w/o evidence of acute
+kidney injury (AKI) and eGFR >=30 mL/min/1.73 m2. In patients with AKI or eGFR
+<30 mL/min/1.73 m2, or who are undergoing arterial catheter studies, stop
+metformin at time of or prior to contrast administration. Hold metformin until
+confirmation of normal renal function at least 48 hours after contrast
+administration.
+
+ioversol
+
+https://reference.medscape.com/drug/glucophage-metformin-342717 17/35
+
+
+
+6/22/26, 2:24 PM Glucophage, Glucophage XR (metformin) dosing, indications, interactions, adverse effects, and more
+
+ioversol increases toxicity of metformin by decreasing renal clearance. Modify
+Therapy/Monitor Closely. Iodinated contrast may worsen renal function in those w/
+existing dysfunction, increasing risk of metformin-induced lactic acidosis. Per 2026
+ACR Guidelines, no dose adjustment needed in patients w/o evidence of acute
+kidney injury (AKI) and eGFR >=30 mL/min/1.73 m2. In patients with AKI or eGFR
+<30 mL/min/1.73 m2, or who are undergoing arterial catheter studies, stop
+metformin at time of or prior to contrast administration. Hold metformin until
+confirmation of normal renal function at least 48 hours after contrast
+administration.
+
+ioxilan
+ioxilan increases toxicity of metformin by decreasing renal clearance. Modify
+Therapy/Monitor Closely. Iodinated contrast may worsen renal function in those w/
+existing dysfunction, increasing risk of metformin-induced lactic acidosis. Per 2026
+ACR Guidelines, no dose adjustment needed in patients w/o evidence of acute
+kidney injury (AKI) and eGFR >=30 mL/min/1.73 m2. In patients with AKI or eGFR
+<30 mL/min/1.73 m2, or who are undergoing arterial catheter studies, stop
+metformin at time of or prior to contrast administration. Hold metformin until
+confirmation of normal renal function at least 48 hours after contrast
+administration.
+
+isavuconazonium sulfate
+isavuconazonium sulfate increases levels of metformin by Other (see comment).
+Use Caution/Monitor. Comment: Isavuconazonium inhibits organic cation
+transporter-2 (OCT2), increasing exposure to metformin. Monitor for metformin-
+related toxicities, including lactic acidosis.
+
+isoniazid
+isoniazid decreases effects of metformin by unspecified interaction mechanism. Use
+Caution/Monitor. Concomitant use may require increased glucose monitoring.
+
+lamotrigine
+lamotrigine increases levels of metformin by Other (see comment). Use
+Caution/Monitor. Comment: Lamotrigine inhibits organic cation transporter-2
+(OCT2), possibly increasing exposure to metformin. Monitor for metformin-related
+toxicities, including lactic acidosis.
+
+lanreotide
+lanreotide decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Concomitant use may require increased glucose monitoring.
+
+leuprolide
+leuprolide decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Concomitant use may require increased glucose monitoring.
+
+levofloxacin
+levofloxacin, metformin. Other (see comment). Use Caution/Monitor. Comment:
+Quinolone antibiotics may cause either hypoglycemia or hyperglycemia;
+concomitant use may require increased glucose monitoring.
+
+levoketoconazole
+levoketoconazole increases levels of metformin by Other (see comment). Modify
+Therapy/Monitor Closely. Comment: Levoketoconazole inhibits organic cation
+
+https://reference.medscape.com/drug/glucophage-metformin-342717 18/35
+
+
+
+6/22/26, 2:24 PM Glucophage, Glucophage XR (metformin) dosing, indications, interactions, adverse effects, and more
+
+transporter-2 (OCT2) and multidrug and toxin extrusion (MATE) transporters,
+increasing exposure to metformin. Monitor for metformin-related toxicities,
+including lactic acidosis.
+
+levonorgestrel transdermal
+levonorgestrel transdermal decreases effects of metformin by pharmacodynamic
+antagonism. Use Caution/Monitor. Hormonal contraceptives may impair glucose
+tolerance; concomitant use may require increased glucose monitoring.
+
+levothyroxine
+levothyroxine decreases effects of metformin by pharmacodynamic antagonism.
+Use Caution/Monitor. Concomitant use may require increased glucose monitoring.
+
+liothyronine
+liothyronine decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Concomitant use may require increased glucose monitoring.
+
+liotrix
+liotrix decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Concomitant use may require increased glucose monitoring.
+
+liraglutide
+liraglutide, metformin. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Antidiabetic agents are often used in combination;
+dosage adjustments may be required when initiating or discontinuing antidiabetic
+agents.
+
+lonapegsomatropin
+lonapegsomatropin decreases effects of metformin by pharmacodynamic
+antagonism. Modify Therapy/Monitor Closely. Growth hormone (GH) analogs may
+decrease insulin sensitivity, particularly at higher doses. Antidiabetic agents may
+require dose adjustment after initiating growth hormone.
+
+lopinavir
+lopinavir decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Protease inhibitors may increase insulin resistance, reducing the
+hypoglycemic effects of metformin. Concomitant use may require increased glucose
+monitoring.
+
+lorlatinib
+lorlatinib decreases effects of metformin by pharmacodynamic antagonism. Modify
+Therapy/Monitor Closely. Concomitant use requires increased glucose monitoring.
+
+lumateperone
+lumateperone decreases effects of metformin by Other (see comment). Use
+Caution/Monitor. Comment: Atypical antipsychotics have been associated with
+hyperglycemia that may alter blood glucose control; monitor glucose levels closely.
+
+lurasidone
+lurasidone decreases effects of metformin by Other (see comment). Use
+Caution/Monitor. Comment: Atypical antipsychotics have been associated with
+hyperglycemia that may alter blood glucose control; monitor glucose levels closely.
+
+https://reference.medscape.com/drug/glucophage-metformin-342717 19/35
+
+
+
+6/22/26, 2:24 PM Glucophage, Glucophage XR (metformin) dosing, indications, interactions, adverse effects, and more
+
+lutetium Lu 177-dota-tate
+lutetium Lu 177-dota-tate decreases effects of metformin by pharmacodynamic
+antagonism. Modify Therapy/Monitor Closely. Concomitant use requires increased
+glucose monitoring.
+
+marijuana
+marijuana decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor.
+
+mavorixafor
+mavorixafor decreases levels of metformin by unknown mechanism. Use
+Caution/Monitor. Monitor glucose levels and consider metformin dose adjustment
+as needed.
+
+mecasermin
+mecasermin increases effects of metformin by pharmacodynamic synergism. Use
+Caution/Monitor. Concomitant use may require increased glucose monitoring.
+
+medroxyprogesterone
+medroxyprogesterone decreases effects of metformin by pharmacodynamic
+antagonism. Use Caution/Monitor. Hormonal contraceptives may impair glucose
+tolerance; concomitant use may require increased glucose monitoring.
+
+megestrol
+megestrol decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Megestrol may impair glucose tolerance; concomitant use may
+require increased glucose monitoring.
+
+mestranol
+mestranol decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Oral contraceptives may impair glucose tolerance; concomitant use
+may require increased glucose monitoring.
+
+methazolamide
+methazolamide increases toxicity of metformin by Other (see comment). Use
+Caution/Monitor. Comment: Concomitant use may increase risk of lactic acidosis;
+consider more frequent monitoring.
+
+methyclothiazide
+methyclothiazide decreases effects of metformin by pharmacodynamic antagonism.
+Use Caution/Monitor. Concomitant use may require increased glucose monitoring.
+
+methylprednisolone
+methylprednisolone decreases effects of metformin by pharmacodynamic
+antagonism. Use Caution/Monitor. Corticosteroids may reduce the hypoglycemic
+effects of metformin, requiring increased glucose monitoring.
+
+methyltestosterone
+methyltestosterone increases effects of metformin by pharmacodynamic synergism.
+Use Caution/Monitor. Androgens may alter insulin sensitivity and glycemic control.
+Concomitant use may produce additive effects; monitor blood glucose closely.
+
+metoclopramide
+
+https://reference.medscape.com/drug/glucophage-metformin-342717 20/35
+
+
+
+6/22/26, 2:24 PM Glucophage, Glucophage XR (metformin) dosing, indications, interactions, adverse effects, and more
+
+metoclopramide, metformin. Other (see comment). Use Caution/Monitor. Comment:
+Metoclopramide may increase GI motility and dietary glucose absorption. Monitor
+blood glucose and adjust antidiabetes regimen as needed.
+
+metoclopramide intranasal
+metoclopramide intranasal, metformin. Other (see comment). Use Caution/Monitor.
+Comment: Metoclopramide may increase GI motility and dietary glucose absorption.
+Monitor blood glucose and adjust antidiabetes regimen as needed.
+
+metolazone
+metolazone decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Concomitant use may require increased glucose monitoring.
+
+milsaperidone
+milsaperidone decreases effects of metformin by Other (see comment). Use
+Caution/Monitor. Comment: Atypical antipsychotics have been associated with
+hyperglycemia that may alter blood glucose control; monitor glucose levels closely.
+
+mometasone sinus implant
+mometasone sinus implant decreases effects of metformin by pharmacodynamic
+antagonism. Use Caution/Monitor. Corticosteroids may reduce the hypoglycemic
+effects of metformin, requiring increased glucose monitoring.
+
+moxifloxacin
+moxifloxacin, metformin. Other (see comment). Use Caution/Monitor. Comment:
+Quinolone antibiotics may cause either hypoglycemia or hyperglycemia;
+concomitant use may require increased glucose monitoring.
+
+nateglinide
+nateglinide, metformin. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Antidiabetic agents are often used in
+combination; dosage adjustments may be required when initiating or discontinuing
+antidiabetic agents.
+
+nelfinavir
+nelfinavir decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Protease inhibitors may increase insulin resistance, reducing the
+hypoglycemic effects of metformin. Concomitant use may require increased glucose
+monitoring.
+
+niacin
+niacin decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Concomitant use may require increased glucose monitoring.
+
+nilotinib
+nilotinib decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Concomitant use may require increased glucose monitoring.
+
+norelgestromin
+norelgestromin decreases effects of metformin by pharmacodynamic antagonism.
+Use Caution/Monitor. Oral contraceptives may impair glucose tolerance;
+concomitant use may require increased glucose monitoring.
+
+https://reference.medscape.com/drug/glucophage-metformin-342717 21/35
+
+
+
+6/22/26, 2:24 PM Glucophage, Glucophage XR (metformin) dosing, indications, interactions, adverse effects, and more
+
+norethindrone
+norethindrone decreases effects of metformin by pharmacodynamic antagonism.
+Use Caution/Monitor. Oral contraceptives may impair glucose tolerance;
+concomitant use may require increased glucose monitoring.
+
+norethindrone acetate
+norethindrone acetate decreases effects of metformin by Other (see comment). Use
+Caution/Monitor. Comment: Oral contraceptives may impair glucose tolerance;
+concomitant use may require increased glucose monitoring.
+
+norfloxacin
+norfloxacin, metformin. Other (see comment). Use Caution/Monitor. Comment:
+Quinolone antibiotics may cause either hypoglycemia or hyperglycemia;
+concomitant use may require increased glucose monitoring.
+
+norgestimate
+norgestimate decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Oral contraceptives may impair glucose tolerance; concomitant use
+may require increased glucose monitoring.
+
+norgestrel
+norgestrel decreases effects of metformin by Other (see comment). Use
+Caution/Monitor. Comment: Oral contraceptives may impair glucose tolerance;
+concomitant use may require increased glucose monitoring.
+
+octreotide
+octreotide decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Concomitant use may require increased glucose monitoring.
+
+ofloxacin
+ofloxacin, metformin. Other (see comment). Use Caution/Monitor. Comment:
+Quinolone antibiotics may cause either hypoglycemia or hyperglycemia;
+concomitant use may require increased glucose monitoring.
+
+olanzapine
+olanzapine decreases effects of metformin by Other (see comment). Use
+Caution/Monitor. Comment: Atypical antipsychotics have been associated with
+hyperglycemia that may alter blood glucose control; monitor glucose levels closely.
+
+ondansetron
+ondansetron increases levels of metformin by Other (see comment). Use
+Caution/Monitor. Comment: Ondansetron inhibits organic cation transporter-2
+(OCT2) and multidrug and toxin extrusion (MATE) transporters, increasing
+metformin exposure. Approach long-term concomitant use with caution; monitor for
+metformin-related toxicities and consider dose reduction.
+
+oxymetholone
+oxymetholone increases effects of metformin by pharmacodynamic synergism.
+Modify Therapy/Monitor Closely. Concomitant use may require increased glucose
+monitoring and metformin dose adjustment.
+
+paliperidone
+
+https://reference.medscape.com/drug/glucophage-metformin-342717 22/35
+
+
+
+6/22/26, 2:24 PM Glucophage, Glucophage XR (metformin) dosing, indications, interactions, adverse effects, and more
+
+paliperidone decreases effects of metformin by Other (see comment). Use
+Caution/Monitor. Comment: Atypical antipsychotics have been associated with
+hyperglycemia that may alter blood glucose control; monitor glucose levels closely.
+
+pasireotide
+pasireotide decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Concomitant use may require increased glucose monitoring.
+
+patiromer
+patiromer will decrease the level or effect of metformin by drug binding in GI tract.
+Modify Therapy/Monitor Closely. Separate administration of metformin from
+patiromer by at least 3 hours
+
+pentamidine
+pentamidine, metformin. Other (see comment). Use Caution/Monitor. Comment:
+Pentamidine may cause either hypoglycemia or hyperglycemia; concomitant use
+may require increased glucose monitoring.
+
+phenytoin
+phenytoin decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Concomitant use may require increased glucose monitoring.
+
+pioglitazone
+pioglitazone, metformin. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Antidiabetic agents are often used in combination;
+dosage adjustments may be required when initiating or discontinuing antidiabetic
+agents.
+
+pramlintide
+pramlintide, metformin. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Antidiabetic agents are often used in
+combination; dosage adjustments may be required when initiating or discontinuing
+antidiabetic agents.
+
+prednisolone
+prednisolone decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Corticosteroids may reduce the hypoglycemic effects of metformin,
+requiring increased glucose monitoring.
+
+prednisone
+prednisone decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Corticosteroids may reduce the hypoglycemic effects of metformin,
+requiring increased glucose monitoring.
+
+progesterone micronized
+progesterone micronized decreases effects of metformin by pharmacodynamic
+antagonism. Use Caution/Monitor. Progesterone therapy may impair glucose
+tolerance; concomitant use may require increased glucose monitoring.
+
+progesterone, natural
+progesterone, natural decreases effects of metformin by pharmacodynamic
+antagonism. Use Caution/Monitor. Progesterone therapy may impair glucose
+
+https://reference.medscape.com/drug/glucophage-metformin-342717 23/35
+
+
+
+6/22/26, 2:24 PM Glucophage, Glucophage XR (metformin) dosing, indications, interactions, adverse effects, and more
+
+tolerance; concomitant use may require increased glucose monitoring.
+
+pseudoephedrine
+pseudoephedrine decreases effects of metformin by pharmacodynamic antagonism.
+Use Caution/Monitor. Concomitant use may require increased glucose monitoring.
+
+pyrimethamine
+pyrimethamine increases levels of metformin by Other (see comment). Modify
+Therapy/Monitor Closely. Comment: Pyrimethamine inhibits organic cation
+transporter-2 (OCT2) and multidrug and toxin extrusion (MATE) transporters,
+increasing exposure to metformin. Monitor for metformin-related toxicities,
+including lactic acidosis.
+
+quetiapine
+quetiapine decreases effects of metformin by Other (see comment). Use
+Caution/Monitor. Comment: Atypical antipsychotics have been associated with
+hyperglycemia that may alter blood glucose control; monitor glucose levels closely.
+
+repaglinide
+repaglinide, metformin. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Antidiabetic agents are often used in
+combination; dosage adjustments may be required when initiating or discontinuing
+antidiabetic agents.
+
+risperidone
+risperidone decreases effects of metformin by Other (see comment). Use
+Caution/Monitor. Comment: Atypical antipsychotics have been associated with
+hyperglycemia that may alter blood glucose control; monitor glucose levels closely.
+
+ritonavir
+ritonavir decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Protease inhibitors may increase insulin resistance, reducing the
+hypoglycemic effects of metformin. Concomitant use may require increased glucose
+monitoring.
+
+rosiglitazone
+rosiglitazone, metformin. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Antidiabetic agents are often used in combination;
+dosage adjustments may be required when initiating or discontinuing antidiabetic
+agents.
+
+segesterone/ethinyl estradiol
+segesterone/ethinyl estradiol decreases effects of metformin by Other (see
+comment). Use Caution/Monitor. Comment: Oral contraceptives may impair glucose
+tolerance; concomitant use may require increased glucose monitoring.
+
+semaglutide
+semaglutide, metformin. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Antidiabetic agents are often used in combination;
+dosage adjustments may be required when initiating or discontinuing antidiabetic
+agents.
+
+sirolimus protein bound
+
+https://reference.medscape.com/drug/glucophage-metformin-342717 24/35
+
+
+
+6/22/26, 2:24 PM Glucophage, Glucophage XR (metformin) dosing, indications, interactions, adverse effects, and more
+
+sirolimus protein bound decreases levels of metformin by pharmacodynamic
+antagonism. Use Caution/Monitor. Concomitant use may require increased glucose
+monitoring.
+
+somapacitan
+somapacitan decreases effects of metformin by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely. Growth hormone (GH) analogs may decrease
+insulin sensitivity, particularly at higher doses. Antidiabetic agents may require dose
+adjustment after initiating growth hormone.
+
+somatrogon
+somatrogon decreases effects of metformin by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely. Growth hormone (GH) analogs may decrease
+insulin sensitivity, particularly at higher doses. Antidiabetic agents may require dose
+adjustment after initiating growth hormone.
+
+somatropin
+somatropin decreases effects of metformin by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely. Growth hormone (GH) analogs may decrease
+insulin sensitivity, particularly at higher doses. Antidiabetic agents may require dose
+adjustment after initiating growth hormone.
+
+temsirolimus
+temsirolimus decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Concomitant use may require increased glucose monitoring.
+
+tenofovir DF
+tenofovir DF, metformin. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: Concomitant use may increase risk of
+lactic acidosis; monitor for signs and symptoms.
+
+teprotumumab
+teprotumumab decreases effects of metformin by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely. Concomitant use requires increased glucose
+monitoring and possible metformin dose adjustment as clinically indicated.
+
+testosterone
+testosterone increases effects of metformin by pharmacodynamic synergism. Use
+Caution/Monitor. Androgens may alter insulin sensitivity and glycemic control.
+Concomitant use may produce additive effects; monitor blood glucose closely.
+
+testosterone buccal system
+testosterone buccal system increases effects of metformin by pharmacodynamic
+synergism. Use Caution/Monitor. Androgens may alter insulin sensitivity and
+glycemic control. Concomitant use may produce additive effects; monitor blood
+glucose closely.
+
+testosterone intranasal
+testosterone intranasal increases levels of metformin by pharmacodynamic
+synergism. Use Caution/Monitor. Androgens may alter insulin sensitivity and
+glycemic control. Concomitant use may produce additive effects; monitor blood
+glucose closely.
+
+https://reference.medscape.com/drug/glucophage-metformin-342717 25/35
+
+
+
+6/22/26, 2:24 PM Glucophage, Glucophage XR (metformin) dosing, indications, interactions, adverse effects, and more
+
+testosterone topical
+testosterone topical increases effects of metformin by pharmacodynamic synergism.
+Use Caution/Monitor. Androgens may alter insulin sensitivity and glycemic control.
+Concomitant use may produce additive effects; monitor blood glucose closely.
+
+thyroid desiccated
+thyroid desiccated decreases effects of metformin by pharmacodynamic
+antagonism. Use Caution/Monitor. Concomitant use may require increased glucose
+monitoring.
+
+tibolone
+tibolone decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Concomitant use may require increased glucose monitoring and
+metformin dose adjustment.
+
+tipranavir
+tipranavir decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Protease inhibitors may increase insulin resistance, reducing the
+hypoglycemic effects of metformin. Concomitant use may require increased glucose
+monitoring.
+
+tirzepatide
+tirzepatide, metformin. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Antidiabetic agents are often used in combination;
+dosage adjustments may be required when initiating or discontinuing antidiabetic
+agents.
+
+topiramate
+topiramate increases toxicity of metformin by Other (see comment). Use
+Caution/Monitor. Comment: Concomitant use may increase risk of lactic acidosis;
+consider more frequent monitoring.
+
+torsemide
+torsemide decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Concomitant use may require increased glucose monitoring.
+
+triamcinolone acetonide injectable suspension
+triamcinolone acetonide injectable suspension decreases effects of metformin by
+pharmacodynamic antagonism. Use Caution/Monitor. Corticosteroids may reduce
+the hypoglycemic effects of metformin, requiring increased glucose monitoring.
+
+trilaciclib
+trilaciclib increases levels of metformin by Other (see comment). Use
+Caution/Monitor. Comment: Trilaciclib inhibits organic cation transporter-2 (OCT2)
+and multidrug and toxin extrusion (MATE) transporters in vitro. Monitor for
+metformin-related toxicities, including lactic acidosis.
+
+trimethoprim
+trimethoprim increases levels of metformin by Other (see comment). Use
+Caution/Monitor. Comment: Trimethoprim inhibits organic cation transporter-2
+(OCT2) and multidrug and toxin extrusion (MATE) transporters. Dose adjustment
+may be necessary, particularly with long-term concomitant use.
+
+https://reference.medscape.com/drug/glucophage-metformin-342717 26/35
+
+
+
+6/22/26, 2:24 PM Glucophage, Glucophage XR (metformin) dosing, indications, interactions, adverse effects, and more
+
+triptorelin
+triptorelin decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Concomitant use may require increased glucose monitoring.
+
+tucatinib
+tucatinib increases levels of metformin by Other (see comment). Use
+Caution/Monitor. Comment: Tucatinib inhibits organic cation transporter-2 (OCT2)
+and multidrug and toxin extrusion (MATE) transporters, possibly increasing
+exposure to metformin. Monitor for metformin-related toxicities, including lactic
+acidosis.
+
+vamorolone
+vamorolone decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Corticosteroids may reduce the hypoglycemic effects of metformin,
+requiring increased glucose monitoring.
+
+vandetanib
+vandetanib increases levels of metformin by Other (see comment). Modify
+Therapy/Monitor Closely. Comment: Vandetanib inhibits organic cation transporter-
+2 (OCT2), increasing exposure to metformin. Use caution and monitor for
+metformin-related toxicities, including lactic acidosis.
+
+verapamil
+verapamil decreases effects of metformin by Other (see comment). Use
+Caution/Monitor. Comment: Verapamil inhibits hepatic uptake of metformin by
+organic cation transporter-1 (OCT1), reducing its clinical effects. Monitor blood
+glucose levels when initiating, titrating, or discontinuing verapamil.
+
+vorinostat
+vorinostat decreases effects of metformin by pharmacodynamic antagonism. Use
+Caution/Monitor. Concomitant use may require increased glucose monitoring after
+initiation of vorinostat.
+
+warfarin
+warfarin decreases effects of metformin by unknown mechanism. Modify
+Therapy/Monitor Closely. Metformin may decrease INR, requiring warfarin dose
+adjustment. Monitor INR closely after initiation, titration, or discontinuation of
+metformin.
+
+ziprasidone
+ziprasidone decreases effects of metformin by Other (see comment). Use
+Caution/Monitor. Comment: Atypical antipsychotics have been associated with
+hyperglycemia that may alter blood glucose control; monitor glucose levels closely.
+
+zonisamide
+zonisamide increases toxicity of metformin by Other (see comment). Use
+Caution/Monitor. Comment: Concomitant use may increase risk of lactic acidosis;
+consider more frequent monitoring.
+
+Minor (7)
+
+chromium
+
+https://reference.medscape.com/drug/glucophage-metformin-342717 27/35
+
+
+
+6/22/26, 2:24 PM Glucophage, Glucophage XR (metformin) dosing, indications, interactions, adverse effects, and more
+
+chromium increases effects of metformin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+cinnamon
+cinnamon increases effects of metformin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+damiana
+damiana decreases effects of metformin by pharmacodynamic antagonism.
+Minor/Significance Unknown. Theoretical interaction.
+
+devil's claw
+devil's claw increases effects of metformin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+gotu kola
+gotu kola increases effects of metformin by pharmacodynamic synergism.
+Minor/Significance Unknown. Theoretical interaction.
+
+gymnema
+gymnema increases effects of metformin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+tongkat ali
+tongkat ali increases effects of metformin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+Adverse Effects
+
+>10%
+
+Diarrhea, immediate-release product (53%)
+
+Nausea/vomiting, immediate-release product (25%)
+
+1-10%
+
+Diarrhea, extended-release product (10%)
+
+Nausea/vomiting, extended-release product (7%)
+
+Low serum vitamin B-12 (7%)
+
+Abdominal pain (1-5%)
+
+Constipation (1-5%)
+
+Abdomen distention (1-5%)
+
+Dyspepsia/heartburn (1-5%)
+
+Flatulence (1-5%)
+
+https://reference.medscape.com/drug/glucophage-metformin-342717 28/35
+
+
+
+6/22/26, 2:24 PM Glucophage, Glucophage XR (metformin) dosing, indications, interactions, adverse effects, and more
+
+Dizziness (1-5%)
+
+Headache (1-5%)
+
+Upper respiratory infection (1-5%)
+
+Taste disturbance (1-5%)
+
+Postmarketing Reports H3
+
+Cholestatic, hepatocellular, and mixed hepatocellular liver injury
+
+Frequency Not Defined
+
+Lactic acidosis
+
+Hypoglycemia
+
+Warnings
+
+Black Box Warnings
+
+Lactic acidosis is a rare, but potentially severe, consequence of therapy with metformin; it
+is characterized by elevated blood lactate levels (>5 mmol/L), decreased blood pH,
+electrolyte disturbances with an increased anion gap, and an increased lactate/pyruvate
+ratio; when metformin is implicated as the cause of lactic acidosis, metformin plasma
+concentrations >5 mcg/mL are generally found
+
+Risk factors for metformin-associated lactic acidosis include renal impairment,
+concomitant use of certain drugs (eg, carbonic anhydrase inhibitors such as topiramate),
+age 65 years old or greater, having a radiological study with contrast, surgery and other
+procedures, hypoxic states (e.g., acute congestive heart failure), excessive alcohol intake,
+and hepatic impairment; if metformin-associated lactic acidosis is suspected,
+immediately discontinue
+
+Patients with CHF requiring pharmacologic management, in particular those with
+unstable or acute CHF who are at risk for hypoperfusion and hypoxemia, are at an
+increased risk for lactic acidosis; the risk for lactic acidosis increases with the degree of
+renal dysfunction and the patient’s age
+
+Do not start in patients aged 80 years or older unless CrCl demonstrates that renal
+function is not reduced, because these patients are more susceptible to developing lactic
+acidosis; metformin should be promptly withheld in the presence of any condition
+associated with hypoxemia, dehydration, or sepsis
+
+Should generally be avoided in patients with clinical or laboratory evidence of hepatic
+disease; patients should be cautioned against excessive alcohol intake, either acute or
+chronic, during metformin therapy because alcohol potentiates the effects of metformin
+on lactate metabolism
+
+Discontinue metformin in high-risk individuals receiving iodinated contrast (see Dosing &
+Uses)
+
+The onset of lactic acidosis often is subtle and accompanied by nonspecific symptoms
+(eg, malaise, myalgias, respiratory distress, increasing somnolence, nonspecific
+
+https://reference.medscape.com/drug/glucophage-metformin-342717 29/35
+
+
+
+6/22/26, 2:24 PM Glucophage, Glucophage XR (metformin) dosing, indications, interactions, adverse effects, and more
+
+abdominal distress); with marked acidosis, hypothermia, hypotension, and resistant
+bradyarrhythmias may occur; patients should be instructed regarding recognition of
+these symptoms and told to notify their physician immediately if the symptoms occur;
+metformin should be withdrawn until the situation is clarified; serum electrolytes,
+ketones, blood glucose, and, if indicated, blood pH, lactate levels, and even blood
+metformin levels may be useful
+
+Once a patient is stabilized on any dose level of metformin, GI symptoms, which are
+common during initiation of therapy, are unlikely to be drug related; later occurrences of
+GI symptoms could be due to lactic acidosis or other serious disease
+
+Lactic acidosis should be suspected in any diabetic patient with metabolic acidosis who
+is lacking evidence of ketoacidosis (ketonuria and ketonemia); lactic acidosis is a medical
+emergency that must be treated in a hospital setting; in a patient with lactic acidosis who
+is taking metformin, the drug should be discontinued immediately and general
+supportive care measures promptly instituted; metformin is highly dialyzable (clearance
+up to 170 mL/min under good hemodynamic conditions); prompt hemodialysis is
+recommended to correct the acidosis and to remove the accumulated metformin; such
+management often results in prompt reversal of symptoms and recovery
+
+Contraindications
+
+Hypersensitivity to metformin
+
+CHF
+
+Diabetic ketoacidosis with or without coma
+
+eGFR <30 mL/min/1.73 m²
+
+Abnormal creatinine clearance resulting from shock, septicemia, or myocardial infarction
+
+Breastfeeding
+
+Cautions
+
+Increased risk of severe hypoglycemia especially in elderly, debilitated or malnourished,
+adrenal or pituitary insufficiency, dehydration, heavy alcohol use, hypoxic states,
+hepatic/renal impairment, stress due to infection, fever, trauma, or surgery
+
+Concomitant administration of insulin and insulin secretagogues (e.g., sulfonylurea) may
+increase risk of hypoglycemia; therefore, a lower dose of insulin or insulin secretagogue
+may be required to minimize risk of hypoglycemia when used in combination with
+metformin
+
+Withholding of food and fluids during surgical or other procedures may increase risk for
+volume depletion, hypotension, and renal impairment; therapy should be temporarily
+discontinued while patients have restricted food and fluid intake
+
+Rare lactic acidosis may occur due to metformin accumulation; fatal in approximately
+50% of cases; risk increases with age, degree of renal dysfunction, and with unstable or
+acute CHF; if metformin-associated lactic acidosis suspected, general supportive
+measures should be instituted promptly in a hospital setting, along with immediate
+discontinuation of therapy; in patients with a diagnosis or strong suspicion of lactic
+acidosis, prompt hemodialysis is recommended to correct acidosis and remove
+accumulated metformin (metformin hydrochloride is dialyzable, with a clearance of up
+
+https://reference.medscape.com/drug/glucophage-metformin-342717 30/35
+
+
+
+6/22/26, 2:24 PM Glucophage, Glucophage XR (metformin) dosing, indications, interactions, adverse effects, and more
+
+to170 mL/minute under good hemodynamic conditions); hemodialysis has often resulted
+in reversal of symptoms and recovery
+
+Possible increased risk of CV mortality
+
+May cause ovulation in anovulatory and premenopausal PCOS patients
+
+May be necessary to discontinue therapy with metformin and administer insulin if patient
+is exposed to stress (fever, trauma, infection), or experiences diabetic ketoacidosis
+
+Several of the postmarketing cases of metformin-associated lactic acidosis occurred in
+setting of acute congestive heart failure (particularly when accompanied by
+hypoperfusion and hypoxemia); cardiovascular collapse (shock) acute myocardial
+infarction, sepsis, and other conditions associated with hypoxemia have been associated
+with lactic acidosis and may also cause prerenal azotemia; discontinue therapy when
+such events occur
+
+May impair vitamin B12 or calcium intake/absorption; monitor B12 serum concentrations
+periodically with long-term therapy
+
+Not indicated for use in patients with type 1 diabetes mellitus that are insulin dependent
+due to lack of efficacy
+
+Withhold in patients with dehydration and/or prerenal azotemia
+
+Conclusive evidence of macrovascular risk reduction with metformin not established
+
+Clinical recommendations based upon the patient’s renal function
+
+Before initiating therapy, obtain an eGFR
+
+Initiation of therapy is not recommended in patients with eGFR between 30 –45
+mL/minute/1.73 m²
+
+Obtain an eGFR at least annually in all patients receiving therapy
+
+In patients at increased risk for development of renal impairment (e.g., the elderly),
+renal function should be assessed more frequently
+
+If eGFR later falls below 45 mL/minute/1.73 m², assess benefit and risk of
+continuing therapy
+
+Iodinated contrast imaging procedures
+
+FDA-approved prescribing information
+Discontinue metformin at time of, or prior to, iodinated contrast administration in
+patients with eGFR 30-60 mL/min/1.73 m2; in patients with a history of liver
+disease, alcoholism, or heart failure; or in patients who will be administered intra-
+arterial iodinated contrast
+
+Re-evaluate eGFR 48 hr after imaging procedure; restart metformin if renal function
+is stable
+
+American College of Radiology (ACR) Manual on Contrast Media (2026)
+No dose adjustment or discontinuation required in patients with eGFR ≥30
+mL/min/1.73 m2 and without evidence of acute kidney injury (AKI)
+
+Discontinue metformin at time of, or prior to, iodinated contrast administration in
+patients with AKI or eGFR <30 mL/min/1.73 m2; or in patients receiving intra-
+
+https://reference.medscape.com/drug/glucophage-metformin-342717 31/35
+
+
+
+6/22/26, 2:24 PM Glucophage, Glucophage XR (metformin) dosing, indications, interactions, adverse effects, and more
+
+arterial iodinated contrast
+Re-evaluate eGFR 48 hours after contrast administration; restart metformin if
+renal function is stable
+
+Pregnancy & Lactation
+
+Pregnancy
+
+Limited data with in pregnant women are not sufficient to determine drug-associated
+risk for major birth defects or miscarriage; published studies with metformin use during
+pregnancy have not reported a clear association with metformin and major birth defect
+or miscarriage risk; poorly-controlled diabetes mellitus in pregnancy increases maternal
+risk for diabetic ketoacidosis, pre-eclampsia, spontaneous abortions, preterm delivery,
+stillbirth and delivery complications; poorly controlled diabetes mellitus increases the
+fetal risk for major birth defects, stillbirth, and macrosomia related morbidity
+
+Human data
+
+Published data from post-marketing studies have not reported clear association
+with metformin and major birth defects, miscarriage, or adverse maternal or fetal
+outcomes when used during pregnancy; however, these studies cannot definitely
+establish absence of any metformin-associated risk because of methodological
+limitations, including small sample size and inconsistent comparator groups
+
+Animal data
+
+Metformin hydrochloride did not adversely affect development outcomes when
+administered to pregnant rats and rabbits at doses up to 600 mg/kg/day; this
+represents exposure of about 2 and 5 times a 2550 mg clinical dose based on body
+surface area comparisons for rats and rabbits, respectively; determination of fetal
+concentrations demonstrated a partial placental barrier to metformin
+
+Reproduction potential
+
+Discuss potential for unintended pregnancy with premenopausal women as therapy
+may result in ovulation in some anovulatory women
+
+Lactation
+
+Limited published studies report that metformin is present in human milk; however, there
+is insufficient information to determine effects of metformin on breastfed infant and no
+available information on effects of metformin on milk production; therefore,
+developmental and health benefits of breastfeeding should be considered along with
+mother’s clinical need for therapy and any potential adverse effects on breastfed child
+from therapy or from the underlying maternal condition
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+
+https://reference.medscape.com/drug/glucophage-metformin-342717 32/35
+
+
+
+6/22/26, 2:24 PM Glucophage, Glucophage XR (metformin) dosing, indications, interactions, adverse effects, and more
+
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+Decreases hepatic glucose production; decreases GI glucose absorption; increases target
+cell insulin sensitivity
+
+Absorption
+
+Bioavailability: 50-60%
+
+Peak plasma time
+
+Regular-release: 2-3 hr
+
+Extended-release: 4-8 hr
+
+Distribution
+
+Protein bound: Minimal
+
+Vd: 650 L (regular-release)
+
+Metabolism
+
+Metabolism: Not by liver
+
+Elimination
+
+Half-Life: 4-9 hr
+
+Dialyzable: Yes (hemodialysis)
+
+Renal clearance: 450-540 mL/min (regular-release)
+
+Excretion: Urine (90%, by tubular secretion)
+
+https://reference.medscape.com/drug/glucophage-metformin-342717 33/35
+
+
+
+6/22/26, 2:24 PM Glucophage, Glucophage XR (metformin) dosing, indications, interactions, adverse effects, and more
+
+Administration
+
+Oral Suspension Preparation (Riomet ER)
+
+Remove bottle containing drug pellets and drug diluent bottle along with measuring cup
+from the box
+
+Do not use if drug is expired, damaged, or defective
+
+Pour contents of bottle containing drug pellets in to the drug diluent bottle and discard
+the empty pellet bottle
+
+Shake bottle continuously in an up and down direction for at least 2 full min;
+reconstituted suspension is 500 mg/5 mL
+
+Oral Administration
+
+Take with an evening meal
+
+Oral solution or suspension: Measure dose in the provided dosing cup
+
+Extended-release tablets: Swallow tablets whole and never crush, cut, or chew
+
+Missed dose
+
+Do not to take 2 doses the same day and to resume the usual dose with the next
+schedule dose
+
+Storage
+
+Tablets
+
+Store at 20-25ºC (68-77ºF); excursions permitted to 15-30ºC (59-86ºF)
+
+Oral solution (Riomet)
+
+Store at 15-30ºC (59-86ºF)
+
+Oral suspension (Riomet ER)
+
+Unused bottle: Store at 20-25ºC (68-77ºF)
+
+Reconstituted oral suspension: Store at 20-25°C (68-77ºF) for up to 100 days; do
+not repackage
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+https://reference.medscape.com/drug/glucophage-metformin-342717 34/35
+
+
+
+6/22/26, 2:24 PM Glucophage, Glucophage XR (metformin) dosing, indications, interactions, adverse effects, and more
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/glucophage-metformin-342717 35/35

@@ -1,0 +1,1427 @@
+6/22/26, 6:34 AM
+
+Cycloset, Parlodel (bromocriptine) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+bromocriptine (Rx)
+Brand and Other Names: Cycloset, Parlodel
+Classes: Antiparkinson Agents, Dopamine Agonists; Hyperprolactinemia; Metabolic &
+Endocrine, Other
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+tablet (Parlodel)
+2.5mg
+capsule (Parlodel)
+5mg
+tablet (Cycloset)
+0.8mg
+Hyperprolactinemia-Associated Dysfunctions (Parlodel)
+Indicated for treatment of dysfunctions associated with hyperprolactinemia including
+amenorrhea with or without galactorrhea, infertility or hypogonadism; also indicated in
+patients with prolactin-secreting adenomas
+1.25-2.5 mg PO qDay initially; may increase by 2.5 mg/day q2-7Days until optimal
+therapeutic response achieved
+Usual therapeutic dosage ranges from 2.5-15 mg/day
+Up to 30 mg/day has been used in some patients with amenorrhea and/or galactorrhea
+Parkinson Disease (Parlodel)
+Indicated as adjunctive treatment to levodopa for the signs and symptoms of
+https://reference.medscape.com/drug/cycloset-parlodel-bromocriptine-343124
+
+1/30
+
+6/22/26, 6:34 AM
+
+Cycloset, Parlodel (bromocriptine) dosing, indications, interactions, adverse effects, and more
+
+idiopathic/postencephalitic Parkinson disease
+1.25 mg PO q12hr initially; may increase dose by 2.5 mg/day q2-4Weeks until optimal
+therapeutic response achieved
+Safety >100 mg/day not established
+
+Acromegaly (Parlodel)
+Indicated for acromegaly
+1.25-2.5 mg PO qHS for 3 days initially; may increase by 1.25-2.5 mg/day q3-7Days
+until optimal therapeutic response achieved
+Not to exceed 100 mg/day
+Type 2 Diabetes Mellitus (Cycloset)
+Quick release formulation (Cycloset) is the only bromocriptine product indicated for
+diabetes mellitus type 2 as adjunct to diet and exercise to improve glycemic control;
+there is currently no therapeutically equivalent generic version of Cycloset available in
+the United States
+0.8 mg PO qDay initially; may increase by 0.8-mg increments qWeek as tolerated
+Usual dosage ranges between 1.5-4.8 mg PO qDay; not to exceed 4.8 mg (6 tablets)/day
+Note: Cycloset is not indicated for hyperprolactinemia, Parkinson disease, or acromegaly
+see Dosage Modifications (Cycloset) and Administratio (Cycloset)
+Neuroleptic Malignant Syndrome (Off-label, Parlodel)
+2.5-5 mg PO 2-3 times/day; not to exceed 45 mg/day
+[Strawn JR, Keck PE Jr, and Caroff SN, "Neuroleptic Malignant Syndrome," Am J
+Psychiatry, 2007, 164(6):870-6]
+Dosage Modifications
+Hepatic impairment: Safety and efficacy has not been established; dosage adjustment
+may be necessary due to extensive hepatic metabolism; use with caution
+Renal impairment: Safety and efficacy has not been established
+Cycloset
+
+https://reference.medscape.com/drug/cycloset-parlodel-bromocriptine-343124
+
+2/30
+
+6/22/26, 6:34 AM
+
+Cycloset, Parlodel (bromocriptine) dosing, indications, interactions, adverse effects, and more
+
+Concomitant use with CYP3A4 inhibitor
+
+Strong CYP3A4 inhibitor (eg, azole antimycotics, HIV protease inhibitors):
+Avoid use; ensure adequate washout of the strong CYP3A4 inhibitor drug
+before initiating Cycloset treatment
+Moderate CYP3A4 inhibitor (eg, erythromycin): Dose should not exceed 1.6
+mg PO qDay
+
+Dosing Considerations
+Dosage forms for Cycloset and Parlodel and not interchangeable
+Cycloset
+
+Limitations of use
+
+Not for treatment of type 1 diabetes or diabetic ketoacidosis
+Limited efficacy data in combination with thiazolidinediones
+Efficacy has not been confirmed in combination with insulin
+
+Parlodel
+Patients treated with pituitary irradiation should be withdrawn from Parlodel
+therapy on a yearly basis to assess both the clinical effects of radiation on the
+disease process and effects of Parlodel therapy; usual withdrawal period range, 4-8
+weeks; recurrence of the signs/symptoms or increases in growth hormone indicate
+the disease is still active and further courses of Parlodel should be considered
+
+PEDIATRIC
+Dosage Forms & Strengths
+tablet (Parlodel)
+2.5mg
+capsule (Parlodel)
+5mg
+
+Hyperprolactinemia (Parlodel)
+≤10 years: Safety and efficacy not established
+
+11-15 years: 1.25-2.5 mg PO qDay initially; therapeutic dosage ranges from 2.5-10
+mg/day; may need to increase dose for optimal therapeutic response
+
+https://reference.medscape.com/drug/cycloset-parlodel-bromocriptine-343124
+
+3/30
+
+6/22/26, 6:34 AM
+
+Cycloset, Parlodel (bromocriptine) dosing, indications, interactions, adverse effects, and more
+
+≥16 years: Safety and efficacy not established
+
+see Administration (Parlodel)
+
+Interactions
+Interaction Checker
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal and
+bromocriptine
+No Interactions Found
+Interactions Found
+Contraindicated
+
+Serious
+Significant - Monitor Closely
+Minor
+All Interactions Sort By: Severity
+Contraindicated (16)
+
+almotriptan
+bromocriptine, almotriptan. Either increases toxicity of the other by
+pharmacodynamic synergism. Contraindicated. Vasoconstrictive effects of triptans
+and bromocriptine may be additive. Drugs should not be used within 24h of one
+another.
+chloramphenicol
+chloramphenicol will increase the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+eletriptan
+bromocriptine, eletriptan. Either increases toxicity of the other by pharmacodynamic
+synergism. Contraindicated. Vasoconstrictive effects of triptans and bromocriptine
+may be additive. Drugs should not be used within 24h of one another.
+frovatriptan
+bromocriptine, frovatriptan. Either increases toxicity of the other by
+pharmacodynamic synergism. Contraindicated. Vasoconstrictive effects of triptans
+and bromocriptine may be additive. Drugs should not be used within 24h of one
+another.
+glyceryl trinitrate pr
+bromocriptine decreases effects of glyceryl trinitrate pr by pharmacodynamic
+antagonism. Contraindicated.
+lopinavir
+https://reference.medscape.com/drug/cycloset-parlodel-bromocriptine-343124
+
+4/30
+
+6/22/26, 6:34 AM
+
+Cycloset, Parlodel (bromocriptine) dosing, indications, interactions, adverse effects, and more
+
+lopinavir will increase the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+naratriptan
+bromocriptine, naratriptan. Either increases toxicity of the other by
+pharmacodynamic synergism. Contraindicated. Vasoconstrictive effects of triptans
+and bromocriptine may be additive. Drugs should not be used within 24h of one
+another.
+nitroglycerin IV
+bromocriptine decreases effects of nitroglycerin IV by pharmacodynamic
+antagonism. Contraindicated.
+nitroglycerin sublingual
+bromocriptine decreases effects of nitroglycerin sublingual by pharmacodynamic
+antagonism. Contraindicated.
+nitroglycerin topical
+bromocriptine decreases effects of nitroglycerin topical by pharmacodynamic
+antagonism. Contraindicated.
+nitroglycerin transdermal
+bromocriptine decreases effects of nitroglycerin transdermal by pharmacodynamic
+antagonism. Contraindicated.
+nitroglycerin translingual
+bromocriptine decreases effects of nitroglycerin translingual by pharmacodynamic
+antagonism. Contraindicated.
+posaconazole
+posaconazole will increase the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+sumatriptan
+bromocriptine, sumatriptan. Either increases toxicity of the other by
+pharmacodynamic synergism. Contraindicated. Vasoconstrictive effects of triptans
+and bromocriptine may be additive. Drugs should not be used within 24h of one
+another.
+sumatriptan intranasal
+bromocriptine, sumatriptan intranasal. Either increases toxicity of the other by
+pharmacodynamic synergism. Contraindicated. Additive vasospasm. Sep. by 24h.
+zolmitriptan
+bromocriptine, zolmitriptan. Either increases toxicity of the other by
+pharmacodynamic synergism. Contraindicated. Vasoconstrictive effects of triptans
+and bromocriptine may be additive. Drugs should not be used within 24h of one
+another.
+Serious (58)
+amisulpride
+https://reference.medscape.com/drug/cycloset-parlodel-bromocriptine-343124
+
+5/30
+
+6/22/26, 6:34 AM
+
+Cycloset, Parlodel (bromocriptine) dosing, indications, interactions, adverse effects, and more
+
+amisulpride, bromocriptine. Either decreases effects of the other by
+pharmacodynamic antagonism. Avoid or Use Alternate Drug. Avoid use of
+amisulpride, a dopamine receptor antagonist, with dopamine agonists.
+amphetamine
+bromocriptine, amphetamine. Mechanism: pharmacodynamic synergism.
+Contraindicated. Additive vasospasm; risk of hypertension.
+apalutamide
+apalutamide will decrease the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+Coadministration of apalutamide, a strong CYP3A4 inducer, with drugs that are
+CYP3A4 substrates can result in lower exposure to these medications. Avoid or
+substitute another drug for these medications when possible. Evaluate for loss of
+therapeutic effect if medication must be coadministered. Adjust dose according to
+prescribing information if needed.
+aripiprazole
+aripiprazole decreases effects of bromocriptine by pharmacodynamic antagonism.
+Avoid or Use Alternate Drug.
+atazanavir
+atazanavir will increase the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+cabergoline
+cabergoline, bromocriptine. Either increases toxicity of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. The concomitant use of
+bromocriptine with ergot alkaloids may potentially lead to ergot toxicity; therefore
+the combination should be avoided.
+ceritinib
+ceritinib will increase the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+chlorpromazine
+chlorpromazine decreases effects of bromocriptine by pharmacodynamic
+antagonism. Avoid or Use Alternate Drug.
+clarithromycin
+clarithromycin will increase the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+clozapine
+clozapine decreases effects of bromocriptine by pharmacodynamic antagonism.
+Avoid or Use Alternate Drug.
+conivaptan
+conivaptan will increase the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+danazol
+https://reference.medscape.com/drug/cycloset-parlodel-bromocriptine-343124
+
+6/30
+
+6/22/26, 6:34 AM
+
+Cycloset, Parlodel (bromocriptine) dosing, indications, interactions, adverse effects, and more
+
+danazol will increase the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+darunavir
+darunavir will increase the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+dihydroergotamine
+dihydroergotamine, bromocriptine. Either increases toxicity of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. The concomitant use of
+bromocriptine with ergot alkaloids may potentially lead to ergot toxicity; therefore
+the combination should be avoided.
+dihydroergotamine intranasal
+dihydroergotamine intranasal, bromocriptine. Either increases toxicity of the other
+by pharmacodynamic synergism. Avoid or Use Alternate Drug. The concomitant use
+of bromocriptine with ergot alkaloids may potentially lead to ergot toxicity;
+therefore the combination should be avoided.
+droperidol
+droperidol decreases effects of bromocriptine by pharmacodynamic antagonism.
+Avoid or Use Alternate Drug.
+efavirenz
+efavirenz increases levels of bromocriptine by decreasing metabolism. Avoid or Use
+Alternate Drug. Competitive inhibition of CYP3A4 might lead to vasospasm and
+ischemia.
+ergoloid mesylates
+ergoloid mesylates, bromocriptine. Either increases toxicity of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. The concomitant use of
+bromocriptine with ergot alkaloids may potentially lead to ergot toxicity; therefore
+the combination should be avoided.
+ergotamine
+ergotamine, bromocriptine. Either increases toxicity of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. The concomitant use of
+bromocriptine with ergot alkaloids may potentially lead to ergot toxicity; therefore
+the combination should be avoided.
+fluphenazine
+fluphenazine decreases effects of bromocriptine by pharmacodynamic antagonism.
+Avoid or Use Alternate Drug.
+haloperidol
+haloperidol decreases effects of bromocriptine by pharmacodynamic antagonism.
+Avoid or Use Alternate Drug.
+idelalisib
+idelalisib will increase the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+https://reference.medscape.com/drug/cycloset-parlodel-bromocriptine-343124
+
+7/30
+
+6/22/26, 6:34 AM
+
+Cycloset, Parlodel (bromocriptine) dosing, indications, interactions, adverse effects, and more
+
+Idelalisib is a strong CYP3A inhibitor; avoid coadministration with sensitive CYP3A
+substrates
+itraconazole
+itraconazole will increase the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+ivosidenib
+ivosidenib will decrease the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid
+coadministration of sensitive CYP3A4 substrates with ivosidenib or replace with
+alternate therapies. If coadministration is unavoidable, monitor patients for loss of
+therapeutic effect of these drugs.
+ketoconazole
+ketoconazole will increase the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+levoketoconazole
+levoketoconazole will increase the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+lonafarnib
+bromocriptine will increase the level or effect of lonafarnib by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. If
+coadministration of lonafarnib (a sensitive CYP3A substrate) with weak CYP3A
+inhibitors is unavoidable, reduce to, or continue lonafarnib at starting dose. Closely
+monitor for arrhythmias and events (eg, syncope, heart palpitations) since
+lonafarnib effect on QT interval is unknown.
+lonafarnib will increase the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid
+coadministration with sensitive CYP3A substrates. If coadministration unavoidable,
+monitor for adverse reactions and reduce CYP3A substrate dose in accordance with
+product labeling.
+loxapine
+loxapine decreases effects of bromocriptine by pharmacodynamic antagonism.
+Contraindicated.
+loxapine inhaled
+loxapine inhaled decreases effects of bromocriptine by pharmacodynamic
+antagonism. Contraindicated.
+methylergonovine
+methylergonovine, bromocriptine. Either increases toxicity of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. The concomitant use of
+bromocriptine with ergot alkaloids may potentially lead to ergot toxicity; therefore
+the combination should be avoided.
+metoclopramide intranasal
+bromocriptine, metoclopramide intranasal. Either increases effects of the other by
+Other (see comment). Avoid or Use Alternate Drug. Comment: Avoid use of
+https://reference.medscape.com/drug/cycloset-parlodel-bromocriptine-343124
+
+8/30
+
+6/22/26, 6:34 AM
+
+Cycloset, Parlodel (bromocriptine) dosing, indications, interactions, adverse effects, and more
+
+metoclopramide intranasal or interacting drug, depending on importance of drug to
+patient.
+metoclopramide intranasal, bromocriptine. dopaminergic effects. Avoid or Use
+Alternate Drug. Opposing effects of metoclopramide and the interacting drug on
+dopamine. Potential exacerbation of symptoms (eg, parkinsonian symptoms) or
+decreased therapeutic effects of metoclopramide.
+mifepristone
+mifepristone will increase the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+nefazodone
+nefazodone will increase the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+nelfinavir
+nelfinavir will increase the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+olanzapine
+olanzapine decreases effects of bromocriptine by pharmacodynamic antagonism.
+Avoid or Use Alternate Drug.
+olanzapine/samidorphan
+bromocriptine increases and olanzapine/samidorphan decreases dopaminergic
+effects. Effect of interaction is not clear, use caution. Avoid or Use Alternate Drug.
+olopatadine intranasal
+bromocriptine and olopatadine intranasal both increase sedation. Avoid or Use
+Alternate Drug. Coadministration increases risk of CNS depression, which can lead
+to additive impairment of psychomotor performance and cause daytime impairment.
+paliperidone
+paliperidone decreases effects of bromocriptine by pharmacodynamic antagonism.
+Avoid or Use Alternate Drug.
+perphenazine
+perphenazine decreases effects of bromocriptine by pharmacodynamic antagonism.
+Avoid or Use Alternate Drug.
+phenylephrine PO
+bromocriptine, phenylephrine PO. Mechanism: pharmacodynamic synergism.
+Contraindicated. Additive vasospasm; risk of hypertension.
+pimozide
+pimozide decreases effects of bromocriptine by pharmacodynamic antagonism.
+Avoid or Use Alternate Drug.
+prochlorperazine
+prochlorperazine decreases effects of bromocriptine by pharmacodynamic
+antagonism. Avoid or Use Alternate Drug.
+https://reference.medscape.com/drug/cycloset-parlodel-bromocriptine-343124
+
+9/30
+
+6/22/26, 6:34 AM
+
+Cycloset, Parlodel (bromocriptine) dosing, indications, interactions, adverse effects, and more
+
+promethazine
+promethazine decreases effects of bromocriptine by pharmacodynamic antagonism.
+Avoid or Use Alternate Drug.
+quetiapine
+quetiapine decreases effects of bromocriptine by pharmacodynamic antagonism.
+Avoid or Use Alternate Drug.
+ribociclib
+ribociclib will increase the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+rilzabrutinib
+rilzabrutinib will increase the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+Follow substrate recommendations for use with moderate CYP3A inhibitors
+risperidone
+risperidone decreases effects of bromocriptine by pharmacodynamic antagonism.
+Avoid or Use Alternate Drug.
+ritonavir
+ritonavir will increase the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+selinexor
+selinexor, bromocriptine. unspecified interaction mechanism. Avoid or Use Alternate
+Drug. Patients treated with selinexor may experience neurological toxicities. Avoid
+taking selinexor with other medications that may cause dizziness or confusion.
+serdexmethylphenidate/dexmethylphenidate
+bromocriptine, serdexmethylphenidate/dexmethylphenidate. Mechanism:
+pharmacodynamic synergism. Contraindicated. Additive vasospasm; risk of
+hypertension.
+thioridazine
+thioridazine decreases effects of bromocriptine by pharmacodynamic antagonism.
+Avoid or Use Alternate Drug.
+thiothixene
+thiothixene decreases effects of bromocriptine by pharmacodynamic antagonism.
+Avoid or Use Alternate Drug.
+tipranavir
+tipranavir will increase the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+trifluoperazine
+trifluoperazine decreases effects of bromocriptine by pharmacodynamic
+antagonism. Avoid or Use Alternate Drug.
+tucatinib
+https://reference.medscape.com/drug/cycloset-parlodel-bromocriptine-343124
+
+10/30
+
+6/22/26, 6:34 AM
+
+Cycloset, Parlodel (bromocriptine) dosing, indications, interactions, adverse effects, and more
+
+tucatinib will increase the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid
+concomitant use of tucatinib with CYP3A substrates, where minimal concentration
+changes may lead to serious or life-threatening toxicities. If unavoidable, reduce
+CYP3A substrate dose according to product labeling.
+voriconazole
+voriconazole will increase the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+ziprasidone
+ziprasidone decreases effects of bromocriptine by pharmacodynamic antagonism.
+Avoid or Use Alternate Drug.
+zuranolone
+bromocriptine, zuranolone. Either increases effects of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Coadministration of
+zuranolone with other CNS depressants may increase impairment of psychomotor
+performance or CNS depressant effects. If unavoidable, consider dose reduction. .
+Monitor Closely (88)
+amifampridine
+bromocriptine increases toxicity of amifampridine by Other (see comment). Modify
+Therapy/Monitor Closely. Comment: Amifampridine can cause seizures.
+Coadministration with drugs that lower seizure threshold may increase this risk.
+amlodipine
+bromocriptine, amlodipine. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Monitor BP.
+amphetamine
+bromocriptine, amphetamine. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Hypertension, V tach.
+apomorphine
+apomorphine and bromocriptine both increase dopaminergic effects. Use
+Caution/Monitor. Combination may enhance efficacy. Monitor for hypotension.
+atazanavir
+atazanavir increases levels of bromocriptine by decreasing metabolism. Use
+Caution/Monitor.
+avapritinib
+bromocriptine will increase the level or effect of avapritinib by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+axitinib
+bromocriptine increases levels of axitinib by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+belzutifan
+https://reference.medscape.com/drug/cycloset-parlodel-bromocriptine-343124
+
+11/30
+
+6/22/26, 6:34 AM
+
+Cycloset, Parlodel (bromocriptine) dosing, indications, interactions, adverse effects, and more
+
+belzutifan will decrease the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely. If
+unable to avoid coadministration of belzutifan with sensitive CYP3A4 substrates,
+consider increasing the sensitive CYP3A4 substrate dose in accordance with its
+prescribing information.
+benazepril
+bromocriptine, benazepril. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increases risk of hypotension.
+bosentan
+bosentan will decrease the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+cabergoline
+bromocriptine and cabergoline both increase dopaminergic effects. Use
+Caution/Monitor. Combining drugs may be therapeutic in patients with
+Parkinsonism.
+captopril
+bromocriptine, captopril. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Both drugs lower blood pressure. Monitor blood
+pressure.
+carbamazepine
+carbamazepine will decrease the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+cenobamate
+cenobamate will decrease the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Increase dose of CYP3A4 substrate, as needed, when coadministered with
+cenobamate.
+cenobamate, bromocriptine. Either increases effects of the other by sedation. Use
+Caution/Monitor.
+clarithromycin
+clarithromycin increases levels of bromocriptine by decreasing metabolism. Use
+Caution/Monitor. Increased levels possibly due to CYP3A4 inhibition.
+cobicistat
+cobicistat will increase the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+crizotinib
+crizotinib increases levels of bromocriptine by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Dose reduction may be needed for
+coadministered drugs that are predominantly metabolized by CYP3A.
+crofelemer
+crofelemer increases levels of bromocriptine by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Crofelemer has the potential to inhibit
+https://reference.medscape.com/drug/cycloset-parlodel-bromocriptine-343124
+
+12/30
+
+6/22/26, 6:34 AM
+
+Cycloset, Parlodel (bromocriptine) dosing, indications, interactions, adverse effects, and more
+
+CYP3A4 at concentrations expected in the gut; unlikely to inhibit systemically
+because minimally absorbed.
+cyclosporine
+bromocriptine increases levels of cyclosporine by unknown mechanism. Use
+Caution/Monitor.
+dabrafenib
+dabrafenib will decrease the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+daridorexant
+bromocriptine and daridorexant both increase sedation. Modify Therapy/Monitor
+Closely. Coadministration increases risk of CNS depression, which can lead to
+additive impairment of psychomotor performance and cause daytime impairment.
+darunavir
+darunavir increases levels of bromocriptine by decreasing metabolism. Use
+Caution/Monitor. Increased levels possibly due to CYP3A4 inhibition.
+dexmethylphenidate
+bromocriptine, dexmethylphenidate. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Hypertension, V tach.
+dextroamphetamine
+bromocriptine, dextroamphetamine. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Hypertension, V tach.
+difelikefalin
+difelikefalin and bromocriptine both increase sedation. Use Caution/Monitor.
+dobutamine
+bromocriptine, dobutamine. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Hypertension, V tach.
+dopamine
+bromocriptine and dopamine both increase dopaminergic effects. Use
+Caution/Monitor.
+bromocriptine, dopamine. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Hypertension, V tach.
+duvelisib
+duvelisib will increase the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+will increase the level or effect of
+elagolix
+elagolix will decrease the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Elagolix is a weak-to-moderate CYP3A4 inducer. Monitor CYP3A substrates if
+coadministered. Consider increasing CYP3A substrate dose if needed.
+https://reference.medscape.com/drug/cycloset-parlodel-bromocriptine-343124
+
+13/30
+
+6/22/26, 6:34 AM
+
+Cycloset, Parlodel (bromocriptine) dosing, indications, interactions, adverse effects, and more
+
+elvitegravir/cobicistat/emtricitabine/tenofovir DF
+elvitegravir/cobicistat/emtricitabine/tenofovir DF increases levels of bromocriptine
+by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Modify
+Therapy/Monitor Closely. Cobicistat is a CYP3A4 inhibitor; contraindicated with
+CYP3A4 substrates for which elevated plasma concentrations are associated with
+serious and/or life-threatening events.
+encorafenib
+encorafenib, bromocriptine. affecting hepatic/intestinal enzyme CYP3A4
+metabolism. Use Caution/Monitor. Encorafenib both inhibits and induces CYP3A4 at
+clinically relevant plasma concentrations. Coadministration of encorafenib with
+sensitive CYP3A4 substrates may result in increased toxicity or decreased efficacy
+of these agents.
+enzalutamide
+enzalutamide will decrease the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+ephedrine
+bromocriptine, ephedrine. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Hypertension, V tach.
+epinephrine
+bromocriptine, epinephrine. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Hypertension, V tach.
+erythromycin base
+erythromycin base increases levels of bromocriptine by unknown mechanism. Use
+Caution/Monitor.
+erythromycin ethylsuccinate
+erythromycin ethylsuccinate increases levels of bromocriptine by unknown
+mechanism. Use Caution/Monitor.
+erythromycin lactobionate
+erythromycin lactobionate increases levels of bromocriptine by unknown
+mechanism. Use Caution/Monitor.
+erythromycin stearate
+erythromycin stearate increases levels of bromocriptine by unknown mechanism.
+Use Caution/Monitor.
+etravirine
+etravirine will decrease the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+fedratinib
+fedratinib will increase the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Adjust dose
+of drugs that are CYP3A4 substrates as necessary.
+finerenone
+https://reference.medscape.com/drug/cycloset-parlodel-bromocriptine-343124
+
+14/30
+
+6/22/26, 6:34 AM
+
+Cycloset, Parlodel (bromocriptine) dosing, indications, interactions, adverse effects, and more
+
+bromocriptine will increase the level or effect of finerenone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Monitor serum potassium during initiation and dosage adjustment of either
+finererone or weak CYP3A4 inhibitors. Adjust finererone dosage as needed.
+flibanserin
+bromocriptine will increase the level or effect of flibanserin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Increased
+flibanserin adverse effects may occur if coadministered with multiple weak CYP3A4
+inhibitors.
+fosamprenavir
+fosamprenavir increases levels of bromocriptine by decreasing metabolism. Use
+Caution/Monitor. Increased levels possibly due to CYP3A4 inhibition.
+foscarbidopa/foslevodopa
+bromocriptine and foscarbidopa/foslevodopa both increase dopaminergic effects.
+Use Caution/Monitor. Combining drugs may be therapeutic in patients with
+Parkinsonism and may allow for reduced levodopa doses. Dosages should be
+carefully titrated during concomitant treatment.
+fosphenytoin
+fosphenytoin will decrease the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+iloprost
+iloprost, bromocriptine. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. When administering iloprost IV,
+consider temporary discontinuation of concomitant vasodilators or other
+medications that reduce blood pressure to mitigate potential additive hypotensive
+effects. If hypotension persists despite discontinuing other antihypertensives and
+fluid resuscitation, consider iloprost dose reduction or discontinuation.
+isavuconazonium sulfate
+bromocriptine will increase the level or effect of isavuconazonium sulfate by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+isoproterenol
+bromocriptine, isoproterenol. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Hypertension, V tach.
+istradefylline
+istradefylline will increase the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Istradefylline
+40 mg/day increased peak levels and AUC of CYP3A4 substrates in clinical trials.
+This effect was not observed with istradefylline 20 mg/day. Consider dose reduction
+of sensitive CYP3A4 substrates.
+lanreotide
+lanreotide increases levels of bromocriptine by decreasing metabolism. Use
+Caution/Monitor. Somatropin may increase CYP450 enzymes and, therefore,
+suppression of growth hormone secretion by somatostatin analogs including
+https://reference.medscape.com/drug/cycloset-parlodel-bromocriptine-343124
+
+15/30
+
+6/22/26, 6:34 AM
+
+Cycloset, Parlodel (bromocriptine) dosing, indications, interactions, adverse effects, and more
+
+pasireotide may decrease the metabolic clearance of compounds metabolized by
+CYP450 enzymes.
+lemborexant
+bromocriptine will increase the level or effect of lemborexant by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Lower nightly dose of lemborexant recommended if coadministered with weak
+CYP3A4 inhibitors. See drug monograph for specific dosage modification.
+lenacapavir
+lenacapavir will increase the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Lencapavir (a
+moderate CYP3A4 inhibitor) may increase CYP3A4 substrates initiated within 9
+months after last SC dose of lenacapavir, which may increase potential risk of
+adverse reactions of CYP3A4 substrates.
+letermovir
+letermovir increases levels of bromocriptine by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+levodopa
+bromocriptine and levodopa both increase dopaminergic effects. Use
+Caution/Monitor. Combining drugs may be therapeutic in patients with
+Parkinsonism and may allow for reduced levodopa doses. Dosages should be
+carefully titrated during concomitant treatment.
+lisdexamfetamine
+bromocriptine, lisdexamfetamine. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Hypertension, V tach.
+lorlatinib
+lorlatinib will decrease the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+lurasidone
+lurasidone decreases effects of bromocriptine by pharmacodynamic antagonism.
+Use Caution/Monitor. Antipsychotics may diminish the therapeutic effect of antiparkinson's agents.
+methamphetamine
+bromocriptine, methamphetamine. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Hypertension, V tach.
+methylphenidate
+bromocriptine, methylphenidate. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Potential for additive CNS
+stimulation.
+metoclopramide
+metoclopramide decreases levels of bromocriptine by pharmacodynamic
+antagonism. Use Caution/Monitor. Avoid combination if possible.
+midazolam intranasal
+https://reference.medscape.com/drug/cycloset-parlodel-bromocriptine-343124
+
+16/30
+
+6/22/26, 6:34 AM
+
+Cycloset, Parlodel (bromocriptine) dosing, indications, interactions, adverse effects, and more
+
+bromocriptine will increase the level or effect of midazolam intranasal by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+Coadministration of mild CYP3A4 inhibitors with midazolam intranasal may cause
+higher midazolam systemic exposure, which may prolong sedation.
+midazolam intranasal, bromocriptine. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Concomitant use of
+barbiturates, alcohol, or other CNS depressants may increase the risk of
+hypoventilation, airway obstruction, desaturation, or apnea and may contribute to
+profound and/or prolonged drug effect.
+midodrine
+bromocriptine, midodrine. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Hypertension, V tach.
+mitotane
+mitotane decreases levels of bromocriptine by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Mitotane is a strong inducer of
+cytochrome P-4503A4; monitor when coadministered with CYP3A4 substrates for
+possible dosage adjustments.
+nafcillin
+nafcillin will decrease the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+nelfinavir
+nelfinavir increases levels of bromocriptine by decreasing metabolism. Use
+Caution/Monitor. Increased levels possibly due to CYP3A4 inhibition.
+norepinephrine
+bromocriptine, norepinephrine. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Hypertension, V tach.
+octreotide
+octreotide increases levels of bromocriptine by decreasing metabolism. Use
+Caution/Monitor. Somatropin may increase CYP450 enzymes and, therefore,
+suppression of growth hormone secretion by somatostatin analogs including
+pasireotide may decrease the metabolic clearance of compounds metabolized by
+CYP450 enzymes.
+pasireotide
+pasireotide increases levels of bromocriptine by decreasing metabolism. Use
+Caution/Monitor. Somatropin may increase CYP450 enzymes and, therefore,
+suppression of growth hormone secretion by somatostatin analogs including
+pasireotide may decrease the metabolic clearance of compounds metabolized by
+CYP450 enzymes.
+phenobarbital
+phenobarbital will decrease the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+phentermine
+https://reference.medscape.com/drug/cycloset-parlodel-bromocriptine-343124
+
+17/30
+
+6/22/26, 6:34 AM
+
+Cycloset, Parlodel (bromocriptine) dosing, indications, interactions, adverse effects, and more
+
+bromocriptine, phentermine. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Hypertension, V tach.
+phenylephrine
+bromocriptine, phenylephrine. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Hypertension, V tach.
+phenytoin
+phenytoin will decrease the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+pramipexole
+bromocriptine and pramipexole both increase dopaminergic effects. Use
+Caution/Monitor. Combining drugs may be therapeutic in patients with
+Parkinsonism.
+primidone
+primidone will decrease the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+pseudoephedrine
+bromocriptine, pseudoephedrine. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Hypertension, V tach.
+rifabutin
+rifabutin will decrease the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+rifampin
+rifampin will decrease the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+rifapentine
+rifapentine will decrease the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+ritonavir
+ritonavir increases levels of bromocriptine by decreasing metabolism. Use
+Caution/Monitor. Increased levels possibly due to CYP3A4 inhibition.
+ropinirole
+bromocriptine and ropinirole both increase dopaminergic effects. Use
+Caution/Monitor. Combining drugs may be therapeutic in patients with
+Parkinsonism.
+rucaparib
+rucaparib will increase the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Adjust dosage of CYP3A4 substrates, if clinically indicated.
+serdexmethylphenidate/dexmethylphenidate
+bromocriptine, serdexmethylphenidate/dexmethylphenidate. Either increases
+effects of the other by pharmacodynamic synergism. Use Caution/Monitor.
+https://reference.medscape.com/drug/cycloset-parlodel-bromocriptine-343124
+
+18/30
+
+6/22/26, 6:34 AM
+
+Cycloset, Parlodel (bromocriptine) dosing, indications, interactions, adverse effects, and more
+
+Hypertension, V tach.
+solriamfetol
+bromocriptine and solriamfetol both increase sympathetic (adrenergic) effects,
+including increased blood pressure and heart rate. Use Caution/Monitor.
+stiripentol
+stiripentol, bromocriptine. affecting hepatic/intestinal enzyme CYP3A4 metabolism.
+Modify Therapy/Monitor Closely. Stiripentol is a CYP3A4 inhibitor and inducer.
+Monitor CYP3A4 substrates coadministered with stiripentol for increased or
+decreased effects. CYP3A4 substrates may require dosage adjustment.
+tacrolimus
+bromocriptine increases levels of tacrolimus by decreasing metabolism. Use
+Caution/Monitor.
+tecovirimat
+tecovirimat will decrease the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Tecovirimat is
+a weak CYP3A4 inducer. Monitor sensitive CYP3A4 substrates for effectiveness if
+coadministered.
+tinidazole
+bromocriptine will increase the level or effect of tinidazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+tipranavir
+tipranavir increases levels of bromocriptine by decreasing metabolism. Use
+Caution/Monitor. Increased levels possibly due to CYP3A4 inhibition.
+Minor (7)
+acetazolamide
+acetazolamide will increase the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+anastrozole
+anastrozole will increase the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+cyclophosphamide
+cyclophosphamide will increase the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+drospirenone
+drospirenone will increase the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+larotrectinib
+larotrectinib will increase the level or effect of bromocriptine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+https://reference.medscape.com/drug/cycloset-parlodel-bromocriptine-343124
+
+19/30
+
+6/22/26, 6:34 AM
+
+Cycloset, Parlodel (bromocriptine) dosing, indications, interactions, adverse effects, and more
+
+ruxolitinib
+bromocriptine will increase the level or effect of ruxolitinib by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+ruxolitinib topical
+bromocriptine will increase the level or effect of ruxolitinib topical by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+Adverse Effects
+>10%
+Cycloset
+
+Monotherapy
+
+Nausea (32.5 %)
+Rhinitis (13.8%)
+Headache (12.5%)
+Asthenia (12.5%)
+Dizziness (12.5%)
+Constipation (11.3%)
+
+Adjunct to sulfonylurea
+Nausea (25.4%)
+
+Asthenia (18.9%)
+Headache (16.8%)
+Dizziness (11.9%)
+Rhinitis (10.7%)
+
+Adjunct to diet or ≤2 antidiabetic medications (eg, metformin, insulin
+secretagogues, and/or insulin)
+Nausea (32.2%)
+
+Dizziness (14.8%)
+Fatigue (13.9%)
+Headache (11.4%)
+
+Parlodel
+
+Hyperprolactinemic indications
+Nausea (49%)
+
+Headache (19%)
+Dizziness (17%)
+
+Acromegaly
+https://reference.medscape.com/drug/cycloset-parlodel-bromocriptine-343124
+
+20/30
+
+6/22/26, 6:34 AM
+
+Cycloset, Parlodel (bromocriptine) dosing, indications, interactions, adverse effects, and more
+
+Nausea (18%)
+Constipation (14%)
+
+1-10%
+Cycloset
+
+Monotherapy
+
+Sinusitis (10%)
+Diarrhea (8.8%)
+Amblyopia (7.5%)
+Dyspepsia (7.5%)
+Vomiting (6.3%)
+Infection (6.3%)
+Anorexia (5%)
+
+Adjunct to sulfonylurea
+Constipation (9.8%)
+
+Flu syndrome (9.4%)
+Cold (8.2%)
+Sinusitis (7.4%)
+Somnolence (6.6%)
+Vomiting (5.3%)
+Amblyopia (5.3%)
+
+Adjunct to diet or ≤2 antidiabetic medications (eg, metformin, insulin
+secretagogues, and/or insulin)
+Vomiting (8.1%)
+Diarrhea (8.1%)
+Constipation (5.8%)
+
+Parlodel
+
+Hyperprolactinemic indications
+Fatigue (7%)
+
+Lightheadedness (5%)
+Vomiting (5%)
+Abdominal cramps (4%)
+Nasal congestion (3%)
+Constipation (3%)
+Diarrhea (3%)
+Drowsiness (3%)
+
+Acromegaly
+https://reference.medscape.com/drug/cycloset-parlodel-bromocriptine-343124
+
+21/30
+
+6/22/26, 6:34 AM
+
+Cycloset, Parlodel (bromocriptine) dosing, indications, interactions, adverse effects, and more
+
+Postural/orthostatic hypotension (6%)
+Anorexia (4%)
+Dry mouth/nasal stuffiness (4%)
+Indigestion/dyspepsia (4%)
+Digital vasospasm (3%)
+Drowsiness/tiredness (3%)
+Vomiting (2%)
+Gastrointestinal bleeding (<2%)
+Dizziness (<2%)
+Exacerbation of Raynaud syndrome (<2%)
+Headache (<2%)
+Syncope (<2%)
+
+Postpartum
+
+Headache (10%)
+Dizziness (8%)
+Nausea (7%)
+Vomiting (3%)
+Fatigue (1%)
+
+<1%
+Parlodel
+
+Postpartum
+
+Syncope (0.7%)
+Diarrhea (0.4%)
+Cramps (0.4%)
+
+Frequency Not Defined
+Parlodel
+
+Parkinson disease
+
+Most common: Nausea, abnormal involuntary movements, hallucinations,
+confusion, “on-off’’ phenomenon, dizziness, drowsiness, faintness/fainting,
+vomiting, asthenia, abdominal discomfort, visual disturbance, ataxia, insomnia,
+depression, hypotension, shortness of breath, constipation, and vertigo
+Less common: Anorexia, anxiety, blepharospasm, dry mouth, dysphagia,
+edema of the feet and ankles, erythromelalgia, epileptiform seizure, fatigue,
+headache, lethargy, mottling of skin, nasal stuffiness, nervousness,
+nightmares, paresthesia, skin rash, urinary frequency, urinary incontinence,
+urinary retention, and rarely, signs and symptoms of ergotism such as tingling
+
+https://reference.medscape.com/drug/cycloset-parlodel-bromocriptine-343124
+
+22/30
+
+6/22/26, 6:34 AM
+
+Cycloset, Parlodel (bromocriptine) dosing, indications, interactions, adverse effects, and more
+
+of fingers, cold feet, numbness, muscle cramps of feet and legs or
+exacerbation of Raynaud syndrome
+
+Postmarketing Experience
+Cycloset
+Hallucinations
+Fibrotic-related complications (eg, retroperitoneal fibrosis, pulmonary fibrosis,
+pleural effusion, pleural thickening, pericarditis, and pericardial effusions)
+Psychotic and psychiatric disorders
+Stroke
+Neuroleptic-like malignant syndrome
+Hypertension, myocardial infarction, seizures
+Parlodel
+Psychiatric disorders: Confusion, psychomotor agitation/excitation, hallucinations,
+psychotic disorders, insomnia, libido increase, hypersexuality
+Nervous system disorders: Headache, drowsiness, dizziness, dyskinesia,
+somnolence, paraesthesia, excess daytime somnolence, sudden onset of sleep
+Eye disorders: Visual disturbance, vision blurred
+Ear and labyrinth disorders: Tinnitus
+Cardiac disorders: Pericardial effusion, constrictive pericarditis, tachycardia,
+bradycardia, arrhythmia, cardiac valve fibrosis
+Vascular disorders: Hypotension, orthostatic hypotension (very rarely leading to
+syncope), reversible pallor of fingers and toes induced by cold (especially in
+patients with history of Raynaud phenomenon)
+Respiratory, thoracic and mediastinal disorders: Nasal congestion, pleural effusion,
+pleural fibrosis, pleurisy, pulmonary fibrosis, dyspnea
+Gastrointestinal disorders: Nausea, constipation, vomiting, dry mouth, diarrhoea,
+abdominal pain, retroperitoneal fibrosis, gastrointestinal ulcer, gastrointestinal
+hemorrhage
+Skin and subcutaneous tissue disorders: Allergic skin reactions, hair loss
+Musculoskeletal and connective tissue disorders: Leg cramps
+General disorders and administration site conditions: Fatigue, peripheral edema,
+apathy, anxiety, depression, insomnia, sweating, pain, a syndrome resembling
+Neuroleptic Malignant Syndrome (NMS) on abrupt withdrawal of Parlodel
+
+Warnings
+Contraindications
+Parlodel
+
+https://reference.medscape.com/drug/cycloset-parlodel-bromocriptine-343124
+
+23/30
+
+6/22/26, 6:34 AM
+
+Cycloset, Parlodel (bromocriptine) dosing, indications, interactions, adverse effects, and more
+
+Hypersensitivity to bromocriptine, ergot-related drugs, or to any of the excipients in
+Parlodel
+Uncontrolled hypertension
+Pregnancy in patients treated for hyperprolactinemia (see Pregnancy)
+Postpartum period in women with a history of coronary artery disease and other
+severe cardiovascular conditions
+Cycloset
+Hypersensitivity to bromocriptine, ergot-related drugs, or any of the excipients in
+Cycloset
+Syncopal migraine
+Women who are nursing (see Lactation)
+Postpartum patients
+Cautions
+Dosage forms for Cycloset and Parlodel and not interchangeable
+Discontinuation of treatment should be undertaken gradually whenever possible, even if
+patient is to remain on levodopa; a symptom complex resembling the neuroleptic
+malignant syndrome (characterized by elevated temperature, muscular rigidity, altered
+consciousness, and autonomic instability), with no other obvious etiology, reported in
+association with rapid dose reduction, withdrawal of, or changes in antiparkinsonian
+therapy
+Use with caution in patients with cardiovascular disease, dementia, hepatic impairment,
+and peptic ulcer disease
+Symptoms including apathy, anxiety, depression, fatigue, insomnia, sweating, and pain
+reported during taper or after discontinuation of dopamine agonists; these symptoms
+generally do not respond to levodopa; prior to discontinuation of therapy, patients
+should be informed about potential withdrawal symptoms, and closely monitored during
+and after discontinuation of treatment; in case of severe withdrawal symptoms, readministration of a dopamine agonist at lowest effective dose may be considered
+Somnolence
+Somnolence, and episodes of sudden sleep onset has been reported, particularly in
+patients with Parkinson’s disease
+Inform and advise not to drive or operate machines during treatment; dose
+reduction or termination of therapy may be considered
+During the first days of treatment, hypotensive reactions may occasionally occur
+and result in reduced alertness, particular care should be exercised when driving a
+vehicle or operating machinery
+Parlodel
+Avoid use in patients with galactose intolerance, severe lactase deficiency, or
+glucose-galactose malabsorption
+Used with caution in patients with a history of psychosis or cardiovascular disease
+https://reference.medscape.com/drug/cycloset-parlodel-bromocriptine-343124
+
+24/30
+
+6/22/26, 6:34 AM
+
+Cycloset, Parlodel (bromocriptine) dosing, indications, interactions, adverse effects, and more
+
+In patients undergoing treatment for macroadenoma-related hyperprolactinemia or
+who have undergone transsphenoidal surgery, a persistent watery nasal discharge
+may be sign of CSF rhinorrhea
+Visual field impairment is a known complication of macroprolactinoma; Parlodel
+therapy may lead to a reduction in hyperprolactinemia and often to a resolution of
+the visual impairment; monitor visual fields in patients with macroprolactinoma
+Cold-sensitive digital vasospasm has been observed in some acromegalic patients;
+response is reversible by dose reduction of Parlodel and may be prevented by
+keeping the fingers warm
+Cases of severe gastrointestinal bleeding from peptic ulcers have been reported;
+patients with a history of peptic ulcer or gastrointestinal bleeding should be
+observed carefully during treatment with Parlodel
+Possible tumor expansion while receiving Parlodel therapy has been reported; all
+patients should be carefully monitored and, if evidence of tumor expansion
+develops, discontinuation of treatment and alternative procedures considered
+High doses of Parlodel may be associated with confusion and mental disturbances;
+parkinsonian patients may manifest mild degrees of dementia, caution should be
+used when treating such patients
+Auditory or visual hallucinations may occur when administered alone or
+concomitantly with levodopa; hallucinations usually resolve with dosage reduction;
+occasionally, discontinue therapy
+Postmarketing reports suggest that patients treated with anti-Parkinson
+medications can experience intense urges to gamble, increased sexual urges,
+intense urges to spend money uncontrollably, and other intense urges
+History of MI and a residual atrial, nodal or ventricular arrhythmia, especially with
+Parkinson disease
+Retroperitoneal fibrosis has been reported in a few patients receiving long-term
+therapy
+Use of drug for prevention of physiological lactation not recommended
+
+Hypertension
+
+Hypertension have been reported, sometimes at the initiation of therapy, but
+often developing in the second week of therapy; periodic blood pressure
+monitoring, during the first weeks of therapy is prudent
+Seizures have also been reported both with and without the prior
+development of hypertension; stroke have been reported mostly in postpartum
+patients whose prenatal and obstetric courses had been uncomplicated
+Use of the drug in patients with uncontrolled hypertension is not
+recommended (see Contraindications [Parlodel])
+Exercise caution when administering Parlodel therapy concomitantly with
+other medications known to lower blood pressure
+If hypertension, severe, progressive, or unremitting headache (with or without
+visual disturbance), or evidence of CNS toxicity develops, evaluate patient and
+therapy should be discontinued
+
+Parkinson’s disease
+
+Hallucinations: occasionally, discontinuation of therapy is required; rarely, after
+high doses, hallucinations have persisted for several weeks following
+discontinuation of drug
+
+https://reference.medscape.com/drug/cycloset-parlodel-bromocriptine-343124
+
+25/30
+
+6/22/26, 6:34 AM
+
+Cycloset, Parlodel (bromocriptine) dosing, indications, interactions, adverse effects, and more
+
+Fibrosis: Retroperitoneal fibrosis has been reported in a few patients receiving
+long-term therapy (2 to 10 years) with drug in doses ranging from 30-140 mg
+daily
+Safety during long-term use for more than 2 years at the doses required for
+parkinsonism has not been established
+As with any chronic therapy, periodic evaluation of hepatic, hematopoietic,
+cardiovascular, and renal function is recommended; symptomatic hypotension
+can occur and, therefore, caution should be exercised when treating patients
+receiving antihypertensive drugs
+As with levodopa, caution should be exercised when administering therapy to
+patients with a history of myocardial infarction who have a residual atrial,
+nodal, or ventricular arrhythmia
+
+Melanoma
+
+Epidemiological studies have shown that patients with Parkinson’s disease
+have a higher risk (2- approximately 6-fold higher) of developing melanoma
+than the general population
+Whether the increased risk observed was due to Parkinson’s disease or other
+factors, such as drugs used to treat Parkinson’s disease, is unclear
+Patients and providers are advised to monitor for melanomas frequently and
+on a regular basis when using drug for any indication
+Ideally, periodic skin examinations should be performed by appropriately
+qualified individuals (eg, dermatologists)
+
+Cycloset
+Somnolence may occur; inform patients should be made aware of this potential side
+effect, particularly when initiating therapy; patients experiencing somnolence
+should refrain from driving or operating heavy machinery
+Fibrotic valve thickening (eg, aortic, mitral, tricuspid), possibly due to excess
+serotonin activity, usually associated with long-term, chronic use of ergot alkaloids
+and derivatives reported
+Serious and life-threatening adverse reactions including hypertension, myocardial
+infarction, seizures, stroke and psychosis reported postmarketing in postpartum
+women administered treatment for inhibition of lactation
+
+Dopamine receptor antagonists
+
+Dopamine receptor antagonists, including neuroleptic agents that have
+dopamine D2 receptor antagonist properties (eg, clozapine, olanzapine,
+ziprasidone), may reduce the effectiveness of Cycloset and Cycloset may
+reduce the effectiveness of these agents; concomitant use with dopamine
+receptor antagonists, including neuroleptic drugs, is not recommended
+Other dopamine receptor agonists are indicated for the treatment of
+Parkinson’s disease, hyperprolactinemia, restless leg syndrome, acromegaly,
+and other disorders; effectiveness and safety of Cycloset in patients currently
+treated with other dopamine receptor agonists is unknown; concomitant use is
+not recommended
+
+Hypotension
+https://reference.medscape.com/drug/cycloset-parlodel-bromocriptine-343124
+
+26/30
+
+6/22/26, 6:34 AM
+
+Cycloset, Parlodel (bromocriptine) dosing, indications, interactions, adverse effects, and more
+
+Hypotension, including orthostatic hypotension, can occur, particularly upon
+Cycloset initiation and with dose escalation
+Assess orthostatic vital signs prior to initiation of Cycloset and periodically
+thereafter; during early treatment, patients should be advised to make slow
+postural changes and to avoid situations that could lead to serious injury if
+syncope was to occur
+Use caution in patients taking anti-hypertensive medication
+
+Pregnancy & Lactation
+Pregnancy
+Parlodel
+Safety of Parlodel treatment during pregnancy to the mother and fetus has not
+been established
+If pregnancy occurs during Parlodel administration, careful observation of these
+patients is mandatory
+Prolactin-secreting adenomas may expand and compression of optic/other cranial
+nerves may occur, emergency pituitary surgery becoming necessary; in most cases,
+the compression resolves following delivery
+Reinitiation of Parlodel treatment has been reported to produce improvement in the
+visual fields of patients in whom nerve compression has occurred during pregnancy
+In patients being treated for hyperprolactinemia, Parlodel should be withdrawn
+when pregnancy is diagnosed
+
+Acromegaly, prolactinoma, or Parkinson disease
+
+Patients who subsequently become pregnant, determine whether continuing
+therapy is medically necessary or can discontinues
+If it is continued, discontinue therapy in those who may experience
+hypertensive disorders of pregnancy (including eclampsia, preeclampsia, or
+pregnancy-induced hypertension) unless withdrawal of Parlodel is considered
+to be medically contraindicated
+
+Cycloset
+There are no available data on use in pregnant women with type 2 diabetes; prolonged
+experience with bromocriptine use in pregnant women for other indications over several
+decades, based on data from published clinical trials, case reports, and epidemiological
+studies, have not established a drug-associated risk for major birth defects, miscarriage,
+or adverse maternal or fetal outcomes
+Only a trace amount of bromocriptine was shown to be transported across placenta in
+vitro in a published ex vivo human placental perfusion model; there are risks to mother
+and fetus associated with poorly controlled diabetes in pregnancy; should be used
+during pregnancy only if clearly necessary
+
+https://reference.medscape.com/drug/cycloset-parlodel-bromocriptine-343124
+
+27/30
+
+6/22/26, 6:34 AM
+
+Cycloset, Parlodel (bromocriptine) dosing, indications, interactions, adverse effects, and more
+
+Animal data
+Studies in which bromocriptine mesylate was administered orally during
+period of organogenesis, increased prenatal mortality occurred in rats and
+rabbits at maternally toxic dosages that were more than 24-times human dose
+of 4.8 mg/day based on body surface area; no adverse developmental
+outcomes were observed in monkeys administered bromocriptine mesylate
+orally during various periods of gestation at doses up to 10-times a human
+dose of 4.8 mg daily
+Poorly controlled diabetes in pregnancy increases maternal risk for diabetic
+ketoacidosis, pre-eclampsia, spontaneous abortions, preterm delivery, and
+delivery complications; poorly controlled diabetes increases fetal risk for major
+birth defects, stillbirth, and macrosomia related morbidity
+
+Lactation
+Parlodel: Avoid use during lactation in postpartum women
+Cycloset
+Cycloset is contraindicated in women who are nursing
+Serious and life-threatening adverse reactions including hypertension, myocardial
+infarction, seizures, stroke, and psychosis reported postmarketing in postpartum
+women who were administered bromocriptine for inhibition of lactation; indication
+for use of bromocriptine for inhibition of lactation was withdrawn from
+bromocriptine- containing products
+Pregnancy Categories
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+NA: Information not available.
+
+Pharmacology
+Mechanism of Action
+Parlodel: Semisynthetic ergot alkaloid, dopamine receptor agonist, inhibits prolactin
+secretion, and lowers blood levels of growth hormone in acromegaly
+https://reference.medscape.com/drug/cycloset-parlodel-bromocriptine-343124
+
+28/30
+
+6/22/26, 6:34 AM
+
+Cycloset, Parlodel (bromocriptine) dosing, indications, interactions, adverse effects, and more
+
+Cycloset: Mechanism of action is unknown; bromocriptine is believed to act on circadian
+neuronal activities within the hypothalamus to reset abnormally elevated hypothalamic
+drive for increased plasma glucose, triglyceride, and free fatty acid levels in fasting and
+postprandial states in patients with insulin-resistant
+Absorption
+Peak plasma concentration (Parlodel): 465 pg/mL (2 doses of 2.5 mg); 628 pg/mL
+(steady state)
+AUC steady state (Parlodel): 2377 pg·hr/mL
+Peak plasma time (Cycloset): 53 minutes (fasted); 90-120 minutes (high-fat meal)
+Bioavailability (Cycloset): 55-66%
+Distribution
+Protein bound (Parlodel): 90-96% (to albumin)
+Vd (Cycloset): 61L
+Metabolism
+Parlodel: Primarily hepatic via CYP3A; extensive first-pass biotransformation
+Cycloset: Metabolism by; absorbed dose (~93%) undergoes first-pass metabolism and
+the remaining reaches the systemic circulation
+Elimination
+Half-life: 4.85 hr (Parlodel); 6 hr (Cycloset)
+Excretion: Feces (~82%); urine (2-6%)
+
+Administration
+Oral Administration
+Parlodel
+Take with food
+Cycloset
+Take with food; administer within 2 hours after waking in the morning
+If dose missed, wait until the next morning to take medication
+Storage
+Cycloset and Parlodel: Store ≤25°C (77°F)
+
+https://reference.medscape.com/drug/cycloset-parlodel-bromocriptine-343124
+
+29/30
+
+6/22/26, 6:34 AM
+
+Cycloset, Parlodel (bromocriptine) dosing, indications, interactions, adverse effects, and more
+
+Parlodel: Store in tight, light-resistant container
+
+Formulary
+Adding plans allows you to compare formulary status to other drugs in the same class.
+Formulary information is available for health plans only in the United States.
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/cycloset-parlodel-bromocriptine-343124
+
+30/30
+
+

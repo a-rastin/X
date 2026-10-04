@@ -1,0 +1,602 @@
+This site is intended for healthcare professionals
+famotidine (Rx, OTC)
+Brand and Other Names: Pepcid AC, Zantac 360
+Classes: Histamine H2 Antagonists
+Dosing & Uses
+ADULT
+Dosage Forms & Strengths
+solution intravenous (Rx)
+10mg/mL
+4mg/mL
+0.4mg/mL
+oral suspension (Rx)
+40mg/5mL (generic)
+tablet (OTC)
+10mg (Pepcid AC, Zantac 360, generic)
+20mg (Pepcid AC, Zantac 360, generic)
+40mg (Pepcid AC, generic)
+Duodenal Ulcer
+Acute treatment: 20 mg PO/IV q12hr or 40 mg PO at bedtime for 8 weeks
+Maintenance: 20 mg PO at bedtime
+Reduction of recurrence risk: 20 mg PO qDay for 1 year or as clinically indicated
+Benign Gastric Ulcer
+40 mg PO at bedtime up to 8 weeks
+6/22/26, 5:31 PM
+Pepcid AC, Zantac 360 (famotidine) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/pepcid-ac-zantac-360-famotidine-341989
+1/15
+
+Gastroesophageal Reflux Disease
+Nonerosive: 20 mg q12hr; up to 6 weeks
+Erosive diagnosed by endoscopy: 20-40 mg PO q12hr for up to 12 weeks
+Hypersecretory Conditions
+20 mg PO/IV q6hr; may increase up to 160 mg q6hr
+Heartburn
+10-20 mg q12 hr; may take 15-60 min before eating foods that could cause heartburn
+Dosing Modifications
+CrCl <50 mL/min: Give 50% of usual dose, or prolong dosing interval to q36-48hr
+PEDIATRIC
+Dosage Forms & Strengths
+solution intravenous
+10mg/mL
+4mg/mL
+0.4mg/mL
+oral suspension
+40mg/5mL (generic)
+tablet
+10mg (Pepcid AC, Zantac 360, generic)
+20mg (Pepcid AC, Zantac 360, generic)
+40mg (Pepcid AC, generic)
+Peptic Ulcer
+1-17 years: 0.25 mg/kg IV q12hr or 0.5 mg/kg PO at bedtime; may increase to 1 mg/kg
+once daily at bedtime or 0.5 mg/kg twice daily for up to 8 weeks; not to exceed 40
+6/22/26, 5:31 PM
+Pepcid AC, Zantac 360 (famotidine) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/pepcid-ac-zantac-360-famotidine-341989
+2/15
+
+Interactions
+Interaction Checker
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and famotidine
+No Interactions Found
+Interactions Found
+Contraindicated
+Serious
+Significant - Monitor Closely
+Minor
+All Interactions Sort By: Severity
+Contraindicated (0)
+Serious (25)
+atazanavir
+famotidine will decrease the level or effect of atazanavir by increasing gastric pH.
+Applies only to oral form of both agents. Avoid or Use Alternate Drug. Atazanavir
+solubility decreases as pH increases. Substantially reduced plasma concentrations
+of atazanavir are expected if H2-receptor antagonists (H2RA) are coadministered.
+mg/day 
+Gastroesophageal Reflux Disease
+<3 months: 0.5 mg/kg PO once daily; may increase to 1 mg/kg once daily for up to 8
+weeks 
+3-12 months: 0.5 mg/kg PO q12hr; may increase to 1 mg/kg twice daily; for up to 8
+weeks; not to exceed 40 mg/day
+1-17 years with or without esophagitis and ulceration: 0.5 mg/kg twice daily; for 6-12
+weeks; not to exceed 40 mg twice daily
+Heartburn
+<12 years: Not established
+>12 years: 10-20 mg q12 hr; may take 15-60 min before eating foods that could cause
+heartburn
+6/22/26, 5:31 PM
+Pepcid AC, Zantac 360 (famotidine) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/pepcid-ac-zantac-360-famotidine-341989
+3/15
+
+For treatment-naïve patients, take atazanavir simultaneously with the H2RA or at
+least 10 h afterwards. See dosage adjustment recommendations if coadministered
+in treatment-experienced patients.
+bosutinib
+famotidine will decrease the level or effect of bosutinib by increasing gastric pH.
+Applies only to oral form of both agents. Avoid or Use Alternate Drug.
+dapsone
+famotidine will decrease the level or effect of dapsone by increasing gastric pH.
+Applies only to oral form of both agents. Avoid or Use Alternate Drug.
+dasatinib
+famotidine will decrease the level or effect of dasatinib by increasing gastric pH.
+Applies only to oral form of both agents. Avoid or Use Alternate Drug.
+defactinib
+famotidine decreases levels of defactinib by increasing gastric pH. Applies only to
+oral form of both agents. Avoid or Use Alternate Drug. Defactinib exposure may
+decrease when coadministered with gastric acid reducing agents, (eg, H2-blockers).
+If concomitant use cannot be avoided, separate administration by at least 2 hr.
+digoxin
+famotidine will increase the level or effect of digoxin by increasing gastric pH.
+Applies only to oral form of both agents. Avoid or Use Alternate Drug.
+infigratinib (DSC)
+famotidine will decrease the level or effect of infigratinib (DSC) by inhibition of GI
+absorption. Applies only to oral form of both agents. Avoid or Use Alternate Drug. If
+use with an acid-reducing agent cannot be avoided, administer infigratinib 2 hr
+before or 10 hr after administration of a H2-antagonist.
+itraconazole
+famotidine will decrease the level or effect of itraconazole by increasing gastric pH.
+Applies only to oral form of both agents. Avoid or Use Alternate Drug.
+ketoconazole
+famotidine will decrease the level or effect of ketoconazole by increasing gastric pH.
+Applies only to oral form of both agents. Avoid or Use Alternate Drug.
+levoketoconazole
+famotidine will decrease the level or effect of levoketoconazole by increasing
+gastric pH. Applies only to oral form of both agents. Avoid or Use Alternate Drug.
+mefloquine
+mefloquine increases toxicity of famotidine by QTc interval. Avoid or Use Alternate
+Drug. Mefloquine may enhance the QTc prolonging effect of high risk QTc
+prolonging agents.
+neratinib
+famotidine will decrease the level or effect of neratinib by increasing gastric pH.
+Applies only to oral form of both agents. Avoid or Use Alternate Drug.
+6/22/26, 5:31 PM
+Pepcid AC, Zantac 360 (famotidine) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/pepcid-ac-zantac-360-famotidine-341989
+4/15
+
+pazopanib
+famotidine will decrease the level or effect of pazopanib by increasing gastric pH.
+Applies only to oral form of both agents. Avoid or Use Alternate Drug. Avoid
+coadministration of pazopanib with drugs that raise gastric pH; consider short-
+acting antacids in place of PPIs and H2 antagonists; separate antacid and
+pazopanib dosing by several hours
+pexidartinib
+famotidine will increase the level or effect of pexidartinib by inhibition of GI
+absorption. Applies only to oral form of both agents. Avoid or Use Alternate Drug.
+Separate pexidartinib by 2 hr before or 10 hr after taking an H2-antagonist.
+pimozide
+famotidine, pimozide. Either increases toxicity of the other by QTc interval. Avoid or
+Use Alternate Drug.
+pimozide, famotidine. Either increases toxicity of the other by QTc interval. Avoid or
+Use Alternate Drug.
+ponatinib
+famotidine decreases levels of ponatinib by increasing gastric pH. Applies only to
+oral form of both agents. Avoid or Use Alternate Drug.
+risedronate
+famotidine will increase the level or effect of risedronate by increasing gastric pH.
+Applies only to oral form of both agents. Avoid or Use Alternate Drug. Applies only
+to delayed release formulation; accelerates pH-sensitive dissolution of delayed
+release risedronate
+secretin
+famotidine, secretin. Other (see comment). Avoid or Use Alternate Drug. Comment:
+Concomitant use of H2-receptor antagonists may cause a hyperresponse in gastrin
+secretion in response to stimulation testing with secretin, falsely suggesting
+gastrinoma. Discontinue H2-receptor antagonists at least 2 days before
+administering secretin to aid in the diagnosis of gastrinoma.
+sotorasib
+famotidine will decrease the level or effect of sotorasib by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. If use
+with an acid-reducing agent cannot be avoided, administer sotorasib 4 hr before or
+10 hr after administration of a locally-acting antacid.
+sparsentan
+famotidine decreases effects of sparsentan by increasing gastric pH. Applies only to
+oral form of both agents. Avoid or Use Alternate Drug. H2-antagonists may
+decrease sparsentan exposure which may reduce efficacy of sparsentan.
+tafenoquine
+tafenoquine will increase the level or effect of famotidine by Other (see comment).
+Avoid or Use Alternate Drug. Tafenoquine inhibits organic cation transporter-2
+(OCT2) and multidrug and toxin extrusion (MATE) transporters in vitro. Avoid
+coadministration with OCT2 or MATE substrates. If coadministration cannot be
+6/22/26, 5:31 PM
+Pepcid AC, Zantac 360 (famotidine) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/pepcid-ac-zantac-360-famotidine-341989
+5/15
+
+avoided, monitor for substrate-related toxicities and consider dosage reduction if
+needed based on product labeling of the coadministered drug.
+taletrectinib
+famotidine decreases levels of taletrectinib by increasing gastric pH. Applies only to
+oral form of both agents. Avoid or Use Alternate Drug.
+trilaciclib
+trilaciclib will decrease the level or effect of famotidine by Other (see comment).
+Avoid or Use Alternate Drug. Avoid coadministration of trilaciclib (OCT2, MATE1,
+and MATE-2K inhibitor) with substrates where minimal increased concentration in
+kidney or blood may lead to serious or life-threatening toxicities.
+vandetanib
+famotidine, vandetanib. Either increases toxicity of the other by QTc interval. Avoid
+or Use Alternate Drug.
+vandetanib, famotidine. Either increases toxicity of the other by QTc interval. Avoid
+or Use Alternate Drug.
+ziftomenib
+famotidine decreases levels of ziftomenib by unspecified interaction mechanism.
+Avoid or Use Alternate Drug. If unable to avoid, administer ziftomenib 2 hours
+before or 10 hours after administration of an H2 receptor antagonist.
+Monitor Closely (44)
+acalabrutinib
+famotidine decreases levels of acalabrutinib by increasing gastric pH. Applies only
+to oral form of both agents. Modify Therapy/Monitor Closely. Acalabrutinib
+solubility decreases with increasing gastric pH. Administer acalabrutinib 2 hr before
+an H2-receptor antagonist.
+budesonide
+famotidine decreases effects of budesonide by increasing gastric pH. Applies only
+to oral form of both agents. Modify Therapy/Monitor Closely. Enteric-coated
+budesonide dissolves at pH >5.5. Also, dissolution of extended-release budesonide
+tablets is pH dependent. Coadministration with drugs that increase gastric pH may
+cause these budesonide products to prematurely dissolve, and possibly affect
+release properties and absorption of the drug in the duodenum.
+carbonyl iron
+famotidine will decrease the level or effect of carbonyl iron by increasing gastric pH.
+Applies only to oral form of both agents. Use Caution/Monitor.
+cefdinir
+famotidine will decrease the level or effect of cefdinir by increasing gastric pH.
+Applies only to oral form of both agents. Use Caution/Monitor.
+cefditoren
+famotidine will decrease the level or effect of cefditoren by increasing gastric pH.
+6/22/26, 5:31 PM
+Pepcid AC, Zantac 360 (famotidine) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/pepcid-ac-zantac-360-famotidine-341989
+6/15
+
+Applies only to oral form of both agents. Use Caution/Monitor.
+cefpodoxime
+famotidine will decrease the level or effect of cefpodoxime by increasing gastric pH.
+Applies only to oral form of both agents. Use Caution/Monitor.
+cefuroxime
+famotidine will decrease the level or effect of cefuroxime by increasing gastric pH.
+Applies only to oral form of both agents. Use Caution/Monitor.
+crizotinib
+famotidine decreases levels of crizotinib by increasing gastric pH. Applies only to
+oral form of both agents. Use Caution/Monitor. Drugs that elevate the gastric pH
+may decrease the solubility of crizotinib and subsequently reduce its bioavailability.
+However, no formal studies have been conducted. .
+cyclosporine
+famotidine will increase the level or effect of cyclosporine by unknown mechanism.
+Use Caution/Monitor. Delayed resorption of cyclosporine has been reported when
+famotidine is coadministered with cyclosporine.
+dabrafenib
+famotidine will decrease the level or effect of dabrafenib by increasing gastric pH.
+Applies only to oral form of both agents. Use Caution/Monitor. Drugs that alter
+upper GI tract pH (eg, PPIs, H2-blockers, antacids) may decrease dabrafenib
+solubility and reduce its bioavailability
+dexmethylphenidate
+famotidine will increase the level or effect of dexmethylphenidate by increasing
+gastric pH. Applies only to oral form of both agents. Modify Therapy/Monitor
+Closely. Applies only to extended release formulation
+dordaviprone
+dordaviprone and famotidine both increase QTc interval. Use Caution/Monitor.
+Increase the frequency of ECG and electrolyte monitoring.
+erdafitinib
+famotidine increases levels of erdafitinib by decreasing renal clearance. Modify
+Therapy/Monitor Closely. Consider alternatives that are not OCT2 substrates or
+consider reducing the dose of OCT2 substrates based on tolerability.
+erlotinib
+famotidine decreases levels of erlotinib by increasing gastric pH. Applies only to
+oral form of both agents. Modify Therapy/Monitor Closely. Separate administration
+by taking erlotinib 2 hr before or 10 hr after H2 blockers. Coadministration of H2-
+blockers and erlotinib may decrease erlotinib exposure and reduce its efficacy.
+ferric maltol
+famotidine will decrease the level or effect of ferric maltol by increasing gastric pH.
+Applies only to oral form of both agents. Use Caution/Monitor.
+ferrous fumarate
+6/22/26, 5:31 PM
+Pepcid AC, Zantac 360 (famotidine) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/pepcid-ac-zantac-360-famotidine-341989
+7/15
+
+famotidine will decrease the level or effect of ferrous fumarate by increasing gastric
+pH. Applies only to oral form of both agents. Use Caution/Monitor.
+ferrous gluconate
+famotidine will decrease the level or effect of ferrous gluconate by increasing
+gastric pH. Applies only to oral form of both agents. Use Caution/Monitor.
+ferrous sulfate
+famotidine will decrease the level or effect of ferrous sulfate by increasing gastric
+pH. Applies only to oral form of both agents. Use Caution/Monitor.
+fosamprenavir
+famotidine will decrease the level or effect of fosamprenavir by increasing gastric
+pH. Applies only to oral form of both agents. Use Caution/Monitor.
+gefitinib
+famotidine decreases levels of gefitinib by increasing gastric pH. Applies only to
+oral form of both agents. Use Caution/Monitor. Separate gefitinib and H2-
+antagonist doses by at least 6 hr.
+glipizide
+famotidine will increase the level or effect of glipizide by increasing gastric pH.
+Applies only to oral form of both agents. Use Caution/Monitor.
+glyburide
+famotidine will increase the level or effect of glyburide by increasing gastric pH.
+Applies only to oral form of both agents. Use Caution/Monitor.
+iron dextran complex
+famotidine will decrease the level or effect of iron dextran complex by increasing
+gastric pH. Applies only to oral form of both agents. Use Caution/Monitor.
+iron sucrose
+famotidine will decrease the level or effect of iron sucrose by increasing gastric pH.
+Applies only to oral form of both agents. Use Caution/Monitor.
+ledipasvir/sofosbuvir
+famotidine decreases levels of ledipasvir/sofosbuvir by Other (see comment). Use
+Caution/Monitor. Comment: Ledipasvir solubility decreases as pH increases; drugs
+that increase gastric pH are expected to decrease levels of ledipasvir; H2-receptor
+antagonists may be administered simultaneously with or 12 hr apart from
+ledipasvir/sofosbuvir at a dose that does not exceed doses comparable to
+famotidine 40 mg BID.
+mesalamine
+famotidine will decrease the level or effect of mesalamine by increasing gastric pH.
+Applies only to oral form of both agents. Modify Therapy/Monitor Closely.
+metformin
+famotidine increases levels of metformin by Other (see comment). Use
+Caution/Monitor. Comment: Famotidine inhibits multidrug and toxin extrusion
+6/22/26, 5:31 PM
+Pepcid AC, Zantac 360 (famotidine) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/pepcid-ac-zantac-360-famotidine-341989
+8/15
+
+(MATE) transporter 1, possibly increasing exposure to metformin. Monitor for
+metformin-related toxicities, including lactic acidosis.
+methylphenidate
+famotidine will increase the level or effect of methylphenidate by increasing gastric
+pH. Applies only to oral form of both agents. Modify Therapy/Monitor Closely.
+Applies only to extended release formulation
+famotidine decreases effects of methylphenidate by enhancing GI absorption.
+Applies only to oral form of both agents. Modify Therapy/Monitor Closely. Since the
+characteristics of methylphenidate extended release capsules (Ritalin LA) are pH
+dependent, coadministration of antacids or acid suppressants could alter the
+release of methylphenidate. Consider separating the administration of the antacid
+and the methylphenidate extended-release capsules may be avoided.
+mifepristone
+famotidine, mifepristone. Either increases toxicity of the other by QTc interval. Use
+Caution/Monitor.
+mifepristone, famotidine. Either increases toxicity of the other by QTc interval. Use
+Caution/Monitor.
+mycophenolate
+famotidine will decrease the level or effect of mycophenolate by increasing gastric
+pH. Applies only to oral form of both agents. Use Caution/Monitor.
+nelfinavir
+famotidine will decrease the level or effect of nelfinavir by increasing gastric pH.
+Applies only to oral form of both agents. Use Caution/Monitor.
+nilotinib
+famotidine decreases levels of nilotinib by increasing gastric pH. Applies only to
+oral form of both agents. Modify Therapy/Monitor Closely. Avoid this interaction by
+administering H2 antagonists 10 hr after or 2 hr before nilotinib (ODT nilotinib
+tablets not affected by PPIs, H2-blockers, or antacids).
+polysaccharide iron
+famotidine will decrease the level or effect of polysaccharide iron by increasing
+gastric pH. Applies only to oral form of both agents. Use Caution/Monitor.
+posaconazole
+famotidine will decrease the level or effect of posaconazole by increasing gastric
+pH. Applies only to oral form of both agents. Use Caution/Monitor.
+pretomanid
+pretomanid will increase the level or effect of famotidine by Other (see comment).
+Modify Therapy/Monitor Closely. In vitro studies demonstrated that pretomanid
+significantly inhibits OAT3; monitor for increased adverse effects and consider
+dosage reduction for OAT3 substrates.
+rilpivirine
+famotidine will decrease the level or effect of rilpivirine by increasing gastric pH.
+Applies only to oral form of both agents. Modify Therapy/Monitor Closely.
+6/22/26, 5:31 PM
+Pepcid AC, Zantac 360 (famotidine) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/pepcid-ac-zantac-360-famotidine-341989
+9/15
+
+Concurrent use, may cause treatment failure and/or the development of rilpivirine or
+NNRTI resistance owing to decreased levels. Administer H2 antagonists at least 12
+hours before or at least 4 hours after rilpivirine.
+rilzabrutinib
+famotidine decreases levels of rilzabrutinib by increasing gastric pH. Applies only to
+oral form of both agents. Modify Therapy/Monitor Closely. Give rilzabrutinib 2 hr
+before H2 blockers. Coadministration may decrease rilzabrutinib exposure, resulting
+in reduced efficacy.
+rose hips
+famotidine will decrease the level or effect of rose hips by increasing gastric pH.
+Applies only to oral form of both agents. Use Caution/Monitor.
+serdexmethylphenidate/dexmethylphenidate
+famotidine will increase the level or effect of
+serdexmethylphenidate/dexmethylphenidate by increasing gastric pH. Applies only
+to oral form of both agents. Modify Therapy/Monitor Closely. Applies only to
+extended release formulation
+sofosbuvir/velpatasvir
+famotidine will decrease the level or effect of sofosbuvir/velpatasvir by increasing
+gastric pH. Applies only to oral form of both agents. Modify Therapy/Monitor
+Closely. Velpatasvir solubility decreases as gastric pH increases (practically
+insoluble at pH >5). H2 receptor antagonists may be administered simultaneously
+with or 12 hr apart from sofosbuvir/velpatasvir at a dose that does not exceed
+doses comparable to famotidine 40 mg BID.
+taletrectinib
+taletrectinib and famotidine both increase QTc interval. Use Caution/Monitor.
+Concomitant use may increase the risk of QTc interval prolongation. If concomitant
+use is unavoidable, adjust the frequency of ECG and electrolyte monitoring.
+vadadustat
+vadadustat will increase the level or effect of famotidine by Other (see comment).
+Use Caution/Monitor. Vadadustat may increase exposure of OAT3 substrates.
+Monitor for signs of adverse effect of OAT3 substrate and reduce substrate dose in
+accordance with their product labeling.
+varenicline
+famotidine will increase the level or effect of varenicline by decreasing renal
+clearance. Use Caution/Monitor.
+ziftomenib
+famotidine, ziftomenib. QTc interval. Use Caution/Monitor. Caution if ziftomenib is
+coadministered with drugs that exacerbated risk of QT prolongation (eg,
+hypokalemia, orthostatic hypotension, inhibits metabolism of ziftomenib).
+Minor (9)
+alendronate
+6/22/26, 5:31 PM
+Pepcid AC, Zantac 360 (famotidine) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/pepcid-ac-zantac-360-famotidine-341989
+10/15
+
+famotidine increases levels of alendronate by unspecified interaction mechanism.
+Minor/Significance Unknown. Monitor for increase in alendronate side effects.
+aripiprazole
+famotidine decreases levels of aripiprazole by unspecified interaction mechanism.
+Minor/Significance Unknown.
+axitinib
+famotidine will decrease the level or effect of axitinib by increasing gastric pH.
+Applies only to oral form of both agents. Minor/Significance Unknown.
+blessed thistle
+blessed thistle decreases effects of famotidine by pharmacodynamic antagonism.
+Minor/Significance Unknown. Theoretical interaction.
+ceftibuten
+famotidine will decrease the level or effect of ceftibuten by increasing gastric pH.
+Applies only to oral form of both agents. Minor/Significance Unknown.
+cyanocobalamin
+famotidine decreases levels of cyanocobalamin by inhibition of GI absorption.
+Applies only to oral form of both agents. Minor/Significance Unknown.
+devil's claw
+devil's claw decreases effects of famotidine by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+isavuconazonium sulfate
+isavuconazonium sulfate will increase the level or effect of famotidine by Other (see
+comment). Minor/Significance Unknown. Isavuconazonium sulfate, an OCT2
+inhibitor, may increase the effects or levels of OCT2 substrates.
+phytoestrogens
+famotidine decreases levels of phytoestrogens by inhibition of GI absorption.
+Applies only to oral form of both agents. Minor/Significance Unknown.
+Adverse Effects
+1-10%
+Headache (4.7%)
+Diarrhea (1.7%)
+Dizziness (1.3%)
+Constipation (1.2%)
+Frequency Not Defined
+6/22/26, 5:31 PM
+Pepcid AC, Zantac 360 (famotidine) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/pepcid-ac-zantac-360-famotidine-341989
+11/15
+
+Body as a whole: Fever, asthenia, fatigue
+Cardiovascular: Arrhythmia, AV block, palpitation; prolonged QT interval in patients with
+impaired renal function, has been reported very rarely
+Gastrointestinal: Cholestatic jaundice, hepatitis, liver enzyme abnormalities, vomiting,
+nausea, abdominal discomfort, anorexia, dry mouth
+Hematologic: Rare cases of agranulocytosis, pancytopenia, leukopenia,
+thrombocytopenia
+Hypersensitivity: Anaphylaxis, angioedema, orbital or facial edema, urticaria, rash,
+conjunctival injection
+Musculoskeletal: Rhabdomyolysis, musculoskeletal pain including muscle cramps,
+arthralgia
+Nervous system/psychiatric: Grand mal seizure; psychic disturbances, which were
+reversible in cases for which follow-up was obtained, including hallucinations, confusion,
+agitation, depression, anxiety, decreased libido; paresthesia; insomnia; somnolence;
+convulsions, in patients with impaired renal function, have been reported very rarely
+Respiratory: Bronchospasm, interstitial pneumonia
+Skin: Toxic epidermal necrolysis/Stevens-Johnson syndrome (very rare), alopecia, acne,
+pruritus, dry skin, flushing
+Special senses: Tinnitus, taste disorder
+Rare cases of impotence and rare cases of gynecomastia
+Warnings
+Contraindications
+Hypersensitivity to famotidine or other H2-receptor antagonists
+Cautions
+Use caution in renal impairment; dosage adjustment recommended in moderate to
+severe renal impairment (CrCl <50 mL/min)
+Prolonged QT interval reported rarely in patients with renal impairment whose dose or
+dosing interval may not have been adjusted appropriately
+Central nervous system (CNS) adverse effects, including confusion, delirium,
+hallucinations, disorientation, agitation, seizures, and lethargy, reported with moderate-
+to-severe renal impairment; since famotidine blood levels are higher in patients with
+renal impairment than in patients with normal renal function, dosage adjustments are
+recommended in patients with renal impairment
+Relief of symptoms does not eliminate the presence of gastric malignancy; consider
+evaluation for gastric malignancy in adult patients who have a suboptimal response or
+an early symptomatic relapse after completing treatment
+6/22/26, 5:31 PM
+Pepcid AC, Zantac 360 (famotidine) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/pepcid-ac-zantac-360-famotidine-341989
+12/15
+
+State of confusion reported with use; risk increased in >50 years of age and/or
+renal/hepatic impairment
+Prolonged treatment (>2 years) may lead to vitamin B12 malabsorption, which can
+result in vitamin B12 deficiency; magnitude of deficiency is dose related; occurs most
+frequently in females and those younger then 30 years
+Patients should not use OTC if difficulty swallowing, vomiting blood, have bloody or
+black stools
+If patient taking a prescription drug, the patient should ask a doctor or a pharmacist
+whether acid reducers can be taken concomitantly with it
+Patients with kidney disease should ask doctor before use
+Drug interaction overview
+Treatment can reduce absorption of other drugs, due to effect on reducing
+intragastric acidity, leading to loss of efficacy of the concomitant drug; concomitant
+administration with dasatinib, delavirdine mesylate, cefditoren, and fosamprenavir
+not recommended
+See prescribing information for other drugs dependent on gastric pH for absorption
+for administration instructions, including atazanavir, erlotinib, ketoconazole,
+itraconazole, ledipasvir/sofosbuvir, nilotinib, and rilpivirine
+Although not studied clinically, drug is considered a weak CYP1A2 inhibitor and
+may lead to substantial increases in blood concentrations of tizanidine, a CYP1A2
+substrate; avoid concomitant use; if concomitant use necessary, monitor for
+hypotension, bradycardia or excessive drowsiness; refer to full prescribing
+information for tizanidine
+Pregnancy & Lactation
+Pregnancy
+Available data in pregnant women are insufficient to establish a drug-associated risk of
+major birth defects, miscarriage or adverse maternal or fetal outcomes
+Animal data
+Animal reproduction studies have shown no adverse development effects at doses
+up to approximately 243 times, the recommended human dose of 80 mg per day for
+treatment of erosive esophagitis
+Lactation
+There are limited data available on presence in human breast milk; there were no effects
+on breastfed infant; there are no data on famotidine effects on milk production; drug
+reported present in milk of lactating rats; developmental and health benefits of
+breastfeeding should be considered along with mother’s clinical need for famotidine and
+any potential adverse effects on breastfed child or from underlying maternal condition
+6/22/26, 5:31 PM
+Pepcid AC, Zantac 360 (famotidine) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/pepcid-ac-zantac-360-famotidine-341989
+13/15
+
+Pregnancy Categories
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+NA: Information not available.
+Pharmacology
+Mechanism of Action
+Blocks H2 receptors of gastric parietal cells, leading to inhibition of gastric secretions
+Absorption
+Bioavailability: 40-45% (PO; minimal 1st-pass metabolism)
+Onset: <1 hr (PO); <30 min (IV)
+Duration: 10-12 hr
+Peak plasma time: IV, 20 min; PO, 1-4 hr
+Distribution
+Protein bound: 15-20%
+Vd: 1.1-1.4 L/kg (Adults); 1.5-2.07 L/kg (children); 1.4-1.8 L/kg (infants <3 months); 2.3
+L/kg (infants 3-12 months)
+Metabolism
+Metabolized in liver
+Metabolites: Famotidine S-oxide (inactive)
+Elimination
+Half-life: 2.5-4 hr (adults; increases with renal impairment; eg, 20 hr with CrCl <10
+mL/min); 3-4 hr (children); 4.5 hr (infants 3-12 months); 8-10.5 hr (infants < 3 months)
+Dialyzable: No
+Renal clearance: 250-450 mL/min
+6/22/26, 5:31 PM
+Pepcid AC, Zantac 360 (famotidine) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/pepcid-ac-zantac-360-famotidine-341989
+14/15
+
+Total body clearance: 381-483 mL/min
+Excretion: Urine (25-30% as unchanged drug when administered PO; 70% when
+adminsitered IV)
+Administration
+IV Incompatibilities
+Additive: Piperacillin-tazobactam
+Y-site: Cefepime, piperacillin-tazobactam, amphotericin B, azithromycin, furosemide (at 2
+mg/mL famotidine; compatible at 0.2 mg/mL)
+IV Compatibilities
+Additive: Aztreonam, ceftazidime, dobutamine, dopamine, furosemide, gentamicin,
+imipenem, thiamine
+Y-site: Atropine, cefazolin, furosemide, gentamicin, heparin, norepinephrine, thiamine
+IV Preparation
+Dilute 20 mg to total of 5 or 10 mL with NS, D5W, or LR
+Also available in premixed bag containing 20 mg in 50 mL NS
+IV Administration
+Infuse at rate no faster than 10 mg/min
+Storage
+Premixed: Store at room temperature
+Unmixed: Store in refrigerator at 2-8°C (36-46°F)
+Formulary
+Adding plans allows you to compare formulary status to other drugs in the same class.
+Formulary information is available for health plans only in the United States.
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+6/22/26, 5:31 PM
+Pepcid AC, Zantac 360 (famotidine) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/pepcid-ac-zantac-360-famotidine-341989
+15/15

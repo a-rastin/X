@@ -1,0 +1,4437 @@
+﻿6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+trazodone (Rx)
+Brand and Other Names: Raldesy, Desyrel (DSC)
+Classes: Antidepressants, Other
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+tablet (generic)
+
+50mg
+
+100mg
+
+150mg
+
+300mg
+
+oral solution (Raldesy)
+
+10mg/mL (150-mL or 300-mL bottle)
+
+Depression
+
+Indicated for treatment of major depressive disorder (MDD) in adults
+
+Initial: 150 mg/day PO in divided doses q8-12hr
+
+May increase gradually as tolerated by 50 mg/day every 3-4 days
+
+Outpatient: Not to exceed 400 mg/day in divided doses
+
+Inpatient (ie, more severely depressed patients): Not to exceed 600 mg/day in divided
+doses
+
+Taper gradually to discontinue
+
+Dosage Modifications
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 1/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+Renal or hepatic impairment
+
+Not studied; caution if used in these populations
+
+Coadministration with strong CYP3A4 inhibitors or inducers
+
+Strong inhibitors: Consider reducing trazodone dose based on tolerability
+
+Strong inducers: Consider increasing trazodone dose based on therapeutic response
+
+Insomnia (Off-label)
+
+50-100 mg PO qDay
+
+Aggressive Behavior (Off-label)
+
+Initial: 50 mg PO q12hr
+
+Maintenance: 75-400 mg/day divided PO q6-12hr
+
+Cocaine Withdrawal (Off-label)
+
+150-200 mg PO qDay
+
+Alcohol Withdrawal (Off-label)
+
+100-600 mg/day divided PO
+
+Prevention of Migraine (Off-label)
+
+100 mg PO qDay
+
+Dosing Considerations
+
+Before initiating antidepressants, screen patients for a personal or family history of
+bipolar disorder, mania, or hypomania
+
+PEDIATRIC
+Dosage Forms & Strengths
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 2/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+tablet
+
+50mg
+
+100mg
+
+150mg
+
+300mg
+
+tablet, extended-release
+
+150mg
+
+300mg
+
+Depression (Off-label)
+
+<6 years: Safety and efficacy not established
+
+6-12 years: 1.5-2 mg/kg/day PO in divided doses initially; not to exceed 6 mg/kg/day
+divded q8hr 
+
+>12 years: 25-50 mg/day PO; increase by 100-150 mg in divided doses
+
+See Black Box Warnings
+
+Dravet Syndrome (Orphan)
+
+Orphan designation for treatment of Dravet syndrome
+
+Sponsor
+
+Epygenix Therapeutics, Inc; 140 E. Ridgewood Avenue, Suite 415 South Tower;
+Paramus, New Jersey 07652
+
+Interactions
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and trazodone
+No Interactions Found
+Interactions Found
+Contraindicated
+
+Serious
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 3/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+Contraindicated (16)
+
+arsenic trioxide
+trazodone and arsenic trioxide both increase QTc interval. Contraindicated.
+
+disopyramide
+trazodone and disopyramide both increase QTc interval. Contraindicated.
+
+eliglustat
+trazodone increases levels of eliglustat by affecting hepatic enzyme CYP2D6
+metabolism. Contraindicated. If coadministered with strong or moderate CYP2D6
+inhibitors, reduce eliglustat dose from 84 mg BID to 84 mg once daily in extensive
+and intermediate metabolizers; eliglustat is contraindiated if strong or moderate
+CYP2D6 inhibitors are given concomitantly with strong or moderate CYP3A
+inhibitors.
+
+ibutilide
+trazodone and ibutilide both increase QTc interval. Contraindicated.
+
+indapamide
+trazodone and indapamide both increase QTc interval. Contraindicated.
+
+isocarboxazid
+isocarboxazid and trazodone both increase serotonin levels. Contraindicated.
+
+lefamulin
+lefamulin will increase the level or effect of trazodone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Contraindicated. Lefamulin is contraindicated with
+CYP3A substrates know to prolong the QT interval.
+
+pentamidine
+trazodone and pentamidine both increase QTc interval. Contraindicated.
+
+phenelzine
+phenelzine and trazodone both increase serotonin levels. Contraindicated.
+
+pimozide
+trazodone and pimozide both increase QTc interval. Contraindicated.
+
+procainamide
+trazodone and procainamide both increase QTc interval. Contraindicated.
+
+procarbazine
+procarbazine and trazodone both increase serotonin levels. Contraindicated.
+Combination is contraindicated within 2 weeks of MAOI use.
+
+quinidine
+quinidine and trazodone both increase QTc interval. Contraindicated.
+
+safinamide
+trazodone, safinamide. Either increases toxicity of the other by serotonin levels.
+Contraindicated. Concomitant use could result in life-threatening serotonin
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 4/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+syndrome.
+
+sotalol
+trazodone and sotalol both increase QTc interval. Contraindicated.
+
+tranylcypromine
+tranylcypromine and trazodone both increase serotonin levels. Contraindicated.
+
+Serious (177)
+
+amiodarone
+trazodone and amiodarone both increase QTc interval. Avoid or Use Alternate Drug.
+
+amisulpride
+trazodone and amisulpride both increase QTc interval. Avoid or Use Alternate Drug.
+ECG monitoring is recommended if coadministered.
+
+amitriptyline
+amitriptyline and trazodone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+trazodone and amitriptyline both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+amoxapine
+amoxapine and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+trazodone and amoxapine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+amphetamine
+trazodone, amphetamine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+anagrelide
+anagrelide and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+apalutamide
+apalutamide will decrease the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+Coadministration of apalutamide, a strong CYP3A4 inducer, with drugs that are
+CYP3A4 substrates can result in lower exposure to these medications. Avoid or
+substitute another drug for these medications when possible. Evaluate for loss of
+therapeutic effect if medication must be coadministered. Adjust dose according to
+prescribing information if needed.
+
+apomorphine
+apomorphine and trazodone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 5/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+aripiprazole
+aripiprazole and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+artemether
+artemether and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+artemether/lumefantrine
+trazodone and artemether/lumefantrine both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+artemether/lumefantrine and trazodone both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+asenapine
+asenapine and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+asenapine transdermal
+asenapine transdermal and trazodone both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+atomoxetine
+atomoxetine and trazodone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+bedaquiline
+bedaquiline and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+benzphetamine
+trazodone, benzphetamine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+bosentan
+bosentan will decrease the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+buprenorphine
+buprenorphine and trazodone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+buprenorphine buccal
+buprenorphine buccal and trazodone both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+buprenorphine subdermal implant
+buprenorphine subdermal implant and trazodone both increase QTc interval. Avoid
+or Use Alternate Drug.
+
+buprenorphine transdermal
+buprenorphine transdermal and trazodone both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 6/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+buprenorphine, long-acting injection
+buprenorphine, long-acting injection and trazodone both increase QTc interval.
+Avoid or Use Alternate Drug.
+
+bupropion
+trazodone increases toxicity of bupropion by unspecified interaction mechanism.
+Avoid or Use Alternate Drug. May lower seizure threshold; keep bupropion dose as
+low as possible.
+
+buspirone
+trazodone and buspirone both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+calcium/magnesium/potassium/sodium oxybates
+trazodone, calcium/magnesium/potassium/sodium oxybates. Either increases effects
+of the other by pharmacodynamic synergism. Avoid or Use Alternate Drug.
+Profound sedation, respiratory depression, coma, and death may result if
+coadministered. Reserve concomitant prescribing of these drugs in patients for
+whom other treatment options are inadequate. Limit dosages and durations to the
+minimum required. Monitor closely for signs of respiratory depression and sedation.
+
+ceritinib
+ceritinib and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+ceritinib will increase the level or effect of trazodone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+chloramphenicol
+chloramphenicol will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+chloroquine
+chloroquine and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+chlorpromazine
+chlorpromazine and trazodone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+citalopram
+citalopram and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+clarithromycin
+clarithromycin will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+trazodone and clarithromycin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+clomipramine
+clomipramine and trazodone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 7/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+trazodone and clomipramine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+clonidine
+trazodone decreases effects of clonidine by Other (see comment). Avoid or Use
+Alternate Drug. Comment: Inhibition of uptake by adrenergic neurons.
+
+clozapine
+clozapine and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+cobicistat
+cobicistat will increase the level or effect of trazodone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+conivaptan
+conivaptan will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+crizotinib
+crizotinib and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+cyclobenzaprine
+trazodone and cyclobenzaprine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+degarelix
+degarelix and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+desflurane
+desflurane and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+desipramine
+desipramine and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+trazodone and desipramine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+desvenlafaxine
+trazodone and desvenlafaxine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+dexfenfluramine
+trazodone, dexfenfluramine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+dexmethylphenidate
+trazodone, dexmethylphenidate. Other (see comment). Avoid or Use Alternate
+Drug. Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 8/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+dextroamphetamine
+trazodone, dextroamphetamine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+dextromethorphan
+trazodone and dextromethorphan both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+diethylpropion
+trazodone, diethylpropion. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+dobutamine
+trazodone, dobutamine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+dofetilide
+trazodone and dofetilide both increase QTc interval. Avoid or Use Alternate Drug.
+
+donepezil
+donepezil and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+dopamine
+trazodone, dopamine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+dopexamine
+trazodone, dopexamine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+dosulepin
+trazodone and dosulepin both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+doxepin
+doxepin and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+trazodone and doxepin both increase serotonin levels. Avoid or Use Alternate Drug.
+
+dronedarone
+trazodone and dronedarone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 9/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+droperidol
+trazodone and droperidol both increase QTc interval. Avoid or Use Alternate Drug.
+
+duloxetine
+duloxetine and trazodone both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+efavirenz
+efavirenz and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+eliglustat
+eliglustat and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+encorafenib
+encorafenib and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+entrectinib
+trazodone and entrectinib both increase QTc interval. Avoid or Use Alternate Drug.
+
+ephedrine
+trazodone, ephedrine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+epinephrine
+epinephrine and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+trazodone, epinephrine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+epinephrine racemic
+epinephrine racemic and trazodone both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+trazodone, epinephrine racemic. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+eribulin
+eribulin and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+erythromycin base
+trazodone and erythromycin base both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+erythromycin ethylsuccinate
+trazodone and erythromycin ethylsuccinate both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 10/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+erythromycin lactobionate
+trazodone and erythromycin lactobionate both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+erythromycin stearate
+trazodone and erythromycin stearate both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+escitalopram
+escitalopram and trazodone both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+etravirine
+etravirine will decrease the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+fenfluramine
+trazodone, fenfluramine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+fexinidazole
+fexinidazole and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+Avoid coadministration of fexinidazole with drugs known to block potassium
+channels or prolong QT interval.
+
+fingolimod
+fingolimod and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+fluconazole
+trazodone and fluconazole both increase QTc interval. Avoid or Use Alternate Drug.
+
+fluoxetine
+fluoxetine and trazodone both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+fluphenazine
+fluphenazine and trazodone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+fluvoxamine
+fluvoxamine and trazodone both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+fosamprenavir
+fosamprenavir increases levels of trazodone by decreasing metabolism. Avoid or
+Use Alternate Drug.
+
+gemifloxacin
+gemifloxacin and trazodone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 11/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+gilteritinib
+gilteritinib and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+givinostat
+trazodone and givinostat both increase QTc interval. Avoid or Use Alternate Drug. If
+unable to avoid coadministration, obtain ECGs when initiating, during concomitant
+use, and as clinically indicated. Withhold if QTc interval >500 ms or a change from
+baseline >60 ms.
+
+glasdegib
+trazodone and glasdegib both increase QTc interval. Avoid or Use Alternate Drug. If
+coadministration unavoidable, monitor for increased risk of QTc interval
+prolongation.
+
+granisetron
+granisetron and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+guanfacine
+trazodone decreases effects of guanfacine by Other (see comment). Avoid or Use
+Alternate Drug. Comment: Inhibition of uptake by adrenergic neurons.
+
+haloperidol
+trazodone and haloperidol both increase QTc interval. Avoid or Use Alternate Drug.
+
+hydroxyzine
+hydroxyzine and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+idelalisib
+idelalisib will increase the level or effect of trazodone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Idelalisib is a strong
+CYP3A inhibitor; avoid coadministration with sensitive CYP3A substrates
+
+imipramine
+imipramine and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+trazodone and imipramine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+inotuzumab
+inotuzumab and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+If unable to avoid concomitant use, obtain ECGs and electrolytes before and after
+initiation of any drug known to prolong QTc, and periodically monitor as clinically
+indicated during treatment.
+
+isoflurane
+isoflurane and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+isoproterenol
+trazodone, isoproterenol. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 12/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+itraconazole
+itraconazole will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+trazodone and itraconazole both increase QTc interval. Avoid or Use Alternate Drug.
+
+ivosidenib
+ivosidenib will decrease the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid
+coadministration of sensitive CYP3A4 substrates with ivosidenib or replace with
+alternative therapies. If coadministration is unavoidable, monitor patients for loss of
+therapeutic effect of these drugs.
+
+ketoconazole
+ketoconazole will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+trazodone and ketoconazole both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+levoketoconazole
+levoketoconazole will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+trazodone and levoketoconazole both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+levomilnacipran
+levomilnacipran and trazodone both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+linezolid
+linezolid and trazodone both increase serotonin levels. Avoid or Use Alternate Drug.
+Linezolid may increase serotonin as a result of MAO-A inhibition. If linezolid must
+be administered, discontinue serotonergic drug immediately and monitor for CNS
+toxicity. Serotonergic therapy may be resumed 24 hours after last linezolid dose or
+after 2 weeks of monitoring, whichever comes first.
+
+lisdexamfetamine
+trazodone, lisdexamfetamine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+lithium
+lithium and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+lofepramine
+lofepramine and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+trazodone and lofepramine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 13/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+lonafarnib
+trazodone will increase the level or effect of lonafarnib by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. If
+coadministration of lonafarnib (a sensitive CYP3A substrate) with weak CYP3A
+inhibitors is unavoidable, reduce to, or continue lonafarnib at starting dose. Closely
+monitor for arrhythmias and events (eg, syncope, heart palpitations) since
+lonafarnib effect on QT interval is unknown.
+
+lonafarnib will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid
+coadministration with sensitive CYP3A substrates. If coadministration unavoidable,
+monitor for adverse reactions and reduce CYP3A substrate dose in accordance with
+product labeling.
+
+lopinavir
+lopinavir will increase the level or effect of trazodone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+lorcaserin
+trazodone and lorcaserin both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+lumefantrine
+trazodone and lumefantrine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+meperidine
+trazodone and meperidine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+metaproterenol
+trazodone, metaproterenol. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+methylene blue
+methylene blue and trazodone both increase serotonin levels. Avoid or Use
+Alternate Drug. Methylene blue may increase serotonin as a result of MAO-A
+inhibition. If methylene blue must be administered, discontinue serotonergic drug
+immediately and monitor for CNS toxicity. Serotonergic therapy may be resumed 24
+hours after last methylene blue dose or after 2 weeks of monitoring, whichever
+comes first.
+
+methylenedioxymethamphetamine
+trazodone, methylenedioxymethamphetamine. Other (see comment). Avoid or Use
+Alternate Drug. Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+midodrine
+trazodone, midodrine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 14/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+mifepristone
+mifepristone will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+milnacipran
+milnacipran and trazodone both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+mirtazapine
+mirtazapine and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+moxifloxacin
+trazodone and moxifloxacin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+nefazodone
+nefazodone will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+nefazodone and trazodone both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+nevirapine
+nevirapine will decrease the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+nilotinib
+trazodone and nilotinib both increase QTc interval. Avoid or Use Alternate Drug.
+
+norepinephrine
+trazodone, norepinephrine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+nortriptyline
+nortriptyline and trazodone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+trazodone and nortriptyline both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+octreotide
+trazodone and octreotide both increase QTc interval. Avoid or Use Alternate Drug.
+
+octreotide (Antidote)
+trazodone and octreotide (Antidote) both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+olanzapine
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 15/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+olanzapine and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+olopatadine intranasal
+trazodone and olopatadine intranasal both increase sedation. Avoid or Use
+Alternate Drug. Coadministration increases risk of CNS depression, which can lead
+to additive impairment of psychomotor performance and cause daytime impairment.
+
+oxaliplatin
+oxaliplatin and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+ozanimod
+ozanimod increases levels of trazodone by sympathetic (adrenergic) effects,
+including increased blood pressure and heart rate. Avoid or Use Alternate Drug.
+Because the active metabolite of ozanimod inhibits MAO-B in vitro, there is a
+potential for serious adverse reactions, including hypertensive crisis. Therefore,
+coadministration of ozanimod with drugs that can increase norepinephrine or
+serotonin is not recommended. Monitor for hypertension with concomitant use.
+
+panobinostat
+trazodone and panobinostat both increase QTc interval. Avoid or Use Alternate
+Drug. Panobinostat is known to significantly prolong QT interval. Panobinostat
+prescribing information states use with drugs known to prolong QTc is not
+recommended.
+
+paroxetine
+paroxetine and trazodone both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+perphenazine
+perphenazine and trazodone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+phendimetrazine
+trazodone, phendimetrazine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+phentermine
+trazodone, phentermine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+trazodone, phentermine. Either increases toxicity of the other by Mechanism:
+unknown. Avoid or Use Alternate Drug. Risk of serotonin syndrome.
+
+phenylephrine
+trazodone, phenylephrine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 16/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+phenylephrine PO
+trazodone, phenylephrine PO. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+pirbuterol
+trazodone, pirbuterol. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+pitolisant
+trazodone and pitolisant both increase QTc interval. Avoid or Use Alternate Drug.
+
+posaconazole
+posaconazole will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+primaquine
+primaquine and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+promazine
+promazine and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+propylhexedrine
+trazodone, propylhexedrine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+protriptyline
+protriptyline and trazodone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+trazodone and protriptyline both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+pseudoephedrine
+trazodone, pseudoephedrine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+rasagiline
+rasagiline and trazodone both increase serotonin levels. Avoid or Use Alternate
+Drug. Trazodone should not be coadministered with a MAOI or within 14 days of
+discontinuing a MAOI. Similarly, a MAOI should not be given within 14 days of
+stopping trazodone.
+
+ribociclib
+ribociclib will increase the level or effect of trazodone by affecting hepatic/intestinal
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 17/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+rifabutin
+rifabutin will decrease the level or effect of trazodone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+rifampin
+rifampin will decrease the level or effect of trazodone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+rifapentine
+rifapentine will decrease the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+salmeterol
+trazodone, salmeterol. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+selegiline
+selegiline and trazodone both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+selegiline transdermal
+selegiline transdermal and trazodone both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+serdexmethylphenidate/dexmethylphenidate
+trazodone, serdexmethylphenidate/dexmethylphenidate. Other (see comment).
+Avoid or Use Alternate Drug. Comment: Tricyclic antidepressants increase or
+decrease effects of sympathomimetics, by blocking reuptake of NE, or blocking
+uptake of indirect sympathomimetics into the adrenergic neuron.
+
+sertraline
+sertraline and trazodone both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+sertraline and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+sevoflurane
+sevoflurane and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+siponimod
+siponimod and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+sodium oxybate
+trazodone, sodium oxybate. Either increases effects of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Profound sedation,
+respiratory depression, coma, and death may result if coadministered. Reserve
+concomitant prescribing of these drugs in patients for whom other treatment
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 18/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+options are inadequate. Limit dosages and durations to the minimum required.
+Monitor closely for signs of respiratory depression and sedation.
+
+solifenacin
+solifenacin and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+St John's Wort
+St John's Wort will decrease the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+trazodone and St John's Wort both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+sunitinib
+sunitinib and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+tacrolimus
+tacrolimus and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+tedizolid
+tedizolid, trazodone. Either increases effects of the other by Mechanism:
+pharmacodynamic synergism. Avoid or Use Alternate Drug. both increase serotonin
+levels; increased risk of serotonin syndrome.
+
+terbutaline
+trazodone, terbutaline. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+tetrabenazine
+tetrabenazine and trazodone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+thioridazine
+thioridazine and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+tipranavir
+tipranavir will increase the level or effect of trazodone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+toremifene
+trazodone and toremifene both increase QTc interval. Avoid or Use Alternate Drug.
+Concurrent use of toremifene with agents causing QT prolongation should be
+avoided. If concomitant use is required it's recommended that toremifene be
+interrupted. If interruption not possible, patients requiring therapy with a drug that
+prolongs QT should be closely monitored. ECGs should be obtained for high risk
+patients.
+
+trifluoperazine
+trifluoperazine and trazodone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 19/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+trimipramine
+trazodone and trimipramine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+trazodone and trimipramine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+tucatinib
+tucatinib will increase the level or effect of trazodone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid concomitant use
+of tucatinib with CYP3A substrates, where minimal concentration changes may lead
+to serious or life-threatening toxicities. If unavoidable, reduce CYP3A substrate
+dose according to product labeling.
+
+venlafaxine
+trazodone and venlafaxine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+vilazodone
+trazodone, vilazodone. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug. Concomitant therapy should be discontinued
+immediately if signs or symptoms of serotonin syndrome emerge and supportive
+symptomatic treatment should be initiated.
+
+voriconazole
+voriconazole will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+vorinostat
+vorinostat and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+vortioxetine
+trazodone increases toxicity of vortioxetine by serotonin levels. Avoid or Use
+Alternate Drug.
+
+xylometazoline
+trazodone, xylometazoline. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+yohimbe
+yohimbe, trazodone. Mechanism: unspecified interaction mechanism.
+Contraindicated. May cause increase or decrease in blood pressure.
+
+yohimbine
+trazodone, yohimbine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+ziftomenib
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 20/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+trazodone and ziftomenib both increase QTc interval. Avoid or Use Alternate Drug.
+Avoid coadministration of ziftomenib with other drugs known to prolong the QTc
+interval. If unavoidable, obtain ECGs when initiating, during concomitant use, and as
+clinically indicated. Interrupt ziftomenib with QTc interval > 500 ms or a change
+from baseline is > 60 ms
+
+ziprasidone
+trazodone and ziprasidone both increase QTc interval. Avoid or Use Alternate Drug.
+
+zuranolone
+trazodone, zuranolone. Either increases effects of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Coadministration of zuranolone with other
+CNS depressants may increase impairment of psychomotor performance or CNS
+depressant effects. If unavoidable, consider dose reduction. .
+
+Monitor Closely (453)
+
+5-HTP
+trazodone and 5-HTP both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+aceclofenac
+trazodone, aceclofenac. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+acemetacin
+trazodone, acemetacin. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+acetaminophen/phenyltoloxamine
+acetaminophen/phenyltoloxamine and trazodone both increase sedation. Use
+Caution/Monitor.
+
+aclidinium
+aclidinium and trazodone both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+acrivastine
+acrivastine and trazodone both increase sedation. Use Caution/Monitor.
+
+alfentanil
+alfentanil and trazodone both increase sedation. Use Caution/Monitor.
+
+aliskiren
+trazodone will decrease the level or effect of aliskiren by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+almotriptan
+almotriptan and trazodone both increase serotonin levels. Modify Therapy/Monitor
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 21/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+Closely.
+
+alprazolam
+alprazolam and trazodone both increase sedation. Use Caution/Monitor.
+
+amikacin
+trazodone will decrease the level or effect of amikacin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+amisulpride
+amisulpride and trazodone both increase sedation. Use Caution/Monitor.
+
+amitriptyline
+trazodone will decrease the level or effect of amitriptyline by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+amitriptyline and trazodone both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+amitriptyline and trazodone both increase sedation. Use Caution/Monitor.
+
+amlodipine
+trazodone, amlodipine. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Monitor for hypotension and orthostasis.
+
+amoxapine
+amoxapine and trazodone both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+amoxapine and trazodone both increase sedation. Use Caution/Monitor.
+
+amphetamine
+trazodone increases and amphetamine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+trazodone and amphetamine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+trazodone increases effects of amphetamine by unknown mechanism. Use
+Caution/Monitor.
+
+apomorphine
+trazodone and apomorphine both increase sedation. Use Caution/Monitor.
+
+aprepitant
+aprepitant will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+aripiprazole
+aripiprazole and trazodone both increase sedation. Use Caution/Monitor.
+
+armodafinil
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 22/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+armodafinil will decrease the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+trazodone increases and armodafinil decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+artemether/lumefantrine
+artemether/lumefantrine will decrease the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+asenapine
+asenapine and trazodone both increase sedation. Use Caution/Monitor.
+
+asenapine transdermal
+asenapine transdermal and trazodone both increase sedation. Use Caution/Monitor.
+
+aspirin
+trazodone, aspirin. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+aspirin rectal
+trazodone, aspirin rectal. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+aspirin/citric acid/sodium bicarbonate
+trazodone, aspirin/citric acid/sodium bicarbonate. Either increases toxicity of the
+other by pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper
+GI bleeding. SSRIs inhib. serotonin uptake by platelets.
+
+atazanavir
+atazanavir will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+atazanavir increases levels of trazodone by unspecified interaction mechanism. Use
+Caution/Monitor.
+
+atorvastatin
+trazodone will decrease the level or effect of atorvastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+atracurium
+atracurium and trazodone both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+atropine IV/IM
+atropine IV/IM and trazodone both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+avapritinib
+trazodone will increase the level or effect of avapritinib by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 23/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+avapritinib and trazodone both increase sedation. Use Caution/Monitor.
+
+axitinib
+trazodone increases levels of axitinib by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+
+azelastine
+azelastine and trazodone both increase sedation. Use Caution/Monitor.
+
+azithromycin
+trazodone and azithromycin both increase QTc interval. Use Caution/Monitor.
+
+baclofen
+baclofen and trazodone both increase sedation. Use Caution/Monitor.
+
+bazedoxifene/conjugated estrogens
+trazodone will decrease the level or effect of bazedoxifene/conjugated estrogens by
+P-glycoprotein (MDR1) efflux transporter. Use Caution/Monitor.
+
+belladonna and opium
+belladonna and opium and trazodone both decrease cholinergic
+effects/transmission. Use Caution/Monitor.
+
+belladonna and opium and trazodone both increase sedation. Use Caution/Monitor.
+
+benperidol
+benperidol and trazodone both increase sedation. Use Caution/Monitor.
+
+benzhydrocodone/acetaminophen
+benzhydrocodone/acetaminophen, trazodone. Either increases effects of the other
+by serotonin levels. Use Caution/Monitor. Coadministration of drugs that affect the
+serotonergic neurotransmitter system may result in serotonin syndrome. If
+concomitant use is warranted, carefully observe the patient, particularly during
+treatment initiation and dose adjustment.
+
+benzhydrocodone/acetaminophen and trazodone both increase sedation. Use
+Caution/Monitor.
+
+benzphetamine
+trazodone increases and benzphetamine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+brexpiprazole
+trazodone will increase the level or effect of brexpiprazole by affecting hepatic
+enzyme CYP2D6 metabolism. Modify Therapy/Monitor Closely. Administer a
+quarter of brexpiprazole dose if coadministered with a moderate CYP2D6 inhibitor
+PLUS a strong/moderate CYP3A4 inhibitor.
+
+brexpiprazole and trazodone both increase sedation. Use Caution/Monitor.
+
+brimonidine
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 24/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+brimonidine and trazodone both increase sedation. Use Caution/Monitor.
+
+brimonidine topical
+brimonidine topical and trazodone both increase sedation. Use Caution/Monitor.
+
+brivaracetam
+brivaracetam and trazodone both increase sedation. Use Caution/Monitor.
+
+brompheniramine
+brompheniramine and trazodone both increase sedation. Use Caution/Monitor.
+
+budesonide
+budesonide will decrease the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+trazodone will decrease the level or effect of budesonide by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+bupivacaine implant
+trazodone, bupivacaine implant. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: Local anesthetics may increase the risk
+of developing methemoglobinemia when concurrently exposed to drugs that also
+cause methemoglobinemia.
+
+buprenorphine
+buprenorphine and trazodone both increase sedation. Use Caution/Monitor.
+
+buprenorphine buccal
+buprenorphine buccal and trazodone both increase sedation. Use Caution/Monitor.
+
+buprenorphine subdermal implant
+trazodone, buprenorphine subdermal implant. Either increases toxicity of the other
+by serotonin levels. Use Caution/Monitor. Concomitant use could result in life-
+threatening serotonin syndrome. If concomitant use is warranted, carefully observe
+the patient, particularly during treatment initiation, and during dose adjustment of
+the serotonergic drug. Discontinue buprenorphine if serotonin syndrome is
+suspected.
+
+buprenorphine subdermal implant and trazodone both increase sedation. Use
+Caution/Monitor.
+
+buprenorphine transdermal
+buprenorphine transdermal and trazodone both increase sedation. Use
+Caution/Monitor.
+
+buprenorphine, long-acting injection
+trazodone, buprenorphine, long-acting injection. Either increases toxicity of the
+other by serotonin levels. Use Caution/Monitor. Concomitant use could result in life-
+threatening serotonin syndrome. If concomitant use is warranted, carefully observe
+the patient, particularly during treatment initiation, and during dose adjustment of
+the serotonergic drug. Discontinue buprenorphine if serotonin syndrome is
+suspected.
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 25/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+buprenorphine, long-acting injection and trazodone both increase sedation. Use
+Caution/Monitor.
+
+butalbital
+butalbital will decrease the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+butalbital and trazodone both increase sedation. Use Caution/Monitor.
+
+butorphanol
+butorphanol and trazodone both increase sedation. Use Caution/Monitor.
+
+caffeine
+trazodone increases and caffeine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+carbachol/brimonidine ophthalmic
+carbachol/brimonidine ophthalmic and trazodone both increase sedation. Use
+Caution/Monitor.
+
+carbamazepine
+carbamazepine will decrease the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+trazodone will increase the level or effect of carbamazepine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Monitor plasma levels when used concomitantly
+
+carbinoxamine
+carbinoxamine and trazodone both increase sedation. Use Caution/Monitor.
+
+cariprazine
+cariprazine and trazodone both increase sedation. Use Caution/Monitor.
+
+carisoprodol
+carisoprodol and trazodone both increase sedation. Use Caution/Monitor.
+
+celecoxib
+trazodone, celecoxib. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+chlordiazepoxide
+chlordiazepoxide and trazodone both increase sedation. Use Caution/Monitor.
+
+chlorpheniramine
+chlorpheniramine and trazodone both increase sedation. Use Caution/Monitor.
+
+chlorpromazine
+chlorpromazine and trazodone both increase sedation. Use Caution/Monitor.
+
+chlorzoxazone
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 26/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+chlorzoxazone and trazodone both increase sedation. Use Caution/Monitor.
+
+choline magnesium trisalicylate
+trazodone, choline magnesium trisalicylate. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. SSRIs inhib. serotonin uptake by platelets.
+
+cimetidine
+cimetidine will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+cinnarizine
+cinnarizine and trazodone both increase sedation. Use Caution/Monitor.
+
+citalopram
+citalopram and trazodone both increase serotonin levels. Use Caution/Monitor.
+Combination may increase risk of serotonin syndrome or neuroleptic malignant
+syndrome-like reactions.
+
+clemastine
+clemastine and trazodone both increase sedation. Use Caution/Monitor.
+
+clobazam
+clobazam and trazodone both increase sedation. Use Caution/Monitor.
+
+clomipramine
+clomipramine and trazodone both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+clomipramine and trazodone both increase sedation. Use Caution/Monitor.
+
+clonazepam
+clonazepam and trazodone both increase sedation. Use Caution/Monitor.
+
+clonidine
+clonidine and trazodone both increase sedation. Use Caution/Monitor.
+
+clorazepate
+clorazepate and trazodone both increase sedation. Use Caution/Monitor.
+
+clozapine
+clozapine and trazodone both increase sedation. Use Caution/Monitor.
+
+cobicistat
+cobicistat will increase the level or effect of trazodone by Other (see comment). Use
+Caution/Monitor. Trazodone is a substrate of CYP3A4 and CYP2D6; cobicistat
+inhibits CYP3A4 and CYP2D6
+
+cocaine topical
+trazodone and cocaine topical both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+codeine
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 27/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+codeine and trazodone both increase sedation. Use Caution/Monitor.
+
+conjugated estrogens
+trazodone will decrease the level or effect of conjugated estrogens by P-
+glycoprotein (MDR1) efflux transporter. Use Caution/Monitor.
+
+conjugated estrogens, vaginal
+trazodone will decrease the level or effect of conjugated estrogens, vaginal by P-
+glycoprotein (MDR1) efflux transporter. Use Caution/Monitor.
+
+cortisone
+cortisone will decrease the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+trazodone will decrease the level or effect of cortisone by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+crizotinib
+crizotinib increases levels of trazodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Dose reduction may be needed for
+coadministered drugs that are predominantly metabolized by CYP3A.
+
+crofelemer
+crofelemer increases levels of trazodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Crofelemer has the potential to inhibit
+CYP3A4 at concentrations expected in the gut; unlikely to inhibit systemically
+because minimally absorbed.
+
+cyclobenzaprine
+cyclobenzaprine and trazodone both increase sedation. Use Caution/Monitor.
+
+cyclosporine
+cyclosporine will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+cyproheptadine
+cyproheptadine and trazodone both increase sedation. Use Caution/Monitor.
+
+dabrafenib
+dabrafenib will decrease the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+
+dantrolene
+dantrolene and trazodone both increase sedation. Use Caution/Monitor.
+
+daridorexant
+trazodone and daridorexant both increase sedation. Modify Therapy/Monitor
+Closely. Coadministration increases risk of CNS depression, which can lead to
+additive impairment of psychomotor performance and cause daytime impairment.
+
+darifenacin
+darifenacin will increase the level or effect of trazodone by affecting
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 28/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+darunavir
+darunavir will increase the level or effect of trazodone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor. Coadministration with SSRIs,
+TCAs, or trazodone may require dose titration of antidepressant to desired effect
+(eg, using the lowest feasible initial or maintenance dose). Monitor for
+antidepressant response.
+
+dasatinib
+dasatinib will increase the level or effect of trazodone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+trazodone and dasatinib both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+daunorubicin
+trazodone will decrease the level or effect of daunorubicin by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+debrisoquine
+trazodone decreases effects of debrisoquine by Other (see comment). Use
+Caution/Monitor. Comment: Inhibition of uptake by adrenergic neurons.
+
+deferasirox
+deferasirox will decrease the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+deflazacort
+trazodone will decrease the level or effect of deflazacort by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+desflurane
+desflurane and trazodone both increase sedation. Use Caution/Monitor.
+
+desipramine
+desipramine and trazodone both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+desipramine and trazodone both increase sedation. Use Caution/Monitor.
+
+desloratadine
+desloratadine and trazodone both increase sedation. Use Caution/Monitor.
+
+deutetrabenazine
+deutetrabenazine and trazodone both increase QTc interval. Use Caution/Monitor.
+At the maximum recommended dose, deutetrabenazine does not prolong QT
+interval to a clinically relevant extent. Certain circumstances may increase risk of
+torsade de pointes and/or sudden death in association with drugs that prolong the
+QTc interval (eg, bradycardia, hypokalemia or hypomagnesemia, coadministration
+with other drugs that prolong QTc interval, presence of congenital QT
+prolongation).
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 29/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+dexamethasone
+dexamethasone will decrease the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+trazodone will decrease the level or effect of dexamethasone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+dexbrompheniramine
+dexbrompheniramine and trazodone both increase sedation. Use Caution/Monitor.
+
+dexchlorpheniramine
+dexchlorpheniramine and trazodone both increase sedation. Use Caution/Monitor.
+
+dexfenfluramine
+trazodone increases and dexfenfluramine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+trazodone and dexfenfluramine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+dexmedetomidine
+dexmedetomidine and trazodone both increase sedation. Use Caution/Monitor.
+
+dexmethylphenidate
+trazodone increases and dexmethylphenidate decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+dextroamphetamine
+trazodone increases and dextroamphetamine decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+trazodone and dextroamphetamine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+trazodone increases effects of dextroamphetamine by unknown mechanism. Use
+Caution/Monitor.
+
+dextroamphetamine transdermal
+trazodone, dextroamphetamine transdermal. Either increases effects of the other by
+serotonin levels. Modify Therapy/Monitor Closely. Initiate with lower doses and
+monitor for signs and symptoms of serotonin syndrome, particularly during
+initiation or dosage increase. If serotonin syndrome occurs, discontinue
+dextroamphetamine transdermal and concomitant serotonergic drug(s).
+
+dextromoramide
+dextromoramide and trazodone both increase sedation. Use Caution/Monitor.
+
+diamorphine
+diamorphine and trazodone both increase sedation. Use Caution/Monitor.
+
+diazepam
+diazepam and trazodone both increase sedation. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 30/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+diazepam buccal
+diazepam buccal and trazodone both increase sedation. Use Caution/Monitor.
+
+diazepam buccal, trazodone. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration may
+potentiate the CNS-depressant effects of each drug.
+
+diazepam intranasal
+diazepam intranasal, trazodone. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration may
+potentiate the CNS-depressant effects of each drug.
+
+diazepam intranasal and trazodone both increase sedation. Use Caution/Monitor.
+
+diclofenac
+trazodone, diclofenac. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+diethylpropion
+trazodone increases and diethylpropion decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+difelikefalin
+difelikefalin and trazodone both increase sedation. Use Caution/Monitor.
+
+difenoxin hcl
+difenoxin hcl and trazodone both increase sedation. Use Caution/Monitor.
+
+diflunisal
+trazodone, diflunisal. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+digoxin
+trazodone will decrease the level or effect of digoxin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+trazodone increases levels of digoxin by unspecified interaction mechanism. Use
+Caution/Monitor.
+
+dihydroergotamine
+trazodone and dihydroergotamine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+dihydroergotamine intranasal
+trazodone and dihydroergotamine intranasal both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+diltiazem
+diltiazem will increase the level or effect of trazodone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 31/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+dimenhydrinate
+dimenhydrinate and trazodone both increase sedation. Use Caution/Monitor.
+
+diphenhydramine
+diphenhydramine and trazodone both increase sedation. Use Caution/Monitor.
+
+diphenoxylate hcl
+diphenoxylate hcl and trazodone both increase sedation. Use Caution/Monitor.
+
+dipipanone
+dipipanone and trazodone both increase sedation. Use Caution/Monitor.
+
+dobutamine
+trazodone increases and dobutamine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+docetaxel
+trazodone will decrease the level or effect of docetaxel by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+dolasetron
+trazodone and dolasetron both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+dopamine
+trazodone increases and dopamine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+dopexamine
+trazodone increases and dopexamine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+dordaviprone
+dordaviprone and trazodone both increase QTc interval. Use Caution/Monitor.
+Increase the frequency of ECG and electrolyte monitoring.
+
+doxepin
+doxepin and trazodone both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+doxepin and trazodone both increase sedation. Use Caution/Monitor.
+
+doxorubicin
+trazodone will decrease the level or effect of doxorubicin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+doxorubicin liposomal
+trazodone will decrease the level or effect of doxorubicin liposomal by P-
+glycoprotein (MDR1) efflux transporter. Use Caution/Monitor.
+
+doxylamine
+doxylamine and trazodone both increase sedation. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 32/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+dronedarone
+dronedarone will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+droperidol
+droperidol and trazodone both increase sedation. Use Caution/Monitor.
+
+duvelisib
+duvelisib will increase the level or effect of trazodone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely. Coadministration
+with duvelisib increases AUC of a sensitive CYP3A4 substrate which may increase
+the risk of toxicities of these drugs. Consider reducing the dose of the sensitive
+CYP3A4 substrate and monitor for signs of toxicities of the coadministered sensitive
+CYP3A substrate.
+
+efavirenz
+efavirenz will decrease the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+elagolix
+elagolix decreases levels of trazodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Modify Therapy/Monitor Closely. Elagolix is a weak-to-
+moderate CYP3A4 inducer. Monitor CYP3A substrates if coadministered. Consider
+increasing CYP3A substrate dose if needed.
+
+eletriptan
+eletriptan and trazodone both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+elvitegravir/cobicistat/emtricitabine/tenofovir DF
+elvitegravir/cobicistat/emtricitabine/tenofovir DF increases levels of trazodone by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor
+Closely. Cobicistat is a CYP3A4 inhibitor; contraindicated with CYP3A4 substrates
+for which elevated plasma concentrations are associated with serious and/or life-
+threatening events.
+
+encorafenib
+encorafenib, trazodone. affecting hepatic/intestinal enzyme CYP3A4 metabolism.
+Use Caution/Monitor. Encorafenib both inhibits and induces CYP3A4 at clinically
+relevant plasma concentrations. Coadministration of encorafenib with sensitive
+CYP3A4 substrates may result in increased toxicity or decreased efficacy of these
+agents.
+
+enzalutamide
+enzalutamide will decrease the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+ephedrine
+trazodone increases and ephedrine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 33/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+trazodone increases effects of ephedrine by unknown mechanism. Use
+Caution/Monitor.
+
+epinephrine
+trazodone increases and epinephrine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+trazodone increases effects of epinephrine by unknown mechanism. Use
+Caution/Monitor.
+
+epinephrine racemic
+trazodone increases and epinephrine racemic decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+trazodone increases effects of epinephrine racemic by unknown mechanism. Use
+Caution/Monitor.
+
+ergotamine
+trazodone and ergotamine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+erythromycin base
+erythromycin base will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+erythromycin ethylsuccinate
+erythromycin ethylsuccinate will increase the level or effect of trazodone by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+erythromycin lactobionate
+erythromycin lactobionate will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+erythromycin stearate
+erythromycin stearate will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+eslicarbazepine acetate
+eslicarbazepine acetate will decrease the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+estazolam
+estazolam and trazodone both increase sedation. Use Caution/Monitor.
+
+estradiol
+trazodone will decrease the level or effect of estradiol by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+estrogens conjugated synthetic
+trazodone will decrease the level or effect of estrogens conjugated synthetic by P-
+glycoprotein (MDR1) efflux transporter. Use Caution/Monitor.
+
+estropipate
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 34/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+trazodone will decrease the level or effect of estropipate by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+eszopiclone
+eszopiclone and trazodone both increase sedation. Use Caution/Monitor.
+
+ethanol
+trazodone and ethanol both increase sedation. Use Caution/Monitor.
+
+etodolac
+trazodone, etodolac. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+etomidate
+etomidate and trazodone both increase sedation. Use Caution/Monitor.
+
+etoposide
+trazodone will decrease the level or effect of etoposide by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+everolimus
+trazodone will decrease the level or effect of everolimus by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+fedratinib
+fedratinib will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Adjust dose
+of drugs that are CYP3A4 substrates as necessary.
+
+fenbufen
+trazodone, fenbufen. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+fenfluramine
+trazodone increases and fenfluramine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+trazodone and fenfluramine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+fenfluramine, trazodone. Either increases effects of the other by serotonin levels.
+Use Caution/Monitor. Coadministration with drugs that increase serotoninergic
+effects may increase the risk of serotonin syndrome.
+
+fenoprofen
+trazodone, fenoprofen. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+fentanyl
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 35/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+fentanyl and trazodone both increase sedation. Use Caution/Monitor.
+
+fentanyl intranasal
+fentanyl intranasal and trazodone both increase sedation. Use Caution/Monitor.
+
+fentanyl iontophoretic transdermal system
+fentanyl iontophoretic transdermal system and trazodone both increase sedation.
+Use Caution/Monitor.
+
+fentanyl transdermal
+fentanyl transdermal and trazodone both increase sedation. Use Caution/Monitor.
+
+fentanyl transmucosal
+fentanyl transmucosal and trazodone both increase sedation. Use Caution/Monitor.
+
+finerenone
+trazodone will increase the level or effect of finerenone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Monitor serum potassium during initiation and dosage adjustment of either
+finererone or weak CYP3A4 inhibitors. Adjust finererone dosage as needed.
+
+flecainide
+trazodone and flecainide both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+flibanserin
+trazodone will increase the level or effect of flibanserin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Increased
+flibanserin adverse effects may occur if coadministered with multiple weak CYP3A4
+inhibitors.
+
+fluconazole
+fluconazole will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+fludrocortisone
+fludrocortisone will decrease the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+trazodone will decrease the level or effect of fludrocortisone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+fluoxetine
+trazodone and fluoxetine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+fluphenazine
+fluphenazine and trazodone both increase sedation. Use Caution/Monitor.
+
+flurazepam
+flurazepam and trazodone both increase sedation. Use Caution/Monitor.
+
+flurbiprofen
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 36/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+trazodone, flurbiprofen. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+fluvoxamine
+fluvoxamine and trazodone both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+fosamprenavir
+fosamprenavir will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+
+fosaprepitant
+fosaprepitant will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+foscarnet
+trazodone and foscarnet both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+fosphenytoin
+fosphenytoin will decrease the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+fostemsavir
+trazodone and fostemsavir both increase QTc interval. Use Caution/Monitor. QTc
+prolongation reported with higher than recommended doses of fostemsavir.
+
+frovatriptan
+frovatriptan and trazodone both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+gabapentin
+gabapentin, trazodone. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+gabapentin and trazodone both increase sedation. Use Caution/Monitor.
+
+gabapentin enacarbil
+gabapentin enacarbil, trazodone. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+gabapentin enacarbil and trazodone both increase sedation. Use Caution/Monitor.
+
+ganaxolone
+trazodone and ganaxolone both increase sedation. Use Caution/Monitor.
+
+gemtuzumab
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 37/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+trazodone and gemtuzumab both increase QTc interval. Use Caution/Monitor.
+
+gentamicin
+trazodone will decrease the level or effect of gentamicin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+gepirone
+gepirone and trazodone both increase serotonin levels. Use Caution/Monitor.
+Monitor for symptoms of serotonin syndrome when gepirone is used gepirone with
+other drugs that may affect the serotonergic neurotransmitter systems. If serotonin
+syndrome occurs, consider discontinue gepirone and/or concomitant serotonergic
+drug.
+
+goserelin
+goserelin increases toxicity of trazodone by QTc interval. Use Caution/Monitor.
+Increases risk of torsades de pointes.
+
+grapefruit
+grapefruit will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+green tea
+green tea, trazodone. Other (see comment). Use Caution/Monitor. Comment:
+Combination may increase risk of bleeding.
+
+griseofulvin
+griseofulvin will decrease the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+guanfacine
+guanfacine and trazodone both increase sedation. Use Caution/Monitor.
+
+haloperidol
+haloperidol and trazodone both increase sedation. Use Caution/Monitor.
+
+henbane
+henbane and trazodone both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+histrelin
+histrelin increases toxicity of trazodone by QTc interval. Use Caution/Monitor.
+Increases risk of torsades de pointes.
+
+homatropine
+homatropine and trazodone both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+huperzine A
+huperzine A increases and trazodone decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+hydrocodone
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 38/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+hydrocodone, trazodone. Either increases effects of the other by serotonin levels.
+Use Caution/Monitor. Coadministration of drugs that affect the serotonergic
+neurotransmitter system may result in serotonin syndrome. If concomitant use is
+warranted, carefully observe the patient, particularly during treatment initiation and
+dose adjustment.
+
+hydrocortisone
+hydrocortisone will decrease the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+trazodone will decrease the level or effect of hydrocortisone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+hydromorphone
+hydromorphone and trazodone both increase sedation. Use Caution/Monitor.
+
+hydroxyzine
+hydroxyzine and trazodone both increase sedation. Use Caution/Monitor.
+
+hyoscyamine
+hyoscyamine and trazodone both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+hyoscyamine spray
+hyoscyamine spray and trazodone both decrease cholinergic effects/transmission.
+Use Caution/Monitor.
+
+ibuprofen
+trazodone, ibuprofen. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+ibuprofen IV
+trazodone, ibuprofen IV. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+imatinib
+trazodone will decrease the level or effect of imatinib by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+imipramine
+imipramine and trazodone both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+imipramine and trazodone both increase sedation. Use Caution/Monitor.
+
+indomethacin
+trazodone, indomethacin. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+irinotecan liposomal
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 39/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+trazodone will decrease the level or effect of irinotecan liposomal by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+isavuconazonium sulfate
+trazodone will increase the level or effect of isavuconazonium sulfate by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+isoniazid
+isoniazid will increase the level or effect of trazodone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+trazodone and isoniazid both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+isoproterenol
+trazodone increases and isoproterenol decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+istradefylline
+istradefylline will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Istradefylline
+40 mg/day increased peak levels and AUC of CYP3A4 substrates in clinical trials.
+This effect was not observed with istradefylline 20 mg/day. Consider dose reduction
+of sensitive CYP3A4 substrates.
+
+itraconazole
+trazodone will decrease the level or effect of itraconazole by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+ivermectin
+trazodone will decrease the level or effect of ivermectin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+ketamine
+ketamine and trazodone both increase sedation. Use Caution/Monitor.
+
+ketoprofen
+trazodone, ketoprofen. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+ketorolac
+trazodone, ketorolac. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+ketorolac intranasal
+trazodone, ketorolac intranasal. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. SSRIs inhib. serotonin uptake by platelets.
+
+ketotifen, ophthalmic
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 40/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+trazodone and ketotifen, ophthalmic both increase sedation. Use Caution/Monitor.
+
+L-tryptophan
+trazodone and L-tryptophan both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+lamotrigine
+lamotrigine and trazodone both increase sedation. Use Caution/Monitor.
+
+lapatinib
+lapatinib will increase the level or effect of trazodone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+trazodone will decrease the level or effect of lapatinib by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+trazodone and lapatinib both increase QTc interval. Modify Therapy/Monitor Closely.
+
+lemborexant
+trazodone will increase the level or effect of lemborexant by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Lower nightly dose of lemborexant recommended if coadministered with weak
+CYP3A4 inhibitors. See drug monograph for specific dosage modification.
+
+lenacapavir
+lenacapavir will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Lencapavir
+may increase CYP3A4 substrates initiated within 9 months after last SC dose of
+lenacapavir, which may increase potential risk of adverse reactions of CYP3A4
+substrates.
+
+lenvatinib
+trazodone and lenvatinib both increase QTc interval. Use Caution/Monitor.
+Lenvatinib prescribing information recommends monitoring ECG closely when
+coadministered with QT prolonging drugs.
+
+leuprolide
+leuprolide increases toxicity of trazodone by QTc interval. Use Caution/Monitor.
+Increases risk of torsades de pointes.
+
+levetiracetam
+levetiracetam and trazodone both increase sedation. Use Caution/Monitor.
+
+levocetirizine
+levocetirizine and trazodone both increase sedation. Use Caution/Monitor.
+
+levofloxacin
+trazodone and levofloxacin both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+levorphanol
+levorphanol and trazodone both increase sedation. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 41/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+linagliptin
+trazodone will decrease the level or effect of linagliptin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor. Use of alternative treatments is strongly
+recommended when linagliptin is to be administered with a P-gp inducer.
+
+lisdexamfetamine
+trazodone increases and lisdexamfetamine decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+lithium
+trazodone and lithium both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+lofepramine
+lofepramine and trazodone both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+lofepramine and trazodone both increase sedation. Use Caution/Monitor.
+
+lofexidine
+trazodone and lofexidine both increase sedation. Use Caution/Monitor.
+
+trazodone decreases effects of lofexidine by unspecified interaction mechanism. Use
+Caution/Monitor.
+
+loperamide
+trazodone will decrease the level or effect of loperamide by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+loprazolam
+loprazolam and trazodone both increase sedation. Use Caution/Monitor.
+
+loratadine
+loratadine and trazodone both increase sedation. Use Caution/Monitor.
+
+lorazepam
+lorazepam and trazodone both increase sedation. Use Caution/Monitor.
+
+lorlatinib
+lorlatinib will decrease the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+lormetazepam
+lormetazepam and trazodone both increase sedation. Use Caution/Monitor.
+
+lornoxicam
+trazodone, lornoxicam. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+lovastatin
+trazodone will decrease the level or effect of lovastatin by P-glycoprotein (MDR1)
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 42/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+efflux transporter. Use Caution/Monitor.
+
+loxapine
+loxapine and trazodone both increase sedation. Use Caution/Monitor.
+
+loxapine inhaled
+loxapine inhaled and trazodone both increase sedation. Use Caution/Monitor.
+
+lsd
+trazodone and lsd both increase serotonin levels. Modify Therapy/Monitor Closely.
+
+lumateperone
+lumateperone and trazodone both increase sedation. Use Caution/Monitor.
+
+lumefantrine
+lumefantrine will decrease the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+lurasidone
+lurasidone, trazodone. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: Potential for increased CNS depressant effects
+when used concurrently; monitor for increased adverse effects and toxicity.
+
+lurasidone and trazodone both increase sedation. Use Caution/Monitor.
+
+maraviroc
+trazodone will decrease the level or effect of maraviroc by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+marijuana
+marijuana will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+trazodone and marijuana both increase sedation. Use Caution/Monitor.
+
+mavorixafor
+mavorixafor and trazodone both increase QTc interval. Modify Therapy/Monitor
+Closely. Mavorixafor causes concentration-dependent QTc prolongation. Monitor
+QTc during treatment in patients with risk factors for QTc prolongation (eg,
+coadministered medications that increase mavorixafor exposure or other drugs with
+a high risk to prolong the QTc interval). Mavorixafor dose reduction or
+discontinuation may be required.
+
+meclizine
+meclizine and trazodone both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+meclizine and trazodone both increase sedation. Use Caution/Monitor.
+
+meclofenamate
+trazodone, meclofenamate. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 43/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+bleeding. SSRIs inhib. serotonin uptake by platelets.
+
+mefenamic acid
+trazodone, mefenamic acid. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. SSRIs inhib. serotonin uptake by platelets.
+
+melatonin
+trazodone and melatonin both increase sedation. Use Caution/Monitor.
+
+meloxicam
+trazodone, meloxicam. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+meperidine
+meperidine and trazodone both increase sedation. Use Caution/Monitor.
+
+meprobamate
+trazodone and meprobamate both increase sedation. Use Caution/Monitor.
+
+mestranol
+trazodone will decrease the level or effect of mestranol by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+metaproterenol
+trazodone increases and metaproterenol decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+metaxalone
+metaxalone and trazodone both increase sedation. Use Caution/Monitor.
+
+methadone
+trazodone and methadone both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+methadone and trazodone both increase sedation. Use Caution/Monitor.
+
+methamphetamine
+trazodone increases and methamphetamine decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor. trazodone increases and
+methamphetamine decreases sedation. Effect of interaction is not clear, use caution.
+Significant - Monitor Closely..
+
+methamphetamine increases toxicity of trazodone by Other (see comment). Use
+Caution/Monitor. Comment: Amphetamines may increase the toxicity of serotonin
+modulators, increasing the risk of serotonin syndrome. .
+
+methocarbamol
+methocarbamol and trazodone both increase sedation. Use Caution/Monitor.
+
+methohexital
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 44/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+methohexital and trazodone both increase sedation. Use Caution/Monitor.
+
+methscopolamine
+methscopolamine and trazodone both decrease cholinergic effects/transmission.
+Use Caution/Monitor.
+
+methsuximide
+methsuximide and trazodone both increase sedation. Use Caution/Monitor.
+
+methylenedioxymethamphetamine
+trazodone increases and methylenedioxymethamphetamine decreases sedation.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+methylphenidate
+methylphenidate increases toxicity of trazodone by Other (see comment). Modify
+Therapy/Monitor Closely. Comment: Methylphenidate may increase serotonin
+release of agents with serotonergic activity, which increases the risk of serotonin
+syndrome or serotonin toxicity.
+
+methylprednisolone
+methylprednisolone will decrease the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+trazodone will decrease the level or effect of methylprednisolone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+metronidazole
+metronidazole will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+miconazole vaginal
+miconazole vaginal will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+midazolam
+midazolam and trazodone both increase sedation. Use Caution/Monitor.
+
+midazolam intranasal
+trazodone will increase the level or effect of midazolam intranasal by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+Coadministration of mild CYP3A4 inhibitors with midazolam intranasal may cause
+higher midazolam systemic exposure, which may prolong sedation.
+
+midodrine
+trazodone increases and midodrine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+mipomersen
+mipomersen, trazodone. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: Both drugs have potential to increase
+hepatic enzymes; monitor LFTs.
+
+mirtazapine
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 45/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+trazodone and mirtazapine both increase sedation. Use Caution/Monitor.
+
+trazodone and mirtazapine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+mitotane
+mitotane decreases levels of trazodone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Mitotane is a strong inducer of
+cytochrome P-4503A4; monitor when coadministered with CYP3A4 substrates for
+possible dosage adjustments.
+
+modafinil
+trazodone increases and modafinil decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+molindone
+molindone and trazodone both increase sedation. Use Caution/Monitor.
+
+morphine
+morphine and trazodone both increase sedation. Use Caution/Monitor.
+
+trazodone and morphine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+motherwort
+trazodone and motherwort both increase sedation. Use Caution/Monitor.
+
+moxonidine
+trazodone and moxonidine both increase sedation. Use Caution/Monitor.
+
+nabilone
+trazodone and nabilone both increase sedation. Use Caution/Monitor.
+
+nabumetone
+trazodone, nabumetone. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+nafcillin
+nafcillin will decrease the level or effect of trazodone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+nalbuphine
+nalbuphine and trazodone both increase sedation. Use Caution/Monitor.
+
+naproxen
+trazodone, naproxen. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+naratriptan
+naratriptan and trazodone both increase serotonin levels. Modify Therapy/Monitor
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 46/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+Closely.
+
+nefopam
+nefopam, trazodone. Mechanism: unspecified interaction mechanism. Use
+Caution/Monitor. Use combination with caution.
+
+nelfinavir
+nelfinavir will increase the level or effect of trazodone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+trazodone will decrease the level or effect of nelfinavir by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+neomycin PO
+trazodone will decrease the level or effect of neomycin PO by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+nifedipine
+nifedipine will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+nilotinib
+nilotinib will increase the level or effect of trazodone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+trazodone will decrease the level or effect of nilotinib by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+nirmatrelvir/ritonavir
+nirmatrelvir/ritonavir will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Adverse reactions of nausea, dizziness, hypotension, and syncope observed
+following coadministration of trazodone and strong CYP3A4 inhibitors. Consider
+lower trazodone dose.
+
+nitrous oxide
+nitrous oxide and trazodone both increase sedation. Use Caution/Monitor.
+
+norepinephrine
+trazodone increases and norepinephrine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+trazodone increases effects of norepinephrine by unknown mechanism. Use
+Caution/Monitor.
+
+nortriptyline
+nortriptyline and trazodone both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+nortriptyline and trazodone both increase sedation. Use Caution/Monitor.
+
+ofloxacin
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 47/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+trazodone and ofloxacin both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+olanzapine
+olanzapine and trazodone both increase sedation. Use Caution/Monitor.
+
+olanzapine/samidorphan
+trazodone, olanzapine/samidorphan. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration of diazepam,
+alcohol, or other CNS acting drugs may potentiate orthostatic hypotension
+observed with olanzapine. Additive sedation may also occur.
+
+opicapone
+opicapone and trazodone both increase sedation. Use Caution/Monitor.
+
+opium tincture
+opium tincture and trazodone both increase sedation. Use Caution/Monitor.
+
+orphenadrine
+trazodone and orphenadrine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+orphenadrine and trazodone both increase sedation. Use Caution/Monitor.
+
+osilodrostat
+osilodrostat and trazodone both increase QTc interval. Use Caution/Monitor.
+
+oxaliplatin
+oxaliplatin will increase the level or effect of trazodone by Other (see comment).
+Use Caution/Monitor. Monitor for ECG changes if therapy is initiated in patients with
+drugs known to prolong QT interval.
+
+oxaprozin
+trazodone, oxaprozin. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+oxazepam
+oxazepam and trazodone both increase sedation. Use Caution/Monitor.
+
+oxybutynin
+oxybutynin and trazodone both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+oxybutynin topical
+oxybutynin topical and trazodone both decrease cholinergic effects/transmission.
+Use Caution/Monitor.
+
+oxybutynin transdermal
+oxybutynin transdermal and trazodone both decrease cholinergic
+effects/transmission. Use Caution/Monitor.
+
+oxycodone
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 48/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+oxycodone and trazodone both increase sedation. Use Caution/Monitor.
+
+oxymorphone
+oxymorphone and trazodone both increase sedation. Use Caution/Monitor.
+
+paclitaxel
+trazodone will decrease the level or effect of paclitaxel by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+paclitaxel protein bound
+trazodone will decrease the level or effect of paclitaxel protein bound by P-
+glycoprotein (MDR1) efflux transporter. Use Caution/Monitor.
+
+paliperidone
+trazodone will decrease the level or effect of paliperidone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+trazodone and paliperidone both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+paliperidone and trazodone both increase sedation. Use Caution/Monitor.
+
+pancuronium
+pancuronium and trazodone both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+papaveretum
+papaveretum and trazodone both increase sedation. Use Caution/Monitor.
+
+papaverine
+trazodone and papaverine both increase sedation. Use Caution/Monitor.
+
+parecoxib
+trazodone, parecoxib. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+paromomycin
+trazodone will decrease the level or effect of paromomycin by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+paroxetine
+trazodone and paroxetine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+pazopanib
+trazodone and pazopanib both increase QTc interval. Use Caution/Monitor.
+
+peginterferon alfa 2b
+peginterferon alfa 2b, trazodone. Other (see comment). Use Caution/Monitor.
+Comment: When patients are administered peginterferon alpha-2b with CYP2D6
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 49/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+substrates, the therapeutic effect of these drugs may be altered. Peginterferon
+alpha-2b may increase or decrease levels of CYP2D6 substrate.
+
+pentazocine
+pentazocine and trazodone both increase sedation. Use Caution/Monitor.
+
+trazodone and pentazocine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+pentobarbital
+pentobarbital will decrease the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+pentobarbital and trazodone both increase sedation. Use Caution/Monitor.
+
+perphenazine
+perphenazine and trazodone both increase sedation. Use Caution/Monitor.
+
+phendimetrazine
+trazodone increases and phendimetrazine decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+phenobarbital
+phenobarbital will decrease the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+phenobarbital and trazodone both increase sedation. Use Caution/Monitor.
+
+phentermine
+trazodone increases and phentermine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+phenylephrine
+trazodone increases and phenylephrine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+phenylephrine ophthalmic
+trazodone, phenylephrine ophthalmic. Other (see comment). Use Caution/Monitor.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+phenylephrine PO
+trazodone increases and phenylephrine PO decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor. .
+
+pholcodine
+trazodone and pholcodine both increase sedation. Use Caution/Monitor.
+
+pimozide
+pimozide and trazodone both increase sedation. Use Caution/Monitor.
+
+pirbuterol
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 50/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+trazodone increases and pirbuterol decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+piroxicam
+trazodone, piroxicam. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+posaconazole
+trazodone will decrease the level or effect of posaconazole by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+trazodone and posaconazole both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+pralidoxime
+pralidoxime and trazodone both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+prednisolone
+trazodone will decrease the level or effect of prednisolone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+prednisone
+prednisone will decrease the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+trazodone will decrease the level or effect of prednisone by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+pregabalin
+pregabalin, trazodone. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+primidone
+primidone will decrease the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+primidone and trazodone both increase sedation. Use Caution/Monitor.
+
+prochlorperazine
+prochlorperazine and trazodone both increase QTc interval. Use Caution/Monitor.
+
+prochlorperazine and trazodone both increase sedation. Use Caution/Monitor.
+
+promethazine
+promethazine and trazodone both increase QTc interval. Use Caution/Monitor.
+
+promethazine and trazodone both increase sedation. Use Caution/Monitor.
+
+propantheline
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 51/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+propantheline and trazodone both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+propofol
+propofol and trazodone both increase sedation. Use Caution/Monitor.
+
+propylhexedrine
+trazodone increases and propylhexedrine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+protriptyline
+protriptyline and trazodone both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+protriptyline and trazodone both increase sedation. Use Caution/Monitor.
+
+pyrilamine
+pyrilamine and trazodone both increase sedation. Use Caution/Monitor.
+
+quazepam
+quazepam and trazodone both increase sedation. Use Caution/Monitor.
+
+quetiapine
+quetiapine and trazodone both increase sedation. Use Caution/Monitor.
+
+ramelteon
+trazodone and ramelteon both increase sedation. Use Caution/Monitor.
+
+ranolazine
+trazodone and ranolazine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+rapacuronium
+rapacuronium and trazodone both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+remifentanil
+remifentanil and trazodone both increase sedation. Use Caution/Monitor.
+
+remimazolam
+remimazolam, trazodone. Either increases toxicity of the other by sedation. Modify
+Therapy/Monitor Closely. Coadministration may result in profound sedation,
+respiratory depression, coma, and/or death. Continuously monitor vital signs during
+sedation and recovery period if coadministered. Carefully titrate remimazolam dose
+if administered with opioid analgesics and/or sedative/hypnotics.
+
+revumenib
+revumenib and trazodone both increase QTc interval. Use Caution/Monitor. ECG
+monitoring recommended if concomitant use can?t be avoided and withhold
+therapy if QTc interval is >480 msec; restart therapy after QTc interval returns to
+<480 msec
+
+rifabutin
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 52/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+rifabutin decreases levels of trazodone by increasing metabolism. Use
+Caution/Monitor.
+
+risperidone
+trazodone will decrease the level or effect of risperidone by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+trazodone and risperidone both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+risperidone and trazodone both increase sedation. Use Caution/Monitor.
+
+ritonavir
+ritonavir will increase the level or effect of trazodone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+
+trazodone will decrease the level or effect of ritonavir by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+rizatriptan
+rizatriptan and trazodone both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+rocuronium
+rocuronium and trazodone both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+romidepsin
+trazodone will decrease the level or effect of romidepsin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+rucaparib
+rucaparib will increase the level or effect of trazodone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely. Adjust dosage of
+CYP3A4 substrates, if clinically indicated.
+
+rufinamide
+rufinamide will decrease the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+salicylates (non-asa)
+trazodone, salicylates (non-asa). Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. SSRIs inhib. serotonin uptake by platelets.
+
+salmeterol
+trazodone increases and salmeterol decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+salsalate
+trazodone, salsalate. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 53/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+serotonin uptake by platelets.
+
+SAMe
+trazodone and SAMe both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+scopolamine
+scopolamine and trazodone both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+scopolamine and trazodone both increase sedation. Use Caution/Monitor.
+
+scopolamine intranasal
+scopolamine intranasal and trazodone both increase sedation. Use Caution/Monitor.
+
+scullcap
+trazodone and scullcap both increase sedation. Use Caution/Monitor.
+
+sevoflurane
+sevoflurane and trazodone both increase sedation. Use Caution/Monitor.
+
+shepherd's purse
+trazodone and shepherd's purse both increase sedation. Use Caution/Monitor.
+
+silodosin
+trazodone will decrease the level or effect of silodosin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+sirolimus
+trazodone will decrease the level or effect of sirolimus by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+sodium oxybate
+sodium oxybate and trazodone both increase sedation. Use Caution/Monitor.
+
+solifenacin
+solifenacin and trazodone both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+stiripentol
+stiripentol, trazodone. affecting hepatic/intestinal enzyme CYP3A4 metabolism.
+Modify Therapy/Monitor Closely. Stiripentol is a CYP3A4 inhibitor and inducer.
+Monitor CYP3A4 substrates coadministered with stiripentol for increased or
+decreased effects. CYP3A4 substrates may require dosage adjustment.
+
+streptomycin
+trazodone will decrease the level or effect of streptomycin by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+sufentanil
+sufentanil and trazodone both increase sedation. Use Caution/Monitor.
+
+sufentanil SL
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 54/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+sufentanil SL, trazodone. Either increases effects of the other by serotonin levels.
+Use Caution/Monitor. Coadministration of drugs that affect the serotonergic
+neurotransmitter system may result in serotonin syndrome. If concomitant use is
+warranted, carefully observe the patient, particularly during treatment initiation and
+dose adjustment.
+
+sulfamethoxazole
+trazodone and sulfamethoxazole both increase QTc interval. Modify
+Therapy/Monitor Closely.
+
+sulfasalazine
+trazodone, sulfasalazine. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+sulindac
+trazodone, sulindac. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+sumatriptan
+sumatriptan and trazodone both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+sumatriptan intranasal
+sumatriptan intranasal and trazodone both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+tacrolimus
+trazodone will decrease the level or effect of tacrolimus by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+taletrectinib
+taletrectinib and trazodone both increase QTc interval. Use Caution/Monitor.
+Concomitant use may increase the risk of QTc interval prolongation. If concomitant
+use is unavoidable, adjust the frequency of ECG and electrolyte monitoring.
+
+tamsulosin
+trazodone increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+tapentadol
+tapentadol and trazodone both increase sedation. Use Caution/Monitor.
+
+trazodone and tapentadol both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+tasimelteon
+tasimelteon and trazodone both increase sedation. Use Caution/Monitor.
+
+tecovirimat
+tecovirimat will decrease the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Tecovirimat is
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 55/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+a weak CYP3A4 inducer. Monitor sensitive CYP3A4 substrates for effectiveness if
+coadministered.
+
+telavancin
+trazodone and telavancin both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+temazepam
+temazepam and trazodone both increase sedation. Use Caution/Monitor.
+
+terbutaline
+trazodone increases and terbutaline decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+tetrabenazine
+tetrabenazine and trazodone both increase sedation. Use Caution/Monitor.
+
+thalidomide
+thalidomide and trazodone both increase sedation. Use Caution/Monitor.
+
+thioridazine
+thioridazine and trazodone both increase sedation. Use Caution/Monitor.
+
+thiothixene
+thiothixene and trazodone both increase sedation. Use Caution/Monitor.
+
+tiagabine
+tiagabine and trazodone both increase sedation. Use Caution/Monitor.
+
+tinidazole
+trazodone will increase the level or effect of tinidazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+tiotropium
+tiotropium and trazodone both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+tizanidine
+tizanidine and trazodone both increase sedation. Use Caution/Monitor.
+
+tobramycin
+trazodone will decrease the level or effect of tobramycin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+tolcapone
+tolcapone and trazodone both increase sedation. Use Caution/Monitor.
+
+tolfenamic acid
+trazodone, tolfenamic acid. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Increased risk of upper GI
+bleeding. SSRIs inhib. serotonin uptake by platelets.
+
+tolmetin
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 56/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+trazodone, tolmetin. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of upper GI bleeding. SSRIs inhib.
+serotonin uptake by platelets.
+
+tolterodine
+tolterodine and trazodone both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+tolvaptan
+trazodone will decrease the level or effect of tolvaptan by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+topiramate
+topiramate will decrease the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+trazodone and topiramate both increase sedation. Modify Therapy/Monitor Closely.
+
+tramadol
+tramadol and trazodone both increase sedation. Use Caution/Monitor.
+
+trazodone and tramadol both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+triazolam
+triazolam and trazodone both increase sedation. Use Caution/Monitor.
+
+triclabendazole
+triclabendazole and trazodone both increase QTc interval. Use Caution/Monitor.
+
+triclofos
+triclofos and trazodone both increase sedation. Use Caution/Monitor.
+
+trifluoperazine
+trifluoperazine and trazodone both increase sedation. Use Caution/Monitor.
+
+trimethoprim
+trazodone and trimethoprim both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+trimipramine
+trazodone and trimipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+trazodone and trimipramine both increase sedation. Use Caution/Monitor.
+
+triprolidine
+triprolidine and trazodone both increase sedation. Use Caution/Monitor.
+
+triptorelin
+triptorelin increases toxicity of trazodone by QTc interval. Use Caution/Monitor.
+Increases risk of torsades de pointes.
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 57/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+tropisetron
+trazodone and tropisetron both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+trospium chloride
+trospium chloride and trazodone both decrease cholinergic effects/transmission.
+Use Caution/Monitor.
+
+valbenazine
+valbenazine and trazodone both increase QTc interval. Use Caution/Monitor.
+
+valproic acid
+valproic acid and trazodone both increase sedation. Use Caution/Monitor.
+
+vecuronium
+vecuronium and trazodone both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+venlafaxine
+trazodone and venlafaxine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+verapamil
+verapamil will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+vigabatrin
+vigabatrin and trazodone both increase sedation. Use Caution/Monitor.
+
+vinblastine
+trazodone will decrease the level or effect of vinblastine by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+vincristine
+trazodone will decrease the level or effect of vincristine by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+vincristine liposomal
+trazodone will decrease the level or effect of vincristine liposomal by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+voriconazole
+trazodone and voriconazole both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+xylometazoline
+trazodone increases and xylometazoline decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+yohimbine
+trazodone increases and yohimbine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 58/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+zaleplon
+zaleplon and trazodone both increase sedation. Use Caution/Monitor.
+
+ziconotide
+trazodone and ziconotide both increase sedation. Use Caution/Monitor.
+
+ziprasidone
+ziprasidone and trazodone both increase sedation. Use Caution/Monitor.
+
+zolmitriptan
+zolmitriptan and trazodone both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+zolpidem
+zolpidem and trazodone both increase sedation. Use Caution/Monitor.
+
+zonisamide
+zonisamide and trazodone both increase sedation. Use Caution/Monitor.
+
+zuranolone
+zuranolone and trazodone both increase sedation. Use Caution/Monitor.
+
+Minor (122)
+
+acarbose
+trazodone increases effects of acarbose by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+acetazolamide
+acetazolamide will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+almotriptan
+trazodone, almotriptan. Mechanism: unknown. Minor/Significance Unknown. Risk of
+weakness, dyspnea, chest pain.
+
+alvimopan
+trazodone will decrease the level or effect of alvimopan by P-glycoprotein (MDR1)
+efflux transporter. Minor/Significance Unknown.
+
+anastrozole
+anastrozole will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+anticholinergic/sedative combos
+anticholinergic/sedative combos and trazodone both decrease cholinergic
+effects/transmission. Minor/Significance Unknown.
+
+armodafinil
+trazodone will decrease the level or effect of armodafinil by P-glycoprotein (MDR1)
+efflux transporter. Minor/Significance Unknown.
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 59/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+atorvastatin
+trazodone increases levels of atorvastatin by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+atropine
+atropine and trazodone both decrease cholinergic effects/transmission.
+Minor/Significance Unknown.
+
+trazodone increases levels of atropine by unknown mechanism. Minor/Significance
+Unknown.
+
+atropine IV/IM
+trazodone increases levels of atropine IV/IM by unknown mechanism.
+Minor/Significance Unknown.
+
+bazedoxifene/conjugated estrogens
+bazedoxifene/conjugated estrogens, trazodone. Mechanism: unspecified interaction
+mechanism. Minor/Significance Unknown. Estrogens and progestins may decr
+tricyclic antidepressant effects, while increasing TCA plasma concentration and
+adverse effects.
+
+belladonna alkaloids
+belladonna alkaloids and trazodone both decrease cholinergic effects/transmission.
+Minor/Significance Unknown.
+
+benztropine
+benztropine and trazodone both decrease cholinergic effects/transmission.
+Minor/Significance Unknown.
+
+bethanechol
+bethanechol increases and trazodone decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Minor/Significance Unknown.
+
+brimonidine topical
+trazodone decreases effects of brimonidine topical by pharmacodynamic
+antagonism. Minor/Significance Unknown.
+
+bumetanide
+bumetanide, trazodone. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Possible additive hyponatremia.
+
+bumetanide intranasal
+bumetanide intranasal, trazodone. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Possible additive hyponatremia.
+
+butalbital
+butalbital, trazodone. Other (see comment). Minor/Significance Unknown.
+Comment: Barbiturates may increase adverse effects, including respiratory
+depression, produced by toxic doses of TCAs. With therapeutic doses of TCAs,
+barbiturates increase metabolism and decrease blood concentrations of TCAs.
+
+carbachol
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 60/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+carbachol increases and trazodone decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Minor/Significance Unknown.
+
+carbachol/brimonidine ophthalmic
+trazodone decreases effects of carbachol/brimonidine ophthalmic by
+pharmacodynamic antagonism. Minor/Significance Unknown.
+
+carbamazepine
+carbamazepine decreases levels of trazodone by increasing metabolism.
+Minor/Significance Unknown.
+
+celandine
+celandine decreases effects of trazodone by pharmacodynamic antagonism.
+Minor/Significance Unknown. Based on animal studies.
+
+cevimeline
+cevimeline increases and trazodone decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Minor/Significance Unknown.
+
+chlorpromazine
+trazodone, chlorpromazine. Either increases toxicity of the other by
+pharmacodynamic synergism. Minor/Significance Unknown. Additive hypotensive
+effects.
+
+trazodone, chlorpromazine. Either increases levels of the other by decreasing
+metabolism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+cisatracurium
+cisatracurium and trazodone both decrease cholinergic effects/transmission.
+Minor/Significance Unknown.
+
+conjugated estrogens
+conjugated estrogens, trazodone. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Estrogens and progestins may decr tricyclic
+antidepressant effects, while increasing TCA plasma concentration and adverse
+effects.
+
+conjugated estrogens, vaginal
+conjugated estrogens, vaginal, trazodone. Mechanism: unspecified interaction
+mechanism. Minor/Significance Unknown. Estrogens and progestins may decr
+tricyclic antidepressant effects, while increasing TCA plasma concentration and
+adverse effects.
+
+cyclobenzaprine
+cyclobenzaprine and trazodone both decrease cholinergic effects/transmission.
+Minor/Significance Unknown.
+
+cyclophosphamide
+cyclophosphamide will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+danazol
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 61/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+danazol will increase the level or effect of trazodone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+darifenacin
+darifenacin and trazodone both decrease cholinergic effects/transmission.
+Minor/Significance Unknown.
+
+desflurane
+desflurane, trazodone. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Risk of arrhythmias or hypotension.
+
+dexmethylphenidate
+dexmethylphenidate increases effects of trazodone by decreasing metabolism.
+Minor/Significance Unknown.
+
+DHEA, herbal
+DHEA, herbal will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+dicyclomine
+dicyclomine and trazodone both decrease cholinergic effects/transmission.
+Minor/Significance Unknown.
+
+diphenhydramine
+diphenhydramine and trazodone both decrease cholinergic effects/transmission.
+Minor/Significance Unknown.
+
+donepezil
+donepezil increases and trazodone decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Minor/Significance Unknown.
+
+drospirenone
+drospirenone will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+echothiophate iodide
+echothiophate iodide increases and trazodone decreases cholinergic
+effects/transmission. Effect of interaction is not clear, use caution. Minor/Significance
+Unknown.
+
+eletriptan
+trazodone, eletriptan. Mechanism: unknown. Minor/Significance Unknown. Risk of
+weakness, dyspnea, chest pain.
+
+estradiol
+estradiol, trazodone. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Estrogens and progestins may decr tricyclic
+antidepressant effects, while increasing TCA plasma concentration and adverse
+effects.
+
+estrogens conjugated synthetic
+estrogens conjugated synthetic, trazodone. Mechanism: unspecified interaction
+mechanism. Minor/Significance Unknown. Estrogens and progestins may decr
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 62/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+tricyclic antidepressant effects, while increasing TCA plasma concentration and
+adverse effects.
+
+estrogens esterified
+estrogens esterified, trazodone. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Estrogens and progestins may decr tricyclic
+antidepressant effects, while increasing TCA plasma concentration and adverse
+effects.
+
+estropipate
+estropipate, trazodone. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Estrogens and progestins may decr tricyclic
+antidepressant effects, while increasing TCA plasma concentration and adverse
+effects.
+
+ethacrynic acid
+ethacrynic acid, trazodone. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Possible additive hyponatremia.
+
+ethanol
+ethanol, trazodone. Either increases toxicity of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive impairment of motor skills.
+
+ethinylestradiol
+ethinylestradiol, trazodone. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Oxidative metabolism of TCAs may be decreased by
+ethinyl estradiol. Increased antidepressant serum concentrations may occur.
+Potential for increased TCA adverse effects.
+
+etomidate
+etomidate, trazodone. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Risk of arrhythmias or hypotension.
+
+eucalyptus
+trazodone and eucalyptus both increase sedation. Minor/Significance Unknown.
+
+fesoterodine
+fesoterodine and trazodone both decrease cholinergic effects/transmission.
+Minor/Significance Unknown.
+
+fexofenadine
+trazodone will decrease the level or effect of fexofenadine by P-glycoprotein
+(MDR1) efflux transporter. Minor/Significance Unknown.
+
+flavoxate
+flavoxate and trazodone both decrease cholinergic effects/transmission.
+Minor/Significance Unknown.
+
+fluphenazine
+trazodone, fluphenazine. Either increases toxicity of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive hypotensive effects.
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 63/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+trazodone, fluphenazine. Either increases levels of the other by decreasing
+metabolism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+fosphenytoin
+trazodone increases levels of fosphenytoin by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+frovatriptan
+trazodone, frovatriptan. Mechanism: unknown. Minor/Significance Unknown. Risk of
+weakness, dyspnea, chest pain.
+
+furosemide
+furosemide, trazodone. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Possible additive hyponatremia.
+
+glimepiride
+trazodone increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+glipizide
+trazodone increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+glyburide
+trazodone increases effects of glyburide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+glycopyrrolate
+glycopyrrolate and trazodone both decrease cholinergic effects/transmission.
+Minor/Significance Unknown.
+
+hydroxyprogesterone caproate (DSC)
+hydroxyprogesterone caproate (DSC), trazodone. Mechanism: unspecified
+interaction mechanism. Minor/Significance Unknown. Estrogens and progestins may
+decr tricyclic antidepressant effects, while increasing TCA plasma concentration and
+adverse effects.
+
+insulin aspart
+trazodone increases effects of insulin aspart by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+insulin detemir
+trazodone increases effects of insulin detemir by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+insulin glargine
+trazodone increases effects of insulin glargine by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+insulin glulisine
+trazodone increases effects of insulin glulisine by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 64/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+insulin lispro
+trazodone increases effects of insulin lispro by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+insulin NPH
+trazodone increases effects of insulin NPH by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+insulin regular human
+trazodone increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+isoproterenol
+isoproterenol, trazodone. Mechanism: unknown. Minor/Significance Unknown. Risk
+of cardiac arrhythmias.
+
+ketamine
+ketamine, trazodone. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Risk of arrhythmias or hypotension.
+
+larotrectinib
+larotrectinib will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+lithium
+lithium, trazodone. Other (see comment). Minor/Significance Unknown. Comment:
+Risk of neurotoxicity in geriatric pts. Multiple mechanisms involved.
+
+trazodone, lithium. Mechanism: unknown. Minor/Significance Unknown. Risk of
+neurotoxicity.
+
+loratadine
+trazodone will decrease the level or effect of loratadine by P-glycoprotein (MDR1)
+efflux transporter. Minor/Significance Unknown.
+
+lovastatin
+trazodone increases levels of lovastatin by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+mestranol
+mestranol, trazodone. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Estrogens and progestins may decr tricyclic
+antidepressant effects, while increasing TCA plasma concentration and adverse
+effects.
+
+miglitol
+trazodone increases effects of miglitol by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+naratriptan
+trazodone, naratriptan. Mechanism: unknown. Minor/Significance Unknown. Risk of
+weakness, dyspnea, chest pain.
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 65/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+nateglinide
+trazodone increases effects of nateglinide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+neostigmine
+neostigmine increases and trazodone decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Minor/Significance Unknown.
+
+panax ginseng
+panax ginseng increases effects of trazodone by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+pentobarbital
+pentobarbital, trazodone. Other (see comment). Minor/Significance Unknown.
+Comment: Barbiturates may increase adverse effects, including respiratory
+depression, produced by toxic doses of TCAs. With therapeutic doses of TCAs,
+barbiturates increase metabolism and decrease blood concentrations of TCAs.
+
+perphenazine
+trazodone, perphenazine. Either increases toxicity of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive hypotensive effects.
+
+trazodone, perphenazine. Either increases levels of the other by decreasing
+metabolism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+phenobarbital
+phenobarbital, trazodone. Other (see comment). Minor/Significance Unknown.
+Comment: Barbiturates may increase adverse effects, including respiratory
+depression, produced by toxic doses of TCAs. With therapeutic doses of TCAs,
+barbiturates increase metabolism and decrease blood concentrations of TCAs.
+
+phenytoin
+trazodone increases levels of phenytoin by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+physostigmine
+physostigmine increases and trazodone decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Minor/Significance Unknown.
+
+pilocarpine
+pilocarpine increases and trazodone decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Minor/Significance Unknown.
+
+pioglitazone
+trazodone increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+pitavastatin
+trazodone increases levels of pitavastatin by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+pleurisy root
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 66/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+pleurisy root decreases effects of trazodone by unspecified interaction mechanism.
+Minor/Significance Unknown. Theoretical interaction.
+
+pravastatin
+trazodone increases levels of pravastatin by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+primidone
+primidone, trazodone. Other (see comment). Minor/Significance Unknown.
+Comment: Barbiturates may increase adverse effects, including respiratory
+depression, produced by toxic doses of TCAs. With therapeutic doses of TCAs,
+barbiturates increase metabolism and decrease blood concentrations of TCAs.
+
+prochlorperazine
+trazodone, prochlorperazine. Either increases toxicity of the other by
+pharmacodynamic synergism. Minor/Significance Unknown. Additive hypotensive
+effects.
+
+trazodone, prochlorperazine. Either increases levels of the other by decreasing
+metabolism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+progesterone micronized
+progesterone micronized, trazodone. Mechanism: unspecified interaction
+mechanism. Minor/Significance Unknown. Estrogens and progestins may decr
+tricyclic antidepressant effects, while increasing TCA plasma concentration and
+adverse effects.
+
+promazine
+trazodone, promazine. Either increases toxicity of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive hypotensive effects.
+
+trazodone, promazine. Either increases levels of the other by decreasing
+metabolism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+promethazine
+trazodone, promethazine. Either increases toxicity of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive hypotensive effects.
+
+trazodone, promethazine. Either increases levels of the other by decreasing
+metabolism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+propofol
+propofol, trazodone. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Risk of arrhythmias or hypotension.
+
+pyridostigmine
+pyridostigmine increases and trazodone decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Minor/Significance Unknown.
+
+repaglinide
+trazodone increases effects of repaglinide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 67/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+rivastigmine
+rivastigmine increases and trazodone decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Minor/Significance Unknown.
+
+rizatriptan
+trazodone, rizatriptan. Mechanism: unknown. Minor/Significance Unknown. Risk of
+weakness, dyspnea, chest pain.
+
+rosiglitazone
+trazodone increases effects of rosiglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+ruxolitinib
+trazodone will increase the level or effect of ruxolitinib by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+ruxolitinib topical
+trazodone will increase the level or effect of ruxolitinib topical by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+sage
+trazodone and sage both increase sedation. Minor/Significance Unknown.
+
+saxagliptin
+trazodone increases effects of saxagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+serdexmethylphenidate/dexmethylphenidate
+serdexmethylphenidate/dexmethylphenidate increases effects of trazodone by
+decreasing metabolism. Minor/Significance Unknown.
+
+sevoflurane
+sevoflurane, trazodone. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Risk of arrhythmias or hypotension.
+
+simvastatin
+trazodone increases levels of simvastatin by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+sitagliptin
+trazodone increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+succinylcholine
+succinylcholine increases and trazodone decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Minor/Significance Unknown.
+
+sulfamethoxazole
+sulfamethoxazole decreases levels of trazodone by unspecified interaction
+mechanism. Minor/Significance Unknown.
+
+sumatriptan
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 68/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+trazodone, sumatriptan. Mechanism: unknown. Minor/Significance Unknown. Risk of
+weakness, dyspnea, chest pain.
+
+sumatriptan intranasal
+trazodone, sumatriptan intranasal. Mechanism: unknown. Minor/Significance
+Unknown. Risk of weakness, dyspnea, chest pain.
+
+thioridazine
+trazodone, thioridazine. Either increases toxicity of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive hypotensive effects.
+
+trazodone, thioridazine. Either increases levels of the other by decreasing
+metabolism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+torsemide
+torsemide, trazodone. Mechanism: pharmacodynamic synergism. Minor/Significance
+Unknown. Possible additive hyponatremia.
+
+trifluoperazine
+trazodone, trifluoperazine. Either increases toxicity of the other by
+pharmacodynamic synergism. Minor/Significance Unknown. Additive hypotensive
+effects.
+
+trazodone, trifluoperazine. Either increases levels of the other by decreasing
+metabolism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+vasopressin
+trazodone increases effects of vasopressin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+verapamil
+verapamil increases levels of trazodone by decreasing metabolism.
+Minor/Significance Unknown.
+
+vildagliptin
+trazodone increases effects of vildagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+zafirlukast
+zafirlukast will increase the level or effect of trazodone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+zolmitriptan
+trazodone, zolmitriptan. Mechanism: unknown. Minor/Significance Unknown. Risk of
+weakness, dyspnea, chest pain.
+
+zolpidem
+zolpidem, trazodone. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive CNS depression.
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 69/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+Adverse Effects
+
+>10%
+
+Blurred vision (5-15%)
+
+Dizziness (20-28%)
+
+Drowsiness (24-40%)
+
+Dry mouth (15-34%)
+
+Fatigue (6-15%)
+
+Headache (10-33%)
+
+Nausea/vomiting (10-21%)
+
+1-10%
+
+Constipation (7-8%)
+
+Edema (3-7%)
+
+Confusion (5-6%)
+
+Disorientation (<2%)
+
+Incoordination (2-5%)
+
+Nasal congestion (3-6%)
+
+Orthostatic hypotension (<7%)
+
+Syncope (<5%)
+
+Tremor (1-5%)
+
+Weight change (5%)
+
+Ejaculation disorder (2%)
+
+Decreased libido (1-2%)
+
+<1%
+
+Priapism
+
+Sedation
+
+Alopecia
+
+Anxiety
+
+Acne
+
+Anemia
+
+Increased apetite
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 70/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+Diplopia
+
+Insomnia
+
+Urinary retention
+
+Vertigo
+
+Warnings
+
+Black Box Warnings
+
+In short-term studies, antidepressants increased the risk of suicidal thinking and
+behavior in children, adolescents, and young adults (<24 yr of age) taking
+antidepressants for major depressive disorders and other psychiatric illnesses
+
+This increase was not seen in patients aged >24 years; a slight decrease in suicidal
+thinking was seen in adults >65 years
+
+In children and young adults, risks must be weighed against the benefits of taking
+antidepressants
+
+Patients should be monitored closely for changes in behavior, clinical worsening, and
+suicidal tendencies; this should be done during initial 1-2 months of therapy and dosage
+adjustments
+
+The patient’s family should communicate any abrupt changes in behavior to the
+healthcare provider
+
+Worsening behavior and suicidal tendencies that are not part of the presenting
+symptoms may require discontinuation of therapy
+
+This drug is not FDA approved for use in pediatric patients or for treatment of bipolar
+depression
+
+Contraindications
+
+Hypersensitivity
+
+Coadministration with serotonergic drugs
+
+Risk of serotonin syndrome when coadministered within 14 days of MAOIs, or
+coadministered with other strong serotonergic drugs (eg, SNRIs, SSRIs)
+
+Starting trazodone in a patient who is being treated with linezolid or IV methylene
+blue is contraindicated because of an increased risk of serotonin syndrome
+
+If linezolid or IV methylene blue must be administered, discontinue trazodone
+immediately and monitor for CNS toxicity; may resume clomipramine 24 hr after
+last linezolid or methylene blue dose or after 2 weeks of monitoring, whichever
+comes first
+
+Cautions
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 71/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+Suicidal thoughts and behaviors
+
+In placebo-controlled trials of antidepressant drugs, incidence of suicidal thoughts
+and behaviors in treated patients aged ≤24 years greater compared with placebo-
+treated patients
+
+Monitor all antidepressant-treated patients for clinical worsening and emergence of
+suicidal thoughts and behaviors, especially during initial few months of drug
+therapy and at times of dosage changes
+
+Serotonin syndrome
+
+Can precipitate serotonin syndrome, if used with other serotonergic drugs (eg,
+triptans, tricyclic antidepressants, fentanyl, lithium, tramadol, tryptophan,
+buspirone, and St. John’s Wort) and with drugs that impair metabolism of serotonin
+(ie, MAOIs)
+
+Serotonin syndrome signs and symptoms may include mental status changes (eg,
+agitation, hallucinations, delirium, and coma), autonomic instability (eg, tachycardia,
+labile blood pressure, dizziness, diaphoresis, flushing, hyperthermia),
+neuromuscular symptoms (eg, tremor, rigidity, myoclonus, hyperreflexia,
+incoordination), seizures, and gastrointestinal symptoms (eg, nausea, vomiting,
+diarrhea)
+
+Monitor for emergence of serotonin syndrome; discontinue immediately if above
+symptoms occur and initiate supportive symptomatic treatment
+
+Cardiac arrhythmias
+
+Trazodone prolongs QT/QTc interval
+
+Avoid in patients with history of cardiac arrhythmias and other circumstances that
+may increase risk of torsade de pointes and/or sudden death (eg, symptomatic
+bradycardia, hypokalemia or hypomagnesemia, congenital QT prolongation)
+
+Avoid with other drugs known to significantly prolong QT
+
+Orthostatic hypotension and syncope
+
+Hypotension, including orthostatic hypotension and syncope, reported
+
+Coadministration with an antihypertensive may require dose reduction of
+antihypertensive drug
+
+Increased bleeding risk
+
+Drugs that interfere with serotonin reuptake inhibition increase the risk of bleeding
+events
+
+Concomitant use of aspirin, NSAIDS, other antiplatelet drugs, warfarin, and other
+anticoagulants may add to this risk
+
+Case reports and epidemiological studies (case-control and cohort design) have
+demonstrated an association between use of drugs that interfere with serotonin
+reuptake and the occurrence of gastrointestinal bleeding
+
+Bleeding events related to drugs that interfere with serotonin reuptake have ranged
+from ecchymosis, hematoma, epistaxis, and petechiae to life-threatening
+hemorrhages
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 72/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+Inform patients regarding risk of bleeding associated with using trazodone and
+antiplatelet agents or anticoagulants
+
+Carefully monitor coagulation indices when initiating, titrating, or discontinuing
+trazodone
+
+Priapism
+
+Cases of priapism (painful erections >6 hr duration) reported in males receiving
+trazodone
+
+Priapism, if not treated promptly, can result in irreversible damage to erectile tissue
+
+Immediately discontinued drug and seek emergency medication attention in males
+who have an erection lasting >4 hours, whether painful or not
+
+Caution in males who have conditions that might predispose them to priapism (eg,
+sickle cell anemia, multiple myeloma, or leukemia), or in men with anatomical
+deformation of the penis (eg, angulation, cavernosal fibrosis, or Peyronie disease)
+
+Activation of mania or hypomania
+
+In patients with bipolar disorder, treating a depressive episode with an
+antidepressant may precipitate a mixed/manic episode
+
+Activation of mania/hypomania reported in a small proportion of patients with
+major affective disorder who were treated with antidepressants
+
+Before initiating, screen patients for any personal or family history of bipolar
+disorder, mania, or hypomania
+
+Discontinuation syndrome
+
+Adverse reactions after discontinuation of serotonergic antidepressants, particularly
+after abrupt discontinuation, include nausea, sweating, dysphoric mood, irritability,
+agitation, dizziness, sensory disturbances (eg, paresthesia [eg, electric shock
+sensations]), tremor, anxiety, confusion, headache, lethargy, emotional lability,
+insomnia, hypomania, tinnitus, and seizures
+
+Gradually reduce dosage rather than abruptly stopping
+
+Potential for cognitive and motor impairment
+
+May cause somnolence or sedation and may impair mental and/or physical ability
+required to perform hazardous tasks
+
+Cautions patients about operating hazardous machinery, including automobiles,
+until they are reasonably certain that drug treatment does not affect them
+adversely
+
+Angle-closure glaucoma
+
+Pupillary dilation that occurs following use of many antidepressants may trigger an
+angle closure attack in a patient with anatomically narrow angles who does not
+have a patent iridectomy
+
+Avoid use of antidepressants in patients with untreated anatomically narrow angles
+
+Hyponatremia
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 73/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+Hyponatremia may occur as a result of treatment with SNRIs and SSRIs
+
+Cases with serum sodium <110 mmol/L reported
+
+Signs and symptoms include headache, difficulty concentrating, memory
+impairment, confusion, weakness, and unsteadiness, which can lead to falls
+
+Signs and symptoms associated with more severe and/or acute cases have included
+hallucination, syncope, seizure, coma, respiratory arrest, and death; this type of
+hyponatremia appears to be a result of syndrome of inappropriate antidiuretic
+hormone secretion (SIADH)
+
+In patients with symptomatic hyponatremia, discontinue trazodone and institute
+appropriate medical intervention
+
+Elderly patients, patients taking diuretics, and those who are volume-depleted may
+be at greater risk of developing hyponatremia
+
+Pregnancy & Lactation
+
+Pregnancy
+
+Published prospective cohort studies, case series, and case reports over several decades
+with use in pregnant women have not identified drug-associated risks of major birth
+defects, miscarriage, or adverse maternal or fetal outcomes
+
+Drug has been shown to cause increased fetal resorption and other adverse effects on
+fetus in rat when given at dose levels approximately 7.3 to 11 times the maximum
+recommended human dose (MRHD) of 400 mg/day in adults on a mg/m² basis; there was
+also an increase in congenital anomalies in the rabbit at approximately 7.3 to 22 times
+the MRHD on a mg/m² basis
+
+Consider the risk of untreated depression when discontinuing or changing treatment
+with antidepressant medication during pregnancy and postpartum
+
+Lactation
+
+Data from published literature report the transfer of trazodone into human milk; there
+are no data on effect on milk production; limited data from postmarketing reports have
+not identified an association of adverse effects on breastfed child
+
+The developmental and health benefits of breastfeeding should be considered along
+with mother’s clinical need for therapy and any potential adverse effects on breastfed
+child or from underlying maternal condition
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 74/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+Antidepressant structurally unrelated to SSRIs, tricyclics, tetracyclics or MAOIs, but also
+inhibits neuronal uptake of serotonin (but not NE); it is a histamine and alpha1-
+adrenergic receptor antagonist; causes adrenoceptor subsensitivity
+
+Absorption
+
+Almost completely absorbed (increased by food)
+
+Onset: 6 weeks (antidepressant); 1-3 hr sleep aid
+
+Peak serum time: 30-100 min (up to 2.5 hr if taken with food); 9 hr (extended release)
+
+Concentration: 480-1620 ng/mL (dose-dependent)
+
+Distribution
+
+Protein bound: 85-95%
+
+Metabolism
+
+Metabolism: hepatic P450 enzyme CYP3A4 (major) CYP2D6 (minor)
+
+Metabolites: l-m-chlorophenylpiperazine
+
+Elimination
+
+Half-life: 7-10 hr
+
+Excretion: Urine (75%); feces (25%)
+
+Dialyzable: No
+
+Administration
+
+Oral Administration
+
+Take with food
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 75/76
+
+
+
+6/22/26, 4:38 PM Raldesy, Desyrel (DSC) (trazodone) dosing, indications, interactions, adverse effects, and more
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/raldesy-trazodone-342965 76/76

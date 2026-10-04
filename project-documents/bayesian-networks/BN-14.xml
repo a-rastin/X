@@ -1,0 +1,474 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<BIF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="0.3" xsi:noNamespaceSchemaLocation="../schema.xml">
+  <NETWORK>
+    <NAME>Statement14_TardiveDyskinesia_Research</NAME>
+    <PROPERTY>clinical_question=Which clinician-review prompts apply to antipsychotic-associated tardive dyskinesia at the current encounter?</PROPERTY>
+    <PROPERTY>statement_id=14</PROPERTY>
+    <PROPERTY>recommendation_strength=1</PROPERTY>
+    <PROPERTY>evidence_quality=B</PROPERTY>
+    <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-14.md</PROPERTY>
+    <PROPERTY>source_locator=STATEMENT 14: VMAT2 Medications for Tardive Dyskinesia; Implementation; Quality Measurement Considerations</PROPERTY>
+    <PROPERTY>source_sha256=896a311d5654137f97d272db8922a64114fc440999e1d448133040ad6132bd24</PROPERTY>
+    <PROPERTY>source_version=APA schizophrenia guideline 2020; local Markdown derivative; original PDF not independently verified</PROPERTY>
+    <PROPERTY>created=2026-09-17</PROPERTY>
+    <PROPERTY>model_version=0.1</PROPERTY>
+    <PROPERTY>population=Adults with schizophrenia undergoing clinician assessment; proposed scope</PROPERTY>
+    <PROPERTY>setting=Research authoring only</PROPERTY>
+    <PROPERTY>time_horizon=Current dated encounter; no outcome prediction horizon</PROPERTY>
+    <PROPERTY>validation_status=UNPARAMETERIZED_NOT_FOR_CLINICAL_INFERENCE</PROPERTY>
+    <PROPERTY>inference_allowed=false</PROPERTY>
+    <PROPERTY>deployment_allowed=false</PROPERTY>
+    <PROPERTY>parameter_inventory=10 missing input priors, 23 entries; six proposed deterministic review mappings</PROPERTY>
+    <PROPERTY>graph_semantics=Review workflow, not diagnosis, causal treatment effects, prescribing or expected utility</PROPERTY>
+    <PROPERTY>root_independence=Provisional only; dependencies and measurement error require review before parameterization</PROPERTY>
+    <PROPERTY>execution_contract=Importer must reject incomplete nature distributions; never supply defaults. PROPERTY flags are advisory, not runtime enforcement.</PROPERTY>
+    <PROPERTY>missingness_policy=Unobserved if absent; no partial-evidence inference. Unresolved means an assessed differential, not missing data.</PROPERTY>
+    <PROPERTY>evidence_contract=Dated clinician assessments; reconcile contradictions; never enter derived outputs as independent evidence</PROPERTY>
+    <PROPERTY>display_contract=Urgent review takes priority; all other topics remain visible in parallel. Routine review never implies safety clearance.</PROPERTY>
+    <PROPERTY>guideline_cdss_scope=Quality Measurement Considerations supports possible passive prompts with accurate structured syndrome, severity and disability data</PROPERTY>
+    <PROPERTY>label_review=2026-09-17; see wiki/sources/VMAT2 labels - Current safety corrections.md; historical Table 11 is not a current prescribing rule</PROPERTY>
+    <PROPERTY>design_note=wiki/questions/Statement 14 Bayesian network design.md</PROPERTY>
+    <VARIABLE TYPE="nature">
+      <NAME>TardiveDyskinesiaAssessment</NAME>
+      <PROPERTY>label=Tardive Dyskinesia Assessment</PROPERTY>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <OUTCOME>Unresolved</OUTCOME>
+      <PROPERTY>definition=Persistent tardive dyskinesia assessed by clinician using history, neurological examination, longitudinal course and contributors. Unresolved includes withdrawal-emergent or spontaneous dyskinesia. Other tardive syndromes are not automatically TD.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-14.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=896a311d5654137f97d272db8922a64114fc440999e1d448133040ad6132bd24</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories requiring clinical agreement; no numerical AIMS threshold</PROPERTY>
+      <PROPERTY>missingness_policy=Unobserved if missing; no imputation</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>TardiveDyskinesiaAntipsychoticAssociation</NAME>
+      <PROPERTY>label=Tardive Dyskinesia Antipsychotic Association</PROPERTY>
+      <OUTCOME>Established</OUTCOME>
+      <OUTCOME>NotEstablished</OUTCOME>
+      <PROPERTY>definition=Clinician attribution to antipsychotic exposure after assessment of alternative contributors; no causal inference by this model.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-14.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=896a311d5654137f97d272db8922a64114fc440999e1d448133040ad6132bd24</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories requiring clinical agreement; no numerical AIMS threshold</PROPERTY>
+      <PROPERTY>missingness_policy=Unobserved if missing; no imputation</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>TardiveDyskinesiaMotorSeverity</NAME>
+      <PROPERTY>label=Tardive Dyskinesia Motor Severity</PROPERTY>
+      <OUTCOME>Mild</OUTCOME>
+      <OUTCOME>ModerateOrSevere</OUTCOME>
+      <PROPERTY>definition=Clinician-rated TD motor severity; meaningful only when TD is present. Do not fabricate a severity observation when TD is absent. No AIMS score cutoff.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-14.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=896a311d5654137f97d272db8922a64114fc440999e1d448133040ad6132bd24</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories requiring clinical agreement; no numerical AIMS threshold</PROPERTY>
+      <PROPERTY>missingness_policy=Unobserved if missing; no imputation</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>TardiveDyskinesiaDisablingImpact</NAME>
+      <PROPERTY>label=Tardive Dyskinesia Disabling Impact</PROPERTY>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>definition=Clinician-assessed disabling TD impact, distinct from motor severity; mild motor signs may still be disabling.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-14.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=896a311d5654137f97d272db8922a64114fc440999e1d448133040ad6132bd24</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories requiring clinical agreement; no numerical AIMS threshold</PROPERTY>
+      <PROPERTY>missingness_policy=Unobserved if missing; no imputation</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>MildTardiveDyskinesiaTreatmentConsideration</NAME>
+      <PROPERTY>label=Mild Tardive Dyskinesia Treatment Consideration</PROPERTY>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>definition=At least one assessed reason to consider treatment of mild TD: patient preference, associated impairment, or psychosocial impact. Absence does not prohibit discussion.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-14.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=896a311d5654137f97d272db8922a64114fc440999e1d448133040ad6132bd24</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories requiring clinical agreement; no numerical AIMS threshold</PROPERTY>
+      <PROPERTY>missingness_policy=Unobserved if missing; no imputation</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>DoseReductionTemporalLink</NAME>
+      <PROPERTY>label=Dose Reduction Temporal Link</PROPERTY>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>definition=Dyskinesia began or increased around antipsychotic dose reduction; prompts longitudinal review, not an automatic waiting period or exclusion of persistent TD.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-14.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=896a311d5654137f97d272db8922a64114fc440999e1d448133040ad6132bd24</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories requiring clinical agreement; no numerical AIMS threshold</PROPERTY>
+      <PROPERTY>missingness_policy=Unobserved if missing; no imputation</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>UrgentSafetyConcern</NAME>
+      <PROPERTY>label=Urgent Safety Concern</PROPERTY>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>definition=Clinician-identified urgent concern, including gagging/choking or immediate psychiatric safety risk. Psychiatric urgency is a modeler-proposed extension of source mood/suicidality concerns.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-14.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=896a311d5654137f97d272db8922a64114fc440999e1d448133040ad6132bd24</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories requiring clinical agreement; no numerical AIMS threshold</PROPERTY>
+      <PROPERTY>missingness_policy=Unobserved if missing; no imputation</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>VMAT2InhibitorCandidateSafetyAssessment</NAME>
+      <PROPERTY>label=VMAT2 Inhibitor Candidate Safety Assessment</PROPERTY>
+      <OUTCOME>Incomplete</OUTCOME>
+      <OUTCOME>ConcernsIdentified</OUTCOME>
+      <OUTCOME>ReviewedNoConcernIdentified</OUTCOME>
+      <PROPERTY>definition=For a named candidate drug/formulation, clinician/pharmacist review against current local labeling: hepatic/renal function, hypersensitivity, CYP interactions, MAOI/reserpine and duplicate VMAT2 exposure, QT risk, mood/suicidality, sedation/falls, parkinsonism and other relevant precautions. ConcernsIdentified takes precedence if review is also incomplete. This aggregate is not an automated contraindication classifier; retain individual findings externally.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-14.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=896a311d5654137f97d272db8922a64114fc440999e1d448133040ad6132bd24</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories requiring clinical agreement; no numerical AIMS threshold</PROPERTY>
+      <PROPERTY>missingness_policy=Unobserved if missing; no imputation</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>VMAT2InhibitorTreatmentPreference</NAME>
+      <PROPERTY>label=VMAT2 Inhibitor Treatment Preference</PROPERTY>
+      <OUTCOME>WillingToDiscuss</OUTCOME>
+      <OUTCOME>Declines</OUTCOME>
+      <OUTCOME>Undecided</OUTCOME>
+      <PROPERTY>definition=Current preference about VMAT2 treatment; no inferred consent. Reconcile with any preference-derived mild-treatment consideration.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-14.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=896a311d5654137f97d272db8922a64114fc440999e1d448133040ad6132bd24</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories requiring clinical agreement; no numerical AIMS threshold</PROPERTY>
+      <PROPERTY>missingness_policy=Unobserved if missing; no imputation</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AnticholinergicExposure</NAME>
+      <PROPERTY>label=Anticholinergic Exposure</PROPERTY>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>definition=Current anticholinergic use; review its indication and potential TD worsening without automatic discontinuation, especially with coexisting dystonia or parkinsonism.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-14.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=896a311d5654137f97d272db8922a64114fc440999e1d448133040ad6132bd24</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories requiring clinical agreement; no numerical AIMS threshold</PROPERTY>
+      <PROPERTY>missingness_policy=Unobserved if missing; no imputation</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>TardiveDyskinesiaIndicationReview</NAME>
+      <PROPERTY>label=Tardive Dyskinesia Indication Review</PROPERTY>
+      <OUTCOME>RecommendedVMAT2Review</OUTCOME>
+      <OUTCOME>ConsiderVMAT2Review</OUTCOME>
+      <OUTCOME>MonitorAndDiscuss</OUTCOME>
+      <OUTCOME>AssessDiagnosisAndAttribution</OUTCOME>
+      <OUTCOME>NoCurrentIndicationPrompt</OUTCOME>
+      <PROPERTY>definition=Review strength preserves moderate/severe OR disabling criterion; does not prescribe or select a drug.</PROPERTY>
+      <PROPERTY>clinical_role=proposed_review_output</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-14.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=896a311d5654137f97d272db8922a64114fc440999e1d448133040ad6132bd24</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories requiring clinical agreement; no numerical AIMS threshold</PROPERTY>
+      <PROPERTY>missingness_policy=Unobserved if missing; no imputation</PROPERTY>
+      <PROPERTY>parameter_status=modeler_proposed_deterministic</PROPERTY>
+    </VARIABLE>
+    <DEFINITION>
+      <FOR>TardiveDyskinesiaIndicationReview</FOR>
+      <GIVEN>TardiveDyskinesiaAssessment</GIVEN>
+      <GIVEN>TardiveDyskinesiaAntipsychoticAssociation</GIVEN>
+      <GIVEN>TardiveDyskinesiaMotorSeverity</GIVEN>
+      <GIVEN>TardiveDyskinesiaDisablingImpact</GIVEN>
+      <GIVEN>MildTardiveDyskinesiaTreatmentConsideration</GIVEN>
+      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
+      <PROPERTY>parameter_status=proposed_deterministic_review_mapping</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-14.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=896a311d5654137f97d272db8922a64114fc440999e1d448133040ad6132bd24</PROPERTY>
+      <PROPERTY>uncertainty_description=Logical review mapping only; 0 and 1 are not clinical event probabilities or certainty of treatment benefit</PROPERTY>
+      <PROPERTY>table_order=Child fastest, last GIVEN next; declaration order</PROPERTY>
+      <TABLE>
+        1 0 0 0 0
+        1 0 0 0 0
+        0 1 0 0 0
+        0 0 1 0 0
+        1 0 0 0 0
+        1 0 0 0 0
+        1 0 0 0 0
+        1 0 0 0 0
+        0 0 0 1 0
+        0 0 0 1 0
+        0 0 0 1 0
+        0 0 0 1 0
+        0 0 0 1 0
+        0 0 0 1 0
+        0 0 0 1 0
+        0 0 0 1 0
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 1 0
+        0 0 0 1 0
+        0 0 0 1 0
+        0 0 0 1 0
+        0 0 0 1 0
+        0 0 0 1 0
+        0 0 0 1 0
+        0 0 0 1 0
+        0 0 0 1 0
+        0 0 0 1 0
+        0 0 0 1 0
+        0 0 0 1 0
+        0 0 0 1 0
+        0 0 0 1 0
+        0 0 0 1 0
+        0 0 0 1 0
+      </TABLE>
+    </DEFINITION>
+    <VARIABLE TYPE="nature">
+      <NAME>LongitudinalReview</NAME>
+      <PROPERTY>label=Longitudinal Review</PROPERTY>
+      <OUTCOME>ReviewWithdrawalAndCourse</OUTCOME>
+      <OUTCOME>ContinueLongitudinalAssessment</OUTCOME>
+      <PROPERTY>definition=Parallel course review; never delay urgent care or automatically withhold VMAT2 review.</PROPERTY>
+      <PROPERTY>clinical_role=proposed_review_output</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-14.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=896a311d5654137f97d272db8922a64114fc440999e1d448133040ad6132bd24</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories requiring clinical agreement; no numerical AIMS threshold</PROPERTY>
+      <PROPERTY>missingness_policy=Unobserved if missing; no imputation</PROPERTY>
+      <PROPERTY>parameter_status=modeler_proposed_deterministic</PROPERTY>
+    </VARIABLE>
+    <DEFINITION>
+      <FOR>LongitudinalReview</FOR>
+      <GIVEN>DoseReductionTemporalLink</GIVEN>
+      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
+      <PROPERTY>parameter_status=proposed_deterministic_review_mapping</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-14.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=896a311d5654137f97d272db8922a64114fc440999e1d448133040ad6132bd24</PROPERTY>
+      <PROPERTY>uncertainty_description=Logical review mapping only; 0 and 1 are not clinical event probabilities or certainty of treatment benefit</PROPERTY>
+      <PROPERTY>table_order=Child fastest, last GIVEN next; declaration order</PROPERTY>
+      <TABLE>
+        1 0
+        0 1
+      </TABLE>
+    </DEFINITION>
+    <VARIABLE TYPE="nature">
+      <NAME>UrgentSafetyReview</NAME>
+      <PROPERTY>label=Urgent Safety Review</PROPERTY>
+      <OUTCOME>UrgentClinicianAssessment</OUTCOME>
+      <OUTCOME>RoutineSafetyAssessment</OUTCOME>
+      <PROPERTY>definition=Urgent concerns take priority regardless of diagnostic status.</PROPERTY>
+      <PROPERTY>clinical_role=proposed_review_output</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-14.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=896a311d5654137f97d272db8922a64114fc440999e1d448133040ad6132bd24</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories requiring clinical agreement; no numerical AIMS threshold</PROPERTY>
+      <PROPERTY>missingness_policy=Unobserved if missing; no imputation</PROPERTY>
+      <PROPERTY>parameter_status=modeler_proposed_deterministic</PROPERTY>
+    </VARIABLE>
+    <DEFINITION>
+      <FOR>UrgentSafetyReview</FOR>
+      <GIVEN>UrgentSafetyConcern</GIVEN>
+      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
+      <PROPERTY>parameter_status=proposed_deterministic_review_mapping</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-14.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=896a311d5654137f97d272db8922a64114fc440999e1d448133040ad6132bd24</PROPERTY>
+      <PROPERTY>uncertainty_description=Logical review mapping only; 0 and 1 are not clinical event probabilities or certainty of treatment benefit</PROPERTY>
+      <PROPERTY>table_order=Child fastest, last GIVEN next; declaration order</PROPERTY>
+      <TABLE>
+        1 0
+        0 1
+      </TABLE>
+    </DEFINITION>
+    <VARIABLE TYPE="nature">
+      <NAME>VMAT2InhibitorSafetyReview</NAME>
+      <PROPERTY>label=VMAT2 Inhibitor Safety Review</PROPERTY>
+      <OUTCOME>CompleteCurrentLabelReview</OUTCOME>
+      <OUTCOME>AddressIndividualConcerns</OUTCOME>
+      <OUTCOME>ContinueIndividualizedMonitoring</OUTCOME>
+      <PROPERTY>definition=Parallel candidate-specific review; no state establishes class-wide eligibility or safety.</PROPERTY>
+      <PROPERTY>clinical_role=proposed_review_output</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-14.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; TABLE 11. Reversible inhibitors of human vesicular monoamine transporter type 2^a^</PROPERTY>
+      <PROPERTY>source_sha256=896a311d5654137f97d272db8922a64114fc440999e1d448133040ad6132bd24</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories requiring clinical agreement; no numerical AIMS threshold</PROPERTY>
+      <PROPERTY>missingness_policy=Unobserved if missing; no imputation</PROPERTY>
+      <PROPERTY>parameter_status=modeler_proposed_deterministic</PROPERTY>
+    </VARIABLE>
+    <DEFINITION>
+      <FOR>VMAT2InhibitorSafetyReview</FOR>
+      <GIVEN>VMAT2InhibitorCandidateSafetyAssessment</GIVEN>
+      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
+      <PROPERTY>parameter_status=proposed_deterministic_review_mapping</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-14.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; TABLE 11. Reversible inhibitors of human vesicular monoamine transporter type 2^a^</PROPERTY>
+      <PROPERTY>source_sha256=896a311d5654137f97d272db8922a64114fc440999e1d448133040ad6132bd24</PROPERTY>
+      <PROPERTY>uncertainty_description=Logical review mapping only; 0 and 1 are not clinical event probabilities or certainty of treatment benefit</PROPERTY>
+      <PROPERTY>table_order=Child fastest, last GIVEN next; declaration order</PROPERTY>
+      <TABLE>
+        1 0 0
+        0 1 0
+        0 0 1
+      </TABLE>
+    </DEFINITION>
+    <VARIABLE TYPE="nature">
+      <NAME>VMAT2InhibitorSharedDecisionReview</NAME>
+      <PROPERTY>label=VMAT2 Inhibitor Shared Decision Review</PROPERTY>
+      <OUTCOME>DiscussVMAT2Options</OUTCOME>
+      <OUTCOME>ResolveSafetyAndDiscuss</OUTCOME>
+      <OUTCOME>RespectDeclineAndDiscussAlternatives</OUTCOME>
+      <OUTCOME>ClarifyPreference</OUTCOME>
+      <OUTCOME>ContinueAssessmentAndMonitoring</OUTCOME>
+      <PROPERTY>definition=For recommended/considered review, respect refusal and discuss preference and safety. Deutetrabenazine/valbenazine have stronger source evidence than tetrabenazine; no automated ranking or action.</PROPERTY>
+      <PROPERTY>clinical_role=proposed_review_output</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-14.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=896a311d5654137f97d272db8922a64114fc440999e1d448133040ad6132bd24</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories requiring clinical agreement; no numerical AIMS threshold</PROPERTY>
+      <PROPERTY>missingness_policy=Unobserved if missing; no imputation</PROPERTY>
+      <PROPERTY>parameter_status=modeler_proposed_deterministic</PROPERTY>
+    </VARIABLE>
+    <DEFINITION>
+      <FOR>VMAT2InhibitorSharedDecisionReview</FOR>
+      <GIVEN>TardiveDyskinesiaIndicationReview</GIVEN>
+      <GIVEN>VMAT2InhibitorTreatmentPreference</GIVEN>
+      <GIVEN>VMAT2InhibitorSafetyReview</GIVEN>
+      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
+      <PROPERTY>parameter_status=proposed_deterministic_review_mapping</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-14.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=896a311d5654137f97d272db8922a64114fc440999e1d448133040ad6132bd24</PROPERTY>
+      <PROPERTY>uncertainty_description=Logical review mapping only; 0 and 1 are not clinical event probabilities or certainty of treatment benefit</PROPERTY>
+      <PROPERTY>table_order=Child fastest, last GIVEN next; declaration order</PROPERTY>
+      <TABLE>
+        0 1 0 0 0
+        0 1 0 0 0
+        1 0 0 0 0
+        0 0 1 0 0
+        0 0 1 0 0
+        0 0 1 0 0
+        0 0 0 1 0
+        0 0 0 1 0
+        0 0 0 1 0
+        0 1 0 0 0
+        0 1 0 0 0
+        1 0 0 0 0
+        0 0 1 0 0
+        0 0 1 0 0
+        0 0 1 0 0
+        0 0 0 1 0
+        0 0 0 1 0
+        0 0 0 1 0
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+      </TABLE>
+    </DEFINITION>
+    <VARIABLE TYPE="nature">
+      <NAME>AnticholinergicReview</NAME>
+      <PROPERTY>label=Anticholinergic Review</PROPERTY>
+      <OUTCOME>ReviewPotentialTDWorsening</OUTCOME>
+      <OUTCOME>ReconcileIndicationAndDifferential</OUTCOME>
+      <OUTCOME>RoutineMedicationReconciliation</OUTCOME>
+      <PROPERTY>definition=Review potential worsening in TD. Do not generalize to tardive dystonia or automatically stop another indicated treatment.</PROPERTY>
+      <PROPERTY>clinical_role=proposed_review_output</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-14.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=896a311d5654137f97d272db8922a64114fc440999e1d448133040ad6132bd24</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories requiring clinical agreement; no numerical AIMS threshold</PROPERTY>
+      <PROPERTY>missingness_policy=Unobserved if missing; no imputation</PROPERTY>
+      <PROPERTY>parameter_status=modeler_proposed_deterministic</PROPERTY>
+    </VARIABLE>
+    <DEFINITION>
+      <FOR>AnticholinergicReview</FOR>
+      <GIVEN>TardiveDyskinesiaAssessment</GIVEN>
+      <GIVEN>AnticholinergicExposure</GIVEN>
+      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
+      <PROPERTY>parameter_status=proposed_deterministic_review_mapping</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-14.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=896a311d5654137f97d272db8922a64114fc440999e1d448133040ad6132bd24</PROPERTY>
+      <PROPERTY>uncertainty_description=Logical review mapping only; 0 and 1 are not clinical event probabilities or certainty of treatment benefit</PROPERTY>
+      <PROPERTY>table_order=Child fastest, last GIVEN next; declaration order</PROPERTY>
+      <TABLE>
+        1 0 0
+        0 0 1
+        0 1 0
+        0 0 1
+        0 1 0
+        0 0 1
+      </TABLE>
+    </DEFINITION>
+  </NETWORK>
+</BIF>

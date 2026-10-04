@@ -1,0 +1,420 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<BIF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="0.3" xsi:noNamespaceSchemaLocation="../schema.xml">
+  <NETWORK>
+    <NAME>Statement10_LAI_Review</NAME>
+    <PROPERTY>clinical_question=When should a clinician discuss an LAI option under Statement 10, and what parallel clinical and delivery reviews are needed?</PROPERTY>
+    <PROPERTY>statement_id=10</PROPERTY>
+    <PROPERTY>recommendation_strength=2</PROPERTY>
+    <PROPERTY>evidence_quality=B</PROPERTY>
+    <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-10.md</PROPERTY>
+    <PROPERTY>source_locator=STATEMENT 10: Long-Acting Injectable Antipsychotic Medications; Implementation; Quality Measurement Considerations</PROPERTY>
+    <PROPERTY>source_sha256=3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827</PROPERTY>
+    <PROPERTY>source_version=APA schizophrenia guideline 2020; local Markdown derivative; original PDF not independently verified</PROPERTY>
+    <PROPERTY>model_version=0.1</PROPERTY>
+    <PROPERTY>created=2026-09-16</PROPERTY>
+    <PROPERTY>population=Adults in clinician-led schizophrenia care; proposed scope requiring local agreement</PROPERTY>
+    <PROPERTY>setting=Treatment review; not an emergency triage or prescribing system</PROPERTY>
+    <PROPERTY>time_horizon=Current review with dated adherence and medication history; no prospective outcome horizon</PROPERTY>
+    <PROPERTY>validation_status=UNPARAMETERIZED</PROPERTY>
+    <PROPERTY>inference_allowed=false</PROPERTY>
+    <PROPERTY>deployment_allowed=false</PROPERTY>
+    <PROPERTY>parameter_policy=Nine input priors intentionally omitted; no uniform defaults or invented patient probabilities</PROPERTY>
+    <PROPERTY>graph_semantics=Five deterministic author-proposed workflow mappings; not causal effects, treatment-response estimates or expected-utility optimization</PROPERTY>
+    <PROPERTY>root_independence=Provisional input structure; dependence and measurement-error review required before adding priors</PROPERTY>
+    <PROPERTY>missingness_policy=Missing observations remain unobserved; assessed uncertain adherence and assessed undecided preference are distinct from missing evidence</PROPERTY>
+    <PROPERTY>execution_contract=Incomplete joint model. Host importer must reject for inference and must not synthesize missing priors; PROPERTY flags alone do not enforce this</PROPERTY>
+    <PROPERTY>clinical_limit=No automatic initiation, switching, continuation, stopping, dosing, forced treatment or medical clearance</PROPERTY>
+    <PROPERTY>display_contract=Review pathway, clinical focus, delivery focus and all contributing findings are parallel; never hide lower-priority concerns</PROPERTY>
+    <PROPERTY>quality_measure=Statement 10 is a suggestion and is not appropriate as a quality measure</PROPERTY>
+    <PROPERTY>parameter_inventory=9 missing root distributions; 23 entries if provisional root structure retained; 5 supplied deterministic definitions</PROPERTY>
+    <VARIABLE TYPE="nature">
+      <NAME>SchizophreniaEstablished</NAME>
+      <PROPERTY>label=Schizophrenia Established</PROPERTY>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>definition=Clinician-confirmed schizophrenia. No means assessed and not confirmed; absent diagnostic data stay unobserved.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-10.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT 10: Long-Acting Injectable Antipsychotic Medications</PROPERTY>
+      <PROPERTY>source_sha256=3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827</PROPERTY>
+      <PROPERTY>time_window=Current dated review; retain relevant medication and adherence history intervals separately</PROPERTY>
+      <PROPERTY>missingness_policy=No unrecorded input may be mapped to No, Absent, Adequate, Undecided or Uncertain</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 prior entries after graph and measurement review; require documented data or elicitation</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>LAIPreference</NAME>
+      <PROPERTY>label=LAI Preference</PROPERTY>
+      <OUTCOME>PrefersLAI</OUTCOME>
+      <OUTCOME>PrefersOral</OUTCOME>
+      <OUTCOME>Undecided</OUTCOME>
+      <OUTCOME>DeclinesLAI</OUTCOME>
+      <PROPERTY>definition=Current informed preference after discussion. PrefersOral means preference without explicit refusal of LAI; explicit refusal is DeclinesLAI. Undecided means assessed ambivalence, not missing documentation. Preference is not consent to a specific injection.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-10.md</PROPERTY>
+      <PROPERTY>source_locator=Patient Preferences</PROPERTY>
+      <PROPERTY>source_sha256=3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827</PROPERTY>
+      <PROPERTY>time_window=Current dated review; retain relevant medication and adherence history intervals separately</PROPERTY>
+      <PROPERTY>missingness_policy=No unrecorded input may be mapped to No, Absent, Adequate, Undecided or Uncertain</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=4 prior entries after graph and measurement review; require documented data or elicitation</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AdherenceHistory</NAME>
+      <PROPERTY>label=Adherence History</PROPERTY>
+      <OUTCOME>Adequate</OUTCOME>
+      <OUTCOME>Poor</OUTCOME>
+      <OUTCOME>Uncertain</OUTCOME>
+      <PROPERTY>definition=Clinician assessment of antipsychotic adherence history using dated patient report, dispensing and administration records and collateral information where available. Uncertain means assessed uncertainty, not an unreviewed chart; Adequate is the assessed alternative to poor or uncertain. Local assessment window and criteria must be agreed.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-10.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT 10: Long-Acting Injectable Antipsychotic Medications</PROPERTY>
+      <PROPERTY>source_sha256=3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827</PROPERTY>
+      <PROPERTY>time_window=Current dated review; retain relevant medication and adherence history intervals separately</PROPERTY>
+      <PROPERTY>missingness_policy=No unrecorded input may be mapped to No, Absent, Adequate, Undecided or Uncertain</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=3 prior entries after graph and measurement review; require documented data or elicitation</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AdditionalDiscussionContext</NAME>
+      <PROPERTY>label=Additional Discussion Context</PROPERTY>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>definition=Clinician identifies a contextual reason for LAI discussion: oral nonresponse with possible unrecognized treatment gaps; care transition with concern about future adherence; early illness or limited treatment awareness or substance use with adherence concerns; repeated hospitalizations or emergency visits prompting review. Record which reason and dates. These are discussion prompts, not proof of nonadherence. Absent means assessed and none identified.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-10.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Quality Measurement Considerations</PROPERTY>
+      <PROPERTY>source_sha256=3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827</PROPERTY>
+      <PROPERTY>time_window=Current dated review; retain relevant medication and adherence history intervals separately</PROPERTY>
+      <PROPERTY>missingness_policy=No unrecorded input may be mapped to No, Absent, Adequate, Undecided or Uncertain</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 prior entries after graph and measurement review; require documented data or elicitation</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>SameDrugOralExperience</NAME>
+      <PROPERTY>label=Same Drug Oral Experience</PROPERTY>
+      <OUTCOME>Supported</OUTCOME>
+      <OUTCOME>Concern</OUTCOME>
+      <OUTCOME>NotEstablished</OUTCOME>
+      <PROPERTY>definition=For the specific candidate antipsychotic, prior oral efficacy and tolerability are both supported, either has a concern, or supporting evidence has not been established after review. Concern takes precedence. NotEstablished is a reviewed treatment-history state, not missing input. Oral trial is typical guidance, not a universal hard contraindication.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-10.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827</PROPERTY>
+      <PROPERTY>time_window=Current dated review; retain relevant medication and adherence history intervals separately</PROPERTY>
+      <PROPERTY>missingness_policy=No unrecorded input may be mapped to No, Absent, Adequate, Undecided or Uncertain</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=3 prior entries after graph and measurement review; require documented data or elicitation</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>PriorNeurolepticMalignantSyndrome</NAME>
+      <PROPERTY>label=Prior Neuroleptic Malignant Syndrome</PROPERTY>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>definition=Documented history of neuroleptic malignant syndrome. No means assessed absence of history; missing history remains unobserved. This does not assess current NMS or replace urgent medical assessment.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-10.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827</PROPERTY>
+      <PROPERTY>time_window=Current dated review; retain relevant medication and adherence history intervals separately</PROPERTY>
+      <PROPERTY>missingness_policy=No unrecorded input may be mapped to No, Absent, Adequate, Undecided or Uncertain</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 prior entries after graph and measurement review; require documented data or elicitation</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ProductPlanReviewed</NAME>
+      <PROPERTY>label=Product Plan Reviewed</PROPERTY>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>definition=Clinician/pharmacist has reviewed the specific candidate and current local labeling, including LAI availability, any medication switch, dose conversion, oral overlap or loading, injection route/site/interval, preparation/storage, safe injection, product-specific observation/monitoring, and missed-dose instructions. Yes means reviewed, not approved or medically suitable.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-10.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827</PROPERTY>
+      <PROPERTY>time_window=Current dated review; retain relevant medication and adherence history intervals separately</PROPERTY>
+      <PROPERTY>missingness_policy=No unrecorded input may be mapped to No, Absent, Adequate, Undecided or Uncertain</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 prior entries after graph and measurement review; require documented data or elicitation</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>DeliveryBarriers</NAME>
+      <PROPERTY>label=Delivery Barriers</PROPERTY>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>definition=Assessed access barriers: transportation, scheduling, childcare, cost/authorization, injection staffing/training, space or resources. Absent means no identified barrier after assessment, not evidence that treatment is safe.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-10.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827</PROPERTY>
+      <PROPERTY>time_window=Current dated review; retain relevant medication and adherence history intervals separately</PROPERTY>
+      <PROPERTY>missingness_policy=No unrecorded input may be mapped to No, Absent, Adequate, Undecided or Uncertain</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 prior entries after graph and measurement review; require documented data or elicitation</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>LAITreatmentStatus</NAME>
+      <PROPERTY>label=LAI Treatment Status</PROPERTY>
+      <OUTCOME>Considering</OUTCOME>
+      <OUTCOME>Current</OUTCOME>
+      <OUTCOME>Previous</OUTCOME>
+      <PROPERTY>definition=Current LAI use takes precedence; Previous means past LAI use without current use; Considering means never treated with an LAI. Clinical review concerns a specified candidate product; prior use of another agent does not establish candidate tolerability.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-10.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Patient Preferences</PROPERTY>
+      <PROPERTY>source_sha256=3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827</PROPERTY>
+      <PROPERTY>time_window=Current dated review; retain relevant medication and adherence history intervals separately</PROPERTY>
+      <PROPERTY>missingness_policy=No unrecorded input may be mapped to No, Absent, Adequate, Undecided or Uncertain</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=3 prior entries after graph and measurement review; require documented data or elicitation</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>LAIGuidelineCriterion</NAME>
+      <PROPERTY>label=LAI Guideline Criterion</PROPERTY>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>NotEstablished</OUTCOME>
+      <PROPERTY>definition=Confirmed schizophrenia AND (prefers LAI OR poor/uncertain adherence). NotEstablished is not a contraindication or a recommendation against LAI.</PROPERTY>
+      <PROPERTY>clinical_role=proposed_review_mapping</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-10.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT 10: Long-Acting Injectable Antipsychotic Medications</PROPERTY>
+      <PROPERTY>source_sha256=3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827</PROPERTY>
+      <PROPERTY>time_window=Current dated review; retain relevant medication and adherence history intervals separately</PROPERTY>
+      <PROPERTY>missingness_policy=No unrecorded input may be mapped to No, Absent, Adequate, Undecided or Uncertain</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_modeler_assumption</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>DiscussionOpportunity</NAME>
+      <PROPERTY>label=Discussion Opportunity</PROPERTY>
+      <OUTCOME>OutsideScope</OUTCOME>
+      <OUTCOME>GuidelineCriterion</OUTCOME>
+      <OUTCOME>ContextualDiscussion</OUTCOME>
+      <OUTCOME>RoutineEducation</OUTCOME>
+      <PROPERTY>definition=Scope first, then the core criterion, then contextual prompts; routine education about LAIs remains possible without a criterion. Context is not added to the formal indication.</PROPERTY>
+      <PROPERTY>clinical_role=proposed_review_mapping</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-10.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Quality Measurement Considerations</PROPERTY>
+      <PROPERTY>source_sha256=3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827</PROPERTY>
+      <PROPERTY>time_window=Current dated review; retain relevant medication and adherence history intervals separately</PROPERTY>
+      <PROPERTY>missingness_policy=No unrecorded input may be mapped to No, Absent, Adequate, Undecided or Uncertain</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_modeler_assumption</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ClinicalReviewFocus</NAME>
+      <PROPERTY>label=Clinical Review Focus</PROPERTY>
+      <OUTCOME>NMSCaution</OUTCOME>
+      <OUTCOME>ReviewEfficacyOrTolerabilityConcern</OUTCOME>
+      <OUTCOME>EstablishCandidateEvidence</OUTCOME>
+      <OUTCOME>CandidateEvidenceReviewed</OUTCOME>
+      <PROPERTY>definition=Prior NMS highlights individualized caution; otherwise highlight candidate oral efficacy/tolerability evidence. NMS caution is not an absolute contraindication. This priority display must retain all input findings, and no output certifies suitability.</PROPERTY>
+      <PROPERTY>clinical_role=proposed_review_mapping</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-10.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827</PROPERTY>
+      <PROPERTY>time_window=Current dated review; retain relevant medication and adherence history intervals separately</PROPERTY>
+      <PROPERTY>missingness_policy=No unrecorded input may be mapped to No, Absent, Adequate, Undecided or Uncertain</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_modeler_assumption</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>DeliveryReviewFocus</NAME>
+      <PROPERTY>label=Delivery Review Focus</PROPERTY>
+      <OUTCOME>ReviewProductPlanAndBarriers</OUTCOME>
+      <OUTCOME>ReviewProductPlan</OUTCOME>
+      <OUTCOME>AddressBarriers</OUTCOME>
+      <OUTCOME>ReviewItemsDocumented</OUTCOME>
+      <PROPERTY>definition=Report product-plan and access review needs in parallel with clinical review and discussion. ReviewItemsDocumented does not authorize administration.</PROPERTY>
+      <PROPERTY>clinical_role=proposed_review_mapping</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-10.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827</PROPERTY>
+      <PROPERTY>time_window=Current dated review; retain relevant medication and adherence history intervals separately</PROPERTY>
+      <PROPERTY>missingness_policy=No unrecorded input may be mapped to No, Absent, Adequate, Undecided or Uncertain</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_modeler_assumption</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>LAIReviewPathway</NAME>
+      <PROPERTY>label=LAI Review Pathway</PROPERTY>
+      <OUTCOME>OutsideScope</OUTCOME>
+      <OUTCOME>RespectPreferenceReviewAlternatives</OUTCOME>
+      <OUTCOME>ReviewCurrentLAITreatment</OUTCOME>
+      <OUTCOME>IndividualizedPriorLAIReview</OUTCOME>
+      <OUTCOME>DiscussLAIOption</OUTCOME>
+      <OUTCOME>ConsiderContextualDiscussion</OUTCOME>
+      <OUTCOME>OfferRoutineEducation</OUTCOME>
+      <PROPERTY>definition=Proposed precedence: scope, explicit refusal, current/prior LAI context, then discussion opportunity. Respect preference and review concerns/alternatives without forced treatment or automatic discontinuation; current/prior treatment needs individualized review. PrefersOral and Undecided require balanced shared discussion, not an injection order. Always display clinical and delivery review outputs alongside this pathway.</PROPERTY>
+      <PROPERTY>clinical_role=proposed_review_mapping</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-10.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Patient Preferences</PROPERTY>
+      <PROPERTY>source_sha256=3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827</PROPERTY>
+      <PROPERTY>time_window=Current dated review; retain relevant medication and adherence history intervals separately</PROPERTY>
+      <PROPERTY>missingness_policy=No unrecorded input may be mapped to No, Absent, Adequate, Undecided or Uncertain</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_modeler_assumption</PROPERTY>
+    </VARIABLE>
+    <DEFINITION>
+      <FOR>LAIGuidelineCriterion</FOR>
+      <GIVEN>SchizophreniaEstablished</GIVEN>
+      <GIVEN>LAIPreference</GIVEN>
+      <GIVEN>AdherenceHistory</GIVEN>
+      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
+      <PROPERTY>parameter_status=proposed_deterministic_review_mapping</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-10.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT 10: Long-Acting Injectable Antipsychotic Medications</PROPERTY>
+      <PROPERTY>source_sha256=3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827</PROPERTY>
+      <PROPERTY>rule=Confirmed schizophrenia AND (prefers LAI OR poor/uncertain adherence). NotEstablished is not a contraindication or a recommendation against LAI.</PROPERTY>
+      <PROPERTY>table_order=Child outcome fastest, then last GIVEN; all states in declaration order</PROPERTY>
+      <PROPERTY>uncertainty_description=0 and 1 encode workflow logic only, not empirical certainty about clinical outcomes</PROPERTY>
+      <TABLE>
+      1 0
+      1 0
+      1 0
+      0 1
+      1 0
+      1 0
+      0 1
+      1 0
+      1 0
+      0 1
+      1 0
+      1 0
+      0 1
+      0 1
+      0 1
+      0 1
+      0 1
+      0 1
+      0 1
+      0 1
+      0 1
+      0 1
+      0 1
+      0 1
+    </TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>DiscussionOpportunity</FOR>
+      <GIVEN>SchizophreniaEstablished</GIVEN>
+      <GIVEN>LAIGuidelineCriterion</GIVEN>
+      <GIVEN>AdditionalDiscussionContext</GIVEN>
+      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
+      <PROPERTY>parameter_status=proposed_deterministic_review_mapping</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-10.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Quality Measurement Considerations</PROPERTY>
+      <PROPERTY>source_sha256=3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827</PROPERTY>
+      <PROPERTY>rule=Scope first, then the core criterion, then contextual prompts; routine education about LAIs remains possible without a criterion. Context is not added to the formal indication.</PROPERTY>
+      <PROPERTY>table_order=Child outcome fastest, then last GIVEN; all states in declaration order</PROPERTY>
+      <PROPERTY>uncertainty_description=0 and 1 encode workflow logic only, not empirical certainty about clinical outcomes</PROPERTY>
+      <TABLE>
+      0 1 0 0
+      0 1 0 0
+      0 0 1 0
+      0 0 0 1
+      1 0 0 0
+      1 0 0 0
+      1 0 0 0
+      1 0 0 0
+    </TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>ClinicalReviewFocus</FOR>
+      <GIVEN>PriorNeurolepticMalignantSyndrome</GIVEN>
+      <GIVEN>SameDrugOralExperience</GIVEN>
+      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
+      <PROPERTY>parameter_status=proposed_deterministic_review_mapping</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-10.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827</PROPERTY>
+      <PROPERTY>rule=Prior NMS highlights individualized caution; otherwise highlight candidate oral efficacy/tolerability evidence. NMS caution is not an absolute contraindication. This priority display must retain all input findings, and no output certifies suitability.</PROPERTY>
+      <PROPERTY>table_order=Child outcome fastest, then last GIVEN; all states in declaration order</PROPERTY>
+      <PROPERTY>uncertainty_description=0 and 1 encode workflow logic only, not empirical certainty about clinical outcomes</PROPERTY>
+      <TABLE>
+      1 0 0 0
+      1 0 0 0
+      1 0 0 0
+      0 0 0 1
+      0 1 0 0
+      0 0 1 0
+    </TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>DeliveryReviewFocus</FOR>
+      <GIVEN>ProductPlanReviewed</GIVEN>
+      <GIVEN>DeliveryBarriers</GIVEN>
+      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
+      <PROPERTY>parameter_status=proposed_deterministic_review_mapping</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-10.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827</PROPERTY>
+      <PROPERTY>rule=Report product-plan and access review needs in parallel with clinical review and discussion. ReviewItemsDocumented does not authorize administration.</PROPERTY>
+      <PROPERTY>table_order=Child outcome fastest, then last GIVEN; all states in declaration order</PROPERTY>
+      <PROPERTY>uncertainty_description=0 and 1 encode workflow logic only, not empirical certainty about clinical outcomes</PROPERTY>
+      <TABLE>
+      0 0 1 0
+      0 0 0 1
+      1 0 0 0
+      0 1 0 0
+    </TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>LAIReviewPathway</FOR>
+      <GIVEN>DiscussionOpportunity</GIVEN>
+      <GIVEN>LAIPreference</GIVEN>
+      <GIVEN>LAITreatmentStatus</GIVEN>
+      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
+      <PROPERTY>parameter_status=proposed_deterministic_review_mapping</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-10.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Patient Preferences</PROPERTY>
+      <PROPERTY>source_sha256=3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827</PROPERTY>
+      <PROPERTY>rule=Proposed precedence: scope, explicit refusal, current/prior LAI context, then discussion opportunity. Respect preference and review concerns/alternatives without forced treatment or automatic discontinuation; current/prior treatment needs individualized review. PrefersOral and Undecided require balanced shared discussion, not an injection order. Always display clinical and delivery review outputs alongside this pathway.</PROPERTY>
+      <PROPERTY>table_order=Child outcome fastest, then last GIVEN; all states in declaration order</PROPERTY>
+      <PROPERTY>uncertainty_description=0 and 1 encode workflow logic only, not empirical certainty about clinical outcomes</PROPERTY>
+      <TABLE>
+      1 0 0 0 0 0 0
+      1 0 0 0 0 0 0
+      1 0 0 0 0 0 0
+      1 0 0 0 0 0 0
+      1 0 0 0 0 0 0
+      1 0 0 0 0 0 0
+      1 0 0 0 0 0 0
+      1 0 0 0 0 0 0
+      1 0 0 0 0 0 0
+      1 0 0 0 0 0 0
+      1 0 0 0 0 0 0
+      1 0 0 0 0 0 0
+      0 0 0 0 1 0 0
+      0 0 1 0 0 0 0
+      0 0 0 1 0 0 0
+      0 0 0 0 1 0 0
+      0 0 1 0 0 0 0
+      0 0 0 1 0 0 0
+      0 0 0 0 1 0 0
+      0 0 1 0 0 0 0
+      0 0 0 1 0 0 0
+      0 1 0 0 0 0 0
+      0 1 0 0 0 0 0
+      0 1 0 0 0 0 0
+      0 0 0 0 0 1 0
+      0 0 1 0 0 0 0
+      0 0 0 1 0 0 0
+      0 0 0 0 0 1 0
+      0 0 1 0 0 0 0
+      0 0 0 1 0 0 0
+      0 0 0 0 0 1 0
+      0 0 1 0 0 0 0
+      0 0 0 1 0 0 0
+      0 1 0 0 0 0 0
+      0 1 0 0 0 0 0
+      0 1 0 0 0 0 0
+      0 0 0 0 0 0 1
+      0 0 1 0 0 0 0
+      0 0 0 1 0 0 0
+      0 0 0 0 0 0 1
+      0 0 1 0 0 0 0
+      0 0 0 1 0 0 0
+      0 0 0 0 0 0 1
+      0 0 1 0 0 0 0
+      0 0 0 1 0 0 0
+      0 1 0 0 0 0 0
+      0 1 0 0 0 0 0
+      0 1 0 0 0 0 0
+    </TABLE>
+    </DEFINITION>
+  </NETWORK>
+</BIF>

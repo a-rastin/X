@@ -1,0 +1,246 @@
+ARIPIPRAZOLE (Rx) INFORMATION [cite: 5]
+
+================================================================================
+BRAND AND OTHER NAMES, CLASSES
+================================================================================
+* Brand Names: Abilify, Abilify Maintena, Aristada, Aristada Initio, Abilify Asimtufii, Opipza, Mezofy[cite: 6].
+* Classes: Antipsychotics, 2nd Generation; Antimanic Agents[cite: 7].
+
+================================================================================
+DOSAGE FORMS & STRENGTHS [cite: 10, 220]
+================================================================================
+* Tablet: 2mg, 5mg, 10mg, 15mg, 20mg, 30mg[cite: 11, 12, 13, 14, 15, 16, 17].
+* Oral Disintegrating Tablet (ODT): 10mg, 15mg[cite: 18, 19, 20].
+* Oral Film: 2mg (Opipza), 5mg (Opipza, Mezofy), 10mg (Opipza, Mezofy), 15mg (Mezofy)[cite: 21, 22, 23, 24, 25].
+* Oral Solution: 1 mg/mL[cite: 26, 27].
+* Extended-release injectable IM suspension (Abilify Maintena): 300mg/vial or prefilled dual chamber syringe, 400mg/vial or prefilled dual chamber syringe[cite: 32, 33, 34].
+* Extended-release injectable IM suspension (aripiprazole lauroxil [Aristada]): 441mg, 662mg, 882mg, 1064mg per prefilled syringe[cite: 35, 36, 37, 38, 39].
+* Extended-release injectable IM suspension (aripiprazole lauroxil [Aristada Initio]): 675mg/2.4mL prefilled syringe (459 mg of aripiprazole)[cite: 40, 41].
+
+================================================================================
+ADULT DOSING & USES [cite: 8, 9]
+================================================================================
+Schizophrenia [cite: 42]
+---------------------
+* PO: 10-15 mg/day PO initially; may increase after 2 weeks; not to exceed 30 mg/day PO for tablets; efficacy not significantly greater above 15 mg/day[cite: 46, 47].
+* Abilify Maintena: Establish tolerability with PO first (may take up to ~2 weeks)[cite: 51, 52]. Recommended dose is 400 mg monthly (no sooner than 26 days after previous injection)[cite: 50]. 
+  - 1-day initiation: Two IM injections of 400 mg in separate sites, plus one dose of oral aripiprazole 20 mg on day 1[cite: 53, 54, 55].
+  - 14-day initiation: One IM injection of 400 mg, plus continue oral aripiprazole (10 mg to 20 mg) or other oral antipsychotics for 14 consecutive days[cite: 56, 57, 58, 64, 65].
+  - Adverse reactions: May reduce dosage to 300 mg once monthly[cite: 66].
+* Aristada (IM once monthly): Establish tolerability with PO first[cite: 68]. Base initial dose on current PO dose; coadminister PO for 21 consecutive days[cite: 69]. 
+  - 10 mg/day PO: 441 mg IM once monthly[cite: 70].
+  - 15 mg/day PO: 662 mg IM once monthly, 882 mg IM q6wk, or 1064 mg IM q2mo[cite: 71].
+  - >=20 mg/day PO: 882 mg IM once monthly[cite: 71].
+  - Early dosing: Do not give earlier than 14 days after the previous injection[cite: 73].
+* Aristada Initio (single IM dose): Indicated in combination with oral aripiprazole for initiation or re-initiation after a missed dose of Aristada[cite: 75, 76]. Administered as a single 675 mg IM dose in conjunction with the first Aristada IM injection and one dose of aripiprazole 30 mg PO[cite: 79, 80].
+* Abilify Asimtufii (IM every 2 months): Establish tolerability with oral first[cite: 83, 84]. Recommended dose is 960 mg IM q2Months[cite: 85].
+  - 1-day initiation: 960 mg Abilify Asimtufii IM in gluteal muscle, one injection of Abilify Maintena 400 mg in separate muscle, and one oral 20 mg dose on day 1[cite: 93, 94, 95].
+  - 14-day initiation: 960 mg IM in gluteal muscle, plus continue oral aripiprazole (10-20 mg) or other oral antipsychotics for 14 consecutive days[cite: 96, 97].
+  - Switching from Abilify Maintena: Administer 960 mg once q2months in place of next scheduled injection (second or later injection of Abilify Maintena)[cite: 98, 99, 100].
+  - Adverse reactions: May reduce dosage to 720 mg once q2months[cite: 101]. Window allowed up to 2 weeks before or after scheduled timepoint[cite: 102].
+
+Bipolar Mania [cite: 103]
+-------------
+* PO: Indicated for acute and maintenance treatment of manic or mixed episodes as monotherapy or adjunct to lithium or valproate[cite: 106, 107].
+  - Monotherapy: 15 mg/day PO initially; may increase gradually; not to exceed 30 mg/day[cite: 108].
+  - Adjunct: 10-15 mg/day PO initially; recommended target is 15 mg/day; not to exceed 30 mg/day[cite: 109, 110]. Continue stabilization dose up to 6 weeks[cite: 111].
+* Abilify Maintena: Establish tolerability with oral first[cite: 120]. Administer 400 mg IM once monthly (no sooner than 26 days apart)[cite: 118, 124, 125]. Continue oral aripiprazole (10-20 mg/day) or other oral antipsychotics for 14 consecutive days after initial injection[cite: 122]. Consider reduction to 300 mg/month if adverse reactions occur[cite: 126].
+* Abilify Asimtufii (IM every 2 months): 960 mg IM q2Months[cite: 127, 130]. Requires 14 days of oral aripiprazole (10-20 mg/day) or alternative oral antipsychotic stabilization[cite: 132, 135, 136]. Can transition directly from Abilify Maintena[cite: 137, 138, 139]. Dose reduction to 720 mg q2months allowed for adverse reactions[cite: 140].
+
+Major Depressive Disorder [cite: 147]
+-------------------------
+* PO: Used adjunctively with other antidepressants[cite: 149]. 2-5 mg/day PO initially; increased weekly PRN by <=5 mg/day to a range of 2-15 mg/day[cite: 148].
+
+Orphan Designation [cite: 215]
+------------------
+* N-Glycanase 1 Deficiency: Orphan designation for treatment of NGLY1 deficiency[cite: 216].
+
+================================================================================
+PEDIATRIC DOSING & USES [cite: 219]
+================================================================================
+Schizophrenia [cite: 242]
+-------------
+* <13 years: Safety and efficacy not established[cite: 244].
+* 13-17 years: 2 mg/day PO initially; increase to 5 mg/day after 2 days; may increase to target dose of 10 mg/day after additional 2 days[cite: 245, 246, 247]. Subsequent increments can be 5 mg/day[cite: 248]. 30 mg/day was not shown to be more efficacious than 10 mg/day[cite: 249].
+
+Bipolar Mania [cite: 250]
+-------------
+* 10-17 years: Initiate at 2 mg/day PO; increase to 5 mg/day after 2 days; may increase to target of 10 mg/day after additional 2 days[cite: 252, 253, 254]. Subsequent doses may increase by 5 mg/day[cite: 255]. Maintenance: 10-30 mg/day[cite: 256].
+
+Autism [cite: 257]
+------
+* <6 years: Safety and efficacy not established[cite: 259].
+* 6-17 years: 2 mg/day PO initially; increase gradually at >=1 week intervals to target dosage of 5 mg/day; may increase PRN to 10 mg/day or higher; not to exceed 15 mg/day[cite: 260, 261].
+
+Tourette Disorder [cite: 262]
+-----------------
+* <6 years: Safety and efficacy not established[cite: 264].
+* 6-18 years (<50 kg): Initiate at 2 mg/day PO; target dose 5 mg/day after 2 days[cite: 265, 266]. Can increase to 10 mg/day if optimal control is not achieved[cite: 271]. Adjustments occur at intervals of no less than 1 week[cite: 272].
+* 6-18 years (>=50 kg): Initiate at 2 mg/day PO for 2 days, then 5 mg/day for 5 days, targeting 10 mg/day on day 8[cite: 273, 274]. Can increase up to 20 mg/day if needed[cite: 275]. Adjustments occur in 5 mg/day increments at intervals of no less than 1 week[cite: 276].
+
+================================================================================
+DOSAGE MODIFICATIONS [cite: 150, 158, 169, 196]
+================================================================================
+Oral Formulations (Adult & Pediatric) [cite: 150, 277]
+-------------------------------------
+* Known CYP2D6 Poor Metabolizers: Administer half of recommended dose[cite: 152, 279].
+* Known CYP2D6 Poor Metabolizers taking concomitant strong CYP3A4 inhibitors: Administer a quarter of the recommended dose (decrease dose by 75%)[cite: 153, 154, 280, 281].
+* Strong CYP2D6 or CYP3A4 inhibitors: Administer half of recommended dose[cite: 155, 282].
+* Strong CYP2D6 AND CYP3A4 inhibitors: Administer a quarter of the recommended dose (decrease dose by 75%)[cite: 156, 283].
+* Strong CYP3A4 inducers: Double recommended dose over 1-2 weeks[cite: 157, 284].
+
+Abilify Maintena [cite: 158]
+----------------
+* CYP2D6 poor metabolizers: 300 mg IM[cite: 159].
+* CYP2D6 poor metabolizers taking concomitant CYP3A4 inhibitor: 200 mg IM[cite: 160].
+* Patients taking 400 mg IM: 
+  - Strong CYP2D6 OR CYP3A4 inhibitors: 300 mg IM[cite: 161, 162].
+  - CYP2D6 AND CYP3A4 inhibitors: 200 mg IM[cite: 163].
+  - CYP3A4 inducers: Avoid use[cite: 164].
+* Patients taking 300 mg IM:
+  - Strong CYP2D6 OR CYP3A4 inhibitors: 200 mg IM[cite: 165, 166].
+  - CYP2D6 AND CYP3A4 inhibitors: 160 mg IM[cite: 167].
+  - CYP3A4 inducers: Avoid use[cite: 168].
+
+Aristada [cite: 169]
+--------
+* Modulators added for <2 weeks: No dosage changes[cite: 170].
+* Strong CYP3A4 inhibitor for >2 weeks: Reduce dose to next lower strength; no adjustment needed for 441 mg if tolerated[cite: 171, 172].
+* Poor CYP2D6 metabolizers: Reduce dose to 441 mg from higher strengths; no adjustment needed if already taking 441 mg[cite: 177, 178].
+* Strong CYP2D6 inhibitor for >2 weeks: Reduce dose to next lower strength; no adjustment needed for 441 mg if tolerated[cite: 179, 180, 181]. Poor CYP2D6 metabolizers require no further dose adjustment[cite: 182].
+* Both strong CYP3A4 and CYP2D6 inhibitors for >2 weeks: Avoid use for higher strengths; no adjustment needed for 441 mg if tolerated[cite: 183, 184, 185].
+* CYP3A4 inducers for >2 weeks: No adjustment for higher strengths; increase 441 mg dose to 662 mg[cite: 186, 187, 188].
+
+Aristada Initio [cite: 189]
+---------------
+* No dosage adjustments possible (single strength/single-dose syringe)[cite: 190].
+* CYP2D6 poor metabolizers, strong CYP3A4 inhibitors, and strong CYP3A4 inducers: Avoid use[cite: 191].
+
+Abilify Asimtufii [cite: 196]
+-----------------
+* CYP2D6 poor metabolizers: 720 mg q2months[cite: 197, 198]. If taking concomitant CYP3A4 inhibitors: Avoid use[cite: 199].
+* Coadministration with strong CYP2D6 OR strong CYP3A4 inhibitors (960 mg dose): Decrease to 720 mg q2months[cite: 200, 201, 202, 203].
+* Coadministration with strong CYP2D6 AND strong CYP3A4 inhibitors: Avoid use[cite: 208, 209].
+* Coadministration with strong CYP3A4 inducers: Avoid use[cite: 210, 211].
+
+Hepatic & Renal Impairment [cite: 192, 194]
+--------------------------
+* Hepatic (Child-Pugh score 5-15): Mild-to-severe impairment requires no dosage adjustments[cite: 193].
+* Renal (GFR 15-90 mL/min): Mild-to-severe impairment requires no dosage adjustments[cite: 195].
+
+================================================================================
+DRUG INTERACTIONS [cite: 285]
+================================================================================
+Contraindicated [cite: 289, 293]
+---------------
+* Amisulpride: Increases risk of neuroleptic malignant syndrome[cite: 294, 299].
+* Dronedarone: Both drugs increase QTc interval[cite: 300, 301].
+* Mavorixafor: Strong CYP2D6 inhibitor; increases levels/effects of aripiprazole[cite: 302, 303, 304].
+* Thioridazine: Both drugs increase QTc interval[cite: 305, 306].
+* Cabergoline, Dopamine, Lisuride, Methyldopa, Pramipexole, Ropinirole: Aripiprazole decreases effects via pharmacodynamic antagonism[cite: 352, 353, 403, 404, 503, 504, 518, 519, 581, 582, 607, 608].
+* Fluconazole, Pimozide, Posaconazole, Quinidine: Listed explicitly as contraindicated[cite: 442, 443, 573, 574, 579, 580, 589, 590].
+
+Serious (Avoid or Use Alternate Drug) [cite: 307]
+-------------------------------------
+* QT Prolongation Risks: Amiodarone, azithromycin, bedaquiline, buprenorphine, chloroquine, chlorpromazine, citalopram, clarithromycin, clozapine, crizotinib, desflurane, disopyramide, dofetilide, droperidol, eliglustat, encorafenib, entrectinib, eribulin, erythromycin, fexinidazole, flecainide, fluoxetine, fluphenazine, foscarnet, glasdegib, hydroxychloroquine, ibutilide, iloperidone, inotuzumab, isoflurane, itraconazole, lefamulin, lenvatinib, lopinavir, mefloquine, methadone, midostaurin, mifepristone, milsaperidone, moxifloxacin, nilotinib, ondansetron, osimertinib, oxaliplatin, ozanimod, paliperidone, panobinostat, pazopanib, pentamidine, perphenazine, pimavanserin, pitolisant, ponesimod, procainamide, propafenone, quetiapine, quinine, ranolazine, ribociclib, selpercatinib, siponimod, sorafenib, sotalol, tetrabenazine, thiothixene, toremifene, trazodone, vandetanib, vemurafenib, voriconazole, vorinostat, ziftomenib, ziprasidone[cite: 308, 331, 333, 343, 374, 375, 380, 384, 386, 388, 397, 400, 402, 406, 408, 411, 413, 418, 422, 429, 438, 441, 447, 449, 453, 459, 470, 472, 478, 480, 482, 484, 491, 493, 512, 514, 517, 526, 528, 535, 537, 542, 548, 550, 552, 554, 556, 558, 562, 568, 570, 572, 576, 578, 584, 586, 588, 592, 594, 596, 616, 618, 625, 627, 640, 642, 647, 649, 651, 653, 655, 657, 659, 664].
+* Sedation/Respiratory Depression Synergism: Opioids and CNS depressants (e.g., benzhydrocodone, calcium/magnesium/potassium/sodium oxybates, hydrocodone, olopatadine intranasal, sodium oxybates, sufentanil SL, zuranolone)[cite: 335, 336, 337, 354, 355, 356, 460, 461, 462, 543, 544, 545, 619, 620, 621, 631, 632, 633, 665, 666, 667].
+* CYP3A4 Metabolism Reducers (Apalutamide, Carbamazepine, Enzalutamide, Ivosidenib, Rifabutin, Rifampin, St John's Wort): Decrease aripiprazole levels/effect[cite: 312, 313, 314, 362, 363, 414, 415, 485, 486, 597, 602, 604, 605, 628, 629]. Dose doubling required if starting carbamazepine[cite: 364].
+* CYP3A4 Metabolism Enhancers (Ceritinib, Chloramphenicol, Chloroquine, Cimetidine, Clarithromycin, Dacomitinib, Erythromycin, Fluoxetine, Givosiran, Idelalisib, Lonafarnib, Lopinavir, Nefazodone, Paroxetine, Tipranavir): Increase aripiprazole exposure or toxicities[cite: 366, 367, 369, 370, 372, 378, 383, 389, 390, 420, 424, 432, 435, 445, 454, 455, 473, 474, 506, 510, 539, 559, 560, 644].
+
+Monitor Closely [cite: 673]
+---------------
+* Blood Glucose Control Disruption: Atypical antipsychotics associate with hyperglycemia. Monitor closely with antidiabetic agents (e.g., acarbose, exenatide, glimepiride, glipizide, glyburide, insulin formulations, liraglutide, metformin, miglitol, nateglinide, pioglitazone, pramlintide, repaglinide, rosiglitazone, saxagliptin, sitagliptin)[cite: 677, 678, 1144, 1145, 1147, 1148, 1239, 1240, 1242, 1243, 1245, 1246, 1306, 1307, 1310, 1313, 1314, 1317, 1318, 1320, 1321, 1323, 1327, 1329, 1330, 1332, 1333, 1336, 1337, 1339, 1340, 1342, 1343, 1413, 1414, 1494, 1495, 1549, 1550, 1586, 1587, 1711, 1712, 1722, 1723, 1786, 1787, 1818, 1819, 1832, 1833, 1853, 1854].
+* Anticholinergic / GI Interactions: Additive anticholinergic effects or altered GI absorption (e.g., aclidinium, atropine, belladonna alkaloids, cyclobenzaprine, darifenacin, dicyclomine, diphenhydramine, fesoterodine, flavoxate, hyoscyamine, meclizine, methscopolamine, oxybutynin, propantheline, scopolamine, solifenacin, tiotropium, tolterodine, trospium chloride)[cite: 682, 684, 747, 748, 766, 767, 921, 923, 924, 939, 941, 1010, 1014, 1035, 1037, 1177, 1178, 1183, 1184, 1289, 1290, 1472, 1473, 1508, 1509, 1632, 1633, 1752, 1753, 1835, 1836, 1866, 1867, 1928, 1929, 1936, 1937, 1971, 1972].
+* Enhanced Sedation: Common with sedatives, antihistamines, skeletal muscle relaxants, and other CNS active agents[cite: 680, 685, 687, 695, 704, 711, 738, 740, 761, 763, 764, 772, 784, 793, 802, 804, 806, 807, 810, 813, 815, 817, 819, 832, 837, 838, 845, 847, 849, 850, 859, 861, 863, 867, 868, 871, 879, 888, 890, 892, 896, 898, 901, 906, 922, 928, 936, 959, 962, 970, 980, 982, 1001, 1003, 1005, 1007, 1021, 1023, 1034, 1036, 1045, 1047, 1061, 1063, 1066, 1071, 1131, 1133, 1139, 1141, 1163, 1165, 1167, 1174, 1176, 1201, 1203, 1221, 1223, 1225, 1267, 1270, 1285, 1287, 1303, 1131, 1371, 1373, 1394, 1396, 1408, 1428, 1430, 1435, 1437, 1439, 1448, 1455, 1459, 1461, 1468, 1471, 1476, 1478, 1480, 1489, 1493, 1498, 1505, 1507, 1517, 1536, 1559, 1567, 1568, 1571, 1573, 1575, 1581, 1599, 1606, 1618, 1623, 1625, 1627, 1631, 1651, 1653, 1656, 1662, 1664, 1678, 1681, 1684, 1693, 1707, 1710, 1735, 1743, 1747, 1759, 1765, 1767, 1770, 1774, 1780, 1804, 1839, 1841, 1843, 1894, 1896, 1904, 1913, 1915, 1919, 1926, 1927, 1933, 1935, 1944, 1954, 1956, 1960, 1963, 1965, 1968, 1980, 1999, 2028, 2030, 2033, 2039, 2041, 2044, 2046].
+* Additive Antidopaminergic Effects / NMS Risks: Enhanced risks of EPS or NMS (e.g., amoxapine, benperidol, chlorpromazine, clozapine, deutetrabenazine, droperidol, fluphenazine, haloperidol, loxapine, metoclopramide, olanzapine, paliperidone, perphenazine, pimozide, prochlorperazine, promethazine, quetiapine, risperidone, tetrabenazine, thioridazine, thiothixene, trifluoperazine, ziprasidone, zotepine)[cite: 710, 783, 865, 900, 968, 969, 1070, 1196, 1269, 1450, 1457, 1530, 1617, 1655, 1683, 1709, 1741, 1745, 1769, 1803, 1911, 1917, 1925, 1962, 2032, 2043].
+* Serotonin Syndrome Risks: Serotonin modulators may enhance dopamine blockade or serotonergic effects (e.g., almotriptan, dextromethorphan, dihydroergotamine, eletriptan, ergoloid mesylates, ergotamine, fentanyl, frovatriptan, levomilnacipran, linezolid, lithium, lorcaserin, meperidine, methadone, methylergonovine, milnacipran, naratriptan, paroxetine, phenelzine, procarbazine, promethazine, selegiline, sumatriptan, tranylcypromine, venlafaxine, vilazodone, zolmitriptan)[cite: 692, 693, 992, 993, 994, 1025, 1026, 1027, 1087, 1088, 1089, 1112, 1113, 1114, 1116, 1117, 1118, 1160, 1161, 1217, 1218, 1404, 1405, 1410, 1411, 1422, 1423, 1424, 1442, 1443, 1481, 1486, 1499, 1500, 1521, 1522, 1552, 1553, 1554, 1583, 1584, 1666, 1667, 1688, 1689, 1737, 1738, 1748, 1749, 1750, 1845, 1846, 1876, 1877, 1946, 1947, 1993, 1994, 2003, 2004, 2035, 2036].
+* Potentiation of Antihypertensives: Potential to enhance certain alpha-adrenergic blocking or hypotensive agents (e.g., amifostine, amlodipine, benazepril, captopril, clonidine, guanfacine)[cite: 698, 702, 708, 781, 842, 895, 1262].
+
+================================================================================
+ADVERSE EFFECTS [cite: 2126]
+================================================================================
+* >10%: Weight gain (8-30%) [cite: 2128], Headache (27%) [cite: 2129], Agitation (19%) [cite: 2130], Insomnia (18%) [cite: 2131], Anxiety (17%) [cite: 2132], Nausea and vomiting (11-15%) [cite: 2133], Akathisia (10-13%) [cite: 2134], Lightheadedness (11%) [cite: 2135], Constipation (10-11%)[cite: 2136].
+* 1-10%: Dizziness (10%) [cite: 2138], Dyspepsia (9%) [cite: 2139], Somnolence (5-8%) [cite: 2140], Fatigue (6%) [cite: 2145], Restlessness (6%) [cite: 2146], Tremor (6%) [cite: 2147], Dry mouth/xerostomia (5%) [cite: 2148], Extrapyramidal disorder (5%) [cite: 2149], Orthostatic hypotension (1-5%) [cite: 2150], Musculoskeletal stiffness (4%) [cite: 2151], Abdominal discomfort (3%) [cite: 2152], Blurred vision (3%) [cite: 2153], Cough (3%) [cite: 2154], Pain (3%) [cite: 2155], Myalgia (2%) [cite: 2156], Rash [cite: 2157], Rhinitis[cite: 2158].
+* Aripiprazole lauroxil specific (1-10% or minor): Extrapyramidal symptoms (5-7%) [cite: 2160], Injection site reactions (4%) [cite: 2161], Pain at injection site (<2%) [cite: 2162], Increased weight (<2%) [cite: 2163], Increased creatinine phosphokinase (<2%) [cite: 2164], Akathisia (<2%) [cite: 2165], Headache (<2%) [cite: 2166], Insomnia (<2%) [cite: 2167], Restlessness (<2%)[cite: 2168].
+* <1%: Altered mental status [cite: 2170], Autonomic instability [cite: 2171], Dysphagia [cite: 2172], Hyperpyrexia [cite: 2173], Muscle rigidity [cite: 2174], Neuroleptic malignant syndrome (NMS) [cite: 2175], Seizure [cite: 2176], Tardive dyskinesia[cite: 2181].
+* Postmarketing Reports: Pathological gambling [cite: 2190], Hiccups [cite: 2191], Falls [cite: 2192], Oculogyric crisis, drug reaction with eosinophilia and systemic symptoms (DRESS) [cite: 2193], Fecal incontinence[cite: 2194].
+
+================================================================================
+WARNINGS & CAUTIONS [cite: 2197]
+================================================================================
+Black Box Warnings [cite: 2198]
+------------------
+* Dementia-related Psychosis: Not approved for dementia-related psychosis; patients treated with antipsychotic drugs are at increased risk of death (appeared cardiovascular or infectious in nature)[cite: 2200, 2201].
+* Suicidal thoughts and behaviors (Aripiprazole PO and Abilify injection only): Antidepressants increased risk of suicidal thinking/behavior in children, adolescents, and young adults (<24 years); monitor closely[cite: 2203, 2204, 2205].
+
+Cautions [cite: 2212]
+--------
+* Neuroleptic Malignant Syndrome (NMS): Monitor for fever, muscle rigidity, altered mental status, autonomic instability[cite: 2215].
+* Tardive Dyskinesia & EPS: Consider discontinuation if clinically indicated[cite: 2213, 2214].
+* Falls Assessment: Somnolence, postural hypotension, motor instability can lead to fractures/injuries; complete recurrent fall risk assessments[cite: 2216, 2217].
+* Cardiovascular / Cerebrovascular Disease: Use caution; may increase stroke, TIA, or fatalities; monitor heart rate/blood pressure[cite: 2218, 2219, 2220].
+* Seizures: Lowered seizure thresholds may occur (especially >=65 years)[cite: 2224, 2225].
+* Cognitive/Motor Impairment: Caution when operating hazardous machinery or automobiles[cite: 2226, 2229, 2230].
+* Metabolic Changes: Associated with dyslipidemia, significant weight gain, and hyperglycemia. Hyperglycemia can cause ketoacidosis, hyperosmolar coma, or death. Monitor glucose regularly[cite: 2247, 2248, 2249, 2251, 2252].
+* Leukopenia, Neutropenia, Agranulocytosis: If patient has history of significant low WBC, monitor CBC frequently. Discontinue if WBC declines <1000/mcL in absence of other causes[cite: 2243, 2244, 2245, 2246].
+* Errors: Avoid substitution errors between Aristada and Aristada Initio[cite: 2238, 2240, 2242].
+
+================================================================================
+PREGNANCY & LACTATION [cite: 2265]
+================================================================================
+Pregnancy [cite: 2266]
+---------
+* Registry: National Pregnancy Registry for Atypical Antipsychotics (1-866-961-2388)[cite: 2268].
+* Fetal Risks: Neonates exposed during third trimester are at risk for extrapyramidal and/or withdrawal symptoms (agitation, hypertonia, hypotonia, tremor, somnolence, respiratory distress, feeding disorder)[cite: 2270, 2273].
+* Maternal Risks: Untreated schizophrenia risks include relapse, hospitalization, suicide, and preterm birth[cite: 2278, 2279]. Drug exposure may decrease milk supply in postpartum period[cite: 2277].
+
+Lactation [cite: 2281]
+---------
+* Excretion: Aripiprazole is present in human breast milk[cite: 2282]. 
+* Milk Supply: May lead to clinically relevant decreases or total absence of maternal milk supply (mediated through decreased prolactin levels)[cite: 2282, 2283, 2284].
+* Infant Monitoring: Monitor the breastfed infant for dehydration and lack of appropriate weight gain[cite: 2285].
+
+================================================================================
+PHARMACOLOGY [cite: 2298]
+================================================================================
+* Mechanism of Action: Atypical antipsychotic; partial agonist at dopamine D2 and serotonin type 1 (5-HT1A) receptors; antagonist at serotonin type 2 (5-HT2A) receptor; possesses alpha-blocking activity[cite: 2300, 2301].
+* Bioavailability: 87% (tablet); 100% (IM)[cite: 2305].
+* Peak Plasma Time: 1-3 hr (IR); 3-5 hr (tablet); 5-7 hr (ER); ~27 days (Aristada Initio)[cite: 2306].
+* Distribution: Protein bound 99%[cite: 2308]. Vd: 404 L (aripiprazole IV); 268 L (Aristada Initio)[cite: 2309].
+* Metabolism: Hepatic via CYP2D6 and CYP3A4[cite: 2310, 2311]. Major active metabolite is Dehydroaripiprazole (40%)[cite: 2312].
+* Elimination Half-life: 75 hr (parent drug); 94 hr (metabolite); 30-47 days (IM); 146 hr (poor metabolizers)[cite: 2318]. Aristada Initio half-life: 15-18 days[cite: 2319].
+* Excretion: Feces (55%), urine (25%)[cite: 2320].
+
+================================================================================
+ADMINISTRATION & STORAGE
+================================================================================
+Oral Administration [cite: 2322]
+-------------------
+* Oral Solution: Substitution on mg-per-mg basis up to 25 mg level; a 30 mg tablet patient should receive 25 mg of solution[cite: 2323, 2324].
+* Tablets / ODT / Film: May be taken with or without food[cite: 2326, 2329, 2335].
+* Tablets: Swallow whole; do not divide, crush, or chew[cite: 2327].
+* Oral Film: Apply on top of tongue to dissolve. Do not chew, swallow undissolved, cut, or split[cite: 2330, 2331]. Administer only 1 film at a time[cite: 2332].
+* ODT: Open only when ready. Place on tongue with dry hands[cite: 2336, 2339]. Rapidly disintegrates; recommended to take without liquid, but permissible[cite: 2340]. Do not push through foil or split[cite: 2338, 2341].
+
+IM Preparation & Administration [cite: 2342, 2371, 2385, 2398]
+--------------------------------
+* Universal IM rule: Must be administered by a healthcare professional deep IM; do not give IV or SC[cite: 119, 2399, 2400]. Do not massage injection site[cite: 2403].
+* Abilify Maintena Lyophilized Vial: Reconstitute with Sterile Water for Injection (SWI)[cite: 2349]. 400mg vial takes 1.9 mL SWI; 300mg vial takes 1.5 mL SWI (Final concentration 200 mg/mL)[cite: 2350, 2351, 2352]. Shake vigorously for 30 seconds[cite: 2353]. Inject immediately[cite: 2355].
+* Abilify Maintena Prefilled Syringe: Rotate plunger rod to release diluent; shake vigorously for 20 seconds[cite: 2360, 2361]. Inject immediately[cite: 2363].
+* Aristada & Aristada Initio Syringes: Tap syringe at least 10 times to dislodge settled material; shake vigorously for minimum 30 seconds before use[cite: 2372, 2373, 2386, 2387]. Prime to remove air[cite: 2382, 2393]. Requires RAPID continuous IM injection (<10 seconds for Aristada)[cite: 2384, 2394, 2415].
+
+Needle Selection Guides [cite: 2364, 2375, 2389]
+-----------------------
+* Abilify Maintena Gluteal: Nonobese (22-ga, 1.5-in); Obese (21-ga, 2-in)[cite: 2366, 2367].
+* Abilify Maintena Deltoid: Nonobese (23-ga, 1-in); Obese (22-ga, 1.5-in)[cite: 2368, 2370].
+* Aristada 441 mg Deltoid: 21-ga, 1-in or 20-ga, 1.5-in[cite: 2376].
+* Aristada (All doses) Gluteal: 20-ga, 1.5-in or 20-ga, 2-in[cite: 2380].
+* Aristada Initio Deltoid: 21-ga, 1-in or 20-ga, 1.5-in[cite: 2390].
+* Aristada Initio Gluteal: 20-ga, 1-in or 20-ga, 1.5-in[cite: 2391].
+
+Storage [cite: 2439]
+-------
+* PO Solution / Tablets / MyCite Tablets: Store at 25°C (77°F) or 20-25°C (68-77°F); excursions permitted between 15-30°C (59-86°F)[cite: 2440, 2450]. Use oral solution within 6 months after opening[cite: 2441]. Do not store MyCite in humid conditions[cite: 2451].
+* Oral Film: 20-25°C (68-77°F); excursions 15-30°C (59-86°F)[cite: 2442].
+* Abilify Maintena Prefilled Syringe: Store below 30°C (86°F). Do not freeze. Protect from light[cite: 2443, 2444].
+* Aristada & Aristada Initio: Store at room temperature 25°C (77°F) or 20-25°C (68-77°F); excursions 15-30°C (59-86°F). Do not freeze[cite: 2446, 2447].

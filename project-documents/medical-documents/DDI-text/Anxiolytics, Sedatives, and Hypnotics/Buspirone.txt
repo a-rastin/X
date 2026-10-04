@@ -1,0 +1,1361 @@
+﻿6/22/26, 4:38 PM Bucapsol, BuSpar (DSC) (buspirone) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+buspirone (Rx)
+Brand and Other Names: BuSpar (DSC)
+Classes: Antianxiety Agents; Anxiolytics, Nonbenzodiazepines
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+tablet
+
+5mg
+
+7.5mg
+
+10mg
+
+15mg
+
+30mg
+
+Anxiety Disorders
+
+10-15 mg/day PO divided q8-12hr; may increase every 2-3 days by 5 mg/day to 15-30
+mg/day PO divided q8-12hr; not to exceed 60 mg/day
+
+Smoking Cessation (Off-label)
+
+30-60 mg/day PO for 9-13 weeks; begin 2-3 weeks before quit date
+
+Dosing Modifications
+
+https://reference.medscape.com/drug/buspar-bucapsol-buspirone-342913 1/24
+
+
+
+6/22/26, 4:38 PM Bucapsol, BuSpar (DSC) (buspirone) dosing, indications, interactions, adverse effects, and more
+
+Renal impairment: Not recommended for patients with severe impairment
+
+Hepatic impairment: Not recommended for patients with severe impairment
+
+PEDIATRIC
+Dosage Forms & Strengths
+
+tablet
+
+5mg
+
+7.5mg
+
+10mg
+
+15mg
+
+30mg
+
+Generalized Anxiety Disorder (Off-label)
+
+Pre-adolescent: 2.5-5 mg PO qDay; may increase dose by 2.5 mg every 3-4 days; not to
+exceed 20 mg/day
+
+Adolescent: 5-10 mg PO qDay; may increase by 5 mg/day at weekly intervals PRN; not
+to exceed 60 mg/day divided q8-12hr
+
+Dosing Modifications
+
+Renal impairment: Not recommended for patients with severe impairment
+
+Hepatic impairment: Not recommended for patients with severe impairment
+
+Interactions
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and buspirone
+No Interactions Found
+Interactions Found
+Contraindicated
+
+Serious
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+Contraindicated (6)
+
+https://reference.medscape.com/drug/buspar-bucapsol-buspirone-342913 2/24
+
+
+
+6/22/26, 4:38 PM Bucapsol, BuSpar (DSC) (buspirone) dosing, indications, interactions, adverse effects, and more
+
+isocarboxazid
+isocarboxazid and buspirone both increase serotonin levels. Contraindicated.
+
+isocarboxazid, buspirone. Mechanism: pharmacodynamic synergism.
+Contraindicated. Risk of acute hypertensive episode.
+
+linezolid
+linezolid, buspirone. Mechanism: pharmacodynamic synergism. Contraindicated.
+Risk of acute hypertensive episode.
+
+phenelzine
+phenelzine and buspirone both increase serotonin levels. Contraindicated.
+
+phenelzine, buspirone. Mechanism: pharmacodynamic synergism. Contraindicated.
+Risk of acute hypertensive episode.
+
+procarbazine
+procarbazine and buspirone both increase serotonin levels. Contraindicated.
+Combination is contraindicated within 2 weeks of MAOI use.
+
+procarbazine, buspirone. Other (see comment). Contraindicated. Comment:
+Concomitant use of buspirone with MAOIs can increase blood pressure; this
+combination should be avoided.
+
+selegiline transdermal
+selegiline transdermal, buspirone. Mechanism: pharmacodynamic synergism.
+Contraindicated. Risk of acute hypertensive episode.
+
+tranylcypromine
+tranylcypromine and buspirone both increase serotonin levels. Contraindicated.
+
+tranylcypromine, buspirone. Mechanism: pharmacodynamic synergism.
+Contraindicated. Risk of acute hypertensive episode.
+
+Serious (56)
+
+amitriptyline
+amitriptyline and buspirone both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+amoxapine
+amoxapine and buspirone both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+apalutamide
+apalutamide will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+Coadministration of apalutamide, a strong CYP3A4 inducer, with drugs that are
+CYP3A4 substrates can result in lower exposure to these medications. Avoid or
+substitute another drug for these medications when possible. Evaluate for loss of
+
+https://reference.medscape.com/drug/buspar-bucapsol-buspirone-342913 3/24
+
+
+
+6/22/26, 4:38 PM Bucapsol, BuSpar (DSC) (buspirone) dosing, indications, interactions, adverse effects, and more
+
+therapeutic effect if medication must be coadministered. Adjust dose according to
+prescribing information if needed.
+
+benzhydrocodone/acetaminophen
+benzhydrocodone/acetaminophen, buspirone. Either increases toxicity of the other
+by pharmacodynamic synergism. Avoid or Use Alternate Drug. Profound sedation,
+respiratory depression, coma, and death may result if coadministered. Reserve
+concomitant prescribing of these drugs in patients for whom other treatment
+options are inadequate. Limit dosages and durations to the minimum required.
+Monitor closely for signs of respiratory depression and sedation.
+
+carbamazepine
+carbamazepine will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+cimetidine
+cimetidine will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+citalopram
+citalopram and buspirone both increase serotonin levels. Avoid or Use Alternate
+Drug. Combination may increase risk of serotonin syndrome or neuroleptic
+malignant syndrome-like reactions.
+
+clarithromycin
+clarithromycin will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+clomipramine
+clomipramine and buspirone both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+desipramine
+desipramine and buspirone both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+desvenlafaxine
+buspirone and desvenlafaxine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+dextromethorphan
+buspirone and dextromethorphan both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+doxepin
+doxepin and buspirone both increase serotonin levels. Avoid or Use Alternate Drug.
+
+duloxetine
+duloxetine and buspirone both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+erythromycin base
+
+https://reference.medscape.com/drug/buspar-bucapsol-buspirone-342913 4/24
+
+
+
+6/22/26, 4:38 PM Bucapsol, BuSpar (DSC) (buspirone) dosing, indications, interactions, adverse effects, and more
+
+erythromycin base will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+erythromycin ethylsuccinate
+erythromycin ethylsuccinate will increase the level or effect of buspirone by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate
+Drug.
+
+erythromycin lactobionate
+erythromycin lactobionate will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+erythromycin stearate
+erythromycin stearate will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+escitalopram
+escitalopram and buspirone both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+fluoxetine
+fluoxetine and buspirone both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+fluvoxamine
+fluvoxamine and buspirone both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+hydrocodone
+hydrocodone, buspirone. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Profound sedation, respiratory depression,
+coma, and death may result if coadministered. Reserve concomitant prescribing of
+these drugs in patients for whom other treatment options are inadequate. Limit
+dosages and durations to the minimum required. Monitor closely for signs of
+respiratory depression and sedation.
+
+idelalisib
+idelalisib will increase the level or effect of buspirone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Idelalisib is a strong
+CYP3A inhibitor; avoid coadministration with sensitive CYP3A substrates
+
+imipramine
+imipramine and buspirone both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+ivosidenib
+ivosidenib will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid
+coadministration of sensitive CYP3A4 substrates with ivosidenib or replace with
+alternate therapies. If coadministration is unavoidable, monitor patients for loss of
+therapeutic effect of these drugs.
+
+levomilnacipran
+
+https://reference.medscape.com/drug/buspar-bucapsol-buspirone-342913 5/24
+
+
+
+6/22/26, 4:38 PM Bucapsol, BuSpar (DSC) (buspirone) dosing, indications, interactions, adverse effects, and more
+
+levomilnacipran and buspirone both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+linezolid
+linezolid and buspirone both increase serotonin levels. Avoid or Use Alternate Drug.
+Linezolid may increase serotonin as a result of MAO-A inhibition. If linezolid must
+be administered, discontinue serotonergic drug immediately and monitor for CNS
+toxicity. Serotonergic therapy may be resumed 24 hours after last linezolid dose or
+after 2 weeks of monitoring, whichever comes first.
+
+lofepramine
+lofepramine and buspirone both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+lonafarnib
+lonafarnib will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid
+coadministration with sensitive CYP3A substrates. If coadministration unavoidable,
+monitor for adverse reactions and reduce CYP3A substrate dose in accordance with
+product labeling.
+
+lopinavir
+lopinavir will increase the level or effect of buspirone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+lorcaserin
+buspirone and lorcaserin both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+meperidine
+buspirone and meperidine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+methylene blue
+methylene blue and buspirone both increase serotonin levels. Avoid or Use
+Alternate Drug. Methylene blue may increase serotonin as a result of MAO-A
+inhibition. If methylene blue must be administered, discontinue serotonergic drug
+immediately and monitor for CNS toxicity. Serotonergic therapy may be resumed 24
+hours after last methylene blue dose or after 2 weeks of monitoring, whichever
+comes first.
+
+metoclopramide intranasal
+buspirone, metoclopramide intranasal. Either increases effects of the other by Other
+(see comment). Avoid or Use Alternate Drug. Comment: Avoid use of
+metoclopramide intranasal or interacting drug, depending on importance of drug to
+patient.
+
+milnacipran
+milnacipran and buspirone both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+nefazodone
+
+https://reference.medscape.com/drug/buspar-bucapsol-buspirone-342913 6/24
+
+
+
+6/22/26, 4:38 PM Bucapsol, BuSpar (DSC) (buspirone) dosing, indications, interactions, adverse effects, and more
+
+nefazodone and buspirone both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+nortriptyline
+nortriptyline and buspirone both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+olopatadine intranasal
+buspirone and olopatadine intranasal both increase sedation. Avoid or Use
+Alternate Drug. Coadministration increases risk of CNS depression, which can lead
+to additive impairment of psychomotor performance and cause daytime impairment.
+
+paroxetine
+paroxetine and buspirone both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+protriptyline
+protriptyline and buspirone both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+rasagiline
+rasagiline, buspirone. Mechanism: pharmacodynamic synergism. Avoid or Use
+Alternate Drug. Risk of acute hypertensive episode. Avoid combination within 14
+days of MAOI use.
+
+rifabutin
+rifabutin will decrease the level or effect of buspirone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+rifampin
+rifampin will decrease the level or effect of buspirone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+selegiline
+selegiline and buspirone both increase serotonin levels. Avoid or Use Alternate
+Drug. Concurrent use is not recommended. Risk of acute hypertensive episodes.
+
+selegiline transdermal
+selegiline transdermal and buspirone both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+selinexor
+selinexor, buspirone. unspecified interaction mechanism. Avoid or Use Alternate
+Drug. Patients treated with selinexor may experience neurological toxicities. Avoid
+taking selinexor with other medications that may cause dizziness or confusion.
+
+sertraline
+sertraline and buspirone both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+St John's Wort
+St John's Wort will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+https://reference.medscape.com/drug/buspar-bucapsol-buspirone-342913 7/24
+
+
+
+6/22/26, 4:38 PM Bucapsol, BuSpar (DSC) (buspirone) dosing, indications, interactions, adverse effects, and more
+
+buspirone and St John's Wort both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+sufentanil SL
+sufentanil SL, buspirone. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Coadministration may result in
+hypotension, profound sedation, respiratory depression, coma, and death. Reserve
+concomitant prescribing of these drugs in patients for whom other treatment
+options are inadequate. Limit dosages and durations to the minimum required.
+Monitor closely for signs of respiratory depression and sedation.
+
+tovorafenib
+tovorafenib will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid
+coadministration of tovorafenib (a weak CYP3A4 inducer) with CYP3A substrates
+where minimal concentration changes may lead to serious therapeutic failures. If
+unavoidable, monitor patients for loss of efficacy unless otherwise recommended in
+the CYP3A4 substrate prescribing information.
+
+trazodone
+trazodone and buspirone both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+trimipramine
+trimipramine and buspirone both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+tucatinib
+tucatinib will increase the level or effect of buspirone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid concomitant use
+of tucatinib with CYP3A substrates, where minimal concentration changes may lead
+to serious or life-threatening toxicities. If unavoidable, reduce CYP3A substrate
+dose according to product labeling.
+
+venlafaxine
+venlafaxine and buspirone both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+vilazodone
+buspirone, vilazodone. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug. Concomitant therapy should be discontinued
+immediately if signs or symptoms of serotonin syndrome emerge and supportive
+symptomatic treatment should be initiated. .
+
+zuranolone
+buspirone, zuranolone. Either increases effects of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Coadministration of zuranolone with other
+CNS depressants may increase impairment of psychomotor performance or CNS
+depressant effects. If unavoidable, consider dose reduction. .
+
+https://reference.medscape.com/drug/buspar-bucapsol-buspirone-342913 8/24
+
+
+
+6/22/26, 4:38 PM Bucapsol, BuSpar (DSC) (buspirone) dosing, indications, interactions, adverse effects, and more
+
+Monitor Closely (129)
+
+5-HTP
+5-HTP and buspirone both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+almotriptan
+almotriptan and buspirone both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+amphetamine
+buspirone and amphetamine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+aprepitant
+aprepitant will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+armodafinil
+armodafinil will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+artemether/lumefantrine
+artemether/lumefantrine will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+atazanavir
+atazanavir will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+belzutifan
+belzutifan will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely. If
+unable to avoid coadministration of belzutifan with sensitive CYP3A4 substrates,
+consider increasing the sensitive CYP3A4 substrate dose in accordance with its
+prescribing information.
+
+bosentan
+bosentan will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+brexanolone
+brexanolone, buspirone. Either increases toxicity of the other by sedation. Use
+Caution/Monitor.
+
+budesonide
+budesonide will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+buprenorphine, long-acting injection
+buspirone increases toxicity of buprenorphine, long-acting injection by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+buprenorphine and benzodiazepines or other CNS depressants increases risk of
+
+https://reference.medscape.com/drug/buspar-bucapsol-buspirone-342913 9/24
+
+
+
+6/22/26, 4:38 PM Bucapsol, BuSpar (DSC) (buspirone) dosing, indications, interactions, adverse effects, and more
+
+adverse reactions including overdose, respiratory depression, and death. Cessation
+of benzodiazepines or other CNS depressants is preferred in most cases. In some
+cases, monitoring at a higher level of care for tapering CNS depressants may be
+appropriate. In others, gradually tapering a patient off of a prescribed
+benzodiazepine or other CNS depressant or decreasing to the lowest effective dose
+may be appropriate.
+
+butalbital
+butalbital will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+cenobamate
+cenobamate will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Increase dose of CYP3A4 substrate, as needed, when coadministered with
+cenobamate.
+
+cenobamate, buspirone. Either increases effects of the other by sedation. Use
+Caution/Monitor.
+
+ceritinib
+ceritinib will increase the level or effect of buspirone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+cobicistat
+cobicistat will increase the level or effect of buspirone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely. A decreased dose of
+buspirone may be required
+
+cocaine topical
+buspirone and cocaine topical both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+conivaptan
+conivaptan will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+cortisone
+cortisone will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+crizotinib
+crizotinib increases levels of buspirone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Dose reduction may be needed for
+coadministered drugs that are predominantly metabolized by CYP3A.
+
+crofelemer
+crofelemer increases levels of buspirone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Crofelemer has the potential to inhibit
+CYP3A4 at concentrations expected in the gut; unlikely to inhibit systemically
+because minimally absorbed.
+
+cyclosporine
+
+https://reference.medscape.com/drug/buspar-bucapsol-buspirone-342913 10/24
+
+
+
+6/22/26, 4:38 PM Bucapsol, BuSpar (DSC) (buspirone) dosing, indications, interactions, adverse effects, and more
+
+cyclosporine will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+dabrafenib
+dabrafenib will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+
+danazol
+danazol will increase the level or effect of buspirone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+daridorexant
+buspirone and daridorexant both increase sedation. Modify Therapy/Monitor
+Closely. Coadministration increases risk of CNS depression, which can lead to
+additive impairment of psychomotor performance and cause daytime impairment.
+
+darifenacin
+darifenacin will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+darunavir
+darunavir will increase the level or effect of buspirone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+dasatinib
+dasatinib will increase the level or effect of buspirone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+deferasirox
+deferasirox will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+dexamethasone
+dexamethasone will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+dexfenfluramine
+buspirone and dexfenfluramine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+dextroamphetamine
+buspirone and dextroamphetamine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+dextroamphetamine transdermal
+buspirone, dextroamphetamine transdermal. Either increases effects of the other by
+serotonin levels. Modify Therapy/Monitor Closely. Initiate with lower doses and
+monitor for signs and symptoms of serotonin syndrome, particularly during
+initiation or dosage increase. If serotonin syndrome occurs, discontinue
+dextroamphetamine transdermal and concomitant serotonergic drug(s).
+
+DHEA, herbal
+
+https://reference.medscape.com/drug/buspar-bucapsol-buspirone-342913 11/24
+
+
+
+6/22/26, 4:38 PM Bucapsol, BuSpar (DSC) (buspirone) dosing, indications, interactions, adverse effects, and more
+
+DHEA, herbal will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+difelikefalin
+difelikefalin and buspirone both increase sedation. Use Caution/Monitor.
+
+dihydroergotamine
+buspirone and dihydroergotamine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+dihydroergotamine intranasal
+buspirone and dihydroergotamine intranasal both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+diltiazem
+diltiazem will increase the level or effect of buspirone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor. Coadministration of buspirone
+with diltiazem may increase plasma concentrations and/or toxicities of buspirone.
+Dose adjustments may be necessary.
+
+dronedarone
+dronedarone will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+duvelisib
+duvelisib will increase the level or effect of buspirone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely. will increase the
+level or effect of
+
+efavirenz
+efavirenz will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+elagolix
+elagolix will decrease the level or effect of buspirone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely. Elagolix is a weak-
+to-moderate CYP3A4 inducer. Monitor CYP3A substrates if coadministered.
+Consider increasing CYP3A substrate dose if needed.
+
+eletriptan
+eletriptan and buspirone both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+elvitegravir/cobicistat/emtricitabine/tenofovir DF
+elvitegravir/cobicistat/emtricitabine/tenofovir DF increases levels of buspirone by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor
+Closely. Cobicistat is a CYP3A4 inhibitor; contraindicated with CYP3A4 substrates
+for which elevated plasma concentrations are associated with serious and/or life-
+threatening events.
+
+encorafenib
+encorafenib, buspirone. affecting hepatic/intestinal enzyme CYP3A4 metabolism.
+Use Caution/Monitor. Encorafenib both inhibits and induces CYP3A4 at clinically
+
+https://reference.medscape.com/drug/buspar-bucapsol-buspirone-342913 12/24
+
+
+
+6/22/26, 4:38 PM Bucapsol, BuSpar (DSC) (buspirone) dosing, indications, interactions, adverse effects, and more
+
+relevant plasma concentrations. Coadministration of encorafenib with sensitive
+CYP3A4 substrates may result in increased toxicity or decreased efficacy of these
+agents.
+
+enzalutamide
+enzalutamide will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+ergotamine
+buspirone and ergotamine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+esketamine intranasal
+esketamine intranasal, buspirone. Either increases toxicity of the other by sedation.
+Modify Therapy/Monitor Closely.
+
+eslicarbazepine acetate
+eslicarbazepine acetate will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+etravirine
+etravirine will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+fedratinib
+fedratinib will increase the level or effect of buspirone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor. Adjust dose of drugs that are
+CYP3A4 substrates as necessary.
+
+fenfluramine
+buspirone and fenfluramine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+fexinidazole
+fexinidazole decreases levels of buspirone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Monitor buspirine for efficacy if
+coadministered with moderate or weak CYP3A4 inducers.
+
+fluconazole
+fluconazole will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+fludrocortisone
+fludrocortisone will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+fluvoxamine
+fluvoxamine will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+fosamprenavir
+fosamprenavir will increase the level or effect of buspirone by affecting
+
+https://reference.medscape.com/drug/buspar-bucapsol-buspirone-342913 13/24
+
+
+
+6/22/26, 4:38 PM Bucapsol, BuSpar (DSC) (buspirone) dosing, indications, interactions, adverse effects, and more
+
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+fosaprepitant
+fosaprepitant will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+fosphenytoin
+fosphenytoin will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+frovatriptan
+frovatriptan and buspirone both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+gabapentin
+gabapentin, buspirone. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+gabapentin enacarbil
+gabapentin enacarbil, buspirone. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+ganaxolone
+buspirone and ganaxolone both increase sedation. Use Caution/Monitor.
+
+gepirone
+gepirone and buspirone both increase serotonin levels. Use Caution/Monitor.
+Monitor for symptoms of serotonin syndrome when gepirone is used gepirone with
+other drugs that may affect the serotonergic neurotransmitter systems. If serotonin
+syndrome occurs, consider discontinue gepirone and/or concomitant serotonergic
+drug.
+
+gepotidacin
+gepotidacin increases levels of buspirone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Gepotidacin is a weak CYP3A4 inhibitor.
+If possible, avoid with sensitive substrates that are are extensively metabolized by
+CYP3A4 and have a narrow therapeutic index. If unable to avoid, monitor or modify
+substrate dose according to its prescribing information. .
+
+grapefruit
+grapefruit will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+griseofulvin
+griseofulvin will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+hydrocortisone
+
+https://reference.medscape.com/drug/buspar-bucapsol-buspirone-342913 14/24
+
+
+
+6/22/26, 4:38 PM Bucapsol, BuSpar (DSC) (buspirone) dosing, indications, interactions, adverse effects, and more
+
+hydrocortisone will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+ioflupane I 123
+buspirone decreases effects of ioflupane I 123 by receptor binding competition. Use
+Caution/Monitor. Drugs that bind to dopamine transporter with high affinity may
+interfere with image interpretation. If clinically appropriate, consider discontinuing
+interacting medication at least 5 half-lives prior to ioflupane I 123 administration.
+
+isoniazid
+isoniazid will increase the level or effect of buspirone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+buspirone and isoniazid both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+istradefylline
+istradefylline will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Istradefylline
+40 mg/day increased peak levels and AUC of CYP3A4 substrates in clinical trials.
+This effect was not observed with istradefylline 20 mg/day. Consider dose reduction
+of sensitive CYP3A4 substrates.
+
+itraconazole
+itraconazole will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Limit buspirone dose 2.5 mg/da. Monitor for increased buspirone effects/toxicities
+when combined with strong CYP3A4 inhibitors.
+
+ketoconazole
+ketoconazole will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Reduce starting dose of buspirone to 2.5 mg PO qDay. Adjust dose based on
+clinical assessment.
+
+L-tryptophan
+buspirone and L-tryptophan both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+lapatinib
+lapatinib will increase the level or effect of buspirone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+lemborexant
+lemborexant, buspirone. Either increases effects of the other by sedation. Modify
+Therapy/Monitor Closely. Dosage adjustment may be necessary if lemborexant is
+coadministered with other CNS depressants because of potentially additive effects.
+
+lenacapavir
+lenacapavir will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Lencapavir (a
+moderate CYP3A4 inhibitor) may increase CYP3A4 substrates initiated within 9
+
+https://reference.medscape.com/drug/buspar-bucapsol-buspirone-342913 15/24
+
+
+
+6/22/26, 4:38 PM Bucapsol, BuSpar (DSC) (buspirone) dosing, indications, interactions, adverse effects, and more
+
+months after last SC dose of lenacapavir, which may increase potential risk of
+adverse reactions of CYP3A4 substrates.
+
+letermovir
+letermovir increases levels of buspirone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+
+levoketoconazole
+levoketoconazole will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Reduce starting dose of buspirone to 2.5 mg PO qDay. Adjust dose based on
+clinical assessment.
+
+lisdexamfetamine
+buspirone, lisdexamfetamine. Either increases effects of the other by serotonin
+levels. Use Caution/Monitor. Initiate with lower doses and monitor for signs and
+symptoms of serotonin syndrome, particularly during initiation or dosage increase. If
+serotonin syndrome occurs, discontinue along with concomitant serotonergic
+drug(s).
+
+lithium
+buspirone and lithium both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+lorlatinib
+lorlatinib will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+lsd
+buspirone and lsd both increase serotonin levels. Modify Therapy/Monitor Closely.
+
+lumefantrine
+lumefantrine will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+lurasidone
+lurasidone, buspirone. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: Potential for increased CNS depressant effects
+when used concurrently; monitor for increased adverse effects and toxicity.
+
+marijuana
+marijuana will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+mavorixafor
+mavorixafor will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Monitor for
+adverse effects of sensitive CYP3A4 substrates if coadministered with mavorixafor
+(a weak CYP3A4 inhibitor).
+
+methylprednisolone
+methylprednisolone will decrease the level or effect of buspirone by affecting
+
+https://reference.medscape.com/drug/buspar-bucapsol-buspirone-342913 16/24
+
+
+
+6/22/26, 4:38 PM Bucapsol, BuSpar (DSC) (buspirone) dosing, indications, interactions, adverse effects, and more
+
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+metronidazole
+metronidazole will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+miconazole vaginal
+miconazole vaginal will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+midazolam intranasal
+midazolam intranasal, buspirone. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Concomitant use of
+barbiturates, alcohol, or other CNS depressants may increase the risk of
+hypoventilation, airway obstruction, desaturation, or apnea and may contribute to
+profound and/or prolonged drug effect.
+
+mifepristone
+mifepristone will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely. If
+buspirone needs to be administered concurrently, a low dose of buspirone (ie, 2.5
+mg PO twice daily) recommended initially; base subsequent dosage adjustments on
+clinical response
+
+mirtazapine
+buspirone and mirtazapine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+mitapivat
+mitapivat decreases levels of buspirone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Monitor patients for loss of therapeutic
+effect of sensitive CYP3A substrates with narrow therapeutic index when
+coadministered with mitapivat. .
+
+mitotane
+mitotane decreases levels of buspirone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Mitotane is a strong inducer of
+cytochrome P-4503A4; monitor when coadministered with CYP3A4 substrates for
+possible dosage adjustments.
+
+morphine
+buspirone and morphine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+naratriptan
+naratriptan and buspirone both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+nefazodone
+nefazodone will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+
+nelfinavir
+
+https://reference.medscape.com/drug/buspar-bucapsol-buspirone-342913 17/24
+
+
+
+6/22/26, 4:38 PM Bucapsol, BuSpar (DSC) (buspirone) dosing, indications, interactions, adverse effects, and more
+
+nelfinavir will increase the level or effect of buspirone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+nevirapine
+nevirapine will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+nifedipine
+nifedipine will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+nilotinib
+nilotinib will increase the level or effect of buspirone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+pentazocine
+buspirone and pentazocine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+pentobarbital
+pentobarbital will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+phenobarbital
+phenobarbital will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+phenytoin
+phenytoin will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+posaconazole
+posaconazole will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+prednisone
+prednisone will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+pregabalin
+pregabalin, buspirone. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+primidone
+primidone will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+ribociclib
+ribociclib will increase the level or effect of buspirone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/buspar-bucapsol-buspirone-342913 18/24
+
+
+
+6/22/26, 4:38 PM Bucapsol, BuSpar (DSC) (buspirone) dosing, indications, interactions, adverse effects, and more
+
+rifapentine
+rifapentine will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+rilzabrutinib
+rilzabrutinib increases levels of buspirone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Monitor for increased adverse effects of
+buspirone if coadministered with moderate CYP3A4 inhibitors.
+
+ritonavir
+ritonavir will increase the level or effect of buspirone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+rizatriptan
+rizatriptan and buspirone both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+rucaparib
+rucaparib will increase the level or effect of buspirone by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely. Adjust dosage of
+CYP3A4 substrates, if clinically indicated.
+
+rufinamide
+rufinamide will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+SAMe
+buspirone and SAMe both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+stiripentol
+stiripentol, buspirone. affecting hepatic/intestinal enzyme CYP3A4 metabolism.
+Modify Therapy/Monitor Closely. Stiripentol is a CYP3A4 inhibitor and inducer.
+Monitor CYP3A4 substrates coadministered with stiripentol for increased or
+decreased effects. CYP3A4 substrates may require dosage adjustment.
+
+sumatriptan
+sumatriptan and buspirone both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+sumatriptan intranasal
+sumatriptan intranasal and buspirone both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+suzetrigine
+suzetrigine decreases levels of buspirone by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Modify Therapy/Monitor Closely. Monitor patients for loss of
+therapeutic effect of sensitive CYP3A substrates with narrow therapeutic indexes
+when coadministered with suzetrigine. Consider modifying dose of sensitive
+substrate according to prescribing recommendations.
+
+tecovirimat
+
+https://reference.medscape.com/drug/buspar-bucapsol-buspirone-342913 19/24
+
+
+
+6/22/26, 4:38 PM Bucapsol, BuSpar (DSC) (buspirone) dosing, indications, interactions, adverse effects, and more
+
+tecovirimat will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Tecovirimat is
+a weak CYP3A4 inducer. Monitor sensitive CYP3A4 substrates for effectiveness if
+coadministered.
+
+topiramate
+topiramate will decrease the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+tramadol
+buspirone and tramadol both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+verapamil
+verapamil will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Consider
+lower buspirone doses.
+
+voriconazole
+voriconazole will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+zafirlukast
+zafirlukast will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+zolmitriptan
+zolmitriptan and buspirone both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+Minor (5)
+
+acetazolamide
+acetazolamide will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+anastrozole
+anastrozole will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+cyclophosphamide
+cyclophosphamide will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+drospirenone
+drospirenone will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+larotrectinib
+
+https://reference.medscape.com/drug/buspar-bucapsol-buspirone-342913 20/24
+
+
+
+6/22/26, 4:38 PM Bucapsol, BuSpar (DSC) (buspirone) dosing, indications, interactions, adverse effects, and more
+
+larotrectinib will increase the level or effect of buspirone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+Adverse Effects
+
+>10%
+
+Dizziness (12%)
+
+1-10%
+
+Drowsiness (10%)
+
+Nausea (8%)
+
+Headache (6%)
+
+Nervousness (5%)
+
+Blurred vision (2%)
+
+Confusion (2%)
+
+Diarrhea (2%)
+
+Excitement (2%)
+
+Insomnia (2%)
+
+Myalgia (1%)
+
+Numbness (2%)
+
+Paresthesia (1%)
+
+Rash (1%)
+
+Tremor (1%)
+
+Weakness (2%)
+
+Nasal congestion (1%)
+
+Sore throat (1%)
+
+Nonspecific chest pain (1%)
+
+Tinnitus (1%)
+
+Dream disturbances (1%)
+
+<1%
+
+Akathisia
+
+https://reference.medscape.com/drug/buspar-bucapsol-buspirone-342913 21/24
+
+
+
+6/22/26, 4:38 PM Bucapsol, BuSpar (DSC) (buspirone) dosing, indications, interactions, adverse effects, and more
+
+Allergic reaction
+
+Anorexia
+
+Bruising
+
+Galactorrhea
+
+Heart failure
+
+Menstrual irregularity
+
+Suicidal ideation
+
+Syncope
+
+Alopecia
+
+Eosinophilia
+
+Edema
+
+Enuresis
+
+Increased ocular pressure
+
+Visual disturbances
+
+Rectal bleeding
+
+Photophobia
+
+Dystonia
+
+Warnings
+
+Contraindications
+
+Hypersensitivity
+
+Cautions
+
+Do not use PRN for anxiety
+
+Will not prevent withdrawal from other anxiolytics, such as benzodiazepine
+
+May cause cognitive motor impairment
+
+Restlessness syndrome associated with therapy
+
+Use in severe renal/hepatic impairment not recommended
+
+Use with MAO inhibitors may result in hypertensive reaction (use not recommended)
+
+https://reference.medscape.com/drug/buspar-bucapsol-buspirone-342913 22/24
+
+
+
+6/22/26, 4:38 PM Bucapsol, BuSpar (DSC) (buspirone) dosing, indications, interactions, adverse effects, and more
+
+Pregnancy & Lactation
+
+Pregnancy category: B
+
+Lactation: Excretion in milk unknown/not recommended
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+Is an azaspirodecanedione; high affinity for serotonin 5HT1A and 5HT2 receptors and
+moderate affinity for dopamine D2 receptors, but no effect on benzodiazepine GABA
+receptors
+
+No anticonvulsant, muscle relaxant, or sedative effects
+
+Absorption
+
+Bioavailability: ~4%
+
+Onset: 2-4 wk (anxiolytic effects)
+
+Peak serum time: 40-90 min
+
+Peak plasma concentration: 1-6 ng/mL
+
+Distribution
+
+Protein bound: 86%
+
+Vd: 5.3 L/kg
+
+Metabolism
+
+Hepatic metabolism by CYP3A4
+
+Metabolites: 1-pyrimidinylpiperazine (1-PP)
+
+https://reference.medscape.com/drug/buspar-bucapsol-buspirone-342913 23/24
+
+
+
+6/22/26, 4:38 PM Bucapsol, BuSpar (DSC) (buspirone) dosing, indications, interactions, adverse effects, and more
+
+Elimination
+
+Half-life: 2-3 hr
+
+Excretion: Urine (29-63%); feces (18-38%)
+
+Total body clearance: 28 mL/min/kg
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/buspar-bucapsol-buspirone-342913 24/24

@@ -1,0 +1,1774 @@
+This site is intended for healthcare professionals
+ondansetron (Rx)
+Brand and Other Names: Zofran (DSC), Zofran ODT (DSC), Zuplenz (DSC)
+Classes: Antiemetics, Selective 5-HT3 Antagonists
+Dosing & Uses
+ADULT
+Dosage Forms & Strengths
+injectable solution
+2mg/mL
+tablet
+4mg
+8mg
+24mg
+oral solution
+4mg/5mL
+orally disintegrating tablets
+4mg
+8mg
+16mg
+24mg
+Chemotherapy-Induced Nausea & Vomiting
+Prophylaxis
+PO
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+1/41
+
+Moderately emetogenic chemotherapy: 8 mg started 30 minutes before
+chemotherapy, then q12hr for 1-2 days after chemotherapy
+Highly emetogenic chemotherapy: 24 mg started 30 minutes before chemotherapy
+Zofran ODT: Using dry hands, carefully remove from blister pack immediately
+before use
+IV
+0.15 mg/kg over 15 min administered 30 min before chemotherapy, then 4 and 8 hr
+after first dose; not to exceed 16 mg (32 mg no longer recommended because of
+increased risk of QT prolongation) 
+Postoperative Nausea & Vomiting
+Prophylaxis
+4 mg IV/IM immediately before anesthesia or after procedure or 16 mg PO 1 hr before
+anesthesia; patients >80 kg may need additional 4 mg IV
+Radiation-Induced Nausea & Vomiting
+Prophylaxis
+Total body radiation therapy: 8 mg PO 1-2 hours before radiation therapy; administered
+each day
+Single high-dose fraction therapy to abdomen: 8 mg PO 1-2 hr before radiation therapy;
+administer subsequent doses every 8 hr after first dose 1-2 days after completion of
+therapy
+Daily fractions to abdomen: Administer 8 mg PO 1-2 hr before radiotherapy; administer
+subsequent doses every 8 hr after first dose each day radiotherapy is given
+Dosage Modifications
+Renal impairment: Dose adjustment not necessary
+Severe hepatic impairment (Child-Pugh score ≥10): Not to exceed 8 mg/day
+Cholestatic Pruritus (Off-label)
+8 mg divided q12hr or 8 mg q8-12hr PO for 7 days up to 5 months
+Alternatively, 4-8 mg intermittent short-term IV dosing used in adults; single dose of 4
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+2/41
+
+mg single dose used in pregnancy
+Uremic Pruritus (Off-label)
+8 mg divided q12hr or 8 mg q8-12hr PO for 14 days up to 5 months
+Spinal Opioid-Induced Pruritus (Off-label)
+Prophylaxis: 4-8 mg IV 20-30 min prior to spinal opioid therapy; may repeat dosing at
+12, 24, 36, 48 hr after spinal opioid dosing
+Treatment: 4-8 mg IV
+Rosacea (Off-label)
+4-8 mg PO q12hr for up to 3 weeks
+Alternatively, 12 mg IV daily for 4 days
+Hyperemesis Gravidarum
+10 mg IV q8hr PRN
+PEDIATRIC
+Dosage Forms & Strengths
+injectable solution
+2mg/mL
+tablet
+4mg
+8mg
+24mg
+oral solution
+4mg/5mL
+orally disintegrating tablets
+4mg
+8mg
+16mg
+24mg
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+3/41
+
+Chemotherapy-Induced Nausea & Vomiting
+Prophylaxis
+PO
+<4 years old: Safety and efficacy not established
+4-12 years: 4 mg started 30 min before chemotherapy, then 4 and 8 hr after first
+dose, then q8hr for 1-2 days after chemotherapy
+>12 years: 8 mg started 30 min before chemotherapy, then q12hr for 1-2 days after
+chemotherapy, or single dose of 24 mg
+IV
+<6 months: Safety and efficacy not established
+≥6 months: 0.15 mg/kg over 15 min administered 30 min before chemotherapy,
+then repeated 4 and 8 hr after first dose; not to exceed 16 mg/dose (32 mg no
+longer recommended because of increased risk of QT prolongation) 
+Postoperative Nausea & Vomiting
+Prophylaxis
+1 month-12 years
+<40 kg, 0.1 mg/kg IV 
+>40 kg, 4 mg IV
+>12 years
+4 mg IV/IM immediately before anesthesia or after procedure or 16 mg PO 1 hr
+before anesthesia; patients >80 kg may need additional 4 mg IV
+Acute Gastroenteritis (Off-Label)
+Routine use is not recommended (CDC)
+May consider a single, one-time oral dose for severe gastroenteritis
+8-15 kg: 2 mg PO once
+>15 to 30 kg: 4 mg PO once
+>30 kg: 8 mg PO once
+Reference: N Engl J Med. 2006;354(15):1698-1705
+Chemotherapy-Induced Nausea & Vomiting (Orphan)
+Ondansetron inhalation powder: Prevention of chemotherapy-induced nausea and
+vomiting due to highly emetogenic chemotherapy in pediatric patients (aged birth
+through 16 yr)
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+4/41
+
+Interactions
+Interaction Checker
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and
+ondansetron
+No Interactions Found
+Interactions Found
+Contraindicated
+Serious
+Significant - Monitor Closely
+Minor
+All Interactions Sort By: Severity
+Contraindicated (4)
+apomorphine
+apomorphine, ondansetron. Mechanism: unspecified interaction mechanism.
+Contraindicated. Profound hypotension and loss of consciousness reported when
+5HT3 antagonists are coadministered with apomorphine. Additionally, ondansetron
+may cause additive QT prolongation with apomorphine.
+dronedarone
+dronedarone will increase the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+dronedarone and ondansetron both increase QTc interval. Contraindicated. Avoid
+with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+lefamulin
+lefamulin will increase the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Lefamulin is
+contraindicated with CYP3A substrates know to prolong the QT interval.
+posaconazole
+posaconazole will increase the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+Sponsor
+Luxena Pharmaceuticals, Inc; 1400 Coleman Avenue, Suite D27; Santa Clara,
+California 95050
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+5/41
+
+Serious (164)
+adagrasib
+adagrasib, ondansetron. Either increases effects of the other by QTc interval. Avoid
+or Use Alternate Drug. Each drug prolongs the QTc interval, which may increased
+the risk of Torsade de pointes, other serious arryhthmias, and sudden death. If
+coadministration unavoidable, more frequent monitoring is recommended for such
+patients.
+alfuzosin
+alfuzosin and ondansetron both increase QTc interval. Avoid or Use Alternate Drug.
+Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+almotriptan
+ondansetron, almotriptan. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+amiodarone
+amiodarone and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+amisulpride
+amisulpride and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. ECG monitoring is recommended if coadministered.
+amitriptyline
+amitriptyline and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+ondansetron, amitriptyline. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+amoxapine
+amoxapine and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+ondansetron, amoxapine. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+anagrelide
+anagrelide and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug.
+apalutamide
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+6/41
+
+apalutamide will decrease the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+Coadministration of apalutamide, a strong CYP3A4 inducer, with drugs that are
+CYP3A4 substrates can result in lower exposure to these medications. Avoid or
+substitute another drug for these medications when possible. Evaluate for loss of
+therapeutic effect if medication must be coadministered. Adjust dose according to
+prescribing information if needed.
+aripiprazole
+aripiprazole and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug.
+arsenic trioxide
+arsenic trioxide and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+artemether
+artemether and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug.
+artemether/lumefantrine
+artemether/lumefantrine and ondansetron both increase QTc interval. Avoid or Use
+Alternate Drug. Avoid with congenital long QT syndrome; ECG monitoring
+recommended with concomitant medications that prolong QT interval, electrolyte
+abnormalities, CHF, or bradyarrhythmias.
+asenapine
+asenapine and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+asenapine transdermal
+asenapine transdermal and ondansetron both increase QTc interval. Avoid or Use
+Alternate Drug. Avoid with congenital long QT syndrome; ECG monitoring
+recommended with concomitant medications that prolong QT interval, electrolyte
+abnormalities, CHF, or bradyarrhythmias.
+atomoxetine
+atomoxetine and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug.
+azithromycin
+azithromycin and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+buprenorphine
+buprenorphine and ondansetron both increase QTc interval. Avoid or Use Alternate
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+7/41
+
+Drug.
+buprenorphine buccal
+buprenorphine buccal and ondansetron both increase QTc interval. Avoid or Use
+Alternate Drug.
+buprenorphine subdermal implant
+buprenorphine subdermal implant and ondansetron both increase QTc interval.
+Avoid or Use Alternate Drug.
+buprenorphine transdermal
+buprenorphine transdermal and ondansetron both increase QTc interval. Avoid or
+Use Alternate Drug.
+buprenorphine, long-acting injection
+buprenorphine, long-acting injection and ondansetron both increase QTc interval.
+Avoid or Use Alternate Drug.
+ceritinib
+ceritinib and ondansetron both increase QTc interval. Avoid or Use Alternate Drug.
+ceritinib will increase the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+chlorpromazine
+chlorpromazine and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+ciprofloxacin
+ciprofloxacin and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+citalopram
+citalopram and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+ondansetron, citalopram. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+clarithromycin
+clarithromycin and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias. Potential for increased ondansetron levels.
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+8/41
+
+clarithromycin will increase the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+clomipramine
+clomipramine and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+ondansetron, clomipramine. Either increases toxicity of the other by serotonin
+levels. Avoid or Use Alternate Drug.
+clozapine
+clozapine and ondansetron both increase QTc interval. Avoid or Use Alternate Drug.
+Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+crizotinib
+crizotinib and ondansetron both decrease QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+dasatinib
+dasatinib and ondansetron both increase QTc interval. Avoid or Use Alternate Drug.
+Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+degarelix
+degarelix and ondansetron both increase QTc interval. Avoid or Use Alternate Drug.
+Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+desflurane
+desflurane and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug.
+desipramine
+desipramine and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+ondansetron, desipramine. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+desvenlafaxine
+ondansetron, desvenlafaxine. Either increases toxicity of the other by serotonin
+levels. Avoid or Use Alternate Drug.
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+9/41
+
+disopyramide
+disopyramide and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+dofetilide
+dofetilide and ondansetron both increase QTc interval. Avoid or Use Alternate Drug.
+Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+dolasetron
+dolasetron and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+donepezil
+donepezil and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug.
+dordaviprone
+dordaviprone and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Additive QTc interval prolongation may increase the risk for ventricular
+tachyarrhythmias (eg, Torsades de pointes) or sudden death. If coadministration
+cannot be avoided, separate the administration time of these agents and increase
+the frequency of ECG and electrolyte monitoring.
+doxepin
+ondansetron, doxepin. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+droperidol
+droperidol and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+duloxetine
+ondansetron, duloxetine. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+efavirenz
+efavirenz and ondansetron both increase QTc interval. Avoid or Use Alternate Drug.
+eletriptan
+ondansetron, eletriptan. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+eliglustat
+eliglustat and ondansetron both increase QTc interval. Avoid or Use Alternate Drug.
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+10/41
+
+encorafenib
+encorafenib and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug.
+entrectinib
+entrectinib and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug.
+enzalutamide
+enzalutamide will decrease the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+erdafitinib
+erdafitinib will increase the level or effect of ondansetron by P-glycoprotein (MDR1)
+efflux transporter. Avoid or Use Alternate Drug. If coadministration unavoidable,
+separate administration by at least 6 hr before or after administration of P-gp
+substrates with narrow therapeutic index.
+eribulin
+eribulin and ondansetron both increase QTc interval. Avoid or Use Alternate Drug.
+erythromycin base
+erythromycin base and ondansetron both increase QTc interval. Avoid or Use
+Alternate Drug. Avoid with congenital long QT syndrome; ECG monitoring
+recommended with concomitant medications that prolong QT interval, electrolyte
+abnormalities, CHF, or bradyarrhythmias.
+erythromycin ethylsuccinate
+erythromycin ethylsuccinate and ondansetron both increase QTc interval. Avoid or
+Use Alternate Drug. Avoid with congenital long QT syndrome; ECG monitoring
+recommended with concomitant medications that prolong QT interval, electrolyte
+abnormalities, CHF, or bradyarrhythmias.
+erythromycin lactobionate
+erythromycin lactobionate and ondansetron both increase QTc interval. Avoid or
+Use Alternate Drug. Avoid with congenital long QT syndrome; ECG monitoring
+recommended with concomitant medications that prolong QT interval, electrolyte
+abnormalities, CHF, or bradyarrhythmias.
+erythromycin stearate
+erythromycin stearate and ondansetron both increase QTc interval. Avoid or Use
+Alternate Drug. Avoid with congenital long QT syndrome; ECG monitoring
+recommended with concomitant medications that prolong QT interval, electrolyte
+abnormalities, CHF, or bradyarrhythmias.
+escitalopram
+escitalopram and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+11/41
+
+ondansetron, escitalopram. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+ezogabine
+ezogabine and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+fexinidazole
+fexinidazole and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid coadministration of fexinidazole with drugs known to block potassium
+channels or prolong QT interval.
+fingolimod
+fingolimod and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug.
+flecainide
+flecainide and ondansetron both increase QTc interval. Avoid or Use Alternate Drug.
+Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+fluconazole
+fluconazole and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias. Combination may increase ondansetron levels.
+fluoxetine
+fluoxetine and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+ondansetron, fluoxetine. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+fluphenazine
+fluphenazine and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+fluvoxamine
+fluvoxamine and ondansetron both increase serotonin levels. Avoid or Use
+Alternate Drug.
+foscarnet
+foscarnet and ondansetron both increase QTc interval. Avoid or Use Alternate Drug.
+Avoid with congenital long QT syndrome; ECG monitoring recommended with
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+12/41
+
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+fosfomycin
+fosfomycin and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. The risk of QT prolongation may increase in patients with electrolyte
+abnormalities (such as hypokalemia and hypocalcemia), patients with conditions
+that have potential to cause electrolyte imbalance (such as renal impairment), or
+patients taking other drugs affecting electrolyte balance or QT prolongation; avoid
+this drug in patients with known QT prolongation or ventricular arrhythmias,
+including a history of torsade de pointes; monitor electrolytes during treatment
+frovatriptan
+ondansetron, frovatriptan. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+gemifloxacin
+gemifloxacin and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+gepotidacin
+gepotidacin and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. If coadministration unavoidable, monitor and correct serum electrolyte
+abnormalities and obtain ECG before administration and during treatment, as
+clinically indicated
+gilteritinib
+gilteritinib and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug.
+givinostat
+ondansetron and givinostat both increase QTc interval. Avoid or Use Alternate
+Drug. If unable to avoid coadministration, obtain ECGs when initiating, during
+concomitant use, and as clinically indicated. Withhold if QTc interval >500 ms or a
+change from baseline >60 ms.
+glasdegib
+ondansetron and glasdegib both increase QTc interval. Avoid or Use Alternate
+Drug. If coadministration unavoidable, monitor for increased risk of QTc interval
+prolongation.
+granisetron
+granisetron and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug.
+haloperidol
+haloperidol and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+13/41
+
+hydroxychloroquine sulfate
+hydroxychloroquine sulfate and ondansetron both increase QTc interval. Avoid or
+Use Alternate Drug.
+ibutilide
+ibutilide and ondansetron both increase QTc interval. Avoid or Use Alternate Drug.
+Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+idelalisib
+idelalisib will increase the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+Idelalisib is a strong CYP3A inhibitor; avoid coadministration with sensitive CYP3A
+substrates
+iloperidone
+ondansetron and iloperidone both increase QTc interval. Avoid or Use Alternate
+Drug.
+imipramine
+ondansetron, imipramine. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+indacaterol, inhaled
+indacaterol, inhaled, ondansetron. QTc interval. Avoid or Use Alternate Drug. Avoid
+with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+indapamide
+indapamide and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+inotuzumab
+inotuzumab and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. If unable to avoid concomitant use, obtain ECGs and electrolytes before and
+after initiation of any drug known to prolong QTc, and periodically monitor as
+clinically indicated during treatment.
+isocarboxazid
+ondansetron, isocarboxazid. Either increases toxicity of the other by serotonin
+levels. Avoid or Use Alternate Drug.
+isoflurane
+isoflurane and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug.
+isradipine
+isradipine and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+14/41
+
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+itraconazole
+itraconazole and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug.
+ivosidenib
+ivosidenib will decrease the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid
+coadministration of sensitive CYP3A4 substrates with ivosidenib or replace with
+alternative therapies. If coadministration is unavoidable, monitor patients for loss of
+therapeutic effect of these drugs.
+lapatinib
+lapatinib and ondansetron both increase QTc interval. Avoid or Use Alternate Drug.
+Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias. Potential for increased ondansetron levels.
+levofloxacin
+levofloxacin and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+levomilnacipran
+ondansetron, levomilnacipran. Either increases toxicity of the other by serotonin
+levels. Avoid or Use Alternate Drug.
+lithium
+lithium and ondansetron both increase QTc interval. Avoid or Use Alternate Drug.
+lopinavir
+lopinavir will increase the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+lumefantrine
+lumefantrine and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+macimorelin
+macimorelin and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Macimorelin causes an increase of ~11 msec in the corrected QT interval.
+Avoid coadministration with drugs that prolong QT interval, which could increase
+risk for developing torsade de pointes-type ventricular tachycardia. Allow sufficient
+washout time of drugs that are known to prolong the QT interval before
+administering macimorelin.
+mefloquine
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+15/41
+
+mefloquine and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+methadone
+methadone and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+mifepristone
+mifepristone will increase the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+milnacipran
+ondansetron, milnacipran. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+milsaperidone
+ondansetron and milsaperidone both increase QTc interval. Avoid or Use Alternate
+Drug.
+moxifloxacin
+moxifloxacin and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+naratriptan
+ondansetron, naratriptan. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+nilotinib
+nilotinib and ondansetron both increase QTc interval. Avoid or Use Alternate Drug.
+Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias. Potential for increased ondansetron levels.
+nortriptyline
+nortriptyline and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+ondansetron, nortriptyline. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+octreotide
+octreotide and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+16/41
+
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+ofloxacin
+ofloxacin and ondansetron both increase QTc interval. Avoid or Use Alternate Drug.
+Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+olanzapine
+olanzapine and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+oxaliplatin
+oxaliplatin and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug.
+paliperidone
+paliperidone and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+paroxetine
+ondansetron, paroxetine. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+pazopanib
+pazopanib and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+pentamidine
+pentamidine and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+perphenazine
+perphenazine and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+phenelzine
+ondansetron, phenelzine. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+pimozide
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+17/41
+
+pimozide and ondansetron both increase QTc interval. Avoid or Use Alternate Drug.
+Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+pitolisant
+ondansetron and pitolisant both increase QTc interval. Avoid or Use Alternate Drug.
+posaconazole
+posaconazole and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias. Potential for increased ondansetron levels.
+primaquine
+primaquine and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug.
+procainamide
+procainamide and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+propafenone
+propafenone and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+protriptyline
+protriptyline and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+ondansetron, protriptyline. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+quetiapine
+quetiapine and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+quinidine
+quinidine and ondansetron both increase QTc interval. Avoid or Use Alternate Drug.
+Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+quinine
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+18/41
+
+quinine and ondansetron both increase QTc interval. Avoid or Use Alternate Drug.
+Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+ranolazine
+ranolazine and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+rasagiline
+ondansetron, rasagiline. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+revumenib
+revumenib and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. ECG monitoring recommended if concomitant use can?t be avoided and
+withhold therapy if QTc interval is >480 msec; restart therapy after QTc interval
+returns to <480 msec
+ribociclib
+ribociclib and ondansetron both increase QTc interval. Avoid or Use Alternate Drug.
+risperidone
+ondansetron and risperidone both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+rizatriptan
+ondansetron, rizatriptan. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+romidepsin
+ondansetron and romidepsin both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+selegiline
+ondansetron, selegiline. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+selegiline transdermal
+ondansetron, selegiline transdermal. Either increases toxicity of the other by
+serotonin levels. Avoid or Use Alternate Drug.
+sertraline
+ondansetron and sertraline both increase QTc interval. Avoid or Use Alternate Drug.
+Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+19/41
+
+ondansetron, sertraline. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+sevoflurane
+sevoflurane and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug.
+siponimod
+siponimod and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug.
+solifenacin
+ondansetron and solifenacin both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+sotalol
+ondansetron and sotalol both increase QTc interval. Avoid or Use Alternate Drug.
+Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+sotorasib
+sotorasib will decrease the level or effect of ondansetron by P-glycoprotein (MDR1)
+efflux transporter. Avoid or Use Alternate Drug. If use is unavoidable, refer to the
+prescribing information of the P-gp substrate for dosage modifications.
+sumatriptan
+ondansetron, sumatriptan. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+sumatriptan intranasal
+ondansetron, sumatriptan intranasal. Either increases toxicity of the other by
+serotonin levels. Avoid or Use Alternate Drug.
+sunitinib
+ondansetron and sunitinib both increase QTc interval. Avoid or Use Alternate Drug.
+Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+tacrolimus
+ondansetron and tacrolimus both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+taletrectinib
+taletrectinib and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Concomitant use may result in additive QTc interval prolongation, which can
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+20/41
+
+increase the risk for ventricular tachyarrhythmias (eg, Torsades de pointes) or
+sudden death.
+tedizolid
+tedizolid, ondansetron. Either increases effects of the other by Mechanism:
+pharmacodynamic synergism. Avoid or Use Alternate Drug. both increase serotonin
+levels; increased risk of serotonin syndrome.
+telavancin
+ondansetron and telavancin both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+tepotinib
+tepotinib will increase the level or effect of ondansetron by P-glycoprotein (MDR1)
+efflux transporter. Avoid or Use Alternate Drug. If concomitant use unavoidable,
+reduce the P-gp substrate dosage if recommended in its approved product labeling.
+tetrabenazine
+tetrabenazine and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug.
+thioridazine
+thioridazine and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+thiothixene
+ondansetron and thiothixene both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+toremifene
+ondansetron and toremifene both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+tranylcypromine
+ondansetron, tranylcypromine. Either increases toxicity of the other by serotonin
+levels. Avoid or Use Alternate Drug.
+trimipramine
+ondansetron and trimipramine both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+21/41
+
+ondansetron, trimipramine. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+tucatinib
+tucatinib will increase the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid
+concomitant use of tucatinib with CYP3A substrates, where minimal concentration
+changes may lead to serious or life-threatening toxicities. If unavoidable, reduce
+CYP3A substrate dose according to product labeling.
+umeclidinium bromide/vilanterol inhaled
+ondansetron increases toxicity of umeclidinium bromide/vilanterol inhaled by QTc
+interval. Avoid or Use Alternate Drug. Exercise extreme caution when vilanterol
+coadministered with drugs that prolong QTc interval; adrenergic agonist effects on
+the cardiovascular system may be potentiated.
+vandetanib
+vandetanib and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+vardenafil
+ondansetron and vardenafil both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+vemurafenib
+ondansetron and vemurafenib both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias. Alterations in ondansetron concentrations may occur with
+concomitant use.
+venlafaxine
+ondansetron, venlafaxine. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+vilanterol/fluticasone furoate inhaled
+ondansetron increases toxicity of vilanterol/fluticasone furoate inhaled by QTc
+interval. Avoid or Use Alternate Drug. Exercise extreme caution when vilanterol
+coadministered with drugs that prolong QTc interval; adrenergic agonist effects on
+the cardiovascular system may be potentiated.
+voriconazole
+ondansetron and voriconazole both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias. Potential for increased ondansetron levels.
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+22/41
+
+voriconazole will increase the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+vorinostat
+ondansetron and vorinostat both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+ziftomenib
+ondansetron and ziftomenib both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid coadministration of ziftomenib with other drugs known to prolong the
+QTc interval. If unavoidable, obtain ECGs when initiating, during concomitant use,
+and as clinically indicated. Interrupt ziftomenib with QTc interval > 500 ms or a
+change from baseline is > 60 ms
+ziprasidone
+ziprasidone and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+zolmitriptan
+ondansetron, zolmitriptan. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+Monitor Closely (101)
+abemaciclib
+abemaciclib will increase the level or effect of ondansetron by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+abrocitinib
+abrocitinib will increase the level or effect of ondansetron by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+adagrasib
+adagrasib will increase the level or effect of ondansetron by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+aficamten
+aficamten will increase the level or effect of ondansetron by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+albuterol
+ondansetron and albuterol both increase QTc interval. Use Caution/Monitor.
+Combination may increase risk of QT prolongation; monitor electrolytes and ECG
+changes
+albuterol inhaled
+ondansetron and albuterol inhaled both increase QTc interval. Use Caution/Monitor.
+Combination may increase risk of QT prolongation; monitor electrolytes and ECG
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+23/41
+
+changes
+alfuzosin
+ondansetron and alfuzosin both increase QTc interval. Use Caution/Monitor.
+apixaban
+apixaban will increase the level or effect of ondansetron by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+arformoterol
+ondansetron and arformoterol both increase QTc interval. Use Caution/Monitor.
+Combination may increase risk of QT prolongation; monitor electrolytes and ECG
+changes
+atazanavir
+atazanavir will increase the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. CYP-450
+inhibitors may decrease clearance of ondansetron. However, no dosage adjustment
+for ondansetron is recommended.
+azithromycin
+azithromycin will increase the level or effect of ondansetron by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+bedaquiline
+ondansetron and bedaquiline both increase QTc interval. Modify Therapy/Monitor
+Closely. ECG should be monitored closely
+belumosudil
+belumosudil will increase the level or effect of ondansetron by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+berotralstat
+berotralstat will increase the level or effect of ondansetron by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor. Monitor or titrate P-gp substrate
+dose if coadministered.
+bosutinib
+bosutinib increases levels of ondansetron by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor.
+cannabidiol
+cannabidiol increases levels of ondansetron by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor.
+capmatinib
+capmatinib will increase the level or effect of ondansetron by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+carbamazepine
+carbamazepine will decrease the level or effect of ondansetron by affecting hepatic
+enzyme CYP1A2 metabolism. Use Caution/Monitor.
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+24/41
+
+carbamazepine will decrease the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+carfilzomib
+carfilzomib will increase the level or effect of ondansetron by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+cenobamate
+cenobamate will decrease the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Increase dose of CYP3A4 substrate, as needed, when coadministered with
+cenobamate.
+chloroquine
+chloroquine increases toxicity of ondansetron by QTc interval. Use Caution/Monitor.
+cobicistat
+cobicistat will increase the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+cobicistat will increase the level or effect of ondansetron by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+crizotinib
+crizotinib increases levels of ondansetron by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor.
+crofelemer
+crofelemer increases levels of ondansetron by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Crofelemer has the potential to inhibit
+CYP3A4 at concentrations expected in the gut; unlikely to inhibit systemically
+because minimally absorbed.
+dabrafenib
+dabrafenib will decrease the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+danicopan
+danicopan will increase the level or effect of ondansetron by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor. Danicopan increases plasma
+concentrations of P-gp substrates; consider dose reduction of P-gp substrates
+where minimal concentration changes may lead to serious adverse reactions.
+daridorexant
+daridorexant will increase the level or effect of ondansetron by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+darunavir
+darunavir will increase the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. CYP-450
+inhibitors may decrease clearance of ondansetron. However, no dosage adjustment
+for ondansetron is recommended
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+25/41
+
+deferasirox
+deferasirox will decrease the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+deutetrabenazine
+deutetrabenazine and ondansetron both increase QTc interval. Use Caution/Monitor.
+At the maximum recommended dose, deutetrabenazine does not prolong QT
+interval to a clinically relevant extent. Certain circumstances may increase risk of
+torsade de pointes and/or sudden death in association with drugs that prolong the
+QTc interval (eg, bradycardia, hypokalemia or hypomagnesemia, coadministration
+with other drugs that prolong QTc interval, presence of congenital QT
+prolongation).
+dexamethasone
+dexamethasone will decrease the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. No dosage
+adjustment for ondansetron is recommended for patients on these drugs.
+dichlorphenamide
+dichlorphenamide and ondansetron both decrease serum potassium. Use
+Caution/Monitor.
+doxepin
+doxepin and ondansetron both increase QTc interval. Use Caution/Monitor.
+dronedarone
+dronedarone will increase the level or effect of ondansetron by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+efavirenz
+efavirenz will decrease the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+elagolix
+elagolix will increase the level or effect of ondansetron by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+elagolix decreases levels of ondansetron by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Modify Therapy/Monitor Closely. Elagolix is a weak-to-
+moderate CYP3A4 inducer. Monitor CYP3A substrates if coadministered. Consider
+increasing CYP3A substrate dose if needed.
+eliglustat
+eliglustat increases levels of ondansetron by P-glycoprotein (MDR1) efflux
+transporter. Modify Therapy/Monitor Closely. Monitor therapeutic drug
+concentrations, as indicated, or consider reducing the dosage of the P-gp substrate
+and titrate to clinical effect.
+elvitegravir/cobicistat/emtricitabine/tenofovir DF
+elvitegravir/cobicistat/emtricitabine/tenofovir DF increases levels of ondansetron by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor
+Closely. Cobicistat is a CYP3A4 inhibitor; contraindicated with CYP3A4 substrates
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+26/41
+
+for which elevated plasma concentrations are associated with serious and/or life-
+threatening events.
+encorafenib
+encorafenib, ondansetron. affecting hepatic/intestinal enzyme CYP3A4 metabolism.
+Use Caution/Monitor. Encorafenib both inhibits and induces CYP3A4 at clinically
+relevant plasma concentrations. Coadministration of encorafenib with sensitive
+CYP3A4 substrates may result in increased toxicity or decreased efficacy of these
+agents.
+fedratinib
+fedratinib will increase the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Adjust dose
+of drugs that are CYP3A4 substrates as necessary.
+fenfluramine
+ondansetron decreases effects of fenfluramine by pharmacodynamic antagonism.
+Use Caution/Monitor. Potent serotonin receptor antagonists may decrease
+fenfluramine efficacy. If coadministered, monitor appropriately.
+flibanserin
+flibanserin will increase the level or effect of ondansetron by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+formoterol
+ondansetron and formoterol both increase QTc interval. Use Caution/Monitor.
+Combination may increase risk of QT prolongation; monitor electrolytes and ECG
+changes
+fosamprenavir
+fosamprenavir will increase the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. CYP-450
+inhibitors may decrease clearance of ondansetron. However, no dosage adjustment
+for ondansetron is recommended
+fostemsavir
+ondansetron and fostemsavir both increase QTc interval. Use Caution/Monitor. QTc
+prolongation reported with higher than recommended doses of fostemsavir.
+gadobenate
+gadobenate and ondansetron both increase QTc interval. Use Caution/Monitor.
+gemtuzumab
+ondansetron and gemtuzumab both increase QTc interval. Use Caution/Monitor.
+gepirone
+gepirone and ondansetron both increase QTc interval. Modify Therapy/Monitor
+Closely.
+glecaprevir/pibrentasvir
+glecaprevir/pibrentasvir will increase the level or effect of ondansetron by P-
+glycoprotein (MDR1) efflux transporter. Use Caution/Monitor.
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+27/41
+
+goserelin
+goserelin increases toxicity of ondansetron by QTc interval. Use Caution/Monitor.
+Increases risk of torsades de pointes.
+histrelin
+histrelin increases toxicity of ondansetron by QTc interval. Use Caution/Monitor.
+Increases risk of torsades de pointes.
+hydroxyzine
+hydroxyzine increases toxicity of ondansetron by QTc interval. Use Caution/Monitor.
+Increases risk of torsades de pointes.
+isoniazid
+isoniazid will increase the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. CYP-450
+inhibitors may decrease clearance of ondansetron. However, no dosage adjustment
+for ondansetron is recommended
+istradefylline
+istradefylline will increase the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Istradefylline
+40 mg/day increased peak levels and AUC of CYP3A4 substrates in clinical trials.
+This effect was not observed with istradefylline 20 mg/day. Consider dose reduction
+of sensitive CYP3A4 substrates.
+istradefylline will increase the level or effect of ondansetron by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor. Istradefylline 40 mg/day increased
+peak levels and AUC of P-gp substrates in clinical trials. Consider dose reduction of
+sensitive P-gp substrates.
+itraconazole
+itraconazole will increase the level or effect of ondansetron by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor. P-gp inhibitors may decrease
+clearance of ondansetron. No dosage adjustment for ondansetron is recommended
+ivacaftor
+ivacaftor increases levels of ondansetron by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor. Ivacaftor and its M1 metabolite has the potential
+to inhibit P-gp; may significantly increase systemic exposure to sensitive P-gp
+substrates with a narrow therapeutic index.
+ketoconazole
+ketoconazole will increase the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. CYP-450
+inhibitors may decrease clearance of ondansetron. However, no dosage adjustment
+for ondansetron is recommended
+lenvatinib
+ondansetron and lenvatinib both increase QTc interval. Use Caution/Monitor.
+Lenvatinib prescribing information recommends monitoring ECG closely when
+coadministered with QT prolonging drugs.
+letermovir
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+28/41
+
+letermovir increases levels of ondansetron by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+leuprolide
+leuprolide increases toxicity of ondansetron by QTc interval. Use Caution/Monitor.
+Increases risk of torsades de pointes.
+levalbuterol
+ondansetron and levalbuterol both increase QTc interval. Use Caution/Monitor.
+Combination may increase risk of QT prolongation; monitor electrolytes and ECG
+changes
+levoketoconazole
+levoketoconazole will increase the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. CYP-450
+inhibitors may decrease clearance of ondansetron. However, no dosage adjustment
+for ondansetron is recommended
+lonafarnib
+lonafarnib will increase the level or effect of ondansetron by P-glycoprotein (MDR1)
+efflux transporter. Modify Therapy/Monitor Closely. Lonafarnib is a weak P-gp
+inhibitor. Monitor for adverse reactions if coadministered with P-gp substrates
+where minimal concentration changes may lead to serious or life-threatening
+toxicities. Reduce P-gp substrate dose if needed.
+lopinavir
+lopinavir and ondansetron both increase QTc interval. Use Caution/Monitor. Avoid
+with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+lorlatinib
+lorlatinib will decrease the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+mavorixafor
+mavorixafor and ondansetron both increase QTc interval. Modify Therapy/Monitor
+Closely. Mavorixafor causes concentration-dependent QTc prolongation. Monitor
+QTc during treatment in patients with risk factors for QTc prolongation (eg,
+coadministered medications that increase mavorixafor exposure or other drugs with
+a high risk to prolong the QTc interval). Mavorixafor dose reduction or
+discontinuation may be required.
+mavorixafor will increase the level or effect of ondansetron by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor. Caution if mavorixafor (a P-gp
+inhibitor) is coadministered with a sensitive P-gp substrate where minimal
+substrate concentration changes may lead to serious adverse effects.
+metformin
+ondansetron increases levels of metformin by Other (see comment). Use
+Caution/Monitor. Comment: Ondansetron inhibits organic cation transporter-2
+(OCT2) and multidrug and toxin extrusion (MATE) transporters, increasing
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+29/41
+
+metformin exposure. Approach long-term concomitant use with caution; monitor for
+metformin-related toxicities and consider dose reduction.
+metronidazole
+ondansetron and metronidazole both increase QTc interval. Use Caution/Monitor.
+Caution if metronidazole is coadministered with ondansetron IV or a higher
+ondansetron IV dose (do not exceed 16 mg IV).
+mifepristone
+mifepristone, ondansetron. QTc interval. Modify Therapy/Monitor Closely. Use
+alternatives if available.
+mitotane
+mitotane decreases levels of ondansetron by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Mitotane is a strong inducer of
+cytochrome P-4503A4; monitor when coadministered with CYP3A4 substrates for
+possible dosage adjustments.
+nefazodone
+nefazodone will increase the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. CYP-450
+inhibitors may decrease clearance of ondansetron. However, no dosage adjustment
+for ondansetron is recommended
+nelfinavir
+nelfinavir will increase the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. CYP-450
+inhibitors may decrease clearance of ondansetron. However, no dosage adjustment
+for ondansetron is recommended
+osilodrostat
+osilodrostat and ondansetron both increase QTc interval. Use Caution/Monitor.
+osimertinib
+osimertinib and ondansetron both increase QTc interval. Use Caution/Monitor.
+Conduct periodic monitoring with ECGs and electrolytes in patients taking drugs
+known to prolong the QTc interval.
+oxaliplatin
+oxaliplatin will increase the level or effect of ondansetron by Other (see comment).
+Use Caution/Monitor. Monitor for ECG changes if therapy is initiated in patients with
+drugs known to prolong QT interval.
+ozanimod
+ozanimod and ondansetron both increase QTc interval. Modify Therapy/Monitor
+Closely. The potential additive effects on heart rate, treatment with ozanimod
+should generally not be initiated in patients who are concurrently treated with QT
+prolonging drugs with known arrhythmogenic properties.
+panobinostat
+ondansetron and panobinostat both increase QTc interval. Modify Therapy/Monitor
+Closely. Panobinostat is known to significantly prolong QT interval. Panobinostat
+prescribing information states use with drugs known to prolong QTc is not
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+30/41
+
+recommended; however, antiemetic drugs known to prolong QTc (eg, dolasetron,
+granisetron, ondansetron) can be used with frequent ECG monitoring.
+pasireotide
+ondansetron and pasireotide both increase QTc interval. Modify Therapy/Monitor
+Closely.
+pentobarbital
+pentobarbital will decrease the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. No dosage
+adjustment for ondansetron is recommended for patients on these drugs.
+phenobarbital
+phenobarbital will decrease the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. No dosage
+adjustment for ondansetron is recommended for patients on these drugs.
+phenytoin
+phenytoin will decrease the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. No dosage
+adjustment for ondansetron is recommended for patients on these drugs.
+ponatinib
+ponatinib increases levels of ondansetron by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor.
+quizartinib
+quizartinib, ondansetron. Either increases effects of the other by QTc interval.
+Modify Therapy/Monitor Closely. Monitor patients more frequently with ECG if
+coadministered with QT prolonging drugs.
+ribociclib
+ribociclib will increase the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+rifabutin
+rifabutin will decrease the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+rifampin
+rifampin will decrease the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+rilzabrutinib
+rilzabrutinib will increase the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Follow
+substrate recommendations for use with moderate CYP3A inhibitors
+ritonavir
+ritonavir and ondansetron both increase QTc interval. Use Caution/Monitor. Avoid
+with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias. May increase ondansetron levels.
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+31/41
+
+ritonavir will increase the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+rucaparib
+rucaparib will increase the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Adjust dosage of CYP3A4 substrates, if clinically indicated.
+sarecycline
+sarecycline will increase the level or effect of ondansetron by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor. Monitor for toxicities of P-gp
+substrates that may require dosage reduction when coadministered with P-gp
+inhibitors.
+selpercatinib
+selpercatinib increases toxicity of ondansetron by QTc interval. Use
+Caution/Monitor.
+sorafenib
+sorafenib and ondansetron both increase QTc interval. Use Caution/Monitor.
+St John's Wort
+St John's Wort will decrease the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+stiripentol
+stiripentol, ondansetron. affecting hepatic/intestinal enzyme CYP3A4 metabolism.
+Modify Therapy/Monitor Closely. Stiripentol is a CYP3A4 inhibitor and inducer.
+Monitor CYP3A4 substrates coadministered with stiripentol for increased or
+decreased effects. CYP3A4 substrates may require dosage adjustment.
+stiripentol will increase the level or effect of ondansetron by P-glycoprotein (MDR1)
+efflux transporter. Modify Therapy/Monitor Closely. Consider reducing the dose of
+P-glycoprotein (P-gp) substrates, if adverse reactions are experienced when
+administered concomitantly with stiripentol.
+tecovirimat
+tecovirimat will decrease the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Tecovirimat is
+a weak CYP3A4 inducer. Monitor sensitive CYP3A4 substrates for effectiveness if
+coadministered.
+tramadol
+ondansetron decreases effects of tramadol by Other (see comment). Use
+Caution/Monitor. Comment: Ondansetron may decrease therapeutic effects of
+tramadol. Ondansetron may increase serotonergic effects of tramadol. This could
+result in serotonin syndrome. Tramadol dose requirement was significantly greater
+postoperatively among those who had received ondansetron than among those
+receiving a control.
+triclabendazole
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+32/41
+
+triclabendazole and ondansetron both increase QTc interval. Use Caution/Monitor.
+triptorelin
+triptorelin increases toxicity of ondansetron by QTc interval. Use Caution/Monitor.
+Increases risk of torsades de pointes.
+tucatinib
+tucatinib will increase the level or effect of ondansetron by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor. Consider reducing the dosage of P-gp
+substrates, where minimal concentration changes may lead to serious or life-
+threatening toxicities.
+valbenazine
+valbenazine and ondansetron both increase QTc interval. Use Caution/Monitor.
+voclosporin
+voclosporin, ondansetron. Either increases effects of the other by QTc interval. Use
+Caution/Monitor.
+Minor (28)
+acetazolamide
+acetazolamide will increase the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+anastrozole
+anastrozole will increase the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+armodafinil
+armodafinil will decrease the level or effect of ondansetron by affecting hepatic
+enzyme CYP1A2 metabolism. Minor/Significance Unknown.
+armodafinil will decrease the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+bosentan
+bosentan will decrease the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+cigarette smoking
+cigarette smoking will decrease the level or effect of ondansetron by affecting
+hepatic enzyme CYP1A2 metabolism. Minor/Significance Unknown.
+conivaptan
+conivaptan will increase the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+cyclophosphamide
+cyclophosphamide will increase the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+33/41
+
+danazol
+danazol will increase the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+diltiazem
+diltiazem will increase the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown. No
+dosage adjustment for ondansetron is recommended.
+drospirenone
+drospirenone will increase the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+eslicarbazepine acetate
+eslicarbazepine acetate will decrease the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown. No
+dosage adjustment for ondansetron is recommended for patients on these drugs.
+etravirine
+etravirine will decrease the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+fosphenytoin
+fosphenytoin will decrease the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+grapefruit
+grapefruit will increase the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+griseofulvin
+griseofulvin will decrease the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+larotrectinib
+larotrectinib will increase the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+mexiletine
+mexiletine will increase the level or effect of ondansetron by affecting hepatic
+enzyme CYP1A2 metabolism. Minor/Significance Unknown.
+nafcillin
+nafcillin will decrease the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+nevirapine
+nevirapine will decrease the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+peginterferon alfa 2a
+peginterferon alfa 2a will increase the level or effect of ondansetron by affecting
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+34/41
+
+hepatic enzyme CYP1A2 metabolism. Minor/Significance Unknown.
+pentobarbital
+pentobarbital will decrease the level or effect of ondansetron by affecting hepatic
+enzyme CYP1A2 metabolism. Minor/Significance Unknown.
+phenobarbital
+phenobarbital will decrease the level or effect of ondansetron by affecting hepatic
+enzyme CYP1A2 metabolism. Minor/Significance Unknown.
+primidone
+primidone will decrease the level or effect of ondansetron by affecting hepatic
+enzyme CYP1A2 metabolism. Minor/Significance Unknown.
+primidone will decrease the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+rifampin
+rifampin will decrease the level or effect of ondansetron by affecting hepatic
+enzyme CYP1A2 metabolism. Minor/Significance Unknown.
+rifapentine
+rifapentine will decrease the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+topiramate
+topiramate will decrease the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+verapamil
+verapamil will increase the level or effect of ondansetron by affecting hepatic
+enzyme CYP1A2 metabolism. Minor/Significance Unknown.
+verapamil will increase the level or effect of ondansetron by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+zileuton
+zileuton will increase the level or effect of ondansetron by affecting hepatic enzyme
+CYP1A2 metabolism. Minor/Significance Unknown. No dosage adjustment is
+needed for ondansetron.
+Adverse Effects
+>10%
+Headache (9-27%)
+Malaise/fatigue (9-13%)
+Constipation (6-11%)
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+35/41
+
+1-10%
+Hypoxia (9%)
+Drowsiness (8%)
+Diarrhea (2-7%)
+Dizziness (7%)
+Fever (2-8%)
+Gynecologic disorder (7%)
+Anxiety (6%)
+Urinary retention (5%)
+Pruritus (2-5%)
+Injection-site pain (4%)
+Paresthesia (2%)
+Cold sensation (2%)
+Elevated liver function test results (1-5%)
+Postmarketing Reports
+Cardiovascular
+Arrhythmias (including ventricular and supraventricular tachycardia, premature
+ventricular contractions, and atrial fibrillation), bradycardia, electrocardiographic
+alterations (including second-degree heart block, QT/QTc interval prolongation, and
+ST segment depression), palpitations, and syncope
+Rarely and predominantly with IV administration
+Transient ECG changes, including QT/QTc interval prolongation reported
+Myocardial ischemia
+General
+Flushing: Rare cases of hypersensitivity reactions, sometimes severe (eg,
+anaphylactic reactions, angioedema, bronchospasm, cardiopulmonary arrest,
+hypotension, laryngeal edema, laryngospasm, shock, shortness of breath, stridor)
+reported
+A positive lymphocyte transformation test to ondansetron has been reported, which
+suggests immunologic sensitivity
+Hepatobiliary
+Liver enzyme abnormalities reported
+Liver failure and death reported in patients with cancer receiving concurrent
+medications, including potentially hepatotoxic cytotoxic chemotherapy and
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+36/41
+
+antibiotics
+Local reactions
+Pain, redness, and burning at site of injection
+Lower respiratory
+Hiccups
+Neurological
+Oculogyric crisis, appearing alone, as well as with other dystonic reactions
+Transient dizziness during or shortly after IV infusion
+Skin
+Urticaria, Stevens-Johnson syndrome, and toxic epidermal necrolysis
+Eye disorders
+Cases of transient blindness, predominantly during IV administration, reported
+These cases of transient blindness were reported to resolve within a few minutes
+up to 48 hr
+Transient blurred vision reported, in some cases associated with abnormalities of
+accommodation
+Warnings
+Contraindications
+Hypersensitivity
+Coadministration with apomorphine; combination reported to cause profound
+hypotension and loss of consciousness
+Cautions
+Hypersensitivity reactions including anaphylaxis and bronchospasm may occur:
+discontinue therapy if suspected; monitor and treat promptly per standard of care until
+signs and symptoms resolve
+Reduce dose with severe hepatic impairment
+Use according to schedule, not PRN
+Do not use instead of nasogastric suction
+Ondansetron may mask progressive ileus or gastric distention in patients who are
+undergoing abdominal surgery or experiencing chemotherapy-induced nausea and
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+37/41
+
+vomiting; monitor for decreased bowel activity, particularly in patients with risk factors
+for gastrointestinal obstruction
+Ondansetron is not a drug that stimulates gastric or intestinal peristalsis; should not be
+used instead of nasogastric suction
+Serotonin syndrome reported with 5-HT3 receptor antagonists alone but particularly
+with concomitant use of serotonergic drugs including SSRIs, SNRIs, MAO inhibitors,
+lithium, tramadol, methylene blue IV, and mirtazapine; if concomitant use with other
+serotonergic drugs is clinically warranted, patients should be made aware of potential
+increased risk for serotonin syndrome
+Cross-sensitivity among selective serotonin antagonists may occur
+Zofran ODT contains phenylalanine (caution for phenylketonurics)
+Dose-dependent QT prolongation; avoid in patients with congenital long QT syndrome;
+ECG monitoring recommended in patients who have electrolyte abnormalities, CHF, or
+bradyarrhythmias or who are also receiving other medications that cause QT
+prolongation
+Myocardial ischemia
+Myocardial ischemia reported in patients treated with ondansetron; in some cases,
+predominantly during intravenous administration, the symptoms appeared
+immediately after administration but resolved with prompt treatment
+Coronary artery spasm appears to be the most common underlying cause; monitor
+or advise patients for signs or symptoms of myocardial ischemia after oral
+administration of ondansetron
+Pregnancy & Lactation
+Pregnancy
+Published epidemiological studies on association between ondansetron use and major
+birth defects have reported inconsistent findings and have important methodological
+limitations that preclude conclusions about safety use in pregnancy
+Available postmarketing data have not identified a drug-associated risk of miscarriage or
+adverse maternal outcomes
+Animal studies
+Reproductive studies in rats and rabbits did not show evidence of harm to fetus
+when ondansetron was administered IV during organogenesis at ~3.6 and 2.9x
+times maximum recommended human oral dose of 0.15 mg/kg, based on body
+surface area, respectively
+Lactation
+Unlikely to result in clinically relevant exposures in breastfed infants when administered
+IV at doses up to 4 mg/day to women who are breastfeeding
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+38/41
+
+Available data from a lactation study involving pharmacokinetic samples from 80
+lactating women and 20 infants indicate that ondansetron is present at low levels in
+human milk and in plasma of breastfed infants
+In this study, no adverse effects attributed to ondansetron were reported in infants
+exposed to ondansetron through breast milk
+There are no data regarding effects on milk production
+Consider developmental and health benefits of breastfeeding along with mother’s
+clinical need for drug and any potential adverse effects on breastfed infants from therapy
+or from underlying maternal condition
+Pregnancy Categories
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+NA: Information not available.
+Pharmacology
+Mechanism of Action
+Mechanism not fully characterized; selective 5-HT3 receptor antagonist; binds to 5-HT3
+receptors both in periphery and in CNS, with primary effects in GI tract
+Has no effect on dopamine receptors and therefore does not cause extrapyramidal
+symptoms
+Absorption
+Bioavailability: 56-71% (PO); food increases extent of absorption (17%)
+Onset: 30 min
+Peak plasma time: IV, end of infusion; IM, 30 min; PO, 2 hr (tablet) or 1 hr (soluble film)
+Distribution
+Protein bound: 70-76%
+Vd: Children, 1.7-3.7 L/kg; adults, 2.2-2.5 L/kg
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+39/41
+
+Metabolism
+Extensive hepatic metabolism, with hydroxylation followed by glucuronide (indole ring)
+or sulfate conjugation; metabolized by CYP2D6 and partly by CYP1A2 and CYP3A4
+Metabolites: Glucuronide conjugate, sulfate conjugate (inactive)
+Elimination
+Half-life: 2-7 hr (children <15 years); 3-7 hr (adults); patients with mild to moderate
+hepatic impairment, 12 hr; patients with severe hepatic impairment (Child-Pugh class C),
+20 hr
+Renal Clearance: 0.26-0.38 L/hr/kg
+Total body clearance: 600-700 mL/min
+Excretion: Primarily urine (30-70%); feces (25%)
+Administration
+IV Incompatibilities
+Syringe: Droperidol
+Y-site: Acyclovir, allopurinol, aminophylline, amphotericin B, amphotericin B cholesteryl
+sulfate, ampicillin, ampicillin/sulbactam, amsacrine, cefepime, cefoperazone, 5-
+fluorouracil (5-FU; at 1 mg/mL ondansetron and 16 mg/mL 5-FU; may be compatible at
+0.8 mg/mL 5-FU and up to 160 mcg/mL ondansetron), furosemide, ganciclovir,
+lorazepam, meropenem (at 50 mg/mL meropenem and 1 mg/mL ondansetron; may be
+compatible at 1 mg/mL each), methylprednisolone, piperacillin, sargramostim, sodium
+bicarbonate
+IV Compatibilities
+Solution: Compatible with most common solvents
+Additive (partial list): Cisplatin, cyclophosphamide, cytarabine, decarbazine, dacarbazine
+with doxorubicin(?), doxorubicin, etoposide, hydromorphone, meropenem (incompatible
+at 20 g/L meropenem), methotrexate, morphine sulfate
+Syringe: Alfentanil, atropine, dexamethasone (incompatible at 0.67 mg/mL
+dexamethasone and 1.07 mg/mL ondansetron), fentanyl, glycopyrrolate, meperidine,
+metoclopramide, midazolam, morphine sulfate, naloxone, neostigmine, propofol
+Y-site (partial list): Alatrofloxacin, aldesleukin, azithromycin, bleomycin, carboplatin,
+cisplatin, cladribine, clindamycin, cyclophosphamide, cytarabine, dactinomycin,
+dopamine, heparin, hydromorphone, magnesium sulfate, meperidine, morphine sulfate,
+paclitaxel, potassium chloride, topotecan, vancomycin, vinblastine, vincristine, zidovudine
+IV Preparation
+No dilution necessary for premixed injection
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+40/41
+
+Postoperative nausea and vomiting: No dilution necessary for 2 mg/mL vials
+Chemotherapy-induced nausea and vomiting: Dilute IV injection (2 mg/mL vials, not
+premixed injection) in 50 mL D5W or NS
+IV Administration
+Infuse over 15 minutes after further dilution with 50 mL NS/D5W
+Inject undiluted over at least 30 seconds, preferably over 2-5 minutes
+IM Administration
+No dilution necessary for premixed injection
+Storage
+Store at room temperature or refrigerate
+Protect from light, excessive heat, and freezing
+Formulary
+Adding plans allows you to compare formulary status to other drugs in the same class.
+Formulary information is available for health plans only in the United States.
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+6/22/26, 5:31 PM
+Zofran (ondansetron) dosing, indications, interactions, adverse effects, and more
+https://reference.medscape.com/drug/ondansetron-342052
+41/41

@@ -1,0 +1,1670 @@
+﻿6/22/26, 5:02 PM Enalaprilat, Vasotec (enalapril) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+enalapril (Rx)
+Brand and Other Names: enalaprilat, Epaned, Vasotec, Vasotec IV
+Classes: ACE Inhibitors
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+injectable solution
+
+1.25mg/mL
+
+tablet
+
+2.5mg
+
+5mg
+
+10mg
+
+20mg
+
+powder for oral solution (Epaned)
+
+150 mg bottle (1mg/mL after reconstitution)
+
+Hypertension
+
+Oral
+
+Initial: 2.5-5 mg PO qDay
+
+Maintenance: 10-40 mg/day PO qDay or divided q12hr
+
+IV
+
+1.25 mg/dose IV over 5 minutes q6hr; doses up to 5 mg/dose IV q6hr have been
+administered
+
+https://reference.medscape.com/drug/vasotec-enalaprilat-enalapril-342317 1/29
+
+
+
+6/22/26, 5:02 PM Enalaprilat, Vasotec (enalapril) dosing, indications, interactions, adverse effects, and more
+
+Left Ventricular Dysfunction
+
+Initial: 2.5 mg PO q12hr
+
+May titrate up to 20 mg/day
+
+Congestive Heart Failure
+
+Initial: 2.5 mg PO qDay or q12hr
+
+Maintenance: 5-40 mg/Day PO divided q12hr; titrate slowly q2Weeks
+
+IV: 1.25-5 mg q6hr; avoid IV administration in unstable heart failure or acute myocardial
+infarction
+
+Conversion from IV to oral dosage form
+
+If not concurrently receiving diuretics, initiate enalapril 5 mg PO qDay; if concurrently
+receiving diuretics and responding to 0.625 mg IV q6hr, initiate at 2.5 mg PO qDay;
+titrate upwards as necessary
+
+Dosage Modifications
+
+Hepatic impairment: No dosage adjustment required
+
+Renal impairment
+
+CrCl <30 mL/min: (PO) Initiate 2.5 mg; titrate to response; not to exceed 40 mg
+
+Dialysis: 2.5 mg PO on day of dialysis; adjust dose on nondialysis days according to
+BP
+
+CrCl <30 mL/min: (IV) Initiate 0.625 mg q6hr; titrate based on response
+
+CrCl ≥30 mL/min: (PO) Initiate 5 mg/day; titrate to maximum of 40 mg
+
+CrCl ≥30 mL/min: (IV) 1.25 mg q6hr; titrate based on response
+
+Dosing Considerations
+
+Beneficial for many patients at risk for heart disease
+
+Reduces risk of MI, stroke, diabetic nephropathy, microalbuminuria, new-onset DM
+
+Consider starting an ACE inhibitor in high-risk patients, even if no HTN or CHF
+
+May prolong survival in CHF
+
+May preserve renal function in DM
+
+https://reference.medscape.com/drug/vasotec-enalaprilat-enalapril-342317 2/29
+
+
+
+6/22/26, 5:02 PM Enalaprilat, Vasotec (enalapril) dosing, indications, interactions, adverse effects, and more
+
+May help to prevent migraine headache
+
+Good choice in hyperlipidemia patients
+
+Requires weeks for full effect; to start, use low dose and titrate q1-2Weeks
+
+Abrupt discontinuation not associated with rapid increase in BP
+
+PEDIATRIC
+Dosage Forms & Strengths
+
+injectable solution
+
+1.25mg/mL
+
+tablet
+
+2.5mg
+
+5mg
+
+10mg
+
+20mg
+
+powder for oral solution (Epaned)
+
+150 mg bottle (1mg/mL after reconstitution)
+
+Hypertension
+
+1 month to 16 years (oral)
+
+Initial: 0.08 mg/kg/day PO or divided q12hr; not to exceed 5 mg/day 
+
+May increase PRN q2Weeks according to blood pressure not to exceed 0.58
+mg/kg/day (or 40 mg/day)
+
+1 month to 16 years (IV)
+
+0.01-0.02 mg/kg/day divided q12hr by IV infusion
+
+Hypertensive Crisis
+
+0.05-0.1 mg/kg by direct IV injection 
+
+Renal Impairment
+
+GFR <30 mL/min/1.73 m²: Not recommended
+
+https://reference.medscape.com/drug/vasotec-enalaprilat-enalapril-342317 3/29
+
+
+
+6/22/26, 5:02 PM Enalaprilat, Vasotec (enalapril) dosing, indications, interactions, adverse effects, and more
+
+Interactions
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and enalapril
+No Interactions Found
+Interactions Found
+Contraindicated
+
+Serious
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+Contraindicated (3)
+
+aliskiren
+enalapril, aliskiren. Either increases toxicity of the other by Mechanism:
+pharmacodynamic synergism. Contraindicated. Aliskiren use contraindicated with
+ACEIs in patients with diabetes; avoid coadministration with ACEIs if GFR <60
+mL/min; dual blockade of renin-angiotensin system increases risks of hypotension,
+hyperkalemia, and renal impairment.
+
+enalapril decreases effects of aliskiren by Other (see comment). Contraindicated.
+Comment: Aliskiren use contraindicated with ACE-inhibitors in patients with
+diabetes; avoid coadministration with ACE-inhibitors if GFR. In patients who are
+elderly, volume-depleted (including those on diuretic therapy), or with
+compromised renal function, coadministration of ACE-inhibitors with drugs that
+affect RAAS may increase the risk of renal impairment (including acute renal failure)
+and cause loss of antihypertensive effect. Monitor renal function periodically.
+
+protein a column
+enalapril, protein a column. Other (see comment). Contraindicated. Comment: Risk
+of anaphylactic reaction. Mechanism: buildup of bradykinin d/t deactivation of
+kininase by ACE inhibitors. D/C ACE inhibitor 72h prior to use of protein A column.
+
+sacubitril/valsartan
+sacubitril/valsartan, enalapril. Either increases toxicity of the other by Other (see
+comment). Contraindicated. Comment: Coadministration of neprilysin inhibitors (eg,
+sacubitril) with ACE inhibitors may increase angioedema risk; do not administer
+ACE inhibitors within 36 hr of switching to or from sacubitril/valsartan.
+
+Serious (41)
+
+allopurinol
+enalapril, allopurinol. Mechanism: unknown. Avoid or Use Alternate Drug. Risk of
+anaphylaxis, Stevens Johnson syndrome.
+
+https://reference.medscape.com/drug/vasotec-enalaprilat-enalapril-342317 4/29
+
+
+
+6/22/26, 5:02 PM Enalaprilat, Vasotec (enalapril) dosing, indications, interactions, adverse effects, and more
+
+aspirin
+aspirin, enalapril. pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Coadministration may result in a significant decrease in renal function. NSAIDs may
+diminish the antihypertensive effect of ACE inhibitors. The mechanism of these
+interactions is likely related to the ability of NSAIDs to reduce the synthesis of
+vasodilating renal prostaglandins.
+
+aspirin rectal
+aspirin rectal, enalapril. pharmacodynamic antagonism. Avoid or Use Alternate
+Drug. Coadministration may result in a significant decrease in renal function.
+NSAIDs may diminish the antihypertensive effect of ACE inhibitors. The mechanism
+of these interactions is likely related to the ability of NSAIDs to reduce the synthesis
+of vasodilating renal prostaglandins.
+
+azilsartan
+azilsartan, enalapril. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Dual blockade of renin-angiotensin system
+increases risks of hypotension, hyperkalemia, and renal impairment.
+
+candesartan
+candesartan, enalapril. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Dual blockade of renin-angiotensin system
+increases risks of hypotension, hyperkalemia, and renal impairment.
+
+celecoxib
+celecoxib, enalapril. pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Coadministration may result in a significant decrease in renal function. NSAIDs may
+diminish the antihypertensive effect of ACE inhibitors. The mechanism of these
+interactions is likely related to the ability of NSAIDs to reduce the synthesis of
+vasodilating renal prostaglandins.
+
+choline magnesium trisalicylate
+choline magnesium trisalicylate, enalapril. pharmacodynamic antagonism. Avoid or
+Use Alternate Drug. Coadministration may result in a significant decrease in renal
+function. NSAIDs may diminish the antihypertensive effect of ACE inhibitors. The
+mechanism of these interactions is likely related to the ability of NSAIDs to reduce
+the synthesis of vasodilating renal prostaglandins.
+
+diclofenac
+diclofenac, enalapril. pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Coadministration may result in a significant decrease in renal function. NSAIDs may
+diminish the antihypertensive effect of ACE inhibitors. The mechanism of these
+interactions is likely related to the ability of NSAIDs to reduce the synthesis of
+vasodilating renal prostaglandins.
+
+diflunisal
+diflunisal, enalapril. pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Coadministration may result in a significant decrease in renal function. NSAIDs may
+diminish the antihypertensive effect of ACE inhibitors. The mechanism of these
+interactions is likely related to the ability of NSAIDs to reduce the synthesis of
+vasodilating renal prostaglandins.
+
+enasidenib
+
+https://reference.medscape.com/drug/vasotec-enalaprilat-enalapril-342317 5/29
+
+
+
+6/22/26, 5:02 PM Enalaprilat, Vasotec (enalapril) dosing, indications, interactions, adverse effects, and more
+
+enasidenib will increase the level or effect of enalapril by Other (see comment).
+Avoid or Use Alternate Drug. Avoid coadministration of enasidenib with sensitive
+OATP1B1, OATP1B3, or BCRP substrates, for which minimal concentration
+changes may lead to serious toxicities. If unavoidable, decrease the substrate(s)
+dosage in accordance with their Prescribing Information.
+
+eprosartan
+eprosartan, enalapril. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Dual blockade of renin-angiotensin system
+increases risks of hypotension, hyperkalemia, and renal impairment.
+
+etodolac
+etodolac, enalapril. pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Coadministration may result in a significant decrease in renal function. NSAIDs may
+diminish the antihypertensive effect of ACE inhibitors. The mechanism of these
+interactions is likely related to the ability of NSAIDs to reduce the synthesis of
+vasodilating renal prostaglandins.
+
+fenoprofen
+fenoprofen, enalapril. pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Coadministration may result in a significant decrease in renal function. NSAIDs may
+diminish the antihypertensive effect of ACE inhibitors. The mechanism of these
+interactions is likely related to the ability of NSAIDs to reduce the synthesis of
+vasodilating renal prostaglandins.
+
+flurbiprofen
+flurbiprofen, enalapril. pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Coadministration may result in a significant decrease in renal function. NSAIDs may
+diminish the antihypertensive effect of ACE inhibitors. The mechanism of these
+interactions is likely related to the ability of NSAIDs to reduce the synthesis of
+vasodilating renal prostaglandins.
+
+ibuprofen
+ibuprofen, enalapril. pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Coadministration may result in a significant decrease in renal function. NSAIDs may
+diminish the antihypertensive effect of ACE inhibitors. The mechanism of these
+interactions is likely related to the ability of NSAIDs to reduce the synthesis of
+vasodilating renal prostaglandins.
+
+ibuprofen IV
+ibuprofen IV, enalapril. pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Coadministration may result in a significant decrease in renal function. NSAIDs may
+diminish the antihypertensive effect of ACE inhibitors. The mechanism of these
+interactions is likely related to the ability of NSAIDs to reduce the synthesis of
+vasodilating renal prostaglandins.
+
+indomethacin
+indomethacin, enalapril. pharmacodynamic antagonism. Avoid or Use Alternate
+Drug. Coadministration may result in a significant decrease in renal function.
+NSAIDs may diminish the antihypertensive effect of ACE inhibitors. The mechanism
+of these interactions is likely related to the ability of NSAIDs to reduce the synthesis
+of vasodilating renal prostaglandins.
+
+https://reference.medscape.com/drug/vasotec-enalaprilat-enalapril-342317 6/29
+
+
+
+6/22/26, 5:02 PM Enalaprilat, Vasotec (enalapril) dosing, indications, interactions, adverse effects, and more
+
+irbesartan
+irbesartan, enalapril. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Dual blockade of renin-angiotensin system
+increases risks of hypotension, hyperkalemia, and renal impairment.
+
+ketoprofen
+ketoprofen, enalapril. pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Coadministration may result in a significant decrease in renal function. NSAIDs may
+diminish the antihypertensive effect of ACE inhibitors. The mechanism of these
+interactions is likely related to the ability of NSAIDs to reduce the synthesis of
+vasodilating renal prostaglandins.
+
+ketorolac
+ketorolac, enalapril. pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Coadministration may result in a significant decrease in renal function. NSAIDs may
+diminish the antihypertensive effect of ACE inhibitors. The mechanism of these
+interactions is likely related to the ability of NSAIDs to reduce the synthesis of
+vasodilating renal prostaglandins.
+
+ketorolac intranasal
+ketorolac intranasal, enalapril. pharmacodynamic antagonism. Avoid or Use
+Alternate Drug. Coadministration may result in a significant decrease in renal
+function. NSAIDs may diminish the antihypertensive effect of ACE inhibitors. The
+mechanism of these interactions is likely related to the ability of NSAIDs to reduce
+the synthesis of vasodilating renal prostaglandins.
+
+leniolisib
+leniolisib will increase the level or effect of enalapril by Other (see comment). Avoid
+or Use Alternate Drug. Leniolisib, an OATP1B1 and OATP1B3 inhibitor, may
+increase systemic exposure of these substrates
+
+lofexidine
+lofexidine, enalapril. Either increases effects of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Avoid coadministration with other drugs
+that decrease pulse or blood pressure to mitigate risk of excessive bradycardia and
+hypotension.
+
+losartan
+losartan, enalapril. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Dual blockade of renin-angiotensin system
+increases risks of hypotension, hyperkalemia, and renal impairment.
+
+meclofenamate
+meclofenamate, enalapril. pharmacodynamic antagonism. Avoid or Use Alternate
+Drug. Coadministration may result in a significant decrease in renal function.
+NSAIDs may diminish the antihypertensive effect of ACE inhibitors. The mechanism
+of these interactions is likely related to the ability of NSAIDs to reduce the synthesis
+of vasodilating renal prostaglandins.
+
+mefenamic acid
+mefenamic acid, enalapril. pharmacodynamic antagonism. Avoid or Use Alternate
+Drug. Coadministration may result in a significant decrease in renal function.
+NSAIDs may diminish the antihypertensive effect of ACE inhibitors. The mechanism
+
+https://reference.medscape.com/drug/vasotec-enalaprilat-enalapril-342317 7/29
+
+
+
+6/22/26, 5:02 PM Enalaprilat, Vasotec (enalapril) dosing, indications, interactions, adverse effects, and more
+
+of these interactions is likely related to the ability of NSAIDs to reduce the synthesis
+of vasodilating renal prostaglandins.
+
+meloxicam
+meloxicam, enalapril. pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Coadministration may result in a significant decrease in renal function. NSAIDs may
+diminish the antihypertensive effect of ACE inhibitors. The mechanism of these
+interactions is likely related to the ability of NSAIDs to reduce the synthesis of
+vasodilating renal prostaglandins.
+
+nabumetone
+nabumetone, enalapril. pharmacodynamic antagonism. Avoid or Use Alternate
+Drug. Coadministration may result in a significant decrease in renal function.
+NSAIDs may diminish the antihypertensive effect of ACE inhibitors. The mechanism
+of these interactions is likely related to the ability of NSAIDs to reduce the synthesis
+of vasodilating renal prostaglandins.
+
+naproxen
+naproxen, enalapril. pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Coadministration may result in a significant decrease in renal function. NSAIDs may
+diminish the antihypertensive effect of ACE inhibitors. The mechanism of these
+interactions is likely related to the ability of NSAIDs to reduce the synthesis of
+vasodilating renal prostaglandins.
+
+olmesartan
+olmesartan, enalapril. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Dual blockade of renin-angiotensin system
+increases risks of hypotension, hyperkalemia, and renal impairment.
+
+oxaprozin
+oxaprozin, enalapril. pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Coadministration may result in a significant decrease in renal function. NSAIDs may
+diminish the antihypertensive effect of ACE inhibitors. The mechanism of these
+interactions is likely related to the ability of NSAIDs to reduce the synthesis of
+vasodilating renal prostaglandins.
+
+piroxicam
+piroxicam, enalapril. pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Coadministration may result in a significant decrease in renal function. NSAIDs may
+diminish the antihypertensive effect of ACE inhibitors. The mechanism of these
+interactions is likely related to the ability of NSAIDs to reduce the synthesis of
+vasodilating renal prostaglandins.
+
+potassium phosphates, IV
+enalapril and potassium phosphates, IV both increase serum potassium. Avoid or
+Use Alternate Drug.
+
+pregabalin
+enalapril, pregabalin. Either increases toxicity of the other by Other (see comment).
+Avoid or Use Alternate Drug. Comment: Coadministration results in additive risk of
+developing angioedema of face, mouth, and neck. Angioedema may result in
+respiratory compromise.
+
+https://reference.medscape.com/drug/vasotec-enalaprilat-enalapril-342317 8/29
+
+
+
+6/22/26, 5:02 PM Enalaprilat, Vasotec (enalapril) dosing, indications, interactions, adverse effects, and more
+
+sacubitril/valsartan
+sacubitril/valsartan, enalapril. Either increases toxicity of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Dual blockade of renin-
+angiotensin system increases risks of hypotension, hyperkalemia, and renal
+impairment.
+
+salsalate
+salsalate, enalapril. pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Coadministration may result in a significant decrease in renal function. NSAIDs may
+diminish the antihypertensive effect of ACE inhibitors. The mechanism of these
+interactions is likely related to the ability of NSAIDs to reduce the synthesis of
+vasodilating renal prostaglandins.
+
+sulindac
+sulindac, enalapril. pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Coadministration may result in a significant decrease in renal function. NSAIDs may
+diminish the antihypertensive effect of ACE inhibitors. The mechanism of these
+interactions is likely related to the ability of NSAIDs to reduce the synthesis of
+vasodilating renal prostaglandins.
+
+telmisartan
+telmisartan, enalapril. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Dual blockade of renin-angiotensin system
+increases risks of hypotension, hyperkalemia, and renal impairment.
+
+tolmetin
+tolmetin, enalapril. pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+Coadministration may result in a significant decrease in renal function. NSAIDs may
+diminish the antihypertensive effect of ACE inhibitors. The mechanism of these
+interactions is likely related to the ability of NSAIDs to reduce the synthesis of
+vasodilating renal prostaglandins.
+
+trofinetide
+trofinetide will increase the level or effect of enalapril by Other (see comment).
+Avoid or Use Alternate Drug. Trofinetide (an OATP131 and OATP13B inhibitor)
+may increase plasma levels of OATP131 or OATP13B substrates. Avoid
+coadministration with sensitive substrates.
+
+valsartan
+valsartan, enalapril. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Dual blockade of renin-angiotensin system
+increases risks of hypotension, hyperkalemia, and renal impairment.
+
+Monitor Closely (132)
+
+albuterol
+albuterol decreases effects of enalapril by pharmacodynamic antagonism. Use
+Caution/Monitor. Monitor BP.
+
+albuterol inhaled
+albuterol inhaled decreases effects of enalapril by pharmacodynamic antagonism.
+
+https://reference.medscape.com/drug/vasotec-enalaprilat-enalapril-342317 9/29
+
+
+
+6/22/26, 5:02 PM Enalaprilat, Vasotec (enalapril) dosing, indications, interactions, adverse effects, and more
+
+Use Caution/Monitor. Monitor BP.
+
+aldesleukin
+aldesleukin increases effects of enalapril by pharmacodynamic synergism. Use
+Caution/Monitor. Risk of hypotension.
+
+alfuzosin
+enalapril, alfuzosin. Mechanism: pharmacodynamic synergism. Use Caution/Monitor.
+Exaggerated first dose hypotensive response.
+
+aluminum hydroxide
+aluminum hydroxide decreases effects of enalapril by unspecified interaction
+mechanism. Use Caution/Monitor.
+
+amifostine
+amifostine, enalapril. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration with blood pressure
+lowering agents may increase the risk and severity of hypotension associated with
+amifostine. When amifostine is used at chemotherapeutic doses, withhold blood
+pressure lowering medications for 24 hr prior to amifostine; if blood pressure
+lowering medication cannot be withheld, do not administer amifostine.
+
+amiloride
+enalapril, amiloride. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of hyperkalemia.
+
+apalutamide
+apalutamide will decrease the level or effect of enalapril by increasing elimination.
+Use Caution/Monitor. Apalutamide weakly induces OATP1B1 and may decrease
+systemic exposure of drugs that are OATP1B1 substrates.
+
+arformoterol
+arformoterol decreases effects of enalapril by pharmacodynamic antagonism. Use
+Caution/Monitor. Monitor BP.
+
+asenapine
+enalapril, asenapine. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Exaggerated first dose hypotensive response.
+
+aspirin
+enalapril, aspirin. Either increases toxicity of the other by Other (see comment). Use
+Caution/Monitor. Comment: May result in renal function deterioration, particularly
+with high dose aspirin, in elderly or volume depleted individuals.
+
+aspirin/citric acid/sodium bicarbonate
+aspirin/citric acid/sodium bicarbonate decreases effects of enalapril by
+pharmacodynamic antagonism. Modify Therapy/Monitor Closely. NSAIDs decrease
+synthesis of vasodilating renal prostaglandins, and thus affect fluid homeostasis
+and may diminish antihypertensive effect.
+
+enalapril, aspirin/citric acid/sodium bicarbonate. Either increases toxicity of the other
+
+https://reference.medscape.com/drug/vasotec-enalaprilat-enalapril-342317 10/29
+
+
+
+6/22/26, 5:02 PM Enalaprilat, Vasotec (enalapril) dosing, indications, interactions, adverse effects, and more
+
+by Other (see comment). Use Caution/Monitor. Comment: May result in renal
+function deterioration, particularly in elderly or volume depleted individuals.
+
+avanafil
+avanafil increases effects of enalapril by pharmacodynamic synergism. Use
+Caution/Monitor. Risk of hypotension.
+
+azathioprine
+enalapril, azathioprine. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of neutropenia.
+
+baxdrostat
+baxdrostat and enalapril both increase serum potassium. Use Caution/Monitor. Risk
+of hyperkalemia.
+
+bretylium
+enalapril, bretylium. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Each drug may cause hypotension.
+
+brimonidine
+brimonidine increases effects of enalapril by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+brimonidine topical
+brimonidine topical increases effects of enalapril by pharmacodynamic synergism.
+Use Caution/Monitor.
+
+bumetanide
+enalapril, bumetanide. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of acute hypotension, renal insufficiency.
+
+bumetanide intranasal
+enalapril, bumetanide intranasal. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of acute hypotension, renal insufficiency.
+
+calcium carbonate
+calcium carbonate decreases effects of enalapril by unspecified interaction
+mechanism. Use Caution/Monitor.
+
+canagliflozin
+enalapril and canagliflozin both increase serum potassium. Use Caution/Monitor.
+
+carbachol/brimonidine ophthalmic
+carbachol/brimonidine ophthalmic increases effects of enalapril by
+pharmacodynamic synergism. Use Caution/Monitor.
+
+carbamazepine
+enalapril increases levels of carbamazepine by decreasing metabolism. Use
+Caution/Monitor.
+
+carbidopa
+carbidopa increases effects of enalapril by pharmacodynamic synergism. Use
+Caution/Monitor. Therapy with carbidopa, given with or without levodopa or
+
+https://reference.medscape.com/drug/vasotec-enalaprilat-enalapril-342317 11/29
+
+
+
+6/22/26, 5:02 PM Enalaprilat, Vasotec (enalapril) dosing, indications, interactions, adverse effects, and more
+
+carbidopa-levodopa combination products, is started, dosage adjustment of the
+antihypertensive drug may be required.
+
+celecoxib
+enalapril, celecoxib. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+choline magnesium trisalicylate
+enalapril, choline magnesium trisalicylate. Either increases toxicity of the other by
+Other (see comment). Use Caution/Monitor. Comment: May result in renal function
+deterioration, particularly in elderly or volume depleted individuals.
+
+dalteparin
+dalteparin increases toxicity of enalapril by Other (see comment). Use
+Caution/Monitor. Comment: Low molecular weight heparins may suppress adrenal
+aldosterone secretion, which can potentially cause hyperkalemia.
+
+diclofenac
+enalapril, diclofenac. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+diflunisal
+enalapril, diflunisal. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+digoxin
+enalapril increases levels of digoxin by unspecified interaction mechanism. Use
+Caution/Monitor.
+
+doxazosin
+enalapril, doxazosin. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Exaggerated first dose hypotensive response.
+
+drospirenone
+enalapril, drospirenone. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of hyperkalemia.
+
+encorafenib
+encorafenib will increase the level or effect of enalapril by Other (see comment).
+Modify Therapy/Monitor Closely. Encorafenib (a OATP1B3 inhibitor) may increase
+the concentration and toxicities of OATP1B3 substrates. Closely monitor for signs
+and symptoms of increased exposure and consider adjusting the dose of these
+substrates.
+
+enoxaparin
+enoxaparin increases toxicity of enalapril by Other (see comment). Use
+Caution/Monitor. Comment: Low molecular weight heparins may suppress adrenal
+aldosterone secretion, which can potentially cause hyperkalemia.
+
+eplerenone
+
+https://reference.medscape.com/drug/vasotec-enalaprilat-enalapril-342317 12/29
+
+
+
+6/22/26, 5:02 PM Enalaprilat, Vasotec (enalapril) dosing, indications, interactions, adverse effects, and more
+
+enalapril, eplerenone. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of hyperkalemia.
+
+ethacrynic acid
+enalapril, ethacrynic acid. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of acute hypotension, renal insufficiency.
+
+etodolac
+enalapril, etodolac. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+everolimus
+enalapril, everolimus. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: Coadministration increases risk of angioedema.
+
+exenatide injectable solution
+enalapril increases effects of exenatide injectable solution by Other (see comment).
+Use Caution/Monitor. Comment: ACE inhibitors may increase hypoglycemic effect.
+Monitor glycemic control especially during the first month of treatment with an ACE
+inhibitor. .
+
+exenatide injectable suspension
+enalapril increases effects of exenatide injectable suspension by Other (see
+comment). Use Caution/Monitor. Comment: ACE inhibitors may increase
+hypoglycemic effect. Monitor glycemic control especially during the first month of
+treatment with an ACE inhibitor.
+
+fenoprofen
+enalapril, fenoprofen. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+ferric maltol
+enalapril, ferric maltol. Mechanism: unknown. Use Caution/Monitor. Risk of GI
+symptoms, hypotension.
+
+ferrous gluconate
+enalapril, ferrous gluconate. Mechanism: unknown. Use Caution/Monitor. Risk of GI
+symptoms, hypotension.
+
+finerenone
+enalapril and finerenone both increase serum potassium. Modify Therapy/Monitor
+Closely. Finerenone dose adjustment based on current serum potassium
+concentration. Monitor serum potassium and adjust finerenone dose as described in
+the prescribing information as necessary.
+
+flurbiprofen
+enalapril, flurbiprofen. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: May result in renal function
+deterioration, particularly in elderly or volume depleted individuals.
+
+formoterol
+
+https://reference.medscape.com/drug/vasotec-enalaprilat-enalapril-342317 13/29
+
+
+
+6/22/26, 5:02 PM Enalaprilat, Vasotec (enalapril) dosing, indications, interactions, adverse effects, and more
+
+formoterol decreases effects of enalapril by pharmacodynamic antagonism. Use
+Caution/Monitor. Monitor BP.
+
+foscarbidopa/foslevodopa
+foscarbidopa/foslevodopa increases effects of enalapril by pharmacodynamic
+synergism. Use Caution/Monitor. Consider decreasing dosage of antihypertensive
+agent.
+
+fostemsavir
+fostemsavir will increase the level or effect of enalapril by Other (see comment).
+Modify Therapy/Monitor Closely. Fostemsavir inhibits OATP1B1/3 transporter. If
+possible, avoid coadministration or modify dose of OATP1B1/3 substrates
+coadministered with fostemsavir.
+
+furosemide
+enalapril, furosemide. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of acute hypotension, renal insufficiency.
+
+glecaprevir/pibrentasvir
+glecaprevir/pibrentasvir will increase the level or effect of enalapril by Other (see
+comment). Use Caution/Monitor. Coadministration with glecaprevir/pibrentasvir may
+increase plasma concentration of drugs that are substrates of OATP1B1 or
+OATP1B3
+
+glimepiride
+enalapril increases effects of glimepiride by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+glipizide
+enalapril increases effects of glipizide by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+glyburide
+enalapril increases effects of glyburide by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+gold sodium thiomalate
+enalapril, gold sodium thiomalate. Mechanism: unspecified interaction mechanism.
+Use Caution/Monitor. Combo of ACE inhibitors and injectable gold has caused rare
+cases of nitritoid reaction (flushing, N/V, hypot'n).
+
+heparin
+heparin increases toxicity of enalapril by Other (see comment). Use
+Caution/Monitor. Comment: Low molecular weight heparins may suppress adrenal
+aldosterone secretion, which can potentially cause hyperkalemia.
+
+ibuprofen
+enalapril, ibuprofen. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+ibuprofen IV
+
+https://reference.medscape.com/drug/vasotec-enalaprilat-enalapril-342317 14/29
+
+
+
+6/22/26, 5:02 PM Enalaprilat, Vasotec (enalapril) dosing, indications, interactions, adverse effects, and more
+
+enalapril, ibuprofen IV. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: May result in renal function
+deterioration, particularly in elderly or volume depleted individuals.
+
+icatibant
+icatibant decreases effects of enalapril by pharmacodynamic antagonism. Use
+Caution/Monitor. Icatibant has potential to have a pharmacodynamic interaction
+with ACE inhibitors where it may attenuate the antihypertensive effect of ACE
+inhibitors.
+
+iloperidone
+enalapril, iloperidone. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of iloperidone with
+drugs that lower blood pressure may cause additive effects. Consider lowering
+dosage of other drugs that lower blood pressure.
+
+indomethacin
+enalapril, indomethacin. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: May result in renal function
+deterioration, particularly in elderly or volume depleted individuals.
+
+insulin aspart
+enalapril increases effects of insulin aspart by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+insulin degludec
+enalapril, insulin degludec. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Both drugs decrease blood
+glucose.
+
+insulin degludec/insulin aspart
+enalapril, insulin degludec/insulin aspart. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Both drugs decrease blood
+glucose.
+
+insulin detemir
+enalapril increases effects of insulin detemir by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+insulin glargine
+enalapril increases effects of insulin glargine by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+insulin glulisine
+enalapril increases effects of insulin glulisine by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+insulin icodec
+enalapril increases effects of insulin icodec by pharmacodynamic synergism. Use
+Caution/Monitor. Concomitant use of insulin and ACE inhibitors may require insulin
+dosage adjustment and increased glucose monitoring.
+
+insulin inhaled
+
+https://reference.medscape.com/drug/vasotec-enalaprilat-enalapril-342317 15/29
+
+
+
+6/22/26, 5:02 PM Enalaprilat, Vasotec (enalapril) dosing, indications, interactions, adverse effects, and more
+
+enalapril, insulin inhaled. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Both drugs decrease blood glucose.
+
+insulin lispro
+enalapril increases effects of insulin lispro by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+insulin NPH
+enalapril increases effects of insulin NPH by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+insulin regular human
+enalapril increases effects of insulin regular human by pharmacodynamic
+synergism. Use Caution/Monitor.
+
+ketoprofen
+enalapril, ketoprofen. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+ketorolac
+enalapril, ketorolac. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+ketorolac intranasal
+enalapril, ketorolac intranasal. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: May result in renal function
+deterioration, particularly in elderly or volume depleted individuals.
+
+lanthanum carbonate
+lanthanum carbonate decreases levels of enalapril by cation binding in GI tract. Use
+Caution/Monitor. Administer ACE inhibitor at least 2 hr before or after lanthanum.
+
+letermovir
+letermovir increases levels of enalapril by Other (see comment). Use
+Caution/Monitor. Comment: Letermovir, an OATP1B1/3 inhibitor may increase
+plasma concentrations of coadministered OATP1B1/3 substrates.
+
+levalbuterol
+levalbuterol decreases effects of enalapril by pharmacodynamic antagonism. Use
+Caution/Monitor. Monitor BP.
+
+levodopa
+levodopa increases effects of enalapril by pharmacodynamic synergism. Use
+Caution/Monitor. Consider decreasing dosage of antihypertensive agent.
+
+levoketoconazole
+levoketoconazole increases levels of enalapril by decreasing metabolism. Use
+Caution/Monitor.
+
+liraglutide
+
+https://reference.medscape.com/drug/vasotec-enalaprilat-enalapril-342317 16/29
+
+
+
+6/22/26, 5:02 PM Enalaprilat, Vasotec (enalapril) dosing, indications, interactions, adverse effects, and more
+
+enalapril increases effects of liraglutide by unknown mechanism. Use
+Caution/Monitor. ACE inhibitors may increase hypoglycemic effect. Monitor glycemic
+control especially during the first month of treatment with an ACE inhibitor. .
+
+lithium
+enalapril increases toxicity of lithium by unknown mechanism. Use Caution/Monitor.
+ACE inhibitor induced Na+ depletion may increase reabsorption of lithium from
+renal tubule.
+
+lurasidone
+lurasidone increases effects of enalapril by Other (see comment). Use
+Caution/Monitor. Comment: Potential for increased risk of hypotension with
+concurrent use. Monitor blood pressure and adjust dose of antihypertensive agent
+as needed.
+
+maraviroc
+maraviroc, enalapril. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of orthostatic hypotension.
+
+meclofenamate
+enalapril, meclofenamate. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: May result in renal function
+deterioration, particularly in elderly or volume depleted individuals.
+
+mefenamic acid
+enalapril, mefenamic acid. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: May result in renal function
+deterioration, particularly in elderly or volume depleted individuals.
+
+meloxicam
+enalapril, meloxicam. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+methylphenidate
+methylphenidate will decrease the level or effect of enalapril by pharmacodynamic
+antagonism. Use Caution/Monitor. Methylphenidate may diminish antihypertensive
+effects. Monitor BP.
+
+methylphenidate transdermal
+methylphenidate transdermal decreases effects of enalapril by anti-hypertensive
+channel blocking. Use Caution/Monitor.
+
+milsaperidone
+enalapril, milsaperidone. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of milsaperidone with
+drugs that lower blood pressure may cause additive effects. Consider lowering
+dosage of other drugs that lower blood pressure.
+
+mipomersen
+mipomersen, enalapril. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: Both drugs have potential to increase
+
+https://reference.medscape.com/drug/vasotec-enalaprilat-enalapril-342317 17/29
+
+
+
+6/22/26, 5:02 PM Enalaprilat, Vasotec (enalapril) dosing, indications, interactions, adverse effects, and more
+
+hepatic enzymes; monitor LFTs.
+
+moxisylyte
+enalapril, moxisylyte. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Exaggerated first dose hypotensive response.
+
+nabumetone
+enalapril, nabumetone. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: May result in renal function
+deterioration, particularly in elderly or volume depleted individuals.
+
+naproxen
+enalapril, naproxen. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+nesiritide
+nesiritide, enalapril. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Additive hypotensive effects.
+
+nitroglycerin rectal
+nitroglycerin rectal, enalapril. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Observe for possible additive
+hypotensive effects during concomitant use. .
+
+olanzapine/samidorphan
+olanzapine/samidorphan increases effects of enalapril by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Monitor blood pressure and reduce
+antihypertensive drug dosage in accordance with its product labeling.
+
+oxaprozin
+enalapril, oxaprozin. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+phenoxybenzamine
+enalapril, phenoxybenzamine. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Exaggerated first dose hypotensive response.
+
+phentolamine
+enalapril, phentolamine. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Exaggerated first dose hypotensive response.
+
+piroxicam
+enalapril, piroxicam. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+potassium acid phosphate
+enalapril increases levels of potassium acid phosphate by decreasing elimination.
+Use Caution/Monitor. Risk of hyperkalemia.
+
+potassium chloride
+
+https://reference.medscape.com/drug/vasotec-enalaprilat-enalapril-342317 18/29
+
+
+
+6/22/26, 5:02 PM Enalaprilat, Vasotec (enalapril) dosing, indications, interactions, adverse effects, and more
+
+enalapril increases levels of potassium chloride by decreasing elimination. Use
+Caution/Monitor. Risk of hyperkalemia.
+
+potassium citrate
+enalapril increases levels of potassium citrate by decreasing elimination. Use
+Caution/Monitor. Risk of hyperkalemia.
+
+potassium citrate/citric acid
+enalapril and potassium citrate/citric acid both increase serum potassium. Use
+Caution/Monitor.
+
+potassium iodide
+potassium iodide and enalapril both increase serum potassium. Use
+Caution/Monitor. Potassium salts may increase the hyperkalemic effects of ACE
+inhibitors; the effect may be the result of aldosterone suppression in patients
+receiving ACE inhibitors.
+
+prazosin
+enalapril, prazosin. Mechanism: pharmacodynamic synergism. Use Caution/Monitor.
+Exaggerated first dose hypotensive response.
+
+pretomanid
+pretomanid will increase the level or effect of enalapril by Other (see comment).
+Use Caution/Monitor. Increase monitoring for drug-related adverse effects if
+pretomanid is coadministered with sensitive OATP1B3 substrates.
+
+rose hips
+enalapril, rose hips. Mechanism: unknown. Use Caution/Monitor. Risk of GI
+symptoms, hypotension.
+
+salsalate
+enalapril, salsalate. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+silodosin
+enalapril, silodosin. Mechanism: pharmacodynamic synergism. Use Caution/Monitor.
+Exaggerated first dose hypotensive response.
+
+sirolimus
+enalapril, sirolimus. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: Coadministration increases risk of angioedema.
+
+sodium bicarbonate
+sodium bicarbonate decreases effects of enalapril by unspecified interaction
+mechanism. Use Caution/Monitor.
+
+sodium citrate/citric acid
+sodium citrate/citric acid decreases effects of enalapril by unspecified interaction
+mechanism. Use Caution/Monitor.
+
+sodium sulfate/?magnesium sulfate/potassium chloride
+
+https://reference.medscape.com/drug/vasotec-enalaprilat-enalapril-342317 19/29
+
+
+
+6/22/26, 5:02 PM Enalaprilat, Vasotec (enalapril) dosing, indications, interactions, adverse effects, and more
+
+sodium sulfate/?magnesium sulfate/potassium chloride increases toxicity of
+enalapril by Other (see comment). Use Caution/Monitor. Comment:
+Coadministration with medications that cause fluid and electrolyte abnormalities
+may increase the risk of adverse events of seizure, arrhythmias, and renal
+impairment.
+
+sodium sulfate/potassium sulfate/magnesium sulfate
+sodium sulfate/potassium sulfate/magnesium sulfate increases toxicity of enalapril
+by Other (see comment). Use Caution/Monitor. Comment: Coadministration with
+medications that cause fluid and electrolyte abnormalities may increase the risk of
+adverse events of seizure, arrhythmias, and renal impairment.
+
+sofosbuvir/velpatasvir
+sofosbuvir/velpatasvir increases levels of enalapril by Other (see comment). Use
+Caution/Monitor. Comment: Velpatasvir inhibits OATP1B1, OATP1B3, and
+OATP2B1 transporters. .
+
+spironolactone
+enalapril, spironolactone. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of hyperkalemia.
+
+sulfasalazine
+sulfasalazine decreases effects of enalapril by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely. NSAIDs decrease synthesis of vasodilating renal
+prostaglandins, and thus affect fluid homeostasis and may diminish
+antihypertensive effect.
+
+enalapril, sulfasalazine. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: May result in renal function
+deterioration, particularly in elderly or volume depleted individuals.
+
+sulindac
+enalapril, sulindac. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+synthetic human angiotensin II
+enalapril increases effects of synthetic human angiotensin II by unspecified
+interaction mechanism. Use Caution/Monitor.
+
+tadalafil
+tadalafil increases effects of enalapril by pharmacodynamic synergism. Use
+Caution/Monitor. Risk of hypotension.
+
+temsirolimus
+enalapril, temsirolimus. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: Coadministration increases risk of
+angioedema.
+
+tenapanor
+tenapanor decreases levels of enalapril by Other (see comment). Modify
+Therapy/Monitor Closely. Comment: Tenapanor inhibits intestinal uptake
+transporter, OATP2B1; peak exposure (Cmax) of enalapril and its active metabolite,
+
+https://reference.medscape.com/drug/vasotec-enalaprilat-enalapril-342317 20/29
+
+
+
+6/22/26, 5:02 PM Enalaprilat, Vasotec (enalapril) dosing, indications, interactions, adverse effects, and more
+
+enalaprilat, decreases significantly when both drugs administered concomitantly;
+monitor blood pressure and increase dosage of enalapril, if needed, when
+coadministered with this drug.
+
+terazosin
+enalapril, terazosin. Mechanism: pharmacodynamic synergism. Use Caution/Monitor.
+Exaggerated first dose hypotensive response.
+
+tolmetin
+enalapril, tolmetin. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: May result in renal function deterioration,
+particularly in elderly or volume depleted individuals.
+
+torsemide
+enalapril, torsemide. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of acute hypotension, renal insufficiency.
+
+triamterene
+enalapril, triamterene. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Risk of hyperkalemia.
+
+trimethoprim
+trimethoprim and enalapril both increase serum potassium. Use Caution/Monitor.
+Trimethoprim decreases urinary potassium excretion. May cause hyperkalemia,
+particularly with high doses, renal insufficiency, or when combined with other drugs
+that cause hyperkalemia.
+
+voclosporin
+voclosporin and enalapril both increase serum potassium. Use Caution/Monitor.
+
+voclosporin, enalapril. Either increases toxicity of the other by nephrotoxicity and/or
+ototoxicity. Modify Therapy/Monitor Closely. Coadministration with drugs
+associated with nephrotoxicity may increase the risk for acute and/or chronic
+nephrotoxicity.
+
+xipamide
+xipamide increases effects of enalapril by pharmacodynamic synergism. Use
+Caution/Monitor.
+
+zotepine
+enalapril, zotepine. Mechanism: pharmacodynamic synergism. Use Caution/Monitor.
+Exaggerated first dose hypotensive response.
+
+Minor (30)
+
+aceclofenac
+aceclofenac decreases effects of enalapril by pharmacodynamic antagonism.
+Minor/Significance Unknown. NSAIDs decrease prostaglandin synthesis.
+
+acemetacin
+acemetacin decreases effects of enalapril by pharmacodynamic antagonism.
+
+https://reference.medscape.com/drug/vasotec-enalaprilat-enalapril-342317 21/29
+
+
+
+6/22/26, 5:02 PM Enalaprilat, Vasotec (enalapril) dosing, indications, interactions, adverse effects, and more
+
+Minor/Significance Unknown. NSAIDs decrease prostaglandin synthesis.
+
+agrimony
+agrimony increases effects of enalapril by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+capsicum
+capsicum, enalapril. Mechanism: pharmacodynamic synergism. Minor/Significance
+Unknown. Increase ACE inhibitor induced cough.
+
+chlorpromazine
+chlorpromazine increases effects of enalapril by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+cornsilk
+cornsilk increases effects of enalapril by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+creatine
+creatine, enalapril. Mechanism: pharmacodynamic synergism. Minor/Significance
+Unknown. (Theoretical interaction) Combination may have additive nephrotoxic
+effects.
+
+cyclosporine
+cyclosporine will increase the level or effect of enalapril by Other (see comment).
+Minor/Significance Unknown. may increase plasma concentrations of OATP
+substrates
+
+entecavir
+enalapril, entecavir. Either increases effects of the other by decreasing renal
+clearance. Minor/Significance Unknown. Coadministration with drugs that reduce
+renal function or compete for active tubular secretion may increase serum
+concentrations of either entecavir or the coadministered drug.
+
+fluphenazine
+fluphenazine increases effects of enalapril by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+lornoxicam
+lornoxicam decreases effects of enalapril by pharmacodynamic antagonism.
+Minor/Significance Unknown. NSAIDs decrease prostaglandin synthesis.
+
+maitake
+maitake increases effects of enalapril by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+octacosanol
+octacosanol increases effects of enalapril by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+parecoxib
+parecoxib decreases effects of enalapril by pharmacodynamic antagonism.
+
+https://reference.medscape.com/drug/vasotec-enalaprilat-enalapril-342317 22/29
+
+
+
+6/22/26, 5:02 PM Enalaprilat, Vasotec (enalapril) dosing, indications, interactions, adverse effects, and more
+
+Minor/Significance Unknown. NSAIDs decrease prostaglandin synthesis.
+
+patiromer
+patiromer, enalapril. cation binding in GI tract. Minor/Significance Unknown. No
+observed clinically important interaction. No separation of dosing required.
+
+perphenazine
+perphenazine increases effects of enalapril by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+probenecid
+probenecid increases effects of enalapril by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+prochlorperazine
+prochlorperazine increases effects of enalapril by unspecified interaction
+mechanism. Minor/Significance Unknown.
+
+promazine
+promazine increases effects of enalapril by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+promethazine
+promethazine increases effects of enalapril by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+reishi
+reishi increases effects of enalapril by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+rifampin
+rifampin decreases levels of enalapril by increasing metabolism. Minor/Significance
+Unknown.
+
+salicylates (non-asa)
+salicylates (non-asa) decreases effects of enalapril by pharmacodynamic
+antagonism. Minor/Significance Unknown. NSAIDs decrease prostaglandin
+synthesis.
+
+shepherd's purse
+shepherd's purse, enalapril. Other (see comment). Minor/Significance Unknown.
+Comment: Theoretically, shepherd's purse may interfere with BP control.
+
+thioridazine
+thioridazine increases effects of enalapril by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+tizanidine
+tizanidine increases effects of enalapril by pharmacodynamic synergism.
+Minor/Significance Unknown. Risk of hypotension.
+
+tolfenamic acid
+
+https://reference.medscape.com/drug/vasotec-enalaprilat-enalapril-342317 23/29
+
+
+
+6/22/26, 5:02 PM Enalaprilat, Vasotec (enalapril) dosing, indications, interactions, adverse effects, and more
+
+tolfenamic acid decreases effects of enalapril by pharmacodynamic antagonism.
+Minor/Significance Unknown. NSAIDs decrease prostaglandin synthesis.
+
+treprostinil
+treprostinil increases effects of enalapril by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+trifluoperazine
+trifluoperazine increases effects of enalapril by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+voclosporin
+voclosporin will increase the level or effect of enalapril by Other (see comment).
+Minor/Significance Unknown. Information suggests voclosporin (an OATP1B1
+inhibitor) may increase in the concentration of OATP1B1 substrates is possible.
+Monitor for adverse reactions of OATP1B1 substrates when coadministered with
+voclosporin.
+
+Adverse Effects
+
+1-10%
+
+Dizziness (4-8%)
+
+Hypotension (0.9-6.7%)
+
+Headache (2-5%)
+
+Chest pain (2%)
+
+Cough (1-2%)
+
+Rash (1.5%)
+
+Frequency Not Defined
+
+Asthenia
+
+Nausea
+
+Vomiting
+
+Hyperkalemia
+
+Warnings
+
+Black Box Warnings
+
+Discontinue as soon as possible when pregnancy is detected; affects renin-angiotensin
+system, causing oligohydramnios, which may result in fetal injury and/or death
+
+https://reference.medscape.com/drug/vasotec-enalaprilat-enalapril-342317 24/29
+
+
+
+6/22/26, 5:02 PM Enalaprilat, Vasotec (enalapril) dosing, indications, interactions, adverse effects, and more
+
+Contraindications
+
+Hypersensitivity to enalapril/other ACE inhibitors
+
+History of ACE inhibitor-induced angioedema, hereditary or idiopathic angioedema
+
+Coadministration of neprilysin inhibitors (eg, sacubitril) with ACE inhibitors may increase
+angioedema risk; do not administer ACE inhibitors within 36 hr of switching to or from
+sacubitril/valsartan
+
+Do not coadminister with aliskiren in patients with diabetes mellitus or with renal
+impairment (ie, GFR <60 mL/min/1.73 m²)
+
+Bilateral renal artery stenosis
+
+Cautions
+
+Apheresis (LDL) with dextran sulfate, hypertrophic cardiomyopathy, collagen vascular
+disease, hemodialysis with high flux membrane, renal or aortic stenosis
+
+For HTN patients on diuretics, if possible discontinue diuretics 2-3 days before starting
+enalapril
+
+Excessive hypotension if concomitant diuretics, hypovolemia, hyponatremia
+
+Risk of hyperkalemia, especially in patients with renal impairment or DM or in those
+taking concomitant K+-elevating drugs
+
+Dual blockade of the renin angiotensin system with ARBs, ACE inhibitors, or aliskiren
+associated with increased risk for hypotension, hyperkalemia, and renal function changes
+(including acute renal failure) compared to monotherapy
+
+Injection contains benzyl alcohol preservative (linked to potentially fatal "gasping
+syndrome" in preemies)
+
+ACE inhibition also causes an increase in bradykinin levels, which putatively mediates
+angioedema
+
+Angioedema of the face, extremities, lips, tongue, glottis, and larynx has been reported
+in patients treated with angiotensin-converting enzyme inhibitors
+
+If laryngeal stridor or angioedema of the face, tongue, or glottis occurs discontinue
+therapy and institute appropriate therapy immediately
+
+Patients receiving coadministration of ACE inhibitor and mTOR (mammalian target of
+rapamycin) inhibitor (e.g. temsirolimus, sirolimus, everolimus) therapy or a neprilysin
+inhibitor may be at increased risk for angioedema Intestinal angioedema has been
+reported in patients treated with ACE inhibitors
+
+Dry hacking nonproductive cough may occur within few months of treatment; consider
+other causes of cough prior to discontinuation
+
+Agranulocytosis, neutropenia, or leukopenia with myeloid hypoplasia reported with
+other ACE inhibitor; patients with renal impairment are at high risk; monitor CBC with
+differential in these patients
+
+Discontinue STAT if patient becomes pregnant
+
+https://reference.medscape.com/drug/vasotec-enalaprilat-enalapril-342317 25/29
+
+
+
+6/22/26, 5:02 PM Enalaprilat, Vasotec (enalapril) dosing, indications, interactions, adverse effects, and more
+
+Less effective in blacks
+
+Renal impairment
+
+Pregnancy & Lactation
+
+Pregnancy
+
+Can cause fetal harm when administered during pregnancy
+
+Use of drugs that act on renin-angiotensin system during second and third trimesters
+reduces fetal renal function and increases fetal and neonatal morbidity and death
+
+Discontinued as soon as possible when pregnancy is detected
+
+Communicate fetal risk to mother
+
+Neonatal adverse effects with history of in utero exposure
+
+Use during the second and third trimesters of pregnancy can cause
+Reduced fetal renal function leading to anuria and renal failure
+
+Oligohydramnios
+
+Fetal lung hypoplasia
+
+Skeletal deformations, including skull hypoplasia
+
+Hypotension
+
+Death
+
+Neonatal monitoring and potential treatment
+Perform serial ultrasound examinations to assess the intra-amniotic
+environment
+
+Fetal testing may be appropriate, based on week of pregnancy
+
+Patients and physicians should be aware, however, that oligohydraminos may
+not appear until after fetus has sustained irreversible injury
+
+Closely observe infants with histories of in utero exposure for hypotension,
+oliguria, and hyperkalemia
+
+If oliguria or hypotension occurs, support blood pressure and renal perfusion
+
+Exchange transfusions or dialysis may be required as a means of reversing
+hypotension and substituting for disordered renal function
+
+Clinical considerations
+
+Hypertension in pregnancy increases maternal risk for pre-eclampsia, gestational
+diabetes, premature delivery, and delivery complications (eg, need for cesarean
+section, and post-partum hemorrhage)
+
+Hypertension increases fetal risk for intrauterine growth restriction and intrauterine
+death
+
+https://reference.medscape.com/drug/vasotec-enalaprilat-enalapril-342317 26/29
+
+
+
+6/22/26, 5:02 PM Enalaprilat, Vasotec (enalapril) dosing, indications, interactions, adverse effects, and more
+
+Carefully monitor pregnant women with hypertension and manage accordingly
+
+Lactation
+
+Because of potential for serious adverse effects in breastfed infants, the manufacturer
+does not recommend breastfeeding
+
+However, other recommendations (eg, LactMed) differ owing to low levels of enalapril in
+breastmilk, and considering amounts ingested by infant are small and would not be
+expected to cause any adverse effects in breastfed infants
+
+Consider an alternate drug if high doses are required
+
+Guidelines from AHA/ACC/HFSA state: “Within a construct of multidisciplinary shared
+decision-making, medications that may be appropriate during breastfeeding include ACE
+inhibitors (enalapril or captopril preferred, monitor neonatal weight)”
+
+For more information see Drugs and Lactation (LactMed)
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+Angiotensin converting enzyme (ACE) inhibitors dilate arteries and veins by
+competitively inhibiting the conversion of angiotensin I to angiotensin II (a potent
+endogenous vasoconstrictor) and by inhibiting bradykinin metabolism; these actions
+result in preload and afterload reductions on the heart
+
+ACE inhibitors also promote sodium and water excretion by inhibiting angiotensin-II
+induced aldosterone secretion; elevation in potassium may also be observed
+
+ACE inhibitors also elicit renoprotective effects through vasodilation of renal arterioles
+
+ACE inhibitors reduce cardiac and vascular remodeling associated with chronic
+hypertension, heart failure, and myocardial infarction
+
+https://reference.medscape.com/drug/vasotec-enalaprilat-enalapril-342317 27/29
+
+
+
+6/22/26, 5:02 PM Enalaprilat, Vasotec (enalapril) dosing, indications, interactions, adverse effects, and more
+
+Absorption
+
+Bioavailability: 60%
+
+Onset: 1 hr
+
+Duration: 6 hr (IV), 12-24 hr (PO)
+
+Peak plasma time: 15 min (IV), 1 hr (PO)
+
+Onset of action
+
+Initial response for HTN: 15 min (IV), 1 hr (PO)
+
+Peak response for HTN: 1-4 hr (IV), 4-6 hr (PO)
+
+Distribution
+
+Protein bound: 50-60%
+
+Metabolism
+
+Liver (70%); enalapril undergoes hepatic biotransformation to enalaprilat within 4 hr
+following oral administration
+
+Metabolites: Enalaprilat (active)
+
+Elimination
+
+Half-life elimination: 2 hr (parent drug), 35-38 hr (active metabolite [enalaprilat])
+
+Dialyzable: Yes (hemodialysis)
+
+Excretion: Urine (61%); feces (6% as enalapril, 27% as enalaprilat)
+
+Administration
+
+IV Incompatibilities
+
+Y-site: Ampho B, ampho B chol SO4, cefepime, phenytoin
+
+IV Compatibilities
+
+Solution: D5W, Normosol R
+
+Additive: Dobutamine, dopamine, heparin, meropenem, nitroglycerin, KCl, sodium
+nitroprusside
+
+Y-site (partial list): Allopurinol, ampicillin, ampicillin-sulbactam, cefazolin, clindamycin,
+dobutamine, dopamine, esmolol, fentanyl, heparin, labetalol, linezolid, MgSO4,
+metronidazole, morphine SO4, nicardipine, KCl, propofol, tobramycin, TMP-SMX,
+vancomycin
+
+IV Administration
+
+https://reference.medscape.com/drug/vasotec-enalaprilat-enalapril-342317 28/29
+
+
+
+6/22/26, 5:02 PM Enalaprilat, Vasotec (enalapril) dosing, indications, interactions, adverse effects, and more
+
+Slow IVP over at least 5 minutes if undiluted, OR
+
+Infused in up to 50 mL of compatible IV infusion solution
+
+Storage
+
+Clear, colorless solution
+
+Store below 30°C
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/vasotec-enalaprilat-enalapril-342317 29/29

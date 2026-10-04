@@ -1,0 +1,817 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<BIF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="0.3" xsi:noNamespaceSchemaLocation="../schema.xml">
+  <NETWORK>
+    <NAME>BN_04_Antipsychotic_Treatment_Review</NAME>
+    <PROPERTY>clinical_question=For an adult with established schizophrenia, what factors inform antipsychotic treatment review, response assessment, and side-effect monitoring?</PROPERTY>
+    <PROPERTY>statement_id=4</PROPERTY>
+    <PROPERTY>recommendation_strength=1</PROPERTY>
+    <PROPERTY>evidence_quality=A</PROPERTY>
+    <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+    <PROPERTY>source_locator=Pharmacotherapy; General Principles; Monitoring During Treatment With an Antipsychotic Medication; Table 6</PROPERTY>
+    <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+    <PROPERTY>source_version=APA 2020 guideline; local Markdown derivative; extraction date unknown</PROPERTY>
+    <PROPERTY>population=Adults with clinician-established schizophrenia; not a diagnostic model</PROPERTY>
+    <PROPERTY>setting=Proposed clinician-supervised treatment review; local implementation setting not yet specified</PROPERTY>
+    <PROPERTY>time_horizon=Current treatment episode; response review at 4-6 weeks is a modeling proposal; long-term adverse effects require separate horizons</PROPERTY>
+    <PROPERTY>model_version=0.1.0</PROPERTY>
+    <PROPERTY>validation_status=qualitative_draft_incomplete_not_for_clinical_inference</PROPERTY>
+    <PROPERTY>inference_enabled=false</PROPERTY>
+    <PROPERTY>parameter_policy=No invented priors or probabilistic CPTs; only source-category lookups and explicitly defined workflow rules have TABLEs</PROPERTY>
+    <PROPERTY>edge_encoding=For missing CPTs, ordered proposed_parent PROPERTY entries preserve proposed edges; ordinary XMLBIF importers will ignore these edges</PROPERTY>
+    <PROPERTY>table_order=FOR outcome fastest; last GIVEN parent next; first GIVEN parent slowest</PROPERTY>
+    <PROPERTY>missingness_policy=Missing evidence remains unobserved; no unknown disease outcome</PROPERTY>
+    <PROPERTY>source_caveat=Lines 248-262 concern Statement 3 and are excluded; Table 3 clozapine titration summary conflicts with detailed narrative; no dosing rules encoded</PROPERTY>
+    <PROPERTY>regulatory_update=FDA removed US clozapine REMS effective 2025-06-13; ANC monitoring remains per prescribing information</PROPERTY>
+    <PROPERTY>regulatory_source_url=https://www.fda.gov/drugs/drug-safety-communications/fda-removes-risk-evaluation-and-mitigation-strategy-rems-program-antipsychotic-drug-clozapine</PROPERTY>
+    <PROPERTY>regulatory_access_date=2026-09-16</PROPERTY>
+    <PROPERTY>decision_semantics=All variables are nature nodes. Treatment is observed, not optimized. Review flags are workflow predicates, not utilities or prescribing decisions</PROPERTY>
+    <VARIABLE TYPE="nature">
+      <NAME>PriorTreatmentDifficulty</NAME>
+      <OUTCOME>Absent</OUTCOME>
+      <OUTCOME>Present</OUTCOME>
+      <PROPERTY>label=Prior Treatment Difficulty</PROPERTY>
+      <PROPERTY>clinical_role=clinical_context</PROPERTY>
+      <PROPERTY>definition=Previous clinically important inadequate response or intolerability; present if either occurred. Review full treatment history separately.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=General Principles</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=At review</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories unless stated to reproduce Table 6; clinician operational definitions require approval</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved if unavailable; never infer absence from missing documentation</PROPERTY>
+      <PROPERTY>parameter_status=missing_requires_elicitation</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>PreferenceBarrier</NAME>
+      <OUTCOME>Absent</OUTCOME>
+      <OUTCOME>Present</OUTCOME>
+      <PROPERTY>label=Preference Barrier</PROPERTY>
+      <PROPERTY>clinical_role=clinical_context</PROPERTY>
+      <PROPERTY>definition=Patient reports an unresolved objection or practical barrier to the current regimen; not a judgment of capacity.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Patient Preferences</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=At review</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories unless stated to reproduce Table 6; clinician operational definitions require approval</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved if unavailable; never infer absence from missing documentation</PROPERTY>
+      <PROPERTY>parameter_status=missing_requires_elicitation</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>PhysicalVulnerability</NAME>
+      <OUTCOME>Absent</OUTCOME>
+      <OUTCOME>Present</OUTCOME>
+      <PROPERTY>label=Physical Vulnerability</PROPERTY>
+      <PROPERTY>clinical_role=clinical_context</PROPERTY>
+      <PROPERTY>definition=Clinician identifies physical illness or age-related vulnerability relevant to the current agent; not a general disease diagnosis.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Side-Effect Profile; Pharmacokinetic Properties</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=At review</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories unless stated to reproduce Table 6; clinician operational definitions require approval</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved if unavailable; never infer absence from missing documentation</PROPERTY>
+      <PROPERTY>parameter_status=missing_requires_elicitation</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>SubstanceContribution</NAME>
+      <OUTCOME>Absent</OUTCOME>
+      <OUTCOME>Present</OUTCOME>
+      <PROPERTY>label=Substance Contribution</PROPERTY>
+      <PROPERTY>clinical_role=clinical_context</PROPERTY>
+      <PROPERTY>definition=Clinician identifies concomitant substance use potentially affecting symptom response.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Strategies to Address Initial Nonresponse or Partial Response</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=At review</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories unless stated to reproduce Table 6; clinician operational definitions require approval</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved if unavailable; never infer absence from missing documentation</PROPERTY>
+      <PROPERTY>parameter_status=missing_requires_elicitation</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ExposureModifier</NAME>
+      <OUTCOME>NoIdentifiedModifier</OUTCOME>
+      <OUTCOME>PossibleLowerExposure</OUTCOME>
+      <OUTCOME>PossibleHigherExposure</OUTCOME>
+      <OUTCOME>MixedModifiers</OUTCOME>
+      <PROPERTY>label=Exposure Modifier</PROPERTY>
+      <PROPERTY>clinical_role=clinical_context</PROPERTY>
+      <PROPERTY>definition=Agent-specific synthesis of smoking changes, interacting drugs, organ function and metabolism; multiple opposing effects use MixedModifiers, not assumed cancellation.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Drug-Drug Interactions and Metabolism; Pharmacokinetic Properties</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=At review</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories unless stated to reproduce Table 6; clinician operational definitions require approval</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved if unavailable; never infer absence from missing documentation</PROPERTY>
+      <PROPERTY>parameter_status=missing_requires_elicitation</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>required_table_entries=4</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>OralAntipsychoticMedication</NAME>
+      <OUTCOME>Chlorpromazine</OUTCOME>
+      <OUTCOME>Fluphenazine</OUTCOME>
+      <OUTCOME>Haloperidol</OUTCOME>
+      <OUTCOME>Loxapine</OUTCOME>
+      <OUTCOME>Molindone</OUTCOME>
+      <OUTCOME>Perphenazine</OUTCOME>
+      <OUTCOME>Pimozide</OUTCOME>
+      <OUTCOME>Thioridazine</OUTCOME>
+      <OUTCOME>Thiothixene</OUTCOME>
+      <OUTCOME>Trifluoperazine</OUTCOME>
+      <OUTCOME>Aripiprazole</OUTCOME>
+      <OUTCOME>Asenapine</OUTCOME>
+      <OUTCOME>Brexpiprazole</OUTCOME>
+      <OUTCOME>Cariprazine</OUTCOME>
+      <OUTCOME>Clozapine</OUTCOME>
+      <OUTCOME>Iloperidone</OUTCOME>
+      <OUTCOME>Lurasidone</OUTCOME>
+      <OUTCOME>Olanzapine</OUTCOME>
+      <OUTCOME>Paliperidone</OUTCOME>
+      <OUTCOME>Quetiapine</OUTCOME>
+      <OUTCOME>Risperidone</OUTCOME>
+      <OUTCOME>Ziprasidone</OUTCOME>
+      <PROPERTY>label=Oral Antipsychotic Medication</PROPERTY>
+      <PROPERTY>clinical_role=observed_treatment</PROPERTY>
+      <PROPERTY>definition=Observed single oral antipsychotic listed in Table 6. Restrict lookup to these agents and oral formulations; no treatment, other agents and polypharmacy are out of lookup scope.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Current regimen</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories unless stated to reproduce Table 6; clinician operational definitions require approval</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved if unavailable; never infer absence from missing documentation</PROPERTY>
+      <PROPERTY>parameter_status=missing_requires_elicitation</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>required_table_entries=22</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>DoseExposureCategory</NAME>
+      <OUTCOME>BelowReference</OUTCOME>
+      <OUTCOME>WithinReference</OUTCOME>
+      <OUTCOME>AboveReference</OUTCOME>
+      <PROPERTY>label=Dose Exposure Category</PROPERTY>
+      <PROPERTY>clinical_role=clinical_context</PROPERTY>
+      <PROPERTY>definition=Dose relative to an agent-specific, indication-specific reference to be defined from current labeling; not an instruction to change dose.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Initiation of Treatment With an Antipsychotic Medication</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=At review</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories unless stated to reproduce Table 6; clinician operational definitions require approval</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved if unavailable; never infer absence from missing documentation</PROPERTY>
+      <PROPERTY>parameter_status=missing_requires_elicitation</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>required_table_entries=3</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>TrialDuration</NAME>
+      <OUTCOME>BeforeResponseWindow</OUTCOME>
+      <OUTCOME>WithinResponseWindow</OUTCOME>
+      <OUTCOME>BeyondResponseWindow</OUTCOME>
+      <PROPERTY>label=Trial Duration</PROPERTY>
+      <PROPERTY>clinical_role=clinical_context</PROPERTY>
+      <PROPERTY>definition=Relative to a prospectively specified response window; provisional window 4-6 weeks at therapeutic exposure; not a universal adequacy criterion, especially for clozapine.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Initiation of Treatment With an Antipsychotic Medication</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=At review</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories unless stated to reproduce Table 6; clinician operational definitions require approval</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved if unavailable; never infer absence from missing documentation</PROPERTY>
+      <PROPERTY>parameter_status=missing_requires_elicitation</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>required_table_entries=3</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AdherenceDifficulty</NAME>
+      <OUTCOME>Absent</OUTCOME>
+      <OUTCOME>Present</OUTCOME>
+      <PROPERTY>label=Adherence Difficulty</PROPERTY>
+      <PROPERTY>clinical_role=clinical_context</PROPERTY>
+      <PROPERTY>definition=Clinically assessed difficulty taking prescribed treatment during the exposure interval; dispensing records alone do not establish ingestion.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Monitoring During Treatment With an Antipsychotic Medication; Quality Measurement Considerations</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Since preceding visit</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories unless stated to reproduce Table 6; clinician operational definitions require approval</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved if unavailable; never infer absence from missing documentation</PROPERTY>
+      <PROPERTY>parameter_status=missing_requires_elicitation</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=PreferenceBarrier</PROPERTY>
+      <PROPERTY>proposed_parent=PriorTreatmentDifficulty</PROPERTY>
+      <PROPERTY>required_table_entries=8</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>EffectiveExposure</NAME>
+      <OUTCOME>Low</OUTCOME>
+      <OUTCOME>Reference</OUTCOME>
+      <OUTCOME>High</OUTCOME>
+      <PROPERTY>label=Effective Exposure</PROPERTY>
+      <PROPERTY>clinical_role=latent_state</PROPERTY>
+      <PROPERTY>definition=Latent effective exposure; agent-specific thresholds and measurement model remain to be defined. Mixed modifiers cannot be assigned a direction without data.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Drug-Drug Interactions and Metabolism; Strategies to Address Initial Nonresponse or Partial Response</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Current treatment interval</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories unless stated to reproduce Table 6; clinician operational definitions require approval</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved if unavailable; never infer absence from missing documentation</PROPERTY>
+      <PROPERTY>parameter_status=missing_requires_elicitation</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=OralAntipsychoticMedication</PROPERTY>
+      <PROPERTY>proposed_parent=DoseExposureCategory</PROPERTY>
+      <PROPERTY>proposed_parent=AdherenceDifficulty</PROPERTY>
+      <PROPERTY>proposed_parent=ExposureModifier</PROPERTY>
+      <PROPERTY>required_table_entries=1584</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>SymptomResponse</NAME>
+      <OUTCOME>Inadequate</OUTCOME>
+      <OUTCOME>Partial</OUTCOME>
+      <OUTCOME>Adequate</OUTCOME>
+      <PROPERTY>label=Symptom Response</PROPERTY>
+      <PROPERTY>clinical_role=clinical_outcome</PROPERTY>
+      <PROPERTY>definition=Response of prespecified target symptoms relative to baseline, assessed with a fixed instrument; operational cutoffs and baseline correction require agreement. Not equivalent to remission.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Strategies to Address Initial Nonresponse or Partial Response; Monitoring During Treatment With an Antipsychotic Medication</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Proposed 4-6 week endpoint</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories unless stated to reproduce Table 6; clinician operational definitions require approval</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved if unavailable; never infer absence from missing documentation</PROPERTY>
+      <PROPERTY>parameter_status=missing_requires_elicitation</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=EffectiveExposure</PROPERTY>
+      <PROPERTY>proposed_parent=TrialDuration</PROPERTY>
+      <PROPERTY>proposed_parent=PriorTreatmentDifficulty</PROPERTY>
+      <PROPERTY>proposed_parent=SubstanceContribution</PROPERTY>
+      <PROPERTY>required_table_entries=108</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>FunctionalBenefit</NAME>
+      <OUTCOME>NotMeaningful</OUTCOME>
+      <OUTCOME>Meaningful</OUTCOME>
+      <PROPERTY>label=Functional Benefit</PROPERTY>
+      <PROPERTY>clinical_role=clinical_outcome</PROPERTY>
+      <PROPERTY>definition=Patient-centered functional benefit relative to baseline; requires prespecified instrument and meaningful-change criterion.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Benefits; Monitoring During Treatment With an Antipsychotic Medication</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Same response endpoint</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories unless stated to reproduce Table 6; clinician operational definitions require approval</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved if unavailable; never infer absence from missing documentation</PROPERTY>
+      <PROPERTY>parameter_status=missing_requires_elicitation</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=SymptomResponse</PROPERTY>
+      <PROPERTY>proposed_parent=PhysicalVulnerability</PROPERTY>
+      <PROPERTY>required_table_entries=12</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>SignificantAntipsychoticSideEffects</NAME>
+      <OUTCOME>Absent</OUTCOME>
+      <OUTCOME>Present</OUTCOME>
+      <PROPERTY>label=Significant Antipsychotic Side Effects</PROPERTY>
+      <PROPERTY>clinical_role=clinical_outcome</PROPERTY>
+      <PROPERTY>definition=Any clinically important side effect affecting functioning or acceptability; does not enumerate or diagnose individual adverse reactions.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Harms; Side-Effect Profile</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Since preceding visit</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories unless stated to reproduce Table 6; clinician operational definitions require approval</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved if unavailable; never infer absence from missing documentation</PROPERTY>
+      <PROPERTY>parameter_status=missing_requires_elicitation</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=OralAntipsychoticMedication</PROPERTY>
+      <PROPERTY>proposed_parent=EffectiveExposure</PROPERTY>
+      <PROPERTY>proposed_parent=PhysicalVulnerability</PROPERTY>
+      <PROPERTY>proposed_parent=TrialDuration</PROPERTY>
+      <PROPERTY>required_table_entries=792</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>UrgentSafetyConcern</NAME>
+      <OUTCOME>Absent</OUTCOME>
+      <OUTCOME>Present</OUTCOME>
+      <PROPERTY>label=Urgent Safety Concern</PROPERTY>
+      <PROPERTY>clinical_role=assessed_finding</PROPERTY>
+      <PROPERTY>definition=Clinician-recognized potentially serious reaction requiring prompt assessment, including suspected NMS, cardiac toxicity, severe constipation, infection/neutropenia, seizure or other urgent concern. Absent means none identified, not that risk is zero.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Neuroleptic Malignant Syndrome; Gastrointestinal Side Effects; Hematological Effects; Tachycardia; Seizures</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=At review</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories unless stated to reproduce Table 6; clinician operational definitions require approval</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved if unavailable; never infer absence from missing documentation</PROPERTY>
+      <PROPERTY>parameter_status=missing_requires_elicitation</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>MonitoringGap</NAME>
+      <OUTCOME>Absent</OUTCOME>
+      <OUTCOME>Present</OUTCOME>
+      <PROPERTY>label=Monitoring Gap</PROPERTY>
+      <PROPERTY>clinical_role=workflow_input</PROPERTY>
+      <PROPERTY>definition=One or more indicated adherence, effectiveness or adverse-effect assessments are missing or overdue under the current local protocol; not missing patient evidence.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Monitoring During Treatment With an Antipsychotic Medication</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=At review</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories unless stated to reproduce Table 6; clinician operational definitions require approval</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved if unavailable; never infer absence from missing documentation</PROPERTY>
+      <PROPERTY>parameter_status=missing_requires_elicitation</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ResponseReviewFlag</NAME>
+      <OUTCOME>NotTriggered</OUTCOME>
+      <OUTCOME>Triggered</OUTCOME>
+      <PROPERTY>label=Response Review Flag</PROPERTY>
+      <PROPERTY>clinical_role=deterministic_workflow</PROPERTY>
+      <PROPERTY>definition=Trigger review of possible contributors when response is partial or inadequate; no automatic dose escalation or clozapine recommendation.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Strategies to Address Initial Nonresponse or Partial Response</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=At review</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories unless stated to reproduce Table 6; clinician operational definitions require approval</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved if unavailable; never infer absence from missing documentation</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_definition_supplied</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=SymptomResponse</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>TolerabilityReviewFlag</NAME>
+      <OUTCOME>NotTriggered</OUTCOME>
+      <OUTCOME>Triggered</OUTCOME>
+      <PROPERTY>label=Tolerability Review Flag</PROPERTY>
+      <PROPERTY>clinical_role=deterministic_workflow</PROPERTY>
+      <PROPERTY>definition=Trigger discussion when side effects are troublesome or the patient reports a barrier. NotTriggered does not remove routine shared decision-making.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Side-Effect Profile; Patient Preferences</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=At review</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories unless stated to reproduce Table 6; clinician operational definitions require approval</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved if unavailable; never infer absence from missing documentation</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_definition_supplied</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=SignificantAntipsychoticSideEffects</PROPERTY>
+      <PROPERTY>proposed_parent=PreferenceBarrier</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>SafetyAssessmentFlag</NAME>
+      <OUTCOME>NotTriggered</OUTCOME>
+      <OUTCOME>Triggered</OUTCOME>
+      <PROPERTY>label=Safety Assessment Flag</PROPERTY>
+      <PROPERTY>clinical_role=deterministic_workflow</PROPERTY>
+      <PROPERTY>definition=Mirror a clinician-identified safety concern for routing; not an emergency diagnostic classifier and never a rule-out.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Neuroleptic Malignant Syndrome; Tachycardia; Gastrointestinal Side Effects</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=At review</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories unless stated to reproduce Table 6; clinician operational definitions require approval</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved if unavailable; never infer absence from missing documentation</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_definition_supplied</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=UrgentSafetyConcern</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>MonitoringReviewFlag</NAME>
+      <OUTCOME>NotTriggered</OUTCOME>
+      <OUTCOME>Triggered</OUTCOME>
+      <PROPERTY>label=Monitoring Review Flag</PROPERTY>
+      <PROPERTY>clinical_role=deterministic_workflow</PROPERTY>
+      <PROPERTY>definition=Trigger review of an identified monitoring gap; no laboratory schedule is supplied.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Monitoring During Treatment With an Antipsychotic Medication</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=At review</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories unless stated to reproduce Table 6; clinician operational definitions require approval</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved if unavailable; never infer absence from missing documentation</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_definition_supplied</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=MonitoringGap</PROPERTY>
+    </VARIABLE>
+    <DEFINITION>
+      <FOR>ResponseReviewFlag</FOR>
+      <GIVEN>SymptomResponse</GIVEN>
+      <TABLE>0 1 0 1 1 0</TABLE>
+      <PROPERTY>parameter_method=modeler_assumption: deterministic workflow formalization of narrative guidance</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_not_patient_risk</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Strategies to Address Initial Nonresponse or Partial Response</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>uncertainty_description=No stochastic uncertainty modeled in this mapping; clinical interpretation still requires review</PROPERTY>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>TolerabilityReviewFlag</FOR>
+      <GIVEN>SignificantAntipsychoticSideEffects</GIVEN>
+      <GIVEN>PreferenceBarrier</GIVEN>
+      <TABLE>1 0 0 1 0 1 0 1</TABLE>
+      <PROPERTY>parameter_method=modeler_assumption: deterministic workflow formalization of narrative guidance</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_not_patient_risk</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Side-Effect Profile; Patient Preferences</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>uncertainty_description=No stochastic uncertainty modeled in this mapping; clinical interpretation still requires review</PROPERTY>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>SafetyAssessmentFlag</FOR>
+      <GIVEN>UrgentSafetyConcern</GIVEN>
+      <TABLE>1 0 0 1</TABLE>
+      <PROPERTY>parameter_method=modeler_assumption: deterministic workflow formalization of narrative guidance</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_not_patient_risk</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Neuroleptic Malignant Syndrome; Tachycardia; Gastrointestinal Side Effects</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>uncertainty_description=No stochastic uncertainty modeled in this mapping; clinical interpretation still requires review</PROPERTY>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>MonitoringReviewFlag</FOR>
+      <GIVEN>MonitoringGap</GIVEN>
+      <TABLE>1 0 0 1</TABLE>
+      <PROPERTY>parameter_method=modeler_assumption: deterministic workflow formalization of narrative guidance</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_not_patient_risk</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Monitoring During Treatment With an Antipsychotic Medication</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>uncertainty_description=No stochastic uncertainty modeled in this mapping; clinical interpretation still requires review</PROPERTY>
+    </DEFINITION>
+    <VARIABLE TYPE="nature">
+      <NAME>AkathisiaSourceCategory</NAME>
+      <OUTCOME>Seldom</OUTCOME>
+      <OUTCOME>Sometimes</OUTCOME>
+      <OUTCOME>Often</OUTCOME>
+      <PROPERTY>label=Akathisia Source Category</PROPERTY>
+      <PROPERTY>clinical_role=source_lookup</PROPERTY>
+      <PROPERTY>definition=Historical Table 6 ordinal label for Akathisia. A drug attribute, not a patient adverse-event state or risk estimate. Applies only to oral formulations.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Historical source profile; no incidence horizon</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories unless stated to reproduce Table 6; clinician operational definitions require approval</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved if unavailable; never infer absence from missing documentation</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_definition_supplied</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=OralAntipsychoticMedication</PROPERTY>
+    </VARIABLE>
+    <DEFINITION>
+      <FOR>AkathisiaSourceCategory</FOR>
+      <GIVEN>OralAntipsychoticMedication</GIVEN>
+      <TABLE>0 1 0 0 0 1 0 0 1 0 1 0 0 1 0 0 1 0 0 0 1 1 0 0 0 0 1 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 1 0 0 1 0 0 0 1 0 0 1 0 0 1 0 1 0 0 0 1 0 0 1 0</TABLE>
+      <PROPERTY>parameter_method=source_reported: exact Table 6 category lookup</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_not_patient_risk</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>uncertainty_description=No stochastic uncertainty modeled in this mapping; clinical interpretation still requires review</PROPERTY>
+    </DEFINITION>
+    <VARIABLE TYPE="nature">
+      <NAME>ParkinsonismSourceCategory</NAME>
+      <OUTCOME>Seldom</OUTCOME>
+      <OUTCOME>Sometimes</OUTCOME>
+      <OUTCOME>Often</OUTCOME>
+      <PROPERTY>label=Parkinsonism Source Category</PROPERTY>
+      <PROPERTY>clinical_role=source_lookup</PROPERTY>
+      <PROPERTY>definition=Historical Table 6 ordinal label for Parkinsonism. A drug attribute, not a patient adverse-event state or risk estimate. Applies only to oral formulations.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Historical source profile; no incidence horizon</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories unless stated to reproduce Table 6; clinician operational definitions require approval</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved if unavailable; never infer absence from missing documentation</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_definition_supplied</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=OralAntipsychoticMedication</PROPERTY>
+    </VARIABLE>
+    <DEFINITION>
+      <FOR>ParkinsonismSourceCategory</FOR>
+      <GIVEN>OralAntipsychoticMedication</GIVEN>
+      <TABLE>0 1 0 0 0 1 0 0 1 0 1 0 0 1 0 0 1 0 0 0 1 1 0 0 0 0 1 0 1 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 0 1 0 0 1 0 0 1 0 1 0 0 0 1 0 1 0 0</TABLE>
+      <PROPERTY>parameter_method=source_reported: exact Table 6 category lookup</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_not_patient_risk</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>uncertainty_description=No stochastic uncertainty modeled in this mapping; clinical interpretation still requires review</PROPERTY>
+    </DEFINITION>
+    <VARIABLE TYPE="nature">
+      <NAME>DystoniaSourceCategory</NAME>
+      <OUTCOME>Seldom</OUTCOME>
+      <OUTCOME>Sometimes</OUTCOME>
+      <OUTCOME>Often</OUTCOME>
+      <PROPERTY>label=Dystonia Source Category</PROPERTY>
+      <PROPERTY>clinical_role=source_lookup</PROPERTY>
+      <PROPERTY>definition=Historical Table 6 ordinal label for Dystonia. A drug attribute, not a patient adverse-event state or risk estimate. Applies only to oral formulations.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Historical source profile; no incidence horizon</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories unless stated to reproduce Table 6; clinician operational definitions require approval</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved if unavailable; never infer absence from missing documentation</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_definition_supplied</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=OralAntipsychoticMedication</PROPERTY>
+    </VARIABLE>
+    <DEFINITION>
+      <FOR>DystoniaSourceCategory</FOR>
+      <GIVEN>OralAntipsychoticMedication</GIVEN>
+      <TABLE>0 1 0 0 0 1 0 0 1 0 1 0 0 1 0 0 1 0 0 1 0 1 0 0 0 0 1 0 1 0 1 0 0 0 1 0 1 0 0 1 0 0 1 0 0 1 0 0 0 1 0 1 0 0 0 1 0 1 0 0 0 1 0 1 0 0</TABLE>
+      <PROPERTY>parameter_method=source_reported: exact Table 6 category lookup</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_not_patient_risk</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>uncertainty_description=No stochastic uncertainty modeled in this mapping; clinical interpretation still requires review</PROPERTY>
+    </DEFINITION>
+    <VARIABLE TYPE="nature">
+      <NAME>TardiveDyskinesiaSourceCategory</NAME>
+      <OUTCOME>Seldom</OUTCOME>
+      <OUTCOME>Sometimes</OUTCOME>
+      <OUTCOME>Often</OUTCOME>
+      <PROPERTY>label=Tardive Dyskinesia Source Category</PROPERTY>
+      <PROPERTY>clinical_role=source_lookup</PROPERTY>
+      <PROPERTY>definition=Historical Table 6 ordinal label for TardiveDyskinesia. A drug attribute, not a patient adverse-event state or risk estimate. Applies only to oral formulations.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Historical source profile; no incidence horizon</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories unless stated to reproduce Table 6; clinician operational definitions require approval</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved if unavailable; never infer absence from missing documentation</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_definition_supplied</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=OralAntipsychoticMedication</PROPERTY>
+    </VARIABLE>
+    <DEFINITION>
+      <FOR>TardiveDyskinesiaSourceCategory</FOR>
+      <GIVEN>OralAntipsychoticMedication</GIVEN>
+      <TABLE>0 0 1 0 0 1 0 0 1 0 1 0 0 1 0 0 1 0 0 0 1 1 0 0 0 0 1 0 1 0 1 0 0 0 1 0 1 0 0 1 0 0 1 0 0 1 0 0 0 1 0 1 0 0 0 1 0 1 0 0 0 1 0 1 0 0</TABLE>
+      <PROPERTY>parameter_method=source_reported: exact Table 6 category lookup</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_not_patient_risk</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>uncertainty_description=No stochastic uncertainty modeled in this mapping; clinical interpretation still requires review</PROPERTY>
+    </DEFINITION>
+    <VARIABLE TYPE="nature">
+      <NAME>HyperprolactinemiaSourceCategory</NAME>
+      <OUTCOME>Seldom</OUTCOME>
+      <OUTCOME>Sometimes</OUTCOME>
+      <OUTCOME>Often</OUTCOME>
+      <PROPERTY>label=Hyperprolactinemia Source Category</PROPERTY>
+      <PROPERTY>clinical_role=source_lookup</PROPERTY>
+      <PROPERTY>definition=Historical Table 6 ordinal label for Hyperprolactinemia. A drug attribute, not a patient adverse-event state or risk estimate. Applies only to oral formulations.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Historical source profile; no incidence horizon</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories unless stated to reproduce Table 6; clinician operational definitions require approval</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved if unavailable; never infer absence from missing documentation</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_definition_supplied</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=OralAntipsychoticMedication</PROPERTY>
+    </VARIABLE>
+    <DEFINITION>
+      <FOR>HyperprolactinemiaSourceCategory</FOR>
+      <GIVEN>OralAntipsychoticMedication</GIVEN>
+      <TABLE>1 0 0 0 0 1 0 0 1 0 1 0 0 1 0 0 1 0 0 0 1 0 1 0 0 0 1 0 1 0 1 0 0 0 1 0 1 0 0 1 0 0 1 0 0 0 1 0 1 0 0 0 1 0 0 0 1 1 0 0 0 0 1 0 1 0</TABLE>
+      <PROPERTY>parameter_method=source_reported: exact Table 6 category lookup</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_not_patient_risk</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>uncertainty_description=No stochastic uncertainty modeled in this mapping; clinical interpretation still requires review</PROPERTY>
+    </DEFINITION>
+    <VARIABLE TYPE="nature">
+      <NAME>AnticholinergicEffectsSourceCategory</NAME>
+      <OUTCOME>Seldom</OUTCOME>
+      <OUTCOME>Sometimes</OUTCOME>
+      <OUTCOME>Often</OUTCOME>
+      <PROPERTY>label=Anticholinergic Effects Source Category</PROPERTY>
+      <PROPERTY>clinical_role=source_lookup</PROPERTY>
+      <PROPERTY>definition=Historical Table 6 ordinal label for Anticholinergic. A drug attribute, not a patient adverse-event state or risk estimate. Applies only to oral formulations.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Historical source profile; no incidence horizon</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories unless stated to reproduce Table 6; clinician operational definitions require approval</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved if unavailable; never infer absence from missing documentation</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_definition_supplied</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=OralAntipsychoticMedication</PROPERTY>
+    </VARIABLE>
+    <DEFINITION>
+      <FOR>AnticholinergicEffectsSourceCategory</FOR>
+      <GIVEN>OralAntipsychoticMedication</GIVEN>
+      <TABLE>0 0 1 1 0 0 1 0 0 0 1 0 1 0 0 0 1 0 1 0 0 0 0 1 1 0 0 0 1 0 1 0 0 1 0 0 1 0 0 0 1 0 0 0 1 1 0 0 1 0 0 0 1 0 1 0 0 0 1 0 1 0 0 1 0 0</TABLE>
+      <PROPERTY>parameter_method=source_reported: exact Table 6 category lookup</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_not_patient_risk</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>uncertainty_description=No stochastic uncertainty modeled in this mapping; clinical interpretation still requires review</PROPERTY>
+    </DEFINITION>
+    <VARIABLE TYPE="nature">
+      <NAME>SedationSourceCategory</NAME>
+      <OUTCOME>Seldom</OUTCOME>
+      <OUTCOME>Sometimes</OUTCOME>
+      <OUTCOME>Often</OUTCOME>
+      <PROPERTY>label=Sedation Source Category</PROPERTY>
+      <PROPERTY>clinical_role=source_lookup</PROPERTY>
+      <PROPERTY>definition=Historical Table 6 ordinal label for Sedation. A drug attribute, not a patient adverse-event state or risk estimate. Applies only to oral formulations.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Historical source profile; no incidence horizon</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories unless stated to reproduce Table 6; clinician operational definitions require approval</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved if unavailable; never infer absence from missing documentation</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_definition_supplied</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=OralAntipsychoticMedication</PROPERTY>
+    </VARIABLE>
+    <DEFINITION>
+      <FOR>SedationSourceCategory</FOR>
+      <GIVEN>OralAntipsychoticMedication</GIVEN>
+      <TABLE>0 0 1 1 0 0 1 0 0 0 1 0 0 1 0 0 1 0 1 0 0 0 0 1 1 0 0 1 0 0 1 0 0 0 1 0 0 1 0 0 1 0 0 0 1 0 1 0 0 1 0 0 0 1 1 0 0 0 0 1 0 1 0 0 1 0</TABLE>
+      <PROPERTY>parameter_method=source_reported: exact Table 6 category lookup</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_not_patient_risk</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>uncertainty_description=No stochastic uncertainty modeled in this mapping; clinical interpretation still requires review</PROPERTY>
+    </DEFINITION>
+    <VARIABLE TYPE="nature">
+      <NAME>SeizuresSourceCategory</NAME>
+      <OUTCOME>Seldom</OUTCOME>
+      <OUTCOME>Sometimes</OUTCOME>
+      <OUTCOME>Often</OUTCOME>
+      <PROPERTY>label=Seizures Source Category</PROPERTY>
+      <PROPERTY>clinical_role=source_lookup</PROPERTY>
+      <PROPERTY>definition=Historical Table 6 ordinal label for Seizures. A drug attribute, not a patient adverse-event state or risk estimate. Applies only to oral formulations.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Historical source profile; no incidence horizon</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories unless stated to reproduce Table 6; clinician operational definitions require approval</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved if unavailable; never infer absence from missing documentation</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_definition_supplied</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=OralAntipsychoticMedication</PROPERTY>
+    </VARIABLE>
+    <DEFINITION>
+      <FOR>SeizuresSourceCategory</FOR>
+      <GIVEN>OralAntipsychoticMedication</GIVEN>
+      <TABLE>0 1 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 0 0 1 0 1 0 0 0 1 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 0 0 1 1 0 0 1 0 0 0 1 0 1 0 0 0 1 0 1 0 0 1 0 0</TABLE>
+      <PROPERTY>parameter_method=source_reported: exact Table 6 category lookup</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_not_patient_risk</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>uncertainty_description=No stochastic uncertainty modeled in this mapping; clinical interpretation still requires review</PROPERTY>
+    </DEFINITION>
+    <VARIABLE TYPE="nature">
+      <NAME>OrthostasisSourceCategory</NAME>
+      <OUTCOME>Seldom</OUTCOME>
+      <OUTCOME>Sometimes</OUTCOME>
+      <OUTCOME>Often</OUTCOME>
+      <PROPERTY>label=Orthostasis Source Category</PROPERTY>
+      <PROPERTY>clinical_role=source_lookup</PROPERTY>
+      <PROPERTY>definition=Historical Table 6 ordinal label for Orthostasis. A drug attribute, not a patient adverse-event state or risk estimate. Applies only to oral formulations.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Historical source profile; no incidence horizon</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories unless stated to reproduce Table 6; clinician operational definitions require approval</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved if unavailable; never infer absence from missing documentation</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_definition_supplied</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=OralAntipsychoticMedication</PROPERTY>
+    </VARIABLE>
+    <DEFINITION>
+      <FOR>OrthostasisSourceCategory</FOR>
+      <GIVEN>OralAntipsychoticMedication</GIVEN>
+      <TABLE>0 0 1 1 0 0 1 0 0 0 1 0 1 0 0 0 1 0 1 0 0 0 0 1 1 0 0 1 0 0 1 0 0 0 1 0 1 0 0 1 0 0 0 0 1 0 0 1 1 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0</TABLE>
+      <PROPERTY>parameter_method=source_reported: exact Table 6 category lookup</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_not_patient_risk</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>uncertainty_description=No stochastic uncertainty modeled in this mapping; clinical interpretation still requires review</PROPERTY>
+    </DEFINITION>
+    <VARIABLE TYPE="nature">
+      <NAME>QTProlongationSourceCategory</NAME>
+      <OUTCOME>Seldom</OUTCOME>
+      <OUTCOME>Sometimes</OUTCOME>
+      <OUTCOME>Often</OUTCOME>
+      <PROPERTY>label=QT Prolongation Source Category</PROPERTY>
+      <PROPERTY>clinical_role=source_lookup</PROPERTY>
+      <PROPERTY>definition=Historical Table 6 ordinal label for QTProlongation. A drug attribute, not a patient adverse-event state or risk estimate. Applies only to oral formulations.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Historical source profile; no incidence horizon</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories unless stated to reproduce Table 6; clinician operational definitions require approval</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved if unavailable; never infer absence from missing documentation</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_definition_supplied</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=OralAntipsychoticMedication</PROPERTY>
+    </VARIABLE>
+    <DEFINITION>
+      <FOR>QTProlongationSourceCategory</FOR>
+      <GIVEN>OralAntipsychoticMedication</GIVEN>
+      <TABLE>0 0 1 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 0 1 0 0 1 0 1 0 0 1 0 1 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 0 1 1 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 0 1</TABLE>
+      <PROPERTY>parameter_method=source_reported: exact Table 6 category lookup</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_not_patient_risk</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>uncertainty_description=No stochastic uncertainty modeled in this mapping; clinical interpretation still requires review</PROPERTY>
+    </DEFINITION>
+    <VARIABLE TYPE="nature">
+      <NAME>WeightGainSourceCategory</NAME>
+      <OUTCOME>Seldom</OUTCOME>
+      <OUTCOME>Sometimes</OUTCOME>
+      <OUTCOME>Often</OUTCOME>
+      <PROPERTY>label=Weight Gain Source Category</PROPERTY>
+      <PROPERTY>clinical_role=source_lookup</PROPERTY>
+      <PROPERTY>definition=Historical Table 6 ordinal label for WeightGain. A drug attribute, not a patient adverse-event state or risk estimate. Applies only to oral formulations.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Historical source profile; no incidence horizon</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories unless stated to reproduce Table 6; clinician operational definitions require approval</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved if unavailable; never infer absence from missing documentation</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_definition_supplied</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=OralAntipsychoticMedication</PROPERTY>
+    </VARIABLE>
+    <DEFINITION>
+      <FOR>WeightGainSourceCategory</FOR>
+      <GIVEN>OralAntipsychoticMedication</GIVEN>
+      <TABLE>0 1 0 0 1 0 0 1 0 1 0 0 1 0 0 0 1 0 1 0 0 0 1 0 1 0 0 0 1 0 1 0 0 0 1 0 1 0 0 0 1 0 0 0 1 0 1 0 1 0 0 0 0 1 0 1 0 0 1 0 0 1 0 1 0 0</TABLE>
+      <PROPERTY>parameter_method=source_reported: exact Table 6 category lookup</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_not_patient_risk</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>uncertainty_description=No stochastic uncertainty modeled in this mapping; clinical interpretation still requires review</PROPERTY>
+    </DEFINITION>
+    <VARIABLE TYPE="nature">
+      <NAME>HyperlipidemiaSourceCategory</NAME>
+      <OUTCOME>Seldom</OUTCOME>
+      <OUTCOME>Sometimes</OUTCOME>
+      <OUTCOME>Often</OUTCOME>
+      <PROPERTY>label=Hyperlipidemia Source Category</PROPERTY>
+      <PROPERTY>clinical_role=source_lookup</PROPERTY>
+      <PROPERTY>definition=Historical Table 6 ordinal label for Hyperlipidemia. A drug attribute, not a patient adverse-event state or risk estimate. Applies only to oral formulations.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Historical source profile; no incidence horizon</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories unless stated to reproduce Table 6; clinician operational definitions require approval</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved if unavailable; never infer absence from missing documentation</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_definition_supplied</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=OralAntipsychoticMedication</PROPERTY>
+    </VARIABLE>
+    <DEFINITION>
+      <FOR>HyperlipidemiaSourceCategory</FOR>
+      <GIVEN>OralAntipsychoticMedication</GIVEN>
+      <TABLE>1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 0 1 0 0 1 0 1 0 0 0 0 1 1 0 0 0 1 0 0 0 1 0 1 0 0 0 1 1 0 0 1 0 0</TABLE>
+      <PROPERTY>parameter_method=source_reported: exact Table 6 category lookup</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_not_patient_risk</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>uncertainty_description=No stochastic uncertainty modeled in this mapping; clinical interpretation still requires review</PROPERTY>
+    </DEFINITION>
+    <VARIABLE TYPE="nature">
+      <NAME>GlucoseAbnormalitiesSourceCategory</NAME>
+      <OUTCOME>Seldom</OUTCOME>
+      <OUTCOME>Sometimes</OUTCOME>
+      <OUTCOME>Often</OUTCOME>
+      <PROPERTY>label=Glucose Abnormalities Source Category</PROPERTY>
+      <PROPERTY>clinical_role=source_lookup</PROPERTY>
+      <PROPERTY>definition=Historical Table 6 ordinal label for GlucoseAbnormalities. A drug attribute, not a patient adverse-event state or risk estimate. Applies only to oral formulations.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Historical source profile; no incidence horizon</PROPERTY>
+      <PROPERTY>discretization=Modeler-proposed categories unless stated to reproduce Table 6; clinician operational definitions require approval</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved if unavailable; never infer absence from missing documentation</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_definition_supplied</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=OralAntipsychoticMedication</PROPERTY>
+    </VARIABLE>
+    <DEFINITION>
+      <FOR>GlucoseAbnormalitiesSourceCategory</FOR>
+      <GIVEN>OralAntipsychoticMedication</GIVEN>
+      <TABLE>0 1 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 0 1 0 1 0 0 1 0 0 0 0 1 0 1 0 0 1 0 0 0 1 1 0 0 0 1 0 0 1 0 1 0 0</TABLE>
+      <PROPERTY>parameter_method=source_reported: exact Table 6 category lookup</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_not_patient_risk</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>uncertainty_description=No stochastic uncertainty modeled in this mapping</PROPERTY>
+    </DEFINITION>
+  </NETWORK>
+</BIF>

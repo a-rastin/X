@@ -1,0 +1,1541 @@
+﻿6/22/26, 5:19 PM Actos (pioglitazone) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+pioglitazone (Rx)
+Brand and Other Names: Actos
+Classes: Antidiabetics, Thiazolidinediones
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+tablet
+
+15mg
+
+30mg
+
+45mg
+
+Type 2 Diabetes Mellitus
+
+Indicated as monotherapy or with insulin or insulin secretagogues
+
+15-30 mg PO with meal qDay initial; may increase dose by 15 mg with careful
+monitoring to 45 mg qDay maximum
+
+Monitor ALT at start of treatment, qMonth for 12 months, q3Months thereafter
+
+Dosage Modification
+
+Coadministration with insulin secretagogue (eg, sulfonylurea): Decrease insulin
+secretagogue dose
+
+Coadministration with insulin: Decrease insulin dose by 10-25%
+
+Coadministration with strong CYP2C8 inhibitors (eg, gemfibrozil): Limit maximum
+pioglitazone dose to 15 mg qDay
+
+https://reference.medscape.com/drug/actos-pioglitazone-342726 1/27
+
+
+
+6/22/26, 5:19 PM Actos (pioglitazone) dosing, indications, interactions, adverse effects, and more
+
+X-Linked Adrenoleukodystrophy (Orphan)
+
+Hydroxypioglitazone: Orphan designation for treatment of X-linked
+adrenoleukodystrophy
+
+Sponsor
+
+Minoryx Therapeutics S.L.; TecnoCampus Mataro-Maresme. TCM3 602, Av. Ernest
+Lluch, 32; Mataró, Spain
+
+Hearing Loss (Orphan)
+
+Orphan designation for treatment of sudden sensorinueural hearing loss
+
+Sponsor
+
+Strekin AG; 60C Hochbergerstrasse; Basel, Switzerland
+
+PEDIATRIC
+Not recommended
+
+Interactions
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and
+pioglitazone
+No Interactions Found
+Interactions Found
+Contraindicated
+
+Serious
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+Contraindicated (0)
+
+Serious (10)
+
+baricitinib
+
+https://reference.medscape.com/drug/actos-pioglitazone-342726 2/27
+
+
+
+6/22/26, 5:19 PM Actos (pioglitazone) dosing, indications, interactions, adverse effects, and more
+
+pioglitazone will increase the level or effect of baricitinib by decreasing elimination.
+Avoid or Use Alternate Drug. Coadministration of baricitinib with strong organic
+anion transporter 3 (OAT3) inhibitors is not recommended.
+
+eluxadoline
+pioglitazone increases levels of eluxadoline by decreasing metabolism. Avoid or
+Use Alternate Drug. Decrease eluxadoline dose to 75 mg PO BID if coadministered
+with OATP1B1 inhibitors. .
+
+ethanol
+ethanol, pioglitazone. Other (see comment). Contraindicated. Comment: Excessive
+EtOH consumption may alter glycemic control. Some sulfonylureas may produce a
+disulfiram like rxn.
+
+etrasimod
+pioglitazone will increase the level or effect of etrasimod by Other (see comment).
+Avoid or Use Alternate Drug. Increased exposure of etrasimod expected in patients
+who are CYP2C9 poor metabolizers if coadministered with moderate to strong
+CYP2C8 inhibitors.
+
+gemfibrozil
+gemfibrozil will increase the level or effect of pioglitazone by decreasing
+metabolism. Avoid or Use Alternate Drug.
+
+insulin icodec
+insulin icodec increases toxicity of pioglitazone by unknown mechanism. Avoid or
+Use Alternate Drug. Concomitant use not recommended; may increase risk of fluid
+retention, heart failure symptoms, and hypoglycemia.
+
+pacritinib
+pioglitazone will decrease the level or effect of pacritinib by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+tovorafenib
+pioglitazone will increase the level or effect of tovorafenib by decreasing
+metabolism. Avoid or Use Alternate Drug. Avoid coadministration of tovorafenib (a
+CYP2C8 substrate) with strong or moderate CYP2C8 inhibitors.
+
+tucatinib
+pioglitazone will increase the level or effect of tucatinib by Other (see comment).
+Avoid or Use Alternate Drug. Coadministration of tucatinib (a CYP2C8 substrate)
+with a strong or moderate CYP2C8 inhibitors increases tucatinib plasma
+concentrations and risk of toxicities.
+
+zavegepant intranasal
+pioglitazone will increase the level or effect of zavegepant intranasal by Other (see
+comment). Avoid or Use Alternate Drug. NTCP inhibitors may result in a significant
+increase in systemic exposure of zavegepant (a NTCP substrate).
+
+Monitor Closely (93)
+
+aripiprazole
+
+https://reference.medscape.com/drug/actos-pioglitazone-342726 3/27
+
+
+
+6/22/26, 5:19 PM Actos (pioglitazone) dosing, indications, interactions, adverse effects, and more
+
+aripiprazole, pioglitazone. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+asenapine
+asenapine, pioglitazone. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+atorvastatin
+pioglitazone increases toxicity of atorvastatin by Other (see comment). Use
+Caution/Monitor. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+axitinib
+pioglitazone decreases levels of axitinib by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+
+bexarotene
+bexarotene increases effects of pioglitazone by pharmacodynamic synergism. Use
+Caution/Monitor. Based on the mechanism of action, bexarotene capsules may
+increase the action of insulin enhancing agents, resulting in hypoglycemia.
+Hypoglycemia has not been associated with bexarotene monotherapy.
+
+bitter melon
+bitter melon increases effects of pioglitazone by pharmacodynamic synergism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+cannabidiol
+cannabidiol will increase the level or effect of pioglitazone by decreasing
+metabolism. Modify Therapy/Monitor Closely. Cannabidiol may potentially inhibit
+CYP2C8 activity. Consider reducing the dose when concomitantly using CYP2C8
+substrates.
+
+carbamazepine
+carbamazepine will decrease the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+cholic acid
+pioglitazone increases toxicity of cholic acid by decreasing elimination. Modify
+Therapy/Monitor Closely. Avoid concomitant use of inhibitors of the bile salt efflux
+pump (BSEP). May exacerbate accumulation of conjugated bile salts in the liver and
+result in clinical symptoms. If concomitant use is necessary, monitor serum
+transaminases and bilirubin.
+
+cimetidine
+cimetidine will increase the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+cinnamon
+cinnamon increases effects of pioglitazone by pharmacodynamic synergism. Use
+Caution/Monitor. Potential for hypoglycemia.
+
+ciprofloxacin
+
+https://reference.medscape.com/drug/actos-pioglitazone-342726 4/27
+
+
+
+6/22/26, 5:19 PM Actos (pioglitazone) dosing, indications, interactions, adverse effects, and more
+
+ciprofloxacin increases effects of pioglitazone by pharmacodynamic synergism. Use
+Caution/Monitor. Hyper and hypoglycemia have been reported in patients treated
+concomitantly with quinolones and antidiabetic agents. Careful monitoring of blood
+glucose is recommended.
+
+clarithromycin
+clarithromycin will increase the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+clozapine
+clozapine, pioglitazone. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+dienogest/estradiol valerate
+pioglitazone will decrease the level or effect of dienogest/estradiol valerate by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+Advise women to use alternative method of contraception or back-up method when
+moderate or weak enzyme inducer is used with combination contraceptives. Back-
+up contraception should be continued for 28 days after discontinuing medication to
+ensure contraceptive reliability.
+
+diltiazem
+diltiazem will increase the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+dulaglutide
+dulaglutide, pioglitazone. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Antidiabetic agents are often used in combination;
+dosage adjustments may be required when initiating or discontinuing antidiabetic
+agents.
+
+erythromycin base
+erythromycin base will increase the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+erythromycin ethylsuccinate
+erythromycin ethylsuccinate will increase the level or effect of pioglitazone by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+erythromycin lactobionate
+erythromycin lactobionate will increase the level or effect of pioglitazone by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+erythromycin stearate
+erythromycin stearate will increase the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+ethinylestradiol
+pioglitazone decreases levels of ethinylestradiol by unknown mechanism. Use
+Caution/Monitor.
+
+exenatide injectable solution
+
+https://reference.medscape.com/drug/actos-pioglitazone-342726 5/27
+
+
+
+6/22/26, 5:19 PM Actos (pioglitazone) dosing, indications, interactions, adverse effects, and more
+
+exenatide injectable solution, pioglitazone. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Concurrent use may increase
+risk of hypoglycemia; monitor glucose levels.
+
+exenatide injectable suspension
+exenatide injectable suspension, pioglitazone. Either increases effects of the other
+by pharmacodynamic synergism. Use Caution/Monitor. Concurrent use may increase
+risk of hypoglycemia; monitor glucose levels.
+
+fleroxacin
+fleroxacin increases effects of pioglitazone by pharmacodynamic synergism. Use
+Caution/Monitor. Quinolone antibiotic administration may result in hyper- or
+hypoglycemia. Gatifloxacin is most likely to produce dysglycemia; moxifloxacin is
+least likely.
+
+fluvastatin
+pioglitazone increases toxicity of fluvastatin by Other (see comment). Use
+Caution/Monitor. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+gemifloxacin
+gemifloxacin increases effects of pioglitazone by pharmacodynamic synergism. Use
+Caution/Monitor. Quinolone antibiotic administration may result in hyper- or
+hypoglycemia. Gatifloxacin is most likely to produce dysglycemia; moxifloxacin is
+least likely.
+
+glecaprevir/pibrentasvir
+pioglitazone will increase the level or effect of glecaprevir/pibrentasvir by
+decreasing metabolism. Use Caution/Monitor. Caution when coadministering
+glecaprevir/pibrentasvir with OATP1B1/OATP1B3 inhibitors
+
+ifosfamide
+pioglitazone increases toxicity of ifosfamide by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. CYP3A4 inducers may increase the
+metabolism of ifosfamide to its active alkylating metabolites. CYP3A4 inducers may
+increase the formation of the neurotoxic/nephrotoxic ifosfamide metabolite,
+chloroacetaldehyde. Closely monitor patients taking ifosfamide with CYP3A4
+inducers for toxicities and consider dose adjustment.
+
+insulin aspart
+insulin aspart increases toxicity of pioglitazone by unknown mechanism. Use
+Caution/Monitor. Insulin may increase the fluid retention associated with
+thiazolidinediones (peroxisome proliferator-activated receptor [PPAR]-gamma
+agonists).
+
+pioglitazone, insulin aspart. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+insulin aspart protamine/insulin aspart
+pioglitazone, insulin aspart protamine/insulin aspart. Either increases effects of the
+other by pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents
+
+https://reference.medscape.com/drug/actos-pioglitazone-342726 6/27
+
+
+
+6/22/26, 5:19 PM Actos (pioglitazone) dosing, indications, interactions, adverse effects, and more
+
+are often used in combination; dosage adjustments may be required when initiating
+or discontinuing antidiabetic agents.
+
+insulin degludec
+pioglitazone, insulin degludec. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+insulin degludec/insulin aspart
+pioglitazone, insulin degludec/insulin aspart. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+insulin detemir
+insulin detemir increases toxicity of pioglitazone by unknown mechanism. Use
+Caution/Monitor. Insulin may increase the fluid retention associated with
+thiazolidinediones (peroxisome proliferator-activated receptor [PPAR]-gamma
+agonists).
+
+pioglitazone, insulin detemir. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+insulin glargine
+insulin glargine increases toxicity of pioglitazone by unknown mechanism. Use
+Caution/Monitor. Insulin may increase the fluid retention associated with
+thiazolidinediones (peroxisome proliferator-activated receptor [PPAR]-gamma
+agonists).
+
+pioglitazone, insulin glargine. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+insulin glulisine
+insulin glulisine increases toxicity of pioglitazone by unknown mechanism. Use
+Caution/Monitor. Insulin may increase the fluid retention associated with
+thiazolidinediones (peroxisome proliferator-activated receptor [PPAR]-gamma
+agonists).
+
+pioglitazone, insulin glulisine. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+insulin inhaled
+pioglitazone, insulin inhaled. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+
+https://reference.medscape.com/drug/actos-pioglitazone-342726 7/27
+
+
+
+6/22/26, 5:19 PM Actos (pioglitazone) dosing, indications, interactions, adverse effects, and more
+
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+insulin isophane human/insulin regular human
+pioglitazone, insulin isophane human/insulin regular human. Either increases effects
+of the other by pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic
+agents are often used in combination; dosage adjustments may be required when
+initiating or discontinuing antidiabetic agents.
+
+insulin lispro
+insulin lispro increases toxicity of pioglitazone by unknown mechanism. Use
+Caution/Monitor. Insulin may increase the fluid retention associated with
+thiazolidinediones (peroxisome proliferator-activated receptor [PPAR]-gamma
+agonists).
+
+pioglitazone, insulin lispro. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+insulin lispro protamine/insulin lispro
+pioglitazone, insulin lispro protamine/insulin lispro. Either increases effects of the
+other by pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents
+are often used in combination; dosage adjustments may be required when initiating
+or discontinuing antidiabetic agents.
+
+insulin NPH
+insulin NPH increases toxicity of pioglitazone by unknown mechanism. Use
+Caution/Monitor. Insulin may increase the fluid retention associated with
+thiazolidinediones (peroxisome proliferator-activated receptor [PPAR]-gamma
+agonists).
+
+pioglitazone, insulin NPH. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Antidiabetic agents are often used in combination;
+dosage adjustments may be required when initiating or discontinuing antidiabetic
+agents.
+
+insulin regular human
+insulin regular human increases toxicity of pioglitazone by unknown mechanism.
+Use Caution/Monitor. Insulin may increase the fluid retention associated with
+thiazolidinediones (peroxisome proliferator-activated receptor [PPAR]-gamma
+agonists).
+
+pioglitazone, insulin regular human. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+isavuconazonium sulfate
+pioglitazone will decrease the level or effect of isavuconazonium sulfate by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+ketoconazole
+
+https://reference.medscape.com/drug/actos-pioglitazone-342726 8/27
+
+
+
+6/22/26, 5:19 PM Actos (pioglitazone) dosing, indications, interactions, adverse effects, and more
+
+ketoconazole will increase the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+ketotifen, ophthalmic
+ketotifen, ophthalmic, pioglitazone. Other (see comment). Use Caution/Monitor.
+Comment: Combination may result in thrombocytopenia (rare). Monitor CBC.
+
+letermovir
+letermovir, pioglitazone. Either increases levels of the other by Other (see
+comment). Use Caution/Monitor. Comment: Coadminstration of letermovir, an
+OATP1B1/3 substrate, with OATP1B1/3 inhibitors may increase letermovir plasma
+concentrations. Monitor glucose levels.
+
+levofloxacin
+levofloxacin increases effects of pioglitazone by pharmacodynamic synergism. Use
+Caution/Monitor. Quinolone antibiotic administration may result in hyper- or
+hypoglycemia. Gatifloxacin is most likely to produce dysglycemia; moxifloxacin is
+least likely.
+
+levoketoconazole
+levoketoconazole will increase the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+linagliptin
+pioglitazone will increase the level or effect of linagliptin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Use of
+alternative treatments is strongly recommended when linagliptin is to be
+administered with a CYP3A4 inducer
+
+liraglutide
+liraglutide, pioglitazone. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Concurrent use may increase risk of hypoglycemia;
+monitor glucose levels.
+
+lonapegsomatropin
+lonapegsomatropin decreases effects of pioglitazone by Other (see comment). Use
+Caution/Monitor. Comment: Closely monitor blood glucose when treated with
+antidiabetic agents. Lonapegsomatropin may decrease insulin sensitivity,
+particularly at higher doses. Patients with diabetes mellitus may require adjustment
+of their doses of insulin and/or other antihyperglycemic agents.
+
+lonapegsomatropin decreases effects of pioglitazone by pharmacodynamic
+antagonism. Modify Therapy/Monitor Closely. Growth hormone (GH) analogs may
+decrease insulin sensitivity, particularly at higher doses. Antidiabetic agents may
+require dose adjustment after initiating growth hormone.
+
+lurasidone
+lurasidone, pioglitazone. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+marijuana
+
+https://reference.medscape.com/drug/actos-pioglitazone-342726 9/27
+
+
+
+6/22/26, 5:19 PM Actos (pioglitazone) dosing, indications, interactions, adverse effects, and more
+
+marijuana decreases effects of pioglitazone by pharmacodynamic antagonism. Use
+Caution/Monitor.
+
+mecasermin
+mecasermin increases effects of pioglitazone by pharmacodynamic synergism. Use
+Caution/Monitor. Additive hypoglycemic effects.
+
+metformin
+pioglitazone, metformin. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Antidiabetic agents are often used in combination;
+dosage adjustments may be required when initiating or discontinuing antidiabetic
+agents.
+
+mifepristone
+mifepristone will increase the level or effect of pioglitazone by Other (see
+comment). Use Caution/Monitor. Inhibits CYP2C8/2C9; use smallest recommended
+doses for substrates and monitor
+
+mipomersen
+mipomersen, pioglitazone. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: Both drugs have potential to increase
+hepatic enzymes; monitor LFTs.
+
+moxifloxacin
+moxifloxacin increases effects of pioglitazone by pharmacodynamic synergism. Use
+Caution/Monitor. Quinolone antibiotic administration may result in hyper- or
+hypoglycemia. Gatifloxacin is most likely to produce dysglycemia; moxifloxacin is
+least likely.
+
+nefazodone
+nefazodone will increase the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+ofloxacin
+ofloxacin increases effects of pioglitazone by pharmacodynamic synergism. Use
+Caution/Monitor. Quinolone antibiotic administration may result in hyper- or
+hypoglycemia. Gatifloxacin is most likely to produce dysglycemia; moxifloxacin is
+least likely.
+
+olanzapine
+olanzapine, pioglitazone. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+omaveloxolone
+omaveloxolone will decrease the level or effect of pioglitazone by Other (see
+comment). Use Caution/Monitor. Omaveloxolone may reduce systemic exposure of
+sensitive CYP2C8 substrates. Check prescribing information of substrate if dosage
+modification is needed.
+
+opuntia ficus indica
+opuntia ficus indica increases effects of pioglitazone by pharmacodynamic
+
+https://reference.medscape.com/drug/actos-pioglitazone-342726 10/27
+
+
+
+6/22/26, 5:19 PM Actos (pioglitazone) dosing, indications, interactions, adverse effects, and more
+
+synergism. Use Caution/Monitor.
+
+paclitaxel
+pioglitazone will increase the level or effect of paclitaxel by Other (see comment).
+Use Caution/Monitor. Paclitaxel levels/toxicity may increase when coadministered
+with CYP2C8 inhibitors
+
+paclitaxel protein bound
+pioglitazone will increase the level or effect of paclitaxel protein bound by Other
+(see comment). Use Caution/Monitor. Paclitaxel levels/toxicity may increase when
+coadministered with CYP2C8 inhibitors
+
+paliperidone
+paliperidone, pioglitazone. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+pitavastatin
+pioglitazone increases toxicity of pitavastatin by Other (see comment). Use
+Caution/Monitor. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+ponatinib
+pioglitazone increases toxicity of ponatinib by Other (see comment). Use
+Caution/Monitor. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+pravastatin
+pioglitazone increases toxicity of pravastatin by Other (see comment). Use
+Caution/Monitor. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+quetiapine
+quetiapine, pioglitazone. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+resmetirom
+pioglitazone will increase the level or effect of resmetirom by Other (see comment).
+Modify Therapy/Monitor Closely. Reduce dose of resmetirom (a CYP2C8 substrate)
+with moderate CYP2C8 inhibitors
+
+resmetirom will increase the level or effect of pioglitazone by Other (see comment).
+Use Caution/Monitor. Resmetirom (a weak CYP2C8 inhibitor) may increase systemic
+exposure of sensitive CYP2C8 substrates.
+
+rifabutin
+rifabutin will decrease the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+rifampin
+rifampin will decrease the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+risperidone
+
+https://reference.medscape.com/drug/actos-pioglitazone-342726 11/27
+
+
+
+6/22/26, 5:19 PM Actos (pioglitazone) dosing, indications, interactions, adverse effects, and more
+
+risperidone, pioglitazone. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+sacubitril/valsartan
+pioglitazone will increase the level or effect of sacubitril/valsartan by Other (see
+comment). Use Caution/Monitor. The results from an in vitro study with human liver
+tissue indicate that valsartan is a substrate of the hepatic uptake transporter
+OATP1B1; coadministration with OATP1B1 inhibitors may increase valsartan
+systemic exposure
+
+selexipag
+pioglitazone will increase the level or effect of selexipag by decreasing metabolism.
+Modify Therapy/Monitor Closely. Reduce selexipag dose to once daily if
+coadministered with moderate CYP2C8 inhibitors.
+
+shark cartilage
+shark cartilage increases effects of pioglitazone by pharmacodynamic synergism.
+Use Caution/Monitor. Theoretical interaction.
+
+simvastatin
+pioglitazone increases toxicity of simvastatin by Other (see comment). Use
+Caution/Monitor. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+somapacitan
+somapacitan decreases effects of pioglitazone by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely. Growth hormone (GH) analogs may decrease
+insulin sensitivity, particularly at higher doses. Antidiabetic agents may require dose
+adjustment after initiating growth hormone.
+
+somatrogon
+somatrogon decreases effects of pioglitazone by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely. Growth hormone (GH) analogs may decrease
+insulin sensitivity, particularly at higher doses. Antidiabetic agents may require dose
+adjustment after initiating growth hormone.
+
+somatropin
+somatropin decreases effects of pioglitazone by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely. Growth hormone (GH) analogs may decrease
+insulin sensitivity, particularly at higher doses. Antidiabetic agents may require dose
+adjustment after initiating growth hormone.
+
+St John's Wort
+St John's Wort will decrease the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+stiripentol
+stiripentol will increase the level or effect of pioglitazone by Other (see comment).
+Modify Therapy/Monitor Closely. Stiripentol is a CYP2C8 inhibitor. Consider dosage
+reduction for CYP2C8 substrates if adverse effects are experienced when
+coadministered.
+
+sulfamethoxypyridazine
+
+https://reference.medscape.com/drug/actos-pioglitazone-342726 12/27
+
+
+
+6/22/26, 5:19 PM Actos (pioglitazone) dosing, indications, interactions, adverse effects, and more
+
+sulfamethoxypyridazine increases effects of pioglitazone by unspecified interaction
+mechanism. Use Caution/Monitor. Risk of hypoglycemia.
+
+tecovirimat
+tecovirimat will increase the level or effect of pioglitazone by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor. Tecovirimat is a weak inhibitor
+of CYP2C8 and CYP2C19. Monitor for adverse effects if coadministered with
+substrates of these enzymes. Monitor blood glucose and monitor for hypoglycemic
+symptoms.
+
+teriflunomide
+teriflunomide increases levels of pioglitazone by Other (see comment). Use
+Caution/Monitor. Comment: Teriflunomide inhibits CYP2C8; caution when
+coadministered with CYP2C8 substrates.
+
+tipranavir
+tipranavir, pioglitazone. Other (see comment). Use Caution/Monitor. Comment:
+Tipranavir's effect on oral hypoglycemics via hepatic CYP2C9 unknown; carefully
+monitor blood glucose.
+
+triamcinolone acetonide injectable suspension
+triamcinolone acetonide injectable suspension decreases effects of pioglitazone by
+pharmacodynamic antagonism. Use Caution/Monitor. Corticosteroids may diminish
+hypoglycemic effect of antidiabetic agents. Monitor blood glucose levels carefully.
+
+ubrogepant
+pioglitazone will decrease the level or effect of ubrogepant by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Dose adjustment is recommended with concomitant use of ubrogepant and
+moderate and weak CYP3A4 inducers. (see Dosage Modifications)
+
+vadadustat
+pioglitazone will increase the level or effect of vadadustat by Other (see comment).
+Use Caution/Monitor. OAT1/OAT3 inhibitors may increase vadadustat AUC. Closely
+monitor for too large or too rapid an increase in hemoglobin response and for
+adverse reactions.
+
+valsartan
+pioglitazone will increase the level or effect of valsartan by Other (see comment).
+Use Caution/Monitor. The results from an in vitro study with human liver tissue
+indicate that valsartan is a substrate of the hepatic uptake transporter OATP1B1;
+coadministration with OATP1B1 inhibitors may increase valsartan systemic
+exposure
+
+xipamide
+xipamide decreases levels of pioglitazone by increasing renal clearance. Use
+Caution/Monitor.
+
+ziprasidone
+
+https://reference.medscape.com/drug/actos-pioglitazone-342726 13/27
+
+
+
+6/22/26, 5:19 PM Actos (pioglitazone) dosing, indications, interactions, adverse effects, and more
+
+ziprasidone, pioglitazone. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+Minor (109)
+
+agrimony
+agrimony increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+American ginseng
+American ginseng increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+amitriptyline
+amitriptyline increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+amoxapine
+amoxapine increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+anamu
+anamu increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown. Theoretical interaction.
+
+aprepitant
+aprepitant will increase the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+armodafinil
+armodafinil will decrease the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+artemether/lumefantrine
+artemether/lumefantrine will decrease the level or effect of pioglitazone by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance
+Unknown.
+
+atazanavir
+atazanavir will increase the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+bosentan
+bosentan will decrease the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+budesonide
+budesonide will decrease the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+https://reference.medscape.com/drug/actos-pioglitazone-342726 14/27
+
+
+
+6/22/26, 5:19 PM Actos (pioglitazone) dosing, indications, interactions, adverse effects, and more
+
+budesonide decreases effects of pioglitazone by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+butalbital
+butalbital will decrease the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+chlorothiazide
+chlorothiazide decreases effects of pioglitazone by pharmacodynamic antagonism.
+Minor/Significance Unknown. Thiazide dosage >50 mg/day may increase blood
+glucose.
+
+chlorthalidone
+chlorthalidone decreases effects of pioglitazone by pharmacodynamic antagonism.
+Minor/Significance Unknown. Thiazide dosage >50 mg/day may increase blood
+glucose.
+
+chromium
+chromium increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+clomipramine
+clomipramine increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+clonidine
+clonidine decreases effects of pioglitazone by pharmacodynamic antagonism.
+Minor/Significance Unknown. Diminished symptoms of hypoglycemia.
+
+clonidine, pioglitazone. Other (see comment). Minor/Significance Unknown.
+Comment: Decreased symptoms of hypoglycemia. Mechanism: decreased
+hypoglycemia induced catecholamine production.
+
+conivaptan
+conivaptan will increase the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+cornsilk
+cornsilk increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown. Increased risk of hypoglycemia (theoretical
+interaction).
+
+cortisone
+cortisone will decrease the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+cortisone decreases effects of pioglitazone by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+cyclopenthiazide
+cyclopenthiazide decreases effects of pioglitazone by pharmacodynamic
+antagonism. Minor/Significance Unknown. Thiazide dosage >50 mg/day may
+
+https://reference.medscape.com/drug/actos-pioglitazone-342726 15/27
+
+
+
+6/22/26, 5:19 PM Actos (pioglitazone) dosing, indications, interactions, adverse effects, and more
+
+increase blood glucose.
+
+damiana
+damiana decreases effects of pioglitazone by pharmacodynamic antagonism.
+Minor/Significance Unknown. Theoretical interaction.
+
+danazol
+danazol increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+darifenacin
+darifenacin will increase the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+darunavir
+darunavir will increase the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+dasatinib
+dasatinib will increase the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+deferasirox
+deferasirox will decrease the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+deflazacort
+deflazacort decreases effects of pioglitazone by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+desipramine
+desipramine increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+devil's claw
+devil's claw increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+dexamethasone
+dexamethasone will decrease the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+dexamethasone decreases effects of pioglitazone by pharmacodynamic
+antagonism. Minor/Significance Unknown.
+
+DHEA, herbal
+DHEA, herbal will increase the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+doxepin
+doxepin increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+https://reference.medscape.com/drug/actos-pioglitazone-342726 16/27
+
+
+
+6/22/26, 5:19 PM Actos (pioglitazone) dosing, indications, interactions, adverse effects, and more
+
+dronedarone
+dronedarone will increase the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+efavirenz
+efavirenz will decrease the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+elderberry
+elderberry increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown. Increased risk of hypoglycemia (in vitro research).
+
+eslicarbazepine acetate
+eslicarbazepine acetate will decrease the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+etravirine
+etravirine will decrease the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+eucalyptus
+eucalyptus increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown. Theoretical interaction.
+
+fluconazole
+fluconazole will increase the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+fludrocortisone
+fludrocortisone will decrease the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+fludrocortisone decreases effects of pioglitazone by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+fluoxymesterone
+fluoxymesterone increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+fo-ti
+fo-ti increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+forskolin
+forskolin increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown. Colenol, a compound found in Coleus root, may
+stimulate insulin release.
+
+fosamprenavir
+fosamprenavir will increase the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+fosaprepitant
+
+https://reference.medscape.com/drug/actos-pioglitazone-342726 17/27
+
+
+
+6/22/26, 5:19 PM Actos (pioglitazone) dosing, indications, interactions, adverse effects, and more
+
+fosaprepitant will increase the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+fosphenytoin
+fosphenytoin will decrease the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+gotu kola
+gotu kola increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown. (Theoretical interaction).
+
+grapefruit
+grapefruit will increase the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+griseofulvin
+griseofulvin will decrease the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+guanfacine
+guanfacine decreases effects of pioglitazone by pharmacodynamic antagonism.
+Minor/Significance Unknown. Diminished symptoms of hypoglycemia.
+
+guanfacine, pioglitazone. Other (see comment). Minor/Significance Unknown.
+Comment: Decreased symptoms of hypoglycemia. Mechanism: decreased
+hypoglycemia induced catecholamine production.
+
+gymnema
+gymnema increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+horse chestnut seed
+horse chestnut seed increases effects of pioglitazone by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+hydrochlorothiazide
+hydrochlorothiazide decreases effects of pioglitazone by pharmacodynamic
+antagonism. Minor/Significance Unknown. Thiazide dosage >50 mg/day may
+increase blood glucose.
+
+hydrocortisone
+hydrocortisone will decrease the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+hydrocortisone decreases effects of pioglitazone by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+imipramine
+imipramine increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+indapamide
+
+https://reference.medscape.com/drug/actos-pioglitazone-342726 18/27
+
+
+
+6/22/26, 5:19 PM Actos (pioglitazone) dosing, indications, interactions, adverse effects, and more
+
+indapamide decreases effects of pioglitazone by pharmacodynamic antagonism.
+Minor/Significance Unknown. Thiazide dosage >50 mg/day may increase blood
+glucose.
+
+isoniazid
+isoniazid will increase the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+isoniazid decreases effects of pioglitazone by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+juniper
+juniper increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown. Increased risk of hypoglycemia (theoretical
+interaction).
+
+lofepramine
+lofepramine increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+lumefantrine
+lumefantrine will decrease the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+lycopus
+lycopus increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown. Increased risk of hypoglycemia (theoretical
+interaction).
+
+maitake
+maitake increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown. Increased risk of hypoglycemia (animal research).
+
+marijuana
+marijuana will increase the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+mesterolone
+mesterolone increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+mestranol
+pioglitazone decreases levels of mestranol by unknown mechanism.
+Minor/Significance Unknown.
+
+methyclothiazide
+methyclothiazide decreases effects of pioglitazone by pharmacodynamic
+antagonism. Minor/Significance Unknown. Thiazide dosage >50 mg/day may
+increase blood glucose.
+
+methylprednisolone
+methylprednisolone will decrease the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+https://reference.medscape.com/drug/actos-pioglitazone-342726 19/27
+
+
+
+6/22/26, 5:19 PM Actos (pioglitazone) dosing, indications, interactions, adverse effects, and more
+
+methylprednisolone decreases effects of pioglitazone by pharmacodynamic
+antagonism. Minor/Significance Unknown.
+
+methyltestosterone
+methyltestosterone increases effects of pioglitazone by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+metolazone
+metolazone decreases effects of pioglitazone by pharmacodynamic antagonism.
+Minor/Significance Unknown. Thiazide dosage >50 mg/day may increase blood
+glucose.
+
+metronidazole
+metronidazole will increase the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+miconazole vaginal
+miconazole vaginal will increase the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+nelfinavir
+nelfinavir will increase the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+nettle
+nettle increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown. (Theoretical interaction).
+
+nevirapine
+nevirapine will decrease the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+nifedipine
+nifedipine will increase the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+nilotinib
+nilotinib will increase the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+nortriptyline
+nortriptyline increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+ofloxacin
+ofloxacin, pioglitazone. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Potential dysglycemia.
+
+oxandrolone
+oxandrolone increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+https://reference.medscape.com/drug/actos-pioglitazone-342726 20/27
+
+
+
+6/22/26, 5:19 PM Actos (pioglitazone) dosing, indications, interactions, adverse effects, and more
+
+oxymetholone
+oxymetholone increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+pegvisomant
+pegvisomant increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+pentobarbital
+pentobarbital will decrease the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+phenobarbital
+phenobarbital will decrease the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+phenytoin
+phenytoin will decrease the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+posaconazole
+posaconazole will increase the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+potassium acid phosphate
+potassium acid phosphate increases effects of pioglitazone by pharmacodynamic
+synergism. Minor/Significance Unknown. Interaction especially seen in the
+treatment of hypokalemia.
+
+potassium chloride
+potassium chloride increases effects of pioglitazone by pharmacodynamic
+synergism. Minor/Significance Unknown. Interaction especially seen in the
+treatment of hypokalemia.
+
+potassium citrate
+potassium citrate increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown. Interaction especially seen in the treatment of
+hypokalemia.
+
+prednisolone
+prednisolone decreases effects of pioglitazone by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+prednisone
+prednisone will decrease the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+prednisone decreases effects of pioglitazone by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+primidone
+primidone will decrease the level or effect of pioglitazone by affecting
+
+https://reference.medscape.com/drug/actos-pioglitazone-342726 21/27
+
+
+
+6/22/26, 5:19 PM Actos (pioglitazone) dosing, indications, interactions, adverse effects, and more
+
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+protriptyline
+protriptyline increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+rifapentine
+rifapentine will decrease the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+ritonavir
+ritonavir will increase the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+rufinamide
+rufinamide will decrease the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+sage
+sage increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+stevia
+stevia increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+testosterone
+testosterone increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+testosterone buccal system
+testosterone buccal system increases effects of pioglitazone by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+testosterone topical
+testosterone topical increases effects of pioglitazone by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+tongkat ali
+tongkat ali increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown. Risk of hypoglycemia.
+
+topiramate
+topiramate will decrease the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+trazodone
+trazodone increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+trimipramine
+trimipramine increases effects of pioglitazone by pharmacodynamic synergism.
+
+https://reference.medscape.com/drug/actos-pioglitazone-342726 22/27
+
+
+
+6/22/26, 5:19 PM Actos (pioglitazone) dosing, indications, interactions, adverse effects, and more
+
+Minor/Significance Unknown.
+
+vanadium
+vanadium increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+verapamil
+verapamil will increase the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+voriconazole
+voriconazole will increase the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+zafirlukast
+zafirlukast will increase the level or effect of pioglitazone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+Adverse Effects
+
+>10%
+
+Edema when used in combination with sulfonylurea or insulin (<27%)
+
+Hypoglycemia (<27%)
+
+Upper respiratory infection (13%)
+
+1-10%
+
+Headache (9%)
+
+Heart failure (up to 8%)
+
+Sinusitis (6%)
+
+Fracture of bone (5%)
+
+Pharyngitis (5%)
+
+Myalgia (5%)
+
+Frequency Not Defined
+
+Aggravated diabetes
+
+Diabetic macular edema
+
+Hepatic failure (rare)
+
+Increased cholesterol
+
+Decreased serum triglycerides
+
+https://reference.medscape.com/drug/actos-pioglitazone-342726 23/27
+
+
+
+6/22/26, 5:19 PM Actos (pioglitazone) dosing, indications, interactions, adverse effects, and more
+
+Hematocrit/hemoglobin
+
+Bladder cancer
+
+Decreased visual acuity
+
+Dyspnea
+
+Increased transaminases
+
+Pharyngitis
+
+Sinusitis
+
+Weight gain
+
+Warnings
+
+Black Box Warnings
+
+Thiazolidinediones, including pioglitazone and rosiglitazone, cause or exacerbate
+congestive heart failure in some patients
+
+After initiation of these drugs, as well as after dose increases, observe patients carefully
+for signs and symptoms of heart failure (including excessive, rapid weight gain; dyspnea;
+and/or edema); if these signs or symptoms develop, the heart failure should be managed
+according to the current standards of care; furthermore, discontinuation or dose
+reduction of these drugs must be considered.
+
+These drugs are not recommended for patients with symptomatic heart failure; initiation
+of these drugs in patients with established NYHA class III or IV heart failure is
+contraindicated
+
+Contraindications
+
+Hypersensitivity to pioglitazone
+
+Diabetic ketoacidosis
+
+Moderate-severe hepatic impairment (ALT >2.5x ULN)
+
+CHF (NYHA class III, IV)
+
+Cautions
+
+Do initiate treatment in patients with active liver disease who have ALT levels >2.5 times
+the upper limit of normal (ULN); if ALT >3 times the ULN, stop treatment; if ALT is 1.5-3
+times the ULN, retest qWeek until normal or until it reaches 3 times the ULN and
+treatment must be discontinued
+
+Not recommended for patients with symptomatic heart failure; may cause or exacerbate
+congestive heart failure in some patients; monitor patients carefully after initiating
+therapy; observe for signs and symptoms of heart failure; if signs and symptoms
+
+https://reference.medscape.com/drug/actos-pioglitazone-342726 24/27
+
+
+
+6/22/26, 5:19 PM Actos (pioglitazone) dosing, indications, interactions, adverse effects, and more
+
+develop, manage heart failure according to current standards of care; consider
+discontinuing therapy or reducing the dose
+
+New onset or exacerbation of existing edema and dyspnea reported
+
+Macular edema reported; patients should be seen by an ophthalmologist if any visual
+symptoms arise during therapy; all diabetic patients should have regular eye exams
+
+Delayed related weight gain reported with use; likely associated with fluid retention and
+fat accumulation
+
+Thiazolidinediones, which are peroxisome proliferator-activated receptor (PPAR) gamma
+agonists, can cause dose-related fluid retention, particularly when used in combination
+with insulin
+
+Risk of hypoglycemia, in combination with insulin or other oral agents
+
+May result in ovulation in some premenopausal, anovulatory women; ensure adequate
+contraception
+
+May decrease hemoglobin/hematocrit
+
+Increased fracture risk in females
+
+Use with caution in premenopausal/anovulatory females (patient may resume ovulation
+and increase the risk of pregnancy)
+
+Discuss potential for unintended pregnancy with premenopausal women as therapy with
+pioglitazone, like other thiazolidinediones, may result in ovulation in some anovulatory
+women
+
+Increased risk of CHF; not recommended in symptomatic heart failure
+
+Cancer risk
+
+Bladder cancer
+Pioglitazone may be linked to an increased risk of bladder cancer
+
+Do not prescribe for patients with active bladder cancer
+
+Consider benefit:risk ratio before prescribing in patients with a history of
+bladder cancer
+
+Instruct patients to contact their physician if signs of bladder cancer observed
+after initiating therapy (eg, blood or red colored urine, new or worsening
+urinary urgency, pain on urination)
+
+Prostate cancer
+7/22/2015: Compared with nonuse, pioglitazone use was associated with
+increased risk for prostate cancer (453.3 vs. 449.3 per 100,000 person-years)
+[JAMA 2015 July 21;314(3):265-277]
+
+Pancreatic cancer
+7/22/2015: Compared with nonuse, pioglitazone use was associated with
+increased risk for pancreatic cancer (81.1 vs. 48.4 per 100,000 person-years)
+
+https://reference.medscape.com/drug/actos-pioglitazone-342726 25/27
+
+
+
+6/22/26, 5:19 PM Actos (pioglitazone) dosing, indications, interactions, adverse effects, and more
+
+Pregnancy & Lactation
+
+Pregnancy: Limited data with pioglitazone in pregnant women are not sufficient to
+determine a drug- associated risk for major birth defects or miscarriage; there are risks to
+the mother and fetus associated with poorly controlled diabetes in pregnancy; poorly
+controlled diabetes in pregnancy increases maternal risk for diabetic ketoacidosis, pre-
+eclampsia, spontaneous abortions, preterm delivery, still birth and delivery
+complications; poorly controlled diabetes increases fetal risk for major birth defects, still
+birth, and macrosomia related morbidity
+
+Lactation: There is no information regarding the presence of pioglitazone in human milk,
+the effects on the breastfed infant, or the effects on milk production; the developmental
+and health benefits of breastfeeding should be considered along with the mother’s
+clinical need for pioglitazone and any potential adverse effects on the breastfed infant
+from pioglitazone or from the underlying maternal condition
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+Improves target-cell response to insulin; decreases hepatic gluconeogenesis; depends
+on the presence of insulin for activity
+
+Absorption
+
+Onset: Initial effect (delayed), max effect (several weeks)
+
+Duration: 24 hr
+
+Peak plasma time: 2-4 hr (delayed by food)
+
+Distribution
+
+Protein bound: >99%
+
+Vd: 0.63 L/kg
+
+https://reference.medscape.com/drug/actos-pioglitazone-342726 26/27
+
+
+
+6/22/26, 5:19 PM Actos (pioglitazone) dosing, indications, interactions, adverse effects, and more
+
+Metabolism
+
+Metabolized by hepatic CYP2C8 and CYP3A4 into active metabolites
+
+Active metabolites: Metabolite II (hydroxy derivative), metabolite III (keto derivative),
+metabolite IV (active hydroxy derivative)
+
+Elimination
+
+Half-life: 3-7 hr
+
+Excretion: Urine (15-30%)
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/actos-pioglitazone-342726 27/27

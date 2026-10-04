@@ -1,0 +1,1852 @@
+﻿6/22/26, 5:13 PM Altoprev (lovastatin) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+lovastatin (Rx)
+Brand and Other Names: Altoprev, Mevacor (DSC)
+Classes: Lipid-Lowering Agents, Statins; HMG-CoA Reductase Inhibitors
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+tablets, extended-release
+
+20mg
+
+40mg
+
+60mg
+
+tablets
+
+10mg
+
+20mg
+
+40mg
+
+Hypercholesterolemia
+
+Mevacor (immediate-release): 20 mg PO qDay with evening meal initially, or may divide
+daily dose BID; adjust dose at 4-week intervals if increase required; not to exceed 80
+mg/day
+
+Altoprev (extended-release): 10-60 mg PO qHS
+
+Dosing Considerations
+
+Coadministration with danazol, diltiazem, or verapamil: Do not exceed 20 mg lovastatin
+daily
+
+Coadministration with amiodarone: Do not exceed 40 mg lovastatin daily
+
+Avoid large quantities of grapefruit juice (>1 qt/day)
+
+https://reference.medscape.com/drug/mevacor-altoprev-lovastatin-342458 1/32
+
+
+
+6/22/26, 5:13 PM Altoprev (lovastatin) dosing, indications, interactions, adverse effects, and more
+
+Overdose management
+
+Adverse drug reactions from overdose may include peripheral neuropathy, diarrhea,
+increased K+, myopathy, rhabdomyolysis, acute renal failure, elevated LFTs, eye
+lens opacities
+
+Treatment is supportive
+
+Dosing Modifications
+
+Renal impairment (severe; CrCl <30 mL/min): Doses >20 mg/day should be carefully
+considered and, if deemed necessary, implemented cautiously
+
+PEDIATRIC
+Dosage Forms & Strengths
+
+tablets, extended-release
+
+20mg
+
+40mg
+
+60mg
+
+tablets
+
+10mg
+
+20mg
+
+40mg
+
+Heterozygous Familial Hypercholesterolemia
+
+10-17 years: 20-40 mg PO qDay; not to exceed 40 mg/day
+
+Initiate with 10 mg/day if patient requires smaller LDL-C reduction
+
+Interactions
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and lovastatin
+No Interactions Found
+Interactions Found
+
+https://reference.medscape.com/drug/mevacor-altoprev-lovastatin-342458 2/32
+
+
+
+6/22/26, 5:13 PM Altoprev (lovastatin) dosing, indications, interactions, adverse effects, and more
+
+Contraindicated
+
+Serious
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+Contraindicated (31)
+
+atazanavir
+atazanavir will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Strong CYP3A4
+inhibitors increase systemic statin exposure and risk of myopathy, including
+rhabdomyolysis
+
+clarithromycin
+clarithromycin will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Strong CYP3A4
+inhibitors increase systemic statin exposure and risk of myopathy, including
+rhabdomyolysis
+
+clarithromycin will increase the level or effect of lovastatin by P-glycoprotein
+(MDR1) efflux transporter. Contraindicated.
+
+cobicistat
+cobicistat will increase the level or effect of lovastatin by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Contraindicated. Potential for serious reactions such
+as myopathy including rhabdomyolysis
+
+conivaptan
+conivaptan will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Strong CYP3A4
+inhibitors increase systemic statin exposure and risk of myopathy, including
+rhabdomyolysis
+
+darunavir
+darunavir will increase the level or effect of lovastatin by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Contraindicated. Strong CYP3A4 inhibitors increase
+systemic statin exposure and risk of myopathy, including rhabdomyolysis
+
+elvitegravir/cobicistat/emtricitabine/tenofovir DF
+elvitegravir/cobicistat/emtricitabine/tenofovir DF increases levels of lovastatin by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+Cobicistat is a CYP3A4 inhibitor; contraindicated with CYP3A4 substrates for which
+elevated plasma concentrations are associated with serious and/or life-threatening
+events.
+
+erythromycin base
+
+https://reference.medscape.com/drug/mevacor-altoprev-lovastatin-342458 3/32
+
+
+
+6/22/26, 5:13 PM Altoprev (lovastatin) dosing, indications, interactions, adverse effects, and more
+
+erythromycin base will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Strong CYP3A4
+inhibitors increase systemic statin exposure and risk of myopathy, including
+rhabdomyolysis
+
+erythromycin ethylsuccinate
+erythromycin ethylsuccinate will increase the level or effect of lovastatin by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Strong
+CYP3A4 inhibitors increase systemic statin exposure and risk of myopathy,
+including rhabdomyolysis
+
+erythromycin lactobionate
+erythromycin lactobionate will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Strong CYP3A4
+inhibitors increase systemic statin exposure and risk of myopathy, including
+rhabdomyolysis
+
+erythromycin stearate
+erythromycin stearate will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Strong CYP3A4
+inhibitors increase systemic statin exposure and risk of myopathy, including
+rhabdomyolysis
+
+fosamprenavir
+fosamprenavir will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Strong CYP3A4
+inhibitors increase systemic statin exposure and risk of myopathy, including
+rhabdomyolysis
+
+idelalisib
+idelalisib will increase the level or effect of lovastatin by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Contraindicated. Strong CYP3A4 inhibitors increase
+systemic statin exposure and risk of myopathy, including rhabdomyolysis
+
+isoniazid
+isoniazid will increase the level or effect of lovastatin by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Contraindicated. Strong CYP3A4 inhibitors increase
+systemic statin exposure and risk of myopathy, including rhabdomyolysis
+
+itraconazole
+itraconazole will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Coadministration
+of lovastatin with itraconazole is contraindicated during and 2 weeks after of
+itraconazole treatment.
+
+ketoconazole
+ketoconazole will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Strong CYP3A4
+inhibitors increase systemic statin exposure and risk of myopathy, including
+rhabdomyolysis
+
+levoketoconazole
+
+https://reference.medscape.com/drug/mevacor-altoprev-lovastatin-342458 4/32
+
+
+
+6/22/26, 5:13 PM Altoprev (lovastatin) dosing, indications, interactions, adverse effects, and more
+
+levoketoconazole will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Strong CYP3A4
+inhibitors increase systemic statin exposure and risk of myopathy, including
+rhabdomyolysis
+
+lonafarnib
+lonafarnib will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+
+lopinavir
+lopinavir will increase the level or effect of lovastatin by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Contraindicated. Strong CYP3A4 inhibitors increase
+systemic statin exposure and risk of myopathy, including rhabdomyolysis
+
+mifepristone
+mifepristone increases levels of lovastatin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Contraindicated. Contraindicated due to increased risk of
+rhabdomyolysis.
+
+nefazodone
+nefazodone will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Strong CYP3A4
+inhibitors increase systemic statin exposure and risk of myopathy, including
+rhabdomyolysis
+
+nelfinavir
+nelfinavir will increase the level or effect of lovastatin by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Contraindicated. Strong CYP3A4 inhibitors increase
+systemic statin exposure and risk of myopathy, including rhabdomyolysis
+
+lovastatin will increase the level or effect of nelfinavir by P-glycoprotein (MDR1)
+efflux transporter. Contraindicated.
+
+nicardipine
+nicardipine will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Strong CYP3A4
+inhibitors increase systemic statin exposure and risk of myopathy, including
+rhabdomyolysis
+
+nirmatrelvir/ritonavir
+nirmatrelvir/ritonavir will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+Nirmatrelvir/ritonavir is contraindicated with drugs that are highly dependent on
+CYP3A for clearance and for which elevated concentrations are associated with
+serious and/or life-threatening reactions. Discontinue lovastatin at least 12 hr
+before initiating nirmatrelvir/ritonavir , during the 5 days of treatment, and for 5
+days after completing.
+
+ombitasvir/paritaprevir/ritonavir & dasabuvir (DSC)
+ombitasvir/paritaprevir/ritonavir & dasabuvir (DSC) will increase the level or effect
+of lovastatin by affecting hepatic/intestinal enzyme CYP3A4 metabolism.
+Contraindicated. Increased risk of myopathy, including rhabdomyolysis
+
+https://reference.medscape.com/drug/mevacor-altoprev-lovastatin-342458 5/32
+
+
+
+6/22/26, 5:13 PM Altoprev (lovastatin) dosing, indications, interactions, adverse effects, and more
+
+posaconazole
+posaconazole will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Strong CYP3A4
+inhibitors increase systemic statin exposure and risk of myopathy, including
+rhabdomyolysis
+
+quinidine
+quinidine will increase the level or effect of lovastatin by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Contraindicated. Strong CYP3A4 inhibitors increase
+systemic statin exposure and risk of myopathy, including rhabdomyolysis
+
+red yeast rice
+lovastatin, red yeast rice. Either increases toxicity of the other by pharmacodynamic
+synergism. Contraindicated. May increase creatine kinase levels and increase risk of
+myopathy or rhabdomyolysis; red yeast rice contains monocolin K (reportedly
+identical to lovastatin).
+
+relacorilant
+relacorilant increases levels of lovastatin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Contraindicated. If short-term treatment with strong CYP3A4
+inhibitors is unavoidable, therapy with lovastatin should be suspended during the
+course of treatment.
+
+ritonavir
+ritonavir will increase the level or effect of lovastatin by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Contraindicated. Strong CYP3A4 inhibitors increase
+systemic statin exposure and risk of myopathy, including rhabdomyolysis
+
+lovastatin will increase the level or effect of ritonavir by P-glycoprotein (MDR1)
+efflux transporter. Contraindicated.
+
+tipranavir
+tipranavir increases levels of lovastatin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Contraindicated. This interaction is the net effect of tipranavir
+being coadministered with ritonavir (boosted therapy); increased risk of myopathy
+including rhabdomyolysis.
+
+voriconazole
+voriconazole will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Strong CYP3A4
+inhibitors increase systemic statin exposure and risk of myopathy, including
+rhabdomyolysis
+
+Serious (73)
+
+afatinib
+lovastatin increases levels of afatinib by P-glycoprotein (MDR1) efflux transporter.
+Avoid or Use Alternate Drug. Reduce afatinib daily dose by 10 mg if not tolerated
+when coadministered with P-gp inhibitors.
+
+amiodarone
+
+https://reference.medscape.com/drug/mevacor-altoprev-lovastatin-342458 6/32
+
+
+
+6/22/26, 5:13 PM Altoprev (lovastatin) dosing, indications, interactions, adverse effects, and more
+
+amiodarone will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Do
+not exceed 40 mg of lovastatin
+
+apalutamide
+apalutamide will decrease the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+Coadministration of apalutamide, a strong CYP3A4 inducer, with drugs that are
+CYP3A4 substrates can result in lower exposure to these medications. Avoid or
+substitute another drug for these medications when possible. Evaluate for loss of
+therapeutic effect if medication must be coadministered. Adjust dose according to
+prescribing information if needed.
+
+aprepitant
+aprepitant will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+
+armodafinil
+armodafinil will decrease the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+artemether/lumefantrine
+artemether/lumefantrine will decrease the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+
+bosentan
+bosentan will decrease the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+butalbital
+butalbital will decrease the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+carbamazepine
+carbamazepine will decrease the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+ceftobiprole medocaril sodium
+ceftobiprole medocaril sodium will increase the level or effect of lovastatin by Other
+(see comment). Avoid or Use Alternate Drug. Ceftobiprole (an OATP1B1/1B3
+inhibitor) may increase plasma concentrations of OATP1B1 and OATP1B3
+substrates.
+
+ceritinib
+ceritinib will increase the level or effect of lovastatin by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Contraindicated.
+
+cimetidine
+cimetidine will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+colchicine
+
+https://reference.medscape.com/drug/mevacor-altoprev-lovastatin-342458 7/32
+
+
+
+6/22/26, 5:13 PM Altoprev (lovastatin) dosing, indications, interactions, adverse effects, and more
+
+colchicine, lovastatin. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Increased risk of rhabdomyolysis (incl a
+fatality).
+
+cyclosporine
+cyclosporine will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Do
+not exceed 20 mg/day of lovastatin
+
+danazol
+danazol will increase the level or effect of lovastatin by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+darifenacin
+darifenacin will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+dasatinib
+dasatinib will increase the level or effect of lovastatin by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Contraindicated.
+
+dexamethasone
+dexamethasone will decrease the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+diltiazem
+diltiazem will increase the level or effect of lovastatin by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Do not exceed 20
+mg/day of lovastatin
+
+efavirenz
+efavirenz will decrease the level or effect of lovastatin by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+eluxadoline
+lovastatin increases levels of eluxadoline by decreasing metabolism. Avoid or Use
+Alternate Drug. Decrease eluxadoline dose to 75 mg PO BID if coadministered with
+OATP1B1 inhibitors. .
+
+enasidenib
+enasidenib will increase the level or effect of lovastatin by Other (see comment).
+Avoid or Use Alternate Drug. Avoid coadministration of enasidenib with sensitive
+OATP1B1, OATP1B3, or BCRP substrates, for which minimal concentration
+changes may lead to serious toxicities. If unavoidable, decrease the substrate(s)
+dosage in accordance with their Prescribing Information.
+
+enzalutamide
+enzalutamide will decrease the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+erdafitinib
+erdafitinib will increase the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Avoid or Use Alternate Drug. If coadministration unavoidable,
+
+https://reference.medscape.com/drug/mevacor-altoprev-lovastatin-342458 8/32
+
+
+
+6/22/26, 5:13 PM Altoprev (lovastatin) dosing, indications, interactions, adverse effects, and more
+
+separate administration by at least 6 hr before or after administration of P-gp
+substrates with narrow therapeutic index.
+
+etravirine
+etravirine will decrease the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+everolimus
+lovastatin will increase the level or effect of everolimus by P-glycoprotein (MDR1)
+efflux transporter. Contraindicated.
+
+fenofibrate
+fenofibrate, lovastatin. Either increases effects of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Fenofibrate may further increase risk for
+rhabdomyolysis when added to optimal statin regimen to further decrease TG and
+increase HDLs. Do not exceed 20 mg/day of lovastatin.
+
+fenofibrate micronized
+fenofibrate micronized, lovastatin. Either increases effects of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Fenofibrate may further
+increase risk for rhabdomyolysis when added to optimal statin regimen to further
+decrease TG and increase HDLs. Do not exceed 20 mg/day of lovastatin.
+
+fenofibric acid
+fenofibric acid, lovastatin. Either increases effects of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Fenofibrate may further increase risk for
+rhabdomyolysis when added to optimal statin regimen to further decrease TG and
+increase HDLs. Do not exceed 20 mg/day of lovastatin.
+
+fluconazole
+fluconazole will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+
+fluvoxamine
+fluvoxamine will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+
+fosaprepitant
+fosaprepitant will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+
+fosphenytoin
+fosphenytoin will decrease the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+
+gemfibrozil
+gemfibrozil, lovastatin. Either increases effects of the other by Mechanism:
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Gemfibrozil may further
+increase risk for rhabdomyolysis when added to optimal statin regimen to further
+decrease TG and increase HDLs. Do not exceed 20 mg/day of lovastatin.
+
+glecaprevir/pibrentasvir
+
+https://reference.medscape.com/drug/mevacor-altoprev-lovastatin-342458 9/32
+
+
+
+6/22/26, 5:13 PM Altoprev (lovastatin) dosing, indications, interactions, adverse effects, and more
+
+glecaprevir/pibrentasvir increases levels of lovastatin by Other (see comment).
+Avoid or Use Alternate Drug. Comment: Increased statin concentrations resulting
+from OATP1B1 inhibition may increase risk of myopathy, including rhabdomyolysis.
+Coadministration of glecaprevir/pibrentasvir with lovastatin is not recommended.
+
+grapefruit
+grapefruit will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid
+large quantities of grapefruit juice (ie, >1 quart daily)
+
+griseofulvin
+griseofulvin will decrease the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+
+hydrocortisone
+hydrocortisone will decrease the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+ivosidenib
+ivosidenib will decrease the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid
+coadministration of sensitive CYP3A4 substrates with ivosidenib or replace with
+alternative therapies. If coadministration is unavoidable, monitor patients for loss of
+therapeutic effect of these drugs.
+
+lapatinib
+lapatinib will increase the level or effect of lovastatin by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Contraindicated.
+
+leniolisib
+leniolisib will increase the level or effect of lovastatin by Other (see comment).
+Avoid or Use Alternate Drug. Leniolisib, an OATP1B1 and OATP1B3 inhibitor, may
+increase systemic exposure of these substrates
+
+lomitapide
+lomitapide increases levels of lovastatin by decreasing metabolism. Avoid or Use
+Alternate Drug. Reduce lovastatin dose by 50% when initiating lomitapide dosing.
+
+lumefantrine
+lumefantrine will decrease the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+
+marijuana
+marijuana will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+
+mesterolone
+mesterolone increases toxicity of lovastatin by decreasing metabolism. Avoid or Use
+Alternate Drug. Risk of rhabdomyolysis (case reports of combination of danazol and
+>20 mg/day lovastatin).
+
+methylprednisolone
+
+https://reference.medscape.com/drug/mevacor-altoprev-lovastatin-342458 10/32
+
+
+
+6/22/26, 5:13 PM Altoprev (lovastatin) dosing, indications, interactions, adverse effects, and more
+
+methylprednisolone will decrease the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+metronidazole
+metronidazole will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+miconazole vaginal
+miconazole vaginal will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+
+nafcillin
+nafcillin will decrease the level or effect of lovastatin by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Contraindicated.
+
+nevirapine
+nevirapine will decrease the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+niacin
+niacin, lovastatin. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Increased risk of rhabdomyolysis (>1 g/day
+niacin). Do not exceed 20 mg/day of lovastatin.
+
+nifedipine
+nifedipine will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+nilotinib
+nilotinib will increase the level or effect of lovastatin by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Contraindicated.
+
+pentobarbital
+pentobarbital will decrease the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+phenobarbital
+phenobarbital will decrease the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+phenytoin
+phenytoin will decrease the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+
+prednisone
+prednisone will decrease the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+primidone
+primidone will decrease the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+quinidine
+
+https://reference.medscape.com/drug/mevacor-altoprev-lovastatin-342458 11/32
+
+
+
+6/22/26, 5:13 PM Altoprev (lovastatin) dosing, indications, interactions, adverse effects, and more
+
+quinidine will increase the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Avoid or Use Alternate Drug.
+
+rifabutin
+rifabutin will decrease the level or effect of lovastatin by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+rifampin
+rifampin will decrease the level or effect of lovastatin by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+rifapentine
+rifapentine will decrease the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+
+riociguat
+lovastatin will increase the level or effect of riociguat by decreasing metabolism.
+Avoid or Use Alternate Drug. Coadministration of riociguat (substrate of CYP
+isoenzymes 1A1, 2C8, 3A, 2J2) with strong CYP inhibitors may require a decreased
+initial dose of 0.5 mg PO TID; monitor for signs of hypotension and reduce dose if
+needed
+
+rufinamide
+rufinamide will decrease the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+sotorasib
+sotorasib will decrease the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Avoid or Use Alternate Drug. If use is unavoidable, refer to the
+prescribing information of the P-gp substrate for dosage modifications.
+
+St John's Wort
+St John's Wort will decrease the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+tepotinib
+tepotinib will increase the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Avoid or Use Alternate Drug. If concomitant use unavoidable,
+reduce the P-gp substrate dosage if recommended in its approved product labeling.
+
+topiramate
+topiramate will decrease the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+tovorafenib
+tovorafenib will decrease the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid
+coadministration of tovorafenib (a weak CYP3A4 inducer) with CYP3A substrates
+where minimal concentration changes may lead to serious therapeutic failures. If
+unavoidable, monitor patients for loss of efficacy unless otherwise recommended in
+the CYP3A4 substrate prescribing information.
+
+trofinetide
+
+https://reference.medscape.com/drug/mevacor-altoprev-lovastatin-342458 12/32
+
+
+
+6/22/26, 5:13 PM Altoprev (lovastatin) dosing, indications, interactions, adverse effects, and more
+
+trofinetide will increase the level or effect of lovastatin by Other (see comment).
+Avoid or Use Alternate Drug. Trofinetide (an OATP131 and OATP13B inhibitor)
+may increase plasma levels of OATP131 or OATP13B substrates. Avoid
+coadministration with sensitive substrates.
+
+tucatinib
+tucatinib will increase the level or effect of lovastatin by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid concomitant use
+of tucatinib with CYP3A substrates, where minimal concentration changes may lead
+to serious or life-threatening toxicities. If unavoidable, reduce CYP3A substrate
+dose according to product labeling.
+
+verapamil
+verapamil will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Do
+not exceed 20 mg of lovastatin
+
+zafirlukast
+zafirlukast will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+Monitor Closely (111)
+
+abemaciclib
+abemaciclib will increase the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+abrocitinib
+abrocitinib will increase the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+adagrasib
+adagrasib will increase the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+aficamten
+aficamten will increase the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+amiodarone
+amiodarone will increase the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+amlodipine
+amlodipine increases levels of lovastatin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. If used concomitantly, monitor for
+myopathy/rhabdomyolysis and other lovastatin-related adverse effects.
+
+apalutamide
+apalutamide will decrease the level or effect of lovastatin by increasing elimination.
+Use Caution/Monitor. Apalutamide induces UGT and may decrease systemic
+
+https://reference.medscape.com/drug/mevacor-altoprev-lovastatin-342458 13/32
+
+
+
+6/22/26, 5:13 PM Altoprev (lovastatin) dosing, indications, interactions, adverse effects, and more
+
+exposure of drugs that are UGT substrates.
+
+apixaban
+apixaban will increase the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+atorvastatin
+atorvastatin will increase the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+avapritinib
+lovastatin will increase the level or effect of avapritinib by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+axitinib
+lovastatin increases levels of axitinib by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+
+azithromycin
+azithromycin will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+azithromycin will increase the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+bazedoxifene/conjugated estrogens
+lovastatin will increase the level or effect of bazedoxifene/conjugated estrogens by
+P-glycoprotein (MDR1) efflux transporter. Use Caution/Monitor.
+
+belumosudil
+belumosudil will increase the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+berotralstat
+berotralstat will increase the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor. Monitor or titrate P-gp substrate dose if
+coadministered.
+
+bosutinib
+bosutinib increases levels of lovastatin by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor.
+
+cannabidiol
+cannabidiol increases levels of lovastatin by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor.
+
+capmatinib
+capmatinib will increase the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+carfilzomib
+carfilzomib will increase the level or effect of lovastatin by P-glycoprotein (MDR1)
+
+https://reference.medscape.com/drug/mevacor-altoprev-lovastatin-342458 14/32
+
+
+
+6/22/26, 5:13 PM Altoprev (lovastatin) dosing, indications, interactions, adverse effects, and more
+
+efflux transporter. Use Caution/Monitor.
+
+cenobamate
+cenobamate will decrease the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Increase dose of CYP3A4 substrate, as needed, when coadministered with
+cenobamate.
+
+ceritinib
+lovastatin increases levels of ceritinib by P-glycoprotein (MDR1) efflux transporter.
+Use Caution/Monitor.
+
+cholestyramine
+cholestyramine decreases levels of lovastatin by inhibition of GI absorption. Applies
+only to oral form of both agents. Use Caution/Monitor.
+
+cholic acid
+lovastatin increases toxicity of cholic acid by decreasing elimination. Modify
+Therapy/Monitor Closely. Avoid concomitant use of inhibitors of the bile salt efflux
+pump (BSEP). May exacerbate accumulation of conjugated bile salts in the liver and
+result in clinical symptoms. If concomitant use is necessary, monitor serum
+transaminases and bilirubin.
+
+clotrimazole
+clotrimazole will decrease the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+cobicistat
+cobicistat will increase the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+conjugated estrogens
+lovastatin will increase the level or effect of conjugated estrogens by P-
+glycoprotein (MDR1) efflux transporter. Use Caution/Monitor.
+
+conjugated estrogens, vaginal
+lovastatin will increase the level or effect of conjugated estrogens, vaginal by P-
+glycoprotein (MDR1) efflux transporter. Use Caution/Monitor.
+
+crizotinib
+crizotinib increases levels of lovastatin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Dose reduction may be needed for
+coadministered drugs that are predominantly metabolized by CYP3A.
+
+crizotinib increases levels of lovastatin by P-glycoprotein (MDR1) efflux transporter.
+Use Caution/Monitor.
+
+crofelemer
+crofelemer increases levels of lovastatin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Crofelemer has the potential to inhibit
+CYP3A4 at concentrations expected in the gut; unlikely to inhibit systemically
+because minimally absorbed.
+
+https://reference.medscape.com/drug/mevacor-altoprev-lovastatin-342458 15/32
+
+
+
+6/22/26, 5:13 PM Altoprev (lovastatin) dosing, indications, interactions, adverse effects, and more
+
+dabrafenib
+dabrafenib will decrease the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+
+danicopan
+danicopan will increase the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor. Danicopan increases plasma
+concentrations of P-gp substrates; consider dose reduction of P-gp substrates
+where minimal concentration changes may lead to serious adverse reactions.
+
+daptomycin
+lovastatin, daptomycin. Either increases toxicity of the other by Other (see
+comment). Modify Therapy/Monitor Closely. Comment: Coadministration of
+daptomycin with HMG-CoA reductase inhibitors may increase CPK levels and risk
+for myopathy; consider temporary suspension of HMG-CoA reductase inhibitors
+during daptomycin therapy.
+
+daridorexant
+daridorexant will increase the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+deferasirox
+deferasirox will decrease the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+deflazacort
+lovastatin will increase the level or effect of deflazacort by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+dexamethasone
+lovastatin will increase the level or effect of dexamethasone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+docetaxel
+lovastatin will increase the level or effect of docetaxel by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+dronedarone
+dronedarone will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Monitor for
+signs and symptoms of myopathy in patients receiving dronedarone concurrently
+with lovastatin.
+
+dronedarone will increase the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+duvelisib
+duvelisib will increase the level or effect of lovastatin by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely. Coadministration
+with duvelisib increases AUC of a sensitive CYP3A4 substrate which may increase
+the risk of toxicities of these drugs. Consider reducing the dose of the sensitive
+
+https://reference.medscape.com/drug/mevacor-altoprev-lovastatin-342458 16/32
+
+
+
+6/22/26, 5:13 PM Altoprev (lovastatin) dosing, indications, interactions, adverse effects, and more
+
+CYP3A4 substrate and monitor for signs of toxicities of the coadministered sensitive
+CYP3A substrate.
+
+elafibranor
+elafibranor, lovastatin. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Both drugs increase risk for CPK elevation and/or
+myalgia.
+
+elagolix
+elagolix will increase the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+elagolix decreases levels of lovastatin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Modify Therapy/Monitor Closely. Elagolix is a weak-to-
+moderate CYP3A4 inducer. Monitor CYP3A substrates if coadministered. Consider
+increasing CYP3A substrate dose if needed.
+
+eliglustat
+eliglustat increases levels of lovastatin by P-glycoprotein (MDR1) efflux
+transporter. Modify Therapy/Monitor Closely. Monitor therapeutic drug
+concentrations, as indicated, or consider reducing the dosage of the P-gp substrate
+and titrate to clinical effect.
+
+encorafenib
+encorafenib, lovastatin. affecting hepatic/intestinal enzyme CYP3A4 metabolism.
+Use Caution/Monitor. Encorafenib both inhibits and induces CYP3A4 at clinically
+relevant plasma concentrations. Coadministration of encorafenib with sensitive
+CYP3A4 substrates may result in increased toxicity or decreased efficacy of these
+agents.
+
+encorafenib will increase the level or effect of lovastatin by Other (see comment).
+Modify Therapy/Monitor Closely. Encorafenib (a OATP1B1, OATP1B3, and BCRP
+inhibitor) may increase the concentration and toxicities of OATP1B1, OATP1B3, and
+BCRP substrates. Closely monitor for signs and symptoms of increased exposure
+and consider adjusting the dose of these substrates. Screen reader support
+enabled.
+
+eslicarbazepine acetate
+eslicarbazepine acetate will decrease the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Dose adjustment of some statins may be needed if a clinically significant change in
+lipids is noted.
+
+estradiol
+lovastatin will increase the level or effect of estradiol by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+finerenone
+lovastatin will increase the level or effect of finerenone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Monitor serum potassium during initiation and dosage adjustment of either
+finererone or weak CYP3A4 inhibitors. Adjust finererone dosage as needed.
+
+https://reference.medscape.com/drug/mevacor-altoprev-lovastatin-342458 17/32
+
+
+
+6/22/26, 5:13 PM Altoprev (lovastatin) dosing, indications, interactions, adverse effects, and more
+
+flibanserin
+lovastatin will increase the level or effect of flibanserin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Increased
+flibanserin adverse effects may occur if coadministered with multiple weak CYP3A4
+inhibitors.
+
+flibanserin will increase the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+fostamatinib
+fostamatinib will increase the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor. Concomitant use of fostamatinib may
+increase concentrations of P-gp substrates. Monitor for toxicities of the P-gp
+substrate drug that may require dosage reduction when given concurrently with
+fostamatinib.
+
+fostemsavir
+fostemsavir will increase the level or effect of lovastatin by Other (see comment).
+Modify Therapy/Monitor Closely. Fostemsavir inhibits OATP1B1/3 transporter. If
+possible, avoid coadministration or modify dose of OATP1B1/3 substrates
+coadministered with fostemsavir.
+
+gepotidacin
+gepotidacin increases levels of lovastatin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Gepotidacin is a weak CYP3A4 inhibitor.
+If possible, avoid with sensitive substrates that are are extensively metabolized by
+CYP3A4 and have a narrow therapeutic index. If unable to avoid, monitor or modify
+substrate dose according to its prescribing information. .
+
+glecaprevir/pibrentasvir
+glecaprevir/pibrentasvir will increase the level or effect of lovastatin by P-
+glycoprotein (MDR1) efflux transporter. Use Caution/Monitor.
+
+hydrocortisone
+lovastatin will increase the level or effect of hydrocortisone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+imatinib
+lovastatin will increase the level or effect of imatinib by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+isavuconazonium sulfate
+lovastatin will increase the level or effect of isavuconazonium sulfate by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+istradefylline
+istradefylline will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Istradefylline
+40 mg/day increased peak levels and AUC of CYP3A4 substrates in clinical trials.
+This effect was not observed with istradefylline 20 mg/day. Consider dose reduction
+of sensitive CYP3A4 substrates.
+
+istradefylline will increase the level or effect of lovastatin by P-glycoprotein (MDR1)
+
+https://reference.medscape.com/drug/mevacor-altoprev-lovastatin-342458 18/32
+
+
+
+6/22/26, 5:13 PM Altoprev (lovastatin) dosing, indications, interactions, adverse effects, and more
+
+efflux transporter. Use Caution/Monitor. Istradefylline 40 mg/day increased peak
+levels and AUC of P-gp substrates in clinical trials. Consider dose reduction of
+sensitive P-gp substrates.
+
+ivacaftor
+ivacaftor increases levels of lovastatin by P-glycoprotein (MDR1) efflux transporter.
+Use Caution/Monitor. Ivacaftor and its M1 metabolite has the potential to inhibit P-
+gp; may significantly increase systemic exposure to sensitive P-gp substrates with a
+narrow therapeutic index.
+
+ivermectin
+lovastatin will increase the level or effect of ivermectin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+ketoconazole
+ketoconazole will increase the level or effect of lovastatin by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+lanthanum carbonate
+lanthanum carbonate decreases levels of lovastatin by cation binding in GI tract.
+Use Caution/Monitor. Administer statin at least 2 hr before or 2 hr after lanthanum.
+Monitor serum concentrations.
+
+lapatinib
+lapatinib will increase the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+lemborexant
+lovastatin will increase the level or effect of lemborexant by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Lower nightly dose of lemborexant recommended if coadministered with weak
+CYP3A4 inhibitors. See drug monograph for specific dosage modification.
+
+lenacapavir
+lenacapavir will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Initiate lovastatin with the lowest starting dose and titrate carefully while
+monitoring for safety (eg, myopathy).
+
+letermovir
+lovastatin increases levels of letermovir by increasing metabolism. Use
+Caution/Monitor. Coadminstration of letermovir, an OATP1B1/3 substrate, with
+OATP1B1/3 inhibitors may increase letermovir plasma concentrations.
+
+letermovir increases levels of lovastatin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Coadministration of letermovir with
+lovastatin may require a dosage reduction. Closely monitor patients for myopathy
+and rhabdomyolysis. When letermovir is coadministered with cyclosporine, use of
+lovastatin is not recommended.
+
+levoketoconazole
+levoketoconazole will increase the level or effect of lovastatin by P-glycoprotein
+
+https://reference.medscape.com/drug/mevacor-altoprev-lovastatin-342458 19/32
+
+
+
+6/22/26, 5:13 PM Altoprev (lovastatin) dosing, indications, interactions, adverse effects, and more
+
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+lomitapide
+lovastatin, lomitapide. Either increases levels of the other by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Reduce lomitapide dose if coadministered with weak CYP3A4 inhibitors (see
+Dosage Modifications in drug monograph). Consider decreasing lovastatin dose.
+
+loperamide
+lovastatin will increase the level or effect of loperamide by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+lorlatinib
+lorlatinib will decrease the level or effect of lovastatin by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+maraviroc
+lovastatin will increase the level or effect of maraviroc by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+mavorixafor
+mavorixafor will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Monitor for
+adverse effects of sensitive CYP3A4 substrates if coadministered with mavorixafor
+(a weak CYP3A4 inhibitor).
+
+mavorixafor will increase the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor. Caution if mavorixafor (a P-gp inhibitor) is
+coadministered with a sensitive P-gp substrate where minimal substrate
+concentration changes may lead to serious adverse effects.
+
+midazolam intranasal
+lovastatin will increase the level or effect of midazolam intranasal by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+Coadministration of mild CYP3A4 inhibitors with midazolam intranasal may cause
+higher midazolam systemic exposure, which may prolong sedation.
+
+mipomersen
+mipomersen, lovastatin. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: Both drugs have potential to increase
+hepatic enzymes; monitor LFTs.
+
+mitapivat
+mitapivat decreases levels of lovastatin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Monitor patients for loss of therapeutic
+effect of sensitive CYP3A substrates with narrow therapeutic index when
+coadministered with mitapivat.
+
+mitotane
+mitotane decreases levels of lovastatin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Mitotane is a strong inducer of
+
+https://reference.medscape.com/drug/mevacor-altoprev-lovastatin-342458 20/32
+
+
+
+6/22/26, 5:13 PM Altoprev (lovastatin) dosing, indications, interactions, adverse effects, and more
+
+cytochrome P-4503A4; monitor when coadministered with CYP3A4 substrates for
+possible dosage adjustments.
+
+nefazodone
+nefazodone will increase the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+nicardipine
+nicardipine will increase the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+nifedipine
+nifedipine will decrease the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+nilotinib
+lovastatin will increase the level or effect of nilotinib by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+paclitaxel
+lovastatin will increase the level or effect of paclitaxel by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+paclitaxel protein bound
+lovastatin will increase the level or effect of paclitaxel protein bound by P-
+glycoprotein (MDR1) efflux transporter. Use Caution/Monitor.
+
+paliperidone
+lovastatin will increase the level or effect of paliperidone by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+phenobarbital
+phenobarbital will decrease the level or effect of lovastatin by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+ponatinib
+ponatinib increases levels of lovastatin by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor.
+
+quercetin
+quercetin will decrease the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+ranolazine
+ranolazine will increase the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+ribociclib
+ribociclib will increase the level or effect of lovastatin by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+rifampin
+
+https://reference.medscape.com/drug/mevacor-altoprev-lovastatin-342458 21/32
+
+
+
+6/22/26, 5:13 PM Altoprev (lovastatin) dosing, indications, interactions, adverse effects, and more
+
+rifampin will decrease the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+rilzabrutinib
+rilzabrutinib increases levels of lovastatin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Modify Therapy/Monitor Closely. Limit lovastatin dose to 20
+mg/day if coadministered with moderate CYP3A4 inhibitors.
+
+sacubitril/valsartan
+lovastatin will increase the level or effect of sacubitril/valsartan by Other (see
+comment). Use Caution/Monitor. The results from an in vitro study with human liver
+tissue indicate that valsartan is a substrate of the hepatic uptake transporter
+OATP1B1; coadministration with OATP1B1 inhibitors may increase valsartan
+systemic exposure
+
+sarecycline
+sarecycline will increase the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor. Monitor for toxicities of P-gp substrates
+that may require dosage reduction when coadministered with P-gp inhibitors.
+
+silodosin
+lovastatin will increase the level or effect of silodosin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+simvastatin
+simvastatin will increase the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+sirolimus
+lovastatin will increase the level or effect of sirolimus by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+St John's Wort
+St John's Wort will decrease the level or effect of lovastatin by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+stiripentol
+stiripentol, lovastatin. affecting hepatic/intestinal enzyme CYP3A4 metabolism.
+Modify Therapy/Monitor Closely. Stiripentol is a CYP3A4 inhibitor and inducer.
+Monitor CYP3A4 substrates coadministered with stiripentol for increased or
+decreased effects. CYP3A4 substrates may require dosage adjustment.
+
+stiripentol will increase the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Modify Therapy/Monitor Closely. Consider reducing the dose of
+P-glycoprotein (P-gp) substrates, if adverse reactions are experienced when
+administered concomitantly with stiripentol.
+
+sunvozertinib
+sunvozertinib increases levels of lovastatin by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor. Follow substrate recommendations.
+
+suzetrigine
+
+https://reference.medscape.com/drug/mevacor-altoprev-lovastatin-342458 22/32
+
+
+
+6/22/26, 5:13 PM Altoprev (lovastatin) dosing, indications, interactions, adverse effects, and more
+
+suzetrigine decreases levels of lovastatin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Modify Therapy/Monitor Closely. Monitor patients for loss of
+therapeutic effect of sensitive CYP3A substrates with narrow therapeutic indexes
+when coadministered with suzetrigine. Consider modifying dose of sensitive
+substrate according to prescribing recommendations.
+
+tacrolimus
+lovastatin will increase the level or effect of tacrolimus by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+tecovirimat
+tecovirimat will decrease the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Tecovirimat is
+a weak CYP3A4 inducer. Monitor sensitive CYP3A4 substrates for effectiveness if
+coadministered.
+
+ticagrelor
+ticagrelor increases levels of lovastatin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Avoid lovastatin doses greater than 40
+mg.
+
+tinidazole
+lovastatin will increase the level or effect of tinidazole by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+tolvaptan
+lovastatin will increase the level or effect of tolvaptan by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+tolvaptan will increase the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+trazodone
+trazodone will decrease the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+tucatinib
+tucatinib will increase the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor. Consider reducing the dosage of P-gp
+substrates, where minimal concentration changes may lead to serious or life-
+threatening toxicities.
+
+valsartan
+lovastatin will increase the level or effect of valsartan by Other (see comment). Use
+Caution/Monitor. The results from an in vitro study with human liver tissue indicate
+that valsartan is a substrate of the hepatic uptake transporter OATP1B1;
+coadministration with OATP1B1 inhibitors may increase valsartan systemic
+exposure
+
+vemurafenib
+vemurafenib increases levels of lovastatin by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/mevacor-altoprev-lovastatin-342458 23/32
+
+
+
+6/22/26, 5:13 PM Altoprev (lovastatin) dosing, indications, interactions, adverse effects, and more
+
+verapamil
+verapamil will increase the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor. Avoid concomitant use of verapamil and
+lovastatin if possible. If used together, use lower doses of lovastatin and monitor for
+lovastatin toxicity (myositis, rhabdomyolysis).
+
+vimseltinib
+vimseltinib increases levels of lovastatin by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor. If coadministration cannot be avoided, take the
+drug 4 hours before taking the P-gp substrate; increases risk of myopathy,
+rhabdomyolysis.
+
+vinblastine
+lovastatin will increase the level or effect of vinblastine by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+vincristine
+lovastatin will increase the level or effect of vincristine by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+vincristine liposomal
+lovastatin will increase the level or effect of vincristine liposomal by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+warfarin
+lovastatin increases effects of warfarin by anticoagulation. Use Caution/Monitor.
+Dosage adjustment of anticoagulant based in INR and clinical response may be
+necessary.
+
+Minor (19)
+
+acetazolamide
+acetazolamide will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+alvimopan
+lovastatin will increase the level or effect of alvimopan by P-glycoprotein (MDR1)
+efflux transporter. Minor/Significance Unknown.
+
+anastrozole
+anastrozole will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+coenzyme Q10
+lovastatin decreases levels of coenzyme Q10 by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+colestipol
+colestipol decreases levels of lovastatin by inhibition of GI absorption. Applies only
+to oral form of both agents. Minor/Significance Unknown.
+
+cyclophosphamide
+
+https://reference.medscape.com/drug/mevacor-altoprev-lovastatin-342458 24/32
+
+
+
+6/22/26, 5:13 PM Altoprev (lovastatin) dosing, indications, interactions, adverse effects, and more
+
+cyclophosphamide will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+drospirenone
+drospirenone will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+exenatide injectable solution
+exenatide injectable solution decreases levels of lovastatin by unspecified
+interaction mechanism. Minor/Significance Unknown.
+
+exenatide injectable suspension
+exenatide injectable suspension decreases levels of lovastatin by unspecified
+interaction mechanism. Minor/Significance Unknown.
+
+fexofenadine
+lovastatin will increase the level or effect of fexofenadine by P-glycoprotein (MDR1)
+efflux transporter. Minor/Significance Unknown.
+
+isradipine
+isradipine decreases levels of lovastatin by unknown mechanism. Minor/Significance
+Unknown.
+
+larotrectinib
+larotrectinib will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+liraglutide
+liraglutide decreases levels of lovastatin by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+loratadine
+lovastatin will increase the level or effect of loratadine by P-glycoprotein (MDR1)
+efflux transporter. Minor/Significance Unknown.
+
+orlistat
+orlistat increases effects of lovastatin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+ruxolitinib
+lovastatin will increase the level or effect of ruxolitinib by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+ruxolitinib topical
+lovastatin will increase the level or effect of ruxolitinib topical by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+trazodone
+trazodone increases levels of lovastatin by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+voclosporin
+
+https://reference.medscape.com/drug/mevacor-altoprev-lovastatin-342458 25/32
+
+
+
+6/22/26, 5:13 PM Altoprev (lovastatin) dosing, indications, interactions, adverse effects, and more
+
+voclosporin will increase the level or effect of lovastatin by Other (see comment).
+Minor/Significance Unknown. Information suggests voclosporin (an OATP1B1
+inhibitor) may increase in the concentration of OATP1B1 substrates is possible.
+Monitor for adverse reactions of OATP1B1 substrates when coadministered with
+voclosporin.
+
+Adverse Effects
+
+>10%
+
+CPK elevation (11%)
+
+1-10%
+
+Flatulence (4-5%)
+
+Abdominal pain (2-3%)
+
+Constipation (2-3%)
+
+Diarrhea (2-3%)
+
+Myalgia (2-3%)
+
+Nausea (2-3%)
+
+Dyspepsia (1-2%)
+
+Weakness (1-2%)
+
+Blurred vision (0.8-1%)
+
+Rash (0.8-1%)
+
+Muscle cramps (0.6-1%)
+
+Dizziness (0.5-1%)
+
+<1%
+
+Dermatomyositis
+
+Increased LFTs
+
+Hepatotoxicity
+
+Myopathy
+
+Rhabdomyolysis
+
+Postmarketing Reports
+
+Interstitial lung disease
+
+https://reference.medscape.com/drug/mevacor-altoprev-lovastatin-342458 26/32
+
+
+
+6/22/26, 5:13 PM Altoprev (lovastatin) dosing, indications, interactions, adverse effects, and more
+
+Warnings
+
+Contraindications
+
+Hypersensitivity to lovastatin or other components
+
+Acute liver failure or decompensated cirrhosis
+
+Concomitant administration with strong CYP3A4 inhibitors (eg, itraconazole,
+ketoconazole, posaconazole, voriconazole, HIV protease inhibitors, cobicistat, boceprevir,
+telaprevir, erythromycin, clarithromycin, telithromycin, and nefazodone)
+
+Cautions
+
+Nonserious and reversible cognitive side effects may occur
+
+Avoid coadministration with cyclosporine or gemfibrozil; caution with other fibrates or
+lipid-lowering doses of niacin (≥1 g/day) because of increased risk for myopathy
+
+Use caution in heavy alcohol use, history of liver disease, or renal failure
+
+Obtain baseline liver enzyme tests before initiating and then periodically thereafter
+
+Increases in HbA1c and fasting serum glucose levels reported; optimize lifestyle
+measures, including regular exercise, maintaining healthy body weight, and making
+healthy food choices
+
+HMG-CoA reductase inhibitor shown to reduce plasma testosterone response to HCG;
+effects of HMG-CoA reductase inhibitors on male fertility not studied in adequate
+numbers of male patients
+
+Effects of therapy, if any, on pituitary-gonadal axis in premenopausal women are
+unknown; patients who develop clinical evidence of endocrine dysfunction should be
+evaluated appropriately
+
+Use caution if an HMG-CoA reductase inhibitor or other agent used to lower cholesterol
+levels is administered to patients also receiving other drugs (e.g., spironolactone,
+cimetidine) that may decrease levels or activity of endogenous steroid hormones
+
+Risk of myopathy increased by coadministration of CYP3A4 inhibitors or other drugs that
+cause myopathy
+
+Hepatic dysfunction
+
+Increases in serum transaminases reported; in most cases, these changes appeared
+soon after initiation, were transient, were not accompanied by symptoms, and
+resolved or improved on continued therapy or after a brief interruption in therapy
+
+Persistent increases to more than three times upper limit of normal (ULN) in serum
+transaminases reported in patients receiving therapy in clinical studies
+
+Marked persistent increases of hepatic transaminases also reported; there have
+been rare post marketing reports of fatal and non-fatal hepatic failure in patients
+taking this medication.
+
+Patients who consume substantial quantities of alcohol and/or have a history of
+liver disease may be at increased risk for hepatic injury
+
+https://reference.medscape.com/drug/mevacor-altoprev-lovastatin-342458 27/32
+
+
+
+6/22/26, 5:13 PM Altoprev (lovastatin) dosing, indications, interactions, adverse effects, and more
+
+Consider liver enzyme testing before initiating therapy and when clinically indicated
+thereafter; this medication is contraindicated in patients with acute liver failure or
+decompensated cirrhosis; if serious hepatic injury with clinical symptoms and/or
+hyperbilirubinemia or jaundice occurs, promptly discontinue therapy
+
+Renal impairment
+
+In a study of patients with severe renal impairment (creatinine clearance 10–30
+mL/min), the plasma concentrations of total inhibitors after a single dose of
+lovastatin were approximately two-fold higher than those in healthy
+volunteers;renal impairment is a risk factor for myopathy and rhabdomyolysis
+
+Monitor all patients with renal impairment for development of myopathy; in
+patients with severe renal impairment, consider if benefits of increasing the dosage
+above 20 mg daily outweighs increased risk of myopathy and rhabdomyolysis
+
+Myopathy and rhabdomyolysis with acute renal failure secondary to myoglobinuria
+
+Increased risk can occur at any dose level, but increases in dose-dependent manner
+
+Predisposing factors for myopathy include advanced age (≥65 years), female
+gender, renal impairment, and inadequately treated hypothyroidism
+
+Immune-mediated necrotizing myopathy (IMNM), an autoimmune myopathy,
+reported with statin use
+
+IMNM is characterized by muscle biopsy showing necrotizing myopathy without
+significant inflammation improvement with immunosuppressive agents, proximal
+muscle weakness, and elevated serum creatine kinase, which persist despite
+discontinuation of statin treatment; discontinue therapy if IMNM suspected
+
+Treatment with immunosuppressive agents may be required
+
+Advice all patients starting therapy or whose dose is being increased, about the risk
+of myopathy, including rhabdomyolysis
+
+Patients should report promptly any unexplained muscle pain, tenderness, or
+weakness particularly if accompanied by malaise or fever or if muscle signs and
+symptoms persist after discontinuing therapy; additional neuromuscular and
+serologic testing may be necessary
+
+Therapy should be discontinued immediately if myopathy is diagnosed or suspected
+
+Discontinue therapy if markedly elevated creatine kinase (CK) levels occur or if
+myopathy diagnosed or suspected
+
+Therapy should be temporarily withheld in any patient experiencing an acute or
+serious condition predisposing to development of renal failure secondary to
+rhabdomyolysis, eg, sepsis; hypotension; dehydration; major surgery; trauma;
+severe metabolic, endocrine, and electrolyte disorders; or uncontrolled epilepsy
+
+Consider risk of IMNM carefully prior to initiation of a different statin
+
+If therapy is initiated with a different statin, monitor for signs and symptoms of
+IMNM
+
+Steps to prevent or reduce risk of rhabdomyolysis and myopathy
+Concomitant use of strong CYP3A4 inhibitors is contraindicated; if short-term
+treatment with strong CYP3A4 inhibitors required, temporarily suspend this
+drug during duration of strong CYP3A4 inhibitor treatment; concomitant use
+with gemfibrozil or cyclosporine not recommended
+
+https://reference.medscape.com/drug/mevacor-altoprev-lovastatin-342458 28/32
+
+
+
+6/22/26, 5:13 PM Altoprev (lovastatin) dosing, indications, interactions, adverse effects, and more
+
+Dosage modifications recommended for patients taking amiodarone, danazol,
+diltiazem, dronedarone, and verapamil
+
+Lipid-modifying doses (>1 g/day) of niacin, fibrates, colchicine, and ranolazine
+may also increase risk of myopathy and rhabdomyolysis
+
+Use of grapefruit juice not recommended when taking this medication
+
+Discontinue therapy if markedly elevated CK levels occur or if myopathy is
+either diagnosed or suspected; muscle symptoms and CK elevations may
+resolve if therapy is discontinued
+
+Temporarily discontinue therapy in patients experiencing acute or serious
+condition at high risk of developing renal failure secondary to rhabdomyolysis
+(eg, sepsis; shock; severe hypovolemia; major surgery; trauma; severe
+metabolic, endocrine, or electrolyte disorders; or uncontrolled epilepsy)
+
+Inform patients of risk of myopathy and rhabdomyolysis when starting or
+increasing dosage; instruct patients to promptly report any unexplained
+muscle pain, tenderness or weakness, particularly if accompanied by malaise
+or fever
+
+Pregnancy & Lactation
+
+Pregnancy
+
+Discontinue therapy when pregnancy is recognized; alternatively, consider the ongoing
+therapeutic needs of the individual patient
+
+Treatment of hyperlipidemia is not generally necessary during pregnancy;
+atherosclerosis is a chronic process and discontinuation of lipid-lowering drugs during
+pregnancy should have little impact on outcome of long-term therapy of primary
+hyperlipidemia for most patients
+
+Owing to HMG-CoA reductase inhibitors decrease cholesterol synthesis and possibly the
+synthesis of other biologically active substances derived from cholesterol, fetal harm
+may occur when administered to pregnant females
+
+Available data from case series and prospective and retrospective observational cohort
+studies over decades of use with statins in pregnant women have not identified a drug-
+associated risk of major congenital malformations; published data from prospective and
+retrospective observational cohort studies with lovastatin use in pregnant women are
+insufficient to determine if there is a drug-associated risk of miscarriage
+
+Animal data
+
+In animal reproduction studies, no teratogenic effects were observed in pregnant
+rats, mice or rabbits orally administered lovastatin at doses that resulted in up to
+25, 5, and 4 times, respectively, the human exposure at maximum human dose of
+80 mg lovastatin immediate-release based on body surface area (mg/m2)
+
+Contraception
+
+Advise females of reproductive potential to use effective contraception during treatment
+
+https://reference.medscape.com/drug/mevacor-altoprev-lovastatin-342458 29/32
+
+
+
+6/22/26, 5:13 PM Altoprev (lovastatin) dosing, indications, interactions, adverse effects, and more
+
+FDA MedWatch
+
+On July 20, 2021, the FDA request to remove the contraindication against HMG-
+CoA reductase inhibitors in pregnant females
+
+Despite the changes, most females found to be pregnant should stop therapy
+
+Lactation
+
+There is no information about presence of lovastatin in human or animal milk, effects of
+drug on breastfed infant or on milk production; however, it has been shown that another
+drug in this class passes into human milk
+
+This drug decreases cholesterol synthesis and possibly the synthesis of other
+biologically active substances derived from cholesterol and may cause harm to the
+breastfed infant.
+
+Because of potential for serious adverse reactions in a breastfed infant, based on the
+mechanism of action, advise patients that breastfeeding is not recommended during
+treatment
+
+FDA MedWatch
+
+On July 20, 2021, the FDA request to remove the contraindication against HMG-
+CoA reductase inhibitors in pregnant females
+
+Breastfeeding is still not recommended if taking statins; drug may still pass through
+milk and pose a risk breastfed children
+
+For patients with lower risk, temporarily stop statin therapy until breastfeeding
+ends
+
+Patients who are at high risk of heart attack or stroke who require statins after
+delivery should not breastfeed and should use alternatives such as infant formula
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+https://reference.medscape.com/drug/mevacor-altoprev-lovastatin-342458 30/32
+
+
+
+6/22/26, 5:13 PM Altoprev (lovastatin) dosing, indications, interactions, adverse effects, and more
+
+HMG-CoA reductase inhibitor; inhibits the rate-limiting step in cholesterol biosynthesis
+by competitively inhibiting HMG-CoA reductase
+
+Absorption
+
+Bioavailability: 5% (Mevacor)
+
+Onset: 3 d (Mevacor)
+
+Duration: 4-6 wk (Mevacor)
+
+Max effect: 4-6 wk (Mevacor)
+
+Peak plasma time: 2-4 hr; 14 hr (ext-rel Altoprev)
+
+Peak plasma concentration: 7.8 ng/mL; 5.5 ng/mL (ext-rel Altoprev)
+
+AUC: 45 ng.hr/mL; 77 ng.hr/mL (ext-rel Altoprev)
+
+Distribution
+
+Protein bound: 95% (Mevacor)
+
+Metabolism
+
+Extensive first pass in liver; activation to beta-hydroxyacid by nonenzymatic/nonspecific
+hydrolysis; major CYP3A4 substrate
+
+Metabolite: Beta-hydroxyacid derivative (active) and others
+
+Elimination
+
+Half-life: 1.1-1.7 hr (Mevacor)
+
+Excretion (Mevacor): Feces (83%), urine (10% urine)
+
+Pharmacogenomics
+
+SLCO1B1 (OATP1B1) CC genotype significantly increases AUCs of parent drug and
+metabolites compared with the CT or TT genotypes
+
+This polymorphism is proposed to reduced transport into the liver, the main site of statin
+metabolism and elimination, resulting in elevated plasma concentrations
+
+SLCO1B1 polymorphism is thought to have a lesser effect on the more hydrophilic
+statins (eg, rosuvastatin, fluvastatin) compared with those that are more lipophilic (eg,
+atorvastatin, pravastatin, simvastatin)
+
+Other genetic polymorphisms of elimination (eg, CYP450, P-glycoprotein) for each
+individual drug must also be considered to explain variability for statin clearance among
+patients that exhibit SCLO1B1 polymorphism
+
+SLCO1B1 CC genotype is most common in Caucasians and Asians (15%)
+
+Risk of myopathy is 2.6- to 4.3-fold higher if the C allele is present and is 16.9-fold
+higher in CC homozygotes compared with TT homozygotes
+
+https://reference.medscape.com/drug/mevacor-altoprev-lovastatin-342458 31/32
+
+
+
+6/22/26, 5:13 PM Altoprev (lovastatin) dosing, indications, interactions, adverse effects, and more
+
+Genetic testing laboratories
+
+Optivia Biotechnology, Inc (https://optiviabio.com)
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/mevacor-altoprev-lovastatin-342458 32/32

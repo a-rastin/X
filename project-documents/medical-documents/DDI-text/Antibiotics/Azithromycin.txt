@@ -1,0 +1,2601 @@
+﻿6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+azithromycin (Rx)
+Brand and Other Names: Zithromax
+Classes: Macrolides
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+injection, lyophilized powder for reconstitution
+
+500mg/vial
+
+tablet
+
+250mg
+
+500mg
+
+600mg
+
+powder for oral suspension
+
+300mg/bottle
+
+600mg/bottle
+
+900mg/bottle
+
+1200mg/bottle
+
+oral suspension concentrate
+
+1g/5mL
+
+Community-acquired Pneumonia
+
+Indicated for treatment of community-acquired pneumonia due to Chlamydophila
+pneumoniae, Haemophilus influenzae, Mycoplasma pneumoniae, or Streptococcus
+pneumoniae in patients appropriate for oral therapy
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 1/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+500 mg PO x 1 dose on Day 1, followed by 250 mg PO qDay on Days 2-5 OR
+
+500 mg IV qDay x 2 days, followed by 500 mg PO qDay to complete a 7- to 10-day
+course of therapy
+
+Pharyngitis or Tonsillitis
+
+Indicated for treatment of pharyngitis/tonsillitis caused by Streptococcus pyogenes as an
+alternative therapy in individuals who cannot use first-line therapy
+
+500 mg PO x 1 dose on Day 1, followed by 250 mg PO qDay on Days 2-5
+
+Uncomplicated Skin/Skin Structure
+
+Indicated for treatment of uncomplicated skin and skin structure infections due to
+Staphylococcus aureus, Streptococcus pyogenes, or Streptococcus agalactiae
+
+500 mg PO x 1 dose on Day 1, followed by 250 mg PO qDay on Days 2-5
+
+Chronic Obstructive Pulmonary Disease
+
+Indicated for treatment of acute bacterial exacerbations of chronic bronchitis due to
+Haemophilus influenzae, Moraxella catarrhalis, or Streptococcus pneumoniae
+
+500 mg PO qDay for 3 days OR
+
+Alternatively, 500 mg PO x 1 dose on Day 1, followed by 250 mg PO qDay on Days 2-5
+
+Mycobacterial Infections
+
+Prophylaxis of disseminated Mycobacterium avium complex (MAC) disease
+
+Indicated alone or in combination with rifabutin for prevention of disseminated MAC
+disease in persons with advanced HIV infection
+
+1200 mg PO once weekly
+
+Treatment of disseminated MAC disease
+
+Indicated in combination with ethambutol for treatment of disseminated MAC
+infections in persons with advanced HIV infection
+
+600 mg PO qDay plus ethambutol
+
+Acute Bacterial Sinusitis
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 2/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+Indicated for treatment of acute bacterial sinusitis due to Haemophilus influenzae,
+Moraxella catarrhalis, or Streptococcus pneumoniae
+
+500 mg PO qDay x 3 days
+
+Genital Ulcer Disease (Chancroid)
+
+Indicated for treatment of genital ulcer disease in men due to Haemophilus ducreyi
+(chancroid)
+
+Efficacy of chancroid treatment in women not established
+
+1 gram PO x 1 dose
+
+Non-gonococcal or Gonococcal Urethritis and Cervicitis
+
+Indicated for treatment of urethritis and cervicitis due to Chlamydia trachomatis or
+Neisseria gonorrhoeae
+
+Non-gonococcal: 1 gram PO x 1 dose
+
+Gonococcal: 2 grams PO x 1 dose
+
+Pelvic Inflammatory Disease
+
+Indicated for treatment of pelvic inflammatory disease due to Chlamydia trachomatis,
+Neisseria gonorrhoeae, or Mycoplasma hominis in patients who require initial IV therapy
+
+If anaerobic microorganisms are suspected of contributing to the infection, administer an
+antimicrobial agent with anaerobic activity in combination with azithromycin
+
+500 mg IV qDay x 1-2 days, followed by 250 mg PO qDay to complete a 7-day course of
+therapy
+
+Coronavirus Disease 2019 (COVID-19) (Off-label)
+
+Data available as of January 24, 2022
+
+The NIH COVID-19 Treatment Guidelines recommend against the use of chloroquine or
+hydroxychloroquine and/or azithromycin for the treatment of COVID-19 in hospitalized
+patients and in nonhospitalized patients.
+
+For more information, see the CDC website (link https://www.cdc.gov/coronavirus/2019-
+ncov/hcp/therapeutic-options.html)
+
+Additional Medscape COVID-19 references are available
+
+Coronavirus Disease 2019 (COVID-19) (link
+https://emedicine.medscape.com/article/2500114-overview)
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 3/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+Novel Coronavirus Resource Center (link
+https://www.medscape.com/resource/coronavirus)
+
+Cat Scratch Disease (Off-label)
+
+>45.5 kg: 500 mg PO once, then 250 mg once daily for 4 days
+
+Pertussis (Off-label)
+
+500 mg PO once, then 250 mg once daily for 4 days
+
+Endocarditis (Off-label)
+
+Prophylaxis
+
+500 mg PO 30-60 min before procedure
+
+Current American Heart Association (AHA) guidelines recommend only for high-risk
+patients
+
+Dosing Considerations
+
+Use only to treat infections that are proven or strongly suspected to be caused by
+susceptible bacteria to reduce the development of drug-resistant bacteria and maintain
+the effectiveness of azithromycin
+
+Limitations of use
+
+Do not use in patients with pneumonia who may be inappropriate for oral
+therapy because of moderate to severe illness or risk factors such as any
+of the following:
+
+Patients with cystic fibrosis
+
+Patients with nosocomial infections
+
+Patients with known or suspected bacteremia
+
+Patients requiring hospitalization
+
+Elderly or debilitated patients
+
+Patients with significant underlying health problems that may compromise
+their ability to respond to their illness (including immunodeficiency or
+functional asplenia)
+
+PEDIATRIC
+Dosage Forms & Strengths
+
+injection, lyophilized powder for reconstitution
+
+500mg/vial
+
+tablet
+
+250mg
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 4/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+500mg
+
+powder for oral suspension
+
+300mg/bottle
+
+600mg/bottle
+
+900mg/bottle
+
+1200mg/bottle
+
+Acute Otitis Media
+
+Indicated for treatment of acute otitis media in patient aged ≥6 months caused by
+Haemophilus influenzae, Moraxella catarrhalis, or Streptococcus pneumoniae
+
+<6 months: Safety and efficacy not established
+
+≥6 months
+
+30 mg/kg PO x 1 dose OR 
+
+Alternative dosing
+10 mg/kg PO qDay for 3 days OR
+
+10 mg/kg PO x 1 dose on Day 1 followed by 5 mg/kg on Days 2-5
+
+Community-acquired Pneumonia
+
+Indicated for community-acquired pneumonia in patients aged ≥6 months due to
+Chlamydophila pneumoniae, Haemophilus influenzae, Mycoplasma pneumoniae, or
+Streptococcus pneumoniae in patients appropriate for oral therapy
+
+<6 months: Safety and efficacy not established
+
+≥6 months: 10 mg/kg PO x 1 dose on Day 1, followed by 5 mg/kg PO on Days 2-5 
+
+Acute Bacterial Sinusitis
+
+Indicated for treatment of acute bacterial sinusitis in patient aged ≥6 months caused by
+Haemophilus influenzae, Moraxella catarrhalis, or Streptococcus pneumoniae
+
+10 mg/kg PO qDay for 3 days 
+
+Pharyngitis/Tonsillitis
+
+Indicated for treatment of pharyngitis/tonsillitis in patients aged ≥2 years caused by
+Streptococcus pyogenes as an alternative therapy in individuals who cannot use first-line
+therapy
+
+<2 years: Safety and efficacy not established
+
+≥2 years: 12 mg/kg PO qDay for 5 days; not to exceed 500 mg/day 
+
+Chlamydia Trachomatis Infection (Off-label)
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 5/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+Indicated for treatment of non-gonococcal or gonococcal cervicitis or urethritis due to
+Chalmydia trachomatis or Neisseria gonorrhoeae
+
+Children and adolescents ≥45 kg
+
+Non-gonococcal: 1 gram PO as a single dose
+
+Gonococcal: 2 grams PO as a single dose
+
+Cat Scratch Disease (Off-label)
+
+≤45 kg: 10 mg/kg (not to exceed 500 mg/dose) PO as single dose; then 5 mg/kg (not to
+exceed 250 mg/dose) PO qDay on days 2 through 5
+
+>45 kg: 500 mg PO once, then 250 mg once daily for 4 days
+
+Dosing Considerations
+
+Use only to treat infections that are proven or strongly suspected to be caused by
+susceptible bacteria to reduce the development of drug-resistant bacteria and maintain
+the effectiveness of azithromycin
+
+Single dose 1 g/5 mL oral suspension not for pediatric use; for pediatric patients, use the
+100 mg/5 mL or 200 mg/5 mL suspension
+
+Limitations of use
+
+Do not use in patients with pneumonia who may be inappropriate for oral
+therapy because of moderate to severe illness or risk factors such as any
+of the following:
+
+Patients with cystic fibrosis
+
+Patients with nosocomial infections
+
+Patients with known or suspected bacteremia
+
+Patients requiring hospitalization
+
+Debilitated patients
+
+Patients with significant underlying health problems that may compromise
+their ability to respond to their illness (including immunodeficiency or
+functional asplenia)
+
+Interactions
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and
+azithromycin
+No Interactions Found
+Interactions Found
+Contraindicated
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 6/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+Serious
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+Contraindicated (1)
+
+pimozide
+azithromycin increases toxicity of pimozide by decreasing metabolism.
+Contraindicated. Risk of prolonged QTc interval.
+
+Serious (85)
+
+adagrasib
+adagrasib, azithromycin. Either increases effects of the other by QTc interval. Avoid
+or Use Alternate Drug. Each drug prolongs the QTc interval, which may increased
+the risk of Torsade de pointes, other serious arryhthmias, and sudden death. If
+coadministration unavoidable, more frequent monitoring is recommended for such
+patients.
+
+alfuzosin
+alfuzosin and azithromycin both increase QTc interval. Avoid or Use Alternate Drug.
+
+amisulpride
+amisulpride and azithromycin both increase QTc interval. Avoid or Use Alternate
+Drug. ECG monitoring is recommended if coadministered.
+
+anagrelide
+anagrelide and azithromycin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+antithrombin alfa
+azithromycin increases effects of antithrombin alfa by decreasing metabolism. Avoid
+or Use Alternate Drug.
+
+antithrombin III
+azithromycin increases effects of antithrombin III by decreasing metabolism. Avoid
+or Use Alternate Drug.
+
+argatroban
+azithromycin increases effects of argatroban by decreasing metabolism. Avoid or
+Use Alternate Drug.
+
+aripiprazole
+aripiprazole and azithromycin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+arsenic trioxide
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 7/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+arsenic trioxide and azithromycin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+artemether
+artemether and azithromycin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+atomoxetine
+atomoxetine and azithromycin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+BCG vaccine live
+azithromycin decreases effects of BCG vaccine live by pharmacodynamic
+antagonism. Contraindicated. Wait until Abx Tx complete to administer live
+bacterial vaccine.
+
+bemiparin
+azithromycin increases effects of bemiparin by decreasing metabolism. Avoid or Use
+Alternate Drug.
+
+bivalirudin
+azithromycin increases effects of bivalirudin by decreasing metabolism. Avoid or
+Use Alternate Drug.
+
+buprenorphine
+buprenorphine and azithromycin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+buprenorphine buccal
+buprenorphine buccal and azithromycin both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+buprenorphine subdermal implant
+buprenorphine subdermal implant and azithromycin both increase QTc interval.
+Avoid or Use Alternate Drug.
+
+buprenorphine transdermal
+buprenorphine transdermal and azithromycin both increase QTc interval. Avoid or
+Use Alternate Drug.
+
+buprenorphine, long-acting injection
+buprenorphine, long-acting injection and azithromycin both increase QTc interval.
+Avoid or Use Alternate Drug.
+
+ceritinib
+ceritinib and azithromycin both increase QTc interval. Avoid or Use Alternate Drug.
+
+cholera vaccine
+azithromycin, cholera vaccine. pharmacodynamic antagonism. Avoid or Use
+Alternate Drug. Avoid coadministration of cholera vaccine with systemic antibiotics
+since these agents may be active against the vaccine strain. Do not administer
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 8/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+cholera vaccine to patients who have received oral or parenteral antibiotics within
+14 days prior to vaccination.
+
+clozapine
+clozapine and azithromycin both increase QTc interval. Avoid or Use Alternate Drug.
+
+cobicistat
+cobicistat, azithromycin. Either increases levels of the other by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+Consider alternative antibiotics with concomitant use of cobicistat coadministered
+with atazanavir or darunavir. .
+
+colchicine
+azithromycin will increase the level or effect of colchicine by P-glycoprotein (MDR1)
+efflux transporter. Avoid or Use Alternate Drug. Avoid use of colchicine with P-gp
+inhibitors. If coadministration is necessary, decrease colchicine dose or frequency as
+recommended in prescribing information. Use of any colchicine product in
+conjunction with P-gp inhibitors is contraindicated in patients with renal or hepatic
+impairment.
+
+dalteparin
+azithromycin increases effects of dalteparin by decreasing metabolism. Avoid or
+Use Alternate Drug.
+
+desflurane
+desflurane and azithromycin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+digoxin
+azithromycin will increase the level or effect of digoxin by altering intestinal flora.
+Applies only to oral form of both agents. Avoid or Use Alternate Drug.
+
+dofetilide
+dofetilide increases toxicity of azithromycin by QTc interval. Avoid or Use Alternate
+Drug.
+
+donepezil
+donepezil and azithromycin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+dordaviprone
+dordaviprone and azithromycin both increase QTc interval. Avoid or Use Alternate
+Drug. Additive QTc interval prolongation may increase the risk for ventricular
+tachyarrhythmias (eg, Torsades de pointes) or sudden death. If coadministration
+cannot be avoided, separate the administration time of these agents and increase
+the frequency of ECG and electrolyte monitoring.
+
+dronedarone
+azithromycin and dronedarone both increase QTc interval. Contraindicated.
+Concomitant use of azithromycin and dronedarone may increase the risk of QT
+prolongation, cardiac arrhythmias.
+
+efavirenz
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 9/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+efavirenz and azithromycin both increase QTc interval. Avoid or Use Alternate Drug.
+
+eliglustat
+eliglustat and azithromycin both increase QTc interval. Avoid or Use Alternate Drug.
+
+enoxaparin
+azithromycin increases effects of enoxaparin by decreasing metabolism. Avoid or
+Use Alternate Drug.
+
+escitalopram
+escitalopram increases toxicity of azithromycin by QTc interval. Avoid or Use
+Alternate Drug.
+
+fexinidazole
+fexinidazole and azithromycin both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid coadministration of fexinidazole with drugs known to block potassium
+channels or prolong QT interval.
+
+fingolimod
+fingolimod and azithromycin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+fondaparinux
+azithromycin increases effects of fondaparinux by decreasing metabolism. Avoid or
+Use Alternate Drug.
+
+fosfomycin
+fosfomycin and azithromycin both increase QTc interval. Avoid or Use Alternate
+Drug. The risk of QT prolongation may increase in patients with electrolyte
+abnormalities (such as hypokalemia and hypocalcemia), patients with conditions
+that have potential to cause electrolyte imbalance (such as renal impairment), or
+patients taking other drugs affecting electrolyte balance or QT prolongation; avoid
+this drug in patients with known QT prolongation or ventricular arrhythmias,
+including a history of torsade de pointes; monitor electrolytes during treatment
+
+gepotidacin
+gepotidacin and azithromycin both increase QTc interval. Avoid or Use Alternate
+Drug. If coadministration unavoidable, monitor and correct serum electrolyte
+abnormalities and obtain ECG before administration and during treatment, as
+clinically indicated.
+
+gilteritinib
+gilteritinib and azithromycin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+givinostat
+azithromycin and givinostat both increase QTc interval. Avoid or Use Alternate
+Drug. If unable to avoid coadministration, obtain ECGs when initiating, during
+concomitant use, and as clinically indicated. Withhold if QTc interval >500 ms or a
+change from baseline >60 ms.
+
+glasdegib
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 10/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+azithromycin and glasdegib both increase QTc interval. Avoid or Use Alternate
+Drug. If coadministration unavoidable, monitor for increased risk of QTc interval
+prolongation.
+
+granisetron
+granisetron and azithromycin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+heparin
+azithromycin increases effects of heparin by decreasing metabolism. Avoid or Use
+Alternate Drug.
+
+hydroxychloroquine sulfate
+hydroxychloroquine sulfate and azithromycin both increase QTc interval. Avoid or
+Use Alternate Drug.
+
+iloperidone
+azithromycin and iloperidone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+inotuzumab
+inotuzumab and azithromycin both increase QTc interval. Avoid or Use Alternate
+Drug. If unable to avoid concomitant use, obtain ECGs and electrolytes before and
+after initiation of any drug known to prolong QTc, and periodically monitor as
+clinically indicated during treatment.
+
+isoflurane
+isoflurane and azithromycin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+lefamulin
+lefamulin and azithromycin both increase QTc interval. Avoid or Use Alternate Drug.
+
+lithium
+lithium and azithromycin both increase QTc interval. Avoid or Use Alternate Drug.
+
+macimorelin
+macimorelin and azithromycin both increase QTc interval. Avoid or Use Alternate
+Drug. Macimorelin causes an increase of ~11 msec in the corrected QT interval.
+Avoid coadministration with drugs that prolong QT interval, which could increase
+risk for developing torsade de pointes-type ventricular tachycardia. Allow sufficient
+washout time of drugs that are known to prolong the QT interval before
+administering macimorelin.
+
+microbiota oral
+azithromycin decreases effects of microbiota oral by pharmacodynamic antagonism.
+Avoid or Use Alternate Drug. Microbiota oral contains bacterial spores.
+Antibacterial agents may decrease efficacy if coadministered. Complete antibiotic
+regimens 2-4 days before initiating microbiota oral. .
+
+milsaperidone
+azithromycin and milsaperidone both increase QTc interval. Avoid or Use Alternate
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 11/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+Drug.
+
+mirtazapine
+mirtazapine and azithromycin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+ondansetron
+azithromycin and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+
+oxaliplatin
+oxaliplatin and azithromycin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+panobinostat
+azithromycin and panobinostat both increase QTc interval. Avoid or Use Alternate
+Drug. Panobinostat is known to significantly prolong QT interval. Panobinostat
+prescribing information states use with drugs known to prolong QTc is not
+recommended.
+
+phenindione
+azithromycin increases effects of phenindione by decreasing metabolism. Avoid or
+Use Alternate Drug.
+
+primaquine
+primaquine and azithromycin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+protamine
+azithromycin increases effects of protamine by decreasing metabolism. Avoid or
+Use Alternate Drug.
+
+repotrectinib
+azithromycin will increase the level or effect of repotrectinib by P-glycoprotein
+(MDR1) efflux transporter. Avoid or Use Alternate Drug.
+
+revumenib
+revumenib and azithromycin both increase QTc interval. Avoid or Use Alternate
+Drug. ECG monitoring recommended if concomitant use can?t be avoided and
+withhold therapy if QTc interval is >480 msec; restart therapy after QTc interval
+returns to <480 msec
+
+ribociclib
+ribociclib increases toxicity of azithromycin by QTc interval. Avoid or Use Alternate
+Drug.
+
+rimegepant
+azithromycin will increase the level or effect of rimegepant by P-glycoprotein
+(MDR1) efflux transporter. Avoid or Use Alternate Drug.
+
+riociguat
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 12/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+azithromycin will increase the level or effect of riociguat by decreasing metabolism.
+Avoid or Use Alternate Drug. Coadministration of riociguat (substrate of CYP
+isoenzymes 1A1, 2C8, 3A, 2J2) with strong CYP inhibitors may require a decreased
+initial dose of 0.5 mg PO TID; monitor for signs of hypotension and reduce dose if
+needed
+
+risperidone
+azithromycin will increase the level or effect of risperidone by P-glycoprotein
+(MDR1) efflux transporter. Avoid or Use Alternate Drug.
+
+sevoflurane
+sevoflurane and azithromycin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+siponimod
+siponimod and azithromycin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+sirolimus
+azithromycin will increase the level or effect of sirolimus by P-glycoprotein (MDR1)
+efflux transporter. Avoid or Use Alternate Drug.
+
+sirolimus protein bound
+azithromycin will increase the level or effect of sirolimus protein bound by P-
+glycoprotein (MDR1) efflux transporter. Avoid or Use Alternate Drug.
+
+tacrolimus
+tacrolimus and azithromycin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+taletrectinib
+taletrectinib and azithromycin both increase QTc interval. Avoid or Use Alternate
+Drug. Concomitant use may result in additive QTc interval prolongation, which can
+increase the risk for ventricular tachyarrhythmias (eg, Torsades de pointes) or
+sudden death.
+
+topotecan
+azithromycin will increase the level or effect of topotecan by P-glycoprotein (MDR1)
+efflux transporter. Avoid or Use Alternate Drug. Product labeling for PO topotecan
+recommends avoiding concomitant use of P-gp inhibitors; the interaction with IV
+topotecan may be less severe but is still likely of clinical significance
+
+toremifene
+azithromycin increases levels of toremifene by decreasing metabolism. Avoid or Use
+Alternate Drug. Concurrent use of toremifene with agents causing QT prolongation
+should be avoided. If concomitant use is required it's recommended that toremifene
+be interrupted. If interruption not possible, patients requiring therapy with a drug
+that prolongs QT should be closely monitored. ECGs should be obtained for high
+risk patients.
+
+typhoid vaccine live
+azithromycin decreases effects of typhoid vaccine live by pharmacodynamic
+antagonism. Contraindicated. Wait until Abx Tx complete to administer live
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 13/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+bacterial vaccine.
+
+umeclidinium bromide/vilanterol inhaled
+azithromycin increases toxicity of umeclidinium bromide/vilanterol inhaled by QTc
+interval. Avoid or Use Alternate Drug. Exercise extreme caution when vilanterol
+coadministered with drugs that prolong QTc interval; adrenergic agonist effects on
+the cardiovascular system may be potentiated.
+
+vandetanib
+azithromycin, vandetanib. Either increases toxicity of the other by QTc interval.
+Avoid or Use Alternate Drug. Avoid coadministration with drugs known to prolong
+QT interval; if a drug known to prolong QT interval must be used, more frequent
+ECG monitoring is recommended.
+
+vemurafenib
+vemurafenib and azithromycin both increase QTc interval. Avoid or Use Alternate
+Drug. Concomitant use of vemurafenib with drugs that prolong QT interval is not
+recommended.
+
+venetoclax
+azithromycin will increase the level or effect of venetoclax by P-glycoprotein
+(MDR1) efflux transporter. Avoid or Use Alternate Drug. If a P-gp inhibitor must be
+used, reduce the venetoclax dose by at least 50%. Monitor more closely for signs of
+venetoclax toxicities.
+
+vilanterol/fluticasone furoate inhaled
+azithromycin increases toxicity of vilanterol/fluticasone furoate inhaled by QTc
+interval. Avoid or Use Alternate Drug. Exercise extreme caution when vilanterol
+coadministered with drugs that prolong QTc interval; adrenergic agonist effects on
+the cardiovascular system may be potentiated.
+
+vinblastine
+azithromycin will increase the level or effect of vinblastine by P-glycoprotein
+(MDR1) efflux transporter. Avoid or Use Alternate Drug.
+
+vincristine
+azithromycin will increase the level or effect of vincristine by P-glycoprotein (MDR1)
+efflux transporter. Avoid or Use Alternate Drug.
+
+vincristine liposomal
+azithromycin will increase the level or effect of vincristine liposomal by P-
+glycoprotein (MDR1) efflux transporter. Avoid or Use Alternate Drug.
+
+ziftomenib
+azithromycin and ziftomenib both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid coadministration of ziftomenib with other drugs known to prolong the
+QTc interval. If unavoidable, obtain ECGs when initiating, during concomitant use,
+and as clinically indicated. Interrupt ziftomenib with QTc interval > 500 ms or a
+change from baseline is > 60 ms
+
+Monitor Closely (225)
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 14/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+afatinib
+azithromycin increases levels of afatinib by P-glycoprotein (MDR1) efflux
+transporter. Modify Therapy/Monitor Closely. Reduce afatinib daily dose by 10 mg if
+not tolerated when coadministered with P-gp inhibitors.
+
+albuterol
+azithromycin and albuterol both increase QTc interval. Use Caution/Monitor.
+Combination may increase risk of QT prolongation; monitor electrolytes and ECG
+changes
+
+albuterol inhaled
+azithromycin and albuterol inhaled both increase QTc interval. Use Caution/Monitor.
+Combination may increase risk of QT prolongation; monitor electrolytes and ECG
+changes
+
+alfuzosin
+azithromycin and alfuzosin both increase QTc interval. Use Caution/Monitor.
+
+aliskiren
+azithromycin will increase the level or effect of aliskiren by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+aluminum hydroxide
+aluminum hydroxide decreases levels of azithromycin by inhibition of GI absorption.
+Applies only to oral form of both agents. Use Caution/Monitor. Separate by 2 hours.
+
+amiodarone
+azithromycin will increase the level or effect of amiodarone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+amitriptyline
+amitriptyline and azithromycin both increase QTc interval. Use Caution/Monitor.
+
+amoxapine
+amoxapine and azithromycin both increase QTc interval. Use Caution/Monitor.
+
+apixaban
+azithromycin will increase the level or effect of apixaban by P-glycoprotein (MDR1)
+efflux transporter. Modify Therapy/Monitor Closely.
+
+apomorphine
+azithromycin increases toxicity of apomorphine by QTc interval. Use
+Caution/Monitor.
+
+arformoterol
+azithromycin and arformoterol both increase QTc interval. Use Caution/Monitor.
+Combination may increase risk of QT prolongation; monitor electrolytes and ECG
+changes
+
+artemether/lumefantrine
+azithromycin and artemether/lumefantrine both increase QTc interval. Use
+Caution/Monitor.
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 15/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+asenapine
+azithromycin increases toxicity of asenapine by QTc interval. Use Caution/Monitor.
+
+asenapine transdermal
+asenapine transdermal and azithromycin both increase QTc interval. Use
+Caution/Monitor.
+
+atorvastatin
+azithromycin will increase the level or effect of atorvastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. If this
+combination is used, closely monitor for evidence of atorvastatin toxicity (eg, muscle
+aches or pains, renal dysfunction).
+
+azithromycin will increase the level or effect of atorvastatin by P-glycoprotein
+(MDR1) efflux transporter. Modify Therapy/Monitor Closely.
+
+balsalazide
+azithromycin will decrease the level or effect of balsalazide by altering intestinal
+flora. Applies only to oral form of both agents. Use Caution/Monitor.
+
+bazedoxifene/conjugated estrogens
+azithromycin will decrease the level or effect of bazedoxifene/conjugated estrogens
+by altering intestinal flora. Applies only to oral forms of hormone. Low risk of
+contraceptive failure. Modify Therapy/Monitor Closely.
+
+bedaquiline
+azithromycin and bedaquiline both increase QTc interval. Modify Therapy/Monitor
+Closely. ECG should be monitored closely
+
+berotralstat
+azithromycin increases levels of berotralstat by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor.
+
+biotin
+azithromycin will decrease the level or effect of biotin by altering intestinal flora.
+Applies only to oral form of both agents. Use Caution/Monitor.
+
+calcium carbonate
+calcium carbonate decreases levels of azithromycin by inhibition of GI absorption.
+Applies only to oral form of both agents. Use Caution/Monitor. Separate by 2 hours.
+
+carfilzomib
+azithromycin will increase the level or effect of carfilzomib by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+carvedilol
+azithromycin will increase the level or effect of carvedilol by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+cefdinir
+azithromycin decreases effects of cefdinir by pharmacodynamic antagonism. Use
+Caution/Monitor. bacteriostatic agents may inhibit the effects of bactericidal agents.
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 16/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+cefditoren
+azithromycin decreases effects of cefditoren by pharmacodynamic antagonism. Use
+Caution/Monitor. bacteriostatic agents may inhibit the effects of bactericidal agents.
+
+cefoxitin
+azithromycin decreases effects of cefoxitin by pharmacodynamic antagonism. Use
+Caution/Monitor. bacteriostatic agents may inhibit the effects of bactericidal agents.
+
+cefpodoxime
+azithromycin decreases effects of cefpodoxime by pharmacodynamic antagonism.
+Use Caution/Monitor. bacteriostatic agents may inhibit the effects of bactericidal
+agents.
+
+cefuroxime
+azithromycin decreases effects of cefuroxime by pharmacodynamic antagonism.
+Use Caution/Monitor. bacteriostatic agents may inhibit the effects of bactericidal
+agents.
+
+ceritinib
+azithromycin increases levels of ceritinib by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor.
+
+cetirizine
+azithromycin will increase the level or effect of cetirizine by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+chloroquine
+azithromycin increases toxicity of chloroquine by QTc interval. Modify
+Therapy/Monitor Closely.
+
+chloroquine increases toxicity of azithromycin by QTc interval. Use Caution/Monitor.
+
+chlorpromazine
+chlorpromazine and azithromycin both increase QTc interval. Use Caution/Monitor.
+
+cimetidine
+azithromycin will increase the level or effect of cimetidine by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+ciprofloxacin
+azithromycin increases toxicity of ciprofloxacin by QTc interval. Use
+Caution/Monitor.
+
+azithromycin will increase the level or effect of ciprofloxacin by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+citalopram
+azithromycin and citalopram both increase QTc interval. Use Caution/Monitor. ECG
+monitoring is recommended, along with drugs that may prolong the QT interval.
+
+clarithromycin
+azithromycin and clarithromycin both increase QTc interval. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 17/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+clofazimine
+azithromycin increases toxicity of clofazimine by QTc interval. Modify
+Therapy/Monitor Closely.
+
+clomipramine
+clomipramine and azithromycin both increase QTc interval. Use Caution/Monitor.
+
+conjugated estrogens
+azithromycin will decrease the level or effect of conjugated estrogens by altering
+intestinal flora. Applies only to oral forms of hormone. Low risk of contraceptive
+failure. Modify Therapy/Monitor Closely.
+
+crizotinib
+crizotinib and azithromycin both increase QTc interval. Use Caution/Monitor. ECG
+monitoring is recommended, along with drugs that may prolong the QT interval.
+
+azithromycin increases toxicity of crizotinib by QTc interval. Use Caution/Monitor.
+
+azithromycin will increase the level or effect of crizotinib by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+cyclosporine
+azithromycin will increase the level or effect of cyclosporine by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+dabigatran
+azithromycin will increase the level or effect of dabigatran by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor. Atrial fibrillation: Avoid
+coadministering dabigatran with P-gp inhibitors if CrCl <30 mL/min. DVT/PE
+treatment: Avoid coadministering dabigatran with P-gp inhibitors if CrCl <50
+mL/min
+
+dabrafenib
+azithromycin will increase the level or effect of dabrafenib by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+darolutamide
+azithromycin will increase the level or effect of darolutamide by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor. Avoid concomitant use of
+darolutamide with combined P-gp and strong or moderate CYP3A4 inducers.
+Concomitant use of darolutamide with a combined P-gp and strong CYP3A4
+inhibitor increases darolutamide exposure which may increase the risk of
+darolutamide adverse reactions. Monitor more frequently for daroluatmide adverse
+reactions and modify dosage as needed.
+
+daunorubicin
+azithromycin will increase the level or effect of daunorubicin by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+daunorubicin liposomal
+azithromycin will increase the level or effect of daunorubicin liposomal by P-
+glycoprotein (MDR1) efflux transporter. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 18/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+desipramine
+desipramine and azithromycin both increase QTc interval. Use Caution/Monitor.
+
+deutetrabenazine
+azithromycin increases toxicity of deutetrabenazine by QTc interval. Use
+Caution/Monitor. At the maximum recommended dose, deutetrabenazine does not
+prolong QT interval to a clinically relevant extent. Certain circumstances may
+increase risk of torsade de pointes and/or sudden death in association with drugs
+that prolong the QTc interval (eg, bradycardia, hypokalemia or hypomagnesemia,
+coadministration with other drugs that prolong QTc interval, presence of congenital
+QT prolongation).
+
+dexamethasone
+azithromycin will increase the level or effect of dexamethasone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+dichlorphenamide
+dichlorphenamide and azithromycin both decrease serum potassium. Use
+Caution/Monitor.
+
+dienogest/estradiol valerate
+azithromycin will decrease the level or effect of dienogest/estradiol valerate by
+altering intestinal flora. Applies only to oral forms of hormone. Low risk of
+contraceptive failure. Use Caution/Monitor. An alternate or additional form of birth
+control may be advisable during concomitant use.
+
+digoxin
+azithromycin will increase the level or effect of digoxin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+diltiazem
+azithromycin will increase the level or effect of diltiazem by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+disopyramide
+azithromycin and disopyramide both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+docetaxel
+azithromycin will increase the level or effect of docetaxel by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+dofetilide
+azithromycin and dofetilide both increase QTc interval. Use Caution/Monitor.
+
+doxepin
+doxepin and azithromycin both increase QTc interval. Use Caution/Monitor.
+
+doxorubicin
+azithromycin will increase the level or effect of doxorubicin by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+doxorubicin liposomal
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 19/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+azithromycin will increase the level or effect of doxorubicin liposomal by P-
+glycoprotein (MDR1) efflux transporter. Use Caution/Monitor.
+
+droperidol
+azithromycin and droperidol both increase QTc interval. Use Caution/Monitor.
+
+duvelisib
+azithromycin will increase the level or effect of duvelisib by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+edoxaban
+azithromycin will increase the level or effect of edoxaban by P-glycoprotein (MDR1)
+efflux transporter. Modify Therapy/Monitor Closely. Dose adjustment may be
+required with strong P-gp inhibitors. DVT/PE treatment: Decrease dose to 30 mg
+PO once daily. NVAF: No dose reduction recommended
+
+eletriptan
+azithromycin will increase the level or effect of eletriptan by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+encorafenib
+azithromycin increases toxicity of encorafenib by QTc interval. Use Caution/Monitor.
+
+entrectinib
+azithromycin increases toxicity of entrectinib by QTc interval. Use Caution/Monitor.
+
+epinephrine
+epinephrine and azithromycin both increase QTc interval. Use Caution/Monitor.
+
+epinephrine racemic
+epinephrine racemic and azithromycin both increase QTc interval. Use
+Caution/Monitor.
+
+erythromycin base
+azithromycin and erythromycin base both increase QTc interval. Use
+Caution/Monitor.
+
+azithromycin will increase the level or effect of erythromycin base by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+erythromycin ethylsuccinate
+azithromycin and erythromycin ethylsuccinate both increase QTc interval. Use
+Caution/Monitor.
+
+azithromycin will increase the level or effect of erythromycin ethylsuccinate by P-
+glycoprotein (MDR1) efflux transporter. Use Caution/Monitor.
+
+erythromycin lactobionate
+azithromycin and erythromycin lactobionate both increase QTc interval. Use
+Caution/Monitor.
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 20/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+azithromycin will increase the level or effect of erythromycin lactobionate by P-
+glycoprotein (MDR1) efflux transporter. Use Caution/Monitor.
+
+erythromycin stearate
+azithromycin and erythromycin stearate both increase QTc interval. Use
+Caution/Monitor.
+
+azithromycin will increase the level or effect of erythromycin stearate by P-
+glycoprotein (MDR1) efflux transporter. Use Caution/Monitor.
+
+escitalopram
+azithromycin increases toxicity of escitalopram by QTc interval. Use
+Caution/Monitor.
+
+estradiol
+azithromycin will decrease the level or effect of estradiol by altering intestinal flora.
+Applies only to oral forms of hormone. Low risk of contraceptive failure. Modify
+Therapy/Monitor Closely.
+
+estrogens conjugated synthetic
+azithromycin will decrease the level or effect of estrogens conjugated synthetic by
+altering intestinal flora. Applies only to oral forms of hormone. Low risk of
+contraceptive failure. Modify Therapy/Monitor Closely.
+
+estropipate
+azithromycin will decrease the level or effect of estropipate by altering intestinal
+flora. Applies only to oral forms of hormone. Low risk of contraceptive failure.
+Modify Therapy/Monitor Closely.
+
+everolimus
+azithromycin will increase the level or effect of everolimus by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+ezogabine
+ezogabine, azithromycin. Either increases toxicity of the other by QTc interval. Use
+Caution/Monitor. Slight and transient QT-prolongation observed with ezogabine,
+particularly when dose titrated to 1200 mg/day. QT interval should be monitored
+when ezogabine is prescribed with agents known to increase QT interval.
+
+fexofenadine
+azithromycin will increase the level or effect of fexofenadine by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+fluconazole
+azithromycin and fluconazole both increase QTc interval. Use Caution/Monitor.
+
+fluphenazine
+fluphenazine and azithromycin both increase QTc interval. Use Caution/Monitor.
+
+formoterol
+azithromycin and formoterol both increase QTc interval. Use Caution/Monitor.
+Combination may increase risk of QT prolongation; monitor electrolytes and ECG
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 21/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+changes
+
+fostemsavir
+azithromycin and fostemsavir both increase QTc interval. Use Caution/Monitor. QTc
+prolongation reported with higher than recommended doses of fostemsavir.
+
+gadobenate
+gadobenate and azithromycin both increase QTc interval. Use Caution/Monitor.
+
+gemifloxacin
+azithromycin increases toxicity of gemifloxacin by QTc interval. Use
+Caution/Monitor.
+
+gemtuzumab
+azithromycin and gemtuzumab both increase QTc interval. Use Caution/Monitor.
+
+gepirone
+gepirone and azithromycin both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+glecaprevir/pibrentasvir
+azithromycin will increase the level or effect of glecaprevir/pibrentasvir by P-
+glycoprotein (MDR1) efflux transporter. Use Caution/Monitor.
+
+goserelin
+goserelin increases toxicity of azithromycin by QTc interval. Use Caution/Monitor.
+Increases risk of torsades de pointes.
+
+haloperidol
+azithromycin and haloperidol both increase QTc interval. Use Caution/Monitor.
+
+histrelin
+histrelin increases toxicity of azithromycin by QTc interval. Use Caution/Monitor.
+Increases risk of torsades de pointes.
+
+hydrocortisone
+azithromycin will increase the level or effect of hydrocortisone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+hydroxyzine
+hydroxyzine increases toxicity of azithromycin by QTc interval. Use Caution/Monitor.
+Increases risk of torsades de pointes.
+
+ibutilide
+azithromycin and ibutilide both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+idarubicin
+azithromycin will increase the level or effect of idarubicin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+imatinib
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 22/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+azithromycin will increase the level or effect of imatinib by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+imipramine
+imipramine and azithromycin both increase QTc interval. Use Caution/Monitor.
+
+indacaterol, inhaled
+indacaterol, inhaled, azithromycin. QTc interval. Use Caution/Monitor. Drugs that are
+known to prolong the QTc interval may have an increased the risk of ventricular
+arrhythmias.
+
+indapamide
+azithromycin and indapamide both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+irinotecan
+azithromycin will increase the level or effect of irinotecan by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+irinotecan liposomal
+azithromycin will increase the level or effect of irinotecan liposomal by P-
+glycoprotein (MDR1) efflux transporter. Use Caution/Monitor.
+
+isradipine
+azithromycin increases toxicity of isradipine by QTc interval. Use Caution/Monitor.
+
+itraconazole
+azithromycin and itraconazole both increase QTc interval. Use Caution/Monitor.
+
+ivermectin
+azithromycin will increase the level or effect of ivermectin by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+ketoconazole
+azithromycin and ketoconazole both increase QTc interval. Use Caution/Monitor.
+
+lapatinib
+azithromycin will increase the level or effect of lapatinib by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+larotrectinib
+azithromycin will increase the level or effect of larotrectinib by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+ledipasvir/sofosbuvir
+azithromycin will increase the level or effect of ledipasvir/sofosbuvir by P-
+glycoprotein (MDR1) efflux transporter. Use Caution/Monitor.
+
+lefamulin
+azithromycin will increase the level or effect of lefamulin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+lenacapavir
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 23/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+azithromycin will increase the level or effect of lenacapavir by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+lenvatinib
+azithromycin and lenvatinib both increase QTc interval. Use Caution/Monitor.
+Lenvatinib prescribing information recommends monitoring ECG closely when
+coadministered with QT prolonging drugs.
+
+azithromycin will increase the level or effect of lenvatinib by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+letermovir
+azithromycin will increase the level or effect of letermovir by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+leuprolide
+leuprolide increases toxicity of azithromycin by QTc interval. Use Caution/Monitor.
+Increases risk of torsades de pointes.
+
+levalbuterol
+azithromycin and levalbuterol both increase QTc interval. Use Caution/Monitor.
+Combination may increase risk of QT prolongation; monitor electrolytes and ECG
+changes
+
+levoketoconazole
+levoketoconazole will increase the level or effect of azithromycin by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+azithromycin and levoketoconazole both increase QTc interval. Use Caution/Monitor.
+
+linagliptin
+azithromycin will increase the level or effect of linagliptin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+lofepramine
+lofepramine and azithromycin both increase QTc interval. Use Caution/Monitor.
+
+lofexidine
+azithromycin increases toxicity of lofexidine by QTc interval. Use Caution/Monitor.
+
+lopinavir
+azithromycin increases toxicity of lopinavir by QTc interval. Use Caution/Monitor.
+
+loratadine
+azithromycin will increase the level or effect of loratadine by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+lovastatin
+azithromycin will increase the level or effect of lovastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 24/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+azithromycin will increase the level or effect of lovastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+lumefantrine
+azithromycin and lumefantrine both increase QTc interval. Use Caution/Monitor.
+
+maraviroc
+azithromycin will increase the level or effect of maraviroc by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+mavorixafor
+mavorixafor and azithromycin both increase QTc interval. Modify Therapy/Monitor
+Closely. Mavorixafor causes concentration-dependent QTc prolongation. Monitor
+QTc during treatment in patients with risk factors for QTc prolongation (eg,
+coadministered medications that increase mavorixafor exposure or other drugs with
+a high risk to prolong the QTc interval). Mavorixafor dose reduction or
+discontinuation may be required.
+
+azithromycin will increase the level or effect of mavorixafor by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+mestranol
+azithromycin will decrease the level or effect of mestranol by altering intestinal
+flora. Applies only to oral forms of hormone. Low risk of contraceptive failure.
+Modify Therapy/Monitor Closely.
+
+methotrexate
+azithromycin will increase the level or effect of methotrexate by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+mifepristone
+mifepristone, azithromycin. QTc interval. Modify Therapy/Monitor Closely. Use
+alternatives if available.
+
+mitapivat
+azithromycin will increase the level or effect of mitapivat by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+mitomycin
+azithromycin will increase the level or effect of mitomycin by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+morphine
+azithromycin will increase the level or effect of morphine by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+moxifloxacin
+azithromycin and moxifloxacin both increase QTc interval. Use Caution/Monitor.
+
+nadolol
+azithromycin will increase the level or effect of nadolol by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 25/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+naldemedine
+azithromycin increases levels of naldemedine by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor. Monitor naldemedine for potential adverse effects
+if coadministered with P-gp inhibitors.
+
+nelfinavir
+azithromycin will decrease the level or effect of nelfinavir by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+nicardipine
+azithromycin will increase the level or effect of nicardipine by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+nilotinib
+azithromycin and nilotinib both increase QTc interval. Use Caution/Monitor.
+
+nintedanib
+azithromycin increases levels of nintedanib by P-glycoprotein (MDR1) efflux
+transporter. Modify Therapy/Monitor Closely. If nintedanib adverse effects occur,
+management may require interruption, dose reduction, or discontinuation of therapy
+.
+
+nirmatrelvir/ritonavir
+azithromycin will increase the level or effect of nirmatrelvir/ritonavir by P-
+glycoprotein (MDR1) efflux transporter. Use Caution/Monitor.
+
+nortriptyline
+nortriptyline and azithromycin both increase QTc interval. Use Caution/Monitor.
+
+octreotide
+azithromycin and octreotide both increase QTc interval. Use Caution/Monitor.
+
+octreotide (Antidote)
+azithromycin and octreotide (Antidote) both increase QTc interval. Use
+Caution/Monitor.
+
+olanzapine
+azithromycin increases toxicity of olanzapine by QTc interval. Use Caution/Monitor.
+
+olodaterol inhaled
+azithromycin and olodaterol inhaled both increase QTc interval. Use
+Caution/Monitor. Drugs that prolong the QTc interval and may potentiate the effects
+of beta2 agonists on the cardiovascular system; increased risk of ventricular
+arrhythmias
+
+ondansetron
+azithromycin will increase the level or effect of ondansetron by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+osilodrostat
+osilodrostat and azithromycin both increase QTc interval. Use Caution/Monitor.
+
+osimertinib
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 26/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+osimertinib and azithromycin both increase QTc interval. Use Caution/Monitor.
+Conduct periodic monitoring with ECGs and electrolytes in patients taking drugs
+known to prolong the QTc interval.
+
+oxaliplatin
+oxaliplatin will increase the level or effect of azithromycin by Other (see comment).
+Use Caution/Monitor. Monitor for ECG changes if therapy is initiated in patients with
+drugs known to prolong QT interval.
+
+ozanimod
+ozanimod and azithromycin both increase QTc interval. Modify Therapy/Monitor
+Closely. The potential additive effects on heart rate, treatment with ozanimod
+should generally not be initiated in patients who are concurrently treated with QT
+prolonging drugs with known arrhythmogenic properties.
+
+paclitaxel
+azithromycin will increase the level or effect of paclitaxel by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+paclitaxel protein bound
+azithromycin will increase the level or effect of paclitaxel protein bound by P-
+glycoprotein (MDR1) efflux transporter. Use Caution/Monitor.
+
+paclitaxel/encequidar
+azithromycin will increase the level or effect of paclitaxel/encequidar by P-
+glycoprotein (MDR1) efflux transporter. Use Caution/Monitor.
+
+paliperidone
+azithromycin will increase the level or effect of paliperidone by P-glycoprotein
+(MDR1) efflux transporter. Modify Therapy/Monitor Closely.
+
+pantothenic acid
+azithromycin will decrease the level or effect of pantothenic acid by altering
+intestinal flora. Applies only to oral form of both agents. Use Caution/Monitor.
+
+pasireotide
+azithromycin and pasireotide both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+pazopanib
+azithromycin will increase the level or effect of pazopanib by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+pentamidine
+azithromycin and pentamidine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+perphenazine
+perphenazine and azithromycin both increase QTc interval. Use Caution/Monitor.
+
+pimozide
+azithromycin and pimozide both increase QTc interval. Modify Therapy/Monitor
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 27/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+Closely.
+
+piperacillin
+azithromycin decreases effects of piperacillin by pharmacodynamic antagonism. Use
+Caution/Monitor. bacteriostatic agents may inhibit the effects of bactericidal agents.
+
+posaconazole
+azithromycin will increase the level or effect of posaconazole by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+pralsetinib
+azithromycin will increase the level or effect of pralsetinib by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+pravastatin
+azithromycin will increase the level or effect of pravastatin by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+prednisone
+azithromycin will increase the level or effect of prednisone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+procainamide
+azithromycin and procainamide both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+prochlorperazine
+prochlorperazine and azithromycin both increase QTc interval. Use Caution/Monitor.
+
+promazine
+promazine and azithromycin both increase QTc interval. Use Caution/Monitor.
+
+promethazine
+promethazine and azithromycin both increase QTc interval. Use Caution/Monitor.
+
+propafenone
+azithromycin increases toxicity of propafenone by QTc interval. Use
+Caution/Monitor.
+
+protriptyline
+protriptyline and azithromycin both increase QTc interval. Use Caution/Monitor.
+
+pyridoxine
+azithromycin will decrease the level or effect of pyridoxine by altering intestinal
+flora. Applies only to oral form of both agents. Use Caution/Monitor.
+
+pyridoxine (Antidote)
+azithromycin will decrease the level or effect of pyridoxine (Antidote) by altering
+intestinal flora. Applies only to oral form of both agents. Use Caution/Monitor.
+
+quetiapine
+quetiapine, azithromycin. Either increases toxicity of the other by QTc interval. Use
+Caution/Monitor. Avoid use with drugs that prolong QT and in patients with risk
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 28/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+factors for prolonged QT interval. Postmarketing cases show QT prolongation with
+overdose in patients with concomitant illness or with drugs known to cause
+electrolyte imbalance or prolong QT.
+
+quinidine
+quinidine and azithromycin both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+azithromycin will increase the level or effect of quinidine by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+quinine
+azithromycin and quinine both increase QTc interval. Use Caution/Monitor.
+
+azithromycin will increase the level or effect of quinine by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+quizartinib
+quizartinib, azithromycin. Either increases effects of the other by QTc interval.
+Modify Therapy/Monitor Closely. Monitor patients more frequently with ECG if
+coadministered with QT prolonging drugs.
+
+ranolazine
+azithromycin will increase the level or effect of ranolazine by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+ribociclib
+azithromycin increases toxicity of ribociclib by QTc interval. Use Caution/Monitor.
+
+rifabutin
+azithromycin increases toxicity of rifabutin by decreasing metabolism. Use
+Caution/Monitor.
+
+rifampin
+azithromycin will increase the level or effect of rifampin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+rifaximin
+azithromycin increases levels of rifaximin by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor.
+
+rilpivirine
+rilpivirine increases toxicity of azithromycin by QTc interval. Use Caution/Monitor.
+Rilpivirine should be used with caution when co-administered with a drug with a
+known risk of Torsades de Pointes.
+
+riociguat
+azithromycin will increase the level or effect of riociguat by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+ritonavir
+azithromycin will increase the level or effect of ritonavir by P-glycoprotein (MDR1)
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 29/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+efflux transporter. Use Caution/Monitor.
+
+rivaroxaban
+azithromycin increases levels of rivaroxaban by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Patients with renal impairment
+receiving rivaroxaban with drugs that are combined P-gp and weak or moderate
+CYP3A4 inhibitors may have significant increases in exposure compared with
+patients with normal renal function and no inhibitor use, since both pathways of
+rivaroxaban elimination are affected. Since these increases may increase bleeding
+risk, use rivaroxaban in this situation only if the potential benefit justifies the
+potential risk.
+
+romidepsin
+azithromycin and romidepsin both increase QTc interval. Use Caution/Monitor.
+
+azithromycin will increase the level or effect of romidepsin by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+saxagliptin
+azithromycin will increase the level or effect of saxagliptin by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+selpercatinib
+selpercatinib increases toxicity of azithromycin by QTc interval. Use
+Caution/Monitor.
+
+silodosin
+azithromycin will increase the level or effect of silodosin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+simvastatin
+azithromycin will increase the level or effect of simvastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+sitagliptin
+azithromycin will increase the level or effect of sitagliptin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+sodium bicarbonate
+sodium bicarbonate decreases levels of azithromycin by inhibition of GI absorption.
+Applies only to oral form of both agents. Use Caution/Monitor. Separate by 2 hours.
+
+sodium citrate/citric acid
+sodium citrate/citric acid decreases levels of azithromycin by inhibition of GI
+absorption. Applies only to oral form of both agents. Use Caution/Monitor. Separate
+by 2 hours.
+
+sodium picosulfate/magnesium oxide/anhydrous citric acid
+azithromycin decreases effects of sodium picosulfate/magnesium oxide/anhydrous
+citric acid by altering metabolism. Use Caution/Monitor. Coadministration with
+antibiotics decreases efficacy by altering colonic bacterial flora needed to convert
+sodium picosulfate to active drug.
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 30/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+sofosbuvir
+azithromycin will increase the level or effect of sofosbuvir by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+sofosbuvir/velpatasvir
+azithromycin will increase the level or effect of sofosbuvir/velpatasvir by P-
+glycoprotein (MDR1) efflux transporter. Use Caution/Monitor.
+
+sorafenib
+sorafenib and azithromycin both increase QTc interval. Use Caution/Monitor.
+
+sotalol
+azithromycin and sotalol both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+tacrolimus
+azithromycin will increase the level or effect of tacrolimus by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+tazemetostat (DSC)
+azithromycin will increase the level or effect of tazemetostat (DSC) by P-
+glycoprotein (MDR1) efflux transporter. Use Caution/Monitor.
+
+temsirolimus
+azithromycin will increase the level or effect of temsirolimus by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+teniposide
+azithromycin will increase the level or effect of teniposide by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+tenofovir AF
+azithromycin will increase the level or effect of tenofovir AF by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+tenofovir DF
+azithromycin will increase the level or effect of tenofovir DF by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+testosterone
+azithromycin will increase the level or effect of testosterone by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+testosterone buccal system
+azithromycin will increase the level or effect of testosterone buccal system by P-
+glycoprotein (MDR1) efflux transporter. Use Caution/Monitor.
+
+testosterone intranasal
+azithromycin will increase the level or effect of testosterone intranasal by P-
+glycoprotein (MDR1) efflux transporter. Use Caution/Monitor.
+
+thiamine
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 31/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+azithromycin will decrease the level or effect of thiamine by altering intestinal flora.
+Applies only to oral form of both agents. Use Caution/Monitor.
+
+thioridazine
+thioridazine and azithromycin both increase QTc interval. Use Caution/Monitor.
+
+ticagrelor
+azithromycin will increase the level or effect of ticagrelor by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+tobramycin inhaled
+tobramycin inhaled and azithromycin both increase nephrotoxicity and/or ototoxicity.
+Modify Therapy/Monitor Closely. Avoid concurrent or sequential use to decrease
+risk for ototoxicity
+
+tolvaptan
+azithromycin will increase the level or effect of tolvaptan by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+trabectedin
+azithromycin will increase the level or effect of trabectedin by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+trazodone
+trazodone and azithromycin both increase QTc interval. Use Caution/Monitor.
+
+trifluoperazine
+trifluoperazine and azithromycin both increase QTc interval. Use Caution/Monitor.
+
+trimipramine
+trimipramine and azithromycin both increase QTc interval. Use Caution/Monitor.
+
+triptorelin
+triptorelin increases toxicity of azithromycin by QTc interval. Use Caution/Monitor.
+Increases risk of torsades de pointes.
+
+ubrogepant
+azithromycin will increase the level or effect of ubrogepant by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+valbenazine
+valbenazine and azithromycin both increase QTc interval. Use Caution/Monitor.
+
+velpatasvir
+azithromycin will increase the level or effect of velpatasvir by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+vemurafenib
+azithromycin will increase the level or effect of vemurafenib by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+verapamil
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 32/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+azithromycin will increase the level or effect of verapamil by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+voclosporin
+voclosporin, azithromycin. Either increases effects of the other by QTc interval. Use
+Caution/Monitor.
+
+voxilaprevir
+azithromycin will increase the level or effect of voxilaprevir by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+warfarin
+azithromycin increases toxicity of warfarin by anticoagulation. Use Caution/Monitor.
+Postmarketing reports have suggested that concomitant administration of
+azithromycin may potentiate effects of oral warfarin but the interaction does not
+appear to alter prothrombin time.
+
+ziprasidone
+azithromycin and ziprasidone both increase QTc interval. Use Caution/Monitor.
+
+Minor (47)
+
+abemaciclib
+azithromycin will increase the level or effect of abemaciclib by P-glycoprotein
+(MDR1) efflux transporter. Minor/Significance Unknown.
+
+amoxicillin
+azithromycin decreases effects of amoxicillin by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+ampicillin
+azithromycin decreases effects of ampicillin by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+clozapine
+azithromycin increases toxicity of clozapine by unspecified interaction mechanism.
+Minor/Significance Unknown. Enhanced CNS toxicity.
+
+dasatinib
+azithromycin and dasatinib both increase QTc interval. Minor/Significance Unknown.
+
+degarelix
+azithromycin increases toxicity of degarelix by QTc interval. Minor/Significance
+Unknown.
+
+dicloxacillin
+azithromycin decreases effects of dicloxacillin by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+dolasetron
+azithromycin and dolasetron both increase QTc interval. Minor/Significance
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 33/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+Unknown.
+
+ergotamine
+azithromycin increases levels of ergotamine by unknown mechanism.
+Minor/Significance Unknown.
+
+eribulin
+azithromycin increases toxicity of eribulin by QTc interval. Minor/Significance
+Unknown.
+
+flecainide
+azithromycin and flecainide both increase QTc interval. Minor/Significance
+Unknown.
+
+fluoxetine
+azithromycin and fluoxetine both increase QTc interval. Minor/Significance
+Unknown.
+
+foscarnet
+azithromycin and foscarnet both increase QTc interval. Minor/Significance Unknown.
+
+lapatinib
+azithromycin and lapatinib both increase QTc interval. Minor/Significance Unknown.
+
+levofloxacin
+azithromycin and levofloxacin both increase QTc interval. Minor/Significance
+Unknown.
+
+mefloquine
+azithromycin increases toxicity of mefloquine by QTc interval. Minor/Significance
+Unknown.
+
+methadone
+azithromycin and methadone both increase QTc interval. Minor/Significance
+Unknown.
+
+nafcillin
+azithromycin decreases effects of nafcillin by pharmacodynamic antagonism.
+Minor/Significance Unknown. bacteriostatic antibiotics may interfere with the
+bactericidal actions of penicillins.
+
+ofloxacin
+azithromycin and ofloxacin both increase QTc interval. Minor/Significance Unknown.
+
+oxacillin
+azithromycin decreases effects of oxacillin by pharmacodynamic antagonism.
+Minor/Significance Unknown. bacteriostatic antibiotics may interfere with the
+bactericidal actions of penicillins.
+
+paliperidone
+azithromycin and paliperidone both increase QTc interval. Minor/Significance
+Unknown.
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 34/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+paroxetine
+azithromycin and paroxetine both increase QTc interval. Minor/Significance
+Unknown.
+
+pazopanib
+azithromycin and pazopanib both increase QTc interval. Minor/Significance
+Unknown.
+
+penicillin G aqueous
+azithromycin decreases effects of penicillin G aqueous by pharmacodynamic
+antagonism. Minor/Significance Unknown.
+
+penicillin VK
+azithromycin decreases effects of penicillin VK by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+pimavanserin
+azithromycin increases toxicity of pimavanserin by QTc interval. Minor/Significance
+Unknown.
+
+pitolisant
+azithromycin increases toxicity of pitolisant by QTc interval. Minor/Significance
+Unknown.
+
+posaconazole
+azithromycin and posaconazole both increase QTc interval. Minor/Significance
+Unknown.
+
+ranolazine
+azithromycin and ranolazine both increase QTc interval. Minor/Significance
+Unknown.
+
+risperidone
+azithromycin and risperidone both increase QTc interval. Minor/Significance
+Unknown.
+
+ruxolitinib
+azithromycin will increase the level or effect of ruxolitinib by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+ruxolitinib topical
+azithromycin will increase the level or effect of ruxolitinib topical by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+sertraline
+azithromycin increases toxicity of sertraline by QTc interval. Minor/Significance
+Unknown.
+
+solifenacin
+azithromycin increases toxicity of solifenacin by QTc interval. Minor/Significance
+Unknown.
+
+sulfamethoxazole
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 35/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+azithromycin and sulfamethoxazole both increase QTc interval. Minor/Significance
+Unknown.
+
+sunitinib
+azithromycin increases toxicity of sunitinib by QTc interval. Minor/Significance
+Unknown.
+
+telavancin
+azithromycin and telavancin both increase QTc interval. Minor/Significance
+Unknown.
+
+temocillin
+azithromycin decreases effects of temocillin by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+tetrabenazine
+azithromycin increases toxicity of tetrabenazine by QTc interval. Minor/Significance
+Unknown.
+
+thiothixene
+azithromycin increases toxicity of thiothixene by QTc interval. Minor/Significance
+Unknown.
+
+trimethoprim
+azithromycin and trimethoprim both increase QTc interval. Minor/Significance
+Unknown.
+
+trimipramine
+azithromycin increases toxicity of trimipramine by QTc interval. Minor/Significance
+Unknown.
+
+tropisetron
+azithromycin and tropisetron both increase QTc interval. Minor/Significance
+Unknown.
+
+vardenafil
+azithromycin increases toxicity of vardenafil by QTc interval. Minor/Significance
+Unknown.
+
+venlafaxine
+azithromycin and venlafaxine both increase QTc interval. Minor/Significance
+Unknown.
+
+voriconazole
+azithromycin and voriconazole both increase QTc interval. Minor/Significance
+Unknown.
+
+vorinostat
+azithromycin increases toxicity of vorinostat by QTc interval. Minor/Significance
+Unknown.
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 36/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+Adverse Effects
+
+>10%
+
+High single dose therapy
+
+Diarrhea (52.8%)
+
+Nausea (32.6%)
+
+Abdominal pain (27%)
+
+Loose stool (19.1%)
+
+1-10%
+
+Elevated ALT, AST, creatinine (4-6%)
+
+Elevated LDH, bilirubin (1-3%)
+
+Community-acquired pneumonia
+
+Pain at injection site (6.5%)
+
+Diarrhea (4.3%)
+
+Nausea (3.9%)
+
+Local inflammation (3.1%)
+
+Abdominal pain (2.7%)
+
+Vomiting (1.4%)
+
+Pelvic inflammatory disease
+
+Diarrhea (8.5%)
+
+Nausea (6.6%)
+
+Vaginitis (2.8%)
+
+Abdominal pain (1.9%)
+
+Anorexia (1.9%)
+
+Rash and pruritus (1.9%)
+
+<1%
+
+Dyspepsia
+
+Flatulence
+
+Mucositis
+
+Oral Moniliasis
+
+Gastritis
+
+Headache
+
+Somnolence
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 37/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+Bronchospasm
+
+Taste perversion
+
+Leukopenia
+
+Neutropenia
+
+Decreased platelet count
+
+Elevated serum alkaline phosphatase
+
+Postmarketing Reports
+
+Allergic: Arthralgia, edema, urticaria and angioedema
+
+Cardiovascular: Arrhythmias (eg, ventricular tachycardia), hypotension, QT prolongation,
+torsades de pointes, and cardiovascular death
+
+Gastrointestinal: Anorexia, constipation, dyspepsia, flatulence, vomiting/diarrhea,
+pseudomembranous colitis, pancreatitis, oral candidiasis, pyloric stenosis, and reports of
+tongue discoloration
+
+General: Asthenia, paresthesia, fatigue, malaise and anaphylaxis (including fatalities).
+
+Genitourinary: Interstitial nephritis and acute renal failure and vaginitis
+
+Hematopoietic: Thrombocytopenia
+
+Liver/biliary: Abnormal liver function, hepatitis, cholestatic jaundice, hepatic necrosis, and
+hepatic failure
+
+Nervous system: Convulsions, dizziness/vertigo, headache, somnolence, hyperactivity,
+nervousness, agitation and syncope
+
+Psychiatric: Aggressive reaction and anxiety
+
+Skin/appendages: Pruritus, serious skin reactions including, erythema multiforme, AGEP,
+Stevens-Johnson syndrome, toxic epidermal necrolysis, and DRESS
+
+Special senses: Hearing disturbances including hearing loss, deafness and/or tinnitus
+and reports of taste/smell perversion and/or loss
+
+Warnings
+
+Contraindications
+
+Hypersensitivity to azithromycin, erythromycin, any macrolides or ketolides
+
+History of cholestatic jaundice/hepatic dysfunction associated with prior use of
+azithromycin
+
+Cautions
+
+Abnormal liver function, hepatitis, cholestatic jaundice, hepatic necrosis, and hepatic
+failure have been reported, some of which have resulted in death; discontinue treatment
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 38/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+immediately if signs and symptoms of hepatitis occur
+
+Infantile Hypertrophic Pyloric Stenosis (IHPS) has been reported; advise direct parents
+and caregivers if vomiting or irritability with feeding occurs
+
+Clostridium difficile associated diarrhea (CDAD) has been reported, and may range in
+severity from mild diarrhea to fatal colitis; if CDAD is suspected or confirmed,
+discontinue ongoing antibacterial use not directed against C. difficile; institute
+appropriate fluid and electrolyte management, protein supplementation, antibacterial
+treatment of C. difficile, and surgical evaluation as clinically indicated
+
+Exacerbations of symptoms of myasthenia gravis and new onset of myasthenic
+syndrome have been reported
+
+Antibacterial agents used to treat nongonococcal urethritis may mask or delay the
+symptoms of incubating syphilis; all patients with sexually transmitted urethritis or
+cervicitis should have a serologic test for syphilis and appropriate testing for gonorrhea
+performed at the time of diagnosis; if infection confirmed, initiate appropriate
+antibacterial therapy and follow-up tests for these diseases
+
+Local IV site reactions have been reported with IV azithromycin
+
+Prescribing azithromycin in the absence of a proven or strongly suspected bacterial
+infection is unlikely to provide benefit to the patient and increases the risk of the
+development of drug-resistant bacteria
+
+QT prolongation
+
+Prolonged cardiac repolarization and QT interval, imparting a risk of developing
+cardiac arrhythmia and torsades de pointes, have been reported with macrolides,
+including azithromycin
+
+Elderly patients may be more susceptible to drug-associated effects on the QT
+interval
+
+Consider the risk of QT prolongation for at-risk groups including:
+Patients with known prolongation of the QT interval, a history of torsades de
+pointes, congenital long QT syndrome, bradyarrhythmias or uncompensated
+heart failure
+
+Patients on drugs known to prolong the QT interval
+
+Patients with ongoing proarrhythmic conditions such as uncorrected
+hypokalemia or hypomagnesemia, clinically significant bradycardia, and in
+patients receiving Class IA (quinidine, procainamide) or Class III (dofetilide,
+amiodarone, sotalol) antiarrhythmic agents
+
+Cardiovascular death
+
+Observational studies have shown an approximately two-fold increased short-term
+potential risk of acute cardiovascular death in adults exposed to azithromycin
+relative to other antibacterial drugs, including amoxicillin
+
+Potential risk was noted to be greater during first five days of treatment and does
+not appear to be limited to those patients with preexisting cardiovascular diseases
+
+The data in these observational studies are insufficient to establish or exclude a
+causal relationship between acute cardiovascular death and azithromycin use;
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 39/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+consider balancing potential risk with treatment benefits when prescribing therapy
+
+Hypersensitivity
+
+Serious allergic reactions, including angioedema, anaphylaxis, and dermatologic
+reactions including Acute Generalized Exanthematous Pustulosis (AGEP), Stevens
+Johnson syndrome, and toxic epidermal necrolysis have been reported
+
+Cases of Drug Reaction with Eosinophilia and Systemic Symptoms (DRESS) have
+also been reported
+
+If an allergic reaction occurs, discontinue drug and institute appropriate therapy
+
+Be aware that allergic symptoms may reappear after symptomatic therapy has been
+discontinued
+
+Drug interaction overview
+
+Coadministration of nelfinavir at steady-state with a single oral dose of
+azithromycin resulted in increased azithromycin serum concentrations; closely
+monitor for adverse reactions of azithromycin
+
+Spontaneous postmarketing reports suggest that coadministration of azithromycin
+may potentiate the effects of oral anticoagulants (eg, warfarin), although the
+prothrombin time was not affected in the dedicated drug interaction study with
+azithromycin and warfarin; carefully monitor prothrombin time while patients are
+receiving azithromycin and oral anticoagulants concomitantly
+
+Drug interactions with digoxin, colchicine or phenytoin have been observed when
+combined other macrolide; until further data are developed regarding drug
+interactions when digoxin, colchicine or phenytoin are used with azithromycin
+careful monitoring of patients is advised
+
+Bronchiolitis obliterans
+
+August 3, 2018: FDA issues warning letter to healthcare providers
+
+Increased relapse and mortality observed with azithromycin in the clinical trial
+entitled ALLOZITHRO (evaluation of the efficacy of azithromycin to prevent
+bronchiolitis obliterans syndrome [BOS] after allogenic hematopoietic stem cell
+transplantation [HSCT])
+
+The study was terminated early after an increased risk of relapses was observed in
+patients taking azithromycin compared with placebo
+
+Azithromycin is not indicated for prophylaxis of bronchiolitis obliterans syndrome
+(BOS) in patients undergoing HSCT and should not be used off-label for this
+condition
+
+Pregnancy & Lactation
+
+Pregnancy
+
+Available data on use in pregnant women have not identified any drug-associated risks
+for major birth defects, miscarriage, or adverse maternal or fetal outcomes
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 40/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+Animal data
+
+Decreased viability and delayed development were observed in the offspring of
+pregnant rats administered azithromycin from day 6 of pregnancy through weaning
+at a dose equivalent to 4 times an adult human daily dose of 500 mg based on
+body surface area
+
+Lactation
+
+Present in human milk
+
+Non-serious adverse reactions have been reported in breastfed infants after maternal
+administration of azithromycin
+
+No data available on the effects of azithromycin on milk production
+
+Consider the developmental and health benefits of breastfeeding along with the
+mother’s clinical need for azithromycin and any potential adverse effects on the
+breastfed infant from azithromycin or from the underlying maternal condition
+
+Clinical considerations
+
+Advise women to monitor the breastfed infant for diarrhea, vomiting, or rash
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+Binds to 50S ribosomal subunit of susceptible microorganisms and blocks dissociation of
+peptidyl tRNA from ribosomes, causing RNA-dependent protein synthesis to arrest; does
+not affect nucleic acid synthesis
+
+Concentrates in phagocytes and fibroblasts, as demonstrated by in vitro incubation
+techniques; in vivo studies suggest that concentration in phagocytes may contribute to
+drug distribution to inflamed tissues
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 41/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+Absorption
+
+Absolute bioavailability: 38% (250-mg capsules)
+
+Peak plasma concentration
+
+Oral (3-day regimen): 0.44 mcg/mL (Day 1); 0.54 mcg/mL (Day 3)
+
+Oral (5-day regimen): 0.43 mcg/mL (Day 1); 0.24 mcg/mL (Day 5)
+
+IV: 1.14 mcg/mL (healthy volunteers); 3.63 mcg/mL (hospitalized patients)
+
+AUC
+
+Oral (3-day regimen): 17.4 mcg⋅hr/mL
+
+Oral (5-day regimen): 154.9 mcg⋅hr/mL
+
+IV: 8.03 mcg⋅hr/mL (healthy volunteers); 9.6 mcg⋅hr/mL (hospitalized patients)
+
+Effects of food
+
+Oral suspension: When administered with food, peak plasma concentration
+increased by 56% and AUC unchanged
+
+Tablets: No effect
+
+Distribution
+
+Protein bound: 51% (0.02 mcg/mL); 7% (2 mcg/mL)
+
+Elimination
+
+Clearance: 630 mL/min (single 500-mg oral and IV dose)
+
+Half-life
+
+Oral (3-day regimen): 71.8 hr
+
+Oral (5-day regimen): 68.9 hr
+
+Excretion
+
+IV, 1st dose: 11%
+
+IV, 5th dose: 14%
+
+Oral: 6% (unchanged)
+
+Biliary excretion is a major route of elimination for unchanged drug, following oral
+administration
+
+Administration
+
+IV Incompatibilities
+
+Y-site: Amikacin, aztreonam, cefotaxime, ceftazidime, ceftriaxone, cefuroxime,
+ciprofloxacin, clindamycin, droperidol, famotidine, fentanyl, furosemide, gentamicin,
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 42/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+imipenem, cilastatin, ketorolac, levofloxacin, morphine, piperacillin-tazobactam,
+ondansetron(?), potassium chloride, ticarcillin-clavulanate, tobramycin
+
+Other IV substances, additives, or medications should not be added to azithromycin, or
+infused simultaneously through the same IV line
+
+IV Compatibilities
+
+0.9% NaCl
+
+0.45% NaCl)
+
+Dextrose 5% in Water (D5W)
+
+Lactated Ringer Solution (LR)
+
+D5W in 0.45% NaCl with 20 mEq KCl
+
+D5W in LR
+
+D5W in 0.3% NaCl
+
+D5W in 0.45% NaCl
+
+Normosol-M in D5W
+
+Normosol-R in D5W
+
+IV Preparation
+
+Add 4.8 mL of sterile water for injection to 500-mg vial; final concentration is (100
+mg/mL); shake vial until all of the drug is dissolved
+
+Visually inspect vial for particulate matter before administration; discard if particular
+matter is present
+
+Dilute reconstituted drug in either a 250-mL (final concentration 2 mg/mL) or 500-mL IV
+bag (final concentration 1 mg/mL)
+
+IV Administration
+
+1 mg/mL diluted solution: Infuse over 3 hr
+
+2mg/mL diluted solution: Infuse over 1 hr
+
+Oral Suspension Preparation
+
+Powder for oral suspension
+
+300-mg bottle: Add 9 mL of water (final concentration 100 mg/5 mL)
+
+600-mg bottle: Add 9 mL of water (final concentration 200 mg/5 mL)
+
+900-mg bottle: Add 12 mL of water (final concentration 200 mg/5 mL)
+
+1200-mg bottle: Add 15 mL of water (final concentration 200 mg/5 mL)
+
+Oral Administration
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 43/44
+
+
+
+6/22/26, 8:08 PM Zithromax (azithromycin) dosing, indications, interactions, adverse effects, and more
+
+Tablets and oral suspension: Take with or without food
+
+Oral suspension (reconstituted powder): Shake well before use; refer to prescribing
+information for dosing information
+
+Oral suspension concentrate
+
+Oral suspension in the single dose packet (1 g): Mix entire contents of packet
+thoroughly with 2 ounces (~60 mL) of water
+
+Drink entire contents immediately; add an additional 2 ounces of water, mix, and
+drink to ensure complete consumption of dosage
+
+Do not use to administer doses other than 1 gram
+
+Storage
+
+Tablets or oral suspension (1 g/5 mL): Store at <30ºC (86ºF)
+
+Unopened vial: Store at <30ºC (86ºF)
+
+Reconstituted vial: Store at <30ºC (86ºF) for 24 hr
+
+Diluted solutions: Store <30ºC (86ºF) for 24 hr OR refrigerate at 5ºC (41ºF)
+
+Reconstituted oral suspension: Store at 5-30ºC (41-86ºF) and use within 10 days;
+discard after full dosing is completed
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/zithromax-zmax-azithromycin-342523 44/44

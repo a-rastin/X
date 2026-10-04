@@ -1,0 +1,248 @@
+clozapine (Rx)
+Brand and Other Names: Clozaril, Versacloz
+Classes: Antipsychotics, 2nd Generation
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+tablet: 25mg, 50mg, 100mg, 200mg
+oral disintegrating tablet: 12.5mg, 25mg, 100mg, 150mg, 200mg
+oral suspension (Versacloz): 50mg/mL
+
+Schizophrenia
+Indicated for reducing risk of recurrent suicidal behavior in patients with schizophrenia or schizoaffective disorder in patients who are judged to be at chronic risk to re-experience suicidal behavior. Also indicated for treatment-resistant schizophrenia in patients who fail to respond adequately to standard antipsychotic treatment.
+12.5 mg PO once daily or q12hr initially; increase in increments of 25-50 mg/day, if well tolerated, to achieve target dosage of 300-450 mg/day (administered in divided doses) by end of 2 weeks. Subsequently, may increase dose once or twice weekly in increments of up to 100 mg; not to exceed 900 mg/day.
+Maintenance: Generally, patients who respond should continue maintenance treatment on their effective dose beyond the acute episode.
+
+Reinitiation of therapy
+• If therapy interrupted for >=48 hr, must reinitiate dose at 12.5 mg qDay or BID to minimize risk of hypotension, bradycardia, and syncope; if dose well tolerated, may increase more rapidly than with initial titration, unless cardiopulmonary arrest occurred during initial titration, then titrate with extreme caution.
+
+Discontinuation of therapy
+• Method of treatment discontinuation depends on patient's last ANC.
+• Reduce dose gradually over a period of 1-2 weeks if termination not related to neutropenia; taper gradually to avoid withdrawal symptoms and minimize risk of relapse; for schizophrenia, guidelines recommend gradual taper over 6-24 months (American Psychiatric Association guidelines recommend reducing dose 10% each month).
+• For abrupt clozapine discontinuation for a reason unrelated to neutropenia, continue existing ANC monitoring until ANC is >=1500/mm3.
+• If patient has benign ethnic neutropenia (BEN); monitor until ANC is >=1000/mm3 or above baseline.
+• Additional ANC monitoring required for onset of fever during the 2 weeks after discontinuation.
+• Monitor all patients carefully for the recurrence of psychotic symptoms and symptoms related to cholinergic rebound (eg, profuse sweating, headache, nausea, vomiting, diarrhea).
+
+Dosage Modifications
+Coadministration with CYP inhibitors
+• Strong CYP1A2 inhibitors: Use one-third clozapine dose.
+• Moderate or weak CYP1A2 inhibitors: Monitor for adverse reactions; consider reducing clozapine dose if needed.
+• CYP2D6 or CYP3A4 inhibitors: Monitor for adverse reactions; consider reducing clozapine dose if needed.
+• CYP2D6 poor metabolizers: Clozapine dose reduction may be needed.
+
+Coadministration with CYP inducers
+• Strong CYP3A4 inducers: Coadministration not recommended; if the inducer is necessary, clozapine dose may need to be increased.
+• Moderate or weak CYP1A2 or CYP3A4 inducers: Monitor for decreased effectiveness; consider increasing clozapine dose if necessary.
+
+ANC monitoring and dosage modification in patients with benign ethnic neutropenia
+• Patients with Benign Ethnic Neutropenia (BEN) (also known as Duffy-null associated neutrophil count) generally have lower baseline neutrophil counts but they are not at higher risk for developing infections, and they are not at increased risk for developing therapy induced neutropenia.
+• For patients with documented BEN, obtain at least two baseline ANC levels prior to therapy initiation; therapy initiation is not recommended in patients with BEN with an ANC < 1000/microliter; there are different ANC dosage modification recommendations in treated patients with BEN due to their lower baseline ANC levels.
+
+Renal or hepatic impairment
+• Dose reduction may be necessary with significant renal or hepatic impairment.
+
+Dosing Considerations
+Required laboratory monitoring
+• Before initiating, obtain CBC count with differential for baseline ANC; to continue treatment, ANC must be monitored regularly. In order to initiate treatment, ANC must be >=1500/mm3 for the general population and >=1000/mm3 for patients with documented benign ethnic neutropenia.
+
+Management of Treated patients who develop a fever
+For patients who develop a fever during treatment:
+• Interrupt therapy in those who develop a temperature of 101.3 °F (38.5 °C) or greater and obtain an ANC level.
+• If the ANC is less than 1000/microliter in patients without BEN, initiate appropriate workup and treatment for infection; refer to dosage modifications based on ANC monitoring.
+• In patients with fever and a normal neutrophil count; see warnings and precautions for neuroleptic malignant syndrome and warnings and precautions for fever.
+
+PEDIATRIC
+Safety and efficacy not established.
+
+GERIATRIC
+Lower initial dosage of 12.5-25 mg/day indicated; may be titrated more slowly than in younger adults. Elderly patients, particularly those with compromised cardiovascular functioning, may be more susceptible to orthostatic hypotension and tachycardia; anticholinergic effects are also common (constipation, confusion, urinary retention).
+
+Interactions
+
+Contraindicated (6)
+• amisulpride: Increases toxicity (risk of neuroleptic malignant syndrome).
+• dronedarone: Both increase QTc interval.
+• eliglustat: Clozapine increases levels of eliglustat (CYP2D6).
+• irinotecan / irinotecan liposomal: Increases risk of agranulocytosis.
+• thioridazine: Both increase QTc interval.
+
+Serious (131)
+• adagrasib, amiodarone, amisulpride, aripiprazole, arsenic trioxide, artemether, artemether/lumefantrine, asenapine, asenapine transdermal, azithromycin, buprenorphine (all forms), ceritinib, chlorpromazine, ciprofloxacin, citalopram, clarithromycin, crizotinib, dasatinib, desflurane, disopyramide, dofetilide, droperidol, eliglustat, encorafenib, entrectinib, eribulin, erythromycin (all forms), fexinidazole, flecainide, fluconazole, foscarnet, gepotidacin, givinostat, glasdegib, hydroxychloroquine sulfate, hydroxyzine, ibutilide, iloperidone, inotuzumab, isoflurane, itraconazole, ivosidenib, lefamulin, lithium, lofexidine, loperamide, lopinavir, macimorelin, methadone, midostaurin, milsaperidone, moxifloxacin, olanzapine, ondansetron, oxaliplatin, paliperidone, panobinostat, pazopanib, pentamidine, pimavanserin, pimozide, pitolisant, ponesimod, posaconazole, procainamide, propafenone, quetiapine, quinidine, ranolazine, ribociclib, romidepsin, sevoflurane, siponimod, sotalol, tetrabenazine, thiothixene, toremifene, trazodone, umeclidinium bromide/vilanterol inhaled, vandetanib, vemurafenib, vilanterol/fluticasone furoate inhaled, voriconazole, vorinostat, ziftomenib, ziprasidone: Both increase QTc interval / risk of Torsade de pointes.
+• apomorphine, bromocriptine, cabergoline, dopamine, foscarbidopa/foslevodopa, levodopa, levodopa inhaled, lisuride, methyldopa, pramipexole, ropinirole, safinamide: Clozapine decreases effects by pharmacodynamic antagonism.
+• benzhydrocodone/acetaminophen, calcium/magnesium/potassium/sodium oxybates, hydrocodone, sodium oxybate, sufentanil SL, zuranolone: Synergism increases risk of profound sedation, respiratory depression, coma, and death.
+• bupropion: May lower seizure threshold.
+• carbamazepine: Decreases clozapine levels (CYP3A4) and increases risk of agranulocytosis.
+• cimetidine, fluvoxamine, givosiran, pefloxacin: Increases clozapine levels (CYP1A2/CYP3A4).
+• deferiprone: Avoid use with other drugs associated with neutropenia/agranulocytosis.
+• fedratinib: Clozapine increases levels (CYP3A4/CYP2C19).
+• ketoconazole, levoketoconazole: Increases clozapine levels (CYP3A4).
+• methimazole, propylthiouracil: Increased risk of agranulocytosis.
+• metoclopramide intranasal: Additive risk of tardive dyskinesia, EPS, and neuroleptic malignant syndrome.
+• olopatadine intranasal: Increases risk of CNS depression.
+• rifabutin, rifampin, St John's Wort: Decreases clozapine levels (CYP3A4).
+• ropeginterferon alfa 2b, zidovudine: Additive myelosuppression.
+• selinexor: Additive neurological toxicities/CNS depression.
+
+Monitor Closely (467)
+(Includes hundreds of specific drug interactions primarily falling into these mechanistic categories:)
+• Sedation / CNS Depression: Additive effects with other sedatives, opioids, antihistamines, benzodiazepines, muscle relaxants, and anticonvulsants (e.g., alprazolam, baclofen, buprenorphine, carisoprodol, codeine, diazepam, diphenhydramine, fentanyl, gabapentin, lorazepam, methadone, morphine, oxycodone, propofol, tramadol, zolpidem).
+• Anticholinergic Effects: Additive anticholinergic burden and potential GI absorption inhibition with drugs like atropine, belladonna, benztropine, dicyclomine, glycopyrrolate, hyoscyamine, oxybutynin, scopolamine, tolterodine.
+• QTc Prolongation: Additive risk with numerous agents (e.g., alfuzosin, amitriptyline, bedaquiline, chloroquine, donepezil, escitalopram, fluoxetine, haloperidol, levofloxacin, mirtazapine, nilotinib, paroxetine, risperidone, sertraline, tacrolimus, venlafaxine).
+• Metabolism Alterations (CYP1A2, CYP2D6, CYP3A4): Drugs that induce (e.g., phenobarbital, phenytoin, smoking/tobacco) decrease clozapine levels. Drugs that inhibit (e.g., atazanavir, cimetidine, darunavir, diltiazem, erythromycin, fluoxetine, paroxetine, ritonavir, verapamil) increase clozapine levels.
+• Neuroleptic Malignant Syndrome / Serotonin Syndrome risk: Additive risks with other antipsychotics, SSRIs, SNRIs, triptans, MAOIs, and serotonin modulators.
+• Blood Glucose Alterations: Atypical antipsychotics may alter blood glucose control; monitor when used with antidiabetic agents (e.g., acarbose, exenatide, glimepiride, glipizide, glyburide, insulins, metformin, pioglitazone, sitagliptin).
+• Myelosuppression / Neutropenia: Additive risk with antineoplastics and immunosuppressants.
+• Hypotension: Additive hypotensive effects with antihypertensives (e.g., amlodipine, benazepril, captopril, clonidine).
+
+Minor (8)
+• azithromycin (Enhanced CNS toxicity), chasteberry, cilostazol, eslicarbazepine acetate, ethanol (Additive CNS depression), eucalyptus, sage, valproic acid.
+
+Adverse Effects
+
+>10%
+Hypersalivation (13-48%)
+Sedation/somnolence (21-46%)
+Weight gain (4-31%)
+Dizziness (14-27%)
+Tachycardia (17-25%)
+Constipation (14-25%)
+Insomnia (2-20%)
+Dizziness/vertigo (19%)
+Nausea (17%)
+Vomiting (17%)
+Dyspepsia (14%)
+Hypotension (9-13%)
+Fever (5-13%)
+
+1-10%
+Headache (7-10%)
+Tremor (6%)
+Syncope (6%)
+Sweating (6%)
+Dry mouth (5-6%)
+Visual disturbances (5%)
+Disturbed sleep/nightmares (4%)
+Restlessness (4%)
+Hypokinesia/akinesia (4%)
+Agitation (4%)
+Hypertension (4%)
+Abdominal discomfort/heartburn (4%)
+Seizures (3%)
+Rigidity (3%)
+Akathisia (3%)
+Confusion (3%)
+Leukopenia/neutropenia (3%)
+Fatigue (2%)
+Diarrhea (2%)
+Urinary abnormalities (2%)
+Rash (2%)
+
+Postmarketing Reports
+Skin: Hypersensitivity reactions: photosensitivity, vasculitis, erythema multiforme, Stevens-Johnson Syndrome, skin pigmentation disorder.
+Musculoskeletal system: Myasthenic syndrome, rhabdomyolysis, systemic lupus erythematosus.
+Respiratory system: Aspiration, pleural effusion, pneumonia and lower respiratory tract infection (LRTI), which may be fatal, sleep apnea.
+Central nervous system: Delirium, EEG abnormal, myoclonus, paresthesia, possible cataplexy, status epilepticus, obsessive compulsive symptoms, post-discontinuation cholinergic rebound adverse reactions, tardive dyskinesia, neuroleptic malignant syndrome, restless leg syndrome.
+Cardiovascular: Atrial or ventricular fibrillation, ventricular tachycardia, palpitations, QT interval prolongation, Torsades de Pointes, mitral valve incompetence associated with clozapine-related cardiomyopathy, myocardial infarction, cardiac arrest, myocarditis, pericarditis, periorbital edema.
+Endocrine system: Pseudopheochromocytoma.
+Gastrointestinal system: Acute pancreatitis, dysphagia, salivary gland swelling, colitis, hypersalivation, dry mouth, megacolon, fecal incontinence, intestinal obstruction, ischemia, infarction, perforation, ulceration or necrosis.
+Hepatobiliary: Hepatotoxicity, hepatic steatosis, hepatic necrosis, hepatic fibrosis, hepatic cirrhosis, liver injury (hepatic, cholestatic, and mixed), and liver failure.
+Immune system disorders: Angioedema, leukocytoclastic vasculitis.
+Urogenital: Renal failure, nocturnal enuresis, acute interstitial nephritis, priapism, retrograde ejaculation.
+Hemic and lymphatic system: DVT; elevated hemoglobin/hematocrit, ESR; sepsis, pulmonary embolism, thrombocytosis, thrombocytopenia, angioedema, leukocytoclastic vasculitis, eosinophilia.
+Vision disorders: Narrow-angle glaucoma.
+Miscellaneous: CPK elevation, hyperuricemia, hyponatremia, weight loss, polyserositis.
+
+Warnings
+
+Black Box Warnings
+Agranulocytosis
+• Severe neutropenia, defined as an absolute neutrophil count (ANC) <500/mm3, has been reported. Severe neutropenia can lead to serious infection and death.
+• Prior to initiating treatment, obtain baseline ANC(s); therapy initiation is not recommended in patients with a baseline ANC <1500/mcL (< 1000/mcL for those with Benign Ethnic Neutropenia).
+• Regularly monitor ANC during treatment.
+• Advise patients to immediately report symptoms consistent with severe neutropenia or infection (eg, fever, weakness, lethargy, sore throat).
+
+Seizures
+• Caution with history of seizure or other factors predisposing to seizure. Risk is dose-related.
+
+Myocarditis, pericarditis, cardiomyopathy, and mitral valve incompetence
+• Fatal myocarditis and cardiomyopathy reported. Consider possibility of myocarditis, pericarditis, or cardiomyopathy in patients who develop chest pain, tachycardia, palpitations, dyspnea, fever, flu-like symptoms, hypotension, or ECG changes.
+• Discontinue therapy and obtain cardiac evaluation upon suspicion. In general, do not rechallenge patients.
+
+Orthostatic hypotension, bradycardia, syncope
+• Orthostatic hypotension, bradycardia, syncope, and cardiac arrest may occur. Risk is highest during initial titration period.
+• Initiate treatment at 12.5 mg once or twice daily; titrate slowly. Caution with history of cardiovascular or cerebrovascular disease.
+
+Increased mortality in elderly with dementia-related psychosis
+• Not approved for dementia-related psychosis; patients with dementia-related psychosis treated with antipsychotic drugs are at increased risk of death (cardiovascular or infectious nature).
+
+Contraindications
+Hypersensitivity (eg, photosensitivity, vasculitis, erythema multiforme, Stevens-Johnson syndrome).
+
+Cautions
+• Increased risk of dose-related seizures and cerebrovascular adverse events.
+• Antipsychotic drugs can cause potentially fatal neuroleptic malignant syndrome (NMS).
+• Severe, life-threatening hepatotoxicity reported; monitor for signs of liver injury.
+• Transient fever reported (peak incidence within first 3 weeks); evaluate to rule out neutropenia, infection, or NMS.
+• Pulmonary embolism (PE) and DVT reported.
+• Myocarditis and pericarditis most frequently present within first 2 months of therapy.
+• Restricted access program because of risk for neutropenia.
+• Metabolic changes: Increased risk of hyperglycemia and diabetes, dyslipidemia, and weight gain.
+• Anticholinergic effects: Can result in CNS and peripheral anticholinergic toxicity. Caution with narrow-angle glaucoma, prostatic hypertrophy. Can cause severe gastrointestinal hypomotility (constipation to paralytic ileus, megacolon, intestinal obstruction, ischemia, infarction, perforation). Treat constipation promptly.
+• Cognitive and motor abilities: May cause somnolence, postural hypotension, motor and sensory instability (fall risk).
+• Tardive dyskinesia (TD): Potentially irreversible, involuntary, dyskinetic movements. Prescribe in a manner to minimize risk (lowest effective dose).
+• Eosinophilia: Blood eosinophil count >700/mcL has occurred; evaluate for DRESS/DIHS.
+• QT interval prolongation: Torsade de Pointes, cardiac arrest, and sudden death have occurred. Discontinue therapy if QTc interval exceeds 500 msec.
+
+Pregnancy & Lactation
+
+Pregnancy
+• Pregnancy exposure registry exists. Overall, available data have not established a drug-associated risk of major birth defects, miscarriage, or adverse maternal/fetal outcomes.
+• There is risk to the mother from untreated schizophrenia.
+• Neonates exposed to antipsychotic drugs during the third trimester are at risk for extrapyramidal and/or withdrawal symptoms.
+• Pregnancy Categories: B (May be acceptable. Animal studies show no risk/minor risk and human studies showed no risk).
+
+Lactation
+• Clozapine is present in human milk. Reports of sedation and agranulocytosis in an infant exposed through human milk.
+• Infants exposed should be monitored for excess sedation and neutropenia. Consider developmental/health benefits of breastfeeding along with clinical need.
+
+Pharmacology
+
+Mechanism of Action
+Demonstrates weak D2-receptor and D1-receptor blocking activity, but noradrenolytic, anticholinergic, antihistaminic, and arousal reaction inhibiting effects are significant; also possesses antiserotoninergic (5-HT1C, 5-HT2, 5-HT3) properties. Affinity for mesolimbic dopamine D4 receptor accounts for control of behavioral/psychiatric symptoms with low incidence of EPS; histamine receptor blockade accounts for sleep disturbances.
+
+Absorption
+Bioavailability: 50-60%
+Onset: 15 min
+Duration: 4-12 hr
+Peak plasma time: 1.5-2.5 hr
+Peak plasma concentration: 102-771 ng/mL
+
+Distribution
+Protein bound: 97%
+Vd: 4.67 L/kg
+
+Metabolism
+Metabolized by hepatic P450 enzyme CYP1A2, N-demethylation, N-oxidation, 3'-carbon oxidation, epoxidation, substitution, and sulfur oxidation; also CYP2D6 and CYP3A4.
+Metabolites: Norclozapine
+
+Elimination
+Half-life: 12 hr
+Blood clearance: 250 mL/min
+Total plasma clearance: 217 mL/min
+Excretion: Urine (50%), feces (30%)
+
+Administration & Storage
+
+Oral Administration
+May take with or without food. Minimize risk of orthostatic hypotension, bradycardia, and syncope by using low starting dose, gradual titration schedule, and divided dosages.
+
+Oral disintegrating tablets
+• Do not push tablet through foil; peel foil apart.
+• Remove tablet immediately prior to use.
+• If dosing requires splitting tablet, throw unused portion away.
+
+Storage
+Store at temperature not exceeding 30 °C (86 °F).

@@ -1,0 +1,446 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<BIF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="0.3" xsi:noNamespaceSchemaLocation="../schema.xml">
+  <NETWORK>
+    <NAME>Statement13_Akathisia_Research</NAME>
+    <PROPERTY>clinical_question=Which clinician-review topics are relevant to suspected or established antipsychotic-associated akathisia?</PROPERTY>
+    <PROPERTY>statement_id=13</PROPERTY>
+    <PROPERTY>recommendation_strength=2</PROPERTY>
+    <PROPERTY>evidence_quality=C</PROPERTY>
+    <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-13.md</PROPERTY>
+    <PROPERTY>source_locator=STATEMENT 13: Treatments for Akathisia; Implementation; Quality Measurement Considerations</PROPERTY>
+    <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+    <PROPERTY>source_version=APA schizophrenia guideline 2020; local Markdown derivative; original PDF not independently verified</PROPERTY>
+    <PROPERTY>model_version=0.1</PROPERTY>
+    <PROPERTY>created=2026-09-16</PROPERTY>
+    <PROPERTY>population=Adults undergoing clinician-led assessment; modeler-proposed scope</PROPERTY>
+    <PROPERTY>setting=Research authoring only</PROPERTY>
+    <PROPERTY>time_horizon=Current dated assessment; no prospective outcome horizon</PROPERTY>
+    <PROPERTY>validation_status=UNPARAMETERIZED_NOT_FOR_CLINICAL_INFERENCE</PROPERTY>
+    <PROPERTY>inference_allowed=false</PROPERTY>
+    <PROPERTY>deployment_allowed=false</PROPERTY>
+    <PROPERTY>guideline_cdss_restriction=Source explicitly states not appropriate for electronic decision support or quality measurement</PROPERTY>
+    <PROPERTY>parameter_inventory=13 missing root distributions, 27 entries; seven modeler-proposed deterministic review mappings</PROPERTY>
+    <PROPERTY>graph_semantics=Review-topic mappings, not causal effects, diagnosis, prescribing, treatment rankings or expected-utility optimization</PROPERTY>
+    <PROPERTY>root_independence=Provisional and unvalidated; review dependencies and measurement error before parameterization</PROPERTY>
+    <PROPERTY>execution_contract=Importer must reject incomplete nature-node distributions for inference and must not invent defaults; PROPERTY flags do not enforce behavior</PROPERTY>
+    <PROPERTY>missingness_policy=Missing evidence is unobserved, never Absent or No; partial-evidence inference unsupported</PROPERTY>
+    <PROPERTY>display_contract=All topics and individual concerns remain visible in parallel; routine review is not safety clearance</PROPERTY>
+    <PROPERTY>clinical_limit=No dose advice, automatic treatment selection or risk prediction; mirtazapine is contextual evidence, anticholinergic nonresponse is not an absolute prohibition</PROPERTY>
+    <PROPERTY>evidence_contract=Dated clinician assessments only; reconcile contradictions; derived review outputs are not independent observations</PROPERTY>
+    <PROPERTY>design_note=wiki/questions/Statement 13 Bayesian network design.md</PROPERTY>
+    <VARIABLE TYPE="nature">
+      <NAME>AkathisiaAssessment</NAME>
+      <PROPERTY>label=Akathisia Assessment</PROPERTY>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <OUTCOME>Unresolved</OUTCOME>
+      <PROPERTY>definition=Current clinician assessment of akathisia. Unresolved is an assessed differential, including psychotic agitation, not missing evidence. Subjective restlessness need not have overt movement.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment</PROPERTY>
+      <PROPERTY>discretization=Author-proposed categories; operational criteria require clinical agreement</PROPERTY>
+      <PROPERTY>missingness_policy=Unobserved if missing; no imputation</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=3 prior entries after dependence and measurement review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AkathisiaAntipsychoticAssociation</NAME>
+      <PROPERTY>label=Akathisia Antipsychotic Association</PROPERTY>
+      <OUTCOME>Established</OUTCOME>
+      <OUTCOME>NotEstablished</OUTCOME>
+      <PROPERTY>definition=Assessed medication association using timing, dose changes, reductions in EPS treatment and alternative explanations; not diagnosed by this graph.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment</PROPERTY>
+      <PROPERTY>discretization=Author-proposed categories; operational criteria require clinical agreement</PROPERTY>
+      <PROPERTY>missingness_policy=Unobserved if missing; no imputation</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 prior entries after dependence and measurement review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>DoseReductionFeasible</NAME>
+      <PROPERTY>label=Dose Reduction Feasible</PROPERTY>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>definition=Clinician-assessed feasibility of antipsychotic dose reduction; no automatic dose change.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment</PROPERTY>
+      <PROPERTY>discretization=Author-proposed categories; operational criteria require clinical agreement</PROPERTY>
+      <PROPERTY>missingness_policy=Unobserved if missing; no imputation</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 prior entries after dependence and measurement review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>LowerAkathisiaRiskSwitchFeasible</NAME>
+      <PROPERTY>label=Lower Akathisia Risk Switch Feasible</PROPERTY>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>definition=Clinician-assessed feasibility of switching to an agent with lower akathisia propensity.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment</PROPERTY>
+      <PROPERTY>discretization=Author-proposed categories; operational criteria require clinical agreement</PROPERTY>
+      <PROPERTY>missingness_policy=Unobserved if missing; no imputation</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 prior entries after dependence and measurement review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>PsychoticWorseningConcern</NAME>
+      <PROPERTY>label=Psychotic Worsening Concern</PROPERTY>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>definition=Assessed concern about psychotic worsening after regimen change; absence does not remove monitoring requirements.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment</PROPERTY>
+      <PROPERTY>discretization=Author-proposed categories; operational criteria require clinical agreement</PROPERTY>
+      <PROPERTY>missingness_policy=Unobserved if missing; no imputation</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 prior entries after dependence and measurement review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AkathisiaTreatmentPreferenceConcern</NAME>
+      <PROPERTY>label=Akathisia Treatment Preference Concern</PROPERTY>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>definition=Patient expresses a concern about options or tradeoffs; absence does not establish consent.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=Patient Preferences</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment</PROPERTY>
+      <PROPERTY>discretization=Author-proposed categories; operational criteria require clinical agreement</PROPERTY>
+      <PROPERTY>missingness_policy=Unobserved if missing; no imputation</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 prior entries after dependence and measurement review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>UrgentSafetyConcern</NAME>
+      <PROPERTY>label=Urgent Safety Concern</PROPERTY>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>definition=Clinician-identified current urgent safety concern, including suicidality; no suicide prediction or automatic causation attributed to akathisia.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment</PROPERTY>
+      <PROPERTY>discretization=Author-proposed categories; operational criteria require clinical agreement</PROPERTY>
+      <PROPERTY>missingness_policy=Unobserved if missing; no imputation</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 prior entries after dependence and measurement review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>DistressOrAdherenceConcern</NAME>
+      <PROPERTY>label=Distress Or Adherence Concern</PROPERTY>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>definition=Assessed distress or threatened adherence related to symptoms; retain individual findings outside this aggregate flag.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment</PROPERTY>
+      <PROPERTY>discretization=Author-proposed categories; operational criteria require clinical agreement</PROPERTY>
+      <PROPERTY>missingness_policy=Unobserved if missing; no imputation</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 prior entries after dependence and measurement review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>BenzodiazepineRespiratoryConcern</NAME>
+      <PROPERTY>label=Benzodiazepine Respiratory Concern</PROPERTY>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>definition=Assessed respiratory concern: high-dose exposure, alcohol, opioids, other sedatives or sleep apnea. Requires detailed medication review; no numerical threshold supplied.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment</PROPERTY>
+      <PROPERTY>discretization=Author-proposed categories; operational criteria require clinical agreement</PROPERTY>
+      <PROPERTY>missingness_policy=Unobserved if missing; no imputation</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 prior entries after dependence and measurement review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>BenzodiazepineFallsCognitiveConcern</NAME>
+      <PROPERTY>label=Benzodiazepine Falls Cognitive Concern</PROPERTY>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>definition=Assessed vulnerability to somnolence, cognitive effects, coordination impairment or falls, including older patients.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment</PROPERTY>
+      <PROPERTY>discretization=Author-proposed categories; operational criteria require clinical agreement</PROPERTY>
+      <PROPERTY>missingness_policy=Unobserved if missing; no imputation</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 prior entries after dependence and measurement review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>BenzodiazepineMisuseConcern</NAME>
+      <PROPERTY>label=Benzodiazepine Misuse Concern</PROPERTY>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>definition=Assessed misuse or substance-use-disorder vulnerability, including current or past alcohol or other substance use disorder.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment</PROPERTY>
+      <PROPERTY>discretization=Author-proposed categories; operational criteria require clinical agreement</PROPERTY>
+      <PROPERTY>missingness_policy=Unobserved if missing; no imputation</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 prior entries after dependence and measurement review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>PropranololBloodPressureConcern</NAME>
+      <PROPERTY>label=Propranolol Blood Pressure Concern</PROPERTY>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>definition=Assessed blood-pressure concern relevant to propranolol; not a complete contraindication screen.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment</PROPERTY>
+      <PROPERTY>discretization=Author-proposed categories; operational criteria require clinical agreement</PROPERTY>
+      <PROPERTY>missingness_policy=Unobserved if missing; no imputation</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 prior entries after dependence and measurement review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>PropranololExposureConcern</NAME>
+      <PROPERTY>label=Propranolol Exposure Concern</PROPERTY>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>definition=Assessed interaction or food-related exposure concern; source names CYP1A2, CYP2D6, CYP2C19, CYP3A4 and protein-rich food effects. No dose adjustment inferred.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment</PROPERTY>
+      <PROPERTY>discretization=Author-proposed categories; operational criteria require clinical agreement</PROPERTY>
+      <PROPERTY>missingness_policy=Unobserved if missing; no imputation</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 prior entries after dependence and measurement review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AkathisiaIndicationReview</NAME>
+      <PROPERTY>label=Akathisia Indication Review</PROPERTY>
+      <OUTCOME>EstablishedCurrentAssociation</OUTCOME>
+      <OUTCOME>AssessDifferentialAndAssociation</OUTCOME>
+      <OUTCOME>NoCurrentTreatmentRule</OUTCOME>
+      <PROPERTY>definition=Review indication before attributing agitation to psychosis or changing antipsychotic treatment.</PROPERTY>
+      <PROPERTY>clinical_role=proposed_review_topic</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment</PROPERTY>
+      <PROPERTY>discretization=Author-proposed categories; operational criteria require clinical agreement</PROPERTY>
+      <PROPERTY>missingness_policy=Unobserved if missing; no imputation</PROPERTY>
+      <PROPERTY>parameter_status=modeler_proposed_deterministic_mapping</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AkathisiaAntipsychoticRegimenReview</NAME>
+      <PROPERTY>label=Akathisia Antipsychotic Regimen Review</PROPERTY>
+      <OUTCOME>ReviewDoseAndSwitch</OUTCOME>
+      <OUTCOME>ReviewDose</OUTCOME>
+      <OUTCOME>ReviewSwitch</OUTCOME>
+      <OUTCOME>ReviewConstraints</OUTCOME>
+      <OUTCOME>PrioritizePsychosisTradeoff</OUTCOME>
+      <OUTCOME>EstablishIndicationFirst</OUTCOME>
+      <PROPERTY>definition=Discuss feasible regimen changes and psychosis tradeoff. All changes need monitoring; a concern is not a veto.</PROPERTY>
+      <PROPERTY>clinical_role=proposed_review_topic</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment</PROPERTY>
+      <PROPERTY>discretization=Author-proposed categories; operational criteria require clinical agreement</PROPERTY>
+      <PROPERTY>missingness_policy=Unobserved if missing; no imputation</PROPERTY>
+      <PROPERTY>parameter_status=modeler_proposed_deterministic_mapping</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AdjunctDiscussion</NAME>
+      <PROPERTY>label=Adjunct Discussion</PROPERTY>
+      <OUTCOME>DiscussOptionsAndPatientConcerns</OUTCOME>
+      <OUTCOME>DiscussOptionsAndPreferences</OUTCOME>
+      <OUTCOME>EstablishIndicationFirst</OUTCOME>
+      <PROPERTY>definition=Discuss benzodiazepine and beta-blocker options alongside regimen changes; no ranking or mutually exclusive treatment choice.</PROPERTY>
+      <PROPERTY>clinical_role=proposed_review_topic</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Patient Preferences</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment</PROPERTY>
+      <PROPERTY>discretization=Author-proposed categories; operational criteria require clinical agreement</PROPERTY>
+      <PROPERTY>missingness_policy=Unobserved if missing; no imputation</PROPERTY>
+      <PROPERTY>parameter_status=modeler_proposed_deterministic_mapping</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>UrgentSafetyReview</NAME>
+      <PROPERTY>label=Urgent Safety Review</PROPERTY>
+      <OUTCOME>UrgentClinicianAssessment</OUTCOME>
+      <OUTCOME>RoutineSafetyAssessment</OUTCOME>
+      <PROPERTY>definition=Urgent safety review remains independent of established medication association; routine state never rules out suicide risk.</PROPERTY>
+      <PROPERTY>clinical_role=proposed_review_topic</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment</PROPERTY>
+      <PROPERTY>discretization=Author-proposed categories; operational criteria require clinical agreement</PROPERTY>
+      <PROPERTY>missingness_policy=Unobserved if missing; no imputation</PROPERTY>
+      <PROPERTY>parameter_status=modeler_proposed_deterministic_mapping</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>BurdenReview</NAME>
+      <PROPERTY>label=Burden Review</PROPERTY>
+      <OUTCOME>ReviewDistressAndAdherence</OUTCOME>
+      <OUTCOME>AssessBurdenAndDifferential</OUTCOME>
+      <OUTCOME>RoutineBurdenAssessment</OUTCOME>
+      <PROPERTY>definition=Review distress and adherence even when the symptom differential remains unresolved.</PROPERTY>
+      <PROPERTY>clinical_role=proposed_review_topic</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment</PROPERTY>
+      <PROPERTY>discretization=Author-proposed categories; operational criteria require clinical agreement</PROPERTY>
+      <PROPERTY>missingness_policy=Unobserved if missing; no imputation</PROPERTY>
+      <PROPERTY>parameter_status=modeler_proposed_deterministic_mapping</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>BenzodiazepineSafetyReview</NAME>
+      <PROPERTY>label=Benzodiazepine Safety Review</PROPERTY>
+      <OUTCOME>EnhancedIndividualizedReview</OUTCOME>
+      <OUTCOME>RoutineIndividualizedReview</OUTCOME>
+      <PROPERTY>definition=Parallel safety topic, not permission to prescribe; each respiratory, falls/cognitive and misuse concern remains separately visible.</PROPERTY>
+      <PROPERTY>clinical_role=proposed_review_topic</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment</PROPERTY>
+      <PROPERTY>discretization=Author-proposed categories; operational criteria require clinical agreement</PROPERTY>
+      <PROPERTY>missingness_policy=Unobserved if missing; no imputation</PROPERTY>
+      <PROPERTY>parameter_status=modeler_proposed_deterministic_mapping</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>PropranololSafetyReview</NAME>
+      <PROPERTY>label=Propranolol Safety Review</PROPERTY>
+      <OUTCOME>EnhancedIndividualizedReview</OUTCOME>
+      <OUTCOME>RoutineIndividualizedReview</OUTCOME>
+      <PROPERTY>definition=Parallel blood pressure and exposure review; monitor blood pressure with dose increases regardless of concern state. Full safety screening is external.</PROPERTY>
+      <PROPERTY>clinical_role=proposed_review_topic</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=Current dated assessment</PROPERTY>
+      <PROPERTY>discretization=Author-proposed categories; operational criteria require clinical agreement</PROPERTY>
+      <PROPERTY>missingness_policy=Unobserved if missing; no imputation</PROPERTY>
+      <PROPERTY>parameter_status=modeler_proposed_deterministic_mapping</PROPERTY>
+    </VARIABLE>
+    <DEFINITION>
+      <FOR>AkathisiaIndicationReview</FOR>
+      <GIVEN>AkathisiaAssessment</GIVEN>
+      <GIVEN>AkathisiaAntipsychoticAssociation</GIVEN>
+      <TABLE>1 0 0 0 1 0 0 0 1 0 0 1 0 1 0 0 1 0</TABLE>
+      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
+      <PROPERTY>parameter_status=proposed_deterministic_review_mapping_not_clinically_validated</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Patient Preferences</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>uncertainty_description=Source motivates review topics but does not specify this state partition or deterministic mapping</PROPERTY>
+      <PROPERTY>table_order=Child fastest, last GIVEN next; declaration order</PROPERTY>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>AkathisiaAntipsychoticRegimenReview</FOR>
+      <GIVEN>AkathisiaIndicationReview</GIVEN>
+      <GIVEN>DoseReductionFeasible</GIVEN>
+      <GIVEN>LowerAkathisiaRiskSwitchFeasible</GIVEN>
+      <GIVEN>PsychoticWorseningConcern</GIVEN>
+      <TABLE>0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1</TABLE>
+      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
+      <PROPERTY>parameter_status=proposed_deterministic_review_mapping_not_clinically_validated</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Patient Preferences</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>uncertainty_description=Source motivates review topics but does not specify this state partition or deterministic mapping</PROPERTY>
+      <PROPERTY>table_order=Child fastest, last GIVEN next; declaration order</PROPERTY>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>AdjunctDiscussion</FOR>
+      <GIVEN>AkathisiaIndicationReview</GIVEN>
+      <GIVEN>AkathisiaTreatmentPreferenceConcern</GIVEN>
+      <TABLE>1 0 0 0 1 0 0 0 1 0 0 1 0 0 1 0 0 1</TABLE>
+      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
+      <PROPERTY>parameter_status=proposed_deterministic_review_mapping_not_clinically_validated</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Patient Preferences</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>uncertainty_description=Source motivates review topics but does not specify this state partition or deterministic mapping</PROPERTY>
+      <PROPERTY>table_order=Child fastest, last GIVEN next; declaration order</PROPERTY>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>UrgentSafetyReview</FOR>
+      <GIVEN>UrgentSafetyConcern</GIVEN>
+      <TABLE>1 0 0 1</TABLE>
+      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
+      <PROPERTY>parameter_status=proposed_deterministic_review_mapping_not_clinically_validated</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Patient Preferences</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>uncertainty_description=Source motivates review topics but does not specify this state partition or deterministic mapping</PROPERTY>
+      <PROPERTY>table_order=Child fastest, last GIVEN next; declaration order</PROPERTY>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>BurdenReview</FOR>
+      <GIVEN>AkathisiaIndicationReview</GIVEN>
+      <GIVEN>DistressOrAdherenceConcern</GIVEN>
+      <TABLE>1 0 0 0 0 1 0 1 0 0 0 1 0 1 0 0 0 1</TABLE>
+      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
+      <PROPERTY>parameter_status=proposed_deterministic_review_mapping_not_clinically_validated</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Patient Preferences</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>uncertainty_description=Source motivates review topics but does not specify this state partition or deterministic mapping</PROPERTY>
+      <PROPERTY>table_order=Child fastest, last GIVEN next; declaration order</PROPERTY>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>BenzodiazepineSafetyReview</FOR>
+      <GIVEN>BenzodiazepineRespiratoryConcern</GIVEN>
+      <GIVEN>BenzodiazepineFallsCognitiveConcern</GIVEN>
+      <GIVEN>BenzodiazepineMisuseConcern</GIVEN>
+      <TABLE>1 0 1 0 1 0 1 0 1 0 1 0 1 0 0 1</TABLE>
+      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
+      <PROPERTY>parameter_status=proposed_deterministic_review_mapping_not_clinically_validated</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Patient Preferences</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>uncertainty_description=Source motivates review topics but does not specify this state partition or deterministic mapping</PROPERTY>
+      <PROPERTY>table_order=Child fastest, last GIVEN next; declaration order</PROPERTY>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>PropranololSafetyReview</FOR>
+      <GIVEN>PropranololBloodPressureConcern</GIVEN>
+      <GIVEN>PropranololExposureConcern</GIVEN>
+      <TABLE>1 0 1 0 1 0 0 1</TABLE>
+      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
+      <PROPERTY>parameter_status=proposed_deterministic_review_mapping_not_clinically_validated</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Patient Preferences</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>uncertainty_description=Source motivates review topics but does not specify this state partition or deterministic mapping</PROPERTY>
+      <PROPERTY>table_order=Child fastest, last GIVEN next; declaration order</PROPERTY>
+    </DEFINITION>
+  </NETWORK>
+</BIF>

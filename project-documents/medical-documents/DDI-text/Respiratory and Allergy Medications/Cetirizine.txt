@@ -1,0 +1,978 @@
+﻿6/22/26, 8:06 PM Zyrtec, Quzyttir (cetirizine) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+cetirizine (Rx, OTC)
+Brand and Other Names: Zyrtec, Zyrtec Allergy, Children's Zyrtec Allergy, Children's
+Zyrtec Hives Relief, PediaCare Children's 24 Hour Allergy, Aller-Tec, Wal-Zyr, Quzyttir
+Classes: Antihistamines, 2nd Generation
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+tablet
+
+5mg
+
+10mg
+
+tablet, oral-disintegrating
+
+10mg (Zyrtec Allergy)
+
+tablet, chewable
+
+2.5mg
+
+5mg
+
+10mg
+
+syrup
+
+5mg/5mL
+
+solution
+
+5mg/5mL
+
+injectable solution
+
+10mg/mL
+
+https://reference.medscape.com/drug/quzyttir-zyrtec-cetirizine-343384 1/17
+
+
+
+6/22/26, 8:06 PM Zyrtec, Quzyttir (cetirizine) dosing, indications, interactions, adverse effects, and more
+
+capsule
+
+10mg
+
+Allergies/Hay Fever/Urticaria
+
+PO
+
+Perennial and seasonal allergic and vasomotor rhinitis; relief of symptoms from
+colds, urticaria, angioedema, anaphylactic reactions, pruritus, allergic conjunctivitis
+
+5-10 mg PO qDay, depending on severity of symptoms; not to exceed 10 mg qDay
+
+IV
+
+Indicated for acute urticaria
+
+10 mg IV push q24hr PRN
+
+Dosing Modifications
+
+Renal impairment
+
+PO
+GFR >50 mL/min: Dose adjustment not necessary
+
+GFR ≤50 mL/min: 5 mg PO qDay
+
+Peritoneal dialysis: 5 mg PO qDay
+
+Intermittent hemodialysis: 5 mg PO qDay; may also administer 3 times weekly
+
+IV
+Mild-to-severe and patients on dialysis: No dosage adjustment necessary;
+monitor for antihistaminic side effects
+
+Hepatic impairment
+
+PO: Dose adjustment not provided by manufacturer's label
+
+IV: No dosage adjustment necessary; monitor for antihistaminic side effects in this
+patient population
+
+PEDIATRIC
+https://reference.medscape.com/drug/quzyttir-zyrtec-cetirizine-343384 2/17
+
+
+
+6/22/26, 8:06 PM Zyrtec, Quzyttir (cetirizine) dosing, indications, interactions, adverse effects, and more
+
+Dosage Forms & Strengths
+
+tablet
+
+5mg
+
+10mg
+
+tablet, oral-disintegrating
+
+10mg (Zyrtec Allergy)
+
+tablet, chewable
+
+2.5mg
+
+5mg
+
+10mg
+
+syrup
+
+5mg/5mL
+
+solution
+
+5mg/5mL
+
+injectable solution
+
+10mg/mL
+
+capsule
+
+10mg
+
+Allergies/Hay Fever/Urticaria
+
+PO
+
+Perennial and seasonal allergic and vasomotor rhinitis
+
+<2 years: Safety and efficacy not established
+
+2-6 years: 2.5 mg (0.5 teaspoon) oral solution PO qDay; can increase to 5 mg PO
+qDay or 2.5 mg PO twice daily; not to exceed 5 mg qDay
+
+>6 years: 5-10 mg PO qDay, depending on severity of symptoms; not to exceed 10
+mg qDay
+
+IV
+
+Indicated for acute urticaria in adults and children aged ≥6 months
+
+6 months to 5 years: 2.5 mg IV push q24hr PRN
+
+6 to <12 years: 5 or 10 mg depending on symptom severity IV push q24hr PRN
+
+≥12 years: 10 mg IV push q24hr PRN
+
+https://reference.medscape.com/drug/quzyttir-zyrtec-cetirizine-343384 3/17
+
+
+
+6/22/26, 8:06 PM Zyrtec, Quzyttir (cetirizine) dosing, indications, interactions, adverse effects, and more
+
+Dosing Modifications
+
+Renal impairment
+
+PO
+GFR ≥30 mL/min/1.73 m2: Dose adjustment not necessary
+
+GFR 10-29 mL/min/1.73 m2: Decrease dose by 50%
+
+GFR <10 mL/min/1.73 m2: Not recommended
+
+Intermittent hemodialysis or peritoneal dialysis: Decrease dose by 50%
+
+IV
+Mild-to-severe and patients on dialysis: No dosage adjustment necessary;
+monitor for antihistaminic side effects
+
+Hepatic impairment
+
+PO: Dose adjustment not provided by manufacturer's label
+
+IV: No dosage adjustment necessary; monitor for antihistaminic side effects in this
+patient population
+
+Dosing Considerations
+
+Limitations of use: Not recommended in pediatric patients <6 years impaired renal or
+hepatic function
+
+Interactions
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and cetirizine
+No Interactions Found
+Interactions Found
+Contraindicated
+
+Serious
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+Contraindicated (0)
+
+Serious (8)
+
+https://reference.medscape.com/drug/quzyttir-zyrtec-cetirizine-343384 4/17
+
+
+
+6/22/26, 8:06 PM Zyrtec, Quzyttir (cetirizine) dosing, indications, interactions, adverse effects, and more
+
+erdafitinib
+erdafitinib will increase the level or effect of cetirizine by P-glycoprotein (MDR1)
+efflux transporter. Avoid or Use Alternate Drug. If coadministration unavoidable,
+separate administration by at least 6 hr before or after administration of P-gp
+substrates with narrow therapeutic index.
+
+isocarboxazid
+isocarboxazid increases effects of cetirizine by Other (see comment). Avoid or Use
+Alternate Drug. Comment: Isocarboxazid should not be administered in combination
+with antihistamines because of potential additive CNS depressant effects. MAO
+inhibitors also prolong and intensify anticholinergic effects of antihistamines. .
+
+metoclopramide intranasal
+cetirizine, metoclopramide intranasal. Either increases effects of the other by Other
+(see comment). Avoid or Use Alternate Drug. Comment: Avoid use of
+metoclopramide intranasal or interacting drug, depending on importance of drug to
+patient.
+
+olopatadine intranasal
+cetirizine and olopatadine intranasal both increase sedation. Avoid or Use Alternate
+Drug. Coadministration increases risk of CNS depression, which can lead to additive
+impairment of psychomotor performance and cause daytime impairment.
+
+sotorasib
+sotorasib will decrease the level or effect of cetirizine by P-glycoprotein (MDR1)
+efflux transporter. Avoid or Use Alternate Drug. If use is unavoidable, refer to the
+prescribing information of the P-gp substrate for dosage modifications.
+
+tepotinib
+tepotinib will increase the level or effect of cetirizine by P-glycoprotein (MDR1)
+efflux transporter. Avoid or Use Alternate Drug. If concomitant use unavoidable,
+reduce the P-gp substrate dosage if recommended in its approved product labeling.
+
+tranylcypromine
+tranylcypromine increases effects of cetirizine by Other (see comment). Avoid or
+Use Alternate Drug. Comment: Tranylcypromine should not be administered in
+combination with antihistamines because of potential additive CNS depressant
+effects. MAO inhibitors also prolong and intensify anticholinergic effects of
+antihistamines.
+
+zuranolone
+cetirizine, zuranolone. Either increases effects of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Coadministration of zuranolone with other
+CNS depressants may increase impairment of psychomotor performance or CNS
+depressant effects. If unavoidable, consider dose reduction. .
+
+Monitor Closely (98)
+
+abemaciclib
+abemaciclib will increase the level or effect of cetirizine by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/quzyttir-zyrtec-cetirizine-343384 5/17
+
+
+
+6/22/26, 8:06 PM Zyrtec, Quzyttir (cetirizine) dosing, indications, interactions, adverse effects, and more
+
+abrocitinib
+abrocitinib will increase the level or effect of cetirizine by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+acetaminophen/phenyltoloxamine
+acetaminophen/phenyltoloxamine and cetirizine both increase sedation. Use
+Caution/Monitor.
+
+acrivastine
+acrivastine and cetirizine both increase sedation. Use Caution/Monitor.
+
+adagrasib
+adagrasib will increase the level or effect of cetirizine by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+aficamten
+aficamten will increase the level or effect of cetirizine by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+amifampridine
+cetirizine increases toxicity of amifampridine by Other (see comment). Modify
+Therapy/Monitor Closely. Comment: Amifampridine can cause seizures.
+Coadministration with drugs that lower seizure threshold may increase this risk.
+
+amisulpride
+amisulpride and cetirizine both increase sedation. Use Caution/Monitor.
+
+apixaban
+apixaban will increase the level or effect of cetirizine by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+asenapine
+asenapine and cetirizine both increase sedation. Use Caution/Monitor.
+
+asenapine transdermal
+asenapine transdermal and cetirizine both increase sedation. Use Caution/Monitor.
+
+avapritinib
+avapritinib and cetirizine both increase sedation. Use Caution/Monitor.
+
+azithromycin
+azithromycin will increase the level or effect of cetirizine by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+belumosudil
+belumosudil will increase the level or effect of cetirizine by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+benzhydrocodone/acetaminophen
+benzhydrocodone/acetaminophen and cetirizine both increase sedation. Use
+Caution/Monitor.
+
+berotralstat
+
+https://reference.medscape.com/drug/quzyttir-zyrtec-cetirizine-343384 6/17
+
+
+
+6/22/26, 8:06 PM Zyrtec, Quzyttir (cetirizine) dosing, indications, interactions, adverse effects, and more
+
+berotralstat will increase the level or effect of cetirizine by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor. Monitor or titrate P-gp substrate dose if
+coadministered.
+
+bosutinib
+bosutinib increases levels of cetirizine by P-glycoprotein (MDR1) efflux transporter.
+Use Caution/Monitor.
+
+brexpiprazole
+brexpiprazole and cetirizine both increase sedation. Use Caution/Monitor.
+
+brimonidine
+brimonidine and cetirizine both increase sedation. Use Caution/Monitor.
+
+brimonidine topical
+brimonidine topical and cetirizine both increase sedation. Use Caution/Monitor.
+
+brivaracetam
+brivaracetam and cetirizine both increase sedation. Use Caution/Monitor.
+
+buprenorphine subdermal implant
+buprenorphine subdermal implant and cetirizine both increase sedation. Use
+Caution/Monitor.
+
+buprenorphine transdermal
+buprenorphine transdermal and cetirizine both increase sedation. Use
+Caution/Monitor.
+
+buprenorphine, long-acting injection
+buprenorphine, long-acting injection and cetirizine both increase sedation. Use
+Caution/Monitor.
+
+cannabidiol
+cannabidiol increases levels of cetirizine by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor.
+
+capmatinib
+capmatinib will increase the level or effect of cetirizine by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+carbachol/brimonidine ophthalmic
+carbachol/brimonidine ophthalmic and cetirizine both increase sedation. Use
+Caution/Monitor.
+
+carfilzomib
+carfilzomib will increase the level or effect of cetirizine by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+cariprazine
+cariprazine and cetirizine both increase sedation. Use Caution/Monitor.
+
+cenobamate
+
+https://reference.medscape.com/drug/quzyttir-zyrtec-cetirizine-343384 7/17
+
+
+
+6/22/26, 8:06 PM Zyrtec, Quzyttir (cetirizine) dosing, indications, interactions, adverse effects, and more
+
+cenobamate, cetirizine. Either increases effects of the other by sedation. Use
+Caution/Monitor.
+
+clobazam
+cetirizine, clobazam. Other (see comment). Use Caution/Monitor. Comment:
+Concomitant administration can increase the potential for CNS effects (e.g.,
+increased sedation or respiratory depression).
+
+clobazam and cetirizine both increase sedation. Use Caution/Monitor.
+
+clonidine
+clonidine and cetirizine both increase sedation. Use Caution/Monitor.
+
+cobicistat
+cobicistat will increase the level or effect of cetirizine by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+crizotinib
+crizotinib increases levels of cetirizine by P-glycoprotein (MDR1) efflux transporter.
+Use Caution/Monitor.
+
+danicopan
+danicopan will increase the level or effect of cetirizine by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor. Danicopan increases plasma
+concentrations of P-gp substrates; consider dose reduction of P-gp substrates
+where minimal concentration changes may lead to serious adverse reactions.
+
+daridorexant
+cetirizine and daridorexant both increase sedation. Modify Therapy/Monitor Closely.
+Coadministration increases risk of CNS depression, which can lead to additive
+impairment of psychomotor performance and cause daytime impairment.
+
+daridorexant will increase the level or effect of cetirizine by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+desloratadine
+desloratadine and cetirizine both increase sedation. Use Caution/Monitor.
+
+dexbrompheniramine
+dexbrompheniramine and cetirizine both increase sedation. Use Caution/Monitor.
+
+diazepam buccal
+diazepam buccal and cetirizine both increase sedation. Use Caution/Monitor.
+
+diazepam buccal, cetirizine. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration may
+potentiate the CNS-depressant effects of each drug.
+
+diazepam intranasal
+diazepam intranasal, cetirizine. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration may
+potentiate the CNS-depressant effects of each drug.
+
+https://reference.medscape.com/drug/quzyttir-zyrtec-cetirizine-343384 8/17
+
+
+
+6/22/26, 8:06 PM Zyrtec, Quzyttir (cetirizine) dosing, indications, interactions, adverse effects, and more
+
+diazepam intranasal and cetirizine both increase sedation. Use Caution/Monitor.
+
+donepezil transdermal
+donepezil transdermal, cetirizine. Either decreases effects of the other by
+pharmacodynamic antagonism. Use Caution/Monitor.
+
+dronedarone
+dronedarone will increase the level or effect of cetirizine by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+elagolix
+elagolix will increase the level or effect of cetirizine by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+eliglustat
+eliglustat increases levels of cetirizine by P-glycoprotein (MDR1) efflux transporter.
+Modify Therapy/Monitor Closely. Monitor therapeutic drug concentrations, as
+indicated, or consider reducing the dosage of the P-gp substrate and titrate to
+clinical effect.
+
+esketamine intranasal
+esketamine intranasal, cetirizine. Either increases toxicity of the other by sedation.
+Modify Therapy/Monitor Closely.
+
+eszopiclone
+eszopiclone and cetirizine both increase sedation. Use Caution/Monitor.
+
+fentanyl
+fentanyl and cetirizine both increase sedation. Use Caution/Monitor.
+
+fentanyl intranasal
+fentanyl intranasal and cetirizine both increase sedation. Use Caution/Monitor.
+
+fentanyl iontophoretic transdermal system
+fentanyl iontophoretic transdermal system and cetirizine both increase sedation.
+Use Caution/Monitor.
+
+fentanyl transdermal
+fentanyl transdermal and cetirizine both increase sedation. Use Caution/Monitor.
+
+fentanyl transmucosal
+fentanyl transmucosal and cetirizine both increase sedation. Use Caution/Monitor.
+
+flibanserin
+flibanserin will increase the level or effect of cetirizine by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+fostamatinib
+fostamatinib will increase the level or effect of cetirizine by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor. Concomitant use of fostamatinib may
+increase concentrations of P-gp substrates. Monitor for toxicities of the P-gp
+
+https://reference.medscape.com/drug/quzyttir-zyrtec-cetirizine-343384 9/17
+
+
+
+6/22/26, 8:06 PM Zyrtec, Quzyttir (cetirizine) dosing, indications, interactions, adverse effects, and more
+
+substrate drug that may require dosage reduction when given concurrently with
+fostamatinib.
+
+gabapentin
+gabapentin, cetirizine. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+gabapentin and cetirizine both increase sedation. Use Caution/Monitor.
+
+gabapentin enacarbil
+gabapentin enacarbil, cetirizine. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+gabapentin enacarbil and cetirizine both increase sedation. Use Caution/Monitor.
+
+glecaprevir/pibrentasvir
+glecaprevir/pibrentasvir will increase the level or effect of cetirizine by P-
+glycoprotein (MDR1) efflux transporter. Use Caution/Monitor.
+
+guanfacine
+guanfacine and cetirizine both increase sedation. Use Caution/Monitor.
+
+hyaluronidase
+cetirizine decreases effects of hyaluronidase by Other (see comment). Use
+Caution/Monitor. Comment: Antihistamines, when given in large systemic doses,
+may render tissues partially resistant to the action of hyaluronidase. Patients may
+require larger amounts of hyaluronidase for equivalent dispersing effect. .
+
+istradefylline
+istradefylline will increase the level or effect of cetirizine by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor. Istradefylline 40 mg/day increased peak
+levels and AUC of P-gp substrates in clinical trials. Consider dose reduction of
+sensitive P-gp substrates.
+
+lamotrigine
+lamotrigine and cetirizine both increase sedation. Use Caution/Monitor.
+
+levetiracetam
+levetiracetam and cetirizine both increase sedation. Use Caution/Monitor.
+
+levocetirizine
+levocetirizine and cetirizine both increase sedation. Use Caution/Monitor.
+
+loratadine
+loratadine and cetirizine both increase sedation. Use Caution/Monitor.
+
+lumateperone
+
+https://reference.medscape.com/drug/quzyttir-zyrtec-cetirizine-343384 10/17
+
+
+
+6/22/26, 8:06 PM Zyrtec, Quzyttir (cetirizine) dosing, indications, interactions, adverse effects, and more
+
+lumateperone and cetirizine both increase sedation. Use Caution/Monitor.
+
+lurasidone
+lurasidone, cetirizine. Either increases toxicity of the other by Other (see comment).
+Use Caution/Monitor. Comment: Potential for increased CNS depressant effects
+when used concurrently; monitor for increased adverse effects and toxicity.
+
+lurasidone and cetirizine both increase sedation. Use Caution/Monitor.
+
+mavorixafor
+mavorixafor will increase the level or effect of cetirizine by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor. Caution if mavorixafor (a P-gp inhibitor) is
+coadministered with a sensitive P-gp substrate where minimal substrate
+concentration changes may lead to serious adverse effects.
+
+meclizine
+meclizine and cetirizine both increase sedation. Use Caution/Monitor.
+
+methohexital
+methohexital and cetirizine both increase sedation. Use Caution/Monitor.
+
+methsuximide
+methsuximide and cetirizine both increase sedation. Use Caution/Monitor.
+
+midazolam intranasal
+midazolam intranasal, cetirizine. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Concomitant use of
+barbiturates, alcohol, or other CNS depressants may increase the risk of
+hypoventilation, airway obstruction, desaturation, or apnea and may contribute to
+profound and/or prolonged drug effect.
+
+molindone
+molindone and cetirizine both increase sedation. Use Caution/Monitor.
+
+nitrous oxide
+nitrous oxide and cetirizine both increase sedation. Use Caution/Monitor.
+
+opicapone
+opicapone and cetirizine both increase sedation. Use Caution/Monitor.
+
+phenelzine
+phenelzine increases effects of cetirizine by Other (see comment). Modify
+Therapy/Monitor Closely. Comment: Coadministration of phenelzine and
+antihistamines may result in additive CNS depressant effects. MAO inhibitors also
+prolong and intensify anticholinergic effects of antihistamines. .
+
+ponatinib
+ponatinib increases levels of cetirizine by P-glycoprotein (MDR1) efflux transporter.
+Use Caution/Monitor.
+
+pregabalin
+pregabalin, cetirizine. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+
+https://reference.medscape.com/drug/quzyttir-zyrtec-cetirizine-343384 11/17
+
+
+
+6/22/26, 8:06 PM Zyrtec, Quzyttir (cetirizine) dosing, indications, interactions, adverse effects, and more
+
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+pyrilamine
+pyrilamine and cetirizine both increase sedation. Use Caution/Monitor.
+
+remifentanil
+remifentanil and cetirizine both increase sedation. Use Caution/Monitor.
+
+ritonavir
+ritonavir increases levels of cetirizine by decreasing metabolism. Use
+Caution/Monitor.
+
+sarecycline
+sarecycline will increase the level or effect of cetirizine by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor. Monitor for toxicities of P-gp substrates
+that may require dosage reduction when coadministered with P-gp inhibitors.
+
+scopolamine
+scopolamine and cetirizine both increase sedation. Use Caution/Monitor.
+
+scopolamine intranasal
+scopolamine intranasal and cetirizine both increase sedation. Use Caution/Monitor.
+
+sodium oxybate
+sodium oxybate and cetirizine both increase sedation. Use Caution/Monitor.
+
+stiripentol
+stiripentol will increase the level or effect of cetirizine by P-glycoprotein (MDR1)
+efflux transporter. Modify Therapy/Monitor Closely. Consider reducing the dose of
+P-glycoprotein (P-gp) substrates, if adverse reactions are experienced when
+administered concomitantly with stiripentol.
+
+stiripentol, cetirizine. Either increases effects of the other by sedation. Use
+Caution/Monitor. Concurrent use of medications with CNS depressant effects
+together with thalidomide should be avoided due to the risk for additive sedative
+effects.
+
+tasimelteon
+tasimelteon and cetirizine both increase sedation. Use Caution/Monitor.
+
+tetrabenazine
+tetrabenazine and cetirizine both increase sedation. Use Caution/Monitor.
+
+thalidomide
+thalidomide and cetirizine both increase sedation. Use Caution/Monitor.
+
+tiagabine
+tiagabine and cetirizine both increase sedation. Use Caution/Monitor.
+
+tizanidine
+tizanidine and cetirizine both increase sedation. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/quzyttir-zyrtec-cetirizine-343384 12/17
+
+
+
+6/22/26, 8:06 PM Zyrtec, Quzyttir (cetirizine) dosing, indications, interactions, adverse effects, and more
+
+tolcapone
+tolcapone and cetirizine both increase sedation. Use Caution/Monitor.
+
+tucatinib
+tucatinib will increase the level or effect of cetirizine by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor. Consider reducing the dosage of P-gp
+substrates, where minimal concentration changes may lead to serious or life-
+threatening toxicities.
+
+valproic acid
+valproic acid and cetirizine both increase sedation. Use Caution/Monitor.
+
+vemurafenib
+vemurafenib increases levels of cetirizine by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor.
+
+vigabatrin
+vigabatrin and cetirizine both increase sedation. Use Caution/Monitor.
+
+zaleplon
+zaleplon and cetirizine both increase sedation. Use Caution/Monitor.
+
+zolpidem
+zolpidem and cetirizine both increase sedation. Use Caution/Monitor.
+
+zonisamide
+zonisamide and cetirizine both increase sedation. Use Caution/Monitor.
+
+zuranolone
+zuranolone and cetirizine both increase sedation. Use Caution/Monitor.
+
+Minor (1)
+
+theophylline
+theophylline increases levels of cetirizine by decreasing elimination.
+Minor/Significance Unknown.
+
+Adverse Effects
+
+>10%
+
+Somnolence (2-14%)
+
+Headache (11-14%)
+
+1-10%
+
+Fatigue (5.9%)
+
+https://reference.medscape.com/drug/quzyttir-zyrtec-cetirizine-343384 13/17
+
+
+
+6/22/26, 8:06 PM Zyrtec, Quzyttir (cetirizine) dosing, indications, interactions, adverse effects, and more
+
+Dry mouth (5%)
+
+Dizziness (2%)
+
+Diarrhea (2-3%)
+
+Malaise (4%)
+
+Bronchospasm (2-3%)
+
+Vomiting (2-3%)
+
+Epistaxis (2-4%)
+
+<1%
+
+Stomach pain
+
+Drowsiness
+
+Angioedema
+
+Fussiness
+
+Hallucinations
+
+Hypotension
+
+Tremor
+
+Tongue discoloration
+
+Postmarketing Reports
+
+Cardiac disorders: Severe hypotension
+
+Gastrointestinal disorders: Cholestasis
+
+Nervous system disorders: Extrapyramidal symptoms, myoclonus, orofacial dyskinesia,
+tic
+
+Pregnancy, puerperium and perinatal conditions: Stillbirth
+
+Renal and urinary disorders: Glomerulonephritis
+
+Skin and subcutaneous tissue disorders: acute generalized exanthematous pustulosis
+(AGEP); rebound pruritus-pruritus within a few days after discontinuation of cetirizine,
+usually after long-term use (eg, months to years)
+
+Postmarketing reports of active metabolite (levocetirizine)
+
+Cardiac disorders: Palpitations, tachycardia
+
+Ear and labyrinth disorders: Vertigo
+
+Eye disorders: Blurred vision, visual disturbances
+
+Gastrointestinal disorders: Nausea, vomiting
+
+General disorders and administration site conditions: Edema
+
+Hepatobiliary disorders: Hepatitis
+
+https://reference.medscape.com/drug/quzyttir-zyrtec-cetirizine-343384 14/17
+
+
+
+6/22/26, 8:06 PM Zyrtec, Quzyttir (cetirizine) dosing, indications, interactions, adverse effects, and more
+
+Immune system disorders: Anaphylaxis and hypersensitivity Metabolism and
+nutrition disorders: Increased appetite
+
+Musculoskeletal, connective tissues, and bone disorders: Arthralgia, myalgia
+
+Nervous system disorders: Dizziness, dysgeusia, febrile seizure, movement
+disorders (including dystonia and oculogyric crisis), paraesthesia, seizure (reported
+in subjects with and without a known seizure disorder), tremor
+
+Psychiatric disorders: Aggression and agitation, depression, hallucinations,
+insomnia, nightmare, suicidal ideation
+
+Renal and urinary disorders: Dysuria, urinary retention
+
+Respiratory, thoracic, and mediastinal disorders: Dyspnea
+
+Skin and subcutaneous tissue disorders: Angioedema, fixed drug eruption, pruritus,
+rash and urticaria
+
+Warnings
+
+Contraindications
+
+Hypersensitivity to cetirizine hydrochloride or any of its ingredients, levocetirizine, or
+hydroxyzine
+
+Cautions
+
+Avoid alcohol, sedatives, and tranquilizers, due to increased risk of drowsiness
+
+May cause CNS depression; avoid activities requiring mental alertness until accustomed
+to medication
+
+Use caution in hepatic and renal impairment
+
+The elderly may be more sensitive to adverse effects
+
+FDA safety warning
+
+May 16, 2025
+
+Risk of severe pruritus after discontinuing, especially with chronic use
+
+Inform patients and caregivers of risk who are using prescription or OTC product
+versions
+
+For more information, see https://www.fda.gov/media/186542/download
+
+Pregnancy & Lactation
+
+Pregnancy
+
+There are no adequate and well-controlled studies in pregnant women
+
+Lactation
+
+https://reference.medscape.com/drug/quzyttir-zyrtec-cetirizine-343384 15/17
+
+
+
+6/22/26, 8:06 PM Zyrtec, Quzyttir (cetirizine) dosing, indications, interactions, adverse effects, and more
+
+Cetirizine has been reported to be present in human breast milk
+
+In mice and beagle dogs, studies indicated that cetirizine was excreted in milk
+
+When a drug is present in animal milk, it is likely it will be present in human milk
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+Histamine H1-receptor antagonist; competes with histamine on effector cells in the
+gastrointestinal tract, blood vessels and respiratory tract
+
+Absorption
+
+Peak plasma concentration: 311 ng/mL (PO)
+
+Peak serum time: 1 hr (PO)
+
+Duration: >24 hr (suppression of skin wheal and flare reactions) (PO)
+
+Effects of food
+
+No effect on the extent of cetirizine exposure (AUC) but peak plasma time was
+delayed by 1.7 hr and peak plasma concentration was decreased by 23% in the
+presence of food when cetirizine hydrochloride was administered orally
+
+Distribution
+
+Protein bound: 93%
+
+Vd: 0.56 L/kg
+
+Metabolism
+
+Metabolized to a limited extent by oxidative O-dealkylation to a metabolite with
+
+https://reference.medscape.com/drug/quzyttir-zyrtec-cetirizine-343384 16/17
+
+
+
+6/22/26, 8:06 PM Zyrtec, Quzyttir (cetirizine) dosing, indications, interactions, adverse effects, and more
+
+negligible antihistaminic activity
+
+Enzyme or enzymes responsible for this metabolism have not been identified
+
+Elimination
+
+Half-life: 8.3hr
+
+Clearance:~53 mL/min
+
+Excretion: Urine (70% [50% unchanged]); feces (10%)
+
+Administration
+
+IV Administration
+
+Administer as an IV push over 1-2 minutes
+
+Oral Administration
+
+May take with or without food
+
+Storage
+
+All formulations
+
+Store at 20-25ºC (68-77ºF), excursions permitted to 15-30ºC (59-86ºF)
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/quzyttir-zyrtec-cetirizine-343384 17/17

@@ -1,0 +1,205 @@
+cariprazine (Rx)
+Brand and Other Names: Vraylar
+Classes: Antipsychotics, 2nd Generation; Bipolar Disorder Agents
+
+DOSING & USES
+
+ADULT
+Dosage Forms & Strengths:
+capsule: 1.5mg, 3mg, 4.5mg, 6mg
+
+Schizophrenia
+Treatment of schizophrenia in adults
+• 1.5 mg PO once daily initially; may increase to 3 mg/day on Day 2
+• Depending upon clinical response and tolerability, further dose adjustments can be made in 1.5 to 3-mg increments; dosing range is 1.5-6 mg PO once daily
+• Dosages >6 mg/day do not confer increased effectiveness sufficient to outweigh dose-related adverse reactions
+
+Bipolar I Disorder
+Manic or mixed episodes:
+• Indicated for acute treatment of manic or mixed episodes associated with bipolar I disorder
+• Day 1: 1.5 mg PO
+• Day 2: Increase to 3 mg PO
+• Day 3 and thereafter: Depending on clinical response and tolerability, further dose adjustments can be made in 1.5 to 3-mg increments; dosing range is 3-6 mg PO once daily; not to exceed 6 mg/day
+
+Depressive episodes:
+• Indicated for treatment of depressive episodes associated with bipolar I disorder
+• 1.5 mg PO once daily initially
+• Depending upon clinical response and tolerability, dosage can be increased to 3 mg once daily on Day 15; not to exceed 3 mg once daily
+
+Major Depression Disorder (MDD)
+• Indicated as adjunctive therapy to antidepressants for treatment of MDD
+• 1.5 mg PO once daily initially
+• Depending upon clinical response and tolerability, dosage can be increased to 3 mg once daily on Day 15; not to exceed 3 mg once daily
+• In clinical trials, dosage titration at intervals <14 days resulted in a higher incidence of adverse reactions
+
+Dosage Modifications (Adult)
+Initiating strong or moderate CYP3A4 inhibitor while taking a stable dosage of cariprazine:
+• Initiating strong CYP3A4 inhibitor:
+  - Taking 1.5-3 mg/day: Reduce to 0.5 mg PO once daily
+  - Taking 4.5-6 mg/day: Reduce to 0.75 mg PO once daily
+• Initiating moderate CYP3A4 inhibitor:
+  - Taking 1.5-3 mg/day: Reduce to 0.75 mg PO once daily
+  - Taking 4.5-6 mg/day: Reduce to 1.5 mg PO once daily
+• When the CYP3A4 inhibitor is discontinued, cariprazine dosage may need to be increased based on clinical response and tolerability
+
+Initiating cariprazine while already on a strong CYP3A4 inhibitor:
+• Schizophrenia or bipolar mania: Start at 0.5 mg PO once daily; increase to 0.75 mg PO once daily if needed
+• Bipolar depression or adjunctive therapy for MDD: 0.75 mg PO once daily
+• When CYP3A4 inhibitor is discontinued, cariprazine dosage may need to be increased
+
+Initiating cariprazine while already on a moderate CYP3A4 inhibitor:
+• Schizophrenia or bipolar mania: Start at 1.5 mg PO every other day; increase to 1.5 mg PO every qDay if needed
+• Bipolar depression or adjunctive therapy for MDD: 1.5 mg PO every other day
+• When CYP3A4 inhibitor is discontinued, cariprazine dosage may need to be increased
+
+Hepatic impairment:
+• Mild-to-moderate (Child-Pugh score 5-9): No dosage adjustment required
+• Severe (Child-Pugh score 10-15): Not recommended; has not evaluated in this population
+
+Renal impairment:
+• Mild-to-moderate (CrCl >= 30 mL/min): No dosage adjustment required
+• Severe (CrCl < 30 mL/min): Not recommended; has not evaluated in this population
+
+Dosing Considerations:
+• Following discontinuation, decline in plasma concentrations of active drug and metabolites may not be immediately reflected in patients' clinical symptoms; plasma concentration of cariprazine and its active metabolites will decline by 50% in ~1 week
+• Monitor for adverse effects and treatment response for several weeks after initiating the drug and after each dosage change
+
+
+PEDIATRIC
+Dosage Forms & Strengths:
+capsule: 1.5mg, 3mg, 4.5mg
+
+Schizophrenia
+• Indicated for treatment of schizophrenia in patients aged >= 13 years
+• Recommended dosage range is 1.5-4.5 mg PO once daily
+  - Day 1 (starting dose): 0.5 mg PO once daily
+  - Day 3: Increase to 1.5 mg PO once daily
+  - Day 5: May increase to 3 mg PO once daily
+  - Day 8: May further increase to 4.5 mg PO once daily
+  - Not to exceed 4.5 mg/day
+
+Bipolar I Disorder
+• Indicated for acute treatment of manic or mixed episodes associated with bipolar I disorder in pediatric patients aged >= 10 years
+• Recommended dosage range is 3-4.5 mg PO once daily
+  - Day 1 (starting dose): 0.5 mg PO once daily
+  - Day 3: Increase to 1.5 mg PO once daily
+  - Day 5: Increase to 3 mg PO once daily
+  - Day 8: May increase to 4.5 mg PO once daily
+  - Not to exceed 4.5 mg/day
+
+Dosage Modifications (Pediatric)
+Initiating strong CYP3A4 inhibitor while taking a stable dosage of cariprazine:
+• Taking 1.5-3 mg/day: Reduce to 0.5 mg PO once daily
+• Taking 4.5-6 mg/day: Reduce to 0.75 mg PO once daily
+
+Initiating moderate CYP3A4 inhibitor while taking a stable dosage of cariprazine:
+• Taking 1.5-3 mg/day: Reduce to 0.75 mg PO once daily
+• Taking 4.5-6 mg/day: Reduce to 1.5 mg PO once daily
+
+Initiating cariprazine while already on a strong or moderate CYP3A4 inhibitor:
+• Not recommended in pediatric patients
+
+Hepatic impairment (Pediatric):
+• Mild-to-moderate: No dosage adjustment required
+• Severe: Not recommended
+
+Renal impairment (Pediatric):
+• Mild-to-moderate (CrCl >= 30 mL/min): No dosage adjustment required
+• Severe (CrCl < 30 mL/min): Not recommended
+
+
+INTERACTIONS
+
+Contraindicated (23)
+amisulpride, bosentan, carbamazepine, dabrafenib, dexamethasone, efavirenz, enzalutamide, eslicarbazepine acetate, etravirine, fosphenytoin, lumacaftor/ivacaftor, mitotane, nafcillin, nevirapine, pentobarbital, phenobarbital, phenytoin, primidone, rifabutin, rifampin, rifapentine, St John's Wort, thalidomide. (Primarily due to strong CYP3A4 induction decreasing cariprazine levels, or severe pharmacodynamic synergism like increased sedation/toxicity).
+
+Serious (38)
+alfentanil, apalutamide, benzhydrocodone/acetaminophen, buprenorphine (all forms), ceritinib, chloramphenicol, codeine, fentanyl (all forms), fexinidazole, hydrocodone, hydromorphone, ivosidenib, levodopa inhaled, lonafarnib, lorlatinib, methadone, metoclopramide intranasal, mifepristone, morphine, olopatadine intranasal, oxycodone, oxymorphone, remifentanil, safinamide, scopolamine, selinexor, sufentanil SL, triazolam, tucatinib, zuranolone. (Primarily due to additive CNS depression, respiratory depression, or CYP3A4 metabolism alterations).
+
+Significant - Monitor Closely (243)
+Includes numerous CNS depressants, benzodiazepines (alprazolam, clonazepam, diazepam, lorazepam, etc.), opioids, other antipsychotics (aripiprazole, clozapine, haloperidol, olanzapine, quetiapine, risperidone, etc.), SSRIs/SNRIs/TCAs (amitriptyline, desipramine, paroxetine, venlafaxine, etc.), antihistamines (cetirizine, diphenhydramine, hydroxyzine, etc.), anticonvulsants (gabapentin, pregabalin, topiramate, valproic acid, etc.), triptans (almotriptan, sumatriptan, etc.), antihypertensives (amlodipine, benazepril, captopril, clonidine), HIV antivirals (atazanavir, darunavir, ritonavir), azole antifungals (itraconazole, ketoconazole, posaconazole), macrolide antibiotics (clarithromycin), and antidiabetic agents (insulin, metformin) due to potential for hyperglycemia. 
+(Note: Interaction mechanisms generally involve pharmacodynamic synergism leading to enhanced sedation, hypotension, risk of neuroleptic malignant syndrome, serotonin syndrome, or CYP3A4 enzyme inhibition/induction requiring dosage adjustments).
+
+Minor (5)
+acetazolamide, anastrozole, cyclophosphamide, drospirenone, larotrectinib (Affecting hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown).
+
+
+ADVERSE EFFECTS
+
+>10%
+• Schizophrenia: Extrapyramidal symptoms (24-33%), Parkinsonism (13-18%), Headache (9-18%), Akathisia (9-14%), Insomnia (11-13%)
+• Bipolar mania: Extrapyramidal symptoms (41-45%), Parkinsonism (21-26%), Akathisia (20-21%), Headache (13-14%), Nausea (11-13%), Constipation (6-11%)
+• Bipolar depression: Extrapyramidal symptoms (10-19%)
+• MDD (adjunctive): Akathisia (7-23%), Extrapyramidal symptoms (5-18%), Insomnia (14-16%), Nausea (7-13%), Somnolence (5-11%)
+
+1-10%
+Common effects across indications include: Constipation, Somnolence, Nausea, Abdominal pain, Restlessness, Anxiety, Toothache, Hypertension, Dyspepsia, Vomiting, Dizziness, Agitation, Diarrhea, Pain in extremity, Cough, Tachycardia, Increased weight, Decreased appetite, Dry mouth, Fatigue, Increased CPK, Musculoskeletal stiffness, Back pain, Dystonia, Arthralgia, Hepatic enzyme increased, Nasopharyngitis, Urinary tract infections, Rash, Blurred vision, Pyrexia, Oropharyngeal pain.
+
+<1%
+Gastroesophageal reflux disease, Gastritis, Suicide attempts, Suicide ideation, Hyponatremia, Pollakiuria, Hyperhidrosis, Rhabdomyolysis, Ischemic stroke, Completed suicide, Hepatitis, Tardive dyskinesia, Dystonia.
+
+Postmarketing Reports
+Skin and subcutaneous tissue disorders: Stevens-Johnson syndrome.
+
+
+WARNINGS
+
+Black Box Warnings
+• Increased mortality in elderly patients with dementia-related psychosis. (Not approved for treatment of patients with dementia-related psychosis).
+• Suicidal thoughts and behaviors: Antidepressants increased the risk of suicidal thoughts and behaviors in pediatric and young adult patients in short-term studies. Closely monitor all antidepressant-treated patients. Safety and effectiveness of cariprazine has not been established in pediatric patients.
+
+Contraindications
+• Hypersensitivity to cariprazine.
+
+Cautions
+• Cerebrovascular adverse reactions: Higher incidence of stroke and TIA, including fatal stroke, in elderly patients with dementia-related psychosis.
+• Hypersensitivity reactions: Rash, pruritus, urticaria, angioedema.
+• Neuroleptic Malignant Syndrome (NMS): Monitor for hyperpyrexia, muscle rigidity, delirium, autonomic instability, increased CPK, myoglobinuria, acute renal failure. Discontinue if NMS suspected.
+• Tardive dyskinesia: Potentially irreversible, involuntary, dyskinetic movement syndrome.
+• Late-occurring adverse effects: May appear several weeks after initiating treatment as drug accumulates (monitor for EPS or akathisia).
+• Leukopenia, neutropenia, agranulocytosis: Discontinue if ANC < 1000/mm3.
+• Orthostatic hypotension and syncope: Caution in vulnerable patients.
+• Seizures: Caution in patients with history of seizures.
+• Body temperature dysregulation: Caution with strenuous exercise, heat exposure, dehydration.
+• Esophageal dysmotility and aspiration risk.
+• Fall risk: May cause somnolence, postural hypotension, and motor/sensory instability. Complete fall risk assessments.
+• Drug interactions: Coadministration with strong CYP3A4 inhibitors increases exposure of cariprazine and DDCAR. Effect of inducers is unclear.
+• Metabolic changes: Hyperglycemia (assess fasting glucose), Lipids alteration (obtain fasting lipid profile), Weight gain (monitor weight).
+
+
+PREGNANCY & LACTATION
+
+Pregnancy
+• Neonates exposed to antipsychotic drugs during the third trimester are at risk for extrapyramidal symptoms or withdrawal symptoms after delivery.
+• Pregnancy exposure registry available.
+• Animal data: Fetal developmental toxicity (reduced body weight, skeletal malformations) observed in rats.
+• Pregnancy Categories: Not formally assigned in the provided text, but historic FDA categories A, B, C, D, X are listed as definitions.
+
+Lactation
+• Unknown if distributed in human breast milk (present in rat milk). Consider benefits of breastfeeding against clinical need and potential adverse effects.
+
+
+PHARMACOLOGY
+
+Mechanism of Action
+• Precise mechanism unknown. Efficacy could be mediated through partial agonist activity at central dopamine (D2) and serotonin 5-HT1A receptors.
+• Forms 2 major metabolites, desmethyl cariprazine (DCAR) and didesmethyl cariprazine (DDCAR), equipotent to parent drug.
+
+Pharmacokinetics
+• Absorption: Peak plasma time: 3-6 hr. DCAR and DDCAR mean concentrations are ~30% and 400% of cariprazine after 12 weeks.
+• Distribution: Protein bound: 91-97%.
+• Metabolism: Extensively metabolized by CYP3A4 (and lesser extent CYP2D6) to DCAR and DDCAR. DDCAR further metabolized by CYP3A4.
+• Elimination: Half-Life: 2-4 days (cariprazine); 1-3 weeks (DDCAR). Excretion: Urine (21%); 1.2% unchanged.
+
+
+ADMINISTRATION & STORAGE
+
+Instructions
+• Take orally with or without food.
+
+Discontinuation
+• Decline in plasma concentrations of active drug and metabolites may not be immediately reflected in symptoms. Plasma concentration declines by 50% in ~1 week.
+
+Storage
+• Store at controlled room temperature 20-25°C (68-77°F); excursions permitted between 15-30°C (59-86°F).
+• Protect 3- and 4.5-mg capsules from light to prevent color fading.

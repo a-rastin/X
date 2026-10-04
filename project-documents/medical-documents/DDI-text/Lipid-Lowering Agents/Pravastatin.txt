@@ -1,0 +1,1144 @@
+﻿6/22/26, 5:12 PM Pravastatin dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+pravastatin (Rx)
+Brand and Other Names: Pravachol (DSC)
+Classes: Lipid-Lowering Agents, Statins; HMG-CoA Reductase Inhibitors
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+tablets
+
+10mg
+
+20mg
+
+40mg
+
+80mg
+
+Hyperlipidemia, Primary Prevention of Coronary Events, Secondary Prevention of
+Cardiovascular Events
+
+May be beneficial for prophylaxis of cardiovascular events in at-risk patients, even if
+patients have normal levels of cholesterol.
+
+10-40 mg PO qDay; not to exceed 80 mg/day
+
+Initiate with 10 mg qHS if taking immunosuppressants like cyclosporine concurrently;
+not to exceed 20 mg/day
+
+Limit maximum to 40 mg/day if taking concurrently with clarithromycin
+
+Dose adjustments should be made at intervals of 4 weeks or more; individualize dosing
+according to baseline LDL cholesterol levels
+
+Dosing Considerations
+
+Overdose management
+
+Adverse drug reactions from overdose may include peripheral neuropathy, diarrhea,
+increased K+, myopathy, rhabdomyolysis, acute renal failure, elevated LFTs, eye
+
+https://reference.medscape.com/drug/pravachol-pravastatin-342460 1/20
+
+
+
+6/22/26, 5:12 PM Pravastatin dosing, indications, interactions, adverse effects, and more
+
+lens opacities
+
+Treatment is supportive
+
+Dosing Modifications
+
+Renal impairment
+
+10 mg PO qDay initially
+
+Hepatic impairment
+
+Contraindicated if active liver disease or unexplained persistent elevations of serum
+transaminases
+
+PEDIATRIC
+Dosage Forms & Strengths
+
+tablets
+
+10mg (generic only)
+
+20mg
+
+40mg
+
+80mg
+
+Heterozygous Familial Hypercholesterolemia
+
+8-13 years: 20 mg PO qDay
+
+14-18 years: 40 mg PO qDay
+
+Coadministration with cyclosporine: Initiate with 10 mg qHS; not to exceed 20 mg/day
+
+Limit maximum to 40 mg/day if taking concurrently with clarithromycin
+
+Dose adjustments should be made at intervals of 4 weeks or more; individualize dosing
+according to baseline LDL cholesterol levels
+
+Interactions
+
+https://reference.medscape.com/drug/pravachol-pravastatin-342460 2/20
+
+
+
+6/22/26, 5:12 PM Pravastatin dosing, indications, interactions, adverse effects, and more
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and pravastatin
+No Interactions Found
+Interactions Found
+Contraindicated
+
+Serious
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+Contraindicated (2)
+
+gemfibrozil
+gemfibrozil increases toxicity of pravastatin by Other (see comment).
+Contraindicated. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+red yeast rice
+pravastatin, red yeast rice. Either increases toxicity of the other by
+pharmacodynamic synergism. Contraindicated. May increase creatine kinase levels
+and increase risk of myopathy or rhabdomyolysis; red yeast rice contains monocolin
+K (reportedly identical to lovastatin).
+
+Serious (17)
+
+ceftobiprole medocaril sodium
+ceftobiprole medocaril sodium will increase the level or effect of pravastatin by
+Other (see comment). Avoid or Use Alternate Drug. Ceftobiprole (an OATP1B1/1B3
+inhibitor) may increase plasma concentrations of OATP1B1 and OATP1B3
+substrates.
+
+colchicine
+colchicine, pravastatin. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Increased risk of rhabdomyolysis (incl a
+fatality).
+
+cyclosporine
+cyclosporine increases toxicity of pravastatin by Other (see comment). Avoid or Use
+Alternate Drug. Comment: Cyclosporine, an OATP1B1 inhibitor, with pravastatin,
+OATP1B1 substrate, may increase risk of myopathy. Initiate pravastatin dose at 10
+mg/day and not to exceed 20 mg/day in patients who are also receiving
+cyclosporine.
+
+eltrombopag
+eltrombopag increases toxicity of pravastatin by Other (see comment). Avoid or Use
+Alternate Drug. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+https://reference.medscape.com/drug/pravachol-pravastatin-342460 3/20
+
+
+
+6/22/26, 5:12 PM Pravastatin dosing, indications, interactions, adverse effects, and more
+
+eluxadoline
+pravastatin increases levels of eluxadoline by decreasing metabolism. Avoid or Use
+Alternate Drug. Decrease eluxadoline dose to 75 mg PO BID if coadministered with
+OATP1B1 inhibitors. .
+
+enasidenib
+enasidenib will increase the level or effect of pravastatin by Other (see comment).
+Avoid or Use Alternate Drug. Avoid coadministration of enasidenib with sensitive
+OATP1B1, OATP1B3, or BCRP substrates, for which minimal concentration
+changes may lead to serious toxicities. If unavoidable, decrease the substrate(s)
+dosage in accordance with their Prescribing Information.
+
+fenofibrate
+fenofibrate, pravastatin. Either increases effects of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Fenofibrate may further increase risk for
+rhabdomyolysis when added to optimal statin regimen to further decrease TG and
+increase HDLs.
+
+fenofibrate micronized
+fenofibrate micronized, pravastatin. Either increases effects of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Fenofibrate may further
+increase risk for rhabdomyolysis when added to optimal statin regimen to further
+decrease TG and increase HDLs.
+
+fenofibric acid
+fenofibric acid, pravastatin. Either increases effects of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Fenofibrate may further
+increase risk for rhabdomyolysis when added to optimal statin regimen to further
+decrease TG and increase HDLs.
+
+gemfibrozil
+gemfibrozil, pravastatin. Either increases effects of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Gemfibrozil may further increase risk for
+rhabdomyolysis when added to optimal statin regimen to further decrease TG and
+increase HDLs.
+
+leniolisib
+leniolisib will increase the level or effect of pravastatin by Other (see comment).
+Avoid or Use Alternate Drug. Leniolisib, an OATP1B1 and OATP1B3 inhibitor, may
+increase systemic exposure of these substrates
+
+lonafarnib
+pravastatin will increase the level or effect of lonafarnib by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. If
+coadministration of lonafarnib (a sensitive CYP3A substrate) with weak CYP3A
+inhibitors is unavoidable, reduce to, or continue lonafarnib at starting dose. Closely
+monitor for arrhythmias and events (eg, syncope, heart palpitations) since
+lonafarnib effect on QT interval is unknown.
+
+niacin
+niacin, pravastatin. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Increased risk of rhabdomyolysis (>1 g/day
+
+https://reference.medscape.com/drug/pravachol-pravastatin-342460 4/20
+
+
+
+6/22/26, 5:12 PM Pravastatin dosing, indications, interactions, adverse effects, and more
+
+niacin).
+
+sotorasib
+sotorasib will decrease the level or effect of pravastatin by P-glycoprotein (MDR1)
+efflux transporter. Avoid or Use Alternate Drug. If use is unavoidable, refer to the
+prescribing information of the P-gp substrate for dosage modifications.
+
+tepotinib
+tepotinib will increase the level or effect of pravastatin by P-glycoprotein (MDR1)
+efflux transporter. Avoid or Use Alternate Drug. If concomitant use unavoidable,
+reduce the P-gp substrate dosage if recommended in its approved product labeling.
+
+trofinetide
+trofinetide will increase the level or effect of pravastatin by Other (see comment).
+Avoid or Use Alternate Drug. Trofinetide (an OATP131 and OATP13B inhibitor)
+may increase plasma levels of OATP131 or OATP13B substrates. Avoid
+coadministration with sensitive substrates.
+
+zongertinib
+zongertinib increases levels of pravastatin by altering metabolism. Avoid or Use
+Alternate Drug. Avoid coadministration of zongertinib with certain BCRP substrates
+where minimal concentration changes may lead to serious adverse reactions. If
+unavoidable, monitor for increased adverse reactions and follow recommendations
+provided in the approved product labeling for the BCRP substrate.
+
+Monitor Closely (85)
+
+abemaciclib
+abemaciclib will increase the level or effect of pravastatin by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+abrocitinib
+abrocitinib will increase the level or effect of pravastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+adagrasib
+adagrasib will increase the level or effect of pravastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+aficamten
+aficamten will increase the level or effect of pravastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+apalutamide
+apalutamide will decrease the level or effect of pravastatin by increasing
+elimination. Use Caution/Monitor. Apalutamide weakly induces OATP1B1 and may
+decrease systemic exposure of drugs that are OATP1B1 substrates.
+
+apixaban
+apixaban will increase the level or effect of pravastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/pravachol-pravastatin-342460 5/20
+
+
+
+6/22/26, 5:12 PM Pravastatin dosing, indications, interactions, adverse effects, and more
+
+avapritinib
+pravastatin will increase the level or effect of avapritinib by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+axitinib
+pravastatin increases levels of axitinib by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+
+azithromycin
+azithromycin will increase the level or effect of pravastatin by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+belumosudil
+belumosudil will increase the level or effect of pravastatin by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+bempedoic acid
+bempedoic acid increases levels of pravastatin by unknown mechanism. Modify
+Therapy/Monitor Closely. Avoid concomitant use with pravastatin dose >40 mg.
+
+berotralstat
+berotralstat will increase the level or effect of pravastatin by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor. Monitor or titrate P-gp substrate
+dose if coadministered.
+
+bosutinib
+bosutinib increases levels of pravastatin by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor.
+
+cannabidiol
+cannabidiol increases levels of pravastatin by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor.
+
+capmatinib
+capmatinib will increase the level or effect of pravastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+carbamazepine
+carbamazepine increases toxicity of pravastatin by Other (see comment). Modify
+Therapy/Monitor Closely. Comment: OATP1B1 inhibitors may increase risk of
+myopathy.
+
+carfilzomib
+carfilzomib will increase the level or effect of pravastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+caspofungin
+caspofungin increases toxicity of pravastatin by Other (see comment). Use
+Caution/Monitor. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+cholestyramine
+cholestyramine decreases levels of pravastatin by inhibition of GI absorption.
+
+https://reference.medscape.com/drug/pravachol-pravastatin-342460 6/20
+
+
+
+6/22/26, 5:12 PM Pravastatin dosing, indications, interactions, adverse effects, and more
+
+Applies only to oral form of both agents. Use Caution/Monitor.
+
+clarithromycin
+clarithromycin increases levels of pravastatin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Monitor for myopathy; do not exceed
+pravastatin dose of 40 mg/day when coadministered with clarithromycin .
+
+clarithromycin increases toxicity of pravastatin by Other (see comment). Use
+Caution/Monitor. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+clotrimazole
+clotrimazole increases toxicity of pravastatin by Other (see comment). Use
+Caution/Monitor. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+cobicistat
+cobicistat will increase the level or effect of pravastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+For HMG-CoA reductase inhibitors that are not contraindicated with cobicistat, start
+with the lowest recommended dose and titrate while monitoring for safety.
+
+cobicistat will increase the level or effect of pravastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+crizotinib
+crizotinib increases levels of pravastatin by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor.
+
+danicopan
+danicopan will increase the level or effect of pravastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor. Danicopan increases plasma
+concentrations of P-gp substrates; consider dose reduction of P-gp substrates
+where minimal concentration changes may lead to serious adverse reactions.
+
+daptomycin
+pravastatin, daptomycin. Either increases toxicity of the other by Other (see
+comment). Modify Therapy/Monitor Closely. Comment: Coadministration of
+daptomycin with HMG-CoA reductase inhibitors may increase CPK levels and risk
+for myopathy; consider temporary suspension of HMG-CoA reductase inhibitors
+during daptomycin therapy.
+
+daridorexant
+daridorexant will increase the level or effect of pravastatin by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+darunavir
+darunavir increases levels of pravastatin by unknown mechanism. Use
+Caution/Monitor.
+
+darunavir will increase the level or effect of pravastatin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+For HMG-CoA reductase inhibitors that are not contraindicated with darunavir, start
+with the lowest recommended dose and titrate while monitoring for safety.
+
+https://reference.medscape.com/drug/pravachol-pravastatin-342460 7/20
+
+
+
+6/22/26, 5:12 PM Pravastatin dosing, indications, interactions, adverse effects, and more
+
+dronedarone
+dronedarone will increase the level or effect of pravastatin by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+elafibranor
+elafibranor, pravastatin. Either increases toxicity of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Both drugs increase risk for CPK elevation and/or
+myalgia.
+
+elagolix
+elagolix will increase the level or effect of pravastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+eliglustat
+eliglustat increases effects of pravastatin by P-glycoprotein (MDR1) efflux
+transporter. Modify Therapy/Monitor Closely. Monitor therapeutic drug
+concentrations, as indicated, or consider reducing the dosage of the P-gp substrate
+and titrate to clinical effect.
+
+encorafenib
+encorafenib will increase the level or effect of pravastatin by Other (see comment).
+Modify Therapy/Monitor Closely. Encorafenib (a OATP1B1, OATP1B3, and BCRP
+inhibitor) may increase the concentration and toxicities of OATP1B1, OATP1B3, and
+BCRP substrates. Closely monitor for signs and symptoms of increased exposure
+and consider adjusting the dose of these substrates. Screen reader support
+enabled.
+
+erythromycin base
+erythromycin base increases toxicity of pravastatin by Other (see comment). Use
+Caution/Monitor. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+erythromycin ethylsuccinate
+erythromycin ethylsuccinate increases toxicity of pravastatin by Other (see
+comment). Use Caution/Monitor. Comment: OATP1B1 inhibitors may increase risk
+of myopathy.
+
+erythromycin lactobionate
+erythromycin lactobionate increases toxicity of pravastatin by Other (see comment).
+Use Caution/Monitor. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+erythromycin stearate
+erythromycin stearate increases toxicity of pravastatin by Other (see comment). Use
+Caution/Monitor. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+finerenone
+pravastatin will increase the level or effect of finerenone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Monitor serum potassium during initiation and dosage adjustment of either
+finererone or weak CYP3A4 inhibitors. Adjust finererone dosage as needed.
+
+flibanserin
+pravastatin will increase the level or effect of flibanserin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Increased
+
+https://reference.medscape.com/drug/pravachol-pravastatin-342460 8/20
+
+
+
+6/22/26, 5:12 PM Pravastatin dosing, indications, interactions, adverse effects, and more
+
+flibanserin adverse effects may occur if coadministered with multiple weak CYP3A4
+inhibitors.
+
+flibanserin will increase the level or effect of pravastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+fostemsavir
+fostemsavir will increase the level or effect of pravastatin by Other (see comment).
+Modify Therapy/Monitor Closely. Fostemsavir inhibits OATP1B1/3 transporter. If
+possible, avoid coadministration or modify dose of OATP1B1/3 substrates
+coadministered with fostemsavir. Use lowest possible starting dose for statins and
+monitor for associated adverse events.
+
+glecaprevir/pibrentasvir
+glecaprevir/pibrentasvir increases levels of pravastatin by Other (see comment).
+Modify Therapy/Monitor Closely. Comment: Increased statin concentrations
+resulting from OATP1B1 inhibition may increase risk of myopathy, including
+rhabdomyolysis. If coadministered, reduce pravastatin dose by 50%.
+
+glyburide
+glyburide increases toxicity of pravastatin by Other (see comment). Use
+Caution/Monitor. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+imlunestrant
+imlunestrant increases levels of pravastatin by P-glycoprotein (MDR1) efflux
+transporter. Modify Therapy/Monitor Closely. Monitor for pravastatin adverse effects
+if coadministered with moderate P-gp inhibitors. Modify dose if needed. .
+
+isavuconazonium sulfate
+pravastatin will increase the level or effect of isavuconazonium sulfate by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+istradefylline
+istradefylline will increase the level or effect of pravastatin by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor. Istradefylline 40 mg/day increased
+peak levels and AUC of P-gp substrates in clinical trials. Consider dose reduction of
+sensitive P-gp substrates.
+
+ivacaftor
+ivacaftor increases levels of pravastatin by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor. Ivacaftor and its M1 metabolite has the potential
+to inhibit P-gp; may significantly increase systemic exposure to sensitive P-gp
+substrates with a narrow therapeutic index.
+
+pravastatin increases levels of ivacaftor by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Monitor when coadministered with
+weak CYP3A4 inhibitors .
+
+ketoconazole
+ketoconazole increases toxicity of pravastatin by Other (see comment). Use
+Caution/Monitor. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+lanthanum carbonate
+
+https://reference.medscape.com/drug/pravachol-pravastatin-342460 9/20
+
+
+
+6/22/26, 5:12 PM Pravastatin dosing, indications, interactions, adverse effects, and more
+
+lanthanum carbonate decreases levels of pravastatin by cation binding in GI tract.
+Use Caution/Monitor. Administer statin at least 2 hr before or 2 hr after lanthanum.
+Monitor serum concentrations.
+
+lemborexant
+pravastatin will increase the level or effect of lemborexant by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Lower nightly dose of lemborexant recommended if coadministered with weak
+CYP3A4 inhibitors. See drug monograph for specific dosage modification.
+
+letermovir
+letermovir increases levels of pravastatin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Coadministration of letermovir with
+pravastatin may require a dosage reduction. Closely monitor patients for myopathy
+and rhabdomyolysis. When letermovir is coadministered with cyclosporine, the
+dose of pravastatin should not exceed 20 mg PO qDay.
+
+levoketoconazole
+levoketoconazole increases toxicity of pravastatin by Other (see comment). Use
+Caution/Monitor. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+lonafarnib
+lonafarnib will increase the level or effect of pravastatin by P-glycoprotein (MDR1)
+efflux transporter. Modify Therapy/Monitor Closely. Lonafarnib is a weak P-gp
+inhibitor. Monitor for adverse reactions if coadministered with P-gp substrates
+where minimal concentration changes may lead to serious or life-threatening
+toxicities. Reduce P-gp substrate dose if needed.
+
+mavorixafor
+mavorixafor will increase the level or effect of pravastatin by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor. Caution if mavorixafor (a P-gp
+inhibitor) is coadministered with a sensitive P-gp substrate where minimal
+substrate concentration changes may lead to serious adverse effects.
+
+mesterolone
+mesterolone increases toxicity of pravastatin by decreasing metabolism. Use
+Caution/Monitor. Risk of rhabdomyolysis (theoretical interaction based on case
+reports of combination of danazol and >20 mg/day lovastatin).
+
+metyrapone
+metyrapone increases toxicity of pravastatin by Other (see comment). Use
+Caution/Monitor. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+midazolam intranasal
+pravastatin will increase the level or effect of midazolam intranasal by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+Coadministration of mild CYP3A4 inhibitors with midazolam intranasal may cause
+higher midazolam systemic exposure, which may prolong sedation.
+
+mifepristone
+mifepristone increases toxicity of pravastatin by Other (see comment). Use
+Caution/Monitor. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+https://reference.medscape.com/drug/pravachol-pravastatin-342460 10/20
+
+
+
+6/22/26, 5:12 PM Pravastatin dosing, indications, interactions, adverse effects, and more
+
+mipomersen
+mipomersen increases toxicity of pravastatin by Other (see comment). Use
+Caution/Monitor. Comment: Both drugs have potential to increase hepatic enzymes;
+monitor LFTs; OATP1B1 inhibitors may increase risk of myopathy.
+
+nelfinavir
+nelfinavir increases toxicity of pravastatin by Other (see comment). Use
+Caution/Monitor. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+ombitasvir/paritaprevir/ritonavir & dasabuvir (DSC)
+ombitasvir/paritaprevir/ritonavir & dasabuvir (DSC) will increase the level or effect
+of pravastatin by decreasing hepatic clearance. Modify Therapy/Monitor Closely.
+Maximum daily dose of pravastatin should be limited to 40 mg/day
+
+ombitasvir/paritaprevir/ritonavir & dasabuvir (DSC) increases toxicity of pravastatin
+by Other (see comment). Use Caution/Monitor. Comment: OATP1B1 inhibitors may
+increase risk of myopathy.
+
+paclitaxel
+paclitaxel increases toxicity of pravastatin by Other (see comment). Use
+Caution/Monitor. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+pazopanib
+pazopanib increases toxicity of pravastatin by Other (see comment). Use
+Caution/Monitor. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+pioglitazone
+pioglitazone increases toxicity of pravastatin by Other (see comment). Use
+Caution/Monitor. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+ponatinib
+ponatinib increases levels of pravastatin by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor.
+
+ponatinib increases toxicity of pravastatin by Other (see comment). Use
+Caution/Monitor. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+pretomanid
+pretomanid will increase the level or effect of pravastatin by Other (see comment).
+Use Caution/Monitor. Increase monitoring for drug-related adverse effects if
+pretomanid is coadministered with sensitive OATP1B3 substrates.
+
+ranolazine
+ranolazine increases toxicity of pravastatin by Other (see comment). Use
+Caution/Monitor. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+remibrutinib
+remibrutinib increases levels of pravastatin by P-glycoprotein (MDR1) efflux
+transporter. Modify Therapy/Monitor Closely. Monitor for pravastatin adverse effects
+if coadministered with moderate P-gp inhibitors. Modify dose if needed. .
+
+repaglinide
+
+https://reference.medscape.com/drug/pravachol-pravastatin-342460 11/20
+
+
+
+6/22/26, 5:12 PM Pravastatin dosing, indications, interactions, adverse effects, and more
+
+repaglinide increases toxicity of pravastatin by Other (see comment). Use
+Caution/Monitor. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+resmetirom
+resmetirom will increase the level or effect of pravastatin by Other (see comment).
+Modify Therapy/Monitor Closely. Resmetirom inhibits BCRP and OAT1B1/3
+transporters. Monitor for statin-related adverse reactions, including but not limited
+to elevation of liver tests, myopathy, and rhabdomyolysis. Limit daily dosage of
+statin as recommended.
+
+rifampin
+rifampin increases toxicity of pravastatin by Other (see comment). Use
+Caution/Monitor. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+rilzabrutinib
+rilzabrutinib increases levels of pravastatin by Other (see comment). Use
+Caution/Monitor. Comment: Increases exposure and adverse effects of OATP1B1
+substrates.
+
+ritonavir
+ritonavir increases toxicity of pravastatin by Other (see comment). Use
+Caution/Monitor. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+rosiglitazone
+rosiglitazone increases toxicity of pravastatin by Other (see comment). Use
+Caution/Monitor. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+sacubitril/valsartan
+sacubitril/valsartan increases toxicity of pravastatin by Other (see comment). Use
+Caution/Monitor. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+pravastatin will increase the level or effect of sacubitril/valsartan by Other (see
+comment). Use Caution/Monitor. The results from an in vitro study with human liver
+tissue indicate that valsartan is a substrate of the hepatic uptake transporter
+OATP1B1; coadministration with OATP1B1 inhibitors may increase valsartan
+systemic exposure
+
+sarecycline
+sarecycline will increase the level or effect of pravastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor. Monitor for toxicities of P-gp substrates
+that may require dosage reduction when coadministered with P-gp inhibitors.
+
+stiripentol
+stiripentol will increase the level or effect of pravastatin by P-glycoprotein (MDR1)
+efflux transporter. Modify Therapy/Monitor Closely. Consider reducing the dose of
+P-glycoprotein (P-gp) substrates, if adverse reactions are experienced when
+administered concomitantly with stiripentol.
+
+sunvozertinib
+sunvozertinib increases levels of pravastatin by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor. Follow substrate recommendations.
+
+tacrolimus
+
+https://reference.medscape.com/drug/pravachol-pravastatin-342460 12/20
+
+
+
+6/22/26, 5:12 PM Pravastatin dosing, indications, interactions, adverse effects, and more
+
+tacrolimus increases toxicity of pravastatin by Other (see comment). Use
+Caution/Monitor. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+telmisartan
+telmisartan increases toxicity of pravastatin by Other (see comment). Use
+Caution/Monitor. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+tenapanor
+tenapanor decreases levels of pravastatin by Other (see comment). Use
+Caution/Monitor. Comment: Tenapanor (an inhibitor of intestinal uptake transporter,
+OATP2B1) may reduce the exposure of OATP2B1 substrates.
+
+tinidazole
+pravastatin will increase the level or effect of tinidazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+tucatinib
+tucatinib will increase the level or effect of pravastatin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor. Consider reducing the dosage of P-gp
+substrates, where minimal concentration changes may lead to serious or life-
+threatening toxicities.
+
+valsartan
+pravastatin will increase the level or effect of valsartan by Other (see comment).
+Use Caution/Monitor. The results from an in vitro study with human liver tissue
+indicate that valsartan is a substrate of the hepatic uptake transporter OATP1B1;
+coadministration with OATP1B1 inhibitors may increase valsartan systemic
+exposure
+
+valsartan increases toxicity of pravastatin by Other (see comment). Use
+Caution/Monitor. Comment: OATP1B1 inhibitors may increase risk of myopathy.
+
+vemurafenib
+vemurafenib increases levels of pravastatin by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor.
+
+vimseltinib
+vimseltinib increases levels of pravastatin by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor. If coadministration cannot be avoided, take the
+drug 4 hours before taking the P-gp substrate; increases risk of myopathy,
+rhabdomyolysis; monitor creatinine kinase, myopathy symptoms.
+
+warfarin
+pravastatin increases effects of warfarin by anticoagulation. Use Caution/Monitor.
+Dosage adjustment of anticoagulant based in INR and clinical response may be
+necessary.
+
+Minor (8)
+
+coenzyme Q10
+pravastatin decreases levels of coenzyme Q10 by unspecified interaction
+
+https://reference.medscape.com/drug/pravachol-pravastatin-342460 13/20
+
+
+
+6/22/26, 5:12 PM Pravastatin dosing, indications, interactions, adverse effects, and more
+
+mechanism. Minor/Significance Unknown.
+
+colestipol
+colestipol decreases levels of pravastatin by inhibition of GI absorption. Applies
+only to oral form of both agents. Minor/Significance Unknown.
+
+isradipine
+isradipine decreases levels of pravastatin by unknown mechanism.
+Minor/Significance Unknown.
+
+orlistat
+orlistat increases effects of pravastatin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+ruxolitinib
+pravastatin will increase the level or effect of ruxolitinib by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+ruxolitinib topical
+pravastatin will increase the level or effect of ruxolitinib topical by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+trazodone
+trazodone increases levels of pravastatin by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+voclosporin
+voclosporin will increase the level or effect of pravastatin by Other (see comment).
+Minor/Significance Unknown. Information suggests voclosporin (an OATP1B1
+inhibitor) may increase in the concentration of OATP1B1 substrates is possible.
+Monitor for adverse reactions of OATP1B1 substrates when coadministered with
+voclosporin.
+
+Adverse Effects
+
+1-10%
+
+Nausea/vomiting (7%)
+
+Diarrhea (6%)
+
+Headache (2-6%)
+
+Chest pain (4%)
+
+Fatigue (4%)
+
+Rash (4%)
+
+Cough (3%)
+
+https://reference.medscape.com/drug/pravachol-pravastatin-342460 14/20
+
+
+
+6/22/26, 5:12 PM Pravastatin dosing, indications, interactions, adverse effects, and more
+
+Heartburn (3%)
+
+Flulike symptoms (2%)
+
+Myalgia (2%)
+
+Frequency Not Defined
+
+Myopathy
+
+Rhabdomyolysis
+
+Postmarketing Reports
+
+Musculoskeletal: Polymyositis
+
+Respiratory: Interstitial lung disease
+
+Psychiatric: Nightmare
+
+Nervous system: Dysfunction of certain cranial nerves (including alteration of taste,
+impairment of extraocular movement, facial paresis), peripheral nerve palsy; rare
+postmarketing reports of cognitive impairment (eg, memory loss, forgetfulness, amnesia,
+memory impairment, confusion) associated with statin use; cognitive impairment was
+generally nonserious, and reversible upon statin discontinuation, with variable times to
+symptom onset (1 day to years) and symptom resolution (median of 3 weeks)
+
+Warnings
+
+Contraindications
+
+Hypersensitivity
+
+Active liver disease elevated LFTs, decompensated cirrhosis
+
+Cautions
+
+Reduced cholesterol synthesis could theoretically lead to a reduction in gonadal or
+adrenal steroid hormone production; data is inconsistent; evaluate and treat as clinically
+indicated patients with signs or symptoms of endocrine dysfunction; use caution when
+coadministering with concomitant medication that could reduce steroid hormone levels,
+including ketoconazole, cimetidine, or spironolactone
+
+Fatal and nonfatal hepatic failure reported with use; interrupt therapy if symptoms of
+hepatotoxicity occur, including jaundice or hyperbilirubinemia; obtain liver enzyme tests
+at baseline and as clinically indicated; alcohol may increase hepatic effects; patient
+should avoid excessive intake of alcohol
+
+Nonserious and reversible cognitive side effects may occur
+
+Increased blood sugar and glycosylated hemoglobin (HbA1c) levels reported with statin
+intake; optimize lifestyle measures, including regular exercise, maintaining a healthy
+body weight, and making healthy food choices
+
+https://reference.medscape.com/drug/pravachol-pravastatin-342460 15/20
+
+
+
+6/22/26, 5:12 PM Pravastatin dosing, indications, interactions, adverse effects, and more
+
+Risk of rhabdomyolysis; predisposing factors include advanced age (≥65), uncontrolled
+hypothyroidism, and renal impairment; discontinue if myopathy develops
+
+Instruct patients to promptly report any unexplained muscle pain, tenderness or
+weakness, particularly if accompanied by malaise or fever
+
+Max response 4-6 weeks
+
+Temporarily discontinue therapy in patients experiencing an acute or serious condition at
+high risk of developing renal failure secondary to rhabdomyolysis, eg, sepsis; shock;
+severe hypovolemia; major surgery; trauma; severe metabolic, endocrine, or electrolyte
+disorders; or uncontrolled epilepsy
+
+Rule out secondary causes of hyperlipidemia before initiating therapy
+
+Hepatic dysfunction
+
+Use caution in recent liver disease, symptoms of liver disease; discontinue therapy if
+markedly elevated CK levels occur or myopathy is diagnosed or suspected; muscle
+symptoms and CK increases may resolve if therapy is discontinued
+
+Increases in serum transaminases reported with therapy; in most cases, these
+changes appeared soon after initiation, were transient, were not accompanied by
+symptoms, and resolved or improved on continued therapy or after a brief
+interruption in therapy
+
+Persistent increases to more than three times the ULN in serum transaminases have
+occurred; marked persistent increases of hepatic transaminases have also occurred;
+there have been rare postmarketing reports of fatal and non-fatal hepatic failure in
+patients taking this therapy and other statins
+
+Patients who consume substantial quantities of alcohol and/or have a history of
+liver disease may be at increased risk for hepatic injury
+
+Consider liver enzyme testing before therapy initiation and when clinically indicated
+thereafter
+
+Therapy is contraindicated in patients with acute liver failure or decompensated
+cirrhosis; if serious hepatic injury with clinical symptoms and/or hyperbilirubinemia
+or jaundice occurs, promptly discontinue therapy
+
+Immune-mediated necrotizing myopathy
+
+Immune-mediated necrotizing myopathy (IMNM), an autoimmune myopathy,
+reported with statin use, including reports of recurrence when the same or a
+different statin was administered
+
+IMNM is characterized by muscle biopsy showing necrotizing myopathy without
+significant inflammation improvement with immunosuppressive agents, proximal
+muscle weakness, and elevated serum creatine kinase, which persist despite
+discontinuation of statin treatment
+
+Treatment with immunosuppressive agents may be required
+
+Advice all patients starting therapy or whose dose is being increased, about the risk
+of myopathy, including rhabdomyolysis
+
+Patients should report promptly any unexplained muscle pain, tenderness, or
+weakness particularly if accompanied by malaise or fever or if muscle signs and
+symptoms persist after discontinuing therapy; additional neuromuscular and
+serologic testing may be necessary
+
+https://reference.medscape.com/drug/pravachol-pravastatin-342460 16/20
+
+
+
+6/22/26, 5:12 PM Pravastatin dosing, indications, interactions, adverse effects, and more
+
+Therapy should be discontinued immediately if myopathy is diagnosed or suspected
+
+Discontinue therapy if markedly elevated creatine kinase (CK) levels occur or if
+myopathy diagnosed or suspected
+
+Therapy should be temporarily withheld in any patient experiencing an acute or
+serious condition predisposing to development of renal failure secondary to
+rhabdomyolysis, eg, sepsis; hypotension; dehydration; major surgery; trauma;
+severe metabolic, endocrine, and electrolyte disorders; or uncontrolled epilepsy
+
+Consider risk of IMNM carefully prior to initiation of a different statin
+
+If therapy is initiated with a different statin, monitor for signs and symptoms of
+IMNM
+
+Additional neuromuscular and serologic testing may be necessary
+
+Treatment with immunosuppressive agents may be required
+
+Consider risk of IMNM carefully prior to initiation of a different statin
+
+If therapy is initiated with a different statin, monitor for signs and symptoms of
+IMNM
+
+Drug interaction overview
+
+Not recommended in patients taking gemfibrozil; there are pravastatin dosage
+restrictions for patients taking cyclosporin and select macrolide antibiotics
+
+The following drugs when used concomitantly with pravastatin may increase risk of
+myopathy and rhabdomyolysis, niacin, fibrates, and colchicine
+
+Pregnancy & Lactation
+
+Pregnancy
+
+Discontinue therapy when pregnancy recognized; alternatively, consider ongoing
+therapeutic needs of individual patient; therapy decreases synthesis of cholesterol and
+possibly other biologically active substances derived from cholesterol; therefore, therapy
+may cause fetal harm when administered to pregnant patients based on mechanism of
+action
+
+Treatment of hyperlipidemia is not generally necessary during pregnancy;
+atherosclerosis is a chronic process and discontinuation of lipid-lowering drugs during
+pregnancy should have little impact on outcome of long-term therapy of primary
+hyperlipidemia for most patients
+
+Available data from case series and prospective and retrospective observational cohort
+studies over decades of use with statins in pregnant women have not identified a drug-
+associated risk of major congenital malformations
+
+Published data from prospective and retrospective observational cohort studies with use
+in pregnant women are insufficient to determine if there is drug-associated risk of
+miscarriage
+
+Animal data
+
+https://reference.medscape.com/drug/pravachol-pravastatin-342460 17/20
+
+
+
+6/22/26, 5:12 PM Pravastatin dosing, indications, interactions, adverse effects, and more
+
+In animal reproduction studies, no evidence of fetal malformations was seen in
+pregnant rats or rabbits orally administered pravastatin during period of
+organogenesis at doses that resulted in 10 times and 120 times, respectively, the
+human exposure at maximum recommended human dose (MRHD) of 80 mg/day,
+based on body surface area (mg/m2)
+
+An imbalance in some fetal skeletal variations increased offspring mortality, and
+developmental delays occurred when pregnant rats were exposed to 10 times to
+12 times MRHD during organogenesis to parturition
+
+Contraception
+
+Advise females of reproductive potential to use effective contraception during treatment
+
+FDA MedWatch
+
+On July 20, 2021, the FDA request to remove the contraindication against HMG-
+CoA reductase inhibitors in pregnant females
+
+Despite the changes, most females found to be pregnant should stop therapy
+
+Lactation
+
+Based on one lactation study in published literature, pravastatin is present in human
+milk; there is no available information on effects of drug on breastfed infant or effects of
+drug on milk production
+
+Statins, decrease cholesterol synthesis and possibly synthesis of other biologically active
+substances derived from cholesterol and may cause harm to breastfed infant
+
+Because of potential for serious adverse reactions in breastfed infant, based on
+mechanism of action, advise patients that breastfeeding is not recommended during
+treatment
+
+FDA MedWatch
+
+On July 20, 2021, the FDA request to remove the contraindication against HMG-
+CoA reductase inhibitors in pregnant females
+
+Breastfeeding is still not recommended if taking statins; drug may still pass through
+milk and pose a risk breastfed children
+
+For patients with lower risk, temporarily stop statin therapy until breastfeeding
+ends
+
+Patients who are at high risk of heart attack or stroke who require statins after
+delivery should not breastfeed and should use alternatives such as infant formula
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+https://reference.medscape.com/drug/pravachol-pravastatin-342460 18/20
+
+
+
+6/22/26, 5:12 PM Pravastatin dosing, indications, interactions, adverse effects, and more
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+HMG-CoA reductase inhibitor; inhibits the rate-limiting step in cholesterol biosynthesis
+by competitively inhibiting HMG-CoA reductase
+
+Absorption
+
+Bioavailability: 17%
+
+Onset: 2 weeks
+
+Peak effect: 4 weeks
+
+Peak serum time: 1-1.5 hr
+
+Distribution
+
+Protein bound: 43-55%
+
+Vd: 0.46 L/kg
+
+Metabolism
+
+Undergoes extensive first-pass extraction by liver
+
+Metabolites: 3-alpha-hydroxy isomer and 3-alpha, 5-beta, 6-beta trihydroxy metabolite
+(inactive)
+
+Elimination
+
+Half-life: 2.6-3.2 hr
+
+Excretion: Feces (71%); urine (<20%)
+
+Pharmacogenomics
+
+SLCO1B1 (OATP1B1) CC genotype significantly increases AUCs of parent drug and
+metabolites compared with the CT or TT genotypes
+
+This polymorphism is proposed to reduce transport into the liver, the main site of statin
+metabolism and elimination, resulting in elevated plasma concentrations
+
+SLCO1B1 polymorphism is thought to have a lesser effect on the more hydrophilic
+statins (eg, rosuvastatin, fluvastatin), compared with more those that are more lipophilic
+(eg, atorvastatin, pravastatin, simvastatin)
+
+https://reference.medscape.com/drug/pravachol-pravastatin-342460 19/20
+
+
+
+6/22/26, 5:12 PM Pravastatin dosing, indications, interactions, adverse effects, and more
+
+Other genetic polymorphisms of elimination (eg, CYP450, P-glycoprotein) for each
+individual drug must also be considered to explain variability for statin clearance among
+patients that exhibit SCLO1B1 polymorphism
+
+SLCO1B1 CC genotype is most common in Caucasians and Asians (15%)
+
+Risk of myopathy is 2.6- to 4.3-fold higher if the C allele is present and 16.9-fold higher
+in CC homozygotes compared with TT homozygotes
+
+Genetic testing laboratories
+
+Optivia Biotechnology, Inc (https://optiviabio.com)
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/pravachol-pravastatin-342460 20/20

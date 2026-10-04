@@ -1,0 +1,2053 @@
+﻿6/22/26, 5:00 PM Microzide, Inzirqo (hydrochlorothiazide) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+hydrochlorothiazide (Rx)
+Brand and Other Names: Microzide, Inzirqo, HCTZ
+Classes: Diuretics, Thiazide
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+tablet/capsule
+
+12.5mg
+
+25mg
+
+50mg
+
+powder for oral suspension (Inzirqo)
+
+10mg/mL after reconstitution (800mg/80mL)
+
+Hypertension
+
+12.5-50 mg PO once daily
+
+Edema
+
+25-100 mg PO once daily or twiced daily; not to exceed 200 mg/day
+
+https://reference.medscape.com/drug/microzide-inzirqo-hydrochlorothiazide-342412 1/36
+
+
+
+6/22/26, 5:00 PM Microzide, Inzirqo (hydrochlorothiazide) dosing, indications, interactions, adverse effects, and more
+
+Hypertension in Heart Failure (Off-label)
+
+25 mg PO qDay or twice daily; not to exceed 200 mg/day
+
+Mild Fluid Retention in Heart Failure (Off-label)
+
+25 mg PO qDay or twice daily; not to exceed 200 mg/day
+
+Dosing Considerations
+
+Overdose management
+
+Normal saline may be used for volume replacement
+
+Dopamine or norepinephrine may be used to treat hypotension
+
+If dysrhythmia due to decreased potassium or magnesium is suspected, replace
+aggressively
+
+If no symptoms are noted after 6 hours, discontinue treatment
+
+Dosing Modifications
+
+Renal impairment
+
+CrCl <10 mL/min: Avoid use
+
+CrCl ≥10 mL/min: Dose adjustment not necessary; not effective with CrCl <30
+mL/min unless used in combination with loop diuretic
+
+PEDIATRIC
+Dosage Forms & Strengths
+
+tablet/capsule
+
+12.5mg
+
+25mg
+
+50mg
+
+powder for oral suspension (Inzirqo)
+
+10mg/mL after reconstitution (800mg/80mL)
+
+Hypertension
+
+<6 months: 1-3 mg/kg/day PO divided q12hr; not to exceed 37.5 mg/day 
+
+6 months-2 years: 1-2 mg/kg/day PO in single daily dose or divided twice daily; not to
+exceed 37.5 mg/day
+
+2-12 years: 1-3 mg/kg/day; not to exceed 3 mg/kg/day (100 mg/day)
+
+https://reference.medscape.com/drug/microzide-inzirqo-hydrochlorothiazide-342412 2/36
+
+
+
+6/22/26, 5:00 PM Microzide, Inzirqo (hydrochlorothiazide) dosing, indications, interactions, adverse effects, and more
+
+Edema
+
+<6 months: 1-3 mg/kg/day PO divided q12hr; not to exceed 37.5 mg/day 
+
+6 months-2 years: 1-3 mg/kg/day PO in single daily dose or divided twice daily; not to
+exceed 37.5 mg/day
+
+2-12 years: 1-3 mg/kg/day; not to exceed 3 mg/kg/day (100 mg/day)
+
+GERIATRIC
+Increased hypotension and side effects in elderly
+
+Potential for electrolyte imbalance in elderly; monitor serum electrolytes
+
+Diuresis
+
+12.5-25 mg/day PO; titrated in increments of 12.5 mg/day
+
+Increased electrolyte disturbances are seen with dosages >50 mg/day
+
+Interactions
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and
+hydrochlorothiazide
+No Interactions Found
+Interactions Found
+Contraindicated
+
+Serious
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+Contraindicated (0)
+
+Serious (12)
+
+aminolevulinic acid oral
+aminolevulinic acid oral, hydrochlorothiazide. Either increases toxicity of the other
+by pharmacodynamic synergism. Avoid or Use Alternate Drug. Avoid administering
+other phototoxic drugs with aminolevulinic acid oral for 24 hr during perioperative
+period.
+
+aminolevulinic acid topical
+
+https://reference.medscape.com/drug/microzide-inzirqo-hydrochlorothiazide-342412 3/36
+
+
+
+6/22/26, 5:00 PM Microzide, Inzirqo (hydrochlorothiazide) dosing, indications, interactions, adverse effects, and more
+
+hydrochlorothiazide increases toxicity of aminolevulinic acid topical by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Coadministration of
+photosensitizing drugs may enhance the phototoxic reaction to photodynamic
+therapy with aminolevulinic acid.
+
+carbamazepine
+carbamazepine, hydrochlorothiazide. Either increases effects of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Increased risk of
+systemic hyponatremia.
+
+cyclophosphamide
+hydrochlorothiazide increases toxicity of cyclophosphamide by decreasing renal
+clearance. Avoid or Use Alternate Drug. Increased myelosuppressive effects.
+
+cyclosporine
+cyclosporine, hydrochlorothiazide. Either increases toxicity of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Increased risk of
+systemic hyponatremia.
+
+dofetilide
+hydrochlorothiazide increases levels of dofetilide by decreasing renal clearance.
+Contraindicated. Risk of prolonged QTc interval.
+
+isocarboxazid
+isocarboxazid, hydrochlorothiazide. Other (see comment). Contraindicated.
+Comment: Additive hypotensive effects may be seen when MAOI's are combined
+with antihypertensives.
+
+lofexidine
+lofexidine, hydrochlorothiazide. Either increases effects of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Avoid coadministration
+with other drugs that decrease pulse or blood pressure to mitigate risk of excessive
+bradycardia and hypotension.
+
+methyl aminolevulinate
+hydrochlorothiazide, methyl aminolevulinate. Either increases toxicity of the other
+by pharmacodynamic synergism. Avoid or Use Alternate Drug. Each drug may
+increase the photosensitizing effect of the other.
+
+squill
+hydrochlorothiazide increases toxicity of squill by Other (see comment). Avoid or
+Use Alternate Drug. Comment: Potassium depletion may enhance toxicity of squill.
+
+tretinoin
+hydrochlorothiazide, tretinoin. Mechanism: pharmacodynamic synergism. Avoid or
+Use Alternate Drug. Increased phototoxicity.
+
+tretinoin topical
+hydrochlorothiazide, tretinoin topical. Mechanism: pharmacodynamic synergism.
+Avoid or Use Alternate Drug. Increased phototoxicity.
+
+https://reference.medscape.com/drug/microzide-inzirqo-hydrochlorothiazide-342412 4/36
+
+
+
+6/22/26, 5:00 PM Microzide, Inzirqo (hydrochlorothiazide) dosing, indications, interactions, adverse effects, and more
+
+Monitor Closely (172)
+
+acebutolol
+acebutolol increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+aceclofenac
+aceclofenac increases and hydrochlorothiazide decreases serum potassium. Effect
+of interaction is not clear, use caution. Use Caution/Monitor.
+
+acemetacin
+acemetacin increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+albuterol
+hydrochlorothiazide and albuterol both decrease serum potassium. Use
+Caution/Monitor.
+
+albuterol inhaled
+hydrochlorothiazide and albuterol inhaled both decrease serum potassium. Use
+Caution/Monitor.
+
+aldesleukin
+aldesleukin increases effects of hydrochlorothiazide by pharmacodynamic
+synergism. Use Caution/Monitor. Risk of hypotension.
+
+amifostine
+amifostine, hydrochlorothiazide. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration
+with blood pressure lowering agents may increase the risk and severity of
+hypotension associated with amifostine. When amifostine is used at
+chemotherapeutic doses, withhold blood pressure lowering medications for 24 hr
+prior to amifostine; if blood pressure lowering medication cannot be withheld, do
+not administer amifostine.
+
+amiloride
+amiloride increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Modify Therapy/Monitor Closely.
+
+amiodarone
+amiodarone will increase the level or effect of hydrochlorothiazide by basic
+(cationic) drug competition for renal tubular clearance. Use Caution/Monitor.
+
+amoxicillin
+amoxicillin, hydrochlorothiazide. Either increases levels of the other by decreasing
+renal clearance. Use Caution/Monitor.
+
+arformoterol
+hydrochlorothiazide and arformoterol both decrease serum potassium. Use
+Caution/Monitor.
+
+aspirin
+
+https://reference.medscape.com/drug/microzide-inzirqo-hydrochlorothiazide-342412 5/36
+
+
+
+6/22/26, 5:00 PM Microzide, Inzirqo (hydrochlorothiazide) dosing, indications, interactions, adverse effects, and more
+
+aspirin increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+aspirin rectal
+aspirin rectal increases and hydrochlorothiazide decreases serum potassium. Effect
+of interaction is not clear, use caution. Use Caution/Monitor. .
+
+aspirin/citric acid/sodium bicarbonate
+aspirin/citric acid/sodium bicarbonate increases and hydrochlorothiazide decreases
+serum potassium. Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+atenolol
+atenolol increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+avanafil
+avanafil increases effects of hydrochlorothiazide by pharmacodynamic synergism.
+Use Caution/Monitor. Risk of hypotension.
+
+benazepril
+benazepril increases toxicity of hydrochlorothiazide by pharmacodynamic
+synergism. Use Caution/Monitor. Enhanced hypotensive effects; increased risk of
+nephrotoxicity.
+
+betaxolol
+betaxolol increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+bisoprolol
+bisoprolol increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+bretylium
+hydrochlorothiazide, bretylium. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Each drug may
+cause hypotension.
+
+brimonidine
+brimonidine increases effects of hydrochlorothiazide by pharmacodynamic
+synergism. Use Caution/Monitor.
+
+brimonidine topical
+brimonidine topical increases effects of hydrochlorothiazide by pharmacodynamic
+synergism. Use Caution/Monitor.
+
+bumetanide
+bumetanide and hydrochlorothiazide both decrease serum potassium. Use
+Caution/Monitor.
+
+bumetanide intranasal
+bumetanide intranasal and hydrochlorothiazide both decrease serum potassium.
+Use Caution/Monitor.
+
+https://reference.medscape.com/drug/microzide-inzirqo-hydrochlorothiazide-342412 6/36
+
+
+
+6/22/26, 5:00 PM Microzide, Inzirqo (hydrochlorothiazide) dosing, indications, interactions, adverse effects, and more
+
+buprenorphine, long-acting injection
+buprenorphine, long-acting injection decreases effects of hydrochlorothiazide by
+pharmacodynamic antagonism. Modify Therapy/Monitor Closely. Opioids can reduce
+diuretic efficacy by inducing antidiuretic hormone release.
+
+calcifediol
+hydrochlorothiazide increases toxicity of calcifediol by Other (see comment). Use
+Caution/Monitor. Comment: Thiazide diuretics may increase serum calcium by
+decreasing urinary calcium excretion.
+
+candesartan
+candesartan increases and hydrochlorothiazide decreases serum potassium. Effect
+of interaction is not clear, use caution. Use Caution/Monitor.
+
+captopril
+captopril, hydrochlorothiazide. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Both drugs lower blood
+pressure. Increased risk of nephrotoxicity. Monitor blood pressure and renal
+function.
+
+carbachol/brimonidine ophthalmic
+carbachol/brimonidine ophthalmic increases effects of hydrochlorothiazide by
+pharmacodynamic synergism. Use Caution/Monitor.
+
+carbenoxolone
+hydrochlorothiazide and carbenoxolone both decrease serum potassium. Use
+Caution/Monitor.
+
+carbidopa
+carbidopa increases effects of hydrochlorothiazide by pharmacodynamic synergism.
+Use Caution/Monitor. Therapy with carbidopa, given with or without levodopa or
+carbidopa-levodopa combination products, is started, dosage adjustment of the
+antihypertensive drug may be required.
+
+carvedilol
+carvedilol increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+cefprozil
+hydrochlorothiazide will increase the level or effect of cefprozil by acidic (anionic)
+drug competition for renal tubular clearance. Use Caution/Monitor.
+
+celecoxib
+celecoxib increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+celiprolol
+celiprolol increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+hydrochlorothiazide decreases levels of celiprolol by inhibition of GI absorption.
+Applies only to oral form of both agents. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/microzide-inzirqo-hydrochlorothiazide-342412 7/36
+
+
+
+6/22/26, 5:00 PM Microzide, Inzirqo (hydrochlorothiazide) dosing, indications, interactions, adverse effects, and more
+
+chlorothiazide
+chlorothiazide and hydrochlorothiazide both decrease serum potassium. Use
+Caution/Monitor.
+
+chlorthalidone
+chlorthalidone and hydrochlorothiazide both decrease serum potassium. Use
+Caution/Monitor.
+
+cholestyramine
+cholestyramine decreases levels of hydrochlorothiazide by inhibition of GI
+absorption. Applies only to oral form of both agents. Use Caution/Monitor.
+
+citalopram
+hydrochlorothiazide, citalopram. pharmacodynamic synergism. Use Caution/Monitor.
+Possible additive hyponatremia.
+
+cornsilk
+cornsilk increases effects of hydrochlorothiazide by pharmacodynamic synergism.
+Use Caution/Monitor. Increased risk of hypokalemia (theoretical interaction).
+
+corticotropin
+corticotropin increases toxicity of hydrochlorothiazide by increasing renal clearance.
+Use Caution/Monitor. May enhance hypokalemic effect of thiazide diuretics.
+
+cyclopenthiazide
+cyclopenthiazide and hydrochlorothiazide both decrease serum potassium. Use
+Caution/Monitor.
+
+cyclosporine
+cyclosporine increases toxicity of hydrochlorothiazide by unspecified interaction
+mechanism. Use Caution/Monitor. Coadministration of hydrochlorothiazide with
+cyclosporine may increase the risk of hypermagnesemia, hyperuricemia, and
+possible nephrotoxicity.
+
+deflazacort
+hydrochlorothiazide and deflazacort both decrease serum potassium. Use
+Caution/Monitor.
+
+diazoxide
+hydrochlorothiazide increases toxicity of diazoxide by unspecified interaction
+mechanism. Use Caution/Monitor. May enhance hyperglycemic effects of diazoxide.
+
+diazoxide choline
+diazoxide choline, hydrochlorothiazide. Either increases toxicity of the other by
+Other (see comment). Modify Therapy/Monitor Closely. Comment: Monitor for signs
+and symptoms of hyperglycemia and hyperuricemia if diazoxide choline is
+coadministered with diuretics. Dosage adjustment may be needed.
+
+dichlorphenamide
+dichlorphenamide and hydrochlorothiazide both decrease serum potassium. Use
+Caution/Monitor.
+
+diclofenac
+
+https://reference.medscape.com/drug/microzide-inzirqo-hydrochlorothiazide-342412 8/36
+
+
+
+6/22/26, 5:00 PM Microzide, Inzirqo (hydrochlorothiazide) dosing, indications, interactions, adverse effects, and more
+
+diclofenac increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+dicloxacillin
+dicloxacillin, hydrochlorothiazide. Either increases levels of the other by decreasing
+renal clearance. Use Caution/Monitor.
+
+diflunisal
+diflunisal increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+digoxin
+digoxin will increase the level or effect of hydrochlorothiazide by basic (cationic)
+drug competition for renal tubular clearance. Use Caution/Monitor.
+
+digoxin increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+hydrochlorothiazide increases effects of digoxin by pharmacodynamic synergism.
+Use Caution/Monitor. Hypokalemia increases digoxin effects.
+
+dobutamine
+dobutamine and hydrochlorothiazide both decrease serum potassium. Use
+Caution/Monitor.
+
+dofetilide
+dofetilide will increase the level or effect of hydrochlorothiazide by basic (cationic)
+drug competition for renal tubular clearance. Use Caution/Monitor.
+
+dopexamine
+dopexamine and hydrochlorothiazide both decrease serum potassium. Use
+Caution/Monitor.
+
+dordaviprone
+dordaviprone and hydrochlorothiazide both increase QTc interval. Use
+Caution/Monitor. Increase the frequency of ECG and electrolyte monitoring.
+
+drospirenone
+drospirenone increases and hydrochlorothiazide decreases serum potassium. Effect
+of interaction is not clear, use caution. Modify Therapy/Monitor Closely.
+
+empagliflozin
+empagliflozin, hydrochlorothiazide. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration of
+empagliflozin with diuretics results in increased urine volume and frequency of
+voids, which might enhance the potential for volume depletion.
+
+ephedrine
+ephedrine and hydrochlorothiazide both decrease serum potassium. Use
+Caution/Monitor.
+
+epinephrine
+
+https://reference.medscape.com/drug/microzide-inzirqo-hydrochlorothiazide-342412 9/36
+
+
+
+6/22/26, 5:00 PM Microzide, Inzirqo (hydrochlorothiazide) dosing, indications, interactions, adverse effects, and more
+
+epinephrine and hydrochlorothiazide both decrease serum potassium. Use
+Caution/Monitor.
+
+epinephrine intranasal
+epinephrine intranasal, hydrochlorothiazide. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Observe for cardiac arrhythmias
+if epinephrine is coadministered with cardiac glycosides, diuretics, or antiarrhythmic
+drugs. .
+
+epinephrine racemic
+epinephrine racemic and hydrochlorothiazide both decrease serum potassium. Use
+Caution/Monitor.
+
+eprosartan
+eprosartan increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+esmolol
+esmolol increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+ethacrynic acid
+ethacrynic acid and hydrochlorothiazide both decrease serum potassium. Use
+Caution/Monitor.
+
+etodolac
+etodolac increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+exenatide injectable solution
+hydrochlorothiazide decreases effects of exenatide injectable solution by
+pharmacodynamic antagonism. Use Caution/Monitor. Thiazide diuretics can
+decrease insulin sensitivity thereby leading to glucose intolerance and
+hyperglycemia. Monitor glycemic control especially when initiating, discontinuing, or
+increasing thiazide diuretic dose.
+
+exenatide injectable suspension
+hydrochlorothiazide decreases effects of exenatide injectable suspension by
+pharmacodynamic antagonism. Use Caution/Monitor. Thiazide diuretics can
+decrease insulin sensitivity thereby leading to glucose intolerance and
+hyperglycemia. Monitor glycemic control especially when initiating, discontinuing, or
+increasing thiazide diuretic dose.
+
+fenoprofen
+fenoprofen increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+fentanyl
+fentanyl decreases effects of hydrochlorothiazide by Other (see comment). Modify
+Therapy/Monitor Closely. Comment: Fentanyl can reduce the efficacy of diuretics by
+inducing antidiuretic hormone release. Fentanyl may also lead to acute urinary
+
+https://reference.medscape.com/drug/microzide-inzirqo-hydrochlorothiazide-342412 10/36
+
+
+
+6/22/26, 5:00 PM Microzide, Inzirqo (hydrochlorothiazide) dosing, indications, interactions, adverse effects, and more
+
+retention by causing bladder sphincter spasm (particularly in men with enlarged
+prostates).
+
+fentanyl intranasal
+fentanyl intranasal decreases effects of hydrochlorothiazide by Other (see
+comment). Modify Therapy/Monitor Closely. Comment: Fentanyl can reduce the
+efficacy of diuretics by inducing antidiuretic hormone release. Fentanyl may also
+lead to acute urinary retention by causing bladder sphincter spasm (particularly in
+men with enlarged prostates).
+
+fentanyl transdermal
+fentanyl transdermal decreases effects of hydrochlorothiazide by Other (see
+comment). Modify Therapy/Monitor Closely. Comment: Fentanyl can reduce the
+efficacy of diuretics by inducing antidiuretic hormone release. Fentanyl may also
+lead to acute urinary retention by causing bladder sphincter spasm (particularly in
+men with enlarged prostates).
+
+fentanyl transmucosal
+fentanyl transmucosal decreases effects of hydrochlorothiazide by Other (see
+comment). Modify Therapy/Monitor Closely. Comment: Fentanyl can reduce the
+efficacy of diuretics by inducing antidiuretic hormone release. Fentanyl may also
+lead to acute urinary retention by causing bladder sphincter spasm (particularly in
+men with enlarged prostates).
+
+flurbiprofen
+flurbiprofen increases and hydrochlorothiazide decreases serum potassium. Effect
+of interaction is not clear, use caution. Use Caution/Monitor.
+
+formoterol
+hydrochlorothiazide and formoterol both decrease serum potassium. Use
+Caution/Monitor.
+
+foscarbidopa/foslevodopa
+foscarbidopa/foslevodopa increases effects of hydrochlorothiazide by
+pharmacodynamic synergism. Use Caution/Monitor. Consider decreasing dosage of
+antihypertensive agent.
+
+furosemide
+furosemide and hydrochlorothiazide both decrease serum potassium. Use
+Caution/Monitor.
+
+gentamicin
+hydrochlorothiazide and gentamicin both decrease serum potassium. Use
+Caution/Monitor.
+
+ibuprofen
+ibuprofen increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+ibuprofen IV
+ibuprofen IV increases and hydrochlorothiazide decreases serum potassium. Effect
+of interaction is not clear, use caution. Use Caution/Monitor. NSAIDs may decrease
+the therapeutic effects of thiazide-like diuretics; may also enhance nephrotoxic
+
+https://reference.medscape.com/drug/microzide-inzirqo-hydrochlorothiazide-342412 11/36
+
+
+
+6/22/26, 5:00 PM Microzide, Inzirqo (hydrochlorothiazide) dosing, indications, interactions, adverse effects, and more
+
+effects.
+
+hydrochlorothiazide will increase the level or effect of ibuprofen IV by acidic
+(anionic) drug competition for renal tubular clearance. Use Caution/Monitor.
+
+iloperidone
+hydrochlorothiazide, iloperidone. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+iloperidone with drugs that lower blood pressure may cause additive effects.
+Consider lowering dosage of other drugs that lower blood pressure.
+
+indacaterol, inhaled
+hydrochlorothiazide, indacaterol, inhaled. serum potassium. Use Caution/Monitor.
+Combination may increase risk of hypokalemia.
+
+indacaterol, inhaled, hydrochlorothiazide. Other (see comment). Use
+Caution/Monitor. Comment: Caution is advised in the coadministration of indacaterol
+neohaler with non-potassium-sparing diuretics.
+
+indapamide
+hydrochlorothiazide and indapamide both decrease serum potassium. Use
+Caution/Monitor.
+
+indomethacin
+indomethacin increases and hydrochlorothiazide decreases serum potassium. Effect
+of interaction is not clear, use caution. Use Caution/Monitor.
+
+insulin degludec
+hydrochlorothiazide decreases effects of insulin degludec by Other (see comment).
+Use Caution/Monitor. Comment: Diuretics may cause hyperglycemia and glycosuria
+in patients with diabetes mellitus, possibly by diuretic-induced hpokalemia.
+
+insulin degludec/insulin aspart
+hydrochlorothiazide decreases effects of insulin degludec/insulin aspart by Other
+(see comment). Use Caution/Monitor. Comment: Diuretics may cause hyperglycemia
+and glycosuria in patients with diabetes mellitus, possibly by diuretic-induced
+hpokalemia.
+
+insulin icodec
+hydrochlorothiazide decreases effects of insulin icodec by pharmacodynamic
+antagonism. Use Caution/Monitor. Concomitant use of insulin and thiazide diuretics
+may require insulin dosage adjustment and increased glucose monitoring.
+
+insulin inhaled
+hydrochlorothiazide decreases effects of insulin inhaled by Other (see comment).
+Use Caution/Monitor. Comment: Diuretics may cause hyperglycemia and glycosuria
+in patients with diabetes mellitus, possibly by diuretic-induced hpokalemia.
+
+irbesartan
+irbesartan increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+isoproterenol
+
+https://reference.medscape.com/drug/microzide-inzirqo-hydrochlorothiazide-342412 12/36
+
+
+
+6/22/26, 5:00 PM Microzide, Inzirqo (hydrochlorothiazide) dosing, indications, interactions, adverse effects, and more
+
+isoproterenol and hydrochlorothiazide both decrease serum potassium. Use
+Caution/Monitor.
+
+juniper
+juniper, hydrochlorothiazide. Other (see comment). Use Caution/Monitor. Comment:
+Juniper may potentiate or interfere with diuretic therapy. Juniper has diuretic effects,
+but may cause kidney damage at large doses.
+
+ketoprofen
+ketoprofen increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+ketorolac
+ketorolac increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+ketorolac intranasal
+ketorolac intranasal increases and hydrochlorothiazide decreases serum potassium.
+Effect of interaction is not clear, use caution. Use Caution/Monitor. .
+
+labetalol
+labetalol increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+levalbuterol
+hydrochlorothiazide and levalbuterol both decrease serum potassium. Use
+Caution/Monitor.
+
+levodopa
+levodopa increases effects of hydrochlorothiazide by pharmacodynamic synergism.
+Use Caution/Monitor. Consider decreasing dosage of antihypertensive agent.
+
+lily of the valley
+hydrochlorothiazide increases toxicity of lily of the valley by Other (see comment).
+Use Caution/Monitor. Comment: Increased risk of cardiac toxicity due to K+
+depletion.
+
+liraglutide
+hydrochlorothiazide decreases effects of liraglutide by pharmacodynamic
+antagonism. Use Caution/Monitor. Thiazide diuretics can decrease insulin sensitivity
+thereby leading to glucose intolerance and hyperglycemia. Monitor glycemic control
+especially when initiating, discontinuing, or increasing thiazide diuretic dose.
+
+lithium
+hydrochlorothiazide increases toxicity of lithium by decreasing elimination. Use
+Caution/Monitor.
+
+lornoxicam
+lornoxicam increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+losartan
+
+https://reference.medscape.com/drug/microzide-inzirqo-hydrochlorothiazide-342412 13/36
+
+
+
+6/22/26, 5:00 PM Microzide, Inzirqo (hydrochlorothiazide) dosing, indications, interactions, adverse effects, and more
+
+losartan increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+lurasidone
+lurasidone increases effects of hydrochlorothiazide by Other (see comment). Use
+Caution/Monitor. Comment: Potential for increased risk of hypotension with
+concurrent use. Monitor blood pressure and adjust dose of antihypertensive agent
+as needed.
+
+maitake
+maitake increases effects of hydrochlorothiazide by pharmacodynamic synergism.
+Use Caution/Monitor. Increased risk of hypokalemia (theoretical interaction).
+
+meclofenamate
+meclofenamate increases and hydrochlorothiazide decreases serum potassium.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+mefenamic acid
+mefenamic acid increases and hydrochlorothiazide decreases serum potassium.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+meloxicam
+meloxicam increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+metaproterenol
+metaproterenol and hydrochlorothiazide both decrease serum potassium. Use
+Caution/Monitor.
+
+metformin
+hydrochlorothiazide decreases effects of metformin by pharmacodynamic
+antagonism. Use Caution/Monitor. Concomitant use may require increased glucose
+monitoring.
+
+methoxsalen
+methoxsalen, hydrochlorothiazide. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Additive photosensitizing
+effects.
+
+methylphenidate transdermal
+methylphenidate transdermal decreases effects of hydrochlorothiazide by anti-
+hypertensive channel blocking. Use Caution/Monitor.
+
+metolazone
+hydrochlorothiazide and metolazone both decrease serum potassium. Use
+Caution/Monitor.
+
+metoprolol
+metoprolol increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+hydrochlorothiazide, metoprolol. Either increases toxicity of the other by Other (see
+comment). Modify Therapy/Monitor Closely. Comment: May cause idiosyncratic
+
+https://reference.medscape.com/drug/microzide-inzirqo-hydrochlorothiazide-342412 14/36
+
+
+
+6/22/26, 5:00 PM Microzide, Inzirqo (hydrochlorothiazide) dosing, indications, interactions, adverse effects, and more
+
+reaction, resulting in acute transient myopia and acute angle-closure glaucoma,
+which can lead to permanent vision loss.
+
+milsaperidone
+hydrochlorothiazide, milsaperidone. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+milsaperidone with drugs that lower blood pressure may cause additive effects.
+Consider lowering dosage of other drugs that lower blood pressure.
+
+mycophenolate
+hydrochlorothiazide will increase the level or effect of mycophenolate by acidic
+(anionic) drug competition for renal tubular clearance. Use Caution/Monitor.
+
+nabumetone
+nabumetone increases and hydrochlorothiazide decreases serum potassium. Effect
+of interaction is not clear, use caution. Use Caution/Monitor.
+
+nadolol
+nadolol increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+nafcillin
+nafcillin, hydrochlorothiazide. Either increases levels of the other by decreasing
+renal clearance. Use Caution/Monitor.
+
+naproxen
+naproxen increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+nebivolol
+nebivolol increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+nitroglycerin rectal
+nitroglycerin rectal, hydrochlorothiazide. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Observe for possible additive
+hypotensive effects during concomitant use. .
+
+norepinephrine
+norepinephrine and hydrochlorothiazide both decrease serum potassium. Use
+Caution/Monitor.
+
+olanzapine/samidorphan
+olanzapine/samidorphan increases effects of hydrochlorothiazide by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Monitor blood
+pressure and reduce antihypertensive drug dosage in accordance with its product
+labeling.
+
+olmesartan
+olmesartan increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+olodaterol inhaled
+
+https://reference.medscape.com/drug/microzide-inzirqo-hydrochlorothiazide-342412 15/36
+
+
+
+6/22/26, 5:00 PM Microzide, Inzirqo (hydrochlorothiazide) dosing, indications, interactions, adverse effects, and more
+
+hydrochlorothiazide and olodaterol inhaled both decrease serum potassium. Use
+Caution/Monitor.
+
+oxaprozin
+oxaprozin increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+palopegteriparatide
+hydrochlorothiazide, palopegteriparatide. Other (see comment). Use
+Caution/Monitor. Comment: Drugs that affect serum calcium may alter
+palopegteriparaatide therapeutic response. Measure serum calcium more frequently
+if coadministered, particularly after these drugs are initiated, discontinued, or dose-
+adjusted.
+
+parecoxib
+parecoxib increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+penicillin G aqueous
+penicillin G aqueous, hydrochlorothiazide. Either increases levels of the other by
+decreasing renal clearance. Use Caution/Monitor.
+
+pindolol
+pindolol increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+pirbuterol
+pirbuterol and hydrochlorothiazide both decrease serum potassium. Use
+Caution/Monitor.
+
+piroxicam
+piroxicam increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+porfimer
+hydrochlorothiazide, porfimer. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Enhanced photosensitivity.
+
+potassium acid phosphate
+potassium acid phosphate increases and hydrochlorothiazide decreases serum
+potassium. Effect of interaction is not clear, use caution. Modify Therapy/Monitor
+Closely.
+
+potassium chloride
+potassium chloride increases and hydrochlorothiazide decreases serum potassium.
+Effect of interaction is not clear, use caution. Modify Therapy/Monitor Closely.
+
+potassium citrate
+potassium citrate increases and hydrochlorothiazide decreases serum potassium.
+Effect of interaction is not clear, use caution. Modify Therapy/Monitor Closely.
+
+probenecid
+
+https://reference.medscape.com/drug/microzide-inzirqo-hydrochlorothiazide-342412 16/36
+
+
+
+6/22/26, 5:00 PM Microzide, Inzirqo (hydrochlorothiazide) dosing, indications, interactions, adverse effects, and more
+
+hydrochlorothiazide will increase the level or effect of probenecid by acidic (anionic)
+drug competition for renal tubular clearance. Use Caution/Monitor.
+
+procainamide
+hydrochlorothiazide will increase the level or effect of procainamide by basic
+(cationic) drug competition for renal tubular clearance. Use Caution/Monitor.
+
+propranolol
+propranolol increases and hydrochlorothiazide decreases serum potassium. Effect
+of interaction is not clear, use caution. Use Caution/Monitor.
+
+quinidine
+quinidine will increase the level or effect of hydrochlorothiazide by basic (cationic)
+drug competition for renal tubular clearance. Use Caution/Monitor.
+
+revumenib
+revumenib and hydrochlorothiazide both increase QTc interval. Use
+Caution/Monitor. ECG monitoring recommended if concomitant use can?t be
+avoided and withhold therapy if QTc interval is >480 msec; restart therapy after QTc
+interval returns to <480 msec
+
+sacubitril/valsartan
+sacubitril/valsartan increases and hydrochlorothiazide decreases serum potassium.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+salicylates (non-asa)
+salicylates (non-asa) increases and hydrochlorothiazide decreases serum
+potassium. Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+salmeterol
+salmeterol and hydrochlorothiazide both decrease serum potassium. Use
+Caution/Monitor.
+
+salsalate
+salsalate increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+shark cartilage
+hydrochlorothiazide, shark cartilage. Other (see comment). Use Caution/Monitor.
+Comment: May lead to hypercalcemia (theoretical).
+
+sodium sulfate/?magnesium sulfate/potassium chloride
+sodium sulfate/?magnesium sulfate/potassium chloride increases toxicity of
+hydrochlorothiazide by Other (see comment). Use Caution/Monitor. Comment:
+Coadministration with medications that cause fluid and electrolyte abnormalities
+may increase the risk of adverse events of seizure, arrhythmias, and renal
+impairment.
+
+sodium sulfate/potassium chloride/magnesium sulfate/polyethylene glycol
+hydrochlorothiazide and sodium sulfate/potassium chloride/magnesium
+sulfate/polyethylene glycol both decrease serum potassium. Modify
+Therapy/Monitor Closely.
+
+https://reference.medscape.com/drug/microzide-inzirqo-hydrochlorothiazide-342412 17/36
+
+
+
+6/22/26, 5:00 PM Microzide, Inzirqo (hydrochlorothiazide) dosing, indications, interactions, adverse effects, and more
+
+sodium sulfate/potassium sulfate/magnesium sulfate
+sodium sulfate/potassium sulfate/magnesium sulfate increases toxicity of
+hydrochlorothiazide by Other (see comment). Use Caution/Monitor. Comment:
+Coadministration with medications that cause fluid and electrolyte abnormalities
+may increase the risk of adverse events of seizure, arrhythmias, and renal
+impairment.
+
+sotalol
+sotalol increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+spironolactone
+spironolactone increases and hydrochlorothiazide decreases serum potassium.
+Effect of interaction is not clear, use caution. Modify Therapy/Monitor Closely.
+
+succinylcholine
+succinylcholine increases and hydrochlorothiazide decreases serum potassium.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+sulfasalazine
+sulfasalazine increases and hydrochlorothiazide decreases serum potassium. Effect
+of interaction is not clear, use caution. Use Caution/Monitor.
+
+sulindac
+sulindac increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+tadalafil
+tadalafil increases effects of hydrochlorothiazide by pharmacodynamic synergism.
+Use Caution/Monitor. Risk of hypotension.
+
+taletrectinib
+taletrectinib and hydrochlorothiazide both increase QTc interval. Use
+Caution/Monitor. Concomitant use may increase the risk of QTc interval
+prolongation. If concomitant use is unavoidable, adjust the frequency of ECG and
+electrolyte monitoring.
+
+telmisartan
+telmisartan increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+temocillin
+temocillin, hydrochlorothiazide. Either increases levels of the other by decreasing
+renal clearance. Use Caution/Monitor.
+
+terbutaline
+terbutaline and hydrochlorothiazide both decrease serum potassium. Use
+Caution/Monitor.
+
+timolol
+timolol increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/microzide-inzirqo-hydrochlorothiazide-342412 18/36
+
+
+
+6/22/26, 5:00 PM Microzide, Inzirqo (hydrochlorothiazide) dosing, indications, interactions, adverse effects, and more
+
+tolfenamic acid
+tolfenamic acid increases and hydrochlorothiazide decreases serum potassium.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+tolmetin
+tolmetin increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+tolvaptan
+tolvaptan increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+toremifene
+hydrochlorothiazide, toremifene. Other (see comment). Use Caution/Monitor.
+Comment: Thiazide diuretics decrease renal calcium excretion and may increase risk
+of hypercalcemia in patients taking toremifene.
+
+torsemide
+torsemide and hydrochlorothiazide both decrease serum potassium. Use
+Caution/Monitor.
+
+triamterene
+triamterene increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Modify Therapy/Monitor Closely.
+
+trientine
+hydrochlorothiazide decreases levels of trientine by increasing renal clearance. Use
+Caution/Monitor.
+
+umeclidinium bromide/vilanterol inhaled
+umeclidinium bromide/vilanterol inhaled and hydrochlorothiazide both decrease
+serum potassium. Modify Therapy/Monitor Closely. Electrocardiographic changes
+and/or hypokalemia associated with non?potassium-sparing diuretics may worsen
+with concomitant beta-agonists, particularly if recommended dose is exceeded
+
+valsartan
+valsartan increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+vilanterol/fluticasone furoate inhaled
+vilanterol/fluticasone furoate inhaled and hydrochlorothiazide both decrease serum
+potassium. Modify Therapy/Monitor Closely. Beta-agonists may acutely worsen
+ECG changes and/or hypokalemia resulting from non-potassium-sparing diuretics
+
+vitamin D
+hydrochlorothiazide increases effects of vitamin D by Other (see comment). Use
+Caution/Monitor. Comment: Combination may increase hypercalcemic effect of
+vitamin D analogs. Use with caution.
+
+xipamide
+xipamide increases effects of hydrochlorothiazide by pharmacodynamic synergism.
+Use Caution/Monitor.
+
+https://reference.medscape.com/drug/microzide-inzirqo-hydrochlorothiazide-342412 19/36
+
+
+
+6/22/26, 5:00 PM Microzide, Inzirqo (hydrochlorothiazide) dosing, indications, interactions, adverse effects, and more
+
+ziftomenib
+hydrochlorothiazide, ziftomenib. QTc interval. Use Caution/Monitor. Caution if
+ziftomenib is coadministered with drugs that exacerbated risk of QT prolongation
+(eg, hypokalemia, orthostatic hypotension, inhibits metabolism of ziftomenib).
+
+Minor (139)
+
+acarbose
+hydrochlorothiazide decreases effects of acarbose by pharmacodynamic
+antagonism. Minor/Significance Unknown. Thiazide dosage >50 mg/day may
+increase blood glucose.
+
+aceclofenac
+hydrochlorothiazide will increase the level or effect of aceclofenac by acidic
+(anionic) drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+acemetacin
+hydrochlorothiazide will increase the level or effect of acemetacin by acidic (anionic)
+drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+acyclovir
+hydrochlorothiazide will increase the level or effect of acyclovir by acidic (anionic)
+drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+agrimony
+agrimony increases effects of hydrochlorothiazide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+aminohippurate sodium
+hydrochlorothiazide will increase the level or effect of aminohippurate sodium by
+acidic (anionic) drug competition for renal tubular clearance. Minor/Significance
+Unknown.
+
+ampicillin
+hydrochlorothiazide increases levels of ampicillin by decreasing renal clearance.
+Minor/Significance Unknown.
+
+aspirin
+hydrochlorothiazide will increase the level or effect of aspirin by acidic (anionic)
+drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+aspirin rectal
+hydrochlorothiazide will increase the level or effect of aspirin rectal by acidic
+(anionic) drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+aspirin/citric acid/sodium bicarbonate
+hydrochlorothiazide will increase the level or effect of aspirin/citric acid/sodium
+bicarbonate by acidic (anionic) drug competition for renal tubular clearance.
+Minor/Significance Unknown.
+
+balsalazide
+
+https://reference.medscape.com/drug/microzide-inzirqo-hydrochlorothiazide-342412 20/36
+
+
+
+6/22/26, 5:00 PM Microzide, Inzirqo (hydrochlorothiazide) dosing, indications, interactions, adverse effects, and more
+
+hydrochlorothiazide will increase the level or effect of balsalazide by acidic (anionic)
+drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+birch
+birch increases effects of hydrochlorothiazide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+bitter melon
+bitter melon, hydrochlorothiazide. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Hypokalemia.
+
+budesonide
+budesonide, hydrochlorothiazide. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Risk of hypokalemia, especially with strong
+glucocorticoid activity.
+
+calcitriol topical
+calcitriol topical, hydrochlorothiazide. Either increases toxicity of the other by
+pharmacodynamic synergism. Minor/Significance Unknown. Potential additive
+hypercalcemia.
+
+calcium acetate
+hydrochlorothiazide increases levels of calcium acetate by decreasing renal
+clearance. Minor/Significance Unknown. Risk of alkalosis, hypercalcemia.
+
+calcium carbonate
+hydrochlorothiazide increases levels of calcium carbonate by decreasing renal
+clearance. Minor/Significance Unknown. Risk of alkalosis, hypercalcemia.
+
+calcium chloride
+hydrochlorothiazide increases levels of calcium chloride by decreasing renal
+clearance. Minor/Significance Unknown. Risk of alkalosis, hypercalcemia.
+
+calcium citrate
+hydrochlorothiazide increases levels of calcium citrate by decreasing renal
+clearance. Minor/Significance Unknown. Risk of alkalosis, hypercalcemia.
+
+calcium gluconate
+hydrochlorothiazide increases levels of calcium gluconate by decreasing renal
+clearance. Minor/Significance Unknown. Risk of alkalosis, hypercalcemia.
+
+carbenoxolone
+hydrochlorothiazide, carbenoxolone. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Additive hypokalemic effects.
+
+cefadroxil
+cefadroxil will increase the level or effect of hydrochlorothiazide by acidic (anionic)
+drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+cefamandole
+cefamandole will increase the level or effect of hydrochlorothiazide by acidic
+(anionic) drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+https://reference.medscape.com/drug/microzide-inzirqo-hydrochlorothiazide-342412 21/36
+
+
+
+6/22/26, 5:00 PM Microzide, Inzirqo (hydrochlorothiazide) dosing, indications, interactions, adverse effects, and more
+
+cefpirome
+cefpirome will increase the level or effect of hydrochlorothiazide by acidic (anionic)
+drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+cefprozil
+cefprozil will increase the level or effect of hydrochlorothiazide by acidic (anionic)
+drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+ceftibuten
+ceftibuten will increase the level or effect of hydrochlorothiazide by acidic (anionic)
+drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+celecoxib
+hydrochlorothiazide will increase the level or effect of celecoxib by acidic (anionic)
+drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+cephalexin
+cephalexin will increase the level or effect of hydrochlorothiazide by acidic (anionic)
+drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+chlorothiazide
+chlorothiazide will increase the level or effect of hydrochlorothiazide by acidic
+(anionic) drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+chlorthalidone
+chlorthalidone will increase the level or effect of hydrochlorothiazide by acidic
+(anionic) drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+colestipol
+colestipol decreases levels of hydrochlorothiazide by inhibition of GI absorption.
+Applies only to oral form of both agents. Minor/Significance Unknown.
+
+cortisone
+cortisone, hydrochlorothiazide. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Risk of hypokalemia, especially with strong
+glucocorticoid activity.
+
+cosyntropin
+cosyntropin, hydrochlorothiazide. pharmacodynamic synergism. Minor/Significance
+Unknown. Possible enhanced electrolyte loss.
+
+cyclopenthiazide
+cyclopenthiazide will increase the level or effect of hydrochlorothiazide by acidic
+(anionic) drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+deflazacort
+deflazacort, hydrochlorothiazide. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Risk of hypokalemia, especially with strong
+glucocorticoid activity.
+
+dexamethasone
+dexamethasone, hydrochlorothiazide. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Risk of hypokalemia, especially with strong
+
+https://reference.medscape.com/drug/microzide-inzirqo-hydrochlorothiazide-342412 22/36
+
+
+
+6/22/26, 5:00 PM Microzide, Inzirqo (hydrochlorothiazide) dosing, indications, interactions, adverse effects, and more
+
+glucocorticoid activity.
+
+diazoxide
+diazoxide, hydrochlorothiazide. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Risk of hyperglycemia.
+
+diclofenac
+hydrochlorothiazide will increase the level or effect of diclofenac by acidic (anionic)
+drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+diflunisal
+hydrochlorothiazide will increase the level or effect of diflunisal by acidic (anionic)
+drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+dobutamine
+dobutamine, hydrochlorothiazide. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Hypokalemia.
+
+dopexamine
+dopexamine, hydrochlorothiazide. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Hypokalemia.
+
+ephedrine
+ephedrine, hydrochlorothiazide. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Hypokalemia.
+
+epinephrine
+epinephrine, hydrochlorothiazide. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Hypokalemia.
+
+epinephrine racemic
+epinephrine racemic, hydrochlorothiazide. Mechanism: pharmacodynamic
+synergism. Minor/Significance Unknown. Hypokalemia.
+
+epoprostenol
+epoprostenol increases effects of hydrochlorothiazide by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive hypotensive effects.
+
+etodolac
+hydrochlorothiazide will increase the level or effect of etodolac by acidic (anionic)
+drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+fenbufen
+hydrochlorothiazide will increase the level or effect of fenbufen by acidic (anionic)
+drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+fenoprofen
+hydrochlorothiazide will increase the level or effect of fenoprofen by acidic (anionic)
+drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+fludrocortisone
+fludrocortisone, hydrochlorothiazide. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Risk of hypokalemia, especially with strong
+
+https://reference.medscape.com/drug/microzide-inzirqo-hydrochlorothiazide-342412 23/36
+
+
+
+6/22/26, 5:00 PM Microzide, Inzirqo (hydrochlorothiazide) dosing, indications, interactions, adverse effects, and more
+
+glucocorticoid activity.
+
+flurbiprofen
+hydrochlorothiazide will increase the level or effect of flurbiprofen by acidic
+(anionic) drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+fo-ti
+fo-ti increases effects of hydrochlorothiazide by pharmacodynamic synergism.
+Minor/Significance Unknown. Risk of hypokalemia (theoretical).
+
+folic acid
+hydrochlorothiazide decreases levels of folic acid by increasing renal clearance.
+Minor/Significance Unknown.
+
+forskolin
+forskolin increases effects of hydrochlorothiazide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+ganciclovir
+hydrochlorothiazide will increase the level or effect of ganciclovir by acidic (anionic)
+drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+glimepiride
+hydrochlorothiazide decreases effects of glimepiride by pharmacodynamic
+antagonism. Minor/Significance Unknown. Thiazide dosage >50 mg/day may
+increase blood glucose.
+
+glipizide
+hydrochlorothiazide decreases effects of glipizide by pharmacodynamic antagonism.
+Minor/Significance Unknown. Thiazide dosage >50 mg/day may increase blood
+glucose.
+
+glyburide
+hydrochlorothiazide decreases effects of glyburide by pharmacodynamic
+antagonism. Minor/Significance Unknown. Thiazide dosage >50 mg/day may
+increase blood glucose.
+
+goldenrod
+goldenrod increases effects of hydrochlorothiazide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+hydrocortisone
+hydrocortisone, hydrochlorothiazide. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Risk of hypokalemia, especially with strong
+glucocorticoid activity.
+
+ibuprofen
+hydrochlorothiazide will increase the level or effect of ibuprofen by acidic (anionic)
+drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+indapamide
+hydrochlorothiazide will increase the level or effect of indapamide by acidic
+
+https://reference.medscape.com/drug/microzide-inzirqo-hydrochlorothiazide-342412 24/36
+
+
+
+6/22/26, 5:00 PM Microzide, Inzirqo (hydrochlorothiazide) dosing, indications, interactions, adverse effects, and more
+
+(anionic) drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+indomethacin
+hydrochlorothiazide will increase the level or effect of indomethacin by acidic
+(anionic) drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+insulin aspart
+hydrochlorothiazide decreases effects of insulin aspart by pharmacodynamic
+antagonism. Minor/Significance Unknown. Thiazide dosage >50 mg/day may
+increase blood glucose.
+
+insulin detemir
+hydrochlorothiazide decreases effects of insulin detemir by pharmacodynamic
+antagonism. Minor/Significance Unknown. Thiazide dosage >50 mg/day may
+increase blood glucose.
+
+insulin glargine
+hydrochlorothiazide decreases effects of insulin glargine by pharmacodynamic
+antagonism. Minor/Significance Unknown. Thiazide dosage >50 mg/day may
+increase blood glucose.
+
+insulin glulisine
+hydrochlorothiazide decreases effects of insulin glulisine by pharmacodynamic
+antagonism. Minor/Significance Unknown. Thiazide dosage >50 mg/day may
+increase blood glucose.
+
+insulin lispro
+hydrochlorothiazide decreases effects of insulin lispro by pharmacodynamic
+antagonism. Minor/Significance Unknown. Thiazide dosage >50 mg/day may
+increase blood glucose.
+
+insulin NPH
+hydrochlorothiazide decreases effects of insulin NPH by pharmacodynamic
+antagonism. Minor/Significance Unknown. Thiazide dosage >50 mg/day may
+increase blood glucose.
+
+insulin regular human
+hydrochlorothiazide decreases effects of insulin regular human by
+pharmacodynamic antagonism. Minor/Significance Unknown. Thiazide dosage >50
+mg/day may increase blood glucose.
+
+isoproterenol
+isoproterenol, hydrochlorothiazide. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Hypokalemia.
+
+ketoprofen
+hydrochlorothiazide will increase the level or effect of ketoprofen by acidic (anionic)
+drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+ketorolac
+hydrochlorothiazide will increase the level or effect of ketorolac by acidic (anionic)
+drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+https://reference.medscape.com/drug/microzide-inzirqo-hydrochlorothiazide-342412 25/36
+
+
+
+6/22/26, 5:00 PM Microzide, Inzirqo (hydrochlorothiazide) dosing, indications, interactions, adverse effects, and more
+
+ketorolac intranasal
+hydrochlorothiazide will increase the level or effect of ketorolac intranasal by acidic
+(anionic) drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+L-methylfolate
+hydrochlorothiazide decreases levels of L-methylfolate by increasing renal
+clearance. Minor/Significance Unknown.
+
+lornoxicam
+hydrochlorothiazide will increase the level or effect of lornoxicam by acidic (anionic)
+drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+magnesium chloride
+hydrochlorothiazide decreases levels of magnesium chloride by increasing renal
+clearance. Minor/Significance Unknown.
+
+magnesium citrate
+hydrochlorothiazide decreases levels of magnesium citrate by increasing renal
+clearance. Minor/Significance Unknown.
+
+magnesium hydroxide
+hydrochlorothiazide decreases levels of magnesium hydroxide by increasing renal
+clearance. Minor/Significance Unknown.
+
+magnesium oxide
+hydrochlorothiazide decreases levels of magnesium oxide by increasing renal
+clearance. Minor/Significance Unknown.
+
+magnesium sulfate
+hydrochlorothiazide decreases levels of magnesium sulfate by increasing renal
+clearance. Minor/Significance Unknown.
+
+meclofenamate
+hydrochlorothiazide will increase the level or effect of meclofenamate by acidic
+(anionic) drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+mefenamic acid
+hydrochlorothiazide will increase the level or effect of mefenamic acid by acidic
+(anionic) drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+meloxicam
+hydrochlorothiazide will increase the level or effect of meloxicam by acidic (anionic)
+drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+memantine
+hydrochlorothiazide will increase the level or effect of memantine by basic (cationic)
+drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+mesalamine
+hydrochlorothiazide will increase the level or effect of mesalamine by acidic
+(anionic) drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+metaproterenol
+
+https://reference.medscape.com/drug/microzide-inzirqo-hydrochlorothiazide-342412 26/36
+
+
+
+6/22/26, 5:00 PM Microzide, Inzirqo (hydrochlorothiazide) dosing, indications, interactions, adverse effects, and more
+
+metaproterenol, hydrochlorothiazide. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Hypokalemia.
+
+methotrexate
+hydrochlorothiazide increases toxicity of methotrexate by decreasing elimination.
+Minor/Significance Unknown. Increased myelosuppression.
+
+methylprednisolone
+methylprednisolone, hydrochlorothiazide. Mechanism: pharmacodynamic
+synergism. Minor/Significance Unknown. Risk of hypokalemia, especially with
+strong glucocorticoid activity.
+
+metolazone
+hydrochlorothiazide will increase the level or effect of metolazone by acidic
+(anionic) drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+midodrine
+hydrochlorothiazide will increase the level or effect of midodrine by basic (cationic)
+drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+miglitol
+hydrochlorothiazide decreases effects of miglitol by pharmacodynamic antagonism.
+Minor/Significance Unknown. Thiazide dosage >50 mg/day may increase blood
+glucose.
+
+minoxidil
+hydrochlorothiazide increases effects of minoxidil by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+nabumetone
+hydrochlorothiazide will increase the level or effect of nabumetone by acidic
+(anionic) drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+naproxen
+hydrochlorothiazide will increase the level or effect of naproxen by acidic (anionic)
+drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+nateglinide
+hydrochlorothiazide decreases effects of nateglinide by pharmacodynamic
+antagonism. Minor/Significance Unknown. Thiazide dosage >50 mg/day may
+increase blood glucose.
+
+noni juice
+noni juice increases and hydrochlorothiazide decreases serum potassium. Effect of
+interaction is not clear, use caution. Minor/Significance Unknown.
+
+norepinephrine
+norepinephrine, hydrochlorothiazide. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Hypokalemia.
+
+hydrochlorothiazide decreases effects of norepinephrine by pharmacodynamic
+antagonism. Minor/Significance Unknown. May decrease responsiveness to
+
+https://reference.medscape.com/drug/microzide-inzirqo-hydrochlorothiazide-342412 27/36
+
+
+
+6/22/26, 5:00 PM Microzide, Inzirqo (hydrochlorothiazide) dosing, indications, interactions, adverse effects, and more
+
+norepinephrine but not enough to preclude effectiveness of the pressor agent
+therapeutic use.
+
+octacosanol
+octacosanol increases effects of hydrochlorothiazide by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+ofloxacin
+hydrochlorothiazide will increase the level or effect of ofloxacin by basic (cationic)
+drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+oxaprozin
+hydrochlorothiazide will increase the level or effect of oxaprozin by acidic (anionic)
+drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+parecoxib
+hydrochlorothiazide will increase the level or effect of parecoxib by acidic (anionic)
+drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+penicillin G aqueous
+hydrochlorothiazide increases levels of penicillin G aqueous by decreasing renal
+clearance. Minor/Significance Unknown.
+
+penicillin VK
+hydrochlorothiazide increases levels of penicillin VK by decreasing renal clearance.
+Minor/Significance Unknown.
+
+pioglitazone
+hydrochlorothiazide decreases effects of pioglitazone by pharmacodynamic
+antagonism. Minor/Significance Unknown. Thiazide dosage >50 mg/day may
+increase blood glucose.
+
+piperacillin
+hydrochlorothiazide increases levels of piperacillin by decreasing renal clearance.
+Minor/Significance Unknown.
+
+pirbuterol
+pirbuterol, hydrochlorothiazide. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Hypokalemia.
+
+piroxicam
+hydrochlorothiazide will increase the level or effect of piroxicam by acidic (anionic)
+drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+prednisolone
+prednisolone, hydrochlorothiazide. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Risk of hypokalemia, especially with strong
+glucocorticoid activity.
+
+prednisone
+prednisone, hydrochlorothiazide. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Risk of hypokalemia, especially with strong
+
+https://reference.medscape.com/drug/microzide-inzirqo-hydrochlorothiazide-342412 28/36
+
+
+
+6/22/26, 5:00 PM Microzide, Inzirqo (hydrochlorothiazide) dosing, indications, interactions, adverse effects, and more
+
+glucocorticoid activity.
+
+quinine
+hydrochlorothiazide will increase the level or effect of quinine by basic (cationic)
+drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+reishi
+reishi increases effects of hydrochlorothiazide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+repaglinide
+hydrochlorothiazide decreases effects of repaglinide by pharmacodynamic
+antagonism. Minor/Significance Unknown. Thiazide dosage >50 mg/day may
+increase blood glucose.
+
+rose hips
+rose hips will increase the level or effect of hydrochlorothiazide by acidic (anionic)
+drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+rosiglitazone
+hydrochlorothiazide decreases effects of rosiglitazone by pharmacodynamic
+antagonism. Minor/Significance Unknown. Thiazide dosage >50 mg/day may
+increase blood glucose.
+
+salicylates (non-asa)
+hydrochlorothiazide will increase the level or effect of salicylates (non-asa) by
+acidic (anionic) drug competition for renal tubular clearance. Minor/Significance
+Unknown.
+
+salmeterol
+salmeterol, hydrochlorothiazide. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Hypokalemia.
+
+salsalate
+hydrochlorothiazide will increase the level or effect of salsalate by acidic (anionic)
+drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+saxagliptin
+hydrochlorothiazide decreases effects of saxagliptin by pharmacodynamic
+antagonism. Minor/Significance Unknown. Thiazide dosage >50 mg/day may
+increase blood glucose.
+
+shepherd's purse
+shepherd's purse, hydrochlorothiazide. Other (see comment). Minor/Significance
+Unknown. Comment: Theoretically, shepherd's purse may interfere with BP control.
+
+sitagliptin
+hydrochlorothiazide decreases effects of sitagliptin by pharmacodynamic
+antagonism. Minor/Significance Unknown. Thiazide dosage >50 mg/day may
+increase blood glucose.
+
+sulfadiazine
+
+https://reference.medscape.com/drug/microzide-inzirqo-hydrochlorothiazide-342412 29/36
+
+
+
+6/22/26, 5:00 PM Microzide, Inzirqo (hydrochlorothiazide) dosing, indications, interactions, adverse effects, and more
+
+hydrochlorothiazide increases levels of sulfadiazine by unspecified interaction
+mechanism. Minor/Significance Unknown.
+
+sulfamethoxazole
+sulfamethoxazole will increase the level or effect of hydrochlorothiazide by basic
+(cationic) drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+hydrochlorothiazide increases levels of sulfamethoxazole by unspecified interaction
+mechanism. Minor/Significance Unknown.
+
+hydrochlorothiazide, sulfamethoxazole. Mechanism: unspecified interaction
+mechanism. Minor/Significance Unknown. Risk of hyponatremia.
+
+sulfasalazine
+hydrochlorothiazide will increase the level or effect of sulfasalazine by acidic
+(anionic) drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+sulfisoxazole
+hydrochlorothiazide increases levels of sulfisoxazole by unspecified interaction
+mechanism. Minor/Significance Unknown.
+
+sulindac
+hydrochlorothiazide will increase the level or effect of sulindac by acidic (anionic)
+drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+terbutaline
+terbutaline, hydrochlorothiazide. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Hypokalemia.
+
+hydrochlorothiazide, terbutaline. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Additive hypokalemic effects.
+
+tizanidine
+tizanidine increases effects of hydrochlorothiazide by pharmacodynamic synergism.
+Minor/Significance Unknown. Risk of hypotension.
+
+tolfenamic acid
+hydrochlorothiazide will increase the level or effect of tolfenamic acid by acidic
+(anionic) drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+tolmetin
+hydrochlorothiazide will increase the level or effect of tolmetin by acidic (anionic)
+drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+treprostinil
+treprostinil increases effects of hydrochlorothiazide by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+triamcinolone acetonide injectable suspension
+triamcinolone acetonide injectable suspension, hydrochlorothiazide. Mechanism:
+pharmacodynamic synergism. Minor/Significance Unknown. Risk of hypokalemia,
+especially with strong glucocorticoid activity.
+
+https://reference.medscape.com/drug/microzide-inzirqo-hydrochlorothiazide-342412 30/36
+
+
+
+6/22/26, 5:00 PM Microzide, Inzirqo (hydrochlorothiazide) dosing, indications, interactions, adverse effects, and more
+
+triamterene
+hydrochlorothiazide will increase the level or effect of triamterene by basic
+(cationic) drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+trilostane
+trilostane, hydrochlorothiazide. Other (see comment). Minor/Significance Unknown.
+Comment: Trilostane reduces K+ loss while maintaining the natriuretic effect.
+Mechanism: inhibition of mineralocorticoid steroid synthesis.
+
+trimethoprim
+hydrochlorothiazide will increase the level or effect of trimethoprim by basic
+(cationic) drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+hydrochlorothiazide, trimethoprim. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Risk of hyponatremia.
+
+valganciclovir
+hydrochlorothiazide will increase the level or effect of valganciclovir by acidic
+(anionic) drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+verapamil
+hydrochlorothiazide will increase the level or effect of verapamil by basic (cationic)
+drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+verteporfin
+hydrochlorothiazide, verteporfin. Mechanism: pharmacodynamic synergism.
+Minor/Significance Unknown. Increased phototoxicity.
+
+vildagliptin
+hydrochlorothiazide decreases effects of vildagliptin by pharmacodynamic
+antagonism. Minor/Significance Unknown. Thiazide dosage >50 mg/day may
+increase blood glucose.
+
+willow bark
+hydrochlorothiazide will increase the level or effect of willow bark by acidic
+(anionic) drug competition for renal tubular clearance. Minor/Significance Unknown.
+
+Adverse Effects
+
+Frequency Not Defined
+
+Anaphylaxis
+
+Anorexia
+
+Confusion
+
+Disorder of hematopoietic structure
+
+Dizziness
+
+https://reference.medscape.com/drug/microzide-inzirqo-hydrochlorothiazide-342412 31/36
+
+
+
+6/22/26, 5:00 PM Microzide, Inzirqo (hydrochlorothiazide) dosing, indications, interactions, adverse effects, and more
+
+Epigastric distress
+
+Fatigue
+
+Headache
+
+Hepatotoxicity
+
+Hypercalcemia
+
+Hypercholesterolemia
+
+Hyperglycemia
+
+Hyperlipidemia
+
+Hyperuricemia
+
+Hypokalemia
+
+Hypomagnesemia
+
+Hypotension
+
+Interstitial nephritis
+
+Metabolic acidosis
+
+Muscle weakness or cramps
+
+Nausea
+
+Necrotizing angiitis
+
+Pancreatitis
+
+Phototoxicity
+
+Pneumonitis
+
+Pulmonary edema
+
+Purpura
+
+Rash
+
+Respiratory distress
+
+Stevens-Johnson syndrome
+
+Toxic epidermal necrolysis
+
+Vertigo
+
+Vomiting
+
+Xanthopsia
+
+Postmarketing Reports
+
+https://reference.medscape.com/drug/microzide-inzirqo-hydrochlorothiazide-342412 32/36
+
+
+
+6/22/26, 5:00 PM Microzide, Inzirqo (hydrochlorothiazide) dosing, indications, interactions, adverse effects, and more
+
+Hydrochlorothiazide
+
+Non-melanoma skin cancer
+
+Warnings
+
+Contraindications
+
+Documented hypersensitivity to hydrochlorothiazide or sulfonamides
+
+Anuria
+
+Cautions
+
+Use with caution in diabetes mellitus, fluid or electrolyte imbalance,
+hypercholesterolemia, hyperuricemia or gout, hypercalcemia, hypotension, systemic
+lupus erythematosus, liver or renal disease, hypokalemia, parathyroid disease
+
+May aggravate digitalis toxicity
+
+Sensitivity reactions may occur with or without history of allergy or asthma
+
+Avoid concurrent use with lithium (reduction of lithium dosage by 50% may be
+necessary)
+
+Risk of male sexual dysfunction
+
+Causes systemic lupus exacerbation or activation
+
+Azotemia may occur with severe renal disease
+
+Acute transient myopia and acute angle-closure glaucoma have been reported,
+particularly with history of sulfonamide or penicillin allergy (hydrochlorothiazide is
+sulfonamide)
+
+FDA-approved product labeling for many medications have included a broad
+contraindication in patients with a prior allregic reaction to sulfonamides; however,
+recent studies have suggested that crossreactivity between antibiotic sulfonamides and
+nonantibiotic sulfonamides is unlikely to occur
+
+Photosensitization may occur; instruct patients to protect skin from sun and undergo
+regular skin cancer screening
+
+Electrolyte disturbances (eg, hypokalemia, hyponatremia, hypochloremic alkalosis) may
+occur
+
+Pregnancy & Lactation
+
+Pregnancy
+
+No adequate and well-controlled studies in pregnant women
+
+https://reference.medscape.com/drug/microzide-inzirqo-hydrochlorothiazide-342412 33/36
+
+
+
+6/22/26, 5:00 PM Microzide, Inzirqo (hydrochlorothiazide) dosing, indications, interactions, adverse effects, and more
+
+Thiazides cross placental barrier and appear in cord blood; potential risk of fetal or
+neonatal jaundice and thrombocytopenia
+
+Animal studies
+
+Oral administration to pregnant mice and rats during their respective periods of
+major organogenesis at doses up to 3,000 and 1,000 mg hydrochlorothiazide/kg,
+respectively, provided no evidence of fetal harm
+
+Lactation
+
+Drug excreted in breast milk; use with caution (American Academy of Pediatrics states
+that it is "compatible with nursing")
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+Thiazide diuretic; inhibits sodium reabsorption in distal renal tubules, resulting in
+increased excretion of water and of sodium, potassium, and hydrogen ions
+
+Absorption
+
+Onset: Diuresis, ~2 hr; hypertension, 3-4 days
+
+Peak plasma time: 1-2.5 hr
+
+Peak effect: Diuresis, 4-6 hr
+
+Bioavailability: 65-75%
+
+Distribution
+
+Protein bound: 40-68%
+
+Vd: 3.6-7.8 L/kg
+
+https://reference.medscape.com/drug/microzide-inzirqo-hydrochlorothiazide-342412 34/36
+
+
+
+6/22/26, 5:00 PM Microzide, Inzirqo (hydrochlorothiazide) dosing, indications, interactions, adverse effects, and more
+
+Metabolism
+
+Minimally metabolized
+
+Elimination
+
+Half-life: 5.6-14.8 hr
+
+Dialyzable: Hemodialysis, no
+
+Excretion: Urine
+
+Administration
+
+Oral Suspension Preparation
+
+Gently shake bottle to loosen the powder, add 66 mL of water and shake vigorously for
+minimum of 30 seconds
+
+Suspension concentration is 10 mg/mL after reconstitution
+
+Write expiration date (calculated as 30 days after reconstitution) on bottle label
+
+Oral Administration
+
+May take with or without food
+
+Oral suspension: Shake well before each dose; measure dose with oral syringe
+
+Storage
+
+Tablets, capsules
+
+Store at 20-25ºC (68-77ºF); excursions permitted to 15-30ºC (59-86ºF)
+
+Powder for oral suspension
+
+Unreconstituted powder or reconstituted suspension: Store at 20-25ºC (68-77ºF);
+excursions permitted to 15-30ºC (59-86ºF)
+
+Do not freeze
+
+Reconstituted suspension expiration is 30 days
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+https://reference.medscape.com/drug/microzide-inzirqo-hydrochlorothiazide-342412 35/36
+
+
+
+6/22/26, 5:00 PM Microzide, Inzirqo (hydrochlorothiazide) dosing, indications, interactions, adverse effects, and more
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/microzide-inzirqo-hydrochlorothiazide-342412 36/36

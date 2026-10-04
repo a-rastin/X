@@ -1,0 +1,163 @@
+Loxitane (loxapine) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+loxapine (Rx)
+Brand and Other Names: Loxitane
+Classes: Antipsychotics, 1st Generation
+
+Dosing & Uses
+ADULT
+Dosage Forms & Strengths
+capsule
+• 5mg
+• 10mg
+• 25mg
+• 50mg
+
+Schizophrenia
+Initial: 10-25 mg PO q12hr
+Maintenance: 60-100 mg/day divided q6-12hr; not to exceed 250 mg/day
+
+Dosing Considerations
+For maintenance therapy, reduce dosage to lowest level compatible with symptom control; many patients have been maintained satisfactorily at dosages in the range of 20 to 60 mg daily.
+
+PEDIATRIC
+Not recommended
+
+Interactions
+All Interactions Sort By: Severity
+
+Contraindicated
+• amisulpride
+amisulpride, loxapine. Either increases toxicity of the other by Other (see comment). Contraindicated. Comment: Increases risk of neuroleptic malignant syndrome.
+• apomorphine
+loxapine decreases effects of apomorphine by pharmacodynamic antagonism. Contraindicated.
+• bromocriptine
+loxapine decreases effects of bromocriptine by pharmacodynamic antagonism. Contraindicated.
+• cabergoline
+loxapine decreases effects of cabergoline by pharmacodynamic antagonism. Contraindicated.
+• dopamine
+loxapine decreases effects of dopamine by pharmacodynamic antagonism. Contraindicated.
+• lisuride
+loxapine decreases effects of lisuride by pharmacodynamic antagonism. Contraindicated.
+• methyldopa
+loxapine decreases effects of methyldopa by pharmacodynamic antagonism. Contraindicated.
+• pramipexole
+loxapine decreases effects of pramipexole by pharmacodynamic antagonism. Contraindicated.
+• ropinirole
+loxapine decreases effects of ropinirole by pharmacodynamic antagonism. Contraindicated.
+
+Serious
+• benzhydrocodone/acetaminophen
+benzhydrocodone/acetaminophen, loxapine. Either increases toxicity of the other by pharmacodynamic synergism. Avoid or Use Alternate Drug. Profound sedation, respiratory depression, coma, and death may result if coadministered. Reserve concomitant prescribing of these drugs in patients for whom other treatment options are inadequate. Limit dosages and durations to the minimum required. Monitor closely for signs of respiratory depression and sedation.
+• calcium/magnesium/potassium/sodium oxybates
+loxapine, calcium/magnesium/potassium/sodium oxybates. Either increases effects of the other by pharmacodynamic synergism. Avoid or Use Alternate Drug. Profound sedation, respiratory depression, coma, and death may result if coadministered. Reserve concomitant prescribing of these drugs in patients for whom other treatment options are inadequate. Limit dosages and durations to the minimum required. Monitor closely for signs of respiratory depression and sedation.
+• fentanyl (including intranasal, transdermal, transmucosal)
+fentanyl, loxapine. Either increases effects of the other by pharmacodynamic synergism. Avoid or Use Alternate Drug. Coadministration with other CNS depressants, such as skeletal muscle relaxants, may cause respiratory depression, hypotension, profound sedation, coma, and/or death. Consider dose reduction of either or both agents to avoid serious adverse effects. Monitor for hypotension, respiratory depression, and profound sedation.
+• foscarbidopa/foslevodopa
+loxapine decreases effects of foscarbidopa/foslevodopa by pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+• hydrocodone
+hydrocodone, loxapine. Either increases toxicity of the other by pharmacodynamic synergism. Avoid or Use Alternate Drug. Profound sedation, respiratory depression, coma, and death may result if coadministered. Reserve concomitant prescribing of these drugs in patients for whom other treatment options are inadequate. Limit dosages and durations to the minimum required. Monitor closely for signs of respiratory depression and sedation.
+• levodopa
+loxapine decreases effects of levodopa by pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+• mefloquine
+mefloquine increases toxicity of loxapine by QTc interval. Avoid or Use Alternate Drug. Mefloquine may enhance the QTc prolonging effect of high risk QTc prolonging agents.
+• metoclopramide intranasal
+loxapine, metoclopramide intranasal. Either increases effects of the other by Other (see comment). Avoid or Use Alternate Drug. Comment: Avoid use of metoclopramide intranasal or interacting drug, depending on importance of drug to patient. loxapine increases toxicity of metoclopramide intranasal by pharmacodynamic synergism. Potential for additive effects, including increased frequency and severity of tardive dyskinesia, other extrapyramidal symptoms, and neuroleptic malignant syndrome.
+• olopatadine intranasal
+loxapine and olopatadine intranasal both increase sedation. Avoid or Use Alternate Drug. Coadministration increases risk of CNS depression, which can lead to additive impairment of psychomotor performance and cause daytime impairment.
+• safinamide
+loxapine decreases effects of safinamide by pharmacodynamic antagonism. Avoid or Use Alternate Drug. Dopamine antagonists may decrease safinamide effects and exacerbate Parkinson disease symptoms.
+• selinexor
+selinexor, loxapine. unspecified interaction mechanism. Avoid or Use Alternate Drug. Patients treated with selinexor may experience neurological toxicities. Avoid taking selinexor with other medications that may cause dizziness or confusion.
+• sodium oxybate
+loxapine, sodium oxybate. Either increases effects of the other by pharmacodynamic synergism. Avoid or Use Alternate Drug. Profound sedation, respiratory depression, coma, and death may result if coadministered. Reserve concomitant prescribing of these drugs in patients for whom other treatment options are inadequate. Limit dosages and durations to the minimum required. Monitor closely for signs of respiratory depression and sedation.
+• sofpironium topical
+sofpironium topical and loxapine both increase pharmacodynamic synergism. Avoid or Use Alternate Drug. Additive anticholinergic adverse effects may occur.
+• sufentanil SL
+sufentanil SL, loxapine. Either increases toxicity of the other by pharmacodynamic synergism. Avoid or Use Alternate Drug. Coadministration may result in hypotension, profound sedation, respiratory depression, coma, and death. Reserve concomitant prescribing of these drugs in patients for whom other treatment options are inadequate. Limit dosages and durations to the minimum required. Monitor closely for signs of respiratory depression and sedation.
+
+Monitor Closely
+Note: Coadministration with the following drugs requires caution/monitoring, primarily due to increased sedation, pharmacodynamic synergism, or anticholinergic effects:
+abobotulinumtoxinA, acetaminophen/phenyltoloxamine, aclidinium, acrivastine, alfentanil, almotriptan, alprazolam, amifampridine, amitriptyline, amlodipine, amoxapine, amphetamine, anticholinergic/sedative combos, apomorphine, aripiprazole, armodafinil, asenapine, atracurium, atropine, avapritinib, azelastine, baclofen, belladonna alkaloids, belladonna and opium, benperidol, benzhydrocodone/acetaminophen, benzphetamine, benztropine, brexanolone, brexpiprazole, brimonidine, brivaracetam, brompheniramine, buprenorphine, butalbital, butorphanol, caffeine, carbachol/brimonidine ophthalmic, carbamazepine, carbinoxamine, cariprazine, carisoprodol, chlordiazepoxide, chlorpheniramine, chlorpromazine, chlorzoxazone, cinnarizine, cisatracurium, clemastine, clobazam, clomipramine, clonazepam, clonidine, clorazepate, clozapine, codeine, cyclobenzaprine, cyproheptadine, dantrolene, daridorexant, darifenacin, daxibotulinumtoxinA, desflurane, desipramine, desloratadine, deutetrabenazine, dexbrompheniramine, dexchlorpheniramine, dexfenfluramine, dexmedetomidine, dexmethylphenidate, dextroamphetamine, dextromethorphan, dextromoramide, diamorphine, diazepam, dicyclomine, diethylpropion, difelikefalin, difenoxin hcl, dihydroergotamine, dimenhydrinate, diphenhydramine, diphenoxylate hcl, dipipanone, dobutamine, donepezil transdermal, dopamine, dopexamine, dosulepin, doxepin, doxylamine, droperidol, eletriptan, ephedrine, epinephrine, ergoloid mesylates, ergotamine, esketamine intranasal, estazolam, eszopiclone, ethanol, etomidate, fenfluramine, fentanyl, fesoterodine, flavoxate, flibanserin, fluphenazine, flurazepam, frovatriptan, gabapentin, ganaxolone, glycopyrrolate, glycopyrronium tosylate topical, guanfacine, haloperidol, henbane, homatropine, hydromorphone, hydroxyzine, hyoscyamine, imipramine, incobotulinumtoxinA, ipratropium, isoproterenol, ketamine, ketotifen ophthalmic, lamotrigine, lemborexant, letibotulinumtoxinA, levetiracetam, levocetirizine, levomilnacipran, levorphanol, linezolid, lisdexamfetamine, lithium, lofepramine, lofexidine, loprazolam, loratadine, lorazepam, lorcaserin, lormetazepam, lumateperone, lurasidone, maraviroc, marijuana, meclizine, melatonin, meperidine, meprobamate, metaproterenol, metaxalone, methadone, methamphetamine, methocarbamol, methohexital, methscopolamine, methsuximide, methylenedioxymethamphetamine, methylergonovine, methylphenidate, metoclopramide, midazolam, midodrine, milnacipran, mirtazapine, modafinil, molindone, morphine, motherwort, moxonidine, nabilone, nalbuphine, naratriptan, nitrous oxide, norepinephrine, nortriptyline, olanzapine, onabotulinumtoxinA, opicapone, opium tincture, oxazepam, oxybutynin, oxycodone, oxymorphone, paliperidone, pancuronium, papaveretum, papaverine, paroxetine, pentazocine, pentobarbital, perphenazine, phendimetrazine, phenelzine, phenobarbital, phentermine, phenylephrine, pholcodine, pimozide, pirbuterol, prabotulinumtoxinA, pralidoxime, primidone, procarbazine, prochlorperazine, promethazine, propantheline, propofol, propylhexedrine, protriptyline, pyrilamine, quazepam, quetiapine, ramelteon, rapacuronium, remifentanil, remimazolam, rimabotulinumtoxinB, risperidone, rizatriptan, rocuronium, salmeterol, scopolamine, scullcap, selegiline, sevoflurane, shepherd's purse, sodium oxybate, sodium sulfate/magnesium sulfate/potassium chloride, sodium sulfate/potassium sulfate/magnesium sulfate, solifenacin, stiripentol, sufentanil, sumatriptan, tapentadol, tasimelteon, teduglutide, temazepam, terbutaline, tetrabenazine, thalidomide, thioridazine, thiothixene, tiagabine, tiotropium, tizanidine, tolcapone, tolterodine, topiramate, tramadol, tranylcypromine, trazodone, triazolam, triclofos, trifluoperazine, trihexyphenidyl, trimipramine, triprolidine, trospium chloride, valproic acid, vecuronium, venlafaxine, vigabatrin, vilazodone, xanomeline/trospium, xylometazoline, yohimbine, zaleplon, ziconotide, ziprasidone, zolmitriptan, zolpidem, zonisamide, zotepine, zuranolone.
+
+Minor
+• chasteberry (decreases effects by pharmacodynamic antagonism)
+• ethanol (increases toxicity by pharmacodynamic synergism; additive CNS depression)
+• eucalyptus (increases sedation)
+• sage (increases sedation)
+• smoking (decreases levels by affecting CYP1A2 metabolism)
+
+Adverse Effects
+Common
+• Hypotension, orthostatic hypotension
+• Akathisia, dizziness, drug-induced tardive dystonia, dystonia, extrapyramidal disease, parkinsonian, somnolence, tardive dyskinesia
+• Diminished sweating
+• Constipation, xerostomia
+• Blurred vision
+• Urinary retention
+• Nasal congestion
+
+Serious
+• Prolonged QT interval, torsades de pointes
+• Ineffective thermoregulation, heatstroke or hypothermia (rare), neuroleptic malignant syndrome (rare), seizure (rare)
+• Paralytic ileus (rare)
+• Agranulocytosis (rare), disorder of hematopoietic structure (rare), leukopenia (rare), thrombocytopenia (rare)
+• Cholestatic jaundice syndrome (rare)
+• Drug-induced lupus erythematosus, systemic (rare)
+• Priapism (rare)
+
+Postmarketing Reports
+Falls
+
+Warnings
+Black Box Warnings
+• Patients with dementia-related psychosis who are treated with antipsychotic drugs are at an increased risk of death as shown in short-term controlled trials. The deaths appeared to be either cardiovascular (eg, heart failure, sudden death) or infectious (eg, pneumonia) in nature. This drug is not approved for the treatment of patients with dementia-related psychosis.
+Bronchospasm
+• Can cause bronchospasm with potential to lead to respiratory distress and respiratory arrest.
+• Available only through a restricted program under a Risk Evaluation and Mitigation Strategy (REMS) called the ADASUVE REMS.
+• Administer only in an enrolled healthcare facility that has immediate access on site to supplies and personnel trained to manage acute bronchospasm, and ready access to emergency response services; facilities must have short-acting bronchodilator, including a nebulizer and inhalation solution, for immediate treatment of bronchospasm.
+• Before administering loxapine, screen patients for a current diagnosis, history of COPD, asthma, or other lung diseases; examine patients, including chest auscultation for respiratory signs; monitor for signs and symptoms of bronchospasm following treatment with loxapine.
+
+Contraindications
+• Documented hypersensitivity; severe CNS depression; severe liver or cardiac disease, bone marrow suppression; narrow-angle glaucoma.
+• CNS depression (including coma), neuroleptic malignant syndrome (NMS), poorly controlled seizure disorder.
+
+Cautions
+• Use with extreme caution in patients with a history of convulsive disorders since it lowers convulsive threshold; seizures have been reported in patients receiving drug at antipsychotic dose levels, and may occur in epileptic patients even with maintenance of routine anticonvulsant drug therapy.
+• The drug has an antiemetic effect in animals; since this effect may also occur in man, therapy may mask signs of overdosage of toxic drugs and may obscure conditions such as intestinal obstruction and brain tumor.
+• Use with caution in patients with cardiovascular disease; increased pulse rates reported in majority of patients receiving antipsychotic doses; transient hypotension has been reported.
+• Watch for hypotension if administering IM; in the presence of severe hypotension requiring vasopressor therapy, the preferred drugs may be norepinephrine or angiotensin; usual doses of epinephrine may be ineffective because of inhibition of its vasopressor effect by the drug.
+• The possibility of ocular toxicity from therapy cannot be excluded; careful observation should be made for pigmentary retinopathy and lenticular pigmentation since these have been observed in some patients receiving certain other antipsychotic drugs for prolonged periods.
+• Because of possible anticholinergic action, the drug should be used cautiously in patients with glaucoma or a tendency to urinary retention, particularly with concomitant administration of anticholinergic-type antiparkinson medication.
+• Experience to date indicates the possibility of a slightly higher incidence of extrapyramidal effects following intramuscular administration than normally anticipated with oral formulations; increase may be attributable to higher plasma levels following intramuscular injection.
+• In patients taking benzodiazepines, loxapine should be preceded by stopping benzodiazepine therapy for 2 weeks to avoid drug interactions capable of respiratory depression.
+• May cause somnolence, postural hypotension, motor and sensory instability, which may lead to falls and, consequently, fractures or other injuries; perform complete fall risk assessments when initiating antipsychotic treatment and recurrently for patients on long-term antipsychotic therapy.
+• FDA warning regarding off-label use for dementia in elderly.
+• Can cause bronchospasm that has potential to lead to respiratory distress and respiratory arrest (see BBW).
+• Tardive dyskinesia: A syndrome consisting of potentially irreversible, involuntary, dyskinetic movements, may develop in patients treated with antipsychotic drugs. Although prevalence of the syndrome appears to be highest among elderly, especially elderly women, it is impossible to rely upon prevalence estimates to predict, at the inception of antipsychotic treatment, which patients are likely to develop the syndrome. Whether antipsychotic drug products differ in their potential to cause tardive dyskinesia is unknown; both the risk of developing the syndrome and the likelihood that it will become irreversible are believed to increase as the duration of treatment and the total cumulative dose of antipsychotic drugs administered to the patient increase. However, the syndrome can develop, although much less commonly, after relatively brief treatment periods at low doses; there is no known treatment for established cases of tardive dyskinesia, although syndrome may remit, partially or completely, if antipsychotic treatment is withdrawn. Antipsychotic treatment itself, however, may suppress (or partially suppress) signs and symptoms of the syndrome and thereby may possibly mask the underlying disease process. The effect that symptomatic suppression has upon the long-term course of the syndrome is unknown; given these considerations, antipsychotics should be prescribed in a manner that is most likely to minimize the occurrence of tardive dyskinesia. Chronic antipsychotic treatment should generally be reserved for patients who suffer from a chronic illness that is known to respond to antipsychotic drugs, and for whom alternative, equally effective, but potentially less harmful treatments are not available or appropriate. In patients who do require chronic treatment, the smallest dose and the shortest duration of treatment producing a satisfactory clinical response should be sought; the need for continued treatment should be reassessed periodically. If signs and symptoms of tardive dyskinesia appear in a patient on antipsychotics, drug discontinuation should be considered; however, some patients may require treatment despite the presence of the syndrome.
+• Neuroleptic malignant syndrome: A potentially fatal symptom complex sometimes referred to as neuroleptic malignant syndrome (NMS) has been reported in association with antipsychotic drugs. Clinical manifestations of NMS are hyperpyrexia, muscle rigidity, altered mental status, and evidence of autonomic instability (irregular pulse or blood pressure, tachycardia, diaphoresis, and cardiac dysrhythmias); the diagnostic evaluation of patients with this syndrome is complicated. In arriving at a diagnosis, it is important to identify cases where the clinical presentation includes both serious medical illness (eg, pneumonia, systemic infection, etc.) and untreated or inadequately treated extrapyramidal signs and symptoms (EPS); other important considerations in the differential diagnosis include central anticholinergic toxicity, heat stroke, drug fever, and primary central nervous system (CNS) pathology. The management of NMS should include immediate discontinuation of antipsychotic drugs and other drugs not essential to concurrent therapy, intensive symptomatic treatment and medical monitoring, and treatment of any concomitant serious medical problems for which specific treatments are available. There is no general agreement about specific pharmacological treatment regimens for uncomplicated NMS; if a patient requires antipsychotic drug treatment after recovery from NMS, the potential reintroduction of drug therapy should be carefully considered. The patient should be carefully monitored since recurrences of NMS have been reported; the drug, like other antipsychotics, may impair mental and/or physical abilities, especially during first few days of therapy; therefore, ambulatory patients should be warned about activities requiring alertness (eg, operating vehicles or machinery) and about concomitant use of alcohol and other CNS depressants.
+• The drug has not been evaluated for the management of behavioral complications in patients with mental retardation, and therefore, it cannot be recommended.
+• Leukopenia, neutropenia, agranulocytosis: Leukopenia/neutropenia and agranulocytosis reported temporally related to antipsychotic agents. Possible risk factors for leukopenia/neutropenia include preexisting low white blood cell count (WBC) and history of drug induced leukopenia/neutropenia. Patients with a preexisting low WBC or a history of drug-induced leukopenia/neutropenia should have their complete blood count (CBC) monitored frequently during the first few months of therapy and should discontinue therapy at first sign of a decline in WBC in absence of other causative factors. Patients with neutropenia should be carefully monitored for fever or other symptoms or signs of infection and treated promptly if such symptoms or signs occur. Patients with severe neutropenia (absolute neutrophil count < 1000/mm3) should discontinue therapy and have their WBC followed until recovery.
+• Hyperprolactinemia: As with other drugs that antagonize dopamine D2 receptors, this drug elevates prolactin levels and the elevation persists during chronic administration. This drug is associated with higher levels of prolactin elevation than other antipsychotic agents; hyperprolactinemia may suppress hypothalamic GnRH, resulting in reduced pituitary gonadotropin secretion; this, in turn, may inhibit reproductive function by impairing gonadal steroidogenesis in both female and male patients. Galactorrhea, amenorrhea, gynecomastia, and impotence reported in patients receiving prolactin-elevating compounds; long-standing hyperprolactinemia when associated with hypogonadism may lead to decreased bone density in both female and male subjects. Tissue culture experiments indicate that approximately one-third of human breast cancers are prolactin dependent in vitro, a factor of potential importance if the prescription of these drugs is contemplated in a patient with previously detected breast cancer. An increase in pituitary gland, mammary gland, and pancreatic islet cell neoplasia (mammary adenocarcinomas, pituitary and pancreatic adenomas) was observed in the risperidone carcinogenicity studies conducted in mice and rats. Published epidemiologic studies have shown inconsistent results when exploring the potential association between hyperprolactinemia and breast cancer.
+• REMS to mitigate bronchospasm: Available only through restricted program under a REMS called the ADASUVE REMS. Healthcare facilities that dispense and administer therapy must be enrolled and comply with REMS requirements; certified healthcare facilities must be able to provide immediate access on site to supplies and personnel trained to manage acute bronchospasm, and ready access to emergency response services. Facilities must have a short-acting bronchodilator (e.g., albuterol), including nebulizers and inhalation solutions, for immediate treatment of bronchospasm. Wholesalers and distributors must distribute only to enrolled healthcare facilities.
+
+Pregnancy & Lactation
+Pregnancy Category: C
+Neonates exposed to antipsychotic drugs during the 3rd trimester of pregnancy are at risk for extrapyramidal and/or withdrawal symptoms following delivery. These complications vary in severity; in some cases, symptoms have been self-limited, while in other cases neonates have required intensive care unit support and prolonged hospitalization.
+Lactation: avoid in breastfeeding.
+
+Pharmacology
+Mechanism of Action
+Dibenzoxazepine antipsychotic; blocks mesolimbic D1 and D2 receptors in the brain; also has anti-serotonin 5HT2 activity.
+Absorption
+Duration: 12 hr
+Onset: 20-30 min
+Peak plasma time: 1-2 hr (PO); 5 hr (IM)
+Peak plasma concentration: 0.006-0.013 mcg/mL
+Metabolism
+Metabolism: Aromatic hydroxylation, N-demethylation, N-oxidation
+Metabolites: 8-hydroxyloxapine, 7-hydroxyloxapine
+Elimination
+Half-life: 4-12 hr
+Excretion: Urine (56-70%), feces

@@ -1,0 +1,265 @@
+﻿6/22/26, 1:09 PM Enulose, Kristalose (lactulose) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+lactulose (Rx)
+Brand and Other Names: Enulose, Kristalose, Constulose, Generlac
+Classes: Laxatives, Osmotic; Ammonium Detoxicants
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+oral/rectal solution
+
+10g/15mL
+
+packet
+
+10g
+
+20g
+
+Constipation
+
+Solution: 15-30 mL (10-20 g) PO once daily; may be increased to 60 mL (40 g) once
+daily
+
+Crystals: 10-20 g PO qDay; may increase to 40 g/day
+
+Portal Systemic Encephalopathy
+
+Prophylaxis
+
+30-45 mL (20-30 g) PO q6-8hr, adjusted until 2-3 soft stools/day; if acute, may be given
+q1-2hr until 2-3 soft stools/day
+
+Treatment
+
+20-30 g (30-45 mL) PO q1hr to induce rapid defecation; reduced to 20-30 g q6-8hr after
+defecation achieved; titrated to produce 2-3 soft stools/day
+
+300 mL (200 g) PR with 700 mL water or NS, retained for 30-60 minutes; may be
+repeated q4-6hr; transition to oral treatment before discontinuance of rectal
+
+https://reference.medscape.com/drug/enulose-kristalose-lactulose-342016 1/6
+
+
+
+6/22/26, 1:09 PM Enulose, Kristalose (lactulose) dosing, indications, interactions, adverse effects, and more
+
+administration
+
+PEDIATRIC
+Dosage Forms & Strengths
+
+oral/rectal solution
+
+10g/15mL
+
+packet
+
+10g
+
+20g
+
+Constipation
+
+0.7-2 g/kg/day (1-3 mL/kg/day) PO in divided doses; not to exceed 40 g/day (60 mL/day)
+
+Portal Systemic Encephalopathy
+
+Prophylaxis
+
+Infants: 2.5-10 mL/day (1.7-6.67 g/day) PO in divided doses; titrated to produce 2-3 soft
+stools/day
+
+Children and adolescents: 40-90 mL/day (26.7-60 g/day) PO in divided doses; titrated to
+produce 2-3 soft stools/day
+
+Interactions
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and lactulose
+No Interactions Found
+Interactions Found
+Contraindicated
+
+Serious
+
+https://reference.medscape.com/drug/enulose-kristalose-lactulose-342016 2/6
+
+
+
+6/22/26, 1:09 PM Enulose, Kristalose (lactulose) dosing, indications, interactions, adverse effects, and more
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+Contraindicated (0)
+
+Serious (0)
+
+Monitor Closely (7)
+
+aluminum hydroxide
+aluminum hydroxide decreases effects of lactulose by pharmacodynamic
+antagonism. Use Caution/Monitor.
+
+calcium carbonate
+calcium carbonate decreases effects of lactulose by pharmacodynamic antagonism.
+Use Caution/Monitor.
+
+deflazacort
+lactulose and deflazacort both decrease serum potassium. Use Caution/Monitor.
+
+dichlorphenamide
+dichlorphenamide and lactulose both decrease serum potassium. Use
+Caution/Monitor.
+
+dichlorphenamide, lactulose. Either increases toxicity of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Both drugs can
+cause metabolic acidosis.
+
+sodium bicarbonate
+sodium bicarbonate decreases effects of lactulose by pharmacodynamic
+antagonism. Use Caution/Monitor.
+
+sodium citrate/citric acid
+sodium citrate/citric acid decreases effects of lactulose by pharmacodynamic
+antagonism. Use Caution/Monitor.
+
+warfarin
+lactulose increases effects of warfarin by unspecified interaction mechanism. Use
+Caution/Monitor.
+
+Minor (0)
+
+Adverse Effects
+
+https://reference.medscape.com/drug/enulose-kristalose-lactulose-342016 3/6
+
+
+
+6/22/26, 1:09 PM Enulose, Kristalose (lactulose) dosing, indications, interactions, adverse effects, and more
+
+Frequency Not Defined
+
+Dehydration
+
+Diarrhea
+
+Excessive bowel activity
+
+Hypernatremia
+
+Hypokalemia
+
+Nausea
+
+Vomiting
+
+Abdominal cramping
+
+Abdominal distention
+
+Belching
+
+Flatulence
+
+Warnings
+
+Contraindications
+
+Galactosemia (patients require low-galactose diet)
+
+Cautions
+
+Diabetes (preparation contains lactose and galactose)
+
+Monitor for electrolyte imbalance when drug is used for >6 months or in patients
+predisposed to electrolyte abnormalities
+
+Avoid using other laxatives concomitantly
+
+Inadequate response possible when taken concomitantly with anti-infective
+
+Pregnancy & Lactation
+
+Pregnancy category: B
+
+Lactation: Unknown whether drug is distributed into milk; use with caution
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+https://reference.medscape.com/drug/enulose-kristalose-lactulose-342016 4/6
+
+
+
+6/22/26, 1:09 PM Enulose, Kristalose (lactulose) dosing, indications, interactions, adverse effects, and more
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+Constipation: Hyperosmotic agent increases stool water contents, softens stool,
+promotes peristalsis, and reduces blood ammonia concentration
+
+Portal systemic encephalopathy: Breakdown of lactulose to organic acids by colonic
+bacteria acidifies colonic contents, thereby subsequently inhibiting diffusion of ammonia
+back to blood; agent also enhances diffusion of NH3 from blood into gut, where it is
+converted to NH4+
+
+Absorption
+
+Bioavailability: <3% absorbed
+
+Onset: 24-48 hr
+
+Metabolism
+
+Absorbed lactulose is not metabolized; unabsorbed lactulose is extensively metabolized
+to organic acids by colonic bacteria
+
+Metabolites: Lactic acid (main), formic acid, acetic acid (all active)
+
+Elimination
+
+Excretion: Urine (absorbed lactulose), feces and bile (unabsorbed lactulose and
+metabolites; minimal)
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/enulose-kristalose-lactulose-342016 5/6
+
+
+
+6/22/26, 1:09 PM Enulose, Kristalose (lactulose) dosing, indications, interactions, adverse effects, and more
+
+https://reference.medscape.com/drug/enulose-kristalose-lactulose-342016 6/6

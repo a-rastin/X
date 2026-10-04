@@ -1,0 +1,396 @@
+molindone (Rx)
+Brand and Other Names: Moban
+Classes: Antipsychotics, 1st Generation
+
+Dosing & Uses
+ADULT
+Dosage Forms & Strengths
+tablet
+• 5mg
+• 10mg
+• 25mg
+• 50mg
+
+Schizophrenia
+Indicated for the management of schizophrenia
+Initial: 50-75 mg PO qDay; increase to 100 mg/day in 3-4 days; may titrate up or down based on severity of symptomatology and individual patient response
+Maintenance
+• Mild: 5-15 mg PO q6-8hr
+• Moderate: 10-25 mg PO q6-8hr
+• Severe: 225 mg/day PO may be required
+
+Dosage Modifications
+Initiate at lower dose in elderly patients and debilitated patients
+
+Dosing Considerations
+• When stopping antipsychotics, gradually taper dose over 6-24 months to avoid withdrawal
+
+PEDIATRIC
+Safety and efficacy not established
+
+GERIATRIC
+Use lower initial doses
+
+Interactions
+Interaction Checker
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal and molindone
+No Interactions Found
+Interactions Found
+Contraindicated
+Serious
+Significant - Monitor Closely
+Minor
+All Interactions Sort By: Severity
+
+Contraindicated (1)
+• thalidomide
+molindone and thalidomide both increase sedation. Contraindicated.
+
+Serious (16)
+• alfentanil
+molindone and alfentanil both increase sedation. Avoid or Use Alternate Drug. Limit use to patients for whom alternative treatment options are inadequate
+• benzhydrocodone/acetaminophen
+benzhydrocodone/acetaminophen, molindone. Either increases toxicity of the other by pharmacodynamic synergism. Avoid or Use Alternate Drug. Profound sedation, respiratory depression, coma, and death may result if coadministered. Reserve concomitant prescribing of these drugs in patients for whom other treatment options are inadequate. Limit dosages and durations to the minimum required. Monitor closely for signs of respiratory depression and sedation.
+• buprenorphine
+molindone and buprenorphine both increase sedation. Avoid or Use Alternate Drug. Limit use to patients for whom alternative treatment options are inadequate
+• buprenorphine buccal
+molindone and buprenorphine buccal both increase sedation. Avoid or Use Alternate Drug. Limit use to patients for whom alternative treatment options are inadequate
+• hydrocodone
+hydrocodone, molindone. Either increases toxicity of the other by pharmacodynamic synergism. Avoid or Use Alternate Drug. Profound sedation, respiratory depression, coma, and death may result if coadministered. Reserve concomitant prescribing of these drugs in patients for whom other treatment options are inadequate. Limit dosages and durations to the minimum required. Monitor closely for signs of respiratory depression and sedation.
+molindone and hydrocodone both increase sedation. Avoid or Use Alternate Drug. Limit use to patients for whom alternative treatment options are inadequate
+• hydromorphone
+molindone and hydromorphone both increase sedation. Avoid or Use Alternate Drug. Limit use to patients for whom alternative treatment options are inadequate
+• methadone
+molindone and methadone both increase sedation. Avoid or Use Alternate Drug. Limit use to patients for whom alternative treatment options are inadequate
+• metoclopramide intranasal
+molindone, metoclopramide intranasal. Either increases effects of the other by Other (see comment). Avoid or Use Alternate Drug. Comment: Avoid use of metoclopramide intranasal or interacting drug, depending on importance of drug to patient.
+molindone increases toxicity of metoclopramide intranasal by pharmacodynamic synergism. Avoid or Use Alternate Drug. Potential for additive effects, including increased frequency and severity of tardive dyskinesia, other extrapyramidal symptoms, and neuroleptic malignant syndrome.
+• morphine
+molindone and morphine both increase sedation. Avoid or Use Alternate Drug. Limit use to patients for whom alternative treatment options are inadequate
+• olopatadine intranasal
+molindone and olopatadine intranasal both increase sedation. Avoid or Use Alternate Drug. Coadministration increases risk of CNS depression, which can lead to additive impairment of psychomotor performance and cause daytime impairment.
+• oxycodone
+molindone and oxycodone both increase sedation. Avoid or Use Alternate Drug. Limit use to patients for whom alternative treatment options are inadequate
+• oxymorphone
+molindone and oxymorphone both increase sedation. Avoid or Use Alternate Drug. Limit use to patients for whom alternative treatment options are inadequate
+• remifentanil
+molindone and remifentanil both increase sedation. Avoid or Use Alternate Drug. Limit use to patients for whom alternative treatment options are inadequate
+• selinexor
+selinexor, molindone. unspecified interaction mechanism. Avoid or Use Alternate Drug. Patients treated with selinexor may experience neurological toxicities. Avoid taking selinexor with other medications that may cause dizziness or confusion.
+• sofpironium topical
+sofpironium topical and molindone both increase pharmacodynamic synergism. Avoid or Use Alternate Drug. Additive anticholinergic adverse effects may occur.
+• sufentanil SL
+sufentanil SL, molindone. Either increases toxicity of the other by pharmacodynamic synergism. Avoid or Use Alternate Drug. Coadministration may result in hypotension, profound sedation, respiratory depression, coma, and death. Reserve concomitant prescribing of these drugs in patients for whom other treatment options are inadequate. Limit dosages and durations to the minimum required. Monitor closely for signs of respiratory depression and sedation.
+
+Monitor Closely (215)
+• abobotulinumtoxinA: molindone increases effects of abobotulinumtoxinA by pharmacodynamic synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate botulinum toxin effects, which may result in excessive neuromuscular weakness and heighten systemic anticholinergic effects.
+• acetaminophen/phenyltoloxamine: molindone and acetaminophen/phenyltoloxamine both increase sedation. Use Caution/Monitor.
+• acrivastine: acrivastine and molindone both increase sedation. Use Caution/Monitor.
+• almotriptan: almotriptan, molindone. unspecified interaction mechanism. Use Caution/Monitor. Serotonin modulators may enhance dopamine blockade, possibly increasing the risk for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic effect of serotonin modulators, which may result in serotonin syndrome. Monitor for evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia, muscle rigidity, autonomic dysfunction).
+• alprazolam: molindone and alprazolam both increase sedation. Use Caution/Monitor.
+• amifampridine: molindone increases toxicity of amifampridine by Other (see comment). Modify Therapy/Monitor Closely. Comment: Amifampridine can cause seizures. Coadministration with drugs that lower seizure threshold may increase this risk.
+• amisulpride: amisulpride and molindone both increase sedation. Use Caution/Monitor.
+• amitriptyline: molindone and amitriptyline both increase sedation. Use Caution/Monitor.
+• amoxapine: molindone and amoxapine both increase sedation. Use Caution/Monitor.
+• aripiprazole: molindone and aripiprazole both increase sedation. Use Caution/Monitor.
+• asenapine: asenapine and molindone both increase sedation. Use Caution/Monitor.
+• asenapine transdermal: asenapine transdermal and molindone both increase sedation. Use Caution/Monitor.
+• avapritinib: avapritinib and molindone both increase sedation. Use Caution/Monitor.
+• baclofen: molindone and baclofen both increase sedation. Use Caution/Monitor.
+• benzhydrocodone/acetaminophen: benzhydrocodone/acetaminophen and molindone both increase sedation. Use Caution/Monitor.
+• brexanolone: brexanolone, molindone. Either increases toxicity of the other by sedation. Use Caution/Monitor.
+• brexpiprazole: brexpiprazole and molindone both increase sedation. Use Caution/Monitor.
+• brimonidine: brimonidine and molindone both increase sedation. Use Caution/Monitor.
+• brimonidine topical: brimonidine topical and molindone both increase sedation. Use Caution/Monitor. molindone and brimonidine topical both increase sedation. Use Caution/Monitor.
+• brivaracetam: brivaracetam and molindone both increase sedation. Use Caution/Monitor.
+• brompheniramine: molindone and brompheniramine both increase sedation. Use Caution/Monitor.
+• buprenorphine subdermal implant: buprenorphine subdermal implant and molindone both increase sedation. Use Caution/Monitor.
+• buprenorphine transdermal: buprenorphine transdermal and molindone both increase sedation. Use Caution/Monitor.
+• buprenorphine, long-acting injection: molindone increases toxicity of buprenorphine, long-acting injection by pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of buprenorphine and benzodiazepines or other CNS depressants increases risk of adverse reactions including overdose, respiratory depression, and death. Cessation of benzodiazepines or other CNS depressants is preferred in most cases. In some cases, monitoring at a higher level of care for tapering CNS depressants may be appropriate. In others, gradually tapering a patient off of a prescribed benzodiazepine or other CNS depressant or decreasing to the lowest effective dose may be appropriate. buprenorphine, long-acting injection and molindone both increase sedation. Use Caution/Monitor.
+• butalbital: molindone and butalbital both increase sedation. Use Caution/Monitor.
+• butorphanol: molindone and butorphanol both increase sedation. Use Caution/Monitor.
+• carbachol/brimonidine ophthalmic: carbachol/brimonidine ophthalmic and molindone both increase sedation. Use Caution/Monitor. molindone and carbachol/brimonidine ophthalmic both increase sedation. Use Caution/Monitor.
+• carbinoxamine: molindone and carbinoxamine both increase sedation. Use Caution/Monitor.
+• cariprazine: cariprazine and molindone both increase sedation. Use Caution/Monitor.
+• carisoprodol: molindone and carisoprodol both increase sedation. Use Caution/Monitor.
+• cenobamate: molindone and cenobamate both increase sedation. Use Caution/Monitor.
+• cetirizine: molindone and cetirizine both increase sedation. Use Caution/Monitor.
+• chlordiazepoxide: molindone and chlordiazepoxide both increase sedation. Use Caution/Monitor.
+• chlorpheniramine: molindone and chlorpheniramine both increase sedation. Use Caution/Monitor.
+• chlorpromazine: molindone and chlorpromazine both increase sedation. Use Caution/Monitor.
+• chlorzoxazone: molindone and chlorzoxazone both increase sedation. Use Caution/Monitor.
+• clemastine: molindone and clemastine both increase sedation. Use Caution/Monitor.
+• clobazam: clobazam and molindone both increase sedation. Use Caution/Monitor. molindone and clobazam both increase sedation. Use Caution/Monitor.
+• clomipramine: molindone and clomipramine both increase sedation. Use Caution/Monitor.
+• clonazepam: molindone and clonazepam both increase sedation. Use Caution/Monitor.
+• clonidine: clonidine and molindone both increase sedation. Use Caution/Monitor. molindone and clonidine both increase sedation. Use Caution/Monitor.
+• clorazepate: molindone and clorazepate both increase sedation. Use Caution/Monitor.
+• clozapine: molindone and clozapine both increase sedation. Use Caution/Monitor.
+• codeine: molindone and codeine both increase sedation. Use Caution/Monitor.
+• cyclobenzaprine: molindone and cyclobenzaprine both increase sedation. Use Caution/Monitor.
+• cyproheptadine: molindone and cyproheptadine both increase sedation. Use Caution/Monitor.
+• dantrolene: molindone and dantrolene both increase sedation. Use Caution/Monitor.
+• daridorexant: molindone and daridorexant both increase sedation. Modify Therapy/Monitor Closely. Coadministration increases risk of CNS depression, which can lead to additive impairment of psychomotor performance and cause daytime impairment.
+• daxibotulinumtoxinA: molindone increases effects of daxibotulinumtoxinA by pharmacodynamic synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate botulinum toxin effects, which may result in excessive neuromuscular weakness and heighten systemic anticholinergic effects.
+• desflurane: molindone and desflurane both increase sedation. Use Caution/Monitor.
+• desipramine: molindone and desipramine both increase sedation. Use Caution/Monitor.
+• desloratadine: desloratadine and molindone both increase sedation. Use Caution/Monitor.
+• deutetrabenazine: molindone and deutetrabenazine both increase sedation. Use Caution/Monitor.
+• dexbrompheniramine: dexbrompheniramine and molindone both increase sedation. Use Caution/Monitor. molindone and dexbrompheniramine both increase sedation. Use Caution/Monitor.
+• dexchlorpheniramine: molindone and dexchlorpheniramine both increase sedation. Use Caution/Monitor.
+• dextromethorphan: dextromethorphan, molindone. unspecified interaction mechanism. Use Caution/Monitor. Serotonin modulators may enhance dopamine blockade, possibly increasing the risk for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic effect of serotonin modulators, which may result in serotonin syndrome. Monitor for evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia, muscle rigidity, autonomic dysfunction).
+• diazepam: molindone and diazepam both increase sedation. Use Caution/Monitor.
+• diazepam buccal: diazepam buccal and molindone both increase sedation. Use Caution/Monitor.
+• diazepam intranasal: diazepam intranasal and molindone both increase sedation. Use Caution/Monitor.
+• difelikefalin: difelikefalin and molindone both increase sedation. Use Caution/Monitor.
+• difenoxin hcl: molindone and difenoxin hcl both increase sedation. Use Caution/Monitor.
+• dihydroergotamine: dihydroergotamine, molindone. unspecified interaction mechanism. Use Caution/Monitor. Serotonin modulators may enhance dopamine blockade, possibly increasing the risk for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic effect of serotonin modulators, which may result in serotonin syndrome. Monitor for evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia, muscle rigidity, autonomic dysfunction).
+• dimenhydrinate: molindone and dimenhydrinate both increase sedation. Use Caution/Monitor.
+• diphenhydramine: molindone and diphenhydramine both increase sedation. Use Caution/Monitor.
+• diphenoxylate hcl: molindone and diphenoxylate hcl both increase sedation. Use Caution/Monitor.
+• donepezil transdermal: donepezil transdermal, molindone. Either decreases effects of the other by pharmacodynamic antagonism. Use Caution/Monitor.
+• doxepin: molindone and doxepin both increase sedation. Use Caution/Monitor.
+• doxylamine: molindone and doxylamine both increase sedation. Use Caution/Monitor.
+• droperidol: molindone and droperidol both increase sedation. Use Caution/Monitor.
+• efavirenz: molindone and efavirenz both increase sedation. Use Caution/Monitor.
+• eletriptan: eletriptan, molindone. unspecified interaction mechanism. Use Caution/Monitor. Serotonin modulators may enhance dopamine blockade, possibly increasing the risk for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic effect of serotonin modulators, which may result in serotonin syndrome. Monitor for evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia, muscle rigidity, autonomic dysfunction).
+• entacapone: molindone and entacapone both increase sedation. Use Caution/Monitor.
+• ergoloid mesylates: ergoloid mesylates, molindone. unspecified interaction mechanism. Use Caution/Monitor. Serotonin modulators may enhance dopamine blockade, possibly increasing the risk for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic effect of serotonin modulators, which may result in serotonin syndrome. Monitor for evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia, muscle rigidity, autonomic dysfunction).
+• ergotamine: ergotamine, molindone. unspecified interaction mechanism. Use Caution/Monitor. Serotonin modulators may enhance dopamine blockade, possibly increasing the risk for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic effect of serotonin modulators, which may result in serotonin syndrome. Monitor for evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia, muscle rigidity, autonomic dysfunction).
+• esketamine intranasal: molindone and esketamine intranasal both increase sedation. Use Caution/Monitor.
+• estazolam: molindone and estazolam both increase sedation. Use Caution/Monitor.
+• eszopiclone: eszopiclone and molindone both increase sedation. Use Caution/Monitor. molindone and eszopiclone both increase sedation. Use Caution/Monitor.
+• ethanol: molindone and ethanol both increase sedation. Use Caution/Monitor.
+• ethosuximide: molindone and ethosuximide both increase sedation. Use Caution/Monitor.
+• felbamate: molindone and felbamate both increase sedation. Use Caution/Monitor.
+• fenfluramine: molindone and fenfluramine both increase sedation. Use Caution/Monitor.
+• fentanyl: fentanyl, molindone. unspecified interaction mechanism. Use Caution/Monitor. Serotonin modulators may enhance dopamine blockade, possibly increasing the risk for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic effect of serotonin modulators, which may result in serotonin syndrome. Monitor for evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia, muscle rigidity, autonomic dysfunction). fentanyl and molindone both increase sedation. Use Caution/Monitor.
+• fentanyl intranasal: fentanyl intranasal and molindone both increase sedation. Use Caution/Monitor.
+• fentanyl iontophoretic transdermal system: fentanyl iontophoretic transdermal system and molindone both increase sedation. Use Caution/Monitor.
+• fentanyl transdermal: fentanyl transdermal and molindone both increase sedation. Use Caution/Monitor.
+• fentanyl transmucosal: fentanyl transmucosal and molindone both increase sedation. Use Caution/Monitor.
+• fexofenadine: molindone and fexofenadine both increase sedation. Use Caution/Monitor.
+• flibanserin: flibanserin, molindone. affecting hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Serotonin modulators may enhance dopamine blockade, possibly increasing the risk for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic effect of serotonin modulators, which may result in serotonin syndrome. Monitor for evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia, muscle rigidity, autonomic dysfunction). molindone and flibanserin both increase sedation. Use Caution/Monitor.
+• fluphenazine: molindone and fluphenazine both increase sedation. Use Caution/Monitor.
+• flurazepam: molindone and flurazepam both increase sedation. Use Caution/Monitor.
+• frovatriptan: frovatriptan, molindone. unspecified interaction mechanism. Use Caution/Monitor. Serotonin modulators may enhance dopamine blockade, possibly increasing the risk for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic effect of serotonin modulators, which may result in serotonin syndrome. Monitor for evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia, muscle rigidity, autonomic dysfunction).
+• gabapentin: molindone and gabapentin both increase sedation. Use Caution/Monitor.
+• gabapentin enacarbil: gabapentin enacarbil and molindone both increase sedation. Use Caution/Monitor.
+• ganaxolone: molindone and ganaxolone both increase sedation. Use Caution/Monitor.
+• glycopyrrolate inhaled: molindone and glycopyrrolate inhaled both decrease cholinergic effects/transmission. Use Caution/Monitor.
+• glycopyrronium tosylate topical: glycopyrronium tosylate topical, molindone. Either increases effects of the other by pharmacodynamic synergism. Use Caution/Monitor. Coadministration of glycopyrronium tosylate topical with other anticholinergic medications may result in additive anticholinergic adverse effects.
+• guanfacine: molindone and guanfacine both increase sedation. Use Caution/Monitor.
+• haloperidol: molindone and haloperidol both increase sedation. Use Caution/Monitor.
+• hydroxyzine: molindone and hydroxyzine both increase sedation. Use Caution/Monitor.
+• imipramine: molindone and imipramine both increase sedation. Use Caution/Monitor.
+• incobotulinumtoxinA: molindone increases effects of incobotulinumtoxinA by pharmacodynamic synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate botulinum toxin effects, which may result in excessive neuromuscular weakness and heighten systemic anticholinergic effects.
+• ipratropium: molindone and ipratropium both decrease cholinergic effects/transmission. Use Caution/Monitor.
+• isoflurane: molindone and isoflurane both increase sedation. Use Caution/Monitor.
+• ketamine: molindone and ketamine both increase sedation. Use Caution/Monitor.
+• ketotifen, drug-eluting contact lens: molindone and ketotifen, drug-eluting contact lens both increase sedation. Use Caution/Monitor.
+• lamotrigine: molindone and lamotrigine both increase sedation. Use Caution/Monitor.
+• lemborexant: lemborexant, molindone. Either increases effects of the other by sedation. Modify Therapy/Monitor Closely. Dosage adjustment may be necessary if lemborexant is coadministered with other CNS depressants because of potentially additive effects.
+• letibotulinumtoxinA: molindone increases effects of letibotulinumtoxinA by pharmacodynamic synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate botulinum toxin effects, which may result in excessive neuromuscular weakness and heighten systemic anticholinergic effects.
+• levetiracetam: levetiracetam and molindone both increase sedation. Use Caution/Monitor. molindone and levetiracetam both increase sedation. Use Caution/Monitor.
+• levocetirizine: levocetirizine and molindone both increase sedation. Use Caution/Monitor. molindone and levocetirizine both increase sedation. Use Caution/Monitor.
+• levomilnacipran: levomilnacipran, molindone. unspecified interaction mechanism. Use Caution/Monitor. Serotonin modulators may enhance dopamine blockade, possibly increasing the risk for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic effect of serotonin modulators, which may result in serotonin syndrome. Monitor for evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia, muscle rigidity, autonomic dysfunction).
+• levorphanol: molindone and levorphanol both increase sedation. Use Caution/Monitor.
+• Linezolid: linezolid, molindone. unspecified interaction mechanism. Use Caution/Monitor. Serotonin modulators may enhance dopamine blockade, possibly increasing the risk for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic effect of serotonin modulators, which may result in serotonin syndrome. Monitor for evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia, muscle rigidity, autonomic dysfunction).
+• lithium: lithium, molindone. unspecified interaction mechanism. Use Caution/Monitor. Serotonin modulators may enhance dopamine blockade, possibly increasing the risk for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic effect of serotonin modulators, which may result in serotonin syndrome. Monitor for evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia, muscle rigidity, autonomic dysfunction).
+• loratadine: Loratadine and molindone both increase sedation. Use Caution/Monitor. molindone and loratadine both increase sedation. Use Caution/Monitor.
+• lorazepam: molindone and lorazepam both increase sedation. Use Caution/Monitor.
+• Lorcaserin: Lorcaserin, molindone. unspecified interaction mechanism. Use Caution/Monitor. Serotonin modulators may enhance dopamine blockade, possibly increasing the risk for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic effect of serotonin modulators, which may result in serotonin syndrome. Monitor for evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia, muscle rigidity, autonomic dysfunction).
+• loxapine: molindone and loxapine both increase sedation. Use Caution/Monitor.
+• lumateperone: lumateperone and molindone both increase sedation. Use Caution/Monitor. molindone and lumateperone both increase sedation. Use Caution/Monitor.
+• lurasidone: lurasidone and molindone both increase sedation. Use Caution/Monitor. molindone and lurasidone both increase sedation. Use Caution/Monitor.
+• meclizine: meclizine and molindone both increase sedation. Use Caution/Monitor. molindone and meclizine both increase sedation. Use Caution/Monitor.
+• meperidine: meperidine, molindone. unspecified interaction mechanism. Use Caution/Monitor. Serotonin modulators may enhance dopamine blockade, possibly increasing the risk for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic effect of serotonin modulators, which may result in serotonin syndrome. Monitor for evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia, muscle rigidity, autonomic dysfunction). molindone and meperidine both increase sedation. Use Caution/Monitor.
+• meprobamate: molindone and meprobamate both increase sedation. Use Caution/Monitor.
+• metaxalone: molindone and metaxalone both increase sedation. Use Caution/Monitor.
+• methadone: methadone, molindone. unspecified interaction mechanism. Use Caution/Monitor. Serotonin modulators may enhance dopamine blockade, possibly increasing the risk for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic effect of serotonin modulators, which may result in serotonin syndrome. Monitor for evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia, muscle rigidity, autonomic dysfunction).
+• methocarbamol: molindone and methocarbamol both increase sedation. Use Caution/Monitor.
+• methohexital: methohexital and molindone both increase sedation. Use Caution/Monitor. molindone and methohexital both increase sedation. Use Caution/Monitor.
+• methsuximide: methsuximide and molindone both increase sedation. Use Caution/Monitor. molindone and methsuximide both increase sedation. Use Caution/Monitor.
+• methylergonovine: methylergonovine, molindone. unspecified interaction mechanism. Use Caution/Monitor. Serotonin modulators may enhance dopamine blockade, possibly increasing the risk for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic effect of serotonin modulators, which may result in serotonin syndrome. Monitor for evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia, muscle rigidity, autonomic dysfunction).
+• methylphenidate: molindone increases toxicity of methylphenidate by pharmacodynamic antagonism. Use Caution/Monitor. Closely monitor for signs of altered clinical response to either methylphenidate or an antipsychotic when using these drugs in combination.
+• midazolam: molindone and midazolam both increase sedation. Use Caution/Monitor.
+• midazolam intranasal: midazolam intranasal, molindone. Either increases toxicity of the other by pharmacodynamic synergism. Modify Therapy/Monitor Closely. Concomitant use of barbiturates, alcohol, or other CNS depressants may increase the risk of hypoventilation, airway obstruction, desaturation, or apnea and may contribute to profound and/or prolonged drug effect.
+• milnacipran: milnacipran, molindone. unspecified interaction mechanism. Use Caution/Monitor. Serotonin modulators may enhance dopamine blockade, possibly increasing the risk for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic effect of serotonin modulators, which may result in serotonin syndrome. Monitor for evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia, muscle rigidity, autonomic dysfunction).
+• mirtazapine: molindone and mirtazapine both increase sedation. Use Caution/Monitor.
+• nalbuphine: molindone and nalbuphine both increase sedation. Use Caution/Monitor.
+• naratriptan: naratriptan, molindone. unspecified interaction mechanism. Use Caution/Monitor. Serotonin modulators may enhance dopamine blockade, possibly increasing the risk for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic effect of serotonin modulators, which may result in serotonin syndrome. Monitor for evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia, muscle rigidity, autonomic dysfunction).
+• nitrous oxide: molindone and nitrous oxide both increase sedation. Use Caution/Monitor. nitrous oxide and molindone both increase sedation. Use Caution/Monitor.
+• nortriptyline: molindone and nortriptyline both increase sedation. Use Caution/Monitor.
+• olanzapine: molindone and olanzapine both increase sedation. Use Caution/Monitor.
+• olanzapine/samidorphan: molindone and olanzapine/samidorphan both increase sedation. Use Caution/Monitor.
+• onabotulinumtoxinA: molindone increases effects of onabotulinumtoxinA by pharmacodynamic synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate botulinum toxin effects, which may result in excessive neuromuscular weakness and heighten systemic anticholinergic effects.
+• opicapone: molindone and opicapone both increase sedation. Use Caution/Monitor. opicapone and molindone both increase sedation. Use Caution/Monitor.
+• opium tincture: molindone and opium tincture both increase sedation. Use Caution/Monitor.
+• orphenadrine: molindone and orphenadrine both increase sedation. Use Caution/Monitor.
+• oxazepam: molindone and oxazepam both increase sedation. Use Caution/Monitor.
+• paliperidone: molindone and paliperidone both increase sedation. Use Caution/Monitor.
+• paroxetine: paroxetine, molindone. unspecified interaction mechanism. Use Caution/Monitor. Serotonin modulators may enhance dopamine blockade, possibly increasing the risk for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic effect of serotonin modulators, which may result in serotonin syndrome. Monitor for evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia, muscle rigidity, autonomic dysfunction).
+• pentazocine: molindone and pentazocine both increase sedation. Use Caution/Monitor.
+• pentobarbital: molindone and pentobarbital both increase sedation. Use Caution/Monitor.
+• perampanel: molindone and perampanel both increase sedation. Use Caution/Monitor.
+• perphenazine: molindone and perphenazine both increase sedation. Use Caution/Monitor.
+• phenelzine: phenelzine, molindone. unspecified interaction mechanism. Use Caution/Monitor. Serotonin modulators may enhance dopamine blockade, possibly increasing the risk for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic effect of serotonin modulators, which may result in serotonin syndrome. Monitor for evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia, muscle rigidity, autonomic dysfunction).
+• pheniramine: molindone and pheniramine both increase sedation. Use Caution/Monitor.
+• phenobarbital: molindone and phenobarbital both increase sedation. Use Caution/Monitor.
+• pimozide: molindone and pimozide both increase sedation. Use Caution/Monitor.
+• pomalidomide: molindone and pomalidomide both increase sedation. Use Caution/Monitor.
+• prabotulinumtoxinA: molindone increases effects of prabotulinumtoxinA by pharmacodynamic synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate botulinum toxin effects, which may result in excessive neuromuscular weakness and heighten systemic anticholinergic effects.
+• pregabalin: molindone and pregabalin both increase sedation. Use Caution/Monitor.
+• primidone: molindone and primidone both increase sedation. Use Caution/Monitor.
+• procarbazine: procarbazine, molindone. unspecified interaction mechanism. Use Caution/Monitor. Serotonin modulators may enhance dopamine blockade, possibly increasing the risk for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic effect of serotonin modulators, which may result in serotonin syndrome. Monitor for evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia, muscle rigidity, autonomic dysfunction).
+• prochlorperazine: molindone and prochlorperazine both increase sedation. Use Caution/Monitor.
+• promethazine: promethazine, molindone. unspecified interaction mechanism. Use Caution/Monitor. Serotonin modulators may enhance dopamine blockade, possibly increasing the risk for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic effect of serotonin modulators, which may result in serotonin syndrome. Monitor for evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia, muscle rigidity, autonomic dysfunction). molindone and promethazine both increase sedation. Use Caution/Monitor.
+• propofol: molindone and propofol both increase sedation. Use Caution/Monitor.
+• protriptyline: molindone and protriptyline both increase sedation. Use Caution/Monitor.
+• pyrilamine: molindone and pyrilamine both increase sedation. Use Caution/Monitor.
+• quazepam: molindone and quazepam both increase sedation. Use Caution/Monitor.
+• quetiapine: molindone and quetiapine both increase sedation. Use Caution/Monitor.
+• ramelteon: molindone and ramelteon both increase sedation. Use Caution/Monitor.
+• remifentanil: remifentanil and molindone both increase sedation. Use Caution/Monitor.
+• remimazolam: remimazolam, molindone. Either increases toxicity of the other by sedation. Modify Therapy/Monitor Closely. Coadministration may result in profound sedation, respiratory depression, coma, and/or death. Continuously monitor vital signs during sedation and recovery period if coadministered. Carefully titrate remimazolam dose if administered with opioid analgesics and/or sedative/hypnotics.
+• reserpine (DSC): molindone and reserpine (DSC) both increase sedation. Use Caution/Monitor.
+• rimabotulinumtoxinB: molindone increases effects of rimabotulinumtoxinB by pharmacodynamic synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate botulinum toxin effects, which may result in excessive neuromuscular weakness and heighten systemic anticholinergic effects.
+• risperidone: molindone and risperidone both increase sedation. Use Caution/Monitor.
+• rizatriptan: rizatriptan, molindone. unspecified interaction mechanism. Use Caution/Monitor. Serotonin modulators may enhance dopamine blockade, possibly increasing the risk for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic effect of serotonin modulators, which may result in serotonin syndrome. Monitor for evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia, muscle rigidity, autonomic dysfunction).
+• scopolamine: molindone and scopolamine both increase sedation. Use Caution/Monitor.
+• scopolamine intranasal: scopolamine intranasal and molindone both increase sedation. Use Caution/Monitor.
+• selegiline: selegiline, molindone. unspecified interaction mechanism. Use Caution/Monitor. Serotonin modulators may enhance dopamine blockade, possibly increasing the risk for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic effect of serotonin modulators, which may result in serotonin syndrome. Monitor for evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia, muscle rigidity, autonomic dysfunction).
+• sevoflurane: molindone and sevoflurane both increase sedation. Use Caution/Monitor.
+• sodium oxybate: molindone and sodium oxybate both increase sedation. Use Caution/Monitor. sodium oxybate and molindone both increase sedation. Use Caution/Monitor.
+• sodium sulfate/?magnesium sulfate/potassium chloride: sodium sulfate/?magnesium sulfate/potassium chloride increases effects of molindone by unknown mechanism. Use Caution/Monitor. Closely monitor for evidence of enhanced CNS depression when using higher dose of magnesium sulfate together with a CNS depressant.
+• sodium sulfate/potassium sulfate/magnesium sulfate: sodium sulfate/potassium sulfate/magnesium sulfate increases effects of molindone by unknown mechanism. Use Caution/Monitor. Closely monitor for evidence of enhanced CNS depression when using higher dose of magnesium sulfate together with a CNS depressant.
+• stiripentol: stiripentol, molindone. Either increases effects of the other by sedation. Use Caution/Monitor. Concomitant use stiripentol with other CNS depressants, including alcohol, may increase the risk of sedation and somnolence.
+• sufentanil: molindone and sufentanil both increase sedation. Use Caution/Monitor.
+• sufentanil SL: molindone and sufentanil SL both increase sedation. Use Caution/Monitor.
+• sumatriptan: sumatriptan, molindone. unspecified interaction mechanism. Use Caution/Monitor. Serotonin modulators may enhance dopamine blockade, possibly increasing the risk for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic effect of serotonin modulators, which may result in serotonin syndrome. Monitor for evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia, muscle rigidity, autonomic dysfunction).
+• sumatriptan intranasal: sumatriptan intranasal, molindone. unspecified interaction mechanism. Use Caution/Monitor. Serotonin modulators may enhance dopamine blockade, possibly increasing the risk for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic effect of serotonin modulators, which may result in serotonin syndrome. Monitor for evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia, muscle rigidity, autonomic dysfunction).
+• suvorexant: molindone and suvorexant both increase sedation. Use Caution/Monitor.
+• tapentadol: molindone and tapentadol both increase sedation. Use Caution/Monitor.
+• tasimelteon: molindone and tasimelteon both increase sedation. Use Caution/Monitor. tasimelteon and molindone both increase sedation. Use Caution/Monitor.
+• temazepam: molindone and temazepam both increase sedation. Use Caution/Monitor.
+• tetrabenazine: molindone and tetrabenazine both increase sedation. Use Caution/Monitor.
+• thalidomide: thalidomide and molindone both increase sedation. Use Caution/Monitor.
+• thioridazine: molindone and thioridazine both increase sedation. Use Caution/Monitor.
+• thiothixene: molindone and thiothixene both increase sedation. Use Caution/Monitor.
+• tiagabine: molindone and tiagabine both increase sedation. Use Caution/Monitor. tiagabine and molindone both increase sedation. Use Caution/Monitor.
+• tizanidine: molindone and tizanidine both increase sedation. Use Caution/Monitor. tizanidine and molindone both increase sedation. Use Caution/Monitor.
+• tolcapone: molindone and tolcapone both increase sedation. Use Caution/Monitor. tolcapone and molindone both increase sedation. Use Caution/Monitor.
+• topiramate: molindone and topiramate both increase sedation. Use Caution/Monitor.
+• tramadol: molindone and tramadol both increase sedation. Use Caution/Monitor.
+• tranylcypromine: tranylcypromine, molindone. unspecified interaction mechanism. Use Caution/Monitor. Serotonin modulators may enhance dopamine blockade, possibly increasing the risk for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic effect of serotonin modulators, which may result in serotonin syndrome. Monitor for evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia, muscle rigidity, autonomic dysfunction).
+• trazodone: molindone and trazodone both increase sedation. Use Caution/Monitor.
+• triazolam: molindone and triazolam both increase sedation. Use Caution/Monitor.
+• trifluoperazine: molindone and trifluoperazine both increase sedation. Use Caution/Monitor.
+• triprolidine: molindone and triprolidine both increase sedation. Use Caution/Monitor.
+• valproic acid: molindone and valproic acid both increase sedation. Use Caution/Monitor. valproic acid and molindone both increase sedation. Use Caution/Monitor.
+• venlafaxine: venlafaxine, molindone. unspecified interaction mechanism. Use Caution/Monitor. Serotonin modulators may enhance dopamine blockade, possibly increasing the risk for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic effect of serotonin modulators, which may result in serotonin syndrome. Monitor for evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia, muscle rigidity, autonomic dysfunction).
+• vigabatrin: molindone and vigabatrin both increase sedation. Use Caution/Monitor. vigabatrin and molindone both increase sedation. Use Caution/Monitor.
+• vilazodone: vilazodone, molindone. unspecified interaction mechanism. Use Caution/Monitor. Serotonin modulators may enhance dopamine blockade, possibly increasing the risk for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic effect of serotonin modulators, which may result in serotonin syndrome. Monitor for evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia, muscle rigidity, autonomic dysfunction).
+• zaleplon: molindone and zaleplon both increase sedation. Use Caution/Monitor. zaleplon and molindone both increase sedation. Use Caution/Monitor.
+• ziconotide: molindone and ziconotide both increase sedation. Use Caution/Monitor.
+• ziprasidone: molindone and ziprasidone both increase sedation. Use Caution/Monitor.
+• zolmitriptan: zolmitriptan, molindone. unspecified interaction mechanism. Use Caution/Monitor. Serotonin modulators may enhance dopamine blockade, possibly increasing the risk for neuroleptic malignant syndrome. Antipsychotics may enhance serotonergic effect of serotonin modulators, which may result in serotonin syndrome. Monitor for evidence of serotonin toxicity (eg, mental status changes, autonomic instability, and neuromuscular hyperactivity) or neuroleptic malignant syndrome (eg, hyperthermia, muscle rigidity, autonomic dysfunction).
+• zolpidem: molindone and zolpidem both increase sedation. Use Caution/Monitor. zolpidem and molindone both increase sedation. Use Caution/Monitor.
+• zonisamide: molindone and zonisamide both increase sedation. Use Caution/Monitor. zonisamide and molindone both increase sedation. Use Caution/Monitor.
+• zuranolone: zuranolone and molindone both increase sedation. Use Caution/Monitor.
+
+Adverse Effects
+Frequency Not Defined
+Drowsiness
+Depression
+Hyperactivity
+Euphoria
+Extrapyramidal symptoms
+Akathisia
+Parkinson syndrome
+Dystonia
+Tardive dyskineisa
+Tachycardia
+Nausea
+Dry mouth
+Salivation
+Urinary retention
+Constipation
+Priapism
+Amenorrhea
+Gynecomastia
+Galactorrhea
+Libido increased
+Leukopenia
+Alteration in liver function tests
+T-wave changes (transient, rare)
+Lens opacities and pigmentary retinopathy
+Rash
+
+Warnings
+Black Box Warnings
+Patients with dementia-related psychosis who are treated with antipsychotic drugs are at an increased risk for death, as shown in short-term controlled trials; deaths in trials appeared to be either cardiovascular (eg, heart failure, sudden death) or infectious (eg, pneumonia) in nature
+Not approved for treatment of patients with dementia-related psychosis
+
+Contraindications
+Documented hypersensitivity
+Severe CNS depression (eg, alcohol, barbiturates, narcotics) or comatose states
+
+Cautions
+Tardive dyskinesia, a syndrome consisting of potentially irreversible, involuntary, dyskinetic movements, may develop in patients treated with antipsychotic drugs; if signs and symptoms of tardive dyskinesia appear in patients on antipsychotics, consider drug discontinuation; however, some patients may require treatment despite presence of the syndrome
+May cause somnolence, postural hypotension, motor instability and sensory instability, which may lead to falls and, consequently, fractures or other injuries; complete fall-risk assessments for patients with diseases, conditions, or medications that could exacerbate these effects, when initiating antipsychotic treatment and recurrently for patients on long-term antipsychotic therapy
+Neuroleptic malignant syndrome (NMS) reported with antipsychotic drug use; immediately discontinue therapy if it occurs along with nonessential concurrent therapy and administer intensive symptomatic treatment and monitor carefully; if patient requires antipsychotic drug treatment after recovery from NMS, it should be considered carefully and the patient monitored closely since recurrences of NMS have been reported
+May cause drowsiness initially; advise patient against activities requiring mental alertness until response to the drug has been established
+Convulsive seizures reported with use
+Preparation contains calcium sulfate as an excipient; calcium ions may interfere with absorption of preparations containing phenytoin sodium and tetracyclines
+Therapy may obscure signs of intestinal obstruction or brain tumor
+Therapy has not been shown effective in the management of behavioral complications in patients with mental retardation
+In clinical trial and/or postmarketing experience, events of leukopenia/neutropenia and agranulocytosis have been reported temporally related to antipsychotic agents; possible risk factors for leukopenia/neutropenia include preexisting low white blood cell (WBC) count and history of drug-induced leukopenia/neutropenia; patients with clinically significant neutropenia should be carefully monitored for fever or other symptoms or signs of infection and treated promptly if such symptoms or signs occur; patients with severe neutropenia (absolute neutrophil count <1000/mm3) should discontinue therapy and have their WBC count followed until recovery
+
+Hyperprolactinemia
+• Antipsychotic drugs elevate prolactin levels; the elevation persists during chronic administration; tissue culture experiments indicate that approximately one-third of human breast cancers are prolactin dependent in vitro, a factor of potential importance if prescription of these drugs is contemplated in a patient with a previously detected breast cancer
+• Although disturbances such as galactorrhea, amenorrhea, gynecomastia, and impotence reported, the clinical significance of elevated serum prolactin levels is unknown for most patients; an increase in mammary neoplasms has been found in rodents after chronic administration of antipsychotic drugs
+Published epidemiologic studies have shown inconsistent results when exploring potential association between hyperprolactinemia and breast cancer
+
+Pregnancy & Lactation
+Pregnancy
+Studies in pregnant patients have not been performed; animal reproductive studies have not demonstrated a teratogenic potential; anticipated benefits must be weighed against unknown risks to fetus if used in pregnant patients
+Neonates exposed to antipsychotic drugs during third trimester of pregnancy are at risk for extrapyramidal and/or withdrawal symptoms following delivery; agitation, hypertonia, hypotonia, tremor, somnolence, respiratory distress, and feeding disorder reported in neonates; complications have varied in severity; while in some cases symptoms have been self-limited, in other cases neonates have required intensive care unit support and prolonged hospitalization
+
+Lactation
+Data not available on content of molindone hydrochloride in milk of nursing mothers
+
+Pregnancy Categories
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of fetal risk.
+B: May be acceptable. Either animal studies show no risk but human studies not available or animal studies showed minor risks and human studies done and showed no risk.
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human studies not available or neither animal nor human studies done.
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive evidence of human fetal risk.
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives exist.
+NA: Information not available.
+
+Pharmacology
+Mechanism of Action
+Dihydroindolone derivative, which is not structurally related to phenothiazines, butyrophenones, or thioxanthenes; blocks postsynaptic dopaminergic receptors in the nucleus accumbens, striatum, and ventral tegmental area; has negligible affinity for the alpha-1 adrenergic receptor and the histamine H1 receptor in the frontal cortex; lacks affinity for the muscarinic acetylcholine receptor in the caudate nucleus and intermediate affinity for the alpha-2 adrenergic receptor in the frontal cortex
+
+Absorption
+Rapidly absorbed
+Peak serum time: 1.5 hr
+Duration: 24-36 hr
+
+Distribution
+Protein bound: 76%
+
+Metabolism
+Hepatic
+
+Elimination
+Half-life: 1.5 hr
+Excretion: Urine and feces (2-3% unmetabolized)
+
+Administration
+Oral Administration
+Initial and maintenance doses should be individualized
+
+Storage
+Store at 25°C (77°F) excursions permitted to 15-30°C (59-86°F)
+Keep tightly closed in light-resistant container

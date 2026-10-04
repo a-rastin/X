@@ -1,0 +1,238 @@
+This site is intended for healthcare professionals
+
+trifluoperazine (Rx)
+Brand and Other Names: Stelazine
+Classes: Antipsychotics, 1st Generation; Antipsychotics, Phenothiazines
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+tablet
+• 1mg
+• 2mg
+• 5mg
+• 10mg
+
+Schizophrenia
+Outpatient
+• 1-2 mg PO q12hr
+Inpatient
+Initial: 2-5 mg PO q12hr
+• Maintenance Dose: 15-20 mg/day
+• Not to exceed 40 mg/day
+
+Non Psychotic Anxiety
+1-2 mg PO q12hr
+Maximum Dose: 6 mg/day not to exceed 12 weeks
+
+Renal Impairment
+Dose adjustment not necessary following dialysis
+
+PEDIATRIC
+Dosage Forms & Strengths
+tablet
+• 2mg
+• 5mg
+• 10mg
+
+Schizophrenia/Psychosis
+Inpatient
+• <6 years: Safety and efficacy not established
+• 6-12 years old: 1 mg PO qDay or q12hr; not to exceed 15 mg/day
+12 years old: 2-5 mg PO q12hr
+
+GERIATRIC
+Initiate dosing at the low end of the range; titrate gradually
+Schizophrenia
+Outpatient
+- 1-2 mg PO q12hr
+Inpatient
+Initial: 2-5 mg PO q12hr
+- Maintenance Dose: 15-20 mg/day
+Not to exceed 40 mg/day
+
+Non Psychotic Anxiety
+1-2 mg PO q12hr
+Maximum Dose: 6 mg/day not to exceed 12 weeks
+
+Interactions
+All Interactions Sort By: Severity
+
+Contraindicated (10)
+• amisulpride: Either increases toxicity of the other. Increases risk of neuroleptic malignant syndrome.
+• disopyramide: Both increase QTc interval.
+• ibutilide: Both increase QTc interval.
+• indapamide: Both increase QTc interval.
+• metrizamide: Risk of seizure. D/C phenothiazine 24h before admin. of metrizamide.
+• pentamidine: Both increase QTc interval.
+• pimozide: Both increase QTc interval.
+• procainamide: Both increase QTc interval.
+• quinidine: Both increase QTc interval.
+• sotalol: Both increase QTc interval.
+
+Serious (80)
+• aminolevulinic acid oral / topical: Pharmacodynamic synergism. Avoid administering other phototoxic drugs.
+• amiodarone, amitriptyline, amoxapine: Both increase QTc interval.
+• apomorphine: Decreases effects of apomorphine.
+• arsenic trioxide, artemether/lumefantrine: Both increase QTc interval.
+• benzhydrocodone/acetaminophen: Pharmacodynamic synergism. Profound sedation, respiratory depression, coma, and death may result.
+• bromocriptine, cabergoline: Decreases effects by pharmacodynamic antagonism.
+• calcium/magnesium/potassium/sodium oxybates: Pharmacodynamic synergism.
+• chlorpromazine, clarithromycin, clomipramine: Both increase QTc interval.
+• degarelix: Both decrease QTc interval.
+• desipramine, dofetilide: Both increase QTc interval.
+• dopamine: Decreases effects of dopamine.
+• dosulepin, doxepin, dronedarone, droperidol, epinephrine, epinephrine racemic, erythromycin base/ethylsuccinate/lactobionate/stearate: Both increase QTc interval.
+• fentanyl / fentanyl intranasal / transdermal / transmucosal: Pharmacodynamic synergism. Respiratory depression, hypotension, profound sedation.
+• fluconazole, fluphenazine: Both increase QTc interval.
+• foscarbidopa/foslevodopa: Decreases effects.
+• givosiran: Increases level or effect of trifluoperazine by affecting CYP1A2.
+• haloperidol: Both increase QTc interval.
+• hydrocodone: Pharmacodynamic synergism. Profound sedation, respiratory depression.
+• imipramine, itraconazole, ketoconazole: Both increase QTc interval.
+• levodopa / levodopa inhaled: Decreases effects.
+• levoketoconazole: Both increase QTc interval.
+• lisuride: Decreases effects.
+• lofepramine, lumefantrine: Both increase QTc interval.
+• methyl aminolevulinate: Pharmacodynamic synergism. Increased phototoxicity.
+• methyldopa: Decreases effects.
+• metoclopramide intranasal: Pharmacodynamic synergism. Additive extrapyramidal symptoms.
+• moxifloxacin, nilotinib, nortriptyline, octreotide, octreotide (Antidote): Both increase QTc interval.
+• olopatadine intranasal: Both increase sedation.
+• perphenazine: Both increase QTc interval.
+• pramipexole: Decreases effects.
+• prochlorperazine, promazine, promethazine, protriptyline: Both increase QTc interval.
+• quinidine: Pharmacodynamic synergism. Additive cardiac effects.
+• ropinirole, safinamide: Decreases effects.
+• selinexor: Neurological toxicities.
+• sodium oxybate: Pharmacodynamic synergism. Profound sedation, respiratory depression.
+• sofpironium topical: Pharmacodynamic synergism. Additive anticholinergic adverse effects.
+• sufentanil SL: Pharmacodynamic synergism. Profound sedation, respiratory depression.
+• tetrabenazine: Both decrease QTc interval.
+• thioridazine, trazodone: Both increase QTc interval.
+• tretinoin / tretinoin topical: Pharmacodynamic synergism. Increased phototoxicity.
+• trimipramine: Both increase QTc interval.
+• yohimbe: Decreases effects of trifluoperazine.
+• ziprasidone: Both increase QTc interval.
+• zuranolone: Pharmacodynamic synergism. Impairment of psychomotor performance.
+
+Monitor Closely (366)
+• abobotulinumtoxinA, daxibotulinumtoxinA, incobotulinumtoxinA, letibotulinumtoxinA, onabotulinumtoxinA, prabotulinumtoxinA, rimabotulinumtoxinB: Pharmacodynamic synergism. Potentiates botulinum toxin effects.
+• acetaminophen/phenyltoloxamine, acrivastine, alfentanil, alprazolam, asenapine, avapritinib, azelastine, baclofen, belladonna and opium, benzhydrocodone/acetaminophen, brivaracetam, brompheniramine, buprenorphine, butalbital, butorphanol, carbinoxamine, cariprazine, carisoprodol, chlordiazepoxide, chlorpheniramine, chlorzoxazone, cinnarizine, clemastine, clobazam, clonazepam, codeine, cyclobenzaprine, cyproheptadine, dantrolene, daridorexant, desflurane, desipramine, desloratadine, deutetrabenazine, dexbrompheniramine, dexchlorpheniramine, dexmedetomidine, dextromoramide, diamorphine, diazepam, difelikefalin, difenoxin hcl, dimenhydrinate, diphenhydramine, diphenoxylate hcl, dipipanone, dosulepin, doxepin, doxylamine, estazolam, eszopiclone, ethanol, etomidate, fentanyl, flurazepam, gabapentin, ganaxolone, guanfacine, hydromorphone, hydroxyzine, imipramine, ketamine, lamotrigine, lemborexant, levetiracetam, levocetirizine, levorphanol, lofepramine, lofexidine, loprazolam, loratadine, lorazepam, lormetazepam, lumateperone, lurasidone, marijuana, meclizine, melatonin, meperidine, meprobamate, metaxalone, methadone, methocarbamol, methohexital, methsuximide, midazolam, mirtazapine, molindone, morphine, motherwort, moxonidine, nabilone, nalbuphine, nitrous oxide, nortriptyline, opicapone, opium tincture, orphenadrine, oxazepam, oxycodone, oxymorphone, papaveretum, papaverine, pentazocine, pentobarbital, phenobarbital, pholcodine, primidone, propofol, protriptyline, pyrilamine, quazepam, ramelteon, remifentanil, remimazolam, scopolamine, scullcap, sevoflurane, shepherd's purse, sodium oxybate, sufentanil, tapentadol, tasimelteon, temazepam, thalidomide, tiagabine, tizanidine, tolcapone, topiramate, tramadol, trazodone, triazolam, triclofos, trimipramine, triprolidine, valproic acid, vigabatrin, zaleplon, ziconotide, zolpidem, zonisamide, zuranolone: Both increase sedation. Modify Therapy/Monitor Closely.
+• aclidinium, anticholinergic/sedative combos, atracurium, atropine, belladonna alkaloids, cisatracurium, cyclobenzaprine, darifenacin, dicyclomine, diphenhydramine, fesoterodine, flavoxate, glycopyrrolate, henbane, homatropine, hyoscyamine, ipratropium, meclizine, methscopolamine, oxybutynin, pancuronium, pralidoxime, propantheline, rapacuronium, rocuronium, scopolamine, solifenacin, tiotropium, tolterodine, trospium chloride, vecuronium, xanomeline/trospium: Altered absorption/antagonism/synergism (additive anticholinergic effects).
+• almotriptan, dextromethorphan, dihydroergotamine, eletriptan, ergoloid mesylates, ergotamine, fentanyl, flibanserin, frovatriptan, linezolid, lithium, lorcaserin, meperidine, methadone, methylergonovine, milnacipran, naratriptan, phenelzine, procarbazine, promethazine, rizatriptan, selegiline, sumatriptan, tranylcypromine, venlafaxine, vilazodone, zolmitriptan: Serotonin modulators may enhance dopamine blockade (risk of NMS/serotonin syndrome).
+• amifampridine: Can cause seizures; coadministration lowers seizure threshold.
+• amisulpride, amoxapine, aripiprazole, benperidol, brexpiprazole, chlorpromazine, clozapine, droperidol, fluphenazine, haloperidol, loxapine, olanzapine, paliperidone, perphenazine, pimozide, prochlorperazine, quetiapine, risperidone, tetrabenazine, thioridazine, thiothixene, ziprasidone, zotepine: Both increase antidopaminergic effects, including extrapyramidal symptoms and neuroleptic malignant syndrome.
+• amlodipine, clonidine, guanfacine, trazodone: Additive hypotensive effects.
+• amphetamine, armodafinil, benzphetamine, caffeine, dexfenfluramine, dexmethylphenidate, dextroamphetamine, diethylpropion, dobutamine, dopamine, dopexamine, ephedrine, epinephrine, fenfluramine, isoproterenol, lisdexamfetamine, methamphetamine, methylenedioxymethamphetamine, methylphenidate, midodrine, modafinil, norepinephrine, phendimetrazine, phentermine, phenylephrine, pirbuterol, propylhexedrine, pseudoephedrine, salmeterol, serdexmethylphenidate, terbutaline, xylometazoline, yohimbine: Effect on sedation unclear. Risk of cardiac arrhythmia or sudden death (more likely w/thioridazine).
+• anagrelide, buprenorphine, degarelix, desflurane, donepezil, efavirenz, eliglustat, encorafenib, entrectinib, eribulin, fingolimod, gemifloxacin, gilteritinib, granisetron, isoflurane, lithium, mirtazapine, olanzapine, oxaliplatin, primaquine, rucaparib, sertraline, sevoflurane, siponimod, solifenacin, sunitinib, tacrolimus, valbenazine, vorinostat: Both decrease QTc interval.
+• artemether/lumefantrine, bupropion, cannabidiol, desvenlafaxine, fexinidazole, fluoxetine, lumefantrine, paroxetine, propafenone, quinidine, rucaparib, stiripentol, teriflunomide: Affects hepatic enzyme metabolism (CYP1A2, CYP2D6, CYP3A4).
+• azithromycin, buprenorphine, dasatinib, dolasetron, flecainide, fluoxetine, fluvoxamine, foscarnet, lapatinib, levofloxacin, methadone, ofloxacin, olodaterol inhaled, paliperidone, paroxetine, pazopanib, posaconazole, ranolazine, risperidone, romidepsin, sulfamethoxazole, telavancin, trimethoprim, tropisetron, venlafaxine, voriconazole: Both increase QTc interval.
+• benztropine, trihexyphenidyl: Additive anticholinergic adverse effects.
+• brexanolone, esketamine intranasal, sodium sulfate/magnesium sulfate/potassium chloride: Increases toxicity by sedation/CNS depression.
+• cigarette smoking / tobacco use: Decreases levels of trifluoperazine by increasing metabolism.
+• epinephrine / epinephrine racemic: Blocks pressor response to epinephrine, which may result in severe hypotension and tachycardia.
+• insulin degludec / insulin aspart / insulin inhaled, liraglutide: Phenothiazines may increase or decrease blood glucose concentrations.
+• lithium: Risk of neurotoxicity. Encephalopathic syndrome risk.
+• methoxsalen, porfimer: Additive photosensitizing effects.
+• teduglutide: May increase absorption of concomitant PO medications.
+
+Minor (59)
+• amiodarone, asenapine, celecoxib, chloroquine, cimetidine, darifenacin, diphenhydramine, dronedarone, duloxetine, haloperidol, imatinib, maraviroc, marijuana, nilotinib, parecoxib, perphenazine, quinacrine, ranolazine, ritonavir, sertraline, thioridazine, tipranavir: Will increase the level or effect of trifluoperazine by affecting hepatic enzyme CYP2D6 metabolism.
+• amitriptyline, amoxapine, clomipramine, desipramine, doxepin, imipramine, lofepramine, nortriptyline, protriptyline, trimipramine: Decreases metabolism / Additive anticholinergic effects.
+• atropine, glycopyrrolate: Increases toxicity by unknown mechanism.
+• benazepril, captopril, enalapril, fosinopril, imidapril, lisinopril, moexipril, perindopril, quinapril, ramipril, trandolapril: Enhanced hypotensive effects.
+• brimonidine: Increased CNS depression.
+• bupropion: May lower seizure threshold.
+• chasteberry: Decreases effects by pharmacodynamic antagonism.
+• ethanol: Additive CNS depression.
+• eucalyptus, sage: Increase sedation.
+• metyrapone: Decreases effects.
+• metyrosine: Increased extrapyramidal symptoms.
+• oxybutynin (all forms): Increases toxicity.
+• pyrimethamine: Increases levels by decreasing metabolism.
+
+Adverse Effects
+Frequency Not Defined
+• EPS (60%; muscle stiffness, dystonia, parkinsonism, tardive dyskinesia, akathisia)
+• NMS (infrequent but serious)
+• Sedation
+• Anticholinergic effects
+• Weight gain
+• Oligomenorrhea/amenorrhea
+• Erectile dysfunction
+• Insomnia
+• Restlessness
+• Anxiety
+• Euphoria
+• Agitation
+• Depression
+• Weakness
+• Headache
+• Cerebral edema
+• Poikilothermia
+• Orthostatic hypotension
+• Tachycardia
+• Dizziness
+• Lens opacities (prolonged use)
+• Anorexia
+• Dyspepsia
+• Constipation
+• Ileus
+• Blood dyscrasia
+• ECG changes
+• Photosensitivity
+• Pruritis
+• Diarrhea
+• Galactorrhea
+• Ejaculatory d/o
+• Seizure (rare)
+• Priapism (rare)
+• Cholestatic jaundice (rare)
+
+Warnings
+Black Box Warnings
+Patients with dementia-related psychosis who are treated with antipsychotic drugs are at an increased risk of death as shown in short-term controlled trials. The deaths appeared to be either cardiovascular (eg, heart failure, sudden death) or infectious (eg, pneumonia) in nature. This drug is not approved for the treatment of patients with dementia-related psychosis.
+
+Contraindications
+• Hypersensitivity to phenothiazines or excipients
+• Comatose or greatly depressed states due to central nervous system depressants, existing blood dyscrasias, bone marrow depression, and preexisting liver damage
+
+Cautions
+• Thrombocytopenia, anemia, agranulocytosis, and pancytopenia reported. Warn patients to report sudden appearance of sore throat or other signs of infection.
+• Cholestatic jaundice or liver damage reported.
+• May increase mental and physical activity (e.g., angina patients).
+• Hypotension has occurred; avoid large doses and parenteral administration in patients with impaired cardiovascular systems.
+• Retinopathy has been reported.
+• Antiemetic action may mask signs of toxicity of other drugs or conditions like intestinal obstruction, brain tumor, and Reye's syndrome.
+• Chronic administration elevates prolactin levels.
+• May interfere with thermoregulatory mechanisms (extreme heat caution).
+• Use with caution in patients with glaucoma (anticholinergic effect).
+• May diminish effect of oral anticoagulants.
+• Phenothiazines can produce alpha-adrenergic blockade.
+• May lower convulsive threshold; dose adjustments of anticonvulsants may be necessary. Discontinue 48 hours before myelography with metrizamide.
+• May produce false-positive phenylketonuria (PKU) test results.
+• Leukopenia, neutropenia, and agranulocytosis risk. Monitor CBC frequently during the first few months.
+• Tardive dyskinesia risk (potentially irreversible, involuntary, dyskinetic movements).
+• Neuroleptic malignant syndrome (NMS) risk (hyperpyrexia, muscle rigidity, altered mental status, autonomic instability).
+• Encephalopathic syndrome risk when used with lithium.
+• May impair mental and/or physical abilities.
+
+Pregnancy & Lactation
+Pregnancy
+• Safety for use during pregnancy not established. Use only if essential.
+• Neonates exposed during the third trimester are at risk for extrapyramidal and/or withdrawal symptoms following delivery (agitation, hypertonia, hypotonia, tremor, somnolence, respiratory distress, feeding disorder).
+• Animal data: Reproductive studies in rats (600x human dose) showed increased malformations. Not observed at half dosage or in rabbits/monkeys.
+Pregnancy Categories: C (Use with caution if benefits outweigh risks. Animal studies show risk and human studies not available or neither animal nor human studies done.)
+
+Lactation
+• Excreted in breast milk. Decision should be made to discontinue nursing or discontinue the drug, taking into account importance of drug to the mother.
+
+Pharmacology
+Mechanism of Action
+Piperazine phenothiazine agent; antagonist for the postsynaptic mesolimbic dopaminergic D2 receptors in the brain; decreases the release of hypothalamic and hypophyseal hormones.
+
+Pharmacokinetics
+• Half-Life elimination: 24 hr
+• Metabolism: Liver

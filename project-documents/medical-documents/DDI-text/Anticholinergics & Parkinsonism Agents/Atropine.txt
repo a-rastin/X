@@ -1,0 +1,893 @@
+6/22/26, 6:24 AM
+
+Atreza, Atropine PO (atropine) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+atropine (Rx)
+Brand and Other Names: Atreza, Atropine PO, SalTropine
+Classes: Anticholinergic, Antispasmodic Agents
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+tablet
+0.4mg
+Sialorrhea, Pylorospasm & Other Spastic Conditions of the Gastrointestinal Tract
+0.4 mg PO q4-6hr PRN
+
+PEDIATRIC
+Dosage Forms & Strengths
+tablet
+0.4mg
+Sialorrhea, Pylorospasm & Other Spastic Conditions of the Gastrointestinal Tract
+3-7 kg: 0.1 mg
+8-11 kg: 0.15 mg
+11-18 kg: 0.2 mg
+18-29 kg: 0.3 mg
+
+https://reference.medscape.com/drug/atreza-atropine-po-342061
+
+1/21
+
+6/22/26, 6:24 AM
+
+Atreza, Atropine PO (atropine) dosing, indications, interactions, adverse effects, and more
+
+≥30 kg: 0.4 mg
+
+Alternate Dosing
+<5 kg: 0.02 mg/kg/dose initially, then q4-6hr PRN
+≥5 kg: 0.01-0.02 mg/kg PO q4-6hr PRN; not less than 0.1 mg/dose, not to exceed
+0.4 mg/dose
+
+Interactions
+Interaction Checker
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal and atropine
+No Interactions Found
+Interactions Found
+Contraindicated
+
+Serious
+Significant - Monitor Closely
+Minor
+All Interactions Sort By: Severity
+Contraindicated (0)
+
+Serious (10)
+eluxadoline
+atropine, eluxadoline. Either increases effects of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Avoid coadministration with other drugs
+that cause constipation. Increases risk for constipation related serious adverse
+reactions. .
+glucagon
+glucagon increases effects of atropine by Other (see comment). Avoid or Use
+Alternate Drug. Comment: Coadministration of anticholinergic drugs and glucagon
+increase the risk of gastrointestinal adverse reactions due to additive effects on
+inhibition of gastrointestinal motility. .
+glucagon intranasal
+glucagon intranasal increases effects of atropine by Other (see comment). Avoid or
+Use Alternate Drug. Comment: Coadministration of anticholinergic drugs and
+
+https://reference.medscape.com/drug/atreza-atropine-po-342061
+
+2/21
+
+6/22/26, 6:24 AM
+
+Atreza, Atropine PO (atropine) dosing, indications, interactions, adverse effects, and more
+
+glucagon increase the risk of gastrointestinal adverse reactions due to additive
+effects on inhibition of gastrointestinal motility. .
+glycopyrronium tosylate topical
+glycopyrronium tosylate topical, atropine. Either increases effects of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Coadministration of
+glycopyrronium tosylate topical with other anticholinergic medications may result in
+additive anticholinergic adverse effects.
+macimorelin
+atropine, macimorelin. unspecified interaction mechanism. Avoid or Use Alternate
+Drug. Drugs that may blunt the growth hormone (GH) response to macrimorelin
+may impact the accuracy of the diagnostic test. Allow sufficient washout time of
+drugs affecting GH release before administering macimorelin.
+pramlintide
+pramlintide, atropine. Either increases effects of the other by pharmacodynamic
+synergism. Contraindicated. Synergistic inhibition of GI motility.
+revefenacin
+revefenacin and atropine both decrease cholinergic effects/transmission. Avoid or
+Use Alternate Drug. Coadministration may cause additive anticholinergic effects.
+secretin
+atropine decreases effects of secretin by pharmacodynamic antagonism. Avoid or
+Use Alternate Drug. Concomitant use of anticholinergic drugs may cause a
+hyporesponse to stimulation testing with secretin. Discontinue anticholinergic drugs
+at least 5 half-lives before administering secretin.
+sofpironium topical
+sofpironium topical and atropine both increase pharmacodynamic synergism. Avoid
+or Use Alternate Drug. Additive anticholinergic adverse effects may occur.
+umeclidinium bromide/vilanterol inhaled
+atropine, umeclidinium bromide/vilanterol inhaled. Either increases toxicity of the
+other by pharmacodynamic synergism. Avoid or Use Alternate Drug. Concomitant
+use with other anticholinergic-containing drugs may lead to additive anticholinergic
+adverse effects.
+Monitor Closely (103)
+abobotulinumtoxinA
+atropine increases effects of abobotulinumtoxinA by pharmacodynamic synergism.
+Use Caution/Monitor. Drugs with anticholinergic effects may potentiate botulinum
+toxin effects, which may result in excessive neuromuscular weakness and heighten
+systemic anticholinergic effects.
+aclidinium
+
+https://reference.medscape.com/drug/atreza-atropine-po-342061
+
+3/21
+
+6/22/26, 6:24 AM
+
+Atreza, Atropine PO (atropine) dosing, indications, interactions, adverse effects, and more
+
+atropine and aclidinium both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+amantadine
+atropine, amantadine. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Potential for increased anticholinergic adverse effects.
+amitriptyline
+atropine and amitriptyline both decrease cholinergic effects/transmission. Modify
+Therapy/Monitor Closely.
+amoxapine
+atropine and amoxapine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+anticholinergic/sedative combos
+anticholinergic/sedative combos and atropine both decrease cholinergic
+effects/transmission. Use Caution/Monitor.
+aripiprazole
+atropine decreases levels of aripiprazole by inhibition of GI absorption. Applies only
+to oral form of both agents. Use Caution/Monitor.
+atropine decreases levels of aripiprazole by pharmacodynamic antagonism. Use
+Caution/Monitor.
+aripiprazole increases effects of atropine by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+atracurium
+atracurium and atropine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+belladonna alkaloids
+atropine and belladonna alkaloids both decrease cholinergic effects/transmission.
+Use Caution/Monitor.
+belladonna and opium
+atropine and belladonna and opium both decrease cholinergic effects/transmission.
+Use Caution/Monitor.
+benperidol
+atropine decreases levels of benperidol by inhibition of GI absorption. Applies only
+to oral form of both agents. Use Caution/Monitor.
+atropine decreases levels of benperidol by pharmacodynamic antagonism. Use
+Caution/Monitor.
+
+https://reference.medscape.com/drug/atreza-atropine-po-342061
+
+4/21
+
+6/22/26, 6:24 AM
+
+Atreza, Atropine PO (atropine) dosing, indications, interactions, adverse effects, and more
+
+benperidol increases effects of atropine by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+benzgalantamine
+benzgalantamine, atropine. Either decreases effects of the other by
+pharmacodynamic antagonism. Use Caution/Monitor. Galantamine, an
+acetylcholinesterase inhibitor, enhances cholinergic effects. Coadministration with
+drugs that elicit anticholinergic effects may antagonize one another.
+benztropine
+atropine and benztropine both decrease cholinergic effects/transmission. Use
+Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+concurrent use.
+bethanechol
+bethanechol increases and atropine decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+buprenorphine, long-acting injection
+buprenorphine, long-acting injection increases effects of atropine by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration of
+buprenorphine with anticholinergic drugs may increase risk of urinary retention
+and/or severe constipation, which may lead to paralytic ileus.
+carbachol
+carbachol increases and atropine decreases cholinergic effects/transmission. Effect
+of interaction is not clear, use caution. Use Caution/Monitor.
+cevimeline
+cevimeline increases and atropine decreases cholinergic effects/transmission. Effect
+of interaction is not clear, use caution. Use Caution/Monitor.
+chlorpromazine
+atropine decreases levels of chlorpromazine by inhibition of GI absorption. Applies
+only to oral form of both agents. Use Caution/Monitor.
+atropine decreases levels of chlorpromazine by pharmacodynamic antagonism. Use
+Caution/Monitor.
+chlorpromazine increases effects of atropine by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+cisatracurium
+atropine and cisatracurium both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+clomipramine
+atropine and clomipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+https://reference.medscape.com/drug/atreza-atropine-po-342061
+
+5/21
+
+6/22/26, 6:24 AM
+
+Atreza, Atropine PO (atropine) dosing, indications, interactions, adverse effects, and more
+
+clozapine
+atropine decreases levels of clozapine by inhibition of GI absorption. Applies only to
+oral form of both agents. Use Caution/Monitor.
+atropine decreases levels of clozapine by pharmacodynamic antagonism. Use
+Caution/Monitor.
+clozapine increases effects of atropine by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+cyclobenzaprine
+atropine and cyclobenzaprine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+darifenacin
+atropine and darifenacin both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+daxibotulinumtoxinA
+atropine increases effects of daxibotulinumtoxinA by pharmacodynamic synergism.
+Use Caution/Monitor. Drugs with anticholinergic effects may potentiate botulinum
+toxin effects, which may result in excessive neuromuscular weakness and heighten
+systemic anticholinergic effects.
+dicyclomine
+atropine and dicyclomine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+digoxin
+atropine increases levels of digoxin by unknown mechanism. Use Caution/Monitor.
+diphenhydramine
+atropine and diphenhydramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+donepezil
+donepezil increases and atropine decreases cholinergic effects/transmission. Effect
+of interaction is not clear, use caution. Use Caution/Monitor.
+donepezil transdermal
+donepezil transdermal, atropine. Either decreases effects of the other by
+pharmacodynamic antagonism. Modify Therapy/Monitor Closely.
+dosulepin
+atropine and dosulepin both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+doxepin
+atropine and doxepin both decrease cholinergic effects/transmission. Use
+https://reference.medscape.com/drug/atreza-atropine-po-342061
+
+6/21
+
+6/22/26, 6:24 AM
+
+Atreza, Atropine PO (atropine) dosing, indications, interactions, adverse effects, and more
+
+Caution/Monitor.
+droperidol
+atropine decreases levels of droperidol by inhibition of GI absorption. Applies only
+to oral form of both agents. Use Caution/Monitor.
+atropine decreases levels of droperidol by pharmacodynamic antagonism. Use
+Caution/Monitor.
+droperidol increases effects of atropine by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+echothiophate iodide
+echothiophate iodide increases and atropine decreases cholinergic
+effects/transmission. Effect of interaction is not clear, use caution. Use
+Caution/Monitor.
+fentanyl
+fentanyl, atropine. Either increases toxicity of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of fentanyl with
+anticholinergics may increase risk for urinary retention and/or severe constipation,
+which may lead to paralytic ileus.
+fentanyl intranasal
+fentanyl intranasal, atropine. Either increases toxicity of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+fentanyl with anticholinergics may increase risk for urinary retention and/or severe
+constipation, which may lead to paralytic ileus.
+fentanyl transdermal
+fentanyl transdermal, atropine. Either increases toxicity of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+fentanyl with anticholinergics may increase risk for urinary retention and/or severe
+constipation, which may lead to paralytic ileus.
+fentanyl transmucosal
+fentanyl transmucosal, atropine. Either increases toxicity of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+fentanyl with anticholinergics may increase risk for urinary retention and/or severe
+constipation, which may lead to paralytic ileus.
+fesoterodine
+atropine and fesoterodine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+flavoxate
+atropine and flavoxate both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+fluphenazine
+https://reference.medscape.com/drug/atreza-atropine-po-342061
+
+7/21
+
+6/22/26, 6:24 AM
+
+Atreza, Atropine PO (atropine) dosing, indications, interactions, adverse effects, and more
+
+atropine decreases levels of fluphenazine by inhibition of GI absorption. Applies
+only to oral form of both agents. Use Caution/Monitor.
+atropine decreases levels of fluphenazine by pharmacodynamic antagonism. Use
+Caution/Monitor.
+fluphenazine increases effects of atropine by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+galantamine
+galantamine decreases effects of atropine by pharmacodynamic antagonism. Use
+Caution/Monitor. Galantamine may interfere with anticholinergic medication activity.
+gepotidacin
+gepotidacin increases and atropine decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Use Caution/Monitor. Gepotidacin is an
+acetylcholinesterase inhibitor. Potential for an antagonistic effect with systemic
+anticholinergic medications or nondepolarizing neuromuscular blocking agents.
+glycopyrrolate
+atropine and glycopyrrolate both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+glycopyrrolate inhaled
+atropine and glycopyrrolate inhaled both decrease cholinergic effects/transmission.
+Use Caution/Monitor.
+haloperidol
+atropine decreases levels of haloperidol by inhibition of GI absorption. Applies only
+to oral form of both agents. Use Caution/Monitor.
+atropine decreases levels of haloperidol by pharmacodynamic antagonism. Use
+Caution/Monitor.
+haloperidol increases effects of atropine by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+henbane
+atropine and henbane both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+homatropine
+atropine and homatropine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+huperzine A
+huperzine A increases and atropine decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+hyoscyamine
+https://reference.medscape.com/drug/atreza-atropine-po-342061
+
+8/21
+
+6/22/26, 6:24 AM
+
+Atreza, Atropine PO (atropine) dosing, indications, interactions, adverse effects, and more
+
+atropine and hyoscyamine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+hyoscyamine spray
+atropine and hyoscyamine spray both decrease cholinergic effects/transmission.
+Use Caution/Monitor.
+imipramine
+atropine and imipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+incobotulinumtoxinA
+atropine increases effects of incobotulinumtoxinA by pharmacodynamic synergism.
+Use Caution/Monitor. Drugs with anticholinergic effects may potentiate botulinum
+toxin effects, which may result in excessive neuromuscular weakness and heighten
+systemic anticholinergic effects.
+ipratropium
+atropine and ipratropium both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+letibotulinumtoxinA
+atropine increases effects of letibotulinumtoxinA by pharmacodynamic synergism.
+Use Caution/Monitor. Drugs with anticholinergic effects may potentiate botulinum
+toxin effects, which may result in excessive neuromuscular weakness and heighten
+systemic anticholinergic effects.
+lofepramine
+atropine and lofepramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+loxapine
+atropine decreases levels of loxapine by inhibition of GI absorption. Applies only to
+oral form of both agents. Use Caution/Monitor.
+atropine decreases levels of loxapine by pharmacodynamic antagonism. Use
+Caution/Monitor.
+loxapine increases effects of atropine by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+loxapine inhaled
+loxapine inhaled increases effects of atropine by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+atropine decreases levels of loxapine inhaled by pharmacodynamic antagonism.
+Use Caution/Monitor.
+meclizine
+https://reference.medscape.com/drug/atreza-atropine-po-342061
+
+9/21
+
+6/22/26, 6:24 AM
+
+Atreza, Atropine PO (atropine) dosing, indications, interactions, adverse effects, and more
+
+atropine and meclizine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+methscopolamine
+atropine and methscopolamine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+metoclopramide intranasal
+atropine will decrease the level or effect of metoclopramide intranasal by Other
+(see comment). Use Caution/Monitor. Coadministration of metoclopramide
+intranasal with drugs that impair GI motility may decrease systemic absorption of
+metoclopramide. Monitor for reduced therapeutic effect.
+neostigmine
+neostigmine increases and atropine decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+nortriptyline
+atropine and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+olanzapine
+atropine decreases levels of olanzapine by inhibition of GI absorption. Applies only
+to oral form of both agents. Use Caution/Monitor.
+atropine decreases levels of olanzapine by pharmacodynamic antagonism. Use
+Caution/Monitor.
+olanzapine increases effects of atropine by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+olanzapine/samidorphan
+atropine, olanzapine/samidorphan. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration of olanzapine
+and other drugs with anticholinergic (antimuiscarinic) activity can increase risk for
+severe gastrointestinal adverse reactions related to hypomotility. .
+onabotulinumtoxinA
+atropine increases effects of onabotulinumtoxinA by pharmacodynamic synergism.
+Use Caution/Monitor. Drugs with anticholinergic effects may potentiate botulinum
+toxin effects, which may result in excessive neuromuscular weakness and heighten
+systemic anticholinergic effects.
+orphenadrine
+atropine and orphenadrine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+oxybutynin
+atropine and oxybutynin both decrease cholinergic effects/transmission. Use
+https://reference.medscape.com/drug/atreza-atropine-po-342061
+
+10/21
+
+6/22/26, 6:24 AM
+
+Atreza, Atropine PO (atropine) dosing, indications, interactions, adverse effects, and more
+
+Caution/Monitor.
+oxybutynin topical
+atropine and oxybutynin topical both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+oxybutynin transdermal
+atropine and oxybutynin transdermal both decrease cholinergic
+effects/transmission. Use Caution/Monitor.
+paliperidone
+atropine decreases levels of paliperidone by inhibition of GI absorption. Applies
+only to oral form of both agents. Use Caution/Monitor.
+atropine decreases levels of paliperidone by pharmacodynamic antagonism. Use
+Caution/Monitor.
+paliperidone increases effects of atropine by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+pancuronium
+atropine and pancuronium both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+perphenazine
+atropine decreases levels of perphenazine by inhibition of GI absorption. Applies
+only to oral form of both agents. Use Caution/Monitor.
+atropine decreases levels of perphenazine by pharmacodynamic antagonism. Use
+Caution/Monitor.
+perphenazine increases effects of atropine by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+physostigmine
+physostigmine increases and atropine decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+pilocarpine
+pilocarpine increases and atropine decreases cholinergic effects/transmission. Effect
+of interaction is not clear, use caution. Use Caution/Monitor.
+pimozide
+atropine decreases levels of pimozide by inhibition of GI absorption. Applies only to
+oral form of both agents. Use Caution/Monitor.
+atropine decreases levels of pimozide by pharmacodynamic antagonism. Use
+Caution/Monitor.
+
+https://reference.medscape.com/drug/atreza-atropine-po-342061
+
+11/21
+
+6/22/26, 6:24 AM
+
+Atreza, Atropine PO (atropine) dosing, indications, interactions, adverse effects, and more
+
+pimozide increases effects of atropine by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+prabotulinumtoxinA
+atropine increases effects of prabotulinumtoxinA by pharmacodynamic synergism.
+Use Caution/Monitor. Drugs with anticholinergic effects may potentiate botulinum
+toxin effects, which may result in excessive neuromuscular weakness and heighten
+systemic anticholinergic effects.
+pralidoxime
+atropine and pralidoxime both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+prochlorperazine
+atropine decreases levels of prochlorperazine by inhibition of GI absorption. Applies
+only to oral form of both agents. Use Caution/Monitor.
+atropine decreases levels of prochlorperazine by pharmacodynamic antagonism.
+Use Caution/Monitor.
+prochlorperazine increases effects of atropine by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+promethazine
+atropine decreases levels of promethazine by inhibition of GI absorption. Applies
+only to oral form of both agents. Use Caution/Monitor.
+atropine decreases levels of promethazine by pharmacodynamic antagonism. Use
+Caution/Monitor.
+promethazine increases effects of atropine by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+propantheline
+atropine and propantheline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+protriptyline
+atropine and protriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+pyridostigmine
+pyridostigmine increases and atropine decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+quetiapine
+atropine decreases levels of quetiapine by inhibition of GI absorption. Applies only
+to oral form of both agents. Use Caution/Monitor.
+atropine decreases levels of quetiapine by pharmacodynamic antagonism. Use
+https://reference.medscape.com/drug/atreza-atropine-po-342061
+
+12/21
+
+6/22/26, 6:24 AM
+
+Atreza, Atropine PO (atropine) dosing, indications, interactions, adverse effects, and more
+
+Caution/Monitor.
+quetiapine increases effects of atropine by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+rapacuronium
+atropine and rapacuronium both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+rimabotulinumtoxinB
+atropine increases effects of rimabotulinumtoxinB by pharmacodynamic synergism.
+Use Caution/Monitor. Drugs with anticholinergic effects may potentiate botulinum
+toxin effects, which may result in excessive neuromuscular weakness and heighten
+systemic anticholinergic effects.
+risperidone
+atropine decreases levels of risperidone by inhibition of GI absorption. Applies only
+to oral form of both agents. Use Caution/Monitor.
+atropine decreases levels of risperidone by pharmacodynamic antagonism. Use
+Caution/Monitor.
+risperidone increases effects of atropine by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+rocuronium
+atropine and rocuronium both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+scopolamine
+atropine and scopolamine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+solifenacin
+atropine and solifenacin both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+succinylcholine
+succinylcholine increases and atropine decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+thioridazine
+atropine decreases levels of thioridazine by inhibition of GI absorption. Applies only
+to oral form of both agents. Use Caution/Monitor.
+atropine decreases levels of thioridazine by pharmacodynamic antagonism. Use
+Caution/Monitor.
+
+https://reference.medscape.com/drug/atreza-atropine-po-342061
+
+13/21
+
+6/22/26, 6:24 AM
+
+Atreza, Atropine PO (atropine) dosing, indications, interactions, adverse effects, and more
+
+thioridazine increases effects of atropine by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+thiothixene
+atropine decreases levels of thiothixene by inhibition of GI absorption. Applies only
+to oral form of both agents. Use Caution/Monitor.
+atropine decreases levels of thiothixene by pharmacodynamic antagonism. Use
+Caution/Monitor.
+thiothixene increases effects of atropine by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+tiotropium
+atropine and tiotropium both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+tolterodine
+atropine and tolterodine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+trifluoperazine
+atropine decreases levels of trifluoperazine by inhibition of GI absorption. Applies
+only to oral form of both agents. Use Caution/Monitor.
+atropine decreases levels of trifluoperazine by pharmacodynamic antagonism. Use
+Caution/Monitor.
+trifluoperazine increases effects of atropine by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+trihexyphenidyl
+atropine and trihexyphenidyl both decrease cholinergic effects/transmission. Use
+Caution/Monitor. Potential for additive anticholinergic effects.
+trimipramine
+atropine and trimipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+trospium chloride
+atropine and trospium chloride both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+umeclidinium bromide
+umeclidinium bromide and atropine both decrease cholinergic effects/transmission.
+Use Caution/Monitor. If possible, avoid coadministration of additional anticholinergic
+agents
+vecuronium
+https://reference.medscape.com/drug/atreza-atropine-po-342061
+
+14/21
+
+6/22/26, 6:24 AM
+
+Atreza, Atropine PO (atropine) dosing, indications, interactions, adverse effects, and more
+
+atropine and vecuronium both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+xanomeline/trospium
+xanomeline/trospium, atropine. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration of
+antimuscarinic drugs that produce anticholinergic adverse reactions (eg, dry mouth,
+constipation) may increase the frequency and/or severity of such effects.
+ziprasidone
+atropine decreases levels of ziprasidone by inhibition of GI absorption. Applies only
+to oral form of both agents. Use Caution/Monitor.
+atropine decreases levels of ziprasidone by pharmacodynamic antagonism. Use
+Caution/Monitor.
+ziprasidone increases effects of atropine by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+zotepine
+atropine decreases levels of zotepine by inhibition of GI absorption. Applies only to
+oral form of both agents. Use Caution/Monitor.
+atropine decreases levels of zotepine by pharmacodynamic antagonism. Use
+Caution/Monitor.
+Minor (24)
+amitriptyline
+amitriptyline increases levels of atropine by unknown mechanism.
+Minor/Significance Unknown.
+amoxapine
+amoxapine increases levels of atropine by unknown mechanism. Minor/Significance
+Unknown.
+atenolol
+atropine increases levels of atenolol by unknown mechanism. Minor/Significance
+Unknown.
+chlorpromazine
+chlorpromazine increases toxicity of atropine by unknown mechanism.
+Minor/Significance Unknown.
+clomipramine
+clomipramine increases levels of atropine by unknown mechanism.
+Minor/Significance Unknown.
+desipramine
+https://reference.medscape.com/drug/atreza-atropine-po-342061
+
+15/21
+
+6/22/26, 6:24 AM
+
+Atreza, Atropine PO (atropine) dosing, indications, interactions, adverse effects, and more
+
+atropine and desipramine both decrease cholinergic effects/transmission.
+Minor/Significance Unknown.
+desipramine increases levels of atropine by unknown mechanism.
+Minor/Significance Unknown.
+dimenhydrinate
+dimenhydrinate increases toxicity of atropine by pharmacodynamic synergism.
+Minor/Significance Unknown. Additive anticholinergic effects.
+donepezil
+donepezil decreases effects of atropine by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+doxepin
+doxepin increases levels of atropine by unknown mechanism. Minor/Significance
+Unknown.
+fluphenazine
+fluphenazine increases toxicity of atropine by unknown mechanism.
+Minor/Significance Unknown.
+foscarbidopa/foslevodopa
+atropine, foscarbidopa/foslevodopa. Other (see comment). Minor/Significance
+Unknown. Comment: Anticholinergic agents may enhance the therapeutic effects of
+levodopa; however, anticholinergic agents can exacerbate tardive dyskinesia. In
+high dosage, anticholinergics may decrease the effects of levodopa by delaying its
+GI absorption. .
+imipramine
+imipramine increases levels of atropine by unknown mechanism. Minor/Significance
+Unknown.
+levodopa
+atropine, levodopa. Other (see comment). Minor/Significance Unknown. Comment:
+Anticholinergic agents may enhance the therapeutic effects of levodopa; however,
+anticholinergic agents can exacerbate tardive dyskinesia. In high dosage,
+anticholinergics may decrease the effects of levodopa by delaying its GI absorption.
+.
+lofepramine
+lofepramine increases levels of atropine by unknown mechanism.
+Minor/Significance Unknown.
+nortriptyline
+nortriptyline increases levels of atropine by unknown mechanism.
+Minor/Significance Unknown.
+perphenazine
+https://reference.medscape.com/drug/atreza-atropine-po-342061
+
+16/21
+
+6/22/26, 6:24 AM
+
+Atreza, Atropine PO (atropine) dosing, indications, interactions, adverse effects, and more
+
+perphenazine increases toxicity of atropine by unknown mechanism.
+Minor/Significance Unknown.
+prochlorperazine
+prochlorperazine increases toxicity of atropine by unknown mechanism.
+Minor/Significance Unknown.
+promazine
+promazine increases toxicity of atropine by unknown mechanism. Minor/Significance
+Unknown.
+promethazine
+promethazine increases toxicity of atropine by unknown mechanism.
+Minor/Significance Unknown.
+protriptyline
+protriptyline increases levels of atropine by unknown mechanism.
+Minor/Significance Unknown.
+thioridazine
+thioridazine increases toxicity of atropine by unknown mechanism.
+Minor/Significance Unknown.
+trazodone
+atropine and trazodone both decrease cholinergic effects/transmission.
+Minor/Significance Unknown.
+trazodone increases levels of atropine by unknown mechanism. Minor/Significance
+Unknown.
+trifluoperazine
+trifluoperazine increases toxicity of atropine by unknown mechanism.
+Minor/Significance Unknown.
+trimipramine
+trimipramine increases levels of atropine by unknown mechanism.
+Minor/Significance Unknown.
+
+Adverse Effects
+Frequency Not Defined
+Ataxia
+Coma
+Confusion
+https://reference.medscape.com/drug/atreza-atropine-po-342061
+
+17/21
+
+6/22/26, 6:24 AM
+
+Atreza, Atropine PO (atropine) dosing, indications, interactions, adverse effects, and more
+
+Delirium
+Dizziness
+Drowsiness
+Hallucinations
+Headache
+Insomnia
+Nervousness
+Arrhythmia
+Flushing
+Hypotension
+Palpitation
+Tachycardia
+Dyspnea
+Laryngospasm
+Pulmonary edema
+Bloating
+Constipation
+Delayed gastric emptying
+Loss of taste
+Nausea
+Paralytic ileus
+Vomiting
+Xerostomia
+Nasal dryness
+Fever
+Anhidrosis
+Urticaria
+Rash
+Scarlantiniform rash
+https://reference.medscape.com/drug/atreza-atropine-po-342061
+
+18/21
+
+6/22/26, 6:24 AM
+
+Atreza, Atropine PO (atropine) dosing, indications, interactions, adverse effects, and more
+
+Urinary hesitancy and retention
+Anaphylaxis
+Angle closure glaucoma
+Blurred vision
+Dry eyes
+Ocular pressure increased
+
+Warnings
+Contraindications
+Hypersensitivity to anticholinergic drugs
+Narrow-angle glaucoma, synechia (adhesions) between iris and eye lens, myasthenia
+gravis, obstructive uropathy, paralytic ileus, severe ulcerative colitis, toxic megacolon,
+acute hemorrhage with cardiovascular instability, thyrotoxicosis
+Cautions
+Use caution in open-angle glaucoma, hyperthyroidism, BPH, CVD, autonomic
+neuropathy, HTN, partial obstructive uropathy, toxin-mediated diarrhea, hepatic/renal
+impairment, tachyarrhythmia, Down syndrome, brain damage in children, salivary
+secretion disorder, hiatal hernia, reflex esophagitis
+Restrict dose to 2-3 mg (0.03-0.04 mg/kg) in patients with ischemic heart disease, to
+avoid atropine-induced tachycardia, increased myocardial oxygen demand and potential
+for worsening cardiac ischemia or increasing infarction size
+Therapy may precipitate acute glaucoma
+Treatment may convert partial organic pyloric stenosis into complete obstruction
+May lead to complete urinary retention in patients with prostatic hypertrophy
+May cause thickening of bronchial secretions and formation of viscid plugs in patients
+with chronic lung disease
+
+Pregnancy & Lactation
+Pregnancy
+There are risks to the mother and fetus associated with untreated severe or lifethreatening muscarinic events; available data from published observational studies on
+
+https://reference.medscape.com/drug/atreza-atropine-po-342061
+
+19/21
+
+6/22/26, 6:24 AM
+
+Atreza, Atropine PO (atropine) dosing, indications, interactions, adverse effects, and more
+
+atropine sulfate use in pregnant women are insufficient to evaluate for a drug-associated
+risk of major birth defects, miscarriage, or adverse maternal or fetal outcomes
+Severe or life-threatening muscarinic events such as acute organophosphate poisoning
+and symptomatic bradycardia are medical emergencies in pregnancy which can be fatal
+if left untreated; life-sustaining therapy for the pregnant woman should not be withheld
+because of concerns regarding effects of atropine on fetus
+Animal data
+Animal developmental and reproductive toxicity studies have not been conducted
+with atropine
+Lactation
+Trace amounts of atropine have been reported in human milk; there are no available data
+on atropine levels in human milk after intravenous injection, effects on breastfed infant,
+or on milk production
+The elimination half-life of atropine is more than doubled in children less than 2 years of
+age; to minimize potential infant exposure to this drug, a woman may pump and discard
+her milk for 24 hours after use before resuming to breastfeed her infant
+Pregnancy Categories
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+NA: Information not available.
+
+Pharmacology
+Mechanism of Action
+Antimuscarinic; inhibits action of acetylcholine at parasympathetic sites in smooth
+muscle, CNS, and secretory glands. Increases cardiac output and dries secretions
+Pharmacokinetics
+
+https://reference.medscape.com/drug/atreza-atropine-po-342061
+
+20/21
+
+6/22/26, 6:24 AM
+
+Atreza, Atropine PO (atropine) dosing, indications, interactions, adverse effects, and more
+
+Metabolism: Liver
+Half-Life: 2.5 hr
+Excretion: Urine
+Absorption: 90%
+Onset: <1 hr
+Duration: 4 hr
+Peak plasma time: 1 hr
+Peak effect: 2 hr
+
+Formulary
+Adding plans allows you to compare formulary status to other drugs in the same class.
+Formulary information is available for health plans only in the United States.
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/atreza-atropine-po-342061
+
+21/21
+
+

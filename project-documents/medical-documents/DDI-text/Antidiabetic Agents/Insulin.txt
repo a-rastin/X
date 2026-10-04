@@ -1,0 +1,1933 @@
+﻿6/22/26, 5:20 PM Humulin R, Novolin R (insulin regular human) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+insulin regular human (Rx, OTC)
+Brand and Other Names: Humulin R, Novolin R, Humulin R U-500, Myxredlin
+Classes: Antidiabetics, Insulins; Antidiabetics, Short-Acting Insulins
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+injectable solution
+
+OTC
+100units/mL (3mL vial)
+
+100units/mL (10mL vial)
+
+Rx
+500units/mL (20mL vial); prescribe with U-500 syringes to avoid conversion
+for U-100 tuberculin syringes
+
+500units/mL (3mL pen)
+
+100units/100mL 0.9% NaCl (Myxredlin)
+
+Type 1 Diabetes Mellitus
+
+Indicated to improve glycemic control in with diabetes mellitus
+
+SC injection
+
+Initial: 0.2-0.4 units/kg/day SC divided q8hr or more frequently 
+
+Maintenance: 0.5-1 unit/kg/day SC divided q8hr or more frequently; in insulin-
+resistant patients (eg, due to obesity), substantially higher daily insulin may be
+required
+
+Approximately 50-75% of the total daily insulin requirements are given as
+intermediate- or long-acting insulin administered in 1-2 injections; rapid- or short-
+acting insulin should be used before or at mealtimes to satisfy the remainder
+balance of the total daily insulin requirements
+
+https://reference.medscape.com/drug/humulin-r-novolin-r-insulin-regular-human-999007 1/33
+
+
+
+6/22/26, 5:20 PM Humulin R, Novolin R (insulin regular human) dosing, indications, interactions, adverse effects, and more
+
+Premixed combinations are available that deliver rapid- or short-acting components
+at the same time as the intermediate- or long-acting component
+
+Insulin pump (continuous SC insulin infusion)
+
+Use appropriate rapid-acting insulin formulation consisting of a combination of
+basal continuous insulin infusion rate with preprogrammed, premeal bolus doses
+controlled by the patient
+
+Conversion from multiple daily SC doses of maintenance insulin: Consider reducing
+the basal rate to less than equivalent of total daily units of longer acting insulin (eg,
+NPH); divide total number of units by 24 to get basal rate in units/hr; total units of
+regular insulin or other rapid-acting insulin formulations should not be included in
+this calculation
+
+IV infusion
+
+Individualize and adjust dosage based on the individual's metabolic needs, blood
+glucose monitoring results, and glycemic control goal
+
+Dosage adjustments may be needed with changes in nutrition, changes in renal or
+hepatic function or during acute illness
+
+Type 2 Diabetes Mellitus
+
+Type 2 diabetes inadequately controlled by diet, exercise, or oral medication
+
+SC injection
+
+Suggested beginning dose of 10 units/day SC (or 0.1-0.2 unit/kg/day) in evening or
+divided q12hr 
+
+Morning
+Give two thirds of daily insulin requirement
+
+Ratio of regular insulin to NPH insulin 1:2
+
+Evening
+Give one third of daily insulin requirement
+
+Ratio of regular insulin to NPH insulin 1:1
+
+IV infusion
+
+Individualize and adjust dosage based on the individual's metabolic needs, blood
+glucose monitoring results, and glycemic control goal
+
+Dosage adjustments may be needed with changes in nutrition, changes in renal or
+hepatic function or during acute illness
+
+https://reference.medscape.com/drug/humulin-r-novolin-r-insulin-regular-human-999007 2/33
+
+
+
+6/22/26, 5:20 PM Humulin R, Novolin R (insulin regular human) dosing, indications, interactions, adverse effects, and more
+
+Severe Hyperglycemia/Diabetic Ketoacidosis (Off-label)
+
+IV regular insulin recommended over SC administration
+
+0.1 unit/kg IV bolus (some argue against bolus), THEN 
+
+0.1 unit/kg/hr IV continuous infusion; if serum glucose does not fall by 50 mg/dL in the
+first hour, check hydration status; if possible, double the insulin hourly until glucose
+levels fall at the rate of 50-75 mg/dL/hr; decrease infusion to 0.05-0.1 unit/kg/hour
+when blood sugar reaches 250 mg/dL
+
+Hyperkalemia (Off-label)
+
+5-10 units IV insulin in 50 mL D50W (25 g) infused over 15-30 min
+
+Dosing Considerations
+
+Dosage of human insulin, which is always expressed in USP units, must be based on the
+results of blood and urine glucose tests and must be carefully individualized to optimal
+effect
+
+Dose adjustments should be based on regular blood glucose testing
+
+Adjust to achieve appropriate glucose control
+
+Planning dose adjustments
+
+Look for consistent pattern in blood sugars for >3 days
+
+Same time each day: Compare blood glucose levels with previous levels found at
+that time of day
+
+For each time of day: Calculate blood glucose range
+
+Calculate median blood glucose
+
+Consider eating and activity patterns during day
+
+Making dose adjustments
+
+Adjust only 1 insulin dose at a time
+
+Correct hypoglycemia first
+
+Correct highest blood sugars next
+
+If all blood sugars are high (within 2.75 mmol/L [50 mg/dL]): Correct morning
+fasting blood glucose first
+
+Change insulin doses in small increments: Type 1 diabetes (1-2 unit change); type 2
+diabetes (2-3 unit change)
+
+Sliding scales
+
+Many sliding scales exist to determine exact insulin dose based on frequent blood
+glucose monitoring
+
+Commonly written for q4hr blood glucose test
+
+https://reference.medscape.com/drug/humulin-r-novolin-r-insulin-regular-human-999007 3/33
+
+
+
+6/22/26, 5:20 PM Humulin R, Novolin R (insulin regular human) dosing, indications, interactions, adverse effects, and more
+
+Sliding scale coverage usually begins after blood glucose >11 mmol/L (200 mg/dL)
+
+If coverage is needed q4hr for 24 hr, then base insulin dose is adjusted first; sliding
+scale doses may be adjusted upwards as well
+
+Short Bowel Syndrome (Orphan)
+
+Orphan designation for treatment of short bowel syndrome
+
+Sponsor
+
+Nutrinia, Ltd; 15 Abba Hillel Silver Rd, 7th Floor;Ramat-Gan 5252208; Israel
+
+PEDIATRIC
+Dosage Forms & Strengths
+
+injectable solution
+
+OTC
+100units/mL (3mL vial)
+
+100units/mL (10mL vial)
+
+Rx
+500units/mL (20mL vial); prescribe with U-500 syringes to avoid conversion
+for U-100 tuberculin syringes
+
+500units/mL (3mL pen)
+
+100units/100mL 0.9% NaCl (Myxredlin)
+
+Type 1 Diabetes Mellitus
+
+Initial: 0.2-0.4 unit/kg/day SC divided q8hr or more frequently 
+
+Maintenance: 0.5-1 unit/kg/day SC divided q8hr or more frequently; in insulin-resistant
+patients (eg, due to obesity), substantially higher daily insulin may be required
+
+Adolescents: May require up to 1.5 mg/kg/day during puberty
+
+Average total daily insulin requirement for prepubertal children varies from 0.7-1
+unit/kg/day but may be much lower
+
+Insulin pump (continuous SC insulin infusion)
+
+Use appropriate rapid-acting insulin formulation consisting of a combination of
+basal continuous insulin infusion rate with preprogrammed, premeal bolus doses
+controlled by the patient
+
+Conversion from multiple daily SC doses of maintenance insulin: Consider reducing
+the basal rate to less than equivalent of total daily units of longer acting insulin (eg,
+NPH); divide total number of units by 24 to get basal rate in units/hr; total units of
+regular insulin or other rapid-acting insulin formulations should not be included in
+this calculation
+
+https://reference.medscape.com/drug/humulin-r-novolin-r-insulin-regular-human-999007 4/33
+
+
+
+6/22/26, 5:20 PM Humulin R, Novolin R (insulin regular human) dosing, indications, interactions, adverse effects, and more
+
+IV infusion
+
+Individualize and adjust dosage based on the individual's metabolic needs, blood
+glucose monitoring results, and glycemic control goal
+
+Dosage adjustments may be needed with changes in nutrition, changes in renal or
+hepatic function or during acute illness
+
+Type 2 Diabetes Mellitus
+
+<10 years
+
+Safety & efficacy not established
+
+≥10 years
+
+Goal is to achieve HbA1C <6.5% as quickly as possible by titrating the medications
+
+Therapy may include once daily intermediate-acting insulin or basal insulin in
+combination with lifestyle changes and metformin
+
+Initial treatment with prandial insulin (rapid acting insulin or regular insulin) may be
+considered in patients failing to achieve glycemic goals with metformin and basal
+insulin
+
+Taper once initial goal is reached; transition to lowest effective dose or metformin
+monotherapy, if possible
+
+IV infusion
+Individualize and adjust dosage based on the individual's metabolic needs,
+blood glucose monitoring results, and glycemic control goal
+
+Dosage adjustments may be needed with changes in nutrition, changes in
+renal or hepatic function or during acute illness
+
+Severe Hyperglycemia/Diabetic Ketoacidosis (Off-label)
+
+IV regular insulin recommended over SC administration
+
+Patients with uncomplicated diabetic ketoacidosis and adequate peripheral circulation
+may be treated with SC rapid acting analogs including insulin aspart or lispro when
+continuous IV regular insulin not possible
+
+Dextrose (5%) added to normal saline or ½ normal saline should be administered to
+prevent hypoglycemia after achieving serum glucose levels between 250-300 mg/dL;
+administer sooner if serum glucose decreases precipitously; may use 10-12.5% dextrose
+if necessary
+
+Administer 0.05 to 0.1 units/kg/hr until resolution of ketoacidosis (pH>7.3; bicarbonate
+>15 mEq/L and/or closure of anion gap); may administer lower infusion rates if patient
+exhibits marked sensitivity to insulin and resolution of acidosis can be achieved
+
+https://reference.medscape.com/drug/humulin-r-novolin-r-insulin-regular-human-999007 5/33
+
+
+
+6/22/26, 5:20 PM Humulin R, Novolin R (insulin regular human) dosing, indications, interactions, adverse effects, and more
+
+Transition to SC insulin regimen once ketoacidosis resolved; to ensure adequate plasma
+insulin levels, overlap discontinuation of IV insulin and administration of SC insulin;
+timing of SC insulin administration prior to IV infusion discontinuation depends on type
+of insulin used (1-2 hr for regular insulin and 15-30 min for rapid acting insulin)
+
+Hyperkalemia (Off-label)
+
+0.1 unit/kg with 400 mg/kg of glucose administered IV; (insulin to glucose ratio 1 unit of
+insulin for every 4 g of glucose recommended)
+
+Dosing Considerations
+
+Dosage of human insulin, which is always expressed in USP units, must be based on the
+results of blood and urine glucose tests and must be carefully individualized to optimal
+effect
+
+Approximately 50-75% of the total daily insulin requirements are given as intermediate-
+or long-acting insulin administered in 1-2 injections
+
+Rapid- or short-acting insulin should be used before or at mealtimes to satisfy the
+remainder balance of the total daily insulin requirements
+
+Premixed combinations are available that deliver a rapid- or short-acting component at
+the same time as the intermediate- or long-acting component
+
+Interactions
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and insulin
+regular human
+No Interactions Found
+Interactions Found
+Contraindicated
+
+Serious
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+Contraindicated (1)
+
+pramlintide
+insulin regular human, pramlintide. Mechanism: unspecified interaction mechanism.
+Contraindicated. Must be administered separately.
+
+Serious (2)
+
+https://reference.medscape.com/drug/humulin-r-novolin-r-insulin-regular-human-999007 6/33
+
+
+
+6/22/26, 5:20 PM Humulin R, Novolin R (insulin regular human) dosing, indications, interactions, adverse effects, and more
+
+ethanol
+ethanol, insulin regular human. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Alcohol may either increase or decrease the blood glucose lowering
+effect of insulin; alcohol may decrease endogenous glucose production (increased
+hypoglycemia risk) or worsen glycemic control by adding calories.
+
+macimorelin
+insulin regular human, macimorelin. unspecified interaction mechanism. Avoid or
+Use Alternate Drug. Drugs that may transiently elevate growth hormone (GH)
+concentrations may impact the accuracy of the macimorelin diagnostic test. Allow
+sufficient washout time of drugs affecting GH release before administering
+macimorelin.
+
+Monitor Closely (125)
+
+acarbose
+acarbose, insulin regular human. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+alogliptin
+alogliptin, insulin regular human. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+aripiprazole
+aripiprazole, insulin regular human. Other (see comment). Use Caution/Monitor.
+Comment: Atypical antipsychotics have been associated with hyperglycemia that
+may alter blood glucose control; monitor glucose levels closely.
+
+aspirin
+aspirin increases effects of insulin regular human by pharmacodynamic synergism.
+Modify Therapy/Monitor Closely. Coadministration of insulin with high doses of
+salicylates (3 g/day or more) may increase risk for hypoglycemia. Insulin dose
+adjustment and increased frequency of glucose monitoring may be required.
+
+atazanavir
+atazanavir decreases effects of insulin regular human by Other (see comment). Use
+Caution/Monitor. Comment: Reports of hyperglycemia due to insulin resistance with
+protease inhibitors. .
+
+azilsartan
+azilsartan increases effects of insulin regular human by unspecified interaction
+mechanism. Use Caution/Monitor. Concomitant use of insulin and ARBs may require
+insulin dosage adjustment and increased glucose monitoring.
+
+benazepril
+benazepril increases effects of insulin regular human by pharmacodynamic
+synergism. Use Caution/Monitor. Enhanced hypoglycemic effects; Monitor blood
+
+https://reference.medscape.com/drug/humulin-r-novolin-r-insulin-regular-human-999007 7/33
+
+
+
+6/22/26, 5:20 PM Humulin R, Novolin R (insulin regular human) dosing, indications, interactions, adverse effects, and more
+
+glucose.
+
+bexagliflozin
+bexagliflozin increases effects of insulin regular human by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Consider a lower dose of insulin to
+avoid hypoglycemia when coadministered with bexagliflozin.
+
+bexarotene
+bexarotene increases effects of insulin regular human by pharmacodynamic
+synergism. Use Caution/Monitor. Based on the mechanism of action, bexarotene
+capsules may increase the action of insulin enhancing agents, resulting in
+hypoglycemia. Hypoglycemia has not been associated with bexarotene
+monotherapy.
+
+bitter melon
+bitter melon increases effects of insulin regular human by pharmacodynamic
+synergism. Use Caution/Monitor. Risk of hypoglycemia.
+
+canagliflozin
+insulin regular human, canagliflozin. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Consider a lower
+dose of insulin or insulin secretagogue to avoid hypoglycemia when coadministered
+with canagliflozin.
+
+canagliflozin, insulin regular human. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+candesartan
+candesartan increases effects of insulin regular human by unspecified interaction
+mechanism. Use Caution/Monitor. Concomitant use of insulin and ARBs may require
+insulin dosage adjustment and increased glucose monitoring.
+
+captopril
+captopril increases effects of insulin regular human by pharmacodynamic
+synergism. Use Caution/Monitor. Both drugs decrease blood glucose. Monitor blood
+glucose.
+
+cinnamon
+cinnamon increases effects of insulin regular human by pharmacodynamic
+synergism. Use Caution/Monitor. Potential for hypoglycemia.
+
+ciprofibrate
+ciprofibrate increases effects of insulin regular human by unspecified interaction
+mechanism. Use Caution/Monitor. Hypoglycemia; increased risk in
+hypoalbuminemia.
+
+ciprofloxacin
+ciprofloxacin increases effects of insulin regular human by pharmacodynamic
+synergism. Use Caution/Monitor. Hyper and hypoglycemia have been reported in
+
+https://reference.medscape.com/drug/humulin-r-novolin-r-insulin-regular-human-999007 8/33
+
+
+
+6/22/26, 5:20 PM Humulin R, Novolin R (insulin regular human) dosing, indications, interactions, adverse effects, and more
+
+patients treated concomitantly with quinolones and antidiabetic agents. Careful
+monitoring of blood glucose is recommended.
+
+clozapine
+clozapine, insulin regular human. Other (see comment). Use Caution/Monitor.
+Comment: Atypical antipsychotics have been associated with hyperglycemia that
+may alter blood glucose control; monitor glucose levels closely.
+
+dapagliflozin
+insulin regular human, dapagliflozin. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Consider a lower
+dose of insulin or insulin secretagogue to avoid hypoglycemia when coadministered
+with dapagliflozin.
+
+dapagliflozin, insulin regular human. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+darunavir
+darunavir decreases effects of insulin regular human by Other (see comment). Use
+Caution/Monitor. Comment: Reports of hyperglycemia due to insulin resistance with
+protease inhibitors. .
+
+deflazacort
+insulin regular human and deflazacort both decrease serum potassium. Use
+Caution/Monitor.
+
+dexfenfluramine
+dexfenfluramine increases effects of insulin regular human by Other (see comment).
+Use Caution/Monitor. Comment: Dexfenfluramine enhances glucose uptake in
+peripheral tissue, increasing risk of hypoglycemia.
+
+dichlorphenamide
+dichlorphenamide and insulin regular human both decrease serum potassium. Use
+Caution/Monitor.
+
+disopyramide
+disopyramide increases effects of insulin regular human by unspecified interaction
+mechanism. Use Caution/Monitor. Concomitant use of insulin and disopyramide may
+require insulin dosage adjustment and increased glucose monitoring.
+
+dulaglutide
+dulaglutide, insulin regular human. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+empagliflozin
+empagliflozin, insulin regular human. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Consider a lower
+
+https://reference.medscape.com/drug/humulin-r-novolin-r-insulin-regular-human-999007 9/33
+
+
+
+6/22/26, 5:20 PM Humulin R, Novolin R (insulin regular human) dosing, indications, interactions, adverse effects, and more
+
+dose of insulin or insulin secretagogue to avoid hypoglycemia when coadministered
+with SGLT2 inhibitors.
+
+enalapril
+enalapril increases effects of insulin regular human by pharmacodynamic
+synergism. Use Caution/Monitor.
+
+eprosartan
+eprosartan increases effects of insulin regular human by unspecified interaction
+mechanism. Use Caution/Monitor. Concomitant use of insulin and ARBs may require
+insulin dosage adjustment and increased glucose monitoring.
+
+ertugliflozin
+ertugliflozin, insulin regular human. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Consider a lower
+dose of insulin or insulin secretagogue to avoid hypoglycemia when coadministered
+with ertugliflozin.
+
+ethinylestradiol
+ethinylestradiol decreases effects of insulin regular human by pharmacodynamic
+antagonism. Use Caution/Monitor. Oral contraceptives may decrease hypoglycemic
+effects of antidiabetics by impairing glucose tolerance. Monitor for glycemic control
+in diabetic patients.
+
+exenatide injectable solution
+exenatide injectable solution, insulin regular human. Either increases effects of the
+other by pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents
+are often used in combination; dosage adjustments may be required when initiating
+or discontinuing antidiabetic agents.
+
+exenatide injectable suspension
+exenatide injectable suspension, insulin regular human. Either increases effects of
+the other by pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic
+agents are often used in combination; dosage adjustments may be required when
+initiating or discontinuing antidiabetic agents.
+
+fenfluramine
+fenfluramine increases effects of insulin regular human by Other (see comment).
+Use Caution/Monitor. Comment: Fenfluramine enhances glucose uptake in
+peripheral tissue, increasing risk of hypoglycemia.
+
+fenofibrate
+fenofibrate increases effects of insulin regular human by unspecified interaction
+mechanism. Use Caution/Monitor. Hypoglycemia; increased risk in
+hypoalbuminemia.
+
+fenofibrate micronized
+fenofibrate micronized increases effects of insulin regular human by unspecified
+interaction mechanism. Use Caution/Monitor. Hypoglycemia; increased risk in
+hypoalbuminemia.
+
+fenofibric acid
+
+https://reference.medscape.com/drug/humulin-r-novolin-r-insulin-regular-human-999007 10/33
+
+
+
+6/22/26, 5:20 PM Humulin R, Novolin R (insulin regular human) dosing, indications, interactions, adverse effects, and more
+
+fenofibric acid increases effects of insulin regular human by unspecified interaction
+mechanism. Use Caution/Monitor. Hypoglycemia; increased risk in
+hypoalbuminemia.
+
+fleroxacin
+fleroxacin increases effects of insulin regular human by pharmacodynamic
+synergism. Use Caution/Monitor. Quinolone antibiotic administration may result in
+hyper- or hypoglycemia. Gatifloxacin is most likely to produce dysglycemia;
+moxifloxacin is least likely.
+
+fluoxetine
+fluoxetine increases effects of insulin regular human by unspecified interaction
+mechanism. Use Caution/Monitor. Concomitant use of insulin and fluoxetine may
+require insulin dosage adjustment and increased glucose monitoring.
+
+fosamprenavir
+fosamprenavir decreases effects of insulin regular human by Other (see comment).
+Use Caution/Monitor. Comment: Reports of hyperglycemia due to insulin resistance
+with protease inhibitors. .
+
+fosinopril
+fosinopril increases effects of insulin regular human by pharmacodynamic
+synergism. Use Caution/Monitor.
+
+gemfibrozil
+gemfibrozil increases effects of insulin regular human by unspecified interaction
+mechanism. Use Caution/Monitor. Hypoglycemia; increased risk in
+hypoalbuminemia.
+
+gemifloxacin
+gemifloxacin increases effects of insulin regular human by pharmacodynamic
+synergism. Use Caution/Monitor. Quinolone antibiotic administration may result in
+hyper- or hypoglycemia. Gatifloxacin is most likely to produce dysglycemia;
+moxifloxacin is least likely.
+
+glimepiride
+glimepiride, insulin regular human. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+glipizide
+glipizide, insulin regular human. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+glucagon
+glucagon decreases effects of insulin regular human by pharmacodynamic
+antagonism. Use Caution/Monitor. Endogenous glucagon is a regulatory hormone
+that increases blood glucose levels; exogenous glucagon is often used to treat
+hypoglycemia in patients with diabetes mellitus.
+
+https://reference.medscape.com/drug/humulin-r-novolin-r-insulin-regular-human-999007 11/33
+
+
+
+6/22/26, 5:20 PM Humulin R, Novolin R (insulin regular human) dosing, indications, interactions, adverse effects, and more
+
+glucagon intranasal
+glucagon intranasal decreases effects of insulin regular human by
+pharmacodynamic antagonism. Use Caution/Monitor. Endogenous glucagon is a
+regulatory hormone that increases blood glucose levels; exogenous glucagon is
+often used to treat hypoglycemia in patients with diabetes mellitus.
+
+glyburide
+glyburide, insulin regular human. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+imidapril
+imidapril increases effects of insulin regular human by pharmacodynamic
+synergism. Use Caution/Monitor.
+
+irbesartan
+irbesartan increases effects of insulin regular human by unspecified interaction
+mechanism. Use Caution/Monitor. Concomitant use of insulin and ARBs may require
+insulin dosage adjustment and increased glucose monitoring.
+
+isocarboxazid
+isocarboxazid increases effects of insulin regular human by unknown mechanism.
+Use Caution/Monitor.
+
+ketotifen, ophthalmic
+ketotifen, ophthalmic, insulin regular human. Other (see comment). Use
+Caution/Monitor. Comment: Combination may result in thrombocytopenia (rare).
+Monitor CBC.
+
+lanreotide
+lanreotide increases effects of insulin regular human by unspecified interaction
+mechanism. Use Caution/Monitor. Concomitant use of insulin and somatostatin
+analogs may require insulin dosage adjustment and increased glucose monitoring.
+
+levofloxacin
+levofloxacin increases effects of insulin regular human by pharmacodynamic
+synergism. Use Caution/Monitor. Quinolone antibiotic administration may result in
+hyper- or hypoglycemia. Gatifloxacin is most likely to produce dysglycemia;
+moxifloxacin is least likely.
+
+linagliptin
+linagliptin, insulin regular human. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+linezolid
+linezolid increases effects of insulin regular human by unknown mechanism. Use
+Caution/Monitor.
+
+liraglutide
+
+https://reference.medscape.com/drug/humulin-r-novolin-r-insulin-regular-human-999007 12/33
+
+
+
+6/22/26, 5:20 PM Humulin R, Novolin R (insulin regular human) dosing, indications, interactions, adverse effects, and more
+
+liraglutide, insulin regular human. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+lisinopril
+lisinopril increases effects of insulin regular human by pharmacodynamic
+synergism. Use Caution/Monitor.
+
+lithium
+lithium, insulin regular human. unspecified interaction mechanism. Use
+Caution/Monitor. Lithium salts may cause either hypoglycemia or hyperglycemia.
+Insulin dosage adjustment and increased glucose monitoring may be required.
+
+lonapegsomatropin
+lonapegsomatropin decreases effects of insulin regular human by Other (see
+comment). Use Caution/Monitor. Comment: Closely monitor blood glucose when
+treated with antidiabetic agents. Lonapegsomatropin may decrease insulin
+sensitivity, particularly at higher doses. Patients with diabetes mellitus may require
+adjustment of their doses of insulin and/or other antihyperglycemic agents.
+
+lonapegsomatropin decreases effects of insulin regular human by
+pharmacodynamic antagonism. Modify Therapy/Monitor Closely. Growth hormone
+(GH) analogs may decrease insulin sensitivity, particularly at higher doses.
+Antidiabetic agents may require dose adjustment after initiating growth hormone.
+
+lopinavir
+lopinavir decreases effects of insulin regular human by Other (see comment). Use
+Caution/Monitor. Comment: Reports of hyperglycemia due to insulin resistance with
+protease inhibitors. .
+
+losartan
+losartan increases effects of insulin regular human by unspecified interaction
+mechanism. Use Caution/Monitor. Concomitant use of insulin and ARBs may require
+insulin dosage adjustment and increased glucose monitoring.
+
+lurasidone
+lurasidone, insulin regular human. Other (see comment). Use Caution/Monitor.
+Comment: Atypical antipsychotics have been associated with hyperglycemia that
+may alter blood glucose control; monitor glucose levels closely.
+
+magnesium salicylate
+magnesium salicylate increases effects of insulin regular human by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+insulin with high doses of salicylates (3 g/day or more) may increase risk for
+hypoglycemia. Insulin dose adjustment and increased frequency of glucose
+monitoring may be required.
+
+marijuana
+marijuana decreases effects of insulin regular human by pharmacodynamic
+antagonism. Use Caution/Monitor.
+
+mecasermin
+
+https://reference.medscape.com/drug/humulin-r-novolin-r-insulin-regular-human-999007 13/33
+
+
+
+6/22/26, 5:20 PM Humulin R, Novolin R (insulin regular human) dosing, indications, interactions, adverse effects, and more
+
+mecasermin increases effects of insulin regular human by pharmacodynamic
+synergism. Use Caution/Monitor. Additive hypoglycemic effects.
+
+metformin
+metformin, insulin regular human. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+methyltestosterone
+methyltestosterone increases effects of insulin regular human by pharmacodynamic
+synergism. Use Caution/Monitor. It is important to monitor all patients with type 2
+diabetes on antidiabetic agents receiving androgens for changes in glycemic
+control. Potential for hypoglycemia.
+
+metoclopramide intranasal
+metoclopramide intranasal increases effects of insulin regular human by Other (see
+comment). Use Caution/Monitor. Comment: Increased GI motility by
+metoclopramide may increase delivery of food to the intestines and increase blood
+glucose. Monitor blood glucose and adjust insulin dosage regimen as needed.
+
+metreleptin
+insulin regular human, metreleptin. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration of metreleptin
+with insulin and/or insulin secretagogues (eg, sulfonylureas, meglitinide derivatives)
+may increase risk for hypoglycemia; may require lower dose of insulin or insulin
+secretagogue.
+
+miglitol
+miglitol, insulin regular human. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+moexipril
+moexipril increases effects of insulin regular human by pharmacodynamic
+synergism. Use Caution/Monitor.
+
+moxifloxacin
+moxifloxacin increases effects of insulin regular human by pharmacodynamic
+synergism. Use Caution/Monitor. Quinolone antibiotic administration may result in
+hyper- or hypoglycemia. Gatifloxacin is most likely to produce dysglycemia;
+moxifloxacin is least likely.
+
+nadolol
+nadolol, insulin regular human. Mechanism: pharmacodynamic antagonism. Use
+Caution/Monitor. Non selective beta blockers delay recovery of normoglycemia after
+insulin induced hypoglycemia; however, they also inhibit insulin secretion, so long
+term beta blocker Tx may result in reduced glucose tolerance. Insulin induced
+hypoglycemia may induce hypertension during non selective beta blocker Tx.
+
+nateglinide
+
+https://reference.medscape.com/drug/humulin-r-novolin-r-insulin-regular-human-999007 14/33
+
+
+
+6/22/26, 5:20 PM Humulin R, Novolin R (insulin regular human) dosing, indications, interactions, adverse effects, and more
+
+nateglinide, insulin regular human. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+nelfinavir
+nelfinavir decreases effects of insulin regular human by Other (see comment). Use
+Caution/Monitor. Comment: Reports of hyperglycemia due to insulin resistance with
+protease inhibitors. .
+
+niacin
+niacin decreases effects of insulin regular human by pharmacodynamic antagonism.
+Use Caution/Monitor. Concomitant use of insulin and niacin may require insulin
+dosage adjustment and increased glucose monitoring.
+
+octreotide
+octreotide increases effects of insulin regular human by unspecified interaction
+mechanism. Use Caution/Monitor. Concomitant use of insulin and somatostatin
+analogs may require insulin dosage adjustment and increased glucose monitoring.
+
+ofloxacin
+ofloxacin increases effects of insulin regular human by pharmacodynamic
+synergism. Use Caution/Monitor. Quinolone antibiotic administration may result in
+hyper- or hypoglycemia. Gatifloxacin is most likely to produce dysglycemia;
+moxifloxacin is least likely.
+
+olanzapine
+olanzapine, insulin regular human. Other (see comment). Use Caution/Monitor.
+Comment: Atypical antipsychotics have been associated with hyperglycemia that
+may alter blood glucose control; monitor glucose levels closely.
+
+olmesartan
+olmesartan increases effects of insulin regular human by unspecified interaction
+mechanism. Use Caution/Monitor. Concomitant use of insulin and ARBs may require
+insulin dosage adjustment and increased glucose monitoring.
+
+opuntia ficus indica
+opuntia ficus indica increases effects of insulin regular human by pharmacodynamic
+synergism. Use Caution/Monitor.
+
+orforglipron
+orforglipron, insulin regular human. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+insulin with GLP-1 agonists may increase hypoglycemia risk. Lowering the insulin
+dose may reduce hypoglycemia risk.
+
+paliperidone
+paliperidone, insulin regular human. Other (see comment). Use Caution/Monitor.
+Comment: Atypical antipsychotics have been associated with hyperglycemia that
+may alter blood glucose control; monitor glucose levels closely.
+
+pasireotide
+
+https://reference.medscape.com/drug/humulin-r-novolin-r-insulin-regular-human-999007 15/33
+
+
+
+6/22/26, 5:20 PM Humulin R, Novolin R (insulin regular human) dosing, indications, interactions, adverse effects, and more
+
+pasireotide increases effects of insulin regular human by unspecified interaction
+mechanism. Use Caution/Monitor. Concomitant use of insulin and somatostatin
+analogs may require insulin dosage adjustment and increased glucose monitoring.
+
+pentamidine
+pentamidine, insulin regular human. unspecified interaction mechanism. Use
+Caution/Monitor. Pentamidine may cause either hypoglycemia or hyperglycemia
+followed by the opposing effect. Insulin dosage adjustment and increased glucose
+monitoring may be required.
+
+perindopril
+perindopril increases effects of insulin regular human by pharmacodynamic
+synergism. Use Caution/Monitor.
+
+phenelzine
+phenelzine increases effects of insulin regular human by unknown mechanism. Use
+Caution/Monitor.
+
+pindolol
+pindolol, insulin regular human. Mechanism: pharmacodynamic antagonism. Use
+Caution/Monitor. Non selective beta blockers delay recovery of normoglycemia after
+insulin induced hypoglycemia; however, they also inhibit insulin secretion, so long
+term beta blocker Tx may result in reduced glucose tolerance. Insulin induced
+hypoglycemia may induce hypertension during non selective beta blocker Tx.
+
+pioglitazone
+insulin regular human increases toxicity of pioglitazone by unknown mechanism.
+Use Caution/Monitor. Insulin may increase the fluid retention associated with
+thiazolidinediones (peroxisome proliferator-activated receptor [PPAR]-gamma
+agonists).
+
+pioglitazone, insulin regular human. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+propranolol
+propranolol, insulin regular human. Mechanism: pharmacodynamic antagonism. Use
+Caution/Monitor. Non selective beta blockers delay recovery of normoglycemia after
+insulin induced hypoglycemia; however, they also inhibit insulin secretion, so long
+term beta blocker Tx may result in reduced glucose tolerance. Insulin induced
+hypoglycemia may induce hypertension during non selective beta blocker Tx.
+
+pseudoephedrine
+pseudoephedrine decreases effects of insulin regular human by pharmacodynamic
+antagonism. Modify Therapy/Monitor Closely. Sympathomimetics increase blood
+glucose by stimulating alpha and beta receptors; this action results in increased
+hepatic glucose production, glycogenolysis, and decreased insulin secretion.
+
+quetiapine
+quetiapine, insulin regular human. Other (see comment). Use Caution/Monitor.
+Comment: Atypical antipsychotics have been associated with hyperglycemia that
+
+https://reference.medscape.com/drug/humulin-r-novolin-r-insulin-regular-human-999007 16/33
+
+
+
+6/22/26, 5:20 PM Humulin R, Novolin R (insulin regular human) dosing, indications, interactions, adverse effects, and more
+
+may alter blood glucose control; monitor glucose levels closely.
+
+quinapril
+quinapril increases effects of insulin regular human by pharmacodynamic
+synergism. Use Caution/Monitor.
+
+ramipril
+ramipril increases effects of insulin regular human by pharmacodynamic synergism.
+Use Caution/Monitor.
+
+risperidone
+risperidone, insulin regular human. Other (see comment). Use Caution/Monitor.
+Comment: Atypical antipsychotics have been associated with hyperglycemia that
+may alter blood glucose control; monitor glucose levels closely.
+
+ritonavir
+ritonavir decreases effects of insulin regular human by Other (see comment). Use
+Caution/Monitor. Comment: Reports of hyperglycemia due to insulin resistance with
+protease inhibitors. .
+
+rosiglitazone
+insulin regular human increases toxicity of rosiglitazone by unknown mechanism.
+Use Caution/Monitor. Insulin may increase the fluid retention associated with
+thiazolidinediones (peroxisome proliferator-activated receptor [PPAR]-gamma
+agonists).
+
+rosiglitazone, insulin regular human. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+sacubitril/valsartan
+sacubitril/valsartan increases effects of insulin regular human by unspecified
+interaction mechanism. Use Caution/Monitor. Concomitant use of insulin and ARBs
+may require insulin dosage adjustment and increased glucose monitoring.
+
+salsalate
+salsalate increases effects of insulin regular human by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of insulin with high
+doses of salicylates (3 g/day or more) may increase risk for hypoglycemia. Insulin
+dose adjustment and increased frequency of glucose monitoring may be required.
+
+saxagliptin
+saxagliptin, insulin regular human. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+selegiline
+selegiline increases effects of insulin regular human by unknown mechanism. Use
+Caution/Monitor. Serum glucose should be monitored closely when MAOIs are
+
+https://reference.medscape.com/drug/humulin-r-novolin-r-insulin-regular-human-999007 17/33
+
+
+
+6/22/26, 5:20 PM Humulin R, Novolin R (insulin regular human) dosing, indications, interactions, adverse effects, and more
+
+added to any regimen containing antidiabetic medications. Hypoglycemic effects
+may be increased.
+
+selegiline transdermal
+selegiline transdermal increases effects of insulin regular human by unknown
+mechanism. Use Caution/Monitor.
+
+semaglutide
+semaglutide, insulin regular human. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+insulin with GLP-1 agonists may increase hypoglycemia risk. Lowering the insulin
+dose may reduce hypoglycemia risk.
+
+shark cartilage
+shark cartilage increases effects of insulin regular human by pharmacodynamic
+synergism. Use Caution/Monitor. Theoretical interaction.
+
+sitagliptin
+sitagliptin, insulin regular human. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+sodium sulfate/?magnesium sulfate/potassium chloride
+sodium sulfate/?magnesium sulfate/potassium chloride increases toxicity of insulin
+regular human by Other (see comment). Use Caution/Monitor. Comment:
+Coadministration with medications that cause fluid and electrolyte abnormalities
+may increase the risk of adverse events of seizure, arrhythmias, and renal
+impairment.
+
+sodium sulfate/potassium chloride/magnesium sulfate/polyethylene glycol
+insulin regular human and sodium sulfate/potassium chloride/magnesium
+sulfate/polyethylene glycol both decrease serum potassium. Modify
+Therapy/Monitor Closely.
+
+sodium sulfate/potassium sulfate/magnesium sulfate
+sodium sulfate/potassium sulfate/magnesium sulfate increases toxicity of insulin
+regular human by Other (see comment). Use Caution/Monitor. Comment:
+Coadministration with medications that cause fluid and electrolyte abnormalities
+may increase the risk of adverse events of seizure, arrhythmias, and renal
+impairment.
+
+somapacitan
+somapacitan decreases effects of insulin regular human by pharmacodynamic
+antagonism. Modify Therapy/Monitor Closely. Growth hormone (GH) analogs may
+decrease insulin sensitivity, particularly at higher doses. Antidiabetic agents may
+require dose adjustment after initiating growth hormone.
+
+somatrogon
+somatrogon decreases effects of insulin regular human by pharmacodynamic
+antagonism. Modify Therapy/Monitor Closely. Growth hormone (GH) analogs may
+
+https://reference.medscape.com/drug/humulin-r-novolin-r-insulin-regular-human-999007 18/33
+
+
+
+6/22/26, 5:20 PM Humulin R, Novolin R (insulin regular human) dosing, indications, interactions, adverse effects, and more
+
+decrease insulin sensitivity, particularly at higher doses. Antidiabetic agents may
+require dose adjustment after initiating growth hormone.
+
+somatropin
+somatropin decreases effects of insulin regular human by pharmacodynamic
+antagonism. Modify Therapy/Monitor Closely. Growth hormone (GH) analogs may
+decrease insulin sensitivity, particularly at higher doses. Antidiabetic agents may
+require dose adjustment after initiating growth hormone.
+
+sotagliflozin
+sotagliflozin increases effects of insulin regular human by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Hypoglycemia risk increased. Lower
+dose of insulin may be required.
+
+sulfadiazine
+sulfadiazine increases effects of insulin regular human by unspecified interaction
+mechanism. Use Caution/Monitor. Concomitant use of insulin and sulfonamide
+antibiotics may require insulin dosage adjustment and increased glucose
+monitoring.
+
+sulfamethoxypyridazine
+sulfamethoxypyridazine increases effects of insulin regular human by unspecified
+interaction mechanism. Use Caution/Monitor. Risk of hypoglycemia.
+
+sulfisoxazole
+sulfisoxazole increases effects of insulin regular human by unspecified interaction
+mechanism. Use Caution/Monitor. Concomitant use of insulin and sulfonamide
+antibiotics may require insulin dosage adjustment and increased glucose
+monitoring.
+
+telmisartan
+telmisartan increases effects of insulin regular human by unspecified interaction
+mechanism. Use Caution/Monitor. Concomitant use of insulin and ARBs may require
+insulin dosage adjustment and increased glucose monitoring.
+
+testosterone intranasal
+testosterone intranasal increases effects of insulin regular human by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Androgens may
+decrease blood glucose and, therefore, may necessitate a decrease in the dose of
+antidiabetic medication.
+
+timolol
+timolol, insulin regular human. Mechanism: pharmacodynamic antagonism. Use
+Caution/Monitor. Non selective beta blockers delay recovery of normoglycemia after
+insulin induced hypoglycemia; however, they also inhibit insulin secretion, so long
+term beta blocker Tx may result in reduced glucose tolerance. Insulin induced
+hypoglycemia may induce hypertension during non selective beta blocker Tx.
+
+tipranavir
+tipranavir decreases effects of insulin regular human by Other (see comment). Use
+Caution/Monitor. Comment: Reports of hyperglycemia due to insulin resistance with
+protease inhibitors. .
+
+https://reference.medscape.com/drug/humulin-r-novolin-r-insulin-regular-human-999007 19/33
+
+
+
+6/22/26, 5:20 PM Humulin R, Novolin R (insulin regular human) dosing, indications, interactions, adverse effects, and more
+
+tirzepatide
+tirzepatide, insulin regular human. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+insulin with GLP-1 agonists may increase hypoglycemia risk. Lowering the insulin
+dose may reduce hypoglycemia risk.
+
+trandolapril
+trandolapril increases effects of insulin regular human by pharmacodynamic
+synergism. Use Caution/Monitor.
+
+tranylcypromine
+tranylcypromine increases effects of insulin regular human by unknown mechanism.
+Use Caution/Monitor.
+
+triamcinolone acetonide injectable suspension
+triamcinolone acetonide injectable suspension decreases effects of insulin regular
+human by pharmacodynamic antagonism. Use Caution/Monitor. Corticosteroids may
+diminish hypoglycemic effect of antidiabetic agents. Monitor blood glucose levels
+carefully.
+
+valsartan
+valsartan increases effects of insulin regular human by unspecified interaction
+mechanism. Use Caution/Monitor. Concomitant use of insulin and ARBs may require
+insulin dosage adjustment and increased glucose monitoring.
+
+xipamide
+xipamide decreases levels of insulin regular human by increasing renal clearance.
+Use Caution/Monitor.
+
+ziprasidone
+ziprasidone, insulin regular human. Other (see comment). Use Caution/Monitor.
+Comment: Atypical antipsychotics have been associated with hyperglycemia that
+may alter blood glucose control; monitor glucose levels closely.
+
+Minor (76)
+
+agrimony
+agrimony increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+American ginseng
+American ginseng increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+amitriptyline
+amitriptyline increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+amoxapine
+amoxapine increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+https://reference.medscape.com/drug/humulin-r-novolin-r-insulin-regular-human-999007 20/33
+
+
+
+6/22/26, 5:20 PM Humulin R, Novolin R (insulin regular human) dosing, indications, interactions, adverse effects, and more
+
+anamu
+anamu increases effects of insulin regular human by pharmacodynamic synergism.
+Minor/Significance Unknown. Theoretical interaction.
+
+aspirin rectal
+aspirin rectal increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown. Large dose of salicylate.
+
+aspirin/citric acid/sodium bicarbonate
+aspirin/citric acid/sodium bicarbonate increases effects of insulin regular human by
+pharmacodynamic synergism. Minor/Significance Unknown. Large dose of
+salicylate.
+
+balsalazide
+balsalazide increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown. Large dose of salicylate.
+
+budesonide
+budesonide decreases effects of insulin regular human by pharmacodynamic
+antagonism. Minor/Significance Unknown.
+
+chlorothiazide
+chlorothiazide decreases effects of insulin regular human by pharmacodynamic
+antagonism. Minor/Significance Unknown. Thiazide dosage >50 mg/day may
+increase blood glucose.
+
+chlorthalidone
+chlorthalidone decreases effects of insulin regular human by pharmacodynamic
+antagonism. Minor/Significance Unknown. Thiazide dosage >50 mg/day may
+increase blood glucose.
+
+choline magnesium trisalicylate
+choline magnesium trisalicylate increases effects of insulin regular human by
+pharmacodynamic synergism. Minor/Significance Unknown. Large dose of
+salicylate.
+
+chromium
+chromium increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+clomipramine
+clomipramine increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+clonidine
+clonidine decreases effects of insulin regular human by pharmacodynamic
+antagonism. Minor/Significance Unknown. Diminished symptoms of hypoglycemia.
+
+clonidine, insulin regular human. Other (see comment). Minor/Significance
+Unknown. Comment: Decreased symptoms of hypoglycemia. Mechanism:
+decreased hypoglycemia induced catecholamine production.
+
+coenzyme Q10
+
+https://reference.medscape.com/drug/humulin-r-novolin-r-insulin-regular-human-999007 21/33
+
+
+
+6/22/26, 5:20 PM Humulin R, Novolin R (insulin regular human) dosing, indications, interactions, adverse effects, and more
+
+coenzyme Q10 increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown. Monitor insulin requirements.
+
+cornsilk
+cornsilk increases effects of insulin regular human by pharmacodynamic synergism.
+Minor/Significance Unknown. Increased risk of hypoglycemia (theoretical
+interaction).
+
+cortisone
+cortisone decreases effects of insulin regular human by pharmacodynamic
+antagonism. Minor/Significance Unknown.
+
+cyclopenthiazide
+cyclopenthiazide decreases effects of insulin regular human by pharmacodynamic
+antagonism. Minor/Significance Unknown. Thiazide dosage >50 mg/day may
+increase blood glucose.
+
+damiana
+damiana decreases effects of insulin regular human by pharmacodynamic
+antagonism. Minor/Significance Unknown. Theoretical interaction.
+
+danazol
+danazol increases effects of insulin regular human by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+deflazacort
+deflazacort decreases effects of insulin regular human by pharmacodynamic
+antagonism. Minor/Significance Unknown.
+
+desipramine
+desipramine increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+devil's claw
+devil's claw increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+dexamethasone
+dexamethasone decreases effects of insulin regular human by pharmacodynamic
+antagonism. Minor/Significance Unknown.
+
+diflunisal
+diflunisal increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown. Large dose of salicylate.
+
+doxepin
+doxepin increases effects of insulin regular human by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+elderberry
+elderberry increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown. Increased risk of hypoglycemia (in vitro
+
+https://reference.medscape.com/drug/humulin-r-novolin-r-insulin-regular-human-999007 22/33
+
+
+
+6/22/26, 5:20 PM Humulin R, Novolin R (insulin regular human) dosing, indications, interactions, adverse effects, and more
+
+research).
+
+eucalyptus
+eucalyptus increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown. Theoretical interaction.
+
+fludrocortisone
+fludrocortisone decreases effects of insulin regular human by pharmacodynamic
+antagonism. Minor/Significance Unknown.
+
+fluoxymesterone
+fluoxymesterone increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+fo-ti
+fo-ti increases effects of insulin regular human by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+forskolin
+forskolin increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown. Colenol, a compound found in Coleus root,
+may stimulate insulin release.
+
+gotu kola
+gotu kola increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown. (Theoretical interaction).
+
+guanfacine
+guanfacine decreases effects of insulin regular human by pharmacodynamic
+antagonism. Minor/Significance Unknown. Diminished symptoms of hypoglycemia.
+
+guanfacine, insulin regular human. Other (see comment). Minor/Significance
+Unknown. Comment: Decreased symptoms of hypoglycemia. Mechanism:
+decreased hypoglycemia induced catecholamine production.
+
+gymnema
+gymnema increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+horse chestnut seed
+horse chestnut seed increases effects of insulin regular human by
+pharmacodynamic synergism. Minor/Significance Unknown.
+
+hydrochlorothiazide
+hydrochlorothiazide decreases effects of insulin regular human by
+pharmacodynamic antagonism. Minor/Significance Unknown. Thiazide dosage >50
+mg/day may increase blood glucose.
+
+hydrocortisone
+hydrocortisone decreases effects of insulin regular human by pharmacodynamic
+antagonism. Minor/Significance Unknown.
+
+imipramine
+
+https://reference.medscape.com/drug/humulin-r-novolin-r-insulin-regular-human-999007 23/33
+
+
+
+6/22/26, 5:20 PM Humulin R, Novolin R (insulin regular human) dosing, indications, interactions, adverse effects, and more
+
+imipramine increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+indapamide
+indapamide decreases effects of insulin regular human by pharmacodynamic
+antagonism. Minor/Significance Unknown. Thiazide dosage >50 mg/day may
+increase blood glucose.
+
+isoniazid
+isoniazid decreases effects of insulin regular human by unspecified interaction
+mechanism. Minor/Significance Unknown.
+
+juniper
+juniper increases effects of insulin regular human by pharmacodynamic synergism.
+Minor/Significance Unknown. Increased risk of hypoglycemia (theoretical
+interaction).
+
+lofepramine
+lofepramine increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+lycopus
+lycopus increases effects of insulin regular human by pharmacodynamic synergism.
+Minor/Significance Unknown. Increased risk of hypoglycemia (theoretical
+interaction).
+
+maitake
+maitake increases effects of insulin regular human by pharmacodynamic synergism.
+Minor/Significance Unknown. Increased risk of hypoglycemia (animal research).
+
+mesalamine
+mesalamine increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown. Large dose of salicylate.
+
+mesterolone
+mesterolone increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+methyclothiazide
+methyclothiazide decreases effects of insulin regular human by pharmacodynamic
+antagonism. Minor/Significance Unknown. Thiazide dosage >50 mg/day may
+increase blood glucose.
+
+methylprednisolone
+methylprednisolone decreases effects of insulin regular human by
+pharmacodynamic antagonism. Minor/Significance Unknown.
+
+metolazone
+metolazone decreases effects of insulin regular human by pharmacodynamic
+antagonism. Minor/Significance Unknown. Thiazide dosage >50 mg/day may
+increase blood glucose.
+
+nettle
+
+https://reference.medscape.com/drug/humulin-r-novolin-r-insulin-regular-human-999007 24/33
+
+
+
+6/22/26, 5:20 PM Humulin R, Novolin R (insulin regular human) dosing, indications, interactions, adverse effects, and more
+
+nettle increases effects of insulin regular human by pharmacodynamic synergism.
+Minor/Significance Unknown. (Theoretical interaction).
+
+nortriptyline
+nortriptyline increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+ofloxacin
+ofloxacin, insulin regular human. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Potential dysglycemia.
+
+oxandrolone
+oxandrolone increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+oxymetholone
+oxymetholone increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+panax ginseng
+panax ginseng increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+pegvisomant
+pegvisomant increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+potassium acid phosphate
+potassium acid phosphate increases effects of insulin regular human by
+pharmacodynamic synergism. Minor/Significance Unknown. Interaction especially
+seen in the treatment of hypokalemia.
+
+potassium chloride
+potassium chloride increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown. Interaction especially seen in the
+treatment of hypokalemia.
+
+potassium citrate
+potassium citrate increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown. Interaction especially seen in the
+treatment of hypokalemia.
+
+prednisolone
+prednisolone decreases effects of insulin regular human by pharmacodynamic
+antagonism. Minor/Significance Unknown.
+
+prednisone
+prednisone decreases effects of insulin regular human by pharmacodynamic
+antagonism. Minor/Significance Unknown.
+
+protriptyline
+protriptyline increases effects of insulin regular human by pharmacodynamic
+
+https://reference.medscape.com/drug/humulin-r-novolin-r-insulin-regular-human-999007 25/33
+
+
+
+6/22/26, 5:20 PM Humulin R, Novolin R (insulin regular human) dosing, indications, interactions, adverse effects, and more
+
+synergism. Minor/Significance Unknown.
+
+sage
+sage increases effects of insulin regular human by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+salicylates (non-asa)
+salicylates (non-asa) increases effects of insulin regular human by
+pharmacodynamic synergism. Minor/Significance Unknown. Large dose of
+salicylate.
+
+Siberian ginseng
+Siberian ginseng increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+sulfasalazine
+sulfasalazine increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown. Large dose of salicylate.
+
+testosterone
+testosterone increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+testosterone buccal system
+testosterone buccal system increases effects of insulin regular human by
+pharmacodynamic synergism. Minor/Significance Unknown.
+
+testosterone topical
+testosterone topical increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+tongkat ali
+tongkat ali increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown. Risk of hypoglycemia.
+
+trazodone
+trazodone increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+trimipramine
+trimipramine increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+vanadium
+vanadium increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+willow bark
+willow bark increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown. Large dose of salicylate.
+
+https://reference.medscape.com/drug/humulin-r-novolin-r-insulin-regular-human-999007 26/33
+
+
+
+6/22/26, 5:20 PM Humulin R, Novolin R (insulin regular human) dosing, indications, interactions, adverse effects, and more
+
+Adverse Effects
+
+Frequency Not Defined
+
+Intensification or rapid improvement in glucose control associated with a transitory,
+reversible ophthalmologic refraction disorder, worsening of diabetic retinopathy, and
+acute painful peripheral neuropathy
+
+Hypersensitivity reactions
+
+Severe, life-threatening, generalized allergy, including anaphylaxis
+
+Hypoglycemia
+
+Hypokalemia
+
+Peripheral edema
+
+Weight gain
+
+Immunogenicity
+
+Postmarketing Reports
+
+Injection site reactions
+
+Localized cutaneous amyloidosis
+
+Warnings
+
+Contraindications
+
+Hypersensitivity to product or excipients
+
+Hypoglycemia
+
+Cautions
+
+Never share pen, needles, or syringes between patients
+
+Use with caution in patients with decreased insulin requirements: Diarrhea,
+nausea/vomiting, malabsorption, hypothyroidism, renal impairment, and hepatic
+impairment
+
+Use with caution in patients with increased insulin requirements: Fever, hyperthyroidism,
+trauma, infection, and surgery
+
+Severe, life-threatening, generalized allergy, including anaphylaxis, can occur;
+discontinue therapy if indicated
+
+Not for mixing with any insulin for intravenous use or with insulins other than NPH
+insulin for subcutaneous use
+
+Insulins may cause sodium retention and edema, particularly if previously poor metabolic
+
+https://reference.medscape.com/drug/humulin-r-novolin-r-insulin-regular-human-999007 27/33
+
+
+
+6/22/26, 5:20 PM Humulin R, Novolin R (insulin regular human) dosing, indications, interactions, adverse effects, and more
+
+control is improved by intensified insulin therapy
+
+Weight gain can occur with insulins and has been attributed to anabolic effects of insulin
+
+Use caution in pregnancy
+
+Hyperglycemia or hypoglycemia with changes in insulin regimen
+
+Rapid changes in serum glucose may induce symptoms of hypoglycemia; increase
+monitoring with changes to insulin dosage, co-administered glucose lowering
+medications, meal pattern, physical activity; and in patients with renal impairment
+or hepatic impairment or hypoglycemia unawareness
+
+Changes in insulin strength, manufacturer, type, or method of administration may
+affect glycemic control and predispose to hypoglycemia or hyperglycemia; changes
+should be made cautiously and under close medical supervision and frequency of
+blood glucose monitoring should be increased; for patients with type 2 diabetes,
+dosage adjustments of concomitant antidiabetic products may be needed
+
+Hypoglycemia is the most common cause of adverse reactions (headache,
+tachycardia, etc)
+
+Severe hypoglycemia can cause seizures, may lead to unconsciousness, may be life
+threatening or cause death; can impair concentration ability and reaction time; this
+may place an individual and others at risk in situations where these abilities are
+important (e.g. driving or operating other machinery)
+
+Hypoglycemia can happen suddenly and symptoms may differ in each individual
+and change over time in the same individual; symptomatic awareness of may be
+less pronounced in patients with longstanding diabetes, in patients with diabetic
+nerve disease, in patients using medications that block sympathetic nervous system
+(e.g., beta-blockers), or in patients who experience recurrent hypoglycemia
+
+Risk of hypoglycemia after injection is related to duration of action of insulin and, in
+general, is highest when glucose lowering effect of insulin is maximal; as with all
+insulin preparations, the glucose lowering effect time course may vary in different
+individuals or at different times in same individual and depends on many conditions,
+including area of injection as well as injection site blood supply and temperature
+
+Patients and caregivers must be educated to recognize and manage hypoglycemia;
+self- monitoring of blood glucose plays an essential role in prevention and
+management of hypoglycemia; in patients at higher risk for hypoglycemia and
+patients who have reduced symptomatic awareness of hypoglycemia, increased
+frequency of blood glucose monitoring recommended
+
+Repeated insulin injections into areas of lipodystrophy or localized cutaneous
+amyloidosis reported to result in hyperglycemia; a sudden change in the injection
+site (to unaffected area) has been reported to result in hypoglycemia
+
+Make any changes to a patient’s insulin regimen under close medical supervision
+with increased frequency of blood glucose monitoring
+
+Advise patients who have repeatedly injected into areas of lipodystrophy or
+localized cutaneous amyloidosis to change injection site to unaffected areas and
+closely monitor for hypoglycemia
+
+For patients with type 2 diabetes, dosage adjustments in concomitant oral
+antidiabetic treatment may be needed
+
+Medication errors associated with U-500
+
+https://reference.medscape.com/drug/humulin-r-novolin-r-insulin-regular-human-999007 28/33
+
+
+
+6/22/26, 5:20 PM Humulin R, Novolin R (insulin regular human) dosing, indications, interactions, adverse effects, and more
+
+Prescribed dose should always be expressed in actual units of insulin and NOT
+volume
+
+Reports of errors resulting in hyperglycemia, hypoglycemia, or death
+
+Majority of errors occurred due to errors in dispensing, prescribing, or
+administration; confusion with corresponding markings on the syringe the patient is
+using (ie, a U-100 insulin syringe or tuberculin syringe)
+
+To avoid medication errors between insulin types, instruct patients to always check
+insulin label before each injection
+
+Drug interactions overview
+
+May cause a shift in potassium from extracellular to intracellular space, possibly
+leading to hypokalemia; caution when coadministered with potassium-lowering
+drugs or when administered to patients with a condition that may decrease
+potassium; untreated hypokalemia may cause respiratory paralysis, ventricular
+arrhythmia, and death; monitor potassium levels in patients at risk for hypokalemia
+if indicated
+
+Thiazolidinediones are peroxisome proliferator-activated receptor (PPAR)-gamma
+agonists and can cause dose-related fluid retention, particularly when used in
+combination with insulin; fluid retention may lead to or exacerbate heart failure;
+monitor for signs and symptoms of heart failure, treat the patient accordingly, and
+consider discontinuing thiazolidinediones
+
+Coadministration with drugs that may decrease the blood glucose lowering effect
+(eg, atypical antipsychotics): Adjust dose and increase the frequency of monitoring
+
+Coadministration with drugs that may decrease or increase the blood glucose
+lowering effect (eg, alcohol): Adjust dose and increase the frequency of monitoring
+
+Increased frequency of glucose monitoring when concomitantly insulin regular
+human with drugs that may blunt signs and symptoms of hypoglycemia (eg, beta-
+blockers)
+
+Pregnancy & Lactation
+
+Pregnancy
+
+Available data from published studies over decades have not established association
+with human insulin use during pregnancy and major birth defects, miscarriage or adverse
+maternal or fetal outcomes
+
+There are risks to mother and fetus associated with poorly controlled diabetes in
+pregnancy; animal reproduction studies were not performed
+
+Clinical considerations
+
+Poorly controlled diabetes in pregnancy increases maternal risk for diabetic
+ketoacidosis, preeclampsia, spontaneous abortions, preterm delivery, stillbirth, and
+delivery complications; poorly controlled diabetes increases fetal risk for major birth
+defects, stillbirth, and macrosomia-related morbidity
+
+Lactation
+
+https://reference.medscape.com/drug/humulin-r-novolin-r-insulin-regular-human-999007 29/33
+
+
+
+6/22/26, 5:20 PM Humulin R, Novolin R (insulin regular human) dosing, indications, interactions, adverse effects, and more
+
+Available data from published literature suggests that exogenous human insulin
+products, are transferred into human milk; there are no adverse reactions reported in
+breastfed infants in the literature; there are no data on effects of exogenous human
+insulin products, on milk production
+
+Consider developmental and health benefits of breastfeeding along with the mother’s
+clinical need for therapy, and any potential adverse effects on breastfed infant from drug,
+or from underlying maternal condition
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+Regulates glucose metabolism
+
+Insulin and its analogues lower blood glucose by stimulating peripheral glucose uptake,
+especially by skeletal muscle and fat, and by inhibiting hepatic glucose production;
+insulin inhibits lipolysis and proteolysis and enhances protein synthesis; targets include
+skeletal muscle, liver, and adipose tissue
+
+Absorption
+
+Bioavailability: 55-77% (SC)
+
+Onset: 0.5 hr (early effect); 2.5-5 hr (peak effect)
+
+Duration: 4-12 hr (U-100); up to 24 hr (U-500)
+
+Peak plasma time: 0.8-2 hr (SC)
+
+Distribution
+
+Vd: 0.26-0.36 L/kg
+
+Metabolism
+
+https://reference.medscape.com/drug/humulin-r-novolin-r-insulin-regular-human-999007 30/33
+
+
+
+6/22/26, 5:20 PM Humulin R, Novolin R (insulin regular human) dosing, indications, interactions, adverse effects, and more
+
+Metabolized by liver (>50%), kidney (30%), and adipose tissue/muscle (20%)
+
+Elimination
+
+Excretion: Urine
+
+Administration
+
+IV Compatibilities (Vials only)
+
+Humulin R or Novolin R: 0.9% NaCl
+
+Novolin R only
+
+Dextrose 5%
+
+Dextrose 10% with 40 mmol/L potassium chloride
+
+SC Preparation
+
+Mix with isophane insulin human suspension
+
+When mixing, draw insulin regular into the syringe first and inject mixture immediately
+after mixing
+
+IV Preparation
+
+Vial
+
+Humulin R: Use at concentrations from 0.1-1 unit/mL in infusion systems containing
+0.9% NaCl
+
+Novolin R: Dilute to concentrations from 0.05-1 unit/mL insulin in infusion systems
+using polypropylene infusion bags; stable in infusion fluids such as 0.9% NaCl, 5%
+dextrose, or 10% dextrose with 40 mmol/L potassium chloride
+
+IV Administration
+
+Administer IV ONLY under medical supervision with close monitoring of blood glucose
+and potassium levels to reduce the risk of hypoglycemia and hypokalemia
+
+Do not use of Novolin R in insulin pumps because of the risk of precipitation
+
+Premix bag
+
+Visually inspect before use; should appear clear and colorless; do not use if
+particulate matter or coloration is seen
+
+Do not add supplementary medication or additives
+
+Do not use in series connections
+
+Do not shake
+
+Do not freeze
+
+https://reference.medscape.com/drug/humulin-r-novolin-r-insulin-regular-human-999007 31/33
+
+
+
+6/22/26, 5:20 PM Humulin R, Novolin R (insulin regular human) dosing, indications, interactions, adverse effects, and more
+
+Discard any unused portion
+
+SC Administration
+
+Always check insulin label before administration to confirm the correct insulin product
+before use
+
+Visually inspect before use; should appear clear and colorless; do not use if particulate
+matter or coloration is seen
+
+Inject SC ~30 minutes before meals into the thigh, upper arm, abdomen, or buttocks
+
+Rotate injection sites within the same region from 1 injection to the next to reduce the
+risk of lipodystrophy
+
+Storage
+
+Humulin R U-100
+
+Unopened vials: Refrigerator at 2-8°C (36-46°F) until expiration date or store at
+room temperature for up to 31 days; do not freeze; protect from heat and sunlight
+
+Opened vials: Refrigerate at 2-8°C (36-46°F) or at room temperature of ≤30°C
+(≤86°F) for up to 31 days
+
+Humulin R U-500
+
+Unopened vials: Refrigerate at 2-8°C (36-46°F) until expiration date; do not freeze;
+protect from heat and sunlight or may be stored at room temperature <30°C [86°F])
+for up to 40 days
+
+Opened vials: Refrigerate at 2-8°C (36-46°F) or at room temperature <30°C [86°F])
+and discard after 40 days; do not shake vial
+
+Humulin R KwikPen
+
+Unopened pens: Refrigerate at 2-8°C (36-46°F) until expiration date or store at
+room temperature <30°C [86°F]) for up to 28 days; protect from heat and light; do
+not freeze or use if pen has been frozen
+
+Used pens: Store at room temperature (<30°C [86°F]) and discard pen after 28
+days; do not refrigerate; for single-patient use only
+
+Novolin R vials
+
+Unopened vials: Refrigerator at 2-8°C (36-46°F) until expiration date or at room
+temperature ≤25°C (≤77°F) for up to 42 days; do not freeze; protect from heat and
+sunlight
+
+Opened vials: Store at room temperature ≤25°C (≤77°F) for up to 42 days;
+refrigeration of in-use vials is not recommended
+
+Novolin R FlexPen
+
+Unopened pens: Refrigerate at 2-8°C (36 -46°F) until product expiration date or at
+room temperature (<30°C [86°F]) for up to 28 days
+
+https://reference.medscape.com/drug/humulin-r-novolin-r-insulin-regular-human-999007 32/33
+
+
+
+6/22/26, 5:20 PM Humulin R, Novolin R (insulin regular human) dosing, indications, interactions, adverse effects, and more
+
+Used pens: Store at room temperature (<30°C [86°F]) for up to 28 days; do not use
+if pen has been frozen; keep away from heat and light; for single-patient use only
+
+Diluted solutions
+
+Humulin R U-100: Refrigerate 2-8°C (36 -46°F) for 48 hr and then may be used at
+room temperature for up to an additional 48 hr
+
+Novolin R: Stable for 24 hours at room temperature; after dilution of 100 units of
+regular human insulin (product not specified) in 100 mL of 0.9% NaCl (PVC bag),
+diluted solutions are stable under refrigeration between 2-8°C (36-46°F) for up to
+336 hours (Rocchio 2013)
+
+Premix bag
+
+Refrigerate at 2-8°C (36-46°F) in the original carton to protect from light until
+administration; do not use after the expiration date
+
+If needed, store at room temperature up to 25°C (77°F) for up to 30 days in the
+original carton
+
+Once stored at room temperature, do not place back in the refrigerator; discard after
+30 days if stored at room temperature
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/humulin-r-novolin-r-insulin-regular-human-999007 33/33

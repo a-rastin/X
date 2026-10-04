@@ -1,0 +1,1265 @@
+﻿6/22/26, 5:17 PM Januvia, Zituvio (sitagliptin) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+sitagliptin (Rx)
+Brand and Other Names: Januvia, Zituvio, Brynovin
+Classes: Antidiabetics, Dipeptidyl Peptidase 4 (DPP-4) Inhibitors
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+tablet (Januvia, Zituvio)
+
+25mg
+
+50mg
+
+100mg
+
+oral solution (Brynovin)
+
+25mg/mL (120-mL bottle)
+
+Type 2 Diabetes Mellitus
+
+Indicated as an adjunct to diet and exercise to improve glycemic control in adults with
+type 2 diabetes mellitus (T2DM)
+
+100 mg PO qDay
+
+Dosage Modifications
+
+Renal impairment
+
+eGFR ≥45 to <90 mL/min/1.73 m2: No dosage adjustment necessary
+
+eGFR 30 to <45 mL/min/1.73 m2: 50 mg PO qDay
+
+eGFR <30 mL/min/1.73 m2: 25 mg PO qDay
+
+End-stage renal disease requiring hemodialysis or peritoneal dialysis: 25 mg PO
+qDay regardless of timing of dialysis
+
+https://reference.medscape.com/drug/januvia-zituvio-sitagliptin-342730 1/22
+
+
+
+6/22/26, 5:17 PM Januvia, Zituvio (sitagliptin) dosing, indications, interactions, adverse effects, and more
+
+Hepatic impairment
+
+Mild to moderate impairment: Dose adjustment not necessary
+
+Severe impairment: Not studied
+
+Dosing Considerations
+
+Limitations of use
+
+Not indicated for patients with type 1 diabetes
+
+Not studied in patients with a history of pancreatitis; unknown whether these
+patients are at increased risk for development of pancreatitis while using sitagliptin
+
+PEDIATRIC
+Safety and efficacy not established
+
+Three double-blind, placebo-controlled studies evaluated the efficacy and safety of
+sitagliptin in patients (n=410) aged 10-17 years with uncontrolled T2DM, with or
+without insulin therapy; results showed effects of patients treated with sitagliptin were
+not significantly different from placebo
+
+Interactions
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and sitagliptin
+No Interactions Found
+Interactions Found
+Contraindicated
+
+Serious
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+
+https://reference.medscape.com/drug/januvia-zituvio-sitagliptin-342730 2/22
+
+
+
+6/22/26, 5:17 PM Januvia, Zituvio (sitagliptin) dosing, indications, interactions, adverse effects, and more
+
+Contraindicated (0)
+
+Serious (4)
+
+erdafitinib
+erdafitinib will increase the level or effect of sitagliptin by P-glycoprotein (MDR1)
+efflux transporter. Avoid or Use Alternate Drug. If coadministration unavoidable,
+separate administration by at least 6 hr before or after administration of P-gp
+substrates with narrow therapeutic index.
+
+ethanol
+ethanol, sitagliptin. Other (see comment). Contraindicated. Comment: Excessive
+EtOH consumption may alter glycemic control. Some sulfonylureas may produce a
+disulfiram like rxn.
+
+sotorasib
+sotorasib will decrease the level or effect of sitagliptin by P-glycoprotein (MDR1)
+efflux transporter. Avoid or Use Alternate Drug. If use is unavoidable, refer to the
+prescribing information of the P-gp substrate for dosage modifications.
+
+tepotinib
+tepotinib will increase the level or effect of sitagliptin by P-glycoprotein (MDR1)
+efflux transporter. Avoid or Use Alternate Drug. If concomitant use unavoidable,
+reduce the P-gp substrate dosage if recommended in its approved product labeling.
+
+Monitor Closely (92)
+
+abemaciclib
+abemaciclib will increase the level or effect of sitagliptin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+abrocitinib
+abrocitinib will increase the level or effect of sitagliptin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+adagrasib
+adagrasib will increase the level or effect of sitagliptin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+aficamten
+aficamten will increase the level or effect of sitagliptin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+apixaban
+apixaban will increase the level or effect of sitagliptin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+aripiprazole
+aripiprazole, sitagliptin. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+https://reference.medscape.com/drug/januvia-zituvio-sitagliptin-342730 3/22
+
+
+
+6/22/26, 5:17 PM Januvia, Zituvio (sitagliptin) dosing, indications, interactions, adverse effects, and more
+
+asenapine
+asenapine, sitagliptin. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+atazanavir
+atazanavir decreases effects of sitagliptin by Other (see comment). Use
+Caution/Monitor. Comment: Reports of hyperglycemia due to insulin resistance with
+protease inhibitors. .
+
+azithromycin
+azithromycin will increase the level or effect of sitagliptin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+belumosudil
+belumosudil will increase the level or effect of sitagliptin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+benazepril
+sitagliptin increases toxicity of benazepril by Mechanism: unspecified interaction
+mechanism. Use Caution/Monitor. Increased risk of adverse/toxic effects,
+specifically, increased risk of angioedema.
+
+berotralstat
+berotralstat will increase the level or effect of sitagliptin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor. Monitor or titrate P-gp substrate dose if
+coadministered.
+
+bexarotene
+bexarotene increases effects of sitagliptin by pharmacodynamic synergism. Use
+Caution/Monitor. Based on the mechanism of action, bexarotene capsules may
+increase the action of insulin enhancing agents, resulting in hypoglycemia.
+Hypoglycemia has not been associated with bexarotene monotherapy.
+
+bitter melon
+bitter melon increases effects of sitagliptin by pharmacodynamic synergism. Use
+Caution/Monitor. Risk of hypoglycemia.
+
+bosutinib
+bosutinib increases levels of sitagliptin by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor.
+
+cannabidiol
+cannabidiol increases levels of sitagliptin by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor.
+
+capmatinib
+capmatinib will increase the level or effect of sitagliptin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+captopril
+sitagliptin, captopril. Either increases effects of the other by Mechanism: unspecified
+interaction mechanism. Use Caution/Monitor. Increased risk of adverse/toxic effects,
+
+https://reference.medscape.com/drug/januvia-zituvio-sitagliptin-342730 4/22
+
+
+
+6/22/26, 5:17 PM Januvia, Zituvio (sitagliptin) dosing, indications, interactions, adverse effects, and more
+
+specifically increased risk of angioedema.
+
+carfilzomib
+carfilzomib will increase the level or effect of sitagliptin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+cinnamon
+cinnamon increases effects of sitagliptin by pharmacodynamic synergism. Use
+Caution/Monitor. Potential for hypoglycemia.
+
+ciprofloxacin
+ciprofloxacin increases effects of sitagliptin by pharmacodynamic synergism. Use
+Caution/Monitor. Hyper and hypoglycemia have been reported in patients treated
+concomitantly with quinolones and antidiabetic agents. Careful monitoring of blood
+glucose is recommended.
+
+clozapine
+clozapine, sitagliptin. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+cobicistat
+cobicistat will increase the level or effect of sitagliptin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+crizotinib
+crizotinib increases levels of sitagliptin by P-glycoprotein (MDR1) efflux transporter.
+Use Caution/Monitor.
+
+danicopan
+danicopan will increase the level or effect of sitagliptin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor. Danicopan increases plasma
+concentrations of P-gp substrates; consider dose reduction of P-gp substrates
+where minimal concentration changes may lead to serious adverse reactions.
+
+daridorexant
+daridorexant will increase the level or effect of sitagliptin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+darunavir
+darunavir decreases effects of sitagliptin by Other (see comment). Use
+Caution/Monitor. Comment: Reports of hyperglycemia due to insulin resistance with
+protease inhibitors. .
+
+dronedarone
+dronedarone will increase the level or effect of sitagliptin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+dulaglutide
+dulaglutide, sitagliptin. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Antidiabetic agents are often used in combination;
+
+https://reference.medscape.com/drug/januvia-zituvio-sitagliptin-342730 5/22
+
+
+
+6/22/26, 5:17 PM Januvia, Zituvio (sitagliptin) dosing, indications, interactions, adverse effects, and more
+
+dosage adjustments may be required when initiating or discontinuing antidiabetic
+agents.
+
+elagolix
+elagolix will increase the level or effect of sitagliptin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+eliglustat
+eliglustat increases levels of sitagliptin by P-glycoprotein (MDR1) efflux
+transporter. Modify Therapy/Monitor Closely. Monitor therapeutic drug
+concentrations, as indicated, or consider reducing the dosage of the P-gp substrate
+and titrate to clinical effect.
+
+exenatide injectable solution
+exenatide injectable solution, sitagliptin. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Concurrent use may increase
+risk of hypoglycemia; monitor glucose levels.
+
+exenatide injectable suspension
+exenatide injectable suspension, sitagliptin. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Concurrent use may increase
+risk of hypoglycemia; monitor glucose levels.
+
+fleroxacin
+fleroxacin increases effects of sitagliptin by pharmacodynamic synergism. Use
+Caution/Monitor. Quinolone antibiotic administration may result in hyper- or
+hypoglycemia. Gatifloxacin is most likely to produce dysglycemia; moxifloxacin is
+least likely.
+
+flibanserin
+flibanserin will increase the level or effect of sitagliptin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+fosamprenavir
+fosamprenavir decreases effects of sitagliptin by Other (see comment). Use
+Caution/Monitor. Comment: Reports of hyperglycemia due to insulin resistance with
+protease inhibitors. .
+
+fostamatinib
+fostamatinib will increase the level or effect of sitagliptin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor. Concomitant use of fostamatinib may
+increase concentrations of P-gp substrates. Monitor for toxicities of the P-gp
+substrate drug that may require dosage reduction when given concurrently with
+fostamatinib.
+
+gemifloxacin
+gemifloxacin increases effects of sitagliptin by pharmacodynamic synergism. Use
+Caution/Monitor. Quinolone antibiotic administration may result in hyper- or
+hypoglycemia. Gatifloxacin is most likely to produce dysglycemia; moxifloxacin is
+least likely.
+
+glecaprevir/pibrentasvir
+
+https://reference.medscape.com/drug/januvia-zituvio-sitagliptin-342730 6/22
+
+
+
+6/22/26, 5:17 PM Januvia, Zituvio (sitagliptin) dosing, indications, interactions, adverse effects, and more
+
+glecaprevir/pibrentasvir will increase the level or effect of sitagliptin by P-
+glycoprotein (MDR1) efflux transporter. Use Caution/Monitor.
+
+insulin aspart
+sitagliptin, insulin aspart. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Antidiabetic agents are often used in combination;
+dosage adjustments may be required when initiating or discontinuing antidiabetic
+agents.
+
+insulin aspart protamine/insulin aspart
+sitagliptin, insulin aspart protamine/insulin aspart. Either increases effects of the
+other by pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents
+are often used in combination; dosage adjustments may be required when initiating
+or discontinuing antidiabetic agents.
+
+insulin degludec
+sitagliptin, insulin degludec. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+insulin degludec/insulin aspart
+sitagliptin, insulin degludec/insulin aspart. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+insulin detemir
+sitagliptin, insulin detemir. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+insulin glargine
+sitagliptin, insulin glargine. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+insulin glulisine
+sitagliptin, insulin glulisine. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+insulin icodec
+sitagliptin, insulin icodec. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Antidiabetic agents are often used in combination;
+dosage adjustments may be required when initiating or discontinuing antidiabetic
+agents.
+
+insulin inhaled
+
+https://reference.medscape.com/drug/januvia-zituvio-sitagliptin-342730 7/22
+
+
+
+6/22/26, 5:17 PM Januvia, Zituvio (sitagliptin) dosing, indications, interactions, adverse effects, and more
+
+sitagliptin, insulin inhaled. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Antidiabetic agents are often used in combination;
+dosage adjustments may be required when initiating or discontinuing antidiabetic
+agents.
+
+insulin isophane human/insulin regular human
+sitagliptin, insulin isophane human/insulin regular human. Either increases effects of
+the other by pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic
+agents are often used in combination; dosage adjustments may be required when
+initiating or discontinuing antidiabetic agents.
+
+insulin lispro
+sitagliptin, insulin lispro. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Antidiabetic agents are often used in combination;
+dosage adjustments may be required when initiating or discontinuing antidiabetic
+agents.
+
+insulin lispro protamine/insulin lispro
+sitagliptin, insulin lispro protamine/insulin lispro. Either increases effects of the
+other by pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents
+are often used in combination; dosage adjustments may be required when initiating
+or discontinuing antidiabetic agents.
+
+insulin NPH
+sitagliptin, insulin NPH. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Antidiabetic agents are often used in combination;
+dosage adjustments may be required when initiating or discontinuing antidiabetic
+agents.
+
+insulin regular human
+sitagliptin, insulin regular human. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Antidiabetic agents are often
+used in combination; dosage adjustments may be required when initiating or
+discontinuing antidiabetic agents.
+
+istradefylline
+istradefylline will increase the level or effect of sitagliptin by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor. Istradefylline 40 mg/day increased
+peak levels and AUC of P-gp substrates in clinical trials. Consider dose reduction of
+sensitive P-gp substrates.
+
+ivacaftor
+ivacaftor increases levels of sitagliptin by P-glycoprotein (MDR1) efflux transporter.
+Use Caution/Monitor. Ivacaftor and its M1 metabolite has the potential to inhibit P-
+gp; may significantly increase systemic exposure to sensitive P-gp substrates with a
+narrow therapeutic index.
+
+ketotifen, ophthalmic
+ketotifen, ophthalmic, sitagliptin. Other (see comment). Use Caution/Monitor.
+Comment: Combination may result in thrombocytopenia (rare). Monitor CBC.
+
+levofloxacin
+
+https://reference.medscape.com/drug/januvia-zituvio-sitagliptin-342730 8/22
+
+
+
+6/22/26, 5:17 PM Januvia, Zituvio (sitagliptin) dosing, indications, interactions, adverse effects, and more
+
+levofloxacin increases effects of sitagliptin by pharmacodynamic synergism. Use
+Caution/Monitor. Quinolone antibiotic administration may result in hyper- or
+hypoglycemia. Gatifloxacin is most likely to produce dysglycemia; moxifloxacin is
+least likely.
+
+liraglutide
+liraglutide, sitagliptin. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Concurrent use may increase risk of hypoglycemia;
+monitor glucose levels.
+
+lonafarnib
+lonafarnib will increase the level or effect of sitagliptin by P-glycoprotein (MDR1)
+efflux transporter. Modify Therapy/Monitor Closely. Lonafarnib is a weak P-gp
+inhibitor. Monitor for adverse reactions if coadministered with P-gp substrates
+where minimal concentration changes may lead to serious or life-threatening
+toxicities. Reduce P-gp substrate dose if needed.
+
+lonapegsomatropin
+lonapegsomatropin decreases effects of sitagliptin by Other (see comment). Use
+Caution/Monitor. Comment: Closely monitor blood glucose when treated with
+antidiabetic agents. Lonapegsomatropin may decrease insulin sensitivity,
+particularly at higher doses. Patients with diabetes mellitus may require adjustment
+of their doses of insulin and/or other antihyperglycemic agents.
+
+lonapegsomatropin decreases effects of sitagliptin by pharmacodynamic
+antagonism. Modify Therapy/Monitor Closely. Growth hormone (GH) analogs may
+decrease insulin sensitivity, particularly at higher doses. Antidiabetic agents may
+require dose adjustment after initiating growth hormone.
+
+lopinavir
+lopinavir decreases effects of sitagliptin by Other (see comment). Use
+Caution/Monitor. Comment: Reports of hyperglycemia due to insulin resistance with
+protease inhibitors. .
+
+lurasidone
+lurasidone, sitagliptin. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+marijuana
+marijuana decreases effects of sitagliptin by pharmacodynamic antagonism. Use
+Caution/Monitor.
+
+mavorixafor
+mavorixafor will increase the level or effect of sitagliptin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor. Caution if mavorixafor (a P-gp inhibitor) is
+coadministered with a sensitive P-gp substrate where minimal substrate
+concentration changes may lead to serious adverse effects.
+
+mecasermin
+mecasermin increases effects of sitagliptin by pharmacodynamic synergism. Use
+Caution/Monitor. Additive hypoglycemic effects.
+
+https://reference.medscape.com/drug/januvia-zituvio-sitagliptin-342730 9/22
+
+
+
+6/22/26, 5:17 PM Januvia, Zituvio (sitagliptin) dosing, indications, interactions, adverse effects, and more
+
+mifepristone
+mifepristone will increase the level or effect of sitagliptin by Other (see comment).
+Use Caution/Monitor. Inhibits CYP2C8/2C9; use smallest recommended doses for
+substrates and monitor
+
+moxifloxacin
+moxifloxacin increases effects of sitagliptin by pharmacodynamic synergism. Use
+Caution/Monitor. Quinolone antibiotic administration may result in hyper- or
+hypoglycemia. Gatifloxacin is most likely to produce dysglycemia; moxifloxacin is
+least likely.
+
+nelfinavir
+nelfinavir decreases effects of sitagliptin by Other (see comment). Use
+Caution/Monitor. Comment: Reports of hyperglycemia due to insulin resistance with
+protease inhibitors. .
+
+ofloxacin
+ofloxacin increases effects of sitagliptin by pharmacodynamic synergism. Use
+Caution/Monitor. Quinolone antibiotic administration may result in hyper- or
+hypoglycemia. Gatifloxacin is most likely to produce dysglycemia; moxifloxacin is
+least likely.
+
+olanzapine
+olanzapine, sitagliptin. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+opuntia ficus indica
+opuntia ficus indica increases effects of sitagliptin by pharmacodynamic synergism.
+Use Caution/Monitor.
+
+paliperidone
+paliperidone, sitagliptin. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+ponatinib
+ponatinib increases levels of sitagliptin by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor.
+
+quetiapine
+quetiapine, sitagliptin. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+risperidone
+risperidone, sitagliptin. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+ritonavir
+ritonavir decreases effects of sitagliptin by Other (see comment). Use
+Caution/Monitor. Comment: Reports of hyperglycemia due to insulin resistance with
+
+https://reference.medscape.com/drug/januvia-zituvio-sitagliptin-342730 10/22
+
+
+
+6/22/26, 5:17 PM Januvia, Zituvio (sitagliptin) dosing, indications, interactions, adverse effects, and more
+
+protease inhibitors. .
+
+sarecycline
+sarecycline will increase the level or effect of sitagliptin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor. Monitor for toxicities of P-gp substrates
+that may require dosage reduction when coadministered with P-gp inhibitors.
+
+shark cartilage
+shark cartilage increases effects of sitagliptin by pharmacodynamic synergism. Use
+Caution/Monitor. Theoretical interaction.
+
+somapacitan
+somapacitan decreases effects of sitagliptin by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely. Growth hormone (GH) analogs may decrease
+insulin sensitivity, particularly at higher doses. Antidiabetic agents may require dose
+adjustment after initiating growth hormone.
+
+somatrogon
+somatrogon decreases effects of sitagliptin by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely. Growth hormone (GH) analogs may decrease
+insulin sensitivity, particularly at higher doses. Antidiabetic agents may require dose
+adjustment after initiating growth hormone.
+
+somatropin
+somatropin decreases effects of sitagliptin by pharmacodynamic antagonism.
+Modify Therapy/Monitor Closely. Growth hormone (GH) analogs may decrease
+insulin sensitivity, particularly at higher doses. Antidiabetic agents may require dose
+adjustment after initiating growth hormone.
+
+stiripentol
+stiripentol will increase the level or effect of sitagliptin by P-glycoprotein (MDR1)
+efflux transporter. Modify Therapy/Monitor Closely. Consider reducing the dose of
+P-glycoprotein (P-gp) substrates, if adverse reactions are experienced when
+administered concomitantly with stiripentol.
+
+sulfamethoxypyridazine
+sulfamethoxypyridazine increases effects of sitagliptin by unspecified interaction
+mechanism. Use Caution/Monitor. Risk of hypoglycemia.
+
+tenofovir DF
+tenofovir DF, sitagliptin. Either increases levels of the other by decreasing renal
+clearance. Use Caution/Monitor.
+
+teriflunomide
+teriflunomide increases levels of sitagliptin by Other (see comment). Use
+Caution/Monitor. Comment: Teriflunomide inhibits CYP2C8; caution when
+coadministered with CYP2C8 substrates.
+
+tipranavir
+tipranavir decreases effects of sitagliptin by Other (see comment). Use
+Caution/Monitor. Comment: Reports of hyperglycemia due to insulin resistance with
+protease inhibitors. .
+
+https://reference.medscape.com/drug/januvia-zituvio-sitagliptin-342730 11/22
+
+
+
+6/22/26, 5:17 PM Januvia, Zituvio (sitagliptin) dosing, indications, interactions, adverse effects, and more
+
+triamcinolone acetonide injectable suspension
+triamcinolone acetonide injectable suspension decreases effects of sitagliptin by
+pharmacodynamic antagonism. Use Caution/Monitor. Corticosteroids may diminish
+hypoglycemic effect of antidiabetic agents. Monitor blood glucose levels carefully.
+
+tucatinib
+tucatinib will increase the level or effect of sitagliptin by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor. Consider reducing the dosage of P-gp
+substrates, where minimal concentration changes may lead to serious or life-
+threatening toxicities.
+
+vadadustat
+vadadustat will increase the level or effect of sitagliptin by Other (see comment).
+Use Caution/Monitor. Vadadustat may increase exposure of OAT3 substrates.
+Monitor for signs of adverse effect of OAT3 substrate and reduce substrate dose in
+accordance with their product labeling.
+
+vemurafenib
+vemurafenib increases levels of sitagliptin by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor.
+
+xipamide
+xipamide decreases levels of sitagliptin by increasing renal clearance. Use
+Caution/Monitor.
+
+ziprasidone
+ziprasidone, sitagliptin. Other (see comment). Use Caution/Monitor. Comment:
+Atypical antipsychotics have been associated with hyperglycemia that may alter
+blood glucose control; monitor glucose levels closely.
+
+Minor (70)
+
+agrimony
+agrimony increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+American ginseng
+American ginseng increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+amitriptyline
+amitriptyline increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+amoxapine
+amoxapine increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+anamu
+anamu increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown. Theoretical interaction.
+
+https://reference.medscape.com/drug/januvia-zituvio-sitagliptin-342730 12/22
+
+
+
+6/22/26, 5:17 PM Januvia, Zituvio (sitagliptin) dosing, indications, interactions, adverse effects, and more
+
+budesonide
+budesonide decreases effects of sitagliptin by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+chlorothiazide
+chlorothiazide decreases effects of sitagliptin by pharmacodynamic antagonism.
+Minor/Significance Unknown. Thiazide dosage >50 mg/day may increase blood
+glucose.
+
+chlorthalidone
+chlorthalidone decreases effects of sitagliptin by pharmacodynamic antagonism.
+Minor/Significance Unknown. Thiazide dosage >50 mg/day may increase blood
+glucose.
+
+chromium
+chromium increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+clomipramine
+clomipramine increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+clonidine
+clonidine decreases effects of sitagliptin by pharmacodynamic antagonism.
+Minor/Significance Unknown. Diminished symptoms of hypoglycemia.
+
+clonidine, sitagliptin. Other (see comment). Minor/Significance Unknown. Comment:
+Decreased symptoms of hypoglycemia. Mechanism: decreased hypoglycemia
+induced catecholamine production.
+
+cornsilk
+cornsilk increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown. Increased risk of hypoglycemia (theoretical
+interaction).
+
+cortisone
+cortisone decreases effects of sitagliptin by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+cyclopenthiazide
+cyclopenthiazide decreases effects of sitagliptin by pharmacodynamic antagonism.
+Minor/Significance Unknown. Thiazide dosage >50 mg/day may increase blood
+glucose.
+
+damiana
+damiana decreases effects of sitagliptin by pharmacodynamic antagonism.
+Minor/Significance Unknown. Theoretical interaction.
+
+danazol
+danazol increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+deflazacort
+
+https://reference.medscape.com/drug/januvia-zituvio-sitagliptin-342730 13/22
+
+
+
+6/22/26, 5:17 PM Januvia, Zituvio (sitagliptin) dosing, indications, interactions, adverse effects, and more
+
+deflazacort decreases effects of sitagliptin by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+desipramine
+desipramine increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+devil's claw
+devil's claw increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+dexamethasone
+dexamethasone decreases effects of sitagliptin by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+digoxin
+sitagliptin increases levels of digoxin by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+doxepin
+doxepin increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+elderberry
+elderberry increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown. Increased risk of hypoglycemia (in vitro research).
+
+eucalyptus
+eucalyptus increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown. Theoretical interaction.
+
+fludrocortisone
+fludrocortisone decreases effects of sitagliptin by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+fluoxymesterone
+fluoxymesterone increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+fo-ti
+fo-ti increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+forskolin
+forskolin increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown. Colenol, a compound found in Coleus root, may
+stimulate insulin release.
+
+glimepiride
+sitagliptin, glimepiride. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Risk of hypoglycemia with combination is
+unknown.
+
+https://reference.medscape.com/drug/januvia-zituvio-sitagliptin-342730 14/22
+
+
+
+6/22/26, 5:17 PM Januvia, Zituvio (sitagliptin) dosing, indications, interactions, adverse effects, and more
+
+glipizide
+sitagliptin, glipizide. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Risk of hypoglycemia with combination is
+unknown.
+
+glyburide
+sitagliptin, glyburide. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Risk of hypoglycemia with combination is
+unknown.
+
+gotu kola
+gotu kola increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown. (Theoretical interaction).
+
+guanfacine
+guanfacine decreases effects of sitagliptin by pharmacodynamic antagonism.
+Minor/Significance Unknown. Diminished symptoms of hypoglycemia.
+
+guanfacine, sitagliptin. Other (see comment). Minor/Significance Unknown.
+Comment: Decreased symptoms of hypoglycemia. Mechanism: decreased
+hypoglycemia induced catecholamine production.
+
+gymnema
+gymnema increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+horse chestnut seed
+horse chestnut seed increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+hydrochlorothiazide
+hydrochlorothiazide decreases effects of sitagliptin by pharmacodynamic
+antagonism. Minor/Significance Unknown. Thiazide dosage >50 mg/day may
+increase blood glucose.
+
+hydrocortisone
+hydrocortisone decreases effects of sitagliptin by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+imipramine
+imipramine increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+indapamide
+indapamide decreases effects of sitagliptin by pharmacodynamic antagonism.
+Minor/Significance Unknown. Thiazide dosage >50 mg/day may increase blood
+glucose.
+
+isoniazid
+isoniazid decreases effects of sitagliptin by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+juniper
+
+https://reference.medscape.com/drug/januvia-zituvio-sitagliptin-342730 15/22
+
+
+
+6/22/26, 5:17 PM Januvia, Zituvio (sitagliptin) dosing, indications, interactions, adverse effects, and more
+
+juniper increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown. Increased risk of hypoglycemia (theoretical
+interaction).
+
+lofepramine
+lofepramine increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+lycopus
+lycopus increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown. Increased risk of hypoglycemia (theoretical
+interaction).
+
+maitake
+maitake increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown. Increased risk of hypoglycemia (animal research).
+
+mesterolone
+mesterolone increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+methyclothiazide
+methyclothiazide decreases effects of sitagliptin by pharmacodynamic antagonism.
+Minor/Significance Unknown. Thiazide dosage >50 mg/day may increase blood
+glucose.
+
+methylprednisolone
+methylprednisolone decreases effects of sitagliptin by pharmacodynamic
+antagonism. Minor/Significance Unknown.
+
+methyltestosterone
+methyltestosterone increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+metolazone
+metolazone decreases effects of sitagliptin by pharmacodynamic antagonism.
+Minor/Significance Unknown. Thiazide dosage >50 mg/day may increase blood
+glucose.
+
+nettle
+nettle increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown. (Theoretical interaction).
+
+nortriptyline
+nortriptyline increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+ofloxacin
+ofloxacin, sitagliptin. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Potential dysglycemia.
+
+oxandrolone
+
+https://reference.medscape.com/drug/januvia-zituvio-sitagliptin-342730 16/22
+
+
+
+6/22/26, 5:17 PM Januvia, Zituvio (sitagliptin) dosing, indications, interactions, adverse effects, and more
+
+oxandrolone increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+oxymetholone
+oxymetholone increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+pegvisomant
+pegvisomant increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+potassium acid phosphate
+potassium acid phosphate increases effects of sitagliptin by pharmacodynamic
+synergism. Minor/Significance Unknown. Interaction especially seen in the
+treatment of hypokalemia.
+
+potassium chloride
+potassium chloride increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown. Interaction especially seen in the treatment of
+hypokalemia.
+
+potassium citrate
+potassium citrate increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown. Interaction especially seen in the treatment of
+hypokalemia.
+
+prednisolone
+prednisolone decreases effects of sitagliptin by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+prednisone
+prednisone decreases effects of sitagliptin by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+protriptyline
+protriptyline increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+sage
+sage increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+stevia
+stevia increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+testosterone
+testosterone increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+testosterone buccal system
+testosterone buccal system increases effects of sitagliptin by pharmacodynamic
+
+https://reference.medscape.com/drug/januvia-zituvio-sitagliptin-342730 17/22
+
+
+
+6/22/26, 5:17 PM Januvia, Zituvio (sitagliptin) dosing, indications, interactions, adverse effects, and more
+
+synergism. Minor/Significance Unknown.
+
+testosterone topical
+testosterone topical increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+tongkat ali
+tongkat ali increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown. Risk of hypoglycemia.
+
+trazodone
+trazodone increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+trimipramine
+trimipramine increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+vanadium
+vanadium increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+Adverse Effects
+
+>10%
+
+Combination with insulin with or without metformin
+
+Hypoglycemia (15.5%)
+
+Combination with glimepiride with or without metformin
+
+Hypoglycemia (12.2%)
+
+1-10%
+
+Monotherapy
+
+Nasopharyngitis (5.2%)
+
+Upper respiratory tract infection (4.5%)
+
+Headache (1.1%)
+
+Combination with pioglitazone
+
+Upper respiratory tract infection (6.3%)
+
+Headache (5.1%)
+
+Combination with metformin
+
+https://reference.medscape.com/drug/januvia-zituvio-sitagliptin-342730 18/22
+
+
+
+6/22/26, 5:17 PM Januvia, Zituvio (sitagliptin) dosing, indications, interactions, adverse effects, and more
+
+Nasopharyngitis (6.2%)
+
+Upper respiratory tract infection (5.9%)
+
+Combination with metformin and rosiglitazone
+
+Nasopharyngitis (6.1%)
+
+Upper respiratory tract infection (5.5%)
+
+Combination with glimepiride with or without metformin
+
+Nasopharyngitis (6.3%)
+
+Upper respiratory tract infection (5.9%)
+
+Postmarketing Reports
+
+Hypersensitivity reactions: Anaphylaxis, angioedema, rash, urticaria, cutaneous
+vasculitis, bullous pemphigoid, and exfoliative skin conditions including Stevens-Johnson
+syndrome
+
+Hepatobiliary disorders: Hepatic enzyme elevations
+
+Gastrointestinal disorders: Acute pancreatitis, including fatal and non-fatal hemorrhagic
+and necrotizing pancreatitis, constipation; vomiting, mouth ulceration, and stomatitis
+
+Renal and urinary disorders: Worsening renal function, including acute renal failure
+(sometimes requiring dialysis), and tubulointerstitial nephritis
+
+Musculoskeletal and connective tissue disorders: Severe and disabling arthralgia;
+myalgia; pain in extremity; back pain; pruritus; rhabdomyolysis
+
+Nervous system disorders: Headache
+
+Warnings
+
+Contraindications
+
+Serious hypersensitivity to sitagliptin (eg, anaphylaxis, angioedema)
+
+Cautions
+
+Acute pancreatitis reported, including fatal and nonfatal hemorrhagic or necrotizing
+pancreatitis; if pancreatitis suspected, discontinue promptly
+
+Acute renal failure reported, sometimes requiring dialysis; assess renal function before
+initiation and periodically thereafter
+
+Serious allergic and hypersensitivity reactions (eg, anaphylaxis, angioedema, exfoliative
+skin conditions including Stevens-Johnson syndrome) reported; promptly stop treatment
+and assess for other potential causes; appropriately monitor and treat
+
+Severe and disabling arthralgia reported in patients taking DPP-4 inhibitors; consider as
+a possible cause for severe joint pain and discontinue drug if appropriate
+
+https://reference.medscape.com/drug/januvia-zituvio-sitagliptin-342730 19/22
+
+
+
+6/22/26, 5:17 PM Januvia, Zituvio (sitagliptin) dosing, indications, interactions, adverse effects, and more
+
+Heart failure observed with other DPP-4 inhibitors; consider risks and benefits in
+patients with risk factors for heart failure; monitor for signs and symptoms; if heart
+failure develops, manage accordingly to standard of care and consider interrupting
+treatment
+
+Bullous pemphigoid reported with DPP-4 inhibitor use, which required hospitalization; in
+reported cases, patients recovered with topical or systemic immunosuppressive
+treatment and discontinuation of DPP-4 inhibitor; advise to report any developing
+blisters/erosions; discontinue DPP-4 therapy and consult a dermatologist if bullous
+pemphigoid suspected
+
+Drug interaction overview
+
+Sitagliptin is a P-gp and organic anion transporter-3 substrate; weak CYP3A4 and
+CYP2C8 substrates
+
+Insulin or insulin secretagogues
+Increased risk of hypoglycemia when concomitantly used with insulin and/or
+an insulin secretagogue; consider lowering dose of insulin or insulin
+secretagogue
+
+Pregnancy & Lactation
+
+Pregnancy
+
+Limited available data in pregnant females are not sufficient to inform a drug-associated
+risk for major birth defects and miscarriage
+
+Pregnancy registry
+
+Monitors pregnancy outcomes in females exposed to drug during pregnancy
+
+Encourage patients to report any prenatal exposure to drug by calling 1-800-986-
+8999
+
+Animal data
+
+No adverse developmental effects were observed when administered to pregnant
+rats and rabbits during organogenesis at oral doses up to 30x and 20x,
+respectively, the 100-mg clinical dose, based on AUC
+
+Clinical considerations
+
+Poorly controlled diabetes in pregnancy increases maternal risk for diabetic
+ketoacidosis, preeclampsia, spontaneous abortions, preterm delivery, still birth, and
+delivery complications
+
+Poorly controlled diabetes increases fetal risk for major birth defects, stillbirth, and
+macrosomia related morbidity
+
+Lactation
+
+https://reference.medscape.com/drug/januvia-zituvio-sitagliptin-342730 20/22
+
+
+
+6/22/26, 5:17 PM Januvia, Zituvio (sitagliptin) dosing, indications, interactions, adverse effects, and more
+
+There is no information regarding presence of drug in human milk, effects on breastfed
+infants, or on milk production
+
+Present in rat milk and therefore possibly present in human
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+Dipeptidyl peptidase 4 (DPP-4) inhibitor; increases and prolongs incretin hormone
+activity, which is inactivated by DPP-4 enzyme
+
+Incretins increase insulin release and synthesis from pancreatic beta cells and reduce
+glucagon secretion from pancreatic alpha cells
+
+Absorption
+
+Bioavailability: 87%
+
+Peak plasma time: 1-4 hr
+
+Peak plasma concentration: 950 nM (single oral 100-mg dose)
+
+AUC: 8.52 microM·hr (single oral 100-mg dose)
+
+Distribution
+
+Protein bound: 38%
+
+Vd: 198 L
+
+Metabolism
+
+Limited; primarily via CYP3A4 and CYP2C8
+
+Elimination
+
+https://reference.medscape.com/drug/januvia-zituvio-sitagliptin-342730 21/22
+
+
+
+6/22/26, 5:17 PM Januvia, Zituvio (sitagliptin) dosing, indications, interactions, adverse effects, and more
+
+Renal clearance: 350 mL/min
+
+Half-life, terminal: 12.4 hr
+
+Excretion: Urine (87% [79% unchanged]), feces (13%)
+
+Administration
+
+Oral Administration
+
+Take with or without food
+
+Tablet: Swallow whole; do not chew, crush, or split
+
+Oral solution: Measure dose using a calibrated oral syringe or oral dosing cup scored
+using metric units of measurements (ie, mL)
+
+Storage
+
+Tablets
+
+Store at 20-25ºC (68-77ºF), excursions permitted to 15-30ºC (59-86ºF)
+
+Oral solution
+
+Refrigerate at 2-8ºC (36-46ºF)
+
+Protect from light
+
+Avoid excessive heat and freezing
+
+Discard unused portion 90 days after first opening
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/januvia-zituvio-sitagliptin-342730 22/22

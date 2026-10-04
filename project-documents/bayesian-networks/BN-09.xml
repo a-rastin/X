@@ -1,0 +1,340 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<BIF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="0.3" xsi:noNamespaceSchemaLocation="../schema.xml">
+  <NETWORK>
+    <NAME>Statement09_Clozapine_Aggression_Risk_Review</NAME>
+    <PROPERTY>clinical_question=Does the documented Statement 9 indication warrant clozapine discussion, and which parallel review needs are present?</PROPERTY>
+    <PROPERTY>statement_id=9</PROPERTY>
+    <PROPERTY>recommendation_strength=2</PROPERTY>
+    <PROPERTY>evidence_quality=C</PROPERTY>
+    <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-09.md</PROPERTY>
+    <PROPERTY>source_locator=STATEMENT 9: Clozapine in Aggressive Behavior; Implementation; Patient Preferences; Quality Measurement Considerations</PROPERTY>
+    <PROPERTY>source_sha256=73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6</PROPERTY>
+    <PROPERTY>model_version=0.1</PROPERTY>
+    <PROPERTY>created=2026-09-16</PROPERTY>
+    <PROPERTY>population=Adults in clinician-led schizophrenia treatment review; modeler scope assumption requiring local agreement</PROPERTY>
+    <PROPERTY>time_horizon=Current clinical review with documented prior treatment history; no prospective aggression-risk horizon</PROPERTY>
+    <PROPERTY>validation_status=UNPARAMETERIZED_NOT_FOR_CLINICAL_INFERENCE</PROPERTY>
+    <PROPERTY>inference_allowed=false</PROPERTY>
+    <PROPERTY>deployment_allowed=false</PROPERTY>
+    <PROPERTY>parameter_policy=Missing input distributions intentionally omitted; no invented empirical probabilities</PROPERTY>
+    <PROPERTY>graph_semantics=Proposed deterministic review workflow; not causal treatment effects or expected-utility optimization</PROPERTY>
+    <PROPERTY>root_independence=Provisional inputs; dependencies and measurement errors require review before probabilistic completion</PROPERTY>
+    <PROPERTY>missingness_policy=Unobserved is not No; host must check evidence completeness and applicability</PROPERTY>
+    <PROPERTY>runtime_warning=Metadata flags are advisory; importer must reject incomplete models and never supply default priors</PROPERTY>
+    <PROPERTY>regulatory_scope=No REMS enrollment gate; use current local prescribing information for clinical monitoring</PROPERTY>
+    <PROPERTY>clinical_limit=No automatic prescription, dose, risk score, aggression prediction, treatment cessation, or clearance for treatment</PROPERTY>
+    <VARIABLE TYPE="nature">
+      <NAME>SchizophreniaEstablished</NAME>
+      <PROPERTY>label=Schizophrenia Established</PROPERTY>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>definition=Clinician-confirmed schizophrenia. No means assessed and not confirmed; not missing diagnostic data.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-09.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT 9: Clozapine in Aggressive Behavior</PROPERTY>
+      <PROPERTY>source_sha256=73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6</PROPERTY>
+      <PROPERTY>time_window=Current documented assessment; historical treatment dates retained separately</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved when unavailable; never substitute No for absent documentation</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 prior entries after graph/dependence review; target-population data or documented elicitation required</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>SubstantialAggressionRisk</NAME>
+      <PROPERTY>label=Substantial Aggression Risk</PROPERTY>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>definition=Clinician assesses current risk for aggressive behavior as substantial. Record date, behavior and threat history, current symptoms and context, instrument/version and observation window if used, and rationale. Hostility scores alone do not establish this state. No numeric cutoff is supplied; No does not mean zero risk.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-09.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Quality Measurement Considerations</PROPERTY>
+      <PROPERTY>source_sha256=73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6</PROPERTY>
+      <PROPERTY>time_window=Current documented assessment; historical treatment dates retained separately</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved when unavailable; never substitute No for absent documentation</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 prior entries after graph/dependence review; target-population data or documented elicitation required</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AggressionRiskPersistsDespiteOtherTreatments</NAME>
+      <PROPERTY>label=Aggression Risk Persists Despite Other Treatments</PROPERTY>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>definition=Clinician documents that substantial aggression risk persists despite other treatments, with treatments, dates, response and adherence evidence reviewed. No means assessed criterion not met. Not defined as two failed antipsychotic trials and not equivalent to treatment resistance.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-09.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6</PROPERTY>
+      <PROPERTY>time_window=Current documented assessment; historical treatment dates retained separately</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved when unavailable; never substitute No for absent documentation</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 prior entries after graph/dependence review; target-population data or documented elicitation required</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>UrgentSafetyConcern</NAME>
+      <PROPERTY>label=Urgent Safety Concern</PROPERTY>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>definition=Clinician identifies a need for urgent safety assessment/intervention, including immediate danger to others or self, or serious suspected treatment harm. Present means an identified urgent concern; Absent means assessed and not identified, never missing assessment or a guarantee of safety. Proposed workflow safeguard, not an exhaustive triage tool.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-09.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Balancing of Potential Benefits and Harms in Rating the Strength of the Guideline Statement / Harms</PROPERTY>
+      <PROPERTY>source_sha256=73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6</PROPERTY>
+      <PROPERTY>time_window=Current documented assessment; historical treatment dates retained separately</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved when unavailable; never substitute Absent for absent documentation</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 prior entries after graph/dependence review; target-population data or documented elicitation required</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AdherenceConcern</NAME>
+      <PROPERTY>label=Adherence Concern</PROPERTY>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>definition=A documented adherence problem or uncertainty about actual exposure needs clinical review. This affirmative concern is distinct from entirely missing adherence assessment.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-09.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6</PROPERTY>
+      <PROPERTY>time_window=Current documented assessment; historical treatment dates retained separately</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved when unavailable; never substitute No for absent documentation</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 prior entries after graph/dependence review; target-population data or documented elicitation required</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ModifiableAggressionRiskTargetsPresent</NAME>
+      <PROPERTY>label=Modifiable Aggression Risk Targets Present</PROPERTY>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>definition=Clinician identifies potentially modifiable aggression-risk factors requiring treatment-plan attention, such as substance use, relevant psychotic symptoms or anger/impulsivity in individual context. No means assessed and none identified. No checklist or demographic factor mechanically determines aggression risk.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-09.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6</PROPERTY>
+      <PROPERTY>time_window=Current documented assessment; historical treatment dates retained separately</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved when unavailable; never substitute No for absent documentation</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 prior entries after graph/dependence review; target-population data or documented elicitation required</PROPERTY>
+    <PROPERTY>supporting_source_path=medical-knowledge/02-md/STATEMENT-01.md</PROPERTY><PROPERTY>supporting_source_locator=Implementation</PROPERTY><PROPERTY>supporting_source_sha256=6546051ec9f79eec2f7d2a85cba3833ddc7d66e3a52c9f11981fcd5fd6904336</PROPERTY></VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ClozapineTreatmentStatus</NAME>
+      <PROPERTY>label=Clozapine Treatment Status</PROPERTY>
+      <OUTCOME>NeverTreated</OUTCOME>
+      <OUTCOME>CurrentTreatment</OUTCOME>
+      <OUTCOME>PreviouslyTreated</OUTCOME>
+      <PROPERTY>definition=CurrentTreatment takes precedence if presently receiving clozapine; otherwise distinguish past exposure from never treated. Prior exposure requires individualized benefit/harm and discontinuation-history review.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-09.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6</PROPERTY>
+      <PROPERTY>time_window=Current documented assessment; historical treatment dates retained separately</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved when unavailable; never substitute No for absent documentation</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=3 prior entries after graph/dependence review; target-population data or documented elicitation required</PROPERTY>
+    <PROPERTY>modeling_basis=modeler_assumption: current/prior exposure branches extend the source into a proposed workflow</PROPERTY></VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>WillingToDiscussClozapine</NAME>
+      <PROPERTY>label=Willing To Discuss Clozapine</PROPERTY>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>definition=Patient currently willing to discuss clozapine; this is not consent to treatment. No prompts exploration of concerns and preferences, not removal of the indication.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-09.md</PROPERTY>
+      <PROPERTY>source_locator=Patient Preferences</PROPERTY>
+      <PROPERTY>source_sha256=73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6</PROPERTY>
+      <PROPERTY>time_window=Current documented assessment; historical treatment dates retained separately</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved when unavailable; never substitute No for absent documentation</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 prior entries after graph/dependence review; target-population data or documented elicitation required</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ClozapineMonitoringPlanAvailable</NAME>
+      <PROPERTY>label=Clozapine Monitoring Plan Available</PROPERTY>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>definition=A feasible clinician-reviewed monitoring and follow-up plan is available, including ANC and relevant cardiac, bowel, metabolic and other adverse-effect surveillance per current local guidance. No means a documented planning/logistical gap, not an absolute contraindication.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-09.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Harms; Patient Preferences</PROPERTY>
+      <PROPERTY>source_sha256=73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6</PROPERTY>
+      <PROPERTY>time_window=Current documented assessment; historical treatment dates retained separately</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved when unavailable; never substitute No for absent documentation</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 prior entries after graph/dependence review; target-population data or documented elicitation required</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ClozapineMedicalReviewCompleted</NAME>
+      <PROPERTY>label=Clozapine Medical Review Completed</PROPERTY>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>definition=Current clinician/pharmacist benefit-harm, contraindication and interaction review is documented. Yes means review performed, not that clozapine is safe or appropriate to prescribe. The review conclusion remains a clinician responsibility.</PROPERTY>
+      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-09.md</PROPERTY>
+      <PROPERTY>source_locator=Balancing of Benefits and Harms; Harms</PROPERTY>
+      <PROPERTY>source_sha256=73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6</PROPERTY>
+      <PROPERTY>time_window=Current documented assessment; historical treatment dates retained separately</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved when unavailable; never substitute No for absent documentation</PROPERTY>
+      <PROPERTY>parameter_status=missing_prior</PROPERTY>
+      <PROPERTY>parameter_requirement=2 prior entries after graph/dependence review; target-population data or documented elicitation required</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ClozapineAggressionRiskIndication</NAME>
+      <PROPERTY>label=Clozapine Aggression Risk Indication</PROPERTY>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>NotEstablished</OUTCOME>
+      <PROPERTY>definition=Documented schizophrenia plus substantial aggression risk persisting despite other treatments. NotEstablished does not rule out clozapine for other indications. Formal treatment resistance is deliberately not a parent.</PROPERTY>
+      <PROPERTY>clinical_role=proposed_review_mapping</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-09.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT 9: Clozapine in Aggressive Behavior; Implementation</PROPERTY>
+      <PROPERTY>source_sha256=73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6</PROPERTY>
+      <PROPERTY>time_window=Current documented assessment; historical treatment dates retained separately</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved when unavailable; never substitute No for absent documentation</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_modeler_assumption</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AggressionRiskTreatmentPlanReview</NAME>
+      <PROPERTY>label=Aggression Risk Treatment Plan Review</PROPERTY>
+      <OUTCOME>AdherenceAndRiskTargets</OUTCOME>
+      <OUTCOME>AdherenceReview</OUTCOME>
+      <OUTCOME>RiskTargetReview</OUTCOME>
+      <OUTCOME>NoAdditionalFlag</OUTCOME>
+      <PROPERTY>definition=Independent review needs; never a prerequisite that delays indicated clozapine discussion or urgent care. NoAdditionalFlag means neither modeled concern was flagged, not that the treatment plan is complete.</PROPERTY>
+      <PROPERTY>clinical_role=proposed_review_mapping</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-09.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6</PROPERTY>
+      <PROPERTY>time_window=Current documented assessment; historical treatment dates retained separately</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved when unavailable; never substitute No for absent documentation</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_modeler_assumption</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ClozapineDiscussionPreparation</NAME>
+      <PROPERTY>label=Clozapine Discussion Preparation</PROPERTY>
+      <OUTCOME>AddressReviewNeeds</OUTCOME>
+      <OUTCOME>PreparedForDiscussion</OUTCOME>
+      <PROPERTY>definition=Address preference concerns, monitoring access or an unfinished medical review. PreparedForDiscussion never means medical clearance or treatment consent.</PROPERTY>
+      <PROPERTY>clinical_role=proposed_review_mapping</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-09.md</PROPERTY>
+      <PROPERTY>source_locator=Patient Preferences; Balancing of Benefits and Harms</PROPERTY>
+      <PROPERTY>source_sha256=73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6</PROPERTY>
+      <PROPERTY>time_window=Current documented assessment; historical treatment dates retained separately</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved when unavailable; never substitute No for absent documentation</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_modeler_assumption</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AggressionRiskClozapineReviewPathway</NAME>
+      <PROPERTY>label=Aggression Risk Clozapine Review Pathway</PROPERTY>
+      <OUTCOME>UrgentClinicalAssessment</OUTCOME>
+      <OUTCOME>ReviewCurrentClozapine</OUTCOME>
+      <OUTCOME>IndividualizedPriorClozapineReview</OUTCOME>
+      <OUTCOME>DiscussClozapine</OUTCOME>
+      <OUTCOME>DiscussClozapineAndAddressReviewNeeds</OUTCOME>
+      <OUTCOME>ReviewEvidenceAndOtherIndications</OUTCOME>
+      <PROPERTY>definition=Proposed workflow with urgent assessment first. Current/prior clozapine branches preserve the separate indication flag and require clinician interpretation; no branch authorizes start, restart, continuation or stopping.</PROPERTY>
+      <PROPERTY>clinical_role=proposed_review_mapping</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-09.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Patient Preferences; Quality Measurement Considerations</PROPERTY>
+      <PROPERTY>source_sha256=73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6</PROPERTY>
+      <PROPERTY>time_window=Current documented assessment; historical treatment dates retained separately</PROPERTY>
+      <PROPERTY>missingness_policy=Leave unobserved when unavailable; never substitute No for absent documentation</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_modeler_assumption</PROPERTY>
+    </VARIABLE>
+    <DEFINITION>
+      <FOR>ClozapineAggressionRiskIndication</FOR>
+      <GIVEN>SchizophreniaEstablished</GIVEN>
+      <GIVEN>SubstantialAggressionRisk</GIVEN>
+      <GIVEN>AggressionRiskPersistsDespiteOtherTreatments</GIVEN>
+      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_review_mapping_not_clinically_validated</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-09.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT 9: Clozapine in Aggressive Behavior; Implementation</PROPERTY>
+      <PROPERTY>table_order=Child outcome fastest; last GIVEN next; OUTCOME and GIVEN declaration order preserved</PROPERTY>
+      <PROPERTY>uncertainty_description=0/1 values encode a proposed workflow only; not patient outcome probabilities</PROPERTY>
+      <TABLE>
+        1 0
+        0 1
+        0 1
+        0 1
+        0 1
+        0 1
+        0 1
+        0 1
+      </TABLE>
+    <PROPERTY>source_sha256=73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6</PROPERTY></DEFINITION>
+    <DEFINITION>
+      <FOR>AggressionRiskTreatmentPlanReview</FOR>
+      <GIVEN>AdherenceConcern</GIVEN>
+      <GIVEN>ModifiableAggressionRiskTargetsPresent</GIVEN>
+      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_review_mapping_not_clinically_validated</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-09.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Patient Preferences; Quality Measurement Considerations</PROPERTY>
+      <PROPERTY>table_order=Child outcome fastest; last GIVEN next; OUTCOME and GIVEN declaration order preserved</PROPERTY>
+      <PROPERTY>uncertainty_description=0/1 values encode a proposed workflow only; not patient outcome probabilities</PROPERTY>
+      <TABLE>
+        1 0 0 0
+        0 1 0 0
+        0 0 1 0
+        0 0 0 1
+      </TABLE>
+    <PROPERTY>source_sha256=73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6</PROPERTY></DEFINITION>
+    <DEFINITION>
+      <FOR>ClozapineDiscussionPreparation</FOR>
+      <GIVEN>WillingToDiscussClozapine</GIVEN>
+      <GIVEN>ClozapineMonitoringPlanAvailable</GIVEN>
+      <GIVEN>ClozapineMedicalReviewCompleted</GIVEN>
+      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_review_mapping_not_clinically_validated</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-09.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Patient Preferences; Quality Measurement Considerations</PROPERTY>
+      <PROPERTY>table_order=Child outcome fastest; last GIVEN next; OUTCOME and GIVEN declaration order preserved</PROPERTY>
+      <PROPERTY>uncertainty_description=0/1 values encode a proposed workflow only; not patient outcome probabilities</PROPERTY>
+      <TABLE>
+        0 1
+        1 0
+        1 0
+        1 0
+        1 0
+        1 0
+        1 0
+        1 0
+      </TABLE>
+    <PROPERTY>source_sha256=73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6</PROPERTY></DEFINITION>
+    <DEFINITION>
+      <FOR>AggressionRiskClozapineReviewPathway</FOR>
+      <GIVEN>UrgentSafetyConcern</GIVEN>
+      <GIVEN>ClozapineTreatmentStatus</GIVEN>
+      <GIVEN>ClozapineAggressionRiskIndication</GIVEN>
+      <GIVEN>ClozapineDiscussionPreparation</GIVEN>
+      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
+      <PROPERTY>parameter_status=deterministic_review_mapping_not_clinically_validated</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-09.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Patient Preferences; Quality Measurement Considerations</PROPERTY>
+      <PROPERTY>table_order=Child outcome fastest; last GIVEN next; OUTCOME and GIVEN declaration order preserved</PROPERTY>
+      <PROPERTY>uncertainty_description=0/1 values encode a proposed workflow only; not patient outcome probabilities</PROPERTY>
+      <TABLE>
+        1 0 0 0 0 0
+        1 0 0 0 0 0
+        1 0 0 0 0 0
+        1 0 0 0 0 0
+        1 0 0 0 0 0
+        1 0 0 0 0 0
+        1 0 0 0 0 0
+        1 0 0 0 0 0
+        1 0 0 0 0 0
+        1 0 0 0 0 0
+        1 0 0 0 0 0
+        1 0 0 0 0 0
+        0 0 0 0 1 0
+        0 0 0 1 0 0
+        0 0 0 0 0 1
+        0 0 0 0 0 1
+        0 1 0 0 0 0
+        0 1 0 0 0 0
+        0 1 0 0 0 0
+        0 1 0 0 0 0
+        0 0 1 0 0 0
+        0 0 1 0 0 0
+        0 0 1 0 0 0
+        0 0 1 0 0 0
+      </TABLE>
+    <PROPERTY>source_sha256=73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6</PROPERTY></DEFINITION>
+  <PROPERTY>source_version=APA schizophrenia guideline 2020; local Markdown derivative, not independently checked against original PDF</PROPERTY><PROPERTY>supporting_source_path=medical-knowledge/02-md/Appendix-C.md</PROPERTY><PROPERTY>supporting_source_locator=STATEMENT 9: Clozapine in Aggressive Behavior</PROPERTY><PROPERTY>supporting_source_sha256=998b64d7aa093adaf8b48e825f9a7b6bd8e2e747faef74252dc430408d41df45</PROPERTY><PROPERTY>cdss_scope=Proposed passive clinician-review prompt only; not an accountability quality measure or a violence prediction tool</PROPERTY><PROPERTY>design_note=wiki/questions/Statement 09 Bayesian network design.md</PROPERTY></NETWORK>
+</BIF>

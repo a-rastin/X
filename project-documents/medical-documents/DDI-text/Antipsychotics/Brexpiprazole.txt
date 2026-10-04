@@ -1,0 +1,270 @@
+This site is intended for healthcare professionals
+
+brexpiprazole (Rx)
+Brand and Other Names: Rexulti
+Classes: Serotonin-Dopamine Activity Modulators (SDAM)
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+tablet
+• 0.25mg
+• 0.5mg
+• 1mg
+• 2mg
+• 3mg
+• 4mg
+
+Schizophrenia
+Indicated for treatment of schizophrenia
+Days 1-4: 1 mg PO qDay
+Day 5-7: Titrate to 2 mg qDay
+Day 8: Titrate to 4 mg/day based on the patient's clinical response and tolerability
+Target dose: 2-4 mg PO qDay; not to exceed 4 mg/day
+Periodically reassess to determine the continued need and appropriate dose
+
+Depression
+Indicated an adjunctive therapy to antidepressants for major depressive disorder (MDD)
+0.5 mg or 1 mg PO qDay initially
+Titrate according to clinical response and tolerability in weekly intervals to 1 mg/day and then up to 2 mg/day not to exceed 3 mg/day
+Periodically reassess to determine the continued need and appropriate dose
+
+Agitation Associated With Alzheimer Dementia
+Indicated for agitation associated with dementia due to Alzheimer disease
+Days 1-7: 0.5 mg PO qDay
+Days 8-14: Increase to 1 mg PO qDay
+Days 15: Increase to 2 mg PO qDay
+Target dose: 2 mg PO qDay
+May increase to maximum recommended dosage of 3 mg qDay after at least 14 days, based on clinical response and tolerability
+
+Dosage Modifications
+Renal impairment
+• Moderate, severe, or end-stage renal disease (ESRD) (CrCl < 60 mL/min)
+• MDD or agitation associated with Alzheimer dementia: Not to exceed 2 mg/day
+• Schizophrenia: Not to exceed 3 mg/day
+
+Hepatic impairment
+• Moderate-to-severe hepatic impairment (Child-Pugh ≥7)
+• MDD or agitation associated with Alzheimer dementia: Not to exceed 2 mg/day
+• Schizophrenia: Not to exceed 3 mg/day
+
+CYP2D6 poor metabolizers
+CYP2D6 poor metabolizers: Administer half of the usual brexpiprazole dose
+• Known CYP2D6 poor metabolizers taking strong/moderate CYP3A4 inhibitors: Administer a quarter of the usual brexpiprazole dose
+
+CYP2D6 or CYP3A4 inhibitors
+• Strong CYP2D6 inhibitors: Administer half of the usual brexpiprazole dose (see note below for MDD)
+• Strong CYP3A4 inhibitors: Administer half of the usual brexpiprazole dose
+• Strong/moderate CYP2D6 inhibitors plus strong/moderate CYP3A4 inhibitors: Administer a quarter of the usual brexpiprazole dose
+• If the coadministered drug is discontinued, adjust the brexpiprazole dosage to its original level
+• NOTE: In MDD clinical trials, brexpiprazole dosage was not adjusted for strong CYP2D6 inhibitors (eg, paroxetine, fluoxetine); thus, CYP considerations are already factored into general dosing recommendations and brexpiprazole may be administered without dosage adjustment in patients with MDD
+
+CYP3A4 inducers
+• Strong CYP3A4 inducers: Double usual dose over 1 to 2 weeks
+• If the coadministered CYP3A4 inducer is discontinued, reduce the brexpiprazole dosage to the original level over 1-2 weeks
+
+Geriatric Dosage & Uses
+Antipsychotic drugs increase the risk of death in elderly patients with dementia-related psychosis
+Brexpiprazole is not approved for the treatment of patients with dementia-related psychosis (see Black Box Warnings)
+Limitations of use: Not indicated as an as needed (PRN) treatment for agitation associated with dementia due to Alzheimer disease
+
+PEDIATRIC
+Dosage Forms & Strengths
+tablet
+• 0.25mg
+• 0.5mg
+• 1mg
+• 2mg
+• 3mg
+• 4mg
+
+Schizophrenia
+Indicated for treatment of schizophrenia in adults and pediatric patients aged ≥13 years
+<13 years: Safety and efficacy not established
+13-17 years
+• Days 1-4: 0.5 mg PO qDay
+• Days 5-7: Titrate to 1 mg PO qDay
+• Day 8: 2 mg PO qDay based on clinical response and tolerability
+• Target dose: 2-4 mg PO qDay; weekly 1-mg dose increments can be made, not to exceed 4 mg/day
+• Periodically reassess to determine continued need and appropriate dose
+
+Dosage Modifications
+Renal impairment
+• Moderate, severe, or end-stage renal disease (ESRD) (CrCl < 60 mL/min)
+• MDD: Not to exceed 2 mg/day
+• Schizophrenia: Not to exceed 3 mg/day
+
+Hepatic impairment
+• Moderate-to-severe hepatic impairment (Child-Pugh ≥7)
+• MDD: Not to exceed 2 mg/day
+• Schizophrenia: Not to exceed 3 mg/day
+
+CYP2D6 poor metabolizers
+• CYP2D6 poor metabolizers: Administer half of the usual brexpiprazole dose
+• CYP2D6 poor metabolizers taking strong/moderate CYP3A4 inhibitors: Administer a quarter of the usual brexpiprazole dose
+
+CYP2D6 or CYP3A4 inhibitors
+• Strong CYP2D6 inhibitors: Administer half of the usual brexpiprazole dose
+• Strong CYP3A4 inhibitors: Administer half of the usual brexpiprazole dose
+• Strong/moderate CYP2D6 inhibitors plus strong/moderate CYP3A4 inhibitors: Administer a quarter of the usual brexpiprazole dose
+• If the coadministered drug is discontinued, adjust the brexpiprazole dosage to its original level
+• NOTE: In MDD clinical trials, brexpiprazole dosage was not adjusted for strong CYP2D6 inhibitors (eg, paroxetine, fluoxetine); thus, CYP considerations are already factored into general dosing recommendations and brexpiprazole may be administered without dosage adjustment in patients with MDD
+
+CYP3A4 inducers
+• Strong CYP3A4 inducers: Double usual dose over 1-2 weeks
+• If coadministered CYP3A4 inducer is discontinued, reduce brexpiprazole dosage to the original level over 1-2 weeks
+
+GERIATRIC
+Antipsychotic drugs increase the risk of death in elderly patients with dementia-related psychosis
+Brexpiprazole is not approved for the treatment of patients with dementia-related psychosis
+
+Interactions
+
+Contraindicated (3)
+• amisulpride: Increases toxicity of the other. Contraindicated. Increases risk of neuroleptic malignant syndrome.
+• mavorixafor: Increases the level or effect of brexpiprazole by affecting hepatic enzyme CYP2D6 metabolism. Contraindicated.
+• thalidomide: Both increase sedation. Contraindicated.
+
+Serious (32)
+• alfentanil, benzhydrocodone/acetaminophen, buprenorphine, buprenorphine buccal, buprenorphine subdermal implant, buprenorphine transdermal, buprenorphine long-acting injection, butalbital, fentanyl, fentanyl intranasal, fentanyl iontophoretic transdermal system, fentanyl transdermal, fentanyl transmucosal, hydrocodone, hydromorphone, methadone, morphine, olopatadine intranasal, oxycodone, oxymorphone, remifentanil: Both increase sedation. Avoid or Use Alternate Drug. Limit use to patients for whom alternative treatment options are inadequate.
+• apalutamide: Decreases the level or effect of brexpiprazole by affecting CYP3A4 metabolism. Avoid or Use Alternate Drug.
+• chloramphenicol, lonafarnib, nelfinavir, tucatinib: Increases the level or effect of brexpiprazole by affecting CYP3A4 metabolism. Avoid or Use Alternate Drug.
+• dacomitinib, givosiran: Increases the level or effect of brexpiprazole by affecting CYP2D6 metabolism. Avoid or Use Alternate Drug.
+• ivosidenib: Decreases the level or effect of brexpiprazole by affecting CYP3A4 metabolism. Avoid or Use Alternate Drug.
+• metoclopramide intranasal: Avoid use depending on importance to patient.
+• selinexor: Avoid or Use Alternate Drug. May cause dizziness or confusion.
+• zuranolone: Increases effects by pharmacodynamic synergism. Avoid or Use Alternate Drug.
+
+Monitor Closely (270)
+Includes numerous drugs where brexpiprazole and the interacting drug both increase sedation (e.g., alprazolam, amitriptyline, aripiprazole, baclofen, cetirizine, diazepam, diphenhydramine, gabapentin, lorazepam, quetiapine, trazodone, zolpidem).
+Also includes CYP3A4 and CYP2D6 inhibitors and inducers (e.g., amiodarone, bupropion, carbamazepine, cimetidine, clarithromycin, clozapine, duloxetine, fluoxetine, grapefruit, ketoconazole, paroxetine, rifampin, ritonavir) which require dosage modifications of brexpiprazole as outlined in the general dosing guidelines. Use Caution/Monitor Closely.
+
+Minor (5)
+• acetazolamide, anastrozole, cyclophosphamide, drospirenone, larotrectinib: Increase the level or effect of brexpiprazole by affecting CYP3A4 metabolism. Minor/Significance Unknown.
+
+Adverse Effects
+
+>10%
+MDD
+• Akathisia (4-14%)
+Schizophrenia (pediatric patients)
+• Elevated prolactin levels (> 30 ng/mL in females: 28.9%; > 20 ng/mL in males: 21.4%)
+• Hypertriglyceridemia (triglycerides shift from normal to high [< 90 to ≥ 130 mg/dL]) (15%)
+
+1-10%
+MDD
+• Headache (4-9%)
+• Increased weight (6-8%)
+• Nasopharyngitis (3-7%)
+• Somnolence (4-6%)
+• Fatigue (3-5%)
+• Tremor (2-5%)
+• Dizziness (1-5%)
+• Blood cortisol decreased (3-4%)
+• Anxiety (2-4%)
+• Restlessness (2-4%)
+• Increased appetite (2-3%)
+• Constipation (1-3%)
+
+Schizophrenia (adults)
+• Akathisia (4-7%)
+• Dyspepsia (2-6%)
+• Increased weight (3-4%)
+• Blood creatinine phosphokinase increased (3-4%)
+• Tremor (2-3%)
+• Sedation (2-3%)
+• Diarrhea (1-3%)
+
+Schizophrenia (pediatric patients)
+• HDL cholesterol decreased (shift from normal to low [> 45 to < 40 mg/dL]) (10%)
+• Increased body weight ≥ 7% (8.2%)
+• Hypercholesterolemia (fasting total cholesterol shift from normal to high [< 170 to ≥ 200 mg/dL]) (7%)
+• Nausea (6%)
+• Extrapyramidal symptoms (6%)
+• Headache (6%)
+• Akathisia (4%)
+• Hyperglycemia (fasting glucose shift from normal to high [< 100 mg/dL to ≥ 126 mg/dL]) (2.7%)
+
+Agitation associated with Alzheimer dementia
+• Headache (7-9%)
+• Insomnia (2-5%)
+• Dizziness (1-5%)
+• Nasopharyngitis (2-4%)
+• Somnolence (2-4%)
+• EPS-related adverse reactions (3%)
+• Urinary tract infection (2-3%)
+• Akathisia (1%)
+
+Frequency Not Defined
+• Eye disorders: Blurred vision
+• Gastrointestinal disorders: Nausea, dry mouth, salivary hypersecretion, abdominal pain, flatulence
+• Infections and infestations: Urinary tract infection
+• Blood prolactin increased, galactorrhea without elevated prolactin
+• Musculoskeletal and connective tissue disorders: Myalgia
+• Psychiatric disorders: Abnormal dreams, insomnia
+• Skin and SC tissue disorders: Hyperhidrosis
+
+Postmarketing Reports
+Neuroleptic malignant syndrome
+
+Warnings
+
+Black Box Warnings
+Increased mortality in elderly patients with dementia-related psychosis
+• Elderly patients with dementia-related psychosis when treated with antipsychotic drugs are at an increased risk of death
+• Not approved for treatment of patients with dementia-related psychosis without agitation associated with dementia due to Alzheimer disease
+Suicidal thoughts and behaviors
+• Antidepressants increase risk of suicidal thoughts and behaviors in children, adolescents, and young adults
+• Closely monitor for clinical worsening, and for emergence of suicidal thoughts and behaviors
+• Safety and effectiveness not established in pediatric patients with MDD
+
+Contraindications
+Hypersensitivity to brexpiprazole or any of its components; reactions have included rash, facial swelling, urticaria, and angioedema
+
+Cautions
+• Increased mortality in elderly patients with dementia-related psychosis
+• Higher incidence of stroke and transient ischemic attack, including fatal stroke reported
+• Suicidal thoughts and behaviors reported in children, adolescents, and young adults who are taking antidepressant drugs
+• May cause leukopenia, neutropenia, and agranulocytosis; monitor and discontinue if severe neutropenia (ANC < 1000/mm³)
+• Orthostatic hypotension or syncope may occur
+• Caution with a history of seizures or with conditions/drugs that potentially lower the seizure threshold
+• May disrupt the body's ability to reduce core body temperature
+• Esophageal dysmotility and aspiration pneumonia reported
+• Intense urges, particularly for gambling, and inability to control urges reported
+• Falls: May cause somnolence, postural hypotension, motor and sensory instability
+• Potential for cognitive and motor impairment
+• Neuroleptic malignant syndrome (NMS): Potentially fatal NMS has been associated with antipsychotic drugs administration
+• Tardive dyskinesia: Risk increases with duration of treatment and cumulative dose
+• Metabolic changes: Associated with hyperglycemia/diabetes mellitus, dyslipidemia, and body weight gain
+• Drug interaction overview: Adjust doses for strong CYP3A4 inhibitors/inducers and strong CYP2D6 inhibitors
+
+Pregnancy
+Pregnancy Categories: Adequate and well-controlled studies have not been conducted with brexpiprazole in pregnant females to inform drug-associated risks.
+Neonates whose mothers are exposed during the third trimester are at risk for extrapyramidal and/or withdrawal symptoms.
+Lactation: Unknown if distributed in human breast milk. Present in rat milk.
+
+Pharmacology
+Mechanism of Action
+Serotonin-dopamine activity modulator (SDAM) that acts as a partial agonist at 5-HT1A and dopamine D2 receptors at similar potency, and an antagonist at 5-HT2A and noradrenaline alpha1B/2C receptors.
+
+Absorption
+Absolute bioavailability: 95%
+Peak plasma time: 4 hr
+Steady-state concentration: 1-12 days
+
+Distribution
+Protein bound: >99% to serum albumin and alpha-1-acid glycoprotein
+Vd: 1.56 L/kg
+
+Metabolism
+Metabolized primarily by CYP2D6 and CYP3A4 isoenzymes
+
+Elimination
+Half-life: 91 hr
+Clearance: 19.8 mL·hr/kg
+Excretion: 25% urine; 46% feces
+
+Administration
+Oral Administration: Take with or without food
+Storage: Store at 20-25°C (68-77°F); excursions permitted to 15-30°C (59-86°F)

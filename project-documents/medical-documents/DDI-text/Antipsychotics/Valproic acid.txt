@@ -1,0 +1,369 @@
+Valproic acid (Rx)
+Brand and Other Names: Depakene (DSC), Stavzor (DSC)
+Classes: Anticonvulsants, Other
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+capsule
+• 250mg
+syrup
+• 250mg/5mL
+injectable solution (as valproate sodium)
+• 100mg/mL
+
+Complex Partial Seizures
+Indicated as monotherapy and adjunctive therapy for complex partial seizures that occur either in isolation or in association with other types of seizures
+IV (valproate sodium): 10-15 mg/kg/day IV divided q12hr infused over 1 hr; maximum dose 60 mg/kg/day do not exceed 14 days (switch to PO as soon as possible)
+PO: 10-15 mg/kg/day PO initially; increase by 5-10 mg/kg/day at weekly intervals; may increase dose up to 60 mg/kg/day
+Delayed release and extended release formulations
+• Delayed release formulations are usually administered at the same daily dose and frequency (BID/QID) as the regular release when converting from regular release to delayed release; once therapy is stabilized, the frequency of the delayed release formulation is adjusted to BID/TID
+• Extended release formulation is usually administered once daily in patients who convert from either regular or delayed release formulations; may require an increase in total daily dose between 8-20% to maintain similar serum concentrations
+Conversion to monotherapy from adjunctive therapy
+Decrease concomitant antiepileptic drug (AED) by approximately 25% q2wk; may reduce dosage of concomitant AED when valproate therapy is initiated or 1 to 2 weeks following valproate initiation
+
+Simple & Complex Absence Seizures
+Also indicated for use as sole and adjunctive therapy in the treatment of simple and complex absence seizures, and adjunctively in patients with multiple seizure types that include absence seizures
+IV (valproate sodium): 10-15 mg/kg/day IV divided q12hr infused over 1 hr; maximum dose 60 mg/kg/day do not exceed 14 days (switch to PO as soon as possible)
+PO (Depakene, Stavzor): 15 mg/kg/day PO initially, divided q6-12hr; increase by 5-10 mg/kg/day at weekly intervals; may increase dose up to 60 mg/kg/day
+Delayed release and extended release formulations
+• Delayed release formulations are usually administered at the same daily dose and frequency (BID/QID) as the regular release when converting from regular release to delayed release; once therapy is stabilized, the frequency of the delayed release formulation is adjusted to BID/TID
+• Extended release formulation is usually administered once daily in patients who convert from either regular or delayed release formulations; may require an increase in total daily dose between 8-20% to maintain similar serum concentrations
+Conversion to monotherapy from adjunctive therapy
+• Decrease concomitant antiepileptic drug (AED) by approximately 25% q2wk; may reduce dosage of concomitant AED when valproate therapy is initiated or 1 to 2 weeks following valproate initiation
+
+Migraine
+Indicated for prophylaxis of migraine headaches; there is no evidence of use for acute treatment
+Stavzor: 250 mg PO q12hr; adjust dose based on clinical response, not to exceed 1000 mg/day
+Depakote ER: 500 mg PO qDay for 7 days; based on patient response, may increase and adjust dose to 500-1000 mg/day
+
+Bipolar Mania
+Indicated for treatment of manic episodes associated with bipolar disorder
+Stavzor: 750 mg/day PO in divided doses; adjust dose as rapidly as possible to desired therapeutic effect; not to exceed 60 mg/kg/day
+Depakote ER: 25 mg/kg/day PO qDay; adjust dose to desired clinical effect, as rapidly as possible; not to exceed 50 mg/kg/day
+
+Dosage Modifications
+Renal impairment
+• No adjustment necessary; protein binding is reduced and may cause measurement of total valproate concentrations to be inaccurate
+Hepatic impairment
+• Mild to moderate impairment: Not recommended; clearance is decreased
+• Contraindicated in severe impairment
+
+Dosing Considerations
+Monitor LFT's
+Therapeutic range
+• Low serum albumin levels may cause an increase in unbound drug (while total concentration may appear normal)
+• Epilepsy: 50-100 mcg/mL total valproate
+• Mania: 50-125 mcg/mL total valproate
+• Toxicity: >=110 mcg/mL (females); >=135 mcg/mL (males)
+
+Fragile X Syndrome (Orphan)
+Orphan indication sponsor
+• Neuropharm Ltd; Fetcham Park House; Surrey KT22 9HD; UK
+
+Familial Adenomatous Polyposis (Orphan)
+Orphan indication sponsor
+• Topotarget A/S; Fruebjergvej 3; DK-2100; Copenhagen; Denmark
+
+Lymphoma (Orphan)
+Orphan designation for treatment of diffuse large B-cell lymphoma
+Sponsor
+• Valcuria AB; Scheelevägen 2; Lund, Sweden
+
+PEDIATRIC
+Dosage Forms & Strengths
+capsule
+• 250mg
+syrup
+• 250mg/5mL
+injectable solution (as valproate sodium)
+• 100mg/mL
+
+Complex Partial Seizures
+Indicated as monotherapy and adjunctive therapy for complex partial seizures that occur either in isolation or in association with other types of seizures
+<10 years: Safety and efficacy not established
+(IV) valproate sodium: 10-15 mg/kg/day divided q12hr infused over 1 hr; maximum dose 60 mg/kg/day do not exceed 14 days (switch to PO as soon as possible)
+PO (Depakene or Stavzor): 10-15 mg/kg/day PO initially; increase by 5-10 mg/kg/day at weekly intervals; may increase dose up to 60 mg/kg/day
+Delayed release and extended release formulations
+• Delayed release formulations are usually administered at the same daily dose and frequency (BID/QID) as the regular release when converting from regular release to delayed release; once therapy is stabilized, the frequency of the delayed release formulation is adjusted to BID/TID
+• Extended release formulation is usually administered once daily in patients who convert from either regular or delayed release formulations; may require an increase in total daily dose between 8-20% to maintain similar serum concentrations
+
+Simple & Complex Absence Seizures
+Indicated for use as sole and adjunctive therapy in the treatment of simple and complex absence seizures, and adjunctively in patients with multiple seizure types that include absence seizures
+<10 years: Safety and efficacy not established
+>=10 years
+• IV (valproate sodium): 10-15 mg/kg/day IV divided q12hr infused over 1 hr; maximum dose 60 mg/kg/day do not exceed 14 days (switch to PO as soon as possible)
+• Stavzor: 250 mg PO q12hr; adjust dose based on clinical response up to 1000 mg/day
+Delayed release and extended release formulations
+• Delayed release formulations are usually administered at the same daily dose and frequency (BID/QID) as the regular release when converting from regular release to delayed release; once therapy is stabilized, the frequency of the delayed release formulation is adjusted to BID/TID
+• Extended release formulation is usually administered once daily in patients who convert from either regular or delayed release formulations; may require an increase in total daily dose between 8-20% to maintain similar serum concentrations
+
+Dosage Modifications
+Renal impairment
+• No adjustment necessary; protein binding is reduced and may cause measurement of total valproate concentrations to be inaccurate
+Hepatic impairment
+• Mild to moderate impairment: Not recommended; clearance is decreased
+• Contraindicated in severe impairment
+
+Dosing Considerations
+Monitor LFT's
+Therapeutic range
+• Low serum albumin levels may cause an increase in unbound drug (while total concentration may appear normal)
+• Epilepsy: 50-100 mcg/mL total valproate
+
+Wolfram Syndrome (Orphan)
+Orphan designation for treatment of Wolfram syndrome
+Sponsor
+• The University of Birmingham; Birmingham Research Park - Vincent Drive; Birmingham B15 2SQ
+
+GERIATRIC
+Administer as in adults, but may need to initiate at lower dose; dose adjustments should be increased cautiously
+
+Interactions
+
+Contraindicated (1)
+• thalidomide: valproic acid and thalidomide both increase sedation. Contraindicated.
+
+Serious (35)
+• adagrasib: will increase the level or effect of valproic acid by affecting hepatic enzyme CYP2C9/10 metabolism. Avoid or Use Alternate Drug. Avoid coadministration of adagrasib, a CYP2C9 inhibitor, with sensitive CYP2C9 substrates unless otherwise recommended in the prescribing information for these substrates.
+• alfentanil: valproic acid and alfentanil both increase sedation. Avoid or Use Alternate Drug. Limit use to patients for whom alternative treatment options are inadequate.
+• bremelanotide: will decrease the level or effect of valproic acid by Other (see comment). Avoid or Use Alternate Drug. Bremelanotide may slow gastric emptying and potentially reduces the rate and extent of absorption of concomitantly administered oral medications. Avoid use when taking any oral drug that is dependent on threshold concentrations for efficacy.
+• buprenorphine: valproic acid and buprenorphine both increase sedation. Avoid or Use Alternate Drug.
+• buprenorphine buccal: valproic acid and buprenorphine buccal both increase sedation. Avoid or Use Alternate Drug.
+• calcium/magnesium/potassium/sodium oxybates: valproic acid increases levels of calcium/magnesium/potassium/sodium oxybates by Other (see comment). Avoid or Use Alternate Drug. Comment: If stabilized on calcium/magnesium/potassium/sodium oxybates, decrease nightly dose by at least 20% when starting valproic acid; if already taking valproic acid, use a lower starting oxybates dose; monitor dose and adjust accordingly.
+• codeine: valproic acid and codeine both increase sedation. Avoid or Use Alternate Drug. Limit use to patients for whom alternative treatment options are inadequate.
+• ertapenem: decreases levels of valproic acid by unknown mechanism. Avoid or Use Alternate Drug. Risk of seizure. Possible decreased GI absorption and/or increased renal clearance of valproic acid.
+• fedratinib: valproic acid will increase the level or effect of fedratinib by Other (see comment). Avoid or Use Alternate Drug. Avoid coadministration of fedratinib (a CYP3A4 and CYP2C19 substrate) with dual CYP3A4 and CYP2C19 inhibitor.
+• hydrocodone: valproic acid and hydrocodone both increase sedation. Avoid or Use Alternate Drug. Limit use to patients for whom alternative treatment options are inadequate.
+• hydromorphone: valproic acid and hydromorphone both increase sedation. Avoid or Use Alternate Drug. Limit use to patients for whom alternative treatment options are inadequate.
+• imipenem/cilastatin: will decrease the level or effect of valproic acid by unknown mechanism. Avoid or Use Alternate Drug. Data from in vitro and animal studies suggest carbapenems may inhibit hydrolysis of the valproic acid glucuronide metabolite (VPA-g) back to valproic acid.
+• imipenem/cilastatin/relebactam: will decrease the level or effect of valproic acid by unknown mechanism. Avoid or Use Alternate Drug.
+• lesinurad (DSC): Avoid coadministration with inhibitors of epoxide hydrolase (valproic acid) which may interfere with metabolism of lesinurad.
+• lonafarnib: valproic acid will increase the level or effect of lonafarnib by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+• meropenem: decreases levels of valproic acid by unknown mechanism. Avoid or Use Alternate Drug. Risk of seizure.
+• meropenem/vaborbactam: decreases levels of valproic acid by unknown mechanism. Avoid or Use Alternate Drug. Risk of seizures. If administration is necessary, then supplemental anticonvulsant therapy should be considered.
+• methadone: valproic acid and methadone both increase sedation. Avoid or Use Alternate Drug.
+• methotrexate: will decrease the level or effect of valproic acid by unspecified interaction mechanism. Avoid or Use Alternate Drug. May potentially result in increased frequency of seizures or bipolar symptoms; monitor serum valproate concentrations.
+• metoclopramide intranasal: Either increases effects of the other. Avoid or Use Alternate Drug.
+• morphine: valproic acid and morphine both increase sedation. Avoid or Use Alternate Drug.
+• nitazoxanide: Either increases levels of the other by plasma protein binding competition. Avoid or Use Alternate Drug.
+• olopatadine intranasal: valproic acid and olopatadine intranasal both increase sedation. Avoid or Use Alternate Drug.
+• oxycodone: valproic acid and oxycodone both increase sedation. Avoid or Use Alternate Drug.
+• oxymorphone: valproic acid and oxymorphone both increase sedation. Avoid or Use Alternate Drug.
+• pexidartinib: valproic acid and pexidartinib both increase Other. Avoid or Use Alternate Drug. Pexidartinib can cause hepatotoxicity. Avoid coadministration with other products known to cause hepatoxicity.
+• pivmecillinam: valproic acid increases toxicity of pivmecillinam by pharmacodynamic synergism. Avoid or Use Alternate Drug. Coadministration of pivalate-generating drugs may increase risk of adverse effects associated with carnitine deficiency.
+• pretomanid: Either increases toxicity of the other by Other. Avoid or Use Alternate Drug. Pretomanid regimen associated with hepatotoxicity. Avoid alcohol and hepatotoxic agents.
+• remifentanil: valproic acid and remifentanil both increase sedation. Avoid or Use Alternate Drug.
+• repotrectinib: will decrease the level or effect of valproic acid by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Repotrectinib is a CYP3A4 inducer.
+• sepiapterin: valproic acid decreases effects of sepiapterin by decreasing metabolism. Avoid or Use Alternate Drug.
+• sodium oxybate: valproic acid increases levels of sodium oxybate. Avoid or Use Alternate Drug.
+• sodium phenylacetate: valproic acid decreases effects of sodium phenylacetate by pharmacodynamic antagonism. Avoid or Use Alternate Drug. Valproic acid may exacerbate hyperammonemia in pts. with urea cycle disorders.
+• vorinostat: pharmacodynamic synergism. Avoid or Use Alternate Drug. Risk of severe thrombocytopenia and GI bleeding.
+• zuranolone: Either decreases toxicity of the other by pharmacodynamic synergism. Avoid or Use Alternate Drug. Coadministration with other CNS depressants may increase impairment of psychomotor performance.
+
+Significant - Monitor Closely (242)
+(General class: CNS depressants, antihistamines, benzodiazepines, antipsychotics, antidepressants, opioids, and other AEDs usually increase sedation. Various CYP modifiers alter metabolism.)
+Key drugs include: acetaminophen/phenyltoloxamine, alprazolam, amitriptyline, aripiprazole, aspirin (increases valproic acid levels by plasma protein binding competition), baclofen, cannabidiol (increases toxicity/ALT/AST), carbamazepine (valproic acid increases or decreases carbamazepine levels; carbamazepine decreases valproic acid levels), clonazepam, clozapine, diazepam, diphenhydramine, dronabinol, ethanol, felbamate, fosphenytoin (risk of hyperammonemia), gabapentin, haloperidol, lamotrigine (valproic acid increases levels by decreasing metabolism), lorazepam, midazolam, olanzapine, phenobarbital, phenytoin (valproic acid increases phenytoin levels; phenytoin decreases valproic acid levels), propofol, quetiapine, risperidone, topiramate (risk of hyperammonemia with/without encephalopathy; hypothermia), zolpidem, etc.
+
+Minor (49)
+Includes acetaminophen (valproic acid decreases levels by increasing metabolism), clarithromycin, ibuprofen, mefloquine, topiramate (decreases valproic acid levels), voriconazole, etc.
+
+Adverse Effects
+>10%
+Nausea (31%)
+Headache (<31%)
+Increased bleeding time (26-30%)
+Thrombocytopenia (26-30%)
+Tremor (25%)
+Alopecia (<24%)
+Asthenia (16-20%)
+Infection (16-20%)
+Somnolence (16-20%)
+Amblyopia (11-15%)
+Diarrhea (11-15%)
+Diplopia (11-15%)
+Dizziness (11-15%)
+Dyspepsia (11-15%)
+Nystagmus (11-15%)
+Tinnitus (11-15%)
+Vomiting (11-15%)
+
+1-10%
+Ataxia (<8%)
+Increased appetite (<6%)
+Rash (<6%)
+Abdominal pain (<5%)
+Tremor (<5%)
+Back pain (<5%)
+Mood changes (<5%)
+Anxiety (<5%)
+Confusion (<5%)
+Abnormal gait (<5%)
+Paresthesia (<5%)
+Hallucinations (<5%)
+Catatonia (<5%)
+Dysarthria (<5%)
+Tardive dyskinesia (<5%)
+Vertigo (<5%)
+Irregular menses (<5%)
+Weight gain (4%)
+
+Frequency Not Defined
+Anorexia
+Acute pancreatitis (may be life-threatening)
+Hepatic toxicity
+Hyperammonemia
+Weight loss
+Fractures
+Osteoporosis
+Osteopenia
+Decreased bone mineral density
+Cerebral pseudoatrophy (acute or subacute cognitive decline and behavioral changes (apathy or irritability)
+
+Postmarketing Report
+Hair texture change
+Hair color change
+Photosensitivity
+Erythema multiforme
+Toxic epidermal necrolysis
+Stevens-Johnson syndrome
+Elevated testosterone level
+Hyperandrogenism
+Hirsutism
+Nail and nailbed disorders
+Weight gain
+Aspermia, azoospermia, decreased sperm count, decreased spermatozoa motility, male infertility, and abnormal spermatozoa morphology
+Paradoxical convulsion
+Parkinsonism
+
+Body as a Whole: Chest pain, chills, chills and fever, fever, neck pain, neck rigidity
+Cardiovascular System: Hypertension, hypotension, palpitations, postural hypotension, tachycardia, vasodilation
+Digestive System: Anorexia, fecal incontinence, flatulence, gastroenteritis, glossitis, periodontal abscess
+Hemic and Lymphatic System: Ecchymosis
+Metabolic and Nutritional Disorders: Edema, peripheral edema, SGOT increase, and SGPT increase
+Musculoskeletal System: Arthralgia, arthrosis, leg cramps, twitching, myalgia, fractures, decreased bone mineral density, osteopenia, osteoporosis, and weakness
+Nervous System: Abnormal dreams, depression, hypertonia, hypokinesia, insomnia, reflexes increased, thinking abnormalities
+Respiratory System: Dyspnea, rhinitis, cough increased, and sinusitis
+Skin and Appendages: Alopecia, Hyperpigmentation, acute generalized exanthematous pustulosis, dry skin, furunculosis, maculopapular rash, seborrhea, pruritus, and rash
+Special Senses: Conjunctivitis, deafness, dry eyes, ear pain, eye pain, tinnitus, taste perversion
+Urogenital System: Dysmenorrhea, dysuria, urinary incontinence, cystitis, metrorrhagia, and vaginal hemorrhage
+Psychiatric: Emotional upset, psychosis, aggression, psychomotor hyperactivity, hostility, disturbance in attention, learning disorder, and behavioral deterioration
+Hematologic: Relative lymphocytosis, macrocytosis, hypofibrinogenemia, leukopenia, acquired Pelger-Huet anomaly, eosinophilia, anemia including macrocytic with or without folate deficiency, bone marrow suppression, pancytopenia, aplastic anemia, agranulocytosis, and acute intermittent porphyria
+Endocrine: Irregular menses, secondary amenorrhea, hyperandrogenism, hirsutism, elevated testosterone level, breast enlargement, galactorrhea, polycystic ovary disease, parotid gland swelling, decreased carnitine concentrations, hyponatremia, hyperglycinemia, and inappropriate ADH secretion
+Reproductive: Aspermia, azoospermia, decreased sperm count, decreased spermatozoa motility, male infertility, and abnormal spermatozoa morphology
+Genitourinary: Enuresis, tubulointerstitial nephritis, and urinary tract infection
+Special Senses: Hearing loss.
+Other: Allergic reaction, anaphylaxis, developmental delay, bone pain, bradycardia, cutaneous vasculitis, and angioedema
+
+Warnings
+Black Box Warnings
+Hepatotoxicity
+• Hepatic failure resulting in fatalities has occurred
+• Children younger than 2 years are at increased risk for fatal hepatotoxicity, particularly patients on multiple anticonvulsants, as well as those with congenital metabolic disorders, severe seizure disorders accompanied by mental retardation, or organic brain disease
+• Increased risk of valproate-induced acute liver failure and resultant deaths in patients with hereditary neurometabolic syndromes caused by DNA mutations of the mitochondrial DNA polymerase-gamma (POLG) gene (eg, Alpers Huttenlocher Syndrome)
+• If used in children with these conditions, it should be administered with extreme caution as a sole agent
+• Hepatotoxicity usually occurs during the first 6 months of treatment and may be preceded by malaise, weakness, lethargy, facial edema, anorexia, and vomiting
+
+Patients with mitochondrial disease
+• There is increased risk of valproate-induced acute liver failure and resultant deaths in patients with hereditary neurometabolic syndromes caused by DNA mutations of mitochondrial DNA polymerase gamma (POLG) gene; therapy is contraindicated in patients known to have mitochondrial disorders caused by mutations in mitochondrial DNA polymerase-gamma (POLG; eg, Alpers-Huttenlocher Syndrome) and children <2 years of age who are suspected of having a POLG-related disorder; in patients >2 years, clinically suspected having hereditary mitochondrial disease, only use after other anticonvulsants have failed; closely monitor older group of patients for development of acute liver injury; perform regular clinical assessments and serum liver testing; perform POLG mutation screening according to current clinical practice
+
+Teratogenicity
+• Do not use in women of childbearing age unless the drug is essential to the management of the medical condition; all non-pregnant women of childbearing potential should use effective birth control if taking valproate products
+• May cause neural tube defects
+• Children exposed in utero have increased risk for lower cognitive test scores compared with those exposed in utero to other antiseizure medications; not known when during pregnancy cognitive effects in drug-exposed children occur
+• Alternative medications that have a lower risk for adverse birth outcomes should be considered
+• Patients should not stop taking valproate without talking to a health-care professional
+• Not for administration to treat women with epilepsy or bipolar disorder who are pregnant or who plan to become pregnant unless other medications have failed to provide adequate symptom control or are otherwise unacceptable
+
+Pancreatitis
+• Cases of life-threatening pancreatitis have been reported in children and adults. Some cases have been described as hemorrhagic with a rapid progression from initial symptoms to death.
+
+Contraindications
+• Hepatic disease or significant hepatic dysfunction
+• Known to have mitochondrial disorders caused by mutations in mitochondrial DNA polymerase y (POLG; eg, Alpers-Huttenlocher Syndrome) and children under two years of age who are suspected of having a POLG-related disorder
+• Known hypersensitivity to divalproex sodium, sodium valproate, or valproic acid.
+• Known urea cycle disorders
+• Being treated for prophylaxis of migraine headaches who are pregnant or in women of childbearing potential who are not using effective contraception
+
+Cautions
+• Probability of thrombocytopenia increases significantly at total trough valproate plasma concentrations exceed 110 mcg/mL in females and 135 mcg/mL in males; because of reports of cytopenias, inhibition of secondary phase of platelet aggregation, and abnormal coagulation parameters.
+• Measurements of complete blood counts and coagulation tests are recommended before initiating therapy and at periodic intervals; evidence of hemorrhage, bruising, or a disorder of hemostasis/coagulation is an indication for reduction of dosage or withdrawal of therapy.
+• Medication residue in the stool reported; some patients have had anatomic or functional gastrointestinal disorders with shortened GI transit times. If clinically indicated, may consider alternative treatment.
+• Bleeding and other hematopoietic disorders may occur; monitor platelet counts and coagulation tests.
+• Hepatotoxic (age <2 years, higher risk of fatal hepatotoxicity); evaluate high risk populations and monitor serum liver tests; discontinue immediately with signs/symptoms of significant or suspected impairment.
+• Discontinue if hyperammonemia occurs; check ammonia level if emesis occurs or if the patient displays lethargy or abnormal behavior; evaluate patient for urea cycle disorder or hepatotoxicity.
+• Pancreatitis, including fatalities reported.
+• Porphyria may occur.
+• May produce false-positive urine ketone test and alter TFTs.
+• May cause CNS depression, which may impair physical or mental ability to perform tasks requiring mental alertness.
+• Birth defects and decreased IQ following in utero exposure. Should not be administered to a woman of childbearing potential unless essential; reversible and irreversible cerebellar atrophy reported; monitor motor and cognitive function routinely.
+• Drug reaction with eosinophilia and systemic symptoms (DRESS)/multiorgan hypersensitivity reaction reported; discontinue therapy; therapy should be discontinued and not be resumed if an alternative etiology for signs or symptoms cannot be established.
+• Not recommended for post-traumatic seizure prophylaxis in patients with acute head trauma (may increase mortality).
+• Hypothermia reported during valproate therapy with or without associated hyperammonemia; this adverse reaction can also occur in patients using concomitant topiramate.
+• Somnolence in the elderly can occur; valproic acid dosage should be increased slowly and with regular monitoring for fluid and nutritional intake.
+• Serious and sometimes fatal dermatologic reactions, including toxic epidermal necrolysis (TEN), Stevens Johnson syndrome (SJS), acute generalized exanthematous pustulosis (AGEP), and erythema multiforme (EM) reported. Discontinue at first sign of a rash, unless the rash is clearly not drug related.
+• Angioedema has been reported in patients treated with valproate in the postmarketing setting; therapy should be discontinued immediately if symptoms of angioedema such as facial, perioral, or upper airway swelling occur.
+
+Pregnancy & Lactation
+Pregnancy
+• There is a pregnancy exposure registry that monitors pregnancy outcomes in women exposed to antiepileptic drugs (AEDs) (NAAED Pregnancy Registry).
+• For use in prophylaxis of migraine headaches, valproate is contraindicated in women who are pregnant and in women of childbearing potential who are not using effective contraception.
+• For use in epilepsy or bipolar disorder, valproate should not be used to treat women who are pregnant or who plan to become pregnant unless other medications have failed to provide adequate symptom control or are otherwise unacceptable.
+• Women with epilepsy who become pregnant while taking valproate should not discontinue valproate abruptly, as this can precipitate status epilepticus. Maternal valproate use during pregnancy for any indication increases risk of congenital malformations, particularly neural tube defects including spina bifida. This risk is dose-dependent; in utero exposure to valproate may also result in hearing impairment or hearing loss.
+• Epidemiological studies have indicated that children exposed to valproate in utero have lower IQ scores and a higher risk of neurodevelopmental disorders (NDDs), including autism spectrum disorder (ASD), intellectual disability (ID, defined as an IQ < 70), and attention deficit/hyperactivity disorder (ADHD).
+• Available prenatal diagnostic testing to detect neural tube and other defects should be offered to pregnant women using valproate; dietary folic acid supplementation both prior to conception and during pregnancy should be routinely recommended for women of childbearing potential using valproate.
+
+Lactation
+• This drug is excreted in human milk; data in the published literature describe the presence of this drug in human milk (range: 0.4 mcg/mL to 3.9 mcg/mL), corresponding to 1% to 10% of maternal serum levels.
+• The developmental and health benefits of breastfeeding should be considered along with the mother's clinical need for therapy and any potential adverse effects on breastfed infant.
+• Monitor the breastfed infant for signs of liver damage, including jaundice and unusual bruising or bleeding.
+
+Pregnancy Categories
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of fetal risk.
+B: May be acceptable.
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human studies not available or neither animal nor human studies done.
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive evidence of human fetal risk.
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives exist.
+
+Pharmacology
+Mechanism of Action
+May increase levels of the inhibitory neurotransmitter gamma-aminobutyric acid (GABA) in brain; may enhance or mimic action of GABA at postsynaptic receptor sites; may also inhibit sodium and calcium channels
+
+Absorption
+Bioavailability: Extended-release 81-89% of delayed-release
+Peak plasma time: 2 hr (Stavzor)
+Peak plasma concentration: 115-145 mcg/mL (IV)
+
+Distribution
+Protein bound: 80-90%
+Vd: 92 L/1.73 m²
+
+Metabolism
+Metabolized by liver
+Enzymes inhibited: CYP2C9
+Metabolites: 2-propyl-3-ketopentanoic acid
+
+Elimination
+Half-life: 7-13 hr (>2 months); 9-16 hr (adults)
+Dialyzable: Yes
+Total body clearance: 4.6 L·hr/1.73 m² (50% higher in children <10 years)
+Excretion: Urine (30-50%)
+
+Administration
+IV Preparation
+Dilute with at least 50 mL of compatible diluent (eg, D5W; NS; LR)
+Stable for at least 24 hr when stored in glass or PVC at 15-30°C (59-86°F)
+
+IV Administration
+Infuse over 60 min at <20 mg/min
+Has been administered as rapid infusion over 5-10 min (1.5-3 mg/kg/min) (not per label; rapid infusion associated with increased AE risk, but in limited studies was well-tolerated)
+
+Oral Administration
+Swallow whole, do not chew or crush
+Capsules may be opened and sprinkled on spoonful of soft food immediately before administration
+If dose is skipped, do not double next dose
+If daily oral dose >250 mg/day, give as divided dose
+
+Storage
+Store vials at 15-30°C (59-86°F)

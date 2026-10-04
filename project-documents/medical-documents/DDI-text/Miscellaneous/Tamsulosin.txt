@@ -1,0 +1,1143 @@
+﻿6/22/26, 8:12 PM Flomax (tamsulosin) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+tamsulosin (Rx)
+Brand and Other Names: Flomax
+Classes: Alpha1 Blockers; BPH, Alpha Blockers
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+capsule
+
+0.4mg
+
+Benign Prostatic Hypertrophy
+
+Indicated for treatment of signs and symptoms of benign prostatic hyperplasia (BPH)
+
+0.4 mg PO qDay; take 30 minutes after same meal each day
+
+If inadequate response after 2-4 weeks, may increase to 0.8 mg qDay
+
+If therapy interrupted or discontiniued for several days, resume at 0.4 mg/day and
+increase if needed
+
+Bladder Outlet Obstruction (Off-label)
+
+Relief of symptoms
+
+0.4 mg PO qDay
+
+https://reference.medscape.com/drug/flomax-tamsulosin-342839 1/20
+
+
+
+6/22/26, 8:12 PM Flomax (tamsulosin) dosing, indications, interactions, adverse effects, and more
+
+Ureteral Stones (Off-label)
+
+Facilitation of kidney stone expulsion
+
+0.4 mg PO qDay; discontinued after successful expulsion (average, 1-2 weeks)
+
+Double-blind, placebo-controlled trial found tamsulosin did not significantly increase
+stone passage rate compared with placebo for stones <9 mm (JAMA Intern Med. 2018
+Aug 1;178(8):1051-1057)
+
+Dosing Modifications
+
+Renal impairment
+
+CrCl ≥10 mL/min: Dosage adjustment not necessary
+
+CrCl <10 mL/min: Not studied
+
+Hepatic impairment
+
+Mild to moderate: Dosage adjustment not necessary
+
+Severe: Not studied
+
+Dosing Considerations
+
+Not indicated for hypertension
+
+PEDIATRIC
+Safety and efficacy not established
+
+Interactions
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and tamsulosin
+No Interactions Found
+Interactions Found
+Contraindicated
+
+Serious
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+Contraindicated (2)
+
+mavorixafor
+
+https://reference.medscape.com/drug/flomax-tamsulosin-342839 2/20
+
+
+
+6/22/26, 8:12 PM Flomax (tamsulosin) dosing, indications, interactions, adverse effects, and more
+
+mavorixafor will increase the level or effect of tamsulosin by affecting hepatic
+enzyme CYP2D6 metabolism. Contraindicated. Mavorixafor (a strong CYP2D6
+inhibitor) is contraindicated with drugs that are highly dependent on CYP2D6 for
+clearance.
+
+ombitasvir/paritaprevir/ritonavir & dasabuvir (DSC)
+ombitasvir/paritaprevir/ritonavir & dasabuvir (DSC) will increase the level or effect
+of tamsulosin by affecting hepatic/intestinal enzyme CYP3A4 metabolism.
+Contraindicated. Increased risk for hypotensio
+
+Serious (46)
+
+alfuzosin
+alfuzosin, tamsulosin. Either increases effects of the other by additive vasodilation.
+Avoid or Use Alternate Drug. Risk of hypotension.
+
+apalutamide
+apalutamide will decrease the level or effect of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+Coadministration of apalutamide, a strong CYP3A4 inducer, with drugs that are
+CYP3A4 substrates can result in lower exposure to these medications. Avoid or
+substitute another drug for these medications when possible. Evaluate for loss of
+therapeutic effect if medication must be coadministered. Adjust dose according to
+prescribing information if needed.
+
+atazanavir
+atazanavir increases levels of tamsulosin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug. Potential for increased toxicity. .
+
+carbamazepine
+carbamazepine will decrease the level or effect of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+ceritinib
+ceritinib will increase the level or effect of tamsulosin by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+chloramphenicol
+chloramphenicol will increase the level or effect of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+
+clarithromycin
+clarithromycin increases levels of tamsulosin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+cobicistat
+cobicistat will increase the level or effect of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+conivaptan
+conivaptan increases levels of tamsulosin by affecting hepatic/intestinal enzyme
+
+https://reference.medscape.com/drug/flomax-tamsulosin-342839 3/20
+
+
+
+6/22/26, 8:12 PM Flomax (tamsulosin) dosing, indications, interactions, adverse effects, and more
+
+CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+dacomitinib
+dacomitinib will increase the level or effect of tamsulosin by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug. Avoid use with
+CYP2D6 substrates where minimal increases in concentration of the CYP2D6
+substrate may lead to serious or life-threatening toxicities.
+
+darunavir
+darunavir increases levels of tamsulosin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+doxazosin
+doxazosin, tamsulosin. Either increases effects of the other by additive vasodilation.
+Avoid or Use Alternate Drug. Risk of hypotension.
+
+enzalutamide
+enzalutamide will decrease the level or effect of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+fosamprenavir
+fosamprenavir increases levels of tamsulosin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+fosphenytoin
+fosphenytoin will decrease the level or effect of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+givosiran
+givosiran will increase the level or effect of tamsulosin by affecting hepatic enzyme
+CYP2D6 metabolism. Avoid or Use Alternate Drug. Avoid coadministration of
+sensitive CYP2D6 substrates with givosiran. If unavoidable, decrease the CYP2D6
+substrate dosage in accordance with approved product labeling.
+
+idelalisib
+idelalisib will increase the level or effect of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+Idelalisib is a strong CYP3A inhibitor; avoid coadministration with sensitive CYP3A
+substrates
+
+iloperidone
+tamsulosin, iloperidone. Either increases effects of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Coadministration of iloperidone with
+alpha-adrenergic blocking agents may cause symptomatic hypotension .
+
+imatinib
+imatinib increases levels of tamsulosin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+isoniazid
+isoniazid increases levels of tamsulosin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+https://reference.medscape.com/drug/flomax-tamsulosin-342839 4/20
+
+
+
+6/22/26, 8:12 PM Flomax (tamsulosin) dosing, indications, interactions, adverse effects, and more
+
+itraconazole
+itraconazole increases levels of tamsulosin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug. Not recommended during and 2
+weeks after itraconazole treatment. .
+
+ivosidenib
+ivosidenib will decrease the level or effect of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid
+coadministration of sensitive CYP3A4 substrates with ivosidenib or replace with
+alternative therapies. If coadministration is unavoidable, monitor patients for loss of
+therapeutic effect of these drugs.
+
+ketoconazole
+ketoconazole increases levels of tamsulosin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug. Potential for increased toxicity.
+
+levoketoconazole
+levoketoconazole increases levels of tamsulosin by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Potential for increased
+toxicity.
+
+lonafarnib
+lonafarnib will increase the level or effect of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid
+coadministration with sensitive CYP3A substrates. If coadministration unavoidable,
+monitor for adverse reactions and reduce CYP3A substrate dose in accordance with
+product labeling.
+
+lopinavir
+lopinavir increases levels of tamsulosin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug. Potential for increased toxicity.
+
+milsaperidone
+tamsulosin, milsaperidone. Either increases effects of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Coadministration of
+milsaperidone with alpha-adrenergic blocking agents may cause symptomatic
+hypotension.
+
+nefazodone
+nefazodone increases levels of tamsulosin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+nelfinavir
+nelfinavir increases levels of tamsulosin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+nicardipine
+nicardipine increases levels of tamsulosin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+nirmatrelvir/ritonavir
+nirmatrelvir/ritonavir will increase the level or effect of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+https://reference.medscape.com/drug/flomax-tamsulosin-342839 5/20
+
+
+
+6/22/26, 8:12 PM Flomax (tamsulosin) dosing, indications, interactions, adverse effects, and more
+
+Tamsulosin metabolized mainly by CYP3A4 and to a lesser extent by CYP2D6.
+Pause tamsulosin and restart 3 days after completing nirmatrelvir/ritonavir given
+that CYP3A4 inhibition takes several days to resolve.
+
+phenobarbital
+phenobarbital will decrease the level or effect of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+phenoxybenzamine
+phenoxybenzamine, tamsulosin. Either increases effects of the other by additive
+vasodilation. Avoid or Use Alternate Drug. Risk of hypotension.
+
+phentolamine
+phentolamine, tamsulosin. Either increases effects of the other by additive
+vasodilation. Avoid or Use Alternate Drug. Risk of hypotension.
+
+phenytoin
+phenytoin will decrease the level or effect of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+posaconazole
+posaconazole increases levels of tamsulosin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+prazosin
+prazosin, tamsulosin. Either increases effects of the other by additive vasodilation.
+Avoid or Use Alternate Drug. Risk of hypotension.
+
+primidone
+primidone will decrease the level or effect of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+quinidine
+quinidine increases levels of tamsulosin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+rifampin
+rifampin will decrease the level or effect of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+ritonavir
+ritonavir increases levels of tamsulosin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+silodosin
+silodosin, tamsulosin. Either increases effects of the other by additive vasodilation.
+Avoid or Use Alternate Drug. Risk of hypotension.
+
+terazosin
+terazosin, tamsulosin. Either increases effects of the other by additive vasodilation.
+Avoid or Use Alternate Drug. Risk of hypotension.
+
+tipranavir
+
+https://reference.medscape.com/drug/flomax-tamsulosin-342839 6/20
+
+
+
+6/22/26, 8:12 PM Flomax (tamsulosin) dosing, indications, interactions, adverse effects, and more
+
+tipranavir increases levels of tamsulosin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+tucatinib
+tucatinib will increase the level or effect of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid
+concomitant use of tucatinib with CYP3A substrates, where minimal concentration
+changes may lead to serious or life-threatening toxicities. If unavoidable, reduce
+CYP3A substrate dose according to product labeling.
+
+voriconazole
+voriconazole increases levels of tamsulosin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+Monitor Closely (96)
+
+abiraterone
+abiraterone increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor. Avoid coadministration of abiraterone with
+substrates of CYP2D6. If alternative therapy cannot be used, exercise caution and
+consider a dose reduction of the CYP2D6 substrate.
+
+amifostine
+amifostine, tamsulosin. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration with blood pressure
+lowering agents may increase the risk and severity of hypotension associated with
+amifostine. When amifostine is used at chemotherapeutic doses, withhold blood
+pressure lowering medications for 24 hr prior to amifostine; if blood pressure
+lowering medication cannot be withheld, do not administer amifostine.
+
+amiodarone
+amiodarone increases levels of tamsulosin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Dose reduction may be neeed for
+coadministered drugs that are predominantly metabolized by CYP3A.
+
+amiodarone increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+amlodipine
+tamsulosin, amlodipine. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Monitor for hypotension and orthostasis.
+
+aprepitant
+aprepitant increases levels of tamsulosin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Dose reduction may be needed for
+coadministered drugs that are predominantly metabolized by CYP3A.
+
+avanafil
+avanafil, tamsulosin. Either increases effects of the other by additive vasodilation.
+Use Caution/Monitor. Risk of hypotension.
+
+bicalutamide
+
+https://reference.medscape.com/drug/flomax-tamsulosin-342839 7/20
+
+
+
+6/22/26, 8:12 PM Flomax (tamsulosin) dosing, indications, interactions, adverse effects, and more
+
+bicalutamide increases levels of tamsulosin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Dose reduction may be needed for
+coadministered drugs that are predominantly metabolized by CYP3A.
+
+bortezomib
+bortezomib increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+bosentan
+bosentan will decrease the level or effect of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+bupropion
+bupropion increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+cenobamate
+cenobamate will decrease the level or effect of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Increase dose of CYP3A4 substrate, as needed, when coadministered with
+cenobamate.
+
+chloroquine
+chloroquine increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+chlorpromazine
+chlorpromazine increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+cimetidine
+cimetidine increases levels of tamsulosin by decreasing renal clearance. Use
+Caution/Monitor. Decreases tamsulosin clearance by 26% resulting in increased
+AUC (44%).
+
+cimetidine increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+cinacalcet
+cinacalcet increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+clobazam
+clobazam increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+clomipramine
+clomipramine increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+clozapine
+clozapine increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+
+https://reference.medscape.com/drug/flomax-tamsulosin-342839 8/20
+
+
+
+6/22/26, 8:12 PM Flomax (tamsulosin) dosing, indications, interactions, adverse effects, and more
+
+metabolism. Use Caution/Monitor.
+
+cocaine topical
+cocaine topical increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+crizotinib
+crizotinib increases levels of tamsulosin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Dose reduction may be needed for
+coadministered drugs that are predominantly metabolized by CYP3A.
+
+crofelemer
+crofelemer increases levels of tamsulosin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Crofelemer has the potential to inhibit
+CYP3A4 at concentrations expected in the gut; unlikely to inhibit systemically
+because minimally absorbed.
+
+cyclosporine
+cyclosporine increases levels of tamsulosin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Dose reduction may be needed for
+coadministered drugs that are predominantly metabolized by CYP3A.
+
+dabrafenib
+dabrafenib will decrease the level or effect of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+
+danazol
+danazol will increase the level or effect of tamsulosin by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+darifenacin
+darifenacin increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+desipramine
+desipramine increases levels of tamsulosin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Dose reduction may be needed for
+coadministered drugs that are predominantly metabolized by CYP3A.
+
+desipramine increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+dexmedetomidine
+dexmedetomidine increases levels of tamsulosin by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+diltiazem
+diltiazem increases levels of tamsulosin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Dose reduction may be needed for
+coadministered drugs that are predominantly metabolized by CYP3A.
+
+diphenhydramine
+
+https://reference.medscape.com/drug/flomax-tamsulosin-342839 9/20
+
+
+
+6/22/26, 8:12 PM Flomax (tamsulosin) dosing, indications, interactions, adverse effects, and more
+
+diphenhydramine increases levels of tamsulosin by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+disulfiram
+disulfiram increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+dronedarone
+dronedarone increases levels of tamsulosin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Dose reduction may be needed for
+coadministered drugs that are predominantly metabolized by CYP3A.
+
+dronedarone increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+duloxetine
+duloxetine increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+duvelisib
+duvelisib will increase the level or effect of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Coadministration with duvelisib increases AUC of a sensitive CYP3A4 substrate
+which may increase the risk of toxicities of these drugs. Consider reducing the dose
+of the sensitive CYP3A4 substrate and monitor for signs of toxicities of the
+coadministered sensitive CYP3A substrate.
+
+efavirenz
+efavirenz increases levels of tamsulosin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Dose reduction may be needed for
+coadministered drugs that are predominantly metabolized by CYP3A.
+
+elagolix
+elagolix decreases levels of tamsulosin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Modify Therapy/Monitor Closely. Elagolix is a weak-to-
+moderate CYP3A4 inducer. Monitor CYP3A substrates if coadministered. Consider
+increasing CYP3A substrate dose if needed.
+
+eliglustat
+eliglustat increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Modify Therapy/Monitor Closely. Monitor therapeutic drug
+concentrations, as indicated, or consider reducing the dosage of the concomitant
+drug and titrate to clinical effect.
+
+elvitegravir/cobicistat/emtricitabine/tenofovir DF
+elvitegravir/cobicistat/emtricitabine/tenofovir DF increases levels of tamsulosin by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor
+Closely. Cobicistat is a CYP3A4 inhibitor; contraindicated with CYP3A4 substrates
+for which elevated plasma concentrations are associated with serious and/or life-
+threatening events.
+
+elvitegravir/cobicistat/emtricitabine/tenofovir DF increases levels of tamsulosin by
+affecting hepatic enzyme CYP2D6 metabolism. Modify Therapy/Monitor Closely.
+
+https://reference.medscape.com/drug/flomax-tamsulosin-342839 10/20
+
+
+
+6/22/26, 8:12 PM Flomax (tamsulosin) dosing, indications, interactions, adverse effects, and more
+
+Cobicistat is a CYP2D6 inhibitor; caution with CYP2D6 substrates for which
+elevated plasma concentrations are associated with serious and/or life-threatening
+events.
+
+encorafenib
+encorafenib, tamsulosin. affecting hepatic/intestinal enzyme CYP3A4 metabolism.
+Use Caution/Monitor. Encorafenib both inhibits and induces CYP3A4 at clinically
+relevant plasma concentrations. Coadministration of encorafenib with sensitive
+CYP3A4 substrates may result in increased toxicity or decreased efficacy of these
+agents.
+
+erythromycin base
+erythromycin base increases levels of tamsulosin by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor. Dose reduction may be needed
+for coadministered drugs that are predominantly metabolized by CYP3A.
+
+erythromycin ethylsuccinate
+erythromycin ethylsuccinate increases levels of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Dose
+reduction may be needed for coadministered drugs that are predominantly
+metabolized by CYP3A.
+
+erythromycin lactobionate
+erythromycin lactobionate increases levels of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Dose
+reduction may be needed for coadministered drugs that are predominantly
+metabolized by CYP3A.
+
+erythromycin stearate
+erythromycin stearate increases levels of tamsulosin by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor. Dose reduction may be needed
+for coadministered drugs that are predominantly metabolized by CYP3A.
+
+etravirine
+etravirine will decrease the level or effect of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+fedratinib
+fedratinib will increase the level or effect of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Adjust dose
+of drugs that are CYP3A4 substrates as necessary.
+
+fedratinib will increase the level or effect of tamsulosin by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor. Adjust dose of drugs that are CYP2D6
+substrates as necessary.
+
+fluconazole
+fluconazole increases levels of tamsulosin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Dose reduction may be needed for
+coadministered drugs that are predominantly metabolized by CYP3A.
+
+fluoxetine
+
+https://reference.medscape.com/drug/flomax-tamsulosin-342839 11/20
+
+
+
+6/22/26, 8:12 PM Flomax (tamsulosin) dosing, indications, interactions, adverse effects, and more
+
+fluoxetine increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+fosaprepitant
+fosaprepitant increases levels of tamsulosin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Dose reduction may be needed for
+coadministered drugs that are predominantly metabolized by CYP3A.
+
+grapefruit
+grapefruit increases levels of tamsulosin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Dose reduction may be needed for
+coadministered drugs that are predominantly metabolized by CYP3A.
+
+haloperidol
+haloperidol increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+iloprost
+iloprost, tamsulosin. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. When administering iloprost IV,
+consider temporary discontinuation of concomitant vasodilators or other
+medications that reduce blood pressure to mitigate potential additive hypotensive
+effects. If hypotension persists despite discontinuing other antihypertensives and
+fluid resuscitation, consider iloprost dose reduction or discontinuation.
+
+imatinib
+imatinib increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+imipramine
+imipramine increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+isoniazid
+isoniazid increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+istradefylline
+istradefylline will increase the level or effect of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Istradefylline
+40 mg/day increased peak levels and AUC of CYP3A4 substrates in clinical trials.
+This effect was not observed with istradefylline 20 mg/day. Consider dose reduction
+of sensitive CYP3A4 substrates.
+
+ketoconazole
+ketoconazole increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+lapatinib
+lapatinib increases levels of tamsulosin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Dose reduction may be needed for
+coadministered drugs that are predominantly metabolized by CYP3A.
+
+https://reference.medscape.com/drug/flomax-tamsulosin-342839 12/20
+
+
+
+6/22/26, 8:12 PM Flomax (tamsulosin) dosing, indications, interactions, adverse effects, and more
+
+larotrectinib
+larotrectinib will increase the level or effect of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+lenacapavir
+lenacapavir will increase the level or effect of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Lencapavir
+may increase CYP3A4 substrates initiated within 9 months after last SC dose of
+lenacapavir, which may increase potential risk of adverse reactions of CYP3A4
+substrates.
+
+levoketoconazole
+levoketoconazole increases levels of tamsulosin by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+lidocaine
+lidocaine increases levels of tamsulosin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Dose reduction may be needed for
+coadministered drugs that are predominantly metabolized by CYP3A.
+
+lidocaine increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+lopinavir
+lopinavir increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+lorcaserin
+lorcaserin increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+lorlatinib
+lorlatinib will decrease the level or effect of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+methadone
+methadone increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+methimazole
+methimazole increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+metronidazole
+metronidazole increases levels of tamsulosin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Dose reduction may be needed for
+coadministered drugs that are predominantly metabolized by CYP3A.
+
+mifepristone
+mifepristone will increase the level or effect of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+mitotane
+
+https://reference.medscape.com/drug/flomax-tamsulosin-342839 13/20
+
+
+
+6/22/26, 8:12 PM Flomax (tamsulosin) dosing, indications, interactions, adverse effects, and more
+
+mitotane decreases levels of tamsulosin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Mitotane is a strong inducer of
+cytochrome P-4503A4; monitor when coadministered with CYP3A4 substrates for
+possible dosage adjustments.
+
+nafcillin
+nafcillin will decrease the level or effect of tamsulosin by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+nefazodone
+nefazodone increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+nicardipine
+nicardipine increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+oxymetazoline topical
+oxymetazoline topical increases and tamsulosin decreases sympathetic (adrenergic)
+effects, including increased blood pressure and heart rate. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+paroxetine
+paroxetine increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+pseudoephedrine
+pseudoephedrine decreases effects of tamsulosin by sympathetic (adrenergic)
+effects, including increased blood pressure and heart rate. Use Caution/Monitor.
+
+pyrimethamine
+pyrimethamine increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+quinidine
+quinidine increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+quinine
+quinine increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+ranolazine
+ranolazine increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+ribociclib
+ribociclib will increase the level or effect of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+rifabutin
+rifabutin will decrease the level or effect of tamsulosin by affecting
+
+https://reference.medscape.com/drug/flomax-tamsulosin-342839 14/20
+
+
+
+6/22/26, 8:12 PM Flomax (tamsulosin) dosing, indications, interactions, adverse effects, and more
+
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+rifapentine
+rifapentine will decrease the level or effect of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+rilzabrutinib
+rilzabrutinib will increase the level or effect of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Follow
+substrate recommendations for use with moderate CYP3A inhibitors
+
+ritonavir
+ritonavir increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+rolapitant
+rolapitant will increase the level or effect of tamsulosin by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor. Rolapitant may increase plasma
+concentrations of CYP2D6 substrates for at least 28 days following rolapitant
+administration.
+
+rucaparib
+rucaparib will increase the level or effect of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Adjust dosage of CYP3A4 substrates, if clinically indicated.
+
+sertraline
+sertraline increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+sildenafil
+sildenafil, tamsulosin. Either increases effects of the other by additive vasodilation.
+Use Caution/Monitor. Risk of hypotension.
+
+stiripentol
+stiripentol, tamsulosin. affecting hepatic/intestinal enzyme CYP3A4 metabolism.
+Modify Therapy/Monitor Closely. Stiripentol is a CYP3A4 inhibitor and inducer.
+Monitor CYP3A4 substrates coadministered with stiripentol for increased or
+decreased effects. CYP3A4 substrates may require dosage adjustment.
+
+tadalafil
+tadalafil, tamsulosin. Either increases effects of the other by additive vasodilation.
+Use Caution/Monitor. Risk of hypotension.
+
+tecovirimat
+tecovirimat will decrease the level or effect of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Tecovirimat is
+a weak CYP3A4 inducer. Monitor sensitive CYP3A4 substrates for effectiveness if
+coadministered.
+
+terbinafine
+terbinafine will increase the level or effect of tamsulosin by affecting hepatic
+enzyme CYP2D6 metabolism. Modify Therapy/Monitor Closely. Assess need to
+
+https://reference.medscape.com/drug/flomax-tamsulosin-342839 15/20
+
+
+
+6/22/26, 8:12 PM Flomax (tamsulosin) dosing, indications, interactions, adverse effects, and more
+
+reduce dose of CYP2D6-metabolized drug.
+
+thioridazine
+thioridazine increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+tranylcypromine
+tranylcypromine increases levels of tamsulosin by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor.
+
+trazodone
+trazodone increases levels of tamsulosin by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor.
+
+vardenafil
+vardenafil, tamsulosin. Either increases effects of the other by additive vasodilation.
+Use Caution/Monitor. Risk of hypotension.
+
+viloxazine
+viloxazine will increase the level or effect of tamsulosin by affecting hepatic enzyme
+CYP2D6 metabolism. Use Caution/Monitor. Viloxazine (a weak CYP2D6 inhibitor)
+may increase systemic exposure of CYP2D6 substrates. Monitor and adjust dose of
+substrate as clinically indicated.
+
+Minor (6)
+
+acetazolamide
+acetazolamide will increase the level or effect of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+anastrozole
+anastrozole will increase the level or effect of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+benazepril
+tamsulosin, benazepril. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. May increase risk of hypotension.
+
+captopril
+tamsulosin, captopril. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. May increase risk of hypotension.
+
+cyclophosphamide
+cyclophosphamide will increase the level or effect of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+drospirenone
+drospirenone will increase the level or effect of tamsulosin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+https://reference.medscape.com/drug/flomax-tamsulosin-342839 16/20
+
+
+
+6/22/26, 8:12 PM Flomax (tamsulosin) dosing, indications, interactions, adverse effects, and more
+
+Adverse Effects
+
+>10%
+
+Headache (19-21%)
+
+Orthostatic hypotension (6-19%)
+
+Rhinitis (13-18%)
+
+Abnormal ejaculation (8-18%)
+
+Dizziness (15-17%)
+
+Arthralgia (11%)
+
+Infection (9-11%)
+
+1-10%
+
+Asthenia (8%)
+
+Back pain (7-8%)
+
+Skin rash (7%)
+
+Pharyngitis (5-6%)
+
+Diarrhea (4-6%)
+
+Myalgia (5%)
+
+Chest pain (4%)
+
+Cough (3-4%)
+
+Somnolence (3-4%)
+
+Nausea (2-4%)
+
+Sinusitis (2-4%)
+
+Abdominal discomfort (2-3%)
+
+Bitter taste (2-3%)
+
+Decreased libido (1-2%)
+
+Insomnia (1-2%)
+
+Postmarketing Reports
+
+Priapism (rare)
+
+Signs and symptoms of orthostasis, including syncope
+
+Infrequent reports of dyspnea, palpitations, hypotension, atrial fibrillation, arrhythmia,
+and tachycardia
+
+https://reference.medscape.com/drug/flomax-tamsulosin-342839 17/20
+
+
+
+6/22/26, 8:12 PM Flomax (tamsulosin) dosing, indications, interactions, adverse effects, and more
+
+Visual impairment
+
+During cataract and glaucoma surgery, a variant of small pupil syndrome known as
+Intraoperative Floppy Iris Syndrome (IFIS) has been reported in association with alpha1
+blocker therapy
+
+Skin desquamation including reports of Stevens-Johnson syndrome, erythema
+multiforme, and dermatitis exfoliative
+
+Constipation, vomiting, and epistaxis
+
+Allergic-type reactions (eg, skin rash, urticaria, pruritus, angioedema, respiratory
+symptoms) have been reported with positive rechallenge
+
+Dry mouth
+
+Warnings
+
+Contraindications
+
+Hypersensitivity
+
+Cautions
+
+Use with caution in coronary artery disease, liver disease, general anesthesia
+
+Orthostatic hypotension may occur
+
+Priapism rarely reported
+
+Prostatic cancer should be ruled out before therapy is initiated
+
+May cause syncope (first-dose effect)
+
+Discontinue if angina symptoms occur or worsen
+
+Intraoperative floppy iris syndrome has been reported in patients receiving alpha1
+blockers at time of cataract surgery; association is unclear
+
+Patients with sulfa allergy have rarely developed allergic reaction; avoid use if previous
+sulfa allergy reactions have been life-threatening
+
+Not for use as antihypertensive drug
+
+May exacerbate heart failure
+
+Pregnancy & Lactation
+
+Pregnancy
+
+No data are available on use in pregnant women
+
+https://reference.medscape.com/drug/flomax-tamsulosin-342839 18/20
+
+
+
+6/22/26, 8:12 PM Flomax (tamsulosin) dosing, indications, interactions, adverse effects, and more
+
+No adverse developmental effects observed in animal studies administering tamsulosin
+to rats or rabbits during organogenesis
+
+Infertility
+
+Males: Abnormal ejaculation including ejaculation failure, ejaculation disorder,
+retrograde ejaculation, and ejaculation decrease has been associated with therapy;
+studies in rats revealed significantly reduced fertility in males considered to be due
+to impairment of ejaculation, which was reversible
+
+Females: Drug is not indicated for use in women; female fertility in rats was
+significantly reduced, considered to be due to impairment of fertilization
+
+Lactation
+
+There are no data on presence of drug in human milk, effects on breastfed infant, or on
+milk production
+
+No data are available; owing to potential of tamsulosin to cause hypotension,
+breastfeeding is not recommended if taking tamsulosin
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+Blocks alpha1a adrenergic receptor in smooth muscle of prostate, decreasing bladder
+neck and urethral resistance
+
+Absorption
+
+Bioavailability: Fasting, 30%
+
+Onset: 4-8 hr
+
+Peak plasma time: With food, 6-7 hr; fasting, 4-5 hr
+
+https://reference.medscape.com/drug/flomax-tamsulosin-342839 19/20
+
+
+
+6/22/26, 8:12 PM Flomax (tamsulosin) dosing, indications, interactions, adverse effects, and more
+
+Distribution
+
+Protein bound: 90%
+
+Vd: 0.2 L/kg or 16 L
+
+Metabolism
+
+Metabolized in liver
+
+Metabolites: Glucuronide and sulfate conjugates (inactive)
+
+Elimination
+
+Half-life: 14-15 hr
+
+Excretion: Urine (76%), feces (21%)
+
+Administration
+
+Oral Administration
+
+Administer 30 minutes after same meal each day
+
+Do not crush, chew, or open capsules
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/flomax-tamsulosin-342839 20/20

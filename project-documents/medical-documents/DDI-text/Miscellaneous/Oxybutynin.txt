@@ -1,0 +1,1565 @@
+﻿6/22/26, 2:26 PM Ditropan XL (oxybutynin) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+oxybutynin (Rx)
+Brand and Other Names: Ditropan XL
+Classes: Antispasmodic Agents, Urinary
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+tablet
+
+2.5mg
+
+5mg
+
+tablet, extended-release
+
+5mg
+
+10mg
+
+15mg
+
+syrup
+
+5mg/5mL
+
+Overactive Bladder
+
+Relief of symptoms (eg, urge incontinence, frequency, urgency) in patients with
+uninhibited neurogenic or reflex neurogenic bladder
+
+Immediate-release: 5 mg PO twice/three times daily; not to exceed 5 mg PO four times
+daily
+
+Extended-release: 5-10 mg/day PO; may be increased by 5 mg/day at weekly intervals;
+not to exceed 30 mg/day
+
+Dose Modifications
+
+https://reference.medscape.com/drug/ditropan-xl-oxybutynin-343066 1/27
+
+
+
+6/22/26, 2:26 PM Ditropan XL (oxybutynin) dosing, indications, interactions, adverse effects, and more
+
+Renal Impairment
+
+Not studied; use caution
+
+Hepatic Impairment
+
+Not studied; use caution
+
+PEDIATRIC
+Dosage Forms & Strengths
+
+tablet
+
+2.5mg
+
+5mg
+
+tablet, extended-release
+
+5mg
+
+10mg
+
+15mg
+
+syrup
+
+5mg/5mL
+
+Detrusor Overactivity
+
+Bladder overactivity associated with a neurologic condition (eg, spina bifida)
+
+≥5 years (immediate-release): 5 mg PO q12hr; may be increased to 5 mg PO q8hr
+
+≥6 years (extended-release): 5 mg/day PO initially; may be increased by 5 mg/day at
+weekly intervals; not to exceed 20 mg/day
+
+GERIATRIC
+Overactive Bladder
+
+Relief of symptoms (eg, urge incontinence, frequency, urgency) in patients with
+uninhibited neurogenic or reflex neurogenic bladder
+
+https://reference.medscape.com/drug/ditropan-xl-oxybutynin-343066 2/27
+
+
+
+6/22/26, 2:26 PM Ditropan XL (oxybutynin) dosing, indications, interactions, adverse effects, and more
+
+Immediate-release: Initiate at lower dosage in frail elderly; 2.5 mg PO q8-12hr initially;
+may be increased to 5 mg q8-12hr if warranted
+
+Extended-release: 5-10 mg PO qDay; pharmacokinetics similar to adults in elderly up to
+age 78 yr
+
+Interactions
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and oxybutynin
+No Interactions Found
+Interactions Found
+Contraindicated
+
+Serious
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+Contraindicated (0)
+
+Serious (8)
+
+lonafarnib
+oxybutynin will increase the level or effect of lonafarnib by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. If
+coadministration of lonafarnib (a sensitive CYP3A substrate) with weak CYP3A
+inhibitors is unavoidable, reduce to, or continue lonafarnib at starting dose. Closely
+monitor for arrhythmias and events (eg, syncope, heart palpitations) since
+lonafarnib effect on QT interval is unknown.
+
+metoclopramide intranasal
+oxybutynin, metoclopramide intranasal. Either increases effects of the other by
+Other (see comment). Avoid or Use Alternate Drug. Comment: Avoid use of
+metoclopramide intranasal or interacting drug, depending on importance of drug to
+patient.
+
+olopatadine intranasal
+oxybutynin and olopatadine intranasal both increase sedation. Avoid or Use
+Alternate Drug. Coadministration increases risk of CNS depression, which can lead
+to additive impairment of psychomotor performance and cause daytime impairment.
+
+potassium chloride
+potassium chloride, oxybutynin. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Patients using drugs with extensive anticholinergic effects should avoid
+
+https://reference.medscape.com/drug/ditropan-xl-oxybutynin-343066 3/27
+
+
+
+6/22/26, 2:26 PM Ditropan XL (oxybutynin) dosing, indications, interactions, adverse effects, and more
+
+concomitant use with solid oral dosage forms of potassium chloride. May use
+effervescent potassium preparations as alternatives. .
+
+pramlintide
+pramlintide, oxybutynin. Either increases effects of the other by pharmacodynamic
+synergism. Contraindicated. Synergistic inhibition of GI motility.
+
+ropeginterferon alfa 2b
+ropeginterferon alfa 2b and oxybutynin both increase Other (see comment). Avoid
+or Use Alternate Drug. Narcotics, hypnotics or sedatives can produce additive
+neuropsychiatric side effects. Avoid use and monitor patients receiving the
+combination for effects of excessive CNS toxicity.
+
+secretin
+oxybutynin decreases effects of secretin by pharmacodynamic antagonism. Avoid or
+Use Alternate Drug. Concomitant use of anticholinergic drugs may cause a
+hyporesponse to stimulation testing with secretin. Discontinue anticholinergic drugs
+at least 5 half-lives before administering secretin.
+
+zuranolone
+oxybutynin, zuranolone. Either increases effects of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Coadministration of zuranolone with other
+CNS depressants may increase impairment of psychomotor performance or CNS
+depressant effects. If unavoidable, consider dose reduction. .
+
+Monitor Closely (130)
+
+abobotulinumtoxinA
+oxybutynin increases effects of abobotulinumtoxinA by pharmacodynamic
+synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate
+botulinum toxin effects, which may result in excessive neuromuscular weakness
+and heighten systemic anticholinergic effects.
+
+aclidinium
+oxybutynin and aclidinium both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+amantadine
+oxybutynin, amantadine. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Potential for increased anticholinergic adverse effects.
+
+amitriptyline
+oxybutynin and amitriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+amoxapine
+oxybutynin and amoxapine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+anticholinergic/sedative combos
+anticholinergic/sedative combos and oxybutynin both decrease cholinergic
+
+https://reference.medscape.com/drug/ditropan-xl-oxybutynin-343066 4/27
+
+
+
+6/22/26, 2:26 PM Ditropan XL (oxybutynin) dosing, indications, interactions, adverse effects, and more
+
+effects/transmission. Use Caution/Monitor.
+
+aripiprazole
+oxybutynin decreases levels of aripiprazole by inhibition of GI absorption. Applies
+only to oral form of both agents. Use Caution/Monitor.
+
+oxybutynin decreases levels of aripiprazole by pharmacodynamic antagonism. Use
+Caution/Monitor.
+
+aripiprazole increases effects of oxybutynin by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+
+atracurium
+atracurium and oxybutynin both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+atropine
+atropine and oxybutynin both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+atropine IV/IM
+atropine IV/IM and oxybutynin both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+avapritinib
+oxybutynin will increase the level or effect of avapritinib by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+axitinib
+oxybutynin increases levels of axitinib by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+
+belladonna alkaloids
+belladonna alkaloids and oxybutynin both decrease cholinergic
+effects/transmission. Use Caution/Monitor.
+
+belladonna and opium
+belladonna and opium and oxybutynin both decrease cholinergic
+effects/transmission. Use Caution/Monitor.
+
+benperidol
+oxybutynin decreases levels of benperidol by inhibition of GI absorption. Applies
+only to oral form of both agents. Use Caution/Monitor.
+
+oxybutynin decreases levels of benperidol by pharmacodynamic antagonism. Use
+Caution/Monitor.
+
+benperidol increases effects of oxybutynin by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+
+benztropine
+benztropine and oxybutynin both decrease cholinergic effects/transmission. Use
+Caution/Monitor. Additive anticholinergic adverse effects may be seen with
+
+https://reference.medscape.com/drug/ditropan-xl-oxybutynin-343066 5/27
+
+
+
+6/22/26, 2:26 PM Ditropan XL (oxybutynin) dosing, indications, interactions, adverse effects, and more
+
+concurrent use.
+
+bethanechol
+bethanechol increases and oxybutynin decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+carbachol
+carbachol increases and oxybutynin decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+carbamazepine
+carbamazepine will decrease the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+oxybutynin will increase the level or effect of carbamazepine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Monitor
+plasma levels when used concomitantly
+
+cenobamate
+cenobamate, oxybutynin. Either increases effects of the other by sedation. Use
+Caution/Monitor.
+
+cevimeline
+cevimeline increases and oxybutynin decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+chlorpromazine
+oxybutynin decreases levels of chlorpromazine by inhibition of GI absorption.
+Applies only to oral form of both agents. Use Caution/Monitor.
+
+oxybutynin decreases levels of chlorpromazine by pharmacodynamic antagonism.
+Use Caution/Monitor.
+
+chlorpromazine increases effects of oxybutynin by pharmacodynamic synergism.
+Use Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+
+cimetidine
+cimetidine will increase the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+cisatracurium
+cisatracurium and oxybutynin both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+clarithromycin
+clarithromycin will increase the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+clomipramine
+oxybutynin and clomipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+clozapine
+
+https://reference.medscape.com/drug/ditropan-xl-oxybutynin-343066 6/27
+
+
+
+6/22/26, 2:26 PM Ditropan XL (oxybutynin) dosing, indications, interactions, adverse effects, and more
+
+oxybutynin decreases levels of clozapine by inhibition of GI absorption. Applies only
+to oral form of both agents. Use Caution/Monitor.
+
+oxybutynin decreases levels of clozapine by pharmacodynamic antagonism. Use
+Caution/Monitor.
+
+clozapine increases effects of oxybutynin by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+
+cyclobenzaprine
+cyclobenzaprine and oxybutynin both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+daridorexant
+oxybutynin and daridorexant both increase sedation. Modify Therapy/Monitor
+Closely. Coadministration increases risk of CNS depression, which can lead to
+additive impairment of psychomotor performance and cause daytime impairment.
+
+darifenacin
+darifenacin and oxybutynin both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+daxibotulinumtoxinA
+oxybutynin increases effects of daxibotulinumtoxinA by pharmacodynamic
+synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate
+botulinum toxin effects, which may result in excessive neuromuscular weakness
+and heighten systemic anticholinergic effects.
+
+desipramine
+oxybutynin and desipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+dicyclomine
+dicyclomine and oxybutynin both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+difelikefalin
+difelikefalin and oxybutynin both increase sedation. Use Caution/Monitor.
+
+diltiazem
+diltiazem will increase the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+diphenhydramine
+diphenhydramine and oxybutynin both decrease cholinergic effects/transmission.
+Use Caution/Monitor.
+
+donepezil
+donepezil increases and oxybutynin decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+donepezil transdermal
+
+https://reference.medscape.com/drug/ditropan-xl-oxybutynin-343066 7/27
+
+
+
+6/22/26, 2:26 PM Ditropan XL (oxybutynin) dosing, indications, interactions, adverse effects, and more
+
+donepezil transdermal, oxybutynin. Either decreases effects of the other by
+pharmacodynamic antagonism. Use Caution/Monitor.
+
+dosulepin
+oxybutynin and dosulepin both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+doxepin
+oxybutynin and doxepin both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+droperidol
+oxybutynin decreases levels of droperidol by inhibition of GI absorption. Applies
+only to oral form of both agents. Use Caution/Monitor.
+
+oxybutynin decreases levels of droperidol by pharmacodynamic antagonism. Use
+Caution/Monitor.
+
+droperidol increases effects of oxybutynin by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+
+echothiophate iodide
+echothiophate iodide increases and oxybutynin decreases cholinergic
+effects/transmission. Effect of interaction is not clear, use caution. Use
+Caution/Monitor.
+
+erythromycin base
+erythromycin base will increase the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+erythromycin ethylsuccinate
+erythromycin ethylsuccinate will increase the level or effect of oxybutynin by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+erythromycin lactobionate
+erythromycin lactobionate will increase the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+erythromycin stearate
+erythromycin stearate will increase the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+fesoterodine
+fesoterodine and oxybutynin both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+finerenone
+oxybutynin will increase the level or effect of finerenone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Monitor serum potassium during initiation and dosage adjustment of either
+finererone or weak CYP3A4 inhibitors. Adjust finererone dosage as needed.
+
+flavoxate
+
+https://reference.medscape.com/drug/ditropan-xl-oxybutynin-343066 8/27
+
+
+
+6/22/26, 2:26 PM Ditropan XL (oxybutynin) dosing, indications, interactions, adverse effects, and more
+
+flavoxate and oxybutynin both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+flibanserin
+oxybutynin will increase the level or effect of flibanserin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Increased
+flibanserin adverse effects may occur if coadministered with multiple weak CYP3A4
+inhibitors.
+
+fluphenazine
+oxybutynin decreases levels of fluphenazine by inhibition of GI absorption. Applies
+only to oral form of both agents. Use Caution/Monitor.
+
+oxybutynin decreases levels of fluphenazine by pharmacodynamic antagonism. Use
+Caution/Monitor.
+
+fluphenazine increases effects of oxybutynin by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+
+foscarbidopa/foslevodopa
+oxybutynin decreases effects of foscarbidopa/foslevodopa by pharmacodynamic
+antagonism. Use Caution/Monitor.
+
+gepotidacin
+gepotidacin increases and oxybutynin decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Use Caution/Monitor. Gepotidacin is an
+acetylcholinesterase inhibitor. Potential for an antagonistic effect with systemic
+anticholinergic medications or nondepolarizing neuromuscular blocking agents.
+
+glycopyrrolate
+glycopyrrolate and oxybutynin both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+glycopyrrolate inhaled
+oxybutynin and glycopyrrolate inhaled both decrease cholinergic
+effects/transmission. Use Caution/Monitor.
+
+haloperidol
+oxybutynin decreases effects of haloperidol by pharmacodynamic antagonism. Use
+Caution/Monitor.
+
+oxybutynin decreases levels of haloperidol by inhibition of GI absorption. Applies
+only to oral form of both agents. Use Caution/Monitor.
+
+haloperidol increases effects of oxybutynin by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+
+henbane
+henbane and oxybutynin both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+homatropine
+
+https://reference.medscape.com/drug/ditropan-xl-oxybutynin-343066 9/27
+
+
+
+6/22/26, 2:26 PM Ditropan XL (oxybutynin) dosing, indications, interactions, adverse effects, and more
+
+homatropine and oxybutynin both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+huperzine A
+huperzine A increases and oxybutynin decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+hyoscyamine
+hyoscyamine and oxybutynin both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+hyoscyamine spray
+hyoscyamine spray and oxybutynin both decrease cholinergic effects/transmission.
+Use Caution/Monitor.
+
+imipramine
+oxybutynin and imipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+incobotulinumtoxinA
+oxybutynin increases effects of incobotulinumtoxinA by pharmacodynamic
+synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate
+botulinum toxin effects, which may result in excessive neuromuscular weakness
+and heighten systemic anticholinergic effects.
+
+ipratropium
+oxybutynin and ipratropium both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+isavuconazonium sulfate
+oxybutynin will increase the level or effect of isavuconazonium sulfate by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+itraconazole
+itraconazole will increase the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+ivacaftor
+oxybutynin increases levels of ivacaftor by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Monitor when coadministered with
+weak CYP3A4 inhibitors .
+
+ketoconazole
+ketoconazole will increase the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+lemborexant
+oxybutynin will increase the level or effect of lemborexant by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Lower nightly dose of lemborexant recommended if coadministered with weak
+CYP3A4 inhibitors. See drug monograph for specific dosage modification.
+
+letermovir
+
+https://reference.medscape.com/drug/ditropan-xl-oxybutynin-343066 10/27
+
+
+
+6/22/26, 2:26 PM Ditropan XL (oxybutynin) dosing, indications, interactions, adverse effects, and more
+
+letermovir increases levels of oxybutynin by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+
+letibotulinumtoxinA
+oxybutynin increases effects of letibotulinumtoxinA by pharmacodynamic
+synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate
+botulinum toxin effects, which may result in excessive neuromuscular weakness
+and heighten systemic anticholinergic effects.
+
+levoketoconazole
+levoketoconazole will increase the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+lofepramine
+oxybutynin and lofepramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+loxapine
+oxybutynin decreases levels of loxapine by inhibition of GI absorption. Applies only
+to oral form of both agents. Use Caution/Monitor.
+
+oxybutynin decreases levels of loxapine by pharmacodynamic antagonism. Use
+Caution/Monitor.
+
+loxapine increases effects of oxybutynin by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+
+loxapine inhaled
+loxapine inhaled increases effects of oxybutynin by pharmacodynamic synergism.
+Use Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+
+oxybutynin decreases levels of loxapine inhaled by pharmacodynamic antagonism.
+Use Caution/Monitor.
+
+meclizine
+meclizine and oxybutynin both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+methscopolamine
+methscopolamine and oxybutynin both decrease cholinergic effects/transmission.
+Use Caution/Monitor.
+
+metoclopramide
+oxybutynin decreases effects of metoclopramide by pharmacodynamic antagonism.
+Use Caution/Monitor. May antagonize prokinetic effects.
+
+midazolam intranasal
+oxybutynin will increase the level or effect of midazolam intranasal by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+Coadministration of mild CYP3A4 inhibitors with midazolam intranasal may cause
+higher midazolam systemic exposure, which may prolong sedation.
+
+midazolam intranasal, oxybutynin. Either increases toxicity of the other by
+
+https://reference.medscape.com/drug/ditropan-xl-oxybutynin-343066 11/27
+
+
+
+6/22/26, 2:26 PM Ditropan XL (oxybutynin) dosing, indications, interactions, adverse effects, and more
+
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Concomitant use of
+barbiturates, alcohol, or other CNS depressants may increase the risk of
+hypoventilation, airway obstruction, desaturation, or apnea and may contribute to
+profound and/or prolonged drug effect.
+
+nefazodone
+nefazodone will increase the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+neostigmine
+neostigmine increases and oxybutynin decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+nitrofurantoin
+oxybutynin increases levels of nitrofurantoin by unspecified interaction mechanism.
+Use Caution/Monitor.
+
+nortriptyline
+oxybutynin and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+olanzapine
+oxybutynin decreases levels of olanzapine by inhibition of GI absorption. Applies
+only to oral form of both agents. Use Caution/Monitor.
+
+oxybutynin decreases levels of olanzapine by pharmacodynamic antagonism. Use
+Caution/Monitor.
+
+olanzapine increases effects of oxybutynin by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+
+onabotulinumtoxinA
+oxybutynin increases effects of onabotulinumtoxinA by pharmacodynamic
+synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate
+botulinum toxin effects, which may result in excessive neuromuscular weakness
+and heighten systemic anticholinergic effects.
+
+orphenadrine
+oxybutynin and orphenadrine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+oxybutynin topical
+oxybutynin and oxybutynin topical both decrease cholinergic effects/transmission.
+Use Caution/Monitor.
+
+oxybutynin transdermal
+oxybutynin and oxybutynin transdermal both decrease cholinergic
+effects/transmission. Use Caution/Monitor.
+
+paliperidone
+oxybutynin decreases levels of paliperidone by inhibition of GI absorption. Applies
+only to oral form of both agents. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/ditropan-xl-oxybutynin-343066 12/27
+
+
+
+6/22/26, 2:26 PM Ditropan XL (oxybutynin) dosing, indications, interactions, adverse effects, and more
+
+oxybutynin decreases levels of paliperidone by pharmacodynamic antagonism. Use
+Caution/Monitor.
+
+paliperidone increases effects of oxybutynin by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+
+pancuronium
+oxybutynin and pancuronium both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+perphenazine
+oxybutynin decreases levels of perphenazine by inhibition of GI absorption. Applies
+only to oral form of both agents. Use Caution/Monitor.
+
+oxybutynin decreases levels of perphenazine by pharmacodynamic antagonism.
+Use Caution/Monitor.
+
+perphenazine increases effects of oxybutynin by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+
+physostigmine
+physostigmine increases and oxybutynin decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+pilocarpine
+pilocarpine increases and oxybutynin decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+pimozide
+oxybutynin decreases levels of pimozide by inhibition of GI absorption. Applies only
+to oral form of both agents. Use Caution/Monitor.
+
+oxybutynin decreases levels of pimozide by pharmacodynamic antagonism. Use
+Caution/Monitor.
+
+pimozide increases effects of oxybutynin by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+
+prabotulinumtoxinA
+oxybutynin increases effects of prabotulinumtoxinA by pharmacodynamic
+synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate
+botulinum toxin effects, which may result in excessive neuromuscular weakness
+and heighten systemic anticholinergic effects.
+
+pralidoxime
+oxybutynin and pralidoxime both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+prochlorperazine
+oxybutynin decreases levels of prochlorperazine by inhibition of GI absorption.
+Applies only to oral form of both agents. Use Caution/Monitor.
+
+oxybutynin decreases levels of prochlorperazine by pharmacodynamic antagonism.
+
+https://reference.medscape.com/drug/ditropan-xl-oxybutynin-343066 13/27
+
+
+
+6/22/26, 2:26 PM Ditropan XL (oxybutynin) dosing, indications, interactions, adverse effects, and more
+
+Use Caution/Monitor.
+
+prochlorperazine increases effects of oxybutynin by pharmacodynamic synergism.
+Use Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+
+promethazine
+oxybutynin decreases levels of promethazine by inhibition of GI absorption. Applies
+only to oral form of both agents. Use Caution/Monitor.
+
+oxybutynin decreases levels of promethazine by pharmacodynamic antagonism.
+Use Caution/Monitor.
+
+promethazine increases effects of oxybutynin by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+
+propantheline
+oxybutynin and propantheline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+protriptyline
+oxybutynin and protriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+pyridostigmine
+pyridostigmine increases and oxybutynin decreases cholinergic
+effects/transmission. Effect of interaction is not clear, use caution. Use
+Caution/Monitor.
+
+quetiapine
+oxybutynin decreases levels of quetiapine by inhibition of GI absorption. Applies
+only to oral form of both agents. Use Caution/Monitor.
+
+oxybutynin decreases levels of quetiapine by pharmacodynamic antagonism. Use
+Caution/Monitor.
+
+quetiapine increases effects of oxybutynin by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+
+rapacuronium
+oxybutynin and rapacuronium both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+ribociclib
+ribociclib will increase the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+rifabutin
+rifabutin will decrease the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+rifampin
+rifampin will decrease the level or effect of oxybutynin by affecting
+
+https://reference.medscape.com/drug/ditropan-xl-oxybutynin-343066 14/27
+
+
+
+6/22/26, 2:26 PM Ditropan XL (oxybutynin) dosing, indications, interactions, adverse effects, and more
+
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+rimabotulinumtoxinB
+oxybutynin increases effects of rimabotulinumtoxinB by pharmacodynamic
+synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate
+botulinum toxin effects, which may result in excessive neuromuscular weakness
+and heighten systemic anticholinergic effects.
+
+rimantadine
+oxybutynin, rimantadine. Mechanism: pharmacodynamic synergism. Use
+Caution/Monitor. Enhanced CNS side effects.
+
+risperidone
+oxybutynin decreases levels of risperidone by inhibition of GI absorption. Applies
+only to oral form of both agents. Use Caution/Monitor.
+
+oxybutynin decreases levels of risperidone by pharmacodynamic antagonism. Use
+Caution/Monitor.
+
+risperidone increases effects of oxybutynin by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+
+rivastigmine
+oxybutynin and rivastigmine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+rocuronium
+oxybutynin and rocuronium both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+scopolamine
+oxybutynin and scopolamine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+solifenacin
+oxybutynin and solifenacin both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+St John's Wort
+St John's Wort will decrease the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+stiripentol
+stiripentol, oxybutynin. Either increases effects of the other by sedation. Use
+Caution/Monitor. Concomitant use stiripentol with other CNS depressants, including
+alcohol, may increase the risk of sedation and somnolence.
+
+succinylcholine
+succinylcholine increases and oxybutynin decreases cholinergic
+effects/transmission. Effect of interaction is not clear, use caution. Use
+Caution/Monitor.
+
+thioridazine
+
+https://reference.medscape.com/drug/ditropan-xl-oxybutynin-343066 15/27
+
+
+
+6/22/26, 2:26 PM Ditropan XL (oxybutynin) dosing, indications, interactions, adverse effects, and more
+
+oxybutynin decreases levels of thioridazine by inhibition of GI absorption. Applies
+only to oral form of both agents. Use Caution/Monitor.
+
+oxybutynin decreases levels of thioridazine by pharmacodynamic antagonism. Use
+Caution/Monitor.
+
+thioridazine increases effects of oxybutynin by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+
+thiothixene
+oxybutynin decreases levels of thiothixene by inhibition of GI absorption. Applies
+only to oral form of both agents. Use Caution/Monitor.
+
+oxybutynin decreases levels of thiothixene by pharmacodynamic antagonism. Use
+Caution/Monitor.
+
+thiothixene increases effects of oxybutynin by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+
+tinidazole
+oxybutynin will increase the level or effect of tinidazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+tiotropium
+oxybutynin and tiotropium both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+tolterodine
+oxybutynin and tolterodine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+trazodone
+oxybutynin and trazodone both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+trifluoperazine
+oxybutynin decreases levels of trifluoperazine by inhibition of GI absorption.
+Applies only to oral form of both agents. Use Caution/Monitor.
+
+oxybutynin decreases levels of trifluoperazine by pharmacodynamic antagonism.
+Use Caution/Monitor.
+
+trifluoperazine increases effects of oxybutynin by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+
+trihexyphenidyl
+oxybutynin and trihexyphenidyl both decrease cholinergic effects/transmission. Use
+Caution/Monitor. Potential for additive anticholinergic effects.
+
+trimipramine
+oxybutynin and trimipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+https://reference.medscape.com/drug/ditropan-xl-oxybutynin-343066 16/27
+
+
+
+6/22/26, 2:26 PM Ditropan XL (oxybutynin) dosing, indications, interactions, adverse effects, and more
+
+trospium chloride
+oxybutynin and trospium chloride both decrease cholinergic effects/transmission.
+Use Caution/Monitor.
+
+vecuronium
+oxybutynin and vecuronium both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+xanomeline/trospium
+xanomeline/trospium, oxybutynin. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration of
+antimuscarinic drugs that produce anticholinergic adverse reactions (eg, dry mouth,
+constipation) may increase the frequency and/or severity of such effects.
+
+ziprasidone
+oxybutynin decreases levels of ziprasidone by inhibition of GI absorption. Applies
+only to oral form of both agents. Use Caution/Monitor.
+
+oxybutynin decreases levels of ziprasidone by pharmacodynamic antagonism. Use
+Caution/Monitor.
+
+ziprasidone increases effects of oxybutynin by pharmacodynamic synergism. Use
+Caution/Monitor. Additive anticholinergic effects, possible hypoglycemia.
+
+zotepine
+oxybutynin decreases levels of zotepine by inhibition of GI absorption. Applies only
+to oral form of both agents. Use Caution/Monitor.
+
+oxybutynin decreases levels of zotepine by pharmacodynamic antagonism. Use
+Caution/Monitor.
+
+Minor (71)
+
+acetaminophen
+oxybutynin decreases levels of acetaminophen by unspecified interaction
+mechanism. Minor/Significance Unknown.
+
+acetaminophen IV
+oxybutynin decreases levels of acetaminophen IV by unspecified interaction
+mechanism. Minor/Significance Unknown.
+
+acetaminophen rectal
+oxybutynin decreases levels of acetaminophen rectal by unspecified interaction
+mechanism. Minor/Significance Unknown.
+
+amantadine
+amantadine increases effects of oxybutynin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+aprepitant
+aprepitant will increase the level or effect of oxybutynin by affecting
+
+https://reference.medscape.com/drug/ditropan-xl-oxybutynin-343066 17/27
+
+
+
+6/22/26, 2:26 PM Ditropan XL (oxybutynin) dosing, indications, interactions, adverse effects, and more
+
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+armodafinil
+armodafinil will decrease the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+artemether/lumefantrine
+artemether/lumefantrine will decrease the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+atazanavir
+atazanavir will increase the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+atenolol
+atenolol increases levels of oxybutynin by decreasing metabolism.
+Minor/Significance Unknown.
+
+bosentan
+bosentan will decrease the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+budesonide
+budesonide will decrease the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+butalbital
+butalbital will decrease the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+chlorpromazine
+oxybutynin increases toxicity of chlorpromazine by unspecified interaction
+mechanism. Minor/Significance Unknown.
+
+conivaptan
+conivaptan will increase the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+cortisone
+cortisone will decrease the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+darifenacin
+darifenacin will increase the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+darunavir
+darunavir will increase the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+dasatinib
+dasatinib will increase the level or effect of oxybutynin by affecting
+
+https://reference.medscape.com/drug/ditropan-xl-oxybutynin-343066 18/27
+
+
+
+6/22/26, 2:26 PM Ditropan XL (oxybutynin) dosing, indications, interactions, adverse effects, and more
+
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+deferasirox
+deferasirox will decrease the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+dexamethasone
+dexamethasone will decrease the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+DHEA, herbal
+DHEA, herbal will increase the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+digoxin
+oxybutynin increases levels of digoxin by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+dimenhydrinate
+dimenhydrinate increases toxicity of oxybutynin by pharmacodynamic synergism.
+Minor/Significance Unknown. Additive anticholinergic effects.
+
+donepezil
+donepezil decreases effects of oxybutynin by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+dronedarone
+dronedarone will increase the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+efavirenz
+efavirenz will decrease the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+eslicarbazepine acetate
+eslicarbazepine acetate will decrease the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+etravirine
+etravirine will decrease the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+fluconazole
+fluconazole will increase the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+fludrocortisone
+fludrocortisone will decrease the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+fluphenazine
+oxybutynin increases toxicity of fluphenazine by unspecified interaction mechanism.
+
+https://reference.medscape.com/drug/ditropan-xl-oxybutynin-343066 19/27
+
+
+
+6/22/26, 2:26 PM Ditropan XL (oxybutynin) dosing, indications, interactions, adverse effects, and more
+
+Minor/Significance Unknown.
+
+fosamprenavir
+fosamprenavir will increase the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+fosaprepitant
+fosaprepitant will increase the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+foscarbidopa/foslevodopa
+oxybutynin, foscarbidopa/foslevodopa. Other (see comment). Minor/Significance
+Unknown. Comment: Anticholinergic agents may enhance the therapeutic effects of
+levodopa; however, anticholinergic agents can exacerbate tardive dyskinesia. In
+high dosage, anticholinergics may decrease the effects of levodopa by delaying its
+GI absorption. .
+
+fosphenytoin
+fosphenytoin will decrease the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+grapefruit
+grapefruit will increase the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+griseofulvin
+griseofulvin will decrease the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+hydrocortisone
+hydrocortisone will decrease the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+isoniazid
+isoniazid will increase the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+lapatinib
+lapatinib will increase the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+levodopa
+oxybutynin, levodopa. Other (see comment). Minor/Significance Unknown.
+Comment: Anticholinergic agents may enhance the therapeutic effects of levodopa;
+however, anticholinergic agents can exacerbate tardive dyskinesia. In high dosage,
+anticholinergics may decrease the effects of levodopa by delaying its GI absorption.
+.
+
+lumefantrine
+lumefantrine will decrease the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+marijuana
+
+https://reference.medscape.com/drug/ditropan-xl-oxybutynin-343066 20/27
+
+
+
+6/22/26, 2:26 PM Ditropan XL (oxybutynin) dosing, indications, interactions, adverse effects, and more
+
+marijuana will increase the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+methylprednisolone
+methylprednisolone will decrease the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+metronidazole
+metronidazole will increase the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+miconazole vaginal
+miconazole vaginal will increase the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+nelfinavir
+nelfinavir will increase the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+nevirapine
+nevirapine will decrease the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+nifedipine
+nifedipine will increase the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+nilotinib
+nilotinib will increase the level or effect of oxybutynin by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+pentobarbital
+pentobarbital will decrease the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+perphenazine
+oxybutynin increases toxicity of perphenazine by unspecified interaction
+mechanism. Minor/Significance Unknown.
+
+phenobarbital
+phenobarbital will decrease the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+phenytoin
+phenytoin will decrease the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+posaconazole
+posaconazole will increase the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+prednisone
+
+https://reference.medscape.com/drug/ditropan-xl-oxybutynin-343066 21/27
+
+
+
+6/22/26, 2:26 PM Ditropan XL (oxybutynin) dosing, indications, interactions, adverse effects, and more
+
+prednisone will decrease the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+primidone
+primidone will decrease the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+prochlorperazine
+oxybutynin increases toxicity of prochlorperazine by unspecified interaction
+mechanism. Minor/Significance Unknown.
+
+promazine
+oxybutynin increases toxicity of promazine by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+promethazine
+oxybutynin increases toxicity of promethazine by unspecified interaction
+mechanism. Minor/Significance Unknown.
+
+rifapentine
+rifapentine will decrease the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+ritonavir
+ritonavir will increase the level or effect of oxybutynin by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+rufinamide
+rufinamide will decrease the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+ruxolitinib
+oxybutynin will increase the level or effect of ruxolitinib by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+ruxolitinib topical
+oxybutynin will increase the level or effect of ruxolitinib topical by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+thioridazine
+oxybutynin increases toxicity of thioridazine by unspecified interaction mechanism.
+Minor/Significance Unknown.
+
+topiramate
+topiramate will decrease the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+trifluoperazine
+oxybutynin increases toxicity of trifluoperazine by unspecified interaction
+mechanism. Minor/Significance Unknown.
+
+verapamil
+
+https://reference.medscape.com/drug/ditropan-xl-oxybutynin-343066 22/27
+
+
+
+6/22/26, 2:26 PM Ditropan XL (oxybutynin) dosing, indications, interactions, adverse effects, and more
+
+verapamil will increase the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+voriconazole
+voriconazole will increase the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+zafirlukast
+zafirlukast will increase the level or effect of oxybutynin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+Adverse Effects
+
+>10%
+
+Dry mouth (21-71%)
+
+Constipation (7-15%)
+
+Somnolence (2-14%)
+
+Nausea (2-12%)
+
+1-10%
+
+Asthenia (6-10%)
+
+Dizziness (6-10%)
+
+Headache (6-10%)
+
+Blurred vision (6-10%)
+
+Dry eyes (6-10%)
+
+Diarrhea (6-10%)
+
+Nausea (6-10%)
+
+Pain (6-10%)
+
+Rhinitis (6-10%)
+
+<1%
+
+Anorexia
+
+Fluid retention
+
+Hot flush
+
+Dysphonia
+
+Dysphagia
+
+https://reference.medscape.com/drug/ditropan-xl-oxybutynin-343066 23/27
+
+
+
+6/22/26, 2:26 PM Ditropan XL (oxybutynin) dosing, indications, interactions, adverse effects, and more
+
+Frequent bowel movements
+
+Chest discomfort
+
+Thirst
+
+Frequency Not Defined
+
+Cycloplegia
+
+Impairment of mental alertness
+
+Memory impairment
+
+Mydriasis
+
+Tachycardia
+
+QT prolongation
+
+Postmarketing reports
+
+Hallucinations
+
+Confusion
+
+Delirium
+
+Urinary tract infection
+
+Palpitations
+
+Nasal congestion
+
+Hypertension
+
+Concomitant use with carbamazepine
+
+Vomiting
+
+Drowsiness
+
+Unsteadiness
+
+Slurred speech
+
+Nystagmus
+
+Warnings
+
+Contraindications
+
+Hypersensitivity
+
+Gastric or urinary obstruction or retention, paralytic ileus, severe ulcerative colitis
+
+Uncontrolled narrow-angle glaucoma
+
+https://reference.medscape.com/drug/ditropan-xl-oxybutynin-343066 24/27
+
+
+
+6/22/26, 2:26 PM Ditropan XL (oxybutynin) dosing, indications, interactions, adverse effects, and more
+
+Relative contraindications: Myasthenia gravis, tachycardia secondary to cardiac
+insufficiency or thyrotoxicosis
+
+Cautions
+
+Caution in controlled angle-closure glaucoma; mild-to-moderate ulcerative colitis,
+hyperthyroidism; partial obstructive uropathy; benign prostatic hyperplasia
+
+Caution in hepatic or renal impairment
+
+May increase risk of heat prostration during hot weather
+
+May cause memory loss
+
+Angioedema necessitating hospitalization and emergency medical treatment has
+occurred with first or subsequent doses of oral oxybutynin; if angioedema develops,
+oxybutynin-containing products should be discontinued and appropriate therapy
+promptly provided
+
+Caution with gastrointestinal obstructive disorders or decreased intestinal motility
+because of the risk of gastric retention
+
+May aggravate symptoms of decreased gastrointestinal motility in patients with
+autonomic neuropathy
+
+Caution with GERD and/or those taking drugs that can cause or exacerbate esophagitis
+(eg, bisphosphonates)
+
+Caution with myasthenia gravis because of decreased cholinergic activity
+
+Caution with other anticholinergics (antimuscarinics); may increase risk for xerostomia,
+constipation, headache, dizziness, and blurred vision
+
+Somnolence reported with oxybutynin-containing products; use caution with activities
+requiring mental alertness
+
+May aggravate Parkinson disease symptoms
+
+Hallucinations or confusion may occur; monitor
+
+May exacerbate symptoms of heart failure, hypertension, and/or cardiac arrhythmias; use
+with caution
+
+May aggravate symptoms of dementia in patients cholinesterase inhibitors; use with
+caution
+
+Use with caution in patients with hiatal hernia
+
+The use of the extended release formulation has been associated (rare) with symptoms
+of obstruction in patients with known stricture/narrowing of the GI tract
+
+Before using over the counter product, consider other causes of frequent urination,
+including early pregnancy, diabetes, and other serious conditions; contact healthcare
+provider if symptoms do not improve with 2 weeks of initial use
+
+Avoid use in patients with myasthenia gravis because of decreased cholinergic activity; if
+experiencing exacerbation of symptoms of myasthenia gravis, oxybutynin-containing
+
+https://reference.medscape.com/drug/ditropan-xl-oxybutynin-343066 25/27
+
+
+
+6/22/26, 2:26 PM Ditropan XL (oxybutynin) dosing, indications, interactions, adverse effects, and more
+
+product should be discontinued and appropriate therapy promptly provided
+
+Pregnancy & Lactation
+
+Pregnancy
+
+There are no studies with topical or oral oxybutynin use in pregnant women to inform a
+drug associated risk for birth defects or miscarriage; no adverse developmental
+outcomes observed in animal reproduction studies when administered to pregnant rats
+and rabbits during organogenesis at approximately 50 and 1 times, respectively, the
+maximum human dose based on body surface area
+
+Lactation
+
+There is no information on presence of drug in human milk, effects on breastfed child, or
+on milk production; developmental and health benefits of breastfeeding should be
+considered along with mother’s clinical need for therapy and any potential adverse
+effects on breastfed child from therapy or from the underlying maternal condition
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+Exerts antispasmodic and antimuscarinic effects on smooth muscle; delays desire to void,
+increases bladder capacity, and decreases uninhibited contraction; decreases frequency
+and urgency
+
+Absorption
+
+Bioavailability: 6% (~1.5-2 times higher for extended-release)
+
+Onset: 30-60 min
+
+https://reference.medscape.com/drug/ditropan-xl-oxybutynin-343066 26/27
+
+
+
+6/22/26, 2:26 PM Ditropan XL (oxybutynin) dosing, indications, interactions, adverse effects, and more
+
+Peak effect: 3-6 hr
+
+Duration: 6-10 hr
+
+Peak plasma time: <1 hr (immediate-release); 12 hr (extended release)
+
+Peak plasma concentration: Immediate-release, 3.6 ng/mL (R-) and 7.8 ng/mL (S-);
+extended-release, 1 ng/mL (R-) and 1.8 ng/mL (S-)
+
+Distribution
+
+Vd: 193 L
+
+Metabolism
+
+Metabolized in liver and gut by CYP3A4; converted to active metabolite N-
+desethyloxybutynin (DEO) by GI metabolic pathways, which are bypassed in transdermal
+delivery, resulting in lower DEO ratio
+
+Metabolites: DEO (active)
+
+Elimination
+
+Half-life: 2-3 hr (immediate-release); 12-13 hr (extended-release)
+
+Excretion: Urine
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/ditropan-xl-oxybutynin-343066 27/27

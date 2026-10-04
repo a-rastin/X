@@ -1,0 +1,194 @@
+chlorpromazine (Rx) [cite: 3]
+Brand and Other Names: Thorazine [cite: 4]
+Classes: Antipsychotics, Phenothiazines [cite: 4]
+
+## Dosing & Uses [cite: 5]
+
+### ADULT [cite: 6]
+Dosage Forms & Strengths [cite: 7]
+* tablet: 10mg [cite: 8, 9], 25mg [cite: 10], 50mg [cite: 11], 100mg [cite: 12], 200mg [cite: 13]
+* injectable solution: 25mg/mL [cite: 14, 15]
+
+Schizophrenia, Psychotic Disorders [cite: 16]
+* PO: 30-75 mg/day divided q6-12hr initially; maintenance: usually 200 mg/day (up to 800 mg/day in some patients; some patients may require 1-2 g/day) [cite: 17]
+* IV/IM: 25 mg initially, followed PRN with 25-50 mg after 1-4 hours, then increased to maximum of 400 mg q4-6hr until patient is controlled; [cite: 18] usual dosage 300-800 mg/day [cite: 19]
+
+Nausea & Vomiting [cite: 20]
+* PO: 10-25 mg q4-6hr PRN [cite: 21]
+* IV/IM: 25-50 mg q4-6hr PRN [cite: 22]
+
+Preoperative Apprehension [cite: 28]
+* 25-50 mg PO 2-3 hours before surgery [cite: 29]
+* 12.5-25 mg IM 1-2 hours before surgery [cite: 30]
+
+Intraoperative Sedation [cite: 31]
+* 12.5 IM q30min or 2 mg IV q2min; total dose not to exceed 25 mg [cite: 32]
+
+Intractable Hiccups [cite: 33]
+* 25-50 mg PO q6-8hr; if hiccups persist after 2-3 days of oral therapy, administer 25-50 mg IM q3-4hr; [cite: 34] if symptoms persist, administer 25-50 mg by slow IV infusion with patient lying flat in bed; monitor BP [cite: 35]
+
+Acute Intermittent Porphyria [cite: 36]
+* 25-50 mg PO q6-8hr [cite: 37]
+
+Migraine Headache (Off-label) [cite: 38]
+* 5-50 mg IV as single dose [cite: 39]
+
+### PEDIATRIC [cite: 40]
+Dosage Forms & Strengths [cite: 41]
+* tablet: 10mg [cite: 42, 43], 25mg [cite: 44], 50mg [cite: 45], 100mg [cite: 46], 200mg [cite: 47]
+* injectable solution: 25mg/mL [cite: 48, 49]
+
+Behavioral Disorders, Hyperactivity [cite: 50]
+* <6 months: Safety and efficacy not established [cite: 55]
+* >=6 months: 50-100 mg/day PO/IM; 200 mg/day or more may be necessary for older hospitalized patients; [cite: 56] for outpatients, may administer 0.55 mg/kg q4-6hr PRN [cite: 57]
+
+Nausea & Vomiting [cite: 58]
+* <6 months: Safety and efficacy not established [cite: 59]
+* >=6 months: 0.5-1 mg/kg PO/IM q6-8hr PRN [cite: 60]
+
+Preoperative Apprehension [cite: 61]
+* <6 months: Safety and efficacy not established [cite: 62]
+* >=6 months: 0.55 mg/kg PO/IM 1-2 hours before surgery [cite: 63]
+
+## Interactions [cite: 64]
+
+### Contraindicated [cite: 69]
+* amisulpride: Increases toxicity. Contraindicated. Increases risk of neuroleptic malignant syndrome. [cite: 74, 75]
+* Both increase QTc interval. Contraindicated: disopyramide [cite: 76, 77], ibutilide [cite: 87, 88], indapamide [cite: 89, 90], pentamidine [cite: 96, 97], pimozide [cite: 98, 99], procainamide [cite: 100, 101], quinidine [cite: 102, 103], sotalol[cite: 104, 105].
+* eliglustat: chlorpromazine increases levels of eliglustat by affecting hepatic enzyme CYP2D6 metabolism. Contraindicated. [cite: 78, 79] Reduce eliglustat dose with CYP2D6 inhibitors. [cite: 80, 81]
+* mavorixafor: Increases level of chlorpromazine by affecting hepatic enzyme CYP2D6 metabolism. Contraindicated. [cite: 91, 92, 93]
+* metrizamide: Contraindicated. Risk of seizure. D/C phenothiazine 24h before admin of metrizamide. [cite: 94, 95]
+
+### Serious Interactions [cite: 106]
+* QTc Interval Prolongation (Avoid or Use Alternate Drug): adagrasib [cite: 107, 108], alfuzosin [cite: 111, 112], amiodarone [cite: 123, 124], amisulpride [cite: 125, 126], amitriptyline [cite: 127, 128], amoxapine [cite: 129, 130], anagrelide [cite: 131, 132], apomorphine [cite: 134, 137], aripiprazole [cite: 138, 139], arsenic trioxide [cite: 140, 141], artemether [cite: 142, 143], artemether/lumefantrine [cite: 144, 145], asenapine [cite: 146, 150, 151], asenapine transdermal [cite: 152, 153], atomoxetine [cite: 154, 155], buprenorphine [cite: 166, 167], buprenorphine buccal [cite: 169, 170], buprenorphine subdermal implant [cite: 171, 172], buprenorphine transdermal [cite: 175, 176], buprenorphine long-acting injection [cite: 183, 184], ceritinib [cite: 200, 201], chloroquine [cite: 202, 203], clarithromycin [cite: 204, 205], clomipramine [cite: 206, 207], clozapine [cite: 208, 209], degarelix [cite: 217, 218], desflurane [cite: 219, 220], desipramine [cite: 221, 222], dofetilide [cite: 223, 224], donepezil [cite: 226, 227], dordaviprone [cite: 230, 231], dosulepin [cite: 234, 235], doxepin [cite: 236, 237], dronedarone [cite: 238, 239], droperidol [cite: 240, 245], efavirenz [cite: 246, 247], eliglustat [cite: 248, 249], encorafenib [cite: 250, 251], entrectinib [cite: 252, 253], epinephrine [cite: 254, 255], epinephrine racemic [cite: 256, 257], eribulin [cite: 258, 259], erythromycin base [cite: 261, 262], erythromycin ethylsuccinate [cite: 263, 264], erythromycin lactobionate [cite: 265, 266], erythromycin stearate [cite: 267, 268], escitalopram [cite: 269, 270], fexinidazole [cite: 306, 310, 311], fingolimod [cite: 312, 313], fluconazole [cite: 314, 315], fluphenazine [cite: 318, 319], fosfomycin [cite: 320, 321], gadobenate [cite: 325, 326], gemifloxacin [cite: 327, 328], gepotidacin [cite: 329, 330], gilteritinib [cite: 332, 333], givinostat [cite: 334, 335], glasdegib [cite: 345, 346], granisetron [cite: 348, 349], haloperidol [cite: 350, 351], hydroxychloroquine sulfate [cite: 358, 359], iloperidone [cite: 360, 361], imipramine [cite: 362, 363], inotuzumab [cite: 364, 365], isoflurane [cite: 367, 368], ivosidenib [cite: 369, 373, 374], ketoconazole [cite: 376, 377], lefamulin [cite: 378, 379], levoketoconazole [cite: 385, 386], lithium [cite: 389, 390], lofepramine [cite: 391, 392], lumefantrine [cite: 393, 394], macimorelin [cite: 395, 396], milsaperidone [cite: 421, 422], mirtazapine [cite: 423, 424], moxifloxacin [cite: 425, 426], nilotinib [cite: 427, 428], nortriptyline [cite: 429, 430], octreotide [cite: 431, 432], octreotide (Antidote) [cite: 433, 438], olanzapine [cite: 439, 440], ondansetron [cite: 445, 446], oxaliplatin [cite: 451, 452], panobinostat [cite: 453, 454], perphenazine [cite: 458, 459], pitolisant [cite: 463, 464], ponesimod [cite: 465, 466], primaquine [cite: 474, 475], prochlorperazine [cite: 476, 477], promazine [cite: 478, 479], promethazine [cite: 480, 481], protriptyline [cite: 487, 488], revumenib [cite: 495, 496], ribociclib [cite: 499, 500, 504], sertraline [cite: 512, 513], sevoflurane [cite: 514, 515], siponimod [cite: 516, 517], solifenacin [cite: 527, 528], sunitinib [cite: 529, 530], tacrolimus [cite: 531, 532], taletrectinib [cite: 533, 537], tetrabenazine [cite: 539, 540], thioridazine [cite: 544, 545], trazodone [cite: 549, 550], trifluoperazine [cite: 555, 556], trimipramine [cite: 557, 558], umeclidinium bromide/vilanterol inhaled [cite: 559, 560], vandetanib [cite: 563, 564], vemurafenib [cite: 569, 571], vilanterol/fluticasone furoate inhaled [cite: 573, 574], vorinostat [cite: 577, 578], ziftomenib [cite: 584, 585], ziprasidone[cite: 589, 590].
+* Increased Sedation/CNS Depression (Avoid or Use Alternate Drug): benzhydrocodone/acetaminophen [cite: 156, 157, 162], buprenorphine subdermal implant [cite: 173, 174], buprenorphine transdermal [cite: 177, 178], buprenorphine long-acting injection [cite: 185, 186], calcium/magnesium/potassium/sodium oxybates [cite: 192, 193], fentanyl [cite: 272, 276, 280], fentanyl intranasal [cite: 282, 283, 287], fentanyl iontophoretic transdermal system [cite: 289, 290], fentanyl transdermal [cite: 292, 293, 297], fentanyl transmucosal [cite: 299, 300, 304], hydrocodone [cite: 352, 353], methohexital [cite: 401, 402], olopatadine intranasal [cite: 441, 442], opicapone [cite: 448, 449], remifentanil [cite: 492, 493], sodium oxybate [cite: 518, 519, 523], thalidomide [cite: 541, 542], tolcapone[cite: 546, 547].
+* CYP2D6 Metabolism Interactions (Avoid/Alternate): dacomitinib [cite: 213, 215, 216], fluoxetine [cite: 316, 317], givosiran [cite: 341, 343, 344], paroxetine [cite: 456, 457], propafenone [cite: 482, 483], vortioxetine[cite: 579, 580, 581].
+* Decreased Metabolism (Contraindicated): carvedilol [cite: 197, 198], metoprolol [cite: 418, 419], propranolol[cite: 484, 485]. Not all beta blockers share this interaction. [cite: 199, 420, 486]
+* Pharmacodynamic Antagonism (Contraindicated/Avoid): apomorphine [cite: 135, 136], bromocriptine [cite: 164, 165], cabergoline [cite: 190, 191], dopamine [cite: 228, 229], levodopa [cite: 380, 381], levodopa inhaled [cite: 382, 383], lisuride [cite: 387, 388], methyldopa [cite: 411, 412], pramipexole [cite: 472, 473], ropinirole [cite: 505, 507], yohimbe[cite: 582, 583].
+* Phototoxicity Synergism (Avoid or Use Alternate Drug): aminolevulinic acid oral [cite: 113, 114], aminolevulinic acid topical [cite: 120, 121], methyl aminolevulinate [cite: 408, 409], tretinoin [cite: 551, 552], tretinoin topical[cite: 553, 554].
+* Additive Anticholinergic/Other (Avoid/Alternate): bupropion (lowers seizure threshold) [cite: 187, 188], metoclopramide intranasal (increases EPS) [cite: 413, 417], pexidartinib (hepatotoxicity) [cite: 460, 461], quinidine (additive cardiac effects) [cite: 489, 491], selinexor (neurological toxicities) [cite: 508, 511], sofpironium topical (anticholinergic) [cite: 525, 526], zuranolone (CNS depression)[cite: 591, 592].
+
+### Significant - Monitor Closely [cite: 595]
+* Both increase sedation (Use Caution/Monitor): acetaminophen/phenyltoloxamine [cite: 606, 607], acrivastine [cite: 611, 612], alfentanil [cite: 619, 620], alprazolam [cite: 623, 624], amitriptyline [cite: 628, 629], amoxapine [cite: 633, 639], apomorphine [cite: 649, 650], aripiprazole [cite: 654, 657], asenapine [cite: 662, 663], asenapine transdermal [cite: 664, 665], avapritinib [cite: 683, 684], azelastine [cite: 685, 686], baclofen [cite: 689, 690], belladonna and opium [cite: 703, 704], benperidol [cite: 709, 712], brexpiprazole [cite: 723, 734], brimonidine [cite: 735, 736], brimonidine topical [cite: 737, 738], brivaracetam [cite: 739, 740], brompheniramine [cite: 741, 742], buprenorphine [cite: 743, 744], buprenorphine buccal [cite: 745, 746], butalbital [cite: 755, 756], butorphanol [cite: 757, 758], carbachol/brimonidine ophthalmic [cite: 763, 767], carbinoxamine [cite: 768, 769], cariprazine [cite: 770, 771], carisoprodol [cite: 772, 773], chlordiazepoxide [cite: 776, 777], chlorpheniramine [cite: 778, 779], chlorzoxazone [cite: 780, 781], cinnarizine [cite: 785, 786], clemastine [cite: 799, 801], clobazam [cite: 802, 806], clomipramine [cite: 807, 808], clonazepam [cite: 809, 810], clonidine [cite: 811, 813], clorazepate [cite: 814, 815], clozapine [cite: 816, 818], codeine [cite: 819, 820], cyclobenzaprine [cite: 825, 826], cyproheptadine [cite: 833, 834], dantrolene [cite: 837, 838], desflurane [cite: 850, 851], desipramine [cite: 852, 853], desloratadine [cite: 854, 855], dexbrompheniramine [cite: 867, 868], dexchlorpheniramine [cite: 869, 870], dexmedetomidine [cite: 875, 876], dextromoramide [cite: 885, 886], diamorphine [cite: 887, 888], diazepam [cite: 892, 894], diazepam buccal [cite: 895, 896], diazepam intranasal [cite: 897, 898], difelikefalin [cite: 908, 909], difenoxin hcl [cite: 910, 911], dimenhydrinate [cite: 912, 913], diphenhydramine [cite: 914, 915], diphenoxylate hcl [cite: 919, 920], dipipanone [cite: 924, 926], dosulepin [cite: 941, 942], doxepin [cite: 943, 944], doxylamine [cite: 945, 946], droperidol [cite: 947, 950], estazolam [cite: 980, 981], eszopiclone [cite: 982, 983], ethanol [cite: 984, 989], etomidate [cite: 990, 991], fluphenazine [cite: 1024, 1027], flurazepam [cite: 1028, 1029], gabapentin [cite: 1039, 1040], gabapentin enacarbil [cite: 1041, 1042], ganaxolone [cite: 1043, 1044], guanfacine [cite: 1062, 1065], haloperidol [cite: 1066, 1067], hydromorphone [cite: 1082, 1083], hydroxyzine [cite: 1084, 1085], imipramine [cite: 1101, 1102], ketamine [cite: 1125, 1126], ketotifen ophthalmic [cite: 1127, 1128], lamotrigine [cite: 1129, 1130], levetiracetam [cite: 1150, 1151], levocetirizine [cite: 1152, 1153], levorphanol [cite: 1156, 1157], lofepramine [cite: 1170, 1171], lofexidine [cite: 1172, 1173], loprazolam [cite: 1174, 1175], loratadine [cite: 1176, 1177], lorazepam [cite: 1178, 1179], lormetazepam [cite: 1182, 1183], loxapine [cite: 1184, 1186], loxapine inhaled [cite: 1187, 1189], lumateperone [cite: 1190, 1191], lurasidone [cite: 1194, 1197], marijuana [cite: 1201, 1203], meclizine [cite: 1208, 1212], melatonin [cite: 1213, 1214], meperidine [cite: 1215, 1216], meprobamate [cite: 1217, 1218], metaxalone [cite: 1221, 1222], methadone [cite: 1223, 1225], methocarbamol [cite: 1233, 1235], methsuximide [cite: 1242, 1243], midazolam [cite: 1253, 1254], mirtazapine [cite: 1273, 1274], molindone [cite: 1277, 1278], morphine [cite: 1279, 1280], motherwort [cite: 1281, 1282], moxonidine [cite: 1283, 1284], nabilone [cite: 1285, 1286], nalbuphine [cite: 1287, 1288], nitrous oxide [cite: 1289, 1290], nortriptyline [cite: 1299, 1300], olanzapine [cite: 1303, 1305], opium tincture [cite: 1313, 1314], orphenadrine [cite: 1315, 1316], oxazepam [cite: 1324, 1325], oxycodone [cite: 1344, 1345], oxymorphone [cite: 1346, 1347], paliperidone [cite: 1351, 1354], papaveretum [cite: 1363, 1364], papaverine [cite: 1365, 1366], pentazocine [cite: 1376, 1377], pentobarbital [cite: 1378, 1379], perphenazine [cite: 1380, 1383], phenobarbital [cite: 1392, 1393], pholcodine [cite: 1406, 1407], pimozide [cite: 1408, 1410], prochlorperazine [cite: 1432, 1434], promethazine [cite: 1435, 1438], propofol [cite: 1443, 1444], protriptyline [cite: 1453, 1454], pyrilamine [cite: 1458, 1459], quazepam [cite: 1460, 1461], quetiapine [cite: 1462, 1464], ramelteon [cite: 1475, 1476], risperidone [cite: 1493, 1497], scopolamine [cite: 1514, 1519], scopolamine intranasal [cite: 1520, 1521], scullcap [cite: 1522, 1523], sevoflurane [cite: 1529, 1530], shepherd's purse [cite: 1531, 1532], sufentanil [cite: 1564, 1565], tapentadol [cite: 1573, 1578], tasimelteon [cite: 1579, 1580], temazepam [cite: 1586, 1587], tetrabenazine [cite: 1593, 1596], thioridazine [cite: 1599, 1601], thiothixene [cite: 1602, 1604], tiagabine [cite: 1605, 1610], tizanidine [cite: 1615, 1616], tramadol [cite: 1626, 1627], trazodone [cite: 1630, 1631], triazolam [cite: 1632, 1633], triclofos [cite: 1634, 1635], trifluoperazine [cite: 1636, 1642], trimipramine [cite: 1648, 1649], triprolidine [cite: 1650, 1651], valproic acid [cite: 1672, 1673], vigabatrin [cite: 1681, 1682], zaleplon [cite: 1706, 1707], ziconotide [cite: 1708, 1709], ziprasidone [cite: 1710, 1713], zolpidem [cite: 1714, 1717], zonisamide [cite: 1718, 1719], zotepine [cite: 1720, 1722], zuranolone[cite: 1723, 1724].
+* Both increase QTc interval (Modify Therapy/Monitor Closely): bedaquiline [cite: 691, 692], citalopram [cite: 794, 795], dasatinib [cite: 845, 846], dolasetron [cite: 931, 932], flecainide [cite: 1018, 1019], fluoxetine [cite: 1022, 1023], fluvoxamine [cite: 1030, 1031], foscarnet [cite: 1035, 1036], gepirone [cite: 1047, 1052], levofloxacin [cite: 1154, 1155], methadone [cite: 1223, 1224], ofloxacin [cite: 1301, 1302], ozanimod [cite: 1348, 1349], paliperidone [cite: 1351, 1353], paroxetine [cite: 1367, 1368], pasireotide (decreases QTc) [cite: 1369, 1370], posaconazole [cite: 1415, 1416], ranolazine [cite: 1477, 1478], romidepsin [cite: 1505, 1506], sulfamethoxazole [cite: 1566, 1567], telavancin [cite: 1584, 1585], trimethoprim [cite: 1646, 1647], tropisetron [cite: 1654, 1655], venlafaxine [cite: 1678, 1680], voriconazole[cite: 1689, 1690].
+* Both increase antidopaminergic effects, including EPS and NMS (Use Caution/Monitor): amoxapine [cite: 633, 634], aripiprazole [cite: 654, 655], benperidol [cite: 709, 710], clozapine [cite: 816, 817], droperidol [cite: 947, 948], fluphenazine [cite: 1024, 1025], haloperidol [cite: 1066], loxapine [cite: 1184, 1185], loxapine inhaled [cite: 1187, 1188], metoclopramide [cite: 1251, 1252], olanzapine [cite: 1303, 1304], paliperidone [cite: 1351, 1352], perphenazine [cite: 1380, 1381], pimozide [cite: 1408, 1409], prochlorperazine [cite: 1432, 1433], promethazine [cite: 1435, 1436], quetiapine [cite: 1462, 1463], risperidone [cite: 1493, 1494], tetrabenazine [cite: 1593, 1594], thioridazine [cite: 1599, 1600], thiothixene [cite: 1602, 1603], trifluoperazine [cite: 1636, 1641], ziprasidone [cite: 1710, 1711], zotepine[cite: 1720, 1721].
+* Increased botulinum toxin effects (pharmacodynamic synergism): abobotulinumtoxinA [cite: 599, 600, 605], daxibotulinumtoxinA [cite: 847, 848, 849], incobotulinumtoxinA [cite: 1103, 1104, 1108], letibotulinumtoxinA [cite: 1142, 1143, 1144], onabotulinumtoxinA [cite: 1310, 1311, 1312], prabotulinumtoxinA [cite: 1417, 1422, 1423], rimabotulinumtoxinB[cite: 1490, 1491, 1492].
+* Unclear sedation interaction / Risk of cardiac arrhythmia (Use Caution): amphetamine [cite: 640, 642], benzphetamine [cite: 713, 715], dexfenfluramine [cite: 871, 873], dexmethylphenidate [cite: 877, 879], dextroamphetamine [cite: 881, 883], diethylpropion [cite: 904, 906], dobutamine [cite: 927, 929], dopamine [cite: 935, 937], ephedrine [cite: 964, 966], epinephrine [cite: 968, 970], epinephrine racemic [cite: 974, 976], fenfluramine [cite: 1002, 1004], isoproterenol [cite: 1119, 1121], lisdexamfetamine [cite: 1160, 1162], methamphetamine [cite: 1226, 1228], methylenedioxymethamphetamine [cite: 1244, 1246], methylphenidate [cite: 1248, 1249], midodrine [cite: 1258, 1262], norepinephrine [cite: 1291, 1293], phendimetrazine [cite: 1384, 1386], phentermine [cite: 1394, 1396], phenylephrine [cite: 1398, 1400], phenylephrine PO [cite: 1402, 1404], propylhexedrine [cite: 1445, 1451], serdexmethylphenidate/dexmethylphenidate [cite: 1526, 1527], xylometazoline [cite: 1694, 1696], yohimbine[cite: 1702, 1704].
+* Additive anticholinergic effects / Decreased absorption (Use Caution): anticholinergic/sedative combos [cite: 644, 647, 648], atracurium [cite: 666, 670, 673], atropine [cite: 674, 676, 677], atropine IV/IM [cite: 678, 680, 682], belladonna alkaloids [cite: 693, 696, 697], belladonna and opium [cite: 703, 705, 708], cisatracurium [cite: 790, 792, 793], darifenacin [cite: 841, 843, 844], dicyclomine [cite: 899, 901, 902], diphenhydramine [cite: 914, 916, 918], fesoterodine [cite: 1006, 1008, 1009], flavoxate [cite: 1010, 1012, 1013], henbane [cite: 1068, 1070, 1071], homatropine [cite: 1074, 1078, 1081], hyoscyamine [cite: 1088, 1090, 1091], hyoscyamine spray [cite: 1092, 1094, 1096], meclizine [cite: 1208, 1210, 1211], methscopolamine [cite: 1238, 1240, 1241], oxybutynin [cite: 1326, 1330, 1333], oxybutynin topical [cite: 1334, 1337, 1338], oxybutynin transdermal [cite: 1339, 1342, 1343], pancuronium [cite: 1358, 1361, 1362], pralidoxime [cite: 1424, 1426, 1427], propantheline [cite: 1439, 1441, 1442], rapacuronium [cite: 1479, 1483, 1486], rocuronium [cite: 1498, 1500, 1501], scopolamine [cite: 1514, 1517, 1518], solifenacin [cite: 1555, 1557, 1558], tiotropium [cite: 1611, 1613, 1614], tolterodine [cite: 1620, 1622, 1623], trospium chloride [cite: 1656, 1659, 1660], vecuronium[cite: 1674, 1676, 1677].
+* Decreased Levels by Increasing Metabolism: cigarette smoking [cite: 782, 783], smoking [cite: 1533, 1534], tobacco use[cite: 1617, 1618].
+
+### Minor [cite: 1725]
+* CYP2D6 Metabolism Interactions (Minor): amiodarone [cite: 1728, 1732], asenapine [cite: 1740, 1741], celecoxib [cite: 1752, 1753], chloroquine [cite: 1756, 1760], cimetidine [cite: 1763, 1764], darifenacin [cite: 1768, 1769], diphenhydramine [cite: 1773, 1774], dronedarone [cite: 1778, 1779], duloxetine [cite: 1780, 1781], haloperidol [cite: 1794, 1795], imatinib [cite: 1796, 1797], maraviroc [cite: 1808, 1809], marijuana [cite: 1810, 1811], nilotinib [cite: 1821, 1822], parecoxib [cite: 1834, 1835], perphenazine [cite: 1840, 1844], quinacrine [cite: 1855, 1856], ranolazine [cite: 1861, 1862], ritonavir [cite: 1863, 1864], sertraline [cite: 1867, 1868], thioridazine [cite: 1869, 1870], tipranavir[cite: 1876, 1877].
+* Additive Anticholinergic (Minor): amitriptyline [cite: 1734, 1735], amoxapine [cite: 1737, 1738], clomipramine [cite: 1765, 1766], desipramine [cite: 1770, 1771], doxepin [cite: 1775, 1776], imipramine [cite: 1800, 1801], lofepramine [cite: 1805, 1806], nortriptyline [cite: 1823, 1824], protriptyline [cite: 1850, 1851], trimipramine[cite: 1884, 1885].
+* Increased Sedation (Minor): ethanol [cite: 1787, 1789], eucalyptus [cite: 1790, 1791], sage[cite: 1865, 1866].
+* Hypotension Risk (Minor): benazepril [cite: 1746, 1747], captopril [cite: 1750, 1751], enalapril [cite: 1782, 1783], fosinopril [cite: 1792, 1793], imidapril [cite: 1798, 1799], lisinopril [cite: 1803, 1804], moexipril [cite: 1819, 1820], perindopril [cite: 1838, 1839], quinapril [cite: 1857, 1858], ramipril [cite: 1859, 1860], trandolapril [cite: 1879, 1880], trazodone[cite: 1881, 1882].
+
+## Adverse Effects [cite: 1887]
+Frequency Not Defined [cite: 1888]
+* Extrapyramidal symptoms [cite: 1889]
+  * Akathisia [cite: 1890]
+  * Dystonia [cite: 1891]
+  * Muscle stiffness [cite: 1892]
+  * Neuroleptic malignant syndrome (NMS; infrequent but serious) [cite: 1893]
+  * Parkinsonism [cite: 1894]
+  * Tardive dyskinesia [cite: 1895]
+
+Common [cite: 1896]
+* Anticholinergic effects [cite: 1897]
+* Sedation [cite: 1898]
+* Weight gain [cite: 1899]
+* Erectile dysfunction [cite: 1900]
+* Oligomenorrhea or amenorrhea [cite: 1901]
+
+Less common [cite: 1906]
+* Cerebral edema, orthostatic hypotension (after IM injection), tachycardia [cite: 1907]
+* Agitation, anxiety, depression, dizziness, euphoria, headache, insomnia, poikilothermia, restlessness, weakness [cite: 1908]
+* Anorexia, constipation, dyspepsia, ileus [cite: 1909]
+* Lens opacities (prolonged use) [cite: 1910]
+
+Uncommon [cite: 1911]
+* ECG changes [cite: 1912]
+* Photosensitivity [cite: 1913]
+* Pruritus [cite: 1914]
+* Galactorrhea [cite: 1915]
+* Ejaculatory disorder [cite: 1916]
+* Diarrhea [cite: 1917]
+* Blood dyscrasia [cite: 1918]
+
+Rare [cite: 1919]
+* Seizure [cite: 1920]
+* Priapism [cite: 1921]
+* Cholestatic jaundice [cite: 1922]
+
+## Warnings [cite: 1923]
+### Black Box Warnings [cite: 1924]
+* Patients with dementia-related psychosis who are treated with antipsychotic drugs are at increased risk for death, as shown in short-term controlled trials; [cite: 1925] deaths in these trials appeared to be either cardiovascular (eg, heart failure, sudden death) or infectious (eg, pneumonia) in nature [cite: 1926]
+* This drug is not approved for treatment of patients with dementia-related psychosis [cite: 1927]
+
+### Contraindications [cite: 1928]
+* Hypersensitivity to phenothiazines [cite: 1929]
+* Coma, severe hypotension, severe central nervous system (CNS) depression, concurrent administration of large amounts of CNS depressants, subcortical brain damage, poorly controlled seizure disorder [cite: 1930]
+* Severe cardiovascular disease [cite: 1931]
+* Lactation [cite: 1932]
+
+### Cautions [cite: 1933]
+* Avoid using in children with suspected Reye syndrome [cite: 1938]
+* Use caution in glaucoma, prostatic hypertrophy, stenosing peptic ulcer disease (PUD), history of NMS, Parkinson disease, hypocalcemia, renal or hepatic impairment, history of severe reaction to insulin or electroconvulsive therapy (ECT), history of seizures, asthma, respiratory tract infection, cardiovascular disease, myelosuppression [cite: 1939]
+* Risk of extrapyramidal symptoms (EPS), NMS, hypotension [cite: 1940]
+* Significant hypotension may occur, especially with parenteral administration; hypotension may be particularly severe in patients with pheochromocytoma or mitral insufficiency; [cite: 1941] in case of severe hypotension, treat with norepinephrine or phenylepinephrine, and do not use epinephrine or dopamine [cite: 1942]
+* May alter cardiac conduction; life threatening arrhythmias reported with therapeutic doses of phenothiazines; [cite: 1943] may cause QT prolongation and subsequent torsade de pointes; avoid use in patients diagnosed or suspected congenital long QT syndrome [cite: 1944]
+* May cause anticholinergic effects; use caution in patients with paralytic ileus, gastrointestinal motility, urinary retention, xerostomia, or visual problems [cite: 1945]
+* Agranulocytosis, leukopenia, and neutropenia reported with antipsychotic use; periodic blood count assessment recommended in patients with history of risk factors, including history of drug-induced leuko/neutropenia or preexisting low WBC [cite: 1946]
+* Esophageal dysmotility and aspiration reported with antipsychotic use; use caution in patients at risk of pneumonia [cite: 1947]
+* May cause extrapyramidal symptoms, including akathisia, acute dystonic reactions, and pseudoparkinsonism, and tardive dyskinesia; [cite: 1948] risk of dystonia greater with increased doses [cite: 1949]
+* Therapy is associated with increased prolactin levels; significance unknown [cite: 1950]
+* May cause pigmentary retinopathy, and lenticular and corneal deposits with prolonged therapy [cite: 1951]
+* May cause orthostatic hypotension; use caution in patients with risk factors, including patients who do not tolerate transient hypotensive episodes such as hypovolemia, cerebrovascular disease, cardiovascular disease, or medicatioin predisposing to hypotension/bradycardia [cite: 1952]
+* May impair physical or mental abilities due to sedating properties; use caution when operating heavy machinery [cite: 1953]
+* Depresses hypothalamic thermoregulatory mechanism; exposure to extreme temperatures may cause hypo- or hyperthermia [cite: 1954]
+* Antiemetic effect may obscure toxicity of chemotherapeutic drugs [cite: 1955]
+* Anticholinergic antiparkinsonian agent may be needed to counter EPS [cite: 1956]
+* Strong anticholinergic agent and alpha blocker [cite: 1957]
+* Potential for priapism [cite: 1958]
+* US Food and Drug Administration (FDA) warning regarding off-label use for dementia in elderly (see Black Box Warnings) [cite: 1959, 1964]
+
+## Pregnancy & Lactation [cite: 1965]
+* Pregnancy category: C; neonates exposed to antipsychotic drugs during 3rd trimester of pregnancy are at risk for EPS or withdrawal symptoms after delivery; [cite: 1966] these complications vary in severity, with some being self-limited and others necessitating ICU support and prolonged hospitalization [cite: 1967]
+* Lactation: Drug enters breast milk; not recommended (American Academy of Pediatrics [AAP] states that this is "of concern") [cite: 1968]
+
+Pregnancy Categories [cite: 1969]
+* A: Generally acceptable. Controlled studies in pregnant women show no evidence of fetal risk. [cite: 1970]
+* B: May be acceptable. Either animal studies show no risk but human studies not available or animal studies showed minor risks and human studies done and showed no risk. [cite: 1971]
+* C: Use with caution if benefits outweigh risks. Animal studies show risk and human studies not available or neither animal nor human studies done. [cite: 1972]
+* D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive evidence of human fetal risk. [cite: 1973]
+* X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives exist. [cite: 1974]
+* NA: Information not available. [cite: 1975]
+
+## Pharmacology [cite: 1976]
+Mechanism of Action [cite: 1977]
+* Phenothiazine; antagonizes dopamine D2 receptors in brain; depresses release of hypothalamic and hypophyseal hormones; may also depress reticular activating system [cite: 1978]
+
+Absorption [cite: 1979]
+* Bioavailability: 20%; extensive 1st-pass metabolism [cite: 1980]
+* Onset: 30-60 min [cite: 1981]
+* Duration: 4-6 hr; extended release, 10-12 hr [cite: 1982]
+
+Distribution [cite: 1983]
+* Protein bound: 92-97% [cite: 1984]
+* Vd: 20 L/kg [cite: 1985]
+
+Metabolism [cite: 1986]
+* Metabolized by hepatic P450 enzyme CYP2D6 [cite: 1991]
+* Metabolites: 10-12 different compounds [cite: 1992]
+
+Elimination [cite: 1993]
+* Half-life: 30 hr [cite: 1994]
+* Excretion: Urine [cite: 1995]
+
+## Administration [cite: 1996]
+* Direct IV injection is only for control of nausea and vomiting during surgery and for adjunctive treatment of tetanus [cite: 1997]
+* IV infusion is only for adjunctive treatment of intractable hiccups in adults [cite: 1998]
+
+IV Administration [cite: 1999]
+* Direct IV injection: Dilute with NS to concentration no higher than 1 mg/mL, and administer at rate of 1 mg/min in adults and 0.5 mg/min in children; [cite: 2000] avoid administering undiluted drug [cite: 2001]
+* IV infusion: Add appropriate dose to 500-1000 mL of NS, and administer slowly [cite: 2002]

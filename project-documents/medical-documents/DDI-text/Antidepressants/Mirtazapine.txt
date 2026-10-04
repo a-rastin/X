@@ -1,0 +1,2906 @@
+﻿6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+mirtazapine (Rx)
+Brand and Other Names: Remeron, Remeron SolTab
+Classes: Antidepressants, Alpha-2 Antagonists; Antidepressants, Other
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+tablet
+
+7.5mg
+
+15mg
+
+30mg
+
+45mg
+
+disintegrating tablet
+
+15mg
+
+30mg
+
+45mg
+
+Depression
+
+Indicated for treatment of major depressive disorder
+
+15 mg PO qHS; may increase no more frequently than q1-2Weeks; not to exceed 45 mg
+qHS
+
+Post-traumatic Stress Disorder (Off-label)
+
+15 mg PO qHS; may increase no more frequently than q1-2Weeks; not to exceed 60 mg
+qHS
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 1/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+Hot Flashes (Off-label)
+
+7.5-60 mg PO qDay
+
+Insomnia (Off-label)
+
+15-45 mg PO qHS
+
+Dosage Modifications
+
+Renal impairment (CrCl <39 mL/min): Clearance is reduced; monitor closely
+
+Hepatic impairment: Clearance is reduced; monitor closely
+
+PEDIATRIC
+Safety and efficacy not established
+
+GERIATRIC
+Depression
+
+Indicated for treatment of major depressive disorder
+
+Initiate with lower dose for patients aged ≥65 yr
+
+7.5 mg/day PO qHS; increase by 7.5-15 mg/day no more frequently than q1-2Weeks;
+not to exceed 45 mg/day
+
+Dosing Considerations
+
+Geriatric patients may have reduced clearance of mirtazapine and, as a result, may have
+increased plasma levels of the drug
+
+Use with caution
+
+Interactions
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and mirtazapine
+No Interactions Found
+Interactions Found
+Contraindicated
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 2/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+Serious
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+Contraindicated (10)
+
+dronedarone
+mirtazapine and dronedarone both increase QTc interval. Contraindicated.
+
+iobenguane I 123
+mirtazapine decreases effects of iobenguane I 123 by pharmacodynamic
+antagonism. Contraindicated. If clinically appropriate, discontinue drugs that
+decrease uptake of NE for at least 5 half-lives; may cause false-negative imaging
+results.
+
+lefamulin
+lefamulin will increase the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Lefamulin is
+contraindicated with CYP3A substrates know to prolong the QT interval.
+
+mavorixafor
+mavorixafor will increase the level or effect of mirtazapine by affecting hepatic
+enzyme CYP2D6 metabolism. Contraindicated. Mavorixafor (a strong CYP2D6
+inhibitor) is contraindicated with drugs that are highly dependent on CYP2D6 for
+clearance.
+
+posaconazole
+mirtazapine and posaconazole both increase QTc interval. Contraindicated.
+
+procarbazine
+procarbazine and mirtazapine both increase serotonin levels. Contraindicated.
+
+rasagiline
+rasagiline and mirtazapine both increase serotonin levels. Contraindicated. Avoid
+combination within 14 days of MAOI use.
+
+selegiline
+selegiline and mirtazapine both increase serotonin levels. Contraindicated. At least
+14 days should elapse between discontinuation of selegiline and initiation of
+mirtazapine.
+
+thioridazine
+mirtazapine and thioridazine both increase QTc interval. Contraindicated.
+
+voriconazole
+voriconazole will increase the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 3/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+mirtazapine and voriconazole both increase QTc interval. Contraindicated.
+
+Serious (141)
+
+amiodarone
+mirtazapine and amiodarone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+amisulpride
+amisulpride and mirtazapine both increase QTc interval. Avoid or Use Alternate
+Drug. ECG monitoring is recommended if coadministered.
+
+amitriptyline
+mirtazapine and amitriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+amoxapine
+mirtazapine and amoxapine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+anagrelide
+mirtazapine and anagrelide both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+apalutamide
+apalutamide will decrease the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+Coadministration of apalutamide, a strong CYP3A4 inducer, with drugs that are
+CYP3A4 substrates can result in lower exposure to these medications. Avoid or
+substitute another drug for these medications when possible. Evaluate for loss of
+therapeutic effect if medication must be coadministered. Adjust dose according to
+prescribing information if needed.
+
+apomorphine
+apomorphine and mirtazapine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+arsenic trioxide
+mirtazapine and arsenic trioxide both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+artemether
+artemether and mirtazapine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+artemether/lumefantrine
+artemether/lumefantrine and mirtazapine both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+asenapine
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 4/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+mirtazapine and asenapine both increase QTc interval. Avoid or Use Alternate Drug.
+
+asenapine transdermal
+asenapine transdermal and mirtazapine both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+azithromycin
+mirtazapine and azithromycin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+bedaquiline
+bedaquiline and mirtazapine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+benzhydrocodone/acetaminophen
+benzhydrocodone/acetaminophen and mirtazapine both increase sedation. Avoid or
+Use Alternate Drug. Limit use to patients for whom alternative treatment options
+are inadequate
+
+buprenorphine
+mirtazapine and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+buprenorphine buccal
+buprenorphine buccal and mirtazapine both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+buprenorphine subdermal implant
+buprenorphine subdermal implant and mirtazapine both increase QTc interval.
+Avoid or Use Alternate Drug.
+
+buprenorphine subdermal implant and mirtazapine both increase sedation. Avoid or
+Use Alternate Drug. Limit use to patients for whom alternative treatment options
+are inadequate
+
+buprenorphine transdermal
+buprenorphine transdermal and mirtazapine both increase QTc interval. Avoid or
+Use Alternate Drug.
+
+buprenorphine transdermal and mirtazapine both increase sedation. Avoid or Use
+Alternate Drug. Limit use to patients for whom alternative treatment options are
+inadequate
+
+buprenorphine, long-acting injection
+buprenorphine, long-acting injection and mirtazapine both increase QTc interval.
+Avoid or Use Alternate Drug.
+
+buprenorphine, long-acting injection and mirtazapine both increase sedation. Avoid
+or Use Alternate Drug. Limit use to patients for whom alternative treatment options
+are inadequate
+
+calcium/magnesium/potassium/sodium oxybates
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 5/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+mirtazapine, calcium/magnesium/potassium/sodium oxybates. Either increases
+effects of the other by pharmacodynamic synergism. Avoid or Use Alternate Drug.
+Profound sedation, respiratory depression, coma, and death may result if
+coadministered. Reserve concomitant prescribing of these drugs in patients for
+whom other treatment options are inadequate. Limit dosages and durations to the
+minimum required. Monitor closely for signs of respiratory depression and sedation.
+
+ceritinib
+ceritinib and mirtazapine both increase QTc interval. Avoid or Use Alternate Drug.
+
+ceritinib will increase the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+chloroquine
+chloroquine and mirtazapine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+chlorpromazine
+mirtazapine and chlorpromazine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+ciprofloxacin
+mirtazapine and ciprofloxacin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+citalopram
+citalopram and mirtazapine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+clarithromycin
+clarithromycin will increase the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+clarithromycin and mirtazapine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+clomipramine
+mirtazapine and clomipramine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+clonidine
+mirtazapine decreases effects of clonidine by pharmacodynamic antagonism. Avoid
+or Use Alternate Drug. Risk of hypertensive urgency.
+
+crizotinib
+crizotinib and mirtazapine both increase QTc interval. Avoid or Use Alternate Drug.
+
+cyclobenzaprine
+mirtazapine and cyclobenzaprine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+dacomitinib
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 6/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+dacomitinib will increase the level or effect of mirtazapine by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug. Avoid use with
+CYP2D6 substrates where minimal increases in concentration of the CYP2D6
+substrate may lead to serious or life-threatening toxicities.
+
+desflurane
+desflurane and mirtazapine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+desipramine
+mirtazapine and desipramine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+desvenlafaxine
+mirtazapine and desvenlafaxine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+disopyramide
+mirtazapine and disopyramide both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+dofetilide
+mirtazapine and dofetilide both increase QTc interval. Avoid or Use Alternate Drug.
+
+doxepin
+doxepin and mirtazapine both increase QTc interval. Avoid or Use Alternate Drug.
+
+droperidol
+mirtazapine and droperidol both increase QTc interval. Avoid or Use Alternate Drug.
+
+eliglustat
+mirtazapine and eliglustat both increase QTc interval. Avoid or Use Alternate Drug.
+
+encorafenib
+encorafenib and mirtazapine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+entrectinib
+entrectinib and mirtazapine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+eribulin
+eribulin and mirtazapine both increase QTc interval. Avoid or Use Alternate Drug.
+
+erythromycin base
+mirtazapine and erythromycin base both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+erythromycin ethylsuccinate
+mirtazapine and erythromycin ethylsuccinate both increase QTc interval. Avoid or
+Use Alternate Drug.
+
+erythromycin lactobionate
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 7/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+mirtazapine and erythromycin lactobionate both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+erythromycin stearate
+mirtazapine and erythromycin stearate both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+escitalopram
+mirtazapine and escitalopram both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+fentanyl
+fentanyl and mirtazapine both increase sedation. Avoid or Use Alternate Drug. Limit
+use to patients for whom alternative treatment options are inadequate
+
+fentanyl intranasal
+fentanyl intranasal and mirtazapine both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+fentanyl iontophoretic transdermal system
+fentanyl iontophoretic transdermal system and mirtazapine both increase sedation.
+Avoid or Use Alternate Drug. Limit use to patients for whom alternative treatment
+options are inadequate
+
+fentanyl transdermal
+fentanyl transdermal and mirtazapine both increase sedation. Avoid or Use
+Alternate Drug. Limit use to patients for whom alternative treatment options are
+inadequate
+
+fentanyl transmucosal
+fentanyl transmucosal and mirtazapine both increase sedation. Avoid or Use
+Alternate Drug. Limit use to patients for whom alternative treatment options are
+inadequate
+
+fexinidazole
+fexinidazole and mirtazapine both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid coadministration of fexinidazole with drugs known to block potassium
+channels or prolong QT interval.
+
+flecainide
+mirtazapine and flecainide both increase QTc interval. Avoid or Use Alternate Drug.
+
+fluconazole
+mirtazapine and fluconazole both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+fluoxetine
+mirtazapine and fluoxetine both increase QTc interval. Avoid or Use Alternate Drug.
+
+fluphenazine
+mirtazapine and fluphenazine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 8/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+fluvoxamine
+mirtazapine and fluvoxamine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+foscarnet
+mirtazapine and foscarnet both increase QTc interval. Avoid or Use Alternate Drug.
+
+givosiran
+givosiran will increase the level or effect of mirtazapine by affecting hepatic enzyme
+CYP1A2 metabolism. Avoid or Use Alternate Drug. Avoid coadministration of
+sensitive CYP1A2 substrates with givosiran. If unavoidable, decrease the CYP1A2
+substrate dosage in accordance with approved product labeling.
+
+givosiran will increase the level or effect of mirtazapine by affecting hepatic enzyme
+CYP2D6 metabolism. Avoid or Use Alternate Drug. Avoid coadministration of
+sensitive CYP2D6 substrates with givosiran. If unavoidable, decrease the CYP2D6
+substrate dosage in accordance with approved product labeling.
+
+glasdegib
+mirtazapine and glasdegib both increase QTc interval. Avoid or Use Alternate Drug.
+
+guanfacine
+mirtazapine decreases effects of guanfacine by pharmacodynamic antagonism.
+Avoid or Use Alternate Drug. Risk of hypertensive urgency.
+
+hydroxychloroquine sulfate
+mirtazapine and hydroxychloroquine sulfate both increase QTc interval. Avoid or
+Use Alternate Drug.
+
+ibutilide
+mirtazapine and ibutilide both increase QTc interval. Avoid or Use Alternate Drug.
+
+idelalisib
+idelalisib will increase the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+Idelalisib is a strong CYP3A inhibitor; avoid coadministration with sensitive CYP3A
+substrates
+
+iloperidone
+mirtazapine and iloperidone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+imipramine
+mirtazapine and imipramine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+inotuzumab
+mirtazapine and inotuzumab both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+iobenguane I 131
+mirtazapine will decrease the level or effect of iobenguane I 131 by Other (see
+comment). Avoid or Use Alternate Drug. Based on the mechanism of action of
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 9/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+iobenguane, drugs that reduce catecholamine uptake or that deplete catecholamine
+stores may interfere with iobenguane uptake into cells, and thus, reduce
+iobenguane efficacy. Discontinue interfering drugs for at least 5 half-lives before
+administration of either the dosimetry or an iobenguane dose. Do not administer
+these drugs until at least 7 days after each iobenguane dose.
+
+isocarboxazid
+isocarboxazid and mirtazapine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+isoflurane
+isoflurane and mirtazapine both increase QTc interval. Avoid or Use Alternate Drug.
+
+isoniazid
+isoniazid will increase the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+ivosidenib
+ivosidenib will decrease the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid
+coadministration of sensitive CYP3A4 substrates with ivosidenib or replace with
+alternative therapies. If coadministration is unavoidable, monitor patients for loss of
+therapeutic effect of these drugs.
+
+mirtazapine and ivosidenib both decrease QTc interval. Avoid or Use Alternate
+Drug.
+
+lefamulin
+mirtazapine and lefamulin both increase QTc interval. Avoid or Use Alternate Drug.
+
+lenvatinib
+mirtazapine and lenvatinib both increase QTc interval. Avoid or Use Alternate Drug.
+
+linezolid
+linezolid and mirtazapine both increase serotonin levels. Avoid or Use Alternate
+Drug. Linezolid may increase serotonin as a result of MAO-A inhibition. If linezolid
+must be administered, discontinue serotonergic drug immediately and monitor for
+CNS toxicity. Serotonergic therapy may be resumed 24 hours after last linezolid
+dose or after 2 weeks of monitoring, whichever comes first.
+
+lithium
+lithium and mirtazapine both increase QTc interval. Avoid or Use Alternate Drug.
+
+lonafarnib
+mirtazapine will increase the level or effect of lonafarnib by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. If
+coadministration of lonafarnib (a sensitive CYP3A substrate) with weak CYP3A
+inhibitors is unavoidable, reduce to, or continue lonafarnib at starting dose. Closely
+monitor for arrhythmias and events (eg, syncope, heart palpitations) since
+lonafarnib effect on QT interval is unknown.
+
+lopinavir
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 10/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+mirtazapine and lopinavir both increase QTc interval. Avoid or Use Alternate Drug.
+
+lorcaserin
+mirtazapine and lorcaserin both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+macimorelin
+mirtazapine and macimorelin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+mefloquine
+mefloquine increases toxicity of mirtazapine by QTc interval. Avoid or Use Alternate
+Drug. Mefloquine may enhance the QTc prolonging effect of high risk QTc
+prolonging agents.
+
+methadone
+mirtazapine and methadone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+methohexital
+methohexital and mirtazapine both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+methylene blue
+methylene blue and mirtazapine both increase serotonin levels. Avoid or Use
+Alternate Drug. Methylene blue may increase serotonin as a result of MAO-A
+inhibition. If methylene blue must be administered, discontinue serotonergic drug
+immediately and monitor for CNS toxicity. Serotonergic therapy may be resumed 24
+hours after last methylene blue dose or after 2 weeks of monitoring, whichever
+comes first.
+
+metoclopramide intranasal
+mirtazapine, metoclopramide intranasal. Either increases effects of the other by
+Other (see comment). Avoid or Use Alternate Drug. Comment: Avoid use of
+metoclopramide intranasal or interacting drug, depending on importance of drug to
+patient.
+
+midostaurin
+mirtazapine and midostaurin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+mifepristone
+mirtazapine and mifepristone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+milsaperidone
+mirtazapine and milsaperidone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+moxifloxacin
+mirtazapine and moxifloxacin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 11/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+nefazodone
+nefazodone will increase the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+nilotinib
+mirtazapine and nilotinib both increase QTc interval. Avoid or Use Alternate Drug.
+
+nortriptyline
+mirtazapine and nortriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+olopatadine intranasal
+mirtazapine and olopatadine intranasal both increase sedation. Avoid or Use
+Alternate Drug. Coadministration increases risk of CNS depression, which can lead
+to additive impairment of psychomotor performance and cause daytime impairment.
+
+opicapone
+opicapone and mirtazapine both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+oxaliplatin
+mirtazapine and oxaliplatin both increase QTc interval. Avoid or Use Alternate Drug.
+
+ozanimod
+mirtazapine and ozanimod both increase QTc interval. Avoid or Use Alternate Drug.
+
+paliperidone
+mirtazapine and paliperidone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+panobinostat
+mirtazapine and panobinostat both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+pazopanib
+mirtazapine and pazopanib both increase QTc interval. Avoid or Use Alternate Drug.
+
+pentamidine
+mirtazapine and pentamidine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+phenelzine
+phenelzine and mirtazapine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+pimavanserin
+mirtazapine and pimavanserin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+pimozide
+mirtazapine and pimozide both increase QTc interval. Contraindicated.
+
+pitolisant
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 12/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+mirtazapine decreases effects of pitolisant by Other (see comment). Avoid or Use
+Alternate Drug. Comment: Pitolisant increases histamine levels in the brain;
+therefore, H1 receptor antagonists that cross the blood-brain barrier may reduce
+the efficacy of pitolisant.
+
+mirtazapine and pitolisant both increase QTc interval. Avoid or Use Alternate Drug.
+
+ponesimod
+mirtazapine and ponesimod both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+posaconazole
+posaconazole will increase the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+
+procainamide
+mirtazapine and procainamide both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+propafenone
+mirtazapine and propafenone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+protriptyline
+mirtazapine and protriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+quetiapine
+mirtazapine and quetiapine both increase QTc interval. Avoid or Use Alternate Drug.
+
+quinidine
+mirtazapine and quinidine both increase QTc interval. Avoid or Use Alternate Drug.
+
+quinine
+mirtazapine and quinine both increase QTc interval. Avoid or Use Alternate Drug.
+
+remifentanil
+remifentanil and mirtazapine both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+ribociclib
+mirtazapine and ribociclib both increase QTc interval. Avoid or Use Alternate Drug.
+
+ropeginterferon alfa 2b
+ropeginterferon alfa 2b and mirtazapine both increase Other (see comment). Avoid
+or Use Alternate Drug. Narcotics, hypnotics or sedatives can produce additive
+neuropsychiatric side effects. Avoid use and monitor patients receiving the
+combination for effects of excessive CNS toxicity.
+
+selpercatinib
+mirtazapine and selpercatinib both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 13/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+sevoflurane
+sevoflurane and mirtazapine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+siponimod
+mirtazapine and siponimod both increase QTc interval. Avoid or Use Alternate Drug.
+
+sodium oxybate
+mirtazapine, sodium oxybate. Either increases effects of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Profound sedation,
+respiratory depression, coma, and death may result if coadministered. Reserve
+concomitant prescribing of these drugs in patients for whom other treatment
+options are inadequate. Limit dosages and durations to the minimum required.
+Monitor closely for signs of respiratory depression and sedation.
+
+sodium oxybate and mirtazapine both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+sorafenib
+mirtazapine and sorafenib both increase QTc interval. Avoid or Use Alternate Drug.
+
+sotalol
+mirtazapine and sotalol both increase QTc interval. Avoid or Use Alternate Drug.
+
+sunitinib
+sunitinib and mirtazapine both increase QTc interval. Avoid or Use Alternate Drug.
+
+tedizolid
+tedizolid, mirtazapine. Either increases effects of the other by Mechanism:
+pharmacodynamic synergism. Avoid or Use Alternate Drug. both increase serotonin
+levels; increased risk of serotonin syndrome.
+
+tetrabenazine
+mirtazapine and tetrabenazine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+thalidomide
+thalidomide and mirtazapine both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+tolcapone
+tolcapone and mirtazapine both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+toremifene
+mirtazapine and toremifene both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+tranylcypromine
+tranylcypromine and mirtazapine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+trazodone
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 14/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+mirtazapine and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+
+trimipramine
+mirtazapine and trimipramine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+tucatinib
+tucatinib will increase the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid
+concomitant use of tucatinib with CYP3A substrates, where minimal concentration
+changes may lead to serious or life-threatening toxicities. If unavoidable, reduce
+CYP3A substrate dose according to product labeling.
+
+vandetanib
+mirtazapine and vandetanib both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+vemurafenib
+mirtazapine and vemurafenib both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+venlafaxine
+mirtazapine and venlafaxine both decrease QTc interval. Avoid or Use Alternate
+Drug.
+
+vilazodone
+mirtazapine, vilazodone. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug. Concomitant therapy should be discontinued
+immediately if signs or symptoms of serotonin syndrome emerge and supportive
+symptomatic treatment should be initiated. .
+
+vortioxetine
+mirtazapine, vortioxetine. Either increases effects of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+
+ziftomenib
+mirtazapine and ziftomenib both increase QTc interval. Avoid or Use Alternate Drug.
+Avoid coadministration of ziftomenib with other drugs known to prolong the QTc
+interval. If unavoidable, obtain ECGs when initiating, during concomitant use, and as
+clinically indicated. Interrupt ziftomenib with QTc interval > 500 ms or a change
+from baseline is > 60 ms
+
+ziprasidone
+mirtazapine and ziprasidone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+zuranolone
+mirtazapine, zuranolone. Either increases effects of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Coadministration of zuranolone with other
+CNS depressants may increase impairment of psychomotor performance or CNS
+depressant effects. If unavoidable, consider dose reduction. .
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 15/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+Monitor Closely (351)
+
+5-HTP
+5-HTP and mirtazapine both increase serotonin levels. Use Caution/Monitor.
+
+abiraterone
+abiraterone increases levels of mirtazapine by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor. Avoid coadministration of abiraterone with
+substrates of CYP2D6. If alternative therapy cannot be used, exercise caution and
+consider a dose reduction of the CYP2D6 substrate.
+
+acetaminophen/phenyltoloxamine
+acetaminophen/phenyltoloxamine and mirtazapine both increase sedation. Use
+Caution/Monitor.
+
+acrivastine
+acrivastine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+alfentanil
+alfentanil and mirtazapine both increase sedation. Use Caution/Monitor.
+
+alfuzosin
+alfuzosin and mirtazapine both increase QTc interval. Use Caution/Monitor.
+
+almotriptan
+almotriptan and mirtazapine both increase serotonin levels. Use Caution/Monitor.
+
+alprazolam
+alprazolam and mirtazapine both increase sedation. Use Caution/Monitor.
+
+amitriptyline
+amitriptyline and mirtazapine both increase sedation. Use Caution/Monitor.
+
+amitriptyline and mirtazapine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+amoxapine
+amoxapine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+amoxapine and mirtazapine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+amphetamine
+amphetamine and mirtazapine both increase serotonin levels. Use Caution/Monitor.
+
+mirtazapine increases and amphetamine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+apomorphine
+apomorphine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+aripiprazole
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 16/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+aripiprazole and mirtazapine both increase sedation. Use Caution/Monitor.
+
+aripiprazole and mirtazapine both increase QTc interval. Use Caution/Monitor.
+
+armodafinil
+mirtazapine increases and armodafinil decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+asenapine
+asenapine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+asenapine transdermal
+asenapine transdermal and mirtazapine both increase sedation. Use
+Caution/Monitor.
+
+atomoxetine
+atomoxetine and mirtazapine both decrease QTc interval. Use Caution/Monitor.
+
+avapritinib
+mirtazapine will increase the level or effect of avapritinib by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+avapritinib and mirtazapine both increase sedation. Use Caution/Monitor.
+
+axitinib
+mirtazapine increases levels of axitinib by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+
+azelastine
+azelastine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+baclofen
+baclofen and mirtazapine both increase sedation. Use Caution/Monitor.
+
+belladonna and opium
+belladonna and opium and mirtazapine both increase sedation. Use
+Caution/Monitor.
+
+benperidol
+benperidol and mirtazapine both increase sedation. Use Caution/Monitor.
+
+benzhydrocodone/acetaminophen
+benzhydrocodone/acetaminophen, mirtazapine. Either increases effects of the other
+by serotonin levels. Use Caution/Monitor. Coadministration of drugs that affect the
+serotonergic neurotransmitter system may result in serotonin syndrome. If
+concomitant use is warranted, carefully observe the patient, particularly during
+treatment initiation and dose adjustment.
+
+benzphetamine
+mirtazapine increases and benzphetamine decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+bosentan
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 17/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+bosentan will decrease the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+brexanolone
+brexanolone, mirtazapine. Either increases toxicity of the other by sedation. Use
+Caution/Monitor.
+
+brexpiprazole
+brexpiprazole and mirtazapine both increase sedation. Use Caution/Monitor.
+
+brimonidine
+brimonidine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+brimonidine topical
+brimonidine topical and mirtazapine both increase sedation. Use Caution/Monitor.
+
+brivaracetam
+brivaracetam and mirtazapine both increase sedation. Use Caution/Monitor.
+
+brompheniramine
+brompheniramine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+buprenorphine
+buprenorphine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+buprenorphine buccal
+buprenorphine buccal and mirtazapine both increase sedation. Use Caution/Monitor.
+
+buprenorphine subdermal implant
+mirtazapine, buprenorphine subdermal implant. Either increases toxicity of the
+other by serotonin levels. Use Caution/Monitor. Concomitant use could result in life-
+threatening serotonin syndrome. If concomitant use is warranted, carefully observe
+the patient, particularly during treatment initiation, and during dose adjustment of
+the serotonergic drug. Discontinue buprenorphine if serotonin syndrome is
+suspected.
+
+buprenorphine, long-acting injection
+mirtazapine, buprenorphine, long-acting injection. Either increases toxicity of the
+other by serotonin levels. Use Caution/Monitor. Concomitant use could result in life-
+threatening serotonin syndrome. If concomitant use is warranted, carefully observe
+the patient, particularly during treatment initiation, and during dose adjustment of
+the serotonergic drug. Discontinue buprenorphine if serotonin syndrome is
+suspected.
+
+bupropion
+bupropion will increase the level or effect of mirtazapine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+buspirone
+buspirone and mirtazapine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+butalbital
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 18/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+butalbital and mirtazapine both increase sedation. Use Caution/Monitor.
+
+butorphanol
+butorphanol and mirtazapine both increase sedation. Use Caution/Monitor.
+
+caffeine
+mirtazapine increases and caffeine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+cannabidiol
+cannabidiol, mirtazapine. affecting hepatic enzyme CYP1A2 metabolism. Modify
+Therapy/Monitor Closely. Owing to the potential for both CYP1A2 induction and
+inhibition with the coadministration of CYP1A2 substrates and cannabidiol,
+consider reducing dosage adjustment of CYP1A2 substrates as clinically
+appropriate.
+
+carbachol/brimonidine ophthalmic
+carbachol/brimonidine ophthalmic and mirtazapine both increase sedation. Use
+Caution/Monitor.
+
+carbamazepine
+carbamazepine will decrease the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+carbinoxamine
+carbinoxamine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+cariprazine
+cariprazine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+carisoprodol
+carisoprodol and mirtazapine both increase sedation. Use Caution/Monitor.
+
+cenobamate
+cenobamate will decrease the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Increase dose of CYP3A4 substrate, as needed, when coadministered with
+cenobamate.
+
+chlordiazepoxide
+chlordiazepoxide and mirtazapine both increase sedation. Use Caution/Monitor.
+
+chlorpheniramine
+chlorpheniramine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+chlorpromazine
+chlorpromazine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+chlorzoxazone
+chlorzoxazone and mirtazapine both increase sedation. Use Caution/Monitor.
+
+cinnarizine
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 19/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+cinnarizine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+citalopram
+citalopram and mirtazapine both increase serotonin levels. Use Caution/Monitor.
+Combination may increase risk of serotonin syndrome or neuroleptic malignant
+syndrome-like reactions.
+
+clemastine
+clemastine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+clobazam
+clobazam will increase the level or effect of mirtazapine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor. Lower doses of drugs
+metabolized by CYP2D6 may be required when used concomitantly.
+
+mirtazapine, clobazam. Other (see comment). Use Caution/Monitor. Comment:
+Concomitant administration can increase the potential for CNS effects (e.g.,
+increased sedation or respiratory depression).
+
+clobazam and mirtazapine both increase sedation. Use Caution/Monitor.
+
+clofazimine
+mirtazapine and clofazimine both increase QTc interval. Use Caution/Monitor.
+
+clomipramine
+clomipramine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+clomipramine and mirtazapine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+clonazepam
+clonazepam and mirtazapine both increase sedation. Use Caution/Monitor.
+
+clonidine
+clonidine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+clorazepate
+clorazepate and mirtazapine both increase sedation. Use Caution/Monitor.
+
+clozapine
+clozapine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+clozapine and mirtazapine both increase QTc interval. Use Caution/Monitor.
+
+cobicistat
+cobicistat will increase the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+cocaine topical
+cocaine topical and mirtazapine both increase serotonin levels. Use
+Caution/Monitor.
+
+codeine
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 20/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+codeine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+crizotinib
+crizotinib increases levels of mirtazapine by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Dose reduction may be needed for
+coadministered drugs that are predominantly metabolized by CYP3A.
+
+crofelemer
+crofelemer increases levels of mirtazapine by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Crofelemer has the potential to inhibit
+CYP3A4 at concentrations expected in the gut; unlikely to inhibit systemically
+because minimally absorbed.
+
+cyclobenzaprine
+cyclobenzaprine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+cyproheptadine
+cyproheptadine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+dabrafenib
+dabrafenib will decrease the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+
+dantrolene
+dantrolene and mirtazapine both increase sedation. Use Caution/Monitor.
+
+daridorexant
+mirtazapine and daridorexant both increase sedation. Modify Therapy/Monitor
+Closely. Coadministration increases risk of CNS depression, which can lead to
+additive impairment of psychomotor performance and cause daytime impairment.
+
+darunavir
+darunavir increases levels of mirtazapine by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Potential for increased toxicity. .
+
+dasatinib
+dasatinib and mirtazapine both increase QTc interval. Use Caution/Monitor.
+
+deferasirox
+deferasirox increases levels of mirtazapine by affecting hepatic enzyme CYP1A2
+metabolism. Use Caution/Monitor.
+
+degarelix
+degarelix and mirtazapine both increase QTc interval. Use Caution/Monitor.
+
+desflurane
+desflurane and mirtazapine both increase sedation. Use Caution/Monitor.
+
+desipramine
+desipramine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 21/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+desipramine and mirtazapine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+desloratadine
+desloratadine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+deutetrabenazine
+deutetrabenazine and mirtazapine both increase QTc interval. Use Caution/Monitor.
+At the maximum recommended dose, deutetrabenazine does not prolong QT
+interval to a clinically relevant extent. Certain circumstances may increase risk of
+torsade de pointes and/or sudden death in association with drugs that prolong the
+QTc interval (eg, bradycardia, hypokalemia or hypomagnesemia, coadministration
+with other drugs that prolong QTc interval, presence of congenital QT
+prolongation).
+
+dexbrompheniramine
+dexbrompheniramine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+dexchlorpheniramine
+dexchlorpheniramine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+dexfenfluramine
+mirtazapine increases and dexfenfluramine decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+dexfenfluramine and mirtazapine both increase serotonin levels. Use
+Caution/Monitor.
+
+dexmedetomidine
+dexmedetomidine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+dexmethylphenidate
+mirtazapine increases and dexmethylphenidate decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+dextroamphetamine
+mirtazapine increases and dextroamphetamine decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+dextroamphetamine and mirtazapine both increase serotonin levels. Use
+Caution/Monitor.
+
+dextroamphetamine transdermal
+mirtazapine, dextroamphetamine transdermal. Either increases effects of the other
+by serotonin levels. Modify Therapy/Monitor Closely. Initiate with lower doses and
+monitor for signs and symptoms of serotonin syndrome, particularly during
+initiation or dosage increase. If serotonin syndrome occurs, discontinue
+dextroamphetamine transdermal and concomitant serotonergic drug(s).
+
+dextromethorphan
+dextromethorphan and mirtazapine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 22/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+dextromoramide
+dextromoramide and mirtazapine both increase sedation. Use Caution/Monitor.
+
+diamorphine
+diamorphine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+diazepam
+diazepam and mirtazapine both increase sedation. Use Caution/Monitor.
+
+diazepam buccal
+diazepam buccal and mirtazapine both increase sedation. Use Caution/Monitor.
+
+diazepam buccal, mirtazapine. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration may
+potentiate the CNS-depressant effects of each drug.
+
+diazepam intranasal
+diazepam intranasal, mirtazapine. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration may
+potentiate the CNS-depressant effects of each drug.
+
+diazepam intranasal and mirtazapine both increase sedation. Use Caution/Monitor.
+
+diethylpropion
+mirtazapine increases and diethylpropion decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+difelikefalin
+difelikefalin and mirtazapine both increase sedation. Use Caution/Monitor.
+
+difenoxin hcl
+difenoxin hcl and mirtazapine both increase sedation. Use Caution/Monitor.
+
+dihydroergotamine
+dihydroergotamine and mirtazapine both increase serotonin levels. Use
+Caution/Monitor.
+
+dihydroergotamine intranasal
+dihydroergotamine intranasal and mirtazapine both increase serotonin levels. Use
+Caution/Monitor.
+
+dimenhydrinate
+dimenhydrinate and mirtazapine both increase sedation. Use Caution/Monitor.
+
+diphenhydramine
+diphenhydramine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+diphenoxylate hcl
+diphenoxylate hcl and mirtazapine both increase sedation. Use Caution/Monitor.
+
+dipipanone
+dipipanone and mirtazapine both increase sedation. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 23/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+dobutamine
+mirtazapine increases and dobutamine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+dolasetron
+dolasetron and mirtazapine both increase QTc interval. Use Caution/Monitor.
+
+donepezil
+donepezil and mirtazapine both increase QTc interval. Use Caution/Monitor.
+
+dopamine
+mirtazapine increases and dopamine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+dopexamine
+mirtazapine increases and dopexamine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+dordaviprone
+dordaviprone and mirtazapine both increase QTc interval. Use Caution/Monitor.
+Increase the frequency of ECG and electrolyte monitoring.
+
+doxepin
+doxepin and mirtazapine both increase sedation. Use Caution/Monitor.
+
+doxepin and mirtazapine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+doxylamine
+doxylamine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+droperidol
+droperidol and mirtazapine both increase sedation. Use Caution/Monitor.
+
+duloxetine
+duloxetine and mirtazapine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+duvelisib
+duvelisib will increase the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Coadministration with duvelisib increases AUC of a sensitive CYP3A4 substrate
+which may increase the risk of toxicities of these drugs. Consider reducing the dose
+of the sensitive CYP3A4 substrate and monitor for signs of toxicities of the
+coadministered sensitive CYP3A substrate.
+
+efavirenz
+efavirenz will decrease the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+efavirenz and mirtazapine both increase QTc interval. Use Caution/Monitor.
+
+elagolix
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 24/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+elagolix decreases levels of mirtazapine by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Modify Therapy/Monitor Closely. Elagolix is a weak-to-
+moderate CYP3A4 inducer. Monitor CYP3A substrates if coadministered. Consider
+increasing CYP3A substrate dose if needed.
+
+eletriptan
+eletriptan and mirtazapine both increase serotonin levels. Use Caution/Monitor.
+
+eliglustat
+eliglustat increases levels of mirtazapine by affecting hepatic enzyme CYP2D6
+metabolism. Modify Therapy/Monitor Closely. Monitor therapeutic drug
+concentrations, as indicated, or consider reducing the dosage of the concomitant
+drug and titrate to clinical effect.
+
+elvitegravir/cobicistat/emtricitabine/tenofovir DF
+elvitegravir/cobicistat/emtricitabine/tenofovir DF increases levels of mirtazapine by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor
+Closely. Cobicistat is a CYP3A4 inhibitor; contraindicated with CYP3A4 substrates
+for which elevated plasma concentrations are associated with serious and/or life-
+threatening events.
+
+elvitegravir/cobicistat/emtricitabine/tenofovir DF increases levels of mirtazapine by
+affecting hepatic enzyme CYP2D6 metabolism. Modify Therapy/Monitor Closely.
+Cobicistat is a CYP2D6 inhibitor; caution with CYP2D6 substrates for which
+elevated plasma concentrations are associated with serious and/or life-threatening
+events.
+
+encorafenib
+encorafenib, mirtazapine. affecting hepatic/intestinal enzyme CYP3A4 metabolism.
+Use Caution/Monitor. Encorafenib both inhibits and induces CYP3A4 at clinically
+relevant plasma concentrations. Coadministration of encorafenib with sensitive
+CYP3A4 substrates may result in increased toxicity or decreased efficacy of these
+agents.
+
+enzalutamide
+enzalutamide will decrease the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+ephedrine
+mirtazapine increases and ephedrine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+epinephrine
+mirtazapine increases and epinephrine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+epinephrine racemic
+mirtazapine increases and epinephrine racemic decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+ergotamine
+ergotamine and mirtazapine both increase serotonin levels. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 25/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+escitalopram
+escitalopram and mirtazapine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+estazolam
+estazolam and mirtazapine both increase sedation. Use Caution/Monitor.
+
+eszopiclone
+eszopiclone and mirtazapine both increase sedation. Use Caution/Monitor.
+
+ethanol
+ethanol and mirtazapine both increase sedation. Use Caution/Monitor.
+
+etomidate
+etomidate and mirtazapine both increase sedation. Use Caution/Monitor.
+
+etravirine
+etravirine will decrease the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+fedratinib
+fedratinib will increase the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Adjust dose
+of drugs that are CYP3A4 substrates as necessary.
+
+fedratinib will increase the level or effect of mirtazapine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor. Adjust dose of drugs that are
+CYP2D6 substrates as necessary.
+
+fenfluramine
+mirtazapine increases and fenfluramine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+fenfluramine, mirtazapine. Either increases effects of the other by serotonin levels.
+Use Caution/Monitor. Coadministration with drugs that increase serotoninergic
+effects may increase the risk of serotonin syndrome.
+
+fexinidazole
+fexinidazole will increase the level or effect of mirtazapine by affecting hepatic
+enzyme CYP1A2 metabolism. Use Caution/Monitor.
+
+finerenone
+mirtazapine will increase the level or effect of finerenone by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Monitor serum potassium during initiation and dosage adjustment of either
+finererone or weak CYP3A4 inhibitors. Adjust finererone dosage as needed.
+
+fingolimod
+fingolimod and mirtazapine both increase QTc interval. Use Caution/Monitor.
+
+flibanserin
+mirtazapine will increase the level or effect of flibanserin by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Increased
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 26/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+flibanserin adverse effects may occur if coadministered with multiple weak CYP3A4
+inhibitors.
+
+fluoxetine
+fluoxetine and mirtazapine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+fluphenazine
+fluphenazine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+flurazepam
+flurazepam and mirtazapine both increase sedation. Use Caution/Monitor.
+
+fluvoxamine
+fluvoxamine and mirtazapine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+fosamprenavir
+fosamprenavir increases levels of mirtazapine by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor. Potential for increased toxicity. .
+
+fosfomycin
+fosfomycin and mirtazapine both increase QTc interval. Use Caution/Monitor. The
+risk of QT prolongation may increase in patients with electrolyte abnormalities
+(such as hypokalemia and hypocalcemia), patients with conditions that have
+potential to cause electrolyte imbalance (such as renal impairment), or patients
+taking other drugs affecting electrolyte balance or QT prolongation; avoid this drug
+in patients with known QT prolongation or ventricular arrhythmias, including a
+history of torsade de pointes; monitor electrolytes during treatment
+
+fosphenytoin
+fosphenytoin will decrease the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+fostemsavir
+mirtazapine and fostemsavir both increase QTc interval. Use Caution/Monitor. QTc
+prolongation reported with higher than recommended doses of fostemsavir.
+
+frovatriptan
+frovatriptan and mirtazapine both increase serotonin levels. Use Caution/Monitor.
+
+gabapentin
+gabapentin, mirtazapine. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+gabapentin and mirtazapine both increase sedation. Use Caution/Monitor.
+
+gabapentin enacarbil
+gabapentin enacarbil, mirtazapine. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 27/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+gabapentin enacarbil and mirtazapine both increase sedation. Use Caution/Monitor.
+
+ganaxolone
+mirtazapine and ganaxolone both increase sedation. Use Caution/Monitor.
+
+gemifloxacin
+gemifloxacin and mirtazapine both increase QTc interval. Use Caution/Monitor.
+
+gemtuzumab
+mirtazapine and gemtuzumab both increase QTc interval. Use Caution/Monitor.
+
+gepirone
+gepirone and mirtazapine both increase serotonin levels. Use Caution/Monitor.
+Monitor for symptoms of serotonin syndrome when gepirone is used gepirone with
+other drugs that may affect the serotonergic neurotransmitter systems. If serotonin
+syndrome occurs, consider discontinue gepirone and/or concomitant serotonergic
+drug.
+
+gilteritinib
+gilteritinib and mirtazapine both increase QTc interval. Use Caution/Monitor.
+
+givinostat
+mirtazapine and givinostat both increase QTc interval. Use Caution/Monitor. If
+coadministered, obtain ECGs when initiating, during concomitant use, and as
+clinically indicated. Withhold if QTc interval >500 ms or a change from baseline
+>60 ms.
+
+goserelin
+mirtazapine and goserelin both increase QTc interval. Use Caution/Monitor.
+
+granisetron
+granisetron and mirtazapine both increase QTc interval. Use Caution/Monitor.
+
+guanfacine
+guanfacine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+haloperidol
+haloperidol and mirtazapine both increase sedation. Use Caution/Monitor.
+
+mirtazapine and haloperidol both increase QTc interval. Use Caution/Monitor.
+
+histrelin
+mirtazapine and histrelin both increase QTc interval. Use Caution/Monitor.
+
+hydrocodone
+hydrocodone, mirtazapine. Either increases effects of the other by serotonin levels.
+Use Caution/Monitor. Coadministration of drugs that affect the serotonergic
+neurotransmitter system may result in serotonin syndrome. If concomitant use is
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 28/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+warranted, carefully observe the patient, particularly during treatment initiation and
+dose adjustment.
+
+hydromorphone
+hydromorphone and mirtazapine both increase sedation. Use Caution/Monitor.
+
+hydroxyzine
+hydroxyzine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+hydroxyzine and mirtazapine both increase QTc interval. Use Caution/Monitor.
+
+imipramine
+imipramine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+imipramine and mirtazapine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+isavuconazonium sulfate
+mirtazapine will increase the level or effect of isavuconazonium sulfate by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+isoniazid
+isoniazid and mirtazapine both increase serotonin levels. Use Caution/Monitor.
+
+isoproterenol
+mirtazapine increases and isoproterenol decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+istradefylline
+istradefylline will increase the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Istradefylline
+40 mg/day increased peak levels and AUC of CYP3A4 substrates in clinical trials.
+This effect was not observed with istradefylline 20 mg/day. Consider dose reduction
+of sensitive CYP3A4 substrates.
+
+itraconazole
+itraconazole will increase the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+itraconazole and mirtazapine both increase QTc interval. Use Caution/Monitor.
+
+ketamine
+ketamine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+ketoconazole
+ketoconazole will increase the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Reduce mirtazapine dose if coadministration of strong CYP3A4 inhibitor is
+necessary. Once CYP3A4 inhibitor is discontinued, consider increasing mirtazapine
+dose.
+
+ketotifen, ophthalmic
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 29/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+ketotifen, ophthalmic and mirtazapine both increase sedation. Use Caution/Monitor.
+
+L-tryptophan
+L-tryptophan and mirtazapine both increase serotonin levels. Use Caution/Monitor.
+
+lamotrigine
+lamotrigine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+lapatinib
+mirtazapine and lapatinib both increase QTc interval. Use Caution/Monitor.
+
+lemborexant
+mirtazapine will increase the level or effect of lemborexant by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Lower nightly dose of lemborexant recommended if coadministered with weak
+CYP3A4 inhibitors. See drug monograph for specific dosage modification.
+
+lemborexant, mirtazapine. Either increases effects of the other by sedation. Modify
+Therapy/Monitor Closely. Dosage adjustment may be necessary if lemborexant is
+coadministered with other CNS depressants because of potentially additive effects.
+
+lenacapavir
+lenacapavir will increase the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Lencapavir
+may increase CYP3A4 substrates initiated within 9 months after last SC dose of
+lenacapavir, which may increase potential risk of adverse reactions of CYP3A4
+substrates.
+
+letermovir
+letermovir increases levels of mirtazapine by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+
+leuprolide
+mirtazapine and leuprolide both increase QTc interval. Use Caution/Monitor.
+
+levetiracetam
+levetiracetam and mirtazapine both increase sedation. Use Caution/Monitor.
+
+levocetirizine
+levocetirizine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+levofloxacin
+mirtazapine and levofloxacin both increase QTc interval. Use Caution/Monitor.
+
+levoketoconazole
+levoketoconazole will increase the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Reduce mirtazapine dose if coadministration of strong CYP3A4 inhibitor is
+necessary. Once CYP3A4 inhibitor is discontinued, consider increasing mirtazapine
+dose.
+
+levomilnacipran
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 30/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+levomilnacipran and mirtazapine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+levorphanol
+levorphanol and mirtazapine both increase sedation. Use Caution/Monitor.
+
+lisdexamfetamine
+mirtazapine increases and lisdexamfetamine decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+lithium
+lithium and mirtazapine both increase serotonin levels. Use Caution/Monitor.
+
+lofepramine
+lofepramine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+lofepramine and mirtazapine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+lofexidine
+lofexidine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+mirtazapine and lofexidine both increase QTc interval. Use Caution/Monitor.
+
+loperamide
+mirtazapine and loperamide both increase QTc interval. Use Caution/Monitor.
+
+lopinavir
+lopinavir increases levels of mirtazapine by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Potential for increased toxicity.
+
+loprazolam
+loprazolam and mirtazapine both increase sedation. Use Caution/Monitor.
+
+loratadine
+loratadine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+lorazepam
+lorazepam and mirtazapine both increase sedation. Use Caution/Monitor.
+
+lorcaserin
+lorcaserin will increase the level or effect of mirtazapine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+lorlatinib
+lorlatinib will decrease the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+lormetazepam
+lormetazepam and mirtazapine both increase sedation. Use Caution/Monitor.
+
+loxapine
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 31/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+loxapine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+loxapine inhaled
+loxapine inhaled and mirtazapine both increase sedation. Use Caution/Monitor.
+
+lsd
+lsd and mirtazapine both increase serotonin levels. Use Caution/Monitor.
+
+lumateperone
+lumateperone and mirtazapine both increase sedation. Use Caution/Monitor.
+
+lurasidone
+lurasidone increases effects of mirtazapine by Other (see comment). Use
+Caution/Monitor. Comment: Potential for additive CNS effects .
+
+lurasidone and mirtazapine both increase sedation. Use Caution/Monitor.
+
+maraviroc
+maraviroc, mirtazapine. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of orthostatic hypotension.
+
+marijuana
+marijuana and mirtazapine both increase sedation. Use Caution/Monitor.
+
+meclizine
+meclizine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+melatonin
+melatonin and mirtazapine both increase sedation. Use Caution/Monitor.
+
+meperidine
+meperidine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+meperidine and mirtazapine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+meprobamate
+meprobamate and mirtazapine both increase sedation. Use Caution/Monitor.
+
+metaproterenol
+mirtazapine increases and metaproterenol decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+metaxalone
+metaxalone and mirtazapine both increase sedation. Use Caution/Monitor.
+
+methadone
+methadone and mirtazapine both increase sedation. Use Caution/Monitor.
+
+methamphetamine
+mirtazapine increases and methamphetamine decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 32/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+methocarbamol
+methocarbamol and mirtazapine both increase sedation. Use Caution/Monitor.
+
+methsuximide
+methsuximide and mirtazapine both increase sedation. Use Caution/Monitor.
+
+methylenedioxymethamphetamine
+mirtazapine increases and methylenedioxymethamphetamine decreases sedation.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+midazolam
+midazolam and mirtazapine both increase sedation. Use Caution/Monitor.
+
+midazolam intranasal
+mirtazapine will increase the level or effect of midazolam intranasal by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+Coadministration of mild CYP3A4 inhibitors with midazolam intranasal may cause
+higher midazolam systemic exposure, which may prolong sedation.
+
+midazolam intranasal, mirtazapine. Either increases toxicity of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Concomitant use of
+barbiturates, alcohol, or other CNS depressants may increase the risk of
+hypoventilation, airway obstruction, desaturation, or apnea and may contribute to
+profound and/or prolonged drug effect.
+
+midodrine
+mirtazapine increases and midodrine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+mifepristone
+mifepristone will increase the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+milnacipran
+milnacipran and mirtazapine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+mipomersen
+mipomersen, mirtazapine. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: Both drugs have potential to increase
+hepatic enzymes; monitor LFTs.
+
+mirabegron
+mirabegron will increase the level or effect of mirtazapine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+mitotane
+mitotane decreases levels of mirtazapine by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Mitotane is a strong inducer of
+cytochrome P-4503A4; monitor when coadministered with CYP3A4 substrates for
+possible dosage adjustments.
+
+modafinil
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 33/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+mirtazapine increases and modafinil decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+molindone
+molindone and mirtazapine both increase sedation. Use Caution/Monitor.
+
+morphine
+morphine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+mirtazapine and morphine both increase serotonin levels. Use Caution/Monitor.
+
+motherwort
+mirtazapine and motherwort both increase sedation. Use Caution/Monitor.
+
+moxonidine
+mirtazapine and moxonidine both increase sedation. Use Caution/Monitor.
+
+nabilone
+mirtazapine and nabilone both increase sedation. Use Caution/Monitor.
+
+nalbuphine
+nalbuphine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+naratriptan
+naratriptan and mirtazapine both increase serotonin levels. Use Caution/Monitor.
+
+nefazodone
+nefazodone and mirtazapine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+nelfinavir
+nelfinavir increases levels of mirtazapine by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Potential for increased toxicity. .
+
+nevirapine
+nevirapine will decrease the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+nitrous oxide
+nitrous oxide and mirtazapine both increase sedation. Use Caution/Monitor.
+
+norepinephrine
+mirtazapine increases and norepinephrine decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+nortriptyline
+nortriptyline and mirtazapine both increase sedation. Use Caution/Monitor.
+
+nortriptyline and mirtazapine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+octreotide
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 34/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+mirtazapine and octreotide both increase QTc interval. Use Caution/Monitor.
+
+ofloxacin
+mirtazapine and ofloxacin both increase QTc interval. Use Caution/Monitor.
+
+olanzapine
+olanzapine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+mirtazapine and olanzapine both increase QTc interval. Use Caution/Monitor.
+Limited data, including some case reports, suggest that olanzapine may be
+associated with a significant prolongation of the QTc interval in rare instances
+
+olanzapine and mirtazapine both increase QTc interval. Use Caution/Monitor.
+
+olanzapine/samidorphan
+mirtazapine, olanzapine/samidorphan. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration of diazepam,
+alcohol, or other CNS acting drugs may potentiate orthostatic hypotension
+observed with olanzapine. Additive sedation may also occur.
+
+opium tincture
+opium tincture and mirtazapine both increase sedation. Use Caution/Monitor.
+
+orphenadrine
+orphenadrine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+osilodrostat
+osilodrostat and mirtazapine both increase QTc interval. Use Caution/Monitor.
+
+oxazepam
+oxazepam and mirtazapine both increase sedation. Use Caution/Monitor.
+
+oxycodone
+oxycodone and mirtazapine both increase sedation. Use Caution/Monitor.
+
+oxymorphone
+oxymorphone and mirtazapine both increase sedation. Use Caution/Monitor.
+
+paliperidone
+paliperidone and mirtazapine both increase sedation. Use Caution/Monitor.
+
+papaveretum
+papaveretum and mirtazapine both increase sedation. Use Caution/Monitor.
+
+papaverine
+mirtazapine and papaverine both increase sedation. Use Caution/Monitor.
+
+paroxetine
+paroxetine and mirtazapine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+mirtazapine and paroxetine both increase QTc interval. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 35/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+pasireotide
+mirtazapine and pasireotide both increase QTc interval. Use Caution/Monitor.
+
+peginterferon alfa 2b
+peginterferon alfa 2b, mirtazapine. Other (see comment). Use Caution/Monitor.
+Comment: When patients are administered peginterferon alpha-2b with CYP2D6
+substrates, the therapeutic effect of these drugs may be altered. Peginterferon
+alpha-2b may increase or decrease levels of CYP2D6 substrate.
+
+pentazocine
+pentazocine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+mirtazapine and pentazocine both increase serotonin levels. Use Caution/Monitor.
+
+pentobarbital
+pentobarbital and mirtazapine both increase sedation. Use Caution/Monitor.
+
+perphenazine
+perphenazine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+mirtazapine and perphenazine both increase QTc interval. Use Caution/Monitor.
+
+phendimetrazine
+mirtazapine increases and phendimetrazine decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+phenobarbital
+phenobarbital and mirtazapine both increase sedation. Use Caution/Monitor.
+
+phenobarbital will decrease the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+phentermine
+mirtazapine increases and phentermine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+phenylephrine
+mirtazapine increases and phenylephrine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+phenylephrine PO
+mirtazapine increases and phenylephrine PO decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor. .
+
+phenytoin
+phenytoin will decrease the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+pholcodine
+mirtazapine and pholcodine both increase sedation. Use Caution/Monitor.
+
+pimozide
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 36/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+pimozide and mirtazapine both increase sedation. Use Caution/Monitor.
+
+pirbuterol
+mirtazapine increases and pirbuterol decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+pregabalin
+pregabalin, mirtazapine. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+primaquine
+mirtazapine and primaquine both increase QTc interval. Use Caution/Monitor.
+
+primidone
+primidone and mirtazapine both increase sedation. Use Caution/Monitor.
+
+primidone will decrease the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+prochlorperazine
+prochlorperazine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+mirtazapine and prochlorperazine both decrease QTc interval. Use Caution/Monitor.
+
+promethazine
+promethazine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+mirtazapine and promethazine both decrease QTc interval. Use Caution/Monitor.
+
+propofol
+propofol and mirtazapine both increase sedation. Use Caution/Monitor.
+
+mirtazapine and propofol both increase QTc interval. Use Caution/Monitor.
+
+propylhexedrine
+mirtazapine increases and propylhexedrine decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+protriptyline
+protriptyline and mirtazapine both increase sedation. Use Caution/Monitor.
+
+protriptyline and mirtazapine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+pyrilamine
+pyrilamine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+quazepam
+quazepam and mirtazapine both increase sedation. Use Caution/Monitor.
+
+quetiapine
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 37/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+quetiapine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+ramelteon
+mirtazapine and ramelteon both increase sedation. Use Caution/Monitor.
+
+ranolazine
+mirtazapine and ranolazine both increase QTc interval. Use Caution/Monitor.
+
+remifentanil
+mirtazapine, remifentanil. Either increases toxicity of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Increases risk of serotonin syndrome.
+
+remimazolam
+remimazolam, mirtazapine. Either increases toxicity of the other by sedation. Modify
+Therapy/Monitor Closely. Coadministration may result in profound sedation,
+respiratory depression, coma, and/or death. Continuously monitor vital signs during
+sedation and recovery period if coadministered. Carefully titrate remimazolam dose
+if administered with opioid analgesics and/or sedative/hypnotics.
+
+revumenib
+revumenib and mirtazapine both increase QTc interval. Use Caution/Monitor. ECG
+monitoring recommended if concomitant use can?t be avoided and withhold
+therapy if QTc interval is >480 msec; restart therapy after QTc interval returns to
+<480 msec
+
+ribociclib
+ribociclib will increase the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+rifabutin
+rifabutin will decrease the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+rifampin
+rifampin will decrease the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+rifapentine
+rifapentine will decrease the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+rilpivirine
+mirtazapine and rilpivirine both increase QTc interval. Use Caution/Monitor.
+
+rilzabrutinib
+rilzabrutinib will increase the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Follow
+substrate recommendations for use with moderate CYP3A inhibitors
+
+risperidone
+risperidone and mirtazapine both increase sedation. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 38/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+mirtazapine and risperidone both increase QTc interval. Use Caution/Monitor.
+
+ritonavir
+ritonavir increases levels of mirtazapine by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Potential for increased toxicity.
+
+rizatriptan
+rizatriptan and mirtazapine both increase serotonin levels. Use Caution/Monitor.
+
+rolapitant
+rolapitant will increase the level or effect of mirtazapine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor. Rolapitant may increase
+plasma concentrations of CYP2D6 substrates for at least 28 days following
+rolapitant administration.
+
+romidepsin
+mirtazapine and romidepsin both increase QTc interval. Use Caution/Monitor.
+
+salmeterol
+mirtazapine increases and salmeterol decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+SAMe
+mirtazapine and SAMe both increase serotonin levels. Use Caution/Monitor.
+
+scopolamine
+scopolamine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+scopolamine intranasal
+scopolamine intranasal and mirtazapine both increase sedation. Use
+Caution/Monitor.
+
+scullcap
+mirtazapine and scullcap both increase sedation. Use Caution/Monitor.
+
+selegiline transdermal
+selegiline transdermal and mirtazapine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+sertraline
+sertraline and mirtazapine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+mirtazapine and sertraline both increase QTc interval. Use Caution/Monitor.
+
+sevoflurane
+sevoflurane and mirtazapine both increase sedation. Use Caution/Monitor.
+
+shepherd's purse
+mirtazapine and shepherd's purse both increase sedation. Use Caution/Monitor.
+
+solifenacin
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 39/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+mirtazapine and solifenacin both increase QTc interval. Use Caution/Monitor.
+
+St John's Wort
+mirtazapine and St John's Wort both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+stiripentol
+stiripentol, mirtazapine. affecting hepatic enzyme CYP1A2 metabolism. Modify
+Therapy/Monitor Closely. Stiripentol is a CYP1A2 inhibitor and inducer. Monitor
+CYP1A2 substrates coadministered with stiripentol for increased or decreased
+effects. CYP1A2 substrates may require dosage adjustment.
+
+stiripentol, mirtazapine. affecting hepatic/intestinal enzyme CYP3A4 metabolism.
+Modify Therapy/Monitor Closely. Stiripentol is a CYP3A4 inhibitor and inducer.
+Monitor CYP3A4 substrates coadministered with stiripentol for increased or
+decreased effects. CYP3A4 substrates may require dosage adjustment.
+
+stiripentol, mirtazapine. Either increases effects of the other by sedation. Use
+Caution/Monitor. Concomitant use stiripentol with other CNS depressants, including
+alcohol, may increase the risk of sedation and somnolence.
+
+sufentanil
+sufentanil and mirtazapine both increase sedation. Use Caution/Monitor.
+
+sufentanil SL
+sufentanil SL, mirtazapine. Either increases effects of the other by serotonin levels.
+Use Caution/Monitor. Coadministration of drugs that affect the serotonergic
+neurotransmitter system may result in serotonin syndrome. If concomitant use is
+warranted, carefully observe the patient, particularly during treatment initiation and
+dose adjustment.
+
+sumatriptan
+sumatriptan and mirtazapine both increase serotonin levels. Use Caution/Monitor.
+
+sumatriptan intranasal
+sumatriptan intranasal and mirtazapine both increase serotonin levels. Use
+Caution/Monitor.
+
+sunitinib
+mirtazapine and sunitinib both increase QTc interval. Use Caution/Monitor.
+
+tacrolimus
+mirtazapine and tacrolimus both increase QTc interval. Use Caution/Monitor.
+
+taletrectinib
+taletrectinib and mirtazapine both increase QTc interval. Use Caution/Monitor.
+Concomitant use may increase the risk of QTc interval prolongation. If concomitant
+use is unavoidable, adjust the frequency of ECG and electrolyte monitoring.
+
+tapentadol
+tapentadol and mirtazapine both increase sedation. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 40/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+mirtazapine and tapentadol both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+tasimelteon
+tasimelteon and mirtazapine both increase sedation. Use Caution/Monitor.
+
+tecovirimat
+tecovirimat will decrease the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Tecovirimat is
+a weak CYP3A4 inducer. Monitor sensitive CYP3A4 substrates for effectiveness if
+coadministered.
+
+telavancin
+mirtazapine and telavancin both increase QTc interval. Use Caution/Monitor.
+
+temazepam
+temazepam and mirtazapine both increase sedation. Use Caution/Monitor.
+
+terbinafine
+terbinafine will increase the level or effect of mirtazapine by affecting hepatic
+enzyme CYP2D6 metabolism. Modify Therapy/Monitor Closely. Assess need to
+reduce dose of CYP2D6-metabolized drug.
+
+terbutaline
+mirtazapine increases and terbutaline decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+teriflunomide
+teriflunomide decreases levels of mirtazapine by affecting hepatic enzyme CYP1A2
+metabolism. Use Caution/Monitor.
+
+tetrabenazine
+tetrabenazine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+thioridazine
+thioridazine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+thiothixene
+thiothixene and mirtazapine both increase sedation. Use Caution/Monitor.
+
+tiagabine
+tiagabine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+tinidazole
+mirtazapine will increase the level or effect of tinidazole by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+tipranavir
+tipranavir will increase the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+tizanidine
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 41/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+tizanidine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+topiramate
+mirtazapine and topiramate both increase sedation. Modify Therapy/Monitor
+Closely.
+
+tramadol
+tramadol and mirtazapine both increase sedation. Use Caution/Monitor.
+
+mirtazapine and tramadol both increase serotonin levels. Use Caution/Monitor.
+
+trazodone
+trazodone and mirtazapine both increase sedation. Use Caution/Monitor.
+
+trazodone and mirtazapine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+triazolam
+triazolam and mirtazapine both increase sedation. Use Caution/Monitor.
+
+triclabendazole
+mirtazapine and triclabendazole both increase QTc interval. Use Caution/Monitor.
+
+triclofos
+triclofos and mirtazapine both increase sedation. Use Caution/Monitor.
+
+trifluoperazine
+trifluoperazine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+mirtazapine and trifluoperazine both decrease QTc interval. Use Caution/Monitor.
+
+trimipramine
+trimipramine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+trimipramine and mirtazapine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+triprolidine
+triprolidine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+triptorelin
+mirtazapine and triptorelin both increase QTc interval. Use Caution/Monitor.
+
+valbenazine
+valbenazine and mirtazapine both increase QTc interval. Use Caution/Monitor.
+
+valproic acid
+valproic acid and mirtazapine both increase sedation. Use Caution/Monitor.
+
+vardenafil
+mirtazapine and vardenafil both increase QTc interval. Use Caution/Monitor.
+
+venlafaxine
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 42/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+venlafaxine and mirtazapine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+vigabatrin
+vigabatrin and mirtazapine both increase sedation. Use Caution/Monitor.
+
+viloxazine
+viloxazine will increase the level or effect of mirtazapine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor. Viloxazine (a weak CYP2D6
+inhibitor) may increase systemic exposure of CYP2D6 substrates. Monitor and
+adjust dose of substrate as clinically indicated.
+
+voclosporin
+mirtazapine and voclosporin both increase QTc interval. Use Caution/Monitor.
+
+vorinostat
+mirtazapine and vorinostat both increase QTc interval. Use Caution/Monitor.
+
+xylometazoline
+mirtazapine increases and xylometazoline decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+yohimbine
+mirtazapine increases and yohimbine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+zaleplon
+zaleplon and mirtazapine both increase sedation. Use Caution/Monitor.
+
+ziconotide
+mirtazapine and ziconotide both increase sedation. Use Caution/Monitor.
+
+ziprasidone
+ziprasidone and mirtazapine both increase sedation. Use Caution/Monitor.
+
+zolmitriptan
+zolmitriptan and mirtazapine both increase serotonin levels. Use Caution/Monitor.
+
+zolpidem
+zolpidem and mirtazapine both increase sedation. Use Caution/Monitor.
+
+zonisamide
+zonisamide and mirtazapine both increase sedation. Use Caution/Monitor.
+
+zuranolone
+zuranolone and mirtazapine both increase sedation. Use Caution/Monitor.
+
+Minor (11)
+
+acetazolamide
+acetazolamide will increase the level or effect of mirtazapine by affecting
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 43/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+anastrozole
+anastrozole will increase the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+cyclophosphamide
+cyclophosphamide will increase the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+danazol
+danazol will increase the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+drospirenone
+drospirenone will increase the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+ethanol
+ethanol, mirtazapine. Either increases toxicity of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive CNS depression.
+
+eucalyptus
+eucalyptus and mirtazapine both increase sedation. Minor/Significance Unknown.
+
+larotrectinib
+larotrectinib will increase the level or effect of mirtazapine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+ruxolitinib
+mirtazapine will increase the level or effect of ruxolitinib by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+ruxolitinib topical
+mirtazapine will increase the level or effect of ruxolitinib topical by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+sage
+mirtazapine and sage both increase sedation. Minor/Significance Unknown.
+
+Adverse Effects
+
+>10%
+
+Somnolence (54%)
+
+Weight gain (>7% increase in <49% of pediatric patients)
+
+Xerostomia (25%)
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 44/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+Increased appetite (17%)
+
+Constipation (13%)
+
+1-10%
+
+Asthenia (8%)
+
+Weakness (8%)
+
+Weight gain (>7% increase in 8% of adults)
+
+Dizziness (7%)
+
+Serum TGs increased (6%)
+
+Dream disorder (4%)
+
+Disturbance in thinking (3%)
+
+ALT increased (2%)
+
+Peripheral edema (2%)
+
+Myalgia (2%)
+
+Confusion (2%)
+
+Urinary frequency (2%)
+
+Tremor (2%)
+
+Back pain (2%)
+
+Dyspnea (1%)
+
+<1%
+
+Mania (0.2%)
+
+Grand mal seizure (less than 0.1%)
+
+Frequency Not Defined
+
+Depression exacerbation
+
+Status epilepticus
+
+Suicidal thoughts, suicide (rare)
+
+Agranulocytosis
+
+Neutropenia
+
+Postmarketing Reports
+
+Arrythmia Torsades de Pointes
+
+Hyperprolactenemia and related symptoms galactorrhea and gynecomastia
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 45/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+Sonambulism (complex behaviors)
+
+Severe skin reactions
+
+Stevens-Johnson syndrome
+
+Bullous dermatitis
+
+Erythema multiforme
+
+Toxic epidermal necrolysis
+
+Increased creatine kinase blood levels
+
+Rhabdomyolysis
+
+Warnings
+
+Black Box Warnings
+
+In short-term studies, antidepressants increased the risk of suicidal thinking and
+behavior in children, adolescents, and young adults (aged <24 years) taking
+antidepressants for major depressive disorders and other psychiatric illnesses
+
+This increase was not seen in patients aged ≥24 years
+
+A slight decrease in suicidal thinking was seen in adults aged ≥65 years compared with
+placebo
+
+In children and young adults, risks must be weighed against the benefits of taking
+antidepressants
+
+Patients should be monitored closely for changes in behavior, clinical worsening, and
+suicidal tendencies
+
+This should be done during the initial 1-2 months of therapy and dosage adjustments;
+the patient’s family should communicate any abrupt changes in behavior to the
+healthcare provider
+
+Worsening behavior and suicidal tendencies that are not part of the presenting
+symptoms may require discontinuation of therapy
+
+This drug is not approved for use in pediatric patients
+
+Contraindications
+
+Hypersensitivity
+
+Within 14 days of administration of MAOIs (serotonin syndrome)
+
+Patients receiving linezolid or methylene blue IV
+
+Cautions
+
+Patients with major depressive disorder (MDD), both adult and pediatric, may experience
+worsening of their depression and/or the emergence of suicidal ideation and behavior
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 46/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+(suicidality) or unusual changes in behavior, whether or not they are taking
+antidepressant medications, and this risk may persist until significant remission occurs
+
+Screen for bipolar disorder; MDD episode may be the initial presentation of bipolar
+disorder; generally believed (though not established in controlled trials) that treating
+such an episode with an antidepressant alone may increase precipitation of mixed/manic
+episode in patients at risk for bipolar disorder
+
+Rare reports of activation of mania/hypomania
+
+Agranulocytosis reported; if sign/symptoms develop (eg, sore throat, fever, stomatitis,
+infection with low WBC count), discontinue mirtazapine and closely monitor
+
+Potentially life-threatening serotonin syndrome reported with SNRIs and SSRIs alone,
+but also if coadministered with other serotonergic drugs
+
+Pupillary dilation that occurs with antidepressant drugs may trigger an angle-closure
+attack in patients with anatomically narrow angles who have not had iridectomy
+
+Upon discontinuation (particularly when abrupt), the following symptoms may occur:
+dizziness, abnormal dreams, sensory disturbances (including paresthesia and electric
+shock sensations), agitation, anxiety, fatigue, confusion, headache, tremor, nausea,
+vomiting, and sweating
+
+Akathisia, characterized by subjectively unpleasant or distressing restlessness and need
+to move, often accompanied by an inability to sit or stand still; most likely to occur within
+first few weeks; increasing dose may be detrimental
+
+Hyponatremia (rare) reported
+
+Somnolence reported in ~50% of patients
+
+Dizziness, increased appetite/weight gain, and transaminase elevations reported
+
+Postmarketing reports of QT prolongation, torsades de pointes, ventricular tachycardia,
+and sudden death; majority reported in association with overdose or in patients with
+other risk factors for QT prolongation, including concomitant use of QTc-prolonging
+medicines
+
+Drug interaction overview
+
+Caution if coadministered with other drugs that prolong QT interval
+
+Monitor INR if higher doses of mirtazapine are coadministered with warfarin
+
+Avoid use with alcohol and other CNS depressants; may cause additive somnolence
+and dizziness
+
+Risk of serotonin syndrome
+Contraindicated with MAOIs; do not start mirtazapine if being treated with IV
+methylene blue or linezolid
+
+Caution with other serotonergic drugs
+
+CYP inducers
+Strong CYP inducers (eg, phenytoin, carbamazepine, rifampin) may increase
+mirtazapine clearance by ~2-fold
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 47/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+If coadministered with strong CYP inducers, mirtazapine dose may need to be
+increased; conversely, if strong CYP inducer is stopped, decrease mirtazapine dose
+
+Strong CYP3A4 inhibitors
+Strong CYP3A4 inhibitor increase mirtazapine peak plasma levels and AUC
+
+Caution if coadministered; mirtazapine dose may need to be lowered
+
+Pregnancy & Lactation
+
+Pregnancy
+
+Apregnancy exposure registry monitors pregnancy outcomes in women exposed to
+antidepressants during pregnancy; healthcare providers are encouraged to register
+patients by calling the National Pregnancy Registry for Antidepressants at 1-844-405-
+6185 or visiting online at https://womensmentalhealth.org/clinical-and-research-
+programs/pregnancyregistry/antidepressants/.
+
+Prolonged experience with therapy in pregnant women, based on published
+observational studies and postmarketing reports, has not reliably identified a drug-
+associated risk of major birth defects, miscarriage or adverse maternal or fetal outcomes
+
+Women who discontinue antidepressants during pregnancy are more likely to experience
+a relapse of major depression than women who continue antidepressants; this finding is
+from a prospective, longitudinal study that followed 201 pregnant women with a history
+of major depressive disorder who were euthymic and taking antidepressants at
+beginning of pregnancy
+
+Consider risk of untreated depression when discontinuing or changing treatment with
+antidepressant medication during pregnancy and postpartum; it should be used during
+pregnancy only if clearly needed
+
+Animal studies
+
+Reproduction studies in pregnant rats and rabbits at doses up to 100 mg/kg and 40
+mg/kg, respectively (20 and 17 times the maximum recommended human dose
+[MRHD] on an mg/m2 basis, respectively), have revealed no evidence of teratogenic
+effects
+
+However, in rats, there was an increase in postimplantation losses in dams treated
+with mirtazapine
+
+Lactation
+
+Data from published literature report presence of drug in human milk at low levels with
+relative infant doses ranging between 0.6 and 2.8% of the maternal weight-adjusted
+dose; no adverse effects on breastfed infant reported in most cases of maternal use of
+drug; there are no data on effects of drug on milk production.
+
+The developmental and health benefits of breastfeeding should be considered along
+with the mother’s clinical need for therapy and any potential adverse effects on
+breastfed infant from drug or from underlying maternal condition
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 48/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+Tetracyclic structure different from SSRIs, TCAs and MAOIs; through its central
+presynaptic alpha2-adrenergic antagonist effects, stimulates norepinephrine and
+serotonin release; potent antagonist of 5-HT2 and 5-HT3 serotonin and histamine
+receptors; is a moderate alpha1 adrenergic and muscarinic antagonist
+
+Absorption
+
+Bioavailability: 50%
+
+Peak serum time: 2 hr
+
+Distribution
+
+Protein bound: 85%
+
+Vd: 4.5 L/kg
+
+Metabolism
+
+Hepatic CYP450 enzymes CYP1A2, CYP2D6, CYP3A4
+
+Metabolites: Inactive
+
+Elimination
+
+Half-life: 20-40 hr
+
+Excretion: Urine (75%); feces (15%)
+
+Administration
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 49/50
+
+
+
+6/22/26, 4:25 PM Remeron, Remeron SolTab (mirtazapine) dosing, indications, interactions, adverse effects, and more
+
+Oral Administration
+
+May take with or without food
+
+Storage
+
+Store at 20-25ºC (68-77ºF); excursions permitted to 15-30ºC (59-86ºF)
+
+Protect from light and moisture
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/remeron-soltab-mirtazapine-342966 50/50

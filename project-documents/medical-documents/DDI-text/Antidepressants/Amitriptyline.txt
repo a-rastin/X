@@ -1,0 +1,4293 @@
+﻿6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+amitriptyline (Rx)
+Brand and Other Names: Elavil, Levate
+Classes: Antidepressants, TCAs
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+tablet
+
+10mg
+
+25mg
+
+50mg
+
+75mg
+
+100mg
+
+150mg
+
+Depression
+
+Outpatient: 25-50 mg PO qHS initially; increase by 25 mg every 5-7 days to 100-200
+mg/day (may divide doses throughout day or give at bedtime); if needed, may increase to
+300 mg/day
+
+Inpatient: 100-300 mg PO qDay
+
+Postherpetic Neuralgia (Off-label)
+
+65-100 mg PO qDay for at least 3 weeks
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 1/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+Migraine Prophylaxis (Off-label)
+
+10-25 mg PO qHS; 10-400 mg PO qHS dose range
+
+Eating Disorder (Off-label)
+
+150 mg PO qHS for 8 weeks
+
+PEDIATRIC
+Dosage Forms & Strengths
+
+tablet
+
+10mg
+
+25mg
+
+50mg
+
+75mg
+
+100mg
+
+150mg
+
+Depression
+
+Adolescents
+
+Initial: 25-50 mg/day PO in divided doses
+
+Increase gradually to 100 mg/day in divided doses
+
+Children (Off-label)
+
+First 3 days: 1 mg/kg/day divided q8hr PO, THEN 
+
+1.5 mg/kg/day divided q8hr PO
+
+Analgesia for Chronic Pain (Off-label)
+
+Load: 0.1 mg/kg PO qHS; may increase as tolerated over 2-3 weeks 
+
+Maintenance: 0.5-2 mg/kg PO qHS
+
+Migraine Prophylaxis (Off-label)
+
+0.25 mg/kg/day PO qHS; may increase dose by 0.25 mg/kg/day; not to exceed 1
+mg/kg/day 
+
+Dose range: 0.1-2 mg/kg/day; not to exceed 2 mg/kg/day or 75 mg/day; if dose >1
+mg/kg/day, divide dose q12hr
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 2/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+GERIATRIC
+Depression
+
+10-25 mg PO qHS; may increase by 10-25 mg increments qWeek if needed and as
+tolerated
+
+Dosage range: 25-150 mg/day
+
+Dosing Considerations
+
+Avoid; strong anticholinergic and sedative effects; may cause orthostatic hypotension
+(Beers criteria)
+
+Consider alternatives; if must use, initiate with lower initial dose
+
+Interactions
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and
+amitriptyline
+No Interactions Found
+Interactions Found
+Contraindicated
+
+Serious
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+Contraindicated (17)
+
+disopyramide
+amitriptyline and disopyramide both increase QTc interval. Contraindicated.
+
+dronedarone
+dronedarone will increase the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+
+dronedarone will increase the level or effect of amitriptyline by P-glycoprotein
+(MDR1) efflux transporter. Contraindicated.
+
+ibutilide
+amitriptyline and ibutilide both increase QTc interval. Contraindicated.
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 3/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+indapamide
+amitriptyline and indapamide both increase QTc interval. Contraindicated.
+
+iobenguane I 123
+amitriptyline decreases effects of iobenguane I 123 by pharmacodynamic
+antagonism. Contraindicated. If clinically appropriate, discontinue drugs that
+decrease uptake of NE for at least 5 half-lives; may cause false-negative imaging
+results.
+
+isocarboxazid
+isocarboxazid and amitriptyline both increase serotonin levels. Contraindicated.
+
+mavorixafor
+mavorixafor will increase the level or effect of amitriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Contraindicated. Mavorixafor (a strong CYP2D6
+inhibitor) is contraindicated with drugs that are highly dependent on CYP2D6 for
+clearance.
+
+pentamidine
+amitriptyline and pentamidine both increase QTc interval. Contraindicated.
+
+phenelzine
+phenelzine and amitriptyline both increase serotonin levels. Contraindicated.
+
+pimozide
+amitriptyline and pimozide both increase QTc interval. Contraindicated.
+
+procainamide
+amitriptyline and procainamide both increase QTc interval. Contraindicated.
+
+procarbazine
+procarbazine and amitriptyline both increase serotonin levels. Contraindicated.
+Combination is contraindicated within 2 weeks of MAOI use.
+
+quinidine
+quinidine and amitriptyline both increase QTc interval. Contraindicated.
+
+safinamide
+amitriptyline, safinamide. Either increases toxicity of the other by serotonin levels.
+Contraindicated. Concomitant use could result in life-threatening serotonin
+syndrome.
+
+selegiline
+selegiline and amitriptyline both increase serotonin levels. Contraindicated.
+Concurrent use or use within 14 days of selegiline treatment is contraindicated
+
+sotalol
+amitriptyline and sotalol both increase QTc interval. Contraindicated.
+
+tranylcypromine
+tranylcypromine and amitriptyline both increase serotonin levels. Contraindicated.
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 4/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+Serious (157)
+
+adagrasib
+adagrasib, amitriptyline. Either increases effects of the other by QTc interval. Avoid
+or Use Alternate Drug. Each drug prolongs the QTc interval, which may increased
+the risk of Torsade de pointes, other serious arryhthmias, and sudden death. If
+coadministration unavoidable, more frequent monitoring is recommended for such
+patients.
+
+albuterol
+amitriptyline increases toxicity of albuterol by sympathetic (adrenergic) effects,
+including increased blood pressure and heart rate. Avoid or Use Alternate Drug.
+Concomitant use may increase risk of cardiovascular adverse effects. Use
+alternative therapy; if concomitant use is unavoidable, monitor BP and HR during
+and for 2 weeks after discontinuing amitriptyline.
+
+albuterol inhaled
+amitriptyline increases toxicity of albuterol inhaled by sympathetic (adrenergic)
+effects, including increased blood pressure and heart rate. Avoid or Use Alternate
+Drug. Concomitant use may increase risk of cardiovascular adverse effects. Use
+alternative therapy; if concomitant use is unavoidable, monitor BP and HR during
+and for 2 weeks after discontinuing amitriptyline.
+
+amiodarone
+amitriptyline and amiodarone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+amoxapine
+amitriptyline and amoxapine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+amitriptyline and amoxapine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+amphetamine
+amitriptyline, amphetamine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+arformoterol
+amitriptyline increases toxicity of arformoterol by sympathetic (adrenergic) effects,
+including increased blood pressure and heart rate. Avoid or Use Alternate Drug.
+Concomitant use may increase risk of cardiovascular adverse effects. Use
+alternative therapy; if concomitant use is unavoidable, monitor BP and HR during
+and for 2 weeks after discontinuing amitriptyline.
+
+arsenic trioxide
+amitriptyline and arsenic trioxide both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+artemether
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 5/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+artemether and amitriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+artemether/lumefantrine
+amitriptyline and artemether/lumefantrine both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+benzhydrocodone/acetaminophen
+benzhydrocodone/acetaminophen and amitriptyline both increase sedation. Avoid or
+Use Alternate Drug. Limit use to patients for whom alternative treatment options
+are inadequate
+
+benzphetamine
+amitriptyline, benzphetamine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+buprenorphine
+buprenorphine and amitriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+buprenorphine buccal
+buprenorphine buccal and amitriptyline both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+buprenorphine subdermal implant
+buprenorphine subdermal implant and amitriptyline both increase QTc interval.
+Avoid or Use Alternate Drug.
+
+buprenorphine subdermal implant and amitriptyline both increase sedation. Avoid
+or Use Alternate Drug. Limit use to patients for whom alternative treatment options
+are inadequate
+
+buprenorphine transdermal
+buprenorphine transdermal and amitriptyline both increase QTc interval. Avoid or
+Use Alternate Drug.
+
+buprenorphine transdermal and amitriptyline both increase sedation. Avoid or Use
+Alternate Drug. Limit use to patients for whom alternative treatment options are
+inadequate
+
+buprenorphine, long-acting injection
+buprenorphine, long-acting injection and amitriptyline both increase QTc interval.
+Avoid or Use Alternate Drug.
+
+buprenorphine, long-acting injection and amitriptyline both increase sedation. Avoid
+or Use Alternate Drug. Limit use to patients for whom alternative treatment options
+are inadequate
+
+buspirone
+amitriptyline and buspirone both increase serotonin levels. Avoid or Use Alternate
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 6/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+Drug.
+
+calcium/magnesium/potassium/sodium oxybates
+amitriptyline, calcium/magnesium/potassium/sodium oxybates. Either increases
+effects of the other by pharmacodynamic synergism. Avoid or Use Alternate Drug.
+Profound sedation, respiratory depression, coma, and death may result if
+coadministered. Reserve concomitant prescribing of these drugs in patients for
+whom other treatment options are inadequate. Limit dosages and durations to the
+minimum required. Monitor closely for signs of respiratory depression and sedation.
+
+chlorpromazine
+chlorpromazine and amitriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+citalopram
+citalopram and amitriptyline both increase serotonin levels. Avoid or Use Alternate
+Drug. Citalopram may increase TCA levels. Increased risk of serotonin syndrome or
+neuroleptic malignant syndrome. Potential risk for QT prolongation. ECG monitoring
+is recommended.
+
+citalopram and amitriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+clarithromycin
+clarithromycin will increase the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+amitriptyline and clarithromycin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+clomipramine
+amitriptyline and clomipramine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+amitriptyline and clomipramine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+clonidine
+amitriptyline decreases effects of clonidine by Other (see comment). Avoid or Use
+Alternate Drug. Comment: Inhibition of uptake by adrenergic neurons.
+
+cyclobenzaprine
+amitriptyline and cyclobenzaprine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+dacomitinib
+dacomitinib will increase the level or effect of amitriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug. Avoid use with
+CYP2D6 substrates where minimal increases in concentration of the CYP2D6
+substrate may lead to serious or life-threatening toxicities.
+
+dasatinib
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 7/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+dasatinib will increase the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+desipramine
+amitriptyline and desipramine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+amitriptyline and desipramine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+desvenlafaxine
+amitriptyline and desvenlafaxine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+dexfenfluramine
+amitriptyline, dexfenfluramine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+dexmethylphenidate
+amitriptyline, dexmethylphenidate. Other (see comment). Avoid or Use Alternate
+Drug. Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+dextroamphetamine
+amitriptyline, dextroamphetamine. Other (see comment). Avoid or Use Alternate
+Drug. Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+dextromethorphan
+amitriptyline and dextromethorphan both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+diazepam buccal
+diazepam buccal and amitriptyline both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+diazepam intranasal
+diazepam intranasal and amitriptyline both increase sedation. Avoid or Use
+Alternate Drug. Limit use to patients for whom alternative treatment options are
+inadequate
+
+diethylpropion
+amitriptyline, diethylpropion. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+dobutamine
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 8/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+amitriptyline, dobutamine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+dofetilide
+amitriptyline and dofetilide both increase QTc interval. Avoid or Use Alternate Drug.
+
+dolasetron
+dolasetron, amitriptyline. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+
+dopamine
+amitriptyline, dopamine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+dopexamine
+amitriptyline, dopexamine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+dosulepin
+amitriptyline and dosulepin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+amitriptyline and dosulepin both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+doxepin
+amitriptyline and doxepin both increase QTc interval. Avoid or Use Alternate Drug.
+
+amitriptyline and doxepin both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+dronedarone
+amitriptyline and dronedarone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+dronedarone and amitriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+droperidol
+amitriptyline and droperidol both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+duloxetine
+duloxetine and amitriptyline both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+encorafenib
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 9/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+encorafenib and amitriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+ephedrine
+amitriptyline, ephedrine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+epinephrine
+epinephrine and amitriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+amitriptyline, epinephrine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+epinephrine racemic
+epinephrine racemic and amitriptyline both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+amitriptyline, epinephrine racemic. Other (see comment). Avoid or Use Alternate
+Drug. Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+erythromycin base
+erythromycin base will increase the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+erythromycin base will increase the level or effect of amitriptyline by P-glycoprotein
+(MDR1) efflux transporter. Avoid or Use Alternate Drug.
+
+amitriptyline and erythromycin base both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+erythromycin ethylsuccinate
+erythromycin ethylsuccinate will increase the level or effect of amitriptyline by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate
+Drug.
+
+erythromycin ethylsuccinate will increase the level or effect of amitriptyline by P-
+glycoprotein (MDR1) efflux transporter. Avoid or Use Alternate Drug.
+
+amitriptyline and erythromycin ethylsuccinate both increase QTc interval. Avoid or
+Use Alternate Drug.
+
+erythromycin lactobionate
+erythromycin lactobionate will increase the level or effect of amitriptyline by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate
+Drug.
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 10/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+erythromycin lactobionate will increase the level or effect of amitriptyline by P-
+glycoprotein (MDR1) efflux transporter. Avoid or Use Alternate Drug.
+
+amitriptyline and erythromycin lactobionate both increase QTc interval. Avoid or
+Use Alternate Drug.
+
+erythromycin stearate
+erythromycin stearate will increase the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+erythromycin stearate will increase the level or effect of amitriptyline by P-
+glycoprotein (MDR1) efflux transporter. Avoid or Use Alternate Drug.
+
+amitriptyline and erythromycin stearate both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+escitalopram
+escitalopram and amitriptyline both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+escitalopram increases toxicity of amitriptyline by QTc interval. Avoid or Use
+Alternate Drug.
+
+fenfluramine
+amitriptyline, fenfluramine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+fentanyl
+fentanyl and amitriptyline both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+fentanyl intranasal
+fentanyl intranasal and amitriptyline both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+fentanyl iontophoretic transdermal system
+fentanyl iontophoretic transdermal system and amitriptyline both increase sedation.
+Avoid or Use Alternate Drug. Limit use to patients for whom alternative treatment
+options are inadequate
+
+fentanyl transdermal
+fentanyl transdermal and amitriptyline both increase sedation. Avoid or Use
+Alternate Drug. Limit use to patients for whom alternative treatment options are
+inadequate
+
+fentanyl transmucosal
+fentanyl transmucosal and amitriptyline both increase sedation. Avoid or Use
+Alternate Drug. Limit use to patients for whom alternative treatment options are
+inadequate
+
+fexinidazole
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 11/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+fexinidazole and amitriptyline both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid coadministration of fexinidazole with drugs known to block potassium
+channels or prolong QT interval.
+
+fluconazole
+amitriptyline and fluconazole both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+fluoxetine
+fluoxetine will increase the level or effect of amitriptyline by affecting hepatic
+enzyme CYP2C19 metabolism. Avoid or Use Alternate Drug.
+
+fluoxetine and amitriptyline both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+fluphenazine
+fluphenazine and amitriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+fluvoxamine
+fluvoxamine and amitriptyline both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+formoterol
+amitriptyline increases toxicity of formoterol by sympathetic (adrenergic) effects,
+including increased blood pressure and heart rate. Avoid or Use Alternate Drug.
+Concomitant use may increase risk of cardiovascular adverse effects. Use
+alternative therapy; if concomitant use is unavoidable, monitor BP and HR during
+and for 2 weeks after discontinuing amitriptyline.
+
+fosamprenavir
+fosamprenavir increases levels of amitriptyline by decreasing metabolism. Avoid or
+Use Alternate Drug.
+
+givosiran
+givosiran will increase the level or effect of amitriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug. Avoid coadministration
+of sensitive CYP2D6 substrates with givosiran. If unavoidable, decrease the
+CYP2D6 substrate dosage in accordance with approved product labeling.
+
+granisetron
+granisetron, amitriptyline. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+
+granisetron and amitriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+guanfacine
+amitriptyline decreases effects of guanfacine by Other (see comment). Avoid or Use
+Alternate Drug. Comment: Inhibition of uptake by adrenergic neurons.
+
+haloperidol
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 12/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+amitriptyline and haloperidol both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+hydroxychloroquine sulfate
+hydroxychloroquine sulfate and amitriptyline both increase QTc interval. Avoid or
+Use Alternate Drug.
+
+imipramine
+amitriptyline and imipramine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+amitriptyline and imipramine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+iobenguane I 131
+amitriptyline will decrease the level or effect of iobenguane I 131 by Other (see
+comment). Avoid or Use Alternate Drug. Based on the mechanism of action of
+iobenguane, drugs that reduce catecholamine uptake or that deplete catecholamine
+stores may interfere with iobenguane uptake into cells, and thus, reduce
+iobenguane efficacy. Discontinue interfering drugs for at least 5 half-lives before
+administration of either the dosimetry or an iobenguane dose. Do not administer
+these drugs until at least 7 days after each iobenguane dose.
+
+isoproterenol
+amitriptyline, isoproterenol. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+ivosidenib
+ivosidenib and amitriptyline both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid coadministration of QTc prolonging drugs with ivosidenib or replace
+with alternate therapies. If coadministration of a QTc prolonging drug is
+unavoidable, monitor for increased risk of QTc interval prolongation.
+
+ketoconazole
+amitriptyline and ketoconazole both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+lefamulin
+lefamulin and amitriptyline both increase QTc interval. Avoid or Use Alternate Drug.
+
+levalbuterol
+amitriptyline increases toxicity of levalbuterol by sympathetic (adrenergic) effects,
+including increased blood pressure and heart rate. Avoid or Use Alternate Drug.
+Concomitant use may increase risk of cardiovascular adverse effects. Use
+alternative therapy; if concomitant use is unavoidable, monitor BP and HR during
+and for 2 weeks after discontinuing amitriptyline.
+
+levoketoconazole
+amitriptyline and levoketoconazole both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 13/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+levomilnacipran
+levomilnacipran and amitriptyline both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+linezolid
+linezolid and amitriptyline both increase serotonin levels. Avoid or Use Alternate
+Drug. Linezolid may increase serotonin as a result of MAO-A inhibition. If linezolid
+must be administered, discontinue serotonergic drug immediately and monitor for
+CNS toxicity. Serotonergic therapy may be resumed 24 hours after last linezolid
+dose or after 2 weeks of monitoring, whichever comes first.
+
+lisdexamfetamine
+amitriptyline, lisdexamfetamine. Other (see comment). Avoid or Use Alternate
+Drug. Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+lofepramine
+amitriptyline and lofepramine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+amitriptyline and lofepramine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+lorcaserin
+amitriptyline and lorcaserin both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+lumefantrine
+amitriptyline and lumefantrine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+macimorelin
+macimorelin and amitriptyline both increase QTc interval. Avoid or Use Alternate
+Drug. Macimorelin causes an increase of ~11 msec in the corrected QT interval.
+Avoid coadministration with drugs that prolong QT interval, which could increase
+risk for developing torsade de pointes-type ventricular tachycardia. Allow sufficient
+washout time of drugs that are known to prolong the QT interval before
+administering macimorelin.
+
+mefloquine
+mefloquine increases toxicity of amitriptyline by QTc interval. Avoid or Use
+Alternate Drug. Mefloquine may enhance the QTc prolonging effect of high risk QTc
+prolonging agents.
+
+meperidine
+amitriptyline and meperidine both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+metaproterenol
+amitriptyline, metaproterenol. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 14/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+methamphetamine
+amitriptyline, methamphetamine. Other (see comment). Avoid or Use Alternate
+Drug. Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+methohexital
+methohexital and amitriptyline both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+methylene blue
+methylene blue and amitriptyline both increase serotonin levels. Avoid or Use
+Alternate Drug. Methylene blue may increase serotonin as a result of MAO-A
+inhibition. If methylene blue must be administered, discontinue serotonergic drug
+immediately and monitor for CNS toxicity. Serotonergic therapy may be resumed 24
+hours after last methylene blue dose or after 2 weeks of monitoring, whichever
+comes first.
+
+methylenedioxymethamphetamine
+amitriptyline, methylenedioxymethamphetamine. Other (see comment). Avoid or
+Use Alternate Drug. Comment: Tricyclic antidepressants increase or decrease
+effects of sympathomimetics, by blocking reuptake of NE, or blocking uptake of
+indirect sympathomimetics into the adrenergic neuron.
+
+metoclopramide intranasal
+amitriptyline, metoclopramide intranasal. Either increases effects of the other by
+Other (see comment). Avoid or Use Alternate Drug. Comment: Avoid use of
+metoclopramide intranasal or interacting drug, depending on importance of drug to
+patient.
+
+midodrine
+amitriptyline, midodrine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+milnacipran
+milnacipran and amitriptyline both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+mirtazapine
+mirtazapine and amitriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+moxifloxacin
+amitriptyline and moxifloxacin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+nefazodone
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 15/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+nefazodone and amitriptyline both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+netupitant/palonosetron
+netupitant/palonosetron, amitriptyline. Either increases toxicity of the other by
+serotonin levels. Avoid or Use Alternate Drug.
+
+nilotinib
+amitriptyline and nilotinib both increase QTc interval. Avoid or Use Alternate Drug.
+
+norepinephrine
+amitriptyline, norepinephrine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+nortriptyline
+amitriptyline and nortriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+amitriptyline and nortriptyline both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+octreotide
+amitriptyline and octreotide both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+octreotide (Antidote)
+amitriptyline and octreotide (Antidote) both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+olopatadine intranasal
+amitriptyline and olopatadine intranasal both increase sedation. Avoid or Use
+Alternate Drug. Coadministration increases risk of CNS depression, which can lead
+to additive impairment of psychomotor performance and cause daytime impairment.
+
+ondansetron
+amitriptyline and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid with congenital long QT syndrome; ECG monitoring recommended with
+concomitant medications that prolong QT interval, electrolyte abnormalities, CHF,
+or bradyarrhythmias.
+
+ondansetron, amitriptyline. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+
+opicapone
+opicapone and amitriptyline both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+ozanimod
+ozanimod increases toxicity of amitriptyline by sympathetic (adrenergic) effects,
+including increased blood pressure and heart rate. Avoid or Use Alternate Drug.
+Because the active metabolite of ozanimod inhibits MAO-B in vitro, there is a
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 16/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+potential for serious adverse reactions, including hypertensive crisis. Therefore,
+coadministration of ozanimod with drugs that can increase norepinephrine or
+serotonin is not recommended. Monitor for hypertension with concomitant use.
+
+palonosetron
+palonosetron, amitriptyline. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+
+paroxetine
+paroxetine and amitriptyline both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+perphenazine
+perphenazine and amitriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+phendimetrazine
+amitriptyline, phendimetrazine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+phentermine
+amitriptyline, phentermine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+phenylephrine
+amitriptyline, phenylephrine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+phenylephrine PO
+amitriptyline, phenylephrine PO. Other (see comment). Avoid or Use Alternate
+Drug. Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+pirbuterol
+amitriptyline, pirbuterol. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+pitolisant
+amitriptyline decreases effects of pitolisant by Other (see comment). Avoid or Use
+Alternate Drug. Comment: Pitolisant increases histamine levels in the brain;
+therefore, H1 receptor antagonists that cross the blood-brain barrier may reduce
+the efficacy of pitolisant.
+
+promazine
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 17/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+promazine and amitriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+propylhexedrine
+amitriptyline, propylhexedrine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+protriptyline
+amitriptyline and protriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+amitriptyline and protriptyline both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+pseudoephedrine
+amitriptyline increases effects of pseudoephedrine by sympathetic (adrenergic)
+effects, including increased blood pressure and heart rate. Avoid or Use Alternate
+Drug. Tricyclic antidepressants increase or decrease effects of sympathomimetics,
+by blocking reuptake of NE, or blocking uptake of indirect sympathomimetics into
+the adrenergic neuron.
+
+quinidine
+quinidine will increase the level or effect of amitriptyline by P-glycoprotein (MDR1)
+efflux transporter. Avoid or Use Alternate Drug.
+
+ranolazine
+ranolazine will increase the level or effect of amitriptyline by P-glycoprotein
+(MDR1) efflux transporter. Avoid or Use Alternate Drug.
+
+rasagiline
+rasagiline and amitriptyline both increase serotonin levels. Avoid or Use Alternate
+Drug. Severe CNS toxicity associated with hyperpyrexia has been reported with the
+combined treatment of an antidepressant and rasagiline. Avoid combination within
+14 days of MAOI use.
+
+remifentanil
+remifentanil and amitriptyline both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+ribociclib
+ribociclib increases toxicity of amitriptyline by QTc interval. Avoid or Use Alternate
+Drug.
+
+salmeterol
+amitriptyline, salmeterol. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+selegiline transdermal
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 18/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+selegiline transdermal and amitriptyline both increase serotonin levels. Avoid or
+Use Alternate Drug.
+
+selinexor
+selinexor, amitriptyline. unspecified interaction mechanism. Avoid or Use Alternate
+Drug. Patients treated with selinexor may experience neurological toxicities. Avoid
+taking selinexor with other medications that may cause dizziness or confusion.
+
+serdexmethylphenidate/dexmethylphenidate
+amitriptyline, serdexmethylphenidate/dexmethylphenidate. Other (see comment).
+Avoid or Use Alternate Drug. Comment: Tricyclic antidepressants increase or
+decrease effects of sympathomimetics, by blocking reuptake of NE, or blocking
+uptake of indirect sympathomimetics into the adrenergic neuron.
+
+sertraline
+sertraline and amitriptyline both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+sodium oxybate
+amitriptyline, sodium oxybate. Either increases effects of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Profound sedation,
+respiratory depression, coma, and death may result if coadministered. Reserve
+concomitant prescribing of these drugs in patients for whom other treatment
+options are inadequate. Limit dosages and durations to the minimum required.
+Monitor closely for signs of respiratory depression and sedation.
+
+sodium oxybate and amitriptyline both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+St John's Wort
+amitriptyline and St John's Wort both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+tedizolid
+tedizolid, amitriptyline. Either increases effects of the other by Mechanism:
+pharmacodynamic synergism. Avoid or Use Alternate Drug. both increase serotonin
+levels; increased risk of serotonin syndrome.
+
+terbutaline
+amitriptyline, terbutaline. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+thalidomide
+thalidomide and amitriptyline both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+thioridazine
+thioridazine and amitriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+tolcapone
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 19/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+tolcapone and amitriptyline both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+toremifene
+amitriptyline and toremifene both increase QTc interval. Avoid or Use Alternate
+Drug. Concurrent use of toremifene with agents causing QT prolongation should be
+avoided. If concomitant use is required it's recommended that toremifene be
+interrupted. If interruption not possible, patients requiring therapy with a drug that
+prolongs QT should be closely monitored. ECGs should be obtained for high risk
+patients.
+
+trazodone
+amitriptyline and trazodone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+trazodone and amitriptyline both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+trifluoperazine
+trifluoperazine and amitriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+trimipramine
+amitriptyline and trimipramine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+amitriptyline and trimipramine both increase serotonin levels. Avoid or Use
+Alternate Drug.
+
+umeclidinium bromide/vilanterol inhaled
+amitriptyline increases toxicity of umeclidinium bromide/vilanterol inhaled by QTc
+interval. Avoid or Use Alternate Drug. Exercise extreme caution when vilanterol
+coadministered with drugs that prolong QTc interval; adrenergic agonist effects on
+the cardiovascular system may be potentiated.
+
+amitriptyline and umeclidinium bromide/vilanterol inhaled both increase
+sympathetic (adrenergic) effects, including increased blood pressure and heart rate.
+Avoid or Use Alternate Drug. Exercise extreme caution if vilanterol coadministered
+with MAOIs or TCAs, or within 2 weeks of discontinuation of these drugs;
+adrenergic agonist effects on the cardiovascular system may be potentiated
+
+vandetanib
+amitriptyline, vandetanib. Either increases toxicity of the other by QTc interval.
+Avoid or Use Alternate Drug. Avoid coadministration with drugs known to prolong
+QT interval; if a drug known to prolong QT interval must be used, more frequent
+ECG monitoring is recommended.
+
+vemurafenib
+vemurafenib and amitriptyline both increase QTc interval. Avoid or Use Alternate
+Drug. Concomitant use of vemurafenib with drugs that prolong QT interval is not
+recommended.
+
+venlafaxine
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 20/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+venlafaxine and amitriptyline both increase serotonin levels. Avoid or Use Alternate
+Drug.
+
+vilanterol/fluticasone furoate inhaled
+amitriptyline and vilanterol/fluticasone furoate inhaled both increase sympathetic
+(adrenergic) effects, including increased blood pressure and heart rate. Avoid or Use
+Alternate Drug. Exercise extreme caution if vilanterol coadministered with MAOIs or
+TCAs, or within 2 weeks of discontinuation of these drugs; adrenergic agonist
+effects on the cardiovascular system may be potentiated
+
+amitriptyline increases toxicity of vilanterol/fluticasone furoate inhaled by QTc
+interval. Avoid or Use Alternate Drug. Exercise extreme caution when vilanterol
+coadministered with drugs that prolong QTc interval; adrenergic agonist effects on
+the cardiovascular system may be potentiated.
+
+vilazodone
+amitriptyline, vilazodone. Either increases toxicity of the other by serotonin levels.
+Avoid or Use Alternate Drug. Concomitant therapy should be discontinued
+immediately if signs or symptoms of serotonin syndrome emerge and supportive
+symptomatic treatment should be initiated. .
+
+vortioxetine
+amitriptyline, vortioxetine. Either increases effects of the other by serotonin levels.
+Avoid or Use Alternate Drug.
+
+xylometazoline
+amitriptyline, xylometazoline. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+yohimbe
+yohimbe, amitriptyline. Mechanism: unspecified interaction mechanism.
+Contraindicated. May cause increase or decrease in blood pressure.
+
+yohimbine
+amitriptyline, yohimbine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+ziprasidone
+amitriptyline and ziprasidone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+zuranolone
+amitriptyline, zuranolone. Either increases effects of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Coadministration of zuranolone with other
+CNS depressants may increase impairment of psychomotor performance or CNS
+depressant effects. If unavoidable, consider dose reduction. .
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 21/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+Monitor Closely (439)
+
+5-HTP
+amitriptyline and 5-HTP both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+abiraterone
+abiraterone increases levels of amitriptyline by affecting hepatic enzyme CYP2D6
+metabolism. Use Caution/Monitor. Avoid coadministration of abiraterone with
+substrates of CYP2D6. If alternative therapy cannot be used, exercise caution and
+consider a dose reduction of the CYP2D6 substrate.
+
+abobotulinumtoxinA
+amitriptyline increases effects of abobotulinumtoxinA by pharmacodynamic
+synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate
+botulinum toxin effects, which may result in excessive neuromuscular weakness
+and heighten systemic anticholinergic effects.
+
+acetaminophen/phenyltoloxamine
+acetaminophen/phenyltoloxamine and amitriptyline both increase sedation. Use
+Caution/Monitor.
+
+aclidinium
+aclidinium and amitriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+acrivastine
+acrivastine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+alfentanil
+alfentanil and amitriptyline both increase sedation. Use Caution/Monitor.
+
+alfuzosin
+amitriptyline and alfuzosin both increase QTc interval. Use Caution/Monitor.
+
+alfuzosin and amitriptyline both increase QTc interval. Use Caution/Monitor.
+
+almotriptan
+almotriptan and amitriptyline both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+alprazolam
+alprazolam and amitriptyline both increase sedation. Use Caution/Monitor.
+
+amifampridine
+amitriptyline increases toxicity of amifampridine by Other (see comment). Modify
+Therapy/Monitor Closely. Comment: Amifampridine can cause seizures.
+Coadministration with drugs that lower seizure threshold may increase this risk.
+
+amiodarone
+amiodarone will increase the level or effect of amitriptyline by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 22/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+amisulpride
+amitriptyline and amisulpride both increase QTc interval. Use Caution/Monitor. ECG
+monitoring is recommended if coadministered.
+
+amisulpride and amitriptyline both increase sedation. Use Caution/Monitor.
+
+amisulpride and amitriptyline both increase QTc interval. Use Caution/Monitor. ECG
+monitoring is recommended if coadministered.
+
+amlodipine
+amitriptyline, amlodipine. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Monitor for hypotension and orthostasis.
+
+amoxapine
+amitriptyline and amoxapine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+amitriptyline and amoxapine both increase sedation. Use Caution/Monitor.
+
+amphetamine
+amitriptyline increases and amphetamine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+amitriptyline and amphetamine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+amitriptyline increases effects of amphetamine by unknown mechanism. Use
+Caution/Monitor.
+
+anticholinergic/sedative combos
+anticholinergic/sedative combos and amitriptyline both decrease cholinergic
+effects/transmission. Use Caution/Monitor.
+
+apomorphine
+amitriptyline and apomorphine both increase sedation. Use Caution/Monitor.
+
+apomorphine and amitriptyline both increase QTc interval. Use Caution/Monitor.
+
+aprepitant
+aprepitant will increase the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+aripiprazole
+aripiprazole and amitriptyline both increase sedation. Use Caution/Monitor.
+
+aripiprazole and amitriptyline both increase QTc interval. Use Caution/Monitor.
+
+armodafinil
+armodafinil will increase the level or effect of amitriptyline by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 23/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+amitriptyline increases and armodafinil decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+asenapine
+asenapine and amitriptyline both increase QTc interval. Use Caution/Monitor.
+
+asenapine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+asenapine transdermal
+asenapine transdermal and amitriptyline both increase QTc interval. Use
+Caution/Monitor.
+
+asenapine transdermal and amitriptyline both increase sedation. Use
+Caution/Monitor.
+
+atazanavir
+atazanavir will increase the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+atazanavir increases levels of amitriptyline by unspecified interaction mechanism.
+Use Caution/Monitor.
+
+atomoxetine
+atomoxetine and amitriptyline both increase QTc interval. Use Caution/Monitor.
+
+atorvastatin
+atorvastatin will increase the level or effect of amitriptyline by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+atracurium
+atracurium and amitriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+atropine
+atropine and amitriptyline both decrease cholinergic effects/transmission. Modify
+Therapy/Monitor Closely.
+
+atropine IV/IM
+atropine IV/IM and amitriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+avapritinib
+avapritinib and amitriptyline both increase sedation. Use Caution/Monitor.
+
+azelastine
+azelastine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+azithromycin
+amitriptyline and azithromycin both increase QTc interval. Use Caution/Monitor.
+
+baclofen
+baclofen and amitriptyline both increase sedation. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 24/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+bedaquiline
+amitriptyline and bedaquiline both increase QTc interval. Modify Therapy/Monitor
+Closely. ECG should be monitored closely
+
+belladonna alkaloids
+belladonna alkaloids and amitriptyline both decrease cholinergic
+effects/transmission. Modify Therapy/Monitor Closely.
+
+belladonna and opium
+belladonna and opium and amitriptyline both decrease cholinergic
+effects/transmission. Use Caution/Monitor.
+
+belladonna and opium and amitriptyline both increase sedation. Use
+Caution/Monitor.
+
+benperidol
+benperidol and amitriptyline both increase sedation. Use Caution/Monitor.
+
+benzgalantamine
+benzgalantamine, amitriptyline. Either decreases effects of the other by
+pharmacodynamic antagonism. Use Caution/Monitor. Galantamine, an
+acetylcholinesterase inhibitor, enhances cholinergic effects. Coadministration with
+drugs that elicit anticholinergic effects may antagonize one another.
+
+benzhydrocodone/acetaminophen
+benzhydrocodone/acetaminophen, amitriptyline. Either increases effects of the other
+by serotonin levels. Use Caution/Monitor. Coadministration of drugs that affect the
+serotonergic neurotransmitter system may result in serotonin syndrome. If
+concomitant use is warranted, carefully observe the patient, particularly during
+treatment initiation and dose adjustment.
+
+benzphetamine
+amitriptyline increases and benzphetamine decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+benztropine
+benztropine and amitriptyline both decrease cholinergic effects/transmission.
+Modify Therapy/Monitor Closely. Additive anticholinergic adverse effects may be
+seen with concurrent use.
+
+bethanechol
+bethanechol increases and amitriptyline decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Modify Therapy/Monitor Closely.
+
+brexpiprazole
+brexpiprazole and amitriptyline both increase sedation. Use Caution/Monitor.
+
+brimonidine
+brimonidine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+brimonidine topical
+brimonidine topical and amitriptyline both increase sedation. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 25/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+brivaracetam
+brivaracetam and amitriptyline both increase sedation. Use Caution/Monitor.
+
+brompheniramine
+brompheniramine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+buprenorphine
+buprenorphine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+buprenorphine buccal
+buprenorphine buccal and amitriptyline both increase sedation. Use
+Caution/Monitor.
+
+buprenorphine subdermal implant
+amitriptyline, buprenorphine subdermal implant. Either increases toxicity of the
+other by serotonin levels. Use Caution/Monitor. Concomitant use could result in life-
+threatening serotonin syndrome. If concomitant use is warranted, carefully observe
+the patient, particularly during treatment initiation, and during dose adjustment of
+the serotonergic drug. Discontinue buprenorphine if serotonin syndrome is
+suspected.
+
+buprenorphine, long-acting injection
+amitriptyline, buprenorphine, long-acting injection. Either increases toxicity of the
+other by serotonin levels. Use Caution/Monitor. Concomitant use could result in life-
+threatening serotonin syndrome. If concomitant use is warranted, carefully observe
+the patient, particularly during treatment initiation, and during dose adjustment of
+the serotonergic drug. Discontinue buprenorphine if serotonin syndrome is
+suspected.
+
+bupropion
+amitriptyline increases toxicity of bupropion by unspecified interaction mechanism.
+Use Caution/Monitor. May lower seizure threshold; keep bupropion dose as low as
+possible.
+
+bupropion will increase the level or effect of amitriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+butalbital
+butalbital will decrease the level or effect of amitriptyline by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+butalbital will decrease the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+
+butalbital and amitriptyline both increase sedation. Use Caution/Monitor.
+
+butorphanol
+butorphanol and amitriptyline both increase sedation. Use Caution/Monitor.
+
+caffeine
+amitriptyline increases and caffeine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 26/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+carbachol
+carbachol increases and amitriptyline decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Modify Therapy/Monitor Closely.
+
+carbachol/brimonidine ophthalmic
+carbachol/brimonidine ophthalmic and amitriptyline both increase sedation. Use
+Caution/Monitor.
+
+carbamazepine
+carbamazepine will decrease the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+carbinoxamine
+carbinoxamine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+cariprazine
+cariprazine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+carisoprodol
+carisoprodol and amitriptyline both increase sedation. Use Caution/Monitor.
+
+cenobamate
+cenobamate, amitriptyline. Either increases effects of the other by sedation. Use
+Caution/Monitor.
+
+ceritinib
+ceritinib and amitriptyline both increase QTc interval. Use Caution/Monitor.
+
+cevimeline
+cevimeline increases and amitriptyline decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Modify Therapy/Monitor Closely.
+
+chlordiazepoxide
+chlordiazepoxide and amitriptyline both increase sedation. Use Caution/Monitor.
+
+chloroquine
+chloroquine increases toxicity of amitriptyline by QTc interval. Use Caution/Monitor.
+
+chlorpheniramine
+chlorpheniramine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+chlorpromazine
+chlorpromazine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+chlorzoxazone
+chlorzoxazone and amitriptyline both increase sedation. Use Caution/Monitor.
+
+cimetidine
+cimetidine will increase the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+cinnarizine
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 27/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+cinnarizine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+cisatracurium
+cisatracurium and amitriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+clarithromycin
+clarithromycin will increase the level or effect of amitriptyline by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+clemastine
+clemastine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+clobazam
+clobazam will increase the level or effect of amitriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor. Lower doses of drugs
+metabolized by CYP2D6 may be required when used concomitantly.
+
+amitriptyline, clobazam. Other (see comment). Use Caution/Monitor. Comment:
+Concomitant administration can increase the potential for CNS effects (e.g.,
+increased sedation or respiratory depression).
+
+clobazam and amitriptyline both increase sedation. Use Caution/Monitor.
+
+clomipramine
+amitriptyline and clomipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+amitriptyline and clomipramine both increase sedation. Use Caution/Monitor.
+
+clonazepam
+clonazepam and amitriptyline both increase sedation. Use Caution/Monitor.
+
+clonidine
+clonidine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+clorazepate
+clorazepate and amitriptyline both increase sedation. Use Caution/Monitor.
+
+clotrimazole
+clotrimazole will decrease the level or effect of amitriptyline by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+clozapine
+clozapine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+clozapine and amitriptyline both increase QTc interval. Use Caution/Monitor.
+
+cobicistat
+cobicistat will increase the level or effect of amitriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor. Carefully titrate antidepressant
+to the desired effect, including using the lowest feasible initial or maintenance dose,
+and monitoring for antidepressant response
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 28/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+cobicistat will increase the level or effect of amitriptyline by Other (see comment).
+Use Caution/Monitor. Carefully titrate dose of the antidepressant to the desired
+effect, including using the lowest feasible initial or maintenance dose, and monitor
+its response during coadministration with TCAs and cobicistat.
+
+cocaine topical
+amitriptyline and cocaine topical both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+codeine
+codeine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+conivaptan
+conivaptan will increase the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+crizotinib
+crizotinib and amitriptyline both increase QTc interval. Use Caution/Monitor. ECG
+monitoring is recommended, along with drugs that may prolong the QT interval.
+
+cyclobenzaprine
+cyclobenzaprine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+cyclosporine
+cyclosporine will increase the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+cyclosporine will increase the level or effect of amitriptyline by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+cyproheptadine
+cyproheptadine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+dantrolene
+dantrolene and amitriptyline both increase sedation. Use Caution/Monitor.
+
+daridorexant
+amitriptyline and daridorexant both increase sedation. Modify Therapy/Monitor
+Closely. Coadministration increases risk of CNS depression, which can lead to
+additive impairment of psychomotor performance and cause daytime impairment.
+
+darifenacin
+darifenacin will increase the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+darifenacin and amitriptyline both decrease cholinergic effects/transmission. Modify
+Therapy/Monitor Closely.
+
+darunavir
+darunavir will increase the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+Coadministration with SSRIs, TCAs, or trazodone may require dose titration of
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 29/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+antidepressant to desired effect (eg, using the lowest feasible initial or maintenance
+dose). Monitor for antidepressant response.
+
+dasatinib
+amitriptyline and dasatinib both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+daxibotulinumtoxinA
+amitriptyline increases effects of daxibotulinumtoxinA by pharmacodynamic
+synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate
+botulinum toxin effects, which may result in excessive neuromuscular weakness
+and heighten systemic anticholinergic effects.
+
+debrisoquine
+amitriptyline decreases effects of debrisoquine by Other (see comment). Use
+Caution/Monitor. Comment: Inhibition of uptake by adrenergic neurons.
+
+degarelix
+degarelix and amitriptyline both increase QTc interval. Use Caution/Monitor.
+
+desflurane
+desflurane and amitriptyline both increase sedation. Use Caution/Monitor.
+
+desflurane and amitriptyline both increase QTc interval. Use Caution/Monitor.
+
+desipramine
+amitriptyline and desipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+amitriptyline and desipramine both increase sedation. Use Caution/Monitor.
+
+desloratadine
+desloratadine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+deutetrabenazine
+amitriptyline and deutetrabenazine both increase sedation. Use Caution/Monitor.
+
+deutetrabenazine and amitriptyline both increase QTc interval. Use Caution/Monitor.
+At the maximum recommended dose, deutetrabenazine does not prolong QT
+interval to a clinically relevant extent. Certain circumstances may increase risk of
+torsade de pointes and/or sudden death in association with drugs that prolong the
+QTc interval (eg, bradycardia, hypokalemia or hypomagnesemia, coadministration
+with other drugs that prolong QTc interval, presence of congenital QT
+prolongation).
+
+dexbrompheniramine
+dexbrompheniramine and amitriptyline both increase sedation. Use
+Caution/Monitor.
+
+dexchlorpheniramine
+dexchlorpheniramine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+dexfenfluramine
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 30/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+amitriptyline increases and dexfenfluramine decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+amitriptyline and dexfenfluramine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+dexmedetomidine
+dexmedetomidine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+dexmethylphenidate
+amitriptyline increases and dexmethylphenidate decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+dextroamphetamine
+amitriptyline increases and dextroamphetamine decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+amitriptyline and dextroamphetamine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+amitriptyline increases effects of dextroamphetamine by unknown mechanism. Use
+Caution/Monitor.
+
+dextroamphetamine transdermal
+amitriptyline will increase the level or effect of dextroamphetamine transdermal by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. May enhance the
+activity of tricyclic or sympathomimetic agents causing striking and sustained
+increases in dextroamphetamine levels in brain; May be potentiate cardiovascular
+effects. Monitor frequently and adjust or use an alternant based on clinical
+response.
+
+dextromoramide
+dextromoramide and amitriptyline both increase sedation. Use Caution/Monitor.
+
+diamorphine
+diamorphine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+diazepam
+diazepam and amitriptyline both increase sedation. Use Caution/Monitor.
+
+diazepam buccal
+diazepam buccal, amitriptyline. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration may
+potentiate the CNS-depressant effects of each drug.
+
+diazepam intranasal
+diazepam intranasal, amitriptyline. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration may
+potentiate the CNS-depressant effects of each drug.
+
+dicyclomine
+dicyclomine and amitriptyline both decrease cholinergic effects/transmission.
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 31/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+Modify Therapy/Monitor Closely.
+
+diethylpropion
+amitriptyline increases and diethylpropion decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+difelikefalin
+difelikefalin and amitriptyline both increase sedation. Use Caution/Monitor.
+
+difenoxin hcl
+difenoxin hcl and amitriptyline both increase sedation. Use Caution/Monitor.
+
+dihydroergotamine
+amitriptyline and dihydroergotamine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+dihydroergotamine intranasal
+amitriptyline and dihydroergotamine intranasal both increase serotonin levels.
+Modify Therapy/Monitor Closely.
+
+diltiazem
+diltiazem will increase the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Concomitant
+use with amitriptyline may alter blood pressure control.
+
+dimenhydrinate
+dimenhydrinate and amitriptyline both increase sedation. Use Caution/Monitor.
+
+diphenhydramine
+diphenhydramine and amitriptyline both decrease cholinergic effects/transmission.
+Modify Therapy/Monitor Closely.
+
+diphenhydramine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+diphenoxylate hcl
+diphenoxylate hcl and amitriptyline both increase sedation. Use Caution/Monitor.
+
+dipipanone
+dipipanone and amitriptyline both increase sedation. Use Caution/Monitor.
+
+dobutamine
+amitriptyline increases and dobutamine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+dofetilide
+dofetilide increases toxicity of amitriptyline by QTc interval. Use Caution/Monitor.
+
+dolasetron
+amitriptyline and dolasetron both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+donepezil
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 32/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+donepezil increases and amitriptyline decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Modify Therapy/Monitor Closely.
+
+donepezil and amitriptyline both increase QTc interval. Use Caution/Monitor.
+
+dopamine
+amitriptyline increases and dopamine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+dopexamine
+amitriptyline increases and dopexamine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+dordaviprone
+dordaviprone and amitriptyline both increase QTc interval. Use Caution/Monitor.
+Increase the frequency of ECG and electrolyte monitoring.
+
+dosulepin
+amitriptyline and dosulepin both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+amitriptyline and dosulepin both increase sedation. Use Caution/Monitor.
+
+doxepin
+amitriptyline and doxepin both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+amitriptyline and doxepin both increase sedation. Use Caution/Monitor.
+
+doxylamine
+doxylamine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+droperidol
+droperidol and amitriptyline both increase sedation. Use Caution/Monitor.
+
+echothiophate iodide
+echothiophate iodide increases and amitriptyline decreases cholinergic
+effects/transmission. Effect of interaction is not clear, use caution. Modify
+Therapy/Monitor Closely.
+
+efavirenz
+efavirenz will increase the level or effect of amitriptyline by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+efavirenz will decrease the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+efavirenz and amitriptyline both increase QTc interval. Use Caution/Monitor.
+
+elagolix
+elagolix will increase the level or effect of amitriptyline by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 33/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+eletriptan
+eletriptan and amitriptyline both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+eliglustat
+eliglustat increases levels of amitriptyline by affecting hepatic enzyme CYP2D6
+metabolism. Modify Therapy/Monitor Closely. Monitor therapeutic drug
+concentrations, as indicated, or consider reducing the dosage of the concomitant
+drug and titrate to clinical effect.
+
+eliglustat increases levels of amitriptyline by P-glycoprotein (MDR1) efflux
+transporter. Modify Therapy/Monitor Closely. Monitor therapeutic drug
+concentrations, as indicated, or consider reducing the dosage of the P-gp substrate
+and titrate to clinical effect.
+
+eliglustat and amitriptyline both increase QTc interval. Use Caution/Monitor.
+
+elvitegravir/cobicistat/emtricitabine/tenofovir DF
+elvitegravir/cobicistat/emtricitabine/tenofovir DF increases levels of amitriptyline by
+affecting hepatic enzyme CYP2D6 metabolism. Modify Therapy/Monitor Closely.
+Cobicistat is a CYP2D6 inhibitor; caution with CYP2D6 substrates for which
+elevated plasma concentrations are associated with serious and/or life-threatening
+events.
+
+entrectinib
+entrectinib and amitriptyline both increase QTc interval. Use Caution/Monitor.
+
+ephedrine
+amitriptyline increases and ephedrine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+amitriptyline increases effects of ephedrine by unknown mechanism. Use
+Caution/Monitor.
+
+epinephrine
+amitriptyline increases and epinephrine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+amitriptyline increases effects of epinephrine by unknown mechanism. Use
+Caution/Monitor.
+
+epinephrine inhaled
+amitriptyline and epinephrine inhaled both increase sympathetic (adrenergic)
+effects, including increased blood pressure and heart rate. Use Caution/Monitor.
+Tricyclic antidepressants may potentiate epinephrine effect on cardiovascular
+system.
+
+epinephrine intranasal
+amitriptyline increases effects of epinephrine intranasal by pharmacodynamic
+synergism. Use Caution/Monitor.
+
+epinephrine racemic
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 34/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+amitriptyline increases and epinephrine racemic decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+amitriptyline increases effects of epinephrine racemic by unknown mechanism. Use
+Caution/Monitor.
+
+ergotamine
+amitriptyline and ergotamine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+eribulin
+eribulin and amitriptyline both increase QTc interval. Use Caution/Monitor.
+
+esketamine intranasal
+esketamine intranasal, amitriptyline. Either increases toxicity of the other by
+sedation. Modify Therapy/Monitor Closely.
+
+eslicarbazepine acetate
+eslicarbazepine acetate will increase the level or effect of amitriptyline by affecting
+hepatic enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+esomeprazole
+esomeprazole will increase the level or effect of amitriptyline by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+estazolam
+estazolam and amitriptyline both increase sedation. Use Caution/Monitor.
+
+eszopiclone
+eszopiclone and amitriptyline both increase sedation. Use Caution/Monitor.
+
+ethanol
+amitriptyline and ethanol both increase sedation. Use Caution/Monitor.
+
+etomidate
+etomidate and amitriptyline both increase sedation. Use Caution/Monitor.
+
+etravirine
+etravirine will increase the level or effect of amitriptyline by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+ezogabine
+ezogabine, amitriptyline. Either increases toxicity of the other by QTc interval. Use
+Caution/Monitor. Slight and transient QT-prolongation observed with ezogabine,
+particularly when dose titrated to 1200 mg/day. QT interval should be monitored
+when ezogabine is prescribed with agents known to increase QT interval.
+
+fedratinib
+fedratinib will increase the level or effect of amitriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor. Adjust dose of drugs that are
+CYP2D6 substrates as necessary.
+
+felbamate
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 35/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+felbamate will increase the level or effect of amitriptyline by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+felodipine
+felodipine will increase the level or effect of amitriptyline by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+fenfluramine
+amitriptyline increases and fenfluramine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+amitriptyline and fenfluramine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+fenfluramine, amitriptyline. Either increases effects of the other by serotonin levels.
+Use Caution/Monitor. Coadministration with drugs that increase serotoninergic
+effects may increase the risk of serotonin syndrome.
+
+fesoterodine
+fesoterodine and amitriptyline both decrease cholinergic effects/transmission.
+Modify Therapy/Monitor Closely.
+
+fingolimod
+fingolimod and amitriptyline both increase QTc interval. Use Caution/Monitor.
+
+flavoxate
+flavoxate and amitriptyline both decrease cholinergic effects/transmission. Modify
+Therapy/Monitor Closely.
+
+flecainide
+amitriptyline and flecainide both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+fluconazole
+fluconazole will increase the level or effect of amitriptyline by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+fluconazole will increase the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+fluoxetine
+amitriptyline and fluoxetine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+fluphenazine
+fluphenazine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+flurazepam
+flurazepam and amitriptyline both increase sedation. Use Caution/Monitor.
+
+fluvoxamine
+fluvoxamine and amitriptyline both increase QTc interval. Modify Therapy/Monitor
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 36/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+Closely.
+
+fosamprenavir
+fosamprenavir will increase the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+fosaprepitant
+fosaprepitant will increase the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+foscarnet
+amitriptyline and foscarnet both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+fosphenytoin
+fosphenytoin will decrease the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+fosphenytoin will decrease the level or effect of amitriptyline by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+fostemsavir
+amitriptyline and fostemsavir both increase QTc interval. Use Caution/Monitor. QTc
+prolongation reported with higher than recommended doses of fostemsavir.
+
+frovatriptan
+frovatriptan and amitriptyline both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+gabapentin
+gabapentin, amitriptyline. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+gabapentin and amitriptyline both increase sedation. Use Caution/Monitor.
+
+gabapentin enacarbil
+gabapentin enacarbil, amitriptyline. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+gabapentin enacarbil and amitriptyline both increase sedation. Use Caution/Monitor.
+
+ganaxolone
+amitriptyline and ganaxolone both increase sedation. Use Caution/Monitor.
+
+gemifloxacin
+gemifloxacin and amitriptyline both increase QTc interval. Use Caution/Monitor.
+
+gepirone
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 37/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+gepirone and amitriptyline both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+gepirone and amitriptyline both increase serotonin levels. Use Caution/Monitor.
+Monitor for symptoms of serotonin syndrome when gepirone is used gepirone with
+other drugs that may affect the serotonergic neurotransmitter systems. If serotonin
+syndrome occurs, consider discontinue gepirone and/or concomitant serotonergic
+drug.
+
+gilteritinib
+gilteritinib and amitriptyline both increase QTc interval. Use Caution/Monitor.
+
+givinostat
+amitriptyline and givinostat both increase QTc interval. Use Caution/Monitor. If
+coadministered, obtain ECGs when initiating, during concomitant use, and as
+clinically indicated. Withhold if QTc interval >500 ms or a change from baseline
+>60 ms.
+
+glecaprevir/pibrentasvir
+glecaprevir/pibrentasvir will increase the level or effect of amitriptyline by P-
+glycoprotein (MDR1) efflux transporter. Modify Therapy/Monitor Closely.
+
+glycopyrrolate
+glycopyrrolate and amitriptyline both decrease cholinergic effects/transmission.
+Modify Therapy/Monitor Closely.
+
+amitriptyline increases levels of glycopyrrolate by unknown mechanism. Use
+Caution/Monitor.
+
+glycopyrrolate inhaled
+amitriptyline and glycopyrrolate inhaled both decrease cholinergic
+effects/transmission. Use Caution/Monitor.
+
+glycopyrronium tosylate topical
+glycopyrronium tosylate topical, amitriptyline. Either increases effects of the other
+by pharmacodynamic synergism. Use Caution/Monitor. Coadministration of
+glycopyrronium tosylate topical with other anticholinergic medications may result in
+additive anticholinergic adverse effects.
+
+grapefruit
+grapefruit will increase the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+guanfacine
+guanfacine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+haloperidol
+haloperidol and amitriptyline both increase sedation. Use Caution/Monitor.
+
+henbane
+henbane and amitriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 38/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+homatropine
+homatropine and amitriptyline both decrease cholinergic effects/transmission.
+Modify Therapy/Monitor Closely.
+
+huperzine A
+huperzine A increases and amitriptyline decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+hydrocodone
+hydrocodone, amitriptyline. Either increases effects of the other by serotonin levels.
+Use Caution/Monitor. Coadministration of drugs that affect the serotonergic
+neurotransmitter system may result in serotonin syndrome. If concomitant use is
+warranted, carefully observe the patient, particularly during treatment initiation and
+dose adjustment.
+
+hydromorphone
+hydromorphone and amitriptyline both increase sedation. Use Caution/Monitor.
+
+hydroxyzine
+hydroxyzine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+hydroxyzine and amitriptyline both increase QTc interval. Use Caution/Monitor.
+
+hyoscyamine
+hyoscyamine and amitriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+hyoscyamine spray
+hyoscyamine spray and amitriptyline both decrease cholinergic effects/transmission.
+Use Caution/Monitor.
+
+icosapent ethyl
+icosapent ethyl, amitriptyline. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Icosapent may prolong
+bleeding time. Periodically monitor if coadministered with other drugs that affect
+bleeding.
+
+imipramine
+amitriptyline and imipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+amitriptyline and imipramine both increase sedation. Use Caution/Monitor.
+
+incobotulinumtoxinA
+amitriptyline increases effects of incobotulinumtoxinA by pharmacodynamic
+synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate
+botulinum toxin effects, which may result in excessive neuromuscular weakness
+and heighten systemic anticholinergic effects.
+
+indacaterol, inhaled
+indacaterol, inhaled, amitriptyline. QTc interval. Use Caution/Monitor. Indacaterol
+should be administered with extreme caution to patients treated with TCAs. Drugs
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 39/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+that are known to prolong the QTc interval may have an increased the risk of
+ventricular arrhythmias.
+
+ipratropium
+amitriptyline and ipratropium both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+isoflurane
+isoflurane and amitriptyline both increase QTc interval. Use Caution/Monitor.
+
+isoniazid
+isoniazid will increase the level or effect of amitriptyline by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+amitriptyline and isoniazid both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+isoproterenol
+amitriptyline increases and isoproterenol decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+istradefylline
+istradefylline will increase the level or effect of amitriptyline by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor. Istradefylline 40 mg/day increased
+peak levels and AUC of P-gp substrates in clinical trials. Consider dose reduction of
+sensitive P-gp substrates.
+
+itraconazole
+itraconazole will increase the level or effect of amitriptyline by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+itraconazole and amitriptyline both increase QTc interval. Use Caution/Monitor.
+
+ivacaftor
+ivacaftor increases levels of amitriptyline by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor. Ivacaftor and its M1 metabolite has the potential
+to inhibit P-gp; may significantly increase systemic exposure to sensitive P-gp
+substrates with a narrow therapeutic index.
+
+ketamine
+ketamine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+ketoconazole
+ketoconazole will increase the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+ketoconazole will increase the level or effect of amitriptyline by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+ketotifen, ophthalmic
+amitriptyline and ketotifen, ophthalmic both increase sedation. Use Caution/Monitor.
+
+L-tryptophan
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 40/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+amitriptyline and L-tryptophan both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+lamotrigine
+lamotrigine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+lapatinib
+amitriptyline and lapatinib both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+lemborexant
+lemborexant, amitriptyline. Either increases effects of the other by sedation. Modify
+Therapy/Monitor Closely. Dosage adjustment may be necessary if lemborexant is
+coadministered with other CNS depressants because of potentially additive effects.
+
+letermovir
+letermovir increases levels of amitriptyline by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+
+letibotulinumtoxinA
+amitriptyline increases effects of letibotulinumtoxinA by pharmacodynamic
+synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate
+botulinum toxin effects, which may result in excessive neuromuscular weakness
+and heighten systemic anticholinergic effects.
+
+levetiracetam
+levetiracetam and amitriptyline both increase sedation. Use Caution/Monitor. Limit
+use to patients for whom alternative treatment options are inadequate
+
+levocetirizine
+levocetirizine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+levofloxacin
+amitriptyline and levofloxacin both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+levoketoconazole
+levoketoconazole will increase the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+levoketoconazole will increase the level or effect of amitriptyline by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+levorphanol
+levorphanol and amitriptyline both increase sedation. Use Caution/Monitor.
+
+levothyroxine
+levothyroxine increases effects of amitriptyline by Other (see comment). Use
+Caution/Monitor. Comment: Increased catecholamine receptor sensitivity; may
+increase CNS and cardiovascular effects, including arrhythmias.
+
+liothyronine
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 41/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+liothyronine increases effects of amitriptyline by Other (see comment). Use
+Caution/Monitor. Comment: Increased catecholamine receptor sensitivity; may
+increase CNS and cardiovascular effects, including arrhythmias.
+
+liotrix
+liotrix increases effects of amitriptyline by Other (see comment). Use
+Caution/Monitor. Comment: Increased catecholamine receptor sensitivity; may
+increase CNS and cardiovascular effects, including arrhythmias.
+
+lisdexamfetamine
+amitriptyline increases and lisdexamfetamine decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+amitriptyline, lisdexamfetamine. Either increases effects of the other by serotonin
+levels. Use Caution/Monitor. Initiate with lower doses and monitor for signs and
+symptoms of serotonin syndrome, particularly during initiation or dosage increase. If
+serotonin syndrome occurs, discontinue along with concomitant serotonergic
+drug(s).
+
+lithium
+amitriptyline and lithium both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+lithium and amitriptyline both increase QTc interval. Use Caution/Monitor.
+
+lofepramine
+amitriptyline and lofepramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+amitriptyline and lofepramine both increase sedation. Use Caution/Monitor.
+
+lofexidine
+amitriptyline and lofexidine both increase sedation. Use Caution/Monitor.
+
+amitriptyline decreases effects of lofexidine by unspecified interaction mechanism.
+Use Caution/Monitor.
+
+loprazolam
+loprazolam and amitriptyline both increase sedation. Use Caution/Monitor.
+
+loratadine
+loratadine will increase the level or effect of amitriptyline by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+loratadine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+lorazepam
+lorazepam and amitriptyline both increase sedation. Use Caution/Monitor.
+
+lorcaserin
+lorcaserin will increase the level or effect of amitriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 42/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+lormetazepam
+lormetazepam and amitriptyline both increase sedation. Use Caution/Monitor.
+
+loxapine
+loxapine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+loxapine inhaled
+loxapine inhaled and amitriptyline both increase sedation. Use Caution/Monitor.
+
+lsd
+amitriptyline and lsd both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+lumateperone
+lumateperone and amitriptyline both increase sedation. Use Caution/Monitor.
+
+lurasidone
+lurasidone increases effects of amitriptyline by Other (see comment). Use
+Caution/Monitor. Comment: Potential for increased risk of hypotension with
+concurrent use. Monitor blood pressure and adjust dose of antihypertensive agent
+as needed.
+
+lurasidone, amitriptyline. Either increases toxicity of the other by sedation. Use
+Caution/Monitor. Potential for increased CNS depressant effects when used
+concurrently; monitor for increased adverse effects and toxicity.
+
+maraviroc
+maraviroc, amitriptyline. Either increases effects of the other by pharmacodynamic
+synergism. Use Caution/Monitor. Increased risk of orthostatic hypotension.
+
+marijuana
+amitriptyline and marijuana both increase sedation. Use Caution/Monitor.
+
+meclizine
+meclizine and amitriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+meclizine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+melatonin
+amitriptyline and melatonin both increase sedation. Use Caution/Monitor.
+
+meperidine
+meperidine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+meprobamate
+amitriptyline and meprobamate both increase sedation. Use Caution/Monitor.
+
+metaproterenol
+amitriptyline increases and metaproterenol decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+metaxalone
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 43/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+metaxalone and amitriptyline both increase sedation. Use Caution/Monitor.
+
+methadone
+amitriptyline and methadone both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+methadone and amitriptyline both increase sedation. Use Caution/Monitor.
+
+methamphetamine
+amitriptyline increases and methamphetamine decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+methocarbamol
+methocarbamol and amitriptyline both increase sedation. Use Caution/Monitor.
+
+methscopolamine
+methscopolamine and amitriptyline both decrease cholinergic effects/transmission.
+Use Caution/Monitor.
+
+methsuximide
+methsuximide and amitriptyline both increase sedation. Use Caution/Monitor.
+
+methylenedioxymethamphetamine
+amitriptyline increases and methylenedioxymethamphetamine decreases sedation.
+Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+methylphenidate
+amitriptyline, methylphenidate. Other (see comment). Use Caution/Monitor.
+Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+methylphenidate transdermal
+methylphenidate transdermal will increase the level or effect of amitriptyline by
+decreasing elimination. Modify Therapy/Monitor Closely. Consider decreasing the
+dose of these drugs when given coadministered with methylphenidate. Monitor for
+drug toxiticities when initiating or discontinuing methylphenidate.
+
+midazolam
+midazolam and amitriptyline both increase sedation. Use Caution/Monitor.
+
+midazolam intranasal
+midazolam intranasal, amitriptyline. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Concomitant use of
+barbiturates, alcohol, or other CNS depressants may increase the risk of
+hypoventilation, airway obstruction, desaturation, or apnea and may contribute to
+profound and/or prolonged drug effect.
+
+midodrine
+amitriptyline increases and midodrine decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+mifepristone
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 44/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+mifepristone, amitriptyline. QTc interval. Modify Therapy/Monitor Closely. Use
+alternatives if available.
+
+mipomersen
+mipomersen, amitriptyline. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: Both drugs have potential to increase
+hepatic enzymes; monitor LFTs.
+
+mirabegron
+mirabegron will increase the level or effect of amitriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor.
+
+mirtazapine
+amitriptyline and mirtazapine both increase sedation. Use Caution/Monitor.
+
+amitriptyline and mirtazapine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+mitapivat
+mitapivat decreases levels of amitriptyline by increasing metabolism. Use
+Caution/Monitor. Mitapivat induces UGT1A1 in vitro and may decrease systemic
+concentrations of UGT1A1 substrates.
+
+modafinil
+modafinil will increase the level or effect of amitriptyline by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+amitriptyline increases and modafinil decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+molindone
+molindone and amitriptyline both increase sedation. Use Caution/Monitor.
+
+morphine
+morphine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+amitriptyline and morphine both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+motherwort
+amitriptyline and motherwort both increase sedation. Use Caution/Monitor.
+
+moxonidine
+amitriptyline and moxonidine both increase sedation. Use Caution/Monitor.
+
+nabilone
+amitriptyline and nabilone both increase sedation. Use Caution/Monitor.
+
+nalbuphine
+nalbuphine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+naratriptan
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 45/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+naratriptan and amitriptyline both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+nefazodone
+nefazodone will increase the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+nefazodone will increase the level or effect of amitriptyline by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+nefopam
+nefopam, amitriptyline. Mechanism: unspecified interaction mechanism. Use
+Caution/Monitor. Use combination with caution.
+
+nelfinavir
+nelfinavir will increase the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+neostigmine
+neostigmine increases and amitriptyline decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Modify Therapy/Monitor Closely.
+
+nicardipine
+nicardipine will increase the level or effect of amitriptyline by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+nifedipine
+nifedipine will decrease the level or effect of amitriptyline by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+nitrous oxide
+nitrous oxide and amitriptyline both increase sedation. Use Caution/Monitor.
+
+norepinephrine
+amitriptyline increases and norepinephrine decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+amitriptyline increases effects of norepinephrine by unknown mechanism. Use
+Caution/Monitor.
+
+nortriptyline
+amitriptyline and nortriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+amitriptyline and nortriptyline both increase sedation. Use Caution/Monitor.
+
+ofloxacin
+amitriptyline and ofloxacin both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+olanzapine
+olanzapine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 46/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+olanzapine and amitriptyline both increase QTc interval. Use Caution/Monitor.
+
+olanzapine/samidorphan
+amitriptyline, olanzapine/samidorphan. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration of diazepam,
+alcohol, or other CNS acting drugs may potentiate orthostatic hypotension
+observed with olanzapine. Additive sedation may also occur.
+
+olodaterol inhaled
+amitriptyline and olodaterol inhaled both increase QTc interval. Use
+Caution/Monitor. TCAs prolong the QTc interval and may potentiate the effects of
+beta2 agonists on the cardiovascular system; increased risk of ventricular
+arrhythmias
+
+onabotulinumtoxinA
+amitriptyline increases effects of onabotulinumtoxinA by pharmacodynamic
+synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate
+botulinum toxin effects, which may result in excessive neuromuscular weakness
+and heighten systemic anticholinergic effects.
+
+opium tincture
+opium tincture and amitriptyline both increase sedation. Use Caution/Monitor.
+
+orphenadrine
+amitriptyline and orphenadrine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+orphenadrine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+osilodrostat
+osilodrostat and amitriptyline both increase QTc interval. Use Caution/Monitor.
+
+osimertinib
+osimertinib and amitriptyline both increase QTc interval. Use Caution/Monitor.
+Conduct periodic monitoring with ECGs and electrolytes in patients taking drugs
+known to prolong the QTc interval.
+
+oxaliplatin
+oxaliplatin will increase the level or effect of amitriptyline by Other (see comment).
+Use Caution/Monitor. Monitor for ECG changes if therapy is initiated in patients with
+drugs known to prolong QT interval.
+
+oxazepam
+oxazepam and amitriptyline both increase sedation. Use Caution/Monitor.
+
+oxybutynin
+oxybutynin and amitriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+oxybutynin topical
+oxybutynin topical and amitriptyline both decrease cholinergic effects/transmission.
+Use Caution/Monitor.
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 47/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+oxybutynin transdermal
+oxybutynin transdermal and amitriptyline both decrease cholinergic
+effects/transmission. Use Caution/Monitor.
+
+oxycodone
+oxycodone and amitriptyline both increase sedation. Use Caution/Monitor.
+
+oxymetazoline intranasal
+amitriptyline increases effects of oxymetazoline intranasal by pharmacodynamic
+synergism. Use Caution/Monitor. TCAs inhibit norepinephrine uptake in adrenergic
+neurons, thereby increasing synaptic norepinephrine levels. Coadministration with
+alpha1 agonists may cause increased adrenergic receptor stimulation. When
+oxymetazoline is combined with intranasal tetracaine for dental anesthesia, avoid or
+use alternant anesthetic in patients taking TCAs.
+
+oxymorphone
+oxymorphone and amitriptyline both increase sedation. Use Caution/Monitor.
+
+ozanimod
+ozanimod and amitriptyline both increase QTc interval. Modify Therapy/Monitor
+Closely. The potential additive effects on heart rate, treatment with ozanimod
+should generally not be initiated in patients who are concurrently treated with QT
+prolonging drugs with known arrhythmogenic properties.
+
+paliperidone
+amitriptyline and paliperidone both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+paliperidone and amitriptyline both increase sedation. Use Caution/Monitor.
+
+pancuronium
+pancuronium and amitriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+papaveretum
+papaveretum and amitriptyline both increase sedation. Use Caution/Monitor.
+
+papaverine
+amitriptyline and papaverine both increase sedation. Use Caution/Monitor.
+
+paroxetine
+amitriptyline and paroxetine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+pasireotide
+amitriptyline and pasireotide both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+pazopanib
+amitriptyline and pazopanib both increase QTc interval. Use Caution/Monitor.
+
+peginterferon alfa 2b
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 48/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+peginterferon alfa 2b, amitriptyline. Other (see comment). Use Caution/Monitor.
+Comment: When patients are administered peginterferon alpha-2b with CYP2D6
+substrates, the therapeutic effect of these drugs may be altered. Peginterferon
+alpha-2b may increase or decrease levels of CYP2D6 substrate.
+
+pentazocine
+pentazocine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+amitriptyline and pentazocine both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+pentobarbital
+pentobarbital will decrease the level or effect of amitriptyline by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+pentobarbital will decrease the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+
+pentobarbital and amitriptyline both increase sedation. Use Caution/Monitor.
+
+perphenazine
+perphenazine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+phendimetrazine
+amitriptyline increases and phendimetrazine decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+phenobarbital
+phenobarbital will decrease the level or effect of amitriptyline by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+phenobarbital will decrease the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+
+phenobarbital will decrease the level or effect of amitriptyline by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+phenobarbital and amitriptyline both increase sedation. Use Caution/Monitor.
+
+phentermine
+amitriptyline increases and phentermine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+phenylephrine
+amitriptyline increases and phenylephrine decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+phenylephrine ophthalmic
+amitriptyline, phenylephrine ophthalmic. Other (see comment). Use
+Caution/Monitor. Comment: Tricyclic antidepressants increase or decrease effects of
+sympathomimetics, by blocking reuptake of NE, or blocking uptake of indirect
+sympathomimetics into the adrenergic neuron.
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 49/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+phenylephrine PO
+amitriptyline increases and phenylephrine PO decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor. .
+
+phenytoin
+phenytoin will decrease the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Monitor
+therapeutic efficacy of amitriptyline; an increased dose may be required. Serum
+phenytoin levels should be obtained when tricyclic antidepressant agents are
+added to therapy due to the potential for impaired phenytoin metabolism and
+decreased seizure threshold. Tricyclic antidepressants when given concomitantly
+with anticonvulsants can increase CNS depression.
+
+phenytoin will decrease the level or effect of amitriptyline by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor. Monitor therapeutic efficacy of
+amitriptyline; an increased dose may be required. Serum phenytoin levels should be
+obtained when tricyclic antidepressant agents are added to therapy due to the
+potential for impaired phenytoin metabolism and decreased seizure threshold.
+Tricyclic antidepressants when given concomitantly with anticonvulsants can
+increase CNS depression.
+
+pholcodine
+amitriptyline and pholcodine both increase sedation. Use Caution/Monitor.
+
+physostigmine
+physostigmine increases and amitriptyline decreases cholinergic
+effects/transmission. Effect of interaction is not clear, use caution. Modify
+Therapy/Monitor Closely.
+
+pilocarpine
+pilocarpine increases and amitriptyline decreases cholinergic effects/transmission.
+Effect of interaction is not clear, use caution. Modify Therapy/Monitor Closely.
+
+pimozide
+pimozide and amitriptyline both increase sedation. Use Caution/Monitor.
+
+pirbuterol
+amitriptyline increases and pirbuterol decreases sedation. Effect of interaction is not
+clear, use caution. Use Caution/Monitor.
+
+ponatinib
+ponatinib increases levels of amitriptyline by P-glycoprotein (MDR1) efflux
+transporter. Use Caution/Monitor.
+
+posaconazole
+amitriptyline and posaconazole both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+prabotulinumtoxinA
+amitriptyline increases effects of prabotulinumtoxinA by pharmacodynamic
+synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 50/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+botulinum toxin effects, which may result in excessive neuromuscular weakness
+and heighten systemic anticholinergic effects.
+
+pralidoxime
+pralidoxime and amitriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+pregabalin
+pregabalin, amitriptyline. Either increases effects of the other by pharmacodynamic
+synergism. Modify Therapy/Monitor Closely. Coadministration of CNS depressants
+can result in serious, life-threatening, and fatal respiratory depression. Use lowest
+dose possible and monitor for respiratory depression and sedation.
+
+primidone
+primidone will decrease the level or effect of amitriptyline by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+primidone will decrease the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+
+primidone and amitriptyline both increase sedation. Use Caution/Monitor.
+
+prochlorperazine
+prochlorperazine and amitriptyline both increase QTc interval. Use Caution/Monitor.
+
+prochlorperazine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+promethazine
+promethazine and amitriptyline both increase QTc interval. Use Caution/Monitor.
+
+promethazine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+propantheline
+propantheline and amitriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+propofol
+propofol and amitriptyline both increase sedation. Use Caution/Monitor.
+
+propylhexedrine
+amitriptyline increases and propylhexedrine decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+protriptyline
+amitriptyline and protriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+amitriptyline and protriptyline both increase sedation. Use Caution/Monitor.
+
+pyridostigmine
+pyridostigmine increases and amitriptyline decreases cholinergic
+effects/transmission. Effect of interaction is not clear, use caution. Modify
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 51/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+Therapy/Monitor Closely.
+
+pyrilamine
+pyrilamine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+quazepam
+quazepam and amitriptyline both increase sedation. Use Caution/Monitor.
+
+quercetin
+quercetin will decrease the level or effect of amitriptyline by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+quetiapine
+quetiapine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+quetiapine, amitriptyline. Either increases toxicity of the other by QTc interval. Use
+Caution/Monitor. Avoid use with drugs that prolong QT and in patients with risk
+factors for prolonged QT interval. Postmarketing cases show QT prolongation with
+overdose in patients with concomitant illness or with drugs known to cause
+electrolyte imbalance or prolong QT.
+
+quinine
+amitriptyline and quinine both increase QTc interval. Use Caution/Monitor.
+
+quizartinib
+quizartinib, amitriptyline. Either increases effects of the other by QTc interval.
+Modify Therapy/Monitor Closely. Monitor patients more frequently with ECG if
+coadministered with QT prolonging drugs.
+
+ramelteon
+amitriptyline and ramelteon both increase sedation. Use Caution/Monitor.
+
+ranolazine
+amitriptyline and ranolazine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+rapacuronium
+rapacuronium and amitriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+remifentanil
+amitriptyline, remifentanil. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. May also increase
+risk of serotonin syndrome.
+
+remimazolam
+remimazolam, amitriptyline. Either increases toxicity of the other by sedation.
+Modify Therapy/Monitor Closely. Coadministration may result in profound sedation,
+respiratory depression, coma, and/or death. Continuously monitor vital signs during
+sedation and recovery period if coadministered. Carefully titrate remimazolam dose
+if administered with opioid analgesics and/or sedative/hypnotics.
+
+revumenib
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 52/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+revumenib and amitriptyline both increase QTc interval. Use Caution/Monitor. ECG
+monitoring recommended if concomitant use can?t be avoided and withhold
+therapy if QTc interval is >480 msec; restart therapy after QTc interval returns to
+<480 msec
+
+rifabutin
+rifabutin will decrease the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+rifabutin decreases levels of amitriptyline by increasing metabolism. Use
+Caution/Monitor.
+
+rifampin
+rifampin will decrease the level or effect of amitriptyline by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+rifampin will decrease the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+rifampin will decrease the level or effect of amitriptyline by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+rifapentine
+rifapentine will decrease the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+rilpivirine
+rilpivirine increases toxicity of amitriptyline by QTc interval. Use Caution/Monitor.
+Rilpivirine should be used with caution when co-administered with a drug with a
+known risk of Torsades de Pointes.
+
+rimabotulinumtoxinB
+amitriptyline increases effects of rimabotulinumtoxinB by pharmacodynamic
+synergism. Use Caution/Monitor. Drugs with anticholinergic effects may potentiate
+botulinum toxin effects, which may result in excessive neuromuscular weakness
+and heighten systemic anticholinergic effects.
+
+risperidone
+amitriptyline and risperidone both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+risperidone and amitriptyline both increase sedation. Use Caution/Monitor.
+
+ritonavir
+ritonavir will increase the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+ritonavir will increase the level or effect of amitriptyline by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+rivastigmine
+rivastigmine increases and amitriptyline decreases cholinergic effects/transmission.
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 53/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+Effect of interaction is not clear, use caution. Modify Therapy/Monitor Closely.
+
+rizatriptan
+rizatriptan and amitriptyline both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+rocuronium
+rocuronium and amitriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+rolapitant
+rolapitant will increase the level or effect of amitriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor. Rolapitant may increase
+plasma concentrations of CYP2D6 substrates for at least 28 days following
+rolapitant administration.
+
+romidepsin
+amitriptyline and romidepsin both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+salmeterol
+amitriptyline increases and salmeterol decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+SAMe
+amitriptyline and SAMe both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+sarecycline
+sarecycline will increase the level or effect of amitriptyline by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor. Monitor for toxicities of P-gp
+substrates that may require dosage reduction when coadministered with P-gp
+inhibitors.
+
+scopolamine
+scopolamine and amitriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+scopolamine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+scopolamine intranasal
+scopolamine intranasal and amitriptyline both increase sedation. Use
+Caution/Monitor.
+
+scullcap
+amitriptyline and scullcap both increase sedation. Use Caution/Monitor.
+
+selpercatinib
+selpercatinib increases toxicity of amitriptyline by QTc interval. Use
+Caution/Monitor.
+
+sertraline
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 54/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+sertraline and amitriptyline both increase QTc interval. Use Caution/Monitor.
+
+sevoflurane
+sevoflurane and amitriptyline both increase sedation. Use Caution/Monitor.
+
+sevoflurane and amitriptyline both increase QTc interval. Use Caution/Monitor.
+
+shepherd's purse
+amitriptyline and shepherd's purse both increase sedation. Use Caution/Monitor.
+
+simvastatin
+simvastatin will increase the level or effect of amitriptyline by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+sirolimus
+sirolimus will increase the level or effect of amitriptyline by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+sodium sulfate/?magnesium sulfate/potassium chloride
+sodium sulfate/?magnesium sulfate/potassium chloride increases effects of
+amitriptyline by unknown mechanism. Use Caution/Monitor. Closely monitor for
+evidence of seizures when using higher dose of magnesium sulfate together with
+drugs that lower the seizure threshold.
+
+sodium sulfate/potassium chloride/magnesium sulfate/polyethylene glycol
+amitriptyline, sodium sulfate/potassium chloride/magnesium sulfate/polyethylene
+glycol. Other (see comment). Use Caution/Monitor. Comment: Caution when bowel
+preps are used with drugs that cause SIADH or NSAIDs; increased risk for water
+retention or electrolyte imbalance.
+
+sodium sulfate/potassium sulfate/magnesium sulfate
+sodium sulfate/potassium sulfate/magnesium sulfate increases effects of
+amitriptyline by unknown mechanism. Use Caution/Monitor. Closely monitor for
+evidence of seizures when using higher dose of magnesium sulfate together with
+drugs that lower the seizure threshold.
+
+solifenacin
+solifenacin and amitriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+solifenacin and amitriptyline both increase QTc interval. Use Caution/Monitor.
+
+sorafenib
+sorafenib and amitriptyline both increase QTc interval. Use Caution/Monitor.
+
+St John's Wort
+St John's Wort will decrease the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+
+St John's Wort will decrease the level or effect of amitriptyline by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+stiripentol
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 55/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+stiripentol, amitriptyline. Either increases effects of the other by sedation. Use
+Caution/Monitor. Concomitant use stiripentol with other CNS depressants, including
+alcohol, may increase the risk of sedation and somnolence.
+
+succinylcholine
+succinylcholine increases and amitriptyline decreases cholinergic
+effects/transmission. Effect of interaction is not clear, use caution. Modify
+Therapy/Monitor Closely.
+
+sufentanil
+sufentanil and amitriptyline both increase sedation. Use Caution/Monitor.
+
+sufentanil SL
+sufentanil SL, amitriptyline. Either increases effects of the other by serotonin levels.
+Use Caution/Monitor. Coadministration of drugs that affect the serotonergic
+neurotransmitter system may result in serotonin syndrome. If concomitant use is
+warranted, carefully observe the patient, particularly during treatment initiation and
+dose adjustment.
+
+sulfamethoxazole
+amitriptyline and sulfamethoxazole both increase QTc interval. Modify
+Therapy/Monitor Closely.
+
+sumatriptan
+sumatriptan and amitriptyline both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+sumatriptan intranasal
+sumatriptan intranasal and amitriptyline both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+suvorexant
+suvorexant and amitriptyline both increase sedation. Modify Therapy/Monitor
+Closely. Dosage adjustments of suvorexant and concomitant CNS depressants may
+be necessary
+
+tacrolimus
+tacrolimus will increase the level or effect of amitriptyline by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+taletrectinib
+taletrectinib and amitriptyline both increase QTc interval. Use Caution/Monitor.
+Concomitant use may increase the risk of QTc interval prolongation. If concomitant
+use is unavoidable, adjust the frequency of ECG and electrolyte monitoring.
+
+tapentadol
+tapentadol and amitriptyline both increase sedation. Use Caution/Monitor.
+
+amitriptyline and tapentadol both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+tasimelteon
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 56/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+tasimelteon and amitriptyline both increase sedation. Use Caution/Monitor.
+
+telavancin
+amitriptyline and telavancin both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+temazepam
+temazepam and amitriptyline both increase sedation. Use Caution/Monitor.
+
+terbinafine
+terbinafine will increase the level or effect of amitriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Modify Therapy/Monitor Closely. Assess need to
+reduce dose of CYP2D6-metabolized drug.
+
+terbutaline
+amitriptyline increases and terbutaline decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+teriflunomide
+teriflunomide decreases levels of amitriptyline by affecting hepatic enzyme CYP1A2
+metabolism. Use Caution/Monitor.
+
+tetrabenazine
+tetrabenazine and amitriptyline both increase QTc interval. Use Caution/Monitor.
+
+tetrabenazine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+thioridazine
+thioridazine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+thiothixene
+thiothixene and amitriptyline both increase sedation. Use Caution/Monitor.
+
+thyroid desiccated
+thyroid desiccated increases effects of amitriptyline by Other (see comment). Use
+Caution/Monitor. Comment: Increased catecholamine receptor sensitivity; may
+increase CNS and cardiovascular effects, including arrhythmias.
+
+tiagabine
+tiagabine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+tiotropium
+tiotropium and amitriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+tizanidine
+tizanidine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+tolterodine
+tolterodine and amitriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+tolvaptan
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 57/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+tolvaptan will increase the level or effect of amitriptyline by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor.
+
+topiramate
+amitriptyline and topiramate both increase sedation. Modify Therapy/Monitor
+Closely.
+
+topiramate increases toxicity of amitriptyline by unspecified interaction mechanism.
+Use Caution/Monitor. Amitriptyline levels may increase; adjust dose based on
+clinical response and not on basis of plasma levels.
+
+tramadol
+tramadol and amitriptyline both increase sedation. Use Caution/Monitor.
+
+amitriptyline and tramadol both increase serotonin levels. Modify Therapy/Monitor
+Closely.
+
+trazodone
+trazodone will decrease the level or effect of amitriptyline by P-glycoprotein
+(MDR1) efflux transporter. Use Caution/Monitor.
+
+amitriptyline and trazodone both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+amitriptyline and trazodone both increase sedation. Use Caution/Monitor.
+
+triazolam
+triazolam and amitriptyline both increase sedation. Use Caution/Monitor.
+
+triclofos
+triclofos and amitriptyline both increase sedation. Use Caution/Monitor.
+
+trifluoperazine
+trifluoperazine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+trihexyphenidyl
+trihexyphenidyl and amitriptyline both decrease cholinergic effects/transmission.
+Use Caution/Monitor. Potential for additive anticholinergic effects.
+
+trimethoprim
+amitriptyline and trimethoprim both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+trimipramine
+amitriptyline and trimipramine both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+amitriptyline and trimipramine both increase sedation. Use Caution/Monitor.
+
+triprolidine
+triprolidine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+tropisetron
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 58/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+amitriptyline and tropisetron both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+trospium chloride
+trospium chloride and amitriptyline both decrease cholinergic effects/transmission.
+Use Caution/Monitor.
+
+tucatinib
+tucatinib will increase the level or effect of amitriptyline by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor. Consider reducing the dosage of P-gp
+substrates, where minimal concentration changes may lead to serious or life-
+threatening toxicities.
+
+valbenazine
+valbenazine and amitriptyline both increase QTc interval. Use Caution/Monitor.
+
+valerian
+valerian and amitriptyline both increase sedation. Use Caution/Monitor.
+
+valproic acid
+valproic acid and amitriptyline both increase sedation. Use Caution/Monitor.
+
+vecuronium
+vecuronium and amitriptyline both decrease cholinergic effects/transmission. Use
+Caution/Monitor.
+
+venlafaxine
+amitriptyline and venlafaxine both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+verapamil
+verapamil will increase the level or effect of amitriptyline by P-glycoprotein (MDR1)
+efflux transporter. Use Caution/Monitor. The frequency and severity of amitriptyline
+adverse effects (sedation, anticholinergic effects and orthostatic hypotension) may
+be increased. Cardiac dysrhythmic effects may be additive.
+
+vigabatrin
+vigabatrin and amitriptyline both increase sedation. Use Caution/Monitor.
+
+viloxazine
+viloxazine will increase the level or effect of amitriptyline by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor. Viloxazine (a weak CYP2D6
+inhibitor) may increase systemic exposure of CYP2D6 substrates. Monitor and
+adjust dose of substrate as clinically indicated.
+
+voclosporin
+voclosporin, amitriptyline. Either increases effects of the other by QTc interval. Use
+Caution/Monitor.
+
+voriconazole
+voriconazole will increase the level or effect of amitriptyline by affecting hepatic
+enzyme CYP2C19 metabolism. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 59/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+amitriptyline and voriconazole both increase QTc interval. Modify Therapy/Monitor
+Closely.
+
+warfarin
+amitriptyline increases effects of warfarin by unspecified interaction mechanism.
+Use Caution/Monitor.
+
+xanomeline/trospium
+xanomeline/trospium, amitriptyline. Either increases effects of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Coadministration of
+antimuscarinic drugs that produce anticholinergic adverse reactions (eg, dry mouth,
+constipation) may increase the frequency and/or severity of such effects.
+
+xylometazoline
+amitriptyline increases and xylometazoline decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+yohimbine
+amitriptyline increases and yohimbine decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+zaleplon
+zaleplon and amitriptyline both increase sedation. Use Caution/Monitor.
+
+ziconotide
+amitriptyline and ziconotide both increase sedation. Use Caution/Monitor.
+
+ziftomenib
+amitriptyline, ziftomenib. QTc interval. Use Caution/Monitor. Caution if ziftomenib is
+coadministered with drugs that exacerbated risk of QT prolongation (eg,
+hypokalemia, orthostatic hypotension, inhibits metabolism of ziftomenib).
+
+ziprasidone
+ziprasidone and amitriptyline both increase sedation. Use Caution/Monitor.
+
+zolmitriptan
+zolmitriptan and amitriptyline both increase serotonin levels. Modify
+Therapy/Monitor Closely.
+
+zolpidem
+zolpidem and amitriptyline both increase sedation. Use Caution/Monitor.
+
+zonisamide
+zonisamide and amitriptyline both increase sedation. Use Caution/Monitor.
+
+zuranolone
+zuranolone and amitriptyline both increase sedation. Use Caution/Monitor.
+
+Minor (98)
+
+acarbose
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 60/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+amitriptyline increases effects of acarbose by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+armodafinil
+armodafinil will decrease the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+artemether/lumefantrine
+artemether/lumefantrine will decrease the level or effect of amitriptyline by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance
+Unknown.
+
+atropine
+amitriptyline increases levels of atropine by unknown mechanism.
+Minor/Significance Unknown.
+
+atropine IV/IM
+amitriptyline increases levels of atropine IV/IM by unknown mechanism.
+Minor/Significance Unknown.
+
+bazedoxifene/conjugated estrogens
+bazedoxifene/conjugated estrogens, amitriptyline. Mechanism: unspecified
+interaction mechanism. Minor/Significance Unknown. Estrogens and progestins may
+decr tricyclic antidepressant effects, while increasing TCA plasma concentration and
+adverse effects.
+
+bortezomib
+bortezomib will increase the level or effect of amitriptyline by affecting hepatic
+enzyme CYP2C19 metabolism. Minor/Significance Unknown.
+
+bosentan
+bosentan will decrease the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+brimonidine topical
+amitriptyline decreases effects of brimonidine topical by pharmacodynamic
+antagonism. Minor/Significance Unknown.
+
+budesonide
+budesonide will decrease the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+butalbital
+butalbital, amitriptyline. Other (see comment). Minor/Significance Unknown.
+Comment: Barbiturates may increase adverse effects, including respiratory
+depression, produced by toxic doses of TCAs. With therapeutic doses of TCAs,
+barbiturates increase metabolism and decrease blood concentrations of TCAs.
+
+carbachol/brimonidine ophthalmic
+amitriptyline decreases effects of carbachol/brimonidine ophthalmic by
+pharmacodynamic antagonism. Minor/Significance Unknown.
+
+carbamazepine
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 61/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+carbamazepine decreases levels of amitriptyline by increasing metabolism.
+Minor/Significance Unknown.
+
+chlorpromazine
+amitriptyline, chlorpromazine. Either increases levels of the other by decreasing
+metabolism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+amitriptyline, chlorpromazine. Either increases levels of the other by
+pharmacodynamic synergism. Minor/Significance Unknown. Additive anticholinergic
+effects.
+
+conjugated estrogens
+conjugated estrogens, amitriptyline. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Estrogens and progestins may decr tricyclic
+antidepressant effects, while increasing TCA plasma concentration and adverse
+effects.
+
+conjugated estrogens, vaginal
+conjugated estrogens, vaginal, amitriptyline. Mechanism: unspecified interaction
+mechanism. Minor/Significance Unknown. Estrogens and progestins may decr
+tricyclic antidepressant effects, while increasing TCA plasma concentration and
+adverse effects.
+
+cortisone
+cortisone will decrease the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+desflurane
+desflurane, amitriptyline. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Risk of arrhythmias or hypotension.
+
+dexamethasone
+dexamethasone will decrease the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+dexmethylphenidate
+dexmethylphenidate increases effects of amitriptyline by decreasing metabolism.
+Minor/Significance Unknown.
+
+DHEA, herbal
+DHEA, herbal will increase the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+eslicarbazepine acetate
+eslicarbazepine acetate will decrease the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+estradiol
+estradiol, amitriptyline. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Estrogens and progestins may decr tricyclic
+antidepressant effects, while increasing TCA plasma concentration and adverse
+effects.
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 62/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+estrogens conjugated synthetic
+estrogens conjugated synthetic, amitriptyline. Mechanism: unspecified interaction
+mechanism. Minor/Significance Unknown. Estrogens and progestins may decr
+tricyclic antidepressant effects, while increasing TCA plasma concentration and
+adverse effects.
+
+estrogens esterified
+estrogens esterified, amitriptyline. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Estrogens may inhibit hepatic metabolism of tricyclic
+antidepressants. However, interactions are not common.
+
+estropipate
+estropipate, amitriptyline. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Estrogens and progestins may decr tricyclic
+antidepressant effects, while increasing TCA plasma concentration and adverse
+effects.
+
+ethanol
+ethanol, amitriptyline. Either increases toxicity of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive impairment of motor skills.
+
+ethinylestradiol
+ethinylestradiol, amitriptyline. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Estrogens and progestins may decr tricyclic
+antidepressant effects, while increasing TCA plasma concentration and adverse
+effects.
+
+etomidate
+etomidate, amitriptyline. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Risk of arrhythmias or hypotension.
+
+etravirine
+etravirine will decrease the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+eucalyptus
+amitriptyline and eucalyptus both increase sedation. Minor/Significance Unknown.
+
+felodipine
+felodipine will increase the level or effect of amitriptyline by affecting hepatic
+enzyme CYP2C19 metabolism. Minor/Significance Unknown.
+
+fludrocortisone
+fludrocortisone will decrease the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+fluphenazine
+amitriptyline, fluphenazine. Either increases levels of the other by decreasing
+metabolism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+amitriptyline, fluphenazine. Either increases levels of the other by
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 63/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+pharmacodynamic synergism. Minor/Significance Unknown. Additive anticholinergic
+effects.
+
+glimepiride
+amitriptyline increases effects of glimepiride by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+glipizide
+amitriptyline increases effects of glipizide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+glyburide
+amitriptyline increases effects of glyburide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+griseofulvin
+griseofulvin will decrease the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+hydrocortisone
+hydrocortisone will decrease the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+hydroxyprogesterone caproate (DSC)
+hydroxyprogesterone caproate (DSC), amitriptyline. Mechanism: unspecified
+interaction mechanism. Minor/Significance Unknown. Estrogens and progestins may
+decr tricyclic antidepressant effects, while increasing TCA plasma concentration and
+adverse effects.
+
+insulin aspart
+amitriptyline increases effects of insulin aspart by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+insulin detemir
+amitriptyline increases effects of insulin detemir by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+insulin glargine
+amitriptyline increases effects of insulin glargine by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+insulin glulisine
+amitriptyline increases effects of insulin glulisine by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+insulin lispro
+amitriptyline increases effects of insulin lispro by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+insulin NPH
+amitriptyline increases effects of insulin NPH by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 64/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+insulin regular human
+amitriptyline increases effects of insulin regular human by pharmacodynamic
+synergism. Minor/Significance Unknown.
+
+isoniazid
+isoniazid will increase the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+isoproterenol
+isoproterenol, amitriptyline. Mechanism: unknown. Minor/Significance Unknown.
+Risk of cardiac arrhythmias.
+
+itraconazole
+itraconazole will increase the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+ketamine
+ketamine, amitriptyline. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Risk of arrhythmias or hypotension.
+
+lapatinib
+lapatinib will increase the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+lithium
+lithium, amitriptyline. Other (see comment). Minor/Significance Unknown.
+Comment: Risk of neurotoxicity in geriatric pts. Multiple mechanisms involved.
+
+lumefantrine
+lumefantrine will decrease the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+marijuana
+marijuana will increase the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+mestranol
+mestranol, amitriptyline. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Estrogens and progestins may decr tricyclic
+antidepressant effects, while increasing TCA plasma concentration and adverse
+effects.
+
+methylprednisolone
+methylprednisolone will decrease the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+metronidazole
+metronidazole will increase the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+metyrapone
+amitriptyline decreases effects of metyrapone by unspecified interaction
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 65/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+mechanism. Minor/Significance Unknown.
+
+miconazole vaginal
+miconazole vaginal will increase the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+miglitol
+amitriptyline increases effects of miglitol by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+nateglinide
+amitriptyline increases effects of nateglinide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+nevirapine
+nevirapine will decrease the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+nifedipine
+nifedipine will increase the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+nilotinib
+nilotinib will increase the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+oxcarbazepine
+oxcarbazepine will increase the level or effect of amitriptyline by affecting hepatic
+enzyme CYP2C19 metabolism. Minor/Significance Unknown.
+
+panax ginseng
+panax ginseng increases effects of amitriptyline by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+parecoxib
+parecoxib will increase the level or effect of amitriptyline by affecting hepatic
+enzyme CYP2C19 metabolism. Minor/Significance Unknown.
+
+pentobarbital
+pentobarbital, amitriptyline. Other (see comment). Minor/Significance Unknown.
+Comment: Barbiturates may increase adverse effects, including respiratory
+depression, produced by toxic doses of TCAs. With therapeutic doses of TCAs,
+barbiturates increase metabolism and decrease blood concentrations of TCAs.
+
+perphenazine
+amitriptyline, perphenazine. Either increases levels of the other by decreasing
+metabolism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+amitriptyline, perphenazine. Either increases levels of the other by
+pharmacodynamic synergism. Minor/Significance Unknown. Additive anticholinergic
+effects.
+
+phenobarbital
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 66/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+phenobarbital, amitriptyline. Other (see comment). Minor/Significance Unknown.
+Comment: Barbiturates may increase adverse effects, including respiratory
+depression, produced by toxic doses of TCAs. With therapeutic doses of TCAs,
+barbiturates increase metabolism and decrease blood concentrations of TCAs.
+
+pioglitazone
+amitriptyline increases effects of pioglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+pleurisy root
+pleurisy root decreases effects of amitriptyline by unspecified interaction
+mechanism. Minor/Significance Unknown. Theoretical interaction.
+
+posaconazole
+posaconazole will increase the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+prednisone
+prednisone will decrease the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+primidone
+primidone, amitriptyline. Other (see comment). Minor/Significance Unknown.
+Comment: Barbiturates may increase adverse effects, including respiratory
+depression, produced by toxic doses of TCAs. With therapeutic doses of TCAs,
+barbiturates increase metabolism and decrease blood concentrations of TCAs.
+
+prochlorperazine
+amitriptyline, prochlorperazine. Either increases levels of the other by decreasing
+metabolism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+amitriptyline, prochlorperazine. Either increases levels of the other by
+pharmacodynamic synergism. Minor/Significance Unknown. Additive anticholinergic
+effects.
+
+progesterone micronized
+progesterone micronized, amitriptyline. Mechanism: unspecified interaction
+mechanism. Minor/Significance Unknown. Estrogens and progestins may decr
+tricyclic antidepressant effects, while increasing TCA plasma concentration and
+adverse effects.
+
+promazine
+amitriptyline, promazine. Either increases levels of the other by decreasing
+metabolism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+amitriptyline, promazine. Either increases levels of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+promethazine
+amitriptyline, promethazine. Either increases levels of the other by decreasing
+metabolism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+amitriptyline, promethazine. Either increases levels of the other by
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 67/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+pharmacodynamic synergism. Minor/Significance Unknown. Additive anticholinergic
+effects.
+
+propofol
+propofol, amitriptyline. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Risk of arrhythmias or hypotension.
+
+repaglinide
+amitriptyline increases effects of repaglinide by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+rosiglitazone
+amitriptyline increases effects of rosiglitazone by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+rufinamide
+rufinamide will decrease the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+sage
+amitriptyline and sage both increase sedation. Minor/Significance Unknown.
+
+saxagliptin
+amitriptyline increases effects of saxagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+serdexmethylphenidate/dexmethylphenidate
+serdexmethylphenidate/dexmethylphenidate increases effects of amitriptyline by
+decreasing metabolism. Minor/Significance Unknown.
+
+sevoflurane
+sevoflurane, amitriptyline. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Risk of arrhythmias or hypotension.
+
+sitagliptin
+amitriptyline increases effects of sitagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+sulfamethoxazole
+sulfamethoxazole decreases levels of amitriptyline by unspecified interaction
+mechanism. Minor/Significance Unknown.
+
+thioridazine
+amitriptyline, thioridazine. Either increases levels of the other by decreasing
+metabolism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+amitriptyline, thioridazine. Either increases levels of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+trifluoperazine
+amitriptyline, trifluoperazine. Either increases levels of the other by decreasing
+metabolism. Minor/Significance Unknown. Additive anticholinergic effects.
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 68/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+amitriptyline, trifluoperazine. Either increases levels of the other by
+pharmacodynamic synergism. Minor/Significance Unknown. Additive anticholinergic
+effects.
+
+vasopressin
+amitriptyline increases effects of vasopressin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+verapamil
+verapamil will increase the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+verapamil increases levels of amitriptyline by decreasing metabolism.
+Minor/Significance Unknown.
+
+vildagliptin
+amitriptyline increases effects of vildagliptin by pharmacodynamic synergism.
+Minor/Significance Unknown.
+
+voriconazole
+voriconazole will increase the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+zafirlukast
+zafirlukast will increase the level or effect of amitriptyline by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+zolpidem
+zolpidem, amitriptyline. Either increases effects of the other by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive CNS depression.
+
+Adverse Effects
+
+Frequency Not Defined
+
+Agitation
+
+Agranulocytosis
+
+Alopecia
+
+Anxiety
+
+Anorexia
+
+Ataxia
+
+Arrhythmia
+
+Blurred vision
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 69/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+Coma
+
+Confusion
+
+Constipation
+
+Diarrhea
+
+Dizziness
+
+Dry mouth
+
+ECG changes
+
+Eosinophilia
+
+Extrapyramidal symptoms (EPS)
+
+Fatigue
+
+Hallucination
+
+Headache
+
+Hypertension
+
+Increased LFTs
+
+Insomnia
+
+Lethargy
+
+Leukopenia
+
+MI
+
+Nausea
+
+Ocular pressure increased
+
+Orthostatic hypotension
+
+Palpitation
+
+Paresthesia
+
+Photosensitivity
+
+Rash
+
+Restlessness
+
+Sedation
+
+Seizure
+
+Sexual dysfunction
+
+SIADH
+
+Stroke
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 70/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+Stomatitis
+
+Syncope
+
+Sweating
+
+Tachycardia
+
+Thrombocytopenia
+
+Tinnitus
+
+Urinary retention
+
+Urticaria
+
+Vomiting
+
+Xerostomia
+
+Weakness
+
+Weight gain
+
+Warnings
+
+Black Box Warnings
+
+In short-term studies, antidepressants increased the risk of suicidal thinking and
+behavior in children, adolescents, and young adults (<24 years) taking antidepressants
+for major depressive disorders and other psychiatric illnesses; this increase was not seen
+in patients over age 24 years; a slight decrease in suicidal thinking was seen in adults
+over age 65 years
+
+In children and young adults, the risks must be weighed against the benefits of taking
+antidepressants
+
+Patients should be monitored closely for changes in behavior, clinical worsening, and
+suicidal tendencies; this should be done during the initial 1-2 months of therapy and
+dosage adjustments; the patient’s family should communicate any abrupt changes in
+behavior to the healthcare provider
+
+Worsening behavior and suicidal tendencies that are not part of the presenting
+symptoms may require discontinuation of therapy
+
+This drug is not approved for use in pediatric patients <12 years
+
+Not FDA approved for treatment of bipolar depression
+
+Contraindications
+
+Hypersensitivity
+
+Acute recovery phase following MI
+
+Concurrent use with cisapride
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 71/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+
+Contraindicated within 14 days of MAOIs; if linezolid or IV methylene blue (MAOIs) must
+be administered, discontinue serotonergic drug immediately and monitor for CNS
+toxicity; may resume 24 hr after last linezolid or methylene blue dose, or after 2 weeks of
+monitoring, whichever comes first
+
+Cautions
+
+Bone marrow suppression reported
+
+Avoid use in narrow-angle glaucoma
+
+May cause sedation and impair mental and physical abilities
+
+Avoid use with any drugs or conditions that prolong QT interval
+
+May cause orthostatic hypotension
+
+Use caution in patients with cardiovascular disease, diabetes, mania, hepatic and renal
+impairment, thyroid dysfunction, and seizure disorder
+
+May worsen mania symptoms or precipitate mania in patients with bipolar disorder
+
+Clinical worsening and suicidal ideation may occur despite medication in adolescents
+and young adults (18-24 years)
+
+Risk of anticholinergic side effects; may cause constipation, urinary retention, blurred
+vision, and xerostomia
+
+Use caution in patients with urinary retention, open-angle glaucoma, BPH, decreased
+gastrointestinal motility, or paralytic ileus
+
+Possibility of EPS and neuroleptic malignant syndrome
+
+Abrupt discontinuation of therapy not recommended in patients receiving high doses for
+prolonged periods
+
+Fractures reported with therapy
+
+Pregnancy & Lactation
+
+Pregnancy category: C
+
+Lactation: Distributed in breast milk; do not nurse (AAP states effect on nursing infants is
+unknown but may be of concern)
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 72/73
+
+
+
+6/22/26, 4:27 PM Levate (amitriptyline), dosing, indications, interactions, adverse effects, and more
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+Neurotransmitter (especially norepinephrine and serotonin) reuptake inhibitor;
+anticholinergic
+
+Absorption
+
+Peak serum time: 4 hr
+
+Metabolism
+
+Metabolized by hepatic CYP2C19, CYP3A4
+
+Metabolites: Nortriptyline
+
+Elimination
+
+Half-life: 9-27 hr
+
+Excretion: Urine (18%), small amounts in feces
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/levate-amitriptyline-342936 73/73

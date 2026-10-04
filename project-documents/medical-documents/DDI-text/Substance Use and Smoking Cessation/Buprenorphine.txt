@@ -1,0 +1,3246 @@
+﻿6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+buprenorphine (Rx)
+Brand and Other Names: Buprenex
+Classes: Opioid Analgesics; Analgesics, Opioid Partial Agonist
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+injectable solution: Schedule III (Buprenex)
+
+0.3mg/mL
+
+tablet, sublingual: Schedule III (generic)
+
+2mg
+
+8mg
+
+Moderate-to-Severe Pain
+
+0.3 mg IV/IM q6hr; may be repeated once (up to 0.3 mg) if required 30-60 minutes after
+initial dose
+
+Also see Administration
+
+Opioid Dependence
+
+Induction (sublingual tablet)
+
+8 mg SL on day 1, then 16 mg SL on day 2; continued over 3-4 days
+
+Maintenance (buprenorphine-naloxone combination)
+
+Switch to buprenorphine/naloxone combination for unsupervised maintenance
+
+For dosing, see drug monograph for buprenorphine/naloxone
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 1/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+Dosage Modifications
+
+Renal impairment
+
+No differences in pharmacokinetics observed between 9 dialysis-dependent and 6
+normal patients following IV administration of 0.3 mg buprenorphine
+
+Renal failure: Pharmacokinetics are unknown
+
+Hepatic impairment
+
+SL use
+Mild: No dose adjustment is needed
+
+Moderate: No dose adjustment is necessary, closely monitor for signs and
+symptoms of toxicity or overdose
+
+Severe: Reducing starting and titration incremental dose by half, and monitor
+for signs and symptoms of toxicity or overdose
+
+IV/IM use
+Mild-to-moderate: No dosage adjustments provided
+
+Severe: No dosage adjustment provided; use with caution
+
+Dosing Considerations
+
+For prescriber qualifications, see prescribing information
+
+Also given in combination with naloxone
+
+Induction with SL tablets
+
+Patients dependent on heroin or other short-acting opioids
+At initiation, administer first dose of buprenorphine SL tablets only when
+signs/symptoms of moderate opioid withdrawal appear, and ≥4 hr after patient
+last used an opioid
+
+Titrate to clinical effectiveness achieved as rapidly as possible; dosing on the
+initial day of treatment may be given in 2-4 mg increments if preferred
+
+Patients dependent on methadone or other long-acting opioids
+Administer first dose of buprenorphine sublingual tablets should when clear
+signs/symptoms of moderate opioid withdrawal appear, and generally ≥24 hr
+after the patient last used a long-acting opioids
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 2/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+Access to naloxone for opioid overdose
+
+Assess need for naloxone upon initiating and renewing treatment
+
+Consider prescribing naloxone
+Based on patient’s risk factors for overdose (eg, concomitant use of CNS
+depressants, a history of opioid use disorder, prior opioid overdose); presence
+of risk factors should not prevent proper pain management
+
+Household members (including children) or other close contacts at risk for
+accidental ingestion or overdose
+
+Consult patients and caregivers on the following:
+Availability of naloxone for emergency treatment of opioid overdose
+
+Ways differ on how to obtain naloxone as permitted by individual state
+dispensing and prescribing requirements or guidelines (eg, by prescription,
+directly from a pharmacist, as part of a community-based program)
+
+PEDIATRIC
+Dosage Forms & Strengths
+
+injectable solution: Schedule III (Buprenex)
+
+0.3mg/mL
+
+Moderate-to-Severe Pain
+
+<2 years: Safety and efficacy not established
+
+2-12 years: 2-6 mcg/kg IV/IM q4-6hr PRN 
+
+>12 years: 0.3 mg IV/IM q6hr; may be repeated once (up to 0.3 mg) if required 30-60
+minutes after initial dose
+
+Also see Administration
+
+GERIATRIC
+Moderate-to-Severe Pain
+
+0.15 mg IV/IM q6hr; titrate slowly due to increase risk of respiratory depression
+
+Interactions
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and
+buprenorphine
+No Interactions Found
+Interactions Found
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 3/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+Contraindicated
+
+Serious
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+Contraindicated (5)
+
+alvimopan
+alvimopan, buprenorphine. receptor binding competition. Contraindicated.
+Alvimopan is contraindicated in opioid tolerant patients (ie, those who have taken
+therapeutic doses of opioids for >7 consecutive days immediately prior to taking
+alvimopan). Patients recently exposed to opioids are expected to be more sensitive
+to the effects of alvimopan and therefore may experience abdominal pain, nausea
+and vomiting, and diarrhea. No significant interaction is expected with concurrent
+use of opioid analgesics and alvimopan in patients who received opioid analgesics
+for 7 or fewer consecutive days prior to alvimopan.
+
+dronedarone
+buprenorphine and dronedarone both increase QTc interval. Contraindicated.
+
+lefamulin
+lefamulin will increase the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated. Lefamulin is
+contraindicated with CYP3A substrates know to prolong the QT interval.
+
+olanzapine/samidorphan
+olanzapine/samidorphan decreases effects of buprenorphine by pharmacodynamic
+antagonism. Contraindicated. Samidorphan elicits opioid antagonistic effects and
+increases risk of precipitating acute opioid withdrawal in patients dependent on
+opioids. Prescribing information recommends at least a 7-day opioid-free interval
+for short-acting opioids and at least a 14-day opioid-free interval for long-acting
+opioids before starting olanzapine/samidorphan. .
+
+thioridazine
+buprenorphine and thioridazine both increase QTc interval. Contraindicated.
+
+Serious (239)
+
+acetaminophen/phenyltoloxamine
+acetaminophen/phenyltoloxamine and buprenorphine both increase sedation. Avoid
+or Use Alternate Drug. Limit use to patients for whom alternative treatment options
+are inadequate
+
+acrivastine
+acrivastine and buprenorphine both increase sedation. Avoid or Use Alternate Drug.
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 4/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+Limit use to patients for whom alternative treatment options are inadequate
+
+alfentanil
+buprenorphine, alfentanil. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Mixed opiate agonist/antagonists usually produce additive sedation with
+narcotics; however, in narcotic addicted pts., the antagonist activity may provoke
+withdrawal Sx.
+
+alfuzosin
+alfuzosin and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+amiodarone
+buprenorphine and amiodarone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+amisulpride
+amisulpride and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug. ECG monitoring is recommended if coadministered.
+
+amisulpride and buprenorphine both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+amitriptyline
+buprenorphine and amitriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+amoxapine
+buprenorphine and amoxapine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+anagrelide
+anagrelide and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+buprenorphine and anagrelide both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+apalutamide
+apalutamide will decrease the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+Coadministration of apalutamide, a strong CYP3A4 inducer, with drugs that are
+CYP3A4 substrates can result in lower exposure to these medications. Avoid or
+substitute another drug for these medications when possible. Evaluate for loss of
+therapeutic effect if medication must be coadministered. Adjust dose according to
+prescribing information if needed.
+
+apomorphine
+apomorphine and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+aripiprazole
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 5/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+aripiprazole and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+arsenic trioxide
+buprenorphine and arsenic trioxide both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+artemether
+artemether and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+artemether/lumefantrine
+artemether/lumefantrine and buprenorphine both increase QTc interval. Avoid or
+Use Alternate Drug.
+
+asenapine
+asenapine and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+buprenorphine and asenapine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+asenapine and buprenorphine both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+asenapine transdermal
+asenapine transdermal and buprenorphine both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+asenapine transdermal and buprenorphine both increase sedation. Avoid or Use
+Alternate Drug. Limit use to patients for whom alternative treatment options are
+inadequate
+
+atomoxetine
+atomoxetine and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+avapritinib
+avapritinib and buprenorphine both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+azithromycin
+buprenorphine and azithromycin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+bedaquiline
+bedaquiline and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+belladonna and opium
+buprenorphine, belladonna and opium. Other (see comment). Avoid or Use
+Alternate Drug. Comment: Mixed opiate agonist/antagonists usually produce
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 6/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+additive sedation with narcotics; however, in narcotic addicted pts., the antagonist
+activity may provoke withdrawal Sx.
+
+benzhydrocodone/acetaminophen
+benzhydrocodone/acetaminophen, buprenorphine. Either increases toxicity of the
+other by pharmacodynamic synergism. Avoid or Use Alternate Drug. Profound
+sedation, respiratory depression, coma, and death may result if coadministered.
+Reserve concomitant prescribing of these drugs in patients for whom other
+treatment options are inadequate. Limit dosages and durations to the minimum
+required. Monitor closely for signs of respiratory depression and sedation.
+
+buprenorphine decreases effects of benzhydrocodone/acetaminophen by
+pharmacodynamic antagonism. Avoid or Use Alternate Drug. Mixed opioid
+agonists/antagonists and partial opioid agonists may reduce the analgesic effect of
+hydrocodone (benzhydrocodone prodrug of hydrocodone) and/or precipitate
+withdrawal symptoms in opioid tolerant patients.
+
+benzhydrocodone/acetaminophen and buprenorphine both increase sedation. Avoid
+or Use Alternate Drug. Limit use to patients for whom alternative treatment options
+are inadequate
+
+bremelanotide
+bremelanotide will decrease the level or effect of buprenorphine by Other (see
+comment). Avoid or Use Alternate Drug. Bremelanotide may slow gastric emptying
+and potentially reduces the rate and extent of absorption of concomitantly
+administered oral medications. Avoid use when taking any oral drug that is
+dependent on threshold concentrations for efficacy. Interactions listed are
+representative examples and do not include all possible clinical examples.
+
+brexpiprazole
+brexpiprazole and buprenorphine both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+brimonidine
+brimonidine and buprenorphine both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+brimonidine topical
+brimonidine topical and buprenorphine both increase sedation. Avoid or Use
+Alternate Drug. Limit use to patients for whom alternative treatment options are
+inadequate
+
+brivaracetam
+brivaracetam and buprenorphine both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+buprenorphine subdermal implant
+buprenorphine subdermal implant and buprenorphine both increase sedation. Avoid
+or Use Alternate Drug. Limit use to patients for whom alternative treatment options
+are inadequate
+
+butorphanol
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 7/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+buprenorphine, butorphanol. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Mixed opiate agonist/antagonists usually produce additive sedation with
+narcotics; however, in narcotic addicted pts., the antagonist activity may provoke
+withdrawal Sx.
+
+calcium/magnesium/potassium/sodium oxybates
+buprenorphine, calcium/magnesium/potassium/sodium oxybates. Either increases
+effects of the other by pharmacodynamic synergism. Avoid or Use Alternate Drug.
+Profound sedation, respiratory depression, coma, and death may result if
+coadministered. Reserve concomitant prescribing of these drugs in patients for
+whom other treatment options are inadequate. Limit dosages and durations to the
+minimum required. Monitor closely for signs of respiratory depression and sedation.
+
+carbachol/brimonidine ophthalmic
+carbachol/brimonidine ophthalmic and buprenorphine both increase sedation. Avoid
+or Use Alternate Drug. Limit use to patients for whom alternative treatment options
+are inadequate
+
+cariprazine
+cariprazine and buprenorphine both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+ceritinib
+ceritinib and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+ceritinib will increase the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+chloramphenicol
+chloramphenicol will increase the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+chloroquine
+chloroquine and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+chlorpromazine
+buprenorphine and chlorpromazine both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+cimetidine
+cimetidine increases effects of buprenorphine by decreasing metabolism. Avoid or
+Use Alternate Drug.
+
+ciprofloxacin
+buprenorphine and ciprofloxacin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+citalopram
+citalopram and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 8/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+clarithromycin
+clarithromycin will increase the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+clarithromycin and buprenorphine both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+clobazam
+clobazam and buprenorphine both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+clomipramine
+buprenorphine and clomipramine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+clonidine
+clonidine, buprenorphine. Either increases toxicity of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Coadministration enhances CNS
+depressant effects.
+
+clonidine and buprenorphine both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+clozapine
+clozapine and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+codeine
+buprenorphine, codeine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Mixed opiate agonist/antagonists usually produce additive sedation with
+narcotics; however, in narcotic addicted pts., the antagonist activity may provoke
+withdrawal Sx.
+
+conivaptan
+conivaptan will increase the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+crizotinib
+crizotinib and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+dasatinib
+dasatinib and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+degarelix
+degarelix and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+desflurane
+desflurane and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 9/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+desipramine
+buprenorphine and desipramine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+desloratadine
+desloratadine and buprenorphine both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+dextromoramide
+buprenorphine, dextromoramide. Other (see comment). Avoid or Use Alternate
+Drug. Comment: Mixed opiate agonist/antagonists usually produce additive
+sedation with narcotics; however, in narcotic addicted pts., the antagonist activity
+may provoke withdrawal Sx.
+
+diamorphine
+buprenorphine, diamorphine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Mixed opiate agonist/antagonists usually produce additive sedation with
+narcotics; however, in narcotic addicted pts., the antagonist activity may provoke
+withdrawal Sx.
+
+diazepam buccal
+diazepam buccal and buprenorphine both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+diazepam buccal, buprenorphine. Either increases toxicity of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Profound sedation,
+respiratory depression, coma, and death may result if coadministered. Reserve
+concomitant prescribing of these drugs in patients for whom other treatment
+options are inadequate. Limit dosages and durations to the minimum required.
+Monitor closely for signs of respiratory depression and sedation.
+
+diazepam intranasal
+diazepam intranasal, buprenorphine. Either increases toxicity of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Profound sedation,
+respiratory depression, coma, and death may result if coadministered. Reserve
+concomitant prescribing of these drugs in patients for whom other treatment
+options are inadequate. Limit dosages and durations to the minimum required.
+Monitor closely for signs of respiratory depression and sedation.
+
+diazepam intranasal and buprenorphine both increase sedation. Avoid or Use
+Alternate Drug. Limit use to patients for whom alternative treatment options are
+inadequate
+
+difenoxin hcl
+buprenorphine, difenoxin hcl. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Mixed opiate agonist/antagonists usually produce additive sedation with
+narcotics; however, in narcotic addicted pts., the antagonist activity may provoke
+withdrawal Sx.
+
+diphenoxylate hcl
+buprenorphine, diphenoxylate hcl. Other (see comment). Avoid or Use Alternate
+Drug. Comment: Mixed opiate agonist/antagonists usually produce additive
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 10/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+sedation with narcotics; however, in narcotic addicted pts., the antagonist activity
+may provoke withdrawal Sx.
+
+dipipanone
+buprenorphine, dipipanone. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Mixed opiate agonist/antagonists usually produce additive sedation with
+narcotics; however, in narcotic addicted pts., the antagonist activity may provoke
+withdrawal Sx.
+
+disopyramide
+buprenorphine and disopyramide both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+dofetilide
+buprenorphine and dofetilide both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+dolasetron
+dolasetron and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+donepezil
+donepezil and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+doxepin
+doxepin and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+efavirenz
+efavirenz and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+eliglustat
+buprenorphine and eliglustat both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+eluxadoline
+buprenorphine, eluxadoline. Either increases effects of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Avoid coadministration
+with other drugs that cause constipation. Increases risk for constipation related
+serious adverse reactions. .
+
+encorafenib
+encorafenib and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+entrectinib
+entrectinib and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+eribulin
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 11/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+eribulin and buprenorphine both increase QTc interval. Avoid or Use Alternate Drug.
+
+erythromycin base
+buprenorphine and erythromycin base both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+erythromycin ethylsuccinate
+buprenorphine and erythromycin ethylsuccinate both increase QTc interval. Avoid or
+Use Alternate Drug.
+
+erythromycin lactobionate
+buprenorphine and erythromycin lactobionate both increase QTc interval. Avoid or
+Use Alternate Drug.
+
+erythromycin stearate
+buprenorphine and erythromycin stearate both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+escitalopram
+buprenorphine and escitalopram both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+eszopiclone
+eszopiclone and buprenorphine both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+fentanyl
+fentanyl, buprenorphine. Either increases effects of the other by pharmacodynamic
+synergism. Avoid or Use Alternate Drug. Coadministration with other CNS
+depressants, such as skeletal muscle relaxants, may cause respiratory depression,
+hypotension, profound sedation, coma, and/or death. Consider dose reduction of
+either or both agents to avoid serious adverse effects. Monitor for hypotension,
+respiratory depression, and profound sedation.
+
+buprenorphine decreases effects of fentanyl by pharmacodynamic antagonism.
+Avoid or Use Alternate Drug. Coadministration of mixed agonist/antagonist and
+partial agonist opioid analgesics may reduce fentanyl's analgesic effect and
+possibly precipitate withdrawal symptoms.
+
+fentanyl and buprenorphine both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+fentanyl intranasal
+fentanyl intranasal, buprenorphine. Either increases effects of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Coadministration with
+other CNS depressants, such as skeletal muscle relaxants, may cause respiratory
+depression, hypotension, profound sedation, coma, and/or death. Consider dose
+reduction of either or both agents to avoid serious adverse effects. Monitor for
+hypotension, respiratory depression, and profound sedation.
+
+buprenorphine decreases effects of fentanyl intranasal by pharmacodynamic
+antagonism. Avoid or Use Alternate Drug. Coadministration of mixed
+agonist/antagonist and partial agonist opioid analgesics may reduce fentanyl's
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 12/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+analgesic effect and possibly precipitate withdrawal symptoms.
+
+fentanyl intranasal and buprenorphine both increase sedation. Avoid or Use
+Alternate Drug. Limit use to patients for whom alternative treatment options are
+inadequate
+
+fentanyl iontophoretic transdermal system
+fentanyl iontophoretic transdermal system and buprenorphine both increase
+sedation. Avoid or Use Alternate Drug. Limit use to patients for whom alternative
+treatment options are inadequate
+
+fentanyl transdermal
+fentanyl transdermal, buprenorphine. Either increases effects of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Coadministration with
+other CNS depressants, such as skeletal muscle relaxants, may cause respiratory
+depression, hypotension, profound sedation, coma, and/or death. Consider dose
+reduction of either or both agents to avoid serious adverse effects. Monitor for
+hypotension, respiratory depression, and profound sedation.
+
+buprenorphine decreases effects of fentanyl transdermal by pharmacodynamic
+antagonism. Avoid or Use Alternate Drug. Coadministration of mixed
+agonist/antagonist and partial agonist opioid analgesics may reduce fentanyl's
+analgesic effect and possibly precipitate withdrawal symptoms.
+
+fentanyl transdermal and buprenorphine both increase sedation. Avoid or Use
+Alternate Drug. Limit use to patients for whom alternative treatment options are
+inadequate
+
+fentanyl transmucosal
+fentanyl transmucosal, buprenorphine. Either increases effects of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Coadministration with
+other CNS depressants, such as skeletal muscle relaxants, may cause respiratory
+depression, hypotension, profound sedation, coma, and/or death. Consider dose
+reduction of either or both agents to avoid serious adverse effects. Monitor for
+hypotension, respiratory depression, and profound sedation.
+
+buprenorphine decreases effects of fentanyl transmucosal by pharmacodynamic
+antagonism. Avoid or Use Alternate Drug. Coadministration of mixed
+agonist/antagonist and partial agonist opioid analgesics may reduce fentanyl's
+analgesic effect and possibly precipitate withdrawal symptoms.
+
+fentanyl transmucosal and buprenorphine both increase sedation. Avoid or Use
+Alternate Drug. Limit use to patients for whom alternative treatment options are
+inadequate
+
+fexinidazole
+fexinidazole and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid coadministration of fexinidazole with drugs known to block potassium
+channels and/or prolong QT interval.
+
+fingolimod
+fingolimod and buprenorphine both increase QTc interval. Avoid or Use Alternate
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 13/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+Drug.
+
+flecainide
+buprenorphine and flecainide both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+fluconazole
+buprenorphine and fluconazole both increase QTc interval. Contraindicated.
+
+fluoxetine
+buprenorphine and fluoxetine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+fluvoxamine
+buprenorphine and fluvoxamine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+foscarnet
+buprenorphine and foscarnet both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+fostemsavir
+buprenorphine and fostemsavir both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+gabapentin
+gabapentin and buprenorphine both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+gabapentin enacarbil
+gabapentin enacarbil and buprenorphine both increase sedation. Avoid or Use
+Alternate Drug. Limit use to patients for whom alternative treatment options are
+inadequate
+
+gemifloxacin
+gemifloxacin and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+gemtuzumab
+buprenorphine and gemtuzumab both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+gilteritinib
+gilteritinib and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+glasdegib
+buprenorphine and glasdegib both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+goserelin
+buprenorphine and goserelin both increase QTc interval. Avoid or Use Alternate
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 14/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+Drug.
+
+granisetron
+granisetron and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+haloperidol
+buprenorphine and haloperidol both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+histrelin
+buprenorphine and histrelin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+hydrocodone
+buprenorphine decreases effects of hydrocodone by pharmacodynamic antagonism.
+Avoid or Use Alternate Drug. Mixed opioid agonists/antagonists and partial opioid
+agonists may reduce the analgesic effect of hydrocodone and/or precipitate
+withdrawal symptoms in opioid tolerant patients. .
+
+hydrocodone, buprenorphine. Either increases toxicity of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Profound sedation,
+respiratory depression, coma, and death may result if coadministered. Reserve
+concomitant prescribing of these drugs in patients for whom other treatment
+options are inadequate. Limit dosages and durations to the minimum required.
+Monitor closely for signs of respiratory depression and sedation.
+
+hydromorphone
+buprenorphine, hydromorphone. Other (see comment). Avoid or Use Alternate
+Drug. Comment: Mixed opiate agonist/antagonists usually produce additive
+sedation with narcotics; however, in narcotic addicted pts., the antagonist activity
+may provoke withdrawal Sx.
+
+hydroxychloroquine sulfate
+buprenorphine and hydroxychloroquine sulfate both increase QTc interval. Avoid or
+Use Alternate Drug.
+
+ibutilide
+buprenorphine and ibutilide both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+idelalisib
+idelalisib will increase the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+Idelalisib is a strong CYP3A inhibitor; avoid coadministration with sensitive CYP3A
+substrates
+
+iloperidone
+buprenorphine and iloperidone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+imipramine
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 15/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+buprenorphine and imipramine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+inotuzumab
+buprenorphine and inotuzumab both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+isocarboxazid
+isocarboxazid increases toxicity of buprenorphine by unknown mechanism. Avoid or
+Use Alternate Drug. Risk of hypotension, hyperpyrexia, somnolence, or death;
+separate by 14 d.
+
+isoflurane
+isoflurane and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+itraconazole
+itraconazole will increase the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+itraconazole and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+ivosidenib
+ivosidenib will decrease the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid
+coadministration of sensitive CYP3A4 substrates with ivosidenib or replace with
+alternate therapies. If coadministration is unavoidable, monitor patients for loss of
+therapeutic effect of these drugs.
+
+buprenorphine and ivosidenib both decrease QTc interval. Avoid or Use Alternate
+Drug.
+
+ketoconazole
+ketoconazole will increase the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+lamotrigine
+lamotrigine and buprenorphine both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+lapatinib
+buprenorphine and lapatinib both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+lefamulin
+buprenorphine and lefamulin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+lenvatinib
+buprenorphine and lenvatinib both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 16/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+leuprolide
+buprenorphine and leuprolide both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+levetiracetam
+levetiracetam and buprenorphine both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+levocetirizine
+levocetirizine and buprenorphine both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+levofloxacin
+buprenorphine and levofloxacin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+levoketoconazole
+levoketoconazole will increase the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+levorphanol
+buprenorphine, levorphanol. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Mixed opiate agonist/antagonists usually produce additive sedation with
+narcotics; however, in narcotic addicted pts., the antagonist activity may provoke
+withdrawal Sx.
+
+linezolid
+linezolid increases toxicity of buprenorphine by unknown mechanism. Avoid or Use
+Alternate Drug. Risk of hypotension, hyperpyrexia, somnolence, or death; separate
+by 14 d.
+
+lithium
+lithium and buprenorphine both increase QTc interval. Avoid or Use Alternate Drug.
+
+lofexidine
+buprenorphine and lofexidine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+lonafarnib
+lonafarnib will increase the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid
+coadministration with sensitive CYP3A substrates. If coadministration unavoidable,
+monitor for adverse reactions and reduce CYP3A substrate dose in accordance with
+product labeling.
+
+loperamide
+buprenorphine and loperamide both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+lopinavir
+buprenorphine and lopinavir both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 17/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+loratadine
+loratadine and buprenorphine both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+macimorelin
+buprenorphine and macimorelin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+meclizine
+meclizine and buprenorphine both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+mefloquine
+buprenorphine and mefloquine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+meperidine
+buprenorphine, meperidine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Mixed opiate agonist/antagonists usually produce additive sedation with
+narcotics; however, in narcotic addicted pts., the antagonist activity may provoke
+withdrawal Sx.
+
+methadone
+buprenorphine, methadone. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Mixed opiate agonist/antagonists usually produce additive sedation with
+narcotics; however, in narcotic addicted pts., the antagonist activity may provoke
+withdrawal Sx.
+
+buprenorphine and methadone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+methohexital
+methohexital and buprenorphine both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+methsuximide
+methsuximide and buprenorphine both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+methylene blue
+methylene blue and buprenorphine both increase serotonin levels. Avoid or Use
+Alternate Drug. If drug combination must be administered, monitor for evidence of
+serotonergic or opioid-related toxicities
+
+metoclopramide intranasal
+buprenorphine, metoclopramide intranasal. Either increases effects of the other by
+Other (see comment). Avoid or Use Alternate Drug. Comment: Avoid use of
+metoclopramide intranasal or interacting drug, depending on importance of drug to
+patient.
+
+midostaurin
+buprenorphine and midostaurin both increase QTc interval. Avoid or Use Alternate
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 18/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+Drug.
+
+mifepristone
+mifepristone will increase the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+buprenorphine and mifepristone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+milsaperidone
+buprenorphine and milsaperidone both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+mirtazapine
+mirtazapine and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+molindone
+molindone and buprenorphine both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+morphine
+buprenorphine, morphine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Mixed opiate agonist/antagonists usually produce additive sedation with
+narcotics; however, in narcotic addicted pts., the antagonist activity may provoke
+withdrawal Sx.
+
+moxifloxacin
+buprenorphine and moxifloxacin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+nalbuphine
+buprenorphine, nalbuphine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Mixed opiate agonist/antagonists usually produce additive sedation with
+narcotics; however, in narcotic addicted pts., the antagonist activity may provoke
+withdrawal Sx.
+
+nefazodone
+nefazodone will increase the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+nilotinib
+buprenorphine and nilotinib both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+nitrous oxide
+nitrous oxide and buprenorphine both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+nortriptyline
+buprenorphine and nortriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 19/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+octreotide
+buprenorphine and octreotide both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+ofloxacin
+buprenorphine and ofloxacin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+olanzapine
+olanzapine and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug. If concurrent use of olanzapine and buprenorphine is necessary, consider
+dose reduction of one or both drugs.
+
+olopatadine intranasal
+buprenorphine and olopatadine intranasal both increase sedation. Avoid or Use
+Alternate Drug. Coadministration increases risk of CNS depression, which can lead
+to additive impairment of psychomotor performance and cause daytime impairment.
+
+ondansetron
+buprenorphine and ondansetron both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+opicapone
+opicapone and buprenorphine both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+opium tincture
+buprenorphine, opium tincture. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Mixed opiate agonist/antagonists usually produce additive sedation with
+narcotics; however, in narcotic addicted pts., the antagonist activity may provoke
+withdrawal Sx.
+
+osimertinib
+buprenorphine and osimertinib both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+oxaliplatin
+oxaliplatin and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+oxycodone
+buprenorphine, oxycodone. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Mixed opiate agonist/antagonists usually produce additive sedation with
+narcotics; however, in narcotic addicted pts., the antagonist activity may provoke
+withdrawal Sx.
+
+oxymorphone
+buprenorphine, oxymorphone. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Mixed opiate agonist/antagonists usually produce additive sedation with
+narcotics; however, in narcotic addicted pts., the antagonist activity may provoke
+withdrawal Sx.
+
+ozanimod
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 20/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+ozanimod and buprenorphine both increase sympathetic (adrenergic) effects,
+including increased blood pressure and heart rate. Avoid or Use Alternate Drug.
+Because the active metabolite of ozanimod inhibits MAO-B in vitro, there is a
+potential for serious adverse reactions, including hypertensive crisis. Therefore,
+coadministration of ozanimod with drugs that can increase norepinephrine or
+serotonin is not recommended. Monitor for hypertension with concomitant use.
+
+buprenorphine and ozanimod both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+paliperidone
+buprenorphine and paliperidone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+panobinostat
+buprenorphine and panobinostat both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+papaveretum
+buprenorphine, papaveretum. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Mixed opiate agonist/antagonists usually produce additive sedation with
+narcotics; however, in narcotic addicted pts., the antagonist activity may provoke
+withdrawal Sx.
+
+pasireotide
+buprenorphine and pasireotide both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+pazopanib
+buprenorphine and pazopanib both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+pentamidine
+buprenorphine and pentamidine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+pentazocine
+buprenorphine, pentazocine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Mixed opiate agonist/antagonists usually produce additive sedation with
+narcotics; however, in narcotic addicted pts., the antagonist activity may provoke
+withdrawal Sx.
+
+phenelzine
+phenelzine increases toxicity of buprenorphine by unknown mechanism. Avoid or
+Use Alternate Drug. Risk of hypotension, hyperpyrexia, somnolence, or death;
+separate by 14 d.
+
+pimavanserin
+buprenorphine and pimavanserin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+pimozide
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 21/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+buprenorphine and pimozide both increase QTc interval. Contraindicated.
+
+pitolisant
+buprenorphine and pitolisant both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+ponesimod
+buprenorphine and ponesimod both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+posaconazole
+posaconazole will increase the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Contraindicated.
+
+buprenorphine and posaconazole both increase QTc interval. Contraindicated.
+
+primaquine
+primaquine and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+procainamide
+buprenorphine and procainamide both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+procarbazine
+procarbazine increases toxicity of buprenorphine by unknown mechanism. Avoid or
+Use Alternate Drug. Do not use within 14 days of MAOI use. .
+
+promethazine
+buprenorphine and promethazine both decrease QTc interval. Avoid or Use
+Alternate Drug.
+
+propafenone
+buprenorphine and propafenone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+protriptyline
+buprenorphine and protriptyline both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+pyrilamine
+pyrilamine and buprenorphine both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+quetiapine
+buprenorphine and quetiapine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+quinidine
+buprenorphine and quinidine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+quinine
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 22/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+buprenorphine and quinine both increase QTc interval. Avoid or Use Alternate Drug.
+
+remifentanil
+remifentanil and buprenorphine both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+ribociclib
+buprenorphine and ribociclib both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+rilpivirine
+buprenorphine and rilpivirine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+risperidone
+buprenorphine and risperidone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+romidepsin
+buprenorphine and romidepsin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+scopolamine
+scopolamine and buprenorphine both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+scopolamine intranasal
+scopolamine intranasal and buprenorphine both increase sedation. Avoid or Use
+Alternate Drug. Limit use to patients for whom alternative treatment options are
+inadequate
+
+selegiline
+selegiline increases toxicity of buprenorphine by unknown mechanism. Avoid or Use
+Alternate Drug. Buprenorphine transdermal is not recommended for in patients
+who have received MAOI within 14 days, because severe and unpredictable
+potentiation by MAO inhibitors has been reported with opioid analgesics.
+
+selegiline transdermal
+selegiline transdermal increases toxicity of buprenorphine by unknown mechanism.
+Avoid or Use Alternate Drug. Risk of hypotension, hyperpyrexia, somnolence, or
+death.
+
+selinexor
+selinexor, buprenorphine. unspecified interaction mechanism. Avoid or Use
+Alternate Drug. Patients treated with selinexor may experience neurological
+toxicities. Avoid taking selinexor with other medications that may cause dizziness or
+confusion.
+
+selpercatinib
+buprenorphine and selpercatinib both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+sertraline
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 23/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+sertraline and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+sevoflurane
+sevoflurane and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+siponimod
+siponimod and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+sodium oxybate
+buprenorphine, sodium oxybate. Either increases effects of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Profound sedation,
+respiratory depression, coma, and death may result if coadministered. Reserve
+concomitant prescribing of these drugs in patients for whom other treatment
+options are inadequate. Limit dosages and durations to the minimum required.
+Monitor closely for signs of respiratory depression and sedation.
+
+sodium oxybate and buprenorphine both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+solifenacin
+solifenacin and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+sorafenib
+buprenorphine and sorafenib both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+sotalol
+buprenorphine and sotalol both increase QTc interval. Avoid or Use Alternate Drug.
+
+sufentanil
+buprenorphine, sufentanil. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Mixed opiate agonist/antagonists usually produce additive sedation with
+narcotics; however, in narcotic addicted pts., the antagonist activity may provoke
+withdrawal Sx.
+
+sufentanil SL
+buprenorphine decreases effects of sufentanil SL by pharmacodynamic antagonism.
+Avoid or Use Alternate Drug. Coadministration of opioid mixed agonist/antagonist
+or partial agonist may reduce sufentail SL analgesic effect and/or precipitate
+withdrawal symptoms.
+
+sufentanil SL, buprenorphine. Either increases toxicity of the other by
+pharmacodynamic synergism. Avoid or Use Alternate Drug. Coadministration may
+result in hypotension, profound sedation, respiratory depression, coma, and death.
+Reserve concomitant prescribing of these drugs in patients for whom other
+treatment options are inadequate. Limit dosages and durations to the minimum
+required. Monitor closely for signs of respiratory depression and sedation.
+
+sunitinib
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 24/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+sunitinib and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+tacrolimus
+tacrolimus and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+tapentadol
+buprenorphine, tapentadol. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Mixed opiate agonist/antagonists usually produce additive sedation with
+narcotics; however, in narcotic addicted pts., the antagonist activity may provoke
+withdrawal Sx.
+
+tasimelteon
+tasimelteon and buprenorphine both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+telavancin
+buprenorphine and telavancin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+tetrabenazine
+buprenorphine and tetrabenazine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+tetrabenazine and buprenorphine both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+thalidomide
+thalidomide and buprenorphine both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+tizanidine
+tizanidine and buprenorphine both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+tolcapone
+tolcapone and buprenorphine both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+toremifene
+buprenorphine and toremifene both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+tramadol
+tramadol, buprenorphine. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Tramadol may reinitiate opiate dependence in pts. previously addicted to
+other opiates; it may also provoke withdrawal Sx. in pts. who are currently opiate
+dependent.
+
+buprenorphine, tramadol. Other (see comment). Avoid or Use Alternate Drug.
+Comment: Mixed opiate agonist/antagonists usually produce additive sedation with
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 25/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+narcotics; however, in narcotic addicted pts., the antagonist activity may provoke
+withdrawal Sx.
+
+tranylcypromine
+tranylcypromine increases toxicity of buprenorphine by unknown mechanism. Avoid
+or Use Alternate Drug. Risk of hypotension, hyperpyrexia, somnolence, or death;
+separate by 14 d.
+
+trazodone
+buprenorphine and trazodone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+triclabendazole
+buprenorphine and triclabendazole both increase QTc interval. Avoid or Use
+Alternate Drug.
+
+trimipramine
+buprenorphine and trimipramine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+triptorelin
+buprenorphine and triptorelin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+tucatinib
+tucatinib will increase the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug. Avoid
+concomitant use of tucatinib with CYP3A substrates, where minimal concentration
+changes may lead to serious or life-threatening toxicities. If unavoidable, reduce
+CYP3A substrate dose according to product labeling.
+
+valerian
+valerian and buprenorphine both increase sedation. Avoid or Use Alternate Drug.
+
+valproic acid
+valproic acid and buprenorphine both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+vandetanib
+buprenorphine and vandetanib both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+vardenafil
+buprenorphine and vardenafil both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+vemurafenib
+buprenorphine and vemurafenib both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+venlafaxine
+buprenorphine and venlafaxine both decrease QTc interval. Avoid or Use Alternate
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 26/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+Drug.
+
+vigabatrin
+vigabatrin and buprenorphine both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+voclosporin
+buprenorphine and voclosporin both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+voriconazole
+voriconazole will increase the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Avoid or Use Alternate Drug.
+
+buprenorphine and voriconazole both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+vorinostat
+vorinostat and buprenorphine both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+buprenorphine and vorinostat both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+zaleplon
+zaleplon and buprenorphine both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+ziftomenib
+buprenorphine and ziftomenib both increase QTc interval. Avoid or Use Alternate
+Drug. Avoid coadministration of ziftomenib with other drugs known to prolong the
+QTc interval. If unavoidable, obtain ECGs when initiating, during concomitant use,
+and as clinically indicated. Interrupt ziftomenib with QTc interval > 500 ms or a
+change from baseline is > 60 ms
+
+ziprasidone
+buprenorphine and ziprasidone both increase QTc interval. Avoid or Use Alternate
+Drug.
+
+zolpidem
+zolpidem and buprenorphine both increase sedation. Avoid or Use Alternate Drug.
+Limit use to patients for whom alternative treatment options are inadequate
+
+zonisamide
+zonisamide and buprenorphine both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+zuranolone
+zuranolone and buprenorphine both increase sedation. Avoid or Use Alternate
+Drug. Limit use to patients for whom alternative treatment options are inadequate
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 27/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+Monitor Closely (216)
+
+alfentanil
+alfentanil and buprenorphine both increase sedation. Use Caution/Monitor.
+
+alprazolam
+alprazolam and buprenorphine both increase sedation. Use Caution/Monitor.
+
+amitriptyline
+buprenorphine and amitriptyline both increase sedation. Use Caution/Monitor.
+
+amoxapine
+buprenorphine and amoxapine both increase sedation. Use Caution/Monitor.
+
+amphetamine
+buprenorphine increases and amphetamine decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+apalutamide
+apalutamide will decrease the level or effect of buprenorphine by increasing
+elimination. Use Caution/Monitor. Apalutamide induces UGT and may decrease
+systemic exposure of drugs that are UGT substrates.
+
+apomorphine
+buprenorphine and apomorphine both increase sedation. Use Caution/Monitor.
+
+aripiprazole
+buprenorphine and aripiprazole both increase sedation. Use Caution/Monitor.
+
+armodafinil
+buprenorphine increases and armodafinil decreases sedation. Effect of interaction is
+not clear, use caution. Use Caution/Monitor.
+
+atazanavir
+atazanavir increases levels of buprenorphine by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Modify Therapy/Monitor Closely. Potential for increased
+toxicity.
+
+azelastine
+azelastine and buprenorphine both increase sedation. Use Caution/Monitor.
+
+baclofen
+baclofen and buprenorphine both increase sedation. Use Caution/Monitor.
+
+belladonna and opium
+buprenorphine and belladonna and opium both increase sedation. Use
+Caution/Monitor.
+
+belzutifan
+belzutifan will decrease the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely. If
+unable to avoid coadministration of belzutifan with sensitive CYP3A4 substrates,
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 28/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+consider increasing the sensitive CYP3A4 substrate dose in accordance with its
+prescribing information.
+
+benperidol
+buprenorphine and benperidol both increase sedation. Use Caution/Monitor.
+
+benzphetamine
+buprenorphine increases and benzphetamine decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+bosentan
+bosentan will decrease the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+brexanolone
+brexanolone, buprenorphine. Either increases toxicity of the other by sedation. Use
+Caution/Monitor.
+
+brompheniramine
+brompheniramine and buprenorphine both increase sedation. Use Caution/Monitor.
+
+buprenorphine, long-acting injection
+buprenorphine increases toxicity of buprenorphine, long-acting injection by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+buprenorphine and benzodiazepines or other CNS depressants increases risk of
+adverse reactions including overdose, respiratory depression, and death. Cessation
+of benzodiazepines or other CNS depressants is preferred in most cases. In some
+cases, monitoring at a higher level of care for tapering CNS depressants may be
+appropriate. In others, gradually tapering a patient off of a prescribed
+benzodiazepine or other CNS depressant or decreasing to the lowest effective dose
+may be appropriate.
+
+butalbital
+butalbital and buprenorphine both increase sedation. Use Caution/Monitor.
+
+butorphanol
+buprenorphine and butorphanol both increase sedation. Use Caution/Monitor.
+
+carbamazepine
+carbamazepine decreases levels of buprenorphine by increasing metabolism. Use
+Caution/Monitor. Carbamazepine increases metabolism of buprenorphine; monitor
+for decreased efficacy.
+
+carbamazepine will decrease the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+carbinoxamine
+carbinoxamine and buprenorphine both increase sedation. Use Caution/Monitor.
+
+carisoprodol
+carisoprodol and buprenorphine both increase sedation. Use Caution/Monitor.
+
+cenobamate
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 29/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+cenobamate will decrease the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Increase dose of CYP3A4 substrate, as needed, when coadministered with
+cenobamate.
+
+cenobamate, buprenorphine. Either increases effects of the other by sedation. Use
+Caution/Monitor.
+
+chlordiazepoxide
+chlordiazepoxide and buprenorphine both increase sedation. Use Caution/Monitor.
+
+chlorpheniramine
+chlorpheniramine and buprenorphine both increase sedation. Use Caution/Monitor.
+
+chlorpromazine
+buprenorphine and chlorpromazine both increase sedation. Use Caution/Monitor.
+
+chlorzoxazone
+chlorzoxazone and buprenorphine both increase sedation. Use Caution/Monitor.
+
+cinnarizine
+cinnarizine and buprenorphine both increase sedation. Use Caution/Monitor.
+
+clemastine
+clemastine and buprenorphine both increase sedation. Use Caution/Monitor.
+
+clobazam
+buprenorphine, clobazam. Other (see comment). Use Caution/Monitor. Comment:
+Concomitant administration can increase the potential for CNS effects (e.g.,
+increased sedation or respiratory depression).
+
+clomipramine
+buprenorphine and clomipramine both increase sedation. Use Caution/Monitor.
+
+clonazepam
+clonazepam and buprenorphine both increase sedation. Use Caution/Monitor.
+
+clorazepate
+clorazepate and buprenorphine both increase sedation. Use Caution/Monitor.
+
+clozapine
+buprenorphine and clozapine both increase sedation. Use Caution/Monitor.
+
+cobicistat
+cobicistat will increase the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+
+codeine
+buprenorphine and codeine both increase sedation. Use Caution/Monitor.
+
+crizotinib
+crizotinib increases levels of buprenorphine by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Dose reduction may be needed for
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 30/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+coadministered drugs that are predominantly metabolized by CYP3A.
+
+crofelemer
+crofelemer increases levels of buprenorphine by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor. Crofelemer has the potential to inhibit
+CYP3A4 at concentrations expected in the gut; unlikely to inhibit systemically
+because minimally absorbed.
+
+cyclobenzaprine
+cyclobenzaprine and buprenorphine both increase sedation. Use Caution/Monitor.
+
+cyproheptadine
+cyproheptadine and buprenorphine both increase sedation. Use Caution/Monitor.
+
+dabrafenib
+dabrafenib will decrease the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+dantrolene
+dantrolene and buprenorphine both increase sedation. Use Caution/Monitor.
+
+daridorexant
+buprenorphine and daridorexant both increase sedation. Modify Therapy/Monitor
+Closely. Coadministration increases risk of CNS depression, which can lead to
+additive impairment of psychomotor performance and cause daytime impairment.
+
+darunavir
+darunavir increases levels of buprenorphine by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Modify Therapy/Monitor Closely. Carefully titrate dose when
+initiating buprenorphine, buprenorphine/naloxone, or methadone with patients
+taking darunavir/cobicstat. When initiating cobicistat in patients taking
+buprenorphine, buprenorphine/naloxone, or methadone, adjust dose for
+buprenorphine, buprenorphine/naloxone, or methadone and monitor clinical signs
+and symptoms.
+
+desflurane
+desflurane and buprenorphine both increase sedation. Use Caution/Monitor. Opioids
+may decrease MAC requirements, less inhalation anesthetic may be required.
+
+desipramine
+buprenorphine and desipramine both increase sedation. Use Caution/Monitor.
+
+deutetrabenazine
+buprenorphine and deutetrabenazine both increase sedation. Use Caution/Monitor.
+
+deutetrabenazine and buprenorphine both increase QTc interval. Use
+Caution/Monitor. At the maximum recommended dose, deutetrabenazine does not
+prolong QT interval to a clinically relevant extent. Certain circumstances may
+increase risk of torsade de pointes and/or sudden death in association with drugs
+that prolong the QTc interval (eg, bradycardia, hypokalemia or hypomagnesemia,
+coadministration with other drugs that prolong QTc interval, presence of congenital
+QT prolongation).
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 31/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+dexamethasone
+dexamethasone will decrease the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+dexbrompheniramine
+dexbrompheniramine and buprenorphine both increase sedation. Use
+Caution/Monitor.
+
+dexchlorpheniramine
+dexchlorpheniramine and buprenorphine both increase sedation. Use
+Caution/Monitor.
+
+dexfenfluramine
+buprenorphine increases and dexfenfluramine decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+dexmedetomidine
+dexmedetomidine and buprenorphine both increase sedation. Use Caution/Monitor.
+
+dextromoramide
+buprenorphine and dextromoramide both increase sedation. Use Caution/Monitor.
+
+diamorphine
+buprenorphine and diamorphine both increase sedation. Use Caution/Monitor.
+
+diazepam
+diazepam and buprenorphine both increase sedation. Use Caution/Monitor.
+
+difelikefalin
+difelikefalin and buprenorphine both increase sedation. Use Caution/Monitor.
+
+difenoxin hcl
+buprenorphine and difenoxin hcl both increase sedation. Use Caution/Monitor.
+
+dimenhydrinate
+dimenhydrinate and buprenorphine both increase sedation. Use Caution/Monitor.
+
+diphenhydramine
+diphenhydramine and buprenorphine both increase sedation. Use Caution/Monitor.
+
+diphenoxylate hcl
+buprenorphine and diphenoxylate hcl both increase sedation. Use Caution/Monitor.
+
+dipipanone
+buprenorphine and dipipanone both increase sedation. Use Caution/Monitor.
+
+dopexamine
+buprenorphine increases and dopexamine decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+dordaviprone
+dordaviprone and buprenorphine both increase QTc interval. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 32/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+Increase the frequency of ECG and electrolyte monitoring.
+
+dosulepin
+buprenorphine and dosulepin both increase sedation. Use Caution/Monitor.
+
+doxepin
+buprenorphine and doxepin both increase sedation. Use Caution/Monitor.
+
+doxylamine
+doxylamine and buprenorphine both increase sedation. Use Caution/Monitor.
+
+droperidol
+buprenorphine and droperidol both increase sedation. Use Caution/Monitor.
+
+efavirenz
+efavirenz will decrease the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+elagolix
+elagolix will decrease the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Elagolix is a weak-to-moderate CYP3A4 inducer. Monitor CYP3A substrates if
+coadministered. Consider increasing CYP3A substrate dose if needed.
+
+elvitegravir/cobicistat/emtricitabine/tenofovir DF
+elvitegravir/cobicistat/emtricitabine/tenofovir DF increases levels of buprenorphine
+by affecting hepatic/intestinal enzyme CYP3A4 metabolism. Modify
+Therapy/Monitor Closely. Cobicistat is a CYP3A4 inhibitor; contraindicated with
+CYP3A4 substrates for which elevated plasma concentrations are associated with
+serious and/or life-threatening events.
+
+encorafenib
+encorafenib, buprenorphine. affecting hepatic/intestinal enzyme CYP3A4
+metabolism. Use Caution/Monitor. Encorafenib both inhibits and induces CYP3A4 at
+clinically relevant plasma concentrations. Coadministration of encorafenib with
+sensitive CYP3A4 substrates may result in increased toxicity or decreased efficacy
+of these agents.
+
+enzalutamide
+enzalutamide will decrease the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+esketamine intranasal
+esketamine intranasal, buprenorphine. Either increases toxicity of the other by
+sedation. Modify Therapy/Monitor Closely.
+
+eslicarbazepine acetate
+eslicarbazepine acetate will decrease the level or effect of buprenorphine by
+affecting hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+estazolam
+estazolam and buprenorphine both increase sedation. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 33/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+ethanol
+buprenorphine and ethanol both increase sedation. Use Caution/Monitor.
+
+etomidate
+etomidate and buprenorphine both increase sedation. Use Caution/Monitor.
+
+etrasimod
+etrasimod, buprenorphine. Either increases effects of the other by QTc interval.
+Modify Therapy/Monitor Closely. Transient decrease in heart rate and AV
+conduction delays may occur when initiating etrasimod. Owing to potential of
+additive effect on heart rate, etrasimod may increase risk of QT prolongation and
+Torsades de Pointes when coadministered with Class Ia or Class III antiarrhythmic
+drugs, or other drugs that prolong the QT interval. .
+
+etravirine
+etravirine will decrease the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+fedratinib
+fedratinib will increase the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Adjust dose
+of drugs that are CYP3A4 substrates as necessary.
+
+fenfluramine
+buprenorphine increases and fenfluramine decreases sedation. Effect of interaction
+is not clear, use caution. Use Caution/Monitor.
+
+fexinidazole
+fexinidazole decreases levels of buprenorphine by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Use Caution/Monitor. Discontinuing CYP3A4 inducers
+may result in an increase in buprenorphine plasma concentrations. Evaluate
+patients stopping CYP3A4 inducers at frequent intervals for respiratory depression.
+
+flibanserin
+buprenorphine and flibanserin both increase sedation. Modify Therapy/Monitor
+Closely. Risk for sedation increased if flibanserin is coadministration with other CNS
+depressants.
+
+fluphenazine
+buprenorphine and fluphenazine both increase sedation. Use Caution/Monitor.
+
+buprenorphine and fluphenazine both increase QTc interval. Use Caution/Monitor.
+
+flurazepam
+flurazepam and buprenorphine both increase sedation. Use Caution/Monitor.
+
+fosamprenavir
+fosamprenavir increases levels of buprenorphine by affecting hepatic/intestinal
+enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely. Potential for
+increased toxicity. .
+
+fosfomycin
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 34/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+fosfomycin and buprenorphine both increase QTc interval. Use Caution/Monitor. The
+risk of QT prolongation may increase in patients with electrolyte abnormalities
+(such as hypokalemia and hypocalcemia), patients with conditions that have
+potential to cause electrolyte imbalance (such as renal impairment), or patients
+taking other drugs affecting electrolyte balance or QT prolongation; avoid this drug
+in patients with known QT prolongation or ventricular arrhythmias, including a
+history of torsade de pointes; monitor electrolytes during treatment
+
+fosphenytoin
+fosphenytoin will decrease the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+gabapentin
+gabapentin, buprenorphine. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+gabapentin enacarbil
+gabapentin enacarbil, buprenorphine. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+ganaxolone
+buprenorphine and ganaxolone both increase sedation. Use Caution/Monitor.
+
+givinostat
+buprenorphine and givinostat both increase QTc interval. Use Caution/Monitor. If
+coadministered, obtain ECGs when initiating, during concomitant use, and as
+clinically indicated. Withhold if QTc interval >500 ms or a change from baseline
+>60 ms.
+
+glycopyrrolate
+glycopyrrolate, buprenorphine. Either increases toxicity of the other by
+pharmacodynamic synergism. Use Caution/Monitor. Concomitant use may increase
+the risk for severe constipation, paralytic ileus, or urinary retention.
+
+guanfacine
+guanfacine and buprenorphine both increase sedation. Use Caution/Monitor.
+
+haloperidol
+buprenorphine and haloperidol both increase sedation. Use Caution/Monitor.
+
+hydromorphone
+buprenorphine and hydromorphone both increase sedation. Use Caution/Monitor.
+
+hydroxyzine
+hydroxyzine and buprenorphine both increase sedation. Use Caution/Monitor.
+
+hydroxyzine and buprenorphine both increase QTc interval. Modify Therapy/Monitor
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 35/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+Closely. If coadministration necessary, consider consider dose reduction of one or
+both drugs due to potential for additive pharmacological effects
+
+imipramine
+buprenorphine and imipramine both increase sedation. Use Caution/Monitor.
+
+istradefylline
+istradefylline will increase the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Istradefylline
+40 mg/day increased peak levels and AUC of CYP3A4 substrates in clinical trials.
+This effect was not observed with istradefylline 20 mg/day. Consider dose reduction
+of sensitive CYP3A4 substrates.
+
+ketamine
+ketamine and buprenorphine both increase sedation. Use Caution/Monitor.
+
+ketotifen, ophthalmic
+buprenorphine and ketotifen, ophthalmic both increase sedation. Use
+Caution/Monitor.
+
+lemborexant
+lemborexant, buprenorphine. Either increases effects of the other by sedation.
+Modify Therapy/Monitor Closely. Dosage adjustment may be necessary if
+lemborexant is coadministered with other CNS depressants because of potentially
+additive effects.
+
+lenacapavir
+lenacapavir will increase the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+When initiating buprenorphine while on lenacapavir, use lowest feasible initial or
+maintenance dose of buprenorphine and carefully titrate dose to desired effect.
+When initiating lenacapavir while taking buprenorphine, consider adjusting dose for
+buprenorphine. Monitor clinical signs and symptoms.
+
+letermovir
+letermovir increases levels of buprenorphine by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Use Caution/Monitor.
+
+levorphanol
+buprenorphine and levorphanol both increase sedation. Use Caution/Monitor.
+
+lofepramine
+buprenorphine and lofepramine both increase sedation. Use Caution/Monitor.
+
+lofexidine
+buprenorphine and lofexidine both increase sedation. Use Caution/Monitor.
+
+lopinavir
+lopinavir increases levels of buprenorphine by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Modify Therapy/Monitor Closely. Potential for increased
+toxicity.
+
+loprazolam
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 36/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+loprazolam and buprenorphine both increase sedation. Use Caution/Monitor.
+
+lorazepam
+lorazepam and buprenorphine both increase sedation. Use Caution/Monitor.
+
+lorlatinib
+lorlatinib will decrease the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+lormetazepam
+lormetazepam and buprenorphine both increase sedation. Use Caution/Monitor.
+
+loxapine
+buprenorphine and loxapine both increase sedation. Use Caution/Monitor.
+
+loxapine inhaled
+buprenorphine and loxapine inhaled both increase sedation. Use Caution/Monitor.
+
+lumacaftor/ivacaftor
+lumacaftor/ivacaftor will decrease the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+lumateperone
+lumateperone and buprenorphine both increase sedation. Use Caution/Monitor.
+
+lurasidone
+lurasidone, buprenorphine. Either increases toxicity of the other by Other (see
+comment). Use Caution/Monitor. Comment: Potential for increased CNS depressant
+effects when used concurrently; monitor for increased adverse effects and toxicity.
+
+lurasidone and buprenorphine both increase sedation. Use Caution/Monitor.
+
+marijuana
+buprenorphine and marijuana both increase sedation. Use Caution/Monitor.
+
+melatonin
+buprenorphine and melatonin both increase sedation. Use Caution/Monitor.
+
+meperidine
+buprenorphine and meperidine both increase sedation. Use Caution/Monitor.
+
+meprobamate
+buprenorphine and meprobamate both increase sedation. Use Caution/Monitor.
+
+metaxalone
+metaxalone and buprenorphine both increase sedation. Use Caution/Monitor.
+
+methadone
+buprenorphine and methadone both increase sedation. Use Caution/Monitor.
+
+methocarbamol
+methocarbamol and buprenorphine both increase sedation. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 37/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+methylenedioxymethamphetamine
+buprenorphine increases and methylenedioxymethamphetamine decreases
+sedation. Effect of interaction is not clear, use caution. Use Caution/Monitor.
+
+midazolam
+midazolam and buprenorphine both increase sedation. Use Caution/Monitor.
+
+midazolam intranasal
+midazolam intranasal, buprenorphine. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Concomitant use of
+barbiturates, alcohol, or other CNS depressants may increase the risk of
+hypoventilation, airway obstruction, desaturation, or apnea and may contribute to
+profound and/or prolonged drug effect.
+
+mirtazapine
+buprenorphine and mirtazapine both increase sedation. Use Caution/Monitor.
+
+mitapivat
+mitapivat decreases levels of buprenorphine by increasing metabolism. Use
+Caution/Monitor. Mitapivat induces UGT1A1 in vitro and may decrease systemic
+concentrations of UGT1A1 substrates.
+
+mitotane
+mitotane will decrease the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+morphine
+buprenorphine and morphine both increase sedation. Use Caution/Monitor.
+
+motherwort
+buprenorphine and motherwort both increase sedation. Use Caution/Monitor.
+
+moxonidine
+buprenorphine and moxonidine both increase sedation. Use Caution/Monitor.
+
+nabilone
+buprenorphine and nabilone both increase sedation. Use Caution/Monitor.
+
+nafcillin
+nafcillin will decrease the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+nalbuphine
+buprenorphine and nalbuphine both increase sedation. Use Caution/Monitor.
+
+nelfinavir
+nelfinavir increases levels of buprenorphine by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Modify Therapy/Monitor Closely. Potential for increased
+toxicity. .
+
+nevirapine
+nevirapine will decrease the level or effect of buprenorphine by affecting
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 38/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+nortriptyline
+buprenorphine and nortriptyline both increase sedation. Use Caution/Monitor.
+
+olanzapine
+buprenorphine and olanzapine both increase sedation. Use Caution/Monitor.
+
+ombitasvir/paritaprevir/ritonavir & dasabuvir (DSC)
+ombitasvir/paritaprevir/ritonavir & dasabuvir (DSC) will increase the level or effect
+of buprenorphine by affecting hepatic/intestinal enzyme CYP3A4 metabolism.
+Modify Therapy/Monitor Closely. Increases levels of buprenorphine and active
+metabolite norbuprenorphine; no dose adjustment of buprenorphine is required, but
+closely monitor for sedation and cognitive effects
+
+opium tincture
+buprenorphine and opium tincture both increase sedation. Use Caution/Monitor.
+
+orphenadrine
+orphenadrine and buprenorphine both increase sedation. Use Caution/Monitor.
+
+osilodrostat
+osilodrostat and buprenorphine both increase QTc interval. Use Caution/Monitor.
+
+oxazepam
+oxazepam and buprenorphine both increase sedation. Use Caution/Monitor.
+
+oxycodone
+buprenorphine and oxycodone both increase sedation. Use Caution/Monitor.
+
+oxymorphone
+buprenorphine and oxymorphone both increase sedation. Use Caution/Monitor.
+
+paliperidone
+buprenorphine and paliperidone both increase sedation. Use Caution/Monitor.
+
+papaveretum
+buprenorphine and papaveretum both increase sedation. Use Caution/Monitor.
+
+papaverine
+buprenorphine and papaverine both increase sedation. Use Caution/Monitor.
+
+paroxetine
+buprenorphine and paroxetine both increase QTc interval. Use Caution/Monitor.
+
+pegvisomant
+buprenorphine decreases effects of pegvisomant by unknown mechanism. Use
+Caution/Monitor.
+
+pentazocine
+buprenorphine and pentazocine both increase sedation. Use Caution/Monitor.
+
+pentobarbital
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 39/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+pentobarbital and buprenorphine both increase sedation. Use Caution/Monitor.
+
+pentobarbital will decrease the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+perampanel
+perampanel and buprenorphine both increase sedation. Use Caution/Monitor.
+
+perphenazine
+buprenorphine and perphenazine both increase sedation. Use Caution/Monitor.
+
+buprenorphine and perphenazine both increase QTc interval. Use Caution/Monitor.
+
+phenobarbital
+phenobarbital and buprenorphine both increase sedation. Use Caution/Monitor.
+
+phenobarbital will decrease the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+phenylephrine PO
+buprenorphine increases and phenylephrine PO decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor. .
+
+phenytoin
+phenytoin will decrease the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+pholcodine
+buprenorphine and pholcodine both increase sedation. Use Caution/Monitor.
+
+pimozide
+buprenorphine and pimozide both increase sedation. Use Caution/Monitor.
+
+pregabalin
+pregabalin, buprenorphine. Either increases effects of the other by
+pharmacodynamic synergism. Modify Therapy/Monitor Closely. Coadministration of
+CNS depressants can result in serious, life-threatening, and fatal respiratory
+depression. Use lowest dose possible and monitor for respiratory depression and
+sedation.
+
+primidone
+primidone and buprenorphine both increase sedation. Use Caution/Monitor.
+
+primidone will decrease the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+prochlorperazine
+buprenorphine and prochlorperazine both increase sedation. Use Caution/Monitor.
+
+buprenorphine and prochlorperazine both decrease QTc interval. Use
+Caution/Monitor.
+
+promethazine
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 40/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+promethazine and buprenorphine both increase sedation. Use Caution/Monitor.
+
+propofol
+propofol and buprenorphine both increase sedation. Use Caution/Monitor.
+
+propylhexedrine
+buprenorphine increases and propylhexedrine decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+protriptyline
+buprenorphine and protriptyline both increase sedation. Use Caution/Monitor.
+
+quazepam
+quazepam and buprenorphine both increase sedation. Use Caution/Monitor.
+
+quetiapine
+buprenorphine and quetiapine both increase sedation. Use Caution/Monitor.
+
+ramelteon
+buprenorphine and ramelteon both increase sedation. Use Caution/Monitor.
+
+ranolazine
+buprenorphine and ranolazine both increase QTc interval. Use Caution/Monitor.
+
+remimazolam
+remimazolam, buprenorphine. Either increases toxicity of the other by sedation.
+Modify Therapy/Monitor Closely. Coadministration may result in profound sedation,
+respiratory depression, coma, and/or death. Continuously monitor vital signs during
+sedation and recovery period if coadministered. Carefully titrate remimazolam dose
+if administered with opioid analgesics and/or sedative/hypnotics.
+
+revumenib
+revumenib and buprenorphine both increase QTc interval. Use Caution/Monitor. ECG
+monitoring recommended if concomitant use can?t be avoided and withhold
+therapy if QTc interval is >480 msec; restart therapy after QTc interval returns to
+<480 msec
+
+ribociclib
+ribociclib will increase the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+rifabutin
+rifabutin will decrease the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+rifampin
+rifampin will decrease the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+rifapentine
+rifapentine will decrease the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 41/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+rilzabrutinib
+rilzabrutinib will increase the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Follow
+substrate recommendations for use with moderate CYP3A inhibitors
+
+risperidone
+buprenorphine and risperidone both increase sedation. Use Caution/Monitor.
+
+ritonavir
+ritonavir increases levels of buprenorphine by affecting hepatic/intestinal enzyme
+CYP3A4 metabolism. Modify Therapy/Monitor Closely. Potential for increased
+toxicity.
+
+rolapitant
+rolapitant will increase the level or effect of buprenorphine by affecting hepatic
+enzyme CYP2D6 metabolism. Use Caution/Monitor. Rolapitant may increase
+plasma concentrations of CYP2D6 substrates for at least 28 days following
+rolapitant administration.
+
+rucaparib
+rucaparib will increase the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Modify Therapy/Monitor Closely.
+Adjust dosage of CYP3A4 substrates, if clinically indicated.
+
+scullcap
+buprenorphine and scullcap both increase sedation. Use Caution/Monitor.
+
+sevoflurane
+sevoflurane and buprenorphine both increase sedation. Use Caution/Monitor.
+
+shepherd's purse
+buprenorphine and shepherd's purse both increase sedation. Use Caution/Monitor.
+
+sodium sulfate/?magnesium sulfate/potassium chloride
+sodium sulfate/?magnesium sulfate/potassium chloride increases toxicity of
+buprenorphine by QTc interval. Use Caution/Monitor. Consider predose and post-
+colonoscopy ECGs in patients at increased risk of serious cardiac arrhythmias.
+
+sodium sulfate/potassium sulfate/magnesium sulfate
+sodium sulfate/potassium sulfate/magnesium sulfate increases toxicity of
+buprenorphine by QTc interval. Use Caution/Monitor. Consider predose and post-
+colonoscopy ECGs in patients at increased risk of serious cardiac arrhythmias.
+
+St John's Wort
+St John's Wort will decrease the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+stiripentol
+stiripentol, buprenorphine. affecting hepatic/intestinal enzyme CYP3A4 metabolism.
+Modify Therapy/Monitor Closely. Stiripentol is a CYP3A4 inhibitor and inducer.
+Monitor CYP3A4 substrates coadministered with stiripentol for increased or
+decreased effects. CYP3A4 substrates may require dosage adjustment.
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 42/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+stiripentol, buprenorphine. Either increases effects of the other by sedation. Use
+Caution/Monitor. Concomitant use stiripentol with other CNS depressants, including
+alcohol, may increase the risk of sedation and somnolence.
+
+sufentanil
+buprenorphine and sufentanil both increase sedation. Use Caution/Monitor.
+
+suvorexant
+suvorexant and buprenorphine both increase sedation. Modify Therapy/Monitor
+Closely. Dosage adjustments of suvorexant and concomitant CNS depressants may
+be necessary
+
+taletrectinib
+taletrectinib and buprenorphine both increase QTc interval. Use Caution/Monitor.
+Concomitant use may increase the risk of QTc interval prolongation. If concomitant
+use is unavoidable, adjust the frequency of ECG and electrolyte monitoring.
+
+tapentadol
+buprenorphine and tapentadol both increase sedation. Use Caution/Monitor.
+
+tecovirimat
+tecovirimat will decrease the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor. Tecovirimat is
+a weak CYP3A4 inducer. Monitor sensitive CYP3A4 substrates for effectiveness if
+coadministered.
+
+temazepam
+temazepam and buprenorphine both increase sedation. Use Caution/Monitor.
+
+thioridazine
+buprenorphine and thioridazine both increase sedation. Use Caution/Monitor.
+
+thiothixene
+buprenorphine and thiothixene both increase sedation. Use Caution/Monitor.
+
+tiagabine
+tiagabine and buprenorphine both increase sedation. Use Caution/Monitor.
+
+tipranavir
+tipranavir will increase the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Use Caution/Monitor.
+
+topiramate
+buprenorphine and topiramate both increase sedation. Modify Therapy/Monitor
+Closely.
+
+tramadol
+buprenorphine and tramadol both increase sedation. Use Caution/Monitor.
+
+trazodone
+buprenorphine and trazodone both increase sedation. Use Caution/Monitor.
+
+triazolam
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 43/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+triazolam and buprenorphine both increase sedation. Use Caution/Monitor.
+
+triclofos
+triclofos and buprenorphine both increase sedation. Use Caution/Monitor.
+
+trifluoperazine
+buprenorphine and trifluoperazine both increase sedation. Use Caution/Monitor.
+
+buprenorphine and trifluoperazine both decrease QTc interval. Use Caution/Monitor.
+
+trimipramine
+buprenorphine and trimipramine both increase sedation. Use Caution/Monitor.
+
+triprolidine
+triprolidine and buprenorphine both increase sedation. Use Caution/Monitor.
+
+valbenazine
+valbenazine and buprenorphine both increase QTc interval. Use Caution/Monitor.
+
+xylometazoline
+buprenorphine increases and xylometazoline decreases sedation. Effect of
+interaction is not clear, use caution. Use Caution/Monitor.
+
+ziconotide
+buprenorphine and ziconotide both increase sedation. Use Caution/Monitor.
+
+ziprasidone
+buprenorphine and ziprasidone both increase sedation. Use Caution/Monitor.
+
+zotepine
+buprenorphine and zotepine both increase sedation. Use Caution/Monitor.
+
+Minor (13)
+
+acetazolamide
+acetazolamide will increase the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+amphetamine
+amphetamine increases effects of buprenorphine by unspecified interaction
+mechanism. Minor/Significance Unknown.
+
+anastrozole
+anastrozole will increase the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+cyclophosphamide
+cyclophosphamide will increase the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+danazol
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 44/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+danazol will increase the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+dextroamphetamine
+dextroamphetamine increases effects of buprenorphine by unspecified interaction
+mechanism. Minor/Significance Unknown.
+
+drospirenone
+drospirenone will increase the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+elvitegravir
+elvitegravir increases levels of buprenorphine by unknown mechanism.
+Minor/Significance Unknown. No dose adjustment of buprenorphine/naloxone is
+required upon coadministration with VITEKTA. Patients should be closely monitored
+for sedation and cognitive effects.
+
+eucalyptus
+buprenorphine and eucalyptus both increase sedation. Minor/Significance Unknown.
+
+larotrectinib
+larotrectinib will increase the level or effect of buprenorphine by affecting
+hepatic/intestinal enzyme CYP3A4 metabolism. Minor/Significance Unknown.
+
+lidocaine
+lidocaine increases toxicity of buprenorphine by pharmacodynamic synergism.
+Minor/Significance Unknown. Risk of increased CNS depression.
+
+sage
+buprenorphine and sage both increase sedation. Minor/Significance Unknown.
+
+ziconotide
+ziconotide, buprenorphine. Mechanism: unspecified interaction mechanism.
+Minor/Significance Unknown. Additive decreased GI motility. Additive analgesia.
+Ziconotide does NOT potentiate opioid induced respiratory depression.
+
+Adverse Effects
+
+>10% (SL)
+
+Headache (29.1-30%)
+
+Pain (18.4-24%)
+
+Withdrawal syndrome (18.4-22%)
+
+Insomnia (21.4%)
+
+Infection (20%)
+
+Asthenia (14%)
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 45/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+Back pain (7.8-14%)
+
+Nausea (10-13.6%)
+
+Sweating (12-12.6%)
+
+Abdominal pain (11.7%)
+
+Infection (11.7%)
+
+Constipation (7.8-11%)
+
+1-10% (IV/IM)
+
+5-10%
+
+Nausea
+
+Dizziness/vertigo
+
+1-5%
+
+Sweating
+
+Headache
+
+Hypotension
+
+Nausea/vomiting
+
+Hypoventilation
+
+Miosis
+
+1-10% (SL)
+
+Rhinitis (9.7%)
+
+Chills (6-7.8%)
+
+Vomiting (5-7.8%)
+
+Flu syndrome (6%)
+
+Nervousness (6%)
+
+Runny eyes (5%)
+
+Diarrhea (4.9-5%)
+
+Asthenia (4.9%)
+
+Vasodilation (3.9%)
+
+Fever (3%)
+
+Dyspepsia (3%)
+
+Accidental injury (2-3%)
+
+Abscess (2%)
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 46/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+<1%
+
+Confusion, blurred vision, euphoria, weakness/fatigue, dry mouth, nervousness,
+depression, slurred speech, paresthesia
+
+Hypertension, tachycardia, bradycardia
+
+Constipation
+
+Dyspnea, cyanosis
+
+Pruritus
+
+Diplopia, visual abnormalities
+
+Injection site reaction, urinary retention, dreaming, flushing/warmth, chills/cold, tinnitus,
+conjunctivitis, Wenckebach block, and psychosis
+
+Other effects observed infrequently include malaise, hallucinations, depersonalization,
+coma, dyspepsia, flatulence, apnea, rash, amblyopia, tremor, and pallor
+
+Postmarketing Reports
+
+Serotonin syndrome
+
+Adrenal insufficiency
+
+Anaphylaxis
+
+Androgen deficiency
+
+Hypoglycemia
+
+Hyperalgesia allodynia
+
+Glossodynia, glossitis, oral mucosal erythema, oral hypoesthesia, and stomatitis
+
+Warnings
+
+Black Box Warnings
+
+Opioid analgesic risk evaluation and mitigation strategy (REMS)
+
+To ensure that benefits of opioid analgesics outweigh risks of addiction, abuse, and
+misuse, the Food and Drug Administration (FDA) has required a REMS for these
+products; under requirements of the REMS, drug companies with approved opioid
+analgesic products must make REMS-compliant education programs available to
+healthcare providers
+
+Healthcare providers are strongly encouraged to:
+Complete a REMS-compliant education program
+
+Counsel patients and/or their caregivers, with every prescription, on safe use,
+serious risks, storage, and disposal of these products
+
+Emphasize to patients and their caregivers the importance of reading the
+Medication Guide every time it is provided by their pharmacist
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 47/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+Consider other tools to improve patient, household, and community safety
+
+To obtain further information on opioid analgesic REMS and for a list of
+accredited REMS CME/CE, call 1-800-503-0784, or log on to
+www.opioidanalgesicrems.com; the FDA Blueprint can be found at
+www.fda.gov/OpioidAnalgesicREMSBlueprint
+
+Addiction, abuse, and misuse
+
+Risk of opioid addiction, abuse, and misuse, which can lead to overdose and death
+
+Assess each patient’s risk prior to prescribing and reassess all patients regularly for
+development of these behaviors and conditions
+
+Life-threatening respiratory depression
+
+Serious, life-threatening, or fatal respiratory depression may occur
+
+Monitor for respiratory depression, especially during initiation or following a dose
+increase
+
+To reduce risk of respiratory depression, proper dosing and titration of this drug are
+essential
+
+Accidental exposure
+
+Accidental exposure of even 1 dose, especially by children, can result in a fatal
+overdose
+
+Neonatal opioid withdrawal syndrome
+
+Use for an extended period of time during pregnancy can result in withdrawal in the
+neonate; neonatal opioid withdrawal syndrome, unlike opioid withdrawal syndrome
+in adults, may be life-threatening if not recognized and treated, and requires
+management according to protocols developed by neonatology experts
+
+Observe newborns for signs of neonatal opioid withdrawal syndrome and manage
+accordingly; advise pregnant women using opioids for an extended period of time of
+the risk of neonatal opioid withdrawal syndrome and ensure that management by
+neonatology experts will be available at delivery
+
+Syndrome presents as irritability, hyperactivity and abnormal sleep pattern, high-
+pitched cry, tremor, vomiting, diarrhea, and failure to gain weight
+
+Onset, duration, and severity of neonatal opioid withdrawal syndrome vary based
+on the specific opioid used, duration of use, timing and amount of last maternal use,
+and rate of elimination of the drug by the newborn
+
+Risks from concomitant use with benzodiazepines or other CNS depressants
+
+Concomitant use of opioids with benzodiazepines or other central nervous system
+(CNS) depressants, including alcohol, may result in profound sedation, respiratory
+depression, coma, and death; reserve concomitant use in patients for whom
+alternative treatment options are inadequate; limit dosages and durations to
+minimum required; and monitor for signs and symptoms of respiratory depression
+and sedation
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 48/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+Contraindications
+
+Hypersensitivity
+
+Significant respiratory depression
+
+Acute or severe bronchial asthma in an unmonitored setting or in the absence of
+resuscitative equipment
+
+Known or suspected gastrointestinal obstruction, including paralytic ileus
+
+Cautions
+
+Partial agonist at the mu opioid receptor and a schedule III controlled opioid exposes
+users to the risks of addiction, abuse, and misuse; there is a greater risk for overdose and
+death with extended-release opioids owing to the larger amount of active opioid present
+(see Black Box Warnings)
+
+Serious, life-threatening, or fatal respiratory depression reported; may occur more
+frequently in elderly or debilitated patients, or in conditions associated with hypoxia or
+hypercapnia (even moderate therapeutic doses) (see Black Box Warnings)
+
+Neonatal opioid withdrawal syndrome reported with long-term use during pregnancy
+(see Black Box Warnings)
+
+Do not abruptly discontinue buprenorphine in a patient physically dependent on opioids;
+when discontinuing therapy, in a physically dependent patient, gradually taper the
+dosage; rapid tapering in a patient physically dependent on opioids may lead to a
+withdrawal syndrome and return of pain
+
+Accidental exposure reported, including fatalities (see Black Box Warnings)
+
+May impair mental or physical abilities needed to perform potentially hazardous
+activities (eg, driving a car, operating machinery)
+
+Risk of apnea in patients with chronic pulmonary disease; closely monitor these patients,
+when initiating and titrating therapy; alternatively, consider the use of alternative non-
+opioid analgesics in these patients (see Black Box Warnings and Contraindications)
+
+QTc prolongation observed in healthy individuals at 40 mcg/hr; avoid in patients with
+history of long QT syndrome or coadministration with class IA (eg, quinidine,
+procainamide, disopyramide) or class III (eg, sotalol, amiodarone, dofetilide)
+antiarrhythmics
+
+Respiratory depressant effects of opioids may include carbon dioxide retention and lead
+to elevated CSF pressure
+
+Opioids can cause sleep-related breathing disorders including central sleep apnea (CSA)
+and sleep-related hypoxemia; opioid use increases risk of CSA in a dose-dependent
+fashion; in patients who present with CSA, consider decreasing opioid dosage using best
+practices for opioid taper
+
+Can cause severe hypotension; caution with depleted blood volume or coadministration
+of drugs that that affect vasomotor tone (eg, phenothiazines), vasodilators, or
+antihypertensives
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 49/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+Hypothyroidism, myxedema, adrenocortical insufficiency, alcohol intoxication, alcohol
+withdrawal syndrome, coma, geriatric or debilitated patients, delirium tremens, toxic
+psychoses, kyphoscoliosis, prostatic hypertrophy, urethral stricture, central nervous
+system (CNS) depression, biliary tract dysfunction, head injury, intracranial lesions,
+intracranial hypertension or conditions in which intracranial pressure may be increased
+
+Cases of cytolytic hepatitis and hepatitis with jaundice observed in individuals receiving
+buprenorphine SL for opioid dependence treatment; increased risk for overdose with
+moderate or severe hepatic impairment (see Dosage Modifications)
+
+Anaphylactic reactions reported
+
+May cause sphincter of Oddi spasm and aggravate abdominal conditions, including ileus
+(see Contraindications)
+
+Similar to other opioids, may aggravate seizure disorders by lowering seizure threshold
+
+Special risk groups may experience increased adverse reactions; caution with alcoholism,
+delirium tremens, adrenocortical insufficiency, CNS depression, debilitation,
+kyphoscoliosis associated with respiratory compromise, myxedema or hypothyroidism,
+prostatic hypertrophy or urethral stricture, severe impairment of hepatic, pulmonary or
+renal function, and toxic psychosis
+
+Prescribers should discuss with patients importance and benefits of management of
+opioid addiction throughout pregnancy
+
+Cases of adrenal insufficiency reported with opioid use, more often following greater
+than one month of use; symptoms may include nausea, vomiting, anorexia, fatigue,
+weakness, dizziness, and low blood pressure; if adrenal insufficiency is diagnosed, treat
+with physiologic replacement doses of corticosteroids; wean patient off of opioid to
+allow adrenal function to recover and continue corticosteroid treatment until adrenal
+function recovers; other opioids may be tried as some cases reported use of a different
+opioid without recurrence of adrenal insufficiency
+
+Consider discontinuing therapy 24-36 hr prior anticipated need for surgical anesthesia to
+undergo elective surgery; may administer short-acting opioids during and/or after
+surgery; in patients unable to abruptly discontinue therapy may add full opioid to
+buprenorphine to maintain proper anesthesia; increased doses may be required to
+overcome buprenorphine receptor blockade; continuously monitor if opioid therapy
+required as part of anesthesia in an anesthesia care setting
+
+Abrupt discontinuation following prolonged therapy may lead to withdrawal symptoms;
+not recommended; taper gradually
+
+Use caution in patients who are morbidly obese
+
+Avoid use in patients with impaired consciousness or coma; patients are susceptible to
+intracranial effects of CO2 retention
+
+Use caution in patients with a history of ileus or bowel obstruction; contraindicated in
+patients with known or suspected GI obstruction including paralytic ileus
+
+Chronic use of opioids may cause reduced fertility in females and males of reproductive
+potential; unknown whether effects on fertility are reversible (see Pregnancy)
+
+Opioid-induce hyperalgesia and allodynia
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 50/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+Opioid-induced hyperalgesia (OIH) occurs when opioid analgesic paradoxically
+causes increase in pain, or increase in sensitivity to pain; this condition differs from
+tolerance, which is the need for increasing doses of opioids to maintain a defined
+effect
+
+Symptoms include (but may not be limited to) increased levels of pain upon opioid
+dosage increase, decreased levels of pain upon opioid dosage decrease, or pain
+from ordinarily non-painful stimuli (allodynia); these symptoms may suggest OIH
+only if there is no evidence of underlying disease progression, opioid tolerance,
+opioid withdrawal, or addictive behavior
+
+Cases of OIH reported, both with short-term and longer-term use of opioid
+analgesics; though the mechanism of OIH is not fully understood, multiple
+biochemical pathways have been implicated; medical literature suggests a strong
+biologic plausibility between opioid analgesics and OIH and allodynia; if a patient is
+suspected to be experiencing OIH, carefully consider appropriately decreasing dose
+of current opioid analgesic or opioid rotation (safely switching the patient to a
+different opioid moiety)
+
+FDA-approved safety considerations for immediate-release (IR) and extended-
+
+release/long-acting (ER/LA) opioid analgesics addressing opioid crisis
+
+The risk of overdose increases as the dosage increases for all opioid pain medicines
+
+IR opioids should not be used for an extended period of time unless a patient’s pain
+remains severe enough to require them and alternative treatment options continue
+to be inadequate
+
+Numerous acute pain conditions treated in the outpatient setting require no more
+than a few days of an opioid pain medicine
+
+It is recommended to reserve ER/LA opioid pain medicines for severe and persistent
+pain that requires an extended treatment period with a daily opioid pain medicine
+and for which alternative treatment options are inadequate
+
+Serotonin syndrome
+
+Inform patients that opioids could cause a rare but potentially life-threatening
+condition called serotonin syndrome resulting from concomitant administration of
+serotonergic drugs
+
+Warn patients of the symptoms of serotonin syndrome and to seek medical
+attention right away if symptoms develop after discharge from the hospital. Instruct
+patients to inform their healthcare providers if they are taking, or plan to take
+serotonergic medications
+
+Patient access to naloxone for emergency treatment of opioid overdose
+
+Assess potential need for naloxone; consider prescribing for emergency treatment
+of opioid overdose
+
+Consult on availability and ways to obtain naloxone as permitted by individual state
+naloxone dispensing and prescribing requirements or guidelines
+
+Educate patients regarding the signs and symptoms of respiratory depression and
+to call 911 or seek immediate emergency medical help in the event of a known or
+suspected overdose
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 51/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+Increased risk of dental problems
+
+On January 12, 2022, FDA warned of potential dental problems associated with
+transmucosal buprenorphine-containing products (eg, buccal, sublingual)
+
+Dental problems (ie, tooth decay, cavities, oral infections, loss of teeth), can be
+serious and have been reported even in patients with no history of dental issues
+
+Despite these risks, buprenorphine is an important treatment option for opioid use
+disorder and pain, and the benefits of these medicines clearly outweigh the risks
+
+Review patient’s health before initiating with transmucosal buprenorphine
+
+Counsel patients regarding potential for dental problems and importance of taking
+extra steps after the medicine has completely dissolved, including gently rinsing
+teeth and gums with water and then swallow; advise to wait at least 1 hour before
+brushing their teeth
+
+Dentists treating patients taking transmucosal buprenorphine should perform a
+baseline dental evaluation and caries risk assessment, establish a dental caries
+preventive plan, and encourage regular dental checkups
+
+Drug interactions overview
+
+Concomitant use of buprenorphine and benzodiazepines, a muscle relaxant, or other
+CNS depressants increases risk of adverse reactions including overdose and death;
+if an opioid analgesic is initiated in a patient already taking a benzodiazepine or
+other CNS depressant, prescribe a lower initial dose of the opioid analgesic, and
+titrate based on clinical response; follow patients closely for signs and symptoms of
+respiratory depression and sedation; if concomitant use with benzodiazepine ior
+muscle relaxant s warranted, consider prescribing naloxone for the emergency
+treatment of opioid overdose (See Black Box Warnings)
+
+Opioids may reduce efficacy of diuretics by inducing release of antidiuretic hormone
+
+Anticholinergic drugs may increase risk of urinary retention and/or severe
+constipation, which may lead to paralytic ileus; monitor for signs of urinary retention
+or reduced gastric motility when buprenorphine is concomitantly used with
+anticholinergics
+
+Serotonergic drugs
+Opioids may enhance serotonergic effect of drugs (eg, selective serotonin
+reuptake inhibitors, monoamine oxidase inhibitors) that affect the serotonergic
+neurotransmitter system; which increases the risk of serotonin syndrome; if
+concomitant use is warranted, monitor; discontinue if serotonin syndrome is
+suspected
+
+Use of MAOIs with buprenorphine is not recommended during or within 14
+days of discontinuing treatment
+
+CYP3A4 inhibitors
+Concomitant use of buprenorphine and CYP3A4 inhibitor may increase the
+plasma concentration of buprenorphine, resulting increased or prolonged
+opioid effects; specifically when adding a CYP3A4 inhibitor after achieving a
+stable buprenorphine dose
+
+CYP3A4 inducers
+Concomitant use of buprenorphine and CYP3A4 inducers may decrease
+plasma concentration of buprenorphine, potentially resulting in decreased
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 52/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+efficacy or onset of a withdrawal syndrome in patients who have developed
+physical dependence to buprenorphine
+
+Pregnancy & Lactation
+
+Pregnancy
+
+Data in pregnancy are limited; however, these data do not indicate an increased risk of
+major malformations specifically due to buprenorphine exposure; observational studies
+reported on congenital malformations among exposed pregnancies, but were also not
+designed appropriately to assess risk of congenital malformations specifically due to
+drug exposure
+
+Dosage adjustments of buprenorphine may be required during pregnancy, even if patient
+was maintained on stable dose prior to pregnancy; withdrawal signs and symptoms
+should be monitored closely and the dose adjusted as necessary
+
+Fetal/neonatal adverse reactions
+
+Neonatal opioid withdrawal syndrome may occur in newborn infants of mothers
+who are receiving treatment
+
+Fertility in male and females
+
+Use of opioids for an extended period of time may cause reduced fertility in females
+and males of reproductive potential; not known whether these effects on fertility
+are reversible
+
+Lactation
+
+Data on two studies in 13 lactating women receiving therapy where the drug and it
+metabolite were present in low levels in human milk did not show adverse reactions in
+breastfed infants; developmental and health benefits of breastfeeding should be
+considered along with mother’s clinical need for therapy and any potential adverse
+effects on breastfed child from drug or from underlying maternal condition
+
+Breast-feeding is not advised in nursing mothers receiving therapy
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 53/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+Semisynthetic narcotic mixed agonist-antagonist analgesic; exerts agonistic effects at
+mu and delta opioid receptors in CNS and antagonistic effects at kappa opioid receptor
+
+Absorption
+
+Onset: 15 min (IM); ~1 hr (IV)
+
+Duration: >6 hr (IM)
+
+Peak plasma time: 1.84 hr (2-mg SL dose); 1.28 hr (8-mg SL dose); 1.42 hr (16-mg SL
+dose)
+
+Peak plasma concentration: 1.25 ng/mL (2-mg SL dose); 2.88 ng/mL (8-mg SL dose); 4.7
+ng/mL (16-mg SL dose)
+
+AUC: 10.93 hr·ng/mL (2-mg SL dose); 28.39 hr·ng/mL (8-mg SL dose); 47.09 hr·ng/mL
+(16-mg SL dose)
+
+Distribution
+
+Protein bound: 96%, primarily to alpha and beta globulin
+
+Metabolism
+
+Buprenorphine undergoes both N-dealkylation to norbuprenorphine and glucuronidation
+
+N-dealkylation pathway is mediated primarily by CYP3A4
+
+Metabolites: Norbuprenorphine (N-dealkylbuprenorphine)
+
+Elimination
+
+Mean half-life: 2.2 hr (IV); 31-35 hr (SL)
+
+Excretion: Urine (30%), feces (69%)
+
+Administration
+
+IV Incompatibilities
+
+Additive: Floxacillin, furosemide
+
+Y-site: Amphotericin B cholesteryl sulfate, doxorubicin liposomal
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 54/55
+
+
+
+6/22/26, 12:46 PM Buprenex (buprenorphine) dosing, indications, interactions, adverse effects, and more
+
+IV Compatibilities
+
+Additive: Bupivacaine
+
+Syringe: Heparin, midazolam
+
+Y-site: Allopurinol, amifostine, aztreonam, cefepime, cisatracurium, cladribine, docetaxel,
+etoposide phosphate, filgrastim, gatifloxacin, gemcitabine, granisetron, linezolid,
+melphalan, piperacillin-tazobactam, propofol, remifentanil, teniposide, thiotepa,
+vinorelbine
+
+IV Preparation
+
+Solution: Dilute to final concentration of 15 mcg/mL in D5W, D5/NS, NS, or LR
+
+Administer via controlled infusion device
+
+IV/IM Administration
+
+Administer by deep IM injection or by slow IV injection over ≥2 minutes
+
+Storage
+
+Injection: Store at 20-25°C (68-77°F)
+
+SL tablets: Store at 20-25°C (68-77°F); excursions permitted between 15-30°C (59-
+86°F)
+
+Protect from prolonged exposure to light
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/buprenex-buprenorphine-343326 55/55

@@ -1,0 +1,1533 @@
+﻿6/22/26, 7:41 PM Synthroid, Levoxyl (levothyroxine) dosing, indications, interactions, adverse effects, and more
+This site is intended for healthcare professionals
+
+levothyroxine (Rx)
+Brand and Other Names: Synthroid, Levoxyl, Levo T, Tirosint, Tirosint-SOL, Unithroid,
+Thyquidity, Levolet, Ermeza, Euthyrox, Thyro-tabs
+Classes: Thyroid Products
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+
+tablet (Euthyrox, Levolet, Levo-T, Levoxyl, Synthroid, Thyro-tabs, Unithroid, generic)
+
+25mcg, 50mcg, 75mcg, 88mcg, 100mcg, 112mcg
+
+125mcg, 137mcg, 150mcg, 175mcg, 200mcg, 300mcg
+
+capsule (Tirosint, generic)
+
+13mcg, 25mcg, 50mcg, 75mcg, 88mcg
+
+100mcg, 112 mcg, 125mcg, 137 mcg, 150mcg
+
+oral solution
+
+Tirosint-SOL
+13mcg/mL, 25mcg/mL, 37.5mcg/mL, 44mcg/mL, 50mcg/mL, 62.5mcg/mL
+
+75mcg/mL, 88mcg/mL, 100mcg/mL, 112mcg/mL, 125mcg/mL, 137mcg/mL
+
+150mcg/mL, 175mcg/mL, 200mcg/mL
+
+Thyquidity
+20mcg/mL
+
+Ermeza
+30mcg/mL
+
+injection, lyophilized powder for reconstitution
+
+https://reference.medscape.com/drug/synthroid-levoxyl-levothyroxine-342732 1/26
+
+
+
+6/22/26, 7:41 PM Synthroid, Levoxyl (levothyroxine) dosing, indications, interactions, adverse effects, and more
+
+100mcg/vial
+
+200mcg/vial
+
+500mcg/vial
+
+injection, solution
+
+100mcg/mL
+
+Hypothyroidism
+
+Indicted as replacement therapy in primary (thyroidal), secondary (pituitary), and tertiary
+(hypothalamic) congenital or acquired hypothyroidism
+
+Initial: 1.6 mcg/kg/day PO 
+
+Titrate by 12.5-25 mcg increments q4-6weeks until euthyroid
+
+Dosages >200 mcg/day are seldom required
+
+An inadequate response to daily dosages >300 mcg/day is rare and may indicate poor
+compliance, malabsorption, drug interactions, or a combination of these factors
+
+Patients requiring lower starting dose
+
+Adults at risk for atrial fibrillation or with underlying cardiac disease
+
+Geriatric patients
+
+<1.6 mcg/kg/day; titrate dosage q6-8weeks PRN until patient is euthyroid
+
+Pregnant patients
+
+Pre-existing primary hypothyroidism with TSH above normal trimester-
+specific range
+
+Initial: Pre-pregnancy dose may increase during pregnancy
+
+Dose adjustment/titration: Increase dose by 12.5-25 mcg/day; monitor TSH
+q4weeks until stable dose achieved and serum TSH is within normal
+trimester-specific range
+
+Postpartum: Reduce dose to pre-pregnancy levels immediately after delivery;
+monitor TSH 4-8 weeks postpartum
+
+New onset hypothyroidism
+TSH ≥10 mIU/L: 1.6 mcg/kg/day PO initially
+
+TSH <10 mIU/L: 1 mcg/kg/day PO initially
+
+Monitor serum TSH q4weeks and adjust dosage until serum TSH is within
+normal trimester-specific range
+
+Myxedema Coma
+
+300-500 mcg IV once, THEN 50-100 mcg qDay until patient is able to tolerate oral
+administration; may consider smaller doses in patients with cardiovascular disease
+
+https://reference.medscape.com/drug/synthroid-levoxyl-levothyroxine-342732 2/26
+
+
+
+6/22/26, 7:41 PM Synthroid, Levoxyl (levothyroxine) dosing, indications, interactions, adverse effects, and more
+
+Pituitary Thyrotropin Suppression
+
+Indicated in adult and pediatric patients, including neonates, as an adjunct to surgery
+and radioiodine therapy for management of thyrotropin-dependent well-differentiated
+thyroid cancer
+
+Dosage based on target level of TSH suppression for the stage and clinical status of
+thyroid cancer
+
+Organ Preservation (Orphan)
+
+Preservation of organ function in brain-dead organ donors
+
+Orphan sponsor
+
+Fera Pharmaceuticals, LLC; 134 Birch Hill Road; Locust Valley, NY 11560
+
+Dosing Considerations
+
+The dosage for hypothyroidism or pituitary TSH suppression depends on a variety of
+factors including the patient's age, body weight, cardiovascular status, concomitant
+medical conditions (including pregnancy), concomitant medications, co-administered
+food, and specific nature of the condition being treated
+
+Dosing must be individualized to account for these factors and dosage adjustments
+made based on periodic assessment of patient's clinical response and laboratory
+parameters
+
+For adult patients with primary hypothyroidism, titrate until patient is clinically euthyroid
+and serum TSH returns to normal
+
+For secondary or tertiary hypothyroidism, serum TSH is not a reliable measure of dosage
+adequacy and should not be used to monitor therapy
+
+Use serum free-T4 level to titrate dosing until patient is clinically euthyroid and serum
+free-T4 level is restored to upper half of normal range
+
+Lower dose of Tirosint capsules may be required compared with standard T4 tablets for
+hypothyroidism in patients with impaired gastric acid secretion to reach their target TSH
+levels; Tirosint has shown improved absorption compared with conventional T4 tablets
+
+Check for bioequivalence if switching brands/generics, OR every week after switching
+from one levothyroxine sodium preparation to another
+
+Monitor serum thyroid levels; patient may be asymptomatic
+
+The peak therapeutic effect of a given dose may not be attained for 4 to 6 weeks
+
+https://reference.medscape.com/drug/synthroid-levoxyl-levothyroxine-342732 3/26
+
+
+
+6/22/26, 7:41 PM Synthroid, Levoxyl (levothyroxine) dosing, indications, interactions, adverse effects, and more
+
+Monitoring TSH and/or thyroxine (T4) levels
+
+Initially evaluate patients q6-8Week
+
+Once normalization of thyroid function and serum TSH concentration achieved,
+evaluate q6-12mo
+
+Biotin
+Biotin supplementation may interfere with immunoassays for TSH, T4, and T3,
+resulting in erroneous thyroid hormone test results
+
+Inquire whether patients are taking biotin or biotin-containing supplements
+
+Stop biotin supplementation at least 2 days before assessing TSH and/or T4
+levels
+
+Limitations of use
+
+IV: Relative bioavailability has not been established; use caution when converting
+patients from PO to IV
+
+PO
+Not indicated for suppression of benign thyroid nodules and nontoxic diffuse
+goiter in iodine-sufficient patients, as there are no clinical benefits and
+overtreatment with levothyroxine may induce hyperthyroidism
+
+Not indicated for treatment of hypothyroidism during recovery phase of
+subacute thyroiditis
+
+PEDIATRIC
+Dosage Forms & Strengths
+
+tablet (Euthyrox, levolet, Levo-T, Levoxyl, Synthroid, Thyro-tabs, Unithroid, generic)
+
+25mcg, 50mcg, 75mcg, 88mcg, 100mcg, 112mcg
+
+125mcg, 137mcg, 150mcg, 175mcg, 200mcg, 300mcg
+
+capsule (Tirosint, generic)
+
+13mcg, 25mcg, 50mcg, 75mcg, 88mcg
+
+100mcg, 112 mcg, 125mcg, 137 mcg, 150mcg
+
+oral solution
+
+Tirosint-SOL
+13mcg/mL, 25mcg/mL, 37.5mcg/mL, 44mcg/mL, 50mcg/mL, 62.5mcg/mL
+
+75mcg/mL, 88mcg/mL, 100mcg/mL, 112mcg/mL, 125mcg/mL, 137mcg/mL
+
+150mcg/mL, 175mcg/mL, 200mcg/mL
+
+Thyquidity
+20mcg/mL
+
+https://reference.medscape.com/drug/synthroid-levoxyl-levothyroxine-342732 4/26
+
+
+
+6/22/26, 7:41 PM Synthroid, Levoxyl (levothyroxine) dosing, indications, interactions, adverse effects, and more
+
+Ermeza
+30mcg/mL
+
+injection, lyophilized powder for reconstitution
+
+100mcg/vial
+
+200mcg/vial
+
+Hypothyroidism
+
+Indicted in children, including neonates, as replacement therapy in primary (thyroidal),
+secondary (pituitary), and tertiary (hypothalamic) congenital or acquired hypothyroidism
+
+Initial daily dose
+
+Age 0-3 months
+10-15 mcg/kg/day PO 
+
+5-7.5 mcg/kg/day IV/IM
+
+Use lower starting dose (25 mcg/day) if patient at risk of cardiac failure; if
+initial serum T4 lower than 5 mcg/dL begin treatment at higher dose (50
+mcg/day)
+
+At risk for cardiac failure: Start at lower starting dosage and increase every 4-
+6 weeks as needed based on clinical and laboratory response
+
+Age 3-6 months
+8-10 mcg/kg/day PO, OR 
+
+25-50 mcg/day PO
+
+4-7.5 mcg/kg/day IV/IM
+
+Age 6-12 months
+6-8 mcg/kg/day PO, OR 
+
+50-75 mcg/day PO
+
+3-6 mcg/kg/day IV/IM
+
+Age 1-5 years
+5-6 mcg/kg/day PO, OR 
+
+75-100 mcg/day PO
+
+2.5-4.5 mcg/kg/day IV/IM
+
+Age 6-12 years
+4-5 mcg/kg/day PO, OR 
+
+100-125 mcg/day PO
+
+2-3.75 mcg/kg/day IV/IM
+
+>12 years, growth/puberty incomplete
+2-3 mcg/kg/day PO, OR 
+
+150 mcg/day PO
+
+https://reference.medscape.com/drug/synthroid-levoxyl-levothyroxine-342732 5/26
+
+
+
+6/22/26, 7:41 PM Synthroid, Levoxyl (levothyroxine) dosing, indications, interactions, adverse effects, and more
+
+1-2.25 mcg/kg/day IV/IM
+
+>12 years, growth/puberty complete
+Initial: 1.6 mcg/kg/day PO
+
+Titrate by 12.5-25 mcg increments q4-6weeks until euthyroid
+
+Dosages >200 mcg/day are seldom required
+
+An inadequate response to daily dosages >300 mcg/day is rare and may
+indicate poor compliance, malabsorption, drug interactions, or a combination of
+these factors
+
+Pituitary Thyrotropin Suppression
+
+Indicated in adult and pediatric patients, including neonates, as an adjunct to surgery
+and radioiodine therapy for management of thyrotropin-dependent well-differentiated
+thyroid cancer
+
+Dosage based on target level of TSH suppression for the stage and clinical status of
+thyroid cancer
+
+Dosing Considerations
+
+The dosage for hypothyroidism or pituitary TSH suppression depends on a variety of
+factors including the patient's age, body weight, cardiovascular status, concomitant
+medical conditions (including pregnancy), concomitant medications, co-administered
+food and specific nature of the condition being treated
+
+Dosing must be individualized to account for these factors and dosage adjustments
+made based on periodic assessment of patient's clinical response and laboratory
+parameters
+
+Lower dose of Tirosint capsules may be required compared with standard T4 tablets for
+hypothyroidism in patients with impaired gastric acid secretion to reach their target TSH
+levels; Tirosint has shown improved absorption compared with conventional T4 tablets
+
+Check for bioequivalence if switching brands/generics, OR every week after switching
+from one levothyroxine sodium preparation to another
+
+Monitor serum thyroid levels; patient may be asymptomatic
+
+The peak therapeutic effect of a given dose may not be attained for 4 to 6 weeks
+
+Monitoring TSH and/or thyroxine (T4) levels
+
+Initially evaluate patients q6-8Week
+
+Once normalization of thyroid function and serum TSH concentration achieved,
+evaluate q6-12mo
+
+Biotin
+
+https://reference.medscape.com/drug/synthroid-levoxyl-levothyroxine-342732 6/26
+
+
+
+6/22/26, 7:41 PM Synthroid, Levoxyl (levothyroxine) dosing, indications, interactions, adverse effects, and more
+
+Biotin supplementation may interfere with immunoassays for TSH, T4, and T3,
+resulting in erroneous thyroid hormone test results
+
+Inquire whether patients are taking biotin or biotin-containing supplements
+
+Stop biotin supplementation at least 2 days before assessing TSH and/or T4
+levels
+
+Pediatric patients at risk for hyperactivity
+
+Minimize risk of hyperactivity by starting at 25% of recommended full replacement
+dosage, and increase by that amount each week until full dose achieved
+
+GERIATRIC
+Because of increased prevalence of cardiovascular disease among the elderly, initiate
+therapy at less than full replacement dose; atrial arrhythmias can occur in elderly
+patients; atrial fibrillation is the most common of arrhythmias observed with
+levothyroxine overtreatment in the elderly
+
+Interactions
+
+Interaction Checker
+
+Enter a drug name to check for any interactions. Type a drug, OTC, or herbal  and
+levothyroxine
+No Interactions Found
+Interactions Found
+Contraindicated
+
+Serious
+
+Significant - Monitor Closely
+
+Minor
+
+All Interactions Sort By: Severity
+Contraindicated (1)
+
+sodium iodide I-131
+levothyroxine will decrease the level or effect of sodium iodide I-131 by Other (see
+comment). Contraindicated. Use of thyroid products or iodine before and during
+treatment with sodium iodide I-131 decreases uptake of sodium iodide I-131 by the
+thyroid gland
+
+Serious (12)
+
+antithrombin alfa
+
+https://reference.medscape.com/drug/synthroid-levoxyl-levothyroxine-342732 7/26
+
+
+
+6/22/26, 7:41 PM Synthroid, Levoxyl (levothyroxine) dosing, indications, interactions, adverse effects, and more
+
+levothyroxine increases effects of antithrombin alfa by pharmacodynamic
+synergism. Avoid or Use Alternate Drug.
+
+antithrombin III
+levothyroxine increases effects of antithrombin III by pharmacodynamic synergism.
+Avoid or Use Alternate Drug.
+
+argatroban
+levothyroxine increases effects of argatroban by pharmacodynamic synergism.
+Avoid or Use Alternate Drug.
+
+bemiparin
+levothyroxine increases effects of bemiparin by pharmacodynamic synergism. Avoid
+or Use Alternate Drug.
+
+bivalirudin
+levothyroxine increases effects of bivalirudin by pharmacodynamic synergism.
+Avoid or Use Alternate Drug.
+
+bremelanotide
+bremelanotide will decrease the level or effect of levothyroxine by Other (see
+comment). Avoid or Use Alternate Drug. Bremelanotide may slow gastric emptying
+and potentially reduces the rate and extent of absorption of concomitantly
+administered oral medications. Avoid use when taking any oral drug that is
+dependent on threshold concentrations for efficacy. Interactions listed are
+representative examples and do not include all possible clinical examples.
+
+fondaparinux
+levothyroxine increases effects of fondaparinux by pharmacodynamic synergism.
+Avoid or Use Alternate Drug.
+
+heparin
+levothyroxine increases effects of heparin by pharmacodynamic synergism. Avoid or
+Use Alternate Drug.
+
+lycopus
+lycopus decreases effects of levothyroxine by pharmacodynamic antagonism.
+Contraindicated. Lycopus blocks peripheral conversion of T4 to T3.
+
+phenindione
+levothyroxine increases effects of phenindione by pharmacodynamic synergism.
+Avoid or Use Alternate Drug.
+
+protamine
+levothyroxine increases effects of protamine by pharmacodynamic synergism. Avoid
+or Use Alternate Drug.
+
+trofinetide
+trofinetide will increase the level or effect of levothyroxine by Other (see comment).
+Avoid or Use Alternate Drug. Trofinetide (an OATP131 and OATP13B inhibitor)
+
+https://reference.medscape.com/drug/synthroid-levoxyl-levothyroxine-342732 8/26
+
+
+
+6/22/26, 7:41 PM Synthroid, Levoxyl (levothyroxine) dosing, indications, interactions, adverse effects, and more
+
+may increase plasma levels of OATP131 or OATP13B substrates. Avoid
+coadministration with sensitive substrates.
+
+Monitor Closely (68)
+
+albuterol
+levothyroxine, albuterol. Either increases toxicity of the other by sympathetic
+(adrenergic) effects, including increased blood pressure and heart rate. Use
+Caution/Monitor.
+
+albuterol inhaled
+levothyroxine, albuterol inhaled. Either increases toxicity of the other by
+sympathetic (adrenergic) effects, including increased blood pressure and heart rate.
+Use Caution/Monitor.
+
+amitriptyline
+levothyroxine increases effects of amitriptyline by Other (see comment). Use
+Caution/Monitor. Comment: Increased catecholamine receptor sensitivity; may
+increase CNS and cardiovascular effects, including arrhythmias.
+
+amoxapine
+levothyroxine increases effects of amoxapine by Other (see comment). Use
+Caution/Monitor. Comment: Increased catecholamine receptor sensitivity; may
+increase CNS and cardiovascular effects, including arrhythmias.
+
+apalutamide
+apalutamide will decrease the level or effect of levothyroxine by increasing
+elimination. Use Caution/Monitor. Apalutamide induces UGT and may decrease
+systemic exposure of drugs that are UGT substrates.
+
+arformoterol
+levothyroxine, arformoterol. Either increases toxicity of the other by sympathetic
+(adrenergic) effects, including increased blood pressure and heart rate. Use
+Caution/Monitor.
+
+caffeine
+caffeine decreases levels of levothyroxine by inhibition of GI absorption. Applies
+only to oral form of both agents. Use Caution/Monitor. Caffeine (a
+sympathomimetic) concomitantly used with oral levothyroxine may increase the
+effects of sympathomimetics or thyroid hormone. Thyroid hormones may increase
+the risk of coronary insufficiency when sympathomimetic agents are administered
+to patients with coronary artery disease.
+
+calcium acetate
+calcium acetate decreases levels of levothyroxine by inhibition of GI absorption.
+Applies only to oral form of both agents. Use Caution/Monitor. Separate
+administration by 4 hours.
+
+calcium carbonate
+calcium carbonate decreases levels of levothyroxine by inhibition of GI absorption.
+Applies only to oral form of both agents. Use Caution/Monitor. Separate
+
+https://reference.medscape.com/drug/synthroid-levoxyl-levothyroxine-342732 9/26
+
+
+
+6/22/26, 7:41 PM Synthroid, Levoxyl (levothyroxine) dosing, indications, interactions, adverse effects, and more
+
+administration by 4 hours.
+
+calcium chloride
+calcium chloride decreases levels of levothyroxine by inhibition of GI absorption.
+Applies only to oral form of both agents. Use Caution/Monitor. Separate
+administration by 4 hours.
+
+calcium citrate
+calcium citrate decreases levels of levothyroxine by inhibition of GI absorption.
+Applies only to oral form of both agents. Use Caution/Monitor. Separate
+administration by 4 hours.
+
+calcium gluconate
+calcium gluconate decreases levels of levothyroxine by inhibition of GI absorption.
+Applies only to oral form of both agents. Use Caution/Monitor. Separate
+administration by 4 hours.
+
+carbonyl iron
+carbonyl iron decreases levels of levothyroxine by inhibition of GI absorption.
+Applies only to oral form of both agents. Use Caution/Monitor. Separate
+administration by 4 hours.
+
+cholestyramine
+cholestyramine decreases levels of levothyroxine by inhibition of GI absorption.
+Applies only to oral form of both agents. Use Caution/Monitor. Bile acid
+sequestrants are known to decrease levothyroxine absorption. Separate
+adminisration by 4 hr or monitor thyrotropin (TSH) levels.
+
+clomipramine
+levothyroxine increases effects of clomipramine by Other (see comment). Use
+Caution/Monitor. Comment: Increased catecholamine receptor sensitivity; may
+increase CNS and cardiovascular effects, including arrhythmias.
+
+colesevelam
+colesevelam decreases levels of levothyroxine by drug binding in GI tract. Use
+Caution/Monitor. Concomitant administration decreases levothyroxine absorption;
+however, absorption is not reduced when levothyroxine is administered 4 hr before
+colesevelam.
+
+crofelemer
+crofelemer increases levels of levothyroxine by Other (see comment). Use
+Caution/Monitor. Comment: Crofelemer has the potential to inhibit transporters
+MRP2 and OATP1A2 at concentrations expected in the gut; unlikely to inhibit
+systemically because minimally absorbed.
+
+desipramine
+levothyroxine increases effects of desipramine by Other (see comment). Use
+Caution/Monitor. Comment: Increased catecholamine receptor sensitivity; may
+increase CNS and cardiovascular effects, including arrhythmias.
+
+diazoxide choline
+diazoxide choline increases levels of levothyroxine by plasma protein binding
+competition. Modify Therapy/Monitor Closely. Monitor drugs that are highly protein
+
+https://reference.medscape.com/drug/synthroid-levoxyl-levothyroxine-342732 10/26
+
+
+
+6/22/26, 7:41 PM Synthroid, Levoxyl (levothyroxine) dosing, indications, interactions, adverse effects, and more
+
+bound with narrow therapeutic indexes for potential increased systemic exposure.
+Dosage adjustment may be required .
+
+didanosine
+didanosine will decrease the level or effect of levothyroxine by inhibition of GI
+absorption. Applies only to oral form of both agents. Use Caution/Monitor. Applies
+to didanosine chewable tablets and powder for oral solution; administer 2 hr before
+or several hours after didanosine oral solution or chewable tablet administration
+
+digoxin
+levothyroxine decreases effects of digoxin by unknown mechanism. Use
+Caution/Monitor.
+
+doxepin
+levothyroxine increases effects of doxepin by Other (see comment). Use
+Caution/Monitor. Comment: Increased catecholamine receptor sensitivity; may
+increase CNS and cardiovascular effects, including arrhythmias.
+
+doxepin cream
+levothyroxine increases effects of doxepin cream by Other (see comment). Use
+Caution/Monitor. Comment: Increased catecholamine receptor sensitivity; may
+increase CNS and cardiovascular effects, including arrhythmias.
+
+dulaglutide
+dulaglutide, levothyroxine. Other (see comment). Use Caution/Monitor. Comment:
+Dulaglutide slows gastric emptying and may impact absorption of concomitantly
+administered oral medications; be particularly cautious when coadministered with
+drugs that have a narrow therapeutic index.
+
+eluxadoline
+eluxadoline increases levels of levothyroxine by decreasing metabolism. Use
+Caution/Monitor. Eluxadoline may increase the systemic exposure of coadministered
+OATP1B1 substrates.
+
+epinephrine
+levothyroxine will increase the level or effect of epinephrine by unspecified
+interaction mechanism. Use Caution/Monitor.
+
+ferric maltol
+ferric maltol decreases levels of levothyroxine by inhibition of GI absorption.
+Applies only to oral form of both agents. Use Caution/Monitor. Separate
+administration by 4 hours.
+
+ferric maltol, levothyroxine. Either increases effects of the other by unspecified
+interaction mechanism. Modify Therapy/Monitor Closely. Coadministration of ferric
+maltol with certain oral medications may decrease the bioavailability of either ferric
+maltol and some oral drugs. For oral drugs where reductions in bioavailability may
+cause clinically significant effects on its safety or efficacy, separate administration of
+ferric maltol from these drugs. Duration of separation may depend on the
+absorption of the medication concomitantly administered (eg, time to peak
+concentration, whether the drug is an immediate or extended release product).
+
+ferrous fumarate
+
+https://reference.medscape.com/drug/synthroid-levoxyl-levothyroxine-342732 11/26
+
+
+
+6/22/26, 7:41 PM Synthroid, Levoxyl (levothyroxine) dosing, indications, interactions, adverse effects, and more
+
+ferrous fumarate decreases levels of levothyroxine by inhibition of GI absorption.
+Applies only to oral form of both agents. Use Caution/Monitor. Separate
+administration by 4 hours.
+
+ferrous gluconate
+ferrous gluconate decreases levels of levothyroxine by inhibition of GI absorption.
+Applies only to oral form of both agents. Use Caution/Monitor. Separate
+administration by 4 hours.
+
+ferrous sulfate
+ferrous sulfate decreases levels of levothyroxine by inhibition of GI absorption.
+Applies only to oral form of both agents. Use Caution/Monitor. Separate
+administration by 4 hours.
+
+food
+food decreases levels of levothyroxine by inhibition of GI absorption. Applies only
+to oral form of both agents. Use Caution/Monitor. Soybean flour (infant formula),
+cottonseed meal, walnuts, and dietary fiber may bind and decrease the absorption
+of oral levothyroxine from the GI tract. Grapefruit juice may also delay the
+absorption of levothyroxine and reduce its bioavailability.
+
+formoterol
+levothyroxine, formoterol. Either increases toxicity of the other by sympathetic
+(adrenergic) effects, including increased blood pressure and heart rate. Use
+Caution/Monitor.
+
+imipramine
+levothyroxine increases effects of imipramine by Other (see comment). Use
+Caution/Monitor. Comment: Increased catecholamine receptor sensitivity; may
+increase CNS and cardiovascular effects, including arrhythmias.
+
+insulin degludec
+levothyroxine decreases effects of insulin degludec by pharmacodynamic
+antagonism. Use Caution/Monitor. Thyroid hormones regulate carbohydrate
+metabolism, gluconeogenesis, and glycogen stores mobilization; dose of
+antidiabetic agents may need adjustment and increased frequency of glucose
+monitoring may be required.
+
+insulin degludec/insulin aspart
+levothyroxine decreases effects of insulin degludec/insulin aspart by
+pharmacodynamic antagonism. Use Caution/Monitor. Thyroid hormones regulate
+carbohydrate metabolism, gluconeogenesis, and glycogen stores mobilization; dose
+of antidiabetic agents may need adjustment and increased frequency of glucose
+monitoring may be required.
+
+insulin icodec
+levothyroxine decreases effects of insulin icodec by pharmacodynamic antagonism.
+Use Caution/Monitor. Concomitant use of insulin and thyroid hormone may require
+insulin dosage adjustment and increased glucose monitoring.
+
+insulin inhaled
+levothyroxine decreases effects of insulin inhaled by pharmacodynamic antagonism.
+Use Caution/Monitor. Thyroid hormones regulate carbohydrate metabolism,
+
+https://reference.medscape.com/drug/synthroid-levoxyl-levothyroxine-342732 12/26
+
+
+
+6/22/26, 7:41 PM Synthroid, Levoxyl (levothyroxine) dosing, indications, interactions, adverse effects, and more
+
+gluconeogenesis, and glycogen stores mobilization; dose of antidiabetic agents may
+need adjustment and increased frequency of glucose monitoring may be required.
+
+iron dextran complex
+iron dextran complex decreases levels of levothyroxine by inhibition of GI
+absorption. Applies only to oral form of both agents. Use Caution/Monitor. Separate
+administration by 4 hours.
+
+iron sucrose
+iron sucrose decreases levels of levothyroxine by inhibition of GI absorption.
+Applies only to oral form of both agents. Use Caution/Monitor. Separate
+administration by 4 hours.
+
+ketamine
+levothyroxine increases toxicity of ketamine by unspecified interaction mechanism.
+Use Caution/Monitor. Coadministration may cause marked hypertension and
+tachycardia.
+
+lanthanum carbonate
+lanthanum carbonate decreases levels of levothyroxine by cation binding in GI tract.
+Use Caution/Monitor. Administer oral thyroid products at least 2 hr before or after
+lanthanum. Interaction applies only to oral thyroid products only. .
+
+letermovir
+letermovir increases levels of levothyroxine by Other (see comment). Use
+Caution/Monitor. Comment: Letermovir, an OATP1B1/3 inhibitor may increase
+plasma concentrations of coadministered OATP1B1/3 substrates.
+
+levalbuterol
+levothyroxine, levalbuterol. Either increases toxicity of the other by sympathetic
+(adrenergic) effects, including increased blood pressure and heart rate. Use
+Caution/Monitor.
+
+levonorgestrel oral/ethinylestradiol/ferrous bisglycinate
+levonorgestrel oral/ethinylestradiol/ferrous bisglycinate will decrease the level or
+effect of levothyroxine by unknown mechanism. Modify Therapy/Monitor Closely.
+The estrogen component of combined hormonal contraceptives (CHCs) may raise
+the serum concentrations of thyroxine-binding globulin. Women on thyroid
+hormone replacement therapy may need increased doses of thyroid hormone with
+use of CHCs.
+
+magnesium supplement
+magnesium supplement will decrease the level or effect of levothyroxine by Other
+(see comment). Modify Therapy/Monitor Closely. Drug may adsorb to magnesium;
+may decrease absorption by the intestinal tract; applies to oral forms; may separate
+administration of drugs by 4 hr
+
+metformin
+levothyroxine decreases effects of metformin by pharmacodynamic antagonism.
+Use Caution/Monitor. Concomitant use may require increased glucose monitoring.
+
+mitapivat
+
+https://reference.medscape.com/drug/synthroid-levoxyl-levothyroxine-342732 13/26
+
+
+
+6/22/26, 7:41 PM Synthroid, Levoxyl (levothyroxine) dosing, indications, interactions, adverse effects, and more
+
+mitapivat decreases levels of levothyroxine by increasing metabolism. Use
+Caution/Monitor. Mitapivat induces UGT1A1 in vitro and may decrease systemic
+concentrations of UGT1A1 substrates.
+
+nateglinide
+levothyroxine decreases effects of nateglinide by pharmacodynamic antagonism.
+Use Caution/Monitor. Coadministration may reduce nateglinide's hypoglycemic
+action.
+
+nortriptyline
+levothyroxine increases effects of nortriptyline by Other (see comment). Use
+Caution/Monitor. Comment: Increased catecholamine receptor sensitivity; may
+increase CNS and cardiovascular effects, including arrhythmias.
+
+orforglipron
+orforglipron decreases effects of levothyroxine by Other (see comment). Use
+Caution/Monitor. Comment: GLP-1 agonists delay gastric emptying and may impact
+the absorption of concomitantly administered oral medications. Monitor patients on
+oral medications with a narrow therapeutic index or those dependent on threshold
+concentrations for efficacy.
+
+orlistat
+orlistat decreases levels of levothyroxine by inhibition of GI absorption. Applies only
+to oral form of both agents. Use Caution/Monitor. Risk of hypothyroidism. Separate
+administration by 4 hours.
+
+patiromer
+patiromer will decrease the level or effect of levothyroxine by drug binding in GI
+tract. Modify Therapy/Monitor Closely. Separate administration by at least 3 hr from
+patiromer
+
+polysaccharide iron
+polysaccharide iron decreases levels of levothyroxine by inhibition of GI absorption.
+Applies only to oral form of both agents. Use Caution/Monitor. Separate
+administration by 4 hours.
+
+pretomanid
+pretomanid will increase the level or effect of levothyroxine by Other (see
+comment). Use Caution/Monitor. Increase monitoring for drug-related adverse
+effects if pretomanid is coadministered with sensitive OATP1B3 substrates.
+
+protriptyline
+levothyroxine increases effects of protriptyline by Other (see comment). Use
+Caution/Monitor. Comment: Increased catecholamine receptor sensitivity; may
+increase CNS and cardiovascular effects, including arrhythmias.
+
+raloxifene
+raloxifene decreases levels of levothyroxine by inhibition of GI absorption. Applies
+only to oral form of both agents. Use Caution/Monitor. Risk of hypothyroidism.
+Separate administration by 4 hours.
+
+ropeginterferon alfa 2b
+
+https://reference.medscape.com/drug/synthroid-levoxyl-levothyroxine-342732 14/26
+
+
+
+6/22/26, 7:41 PM Synthroid, Levoxyl (levothyroxine) dosing, indications, interactions, adverse effects, and more
+
+ropeginterferon alfa 2b will increase the level or effect of levothyroxine by Other
+(see comment). Use Caution/Monitor. Certain proinflammatory cytokines, including
+interferons, can suppress CYP450 enzymes resulting in increased exposures of
+some CYP substrates. Therefore, monitor patients who are receiving concomitant
+drugs that are CYP450 substrates with a narrow therapeutic index from toxicities to
+such drugs.
+
+rose hips
+rose hips decreases levels of levothyroxine by inhibition of GI absorption. Applies
+only to oral form of both agents. Use Caution/Monitor.
+
+sodium polystyrene sulfonate
+sodium polystyrene sulfonate will decrease the level or effect of levothyroxine by
+inhibition of GI absorption. Applies only to oral form of both agents. Modify
+Therapy/Monitor Closely. Separate administration by at least 3 hours
+
+sodium sulfate/?magnesium sulfate/potassium chloride
+sodium sulfate/?magnesium sulfate/potassium chloride decreases levels of
+levothyroxine by inhibition of GI absorption. Applies only to oral form of both
+agents. Modify Therapy/Monitor Closely. Administer levothyroxine at least 4 hr after
+each dose to avoid chelation with magnesium.
+
+sodium sulfate/potassium sulfate/magnesium sulfate
+sodium sulfate/potassium sulfate/magnesium sulfate decreases levels of
+levothyroxine by inhibition of GI absorption. Applies only to oral form of both
+agents. Modify Therapy/Monitor Closely. Administer levothyroxine at least 4 hr after
+each dose to avoid chelation with magnesium. .
+
+sucroferric oxyhydroxide
+sucroferric oxyhydroxide decreases levels of levothyroxine by inhibition of GI
+absorption. Applies only to oral form of both agents. Modify Therapy/Monitor
+Closely. Administer oral/enteral levothyroxine at least 4 hours before administration
+of sucroferric oxyhydroxide. No interaction anticipated with parenteral
+levothyroxine.
+
+teduglutide
+teduglutide increases levels of levothyroxine by Other (see comment). Use
+Caution/Monitor. Comment: Teduglutide may increase absorption of concomitant
+PO medications; caution with with drugs requiring titration or those with a narrow
+therapeutic index; dose adjustment may be necessary.
+
+tirzepatide
+tirzepatide decreases levels of levothyroxine by Other (see comment). Use
+Caution/Monitor. Comment: GLP1 agonists delay gastrc emptying and may impact
+the absorption of concomitantly administered oral medications. Monitor patients on
+oral medications dependent on threshold concentrations for efficacy and those with
+a narrow therapeutic index. .
+
+trimagnesium citrate anhydrous
+trimagnesium citrate anhydrous decreases levels of levothyroxine by inhibition of GI
+absorption. Applies only to oral form of both agents. Use Caution/Monitor. Separate
+administration by 4 hours.
+
+https://reference.medscape.com/drug/synthroid-levoxyl-levothyroxine-342732 15/26
+
+
+
+6/22/26, 7:41 PM Synthroid, Levoxyl (levothyroxine) dosing, indications, interactions, adverse effects, and more
+
+trimipramine
+levothyroxine increases effects of trimipramine by Other (see comment). Use
+Caution/Monitor. Comment: Increased catecholamine receptor sensitivity; may
+increase CNS and cardiovascular effects, including arrhythmias.
+
+ustekinumab
+ustekinumab, levothyroxine. Other (see comment). Use Caution/Monitor. Comment:
+Formation of CYP450 enzymes can be altered by increased levels of certain
+cytokines during chronic inflammation; thus, normalizing the formation of CYP450
+enzymes. Upon initiation or discontinuation of ustekinumab in patients who are
+receiving concomitant CYP450 substrates, particularly those with a narrow
+therapeutic index, consider monitoring for therapeutic effect.
+
+warfarin
+levothyroxine increases effects of warfarin by unspecified interaction mechanism.
+Use Caution/Monitor.
+
+Minor (26)
+
+alendronate
+levothyroxine decreases levels of alendronate by unspecified interaction
+mechanism. Minor/Significance Unknown. Bioavailability of alendronate decreases
+slightly.
+
+butalbital
+butalbital decreases levels of levothyroxine by increasing metabolism.
+Minor/Significance Unknown.
+
+carbamazepine
+carbamazepine decreases levels of levothyroxine by increasing metabolism.
+Minor/Significance Unknown.
+
+colestipol
+colestipol decreases levels of levothyroxine by inhibition of GI absorption. Applies
+only to oral form of both agents. Minor/Significance Unknown. Bile acid
+sequestrants are known to decrease levothyroxine absorption. Separate
+adminisration by 4 hr or monitor thyrotropin (TSH) levels.
+
+dexlansoprazole
+dexlansoprazole decreases levels of levothyroxine by increasing gastric pH. Applies
+only to oral form of both agents. Minor/Significance Unknown. Conflicting evidence
+regarding this interaction exists.
+
+eptifibatide
+levothyroxine decreases levels of eptifibatide by increasing renal clearance.
+Minor/Significance Unknown.
+
+eslicarbazepine acetate
+eslicarbazepine acetate decreases levels of levothyroxine by increasing metabolism.
+Minor/Significance Unknown.
+
+esomeprazole
+
+https://reference.medscape.com/drug/synthroid-levoxyl-levothyroxine-342732 16/26
+
+
+
+6/22/26, 7:41 PM Synthroid, Levoxyl (levothyroxine) dosing, indications, interactions, adverse effects, and more
+
+esomeprazole decreases levels of levothyroxine by increasing gastric pH. Applies
+only to oral form of both agents. Minor/Significance Unknown. Conflicting evidence
+regarding this interaction exists.
+
+fosphenytoin
+fosphenytoin decreases levels of levothyroxine by increasing metabolism.
+Minor/Significance Unknown.
+
+fosphenytoin decreases levels of levothyroxine by plasma protein binding
+competition. Minor/Significance Unknown.
+
+furosemide
+furosemide increases toxicity of levothyroxine by Other (see comment).
+Minor/Significance Unknown. Comment: High doses (greater than 80 mg) of
+furosemide may inhibit binding of thyroid hormones to carrier proteins and result in
+transient increase in free thyroid hormones, followed by overall decrease in total
+thyroid hormone levels.
+
+glandular products
+glandular products increases effects of levothyroxine by pharmacodynamic
+synergism. Minor/Significance Unknown. Additive effects with thyroid glandular
+extract.
+
+guggul
+guggul decreases effects of levothyroxine by pharmacodynamic antagonism.
+Minor/Significance Unknown.
+
+lansoprazole
+lansoprazole decreases levels of levothyroxine by increasing gastric pH. Applies
+only to oral form of both agents. Minor/Significance Unknown. Conflicting evidence
+regarding this interaction exists.
+
+omeprazole
+omeprazole decreases levels of levothyroxine by increasing gastric pH. Applies only
+to oral form of both agents. Minor/Significance Unknown. Conflicting evidence
+regarding this interaction exists.
+
+oxcarbazepine
+oxcarbazepine decreases levels of levothyroxine by increasing metabolism.
+Minor/Significance Unknown.
+
+pantoprazole
+pantoprazole decreases levels of levothyroxine by increasing gastric pH. Applies
+only to oral form of both agents. Minor/Significance Unknown. Conflicting evidence
+regarding this interaction exists.
+
+pentobarbital
+pentobarbital decreases levels of levothyroxine by increasing metabolism.
+Minor/Significance Unknown.
+
+phenobarbital
+phenobarbital decreases levels of levothyroxine by increasing metabolism.
+
+https://reference.medscape.com/drug/synthroid-levoxyl-levothyroxine-342732 17/26
+
+
+
+6/22/26, 7:41 PM Synthroid, Levoxyl (levothyroxine) dosing, indications, interactions, adverse effects, and more
+
+Minor/Significance Unknown.
+
+phenytoin
+phenytoin decreases levels of levothyroxine by increasing metabolism.
+Minor/Significance Unknown.
+
+phenytoin decreases levels of levothyroxine by plasma protein binding competition.
+Minor/Significance Unknown.
+
+piracetam
+piracetam, levothyroxine. Mechanism: unknown. Minor/Significance Unknown.
+Combination of piracetam and T3+T4 produced confusion, sleep disorder in single
+case.
+
+primidone
+primidone decreases levels of levothyroxine by increasing metabolism.
+Minor/Significance Unknown.
+
+rabeprazole
+rabeprazole decreases levels of levothyroxine by increasing gastric pH. Applies only
+to oral form of both agents. Minor/Significance Unknown. Conflicting evidence
+regarding this interaction exists.
+
+rifampin
+rifampin decreases levels of levothyroxine by increasing metabolism.
+Minor/Significance Unknown.
+
+shepherd's purse
+shepherd's purse decreases effects of levothyroxine by unspecified interaction
+mechanism. Minor/Significance Unknown. Theoretical interaction.
+
+theophylline
+levothyroxine decreases levels of theophylline by increasing elimination.
+Minor/Significance Unknown.
+
+tirofiban
+levothyroxine decreases levels of tirofiban by increasing renal clearance.
+Minor/Significance Unknown.
+
+Adverse Effects
+
+Frequency Not Defined
+
+Angina pectoris
+
+Arthralgia
+
+Congestive heart failure
+
+Flushing
+
+https://reference.medscape.com/drug/synthroid-levoxyl-levothyroxine-342732 18/26
+
+
+
+6/22/26, 7:41 PM Synthroid, Levoxyl (levothyroxine) dosing, indications, interactions, adverse effects, and more
+
+Increased pulse
+
+Myocardial infarction
+
+Palpitations
+
+Arrhythmias
+
+Cramps
+
+Diarrhea
+
+Nervousness
+
+Anxiety
+
+Choking sensation
+
+Emotional lability
+
+Headache
+
+Heat intolerance
+
+Insomnia
+
+Myasthenia
+
+Pseudotumor cerebri
+
+Alopecia
+
+Weight loss
+
+Infertility
+
+Dyspnea
+
+Fever
+
+Tachycardia
+
+Tremor
+
+Decreased bone mineral density
+
+Postmarketing Reports
+
+Musculoskeletal: Muscle weakness, muscle spasm
+
+Dermatologic: Hair loss, rash
+
+Slipped capital femoral epiphysis (children)
+
+Warnings
+
+Black Box Warnings
+
+https://reference.medscape.com/drug/synthroid-levoxyl-levothyroxine-342732 19/26
+
+
+
+6/22/26, 7:41 PM Synthroid, Levoxyl (levothyroxine) dosing, indications, interactions, adverse effects, and more
+
+Thyroid hormones, either alone or with other therapeutic agents, should not be used for
+the treatment of obesity or for weight loss
+
+In euthyroid patients, doses within the range of daily hormonal requirements are
+ineffective for weight reduction; larger doses may produce serious or even life-
+threatening manifestations of toxicity, particularly when given in association with
+sympathomimetic amines such as those used for their anorectic effects
+
+Contraindications
+
+Hypersensitivity to thyroid hormone or other ingredients
+
+Uncorrected adrenal insufficiency
+
+Cautions
+
+Proper dose titration and careful monitoring is critical to prevent persistence of
+hypothyroidism or development of hyperthyroidism
+
+Generally, do not use levothyroxine sodium preparations interchangeably, owing to
+narrow therapeutic index; check for bioequivalence if switching brands/generics; if
+formulations are changed, monitor TSH and adjust dose if needed
+
+Synthroid and Unithroid tabs contain lactose
+
+Pediatric use
+
+In pediatric patients, rapid restoration of normal serum T4 concentrations is
+essential for preventing adverse effects of congenital hypothyroidism on cognitive
+development as well as on overall physical growth and maturation; therefore,
+initiate therapy immediately upon diagnosis; levothyroxine is generally continued
+for life in these patients
+
+Closely monitor infants during first 2 weeks of therapy for cardiac overload and
+arrhythmias
+
+Cardiovascular
+
+Over-treatment with levothyroxine may cause increase in heart rate, cardiac wall
+thickness, and cardiac contractility; may precipitate angina or arrhythmias,
+particularly in patients with cardiovascular disease and in elderly patients
+
+Initiate with lower doses in elderly patients than the recommended dose for
+younger individuals or patients without cardiac disease
+
+Monitor patients receiving concomitant levothyroxine and sympathomimetic agents
+for signs and symptoms of coronary insufficiency
+
+Myxedema coma
+
+Myxedema coma is a life-threatening emergency characterized by poor circulation
+and hypometabolism, and may result in unpredictable GI absorption of
+levothyroxine
+
+Use of oral thyroid hormone drug products is not recommended to treat myxedema
+coma
+
+https://reference.medscape.com/drug/synthroid-levoxyl-levothyroxine-342732 20/26
+
+
+
+6/22/26, 7:41 PM Synthroid, Levoxyl (levothyroxine) dosing, indications, interactions, adverse effects, and more
+
+Treat myxedema coma with IV thyroid products
+
+Acute adrenal crisis in patients with concomitant adrenal insufficiency
+
+Thyroid hormone increases metabolic clearance of glucocorticoids
+
+Initiation of thyroid hormone therapy before initiating glucocorticoid therapy may
+precipitate an acute adrenal crisis in patients with adrenal insufficiency
+
+Treat patients with adrenal insufficiency with replacement glucocorticoids before
+initiating
+
+Prevention of hyperthyroidism or incomplete treatment of hypothyroidism
+
+Levothyroxine has a narrow therapeutic index
+
+Over- or undertreatment may have negative effects on growth and development,
+cardiovascular function, bone metabolism, reproductive function, cognitive function,
+emotional state, gastrointestinal function, and on glucose and lipid metabolism in
+adult or pediatric patients
+
+In pediatric patients with congenital and acquired hypothyroidism, undertreatment
+may adversely affect cognitive development and linear growth, and overtreatment
+is associated with craniosynostosis and acceleration of bone age
+
+Titrate dose carefully and monitor response to titration to avoid these effects;
+consider potential for food or drug interactions and adjust administration or dosage
+as needed
+
+Worsening diabetic control
+
+Addition of levothyroxine therapy in patients with diabetes mellitus may worsen
+glycemic control and result in increased antidiabetic agent or insulin requirements
+
+Carefully monitor glycemic control after starting, changing, or discontinuing
+levothyroxine
+
+Decreased bone mineral density with over-replacement
+
+Increased bone resorption and decreased bone mineral density may occur as a
+result of over-replacement, particularly in post-menopausal women
+
+Increased bone resorption may be associated with increased serum levels and
+urinary excretion of calcium and phosphorous, elevations in bone alkaline
+phosphatase, and suppressed serum parathyroid hormone levels
+
+Administer minimum dose of levothyroxine that achieves desired clinical and
+biochemical response to mitigate against this risk
+
+Drug-food interactions
+
+Evaluate need for dose adjustments when regularly administering within 1 hr of
+certain foods that affect levothyroxine absorption
+
+Decreases GI absorption: Soybean flour (infant formula), cottonseed meal, walnuts,
+and dietary fiber
+
+Delayed GI absorption, reduced biovailability: Grapefruit juice
+
+https://reference.medscape.com/drug/synthroid-levoxyl-levothyroxine-342732 21/26
+
+
+
+6/22/26, 7:41 PM Synthroid, Levoxyl (levothyroxine) dosing, indications, interactions, adverse effects, and more
+
+Drug interaction overview
+
+Drugs that may decrease T4 absorption
+Concurrent use may reduce levothyroxine efficacy by binding and delaying or
+preventing absorption, potentially resulting in hypothyroidism
+
+Calcium carbonate, ferrous sulfate, bile acid sequestrants, ion exchange resins:
+Administer at least 4 hr apart
+
+Orlistat: Monitor for changes in thyroid function
+
+PPIs, sucralfate, antacids: Hypochlorhydria and altered gastric pH may reduce
+levothyroxine absorption; monitor
+
+Drugs that may alter T4 and T3 transport
+Typically patients remain euthyroid
+
+Clofibrate, estrogen, heroin, methadone, 5-fluorouracil, mitotane, tamoxifen:
+May increase thyroxine binding globulin (TBG) concentration
+
+Androgens, anabolic steroids, asparaginase, glucocorticoids, slow-release
+nicotinic acid: may decrease TBG concentration
+
+Salicylates: Inhibit binding of T4 and T3 to TBG and transthyretin; initial
+increase in serum FT4 followed by return of FT4 to normal levels with
+sustained therapeutic serum salicylate concentrations, although total T4 levels
+may decrease by up to 30%
+
+Carbamazepine, furosemide, heparin, hydantoins, NSADs , fenamates: May
+cause protein binding site displacement of levothyroxine
+
+Drugs that may alter hepatic metabolism
+May increase levothyroxine dose requirements
+
+Phenobarbital, rifampin: Stimulate hepatic microsomal drug-metabolizing
+enzyme activity and may cause increased hepatic degradation of levothyroxine
+
+Drugs that may decreased conversion of T4 to T3
+Beta blockers: Large doses of propranolol (>160 mg/day), T3 and T4 levels
+change slightly, TSH levels remain normal, and patients are clinically
+euthyroid; beta-adrenergic antagonists may be impaired when hypothyroid
+patient is converted to the euthyroid state
+
+Glucocorticoids: Short-term administration of large doses of glucocorticoids
+may decrease serum T3 concentrations by 30% with minimal change in serum
+T4 levels; however, long-term glucocorticoid therapy may result in slightly
+decreased T3 and T4 levels due to decreased TBG production
+
+Amiodarone: Inhibits peripheral conversion of T4 to T3 and may cause isolated
+biochemical changes (increase in serum free-T4, and decreased or normal
+free-T3) in clinically euthyroid patients
+
+Antidiabetics
+Monitor glycemic control when levothyroxine started, changed, or discontinued
+
+Levothyroxine may worsen glycemic control and result in increased
+antidiabetic agent or insulin requirements
+
+Oral anticoagulants
+
+https://reference.medscape.com/drug/synthroid-levoxyl-levothyroxine-342732 22/26
+
+
+
+6/22/26, 7:41 PM Synthroid, Levoxyl (levothyroxine) dosing, indications, interactions, adverse effects, and more
+
+Decreased anticoagulant dose may be required
+
+Levothyroxine increases response to oral anticoagulant
+
+Digoxin
+Increased digoxin dose may be required
+
+Levothyroxine may reduce therapeutic effects of digoxin; serum digoxin levels
+may be decreased when a hypothyroid patient becomes euthyroid
+
+Antidepressants
+Concurrent use of tricyclic or tetracyclic antidepressants and levothyroxine
+may increase therapeutic and toxic effects of both drugs, possibly due to
+increased receptor sensitivity to catecholamines
+
+Sertraline administration in patients stabilized on levothyroxine may result in
+increased levothyroxine requirements
+
+Ketamine
+Closely monitor blood pressure
+
+Coadministration may produce marked hypertension and tachycardia
+
+Sympathomimetics
+Increased effects of sympathomimetics or thyroid hormone
+
+Thyroid hormones may increase risk of coronary insufficiency when
+sympathomimetic agents are administered to patients with coronary artery
+disease
+
+Tyrosine kinase inhibitors
+Closely monitor TSH levels
+
+Coadministration may cause hypothyroidism
+
+Drugs that interfere with thyroid hormone immunoassays
+Biotin supplementation is known to interfere with thyroid hormone
+immunoassays that are based on a biotin and streptavidin interaction, which
+may result in erroneous thyroid hormone test results; stop biotin and biotin-
+containing supplements for at least 2 days prior to thyroid testing
+
+Pregnancy & Lactation
+
+Pregnancy
+
+Experience with levothyroxine use in pregnant women, including data from post-
+marketing studies, in pregnant women treated with oral levothyroxine to maintain
+euthyroid state, have not reported increased rates of major birth defects or miscarriages;
+there are risks to mother and fetus associated with untreated hypothyroidism in
+pregnancy; since TSH levels may increase during pregnancy, TSH should be monitored
+
+https://reference.medscape.com/drug/synthroid-levoxyl-levothyroxine-342732 23/26
+
+
+
+6/22/26, 7:41 PM Synthroid, Levoxyl (levothyroxine) dosing, indications, interactions, adverse effects, and more
+
+and levothyroxine dosage adjusted during pregnancy; untreated maternal
+hypothyroidism may have adverse effect on fetal neurocognitive development
+
+Maternal hypothyroidism during pregnancy is associated with a higher rate of
+complications, including spontaneous abortion, gestational hypertension, pre-eclampsia,
+stillbirth, and premature delivery; untreated maternal hypothyroidism may have adverse
+effect on fetal neurocognitive development
+
+Pregnancy may increase thyroid hormone requirements. serum TSH level should be
+monitored and the dosage adjusted during pregnancy; since postpartum TSH levels are
+similar to preconception values, the dosage should return to the pre-pregnancy dose
+immediately after delivery
+
+Animal data
+
+Animal reproductive studies have not been conducted with levothyroxine sodium;
+therapy should not be discontinued during pregnancy and hypothyroidism
+diagnosed during pregnancy should be promptly treated
+
+Lactation
+
+Limited published studies report that levothyroxine is present in human milk; however,
+there is insufficient information to determine effects of levothyroxine on breastfed infant
+and no adverse effects on breastfed infant reported and there is no information on
+effects of levothyroxine on milk production; adequate levothyroxine treatment during
+lactation may normalize milk production in hypothyroid lactating mothers with low milk
+supply; developmental and health benefits of breastfeeding should be considered along
+with mother’s clinical need for levothyroxine and any potential adverse effects on
+breastfed infant from levothyroxine or from underlying maternal condition
+
+Pregnancy Categories
+
+A: Generally acceptable. Controlled studies in pregnant women show no evidence of
+fetal risk.
+
+B: May be acceptable. Either animal studies show no risk but human studies not available
+or animal studies showed minor risks and human studies done and showed no risk.
+
+C: Use with caution if benefits outweigh risks. Animal studies show risk and human
+studies not available or neither animal nor human studies done.
+
+D: Use in LIFE-THREATENING emergencies when no safer drug available. Positive
+evidence of human fetal risk.
+
+X: Do not use in pregnancy. Risks involved outweigh potential benefits. Safer alternatives
+exist.
+
+NA: Information not available.
+
+Pharmacology
+
+Mechanism of Action
+
+Synthetic T4; thyroid hormone increases basal metabolic rate, increases utilization and
+mobilization of glycogen stores, promotes gluconeogenesis; involved in growth
+
+https://reference.medscape.com/drug/synthroid-levoxyl-levothyroxine-342732 24/26
+
+
+
+6/22/26, 7:41 PM Synthroid, Levoxyl (levothyroxine) dosing, indications, interactions, adverse effects, and more
+
+development and stimulates protein synthesis
+
+Absorption
+
+40-80% from GI tract (PO)
+
+Bioavailability: 64% (nonfasting); 79-81% (fasting)
+
+Peak plasma time: 2-4 hr (PO)
+
+Duration: Hypothyroidism, several weeks
+
+Onset, hypothyroidism
+
+Initial response: 3-5 days (PO); 6-8 hr (IV)
+
+Maximum effect: Several weeks
+
+Peak effect: 24 hr (IV)
+
+Onset, myxedema coma
+
+Initial response: 6-12 hr (IV)
+
+Peak effect: 24 hr
+
+Distribution
+
+Protein bound: 99%
+
+Vd: 9-10 L
+
+Metabolism
+
+Deiodinated in blood and then 50% converted to active metabolite, triiodothyronine (T3),
+also by liver
+
+Metabolites: T3 (active)
+
+Elimination
+
+Half-life: 9-10 days (hypothyroid); 3-4 days (hyperthyroid); 6-7 days (euthyroid)
+
+Total body clearance: 0.8-1.4 L/day
+
+Excretion: Urine (major), feces (20%)
+
+Administration
+
+IV Preparation
+
+Reconstitution of lyophilized powder
+
+Add 5 mL of 0.9% NaCl vial containing 200 or 500 mcg and shake until a clear
+solution is obtained; resultant solutions contain ~40 or 100 mcg/mL, respectively
+
+https://reference.medscape.com/drug/synthroid-levoxyl-levothyroxine-342732 25/26
+
+
+
+6/22/26, 7:41 PM Synthroid, Levoxyl (levothyroxine) dosing, indications, interactions, adverse effects, and more
+
+Use reconstituted solutions immediately; discard any unused portions
+
+Alternatively, add 2 mL 0.9% NaCl to vial containing 200 mcg to produce solution
+containing ~100 mcg/mL
+
+Do not admix with IV infusion solutions
+
+Oral Administration
+
+Take tabs with full glass of water preferably 30 min to 1 hr before breakfast on empty
+stomach to avoid choking or gagging
+
+Evaluate need for dose adjustments when regularly administering within 1 hr of certain
+foods that may affect absorption
+
+Do not use foods that decrease absorption (soybean products) for administering
+levothyroxine
+
+Administer oral levothyroxine >4 hr apart from drugs known to interfere with absorption
+
+IV/IM: Administer 50% of PO dose
+
+Patients unable to swallow intact tabs
+
+Crush appropriate dose and place in 5-10 mL of water
+
+Administer resultant suspension by spoon or dropper immediately, do NOT store
+
+Formulary
+
+Adding plans allows you to compare formulary status to other drugs in the same class.
+
+Formulary information is available for health plans only in the United States.
+
+Medscape prescription drug monographs are based on FDA-approved labeling information, unless otherwise noted,
+combined with additional data derived from primary medical literature.
+
+https://reference.medscape.com/drug/synthroid-levoxyl-levothyroxine-342732 26/26

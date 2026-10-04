@@ -1,0 +1,215 @@
+Brand and Other Names: Modecate, Modecate Concentrate, Moditen, Prolixin, RhoFluphenazine
+Classes: Antipsychotics, 1st Generation; Antipsychotics, Phenothiazines
+
+Dosing & Uses
+
+ADULT
+Dosage Forms & Strengths
+tablet
+• 1mg
+• 2.5mg
+• 5mg
+• 10mg
+elixir
+• 2.5mg/5mL
+oral concentrate
+• 5mg/mL
+injectable solution
+• 2.5mg/mL (fluphenazine hydrochloride)
+• 25mg/mL (fluphenazine decanoate)
+
+Psychotic Disorders
+Fluphenazine hydrochloride
+2.5-10 mg/day PO divided q6-8hr initially; maintenance: 1-5 mg PO/IM divided q6-8hr; not to exceed 40 mg/day
+
+Fluphenazine decanoate
+16.25-25 mg (25 mg/mL) IM/SC q2weeks; after achieving steady state, effects of a single injection may last 4-6 weeks; use caution titrating dosages; if doses >50 mg. Decanoate every weeks is approximately equivalent to 10 mg/day hydrochloride and 12.5 mg/day IM/SC.
+
+Dosing Modifications
+Renal impairment: Use with caution; monitor
+Hepatic impairment: Use with caution; monitor
+
+PEDIATRIC
+Safety and efficacy not established
+
+GERIATRIC
+1-2.5 mg/day PO; dosage titrated according to response
+
+Interactions
+
+Contraindicated
+• disopyramide: fluphenazine and disopyramide both increase QTc interval. Contraindicated.
+• ibutilide: fluphenazine and ibutilide both increase QTc interval. Contraindicated.
+• indapamide: fluphenazine and indapamide both increase QTc interval. Contraindicated.
+• mavorixafor: mavorixafor will increase the level or effect of fluphenazine by affecting hepatic enzyme CYP2D6 metabolism. Contraindicated. Mavorixafor (a strong CYP2D6 inhibitor) is contraindicated with drugs that are highly dependent on CYP2D6 for clearance.
+• metrizamide: fluphenazine, metrizamide. Mechanism: unknown. Contraindicated. Risk of seizure. D/C phenothiazine 24h before admin. of metrizamide.
+• pentamidine: fluphenazine and pentamidine both increase QTc interval. Contraindicated.
+• pimozide: fluphenazine and pimozide both increase QTc interval. Contraindicated.
+• procainamide: fluphenazine and procainamide both increase QTc interval. Contraindicated.
+• quinidine: fluphenazine and quinidine both increase QTc interval. Contraindicated.
+• sotalol: fluphenazine and sotalol both increase QTc interval. Contraindicated.
+• cabergoline: fluphenazine decreases effects of cabergoline by pharmacodynamic antagonism. Contraindicated.
+• dopamine: fluphenazine decreases effects of dopamine by pharmacodynamic antagonism. Contraindicated.
+• lisuride: fluphenazine decreases effects of lisuride by pharmacodynamic antagonism. Contraindicated.
+• methyldopa: fluphenazine decreases effects of methyldopa by pharmacodynamic antagonism. Contraindicated.
+• pramipexole: fluphenazine decreases effects of pramipexole by pharmacodynamic antagonism. Contraindicated.
+• ropinirole: fluphenazine decreases effects of ropinirole by pharmacodynamic antagonism. Contraindicated.
+• yohimbe: yohimbe decreases effects of fluphenazine by pharmacodynamic antagonism. Contraindicated.
+
+Serious (93)
+• adagrasib: adagrasib, fluphenazine. Either increases effects of the other by QTc interval. Avoid or Use Alternate Drug. Each drug prolongs the QTc interval, which may increased the risk of Torsade de pointes, other serious arryhthmias, and sudden death. If coadministration unavoidable, more frequent monitoring is recommended for such patients.
+• aminolevulinic acid oral / topical: fluphenazine increases toxicity of aminolevulinic acid topical by pharmacodynamic synergism. Avoid or Use Alternate Drug. Coadministration of photosensitizing drugs may enhance the phototoxic reaction to photodynamic therapy with aminolevulinic acid.
+• amiodarone: fluphenazine and amiodarone both increase QTc interval. Avoid or Use Alternate Drug.
+• amitriptyline: fluphenazine and amitriptyline both increase QTc interval. Avoid or Use Alternate Drug.
+• amoxapine: fluphenazine and amoxapine both increase QTc interval. Avoid or Use Alternate Drug.
+• apomorphine: fluphenazine decreases effects of apomorphine by pharmacodynamic antagonism. Avoid or Use Alternate Drug. apomorphine and fluphenazine both increase QTc interval. Avoid or Use Alternate Drug.
+• aripiprazole: aripiprazole and fluphenazine both increase QTc interval. Avoid or Use Alternate Drug.
+• arsenic trioxide: fluphenazine and arsenic trioxide both increase QTc interval. Avoid or Use Alternate Drug.
+• artemether/lumefantrine: fluphenazine and artemether/lumefantrine both increase QTc interval. Avoid or Use Alternate Drug.
+• benzhydrocodone/acetaminophen: benzhydrocodone/acetaminophen, fluphenazine. Either increases toxicity of the other by pharmacodynamic synergism. Avoid or Use Alternate Drug. Profound sedation, respiratory depression, coma, and death may result if coadministered. Reserve concomitant prescribing of these drugs in patients for whom other treatment options are inadequate. Limit dosages and durations to the minimum required. Monitor closely for signs of respiratory depression and sedation. Increased risk of hypotension if ability to maintain blood pressure has been compromised by a reduced blood volume or concurrent administration of certain CNS depressant drugs (eg, phenothiazines or general anesthetics).
+• calcium/magnesium/potassium/sodium oxybates: fluphenazine, calcium/magnesium/potassium/sodium oxybates. Either increases effects of the other by pharmacodynamic synergism. Avoid or Use Alternate Drug. Profound sedation, respiratory depression, coma, and death may result if coadministered. Reserve concomitant prescribing of these drugs in patients for whom other treatment options are inadequate. Limit dosages and durations to the minimum required. Monitor closely for signs of respiratory depression and sedation.
+• chlorpromazine: chlorpromazine and fluphenazine both increase QTc interval. Avoid or Use Alternate Drug.
+• clarithromycin: fluphenazine and clarithromycin both increase QTc interval. Avoid or Use Alternate Drug.
+• clomipramine: fluphenazine and clomipramine both increase QTc interval. Avoid or Use Alternate Drug.
+• dacomitinib: dacomitinib will increase the level or effect of fluphenazine by affecting hepatic enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug. Avoid use with CYP2D6 substrates where minimal increases in concentration of the CYP2D6 substrate may lead to serious or life-threatening toxicities.
+• degarelix: degarelix and fluphenazine both increase QTc interval. Avoid or Use Alternate Drug.
+• desipramine: fluphenazine and desipramine both increase QTc interval. Avoid or Use Alternate Drug.
+• dofetilide: fluphenazine and dofetilide both increase QTc interval. Avoid or Use Alternate Drug.
+• dosulepin: fluphenazine and dosulepin both increase QTc interval. Avoid or Use Alternate Drug.
+• droperidol: fluphenazine and droperidol both increase QTc interval. Avoid or Use Alternate Drug.
+• epinephrine / epinephrine racemic: epinephrine and fluphenazine both increase QTc interval. Avoid or Use Alternate Drug.
+• erythromycin (base, ethylsuccinate, lactobionate, stearate): fluphenazine and erythromycin both increase QTc interval. Avoid or Use Alternate Drug.
+• fentanyl (intranasal, transdermal, transmucosal): fentanyl, fluphenazine. Either increases effects of the other by pharmacodynamic synergism. Avoid or Use Alternate Drug. Coadministration with other CNS depressants, such as skeletal muscle relaxants, may cause respiratory depression, hypotension, profound sedation, coma, and/or death. Consider dose reduction of either or both agents to avoid serious adverse effects. Monitor for hypotension, respiratory depression, and profound sedation.
+• fexinidazole: fexinidazole and fluphenazine both increase QTc interval. Avoid or Use Alternate Drug. Avoid coadministration of fexinidazole with drugs known to block potassium channels or prolong QT interval.
+• fluconazole: fluphenazine and fluconazole both increase QTc interval. Avoid or Use Alternate Drug.
+• fluoxetine: fluoxetine will increase the level or effect of fluphenazine by affecting hepatic enzyme CYP2D6 metabolism. fluphenazine and fluoxetine both increase QTc interval. Avoid or Use Alternate Drug.
+• foscarbidopa/foslevodopa: fluphenazine decreases effects of foscarbidopa/foslevodopa by pharmacodynamic antagonism. Avoid or Use Alternate Drug.
+• givosiran: givosiran will increase the level or effect of fluphenazine by affecting hepatic enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug. Avoid coadministration of sensitive CYP2D6 substrates with givosiran. If unavoidable, decrease the CYP2D6 substrate dosage in accordance with approved product labeling.
+• haloperidol: fluphenazine and haloperidol both increase QTc interval. Avoid or Use Alternate Drug.
+• hydrocodone: hydrocodone, fluphenazine. Either increases toxicity of the other by pharmacodynamic synergism. Avoid or Use Alternate Drug. Profound sedation, respiratory depression, coma, and death may result if coadministered.
+• imipramine: fluphenazine and imipramine both increase QTc interval. Avoid or Use Alternate Drug.
+• ivosidenib: ivosidenib and fluphenazine both increase QTc interval. Avoid or Use Alternate Drug. Avoid coadministration of QTc prolonging drugs with ivosidenib or replace with alternate therapies.
+• ketoconazole: fluphenazine and ketoconazole both increase QTc interval. Avoid or Use Alternate Drug.
+• lefamulin: lefamulin and fluphenazine both increase QTc interval. Avoid or Use Alternate Drug.
+• levodopa (inhaled): fluphenazine decreases effects of levodopa by pharmacodynamic antagonism. Avoid or Use Alternate Drug. Phenothiazine/1st generation antipsychotics inhibit dopamine D2 receptors in varying degrees.
+• levoketoconazole: fluphenazine and levoketoconazole both increase QTc interval. Avoid or Use Alternate Drug.
+• lofepramine: fluphenazine and lofepramine both increase QTc interval. Avoid or Use Alternate Drug.
+• lumefantrine: fluphenazine and lumefantrine both increase QTc interval. Avoid or Use Alternate Drug.
+• macimorelin: macimorelin and fluphenazine both increase QTc interval. Avoid or Use Alternate Drug. Macimorelin causes an increase of ~11 msec in the corrected QT interval. Avoid coadministration with drugs that prolong QT interval.
+• methyl aminolevulinate: fluphenazine, methyl aminolevulinate. Either increases levels of the other by pharmacodynamic synergism. Avoid or Use Alternate Drug. Each drug may increase the photosensitizing effect of the other.
+• metoclopramide intranasal: fluphenazine increases toxicity of metoclopramide intranasal by pharmacodynamic synergism. Avoid or Use Alternate Drug. Potential for additive effects, including increased frequency and severity of tardive dyskinesia, other extrapyramidal symptoms, and neuroleptic malignant syndrome.
+• mirtazapine: mirtazapine and fluphenazine both increase QTc interval. Avoid or Use Alternate Drug.
+• moxifloxacin: fluphenazine and moxifloxacin both increase QTc interval. Avoid or Use Alternate Drug.
+• nilotinib: fluphenazine and nilotinib both increase QTc interval. Avoid or Use Alternate Drug.
+• nortriptyline: fluphenazine and nortriptyline both increase QTc interval. Avoid or Use Alternate Drug.
+• octreotide (Antidote): fluphenazine and octreotide both increase QTc interval. Avoid or Use Alternate Drug.
+• olopatadine intranasal: fluphenazine and olopatadine intranasal both increase sedation. Avoid or Use Alternate Drug.
+• paroxetine: paroxetine will increase the level or effect of fluphenazine by affecting hepatic enzyme CYP2D6 metabolism. Avoid or Use Alternate Drug. fluphenazine and paroxetine both increase QTc interval. Avoid or Use Alternate Drug.
+• perphenazine: fluphenazine and perphenazine both increase QTc interval. Avoid or Use Alternate Drug.
+• prochlorperazine: fluphenazine and prochlorperazine both increase QTc interval. Avoid or Use Alternate Drug.
+• promazine: fluphenazine and promazine both increase QTc interval. Avoid or Use Alternate Drug.
+• promethazine: fluphenazine and promethazine both increase QTc interval. Avoid or Use Alternate Drug.
+• protriptyline: fluphenazine and protriptyline both increase QTc interval. Avoid or Use Alternate Drug.
+• quinidine: quinidine, fluphenazine. Either increases effects of the other by pharmacodynamic synergism. Avoid or Use Alternate Drug. Additive cardiac effects.
+• safinamide: fluphenazine decreases effects of safinamide by pharmacodynamic antagonism. Avoid or Use Alternate Drug. Dopamine antagonists may decrease safinamide effects and exacerbate Parkinson disease symptoms.
+• selinexor: selinexor, fluphenazine. Avoid or Use Alternate Drug. Patients treated with selinexor may experience neurological toxicities.
+• sofpironium topical: sofpironium topical and fluphenazine both increase pharmacodynamic synergism. Avoid or Use Alternate Drug. Additive anticholinergic adverse effects may occur.
+• sufentanil SL: sufentanil SL, fluphenazine. Either increases toxicity of the other by pharmacodynamic synergism. Avoid or Use Alternate Drug. Coadministration may result in hypotension, profound sedation, respiratory depression, coma, and death.
+• tetrabenazine: tetrabenazine and fluphenazine both increase QTc interval. Avoid or Use Alternate Drug.
+• thioridazine: fluphenazine and thioridazine both increase QTc interval. Avoid or Use Alternate Drug.
+• trazodone: fluphenazine and trazodone both increase QTc interval. Avoid or Use Alternate Drug.
+• tretinoin / topical: fluphenazine, tretinoin. Mechanism: pharmacodynamic synergism. Avoid or Use Alternate Drug. Increased phototoxicity.
+• trifluoperazine: fluphenazine and trifluoperazine both increase QTc interval. Avoid or Use Alternate Drug.
+• trimipramine: fluphenazine and trimipramine both increase QTc interval. Avoid or Use Alternate Drug.
+• umeclidinium bromide/vilanterol inhaled: fluphenazine increases toxicity by QTc interval. Avoid or Use Alternate Drug.
+• vilanterol/fluticasone furoate inhaled: fluphenazine increases toxicity by QTc interval. Avoid or Use Alternate Drug. Exercise extreme caution.
+• ziprasidone: fluphenazine and ziprasidone both increase QTc interval. Avoid or Use Alternate Drug.
+• zuranolone: fluphenazine, zuranolone. Either increases effects of the other by pharmacodynamic synergism. Avoid or Use Alternate Drug.
+
+Monitor Closely (388)
+*Note: Numerous medications require close monitoring when coadministered with Fluphenazine due to shared risks of QTc prolongation, enhanced CNS sedation, additive anticholinergic effects, or alterations via CYP2D6 metabolism. Key classes and notable examples include:*
+
+• CNS Depressants & Sedatives: (e.g., alprazolam, buprenorphine, chlordiazepoxide, clonazepam, diazepam, eszopiclone, fentanyl, lorazepam, methadone, midazolam, morphine, oxycodone, propofol, zolpidem, ethanol/alcohol). Additive sedation, respiratory depression, coma.
+• CYP2D6 Inhibitors & Substrates: (e.g., abiraterone, bupropion, clobazam, desvenlafaxine, eliglustat, fedratinib, lorcaserin, lumefantrine, terbinafine, venlafaxine). These can increase fluphenazine levels.
+• QTc Prolonging Agents: (e.g., alfuzosin, amisulpride, asenapine, azithromycin, citalopram, clozapine, dasatinib, escitalopram, flecainide, gemifloxacin, methadone, olanzapine, paliperidone, quetiapine, risperidone). ECG monitoring closely recommended.
+• Anticholinergic Agents: (e.g., atropine, benztropine, dicyclomine, diphenhydramine, glycopyrrolate, hyoscyamine, oxybutynin, scopolamine, tolterodine). Additive anticholinergic adverse effects. Decreased GI absorption of fluphenazine may occur.
+• Dopamine Antagonists & Antipsychotics: (e.g., chlorpromazine, haloperidol, loxapine, metoclopramide, perphenazine, thiothixene). Increased risk of extrapyramidal symptoms (EPS) and neuroleptic malignant syndrome (NMS).
+• Serotonin Modulators: (e.g., almotriptan, dextromethorphan, eletriptan, frovatriptan, sumatriptan). May enhance dopamine blockade, increasing NMS risk, or enhance serotonergic effects leading to serotonin syndrome.
+• Sympathomimetics & Stimulants: (e.g., amphetamine, dexmethylphenidate, dopamine, epinephrine, norepinephrine). Fluphenazine may block the pressor response (resulting in severe hypotension) or interact with unknown mechanisms increasing risk of cardiac arrhythmias.
+
+Adverse Effects
+
+Frequency Not Defined
+• Confusion
+• Decreased gag reflex
+• Extrapyramidal symptoms: Akathisia, Dystonia, Dyskinesia, Muscle stiffness, Neuroleptic malignant syndrome (NMS; infrequent but serious), Parkinsonism, Tardive dyskinesia
+
+Common
+• Anticholinergic effects
+• Sedation
+• Weight gain
+• Erectile dysfunction
+• Oligomenorrhea or amenorrhea
+
+Less common
+• Orthostatic hypotension (after IM injection), tachycardia
+• Agitation, anxiety, cerebral edema, depression, dizziness, euphoria, headache, poikilothermia, restlessness, weakness
+• Anorexia, constipation, dyspepsia, ileus
+• Photosensitivity
+• Pruritus
+• Diarrhea
+• Blood dyscrasia
+• Galactorrhea
+• Ejaculatory disorder
+
+Rare
+• Seizure
+• Priapism
+• Cholestatic jaundice
+
+Warnings
+
+Black Box Warnings
+Patients with dementia-related psychosis who are treated with antipsychotic drugs are at increased risk for death, as shown in short-term controlled trials; deaths in these trials appeared to be either cardiovascular (eg, heart failure, sudden death) or infectious (eg, pneumonia) in nature. This drug is not approved for treatment of patients with dementia-related psychosis.
+
+Contraindications
+• Documented hypersensitivity
+• Coma, severe hypotension, severe central nervous system (CNS) depression, concurrent use of large amounts of CNS depressants, subcortical brain damage, poorly controlled seizure disorder
+• Blood dyscrasias, severe cardiovascular disease, patients receiving large doses of hypnotics, children <12 years (decanoate dosage form only)
+
+Cautions
+• Use caution in glaucoma, prostatic hypertrophy, stenosing peptic ulcer disease (PUD), history of NMS, Parkinson disease, hypocalcemia, renal or hepatic impairment, history of severe reaction to insulin or electroconvulsive therapy (ECT), history of seizures, asthma, respiratory tract infections, cardiovascular disease
+• May affect cardiac conduction, which may result in life-threatening arrhythmias
+• Mild leukocytosis, leukopenia, and eosinophilia occasionally occur
+• Dermatologic reactions are common
+• May cause pigmentary retinopathy, and lenticular and corneal deposits, especially in prolonged therapy
+• May impair core body temperature regulation; caution with strenuous exercise, dehydration, heat exposure, and concomitant medication possessing anticholinergic effects
+• CNS depression may impair physical or mental abilities; use caution operating heavy machinery
+• Watch for urinary retention, blurred vision, dry mouth, and constipation as result of anticholinergic effects
+• Risk of extrapyramidal symptoms (EPS), NMS, hypotension; hypotension may be particularly severe in patients with pheochromocytoma or mitral insufficiency
+• May need anticholinergic antiparkinsonian agent to counter EPS; in case of severe hypotension, use norepinephrine or phenylepinephrine, and do not use epinephrine or dopamine
+• Use caution in patients with urinary retention, paralytic ileus, decreased gastrointestinal motility, BPH, visual problems or xerostomia
+• Depresses hypothalamic thermoregulatory mechanism; exposure to extreme temperatures may cause hypo- or hyperthermia
+• May increase risk of falls, resulting from orthostatic hypotension, somnolence, and motor sensory instability; complete fall risk assessment patients on medications or with diseases that may increase fall risk
+• Use associated with increased prolactin levels; clinical significance in patients with breast cancer or other prolactin-dependent tumors unknown
+• US Food and Drug Administration (FDA) warning regarding off-label use for dementia in elderly
+
+Pregnancy & Lactation
+• Pregnancy category: C
+• Lactation: Drug enters breast milk; not recommended
+
+Pharmacology
+
+Mechanism of Action
+Phenothiazine; antagonizes dopaminergic D1 and D2 receptors; depresses release of hypothalamic and hypophyseal hormones
+
+Absorption
+• Bioavailability: Rapidly absorbed
+• Onset: Hydrochloride salt, 1 hr; decanoate, 24-72 hr
+• Duration: Hydrochloride salt, 6-8 hr; decanoate, 4 weeks
+• Peak plasma time: Hydrochloride salt, 2 hr; decanoate, 8-10 hr
+• Peak effect: Decanoate, 48-96 hr
+
+Elimination
+• Half-life: Hydrochloride salt, 14-16 hr; decanoate, 14 days
+• Excretion: Urine, feces
