@@ -15,6 +15,7 @@
 #   Python 3.12.14, Node 22.23.2 / npm 10.9.8, PostgreSQL 16 (postgres:16-alpine; verified 16.15)
 #   fastapi 0.142.2, uvicorn 0.54.0, pydantic 2.13.5, httpx 0.28.1,
 #   mcp 2.3.0 (MCPServer API), pgmpy 1.1.2, pytest 9.1.1,
+#   sqlalchemy 2.1.3, alembic 1.20.0, psycopg 3.3.6 (binary),
 #   ruff 0.16.10, mypy 2.4.0,
 #   react 19.3.0, vite 8.3.2, typescript 7.0.2,
 #   @vitejs/plugin-react 6.1.1, @playwright/test 1.63.0, @types/node 26.6.4
@@ -28,7 +29,7 @@ help:
 	@echo "make setup        # locked dependencies and development prerequisites"
 	@echo "make dev          # documented local stack (db + backend :8000 + web :5173)"
 	@echo "make stop         # stop the local stack"
-	@echo "make migrate      # explicit migration command (no migrations yet in S01)"
+	@echo "make migrate      # apply database migrations (DATABASE_URL or .env)"
 	@echo "make check        # formatting/lint/types/build, excluding network access"
 	@echo "make test-backend # backend tests (TEST=tests/http/test_health.py for a selector)"
 	@echo "make test-web     # web unit tests (no suite yet in S01)"
@@ -63,8 +64,7 @@ stop:
 	docker compose down
 
 migrate:
-	@echo "migrate: no migrations yet (S01 bootstrap; S02 adds the Alembic entry point)." >&2
-	@exit 1
+	set -a; if [ -f .env ]; then . ./.env; fi; cd backend && uv run alembic upgrade head
 
 check:
 	cd backend && uv run ruff format --check src tests
