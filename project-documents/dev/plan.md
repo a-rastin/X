@@ -18,7 +18,7 @@ Carry forward system-design.md §15: archive behavior, discarded-content retenti
 
 ### 1.4 Clinical content
 
-The content owner supplies versioned instruments, history/severity definitions, medication catalog/DDI data, network manifests, prompts, gates, templates, and expected examples. References below to medical sources, `BNs/`, particular BN numbers, source counts, and parsing examples are inherited drafting leads, not an inventory verified from the three baseline documents. Locate and verify supplied material before using it; missing content stays explicit. Do not invent clinical thresholds or executable placeholder networks.
+S08 authors and releases versioned experimental assessment instruments and examples from supplied sources without owner review, approval, sign-off or response dependencies. Other clinical content retains its existing review process. The content owner supplies history/severity definitions, medication catalog/DDI data, network manifests, prompts, gates, templates, and expected examples. References below to medical sources, `BNs/`, particular BN numbers, source counts, and parsing examples are inherited drafting leads, not an inventory verified from the three baseline documents. Locate and verify supplied material before using it; missing content stays explicit. Do not invent clinical thresholds or executable placeholder networks.
 
 ## 2. Product contract
 
@@ -230,15 +230,17 @@ Generation creation carries the expected source revision and returns `202` with 
 
 ## 5. Assessment and clinical-content contracts
 
-An assessment definition contains stable item IDs, source locators, version, permitted answers, required/conditional rules, period fields, completion rules, result rules, and independent examples. Do not evaluate arbitrary Python/JavaScript from JSON. Use a small allowlisted declarative rule set or explicit typed implementations per reviewed instrument; do not build a general rules platform.
+An assessment definition contains stable item IDs, source locators, version, permitted answers, required/conditional rules, period fields, completion rules, result rules, and independent examples. Do not evaluate arbitrary Python/JavaScript from JSON. Use a small allowlisted declarative rule set or explicit typed implementations per versioned instrument; do not build a general rules platform.
 
-`evaluate(definition, answers)` returns `{status, missing_item_ids, item_errors, scores, findings, definition_version}`. Partial/skipped answers have null unavailable scores. Keep observed negatives distinct from unanswered. The server is authoritative; the browser may preview the same approved rules, with contract fixtures preventing drift.
+`evaluate(definition, answers)` returns `{status, missing_item_ids, item_errors, scores, findings, definition_version}`. Partial/skipped answers have null unavailable scores. Keep observed negatives distinct from unanswered. The server is authoritative; the browser may preview the same validated rules, with contract fixtures preventing drift.
+
+For the experimental assessments in S08, the implementing agent selects form/time windows and documents source gaps, assumptions and experimental defaults. Schema/rule validation and independent reference examples determine release; reviewer identity, approval records and `awaiting_review` are not assessment-release requirements. These releases satisfy S09–S11 and later assessment dependencies without owner review. History, adverse-effect, DDI and question-package reviews retain their existing scope.
 
 Source-specific drafting instructions:
 
-- Diagnosis: represent the six criteria and their subconditions in `schizophrenia-criteria.md`; a symptom count alone cannot satisfy the full document. Include unknown and bypass behavior. Obtain reviewed threshold examples.
+- Diagnosis: represent the six criteria and their subconditions in `schizophrenia-criteria.md`; a symptom count alone cannot satisfy the full document. Include unknown and bypass behavior. Derive and validate independent threshold examples.
 - PANSS: source contains 30 items and subscale arithmetic. Fully answered all-1 fixture has positive 7, negative 7, general 16, total 30; all-7 has 49, 49, 112, 210. Do not initialize answers to 1. One missing required item suppresses the total. Any follow-up change formula must specify its denominator and zero case; no treatment threshold is inferred from score bands.
-- C-SSRS: select exact administration form and time windows for review. Ideation severity, intensity dimensions, behavior, and lethality remain separate; do not produce a composite risk score. Do not infer lower-level recorded answers from a higher-level answer. Draft branching and alerts for review rather than making unanswered items negative.
+- C-SSRS: select and document exact administration form and time windows in S08. Ideation severity, intensity dimensions, behavior, and lethality remain separate; do not produce a composite risk score. Do not infer lower-level recorded answers from a higher-level answer. Define and validate branching and alerts in S08 without owner review; keep unanswered items distinct from negative answers.
 - History: derive the minimum typed field inventory from approved question mappings, with explicit source provenance, dates/windows, tri-state values, and reconciliation. Drug regimen details excluded by FR-14 remain excluded even when source network drafts mention them; resolve that mismatch in model design.
 - Adverse effects: present/absent/not-assessed plus reviewed severity definitions. Existing BARS/SAS discussion is supporting source material, not permission to invent common severity bands or add mandatory full scales to FR-21.
 

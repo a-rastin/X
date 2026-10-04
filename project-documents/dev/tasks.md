@@ -114,57 +114,57 @@ The session IDs remain stable. Execute S25 before S24, S44 before S41, and the a
 
 **Verify/exit:** multi-tab browser case and restart recovery. Handoff documents revision ownership so later assessment pages use the same autosave path, not separate persistence mechanisms.
 
-### S08 — Draft assessment definitions and implement the evaluation interface
+### S08 — Define and release experimental assessments and implement the evaluation interface
 
 **Depends:** S00, S07. **Requirements:** FR-11–13, NFR-05. **Seams:** T2/T1. **Tests:** `BT/assessments/test_definitions.py`.
 
 **Read/files:** plan.md §5; all three assessment source documents; `content/assessments/`, `B/assessments/`, released-definition routes.
 
-1. Draft exact item/schema/period/branching/completeness/result definitions for owner review, with source hashes and uncertainty explicitly identified. Preserve C-SSRS paraphrase status.
+1. Author versioned item/schema/period/branching/completeness/result definitions from supplied sources, with source hashes and uncertainty explicitly identified. The implementing agent selects form/time-window choices and documents source gaps and experimental defaults without waiting for owner input. Preserve C-SSRS paraphrase status.
 2. At T2 implement validated definition loading and `evaluate(definition, answers)` using a tiny synthetic definition first. Red: unanswered/partial/complete/not-assessed are distinguishable and no missing answer becomes zero.
-3. Reject undeclared item IDs, invalid values, unknown rule operators and arbitrary executable expressions. Expose only released definitions through authenticated content routes; retain drafts for review.
-4. Prepare independent examples for S09–S11 and obtain owner review on the concrete forms/rules. Pending review blocks only the corresponding clinical form implementation; generic infrastructure can finish.
+3. Reject undeclared item IDs, invalid values, unknown rule operators and arbitrary executable expressions. Release definitions after schema/rule validation and passing independent reference examples, recording version, source hashes, assumptions and validation results. Expose released definitions through authenticated content routes; reviewer identity and approval records are not required for assessment release.
+4. Prepare independently derived examples for S09–S11 and verify the concrete forms/rules against them. Release each validated assessment package for its implementation session. Record gaps and chosen experimental defaults in the definitions and handoff; they do not create an owner-response dependency.
 
-**Exit:** executable definition contract and review packages exist. Mark this session's content gate awaiting_review until approved; do not use this session to invent treatment thresholds.
+**Exit:** executable definition contract and all three versioned assessment packages are released with passing validation/reference examples. S08 completes without any owner review, approval, sign-off, or response; neither S08 nor its assessment packages may be marked `awaiting_review`. The project is experimental, so implementation validation replaces owner approval for these assessments. This does not establish clinical validation or introduce treatment thresholds. This exception also governs S00's ledger and later assessment dependencies; other content-review gates retain their existing scope.
 
 ### S09 — Implement diagnosis, threshold warning, and bypass
 
-**Depends:** S08 diagnosis package approved; S07. **Requirements:** FR-11, FR-16. **Seams:** T2/T1/T9. **Tests:** `BT/assessments/test_diagnosis.py`, `e2e/diagnosis.spec.ts`.
+**Depends:** S08 diagnosis package released after validation; S07. **Requirements:** FR-11, FR-16. **Seams:** T2/T1/T9. **Tests:** `BT/assessments/test_diagnosis.py`, `e2e/diagnosis.spec.ts`.
 
-**Files/read:** reviewed definition, `schizophrenia-criteria.md`, plan.md §§2.2, 5; assessment evaluator and `W/features/assessments/diagnosis/`.
+**Files/read:** S08 released definition, `schizophrenia-criteria.md`, plan.md §§2.2, 5; assessment evaluator and `W/features/assessments/diagnosis/`.
 
-1. Red: approved qualifying worked case satisfies every required criterion; a case with only symptom count satisfied does not. Implement the reviewed full criterion logic and live preview.
+1. Red: source-derived qualifying worked case satisfies every required criterion; a case with only symptom count satisfied does not. Implement the S08-defined full criterion logic and live preview.
 2. Red: partial answers have no completed threshold result. Save incomplete work without mislabeling it as below threshold.
 3. Red: a completed below-threshold case continues only after an attributed warning acknowledgment tied to the assessed revision. Later relevant edits invalidate the acknowledgment.
 4. Red: bypass succeeds without any reason field, records actor/time/status, and survives resume. Implement UI that makes bypass distinct from completion and uses the shared autosave contract.
 
-**Verify/exit:** evaluator reference cases, direct HTTP enforcement, browser threshold/bypass/resume. There is no fabricated diagnostic probability.
+**Verify/exit:** evaluator reference cases, direct HTTP enforcement, browser threshold/bypass/resume.
 
 ### S10 — Implement PANSS without implicit minimum answers
 
-**Depends:** S08 PANSS approved; S07. **Requirements:** FR-12, FR-20. **Seams:** T2/T1/T9. **Tests:** `BT/assessments/test_panss.py`, `e2e/panss.spec.ts`.
+**Depends:** S08 PANSS released after validation; S07. **Requirements:** FR-12, FR-20. **Seams:** T2/T1/T9. **Tests:** `BT/assessments/test_panss.py`, `e2e/panss.spec.ts`.
 
-**Files/read:** `PANSS.md`, reviewed definition; evaluator, PANSS UI and saved answers.
+**Files/read:** `PANSS.md`, S08 released definition; evaluator, PANSS UI and saved answers.
 
 1. Red: fresh form has 30 unanswered items and null total; Skip persists `not_assessed`. Implement explicit selection only.
-2. Red: fully answered all-1 yields 7/7/16/30 and all-7 yields 49/49/112/210; implement approved arithmetic and value validation.
+2. Red: fully answered all-1 yields 7/7/16/30 and all-7 yields 49/49/112/210; implement source-defined arithmetic and value validation.
 3. Red: one missing required item suppresses total, invalid/out-of-range/noninteger input is rejected server-side, resumed answers preserve completeness.
-4. Show subscales/items, assessment window and prior encounter score as historical. Add only reviewed interpretation/change rules; do not derive a treatment gate from approximate score bands.
+4. Show subscales/items, assessment window and prior encounter score as historical. Add only S08-defined and validated interpretation/change rules; do not derive a treatment gate from approximate score bands.
 
 **Verify/exit:** independent literal fixtures, browser skip/partial/resume and source-version persistence. No default “1” values or hidden zero scores.
 
 ### S11 — Implement C-SSRS form and distinct results
 
-**Depends:** S08 C-SSRS approved; S07. **Requirements:** FR-13, FR-20. **Seams:** T2/T1/T9. **Tests:** `BT/assessments/test_cssrs.py`, `e2e/cssrs.spec.ts`.
+**Depends:** S08 C-SSRS released after validation; S07. **Requirements:** FR-13, FR-20. **Seams:** T2/T1/T9. **Tests:** `BT/assessments/test_cssrs.py`, `e2e/cssrs.spec.ts`.
 
-**Files/read:** `CSSRS.md`, owner-selected form/time windows, plan.md §5; C-SSRS evaluator/UI.
+**Files/read:** `CSSRS.md`, S08-selected form/time windows, plan.md §5; C-SSRS evaluator/UI.
 
-1. Red: all unanswered and skipped produce no assessed result; complete explicit negatives produce the reviewed no-ideation result. Implement selected branching/completeness.
-2. Red: reviewed worked example with level 3 endorsed gives severity 3 without auto-filling lower responses; intensity/behavior/lethality remain separate.
-3. Red: historical versus current answers retain their periods; incomplete required branch has missing-item guidance, not a guessed negative. Implement only approved alert logic.
+1. Red: all unanswered and skipped produce no assessed result; complete explicit negatives produce the S08-defined no-ideation result. Implement selected branching/completeness.
+2. Red: source-derived worked example with level 3 endorsed gives severity 3 without auto-filling lower responses; intensity/behavior/lethality remain separate.
+3. Red: historical versus current answers retain their periods; incomplete required branch has missing-item guidance, not a guessed negative. Implement the alert logic defined and validated in S08.
 4. Browser renders persistent review/urgent messages with text and keyboard access; switching pages/autosave cannot erase responses or turn a skip into zero.
 
-**Verify/exit:** source-approved examples, no composite risk score, direct HTTP value/period validation and browser resume.
+**Verify/exit:** independent source-derived examples, no composite risk score, direct HTTP value/period validation and browser resume.
 
 ### S12 — Draft and implement structured history and adverse effects
 

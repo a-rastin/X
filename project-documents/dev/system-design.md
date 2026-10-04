@@ -176,7 +176,7 @@ The signed snapshot records unchanged questions explicitly: their original and f
 
 ## 6. Clinical content and local drug interactions
 
-The content owner supplies exact DSM-5-TR criteria, PANSS/C-SSRS forms, scoring/completeness rules, structured history fields, adverse-effect severity categories, medication catalog and interaction data. Version the definitions and validate worked examples before release. Unanswered, partial, bypassed and not-assessed states must remain different from negative findings or minimum scores.
+For this experimental project, S08 authors and releases DSM-5-TR criteria, PANSS/C-SSRS forms and scoring/completeness rules from supplied sources, documenting form/time-window choices, source gaps and experimental assumptions. Assessment release requires schema/rule validation and independent worked examples, with no owner review, approval, sign-off or response dependency. The content owner supplies structured history fields, adverse-effect severity categories, medication catalog and interaction data. Version the definitions and validate worked examples before release. Unanswered, partial, bypassed and not-assessed states must remain different from negative findings or minimum scores.
 
 Medications are selected from the bundled demo catalog. A catalog entry may lack DDI coverage; show “coverage unavailable”. Free-text medication addition is not introduced as an extra feature. Evaluate each unordered drug pair once using the recorded medication set and pinned DDI version. Distinguish interaction found, explicitly covered with no listed interaction, and coverage unavailable. A missing database row alone cannot prove absence of an interaction.
 
@@ -432,7 +432,8 @@ The owner has resolved evidence semantics, draft privacy, addendum authorship an
 
 | Remaining input | Status or proposed handling |
 |---|---|
-| Clinical instruments, history schema, severity categories, prompts, networks, gates and templates | Content owner must supply versioned definitions and expected examples; no thresholds invented here |
+| Assessment instruments and scoring/completeness rules | S08 selects and documents experimental definitions from supplied sources and releases them after validation and independent examples; no owner review or response required |
+| History schema, severity categories, prompts, networks, gates and templates | Content owner must supply versioned definitions and expected examples; no thresholds invented here |
 | Archive handling of open drafts | Proposed read-only while archived and resumable after unarchive; not confirmed |
 | Discarded draft-content retention | Proposed retain committed artifacts for audit; physical retention policy not confirmed |
 | Physician printable-report permission | Proposed signed patient HTML access; administrator exports are explicitly required |
