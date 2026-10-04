@@ -36,6 +36,17 @@ S10 PANSS page state (plan.md §§2.2, 5; FR-12, FR-20; seams T2/T1):
 PANSS answers themselves travel through the existing S07
 ``PATCH /encounters/{id}`` autosave (``draft_data["panss"]["answers"]``);
 no new table, no new persistence mechanism, no migration.
+
+S11 C-SSRS page state (plan.md §§2.2, 5; FR-13, FR-20; seams T2/T1):
+
+- ``GET /encounters/{id}/cssrs`` — author-only live preview through the
+  same T2 ``evaluate()`` (no drift): answers, evaluation, definition
+  version, and revision. There is no acknowledgment, no bypass, no owner
+  review, no awaiting_review, no composite score, and no hidden zero.
+
+C-SSRS answers themselves travel through the existing S07
+``PATCH /encounters/{id}`` autosave (``draft_data["cssrs"]["answers"]``);
+no new table, no new persistence mechanism, no migration.
 """
 
 from __future__ import annotations
@@ -51,6 +62,7 @@ from pydantic import BaseModel
 from sqlalchemy.orm import Session
 
 from x_insight import contracts
+from x_insight.assessments import cssrs as cssrs_service
 from x_insight.assessments import diagnosis as diagnosis_service
 from x_insight.assessments import panss as panss_service
 from x_insight.assessments.released import RELEASED_TYPES, get_released_definition
@@ -325,6 +337,36 @@ def get_panss(
     assert isinstance(user, dict)
     encounter, state = panss_service.read_panss_for_author(session, encounter_id, user)
     return _panss_response(encounter, state, status_code=200)
+
+
+def _cssrs_response(
+    encounter: dict[str, Any],
+    state: dict[str, Any],
+    *,
+    status_code: int,
+) -> JSONResponse:
+    content: dict[str, Any] = {
+        "encounter": encounters_service.safe_encounter_reference(encounter),
+        "revision": int(encounter["revision"]),
+        "definition_version": state["definition_version"],
+        "answers": state["answers"],
+        "evaluation": state["evaluation"],
+    }
+    response = JSONResponse(status_code=status_code, content=content)
+    response.headers["ETag"] = contracts.format_etag(int(content["revision"]))
+    return response
+
+
+@router.get("/encounters/{encounter_id}/cssrs")
+def get_cssrs(
+    encounter_id: uuid.UUID, request: Request, session: Session = Depends(get_session)
+) -> JSONResponse:
+    user = _require_user(request, session)
+    if isinstance(user, JSONResponse):
+        return user
+    assert isinstance(user, dict)
+    encounter, state = cssrs_service.read_cssrs_for_author(session, encounter_id, user)
+    return _cssrs_response(encounter, state, status_code=200)
 
 
 @router.post("/encounters/{encounter_id}/diagnosis/bypass")

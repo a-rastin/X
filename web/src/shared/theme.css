@@ -502,6 +502,37 @@ body {
   font-size: 14px;
 }
 
+/* S11 C-SSRS panels: urgent (high_risk_alert) plus separate-dimension panels
+ * (intensity / behavior / lethality). Every panel pairs its state color with
+ * an explicit heading + text (never color alone), uses ink text on tinted
+ * backgrounds in both themes via the existing tokens, and stays visible
+ * until the server state changes — review/urgent information never
+ * disappears automatically. Severity, intensity, behavior, and lethality
+ * stay separate; no composite risk score is shown. */
+.xi-urgent-panel {
+  border: 1px solid var(--urgent);
+  border-left-width: 6px;
+  background: var(--urgent-bg);
+  color: var(--ink);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-4);
+  font-size: 14px;
+}
+
+.xi-cssrs-panel {
+  border: 1px solid var(--info);
+  border-left-width: 6px;
+  background: var(--info-bg);
+  color: var(--ink);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-4);
+  font-size: 14px;
+}
+
 .xi-radio-group {
   display: flex;
   gap: var(--space-4);

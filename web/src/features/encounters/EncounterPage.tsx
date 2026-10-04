@@ -4,8 +4,9 @@
  * URL). Physician-only guard complements the server 403; the server stays
  * authoritative. No placeholder medical recommendations: the S07 field is an
  * explicit working note stored as `draft_data.working_note`, S09 adds the
- * diagnosis checklist (`draft_data.diagnosis`), and S10 adds PANSS
- * (`draft_data.panss`) — later assessment pages extend `draft_data` keys
+ * diagnosis checklist (`draft_data.diagnosis`), S10 adds PANSS
+ * (`draft_data.panss`), and S11 adds C-SSRS (`draft_data.cssrs`) — later
+ * assessment pages extend `draft_data` keys
  * through the same autosave path (full object on each save).
  *
  * States: loading (GET), ready (editor + saving/saved/failed), conflict
@@ -29,6 +30,7 @@ import {
 } from "./api";
 import { DiagnosisSection } from "../assessments/diagnosis/DiagnosisSection";
 import { PanssSection } from "../assessments/panss/PanssSection";
+import { CssrsSection } from "../assessments/cssrs/CssrsSection";
 import { useAutosave } from "./useAutosave";
 
 type LoadState =
@@ -475,6 +477,12 @@ function EncounterWizard({
       />
 
       <PanssSection
+        encounterId={encounterId}
+        autosave={autosave}
+        onSessionExpired={sessionExpired}
+      />
+
+      <CssrsSection
         encounterId={encounterId}
         autosave={autosave}
         onSessionExpired={sessionExpired}
