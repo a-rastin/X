@@ -1,13 +1,15 @@
-"""Cases storage: patients + encounters (S06, plan.md §4.1).
+"""Cases storage: patients + encounters (S06-S07, plan.md §4.1).
 
 Patients: UUID, globally unique ten-digit text identifier (TEXT, never
 numeric — leading zeros round-trip, including among archived rows), names,
 sex, age, clinical status, optional phone, archive flag, revision, UTC
-timestamps. Encounters: UUID, patient FK, kind (``registration`` in S06),
+timestamps. Encounters: UUID, patient FK, kind (``registration``/``follow_up``),
 author FK (``users.id``), lifecycle (``draft``/``signed``/``discarded``),
-revision, UTC timestamps. The partial unique index
-``one_open_draft_per_patient`` enforces at most one open draft per patient
-(plan §2.3); migration ``0004`` owns the DDL, this module is the read model
+revision, UTC timestamps, plus S07's ``draft_data`` JSONB clinical body (always
+a JSON object, ``'{}'`` by default — the author's private autosave content).
+The partial unique index ``one_open_draft_per_patient`` enforces at most one
+open draft per patient (plan §2.3); migration ``0004`` owns the base DDL,
+migration ``0005`` owns ``draft_data``, this module is the read model
 for queries (no migrations here).
 """
 
@@ -25,6 +27,7 @@ from sqlalchemy import (
     Table,
     Text,
 )
+from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.dialects.postgresql import UUID as PG_UUID
 
 metadata = MetaData()
@@ -74,6 +77,10 @@ encounters = Table(
     Column("created_at", DateTime(timezone=True), nullable=False),
     Column("updated_at", DateTime(timezone=True), nullable=False),
     Column("revision", Integer, nullable=False, default=1),
+    # S07 private autosave body: always a JSON object ('{}' for fresh drafts).
+    # Lifecycle stays the persistence state; no calculation/readiness column
+    # is added here (plan §2.3 keeps them distinct).
+    Column("draft_data", JSONB, nullable=False, default=dict),
     CheckConstraint("kind IN ('registration', 'follow_up')", name="ck_encounters_kind"),
     CheckConstraint(
         "lifecycle IN ('draft', 'signed', 'discarded')", name="ck_encounters_lifecycle"

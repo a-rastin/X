@@ -242,7 +242,7 @@ def test_migration_records_single_head_version(migrated_test_engine) -> None:
     from x_insight import db as db_module
 
     with migrated_test_engine.connect() as connection:
-        assert db_module.get_applied_versions(connection) == ["0004"]
+        assert db_module.get_applied_versions(connection) == ["0005"]
 
 
 def test_ready_ok_against_real_database(
@@ -258,7 +258,7 @@ def test_ready_ok_against_real_database(
     payload = response.json()
     assert payload["status"] == "ready"
     assert payload["service"] == "x-insight"
-    assert payload["schema_version"] == "0004"
+    assert payload["schema_version"] == "0005"
     moment = contracts.parse_utc(payload["checked_at"])
     assert moment.tzinfo is not None
     assert response.headers["x-request-id"] == sent
@@ -475,7 +475,7 @@ def test_ready_ok_body_shape_against_real_database(
     payload = response.json()
     assert payload["status"] == "ready"
     assert payload["service"] == "x-insight"
-    assert payload["schema_version"] == "0004"
+    assert payload["schema_version"] == "0005"
     assert payload["checked_at"].endswith("Z")
     moment = contracts.parse_utc(payload["checked_at"])
     assert moment.tzinfo is not None

@@ -38,6 +38,7 @@ interface Success {
   identifier: string;
   serverTimestamp: string;
   revision: number;
+  draftId: string;
 }
 
 export function RegistrationPage() {
@@ -122,6 +123,7 @@ function RegistrationForm() {
         identifier: result.patient.identifier,
         serverTimestamp: result.server_timestamp,
         revision: result.revision,
+        draftId: result.draft.id,
       });
       setFields(EMPTY);
       setTouched({});
@@ -191,10 +193,20 @@ function RegistrationForm() {
           valid.
         </p>
         {success !== null && (
-          <p className="xi-status" role="status">
-            Patient {success.identifier} registered. Server time{" "}
-            {success.serverTimestamp}, revision {success.revision}.
-          </p>
+          <div>
+            <p className="xi-status" role="status">
+              Patient {success.identifier} registered. Server time{" "}
+              {success.serverTimestamp}, revision {success.revision}.
+            </p>
+            <p>
+              <a
+                className="xi-btn xi-btn-primary"
+                href={`#/encounters/${success.draftId}`}
+              >
+                Open registration draft
+              </a>
+            </p>
+          </div>
         )}
         <form aria-label="Register patient" onSubmit={handleSubmit} noValidate>
           <div className="xi-field">

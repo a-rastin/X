@@ -2,8 +2,10 @@
 
 S06 owns patient registration and directory search here
 (:mod:`x_insight.cases.patients`, HTTP in :mod:`x_insight.cases.router`,
-storage below, migration ``0004``). Draft editing, signing, notes, and
-follow-up encounters land in later sessions without changing this contract.
+storage below, migration ``0004``). S07 adds author-owned draft editing
+(:mod:`x_insight.cases.encounters`: save/read/discard plus single-slot
+creation, migration ``0005``). Signing, notes, and follow-up chart work land
+in later sessions without changing this contract.
 """
 
 from __future__ import annotations

@@ -8,9 +8,10 @@
  * a registration entry point; administrators get a read-only view.
  */
 
-import { useCallback, useEffect, useId, useState } from "react";
+import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { ApiError } from "../identity/api";
 import { useAuth } from "../identity/auth";
+import { createEncounter, encounterHash } from "../encounters/api";
 import {
   DIRECTORY_PAGE_SIZE,
   listPatients,
@@ -45,6 +46,9 @@ export function PatientDirectory() {
   const [statusFilter, setStatusFilter] = useState<ClinicalStatusFilter>("all");
   const [offset, setOffset] = useState(0);
   const [state, setState] = useState<LoadState>({ kind: "loading" });
+  const [draftBusy, setDraftBusy] = useState<string | null>(null);
+  const [draftError, setDraftError] = useState<string | null>(null);
+  const draftErrorRef = useRef<HTMLParagraphElement>(null);
 
   // Debounce free-text search so each keystroke is not a request; the
   // status filter and pager apply immediately.
@@ -99,6 +103,43 @@ export function PatientDirectory() {
     state.kind === "ready" || state.kind === "refreshing" ? state.data : null;
   const from = data === null || data.total === 0 ? 0 : data.offset + 1;
   const to = data === null ? 0 : Math.min(data.offset + data.items.length, data.total);
+
+  useEffect(() => {
+    if (draftError !== null) {
+      draftErrorRef.current?.focus();
+    }
+  }, [draftError]);
+
+  async function startFollowUp(patientId: string): Promise<void> {
+    if (draftBusy !== null) {
+      return;
+    }
+    setDraftError(null);
+    setDraftBusy(patientId);
+    try {
+      const result = await createEncounter(patientId, "follow_up");
+      window.location.hash = encounterHash(result.encounter.id);
+    } catch (err) {
+      if (err instanceof ApiError && err.status === 401) {
+        sessionExpired();
+        return;
+      }
+      if (err instanceof ApiError && err.status === 409) {
+        // Generic slot conflict: no author, no clinical content.
+        setDraftError(
+          "An open draft already exists for this patient. Ask its author to resume it.",
+        );
+        return;
+      }
+      setDraftError(
+        err instanceof ApiError
+          ? err.message
+          : "Could not start a follow-up draft. Check the connection and retry.",
+      );
+    } finally {
+      setDraftBusy(null);
+    }
+  }
 
   return (
     <section className="xi-card" aria-labelledby={`${uid}-heading`}>
@@ -168,6 +209,16 @@ export function PatientDirectory() {
           </button>
         </div>
       )}
+      {draftError !== null && (
+        <p
+          className="xi-form-error"
+          role="alert"
+          tabIndex={-1}
+          ref={draftErrorRef}
+        >
+          {draftError}
+        </p>
+      )}
       {data !== null &&
         (data.total === 0 ? (
           <p>No patients found.</p>
@@ -182,6 +233,7 @@ export function PatientDirectory() {
                   <th scope="col">Sex</th>
                   <th scope="col">Age</th>
                   <th scope="col">Status</th>
+                  {canRegister && <th scope="col">Draft</th>}
                 </tr>
               </thead>
               <tbody>
@@ -193,6 +245,21 @@ export function PatientDirectory() {
                     <td>{patient.sex}</td>
                     <td>{patient.age}</td>
                     <td>{statusLabel(patient.clinical_status)}</td>
+                    {canRegister && (
+                      <td>
+                        <button
+                          className="xi-btn xi-btn-secondary"
+                          type="button"
+                          disabled={draftBusy !== null}
+                          onClick={() => void startFollowUp(patient.id)}
+                          aria-label={`Start follow-up draft for ${patient.identifier}`}
+                        >
+                          {draftBusy === patient.id
+                            ? "Starting…"
+                            : "Start follow-up"}
+                        </button>
+                      </td>
+                    )}
                   </tr>
                 ))}
               </tbody>

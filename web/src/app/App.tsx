@@ -1,10 +1,18 @@
+import React from "react";
 import { useAuth } from "../features/identity/auth";
 import { LoginPage } from "../features/identity/LoginPage";
 import { ResearchWarningGate } from "../features/identity/ResearchWarning";
 import { ThemeToggle } from "../features/identity/ThemeToggle";
+import { EncounterPage } from "../features/encounters/EncounterPage";
 import { PatientsPage } from "../features/patients/DirectoryPage";
 import { RegistrationPage } from "../features/patients/RegistrationForm";
-import { useRoute, routeToHash, type Route } from "./router";
+import { shouldBlockNavigation } from "./navigationGuard";
+import {
+  encounterIdFromHash,
+  useRoute,
+  routeToHash,
+  type Route,
+} from "./router";
 import {
   AccountPage,
   AdminDashboard,
@@ -18,9 +26,9 @@ function NavLink({
   navigate,
   children,
 }: {
-  route: Route;
+  route: Exclude<Route, "encounter">;
   current: Route;
-  navigate: (route: Route) => void;
+  navigate: (route: Exclude<Route, "encounter">) => void;
   children: React.ReactNode;
 }) {
   return (
@@ -29,12 +37,44 @@ function NavLink({
       aria-current={current === route ? "page" : undefined}
       onClick={(event) => {
         event.preventDefault();
+        // In-app hash-route guard: unsaved draft edits warn before leaving.
+        if (shouldBlockNavigation()) {
+          return;
+        }
         navigate(route);
       }}
     >
       {children}
     </a>
   );
+}
+
+function EncounterRoute() {
+  const [hash, setHash] = React.useState(() =>
+    typeof window !== "undefined" ? window.location.hash : "",
+  );
+  React.useEffect(() => {
+    const onChange = () => setHash(window.location.hash);
+    window.addEventListener("hashchange", onChange);
+    return () => window.removeEventListener("hashchange", onChange);
+  }, []);
+  const encounterId = encounterIdFromHash(hash);
+  if (encounterId === null) {
+    return (
+      <div>
+        <h2 className="xi-page-title">Encounter draft</h2>
+        <p className="xi-form-error" role="alert">
+          Missing draft id. Open a draft from the patient directory.
+        </p>
+        <p>
+          <a className="xi-btn xi-btn-secondary" href="#/patients">
+            Back to directory
+          </a>
+        </p>
+      </div>
+    );
+  }
+  return <EncounterPage key={encounterId} encounterId={encounterId} />;
 }
 
 export function App() {
@@ -115,6 +155,9 @@ export function App() {
             )}
             {!showWarningGate && route === "patients" && <PatientsPage />}
             {!showWarningGate && route === "patients-new" && <RegistrationPage />}
+            {!showWarningGate && route === "encounter" && (
+              <EncounterRoute />
+            )}
             {!showWarningGate && route === "physicians" && <PhysiciansPage />}
             {!showWarningGate && route === "account" && <AccountPage />}
           </>
