@@ -4,13 +4,13 @@
            version="1.0">
   <xs:annotation>
     <xs:documentation xml:lang="en"><![CDATA[
-XMLBIF 0.3 — CDSS authoring profile, revision 1 (2026-09-16)
+XMLBIF 0.3 — Experimental and educational authoring profile, revision 2 (2026-10-04)
 
 PURPOSE AND USE
 This file is an XML Schema 1.0 validator, despite its requested .xml suffix.
-It validates future XMLBIF documents, not the clinical content of a network.
-One NETWORK per clinical question is recommended; multiple NETWORK elements
-may share a BIF document. No clinical networks or probabilities are supplied.
+It validates XMLBIF structure for experimental and educational networks.
+One NETWORK per question is recommended; multiple NETWORK elements may share
+a BIF document. This schema supplies no networks or probabilities.
 Instance elements have no namespace. Validate explicitly, for example:
   xmllint --nonet --noout --schema schema.xml model.xmlbif
 Alternatively set xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" and
@@ -30,7 +30,7 @@ This is a deliberately stricter authoring subset, not an exact DTD translation:
   those identifiers need consistent renaming to validate against this profile.
 * Each DEFINITION has exactly one FOR and one nonempty TABLE. The original
   permits repeated TABLE elements with last-table-wins semantics; this profile
-  rejects them to avoid silent replacement of clinical parameters.
+  rejects them to avoid silent replacement of experimental parameters.
 * Tables contain finite IEEE-754 double values in decimal/scientific notation.
   Negative utility values are allowed; NaN, infinities and overflow are not.
 * Network names are unique per document; variable names and definition targets
@@ -40,7 +40,7 @@ NETWORK children after NAME, VARIABLE children after NAME, and DEFINITION
 children may be interleaved. GIVEN and OUTCOME order remain semantically
 significant. PROPERTY remains arbitrary Unicode text, with no custom tags.
 
-CORPUS ANALYSIS AND MODELING CONSEQUENCES
+BACKGROUND SOURCES AND EXPERIMENTAL MODELING
 medical-knowledge/02-md/guideline-statement-summary.md, sections Assessment
 and Determination of Treatment Plan, Pharmacotherapy, and Psychosocial
 Interventions, distinguishes 24 statements. Standalone STATEMENT-01.md through
@@ -49,53 +49,49 @@ antipsychotic selection/continuation, clozapine, LAIs, and movement adverse
 effects. Appendix-C.md includes evidence sections for statements 1 through 24;
 Appendix-D.md has intervention-specific strength-of-evidence tables. Glossary,
 acronyms, development process and appendices are supporting sources, not each
-a separate clinical question. The schema therefore does not enumerate a fixed
-set of network names, drugs, diagnoses, scales, states or treatment thresholds.
+a separate question. These sources provide optional background attribution;
+their electronic-decision-support restrictions do not gate experiments in
+this educational application. The schema does not enumerate a fixed set of
+network names, drugs, diagnoses, scales, states or treatment thresholds.
 
-STATEMENT-02.md, Implementation: scales, observers and observation windows
-differ. Store instrument/version, units, time window and discretization in
-variable properties; do not turn a score into a diagnosis by schema fiat.
-STATEMENT-03.md, Implementation and Aims of Treatment Planning: person-centered
-planning includes preferences and changing treatment context. Accordingly,
-nature, decision and utility variables are all supported. An observed treatment
+Scenario inputs may be synthetic, manually supplied or simulated. Supporting
+clinical records, instruments, dated assessments and clinician verification
+are optional, rather than input prerequisites. Observations are optional;
+a parameterized model may infer with a subset of observations or none.
+
+Priors and CPTs may be supplied manually, generated for a synthetic example
+or estimated by an LLM, then adjusted for the experiment. Fixed clinician-review
+mappings are not required. Output names describe experimental topics; their
+conditional distributions are supplied per run. Ordered proposed_parent
+properties preserve draft edges until a DEFINITION with corresponding ordered
+GIVEN elements and a complete TABLE is supplied. Generic XMLBIF importers do
+not interpret proposed_parent properties as edges.
+
+Nature, decision and utility variables are all supported. An observed treatment
 is a nature variable; a controllable action in an influence diagram is decision.
-A deterministic guideline rule is a nature variable with a deterministic CPT,
-not automatically an influence-diagram decision node. A posterior probability
-of an action is not an expected-utility recommendation.
-
-Guideline-Development-Process.md, Rating the Strength of Supporting Research
-Evidence and Rating the Strength of Guideline Statements: the 1/2 recommendation
-strength and A/B/C evidence rating are distinct. Preserve both as metadata;
-neither is a patient probability. Appendix-C.md, STATEMENT 4 and Table C-1,
-and Appendix-D.md, Table D-1: aggregate effect estimates need population,
-comparator and time-horizon information before any conversion to CPT values.
-STATEMENT-04.md, Tables 5 and 6: receptor-affinity and side-effect symbols are
-ordinal descriptions, not probability values.
-
-wiki/concepts/BN model structure for clinical decisions.md, TreLynCa's fourth
-type and Identifier grammar: PD/A/ED/DD are clinical roles, not XMLBIF TYPE
-values. They may be recorded in PROPERTY; their oncology-specific edge rules
-are not imposed on psychiatric networks. wiki/concepts/Clinical terminology
-and identifiers.md, The reconciliation used later: keep readable labels and
-verified terminology codes separate from stable machine identifiers.
-wiki/concepts/Conditional probability tables.md, Elicitation, and
-wiki/concepts/Quantitative model validation.md, Limitations carried forward:
-parameter provenance and independent validation remain separate requirements.
+A posterior probability of an action is distinct from an expected-utility
+recommendation. Optional recommendation-strength and evidence-quality metadata
+are source annotations, not probability values. Historical source-category
+lookups are examples of ordinal drug attributes, not patient event probabilities.
 
 OPTIONAL PROPERTY CONVENTION (DESIGN PROPOSAL, NOT XSD-ENFORCED)
 Use one key=value entry per PROPERTY; repeat source entries when needed.
-Network: clinical_question, source_path, source_locator, source_sha256,
+Network: clinical_question, use_context, input_policy, parameter_policy,
+inference_mode, graph_semantics, edge_encoding, execution_contract,
+source_policy, source_path, source_locator, source_sha256,
 source_version, statement_id, recommendation_strength, evidence_quality,
 population, setting, time_horizon, model_version, validation_status.
 Variable: label, clinical_role, definition, terminology_system,
 terminology_code, instrument, units, time_window, discretization,
-missingness_policy, source_path, source_locator.
+missingness_policy, proposed_parent, parameter_status, required_table_entries,
+source_path, source_locator.
 Definition: parameter_method, parameter_status, source_path, source_locator,
 population, time_horizon, elicitation_date, reviewer, uncertainty_description.
 For example: source_path=medical-knowledge/02-md/STATEMENT-07.md and
 source_locator=Identification of Treatment-Resistant Schizophrenia.
-Use source_reported, elicited or modeler_assumption in parameter_method to
-distinguish evidence from inference; never invent a terminology code or locator.
+parameter_method may describe manual, synthetic, llm_estimated, source_reported
+or elicited values. Source and reviewer fields are optional. Source annotations
+remain separate from experiment-specific assumptions and estimates.
 These keys are advisory. PROPERTY syntax, presence, clinical meaning, and
 source freshness are not checked here. Doses and monitoring schedules from
 the historical guideline are not embedded as current prescribing rules.
@@ -114,13 +110,14 @@ CHECKS REQUIRED OUTSIDE THIS XSD BEFORE INFERENCE
    following declaration order. Each conditional row must lie in [0,1] and
    sum to 1 within a documented tolerance. Utility tables have one real value
    per parent configuration and are not normalized as probabilities.
-5. Do not fill unknown CPTs with arbitrary uniform values to pass validation.
-   A named but empty NETWORK or an undefined nature variable can pass this
-   format validator; neither is a complete executable model.
-6. Missing patient evidence normally means no observation is entered, not a
-   disease OUTCOME named unknown. Model an explicit missingness/measurement
-   state only when its meaning and parameters are defined. Record evidence
-   separately; XMLBIF 0.3 has no standard patient-observation element.
+5. Draft networks may omit CPTs during authoring. Before execution, supply
+   complete tables, including root priors, using the experiment's chosen
+   parameter method. Synthetic or uniform examples are allowed. A named but
+   empty NETWORK or an undefined nature variable can pass this format validator;
+   neither is a complete executable model.
+6. An unspecified scenario input means no observation is entered. A complete
+   model can infer without observing every input. Scenario observations are
+   supplied separately; XMLBIF 0.3 has no standard observation element.
 ]]></xs:documentation>
   </xs:annotation>
 

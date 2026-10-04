@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<BIF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="0.3" xsi:noNamespaceSchemaLocation="../schema.xml">
+<BIF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="0.3" xsi:noNamespaceSchemaLocation="schema.xml">
   <NETWORK>
     <NAME>Statement11_AcuteDystonia_Research</NAME>
-    <PROPERTY>clinical_question=Which clinician reviews are relevant to antipsychotic-associated acute dystonia, airway concerns, medication harms and post-resolution recurrence prevention?</PROPERTY>
+    <PROPERTY>clinical_question=How do scenario factors affect experimental acute-dystonia treatment and recurrence-prevention results?</PROPERTY>
     <PROPERTY>statement_id=11</PROPERTY>
     <PROPERTY>recommendation_strength=1</PROPERTY>
     <PROPERTY>evidence_quality=C</PROPERTY>
@@ -10,38 +10,39 @@
     <PROPERTY>source_locator=STATEMENT 11: Anticholinergic Medications for Acute Dystonia; Implementation; Quality Measurement Considerations</PROPERTY>
     <PROPERTY>source_sha256=626e38cff8c805b8fcb5ac7a9408cc717d9f96206003a6192a1b4d68465421eb</PROPERTY>
     <PROPERTY>source_version=APA schizophrenia guideline 2020; local Markdown derivative; original PDF not independently verified</PROPERTY>
-    <PROPERTY>model_version=0.1</PROPERTY>
+    <PROPERTY>model_version=0.2.0</PROPERTY>
     <PROPERTY>created=2026-09-16</PROPERTY>
-    <PROPERTY>population=Adult clinician-led antipsychotic adverse-effect review; modeler-proposed scope</PROPERTY>
-    <PROPERTY>setting=Research authoring only; not deployed CDSS or emergency triage</PROPERTY>
-    <PROPERTY>time_horizon=Current dated clinical assessment and distinct post-resolution review; no prospective outcome horizon</PROPERTY>
-    <PROPERTY>validation_status=UNPARAMETERIZED_NOT_FOR_CLINICAL_INFERENCE</PROPERTY>
-    <PROPERTY>inference_allowed=false</PROPERTY>
-    <PROPERTY>deployment_allowed=false</PROPERTY>
-    <PROPERTY>guideline_cdss_restriction=Quality Measurement Considerations explicitly states this statement is not appropriate for electronic clinical decision support or quality measurement</PROPERTY>
-    <PROPERTY>parameter_policy=Eight input priors intentionally missing; no invented probabilities or default uniform distributions</PROPERTY>
-    <PROPERTY>parameter_inventory=8 missing root distributions; 17 entries under provisional independent-root structure; 4 deterministic review definitions</PROPERTY>
-    <PROPERTY>graph_semantics=Author-proposed review mappings, not disease causation, diagnosis, treatment effect, efficacy ranking or utility optimization</PROPERTY>
-    <PROPERTY>root_independence=Provisional only; correlated inputs and measurement error require review before any priors are supplied</PROPERTY>
-    <PROPERTY>execution_contract=Importer must reject this incomplete joint model for inference and must never supply default priors. PROPERTY flags are advisory, not runtime enforcement</PROPERTY>
-    <PROPERTY>missingness_policy=Absent data remain unobserved, never default to Absent, No, NotEstablished or Resolved; no partial-evidence inference supplied</PROPERTY>
-    <PROPERTY>display_contract=All review outputs and individual clinical concerns remain visible in parallel. Airway concerns must be handled independently of diagnosis confirmation and model execution</PROPERTY>
-    <PROPERTY>clinical_limit=No automatic prescribing, withholding, dose, route, duration, stopping, routine prophylaxis or treatment-response prediction</PROPERTY>
-    <PROPERTY>evidence_contract=Clinician-verified dated inputs only; derived nodes are not independent observations. PriorEpisode association refers to the same episode as AcuteDystoniaEpisodePhase</PROPERTY>
+    <PROPERTY>population=Adult schizophrenia and antipsychotic-treatment scenarios for experimentation</PROPERTY>
+    <PROPERTY>setting=Experimental and educational application</PROPERTY>
+    <PROPERTY>time_horizon=Current scenario; follow-up intervals may be selected for the experiment</PROPERTY>
+    <PROPERTY>validation_status=EXPERIMENTAL_TEMPLATE_REQUIRES_CPTS</PROPERTY>
+    <PROPERTY>parameter_policy=Supply priors and CPTs per experiment using manual values, synthetic examples or LLM estimates; all CPT values are adjustable, including source-lookup examples</PROPERTY>
+    <PROPERTY>parameter_inventory=12 run-specific distributions to supply; 0 editable source-lookup examples supplied</PROPERTY>
+    <PROPERTY>graph_semantics=Experimental dependencies with run-specific CPTs; output labels identify topics rather than fixed clinician-review rules</PROPERTY>
+    <PROPERTY>root_independence=Root independence is a provisional structural assumption for the experiment</PROPERTY>
+    <PROPERTY>execution_contract=Before execution, supply all nature-node distributions and validate table sizes, finite values, probability bounds and row normalization</PROPERTY>
+    <PROPERTY>missingness_policy=Unspecified scenario values remain unobserved; inference may use any subset of observations once the CPTs are complete</PROPERTY>
+    <PROPERTY>use_context=experimental_educational</PROPERTY>
+    <PROPERTY>inference_mode=after_complete_cpt_validation</PROPERTY>
+    <PROPERTY>scope=Educational exploration of scenario-based treatment proposals and network results</PROPERTY>
+    <PROPERTY>input_policy=Scenario values may be synthetic, manually supplied or simulated; observations are optional and supporting clinical documentation is not required</PROPERTY>
+    <PROPERTY>edge_encoding=Ordered proposed_parent properties retain parents for omitted CPTs; materialize them as ordered GIVEN elements when adding a DEFINITION</PROPERTY>
+    <PROPERTY>source_policy=Source metadata is optional background attribution and does not gate experimental electronic decision support</PROPERTY>
     <VARIABLE TYPE="nature">
       <NAME>AirwayConcern</NAME>
       <PROPERTY>label=Airway Concern</PROPERTY>
       <OUTCOME>Present</OUTCOME>
       <OUTCOME>Absent</OUTCOME>
-      <PROPERTY>definition=Clinician-observed or suspected airway compromise, including possible laryngeal dystonia. Absence requires assessment; this is not a diagnosis of laryngospasm.</PROPERTY>
-      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>definition=Airway compromise or suspected airway difficulty represented in the scenario, including possible laryngeal dystonia.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-11.md</PROPERTY>
       <PROPERTY>source_locator=Implementation; Harms; Patient Preferences; Balancing of Benefits and Harms</PROPERTY>
       <PROPERTY>source_sha256=626e38cff8c805b8fcb5ac7a9408cc717d9f96206003a6192a1b4d68465421eb</PROPERTY>
-      <PROPERTY>time_window=Current dated assessment; recent episode linkage retained separately</PROPERTY>
-      <PROPERTY>missingness_policy=Unrecorded evidence stays unobserved; assessed states are not missing-data codes</PROPERTY>
-      <PROPERTY>parameter_status=missing_prior</PROPERTY>
-      <PROPERTY>parameter_requirement=2 prior entries after dependency and measurement review; documented data or expert elicitation required</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>AcuteDystoniaEpisodePhase</NAME>
@@ -49,105 +50,112 @@
       <OUTCOME>Active</OUTCOME>
       <OUTCOME>Resolved</OUTCOME>
       <OUTCOME>NoEpisode</OUTCOME>
-      <PROPERTY>definition=Current episode active, recent episode clinically resolved, or assessed absence of a relevant acute-dystonia episode. Resolved does not mean proven treatment success attributable to a drug.</PROPERTY>
-      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>definition=Active, resolved or absent acute-dystonia episode represented in the scenario.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-11.md</PROPERTY>
       <PROPERTY>source_locator=Implementation; Harms; Patient Preferences; Balancing of Benefits and Harms</PROPERTY>
       <PROPERTY>source_sha256=626e38cff8c805b8fcb5ac7a9408cc717d9f96206003a6192a1b4d68465421eb</PROPERTY>
-      <PROPERTY>time_window=Current dated assessment; recent episode linkage retained separately</PROPERTY>
-      <PROPERTY>missingness_policy=Unrecorded evidence stays unobserved; assessed states are not missing-data codes</PROPERTY>
-      <PROPERTY>parameter_status=missing_prior</PROPERTY>
-      <PROPERTY>parameter_requirement=3 prior entries after dependency and measurement review; documented data or expert elicitation required</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>required_table_entries=3</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>AcuteDystoniaAntipsychoticAssociation</NAME>
       <PROPERTY>label=Acute Dystonia Antipsychotic Association</PROPERTY>
       <OUTCOME>Established</OUTCOME>
       <OUTCOME>NotEstablished</OUTCOME>
-      <PROPERTY>definition=Clinician assessment of association of the same current/recent episode with antipsychotic therapy, considering timing and differential diagnoses. NotEstablished is an assessed conclusion, not missing documentation.</PROPERTY>
-      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>definition=Association between the scenario acute-dystonia episode and antipsychotic exposure.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-11.md</PROPERTY>
       <PROPERTY>source_locator=Implementation; Harms; Patient Preferences; Balancing of Benefits and Harms</PROPERTY>
       <PROPERTY>source_sha256=626e38cff8c805b8fcb5ac7a9408cc717d9f96206003a6192a1b4d68465421eb</PROPERTY>
-      <PROPERTY>time_window=Current dated assessment; recent episode linkage retained separately</PROPERTY>
-      <PROPERTY>missingness_policy=Unrecorded evidence stays unobserved; assessed states are not missing-data codes</PROPERTY>
-      <PROPERTY>parameter_status=missing_prior</PROPERTY>
-      <PROPERTY>parameter_requirement=2 prior entries after dependency and measurement review; documented data or expert elicitation required</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>AnticholinergicSafetyConcern</NAME>
       <PROPERTY>label=Anticholinergic Safety Concern</PROPERTY>
       <OUTCOME>Present</OUTCOME>
       <OUTCOME>Absent</OUTCOME>
-      <PROPERTY>definition=Clinician identifies patient-specific anticholinergic adverse effects or susceptibility needing review, including cognitive, urinary, bowel, ocular, cardiac and thermoregulatory concerns. Preserve specifics; no blanket glaucoma exclusion.</PROPERTY>
-      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>definition=Scenario concern about cognitive, urinary, bowel, ocular, cardiac, thermoregulatory or other anticholinergic effects.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-11.md</PROPERTY>
       <PROPERTY>source_locator=Implementation; Harms; Patient Preferences; Balancing of Benefits and Harms</PROPERTY>
       <PROPERTY>source_sha256=626e38cff8c805b8fcb5ac7a9408cc717d9f96206003a6192a1b4d68465421eb</PROPERTY>
-      <PROPERTY>time_window=Current dated assessment; recent episode linkage retained separately</PROPERTY>
-      <PROPERTY>missingness_policy=Unrecorded evidence stays unobserved; assessed states are not missing-data codes</PROPERTY>
-      <PROPERTY>parameter_status=missing_prior</PROPERTY>
-      <PROPERTY>parameter_requirement=2 prior entries after dependency and measurement review; documented data or expert elicitation required</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>OlderAgeVulnerability</NAME>
       <PROPERTY>label=Older Age Vulnerability</PROPERTY>
       <OUTCOME>Present</OUTCOME>
       <OUTCOME>Absent</OUTCOME>
-      <PROPERTY>definition=Clinician-assessed age-related vulnerability, without an invented numeric age threshold.</PROPERTY>
-      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>definition=Age-related vulnerability represented in the scenario.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-11.md</PROPERTY>
       <PROPERTY>source_locator=Implementation; Harms; Patient Preferences; Balancing of Benefits and Harms</PROPERTY>
       <PROPERTY>source_sha256=626e38cff8c805b8fcb5ac7a9408cc717d9f96206003a6192a1b4d68465421eb</PROPERTY>
-      <PROPERTY>time_window=Current dated assessment; recent episode linkage retained separately</PROPERTY>
-      <PROPERTY>missingness_policy=Unrecorded evidence stays unobserved; assessed states are not missing-data codes</PROPERTY>
-      <PROPERTY>parameter_status=missing_prior</PROPERTY>
-      <PROPERTY>parameter_requirement=2 prior entries after dependency and measurement review; documented data or expert elicitation required</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>OtherAnticholinergicBurden</NAME>
       <PROPERTY>label=Other Anticholinergic Burden</PROPERTY>
       <OUTCOME>Present</OUTCOME>
       <OUTCOME>Absent</OUTCOME>
-      <PROPERTY>definition=Clinician-reviewed concomitant anticholinergic exposure of concern, including antipsychotics, antidepressants, urological drugs and antihistamines; no invented burden-score cutoff.</PROPERTY>
-      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>definition=Concomitant anticholinergic exposure represented in the scenario, apart from the target symptomatic treatment.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-11.md</PROPERTY>
       <PROPERTY>source_locator=Implementation; Harms; Patient Preferences; Balancing of Benefits and Harms</PROPERTY>
       <PROPERTY>source_sha256=626e38cff8c805b8fcb5ac7a9408cc717d9f96206003a6192a1b4d68465421eb</PROPERTY>
-      <PROPERTY>time_window=Current dated assessment; recent episode linkage retained separately</PROPERTY>
-      <PROPERTY>missingness_policy=Unrecorded evidence stays unobserved; assessed states are not missing-data codes</PROPERTY>
-      <PROPERTY>parameter_status=missing_prior</PROPERTY>
-      <PROPERTY>parameter_requirement=2 prior entries after dependency and measurement review; documented data or expert elicitation required</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>RecurrencePreventionNeed</NAME>
       <PROPERTY>label=Recurrence Prevention Need</PROPERTY>
       <OUTCOME>Present</OUTCOME>
       <OUTCOME>Absent</OUTCOME>
-      <PROPERTY>definition=After resolution, clinician assesses an ongoing need to consider recurrence prevention while the causative regimen is reviewed; not a measured recurrence probability.</PROPERTY>
-      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>definition=Need for recurrence prevention after resolution represented as a scenario assumption.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-11.md</PROPERTY>
       <PROPERTY>source_locator=Implementation; Harms; Patient Preferences; Balancing of Benefits and Harms</PROPERTY>
       <PROPERTY>source_sha256=626e38cff8c805b8fcb5ac7a9408cc717d9f96206003a6192a1b4d68465421eb</PROPERTY>
-      <PROPERTY>time_window=Current dated assessment; recent episode linkage retained separately</PROPERTY>
-      <PROPERTY>missingness_policy=Unrecorded evidence stays unobserved; assessed states are not missing-data codes</PROPERTY>
-      <PROPERTY>parameter_status=missing_prior</PROPERTY>
-      <PROPERTY>parameter_requirement=2 prior entries after dependency and measurement review; documented data or expert elicitation required</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>AnticholinergicContinuationPreferenceConcern</NAME>
       <PROPERTY>label=Anticholinergic Continuation Preference Concern</PROPERTY>
       <OUTCOME>Present</OUTCOME>
       <OUTCOME>Absent</OUTCOME>
-      <PROPERTY>definition=An assessed patient concern or preference against continued anticholinergic treatment. Absence does not establish consent.</PROPERTY>
-      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>definition=Scenario concern or preference against continued anticholinergic treatment.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-11.md</PROPERTY>
       <PROPERTY>source_locator=Implementation; Harms; Patient Preferences; Balancing of Benefits and Harms</PROPERTY>
       <PROPERTY>source_sha256=626e38cff8c805b8fcb5ac7a9408cc717d9f96206003a6192a1b4d68465421eb</PROPERTY>
-      <PROPERTY>time_window=Current dated assessment; recent episode linkage retained separately</PROPERTY>
-      <PROPERTY>missingness_policy=Unrecorded evidence stays unobserved; assessed states are not missing-data codes</PROPERTY>
-      <PROPERTY>parameter_status=missing_prior</PROPERTY>
-      <PROPERTY>parameter_requirement=2 prior entries after dependency and measurement review; documented data or expert elicitation required</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>AcuteDystoniaReviewPathway</NAME>
@@ -157,14 +165,19 @@
       <OUTCOME>AssessEpisodeAndDifferential</OUTCOME>
       <OUTCOME>PostResolutionReview</OUTCOME>
       <OUTCOME>NoAcuteTreatmentRule</OUTCOME>
-      <PROPERTY>definition=Proposed review priority; never an administration order or declaration of safety.</PROPERTY>
-      <PROPERTY>clinical_role=deterministic_review_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for Acute Dystonia Review Pathway; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-11.md</PROPERTY>
       <PROPERTY>source_locator=Implementation; Harms; Patient Preferences; Balancing of Benefits and Harms</PROPERTY>
       <PROPERTY>source_sha256=626e38cff8c805b8fcb5ac7a9408cc717d9f96206003a6192a1b4d68465421eb</PROPERTY>
-      <PROPERTY>time_window=Current dated assessment; recent episode linkage retained separately</PROPERTY>
-      <PROPERTY>missingness_policy=Unrecorded evidence stays unobserved; assessed states are not missing-data codes</PROPERTY>
-      <PROPERTY>parameter_status=proposed_deterministic_mapping</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>proposed_parent=AirwayConcern</PROPERTY>
+      <PROPERTY>proposed_parent=AcuteDystoniaEpisodePhase</PROPERTY>
+      <PROPERTY>proposed_parent=AcuteDystoniaAntipsychoticAssociation</PROPERTY>
+      <PROPERTY>required_table_entries=60</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>AnticholinergicSafetyReviewFocus</NAME>
@@ -173,14 +186,19 @@
       <OUTCOME>ReviewPatientSpecificConcern</OUTCOME>
       <OUTCOME>ReviewAgeOrMedicationBurden</OUTCOME>
       <OUTCOME>RoutineIndividualizedReview</OUTCOME>
-      <PROPERTY>definition=Parallel review focus. RoutineIndividualizedReview does not certify treatment safety.</PROPERTY>
-      <PROPERTY>clinical_role=deterministic_review_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for Anticholinergic Safety Review Focus; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-11.md</PROPERTY>
       <PROPERTY>source_locator=Implementation; Harms; Patient Preferences; Balancing of Benefits and Harms</PROPERTY>
       <PROPERTY>source_sha256=626e38cff8c805b8fcb5ac7a9408cc717d9f96206003a6192a1b4d68465421eb</PROPERTY>
-      <PROPERTY>time_window=Current dated assessment; recent episode linkage retained separately</PROPERTY>
-      <PROPERTY>missingness_policy=Unrecorded evidence stays unobserved; assessed states are not missing-data codes</PROPERTY>
-      <PROPERTY>parameter_status=proposed_deterministic_mapping</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>proposed_parent=AnticholinergicSafetyConcern</PROPERTY>
+      <PROPERTY>proposed_parent=OlderAgeVulnerability</PROPERTY>
+      <PROPERTY>proposed_parent=OtherAnticholinergicBurden</PROPERTY>
+      <PROPERTY>required_table_entries=32</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>AcuteDystoniaAnticholinergicContinuationReview</NAME>
@@ -190,14 +208,20 @@
       <OUTCOME>ReviewNeedAndPatientConcerns</OUTCOME>
       <OUTCOME>ConsiderShortTermPreventionReview</OUTCOME>
       <OUTCOME>ReviewStoppingOrAvoidingUnneededContinuation</OUTCOME>
-      <PROPERTY>definition=Post-resolution review, not routine prophylaxis or an instruction to discontinue.</PROPERTY>
-      <PROPERTY>clinical_role=deterministic_review_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for Acute Dystonia Anticholinergic Continuation Review; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-11.md</PROPERTY>
       <PROPERTY>source_locator=Implementation; Harms; Patient Preferences; Balancing of Benefits and Harms</PROPERTY>
       <PROPERTY>source_sha256=626e38cff8c805b8fcb5ac7a9408cc717d9f96206003a6192a1b4d68465421eb</PROPERTY>
-      <PROPERTY>time_window=Current dated assessment; recent episode linkage retained separately</PROPERTY>
-      <PROPERTY>missingness_policy=Unrecorded evidence stays unobserved; assessed states are not missing-data codes</PROPERTY>
-      <PROPERTY>parameter_status=proposed_deterministic_mapping</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>proposed_parent=AcuteDystoniaEpisodePhase</PROPERTY>
+      <PROPERTY>proposed_parent=AcuteDystoniaAntipsychoticAssociation</PROPERTY>
+      <PROPERTY>proposed_parent=RecurrencePreventionNeed</PROPERTY>
+      <PROPERTY>proposed_parent=AnticholinergicContinuationPreferenceConcern</PROPERTY>
+      <PROPERTY>required_table_entries=120</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>AcuteDystoniaAntipsychoticRegimenReview</NAME>
@@ -205,124 +229,18 @@
       <OUTCOME>ReviewDoseOrAlternative</OUTCOME>
       <OUTCOME>AssessMedicationAssociation</OUTCOME>
       <OUTCOME>NoEpisodeSpecificReview</OUTCOME>
-      <PROPERTY>definition=Review possible dose reduction or a lower-risk alternative after a relevant episode; never delays acute management.</PROPERTY>
-      <PROPERTY>clinical_role=deterministic_review_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for Acute Dystonia Antipsychotic Regimen Review; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-11.md</PROPERTY>
       <PROPERTY>source_locator=Implementation; Harms; Patient Preferences; Balancing of Benefits and Harms</PROPERTY>
       <PROPERTY>source_sha256=626e38cff8c805b8fcb5ac7a9408cc717d9f96206003a6192a1b4d68465421eb</PROPERTY>
-      <PROPERTY>time_window=Current dated assessment; recent episode linkage retained separately</PROPERTY>
-      <PROPERTY>missingness_policy=Unrecorded evidence stays unobserved; assessed states are not missing-data codes</PROPERTY>
-      <PROPERTY>parameter_status=proposed_deterministic_mapping</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>proposed_parent=AcuteDystoniaEpisodePhase</PROPERTY>
+      <PROPERTY>proposed_parent=AcuteDystoniaAntipsychoticAssociation</PROPERTY>
+      <PROPERTY>required_table_entries=18</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
     </VARIABLE>
-    <DEFINITION>
-      <FOR>AcuteDystoniaReviewPathway</FOR>
-      <GIVEN>AirwayConcern</GIVEN>
-      <GIVEN>AcuteDystoniaEpisodePhase</GIVEN>
-      <GIVEN>AcuteDystoniaAntipsychoticAssociation</GIVEN>
-      <TABLE>
-      1 0 0 0 0
-      1 0 0 0 0
-      1 0 0 0 0
-      1 0 0 0 0
-      1 0 0 0 0
-      1 0 0 0 0
-      0 1 0 0 0
-      0 0 1 0 0
-      0 0 0 1 0
-      0 0 0 1 0
-      0 0 0 0 1
-      0 0 0 0 1
-    </TABLE>
-      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
-      <PROPERTY>parameter_status=proposed_deterministic_review_mapping_not_clinically_validated</PROPERTY>
-      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-11.md</PROPERTY>
-      <PROPERTY>source_locator=Implementation; Benefits; Harms; Patient Preferences; Quality Measurement Considerations</PROPERTY>
-      <PROPERTY>source_sha256=626e38cff8c805b8fcb5ac7a9408cc717d9f96206003a6192a1b4d68465421eb</PROPERTY>
-      <PROPERTY>uncertainty_description=0/1 encodes proposed review logic only, not certain diagnosis, benefit or safety</PROPERTY>
-      <PROPERTY>table_order=Child outcome fastest; last GIVEN next; declaration order throughout</PROPERTY>
-    </DEFINITION>
-    <DEFINITION>
-      <FOR>AnticholinergicSafetyReviewFocus</FOR>
-      <GIVEN>AnticholinergicSafetyConcern</GIVEN>
-      <GIVEN>OlderAgeVulnerability</GIVEN>
-      <GIVEN>OtherAnticholinergicBurden</GIVEN>
-      <TABLE>
-      1 0 0 0
-      1 0 0 0
-      1 0 0 0
-      0 1 0 0
-      0 0 1 0
-      0 0 1 0
-      0 0 1 0
-      0 0 0 1
-    </TABLE>
-      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
-      <PROPERTY>parameter_status=proposed_deterministic_review_mapping_not_clinically_validated</PROPERTY>
-      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-11.md</PROPERTY>
-      <PROPERTY>source_locator=Implementation; Benefits; Harms; Patient Preferences; Quality Measurement Considerations</PROPERTY>
-      <PROPERTY>source_sha256=626e38cff8c805b8fcb5ac7a9408cc717d9f96206003a6192a1b4d68465421eb</PROPERTY>
-      <PROPERTY>uncertainty_description=0/1 encodes proposed review logic only, not certain diagnosis, benefit or safety</PROPERTY>
-      <PROPERTY>table_order=Child outcome fastest; last GIVEN next; declaration order throughout</PROPERTY>
-    </DEFINITION>
-    <DEFINITION>
-      <FOR>AcuteDystoniaAnticholinergicContinuationReview</FOR>
-      <GIVEN>AcuteDystoniaEpisodePhase</GIVEN>
-      <GIVEN>AcuteDystoniaAntipsychoticAssociation</GIVEN>
-      <GIVEN>RecurrencePreventionNeed</GIVEN>
-      <GIVEN>AnticholinergicContinuationPreferenceConcern</GIVEN>
-      <TABLE>
-      1 0 0 0 0
-      1 0 0 0 0
-      1 0 0 0 0
-      1 0 0 0 0
-      1 0 0 0 0
-      1 0 0 0 0
-      1 0 0 0 0
-      1 0 0 0 0
-      0 0 1 0 0
-      0 0 0 1 0
-      0 0 0 0 1
-      0 0 0 0 1
-      0 1 0 0 0
-      0 1 0 0 0
-      0 1 0 0 0
-      0 1 0 0 0
-      1 0 0 0 0
-      1 0 0 0 0
-      1 0 0 0 0
-      1 0 0 0 0
-      1 0 0 0 0
-      1 0 0 0 0
-      1 0 0 0 0
-      1 0 0 0 0
-    </TABLE>
-      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
-      <PROPERTY>parameter_status=proposed_deterministic_review_mapping_not_clinically_validated</PROPERTY>
-      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-11.md</PROPERTY>
-      <PROPERTY>source_locator=Implementation; Benefits; Harms; Patient Preferences; Quality Measurement Considerations</PROPERTY>
-      <PROPERTY>source_sha256=626e38cff8c805b8fcb5ac7a9408cc717d9f96206003a6192a1b4d68465421eb</PROPERTY>
-      <PROPERTY>uncertainty_description=0/1 encodes proposed review logic only, not certain diagnosis, benefit or safety</PROPERTY>
-      <PROPERTY>table_order=Child outcome fastest; last GIVEN next; declaration order throughout</PROPERTY>
-    </DEFINITION>
-    <DEFINITION>
-      <FOR>AcuteDystoniaAntipsychoticRegimenReview</FOR>
-      <GIVEN>AcuteDystoniaEpisodePhase</GIVEN>
-      <GIVEN>AcuteDystoniaAntipsychoticAssociation</GIVEN>
-      <TABLE>
-      1 0 0
-      0 1 0
-      1 0 0
-      0 1 0
-      0 0 1
-      0 0 1
-    </TABLE>
-      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
-      <PROPERTY>parameter_status=proposed_deterministic_review_mapping_not_clinically_validated</PROPERTY>
-      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-11.md</PROPERTY>
-      <PROPERTY>source_locator=Implementation; Benefits; Harms; Patient Preferences; Quality Measurement Considerations</PROPERTY>
-      <PROPERTY>source_sha256=626e38cff8c805b8fcb5ac7a9408cc717d9f96206003a6192a1b4d68465421eb</PROPERTY>
-      <PROPERTY>uncertainty_description=0/1 encodes proposed review logic only, not certain diagnosis, benefit or safety</PROPERTY>
-      <PROPERTY>table_order=Child outcome fastest; last GIVEN next; declaration order throughout</PROPERTY>
-    </DEFINITION>
   </NETWORK>
 </BIF>

@@ -607,7 +607,7 @@ Normal CI uses a deterministic provider test endpoint; live-provider smoke is ex
 - All five transparency fields beside each recommendation; partial/stale/failed runs cannot sign even through direct HTTP.
 - Every CPT/root/parent row reachable by keyboard; deterministic proportional/equal redistribution, endpoints/single-state/rounding; local-only affected-question calculation, comparison/reset/history and persistence across failures.
 - Out-of-order results, adjustment/reset/sign races, failure with retained unsolved values, exact acceptance and immutable original/final signed snapshots; affected-only regeneration with no silent carry-forward and no note-triggered estimation.
-- Printable original/accepted CPT history and backup/restore replay for adjusted signed encounters, failed revisions and private drafts; local responsiveness while the provider queue is saturated.
+- Printable original CPT history and backup/restore replay for adjusted signed encounters; local responsiveness while the provider queue is saturated.
 - Both themes, Chrome/Firefox, keyboard/zoom/contrast, clear unsaved state, safe CSV/HTML, no secret disclosure.
 - Fresh Linux install, locked versions, migrations, restart recovery, representative load/inference admission, full backup and destructive restore drill with rollback and session revocation.
 

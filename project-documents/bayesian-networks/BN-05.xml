@@ -1,234 +1,253 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<BIF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="0.3" xsi:noNamespaceSchemaLocation="../schema.xml">
+<BIF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="0.3" xsi:noNamespaceSchemaLocation="schema.xml">
   <NETWORK>
     <NAME>BN_05_Continuing_Antipsychotic_Treatment</NAME>
-    <PROPERTY>clinical_question=What supports maintenance antipsychotic treatment review after symptom improvement in schizophrenia?</PROPERTY>
+    <PROPERTY>clinical_question=How do scenario factors affect experimental maintenance antipsychotic treatment results after improvement?</PROPERTY>
     <PROPERTY>statement_id=5</PROPERTY>
     <PROPERTY>recommendation_strength=1</PROPERTY>
     <PROPERTY>evidence_quality=A</PROPERTY>
     <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-05.md</PROPERTY>
     <PROPERTY>source_locator=STATEMENT 5; Implementation; Benefits; Harms; Patient Preferences</PROPERTY>
     <PROPERTY>source_sha256=3c1e65c840f3510792459691e1f3c952fe8b62f1643cce397cddf8b518384b36</PROPERTY>
-    <PROPERTY>model_version=0.1_authoring_draft</PROPERTY>
-    <PROPERTY>population=Proposed adult schizophrenia maintenance-review population; diagnostic gate is not a diagnostic classifier</PROPERTY>
-    <PROPERTY>setting=Clinician-led maintenance review; local care setting requires agreement</PROPERTY>
+    <PROPERTY>model_version=0.2.0</PROPERTY>
+    <PROPERTY>population=Adult schizophrenia and antipsychotic-treatment scenarios for experimentation</PROPERTY>
+    <PROPERTY>setting=Experimental and educational application</PROPERTY>
     <PROPERTY>time_horizon=Review flags: current encounter; proposed outcomes: 12 months after review, modeler assumption</PROPERTY>
-    <PROPERTY>validation_status=STRUCTURAL_ONLY_INCOMPLETE_NOT_FOR_CLINICAL_USE</PROPERTY>
-    <PROPERTY>inference_enabled=false</PROPERTY>
-    <PROPERTY>parameter_policy=Missing priors and clinical CPTs omitted; no invented probabilities</PROPERTY>
-    <PROPERTY>missingness_policy=Absent evidence stays unobserved; no unknown disease state</PROPERTY>
+    <PROPERTY>validation_status=EXPERIMENTAL_TEMPLATE_REQUIRES_CPTS</PROPERTY>
+    <PROPERTY>parameter_policy=Supply priors and CPTs per experiment using manual values, synthetic examples or LLM estimates; all CPT values are adjustable, including source-lookup examples</PROPERTY>
+    <PROPERTY>missingness_policy=Unspecified scenario values remain unobserved; inference may use any subset of observations once the CPTs are complete</PROPERTY>
     <PROPERTY>table_order=Child varies fastest; last GIVEN parent next; OUTCOME declaration order</PROPERTY>
-    <PROPERTY>causal_status=Proposed observational graph; treatment conditioning is not intervention</PROPERTY>
-    <PROPERTY>deployment_gate=Consumer must reject incomplete definitions; PROPERTY strings do not enforce this</PROPERTY>
-    <PROPERTY>scope=Continuation of an antipsychotic, not mandatory continuation of the same drug or dose; no doses, taper schedules, mortality estimates, utilities or optimized actions</PROPERTY>
+    <PROPERTY>scope=Educational exploration of scenario-based treatment proposals and network results</PROPERTY>
+    <PROPERTY>use_context=experimental_educational</PROPERTY>
+    <PROPERTY>inference_mode=after_complete_cpt_validation</PROPERTY>
+    <PROPERTY>input_policy=Scenario values may be synthetic, manually supplied or simulated; observations are optional and supporting clinical documentation is not required</PROPERTY>
+    <PROPERTY>graph_semantics=Experimental dependencies with run-specific CPTs; output labels identify topics rather than fixed clinician-review rules</PROPERTY>
+    <PROPERTY>edge_encoding=Ordered proposed_parent properties retain parents for omitted CPTs; materialize them as ordered GIVEN elements when adding a DEFINITION</PROPERTY>
+    <PROPERTY>execution_contract=Before execution, supply all nature-node distributions and validate table sizes, finite values, probability bounds and row normalization</PROPERTY>
+    <PROPERTY>source_policy=Source metadata is optional background attribution and does not gate experimental electronic decision support</PROPERTY>
+    <PROPERTY>parameter_inventory=20 run-specific distributions to supply; 0 editable source-lookup examples supplied</PROPERTY>
     <VARIABLE TYPE="nature">
       <NAME>SchizophreniaEstablished</NAME>
       <OUTCOME>No</OUTCOME>
       <OUTCOME>Yes</OUTCOME>
       <PROPERTY>label=Schizophrenia Established</PROPERTY>
-      <PROPERTY>definition=Clinician has established schizophrenia; No includes diagnostic uncertainty or another diagnosis, not missing assessment.</PROPERTY>
-      <PROPERTY>clinical_role=clinical_variable</PROPERTY>
-      <PROPERTY>time_window=At maintenance review</PROPERTY>
-      <PROPERTY>discretization=Proposed categories require clinical operationalization; no validated score cutoffs</PROPERTY>
-      <PROPERTY>missingness_policy=No observation if unassessed; flags must not be used with missing required inputs</PROPERTY>
+      <PROPERTY>definition=Schizophrenia status represented by the scenario.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_variable</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-05.md</PROPERTY>
       <PROPERTY>source_locator=Implementation</PROPERTY>
-      <PROPERTY>parameter_status=missing_requires_data_or_elicitation</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>PriorSymptomImprovement</NAME>
       <OUTCOME>No</OUTCOME>
       <OUTCOME>Yes</OUTCOME>
       <PROPERTY>label=Prior Symptom Improvement</PROPERTY>
-      <PROPERTY>definition=Documented symptom improvement with antipsychotic treatment; no numerical response threshold asserted.</PROPERTY>
-      <PROPERTY>clinical_role=clinical_variable</PROPERTY>
-      <PROPERTY>time_window=At maintenance review</PROPERTY>
-      <PROPERTY>discretization=Proposed categories require clinical operationalization; no validated score cutoffs</PROPERTY>
-      <PROPERTY>missingness_policy=No observation if unassessed; flags must not be used with missing required inputs</PROPERTY>
+      <PROPERTY>definition=Prior symptom improvement with antipsychotic treatment in the scenario.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_variable</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-05.md</PROPERTY>
       <PROPERTY>source_locator=Implementation</PROPERTY>
-      <PROPERTY>parameter_status=missing_requires_data_or_elicitation</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>ChronicOrRepeatedRelapseCourse</NAME>
       <OUTCOME>No</OUTCOME>
       <OUTCOME>Yes</OUTCOME>
       <PROPERTY>label=Chronic Or Repeated Relapse Course</PROPERTY>
-      <PROPERTY>definition=Clinician documents chronic symptoms or repeated prior relapses; this is a proposed composite requiring operational criteria.</PROPERTY>
-      <PROPERTY>clinical_role=clinical_variable</PROPERTY>
-      <PROPERTY>time_window=At maintenance review</PROPERTY>
-      <PROPERTY>discretization=Proposed categories require clinical operationalization; no validated score cutoffs</PROPERTY>
-      <PROPERTY>missingness_policy=No observation if unassessed; flags must not be used with missing required inputs</PROPERTY>
+      <PROPERTY>definition=Chronic symptoms or repeated prior relapses represented in the scenario.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_variable</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-05.md</PROPERTY>
       <PROPERTY>source_locator=Implementation</PROPERTY>
-      <PROPERTY>parameter_status=missing_requires_data_or_elicitation</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>SignificantAntipsychoticSideEffects</NAME>
       <OUTCOME>Absent</OUTCOME>
       <OUTCOME>Present</OUTCOME>
       <PROPERTY>label=Significant Antipsychotic Side Effects</PROPERTY>
-      <PROPERTY>definition=Current clinically significant medication side effects; assess metabolic, movement, sedation and other agent-specific harms.</PROPERTY>
-      <PROPERTY>clinical_role=clinical_variable</PROPERTY>
-      <PROPERTY>time_window=At maintenance review</PROPERTY>
-      <PROPERTY>discretization=Proposed categories require clinical operationalization; no validated score cutoffs</PROPERTY>
-      <PROPERTY>missingness_policy=Absent observation if unassessed; flags must not be used with missing required inputs</PROPERTY>
+      <PROPERTY>definition=Significant medication side effects affecting functioning or acceptability in the scenario.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_variable</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-05.md</PROPERTY>
       <PROPERTY>source_locator=Implementation; Harms</PROPERTY>
-      <PROPERTY>parameter_status=missing_requires_data_or_elicitation</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>PreferenceBarrier</NAME>
       <OUTCOME>Absent</OUTCOME>
       <OUTCOME>Present</OUTCOME>
       <PROPERTY>label=Preference Barrier</PROPERTY>
-      <PROPERTY>definition=Patient expresses reluctance or barriers to ongoing medication in shared decision-making.</PROPERTY>
-      <PROPERTY>clinical_role=clinical_variable</PROPERTY>
-      <PROPERTY>time_window=At maintenance review</PROPERTY>
-      <PROPERTY>discretization=Proposed categories require clinical operationalization; no validated score cutoffs</PROPERTY>
-      <PROPERTY>missingness_policy=Absent observation if unassessed; flags must not be used with missing required inputs</PROPERTY>
+      <PROPERTY>definition=An objection or practical barrier to the treatment regimen represented in the scenario.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_variable</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-05.md</PROPERTY>
       <PROPERTY>source_locator=Patient Preferences</PROPERTY>
-      <PROPERTY>parameter_status=missing_requires_data_or_elicitation</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>AdherenceDifficulty</NAME>
       <OUTCOME>Absent</OUTCOME>
       <OUTCOME>Present</OUTCOME>
       <PROPERTY>label=Adherence Difficulty</PROPERTY>
-      <PROPERTY>definition=Clinically assessed difficulty maintaining prescribed treatment; Absent requires assessment, not merely a prescription.</PROPERTY>
-      <PROPERTY>clinical_role=clinical_variable</PROPERTY>
-      <PROPERTY>time_window=At maintenance review</PROPERTY>
-      <PROPERTY>discretization=Proposed categories require clinical operationalization; no validated score cutoffs</PROPERTY>
-      <PROPERTY>missingness_policy=Absent observation if unassessed; flags must not be used with missing required inputs</PROPERTY>
+      <PROPERTY>definition=Difficulty taking or maintaining the selected treatment during the scenario interval.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_variable</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-05.md</PROPERTY>
       <PROPERTY>source_locator=Implementation</PROPERTY>
-      <PROPERTY>parameter_status=missing_requires_data_or_elicitation</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
       <PROPERTY>proposed_parent=PreferenceBarrier</PROPERTY>
       <PROPERTY>proposed_parent=SignificantAntipsychoticSideEffects</PROPERTY>
+      <PROPERTY>required_table_entries=8</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>PharmacokineticChange</NAME>
       <OUTCOME>No</OUTCOME>
       <OUTCOME>Yes</OUTCOME>
       <PROPERTY>label=Pharmacokinetic Change</PROPERTY>
-      <PROPERTY>definition=Clinician identifies a relevant change in interacting medicines, smoking, body mass, renal/hepatic status or absorption; direction is not inferred.</PROPERTY>
-      <PROPERTY>clinical_role=clinical_variable</PROPERTY>
-      <PROPERTY>time_window=At maintenance review</PROPERTY>
-      <PROPERTY>discretization=Proposed categories require clinical operationalization; no validated score cutoffs</PROPERTY>
-      <PROPERTY>missingness_policy=No observation if unassessed; flags must not be used with missing required inputs</PROPERTY>
+      <PROPERTY>definition=A change in interacting medicines, smoking, body mass, organ function or absorption; the direction is a scenario assumption.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_variable</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-05.md</PROPERTY>
       <PROPERTY>source_locator=Implementation</PROPERTY>
-      <PROPERTY>parameter_status=missing_requires_data_or_elicitation</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>ExtendedActionPreparation</NAME>
       <OUTCOME>No</OUTCOME>
       <OUTCOME>Yes</OUTCOME>
       <PROPERTY>label=Extended Action Preparation</PROPERTY>
-      <PROPERTY>definition=Current preparation has extended effects, including LAI or long-half-life medication; no dose conversion implied.</PROPERTY>
-      <PROPERTY>clinical_role=clinical_variable</PROPERTY>
-      <PROPERTY>time_window=At maintenance review</PROPERTY>
-      <PROPERTY>discretization=Proposed categories require clinical operationalization; no validated score cutoffs</PROPERTY>
-      <PROPERTY>missingness_policy=No observation if unassessed; flags must not be used with missing required inputs</PROPERTY>
+      <PROPERTY>definition=Use of a preparation with extended effects in the scenario, including LAI or long-half-life medication.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_variable</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-05.md</PROPERTY>
       <PROPERTY>source_locator=Implementation</PROPERTY>
-      <PROPERTY>parameter_status=missing_requires_data_or_elicitation</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>MedicationChangeDiscussed</NAME>
       <OUTCOME>No</OUTCOME>
       <OUTCOME>Yes</OUTCOME>
       <PROPERTY>label=Medication Change Discussed</PROPERTY>
-      <PROPERTY>definition=A dose reduction or medication change is being considered at this encounter, not necessarily implemented.</PROPERTY>
-      <PROPERTY>clinical_role=clinical_variable</PROPERTY>
-      <PROPERTY>time_window=At maintenance review</PROPERTY>
-      <PROPERTY>discretization=Proposed categories require clinical operationalization; no validated score cutoffs</PROPERTY>
-      <PROPERTY>missingness_policy=No observation if unassessed; flags must not be used with missing required inputs</PROPERTY>
+      <PROPERTY>definition=Whether a medication change or dose reduction is being considered in the scenario.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_variable</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-05.md</PROPERTY>
       <PROPERTY>source_locator=Implementation</PROPERTY>
-      <PROPERTY>parameter_status=missing_requires_data_or_elicitation</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>EmergentDiscontinuationIndication</NAME>
       <OUTCOME>No</OUTCOME>
       <OUTCOME>Yes</OUTCOME>
       <PROPERTY>label=Emergent Discontinuation Indication</PROPERTY>
-      <PROPERTY>definition=Treating clinician has identified an indication for emergent discontinuation of the current medication; not inferred by this model.</PROPERTY>
-      <PROPERTY>clinical_role=clinical_variable</PROPERTY>
-      <PROPERTY>time_window=At maintenance review</PROPERTY>
-      <PROPERTY>discretization=Proposed categories require clinical operationalization; no validated score cutoffs</PROPERTY>
-      <PROPERTY>missingness_policy=No observation if unassessed; flags must not be used with missing required inputs</PROPERTY>
+      <PROPERTY>definition=Presence or absence of an emergent discontinuation indication in the scenario.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_variable</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-05.md</PROPERTY>
       <PROPERTY>source_locator=Implementation</PROPERTY>
-      <PROPERTY>parameter_status=missing_requires_data_or_elicitation</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>ObservedMaintenanceStrategy</NAME>
       <OUTCOME>ContinueAntipsychotic</OUTCOME>
       <OUTCOME>DiscontinueAntipsychotic</OUTCOME>
       <PROPERTY>label=Observed Maintenance Strategy</PROPERTY>
-      <PROPERTY>definition=Observed strategy after the index review; continuation may include changing agent or dose. This is not a decision node or intervention assignment.</PROPERTY>
-      <PROPERTY>clinical_role=clinical_variable</PROPERTY>
-      <PROPERTY>time_window=Strategy documented after index review; later changes require a longitudinal extension</PROPERTY>
-      <PROPERTY>discretization=Proposed categories require clinical operationalization; no validated score cutoffs</PROPERTY>
-      <PROPERTY>missingness_policy=No observation if unassessed; flags must not be used with missing required inputs</PROPERTY>
+      <PROPERTY>definition=Maintenance strategy represented in the scenario; continuation can include a change of agent or dose.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_variable</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-05.md</PROPERTY>
       <PROPERTY>source_locator=Implementation</PROPERTY>
-      <PROPERTY>parameter_status=missing_requires_data_or_elicitation</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
       <PROPERTY>proposed_parent=ChronicOrRepeatedRelapseCourse</PROPERTY>
       <PROPERTY>proposed_parent=SignificantAntipsychoticSideEffects</PROPERTY>
       <PROPERTY>proposed_parent=PreferenceBarrier</PROPERTY>
       <PROPERTY>proposed_parent=EmergentDiscontinuationIndication</PROPERTY>
+      <PROPERTY>required_table_entries=32</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>SustainedExposure</NAME>
       <OUTCOME>NotSustained</OUTCOME>
       <OUTCOME>Sustained</OUTCOME>
       <PROPERTY>label=Sustained Exposure</PROPERTY>
-      <PROPERTY>definition=Whether prescribed therapeutic exposure is sustained during follow-up; adherence, drug-specific dosing and time criteria must be defined before estimation.</PROPERTY>
-      <PROPERTY>clinical_role=clinical_variable</PROPERTY>
-      <PROPERTY>time_window=Proposed 12-month follow-up; not available as baseline evidence</PROPERTY>
-      <PROPERTY>discretization=Proposed categories require clinical operationalization; no validated score cutoffs</PROPERTY>
-      <PROPERTY>missingness_policy=No observation if unassessed; flags must not be used with missing required inputs</PROPERTY>
+      <PROPERTY>definition=Whether treatment exposure is sustained during the scenario follow-up interval.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_variable</PROPERTY>
+      <PROPERTY>time_window=Scenario follow-up interval</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-05.md</PROPERTY>
       <PROPERTY>source_locator=Implementation</PROPERTY>
-      <PROPERTY>parameter_status=missing_requires_data_or_elicitation</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
       <PROPERTY>proposed_parent=ObservedMaintenanceStrategy</PROPERTY>
       <PROPERTY>proposed_parent=AdherenceDifficulty</PROPERTY>
       <PROPERTY>proposed_parent=PharmacokineticChange</PROPERTY>
+      <PROPERTY>required_table_entries=16</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>Relapse</NAME>
       <OUTCOME>No</OUTCOME>
       <OUTCOME>Yes</OUTCOME>
       <PROPERTY>label=Relapse</PROPERTY>
-      <PROPERTY>definition=At least one clinically adjudicated psychotic relapse during follow-up; event criteria must be agreed.</PROPERTY>
-      <PROPERTY>clinical_role=clinical_variable</PROPERTY>
-      <PROPERTY>time_window=Proposed 12 months after review</PROPERTY>
-      <PROPERTY>discretization=Proposed categories require clinical operationalization; no validated score cutoffs</PROPERTY>
-      <PROPERTY>missingness_policy=No observation if unassessed; flags must not be used with missing required inputs</PROPERTY>
+      <PROPERTY>definition=Occurrence of a psychotic relapse during the scenario follow-up interval.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_variable</PROPERTY>
+      <PROPERTY>time_window=Scenario follow-up interval</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-05.md</PROPERTY>
       <PROPERTY>source_locator=Implementation</PROPERTY>
-      <PROPERTY>parameter_status=missing_requires_data_or_elicitation</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
       <PROPERTY>proposed_parent=SustainedExposure</PROPERTY>
       <PROPERTY>proposed_parent=ChronicOrRepeatedRelapseCourse</PROPERTY>
+      <PROPERTY>required_table_entries=8</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>PsychiatricHospitalization</NAME>
       <OUTCOME>No</OUTCOME>
       <OUTCOME>Yes</OUTCOME>
       <PROPERTY>label=Psychiatric Hospitalization</PROPERTY>
-      <PROPERTY>definition=At least one psychiatric hospitalization in follow-up; admission practices and non-relapse causes require local modeling.</PROPERTY>
-      <PROPERTY>clinical_role=clinical_variable</PROPERTY>
-      <PROPERTY>time_window=Proposed 12 months after review</PROPERTY>
-      <PROPERTY>discretization=Proposed categories require clinical operationalization; no validated score cutoffs</PROPERTY>
-      <PROPERTY>missingness_policy=No observation if unassessed; flags must not be used with missing required inputs</PROPERTY>
+      <PROPERTY>definition=Occurrence of a psychiatric hospitalization during the scenario follow-up interval.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_variable</PROPERTY>
+      <PROPERTY>time_window=Scenario follow-up interval</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-05.md</PROPERTY>
       <PROPERTY>source_locator=Implementation</PROPERTY>
-      <PROPERTY>parameter_status=missing_requires_data_or_elicitation</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
       <PROPERTY>proposed_parent=Relapse</PROPERTY>
       <PROPERTY>proposed_parent=ChronicOrRepeatedRelapseCourse</PROPERTY>
+      <PROPERTY>required_table_entries=8</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>ContinuationGuidelineContext</NAME>
@@ -236,56 +255,69 @@
       <OUTCOME>ContinuationSupported</OUTCOME>
       <OUTCOME>UrgentIndividualizedReview</OUTCOME>
       <PROPERTY>label=Continuation Guideline Context</PROPERTY>
-      <PROPERTY>definition=Guideline scope and urgent override. Supported means ongoing antipsychotic treatment should be discussed, not keep current agent/dose regardless of harms.</PROPERTY>
-      <PROPERTY>clinical_role=workflow_flag</PROPERTY>
-      <PROPERTY>time_window=At maintenance review</PROPERTY>
-      <PROPERTY>discretization=Proposed categories require clinical operationalization; no validated score cutoffs</PROPERTY>
-      <PROPERTY>missingness_policy=No observation if unassessed; flags must not be used with missing required inputs</PROPERTY>
+      <PROPERTY>definition=Experimental output for Continuation Guideline Context; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-05.md</PROPERTY>
       <PROPERTY>source_locator=Implementation</PROPERTY>
-      <PROPERTY>parameter_status=deterministic_modeler_rule</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>proposed_parent=SchizophreniaEstablished</PROPERTY>
+      <PROPERTY>proposed_parent=PriorSymptomImprovement</PROPERTY>
+      <PROPERTY>proposed_parent=EmergentDiscontinuationIndication</PROPERTY>
+      <PROPERTY>required_table_entries=24</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>AdherenceSupportReview</NAME>
       <OUTCOME>NotTriggered</OUTCOME>
       <OUTCOME>Triggered</OUTCOME>
       <PROPERTY>label=Adherence Support Review</PROPERTY>
-      <PROPERTY>definition=Review barriers, supports and acceptable formulations; does not automatically select an LAI.</PROPERTY>
-      <PROPERTY>clinical_role=workflow_flag</PROPERTY>
-      <PROPERTY>time_window=At maintenance review</PROPERTY>
-      <PROPERTY>discretization=Proposed categories require clinical operationalization; no validated score cutoffs</PROPERTY>
-      <PROPERTY>missingness_policy=No observation if unassessed; flags must not be used with missing required inputs</PROPERTY>
+      <PROPERTY>definition=Experimental output for Adherence Support Review; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-05.md</PROPERTY>
       <PROPERTY>source_locator=Implementation</PROPERTY>
-      <PROPERTY>parameter_status=deterministic_modeler_rule</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>proposed_parent=AdherenceDifficulty</PROPERTY>
+      <PROPERTY>proposed_parent=PreferenceBarrier</PROPERTY>
+      <PROPERTY>required_table_entries=8</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>TolerabilityOrExposureReview</NAME>
       <OUTCOME>NotTriggered</OUTCOME>
       <OUTCOME>Triggered</OUTCOME>
       <PROPERTY>label=Tolerability Or Exposure Review</PROPERTY>
-      <PROPERTY>definition=Focused side-effect or exposure review; routine monitoring continues even when not triggered.</PROPERTY>
-      <PROPERTY>clinical_role=workflow_flag</PROPERTY>
-      <PROPERTY>time_window=At maintenance review</PROPERTY>
-      <PROPERTY>discretization=Proposed categories require clinical operationalization; no validated score cutoffs</PROPERTY>
-      <PROPERTY>missingness_policy=No observation if unassessed; flags must not be used with missing required inputs</PROPERTY>
+      <PROPERTY>definition=Experimental output for Tolerability Or Exposure Review; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-05.md</PROPERTY>
       <PROPERTY>source_locator=Implementation</PROPERTY>
-      <PROPERTY>parameter_status=deterministic_modeler_rule</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>proposed_parent=SignificantAntipsychoticSideEffects</PROPERTY>
+      <PROPERTY>proposed_parent=PharmacokineticChange</PROPERTY>
+      <PROPERTY>required_table_entries=8</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>ExtendedActionDoseReview</NAME>
       <OUTCOME>NotTriggered</OUTCOME>
       <OUTCOME>Triggered</OUTCOME>
       <PROPERTY>label=Extended Action Dose Review</PROPERTY>
-      <PROPERTY>definition=Consider prolonged drug action during a proposed medication change; not a numeric dose recommendation.</PROPERTY>
-      <PROPERTY>clinical_role=workflow_flag</PROPERTY>
-      <PROPERTY>time_window=At maintenance review</PROPERTY>
-      <PROPERTY>discretization=Proposed categories require clinical operationalization; no validated score cutoffs</PROPERTY>
-      <PROPERTY>missingness_policy=No observation if unassessed; flags must not be used with missing required inputs</PROPERTY>
+      <PROPERTY>definition=Experimental output for Extended Action Dose Review; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-05.md</PROPERTY>
       <PROPERTY>source_locator=Implementation</PROPERTY>
-      <PROPERTY>parameter_status=deterministic_modeler_rule</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>proposed_parent=ExtendedActionPreparation</PROPERTY>
+      <PROPERTY>proposed_parent=MedicationChangeDiscussed</PROPERTY>
+      <PROPERTY>required_table_entries=8</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>ChangeDiscussionContext</NAME>
@@ -293,129 +325,34 @@
       <OUTCOME>GradualChangeAndRelapseMonitoring</OUTCOME>
       <OUTCOME>UrgentIndividualizedReview</OUTCOME>
       <PROPERTY>label=Change Discussion Context</PROPERTY>
-      <PROPERTY>definition=When a change is considered, discuss gradual reduction where appropriate and relapse monitoring; emergent indication overrides routine gradual-change logic. Does not authorize a change.</PROPERTY>
-      <PROPERTY>clinical_role=workflow_flag</PROPERTY>
-      <PROPERTY>time_window=At maintenance review</PROPERTY>
-      <PROPERTY>discretization=Proposed categories require clinical operationalization; no validated score cutoffs</PROPERTY>
-      <PROPERTY>missingness_policy=No observation if unassessed; flags must not be used with missing required inputs</PROPERTY>
+      <PROPERTY>definition=Experimental output for Change Discussion Context; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-05.md</PROPERTY>
       <PROPERTY>source_locator=Implementation</PROPERTY>
-      <PROPERTY>parameter_status=deterministic_modeler_rule</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>proposed_parent=MedicationChangeDiscussed</PROPERTY>
+      <PROPERTY>proposed_parent=EmergentDiscontinuationIndication</PROPERTY>
+      <PROPERTY>required_table_entries=12</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>CourseRiskDiscussion</NAME>
       <OUTCOME>NotTriggered</OUTCOME>
       <OUTCOME>Triggered</OUTCOME>
       <PROPERTY>label=Course Risk Discussion</PROPERTY>
-      <PROPERTY>definition=Highlight chronic/recurrent course when discussing a change; no numerical relapse-risk threshold.</PROPERTY>
-      <PROPERTY>clinical_role=workflow_flag</PROPERTY>
-      <PROPERTY>time_window=At maintenance review</PROPERTY>
-      <PROPERTY>discretization=Proposed categories require clinical operationalization; no validated score cutoffs</PROPERTY>
-      <PROPERTY>missingness_policy=No observation if unassessed; flags must not be used with missing required inputs</PROPERTY>
+      <PROPERTY>definition=Experimental output for Course Risk Discussion; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-05.md</PROPERTY>
       <PROPERTY>source_locator=Implementation</PROPERTY>
-      <PROPERTY>parameter_status=deterministic_modeler_rule</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>proposed_parent=ChronicOrRepeatedRelapseCourse</PROPERTY>
+      <PROPERTY>proposed_parent=MedicationChangeDiscussed</PROPERTY>
+      <PROPERTY>required_table_entries=8</PROPERTY>
     </VARIABLE>
-    <DEFINITION>
-      <FOR>ContinuationGuidelineContext</FOR>
-      <GIVEN>SchizophreniaEstablished</GIVEN>
-      <GIVEN>PriorSymptomImprovement</GIVEN>
-      <GIVEN>EmergentDiscontinuationIndication</GIVEN>
-      <TABLE>
-      1 0 0
-      0 0 1
-      1 0 0
-      0 0 1
-      1 0 0
-      0 0 1
-      0 1 0
-      0 0 1
-    </TABLE>
-      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
-      <PROPERTY>parameter_status=deterministic_workflow_formalization_not_patient_probability</PROPERTY>
-      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-05.md</PROPERTY>
-      <PROPERTY>source_locator=Implementation</PROPERTY>
-      <PROPERTY>uncertainty_description=Exact formalization requires clinician review; negative flags do not establish safety</PROPERTY>
-    </DEFINITION>
-    <DEFINITION>
-      <FOR>AdherenceSupportReview</FOR>
-      <GIVEN>AdherenceDifficulty</GIVEN>
-      <GIVEN>PreferenceBarrier</GIVEN>
-      <TABLE>
-      1 0
-      0 1
-      0 1
-      0 1
-    </TABLE>
-      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
-      <PROPERTY>parameter_status=deterministic_workflow_formalization_not_patient_probability</PROPERTY>
-      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-05.md</PROPERTY>
-      <PROPERTY>source_locator=Implementation</PROPERTY>
-      <PROPERTY>uncertainty_description=Exact formalization requires clinician review; negative flags do not establish safety</PROPERTY>
-    </DEFINITION>
-    <DEFINITION>
-      <FOR>TolerabilityOrExposureReview</FOR>
-      <GIVEN>SignificantAntipsychoticSideEffects</GIVEN>
-      <GIVEN>PharmacokineticChange</GIVEN>
-      <TABLE>
-      1 0
-      0 1
-      0 1
-      0 1
-    </TABLE>
-      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
-      <PROPERTY>parameter_status=deterministic_workflow_formalization_not_patient_probability</PROPERTY>
-      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-05.md</PROPERTY>
-      <PROPERTY>source_locator=Implementation</PROPERTY>
-      <PROPERTY>uncertainty_description=Exact formalization requires clinician review; negative flags do not establish safety</PROPERTY>
-    </DEFINITION>
-    <DEFINITION>
-      <FOR>ExtendedActionDoseReview</FOR>
-      <GIVEN>ExtendedActionPreparation</GIVEN>
-      <GIVEN>MedicationChangeDiscussed</GIVEN>
-      <TABLE>
-      1 0
-      1 0
-      1 0
-      0 1
-    </TABLE>
-      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
-      <PROPERTY>parameter_status=deterministic_workflow_formalization_not_patient_probability</PROPERTY>
-      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-05.md</PROPERTY>
-      <PROPERTY>source_locator=Implementation</PROPERTY>
-      <PROPERTY>uncertainty_description=Exact formalization requires clinician review; negative flags do not establish safety</PROPERTY>
-    </DEFINITION>
-    <DEFINITION>
-      <FOR>ChangeDiscussionContext</FOR>
-      <GIVEN>MedicationChangeDiscussed</GIVEN>
-      <GIVEN>EmergentDiscontinuationIndication</GIVEN>
-      <TABLE>
-      1 0 0
-      0 0 1
-      0 1 0
-      0 0 1
-    </TABLE>
-      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
-      <PROPERTY>parameter_status=deterministic_workflow_formalization_not_patient_probability</PROPERTY>
-      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-05.md</PROPERTY>
-      <PROPERTY>source_locator=Implementation</PROPERTY>
-      <PROPERTY>uncertainty_description=Exact formalization requires clinician review; negative flags do not establish safety</PROPERTY>
-    </DEFINITION>
-    <DEFINITION>
-      <FOR>CourseRiskDiscussion</FOR>
-      <GIVEN>ChronicOrRepeatedRelapseCourse</GIVEN>
-      <GIVEN>MedicationChangeDiscussed</GIVEN>
-      <TABLE>
-      1 0
-      1 0
-      1 0
-      0 1
-    </TABLE>
-      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
-      <PROPERTY>parameter_status=deterministic_workflow_formalization_not_patient_probability</PROPERTY>
-      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-05.md</PROPERTY>
-      <PROPERTY>source_locator=Implementation</PROPERTY>
-      <PROPERTY>uncertainty_description=Exact formalization requires clinician review; negative flags do not establish safety</PROPERTY>
-    </DEFINITION>
   </NETWORK>
 </BIF>

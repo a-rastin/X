@@ -1,58 +1,65 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<BIF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="0.3" xsi:noNamespaceSchemaLocation="../schema.xml">
+<BIF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="0.3" xsi:noNamespaceSchemaLocation="schema.xml">
   <NETWORK>
     <NAME>Statement07_Clozapine_Review</NAME>
-    <PROPERTY>clinical_question=Which Statement 7 issues warrant clinician review for clozapine consideration or ongoing treatment?</PROPERTY>
+    <PROPERTY>clinical_question=How do scenario factors affect experimental clozapine consideration in treatment resistance?</PROPERTY>
     <PROPERTY>statement_id=7</PROPERTY>
     <PROPERTY>recommendation_strength=1</PROPERTY>
     <PROPERTY>evidence_quality=B</PROPERTY>
     <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-07.md</PROPERTY>
     <PROPERTY>source_locator=Statement 7, printed pages 88-96</PROPERTY>
     <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
-    <PROPERTY>model_version=0.1</PROPERTY>
+    <PROPERTY>model_version=0.2.0</PROPERTY>
     <PROPERTY>created=2026-09-16</PROPERTY>
-    <PROPERTY>population=Adults with clinician-assessed schizophrenia; draft scope assumption</PROPERTY>
-    <PROPERTY>setting=Clinician-led psychiatric treatment review; local jurisdiction unspecified</PROPERTY>
-    <PROPERTY>time_horizon=Current review using historical trials; no prospective risk horizon</PROPERTY>
-    <PROPERTY>validation_status=UNPARAMETERIZED_NOT_FOR_CLINICAL_INFERENCE</PROPERTY>
-    <PROPERTY>inference_allowed=false</PROPERTY>
-    <PROPERTY>deployment_allowed=false</PROPERTY>
-    <PROPERTY>parameter_policy=No fabricated priors or empirical CPTs; omitted definitions are intentional</PROPERTY>
-    <PROPERTY>missingness_policy=Unobserved is not No; do not infer with missing distributions</PROPERTY>
-    <PROPERTY>graph_semantics=Deterministic review dependencies, not causal treatment effects</PROPERTY>
-    <PROPERTY>root_independence=Provisional and unvalidated; reassess dependencies before probabilistic completion</PROPERTY>
+    <PROPERTY>population=Adult schizophrenia and antipsychotic-treatment scenarios for experimentation</PROPERTY>
+    <PROPERTY>setting=Experimental and educational application</PROPERTY>
+    <PROPERTY>time_horizon=Current scenario; follow-up intervals may be selected for the experiment</PROPERTY>
+    <PROPERTY>validation_status=EXPERIMENTAL_TEMPLATE_REQUIRES_CPTS</PROPERTY>
+    <PROPERTY>parameter_policy=Supply priors and CPTs per experiment using manual values, synthetic examples or LLM estimates; all CPT values are adjustable, including source-lookup examples</PROPERTY>
+    <PROPERTY>missingness_policy=Unspecified scenario values remain unobserved; inference may use any subset of observations once the CPTs are complete</PROPERTY>
+    <PROPERTY>graph_semantics=Experimental dependencies with run-specific CPTs; output labels identify topics rather than fixed clinician-review rules</PROPERTY>
+    <PROPERTY>root_independence=Root independence is a provisional structural assumption for the experiment</PROPERTY>
     <PROPERTY>regulatory_update=US REMS removed 2025-06-13; ANC monitoring continues per prescribing information</PROPERTY>
     <PROPERTY>regulatory_source=https://www.fda.gov/drugs/drug-safety-communications/fda-removes-risk-evaluation-and-mitigation-strategy-rems-program-antipsychotic-drug-clozapine</PROPERTY>
-    <PROPERTY>runtime_warning=PROPERTY flags are advisory; consumer must reject incomplete models</PROPERTY>
+    <PROPERTY>use_context=experimental_educational</PROPERTY>
+    <PROPERTY>inference_mode=after_complete_cpt_validation</PROPERTY>
+    <PROPERTY>scope=Educational exploration of scenario-based treatment proposals and network results</PROPERTY>
+    <PROPERTY>input_policy=Scenario values may be synthetic, manually supplied or simulated; observations are optional and supporting clinical documentation is not required</PROPERTY>
+    <PROPERTY>edge_encoding=Ordered proposed_parent properties retain parents for omitted CPTs; materialize them as ordered GIVEN elements when adding a DEFINITION</PROPERTY>
+    <PROPERTY>execution_contract=Before execution, supply all nature-node distributions and validate table sizes, finite values, probability bounds and row normalization</PROPERTY>
+    <PROPERTY>source_policy=Source metadata is optional background attribution and does not gate experimental electronic decision support</PROPERTY>
+    <PROPERTY>parameter_inventory=23 run-specific distributions to supply; 0 editable source-lookup examples supplied</PROPERTY>
     <VARIABLE TYPE="nature">
       <NAME>SchizophreniaEstablished</NAME>
       <OUTCOME>Yes</OUTCOME>
       <OUTCOME>No</OUTCOME>
       <PROPERTY>label=Schizophrenia Established</PROPERTY>
-      <PROPERTY>definition=Clinician-confirmed schizophrenia after diagnostic review; not an automated diagnosis.</PROPERTY>
-      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>definition=Schizophrenia status represented by the scenario.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-07.md</PROPERTY>
       <PROPERTY>source_locator=Identification of Treatment-Resistant Schizophrenia, p. 88</PROPERTY>
       <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
-      <PROPERTY>parameter_status=missing_prior</PROPERTY>
-      <PROPERTY>missingness_policy=Leave unobserved when unavailable; absence of documentation is not a negative finding</PROPERTY>
-      <PROPERTY>time_window=Current review with explicitly documented historical trial dates</PROPERTY>
-      <PROPERTY>parameter_requirement=2 prior entries; population data or elicitation required after dependence review</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>PersistentSignificantSymptoms</NAME>
       <OUTCOME>Yes</OUTCOME>
       <OUTCOME>No</OUTCOME>
       <PROPERTY>label=Persistent Significant Symptoms</PROPERTY>
-      <PROPERTY>definition=Current clinically significant residual symptoms despite treatment; record symptom domains and validated scale/version. A 20 percent improvement does not automatically make this No.</PROPERTY>
-      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>definition=Persistent significant symptoms represented in the scenario.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-07.md</PROPERTY>
       <PROPERTY>source_locator=Identification of Treatment-Resistant Schizophrenia, p. 88</PROPERTY>
       <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
-      <PROPERTY>parameter_status=missing_prior</PROPERTY>
-      <PROPERTY>missingness_policy=Leave unobserved when unavailable; absence of documentation is not a negative finding</PROPERTY>
-      <PROPERTY>time_window=Current review with explicitly documented historical trial dates</PROPERTY>
-      <PROPERTY>parameter_requirement=2 prior entries; population data or elicitation required after dependence review</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>Trial1Assessment</NAME>
@@ -61,15 +68,16 @@
       <OUTCOME>InadequateExposure</OUTCOME>
       <OUTCOME>TruncatedByIntolerance</OUTCOME>
       <PROPERTY>label=Trial 1 Assessment</PROPERTY>
-      <PROPERTY>definition=One documented prior antipsychotic trial. Adequate: therapeutic dose for at least 6 weeks with adherence at least 80 percent, supported by adherence evidence. Suboptimal includes partial response with persistent significant symptoms. If prematurely truncated by intolerance, select TruncatedByIntolerance even if exposure also inadequate; otherwise insufficient dose/duration/adherence is InadequateExposure. Record drug, dates, dose, scale, blood-level and multiple-source adherence evidence. This is a modeler operationalization, not the entire TRRIP definition.</PROPERTY>
-      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>definition=First prior antipsychotic trial, categorized by exposure adequacy, response or intolerance for the experiment.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-07.md</PROPERTY>
       <PROPERTY>source_locator=Identification of Treatment-Resistant Schizophrenia, p. 88</PROPERTY>
       <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
-      <PROPERTY>parameter_status=missing_prior</PROPERTY>
-      <PROPERTY>missingness_policy=Leave unobserved when unavailable; absence of documentation is not a negative finding</PROPERTY>
-      <PROPERTY>time_window=Current review with explicitly documented historical trial dates</PROPERTY>
-      <PROPERTY>parameter_requirement=4 prior entries; population data or elicitation required after dependence review</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>required_table_entries=4</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>Trial2Assessment</NAME>
@@ -78,60 +86,64 @@
       <OUTCOME>InadequateExposure</OUTCOME>
       <OUTCOME>TruncatedByIntolerance</OUTCOME>
       <PROPERTY>label=Trial 2 Assessment</PROPERTY>
-      <PROPERTY>definition=One documented prior antipsychotic trial. Adequate: therapeutic dose for at least 6 weeks with adherence at least 80 percent, supported by adherence evidence. Suboptimal includes partial response with persistent significant symptoms. If prematurely truncated by intolerance, select TruncatedByIntolerance even if exposure also inadequate; otherwise insufficient dose/duration/adherence is InadequateExposure. Record drug, dates, dose, scale, blood-level and multiple-source adherence evidence. This is a modeler operationalization, not the entire TRRIP definition.</PROPERTY>
-      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>definition=Second prior antipsychotic trial, categorized by exposure adequacy, response or intolerance for the experiment.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-07.md</PROPERTY>
       <PROPERTY>source_locator=Identification of Treatment-Resistant Schizophrenia, p. 88</PROPERTY>
       <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
-      <PROPERTY>parameter_status=missing_prior</PROPERTY>
-      <PROPERTY>missingness_policy=Leave unobserved when unavailable; absence of documentation is not a negative finding</PROPERTY>
-      <PROPERTY>time_window=Current review with explicitly documented historical trial dates</PROPERTY>
-      <PROPERTY>parameter_requirement=4 prior entries; population data or elicitation required after dependence review</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>required_table_entries=4</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>TrialsUseDifferentDrugs</NAME>
       <OUTCOME>Yes</OUTCOME>
       <OUTCOME>No</OUTCOME>
       <PROPERTY>label=Trials Use Different Drugs</PROPERTY>
-      <PROPERTY>definition=The two assessed trials used different antipsychotic agents; different classes are not mandatory in this draft.</PROPERTY>
-      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>definition=Whether the two scenario trials use different antipsychotic agents.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-07.md</PROPERTY>
       <PROPERTY>source_locator=Identification of Treatment-Resistant Schizophrenia, p. 88</PROPERTY>
       <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
-      <PROPERTY>parameter_status=missing_prior</PROPERTY>
-      <PROPERTY>missingness_policy=Leave unobserved when unavailable; absence of documentation is not a negative finding</PROPERTY>
-      <PROPERTY>time_window=Current review with explicitly documented historical trial dates</PROPERTY>
-      <PROPERTY>parameter_requirement=2 prior entries; population data or elicitation required after dependence review</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>SymptomsAtLeast12Weeks</NAME>
       <OUTCOME>Yes</OUTCOME>
       <OUTCOME>No</OUTCOME>
       <PROPERTY>label=Symptoms At Least 12 Weeks</PROPERTY>
-      <PROPERTY>definition=Significant symptoms persisted for at least 12 weeks in total; duration evidence documented.</PROPERTY>
-      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>definition=Whether the scenario includes significant symptoms lasting at least 12 weeks.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-07.md</PROPERTY>
       <PROPERTY>source_locator=Identification of Treatment-Resistant Schizophrenia, p. 88</PROPERTY>
       <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
-      <PROPERTY>parameter_status=missing_prior</PROPERTY>
-      <PROPERTY>missingness_policy=Leave unobserved when unavailable; absence of documentation is not a negative finding</PROPERTY>
-      <PROPERTY>time_window=Current review with explicitly documented historical trial dates</PROPERTY>
-      <PROPERTY>parameter_requirement=2 prior entries; population data or elicitation required after dependence review</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>ModerateSymptomsAndFunctionalImpairment</NAME>
       <OUTCOME>Yes</OUTCOME>
       <OUTCOME>No</OUTCOME>
       <PROPERTY>label=Moderate Symptoms And Functional Impairment</PROPERTY>
-      <PROPERTY>definition=Both symptom severity and functional impairment at least moderate on validated measures; source gives SOFAS below 60 as functioning example. Not a universal clinical eligibility gate.</PROPERTY>
-      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>definition=Whether the scenario includes at least moderate symptoms and functional impairment.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-07.md</PROPERTY>
       <PROPERTY>source_locator=Identification of Treatment-Resistant Schizophrenia, p. 88</PROPERTY>
       <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
-      <PROPERTY>parameter_status=missing_prior</PROPERTY>
-      <PROPERTY>missingness_policy=Leave unobserved when unavailable; absence of documentation is not a negative finding</PROPERTY>
-      <PROPERTY>time_window=Current review with explicitly documented historical trial dates</PROPERTY>
-      <PROPERTY>parameter_requirement=2 prior entries; population data or elicitation required after dependence review</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>ClozapineTreatmentStatus</NAME>
@@ -139,254 +151,222 @@
       <OUTCOME>CurrentTreatment</OUTCOME>
       <OUTCOME>PreviouslyTreated</OUTCOME>
       <PROPERTY>label=Clozapine Treatment Status</PROPERTY>
-      <PROPERTY>definition=Current clozapine treatment status; prior treatment requires individualized review, including why it stopped.</PROPERTY>
-      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>definition=Never, current or previous clozapine treatment represented in the scenario.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-07.md</PROPERTY>
       <PROPERTY>source_locator=Initiation of Treatment With Clozapine, pp. 89-90</PROPERTY>
       <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
-      <PROPERTY>parameter_status=missing_prior</PROPERTY>
-      <PROPERTY>missingness_policy=Leave unobserved when unavailable; absence of documentation is not a negative finding</PROPERTY>
-      <PROPERTY>time_window=Current review with explicitly documented historical trial dates</PROPERTY>
-      <PROPERTY>parameter_requirement=3 prior entries; population data or elicitation required after dependence review</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>required_table_entries=3</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>WillingToDiscussClozapine</NAME>
       <OUTCOME>Yes</OUTCOME>
       <OUTCOME>No</OUTCOME>
       <PROPERTY>label=Willing To Discuss Clozapine</PROPERTY>
-      <PROPERTY>definition=Patient currently willing to discuss clozapine; No prompts exploration of concerns, not permanent exclusion.</PROPERTY>
-      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>definition=Willingness to discuss clozapine represented in the scenario.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-07.md</PROPERTY>
       <PROPERTY>source_locator=Initiation of Treatment With Clozapine, pp. 89-90</PROPERTY>
       <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
-      <PROPERTY>parameter_status=missing_prior</PROPERTY>
-      <PROPERTY>missingness_policy=Leave unobserved when unavailable; absence of documentation is not a negative finding</PROPERTY>
-      <PROPERTY>time_window=Current review with explicitly documented historical trial dates</PROPERTY>
-      <PROPERTY>parameter_requirement=2 prior entries; population data or elicitation required after dependence review</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>ClozapineMonitoringPlanAvailable</NAME>
       <OUTCOME>Yes</OUTCOME>
       <OUTCOME>No</OUTCOME>
       <PROPERTY>label=Clozapine Monitoring Plan Available</PROPERTY>
-      <PROPERTY>definition=Clinician confirms feasible current local ANC and other safety monitoring plan; does not mean REMS enrollment.</PROPERTY>
-      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>definition=Availability of a clozapine monitoring and follow-up plan represented in the scenario.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-07.md</PROPERTY>
       <PROPERTY>source_locator=Monitoring for Side Effects During Treatment With Clozapine, pp. 90-93</PROPERTY>
       <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
-      <PROPERTY>parameter_status=missing_prior</PROPERTY>
-      <PROPERTY>missingness_policy=Leave unobserved when unavailable; absence of documentation is not a negative finding</PROPERTY>
-      <PROPERTY>time_window=Current review with explicitly documented historical trial dates</PROPERTY>
-      <PROPERTY>parameter_requirement=2 prior entries; population data or elicitation required after dependence review</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>ClozapineInitiationDiscussionAppropriate</NAME>
       <OUTCOME>Yes</OUTCOME>
       <OUTCOME>No</OUTCOME>
       <PROPERTY>label=Clozapine Initiation Discussion Appropriate</PROPERTY>
-      <PROPERTY>definition=Clinician has completed individualized contraindication, interaction and medical risk review and considers initiation discussion appropriate; no autonomous medical clearance.</PROPERTY>
-      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>definition=Appropriateness of a clozapine initiation discussion represented as a scenario assumption.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-07.md</PROPERTY>
       <PROPERTY>source_locator=Initiation of Treatment With Clozapine, pp. 89-90</PROPERTY>
       <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
-      <PROPERTY>parameter_status=missing_prior</PROPERTY>
-      <PROPERTY>missingness_policy=Leave unobserved when unavailable; absence of documentation is not a negative finding</PROPERTY>
-      <PROPERTY>time_window=Current review with explicitly documented historical trial dates</PROPERTY>
-      <PROPERTY>parameter_requirement=2 prior entries; population data or elicitation required after dependence review</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>UrgentSafetyConcern</NAME>
       <OUTCOME>Present</OUTCOME>
       <OUTCOME>Absent</OUTCOME>
       <PROPERTY>label=Urgent Safety Concern</PROPERTY>
-      <PROPERTY>definition=Clinician identifies an urgent concern: e.g. suspected severe neutropenia, myocarditis/NMS, severe or unresolved constipation, or acute psychiatric danger. This is a nonexhaustive externally assessed safety input; Absent is not proof of safety.</PROPERTY>
-      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>definition=Presence or absence of an urgent safety concern in the scenario.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-07.md</PROPERTY>
       <PROPERTY>source_locator=Monitoring for Side Effects During Treatment With Clozapine, pp. 90-93</PROPERTY>
       <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
-      <PROPERTY>parameter_status=missing_prior</PROPERTY>
-      <PROPERTY>missingness_policy=Leave unobserved when unavailable; absence of documentation is not a negative finding</PROPERTY>
-      <PROPERTY>time_window=Current review with explicitly documented historical trial dates</PROPERTY>
-      <PROPERTY>parameter_requirement=2 prior entries; population data or elicitation required after dependence review</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>ExposureInterpretationConcern</NAME>
       <OUTCOME>Yes</OUTCOME>
       <OUTCOME>No</OUTCOME>
       <PROPERTY>label=Exposure Interpretation Concern</PROPERTY>
-      <PROPERTY>definition=Clinician identifies adherence uncertainty, changed smoking/caffeine, interacting drugs, unexpected concentrations or invalid blood-sampling timing; not a numerical toxicity diagnosis. Prior-treatment patients require current relevance to be assessed.</PROPERTY>
-      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>definition=Concern about adherence, smoking or caffeine changes, interactions, concentrations or sample timing in the scenario.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-07.md</PROPERTY>
       <PROPERTY>source_locator=Use of Clozapine Levels During Treatment With Clozapine, p. 90</PROPERTY>
       <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
-      <PROPERTY>parameter_status=missing_prior</PROPERTY>
-      <PROPERTY>missingness_policy=Leave unobserved when unavailable; absence of documentation is not a negative finding</PROPERTY>
-      <PROPERTY>time_window=Current review with explicitly documented historical trial dates</PROPERTY>
-      <PROPERTY>parameter_requirement=2 prior entries; population data or elicitation required after dependence review</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>ClozapineTrialAdequate</NAME>
       <OUTCOME>Yes</OUTCOME>
       <OUTCOME>No</OUTCOME>
       <PROPERTY>label=Clozapine Trial Adequate</PROPERTY>
-      <PROPERTY>definition=Clinician confirms adequate tolerated exposure and duration before labeling nonresponse. Source discusses adequate dose/levels and at least 8 weeks; no universal efficacy cutoff or automated dose escalation is encoded.</PROPERTY>
-      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>definition=Adequacy of the clozapine trial represented as a scenario assumption.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-07.md</PROPERTY>
       <PROPERTY>source_locator=Optimizing Treatment With Clozapine, p. 94</PROPERTY>
       <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
-      <PROPERTY>parameter_status=missing_prior</PROPERTY>
-      <PROPERTY>missingness_policy=Leave unobserved when unavailable; absence of documentation is not a negative finding</PROPERTY>
-      <PROPERTY>time_window=Current review with explicitly documented historical trial dates</PROPERTY>
-      <PROPERTY>parameter_requirement=2 prior entries; population data or elicitation required after dependence review</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>ResidualSymptomsOnClozapine</NAME>
       <OUTCOME>Yes</OUTCOME>
       <OUTCOME>No</OUTCOME>
       <PROPERTY>label=Residual Symptoms On Clozapine</PROPERTY>
-      <PROPERTY>definition=Current clinically significant residual symptoms on clozapine using repeated validated assessments. Leave unobserved when not currently treated.</PROPERTY>
-      <PROPERTY>clinical_role=clinician_verified_input</PROPERTY>
+      <PROPERTY>definition=Residual symptoms during clozapine treatment represented in the scenario.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-07.md</PROPERTY>
       <PROPERTY>source_locator=Optimizing Treatment With Clozapine, p. 94</PROPERTY>
       <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
-      <PROPERTY>parameter_status=missing_prior</PROPERTY>
-      <PROPERTY>missingness_policy=Leave unobserved when unavailable; absence of documentation is not a negative finding</PROPERTY>
-      <PROPERTY>time_window=Current review with explicitly documented historical trial dates</PROPERTY>
-      <PROPERTY>parameter_requirement=2 prior entries; population data or elicitation required after dependence review</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
     </VARIABLE>
     <VARIABLE TYPE="nature">
       <NAME>TwoAdequateSuboptimalTrials</NAME>
       <OUTCOME>Yes</OUTCOME>
       <OUTCOME>No</OUTCOME>
       <PROPERTY>label=Two Adequate Suboptimal Trials</PROPERTY>
-      <PROPERTY>definition=Summary of two different adequate trials with inadequate clinical response.</PROPERTY>
-      <PROPERTY>clinical_role=derived_review_flag</PROPERTY>
+      <PROPERTY>definition=Experimental output for Two Adequate Suboptimal Trials; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-07.md</PROPERTY>
       <PROPERTY>source_locator=Identification of Treatment-Resistant Schizophrenia, p. 88</PROPERTY>
       <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
-      <PROPERTY>parameter_status=deterministic_proposed_rule</PROPERTY>
-      <PROPERTY>missingness_policy=Leave unobserved when unavailable; absence of documentation is not a negative finding</PROPERTY>
-      <PROPERTY>time_window=Current review with explicitly documented historical trial dates</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>proposed_parent=Trial1Assessment</PROPERTY>
+      <PROPERTY>proposed_parent=Trial2Assessment</PROPERTY>
+      <PROPERTY>proposed_parent=TrialsUseDifferentDrugs</PROPERTY>
+      <PROPERTY>required_table_entries=64</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
     </VARIABLE>
-    <DEFINITION>
-      <FOR>TwoAdequateSuboptimalTrials</FOR>
-      <GIVEN>Trial1Assessment</GIVEN>
-      <GIVEN>Trial2Assessment</GIVEN>
-      <GIVEN>TrialsUseDifferentDrugs</GIVEN>
-      <TABLE>1 0 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1</TABLE>
-      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
-      <PROPERTY>parameter_status=deterministic_review_mapping_not_empirical_probability</PROPERTY>
-      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-07.md</PROPERTY>
-      <PROPERTY>source_locator=Identification of Treatment-Resistant Schizophrenia, p. 88</PROPERTY>
-      <PROPERTY>rule=Yes iff both trials AdequateSuboptimalResponse and different drugs Yes</PROPERTY>
-      <PROPERTY>table_order=Child fastest; final GIVEN next; declared OUTCOME order</PROPERTY>
-    </DEFINITION>
     <VARIABLE TYPE="nature">
       <NAME>TreatmentResistantSchizophreniaReview</NAME>
       <OUTCOME>Triggered</OUTCOME>
       <OUTCOME>NotTriggered</OUTCOME>
       <PROPERTY>label=Treatment Resistant Schizophrenia Review</PROPERTY>
-      <PROPERTY>definition=Flag to review treatment-resistant schizophrenia and clozapine; not definitive TRS diagnosis or prescription.</PROPERTY>
-      <PROPERTY>clinical_role=derived_review_flag</PROPERTY>
+      <PROPERTY>definition=Experimental output for Treatment Resistant Schizophrenia Review; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-07.md</PROPERTY>
       <PROPERTY>source_locator=Identification of Treatment-Resistant Schizophrenia, p. 88</PROPERTY>
       <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
-      <PROPERTY>parameter_status=deterministic_proposed_rule</PROPERTY>
-      <PROPERTY>missingness_policy=Leave unobserved when unavailable; absence of documentation is not a negative finding</PROPERTY>
-      <PROPERTY>time_window=Current review with explicitly documented historical trial dates</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>proposed_parent=SchizophreniaEstablished</PROPERTY>
+      <PROPERTY>proposed_parent=PersistentSignificantSymptoms</PROPERTY>
+      <PROPERTY>proposed_parent=TwoAdequateSuboptimalTrials</PROPERTY>
+      <PROPERTY>required_table_entries=16</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
     </VARIABLE>
-    <DEFINITION>
-      <FOR>TreatmentResistantSchizophreniaReview</FOR>
-      <GIVEN>SchizophreniaEstablished</GIVEN>
-      <GIVEN>PersistentSignificantSymptoms</GIVEN>
-      <GIVEN>TwoAdequateSuboptimalTrials</GIVEN>
-      <TABLE>1 0 0 1 0 1 0 1 0 1 0 1 0 1 0 1</TABLE>
-      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
-      <PROPERTY>parameter_status=deterministic_review_mapping_not_empirical_probability</PROPERTY>
-      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-07.md</PROPERTY>
-      <PROPERTY>source_locator=Identification of Treatment-Resistant Schizophrenia, p. 88</PROPERTY>
-      <PROPERTY>rule=Triggered iff all three parents Yes; NotTriggered does not rule out TRS or other clozapine indications</PROPERTY>
-      <PROPERTY>table_order=Child fastest; final GIVEN next; declared OUTCOME order</PROPERTY>
-    </DEFINITION>
     <VARIABLE TYPE="nature">
       <NAME>AdditionalResearchFeatures</NAME>
       <OUTCOME>Present</OUTCOME>
       <OUTCOME>NotAllPresent</OUTCOME>
       <PROPERTY>label=Additional Research Features</PROPERTY>
-      <PROPERTY>definition=Additional duration/severity/function features described by TRRIP; not certification of full TRRIP criteria.</PROPERTY>
-      <PROPERTY>clinical_role=derived_review_flag</PROPERTY>
+      <PROPERTY>definition=Experimental output for Additional Research Features; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-07.md</PROPERTY>
       <PROPERTY>source_locator=Identification of Treatment-Resistant Schizophrenia, p. 88</PROPERTY>
       <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
-      <PROPERTY>parameter_status=deterministic_proposed_rule</PROPERTY>
-      <PROPERTY>missingness_policy=Leave unobserved when unavailable; absence of documentation is not a negative finding</PROPERTY>
-      <PROPERTY>time_window=Current review with explicitly documented historical trial dates</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>proposed_parent=SymptomsAtLeast12Weeks</PROPERTY>
+      <PROPERTY>proposed_parent=ModerateSymptomsAndFunctionalImpairment</PROPERTY>
+      <PROPERTY>required_table_entries=8</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
     </VARIABLE>
-    <DEFINITION>
-      <FOR>AdditionalResearchFeatures</FOR>
-      <GIVEN>SymptomsAtLeast12Weeks</GIVEN>
-      <GIVEN>ModerateSymptomsAndFunctionalImpairment</GIVEN>
-      <TABLE>1 0 0 1 0 1 0 1</TABLE>
-      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
-      <PROPERTY>parameter_status=deterministic_review_mapping_not_empirical_probability</PROPERTY>
-      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-07.md</PROPERTY>
-      <PROPERTY>source_locator=Identification of Treatment-Resistant Schizophrenia, p. 88</PROPERTY>
-      <PROPERTY>rule=Present iff both parents Yes; deliberately not a parent gating clinical review</PROPERTY>
-      <PROPERTY>table_order=Child fastest; final GIVEN next; declared OUTCOME order</PROPERTY>
-    </DEFINITION>
     <VARIABLE TYPE="nature">
       <NAME>PriorTrialAdequacyReview</NAME>
       <OUTCOME>Triggered</OUTCOME>
       <OUTCOME>NotTriggered</OUTCOME>
       <PROPERTY>label=Prior Trial Adequacy Review</PROPERTY>
-      <PROPERTY>definition=Review inadequate treatment exposure or intolerance before classifying failed trials as resistance.</PROPERTY>
-      <PROPERTY>clinical_role=derived_review_flag</PROPERTY>
+      <PROPERTY>definition=Experimental output for Prior Trial Adequacy Review; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-07.md</PROPERTY>
       <PROPERTY>source_locator=Identification of Treatment-Resistant Schizophrenia, p. 88</PROPERTY>
       <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
-      <PROPERTY>parameter_status=deterministic_proposed_rule</PROPERTY>
-      <PROPERTY>missingness_policy=Leave unobserved when unavailable; absence of documentation is not a negative finding</PROPERTY>
-      <PROPERTY>time_window=Current review with explicitly documented historical trial dates</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>proposed_parent=Trial1Assessment</PROPERTY>
+      <PROPERTY>proposed_parent=Trial2Assessment</PROPERTY>
+      <PROPERTY>required_table_entries=32</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
     </VARIABLE>
-    <DEFINITION>
-      <FOR>PriorTrialAdequacyReview</FOR>
-      <GIVEN>Trial1Assessment</GIVEN>
-      <GIVEN>Trial2Assessment</GIVEN>
-      <TABLE>0 1 0 1 1 0 1 0 0 1 0 1 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0</TABLE>
-      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
-      <PROPERTY>parameter_status=deterministic_review_mapping_not_empirical_probability</PROPERTY>
-      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-07.md</PROPERTY>
-      <PROPERTY>source_locator=Identification of Treatment-Resistant Schizophrenia, p. 88</PROPERTY>
-      <PROPERTY>rule=Triggered iff either trial inadequate exposure or truncated by intolerance; no automatic LAI mandate</PROPERTY>
-      <PROPERTY>table_order=Child fastest; final GIVEN next; declared OUTCOME order</PROPERTY>
-    </DEFINITION>
     <VARIABLE TYPE="nature">
       <NAME>ClozapineInitiationDiscussionPreparation</NAME>
       <OUTCOME>AddressBarriers</OUTCOME>
       <OUTCOME>PreparedForDiscussion</OUTCOME>
       <PROPERTY>label=Clozapine Initiation Discussion Preparation</PROPERTY>
-      <PROPERTY>definition=Readiness to discuss a potential initiation plan, not permission to prescribe.</PROPERTY>
-      <PROPERTY>clinical_role=derived_review_flag</PROPERTY>
+      <PROPERTY>definition=Experimental output for Clozapine Initiation Discussion Preparation; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-07.md</PROPERTY>
       <PROPERTY>source_locator=Initiation of Treatment With Clozapine, pp. 89-90</PROPERTY>
       <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
-      <PROPERTY>parameter_status=deterministic_proposed_rule</PROPERTY>
-      <PROPERTY>missingness_policy=Leave unobserved when unavailable; absence of documentation is not a negative finding</PROPERTY>
-      <PROPERTY>time_window=Current review with explicitly documented historical trial dates</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>proposed_parent=WillingToDiscussClozapine</PROPERTY>
+      <PROPERTY>proposed_parent=ClozapineMonitoringPlanAvailable</PROPERTY>
+      <PROPERTY>proposed_parent=ClozapineInitiationDiscussionAppropriate</PROPERTY>
+      <PROPERTY>required_table_entries=16</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
     </VARIABLE>
-    <DEFINITION>
-      <FOR>ClozapineInitiationDiscussionPreparation</FOR>
-      <GIVEN>WillingToDiscussClozapine</GIVEN>
-      <GIVEN>ClozapineMonitoringPlanAvailable</GIVEN>
-      <GIVEN>ClozapineInitiationDiscussionAppropriate</GIVEN>
-      <TABLE>0 1 1 0 1 0 1 0 1 0 1 0 1 0 1 0</TABLE>
-      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
-      <PROPERTY>parameter_status=deterministic_review_mapping_not_empirical_probability</PROPERTY>
-      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-07.md</PROPERTY>
-      <PROPERTY>source_locator=Initiation of Treatment With Clozapine, pp. 89-90</PROPERTY>
-      <PROPERTY>rule=PreparedForDiscussion iff all parents Yes; otherwise explore preferences or address clinical/logistical barriers</PROPERTY>
-      <PROPERTY>table_order=Child fastest; final GIVEN next; declared OUTCOME order</PROPERTY>
-    </DEFINITION>
     <VARIABLE TYPE="nature">
       <NAME>TreatmentResistanceClozapineReviewPathway</NAME>
       <OUTCOME>UrgentClinicalAssessment</OUTCOME>
@@ -396,55 +376,39 @@
       <OUTCOME>DiscussClozapine</OUTCOME>
       <OUTCOME>AddressDiscussionBarriers</OUTCOME>
       <PROPERTY>label=Treatment Resistance Clozapine Review Pathway</PROPERTY>
-      <PROPERTY>definition=Proposed workflow routing, never an automated start/stop order.</PROPERTY>
-      <PROPERTY>clinical_role=derived_review_flag</PROPERTY>
+      <PROPERTY>definition=Experimental output for Treatment Resistance Clozapine Review Pathway; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-07.md</PROPERTY>
       <PROPERTY>source_locator=Initiation of Treatment With Clozapine, pp. 89-90</PROPERTY>
       <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
-      <PROPERTY>parameter_status=deterministic_proposed_rule</PROPERTY>
-      <PROPERTY>missingness_policy=Leave unobserved when unavailable; absence of documentation is not a negative finding</PROPERTY>
-      <PROPERTY>time_window=Current review with explicitly documented historical trial dates</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>proposed_parent=UrgentSafetyConcern</PROPERTY>
+      <PROPERTY>proposed_parent=ClozapineTreatmentStatus</PROPERTY>
+      <PROPERTY>proposed_parent=TreatmentResistantSchizophreniaReview</PROPERTY>
+      <PROPERTY>proposed_parent=ClozapineInitiationDiscussionPreparation</PROPERTY>
+      <PROPERTY>required_table_entries=144</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
     </VARIABLE>
-    <DEFINITION>
-      <FOR>TreatmentResistanceClozapineReviewPathway</FOR>
-      <GIVEN>UrgentSafetyConcern</GIVEN>
-      <GIVEN>ClozapineTreatmentStatus</GIVEN>
-      <GIVEN>TreatmentResistantSchizophreniaReview</GIVEN>
-      <GIVEN>ClozapineInitiationDiscussionPreparation</GIVEN>
-      <TABLE>1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0</TABLE>
-      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
-      <PROPERTY>parameter_status=deterministic_review_mapping_not_empirical_probability</PROPERTY>
-      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-07.md</PROPERTY>
-      <PROPERTY>source_locator=Initiation of Treatment With Clozapine, pp. 89-90</PROPERTY>
-      <PROPERTY>rule=Priority: urgent; current treatment; previous treatment; absent TRS flag; otherwise discuss or address barriers</PROPERTY>
-      <PROPERTY>table_order=Child fastest; final GIVEN next; declared OUTCOME order</PROPERTY>
-    </DEFINITION>
     <VARIABLE TYPE="nature">
       <NAME>ClozapineExposureReview</NAME>
       <OUTCOME>Triggered</OUTCOME>
       <OUTCOME>NotTriggered</OUTCOME>
       <PROPERTY>label=Clozapine Exposure Review</PROPERTY>
-      <PROPERTY>definition=Review drug exposure and concentration interpretation during current treatment. Numerical dosing and restart protocols excluded.</PROPERTY>
-      <PROPERTY>clinical_role=derived_review_flag</PROPERTY>
+      <PROPERTY>definition=Experimental output for Clozapine Exposure Review; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-07.md</PROPERTY>
       <PROPERTY>source_locator=Use of Clozapine Levels During Treatment With Clozapine, p. 90</PROPERTY>
       <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
-      <PROPERTY>parameter_status=deterministic_proposed_rule</PROPERTY>
-      <PROPERTY>missingness_policy=Leave unobserved when unavailable; absence of documentation is not a negative finding</PROPERTY>
-      <PROPERTY>time_window=Current review with explicitly documented historical trial dates</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>proposed_parent=ClozapineTreatmentStatus</PROPERTY>
+      <PROPERTY>proposed_parent=ExposureInterpretationConcern</PROPERTY>
+      <PROPERTY>required_table_entries=12</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
     </VARIABLE>
-    <DEFINITION>
-      <FOR>ClozapineExposureReview</FOR>
-      <GIVEN>ClozapineTreatmentStatus</GIVEN>
-      <GIVEN>ExposureInterpretationConcern</GIVEN>
-      <TABLE>0 1 0 1 1 0 0 1 0 1 0 1</TABLE>
-      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
-      <PROPERTY>parameter_status=deterministic_review_mapping_not_empirical_probability</PROPERTY>
-      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-07.md</PROPERTY>
-      <PROPERTY>source_locator=Use of Clozapine Levels During Treatment With Clozapine, p. 90</PROPERTY>
-      <PROPERTY>rule=Triggered iff current treatment and exposure concern Yes</PROPERTY>
-      <PROPERTY>table_order=Child fastest; final GIVEN next; declared OUTCOME order</PROPERTY>
-    </DEFINITION>
     <VARIABLE TYPE="nature">
       <NAME>PersistentSymptomsReview</NAME>
       <OUTCOME>OutsideCurrentTreatmentScope</OUTCOME>
@@ -452,27 +416,19 @@
       <OUTCOME>ReviewTrialAdequacy</OUTCOME>
       <OUTCOME>SpecialistPersistentSymptomsReview</OUTCOME>
       <PROPERTY>label=Persistent Symptoms Review</PROPERTY>
-      <PROPERTY>definition=Persistent symptoms prompt adequacy review, then specialist review of psychosocial care and augmentation options; no automatic ECT or polypharmacy. Urgent pathway takes precedence.</PROPERTY>
-      <PROPERTY>clinical_role=derived_review_flag</PROPERTY>
+      <PROPERTY>definition=Experimental output for Persistent Symptoms Review; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
       <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-07.md</PROPERTY>
       <PROPERTY>source_locator=Optimizing Treatment With Clozapine, p. 94</PROPERTY>
       <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
-      <PROPERTY>parameter_status=deterministic_proposed_rule</PROPERTY>
-      <PROPERTY>missingness_policy=Leave unobserved when unavailable; absence of documentation is not a negative finding</PROPERTY>
-      <PROPERTY>time_window=Current review with explicitly documented historical trial dates</PROPERTY>
+      <PROPERTY>parameter_status=awaiting_experiment_cpt</PROPERTY>
+      <PROPERTY>missingness_policy=An unspecified scenario value is unobserved; no supporting evidence is required</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>proposed_parent=ClozapineTreatmentStatus</PROPERTY>
+      <PROPERTY>proposed_parent=ResidualSymptomsOnClozapine</PROPERTY>
+      <PROPERTY>proposed_parent=ClozapineTrialAdequate</PROPERTY>
+      <PROPERTY>required_table_entries=48</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization is optional</PROPERTY>
     </VARIABLE>
-    <DEFINITION>
-      <FOR>PersistentSymptomsReview</FOR>
-      <GIVEN>ClozapineTreatmentStatus</GIVEN>
-      <GIVEN>ResidualSymptomsOnClozapine</GIVEN>
-      <GIVEN>ClozapineTrialAdequate</GIVEN>
-      <TABLE>1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 0 0 1 0 0 1 0 0 1 0 0 0 1 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0</TABLE>
-      <PROPERTY>parameter_method=modeler_assumption</PROPERTY>
-      <PROPERTY>parameter_status=deterministic_review_mapping_not_empirical_probability</PROPERTY>
-      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-07.md</PROPERTY>
-      <PROPERTY>source_locator=Optimizing Treatment With Clozapine, p. 94</PROPERTY>
-      <PROPERTY>rule=If not current: outside scope; else no residual symptoms: periodic review; else adequate: specialist review; else adequacy review</PROPERTY>
-      <PROPERTY>table_order=Child fastest; final GIVEN next; declared OUTCOME order</PROPERTY>
-    </DEFINITION>
   </NETWORK>
 </BIF>
