@@ -2,7 +2,6 @@
 name: dev-manager
 description: Coordinates the phase-specific app Developement instead of running phase details directly.
 mode: primary
-model: openai/gpt-6.1-sol#medium
 permissions:
   - action: edit
     resource: "*"

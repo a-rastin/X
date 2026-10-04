@@ -2,7 +2,6 @@
 name: dev-document
 description: Subagent to update the project documentation.
 mode: subagent
-model: opencode-go/muse-spark-1.3-contributor#xhigh
 permissions:
   - action: edit
     resource: "*"

@@ -2,7 +2,6 @@
 name: dev-backend
 description: subagent to build backend code.
 mode: subagent
-model: opencode-go/muse-spark-1.3-contributor#xhigh
 permissions:
   - action: edit
     resource: "*"
