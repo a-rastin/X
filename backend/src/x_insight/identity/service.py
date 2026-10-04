@@ -14,7 +14,7 @@ import secrets
 import uuid
 from datetime import datetime
 
-from sqlalchemy import insert, select, update
+from sqlalchemy import func, insert, select, update
 from sqlalchemy.orm import Session
 
 from x_insight import contracts
@@ -225,3 +225,367 @@ def revoke_all_user_sessions(
         )
         .values(revoked_at=moment)
     )
+
+
+# --- S04 physician account administration (plan.md §§2.1, 4.3; FR-03–04) ---
+#
+# Admin-only commands over the stored account row (role comes from the row,
+# never the login-selected role). All persistence uses the caller's
+# transaction; audit is recorded by the router in the same transaction.
+# Passwords are verbatim (no trimming); usernames are normalized
+# (strip + lowercase) for lookup/uniqueness with a stable UUID actor ID
+# across renames. Safe shapes never include hashes/tokens (router enforces).
+
+PHYSICIAN_ROLE = "physician"
+
+
+def safe_physician(user: dict) -> dict:
+    """Safe account shape for admin physician routes (never secrets)."""
+    return {
+        "id": str(user["id"]),
+        "username": user["username"],
+        "role": user["role"],
+        "active": bool(user.get("active", False)),
+        "theme": user.get("theme", "light"),
+        "revision": int(user.get("revision", 1)),
+    }
+
+
+def validate_new_username(username: str) -> str:
+    """Normalize + validate a physician username (non-empty, bounded)."""
+    normalized = normalize_username(username)
+    if not normalized:
+        raise contracts.ContractError(
+            422,
+            "VALIDATION_FAILED",
+            "Username must not be empty.",
+            {"username": ["Must not be empty."]},
+        )
+    if len(username.strip()) > 150:
+        raise contracts.ContractError(
+            422,
+            "VALIDATION_FAILED",
+            "Username is too long.",
+            {"username": ["Must be at most 150 characters."]},
+        )
+    return normalized
+
+
+def validate_new_password(password: str) -> str:
+    """Validate a physician password verbatim (non-empty, bounded)."""
+    if password == "":
+        raise contracts.ContractError(
+            422,
+            "VALIDATION_FAILED",
+            "Password must not be empty.",
+            {"password": ["Must not be empty."]},
+        )
+    if len(password) > 500:
+        raise contracts.ContractError(
+            422,
+            "VALIDATION_FAILED",
+            "Password is too long.",
+            {"password": ["Must be at most 500 characters."]},
+        )
+    return password
+
+
+def create_physician(
+    session: Session, *, username: str, password: str, now: datetime | None = None
+) -> dict:
+    """Create one active physician account (admin-only caller checks role).
+
+    Raises 409 CONFLICT on duplicate username (normalized). Only the
+    physician role is provisioned here; admin creation is denied.
+    """
+    normalized = validate_new_username(username)
+    validate_new_password(password)
+    if get_user_by_username(session, normalized) is not None:
+        raise contracts.ContractError(
+            409,
+            "CONFLICT",
+            "Username already exists.",
+            {"username": ["Already exists."]},
+        )
+    moment = now or contracts.utcnow()
+    new_id = uuid.uuid4()
+    session.execute(
+        insert(tables.users).values(
+            id=new_id,
+            username=normalized,
+            role=PHYSICIAN_ROLE,
+            active=True,
+            password_hash=passwords.hash_password(password),
+            credential_revision=1,
+            theme="light",
+            created_at=moment,
+            updated_at=moment,
+            revision=1,
+        )
+    )
+    created = get_user_by_id(session, new_id)
+    assert created is not None
+    return created
+
+
+def list_physicians(
+    session: Session, *, limit: int | None, offset: int | None
+) -> tuple[list[dict], int]:
+    """Admin-only list with bounded pagination (default 25, max 100).
+
+    Stable ordering by username then id. Returns (items, total).
+    """
+    resolved_limit, resolved_offset = contracts.parse_pagination(limit, offset)
+    total = int(session.execute(select(func.count()).select_from(tables.users)).scalar_one())
+    rows = (
+        session.execute(
+            select(tables.users)
+            .order_by(tables.users.c.username, tables.users.c.id)
+            .limit(resolved_limit)
+            .offset(resolved_offset)
+        )
+        .mappings()
+        .all()
+    )
+    return [dict(row) for row in rows], total
+
+
+def patch_physician(
+    session: Session,
+    target_id: uuid.UUID,
+    *,
+    username: str | None = None,
+    password: str | None = None,
+    now: datetime | None = None,
+) -> dict:
+    """Edit physician credentials (admin-only caller checks role).
+
+    - At least one of username/password is required (router enforces).
+    - Admin username is immutable: renaming an admin row is 422.
+    - Rename keeps the stable UUID; duplicates are 409.
+    - Password reset is verbatim, bumps credential_revision and revokes
+      all sessions immediately (same path as own-password revocation).
+    - Every edit bumps users.revision (If-Match/ETag contract; the router
+      enforces stale 412 when a precondition is supplied).
+    """
+    target = get_user_by_id(session, target_id)
+    if target is None:
+        raise contracts.ContractError(404, "NOT_FOUND", "Physician not found.")
+    values: dict = {}
+    moment = now or contracts.utcnow()
+    if username is not None:
+        normalized = validate_new_username(username)
+        if target.get("role") == "admin" and normalized != target.get("username"):
+            raise contracts.ContractError(
+                422,
+                "VALIDATION_FAILED",
+                "Admin username cannot be changed.",
+                {"username": ["Admin username is immutable."]},
+            )
+        if normalized != target.get("username"):
+            existing = get_user_by_username(session, normalized)
+            if existing is not None and existing["id"] != target["id"]:
+                raise contracts.ContractError(
+                    409,
+                    "CONFLICT",
+                    "Username already exists.",
+                    {"username": ["Already exists."]},
+                )
+            values["username"] = normalized
+    password_changed = False
+    if password is not None:
+        validate_new_password(password)
+        values["password_hash"] = passwords.hash_password(password)
+        values["credential_revision"] = int(target["credential_revision"]) + 1
+        password_changed = True
+    values["revision"] = int(target["revision"]) + 1
+    values["updated_at"] = moment
+    session.execute(update(tables.users).where(tables.users.c.id == target["id"]).values(**values))
+    if password_changed:
+        revoke_all_user_sessions(session, target["id"], now=moment)
+    updated = get_user_by_id(session, target["id"])
+    assert updated is not None
+    return updated
+
+
+# --- S04 Slice 2/3: deactivation lifecycle + empty draft-set contract ---
+#
+# Until drafts exist (Cases S07/S14), the reviewed draft set is empty and no
+# draft tables are fabricated for this test (tasks.md S04.3). The deactivation
+# command still carries an explicit retain/discard choice plus the reviewed
+# draft-set revision; a mismatched revision is 409 so a changing set
+# invalidates the confirmation. Real draft/job race cases land in S51, which
+# is explicitly marked incomplete here (see router audit + handoff).
+# Cases integration point (S51): replace EMPTY_DRAFT_SET_* with the author's
+# open-draft identifiers + revision, confirm discard only against that
+# revision, cancel pending jobs on confirmed discard, keep retained drafts
+# reserved to the author occupying the single-draft slot.
+
+EMPTY_DRAFT_SET_REVISION = 0
+
+DRAFT_ACTIONS = ("retain", "discard")
+
+
+def validate_draft_action(action: str | None) -> str:
+    if action not in DRAFT_ACTIONS:
+        raise contracts.ContractError(
+            422,
+            "VALIDATION_FAILED",
+            "draft_action must be 'retain' or 'discard'.",
+            {"draft_action": ["Must be 'retain' or 'discard'."]},
+        )
+    return action
+
+
+def validate_draft_set_revision(provided: int | None) -> int:
+    """Empty-set contract: only revision 0 (no drafts) is current.
+
+    A provided revision that differs means the reviewed set changed since
+    the admin confirmed → 409 DRAFT_SET_CHANGED. Absent means the caller
+    reviewed the empty set.
+    """
+    if provided is None:
+        return EMPTY_DRAFT_SET_REVISION
+    if provided != EMPTY_DRAFT_SET_REVISION:
+        raise contracts.ContractError(
+            409,
+            "DRAFT_SET_CHANGED",
+            "The draft set changed. Review and reconfirm.",
+            {"draft_set_revision": ["Reviewed set is stale."]},
+        )
+    return provided
+
+
+def deactivate_physician(
+    session: Session,
+    target_id: uuid.UUID,
+    *,
+    draft_action: str,
+    draft_set_revision: int | None = None,
+    now: datetime | None = None,
+) -> tuple[dict, bool]:
+    """Deactivate (active=false + revoke all sessions immediately).
+
+    Returns (user, changed). Already-inactive is an idempotent no-op
+    (changed=False, no revision bump). Admin accounts cannot be deactivated.
+    Credential revision bumps so pre-deactivation sessions stay invalid
+    across a later reactivation (old sessions never resurrect).
+    """
+    validate_draft_action(draft_action)
+    validate_draft_set_revision(draft_set_revision)
+    target = get_user_by_id(session, target_id)
+    if target is None:
+        raise contracts.ContractError(404, "NOT_FOUND", "Physician not found.")
+    if target.get("role") == "admin":
+        raise contracts.ContractError(
+            422,
+            "VALIDATION_FAILED",
+            "Admin account cannot be deactivated.",
+            {"role": ["Admin account must stay active."]},
+        )
+    if not target.get("active", False):
+        return target, False
+    moment = now or contracts.utcnow()
+    session.execute(
+        update(tables.users)
+        .where(tables.users.c.id == target["id"])
+        .values(
+            active=False,
+            revision=int(target["revision"]) + 1,
+            credential_revision=int(target["credential_revision"]) + 1,
+            updated_at=moment,
+        )
+    )
+    revoke_all_user_sessions(session, target["id"], now=moment)
+    updated = get_user_by_id(session, target["id"])
+    assert updated is not None
+    return updated, True
+
+
+def reactivate_physician(
+    session: Session, target_id: uuid.UUID, now: datetime | None = None
+) -> tuple[dict, bool]:
+    """Reactivate (active=true). Idempotent no-op when already active.
+
+    Never resurrects discarded drafts (none exist yet) and never revives old
+    sessions: deactivation already revoked + bumped credential_revision, so
+    the author must log in again. Retained drafts (none yet) become
+    resumable by the author after this call (S51 fills the Cases side).
+    """
+    target = get_user_by_id(session, target_id)
+    if target is None:
+        raise contracts.ContractError(404, "NOT_FOUND", "Physician not found.")
+    if target.get("active", False):
+        return target, False
+    moment = now or contracts.utcnow()
+    session.execute(
+        update(tables.users)
+        .where(tables.users.c.id == target["id"])
+        .values(
+            active=True,
+            revision=int(target["revision"]) + 1,
+            updated_at=moment,
+        )
+    )
+    updated = get_user_by_id(session, target["id"])
+    assert updated is not None
+    return updated, True
+
+
+# --- S04 Slice 4: per-command idempotency (plan.md §4.3) ---
+#
+# Same key + same body replays the original result without re-executing the
+# mutation (and without duplicating audit rows); same key + changed body is
+# 409. Keys are scoped per (operation, actor) so two admins never collide.
+# Request hashes cover the target + body; responses store only safe bodies.
+
+
+def idempotency_request_hash(body: dict, target_id: uuid.UUID | None = None) -> str:
+    envelope: dict = {"body": body}
+    if target_id is not None:
+        envelope["target_id"] = str(target_id)
+    return contracts.canonical_hash(envelope)
+
+
+def lookup_idempotency(
+    session: Session, *, operation: str, actor_id: uuid.UUID, key: str
+) -> dict | None:
+    row = (
+        session.execute(
+            select(tables.idempotency_records).where(
+                tables.idempotency_records.c.operation == operation,
+                tables.idempotency_records.c.actor_id == actor_id,
+                tables.idempotency_records.c.idempotency_key == key,
+            )
+        )
+        .mappings()
+        .first()
+    )
+    return dict(row) if row is not None else None
+
+
+def store_idempotency(
+    session: Session,
+    *,
+    operation: str,
+    actor_id: uuid.UUID,
+    key: str,
+    request_hash: str,
+    response_status: int,
+    response_body: dict,
+    now: datetime | None = None,
+) -> None:
+    moment = now or contracts.utcnow()
+    session.execute(
+        insert(tables.idempotency_records).values(
+            id=uuid.uuid4(),
+            operation=operation,
+            actor_id=actor_id,
+            idempotency_key=key,
+            request_hash=request_hash,
+            response_status=response_status,
+            response_body=response_body,
+            created_at=moment,
+        )
+    )
+    session.flush()

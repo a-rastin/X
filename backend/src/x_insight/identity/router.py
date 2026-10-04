@@ -374,3 +374,380 @@ def update_preferences(
         details={"username": str(updated["username"]), "theme": payload.theme},
     )
     return JSONResponse(status_code=200, content={"user": _public_user(updated)})
+
+
+# --- S04 physician account administration (plan.md §§2.1, 4.3; FR-03–04) ---
+#
+# All routes under /api/v1 (plan.md §4.3), admin-only with session + CSRF on
+# mutations. Role comes from the stored account row, never the login role.
+# Responses use the safe physician shape (never hash/token/password).
+
+
+class PhysicianCreateRequest(BaseModel):
+    username: str = Field(min_length=0, max_length=150)
+    password: str = Field(min_length=0, max_length=500)
+    role: str | None = Field(default=None, max_length=20)
+
+
+class PhysicianPatchRequest(BaseModel):
+    username: str | None = Field(default=None, max_length=150)
+    password: str | None = Field(default=None, max_length=500)
+
+    model_config = {"extra": "forbid"}
+
+
+def _require_admin(request: Request, session: Session) -> dict[str, Any] | JSONResponse:
+    user = _current_user(request, session)
+    if user is None:
+        return error_response(
+            401, "UNAUTHENTICATED", "Authentication required.", get_request_id(request)
+        )
+    if user.get("role") != "admin" or not user.get("active", False):
+        return error_response(
+            403, "FORBIDDEN", "Administrator access required.", get_request_id(request)
+        )
+    return user
+
+
+def _require_admin_mutation(request: Request, session: Session) -> dict[str, Any] | JSONResponse:
+    gate = _check_csrf(request, session)
+    if isinstance(gate, JSONResponse):
+        return gate
+    assert isinstance(gate, dict)
+    if gate.get("role") != "admin" or not gate.get("active", False):
+        return error_response(
+            403, "FORBIDDEN", "Administrator access required.", get_request_id(request)
+        )
+    return gate
+
+
+def _physician_response(user: dict[str, Any]) -> JSONResponse:
+    safe = service.safe_physician(user)
+    payload = {"user": safe}
+    response = JSONResponse(status_code=200, content=payload)
+    response.headers["ETag"] = contracts.format_etag(int(safe["revision"]))
+    return response
+
+
+def _idempotency_key_or_none(request: Request) -> str | None:
+    raw = request.headers.get(contracts.IDEMPOTENCY_KEY_HEADER)
+    return contracts.parse_idempotency_key(raw)
+
+
+def _idempotency_replay(
+    stored: dict[str, Any],
+) -> JSONResponse:
+    body = dict(stored["response_body"])
+    response = JSONResponse(status_code=int(stored["response_status"]), content=body)
+    user = body.get("user")
+    if isinstance(user, dict) and "revision" in user:
+        try:
+            response.headers["ETag"] = contracts.format_etag(int(user["revision"]))
+        except ValueError:
+            pass
+    return response
+
+
+def _idempotency_conflict(request_id: str) -> JSONResponse:
+    return error_response(
+        409,
+        "IDEMPOTENCY_CONFLICT",
+        "Idempotency-Key was already used with a different request body.",
+        request_id,
+    )
+
+
+@router.get("/physicians")
+def list_physicians(
+    request: Request,
+    session: Session = Depends(get_session),
+    limit: int | None = None,
+    offset: int | None = None,
+) -> JSONResponse:
+    admin = _require_admin(request, session)
+    if isinstance(admin, JSONResponse):
+        return admin
+    items, total = service.list_physicians(session, limit=limit, offset=offset)
+    safe_items = [service.safe_physician(item) for item in items]
+    resolved_limit, resolved_offset = contracts.parse_pagination(limit, offset)
+    return JSONResponse(
+        status_code=200,
+        content={
+            "items": safe_items,
+            "total": total,
+            "limit": resolved_limit,
+            "offset": resolved_offset,
+        },
+    )
+
+
+@router.post("/physicians", status_code=201)
+def create_physician(
+    payload: PhysicianCreateRequest,
+    request: Request,
+    session: Session = Depends(get_session),
+) -> JSONResponse:
+    request_id = get_request_id(request)
+    admin = _require_admin_mutation(request, session)
+    if isinstance(admin, JSONResponse):
+        return admin
+    assert isinstance(admin, dict)
+    if payload.role is not None and payload.role.strip() != service.PHYSICIAN_ROLE:
+        raise contracts.ContractError(
+            422,
+            "VALIDATION_FAILED",
+            "Only physician accounts can be created here.",
+            {"role": ["Must be 'physician'."]},
+        )
+    body = {"username": payload.username, "password": payload.password}
+    if payload.role is not None:
+        body["role"] = payload.role
+    key = _idempotency_key_or_none(request)
+    request_hash: str | None = None
+    if key is not None:
+        request_hash = service.idempotency_request_hash(body)
+        stored = service.lookup_idempotency(
+            session, operation="physicians.create", actor_id=admin["id"], key=key
+        )
+        if stored is not None:
+            if stored["request_hash"] != request_hash:
+                return _idempotency_conflict(request_id)
+            return _idempotency_replay(stored)
+    created = service.create_physician(
+        session, username=payload.username, password=payload.password
+    )
+    audit_module.record_audit(
+        session,
+        operation="physicians.create.success",
+        actor=str(admin["username"]),
+        request_id=request_id,
+        details={"username": str(created["username"])},
+    )
+    safe = service.safe_physician(created)
+    response_body = {"user": safe}
+    if key is not None:
+        assert request_hash is not None
+        service.store_idempotency(
+            session,
+            operation="physicians.create",
+            actor_id=admin["id"],
+            key=key,
+            request_hash=request_hash,
+            response_status=201,
+            response_body=response_body,
+        )
+    response = JSONResponse(status_code=201, content=response_body)
+    response.headers["ETag"] = contracts.format_etag(int(safe["revision"]))
+    return response
+
+
+@router.get("/physicians/{user_id}")
+def get_physician(
+    user_id: uuid.UUID, request: Request, session: Session = Depends(get_session)
+) -> JSONResponse:
+    admin = _require_admin(request, session)
+    if isinstance(admin, JSONResponse):
+        return admin
+    target = service.get_user_by_id(session, user_id)
+    if target is None:
+        return error_response(404, "NOT_FOUND", "Physician not found.", get_request_id(request))
+    return _physician_response(target)
+
+
+@router.patch("/physicians/{user_id}")
+def patch_physician(
+    user_id: uuid.UUID,
+    payload: PhysicianPatchRequest,
+    request: Request,
+    session: Session = Depends(get_session),
+) -> JSONResponse:
+    request_id = get_request_id(request)
+    admin = _require_admin_mutation(request, session)
+    if isinstance(admin, JSONResponse):
+        return admin
+    assert isinstance(admin, dict)
+    if payload.username is None and payload.password is None:
+        raise contracts.ContractError(
+            422,
+            "VALIDATION_FAILED",
+            "Nothing to update.",
+            {"request": ["Provide username and/or password."]},
+        )
+    target = service.get_user_by_id(session, user_id)
+    if target is None:
+        return error_response(404, "NOT_FOUND", "Physician not found.", request_id)
+    # Optimistic revision: a supplied If-Match that mismatches is 412;
+    # absent/"*" means no precondition (contracts.parse_if_match).
+    if_match_raw = request.headers.get(contracts.IF_MATCH_HEADER)
+    expected = contracts.parse_if_match(if_match_raw)
+    if expected is not None and expected != int(target["revision"]):
+        return error_response(
+            412,
+            "STALE_REVISION",
+            "The account changed. Reload and reconcile your edits.",
+            request_id,
+        )
+    body: dict[str, Any] = {}
+    if payload.username is not None:
+        body["username"] = payload.username
+    if payload.password is not None:
+        body["password"] = payload.password
+    key = _idempotency_key_or_none(request)
+    request_hash: str | None = None
+    if key is not None:
+        request_hash = service.idempotency_request_hash(body, target_id=user_id)
+        stored = service.lookup_idempotency(
+            session, operation="physicians.patch", actor_id=admin["id"], key=key
+        )
+        if stored is not None:
+            if stored["request_hash"] != request_hash:
+                return _idempotency_conflict(request_id)
+            return _idempotency_replay(stored)
+    updated = service.patch_physician(
+        session, user_id, username=payload.username, password=payload.password
+    )
+    audit_module.record_audit(
+        session,
+        operation="physicians.patch.success",
+        actor=str(admin["username"]),
+        request_id=request_id,
+        details={"username": str(updated["username"])},
+    )
+    safe = service.safe_physician(updated)
+    response_body = {"user": safe}
+    if key is not None:
+        assert request_hash is not None
+        service.store_idempotency(
+            session,
+            operation="physicians.patch",
+            actor_id=admin["id"],
+            key=key,
+            request_hash=request_hash,
+            response_status=200,
+            response_body=response_body,
+        )
+    response = JSONResponse(status_code=200, content=response_body)
+    response.headers["ETag"] = contracts.format_etag(int(safe["revision"]))
+    return response
+
+
+class DeactivateRequest(BaseModel):
+    draft_action: str
+    draft_set_revision: int | None = None
+
+    model_config = {"extra": "forbid"}
+
+
+@router.post("/physicians/{user_id}/deactivate")
+def deactivate_physician(
+    user_id: uuid.UUID,
+    payload: DeactivateRequest,
+    request: Request,
+    session: Session = Depends(get_session),
+) -> JSONResponse:
+    request_id = get_request_id(request)
+    admin = _require_admin_mutation(request, session)
+    if isinstance(admin, JSONResponse):
+        return admin
+    assert isinstance(admin, dict)
+    body: dict[str, Any] = {"draft_action": payload.draft_action}
+    if payload.draft_set_revision is not None:
+        body["draft_set_revision"] = payload.draft_set_revision
+    key = _idempotency_key_or_none(request)
+    request_hash: str | None = None
+    if key is not None:
+        request_hash = service.idempotency_request_hash(body, target_id=user_id)
+        stored = service.lookup_idempotency(
+            session, operation="physicians.deactivate", actor_id=admin["id"], key=key
+        )
+        if stored is not None:
+            if stored["request_hash"] != request_hash:
+                return _idempotency_conflict(request_id)
+            return _idempotency_replay(stored)
+    updated, changed = service.deactivate_physician(
+        session,
+        user_id,
+        draft_action=payload.draft_action,
+        draft_set_revision=payload.draft_set_revision,
+    )
+    if changed:
+        audit_module.record_audit(
+            session,
+            operation="physicians.deactivate.success",
+            actor=str(admin["username"]),
+            request_id=request_id,
+            details={
+                "username": str(updated["username"]),
+                "draft_action": payload.draft_action,
+                "draft_set_revision": service.EMPTY_DRAFT_SET_REVISION,
+                "reviewed_drafts": [],
+            },
+        )
+    safe = service.safe_physician(updated)
+    response_body: dict[str, Any] = {
+        "user": safe,
+        "draft_action": payload.draft_action,
+        "draft_set_revision": service.EMPTY_DRAFT_SET_REVISION,
+        "reviewed_drafts": [],
+    }
+    if key is not None:
+        assert request_hash is not None
+        service.store_idempotency(
+            session,
+            operation="physicians.deactivate",
+            actor_id=admin["id"],
+            key=key,
+            request_hash=request_hash,
+            response_status=200,
+            response_body=response_body,
+        )
+    response = JSONResponse(status_code=200, content=response_body)
+    response.headers["ETag"] = contracts.format_etag(int(safe["revision"]))
+    return response
+
+
+@router.post("/physicians/{user_id}/reactivate")
+def reactivate_physician(
+    user_id: uuid.UUID, request: Request, session: Session = Depends(get_session)
+) -> JSONResponse:
+    request_id = get_request_id(request)
+    admin = _require_admin_mutation(request, session)
+    if isinstance(admin, JSONResponse):
+        return admin
+    assert isinstance(admin, dict)
+    key = _idempotency_key_or_none(request)
+    request_hash: str | None = None
+    if key is not None:
+        request_hash = service.idempotency_request_hash({}, target_id=user_id)
+        stored = service.lookup_idempotency(
+            session, operation="physicians.reactivate", actor_id=admin["id"], key=key
+        )
+        if stored is not None:
+            if stored["request_hash"] != request_hash:
+                return _idempotency_conflict(request_id)
+            return _idempotency_replay(stored)
+    updated, changed = service.reactivate_physician(session, user_id)
+    if changed:
+        audit_module.record_audit(
+            session,
+            operation="physicians.reactivate.success",
+            actor=str(admin["username"]),
+            request_id=request_id,
+            details={"username": str(updated["username"])},
+        )
+    safe = service.safe_physician(updated)
+    response_body = {"user": safe}
+    if key is not None:
+        assert request_hash is not None
+        service.store_idempotency(
+            session,
+            operation="physicians.reactivate",
+            actor_id=admin["id"],
+            key=key,
+            request_hash=request_hash,
+            response_status=200,
+            response_body=response_body,
+        )
+    response = JSONResponse(status_code=200, content=response_body)
+    response.headers["ETag"] = contracts.format_etag(int(safe["revision"]))
+    return response

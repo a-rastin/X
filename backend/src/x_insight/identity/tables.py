@@ -62,3 +62,26 @@ Index("ix_users_username", users.c.username, unique=True)
 Index("one_admin_only", users.c.role, unique=True, postgresql_where=(users.c.role == "admin"))
 Index("ix_sessions_token_hash", sessions.c.token_hash, unique=True)
 Index("ix_sessions_user_id", sessions.c.user_id)
+
+# S04 Slice 4: per-command idempotency store (migration 0003). Immutable
+# rows: actor/operation/key, canonical request hash, original response.
+# No UPDATE/DELETE helpers exist; replays read, first executions insert.
+from sqlalchemy.dialects.postgresql import JSONB  # noqa: E402
+
+idempotency_records = Table(
+    "idempotency_records",
+    metadata,
+    Column("id", PG_UUID(as_uuid=True), primary_key=True),
+    Column("operation", Text, nullable=False),
+    Column(
+        "actor_id",
+        PG_UUID(as_uuid=True),
+        ForeignKey("users.id", ondelete="CASCADE"),
+        nullable=False,
+    ),
+    Column("idempotency_key", Text, nullable=False),
+    Column("request_hash", Text, nullable=False),
+    Column("response_status", Integer, nullable=False),
+    Column("response_body", JSONB, nullable=False),
+    Column("created_at", DateTime(timezone=True), nullable=False),
+)
