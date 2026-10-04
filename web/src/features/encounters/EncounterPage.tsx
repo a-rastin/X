@@ -3,10 +3,10 @@
  * Route: `#/encounters/:id` (see api.ts for why the encounter id is in the
  * URL). Physician-only guard complements the server 403; the server stays
  * authoritative. No placeholder medical recommendations: the S07 field is an
- * explicit working note stored as `draft_data.working_note`, and S09 adds
- * the diagnosis checklist (`draft_data.diagnosis`) — later assessment pages
- * extend `draft_data` keys through the same autosave path (full object on
- * each save).
+ * explicit working note stored as `draft_data.working_note`, S09 adds the
+ * diagnosis checklist (`draft_data.diagnosis`), and S10 adds PANSS
+ * (`draft_data.panss`) — later assessment pages extend `draft_data` keys
+ * through the same autosave path (full object on each save).
  *
  * States: loading (GET), ready (editor + saving/saved/failed), conflict
  * (412 keeps edits + Reload/Retry reconcile UI, never silent overwrite),
@@ -28,6 +28,7 @@ import {
   type EncounterReference,
 } from "./api";
 import { DiagnosisSection } from "../assessments/diagnosis/DiagnosisSection";
+import { PanssSection } from "../assessments/panss/PanssSection";
 import { useAutosave } from "./useAutosave";
 
 type LoadState =
@@ -468,6 +469,12 @@ function EncounterWizard({
       </section>
 
       <DiagnosisSection
+        encounterId={encounterId}
+        autosave={autosave}
+        onSessionExpired={sessionExpired}
+      />
+
+      <PanssSection
         encounterId={encounterId}
         autosave={autosave}
         onSessionExpired={sessionExpired}

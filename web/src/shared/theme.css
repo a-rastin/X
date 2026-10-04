@@ -486,6 +486,22 @@ body {
   font-size: 14px;
 }
 
+/* S10 PANSS informational panel (total band + historical note): mirrors
+ * .xi-bypass-panel — info color paired with explicit text (never color
+ * alone), ink text on tinted background in both themes. Bands are
+ * informational only, never a treatment gate. */
+.xi-panss-panel {
+  border: 1px solid var(--info);
+  border-left-width: 6px;
+  background: var(--info-bg);
+  color: var(--ink);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-4);
+  font-size: 14px;
+}
+
 .xi-radio-group {
   display: flex;
   gap: var(--space-4);
