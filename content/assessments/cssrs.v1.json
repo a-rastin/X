@@ -1,0 +1,491 @@
+{
+  "instrument": "cssrs",
+  "id": "cssrs",
+  "version": "v1",
+  "title": "Columbia-Suicide Severity Rating Scale (experimental v1)",
+  "description": "Clinician-administered assessment of suicidal ideation and behavior. Ideation severity is the highest endorsed level 0-5; intensity, behavior, and lethality are recorded separately with no composite score.",
+  "items": [
+    {
+      "id": "css_i1_recent",
+      "prompt": "Ideation 1 (Wish to be dead, recent): Have you wished you were dead, or wished you could go to sleep and not wake up?",
+      "value_type": "yes_no",
+      "required": true,
+      "source_locator": "CSSRS.md §1 Suicidal ideation severity",
+      "experimental_paraphrase": true
+    },
+    {
+      "id": "css_i2_recent",
+      "prompt": "Ideation 2 (Nonspecific active thoughts, recent): Have you had thoughts of killing yourself, without thinking about a method, intent, or plan?",
+      "value_type": "yes_no",
+      "required": true,
+      "source_locator": "CSSRS.md §1 Suicidal ideation severity",
+      "experimental_paraphrase": true
+    },
+    {
+      "id": "css_i3_recent",
+      "prompt": "Ideation 3 (Method, without intent, recent): Have you thought about how you might kill yourself, without intending to act on those thoughts?",
+      "value_type": "yes_no",
+      "required": true,
+      "source_locator": "CSSRS.md §1 Suicidal ideation severity",
+      "experimental_paraphrase": true
+    },
+    {
+      "id": "css_i4_recent",
+      "prompt": "Ideation 4 (Some intent, no specific plan, recent): Have you had suicidal thoughts and some intention of acting on them, but without a specific plan?",
+      "value_type": "yes_no",
+      "required": true,
+      "source_locator": "CSSRS.md §1 Suicidal ideation severity",
+      "experimental_paraphrase": true
+    },
+    {
+      "id": "css_i5_recent",
+      "prompt": "Ideation 5 (Specific plan and intent, recent): Have you worked out a method or plan for killing yourself, and do you intend to carry it out?",
+      "value_type": "yes_no",
+      "required": true,
+      "source_locator": "CSSRS.md §1 Suicidal ideation severity",
+      "experimental_paraphrase": true
+    },
+    {
+      "id": "css_i1_lifetime",
+      "prompt": "Ideation 1 (Wish to be dead, lifetime): Have you wished you were dead, or wished you could go to sleep and not wake up?",
+      "value_type": "yes_no",
+      "required": true,
+      "source_locator": "CSSRS.md §1 Suicidal ideation severity",
+      "experimental_paraphrase": true
+    },
+    {
+      "id": "css_i2_lifetime",
+      "prompt": "Ideation 2 (Nonspecific active thoughts, lifetime): Have you had thoughts of killing yourself, without thinking about a method, intent, or plan?",
+      "value_type": "yes_no",
+      "required": true,
+      "source_locator": "CSSRS.md §1 Suicidal ideation severity",
+      "experimental_paraphrase": true
+    },
+    {
+      "id": "css_i3_lifetime",
+      "prompt": "Ideation 3 (Method, without intent, lifetime): Have you thought about how you might kill yourself, without intending to act on those thoughts?",
+      "value_type": "yes_no",
+      "required": true,
+      "source_locator": "CSSRS.md §1 Suicidal ideation severity",
+      "experimental_paraphrase": true
+    },
+    {
+      "id": "css_i4_lifetime",
+      "prompt": "Ideation 4 (Some intent, no specific plan, lifetime): Have you had suicidal thoughts and some intention of acting on them, but without a specific plan?",
+      "value_type": "yes_no",
+      "required": true,
+      "source_locator": "CSSRS.md §1 Suicidal ideation severity",
+      "experimental_paraphrase": true
+    },
+    {
+      "id": "css_i5_lifetime",
+      "prompt": "Ideation 5 (Specific plan and intent, lifetime): Have you worked out a method or plan for killing yourself, and do you intend to carry it out?",
+      "value_type": "yes_no",
+      "required": true,
+      "source_locator": "CSSRS.md §1 Suicidal ideation severity",
+      "experimental_paraphrase": true
+    },
+    {
+      "id": "css_frequency",
+      "prompt": "Intensity, most severe recent ideation - Frequency: How often do the thoughts occur? (1=less than weekly, 2=once weekly, 3=2-5 days/week, 4=daily/almost daily, 5=many times daily)",
+      "value_type": "frequency_1_5",
+      "required": false,
+      "required_if": {
+        "op": "any_of",
+        "conditions": [
+          {
+            "item": "css_i1_recent",
+            "op": "eq",
+            "value": "yes"
+          },
+          {
+            "item": "css_i2_recent",
+            "op": "eq",
+            "value": "yes"
+          },
+          {
+            "item": "css_i3_recent",
+            "op": "eq",
+            "value": "yes"
+          },
+          {
+            "item": "css_i4_recent",
+            "op": "eq",
+            "value": "yes"
+          },
+          {
+            "item": "css_i5_recent",
+            "op": "eq",
+            "value": "yes"
+          }
+        ]
+      },
+      "source_locator": "CSSRS.md §2 Intensity of ideation"
+    },
+    {
+      "id": "css_duration",
+      "prompt": "Intensity, most severe recent ideation - Duration: When present, how long do they last? (1=seconds/minutes, 2=less than an hour, 3=1-4 hours, 4=4-8 hours/most of the day, 5=more than 8 hours or persistent)",
+      "value_type": "duration_1_5",
+      "required": false,
+      "required_if": {
+        "op": "any_of",
+        "conditions": [
+          {
+            "item": "css_i1_recent",
+            "op": "eq",
+            "value": "yes"
+          },
+          {
+            "item": "css_i2_recent",
+            "op": "eq",
+            "value": "yes"
+          },
+          {
+            "item": "css_i3_recent",
+            "op": "eq",
+            "value": "yes"
+          },
+          {
+            "item": "css_i4_recent",
+            "op": "eq",
+            "value": "yes"
+          },
+          {
+            "item": "css_i5_recent",
+            "op": "eq",
+            "value": "yes"
+          }
+        ]
+      },
+      "source_locator": "CSSRS.md §2 Intensity of ideation"
+    },
+    {
+      "id": "css_controllability",
+      "prompt": "Intensity, most severe recent ideation - Controllability: Can the person stop or control the thoughts? (0=does not try, 1=easily, 2=with little difficulty, 3=with some difficulty, 4=with much difficulty, 5=unable)",
+      "value_type": "control_0_5",
+      "required": false,
+      "required_if": {
+        "op": "any_of",
+        "conditions": [
+          {
+            "item": "css_i1_recent",
+            "op": "eq",
+            "value": "yes"
+          },
+          {
+            "item": "css_i2_recent",
+            "op": "eq",
+            "value": "yes"
+          },
+          {
+            "item": "css_i3_recent",
+            "op": "eq",
+            "value": "yes"
+          },
+          {
+            "item": "css_i4_recent",
+            "op": "eq",
+            "value": "yes"
+          },
+          {
+            "item": "css_i5_recent",
+            "op": "eq",
+            "value": "yes"
+          }
+        ]
+      },
+      "source_locator": "CSSRS.md §2 Intensity of ideation"
+    },
+    {
+      "id": "css_deterrents",
+      "prompt": "Intensity, most severe recent ideation - Deterrents: What has stopped the person from acting? (0=not applicable, 1=definitely stopped, 2=probably stopped, 3=uncertain, 4=probably did not stop, 5=definitely did not stop)",
+      "value_type": "deterrent_0_5",
+      "required": false,
+      "required_if": {
+        "op": "any_of",
+        "conditions": [
+          {
+            "item": "css_i1_recent",
+            "op": "eq",
+            "value": "yes"
+          },
+          {
+            "item": "css_i2_recent",
+            "op": "eq",
+            "value": "yes"
+          },
+          {
+            "item": "css_i3_recent",
+            "op": "eq",
+            "value": "yes"
+          },
+          {
+            "item": "css_i4_recent",
+            "op": "eq",
+            "value": "yes"
+          },
+          {
+            "item": "css_i5_recent",
+            "op": "eq",
+            "value": "yes"
+          }
+        ]
+      },
+      "source_locator": "CSSRS.md §2 Intensity of ideation"
+    },
+    {
+      "id": "css_reasons",
+      "prompt": "Intensity, most severe recent ideation - Reasons: Why does the person have the thoughts? (0=not applicable, 1=entirely attention/reaction, 2=mostly attention/reaction, 3=both equally, 4=mostly to end pain, 5=entirely to end pain)",
+      "value_type": "reason_0_5",
+      "required": false,
+      "required_if": {
+        "op": "any_of",
+        "conditions": [
+          {
+            "item": "css_i1_recent",
+            "op": "eq",
+            "value": "yes"
+          },
+          {
+            "item": "css_i2_recent",
+            "op": "eq",
+            "value": "yes"
+          },
+          {
+            "item": "css_i3_recent",
+            "op": "eq",
+            "value": "yes"
+          },
+          {
+            "item": "css_i4_recent",
+            "op": "eq",
+            "value": "yes"
+          },
+          {
+            "item": "css_i5_recent",
+            "op": "eq",
+            "value": "yes"
+          }
+        ]
+      },
+      "source_locator": "CSSRS.md §2 Intensity of ideation"
+    },
+    {
+      "id": "css_beh_actual_recent",
+      "prompt": "Behavior (Actual suicide attempt, recent): Did the person engage in potentially self-injurious behavior with at least some intent to die? Injury is not required.",
+      "value_type": "yes_no",
+      "required": true,
+      "source_locator": "CSSRS.md §3 Suicidal behavior"
+    },
+    {
+      "id": "css_beh_interrupted_recent",
+      "prompt": "Behavior (Interrupted attempt, recent): Did another person or an outside circumstance stop the person after the attempt had begun but before the self-injurious act occurred?",
+      "value_type": "yes_no",
+      "required": true,
+      "source_locator": "CSSRS.md §3 Suicidal behavior"
+    },
+    {
+      "id": "css_beh_aborted_recent",
+      "prompt": "Behavior (Aborted attempt, recent): Did the person begin steps toward an attempt but stop themselves before the self-injurious act occurred?",
+      "value_type": "yes_no",
+      "required": true,
+      "source_locator": "CSSRS.md §3 Suicidal behavior"
+    },
+    {
+      "id": "css_beh_preparatory_recent",
+      "prompt": "Behavior (Preparatory acts or behavior, recent): Did the person take steps toward an attempt, such as obtaining or arranging a method, writing a suicide note, or giving away possessions?",
+      "value_type": "yes_no",
+      "required": true,
+      "source_locator": "CSSRS.md §3 Suicidal behavior"
+    },
+    {
+      "id": "css_beh_nssi_recent",
+      "prompt": "Behavior (Nonsuicidal self-injury, recent): Did the person intentionally injure themselves without suicidal intent? Document separately from suicidal behavior.",
+      "value_type": "yes_no",
+      "required": true,
+      "source_locator": "CSSRS.md §3 Suicidal behavior"
+    },
+    {
+      "id": "css_beh_actual_lifetime",
+      "prompt": "Behavior (Actual suicide attempt, lifetime): Did the person engage in potentially self-injurious behavior with at least some intent to die? Injury is not required.",
+      "value_type": "yes_no",
+      "required": true,
+      "source_locator": "CSSRS.md §3 Suicidal behavior"
+    },
+    {
+      "id": "css_beh_interrupted_lifetime",
+      "prompt": "Behavior (Interrupted attempt, lifetime): Did another person or an outside circumstance stop the person after the attempt had begun but before the self-injurious act occurred?",
+      "value_type": "yes_no",
+      "required": true,
+      "source_locator": "CSSRS.md §3 Suicidal behavior"
+    },
+    {
+      "id": "css_beh_aborted_lifetime",
+      "prompt": "Behavior (Aborted attempt, lifetime): Did the person begin steps toward an attempt but stop themselves before the self-injurious act occurred?",
+      "value_type": "yes_no",
+      "required": true,
+      "source_locator": "CSSRS.md §3 Suicidal behavior"
+    },
+    {
+      "id": "css_beh_preparatory_lifetime",
+      "prompt": "Behavior (Preparatory acts or behavior, lifetime): Did the person take steps toward an attempt, such as obtaining or arranging a method, writing a suicide note, or giving away possessions?",
+      "value_type": "yes_no",
+      "required": true,
+      "source_locator": "CSSRS.md §3 Suicidal behavior"
+    },
+    {
+      "id": "css_beh_nssi_lifetime",
+      "prompt": "Behavior (Nonsuicidal self-injury, lifetime): Did the person intentionally injure themselves without suicidal intent? Document separately from suicidal behavior.",
+      "value_type": "yes_no",
+      "required": true,
+      "source_locator": "CSSRS.md §3 Suicidal behavior"
+    },
+    {
+      "id": "css_leth_actual_recent",
+      "prompt": "Actual lethality/damage of the most recent actual attempt (recent), authorized form 0-5 coding. Record only when an actual attempt occurred in this window.",
+      "value_type": "lethality_0_5",
+      "required": false,
+      "required_if": {
+        "item": "css_beh_actual_recent",
+        "op": "eq",
+        "value": "yes"
+      },
+      "source_locator": "CSSRS.md §3 Suicidal behavior"
+    },
+    {
+      "id": "css_leth_potential_recent",
+      "prompt": "Potential lethality (recent), authorized form 0-2 coding. Record only when actual damage is 0.",
+      "value_type": "potential_0_2",
+      "required": false,
+      "required_if": {
+        "op": "all_of",
+        "conditions": [
+          {
+            "item": "css_beh_actual_recent",
+            "op": "eq",
+            "value": "yes"
+          },
+          {
+            "item": "css_leth_actual_recent",
+            "op": "eq",
+            "value": 0
+          }
+        ]
+      },
+      "source_locator": "CSSRS.md §3 Suicidal behavior"
+    },
+    {
+      "id": "css_leth_actual_lifetime",
+      "prompt": "Actual lethality/damage of the most recent actual attempt (lifetime), authorized form 0-5 coding. Record only when an actual attempt occurred in this window.",
+      "value_type": "lethality_0_5",
+      "required": false,
+      "required_if": {
+        "item": "css_beh_actual_lifetime",
+        "op": "eq",
+        "value": "yes"
+      },
+      "source_locator": "CSSRS.md §3 Suicidal behavior"
+    },
+    {
+      "id": "css_leth_potential_lifetime",
+      "prompt": "Potential lethality (lifetime), authorized form 0-2 coding. Record only when actual damage is 0.",
+      "value_type": "potential_0_2",
+      "required": false,
+      "required_if": {
+        "op": "all_of",
+        "conditions": [
+          {
+            "item": "css_beh_actual_lifetime",
+            "op": "eq",
+            "value": "yes"
+          },
+          {
+            "item": "css_leth_actual_lifetime",
+            "op": "eq",
+            "value": 0
+          }
+        ]
+      },
+      "source_locator": "CSSRS.md §3 Suicidal behavior"
+    }
+  ],
+  "completion_rules": {
+    "type": "all_required"
+  },
+  "result_rules": [
+    {
+      "op": "max_endorsed"
+    },
+    {
+      "op": "intensity_separate"
+    },
+    {
+      "op": "behavior_separate"
+    },
+    {
+      "op": "lethality_separate"
+    },
+    {
+      "op": "flag_recent_45_or_behavior"
+    },
+    {
+      "op": "flag_any_13_or_history"
+    }
+  ],
+  "periods": [
+    {
+      "id": "recent_ideation",
+      "window": "past_month"
+    },
+    {
+      "id": "recent_behavior",
+      "window": "past_3_months"
+    },
+    {
+      "id": "lifetime",
+      "window": "lifetime"
+    }
+  ],
+  "source": {
+    "doc": "project-documents/medical-documents/CSSRS.md",
+    "note": "Ideation levels 1-5, five intensity dimensions, five behavior categories, lethality codings, and demonstration triage flags."
+  },
+  "release": {
+    "version": "v1",
+    "released_at": "2026-10-04",
+    "reviewer": "none",
+    "approval": "none",
+    "source_documents": [
+      {
+        "path": "project-documents/medical-documents/CSSRS.md",
+        "sha256": "610ecf937795c695828d15376a2555e3e153f97307f7b758dc9c1e7b6bdc9ced"
+      }
+    ],
+    "assumptions": [
+      "Ideation item wording below is a concise paraphrase of the source table; the authorized form governs exact administration wording and probes.",
+      "For each positive response the clinician documents timing, current-versus-historical status, the own description, and the determination, outside this structured payload.",
+      "A yes to a higher ideation level implies endorsement of lower levels clinically, but every level is still recorded explicitly here."
+    ],
+    "experimental_defaults": [
+      "Form choice: full phenomenon coverage (ideation 1-5 in two windows, five intensity dimensions, five behavior categories in two windows, lethality codings); exact authorized wording is NOT reproduced.",
+      "Time windows: recent ideation = past_month, recent behavior = past_3_months, lifetime = lifetime.",
+      "No branching skips: all ideation levels are asked explicitly and a higher-level yes never fills in lower levels.",
+      "Intensity is rated for the most severe recent ideation and is required if and only if any recent ideation (levels 1-5) is endorsed.",
+      "Lethality codings are required if and only if an actual attempt occurred in that window; potential lethality additionally requires actual damage 0.",
+      "Nonsuicidal self-injury is documented separately: it contributes to clinical_review but never triggers high_risk_alert by itself.",
+      "Immediate emergency concern (current intent/plan, attempt in progress, inability to stay safe) is clinician-determined and is never a calculated flag."
+    ],
+    "source_gaps": [
+      "The supplied source does not contain the authorized exact administration wording/probes; paraphrase status is preserved and must survive into S11.",
+      "Recency qualifiers in the source triage flags say typically past-month/past-3-month; fixed windows are the experimental choice.",
+      "The source gives no composite or cutoff beyond the demonstration triage flags; none is defined here."
+    ],
+    "validation_results": {
+      "reference_examples_passed": 7,
+      "notes": "Reference examples live in backend/tests/assessments/test_definitions.py (slice 3) and were worked independently from the source."
+    },
+    "disclaimer": "Experimental assessment package. Implementation validation replaces owner approval for this release; this does NOT establish clinical validation and introduces no treatment thresholds.",
+    "no_composite_score": true,
+    "release_notes": "Released for S11 C-SSRS implementation. No owner review or approval required or recorded."
+  }
+}
