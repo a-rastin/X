@@ -1,0 +1,52 @@
+# X-INSIGHT local stack (S01 bootstrap).
+#
+# Services:
+#   db      disposable local PostgreSQL (database: x_insight) on host port 5432
+#   db-test disposable test PostgreSQL (database: x_insight_test) on host port 5433
+#
+# Backend API runs locally on port 8000, web dev server on port 5173 (see Makefile).
+# Only the db services run under compose; backend/web run via `make dev`.
+# Copy `.env.example` to `.env` and set POSTGRES_PASSWORD before `make dev`.
+# Stop everything with `make stop` (== `docker compose down`).
+# Volumes are disposable: `docker compose down -v` drops local and test data.
+#
+# Pinned runtime: postgres 16-alpine (see image tags below).
+# No passwords are stored in this file; POSTGRES_PASSWORD must come from `.env`
+# (git-ignored). User/db/port values below are non-sensitive local defaults.
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-x_insight}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env (see .env.example)}
+      POSTGRES_DB: ${POSTGRES_DB:-x_insight}
+    ports:
+      - "${DB_PORT:-5432}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-x_insight}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  db-test:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-x_insight}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env (see .env.example)}
+      POSTGRES_DB: ${TEST_POSTGRES_DB:-x_insight_test}
+    ports:
+      - "${TEST_DB_PORT:-5433}:5432"
+    volumes:
+      - pgtestdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-x_insight}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  pgdata:
+  pgtestdata:
