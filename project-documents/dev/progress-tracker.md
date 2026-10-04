@@ -275,6 +275,65 @@ Created `content/review-ledger.md`: index + per-item entries for assessments, hi
 - Owner decisions enumerated in `content/review-ledger.md` §§2–7 (R5 concrete discussion/review mappings, F6 concrete graph/template and limitation-wording review, concrete history/severity definitions, DDI aliases/release evidence, reference-table provenance). Infrastructure proceeds on synthetic fixtures while responses are pending; S04 adds no new clinical blocker.
 - S04 exit met: admin creates/edits physicians with safe fields and stable IDs, reset/deactivation revokes sessions immediately with reactivation that never resurrects old sessions, deactivation carries an explicit retain/discard choice against the empty draft-set revision, repeated commands respect idempotency/conflicts with safe attributed audit, and no response includes a hash or raw password.
 
+## S05 — Build role navigation and both themes (2026-10-04)
+
+**Scope:** identity/theme UI only (tasks.md S05; plan.md §9; FR-01, FR-03, NFR-03). No clinical content, no seeded patient data, no draft/encounter tables. Backend unchanged. Seams T1/T9.
+
+### Pinned / added deps (S01–S04 pins unchanged; S05 adds no runtime lib)
+
+- Runtimes carry forward: Python `3.12.14`, Node `22.23.2` / npm `10.9.8`, PostgreSQL 16 (`postgres:16-alpine`), `fastapi 0.142.2`, `sqlalchemy 2.1.3`, `alembic 1.20.0`, `psycopg[binary] 3.3.6` (`Makefile` header + `backend/pyproject.toml`).
+- Frontend pins carry forward: `react 19.3.0` (+ `react-dom 19.3.0`), `vite 8.3.2`, `typescript 7.0.2`, `@vitejs/plugin-react 6.1.1` (`web/package.json`); E2E runner `@playwright/test 1.63.0` with `chromium` + `firefox` projects (`playwright.config.ts`). No new runtime libs; no clinical packages.
+- `web/vite.config.ts` preview proxy for `/api` (`preview.port 5173`, `preview.proxy /api → http://localhost:8000`) carries the dev `/api` proxy into the preview server used by `make test-e2e`; no new make target.
+
+### Red→green slices + seams (T1/T9; no test-only production endpoint)
+
+- Login → role dashboards + Register guidance + exact research warning (`W/features/identity/LoginPage.tsx`, `W/app/pages.tsx`, `W/features/identity/ResearchWarning.tsx`; `e2e/identity.spec.ts`): role-selected login lands on `Administrator dashboard` vs `Physician dashboard`; Register surface shows `Contact administrator` with no register link/button/route; every physician login blocks on the exact research-warning `alertdialog` before the dashboard renders, with acknowledgement scoped to the tab session (refresh keeps dashboard without a second blocking dialog; sign-out clears it so the next login blocks again; admin never sees the warning).
+- Identity/sign-out + own password form (`W/features/identity/auth.tsx`, `W/features/identity/PasswordForm.tsx`): header identity + `Sign out` clears the session and guards `#/dashboard` back to sign-in; `Account` hosts the `Change password` form (current/new password, generic error on wrong current password, `Password changed.` on success with fresh CSRF adopted); route guards complement server checks and never replace them.
+- Admin physicians table/forms with ETag/If-Match + retain/discard revision 0 + limit=100 total fix (`W/features/identity/PhysiciansPanel.tsx`, `W/features/identity/api.ts`): table lists safe fields only with `ETag`-backed rename (`If-Match: "<revision>"`, `412 STALE_REVISION` on mismatch); deactivate requires explicit retain/discard with `draft_set_revision 0` current (any other revision `409`); list uses one bounded page `GET /physicians?limit=100` at the server maximum with the rendered `total` keeping truncation visible; create/deactivate/reactivate send fresh `Idempotency-Key`; loading/empty/error states render from real endpoints with `Retry` (transport-abort recovery covered).
+- Light canonical + deliberate dark tokens (`W/shared/theme.css`): light values are the canonical palette verbatim; dark values are deliberate (deep slate-navy canvas, bright/teal character retained); primary buttons use `--primary-action` `#06786D` with white label (`5.36:1`; hover `#065F57` `7.55:1`) because teal `#0A9E8F` on white is `3.33:1`; dark `--primary-action` `#2DD4BF` with `#04211d` label (`9.09:1`); `--ink-subtle` reserved for disabled/placeholder text only; `prefers-reduced-motion` kill-switch removes transitions/animations; visible `:focus-visible` outline plus skip link and keyboard-operable theme toggle with associated error labels (`role=alert`, `aria-describedby`).
+- Seams: T1 (login/session/physician/preferences HTTP) + T9 (browser journeys). No T2–T8/T10 exercised in S05.
+
+### Verification evidence (implementation-session report, S05 scope)
+
+- `make check` pass (ruff format-check + ruff check + mypy `src` + web build + root `tsc --noEmit`); web build passes.
+- `make test-backend` 84 passed unchanged (22 `test_physicians.py` + 22 `test_identity.py` + 39 `test_contracts.py` + 1 `test_health.py`); no backend change in S05.
+- `make test-e2e` 54 passed = 27 chromium + 27 firefox, both browsers: per browser 19 (`e2e/identity.spec.ts`) + 7 (`e2e/themes.spec.ts`) + 1 (`e2e/smoke.spec.ts`). Theme contrast/keyboard evidence via computed `--primary-action`/canvas/focus assertions; build passes.
+
+### Local loop for next agent (S06+)
+
+- Routes (hash router, `W/app/router.ts`): `/#/login`, `/#/dashboard`, `/#/physicians`, `/#/account`; e2e base is preview `:5173` with `/api` proxied to backend `:8000`.
+- Cookie/session: `x_insight_session` HttpOnly cookie + per-session CSRF token kept in memory with `sessionStorage` backup across refresh (`W/features/identity/api.ts`); mutations send `X-CSRF-Token` header with `credentials: include`; `Idempotency-Key` (fresh UUID per physician create/patch/deactivate/reactivate) + `If-Match: "<revision>"` on physician patch.
+- Theme loop: `PATCH /me/preferences` (`{theme: light|dark}`, CSRF) persists; `GET /me` reflects the stored theme on load/refresh; toggle re-labels `Switch to dark/light theme` and restores `light` at the end of the admin-persistence spec for a stable starting point.
+- Fixtures: `e2e/helpers.ts` `uniqueName` (timestamp + random, lowercased), `ensurePhysician` (admin login + `POST /physicians` with `Idempotency-Key`), `loginAs`/`acknowledgeWarning`/`signOut`; each e2e run accumulates ~28 physicians with headroom to the bounded `limit=100` total.
+- S01–S04 loops unchanged (`make setup/dev/stop`, `make migrate`, host-PG `DB_PORT`/`TEST_DB_PORT` preflight; `db-test` `5433` down caveat from S03 still applies if observed).
+
+### Handoff
+
+- Next engineering session: **S06** (patient registration) — builds on the S05 hash-router/app shell, session/CSRF/idempotency client (`W/features/identity/api.ts`), and admin physician provisioning path; S05 leaves patient/directory/draft work to S06+.
+- Dashboards are navigation placeholders, not directory/drafts: physician dashboard shows `No clinical content` with no recommendation text; no placeholder medical recommendations were added.
+- `backend/README.md` unchanged in this docs step: it already points to the repo-root `make` loop plus the `make migrate` entry point; no new make target or app-code change in S05. No `web/` README exists to update.
+- Unrelated content untouched: `content/review-ledger.md`, BNs, medical docs, `backend/src`, `Makefile`, `compose.yaml` unchanged; no clinical claims added here.
+
+### Code-review follow-ups (non-blocking; not approval, no clinical content)
+
+- Shared form-error helper: login/password/physician forms repeat the `ApiError` → field/form-error mapping; consider one shared helper when the next form lands.
+- Split PhysiciansPanel: table + create/edit/deactivate forms share one module; consider splitting per form when patient/draft forms land.
+- Shared role-map: role strings map in several places (login select, guards, dashboard copy); consider one shared role-map.
+- Revision type: physician `revision` threads as plain `number` through props/API; consider a branded `Revision` type when draft flows add their revision contract.
+- Spec notes (all non-blocking, future-scope or minor): admin password-change uses the same `Change password` form and is untested in the browser; zoom/reflow not checked; same-tab re-login acknowledgement reset is covered while cross-tab/session edge remains to verify; Register `Contact administrator` casing is pinned as written; client falls back to `err.message` vs generic text on non-`ApiError` failures — none blocks S05 exit.
+
+### Deferred items (S05 conventions reused; enforcement lands with consumers)
+
+- Empty-table state: unreachable at current scale (admin + accumulated e2e physicians always present); renderer exists but has no exercised empty case.
+- Pagination chrome: no pager under ~10 physicians (plan.md §2.1 pool size); single `limit=100` page plus visible `total` is the current contract.
+- 429 hammer: login-throttle hammering deliberately not exercised from the browser; covered by backend T1 tests.
+- CSRF fresh-tab coverage: new-tab-without-`sessionStorage` mutation path relies on the stored login CSRF; revocation/rotation semantics stay covered by backend tests.
+
+### Remaining blockers
+
+- Owner decisions enumerated in `content/review-ledger.md` §§2–7 (R5 concrete discussion/review mappings, F6 concrete graph/template and limitation-wording review, concrete history/severity definitions, DDI aliases/release evidence, reference-table provenance). Infrastructure proceeds on synthetic fixtures while responses are pending; S05 adds no new clinical blocker.
+- S05 exit met: administrator can create a physician through the browser, both roles can log in and change own password/theme, role navigation and both themes hold across reload in both browsers.
+
 ## Content Q/A decisions — 2026-10-04
 
 - S12 may draft structured exposure, duration, trial-adequacy, prior-response, and monitoring fields for review; dose, route, and frequency remain excluded. Concrete inventory and severity definitions still require review.

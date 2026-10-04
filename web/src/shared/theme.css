@@ -1,0 +1,490 @@
+/* X-INSIGHT semantic theme tokens (S05, ui-context canonical light tokens).
+ *
+ * Light values below are the canonical palette verbatim. Dark values are
+ * deliberate (not a mechanical inversion): deep slate-navy canvas keeps the
+ * bright/teal character while holding text contrast, and the primary action
+ * fill flips to bright teal with a near-black label so the label ratio stays
+ * above 4.5:1 in both themes.
+ *
+ * Contrast note: teal #0A9E8F on white is 3.33:1, insufficient for small
+ * text, so primary buttons use the darker --primary-action fill (#06786D,
+ * white label = 5.36:1; hover #065F57 = 7.55:1). --ink-subtle is reserved
+ * for disabled/placeholder text only, never essential copy.
+ */
+
+:root {
+  --primary: #0a9e8f;
+  --primary-hover: #088a7d;
+  --primary-light: #e6f6f5;
+  --on-primary: #ffffff;
+
+  --ink: #111827;
+  --ink-muted: #6b7280;
+  --ink-subtle: #9ca3af;
+
+  --canvas: #ffffff;
+  --surface-1: #f9fafb;
+  --surface-2: #f3f4f6;
+
+  --border: #e5e7eb;
+  --border-strong: #d1d5db;
+
+  --urgent: #dc2626;
+  --urgent-bg: #fef2f2;
+
+  --warning: #d97706;
+  --warning-bg: #fffbeb;
+
+  --normal: #059669;
+  --normal-bg: #ecfdf5;
+
+  --follow-up: #7c3aed;
+  --follow-up-bg: #f5f3ff;
+
+  --info: #0284c7;
+  --info-bg: #f0f9ff;
+
+  /* Deliberate accessible action treatment (light): darker teal fill. */
+  --primary-action: #06786d;
+  --primary-action-hover: #065f57;
+  --on-action: #ffffff;
+  --selected-nav-bg: #e6f6f5;
+  --selected-nav-ink: #065f57;
+  --focus: #065f57;
+
+  --font-sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-pill: 9999px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-elevated: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-overlay: 0 20px 60px rgba(0, 0, 0, 0.12);
+
+  --motion-fast: 100ms;
+  --motion-base: 180ms;
+  --motion-slow: 300ms;
+  --motion-easing: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-decelerate: cubic-bezier(0, 0, 0.2, 1);
+}
+
+:root[data-theme="dark"] {
+  --primary: #2dd4bf;
+  --primary-hover: #5eead4;
+  --primary-light: #0f2e3b;
+  --on-primary: #04211d;
+
+  --ink: #f2f5f9;
+  --ink-muted: #c3cddb;
+  --ink-subtle: #8fa0b8;
+
+  --canvas: #0b1220;
+  --surface-1: #111c30;
+  --surface-2: #1b2942;
+
+  --border: #26344d;
+  --border-strong: #3b4d6e;
+
+  --urgent: #f87171;
+  --urgent-bg: #2a1215;
+
+  --warning: #fbbf24;
+  --warning-bg: #2a2111;
+
+  --normal: #34d399;
+  --normal-bg: #0b2620;
+
+  --follow-up: #a78bfa;
+  --follow-up-bg: #1e1b33;
+
+  --info: #38bdf8;
+  --info-bg: #0c2233;
+
+  /* Deliberate accessible action treatment (dark): bright fill, dark label
+   * (#04211d on #2dd4bf = 9.09:1). */
+  --primary-action: #2dd4bf;
+  --primary-action-hover: #5eead4;
+  --on-action: #04211d;
+  --selected-nav-bg: #0f2e3b;
+  --selected-nav-ink: #7de8d8;
+  --focus: #5eead4;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background-color: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.6;
+  transition: background-color var(--motion-base) var(--motion-easing),
+    color var(--motion-base) var(--motion-easing);
+}
+
+.xi-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Visible keyboard focus everywhere (3:1+ non-text contrast in both themes). */
+.xi-shell :focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.xi-skip-link {
+  position: absolute;
+  left: var(--space-4);
+  top: -100px;
+  z-index: 100;
+  background: var(--primary-action);
+  color: var(--on-action);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  font-weight: 600;
+  transition: top var(--motion-fast) var(--motion-easing);
+}
+
+.xi-skip-link:focus-visible {
+  top: var(--space-2);
+}
+
+.xi-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-6);
+  background: var(--surface-1);
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.xi-wordmark {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+
+.xi-nav {
+  display: flex;
+  gap: var(--space-1);
+  align-items: center;
+  flex: 1;
+}
+
+.xi-nav a {
+  color: var(--ink-muted);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  border-left: 3px solid transparent;
+}
+
+.xi-nav a[aria-current="page"] {
+  color: var(--selected-nav-ink);
+  background: var(--selected-nav-bg);
+  border-left-color: var(--primary-action);
+}
+
+.xi-header-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-left: auto;
+}
+
+.xi-identity {
+  font-size: 13px;
+  color: var(--ink-muted);
+}
+
+.xi-main {
+  padding: var(--space-6);
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  flex: 1;
+}
+
+.xi-auth {
+  max-width: 460px;
+  margin: var(--space-12) auto;
+  padding: var(--space-8);
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.xi-card {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+.xi-card h2,
+.xi-card h3 {
+  margin-top: 0;
+}
+
+.xi-page-title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 var(--space-4);
+}
+
+.xi-section-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 var(--space-3);
+}
+
+.xi-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-bottom: var(--space-4);
+}
+
+.xi-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.xi-input,
+.xi-select {
+  font: inherit;
+  color: var(--ink);
+  background: var(--canvas);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-3);
+  max-width: 100%;
+}
+
+.xi-input[aria-invalid="true"],
+.xi-select[aria-invalid="true"] {
+  border-color: var(--urgent);
+}
+
+.xi-field-error {
+  font-size: 13px;
+  color: var(--urgent);
+  margin: 0;
+  font-weight: 600;
+}
+
+.xi-form-error {
+  font-size: 14px;
+  color: var(--urgent);
+  background: var(--urgent-bg);
+  border: 1px solid var(--urgent);
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-3);
+  font-weight: 600;
+}
+
+.xi-status {
+  font-size: 14px;
+  color: var(--normal);
+  font-weight: 600;
+}
+
+.xi-hint {
+  font-size: 13px;
+  color: var(--ink-muted);
+}
+
+.xi-btn {
+  font: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-4);
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background-color var(--motion-base) var(--motion-easing),
+    border-color var(--motion-base) var(--motion-easing);
+}
+
+.xi-btn-primary {
+  background: var(--primary-action);
+  color: var(--on-action);
+  border-color: var(--primary-action);
+}
+
+.xi-btn-primary:hover {
+  background: var(--primary-action-hover);
+  border-color: var(--primary-action-hover);
+}
+
+.xi-btn-secondary {
+  background: var(--canvas);
+  color: var(--ink);
+  border-color: var(--border-strong);
+}
+
+.xi-btn-secondary:hover {
+  background: var(--surface-2);
+}
+
+.xi-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.xi-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.xi-table th,
+.xi-table td {
+  text-align: left;
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--border);
+}
+
+.xi-table th {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--ink-muted);
+}
+
+.xi-row-actions {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.xi-badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-strong);
+  color: var(--ink-muted);
+}
+
+.xi-badge-active {
+  color: var(--normal);
+  background: var(--normal-bg);
+  border-color: var(--normal);
+}
+
+.xi-badge-inactive {
+  color: var(--urgent);
+  background: var(--urgent-bg);
+  border-color: var(--urgent);
+}
+
+.xi-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+  z-index: 50;
+}
+
+.xi-modal {
+  background: var(--canvas);
+  color: var(--ink);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-overlay);
+  max-width: 520px;
+  width: 100%;
+  padding: var(--space-8);
+}
+
+.xi-notice {
+  border: 1px solid var(--info);
+  border-left-width: 6px;
+  background: var(--info-bg);
+  color: var(--ink);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  margin-bottom: var(--space-6);
+  font-size: 14px;
+}
+
+.xi-radio-group {
+  display: flex;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.xi-radio-group label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.xi-form-row {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
