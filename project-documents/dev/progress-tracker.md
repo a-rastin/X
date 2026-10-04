@@ -93,3 +93,9 @@ Created `content/review-ledger.md`: index + per-item entries for assessments, hi
 - Next engineering session: **S02** (real persistence and request contracts) — needs DB roles, migration entry point, readiness/health, correlation/error body; `make migrate` currently reports unimplemented by design.
 - `backend/README.md` points to this same repo-root `make` loop (minimal pointer; no app-code change in this docs step).
 - Unrelated content untouched: `content/review-ledger.md`, BNs, medical docs unchanged; no clinical claims added here.
+
+### Blocker resolutions addendum (2026-10-04)
+
+- (a) Host PG conflict (defaults unchanged): host PostgreSQL 14 observed on `5432` via `ss`/`ps` (implementation-session observation; host PG left untouched). `make dev` (`Makefile` `dev` target, `SHELL := /bin/bash`) now fail-fasts on missing `.env`, preflights effective `DB_PORT`/`TEST_DB_PORT` via `/dev/tcp/127.0.0.1/<port>`, echoes effective ports, and on conflict exits non-zero suggesting stopping host PG or `DB_PORT=5442 TEST_DB_PORT=5443 make dev`. Defaults unchanged `5432`/`5433` (`.env.example` override comment, `Makefile` header).
+- (b) `verify` now includes browser smoke: `make verify` = `check` + `test-backend` + `test-e2e` with closing `+ browser smoke` echo (`Makefile` `verify` target). CI installs `chromium firefox` (`npx playwright install chromium firefox`) before the `make verify` gate (`ci.yml`). Supersedes the earlier S01 note that browser smoke ran outside `verify`.
+- Test evidence (implementation-session report, S01 scope): `make check` pass; `make test-backend` 1 passed; `make test-e2e` 2 passed (`chromium` + `firefox`); `make verify` exit 0. Unimplemented targets still exit non-zero with clear messages: `test-web`, `test-recovery`, `test-load`, `migrate`. No clinical content, no clinical claims.

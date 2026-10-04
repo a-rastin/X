@@ -7,6 +7,7 @@
 #   db-test      localhost:5433 (database x_insight_test)
 #
 # Environment placeholders live in `.env.example` (copy to `.env`, never commit it).
+# If host PostgreSQL occupies 5432/5433, rerun with overrides: DB_PORT=5442 TEST_DB_PORT=5443 make dev.
 # Stop the stack with `make stop` (== `docker compose down`).
 # Volumes are disposable: `docker compose down -v` drops local and test data.
 #
@@ -41,9 +42,17 @@ setup:
 	cd web && npm ci
 	npm ci
 
+dev: SHELL := /bin/bash
 dev:
+	@if [ ! -f .env ]; then echo "missing .env: copy .env.example to .env and set POSTGRES_PASSWORD" >&2; exit 1; fi
+	@for pair in "$(or $(DB_PORT),5432):db" "$(or $(TEST_DB_PORT),5433):db-test"; do \
+	port=$${pair%%:*}; svc=$${pair##*:}; \
+	if (echo >/dev/tcp/127.0.0.1/$$port) 2>/dev/null; then \
+	echo "port $$port ($$svc) is occupied (host PostgreSQL likely); stop host PG or rerun with e.g. DB_PORT=5442 TEST_DB_PORT=5443 make dev" >&2; exit 1; \
+	fi; \
+	done
 	docker compose up -d db db-test
-	@echo "databases up (5432 local, 5433 test). Starting backend :8000 and web :5173."
+	@echo "databases up ($(or $(DB_PORT),5432) local, $(or $(TEST_DB_PORT),5433) test). Starting backend :8000 and web :5173."
 	@echo "Stop with 'make stop' (Ctrl-C then 'make stop' if running foreground)."
 	trap 'kill 0' INT TERM; \
 	cd backend && uv run uvicorn x_insight.app:app --host 0.0.0.0 --port 8000 --reload & \
@@ -95,4 +104,5 @@ test-load:
 verify:
 	$(MAKE) check
 	$(MAKE) test-backend
-	@echo "verify: offline CI gate passed (check + backend tests + web build); no live provider credentials used."
+	$(MAKE) test-e2e
+	@echo "verify: offline CI gate passed (check + backend tests + web build + browser smoke); no live provider credentials used."

@@ -39,7 +39,11 @@ jobs:
       - name: E2E runner locked install
         run: npm ci
 
-      - name: Offline gate (check + backend tests + web build)
+      # verify now includes browser smoke (e2e/smoke.spec.ts, chromium+firefox)
+      - name: Install Playwright browsers
+        run: npx playwright install chromium firefox
+
+      - name: Offline gate (check + backend tests + web build + browser smoke)
         run: make verify
 
       - name: Ensure no credentials in tracked files
