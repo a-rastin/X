@@ -458,6 +458,34 @@ body {
   font-size: 14px;
 }
 
+/* S09 diagnosis states: warning (below-threshold acknowledgment) and bypass.
+ * Both pair the state color with an explicit heading + text (never color
+ * alone), use ink text on tinted backgrounds in both themes, and stay
+ * visible until the server state changes — urgent information never
+ * disappears automatically. */
+.xi-warning-panel {
+  border: 1px solid var(--warning);
+  border-left-width: 6px;
+  background: var(--warning-bg);
+  color: var(--ink);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-4);
+  font-size: 14px;
+}
+
+.xi-bypass-panel {
+  border: 1px solid var(--info);
+  border-left-width: 6px;
+  background: var(--info-bg);
+  color: var(--ink);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  margin-top: var(--space-4);
+  font-size: 14px;
+}
+
 .xi-radio-group {
   display: flex;
   gap: var(--space-4);

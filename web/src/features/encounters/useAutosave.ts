@@ -16,6 +16,11 @@
  * revision untouched and surface as failed with Retry. Navigation warns
  * while local edits remain via `hasUnsaved` (beforeunload + in-app
  * hash-route guard in the page component).
+ *
+ * Command POSTs that bump the encounter revision outside this PATCH path
+ * (diagnosis acknowledgment/bypass) resynchronize through
+ * `applyServerSnapshot` instead of another PATCH — one saved base, one
+ * revision fence, no separate persistence mechanism.
  */
 
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -276,6 +281,23 @@ export function useAutosave(options: UseAutosaveOptions) {
     return saveNow();
   }, [clearTimer, saveNow]);
 
+  /** Adopt an explicit server snapshot after a command POST bumped the
+   * revision outside this PATCH path (diagnosis acknowledgment/bypass).
+   * The fetched server truth becomes the new saved base directly — no extra
+   * PATCH, so the revision fence stays exact for the next autosave. */
+  const applyServerSnapshot = useCallback(
+    (draftData: DraftData, revision: number, timestamp: string | null) => {
+      clearTimer();
+      attemptKeyRef.current = null;
+      setLocalData(draftData);
+      setBaseRevision(revision);
+      setServerTimestamp(timestamp);
+      setServerTruth(null);
+      setSaveState({ kind: "saved", revision, serverTimestamp: timestamp });
+    },
+    [clearTimer],
+  );
+
   // Flush pending edits when the page unmounts (hash-route transition).
   useEffect(() => {
     return () => {
@@ -298,6 +320,7 @@ export function useAutosave(options: UseAutosaveOptions) {
     reloadTruth,
     adoptServerVersion,
     retryOnFreshRevision,
+    applyServerSnapshot,
     saveNow,
   };
 }
