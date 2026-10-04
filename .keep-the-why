@@ -4,6 +4,7 @@ README, for what Keep the Why actually is.
 
 <!-- keep-the-why:config -->
 - id: bea68167-4219-4781-b256-4788768d1ecd---X
+- canonical: https://github.com/a-rastin/X
 - context: `context/`
 - init: complete
 - context-schema: 0.19.0

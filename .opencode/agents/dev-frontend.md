@@ -2,7 +2,7 @@
 name: dev-frontend
 description: subagent to build the frontend.
 mode: subagent
-model: OpenCode-Go/Muse-Spark-1.3-Contributor#xhigh
+model: opencode-go/muse-spark-1.3-contributor#xhigh
 permissions:
   - action: edit
     resource: "*"
