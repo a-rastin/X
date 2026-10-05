@@ -2,13 +2,9 @@
 name: dev-commit
 description: subagent to commit changes to git.
 mode: subagent
-permissions:
-  - action: edit
-    resource: "*"
-    effect: deny
-  - action: shell
-    resource: "*"
-    effect: allow
+permission:
+  edit: deny
+  bash: allow
 ---
 
 ## Skills to Use

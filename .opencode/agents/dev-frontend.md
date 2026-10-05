@@ -2,13 +2,9 @@
 name: dev-frontend
 description: subagent to build the frontend.
 mode: subagent
-permissions:
-  - action: edit
-    resource: "*"
-    effect: allow
-  - action: shell
-    resource: "*"
-    effect: allow
+permission:
+  edit: allow
+  bash: allow
 ---
 
 ## Tools

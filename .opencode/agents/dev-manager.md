@@ -2,13 +2,9 @@
 name: dev-manager
 description: Coordinates the phase-specific app Developement instead of running phase details directly.
 mode: primary
-permissions:
-  - action: edit
-    resource: "*"
-    effect: allow
-  - action: shell
-    resource: "*"
-    effect: allow
+permission:
+  edit: allow
+  bash: allow
 ---
 
 # Dev Manager

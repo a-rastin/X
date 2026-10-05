@@ -2,13 +2,9 @@
 name: dev-backend
 description: subagent to build backend code.
 mode: subagent
-permissions:
-  - action: edit
-    resource: "*"
-    effect: allow
-  - action: shell
-    resource: "*"
-    effect: allow
+permission:
+  edit: allow
+  bash: allow
 ---
 
 # Dev Backend
