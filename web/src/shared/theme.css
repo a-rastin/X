@@ -533,6 +533,37 @@ body {
   font-size: 14px;
 }
 
+/* S12 history/effects panels: structured history completeness plus the four
+ * adverse-effect questionnaires. Both mirror .xi-panss-panel — info color
+ * paired with explicit text (never color alone), ink text on tinted
+ * backgrounds in both themes via the existing deliberate dark tokens.
+ * History carries no scores (completeness only); effect severities exist
+ * solely for present effects. Urgent airway handling reuses
+ * .xi-urgent-panel and stays independent of these panels. */
+.xi-history-panel {
+  border: 1px solid var(--info);
+  border-left-width: 6px;
+  background: var(--info-bg);
+  color: var(--ink);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-4);
+  font-size: 14px;
+}
+
+.xi-effects-panel {
+  border: 1px solid var(--info);
+  border-left-width: 6px;
+  background: var(--info-bg);
+  color: var(--ink);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-4);
+  font-size: 14px;
+}
+
 .xi-radio-group {
   display: flex;
   gap: var(--space-4);

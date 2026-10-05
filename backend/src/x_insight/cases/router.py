@@ -21,6 +21,22 @@ S07 draft routes (plan.md §§2.3, 4.3; FR-16, FR-22):
   slot without deleting the patient and calls the job-cancellation hook
   (no-op until jobs exist).
 
+S12 history/effects page state (plan.md §§2.2, 5; FR-14, FR-20-21; T2/T1):
+- ``GET /encounters/{id}/history`` — author-only preview over
+  ``draft_data["history"]`` (values, provenance, reconciliation, phone
+  update, evaluation, definition version, revision) with ETag.
+- ``POST .../history`` — author-only strict save (If-Match-fenced,
+  server-stamped provenance, 422 on undeclared/excluded/invalid).
+- ``GET /encounters/{id}/effects`` — author-only preview of the four
+  effects with questionnaires, reviewed severities, urgent flag, and
+  definition versions, with ETag.
+- ``POST .../effects/{effect}/status`` — author-only status transition
+  (present requires complete questionnaire + reviewed severity;
+  absent/not_assessed require null severity; stale severity is 422).
+
+History/effects answers travel via the existing S07 ``PATCH`` autosave
+(``draft_data["history"]`` / ``draft_data["effects"]``); no new table.
+
 All failures use the standard ``contracts.ErrorBody`` (never
 secrets/tracebacks/clinical content). No delete/merge route exists in v1.
 """
@@ -39,7 +55,9 @@ from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
 from x_insight import contracts
+from x_insight.cases import effects as effects_service
 from x_insight.cases import encounters as encounters_service
+from x_insight.cases import history as history_service
 from x_insight.cases import patients as patients_service
 from x_insight.db import get_session
 from x_insight.identity import service as identity_service
@@ -556,3 +574,264 @@ def discard_encounter(
     return _draft_response(
         encounter, status_code=200, include_body=False, server_timestamp=server_timestamp
     )
+
+
+# --- S12 history/effects page state (author-only, draft_data + revision) ---
+
+
+class HistorySaveRequest(BaseModel):
+    """Strict history save body: values plus minimal reconciliation/phone.
+
+    Structural typing only (top-level keys); semantic validation
+    (undeclared/excluded/invalid values, bad reconciliation, non-text phone)
+    lives in :mod:`x_insight.cases.history` and returns 422.
+    """
+
+    model_config = {"extra": "forbid"}
+
+    values: dict[str, Any]
+    reconciliation: dict[str, Any] | None = None
+    phone_update: str | None = None
+
+
+class EffectStatusRequest(BaseModel):
+    """Effect status transition body: status plus reviewed severity.
+
+    ``severity`` is the BARS global int for akathisia, a reviewed label for
+    the other present effects, and must be null for absent/not_assessed
+    (stale severity is 422 — the caller must explicitly clear it).
+    """
+
+    model_config = {"extra": "forbid"}
+
+    status: str
+    severity: Any = None
+
+
+def _history_response(
+    encounter: dict[str, Any],
+    state: dict[str, Any],
+    *,
+    status_code: int,
+    server_timestamp: str | None = None,
+) -> JSONResponse:
+    content: dict[str, Any] = {
+        "encounter": encounters_service.safe_encounter_reference(encounter),
+        "revision": int(encounter["revision"]),
+        "definition_version": state["definition_version"],
+        "values": state["values"],
+        "provenance": state["provenance"],
+        "reconciliation": state["reconciliation"],
+        "phone_update": state["phone_update"],
+        "evaluation": state["evaluation"],
+        "analysis_visible": state["analysis_visible"],
+        "analysis_visible_label": state["analysis_visible_label"],
+    }
+    if server_timestamp is not None:
+        content["server_timestamp"] = server_timestamp
+    response = JSONResponse(status_code=status_code, content=content)
+    response.headers["ETag"] = contracts.format_etag(int(content["revision"]))
+    return response
+
+
+def _history_idempotency_replay(stored: dict[str, Any]) -> JSONResponse:
+    body = dict(stored["response_body"])
+    response = JSONResponse(status_code=int(stored["response_status"]), content=body)
+    revision = body.get("revision")
+    if isinstance(revision, int) and revision >= 1:
+        response.headers["ETag"] = contracts.format_etag(revision)
+    return response
+
+
+def _effects_response(
+    encounter: dict[str, Any],
+    state: dict[str, Any],
+    *,
+    status_code: int,
+    server_timestamp: str | None = None,
+) -> JSONResponse:
+    content: dict[str, Any] = {
+        "encounter": encounters_service.safe_encounter_reference(encounter),
+        "revision": int(encounter["revision"]),
+        "definition_versions": state["definition_versions"],
+        "effects": state["effects"],
+    }
+    if server_timestamp is not None:
+        content["server_timestamp"] = server_timestamp
+    response = JSONResponse(status_code=status_code, content=content)
+    response.headers["ETag"] = contracts.format_etag(int(content["revision"]))
+    return response
+
+
+def _effects_idempotency_replay(stored: dict[str, Any]) -> JSONResponse:
+    body = dict(stored["response_body"])
+    response = JSONResponse(status_code=int(stored["response_status"]), content=body)
+    revision = body.get("revision")
+    if isinstance(revision, int) and revision >= 1:
+        response.headers["ETag"] = contracts.format_etag(revision)
+    return response
+
+
+@router.get("/encounters/{encounter_id}/history")
+def get_history(
+    encounter_id: uuid.UUID, request: Request, session: Session = Depends(get_session)
+) -> JSONResponse:
+    user = _require_user(request, session)
+    if isinstance(user, JSONResponse):
+        return user
+    assert isinstance(user, dict)
+    encounter, state = history_service.read_history_for_author(session, encounter_id, user)
+    return _history_response(encounter, state, status_code=200)
+
+
+@router.post("/encounters/{encounter_id}/history")
+def save_history(
+    encounter_id: uuid.UUID,
+    payload: HistorySaveRequest,
+    request: Request,
+    session: Session = Depends(get_session),
+) -> JSONResponse:
+    request_id = get_request_id(request)
+    physician = _require_physician_mutation(request, session)
+    if isinstance(physician, JSONResponse):
+        return physician
+    assert isinstance(physician, dict)
+    expected = encounters_service.require_if_match_revision(
+        request.headers.get(contracts.IF_MATCH_HEADER)
+    )
+    key = _idempotency_key_or_none(request)
+    request_hash: str | None = None
+    if key is not None:
+        request_hash = history_service.idempotency_request_hash(
+            encounter_id,
+            expected,
+            {
+                "values": payload.values,
+                "reconciliation": payload.reconciliation,
+                "phone_update": payload.phone_update,
+            },
+        )
+        stored = identity_service.lookup_idempotency(
+            session,
+            operation=history_service.HISTORY_SAVE_OPERATION,
+            actor_id=physician["id"],
+            key=key,
+        )
+        if stored is not None:
+            if stored["request_hash"] != request_hash:
+                return _idempotency_conflict(request_id)
+            return _history_idempotency_replay(stored)
+    encounter, state, server_timestamp = history_service.save_history(
+        session,
+        author=physician,
+        encounter_id=encounter_id,
+        expected_revision=expected,
+        values=payload.values,
+        reconciliation=payload.reconciliation,
+        phone_update=payload.phone_update,
+        request_id=request_id,
+    )
+    response_body: dict[str, Any] = {
+        "encounter": encounters_service.safe_encounter_reference(encounter),
+        "revision": int(encounter["revision"]),
+        "definition_version": state["definition_version"],
+        "values": state["values"],
+        "provenance": state["provenance"],
+        "reconciliation": state["reconciliation"],
+        "phone_update": state["phone_update"],
+        "evaluation": state["evaluation"],
+        "analysis_visible": state["analysis_visible"],
+        "analysis_visible_label": state["analysis_visible_label"],
+        "server_timestamp": server_timestamp,
+    }
+    if key is not None:
+        assert request_hash is not None
+        identity_service.store_idempotency(
+            session,
+            operation=history_service.HISTORY_SAVE_OPERATION,
+            actor_id=physician["id"],
+            key=key,
+            request_hash=request_hash,
+            response_status=200,
+            response_body=response_body,
+        )
+    return _history_response(encounter, state, status_code=200, server_timestamp=server_timestamp)
+
+
+@router.get("/encounters/{encounter_id}/effects")
+def get_effects(
+    encounter_id: uuid.UUID, request: Request, session: Session = Depends(get_session)
+) -> JSONResponse:
+    user = _require_user(request, session)
+    if isinstance(user, JSONResponse):
+        return user
+    assert isinstance(user, dict)
+    encounter, state = effects_service.read_effects_for_author(session, encounter_id, user)
+    return _effects_response(encounter, state, status_code=200)
+
+
+@router.post("/encounters/{encounter_id}/effects/{effect_key}/status")
+def set_effect_status(
+    encounter_id: uuid.UUID,
+    effect_key: str,
+    payload: EffectStatusRequest,
+    request: Request,
+    session: Session = Depends(get_session),
+) -> JSONResponse:
+    request_id = get_request_id(request)
+    physician = _require_physician_mutation(request, session)
+    if isinstance(physician, JSONResponse):
+        return physician
+    assert isinstance(physician, dict)
+    expected = encounters_service.require_if_match_revision(
+        request.headers.get(contracts.IF_MATCH_HEADER)
+    )
+    operation = f"{effects_service.EFFECT_STATUS_OPERATION_PREFIX}.{effect_key}"
+    key = _idempotency_key_or_none(request)
+    request_hash: str | None = None
+    if key is not None:
+        request_hash = effects_service.idempotency_request_hash(
+            encounter_id,
+            effect_key,
+            expected,
+            {"status": payload.status, "severity": payload.severity},
+        )
+        stored = identity_service.lookup_idempotency(
+            session,
+            operation=operation,
+            actor_id=physician["id"],
+            key=key,
+        )
+        if stored is not None:
+            if stored["request_hash"] != request_hash:
+                return _idempotency_conflict(request_id)
+            return _effects_idempotency_replay(stored)
+    encounter, state, server_timestamp = effects_service.set_effect_status(
+        session,
+        author=physician,
+        encounter_id=encounter_id,
+        effect=effect_key,
+        status=payload.status,
+        severity=payload.severity,
+        expected_revision=expected,
+        request_id=request_id,
+    )
+    response_body: dict[str, Any] = {
+        "encounter": encounters_service.safe_encounter_reference(encounter),
+        "revision": int(encounter["revision"]),
+        "definition_versions": state["definition_versions"],
+        "effects": state["effects"],
+        "server_timestamp": server_timestamp,
+    }
+    if key is not None:
+        assert request_hash is not None
+        identity_service.store_idempotency(
+            session,
+            operation=operation,
+            actor_id=physician["id"],
+            key=key,
+            request_hash=request_hash,
+            response_status=200,
+            response_body=response_body,
+        )
+    return _effects_response(encounter, state, status_code=200, server_timestamp=server_timestamp)

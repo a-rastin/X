@@ -5,8 +5,9 @@
  * authoritative. No placeholder medical recommendations: the S07 field is an
  * explicit working note stored as `draft_data.working_note`, S09 adds the
  * diagnosis checklist (`draft_data.diagnosis`), S10 adds PANSS
- * (`draft_data.panss`), and S11 adds C-SSRS (`draft_data.cssrs`) — later
- * assessment pages extend `draft_data` keys
+ * (`draft_data.panss`), S11 adds C-SSRS (`draft_data.cssrs`), and S12 adds
+ * structured history (`draft_data.history`) plus the four adverse effects
+ * (`draft_data.effects`) — later assessment pages extend `draft_data` keys
  * through the same autosave path (full object on each save).
  *
  * States: loading (GET), ready (editor + saving/saved/failed), conflict
@@ -31,6 +32,8 @@ import {
 import { DiagnosisSection } from "../assessments/diagnosis/DiagnosisSection";
 import { PanssSection } from "../assessments/panss/PanssSection";
 import { CssrsSection } from "../assessments/cssrs/CssrsSection";
+import { HistorySection } from "../history/HistorySection";
+import { EffectsSection } from "../history/EffectsSection";
 import { useAutosave } from "./useAutosave";
 
 type LoadState =
@@ -483,6 +486,18 @@ function EncounterWizard({
       />
 
       <CssrsSection
+        encounterId={encounterId}
+        autosave={autosave}
+        onSessionExpired={sessionExpired}
+      />
+
+      <HistorySection
+        encounterId={encounterId}
+        autosave={autosave}
+        onSessionExpired={sessionExpired}
+      />
+
+      <EffectsSection
         encounterId={encounterId}
         autosave={autosave}
         onSessionExpired={sessionExpired}

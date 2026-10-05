@@ -1,0 +1,46 @@
+{
+  "package": "history",
+  "version": "v1",
+  "status": "awaiting_review",
+  "reviewer": "owner",
+  "decision": "pending",
+  "date": null,
+  "approval": "none",
+  "scope": "Structured history inventory plus four adverse-effect instrument drafts for S12 owner review. No concrete package is approved. S08 no-review exception does not apply here.",
+  "files": [
+    {"path": "history.v1.json", "version": "v1", "review_status": "awaiting_review"},
+    {"path": "bars.v1.json", "version": "v1", "review_status": "awaiting_review"},
+    {"path": "sas.v1.json", "version": "v1", "review_status": "awaiting_review"},
+    {"path": "aims.v1.json", "version": "v1", "review_status": "awaiting_review"},
+    {"path": "acute-dystonia-dx-criteria.v1.json", "version": "v1", "review_status": "awaiting_review"}
+  ],
+  "source_hashes": {
+    "project-documents/medical-documents/tardive-dyskinesia-criteria.md": "ca9bd22fb0064d3ae24b61ecc20bacddc33592ebd25d6a4966e8cd83ef4cfe5a",
+    "project-documents/medical-documents/akathisia-criteria.md": "93ae8c76a2b26b2af79ea3a9e20271089eac683a0ce29d9579caffac1e626a47",
+    "project-documents/medical-documents/parkinsonism-criteria.md": "d1b7fe5fcc820c54aebb06aba5372f47f65e910ddea7ae0adc0d7adbfad79994",
+    "project-documents/medical-documents/acute-dystonia-criteria.md": "495a60d767a32558583b092fcf072ec1a7eb49d70a730725e97986d11a01db7d"
+  },
+  "owner_questions": [
+    "Approve the minimum typed history inventory (12 fields, periods, tri-state plus not_assessed, provenance, reconciliation, analysis-visible label) as-is so S27 and S29-S38 can draft against a frozen inventory, or name additions as versioned changes. FR-14-excluded dose/unit/route/frequency/active-stopped/free-text stay excluded.",
+    "Review the complete BARS (4 items 0-3/0-3/0-3/0-5, global principal, threshold global>=2) and SAS (10 items 0-4, raw 0-40, mean 0-4, no severity bands) definitions, administration/completeness/scoring, independent examples, and F2/F3 severity/network mappings.",
+    "Identify the complete AIMS source/form and review concrete AIMS item/completeness/severity/network definitions; confirm Schooler-Kane research thresholds (3+ in one region or 2+ in two regions with exposure and no alternative cause) as research-only.",
+    "Review the Acute Dystonia Dx Criteria checklist (5 criteria items, no total score), completeness-only-when-present rule, reviewed severity wording, and urgent-independent handling."
+  ],
+  "assumptions": [
+    "Full standardized questionnaires are selected (2026-10-04); full completion applies only when the corresponding effect is present.",
+    "Acute-dystonia form name is Acute Dystonia Dx Criteria; naming does not establish a validated scale.",
+    "No summed BARS severity rules, no universal SAS bands, no diagnosis from an AIMS total, and no invented network mappings were added."
+  ],
+  "mapping_gaps": [
+    "R7/F5 trial-adequacy windows and no-improvement baselines (S32/S37).",
+    "F1-F4 gate wording, onset/alternative-cause fields, and result mappings (S33-S36).",
+    "Complete AIMS source/form (S33)."
+  ],
+  "approval_record_shape": {
+    "assumptions": "per-package assumptions above",
+    "reviewer": "owner",
+    "decision": "pending",
+    "date": null,
+    "source_hashes": "this file source_hashes"
+  }
+}

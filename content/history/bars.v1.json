@@ -1,0 +1,133 @@
+{
+  "id": "bars",
+  "version": "v1",
+  "title": "Barnes Akathisia Rating Scale (draft v1, awaiting owner review)",
+  "effect": "akathisia",
+  "description": "Clinician-rated four-item instrument for drug-induced akathisia: observation plus subjective experience. Supports assessment and change tracking; does not by itself establish medication causation.",
+  "review_status": "awaiting_review",
+  "approval": "none",
+  "administration": {
+    "steps": [
+      "Observe the patient seated for at least 2 minutes while engaged in neutral conversation.",
+      "Observe the patient standing for at least 2 minutes while engaged in neutral conversation.",
+      "Note relevant movements seen at other times (walking into the room, routine activity).",
+      "After observation, ask directly about inner restlessness, the urge to move, and associated distress."
+    ],
+    "look_for": "Leg or foot shuffling, stamping, swinging a leg while seated, rocking from foot to foot, walking in place, repeated standing or pacing, inability to remain seated or standing. Separate characteristic movements from occasional nonspecific fidgeting.",
+    "interview_prompts_not_scored": [
+      "Do you feel restless inside or feel that you need to move?",
+      "Is the feeling mainly in your legs, or elsewhere in your body?",
+      "Do you find it difficult to keep your legs still?",
+      "Do you have a strong urge to walk or pace?",
+      "Is the restlessness worse when you must stand or sit still?",
+      "How much of the time do you experience the urge to move?",
+      "How distressing is the restlessness: not at all, mildly, moderately, or severely?",
+      "Does it interfere with sitting, lying down, sleeping, work, or other activities?"
+    ],
+    "prompts_note": "Interview prompts assist administration and are not additional scored items."
+  },
+  "items": [
+    {
+      "id": "bars_objective",
+      "prompt": "Objective restlessness: characteristic restless movements during the observation period (leg/foot shuffling, stamping, swinging a leg while seated, rocking foot to foot, walking in place). 0 normal/occasional fidgeting; 1 present less than half the period; 2 present at least half the period; 3 virtually constant or cannot remain seated/standing without walking or pacing.",
+      "value_type": "scale_0_3",
+      "range": [0, 3],
+      "required": true,
+      "source_locator": "akathisia-criteria.md §BARS Item 1"
+    },
+    {
+      "id": "bars_awareness",
+      "prompt": "Subjective awareness of restlessness: inner restlessness and urge to move. 0 none; 1 nonspecific inner restlessness; 2 difficulty keeping legs still / desire to move legs / worse when required to stand still; 3 intense compulsion to move most of the time or strong desire to walk or pace most of the time.",
+      "value_type": "scale_0_3",
+      "range": [0, 3],
+      "required": true,
+      "source_locator": "akathisia-criteria.md §BARS Item 2"
+    },
+    {
+      "id": "bars_distress",
+      "prompt": "Distress related to restlessness. 0 none; 1 mild; 2 moderate; 3 severe.",
+      "value_type": "scale_0_3",
+      "range": [0, 3],
+      "required": true,
+      "source_locator": "akathisia-criteria.md §BARS Item 3"
+    },
+    {
+      "id": "bars_global",
+      "prompt": "Global clinical assessment of the overall syndrome (observation plus subjective report plus clinical judgment). 0 Absent (no subjective awareness; characteristic movements without subjective restlessness are pseudoakathisia); 1 Questionable (nonspecific tension with fidgeting); 2 Mild (leg/inner restlessness especially when required to stand still; distress minimal or absent); 3 Moderate (subjective restlessness plus characteristic movements, distressing); 4 Marked (compelling desire to walk/pace with obvious distress, can remain seated at least 5 minutes); 5 Severe (strong urge to pace most of the time, cannot sit/lie more than a few minutes, constant restlessness, intense distress, insomnia).",
+      "value_type": "scale_0_5",
+      "range": [0, 5],
+      "required": true,
+      "source_locator": "akathisia-criteria.md §BARS Item 4 (correct global range 0-5, not 0-4)"
+    }
+  ],
+  "completeness": {
+    "type": "all_required_when_present",
+    "rule": "All 4 items required when akathisia status is present. Absent and not_assessed require no questionnaire completion. Missing required items suppress calculated results to null (never zero) unless a reviewed source explicitly defines a missing-data rule; no such rule is defined here.",
+    "missing_suppresses_to_null": true
+  },
+  "scoring": {
+    "record_separately": "Record all four item scores separately: objective /3, awareness /3, distress /3, global /5.",
+    "component_total": "First three items may be summed as a descriptive component total 0-9 for tracking change; the original author regards the global item as the principal overall severity measure. No summed severity rule is invented beyond this descriptive total.",
+    "global_threshold_source_backed": "Global 2 or greater indicates akathisia present per the BARS threshold: 2 mild, 3 moderate, 4 marked, 5 severe. Global 2 may rest on a characteristic subjective report even with only nonspecific fidgeting visible.",
+    "pseudoakathisia": "Objective movements without subjective restlessness are pseudoakathisia: reassess history, differential, and course rather than assuming acute medication-induced akathisia.",
+    "causation": "The BARS threshold does not establish medication causation; apply timing and exclusion criteria separately.",
+    "no_invented_summed_severity": true
+  },
+  "urgent": {
+    "independent": true,
+    "note": "No BARS-specific emergency threshold is defined in the source. Urgent clinical concerns ride separately from questionnaire completion and never wait for it."
+  },
+  "source": {
+    "note": "Item wording and anchors follow akathisia-criteria.md §BARS verbatim in meaning; global range corrected to 0-5 per the source note."
+  },
+  "release": {
+    "version": "v1",
+    "reviewer": "none",
+    "approval": "none",
+    "review_status": "awaiting_review",
+    "source_documents": [
+      {
+        "path": "project-documents/medical-documents/akathisia-criteria.md",
+        "sha256": "93ae8c76a2b26b2af79ea3a9e20271089eac683a0ce29d9579caffac1e626a47"
+      }
+    ],
+    "assumptions": [
+      "Four items with ranges 0-3/0-3/0-3/0-5 are the complete BARS per the supplied criteria.",
+      "Global is the principal severity measure; the 0-9 component total is descriptive only."
+    ],
+    "source_gaps": [],
+    "independent_examples": [
+      {
+        "name": "all_zero_absent",
+        "answers": {"bars_objective": 0, "bars_awareness": 0, "bars_distress": 0, "bars_global": 0},
+        "expected": "complete; component_total 0; global 0 Absent; no akathisia per threshold."
+      },
+      {
+        "name": "moderate_present",
+        "answers": {"bars_objective": 2, "bars_awareness": 2, "bars_distress": 2, "bars_global": 3},
+        "expected": "complete; component_total 6; global 3 Moderate; akathisia present."
+      },
+      {
+        "name": "one_missing_suppresses",
+        "answers": {"bars_objective": 2, "bars_awareness": 2, "bars_distress": 2},
+        "expected": "partial; missing [bars_global]; component_total null; global null (never zero)."
+      },
+      {
+        "name": "pseudoakathisia",
+        "answers": {"bars_objective": 2, "bars_awareness": 0, "bars_distress": 0, "bars_global": 0},
+        "expected": "complete; global 0 Absent with pseudoakathisia note; threshold not met; reassess rather than assume akathisia."
+      }
+    ],
+    "severity_mapping": {
+      "reviewed_severity": "bars_global 0-5 with source labels (0 Absent, 1 Questionable, 2 Mild, 3 Moderate, 4 Marked, 5 Severe). Present requires global >= 2 plus complete questionnaire and reviewed severity; absent/not_assessed carry null severity.",
+      "no_summed_rule": "No invented summed-severity bands from the 0-9 component total."
+    },
+    "network_mappings": {
+      "F2_akathisia": "Effect presence plus reviewed global severity plus history context (onset timing, medication timeline, exclusions). BARS items are measurement context only; medication causation uses timing/exclusion criteria separately."
+    },
+    "mapping_gaps": [
+      "F2 gate wording (substantial/persistent restlessness) and deterministic-rule versus estimated-table semantics require owner review before package use (S34).",
+      "Motor restlessness versus unreviewed differential assumptions stay distinct; no new mandatory scale beyond this approved content."
+    ]
+  }
+}

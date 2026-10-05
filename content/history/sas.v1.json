@@ -1,0 +1,168 @@
+{
+  "id": "sas",
+  "version": "v1",
+  "title": "Simpson-Angus Scale (draft v1, awaiting owner review)",
+  "effect": "parkinsonism",
+  "description": "Ten-item clinician-rated physical examination for antipsychotic- or other dopamine-blocking-drug-induced parkinsonian signs. Emphasizes rigidity; not a patient questionnaire and does not cover every extrapyramidal syndrome. A score alone does not establish etiology.",
+  "review_status": "awaiting_review",
+  "approval": "none",
+  "administration": {
+    "conditions": "Use the same examination conditions and, when possible, the same trained rater for serial assessments. Observe spontaneous movement before eliciting signs. Examine both sides; document asymmetry, pain, arthritis, injury, or other conditions affecting the result. Omit any unsafe maneuver.",
+    "context_prompts_not_scored": [
+      "Since the medication was started or changed, have you felt slower or stiffer?",
+      "Have your hands, arms, legs, jaw, or body been shaking, especially while resting?",
+      "Have you noticed smaller steps, shuffling, reduced arm swing, difficulty starting or stopping, or falls?",
+      "Have you had excess saliva, drooling, or difficulty speaking because of saliva?",
+      "When did each symptom begin, and does it change after a medication dose?"
+    ],
+    "prompts_note": "Context prompts must not be added to the SAS score."
+  },
+  "items": [
+    {
+      "id": "sas_gait",
+      "prompt": "Gait: observe walking at a natural pace (posture, step pattern, arm swing). 0 normal gait and arm swing; 1 reduced arm swing; 2 markedly reduced arm swing with evident rigidity; 3 stiff gait with arms held rigidly in front of the abdomen; 4 stooped shuffling gait with propulsion and retropulsion.",
+      "value_type": "scale_0_4",
+      "range": [0, 4],
+      "required": true,
+      "source_locator": "parkinsonism-criteria.md §SAS 1. Gait"
+    },
+    {
+      "id": "sas_arm_dropping",
+      "prompt": "Arm dropping: patient and examiner raise arms to shoulder height and let them fall. 0 free fall with clear slap and rebound; 1 slightly slowed, quieter, little rebound; 2 slowed without rebound; 3 markedly slowed without audible slap; 4 very slow descent as if against strong resistance.",
+      "value_type": "scale_0_4",
+      "range": [0, 4],
+      "required": true,
+      "source_locator": "parkinsonism-criteria.md §SAS 2. Arm dropping"
+    },
+    {
+      "id": "sas_shoulder_shaking",
+      "prompt": "Shoulder shaking: flex one elbow to 90 degrees, hold hand and elbow, move upper arm back and forth with humeral rotation; repeat other side. Judge resistance. 0 normal tone; 1 slight stiffness; 2 moderate stiffness; 3 marked rigidity making movement difficult; 4 extreme rigidity, joint nearly fixed.",
+      "value_type": "scale_0_4",
+      "range": [0, 4],
+      "required": true,
+      "source_locator": "parkinsonism-criteria.md §SAS 3. Shoulder shaking (anchors shared for items 3-5)"
+    },
+    {
+      "id": "sas_elbow_rigidity",
+      "prompt": "Elbow rigidity: with elbow at 90 degrees, passively flex and extend while observing/palpating biceps; repeat other side. 0 normal; 1 slight stiffness; 2 moderate stiffness; 3 marked rigidity; 4 extreme rigidity, nearly fixed.",
+      "value_type": "scale_0_4",
+      "range": [0, 4],
+      "required": true,
+      "source_locator": "parkinsonism-criteria.md §SAS 4. Elbow rigidity"
+    },
+    {
+      "id": "sas_wrist_rigidity",
+      "prompt": "Wrist rigidity (fixation of position): stabilize wrist, hold fingers, passively move through flexion/extension/radial/ulnar deviation; repeat other side. 0 normal; 1 slight stiffness; 2 moderate stiffness; 3 marked rigidity; 4 extreme rigidity, nearly fixed.",
+      "value_type": "scale_0_4",
+      "range": [0, 4],
+      "required": true,
+      "source_locator": "parkinsonism-criteria.md §SAS 5. Wrist rigidity"
+    },
+    {
+      "id": "sas_leg_pendulousness",
+      "prompt": "Leg pendulousness: patient seated with lower legs hanging freely; grasp ankle, partially extend knee, release; assess resistance and swing; repeat other side. 0 free swing; 1 slight reduction; 2 moderate resistance; 3 marked resistance with rapid damping; 4 no swing.",
+      "value_type": "scale_0_4",
+      "range": [0, 4],
+      "required": true,
+      "source_locator": "parkinsonism-criteria.md §SAS 6. Leg pendulousness"
+    },
+    {
+      "id": "sas_head_dropping",
+      "prompt": "Head dropping: patient supine on a padded surface; support and gently raise the head, withdraw the hand, observe the fall. Omit if neck disease/injury/pain/instability or other safety concern. 0 falls fully and promptly; 1 slight slowing (softer contact); 2 clearly visible moderate slowing; 3 stiff slow descent; 4 rigid neck prevents reaching the surface.",
+      "value_type": "scale_0_4",
+      "range": [0, 4],
+      "required": true,
+      "source_locator": "parkinsonism-criteria.md §SAS 7. Head dropping"
+    },
+    {
+      "id": "sas_glabellar_tap",
+      "prompt": "Glabellar tap: patient keeps eyes open without blinking; tap glabella steadily and rapidly, count consecutive blinks. 0: 0-5 blinks; 1: 6-10; 2: 11-15; 3: 16-20; 4: 21 or more.",
+      "value_type": "scale_0_4",
+      "range": [0, 4],
+      "required": true,
+      "source_locator": "parkinsonism-criteria.md §SAS 8. Glabellar tap"
+    },
+    {
+      "id": "sas_tremor",
+      "prompt": "Tremor: observe while walking into the room and during the examination, limbs at rest. 0 none; 1 mild finger tremor visible and palpable; 2 intermittent hand/arm tremor; 3 persistent tremor of one or more limbs; 4 generalized or whole-body tremor.",
+      "value_type": "scale_0_4",
+      "range": [0, 4],
+      "required": true,
+      "source_locator": "parkinsonism-criteria.md §SAS 9. Tremor"
+    },
+    {
+      "id": "sas_salivation",
+      "prompt": "Salivation: observe while speaking, then ask the patient to open the mouth and elevate the tongue. 0 normal; 1 excess pools only with mouth open and tongue raised; 2 excess present, occasionally interferes with speech; 3 speech difficult from excess saliva; 4 overt persistent drooling.",
+      "value_type": "scale_0_4",
+      "range": [0, 4],
+      "required": true,
+      "source_locator": "parkinsonism-criteria.md §SAS 10. Salivation"
+    }
+  ],
+  "completeness": {
+    "type": "all_required_when_present",
+    "rule": "All 10 items required when parkinsonism status is present. Absent and not_assessed require no questionnaire completion. Do not calculate a standard total or mean when an item is missing unless the applicable protocol provides a prespecified missing-data rule; no such rule is defined here. Record why the item was not assessed. Missing suppresses total and mean to null (never zero).",
+    "missing_suppresses_to_null": true
+  },
+  "scoring": {
+    "item_score": "0 normal/absent to 4 most severe for that item.",
+    "raw_total": "Sum of the 10 item scores; range 0-40. Higher scores indicate more severe parkinsonian signs at one point in time.",
+    "mean_score": "Raw total divided by 10; range 0-4 (original global score).",
+    "original_normal_range": "Original convention: mean up to 0.3 within normal; mean greater than 0.3 (raw total 4 or more) considered abnormal. Interpret alongside medication timing, functional impact, differential, and follow-up; neither a threshold nor improvement independently proves causation.",
+    "later_screening_threshold_not_universal": "A later validation study in a chronic antipsychotic-treated schizophrenia population proposed 0.65 as a screening threshold (operationally mean 0.7 or greater, raw 7 or more). This is not a universal diagnostic cutoff and must not replace clinical assessment.",
+    "no_severity_bands": "The original SAS does not define validated mild, moderate, and severe total-score bands. No such bands are assigned here from locally reproduced cutoffs.",
+    "no_invented_bands": true
+  },
+  "urgent": {
+    "independent": true,
+    "note": "Fever, altered consciousness, autonomic instability, and severe generalized rigidity require urgent evaluation for neuroleptic malignant syndrome rather than attribution to uncomplicated parkinsonism. Urgent handling is independent of questionnaire completion."
+  },
+  "source": {
+    "note": "Item wording and anchors follow parkinsonism-criteria.md §SAS verbatim in meaning."
+  },
+  "release": {
+    "version": "v1",
+    "reviewer": "none",
+    "approval": "none",
+    "review_status": "awaiting_review",
+    "source_documents": [
+      {
+        "path": "project-documents/medical-documents/parkinsonism-criteria.md",
+        "sha256": "d1b7fe5fcc820c54aebb06aba5372f47f65e910ddea7ae0adc0d7adbfad79994"
+      }
+    ],
+    "assumptions": [
+      "Ten items 0-4 with raw total 0-40 and mean 0-4 are the complete SAS per the supplied criteria.",
+      "No missing-data rule is defined in the source; suppression-to-null is the default."
+    ],
+    "source_gaps": [],
+    "independent_examples": [
+      {
+        "name": "all_zero_normal",
+        "answers": {"sas_gait": 0, "sas_arm_dropping": 0, "sas_shoulder_shaking": 0, "sas_elbow_rigidity": 0, "sas_wrist_rigidity": 0, "sas_leg_pendulousness": 0, "sas_head_dropping": 0, "sas_glabellar_tap": 0, "sas_tremor": 0, "sas_salivation": 0},
+        "expected": "complete; raw_total 0; mean 0.0; within original normal range; no severity band assigned."
+      },
+      {
+        "name": "all_one_abnormal_no_bands",
+        "answers": {"sas_gait": 1, "sas_arm_dropping": 1, "sas_shoulder_shaking": 1, "sas_elbow_rigidity": 1, "sas_wrist_rigidity": 1, "sas_leg_pendulousness": 1, "sas_head_dropping": 1, "sas_glabellar_tap": 1, "sas_tremor": 1, "sas_salivation": 1},
+        "expected": "complete; raw_total 10; mean 1.0; abnormal per original convention; no mild/moderate/severe band assigned."
+      },
+      {
+        "name": "one_missing_suppresses",
+        "answers": {"sas_gait": 1, "sas_arm_dropping": 1, "sas_shoulder_shaking": 1, "sas_elbow_rigidity": 1, "sas_wrist_rigidity": 1, "sas_leg_pendulousness": 1, "sas_head_dropping": 1, "sas_glabellar_tap": 1, "sas_tremor": 1},
+        "expected": "partial; missing [sas_salivation]; raw_total null; mean null (never zero)."
+      }
+    ],
+    "severity_mapping": {
+      "reviewed_severity": "Independent clinician-reviewed severity (mild|moderate|severe) recorded alongside the SAS when status is present; it is NOT derived from SAS total/mean bands (none exist). Absent/not_assessed carry null severity. Concrete severity wording requires owner review.",
+      "no_bands_from_total": "No universal mild/moderate/severe score bands are created from historical thresholds."
+    },
+    "network_mappings": {
+      "F3_parkinsonism": "Effect presence plus reviewed severity plus history context (onset, medication timeline, alternative causes via approved structured history, never page notes). SAS items are measurement context only."
+    },
+    "mapping_gaps": [
+      "Onset/alternative-cause facts beyond h_alternative_cause_considered need owner review before package use (S35).",
+      "Reviewed severity wording (mild/moderate/severe) requires owner review; no SAS-derived bands are substituted."
+    ]
+  }
+}

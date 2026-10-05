@@ -1,0 +1,90 @@
+{
+  "id": "aims",
+  "version": "v1",
+  "title": "Abnormal Involuntary Movement Scale (draft v1, awaiting complete source)",
+  "effect": "tardive_dyskinesia",
+  "description": "The tardive-dyskinesia criteria reference AIMS but do not contain its complete form. No items are invented here. This draft records the gap, the only source-backed research thresholds (Schooler-Kane), and what the owner must supply. Not approved.",
+  "review_status": "awaiting_review",
+  "approval": "none",
+  "administration": {
+    "status": "awaiting_source",
+    "note": "Administration protocol cannot be drafted until the complete AIMS form/source is identified. Do not administer an invented form."
+  },
+  "items": [],
+  "completeness": {
+    "type": "undefined_awaiting_source",
+    "rule": "Completeness cannot be defined without the complete item set. When the complete source is identified, completeness will be all_required_when_present (full completion only when tardive dyskinesia is present; absent/not_assessed require no completion), with missing suppressing results to null unless the reviewed source defines a missing-data rule.",
+    "missing_suppresses_to_null": true
+  },
+  "scoring": {
+    "no_total_score_diagnosis": "AIMS supports measurement; its total score alone does not establish diagnosis or determine intervention.",
+    "schooler_kane_research_thresholds_only": "Schooler-Kane probable tardive dyskinesia requires at least 3 months cumulative antipsychotic exposure, no alternative cause, and either moderate movements in one body region or mild movements in two or more. On AIMS these correspond to a regional score of 3 or greater in one region, or 2 or greater in at least two regions. These are research thresholds, not additional DSM requirements.",
+    "no_invented_items_or_total": true
+  },
+  "urgent": {
+    "independent": true,
+    "note": "No AIMS-specific emergency threshold is defined in the source. Urgent concerns ride separately from questionnaire completion."
+  },
+  "source": {
+    "note": "Supplied tardive-dyskinesia-criteria.md references AIMS without its complete form. Items, anchors, and administration await the complete source."
+  },
+  "release": {
+    "version": "v1",
+    "reviewer": "none",
+    "approval": "none",
+    "review_status": "awaiting_review",
+    "source_documents": [
+      {
+        "path": "project-documents/medical-documents/tardive-dyskinesia-criteria.md",
+        "sha256": "ca9bd22fb0064d3ae24b61ecc20bacddc33592ebd25d6a4966e8cd83ef4cfe5a"
+      }
+    ],
+    "assumptions": [
+      "No AIMS items, anchors, or administration are assumed; inventing them would violate the S12 constraint.",
+      "Schooler-Kane thresholds are the only source-backed numeric rule in this draft."
+    ],
+    "source_gaps": [
+      "OPEN: identify the complete AIMS source/form (version, item wording, anchors, administration, completeness, scoring) for owner review.",
+      "OPEN: review concrete AIMS item/completeness/severity/network definitions once the source is identified."
+    ],
+    "independent_examples": [
+      {
+        "name": "schooler_kane_one_region_moderate",
+        "regional_scores": {"one_region": 3},
+        "exposure_3m": true,
+        "alternative_cause": false,
+        "expected": "Meets Schooler-Kane research threshold (3+ in one region with exposure and no alternative cause). Research threshold only; not a diagnosis and not an AIMS total."
+      },
+      {
+        "name": "schooler_kane_two_regions_mild",
+        "regional_scores": {"region_a": 2, "region_b": 2},
+        "exposure_3m": true,
+        "alternative_cause": false,
+        "expected": "Meets Schooler-Kane research threshold (2+ in at least two regions with exposure and no alternative cause). Research threshold only."
+      },
+      {
+        "name": "below_research_threshold",
+        "regional_scores": {"region_a": 1},
+        "exposure_3m": true,
+        "alternative_cause": false,
+        "expected": "Does not meet the Schooler-Kane research threshold (needs 3+ in one or 2+ in two)."
+      },
+      {
+        "name": "questionnaire_status",
+        "answers": {},
+        "expected": "status awaiting_source; scores null; completeness undefined until the complete form is reviewed. Present tardive dyskinesia cannot clear questionnaire completion until the source is resolved."
+      }
+    ],
+    "severity_mapping": {
+      "reviewed_severity": "Independent clinician-reviewed severity (mild|moderate|severe) recorded alongside the instrument when status is present; it is NOT inferred from an unreviewed AIMS total. Concrete wording requires owner review alongside the complete form.",
+      "no_diagnosis_from_total": "No diagnosis is inferred from an AIMS total."
+    },
+    "network_mappings": {
+      "F1_tardive_dyskinesia": "Effect presence plus reviewed severity plus history context (exposure, persistence, onset, regions, functional impact, alternative explanations). AIMS responses are measurement context only, pending the complete source."
+    },
+    "mapping_gaps": [
+      "Complete AIMS form/source, item/completeness/severity/network definitions, and source-required context/missing-input policy require owner review before package use (S33).",
+      "Absent versus not_assessed stays distinct; no missing finding maps to No."
+    ]
+  }
+}

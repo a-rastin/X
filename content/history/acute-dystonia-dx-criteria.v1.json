@@ -1,0 +1,131 @@
+{
+  "id": "acute-dystonia-dx-criteria",
+  "version": "v1",
+  "title": "Acute Dystonia Dx Criteria (draft v1, awaiting owner review)",
+  "effect": "acute_dystonia",
+  "description": "Criteria-based checklist drafted from the supplied acute-dystonia criteria. The exact form name is Acute Dystonia Dx Criteria. There is no numeric scale and no total score in the source; none is invented here. Urgent airway assessment is independent of checklist completion.",
+  "review_status": "awaiting_review",
+  "approval": "none",
+  "administration": {
+    "steps": [
+      "Establish the medication timeline, including antipsychotics, dopamine-blocking antiemetics, and changes to preventive anticholinergic medication.",
+      "Assess the distribution and persistence of abnormal postures (neck twisting, jaw spasm, tongue protrusion, sustained eye deviation, abnormal limb/trunk postures; throat involvement impairing speech, swallowing, or breathing).",
+      "Exclude catatonia, primary neurological or medical causes, and tardive movement disorders; investigate symptoms preceding exposure, unexplained focal findings, or progression unrelated to medication changes.",
+      "Screen for stridor or breathing difficulty at once; do not delay airway evaluation to complete this checklist."
+    ],
+    "note": "Typical onset is usually within days of initiation, rapid dose escalation, or reduction of medication preventing extrapyramidal symptoms. A rapid response to acute treatment supports the impression but does not replace differential diagnosis."
+  },
+  "items": [
+    {
+      "id": "addx_sustained_posture",
+      "prompt": "Sustained involuntary contractions with abnormal postures (neck twisting, jaw spasm, tongue protrusion, sustained eye deviation/oculogyric crisis, abnormal limb or trunk postures).",
+      "value_type": "yes_no_unknown",
+      "permitted_values": ["yes", "no", "unknown"],
+      "required": true,
+      "source_locator": "acute-dystonia-criteria.md §Diagnostic features"
+    },
+    {
+      "id": "addx_medication_timeline",
+      "prompt": "Plausible medication timeline (initiation, rapid escalation, or reduction of EPS-preventive medication, including antipsychotics and dopamine-blocking antiemetics).",
+      "value_type": "yes_no_unknown",
+      "permitted_values": ["yes", "no", "unknown"],
+      "required": true,
+      "source_locator": "acute-dystonia-criteria.md §Clinical assessment and exclusions"
+    },
+    {
+      "id": "addx_distribution_persistence",
+      "prompt": "Distribution and persistence of abnormal postures assessed and documented.",
+      "value_type": "yes_no_unknown",
+      "permitted_values": ["yes", "no", "unknown"],
+      "required": true,
+      "source_locator": "acute-dystonia-criteria.md §Clinical assessment and exclusions"
+    },
+    {
+      "id": "addx_exclusions",
+      "prompt": "Catatonia, primary neurological/medical cause, and tardive movement disorder excluded as the explanation (with further investigation when symptoms precede exposure, focal findings are unexplained, or progression is unrelated to medication changes).",
+      "value_type": "yes_no_unknown",
+      "permitted_values": ["yes", "no", "unknown"],
+      "required": true,
+      "source_locator": "acute-dystonia-criteria.md §Clinical assessment and exclusions"
+    },
+    {
+      "id": "addx_urgent_airway",
+      "prompt": "Urgent airway concern: stridor or breathing difficulty suggesting laryngeal dystonia.",
+      "value_type": "yes_no_unknown",
+      "permitted_values": ["yes", "no", "unknown"],
+      "required": true,
+      "urgent": true,
+      "source_locator": "acute-dystonia-criteria.md §Urgency and documentation"
+    }
+  ],
+  "completeness": {
+    "type": "all_required_when_present",
+    "rule": "All 5 criteria items required when acute dystonia status is present. Absent and not_assessed require no questionnaire completion. Missing required items suppress calculated results to null (never zero) unless a reviewed source explicitly defines a missing-data rule; no such rule is defined here. Urgent handling never waits for completeness.",
+    "missing_suppresses_to_null": true
+  },
+  "scoring": {
+    "no_total_score": "No total score exists in the source and none is invented. Results are the per-criterion record plus the urgent flag; there is no summed severity.",
+    "results": "Complete present-case results preserve item responses, definition version, completeness, and nullable results (complete with all criteria recorded vs partial with missing list).",
+    "no_invented_score": true
+  },
+  "urgent": {
+    "independent": true,
+    "rule": "Stridor or breathing difficulty can indicate laryngeal dystonia and requires emergency assessment. Do not delay airway evaluation to complete this checklist. The urgent flag (addx_urgent_airway yes) displays and routes independently of questionnaire completion, inference, or LLM latency, and a source-approved urgent message shows without waiting for inference.",
+    "urgent_item": "addx_urgent_airway"
+  },
+  "source": {
+    "note": "Checklist drafted from the 17-line supplied acute-dystonia criteria; item wording tracks the source sections. Naming Acute Dystonia Dx Criteria does not establish a validated scored scale."
+  },
+  "release": {
+    "version": "v1",
+    "reviewer": "none",
+    "approval": "none",
+    "review_status": "awaiting_review",
+    "source_documents": [
+      {
+        "path": "project-documents/medical-documents/acute-dystonia-criteria.md",
+        "sha256": "495a60d767a32558583b092fcf072ec1a7eb49d70a730725e97986d11a01db7d"
+      }
+    ],
+    "assumptions": [
+      "Five checklist items cover the source sections without adding a numeric scale.",
+      "Urgent airway screening is item 5 and is also surfaced independently."
+    ],
+    "source_gaps": [
+      "Item/completeness/severity/network mappings require owner review; no total score is proposed."
+    ],
+    "independent_examples": [
+      {
+        "name": "all_no_absent_pattern",
+        "answers": {"addx_sustained_posture": "no", "addx_medication_timeline": "no", "addx_distribution_persistence": "no", "addx_exclusions": "yes", "addx_urgent_airway": "no"},
+        "expected": "complete; no total; urgent false; supports absent-pattern review."
+      },
+      {
+        "name": "present_pattern_with_urgent",
+        "answers": {"addx_sustained_posture": "yes", "addx_medication_timeline": "yes", "addx_distribution_persistence": "yes", "addx_exclusions": "yes", "addx_urgent_airway": "yes"},
+        "expected": "complete; no total; urgent true with emergency assessment message independent of completion."
+      },
+      {
+        "name": "one_missing_suppresses",
+        "answers": {"addx_sustained_posture": "yes", "addx_medication_timeline": "yes", "addx_distribution_persistence": "yes", "addx_exclusions": "yes"},
+        "expected": "partial; missing [addx_urgent_airway]; results null (never zero); urgent unknown until answered, but any yes airway concern already routes urgently."
+      },
+      {
+        "name": "urgent_without_completion",
+        "answers": {"addx_urgent_airway": "yes"},
+        "expected": "partial overall, but urgent true routes immediately without waiting for the remaining criteria or any inference."
+      }
+    ],
+    "severity_mapping": {
+      "reviewed_severity": "Independent clinician-reviewed severity (mild|moderate|severe) recorded alongside the checklist when status is present; it is NOT a summed score. Concrete wording requires owner review.",
+      "no_total_score": "No total score is defined or summed."
+    },
+    "network_mappings": {
+      "F4_acute_dystonia": "Effect presence plus reviewed severity plus onset/context fields plus explicit urgent concerns. Source review flags stay distinct from probabilistic output semantics."
+    },
+    "mapping_gaps": [
+      "Presence/onset/context fields, required-context-missing cases, and result-mapping examples require owner review before package use (S36).",
+      "Completion is required only when acute dystonia is present; absent/not_assessed have no completion requirement."
+    ]
+  }
+}
