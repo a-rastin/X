@@ -34,6 +34,7 @@ import { PanssSection } from "../assessments/panss/PanssSection";
 import { CssrsSection } from "../assessments/cssrs/CssrsSection";
 import { HistorySection } from "../history/HistorySection";
 import { EffectsSection } from "../history/EffectsSection";
+import { NotesSection } from "../notes/NotesSection";
 import { useAutosave } from "./useAutosave";
 
 type LoadState =
@@ -379,6 +380,19 @@ function EncounterWizard({
         </p>
       </section>
 
+      {/* S13 page notes for demographics: the demographics form itself stays
+        local until valid, but once this draft exists (encounterId present)
+        the author can attach attributed demographics notes here. Reusable
+        NotesSection per wizard page; page key matches backend ALLOWED_PAGES.
+        No snapshot machinery: S40/S41/S59 carry the mandatory end-to-end
+        note-noninterference checks. */}
+      <NotesSection
+        encounterId={encounterId}
+        page="demographics"
+        autosave={autosave}
+        onSessionExpired={sessionExpired}
+      />
+
       <section className="xi-card" aria-labelledby="draft-editor-heading">
         <h3 className="xi-section-title" id="draft-editor-heading">
           Working note (draft only)
@@ -478,9 +492,21 @@ function EncounterWizard({
         autosave={autosave}
         onSessionExpired={sessionExpired}
       />
+      <NotesSection
+        encounterId={encounterId}
+        page="diagnosis"
+        autosave={autosave}
+        onSessionExpired={sessionExpired}
+      />
 
       <PanssSection
         encounterId={encounterId}
+        autosave={autosave}
+        onSessionExpired={sessionExpired}
+      />
+      <NotesSection
+        encounterId={encounterId}
+        page="panss"
         autosave={autosave}
         onSessionExpired={sessionExpired}
       />
@@ -490,15 +516,36 @@ function EncounterWizard({
         autosave={autosave}
         onSessionExpired={sessionExpired}
       />
+      <NotesSection
+        encounterId={encounterId}
+        page="cssrs"
+        autosave={autosave}
+        onSessionExpired={sessionExpired}
+      />
 
       <HistorySection
         encounterId={encounterId}
         autosave={autosave}
         onSessionExpired={sessionExpired}
       />
+      {/* Page notes render SEPARATELY from history: never inside the history
+        analysis_visible list. This distinct panel carries page/author/time
+        from server values; S40/S41/S59 assert the noninterference end to end. */}
+      <NotesSection
+        encounterId={encounterId}
+        page="history"
+        autosave={autosave}
+        onSessionExpired={sessionExpired}
+      />
 
       <EffectsSection
         encounterId={encounterId}
+        autosave={autosave}
+        onSessionExpired={sessionExpired}
+      />
+      <NotesSection
+        encounterId={encounterId}
+        page="effects"
         autosave={autosave}
         onSessionExpired={sessionExpired}
       />

@@ -488,8 +488,9 @@ def test_deactivation_stale_draft_set_revision_conflicts(admin_client) -> None:
 def test_no_draft_tables_fabricated_for_deactivation(clean_identity) -> None:
     """S04 must not create draft-content tables (S51 owns Cases integration).
 
-    S06 legitimately adds the patient registry (patients + encounters); this
-    pins that scope: no notes/runs/jobs/drafts tables beyond S06.
+    S06 legitimately adds the patient registry (patients + encounters) and
+    S13 legitimately adds page notes; this pins that scope: no runs/jobs/
+    drafts tables beyond S06/S13.
     """
     from sqlalchemy import text
 
@@ -506,7 +507,8 @@ def test_no_draft_tables_fabricated_for_deactivation(clean_identity) -> None:
     assert "sessions" in tables
     assert "patients" in tables
     assert "encounters" in tables
-    for fabricated in ("drafts", "notes", "runs", "jobs"):
+    assert "notes" in tables
+    for fabricated in ("drafts", "runs", "jobs"):
         assert fabricated not in tables, f"unexpected table {fabricated}"
 
 

@@ -37,6 +37,21 @@ S12 history/effects page state (plan.md §§2.2, 5; FR-14, FR-20-21; T2/T1):
 History/effects answers travel via the existing S07 ``PATCH`` autosave
 (``draft_data["history"]`` / ``draft_data["effects"]``); no new table.
 
+S13 attributed page notes (plan.md §§2.3, 4.1-4.3; FR-16, FR-22; T1 only):
+- ``POST /encounters/{id}/notes`` — author-only append of ``{page, text}``
+  (If-Match-fenced, server-derived actor/time, revision-bumping, 201
+  ``{note, revision, server_timestamp}`` + ETag). Per-command
+  ``Idempotency-Key`` store (``notes.create``) like S04/S06/S07/S12.
+- ``GET /encounters/{id}/notes`` — author-only list (``403`` strangers,
+  ``404`` missing/discarded) with optional ``?page=`` filter and bounded
+  ``limit``/``offset`` (25/100), ``{items, total, revision}`` + ETag.
+
+Notes live in their own table, never in ``draft_data`` and never in the
+analysis-visible history channel (serializer exclusion lives in
+``B/cases/notes.py`` for future S40 snapshots; S40/S41/S59 carry the
+mandatory end-to-end note-noninterference checks). Append-only: no
+edit/delete endpoint exists; correction is a new note.
+
 All failures use the standard ``contracts.ErrorBody`` (never
 secrets/tracebacks/clinical content). No delete/merge route exists in v1.
 """
@@ -58,6 +73,7 @@ from x_insight import contracts
 from x_insight.cases import effects as effects_service
 from x_insight.cases import encounters as encounters_service
 from x_insight.cases import history as history_service
+from x_insight.cases import notes as notes_service
 from x_insight.cases import patients as patients_service
 from x_insight.db import get_session
 from x_insight.identity import service as identity_service
@@ -835,3 +851,133 @@ def set_effect_status(
             response_body=response_body,
         )
     return _effects_response(encounter, state, status_code=200, server_timestamp=server_timestamp)
+
+
+# --- S13 attributed page notes (author-only, own table + revision) ---
+
+
+class NoteCreateRequest(BaseModel):
+    """Note create body: page + verbatim text only (extra=forbid).
+
+    Actor/time are server-derived (author snapshot + UTC timestamp), never
+    client-supplied: any ``author_id``/timestamp key here is ``422``.
+    """
+
+    model_config = {"extra": "forbid"}
+
+    page: str
+    text: str
+
+
+def _note_response(
+    note: dict[str, Any],
+    revision: int,
+    *,
+    status_code: int,
+    server_timestamp: str,
+) -> JSONResponse:
+    content: dict[str, Any] = {
+        "note": notes_service.safe_note(note),
+        "revision": revision,
+        "server_timestamp": server_timestamp,
+    }
+    response = JSONResponse(status_code=status_code, content=content)
+    response.headers["ETag"] = contracts.format_etag(revision)
+    return response
+
+
+def _note_idempotency_replay(stored: dict[str, Any]) -> JSONResponse:
+    body = dict(stored["response_body"])
+    response = JSONResponse(status_code=int(stored["response_status"]), content=body)
+    revision = body.get("revision")
+    if isinstance(revision, int) and revision >= 1:
+        response.headers["ETag"] = contracts.format_etag(revision)
+    return response
+
+
+@router.post("/encounters/{encounter_id}/notes", status_code=201)
+def create_note(
+    encounter_id: uuid.UUID,
+    payload: NoteCreateRequest,
+    request: Request,
+    session: Session = Depends(get_session),
+) -> JSONResponse:
+    request_id = get_request_id(request)
+    physician = _require_physician_mutation(request, session)
+    if isinstance(physician, JSONResponse):
+        return physician
+    assert isinstance(physician, dict)
+    expected = encounters_service.require_if_match_revision(
+        request.headers.get(contracts.IF_MATCH_HEADER)
+    )
+    key = _idempotency_key_or_none(request)
+    request_hash: str | None = None
+    if key is not None:
+        request_hash = notes_service.idempotency_request_hash(
+            encounter_id, expected, {"page": payload.page, "text": payload.text}
+        )
+        stored = identity_service.lookup_idempotency(
+            session,
+            operation=notes_service.NOTES_CREATE_OPERATION,
+            actor_id=physician["id"],
+            key=key,
+        )
+        if stored is not None:
+            if stored["request_hash"] != request_hash:
+                return _idempotency_conflict(request_id)
+            return _note_idempotency_replay(stored)
+    note, encounter, server_timestamp = notes_service.create_note(
+        session,
+        author=physician,
+        encounter_id=encounter_id,
+        expected_revision=expected,
+        page=payload.page,
+        text=payload.text,
+        request_id=request_id,
+    )
+    response_body: dict[str, Any] = {
+        "note": notes_service.safe_note(note),
+        "revision": int(encounter["revision"]),
+        "server_timestamp": server_timestamp,
+    }
+    if key is not None:
+        assert request_hash is not None
+        identity_service.store_idempotency(
+            session,
+            operation=notes_service.NOTES_CREATE_OPERATION,
+            actor_id=physician["id"],
+            key=key,
+            request_hash=request_hash,
+            response_status=201,
+            response_body=response_body,
+        )
+    return _note_response(
+        note, int(encounter["revision"]), status_code=201, server_timestamp=server_timestamp
+    )
+
+
+@router.get("/encounters/{encounter_id}/notes")
+def list_notes(
+    encounter_id: uuid.UUID,
+    request: Request,
+    session: Session = Depends(get_session),
+    page: str | None = None,
+    limit: int | None = None,
+    offset: int | None = None,
+) -> JSONResponse:
+    """Author-only note list (reads need no CSRF, like other GET previews)."""
+    user = _require_user(request, session)
+    if isinstance(user, JSONResponse):
+        return user
+    assert isinstance(user, dict)
+    encounter, items, total = notes_service.list_notes_for_author(
+        session, encounter_id, user, page_filter=page, limit=limit, offset=offset
+    )
+    content: dict[str, Any] = {
+        "items": [notes_service.safe_note(item) for item in items],
+        "total": total,
+        "revision": int(encounter["revision"]),
+    }
+    response = JSONResponse(status_code=200, content=content)
+    response.headers["ETag"] = contracts.format_etag(int(encounter["revision"]))
+    return response

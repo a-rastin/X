@@ -564,6 +564,25 @@ body {
   font-size: 14px;
 }
 
+/* S13 page-note panels: attributed notes per wizard page, rendered
+ * SEPARATELY from history (never inside the analysis_visible list). Mirrors
+ * .xi-history-panel — info color paired with explicit text (never color
+ * alone), ink text on tinted backgrounds in both themes via the existing
+ * deliberate dark tokens. Note text renders as plain escaped text only
+ * (no HTML interpretation). Reduced motion is covered by the global
+ * prefers-reduced-motion rule below (no animation here). */
+.xi-notes-panel {
+  border: 1px solid var(--info);
+  border-left-width: 6px;
+  background: var(--info-bg);
+  color: var(--ink);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-4);
+  font-size: 14px;
+}
+
 .xi-radio-group {
   display: flex;
   gap: var(--space-4);

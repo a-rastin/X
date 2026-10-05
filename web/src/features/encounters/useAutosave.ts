@@ -20,7 +20,9 @@
  * Command POSTs that bump the encounter revision outside this PATCH path
  * (diagnosis acknowledgment/bypass) resynchronize through
  * `applyServerSnapshot` instead of another PATCH — one saved base, one
- * revision fence, no separate persistence mechanism.
+ * revision fence, no separate persistence mechanism. S13 page notes bump the
+ * revision without changing draft_data and resynchronize through
+ * `applyExternalRevision` instead (same fence, editor untouched).
  */
 
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -298,6 +300,26 @@ export function useAutosave(options: UseAutosaveOptions) {
     [clearTimer],
   );
 
+  /** Advance the revision fence after an out-of-band command POST bumped it
+   * without changing draft_data (S13 page notes). The draft editor is left
+   * untouched — only the base revision/timestamp move — so concurrent
+   * unsaved edits survive and the next PATCH fences the fresh revision. A
+   * currently-saved status advances to the new revision; dirty/failed/
+   * conflict states keep their kind (the next explicit save reconciles). */
+  const applyExternalRevision = useCallback(
+    (revision: number, timestamp: string | null) => {
+      clearTimer();
+      setBaseRevision(revision);
+      setServerTimestamp(timestamp);
+      setSaveState((previous) =>
+        previous.kind === "saved"
+          ? { kind: "saved", revision, serverTimestamp: timestamp }
+          : previous,
+      );
+    },
+    [clearTimer],
+  );
+
   // Flush pending edits when the page unmounts (hash-route transition).
   useEffect(() => {
     return () => {
@@ -321,6 +343,7 @@ export function useAutosave(options: UseAutosaveOptions) {
     adoptServerVersion,
     retryOnFreshRevision,
     applyServerSnapshot,
+    applyExternalRevision,
     saveNow,
   };
 }

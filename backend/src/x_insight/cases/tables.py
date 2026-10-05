@@ -94,3 +94,35 @@ Index(
     unique=True,
     postgresql_where=(encounters.c.lifecycle == "draft"),
 )
+
+# S13 attributed page notes (plan.md §§2.3, 4.1; FR-16, FR-22): one row per
+# note, separate from ``draft_data`` and from the analysis-visible history
+# channel. Append-only (no UPDATE/DELETE grant); migration ``0006`` owns
+# the DDL, this module is the read model for queries (no migrations here).
+notes = Table(
+    "notes",
+    metadata,
+    Column("id", PG_UUID(as_uuid=True), primary_key=True),
+    Column(
+        "encounter_id",
+        PG_UUID(as_uuid=True),
+        ForeignKey("encounters.id", ondelete="CASCADE"),
+        nullable=False,
+    ),
+    Column("page", Text, nullable=False),
+    Column(
+        "author_id",
+        PG_UUID(as_uuid=True),
+        ForeignKey("users.id", ondelete="CASCADE"),
+        nullable=False,
+    ),
+    # Username snapshot at write time (stable attribution even if renamed).
+    Column("author_display", Text, nullable=False),
+    Column("created_at", DateTime(timezone=True), nullable=False),
+    Column("text", Text, nullable=False),
+    CheckConstraint("char_length(page) BETWEEN 1 AND 64", name="ck_notes_page_nonempty"),
+    CheckConstraint("char_length(text) BETWEEN 1 AND 2000", name="ck_notes_text_bounds"),
+)
+
+Index("ix_notes_encounter_id", notes.c.encounter_id)
+Index("ix_notes_encounter_page", notes.c.encounter_id, notes.c.page)
