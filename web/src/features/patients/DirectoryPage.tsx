@@ -18,7 +18,6 @@ import {
   type ClinicalStatusFilter,
   type Patient,
 } from "./api";
-import { patientChartHash, rememberOpenDraft } from "./chart/api";
 
 interface DirectoryData {
   items: Patient[];
@@ -119,7 +118,6 @@ export function PatientDirectory() {
     setDraftBusy(patientId);
     try {
       const result = await createEncounter(patientId, "follow_up");
-      rememberOpenDraft(patientId, result.encounter.id);
       window.location.hash = encounterHash(result.encounter.id);
     } catch (err) {
       if (err instanceof ApiError && err.status === 401) {
@@ -235,7 +233,6 @@ export function PatientDirectory() {
                   <th scope="col">Sex</th>
                   <th scope="col">Age</th>
                   <th scope="col">Status</th>
-                  <th scope="col">Chart</th>
                   {canRegister && <th scope="col">Draft</th>}
                 </tr>
               </thead>
@@ -248,19 +245,9 @@ export function PatientDirectory() {
                     <td>{patient.sex}</td>
                     <td>{patient.age}</td>
                     <td>{statusLabel(patient.clinical_status)}</td>
-                    <td>
-                      <a
-                        id={`chart-link-${patient.id}`}
-                        href={patientChartHash(patient.id)}
-                        aria-label={`Open chart for ${patient.identifier}`}
-                      >
-                        Chart
-                      </a>
-                    </td>
                     {canRegister && (
                       <td>
                         <button
-                          id={`start-followup-${patient.id}`}
                           className="xi-btn xi-btn-secondary"
                           type="button"
                           disabled={draftBusy !== null}

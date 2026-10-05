@@ -22,7 +22,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { ApiError } from "../identity/api";
 import { useAuth } from "../identity/auth";
 import { getPatient, type Patient } from "../patients/api";
-import { FollowupBaselinePanel } from "../patients/chart/FollowupBaselinePanel";
 import { registerUnsavedGuard } from "../../app/navigationGuard";
 import {
   discardEncounter,
@@ -381,12 +380,6 @@ function EncounterWizard({
         </p>
       </section>
 
-      {encounter.kind === "follow_up" && (
-        <FollowupBaselinePanel
-          encounterId={encounterId}
-          onSessionExpired={sessionExpired}
-        />
-      )}
       {/* S13 page notes for demographics: the demographics form itself stays
         local until valid, but once this draft exists (encounterId present)
         the author can attach attributed demographics notes here. Reusable

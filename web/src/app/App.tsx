@@ -5,11 +5,9 @@ import { ResearchWarningGate } from "../features/identity/ResearchWarning";
 import { ThemeToggle } from "../features/identity/ThemeToggle";
 import { EncounterPage } from "../features/encounters/EncounterPage";
 import { PatientsPage } from "../features/patients/DirectoryPage";
-import { ChartPage } from "../features/patients/chart/ChartPage";
 import { RegistrationPage } from "../features/patients/RegistrationForm";
 import { shouldBlockNavigation } from "./navigationGuard";
 import {
-  chartPatientIdFromHash,
   encounterIdFromHash,
   useRoute,
   routeToHash,
@@ -28,9 +26,9 @@ function NavLink({
   navigate,
   children,
 }: {
-  route: Exclude<Route, "encounter" | "chart">;
+  route: Exclude<Route, "encounter">;
   current: Route;
-  navigate: (route: Exclude<Route, "encounter" | "chart">) => void;
+  navigate: (route: Exclude<Route, "encounter">) => void;
   children: React.ReactNode;
 }) {
   return (
@@ -77,36 +75,6 @@ function EncounterRoute() {
     );
   }
   return <EncounterPage key={encounterId} encounterId={encounterId} />;
-}
-
-function ChartRoute() {
-  const [hash, setHash] = React.useState(() =>
-    typeof window !== "undefined" ? window.location.hash : "",
-  );
-  React.useEffect(() => {
-    const onChange = () => setHash(window.location.hash);
-    window.addEventListener("hashchange", onChange);
-    return () => window.removeEventListener("hashchange", onChange);
-  }, []);
-  const patientId = chartPatientIdFromHash(hash);
-  if (patientId === null) {
-    return (
-      <div>
-        <h2 className="xi-page-title" id="chart-heading">
-          Patient chart
-        </h2>
-        <p id="chart-error" className="xi-form-error" role="alert">
-          Missing patient id. Open a chart from the patient directory.
-        </p>
-        <p>
-          <a id="chart-back" className="xi-btn xi-btn-secondary" href="#/patients">
-            Back to directory
-          </a>
-        </p>
-      </div>
-    );
-  }
-  return <ChartPage key={patientId} patientId={patientId} />;
 }
 
 export function App() {
@@ -190,7 +158,6 @@ export function App() {
             {!showWarningGate && route === "encounter" && (
               <EncounterRoute />
             )}
-            {!showWarningGate && route === "chart" && <ChartRoute />}
             {!showWarningGate && route === "physicians" && <PhysiciansPage />}
             {!showWarningGate && route === "account" && <AccountPage />}
           </>
