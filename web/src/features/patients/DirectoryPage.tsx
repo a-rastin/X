@@ -12,6 +12,7 @@ import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { ApiError } from "../identity/api";
 import { useAuth } from "../identity/auth";
 import { createEncounter, encounterHash } from "../encounters/api";
+import { chartHash } from "../../app/router";
 import {
   DIRECTORY_PAGE_SIZE,
   listPatients,
@@ -233,6 +234,7 @@ export function PatientDirectory() {
                   <th scope="col">Sex</th>
                   <th scope="col">Age</th>
                   <th scope="col">Status</th>
+                  <th scope="col">Chart</th>
                   {canRegister && <th scope="col">Draft</th>}
                 </tr>
               </thead>
@@ -245,11 +247,21 @@ export function PatientDirectory() {
                     <td>{patient.sex}</td>
                     <td>{patient.age}</td>
                     <td>{statusLabel(patient.clinical_status)}</td>
+                    <td>
+                      <a
+                        className="xi-btn xi-btn-secondary"
+                        href={chartHash(patient.id)}
+                        aria-label={`View chart for ${patient.identifier}`}
+                      >
+                        View chart
+                      </a>
+                    </td>
                     {canRegister && (
                       <td>
                         <button
                           className="xi-btn xi-btn-secondary"
                           type="button"
+                          data-testid="directory-create-followup"
                           disabled={draftBusy !== null}
                           onClick={() => void startFollowUp(patient.id)}
                           aria-label={`Start follow-up draft for ${patient.identifier}`}

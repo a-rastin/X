@@ -117,16 +117,41 @@ async function request<T>(path: string, options: RequestOptions = {}): Promise<T
   return (payload ?? {}) as T;
 }
 
+/** Optional inline baseline snapshot for follow-up creation (S14).
+ * Mirrors the backend `baseline` object (history_values, prior_scores,
+ * medications, provenance_note) plus the opaque `baseline_encounter_id`.
+ * Omitted (undefined) means no baseline — the fresh follow-up starts with
+ * an empty history shell and empty answers. */
+export interface FollowupBaselineInput {
+  history_values?: Record<string, unknown>;
+  prior_scores?: Record<string, number | null>;
+  medications?: Array<{ catalog_drug_id: string }>;
+  provenance_note?: string;
+  baseline_encounter_id?: string;
+}
+
 /** Single-slot creation: physician-only; occupied slot is a generic 409
  * OPEN_DRAFT_EXISTS with no author/content. Fresh key per attempt. */
 export async function createEncounter(
   patientId: string,
   kind: EncounterKind = "follow_up",
+  baseline?: FollowupBaselineInput,
 ): Promise<EncounterPayload> {
+  const body: Record<string, unknown> = { kind };
+  // Baseline travels only for follow-ups; registration drafts start empty.
+  if (baseline !== undefined && kind === "follow_up") {
+    const { baseline_encounter_id, ...rest } = baseline;
+    if (Object.keys(rest).length > 0) {
+      body["baseline"] = rest;
+    }
+    if (baseline_encounter_id !== undefined) {
+      body["baseline_encounter_id"] = baseline_encounter_id;
+    }
+  }
   return request<EncounterPayload>(`/patients/${encodeURIComponent(patientId)}/encounters`, {
     method: "POST",
     idempotencyKey: newIdempotencyKey(),
-    body: { kind },
+    body,
   });
 }
 

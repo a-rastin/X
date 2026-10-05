@@ -35,6 +35,7 @@ import { CssrsSection } from "../assessments/cssrs/CssrsSection";
 import { HistorySection } from "../history/HistorySection";
 import { EffectsSection } from "../history/EffectsSection";
 import { NotesSection } from "../notes/NotesSection";
+import { FollowupBaselinePanel } from "../patients/chart/FollowupBaselinePanel";
 import { useAutosave } from "./useAutosave";
 
 type LoadState =
@@ -379,6 +380,17 @@ function EncounterWizard({
           persisted object, one revision fence, no separate mechanisms.
         </p>
       </section>
+
+      {/* S14 follow-up baseline: author-only copied history/medications with
+        copied_baseline provenance + pending reconciliation; prior scores show
+        as historical only (never as answers). PANSS/C-SSRS sections below
+        still start unanswered. Registration drafts skip this panel. */}
+      {encounter.kind === "follow_up" && (
+        <FollowupBaselinePanel
+          encounterId={encounterId}
+          onSessionExpired={sessionExpired}
+        />
+      )}
 
       {/* S13 page notes for demographics: the demographics form itself stays
         local until valid, but once this draft exists (encounterId present)

@@ -830,3 +830,64 @@ Created `content/review-ledger.md`: index + per-item entries for assessments, hi
 - Infra debt (pre-existing, unrelated to S13): identity-rename `limit=100` pagination (accumulated e2e physicians fall off the single page); diagnosis indeterminate firefox-only flake passing standalone.
 - S13 code-review follow-ups carried above (fetch-helper duplication, fixture copies, audit-read style; 6/9 pages mounted, S49/S50 frozen-read scope, S40 invariance proof pending, plan-consistent extras, whitespace-only edge, FK and strip-helper notes).
 - S13 exit met: attributed page notes with server-derived author/time, author-only append-only persistence, separate escaped browser placement including demographics-after-creation, explicit serializer exclusion with S40/S41/S59 noninterference checks recorded and no speculative snapshot machinery.
+
+## S14 — Build shared chart and follow-up draft entry (2026-10-05)
+
+**Scope:** shared chart + follow-up draft entry only (tasks.md S14; plan.md §§2.2–2.3/4; FR-20–23). No migration, no bypass-sign route, no clinical content approval. Uses a test-only signed baseline fixture until S49 implements signing; S49 is not a dependency of this session. Seams T1/T9.
+
+### Pinned / added deps (S01–S07 pins unchanged; S14 adds no runtime lib)
+
+- Runtimes carry forward: Python `3.12.14`, Node `22.23.2` / npm `10.9.8`, PostgreSQL 16 (`postgres:16-alpine`), `fastapi 0.142.2`, `sqlalchemy 2.1.3`, `alembic 1.20.0`, `psycopg[binary] 3.3.6` (`Makefile` header + `backend/pyproject.toml`, both untouched by S14).
+- Frontend pins carry forward: `react 19.3.0`, `vite 8.3.2`, `typescript 7.0.2`, `@playwright/test 1.63.0` with `chromium` + `firefox` projects. No new runtime libs; no clinical packages.
+- No new migration — head stays `0006` (S14 stores everything through existing `patients`/`encounters` rows + `draft_data`, no new table).
+- S14 files (code/tests untouched by this docs step): chart/follow-up commands in `B/cases/`, route inventory (`GET /patients/{id}/chart`, `POST /patients/{id}/encounters` with `kind: follow_up`), `web` `ChartPage` + `FollowupBaselinePanel` + `api.ts` with directory Chart links, `backend/tests/http/test_followup.py` (15 tests), `e2e/followup.spec.ts` (5 journeys × 2 browsers).
+
+### Red→green slices + seams (T1/T9; tasks.md S14 steps 1–4)
+
+- Slice 1 — shared read with author-only draft privacy (T1; tasks step 1): `GET /patients/{id}/chart` is shared (physician + admin; anonymous `401`, unknown patient `404`); chart carries badge-only draft presence with no draft-content leak and proposal `unavailable` / `generation_not_implemented` (no fake successful proposal). Only the draft author can read/edit the draft and its derived artifacts through ordinary routes; other authors' draft content is never exposed.
+- Slice 2 — baseline copy with provenance + fresh assessments (T1; tasks step 2): `POST /patients/{id}/encounters {kind: follow_up, baseline?, baseline_encounter_id?}` copies history/medications with `copied_baseline` provenance and `pending` reconciliation; PANSS/C-SSRS answers start as `{}` (unanswered) with prior scores shown as historical-only, never as newly completed answers.
+- Slice 3 — single-draft slot under concurrency (T1; tasks step 3): patient-row lock + partial unique constraint permits one open draft only; two physicians concurrently creating a draft for one patient produce one success and one generic `409 OPEN_DRAFT_EXISTS` without leaking draft content. Different patients have independent drafts. Relevant shared demographic changes marking the author's affected results stale waits for S48d/S51 (see follow-ups).
+- Slice 4 — chronology / badges / navigation to review (T1/T9; tasks step 4): chronology, draft badges, phone/history/effect pages, and chart→encounter navigation; encounter mounts the baseline panel for `follow_up` only. Until reasoning exists the proposal stays honestly unavailable; no fake generation.
+- Seams: T1 (chart/follow-up HTTP) + T9 (chart + follow-up browser journeys). No T2–T8/T10 exercised in S14. Temporary signed fixtures stay test-only with inline baseline fixtures; no bypass-sign production route was added.
+
+### Verification evidence (implementation-session report, S14 scope)
+
+- `make check` pass (ruff format-check + ruff check + mypy `src` + web build + root `tsc --noEmit`).
+- `make test-backend` 291 passed = S13 276 + 15 new (`backend/tests/http/test_followup.py` 15 passed).
+- `e2e/followup.spec.ts` 10 passed (5 `test(` blocks × 2 browsers: chromium + firefox) via `make test-e2e TEST=e2e/followup.spec.ts`, passed twice.
+- `make migrate` head unchanged — no new migration (versions still `0001`–`0006`, head `0006`; S14 stores everything in existing `patients`/`encounters` + `draft_data`, no new table).
+- `GET /api/v1/health` + `GET /api/v1/ready` preserved (existing routes untouched; S14 adds only chart/follow-up routes).
+- Env quirks carry forward from S08–S13 (procedural only): backend suite runs from `backend/` with `.env` sourced (disposable DBs on `5442`/`5443`); e2e needs `E2E_BASE_URL=http://localhost:5173` explicitly when the shell exports an empty `E2E_BASE_URL` (Makefile `?=` default defeated); stale `:8000` backend must be restarted to pick up new routes (no `--reload`).
+
+### Local loop for next agent (S15+)
+
+- Routes (all under `/api/v1`): `GET /patients/{id}/chart` (shared physician + admin read: demographics/signed chart + badge-only draft presence + `unavailable` proposal; `401` anonymous, `404` unknown) ; `POST /patients/{id}/encounters` with `{kind: follow_up, baseline?, baseline_encounter_id?}` (physician-only create; `409 OPEN_DRAFT_EXISTS` when the single-draft slot is occupied). S06 patient routes and S07 `GET/PATCH /encounters/{id}` + discard unchanged. `GET followup-baseline ETag` is an author-only read by design (see scope notes).
+- Write shape: follow-up create sends `X-CSRF-Token` (missing/invalid → `403`) with fresh `Idempotency-Key` per submit (same key + same body replays, same key + changed body → `409`); slot enforcement is patient-row lock + partial unique backstop with a generic `409 OPEN_DRAFT_EXISTS` that leaks no draft content; UI create currently sends no baseline (empty shell until the S49 baseline picker — see follow-ups).
+- State shapes: follow-up `draft_data` carries copied history/medications with `copied_baseline` provenance + `pending` reconciliation, `phone_update`, PANSS/C-SSRS `answers {}` with prior scores historical-only; baseline preview currently reads live `history.values`, not a pinned snapshot (staleness hook waits for S48d — see follow-ups); `baseline_encounter_id`-only create currently discards the id and returns `not_required`/`None` (carried to S49 — see follow-ups).
+- Frontend selectors (e2e contract): `#/patients/:id/chart` `ChartPage` heading `chart-heading`, draft presence `chart-draft-badge`, proposal state `chart-proposal-unavailable`, create entry points `chart-create-followup` (chart) + `directory-create-followup` (directory Chart links), baseline panel `followup-baseline` (mounted for `follow_up` encounters only), prior scores `followup-prior-scores` (value + historical flag, no dates — see follow-ups).
+
+### Handoff
+
+- Next engineering session: **S15** (parse one source through the ingestion interface) — builds on S02 persistence/contract foundations, not on chart/follow-up state; chart/follow-up pages need no further work for S15.
+- `backend/README.md` unchanged in this docs step (still points to the repo-root `make` loop plus the `make migrate` entry point; verified this session — no new make target or loop change needed for S14).
+- Unrelated content untouched: `content/review-ledger.md` §§1–7 owner gates unchanged (§1 S08 no-review policy stands; history/effects stay `awaiting_review`, none approved); BNs, medical docs, DDI content unchanged; `backend/`, `web/`, `e2e/`, `migrations/` untouched by this docs step; no clinical claims added here.
+- S14 exit met: follow-up creation/resume and shared-read journey. Temporary signed fixtures stay test-only and do not add a bypass-sign production route.
+
+### Code-review follow-ups (non-blocking; not approval, no clinical claims — carry as future polish, not S14 exit blockers)
+
+- Standards: 0 hard violations; judgement-only smells — Duplicated Code (`422` shapes, baseline branches, safe reference alias, router/App mirrors), Feature Envy (chart reaching into `draft_data` keys), Primitive Obsession overridden by the JSONB convention.
+- Spec partials (all non-blocking): prior dates not surfaced (only value + historical flag shown); review navigation deferred (chart→encounter only, proposal review opens once generation exists); UI create sends no baseline yet (empty shell until the S49 baseline picker); reconciliation `pending` is label-only until S49 sign enforcement.
+- Spec wrongs to carry to S49/S48d: baseline preview returns live `history.values`, not a pinned snapshot for the future staleness hook; `baseline_encounter_id`-only create discards the id (returns `not_required`/`None`).
+- Scope notes (not creep): `MAX_BASELINE_MEDICATIONS=100` / `MAX_BASELINE_NOTE_CHARS=500` are plan §4 size limits; `GET followup-baseline ETag` is an author-only read design choice.
+
+### Deferred items
+
+- S13/S12/S11/S10/S09/S08/S02–S07 deferred items unchanged (PANSS baseline-zero edge → S37; rule payload shape validation; cursor pagination, audit HTTP route, named role logins, per-command idempotency for remaining commands — now also covering follow-up create).
+- S14 code-review follow-ups above are future polish, not exit blockers.
+
+### Remaining blockers
+
+- Owner decisions enumerated in `content/review-ledger.md` §§2–7 unchanged (R5 concrete discussion/review mappings, F6 concrete graph/template and limitation-wording review, concrete history/severity definitions, DDI aliases/release evidence, reference-table provenance). Infrastructure proceeds on synthetic fixtures while responses are pending; S14 adds no new clinical blocker.
+- Signing/staleness hooks (not S14 gaps): S49 signing enforcement (reconciliation `pending` label-only until then; baseline picker then sends the baseline; `baseline_encounter_id`-only `not_required`/`None` resolved there) + S48d/S51 staleness hooks (live `history.values` preview → pinned snapshot; shared demographic changes marking affected results stale).
+- Infra debt (pre-existing, unrelated to S14): physicians-list `limit=100` single page (accumulated e2e physicians fall off the page, breaks identity-rename); diagnosis indeterminate firefox-only flake passing standalone.
+- S14 exit met: shared chart and follow-up draft entry with badge-only privacy, `copied_baseline` + `pending` reconciliation, historical-only priors, generic `409 OPEN_DRAFT_EXISTS`, and honestly unavailable proposal.

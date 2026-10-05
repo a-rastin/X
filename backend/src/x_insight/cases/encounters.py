@@ -1,6 +1,7 @@
-"""Author-owned draft commands: save/read/discard + single-slot creation (S07).
+"""Author-owned draft commands: save/read/discard + single-slot creation (S07, S14).
 
-Plan.md §§2.3, 4.1-4.3 (FR-16, FR-22, NFR-04):
+Plan.md §§2.3, 4.1-4.3 (FR-16, FR-22, NFR-04) plus S14 follow-up entry
+(plan.md §2.2; FR-20-23):
 
 - One patient has at most one open draft across authors and encounter kinds.
   Creation takes a patient-row lock (``SELECT ... FOR UPDATE``) so concurrent
@@ -29,6 +30,14 @@ Plan.md §§2.3, 4.1-4.3 (FR-16, FR-22, NFR-04):
   calls. No job tables exist yet (S07), so it is a no-op by design — later
   sessions fill it without changing this contract. Do not fabricate job
   tables here.
+- S14 follow-up entry: ``create_open_draft`` accepts an optional inline
+  baseline (history/medications + prior scores) for ``kind='follow_up'``
+  only. With a baseline the fresh body carries copied history with
+  ``copied_baseline`` provenance + ``pending`` reconciliation; PANSS/C-SSRS
+  answers always start empty (prior scores display as historical only via
+  ``followup_baseline``). Without a baseline the fresh follow-up carries an
+  empty history shell (``not_required``) + empty answers. Registration drafts
+  still start with an empty object body.
 
 All persistence uses the caller's :func:`x_insight.db.session_scope`
 transaction; audit is recorded in the same transaction and this module never
@@ -76,6 +85,185 @@ def validate_kind(value: Any) -> str:
             {"kind": ["Must be 'registration' or 'follow_up'."]},
         )
     return str(value)
+
+
+FOLLOWUP_BASELINE_KEY = "followup_baseline"
+HISTORY_STATE_KEY = "history"
+PANSS_STATE_KEY = "panss"
+CSSRS_STATE_KEY = "cssrs"
+ANSWERS_STATE_KEY = "answers"
+
+MAX_BASELINE_MEDICATIONS = 100
+MAX_BASELINE_NOTE_CHARS = 500
+
+
+def validate_followup_baseline(value: Any) -> dict[str, Any] | None:
+    """Optional inline baseline for follow-up creation (422 on invalid).
+
+    Until S49 implements signing, the caller passes the baseline snapshot
+    inline: ``history_values`` (strict S12 history validation),
+    ``prior_scores`` (``panss_total``/``cssrs_severity`` numbers or null,
+    historical display only — never seeded as answers), ``medications``
+    (optional list of catalog references), ``provenance_note`` (optional
+    short text). Unknown keys are rejected. ``None`` means no baseline.
+    """
+    if value is None:
+        return None
+    if not isinstance(value, dict):
+        raise contracts.ContractError(
+            422,
+            "VALIDATION_FAILED",
+            "Follow-up baseline is invalid.",
+            {"baseline": ["Must be an object or null."]},
+        )
+    unknown = set(value) - {
+        "history_values",
+        "prior_scores",
+        "medications",
+        "provenance_note",
+    }
+    if unknown:
+        raise contracts.ContractError(
+            422,
+            "VALIDATION_FAILED",
+            "Follow-up baseline has unknown fields.",
+            {f"baseline.{name}": ["Unknown field."] for name in sorted(unknown)},
+        )
+    raw_history = value.get("history_values", {})
+    if not isinstance(raw_history, dict):
+        raise contracts.ContractError(
+            422,
+            "VALIDATION_FAILED",
+            "Follow-up baseline history is invalid.",
+            {"baseline.history_values": ["Must be a JSON object."]},
+        )
+    # Reuse the strict S12 history contract (undeclared/excluded fail here).
+    from x_insight.cases import history as history_service
+
+    validated_history = history_service.validate_history_values(raw_history)
+    raw_scores = value.get("prior_scores", {})
+    if raw_scores is None:
+        raw_scores = {}
+    if not isinstance(raw_scores, dict):
+        raise contracts.ContractError(
+            422,
+            "VALIDATION_FAILED",
+            "Follow-up baseline scores are invalid.",
+            {"baseline.prior_scores": ["Must be an object or null."]},
+        )
+    unknown_scores = set(raw_scores) - {"panss_total", "cssrs_severity"}
+    if unknown_scores:
+        raise contracts.ContractError(
+            422,
+            "VALIDATION_FAILED",
+            "Follow-up baseline scores are invalid.",
+            {
+                f"baseline.prior_scores.{name}": ["Unknown score."]
+                for name in sorted(unknown_scores)
+            },
+        )
+    prior_scores: dict[str, Any] = {}
+    for score_key in ("panss_total", "cssrs_severity"):
+        score_value = raw_scores.get(score_key)
+        if score_value is None:
+            continue
+        if isinstance(score_value, bool) or not isinstance(score_value, (int, float)):
+            raise contracts.ContractError(
+                422,
+                "VALIDATION_FAILED",
+                "Follow-up baseline scores are invalid.",
+                {f"baseline.prior_scores.{score_key}": ["Must be a number or null."]},
+            )
+        prior_scores[score_key] = score_value
+    raw_medications = value.get("medications", [])
+    if raw_medications is None:
+        raw_medications = []
+    if not isinstance(raw_medications, list) or len(raw_medications) > MAX_BASELINE_MEDICATIONS:
+        raise contracts.ContractError(
+            422,
+            "VALIDATION_FAILED",
+            "Follow-up baseline medications are invalid.",
+            {"baseline.medications": ["Must be a list."]},
+        )
+    medications: list[dict[str, Any]] = []
+    for entry in raw_medications:
+        if not isinstance(entry, dict) or not isinstance(entry.get("catalog_drug_id"), str):
+            raise contracts.ContractError(
+                422,
+                "VALIDATION_FAILED",
+                "Follow-up baseline medications are invalid.",
+                {"baseline.medications": ["Entries must carry a catalog_drug_id."]},
+            )
+        medications.append({"catalog_drug_id": entry["catalog_drug_id"]})
+    note = value.get("provenance_note")
+    if note is not None:
+        if not isinstance(note, str) or not note or len(note) > MAX_BASELINE_NOTE_CHARS:
+            raise contracts.ContractError(
+                422,
+                "VALIDATION_FAILED",
+                "Follow-up baseline note is invalid.",
+                {"baseline.provenance_note": ["Must be short text or null."]},
+            )
+    return {
+        "history_values": dict(validated_history),
+        "prior_scores": prior_scores,
+        "medications": medications,
+        "provenance_note": note,
+    }
+
+
+def build_followup_draft_data(
+    *,
+    author_id: str,
+    baseline: dict[str, Any] | None,
+    baseline_encounter_id: str | None,
+    recorded_at: str,
+) -> dict[str, Any]:
+    """Initial follow-up draft body: copied history + empty answers (S14).
+
+    With a baseline, history values carry ``copied_baseline`` provenance and
+    ``pending`` reconciliation; PANSS/C-SSRS answers start empty regardless
+    of prior scores (displayed as historical only under
+    ``followup_baseline.prior_scores``). Without a baseline, history starts
+    empty with ``not_required`` reconciliation and empty answers.
+    """
+    if baseline is None:
+        return {
+            HISTORY_STATE_KEY: {
+                "values": {},
+                "provenance": {},
+                "reconciliation": {"status": "not_required", "baseline_encounter_id": None},
+                "phone_update": None,
+            },
+            PANSS_STATE_KEY: {ANSWERS_STATE_KEY: {}},
+            CSSRS_STATE_KEY: {ANSWERS_STATE_KEY: {}},
+        }
+    history_values = baseline["history_values"]
+    provenance = {
+        field_id: {
+            "source": "copied_baseline",
+            "author_id": author_id,
+            "recorded_at": recorded_at,
+            "baseline_encounter_id": baseline_encounter_id,
+        }
+        for field_id in history_values
+    }
+    return {
+        HISTORY_STATE_KEY: {
+            "values": dict(history_values),
+            "provenance": provenance,
+            "reconciliation": {"status": "pending", "baseline_encounter_id": baseline_encounter_id},
+            "phone_update": None,
+        },
+        PANSS_STATE_KEY: {ANSWERS_STATE_KEY: {}},
+        CSSRS_STATE_KEY: {ANSWERS_STATE_KEY: {}},
+        FOLLOWUP_BASELINE_KEY: {
+            "prior_scores": dict(baseline["prior_scores"]),
+            "medications": [dict(entry) for entry in baseline["medications"]],
+            "provenance_note": baseline["provenance_note"],
+            "baseline_encounter_id": baseline_encounter_id,
+        },
+    }
 
 
 def _check_draft_nodes(value: Any, depth: int, counter: list[int]) -> None:
@@ -216,6 +404,19 @@ def safe_encounter_reference(row: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def safe_signed_reference(row: dict[str, Any]) -> dict[str, Any]:
+    """Public signed-encounter shape for chart chronology (never clinical)."""
+    return {
+        "id": str(row["id"]),
+        "patient_id": str(row["patient_id"]),
+        "kind": row["kind"],
+        "lifecycle": row["lifecycle"],
+        "revision": int(row["revision"]),
+        "created_at": contracts.serialize_utc(row["created_at"]),
+        "updated_at": contracts.serialize_utc(row["updated_at"]),
+    }
+
+
 def safe_draft_for_author(row: dict[str, Any]) -> dict[str, Any]:
     """Author-only draft shape: reference fields plus the private body."""
     reference = safe_encounter_reference(row)
@@ -247,6 +448,23 @@ def get_open_draft_for_patient(session: Session, patient_id: uuid.UUID) -> dict[
         .first()
     )
     return dict(row) if row is not None else None
+
+
+def list_signed_for_patient(session: Session, patient_id: uuid.UUID) -> list[dict[str, Any]]:
+    """Signed encounters for one patient, oldest first (empty until S49)."""
+    rows = (
+        session.execute(
+            select(tables.encounters)
+            .where(
+                tables.encounters.c.patient_id == patient_id,
+                tables.encounters.c.lifecycle == "signed",
+            )
+            .order_by(tables.encounters.c.created_at.asc())
+        )
+        .mappings()
+        .all()
+    )
+    return [dict(row) for row in rows]
 
 
 def require_draft_lifecycle(encounter: dict[str, Any]) -> dict[str, Any]:
@@ -289,6 +507,8 @@ def create_open_draft(
     patient_id: uuid.UUID,
     kind: str,
     request_id: str,
+    baseline: dict[str, Any] | None = None,
+    baseline_encounter_id: str | None = None,
 ) -> tuple[dict[str, Any], str]:
     """Create the patient's single open draft (409 when the slot is taken).
 
@@ -297,10 +517,29 @@ def create_open_draft(
     occupying draft and gets the generic ``409 OPEN_DRAFT_EXISTS``. The
     partial unique index is the backstop: an ``IntegrityError`` here also
     becomes the same generic ``409`` (transaction rolled back first so the
-    caller's scope-commit stays a clean no-op). Fresh drafts start with an
-    empty object body. Returns (encounter, server timestamp).
+    caller's scope-commit stays a clean no-op). Registration drafts start
+    with an empty object body; follow-ups start with copied history (or an
+    empty history shell) plus empty PANSS/C-SSRS answers via
+    :func:`build_followup_draft_data`. Returns (encounter, server timestamp).
     """
     validated_kind = validate_kind(kind)
+    validated_baseline = validate_followup_baseline(baseline)
+    if baseline_encounter_id is not None and not isinstance(baseline_encounter_id, str):
+        raise contracts.ContractError(
+            422,
+            "VALIDATION_FAILED",
+            "Baseline encounter reference is invalid.",
+            {"baseline_encounter_id": ["Must be text or null."]},
+        )
+    if validated_kind != "follow_up" and (
+        validated_baseline is not None or baseline_encounter_id is not None
+    ):
+        raise contracts.ContractError(
+            422,
+            "VALIDATION_FAILED",
+            "Baseline copy applies to follow-up drafts only.",
+            {"kind": ["Baseline copy requires kind 'follow_up'."]},
+        )
     patient_row = (
         session.execute(
             select(tables.patients).where(tables.patients.c.id == patient_id).with_for_update()
@@ -320,6 +559,16 @@ def create_open_draft(
         )
     moment = contracts.utcnow()
     encounter_id = uuid.uuid4()
+    if validated_kind == "follow_up":
+        initial_body = build_followup_draft_data(
+            author_id=str(author["id"]),
+            baseline=validated_baseline,
+            baseline_encounter_id=baseline_encounter_id,
+            recorded_at=contracts.serialize_utc(moment),
+        )
+    else:
+        initial_body = {}
+    validate_draft_data(initial_body)
     try:
         session.execute(
             insert(tables.encounters).values(
@@ -328,7 +577,7 @@ def create_open_draft(
                 kind=validated_kind,
                 author_id=author["id"],
                 lifecycle=DRAFT_LIFECYCLE,
-                draft_data={},
+                draft_data=initial_body,
                 revision=1,
                 created_at=moment,
                 updated_at=moment,

@@ -23,6 +23,7 @@ attempt). Only 2xx is durable.
 
 from __future__ import annotations
 
+import json
 import os
 import uuid
 from pathlib import Path
@@ -478,14 +479,19 @@ def test_concurrent_creates_allow_one_draft_only(admin_client, clean_registry, m
         thread.join(timeout=30)
     assert sorted(outcomes) == [201] + [409] * 6, outcomes
     # Losers get the generic conflict with no content/author oracle; the one
-    # winner sees only its own fresh empty body.
+    # winner sees only its own fresh body (S14: empty history shell with
+    # not_required reconciliation plus empty PANSS/C-SSRS answers).
     for status, body in bodies:
         if status == 409:
             assert '"OPEN_DRAFT_EXISTS"' in body
             assert "draft_data" not in body
             assert "author_id" not in body
         else:
-            assert '"draft_data":{}' in body.replace(" ", "")
+            fresh = json.loads(body)["draft_data"]
+            assert fresh["history"]["values"] == {}
+            assert fresh["history"]["reconciliation"]["status"] == "not_required"
+            assert fresh["panss"] == {"answers": {}}
+            assert fresh["cssrs"] == {"answers": {}}
     with clean_registry.begin() as connection:
         drafts = connection.execute(
             text("SELECT count(*) FROM encounters WHERE patient_id = :pid AND lifecycle = 'draft'"),
@@ -557,7 +563,13 @@ def test_discard_requires_confirmation_and_current_revision(
     )
     assert freed.status_code == 201, freed.text
     assert freed.json()["encounter"]["id"] != encounter_id
-    assert freed.json()["draft_data"] == {}
+    # S14: a fresh follow-up starts with an empty history shell (not_required)
+    # plus empty PANSS/C-SSRS answers — fresh, never another draft's content.
+    fresh = freed.json()["draft_data"]
+    assert fresh["history"]["values"] == {}
+    assert fresh["history"]["reconciliation"]["status"] == "not_required"
+    assert fresh["panss"] == {"answers": {}}
+    assert fresh["cssrs"] == {"answers": {}}
 
 
 def test_draft_storage_column_grants_and_object_check(clean_registry) -> None:
