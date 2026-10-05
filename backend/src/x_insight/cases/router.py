@@ -70,6 +70,7 @@ from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
 from x_insight import contracts
+from x_insight.cases import chart as chart_service
 from x_insight.cases import effects as effects_service
 from x_insight.cases import encounters as encounters_service
 from x_insight.cases import history as history_service
@@ -316,6 +317,25 @@ def list_patients(
     )
 
 
+@router.get("/patients/{patient_id}/chart")
+def get_chart(
+    patient_id: uuid.UUID, request: Request, session: Session = Depends(get_session)
+) -> JSONResponse:
+    """Shared chart: demographics + signed chart + occupancy badge (S14).
+
+    Any active authenticated user passes the session gate; only active
+    physicians may read (administrators get 403 — no ordinary clinical
+    route here, plan §2.1). Carries no draft content, no author oracle,
+    no revision — just slot occupancy for directory badges.
+    """
+    user = _require_user(request, session)
+    if isinstance(user, JSONResponse):
+        return user
+    assert isinstance(user, dict)
+    chart = chart_service.read_chart_for_physician(session, patient_id, user)
+    return JSONResponse(status_code=200, content=chart)
+
+
 # --- S07 author-owned drafts (plan.md §§2.3, 4.3; FR-16, FR-22) ---
 #
 # Revision ownership for later assessment pages: every wizard page autosaves
@@ -329,11 +349,20 @@ def list_patients(
 
 
 class EncounterCreateRequest(BaseModel):
-    """Single-slot creation body: kind only (defaults to follow-up)."""
+    """Single-slot creation body: kind plus optional follow-up baseline (S14).
+
+    ``baseline`` is the inline snapshot (history_values, prior_scores,
+    medications, provenance_note) stored as ``draft_data.followup_baseline``
+    with copied history provenance; ``baseline_encounter_id`` is the opaque
+    test-only baseline reference stamped into provenance/reconciliation.
+    Semantic validation lives in :mod:`x_insight.cases.encounters` (422).
+    """
 
     model_config = {"extra": "forbid"}
 
     kind: Literal["registration", "follow_up"] = "follow_up"
+    baseline: dict[str, Any] | None = None
+    baseline_encounter_id: str | None = None
 
 
 class DraftPatchRequest(BaseModel):
@@ -406,7 +435,12 @@ def create_encounter(
     request_hash: str | None = None
     if key is not None:
         request_hash = encounters_service.idempotency_request_hash(
-            {"kind": payload.kind}, patient_id
+            {
+                "kind": payload.kind,
+                "baseline": payload.baseline,
+                "baseline_encounter_id": payload.baseline_encounter_id,
+            },
+            patient_id,
         )
         stored = identity_service.lookup_idempotency(
             session,
@@ -424,6 +458,8 @@ def create_encounter(
         patient_id=patient_id,
         kind=payload.kind,
         request_id=request_id,
+        baseline=payload.baseline,
+        baseline_encounter_id=payload.baseline_encounter_id,
     )
     response_body: dict[str, Any] = {
         "encounter": encounters_service.safe_encounter_reference(encounter),
@@ -465,6 +501,32 @@ def get_encounter(
     assert isinstance(user, dict)
     encounter = encounters_service.read_draft_for_author(session, encounter_id, user)
     return _draft_response(encounter, status_code=200, include_body=True)
+
+
+@router.get("/encounters/{encounter_id}/followup-baseline")
+def get_followup_baseline(
+    encounter_id: uuid.UUID, request: Request, session: Session = Depends(get_session)
+) -> JSONResponse:
+    """Author-only follow-up baseline (S14): baseline + reconciliation + history.
+
+    Reads need no CSRF, like other GET previews. Prior scores display with
+    ``historical: True`` — never as current answers.
+    """
+    user = _require_user(request, session)
+    if isinstance(user, JSONResponse):
+        return user
+    assert isinstance(user, dict)
+    encounter, state = chart_service.read_followup_baseline_for_author(session, encounter_id, user)
+    content: dict[str, Any] = {
+        "encounter": encounters_service.safe_encounter_reference(encounter),
+        "revision": int(encounter["revision"]),
+        "baseline": state["baseline"],
+        "reconciliation": state["reconciliation"],
+        "prior_scores_display": state["prior_scores_display"],
+    }
+    response = JSONResponse(status_code=200, content=content)
+    response.headers["ETag"] = contracts.format_etag(int(encounter["revision"]))
+    return response
 
 
 @router.patch("/encounters/{encounter_id}")

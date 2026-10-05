@@ -830,3 +830,61 @@ Created `content/review-ledger.md`: index + per-item entries for assessments, hi
 - Infra debt (pre-existing, unrelated to S13): identity-rename `limit=100` pagination (accumulated e2e physicians fall off the single page); diagnosis indeterminate firefox-only flake passing standalone.
 - S13 code-review follow-ups carried above (fetch-helper duplication, fixture copies, audit-read style; 6/9 pages mounted, S49/S50 frozen-read scope, S40 invariance proof pending, plan-consistent extras, whitespace-only edge, FK and strip-helper notes).
 - S13 exit met: attributed page notes with server-derived author/time, author-only append-only persistence, separate escaped browser placement including demographics-after-creation, explicit serializer exclusion with S40/S41/S59 noninterference checks recorded and no speculative snapshot machinery.
+
+## S14 — Build shared chart and follow-up draft entry (2026-10-05)
+
+**Scope:** shared chart and follow-up draft entry only (tasks.md S14). Backend adds a physician-visible chart read plus a follow-up baseline read and extends draft creation with a follow-up seed; frontend adds a chart page, directory chart entry points, and a follow-up baseline panel on the encounter page. No migration (heads stay 0001-0006), no signed/projection tables, no bypass-sign route. No notes/signing changes (S13 pages need no further work for S14). Seams T1/T9.
+
+### Pinned / added deps (S01–S07 pins unchanged; S14 adds no runtime lib)
+
+- Runtimes carry forward: Python `3.12.14`, Node `22.23.2` / npm `10.9.8`, PostgreSQL 16 (`postgres:16-alpine`), `fastapi 0.142.2`, `sqlalchemy 2.1.3`, `alembic 1.20.0`, `psycopg[binary] 3.3.6` (`Makefile` header + `backend/pyproject.toml`, both untouched by S14).
+- Frontend pins carry forward: `react 19.3.0`, `vite 8.3.2`, `typescript 7.0.2`, `@playwright/test 1.63.0` with `chromium` + `firefox` projects. No new runtime libs; no clinical packages.
+- No new migration — heads stay `0001`–`0006` (follow-up seeding reuses the `encounters.draft_data` shape through the shared S07 autosave contract; no new table, no signed/projection tables).
+- S14 files (code/tests untouched by this docs step): backend NEW `chart.py` (`read_chart_for_physician`, `read_followup_baseline_for_author`; caller transaction, never commits) + extended `encounters.py` (`validate_followup_baseline`, `build_followup_draft_data`; `create_open_draft` extended with `baseline`/`baseline_encounter_id` kwargs; `follow_up` seeds history shell + empty panss/cssrs answers; registration still `{}`) + `router.py` (chart + follow-up routes, see local loop) + `test_followup.py` 14 tests (slices 1–3); `test_drafts.py` 2 fresh-body assertions migrated to the follow-up seed (empty history shell `not_required` + empty answers; intent preserved). Frontend NEW `chart/{api.ts, ChartPage.tsx, FollowupBaselinePanel.tsx}` + router chart route `#/patients/:id/chart` + `DirectoryPage` Chart column (`#chart-link-<uuid>`, `#start-followup-<uuid>`) + `EncounterPage` `FollowupBaselinePanel` for `follow_up` + `e2e/followup.spec.ts` 6 journeys.
+
+### Red→green slices + seams (T1/T9; tasks.md S14)
+
+- Slice 1 — shared chart read (T1): NEW `chart.py` `read_chart_for_physician` serves the physician-visible chart in the caller transaction and never commits; `GET /patients/{id}/chart` is physician-only. Registration encounters still contribute `{}` (no registration seed change in S14).
+- Slice 2 — follow-up draft entry with baseline (T1; tasks steps 2–3): `encounters.py` `validate_followup_baseline` + `build_followup_draft_data` back the extended `create_open_draft(baseline, baseline_encounter_id)` path; `follow_up` seeds a history shell + empty panss/cssrs answers; `POST encounters` accepts `baseline`/`baseline_encounter_id` with an extended idempotency hash; `GET /encounters/{id}/followup-baseline` is author-only + `ETag`. `test_followup.py` 14 tests cover slices 1–3; `test_drafts.py` 2 fresh-body assertions migrated to the follow-up seed (empty history shell `not_required` + empty answers; intent preserved).
+- Slice 3 — chart + follow-up browser entry (T1/T9): `ChartPage.tsx` + `FollowupBaselinePanel.tsx` behind `#/patients/:id/chart`, reached from the `DirectoryPage` Chart column (`#chart-link-<uuid>`, `#start-followup-<uuid>`); `EncounterPage` mounts `FollowupBaselinePanel` for `follow_up`. `e2e/followup.spec.ts` 6 journeys cover the chart → start-follow-up → baseline-panel path.
+
+### Verification evidence (implementation-session report, S14 scope)
+
+- `make check` exit `0` (ruff format-check + ruff check + mypy `src` + web build + root `tsc --noEmit`).
+- `make test-backend` 290 passed = S13 276 + 14 new (`test_followup.py` 14 passed).
+- `followup` e2e 12/12 (6 `test(` journeys in `e2e/followup.spec.ts` × 2 browsers: 6 chromium + 6 firefox).
+- Full e2e 167 passed / 11 failed — all 11 triaged NOT S14: identity `206`/`292` dev-DB accumulation (`total=1273` over `limit=100`); `autosave:233` S13 notes `role=status` locator debt; others flaky under parallel load (history alone 10/10).
+- `make migrate` head unchanged — no new migration (versions still `0001`–`0006`; S14 stores the follow-up seed in `draft_data`, no new table).
+- `GET /api/v1/health` + `GET /api/v1/ready` preserved (existing routes untouched; S14 adds only chart + follow-up entry routes).
+- Env quirks carry forward (procedural only): `[::1]:5173` preview bind, `E2E_BASE_URL` explicit, stale `:8000` restart, `.env` `5442`/`5443`.
+
+### Local loop for next agent (S15+)
+
+- Routes (all under `/api/v1`): `GET /patients/{id}/chart` (physician-only) → shared chart read via `read_chart_for_physician`; `POST encounters` accepts `baseline`/`baseline_encounter_id` with extended idempotency hash → follow-up draft seeded via `build_followup_draft_data`; `GET /encounters/{id}/followup-baseline` (author-only) → `{baseline...}` + `ETag`.
+- Write shape: every follow-up `POST encounters` sends `baseline`/`baseline_encounter_id` with a fresh `Idempotency-Key` covered by the extended idempotency hash (same key + changed body → `409`), plus `X-CSRF-Token` (missing/invalid → `403`); chart reads and baseline reads are author/physician-gated (`403` strangers, `401` anonymous, `404` unknown/missing).
+- State shapes: `follow_up` `draft_data` seeds a history shell (`not_required` reconciliation shell) + empty panss/cssrs answers; registration `draft_data` still `{}`; baseline linkage carried as `baseline_encounter_id`; `chart.py` readers run in the caller transaction and never commit.
+- Frontend selectors (e2e contract): chart route `#/patients/:id/chart` (`ChartPage.tsx` via `chart/api.ts`); directory Chart column `#chart-link-<uuid>` (open chart) + `#start-followup-<uuid>` (start follow-up); encounter page `FollowupBaselinePanel` for `follow_up` only.
+
+### Handoff
+
+- Next engineering session: **S15** (DDI ingestion) — builds on the same S07 autosave path plus the S14 chart/follow-up entry; chart and follow-up pages need no further work for S15.
+- `backend/README.md` unchanged in this docs step (still points to the repo-root `make` loop plus the `make migrate` entry point — no new make target or loop change needed for S14).
+- Unrelated content untouched: `content/review-ledger.md` §§1–7 owner gates unchanged; BNs, medical docs, DDI content unchanged; no clinical claims added here.
+- S14 exit met: shared physician chart read, follow-up draft entry seeded from baseline with author-only baseline read, and browser chart → start-follow-up → baseline-panel journeys green.
+
+### Code-review follow-ups (non-blocking; not approval, no clinical content — carry as future polish, not S14 exit blockers)
+
+- Standards: clean — caller-owned transaction (`chart.py` readers never commit), error codes, `ETag`/idempotency handling, escaping, `xi-*` tokens, honest `unavailable` paths.
+- Spec open items (all P2, recorded as deferred with owning sessions, not S14 gaps): medication provenance/reconciliation → S20; prior-score dates → S49 provenance; review navigation → reasoning sessions.
+
+### Deferred items
+
+- S13/S12/S11/S10/S09/S08/S02–S07 deferred items unchanged (PANSS baseline-zero edge → S37; rule payload shape validation; cursor pagination, audit HTTP route, named role logins, per-command idempotency for remaining commands — now also covering follow-up create/baseline reads).
+- S14 code-review follow-ups above are deferred to their owning sessions (S20 medication provenance/reconciliation; S49 prior-score-date provenance; reasoning sessions for review navigation), not exit blockers.
+
+### Remaining blockers
+
+- Owner decisions enumerated in `content/review-ledger.md` §§2–7 unchanged (R5 concrete discussion/review mappings, F6 concrete graph/template and limitation-wording review, concrete history/severity definitions, DDI aliases/release evidence, reference-table provenance). Infrastructure proceeds on synthetic fixtures while responses are pending; S14 adds no clinical blocker.
+- Infra debt (pre-existing, unrelated to S14): dev-DB accumulation (`total=1273` physicians over `limit=100`, identity `206`/`292`); `autosave:233` locator debt (S13 notes `role=status`); flaky-under-parallel-load note (history alone 10/10; full-run failures triaged non-S14).
+- S14 code-review follow-ups carried above (Standards clean; 3 Spec P2 gaps deferred with owning sessions: S20, S49, reasoning sessions).
+- S14 exit met: shared chart + follow-up draft entry with caller-transaction reads, extended idempotency hash, author-only baseline `ETag`, seeded history shell + empty answers, and 12/12 follow-up e2e.
