@@ -69,6 +69,8 @@
 
 ## T
 
+- [test-fixtures.md](test-fixtures.md) — Test database fixture conventions: FK-dependent TRUNCATE order and silent-failure helpers.
+
 ## U
 
 - [ui-contrast.md](ui-contrast.md) — Teal-on-white contrast constraint and the darker action-fill decision.
