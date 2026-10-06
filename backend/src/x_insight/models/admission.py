@@ -46,6 +46,12 @@ from dataclasses import dataclass
 from math import fsum, isfinite
 from typing import Any
 
+from x_insight.models.question_package import (
+    KNOWN_SOURCE_PREFIXES as _REGISTRY_PREFIXES,
+)
+from x_insight.models.question_package import (
+    SAFE_EXPRESSIONS as _REGISTRY_EXPRESSIONS,
+)
 from x_insight.models.validation import (
     MAX_MESSAGE_CHARS,
     MAX_NETWORKS,
@@ -83,9 +89,9 @@ ENGINEERING_LIMITS: Mapping[str, int | float] = {
     "NORMALIZATION_TOLERANCE": NORMALIZATION_TOLERANCE,
 }
 
-#: S25 fills these. Empty by default so unknown paths/expressions are denied.
-KNOWN_SOURCE_PREFIXES: tuple[str, ...] = ()
-SAFE_EXPRESSIONS: frozenset[str] = frozenset()
+#: S25 registry (explicit synthetic allowlists, default-deny); S22 hooks share it.
+KNOWN_SOURCE_PREFIXES: tuple[str, ...] = _REGISTRY_PREFIXES
+SAFE_EXPRESSIONS: frozenset[str] = _REGISTRY_EXPRESSIONS
 
 
 @dataclass(frozen=True)
