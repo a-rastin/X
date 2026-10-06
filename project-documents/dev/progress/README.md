@@ -3,8 +3,10 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest recorded checkpoint is [S25](s25.md); S25 green
-(question-package contract, T5 only); S24 owns the integration remainder.
+The latest recorded checkpoint is [S24](s24.md); S24 green
+(model version administration + read-only graph, T1/T5/T9: 11 T1 + 2 T9
+chromium+firefox + 123 T5 carried, make check green); S25 green carried
+(question-package contract, T5 only).
 
 ## Reading and updating progress
 
@@ -55,4 +57,5 @@ The latest recorded checkpoint is [S25](s25.md); S25 green
 | S22 | [Enforce model semantics and admission limits (2026-10-06)](s22.md) |
 | S23.a | [Validate every CPT and build effective artifact (S23 checkpoint) (2026-10-06)](s23-a.md) |
 | S23.b | [Bounded child-process exact inference (S23 inference checkpoint) (2026-10-06)](s23-b.md) |
+| S24 | [Model version administration + read-only graph (2026-10-06)](s24.md) |
 | S25 | [Define the reusable question-package contract and review harness (2026-10-06)](s25.md) |

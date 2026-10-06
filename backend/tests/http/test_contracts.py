@@ -242,7 +242,7 @@ def test_migration_records_single_head_version(migrated_test_engine) -> None:
     from x_insight import db as db_module
 
     with migrated_test_engine.connect() as connection:
-        assert db_module.get_applied_versions(connection) == ["0007"]
+        assert db_module.get_applied_versions(connection) == [db_module.EXPECTED_SCHEMA_VERSION]
 
 
 def test_ready_ok_against_real_database(
@@ -258,7 +258,7 @@ def test_ready_ok_against_real_database(
     payload = response.json()
     assert payload["status"] == "ready"
     assert payload["service"] == "x-insight"
-    assert payload["schema_version"] == "0007"
+    assert payload["schema_version"] == db_module.EXPECTED_SCHEMA_VERSION
     moment = contracts.parse_utc(payload["checked_at"])
     assert moment.tzinfo is not None
     assert response.headers["x-request-id"] == sent
@@ -475,7 +475,7 @@ def test_ready_ok_body_shape_against_real_database(
     payload = response.json()
     assert payload["status"] == "ready"
     assert payload["service"] == "x-insight"
-    assert payload["schema_version"] == "0007"
+    assert payload["schema_version"] == db_module.EXPECTED_SCHEMA_VERSION
     assert payload["checked_at"].endswith("Z")
     moment = contracts.parse_utc(payload["checked_at"])
     assert moment.tzinfo is not None
@@ -558,7 +558,8 @@ def test_audit_list_ordered_by_time(migrated_test_engine, clean_audit) -> None:
 def test_only_s02_tables_exist(migrated_test_engine) -> None:
     """S02 audit storage persists; S03 adds identity tables; S04 adds only the
     idempotency store; S06 adds patients + encounters; S13 adds only the notes
-    table (no draft-content beyond S07 draft_data, no runs, or jobs tables)."""
+    table (no draft-content beyond S07 draft_data, no runs, or jobs tables);
+    S24 adds only the model registry (networks/versions/pointers)."""
     from sqlalchemy import text
 
     with migrated_test_engine.connect() as connection:
@@ -577,6 +578,9 @@ def test_only_s02_tables_exist(migrated_test_engine) -> None:
         "ddi_source_documents",
         "encounters",
         "idempotency_records",
+        "model_network_versions",
+        "model_networks",
+        "model_workflow_pointers",
         "notes",
         "patients",
         "sessions",

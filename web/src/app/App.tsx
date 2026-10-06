@@ -18,6 +18,7 @@ import {
 import {
   AccountPage,
   AdminDashboard,
+  NetworksRoutePage,
   PhysicianDashboard,
   PhysiciansPage,
 } from "./pages";
@@ -148,6 +149,11 @@ export function App() {
                 Physicians
               </NavLink>
             )}
+            {user.role === "admin" && (
+              <NavLink route="networks" current={route} navigate={navigate}>
+                Networks
+              </NavLink>
+            )}
             <NavLink route="account" current={route} navigate={navigate}>
               Account
             </NavLink>
@@ -192,6 +198,7 @@ export function App() {
             )}
             {!showWarningGate && route === "chart" && <ChartRoute />}
             {!showWarningGate && route === "physicians" && <PhysiciansPage />}
+            {!showWarningGate && route === "networks" && <NetworksRoutePage />}
             {!showWarningGate && route === "account" && <AccountPage />}
           </>
         )}

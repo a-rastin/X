@@ -7,6 +7,7 @@ export type Route =
   | "account"
   | "patients"
   | "patients-new"
+  | "networks"
   | "encounter"
   | "chart";
 
@@ -17,6 +18,7 @@ const HASHES: Record<string, Route> = {
   "#/account": "account",
   "#/patients": "patients",
   "#/patients/new": "patients-new",
+  "#/networks": "networks",
 };
 
 const ROUTE_HASHES: Record<Exclude<Route, "encounter" | "chart">, string> = {
@@ -26,6 +28,7 @@ const ROUTE_HASHES: Record<Exclude<Route, "encounter" | "chart">, string> = {
   account: "#/account",
   patients: "#/patients",
   "patients-new": "#/patients/new",
+  networks: "#/networks",
 };
 
 export function parseHash(hash: string): Route | null {
