@@ -309,3 +309,198 @@ def test_cli_count_failure_still_writes_anomaly_report(tmp_path: Path) -> None:
     report_json = json.loads((staging / "report.json").read_text(encoding="utf-8"))
     assert report_json["passed"] is False
     assert any("serious expected 4 parsed 3" in a for a in report_json["documents"][0]["anomalies"])
+
+
+# --- S16.a: real source formats (public build seam only; S15 tests above untouched) ---
+#
+# slice 1 — category heading glued to the nav summary line (no blank between
+# "All Interactions Sort By: Severity" and "Contraindicated (0)"):
+# representative: Cardiovascular Furosemide (declared 0/11/177/127).
+
+FUROSEMIDE_RELATIVE = (
+    "project-documents/medical-documents/DDI-text/"
+    "Cardiovascular and Antihypertensive Agents/Furosemide.txt"
+)
+FUROSEMIDE_SHA256 = "97f1f0967826ece6054053378117073bb1f2735be72e81bec875cea3fe6e3e15"
+FUROSEMIDE_EXPECTED_COUNTS = {
+    "contraindicated": 0,
+    "serious": 11,
+    "monitor_closely": 177,
+    "minor": 127,
+}
+
+
+def _stage_repo_file(relative: str, sha256: str, tmp_path: Path) -> Path:
+    """Copy an untouched original into an isolated source dir, verifying hash."""
+    original = _repo_root() / relative
+    digest = hashlib.sha256(original.read_bytes()).hexdigest()
+    assert digest == sha256, f"original moved: {digest}"
+    staged = tmp_path / Path(relative).name
+    shutil.copyfile(original, staged)
+    return tmp_path
+
+
+def test_build_handles_glued_category_heading(tmp_path: Path) -> None:
+    source_dir = _stage_repo_file(FUROSEMIDE_RELATIVE, FUROSEMIDE_SHA256, tmp_path)
+
+    dataset, report = build(source_dir, None)
+
+    assert report.passed
+    (check,) = report.documents
+    assert check.expected_counts == FUROSEMIDE_EXPECTED_COUNTS
+    assert check.parsed_counts == FUROSEMIDE_EXPECTED_COUNTS
+    serious = {
+        e.interacting_name for e in dataset.documents[0].entries if e.source_category == "serious"
+    }
+    assert "amikacin" in serious
+
+
+# slice 2 — subject-led continuation paragraphs stay one entry (no spurious
+# entry named after the monograph's own drug; bidirectional assertions kept):
+# representative: Analgesics Acetaminophen (declared 3/24/48 + Contra 0).
+
+ACETAMINOPHEN_RELATIVE = (
+    "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Acetaminophen.txt"
+)
+ACETAMINOPHEN_SHA256 = "1307eb381ba3b9399d30cf821f205d843e8603674de451201940a10ec2303117"
+ACETAMINOPHEN_EXPECTED_COUNTS = {
+    "contraindicated": 0,
+    "serious": 3,
+    "monitor_closely": 24,
+    "minor": 48,
+}
+
+
+def test_build_keeps_subject_led_continuation_in_one_entry(tmp_path: Path) -> None:
+    source_dir = _stage_repo_file(ACETAMINOPHEN_RELATIVE, ACETAMINOPHEN_SHA256, tmp_path)
+
+    dataset, report = build(source_dir, None)
+
+    assert report.passed
+    (check,) = report.documents
+    assert check.expected_counts == ACETAMINOPHEN_EXPECTED_COUNTS
+    assert check.parsed_counts == ACETAMINOPHEN_EXPECTED_COUNTS
+    entries = dataset.documents[0].entries
+    # No entry is named after the monograph subject itself.
+    assert all(e.interacting_name.lower() != "acetaminophen" for e in entries)
+    by_name = {(e.source_category, e.interacting_name): e for e in entries}
+    # Bidirectional assertions about one pair survive in a single entry.
+    levonorgestrel = by_name[
+        ("monitor_closely", "levonorgestrel oral/ethinylestradiol/ferrous bisglycinate")
+    ]
+    assert "will decrease the level" in levonorgestrel.raw_text
+    assert "acetaminophen increases levels of levonorgestrel" in levonorgestrel.raw_text
+    # Repeated pair across categories survives (cf. S15 ofloxacin).
+    assert "pharmacodynamic synergism" not in by_name[("minor", "isoniazid")].raw_text
+    assert "unknown mechanism" in by_name[("minor", "isoniazid")].raw_text
+    assert "CYP2E1" in by_name[("monitor_closely", "isoniazid")].raw_text
+
+
+# slice 3 — page-break chrome variants (split URL/page-number lines,
+# form-feed timestamp, standalone page title) never become entries; the
+# wrapped entry keeps complete text and its original span: representative:
+# Anticholinergics Atropine (declared 0/10/103/24).
+
+ATROPINE_RELATIVE = (
+    "project-documents/medical-documents/DDI-text/"
+    "Anticholinergics & Parkinsonism Agents/Atropine.txt"
+)
+ATROPINE_SHA256 = "cb0945149c56b143bedd2dfa229fb5eb0a9f5e723edc0cc7ca604f3595469735"
+ATROPINE_EXPECTED_COUNTS = {
+    "contraindicated": 0,
+    "serious": 10,
+    "monitor_closely": 103,
+    "minor": 24,
+}
+
+
+def test_build_bridges_page_break_chrome_variants(tmp_path: Path) -> None:
+    source_dir = _stage_repo_file(ATROPINE_RELATIVE, ATROPINE_SHA256, tmp_path)
+
+    dataset, report = build(source_dir, None)
+
+    assert report.passed
+    (check,) = report.documents
+    assert check.expected_counts == ATROPINE_EXPECTED_COUNTS
+    assert check.parsed_counts == ATROPINE_EXPECTED_COUNTS
+    entries = dataset.documents[0].entries
+    by_name = {(e.source_category, e.interacting_name): e for e in entries}
+    # Wrapped heading's content crosses the page break with the full span.
+    glucagon = by_name[("serious", "glucagon intranasal")]
+    assert (glucagon.span_start, glucagon.span_end) == (68, 81)
+    assert "glucagon intranasal increases effects" in glucagon.raw_text
+    assert "glucagon increase the risk" in glucagon.raw_text
+    for entry in entries:
+        assert "medscape.com" not in entry.raw_text
+        assert "6:24 AM" not in entry.raw_text
+        assert "and more" not in entry.raw_text
+        assert not entry.interacting_name.startswith("Atreza")
+        assert not entry.interacting_name.startswith("https://")
+    # Orphan header reunited with subject-led content across the break.
+    aclidinium = by_name[("monitor_closely", "aclidinium")]
+    assert "atropine and aclidinium both decrease" in aclidinium.raw_text
+
+
+# slice 4 — repeated pair assertions counted once by the monograph stay one
+# entry with both texts preserved (contradictory directions kept verbatim,
+# no direction invented): representative: Mood Stabilizers Gabapentin
+# (declared 1/30/211/15).
+
+GABAPENTIN_RELATIVE = (
+    "project-documents/medical-documents/DDI-text/"
+    "Mood Stabilizers and Anticonvulsants/Gabapentin.txt"
+)
+GABAPENTIN_SHA256 = "8669ff812304052d12833150155d5e637823a209601577695cb3f34c797e17bf"
+GABAPENTIN_EXPECTED_COUNTS = {
+    "contraindicated": 1,
+    "serious": 30,
+    "monitor_closely": 211,
+    "minor": 15,
+}
+
+
+def test_build_keeps_repeated_pair_assertions_in_one_entry(tmp_path: Path) -> None:
+    source_dir = _stage_repo_file(GABAPENTIN_RELATIVE, GABAPENTIN_SHA256, tmp_path)
+
+    dataset, report = build(source_dir, None)
+
+    assert report.passed
+    (check,) = report.documents
+    assert check.expected_counts == GABAPENTIN_EXPECTED_COUNTS
+    assert check.parsed_counts == GABAPENTIN_EXPECTED_COUNTS
+    by_name = {(e.source_category, e.interacting_name): e for e in dataset.documents[0].entries}
+    alprazolam = by_name[("monitor_closely", "alprazolam")]
+    assert (alprazolam.span_start, alprazolam.span_end) == (408, 414)
+    assert "Either increases effects of the other" in alprazolam.raw_text
+    assert "both increase sedation" in alprazolam.raw_text
+
+
+# slice 5 — a comma inside running prose is not an entry boundary (the
+# page-break continuation rejoins its entry): representative: Antidiabetic
+# Empagliflozin (declared 0/0/40/1).
+
+EMPAGLIFLOZIN_RELATIVE = (
+    "project-documents/medical-documents/DDI-text/Antidiabetic Agents/Empagliflozin.txt"
+)
+EMPAGLIFLOZIN_SHA256 = "a1c3e703b2dadb4559a3d1b2a4e16a2e0332e23ac38497c846cd850eeeb4de30"
+EMPAGLIFLOZIN_EXPECTED_COUNTS = {
+    "contraindicated": 0,
+    "serious": 0,
+    "monitor_closely": 40,
+    "minor": 1,
+}
+
+
+def test_build_rejoins_prose_continuation_across_page_break(tmp_path: Path) -> None:
+    source_dir = _stage_repo_file(EMPAGLIFLOZIN_RELATIVE, EMPAGLIFLOZIN_SHA256, tmp_path)
+
+    dataset, report = build(source_dir, None)
+
+    assert report.passed
+    (check,) = report.documents
+    assert check.expected_counts == EMPAGLIFLOZIN_EXPECTED_COUNTS
+    assert check.parsed_counts == EMPAGLIFLOZIN_EXPECTED_COUNTS
+    by_name = {(e.source_category, e.interacting_name): e for e in dataset.documents[0].entries}
+    lonapegsomatropin = by_name[("monitor_closely", "lonapegsomatropin")]
+    assert "Growth hormone (GH) analogs may" in lonapegsomatropin.raw_text
+    assert "require dose adjustment after initiating growth hormone" in lonapegsomatropin.raw_text

@@ -6,15 +6,22 @@ no network, no fuzzy matching, no database: raw interacting names are kept
 verbatim (concept resolution lands in S17) and every entry keeps its raw
 text plus original line span.
 
-Parser model (DDI design §§7–8): decode (BOM-tolerant), drop repeated page
-chrome while remembering its line numbers, locate the actual ``Interactions``
-section (bare navigation headings carry no counts and are ignored), then run
-a minimal section/state machine over ``Name (N)`` severity headings. A page
-break inside one entry leaves chrome-only lines between its blocks, so a
-block separated from the previous one by chrome continues the same entry;
-any other block boundary starts a new entry. Declared ``(N)`` counts must
-equal parsed entry counts or the document fails with an anomaly — counts
-are never repaired by truncation or padding.
+Parser model (DDI design §§7–8): decode (BOM-tolerant, newline-only splits
+so form feeds cannot shift spans), drop repeated page chrome while
+remembering its line numbers, locate the actual ``Interactions`` section
+(bare navigation headings carry no counts and are ignored), then run a
+minimal section/state machine over ``Name (N)`` severity headings — found
+even when glued to a neighbour line without a blank. Dense sections pack
+several entries per blank-delimited block; a period-free line whose next
+line echoes the name opens the next entry, otherwise blocks continue only
+across chrome (page break), as subject-led restatements of the open pair,
+or as repeated pair assertions. The monograph subject comes from the file
+stem — never a direction inference (S17 owns resolution; raw text stays
+verbatim). A page break inside one entry leaves chrome-only lines between
+its blocks, so a block separated from the previous one by chrome continues
+the same entry; any other block boundary starts a new entry. Declared
+``(N)`` counts must equal parsed entry counts or the document fails with
+an anomaly — counts are never repaired by truncation or padding.
 """
 
 from __future__ import annotations
@@ -39,10 +46,20 @@ _ALL_CATEGORIES = ("contraindicated", "serious", "monitor_closely", "minor")
 
 _CATEGORY_HEADING = re.compile(r"^(Contraindicated|Serious|Monitor Closely|Minor) \((\d+)\)$")
 _PAGE_TIMESTAMP = re.compile(r"^\d{1,2}/\d{1,2}/\d{2},")
-_PAGE_URL = re.compile(r"^https?://\S+\s+\d+/\d+\s*$")
+_PAGE_URL = re.compile(r"^https?://\S+(?:\s+\d+/\d+)?\s*$")
+_PAGE_NUMBER = re.compile(r"^\d+/\d+\s*$")
+_PAGE_TITLE = re.compile(r"dosing, indications, interactions, adverse effects, and more")
 _SECTION_END = frozenset({"Adverse Effects", "Warnings"})
 _ENTITY_START = re.compile(
     r"^([A-Za-z][A-Za-z0-9'’\-/() ]*?)(?:,|\s+(?:decreases|increases|will)\b)"
+)
+# Words never found inside a drug name: when the comma-branch name part
+# carries sentence verbs, the comma sits inside running prose
+# ("decrease insulin sensitivity, particularly ..."), not at an entry
+# boundary.
+_PROSE_WORDS = re.compile(
+    r"\b(?:and|or|both|either|may|will|is|are|was|were|decrease|decreases|increase|increases)\b",
+    re.IGNORECASE,
 )
 
 
@@ -97,11 +114,22 @@ def _read_lines(path: Path) -> list[tuple[int, str]] | None:
         text = raw.decode("utf-8-sig")
     except UnicodeDecodeError:
         return None
-    return [(number, line) for number, line in enumerate(text.splitlines(), 1)]
+    # Split on "\n" only: str.splitlines() also breaks on form feeds, which
+    # would shift every later span away from the original file's line numbers.
+    return [(number, line) for number, line in enumerate(text.split("\n"), 1)]
 
 
 def _is_chrome(line: str) -> bool:
-    return bool(_PAGE_TIMESTAMP.match(line) or _PAGE_URL.match(line))
+    # Page chrome takes several observed shapes: timestamp-titled headers
+    # (sometimes form-feed prefixed), URL with the page marker glued on or
+    # split across two lines, lone page markers, and standalone titles.
+    clean = line.lstrip("\x0c")
+    return bool(
+        _PAGE_TIMESTAMP.match(clean)
+        or _PAGE_URL.match(clean)
+        or _PAGE_NUMBER.match(clean)
+        or _PAGE_TITLE.search(clean)
+    )
 
 
 def build(
@@ -168,6 +196,10 @@ def _parse_document(
     entries: list[CandidateEntry] = []
     anomalies: list[str] = []
     category: str | None = None
+    # The monograph subject (file stem, e.g. acetaminophen): a block led by
+    # this name is a continuation paragraph about the open pair seen from
+    # the other direction — never a new entry about the drug itself.
+    subject = Path(path.name).stem.strip().lower()
     current: list[tuple[int, str]] | None = None
     current_header: str | None = None
     current_start = 0
@@ -182,16 +214,78 @@ def _parse_document(
         else:
             blocks.append([(number, line)])
 
+    # Dense sections pack several entries in one blank-delimited block (a
+    # period-free name line plus content lines, no blanks between entries):
+    # split before a period-free line whose next line confirms it as a
+    # header by echoing the name — either leading with it or mentioning it
+    # (subject-led content names its pair drug). A bare last line strands
+    # the same way when the next block confirms it, covering headers
+    # orphaned by a blank/page break. Wrapped prose never echoes, so it
+    # never splits.
+    divided: list[list[tuple[int, str]]] = []
+    for index, block in enumerate(blocks):
+        start = 0
+        for i in range(1, len(block)):
+            candidate = block[i][1].strip()
+            if "." in candidate:
+                continue
+            if i + 1 < len(block):
+                following = block[i + 1][1].strip()
+            else:
+                following = ""
+                for later in blocks[index + 1 :]:
+                    if later:
+                        following = later[0][1].strip()
+                        break
+            if following and candidate.lower() in following.lower():
+                divided.append(block[start:i])
+                start = i
+        divided.append(block[start:])
+
     def close_entry() -> None:
         if current:
             entry = _make_entry(relative, category or "", current_header, current_start, current)
             entries.append(entry)
             parsed[category or ""] = parsed.get(category or "", 0) + 1
 
+    # A category heading shares its blank-delimited block with neighbour
+    # lines when the source omits the blank (e.g. the nav summary glued to
+    # "Contraindicated (0)"): split blocks at heading lines so the state
+    # machine sees every declared heading. Lines before/after a heading stay
+    # content under the then-current category.
+    segments: list[tuple[str, list[tuple[int, str]]]] = []
+    for block in divided:
+        pending: list[tuple[int, str]] = []
+        for item in block:
+            if _CATEGORY_HEADING.match(item[1]):
+                if pending:
+                    # Lines glued to the front of a heading are the tail of
+                    # whatever came before, never a new entry.
+                    segments.append(("tail", pending))
+                    pending = []
+                segments.append(("heading", [item]))
+            else:
+                pending.append(item)
+        if pending:
+            segments.append(("content", pending))
+
     previous_end = 0
-    for block in blocks:
+    for kind, block in segments:
         number, line = block[0]
-        heading = _CATEGORY_HEADING.match(line) if len(block) == 1 else None
+        if kind == "tail":
+            previous_end = block[-1][0]
+            if category is None:
+                continue
+            first = block[0][1].strip()
+            if "." in first and _entry_name(first) is None:
+                # Pure prose tail glued to a heading: belongs to the open
+                # entry, never a new one.
+                if current is not None:
+                    current.extend(block)
+                continue
+            # A header glued to a category heading is a genuine entry:
+            # fall through to ordinary content handling below.
+        heading = _CATEGORY_HEADING.match(line) if kind == "heading" else None
         if heading:
             close_entry()
             current, current_header = None, None
@@ -206,21 +300,27 @@ def _parse_document(
         bare_header = len(block) == 1 and "." not in line
         continued = False
         if current is not None:
-            if _same_entity(block[0][1], _current_entity(current, current_header)):
-                # Repeated assertion about the same pair inside one category
-                # (e.g. clonidine, guanfacine, lonapegsomatropin): the
-                # monograph's own count keeps it in a single entry, so the
-                # follow-on block extends it with its full text preserved.
+            if _repeats_pair(block[0][1], _current_entity(current, current_header), subject):
+                # Repeated assertion about the same pair, possibly from the
+                # other direction (e.g. clonidine; "gabapentin and alprazolam
+                # both ..."): the monograph's own count keeps it in a single
+                # entry, so the follow-on block extends it with its full
+                # text preserved.
                 current.extend(block)
                 continued = True
-            elif gap_has_chrome and _continues_entry(current, current_header, block):
+            elif _name_from_text(block[0][1]).lower() == subject:
+                # Subject-led continuation ("acetaminophen increases levels
+                # of X ..."): the open pair from the other direction.
+                current.extend(block)
+                continued = True
+            elif gap_has_chrome and _continues_entry(current, current_header, block, subject):
                 # Page break inside one entry: chrome-only lines between blocks.
                 current.extend(block)
                 continued = True
         if not continued:
             close_entry()
             first = block[0][1].strip()
-            if len(block) > 1 and "." not in first and _confirms_header(block):
+            if len(block) > 1 and "." not in first and _confirms_header(block, subject):
                 current, current_header = [ln for ln in block[1:]], first
             elif bare_header:
                 current, current_header = [], first
@@ -259,50 +359,71 @@ def _current_entity(
     return None
 
 
-def _same_entity(first_line: str, entity: str | None) -> bool:
+def _repeats_pair(first_line: str, entity: str | None, subject: str) -> bool:
+    """Whether a block restates the open pair instead of starting a new entry.
+
+    A repeated assertion names the open entity and leads with the monograph
+    subject ("<subject> and <entity> ...") or with the entity itself
+    ("<entity>,", "<entity> <verb>", "<entity> and ..."). A distinct longer
+    name ("testosterone" vs "testosterone buccal system") continues with a
+    plain word and stays a new entry.
+    """
     if not entity:
         return False
     first = first_line.strip()
-    if first.lower() == entity.lower():
-        return True
-    if not first.lower().startswith(entity.lower()):
+    low = first.lower()
+    if entity.lower() not in low:
         return False
-    # A repeated assertion continues "<entity>," or "<entity> <verb>", while a
-    # distinct longer name ("testosterone" vs "testosterone buccal system")
-    # continues with a plain word.
+    if subject and low.startswith(subject):
+        return True
+    if not low.startswith(entity.lower()):
+        return False
+    if low == entity.lower():
+        return True
     rest = first[len(entity) :]
-    return rest.startswith(",") or bool(
+    return rest.startswith((",", " and")) or bool(
         re.match(r"\s+(?:decreases|increases|will)\b", rest, re.IGNORECASE)
     )
 
 
-def _confirms_header(block: list[tuple[int, str]]) -> bool:
+def _confirms_header(block: list[tuple[int, str]], subject: str) -> bool:
     first = block[0][1].strip()
     second = block[1][1].strip()
-    return second.lower().startswith(first.lower()) or second.lower().startswith("sitagliptin")
+    return second.lower().startswith(first.lower()) or second.lower().startswith(subject)
 
 
-def _starts_new_entry(block: list[tuple[int, str]]) -> bool:
+def _starts_new_entry(block: list[tuple[int, str]], subject: str = "") -> bool:
     first = block[0][1].strip()
     if "." not in first:
-        return len(block) == 1 or _confirms_header(block)
-    return _ENTITY_START.match(first) is not None
+        return len(block) == 1 or _confirms_header(block, subject)
+    return _entry_name(first) is not None
+
+
+def _entry_name(first_line: str) -> str | None:
+    """Leading drug name of an entry-start line, else None for prose."""
+    text = first_line.strip()
+    match = _ENTITY_START.match(text)
+    if match is None:
+        return None
+    name = match.group(1).strip()
+    if text[len(match.group(1)) :].startswith(",") and _PROSE_WORDS.search(name):
+        return None
+    return name
 
 
 def _continues_entry(
     current: list[tuple[int, str]] | None,
     current_header: str | None,
     block: list[tuple[int, str]],
+    subject: str,
 ) -> bool:
     if current is None:
         return False
     if current_header is not None and not current:
         # Orphan header awaiting its content across a page break.
         first = block[0][1].strip()
-        return first.lower().startswith(current_header.lower()) or first.lower().startswith(
-            "sitagliptin"
-        )
-    return not _starts_new_entry(block)
+        return first.lower().startswith(current_header.lower()) or first.lower().startswith(subject)
+    return not _starts_new_entry(block, subject)
 
 
 def _make_entry(
@@ -325,7 +446,7 @@ def _make_entry(
 
 
 def _name_from_text(first_line: str) -> str:
-    match = _ENTITY_START.match(first_line.strip())
-    if match:
-        return match.group(1).strip()
+    name = _entry_name(first_line)
+    if name is not None:
+        return name
     return first_line.strip()
