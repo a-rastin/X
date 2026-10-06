@@ -89,6 +89,7 @@ def validate_kind(value: Any) -> str:
 
 FOLLOWUP_BASELINE_KEY = "followup_baseline"
 HISTORY_STATE_KEY = "history"
+MEDICATIONS_STATE_KEY = "medications"
 PANSS_STATE_KEY = "panss"
 CSSRS_STATE_KEY = "cssrs"
 ANSWERS_STATE_KEY = "answers"
@@ -219,13 +220,14 @@ def build_followup_draft_data(
     baseline_encounter_id: str | None,
     recorded_at: str,
 ) -> dict[str, Any]:
-    """Initial follow-up draft body: copied history + empty answers (S14).
+    """Initial follow-up draft body: copied history/meds + empty answers (S14/S20).
 
-    With a baseline, history values carry ``copied_baseline`` provenance and
-    ``pending`` reconciliation; PANSS/C-SSRS answers start empty regardless
-    of prior scores (displayed as historical only under
-    ``followup_baseline.prior_scores``). Without a baseline, history starts
-    empty with ``not_required`` reconciliation and empty answers.
+    With a baseline, history values and medication entries carry
+    ``copied_baseline`` provenance and ``pending`` reconciliation; PANSS/C-SSRS
+    answers start empty regardless of prior scores (displayed as historical
+    only under ``followup_baseline.prior_scores``). Without a baseline,
+    history and medications start empty with ``not_required`` reconciliation
+    and empty answers.
     """
     if baseline is None:
         return {
@@ -234,6 +236,15 @@ def build_followup_draft_data(
                 "provenance": {},
                 "reconciliation": {"status": "not_required", "baseline_encounter_id": None},
                 "phone_update": None,
+            },
+            MEDICATIONS_STATE_KEY: {
+                "entries": [],
+                "provenance": {},
+                "reconciliation": {"status": "not_required", "baseline_encounter_id": None},
+                "dataset_version": None,
+                "catalog_version": None,
+                "medication_fingerprint": None,
+                "generated_at": None,
             },
             PANSS_STATE_KEY: {ANSWERS_STATE_KEY: {}},
             CSSRS_STATE_KEY: {ANSWERS_STATE_KEY: {}},
@@ -248,12 +259,31 @@ def build_followup_draft_data(
         }
         for field_id in history_values
     }
+    baseline_meds = [dict(entry) for entry in baseline["medications"]]
+    meds_provenance = {
+        entry["catalog_drug_id"]: {
+            "source": "copied_baseline",
+            "author_id": author_id,
+            "recorded_at": recorded_at,
+            "baseline_encounter_id": baseline_encounter_id,
+        }
+        for entry in baseline_meds
+    }
     return {
         HISTORY_STATE_KEY: {
             "values": dict(history_values),
             "provenance": provenance,
             "reconciliation": {"status": "pending", "baseline_encounter_id": baseline_encounter_id},
             "phone_update": None,
+        },
+        MEDICATIONS_STATE_KEY: {
+            "entries": baseline_meds,
+            "provenance": meds_provenance,
+            "reconciliation": {"status": "pending", "baseline_encounter_id": baseline_encounter_id},
+            "dataset_version": None,
+            "catalog_version": None,
+            "medication_fingerprint": None,
+            "generated_at": None,
         },
         PANSS_STATE_KEY: {ANSWERS_STATE_KEY: {}},
         CSSRS_STATE_KEY: {ANSWERS_STATE_KEY: {}},

@@ -88,6 +88,7 @@ from x_insight.cases import chart as chart_service
 from x_insight.cases import effects as effects_service
 from x_insight.cases import encounters as encounters_service
 from x_insight.cases import history as history_service
+from x_insight.cases import medications as medications_service
 from x_insight.cases import notes as notes_service
 from x_insight.cases import patients as patients_service
 from x_insight.db import get_session
@@ -1053,6 +1054,183 @@ def list_notes(
         "items": [notes_service.safe_note(item) for item in items],
         "total": total,
         "revision": int(encounter["revision"]),
+    }
+    response = JSONResponse(status_code=200, content=content)
+    response.headers["ETag"] = contracts.format_etag(int(encounter["revision"]))
+    return response
+
+
+# --- S20 medications + versioned DDI report (author-only, draft_data) ---
+
+
+class MedicationItem(BaseModel):
+    """Drug-only entry: catalog reference alone (extra=forbid)."""
+
+    model_config = {"extra": "forbid"}
+
+    catalog_drug_id: str = Field(min_length=1, max_length=200)
+
+
+class MedicationsSaveRequest(BaseModel):
+    """Strict medications save body: drug-only entries plus pin/reconcile.
+
+    Structural typing only; semantic validation (unknown catalog identifiers,
+    bad versions, bad reconciliation) lives in
+    :mod:`x_insight.cases.medications` and returns 422/404/503.
+    """
+
+    model_config = {"extra": "forbid"}
+
+    medications: list[MedicationItem]
+    dataset_version: str | None = None
+    reconciliation: dict[str, Any] | None = None
+
+
+def _medications_response(
+    encounter: dict[str, Any],
+    state: dict[str, Any],
+    *,
+    status_code: int,
+    server_timestamp: str | None = None,
+) -> JSONResponse:
+    content: dict[str, Any] = {
+        "encounter": encounters_service.safe_encounter_reference(encounter),
+        "revision": int(encounter["revision"]),
+        "entries": state["entries"],
+        "provenance": state["provenance"],
+        "reconciliation": state["reconciliation"],
+        "dataset_version": state["dataset_version"],
+        "catalog_version": state["catalog_version"],
+        "medication_fingerprint": state["medication_fingerprint"],
+        "generated_at": state["generated_at"],
+        "evaluation": state["evaluation"],
+    }
+    if server_timestamp is not None:
+        content["server_timestamp"] = server_timestamp
+    response = JSONResponse(status_code=status_code, content=content)
+    response.headers["ETag"] = contracts.format_etag(int(content["revision"]))
+    return response
+
+
+def _medications_idempotency_replay(stored: dict[str, Any]) -> JSONResponse:
+    body = dict(stored["response_body"])
+    response = JSONResponse(status_code=int(stored["response_status"]), content=body)
+    revision = body.get("revision")
+    if isinstance(revision, int) and revision >= 1:
+        response.headers["ETag"] = contracts.format_etag(revision)
+    return response
+
+
+@router.get("/encounters/{encounter_id}/medications")
+def get_medications(
+    encounter_id: uuid.UUID, request: Request, session: Session = Depends(get_session)
+) -> JSONResponse:
+    user = _require_user(request, session)
+    if isinstance(user, JSONResponse):
+        return user
+    assert isinstance(user, dict)
+    encounter, state = medications_service.read_medications_for_author(session, encounter_id, user)
+    return _medications_response(encounter, state, status_code=200)
+
+
+@router.post("/encounters/{encounter_id}/medications")
+def save_medications(
+    encounter_id: uuid.UUID,
+    payload: MedicationsSaveRequest,
+    request: Request,
+    session: Session = Depends(get_session),
+) -> JSONResponse:
+    request_id = get_request_id(request)
+    physician = _require_physician_mutation(request, session)
+    if isinstance(physician, JSONResponse):
+        return physician
+    assert isinstance(physician, dict)
+    expected = encounters_service.require_if_match_revision(
+        request.headers.get(contracts.IF_MATCH_HEADER)
+    )
+    key = _idempotency_key_or_none(request)
+    request_hash: str | None = None
+    if key is not None:
+        request_hash = medications_service.idempotency_request_hash(
+            encounter_id,
+            expected,
+            {
+                "medications": [item.model_dump() for item in payload.medications],
+                "dataset_version": payload.dataset_version,
+                "reconciliation": payload.reconciliation,
+            },
+        )
+        stored = identity_service.lookup_idempotency(
+            session,
+            operation=medications_service.MEDICATIONS_SAVE_OPERATION,
+            actor_id=physician["id"],
+            key=key,
+        )
+        if stored is not None:
+            if stored["request_hash"] != request_hash:
+                return _idempotency_conflict(request_id)
+            return _medications_idempotency_replay(stored)
+    encounter, state, server_timestamp = medications_service.save_medications(
+        session,
+        author=physician,
+        encounter_id=encounter_id,
+        expected_revision=expected,
+        medications=[item.model_dump() for item in payload.medications],
+        dataset_version=payload.dataset_version,
+        reconciliation=payload.reconciliation,
+        request_id=request_id,
+    )
+    response_body: dict[str, Any] = {
+        "encounter": encounters_service.safe_encounter_reference(encounter),
+        "revision": int(encounter["revision"]),
+        "entries": state["entries"],
+        "provenance": state["provenance"],
+        "reconciliation": state["reconciliation"],
+        "dataset_version": state["dataset_version"],
+        "catalog_version": state["catalog_version"],
+        "medication_fingerprint": state["medication_fingerprint"],
+        "generated_at": state["generated_at"],
+        "evaluation": state["evaluation"],
+        "server_timestamp": server_timestamp,
+    }
+    if key is not None:
+        assert request_hash is not None
+        identity_service.store_idempotency(
+            session,
+            operation=medications_service.MEDICATIONS_SAVE_OPERATION,
+            actor_id=physician["id"],
+            key=key,
+            request_hash=request_hash,
+            response_status=200,
+            response_body=response_body,
+        )
+    return _medications_response(
+        encounter, state, status_code=200, server_timestamp=server_timestamp
+    )
+
+
+@router.get("/encounters/{encounter_id}/ddi-report")
+def get_ddi_report(
+    encounter_id: uuid.UUID, request: Request, session: Session = Depends(get_session)
+) -> JSONResponse:
+    """Author-only versioned DDI report with stale fencing (reads need no CSRF)."""
+    user = _require_user(request, session)
+    if isinstance(user, JSONResponse):
+        return user
+    assert isinstance(user, dict)
+    encounter, payload = medications_service.read_ddi_report_for_author(session, encounter_id, user)
+    content: dict[str, Any] = {
+        "encounter": encounters_service.safe_encounter_reference(encounter),
+        "revision": int(encounter["revision"]),
+        "report_status": payload["report_status"],
+        "reason": payload["reason"],
+        "report": payload["report"],
+        "medication_fingerprint": payload["medication_fingerprint"],
+        "stored_fingerprint": payload["stored_fingerprint"],
+        "dataset_version": payload["dataset_version"],
+        "catalog_version": payload["catalog_version"],
+        "generated_at": payload["generated_at"],
+        "reconciliation": payload["reconciliation"],
     }
     response = JSONResponse(status_code=200, content=content)
     response.headers["ETag"] = contracts.format_etag(int(encounter["revision"]))

@@ -8,7 +8,9 @@
  * (`draft_data.panss`), S11 adds C-SSRS (`draft_data.cssrs`), and S12 adds
  * structured history (`draft_data.history`) plus the four adverse effects
  * (`draft_data.effects`) — later assessment pages extend `draft_data` keys
- * through the same autosave path (full object on each save).
+ * through the same autosave path (full object on each save). S20 adds the
+ * demo-catalog medication list (`draft_data.medications.entries`, strict
+ * POST .../medications pin) with the versioned DDI evidence panel.
  *
  * States: loading (GET), ready (editor + saving/saved/failed), conflict
  * (412 keeps edits + Reload/Retry reconcile UI, never silent overwrite),
@@ -34,6 +36,7 @@ import { PanssSection } from "../assessments/panss/PanssSection";
 import { CssrsSection } from "../assessments/cssrs/CssrsSection";
 import { HistorySection } from "../history/HistorySection";
 import { EffectsSection } from "../history/EffectsSection";
+import { MedicationsSection } from "../medications/MedicationsSection";
 import { NotesSection } from "../notes/NotesSection";
 import { FollowupBaselinePanel } from "../patients/chart/FollowupBaselinePanel";
 import { useAutosave } from "./useAutosave";
@@ -558,6 +561,25 @@ function EncounterWizard({
       <NotesSection
         encounterId={encounterId}
         page="effects"
+        autosave={autosave}
+        onSessionExpired={sessionExpired}
+      />
+
+      {/* S20 medications + DDI (plan.md §§2.2, 6.3, 9; FR-14-16, FR-20):
+        demo-catalog drug-only selection in the shared autosave body with a
+        strict validating save + explicit follow-up reconciliation, and the
+        versioned DDI evidence panel with stale fencing. Mounted after
+        history/effects, before proposal review. Page notes render separately
+        below via the reusable control (page key matches backend
+        ALLOWED_PAGES). */}
+      <MedicationsSection
+        encounterId={encounterId}
+        autosave={autosave}
+        onSessionExpired={sessionExpired}
+      />
+      <NotesSection
+        encounterId={encounterId}
+        page="medications"
         autosave={autosave}
         onSessionExpired={sessionExpired}
       />

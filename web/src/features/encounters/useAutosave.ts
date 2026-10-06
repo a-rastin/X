@@ -22,7 +22,9 @@
  * `applyServerSnapshot` instead of another PATCH — one saved base, one
  * revision fence, no separate persistence mechanism. S13 page notes bump the
  * revision without changing draft_data and resynchronize through
- * `applyExternalRevision` instead (same fence, editor untouched).
+ * `applyExternalRevision` instead (same fence, editor untouched). S20
+ * medications strict saves change only the medications slice outside PATCH
+ * and resynchronize through `applySavedSlice` (same fence, other keys kept).
  */
 
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -320,6 +322,32 @@ export function useAutosave(options: UseAutosaveOptions) {
     [clearTimer],
   );
 
+  /** Adopt one server-stamped slice after a command POST changed only that
+   * key outside this PATCH path (S20 medications strict save stamps
+   * provenance + pins + reconciliation server-side). Merges the server
+   * section into the editor without touching other keys: the fence advances,
+   * and a currently-saved status advances with it — dirty/failed/conflict
+   * states keep their kind so their own reconcile path still runs and any
+   * pending debounce still saves onto the fresh base. */
+  const applySavedSlice = useCallback(
+    (
+      key: string,
+      value: unknown,
+      revision: number,
+      timestamp: string | null,
+    ) => {
+      setLocalData((previous) => ({ ...previous, [key]: value }));
+      setBaseRevision(revision);
+      setServerTimestamp(timestamp);
+      setSaveState((previous) =>
+        previous.kind === "saved"
+          ? { kind: "saved", revision, serverTimestamp: timestamp }
+          : previous,
+      );
+    },
+    [],
+  );
+
   // Flush pending edits when the page unmounts (hash-route transition).
   useEffect(() => {
     return () => {
@@ -344,6 +372,7 @@ export function useAutosave(options: UseAutosaveOptions) {
     retryOnFreshRevision,
     applyServerSnapshot,
     applyExternalRevision,
+    applySavedSlice,
     saveNow,
   };
 }
