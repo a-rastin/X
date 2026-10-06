@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "reviewer": "owner",
+  "decision": "awaiting_review",
+  "date": "2026-10-06",
+  "record": "TEMPLATE - owner review pending. Do not publish from this template: publication requires an explicit approved_complete or approved_limited decision with this same reviewer/date/record shape.",
+  "parser_version": "ddi-ingestion/0.1.0",
+  "terminology_version": "ddi-terminology/0.1.0",
+  "terminology_checksum": "f89b7142b804a78f3ad39a5ad3a97005f49a0ea63245403cc578e7f4d967d05e",
+  "coverage": {
+    "scope": "limited",
+    "excluded_sources": [
+      {
+        "path": "REPLACE-WITH-STAGING-REPORT-PATH",
+        "reason": "structural count failure pending owner review (see S16.b routing: 15 honest mismatches + 10 terminology/citation files + Simethicone no-section terminal)"
+      }
+    ]
+  },
+  "corrections": [
+    {
+      "source_path": "REPLACE-WITH-STAGING-REPORT-PATH",
+      "span_start": 0,
+      "span_end": 0,
+      "field": "management_note",
+      "corrected_value": "owner-confirmed wording (original raw_text stays unchanged)",
+      "reason": "overlay only: originals under project-documents/ are never modified"
+    }
+  ],
+  "reviewed_evidence": [
+    {
+      "source_path": "REPLACE-WITH-STAGING-REPORT-PATH",
+      "span_start": 0,
+      "span_end": 0,
+      "severity": "serious"
+    }
+  ],
+  "limitations": [
+    "TEMPLATE - real corpus baseline (progress-tracker S15-S17 leads, not re-parsed here): 128 documents, 102 passed / 26 failed, ~30,667 entries; aliases.json draft with 415 pending / 0 approved aliases and terminology_complete=false. Uncovered pairs remain coverage_unavailable; excluded sources above stay named here. Do not claim the corpus is ready."
+  ],
+  "_notes": [
+    "decision must become approved_complete (with coverage.scope complete and empty excluded_sources) or approved_limited (with coverage.scope limited, non-empty excluded_sources with reasons, and non-empty limitations) before publish accepts it.",
+    "parser/terminology versions and terminology_checksum must exactly match the staging candidate_dataset.json built from the reviewed sources.",
+    "every contraindicated/serious entry in the included set needs a matching reviewed_evidence record (source_path + span_start/span_end); any included count failure, unresolved name, or colliding alias rejects the publish.",
+    "corrections reference real source spans and are stored as overlays; the staged raw_text and the originals under project-documents/ are never rewritten.",
+    "The 2026-10-04 owner decision permits a reviewed limited-coverage release; uncovered pairs remain coverage_unavailable (S19 checker), never safe/no-interaction."
+  ]
+}

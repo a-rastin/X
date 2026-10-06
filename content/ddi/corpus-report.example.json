@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "parser_version": "ddi-ingestion/0.1.0",
+  "terminology_version": "test-s18/1",
+  "terminology_checksum": "52d13d7673e723c73ba0e8896656f8509f761e79c3ca2f8ce651d40ea72b85b6",
+  "discovered": 2,
+  "processed": 2,
+  "passed": 2,
+  "failed": 0,
+  "severity_counts": {
+    "serious": 2
+  },
+  "unique_pairs": 1,
+  "duplicates": 1,
+  "conflicts": [],
+  "unknown_names": [],
+  "hashes": {
+    "documents": [
+      {
+        "source_path": "Alpha.txt",
+        "checksum": "c675b9f72bac66a5f19a4f0d5cea7255536db141f30e54f05441eb4f85abd636"
+      },
+      {
+        "source_path": "Beta.txt",
+        "checksum": "1b87a9052739ccff672700852170943eaf89f319a4ccef5caf5308cb505e9020"
+      }
+    ],
+    "terminology_checksum": "52d13d7673e723c73ba0e8896656f8509f761e79c3ca2f8ce651d40ea72b85b6"
+  },
+  "review_records": {
+    "high_risk": [
+      {
+        "source_path": "Alpha.txt",
+        "source_category": "serious",
+        "interacting_name": "Beta",
+        "raw_text": "Beta increases the level of Alpha by mechanism. Avoid combination.",
+        "span_start": 7,
+        "span_end": 8
+      },
+      {
+        "source_path": "Beta.txt",
+        "source_category": "serious",
+        "interacting_name": "Alpha",
+        "raw_text": "Alpha increases the level of Beta by mechanism. Avoid combination.",
+        "span_start": 7,
+        "span_end": 8
+      }
+    ],
+    "conflicts": [],
+    "unresolved": [],
+    "anomalies": []
+  },
+  "manifest_decision": "approved_complete"
+}

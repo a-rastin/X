@@ -28,3 +28,23 @@ invalid terminology file fails and writes a report.
 
 See the [S17 outcome and verification commands](project-documents/dev/progress-tracker.md#s17--controlled-medication-concepts-and-aliases)
 and the [DDI decision record](context/ddi.md).
+
+## Immutable DDI release (S18)
+
+From `backend/`, publish a staged candidate with an owner-reviewed manifest
+(`content/ddi/review-manifest.template.json` defaults to `awaiting_review`
+and never imports):
+
+```sh
+uv run python -m x_insight.ddi publish \
+  --staging /tmp/x-s17-ddi \
+  --manifest ../content/ddi/review-manifest.template.json
+```
+
+Only explicit owner `approved_complete`/`approved_limited` publishes; the same
+content hash reuses version `ddi-<12hex>`, changed sources yield a new version,
+and rejected/invalid publishes leave the prior release readable. The real
+corpus remains `awaiting_review` (0 approved aliases + 26 structural
+failures); S18 verification used synthetic fixtures only.
+
+See the [S18 outcome and verification commands](project-documents/dev/progress-tracker.md#s18--build-review-and-publish-an-immutable-ddi-release-2026-10-06).
