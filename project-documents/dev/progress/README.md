@@ -3,8 +3,8 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest recorded checkpoint is [S23.a](s23-a.md); its handoff identifies
-**S23.b** as the remaining inference work before integration.
+The latest recorded checkpoint is [S23.b](s23-b.md); S23.b completes inference
+(S23.a+S23.b green); S25 then S24 own the integration remainder.
 
 ## Reading and updating progress
 
@@ -54,3 +54,4 @@ The latest recorded checkpoint is [S23.a](s23-a.md); its handoff identifies
 | S21 | [Safely import and inspect XMLBIF drafts (2026-10-06)](s21.md) |
 | S22 | [Enforce model semantics and admission limits (2026-10-06)](s22.md) |
 | S23.a | [Validate every CPT and build effective artifact (S23 checkpoint) (2026-10-06)](s23-a.md) |
+| S23.b | [Bounded child-process exact inference (S23 inference checkpoint) (2026-10-06)](s23-b.md) |

@@ -54,6 +54,8 @@ from __future__ import annotations
 
 import hashlib
 import importlib.metadata as _metadata
+import math
+import multiprocessing as mp
 import re
 import sys
 from collections.abc import Mapping, Sequence
@@ -87,6 +89,25 @@ PINNED_ENGINE_CONFIG: dict[str, Any] = {
     "elimination_order": "source_order",
     "tie_break": "source_order",
 }
+
+#: Pinned runtime versions for S23.b replay (recorded in RuntimeRecord).
+PINNED_PYTHON_VERSION = "3.12.14"
+PINNED_PGMPY_VERSION = "1.1.2"
+PINNED_LXML_VERSION = "6.1.3"
+
+#: Engine comparison tolerance, selected/validated/pinned with the execution
+#: policy. Replay must match within this; the asymmetric transpose fixture
+#: differs by ~0.15, so 1e-6 distinguishes float64 determinism from a mapping
+#: bug with margin. Recorded on every InferenceResult.
+INFERENCE_COMPARISON_TOLERANCE = 1e-6
+
+#: Default time budget for one bounded inference child (seconds).
+INFERENCE_TIMEOUT_SECS = 30.0
+
+#: Engineering bounds for inference admission (not clinical thresholds).
+MAX_INFERENCE_NODES = 64
+MAX_INFERENCE_CELLS = 131_072
+MAX_EFFECTIVE_BYTES_FOR_INFERENCE = 1_048_576
 
 _DECIMAL_RE = re.compile(r"^-?\d+(?:\.\d+)?$")
 _NONFINITE_TOKENS = frozenset(
@@ -746,3 +767,383 @@ def build_effective_artifact(
         engine_config=dict(resolved_config),
         runtime=runtime,
     )
+
+
+# --- S23.b: bounded exact inference + replay (seam T5) ---
+
+
+class InferenceError(ValueError):
+    """Hard failure for inference/replay: explicit, never approximated.
+
+    Attributes: ``code`` (stable short string), ``message`` (bounded).
+    """
+
+    def __init__(self, code: str, message: str) -> None:
+        super().__init__(f"{code}: {message}")
+        self.code = code
+        self.message = message[:MAX_MESSAGE_CHARS]
+
+
+@dataclass(frozen=True)
+class NodePosterior:
+    node_id: str
+    states: tuple[str, ...]
+    probabilities: tuple[float, ...]
+
+
+@dataclass(frozen=True)
+class InferenceResult:
+    effective_sha256: str
+    query_nodes: tuple[str, ...]
+    evidence: Mapping[str, Any]
+    engine_config: Mapping[str, Any]
+    runtime: RuntimeRecord
+    posteriors: tuple[NodePosterior, ...]
+    tolerance: float
+    float_dtype: str
+    elimination_order: str
+    tie_break: str
+
+
+def _require_pinned_runtime(runtime: RuntimeRecord) -> None:
+    if (
+        runtime.python_version != PINNED_PYTHON_VERSION
+        or runtime.pgmpy_version != PINNED_PGMPY_VERSION
+        or runtime.lxml_version != PINNED_LXML_VERSION
+        or runtime.policy_version != CPT_POLICY_VERSION
+        or dict(runtime.engine_config) != dict(PINNED_ENGINE_CONFIG)
+    ):
+        raise InferenceError(
+            "runtime_mismatch",
+            "Runtime/record must match pinned "
+            f"{PINNED_PYTHON_VERSION}/{PINNED_PGMPY_VERSION}/"
+            f"{PINNED_LXML_VERSION}/{CPT_POLICY_VERSION}.",
+        )
+    py_v, pgmpy_v, lxml_v = _pinned_versions()
+    if py_v != PINNED_PYTHON_VERSION or pgmpy_v != PINNED_PGMPY_VERSION:
+        raise InferenceError("runtime_mismatch", "Current runtime differs from pinned runtime.")
+    if lxml_v != PINNED_LXML_VERSION:
+        raise InferenceError("runtime_mismatch", "Current runtime differs from pinned runtime.")
+
+
+def _checked_tables(
+    artifact: EffectiveArtifact,
+) -> tuple[list[str], dict[str, ValidatedCptTable], dict[str, EngineTable]]:
+    if not isinstance(artifact, EffectiveArtifact):
+        raise InferenceError("wrong_structure", "Inference artifact must be an EffectiveArtifact.")
+    if dict(artifact.evidence) != {}:
+        raise InferenceError("evidence_not_empty", "Execution evidence must always be empty.")
+    if dict(artifact.engine_config) != dict(PINNED_ENGINE_CONFIG):
+        raise InferenceError("config_unpinned", "Engine config must equal the pinned config.")
+    _require_pinned_runtime(artifact.runtime)
+    if not artifact.tables or not artifact.engine_tables:
+        raise InferenceError("artifact_mismatch", "Effective artifact holds no tables.")
+    if len(artifact.tables) != len(artifact.engine_tables):
+        raise InferenceError("artifact_mismatch", "Tables and engine tables differ in count.")
+    var_order = [t.node_id for t in artifact.tables]
+    if len(set(var_order)) != len(var_order):
+        raise InferenceError("artifact_mismatch", "Artifact node order holds duplicates.")
+    if len(var_order) > MAX_INFERENCE_NODES:
+        raise InferenceError(
+            "inference_resource",
+            f"Artifact holds {len(var_order)} nodes, limit {MAX_INFERENCE_NODES}.",
+        )
+    if len(bytes(artifact.effective_bytes)) > MAX_EFFECTIVE_BYTES_FOR_INFERENCE:
+        raise InferenceError("inference_resource", "Effective bytes exceed the inference budget.")
+    if hashlib.sha256(bytes(artifact.effective_bytes)).hexdigest() != artifact.effective_sha256:
+        raise InferenceError("artifact_mismatch", "Effective hash does not match effective bytes.")
+    by_table = {t.node_id: t for t in artifact.tables}
+    by_engine: dict[str, EngineTable] = {}
+    total_cells = 0
+    for engine in artifact.engine_tables:
+        if engine.node_id not in by_table:
+            raise InferenceError(
+                "artifact_mismatch", f"Engine table for {engine.node_id!r} is not declared."
+            )
+        by_engine[engine.node_id] = engine
+    if [e.node_id for e in artifact.engine_tables] != var_order:
+        raise InferenceError("artifact_mismatch", "Engine tables must follow variable order.")
+    for table in artifact.tables:
+        engine = by_engine[table.node_id]
+        if tuple(engine.evidence_order) != tuple(table.parent_ids):
+            raise InferenceError(
+                "artifact_mismatch", f"Engine evidence order for {table.node_id!r} drifted."
+            )
+        n_states = len(table.states)
+        n_cols = len(table.rows)
+        total_cells += n_states * max(n_cols, 1)
+        if len(engine.units_2d) != n_states or len(engine.values_2d) != n_states:
+            raise InferenceError(
+                "artifact_mismatch", f"Engine matrix shape for {table.node_id!r} drifted."
+            )
+        for s in range(n_states):
+            if len(engine.units_2d[s]) != n_cols or len(engine.values_2d[s]) != n_cols:
+                raise InferenceError(
+                    "artifact_mismatch", f"Engine matrix shape for {table.node_id!r} drifted."
+                )
+        for s in range(n_states):
+            for c in range(n_cols):
+                units = engine.units_2d[s][c]
+                value = engine.values_2d[s][c]
+                if not isinstance(units, int):
+                    raise InferenceError(
+                        "inference_numeric", f"Engine units for {table.node_id!r}."
+                    )
+                if not isinstance(value, float) or not math.isfinite(value):
+                    raise InferenceError(
+                        "inference_numeric", f"Engine value for {table.node_id!r} is nonfinite."
+                    )
+                if value < 0.0 or value > 1.0:
+                    raise InferenceError(
+                        "inference_numeric", f"Engine value for {table.node_id!r} out of range."
+                    )
+        for c in range(n_cols):
+            if sum(engine.units_2d[s][c] for s in range(n_states)) != UNITS_FOR_100_PCT:
+                raise InferenceError(
+                    "inference_numeric", f"Engine column {c} for {table.node_id!r} is not exact."
+                )
+            col_sum = sum(engine.values_2d[s][c] for s in range(n_states))
+            if not math.isfinite(col_sum) or abs(col_sum - 1.0) > 1e-9:
+                raise InferenceError(
+                    "inference_numeric", f"Engine column {c} for {table.node_id!r} is not exact."
+                )
+    if total_cells > MAX_INFERENCE_CELLS:
+        raise InferenceError(
+            "inference_resource",
+            f"Artifact holds {total_cells} cells, limit {MAX_INFERENCE_CELLS}.",
+        )
+    return var_order, by_table, by_engine
+
+
+def _infer_worker(artifact: EffectiveArtifact, query_nodes: tuple[str, ...], queue: Any) -> None:
+    """Child-process target: build the pinned pgmpy model and query empty evidence."""
+    try:
+        from pgmpy.factors.discrete import TabularCPD
+        from pgmpy.inference import VariableElimination
+        from pgmpy.models import DiscreteBayesianNetwork
+
+        var_order = [t.node_id for t in artifact.tables]
+        by_table = {t.node_id: t for t in artifact.tables}
+        by_engine = {e.node_id: e for e in artifact.engine_tables}
+        edges = [(p, t.node_id) for t in artifact.tables for p in t.parent_ids]
+        model = DiscreteBayesianNetwork(edges)
+        for name in var_order:
+            if name not in model.nodes():
+                model.add_node(name)
+        cpds = []
+        for name in var_order:
+            table = by_table[name]
+            engine = by_engine[name]
+            values = [[float(v) for v in row] for row in engine.values_2d]
+            if not engine.evidence_order:
+                cpd = TabularCPD(
+                    name, len(table.states), values, state_names={name: list(table.states)}
+                )
+            else:
+                cards = [len(by_table[p].states) for p in engine.evidence_order]
+                state_names: dict[str, list[str]] = {name: list(table.states)}
+                for parent in engine.evidence_order:
+                    state_names[parent] = list(by_table[parent].states)
+                cpd = TabularCPD(
+                    name,
+                    len(table.states),
+                    values,
+                    evidence=list(engine.evidence_order),
+                    evidence_card=cards,
+                    state_names=state_names,
+                )
+            cpds.append(cpd)
+        model.add_cpds(*cpds)
+        model.check_model()
+        elimination = VariableElimination(model)
+        posteriors: list[tuple[str, tuple[str, ...], tuple[float, ...]]] = []
+        for node in query_nodes:
+            others = [n for n in var_order if n != node]
+            answer = elimination.query(
+                [node], evidence=None, elimination_order=others, joint=False, show_progress=False
+            )
+            factor = answer[node]
+            want_states = tuple(by_table[node].states)
+            got_states = tuple(str(s) for s in factor.state_names[node])
+            if got_states != want_states:
+                raise ValueError(f"State order drifted for {node!r}.")
+            probs = tuple(float(v) for v in factor.values)
+            posteriors.append((node, want_states, probs))
+        queue.put(("ok", posteriors))
+    except Exception as exc:  # noqa: BLE001 - child must report, never raise
+        queue.put(("error", f"{type(exc).__name__}: {exc}"))
+
+
+def _run_bounded_inference(
+    artifact: EffectiveArtifact, query_tuple: tuple[str, ...], timeout_secs: float
+) -> list[tuple[str, tuple[str, ...], tuple[float, ...]]]:
+    ctx = mp.get_context("spawn")
+    queue: Any = ctx.Queue()
+    proc = ctx.Process(target=_infer_worker, args=(artifact, query_tuple, queue))
+    proc.start()
+    proc.join(timeout_secs)
+    if proc.is_alive():
+        proc.terminate()
+        proc.join(5)
+        raise InferenceError(
+            "inference_timeout", f"Exact inference exceeded the {timeout_secs}s time budget."
+        )
+    if proc.exitcode != 0:
+        raise InferenceError(
+            "inference_crash", f"Inference child exited with code {proc.exitcode}."
+        )
+    try:
+        status, payload = queue.get(timeout=5)
+    except Exception as exc:
+        raise InferenceError("inference_crash", "Inference child returned no result.") from exc
+    finally:
+        try:
+            proc.close()
+        except Exception:
+            pass
+    if status != "ok":
+        raise InferenceError("inference_numeric", str(payload)[:MAX_MESSAGE_CHARS])
+    return payload
+
+
+def infer_effective(
+    artifact: EffectiveArtifact,
+    *,
+    query_nodes: Sequence[str] | None = None,
+    patient_projection: Mapping[str, Any] | None = None,
+    timeout_secs: float | None = None,
+) -> InferenceResult:
+    """Run deterministic exact inference over one effective artifact.
+
+    Empty evidence only: ``patient_projection`` is accepted as provenance but
+    never supplied to the engine, so an observed patient value cannot clamp a
+    node. No base-table fallbacks and no hard/soft/virtual/likelihood
+    evidence. The pinned engine uses float64 with deterministic
+    source-order elimination/tie-breaking in a bounded child process.
+    Numerical/resource failures raise :class:`InferenceError` without
+    approximation.
+    """
+    if patient_projection is not None and not isinstance(patient_projection, Mapping):
+        raise InferenceError("wrong_structure", "patient_projection must be a mapping.")
+    if timeout_secs is None:
+        timeout = INFERENCE_TIMEOUT_SECS
+    else:
+        if not isinstance(timeout_secs, (int, float)) or not math.isfinite(float(timeout_secs)):
+            raise InferenceError("wrong_structure", "timeout_secs must be a finite number.")
+        timeout = float(timeout_secs)
+        if timeout <= 0:
+            raise InferenceError("wrong_structure", "timeout_secs must be positive.")
+    var_order, _, _ = _checked_tables(artifact)
+    if query_nodes is None:
+        query_tuple = tuple(artifact.query_nodes)
+    else:
+        if not isinstance(query_nodes, (list, tuple)) or not all(
+            isinstance(q, str) for q in query_nodes
+        ):
+            raise InferenceError("wrong_structure", "query_nodes must list declared nodes.")
+        query_tuple = tuple(query_nodes)
+        if not query_tuple:
+            raise InferenceError("wrong_structure", "query_nodes must not be empty.")
+        if len(set(query_tuple)) != len(query_tuple):
+            raise InferenceError("wrong_structure", "query_nodes holds duplicates.")
+        allowed = set(artifact.query_nodes)
+        for q in query_tuple:
+            if q not in allowed:
+                raise InferenceError(
+                    "undeclared_query", f"Query node {q!r} is not in the artifact query."
+                )
+    raw = _run_bounded_inference(artifact, query_tuple, timeout)
+    posteriors: list[NodePosterior] = []
+    for node_id, states, probs in raw:
+        if len(probs) != len(states) or not states:
+            raise InferenceError("inference_numeric", f"Posterior shape drifted for {node_id!r}.")
+        for value in probs:
+            if not isinstance(value, float) or not math.isfinite(value):
+                raise InferenceError(
+                    "inference_numeric", f"Posterior for {node_id!r} is nonfinite."
+                )
+            if value < -1e-9 or value > 1.0 + 1e-9:
+                raise InferenceError(
+                    "inference_numeric", f"Posterior for {node_id!r} out of range."
+                )
+        if abs(sum(probs) - 1.0) > 1e-6:
+            raise InferenceError("inference_numeric", f"Posterior for {node_id!r} is not exact.")
+        posteriors.append(
+            NodePosterior(node_id=node_id, states=tuple(states), probabilities=tuple(probs))
+        )
+    return InferenceResult(
+        effective_sha256=artifact.effective_sha256,
+        query_nodes=query_tuple,
+        evidence={},
+        engine_config=dict(PINNED_ENGINE_CONFIG),
+        runtime=artifact.runtime,
+        posteriors=tuple(posteriors),
+        tolerance=INFERENCE_COMPARISON_TOLERANCE,
+        float_dtype="float64",
+        elimination_order="source_order",
+        tie_break="source_order",
+    )
+
+
+def replay(
+    artifact: EffectiveArtifact,
+    expected: InferenceResult,
+    *,
+    patient_projection: Mapping[str, Any] | None = None,
+    timeout_secs: float | None = None,
+) -> InferenceResult:
+    """Replay frozen CPTs/query/configuration without provider or MCP access.
+
+    Re-executes :func:`infer_effective` over the stored artifact and requires
+    an exact match within the pinned tolerance. Any drift in hash, query,
+    configuration, runtime, or posteriors raises :class:`InferenceError`.
+    """
+    if not isinstance(artifact, EffectiveArtifact):
+        raise InferenceError("wrong_structure", "Replay artifact must be an EffectiveArtifact.")
+    if not isinstance(expected, InferenceResult):
+        raise InferenceError("wrong_structure", "Replay expectation must be an InferenceResult.")
+    if expected.effective_sha256 != artifact.effective_sha256:
+        raise InferenceError("artifact_mismatch", "Replay hash does not match the artifact.")
+    if dict(artifact.evidence) != {} or dict(expected.evidence) != {}:
+        raise InferenceError("evidence_not_empty", "Replay evidence must always be empty.")
+    if dict(artifact.engine_config) != dict(PINNED_ENGINE_CONFIG):
+        raise InferenceError("config_unpinned", "Artifact engine config drifted from pinned.")
+    if dict(expected.engine_config) != dict(PINNED_ENGINE_CONFIG):
+        raise InferenceError("config_unpinned", "Expected engine config drifted from pinned.")
+    if (
+        expected.tolerance != INFERENCE_COMPARISON_TOLERANCE
+        or expected.float_dtype != "float64"
+        or expected.elimination_order != "source_order"
+        or expected.tie_break != "source_order"
+    ):
+        raise InferenceError("config_unpinned", "Expected execution policy drifted from pinned.")
+    _require_pinned_runtime(artifact.runtime)
+    _require_pinned_runtime(expected.runtime)
+    if artifact.runtime != expected.runtime:
+        raise InferenceError("runtime_mismatch", "Replay runtime differs from inference runtime.")
+    if not expected.query_nodes or set(expected.query_nodes) - set(artifact.query_nodes):
+        raise InferenceError("artifact_mismatch", "Replay query does not match the artifact.")
+    fresh = infer_effective(
+        artifact,
+        query_nodes=list(expected.query_nodes),
+        patient_projection=patient_projection,
+        timeout_secs=timeout_secs,
+    )
+    want = {p.node_id: p for p in expected.posteriors}
+    got = {p.node_id: p for p in fresh.posteriors}
+    if set(want) != set(got):
+        raise InferenceError("replay_mismatch", "Replay posteriors cover different nodes.")
+    for node_id, want_post in want.items():
+        got_post = got[node_id]
+        if tuple(want_post.states) != tuple(got_post.states):
+            raise InferenceError("replay_mismatch", f"Replay state order drifted for {node_id!r}.")
+        if len(want_post.probabilities) != len(got_post.probabilities):
+            raise InferenceError("replay_mismatch", f"Replay shape drifted for {node_id!r}.")
+        for a, b in zip(want_post.probabilities, got_post.probabilities):
+            if not math.isfinite(a) or not math.isfinite(b):
+                raise InferenceError("replay_mismatch", f"Replay nonfinite for {node_id!r}.")
+            if abs(a - b) > INFERENCE_COMPARISON_TOLERANCE:
+                raise InferenceError(
+                    "replay_mismatch", f"Replay posterior drifted for {node_id!r}."
+                )
+    return fresh

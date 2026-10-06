@@ -1,24 +1,28 @@
-"""Validate every CPT and convert to an effective artifact (S23.a, seam T5, FR-33-34/NFR-04).
+"""Validate every CPT, convert to an effective artifact, and run exact inference (S23.a+b, seam T5).
 
 Seam T5 only: ``validate`` (S21) to build fixtures plus ``validate_cpts`` /
-``build_effective_artifact``. No HTTP, no DB, no pgmpy inference call, no
-provider/MCP. Expected values are independently worked literals, never
-implementation output. Synthetic fixtures only, no clinical content.
+``build_effective_artifact`` (S23.a) and ``infer_effective`` / ``replay``
+(S23.b). No HTTP, no DB, no provider/MCP. Expected values are independently
+worked literals, never implementation output. Synthetic fixtures only.
 
 Slices (one observable behavior at a time):
-A. Valid two-node conversion: exact integer units, source preserved, effective
-   hash frozen, ordered TABLEs, metadata/PROPERTY kept, runtime pinned.
-B. Rejection matrix: omitted/duplicate/extra table/row, changed ordering or
-   structure, malformed/boolean/null/nonfinite/out-of-range/excess-precision/
+A. Valid two-node conversion (S23.a): exact integer units, source preserved,
+   effective hash frozen, ordered TABLEs, metadata/PROPERTY kept, runtime pinned.
+B. Rejection matrix (S23.a): omitted/duplicate/extra table/row, changed ordering
+   or structure, malformed/boolean/null/nonfinite/out-of-range/excess-precision/
    inexact-total values are rejected with distinct codes, tables==() on
    invalid, never silently normalized.
-C. Transpose guard: asymmetric two-parent fixture proves child-fastest /
-   last-parent-next / first-slowest mapping with an explicit engine literal;
-   transposed row order or swapped parents rejected.
-
-Steps 1+4 (inference execution P(A)/P(B) + bounded replay) belong to S23.b
-and are NOT tested here: no test here calls pgmpy inference or checks
-posterior values.
+C. Transpose guard conversion (S23.a): asymmetric two-parent fixture proves
+   child-fastest / last-parent-next / first-slowest mapping with an explicit
+   engine literal; transposed row order or swapped parents rejected.
+D. Two-node exact inference (S23.b slice 1): empty-evidence P(A=yes)=0.20 and
+   P(B=yes)=0.22; observed projection never clamps; no fallbacks/evidence.
+E. Asymmetric execution guard (S23.b slice 2): two-parent inference proves the
+   mapping; transposed order would give different posteriors.
+F. Replay + bounded isolation + errors (S23.b slice 3): frozen replay matches
+   under pinned runtime with provider unavailable and always empty evidence;
+   numeric/resource failures raise without approximation; bounded child process;
+   tolerance pinned with execution policy.
 """
 
 from __future__ import annotations
@@ -648,3 +652,320 @@ def test_transposed_engine_matrix_differs_from_correct_literal() -> None:
     engine_c = [t for t in artifact.engine_tables if t.node_id == "C"][0]
     assert engine_c.units_2d == correct
     assert engine_c.units_2d != transposed
+
+
+# --- Slice D (S23.b slice 1): two-node exact inference, empty evidence only ---
+
+
+def test_infer_two_node_empty_evidence_yields_worked_marginals() -> None:
+    from x_insight.models.inference import INFERENCE_COMPARISON_TOLERANCE, infer_effective
+
+    doc = validate(_two_node_xml())
+    artifact = build_effective_artifact(doc, _valid_two_payload(doc.source_sha256))
+
+    result = infer_effective(artifact)
+
+    # Pinned execution policy: empty evidence, float64, source-order elimination.
+    assert dict(result.evidence) == {}
+    assert result.query_nodes == ("A", "B")
+    assert result.float_dtype == "float64"
+    assert result.elimination_order == "source_order"
+    assert result.tie_break == "source_order"
+    assert result.tolerance == INFERENCE_COMPARISON_TOLERANCE == 1e-6
+    assert result.effective_sha256 == artifact.effective_sha256
+    assert dict(result.engine_config) == dict(PINNED_ENGINE_CONFIG)
+    # Independently worked literals, never produced by the impl under test:
+    # P(A=yes)=20/100=0.20; P(B=yes)=0.1*0.8+0.7*0.2=0.08+0.14=0.22.
+    by_node = {p.node_id: p for p in result.posteriors}
+    assert by_node["A"].states == ("no", "yes")
+    assert by_node["B"].states == ("no", "yes")
+    assert abs(by_node["A"].probabilities[0] - 0.80) <= 1e-6
+    assert abs(by_node["A"].probabilities[1] - 0.20) <= 1e-6
+    assert abs(by_node["B"].probabilities[0] - 0.78) <= 1e-6
+    assert abs(by_node["B"].probabilities[1] - 0.22) <= 1e-6
+    # Deterministic repeat: same bounded execution gives identical posteriors.
+    again = infer_effective(artifact)
+    again_by = {p.node_id: p for p in again.posteriors}
+    for node in ("A", "B"):
+        for a, b in zip(by_node[node].probabilities, again_by[node].probabilities):
+            assert abs(a - b) <= 1e-12
+
+
+def test_observed_projection_does_not_clamp_node() -> None:
+    from x_insight.models.inference import infer_effective
+
+    doc = validate(_two_node_xml())
+    artifact = build_effective_artifact(doc, _valid_two_payload(doc.source_sha256))
+
+    # Observed patient values are provenance only; execution evidence stays empty.
+    observed = {"A": "yes", "B": "no"}
+    result = infer_effective(artifact, patient_projection=observed)
+
+    assert dict(result.evidence) == {}
+    by_node = {p.node_id: p for p in result.posteriors}
+    assert abs(by_node["A"].probabilities[1] - 0.20) <= 1e-6
+    assert abs(by_node["B"].probabilities[1] - 0.22) <= 1e-6
+    # Same as without any projection: the observed value did not clamp.
+    plain = infer_effective(artifact)
+    plain_by = {p.node_id: p for p in plain.posteriors}
+    for node in ("A", "B"):
+        for a, b in zip(by_node[node].probabilities, plain_by[node].probabilities):
+            assert abs(a - b) <= 1e-12
+
+
+def test_infer_rejects_nonempty_evidence_without_approximation() -> None:
+    import dataclasses
+
+    from x_insight.models.inference import InferenceError, infer_effective
+
+    doc = validate(_two_node_xml())
+    artifact = build_effective_artifact(doc, _valid_two_payload(doc.source_sha256))
+    clamped = dataclasses.replace(artifact, evidence={"A": "yes"})
+
+    try:
+        infer_effective(clamped)
+    except InferenceError as exc:
+        assert exc.code == "evidence_not_empty"
+    else:
+        raise AssertionError("nonempty evidence inferred")
+
+
+def test_infer_uses_effective_tables_not_source_placeholders() -> None:
+    from x_insight.models.inference import infer_effective
+
+    doc = validate(_two_node_xml())
+    # Registered source placeholders are uniform 0.5, never the accepted CPTs.
+    assert doc.source_bytes.count(b"0.5 0.5") == 3
+    artifact = build_effective_artifact(doc, _valid_two_payload(doc.source_sha256))
+
+    result = infer_effective(artifact)
+    by_node = {p.node_id: p for p in result.posteriors}
+    # Accepted CPTs give 0.20/0.22, not the 0.5 placeholder marginals.
+    assert abs(by_node["A"].probabilities[1] - 0.20) <= 1e-6
+    assert abs(by_node["A"].probabilities[1] - 0.5) > 0.1
+    assert abs(by_node["B"].probabilities[1] - 0.22) <= 1e-6
+    assert abs(by_node["B"].probabilities[1] - 0.5) > 0.1
+
+
+# --- Slice E (S23.b slice 2): asymmetric execution proves the mapping ---
+
+
+def _asymmetric_infer_payload(network_hash: str) -> dict:
+    # P1 80/20 breaks symmetry so a parent-reversed mapping changes P(C).
+    # C rows stay the S23.a asymmetric fixture: 90/10, 80/20, 30/70, 10/90.
+    return {
+        "network_hash": network_hash,
+        "tables": [
+            {
+                "node_id": "P1",
+                "parent_ids": [],
+                "states": ["no", "yes"],
+                "rows": [{"parent_states": [], "percentages": ["80", "20"]}],
+            },
+            {
+                "node_id": "P2",
+                "parent_ids": [],
+                "states": ["no", "yes"],
+                "rows": [{"parent_states": [], "percentages": ["50", "50"]}],
+            },
+            {
+                "node_id": "C",
+                "parent_ids": ["P1", "P2"],
+                "states": ["no", "yes"],
+                "rows": [
+                    {"parent_states": ["no", "no"], "percentages": ["90", "10"]},
+                    {"parent_states": ["no", "yes"], "percentages": ["80", "20"]},
+                    {"parent_states": ["yes", "no"], "percentages": ["30", "70"]},
+                    {"parent_states": ["yes", "yes"], "percentages": ["10", "90"]},
+                ],
+            },
+        ],
+    }
+
+
+def test_infer_two_parent_asymmetric_proves_mapping() -> None:
+    import hashlib
+
+    from lxml import etree
+
+    from x_insight.models.inference import infer_effective
+
+    source = _two_parent_xml()
+    doc = validate(source)
+    before = bytes(doc.source_bytes)
+    payload = _asymmetric_infer_payload(doc.source_sha256)
+    artifact = build_effective_artifact(doc, payload)
+
+    # Registered XML/hash unchanged; effective XML holds every accepted table.
+    assert doc.source_bytes == before == source
+    assert artifact.source_sha256 == hashlib.sha256(source).hexdigest()
+    assert artifact.effective_sha256 == hashlib.sha256(artifact.effective_bytes).hexdigest()
+    root = etree.fromstring(bytes(artifact.effective_bytes))
+    definitions = {d.findtext("FOR"): d for d in root.find("NETWORK").findall("DEFINITION")}
+    assert definitions["C"].findtext("TABLE").split() == [
+        "0.9",
+        "0.1",
+        "0.8",
+        "0.2",
+        "0.3",
+        "0.7",
+        "0.1",
+        "0.9",
+    ]
+    engine_c = [t for t in artifact.engine_tables if t.node_id == "C"][0]
+    assert engine_c.evidence_order == ("P1", "P2")
+    assert engine_c.units_2d == (
+        (90_000_000, 80_000_000, 30_000_000, 10_000_000),
+        (10_000_000, 20_000_000, 70_000_000, 90_000_000),
+    )
+
+    result = infer_effective(artifact)
+    assert dict(result.evidence) == {}
+    by_node = {p.node_id: p for p in result.posteriors}
+    # Independently worked: P(P1=yes)=0.20, P(P2=yes)=0.50,
+    # P(C=yes)=0.8*0.5*0.1+0.8*0.5*0.2+0.2*0.5*0.7+0.2*0.5*0.9=0.28.
+    assert abs(by_node["P1"].probabilities[1] - 0.20) <= 1e-6
+    assert abs(by_node["P2"].probabilities[1] - 0.50) <= 1e-6
+    assert abs(by_node["C"].probabilities[1] - 0.28) <= 1e-6
+    assert abs(by_node["C"].probabilities[0] - 0.72) <= 1e-6
+    # Transposed middle columns would give 0.43, far outside tolerance.
+    transposed_yes = 0.43  # 0.04+0.28+0.02+0.09 with (no,yes)<->(yes,no) swapped
+    assert abs(0.28 - transposed_yes) > 0.1
+    assert abs(by_node["C"].probabilities[1] - transposed_yes) > 0.1
+
+
+# --- Slice F (S23.b slice 3): replay + bounded isolation + errors ---
+
+
+def test_replay_matches_under_pinned_runtime_with_provider_unavailable() -> None:
+    import socket
+
+    from x_insight.models.inference import (
+        INFERENCE_COMPARISON_TOLERANCE,
+        PINNED_ENGINE_CONFIG,
+        infer_effective,
+        replay,
+    )
+
+    doc = validate(_two_node_xml())
+    artifact = build_effective_artifact(doc, _valid_two_payload(doc.source_sha256))
+    original = infer_effective(artifact)
+
+    # Provider/network unavailable: replay uses only frozen CPTs/query/config.
+    real_create_connection = socket.create_connection
+
+    def _unavailable(*args, **kwargs):  # type: ignore[no-untyped-def]
+        raise OSError("provider unavailable")
+
+    socket.create_connection = _unavailable  # type: ignore[method-assign]
+    try:
+        repeated = replay(artifact, original)
+    finally:
+        socket.create_connection = real_create_connection  # type: ignore[method-assign]
+
+    assert dict(repeated.evidence) == {}
+    assert repeated.query_nodes == original.query_nodes == ("A", "B")
+    assert repeated.effective_sha256 == artifact.effective_sha256
+    assert dict(repeated.engine_config) == dict(PINNED_ENGINE_CONFIG)
+    assert repeated.runtime.python_version == "3.12.14"
+    assert repeated.runtime.pgmpy_version == "1.1.2"
+    assert repeated.runtime.lxml_version == "6.1.3"
+    assert repeated.runtime.policy_version == "cpt-decimal-v1"
+    assert repeated.tolerance == INFERENCE_COMPARISON_TOLERANCE == 1e-6
+    want = {p.node_id: p for p in original.posteriors}
+    got = {p.node_id: p for p in repeated.posteriors}
+    for node in ("A", "B"):
+        assert want[node].states == got[node].states
+        for a, b in zip(want[node].probabilities, got[node].probabilities):
+            assert abs(a - b) <= INFERENCE_COMPARISON_TOLERANCE
+
+
+def test_replay_mismatch_detected_without_approximation() -> None:
+    import dataclasses
+
+    from x_insight.models.inference import InferenceError, NodePosterior, infer_effective, replay
+
+    doc = validate(_two_node_xml())
+    artifact = build_effective_artifact(doc, _valid_two_payload(doc.source_sha256))
+    original = infer_effective(artifact)
+
+    # Corrupt the expectation far outside tolerance (transposed-style 0.43).
+    wrong_posteriors = []
+    for post in original.posteriors:
+        if post.node_id == "B":
+            wrong_posteriors.append(
+                NodePosterior(node_id="B", states=post.states, probabilities=(0.57, 0.43))
+            )
+        else:
+            wrong_posteriors.append(post)
+    wrong = dataclasses.replace(original, posteriors=tuple(wrong_posteriors))
+
+    try:
+        replay(artifact, wrong)
+    except InferenceError as exc:
+        assert exc.code == "replay_mismatch"
+    else:
+        raise AssertionError("mismatched replay approximated")
+
+
+def test_numeric_failure_returns_explicit_error() -> None:
+    import dataclasses
+
+    from x_insight.models.inference import InferenceError, infer_effective
+
+    doc = validate(_two_node_xml())
+    artifact = build_effective_artifact(doc, _valid_two_payload(doc.source_sha256))
+    # Freeze a nonfinite engine value: must raise, never approximate.
+    broken_tables = []
+    for engine in artifact.engine_tables:
+        if engine.node_id == "A":
+            broken_tables.append(
+                dataclasses.replace(
+                    engine, values_2d=((float("nan"),), (0.2,)), units_2d=engine.units_2d
+                )
+            )
+        else:
+            broken_tables.append(engine)
+    broken = dataclasses.replace(artifact, engine_tables=tuple(broken_tables))
+
+    try:
+        infer_effective(broken)
+    except InferenceError as exc:
+        assert exc.code == "inference_numeric"
+    else:
+        raise AssertionError("nonfinite engine approximated")
+
+
+def test_resource_timeout_returns_explicit_error_without_approximation() -> None:
+    from x_insight.models.inference import InferenceError, infer_effective
+
+    doc = validate(_two_node_xml())
+    artifact = build_effective_artifact(doc, _valid_two_payload(doc.source_sha256))
+
+    # Bounded child process: a millisecond budget cannot fit spawn+pgmpy import.
+    try:
+        infer_effective(artifact, timeout_secs=0.001)
+    except InferenceError as exc:
+        assert exc.code == "inference_timeout"
+    else:
+        raise AssertionError("over-budget inference approximated")
+
+
+def test_tolerance_pinned_with_execution_policy() -> None:
+    from x_insight.models.inference import (
+        INFERENCE_COMPARISON_TOLERANCE,
+        PINNED_ENGINE_CONFIG,
+        infer_effective,
+    )
+
+    doc = validate(_two_node_xml())
+    artifact = build_effective_artifact(doc, _valid_two_payload(doc.source_sha256))
+    result = infer_effective(artifact)
+
+    assert INFERENCE_COMPARISON_TOLERANCE == 1e-6
+    assert result.tolerance == 1e-6
+    assert result.float_dtype == "float64"
+    assert result.elimination_order == "source_order"
+    assert result.tie_break == "source_order"
+    assert dict(result.engine_config) == dict(PINNED_ENGINE_CONFIG)
+    assert dict(result.runtime.engine_config) == dict(PINNED_ENGINE_CONFIG)
