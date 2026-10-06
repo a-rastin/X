@@ -212,8 +212,8 @@ def _write_minimal_monograph(path: Path, *, encoding: str, trailing: str = "") -
 def test_build_handles_bom_prefixed_monograph(tmp_path: Path) -> None:
     _write_minimal_monograph(tmp_path / "Bom.txt", encoding="utf-8-sig")
 
-    # Missing terminology path is tolerated, never fatal (S15 interface).
-    dataset, report = build(tmp_path, tmp_path / "missing-aliases.json")
+    # Omitted terminology preserves raw parsing; explicit missing paths fail from S17.
+    dataset, report = build(tmp_path)
 
     assert report.passed
     (check,) = report.documents
@@ -264,8 +264,6 @@ def _run_cli(source_dir: Path, staging: Path) -> object:
             "build",
             "--sources",
             str(source_dir),
-            "--terminology",
-            str(source_dir / "aliases.json"),
             "--output",
             str(staging),
         ],

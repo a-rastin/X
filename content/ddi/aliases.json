@@ -1,0 +1,4280 @@
+{
+  "version": "ddi-terminology/0.1.0",
+  "catalog_status": "draft; source-derived proposed catalog IDs, not activated or owner-approved",
+  "concepts": [
+    {
+      "id": "drug_acetaminophen",
+      "canonical_name": "acetaminophen",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_acetaminophen",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Acetaminophen.txt:4; sha256=1307eb381ba3b9399d30cf821f205d843e8603674de451201940a10ec2303117"
+    },
+    {
+      "id": "drug_celecoxib",
+      "canonical_name": "celecoxib",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_celecoxib",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Celecoxib.txt:4; sha256=4ad3411ce9c9b4ea16defd4a695d0d151158e9d1dcea97e804b70a27df02eae7"
+    },
+    {
+      "id": "drug_diclofenac",
+      "canonical_name": "diclofenac",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_diclofenac",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Diclofenac.txt:4; sha256=dfd660c34c90e8f7d78400cbcfbfe66dba63f2496fa63d1a11f9879bd280a7c8"
+    },
+    {
+      "id": "drug_ibuprofen",
+      "canonical_name": "ibuprofen",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_ibuprofen",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Ibuprofen.txt:4; sha256=31440af590e321516c3e2273768a31952465f12cb1f7660a414cd17665ad220b"
+    },
+    {
+      "id": "drug_meloxicam",
+      "canonical_name": "meloxicam",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_meloxicam",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Meloxicam.txt:4; sha256=551ab727dc38b023ea862a298228776939701abcc9d97c8364c8c7041d61a14e"
+    },
+    {
+      "id": "drug_naproxen",
+      "canonical_name": "naproxen",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_naproxen",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Naproxen.txt:4; sha256=a3f4f52fad6ac9a6388f3e44438201ea9e90ea491e591dda477dd00a20a777cf"
+    },
+    {
+      "id": "drug_oxycodone",
+      "canonical_name": "oxycodone",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_oxycodone",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Oxycodone.txt:7; sha256=aef11b2273c22ec49f5476959d7bc10f2fcf988f21445c811693fc6d7f4d7654"
+    },
+    {
+      "id": "drug_tramadol",
+      "canonical_name": "tramadol",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_tramadol",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Tramadol.txt:4; sha256=f006c2932b09da37343de94dba6b69d52bd2cdfc6cf4b478cfa7f7dfc9339598"
+    },
+    {
+      "id": "drug_amoxicillin",
+      "canonical_name": "amoxicillin",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_amoxicillin",
+      "source": "project-documents/medical-documents/DDI-text/Antibiotics/Amoxicillin.txt:4; sha256=6e2d5036f1c4e7731a59cdbaf3533ce74558a65c65ac78f3d4442de9755006ac"
+    },
+    {
+      "id": "drug_azithromycin",
+      "canonical_name": "azithromycin",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_azithromycin",
+      "source": "project-documents/medical-documents/DDI-text/Antibiotics/Azithromycin.txt:4; sha256=aa3d97168ffceaa65bf9ebaf75a60915caafe04a573547c195b7e164c03cc2ea"
+    },
+    {
+      "id": "drug_cephalexin",
+      "canonical_name": "cephalexin",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_cephalexin",
+      "source": "project-documents/medical-documents/DDI-text/Antibiotics/Cephalexin.txt:4; sha256=97748565baab6f8480a63321537cc10e3726e83340cc91b26a62ea9b5fbc8323"
+    },
+    {
+      "id": "drug_ciprofloxacin",
+      "canonical_name": "ciprofloxacin",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_ciprofloxacin",
+      "source": "project-documents/medical-documents/DDI-text/Antibiotics/Ciprofloxacin.txt:4; sha256=7dbb1201029901b37449ec620eccb9082c90a3533b84e7f484a22e10c7a6da90"
+    },
+    {
+      "id": "drug_doxycycline",
+      "canonical_name": "doxycycline",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_doxycycline",
+      "source": "project-documents/medical-documents/DDI-text/Antibiotics/Doxycycline.txt:4; sha256=74b59ff3cd8916d631773e1a15029324072ed498e323c445ca578ef90e1ae008"
+    },
+    {
+      "id": "drug_amantadine",
+      "canonical_name": "amantadine",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_amantadine",
+      "source": "project-documents/medical-documents/DDI-text/Anticholinergics & Parkinsonism Agents/Amantadine.txt:4; sha256=53df1c298a1ceb1cb3699c46ad8620836e2aed3ce7c1a05b6ee738ff0594653a"
+    },
+    {
+      "id": "drug_atropine",
+      "canonical_name": "atropine",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_atropine",
+      "source": "project-documents/medical-documents/DDI-text/Anticholinergics & Parkinsonism Agents/Atropine.txt:6; sha256=cb0945149c56b143bedd2dfa229fb5eb0a9f5e723edc0cc7ca604f3595469735"
+    },
+    {
+      "id": "drug_benztropine",
+      "canonical_name": "benztropine",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_benztropine",
+      "source": "project-documents/medical-documents/DDI-text/Anticholinergics & Parkinsonism Agents/Benztropine.txt:4; sha256=9a0e72eef079ad4a702328ac3f6b6490a9a706bc9b53fda7958d0762f61b308c"
+    },
+    {
+      "id": "drug_bromocriptine",
+      "canonical_name": "bromocriptine",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_bromocriptine",
+      "source": "project-documents/medical-documents/DDI-text/Anticholinergics & Parkinsonism Agents/Bromocriptine.txt:6; sha256=9f53a99b9b1510696d5b944b7dfaeb3ef6a8592b370578d819e1050b3b82070c"
+    },
+    {
+      "id": "drug_glycopyrrolate",
+      "canonical_name": "glycopyrrolate",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_glycopyrrolate",
+      "source": "project-documents/medical-documents/DDI-text/Anticholinergics & Parkinsonism Agents/Glycopyrrolate.txt:8; sha256=0e1faae6bbcbeaa0bad33e930b064ca6e67ac8d7d5d4f25eef01f07620194e85"
+    },
+    {
+      "id": "drug_trihexyphenidyl",
+      "canonical_name": "trihexyphenidyl",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_trihexyphenidyl",
+      "source": "project-documents/medical-documents/DDI-text/Anticholinergics & Parkinsonism Agents/Trihexyphenidyl.txt:4; sha256=151124011104b0ace0df2fa893f472cea1666466a0b8ffd9f091b687802fa682"
+    },
+    {
+      "id": "drug_amitriptyline",
+      "canonical_name": "amitriptyline",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_amitriptyline",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Amitriptyline.txt:4; sha256=fd2ee857f929fef93e02ad81f1c5f809d1f0de8bb417d3ea78bb4ccb22562598"
+    },
+    {
+      "id": "drug_bupropion",
+      "canonical_name": "bupropion",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_bupropion",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Bupropion.txt:4; sha256=39949f078ba840b5adb67c578ef548f7795f1f07bd4be88c974a4b155072a5dd"
+    },
+    {
+      "id": "drug_citalopram",
+      "canonical_name": "citalopram",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_citalopram",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Citalopram.txt:4; sha256=8e3d5ad20b99d28508c5f4e7df4ec3e23c7fff53764762835c7e812b87d99622"
+    },
+    {
+      "id": "drug_clomipramine",
+      "canonical_name": "clomipramine",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_clomipramine",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Clomipramine.txt:4; sha256=7ac3cce0afdf8d04af5531ad6a7d1b2ff50062f33fa86c0e6ca25a75cd62110f"
+    },
+    {
+      "id": "drug_duloxetine",
+      "canonical_name": "duloxetine",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_duloxetine",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Duloxetine.txt:4; sha256=3a06234c0a9140bb8c8b0b2c89acd5925dbda696731d5c5c1b18c9b2f3a6f120"
+    },
+    {
+      "id": "drug_escitalopram",
+      "canonical_name": "escitalopram",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_escitalopram",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Escitalopram.txt:4; sha256=1eb25a69bb771a1d539215618e50405f2b9e5f3f0d8a39c2c0a6b874be18cea1"
+    },
+    {
+      "id": "drug_fluoxetine",
+      "canonical_name": "fluoxetine",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_fluoxetine",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Fluoxetine.txt:4; sha256=1c2b3680ff0216c79c99028b26e3aff0d8efb506dda679b1e488137a22af9e2e"
+    },
+    {
+      "id": "drug_mirtazapine",
+      "canonical_name": "mirtazapine",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_mirtazapine",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Mirtazapine.txt:4; sha256=bc6a83f32a7a531b6cc92ff625b1136c876b1534d87470760fc1fc8a1f5327c4"
+    },
+    {
+      "id": "drug_nortriptyline",
+      "canonical_name": "nortriptyline",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_nortriptyline",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Nortriptyline.txt:4; sha256=ad04bb2db22c5e39d30641802bf2aa5f9b3a16a6a477eb45faee9316a78b36b1"
+    },
+    {
+      "id": "drug_paroxetine",
+      "canonical_name": "paroxetine",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_paroxetine",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Paroxetine.txt:4; sha256=b62b1dd4652cc8fc7ba70858d58b7008ce9ae976f79979b6b5b406864d8ee613"
+    },
+    {
+      "id": "drug_sertraline",
+      "canonical_name": "sertraline",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_sertraline",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Sertraline.txt:4; sha256=70e5a933c1dfc50d4ee2b283005d8d572994d7dc1977748dec5123df7de3cfe7"
+    },
+    {
+      "id": "drug_venlafaxine",
+      "canonical_name": "venlafaxine",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_venlafaxine",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Venlafaxine.txt:4; sha256=ecf873b181a64207185d1031c5e64557162dddd159a61a8c03ed20a8d2c5d4cf"
+    },
+    {
+      "id": "drug_empagliflozin",
+      "canonical_name": "empagliflozin",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_empagliflozin",
+      "source": "project-documents/medical-documents/DDI-text/Antidiabetic Agents/Empagliflozin.txt:4; sha256=a1c3e703b2dadb4559a3d1b2a4e16a2e0332e23ac38497c846cd850eeeb4de30"
+    },
+    {
+      "id": "drug_glimepiride",
+      "canonical_name": "glimepiride",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_glimepiride",
+      "source": "project-documents/medical-documents/DDI-text/Antidiabetic Agents/Glimepiride.txt:4; sha256=bce3c1e74ebff7baadb0312e178280af48c6b606683c49355cf18d88c0382ab2"
+    },
+    {
+      "id": "drug_glipizide",
+      "canonical_name": "glipizide",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_glipizide",
+      "source": "project-documents/medical-documents/DDI-text/Antidiabetic Agents/Glipizide.txt:4; sha256=f3d36c79278309eaafab35feb97107c914b2d3f774056e510e32edff4dc9a13e"
+    },
+    {
+      "id": "drug_insulin_regular_human",
+      "canonical_name": "insulin regular human",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_insulin",
+      "source": "project-documents/medical-documents/DDI-text/Antidiabetic Agents/Insulin.txt:4; sha256=d8b353cd1ad4c85994ba2c0fdf7905fb39143d3618d6081bbf58472253ae7e49"
+    },
+    {
+      "id": "drug_liraglutide",
+      "canonical_name": "liraglutide",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_liraglutide",
+      "source": "project-documents/medical-documents/DDI-text/Antidiabetic Agents/Liraglutide.txt:4; sha256=8854a467d7ea6baa9beb09ab011f299d1c6744f2499b908e7142142aede227d6"
+    },
+    {
+      "id": "drug_metformin",
+      "canonical_name": "metformin",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_metformin",
+      "source": "project-documents/medical-documents/DDI-text/Antidiabetic Agents/Metformin.txt:4; sha256=a21da1c1adff1152f9feafa07718ebfcd79d8d91323df4c148cc8489e0489ed9"
+    },
+    {
+      "id": "drug_pioglitazone",
+      "canonical_name": "pioglitazone",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_pioglitazone",
+      "source": "project-documents/medical-documents/DDI-text/Antidiabetic Agents/Pioglitazone.txt:4; sha256=a2e52ad0a1ae947490559fcc7a5e9f95dc30bed3b4223d694153124d1eb54b0b"
+    },
+    {
+      "id": "drug_semaglutide",
+      "canonical_name": "semaglutide",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_semaglutide",
+      "source": "project-documents/medical-documents/DDI-text/Antidiabetic Agents/Semaglutide.txt:4; sha256=ac6c2ac87e4a3315ae50bac149cc7a12ff3c6421968e5d0bd6671a4f82f794b5"
+    },
+    {
+      "id": "drug_sitagliptin",
+      "canonical_name": "sitagliptin",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_sitagliptin",
+      "source": "project-documents/medical-documents/DDI-text/Antidiabetic Agents/Sitagliptin.txt:4; sha256=e7c9bc45ed5b3f829dfe8e29b015ee727645db2f3ed6cad8de99fea2dcd4022f"
+    },
+    {
+      "id": "drug_aripiprazole",
+      "canonical_name": "ARIPIPRAZOLE",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_aripiprazole",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Aripiprazole.txt:1; sha256=652cfa4e7499e41266fcb92e3fe607ecb5f18736dd8b48288f386d0eba27d30b"
+    },
+    {
+      "id": "drug_asenapine",
+      "canonical_name": "Asenapine",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_asenapine",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Asenapine.txt:1; sha256=15a13b1092a9fcc9debd359c1d538a9bff8bafa07fb5b373905d732daee137cc"
+    },
+    {
+      "id": "drug_brexpiprazole",
+      "canonical_name": "brexpiprazole",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_brexpiprazole",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Brexpiprazole.txt:3; sha256=d980258a986dfce60f80e6fecb69f1dbab6c1743b19d682279de4597d23da8fc"
+    },
+    {
+      "id": "drug_cariprazine",
+      "canonical_name": "cariprazine",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_cariprazine",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Cariprazine.txt:1; sha256=df6d217dc3ee31170db0ac9d6bcfdeeea71da55c9a952f35ebd8bde93293f566"
+    },
+    {
+      "id": "drug_chlorpromazine",
+      "canonical_name": "chlorpromazine",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_chlorpromazine",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Chlorpromazine.txt:1; sha256=98b6dc917a3641c31436ef4834cc8ec7efad5d48979d6a879f990dd56dbfdea4"
+    },
+    {
+      "id": "drug_clozapine",
+      "canonical_name": "clozapine",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_clozapine",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Clozapine.txt:1; sha256=4a3585c8d3dc5ecf1935b681fc30b1655815b659a1ec88e4c09a970f4ee0ee35"
+    },
+    {
+      "id": "drug_fluphenazine",
+      "canonical_name": "Fluphenazine",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_fluphenazine",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Fluphenazine.txt:1; sha256=7977a158eb6598c00855ddbacc2a211ba2c78a52e53bc57f34fdf8f0c4ead040"
+    },
+    {
+      "id": "drug_haloperidol",
+      "canonical_name": "haloperidol",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_haloperidol",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Haloperidol.txt:1; sha256=fdaa4c7e71cccfcdc7094f3ae668172d6482055252890326fd489649e372e9bf"
+    },
+    {
+      "id": "drug_iloperidone",
+      "canonical_name": "Iloperidone",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_iloperidone",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Iloperidone.txt:1; sha256=253fca89aca5623173c18a57bcd403ac73ebfb0fc5419d84685cd12ba08268eb"
+    },
+    {
+      "id": "drug_loxapine",
+      "canonical_name": "loxapine",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_loxapine",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Loxapine.txt:4; sha256=f13d7533699181ed0550d5dbabd5ae109e43c44c9894be43d2243325d191562c"
+    },
+    {
+      "id": "drug_lurasidone",
+      "canonical_name": "Lurasidone",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_lurasidone",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Lurasidone.txt:1; sha256=b6fe1a1991f44c346dd85b5707a7019e4fe65884f6cd0689e94bfbde7f2c0aee"
+    },
+    {
+      "id": "drug_molindone",
+      "canonical_name": "molindone",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_molindone",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Molindone.txt:1; sha256=f56944f409b405942f3fcf3d89d099b0e4461eff6fa83d62e57abe212ab35203"
+    },
+    {
+      "id": "drug_olanzapine",
+      "canonical_name": "olanzapine",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_olanzapine",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Olanzapine.txt:1; sha256=898599241e17bd8783fe46783dc400fb0497dad5235815b48b73623339a64cf9"
+    },
+    {
+      "id": "drug_paliperidone",
+      "canonical_name": "Paliperidone",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_paliperidone",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Paliperidone.txt:1; sha256=e561e70d6c85d8d6c6a9dcdca74ce05e242de75ae5d3d708ca1d7649b88d047a"
+    },
+    {
+      "id": "drug_perphenazine",
+      "canonical_name": "perphenazine",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_perphenazine",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Perphenazine.txt:1; sha256=aadb313bb67e10caa14fefdd6343d8912bdfe8c180bc625929cedff4beaae9d0"
+    },
+    {
+      "id": "drug_pimozide",
+      "canonical_name": "pimozide",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_pimozide",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Pimozide.txt:4; sha256=9522cb65163450f295c63568f234fbf4546c41ee41f6ad18e7cf75190cd148c9"
+    },
+    {
+      "id": "drug_quetiapine",
+      "canonical_name": "quetiapine",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_quetiapine",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Quetiapine.txt:1; sha256=ed379be78f065306e9e388a4426536e115168adafa504ef6ca36f5a8530ba23c"
+    },
+    {
+      "id": "drug_risperidone",
+      "canonical_name": "risperidone",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_risperidone",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Risperidone.txt:5; sha256=89d865736c9d0628563ffb461c85648fbd7502b01081bc240d8646568e99f3e3"
+    },
+    {
+      "id": "drug_thioridazine",
+      "canonical_name": "thioridazine",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_thioridazine",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Thioridazine.txt:1; sha256=e6a0ea6315cc78d6a398f7dc00f2b003f5af9c148db881d84b6c63fc6addea6c"
+    },
+    {
+      "id": "drug_thiothixene",
+      "canonical_name": "thiothixene",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_thiothixene",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Thiothixene.txt:2; sha256=b9b0c8aab7f029e7f72e99223ec61573bd33f7e4e06b69f198e11947ea20c0bc"
+    },
+    {
+      "id": "drug_trifluoperazine",
+      "canonical_name": "trifluoperazine",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_trifluoperazine",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Trifluoperazine.txt:3; sha256=6e6ebf25da0483f148279df1c1417d4455abeb0d8579e61ebf9b1acb0ecac2d1"
+    },
+    {
+      "id": "drug_valproic_acid",
+      "canonical_name": "Valproic acid",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_valproic_acid",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Valproic acid.txt:1; sha256=a5430526c02b3074ca3bf77ce30f27a818f18d36cca207c42a4fd2c4b2285672"
+    },
+    {
+      "id": "drug_ziprasidone",
+      "canonical_name": "ziprasidone",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_ziprasidone",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Ziprasidone.txt:1; sha256=5a13c48b7308e9f2937b0ffaa0d7213b722122a718b6c1940949daf1cc4db46b"
+    },
+    {
+      "id": "drug_alprazolam",
+      "canonical_name": "alprazolam",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_alprazolam",
+      "source": "project-documents/medical-documents/DDI-text/Anxiolytics, Sedatives, and Hypnotics/Alprazolam.txt:4; sha256=fd3a62c9fb19f78be60abf52304ebf9c0e4e58f8893da0622aec9b4aeeb7224c"
+    },
+    {
+      "id": "drug_buspirone",
+      "canonical_name": "buspirone",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_buspirone",
+      "source": "project-documents/medical-documents/DDI-text/Anxiolytics, Sedatives, and Hypnotics/Buspirone.txt:4; sha256=0aed5c30cfb39f5c6059b5105ebf35bc6e1e00046b897306a6a0964de8d63bd0"
+    },
+    {
+      "id": "drug_clonazepam",
+      "canonical_name": "clonazepam",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_clonazepam",
+      "source": "project-documents/medical-documents/DDI-text/Anxiolytics, Sedatives, and Hypnotics/Clonazepam.txt:4; sha256=fc5bf118cd676e10395015d5f3ac1882b172af4ffbf8c5bc6c3ce03de896a350"
+    },
+    {
+      "id": "drug_diazepam",
+      "canonical_name": "diazepam",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_diazepam",
+      "source": "project-documents/medical-documents/DDI-text/Anxiolytics, Sedatives, and Hypnotics/Diazepam.txt:4; sha256=28e203bde541a005bd4cc38ced5969038a472f4c2a93cd5b13cc85f5065f7d64"
+    },
+    {
+      "id": "drug_lorazepam",
+      "canonical_name": "lorazepam",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_lorazepam",
+      "source": "project-documents/medical-documents/DDI-text/Anxiolytics, Sedatives, and Hypnotics/Lorazepam.txt:4; sha256=3ac5129c4efd9bed3d32507f2a8374ac354272838ddecb47ed8451a0f16385a3"
+    },
+    {
+      "id": "drug_melatonin",
+      "canonical_name": "Melatonin",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_melatonin",
+      "source": "project-documents/medical-documents/DDI-text/Anxiolytics, Sedatives, and Hypnotics/Melatonin.txt:1; sha256=93f644b331f2f989a228d25737399443b847ef4ebe7116a005ba7047e173180b"
+    },
+    {
+      "id": "drug_temazepam",
+      "canonical_name": "temazepam",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_temazepam",
+      "source": "project-documents/medical-documents/DDI-text/Anxiolytics, Sedatives, and Hypnotics/Temazepam.txt:4; sha256=81f8bea07c9a464a849700481e2d7e5fbacba44c8284b702fba876b3b87aa245"
+    },
+    {
+      "id": "drug_trazodone",
+      "canonical_name": "trazodone",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_trazodone",
+      "source": "project-documents/medical-documents/DDI-text/Anxiolytics, Sedatives, and Hypnotics/Trazodone.txt:4; sha256=ffd27e7d20cf96b152dc6b759faed941dcd5fd939146b2afa8c50c74d6ea5185"
+    },
+    {
+      "id": "drug_zolpidem",
+      "canonical_name": "zolpidem",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_zolpidem",
+      "source": "project-documents/medical-documents/DDI-text/Anxiolytics, Sedatives, and Hypnotics/Zolpidem.txt:4; sha256=b07ee61b94a29c9fe3bc2233211ddc935579607847aa12ae0c1e0e67c6674079"
+    },
+    {
+      "id": "drug_amlodipine",
+      "canonical_name": "amlodipine",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_amlodipine",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Amlodipine.txt:4; sha256=36e0b845ed24b1f8e763c8462371e72c167625785a8b74d46a2cc1daf2222021"
+    },
+    {
+      "id": "drug_aspirin",
+      "canonical_name": "aspirin",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_aspirin",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Aspirin.txt:4; sha256=4b1d853065e7e84d77b899c11e4263b71ea889b25537bf69ce7b3bbb6fd09873"
+    },
+    {
+      "id": "drug_atenolol",
+      "canonical_name": "atenolol",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_atenolol",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Atenolol.txt:4; sha256=247dd258fabedde52bc1f4caaa315824ef6c2cf3f1f3760169a33985ac4e3dfe"
+    },
+    {
+      "id": "drug_carvedilol",
+      "canonical_name": "carvedilol",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_carvedilol",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Carvedilol.txt:4; sha256=a2fac085324079a7659ff46fe1459ada75db390013e881e81dedd49142b58042"
+    },
+    {
+      "id": "drug_clonidine",
+      "canonical_name": "clonidine",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_clonidine",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Clonidine.txt:4; sha256=eaaa68713023efb158f12f406ddd09547a3f29424c411aa2c86f31e97052a7c1"
+    },
+    {
+      "id": "drug_enalapril",
+      "canonical_name": "enalapril",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_enalapril",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Enalapril.txt:4; sha256=1a0658f79a66afe0eed8e415c2a2b3fe1ed78ef209aee24d81557dbfb23af6cc"
+    },
+    {
+      "id": "drug_furosemide",
+      "canonical_name": "furosemide",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_furosemide",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Furosemide.txt:4; sha256=97f1f0967826ece6054053378117073bb1f2735be72e81bec875cea3fe6e3e15"
+    },
+    {
+      "id": "drug_hydrochlorothiazide",
+      "canonical_name": "hydrochlorothiazide",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_hydrochlorothiazide",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Hydrochlorothiazide.txt:4; sha256=b7e40fd64416659f06caad7ec0151bec39807a40764c60cead96aa227ec1b788"
+    },
+    {
+      "id": "drug_lisinopril",
+      "canonical_name": "lisinopril",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_lisinopril",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Lisinopril.txt:4; sha256=0b049f0324187829fd76f06cbeb09de29b4356111be1f80b6e5210bc6e164a24"
+    },
+    {
+      "id": "drug_losartan",
+      "canonical_name": "losartan",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_losartan",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Losartan.txt:4; sha256=03cf4b69e493102630ef6f799a9294f278fab9c055e15a1c9f234ba187338813"
+    },
+    {
+      "id": "drug_metoprolol",
+      "canonical_name": "metoprolol",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_metoprolol",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Metoprolol.txt:4; sha256=640043a9ecb4222ec88dcfef7367df5b32af461db1ac5a24c04dfc23f6f9dc06"
+    },
+    {
+      "id": "drug_propranolol",
+      "canonical_name": "propranolol",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_propranolol",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Propranolol.txt:4; sha256=79a00d6257ecd74df5c99559df5eec573a4033f75867d84ea30f2c158964acea"
+    },
+    {
+      "id": "drug_terazosin",
+      "canonical_name": "terazosin",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_terazosin",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Terazosin.txt:4; sha256=0e72d51803770a6b7c77801d3fc9e5018b42d868a6a6efd63b11b535a29714b4"
+    },
+    {
+      "id": "drug_valsartan",
+      "canonical_name": "valsartan",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_valsartan",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Valsartan.txt:4; sha256=d3a3bb86ca2d12e39ba8bd8a551c1d55a278b4dd9ec5d1adc6355300787a5d12"
+    },
+    {
+      "id": "drug_fludrocortisone",
+      "canonical_name": "fludrocortisone",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_fludrocortisone",
+      "source": "project-documents/medical-documents/DDI-text/Endocrine, Vitamins, and Supplements/Fludrocortisone.txt:4; sha256=58a381b2cc572576e84b59f358ee73745c73e7ae1334d031523039cd1597876a"
+    },
+    {
+      "id": "drug_levothyroxine",
+      "canonical_name": "levothyroxine",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_levothyroxine",
+      "source": "project-documents/medical-documents/DDI-text/Endocrine, Vitamins, and Supplements/Levothyroxine.txt:4; sha256=1d49e90a29a885c77f47392ed80c737d387dae5d9de00703f18ddf4be59d189c"
+    },
+    {
+      "id": "drug_bisacodyl",
+      "canonical_name": "bisacodyl",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_bisacodyl",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Bisacodyl.txt:6; sha256=fad4052611bab6d9c60b682667f6510fc1d8dbf49f247a15a69ca2a0301debf2"
+    },
+    {
+      "id": "drug_docusate",
+      "canonical_name": "docusate",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_docusate",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Docusate.txt:7; sha256=8c0d403360569550dcd4b91409f6e29cd98d03bebc92f30ea5354dee22fa7910"
+    },
+    {
+      "id": "drug_esomeprazole",
+      "canonical_name": "esomeprazole",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_esomeprazole",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Esomeprazole.txt:2; sha256=fb89019a2c00ef00f95f6dd9b8d021d51947a9f83bba47afc91baa06e141b872"
+    },
+    {
+      "id": "drug_famotidine",
+      "canonical_name": "famotidine",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_famotidine",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Famotidine.txt:2; sha256=2984c0e9fe0dbde06dfbb63fd2830a00b41d54f2a352b81644f0c80ef5d0c6d2"
+    },
+    {
+      "id": "drug_lactulose",
+      "canonical_name": "lactulose",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_lactulose",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Lactulose.txt:4; sha256=75ee84c0639a0b9e3b733a82a31e7df63a98376753637b9b0d0bc69069c63846"
+    },
+    {
+      "id": "drug_lansoprazole",
+      "canonical_name": "lansoprazole",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_lansoprazole",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Lansoprazole.txt:2; sha256=56f7530f72ab2e4ac33f207ec5bc41016656ee9ba259e085c5b8fa2141867370"
+    },
+    {
+      "id": "drug_loperamide",
+      "canonical_name": "loperamide",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_loperamide",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Loperamide.txt:2; sha256=01476787f73feaca117398d40c3cc3c6ad99f59db420015ab18b1e9fbc6aef7c"
+    },
+    {
+      "id": "drug_omeprazole",
+      "canonical_name": "omeprazole",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_omeprazole",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Omeprazole.txt:2; sha256=47d9394f7cd00612f7480b790a42cb4a17c9586ad3149c36f8a0554fe95235b8"
+    },
+    {
+      "id": "drug_ondansetron",
+      "canonical_name": "ondansetron",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_ondansetron",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Ondansetron.txt:2; sha256=cf5fcef10659632064d8bc4b81657548565e8ef3414a402fbe055f090bcbf25e"
+    },
+    {
+      "id": "drug_pantoprazole",
+      "canonical_name": "pantoprazole",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_pantoprazole",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Pantoprazole.txt:2; sha256=48a229270f2a4218a6a8b01e19177123d13384b5aed7f3c569d0591561c73a35"
+    },
+    {
+      "id": "drug_senna_psyllium",
+      "canonical_name": "senna/psyllium",
+      "concept_type": "combination_drug",
+      "catalog_drug_id": "catalog_psyllium",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Psyllium.txt:4; sha256=b41adf12bcf5a8e438dda7b701511375a4d5872a0ec0f2acc68fcd0c50ba9873"
+    },
+    {
+      "id": "drug_simethicone",
+      "canonical_name": "simethicone",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_simethicone",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Simethicone.txt:2; sha256=c8d07a01fc06c85eaaf234058cb0d0f394335325f52773b031c7f2f9274c49b9"
+    },
+    {
+      "id": "drug_atorvastatin",
+      "canonical_name": "atorvastatin",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_atorvastatin",
+      "source": "project-documents/medical-documents/DDI-text/Lipid-Lowering Agents/Atorvastatin.txt:8; sha256=3c2a598397e23e24269adcb562f117f9111364233e8980ee23b1d11923db716b"
+    },
+    {
+      "id": "drug_lovastatin",
+      "canonical_name": "lovastatin",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_lovastatin",
+      "source": "project-documents/medical-documents/DDI-text/Lipid-Lowering Agents/Lovastatin.txt:4; sha256=c71d00418f4b53fc4eb97a7b296c0788560ff0d16c833702b43027335a0f831e"
+    },
+    {
+      "id": "drug_pravastatin",
+      "canonical_name": "pravastatin",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_pravastatin",
+      "source": "project-documents/medical-documents/DDI-text/Lipid-Lowering Agents/Pravastatin.txt:4; sha256=31ef8934c06ee553c0421e7f0e4948813122a954c9545b10de3d72f767097fbc"
+    },
+    {
+      "id": "drug_rosuvastatin",
+      "canonical_name": "rosuvastatin",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_rosuvastatin",
+      "source": "project-documents/medical-documents/DDI-text/Lipid-Lowering Agents/Rosuvastatin.txt:4; sha256=5ddfdc198bae10290275b03abfebdcfd900fab6945093b2ed61a27ba2a48e3aa"
+    },
+    {
+      "id": "drug_simvastatin",
+      "canonical_name": "simvastatin",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_simvastatin",
+      "source": "project-documents/medical-documents/DDI-text/Lipid-Lowering Agents/Simvastatin.txt:4; sha256=705c1441e28d0eeef95f68765feb9b0c86721c06b4e68c8c04be78bd9f3b4d22"
+    },
+    {
+      "id": "drug_allopurinol",
+      "canonical_name": "allopurinol",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_allopurinol",
+      "source": "project-documents/medical-documents/DDI-text/Miscellaneous/Allopurinol.txt:4; sha256=72489b8e47732b3de10d2cb92433dd3125881c1e81e3ca11071220eaef134022"
+    },
+    {
+      "id": "drug_amphetamine_dextroamphetamine",
+      "canonical_name": "amphetamine/dextroamphetamine",
+      "concept_type": "combination_drug",
+      "catalog_drug_id": "catalog_amphetamine_dextroamphetamine",
+      "source": "project-documents/medical-documents/DDI-text/Miscellaneous/Amphetamine-Dextroamphetamine.txt:4; sha256=b63519b8894fb68ad5a6a0d2c504de1309865b5e26c071ae45e02b32867fdf60"
+    },
+    {
+      "id": "drug_dantrolene",
+      "canonical_name": "dantrolene",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_dantrolene",
+      "source": "project-documents/medical-documents/DDI-text/Miscellaneous/Dantrolene.txt:15; sha256=7c7c5b5cd8417c8b49bbdb8d85b8ba5f31f0ee2e453aa34c6eadc26a41386e89"
+    },
+    {
+      "id": "drug_lisdexamfetamine",
+      "canonical_name": "lisdexamfetamine",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_lisdexamfetamine",
+      "source": "project-documents/medical-documents/DDI-text/Miscellaneous/Lisdexamfetamine.txt:4; sha256=5b549e6cdd1d927064c79f1a896495abf2fb353879e74454e7213f675241dc2a"
+    },
+    {
+      "id": "drug_methylphenidate",
+      "canonical_name": "methylphenidate",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_methylphenidate",
+      "source": "project-documents/medical-documents/DDI-text/Miscellaneous/Methylphenidate.txt:4; sha256=3436781372e7973ed3d5ea780c38709bf1a646432c94b60fab46cdd87a8c0113"
+    },
+    {
+      "id": "drug_oxybutynin",
+      "canonical_name": "oxybutynin",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_oxybutynin",
+      "source": "project-documents/medical-documents/DDI-text/Miscellaneous/Oxybutynin.txt:4; sha256=2a9c1acdd4cfc81f4b3f05b72870ee3ad35a4b4243d61e22d137e7b9a66ebfe0"
+    },
+    {
+      "id": "drug_tamsulosin",
+      "canonical_name": "tamsulosin",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_tamsulosin",
+      "source": "project-documents/medical-documents/DDI-text/Miscellaneous/Tamsulosin.txt:4; sha256=fea8d2235fcf66ed0cabedd025add1fb698fd9383a3de5a8fc46f07b4582214b"
+    },
+    {
+      "id": "drug_carbamazepine",
+      "canonical_name": "carbamazepine",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_carbamazepine",
+      "source": "project-documents/medical-documents/DDI-text/Mood Stabilizers and Anticonvulsants/Carbamazepine.txt:4; sha256=ef437f5d3e9d93bf35affa8e3c387924132407cd634e6b0bf87590e1da4d7864"
+    },
+    {
+      "id": "drug_gabapentin",
+      "canonical_name": "gabapentin",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_gabapentin",
+      "source": "project-documents/medical-documents/DDI-text/Mood Stabilizers and Anticonvulsants/Gabapentin.txt:4; sha256=8669ff812304052d12833150155d5e637823a209601577695cb3f34c797e17bf"
+    },
+    {
+      "id": "drug_lamotrigine",
+      "canonical_name": "lamotrigine",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_lamotrigine",
+      "source": "project-documents/medical-documents/DDI-text/Mood Stabilizers and Anticonvulsants/Lamotrigine.txt:4; sha256=a87863998fd67de1d23802081727c27e2f58268b5c81fbedaa5ec8822d3a8be0"
+    },
+    {
+      "id": "drug_lithium",
+      "canonical_name": "lithium",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_lithium",
+      "source": "project-documents/medical-documents/DDI-text/Mood Stabilizers and Anticonvulsants/Lithium.txt:15; sha256=ef3d04e77f174bdb1b0d8a488a5cf0f0231edd8a1a9869213902e5a9c45832a8"
+    },
+    {
+      "id": "drug_oxcarbazepine",
+      "canonical_name": "oxcarbazepine",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_oxcarbazepine",
+      "source": "project-documents/medical-documents/DDI-text/Mood Stabilizers and Anticonvulsants/Oxcarbazepine.txt:4; sha256=1db59459face54f7948f83275c744a16357cdcf3da39470252f2d8524f78b1e8"
+    },
+    {
+      "id": "drug_pregabalin",
+      "canonical_name": "pregabalin",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_pregabalin",
+      "source": "project-documents/medical-documents/DDI-text/Mood Stabilizers and Anticonvulsants/Pregabalin.txt:4; sha256=69e42e5090864480f279b168333ffad50fc50c1e96c9002d51b8c6d0192ea6da"
+    },
+    {
+      "id": "drug_topiramate",
+      "canonical_name": "topiramate",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_topiramate",
+      "source": "project-documents/medical-documents/DDI-text/Mood Stabilizers and Anticonvulsants/Topiramate.txt:4; sha256=5288abafe5b3ba8b4a38185aa8e06809dbeddf25ce17d8a2e68136520c6094db"
+    },
+    {
+      "id": "drug_albuterol_inhaled",
+      "canonical_name": "albuterol inhaled",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_albuterol",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Albuterol.txt:4; sha256=0bdfeb387b17221326d345b59270def63fbfdc31dc2c763f92f2ae5e17b484bf"
+    },
+    {
+      "id": "drug_cetirizine",
+      "canonical_name": "cetirizine",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_cetirizine",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Cetirizine.txt:4; sha256=e3509e4dd00b5206cfd61631b0b07ec4a4a154a18b152bbff80bc4598fd5f5f5"
+    },
+    {
+      "id": "drug_diphenhydramine",
+      "canonical_name": "diphenhydramine",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_diphenhydramine",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Diphenhydramine.txt:4; sha256=b89ebf77232131528cf6889eb404bb3837f0af1328f244a29c861ff375d51f0d"
+    },
+    {
+      "id": "drug_fluticasone_inhaled",
+      "canonical_name": "fluticasone inhaled",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_fluticasone",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Fluticasone.txt:4; sha256=a10417bf89a9c4fbaaa0eb5e835d7e7be13d7241d8d9e4ff4d2580b16006f2f1"
+    },
+    {
+      "id": "drug_hydroxyzine",
+      "canonical_name": "hydroxyzine",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_hydroxyzine",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Hydroxyzine.txt:4; sha256=4f7293eba04eeb30eb984d631dbd0c967b90d63e624a54937620954e900fca09"
+    },
+    {
+      "id": "drug_loratadine",
+      "canonical_name": "loratadine",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_loratadine",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Loratadine.txt:4; sha256=410a0dcf0f31faa89a9b374e8e4b5b3b52763839cbd9fd1eff7bdd7ca06ded3b"
+    },
+    {
+      "id": "drug_montelukast",
+      "canonical_name": "montelukast",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_montelukast",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Montelukast.txt:4; sha256=28f13c8a2786278fdb628a74733b3e4b9fe9272e45b5b1a2304345de1e2d6681"
+    },
+    {
+      "id": "drug_buprenorphine",
+      "canonical_name": "buprenorphine",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_buprenorphine",
+      "source": "project-documents/medical-documents/DDI-text/Substance Use and Smoking Cessation/Buprenorphine.txt:4; sha256=efabbadf61057560c419c4f771fbe899c46c54c60bee6c5fce7bc5b27d275f86"
+    },
+    {
+      "id": "drug_varenicline",
+      "canonical_name": "varenicline",
+      "concept_type": "ingredient",
+      "catalog_drug_id": "catalog_varenicline",
+      "source": "project-documents/medical-documents/DDI-text/Substance Use and Smoking Cessation/Varenicline.txt:4; sha256=8aa3a83d38ba075788c87f9a1fbed6ca6f4c09d57ac4546fb94f81a1d69c3540"
+    },
+    {
+      "id": "drug_ethanol",
+      "canonical_name": "ethanol",
+      "concept_type": "substance",
+      "catalog_drug_id": null,
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Acetaminophen.txt:498-503; sha256=1307eb381ba3b9399d30cf821f205d843e8603674de451201940a10ec2303117"
+    },
+    {
+      "id": "drug_green_tea",
+      "canonical_name": "green tea",
+      "concept_type": "food",
+      "catalog_drug_id": null,
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Acetaminophen.txt:531-533; sha256=1307eb381ba3b9399d30cf821f205d843e8603674de451201940a10ec2303117"
+    },
+    {
+      "id": "drug_ginkgo_biloba",
+      "canonical_name": "ginkgo biloba",
+      "concept_type": "herbal",
+      "catalog_drug_id": null,
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Celecoxib.txt:955-956; sha256=4ad3411ce9c9b4ea16defd4a695d0d151158e9d1dcea97e804b70a27df02eae7"
+    },
+    {
+      "id": "drug_ofloxacin",
+      "canonical_name": "ofloxacin",
+      "concept_type": "ingredient",
+      "catalog_drug_id": null,
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Celecoxib.txt:2252-2255; sha256=4ad3411ce9c9b4ea16defd4a695d0d151158e9d1dcea97e804b70a27df02eae7"
+    },
+    {
+      "id": "drug_grapefruit",
+      "canonical_name": "grapefruit",
+      "concept_type": "food",
+      "catalog_drug_id": null,
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Oxycodone.txt:789-791; sha256=aef11b2273c22ec49f5476959d7bc10f2fcf988f21445c811693fc6d7f4d7654"
+    },
+    {
+      "id": "drug_belladonna_and_opium",
+      "canonical_name": "belladonna and opium",
+      "concept_type": "combination_drug",
+      "catalog_drug_id": null,
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Oxycodone.txt:1214-1215; sha256=aef11b2273c22ec49f5476959d7bc10f2fcf988f21445c811693fc6d7f4d7654"
+    },
+    {
+      "id": "drug_st_john_s_wort",
+      "canonical_name": "St John's Wort",
+      "concept_type": "herbal",
+      "catalog_drug_id": null,
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Oxycodone.txt:2152-2160; sha256=aef11b2273c22ec49f5476959d7bc10f2fcf988f21445c811693fc6d7f4d7654"
+    },
+    {
+      "id": "entity_cns_depressants_sedatives",
+      "canonical_name": "CNS Depressants & Sedatives",
+      "concept_type": "other",
+      "catalog_drug_id": null,
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Fluphenazine.txt:132-132; sha256=7977a158eb6598c00855ddbacc2a211ba2c78a52e53bc57f34fdf8f0c4ead040"
+    }
+  ],
+  "aliases": [
+    {
+      "name": "Tylenol",
+      "concept_id": "drug_acetaminophen",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Acetaminophen.txt:5; sha256=1307eb381ba3b9399d30cf821f205d843e8603674de451201940a10ec2303117",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Tylenol Arthritis Pain",
+      "concept_id": "drug_acetaminophen",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Acetaminophen.txt:5; sha256=1307eb381ba3b9399d30cf821f205d843e8603674de451201940a10ec2303117",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Tylenol Ext",
+      "concept_id": "drug_acetaminophen",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Acetaminophen.txt:5; sha256=1307eb381ba3b9399d30cf821f205d843e8603674de451201940a10ec2303117",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Little Fevers Children's Fever/Pain Reliever",
+      "concept_id": "drug_acetaminophen",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Acetaminophen.txt:5-6; sha256=1307eb381ba3b9399d30cf821f205d843e8603674de451201940a10ec2303117",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Little Fevers Infant Fever/Pain Reliever",
+      "concept_id": "drug_acetaminophen",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Acetaminophen.txt:5-6; sha256=1307eb381ba3b9399d30cf821f205d843e8603674de451201940a10ec2303117",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "PediaCare Single Dose Acetaminophen Fever Reducer/Pain Reliever",
+      "concept_id": "drug_acetaminophen",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Acetaminophen.txt:5-7; sha256=1307eb381ba3b9399d30cf821f205d843e8603674de451201940a10ec2303117",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Tylenol Easy to Swallow",
+      "concept_id": "drug_acetaminophen",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Acetaminophen.txt:5-7; sha256=1307eb381ba3b9399d30cf821f205d843e8603674de451201940a10ec2303117",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Celebrex",
+      "concept_id": "drug_celecoxib",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Celecoxib.txt:5; sha256=4ad3411ce9c9b4ea16defd4a695d0d151158e9d1dcea97e804b70a27df02eae7",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Elyxyb",
+      "concept_id": "drug_celecoxib",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Celecoxib.txt:5; sha256=4ad3411ce9c9b4ea16defd4a695d0d151158e9d1dcea97e804b70a27df02eae7",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Vyscoxa",
+      "concept_id": "drug_celecoxib",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Celecoxib.txt:5; sha256=4ad3411ce9c9b4ea16defd4a695d0d151158e9d1dcea97e804b70a27df02eae7",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Cambia",
+      "concept_id": "drug_diclofenac",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Diclofenac.txt:5; sha256=dfd660c34c90e8f7d78400cbcfbfe66dba63f2496fa63d1a11f9879bd280a7c8",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Zipsor",
+      "concept_id": "drug_diclofenac",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Diclofenac.txt:5; sha256=dfd660c34c90e8f7d78400cbcfbfe66dba63f2496fa63d1a11f9879bd280a7c8",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Lofena",
+      "concept_id": "drug_diclofenac",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Diclofenac.txt:5; sha256=dfd660c34c90e8f7d78400cbcfbfe66dba63f2496fa63d1a11f9879bd280a7c8",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Voltaren-XR (DSC)",
+      "concept_id": "drug_diclofenac",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Diclofenac.txt:5; sha256=dfd660c34c90e8f7d78400cbcfbfe66dba63f2496fa63d1a11f9879bd280a7c8",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Cataflam (DSC)",
+      "concept_id": "drug_diclofenac",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Diclofenac.txt:5; sha256=dfd660c34c90e8f7d78400cbcfbfe66dba63f2496fa63d1a11f9879bd280a7c8",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Dyloject (DSC)",
+      "concept_id": "drug_diclofenac",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Diclofenac.txt:5-6; sha256=dfd660c34c90e8f7d78400cbcfbfe66dba63f2496fa63d1a11f9879bd280a7c8",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Zorvolex (DSC)",
+      "concept_id": "drug_diclofenac",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Diclofenac.txt:5-6; sha256=dfd660c34c90e8f7d78400cbcfbfe66dba63f2496fa63d1a11f9879bd280a7c8",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Advil",
+      "concept_id": "drug_ibuprofen",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Ibuprofen.txt:5; sha256=31440af590e321516c3e2273768a31952465f12cb1f7660a414cd17665ad220b",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Motrin",
+      "concept_id": "drug_ibuprofen",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Ibuprofen.txt:5; sha256=31440af590e321516c3e2273768a31952465f12cb1f7660a414cd17665ad220b",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "PediaCare Children's Pain Reliever/Fever Reducer IB",
+      "concept_id": "drug_ibuprofen",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Ibuprofen.txt:5-6; sha256=31440af590e321516c3e2273768a31952465f12cb1f7660a414cd17665ad220b",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "PediaCare Infant's Pain Reliever/Fever Reducer IB",
+      "concept_id": "drug_ibuprofen",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Ibuprofen.txt:5-6; sha256=31440af590e321516c3e2273768a31952465f12cb1f7660a414cd17665ad220b",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Mobic (DSC)",
+      "concept_id": "drug_meloxicam",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Meloxicam.txt:5; sha256=551ab727dc38b023ea862a298228776939701abcc9d97c8364c8c7041d61a14e",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Qamzova",
+      "concept_id": "drug_meloxicam",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Meloxicam.txt:5; sha256=551ab727dc38b023ea862a298228776939701abcc9d97c8364c8c7041d61a14e",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Xifyrm",
+      "concept_id": "drug_meloxicam",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Meloxicam.txt:5; sha256=551ab727dc38b023ea862a298228776939701abcc9d97c8364c8c7041d61a14e",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Aleve",
+      "concept_id": "drug_naproxen",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Naproxen.txt:5; sha256=a3f4f52fad6ac9a6388f3e44438201ea9e90ea491e591dda477dd00a20a777cf",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "EC Naprosyn",
+      "concept_id": "drug_naproxen",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Naproxen.txt:5; sha256=a3f4f52fad6ac9a6388f3e44438201ea9e90ea491e591dda477dd00a20a777cf",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Anaprox",
+      "concept_id": "drug_naproxen",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Naproxen.txt:5; sha256=a3f4f52fad6ac9a6388f3e44438201ea9e90ea491e591dda477dd00a20a777cf",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Anaprox DS",
+      "concept_id": "drug_naproxen",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Naproxen.txt:5; sha256=a3f4f52fad6ac9a6388f3e44438201ea9e90ea491e591dda477dd00a20a777cf",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Naprosyn",
+      "concept_id": "drug_naproxen",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Naproxen.txt:5; sha256=a3f4f52fad6ac9a6388f3e44438201ea9e90ea491e591dda477dd00a20a777cf",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Naprox Sodium",
+      "concept_id": "drug_naproxen",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Naproxen.txt:5-6; sha256=a3f4f52fad6ac9a6388f3e44438201ea9e90ea491e591dda477dd00a20a777cf",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Naproxen EC",
+      "concept_id": "drug_naproxen",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Naproxen.txt:5-6; sha256=a3f4f52fad6ac9a6388f3e44438201ea9e90ea491e591dda477dd00a20a777cf",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Naproxen SR",
+      "concept_id": "drug_naproxen",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Naproxen.txt:5-6; sha256=a3f4f52fad6ac9a6388f3e44438201ea9e90ea491e591dda477dd00a20a777cf",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Naprelan",
+      "concept_id": "drug_naproxen",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Naproxen.txt:5-6; sha256=a3f4f52fad6ac9a6388f3e44438201ea9e90ea491e591dda477dd00a20a777cf",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Menstridol",
+      "concept_id": "drug_naproxen",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Naproxen.txt:5-6; sha256=a3f4f52fad6ac9a6388f3e44438201ea9e90ea491e591dda477dd00a20a777cf",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "OxyContin",
+      "concept_id": "drug_oxycodone",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Oxycodone.txt:8; sha256=aef11b2273c22ec49f5476959d7bc10f2fcf988f21445c811693fc6d7f4d7654",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Xtampza ER",
+      "concept_id": "drug_oxycodone",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Oxycodone.txt:8; sha256=aef11b2273c22ec49f5476959d7bc10f2fcf988f21445c811693fc6d7f4d7654",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Roxicodone",
+      "concept_id": "drug_oxycodone",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Oxycodone.txt:8; sha256=aef11b2273c22ec49f5476959d7bc10f2fcf988f21445c811693fc6d7f4d7654",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Oxaydo",
+      "concept_id": "drug_oxycodone",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Oxycodone.txt:8; sha256=aef11b2273c22ec49f5476959d7bc10f2fcf988f21445c811693fc6d7f4d7654",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "RoxyBond",
+      "concept_id": "drug_oxycodone",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Oxycodone.txt:8; sha256=aef11b2273c22ec49f5476959d7bc10f2fcf988f21445c811693fc6d7f4d7654",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "ConZip",
+      "concept_id": "drug_tramadol",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Tramadol.txt:5; sha256=f006c2932b09da37343de94dba6b69d52bd2cdfc6cf4b478cfa7f7dfc9339598",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Ultram (DSC)",
+      "concept_id": "drug_tramadol",
+      "source": "project-documents/medical-documents/DDI-text/Analgesics and NSAIDs/Tramadol.txt:5; sha256=f006c2932b09da37343de94dba6b69d52bd2cdfc6cf4b478cfa7f7dfc9339598",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Amoxil",
+      "concept_id": "drug_amoxicillin",
+      "source": "project-documents/medical-documents/DDI-text/Antibiotics/Amoxicillin.txt:5; sha256=6e2d5036f1c4e7731a59cdbaf3533ce74558a65c65ac78f3d4442de9755006ac",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Zithromax",
+      "concept_id": "drug_azithromycin",
+      "source": "project-documents/medical-documents/DDI-text/Antibiotics/Azithromycin.txt:5; sha256=aa3d97168ffceaa65bf9ebaf75a60915caafe04a573547c195b7e164c03cc2ea",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Keflex",
+      "concept_id": "drug_cephalexin",
+      "source": "project-documents/medical-documents/DDI-text/Antibiotics/Cephalexin.txt:5; sha256=97748565baab6f8480a63321537cc10e3726e83340cc91b26a62ea9b5fbc8323",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Panixine Disperdose",
+      "concept_id": "drug_cephalexin",
+      "source": "project-documents/medical-documents/DDI-text/Antibiotics/Cephalexin.txt:5; sha256=97748565baab6f8480a63321537cc10e3726e83340cc91b26a62ea9b5fbc8323",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Cipro",
+      "concept_id": "drug_ciprofloxacin",
+      "source": "project-documents/medical-documents/DDI-text/Antibiotics/Ciprofloxacin.txt:5; sha256=7dbb1201029901b37449ec620eccb9082c90a3533b84e7f484a22e10c7a6da90",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Cipro XR",
+      "concept_id": "drug_ciprofloxacin",
+      "source": "project-documents/medical-documents/DDI-text/Antibiotics/Ciprofloxacin.txt:5; sha256=7dbb1201029901b37449ec620eccb9082c90a3533b84e7f484a22e10c7a6da90",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "ProQuin XR",
+      "concept_id": "drug_ciprofloxacin",
+      "source": "project-documents/medical-documents/DDI-text/Antibiotics/Ciprofloxacin.txt:5; sha256=7dbb1201029901b37449ec620eccb9082c90a3533b84e7f484a22e10c7a6da90",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Vibramycin",
+      "concept_id": "drug_doxycycline",
+      "source": "project-documents/medical-documents/DDI-text/Antibiotics/Doxycycline.txt:5; sha256=74b59ff3cd8916d631773e1a15029324072ed498e323c445ca578ef90e1ae008",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Monodox",
+      "concept_id": "drug_doxycycline",
+      "source": "project-documents/medical-documents/DDI-text/Antibiotics/Doxycycline.txt:5; sha256=74b59ff3cd8916d631773e1a15029324072ed498e323c445ca578ef90e1ae008",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Acticlate",
+      "concept_id": "drug_doxycycline",
+      "source": "project-documents/medical-documents/DDI-text/Antibiotics/Doxycycline.txt:5; sha256=74b59ff3cd8916d631773e1a15029324072ed498e323c445ca578ef90e1ae008",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Atridox",
+      "concept_id": "drug_doxycycline",
+      "source": "project-documents/medical-documents/DDI-text/Antibiotics/Doxycycline.txt:5; sha256=74b59ff3cd8916d631773e1a15029324072ed498e323c445ca578ef90e1ae008",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Avidoxy",
+      "concept_id": "drug_doxycycline",
+      "source": "project-documents/medical-documents/DDI-text/Antibiotics/Doxycycline.txt:5; sha256=74b59ff3cd8916d631773e1a15029324072ed498e323c445ca578ef90e1ae008",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Doxy",
+      "concept_id": "drug_doxycycline",
+      "source": "project-documents/medical-documents/DDI-text/Antibiotics/Doxycycline.txt:5; sha256=74b59ff3cd8916d631773e1a15029324072ed498e323c445ca578ef90e1ae008",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Doxycin",
+      "concept_id": "drug_doxycycline",
+      "source": "project-documents/medical-documents/DDI-text/Antibiotics/Doxycycline.txt:5-6; sha256=74b59ff3cd8916d631773e1a15029324072ed498e323c445ca578ef90e1ae008",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Doryx",
+      "concept_id": "drug_doxycycline",
+      "source": "project-documents/medical-documents/DDI-text/Antibiotics/Doxycycline.txt:5-6; sha256=74b59ff3cd8916d631773e1a15029324072ed498e323c445ca578ef90e1ae008",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Oracea",
+      "concept_id": "drug_doxycycline",
+      "source": "project-documents/medical-documents/DDI-text/Antibiotics/Doxycycline.txt:5-6; sha256=74b59ff3cd8916d631773e1a15029324072ed498e323c445ca578ef90e1ae008",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Periostat",
+      "concept_id": "drug_doxycycline",
+      "source": "project-documents/medical-documents/DDI-text/Antibiotics/Doxycycline.txt:5-6; sha256=74b59ff3cd8916d631773e1a15029324072ed498e323c445ca578ef90e1ae008",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Adoxa",
+      "concept_id": "drug_doxycycline",
+      "source": "project-documents/medical-documents/DDI-text/Antibiotics/Doxycycline.txt:5-6; sha256=74b59ff3cd8916d631773e1a15029324072ed498e323c445ca578ef90e1ae008",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Ocudox",
+      "concept_id": "drug_doxycycline",
+      "source": "project-documents/medical-documents/DDI-text/Antibiotics/Doxycycline.txt:5-6; sha256=74b59ff3cd8916d631773e1a15029324072ed498e323c445ca578ef90e1ae008",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Doryx MPC",
+      "concept_id": "drug_doxycycline",
+      "source": "project-documents/medical-documents/DDI-text/Antibiotics/Doxycycline.txt:5-6; sha256=74b59ff3cd8916d631773e1a15029324072ed498e323c445ca578ef90e1ae008",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Osmolex ER",
+      "concept_id": "drug_amantadine",
+      "source": "project-documents/medical-documents/DDI-text/Anticholinergics & Parkinsonism Agents/Amantadine.txt:5; sha256=53df1c298a1ceb1cb3699c46ad8620836e2aed3ce7c1a05b6ee738ff0594653a",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Gocovri",
+      "concept_id": "drug_amantadine",
+      "source": "project-documents/medical-documents/DDI-text/Anticholinergics & Parkinsonism Agents/Amantadine.txt:5; sha256=53df1c298a1ceb1cb3699c46ad8620836e2aed3ce7c1a05b6ee738ff0594653a",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Atreza",
+      "concept_id": "drug_atropine",
+      "source": "project-documents/medical-documents/DDI-text/Anticholinergics & Parkinsonism Agents/Atropine.txt:7; sha256=cb0945149c56b143bedd2dfa229fb5eb0a9f5e723edc0cc7ca604f3595469735",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Atropine PO",
+      "concept_id": "drug_atropine",
+      "source": "project-documents/medical-documents/DDI-text/Anticholinergics & Parkinsonism Agents/Atropine.txt:7; sha256=cb0945149c56b143bedd2dfa229fb5eb0a9f5e723edc0cc7ca604f3595469735",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "SalTropine",
+      "concept_id": "drug_atropine",
+      "source": "project-documents/medical-documents/DDI-text/Anticholinergics & Parkinsonism Agents/Atropine.txt:7; sha256=cb0945149c56b143bedd2dfa229fb5eb0a9f5e723edc0cc7ca604f3595469735",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Cogentin",
+      "concept_id": "drug_benztropine",
+      "source": "project-documents/medical-documents/DDI-text/Anticholinergics & Parkinsonism Agents/Benztropine.txt:5; sha256=9a0e72eef079ad4a702328ac3f6b6490a9a706bc9b53fda7958d0762f61b308c",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Cycloset",
+      "concept_id": "drug_bromocriptine",
+      "source": "project-documents/medical-documents/DDI-text/Anticholinergics & Parkinsonism Agents/Bromocriptine.txt:7; sha256=9f53a99b9b1510696d5b944b7dfaeb3ef6a8592b370578d819e1050b3b82070c",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Parlodel",
+      "concept_id": "drug_bromocriptine",
+      "source": "project-documents/medical-documents/DDI-text/Anticholinergics & Parkinsonism Agents/Bromocriptine.txt:7; sha256=9f53a99b9b1510696d5b944b7dfaeb3ef6a8592b370578d819e1050b3b82070c",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Cuvposa",
+      "concept_id": "drug_glycopyrrolate",
+      "source": "project-documents/medical-documents/DDI-text/Anticholinergics & Parkinsonism Agents/Glycopyrrolate.txt:9; sha256=0e1faae6bbcbeaa0bad33e930b064ca6e67ac8d7d5d4f25eef01f07620194e85",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "glycopyrronium",
+      "concept_id": "drug_glycopyrrolate",
+      "source": "project-documents/medical-documents/DDI-text/Anticholinergics & Parkinsonism Agents/Glycopyrrolate.txt:9; sha256=0e1faae6bbcbeaa0bad33e930b064ca6e67ac8d7d5d4f25eef01f07620194e85",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Robinul",
+      "concept_id": "drug_glycopyrrolate",
+      "source": "project-documents/medical-documents/DDI-text/Anticholinergics & Parkinsonism Agents/Glycopyrrolate.txt:9; sha256=0e1faae6bbcbeaa0bad33e930b064ca6e67ac8d7d5d4f25eef01f07620194e85",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Robinul Forte",
+      "concept_id": "drug_glycopyrrolate",
+      "source": "project-documents/medical-documents/DDI-text/Anticholinergics & Parkinsonism Agents/Glycopyrrolate.txt:9; sha256=0e1faae6bbcbeaa0bad33e930b064ca6e67ac8d7d5d4f25eef01f07620194e85",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Artane",
+      "concept_id": "drug_trihexyphenidyl",
+      "source": "project-documents/medical-documents/DDI-text/Anticholinergics & Parkinsonism Agents/Trihexyphenidyl.txt:5; sha256=151124011104b0ace0df2fa893f472cea1666466a0b8ffd9f091b687802fa682",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Trihex",
+      "concept_id": "drug_trihexyphenidyl",
+      "source": "project-documents/medical-documents/DDI-text/Anticholinergics & Parkinsonism Agents/Trihexyphenidyl.txt:5; sha256=151124011104b0ace0df2fa893f472cea1666466a0b8ffd9f091b687802fa682",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Elavil",
+      "concept_id": "drug_amitriptyline",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Amitriptyline.txt:5; sha256=fd2ee857f929fef93e02ad81f1c5f809d1f0de8bb417d3ea78bb4ccb22562598",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Levate",
+      "concept_id": "drug_amitriptyline",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Amitriptyline.txt:5; sha256=fd2ee857f929fef93e02ad81f1c5f809d1f0de8bb417d3ea78bb4ccb22562598",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Budeprion SR",
+      "concept_id": "drug_bupropion",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Bupropion.txt:5; sha256=39949f078ba840b5adb67c578ef548f7795f1f07bd4be88c974a4b155072a5dd",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Aplenzin",
+      "concept_id": "drug_bupropion",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Bupropion.txt:5; sha256=39949f078ba840b5adb67c578ef548f7795f1f07bd4be88c974a4b155072a5dd",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Buproban",
+      "concept_id": "drug_bupropion",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Bupropion.txt:5; sha256=39949f078ba840b5adb67c578ef548f7795f1f07bd4be88c974a4b155072a5dd",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Wellbutrin SR",
+      "concept_id": "drug_bupropion",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Bupropion.txt:5; sha256=39949f078ba840b5adb67c578ef548f7795f1f07bd4be88c974a4b155072a5dd",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Wellbutrin XL",
+      "concept_id": "drug_bupropion",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Bupropion.txt:5-6; sha256=39949f078ba840b5adb67c578ef548f7795f1f07bd4be88c974a4b155072a5dd",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Forfivo XL",
+      "concept_id": "drug_bupropion",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Bupropion.txt:5-6; sha256=39949f078ba840b5adb67c578ef548f7795f1f07bd4be88c974a4b155072a5dd",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Zyban (DSC)",
+      "concept_id": "drug_bupropion",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Bupropion.txt:5-6; sha256=39949f078ba840b5adb67c578ef548f7795f1f07bd4be88c974a4b155072a5dd",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Celexa",
+      "concept_id": "drug_citalopram",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Citalopram.txt:5; sha256=8e3d5ad20b99d28508c5f4e7df4ec3e23c7fff53764762835c7e812b87d99622",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Anafranil",
+      "concept_id": "drug_clomipramine",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Clomipramine.txt:5; sha256=7ac3cce0afdf8d04af5531ad6a7d1b2ff50062f33fa86c0e6ca25a75cd62110f",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Cymbalta",
+      "concept_id": "drug_duloxetine",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Duloxetine.txt:5; sha256=3a06234c0a9140bb8c8b0b2c89acd5925dbda696731d5c5c1b18c9b2f3a6f120",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Drizalma Sprinkle",
+      "concept_id": "drug_duloxetine",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Duloxetine.txt:5; sha256=3a06234c0a9140bb8c8b0b2c89acd5925dbda696731d5c5c1b18c9b2f3a6f120",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Lexapro",
+      "concept_id": "drug_escitalopram",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Escitalopram.txt:5; sha256=1eb25a69bb771a1d539215618e50405f2b9e5f3f0d8a39c2c0a6b874be18cea1",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Prozac",
+      "concept_id": "drug_fluoxetine",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Fluoxetine.txt:5; sha256=1c2b3680ff0216c79c99028b26e3aff0d8efb506dda679b1e488137a22af9e2e",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Prozac Weekly (DSC)",
+      "concept_id": "drug_fluoxetine",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Fluoxetine.txt:5; sha256=1c2b3680ff0216c79c99028b26e3aff0d8efb506dda679b1e488137a22af9e2e",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Sarafem (DSC)",
+      "concept_id": "drug_fluoxetine",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Fluoxetine.txt:5; sha256=1c2b3680ff0216c79c99028b26e3aff0d8efb506dda679b1e488137a22af9e2e",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Remeron",
+      "concept_id": "drug_mirtazapine",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Mirtazapine.txt:5; sha256=bc6a83f32a7a531b6cc92ff625b1136c876b1534d87470760fc1fc8a1f5327c4",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Remeron SolTab",
+      "concept_id": "drug_mirtazapine",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Mirtazapine.txt:5; sha256=bc6a83f32a7a531b6cc92ff625b1136c876b1534d87470760fc1fc8a1f5327c4",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Pamelor",
+      "concept_id": "drug_nortriptyline",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Nortriptyline.txt:5; sha256=ad04bb2db22c5e39d30641802bf2aa5f9b3a16a6a477eb45faee9316a78b36b1",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Paxil",
+      "concept_id": "drug_paroxetine",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Paroxetine.txt:5; sha256=b62b1dd4652cc8fc7ba70858d58b7008ce9ae976f79979b6b5b406864d8ee613",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Brisdelle",
+      "concept_id": "drug_paroxetine",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Paroxetine.txt:5; sha256=b62b1dd4652cc8fc7ba70858d58b7008ce9ae976f79979b6b5b406864d8ee613",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Paxil CR",
+      "concept_id": "drug_paroxetine",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Paroxetine.txt:5; sha256=b62b1dd4652cc8fc7ba70858d58b7008ce9ae976f79979b6b5b406864d8ee613",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Pexeva",
+      "concept_id": "drug_paroxetine",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Paroxetine.txt:5; sha256=b62b1dd4652cc8fc7ba70858d58b7008ce9ae976f79979b6b5b406864d8ee613",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Zoloft",
+      "concept_id": "drug_sertraline",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Sertraline.txt:5; sha256=70e5a933c1dfc50d4ee2b283005d8d572994d7dc1977748dec5123df7de3cfe7",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Effexor XR",
+      "concept_id": "drug_venlafaxine",
+      "source": "project-documents/medical-documents/DDI-text/Antidepressants/Venlafaxine.txt:5; sha256=ecf873b181a64207185d1031c5e64557162dddd159a61a8c03ed20a8d2c5d4cf",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Jardiance",
+      "concept_id": "drug_empagliflozin",
+      "source": "project-documents/medical-documents/DDI-text/Antidiabetic Agents/Empagliflozin.txt:5; sha256=a1c3e703b2dadb4559a3d1b2a4e16a2e0332e23ac38497c846cd850eeeb4de30",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Amaryl",
+      "concept_id": "drug_glimepiride",
+      "source": "project-documents/medical-documents/DDI-text/Antidiabetic Agents/Glimepiride.txt:5; sha256=bce3c1e74ebff7baadb0312e178280af48c6b606683c49355cf18d88c0382ab2",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Glucotrol XL",
+      "concept_id": "drug_glipizide",
+      "source": "project-documents/medical-documents/DDI-text/Antidiabetic Agents/Glipizide.txt:5; sha256=f3d36c79278309eaafab35feb97107c914b2d3f774056e510e32edff4dc9a13e",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Minodiab",
+      "concept_id": "drug_glipizide",
+      "source": "project-documents/medical-documents/DDI-text/Antidiabetic Agents/Glipizide.txt:5; sha256=f3d36c79278309eaafab35feb97107c914b2d3f774056e510e32edff4dc9a13e",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Humulin R",
+      "concept_id": "drug_insulin_regular_human",
+      "source": "project-documents/medical-documents/DDI-text/Antidiabetic Agents/Insulin.txt:5; sha256=d8b353cd1ad4c85994ba2c0fdf7905fb39143d3618d6081bbf58472253ae7e49",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Novolin R",
+      "concept_id": "drug_insulin_regular_human",
+      "source": "project-documents/medical-documents/DDI-text/Antidiabetic Agents/Insulin.txt:5; sha256=d8b353cd1ad4c85994ba2c0fdf7905fb39143d3618d6081bbf58472253ae7e49",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Humulin R U-500",
+      "concept_id": "drug_insulin_regular_human",
+      "source": "project-documents/medical-documents/DDI-text/Antidiabetic Agents/Insulin.txt:5; sha256=d8b353cd1ad4c85994ba2c0fdf7905fb39143d3618d6081bbf58472253ae7e49",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Myxredlin",
+      "concept_id": "drug_insulin_regular_human",
+      "source": "project-documents/medical-documents/DDI-text/Antidiabetic Agents/Insulin.txt:5; sha256=d8b353cd1ad4c85994ba2c0fdf7905fb39143d3618d6081bbf58472253ae7e49",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Victoza",
+      "concept_id": "drug_liraglutide",
+      "source": "project-documents/medical-documents/DDI-text/Antidiabetic Agents/Liraglutide.txt:5; sha256=8854a467d7ea6baa9beb09ab011f299d1c6744f2499b908e7142142aede227d6",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Saxenda",
+      "concept_id": "drug_liraglutide",
+      "source": "project-documents/medical-documents/DDI-text/Antidiabetic Agents/Liraglutide.txt:5; sha256=8854a467d7ea6baa9beb09ab011f299d1c6744f2499b908e7142142aede227d6",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Glucophage",
+      "concept_id": "drug_metformin",
+      "source": "project-documents/medical-documents/DDI-text/Antidiabetic Agents/Metformin.txt:5; sha256=a21da1c1adff1152f9feafa07718ebfcd79d8d91323df4c148cc8489e0489ed9",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Glucophage XR",
+      "concept_id": "drug_metformin",
+      "source": "project-documents/medical-documents/DDI-text/Antidiabetic Agents/Metformin.txt:5; sha256=a21da1c1adff1152f9feafa07718ebfcd79d8d91323df4c148cc8489e0489ed9",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Glumetza",
+      "concept_id": "drug_metformin",
+      "source": "project-documents/medical-documents/DDI-text/Antidiabetic Agents/Metformin.txt:5; sha256=a21da1c1adff1152f9feafa07718ebfcd79d8d91323df4c148cc8489e0489ed9",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Riomet",
+      "concept_id": "drug_metformin",
+      "source": "project-documents/medical-documents/DDI-text/Antidiabetic Agents/Metformin.txt:5; sha256=a21da1c1adff1152f9feafa07718ebfcd79d8d91323df4c148cc8489e0489ed9",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Riomet ER",
+      "concept_id": "drug_metformin",
+      "source": "project-documents/medical-documents/DDI-text/Antidiabetic Agents/Metformin.txt:5; sha256=a21da1c1adff1152f9feafa07718ebfcd79d8d91323df4c148cc8489e0489ed9",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Actos",
+      "concept_id": "drug_pioglitazone",
+      "source": "project-documents/medical-documents/DDI-text/Antidiabetic Agents/Pioglitazone.txt:5; sha256=a2e52ad0a1ae947490559fcc7a5e9f95dc30bed3b4223d694153124d1eb54b0b",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Ozempic",
+      "concept_id": "drug_semaglutide",
+      "source": "project-documents/medical-documents/DDI-text/Antidiabetic Agents/Semaglutide.txt:5; sha256=ac6c2ac87e4a3315ae50bac149cc7a12ff3c6421968e5d0bd6671a4f82f794b5",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Rybelsus",
+      "concept_id": "drug_semaglutide",
+      "source": "project-documents/medical-documents/DDI-text/Antidiabetic Agents/Semaglutide.txt:5; sha256=ac6c2ac87e4a3315ae50bac149cc7a12ff3c6421968e5d0bd6671a4f82f794b5",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Wegovy",
+      "concept_id": "drug_semaglutide",
+      "source": "project-documents/medical-documents/DDI-text/Antidiabetic Agents/Semaglutide.txt:5; sha256=ac6c2ac87e4a3315ae50bac149cc7a12ff3c6421968e5d0bd6671a4f82f794b5",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Wegovy HD",
+      "concept_id": "drug_semaglutide",
+      "source": "project-documents/medical-documents/DDI-text/Antidiabetic Agents/Semaglutide.txt:5; sha256=ac6c2ac87e4a3315ae50bac149cc7a12ff3c6421968e5d0bd6671a4f82f794b5",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Januvia",
+      "concept_id": "drug_sitagliptin",
+      "source": "project-documents/medical-documents/DDI-text/Antidiabetic Agents/Sitagliptin.txt:5; sha256=e7c9bc45ed5b3f829dfe8e29b015ee727645db2f3ed6cad8de99fea2dcd4022f",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Zituvio",
+      "concept_id": "drug_sitagliptin",
+      "source": "project-documents/medical-documents/DDI-text/Antidiabetic Agents/Sitagliptin.txt:5; sha256=e7c9bc45ed5b3f829dfe8e29b015ee727645db2f3ed6cad8de99fea2dcd4022f",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Brynovin",
+      "concept_id": "drug_sitagliptin",
+      "source": "project-documents/medical-documents/DDI-text/Antidiabetic Agents/Sitagliptin.txt:5; sha256=e7c9bc45ed5b3f829dfe8e29b015ee727645db2f3ed6cad8de99fea2dcd4022f",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Abilify",
+      "concept_id": "drug_aripiprazole",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Aripiprazole.txt:6; sha256=652cfa4e7499e41266fcb92e3fe607ecb5f18736dd8b48288f386d0eba27d30b",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Abilify Maintena",
+      "concept_id": "drug_aripiprazole",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Aripiprazole.txt:6; sha256=652cfa4e7499e41266fcb92e3fe607ecb5f18736dd8b48288f386d0eba27d30b",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Aristada",
+      "concept_id": "drug_aripiprazole",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Aripiprazole.txt:6; sha256=652cfa4e7499e41266fcb92e3fe607ecb5f18736dd8b48288f386d0eba27d30b",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Aristada Initio",
+      "concept_id": "drug_aripiprazole",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Aripiprazole.txt:6; sha256=652cfa4e7499e41266fcb92e3fe607ecb5f18736dd8b48288f386d0eba27d30b",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Abilify Asimtufii",
+      "concept_id": "drug_aripiprazole",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Aripiprazole.txt:6; sha256=652cfa4e7499e41266fcb92e3fe607ecb5f18736dd8b48288f386d0eba27d30b",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Opipza",
+      "concept_id": "drug_aripiprazole",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Aripiprazole.txt:6; sha256=652cfa4e7499e41266fcb92e3fe607ecb5f18736dd8b48288f386d0eba27d30b",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Mezofy",
+      "concept_id": "drug_aripiprazole",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Aripiprazole.txt:6; sha256=652cfa4e7499e41266fcb92e3fe607ecb5f18736dd8b48288f386d0eba27d30b",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Rexulti",
+      "concept_id": "drug_brexpiprazole",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Brexpiprazole.txt:4; sha256=d980258a986dfce60f80e6fecb69f1dbab6c1743b19d682279de4597d23da8fc",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Vraylar",
+      "concept_id": "drug_cariprazine",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Cariprazine.txt:2; sha256=df6d217dc3ee31170db0ac9d6bcfdeeea71da55c9a952f35ebd8bde93293f566",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Thorazine",
+      "concept_id": "drug_chlorpromazine",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Chlorpromazine.txt:2; sha256=98b6dc917a3641c31436ef4834cc8ec7efad5d48979d6a879f990dd56dbfdea4",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Clozaril",
+      "concept_id": "drug_clozapine",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Clozapine.txt:2; sha256=4a3585c8d3dc5ecf1935b681fc30b1655815b659a1ec88e4c09a970f4ee0ee35",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Versacloz",
+      "concept_id": "drug_clozapine",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Clozapine.txt:2; sha256=4a3585c8d3dc5ecf1935b681fc30b1655815b659a1ec88e4c09a970f4ee0ee35",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Modecate",
+      "concept_id": "drug_fluphenazine",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Fluphenazine.txt:1; sha256=7977a158eb6598c00855ddbacc2a211ba2c78a52e53bc57f34fdf8f0c4ead040",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Modecate Concentrate",
+      "concept_id": "drug_fluphenazine",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Fluphenazine.txt:1; sha256=7977a158eb6598c00855ddbacc2a211ba2c78a52e53bc57f34fdf8f0c4ead040",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Moditen",
+      "concept_id": "drug_fluphenazine",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Fluphenazine.txt:1; sha256=7977a158eb6598c00855ddbacc2a211ba2c78a52e53bc57f34fdf8f0c4ead040",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Prolixin",
+      "concept_id": "drug_fluphenazine",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Fluphenazine.txt:1; sha256=7977a158eb6598c00855ddbacc2a211ba2c78a52e53bc57f34fdf8f0c4ead040",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "RhoFluphenazine",
+      "concept_id": "drug_fluphenazine",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Fluphenazine.txt:1; sha256=7977a158eb6598c00855ddbacc2a211ba2c78a52e53bc57f34fdf8f0c4ead040",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Haldol",
+      "concept_id": "drug_haloperidol",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Haloperidol.txt:2; sha256=fdaa4c7e71cccfcdc7094f3ae668172d6482055252890326fd489649e372e9bf",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Haldol Decanoate",
+      "concept_id": "drug_haloperidol",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Haloperidol.txt:2; sha256=fdaa4c7e71cccfcdc7094f3ae668172d6482055252890326fd489649e372e9bf",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Haloperidol LA",
+      "concept_id": "drug_haloperidol",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Haloperidol.txt:2; sha256=fdaa4c7e71cccfcdc7094f3ae668172d6482055252890326fd489649e372e9bf",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Peridol",
+      "concept_id": "drug_haloperidol",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Haloperidol.txt:2; sha256=fdaa4c7e71cccfcdc7094f3ae668172d6482055252890326fd489649e372e9bf",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Fanapt",
+      "concept_id": "drug_iloperidone",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Iloperidone.txt:1; sha256=253fca89aca5623173c18a57bcd403ac73ebfb0fc5419d84685cd12ba08268eb",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Loxitane",
+      "concept_id": "drug_loxapine",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Loxapine.txt:5; sha256=f13d7533699181ed0550d5dbabd5ae109e43c44c9894be43d2243325d191562c",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Latuda",
+      "concept_id": "drug_lurasidone",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Lurasidone.txt:1; sha256=b6fe1a1991f44c346dd85b5707a7019e4fe65884f6cd0689e94bfbde7f2c0aee",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Moban",
+      "concept_id": "drug_molindone",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Molindone.txt:2; sha256=f56944f409b405942f3fcf3d89d099b0e4461eff6fa83d62e57abe212ab35203",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Zyprexa",
+      "concept_id": "drug_olanzapine",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Olanzapine.txt:2; sha256=898599241e17bd8783fe46783dc400fb0497dad5235815b48b73623339a64cf9",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Zyprexa Relprevv",
+      "concept_id": "drug_olanzapine",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Olanzapine.txt:2; sha256=898599241e17bd8783fe46783dc400fb0497dad5235815b48b73623339a64cf9",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Zyprexa Zydis",
+      "concept_id": "drug_olanzapine",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Olanzapine.txt:2; sha256=898599241e17bd8783fe46783dc400fb0497dad5235815b48b73623339a64cf9",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Invega",
+      "concept_id": "drug_paliperidone",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Paliperidone.txt:3; sha256=e561e70d6c85d8d6c6a9dcdca74ce05e242de75ae5d3d708ca1d7649b88d047a",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Invega Sustenna",
+      "concept_id": "drug_paliperidone",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Paliperidone.txt:3; sha256=e561e70d6c85d8d6c6a9dcdca74ce05e242de75ae5d3d708ca1d7649b88d047a",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Invega Trinza",
+      "concept_id": "drug_paliperidone",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Paliperidone.txt:3; sha256=e561e70d6c85d8d6c6a9dcdca74ce05e242de75ae5d3d708ca1d7649b88d047a",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Invega Hafyera",
+      "concept_id": "drug_paliperidone",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Paliperidone.txt:3; sha256=e561e70d6c85d8d6c6a9dcdca74ce05e242de75ae5d3d708ca1d7649b88d047a",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Erzofri",
+      "concept_id": "drug_paliperidone",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Paliperidone.txt:3; sha256=e561e70d6c85d8d6c6a9dcdca74ce05e242de75ae5d3d708ca1d7649b88d047a",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Trilafon",
+      "concept_id": "drug_perphenazine",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Perphenazine.txt:2; sha256=aadb313bb67e10caa14fefdd6343d8912bdfe8c180bc625929cedff4beaae9d0",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Seroquel",
+      "concept_id": "drug_quetiapine",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Quetiapine.txt:2; sha256=ed379be78f065306e9e388a4426536e115168adafa504ef6ca36f5a8530ba23c",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Seroquel XR",
+      "concept_id": "drug_quetiapine",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Quetiapine.txt:2; sha256=ed379be78f065306e9e388a4426536e115168adafa504ef6ca36f5a8530ba23c",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Risperdal",
+      "concept_id": "drug_risperidone",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Risperidone.txt:6; sha256=89d865736c9d0628563ffb461c85648fbd7502b01081bc240d8646568e99f3e3",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Risperdal Consta",
+      "concept_id": "drug_risperidone",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Risperidone.txt:6; sha256=89d865736c9d0628563ffb461c85648fbd7502b01081bc240d8646568e99f3e3",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Perseris",
+      "concept_id": "drug_risperidone",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Risperidone.txt:6; sha256=89d865736c9d0628563ffb461c85648fbd7502b01081bc240d8646568e99f3e3",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Rykindo",
+      "concept_id": "drug_risperidone",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Risperidone.txt:6; sha256=89d865736c9d0628563ffb461c85648fbd7502b01081bc240d8646568e99f3e3",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Uzedy",
+      "concept_id": "drug_risperidone",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Risperidone.txt:6; sha256=89d865736c9d0628563ffb461c85648fbd7502b01081bc240d8646568e99f3e3",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Risvan",
+      "concept_id": "drug_risperidone",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Risperidone.txt:6; sha256=89d865736c9d0628563ffb461c85648fbd7502b01081bc240d8646568e99f3e3",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Mellaril",
+      "concept_id": "drug_thioridazine",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Thioridazine.txt:2; sha256=e6a0ea6315cc78d6a398f7dc00f2b003f5af9c148db881d84b6c63fc6addea6c",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Navane",
+      "concept_id": "drug_thiothixene",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Thiothixene.txt:3; sha256=b9b0c8aab7f029e7f72e99223ec61573bd33f7e4e06b69f198e11947ea20c0bc",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "1st Generation",
+      "concept_id": "drug_thiothixene",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Thiothixene.txt:3; sha256=b9b0c8aab7f029e7f72e99223ec61573bd33f7e4e06b69f198e11947ea20c0bc",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Stelazine",
+      "concept_id": "drug_trifluoperazine",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Trifluoperazine.txt:4; sha256=6e6ebf25da0483f148279df1c1417d4455abeb0d8579e61ebf9b1acb0ecac2d1",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Depakene (DSC)",
+      "concept_id": "drug_valproic_acid",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Valproic acid.txt:2; sha256=a5430526c02b3074ca3bf77ce30f27a818f18d36cca207c42a4fd2c4b2285672",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Stavzor (DSC)",
+      "concept_id": "drug_valproic_acid",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Valproic acid.txt:2; sha256=a5430526c02b3074ca3bf77ce30f27a818f18d36cca207c42a4fd2c4b2285672",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Geodon",
+      "concept_id": "drug_ziprasidone",
+      "source": "project-documents/medical-documents/DDI-text/Antipsychotics/Ziprasidone.txt:2; sha256=5a13c48b7308e9f2937b0ffaa0d7213b722122a718b6c1940949daf1cc4db46b",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Xanax",
+      "concept_id": "drug_alprazolam",
+      "source": "project-documents/medical-documents/DDI-text/Anxiolytics, Sedatives, and Hypnotics/Alprazolam.txt:5; sha256=fd3a62c9fb19f78be60abf52304ebf9c0e4e58f8893da0622aec9b4aeeb7224c",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Xanax XR",
+      "concept_id": "drug_alprazolam",
+      "source": "project-documents/medical-documents/DDI-text/Anxiolytics, Sedatives, and Hypnotics/Alprazolam.txt:5; sha256=fd3a62c9fb19f78be60abf52304ebf9c0e4e58f8893da0622aec9b4aeeb7224c",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "BuSpar (DSC)",
+      "concept_id": "drug_buspirone",
+      "source": "project-documents/medical-documents/DDI-text/Anxiolytics, Sedatives, and Hypnotics/Buspirone.txt:5; sha256=0aed5c30cfb39f5c6059b5105ebf35bc6e1e00046b897306a6a0964de8d63bd0",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Klonopin",
+      "concept_id": "drug_clonazepam",
+      "source": "project-documents/medical-documents/DDI-text/Anxiolytics, Sedatives, and Hypnotics/Clonazepam.txt:5; sha256=fc5bf118cd676e10395015d5f3ac1882b172af4ffbf8c5bc6c3ce03de896a350",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Valium",
+      "concept_id": "drug_diazepam",
+      "source": "project-documents/medical-documents/DDI-text/Anxiolytics, Sedatives, and Hypnotics/Diazepam.txt:5; sha256=28e203bde541a005bd4cc38ced5969038a472f4c2a93cd5b13cc85f5065f7d64",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Diastat AcuDial",
+      "concept_id": "drug_diazepam",
+      "source": "project-documents/medical-documents/DDI-text/Anxiolytics, Sedatives, and Hypnotics/Diazepam.txt:5; sha256=28e203bde541a005bd4cc38ced5969038a472f4c2a93cd5b13cc85f5065f7d64",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Valtoco",
+      "concept_id": "drug_diazepam",
+      "source": "project-documents/medical-documents/DDI-text/Anxiolytics, Sedatives, and Hypnotics/Diazepam.txt:5; sha256=28e203bde541a005bd4cc38ced5969038a472f4c2a93cd5b13cc85f5065f7d64",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Ativan",
+      "concept_id": "drug_lorazepam",
+      "source": "project-documents/medical-documents/DDI-text/Anxiolytics, Sedatives, and Hypnotics/Lorazepam.txt:5; sha256=3ac5129c4efd9bed3d32507f2a8374ac354272838ddecb47ed8451a0f16385a3",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Loreev XR",
+      "concept_id": "drug_lorazepam",
+      "source": "project-documents/medical-documents/DDI-text/Anxiolytics, Sedatives, and Hypnotics/Lorazepam.txt:5; sha256=3ac5129c4efd9bed3d32507f2a8374ac354272838ddecb47ed8451a0f16385a3",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "N-acetyl-5-methoxytryptamine",
+      "concept_id": "drug_melatonin",
+      "source": "project-documents/medical-documents/DDI-text/Anxiolytics, Sedatives, and Hypnotics/Melatonin.txt:5; sha256=93f644b331f2f989a228d25737399443b847ef4ebe7116a005ba7047e173180b",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "pineal hormone melatonin",
+      "concept_id": "drug_melatonin",
+      "source": "project-documents/medical-documents/DDI-text/Anxiolytics, Sedatives, and Hypnotics/Melatonin.txt:5; sha256=93f644b331f2f989a228d25737399443b847ef4ebe7116a005ba7047e173180b",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Restoril",
+      "concept_id": "drug_temazepam",
+      "source": "project-documents/medical-documents/DDI-text/Anxiolytics, Sedatives, and Hypnotics/Temazepam.txt:5; sha256=81f8bea07c9a464a849700481e2d7e5fbacba44c8284b702fba876b3b87aa245",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Raldesy",
+      "concept_id": "drug_trazodone",
+      "source": "project-documents/medical-documents/DDI-text/Anxiolytics, Sedatives, and Hypnotics/Trazodone.txt:5; sha256=ffd27e7d20cf96b152dc6b759faed941dcd5fd939146b2afa8c50c74d6ea5185",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Desyrel (DSC)",
+      "concept_id": "drug_trazodone",
+      "source": "project-documents/medical-documents/DDI-text/Anxiolytics, Sedatives, and Hypnotics/Trazodone.txt:5; sha256=ffd27e7d20cf96b152dc6b759faed941dcd5fd939146b2afa8c50c74d6ea5185",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Ambien",
+      "concept_id": "drug_zolpidem",
+      "source": "project-documents/medical-documents/DDI-text/Anxiolytics, Sedatives, and Hypnotics/Zolpidem.txt:5; sha256=b07ee61b94a29c9fe3bc2233211ddc935579607847aa12ae0c1e0e67c6674079",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Ambien CR",
+      "concept_id": "drug_zolpidem",
+      "source": "project-documents/medical-documents/DDI-text/Anxiolytics, Sedatives, and Hypnotics/Zolpidem.txt:5; sha256=b07ee61b94a29c9fe3bc2233211ddc935579607847aa12ae0c1e0e67c6674079",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Edluar",
+      "concept_id": "drug_zolpidem",
+      "source": "project-documents/medical-documents/DDI-text/Anxiolytics, Sedatives, and Hypnotics/Zolpidem.txt:5; sha256=b07ee61b94a29c9fe3bc2233211ddc935579607847aa12ae0c1e0e67c6674079",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Intermezzo (DSC)",
+      "concept_id": "drug_zolpidem",
+      "source": "project-documents/medical-documents/DDI-text/Anxiolytics, Sedatives, and Hypnotics/Zolpidem.txt:5; sha256=b07ee61b94a29c9fe3bc2233211ddc935579607847aa12ae0c1e0e67c6674079",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Zolpimist (DSC)",
+      "concept_id": "drug_zolpidem",
+      "source": "project-documents/medical-documents/DDI-text/Anxiolytics, Sedatives, and Hypnotics/Zolpidem.txt:5-6; sha256=b07ee61b94a29c9fe3bc2233211ddc935579607847aa12ae0c1e0e67c6674079",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Norvasc",
+      "concept_id": "drug_amlodipine",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Amlodipine.txt:5; sha256=36e0b845ed24b1f8e763c8462371e72c167625785a8b74d46a2cc1daf2222021",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Katerzia",
+      "concept_id": "drug_amlodipine",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Amlodipine.txt:5; sha256=36e0b845ed24b1f8e763c8462371e72c167625785a8b74d46a2cc1daf2222021",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Norliqva",
+      "concept_id": "drug_amlodipine",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Amlodipine.txt:5; sha256=36e0b845ed24b1f8e763c8462371e72c167625785a8b74d46a2cc1daf2222021",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Sdamlo",
+      "concept_id": "drug_amlodipine",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Amlodipine.txt:5; sha256=36e0b845ed24b1f8e763c8462371e72c167625785a8b74d46a2cc1daf2222021",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Bayer Buffered Aspirin",
+      "concept_id": "drug_aspirin",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Aspirin.txt:5; sha256=4b1d853065e7e84d77b899c11e4263b71ea889b25537bf69ce7b3bbb6fd09873",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "ASA",
+      "concept_id": "drug_aspirin",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Aspirin.txt:5; sha256=4b1d853065e7e84d77b899c11e4263b71ea889b25537bf69ce7b3bbb6fd09873",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Bayer Children's Aspirin",
+      "concept_id": "drug_aspirin",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Aspirin.txt:5; sha256=4b1d853065e7e84d77b899c11e4263b71ea889b25537bf69ce7b3bbb6fd09873",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Bayer Women's Low Dose",
+      "concept_id": "drug_aspirin",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Aspirin.txt:5-6; sha256=4b1d853065e7e84d77b899c11e4263b71ea889b25537bf69ce7b3bbb6fd09873",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Bayer Low Adult Strength",
+      "concept_id": "drug_aspirin",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Aspirin.txt:5-6; sha256=4b1d853065e7e84d77b899c11e4263b71ea889b25537bf69ce7b3bbb6fd09873",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Bayer Advanced Aspirin",
+      "concept_id": "drug_aspirin",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Aspirin.txt:5-6; sha256=4b1d853065e7e84d77b899c11e4263b71ea889b25537bf69ce7b3bbb6fd09873",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Bayer Extra Strength",
+      "concept_id": "drug_aspirin",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Aspirin.txt:5-7; sha256=4b1d853065e7e84d77b899c11e4263b71ea889b25537bf69ce7b3bbb6fd09873",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Bayer Extra Strength Plus",
+      "concept_id": "drug_aspirin",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Aspirin.txt:5-7; sha256=4b1d853065e7e84d77b899c11e4263b71ea889b25537bf69ce7b3bbb6fd09873",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Bufferin",
+      "concept_id": "drug_aspirin",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Aspirin.txt:5-7; sha256=4b1d853065e7e84d77b899c11e4263b71ea889b25537bf69ce7b3bbb6fd09873",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Bufferin Extra Strength",
+      "concept_id": "drug_aspirin",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Aspirin.txt:5-7; sha256=4b1d853065e7e84d77b899c11e4263b71ea889b25537bf69ce7b3bbb6fd09873",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Ecotrin",
+      "concept_id": "drug_aspirin",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Aspirin.txt:5-7; sha256=4b1d853065e7e84d77b899c11e4263b71ea889b25537bf69ce7b3bbb6fd09873",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Ecotrin Maximum Strength",
+      "concept_id": "drug_aspirin",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Aspirin.txt:5-8; sha256=4b1d853065e7e84d77b899c11e4263b71ea889b25537bf69ce7b3bbb6fd09873",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Extended Release Bayer 8-Hour Caplets",
+      "concept_id": "drug_aspirin",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Aspirin.txt:5-8; sha256=4b1d853065e7e84d77b899c11e4263b71ea889b25537bf69ce7b3bbb6fd09873",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Extra Strength Bayer Plus Caplets",
+      "concept_id": "drug_aspirin",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Aspirin.txt:5-9; sha256=4b1d853065e7e84d77b899c11e4263b71ea889b25537bf69ce7b3bbb6fd09873",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Genuine Bayer Aspirin",
+      "concept_id": "drug_aspirin",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Aspirin.txt:5-9; sha256=4b1d853065e7e84d77b899c11e4263b71ea889b25537bf69ce7b3bbb6fd09873",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Halfprin DSC",
+      "concept_id": "drug_aspirin",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Aspirin.txt:5-9; sha256=4b1d853065e7e84d77b899c11e4263b71ea889b25537bf69ce7b3bbb6fd09873",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Maximum Bayer Aspirin",
+      "concept_id": "drug_aspirin",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Aspirin.txt:5-9; sha256=4b1d853065e7e84d77b899c11e4263b71ea889b25537bf69ce7b3bbb6fd09873",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "St. Joseph Adult Chewable Aspirin",
+      "concept_id": "drug_aspirin",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Aspirin.txt:5-10; sha256=4b1d853065e7e84d77b899c11e4263b71ea889b25537bf69ce7b3bbb6fd09873",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "St. Joseph Regular Strength",
+      "concept_id": "drug_aspirin",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Aspirin.txt:5-10; sha256=4b1d853065e7e84d77b899c11e4263b71ea889b25537bf69ce7b3bbb6fd09873",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "acetylsalicylic acid",
+      "concept_id": "drug_aspirin",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Aspirin.txt:5-10; sha256=4b1d853065e7e84d77b899c11e4263b71ea889b25537bf69ce7b3bbb6fd09873",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Vazalore",
+      "concept_id": "drug_aspirin",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Aspirin.txt:5-10; sha256=4b1d853065e7e84d77b899c11e4263b71ea889b25537bf69ce7b3bbb6fd09873",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Aspirina",
+      "concept_id": "drug_aspirin",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Aspirin.txt:5-10; sha256=4b1d853065e7e84d77b899c11e4263b71ea889b25537bf69ce7b3bbb6fd09873",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Tenormin",
+      "concept_id": "drug_atenolol",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Atenolol.txt:5; sha256=247dd258fabedde52bc1f4caaa315824ef6c2cf3f1f3760169a33985ac4e3dfe",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Coreg",
+      "concept_id": "drug_carvedilol",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Carvedilol.txt:5; sha256=a2fac085324079a7659ff46fe1459ada75db390013e881e81dedd49142b58042",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Coreg CR",
+      "concept_id": "drug_carvedilol",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Carvedilol.txt:5; sha256=a2fac085324079a7659ff46fe1459ada75db390013e881e81dedd49142b58042",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Catapres-TTS-1",
+      "concept_id": "drug_clonidine",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Clonidine.txt:5; sha256=eaaa68713023efb158f12f406ddd09547a3f29424c411aa2c86f31e97052a7c1",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Catapres-TTS-2",
+      "concept_id": "drug_clonidine",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Clonidine.txt:5; sha256=eaaa68713023efb158f12f406ddd09547a3f29424c411aa2c86f31e97052a7c1",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Catapres-TTS-3",
+      "concept_id": "drug_clonidine",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Clonidine.txt:5; sha256=eaaa68713023efb158f12f406ddd09547a3f29424c411aa2c86f31e97052a7c1",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Duraclon",
+      "concept_id": "drug_clonidine",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Clonidine.txt:5; sha256=eaaa68713023efb158f12f406ddd09547a3f29424c411aa2c86f31e97052a7c1",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Nexiclon XR",
+      "concept_id": "drug_clonidine",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Clonidine.txt:5-6; sha256=eaaa68713023efb158f12f406ddd09547a3f29424c411aa2c86f31e97052a7c1",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Onyda XR",
+      "concept_id": "drug_clonidine",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Clonidine.txt:5-6; sha256=eaaa68713023efb158f12f406ddd09547a3f29424c411aa2c86f31e97052a7c1",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Catapres (DSC)",
+      "concept_id": "drug_clonidine",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Clonidine.txt:5-6; sha256=eaaa68713023efb158f12f406ddd09547a3f29424c411aa2c86f31e97052a7c1",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Jenloga (DSC)",
+      "concept_id": "drug_clonidine",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Clonidine.txt:5-6; sha256=eaaa68713023efb158f12f406ddd09547a3f29424c411aa2c86f31e97052a7c1",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Kapvay (DSC)",
+      "concept_id": "drug_clonidine",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Clonidine.txt:5-6; sha256=eaaa68713023efb158f12f406ddd09547a3f29424c411aa2c86f31e97052a7c1",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Javadin",
+      "concept_id": "drug_clonidine",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Clonidine.txt:5-6; sha256=eaaa68713023efb158f12f406ddd09547a3f29424c411aa2c86f31e97052a7c1",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "enalaprilat",
+      "concept_id": "drug_enalapril",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Enalapril.txt:5; sha256=1a0658f79a66afe0eed8e415c2a2b3fe1ed78ef209aee24d81557dbfb23af6cc",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Epaned",
+      "concept_id": "drug_enalapril",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Enalapril.txt:5; sha256=1a0658f79a66afe0eed8e415c2a2b3fe1ed78ef209aee24d81557dbfb23af6cc",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Vasotec",
+      "concept_id": "drug_enalapril",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Enalapril.txt:5; sha256=1a0658f79a66afe0eed8e415c2a2b3fe1ed78ef209aee24d81557dbfb23af6cc",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Vasotec IV",
+      "concept_id": "drug_enalapril",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Enalapril.txt:5; sha256=1a0658f79a66afe0eed8e415c2a2b3fe1ed78ef209aee24d81557dbfb23af6cc",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Lasix",
+      "concept_id": "drug_furosemide",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Furosemide.txt:5; sha256=97f1f0967826ece6054053378117073bb1f2735be72e81bec875cea3fe6e3e15",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Furoscix",
+      "concept_id": "drug_furosemide",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Furosemide.txt:5; sha256=97f1f0967826ece6054053378117073bb1f2735be72e81bec875cea3fe6e3e15",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Lasix ONYU",
+      "concept_id": "drug_furosemide",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Furosemide.txt:5; sha256=97f1f0967826ece6054053378117073bb1f2735be72e81bec875cea3fe6e3e15",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Microzide",
+      "concept_id": "drug_hydrochlorothiazide",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Hydrochlorothiazide.txt:5; sha256=b7e40fd64416659f06caad7ec0151bec39807a40764c60cead96aa227ec1b788",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Inzirqo",
+      "concept_id": "drug_hydrochlorothiazide",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Hydrochlorothiazide.txt:5; sha256=b7e40fd64416659f06caad7ec0151bec39807a40764c60cead96aa227ec1b788",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "HCTZ",
+      "concept_id": "drug_hydrochlorothiazide",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Hydrochlorothiazide.txt:5; sha256=b7e40fd64416659f06caad7ec0151bec39807a40764c60cead96aa227ec1b788",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Zestril",
+      "concept_id": "drug_lisinopril",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Lisinopril.txt:5; sha256=0b049f0324187829fd76f06cbeb09de29b4356111be1f80b6e5210bc6e164a24",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Qbrelis",
+      "concept_id": "drug_lisinopril",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Lisinopril.txt:5; sha256=0b049f0324187829fd76f06cbeb09de29b4356111be1f80b6e5210bc6e164a24",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Cozaar",
+      "concept_id": "drug_losartan",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Losartan.txt:5; sha256=03cf4b69e493102630ef6f799a9294f278fab9c055e15a1c9f234ba187338813",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Arbli",
+      "concept_id": "drug_losartan",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Losartan.txt:5; sha256=03cf4b69e493102630ef6f799a9294f278fab9c055e15a1c9f234ba187338813",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Lopressor",
+      "concept_id": "drug_metoprolol",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Metoprolol.txt:5; sha256=640043a9ecb4222ec88dcfef7367df5b32af461db1ac5a24c04dfc23f6f9dc06",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Toprol XL",
+      "concept_id": "drug_metoprolol",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Metoprolol.txt:5; sha256=640043a9ecb4222ec88dcfef7367df5b32af461db1ac5a24c04dfc23f6f9dc06",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Kapspargo Sprinkle",
+      "concept_id": "drug_metoprolol",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Metoprolol.txt:5; sha256=640043a9ecb4222ec88dcfef7367df5b32af461db1ac5a24c04dfc23f6f9dc06",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Inderal",
+      "concept_id": "drug_propranolol",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Propranolol.txt:5; sha256=79a00d6257ecd74df5c99559df5eec573a4033f75867d84ea30f2c158964acea",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Inderal LA",
+      "concept_id": "drug_propranolol",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Propranolol.txt:5; sha256=79a00d6257ecd74df5c99559df5eec573a4033f75867d84ea30f2c158964acea",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "InnoPran XL",
+      "concept_id": "drug_propranolol",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Propranolol.txt:5; sha256=79a00d6257ecd74df5c99559df5eec573a4033f75867d84ea30f2c158964acea",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Hemangeol",
+      "concept_id": "drug_propranolol",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Propranolol.txt:5; sha256=79a00d6257ecd74df5c99559df5eec573a4033f75867d84ea30f2c158964acea",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Hytrin",
+      "concept_id": "drug_terazosin",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Terazosin.txt:5; sha256=0e72d51803770a6b7c77801d3fc9e5018b42d868a6a6efd63b11b535a29714b4",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Tezruly",
+      "concept_id": "drug_terazosin",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Terazosin.txt:5; sha256=0e72d51803770a6b7c77801d3fc9e5018b42d868a6a6efd63b11b535a29714b4",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Diovan",
+      "concept_id": "drug_valsartan",
+      "source": "project-documents/medical-documents/DDI-text/Cardiovascular and Antihypertensive Agents/Valsartan.txt:5; sha256=d3a3bb86ca2d12e39ba8bd8a551c1d55a278b4dd9ec5d1adc6355300787a5d12",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Florinef",
+      "concept_id": "drug_fludrocortisone",
+      "source": "project-documents/medical-documents/DDI-text/Endocrine, Vitamins, and Supplements/Fludrocortisone.txt:5; sha256=58a381b2cc572576e84b59f358ee73745c73e7ae1334d031523039cd1597876a",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Florinef Acetate",
+      "concept_id": "drug_fludrocortisone",
+      "source": "project-documents/medical-documents/DDI-text/Endocrine, Vitamins, and Supplements/Fludrocortisone.txt:5; sha256=58a381b2cc572576e84b59f358ee73745c73e7ae1334d031523039cd1597876a",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Synthroid",
+      "concept_id": "drug_levothyroxine",
+      "source": "project-documents/medical-documents/DDI-text/Endocrine, Vitamins, and Supplements/Levothyroxine.txt:5; sha256=1d49e90a29a885c77f47392ed80c737d387dae5d9de00703f18ddf4be59d189c",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Levoxyl",
+      "concept_id": "drug_levothyroxine",
+      "source": "project-documents/medical-documents/DDI-text/Endocrine, Vitamins, and Supplements/Levothyroxine.txt:5; sha256=1d49e90a29a885c77f47392ed80c737d387dae5d9de00703f18ddf4be59d189c",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Levo T",
+      "concept_id": "drug_levothyroxine",
+      "source": "project-documents/medical-documents/DDI-text/Endocrine, Vitamins, and Supplements/Levothyroxine.txt:5; sha256=1d49e90a29a885c77f47392ed80c737d387dae5d9de00703f18ddf4be59d189c",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Tirosint",
+      "concept_id": "drug_levothyroxine",
+      "source": "project-documents/medical-documents/DDI-text/Endocrine, Vitamins, and Supplements/Levothyroxine.txt:5; sha256=1d49e90a29a885c77f47392ed80c737d387dae5d9de00703f18ddf4be59d189c",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Tirosint-SOL",
+      "concept_id": "drug_levothyroxine",
+      "source": "project-documents/medical-documents/DDI-text/Endocrine, Vitamins, and Supplements/Levothyroxine.txt:5; sha256=1d49e90a29a885c77f47392ed80c737d387dae5d9de00703f18ddf4be59d189c",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Unithroid",
+      "concept_id": "drug_levothyroxine",
+      "source": "project-documents/medical-documents/DDI-text/Endocrine, Vitamins, and Supplements/Levothyroxine.txt:5; sha256=1d49e90a29a885c77f47392ed80c737d387dae5d9de00703f18ddf4be59d189c",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Thyquidity",
+      "concept_id": "drug_levothyroxine",
+      "source": "project-documents/medical-documents/DDI-text/Endocrine, Vitamins, and Supplements/Levothyroxine.txt:5-6; sha256=1d49e90a29a885c77f47392ed80c737d387dae5d9de00703f18ddf4be59d189c",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Levolet",
+      "concept_id": "drug_levothyroxine",
+      "source": "project-documents/medical-documents/DDI-text/Endocrine, Vitamins, and Supplements/Levothyroxine.txt:5-6; sha256=1d49e90a29a885c77f47392ed80c737d387dae5d9de00703f18ddf4be59d189c",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Ermeza",
+      "concept_id": "drug_levothyroxine",
+      "source": "project-documents/medical-documents/DDI-text/Endocrine, Vitamins, and Supplements/Levothyroxine.txt:5-6; sha256=1d49e90a29a885c77f47392ed80c737d387dae5d9de00703f18ddf4be59d189c",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Euthyrox",
+      "concept_id": "drug_levothyroxine",
+      "source": "project-documents/medical-documents/DDI-text/Endocrine, Vitamins, and Supplements/Levothyroxine.txt:5-6; sha256=1d49e90a29a885c77f47392ed80c737d387dae5d9de00703f18ddf4be59d189c",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Thyro-tabs",
+      "concept_id": "drug_levothyroxine",
+      "source": "project-documents/medical-documents/DDI-text/Endocrine, Vitamins, and Supplements/Levothyroxine.txt:5-6; sha256=1d49e90a29a885c77f47392ed80c737d387dae5d9de00703f18ddf4be59d189c",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Dulcolax",
+      "concept_id": "drug_bisacodyl",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Bisacodyl.txt:7; sha256=fad4052611bab6d9c60b682667f6510fc1d8dbf49f247a15a69ca2a0301debf2",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Correctol",
+      "concept_id": "drug_bisacodyl",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Bisacodyl.txt:7; sha256=fad4052611bab6d9c60b682667f6510fc1d8dbf49f247a15a69ca2a0301debf2",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "BisacEvac",
+      "concept_id": "drug_bisacodyl",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Bisacodyl.txt:7; sha256=fad4052611bab6d9c60b682667f6510fc1d8dbf49f247a15a69ca2a0301debf2",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Bisacolax",
+      "concept_id": "drug_bisacodyl",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Bisacodyl.txt:7; sha256=fad4052611bab6d9c60b682667f6510fc1d8dbf49f247a15a69ca2a0301debf2",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Codulax",
+      "concept_id": "drug_bisacodyl",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Bisacodyl.txt:7; sha256=fad4052611bab6d9c60b682667f6510fc1d8dbf49f247a15a69ca2a0301debf2",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Alophen",
+      "concept_id": "drug_bisacodyl",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Bisacodyl.txt:7; sha256=fad4052611bab6d9c60b682667f6510fc1d8dbf49f247a15a69ca2a0301debf2",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Feen A Mint",
+      "concept_id": "drug_bisacodyl",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Bisacodyl.txt:7-8; sha256=fad4052611bab6d9c60b682667f6510fc1d8dbf49f247a15a69ca2a0301debf2",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Fleet Stimulant Laxative",
+      "concept_id": "drug_bisacodyl",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Bisacodyl.txt:7-8; sha256=fad4052611bab6d9c60b682667f6510fc1d8dbf49f247a15a69ca2a0301debf2",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Laxit",
+      "concept_id": "drug_bisacodyl",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Bisacodyl.txt:7-8; sha256=fad4052611bab6d9c60b682667f6510fc1d8dbf49f247a15a69ca2a0301debf2",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Modane",
+      "concept_id": "drug_bisacodyl",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Bisacodyl.txt:7-8; sha256=fad4052611bab6d9c60b682667f6510fc1d8dbf49f247a15a69ca2a0301debf2",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Dulcolax for Women",
+      "concept_id": "drug_bisacodyl",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Bisacodyl.txt:7-8; sha256=fad4052611bab6d9c60b682667f6510fc1d8dbf49f247a15a69ca2a0301debf2",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Colace",
+      "concept_id": "drug_docusate",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Docusate.txt:8; sha256=8c0d403360569550dcd4b91409f6e29cd98d03bebc92f30ea5354dee22fa7910",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "DSS",
+      "concept_id": "drug_docusate",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Docusate.txt:8; sha256=8c0d403360569550dcd4b91409f6e29cd98d03bebc92f30ea5354dee22fa7910",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Albert Docusate",
+      "concept_id": "drug_docusate",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Docusate.txt:8; sha256=8c0d403360569550dcd4b91409f6e29cd98d03bebc92f30ea5354dee22fa7910",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Docusate Calcium",
+      "concept_id": "drug_docusate",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Docusate.txt:8; sha256=8c0d403360569550dcd4b91409f6e29cd98d03bebc92f30ea5354dee22fa7910",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "docusate sodium",
+      "concept_id": "drug_docusate",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Docusate.txt:8-9; sha256=8c0d403360569550dcd4b91409f6e29cd98d03bebc92f30ea5354dee22fa7910",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "DulcoEase",
+      "concept_id": "drug_docusate",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Docusate.txt:8-9; sha256=8c0d403360569550dcd4b91409f6e29cd98d03bebc92f30ea5354dee22fa7910",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Phillips Liqui Gels",
+      "concept_id": "drug_docusate",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Docusate.txt:8-9; sha256=8c0d403360569550dcd4b91409f6e29cd98d03bebc92f30ea5354dee22fa7910",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Silace",
+      "concept_id": "drug_docusate",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Docusate.txt:8-9; sha256=8c0d403360569550dcd4b91409f6e29cd98d03bebc92f30ea5354dee22fa7910",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Soflax",
+      "concept_id": "drug_docusate",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Docusate.txt:8-9; sha256=8c0d403360569550dcd4b91409f6e29cd98d03bebc92f30ea5354dee22fa7910",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Nexium",
+      "concept_id": "drug_esomeprazole",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Esomeprazole.txt:3; sha256=fb89019a2c00ef00f95f6dd9b8d021d51947a9f83bba47afc91baa06e141b872",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Nexium 24HR",
+      "concept_id": "drug_esomeprazole",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Esomeprazole.txt:3; sha256=fb89019a2c00ef00f95f6dd9b8d021d51947a9f83bba47afc91baa06e141b872",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Pepcid AC",
+      "concept_id": "drug_famotidine",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Famotidine.txt:3; sha256=2984c0e9fe0dbde06dfbb63fd2830a00b41d54f2a352b81644f0c80ef5d0c6d2",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Zantac 360",
+      "concept_id": "drug_famotidine",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Famotidine.txt:3; sha256=2984c0e9fe0dbde06dfbb63fd2830a00b41d54f2a352b81644f0c80ef5d0c6d2",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Enulose",
+      "concept_id": "drug_lactulose",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Lactulose.txt:5; sha256=75ee84c0639a0b9e3b733a82a31e7df63a98376753637b9b0d0bc69069c63846",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Kristalose",
+      "concept_id": "drug_lactulose",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Lactulose.txt:5; sha256=75ee84c0639a0b9e3b733a82a31e7df63a98376753637b9b0d0bc69069c63846",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Constulose",
+      "concept_id": "drug_lactulose",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Lactulose.txt:5; sha256=75ee84c0639a0b9e3b733a82a31e7df63a98376753637b9b0d0bc69069c63846",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Generlac",
+      "concept_id": "drug_lactulose",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Lactulose.txt:5; sha256=75ee84c0639a0b9e3b733a82a31e7df63a98376753637b9b0d0bc69069c63846",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Prevacid",
+      "concept_id": "drug_lansoprazole",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Lansoprazole.txt:3; sha256=56f7530f72ab2e4ac33f207ec5bc41016656ee9ba259e085c5b8fa2141867370",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Prevacid Solu Tab",
+      "concept_id": "drug_lansoprazole",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Lansoprazole.txt:3; sha256=56f7530f72ab2e4ac33f207ec5bc41016656ee9ba259e085c5b8fa2141867370",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Prevacid 24HR",
+      "concept_id": "drug_lansoprazole",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Lansoprazole.txt:3; sha256=56f7530f72ab2e4ac33f207ec5bc41016656ee9ba259e085c5b8fa2141867370",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Imodium",
+      "concept_id": "drug_loperamide",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Loperamide.txt:3; sha256=01476787f73feaca117398d40c3cc3c6ad99f59db420015ab18b1e9fbc6aef7c",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "K-Pek II",
+      "concept_id": "drug_loperamide",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Loperamide.txt:3; sha256=01476787f73feaca117398d40c3cc3c6ad99f59db420015ab18b1e9fbc6aef7c",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "NeoDiaral",
+      "concept_id": "drug_loperamide",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Loperamide.txt:3; sha256=01476787f73feaca117398d40c3cc3c6ad99f59db420015ab18b1e9fbc6aef7c",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Diaraid",
+      "concept_id": "drug_loperamide",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Loperamide.txt:3; sha256=01476787f73feaca117398d40c3cc3c6ad99f59db420015ab18b1e9fbc6aef7c",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Prilosec",
+      "concept_id": "drug_omeprazole",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Omeprazole.txt:3; sha256=47d9394f7cd00612f7480b790a42cb4a17c9586ad3149c36f8a0554fe95235b8",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Prilosec OTC",
+      "concept_id": "drug_omeprazole",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Omeprazole.txt:3; sha256=47d9394f7cd00612f7480b790a42cb4a17c9586ad3149c36f8a0554fe95235b8",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "OmepraCare",
+      "concept_id": "drug_omeprazole",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Omeprazole.txt:3; sha256=47d9394f7cd00612f7480b790a42cb4a17c9586ad3149c36f8a0554fe95235b8",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "OmepraCare DR",
+      "concept_id": "drug_omeprazole",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Omeprazole.txt:3; sha256=47d9394f7cd00612f7480b790a42cb4a17c9586ad3149c36f8a0554fe95235b8",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Zofran (DSC)",
+      "concept_id": "drug_ondansetron",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Ondansetron.txt:3; sha256=cf5fcef10659632064d8bc4b81657548565e8ef3414a402fbe055f090bcbf25e",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Zofran ODT (DSC)",
+      "concept_id": "drug_ondansetron",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Ondansetron.txt:3; sha256=cf5fcef10659632064d8bc4b81657548565e8ef3414a402fbe055f090bcbf25e",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Zuplenz (DSC)",
+      "concept_id": "drug_ondansetron",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Ondansetron.txt:3; sha256=cf5fcef10659632064d8bc4b81657548565e8ef3414a402fbe055f090bcbf25e",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Protonix",
+      "concept_id": "drug_pantoprazole",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Pantoprazole.txt:3; sha256=48a229270f2a4218a6a8b01e19177123d13384b5aed7f3c569d0591561c73a35",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Senna Prompt",
+      "concept_id": "drug_senna_psyllium",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Psyllium.txt:5; sha256=b41adf12bcf5a8e438dda7b701511375a4d5872a0ec0f2acc68fcd0c50ba9873",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Mylicon",
+      "concept_id": "drug_simethicone",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Simethicone.txt:3; sha256=c8d07a01fc06c85eaaf234058cb0d0f394335325f52773b031c7f2f9274c49b9",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Phazyme",
+      "concept_id": "drug_simethicone",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Simethicone.txt:3; sha256=c8d07a01fc06c85eaaf234058cb0d0f394335325f52773b031c7f2f9274c49b9",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Gas X Extra Strength",
+      "concept_id": "drug_simethicone",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Simethicone.txt:3; sha256=c8d07a01fc06c85eaaf234058cb0d0f394335325f52773b031c7f2f9274c49b9",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Gas X Softgels",
+      "concept_id": "drug_simethicone",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Simethicone.txt:3; sha256=c8d07a01fc06c85eaaf234058cb0d0f394335325f52773b031c7f2f9274c49b9",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Gas X Thin Strips",
+      "concept_id": "drug_simethicone",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Simethicone.txt:3-4; sha256=c8d07a01fc06c85eaaf234058cb0d0f394335325f52773b031c7f2f9274c49b9",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Children's Gas X Tongue Twisters Thin Strips",
+      "concept_id": "drug_simethicone",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Simethicone.txt:3-4; sha256=c8d07a01fc06c85eaaf234058cb0d0f394335325f52773b031c7f2f9274c49b9",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Gas X",
+      "concept_id": "drug_simethicone",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Simethicone.txt:3; sha256=c8d07a01fc06c85eaaf234058cb0d0f394335325f52773b031c7f2f9274c49b9",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "PediaCare Infant's Gas Relief Drops",
+      "concept_id": "drug_simethicone",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Simethicone.txt:3-5; sha256=c8d07a01fc06c85eaaf234058cb0d0f394335325f52773b031c7f2f9274c49b9",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "St. Joseph Infant's Gas Relief",
+      "concept_id": "drug_simethicone",
+      "source": "project-documents/medical-documents/DDI-text/Gastrointestinal Medications/Simethicone.txt:3-5; sha256=c8d07a01fc06c85eaaf234058cb0d0f394335325f52773b031c7f2f9274c49b9",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Lipitor",
+      "concept_id": "drug_atorvastatin",
+      "source": "project-documents/medical-documents/DDI-text/Lipid-Lowering Agents/Atorvastatin.txt:9; sha256=3c2a598397e23e24269adcb562f117f9111364233e8980ee23b1d11923db716b",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Atorvaliq",
+      "concept_id": "drug_atorvastatin",
+      "source": "project-documents/medical-documents/DDI-text/Lipid-Lowering Agents/Atorvastatin.txt:9; sha256=3c2a598397e23e24269adcb562f117f9111364233e8980ee23b1d11923db716b",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Altoprev",
+      "concept_id": "drug_lovastatin",
+      "source": "project-documents/medical-documents/DDI-text/Lipid-Lowering Agents/Lovastatin.txt:5; sha256=c71d00418f4b53fc4eb97a7b296c0788560ff0d16c833702b43027335a0f831e",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Mevacor (DSC)",
+      "concept_id": "drug_lovastatin",
+      "source": "project-documents/medical-documents/DDI-text/Lipid-Lowering Agents/Lovastatin.txt:5; sha256=c71d00418f4b53fc4eb97a7b296c0788560ff0d16c833702b43027335a0f831e",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Pravachol (DSC)",
+      "concept_id": "drug_pravastatin",
+      "source": "project-documents/medical-documents/DDI-text/Lipid-Lowering Agents/Pravastatin.txt:5; sha256=31ef8934c06ee553c0421e7f0e4948813122a954c9545b10de3d72f767097fbc",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Crestor",
+      "concept_id": "drug_rosuvastatin",
+      "source": "project-documents/medical-documents/DDI-text/Lipid-Lowering Agents/Rosuvastatin.txt:5; sha256=5ddfdc198bae10290275b03abfebdcfd900fab6945093b2ed61a27ba2a48e3aa",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Ezallor Sprinkle",
+      "concept_id": "drug_rosuvastatin",
+      "source": "project-documents/medical-documents/DDI-text/Lipid-Lowering Agents/Rosuvastatin.txt:5; sha256=5ddfdc198bae10290275b03abfebdcfd900fab6945093b2ed61a27ba2a48e3aa",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Zocor",
+      "concept_id": "drug_simvastatin",
+      "source": "project-documents/medical-documents/DDI-text/Lipid-Lowering Agents/Simvastatin.txt:5; sha256=705c1441e28d0eeef95f68765feb9b0c86721c06b4e68c8c04be78bd9f3b4d22",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "FloLipid",
+      "concept_id": "drug_simvastatin",
+      "source": "project-documents/medical-documents/DDI-text/Lipid-Lowering Agents/Simvastatin.txt:5; sha256=705c1441e28d0eeef95f68765feb9b0c86721c06b4e68c8c04be78bd9f3b4d22",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Zyloprim",
+      "concept_id": "drug_allopurinol",
+      "source": "project-documents/medical-documents/DDI-text/Miscellaneous/Allopurinol.txt:5; sha256=72489b8e47732b3de10d2cb92433dd3125881c1e81e3ca11071220eaef134022",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Aloprim",
+      "concept_id": "drug_allopurinol",
+      "source": "project-documents/medical-documents/DDI-text/Miscellaneous/Allopurinol.txt:5; sha256=72489b8e47732b3de10d2cb92433dd3125881c1e81e3ca11071220eaef134022",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Adderall XR",
+      "concept_id": "drug_amphetamine_dextroamphetamine",
+      "source": "project-documents/medical-documents/DDI-text/Miscellaneous/Amphetamine-Dextroamphetamine.txt:5; sha256=b63519b8894fb68ad5a6a0d2c504de1309865b5e26c071ae45e02b32867fdf60",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Mydayis",
+      "concept_id": "drug_amphetamine_dextroamphetamine",
+      "source": "project-documents/medical-documents/DDI-text/Miscellaneous/Amphetamine-Dextroamphetamine.txt:5; sha256=b63519b8894fb68ad5a6a0d2c504de1309865b5e26c071ae45e02b32867fdf60",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Dantrium",
+      "concept_id": "drug_dantrolene",
+      "source": "project-documents/medical-documents/DDI-text/Miscellaneous/Dantrolene.txt:16; sha256=7c7c5b5cd8417c8b49bbdb8d85b8ba5f31f0ee2e453aa34c6eadc26a41386e89",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Revonto",
+      "concept_id": "drug_dantrolene",
+      "source": "project-documents/medical-documents/DDI-text/Miscellaneous/Dantrolene.txt:16; sha256=7c7c5b5cd8417c8b49bbdb8d85b8ba5f31f0ee2e453aa34c6eadc26a41386e89",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Ryanodex",
+      "concept_id": "drug_dantrolene",
+      "source": "project-documents/medical-documents/DDI-text/Miscellaneous/Dantrolene.txt:16; sha256=7c7c5b5cd8417c8b49bbdb8d85b8ba5f31f0ee2e453aa34c6eadc26a41386e89",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Vyvanse",
+      "concept_id": "drug_lisdexamfetamine",
+      "source": "project-documents/medical-documents/DDI-text/Miscellaneous/Lisdexamfetamine.txt:5; sha256=5b549e6cdd1d927064c79f1a896495abf2fb353879e74454e7213f675241dc2a",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Arynta",
+      "concept_id": "drug_lisdexamfetamine",
+      "source": "project-documents/medical-documents/DDI-text/Miscellaneous/Lisdexamfetamine.txt:5; sha256=5b549e6cdd1d927064c79f1a896495abf2fb353879e74454e7213f675241dc2a",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Ritalin",
+      "concept_id": "drug_methylphenidate",
+      "source": "project-documents/medical-documents/DDI-text/Miscellaneous/Methylphenidate.txt:5; sha256=3436781372e7973ed3d5ea780c38709bf1a646432c94b60fab46cdd87a8c0113",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Ritalin SR",
+      "concept_id": "drug_methylphenidate",
+      "source": "project-documents/medical-documents/DDI-text/Miscellaneous/Methylphenidate.txt:5; sha256=3436781372e7973ed3d5ea780c38709bf1a646432c94b60fab46cdd87a8c0113",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Ritalin LA",
+      "concept_id": "drug_methylphenidate",
+      "source": "project-documents/medical-documents/DDI-text/Miscellaneous/Methylphenidate.txt:5; sha256=3436781372e7973ed3d5ea780c38709bf1a646432c94b60fab46cdd87a8c0113",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Aptensio XR",
+      "concept_id": "drug_methylphenidate",
+      "source": "project-documents/medical-documents/DDI-text/Miscellaneous/Methylphenidate.txt:5; sha256=3436781372e7973ed3d5ea780c38709bf1a646432c94b60fab46cdd87a8c0113",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Concerta",
+      "concept_id": "drug_methylphenidate",
+      "source": "project-documents/medical-documents/DDI-text/Miscellaneous/Methylphenidate.txt:5; sha256=3436781372e7973ed3d5ea780c38709bf1a646432c94b60fab46cdd87a8c0113",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Metadate",
+      "concept_id": "drug_methylphenidate",
+      "source": "project-documents/medical-documents/DDI-text/Miscellaneous/Methylphenidate.txt:5-6; sha256=3436781372e7973ed3d5ea780c38709bf1a646432c94b60fab46cdd87a8c0113",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Metadate CD",
+      "concept_id": "drug_methylphenidate",
+      "source": "project-documents/medical-documents/DDI-text/Miscellaneous/Methylphenidate.txt:5-6; sha256=3436781372e7973ed3d5ea780c38709bf1a646432c94b60fab46cdd87a8c0113",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Metadate ER",
+      "concept_id": "drug_methylphenidate",
+      "source": "project-documents/medical-documents/DDI-text/Miscellaneous/Methylphenidate.txt:5-6; sha256=3436781372e7973ed3d5ea780c38709bf1a646432c94b60fab46cdd87a8c0113",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Methylin",
+      "concept_id": "drug_methylphenidate",
+      "source": "project-documents/medical-documents/DDI-text/Miscellaneous/Methylphenidate.txt:5-6; sha256=3436781372e7973ed3d5ea780c38709bf1a646432c94b60fab46cdd87a8c0113",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Quillivant XR",
+      "concept_id": "drug_methylphenidate",
+      "source": "project-documents/medical-documents/DDI-text/Miscellaneous/Methylphenidate.txt:5-6; sha256=3436781372e7973ed3d5ea780c38709bf1a646432c94b60fab46cdd87a8c0113",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "QuilliChew ER",
+      "concept_id": "drug_methylphenidate",
+      "source": "project-documents/medical-documents/DDI-text/Miscellaneous/Methylphenidate.txt:5-6; sha256=3436781372e7973ed3d5ea780c38709bf1a646432c94b60fab46cdd87a8c0113",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Cotempla XR-ODT",
+      "concept_id": "drug_methylphenidate",
+      "source": "project-documents/medical-documents/DDI-text/Miscellaneous/Methylphenidate.txt:5-7; sha256=3436781372e7973ed3d5ea780c38709bf1a646432c94b60fab46cdd87a8c0113",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Jornay PM",
+      "concept_id": "drug_methylphenidate",
+      "source": "project-documents/medical-documents/DDI-text/Miscellaneous/Methylphenidate.txt:5-7; sha256=3436781372e7973ed3d5ea780c38709bf1a646432c94b60fab46cdd87a8c0113",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Relexxii",
+      "concept_id": "drug_methylphenidate",
+      "source": "project-documents/medical-documents/DDI-text/Miscellaneous/Methylphenidate.txt:5-7; sha256=3436781372e7973ed3d5ea780c38709bf1a646432c94b60fab46cdd87a8c0113",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Ditropan XL",
+      "concept_id": "drug_oxybutynin",
+      "source": "project-documents/medical-documents/DDI-text/Miscellaneous/Oxybutynin.txt:5; sha256=2a9c1acdd4cfc81f4b3f05b72870ee3ad35a4b4243d61e22d137e7b9a66ebfe0",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Flomax",
+      "concept_id": "drug_tamsulosin",
+      "source": "project-documents/medical-documents/DDI-text/Miscellaneous/Tamsulosin.txt:5; sha256=fea8d2235fcf66ed0cabedd025add1fb698fd9383a3de5a8fc46f07b4582214b",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Tegretol",
+      "concept_id": "drug_carbamazepine",
+      "source": "project-documents/medical-documents/DDI-text/Mood Stabilizers and Anticonvulsants/Carbamazepine.txt:5; sha256=ef437f5d3e9d93bf35affa8e3c387924132407cd634e6b0bf87590e1da4d7864",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Equetro",
+      "concept_id": "drug_carbamazepine",
+      "source": "project-documents/medical-documents/DDI-text/Mood Stabilizers and Anticonvulsants/Carbamazepine.txt:5; sha256=ef437f5d3e9d93bf35affa8e3c387924132407cd634e6b0bf87590e1da4d7864",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Epitol",
+      "concept_id": "drug_carbamazepine",
+      "source": "project-documents/medical-documents/DDI-text/Mood Stabilizers and Anticonvulsants/Carbamazepine.txt:5; sha256=ef437f5d3e9d93bf35affa8e3c387924132407cd634e6b0bf87590e1da4d7864",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Tegretol XR",
+      "concept_id": "drug_carbamazepine",
+      "source": "project-documents/medical-documents/DDI-text/Mood Stabilizers and Anticonvulsants/Carbamazepine.txt:5; sha256=ef437f5d3e9d93bf35affa8e3c387924132407cd634e6b0bf87590e1da4d7864",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Carbamazepine Chewtabs",
+      "concept_id": "drug_carbamazepine",
+      "source": "project-documents/medical-documents/DDI-text/Mood Stabilizers and Anticonvulsants/Carbamazepine.txt:5-6; sha256=ef437f5d3e9d93bf35affa8e3c387924132407cd634e6b0bf87590e1da4d7864",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Carbamazepine CR",
+      "concept_id": "drug_carbamazepine",
+      "source": "project-documents/medical-documents/DDI-text/Mood Stabilizers and Anticonvulsants/Carbamazepine.txt:5-6; sha256=ef437f5d3e9d93bf35affa8e3c387924132407cd634e6b0bf87590e1da4d7864",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Carbatrol",
+      "concept_id": "drug_carbamazepine",
+      "source": "project-documents/medical-documents/DDI-text/Mood Stabilizers and Anticonvulsants/Carbamazepine.txt:5-6; sha256=ef437f5d3e9d93bf35affa8e3c387924132407cd634e6b0bf87590e1da4d7864",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Teril",
+      "concept_id": "drug_carbamazepine",
+      "source": "project-documents/medical-documents/DDI-text/Mood Stabilizers and Anticonvulsants/Carbamazepine.txt:5-6; sha256=ef437f5d3e9d93bf35affa8e3c387924132407cd634e6b0bf87590e1da4d7864",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Carnexiv",
+      "concept_id": "drug_carbamazepine",
+      "source": "project-documents/medical-documents/DDI-text/Mood Stabilizers and Anticonvulsants/Carbamazepine.txt:5-6; sha256=ef437f5d3e9d93bf35affa8e3c387924132407cd634e6b0bf87590e1da4d7864",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Neurontin",
+      "concept_id": "drug_gabapentin",
+      "source": "project-documents/medical-documents/DDI-text/Mood Stabilizers and Anticonvulsants/Gabapentin.txt:5; sha256=8669ff812304052d12833150155d5e637823a209601577695cb3f34c797e17bf",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Gralise",
+      "concept_id": "drug_gabapentin",
+      "source": "project-documents/medical-documents/DDI-text/Mood Stabilizers and Anticonvulsants/Gabapentin.txt:5; sha256=8669ff812304052d12833150155d5e637823a209601577695cb3f34c797e17bf",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Lamictal",
+      "concept_id": "drug_lamotrigine",
+      "source": "project-documents/medical-documents/DDI-text/Mood Stabilizers and Anticonvulsants/Lamotrigine.txt:5; sha256=a87863998fd67de1d23802081727c27e2f58268b5c81fbedaa5ec8822d3a8be0",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Lamictal XR",
+      "concept_id": "drug_lamotrigine",
+      "source": "project-documents/medical-documents/DDI-text/Mood Stabilizers and Anticonvulsants/Lamotrigine.txt:5; sha256=a87863998fd67de1d23802081727c27e2f58268b5c81fbedaa5ec8822d3a8be0",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Lamictal ODT",
+      "concept_id": "drug_lamotrigine",
+      "source": "project-documents/medical-documents/DDI-text/Mood Stabilizers and Anticonvulsants/Lamotrigine.txt:5; sha256=a87863998fd67de1d23802081727c27e2f58268b5c81fbedaa5ec8822d3a8be0",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Lamictal CD",
+      "concept_id": "drug_lamotrigine",
+      "source": "project-documents/medical-documents/DDI-text/Mood Stabilizers and Anticonvulsants/Lamotrigine.txt:5; sha256=a87863998fd67de1d23802081727c27e2f58268b5c81fbedaa5ec8822d3a8be0",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Subvenite",
+      "concept_id": "drug_lamotrigine",
+      "source": "project-documents/medical-documents/DDI-text/Mood Stabilizers and Anticonvulsants/Lamotrigine.txt:5; sha256=a87863998fd67de1d23802081727c27e2f58268b5c81fbedaa5ec8822d3a8be0",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Eskalith",
+      "concept_id": "drug_lithium",
+      "source": "project-documents/medical-documents/DDI-text/Mood Stabilizers and Anticonvulsants/Lithium.txt:16; sha256=ef3d04e77f174bdb1b0d8a488a5cf0f0231edd8a1a9869213902e5a9c45832a8",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Lithobid",
+      "concept_id": "drug_lithium",
+      "source": "project-documents/medical-documents/DDI-text/Mood Stabilizers and Anticonvulsants/Lithium.txt:16; sha256=ef3d04e77f174bdb1b0d8a488a5cf0f0231edd8a1a9869213902e5a9c45832a8",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Trileptal",
+      "concept_id": "drug_oxcarbazepine",
+      "source": "project-documents/medical-documents/DDI-text/Mood Stabilizers and Anticonvulsants/Oxcarbazepine.txt:5; sha256=1db59459face54f7948f83275c744a16357cdcf3da39470252f2d8524f78b1e8",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Oxtellar XR",
+      "concept_id": "drug_oxcarbazepine",
+      "source": "project-documents/medical-documents/DDI-text/Mood Stabilizers and Anticonvulsants/Oxcarbazepine.txt:5; sha256=1db59459face54f7948f83275c744a16357cdcf3da39470252f2d8524f78b1e8",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Lyrica",
+      "concept_id": "drug_pregabalin",
+      "source": "project-documents/medical-documents/DDI-text/Mood Stabilizers and Anticonvulsants/Pregabalin.txt:5; sha256=69e42e5090864480f279b168333ffad50fc50c1e96c9002d51b8c6d0192ea6da",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Lyrica CR",
+      "concept_id": "drug_pregabalin",
+      "source": "project-documents/medical-documents/DDI-text/Mood Stabilizers and Anticonvulsants/Pregabalin.txt:5; sha256=69e42e5090864480f279b168333ffad50fc50c1e96c9002d51b8c6d0192ea6da",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Topamax",
+      "concept_id": "drug_topiramate",
+      "source": "project-documents/medical-documents/DDI-text/Mood Stabilizers and Anticonvulsants/Topiramate.txt:5; sha256=5288abafe5b3ba8b4a38185aa8e06809dbeddf25ce17d8a2e68136520c6094db",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Trokendi XR",
+      "concept_id": "drug_topiramate",
+      "source": "project-documents/medical-documents/DDI-text/Mood Stabilizers and Anticonvulsants/Topiramate.txt:5; sha256=5288abafe5b3ba8b4a38185aa8e06809dbeddf25ce17d8a2e68136520c6094db",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Qudexy XR",
+      "concept_id": "drug_topiramate",
+      "source": "project-documents/medical-documents/DDI-text/Mood Stabilizers and Anticonvulsants/Topiramate.txt:5; sha256=5288abafe5b3ba8b4a38185aa8e06809dbeddf25ce17d8a2e68136520c6094db",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Eprontia",
+      "concept_id": "drug_topiramate",
+      "source": "project-documents/medical-documents/DDI-text/Mood Stabilizers and Anticonvulsants/Topiramate.txt:5; sha256=5288abafe5b3ba8b4a38185aa8e06809dbeddf25ce17d8a2e68136520c6094db",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Ventolin HFA",
+      "concept_id": "drug_albuterol_inhaled",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Albuterol.txt:5; sha256=0bdfeb387b17221326d345b59270def63fbfdc31dc2c763f92f2ae5e17b484bf",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Proventil HFA",
+      "concept_id": "drug_albuterol_inhaled",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Albuterol.txt:5; sha256=0bdfeb387b17221326d345b59270def63fbfdc31dc2c763f92f2ae5e17b484bf",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "ProAir RespiClick",
+      "concept_id": "drug_albuterol_inhaled",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Albuterol.txt:5; sha256=0bdfeb387b17221326d345b59270def63fbfdc31dc2c763f92f2ae5e17b484bf",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "AccuNeb (DSC)",
+      "concept_id": "drug_albuterol_inhaled",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Albuterol.txt:5-6; sha256=0bdfeb387b17221326d345b59270def63fbfdc31dc2c763f92f2ae5e17b484bf",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Zyrtec",
+      "concept_id": "drug_cetirizine",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Cetirizine.txt:5; sha256=e3509e4dd00b5206cfd61631b0b07ec4a4a154a18b152bbff80bc4598fd5f5f5",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Zyrtec Allergy",
+      "concept_id": "drug_cetirizine",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Cetirizine.txt:5; sha256=e3509e4dd00b5206cfd61631b0b07ec4a4a154a18b152bbff80bc4598fd5f5f5",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Children's Zyrtec Allergy",
+      "concept_id": "drug_cetirizine",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Cetirizine.txt:5; sha256=e3509e4dd00b5206cfd61631b0b07ec4a4a154a18b152bbff80bc4598fd5f5f5",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Children's Zyrtec Hives Relief",
+      "concept_id": "drug_cetirizine",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Cetirizine.txt:5-6; sha256=e3509e4dd00b5206cfd61631b0b07ec4a4a154a18b152bbff80bc4598fd5f5f5",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "PediaCare Children's 24 Hour Allergy",
+      "concept_id": "drug_cetirizine",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Cetirizine.txt:5-6; sha256=e3509e4dd00b5206cfd61631b0b07ec4a4a154a18b152bbff80bc4598fd5f5f5",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Aller-Tec",
+      "concept_id": "drug_cetirizine",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Cetirizine.txt:5-6; sha256=e3509e4dd00b5206cfd61631b0b07ec4a4a154a18b152bbff80bc4598fd5f5f5",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Wal-Zyr",
+      "concept_id": "drug_cetirizine",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Cetirizine.txt:5-6; sha256=e3509e4dd00b5206cfd61631b0b07ec4a4a154a18b152bbff80bc4598fd5f5f5",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Quzyttir",
+      "concept_id": "drug_cetirizine",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Cetirizine.txt:5-6; sha256=e3509e4dd00b5206cfd61631b0b07ec4a4a154a18b152bbff80bc4598fd5f5f5",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Benadryl",
+      "concept_id": "drug_diphenhydramine",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Diphenhydramine.txt:5; sha256=b89ebf77232131528cf6889eb404bb3837f0af1328f244a29c861ff375d51f0d",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Benadryl Allergy Dye-Free LiquiGels",
+      "concept_id": "drug_diphenhydramine",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Diphenhydramine.txt:5; sha256=b89ebf77232131528cf6889eb404bb3837f0af1328f244a29c861ff375d51f0d",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Children's Benadryl Allergy",
+      "concept_id": "drug_diphenhydramine",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Diphenhydramine.txt:5-6; sha256=b89ebf77232131528cf6889eb404bb3837f0af1328f244a29c861ff375d51f0d",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Children's Triaminic Thin Strips Allergy",
+      "concept_id": "drug_diphenhydramine",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Diphenhydramine.txt:5-6; sha256=b89ebf77232131528cf6889eb404bb3837f0af1328f244a29c861ff375d51f0d",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Alka-Seltzer Plus Allergy",
+      "concept_id": "drug_diphenhydramine",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Diphenhydramine.txt:5-6; sha256=b89ebf77232131528cf6889eb404bb3837f0af1328f244a29c861ff375d51f0d",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Nytol",
+      "concept_id": "drug_diphenhydramine",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Diphenhydramine.txt:5-6; sha256=b89ebf77232131528cf6889eb404bb3837f0af1328f244a29c861ff375d51f0d",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "PediaCare Children's Allergy",
+      "concept_id": "drug_diphenhydramine",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Diphenhydramine.txt:5-7; sha256=b89ebf77232131528cf6889eb404bb3837f0af1328f244a29c861ff375d51f0d",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Simply Sleep",
+      "concept_id": "drug_diphenhydramine",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Diphenhydramine.txt:5-7; sha256=b89ebf77232131528cf6889eb404bb3837f0af1328f244a29c861ff375d51f0d",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Sominex",
+      "concept_id": "drug_diphenhydramine",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Diphenhydramine.txt:5-7; sha256=b89ebf77232131528cf6889eb404bb3837f0af1328f244a29c861ff375d51f0d",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "QlearQuil Nighttime Allergy Relief",
+      "concept_id": "drug_diphenhydramine",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Diphenhydramine.txt:5-7; sha256=b89ebf77232131528cf6889eb404bb3837f0af1328f244a29c861ff375d51f0d",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Tranquil Nighttime Sleep Aid",
+      "concept_id": "drug_diphenhydramine",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Diphenhydramine.txt:5-8; sha256=b89ebf77232131528cf6889eb404bb3837f0af1328f244a29c861ff375d51f0d",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Unisom SleepGels",
+      "concept_id": "drug_diphenhydramine",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Diphenhydramine.txt:5-8; sha256=b89ebf77232131528cf6889eb404bb3837f0af1328f244a29c861ff375d51f0d",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Unisom SleepMelts",
+      "concept_id": "drug_diphenhydramine",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Diphenhydramine.txt:5-8; sha256=b89ebf77232131528cf6889eb404bb3837f0af1328f244a29c861ff375d51f0d",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "ZzzQuil",
+      "concept_id": "drug_diphenhydramine",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Diphenhydramine.txt:5-8; sha256=b89ebf77232131528cf6889eb404bb3837f0af1328f244a29c861ff375d51f0d",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Vistaril",
+      "concept_id": "drug_hydroxyzine",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Hydroxyzine.txt:5; sha256=4f7293eba04eeb30eb984d631dbd0c967b90d63e624a54937620954e900fca09",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Claritin",
+      "concept_id": "drug_loratadine",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Loratadine.txt:5; sha256=410a0dcf0f31faa89a9b374e8e4b5b3b52763839cbd9fd1eff7bdd7ca06ded3b",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Alavert",
+      "concept_id": "drug_loratadine",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Loratadine.txt:5; sha256=410a0dcf0f31faa89a9b374e8e4b5b3b52763839cbd9fd1eff7bdd7ca06ded3b",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Claritin RediTabs",
+      "concept_id": "drug_loratadine",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Loratadine.txt:5; sha256=410a0dcf0f31faa89a9b374e8e4b5b3b52763839cbd9fd1eff7bdd7ca06ded3b",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "QlearQuil All Day & All Night 24 Hour Allergy Relief",
+      "concept_id": "drug_loratadine",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Loratadine.txt:5-6; sha256=410a0dcf0f31faa89a9b374e8e4b5b3b52763839cbd9fd1eff7bdd7ca06ded3b",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Singulair",
+      "concept_id": "drug_montelukast",
+      "source": "project-documents/medical-documents/DDI-text/Respiratory and Allergy Medications/Montelukast.txt:5; sha256=28f13c8a2786278fdb628a74733b3e4b9fe9272e45b5b1a2304345de1e2d6681",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Buprenex",
+      "concept_id": "drug_buprenorphine",
+      "source": "project-documents/medical-documents/DDI-text/Substance Use and Smoking Cessation/Buprenorphine.txt:5; sha256=efabbadf61057560c419c4f771fbe899c46c54c60bee6c5fce7bc5b27d275f86",
+      "review": {
+        "decision": "pending"
+      }
+    },
+    {
+      "name": "Chantix",
+      "concept_id": "drug_varenicline",
+      "source": "project-documents/medical-documents/DDI-text/Substance Use and Smoking Cessation/Varenicline.txt:5; sha256=8aa3a83d38ba075788c87f9a1fbed6ca6f4c09d57ac4546fb94f81a1d69c3540",
+      "review": {
+        "decision": "pending"
+      }
+    }
+  ]
+}

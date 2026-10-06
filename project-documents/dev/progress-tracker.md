@@ -1094,3 +1094,46 @@ Created `content/review-ledger.md`: index + per-item entries for assessments, hi
 - Path discrepancy carry-forward (recorded, not resolved here): tasks.md S15/S16 cite `docs/medical-docs/DDI-text/...` / `B/ddi/ingestion.py` / `BT/ddi/test_ingestion.py` shorthand — verified actual paths are `project-documents/medical-documents/DDI-text/...`, `backend/src/x_insight/ddi/ingestion.py`, `backend/tests/ddi/test_ingestion.py`. Future DDI sessions should keep citing the verified prefix.
 - Infra debt (pre-existing, unrelated to S16.b): physicians-list `limit=100` single page (accumulated e2e physicians fall off the page, breaks identity-rename); diagnosis indeterminate firefox-only flake passing standalone.
 - S16.b exit met: bounded remainder parsed through the ingestion interface with provenance, chrome-free traceable spans, condensed-bullet splitting + uncounted/citation/hybrid/no-interaction policies + residual-triage shared guards (33 files to green, 2 over-merge rules reverted), whole-corpus 128-file report-only accounting (102 passed / 26 failed, 30,667 entries, reports still written on FAIL with 0 missing keys/checksums and 0 passed-with-anomalies) — with terminology (S17), review/publish (S18), and checker (S19) explicitly deferred.
+
+### S17 — Controlled medication concepts and aliases
+
+- Engineering implementation and verification complete; clinical exit remains pending owner review. Work began from clean baseline `9ac0342b7cee87b51e1e12ff0f3d0d6a155ef1c4`. Source originals and unrelated work were preserved. No UI, database migration, runtime checker or release publication was added.
+- Public T3 build outputs now expose typed `DrugConcept` and `DrugAlias` snapshots, normalized names, catalog availability, terminology version/checksum, resolved and unresolved endpoints, pending decisions and alias collisions. Exact lowercase/whitespace canonical matching and owner-approved aliases resolve stable IDs; ambiguous and unknown labels remain unresolved. Look-alike names remain distinct. No salt removal, strength stripping, combination splitting, fuzzy matching or external terminology dependency was added. Existing rationale is in [context/ddi.md](../../context/ddi.md).
+- Unordered `pair_concept_ids` remain stable under endpoint reversal while source subject/object, raw assertions and provenance spans remain intact. Effect direction becomes `explicit` only when both named endpoints match completely; uncertain or incomplete endpoints remain `unknown`. Source-header identity takes precedence over filenames: the Psyllium source identifies a senna/psyllium combination, distinct from psyllium alone. Patient catalog proposals are drug-only; herbs, foods, substances and other interacting entities remain distinct concept types.
+- `content/ddi/aliases.json` is a review draft: 136 concepts across six types, 128 proposed catalog IDs, 415 aliases all pending and zero owner-approved aliases. There was no prior active catalog to reconcile, and proposed IDs are not activated. The full corpus has zero alias collisions, 25,818 unresolved occurrences (1,739 raw / 1,727 normalized labels), and `terminology_complete=false`. These unresolved entities are not proof of complete source coverage. Final terminology SHA-256: `f89b7142b804a78f3ad39a5ad3a97005f49a0ea63245403cc578e7f4d967d05e`.
+- Structural corpus accounting is unchanged: 128 documents, 102 passed, 26 failed, 30,667 entries. CLI and library candidate/report JSON matched exactly; exit 1 is expected for the 26 structural failures, and both outputs were preserved. Omitting `--terminology` preserves raw parsing. Explicit missing/invalid terminology fails with a written report. `review_manifest` is reserved for S18 and does not approve aliases.
+- Observable red → green verification used the planned public T3 seam. The backend tracer established nine terminology tests, and dev-test added nine supplementary/regression tests. Dev-test exposed 101 incorrect wrapped alias provenance spans; range corrections made the regression green. Specification review exposed incorrect explicit direction for incomplete Alpha/Other endpoints; an eight-case regression went red, then green after correction. Final specification review had zero outstanding findings; standards review found zero violations/actionable smells. A second standards follow-up was unavailable due to the agent thread limit; the manager inspected the final small correction and found no standards issue.
+- Final DDI suite: 46 passed (18 terminology tests plus the retained 28 ingestion tests). Full backend regression: 335 passed in 99.87 seconds before two later regression tests were added; those two passed separately, and the final suite collected 337 tests. A complete 337-test run was not recorded. `make check` passed Ruff formatting/lint, mypy, web build and root TypeScript checks; `git diff --check` passed.
+
+Reproduce from the repository root (the backend regression requires the configured local database and local network access):
+
+```sh
+make check
+set -a
+. ./.env
+set +a
+make test-backend
+git diff --check
+```
+
+Reproduce the public offline seam from `backend/`:
+
+```sh
+UV_CACHE_DIR=/tmp/x-uv-cache uv run pytest tests/ddi -q
+uv run python -m x_insight.ddi build \
+  --sources ../project-documents/medical-documents/DDI-text \
+  --terminology ../content/ddi/aliases.json \
+  --output /tmp/x-s17-ddi
+```
+
+The local database environment uses ports 5442/5443; the full regression needed sandbox escalation for local network access. Do not substitute a mocked database for that integration check or expose `.env` values. Verification artifacts for this run are `/tmp/x-s17-test-{backend,check,ddi}.log`, `/tmp/x-s17-test-provenance-red.log`, `/tmp/x-s17-test-direction-red.log`, `/tmp/x-s17-test-corpus-{summary,dataset,report}.json` and `/tmp/x-s17-test-corpus-cli/`.
+
+Public build schema and S18 handoff:
+
+- `build(source_dir, terminology=None, review_manifest=None)` returns `CandidateDataset, Report`.
+- `DrugConcept`: `id`, `canonical_name`, `concept_type`, `catalog_drug_id`, `source`, `normalized_name`, `catalog_available`. `DrugAlias`: `name`, `concept_id`, `source`, `review`, `normalized_alias`.
+- `CandidateDataset`: `parser_version` (`ddi-ingestion/0.1.0`), `concepts`, `aliases`, `catalog_status`, `terminology_version` (`ddi-terminology/0.1.0`), `terminology_checksum`, `documents`. Each `SourceDocument` has `source_path`, `checksum`, `entries`, `subject_concept_id`, `subject_name`.
+- `CandidateEntry`: `source_path`, `source_category`, `interacting_name`, `raw_text`, `span_start`, `span_end`, `interacting_concept_id`, `source_subject_name`, `subject_concept_id`, `pair_concept_ids`, `direction_subject_id`, `direction_object_id`, `direction` (`unknown` or `explicit`).
+- `Report`: `parser_version`, `terminology_version`, `terminology_checksum`, `alias_collisions`, `pending_reviews`, `unresolved_names`, `terminology_complete`, `documents`, `passed`. Each `DocumentCheck` has `source_path`, `checksum`, `expected_counts`, `parsed_counts`, `passed`, `anomalies`. `passed` reports structural parsing only; neither it nor `terminology_complete` proves reviewed pair coverage.
+- Remaining blocker: request actual owner review of the proposed catalog and source-backed aliases, including uncertain equivalences; record approvals and pending decisions explicitly. S17's clinical exit cannot be claimed with zero approved aliases. The 26 structural failures and the ten-file S16.b parser queue still need explicit parsing/review follow-up; alias resolution does not fix them.
+- Next session: S18 builds, reviews and publishes an immutable DDI release. Reject count failures, unresolved release-required entities, absent provenance and unreviewed evidence; permit exclusions only through reviewed explicit limited-coverage acceptance, and report unsupported pairs as coverage unavailable. No publish command exists yet. S19 supplies runtime T4 checks; S20 adds the UI.

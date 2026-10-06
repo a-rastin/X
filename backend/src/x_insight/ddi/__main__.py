@@ -63,7 +63,7 @@ def main(argv: list[str] | None = None) -> int:
     build_parser.add_argument(
         "--terminology",
         default=None,
-        help="controlled alias file (tolerated when absent in S15; used from S17)",
+        help="controlled terminology JSON; supplied file must exist and validate",
     )
     build_parser.add_argument("--output", required=True, help="staging directory for outputs")
     args = parser.parse_args(argv)

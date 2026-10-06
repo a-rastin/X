@@ -3,7 +3,7 @@
 Public interface: :func:`build` converts ``.txt`` monographs found under a
 source directory into a candidate dataset plus a validation report. No LLM,
 no network, no fuzzy matching, no database: raw interacting names are kept
-verbatim (concept resolution lands in S17) and every entry keeps its raw
+verbatim alongside controlled concept IDs, and every entry keeps its raw
 text plus original line span.
 
 Parser model (DDI design §§7–8): decode (BOM-tolerant, newline-only splits
@@ -21,8 +21,9 @@ or as repeated pair assertions. Condensed bullet sections start every
 ``• n1, n2: shared description`` bullet splits into one entry per
 comma-separated name — commas inside parentheses never split, and
 slash-joined formulation variants stay one entry. The monograph subject
-comes from the file stem — never a direction inference (S17 owns
-resolution; raw text stays verbatim). A page break inside one entry leaves
+comes from an explicit pre-dosing source header when present, otherwise
+the file stem. Subject identity alone never supplies effect direction;
+raw text stays verbatim. A page break inside one entry leaves
 chrome-only lines between its blocks, so a block separated from the
 previous one by chrome continues the same entry; any other block boundary
 starts a new entry. Declared ``(N)`` counts must equal parsed entry counts
@@ -35,9 +36,17 @@ from __future__ import annotations
 import hashlib
 import re
 from collections.abc import Mapping
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from pathlib import Path
 from typing import Any
+
+from x_insight.ddi.terminology import (
+    DrugAlias,
+    DrugConcept,
+    Terminology,
+    load_terminology,
+    normalize,
+)
 
 PARSER_VERSION = "ddi-ingestion/0.1.0"
 
@@ -176,6 +185,13 @@ class CandidateEntry:
     raw_text: str
     span_start: int
     span_end: int
+    interacting_concept_id: str | None = None
+    source_subject_name: str | None = None
+    subject_concept_id: str | None = None
+    pair_concept_ids: tuple[str, str] | None = None
+    direction_subject_id: str | None = None
+    direction_object_id: str | None = None
+    direction: str = "unknown"
 
 
 @dataclass(frozen=True)
@@ -183,6 +199,8 @@ class SourceDocument:
     source_path: str
     checksum: str
     entries: tuple[CandidateEntry, ...] = ()
+    subject_concept_id: str | None = None
+    subject_name: str | None = None
 
 
 @dataclass(frozen=True)
@@ -198,12 +216,23 @@ class DocumentCheck:
 @dataclass(frozen=True)
 class CandidateDataset:
     parser_version: str = PARSER_VERSION
+    concepts: tuple[DrugConcept, ...] = ()
+    aliases: tuple[DrugAlias, ...] = ()
+    catalog_status: str | None = None
+    terminology_version: str | None = None
+    terminology_checksum: str | None = None
     documents: tuple[SourceDocument, ...] = ()
 
 
 @dataclass(frozen=True)
 class Report:
     parser_version: str = PARSER_VERSION
+    terminology_version: str | None = None
+    terminology_checksum: str | None = None
+    alias_collisions: dict[str, tuple[str, ...]] = field(default_factory=dict)
+    pending_reviews: tuple[dict[str, Any], ...] = ()
+    unresolved_names: tuple[dict[str, Any], ...] = ()
+    terminology_complete: bool = False
     documents: tuple[DocumentCheck, ...] = ()
     passed: bool = False
 
@@ -242,25 +271,78 @@ def build(
 ) -> tuple[CandidateDataset, Report]:
     """Build a candidate dataset + validation report from ``source_dir``.
 
-    ``terminology``/``review_manifest`` are accepted for the plan.md §3.2
-    interface but unused in S15 (resolution lands in S17, review in S18);
-    a missing terminology path is tolerated, never fatal.
+    ``terminology`` resolves controlled names when supplied; an explicit
+    missing/invalid file fails. Omission preserves raw parsing.
+    ``review_manifest`` remains reserved for S18 and cannot authorize aliases.
     """
     root = Path(source_dir)
     if not root.is_dir():
         raise ValueError(f"source_dir is not a directory: {source_dir}")
 
+    controlled = load_terminology(terminology)
     documents: list[SourceDocument] = []
     checks: list[DocumentCheck] = []
+    unresolved: list[dict[str, Any]] = []
     for path in sorted(root.rglob("*.txt")):
         relative = path.relative_to(root).as_posix()
         checksum = hashlib.sha256(path.read_bytes()).hexdigest()
         entries, check = _parse_document(relative, path, checksum)
-        documents.append(SourceDocument(source_path=relative, checksum=checksum, entries=entries))
+        subject = _source_subject(path)
+        subject_id = None
+        if controlled is not None:
+            subject_id = controlled.resolve(subject)
+            entries = tuple(_resolve_entry(e, subject, subject_id, controlled) for e in entries)
+        if controlled is not None:
+            if subject_id is None:
+                unresolved.append(
+                    {
+                        "name": subject,
+                        "role": "subject",
+                        "source_path": relative,
+                        "checksum": checksum,
+                    }
+                )
+            for entry in entries:
+                if entry.interacting_concept_id is None:
+                    unresolved.append(
+                        {
+                            "name": entry.interacting_name,
+                            "role": "object",
+                            "source_path": relative,
+                            "checksum": checksum,
+                            "span_start": entry.span_start,
+                            "span_end": entry.span_end,
+                        }
+                    )
+        documents.append(
+            SourceDocument(
+                source_path=relative,
+                checksum=checksum,
+                entries=entries,
+                subject_concept_id=subject_id,
+                subject_name=subject,
+            )
+        )
         checks.append(check)
 
-    dataset = CandidateDataset(documents=tuple(documents))
-    report = Report(documents=tuple(checks), passed=all(c.passed for c in checks))
+    dataset = CandidateDataset(
+        documents=tuple(documents),
+        concepts=controlled.concepts if controlled else (),
+        aliases=controlled.aliases if controlled else (),
+        catalog_status=controlled.catalog_status if controlled else None,
+        terminology_version=controlled.version if controlled else None,
+        terminology_checksum=controlled.checksum if controlled else None,
+    )
+    report = Report(
+        documents=tuple(checks),
+        passed=all(c.passed for c in checks),
+        terminology_version=controlled.version if controlled else None,
+        terminology_checksum=controlled.checksum if controlled else None,
+        alias_collisions=controlled.collisions if controlled else {},
+        pending_reviews=controlled.pending_reviews if controlled else (),
+        unresolved_names=tuple(unresolved),
+        terminology_complete=controlled is not None and not unresolved,
+    )
     return dataset, report
 
 
@@ -701,3 +783,61 @@ def _name_from_text(first_line: str) -> str:
     if name is not None:
         return name
     return first_line.strip()
+
+
+def _resolve_entry(
+    entry: CandidateEntry, subject: str, subject_id: str | None, terminology: Terminology
+) -> CandidateEntry:
+    object_id = terminology.resolve(entry.interacting_name)
+    pair = (
+        (min(subject_id, object_id), max(subject_id, object_id))
+        if subject_id and object_id
+        else None
+    )
+    direction_subject_id = direction_object_id = None
+    text = normalize(entry.raw_text)
+    directions: set[tuple[str, str]] = set()
+    # Recognize only an explicit source clause naming both endpoints. Pair sorting
+    # never supplies direction, and mechanism/action-only prose remains unknown.
+    for actor_name, actor_id, target_name, target_id in (
+        (entry.interacting_name, object_id, subject, subject_id),
+        (subject, subject_id, entry.interacting_name, object_id),
+    ):
+        clause = (
+            # A complete actor starts a sentence or follows the extracted name header.
+            # A complete target ends before punctuation or a supported mechanism clause;
+            # suffixes and combination labels must not become endpoint identities.
+            rf"(?:^|[.;]\s*|^{re.escape(normalize(entry.interacting_name))}\s+)"
+            rf"{re.escape(normalize(actor_name))} (?:increases|decreases) "
+            rf"the (?:level|effect|levels|effects) of {re.escape(normalize(target_name))}"
+            rf"(?=\s*(?:[.;,]|$)|\s+(?:by|via|through)\b)"
+        )
+        if actor_id and target_id and re.search(clause, text):
+            directions.add((actor_id, target_id))
+    if len(directions) == 1:
+        direction_subject_id, direction_object_id = directions.pop()
+    return replace(
+        entry,
+        source_subject_name=subject,
+        subject_concept_id=subject_id,
+        interacting_concept_id=object_id,
+        pair_concept_ids=pair,
+        direction_subject_id=direction_subject_id,
+        direction_object_id=direction_object_id,
+        direction="explicit" if direction_subject_id else "unknown",
+    )
+
+
+def _source_subject(path: Path) -> str:
+    """Prefer explicit source label over filename; never rewrite its identity."""
+    lines = _read_lines(path) or []
+    for _, line in lines[:25]:
+        clean = _without_cites(line).strip().strip("*# ")
+        if clean.lower().startswith(("brand", "classes", "dosing", "dosage")):
+            break
+        match = re.fullmatch(
+            r"(.+?) \((?:Rx|OTC|Rx/OTC|Rx, OTC)\)(?: INFORMATION)?", clean, re.IGNORECASE
+        )
+        if match:
+            return match.group(1).strip()
+    return path.stem
