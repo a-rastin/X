@@ -1403,3 +1403,64 @@ Public build schema and S18 handoff:
 
 - Owner decisions enumerated in `content/review-ledger.md` §§2–7 unchanged (R5 concrete discussion/review mappings, F6 concrete graph/template and limitation-wording review, concrete history/severity definitions, DDI aliases/release evidence, reference-table provenance). Infrastructure proceeds on synthetic fixtures while responses are pending; S21 adds no new clinical blocker.
 - S21 exit met: validation-only import/inspection with explicit safe parser + `MAX_*` guardrails, ordered graph with `proposed_parent`-never-edges, export identity, and structural-only `activatable_v1 False` for drafts — proven by 25 new T5 tests + 79 existing schema checks with `make check` green and source XML hashes unchanged.
+
+## S22 — Enforce model semantics and admission limits (2026-10-06)
+
+**Scope:** model semantics + admission gating only (tasks.md S22; plan.md §7.3; FR-31–32, FR-37, NFR-04). Seam T5 only — `check_semantics` / `validate_package_contract` / `admission_decision` over S21 `ValidatedXmlbif`. No registry/activation (S24), no inference (S23), no migration (head stays `0007`), no HTTP, no frontend. Source XML unmodified. Tasks and plan untouched by this docs step.
+
+### Pinned / added deps (S01–S07 pins unchanged; S22 adds no runtime lib)
+
+- Runtimes carry forward: Python `3.12.14`, Node `22.23.2` / npm `10.9.8`, PostgreSQL 16 (`postgres:16-alpine`), `fastapi 0.142.2`, `sqlalchemy 2.1.3`, `alembic 1.20.0`, `psycopg[binary] 3.3.6` plus S21 `lxml==6.1.3` (`Makefile` header + `backend/pyproject.toml`, existing pins unchanged).
+- No new migration — head stays `0007` (S22 stores nothing; semantics/admission are in-memory gates, DB persistence is S24 registry scope).
+- S22 files (code/tests untouched by this docs step): `backend/src/x_insight/models/admission.py` (public T5: `check_semantics` / `validate_package_contract` / `admission_decision`, `ENGINEERING_LIMITS`, `KNOWN_SOURCE_PREFIXES` / `SAFE_EXPRESSIONS`), `backend/tests/models/test_model_admission.py` (24 tests, T5-only).
+
+### Red→green slices + seams (T5 only; tasks.md S22 steps 1–4)
+
+- Slice 1 — XSD-valid-but-semantic-invalid → nonexecutable with distinct codes, after structure validation (`BT/models/test_model_admission.py` Slice 1): cycle, missing CPT, wrong dimensions, out-of-range / non-finite, row-not-normalized, empty outcomes each yield their own code; `admission_decision(...).executable is False`; XSD failure short-circuits as `xsd_invalid` before semantic checks.
+- Slice 2 — valid root/parent ordering passes; decision/utility stay drafts; all 11 supplied BNs remain inactive (Slice 2): root-declared-before-child two-node fixture with complete finite normalized rows is `semantic.valid True` and admitted with a complete package; `decision`/`utility` kinds yield `unsupported_kind` and never executable; all BN-04…BN-14 files only read (byte-identity re-asserted), all `check_semantics False` and never executable even with a complete package.
+- Slice 3 — content gating prevents activation; `reviewed=true` alone never sufficient (Slice 3): `missing_question_mappings` / `missing_prompts` / `missing_templates` (incl. `missing_package` when no package), `note_source_path` (explicit notes rejection — page notes never feed models per plan.md §2.3) / `unknown_source_path` (default-deny until S25 registers prefixes), `unreviewed_package` (requires review record `{reviewer, decision approved, date}` — JSON `reviewed=true` flag alone yields `unreviewed_package`), `unsafe_expression` (default-deny until S25 allowlists), plus cross-checks `undeclared_query` / `undeclared_state` against declared variables/states; contract-valid + cross-clean required for `executable True`; no patient mappings invented.
+- Slice 4 — configured limits + deterministic bounded diagnostics (Slice 4): `ENGINEERING_LIMITS` reuses S21 `MAX_*` plus `MAX_SEMANTIC_ERRORS 50` / `MAX_CONTRACT_ERRORS 50` / `MAX_ADMISSION_DIAGNOSTICS 100`, documented as engineering bounds from measurements (~57 KiB largest draft, 32-var peak), not clinical thresholds; diagnostics keep fixed order semantic → contract → cross, source order inside each check, bounded messages (`MAX_MESSAGE_CHARS 500`); over-limit input handled safely via S21 `too_large`; normalization is a tight `1e-9` float gate (`NORMALIZATION_TOLERANCE`) — exact integer-unit policy (100% = 100,000,000) stays S23.
+- Seams: T5 only. No T1–T4/T6–T10 exercised in S22; no DB, no HTTP, no frontend.
+
+### Verification evidence (implementation-session report, S22 scope)
+
+- `make check` green (ruff format/check, mypy 38 files).
+- `backend/tests/models/test_model_admission.py` 24 passed (T5-only, DB-free, public interface + `MAX_*` pins + worked literals, never private helpers/DB/HTTP).
+- Full models suite 49 passed (24 new S22 + 25 S21 carried).
+- Full `make test-backend` not run — DB `localhost:5433` down (caveat; DB-free models evidence above stands in).
+- No migration (versions still `0001`–`0007`, head `0007`); existing routes untouched (S22 adds no routes, no tables).
+- Source XML unmodified (BN files only read, byte-identity re-asserted in `test_all_eleven_supplied_bns_remain_inactive`); XSD success still structural only, `executable` means admitted for the exact inference pipeline (S23), never clinically valid.
+
+### Local loop for next agent (S23+)
+
+- Public T5 (callers and tests use the same functions; `backend/src/x_insight/models/admission.py`): `check_semantics(document: ValidatedXmlbif) -> SemanticReport` (fixed order `xsd_invalid` → `no_network`/`multiple_networks` → `empty_network` → `unsupported_kind` → `empty_outcomes` → `missing_definition` → `cycle_detected` (incl. self-loops) → `wrong_dimensions` → `non_finite_value` → `probability_out_of_range` → `row_not_normalized`; source order inside each check; bounded to `MAX_SEMANTIC_ERRORS`); `validate_package_contract(package, *, known_source_prefixes=(), safe_expressions=()) -> ContractReport` (fixed order `missing_package`/`missing_question_mappings`/`missing_prompts`/`missing_templates` → `note_source_path`/`unknown_source_path` → `unreviewed_package` → `unsafe_expression`; default-deny; bounded to `MAX_CONTRACT_ERRORS`); `admission_decision(document, package=None, ...) -> AdmissionDecision` (`executable` bool + ordered bounded `diagnostics` semantic → contract → cross `undeclared_query`/`undeclared_state`, bounded to `MAX_ADMISSION_DIAGNOSTICS`, plus `semantic` + `contract` reports).
+- Guardrails (`ENGINEERING_LIMITS`, resource/diagnostic bounds not clinical thresholds): reuses S21 `MAX_XML_BYTES 1_048_576`, `MAX_NETWORKS 16`, `MAX_VARIABLES_PER_NETWORK 256`, `MAX_OUTCOMES_PER_VARIABLE 64`, `MAX_TABLE_VALUES_PER_DEFINITION 131_072`, `MAX_XSD_ERRORS 20`, `MAX_MESSAGE_CHARS 500`, `MAX_REASON_ITEMS 10`, plus `MAX_SEMANTIC_ERRORS 50`, `MAX_CONTRACT_ERRORS 50`, `MAX_ADMISSION_DIAGNOSTICS 100`, `NORMALIZATION_TOLERANCE 1e-9`; empty `KNOWN_SOURCE_PREFIXES ()` / `SAFE_EXPRESSIONS frozenset()` so unknown paths/expressions are denied until S25 fills them.
+- Reproduce from `backend/`: `uv run pytest tests/models -q` (DB-free, T5-only); repo-root `make check` (offline gate).
+- S01–S21 loops unchanged (`make setup/dev/stop`, `make migrate`, host-PG `DB_PORT`/`TEST_DB_PORT` preflight; backend suite runs from `backend/` with `.env` sourced).
+
+### Handoff
+
+- Next engineering sessions: **S23** (CPT validation + exact inference, T5) owns exact CPT/inference incl. integer-unit policy and consumes admitted versions; **S24** (model version administration + read-only graph, T1/T5/T9) owns registry/versioning (immutable versions, graph read, activation/rollback); **S25** (question-package contract + review harness, T5) fills `KNOWN_SOURCE_PREFIXES` / `SAFE_EXPRESSIONS` via manifest registry (patient_mappings, prompt/template versions, required_fields, cpt_contract, query, review) without inventing patient mappings. S22 leaves all of that to its owning sessions.
+- No frontend needed in S22 (T5 only; no routes, no UI contract).
+- `backend/README.md` unchanged in this docs step (S22 adds no command beyond existing `tests/models` loop, so no pointer change needed).
+- Top-level `README.md` unchanged in this docs step (still the offline-build + S18-publish pointers; verified this session — no new doc entry point needed for S22).
+- Unrelated content untouched: `content/review-ledger.md` approval states, BNs, medical docs, `content/ddi/`, `content/history`, `web/`, `e2e/`, `migrations/` untouched by this docs step; no clinical claims added here.
+- S22 exit met: XSD-valid-but-semantic-invalid regression fixtures with distinct codes plus clear import-versus-activation distinction (`validate` is structural import, `admission_decision` is executable gate, never clinically valid); contract hooks identified for S25 without invented patient mappings.
+
+### Code-review follow-ups (honest record; not approval, no clinical content — non-blocking polish, none blocks S22 exit)
+
+- Standards verdict: PASS — no hard violations, judgement-call smells only: `_clip` duplication with S21 `_truncate`, `undeclared_query` duplicate blocks, triple issue dataclasses (`SemanticIssue` / `ContractIssue` / `AdmissionDiagnostic`), `cross` naming, Data Clumps on the two hook params (`known_source_prefixes` + `safe_expressions` threaded through both contract and admission), test fixture/assert duplication.
+- Spec verdict: PASS — all 4 S22 steps covered (semantic-invalid distinct codes, valid ordering pass + drafts stay inactive, content gating incl. `reviewed=true`-alone insufficiency, limits + deterministic diagnostics), no scope creep, nothing wrong.
+- None blocks S22 exit: follow-ups above are future polish, not exit blockers.
+
+### Deferred items
+
+- S21/S20/S19/S18/S17/S16.b/S15/S14/S13/S12/S11/S10/S09/S08/S02–S07 deferred items unchanged (PANSS baseline-zero edge → S37; rule payload shape validation; cursor pagination, audit HTTP route, named role logins, per-command idempotency for remaining commands — now also covering follow-up create; AIMS `awaiting_source`; S40/S41/S59 note-noninterference proofs; S48d/S51 staleness + S49 signing hooks).
+- S23 owns exact CPT/inference (integer-unit policy, transpose checks, bounded inference); S24 owns registry/versioning (immutable versions, graph read, activation/rollback with pointer revision + audit); S25 owns package contract fill (manifest registry, patient-mapping estimation context, review dossier, template slots) — none of that was built in S22.
+- Live-DB suites deferred until `db-test:5433` / `localhost:5433` is up (DB-free 24+25 models evidence above stands in).
+- S22 code-review follow-ups above are future polish, not exit blockers.
+
+### Remaining blockers
+
+- Owner decisions enumerated in `content/review-ledger.md` §§2–7 unchanged (R5 concrete discussion/review mappings, F6 concrete graph/template and limitation-wording review, concrete history/severity definitions, DDI aliases/review evidence, reference-table provenance). Infrastructure proceeds on synthetic fixtures while responses are pending; S22 adds no new clinical blocker.
+- S22 exit met: model semantics + admission limits with fixed-order bounded diagnostics, `reviewed=true`-alone never sufficient, and engineering (not clinical) limits — proven by 24 new T5 tests (49 models with S21 carried) with `make check` green and source XML unmodified; full `make test-backend` not run (DB `localhost:5433` down) as the single caveat.
