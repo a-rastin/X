@@ -1,3 +1,9 @@
+## Progress and handoffs
+
+Start at [project-documents/dev/progress/README.md](project-documents/dev/progress/README.md),
+then read the relevant session/checkpoint reports and their handoffs. Record new
+progress in the appropriate report and update the index; keep the index short.
+
 ## Keep the Why
 
 This project records the reasoning behind its code with the Keep the Why

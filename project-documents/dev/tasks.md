@@ -4,6 +4,10 @@ Aligned 2026-10-03 to [user-requirements.md](user-requirements.md), [system-desi
 
 Path shorthand: `B/` = `backend/src/x_insight/`, `BT/` = `backend/tests/`, `W/` = `web/src/`. Project documents are under `project-documents/dev/`. Medical/BN paths, counts, and named-source examples below are inherited drafting leads: verify actual supplied content before use. They are not findings established by this document review.
 
+Recorded progress and handoffs are indexed in [progress/README.md](progress/README.md).
+Read the relevant session reports; write outcomes to their session/checkpoint files
+and add new reports to the index.
+
 The session IDs remain stable; active question sessions are S27 and S29–S38. Execute S25 before S24, S44 before S41, and the added S48a–S48d probability work before signing. Clinical content gates do not block generic mechanics using clearly separate synthetic fixtures.
 
 ## Foundation and identity
@@ -12,7 +16,7 @@ The session IDs remain stable; active question sessions are S27 and S29–S38. E
 
 **Depends:** none. **Requirements:** all, especially FR-30–37/NFR-05. **Seams:** no new tests.
 
-**Read:** plan.md §§1, 5–7, 12; source requirements/design; `BNs/schema.xml`; medical file inventory. **Write:** progress tracker and content review ledger under `content/` when that directory is first needed; no application code.
+**Read:** plan.md §§1, 5–7, 12; source requirements/design; `BNs/schema.xml`; medical file inventory. **Write:** [S00 progress report](progress/s00.md), [progress index](progress/README.md), and content review ledger under `content/` when that directory is first needed; no application code.
 
 1. Record the confirmed product rules from the three baseline documents: empty inference evidence, private single draft, any-physician addenda, full CPT review and exact-result acceptance. Label stack, numerical choices and test seams as proposals; carry forward remaining policy inputs.
 2. Inventory actual supplied XML, clinical content and DDI files with hashes, structural versus executable status, and missing prompts/mappings/templates. Verify inherited counts (11 XML/128 DDI) only if that material exists; do not report them as current inventory without evidence.
@@ -845,7 +849,7 @@ Reserve separate job classes and capacity for local calculation. S48b proves pro
 
 **Depends:** S58–S61. **Requirements:** all. **Seams:** planned public integration/operational seams only.
 
-**Files/read:** plan.md §12, this document's coverage matrix, progress tracker, release/operations documentation.
+**Files/read:** plan.md §12, this document's coverage matrix, [progress index](progress/README.md) and relevant session reports, release/operations documentation.
 
 1. From a clean checkout and empty disposable storage run locked install, migrations, seeding, required suites and production build. Record exact commit/worktree state, locks, images and content hashes.
 2. Rehearse full backup → mutation → staged restore → confirmed replacement → login/read/artifact replay, plus failed-switch rollback. Confirm session revocation and unavailable-key reentry behavior; retain safe evidence.

@@ -153,7 +153,10 @@ e2e/              # Playwright Chrome/Firefox scenarios
 deploy/           # Dockerfiles, edge config, operations scripts
 compose.yaml
 Makefile
-project-documents/dev/{plan,tasks,progress-tracker}.md
+project-documents/dev/{plan,tasks}.md
+project-documents/dev/progress/README.md  # progress index and handoff routing
+project-documents/dev/progress/s*.md     # one report per session/checkpoint
+project-documents/dev/progress/content-decisions.md
 ```
 
 `BNs/` and original medical sources remain unchanged unless the owner explicitly requests a source correction. Derived content references source hashes and carries its own version. Runtime imports released content into PostgreSQL; running encounters do not read mutable repository files.

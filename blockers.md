@@ -1,6 +1,6 @@
 # Checks and constraints that can block vibecoding
 
-Reviewed 2026-10-04. Scope: every file under `project-documents/dev` and `project-documents/bayesian-networks` (8 nonempty Markdown documents, an empty progress tracker, 11 network XML files, the XSD, and its Python test).
+Reviewed 2026-10-04. Scope: every file under `project-documents/dev` and `project-documents/bayesian-networks` (8 nonempty Markdown documents, a then-empty progress tracker (now indexed in [progress/README.md](project-documents/dev/progress/README.md)), 11 network XML files, the XSD, and its Python test).
 
 This is an audit of the supplied specifications, not a claim that an application already enforces these checks. Your stated objective is an experimental research app without permission or safety approval friction. The documents still prescribe substantial approval and workflow gates. This report identifies them; it does not remove or change them.
 
@@ -194,7 +194,7 @@ These are nodes, parent dependencies and documented interpretation limits. A saf
 - Local slider recalculation/reset/retry requires no LLM/MCP/provider permission or availability once a current successful baseline exists.
 - Missing provider/content disables new generation, not all chart/admin work. Completed current baselines remain usable.
 - XML safety/validation properties do not themselves execute checks. A consumer must implement enforcement.
-- `progress-tracker.md` is empty and introduces no checks.
+- At this review date the progress tracker was empty and introduced no checks. Subsequent records are indexed in [progress/README.md](project-documents/dev/progress/README.md).
 
 ## 8. Practical distinction for this research app
 

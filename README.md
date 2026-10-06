@@ -3,6 +3,8 @@
 # X
 
 Project documentation lives in [project-documents/dev/](project-documents/dev/).
+Recorded progress and agent handoffs start at the
+[progress index](project-documents/dev/progress/README.md).
 The reasoning behind project decisions is recorded in the
 [context index](context/index.md).
 
@@ -26,7 +28,7 @@ Unresolved names and pending decisions require review before an S18 release.
 Omitting `--terminology` retains raw parsing; an explicitly supplied missing or
 invalid terminology file fails and writes a report.
 
-See the [S17 outcome and verification commands](project-documents/dev/progress-tracker.md#s17--controlled-medication-concepts-and-aliases)
+See the [S17 outcome and verification commands](project-documents/dev/progress/s17.md#s17--controlled-medication-concepts-and-aliases)
 and the [DDI decision record](context/ddi.md).
 
 ## Immutable DDI release (S18)
@@ -47,4 +49,4 @@ and rejected/invalid publishes leave the prior release readable. The real
 corpus remains `awaiting_review` (0 approved aliases + 26 structural
 failures); S18 verification used synthetic fixtures only.
 
-See the [S18 outcome and verification commands](project-documents/dev/progress-tracker.md#s18--build-review-and-publish-an-immutable-ddi-release-2026-10-06).
+See the [S18 outcome and verification commands](project-documents/dev/progress/s18.md#s18--build-review-and-publish-an-immutable-ddi-release-2026-10-06).

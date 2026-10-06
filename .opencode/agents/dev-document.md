@@ -9,7 +9,7 @@ permission:
 
 # Dev Document
 
-Update these files: `README.md`, `project-documents/dev/progress-tracker.md`
+Update `README.md` and the relevant session/checkpoint report under `project-documents/dev/progress/`. Read `project-documents/dev/progress/README.md` first; add links for new reports and update its latest checkpoint. Preserve recorded history, keep the index short, and put cross-session content Q/A in `progress/content-decisions.md`.
 
 ## Skills to Use
 

@@ -6,7 +6,7 @@
 **Type:** constraint
 **Status:** active
 **Evidence:** confirmed
-**Source:** progress-tracker.md S00, 2026-10-04
+**Source:** [S00 progress report](../project-documents/dev/progress/s00.md), 2026-10-04
 **Revisit when:** a network is supplied with complete reviewed CPTs, or registry activation rules change
 
 The 11 supplied Bayesian networks are templates requiring complete
@@ -36,7 +36,7 @@ an `inference_enabled` property.
 **Type:** incident
 **Status:** active
 **Evidence:** confirmed
-**Source:** progress-tracker.md S00, 2026-10-04
+**Source:** [S00 progress report](../project-documents/dev/progress/s00.md), 2026-10-04
 **Revisit when:** blockers.md is regenerated or the BNs change again
 
 The partial DEFINITION counts reported in blockers.md §5.1 (BN-04

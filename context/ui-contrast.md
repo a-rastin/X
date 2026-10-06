@@ -6,7 +6,7 @@
 **Type:** constraint
 **Status:** active
 **Evidence:** confirmed
-**Source:** ui-context.md, 2026-10-03; progress-tracker.md S05, 2026-10-04
+**Source:** ui-context.md, 2026-10-03; [S05 progress report](../project-documents/dev/progress/s05.md), 2026-10-04
 **Revisit when:** the palette or theme tokens change
 
 The canonical teal `#0A9E8F` against white is approximately 3.33:1 —

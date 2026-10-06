@@ -35,7 +35,7 @@
     }
   ],
   "limitations": [
-    "TEMPLATE - real corpus baseline (progress-tracker S15-S17 leads, not re-parsed here): 128 documents, 102 passed / 26 failed, ~30,667 entries; aliases.json draft with 415 pending / 0 approved aliases and terminology_complete=false. Uncovered pairs remain coverage_unavailable; excluded sources above stay named here. Do not claim the corpus is ready."
+    "TEMPLATE - real corpus baseline (project-documents/dev/progress/ S15-S17 report leads, not re-parsed here): 128 documents, 102 passed / 26 failed, ~30,667 entries; aliases.json draft with 415 pending / 0 approved aliases and terminology_complete=false. Uncovered pairs remain coverage_unavailable; excluded sources above stay named here. Do not claim the corpus is ready."
   ],
   "_notes": [
     "decision must become approved_complete (with coverage.scope complete and empty excluded_sources) or approved_limited (with coverage.scope limited, non-empty excluded_sources with reasons, and non-empty limitations) before publish accepts it.",
