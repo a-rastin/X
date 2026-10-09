@@ -3,10 +3,10 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest recorded checkpoint is [S39.b](s39-b.md): all 11 question packages
-reviewed and confirmed by the owner in new `s39-reviewed-v1` revisions, including
-corrected F6. Package and semantic validation pass; bundle release and activation
-retain their independent status.
+The latest recorded checkpoint is [S40](s40.md): analysis snapshots frozen and one
+question's inputs projected via public T1 seams (synthetic scope;
+queue/provider/MCP deferred). Content approvals remain as recorded in S39.b;
+bundle release and activation retain their independent status.
 
 ## Reading and updating progress
 
@@ -73,3 +73,4 @@ retain their independent status.
 | S39 | [Review and release both complete workflow bundles (2026-10-09)](s39.md) |
 | S39.a | [Immutable F6 reference-table correction (2026-10-09)](s39-a.md) |
 | S39.b | [Owner confirmation of all 11 question packages (2026-10-09)](s39-b.md) |
+| S40 | [Freeze analysis snapshots and project one question's inputs (2026-10-09)](s40.md) |

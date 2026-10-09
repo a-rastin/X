@@ -144,7 +144,12 @@ def clean_all(migrated_test_engine, monkeypatch):
         connection.execute(text("TRUNCATE sessions, users CASCADE"))
         connection.execute(text("TRUNCATE audit_events"))
         try:
-            connection.execute(text("TRUNCATE notes, encounters, patients"))
+            connection.execute(
+                text(
+                    "TRUNCATE question_runs, generation_batches, "
+                    "notes, encounters, patients CASCADE"
+                )
+            )
         except Exception:
             pass
         try:
@@ -167,7 +172,12 @@ def clean_all(migrated_test_engine, monkeypatch):
         connection.execute(text("TRUNCATE sessions, users CASCADE"))
         connection.execute(text("TRUNCATE audit_events"))
         try:
-            connection.execute(text("TRUNCATE notes, encounters, patients"))
+            connection.execute(
+                text(
+                    "TRUNCATE question_runs, generation_batches, "
+                    "notes, encounters, patients CASCADE"
+                )
+            )
         except Exception:
             pass
         try:

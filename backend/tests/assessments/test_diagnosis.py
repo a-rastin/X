@@ -65,7 +65,12 @@ def _truncate(engine) -> None:
         connection.execute(text("TRUNCATE audit_events"))
     try:
         with engine.begin() as connection:
-            connection.execute(text("TRUNCATE notes, encounters, patients"))
+            connection.execute(
+                text(
+                    "TRUNCATE question_runs, generation_batches, "
+                    "notes, encounters, patients CASCADE"
+                )
+            )
     except Exception:
         pass
     try:
