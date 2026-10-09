@@ -1,0 +1,357 @@
+{
+  "version": "s27-v1",
+  "status": "awaiting_review",
+  "rendering_contract": "Candidate wording for S45 deterministic distribution rendering; each declared state has a branch, all probabilities remain visible. No probability threshold or largest-state treatment selection is defined.",
+  "disclosures": [
+    "Experimental, uncalibrated and unapproved; not a prescription.",
+    "Historical oral-formulation Table6 categories do not establish patient formulation or incidence.",
+    "DDI coverage/findings are separate; no DDI-to-treatment substitution.",
+    "Missing, unknown, not-assessed or conflicting required input pauses; no established treatment is a known context, not not_applicable."
+  ],
+  "branches": [
+    {
+      "when": {
+        "node": "OralAntipsychoticMedication",
+        "state": "Chlorpromazine",
+        "operator": "=="
+      },
+      "text": "Established Chlorpromazine treatment reference context; the retained source category does not imply patient route or select a product. Distribution: {OralAntipsychoticMedication}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "OralAntipsychoticMedication",
+        "state": "Fluphenazine",
+        "operator": "=="
+      },
+      "text": "Established Fluphenazine treatment reference context; the retained source category does not imply patient route or select a product. Distribution: {OralAntipsychoticMedication}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "OralAntipsychoticMedication",
+        "state": "Haloperidol",
+        "operator": "=="
+      },
+      "text": "Established Haloperidol treatment reference context; the retained source category does not imply patient route or select a product. Distribution: {OralAntipsychoticMedication}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "OralAntipsychoticMedication",
+        "state": "Loxapine",
+        "operator": "=="
+      },
+      "text": "Established Loxapine treatment reference context; the retained source category does not imply patient route or select a product. Distribution: {OralAntipsychoticMedication}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "OralAntipsychoticMedication",
+        "state": "Molindone",
+        "operator": "=="
+      },
+      "text": "Established Molindone treatment reference context; the retained source category does not imply patient route or select a product. Distribution: {OralAntipsychoticMedication}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "OralAntipsychoticMedication",
+        "state": "Perphenazine",
+        "operator": "=="
+      },
+      "text": "Established Perphenazine treatment reference context; the retained source category does not imply patient route or select a product. Distribution: {OralAntipsychoticMedication}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "OralAntipsychoticMedication",
+        "state": "Pimozide",
+        "operator": "=="
+      },
+      "text": "Established Pimozide treatment reference context; the retained source category does not imply patient route or select a product. Distribution: {OralAntipsychoticMedication}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "OralAntipsychoticMedication",
+        "state": "Thioridazine",
+        "operator": "=="
+      },
+      "text": "Established Thioridazine treatment reference context; the retained source category does not imply patient route or select a product. Distribution: {OralAntipsychoticMedication}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "OralAntipsychoticMedication",
+        "state": "Thiothixene",
+        "operator": "=="
+      },
+      "text": "Established Thiothixene treatment reference context; the retained source category does not imply patient route or select a product. Distribution: {OralAntipsychoticMedication}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "OralAntipsychoticMedication",
+        "state": "Trifluoperazine",
+        "operator": "=="
+      },
+      "text": "Established Trifluoperazine treatment reference context; the retained source category does not imply patient route or select a product. Distribution: {OralAntipsychoticMedication}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "OralAntipsychoticMedication",
+        "state": "Aripiprazole",
+        "operator": "=="
+      },
+      "text": "Established Aripiprazole treatment reference context; the retained source category does not imply patient route or select a product. Distribution: {OralAntipsychoticMedication}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "OralAntipsychoticMedication",
+        "state": "Asenapine",
+        "operator": "=="
+      },
+      "text": "Established Asenapine treatment reference context; the retained source category does not imply patient route or select a product. Distribution: {OralAntipsychoticMedication}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "OralAntipsychoticMedication",
+        "state": "Brexpiprazole",
+        "operator": "=="
+      },
+      "text": "Established Brexpiprazole treatment reference context; the retained source category does not imply patient route or select a product. Distribution: {OralAntipsychoticMedication}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "OralAntipsychoticMedication",
+        "state": "Cariprazine",
+        "operator": "=="
+      },
+      "text": "Established Cariprazine treatment reference context; the retained source category does not imply patient route or select a product. Distribution: {OralAntipsychoticMedication}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "OralAntipsychoticMedication",
+        "state": "Clozapine",
+        "operator": "=="
+      },
+      "text": "Established Clozapine treatment reference context; the retained source category does not imply patient route or select a product. Distribution: {OralAntipsychoticMedication}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "OralAntipsychoticMedication",
+        "state": "Iloperidone",
+        "operator": "=="
+      },
+      "text": "Established Iloperidone treatment reference context; the retained source category does not imply patient route or select a product. Distribution: {OralAntipsychoticMedication}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "OralAntipsychoticMedication",
+        "state": "Lurasidone",
+        "operator": "=="
+      },
+      "text": "Established Lurasidone treatment reference context; the retained source category does not imply patient route or select a product. Distribution: {OralAntipsychoticMedication}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "OralAntipsychoticMedication",
+        "state": "Olanzapine",
+        "operator": "=="
+      },
+      "text": "Established Olanzapine treatment reference context; the retained source category does not imply patient route or select a product. Distribution: {OralAntipsychoticMedication}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "OralAntipsychoticMedication",
+        "state": "Paliperidone",
+        "operator": "=="
+      },
+      "text": "Established Paliperidone treatment reference context; the retained source category does not imply patient route or select a product. Distribution: {OralAntipsychoticMedication}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "OralAntipsychoticMedication",
+        "state": "Quetiapine",
+        "operator": "=="
+      },
+      "text": "Established Quetiapine treatment reference context; the retained source category does not imply patient route or select a product. Distribution: {OralAntipsychoticMedication}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "OralAntipsychoticMedication",
+        "state": "Risperidone",
+        "operator": "=="
+      },
+      "text": "Established Risperidone treatment reference context; the retained source category does not imply patient route or select a product. Distribution: {OralAntipsychoticMedication}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "OralAntipsychoticMedication",
+        "state": "Ziprasidone",
+        "operator": "=="
+      },
+      "text": "Established Ziprasidone treatment reference context; the retained source category does not imply patient route or select a product. Distribution: {OralAntipsychoticMedication}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "OralAntipsychoticMedication",
+        "state": "NoEstablishedTreatment",
+        "operator": "=="
+      },
+      "text": "No established antipsychotic treatment is documented. Discuss treatment context and preferences; this question does not select an initial medication. Distribution: {OralAntipsychoticMedication}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "SymptomResponse",
+        "state": "Inadequate",
+        "operator": "=="
+      },
+      "text": "Candidate response-review category: review target symptoms, elapsed interval and possible contributors; do not infer treatment failure or change medication automatically. Distribution: {SymptomResponse}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "SymptomResponse",
+        "state": "Partial",
+        "operator": "=="
+      },
+      "text": "Candidate partial-response category: discuss remaining symptoms and functioning with the clinician; timing and uncertainty remain explicit. Distribution: {SymptomResponse}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "SymptomResponse",
+        "state": "Adequate",
+        "operator": "=="
+      },
+      "text": "Candidate adequate-response category: review observed target symptoms and functioning; the distribution does not prescribe continuation. Distribution: {SymptomResponse}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "SymptomResponse",
+        "state": "NotAssessable",
+        "operator": "=="
+      },
+      "text": "No established treatment response can be assessed; this is distinct from inadequate or absent response. Distribution: {SymptomResponse}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "FunctionalBenefit",
+        "state": "NotMeaningful",
+        "operator": "=="
+      },
+      "text": "Review the context and baseline used to judge functional change; no automatic medication decision. Distribution: {FunctionalBenefit}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "FunctionalBenefit",
+        "state": "Meaningful",
+        "operator": "=="
+      },
+      "text": "Discuss the assessed functional benefit alongside symptoms, preferences and adverse effects. Distribution: {FunctionalBenefit}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "FunctionalBenefit",
+        "state": "NotAssessable",
+        "operator": "=="
+      },
+      "text": "Treatment-related functional benefit is not assessable without established treatment; no negative finding is inferred. Distribution: {FunctionalBenefit}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "SignificantAntipsychoticSideEffects",
+        "state": "Absent",
+        "operator": "=="
+      },
+      "text": "The experimental absent-side-effect category is a probability topic, not a confirmed patient negative; review documented tolerability. Distribution: {SignificantAntipsychoticSideEffects}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "SignificantAntipsychoticSideEffects",
+        "state": "Present",
+        "operator": "=="
+      },
+      "text": "Discuss documented side effects and their impact with the clinician; this probability topic does not diagnose an effect or choose a drug. Distribution: {SignificantAntipsychoticSideEffects}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "SignificantAntipsychoticSideEffects",
+        "state": "NotAssessable",
+        "operator": "=="
+      },
+      "text": "Established-treatment side effects are not assessable in this context; this does not mean side effects were assessed and absent. Distribution: {SignificantAntipsychoticSideEffects}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "ResponseReviewFlag",
+        "state": "NotTriggered",
+        "operator": "=="
+      },
+      "text": "Experimental response-review signal not triggered; retain uncertainty and ongoing clinician review. Distribution: {ResponseReviewFlag}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "ResponseReviewFlag",
+        "state": "Triggered",
+        "operator": "=="
+      },
+      "text": "Discuss response and potential contributors with the clinician; do not equate this signal with treatment failure or initiate a medication change. Distribution: {ResponseReviewFlag}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "ResponseReviewFlag",
+        "state": "NotAssessable",
+        "operator": "=="
+      },
+      "text": "Established-treatment response-review signal is not assessable without established treatment; discuss treatment context. Distribution: {ResponseReviewFlag}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "TolerabilityReviewFlag",
+        "state": "NotTriggered",
+        "operator": "=="
+      },
+      "text": "Experimental tolerability-review signal not triggered; review documented preferences and side effects, without declaring them absent. Distribution: {TolerabilityReviewFlag}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "TolerabilityReviewFlag",
+        "state": "Triggered",
+        "operator": "=="
+      },
+      "text": "Discuss tolerability and preference barriers with the clinician; no automatic product switch or dosing advice. Distribution: {TolerabilityReviewFlag}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "TolerabilityReviewFlag",
+        "state": "NotAssessable",
+        "operator": "=="
+      },
+      "text": "Established-treatment tolerability cannot be assessed in this context; preferences and treatment discussion remain relevant. Distribution: {TolerabilityReviewFlag}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "SafetyAssessmentFlag",
+        "state": "NotTriggered",
+        "operator": "=="
+      },
+      "text": "Experimental safety signal not triggered; this distribution does not certify clinical safety or replace assessment. Distribution: {SafetyAssessmentFlag}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "SafetyAssessmentFlag",
+        "state": "Triggered",
+        "operator": "=="
+      },
+      "text": "A safety assessment review topic is triggered; urgent clinician assessment must follow actual clinical findings, independently of this experimental probability. Distribution: {SafetyAssessmentFlag}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "MonitoringReviewFlag",
+        "state": "NotTriggered",
+        "operator": "=="
+      },
+      "text": "Experimental monitoring-review signal not triggered; this is not certification of completed guideline monitoring. Distribution: {MonitoringReviewFlag}. DDI remains a separate report."
+    },
+    {
+      "when": {
+        "node": "MonitoringReviewFlag",
+        "state": "Triggered",
+        "operator": "=="
+      },
+      "text": "Review identified baseline or ongoing monitoring gaps for effectiveness and side effects with the clinician. Distribution: {MonitoringReviewFlag}. DDI remains a separate report."
+    }
+  ]
+}

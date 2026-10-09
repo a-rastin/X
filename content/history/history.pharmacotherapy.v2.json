@@ -1,0 +1,336 @@
+{
+  "schema_version": "candidate-history-additions-v1",
+  "version": "pharmacotherapy.v2",
+  "status": "awaiting_review",
+  "extends": "history.v1",
+  "purpose": "Isolated S27 review proposal; not loaded by runtime, not replacing or approving v1. No medication regimen fields.",
+  "fields": [
+    {
+      "id": "h_prior_treatment_difficulty",
+      "source_path": "candidate/history/pharmacotherapy.v2/h_prior_treatment_difficulty",
+      "node_id": "PriorTreatmentDifficulty",
+      "permitted": [
+        "Absent",
+        "Present",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Whether a prior antipsychotic trial had clinically relevant inadequate response or intolerance.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-04.md \u2014 General Principles (lines276\u2013280); Strategies to Address Initial Nonresponse or Partial Response (lines314\u2013322)",
+      "source_sha256": "08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444",
+      "operationalization": "Present requires a documented prior trial with inadequate response or intolerance, assessed at this encounter; Absent requires a documented assessment finding neither prior problem. No prior trial after explicit assessment maps Absent. Prior-response v1 alone cannot rule out intolerance; no pharmacy list inference.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Absent": "Absent",
+        "Present": "Present"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_preference_barrier",
+      "source_path": "candidate/history/pharmacotherapy.v2/h_preference_barrier",
+      "node_id": "PreferenceBarrier",
+      "permitted": [
+        "Absent",
+        "Present",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "A treatment-related objection or practical barrier identified during shared discussion.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-04.md \u2014 Patient Preferences (lines504\u2013506); General Principles (lines276\u2013280)",
+      "source_sha256": "08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444",
+      "operationalization": "Present means clinician documents a stated patient objection or practical barrier to the established treatment, or to treatment discussion when none is established; Absent means discussion was completed and no such barrier identified. Missing discussion remains unknown, not Absent.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Absent": "Absent",
+        "Present": "Present"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_physical_vulnerability",
+      "source_path": "candidate/history/pharmacotherapy.v2/h_physical_vulnerability",
+      "node_id": "PhysicalVulnerability",
+      "permitted": [
+        "Absent",
+        "Present",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Assessed physical illness or age-related susceptibility relevant to treatment tolerability.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-04.md \u2014 Side-Effect Profile (lines300\u2013304); Pharmacokinetic Properties (lines296\u2013298)",
+      "source_sha256": "08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444",
+      "operationalization": "Present means clinician identifies a specific relevant physical condition or age-related vulnerability after assessment; Absent means relevant vulnerability was assessed and none identified. No age cutoff, automatic diagnosis or implication that physical illness is absent.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Absent": "Absent",
+        "Present": "Present"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_substance_contribution",
+      "source_path": "candidate/history/pharmacotherapy.v2/h_substance_contribution",
+      "node_id": "SubstanceContribution",
+      "permitted": [
+        "Absent",
+        "Present",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Assessed concomitant substance use potentially contributing to symptom response.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-04.md \u2014 Strategies to Address Initial Nonresponse or Partial Response (lines314\u2013320)",
+      "source_sha256": "08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444",
+      "operationalization": "Present means clinician identifies a potential current substance contribution; Absent means assessment found no identified contribution. Substance history not obtained is unknown. A positive category does not assign causation or establish nonresponse.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Absent": "Absent",
+        "Present": "Present"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_exposure_modifier",
+      "source_path": "candidate/history/pharmacotherapy.v2/h_exposure_modifier",
+      "node_id": "ExposureModifier",
+      "permitted": [
+        "NoIdentifiedModifier",
+        "PossibleLowerExposure",
+        "PossibleHigherExposure",
+        "MixedModifiers",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Assessed non-dose factors potentially changing exposure, such as smoking or relevant organ/metabolic factors.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-04.md \u2014 Drug-Drug Interactions and Metabolism (lines288\u2013294); Pharmacokinetic Properties (lines296\u2013298)",
+      "source_sha256": "08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444",
+      "operationalization": "NoIdentifiedModifier requires assessment with no identified modifier; PossibleLowerExposure or PossibleHigherExposure requires a documented directional concern; MixedModifiers requires documented opposing concerns. No quantitative level, dose-relative category, regimen proxy or automated DDI severity conversion. When direction or applicability is unresolved pause. DDI findings remain a separate report.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "NoIdentifiedModifier": "NoIdentifiedModifier",
+        "PossibleLowerExposure": "PossibleLowerExposure",
+        "PossibleHigherExposure": "PossibleHigherExposure",
+        "MixedModifiers": "MixedModifiers"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_antipsychotic_treatment_context",
+      "source_path": "candidate/history/pharmacotherapy.v2/h_antipsychotic_treatment_context",
+      "node_id": "OralAntipsychoticMedication",
+      "permitted": [
+        "Chlorpromazine",
+        "Fluphenazine",
+        "Haloperidol",
+        "Loxapine",
+        "Molindone",
+        "Perphenazine",
+        "Pimozide",
+        "Thioridazine",
+        "Thiothixene",
+        "Trifluoperazine",
+        "Aripiprazole",
+        "Asenapine",
+        "Brexpiprazole",
+        "Cariprazine",
+        "Clozapine",
+        "Iloperidone",
+        "Lurasidone",
+        "Olanzapine",
+        "Paliperidone",
+        "Quetiapine",
+        "Risperidone",
+        "Ziprasidone",
+        "NoEstablishedTreatment",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Explicit established antipsychotic reference context, or explicitly assessed absence of established treatment.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-04.md \u2014 General Principles (lines276\u2013280); Table6 (lines129\u2013183)",
+      "source_sha256": "08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444",
+      "operationalization": "A declared medication state requires clinician-confirmed established antipsychotic association and reconciliation with its candidate catalog ingredient ID. NoEstablishedTreatment requires an explicit assessment that no established antipsychotic treatment exists; an empty medication list or unknown history is insufficient. The source node name refers to historical oral-formulation Table6 categories, never a collected patient route or product recommendation. Multiple or unsupported established medication contexts pause; do not rank or choose a drug.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Chlorpromazine": "Chlorpromazine",
+        "Fluphenazine": "Fluphenazine",
+        "Haloperidol": "Haloperidol",
+        "Loxapine": "Loxapine",
+        "Molindone": "Molindone",
+        "Perphenazine": "Perphenazine",
+        "Pimozide": "Pimozide",
+        "Thioridazine": "Thioridazine",
+        "Thiothixene": "Thiothixene",
+        "Trifluoperazine": "Trifluoperazine",
+        "Aripiprazole": "Aripiprazole",
+        "Asenapine": "Asenapine",
+        "Brexpiprazole": "Brexpiprazole",
+        "Cariprazine": "Cariprazine",
+        "Clozapine": "Clozapine",
+        "Iloperidone": "Iloperidone",
+        "Lurasidone": "Lurasidone",
+        "Olanzapine": "Olanzapine",
+        "Paliperidone": "Paliperidone",
+        "Quetiapine": "Quetiapine",
+        "Risperidone": "Risperidone",
+        "Ziprasidone": "Ziprasidone",
+        "NoEstablishedTreatment": "NoEstablishedTreatment"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_trial_duration_review",
+      "source_path": "candidate/history/pharmacotherapy.v2/h_trial_duration_review",
+      "node_id": "TrialDuration",
+      "permitted": [
+        "BeforeResponseWindow",
+        "WithinResponseWindow",
+        "BeyondResponseWindow",
+        "NoEstablishedTreatment",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Elapsed established-treatment interval relative to a source-compatible initial-response review window, not trial adequacy.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-04.md \u2014 Initiation of Treatment (lines306\u2013312)",
+      "source_sha256": "08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444",
+      "operationalization": "Candidate initial-response reference: BeforeResponseWindow means elapsed interval less than 2 weeks; WithinResponseWindow means 2 through 4 weeks inclusive; BeyondResponseWindow means more than 4 weeks. Source describes2\u20134weeks for initial response and longer for full/optimal response. These are descriptive draft timing categories, never adequacy or nonresponse thresholds, and contain no dose requirement. Explicit no established treatment maps NoEstablishedTreatment. Unknown start/reference interval pauses.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "BeforeResponseWindow": "BeforeResponseWindow",
+        "WithinResponseWindow": "WithinResponseWindow",
+        "BeyondResponseWindow": "BeyondResponseWindow",
+        "NoEstablishedTreatment": "NoEstablishedTreatment"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_urgent_safety_concern",
+      "source_path": "candidate/history/pharmacotherapy.v2/h_urgent_safety_concern",
+      "node_id": "UrgentSafetyConcern",
+      "permitted": [
+        "Absent",
+        "Present",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "An independently assessed urgent safety concern requiring clinician attention.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-04.md \u2014 Treatment-Emergent Side Effects (lines332\u2013338); Cardiovascular Effects (lines344\u2013374); Neuroleptic Malignant Syndrome (lines436\u2013442)",
+      "source_sha256": "08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444",
+      "operationalization": "Present means clinician identifies an urgent safety concern during current assessment; Absent means an urgent-safety assessment was completed without identified concern. This is not a validated triage instrument, diagnosis or quantified threshold. Unknown assessment pauses; no-treatment does not imply absence. Routine generation must not delay urgent clinical assessment.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Absent": "Absent",
+        "Present": "Present"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_monitoring_gap",
+      "source_path": "candidate/history/pharmacotherapy.v2/h_monitoring_gap",
+      "node_id": "MonitoringGap",
+      "permitted": [
+        "Absent",
+        "Present",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "A documented gap in relevant baseline or ongoing effectiveness/side-effect monitoring.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-04.md \u2014 Monitoring During Treatment (lines324\u2013330); Quality Measurement Considerations (lines522\u2013524)",
+      "source_sha256": "08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444",
+      "operationalization": "Present means clinician identifies incomplete relevant monitoring after assessing what is appropriate to the treatment context; Absent requires a completed review finding no identified gap. With no established treatment, assess baseline/context discussion needs explicitly; never default Absent. Do not equate v1 baseline yes with complete ongoing monitoring or use unreviewed quality-measure thresholds.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Absent": "Absent",
+        "Present": "Present"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    }
+  ],
+  "duration_reference_review": {
+    "chosen_candidate": "Source initial-response2\u20134week interval for descriptive timing only; not established treatment adequacy.",
+    "alternative_for_review": "Individualized documented response window with concrete selection rules; unresolved owner-review option.",
+    "limitation": "Full/optimal response can take longer; elapsed interval alone never authorizes a medication change or clozapine referral.",
+    "status": "awaiting_review"
+  },
+  "retained_history_v1": "Twelve original v1 fields and runtime remain unchanged; this separately versioned adjunct proposes 9 additional CPT-context categories, none approved."
+}
