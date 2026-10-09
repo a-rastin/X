@@ -1,0 +1,1323 @@
+{
+  "numerical": [
+    {
+      "id": "full-graph-asymmetric-mathematical",
+      "classification": "Independent synthetic mathematical reference, not clinical calibration or clinical expected treatment",
+      "inputs": {},
+      "cpt_payload": {
+        "question_key": "akathisia",
+        "network_hash": "a9b73a43701e6e7d4213e7877781f4c819dd8745fd463320bbd8348c3745de55",
+        "tables": [
+          {
+            "node_id": "AkathisiaAssessment",
+            "parent_ids": [],
+            "states": [
+              "Present",
+              "Absent",
+              "Unresolved"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "50",
+                  "30",
+                  "20"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "AkathisiaAntipsychoticAssociation",
+            "parent_ids": [],
+            "states": [
+              "Established",
+              "NotEstablished"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "60",
+                  "40"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "DoseReductionFeasible",
+            "parent_ids": [],
+            "states": [
+              "Yes",
+              "No"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "40",
+                  "60"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "LowerAkathisiaRiskSwitchFeasible",
+            "parent_ids": [],
+            "states": [
+              "Yes",
+              "No"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "50",
+                  "50"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "PsychoticWorseningConcern",
+            "parent_ids": [],
+            "states": [
+              "Present",
+              "Absent"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "30",
+                  "70"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "AkathisiaTreatmentPreferenceConcern",
+            "parent_ids": [],
+            "states": [
+              "Present",
+              "Absent"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "40",
+                  "60"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "UrgentSafetyConcern",
+            "parent_ids": [],
+            "states": [
+              "Present",
+              "Absent"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "20",
+                  "80"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "DistressOrAdherenceConcern",
+            "parent_ids": [],
+            "states": [
+              "Present",
+              "Absent"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "35",
+                  "65"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "BenzodiazepineRespiratoryConcern",
+            "parent_ids": [],
+            "states": [
+              "Present",
+              "Absent"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "25",
+                  "75"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "BenzodiazepineFallsCognitiveConcern",
+            "parent_ids": [],
+            "states": [
+              "Present",
+              "Absent"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "35",
+                  "65"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "BenzodiazepineMisuseConcern",
+            "parent_ids": [],
+            "states": [
+              "Present",
+              "Absent"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "15",
+                  "85"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "PropranololBloodPressureConcern",
+            "parent_ids": [],
+            "states": [
+              "Present",
+              "Absent"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "30",
+                  "70"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "PropranololExposureConcern",
+            "parent_ids": [],
+            "states": [
+              "Present",
+              "Absent"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "20",
+                  "80"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "AkathisiaIndicationReview",
+            "parent_ids": [
+              "AkathisiaAssessment",
+              "AkathisiaAntipsychoticAssociation"
+            ],
+            "states": [
+              "EstablishedCurrentAssociation",
+              "AssessDifferentialAndAssociation",
+              "NoCurrentTreatmentRule"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "Present",
+                  "Established"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "NotEstablished"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "Established"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "NotEstablished"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Unresolved",
+                  "Established"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Unresolved",
+                  "NotEstablished"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "AkathisiaAntipsychoticRegimenReview",
+            "parent_ids": [
+              "AkathisiaIndicationReview",
+              "DoseReductionFeasible",
+              "LowerAkathisiaRiskSwitchFeasible",
+              "PsychoticWorseningConcern"
+            ],
+            "states": [
+              "ReviewDoseAndSwitch",
+              "ReviewDose",
+              "ReviewSwitch",
+              "ReviewConstraints",
+              "PrioritizePsychosisTradeoff",
+              "EstablishIndicationFirst"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "EstablishedCurrentAssociation",
+                  "Yes",
+                  "Yes",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "EstablishedCurrentAssociation",
+                  "Yes",
+                  "Yes",
+                  "Absent"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "EstablishedCurrentAssociation",
+                  "Yes",
+                  "No",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "EstablishedCurrentAssociation",
+                  "Yes",
+                  "No",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "EstablishedCurrentAssociation",
+                  "No",
+                  "Yes",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "EstablishedCurrentAssociation",
+                  "No",
+                  "Yes",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "EstablishedCurrentAssociation",
+                  "No",
+                  "No",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "EstablishedCurrentAssociation",
+                  "No",
+                  "No",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AssessDifferentialAndAssociation",
+                  "Yes",
+                  "Yes",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AssessDifferentialAndAssociation",
+                  "Yes",
+                  "Yes",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AssessDifferentialAndAssociation",
+                  "Yes",
+                  "No",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AssessDifferentialAndAssociation",
+                  "Yes",
+                  "No",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AssessDifferentialAndAssociation",
+                  "No",
+                  "Yes",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AssessDifferentialAndAssociation",
+                  "No",
+                  "Yes",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AssessDifferentialAndAssociation",
+                  "No",
+                  "No",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AssessDifferentialAndAssociation",
+                  "No",
+                  "No",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NoCurrentTreatmentRule",
+                  "Yes",
+                  "Yes",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NoCurrentTreatmentRule",
+                  "Yes",
+                  "Yes",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NoCurrentTreatmentRule",
+                  "Yes",
+                  "No",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NoCurrentTreatmentRule",
+                  "Yes",
+                  "No",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NoCurrentTreatmentRule",
+                  "No",
+                  "Yes",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NoCurrentTreatmentRule",
+                  "No",
+                  "Yes",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NoCurrentTreatmentRule",
+                  "No",
+                  "No",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NoCurrentTreatmentRule",
+                  "No",
+                  "No",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "AdjunctDiscussion",
+            "parent_ids": [
+              "AkathisiaIndicationReview",
+              "AkathisiaTreatmentPreferenceConcern"
+            ],
+            "states": [
+              "DiscussOptionsAndPatientConcerns",
+              "DiscussOptionsAndPreferences",
+              "EstablishIndicationFirst"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "EstablishedCurrentAssociation",
+                  "Present"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "EstablishedCurrentAssociation",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AssessDifferentialAndAssociation",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AssessDifferentialAndAssociation",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NoCurrentTreatmentRule",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NoCurrentTreatmentRule",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "UrgentSafetyReview",
+            "parent_ids": [
+              "UrgentSafetyConcern"
+            ],
+            "states": [
+              "UrgentClinicianAssessment",
+              "RoutineSafetyAssessment"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "Present"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "BurdenReview",
+            "parent_ids": [
+              "AkathisiaIndicationReview",
+              "DistressOrAdherenceConcern"
+            ],
+            "states": [
+              "ReviewDistressAndAdherence",
+              "AssessBurdenAndDifferential",
+              "RoutineBurdenAssessment"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "EstablishedCurrentAssociation",
+                  "Present"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "EstablishedCurrentAssociation",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AssessDifferentialAndAssociation",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AssessDifferentialAndAssociation",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NoCurrentTreatmentRule",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NoCurrentTreatmentRule",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "BenzodiazepineSafetyReview",
+            "parent_ids": [
+              "BenzodiazepineRespiratoryConcern",
+              "BenzodiazepineFallsCognitiveConcern",
+              "BenzodiazepineMisuseConcern"
+            ],
+            "states": [
+              "EnhancedIndividualizedReview",
+              "RoutineIndividualizedReview"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "Present",
+                  "Present",
+                  "Present"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "Present",
+                  "Absent"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "Absent",
+                  "Present"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "Absent",
+                  "Absent"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "Present",
+                  "Present"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "Present",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "Absent",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "Absent",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "PropranololSafetyReview",
+            "parent_ids": [
+              "PropranololBloodPressureConcern",
+              "PropranololExposureConcern"
+            ],
+            "states": [
+              "EnhancedIndividualizedReview",
+              "RoutineIndividualizedReview"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "Present",
+                  "Present"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "Absent"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "Present"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "AkathisiaAssessment": {
+          "Present": 0.5,
+          "Absent": 0.3,
+          "Unresolved": 0.2
+        },
+        "AkathisiaAntipsychoticAssociation": {
+          "Established": 0.6,
+          "NotEstablished": 0.4
+        },
+        "DoseReductionFeasible": {
+          "Yes": 0.4,
+          "No": 0.6
+        },
+        "LowerAkathisiaRiskSwitchFeasible": {
+          "Yes": 0.5,
+          "No": 0.5
+        },
+        "PsychoticWorseningConcern": {
+          "Present": 0.3,
+          "Absent": 0.7
+        },
+        "AkathisiaTreatmentPreferenceConcern": {
+          "Present": 0.4,
+          "Absent": 0.6
+        },
+        "UrgentSafetyConcern": {
+          "Present": 0.2,
+          "Absent": 0.8
+        },
+        "DistressOrAdherenceConcern": {
+          "Present": 0.35,
+          "Absent": 0.65
+        },
+        "BenzodiazepineRespiratoryConcern": {
+          "Present": 0.25,
+          "Absent": 0.75
+        },
+        "BenzodiazepineFallsCognitiveConcern": {
+          "Present": 0.35,
+          "Absent": 0.65
+        },
+        "BenzodiazepineMisuseConcern": {
+          "Present": 0.15,
+          "Absent": 0.85
+        },
+        "PropranololBloodPressureConcern": {
+          "Present": 0.3,
+          "Absent": 0.7
+        },
+        "PropranololExposureConcern": {
+          "Present": 0.2,
+          "Absent": 0.8
+        },
+        "AkathisiaIndicationReview": {
+          "EstablishedCurrentAssociation": 0.3,
+          "AssessDifferentialAndAssociation": 0.4,
+          "NoCurrentTreatmentRule": 0.3
+        },
+        "AkathisiaAntipsychoticRegimenReview": {
+          "ReviewDoseAndSwitch": 0.042,
+          "ReviewDose": 0.06,
+          "ReviewSwitch": 0.09,
+          "ReviewConstraints": 0.09,
+          "PrioritizePsychosisTradeoff": 0.018,
+          "EstablishIndicationFirst": 0.7
+        },
+        "AdjunctDiscussion": {
+          "DiscussOptionsAndPatientConcerns": 0.12,
+          "DiscussOptionsAndPreferences": 0.18,
+          "EstablishIndicationFirst": 0.7
+        },
+        "UrgentSafetyReview": {
+          "UrgentClinicianAssessment": 0.2,
+          "RoutineSafetyAssessment": 0.8
+        },
+        "BurdenReview": {
+          "ReviewDistressAndAdherence": 0.105,
+          "AssessBurdenAndDifferential": 0.4,
+          "RoutineBurdenAssessment": 0.495
+        },
+        "BenzodiazepineSafetyReview": {
+          "EnhancedIndividualizedReview": 0.289375,
+          "RoutineIndividualizedReview": 0.710625
+        },
+        "PropranololSafetyReview": {
+          "EnhancedIndividualizedReview": 0.44,
+          "RoutineIndividualizedReview": 0.56
+        }
+      },
+      "context_examples": [
+        {
+          "AkathisiaAssessment": "Present"
+        },
+        {
+          "AkathisiaAssessment": "Absent"
+        }
+      ],
+      "work": "Indication Established=P(Assessment Present 0.5)*P(Assoc Established 0.6)=0.3. NoCurrent=P(Assessment Absent 0.3)=0.3. Assess=1-0.3-0.3=0.4=P(Present 0.5)*P(NotEst 0.4)+P(Unresolved 0.2)=0.2+0.2=0.4. Regimen within Established 0.3: DoseAndSwitch=0.3*P(DoseYes 0.4)*P(SwitchYes 0.5)*P(PsychAbsent 0.7)=0.3*0.14=0.042. Prioritize=0.3*0.4*0.5*0.3=0.3*0.06=0.018. ReviewDose=0.3*0.4*0.5=0.06. ReviewSwitch=0.3*0.6*0.5=0.09. Constraints=0.3*0.6*0.5=0.09. Establish=0.7. Sum=1.0. Swapping Dose and Switch (both binary with Yes 0.4 vs 0.5) gives ReviewDose 0.09 and ReviewSwitch 0.06 swapped, so a transpose bug fails. Adjunct Concerns=P(Est 0.3)*P(PrefPresent 0.4)=0.12. Preferences=0.3*0.6=0.18. Establish=0.7. Sum=1.0. Burden Review=P(Est 0.3)*P(DistressPresent 0.35)=0.105. Assess=P(Assess 0.4)=0.4. Routine=0.3*0.65+0.3=0.195+0.3=0.495. Sum=1.0. Urgent UrgentClinician=P(Urgent Present 0.2)=0.2, Routine=0.8. Benzo Enhanced=P(RespPresent 0.25)+P(RespAbsent 0.75)*P(FallsPresent 0.35)*P(MisusePresent 0.15)=0.25+0.75*0.0525=0.25+0.039375=0.289375. Routine=0.710625. Swapping Respiratory (0.25) and Misuse (0.15) gives Enhanced 0.15+0.85*0.35*0.25=0.15+0.074375=0.224375, so a transpose bug fails. Propranolol Routine=P(BPAbsent 0.7)*P(ExpAbsent 0.8)=0.56. Enhanced=0.44. Sum=1.0."
+    }
+  ],
+  "clinical": [
+    {
+      "id": "gate-true-present-applicable",
+      "inputs": {
+        "candidate/history/akathisia.v1/h_ak_assessment": "Present",
+        "candidate/history/akathisia.v1/h_ak_antipsychotic_association": "Established",
+        "candidate/history/akathisia.v1/h_ak_dose_reduction_feasible": "Yes",
+        "candidate/history/akathisia.v1/h_ak_switch_feasible": "Yes",
+        "candidate/history/akathisia.v1/h_ak_psychotic_worsening_concern": "Absent",
+        "candidate/history/akathisia.v1/h_ak_preference_concern": "Present",
+        "candidate/history/akathisia.v1/h_ak_urgent_safety_concern": "Absent",
+        "candidate/history/akathisia.v1/h_ak_distress_adherence_concern": "Present",
+        "candidate/history/akathisia.v1/h_ak_benzo_respiratory_concern": "Absent",
+        "candidate/history/akathisia.v1/h_ak_benzo_falls_cognitive_concern": "Absent",
+        "candidate/history/akathisia.v1/h_ak_benzo_misuse_concern": "Absent",
+        "candidate/history/akathisia.v1/h_ak_propranolol_bp_concern": "Absent",
+        "candidate/history/akathisia.v1/h_ak_propranolol_exposure_concern": "Absent"
+      },
+      "expected_for_review": {
+        "status": "execute",
+        "gate": "true",
+        "applicability": "gate == 'true'",
+        "urgent_banner_from_saved_inputs": "Absent"
+      },
+      "note": "Candidate review expectation: present applicable gate true executes with empty evidence; urgent Absent still shows parallel review topics."
+    },
+    {
+      "id": "gate-true-urgent-present",
+      "inputs": {
+        "candidate/history/akathisia.v1/h_ak_assessment": "Present",
+        "candidate/history/akathisia.v1/h_ak_antipsychotic_association": "Established",
+        "candidate/history/akathisia.v1/h_ak_dose_reduction_feasible": "Yes",
+        "candidate/history/akathisia.v1/h_ak_switch_feasible": "Yes",
+        "candidate/history/akathisia.v1/h_ak_psychotic_worsening_concern": "Absent",
+        "candidate/history/akathisia.v1/h_ak_preference_concern": "Present",
+        "candidate/history/akathisia.v1/h_ak_urgent_safety_concern": "Present",
+        "candidate/history/akathisia.v1/h_ak_distress_adherence_concern": "Present",
+        "candidate/history/akathisia.v1/h_ak_benzo_respiratory_concern": "Absent",
+        "candidate/history/akathisia.v1/h_ak_benzo_falls_cognitive_concern": "Absent",
+        "candidate/history/akathisia.v1/h_ak_benzo_misuse_concern": "Absent",
+        "candidate/history/akathisia.v1/h_ak_propranolol_bp_concern": "Absent",
+        "candidate/history/akathisia.v1/h_ak_propranolol_exposure_concern": "Absent"
+      },
+      "expected_for_review": {
+        "status": "execute",
+        "gate": "true",
+        "applicability": "gate == 'true'",
+        "urgent_banner_from_saved_inputs": "Present",
+        "urgent_latency": "independent_of_estimation",
+        "fabricated_risk_percentage": null
+      },
+      "note": "Candidate review expectation: urgent Present executes and adds a parallel urgent banner from saved inputs independently of estimation latency; never a fabricated risk percentage."
+    },
+    {
+      "id": "gate-false-absent",
+      "inputs": {
+        "candidate/history/akathisia.v1/h_ak_assessment": "Absent",
+        "candidate/history/akathisia.v1/h_ak_antipsychotic_association": "Established",
+        "candidate/history/akathisia.v1/h_ak_dose_reduction_feasible": "Yes",
+        "candidate/history/akathisia.v1/h_ak_switch_feasible": "Yes",
+        "candidate/history/akathisia.v1/h_ak_psychotic_worsening_concern": "Absent",
+        "candidate/history/akathisia.v1/h_ak_preference_concern": "Present",
+        "candidate/history/akathisia.v1/h_ak_urgent_safety_concern": "Absent",
+        "candidate/history/akathisia.v1/h_ak_distress_adherence_concern": "Present",
+        "candidate/history/akathisia.v1/h_ak_benzo_respiratory_concern": "Absent",
+        "candidate/history/akathisia.v1/h_ak_benzo_falls_cognitive_concern": "Absent",
+        "candidate/history/akathisia.v1/h_ak_benzo_misuse_concern": "Absent",
+        "candidate/history/akathisia.v1/h_ak_propranolol_bp_concern": "Absent",
+        "candidate/history/akathisia.v1/h_ak_propranolol_exposure_concern": "Absent"
+      },
+      "expected_for_review": {
+        "status": "not_applicable",
+        "gate": "false",
+        "applicability": "gate == 'true'",
+        "reason": "absent akathisia without present effect",
+        "not_a_negative_posterior": true,
+        "posterior_claim": null
+      },
+      "note": "Candidate review expectation: absent gate false records not_applicable with reason and claims no posterior; never a fake negative review posterior or a negative finding."
+    },
+    {
+      "id": "gate-unknown-not-assessed",
+      "inputs": {
+        "candidate/history/akathisia.v1/h_ak_assessment": "Unresolved",
+        "candidate/history/akathisia.v1/h_ak_antipsychotic_association": "Established",
+        "candidate/history/akathisia.v1/h_ak_dose_reduction_feasible": "Yes",
+        "candidate/history/akathisia.v1/h_ak_switch_feasible": "Yes",
+        "candidate/history/akathisia.v1/h_ak_psychotic_worsening_concern": "Absent",
+        "candidate/history/akathisia.v1/h_ak_preference_concern": "Present",
+        "candidate/history/akathisia.v1/h_ak_urgent_safety_concern": "Absent",
+        "candidate/history/akathisia.v1/h_ak_distress_adherence_concern": "Present",
+        "candidate/history/akathisia.v1/h_ak_benzo_respiratory_concern": "Absent",
+        "candidate/history/akathisia.v1/h_ak_benzo_falls_cognitive_concern": "Absent",
+        "candidate/history/akathisia.v1/h_ak_benzo_misuse_concern": "Absent",
+        "candidate/history/akathisia.v1/h_ak_propranolol_bp_concern": "Absent",
+        "candidate/history/akathisia.v1/h_ak_propranolol_exposure_concern": "Absent"
+      },
+      "expected_for_review": {
+        "status": "needs_clarification",
+        "gate": "unknown",
+        "applicability": "gate == 'true'",
+        "reason": "effect unresolved/not_assessed"
+      },
+      "note": "Candidate review expectation: unresolved or not_assessed required input pauses before estimation; never coerces to false and never coerces to Absent."
+    },
+    {
+      "id": "gate-missing-alternative-context",
+      "inputs": {
+        "candidate/history/akathisia.v1/h_ak_assessment": "Present",
+        "candidate/history/akathisia.v1/h_ak_dose_reduction_feasible": "Yes",
+        "candidate/history/akathisia.v1/h_ak_switch_feasible": "Yes",
+        "candidate/history/akathisia.v1/h_ak_psychotic_worsening_concern": "Absent",
+        "candidate/history/akathisia.v1/h_ak_preference_concern": "Present",
+        "candidate/history/akathisia.v1/h_ak_urgent_safety_concern": "Absent",
+        "candidate/history/akathisia.v1/h_ak_distress_adherence_concern": "Present",
+        "candidate/history/akathisia.v1/h_ak_benzo_respiratory_concern": "Absent",
+        "candidate/history/akathisia.v1/h_ak_benzo_falls_cognitive_concern": "Absent",
+        "candidate/history/akathisia.v1/h_ak_benzo_misuse_concern": "Absent",
+        "candidate/history/akathisia.v1/h_ak_propranolol_bp_concern": "Absent",
+        "candidate/history/akathisia.v1/h_ak_propranolol_exposure_concern": "Absent"
+      },
+      "expected_for_review": {
+        "status": "needs_clarification",
+        "gate": "unknown",
+        "applicability": "gate == 'true'",
+        "reason": "required antipsychotic-association/alternative-cause context missing"
+      },
+      "note": "Candidate review expectation: missing alternative-cause context pauses; a missing association assessment is never mapped to NotEstablished and never treated as an established finding."
+    },
+    {
+      "id": "gate-conflict-needs-clarification",
+      "inputs": {
+        "candidate/history/akathisia.v1/h_ak_assessment": [
+          "Present",
+          "Absent"
+        ],
+        "candidate/history/akathisia.v1/h_ak_antipsychotic_association": "Established",
+        "candidate/history/akathisia.v1/h_ak_dose_reduction_feasible": "Yes",
+        "candidate/history/akathisia.v1/h_ak_switch_feasible": "Yes",
+        "candidate/history/akathisia.v1/h_ak_psychotic_worsening_concern": "Absent",
+        "candidate/history/akathisia.v1/h_ak_preference_concern": "Present",
+        "candidate/history/akathisia.v1/h_ak_urgent_safety_concern": "Absent",
+        "candidate/history/akathisia.v1/h_ak_distress_adherence_concern": "Present",
+        "candidate/history/akathisia.v1/h_ak_benzo_respiratory_concern": "Absent",
+        "candidate/history/akathisia.v1/h_ak_benzo_falls_cognitive_concern": "Absent",
+        "candidate/history/akathisia.v1/h_ak_benzo_misuse_concern": "Absent",
+        "candidate/history/akathisia.v1/h_ak_propranolol_bp_concern": "Absent",
+        "candidate/history/akathisia.v1/h_ak_propranolol_exposure_concern": "Absent"
+      },
+      "expected_for_review": {
+        "status": "needs_clarification",
+        "gate": "unknown",
+        "applicability": "gate == 'true'",
+        "reason": "conflicting effect-status inputs"
+      },
+      "note": "Candidate review expectation: conflicting required inputs pause; conflict never resolves by choosing one value and never coerces to Absent."
+    }
+  ]
+}

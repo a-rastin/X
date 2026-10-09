@@ -1,0 +1,254 @@
+{
+  "reviewer": "owner review pending",
+  "decision": "awaiting_review",
+  "date": "2026-10-09",
+  "source_hashes": {
+    "project-documents/bayesian-networks/BN-13.xml": "63d2ce41f2e5c29dae51e446ee30a116062a8fd9e01c71c3638ea659c708a8cf",
+    "project-documents/medical-documents/guideline/STATEMENT-13.md": "59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff",
+    "project-documents/medical-documents/akathisia-criteria.md": "93ae8c76a2b26b2af79ea3a9e20271089eac683a0ce29d9579caffac1e626a47",
+    "content/history/bars.v1.json": "0e0bafe94a12ad5369fbc5bca279bb67263e7c0f4a5e0c7812e06f55c6f17223",
+    "content/history/history.v1.json": "01be359400834e2f047c9e9c9eaf7a25a4167949707eb1b14e6a8f57db6bcd80",
+    "network.xml": "a9b73a43701e6e7d4213e7877781f4c819dd8745fd463320bbd8348c3745de55",
+    "content/history/history.akathisia.v1.json": "8379f3b561a04c8359509ee7ae2f568e03190424504ecd9126ce643d04de766a"
+  },
+  "assumptions": [
+    "No clinical model or history definition approved.",
+    "Effect present/absent/not_assessed is an explicit applicability input; an absent case is not_applicable with no posterior claim, never a negative finding or a fake negative review posterior; unresolved or not_assessed pauses for clarification.",
+    "All 20 BN-13 distributions were missing and are synthetic uniform references here; complete clinical table provenance remains a release blocker.",
+    "Full BARS item responses are measurement context only when the complete reviewed source is available; no diagnosis is inferred from an unreviewed BARS total and the global 2 or greater threshold is a review candidate only, never an activation claim; pseudoakathisia requires reassessment rather than assumption.",
+    "Motor restlessness and distress are clinician-reviewed categories; no summed severity band or treatment threshold is set here and no dose, route, frequency or active/stopped fields are set here.",
+    "Whether review outputs behave as deterministic rules or estimated tables is an open assumption for owner review; this draft uses estimated-table semantics without approval.",
+    "Alternative-cause, exposure, onset, differential, distress, benzodiazepine safety, propranolol safety, preference and urgent operationalization require owner review."
+  ],
+  "source_comparison": "See source_diff and source_comparison_details: all 20 BN-13 variables, states and ordered proposed_parent edges retained with no removals, renames or state extensions; 13 roots plus 7 outputs materialize every proposed_parent as an ordered GIVEN in declared BN order. Original BN SHA pinned and untouched; prescribing details are background only and not copied as activation metadata.",
+  "source_comparison_details": {
+    "retained_variables": [
+      "AkathisiaAssessment",
+      "AkathisiaAntipsychoticAssociation",
+      "DoseReductionFeasible",
+      "LowerAkathisiaRiskSwitchFeasible",
+      "PsychoticWorseningConcern",
+      "AkathisiaTreatmentPreferenceConcern",
+      "UrgentSafetyConcern",
+      "DistressOrAdherenceConcern",
+      "BenzodiazepineRespiratoryConcern",
+      "BenzodiazepineFallsCognitiveConcern",
+      "BenzodiazepineMisuseConcern",
+      "PropranololBloodPressureConcern",
+      "PropranololExposureConcern",
+      "AkathisiaIndicationReview",
+      "AkathisiaAntipsychoticRegimenReview",
+      "AdjunctDiscussion",
+      "UrgentSafetyReview",
+      "BurdenReview",
+      "BenzodiazepineSafetyReview",
+      "PropranololSafetyReview"
+    ],
+    "retained_states": {
+      "AkathisiaAssessment": [
+        "Present",
+        "Absent",
+        "Unresolved"
+      ],
+      "AkathisiaAntipsychoticAssociation": [
+        "Established",
+        "NotEstablished"
+      ],
+      "DoseReductionFeasible": [
+        "Yes",
+        "No"
+      ],
+      "LowerAkathisiaRiskSwitchFeasible": [
+        "Yes",
+        "No"
+      ],
+      "PsychoticWorseningConcern": [
+        "Present",
+        "Absent"
+      ],
+      "AkathisiaTreatmentPreferenceConcern": [
+        "Present",
+        "Absent"
+      ],
+      "UrgentSafetyConcern": [
+        "Present",
+        "Absent"
+      ],
+      "DistressOrAdherenceConcern": [
+        "Present",
+        "Absent"
+      ],
+      "BenzodiazepineRespiratoryConcern": [
+        "Present",
+        "Absent"
+      ],
+      "BenzodiazepineFallsCognitiveConcern": [
+        "Present",
+        "Absent"
+      ],
+      "BenzodiazepineMisuseConcern": [
+        "Present",
+        "Absent"
+      ],
+      "PropranololBloodPressureConcern": [
+        "Present",
+        "Absent"
+      ],
+      "PropranololExposureConcern": [
+        "Present",
+        "Absent"
+      ],
+      "AkathisiaIndicationReview": [
+        "EstablishedCurrentAssociation",
+        "AssessDifferentialAndAssociation",
+        "NoCurrentTreatmentRule"
+      ],
+      "AkathisiaAntipsychoticRegimenReview": [
+        "ReviewDoseAndSwitch",
+        "ReviewDose",
+        "ReviewSwitch",
+        "ReviewConstraints",
+        "PrioritizePsychosisTradeoff",
+        "EstablishIndicationFirst"
+      ],
+      "AdjunctDiscussion": [
+        "DiscussOptionsAndPatientConcerns",
+        "DiscussOptionsAndPreferences",
+        "EstablishIndicationFirst"
+      ],
+      "UrgentSafetyReview": [
+        "UrgentClinicianAssessment",
+        "RoutineSafetyAssessment"
+      ],
+      "BurdenReview": [
+        "ReviewDistressAndAdherence",
+        "AssessBurdenAndDifferential",
+        "RoutineBurdenAssessment"
+      ],
+      "BenzodiazepineSafetyReview": [
+        "EnhancedIndividualizedReview",
+        "RoutineIndividualizedReview"
+      ],
+      "PropranololSafetyReview": [
+        "EnhancedIndividualizedReview",
+        "RoutineIndividualizedReview"
+      ]
+    },
+    "retained_edges": [
+      [
+        "AkathisiaAssessment",
+        "AkathisiaIndicationReview"
+      ],
+      [
+        "AkathisiaAntipsychoticAssociation",
+        "AkathisiaIndicationReview"
+      ],
+      [
+        "AkathisiaIndicationReview",
+        "AkathisiaAntipsychoticRegimenReview"
+      ],
+      [
+        "DoseReductionFeasible",
+        "AkathisiaAntipsychoticRegimenReview"
+      ],
+      [
+        "LowerAkathisiaRiskSwitchFeasible",
+        "AkathisiaAntipsychoticRegimenReview"
+      ],
+      [
+        "PsychoticWorseningConcern",
+        "AkathisiaAntipsychoticRegimenReview"
+      ],
+      [
+        "AkathisiaIndicationReview",
+        "AdjunctDiscussion"
+      ],
+      [
+        "AkathisiaTreatmentPreferenceConcern",
+        "AdjunctDiscussion"
+      ],
+      [
+        "UrgentSafetyConcern",
+        "UrgentSafetyReview"
+      ],
+      [
+        "AkathisiaIndicationReview",
+        "BurdenReview"
+      ],
+      [
+        "DistressOrAdherenceConcern",
+        "BurdenReview"
+      ],
+      [
+        "BenzodiazepineRespiratoryConcern",
+        "BenzodiazepineSafetyReview"
+      ],
+      [
+        "BenzodiazepineFallsCognitiveConcern",
+        "BenzodiazepineSafetyReview"
+      ],
+      [
+        "BenzodiazepineMisuseConcern",
+        "BenzodiazepineSafetyReview"
+      ],
+      [
+        "PropranololBloodPressureConcern",
+        "PropranololSafetyReview"
+      ],
+      [
+        "PropranololExposureConcern",
+        "PropranololSafetyReview"
+      ]
+    ],
+    "removed_nodes": [],
+    "removed_edges": [],
+    "renamed": {},
+    "materialized_proposed_parents": true,
+    "state_extensions": {},
+    "bn_parameter_inventory": "20 run-specific distributions to supply; 0 editable source-lookup examples supplied; all awaiting_experiment_cpt in BN-13"
+  },
+  "explicit_graph": "Fixed 20-node nature-only graph in BN-13 order; source_comparison_details lists every retained ordered parent. All proposed_parent metadata is materialized as GIVENs in declared order. Edges are modeler-synthesized review candidates, not established causal facts. This F2 follow-up package has a distinct network identity for akathisia review with present/absent/not_assessed gating.",
+  "reference_table_provenance": "BN-13 supplies zero fixed tables; all 20 distributions were awaiting_experiment_cpt. Draft network.xml holds explicitly synthetic uniform references (2-state 0.5/0.5, 3-state thirds, 6-state sixths) with no source lookup to audit. The numerical fixture CPTs are independent synthetic mathematical references with worked marginals, not source-backed clinical probabilities; complete clinical table provenance and calibration remain release blockers. Prescribing details are background only and no prescribing detail is copied as activation metadata.",
+  "estimation_instructions": "prompt.txt requires all CPTs including roots, percentage strings, fixed order and empty evidence, with F2 follow-up identity, present/absent/not_assessed gating, BARS measurement-context-only handling with no diagnosis from unreviewed total and no summed severity rule beyond the descriptive total, global 2 or greater as review candidate only, pseudoakathisia reassessment, motor restlessness versus differential distinction, clinician-reviewed severity without invented bands or regimen fields, benzodiazepine and propranolol safety inputs only as defined and collected, current-label consultation without prescribing detail copying, and parallel urgent/burden handling. Whether outputs behave as deterministic rules or estimated tables is an open assumption recorded here; the draft uses estimated-table semantics without approval.",
+  "result_mapping": "template.json defines candidate state-specific review language for all 7 queried outputs (21 branches) plus parallel urgent banner from saved inputs; every distribution remains visible. No threshold, posterior ranking or automatic treatment choice exists. Clinical branch selection and rendering remain S45 and owner review.",
+  "numerical_examples": "examples.json contains one complete independently worked 20-node mathematical reference: Indication 0.3/0.4/0.3, Regimen 0.042/0.06/0.09/0.09/0.018/0.7 with a Dose/Switch transpose guard (swapped gives ReviewDose 0.09 and ReviewSwitch 0.06), Adjunct 0.12/0.18/0.7, Urgent 0.2/0.8, Burden 0.105/0.4/0.495, Benzo 0.289375/0.710625 with a Respiratory/Misuse transpose guard (swapped gives 0.224375), Propranolol 0.44/0.56. Two opposing projections of the same CPT yield identical posteriors, proving no clamping. This validates math and engineering only; clinical expected_for_review cases remain unapproved.",
+  "clinical_examples": "examples.json contains 6 clinical review candidates: present applicable gate true, gate true with urgent Present, absent gate false not_applicable with not_a_negative_posterior and no posterior claim, unresolved/not_assessed unknown, missing alternative-cause context and gate conflict needs_clarification. These are proposed gate, alternative-context, BARS/severity provenance and wording expectations, not self-validating clinical tests or implemented runtime claims.",
+  "admission_measurements": "Measured 20 nature nodes, 69 rows, 253 cells. Focused 6-test suite results are recorded in the S34 handoff; opposing provenance never clamps. Memory ceiling and provider capacity remain unmeasured and clinical release is blocked awaiting review.",
+  "open_assumptions": "Candidate 13-field history with effect, association, dose-feasibility, switch-feasibility, psychotic-worsening, preference, urgent, distress, benzodiazepine safety, propranolol safety and burden provenance, gate true/false/unknown definitions with absent not_applicable and unresolved/not_assessed needs_clarification semantics, urgent-banner independence, BARS measurement-context-only handling with complete-source gap and no diagnosis from total, global 2 or greater review-candidate handling, pseudoakathisia reassessment, severity without invented bands or treatment threshold, deterministic-rule versus estimated-table output semantics, full clinical CPT provenance and final wording all require review before release. History v1, runtime projections and readiness (S40) and rendering (S45) remain unchanged.",
+  "source_diff": {
+    "removed_nodes": [],
+    "removed_edges": [],
+    "renamed": {},
+    "materialized_proposed_parents": true,
+    "state_extensions": {},
+    "retained_variables": [
+      "AkathisiaAssessment",
+      "AkathisiaAntipsychoticAssociation",
+      "DoseReductionFeasible",
+      "LowerAkathisiaRiskSwitchFeasible",
+      "PsychoticWorseningConcern",
+      "AkathisiaTreatmentPreferenceConcern",
+      "UrgentSafetyConcern",
+      "DistressOrAdherenceConcern",
+      "BenzodiazepineRespiratoryConcern",
+      "BenzodiazepineFallsCognitiveConcern",
+      "BenzodiazepineMisuseConcern",
+      "PropranololBloodPressureConcern",
+      "PropranololExposureConcern",
+      "AkathisiaIndicationReview",
+      "AkathisiaAntipsychoticRegimenReview",
+      "AdjunctDiscussion",
+      "UrgentSafetyReview",
+      "BurdenReview",
+      "BenzodiazepineSafetyReview",
+      "PropranololSafetyReview"
+    ]
+  },
+  "reference_table_audit": {
+    "source_locator": "BN-13.xml parameter_inventory: 20 awaiting_experiment_cpt, 0 source-lookup",
+    "compared_cells": 0,
+    "mismatches": [],
+    "clinical_probability_claim": false,
+    "synthetic_reference_rows": "All 20 draft tables are explicitly synthetic uniform references; numerical fixture rows are independent mathematical references with worked marginals."
+  }
+}

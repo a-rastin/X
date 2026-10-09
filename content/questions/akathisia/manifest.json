@@ -1,0 +1,724 @@
+{
+  "schema_version": "question-package-v1",
+  "question_key": "akathisia",
+  "title": "Akathisia follow-up review",
+  "workflow": "followup",
+  "version": "s34-v1",
+  "review_status": "awaiting_review",
+  "network_file": "network.xml",
+  "network_hash": "a9b73a43701e6e7d4213e7877781f4c819dd8745fd463320bbd8348c3745de55",
+  "source_refs": [
+    "project-documents/bayesian-networks/BN-13.xml",
+    "project-documents/medical-documents/guideline/STATEMENT-13.md",
+    "project-documents/medical-documents/akathisia-criteria.md",
+    "content/history/bars.v1.json",
+    "content/history/history.akathisia.v1.json",
+    "content/history/history.v1.json"
+  ],
+  "declared_node_order": [
+    "AkathisiaAssessment",
+    "AkathisiaAntipsychoticAssociation",
+    "DoseReductionFeasible",
+    "LowerAkathisiaRiskSwitchFeasible",
+    "PsychoticWorseningConcern",
+    "AkathisiaTreatmentPreferenceConcern",
+    "UrgentSafetyConcern",
+    "DistressOrAdherenceConcern",
+    "BenzodiazepineRespiratoryConcern",
+    "BenzodiazepineFallsCognitiveConcern",
+    "BenzodiazepineMisuseConcern",
+    "PropranololBloodPressureConcern",
+    "PropranololExposureConcern",
+    "AkathisiaIndicationReview",
+    "AkathisiaAntipsychoticRegimenReview",
+    "AdjunctDiscussion",
+    "UrgentSafetyReview",
+    "BurdenReview",
+    "BenzodiazepineSafetyReview",
+    "PropranololSafetyReview"
+  ],
+  "variables": [
+    {
+      "node_id": "AkathisiaAssessment",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Present",
+        "Absent",
+        "Unresolved"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "AkathisiaAntipsychoticAssociation",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Established",
+        "NotEstablished"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "DoseReductionFeasible",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Yes",
+        "No"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "LowerAkathisiaRiskSwitchFeasible",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Yes",
+        "No"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "PsychoticWorseningConcern",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Present",
+        "Absent"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "AkathisiaTreatmentPreferenceConcern",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Present",
+        "Absent"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "UrgentSafetyConcern",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Present",
+        "Absent"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "DistressOrAdherenceConcern",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Present",
+        "Absent"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "BenzodiazepineRespiratoryConcern",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Present",
+        "Absent"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "BenzodiazepineFallsCognitiveConcern",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Present",
+        "Absent"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "BenzodiazepineMisuseConcern",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Present",
+        "Absent"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "PropranololBloodPressureConcern",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Present",
+        "Absent"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "PropranololExposureConcern",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Present",
+        "Absent"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "AkathisiaIndicationReview",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "EstablishedCurrentAssociation",
+        "AssessDifferentialAndAssociation",
+        "NoCurrentTreatmentRule"
+      ],
+      "ordered_parents": [
+        "AkathisiaAssessment",
+        "AkathisiaAntipsychoticAssociation"
+      ]
+    },
+    {
+      "node_id": "AkathisiaAntipsychoticRegimenReview",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "ReviewDoseAndSwitch",
+        "ReviewDose",
+        "ReviewSwitch",
+        "ReviewConstraints",
+        "PrioritizePsychosisTradeoff",
+        "EstablishIndicationFirst"
+      ],
+      "ordered_parents": [
+        "AkathisiaIndicationReview",
+        "DoseReductionFeasible",
+        "LowerAkathisiaRiskSwitchFeasible",
+        "PsychoticWorseningConcern"
+      ]
+    },
+    {
+      "node_id": "AdjunctDiscussion",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "DiscussOptionsAndPatientConcerns",
+        "DiscussOptionsAndPreferences",
+        "EstablishIndicationFirst"
+      ],
+      "ordered_parents": [
+        "AkathisiaIndicationReview",
+        "AkathisiaTreatmentPreferenceConcern"
+      ]
+    },
+    {
+      "node_id": "UrgentSafetyReview",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "UrgentClinicianAssessment",
+        "RoutineSafetyAssessment"
+      ],
+      "ordered_parents": [
+        "UrgentSafetyConcern"
+      ]
+    },
+    {
+      "node_id": "BurdenReview",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "ReviewDistressAndAdherence",
+        "AssessBurdenAndDifferential",
+        "RoutineBurdenAssessment"
+      ],
+      "ordered_parents": [
+        "AkathisiaIndicationReview",
+        "DistressOrAdherenceConcern"
+      ]
+    },
+    {
+      "node_id": "BenzodiazepineSafetyReview",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "EnhancedIndividualizedReview",
+        "RoutineIndividualizedReview"
+      ],
+      "ordered_parents": [
+        "BenzodiazepineRespiratoryConcern",
+        "BenzodiazepineFallsCognitiveConcern",
+        "BenzodiazepineMisuseConcern"
+      ]
+    },
+    {
+      "node_id": "PropranololSafetyReview",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "EnhancedIndividualizedReview",
+        "RoutineIndividualizedReview"
+      ],
+      "ordered_parents": [
+        "PropranololBloodPressureConcern",
+        "PropranololExposureConcern"
+      ]
+    }
+  ],
+  "patient_mappings": [
+    {
+      "node_id": "AkathisiaAssessment",
+      "allowed_source_paths": [
+        "candidate/history/akathisia.v1/h_ak_assessment"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "AkathisiaAntipsychoticAssociation",
+      "allowed_source_paths": [
+        "candidate/history/akathisia.v1/h_ak_antipsychotic_association"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "DoseReductionFeasible",
+      "allowed_source_paths": [
+        "candidate/history/akathisia.v1/h_ak_dose_reduction_feasible"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "LowerAkathisiaRiskSwitchFeasible",
+      "allowed_source_paths": [
+        "candidate/history/akathisia.v1/h_ak_switch_feasible"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "PsychoticWorseningConcern",
+      "allowed_source_paths": [
+        "candidate/history/akathisia.v1/h_ak_psychotic_worsening_concern"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "AkathisiaTreatmentPreferenceConcern",
+      "allowed_source_paths": [
+        "candidate/history/akathisia.v1/h_ak_preference_concern"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "UrgentSafetyConcern",
+      "allowed_source_paths": [
+        "candidate/history/akathisia.v1/h_ak_urgent_safety_concern"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "DistressOrAdherenceConcern",
+      "allowed_source_paths": [
+        "candidate/history/akathisia.v1/h_ak_distress_adherence_concern"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "BenzodiazepineRespiratoryConcern",
+      "allowed_source_paths": [
+        "candidate/history/akathisia.v1/h_ak_benzo_respiratory_concern"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "BenzodiazepineFallsCognitiveConcern",
+      "allowed_source_paths": [
+        "candidate/history/akathisia.v1/h_ak_benzo_falls_cognitive_concern"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "BenzodiazepineMisuseConcern",
+      "allowed_source_paths": [
+        "candidate/history/akathisia.v1/h_ak_benzo_misuse_concern"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "PropranololBloodPressureConcern",
+      "allowed_source_paths": [
+        "candidate/history/akathisia.v1/h_ak_propranolol_bp_concern"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "PropranololExposureConcern",
+      "allowed_source_paths": [
+        "candidate/history/akathisia.v1/h_ak_propranolol_exposure_concern"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    }
+  ],
+  "applicability": {
+    "expression": "gate == 'true'",
+    "required_fields": [
+      "candidate/history/akathisia.v1/h_ak_assessment",
+      "candidate/history/akathisia.v1/h_ak_antipsychotic_association",
+      "candidate/history/akathisia.v1/h_ak_dose_reduction_feasible",
+      "candidate/history/akathisia.v1/h_ak_switch_feasible",
+      "candidate/history/akathisia.v1/h_ak_psychotic_worsening_concern",
+      "candidate/history/akathisia.v1/h_ak_preference_concern",
+      "candidate/history/akathisia.v1/h_ak_urgent_safety_concern",
+      "candidate/history/akathisia.v1/h_ak_distress_adherence_concern",
+      "candidate/history/akathisia.v1/h_ak_benzo_respiratory_concern",
+      "candidate/history/akathisia.v1/h_ak_benzo_falls_cognitive_concern",
+      "candidate/history/akathisia.v1/h_ak_benzo_misuse_concern",
+      "candidate/history/akathisia.v1/h_ak_propranolol_bp_concern",
+      "candidate/history/akathisia.v1/h_ak_propranolol_exposure_concern"
+    ],
+    "unknown_policy": "needs_clarification"
+  },
+  "cpt_contract": {
+    "nodes": [
+      {
+        "node_id": "AkathisiaAssessment",
+        "parent_ids": [],
+        "states": [
+          "Present",
+          "Absent",
+          "Unresolved"
+        ]
+      },
+      {
+        "node_id": "AkathisiaAntipsychoticAssociation",
+        "parent_ids": [],
+        "states": [
+          "Established",
+          "NotEstablished"
+        ]
+      },
+      {
+        "node_id": "DoseReductionFeasible",
+        "parent_ids": [],
+        "states": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "node_id": "LowerAkathisiaRiskSwitchFeasible",
+        "parent_ids": [],
+        "states": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "node_id": "PsychoticWorseningConcern",
+        "parent_ids": [],
+        "states": [
+          "Present",
+          "Absent"
+        ]
+      },
+      {
+        "node_id": "AkathisiaTreatmentPreferenceConcern",
+        "parent_ids": [],
+        "states": [
+          "Present",
+          "Absent"
+        ]
+      },
+      {
+        "node_id": "UrgentSafetyConcern",
+        "parent_ids": [],
+        "states": [
+          "Present",
+          "Absent"
+        ]
+      },
+      {
+        "node_id": "DistressOrAdherenceConcern",
+        "parent_ids": [],
+        "states": [
+          "Present",
+          "Absent"
+        ]
+      },
+      {
+        "node_id": "BenzodiazepineRespiratoryConcern",
+        "parent_ids": [],
+        "states": [
+          "Present",
+          "Absent"
+        ]
+      },
+      {
+        "node_id": "BenzodiazepineFallsCognitiveConcern",
+        "parent_ids": [],
+        "states": [
+          "Present",
+          "Absent"
+        ]
+      },
+      {
+        "node_id": "BenzodiazepineMisuseConcern",
+        "parent_ids": [],
+        "states": [
+          "Present",
+          "Absent"
+        ]
+      },
+      {
+        "node_id": "PropranololBloodPressureConcern",
+        "parent_ids": [],
+        "states": [
+          "Present",
+          "Absent"
+        ]
+      },
+      {
+        "node_id": "PropranololExposureConcern",
+        "parent_ids": [],
+        "states": [
+          "Present",
+          "Absent"
+        ]
+      },
+      {
+        "node_id": "AkathisiaIndicationReview",
+        "parent_ids": [
+          "AkathisiaAssessment",
+          "AkathisiaAntipsychoticAssociation"
+        ],
+        "states": [
+          "EstablishedCurrentAssociation",
+          "AssessDifferentialAndAssociation",
+          "NoCurrentTreatmentRule"
+        ]
+      },
+      {
+        "node_id": "AkathisiaAntipsychoticRegimenReview",
+        "parent_ids": [
+          "AkathisiaIndicationReview",
+          "DoseReductionFeasible",
+          "LowerAkathisiaRiskSwitchFeasible",
+          "PsychoticWorseningConcern"
+        ],
+        "states": [
+          "ReviewDoseAndSwitch",
+          "ReviewDose",
+          "ReviewSwitch",
+          "ReviewConstraints",
+          "PrioritizePsychosisTradeoff",
+          "EstablishIndicationFirst"
+        ]
+      },
+      {
+        "node_id": "AdjunctDiscussion",
+        "parent_ids": [
+          "AkathisiaIndicationReview",
+          "AkathisiaTreatmentPreferenceConcern"
+        ],
+        "states": [
+          "DiscussOptionsAndPatientConcerns",
+          "DiscussOptionsAndPreferences",
+          "EstablishIndicationFirst"
+        ]
+      },
+      {
+        "node_id": "UrgentSafetyReview",
+        "parent_ids": [
+          "UrgentSafetyConcern"
+        ],
+        "states": [
+          "UrgentClinicianAssessment",
+          "RoutineSafetyAssessment"
+        ]
+      },
+      {
+        "node_id": "BurdenReview",
+        "parent_ids": [
+          "AkathisiaIndicationReview",
+          "DistressOrAdherenceConcern"
+        ],
+        "states": [
+          "ReviewDistressAndAdherence",
+          "AssessBurdenAndDifferential",
+          "RoutineBurdenAssessment"
+        ]
+      },
+      {
+        "node_id": "BenzodiazepineSafetyReview",
+        "parent_ids": [
+          "BenzodiazepineRespiratoryConcern",
+          "BenzodiazepineFallsCognitiveConcern",
+          "BenzodiazepineMisuseConcern"
+        ],
+        "states": [
+          "EnhancedIndividualizedReview",
+          "RoutineIndividualizedReview"
+        ]
+      },
+      {
+        "node_id": "PropranololSafetyReview",
+        "parent_ids": [
+          "PropranololBloodPressureConcern",
+          "PropranololExposureConcern"
+        ],
+        "states": [
+          "EnhancedIndividualizedReview",
+          "RoutineIndividualizedReview"
+        ]
+      }
+    ]
+  },
+  "query_nodes": [
+    "AkathisiaIndicationReview",
+    "AkathisiaAntipsychoticRegimenReview",
+    "AdjunctDiscussion",
+    "UrgentSafetyReview",
+    "BurdenReview",
+    "BenzodiazepineSafetyReview",
+    "PropranololSafetyReview"
+  ],
+  "execution_evidence": {},
+  "prompt_version": "s34-v1",
+  "template_version": "s34-v1",
+  "history_definition": "content/history/history.akathisia.v1.json",
+  "reference_cpts_status": "Synthetic mathematical references only; all 20 BN-13 distributions were missing and remain uncalibrated with no source lookup; no clinical calibration or approval",
+  "missingness_contract": {
+    "required_source_paths": [
+      "candidate/history/akathisia.v1/h_ak_assessment",
+      "candidate/history/akathisia.v1/h_ak_antipsychotic_association",
+      "candidate/history/akathisia.v1/h_ak_dose_reduction_feasible",
+      "candidate/history/akathisia.v1/h_ak_switch_feasible",
+      "candidate/history/akathisia.v1/h_ak_psychotic_worsening_concern",
+      "candidate/history/akathisia.v1/h_ak_preference_concern",
+      "candidate/history/akathisia.v1/h_ak_urgent_safety_concern",
+      "candidate/history/akathisia.v1/h_ak_distress_adherence_concern",
+      "candidate/history/akathisia.v1/h_ak_benzo_respiratory_concern",
+      "candidate/history/akathisia.v1/h_ak_benzo_falls_cognitive_concern",
+      "candidate/history/akathisia.v1/h_ak_benzo_misuse_concern",
+      "candidate/history/akathisia.v1/h_ak_propranolol_bp_concern",
+      "candidate/history/akathisia.v1/h_ak_propranolol_exposure_concern"
+    ],
+    "required_unknown_values": [
+      "unknown",
+      "not_assessed"
+    ],
+    "required_unknown_policy": "needs_clarification",
+    "required_missing_policy": "needs_clarification",
+    "required_conflict_policy": "needs_clarification",
+    "gate_definition": "Gate true requires AkathisiaAssessment Present with all other required inputs known; gate false is AkathisiaAssessment Absent (absent case) with no unknown/missing/conflict among required inputs; otherwise gate unknown (including Unresolved, unknown, not_assessed, missing or conflicting).",
+    "false_gate": {
+      "status": "not_applicable",
+      "not_a_negative_posterior": true,
+      "posterior_claim": null
+    },
+    "unknown_gate": {
+      "status": "needs_clarification",
+      "pauses_before_estimation": true
+    },
+    "absent_rule": "An absent case (AkathisiaAssessment Absent with no unknown/missing/conflict) records not_applicable with reason and claims no posterior; never a negative finding and never a fake negative review posterior.",
+    "not_assessed_rule": "An unresolved or not_assessed effect (Unresolved, unknown, not_assessed, missing or conflicting required input, including missing alternative-cause, exposure, onset, differential, distress, safety or preference context) pauses as needs_clarification; never coerced to Absent and never mapped to No. A missing BARS item assessment never becomes a negative finding.",
+    "alternative_context": "Missing alternative-cause, antipsychotic-association, dose-feasibility, switch-feasibility, psychotic-worsening, preference, distress, benzodiazepine safety, propranolol safety, urgent or burden context pauses as needs_clarification; missing context is never treated as an established-association or no-concern finding.",
+    "current_urgent": "UrgentSafetyConcern Present renders an urgent banner from saved structured inputs in parallel with review topics, independently of estimation latency; never a computed risk percentage.",
+    "evidence": {}
+  },
+  "input_consistency_contract": {
+    "gate_inputs": "Effect presence plus alternative-cause, exposure, onset, differential, distress and safety inputs define true/false/unknown; unknown, missing, not_assessed or conflicting required input pauses, never coerces to false and never coerces to Absent.",
+    "urgent_inputs": "UrgentSafetyConcern comes from saved structured urgent inputs with encounter/window attribution; template banner does not wait for estimation.",
+    "bars_provenance": "Full BARS item responses are preserved with definition version, completeness and nullable results when the complete reviewed source is available; BARS supports measurement and its total alone never establishes diagnosis or determines intervention. A global score of 2 or greater is a review candidate for presence, never an activation claim. Complete BARS sourcing and concrete item/completeness/severity/network definitions require owner review.",
+    "severity_provenance": "Motor restlessness and distress are clinician-reviewed categories recorded with examination and window attribution; they are never inferred from an unreviewed BARS total and no summed severity band or treatment threshold is set here. Objective movements without subjective restlessness are pseudoakathisia: reassess history, differential and course rather than assuming acute medication-induced akathisia.",
+    "history_review": "Candidate v1 definitions require owner review before release. No runtime form or projection added by S34.",
+    "missingness_scope": "These declarations are content proposals for the S40 projection/readiness implementation, not executed clinical runtime behavior."
+  },
+  "numerical_policy": {
+    "cpt_policy": "cpt-decimal-v1",
+    "evidence": {},
+    "comparison_tolerance": 1e-06,
+    "engine": {
+      "python": "3.12.14",
+      "pgmpy": "1.1.2",
+      "lxml": "6.1.3",
+      "float_dtype": "float64",
+      "elimination_order": "source_order"
+    }
+  },
+  "engine_configuration": {
+    "evidence": "empty",
+    "evidence_order": "given_order",
+    "float_dtype": "float64",
+    "elimination_order": "source_order",
+    "tie_break": "source_order"
+  },
+  "numerical_tolerances": {
+    "percentage_decimal_places": 6,
+    "units_for_100_percent": 100000000,
+    "row_total": "exact integer units; never normalize or repair",
+    "posterior_comparison_absolute": 1e-06
+  },
+  "resource_limits": {
+    "status": "Candidate engineering limits; existing inference limits preserved, provider capability not yet measured",
+    "max_network_xml_bytes": 1048576,
+    "max_effective_xml_bytes": 1048576,
+    "max_inference_nodes": 64,
+    "max_inference_cells": 131072,
+    "inference_timeout_seconds": 30,
+    "max_prompt_bytes": 65536,
+    "max_context_bytes": 65536,
+    "max_cpt_output_bytes": 524288,
+    "hard_memory_limit_bytes": null,
+    "memory_limitation": "Existing bounded child process/node/table limits do not establish an OS memory ceiling or bound every induced intermediate factor. No such memory admission claim is made.",
+    "overflow_policy": "Reject admission or fail explicitly; no truncation, approximation or incomplete-table fallback."
+  },
+  "applicability_truth_table": {
+    "true": "Gate true (AkathisiaAssessment Present with all other required inputs known) executes estimation with empty evidence; urgent Present still executes and adds a parallel urgent banner.",
+    "false": "Gate false (AkathisiaAssessment Absent with no unknown/missing/conflict) records not_applicable with reason; claims no posterior and is never a negative finding or a fake negative review posterior.",
+    "unknown": "Gate unknown (any required input Unresolved, unknown, not_assessed, missing or conflicting, including missing alternative-cause or differential context) yields needs_clarification before estimation; never coerces uncertainty to false and never estimates."
+  }
+}

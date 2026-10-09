@@ -1,0 +1,402 @@
+{
+  "schema_version": "candidate-history-additions-v1",
+  "version": "akathisia.v1",
+  "status": "awaiting_review",
+  "extends": "history.v1",
+  "purpose": "Isolated S34 review proposal; not loaded by runtime, not replacing or approving v1. No medication regimen fields. Effect present/absent/not_assessed gates applicability with reviewed severity; BARS item responses are measurement context only pending the complete reviewed source; no diagnosis from unreviewed total and no treatment threshold.",
+  "fields": [
+    {
+      "id": "h_ak_assessment",
+      "source_path": "candidate/history/akathisia.v1/h_ak_assessment",
+      "node_id": "AkathisiaAssessment",
+      "permitted": [
+        "Present",
+        "Absent",
+        "Unresolved",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Akathisia effect status for this follow-up encounter: present, absent or unresolved assessment requiring clinician review of subjective restlessness, observed motor restlessness, medication relationship, onset and alternative explanations with BARS measurement context when the complete reviewed source is available.",
+      "source_locator": "project-documents/medical-documents/akathisia-criteria.md \u2014 Diagnostic features (subjective plus observed restlessness; medication relationship within 4 weeks) and Clinical assessment and exclusions",
+      "source_sha256": "93ae8c76a2b26b2af79ea3a9e20271089eac683a0ce29d9579caffac1e626a47",
+      "operationalization": "Present requires clinician-recorded subjective restlessness plus observed motor restlessness with medication timeline and onset review plus alternative explanations considered; Absent requires assessment finding no such syndrome; Unresolved/not_assessed/unknown means assessment incomplete or conflicting and pauses. BARS item responses are measurement context only when the complete reviewed source is available; no diagnosis is inferred from an unreviewed BARS total and the global 2 or greater threshold is a review candidate only. Pseudoakathisia requires reassessment rather than assumption. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Present": "Present",
+        "Absent": "Absent",
+        "Unresolved": "Unresolved"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_ak_antipsychotic_association",
+      "source_path": "candidate/history/akathisia.v1/h_ak_antipsychotic_association",
+      "node_id": "AkathisiaAntipsychoticAssociation",
+      "permitted": [
+        "Established",
+        "NotEstablished",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Whether akathisia is associated with antipsychotic exposure in this follow-up context, after alternative explanations are considered.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-13.md \u2014 Implementation (antipsychotic-induced akathisia; difficult to distinguish from psychomotor agitation)",
+      "source_sha256": "59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff",
+      "operationalization": "Established requires documented antipsychotic exposure with onset within weeks of initiation or escalation (or after reduction of extrapyramidal medication) and alternative contributors reviewed; NotEstablished requires assessment finding no such association or an alternative explanation. Unknown pauses. Exposure agents and windows only; no dose/route/frequency. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Established": "Established",
+        "NotEstablished": "NotEstablished"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_ak_dose_reduction_feasible",
+      "source_path": "candidate/history/akathisia.v1/h_ak_dose_reduction_feasible",
+      "node_id": "DoseReductionFeasible",
+      "permitted": [
+        "Yes",
+        "No",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Whether antipsychotic dose reduction is feasible in this follow-up context.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-13.md \u2014 Implementation (reduction if feasible; weigh against psychotic symptoms)",
+      "source_sha256": "59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff",
+      "operationalization": "Yes means clinician records dose reduction as feasible with attribution; No means review found it not feasible or psychotic-worsening tradeoff precludes it. This is a feasibility assumption for review, never a dose order or regimen detail. Unknown pauses. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Yes": "Yes",
+        "No": "No"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_ak_switch_feasible",
+      "source_path": "candidate/history/akathisia.v1/h_ak_switch_feasible",
+      "node_id": "LowerAkathisiaRiskSwitchFeasible",
+      "permitted": [
+        "Yes",
+        "No",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Whether switching to a lower akathisia propensity agent is feasible in this follow-up context.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-13.md \u2014 Implementation (change to lower likelihood agent; see Statement 4 Table 6)",
+      "source_sha256": "59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff",
+      "operationalization": "Yes means clinician records switch as feasible with attribution; No means review found it not feasible. This is a feasibility assumption for review, never a product selection. Unknown pauses. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Yes": "Yes",
+        "No": "No"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_ak_psychotic_worsening_concern",
+      "source_path": "candidate/history/akathisia.v1/h_ak_psychotic_worsening_concern",
+      "node_id": "PsychoticWorseningConcern",
+      "permitted": [
+        "Present",
+        "Absent",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Concern about psychotic worsening following a regimen change for this encounter.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-13.md \u2014 Implementation (benefits weighed against potential increase in psychotic symptoms; careful monitoring) and Balancing Harms",
+      "source_sha256": "59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff",
+      "operationalization": "Present means clinician records concern about symptom recurrence with monitoring attribution; Absent means review found no such concern. Unknown pauses. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Present": "Present",
+        "Absent": "Absent"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_ak_preference_concern",
+      "source_path": "candidate/history/akathisia.v1/h_ak_preference_concern",
+      "node_id": "AkathisiaTreatmentPreferenceConcern",
+      "permitted": [
+        "Present",
+        "Absent",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Concern about akathisia treatment options, tradeoffs or side effects for shared discussion.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-13.md \u2014 Patient Preferences (minimize akathisia and psychotic increase; concern about benzodiazepine and beta-blocker side effects)",
+      "source_sha256": "59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff",
+      "operationalization": "Present means clinician records a treatment-option concern with attribution; Absent means review found none. Unknown pauses. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Present": "Present",
+        "Absent": "Absent"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_ak_urgent_safety_concern",
+      "source_path": "candidate/history/akathisia.v1/h_ak_urgent_safety_concern",
+      "node_id": "UrgentSafetyConcern",
+      "permitted": [
+        "Present",
+        "Absent",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Clinician-determined urgent safety concern from saved structured urgent inputs at this encounter; displayed independently of estimation latency.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-13.md \u2014 Implementation (dysphoria and suicidal behaviors; urgent clinician assessment)",
+      "source_sha256": "59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff",
+      "operationalization": "Present means clinician identifies an urgent safety concern from saved structured urgent inputs during current assessment; Absent means urgent assessment completed without identified concern. Banner renders from saved inputs independently of estimation latency and is never a model-computed risk percentage. Unknown pauses. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Present": "Present",
+        "Absent": "Absent"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_ak_distress_adherence_concern",
+      "source_path": "candidate/history/akathisia.v1/h_ak_distress_adherence_concern",
+      "node_id": "DistressOrAdherenceConcern",
+      "permitted": [
+        "Present",
+        "Absent",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Distress or difficulty maintaining treatment associated with symptoms for this encounter.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-13.md \u2014 Implementation (often extremely distressing; frequent cause of nonadherence)",
+      "source_sha256": "59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff",
+      "operationalization": "Present means clinician records distress or adherence difficulty with attribution; Absent means review found none. Unknown pauses. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Present": "Present",
+        "Absent": "Absent"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_ak_benzo_respiratory_concern",
+      "source_path": "candidate/history/akathisia.v1/h_ak_benzo_respiratory_concern",
+      "node_id": "BenzodiazepineRespiratoryConcern",
+      "permitted": [
+        "Present",
+        "Absent",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Respiratory concern involving benzodiazepine exposure, alcohol, opioids, other sedatives or sleep apnea for review.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-13.md \u2014 Implementation (respiratory depression with high doses; alcohol, sedatives, opioids; sleep apnea caution)",
+      "source_sha256": "59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff",
+      "operationalization": "Present means clinician records a respiratory concern with factor attribution; Absent means review found none. Current labeling context only. Unknown pauses. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Present": "Present",
+        "Absent": "Absent"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_ak_benzo_falls_cognitive_concern",
+      "source_path": "candidate/history/akathisia.v1/h_ak_benzo_falls_cognitive_concern",
+      "node_id": "BenzodiazepineFallsCognitiveConcern",
+      "permitted": [
+        "Present",
+        "Absent",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Vulnerability to somnolence, cognitive effects, impaired coordination or falls for review.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-13.md \u2014 Implementation (somnolence, cognitive difficulties, coordination, falls particularly in older individuals)",
+      "source_sha256": "59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff",
+      "operationalization": "Present means clinician records such vulnerability with attribution; Absent means review found none. Unknown pauses. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Present": "Present",
+        "Absent": "Absent"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_ak_benzo_misuse_concern",
+      "source_path": "candidate/history/akathisia.v1/h_ak_benzo_misuse_concern",
+      "node_id": "BenzodiazepineMisuseConcern",
+      "permitted": [
+        "Present",
+        "Absent",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Vulnerability to benzodiazepine misuse or substance use disorder for review.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-13.md \u2014 Implementation (higher amounts or more frequently; sedative use disorder; alcohol/substance history)",
+      "source_sha256": "59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff",
+      "operationalization": "Present means clinician records such vulnerability with attribution; Absent means review found none. Unknown pauses. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Present": "Present",
+        "Absent": "Absent"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_ak_propranolol_bp_concern",
+      "source_path": "candidate/history/akathisia.v1/h_ak_propranolol_bp_concern",
+      "node_id": "PropranololBloodPressureConcern",
+      "permitted": [
+        "Present",
+        "Absent",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Blood-pressure concern relevant to propranolol for review.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-13.md \u2014 Implementation (monitor blood pressure; total daily dose context background only) and Balancing Harms",
+      "source_sha256": "59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff",
+      "operationalization": "Present means clinician records a blood-pressure concern with attribution; Absent means review found none. No dose order is set here. Unknown pauses. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Present": "Present",
+        "Absent": "Absent"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_ak_propranolol_exposure_concern",
+      "source_path": "candidate/history/akathisia.v1/h_ak_propranolol_exposure_concern",
+      "node_id": "PropranololExposureConcern",
+      "permitted": [
+        "Present",
+        "Absent",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Interaction or food-related propranolol exposure concern for review.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-13.md \u2014 Implementation (protein-rich foods increase bioavailability; CYP1A2/2D6/2C19/3A4 interactions)",
+      "source_sha256": "59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff",
+      "operationalization": "Present means clinician records such exposure concern with attribution; Absent means review found none. Unknown pauses. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Present": "Present",
+        "Absent": "Absent"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    }
+  ],
+  "retained_history_v1": "Twelve original v1 fields and runtime remain unchanged; this separately versioned adjunct proposes 13 additional CPT-context categories for F2, none approved."
+}
