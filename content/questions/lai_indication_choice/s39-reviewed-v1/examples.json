@@ -1,0 +1,1729 @@
+{
+  "numerical": [
+    {
+      "id": "full-graph-asymmetric-mathematical",
+      "classification": "Independent synthetic mathematical reference, not clinical calibration or clinical expected treatment",
+      "inputs": {},
+      "cpt_payload": {
+        "network_hash": "e0bc286f7402c5e73905830b1ae9ee88ca6d9d911500a99e7b8e9d67d315a806",
+        "tables": [
+          {
+            "node_id": "SchizophreniaEstablished",
+            "parent_ids": [],
+            "states": [
+              "Yes",
+              "No"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "90",
+                  "10"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "LAIPreference",
+            "parent_ids": [],
+            "states": [
+              "PrefersLAI",
+              "PrefersOral",
+              "Undecided",
+              "DeclinesLAI"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "40",
+                  "30",
+                  "20",
+                  "10"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "AdherenceHistory",
+            "parent_ids": [],
+            "states": [
+              "Adequate",
+              "Poor",
+              "Uncertain"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "20",
+                  "50",
+                  "30"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "AdditionalDiscussionContext",
+            "parent_ids": [],
+            "states": [
+              "Present",
+              "Absent"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "30",
+                  "70"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "SameDrugOralExperience",
+            "parent_ids": [],
+            "states": [
+              "Supported",
+              "Concern",
+              "NotEstablished"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "50",
+                  "30",
+                  "20"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "PriorNeurolepticMalignantSyndrome",
+            "parent_ids": [],
+            "states": [
+              "Yes",
+              "No"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "10",
+                  "90"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "ProductPlanReviewed",
+            "parent_ids": [],
+            "states": [
+              "Yes",
+              "No"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "70",
+                  "30"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "DeliveryBarriers",
+            "parent_ids": [],
+            "states": [
+              "Present",
+              "Absent"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "40",
+                  "60"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "LAITreatmentStatus",
+            "parent_ids": [],
+            "states": [
+              "Considering",
+              "Current",
+              "Previous"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "50",
+                  "30",
+                  "20"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "LAIGuidelineCriterion",
+            "parent_ids": [
+              "SchizophreniaEstablished",
+              "LAIPreference",
+              "AdherenceHistory"
+            ],
+            "states": [
+              "Present",
+              "NotEstablished"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "Yes",
+                  "PrefersLAI",
+                  "Adequate"
+                ],
+                "percentages": [
+                  "70",
+                  "30"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "PrefersLAI",
+                  "Poor"
+                ],
+                "percentages": [
+                  "80",
+                  "20"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "PrefersLAI",
+                  "Uncertain"
+                ],
+                "percentages": [
+                  "60",
+                  "40"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "PrefersOral",
+                  "Adequate"
+                ],
+                "percentages": [
+                  "20",
+                  "80"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "PrefersOral",
+                  "Poor"
+                ],
+                "percentages": [
+                  "80",
+                  "20"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "PrefersOral",
+                  "Uncertain"
+                ],
+                "percentages": [
+                  "60",
+                  "40"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "Undecided",
+                  "Adequate"
+                ],
+                "percentages": [
+                  "30",
+                  "70"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "Undecided",
+                  "Poor"
+                ],
+                "percentages": [
+                  "80",
+                  "20"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "Undecided",
+                  "Uncertain"
+                ],
+                "percentages": [
+                  "60",
+                  "40"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "DeclinesLAI",
+                  "Adequate"
+                ],
+                "percentages": [
+                  "10",
+                  "90"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "DeclinesLAI",
+                  "Poor"
+                ],
+                "percentages": [
+                  "80",
+                  "20"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "DeclinesLAI",
+                  "Uncertain"
+                ],
+                "percentages": [
+                  "60",
+                  "40"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "PrefersLAI",
+                  "Adequate"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "PrefersLAI",
+                  "Poor"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "PrefersLAI",
+                  "Uncertain"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "PrefersOral",
+                  "Adequate"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "PrefersOral",
+                  "Poor"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "PrefersOral",
+                  "Uncertain"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Undecided",
+                  "Adequate"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Undecided",
+                  "Poor"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Undecided",
+                  "Uncertain"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "DeclinesLAI",
+                  "Adequate"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "DeclinesLAI",
+                  "Poor"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "DeclinesLAI",
+                  "Uncertain"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "DiscussionOpportunity",
+            "parent_ids": [
+              "SchizophreniaEstablished",
+              "LAIGuidelineCriterion",
+              "AdditionalDiscussionContext"
+            ],
+            "states": [
+              "OutsideScope",
+              "GuidelineCriterion",
+              "ContextualDiscussion",
+              "RoutineEducation"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "Yes",
+                  "Present",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "80",
+                  "10",
+                  "10"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "Present",
+                  "Absent"
+                ],
+                "percentages": [
+                  "10",
+                  "60",
+                  "20",
+                  "10"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "NotEstablished",
+                  "Present"
+                ],
+                "percentages": [
+                  "10",
+                  "20",
+                  "60",
+                  "10"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "NotEstablished",
+                  "Absent"
+                ],
+                "percentages": [
+                  "10",
+                  "10",
+                  "10",
+                  "70"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Present",
+                  "Present"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Present",
+                  "Absent"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "NotEstablished",
+                  "Present"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "NotEstablished",
+                  "Absent"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "ClinicalReviewFocus",
+            "parent_ids": [
+              "PriorNeurolepticMalignantSyndrome",
+              "SameDrugOralExperience"
+            ],
+            "states": [
+              "NMSCaution",
+              "ReviewEfficacyOrTolerabilityConcern",
+              "EstablishCandidateEvidence",
+              "CandidateEvidenceReviewed"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "Yes",
+                  "Supported"
+                ],
+                "percentages": [
+                  "70",
+                  "10",
+                  "10",
+                  "10"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "Concern"
+                ],
+                "percentages": [
+                  "60",
+                  "30",
+                  "5",
+                  "5"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "NotEstablished"
+                ],
+                "percentages": [
+                  "60",
+                  "10",
+                  "20",
+                  "10"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Supported"
+                ],
+                "percentages": [
+                  "10",
+                  "10",
+                  "10",
+                  "70"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Concern"
+                ],
+                "percentages": [
+                  "10",
+                  "70",
+                  "10",
+                  "10"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "NotEstablished"
+                ],
+                "percentages": [
+                  "10",
+                  "10",
+                  "70",
+                  "10"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "DeliveryReviewFocus",
+            "parent_ids": [
+              "ProductPlanReviewed",
+              "DeliveryBarriers"
+            ],
+            "states": [
+              "ReviewProductPlanAndBarriers",
+              "ReviewProductPlan",
+              "AddressBarriers",
+              "ReviewItemsDocumented"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "Yes",
+                  "Present"
+                ],
+                "percentages": [
+                  "70",
+                  "10",
+                  "10",
+                  "10"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "Absent"
+                ],
+                "percentages": [
+                  "10",
+                  "70",
+                  "10",
+                  "10"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Present"
+                ],
+                "percentages": [
+                  "10",
+                  "10",
+                  "70",
+                  "10"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Absent"
+                ],
+                "percentages": [
+                  "10",
+                  "10",
+                  "10",
+                  "70"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "LAIReviewPathway",
+            "parent_ids": [
+              "DiscussionOpportunity",
+              "LAIPreference",
+              "LAITreatmentStatus"
+            ],
+            "states": [
+              "OutsideScope",
+              "RespectPreferenceReviewAlternatives",
+              "ReviewCurrentLAITreatment",
+              "IndividualizedPriorLAIReview",
+              "DiscussLAIOption",
+              "ConsiderContextualDiscussion",
+              "OfferRoutineEducation"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "OutsideScope",
+                  "PrefersLAI",
+                  "Considering"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OutsideScope",
+                  "PrefersLAI",
+                  "Current"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OutsideScope",
+                  "PrefersLAI",
+                  "Previous"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OutsideScope",
+                  "PrefersOral",
+                  "Considering"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OutsideScope",
+                  "PrefersOral",
+                  "Current"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OutsideScope",
+                  "PrefersOral",
+                  "Previous"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OutsideScope",
+                  "Undecided",
+                  "Considering"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OutsideScope",
+                  "Undecided",
+                  "Current"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OutsideScope",
+                  "Undecided",
+                  "Previous"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OutsideScope",
+                  "DeclinesLAI",
+                  "Considering"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OutsideScope",
+                  "DeclinesLAI",
+                  "Current"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OutsideScope",
+                  "DeclinesLAI",
+                  "Previous"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "GuidelineCriterion",
+                  "PrefersLAI",
+                  "Considering"
+                ],
+                "percentages": [
+                  "0",
+                  "30",
+                  "0",
+                  "0",
+                  "70",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "GuidelineCriterion",
+                  "PrefersLAI",
+                  "Current"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "GuidelineCriterion",
+                  "PrefersLAI",
+                  "Previous"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "GuidelineCriterion",
+                  "PrefersOral",
+                  "Considering"
+                ],
+                "percentages": [
+                  "0",
+                  "30",
+                  "0",
+                  "0",
+                  "70",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "GuidelineCriterion",
+                  "PrefersOral",
+                  "Current"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "GuidelineCriterion",
+                  "PrefersOral",
+                  "Previous"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "GuidelineCriterion",
+                  "Undecided",
+                  "Considering"
+                ],
+                "percentages": [
+                  "0",
+                  "30",
+                  "0",
+                  "0",
+                  "70",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "GuidelineCriterion",
+                  "Undecided",
+                  "Current"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "GuidelineCriterion",
+                  "Undecided",
+                  "Previous"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "GuidelineCriterion",
+                  "DeclinesLAI",
+                  "Considering"
+                ],
+                "percentages": [
+                  "0",
+                  "30",
+                  "0",
+                  "0",
+                  "70",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "GuidelineCriterion",
+                  "DeclinesLAI",
+                  "Current"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "GuidelineCriterion",
+                  "DeclinesLAI",
+                  "Previous"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "ContextualDiscussion",
+                  "PrefersLAI",
+                  "Considering"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "ContextualDiscussion",
+                  "PrefersLAI",
+                  "Current"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "ContextualDiscussion",
+                  "PrefersLAI",
+                  "Previous"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "ContextualDiscussion",
+                  "PrefersOral",
+                  "Considering"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "ContextualDiscussion",
+                  "PrefersOral",
+                  "Current"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "ContextualDiscussion",
+                  "PrefersOral",
+                  "Previous"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "ContextualDiscussion",
+                  "Undecided",
+                  "Considering"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "ContextualDiscussion",
+                  "Undecided",
+                  "Current"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "ContextualDiscussion",
+                  "Undecided",
+                  "Previous"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "ContextualDiscussion",
+                  "DeclinesLAI",
+                  "Considering"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "ContextualDiscussion",
+                  "DeclinesLAI",
+                  "Current"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "ContextualDiscussion",
+                  "DeclinesLAI",
+                  "Previous"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "RoutineEducation",
+                  "PrefersLAI",
+                  "Considering"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "RoutineEducation",
+                  "PrefersLAI",
+                  "Current"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "RoutineEducation",
+                  "PrefersLAI",
+                  "Previous"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "RoutineEducation",
+                  "PrefersOral",
+                  "Considering"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "RoutineEducation",
+                  "PrefersOral",
+                  "Current"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "RoutineEducation",
+                  "PrefersOral",
+                  "Previous"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "RoutineEducation",
+                  "Undecided",
+                  "Considering"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "RoutineEducation",
+                  "Undecided",
+                  "Current"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "RoutineEducation",
+                  "Undecided",
+                  "Previous"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "RoutineEducation",
+                  "DeclinesLAI",
+                  "Considering"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "RoutineEducation",
+                  "DeclinesLAI",
+                  "Current"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "RoutineEducation",
+                  "DeclinesLAI",
+                  "Previous"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "SchizophreniaEstablished": {
+          "Yes": 0.9,
+          "No": 0.1
+        },
+        "LAIPreference": {
+          "PrefersLAI": 0.4,
+          "PrefersOral": 0.3,
+          "Undecided": 0.2,
+          "DeclinesLAI": 0.1
+        },
+        "AdherenceHistory": {
+          "Adequate": 0.2,
+          "Poor": 0.5,
+          "Uncertain": 0.3
+        },
+        "AdditionalDiscussionContext": {
+          "Present": 0.3,
+          "Absent": 0.7
+        },
+        "SameDrugOralExperience": {
+          "Supported": 0.5,
+          "Concern": 0.3,
+          "NotEstablished": 0.2
+        },
+        "PriorNeurolepticMalignantSyndrome": {
+          "Yes": 0.1,
+          "No": 0.9
+        },
+        "ProductPlanReviewed": {
+          "Yes": 0.7,
+          "No": 0.3
+        },
+        "DeliveryBarriers": {
+          "Present": 0.4,
+          "Absent": 0.6
+        },
+        "LAITreatmentStatus": {
+          "Considering": 0.5,
+          "Current": 0.3,
+          "Previous": 0.2
+        },
+        "LAIGuidelineCriterion": {
+          "Present": 0.5958,
+          "NotEstablished": 0.4042
+        },
+        "DiscussionOpportunity": {
+          "OutsideScope": 0.172126,
+          "GuidelineCriterion": 0.432774,
+          "ContextualDiscussion": 0.177336,
+          "RoutineEducation": 0.217764
+        },
+        "ClinicalReviewFocus": {
+          "NMSCaution": 0.155,
+          "ReviewEfficacyOrTolerabilityConcern": 0.268,
+          "EstablishCandidateEvidence": 0.2085,
+          "CandidateEvidenceReviewed": 0.3685
+        },
+        "DeliveryReviewFocus": {
+          "ReviewProductPlanAndBarriers": 0.268,
+          "ReviewProductPlan": 0.352,
+          "AddressBarriers": 0.172,
+          "ReviewItemsDocumented": 0.208
+        },
+        "LAIReviewPathway": {
+          "OutsideScope": 0.172126,
+          "RespectPreferenceReviewAlternatives": 0.0649161,
+          "ReviewCurrentLAITreatment": 0.2483622,
+          "IndividualizedPriorLAIReview": 0.1655748,
+          "DiscussLAIOption": 0.1514709,
+          "ConsiderContextualDiscussion": 0.088668,
+          "OfferRoutineEducation": 0.108882
+        }
+      },
+      "context_examples": [
+        {
+          "SchizophreniaEstablished": "Yes"
+        },
+        {
+          "SchizophreniaEstablished": "No"
+        }
+      ],
+      "work": "Guideline Present = 0.9*(0.5*0.8 + 0.3*0.6 + 0.2*(0.4*0.7 + 0.3*0.2 + 0.2*0.3 + 0.1*0.1)) = 0.9*(0.4 + 0.18 + 0.2*0.41) = 0.9*0.662 = 0.5958. Discussion: P(Yes,Present)=0.5958 and P(Yes,NotEstablished)=0.3042 with context Present 0.3/Absent 0.7. Outside = 0.1 + 0.5958*0.7*0.1 + 0.3042*0.3*0.1 + 0.3042*0.7*0.1 = 0.1 + 0.041706 + 0.009126 + 0.021294 = 0.172126; Guideline = 0.5958*0.3*0.8 + 0.5958*0.7*0.6 + 0.3042*0.3*0.2 + 0.3042*0.7*0.1 = 0.142992 + 0.250236 + 0.018252 + 0.021294 = 0.432774; Contextual = 0.017874 + 0.083412 + 0.054756 + 0.021294 = 0.177336; Routine = 0.017874 + 0.041706 + 0.009126 + 0.149058 = 0.217764. Swapping the DiscussionOpportunity GuidelineCriterion and AdditionalDiscussionContext parents changes the 0.3/0.7 and 0.5958/0.4042 weight pairings, so a transpose bug fails. Clinical NMSCaution = 0.05*0.7 + 0.03*0.6 + 0.02*0.6 + 0.45*0.1 + 0.27*0.1 + 0.18*0.1 = 0.035 + 0.018 + 0.012 + 0.045 + 0.027 + 0.018 = 0.155; ReviewConcern = 0.005 + 0.009 + 0.002 + 0.045 + 0.189 + 0.018 = 0.268; Establish = 0.005 + 0.0015 + 0.004 + 0.045 + 0.027 + 0.126 = 0.2085; Reviewed = 0.005 + 0.0015 + 0.002 + 0.315 + 0.027 + 0.018 = 0.3685. Delivery Both = 0.7*0.4*0.7 + 0.7*0.6*0.1 + 0.3*0.4*0.1 + 0.3*0.6*0.1 = 0.196 + 0.042 + 0.012 + 0.018 = 0.268; Plan = 0.028 + 0.294 + 0.012 + 0.018 = 0.352; Barriers = 0.028 + 0.042 + 0.084 + 0.018 = 0.172; Documented = 0.028 + 0.042 + 0.012 + 0.126 = 0.208. Swapping the two DeliveryReviewFocus parents swaps 0.352 and 0.172, so a transpose bug fails. Pathway: Outside = 0.172126; Current = 0.827874*0.3 = 0.2483622; Prior = 0.827874*0.2 = 0.1655748; Respect = 0.432774*0.5*0.3 = 0.0649161; Discuss = 0.432774*0.5*0.7 = 0.1514709; ConsiderContextual = 0.177336*0.5 = 0.088668; OfferRoutine = 0.217764*0.5 = 0.108882. LAIPreference rows are duplicated across the Pathway table for independent verifiability; the transpose guard is carried by DiscussionOpportunity and DeliveryReviewFocus."
+    }
+  ],
+  "clinical": [
+    {
+      "id": "gate-true-standard",
+      "inputs": {
+        "candidate/history/lai_indication_choice.v1/h_schizophrenia_established": "Yes",
+        "candidate/history/lai_indication_choice.v1/h_lai_preference": "PrefersLAI",
+        "candidate/history/lai_indication_choice.v1/h_adherence_history": "Poor",
+        "candidate/history/lai_indication_choice.v1/h_discussion_context": "Absent",
+        "candidate/history/lai_indication_choice.v1/h_oral_experience": "Supported",
+        "candidate/history/lai_indication_choice.v1/h_prior_nms": "No",
+        "candidate/history/lai_indication_choice.v1/h_product_plan": "Yes",
+        "candidate/history/lai_indication_choice.v1/h_delivery_barriers": "Absent",
+        "candidate/history/lai_indication_choice.v1/h_lai_treatment_status": "Considering"
+      },
+      "expected_for_review": {
+        "status": "execute",
+        "gate": "true",
+        "applicability": "gate == 'true'",
+        "discussion_scope": "discussion_and_review_only",
+        "product_selection": null
+      },
+      "note": "Candidate review expectation: gate true executes with empty evidence; standard preference and poor adherence context."
+    },
+    {
+      "id": "gate-true-declines-respect",
+      "inputs": {
+        "candidate/history/lai_indication_choice.v1/h_schizophrenia_established": "Yes",
+        "candidate/history/lai_indication_choice.v1/h_lai_preference": "DeclinesLAI",
+        "candidate/history/lai_indication_choice.v1/h_adherence_history": "Poor",
+        "candidate/history/lai_indication_choice.v1/h_discussion_context": "Absent",
+        "candidate/history/lai_indication_choice.v1/h_oral_experience": "Supported",
+        "candidate/history/lai_indication_choice.v1/h_prior_nms": "No",
+        "candidate/history/lai_indication_choice.v1/h_product_plan": "Yes",
+        "candidate/history/lai_indication_choice.v1/h_delivery_barriers": "Absent",
+        "candidate/history/lai_indication_choice.v1/h_lai_treatment_status": "Considering"
+      },
+      "expected_for_review": {
+        "status": "execute",
+        "gate": "true",
+        "applicability": "gate == 'true'",
+        "pathway_review": "RespectPreferenceReviewAlternatives",
+        "product_selection": null
+      },
+      "note": "Candidate review expectation: explicit DeclinesLAI is a known decline that still executes with preference-respecting review, never coerced; no product selection."
+    },
+    {
+      "id": "gate-false-not-applicable",
+      "inputs": {
+        "candidate/history/lai_indication_choice.v1/h_schizophrenia_established": "No",
+        "candidate/history/lai_indication_choice.v1/h_lai_preference": "PrefersLAI",
+        "candidate/history/lai_indication_choice.v1/h_adherence_history": "Poor",
+        "candidate/history/lai_indication_choice.v1/h_discussion_context": "Absent",
+        "candidate/history/lai_indication_choice.v1/h_oral_experience": "Supported",
+        "candidate/history/lai_indication_choice.v1/h_prior_nms": "No",
+        "candidate/history/lai_indication_choice.v1/h_product_plan": "Yes",
+        "candidate/history/lai_indication_choice.v1/h_delivery_barriers": "Absent",
+        "candidate/history/lai_indication_choice.v1/h_lai_treatment_status": "Considering"
+      },
+      "expected_for_review": {
+        "status": "not_applicable",
+        "gate": "false",
+        "applicability": "gate == 'true'",
+        "reason": "schizophrenia explicitly not established",
+        "not_a_negative_posterior": true,
+        "posterior_claim": null
+      },
+      "note": "Candidate review expectation: gate false records not_applicable with reason and claims no posterior; never a negative treatment finding."
+    },
+    {
+      "id": "gate-unknown-needs-clarification",
+      "inputs": {
+        "candidate/history/lai_indication_choice.v1/h_schizophrenia_established": "Yes",
+        "candidate/history/lai_indication_choice.v1/h_lai_preference": "unknown",
+        "candidate/history/lai_indication_choice.v1/h_adherence_history": "Poor",
+        "candidate/history/lai_indication_choice.v1/h_discussion_context": "Absent",
+        "candidate/history/lai_indication_choice.v1/h_oral_experience": "Supported",
+        "candidate/history/lai_indication_choice.v1/h_prior_nms": "No",
+        "candidate/history/lai_indication_choice.v1/h_product_plan": "Yes",
+        "candidate/history/lai_indication_choice.v1/h_delivery_barriers": "Absent",
+        "candidate/history/lai_indication_choice.v1/h_lai_treatment_status": "Considering"
+      },
+      "expected_for_review": {
+        "status": "needs_clarification",
+        "gate": "unknown",
+        "applicability": "gate == 'true'",
+        "reason": "required preference unknown"
+      },
+      "note": "Candidate review expectation: unknown required preference pauses before estimation; an absent or undecided discussion is never coerced to PrefersOral or DeclinesLAI."
+    },
+    {
+      "id": "gate-missing-needs-clarification",
+      "inputs": {
+        "candidate/history/lai_indication_choice.v1/h_schizophrenia_established": "Yes",
+        "candidate/history/lai_indication_choice.v1/h_lai_preference": "PrefersLAI",
+        "candidate/history/lai_indication_choice.v1/h_discussion_context": "Absent",
+        "candidate/history/lai_indication_choice.v1/h_oral_experience": "Supported",
+        "candidate/history/lai_indication_choice.v1/h_prior_nms": "No",
+        "candidate/history/lai_indication_choice.v1/h_product_plan": "Yes",
+        "candidate/history/lai_indication_choice.v1/h_delivery_barriers": "Absent",
+        "candidate/history/lai_indication_choice.v1/h_lai_treatment_status": "Considering"
+      },
+      "expected_for_review": {
+        "status": "needs_clarification",
+        "gate": "unknown",
+        "applicability": "gate == 'true'",
+        "reason": "required adherence input missing"
+      },
+      "note": "Candidate review expectation: missing required input pauses; a missing adherence finding is never mapped to Adequate."
+    },
+    {
+      "id": "gate-conflict-needs-clarification",
+      "inputs": {
+        "candidate/history/lai_indication_choice.v1/h_schizophrenia_established": [
+          "Yes",
+          "No"
+        ],
+        "candidate/history/lai_indication_choice.v1/h_lai_preference": "PrefersLAI",
+        "candidate/history/lai_indication_choice.v1/h_adherence_history": "Poor",
+        "candidate/history/lai_indication_choice.v1/h_discussion_context": "Absent",
+        "candidate/history/lai_indication_choice.v1/h_oral_experience": "Supported",
+        "candidate/history/lai_indication_choice.v1/h_prior_nms": "No",
+        "candidate/history/lai_indication_choice.v1/h_product_plan": "Yes",
+        "candidate/history/lai_indication_choice.v1/h_delivery_barriers": "Absent",
+        "candidate/history/lai_indication_choice.v1/h_lai_treatment_status": "Considering"
+      },
+      "expected_for_review": {
+        "status": "needs_clarification",
+        "gate": "unknown",
+        "applicability": "gate == 'true'",
+        "reason": "conflicting schizophrenia inputs"
+      },
+      "note": "Candidate review expectation: conflicting required inputs pause; conflict never resolves by choosing one value."
+    }
+  ]
+}

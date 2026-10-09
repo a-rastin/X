@@ -1,0 +1,227 @@
+{
+  "reviewer": "owner",
+  "decision": "approved",
+  "date": "2026-10-09",
+  "source_hashes": {
+    "project-documents/bayesian-networks/BN-10.xml": "b18db707328c793a9b8c586ea9bba277ee12c4283fb604e42f5b3d311994ce80",
+    "project-documents/medical-documents/guideline/STATEMENT-10.md": "3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827",
+    "content/history/history.v1.json": "01be359400834e2f047c9e9c9eaf7a25a4167949707eb1b14e6a8f57db6bcd80",
+    "network.xml": "e0bc286f7402c5e73905830b1ae9ee88ca6d9d911500a99e7b8e9d67d315a806",
+    "content/history/history.lai_indication_choice.v1.json": "8139ff7a6489f3e62c88921df256aed1b96e349b9665bffe896380acf03e4717"
+  },
+  "assumptions": [
+    "No clinical model or history definition approved.",
+    "LAI discussion/review scope preserved per the 2026-10-04 owner decision; no specific product selection and no product-choice contract.",
+    "All 14 BN-10 distributions were missing and are synthetic uniform references here; complete clinical table provenance remains a release blocker."
+  ],
+  "source_comparison": "See source_diff and source_comparison_details: all 14 BN-10 variables, states and ordered proposed_parent edges retained with no removals, renames or state extensions; 9 roots plus 5 outputs materialize every proposed_parent as an ordered GIVEN. Original BN SHA pinned and untouched.",
+  "source_comparison_details": {
+    "retained_variables": [
+      "SchizophreniaEstablished",
+      "LAIPreference",
+      "AdherenceHistory",
+      "AdditionalDiscussionContext",
+      "SameDrugOralExperience",
+      "PriorNeurolepticMalignantSyndrome",
+      "ProductPlanReviewed",
+      "DeliveryBarriers",
+      "LAITreatmentStatus",
+      "LAIGuidelineCriterion",
+      "DiscussionOpportunity",
+      "ClinicalReviewFocus",
+      "DeliveryReviewFocus",
+      "LAIReviewPathway"
+    ],
+    "retained_states": {
+      "SchizophreniaEstablished": [
+        "Yes",
+        "No"
+      ],
+      "LAIPreference": [
+        "PrefersLAI",
+        "PrefersOral",
+        "Undecided",
+        "DeclinesLAI"
+      ],
+      "AdherenceHistory": [
+        "Adequate",
+        "Poor",
+        "Uncertain"
+      ],
+      "AdditionalDiscussionContext": [
+        "Present",
+        "Absent"
+      ],
+      "SameDrugOralExperience": [
+        "Supported",
+        "Concern",
+        "NotEstablished"
+      ],
+      "PriorNeurolepticMalignantSyndrome": [
+        "Yes",
+        "No"
+      ],
+      "ProductPlanReviewed": [
+        "Yes",
+        "No"
+      ],
+      "DeliveryBarriers": [
+        "Present",
+        "Absent"
+      ],
+      "LAITreatmentStatus": [
+        "Considering",
+        "Current",
+        "Previous"
+      ],
+      "LAIGuidelineCriterion": [
+        "Present",
+        "NotEstablished"
+      ],
+      "DiscussionOpportunity": [
+        "OutsideScope",
+        "GuidelineCriterion",
+        "ContextualDiscussion",
+        "RoutineEducation"
+      ],
+      "ClinicalReviewFocus": [
+        "NMSCaution",
+        "ReviewEfficacyOrTolerabilityConcern",
+        "EstablishCandidateEvidence",
+        "CandidateEvidenceReviewed"
+      ],
+      "DeliveryReviewFocus": [
+        "ReviewProductPlanAndBarriers",
+        "ReviewProductPlan",
+        "AddressBarriers",
+        "ReviewItemsDocumented"
+      ],
+      "LAIReviewPathway": [
+        "OutsideScope",
+        "RespectPreferenceReviewAlternatives",
+        "ReviewCurrentLAITreatment",
+        "IndividualizedPriorLAIReview",
+        "DiscussLAIOption",
+        "ConsiderContextualDiscussion",
+        "OfferRoutineEducation"
+      ]
+    },
+    "retained_edges": [
+      [
+        "SchizophreniaEstablished",
+        "LAIGuidelineCriterion"
+      ],
+      [
+        "LAIPreference",
+        "LAIGuidelineCriterion"
+      ],
+      [
+        "AdherenceHistory",
+        "LAIGuidelineCriterion"
+      ],
+      [
+        "SchizophreniaEstablished",
+        "DiscussionOpportunity"
+      ],
+      [
+        "LAIGuidelineCriterion",
+        "DiscussionOpportunity"
+      ],
+      [
+        "AdditionalDiscussionContext",
+        "DiscussionOpportunity"
+      ],
+      [
+        "PriorNeurolepticMalignantSyndrome",
+        "ClinicalReviewFocus"
+      ],
+      [
+        "SameDrugOralExperience",
+        "ClinicalReviewFocus"
+      ],
+      [
+        "ProductPlanReviewed",
+        "DeliveryReviewFocus"
+      ],
+      [
+        "DeliveryBarriers",
+        "DeliveryReviewFocus"
+      ],
+      [
+        "DiscussionOpportunity",
+        "LAIReviewPathway"
+      ],
+      [
+        "LAIPreference",
+        "LAIReviewPathway"
+      ],
+      [
+        "LAITreatmentStatus",
+        "LAIReviewPathway"
+      ]
+    ],
+    "removed_nodes": [],
+    "removed_edges": [],
+    "renamed": {},
+    "materialized_proposed_parents": true,
+    "state_extensions": {},
+    "bn_parameter_inventory": "14 run-specific distributions to supply; 0 editable source-lookup examples supplied; all awaiting_experiment_cpt in BN-10"
+  },
+  "explicit_graph": "Fixed 14-node nature-only graph in BN-10 order; source_comparison_details lists every retained ordered parent. All proposed_parent metadata is materialized as GIVENs in declared order. Edges are modeler-synthesized review candidates, not established causal facts.",
+  "reference_table_provenance": "BN-10 supplies zero fixed tables; all 14 distributions were awaiting_experiment_cpt. Draft network.xml holds explicitly synthetic uniform references (roots 0.5/0.5, 0.25 x4 or 0.33333333 x2 plus 0.33333334, outputs uniform per row) with no source lookup to audit. The numerical fixture CPTs are independent synthetic mathematical references with worked marginals, not source-backed clinical probabilities; complete clinical table provenance and calibration remain release blockers.",
+  "estimation_instructions": "prompt.txt requires all CPTs including roots, percentage strings, fixed order and empty evidence, with discussion/review scope, preference/adherence/exposure distinctions and no product selection or regimen fields.",
+  "result_mapping": "template.json defines candidate state-specific review language for all 5 queried outputs (21 branches) without product selection; every distribution remains visible. No threshold, posterior ranking or automatic treatment choice exists. Clinical branch selection and rendering remain S45 and owner review.",
+  "numerical_examples": "examples.json contains one complete independently worked 14-node mathematical reference: Guideline Present 0.5958, Discussion 0.172126/0.432774/0.177336/0.217764 with an ordered-parent transpose guard, Clinical 0.155/0.268/0.2085/0.3685, Delivery 0.268/0.352/0.172/0.208 with a swapped-parents 0.352/0.172 guard, Pathway 0.172126/0.0649161/0.2483622/0.1655748/0.1514709/0.088668/0.108882 with LAIPreference rows duplicated for verifiability. Two opposing projections of the same CPT yield identical posteriors, proving no clamping. This validates math and engineering only; clinical expected_for_review cases remain unapproved.",
+  "clinical_examples": "examples.json contains 6 clinical review candidates: gate true standard, gate true with explicit DeclinesLAI preference-respecting review, gate false not_applicable with not_a_negative_posterior, gate unknown, gate missing and gate conflict needs_clarification. These are proposed gate, preference, exposure and wording expectations, not self-validating clinical tests or implemented runtime claims.",
+  "admission_measurements": "Measured 14 nature nodes, 99 rows, 479 cells, 11051 compact CPT payload bytes, 26379 network XML bytes and 23151 effective XML bytes. Focused 5-test suite passed in 3.70 s; full models 138 tests passed in 26.95 s. Full-graph 2 inference + 1 replay measured 3.594 s combined (infer 1.203 s + 1.226 s, replay 1.165 s) within 1e-6; opposing provenance never clamps. Memory ceiling and provider capacity remain unmeasured and clinical release is blocked awaiting review.",
+  "open_assumptions": "Candidate 9-field history with shared decision-making preference provenance, gate true/false/unknown definitions, undecided/uncertain/not-established meanings, full clinical CPT provenance and final wording all require review before release. History v1, runtime projections and readiness (S40) and rendering (S45) remain unchanged.",
+  "source_diff": {
+    "removed_nodes": [],
+    "removed_edges": [],
+    "renamed": {},
+    "materialized_proposed_parents": true,
+    "state_extensions": {},
+    "retained_variables": [
+      "SchizophreniaEstablished",
+      "LAIPreference",
+      "AdherenceHistory",
+      "AdditionalDiscussionContext",
+      "SameDrugOralExperience",
+      "PriorNeurolepticMalignantSyndrome",
+      "ProductPlanReviewed",
+      "DeliveryBarriers",
+      "LAITreatmentStatus",
+      "LAIGuidelineCriterion",
+      "DiscussionOpportunity",
+      "ClinicalReviewFocus",
+      "DeliveryReviewFocus",
+      "LAIReviewPathway"
+    ]
+  },
+  "reference_table_audit": {
+    "source_locator": "BN-10.xml parameter_inventory: 14 awaiting_experiment_cpt, 0 source-lookup",
+    "compared_cells": 0,
+    "mismatches": [],
+    "clinical_probability_claim": false,
+    "synthetic_reference_rows": "All 14 draft tables are explicitly synthetic uniform references; numerical fixture rows are independent mathematical references with worked marginals."
+  },
+  "reviewed": true,
+  "confirmed": true,
+  "owner_confirmation": {
+    "basis": "Explicit owner instruction to mark all eleven named question packages reviewed and confirmed.",
+    "date": "2026-10-09",
+    "scope": "Confirmation of the supplied experimental/educational question package and its documented assumptions; no new clinical validation, calibration, history/DDI release or workflow activation is asserted.",
+    "dossier_context": "Inherited draft-readiness and pending-review wording describes the predecessor review dossier. This dated owner confirmation supersedes its package-review-pending status; measured limitations and separate dependencies remain as documented.",
+    "reviewed_package_directory": "content/questions/lai_indication_choice",
+    "reviewed_version": "s30-v1",
+    "reviewed_package_hash": "d1c85f66e5388187ecea198207639dfe5473b1650ee9a6acb538fde806daeae7",
+    "reviewed_file_sha256": {
+      "manifest.json": "1c8bb9513d98c0eae7bd2ce057760267e19f63ca2726c09807ff30f958a7e122",
+      "network.xml": "e0bc286f7402c5e73905830b1ae9ee88ca6d9d911500a99e7b8e9d67d315a806",
+      "prompt.txt": "50847b701d950d95491998e2edcbb68178c56713ffb5e4a7e45d6bb4fdcbc561",
+      "template.json": "12f5d3daf5bab6d007fa98237992bf9de4fc4b56ee45c78539bfbc645dd710c3",
+      "examples.json": "b059128d720e2efb4b57761edcab835603a256ef41ba2bd35dc8fc2b420f016d",
+      "review.json": "c6bc925a99de0c08cb31b201506a57a7000646aeaab4df87fdef48e7f2459784"
+    }
+  }
+}

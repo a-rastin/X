@@ -1,0 +1,296 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<BIF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="0.3" xsi:noNamespaceSchemaLocation="schema.xml">
+  <NETWORK>
+    <NAME>BN_11_AcuteDystonia_Followup_Review_S36_v1</NAME>
+    <PROPERTY>clinical_question=How do follow-up factors affect experimental acute-dystonia review topics and tradeoffs?</PROPERTY>
+    <PROPERTY>question_key=acute_dystonia</PROPERTY>
+    <PROPERTY>workflow=followup</PROPERTY>
+    <PROPERTY>statement_id=11</PROPERTY>
+    <PROPERTY>recommendation_strength=1</PROPERTY>
+    <PROPERTY>evidence_quality=C</PROPERTY>
+    <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-11.md</PROPERTY>
+    <PROPERTY>source_locator=Statement 11, Anticholinergic Medications for Acute Dystonia; Implementation</PROPERTY>
+    <PROPERTY>source_sha256=626e38cff8c805b8fcb5ac7a9408cc717d9f96206003a6192a1b4d68465421eb</PROPERTY>
+    <PROPERTY>population=Adult schizophrenia follow-up scenarios with acute-dystonia review for experimentation</PROPERTY>
+    <PROPERTY>setting=Experimental and educational application</PROPERTY>
+    <PROPERTY>time_horizon=Current follow-up encounter synthesis of episode, exposure, onset, differential, safety and preference context</PROPERTY>
+    <PROPERTY>model_version=s36-v1</PROPERTY>
+    <PROPERTY>validation_status=AWAITING_REVIEW_SYNTHETIC_REFERENCE_CPTS</PROPERTY>
+    <PROPERTY>parameter_policy=All 12 nodes including roots require fresh complete percentage CPT estimation; XML tables are explicitly synthetic uniform mathematical references</PROPERTY>
+    <PROPERTY>edge_encoding=Ordered GIVEN elements materialize all BN-11 ordered proposed_parent properties; no edges removed or renamed</PROPERTY>
+    <PROPERTY>table_order=FOR outcome fastest; last GIVEN parent next; first GIVEN parent slowest</PROPERTY>
+    <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting context pauses for clarification; absent distinct from not assessed; no guessed negatives and no coercion to Absent</PROPERTY>
+    <PROPERTY>gate_policy=Gate true executes for present episode with known inputs; gate false records not_applicable for absent with reason and claims no posterior; unresolved or not_assessed pauses for clarification</PROPERTY>
+    <PROPERTY>followup_scope=F4 acute-dystonia follow-up review; effect present/absent/not_assessed gate with reviewed severity; no diagnosis from unreviewed Dx total</PROPERTY>
+    <PROPERTY>use_context=experimental_educational_awaiting_review</PROPERTY>
+    <PROPERTY>inference_mode=complete_CPT_estimation_empty_evidence</PROPERTY>
+    <PROPERTY>scope=Acute-dystonia applicability gate plus review-pathway, anticholinergic safety, continuation and regimen review; no invented thresholds or regimen fields</PROPERTY>
+    <PROPERTY>input_policy=Versioned candidate structured context only; full Acute Dystonia Dx Criteria item responses preserved when the complete reviewed source is available; no dose, route, frequency or active/stopped fields and no page notes</PROPERTY>
+    <PROPERTY>graph_semantics=Candidate retained BN-11 dependencies; all proposed_parent edges materialized in declared order</PROPERTY>
+    <PROPERTY>execution_contract=Complete fixed ordered CPTs and empty execution evidence; unapproved content cannot activate</PROPERTY>
+    <PROPERTY>source_policy=Pinned original BN-11 and STATEMENT-11 attribution required; Table 10 prescribing details are background only and not copied as activation metadata; Quality Measurement Consideration (not appropriate for quality measure or decision support) recorded; review not yet granted</PROPERTY>
+    <PROPERTY>parameter_inventory=12 complete reference distributions: 8 roots plus 4 outputs; all explicitly synthetic uniform references</PROPERTY>
+    <VARIABLE TYPE="nature">
+      <NAME>AirwayConcern</NAME>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>label=Airway Concern</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Airway concern for follow-up review: stridor or breathing difficulty suggesting laryngeal dystonia.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-11.md</PROPERTY>
+      <PROPERTY>source_locator=acute-dystonia-criteria.md Urgency and documentation; STATEMENT-11 Implementation (laryngospasm)</PROPERTY>
+      <PROPERTY>source_sha256=626e38cff8c805b8fcb5ac7a9408cc717d9f96206003a6192a1b4d68465421eb</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up airway, episode, exposure and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AcuteDystoniaEpisodePhase</NAME>
+      <OUTCOME>Active</OUTCOME>
+      <OUTCOME>Resolved</OUTCOME>
+      <OUTCOME>NoEpisode</OUTCOME>
+      <PROPERTY>label=Acute Dystonia Episode Phase</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Episode phase for follow-up review: active, resolved or no acute-dystonia episode.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-11.md</PROPERTY>
+      <PROPERTY>source_locator=acute-dystonia-criteria.md Diagnostic features; STATEMENT-11 Implementation (DSM-5 definition)</PROPERTY>
+      <PROPERTY>source_sha256=626e38cff8c805b8fcb5ac7a9408cc717d9f96206003a6192a1b4d68465421eb</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up episode, onset and differential facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=3</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AcuteDystoniaAntipsychoticAssociation</NAME>
+      <OUTCOME>Established</OUTCOME>
+      <OUTCOME>NotEstablished</OUTCOME>
+      <PROPERTY>label=Acute Dystonia Antipsychotic Association</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Association between the episode and antipsychotic exposure after alternative explanations are considered.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-11.md</PROPERTY>
+      <PROPERTY>source_locator=acute-dystonia-criteria.md Clinical assessment and exclusions; STATEMENT-11 Implementation (risk factors background only)</PROPERTY>
+      <PROPERTY>source_sha256=626e38cff8c805b8fcb5ac7a9408cc717d9f96206003a6192a1b4d68465421eb</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up medication timeline and exclusion facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AnticholinergicSafetyConcern</NAME>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>label=Anticholinergic Safety Concern</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Safety concern about anticholinergic effects for follow-up review.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-11.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-11 Harms (cognitive, urinary, bowel, ocular, cardiac, thermoregulatory, toxicity)</PROPERTY>
+      <PROPERTY>source_sha256=626e38cff8c805b8fcb5ac7a9408cc717d9f96206003a6192a1b4d68465421eb</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>OlderAgeVulnerability</NAME>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>label=Older Age Vulnerability</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Age-related vulnerability for follow-up review.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-11.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-11 Harms (greater in older individuals)</PROPERTY>
+      <PROPERTY>source_sha256=626e38cff8c805b8fcb5ac7a9408cc717d9f96206003a6192a1b4d68465421eb</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up vulnerability facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>OtherAnticholinergicBurden</NAME>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>label=Other Anticholinergic Burden</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Concomitant anticholinergic burden apart from target treatment for follow-up review.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-11.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-11 Harms (augmented with other anticholinergics)</PROPERTY>
+      <PROPERTY>source_sha256=626e38cff8c805b8fcb5ac7a9408cc717d9f96206003a6192a1b4d68465421eb</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up medication burden facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>RecurrencePreventionNeed</NAME>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>label=Recurrence Prevention Need</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Need for recurrence prevention after resolution for follow-up review.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-11.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-11 Implementation (continue oral anticholinergic until dose reduction or switch)</PROPERTY>
+      <PROPERTY>source_sha256=626e38cff8c805b8fcb5ac7a9408cc717d9f96206003a6192a1b4d68465421eb</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up prevention-need facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AnticholinergicContinuationPreferenceConcern</NAME>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>label=Anticholinergic Continuation Preference Concern</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Concern or preference against continued anticholinergic treatment for follow-up review.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-11.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-11 Patient Preferences (troubled by side effects; wish to avoid continuation)</PROPERTY>
+      <PROPERTY>source_sha256=626e38cff8c805b8fcb5ac7a9408cc717d9f96206003a6192a1b4d68465421eb</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up preference facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AcuteDystoniaReviewPathway</NAME>
+      <OUTCOME>UrgentAirwayAssessment</OUTCOME>
+      <OUTCOME>ReviewAcuteAnticholinergicTreatment</OUTCOME>
+      <OUTCOME>AssessEpisodeAndDifferential</OUTCOME>
+      <OUTCOME>PostResolutionReview</OUTCOME>
+      <OUTCOME>NoAcuteTreatmentRule</OUTCOME>
+      <PROPERTY>label=Acute Dystonia Review Pathway</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Candidate review pathway for follow-up review; distribution supplied per run instead of a fixed rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-11.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-11 Implementation; Harms; Patient Preferences; Balancing of Benefits and Harms</PROPERTY>
+      <PROPERTY>source_sha256=626e38cff8c805b8fcb5ac7a9408cc717d9f96206003a6192a1b4d68465421eb</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up review output</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=60</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AnticholinergicSafetyReviewFocus</NAME>
+      <OUTCOME>ReviewPatientSpecificConcernAndBurden</OUTCOME>
+      <OUTCOME>ReviewPatientSpecificConcern</OUTCOME>
+      <OUTCOME>ReviewAgeOrMedicationBurden</OUTCOME>
+      <OUTCOME>RoutineIndividualizedReview</OUTCOME>
+      <PROPERTY>label=Anticholinergic Safety Review Focus</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Candidate safety review focus; distribution supplied per run instead of a fixed rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-11.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-11 Implementation; Harms; Patient Preferences; Balancing of Benefits and Harms</PROPERTY>
+      <PROPERTY>source_sha256=626e38cff8c805b8fcb5ac7a9408cc717d9f96206003a6192a1b4d68465421eb</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up review output</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=32</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AcuteDystoniaAnticholinergicContinuationReview</NAME>
+      <OUTCOME>NotPostResolutionReview</OUTCOME>
+      <OUTCOME>EstablishEpisodeAssociation</OUTCOME>
+      <OUTCOME>ReviewNeedAndPatientConcerns</OUTCOME>
+      <OUTCOME>ConsiderShortTermPreventionReview</OUTCOME>
+      <OUTCOME>ReviewStoppingOrAvoidingUnneededContinuation</OUTCOME>
+      <PROPERTY>label=Acute Dystonia Anticholinergic Continuation Review</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Candidate continuation review; distribution supplied per run instead of a fixed rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-11.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-11 Implementation; Harms; Patient Preferences; Balancing of Benefits and Harms</PROPERTY>
+      <PROPERTY>source_sha256=626e38cff8c805b8fcb5ac7a9408cc717d9f96206003a6192a1b4d68465421eb</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up review output</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=120</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AcuteDystoniaAntipsychoticRegimenReview</NAME>
+      <OUTCOME>ReviewDoseOrAlternative</OUTCOME>
+      <OUTCOME>AssessMedicationAssociation</OUTCOME>
+      <OUTCOME>NoEpisodeSpecificReview</OUTCOME>
+      <PROPERTY>label=Acute Dystonia Antipsychotic Regimen Review</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Candidate regimen review; distribution supplied per run instead of a fixed rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-11.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-11 Implementation; Harms; Patient Preferences; Balancing of Benefits and Harms</PROPERTY>
+      <PROPERTY>source_sha256=626e38cff8c805b8fcb5ac7a9408cc717d9f96206003a6192a1b4d68465421eb</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up review output</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=18</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <DEFINITION>
+      <FOR>AirwayConcern</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>AcuteDystoniaEpisodePhase</FOR>
+      <TABLE>0.33333333 0.33333333 0.33333334</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>AcuteDystoniaAntipsychoticAssociation</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>AnticholinergicSafetyConcern</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>OlderAgeVulnerability</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>OtherAnticholinergicBurden</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>RecurrencePreventionNeed</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>AnticholinergicContinuationPreferenceConcern</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>AcuteDystoniaReviewPathway</FOR>
+      <GIVEN>AirwayConcern</GIVEN>
+      <GIVEN>AcuteDystoniaEpisodePhase</GIVEN>
+      <GIVEN>AcuteDystoniaAntipsychoticAssociation</GIVEN>
+      <TABLE>0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>AnticholinergicSafetyReviewFocus</FOR>
+      <GIVEN>AnticholinergicSafetyConcern</GIVEN>
+      <GIVEN>OlderAgeVulnerability</GIVEN>
+      <GIVEN>OtherAnticholinergicBurden</GIVEN>
+      <TABLE>0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>AcuteDystoniaAnticholinergicContinuationReview</FOR>
+      <GIVEN>AcuteDystoniaEpisodePhase</GIVEN>
+      <GIVEN>AcuteDystoniaAntipsychoticAssociation</GIVEN>
+      <GIVEN>RecurrencePreventionNeed</GIVEN>
+      <GIVEN>AnticholinergicContinuationPreferenceConcern</GIVEN>
+      <TABLE>0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>AcuteDystoniaAntipsychoticRegimenReview</FOR>
+      <GIVEN>AcuteDystoniaEpisodePhase</GIVEN>
+      <GIVEN>AcuteDystoniaAntipsychoticAssociation</GIVEN>
+      <TABLE>0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334</TABLE>
+    </DEFINITION>
+  </NETWORK>
+</BIF>

@@ -1,0 +1,458 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<BIF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="0.3" xsi:noNamespaceSchemaLocation="schema.xml">
+  <NETWORK>
+    <NAME>BN_13_Akathisia_Followup_Review_S34_v1</NAME>
+    <PROPERTY>clinical_question=How do follow-up factors affect experimental akathisia review topics and tradeoffs?</PROPERTY>
+    <PROPERTY>question_key=akathisia</PROPERTY>
+    <PROPERTY>workflow=followup</PROPERTY>
+    <PROPERTY>statement_id=13</PROPERTY>
+    <PROPERTY>recommendation_strength=2</PROPERTY>
+    <PROPERTY>evidence_quality=C</PROPERTY>
+    <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-13.md</PROPERTY>
+    <PROPERTY>source_locator=Statement 13, Treatments for Akathisia; Implementation</PROPERTY>
+    <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+    <PROPERTY>population=Adult schizophrenia follow-up scenarios with akathisia review for experimentation</PROPERTY>
+    <PROPERTY>setting=Experimental and educational application</PROPERTY>
+    <PROPERTY>time_horizon=Current follow-up encounter synthesis of restlessness, exposure, onset, differential and safety context</PROPERTY>
+    <PROPERTY>model_version=s34-v1</PROPERTY>
+    <PROPERTY>validation_status=AWAITING_REVIEW_SYNTHETIC_REFERENCE_CPTS</PROPERTY>
+    <PROPERTY>parameter_policy=All 20 nodes including roots require fresh complete percentage CPT estimation; XML tables are explicitly synthetic uniform mathematical references</PROPERTY>
+    <PROPERTY>edge_encoding=Ordered GIVEN elements materialize all BN-13 ordered proposed_parent properties; no edges removed or renamed</PROPERTY>
+    <PROPERTY>table_order=FOR outcome fastest; last GIVEN parent next; first GIVEN parent slowest</PROPERTY>
+    <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting context pauses for clarification; absent distinct from not assessed; no guessed negatives and no coercion to Absent</PROPERTY>
+    <PROPERTY>gate_policy=Gate true executes for present effect with known inputs; gate false records not_applicable for absent with reason and claims no posterior; unresolved or not_assessed pauses for clarification</PROPERTY>
+    <PROPERTY>followup_scope=F2 akathisia follow-up review; effect present/absent/not_assessed gate with reviewed severity; no diagnosis from unreviewed BARS total</PROPERTY>
+    <PROPERTY>use_context=experimental_educational_awaiting_review</PROPERTY>
+    <PROPERTY>inference_mode=complete_CPT_estimation_empty_evidence</PROPERTY>
+    <PROPERTY>scope=Akathisia applicability gate plus indication, regimen, adjunct, urgent, burden, benzodiazepine and propranolol safety review; no invented thresholds or regimen fields</PROPERTY>
+    <PROPERTY>input_policy=Versioned candidate structured context only; full BARS item responses preserved when the complete reviewed source is available; no dose, route, frequency or active/stopped fields and no page notes</PROPERTY>
+    <PROPERTY>graph_semantics=Candidate retained BN-13 dependencies; all proposed_parent edges materialized in declared order</PROPERTY>
+    <PROPERTY>execution_contract=Complete fixed ordered CPTs and empty execution evidence; unapproved content cannot activate</PROPERTY>
+    <PROPERTY>source_policy=Pinned original BN-13 and STATEMENT-13 attribution required; prescribing details are background only and not copied as activation metadata; review not yet granted</PROPERTY>
+    <PROPERTY>parameter_inventory=20 complete reference distributions: 13 roots plus 7 outputs; all explicitly synthetic uniform references</PROPERTY>
+    <VARIABLE TYPE="nature">
+      <NAME>AkathisiaAssessment</NAME>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <OUTCOME>Unresolved</OUTCOME>
+      <PROPERTY>label=Akathisia Assessment</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Akathisia assessment for follow-up review: present, absent or unresolved including subjective restlessness.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=akathisia-criteria.md Diagnostic features; STATEMENT-13 Implementation (subjective restlessness plus observed motor restlessness)</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up restlessness, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=3</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AkathisiaAntipsychoticAssociation</NAME>
+      <OUTCOME>Established</OUTCOME>
+      <OUTCOME>NotEstablished</OUTCOME>
+      <PROPERTY>label=Akathisia Antipsychotic Association</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Association between akathisia and antipsychotic exposure with alternative explanations considered.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-13 Implementation (antipsychotic-induced akathisia; assessment for other contributors)</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up restlessness, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>DoseReductionFeasible</NAME>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>label=Dose Reduction Feasible</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Feasibility of antipsychotic dose reduction as a review assumption.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-13 Implementation (dose reduction if feasible; weigh against psychotic worsening)</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up restlessness, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>LowerAkathisiaRiskSwitchFeasible</NAME>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>label=Lower Akathisia Risk Switch Feasible</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Feasibility of switching to a lower akathisia propensity agent as a review assumption.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-13 Implementation (change to lower likelihood agent; see Statement 4 Table 6)</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up restlessness, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>PsychoticWorseningConcern</NAME>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>label=Psychotic Worsening Concern</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Concern about psychotic worsening following a regimen change.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-13 Implementation and Balancing Harms (increase in psychotic symptoms; careful monitoring)</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up restlessness, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AkathisiaTreatmentPreferenceConcern</NAME>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>label=Akathisia Treatment Preference Concern</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Concern about akathisia treatment options or tradeoffs and patient preferences.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-13 Patient Preferences (balance of risks, benefits and personal preferences)</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up restlessness, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>UrgentSafetyConcern</NAME>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>label=Urgent Safety Concern</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Urgent safety concern in the follow-up scenario.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-13 Implementation (dysphoria and suicidal behaviors context; urgent clinician assessment)</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up restlessness, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>DistressOrAdherenceConcern</NAME>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>label=Distress Or Adherence Concern</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Distress or difficulty maintaining treatment associated with symptoms.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-13 Implementation (extremely distressing; frequent cause of nonadherence)</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up restlessness, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>BenzodiazepineRespiratoryConcern</NAME>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>label=Benzodiazepine Respiratory Concern</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Respiratory concern involving benzodiazepine exposure, alcohol, opioids, other sedatives or sleep apnea.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-13 Implementation (respiratory depression with high doses; alcohol, sedatives, opioids; sleep apnea)</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up restlessness, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>BenzodiazepineFallsCognitiveConcern</NAME>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>label=Benzodiazepine Falls Cognitive Concern</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Vulnerability to somnolence, cognitive effects, impaired coordination or falls.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-13 Implementation and Balancing Harms (somnolence, cognitive difficulties, coordination, falls)</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up restlessness, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>BenzodiazepineMisuseConcern</NAME>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>label=Benzodiazepine Misuse Concern</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Vulnerability to benzodiazepine misuse or substance use disorder.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-13 Implementation and Balancing Harms (higher amounts; sedative use disorder; alcohol/substance history)</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up restlessness, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>PropranololBloodPressureConcern</NAME>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>label=Propranolol Blood Pressure Concern</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Blood-pressure concern relevant to propranolol.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-13 Implementation and Balancing Harms (monitor blood pressure; lowering of blood pressure)</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up restlessness, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>PropranololExposureConcern</NAME>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>label=Propranolol Exposure Concern</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Interaction or food-related propranolol exposure concern.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-13 Implementation (protein-rich foods increase bioavailability; CYP1A2/2D6/2C19/3A4 interactions)</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up restlessness, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AkathisiaIndicationReview</NAME>
+      <OUTCOME>EstablishedCurrentAssociation</OUTCOME>
+      <OUTCOME>AssessDifferentialAndAssociation</OUTCOME>
+      <OUTCOME>NoCurrentTreatmentRule</OUTCOME>
+      <PROPERTY>label=Akathisia Indication Review</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for Akathisia Indication Review; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-13 Implementation (differential: psychomotor agitation; restlessness alone insufficient)</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up restlessness, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=18</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AkathisiaAntipsychoticRegimenReview</NAME>
+      <OUTCOME>ReviewDoseAndSwitch</OUTCOME>
+      <OUTCOME>ReviewDose</OUTCOME>
+      <OUTCOME>ReviewSwitch</OUTCOME>
+      <OUTCOME>ReviewConstraints</OUTCOME>
+      <OUTCOME>PrioritizePsychosisTradeoff</OUTCOME>
+      <OUTCOME>EstablishIndicationFirst</OUTCOME>
+      <PROPERTY>label=Akathisia Antipsychotic Regimen Review</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for Akathisia Antipsychotic Regimen Review; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-13 Implementation (dose reduction; switch; weigh against psychotic symptoms; monitoring)</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up restlessness, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=144</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AdjunctDiscussion</NAME>
+      <OUTCOME>DiscussOptionsAndPatientConcerns</OUTCOME>
+      <OUTCOME>DiscussOptionsAndPreferences</OUTCOME>
+      <OUTCOME>EstablishIndicationFirst</OUTCOME>
+      <PROPERTY>label=Adjunct Discussion</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for Adjunct Discussion; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-13 Implementation and Patient Preferences (benzodiazepine and beta-blocker options; individual balance)</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up restlessness, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=18</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>UrgentSafetyReview</NAME>
+      <OUTCOME>UrgentClinicianAssessment</OUTCOME>
+      <OUTCOME>RoutineSafetyAssessment</OUTCOME>
+      <PROPERTY>label=Urgent Safety Review</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for Urgent Safety Review; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-13 Implementation (dysphoria and suicidal behaviors; urgent assessment)</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up restlessness, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=4</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>BurdenReview</NAME>
+      <OUTCOME>ReviewDistressAndAdherence</OUTCOME>
+      <OUTCOME>AssessBurdenAndDifferential</OUTCOME>
+      <OUTCOME>RoutineBurdenAssessment</OUTCOME>
+      <PROPERTY>label=Burden Review</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for Burden Review; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-13 Implementation (distress and nonadherence review)</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up restlessness, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=18</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>BenzodiazepineSafetyReview</NAME>
+      <OUTCOME>EnhancedIndividualizedReview</OUTCOME>
+      <OUTCOME>RoutineIndividualizedReview</OUTCOME>
+      <PROPERTY>label=Benzodiazepine Safety Review</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for Benzodiazepine Safety Review; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-13 Implementation (benzodiazepine safety context; current labeling)</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up restlessness, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=16</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>PropranololSafetyReview</NAME>
+      <OUTCOME>EnhancedIndividualizedReview</OUTCOME>
+      <OUTCOME>RoutineIndividualizedReview</OUTCOME>
+      <PROPERTY>label=Propranolol Safety Review</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for Propranolol Safety Review; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-13.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-13 Implementation (propranolol safety context; current labeling)</PROPERTY>
+      <PROPERTY>source_sha256=59a0502ee13b5a971a7f4338b683533b561cb781aef3e21a2f7adb9dfa1392ff</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up restlessness, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=8</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <DEFINITION>
+      <FOR>AkathisiaAssessment</FOR>
+      <TABLE>0.33333333 0.33333333 0.33333334</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>AkathisiaAntipsychoticAssociation</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>DoseReductionFeasible</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>LowerAkathisiaRiskSwitchFeasible</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>PsychoticWorseningConcern</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>AkathisiaTreatmentPreferenceConcern</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>UrgentSafetyConcern</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>DistressOrAdherenceConcern</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>BenzodiazepineRespiratoryConcern</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>BenzodiazepineFallsCognitiveConcern</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>BenzodiazepineMisuseConcern</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>PropranololBloodPressureConcern</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>PropranololExposureConcern</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>AkathisiaIndicationReview</FOR>
+      <GIVEN>AkathisiaAssessment</GIVEN>
+      <GIVEN>AkathisiaAntipsychoticAssociation</GIVEN>
+      <TABLE>0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>AkathisiaAntipsychoticRegimenReview</FOR>
+      <GIVEN>AkathisiaIndicationReview</GIVEN>
+      <GIVEN>DoseReductionFeasible</GIVEN>
+      <GIVEN>LowerAkathisiaRiskSwitchFeasible</GIVEN>
+      <GIVEN>PsychoticWorseningConcern</GIVEN>
+      <TABLE>0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>AdjunctDiscussion</FOR>
+      <GIVEN>AkathisiaIndicationReview</GIVEN>
+      <GIVEN>AkathisiaTreatmentPreferenceConcern</GIVEN>
+      <TABLE>0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>UrgentSafetyReview</FOR>
+      <GIVEN>UrgentSafetyConcern</GIVEN>
+      <TABLE>0.5 0.5 0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>BurdenReview</FOR>
+      <GIVEN>AkathisiaIndicationReview</GIVEN>
+      <GIVEN>DistressOrAdherenceConcern</GIVEN>
+      <TABLE>0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>BenzodiazepineSafetyReview</FOR>
+      <GIVEN>BenzodiazepineRespiratoryConcern</GIVEN>
+      <GIVEN>BenzodiazepineFallsCognitiveConcern</GIVEN>
+      <GIVEN>BenzodiazepineMisuseConcern</GIVEN>
+      <TABLE>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>PropranololSafetyReview</FOR>
+      <GIVEN>PropranololBloodPressureConcern</GIVEN>
+      <GIVEN>PropranololExposureConcern</GIVEN>
+      <TABLE>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</TABLE>
+    </DEFINITION>
+  </NETWORK>
+</BIF>

@@ -1,0 +1,551 @@
+{
+  "schema_version": "question-package-v1",
+  "question_key": "aggression_clozapine",
+  "title": "Persistent aggression clozapine review",
+  "workflow": "registration",
+  "version": "s39-reviewed-v1",
+  "review_status": "approved",
+  "network_file": "network.xml",
+  "network_hash": "341fb155315276d6cd1028b32e681d622998122fb5503c4dcdff0df1092829cf",
+  "source_refs": [
+    "project-documents/bayesian-networks/BN-09.xml",
+    "project-documents/medical-documents/guideline/STATEMENT-09.md",
+    "content/assessments/panss.v1.json",
+    "content/history/history.aggression_clozapine.v1.json",
+    "content/history/history.v1.json"
+  ],
+  "declared_node_order": [
+    "SchizophreniaEstablished",
+    "SubstantialAggressionRisk",
+    "AggressionRiskPersistsDespiteOtherTreatments",
+    "UrgentSafetyConcern",
+    "AdherenceConcern",
+    "ModifiableAggressionRiskTargetsPresent",
+    "ClozapineTreatmentStatus",
+    "WillingToDiscussClozapine",
+    "ClozapineMonitoringPlanAvailable",
+    "ClozapineMedicalReviewCompleted",
+    "ClozapineAggressionRiskIndication",
+    "AggressionRiskTreatmentPlanReview",
+    "ClozapineDiscussionPreparation",
+    "AggressionRiskClozapineReviewPathway"
+  ],
+  "variables": [
+    {
+      "node_id": "SchizophreniaEstablished",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Yes",
+        "No"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "SubstantialAggressionRisk",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Yes",
+        "No"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "AggressionRiskPersistsDespiteOtherTreatments",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Yes",
+        "No"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "UrgentSafetyConcern",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Present",
+        "Absent"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "AdherenceConcern",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Yes",
+        "No"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "ModifiableAggressionRiskTargetsPresent",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Yes",
+        "No"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "ClozapineTreatmentStatus",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "NeverTreated",
+        "CurrentTreatment",
+        "PreviouslyTreated"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "WillingToDiscussClozapine",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Yes",
+        "No"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "ClozapineMonitoringPlanAvailable",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Yes",
+        "No"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "ClozapineMedicalReviewCompleted",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Yes",
+        "No"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "ClozapineAggressionRiskIndication",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Present",
+        "NotEstablished"
+      ],
+      "ordered_parents": [
+        "SchizophreniaEstablished",
+        "SubstantialAggressionRisk",
+        "AggressionRiskPersistsDespiteOtherTreatments"
+      ]
+    },
+    {
+      "node_id": "AggressionRiskTreatmentPlanReview",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "AdherenceAndRiskTargets",
+        "AdherenceReview",
+        "RiskTargetReview",
+        "NoAdditionalFlag"
+      ],
+      "ordered_parents": [
+        "AdherenceConcern",
+        "ModifiableAggressionRiskTargetsPresent"
+      ]
+    },
+    {
+      "node_id": "ClozapineDiscussionPreparation",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "AddressReviewNeeds",
+        "PreparedForDiscussion"
+      ],
+      "ordered_parents": [
+        "WillingToDiscussClozapine",
+        "ClozapineMonitoringPlanAvailable",
+        "ClozapineMedicalReviewCompleted"
+      ]
+    },
+    {
+      "node_id": "AggressionRiskClozapineReviewPathway",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "UrgentClinicalAssessment",
+        "ReviewCurrentClozapine",
+        "IndividualizedPriorClozapineReview",
+        "DiscussClozapine",
+        "DiscussClozapineAndAddressReviewNeeds",
+        "ReviewEvidenceAndOtherIndications"
+      ],
+      "ordered_parents": [
+        "UrgentSafetyConcern",
+        "ClozapineTreatmentStatus",
+        "ClozapineAggressionRiskIndication",
+        "ClozapineDiscussionPreparation"
+      ]
+    }
+  ],
+  "patient_mappings": [
+    {
+      "node_id": "SchizophreniaEstablished",
+      "allowed_source_paths": [
+        "candidate/history/aggression_clozapine.v1/h_schizophrenia_established"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "SubstantialAggressionRisk",
+      "allowed_source_paths": [
+        "candidate/history/aggression_clozapine.v1/h_substantial_aggression_risk"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "AggressionRiskPersistsDespiteOtherTreatments",
+      "allowed_source_paths": [
+        "candidate/history/aggression_clozapine.v1/h_persistence_despite_treatment"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "UrgentSafetyConcern",
+      "allowed_source_paths": [
+        "candidate/history/aggression_clozapine.v1/h_urgent_safety_concern"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "AdherenceConcern",
+      "allowed_source_paths": [
+        "candidate/history/aggression_clozapine.v1/h_adherence_concern"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "ModifiableAggressionRiskTargetsPresent",
+      "allowed_source_paths": [
+        "candidate/history/aggression_clozapine.v1/h_modifiable_targets"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "ClozapineTreatmentStatus",
+      "allowed_source_paths": [
+        "candidate/history/aggression_clozapine.v1/h_clozapine_treatment_status"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "WillingToDiscussClozapine",
+      "allowed_source_paths": [
+        "candidate/history/aggression_clozapine.v1/h_willing_to_discuss"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "ClozapineMonitoringPlanAvailable",
+      "allowed_source_paths": [
+        "candidate/history/aggression_clozapine.v1/h_monitoring_plan"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "ClozapineMedicalReviewCompleted",
+      "allowed_source_paths": [
+        "candidate/history/aggression_clozapine.v1/h_medical_review"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    }
+  ],
+  "applicability": {
+    "expression": "gate == 'true'",
+    "required_fields": [
+      "candidate/history/aggression_clozapine.v1/h_schizophrenia_established",
+      "candidate/history/aggression_clozapine.v1/h_substantial_aggression_risk",
+      "candidate/history/aggression_clozapine.v1/h_persistence_despite_treatment",
+      "candidate/history/aggression_clozapine.v1/h_urgent_safety_concern",
+      "candidate/history/aggression_clozapine.v1/h_adherence_concern",
+      "candidate/history/aggression_clozapine.v1/h_modifiable_targets",
+      "candidate/history/aggression_clozapine.v1/h_clozapine_treatment_status",
+      "candidate/history/aggression_clozapine.v1/h_willing_to_discuss",
+      "candidate/history/aggression_clozapine.v1/h_monitoring_plan",
+      "candidate/history/aggression_clozapine.v1/h_medical_review"
+    ],
+    "unknown_policy": "needs_clarification"
+  },
+  "cpt_contract": {
+    "nodes": [
+      {
+        "node_id": "SchizophreniaEstablished",
+        "parent_ids": [],
+        "states": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "node_id": "SubstantialAggressionRisk",
+        "parent_ids": [],
+        "states": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "node_id": "AggressionRiskPersistsDespiteOtherTreatments",
+        "parent_ids": [],
+        "states": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "node_id": "UrgentSafetyConcern",
+        "parent_ids": [],
+        "states": [
+          "Present",
+          "Absent"
+        ]
+      },
+      {
+        "node_id": "AdherenceConcern",
+        "parent_ids": [],
+        "states": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "node_id": "ModifiableAggressionRiskTargetsPresent",
+        "parent_ids": [],
+        "states": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "node_id": "ClozapineTreatmentStatus",
+        "parent_ids": [],
+        "states": [
+          "NeverTreated",
+          "CurrentTreatment",
+          "PreviouslyTreated"
+        ]
+      },
+      {
+        "node_id": "WillingToDiscussClozapine",
+        "parent_ids": [],
+        "states": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "node_id": "ClozapineMonitoringPlanAvailable",
+        "parent_ids": [],
+        "states": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "node_id": "ClozapineMedicalReviewCompleted",
+        "parent_ids": [],
+        "states": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "node_id": "ClozapineAggressionRiskIndication",
+        "parent_ids": [
+          "SchizophreniaEstablished",
+          "SubstantialAggressionRisk",
+          "AggressionRiskPersistsDespiteOtherTreatments"
+        ],
+        "states": [
+          "Present",
+          "NotEstablished"
+        ]
+      },
+      {
+        "node_id": "AggressionRiskTreatmentPlanReview",
+        "parent_ids": [
+          "AdherenceConcern",
+          "ModifiableAggressionRiskTargetsPresent"
+        ],
+        "states": [
+          "AdherenceAndRiskTargets",
+          "AdherenceReview",
+          "RiskTargetReview",
+          "NoAdditionalFlag"
+        ]
+      },
+      {
+        "node_id": "ClozapineDiscussionPreparation",
+        "parent_ids": [
+          "WillingToDiscussClozapine",
+          "ClozapineMonitoringPlanAvailable",
+          "ClozapineMedicalReviewCompleted"
+        ],
+        "states": [
+          "AddressReviewNeeds",
+          "PreparedForDiscussion"
+        ]
+      },
+      {
+        "node_id": "AggressionRiskClozapineReviewPathway",
+        "parent_ids": [
+          "UrgentSafetyConcern",
+          "ClozapineTreatmentStatus",
+          "ClozapineAggressionRiskIndication",
+          "ClozapineDiscussionPreparation"
+        ],
+        "states": [
+          "UrgentClinicalAssessment",
+          "ReviewCurrentClozapine",
+          "IndividualizedPriorClozapineReview",
+          "DiscussClozapine",
+          "DiscussClozapineAndAddressReviewNeeds",
+          "ReviewEvidenceAndOtherIndications"
+        ]
+      }
+    ]
+  },
+  "query_nodes": [
+    "ClozapineAggressionRiskIndication",
+    "AggressionRiskTreatmentPlanReview",
+    "ClozapineDiscussionPreparation",
+    "AggressionRiskClozapineReviewPathway"
+  ],
+  "execution_evidence": {},
+  "prompt_version": "s31-v1",
+  "template_version": "s39-reviewed-v1",
+  "history_definition": "content/history/history.aggression_clozapine.v1.json",
+  "reference_cpts_status": "Synthetic mathematical references only; all 14 BN-09 distributions were missing and remain uncalibrated with no source lookup; no clinical calibration or approval",
+  "missingness_contract": {
+    "required_source_paths": [
+      "candidate/history/aggression_clozapine.v1/h_schizophrenia_established",
+      "candidate/history/aggression_clozapine.v1/h_substantial_aggression_risk",
+      "candidate/history/aggression_clozapine.v1/h_persistence_despite_treatment",
+      "candidate/history/aggression_clozapine.v1/h_urgent_safety_concern",
+      "candidate/history/aggression_clozapine.v1/h_adherence_concern",
+      "candidate/history/aggression_clozapine.v1/h_modifiable_targets",
+      "candidate/history/aggression_clozapine.v1/h_clozapine_treatment_status",
+      "candidate/history/aggression_clozapine.v1/h_willing_to_discuss",
+      "candidate/history/aggression_clozapine.v1/h_monitoring_plan",
+      "candidate/history/aggression_clozapine.v1/h_medical_review"
+    ],
+    "required_unknown_values": [
+      "unknown",
+      "not_assessed"
+    ],
+    "required_unknown_policy": "needs_clarification",
+    "required_missing_policy": "needs_clarification",
+    "required_conflict_policy": "needs_clarification",
+    "gate_definition": "Gate true requires SchizophreniaEstablished Yes, SubstantialAggressionRisk Yes and AggressionRiskPersistsDespiteOtherTreatments Yes with all other required inputs known; gate false is any of those three explicitly No with no unknown/missing/conflict among required inputs; otherwise gate unknown.",
+    "false_gate": {
+      "status": "not_applicable",
+      "not_a_negative_posterior": true,
+      "posterior_claim": null
+    },
+    "unknown_gate": {
+      "status": "needs_clarification",
+      "pauses_before_estimation": true
+    },
+    "current_urgent": "UrgentSafetyConcern Present renders an urgent banner from saved structured inputs in parallel with review topics, independently of estimation latency; never a computed risk percentage.",
+    "hostility_rule": "A PANSS hostility item score alone never maps SubstantialAggressionRisk Yes; clinician synthesis with source periods and clinician-reported fields is required.",
+    "evidence": {}
+  },
+  "input_consistency_contract": {
+    "gate_inputs": "Schizophrenia, substantial-aggression synthesis and persistence define true/false/unknown; unknown, missing, not_assessed or conflicting required input pauses, never coerces to false.",
+    "urgent_inputs": "UrgentSafetyConcern comes from saved structured urgent inputs with encounter/window attribution; template banner does not wait for estimation.",
+    "hostility_provenance": "Substantial-aggression synthesis cites scenario-interval aggression observations with lifetime treatment context and clinician-reported fields at the current encounter; every positive synthesis carries timing, current-versus-historical status and determination outside the structured payload. A PANSS hostility item score alone never maps the gate.",
+    "history_review": "Candidate v1 definitions require owner review before release. No runtime form or projection added by S31.",
+    "missingness_scope": "These declarations are content proposals for the S40 projection/readiness implementation, not executed clinical runtime behavior."
+  },
+  "numerical_policy": {
+    "cpt_policy": "cpt-decimal-v1",
+    "evidence": {},
+    "comparison_tolerance": 1e-06,
+    "engine": {
+      "python": "3.12.14",
+      "pgmpy": "1.1.2",
+      "lxml": "6.1.3",
+      "float_dtype": "float64",
+      "elimination_order": "source_order"
+    }
+  },
+  "engine_configuration": {
+    "evidence": "empty",
+    "evidence_order": "given_order",
+    "float_dtype": "float64",
+    "elimination_order": "source_order",
+    "tie_break": "source_order"
+  },
+  "numerical_tolerances": {
+    "percentage_decimal_places": 6,
+    "units_for_100_percent": 100000000,
+    "row_total": "exact integer units; never normalize or repair",
+    "posterior_comparison_absolute": 1e-06
+  },
+  "resource_limits": {
+    "status": "Candidate engineering limits; existing inference limits preserved, provider capability not yet measured",
+    "max_network_xml_bytes": 1048576,
+    "max_effective_xml_bytes": 1048576,
+    "max_inference_nodes": 64,
+    "max_inference_cells": 131072,
+    "inference_timeout_seconds": 30,
+    "max_prompt_bytes": 65536,
+    "max_context_bytes": 65536,
+    "max_cpt_output_bytes": 524288,
+    "hard_memory_limit_bytes": null,
+    "memory_limitation": "Existing bounded child process/node/table limits do not establish an OS memory ceiling or bound every induced intermediate factor. No such memory admission claim is made.",
+    "overflow_policy": "Reject admission or fail explicitly; no truncation, approximation or incomplete-table fallback."
+  },
+  "applicability_truth_table": {
+    "true": "Gate true (schizophrenia Yes, substantial aggression Yes, persistence Yes, all other required inputs known) executes estimation with empty evidence; urgent Present still executes and adds a parallel urgent banner.",
+    "false": "Gate false (any of the three gate inputs explicitly No with no unknown/missing/conflict) records not_applicable with reason; claims no posterior and is never a negative risk finding.",
+    "unknown": "Gate unknown (any required input unknown, not_assessed, missing or conflicting) yields needs_clarification before estimation; never coerces uncertainty to false and never estimates."
+  }
+}

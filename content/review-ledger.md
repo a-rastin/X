@@ -2,8 +2,9 @@
 
 Documentation only. Tracks content requiring owner review: every question in plan.md §7.1 plus history/severity, DDI, and workflow bundles. Remaining section numbers are retained for existing references.
 
-- **Reviewer for §§2–7:** content owner. Drafting and release-policy decisions below were confirmed on 2026-10-04; no concrete package is approved. The resolved assessment item has been removed from this review ledger.
-- **Status values:** `draft` (not review-ready) / `awaiting_review` (dossier complete, owner decision pending). No concrete package below is approved.
+- **Reviewer for §§2–7:** content owner. All 11 concrete question packages in §§4–5 are **reviewed and confirmed / approved** by explicit owner instruction on 2026-10-09. The resolved assessment item has been removed from this review ledger.
+- **Status values:** `draft` (not review-ready) / `awaiting_review` (dossier complete, owner decision pending) / `approved` (explicit owner confirmation recorded).
+- **Current question approval records:** [review-confirmation.s39-v1.json](questions/review-confirmation.s39-v1.json) pins all 11 approved `s39-reviewed-v1` package directories, canonical package hashes, network hashes and six-file SHA-256 inventories. Each package has `reviewer: "owner"`, `decision: "approved"`, `reviewed: true`, `confirmed: true`, and `date: "2026-10-09"`. F6 derives from the corrected `s38-v2` package. Earlier package revisions and their hashes remain historical records. Draft-readiness and owner-question notes below describe the prior dossiers; their package-review-pending status is superseded by this confirmation. Separate history, DDI, bundle release and activation requirements are unchanged. See [S39.b](../project-documents/dev/progress/s39-b.md).
 - **Approval record shape for owner-reviewed packages in §§2–7** (per package `review.json`, plan.md §7.2): `{assumptions, reviewer: "owner", decision, date, source_hashes}`. A bare `reviewed=true` flag is insufficient (tasks.md S22).
 - **Medical and BN sources under `project-documents/medical-documents/` are never edited** for review; packages are new derived versions with pinned hashes.
 - Product rules reused here (empty evidence, all-CPT estimation incl. roots, full CPT review, exact-result acceptance) are confirmed per plan.md §§1.1, 9.1–9.2; stack/numerical/seam choices are proposals. No clinical thresholds are invented in this ledger.
@@ -30,7 +31,7 @@ Documentation only. Tracks content requiring owner review: every question in pla
 
 ## 4. Registration questions (5: R2, R4–R7)
 
-Common deliverables (tasks.md S27 and S29–S38): `content/questions/<key>/{manifest.json, network.xml, prompt.txt, template.json, examples.json, review.json}` covering plan.md §7.2 (CPT-context-only patient mappings, fixed empty-evidence execution, true/false/unknown gates, missing/conflict policy, complete CPTs incl. roots, reviewed reference-table provenance). Common status: `draft`, none approved. Prompts estimate only; templates use pinned reviewed mappings (no unreviewed largest-posterior treatment choice).
+Common deliverables (tasks.md S27 and S29–S38): `content/questions/<key>/{manifest.json, network.xml, prompt.txt, template.json, examples.json, review.json}` covering plan.md §7.2 (CPT-context-only patient mappings, fixed empty-evidence execution, true/false/unknown gates, missing/conflict policy, complete CPTs incl. roots, reviewed reference-table provenance). Current status: all five registration packages `approved` in their `s39-reviewed-v1` directories. Prompts estimate only; templates use pinned reviewed mappings (no unreviewed largest-posterior treatment choice).
 
 ### R2 `pharmacotherapy` (S27)
 
@@ -62,7 +63,7 @@ Common deliverables (tasks.md S27 and S29–S38): `content/questions/<key>/{mani
 
 ## 5. Follow-up questions F1–F6
 
-Each follow-up package uses the same Common deliverables + `review.json` approval shape as §4 (reviewer owner, decision, date, source hashes); status draft, none approved.
+Each follow-up package uses the same Common deliverables + `review.json` approval shape as §4 (reviewer owner, decision, date, source hashes); current status: all six follow-up packages `approved` in their `s39-reviewed-v1` directories.
 
 ### F1 `tardive_dyskinesia` (S33) — lead BN-14 (16 vars, 0 DEFINITIONs)
 

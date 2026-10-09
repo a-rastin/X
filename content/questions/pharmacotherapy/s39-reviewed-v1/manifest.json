@@ -1,0 +1,1041 @@
+{
+  "schema_version": "question-package-v1",
+  "question_key": "pharmacotherapy",
+  "title": "Established antipsychotic treatment-context review",
+  "workflow": "registration",
+  "version": "s39-reviewed-v1",
+  "review_status": "approved",
+  "network_file": "network.xml",
+  "network_hash": "937ddcd7a5d5477a098462bf1360972aa867bacf4715a9970ca8663b852bfc67",
+  "source_refs": [
+    "project-documents/bayesian-networks/BN-04.xml",
+    "project-documents/medical-documents/guideline/STATEMENT-04.md#table-6",
+    "content/history/history.pharmacotherapy.v2.json"
+  ],
+  "declared_node_order": [
+    "PriorTreatmentDifficulty",
+    "PreferenceBarrier",
+    "PhysicalVulnerability",
+    "SubstanceContribution",
+    "ExposureModifier",
+    "OralAntipsychoticMedication",
+    "TrialDuration",
+    "AdherenceDifficulty",
+    "EffectiveExposure",
+    "SymptomResponse",
+    "FunctionalBenefit",
+    "SignificantAntipsychoticSideEffects",
+    "UrgentSafetyConcern",
+    "MonitoringGap",
+    "ResponseReviewFlag",
+    "TolerabilityReviewFlag",
+    "SafetyAssessmentFlag",
+    "MonitoringReviewFlag",
+    "AkathisiaSourceCategory",
+    "ParkinsonismSourceCategory",
+    "DystoniaSourceCategory",
+    "TardiveDyskinesiaSourceCategory",
+    "HyperprolactinemiaSourceCategory",
+    "AnticholinergicEffectsSourceCategory",
+    "SedationSourceCategory",
+    "SeizuresSourceCategory",
+    "OrthostasisSourceCategory",
+    "QTProlongationSourceCategory",
+    "WeightGainSourceCategory",
+    "HyperlipidemiaSourceCategory",
+    "GlucoseAbnormalitiesSourceCategory"
+  ],
+  "variables": [
+    {
+      "node_id": "PriorTreatmentDifficulty",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Absent",
+        "Present"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "PreferenceBarrier",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Absent",
+        "Present"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "PhysicalVulnerability",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Absent",
+        "Present"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "SubstanceContribution",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Absent",
+        "Present"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "ExposureModifier",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "NoIdentifiedModifier",
+        "PossibleLowerExposure",
+        "PossibleHigherExposure",
+        "MixedModifiers"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "OralAntipsychoticMedication",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Chlorpromazine",
+        "Fluphenazine",
+        "Haloperidol",
+        "Loxapine",
+        "Molindone",
+        "Perphenazine",
+        "Pimozide",
+        "Thioridazine",
+        "Thiothixene",
+        "Trifluoperazine",
+        "Aripiprazole",
+        "Asenapine",
+        "Brexpiprazole",
+        "Cariprazine",
+        "Clozapine",
+        "Iloperidone",
+        "Lurasidone",
+        "Olanzapine",
+        "Paliperidone",
+        "Quetiapine",
+        "Risperidone",
+        "Ziprasidone",
+        "NoEstablishedTreatment"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "TrialDuration",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "BeforeResponseWindow",
+        "WithinResponseWindow",
+        "BeyondResponseWindow",
+        "NoEstablishedTreatment"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "AdherenceDifficulty",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Absent",
+        "Present"
+      ],
+      "ordered_parents": [
+        "PreferenceBarrier",
+        "PriorTreatmentDifficulty"
+      ]
+    },
+    {
+      "node_id": "EffectiveExposure",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Low",
+        "Reference",
+        "High",
+        "NotAssessable"
+      ],
+      "ordered_parents": [
+        "OralAntipsychoticMedication",
+        "AdherenceDifficulty",
+        "ExposureModifier"
+      ]
+    },
+    {
+      "node_id": "SymptomResponse",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Inadequate",
+        "Partial",
+        "Adequate",
+        "NotAssessable"
+      ],
+      "ordered_parents": [
+        "EffectiveExposure",
+        "TrialDuration",
+        "PriorTreatmentDifficulty",
+        "SubstanceContribution"
+      ]
+    },
+    {
+      "node_id": "FunctionalBenefit",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "NotMeaningful",
+        "Meaningful",
+        "NotAssessable"
+      ],
+      "ordered_parents": [
+        "SymptomResponse",
+        "PhysicalVulnerability"
+      ]
+    },
+    {
+      "node_id": "SignificantAntipsychoticSideEffects",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Absent",
+        "Present",
+        "NotAssessable"
+      ],
+      "ordered_parents": [
+        "OralAntipsychoticMedication",
+        "EffectiveExposure",
+        "PhysicalVulnerability",
+        "TrialDuration"
+      ]
+    },
+    {
+      "node_id": "UrgentSafetyConcern",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Absent",
+        "Present"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "MonitoringGap",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Absent",
+        "Present"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "ResponseReviewFlag",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "NotTriggered",
+        "Triggered",
+        "NotAssessable"
+      ],
+      "ordered_parents": [
+        "SymptomResponse"
+      ]
+    },
+    {
+      "node_id": "TolerabilityReviewFlag",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "NotTriggered",
+        "Triggered",
+        "NotAssessable"
+      ],
+      "ordered_parents": [
+        "SignificantAntipsychoticSideEffects",
+        "PreferenceBarrier"
+      ]
+    },
+    {
+      "node_id": "SafetyAssessmentFlag",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "NotTriggered",
+        "Triggered"
+      ],
+      "ordered_parents": [
+        "UrgentSafetyConcern"
+      ]
+    },
+    {
+      "node_id": "MonitoringReviewFlag",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "NotTriggered",
+        "Triggered"
+      ],
+      "ordered_parents": [
+        "MonitoringGap"
+      ]
+    },
+    {
+      "node_id": "AkathisiaSourceCategory",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Seldom",
+        "Sometimes",
+        "Often",
+        "NotApplicable"
+      ],
+      "ordered_parents": [
+        "OralAntipsychoticMedication"
+      ]
+    },
+    {
+      "node_id": "ParkinsonismSourceCategory",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Seldom",
+        "Sometimes",
+        "Often",
+        "NotApplicable"
+      ],
+      "ordered_parents": [
+        "OralAntipsychoticMedication"
+      ]
+    },
+    {
+      "node_id": "DystoniaSourceCategory",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Seldom",
+        "Sometimes",
+        "Often",
+        "NotApplicable"
+      ],
+      "ordered_parents": [
+        "OralAntipsychoticMedication"
+      ]
+    },
+    {
+      "node_id": "TardiveDyskinesiaSourceCategory",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Seldom",
+        "Sometimes",
+        "Often",
+        "NotApplicable"
+      ],
+      "ordered_parents": [
+        "OralAntipsychoticMedication"
+      ]
+    },
+    {
+      "node_id": "HyperprolactinemiaSourceCategory",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Seldom",
+        "Sometimes",
+        "Often",
+        "NotApplicable"
+      ],
+      "ordered_parents": [
+        "OralAntipsychoticMedication"
+      ]
+    },
+    {
+      "node_id": "AnticholinergicEffectsSourceCategory",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Seldom",
+        "Sometimes",
+        "Often",
+        "NotApplicable"
+      ],
+      "ordered_parents": [
+        "OralAntipsychoticMedication"
+      ]
+    },
+    {
+      "node_id": "SedationSourceCategory",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Seldom",
+        "Sometimes",
+        "Often",
+        "NotApplicable"
+      ],
+      "ordered_parents": [
+        "OralAntipsychoticMedication"
+      ]
+    },
+    {
+      "node_id": "SeizuresSourceCategory",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Seldom",
+        "Sometimes",
+        "Often",
+        "NotApplicable"
+      ],
+      "ordered_parents": [
+        "OralAntipsychoticMedication"
+      ]
+    },
+    {
+      "node_id": "OrthostasisSourceCategory",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Seldom",
+        "Sometimes",
+        "Often",
+        "NotApplicable"
+      ],
+      "ordered_parents": [
+        "OralAntipsychoticMedication"
+      ]
+    },
+    {
+      "node_id": "QTProlongationSourceCategory",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Seldom",
+        "Sometimes",
+        "Often",
+        "NotApplicable"
+      ],
+      "ordered_parents": [
+        "OralAntipsychoticMedication"
+      ]
+    },
+    {
+      "node_id": "WeightGainSourceCategory",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Seldom",
+        "Sometimes",
+        "Often",
+        "NotApplicable"
+      ],
+      "ordered_parents": [
+        "OralAntipsychoticMedication"
+      ]
+    },
+    {
+      "node_id": "HyperlipidemiaSourceCategory",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Seldom",
+        "Sometimes",
+        "Often",
+        "NotApplicable"
+      ],
+      "ordered_parents": [
+        "OralAntipsychoticMedication"
+      ]
+    },
+    {
+      "node_id": "GlucoseAbnormalitiesSourceCategory",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Seldom",
+        "Sometimes",
+        "Often",
+        "NotApplicable"
+      ],
+      "ordered_parents": [
+        "OralAntipsychoticMedication"
+      ]
+    }
+  ],
+  "patient_mappings": [
+    {
+      "node_id": "PriorTreatmentDifficulty",
+      "allowed_source_paths": [
+        "candidate/history/pharmacotherapy.v2/h_prior_treatment_difficulty"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "PreferenceBarrier",
+      "allowed_source_paths": [
+        "candidate/history/pharmacotherapy.v2/h_preference_barrier"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "PhysicalVulnerability",
+      "allowed_source_paths": [
+        "candidate/history/pharmacotherapy.v2/h_physical_vulnerability"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "SubstanceContribution",
+      "allowed_source_paths": [
+        "candidate/history/pharmacotherapy.v2/h_substance_contribution"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "ExposureModifier",
+      "allowed_source_paths": [
+        "candidate/history/pharmacotherapy.v2/h_exposure_modifier"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "OralAntipsychoticMedication",
+      "allowed_source_paths": [
+        "candidate/history/pharmacotherapy.v2/h_antipsychotic_treatment_context"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "TrialDuration",
+      "allowed_source_paths": [
+        "candidate/history/pharmacotherapy.v2/h_trial_duration_review"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "UrgentSafetyConcern",
+      "allowed_source_paths": [
+        "candidate/history/pharmacotherapy.v2/h_urgent_safety_concern"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "MonitoringGap",
+      "allowed_source_paths": [
+        "candidate/history/pharmacotherapy.v2/h_monitoring_gap"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    }
+  ],
+  "applicability": {
+    "expression": "true",
+    "required_fields": [
+      "candidate/history/pharmacotherapy.v2/h_prior_treatment_difficulty",
+      "candidate/history/pharmacotherapy.v2/h_preference_barrier",
+      "candidate/history/pharmacotherapy.v2/h_physical_vulnerability",
+      "candidate/history/pharmacotherapy.v2/h_substance_contribution",
+      "candidate/history/pharmacotherapy.v2/h_exposure_modifier",
+      "candidate/history/pharmacotherapy.v2/h_antipsychotic_treatment_context",
+      "candidate/history/pharmacotherapy.v2/h_trial_duration_review",
+      "candidate/history/pharmacotherapy.v2/h_urgent_safety_concern",
+      "candidate/history/pharmacotherapy.v2/h_monitoring_gap"
+    ],
+    "unknown_policy": "needs_clarification"
+  },
+  "cpt_contract": {
+    "nodes": [
+      {
+        "node_id": "PriorTreatmentDifficulty",
+        "parent_ids": [],
+        "states": [
+          "Absent",
+          "Present"
+        ]
+      },
+      {
+        "node_id": "PreferenceBarrier",
+        "parent_ids": [],
+        "states": [
+          "Absent",
+          "Present"
+        ]
+      },
+      {
+        "node_id": "PhysicalVulnerability",
+        "parent_ids": [],
+        "states": [
+          "Absent",
+          "Present"
+        ]
+      },
+      {
+        "node_id": "SubstanceContribution",
+        "parent_ids": [],
+        "states": [
+          "Absent",
+          "Present"
+        ]
+      },
+      {
+        "node_id": "ExposureModifier",
+        "parent_ids": [],
+        "states": [
+          "NoIdentifiedModifier",
+          "PossibleLowerExposure",
+          "PossibleHigherExposure",
+          "MixedModifiers"
+        ]
+      },
+      {
+        "node_id": "OralAntipsychoticMedication",
+        "parent_ids": [],
+        "states": [
+          "Chlorpromazine",
+          "Fluphenazine",
+          "Haloperidol",
+          "Loxapine",
+          "Molindone",
+          "Perphenazine",
+          "Pimozide",
+          "Thioridazine",
+          "Thiothixene",
+          "Trifluoperazine",
+          "Aripiprazole",
+          "Asenapine",
+          "Brexpiprazole",
+          "Cariprazine",
+          "Clozapine",
+          "Iloperidone",
+          "Lurasidone",
+          "Olanzapine",
+          "Paliperidone",
+          "Quetiapine",
+          "Risperidone",
+          "Ziprasidone",
+          "NoEstablishedTreatment"
+        ]
+      },
+      {
+        "node_id": "TrialDuration",
+        "parent_ids": [],
+        "states": [
+          "BeforeResponseWindow",
+          "WithinResponseWindow",
+          "BeyondResponseWindow",
+          "NoEstablishedTreatment"
+        ]
+      },
+      {
+        "node_id": "AdherenceDifficulty",
+        "parent_ids": [
+          "PreferenceBarrier",
+          "PriorTreatmentDifficulty"
+        ],
+        "states": [
+          "Absent",
+          "Present"
+        ]
+      },
+      {
+        "node_id": "EffectiveExposure",
+        "parent_ids": [
+          "OralAntipsychoticMedication",
+          "AdherenceDifficulty",
+          "ExposureModifier"
+        ],
+        "states": [
+          "Low",
+          "Reference",
+          "High",
+          "NotAssessable"
+        ]
+      },
+      {
+        "node_id": "SymptomResponse",
+        "parent_ids": [
+          "EffectiveExposure",
+          "TrialDuration",
+          "PriorTreatmentDifficulty",
+          "SubstanceContribution"
+        ],
+        "states": [
+          "Inadequate",
+          "Partial",
+          "Adequate",
+          "NotAssessable"
+        ]
+      },
+      {
+        "node_id": "FunctionalBenefit",
+        "parent_ids": [
+          "SymptomResponse",
+          "PhysicalVulnerability"
+        ],
+        "states": [
+          "NotMeaningful",
+          "Meaningful",
+          "NotAssessable"
+        ]
+      },
+      {
+        "node_id": "SignificantAntipsychoticSideEffects",
+        "parent_ids": [
+          "OralAntipsychoticMedication",
+          "EffectiveExposure",
+          "PhysicalVulnerability",
+          "TrialDuration"
+        ],
+        "states": [
+          "Absent",
+          "Present",
+          "NotAssessable"
+        ]
+      },
+      {
+        "node_id": "UrgentSafetyConcern",
+        "parent_ids": [],
+        "states": [
+          "Absent",
+          "Present"
+        ]
+      },
+      {
+        "node_id": "MonitoringGap",
+        "parent_ids": [],
+        "states": [
+          "Absent",
+          "Present"
+        ]
+      },
+      {
+        "node_id": "ResponseReviewFlag",
+        "parent_ids": [
+          "SymptomResponse"
+        ],
+        "states": [
+          "NotTriggered",
+          "Triggered",
+          "NotAssessable"
+        ]
+      },
+      {
+        "node_id": "TolerabilityReviewFlag",
+        "parent_ids": [
+          "SignificantAntipsychoticSideEffects",
+          "PreferenceBarrier"
+        ],
+        "states": [
+          "NotTriggered",
+          "Triggered",
+          "NotAssessable"
+        ]
+      },
+      {
+        "node_id": "SafetyAssessmentFlag",
+        "parent_ids": [
+          "UrgentSafetyConcern"
+        ],
+        "states": [
+          "NotTriggered",
+          "Triggered"
+        ]
+      },
+      {
+        "node_id": "MonitoringReviewFlag",
+        "parent_ids": [
+          "MonitoringGap"
+        ],
+        "states": [
+          "NotTriggered",
+          "Triggered"
+        ]
+      },
+      {
+        "node_id": "AkathisiaSourceCategory",
+        "parent_ids": [
+          "OralAntipsychoticMedication"
+        ],
+        "states": [
+          "Seldom",
+          "Sometimes",
+          "Often",
+          "NotApplicable"
+        ]
+      },
+      {
+        "node_id": "ParkinsonismSourceCategory",
+        "parent_ids": [
+          "OralAntipsychoticMedication"
+        ],
+        "states": [
+          "Seldom",
+          "Sometimes",
+          "Often",
+          "NotApplicable"
+        ]
+      },
+      {
+        "node_id": "DystoniaSourceCategory",
+        "parent_ids": [
+          "OralAntipsychoticMedication"
+        ],
+        "states": [
+          "Seldom",
+          "Sometimes",
+          "Often",
+          "NotApplicable"
+        ]
+      },
+      {
+        "node_id": "TardiveDyskinesiaSourceCategory",
+        "parent_ids": [
+          "OralAntipsychoticMedication"
+        ],
+        "states": [
+          "Seldom",
+          "Sometimes",
+          "Often",
+          "NotApplicable"
+        ]
+      },
+      {
+        "node_id": "HyperprolactinemiaSourceCategory",
+        "parent_ids": [
+          "OralAntipsychoticMedication"
+        ],
+        "states": [
+          "Seldom",
+          "Sometimes",
+          "Often",
+          "NotApplicable"
+        ]
+      },
+      {
+        "node_id": "AnticholinergicEffectsSourceCategory",
+        "parent_ids": [
+          "OralAntipsychoticMedication"
+        ],
+        "states": [
+          "Seldom",
+          "Sometimes",
+          "Often",
+          "NotApplicable"
+        ]
+      },
+      {
+        "node_id": "SedationSourceCategory",
+        "parent_ids": [
+          "OralAntipsychoticMedication"
+        ],
+        "states": [
+          "Seldom",
+          "Sometimes",
+          "Often",
+          "NotApplicable"
+        ]
+      },
+      {
+        "node_id": "SeizuresSourceCategory",
+        "parent_ids": [
+          "OralAntipsychoticMedication"
+        ],
+        "states": [
+          "Seldom",
+          "Sometimes",
+          "Often",
+          "NotApplicable"
+        ]
+      },
+      {
+        "node_id": "OrthostasisSourceCategory",
+        "parent_ids": [
+          "OralAntipsychoticMedication"
+        ],
+        "states": [
+          "Seldom",
+          "Sometimes",
+          "Often",
+          "NotApplicable"
+        ]
+      },
+      {
+        "node_id": "QTProlongationSourceCategory",
+        "parent_ids": [
+          "OralAntipsychoticMedication"
+        ],
+        "states": [
+          "Seldom",
+          "Sometimes",
+          "Often",
+          "NotApplicable"
+        ]
+      },
+      {
+        "node_id": "WeightGainSourceCategory",
+        "parent_ids": [
+          "OralAntipsychoticMedication"
+        ],
+        "states": [
+          "Seldom",
+          "Sometimes",
+          "Often",
+          "NotApplicable"
+        ]
+      },
+      {
+        "node_id": "HyperlipidemiaSourceCategory",
+        "parent_ids": [
+          "OralAntipsychoticMedication"
+        ],
+        "states": [
+          "Seldom",
+          "Sometimes",
+          "Often",
+          "NotApplicable"
+        ]
+      },
+      {
+        "node_id": "GlucoseAbnormalitiesSourceCategory",
+        "parent_ids": [
+          "OralAntipsychoticMedication"
+        ],
+        "states": [
+          "Seldom",
+          "Sometimes",
+          "Often",
+          "NotApplicable"
+        ]
+      }
+    ]
+  },
+  "query_nodes": [
+    "OralAntipsychoticMedication",
+    "SymptomResponse",
+    "FunctionalBenefit",
+    "SignificantAntipsychoticSideEffects",
+    "ResponseReviewFlag",
+    "TolerabilityReviewFlag",
+    "SafetyAssessmentFlag",
+    "MonitoringReviewFlag"
+  ],
+  "execution_evidence": {},
+  "prompt_version": "s27-v1",
+  "template_version": "s39-reviewed-v1",
+  "history_definition": "content/history/history.pharmacotherapy.v2.json",
+  "reference_cpts_status": "Synthetic mathematical examples only; source label rows retain Table-6 symbolic meanings; no clinical calibration or approval",
+  "missingness_contract": {
+    "required_source_paths": [
+      "candidate/history/pharmacotherapy.v2/h_prior_treatment_difficulty",
+      "candidate/history/pharmacotherapy.v2/h_preference_barrier",
+      "candidate/history/pharmacotherapy.v2/h_physical_vulnerability",
+      "candidate/history/pharmacotherapy.v2/h_substance_contribution",
+      "candidate/history/pharmacotherapy.v2/h_exposure_modifier",
+      "candidate/history/pharmacotherapy.v2/h_antipsychotic_treatment_context",
+      "candidate/history/pharmacotherapy.v2/h_trial_duration_review",
+      "candidate/history/pharmacotherapy.v2/h_urgent_safety_concern",
+      "candidate/history/pharmacotherapy.v2/h_monitoring_gap"
+    ],
+    "required_unknown_values": [
+      "unknown",
+      "not_assessed"
+    ],
+    "required_unknown_policy": "needs_clarification",
+    "required_missing_policy": "needs_clarification",
+    "required_conflict_policy": "needs_clarification",
+    "known_no_treatment": {
+      "applicability": "true",
+      "treatment_state": "NoEstablishedTreatment",
+      "duration_state": "NoEstablishedTreatment",
+      "outcome_state": "NotAssessable",
+      "lookup_state": "NotApplicable",
+      "automatic_medication_selection": false
+    },
+    "evidence": {}
+  },
+  "input_consistency_contract": {
+    "treatment_duration": "NoEstablishedTreatment medication context requires NoEstablishedTreatment duration, and conversely. Any mismatch is needs_clarification; sentinel never follows missing or empty medication inventory alone.",
+    "catalog_context": "One clinician-confirmed established antipsychotic reference category must match the reconciled candidate catalog concept. Multiple established antipsychotics, unsupported medication or unconfirmed association require clarification, never choose one automatically.",
+    "history_review": "Candidate v2 definitions require owner review before release. No runtime form or projection added by S27.",
+    "missingness_scope": "These declarations are content proposals for the S40 projection/readiness implementation, not executed clinical runtime behavior."
+  },
+  "numerical_policy": {
+    "cpt_policy": "cpt-decimal-v1",
+    "evidence": {},
+    "comparison_tolerance": 1e-06,
+    "engine": {
+      "python": "3.12.14",
+      "pgmpy": "1.1.2",
+      "lxml": "6.1.3",
+      "float_dtype": "float64",
+      "elimination_order": "source_order"
+    }
+  },
+  "engine_configuration": {
+    "evidence": "empty",
+    "evidence_order": "given_order",
+    "float_dtype": "float64",
+    "elimination_order": "source_order",
+    "tie_break": "source_order"
+  },
+  "numerical_tolerances": {
+    "percentage_decimal_places": 6,
+    "units_for_100_percent": 100000000,
+    "row_total": "exact integer units; never normalize or repair",
+    "posterior_comparison_absolute": 1e-06
+  },
+  "resource_limits": {
+    "status": "Candidate engineering limits; existing inference limits preserved, provider capability not yet measured",
+    "max_network_xml_bytes": 1048576,
+    "max_effective_xml_bytes": 1048576,
+    "max_inference_nodes": 64,
+    "max_inference_cells": 131072,
+    "inference_timeout_seconds": 30,
+    "max_prompt_bytes": 65536,
+    "max_context_bytes": 65536,
+    "max_cpt_output_bytes": 524288,
+    "hard_memory_limit_bytes": null,
+    "memory_limitation": "Existing bounded child process/node/table limits do not establish an OS memory ceiling or bound every induced intermediate factor. No such memory admission claim is made.",
+    "overflow_policy": "Reject admission or fail explicitly; no truncation, approximation or incomplete-table fallback."
+  },
+  "applicability_truth_table": {
+    "true": "Every registration encounter is applicable, including explicit no established treatment. Execution still requires clarified typed inputs and a reviewed release.",
+    "false": "Unreachable for a valid registration encounter under the owner scope. NoEstablishedTreatment must never become not_applicable. Requests outside the registration workflow are invalid workflow requests, not a clinical false gate.",
+    "unknown": "The universal registration gate itself does not depend on clinical findings. Unknown, missing, not-assessed or conflicting required context yields needs_clarification before estimation; never coerce uncertainty to false."
+  }
+}

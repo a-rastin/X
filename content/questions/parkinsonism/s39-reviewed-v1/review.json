@@ -1,0 +1,285 @@
+{
+  "admission_measurements": "Measured 20 nature nodes, 81 rows, 307 cells. Focused 6-test suite results are recorded in the S35 handoff; opposing provenance never clamps. Memory ceiling and provider capacity remain unmeasured and clinical release is blocked awaiting review.",
+  "assumptions": [
+    "No clinical model or history definition approved.",
+    "Effect present/absent/not_assessed is an explicit applicability input; an absent case is not_applicable with no posterior claim, never a negative finding or a fake negative review posterior; unresolved or not_assessed pauses for clarification.",
+    "All 20 BN-12 distributions were missing and are synthetic uniform references here; complete clinical table provenance remains a release blocker.",
+    "Full SAS item responses are measurement context only when the complete reviewed source is available; no etiology is inferred from an unreviewed SAS total or mean, the up-to-0.3 convention and the 0.7 screening proposal are review candidates only, and no universal mild/moderate/severe bands are created from historical thresholds; SAS complete-source approval and concrete item/completeness/severity/network definitions remain open.",
+    "Effect severity is an independent clinician-reviewed category, never derived from SAS total or mean bands; no treatment threshold is set here and no dose, route, frequency or active/stopped fields are set here.",
+    "Whether review outputs behave as deterministic rules or estimated tables is an open assumption for owner review; this draft uses estimated-table semantics without approval.",
+    "Fever, altered consciousness, autonomic instability or severe generalized rigidity requires urgent NMS evaluation rather than attribution to uncomplicated parkinsonism; the parallel urgent banner comes from saved structured inputs independently of estimation latency and BN-12 carries no urgent network node by design.",
+    "Onset, medication-timeline, alternative-cause, tardive-differential, dose-feasibility, switch-feasibility, psychotic-worsening, preference, anticholinergic safety, amantadine safety, NMS-triage and prophylaxis operationalization require owner review."
+  ],
+  "clinical_examples": "examples.json contains 6 clinical review candidates: present applicable gate true, gate true with urgent NMS-triage Present, absent gate false not_applicable with not_a_negative_posterior and no posterior claim, unresolved/not_assessed unknown, missing alternative-cause context and gate conflict needs_clarification. These are proposed gate, alternative-context, SAS/severity provenance and wording expectations, not self-validating clinical tests or implemented runtime claims.",
+  "date": "2026-10-09",
+  "decision": "approved",
+  "estimation_instructions": "prompt.txt requires all CPTs including roots, percentage strings, fixed order and empty evidence, with F3 follow-up identity, present/absent/not_assessed gating, SAS measurement-context-only handling with no etiology from unreviewed total or mean and no universal severity bands beyond review-candidate conventions, onset and alternative-cause resolution through structured history only, NMS-triage parallel banner handling with no urgent network node, anticholinergic and amantadine safety inputs only as defined and collected, current-label consultation without Table 10 prescribing-detail copying, and prophylaxis no-routine-rule handling. Whether outputs behave as deterministic rules or estimated tables is an open assumption recorded here; the draft uses estimated-table semantics without approval.",
+  "explicit_graph": "Fixed 20-node nature-only graph in BN-12 order; source_comparison_details lists every retained ordered parent. All proposed_parent metadata is materialized as GIVENs in declared order. Edges are modeler-synthesized review candidates, not established causal facts. This F3 follow-up package has a distinct network identity for parkinsonism review with present/absent/not_assessed gating and a parallel urgent NMS-triage banner with no network node.",
+  "numerical_examples": "examples.json contains one complete independently worked 20-node mathematical reference: Indication 0.3/0.4/0.3, Regimen 0.042/0.06/0.09/0.09/0.018/0.7 with a Dose/Switch transpose guard (swapped gives ReviewDose 0.09 and ReviewSwitch 0.06), AnticholinergicSafety 0.349/0.651 with a SafetyConcern/OtherBurden transpose guard (swapped gives 0.284), Symptomatic 0.075/0.09/0.135/0.7 with a Tardive/Preference transpose guard (swapped gives TardiveDifferential 0.12), Continuation 0.225/0.225/0.55 with a Use Yes/No guard (swapped gives Lowest 0.275), Amantadine 0.24/0.06/0.7, Prophylaxis 0.125/0.5/0.375 with a Prior Yes/No guard (swapped gives Exceptional 0.375). Two opposing projections of the same CPT yield identical posteriors, proving no clamping. This validates math and engineering only; clinical expected_for_review cases remain unapproved.",
+  "open_assumptions": "Candidate 14-field history with effect, association, tardive-differential, dose-feasibility, switch-feasibility, psychotic-worsening, preference, older-age, burden, anticholinergic safety, current use, prior-significant, amantadine safety and parallel urgent NMS-triage provenance, gate true/false/unknown definitions with absent not_applicable and unresolved/not_assessed needs_clarification semantics, urgent-banner independence with no urgent network node, SAS measurement-context-only handling with complete-source gap and no etiology from total or mean, up-to-0.3 and 0.7 review-candidate threshold handling with no universal severity bands, severity without invented bands or treatment threshold, NMS-triage operationalization, deterministic-rule versus estimated-table output semantics, full clinical CPT provenance and final wording all require review before release. History v1, runtime projections and readiness (S40) and rendering (S45) remain unchanged.",
+  "reference_table_audit": {
+    "clinical_probability_claim": false,
+    "compared_cells": 0,
+    "mismatches": [],
+    "source_locator": "BN-12.xml parameter_inventory: 20 awaiting_experiment_cpt, 0 source-lookup",
+    "synthetic_reference_rows": "All 20 draft tables are explicitly synthetic uniform references; numerical fixture rows are independent mathematical references with worked marginals."
+  },
+  "reference_table_provenance": "BN-12 supplies zero fixed tables; all 20 distributions were awaiting_experiment_cpt. Draft network.xml holds explicitly synthetic uniform references (2-state 0.5/0.5, 3-state thirds, 4-state quarters, 6-state sixths) with no source lookup to audit. The numerical fixture CPTs are independent synthetic mathematical references with worked marginals, not source-backed clinical probabilities; complete clinical table provenance and calibration remain release blockers. Table 10 prescribing details are background only and no prescribing detail is copied as activation metadata.",
+  "result_mapping": "template.json defines candidate state-specific review language for all 7 queried outputs (24 branches) plus a parallel urgent NMS-triage banner from saved inputs; every distribution remains visible. No threshold, posterior ranking or automatic treatment choice exists. Clinical branch selection and rendering remain S45 and owner review.",
+  "reviewer": "owner",
+  "source_comparison": "See source_diff and source_comparison_details: all 20 BN-12 variables, states and ordered proposed_parent edges retained with no removals, renames or state extensions; 13 roots plus 7 outputs materialize every proposed_parent as an ordered GIVEN in declared BN order. Original BN SHA pinned and untouched; Table 10 prescribing details are background only and not copied as activation metadata.",
+  "source_comparison_details": {
+    "bn_parameter_inventory": "20 run-specific distributions to supply; 0 editable source-lookup examples supplied; all awaiting_experiment_cpt in BN-12",
+    "materialized_proposed_parents": true,
+    "removed_edges": [],
+    "removed_nodes": [],
+    "renamed": {},
+    "retained_edges": [
+      [
+        "ParkinsonismAssessment",
+        "ParkinsonismIndicationReview"
+      ],
+      [
+        "ParkinsonismAntipsychoticAssociation",
+        "ParkinsonismIndicationReview"
+      ],
+      [
+        "ParkinsonismIndicationReview",
+        "ParkinsonismAntipsychoticRegimenReview"
+      ],
+      [
+        "DoseReductionFeasible",
+        "ParkinsonismAntipsychoticRegimenReview"
+      ],
+      [
+        "LowerParkinsonismRiskSwitchFeasible",
+        "ParkinsonismAntipsychoticRegimenReview"
+      ],
+      [
+        "PsychoticWorseningConcern",
+        "ParkinsonismAntipsychoticRegimenReview"
+      ],
+      [
+        "AnticholinergicSafetyConcern",
+        "AnticholinergicSafetyReview"
+      ],
+      [
+        "OlderAgeVulnerability",
+        "AnticholinergicSafetyReview"
+      ],
+      [
+        "OtherAnticholinergicBurden",
+        "AnticholinergicSafetyReview"
+      ],
+      [
+        "ParkinsonismIndicationReview",
+        "SymptomaticMedicationReview"
+      ],
+      [
+        "TardiveDyskinesiaConcern",
+        "SymptomaticMedicationReview"
+      ],
+      [
+        "ParkinsonismMedicationPreferenceConcern",
+        "SymptomaticMedicationReview"
+      ],
+      [
+        "CurrentParkinsonismAnticholinergicUse",
+        "ParkinsonismAnticholinergicContinuationReview"
+      ],
+      [
+        "ParkinsonismAssessment",
+        "ParkinsonismAnticholinergicContinuationReview"
+      ],
+      [
+        "ParkinsonismIndicationReview",
+        "AmantadineReview"
+      ],
+      [
+        "AmantadineSafetyConcern",
+        "AmantadineReview"
+      ],
+      [
+        "ParkinsonismAssessment",
+        "ProphylaxisReview"
+      ],
+      [
+        "PriorSignificantParkinsonism",
+        "ProphylaxisReview"
+      ]
+    ],
+    "retained_states": {
+      "AmantadineReview": [
+        "DiscussAlternativeAndSafety",
+        "ReviewSpecificSafetyConcerns",
+        "EstablishIndicationFirst"
+      ],
+      "AmantadineSafetyConcern": [
+        "Present",
+        "Absent"
+      ],
+      "AnticholinergicSafetyConcern": [
+        "Present",
+        "Absent"
+      ],
+      "AnticholinergicSafetyReview": [
+        "EnhancedIndividualizedReview",
+        "RoutineIndividualizedReview"
+      ],
+      "CurrentParkinsonismAnticholinergicUse": [
+        "Yes",
+        "No"
+      ],
+      "DoseReductionFeasible": [
+        "Yes",
+        "No"
+      ],
+      "LowerParkinsonismRiskSwitchFeasible": [
+        "Yes",
+        "No"
+      ],
+      "OlderAgeVulnerability": [
+        "Present",
+        "Absent"
+      ],
+      "OtherAnticholinergicBurden": [
+        "Present",
+        "Absent"
+      ],
+      "ParkinsonismAnticholinergicContinuationReview": [
+        "ReviewLowestDoseAndDuration",
+        "ReassessNeedAndDifferential",
+        "NoCurrentContinuationRule"
+      ],
+      "ParkinsonismAntipsychoticAssociation": [
+        "Established",
+        "NotEstablished"
+      ],
+      "ParkinsonismAntipsychoticRegimenReview": [
+        "ReviewDoseAndSwitch",
+        "ReviewDose",
+        "ReviewSwitch",
+        "ReviewConstraints",
+        "PrioritizePsychosisTradeoff",
+        "EstablishIndicationFirst"
+      ],
+      "ParkinsonismAssessment": [
+        "Present",
+        "Absent",
+        "Unresolved"
+      ],
+      "ParkinsonismIndicationReview": [
+        "EstablishedCurrentAssociation",
+        "AssessDifferentialAndAssociation",
+        "NoCurrentTreatmentRule"
+      ],
+      "ParkinsonismMedicationPreferenceConcern": [
+        "Present",
+        "Absent"
+      ],
+      "PriorSignificantParkinsonism": [
+        "Yes",
+        "No"
+      ],
+      "ProphylaxisReview": [
+        "IndividualizedExceptionalRiskReview",
+        "NoRoutineProphylaxisRule",
+        "AddressCurrentAssessment"
+      ],
+      "PsychoticWorseningConcern": [
+        "Present",
+        "Absent"
+      ],
+      "SymptomaticMedicationReview": [
+        "ReviewTardiveDifferential",
+        "DiscussPatientConcerns",
+        "DiscussAnticholinergicOption",
+        "EstablishIndicationFirst"
+      ],
+      "TardiveDyskinesiaConcern": [
+        "Present",
+        "Absent"
+      ]
+    },
+    "retained_variables": [
+      "ParkinsonismAssessment",
+      "ParkinsonismAntipsychoticAssociation",
+      "TardiveDyskinesiaConcern",
+      "DoseReductionFeasible",
+      "LowerParkinsonismRiskSwitchFeasible",
+      "PsychoticWorseningConcern",
+      "ParkinsonismMedicationPreferenceConcern",
+      "OlderAgeVulnerability",
+      "OtherAnticholinergicBurden",
+      "AnticholinergicSafetyConcern",
+      "CurrentParkinsonismAnticholinergicUse",
+      "PriorSignificantParkinsonism",
+      "AmantadineSafetyConcern",
+      "ParkinsonismIndicationReview",
+      "ParkinsonismAntipsychoticRegimenReview",
+      "AnticholinergicSafetyReview",
+      "SymptomaticMedicationReview",
+      "ParkinsonismAnticholinergicContinuationReview",
+      "AmantadineReview",
+      "ProphylaxisReview"
+    ],
+    "state_extensions": {}
+  },
+  "source_diff": {
+    "materialized_proposed_parents": true,
+    "removed_edges": [],
+    "removed_nodes": [],
+    "renamed": {},
+    "retained_variables": [
+      "ParkinsonismAssessment",
+      "ParkinsonismAntipsychoticAssociation",
+      "TardiveDyskinesiaConcern",
+      "DoseReductionFeasible",
+      "LowerParkinsonismRiskSwitchFeasible",
+      "PsychoticWorseningConcern",
+      "ParkinsonismMedicationPreferenceConcern",
+      "OlderAgeVulnerability",
+      "OtherAnticholinergicBurden",
+      "AnticholinergicSafetyConcern",
+      "CurrentParkinsonismAnticholinergicUse",
+      "PriorSignificantParkinsonism",
+      "AmantadineSafetyConcern",
+      "ParkinsonismIndicationReview",
+      "ParkinsonismAntipsychoticRegimenReview",
+      "AnticholinergicSafetyReview",
+      "SymptomaticMedicationReview",
+      "ParkinsonismAnticholinergicContinuationReview",
+      "AmantadineReview",
+      "ProphylaxisReview"
+    ],
+    "state_extensions": {}
+  },
+  "source_hashes": {
+    "content/history/history.parkinsonism.v1.json": "3a02b7ea10fa46ec70002f48cd025d53895e329ce2b6b722e9728b3f23177743",
+    "content/history/history.v1.json": "01be359400834e2f047c9e9c9eaf7a25a4167949707eb1b14e6a8f57db6bcd80",
+    "content/history/sas.v1.json": "b0adb6a8fbd0c893d12afd32017f306a9ad7ef6c02d5412d7d31ac360b2b67e6",
+    "network.xml": "504e34c5e23967373292c43499e73dce8abe78fcd4d5c1986ddb018ed2730547",
+    "project-documents/bayesian-networks/BN-12.xml": "6998e4d305f5b2671c4fffc304a4fcd7c4bd932cacff4c4285d307f65ecfd058",
+    "project-documents/medical-documents/guideline/STATEMENT-12.md": "79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3",
+    "project-documents/medical-documents/parkinsonism-criteria.md": "d1b7fe5fcc820c54aebb06aba5372f47f65e910ddea7ae0adc0d7adbfad79994"
+  },
+  "reviewed": true,
+  "confirmed": true,
+  "owner_confirmation": {
+    "basis": "Explicit owner instruction to mark all eleven named question packages reviewed and confirmed.",
+    "date": "2026-10-09",
+    "scope": "Confirmation of the supplied experimental/educational question package and its documented assumptions; no new clinical validation, calibration, history/DDI release or workflow activation is asserted.",
+    "dossier_context": "Inherited draft-readiness and pending-review wording describes the predecessor review dossier. This dated owner confirmation supersedes its package-review-pending status; measured limitations and separate dependencies remain as documented.",
+    "reviewed_package_directory": "content/questions/parkinsonism",
+    "reviewed_version": "s35-v1",
+    "reviewed_package_hash": "e7147a45aee24c206efe633e130889b4b2fcc368a9095569d6f01e90b5e3de65",
+    "reviewed_file_sha256": {
+      "manifest.json": "660d4e612fa72a3b95794f70764b6e96eb2c0e50a6a2c06cfaf3f7a0abbb4d1f",
+      "network.xml": "504e34c5e23967373292c43499e73dce8abe78fcd4d5c1986ddb018ed2730547",
+      "prompt.txt": "9cf33a8ed56256def8c97737c036efbc12e7d83201c9b1caa3d65a77bb3b5c5a",
+      "template.json": "638bcb50e01ed6e191356bd0ec1be781c2d7d1e381fec9393d4cb6a72322d2a4",
+      "examples.json": "412b9401854709a49d05861650741ed0a0700e12537c146882dfeac114421896",
+      "review.json": "ef2cfc4da4b53cf49fa96a743a4df1d189e7bbd9448349c5afe3eeca737bacf3"
+    }
+  }
+}

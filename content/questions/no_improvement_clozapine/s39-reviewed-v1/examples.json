@@ -1,0 +1,2065 @@
+{
+  "numerical": [
+    {
+      "id": "full-graph-asymmetric-mathematical",
+      "classification": "Independent synthetic mathematical reference, not clinical calibration or clinical expected treatment",
+      "inputs": {},
+      "cpt_payload": {
+        "question_key": "no_improvement_clozapine",
+        "network_hash": "4a1863d996efddae0b8904d28868af90030e7f30be56a97666c1dfd165801435",
+        "tables": [
+          {
+            "node_id": "SchizophreniaEstablished",
+            "parent_ids": [],
+            "states": [
+              "Yes",
+              "No"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "85",
+                  "15"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "PersistentSignificantSymptoms",
+            "parent_ids": [],
+            "states": [
+              "Yes",
+              "No"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "65",
+                  "35"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "Trial1Assessment",
+            "parent_ids": [],
+            "states": [
+              "AdequateSuboptimalResponse",
+              "AdequateSatisfactoryResponse",
+              "InadequateExposure",
+              "TruncatedByIntolerance"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "45",
+                  "25",
+                  "20",
+                  "10"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "Trial2Assessment",
+            "parent_ids": [],
+            "states": [
+              "AdequateSuboptimalResponse",
+              "AdequateSatisfactoryResponse",
+              "InadequateExposure",
+              "TruncatedByIntolerance"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "35",
+                  "30",
+                  "25",
+                  "10"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "TrialsUseDifferentDrugs",
+            "parent_ids": [],
+            "states": [
+              "Yes",
+              "No"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "75",
+                  "25"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "SymptomsAtLeast12Weeks",
+            "parent_ids": [],
+            "states": [
+              "Yes",
+              "No"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "55",
+                  "45"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "ModerateSymptomsAndFunctionalImpairment",
+            "parent_ids": [],
+            "states": [
+              "Yes",
+              "No"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "60",
+                  "40"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "ClozapineTreatmentStatus",
+            "parent_ids": [],
+            "states": [
+              "NeverTreated",
+              "CurrentTreatment",
+              "PreviouslyTreated"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "45",
+                  "35",
+                  "20"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "WillingToDiscussClozapine",
+            "parent_ids": [],
+            "states": [
+              "Yes",
+              "No"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "65",
+                  "35"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "ClozapineMonitoringPlanAvailable",
+            "parent_ids": [],
+            "states": [
+              "Yes",
+              "No"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "55",
+                  "45"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "ClozapineInitiationDiscussionAppropriate",
+            "parent_ids": [],
+            "states": [
+              "Yes",
+              "No"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "75",
+                  "25"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "UrgentSafetyConcern",
+            "parent_ids": [],
+            "states": [
+              "Present",
+              "Absent"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "15",
+                  "85"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "ExposureInterpretationConcern",
+            "parent_ids": [],
+            "states": [
+              "Yes",
+              "No"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "25",
+                  "75"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "ClozapineTrialAdequate",
+            "parent_ids": [],
+            "states": [
+              "Yes",
+              "No"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "55",
+                  "45"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "ResidualSymptomsOnClozapine",
+            "parent_ids": [],
+            "states": [
+              "Yes",
+              "No"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "45",
+                  "55"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "TwoAdequateSuboptimalTrials",
+            "parent_ids": [
+              "Trial1Assessment",
+              "Trial2Assessment",
+              "TrialsUseDifferentDrugs"
+            ],
+            "states": [
+              "Yes",
+              "No"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "AdequateSuboptimalResponse",
+                  "AdequateSuboptimalResponse",
+                  "Yes"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AdequateSuboptimalResponse",
+                  "AdequateSuboptimalResponse",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AdequateSuboptimalResponse",
+                  "AdequateSatisfactoryResponse",
+                  "Yes"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AdequateSuboptimalResponse",
+                  "AdequateSatisfactoryResponse",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AdequateSuboptimalResponse",
+                  "InadequateExposure",
+                  "Yes"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AdequateSuboptimalResponse",
+                  "InadequateExposure",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AdequateSuboptimalResponse",
+                  "TruncatedByIntolerance",
+                  "Yes"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AdequateSuboptimalResponse",
+                  "TruncatedByIntolerance",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AdequateSatisfactoryResponse",
+                  "AdequateSuboptimalResponse",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AdequateSatisfactoryResponse",
+                  "AdequateSuboptimalResponse",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AdequateSatisfactoryResponse",
+                  "AdequateSatisfactoryResponse",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AdequateSatisfactoryResponse",
+                  "AdequateSatisfactoryResponse",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AdequateSatisfactoryResponse",
+                  "InadequateExposure",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AdequateSatisfactoryResponse",
+                  "InadequateExposure",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AdequateSatisfactoryResponse",
+                  "TruncatedByIntolerance",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AdequateSatisfactoryResponse",
+                  "TruncatedByIntolerance",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "InadequateExposure",
+                  "AdequateSuboptimalResponse",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "InadequateExposure",
+                  "AdequateSuboptimalResponse",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "InadequateExposure",
+                  "AdequateSatisfactoryResponse",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "InadequateExposure",
+                  "AdequateSatisfactoryResponse",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "InadequateExposure",
+                  "InadequateExposure",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "InadequateExposure",
+                  "InadequateExposure",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "InadequateExposure",
+                  "TruncatedByIntolerance",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "InadequateExposure",
+                  "TruncatedByIntolerance",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "TruncatedByIntolerance",
+                  "AdequateSuboptimalResponse",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "TruncatedByIntolerance",
+                  "AdequateSuboptimalResponse",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "TruncatedByIntolerance",
+                  "AdequateSatisfactoryResponse",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "TruncatedByIntolerance",
+                  "AdequateSatisfactoryResponse",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "TruncatedByIntolerance",
+                  "InadequateExposure",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "TruncatedByIntolerance",
+                  "InadequateExposure",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "TruncatedByIntolerance",
+                  "TruncatedByIntolerance",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "TruncatedByIntolerance",
+                  "TruncatedByIntolerance",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "TreatmentResistantSchizophreniaReview",
+            "parent_ids": [
+              "SchizophreniaEstablished",
+              "PersistentSignificantSymptoms",
+              "TwoAdequateSuboptimalTrials"
+            ],
+            "states": [
+              "Triggered",
+              "NotTriggered"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "Yes",
+                  "Yes",
+                  "Yes"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "Yes",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "No",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "No",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Yes",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Yes",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "No",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "No",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "AdditionalResearchFeatures",
+            "parent_ids": [
+              "SymptomsAtLeast12Weeks",
+              "ModerateSymptomsAndFunctionalImpairment"
+            ],
+            "states": [
+              "Present",
+              "NotAllPresent"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "Yes",
+                  "Yes"
+                ],
+                "percentages": [
+                  "90",
+                  "10"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "No"
+                ],
+                "percentages": [
+                  "20",
+                  "80"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Yes"
+                ],
+                "percentages": [
+                  "70",
+                  "30"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "No"
+                ],
+                "percentages": [
+                  "5",
+                  "95"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "PriorTrialAdequacyReview",
+            "parent_ids": [
+              "Trial1Assessment",
+              "Trial2Assessment"
+            ],
+            "states": [
+              "Triggered",
+              "NotTriggered"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "AdequateSuboptimalResponse",
+                  "AdequateSuboptimalResponse"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AdequateSuboptimalResponse",
+                  "AdequateSatisfactoryResponse"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AdequateSuboptimalResponse",
+                  "InadequateExposure"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AdequateSuboptimalResponse",
+                  "TruncatedByIntolerance"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AdequateSatisfactoryResponse",
+                  "AdequateSuboptimalResponse"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AdequateSatisfactoryResponse",
+                  "AdequateSatisfactoryResponse"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AdequateSatisfactoryResponse",
+                  "InadequateExposure"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AdequateSatisfactoryResponse",
+                  "TruncatedByIntolerance"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "InadequateExposure",
+                  "AdequateSuboptimalResponse"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "InadequateExposure",
+                  "AdequateSatisfactoryResponse"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "InadequateExposure",
+                  "InadequateExposure"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "InadequateExposure",
+                  "TruncatedByIntolerance"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "TruncatedByIntolerance",
+                  "AdequateSuboptimalResponse"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "TruncatedByIntolerance",
+                  "AdequateSatisfactoryResponse"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "TruncatedByIntolerance",
+                  "InadequateExposure"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "TruncatedByIntolerance",
+                  "TruncatedByIntolerance"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "ClozapineInitiationDiscussionPreparation",
+            "parent_ids": [
+              "WillingToDiscussClozapine",
+              "ClozapineMonitoringPlanAvailable",
+              "ClozapineInitiationDiscussionAppropriate"
+            ],
+            "states": [
+              "AddressBarriers",
+              "PreparedForDiscussion"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "Yes",
+                  "Yes",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "Yes",
+                  "No"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "No",
+                  "Yes"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "No",
+                  "No"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Yes",
+                  "Yes"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Yes",
+                  "No"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "No",
+                  "Yes"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "No",
+                  "No"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "TreatmentResistanceClozapineReviewPathway",
+            "parent_ids": [
+              "UrgentSafetyConcern",
+              "ClozapineTreatmentStatus",
+              "TreatmentResistantSchizophreniaReview",
+              "ClozapineInitiationDiscussionPreparation"
+            ],
+            "states": [
+              "UrgentClinicalAssessment",
+              "ReviewCurrentTreatment",
+              "IndividualizedPriorClozapineReview",
+              "ReviewEvidenceAndOtherIndications",
+              "DiscussClozapine",
+              "AddressDiscussionBarriers"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "Present",
+                  "NeverTreated",
+                  "Triggered",
+                  "AddressBarriers"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "NeverTreated",
+                  "Triggered",
+                  "PreparedForDiscussion"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "NeverTreated",
+                  "NotTriggered",
+                  "AddressBarriers"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "NeverTreated",
+                  "NotTriggered",
+                  "PreparedForDiscussion"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "CurrentTreatment",
+                  "Triggered",
+                  "AddressBarriers"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "CurrentTreatment",
+                  "Triggered",
+                  "PreparedForDiscussion"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "CurrentTreatment",
+                  "NotTriggered",
+                  "AddressBarriers"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "CurrentTreatment",
+                  "NotTriggered",
+                  "PreparedForDiscussion"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "PreviouslyTreated",
+                  "Triggered",
+                  "AddressBarriers"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "PreviouslyTreated",
+                  "Triggered",
+                  "PreparedForDiscussion"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "PreviouslyTreated",
+                  "NotTriggered",
+                  "AddressBarriers"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "PreviouslyTreated",
+                  "NotTriggered",
+                  "PreparedForDiscussion"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "NeverTreated",
+                  "Triggered",
+                  "AddressBarriers"
+                ],
+                "percentages": [
+                  "0",
+                  "35",
+                  "15",
+                  "30",
+                  "8",
+                  "12"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "NeverTreated",
+                  "Triggered",
+                  "PreparedForDiscussion"
+                ],
+                "percentages": [
+                  "0",
+                  "35",
+                  "15",
+                  "30",
+                  "8",
+                  "12"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "NeverTreated",
+                  "NotTriggered",
+                  "AddressBarriers"
+                ],
+                "percentages": [
+                  "0",
+                  "35",
+                  "15",
+                  "30",
+                  "8",
+                  "12"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "NeverTreated",
+                  "NotTriggered",
+                  "PreparedForDiscussion"
+                ],
+                "percentages": [
+                  "0",
+                  "35",
+                  "15",
+                  "30",
+                  "8",
+                  "12"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "CurrentTreatment",
+                  "Triggered",
+                  "AddressBarriers"
+                ],
+                "percentages": [
+                  "0",
+                  "35",
+                  "15",
+                  "30",
+                  "8",
+                  "12"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "CurrentTreatment",
+                  "Triggered",
+                  "PreparedForDiscussion"
+                ],
+                "percentages": [
+                  "0",
+                  "35",
+                  "15",
+                  "30",
+                  "8",
+                  "12"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "CurrentTreatment",
+                  "NotTriggered",
+                  "AddressBarriers"
+                ],
+                "percentages": [
+                  "0",
+                  "35",
+                  "15",
+                  "30",
+                  "8",
+                  "12"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "CurrentTreatment",
+                  "NotTriggered",
+                  "PreparedForDiscussion"
+                ],
+                "percentages": [
+                  "0",
+                  "35",
+                  "15",
+                  "30",
+                  "8",
+                  "12"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "PreviouslyTreated",
+                  "Triggered",
+                  "AddressBarriers"
+                ],
+                "percentages": [
+                  "0",
+                  "35",
+                  "15",
+                  "30",
+                  "8",
+                  "12"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "PreviouslyTreated",
+                  "Triggered",
+                  "PreparedForDiscussion"
+                ],
+                "percentages": [
+                  "0",
+                  "35",
+                  "15",
+                  "30",
+                  "8",
+                  "12"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "PreviouslyTreated",
+                  "NotTriggered",
+                  "AddressBarriers"
+                ],
+                "percentages": [
+                  "0",
+                  "35",
+                  "15",
+                  "30",
+                  "8",
+                  "12"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "PreviouslyTreated",
+                  "NotTriggered",
+                  "PreparedForDiscussion"
+                ],
+                "percentages": [
+                  "0",
+                  "35",
+                  "15",
+                  "30",
+                  "8",
+                  "12"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "ClozapineExposureReview",
+            "parent_ids": [
+              "ClozapineTreatmentStatus",
+              "ExposureInterpretationConcern"
+            ],
+            "states": [
+              "Triggered",
+              "NotTriggered"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "NeverTreated",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NeverTreated",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "CurrentTreatment",
+                  "Yes"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "CurrentTreatment",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "PreviouslyTreated",
+                  "Yes"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "PreviouslyTreated",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "PersistentSymptomsReview",
+            "parent_ids": [
+              "ClozapineTreatmentStatus",
+              "ResidualSymptomsOnClozapine",
+              "ClozapineTrialAdequate"
+            ],
+            "states": [
+              "OutsideCurrentTreatmentScope",
+              "ContinuePeriodicReview",
+              "ReviewTrialAdequacy",
+              "SpecialistPersistentSymptomsReview"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "NeverTreated",
+                  "Yes",
+                  "Yes"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NeverTreated",
+                  "Yes",
+                  "No"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NeverTreated",
+                  "No",
+                  "Yes"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NeverTreated",
+                  "No",
+                  "No"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "CurrentTreatment",
+                  "Yes",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "CurrentTreatment",
+                  "Yes",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "CurrentTreatment",
+                  "No",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "CurrentTreatment",
+                  "No",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "PreviouslyTreated",
+                  "Yes",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "PreviouslyTreated",
+                  "Yes",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "PreviouslyTreated",
+                  "No",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "PreviouslyTreated",
+                  "No",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0",
+                  "0"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "SchizophreniaEstablished": {
+          "Yes": 0.85,
+          "No": 0.15
+        },
+        "PersistentSignificantSymptoms": {
+          "Yes": 0.65,
+          "No": 0.35
+        },
+        "Trial1Assessment": {
+          "AdequateSuboptimalResponse": 0.45,
+          "AdequateSatisfactoryResponse": 0.25,
+          "InadequateExposure": 0.2,
+          "TruncatedByIntolerance": 0.1
+        },
+        "Trial2Assessment": {
+          "AdequateSuboptimalResponse": 0.35,
+          "AdequateSatisfactoryResponse": 0.3,
+          "InadequateExposure": 0.25,
+          "TruncatedByIntolerance": 0.1
+        },
+        "TrialsUseDifferentDrugs": {
+          "Yes": 0.75,
+          "No": 0.25
+        },
+        "SymptomsAtLeast12Weeks": {
+          "Yes": 0.55,
+          "No": 0.45
+        },
+        "ModerateSymptomsAndFunctionalImpairment": {
+          "Yes": 0.6,
+          "No": 0.4
+        },
+        "ClozapineTreatmentStatus": {
+          "NeverTreated": 0.45,
+          "CurrentTreatment": 0.35,
+          "PreviouslyTreated": 0.2
+        },
+        "WillingToDiscussClozapine": {
+          "Yes": 0.65,
+          "No": 0.35
+        },
+        "ClozapineMonitoringPlanAvailable": {
+          "Yes": 0.55,
+          "No": 0.45
+        },
+        "ClozapineInitiationDiscussionAppropriate": {
+          "Yes": 0.75,
+          "No": 0.25
+        },
+        "UrgentSafetyConcern": {
+          "Present": 0.15,
+          "Absent": 0.85
+        },
+        "ExposureInterpretationConcern": {
+          "Yes": 0.25,
+          "No": 0.75
+        },
+        "ClozapineTrialAdequate": {
+          "Yes": 0.55,
+          "No": 0.45
+        },
+        "ResidualSymptomsOnClozapine": {
+          "Yes": 0.45,
+          "No": 0.55
+        },
+        "TwoAdequateSuboptimalTrials": {
+          "Yes": 0.3375,
+          "No": 0.6625
+        },
+        "TreatmentResistantSchizophreniaReview": {
+          "Triggered": 0.18646875,
+          "NotTriggered": 0.81353125
+        },
+        "AdditionalResearchFeatures": {
+          "Present": 0.539,
+          "NotAllPresent": 0.461
+        },
+        "PriorTrialAdequacyReview": {
+          "Triggered": 0.545,
+          "NotTriggered": 0.455
+        },
+        "ClozapineInitiationDiscussionPreparation": {
+          "AddressBarriers": 0.731875,
+          "PreparedForDiscussion": 0.268125
+        },
+        "TreatmentResistanceClozapineReviewPathway": {
+          "UrgentClinicalAssessment": 0.15,
+          "ReviewCurrentTreatment": 0.2975,
+          "IndividualizedPriorClozapineReview": 0.1275,
+          "ReviewEvidenceAndOtherIndications": 0.255,
+          "DiscussClozapine": 0.068,
+          "AddressDiscussionBarriers": 0.102
+        },
+        "ClozapineExposureReview": {
+          "Triggered": 0.1375,
+          "NotTriggered": 0.8625
+        },
+        "PersistentSymptomsReview": {
+          "OutsideCurrentTreatmentScope": 0.45,
+          "ContinuePeriodicReview": 0.3025,
+          "ReviewTrialAdequacy": 0.111375,
+          "SpecialistPersistentSymptomsReview": 0.136125
+        }
+      },
+      "context_examples": [
+        {
+          "SchizophreniaEstablished": "Yes"
+        },
+        {
+          "SchizophreniaEstablished": "No"
+        }
+      ],
+      "work": "TwoAdequateSuboptimalTrials Yes = P(Trial1=AdequateSuboptimalResponse)*P(TrialsUseDifferentDrugs=Yes) = 0.45*0.75 = 0.3375. Swapping Trial1Assessment and Trial2Assessment parents would give 0.35*0.75 = 0.2625, so a transpose bug fails. TreatmentResistantSchizophreniaReview Triggered = 0.85*0.65*0.3375 = 0.18646875. AdditionalResearchFeatures Present = 0.55*0.60*0.90 + 0.55*0.40*0.20 + 0.45*0.60*0.70 + 0.45*0.40*0.05 = 0.297+0.044+0.189+0.009 = 0.539. Swapping its two parents gives 0.297+0.154+0.054+0.009 = 0.514, so a transpose bug fails. PriorTrialAdequacyReview Triggered = 1 - P(both trials adequate) = 1-0.70*0.65 = 0.545. Preparation PreparedForDiscussion = 0.65*0.55*0.75 = 0.268125; AddressBarriers = 0.731875. Pathway UrgentClinicalAssessment = 0.15; ReviewCurrentTreatment = 0.85*0.35 = 0.2975; IndividualizedPriorClozapineReview = 0.85*0.15 = 0.1275; ReviewEvidenceAndOtherIndications = 0.85*0.30 = 0.255; DiscussClozapine = 0.85*0.08 = 0.068; AddressDiscussionBarriers = 0.85*0.12 = 0.102; sum = 1.0. ClozapineExposureReview Triggered = 0.25*(0.35+0.20) = 0.1375. PersistentSymptomsReview OutsideCurrentTreatmentScope = 0.45; ContinuePeriodicReview = 0.55*0.55 = 0.3025; ReviewTrialAdequacy = 0.55*0.45*0.45 = 0.111375; SpecialistPersistentSymptomsReview = 0.55*0.45*0.55 = 0.136125; sum = 1.0."
+    }
+  ],
+  "clinical": [
+    {
+      "id": "gate-true-no-improvement-applicable",
+      "inputs": {
+        "candidate/history/no_improvement_clozapine.v1/h_schizophrenia_established": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_persistent_symptoms": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_trial1_assessment": "AdequateSuboptimalResponse",
+        "candidate/history/no_improvement_clozapine.v1/h_trial2_assessment": "AdequateSuboptimalResponse",
+        "candidate/history/no_improvement_clozapine.v1/h_trials_different_drugs": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_symptoms_12_weeks": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_moderate_symptoms_impairment": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_clozapine_treatment_status": "CurrentTreatment",
+        "candidate/history/no_improvement_clozapine.v1/h_willing_to_discuss": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_monitoring_plan": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_initiation_discussion_appropriate": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_urgent_safety_concern": "Absent",
+        "candidate/history/no_improvement_clozapine.v1/h_exposure_interpretation_concern": "No",
+        "candidate/history/no_improvement_clozapine.v1/h_clozapine_trial_adequate": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_residual_symptoms": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_baseline_encounter_ref": "documented_current",
+        "candidate/history/no_improvement_clozapine.v1/h_baseline_window_validity": "current",
+        "candidate/history/no_improvement_clozapine.v1/h_panss_baseline_status": "completed",
+        "candidate/history/no_improvement_clozapine.v1/h_panss_followup_status": "completed"
+      },
+      "expected_for_review": {
+        "status": "execute",
+        "gate": "true",
+        "applicability": "gate == 'true'",
+        "urgent_banner_from_saved_inputs": "Absent",
+        "baseline": "current with completed PANSS baseline and follow-up"
+      },
+      "note": "Candidate review expectation: follow-up no-improvement applicable gate true with current baseline and completed PANSS executes with empty evidence; urgent Absent still shows parallel review topics; no percent-change cutoff is used."
+    },
+    {
+      "id": "gate-true-no-improvement-urgent-present",
+      "inputs": {
+        "candidate/history/no_improvement_clozapine.v1/h_schizophrenia_established": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_persistent_symptoms": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_trial1_assessment": "AdequateSuboptimalResponse",
+        "candidate/history/no_improvement_clozapine.v1/h_trial2_assessment": "AdequateSuboptimalResponse",
+        "candidate/history/no_improvement_clozapine.v1/h_trials_different_drugs": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_symptoms_12_weeks": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_moderate_symptoms_impairment": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_clozapine_treatment_status": "CurrentTreatment",
+        "candidate/history/no_improvement_clozapine.v1/h_willing_to_discuss": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_monitoring_plan": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_initiation_discussion_appropriate": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_urgent_safety_concern": "Present",
+        "candidate/history/no_improvement_clozapine.v1/h_exposure_interpretation_concern": "No",
+        "candidate/history/no_improvement_clozapine.v1/h_clozapine_trial_adequate": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_residual_symptoms": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_baseline_encounter_ref": "documented_current",
+        "candidate/history/no_improvement_clozapine.v1/h_baseline_window_validity": "current",
+        "candidate/history/no_improvement_clozapine.v1/h_panss_baseline_status": "completed",
+        "candidate/history/no_improvement_clozapine.v1/h_panss_followup_status": "completed"
+      },
+      "expected_for_review": {
+        "status": "execute",
+        "gate": "true",
+        "applicability": "gate == 'true'",
+        "urgent_banner_from_saved_inputs": "Present",
+        "urgent_latency": "independent_of_estimation",
+        "fabricated_risk_percentage": null
+      },
+      "note": "Candidate review expectation: urgent Present at follow-up executes and adds a parallel urgent banner from saved inputs independently of estimation latency; never a fabricated risk percentage."
+    },
+    {
+      "id": "gate-false-improvement-documented",
+      "inputs": {
+        "candidate/history/no_improvement_clozapine.v1/h_schizophrenia_established": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_persistent_symptoms": "No",
+        "candidate/history/no_improvement_clozapine.v1/h_trial1_assessment": "AdequateSuboptimalResponse",
+        "candidate/history/no_improvement_clozapine.v1/h_trial2_assessment": "AdequateSuboptimalResponse",
+        "candidate/history/no_improvement_clozapine.v1/h_trials_different_drugs": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_symptoms_12_weeks": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_moderate_symptoms_impairment": "No",
+        "candidate/history/no_improvement_clozapine.v1/h_clozapine_treatment_status": "CurrentTreatment",
+        "candidate/history/no_improvement_clozapine.v1/h_willing_to_discuss": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_monitoring_plan": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_initiation_discussion_appropriate": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_urgent_safety_concern": "Absent",
+        "candidate/history/no_improvement_clozapine.v1/h_exposure_interpretation_concern": "No",
+        "candidate/history/no_improvement_clozapine.v1/h_clozapine_trial_adequate": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_residual_symptoms": "No",
+        "candidate/history/no_improvement_clozapine.v1/h_baseline_encounter_ref": "documented_current",
+        "candidate/history/no_improvement_clozapine.v1/h_baseline_window_validity": "current",
+        "candidate/history/no_improvement_clozapine.v1/h_panss_baseline_status": "completed",
+        "candidate/history/no_improvement_clozapine.v1/h_panss_followup_status": "completed"
+      },
+      "expected_for_review": {
+        "status": "not_applicable",
+        "gate": "false",
+        "applicability": "gate == 'true'",
+        "reason": "improvement documented with current baseline and completed PANSS",
+        "not_a_negative_posterior": true,
+        "posterior_claim": null
+      },
+      "note": "Candidate review expectation: improvement documented gate false records not_applicable with reason and claims no posterior; never a fake negative review posterior or a negative finding; missing follow-up is never treated as improvement."
+    },
+    {
+      "id": "gate-unknown-panss-followup-missing",
+      "inputs": {
+        "candidate/history/no_improvement_clozapine.v1/h_schizophrenia_established": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_persistent_symptoms": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_trial1_assessment": "AdequateSuboptimalResponse",
+        "candidate/history/no_improvement_clozapine.v1/h_trial2_assessment": "AdequateSuboptimalResponse",
+        "candidate/history/no_improvement_clozapine.v1/h_trials_different_drugs": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_symptoms_12_weeks": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_moderate_symptoms_impairment": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_clozapine_treatment_status": "CurrentTreatment",
+        "candidate/history/no_improvement_clozapine.v1/h_willing_to_discuss": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_monitoring_plan": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_initiation_discussion_appropriate": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_urgent_safety_concern": "Absent",
+        "candidate/history/no_improvement_clozapine.v1/h_exposure_interpretation_concern": "No",
+        "candidate/history/no_improvement_clozapine.v1/h_clozapine_trial_adequate": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_residual_symptoms": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_baseline_encounter_ref": "documented_current",
+        "candidate/history/no_improvement_clozapine.v1/h_baseline_window_validity": "current",
+        "candidate/history/no_improvement_clozapine.v1/h_panss_baseline_status": "completed"
+      },
+      "expected_for_review": {
+        "status": "needs_clarification",
+        "gate": "unknown",
+        "applicability": "gate == 'true'",
+        "reason": "required PANSS follow-up status missing; missing follow-up never maps to no improvement"
+      },
+      "note": "Candidate review expectation: missing PANSS follow-up pauses; a missing follow-up score is never treated as no improvement and never coerces to No."
+    },
+    {
+      "id": "gate-unknown-outdated-baseline",
+      "inputs": {
+        "candidate/history/no_improvement_clozapine.v1/h_schizophrenia_established": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_persistent_symptoms": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_trial1_assessment": "AdequateSuboptimalResponse",
+        "candidate/history/no_improvement_clozapine.v1/h_trial2_assessment": "AdequateSuboptimalResponse",
+        "candidate/history/no_improvement_clozapine.v1/h_trials_different_drugs": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_symptoms_12_weeks": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_moderate_symptoms_impairment": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_clozapine_treatment_status": "CurrentTreatment",
+        "candidate/history/no_improvement_clozapine.v1/h_willing_to_discuss": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_monitoring_plan": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_initiation_discussion_appropriate": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_urgent_safety_concern": "Absent",
+        "candidate/history/no_improvement_clozapine.v1/h_exposure_interpretation_concern": "No",
+        "candidate/history/no_improvement_clozapine.v1/h_clozapine_trial_adequate": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_residual_symptoms": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_baseline_encounter_ref": "outdated",
+        "candidate/history/no_improvement_clozapine.v1/h_baseline_window_validity": "outdated",
+        "candidate/history/no_improvement_clozapine.v1/h_panss_baseline_status": "completed",
+        "candidate/history/no_improvement_clozapine.v1/h_panss_followup_status": "completed"
+      },
+      "expected_for_review": {
+        "status": "needs_clarification",
+        "gate": "unknown",
+        "applicability": "gate == 'true'",
+        "reason": "outdated baseline window pauses; differing baseline from current-baseline case",
+        "differing_baseline": "outdated versus documented_current"
+      },
+      "note": "Candidate review expectation: outdated baseline pauses for a fresh baseline choice; it never coerces to improvement and never silently skips review; this differing-baseline case contrasts with the current-baseline applicable case."
+    },
+    {
+      "id": "gate-unknown-not-assessed-severity",
+      "inputs": {
+        "candidate/history/no_improvement_clozapine.v1/h_schizophrenia_established": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_persistent_symptoms": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_trial1_assessment": "AdequateSuboptimalResponse",
+        "candidate/history/no_improvement_clozapine.v1/h_trial2_assessment": "AdequateSuboptimalResponse",
+        "candidate/history/no_improvement_clozapine.v1/h_trials_different_drugs": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_symptoms_12_weeks": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_moderate_symptoms_impairment": "not_assessed",
+        "candidate/history/no_improvement_clozapine.v1/h_clozapine_treatment_status": "CurrentTreatment",
+        "candidate/history/no_improvement_clozapine.v1/h_willing_to_discuss": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_monitoring_plan": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_initiation_discussion_appropriate": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_urgent_safety_concern": "Absent",
+        "candidate/history/no_improvement_clozapine.v1/h_exposure_interpretation_concern": "No",
+        "candidate/history/no_improvement_clozapine.v1/h_clozapine_trial_adequate": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_residual_symptoms": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_baseline_encounter_ref": "documented_current",
+        "candidate/history/no_improvement_clozapine.v1/h_baseline_window_validity": "current",
+        "candidate/history/no_improvement_clozapine.v1/h_panss_baseline_status": "completed",
+        "candidate/history/no_improvement_clozapine.v1/h_panss_followup_status": "completed"
+      },
+      "expected_for_review": {
+        "status": "needs_clarification",
+        "gate": "unknown",
+        "applicability": "gate == 'true'",
+        "reason": "required severity synthesis not_assessed"
+      },
+      "note": "Candidate review expectation: not-assessed severity pauses; never coerced to No and never mapped to improvement."
+    },
+    {
+      "id": "gate-conflict-needs-clarification",
+      "inputs": {
+        "candidate/history/no_improvement_clozapine.v1/h_schizophrenia_established": [
+          "Yes",
+          "No"
+        ],
+        "candidate/history/no_improvement_clozapine.v1/h_persistent_symptoms": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_trial1_assessment": "AdequateSuboptimalResponse",
+        "candidate/history/no_improvement_clozapine.v1/h_trial2_assessment": "AdequateSuboptimalResponse",
+        "candidate/history/no_improvement_clozapine.v1/h_trials_different_drugs": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_symptoms_12_weeks": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_moderate_symptoms_impairment": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_clozapine_treatment_status": "CurrentTreatment",
+        "candidate/history/no_improvement_clozapine.v1/h_willing_to_discuss": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_monitoring_plan": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_initiation_discussion_appropriate": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_urgent_safety_concern": "Absent",
+        "candidate/history/no_improvement_clozapine.v1/h_exposure_interpretation_concern": "No",
+        "candidate/history/no_improvement_clozapine.v1/h_clozapine_trial_adequate": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_residual_symptoms": "Yes",
+        "candidate/history/no_improvement_clozapine.v1/h_baseline_encounter_ref": "documented_current",
+        "candidate/history/no_improvement_clozapine.v1/h_baseline_window_validity": "current",
+        "candidate/history/no_improvement_clozapine.v1/h_panss_baseline_status": "completed",
+        "candidate/history/no_improvement_clozapine.v1/h_panss_followup_status": "completed"
+      },
+      "expected_for_review": {
+        "status": "needs_clarification",
+        "gate": "unknown",
+        "applicability": "gate == 'true'",
+        "reason": "conflicting schizophrenia-status inputs"
+      },
+      "note": "Candidate review expectation: conflicting required inputs pause; conflict never resolves by choosing one value and never coerces to No."
+    }
+  ]
+}

@@ -1,0 +1,499 @@
+{
+  "applicability": {
+    "expression": "gate == 'true'",
+    "required_fields": [
+      "candidate/history/acute_dystonia.v1/h_ad_airway_concern",
+      "candidate/history/acute_dystonia.v1/h_ad_episode_phase",
+      "candidate/history/acute_dystonia.v1/h_ad_antipsychotic_association",
+      "candidate/history/acute_dystonia.v1/h_ad_anticholinergic_safety_concern",
+      "candidate/history/acute_dystonia.v1/h_ad_older_age_vulnerability",
+      "candidate/history/acute_dystonia.v1/h_ad_other_anticholinergic_burden",
+      "candidate/history/acute_dystonia.v1/h_ad_recurrence_prevention_need",
+      "candidate/history/acute_dystonia.v1/h_ad_continuation_preference_concern"
+    ],
+    "unknown_policy": "needs_clarification"
+  },
+  "applicability_truth_table": {
+    "false": "Gate false (AcuteDystoniaEpisodePhase NoEpisode with no unknown/missing/conflict) records not_applicable with reason; claims no posterior and is never a negative finding or a fake negative review posterior.",
+    "true": "Gate true (AcuteDystoniaEpisodePhase Active or Resolved with all other required inputs known) executes estimation with empty evidence; airway Present still executes and adds a parallel urgent banner.",
+    "unknown": "Gate unknown (any required input unknown, not_assessed, missing or conflicting, including missing onset, medication-timeline, alternative-cause, differential, safety or preference context) yields needs_clarification before estimation; never coerces uncertainty to false and never estimates."
+  },
+  "cpt_contract": {
+    "nodes": [
+      {
+        "node_id": "AirwayConcern",
+        "parent_ids": [],
+        "states": [
+          "Present",
+          "Absent"
+        ]
+      },
+      {
+        "node_id": "AcuteDystoniaEpisodePhase",
+        "parent_ids": [],
+        "states": [
+          "Active",
+          "Resolved",
+          "NoEpisode"
+        ]
+      },
+      {
+        "node_id": "AcuteDystoniaAntipsychoticAssociation",
+        "parent_ids": [],
+        "states": [
+          "Established",
+          "NotEstablished"
+        ]
+      },
+      {
+        "node_id": "AnticholinergicSafetyConcern",
+        "parent_ids": [],
+        "states": [
+          "Present",
+          "Absent"
+        ]
+      },
+      {
+        "node_id": "OlderAgeVulnerability",
+        "parent_ids": [],
+        "states": [
+          "Present",
+          "Absent"
+        ]
+      },
+      {
+        "node_id": "OtherAnticholinergicBurden",
+        "parent_ids": [],
+        "states": [
+          "Present",
+          "Absent"
+        ]
+      },
+      {
+        "node_id": "RecurrencePreventionNeed",
+        "parent_ids": [],
+        "states": [
+          "Present",
+          "Absent"
+        ]
+      },
+      {
+        "node_id": "AnticholinergicContinuationPreferenceConcern",
+        "parent_ids": [],
+        "states": [
+          "Present",
+          "Absent"
+        ]
+      },
+      {
+        "node_id": "AcuteDystoniaReviewPathway",
+        "parent_ids": [
+          "AirwayConcern",
+          "AcuteDystoniaEpisodePhase",
+          "AcuteDystoniaAntipsychoticAssociation"
+        ],
+        "states": [
+          "UrgentAirwayAssessment",
+          "ReviewAcuteAnticholinergicTreatment",
+          "AssessEpisodeAndDifferential",
+          "PostResolutionReview",
+          "NoAcuteTreatmentRule"
+        ]
+      },
+      {
+        "node_id": "AnticholinergicSafetyReviewFocus",
+        "parent_ids": [
+          "AnticholinergicSafetyConcern",
+          "OlderAgeVulnerability",
+          "OtherAnticholinergicBurden"
+        ],
+        "states": [
+          "ReviewPatientSpecificConcernAndBurden",
+          "ReviewPatientSpecificConcern",
+          "ReviewAgeOrMedicationBurden",
+          "RoutineIndividualizedReview"
+        ]
+      },
+      {
+        "node_id": "AcuteDystoniaAnticholinergicContinuationReview",
+        "parent_ids": [
+          "AcuteDystoniaEpisodePhase",
+          "AcuteDystoniaAntipsychoticAssociation",
+          "RecurrencePreventionNeed",
+          "AnticholinergicContinuationPreferenceConcern"
+        ],
+        "states": [
+          "NotPostResolutionReview",
+          "EstablishEpisodeAssociation",
+          "ReviewNeedAndPatientConcerns",
+          "ConsiderShortTermPreventionReview",
+          "ReviewStoppingOrAvoidingUnneededContinuation"
+        ]
+      },
+      {
+        "node_id": "AcuteDystoniaAntipsychoticRegimenReview",
+        "parent_ids": [
+          "AcuteDystoniaEpisodePhase",
+          "AcuteDystoniaAntipsychoticAssociation"
+        ],
+        "states": [
+          "ReviewDoseOrAlternative",
+          "AssessMedicationAssociation",
+          "NoEpisodeSpecificReview"
+        ]
+      }
+    ]
+  },
+  "declared_node_order": [
+    "AirwayConcern",
+    "AcuteDystoniaEpisodePhase",
+    "AcuteDystoniaAntipsychoticAssociation",
+    "AnticholinergicSafetyConcern",
+    "OlderAgeVulnerability",
+    "OtherAnticholinergicBurden",
+    "RecurrencePreventionNeed",
+    "AnticholinergicContinuationPreferenceConcern",
+    "AcuteDystoniaReviewPathway",
+    "AnticholinergicSafetyReviewFocus",
+    "AcuteDystoniaAnticholinergicContinuationReview",
+    "AcuteDystoniaAntipsychoticRegimenReview"
+  ],
+  "engine_configuration": {
+    "elimination_order": "source_order",
+    "evidence": "empty",
+    "evidence_order": "given_order",
+    "float_dtype": "float64",
+    "tie_break": "source_order"
+  },
+  "execution_evidence": {},
+  "history_definition": "content/history/history.acute_dystonia.v1.json",
+  "input_consistency_contract": {
+    "dx_provenance": "Full Acute Dystonia Dx Criteria item responses (addx_sustained_posture, addx_medication_timeline, addx_distribution_persistence, addx_exclusions, addx_urgent_airway) are preserved with definition version, completeness and nullable results when the complete reviewed source is available; Dx supports measurement and its items alone never establish a summed score. Completion is required only when episode phase is Active; NoEpisode and not_assessed have no completion requirement; a missing Dx item never becomes a negative finding.",
+    "gate_inputs": "Episode phase plus airway, association, safety, age-vulnerability, burden, recurrence-need and preference inputs define true/false/unknown; unknown, missing, not_assessed or conflicting required input pauses, never coerces to false and never coerces to Absent.",
+    "history_review": "Candidate v1 definitions require owner review before release. No runtime form or projection added by S36.",
+    "missingness_scope": "These declarations are content proposals for the S40 projection/readiness implementation, not executed clinical runtime behavior.",
+    "severity_provenance": "Acute dystonia severity is an independent clinician-reviewed mild, moderate or severe category recorded with examination and window attribution; it is never derived from a Dx total and no summed severity band or treatment threshold is set here. No dose, route, frequency, active/stopped or free-text fields are collected or accepted.",
+    "urgent_inputs": "AirwayConcern (stridor/breathing difficulty, laryngeal dystonia) comes from saved structured urgent inputs with encounter/window attribution; the parallel urgent banner does not wait for estimation, while the AirwayConcern network node remains estimation context for AcuteDystoniaReviewPathway."
+  },
+  "missingness_contract": {
+    "absent_rule": "An absent case (AcuteDystoniaEpisodePhase NoEpisode with no unknown/missing/conflict) records not_applicable with reason and claims no posterior; never a negative finding and never a fake negative review posterior.",
+    "alternative_context": "Missing onset, medication-timeline, antipsychotic-association, alternative-cause, differential, anticholinergic safety, age-vulnerability, burden, recurrence-need, preference or airway context pauses as needs_clarification; missing context is never treated as an established-association or no-concern finding.",
+    "current_urgent": "AirwayConcern Present (stridor or breathing difficulty suggesting laryngeal dystonia) renders an urgent banner from saved structured inputs in parallel with review topics, independently of estimation latency; never a computed risk percentage.",
+    "evidence": {},
+    "false_gate": {
+      "not_a_negative_posterior": true,
+      "posterior_claim": null,
+      "status": "not_applicable"
+    },
+    "gate_definition": "Gate true requires AcuteDystoniaEpisodePhase Active or Resolved (present/resolved episode) with all other required inputs known; gate false is AcuteDystoniaEpisodePhase NoEpisode (absent case) with no unknown/missing/conflict among required inputs; otherwise gate unknown (including unknown, not_assessed, missing or conflicting).",
+    "not_assessed_rule": "An unresolved or not_assessed effect (unknown, not_assessed, missing or conflicting required input, including missing onset, medication-timeline, alternative-cause, differential, safety or preference context) pauses as needs_clarification; never coerced to Absent and never mapped to No. A missing Dx-criteria item never becomes a negative finding.",
+    "required_conflict_policy": "needs_clarification",
+    "required_missing_policy": "needs_clarification",
+    "required_source_paths": [
+      "candidate/history/acute_dystonia.v1/h_ad_airway_concern",
+      "candidate/history/acute_dystonia.v1/h_ad_episode_phase",
+      "candidate/history/acute_dystonia.v1/h_ad_antipsychotic_association",
+      "candidate/history/acute_dystonia.v1/h_ad_anticholinergic_safety_concern",
+      "candidate/history/acute_dystonia.v1/h_ad_older_age_vulnerability",
+      "candidate/history/acute_dystonia.v1/h_ad_other_anticholinergic_burden",
+      "candidate/history/acute_dystonia.v1/h_ad_recurrence_prevention_need",
+      "candidate/history/acute_dystonia.v1/h_ad_continuation_preference_concern"
+    ],
+    "required_unknown_policy": "needs_clarification",
+    "required_unknown_values": [
+      "unknown",
+      "not_assessed"
+    ],
+    "unknown_gate": {
+      "pauses_before_estimation": true,
+      "status": "needs_clarification"
+    }
+  },
+  "network_file": "network.xml",
+  "network_hash": "2ddda6893800e0441326004af9d83c42385924738ae3d37af177b3be9b71e031",
+  "numerical_policy": {
+    "comparison_tolerance": 1e-06,
+    "cpt_policy": "cpt-decimal-v1",
+    "engine": {
+      "elimination_order": "source_order",
+      "float_dtype": "float64",
+      "lxml": "6.1.3",
+      "pgmpy": "1.1.2",
+      "python": "3.12.14"
+    },
+    "evidence": {}
+  },
+  "numerical_tolerances": {
+    "percentage_decimal_places": 6,
+    "posterior_comparison_absolute": 1e-06,
+    "row_total": "exact integer units; never normalize or repair",
+    "units_for_100_percent": 100000000
+  },
+  "patient_mappings": [
+    {
+      "allowed_source_paths": [
+        "candidate/history/acute_dystonia.v1/h_ad_airway_concern"
+      ],
+      "missing_policy": "needs_clarification",
+      "node_id": "AirwayConcern",
+      "time_window": "current_encounter",
+      "transform": "copy",
+      "usage": "cpt_context"
+    },
+    {
+      "allowed_source_paths": [
+        "candidate/history/acute_dystonia.v1/h_ad_episode_phase"
+      ],
+      "missing_policy": "needs_clarification",
+      "node_id": "AcuteDystoniaEpisodePhase",
+      "time_window": "current_encounter",
+      "transform": "copy",
+      "usage": "cpt_context"
+    },
+    {
+      "allowed_source_paths": [
+        "candidate/history/acute_dystonia.v1/h_ad_antipsychotic_association"
+      ],
+      "missing_policy": "needs_clarification",
+      "node_id": "AcuteDystoniaAntipsychoticAssociation",
+      "time_window": "current_encounter",
+      "transform": "copy",
+      "usage": "cpt_context"
+    },
+    {
+      "allowed_source_paths": [
+        "candidate/history/acute_dystonia.v1/h_ad_anticholinergic_safety_concern"
+      ],
+      "missing_policy": "needs_clarification",
+      "node_id": "AnticholinergicSafetyConcern",
+      "time_window": "current_encounter",
+      "transform": "copy",
+      "usage": "cpt_context"
+    },
+    {
+      "allowed_source_paths": [
+        "candidate/history/acute_dystonia.v1/h_ad_older_age_vulnerability"
+      ],
+      "missing_policy": "needs_clarification",
+      "node_id": "OlderAgeVulnerability",
+      "time_window": "current_encounter",
+      "transform": "copy",
+      "usage": "cpt_context"
+    },
+    {
+      "allowed_source_paths": [
+        "candidate/history/acute_dystonia.v1/h_ad_other_anticholinergic_burden"
+      ],
+      "missing_policy": "needs_clarification",
+      "node_id": "OtherAnticholinergicBurden",
+      "time_window": "current_encounter",
+      "transform": "copy",
+      "usage": "cpt_context"
+    },
+    {
+      "allowed_source_paths": [
+        "candidate/history/acute_dystonia.v1/h_ad_recurrence_prevention_need"
+      ],
+      "missing_policy": "needs_clarification",
+      "node_id": "RecurrencePreventionNeed",
+      "time_window": "current_encounter",
+      "transform": "copy",
+      "usage": "cpt_context"
+    },
+    {
+      "allowed_source_paths": [
+        "candidate/history/acute_dystonia.v1/h_ad_continuation_preference_concern"
+      ],
+      "missing_policy": "needs_clarification",
+      "node_id": "AnticholinergicContinuationPreferenceConcern",
+      "time_window": "current_encounter",
+      "transform": "copy",
+      "usage": "cpt_context"
+    }
+  ],
+  "prompt_version": "s36-v1",
+  "query_nodes": [
+    "AcuteDystoniaReviewPathway",
+    "AnticholinergicSafetyReviewFocus",
+    "AcuteDystoniaAnticholinergicContinuationReview",
+    "AcuteDystoniaAntipsychoticRegimenReview"
+  ],
+  "question_key": "acute_dystonia",
+  "reference_cpts_status": "Synthetic mathematical references only; all 12 BN-11 distributions were missing and remain uncalibrated with no source lookup; no clinical calibration or approval",
+  "resource_limits": {
+    "hard_memory_limit_bytes": null,
+    "inference_timeout_seconds": 30,
+    "max_context_bytes": 65536,
+    "max_cpt_output_bytes": 524288,
+    "max_effective_xml_bytes": 1048576,
+    "max_inference_cells": 131072,
+    "max_inference_nodes": 64,
+    "max_network_xml_bytes": 1048576,
+    "max_prompt_bytes": 65536,
+    "memory_limitation": "Existing bounded child process/node/table limits do not establish an OS memory ceiling or bound every induced intermediate factor. No such memory admission claim is made.",
+    "overflow_policy": "Reject admission or fail explicitly; no truncation, approximation or incomplete-table fallback.",
+    "status": "Candidate engineering limits; existing inference limits preserved, provider capability not yet measured"
+  },
+  "review_status": "approved",
+  "schema_version": "question-package-v1",
+  "source_refs": [
+    "project-documents/bayesian-networks/BN-11.xml",
+    "project-documents/medical-documents/guideline/STATEMENT-11.md",
+    "project-documents/medical-documents/acute-dystonia-criteria.md",
+    "content/history/acute-dystonia-dx-criteria.v1.json",
+    "content/history/history.acute_dystonia.v1.json",
+    "content/history/history.v1.json"
+  ],
+  "template_version": "s39-reviewed-v1",
+  "title": "Acute dystonia follow-up review",
+  "variables": [
+    {
+      "kind": "nature",
+      "node_id": "AirwayConcern",
+      "ordered_parents": [],
+      "patient_value_type": "categorical",
+      "states": [
+        "Present",
+        "Absent"
+      ]
+    },
+    {
+      "kind": "nature",
+      "node_id": "AcuteDystoniaEpisodePhase",
+      "ordered_parents": [],
+      "patient_value_type": "categorical",
+      "states": [
+        "Active",
+        "Resolved",
+        "NoEpisode"
+      ]
+    },
+    {
+      "kind": "nature",
+      "node_id": "AcuteDystoniaAntipsychoticAssociation",
+      "ordered_parents": [],
+      "patient_value_type": "categorical",
+      "states": [
+        "Established",
+        "NotEstablished"
+      ]
+    },
+    {
+      "kind": "nature",
+      "node_id": "AnticholinergicSafetyConcern",
+      "ordered_parents": [],
+      "patient_value_type": "categorical",
+      "states": [
+        "Present",
+        "Absent"
+      ]
+    },
+    {
+      "kind": "nature",
+      "node_id": "OlderAgeVulnerability",
+      "ordered_parents": [],
+      "patient_value_type": "categorical",
+      "states": [
+        "Present",
+        "Absent"
+      ]
+    },
+    {
+      "kind": "nature",
+      "node_id": "OtherAnticholinergicBurden",
+      "ordered_parents": [],
+      "patient_value_type": "categorical",
+      "states": [
+        "Present",
+        "Absent"
+      ]
+    },
+    {
+      "kind": "nature",
+      "node_id": "RecurrencePreventionNeed",
+      "ordered_parents": [],
+      "patient_value_type": "categorical",
+      "states": [
+        "Present",
+        "Absent"
+      ]
+    },
+    {
+      "kind": "nature",
+      "node_id": "AnticholinergicContinuationPreferenceConcern",
+      "ordered_parents": [],
+      "patient_value_type": "categorical",
+      "states": [
+        "Present",
+        "Absent"
+      ]
+    },
+    {
+      "kind": "nature",
+      "node_id": "AcuteDystoniaReviewPathway",
+      "ordered_parents": [
+        "AirwayConcern",
+        "AcuteDystoniaEpisodePhase",
+        "AcuteDystoniaAntipsychoticAssociation"
+      ],
+      "patient_value_type": "categorical",
+      "states": [
+        "UrgentAirwayAssessment",
+        "ReviewAcuteAnticholinergicTreatment",
+        "AssessEpisodeAndDifferential",
+        "PostResolutionReview",
+        "NoAcuteTreatmentRule"
+      ]
+    },
+    {
+      "kind": "nature",
+      "node_id": "AnticholinergicSafetyReviewFocus",
+      "ordered_parents": [
+        "AnticholinergicSafetyConcern",
+        "OlderAgeVulnerability",
+        "OtherAnticholinergicBurden"
+      ],
+      "patient_value_type": "categorical",
+      "states": [
+        "ReviewPatientSpecificConcernAndBurden",
+        "ReviewPatientSpecificConcern",
+        "ReviewAgeOrMedicationBurden",
+        "RoutineIndividualizedReview"
+      ]
+    },
+    {
+      "kind": "nature",
+      "node_id": "AcuteDystoniaAnticholinergicContinuationReview",
+      "ordered_parents": [
+        "AcuteDystoniaEpisodePhase",
+        "AcuteDystoniaAntipsychoticAssociation",
+        "RecurrencePreventionNeed",
+        "AnticholinergicContinuationPreferenceConcern"
+      ],
+      "patient_value_type": "categorical",
+      "states": [
+        "NotPostResolutionReview",
+        "EstablishEpisodeAssociation",
+        "ReviewNeedAndPatientConcerns",
+        "ConsiderShortTermPreventionReview",
+        "ReviewStoppingOrAvoidingUnneededContinuation"
+      ]
+    },
+    {
+      "kind": "nature",
+      "node_id": "AcuteDystoniaAntipsychoticRegimenReview",
+      "ordered_parents": [
+        "AcuteDystoniaEpisodePhase",
+        "AcuteDystoniaAntipsychoticAssociation"
+      ],
+      "patient_value_type": "categorical",
+      "states": [
+        "ReviewDoseOrAlternative",
+        "AssessMedicationAssociation",
+        "NoEpisodeSpecificReview"
+      ]
+    }
+  ],
+  "version": "s39-reviewed-v1",
+  "workflow": "followup"
+}

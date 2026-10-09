@@ -1,0 +1,2034 @@
+{
+  "numerical": [
+    {
+      "id": "full-graph-asymmetric-mathematical",
+      "classification": "Independent synthetic mathematical reference, not clinical calibration or clinical expected treatment",
+      "inputs": {},
+      "cpt_payload": {
+        "question_key": "tardive_dyskinesia",
+        "network_hash": "538daba6318a1a87d116bd92bda4042063a4fa41c178d1e031ced18d7ea4d5df",
+        "tables": [
+          {
+            "node_id": "TardiveDyskinesiaAssessment",
+            "parent_ids": [],
+            "states": [
+              "Present",
+              "Absent",
+              "Unresolved"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "50",
+                  "30",
+                  "20"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "TardiveDyskinesiaAntipsychoticAssociation",
+            "parent_ids": [],
+            "states": [
+              "Established",
+              "NotEstablished"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "60",
+                  "40"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "TardiveDyskinesiaMotorSeverity",
+            "parent_ids": [],
+            "states": [
+              "Mild",
+              "ModerateOrSevere"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "70",
+                  "30"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "TardiveDyskinesiaDisablingImpact",
+            "parent_ids": [],
+            "states": [
+              "Present",
+              "Absent"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "40",
+                  "60"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "MildTardiveDyskinesiaTreatmentConsideration",
+            "parent_ids": [],
+            "states": [
+              "Present",
+              "Absent"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "50",
+                  "50"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "DoseReductionTemporalLink",
+            "parent_ids": [],
+            "states": [
+              "Present",
+              "Absent"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "30",
+                  "70"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "UrgentSafetyConcern",
+            "parent_ids": [],
+            "states": [
+              "Present",
+              "Absent"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "20",
+                  "80"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "VMAT2InhibitorCandidateSafetyAssessment",
+            "parent_ids": [],
+            "states": [
+              "Incomplete",
+              "ConcernsIdentified",
+              "ReviewedNoConcernIdentified"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "50",
+                  "30",
+                  "20"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "VMAT2InhibitorTreatmentPreference",
+            "parent_ids": [],
+            "states": [
+              "WillingToDiscuss",
+              "Declines",
+              "Undecided"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "60",
+                  "20",
+                  "20"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "AnticholinergicExposure",
+            "parent_ids": [],
+            "states": [
+              "Present",
+              "Absent"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "30",
+                  "70"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "TardiveDyskinesiaIndicationReview",
+            "parent_ids": [
+              "TardiveDyskinesiaAssessment",
+              "TardiveDyskinesiaAntipsychoticAssociation",
+              "TardiveDyskinesiaMotorSeverity",
+              "TardiveDyskinesiaDisablingImpact",
+              "MildTardiveDyskinesiaTreatmentConsideration"
+            ],
+            "states": [
+              "RecommendedVMAT2Review",
+              "ConsiderVMAT2Review",
+              "MonitorAndDiscuss",
+              "AssessDiagnosisAndAttribution",
+              "NoCurrentIndicationPrompt"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "Present",
+                  "Established",
+                  "Mild",
+                  "Present",
+                  "Present"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "Established",
+                  "Mild",
+                  "Present",
+                  "Absent"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "Established",
+                  "Mild",
+                  "Absent",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "Established",
+                  "Mild",
+                  "Absent",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "Established",
+                  "ModerateOrSevere",
+                  "Present",
+                  "Present"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "Established",
+                  "ModerateOrSevere",
+                  "Present",
+                  "Absent"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "Established",
+                  "ModerateOrSevere",
+                  "Absent",
+                  "Present"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "Established",
+                  "ModerateOrSevere",
+                  "Absent",
+                  "Absent"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "NotEstablished",
+                  "Mild",
+                  "Present",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "NotEstablished",
+                  "Mild",
+                  "Present",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "NotEstablished",
+                  "Mild",
+                  "Absent",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "NotEstablished",
+                  "Mild",
+                  "Absent",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "NotEstablished",
+                  "ModerateOrSevere",
+                  "Present",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "NotEstablished",
+                  "ModerateOrSevere",
+                  "Present",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "NotEstablished",
+                  "ModerateOrSevere",
+                  "Absent",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "NotEstablished",
+                  "ModerateOrSevere",
+                  "Absent",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "Established",
+                  "Mild",
+                  "Present",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "Established",
+                  "Mild",
+                  "Present",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "Established",
+                  "Mild",
+                  "Absent",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "Established",
+                  "Mild",
+                  "Absent",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "Established",
+                  "ModerateOrSevere",
+                  "Present",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "Established",
+                  "ModerateOrSevere",
+                  "Present",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "Established",
+                  "ModerateOrSevere",
+                  "Absent",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "Established",
+                  "ModerateOrSevere",
+                  "Absent",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "NotEstablished",
+                  "Mild",
+                  "Present",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "NotEstablished",
+                  "Mild",
+                  "Present",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "NotEstablished",
+                  "Mild",
+                  "Absent",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "NotEstablished",
+                  "Mild",
+                  "Absent",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "NotEstablished",
+                  "ModerateOrSevere",
+                  "Present",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "NotEstablished",
+                  "ModerateOrSevere",
+                  "Present",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "NotEstablished",
+                  "ModerateOrSevere",
+                  "Absent",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "NotEstablished",
+                  "ModerateOrSevere",
+                  "Absent",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Unresolved",
+                  "Established",
+                  "Mild",
+                  "Present",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Unresolved",
+                  "Established",
+                  "Mild",
+                  "Present",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Unresolved",
+                  "Established",
+                  "Mild",
+                  "Absent",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Unresolved",
+                  "Established",
+                  "Mild",
+                  "Absent",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Unresolved",
+                  "Established",
+                  "ModerateOrSevere",
+                  "Present",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Unresolved",
+                  "Established",
+                  "ModerateOrSevere",
+                  "Present",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Unresolved",
+                  "Established",
+                  "ModerateOrSevere",
+                  "Absent",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Unresolved",
+                  "Established",
+                  "ModerateOrSevere",
+                  "Absent",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Unresolved",
+                  "NotEstablished",
+                  "Mild",
+                  "Present",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Unresolved",
+                  "NotEstablished",
+                  "Mild",
+                  "Present",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Unresolved",
+                  "NotEstablished",
+                  "Mild",
+                  "Absent",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Unresolved",
+                  "NotEstablished",
+                  "Mild",
+                  "Absent",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Unresolved",
+                  "NotEstablished",
+                  "ModerateOrSevere",
+                  "Present",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Unresolved",
+                  "NotEstablished",
+                  "ModerateOrSevere",
+                  "Present",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Unresolved",
+                  "NotEstablished",
+                  "ModerateOrSevere",
+                  "Absent",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Unresolved",
+                  "NotEstablished",
+                  "ModerateOrSevere",
+                  "Absent",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "LongitudinalReview",
+            "parent_ids": [
+              "DoseReductionTemporalLink"
+            ],
+            "states": [
+              "ReviewWithdrawalAndCourse",
+              "ContinueLongitudinalAssessment"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "Present"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "UrgentSafetyReview",
+            "parent_ids": [
+              "UrgentSafetyConcern"
+            ],
+            "states": [
+              "UrgentClinicianAssessment",
+              "RoutineSafetyAssessment"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "Present"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "VMAT2InhibitorSafetyReview",
+            "parent_ids": [
+              "VMAT2InhibitorCandidateSafetyAssessment"
+            ],
+            "states": [
+              "CompleteCurrentLabelReview",
+              "AddressIndividualConcerns",
+              "ContinueIndividualizedMonitoring"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "Incomplete"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "ConcernsIdentified"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "ReviewedNoConcernIdentified"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "VMAT2InhibitorSharedDecisionReview",
+            "parent_ids": [
+              "TardiveDyskinesiaIndicationReview",
+              "VMAT2InhibitorTreatmentPreference",
+              "VMAT2InhibitorSafetyReview"
+            ],
+            "states": [
+              "DiscussVMAT2Options",
+              "ResolveSafetyAndDiscuss",
+              "RespectDeclineAndDiscussAlternatives",
+              "ClarifyPreference",
+              "ContinueAssessmentAndMonitoring"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "RecommendedVMAT2Review",
+                  "WillingToDiscuss",
+                  "CompleteCurrentLabelReview"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "RecommendedVMAT2Review",
+                  "WillingToDiscuss",
+                  "AddressIndividualConcerns"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "RecommendedVMAT2Review",
+                  "WillingToDiscuss",
+                  "ContinueIndividualizedMonitoring"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "RecommendedVMAT2Review",
+                  "Declines",
+                  "CompleteCurrentLabelReview"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "RecommendedVMAT2Review",
+                  "Declines",
+                  "AddressIndividualConcerns"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "RecommendedVMAT2Review",
+                  "Declines",
+                  "ContinueIndividualizedMonitoring"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "RecommendedVMAT2Review",
+                  "Undecided",
+                  "CompleteCurrentLabelReview"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "RecommendedVMAT2Review",
+                  "Undecided",
+                  "AddressIndividualConcerns"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "RecommendedVMAT2Review",
+                  "Undecided",
+                  "ContinueIndividualizedMonitoring"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "ConsiderVMAT2Review",
+                  "WillingToDiscuss",
+                  "CompleteCurrentLabelReview"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "ConsiderVMAT2Review",
+                  "WillingToDiscuss",
+                  "AddressIndividualConcerns"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "ConsiderVMAT2Review",
+                  "WillingToDiscuss",
+                  "ContinueIndividualizedMonitoring"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "ConsiderVMAT2Review",
+                  "Declines",
+                  "CompleteCurrentLabelReview"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "ConsiderVMAT2Review",
+                  "Declines",
+                  "AddressIndividualConcerns"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "ConsiderVMAT2Review",
+                  "Declines",
+                  "ContinueIndividualizedMonitoring"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "ConsiderVMAT2Review",
+                  "Undecided",
+                  "CompleteCurrentLabelReview"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "ConsiderVMAT2Review",
+                  "Undecided",
+                  "AddressIndividualConcerns"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "ConsiderVMAT2Review",
+                  "Undecided",
+                  "ContinueIndividualizedMonitoring"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "MonitorAndDiscuss",
+                  "WillingToDiscuss",
+                  "CompleteCurrentLabelReview"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "MonitorAndDiscuss",
+                  "WillingToDiscuss",
+                  "AddressIndividualConcerns"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "MonitorAndDiscuss",
+                  "WillingToDiscuss",
+                  "ContinueIndividualizedMonitoring"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "MonitorAndDiscuss",
+                  "Declines",
+                  "CompleteCurrentLabelReview"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "MonitorAndDiscuss",
+                  "Declines",
+                  "AddressIndividualConcerns"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "MonitorAndDiscuss",
+                  "Declines",
+                  "ContinueIndividualizedMonitoring"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "MonitorAndDiscuss",
+                  "Undecided",
+                  "CompleteCurrentLabelReview"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "MonitorAndDiscuss",
+                  "Undecided",
+                  "AddressIndividualConcerns"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "MonitorAndDiscuss",
+                  "Undecided",
+                  "ContinueIndividualizedMonitoring"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AssessDiagnosisAndAttribution",
+                  "WillingToDiscuss",
+                  "CompleteCurrentLabelReview"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AssessDiagnosisAndAttribution",
+                  "WillingToDiscuss",
+                  "AddressIndividualConcerns"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AssessDiagnosisAndAttribution",
+                  "WillingToDiscuss",
+                  "ContinueIndividualizedMonitoring"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AssessDiagnosisAndAttribution",
+                  "Declines",
+                  "CompleteCurrentLabelReview"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AssessDiagnosisAndAttribution",
+                  "Declines",
+                  "AddressIndividualConcerns"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AssessDiagnosisAndAttribution",
+                  "Declines",
+                  "ContinueIndividualizedMonitoring"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AssessDiagnosisAndAttribution",
+                  "Undecided",
+                  "CompleteCurrentLabelReview"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AssessDiagnosisAndAttribution",
+                  "Undecided",
+                  "AddressIndividualConcerns"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AssessDiagnosisAndAttribution",
+                  "Undecided",
+                  "ContinueIndividualizedMonitoring"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NoCurrentIndicationPrompt",
+                  "WillingToDiscuss",
+                  "CompleteCurrentLabelReview"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NoCurrentIndicationPrompt",
+                  "WillingToDiscuss",
+                  "AddressIndividualConcerns"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NoCurrentIndicationPrompt",
+                  "WillingToDiscuss",
+                  "ContinueIndividualizedMonitoring"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NoCurrentIndicationPrompt",
+                  "Declines",
+                  "CompleteCurrentLabelReview"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NoCurrentIndicationPrompt",
+                  "Declines",
+                  "AddressIndividualConcerns"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NoCurrentIndicationPrompt",
+                  "Declines",
+                  "ContinueIndividualizedMonitoring"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NoCurrentIndicationPrompt",
+                  "Undecided",
+                  "CompleteCurrentLabelReview"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NoCurrentIndicationPrompt",
+                  "Undecided",
+                  "AddressIndividualConcerns"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NoCurrentIndicationPrompt",
+                  "Undecided",
+                  "ContinueIndividualizedMonitoring"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "AnticholinergicReview",
+            "parent_ids": [
+              "TardiveDyskinesiaAssessment",
+              "AnticholinergicExposure"
+            ],
+            "states": [
+              "ReviewPotentialTDWorsening",
+              "ReconcileIndicationAndDifferential",
+              "RoutineMedicationReconciliation"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "Present",
+                  "Present"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Unresolved",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Unresolved",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "TardiveDyskinesiaAssessment": {
+          "Present": 0.5,
+          "Absent": 0.3,
+          "Unresolved": 0.2
+        },
+        "TardiveDyskinesiaAntipsychoticAssociation": {
+          "Established": 0.6,
+          "NotEstablished": 0.4
+        },
+        "TardiveDyskinesiaMotorSeverity": {
+          "Mild": 0.7,
+          "ModerateOrSevere": 0.3
+        },
+        "TardiveDyskinesiaDisablingImpact": {
+          "Present": 0.4,
+          "Absent": 0.6
+        },
+        "MildTardiveDyskinesiaTreatmentConsideration": {
+          "Present": 0.5,
+          "Absent": 0.5
+        },
+        "DoseReductionTemporalLink": {
+          "Present": 0.3,
+          "Absent": 0.7
+        },
+        "UrgentSafetyConcern": {
+          "Present": 0.2,
+          "Absent": 0.8
+        },
+        "VMAT2InhibitorCandidateSafetyAssessment": {
+          "Incomplete": 0.5,
+          "ConcernsIdentified": 0.3,
+          "ReviewedNoConcernIdentified": 0.2
+        },
+        "VMAT2InhibitorTreatmentPreference": {
+          "WillingToDiscuss": 0.6,
+          "Declines": 0.2,
+          "Undecided": 0.2
+        },
+        "AnticholinergicExposure": {
+          "Present": 0.3,
+          "Absent": 0.7
+        },
+        "TardiveDyskinesiaIndicationReview": {
+          "RecommendedVMAT2Review": 0.174,
+          "ConsiderVMAT2Review": 0.063,
+          "MonitorAndDiscuss": 0.063,
+          "AssessDiagnosisAndAttribution": 0.4,
+          "NoCurrentIndicationPrompt": 0.3
+        },
+        "LongitudinalReview": {
+          "ReviewWithdrawalAndCourse": 0.3,
+          "ContinueLongitudinalAssessment": 0.7
+        },
+        "UrgentSafetyReview": {
+          "UrgentClinicianAssessment": 0.2,
+          "RoutineSafetyAssessment": 0.8
+        },
+        "VMAT2InhibitorSafetyReview": {
+          "CompleteCurrentLabelReview": 0.2,
+          "AddressIndividualConcerns": 0.3,
+          "ContinueIndividualizedMonitoring": 0.5
+        },
+        "VMAT2InhibitorSharedDecisionReview": {
+          "DiscussVMAT2Options": 0.036,
+          "ResolveSafetyAndDiscuss": 0.054,
+          "RespectDeclineAndDiscussAlternatives": 0.06,
+          "ClarifyPreference": 0.06,
+          "ContinueAssessmentAndMonitoring": 0.79
+        },
+        "AnticholinergicReview": {
+          "ReviewPotentialTDWorsening": 0.15,
+          "ReconcileIndicationAndDifferential": 0.55,
+          "RoutineMedicationReconciliation": 0.3
+        }
+      },
+      "context_examples": [
+        {
+          "TardiveDyskinesiaAssessment": "Present"
+        },
+        {
+          "TardiveDyskinesiaAssessment": "Absent"
+        }
+      ],
+      "work": "Indication NoCurrent=P(Assessment Absent)=0.3. Assess=P(Unresolved 0.2)+P(Present 0.5)*P(NotEst 0.4)=0.2+0.2=0.4. Recommended=P(Present 0.5)*P(Est 0.6)*[1-P(Mild 0.7)*P(DisAbsent 0.6)]=0.3*(1-0.42)=0.3*0.58=0.174. Consider=0.3*0.7*0.6*0.5=0.063. Monitor=0.3*0.7*0.6*0.5=0.063. Sum=1.0. Swapping Disabling and MildConsideration (both Present/Absent) gives Recommended 0.3*(1-0.7*0.5)=0.195 and Consider 0.3*0.7*0.5*0.4=0.042, so a transpose bug fails. Longitudinal ReviewWithdrawal=P(Dose Present 0.3)=0.3, Continue=0.7. Urgent UrgentClinician=P(Urgent Present 0.2)=0.2, Routine=0.8. SafetyReview Complete=P(Reviewed 0.2)=0.2, Address=P(Concerns 0.3)=0.3, Continue=P(Incomplete 0.5)=0.5. SharedDecision subset Rec/Consider/Monitor=0.174+0.063+0.063=0.3. Respect=0.3*P(Declines 0.2)=0.06. Clarify=0.3*0.2=0.06. Resolve=0.3*0.6*0.3=0.054. Discuss=0.3*0.6*0.2=0.036. Continue=0.7+0.3*0.6*0.5=0.7+0.09=0.79. Sum=1.0. Swapping Preference and SafetyReview axes (both size 3) gives Respect 0.3*0.3=0.09, Clarify 0.3*0.5=0.15, Resolve 0.3*0.2*0.2=0.012, Continue 0.7+0.012=0.712, so a transpose bug fails. AnticholinergicReview Review=P(Present 0.5)*P(ExpPresent 0.3)=0.15. Routine=P(Absent 0.3)=0.3. Reconcile=0.5*0.7+0.2=0.35+0.2=0.55. Sum=1.0."
+    }
+  ],
+  "clinical": [
+    {
+      "id": "gate-true-present-applicable",
+      "inputs": {
+        "candidate/history/tardive_dyskinesia.v1/h_td_assessment": "Present",
+        "candidate/history/tardive_dyskinesia.v1/h_td_antipsychotic_association": "Established",
+        "candidate/history/tardive_dyskinesia.v1/h_td_motor_severity": "Mild",
+        "candidate/history/tardive_dyskinesia.v1/h_td_disabling_impact": "Absent",
+        "candidate/history/tardive_dyskinesia.v1/h_td_mild_consideration": "Present",
+        "candidate/history/tardive_dyskinesia.v1/h_td_dose_temporal_link": "Absent",
+        "candidate/history/tardive_dyskinesia.v1/h_td_urgent_safety_concern": "Absent",
+        "candidate/history/tardive_dyskinesia.v1/h_td_vmat2_safety_assessment": "ReviewedNoConcernIdentified",
+        "candidate/history/tardive_dyskinesia.v1/h_td_vmat2_preference": "WillingToDiscuss",
+        "candidate/history/tardive_dyskinesia.v1/h_td_anticholinergic_exposure": "Absent"
+      },
+      "expected_for_review": {
+        "status": "execute",
+        "gate": "true",
+        "applicability": "gate == 'true'",
+        "urgent_banner_from_saved_inputs": "Absent"
+      },
+      "note": "Candidate review expectation: present applicable gate true executes with empty evidence; urgent Absent still shows parallel review topics."
+    },
+    {
+      "id": "gate-true-urgent-present",
+      "inputs": {
+        "candidate/history/tardive_dyskinesia.v1/h_td_assessment": "Present",
+        "candidate/history/tardive_dyskinesia.v1/h_td_antipsychotic_association": "Established",
+        "candidate/history/tardive_dyskinesia.v1/h_td_motor_severity": "ModerateOrSevere",
+        "candidate/history/tardive_dyskinesia.v1/h_td_disabling_impact": "Present",
+        "candidate/history/tardive_dyskinesia.v1/h_td_mild_consideration": "Present",
+        "candidate/history/tardive_dyskinesia.v1/h_td_dose_temporal_link": "Absent",
+        "candidate/history/tardive_dyskinesia.v1/h_td_urgent_safety_concern": "Present",
+        "candidate/history/tardive_dyskinesia.v1/h_td_vmat2_safety_assessment": "ReviewedNoConcernIdentified",
+        "candidate/history/tardive_dyskinesia.v1/h_td_vmat2_preference": "WillingToDiscuss",
+        "candidate/history/tardive_dyskinesia.v1/h_td_anticholinergic_exposure": "Absent"
+      },
+      "expected_for_review": {
+        "status": "execute",
+        "gate": "true",
+        "applicability": "gate == 'true'",
+        "urgent_banner_from_saved_inputs": "Present",
+        "urgent_latency": "independent_of_estimation",
+        "fabricated_risk_percentage": null
+      },
+      "note": "Candidate review expectation: urgent Present executes and adds a parallel urgent banner from saved inputs independently of estimation latency; never a fabricated risk percentage."
+    },
+    {
+      "id": "gate-false-absent",
+      "inputs": {
+        "candidate/history/tardive_dyskinesia.v1/h_td_assessment": "Absent",
+        "candidate/history/tardive_dyskinesia.v1/h_td_antipsychotic_association": "Established",
+        "candidate/history/tardive_dyskinesia.v1/h_td_motor_severity": "Mild",
+        "candidate/history/tardive_dyskinesia.v1/h_td_disabling_impact": "Absent",
+        "candidate/history/tardive_dyskinesia.v1/h_td_mild_consideration": "Present",
+        "candidate/history/tardive_dyskinesia.v1/h_td_dose_temporal_link": "Absent",
+        "candidate/history/tardive_dyskinesia.v1/h_td_urgent_safety_concern": "Absent",
+        "candidate/history/tardive_dyskinesia.v1/h_td_vmat2_safety_assessment": "ReviewedNoConcernIdentified",
+        "candidate/history/tardive_dyskinesia.v1/h_td_vmat2_preference": "WillingToDiscuss",
+        "candidate/history/tardive_dyskinesia.v1/h_td_anticholinergic_exposure": "Absent"
+      },
+      "expected_for_review": {
+        "status": "not_applicable",
+        "gate": "false",
+        "applicability": "gate == 'true'",
+        "reason": "absent tardive dyskinesia without present effect",
+        "not_a_negative_posterior": true,
+        "posterior_claim": null
+      },
+      "note": "Candidate review expectation: absent gate false records not_applicable with reason and claims no posterior; never a fake negative review posterior or a negative finding."
+    },
+    {
+      "id": "gate-unknown-not-assessed",
+      "inputs": {
+        "candidate/history/tardive_dyskinesia.v1/h_td_assessment": "Unresolved",
+        "candidate/history/tardive_dyskinesia.v1/h_td_antipsychotic_association": "Established",
+        "candidate/history/tardive_dyskinesia.v1/h_td_motor_severity": "Mild",
+        "candidate/history/tardive_dyskinesia.v1/h_td_disabling_impact": "Absent",
+        "candidate/history/tardive_dyskinesia.v1/h_td_mild_consideration": "Present",
+        "candidate/history/tardive_dyskinesia.v1/h_td_dose_temporal_link": "Absent",
+        "candidate/history/tardive_dyskinesia.v1/h_td_urgent_safety_concern": "Absent",
+        "candidate/history/tardive_dyskinesia.v1/h_td_vmat2_safety_assessment": "ReviewedNoConcernIdentified",
+        "candidate/history/tardive_dyskinesia.v1/h_td_vmat2_preference": "WillingToDiscuss",
+        "candidate/history/tardive_dyskinesia.v1/h_td_anticholinergic_exposure": "Absent"
+      },
+      "expected_for_review": {
+        "status": "needs_clarification",
+        "gate": "unknown",
+        "applicability": "gate == 'true'",
+        "reason": "effect unresolved/not_assessed"
+      },
+      "note": "Candidate review expectation: unresolved or not_assessed required input pauses before estimation; never coerces to false and never coerces to Absent."
+    },
+    {
+      "id": "gate-missing-alternative-context",
+      "inputs": {
+        "candidate/history/tardive_dyskinesia.v1/h_td_assessment": "Present",
+        "candidate/history/tardive_dyskinesia.v1/h_td_motor_severity": "Mild",
+        "candidate/history/tardive_dyskinesia.v1/h_td_disabling_impact": "Absent",
+        "candidate/history/tardive_dyskinesia.v1/h_td_mild_consideration": "Present",
+        "candidate/history/tardive_dyskinesia.v1/h_td_dose_temporal_link": "Absent",
+        "candidate/history/tardive_dyskinesia.v1/h_td_urgent_safety_concern": "Absent",
+        "candidate/history/tardive_dyskinesia.v1/h_td_vmat2_safety_assessment": "ReviewedNoConcernIdentified",
+        "candidate/history/tardive_dyskinesia.v1/h_td_vmat2_preference": "WillingToDiscuss",
+        "candidate/history/tardive_dyskinesia.v1/h_td_anticholinergic_exposure": "Absent"
+      },
+      "expected_for_review": {
+        "status": "needs_clarification",
+        "gate": "unknown",
+        "applicability": "gate == 'true'",
+        "reason": "required antipsychotic-association/alternative-cause context missing"
+      },
+      "note": "Candidate review expectation: missing alternative-cause context pauses; a missing association assessment is never mapped to NotEstablished and never treated as an established finding."
+    },
+    {
+      "id": "gate-conflict-needs-clarification",
+      "inputs": {
+        "candidate/history/tardive_dyskinesia.v1/h_td_assessment": [
+          "Present",
+          "Absent"
+        ],
+        "candidate/history/tardive_dyskinesia.v1/h_td_antipsychotic_association": "Established",
+        "candidate/history/tardive_dyskinesia.v1/h_td_motor_severity": "Mild",
+        "candidate/history/tardive_dyskinesia.v1/h_td_disabling_impact": "Absent",
+        "candidate/history/tardive_dyskinesia.v1/h_td_mild_consideration": "Present",
+        "candidate/history/tardive_dyskinesia.v1/h_td_dose_temporal_link": "Absent",
+        "candidate/history/tardive_dyskinesia.v1/h_td_urgent_safety_concern": "Absent",
+        "candidate/history/tardive_dyskinesia.v1/h_td_vmat2_safety_assessment": "ReviewedNoConcernIdentified",
+        "candidate/history/tardive_dyskinesia.v1/h_td_vmat2_preference": "WillingToDiscuss",
+        "candidate/history/tardive_dyskinesia.v1/h_td_anticholinergic_exposure": "Absent"
+      },
+      "expected_for_review": {
+        "status": "needs_clarification",
+        "gate": "unknown",
+        "applicability": "gate == 'true'",
+        "reason": "conflicting effect-status inputs"
+      },
+      "note": "Candidate review expectation: conflicting required inputs pause; conflict never resolves by choosing one value and never coerces to Absent."
+    }
+  ]
+}

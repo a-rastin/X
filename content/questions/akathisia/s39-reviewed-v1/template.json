@@ -1,0 +1,183 @@
+{
+  "version": "s39-reviewed-v1",
+  "status": "approved",
+  "rendering_contract": "Candidate wording for S45 deterministic distribution rendering; each queried state has a branch, all probabilities remain visible. No probability threshold or posterior-ranked treatment selection is defined. Urgent banner renders from saved inputs in parallel with review topics. Whether outputs behave as deterministic rules or estimated tables is an open assumption for owner review; this wording assumes neither.",
+  "disclosures": [
+    "Experimental, uncalibrated and unapproved; not a prescription.",
+    "An absent case is not_applicable and claims no posterior; it is never a negative finding or a fake negative review posterior.",
+    "Unresolved, unknown, not_assessed, missing or conflicting required context pauses; absent is never coerced from not assessed and no missing finding maps to No.",
+    "BARS supports measurement; its total alone never establishes diagnosis and no BARS score threshold determines intervention; a global 2 or greater is a review candidate only and pseudoakathisia requires reassessment rather than assumption.",
+    "Urgent banner comes from saved structured urgent inputs, not model output, and never shows a fabricated risk percentage.",
+    "No dose, route, frequency or active/stopped fields are collected or accepted; prescribing details are background only and not copied as activation metadata."
+  ],
+  "branches": [
+    {
+      "when": {
+        "node": "AkathisiaIndicationReview",
+        "state": "EstablishedCurrentAssociation",
+        "operator": "=="
+      },
+      "text": "Candidate indication review topic: established current antipsychotic association with present akathisia is recorded in this context; review dose, switch, adjunct, distress and safety topics with the clinician. This experimental distribution does not prescribe treatment Distribution: {AkathisiaIndicationReview}."
+    },
+    {
+      "when": {
+        "node": "AkathisiaIndicationReview",
+        "state": "AssessDifferentialAndAssociation",
+        "operator": "=="
+      },
+      "text": "Candidate indication review topic: assess differential and association with the clinician, including alternative explanations, exposure history, onset timing and longitudinal course in this context Distribution: {AkathisiaIndicationReview}."
+    },
+    {
+      "when": {
+        "node": "AkathisiaIndicationReview",
+        "state": "NoCurrentTreatmentRule",
+        "operator": "=="
+      },
+      "text": "Candidate indication review topic: no current treatment rule in this absent context; retain ongoing clinician review. This is not a negative clinical finding Distribution: {AkathisiaIndicationReview}."
+    },
+    {
+      "when": {
+        "node": "AkathisiaAntipsychoticRegimenReview",
+        "state": "ReviewDoseAndSwitch",
+        "operator": "=="
+      },
+      "text": "Candidate regimen review topic: review dose reduction and switch feasibility with the clinician when both are recorded feasible without psychotic-worsening concern in this context. This does not prescribe a dose change Distribution: {AkathisiaAntipsychoticRegimenReview}."
+    },
+    {
+      "when": {
+        "node": "AkathisiaAntipsychoticRegimenReview",
+        "state": "ReviewDose",
+        "operator": "=="
+      },
+      "text": "Candidate regimen review topic: review dose reduction feasibility with the clinician in this context. This does not prescribe a dose change Distribution: {AkathisiaAntipsychoticRegimenReview}."
+    },
+    {
+      "when": {
+        "node": "AkathisiaAntipsychoticRegimenReview",
+        "state": "ReviewSwitch",
+        "operator": "=="
+      },
+      "text": "Candidate regimen review topic: review switch feasibility with the clinician in this context. This does not prescribe a switch Distribution: {AkathisiaAntipsychoticRegimenReview}."
+    },
+    {
+      "when": {
+        "node": "AkathisiaAntipsychoticRegimenReview",
+        "state": "ReviewConstraints",
+        "operator": "=="
+      },
+      "text": "Candidate regimen review topic: review dose and switch constraints with the clinician in this context Distribution: {AkathisiaAntipsychoticRegimenReview}."
+    },
+    {
+      "when": {
+        "node": "AkathisiaAntipsychoticRegimenReview",
+        "state": "PrioritizePsychosisTradeoff",
+        "operator": "=="
+      },
+      "text": "Candidate regimen review topic: prioritize psychosis tradeoff review with careful monitoring for symptom recurrence when psychotic-worsening concern is recorded in this context Distribution: {AkathisiaAntipsychoticRegimenReview}."
+    },
+    {
+      "when": {
+        "node": "AkathisiaAntipsychoticRegimenReview",
+        "state": "EstablishIndicationFirst",
+        "operator": "=="
+      },
+      "text": "Candidate regimen review topic: establish indication and differential first with the clinician before regimen review in this context Distribution: {AkathisiaAntipsychoticRegimenReview}."
+    },
+    {
+      "when": {
+        "node": "AdjunctDiscussion",
+        "state": "DiscussOptionsAndPatientConcerns",
+        "operator": "=="
+      },
+      "text": "Candidate adjunct discussion topic: discuss benzodiazepine and beta-blocker options and patient concerns with the clinician in this context. This does not prescribe an adjunct Distribution: {AdjunctDiscussion}."
+    },
+    {
+      "when": {
+        "node": "AdjunctDiscussion",
+        "state": "DiscussOptionsAndPreferences",
+        "operator": "=="
+      },
+      "text": "Candidate adjunct discussion topic: discuss options and preferences with the clinician in this context. This does not prescribe an adjunct Distribution: {AdjunctDiscussion}."
+    },
+    {
+      "when": {
+        "node": "AdjunctDiscussion",
+        "state": "EstablishIndicationFirst",
+        "operator": "=="
+      },
+      "text": "Candidate adjunct discussion topic: establish indication and differential first with the clinician before adjunct discussion in this context Distribution: {AdjunctDiscussion}."
+    },
+    {
+      "when": {
+        "node": "UrgentSafetyReview",
+        "state": "UrgentClinicianAssessment",
+        "operator": "=="
+      },
+      "text": "Urgent clinical assessment topic from saved structured urgent inputs, shown independently of estimation latency; arrange immediate clinician assessment per local protocol. This is not a computed risk percentage Distribution: {UrgentSafetyReview}."
+    },
+    {
+      "when": {
+        "node": "UrgentSafetyReview",
+        "state": "RoutineSafetyAssessment",
+        "operator": "=="
+      },
+      "text": "Candidate safety review topic: routine safety assessment with the clinician in this context Distribution: {UrgentSafetyReview}."
+    },
+    {
+      "when": {
+        "node": "BurdenReview",
+        "state": "ReviewDistressAndAdherence",
+        "operator": "=="
+      },
+      "text": "Candidate burden review topic: review distress and adherence with the clinician when distress is recorded in this context Distribution: {BurdenReview}."
+    },
+    {
+      "when": {
+        "node": "BurdenReview",
+        "state": "AssessBurdenAndDifferential",
+        "operator": "=="
+      },
+      "text": "Candidate burden review topic: assess burden and differential with the clinician in this context Distribution: {BurdenReview}."
+    },
+    {
+      "when": {
+        "node": "BurdenReview",
+        "state": "RoutineBurdenAssessment",
+        "operator": "=="
+      },
+      "text": "Candidate burden review topic: routine burden assessment with the clinician in this context Distribution: {BurdenReview}."
+    },
+    {
+      "when": {
+        "node": "BenzodiazepineSafetyReview",
+        "state": "EnhancedIndividualizedReview",
+        "operator": "=="
+      },
+      "text": "Candidate benzodiazepine safety review topic: enhanced individualized review with the clinician per current labeling when a respiratory, falls-cognitive or combined falls-misuse concern is recorded in this context Distribution: {BenzodiazepineSafetyReview}."
+    },
+    {
+      "when": {
+        "node": "BenzodiazepineSafetyReview",
+        "state": "RoutineIndividualizedReview",
+        "operator": "=="
+      },
+      "text": "Candidate benzodiazepine safety review topic: routine individualized review with the clinician in this context Distribution: {BenzodiazepineSafetyReview}."
+    },
+    {
+      "when": {
+        "node": "PropranololSafetyReview",
+        "state": "EnhancedIndividualizedReview",
+        "operator": "=="
+      },
+      "text": "Candidate propranolol safety review topic: enhanced individualized review with the clinician per current labeling when a blood-pressure or exposure concern is recorded in this context Distribution: {PropranololSafetyReview}."
+    },
+    {
+      "when": {
+        "node": "PropranololSafetyReview",
+        "state": "RoutineIndividualizedReview",
+        "operator": "=="
+      },
+      "text": "Candidate propranolol safety review topic: routine individualized review with the clinician in this context Distribution: {PropranololSafetyReview}."
+    }
+  ]
+}

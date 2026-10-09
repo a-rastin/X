@@ -1,0 +1,838 @@
+{
+  "applicability": {
+    "expression": "gate == 'true'",
+    "required_fields": [
+      "candidate/history/no_improvement_clozapine.v1/h_schizophrenia_established",
+      "candidate/history/no_improvement_clozapine.v1/h_persistent_symptoms",
+      "candidate/history/no_improvement_clozapine.v1/h_trial1_assessment",
+      "candidate/history/no_improvement_clozapine.v1/h_trial2_assessment",
+      "candidate/history/no_improvement_clozapine.v1/h_trials_different_drugs",
+      "candidate/history/no_improvement_clozapine.v1/h_symptoms_12_weeks",
+      "candidate/history/no_improvement_clozapine.v1/h_moderate_symptoms_impairment",
+      "candidate/history/no_improvement_clozapine.v1/h_clozapine_treatment_status",
+      "candidate/history/no_improvement_clozapine.v1/h_willing_to_discuss",
+      "candidate/history/no_improvement_clozapine.v1/h_monitoring_plan",
+      "candidate/history/no_improvement_clozapine.v1/h_initiation_discussion_appropriate",
+      "candidate/history/no_improvement_clozapine.v1/h_urgent_safety_concern",
+      "candidate/history/no_improvement_clozapine.v1/h_exposure_interpretation_concern",
+      "candidate/history/no_improvement_clozapine.v1/h_clozapine_trial_adequate",
+      "candidate/history/no_improvement_clozapine.v1/h_residual_symptoms",
+      "candidate/history/no_improvement_clozapine.v1/h_baseline_encounter_ref",
+      "candidate/history/no_improvement_clozapine.v1/h_baseline_window_validity",
+      "candidate/history/no_improvement_clozapine.v1/h_panss_baseline_status",
+      "candidate/history/no_improvement_clozapine.v1/h_panss_followup_status"
+    ],
+    "unknown_policy": "needs_clarification"
+  },
+  "applicability_truth_table": {
+    "false": "Gate false (improvement documented with current baseline, completed PANSS baseline and follow-up, adequate clozapine-trial context and no unknown/missing/conflict) records not_applicable with reason; claims no posterior and is never a negative finding or a fake negative review posterior.",
+    "true": "Gate true (CurrentTreatment with current baseline, completed PANSS baseline and follow-up, adequate clozapine-trial context and all other required inputs known) executes estimation with empty evidence; urgent Present still executes and adds a parallel urgent banner.",
+    "unknown": "Gate unknown (any required input unknown, not_assessed, missing or conflicting, including missing PANSS follow-up, outdated baseline, not-assessed severity or inadequate-trial ambiguity) yields needs_clarification before estimation; never coerces uncertainty to false and never estimates."
+  },
+  "cpt_contract": {
+    "nodes": [
+      {
+        "node_id": "SchizophreniaEstablished",
+        "parent_ids": [],
+        "states": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "node_id": "PersistentSignificantSymptoms",
+        "parent_ids": [],
+        "states": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "node_id": "Trial1Assessment",
+        "parent_ids": [],
+        "states": [
+          "AdequateSuboptimalResponse",
+          "AdequateSatisfactoryResponse",
+          "InadequateExposure",
+          "TruncatedByIntolerance"
+        ]
+      },
+      {
+        "node_id": "Trial2Assessment",
+        "parent_ids": [],
+        "states": [
+          "AdequateSuboptimalResponse",
+          "AdequateSatisfactoryResponse",
+          "InadequateExposure",
+          "TruncatedByIntolerance"
+        ]
+      },
+      {
+        "node_id": "TrialsUseDifferentDrugs",
+        "parent_ids": [],
+        "states": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "node_id": "SymptomsAtLeast12Weeks",
+        "parent_ids": [],
+        "states": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "node_id": "ModerateSymptomsAndFunctionalImpairment",
+        "parent_ids": [],
+        "states": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "node_id": "ClozapineTreatmentStatus",
+        "parent_ids": [],
+        "states": [
+          "NeverTreated",
+          "CurrentTreatment",
+          "PreviouslyTreated"
+        ]
+      },
+      {
+        "node_id": "WillingToDiscussClozapine",
+        "parent_ids": [],
+        "states": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "node_id": "ClozapineMonitoringPlanAvailable",
+        "parent_ids": [],
+        "states": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "node_id": "ClozapineInitiationDiscussionAppropriate",
+        "parent_ids": [],
+        "states": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "node_id": "UrgentSafetyConcern",
+        "parent_ids": [],
+        "states": [
+          "Present",
+          "Absent"
+        ]
+      },
+      {
+        "node_id": "ExposureInterpretationConcern",
+        "parent_ids": [],
+        "states": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "node_id": "ClozapineTrialAdequate",
+        "parent_ids": [],
+        "states": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "node_id": "ResidualSymptomsOnClozapine",
+        "parent_ids": [],
+        "states": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "node_id": "TwoAdequateSuboptimalTrials",
+        "parent_ids": [
+          "Trial1Assessment",
+          "Trial2Assessment",
+          "TrialsUseDifferentDrugs"
+        ],
+        "states": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "node_id": "TreatmentResistantSchizophreniaReview",
+        "parent_ids": [
+          "SchizophreniaEstablished",
+          "PersistentSignificantSymptoms",
+          "TwoAdequateSuboptimalTrials"
+        ],
+        "states": [
+          "Triggered",
+          "NotTriggered"
+        ]
+      },
+      {
+        "node_id": "AdditionalResearchFeatures",
+        "parent_ids": [
+          "SymptomsAtLeast12Weeks",
+          "ModerateSymptomsAndFunctionalImpairment"
+        ],
+        "states": [
+          "Present",
+          "NotAllPresent"
+        ]
+      },
+      {
+        "node_id": "PriorTrialAdequacyReview",
+        "parent_ids": [
+          "Trial1Assessment",
+          "Trial2Assessment"
+        ],
+        "states": [
+          "Triggered",
+          "NotTriggered"
+        ]
+      },
+      {
+        "node_id": "ClozapineInitiationDiscussionPreparation",
+        "parent_ids": [
+          "WillingToDiscussClozapine",
+          "ClozapineMonitoringPlanAvailable",
+          "ClozapineInitiationDiscussionAppropriate"
+        ],
+        "states": [
+          "AddressBarriers",
+          "PreparedForDiscussion"
+        ]
+      },
+      {
+        "node_id": "TreatmentResistanceClozapineReviewPathway",
+        "parent_ids": [
+          "UrgentSafetyConcern",
+          "ClozapineTreatmentStatus",
+          "TreatmentResistantSchizophreniaReview",
+          "ClozapineInitiationDiscussionPreparation"
+        ],
+        "states": [
+          "UrgentClinicalAssessment",
+          "ReviewCurrentTreatment",
+          "IndividualizedPriorClozapineReview",
+          "ReviewEvidenceAndOtherIndications",
+          "DiscussClozapine",
+          "AddressDiscussionBarriers"
+        ]
+      },
+      {
+        "node_id": "ClozapineExposureReview",
+        "parent_ids": [
+          "ClozapineTreatmentStatus",
+          "ExposureInterpretationConcern"
+        ],
+        "states": [
+          "Triggered",
+          "NotTriggered"
+        ]
+      },
+      {
+        "node_id": "PersistentSymptomsReview",
+        "parent_ids": [
+          "ClozapineTreatmentStatus",
+          "ResidualSymptomsOnClozapine",
+          "ClozapineTrialAdequate"
+        ],
+        "states": [
+          "OutsideCurrentTreatmentScope",
+          "ContinuePeriodicReview",
+          "ReviewTrialAdequacy",
+          "SpecialistPersistentSymptomsReview"
+        ]
+      }
+    ]
+  },
+  "declared_node_order": [
+    "SchizophreniaEstablished",
+    "PersistentSignificantSymptoms",
+    "Trial1Assessment",
+    "Trial2Assessment",
+    "TrialsUseDifferentDrugs",
+    "SymptomsAtLeast12Weeks",
+    "ModerateSymptomsAndFunctionalImpairment",
+    "ClozapineTreatmentStatus",
+    "WillingToDiscussClozapine",
+    "ClozapineMonitoringPlanAvailable",
+    "ClozapineInitiationDiscussionAppropriate",
+    "UrgentSafetyConcern",
+    "ExposureInterpretationConcern",
+    "ClozapineTrialAdequate",
+    "ResidualSymptomsOnClozapine",
+    "TwoAdequateSuboptimalTrials",
+    "TreatmentResistantSchizophreniaReview",
+    "AdditionalResearchFeatures",
+    "PriorTrialAdequacyReview",
+    "ClozapineInitiationDiscussionPreparation",
+    "TreatmentResistanceClozapineReviewPathway",
+    "ClozapineExposureReview",
+    "PersistentSymptomsReview"
+  ],
+  "engine_configuration": {
+    "elimination_order": "source_order",
+    "evidence": "empty",
+    "evidence_order": "given_order",
+    "float_dtype": "float64",
+    "tie_break": "source_order"
+  },
+  "execution_evidence": {},
+  "history_definition": "content/history/history.no_improvement_clozapine.v1.json",
+  "input_consistency_contract": {
+    "baseline_provenance": "Baseline encounter reference and window validity come from saved structured gate-only inputs with encounter identity, visit time and PANSS version attribution; follow-up copies carry baseline provenance and require reconciliation per history.v1. Page notes are never mapping input.",
+    "gate_inputs": "Current clozapine status plus current baseline, completed PANSS baseline and follow-up, adequate-trial context and all other required inputs define true/false/unknown; unknown, missing, not_assessed or conflicting required input pauses, never coerces to false and never coerces to No.",
+    "history_review": "Candidate v1 definitions require owner review before release. No runtime form or projection added by S37.",
+    "missingness_scope": "These declarations are content proposals for the S40 projection/readiness implementation, not executed clinical runtime behavior.",
+    "panss_provenance": "PANSS baseline and follow-up completeness use the S08 validated released panss.v1.json definition version and completeness rules with encounter attribution; item responses inform clinician synthesis and never map a scale level alone. S08 has no owner reviewer or approval requirement. No percent-change cutoff is set here.",
+    "severity_provenance": "Follow-up severity is an independent clinician-reviewed Yes/No synthesis with examination and window attribution; it is never derived from a PANSS total and no score bands are set here. not_assessed pauses. No dose, route, frequency, active/stopped or free-text fields are collected or accepted.",
+    "trial_provenance": "Trial assessments and clozapine-trial adequacy cite prior courses and the current clozapine course with agent and window attribution; no dose, route, frequency or active/stopped fields are collected. Duration, dose and adherence thresholds require owner review; none are set here.",
+    "urgent_inputs": "UrgentSafetyConcern comes from saved structured urgent inputs with encounter/window attribution; template banner does not wait for estimation."
+  },
+  "missingness_contract": {
+    "baseline_rule": "Baseline encounter reference documented_current with window validity current is required for gate true; outdated or missing baseline pauses as needs_clarification and never silently skips review. A differing baseline (current versus outdated) changes the gate; the concrete recency threshold requires owner review and none is set here.",
+    "evidence": {},
+    "false_gate": {
+      "not_a_negative_posterior": true,
+      "posterior_claim": null,
+      "status": "not_applicable"
+    },
+    "gate_definition": "Gate true requires ClozapineTreatmentStatus CurrentTreatment with baseline documented_current and current, PANSS baseline and follow-up completed, ClozapineTrialAdequate known and all other required inputs known; gate false is improvement documented (Residual No with current baseline, completed PANSS and adequate context) with no unknown/missing/conflict among required inputs; otherwise gate unknown.",
+    "improvement_rule": "Improvement documented with current baseline, completed PANSS baseline and follow-up and adequate-trial context records not_applicable with reason and claims no posterior; never a negative finding and never a fake negative review posterior. A missing PANSS follow-up is never treated as no improvement.",
+    "no_percent_cutoff_rule": "No percent-change cutoff is guessed here; the cutoff value, denominator and zero case require owner review. Missing follow-up score never maps to no improvement and pauses for clarification.",
+    "not_assessed_severity_rule": "A not_assessed severity/impairment synthesis (ModerateSymptomsAndFunctionalImpairment not_assessed) pauses as needs_clarification; never coerced to No and never mapped to improvement.",
+    "outdated_baseline_rule": "An outdated baseline window pauses as needs_clarification with a fresh baseline choice; it never coerces to improvement and never silently skips the follow-up review.",
+    "panss_rule": "PANSS baseline and follow-up must both be completed per the S08 released definition for gate true; missing, unknown or not_assessed PANSS status pauses. A single scale level alone never maps improvement or no improvement.",
+    "required_conflict_policy": "needs_clarification",
+    "required_missing_policy": "needs_clarification",
+    "required_source_paths": [
+      "candidate/history/no_improvement_clozapine.v1/h_schizophrenia_established",
+      "candidate/history/no_improvement_clozapine.v1/h_persistent_symptoms",
+      "candidate/history/no_improvement_clozapine.v1/h_trial1_assessment",
+      "candidate/history/no_improvement_clozapine.v1/h_trial2_assessment",
+      "candidate/history/no_improvement_clozapine.v1/h_trials_different_drugs",
+      "candidate/history/no_improvement_clozapine.v1/h_symptoms_12_weeks",
+      "candidate/history/no_improvement_clozapine.v1/h_moderate_symptoms_impairment",
+      "candidate/history/no_improvement_clozapine.v1/h_clozapine_treatment_status",
+      "candidate/history/no_improvement_clozapine.v1/h_willing_to_discuss",
+      "candidate/history/no_improvement_clozapine.v1/h_monitoring_plan",
+      "candidate/history/no_improvement_clozapine.v1/h_initiation_discussion_appropriate",
+      "candidate/history/no_improvement_clozapine.v1/h_urgent_safety_concern",
+      "candidate/history/no_improvement_clozapine.v1/h_exposure_interpretation_concern",
+      "candidate/history/no_improvement_clozapine.v1/h_clozapine_trial_adequate",
+      "candidate/history/no_improvement_clozapine.v1/h_residual_symptoms",
+      "candidate/history/no_improvement_clozapine.v1/h_baseline_encounter_ref",
+      "candidate/history/no_improvement_clozapine.v1/h_baseline_window_validity",
+      "candidate/history/no_improvement_clozapine.v1/h_panss_baseline_status",
+      "candidate/history/no_improvement_clozapine.v1/h_panss_followup_status"
+    ],
+    "required_unknown_policy": "needs_clarification",
+    "required_unknown_values": [
+      "unknown",
+      "not_assessed"
+    ],
+    "trial_context": "Missing trial-adequacy or current clozapine-trial context pauses as needs_clarification; a missing trial assessment is never coerced to No and never treated as an adequate-trial finding.",
+    "unknown_gate": {
+      "pauses_before_estimation": true,
+      "status": "needs_clarification"
+    }
+  },
+  "network_file": "network.xml",
+  "network_hash": "4a1863d996efddae0b8904d28868af90030e7f30be56a97666c1dfd165801435",
+  "numerical_policy": {
+    "cpt_policy": "cpt-decimal-v1",
+    "comparison_tolerance": 1e-06,
+    "engine": {
+      "elimination_order": "source_order",
+      "float_dtype": "float64",
+      "lxml": "6.1.3",
+      "pgmpy": "1.1.2",
+      "python": "3.12.14"
+    },
+    "evidence": {}
+  },
+  "numerical_tolerances": {
+    "percentage_decimal_places": 6,
+    "posterior_comparison_absolute": 1e-06,
+    "row_total": "exact integer units; never normalize or repair",
+    "units_for_100_percent": 100000000
+  },
+  "patient_mappings": [
+    {
+      "allowed_source_paths": [
+        "candidate/history/no_improvement_clozapine.v1/h_schizophrenia_established"
+      ],
+      "missing_policy": "needs_clarification",
+      "node_id": "SchizophreniaEstablished",
+      "time_window": "current_encounter",
+      "transform": "copy",
+      "usage": "cpt_context"
+    },
+    {
+      "allowed_source_paths": [
+        "candidate/history/no_improvement_clozapine.v1/h_persistent_symptoms"
+      ],
+      "missing_policy": "needs_clarification",
+      "node_id": "PersistentSignificantSymptoms",
+      "time_window": "current_encounter",
+      "transform": "copy",
+      "usage": "cpt_context"
+    },
+    {
+      "allowed_source_paths": [
+        "candidate/history/no_improvement_clozapine.v1/h_trial1_assessment"
+      ],
+      "missing_policy": "needs_clarification",
+      "node_id": "Trial1Assessment",
+      "time_window": "current_encounter",
+      "transform": "copy",
+      "usage": "cpt_context"
+    },
+    {
+      "allowed_source_paths": [
+        "candidate/history/no_improvement_clozapine.v1/h_trial2_assessment"
+      ],
+      "missing_policy": "needs_clarification",
+      "node_id": "Trial2Assessment",
+      "time_window": "current_encounter",
+      "transform": "copy",
+      "usage": "cpt_context"
+    },
+    {
+      "allowed_source_paths": [
+        "candidate/history/no_improvement_clozapine.v1/h_trials_different_drugs"
+      ],
+      "missing_policy": "needs_clarification",
+      "node_id": "TrialsUseDifferentDrugs",
+      "time_window": "current_encounter",
+      "transform": "copy",
+      "usage": "cpt_context"
+    },
+    {
+      "allowed_source_paths": [
+        "candidate/history/no_improvement_clozapine.v1/h_symptoms_12_weeks"
+      ],
+      "missing_policy": "needs_clarification",
+      "node_id": "SymptomsAtLeast12Weeks",
+      "time_window": "current_encounter",
+      "transform": "copy",
+      "usage": "cpt_context"
+    },
+    {
+      "allowed_source_paths": [
+        "candidate/history/no_improvement_clozapine.v1/h_moderate_symptoms_impairment"
+      ],
+      "missing_policy": "needs_clarification",
+      "node_id": "ModerateSymptomsAndFunctionalImpairment",
+      "time_window": "current_encounter",
+      "transform": "copy",
+      "usage": "cpt_context"
+    },
+    {
+      "allowed_source_paths": [
+        "candidate/history/no_improvement_clozapine.v1/h_clozapine_treatment_status"
+      ],
+      "missing_policy": "needs_clarification",
+      "node_id": "ClozapineTreatmentStatus",
+      "time_window": "current_encounter",
+      "transform": "copy",
+      "usage": "cpt_context"
+    },
+    {
+      "allowed_source_paths": [
+        "candidate/history/no_improvement_clozapine.v1/h_willing_to_discuss"
+      ],
+      "missing_policy": "needs_clarification",
+      "node_id": "WillingToDiscussClozapine",
+      "time_window": "current_encounter",
+      "transform": "copy",
+      "usage": "cpt_context"
+    },
+    {
+      "allowed_source_paths": [
+        "candidate/history/no_improvement_clozapine.v1/h_monitoring_plan"
+      ],
+      "missing_policy": "needs_clarification",
+      "node_id": "ClozapineMonitoringPlanAvailable",
+      "time_window": "current_encounter",
+      "transform": "copy",
+      "usage": "cpt_context"
+    },
+    {
+      "allowed_source_paths": [
+        "candidate/history/no_improvement_clozapine.v1/h_initiation_discussion_appropriate"
+      ],
+      "missing_policy": "needs_clarification",
+      "node_id": "ClozapineInitiationDiscussionAppropriate",
+      "time_window": "current_encounter",
+      "transform": "copy",
+      "usage": "cpt_context"
+    },
+    {
+      "allowed_source_paths": [
+        "candidate/history/no_improvement_clozapine.v1/h_urgent_safety_concern"
+      ],
+      "missing_policy": "needs_clarification",
+      "node_id": "UrgentSafetyConcern",
+      "time_window": "current_encounter",
+      "transform": "copy",
+      "usage": "cpt_context"
+    },
+    {
+      "allowed_source_paths": [
+        "candidate/history/no_improvement_clozapine.v1/h_exposure_interpretation_concern"
+      ],
+      "missing_policy": "needs_clarification",
+      "node_id": "ExposureInterpretationConcern",
+      "time_window": "current_encounter",
+      "transform": "copy",
+      "usage": "cpt_context"
+    },
+    {
+      "allowed_source_paths": [
+        "candidate/history/no_improvement_clozapine.v1/h_clozapine_trial_adequate"
+      ],
+      "missing_policy": "needs_clarification",
+      "node_id": "ClozapineTrialAdequate",
+      "time_window": "current_encounter",
+      "transform": "copy",
+      "usage": "cpt_context"
+    },
+    {
+      "allowed_source_paths": [
+        "candidate/history/no_improvement_clozapine.v1/h_residual_symptoms"
+      ],
+      "missing_policy": "needs_clarification",
+      "node_id": "ResidualSymptomsOnClozapine",
+      "time_window": "current_encounter",
+      "transform": "copy",
+      "usage": "cpt_context"
+    }
+  ],
+  "prompt_version": "s37-v1",
+  "query_nodes": [
+    "TwoAdequateSuboptimalTrials",
+    "TreatmentResistantSchizophreniaReview",
+    "AdditionalResearchFeatures",
+    "PriorTrialAdequacyReview",
+    "ClozapineInitiationDiscussionPreparation",
+    "TreatmentResistanceClozapineReviewPathway",
+    "ClozapineExposureReview",
+    "PersistentSymptomsReview"
+  ],
+  "question_key": "no_improvement_clozapine",
+  "reference_cpts_status": "Synthetic mathematical references only; all 23 BN-07 distributions were missing and remain uncalibrated with no source lookup; no clinical calibration or approval",
+  "resource_limits": {
+    "hard_memory_limit_bytes": null,
+    "inference_timeout_seconds": 30,
+    "max_context_bytes": 65536,
+    "max_cpt_output_bytes": 524288,
+    "max_effective_xml_bytes": 1048576,
+    "max_inference_cells": 131072,
+    "max_inference_nodes": 64,
+    "max_network_xml_bytes": 1048576,
+    "max_prompt_bytes": 65536,
+    "memory_limitation": "Existing bounded child process/node/table limits do not establish an OS memory ceiling or bound every induced intermediate factor. No such memory admission claim is made.",
+    "overflow_policy": "Reject admission or fail explicitly; no truncation, approximation or incomplete-table fallback.",
+    "status": "Candidate engineering limits; existing inference limits preserved, provider capability not yet measured"
+  },
+  "review_status": "approved",
+  "schema_version": "question-package-v1",
+  "source_refs": [
+    "project-documents/bayesian-networks/BN-07.xml",
+    "project-documents/medical-documents/guideline/STATEMENT-07.md",
+    "content/assessments/panss.v1.json",
+    "content/history/history.no_improvement_clozapine.v1.json",
+    "content/history/history.v1.json"
+  ],
+  "template_version": "s39-reviewed-v1",
+  "title": "No-improvement clozapine follow-up review",
+  "variables": [
+    {
+      "kind": "nature",
+      "node_id": "SchizophreniaEstablished",
+      "ordered_parents": [],
+      "patient_value_type": "categorical",
+      "states": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "kind": "nature",
+      "node_id": "PersistentSignificantSymptoms",
+      "ordered_parents": [],
+      "patient_value_type": "categorical",
+      "states": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "kind": "nature",
+      "node_id": "Trial1Assessment",
+      "ordered_parents": [],
+      "patient_value_type": "categorical",
+      "states": [
+        "AdequateSuboptimalResponse",
+        "AdequateSatisfactoryResponse",
+        "InadequateExposure",
+        "TruncatedByIntolerance"
+      ]
+    },
+    {
+      "kind": "nature",
+      "node_id": "Trial2Assessment",
+      "ordered_parents": [],
+      "patient_value_type": "categorical",
+      "states": [
+        "AdequateSuboptimalResponse",
+        "AdequateSatisfactoryResponse",
+        "InadequateExposure",
+        "TruncatedByIntolerance"
+      ]
+    },
+    {
+      "kind": "nature",
+      "node_id": "TrialsUseDifferentDrugs",
+      "ordered_parents": [],
+      "patient_value_type": "categorical",
+      "states": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "kind": "nature",
+      "node_id": "SymptomsAtLeast12Weeks",
+      "ordered_parents": [],
+      "patient_value_type": "categorical",
+      "states": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "kind": "nature",
+      "node_id": "ModerateSymptomsAndFunctionalImpairment",
+      "ordered_parents": [],
+      "patient_value_type": "categorical",
+      "states": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "kind": "nature",
+      "node_id": "ClozapineTreatmentStatus",
+      "ordered_parents": [],
+      "patient_value_type": "categorical",
+      "states": [
+        "NeverTreated",
+        "CurrentTreatment",
+        "PreviouslyTreated"
+      ]
+    },
+    {
+      "kind": "nature",
+      "node_id": "WillingToDiscussClozapine",
+      "ordered_parents": [],
+      "patient_value_type": "categorical",
+      "states": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "kind": "nature",
+      "node_id": "ClozapineMonitoringPlanAvailable",
+      "ordered_parents": [],
+      "patient_value_type": "categorical",
+      "states": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "kind": "nature",
+      "node_id": "ClozapineInitiationDiscussionAppropriate",
+      "ordered_parents": [],
+      "patient_value_type": "categorical",
+      "states": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "kind": "nature",
+      "node_id": "UrgentSafetyConcern",
+      "ordered_parents": [],
+      "patient_value_type": "categorical",
+      "states": [
+        "Present",
+        "Absent"
+      ]
+    },
+    {
+      "kind": "nature",
+      "node_id": "ExposureInterpretationConcern",
+      "ordered_parents": [],
+      "patient_value_type": "categorical",
+      "states": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "kind": "nature",
+      "node_id": "ClozapineTrialAdequate",
+      "ordered_parents": [],
+      "patient_value_type": "categorical",
+      "states": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "kind": "nature",
+      "node_id": "ResidualSymptomsOnClozapine",
+      "ordered_parents": [],
+      "patient_value_type": "categorical",
+      "states": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "kind": "nature",
+      "node_id": "TwoAdequateSuboptimalTrials",
+      "ordered_parents": [
+        "Trial1Assessment",
+        "Trial2Assessment",
+        "TrialsUseDifferentDrugs"
+      ],
+      "patient_value_type": "categorical",
+      "states": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "kind": "nature",
+      "node_id": "TreatmentResistantSchizophreniaReview",
+      "ordered_parents": [
+        "SchizophreniaEstablished",
+        "PersistentSignificantSymptoms",
+        "TwoAdequateSuboptimalTrials"
+      ],
+      "patient_value_type": "categorical",
+      "states": [
+        "Triggered",
+        "NotTriggered"
+      ]
+    },
+    {
+      "kind": "nature",
+      "node_id": "AdditionalResearchFeatures",
+      "ordered_parents": [
+        "SymptomsAtLeast12Weeks",
+        "ModerateSymptomsAndFunctionalImpairment"
+      ],
+      "patient_value_type": "categorical",
+      "states": [
+        "Present",
+        "NotAllPresent"
+      ]
+    },
+    {
+      "kind": "nature",
+      "node_id": "PriorTrialAdequacyReview",
+      "ordered_parents": [
+        "Trial1Assessment",
+        "Trial2Assessment"
+      ],
+      "patient_value_type": "categorical",
+      "states": [
+        "Triggered",
+        "NotTriggered"
+      ]
+    },
+    {
+      "kind": "nature",
+      "node_id": "ClozapineInitiationDiscussionPreparation",
+      "ordered_parents": [
+        "WillingToDiscussClozapine",
+        "ClozapineMonitoringPlanAvailable",
+        "ClozapineInitiationDiscussionAppropriate"
+      ],
+      "patient_value_type": "categorical",
+      "states": [
+        "AddressBarriers",
+        "PreparedForDiscussion"
+      ]
+    },
+    {
+      "kind": "nature",
+      "node_id": "TreatmentResistanceClozapineReviewPathway",
+      "ordered_parents": [
+        "UrgentSafetyConcern",
+        "ClozapineTreatmentStatus",
+        "TreatmentResistantSchizophreniaReview",
+        "ClozapineInitiationDiscussionPreparation"
+      ],
+      "patient_value_type": "categorical",
+      "states": [
+        "UrgentClinicalAssessment",
+        "ReviewCurrentTreatment",
+        "IndividualizedPriorClozapineReview",
+        "ReviewEvidenceAndOtherIndications",
+        "DiscussClozapine",
+        "AddressDiscussionBarriers"
+      ]
+    },
+    {
+      "kind": "nature",
+      "node_id": "ClozapineExposureReview",
+      "ordered_parents": [
+        "ClozapineTreatmentStatus",
+        "ExposureInterpretationConcern"
+      ],
+      "patient_value_type": "categorical",
+      "states": [
+        "Triggered",
+        "NotTriggered"
+      ]
+    },
+    {
+      "kind": "nature",
+      "node_id": "PersistentSymptomsReview",
+      "ordered_parents": [
+        "ClozapineTreatmentStatus",
+        "ResidualSymptomsOnClozapine",
+        "ClozapineTrialAdequate"
+      ],
+      "patient_value_type": "categorical",
+      "states": [
+        "OutsideCurrentTreatmentScope",
+        "ContinuePeriodicReview",
+        "ReviewTrialAdequacy",
+        "SpecialistPersistentSymptomsReview"
+      ]
+    }
+  ],
+  "version": "s39-reviewed-v1",
+  "workflow": "followup"
+}

@@ -1,0 +1,333 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<BIF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="0.3" xsi:noNamespaceSchemaLocation="schema.xml">
+  <NETWORK>
+    <NAME>BN_09_Aggression_Clozapine_Review_S31_v1</NAME>
+    <PROPERTY>clinical_question=How do scenario factors affect experimental clozapine consideration for persistent aggression-related risk?</PROPERTY>
+    <PROPERTY>statement_id=9</PROPERTY>
+    <PROPERTY>recommendation_strength=2</PROPERTY>
+    <PROPERTY>evidence_quality=C</PROPERTY>
+    <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-09.md</PROPERTY>
+    <PROPERTY>source_locator=STATEMENT 9: Clozapine in Aggressive Behavior; Implementation; Patient Preferences; Quality Measurement Considerations</PROPERTY>
+    <PROPERTY>source_sha256=73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6</PROPERTY>
+    <PROPERTY>panss_note=content/assessments/panss.v1.json hostility item is a non-equivalent input; a hostility score alone never maps the gate</PROPERTY>
+    <PROPERTY>source_periods=scenario interval selected for the experiment; lifetime treatment context; current_encounter synthesis</PROPERTY>
+    <PROPERTY>population=Adult schizophrenia and antipsychotic-treatment scenarios for experimentation</PROPERTY>
+    <PROPERTY>setting=Experimental and educational application</PROPERTY>
+    <PROPERTY>time_horizon=Current encounter synthesis of past_month, past_3_months and lifetime windows</PROPERTY>
+    <PROPERTY>model_version=s31-v1</PROPERTY>
+    <PROPERTY>validation_status=AWAITING_REVIEW_SYNTHETIC_REFERENCE_CPTS</PROPERTY>
+    <PROPERTY>parameter_policy=All 14 nodes including roots require fresh complete percentage CPT estimation; XML tables are explicitly synthetic uniform mathematical references</PROPERTY>
+    <PROPERTY>edge_encoding=Ordered GIVEN elements materialize all BN-08 ordered proposed_parent properties; no edges removed or renamed</PROPERTY>
+    <PROPERTY>table_order=FOR outcome fastest; last GIVEN parent next; first GIVEN parent slowest</PROPERTY>
+    <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting context pauses for clarification; no guessed negatives</PROPERTY>
+    <PROPERTY>urgent_policy=Urgent banner renders from saved structured urgent inputs independently of estimation latency; never a fabricated risk percentage</PROPERTY>
+    <PROPERTY>gate_policy=Gate true executes, false records not_applicable with reason and claims no posterior, unknown pauses for clarification</PROPERTY>
+    <PROPERTY>use_context=experimental_educational_awaiting_review</PROPERTY>
+    <PROPERTY>inference_mode=complete_CPT_estimation_empty_evidence</PROPERTY>
+    <PROPERTY>scope=Aggression persistence gate; a PANSS hostility score alone is not a treatment rule</PROPERTY>
+    <PROPERTY>input_policy=Versioned candidate structured context only; no regimen fields or page notes</PROPERTY>
+    <PROPERTY>graph_semantics=Candidate retained BN-08 dependencies; all proposed_parent edges materialized in declared order</PROPERTY>
+    <PROPERTY>execution_contract=Complete fixed ordered CPTs and empty execution evidence; unapproved content cannot activate</PROPERTY>
+    <PROPERTY>source_policy=Pinned original BN-08 and STATEMENT-08 attribution required; review not yet granted</PROPERTY>
+    <PROPERTY>parameter_inventory=14 complete reference distributions: 10 roots plus 4 outputs; all explicitly synthetic uniform references</PROPERTY>
+    <VARIABLE TYPE="nature">
+      <NAME>SchizophreniaEstablished</NAME>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>label=Schizophrenia Established</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Schizophrenia status represented by the scenario; registration diagnosis review establishes Yes/No for this encounter.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-09.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT 9: Clozapine in Aggressive Behavior</PROPERTY>
+      <PROPERTY>source_sha256=73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; scenario-interval observations with lifetime treatment context inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>SubstantialAggressionRisk</NAME>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>label=Substantial Aggression Risk</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Clinician synthesis of substantial aggression-related risk over the scenario interval with lifetime treatment context and clinician-reported fields; a PANSS hostility item score alone never maps this gate.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-09.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT 9: Clozapine in Aggressive Behavior</PROPERTY>
+      <PROPERTY>source_sha256=73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6</PROPERTY>
+        <PROPERTY>time_window=current_encounter synthesis; scenario-interval observations with lifetime treatment context inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AggressionRiskPersistsDespiteOtherTreatments</NAME>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>label=Aggression Risk Persists Despite Other Treatments</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Persistence of aggression-related risk despite other treatments; distinct from the two-trial treatment-resistance construct.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-09.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT 9: Clozapine in Aggressive Behavior</PROPERTY>
+      <PROPERTY>source_sha256=73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6</PROPERTY>
+        <PROPERTY>time_window=current_encounter synthesis; scenario-interval observations with lifetime treatment context inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>UrgentSafetyConcern</NAME>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>label=Urgent Safety Concern</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Clinician-determined urgent safety concern from saved structured urgent inputs at this encounter; displayed independently of estimation latency.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-09.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT 9: Clozapine in Aggressive Behavior</PROPERTY>
+      <PROPERTY>source_sha256=73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6</PROPERTY>
+        <PROPERTY>time_window=current_encounter synthesis; scenario-interval observations with lifetime treatment context inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AdherenceConcern</NAME>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>label=Adherence Concern</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=An adherence problem or uncertainty about treatment exposure represented in the scenario.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-09.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT 9: Clozapine in Aggressive Behavior</PROPERTY>
+      <PROPERTY>source_sha256=73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; scenario-interval observations with lifetime treatment context inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ModifiableAggressionRiskTargetsPresent</NAME>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>label=Modifiable Aggression Risk Targets Present</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Presence of modifiable aggression-risk factors that can serve as intervention targets.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-09.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT 9: Clozapine in Aggressive Behavior</PROPERTY>
+      <PROPERTY>source_sha256=73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; scenario-interval observations with lifetime treatment context inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ClozapineTreatmentStatus</NAME>
+      <OUTCOME>NeverTreated</OUTCOME>
+      <OUTCOME>CurrentTreatment</OUTCOME>
+      <OUTCOME>PreviouslyTreated</OUTCOME>
+      <PROPERTY>label=Clozapine Treatment Status</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Never, current or previous clozapine treatment represented in the scenario.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-09.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT 9: Clozapine in Aggressive Behavior</PROPERTY>
+      <PROPERTY>source_sha256=73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; scenario-interval observations with lifetime treatment context inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=3</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>WillingToDiscussClozapine</NAME>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>label=Willing To Discuss Clozapine</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Willingness to discuss clozapine; patient-preference review input.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-09.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT 9: Clozapine in Aggressive Behavior</PROPERTY>
+      <PROPERTY>source_sha256=73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; scenario-interval observations with lifetime treatment context inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ClozapineMonitoringPlanAvailable</NAME>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>label=Clozapine Monitoring Plan Available</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Availability of a clozapine monitoring and follow-up plan per current prescribing information.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-09.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT 9: Clozapine in Aggressive Behavior</PROPERTY>
+      <PROPERTY>source_sha256=73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; scenario-interval observations with lifetime treatment context inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ClozapineMedicalReviewCompleted</NAME>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>label=Clozapine Medical Review Completed</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Completion status of a clozapine medical review for harms and suitability.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-09.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT 9: Clozapine in Aggressive Behavior</PROPERTY>
+      <PROPERTY>source_sha256=73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; scenario-interval observations with lifetime treatment context inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ClozapineAggressionRiskIndication</NAME>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>NotEstablished</OUTCOME>
+      <PROPERTY>label=Clozapine Aggression Risk Indication</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for clozapine aggression-risk indication; distribution supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-09.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT 9: Clozapine in Aggressive Behavior</PROPERTY>
+      <PROPERTY>source_sha256=73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; scenario-interval observations with lifetime treatment context inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=16</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AggressionRiskTreatmentPlanReview</NAME>
+      <OUTCOME>AdherenceAndRiskTargets</OUTCOME>
+      <OUTCOME>AdherenceReview</OUTCOME>
+      <OUTCOME>RiskTargetReview</OUTCOME>
+      <OUTCOME>NoAdditionalFlag</OUTCOME>
+      <PROPERTY>label=Aggression Risk Treatment Plan Review</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for adherence and modifiable-target review; distribution supplied per run.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-09.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT 9: Clozapine in Aggressive Behavior</PROPERTY>
+      <PROPERTY>source_sha256=73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; scenario-interval observations with lifetime treatment context inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=16</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ClozapineDiscussionPreparation</NAME>
+      <OUTCOME>AddressReviewNeeds</OUTCOME>
+      <OUTCOME>PreparedForDiscussion</OUTCOME>
+      <PROPERTY>label=Clozapine Discussion Preparation</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for discussion preparation; distribution supplied per run.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-09.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT 9: Clozapine in Aggressive Behavior</PROPERTY>
+      <PROPERTY>source_sha256=73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; scenario-interval observations with lifetime treatment context inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=16</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AggressionRiskClozapineReviewPathway</NAME>
+      <OUTCOME>UrgentClinicalAssessment</OUTCOME>
+      <OUTCOME>ReviewCurrentClozapine</OUTCOME>
+      <OUTCOME>IndividualizedPriorClozapineReview</OUTCOME>
+      <OUTCOME>DiscussClozapine</OUTCOME>
+      <OUTCOME>DiscussClozapineAndAddressReviewNeeds</OUTCOME>
+      <OUTCOME>ReviewEvidenceAndOtherIndications</OUTCOME>
+      <PROPERTY>label=Aggression Risk Clozapine Review Pathway</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for review pathway; distribution supplied per run instead of a fixed treatment rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-09.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT 9: Clozapine in Aggressive Behavior</PROPERTY>
+      <PROPERTY>source_sha256=73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; scenario-interval observations with lifetime treatment context inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=144</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <DEFINITION>
+      <FOR>SchizophreniaEstablished</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>SubstantialAggressionRisk</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>AggressionRiskPersistsDespiteOtherTreatments</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>UrgentSafetyConcern</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>AdherenceConcern</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>ModifiableAggressionRiskTargetsPresent</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>ClozapineTreatmentStatus</FOR>
+      <TABLE>0.5 0.3 0.2</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>WillingToDiscussClozapine</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>ClozapineMonitoringPlanAvailable</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>ClozapineMedicalReviewCompleted</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>ClozapineAggressionRiskIndication</FOR>
+      <GIVEN>SchizophreniaEstablished</GIVEN>
+      <GIVEN>SubstantialAggressionRisk</GIVEN>
+      <GIVEN>AggressionRiskPersistsDespiteOtherTreatments</GIVEN>
+      <TABLE>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>AggressionRiskTreatmentPlanReview</FOR>
+      <GIVEN>AdherenceConcern</GIVEN>
+      <GIVEN>ModifiableAggressionRiskTargetsPresent</GIVEN>
+      <TABLE>0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>ClozapineDiscussionPreparation</FOR>
+      <GIVEN>WillingToDiscussClozapine</GIVEN>
+      <GIVEN>ClozapineMonitoringPlanAvailable</GIVEN>
+      <GIVEN>ClozapineMedicalReviewCompleted</GIVEN>
+      <TABLE>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>AggressionRiskClozapineReviewPathway</FOR>
+      <GIVEN>UrgentSafetyConcern</GIVEN>
+      <GIVEN>ClozapineTreatmentStatus</GIVEN>
+      <GIVEN>ClozapineAggressionRiskIndication</GIVEN>
+      <GIVEN>ClozapineDiscussionPreparation</GIVEN>
+      <TABLE>0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665</TABLE>
+    </DEFINITION>
+  </NETWORK>
+</BIF>

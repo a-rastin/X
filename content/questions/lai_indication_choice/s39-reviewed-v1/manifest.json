@@ -1,0 +1,562 @@
+{
+  "schema_version": "question-package-v1",
+  "question_key": "lai_indication_choice",
+  "title": "LAI discussion and review",
+  "workflow": "registration",
+  "version": "s39-reviewed-v1",
+  "review_status": "approved",
+  "network_file": "network.xml",
+  "network_hash": "e0bc286f7402c5e73905830b1ae9ee88ca6d9d911500a99e7b8e9d67d315a806",
+  "source_refs": [
+    "project-documents/bayesian-networks/BN-10.xml",
+    "project-documents/medical-documents/guideline/STATEMENT-10.md",
+    "content/history/history.lai_indication_choice.v1.json",
+    "content/history/history.v1.json"
+  ],
+  "declared_node_order": [
+    "SchizophreniaEstablished",
+    "LAIPreference",
+    "AdherenceHistory",
+    "AdditionalDiscussionContext",
+    "SameDrugOralExperience",
+    "PriorNeurolepticMalignantSyndrome",
+    "ProductPlanReviewed",
+    "DeliveryBarriers",
+    "LAITreatmentStatus",
+    "LAIGuidelineCriterion",
+    "DiscussionOpportunity",
+    "ClinicalReviewFocus",
+    "DeliveryReviewFocus",
+    "LAIReviewPathway"
+  ],
+  "variables": [
+    {
+      "node_id": "SchizophreniaEstablished",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Yes",
+        "No"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "LAIPreference",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "PrefersLAI",
+        "PrefersOral",
+        "Undecided",
+        "DeclinesLAI"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "AdherenceHistory",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Adequate",
+        "Poor",
+        "Uncertain"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "AdditionalDiscussionContext",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Present",
+        "Absent"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "SameDrugOralExperience",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Supported",
+        "Concern",
+        "NotEstablished"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "PriorNeurolepticMalignantSyndrome",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Yes",
+        "No"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "ProductPlanReviewed",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Yes",
+        "No"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "DeliveryBarriers",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Present",
+        "Absent"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "LAITreatmentStatus",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Considering",
+        "Current",
+        "Previous"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "LAIGuidelineCriterion",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Present",
+        "NotEstablished"
+      ],
+      "ordered_parents": [
+        "SchizophreniaEstablished",
+        "LAIPreference",
+        "AdherenceHistory"
+      ]
+    },
+    {
+      "node_id": "DiscussionOpportunity",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "OutsideScope",
+        "GuidelineCriterion",
+        "ContextualDiscussion",
+        "RoutineEducation"
+      ],
+      "ordered_parents": [
+        "SchizophreniaEstablished",
+        "LAIGuidelineCriterion",
+        "AdditionalDiscussionContext"
+      ]
+    },
+    {
+      "node_id": "ClinicalReviewFocus",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "NMSCaution",
+        "ReviewEfficacyOrTolerabilityConcern",
+        "EstablishCandidateEvidence",
+        "CandidateEvidenceReviewed"
+      ],
+      "ordered_parents": [
+        "PriorNeurolepticMalignantSyndrome",
+        "SameDrugOralExperience"
+      ]
+    },
+    {
+      "node_id": "DeliveryReviewFocus",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "ReviewProductPlanAndBarriers",
+        "ReviewProductPlan",
+        "AddressBarriers",
+        "ReviewItemsDocumented"
+      ],
+      "ordered_parents": [
+        "ProductPlanReviewed",
+        "DeliveryBarriers"
+      ]
+    },
+    {
+      "node_id": "LAIReviewPathway",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "OutsideScope",
+        "RespectPreferenceReviewAlternatives",
+        "ReviewCurrentLAITreatment",
+        "IndividualizedPriorLAIReview",
+        "DiscussLAIOption",
+        "ConsiderContextualDiscussion",
+        "OfferRoutineEducation"
+      ],
+      "ordered_parents": [
+        "DiscussionOpportunity",
+        "LAIPreference",
+        "LAITreatmentStatus"
+      ]
+    }
+  ],
+  "patient_mappings": [
+    {
+      "node_id": "SchizophreniaEstablished",
+      "allowed_source_paths": [
+        "candidate/history/lai_indication_choice.v1/h_schizophrenia_established"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "LAIPreference",
+      "allowed_source_paths": [
+        "candidate/history/lai_indication_choice.v1/h_lai_preference"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "AdherenceHistory",
+      "allowed_source_paths": [
+        "candidate/history/lai_indication_choice.v1/h_adherence_history"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "AdditionalDiscussionContext",
+      "allowed_source_paths": [
+        "candidate/history/lai_indication_choice.v1/h_discussion_context"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "SameDrugOralExperience",
+      "allowed_source_paths": [
+        "candidate/history/lai_indication_choice.v1/h_oral_experience"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "PriorNeurolepticMalignantSyndrome",
+      "allowed_source_paths": [
+        "candidate/history/lai_indication_choice.v1/h_prior_nms"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "ProductPlanReviewed",
+      "allowed_source_paths": [
+        "candidate/history/lai_indication_choice.v1/h_product_plan"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "DeliveryBarriers",
+      "allowed_source_paths": [
+        "candidate/history/lai_indication_choice.v1/h_delivery_barriers"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "LAITreatmentStatus",
+      "allowed_source_paths": [
+        "candidate/history/lai_indication_choice.v1/h_lai_treatment_status"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    }
+  ],
+  "applicability": {
+    "expression": "gate == 'true'",
+    "required_fields": [
+      "candidate/history/lai_indication_choice.v1/h_schizophrenia_established",
+      "candidate/history/lai_indication_choice.v1/h_lai_preference",
+      "candidate/history/lai_indication_choice.v1/h_adherence_history",
+      "candidate/history/lai_indication_choice.v1/h_discussion_context",
+      "candidate/history/lai_indication_choice.v1/h_oral_experience",
+      "candidate/history/lai_indication_choice.v1/h_prior_nms",
+      "candidate/history/lai_indication_choice.v1/h_product_plan",
+      "candidate/history/lai_indication_choice.v1/h_delivery_barriers",
+      "candidate/history/lai_indication_choice.v1/h_lai_treatment_status"
+    ],
+    "unknown_policy": "needs_clarification"
+  },
+  "cpt_contract": {
+    "nodes": [
+      {
+        "node_id": "SchizophreniaEstablished",
+        "parent_ids": [],
+        "states": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "node_id": "LAIPreference",
+        "parent_ids": [],
+        "states": [
+          "PrefersLAI",
+          "PrefersOral",
+          "Undecided",
+          "DeclinesLAI"
+        ]
+      },
+      {
+        "node_id": "AdherenceHistory",
+        "parent_ids": [],
+        "states": [
+          "Adequate",
+          "Poor",
+          "Uncertain"
+        ]
+      },
+      {
+        "node_id": "AdditionalDiscussionContext",
+        "parent_ids": [],
+        "states": [
+          "Present",
+          "Absent"
+        ]
+      },
+      {
+        "node_id": "SameDrugOralExperience",
+        "parent_ids": [],
+        "states": [
+          "Supported",
+          "Concern",
+          "NotEstablished"
+        ]
+      },
+      {
+        "node_id": "PriorNeurolepticMalignantSyndrome",
+        "parent_ids": [],
+        "states": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "node_id": "ProductPlanReviewed",
+        "parent_ids": [],
+        "states": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "node_id": "DeliveryBarriers",
+        "parent_ids": [],
+        "states": [
+          "Present",
+          "Absent"
+        ]
+      },
+      {
+        "node_id": "LAITreatmentStatus",
+        "parent_ids": [],
+        "states": [
+          "Considering",
+          "Current",
+          "Previous"
+        ]
+      },
+      {
+        "node_id": "LAIGuidelineCriterion",
+        "parent_ids": [
+          "SchizophreniaEstablished",
+          "LAIPreference",
+          "AdherenceHistory"
+        ],
+        "states": [
+          "Present",
+          "NotEstablished"
+        ]
+      },
+      {
+        "node_id": "DiscussionOpportunity",
+        "parent_ids": [
+          "SchizophreniaEstablished",
+          "LAIGuidelineCriterion",
+          "AdditionalDiscussionContext"
+        ],
+        "states": [
+          "OutsideScope",
+          "GuidelineCriterion",
+          "ContextualDiscussion",
+          "RoutineEducation"
+        ]
+      },
+      {
+        "node_id": "ClinicalReviewFocus",
+        "parent_ids": [
+          "PriorNeurolepticMalignantSyndrome",
+          "SameDrugOralExperience"
+        ],
+        "states": [
+          "NMSCaution",
+          "ReviewEfficacyOrTolerabilityConcern",
+          "EstablishCandidateEvidence",
+          "CandidateEvidenceReviewed"
+        ]
+      },
+      {
+        "node_id": "DeliveryReviewFocus",
+        "parent_ids": [
+          "ProductPlanReviewed",
+          "DeliveryBarriers"
+        ],
+        "states": [
+          "ReviewProductPlanAndBarriers",
+          "ReviewProductPlan",
+          "AddressBarriers",
+          "ReviewItemsDocumented"
+        ]
+      },
+      {
+        "node_id": "LAIReviewPathway",
+        "parent_ids": [
+          "DiscussionOpportunity",
+          "LAIPreference",
+          "LAITreatmentStatus"
+        ],
+        "states": [
+          "OutsideScope",
+          "RespectPreferenceReviewAlternatives",
+          "ReviewCurrentLAITreatment",
+          "IndividualizedPriorLAIReview",
+          "DiscussLAIOption",
+          "ConsiderContextualDiscussion",
+          "OfferRoutineEducation"
+        ]
+      }
+    ]
+  },
+  "query_nodes": [
+    "LAIGuidelineCriterion",
+    "DiscussionOpportunity",
+    "ClinicalReviewFocus",
+    "DeliveryReviewFocus",
+    "LAIReviewPathway"
+  ],
+  "execution_evidence": {},
+  "prompt_version": "s30-v1",
+  "template_version": "s39-reviewed-v1",
+  "history_definition": "content/history/history.lai_indication_choice.v1.json",
+  "reference_cpts_status": "Synthetic mathematical references only; all 14 BN-10 distributions were missing and remain uncalibrated with no source lookup; no clinical calibration or approval",
+  "missingness_contract": {
+    "required_source_paths": [
+      "candidate/history/lai_indication_choice.v1/h_schizophrenia_established",
+      "candidate/history/lai_indication_choice.v1/h_lai_preference",
+      "candidate/history/lai_indication_choice.v1/h_adherence_history",
+      "candidate/history/lai_indication_choice.v1/h_discussion_context",
+      "candidate/history/lai_indication_choice.v1/h_oral_experience",
+      "candidate/history/lai_indication_choice.v1/h_prior_nms",
+      "candidate/history/lai_indication_choice.v1/h_product_plan",
+      "candidate/history/lai_indication_choice.v1/h_delivery_barriers",
+      "candidate/history/lai_indication_choice.v1/h_lai_treatment_status"
+    ],
+    "required_unknown_values": [
+      "unknown",
+      "not_assessed"
+    ],
+    "required_unknown_policy": "needs_clarification",
+    "required_missing_policy": "needs_clarification",
+    "required_conflict_policy": "needs_clarification",
+    "gate_definition": "Gate true requires SchizophreniaEstablished Yes with all other required inputs known; gate false is SchizophreniaEstablished explicitly No with no unknown/missing/conflict among required inputs; otherwise gate unknown.",
+    "false_gate": {
+      "status": "not_applicable",
+      "not_a_negative_posterior": true,
+      "posterior_claim": null
+    },
+    "unknown_gate": {
+      "status": "needs_clarification",
+      "pauses_before_estimation": true
+    },
+    "preference_rule": "LAIPreference Undecided is an explicit known uncertain value that still executes; DeclinesLAI is an explicit known decline that still executes with preference-respecting review; PrefersLAI/PrefersOral require documented shared discussion. Absent discussion (unknown, not_assessed, missing or conflicting preference) pauses for clarification and is never coerced to PrefersOral or DeclinesLAI.",
+    "exposure_rule": "AdherenceHistory Uncertain is an explicit known value that still executes per the poor-or-uncertain-adherence suggestion; SameDrugOralExperience NotEstablished is an explicit known value that still executes with candidate-evidence review; LAITreatmentStatus Considering/Current/Previous are explicit known values. Unknown, not_assessed, missing or conflicting exposure input pauses for clarification and is never coerced to Adequate or Supported.",
+    "scope_rule": "Discussion and review only; no specific LAI product selection and no product-choice contract. No dose, route, frequency or active/stopped fields are collected or accepted.",
+    "evidence": {}
+  },
+  "input_consistency_contract": {
+    "gate_inputs": "Schizophrenia status defines true/false/unknown; unknown, missing, not_assessed or conflicting required input pauses, never coerces to false.",
+    "preference_inputs": "Preference comes from documented shared decision-making discussion at this encounter; Undecided and DeclinesLAI are known explicit values, not missing.",
+    "exposure_inputs": "Adherence, same-drug oral experience, NMS history, treatment status and context come from saved structured history with encounter/window attribution; Uncertain and NotEstablished are known explicit values.",
+    "history_review": "Candidate v1 definitions require owner review before release. No runtime form or projection added by S30.",
+    "missingness_scope": "These declarations are content proposals for the S40 projection/readiness implementation, not executed clinical runtime behavior."
+  },
+  "numerical_policy": {
+    "cpt_policy": "cpt-decimal-v1",
+    "evidence": {},
+    "comparison_tolerance": 1e-06,
+    "engine": {
+      "python": "3.12.14",
+      "pgmpy": "1.1.2",
+      "lxml": "6.1.3",
+      "float_dtype": "float64",
+      "elimination_order": "source_order"
+    }
+  },
+  "engine_configuration": {
+    "evidence": "empty",
+    "evidence_order": "given_order",
+    "float_dtype": "float64",
+    "elimination_order": "source_order",
+    "tie_break": "source_order"
+  },
+  "numerical_tolerances": {
+    "percentage_decimal_places": 6,
+    "units_for_100_percent": 100000000,
+    "row_total": "exact integer units; never normalize or repair",
+    "posterior_comparison_absolute": 1e-06
+  },
+  "resource_limits": {
+    "status": "Candidate engineering limits; existing inference limits preserved, provider capability not yet measured",
+    "max_network_xml_bytes": 1048576,
+    "max_effective_xml_bytes": 1048576,
+    "max_inference_nodes": 64,
+    "max_inference_cells": 131072,
+    "inference_timeout_seconds": 30,
+    "max_prompt_bytes": 65536,
+    "max_context_bytes": 65536,
+    "max_cpt_output_bytes": 524288,
+    "hard_memory_limit_bytes": null,
+    "memory_limitation": "Existing bounded child process/node/table limits do not establish an OS memory ceiling or bound every induced intermediate factor. No such memory admission claim is made.",
+    "overflow_policy": "Reject admission or fail explicitly; no truncation, approximation or incomplete-table fallback."
+  },
+  "applicability_truth_table": {
+    "true": "Gate true (schizophrenia Yes with all other required inputs known, including explicit Undecided/Uncertain/NotEstablished values) executes estimation with empty evidence.",
+    "false": "Gate false (schizophrenia explicitly No with no unknown/missing/conflict) records not_applicable with reason; claims no posterior and is never a negative treatment finding.",
+    "unknown": "Gate unknown (any required input unknown, not_assessed, missing or conflicting) yields needs_clarification before estimation; never coerces uncertainty to false and never estimates."
+  }
+}

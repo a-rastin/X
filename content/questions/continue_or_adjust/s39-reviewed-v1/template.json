@@ -1,0 +1,225 @@
+{
+  "version": "s39-reviewed-v1",
+  "status": "approved",
+  "rendering_contract": "Candidate wording for S45 deterministic distribution rendering of this F6 follow-up continuation-versus-adjustment review; each queried state has a branch, all probabilities remain visible. No probability threshold or posterior-ranked treatment selection is defined. Urgent banner renders from saved inputs in parallel with review topics. Whether outputs behave as deterministic rules or estimated tables is an open assumption for owner review; this wording assumes neither.",
+  "disclosures": [
+    "Experimental, uncalibrated and unapproved; not a prescription.",
+    "BN-06-derived continuation content is retained within experimental/educational scope only; it is not appropriate for use as a quality measure or for electronic decision support.",
+    "Continuation-versus-adjustment review applies to every follow-up encounter; unknown, missing, not-assessed or conflicting required context, and outdated baselines, pause for clarification.",
+    "Observed strategy and outcome categories are scenario review topics, never intervention orders; execution uses empty evidence with no causal intervention conditioning.",
+    "Urgent banner comes from saved structured urgent inputs, not model output, and never shows a fabricated risk percentage.",
+    "Adverse-effect, preference and parallel concerns are retained as review topics; DDI coverage and findings are separate.",
+    "No dose, route, frequency or active/stopped fields are collected or accepted."
+  ],
+  "urgent_banner": "Urgent safety banner from saved structured urgent inputs, shown independently of estimation latency and not a computed risk percentage: arrange immediate clinician assessment per local protocol when Present in this follow-up context.",
+  "branches": [
+    {
+      "when": {
+        "node": "SameAntipsychoticContinuationScope",
+        "state": "OutsideScope",
+        "operator": "=="
+      },
+      "text": "Candidate scope topic outside this continuation statement: review diagnosis, improvement and urgency context with the clinician; no continuation statement applies Distribution: {SameAntipsychoticContinuationScope}."
+    },
+    {
+      "when": {
+        "node": "SameAntipsychoticContinuationScope",
+        "state": "WithinScope",
+        "operator": "=="
+      },
+      "text": "Candidate continuation-scope topic: the current antipsychotic context is within this follow-up review; discuss continuation and possible adjustment reasons with the clinician without prescribing either Distribution: {SameAntipsychoticContinuationScope}."
+    },
+    {
+      "when": {
+        "node": "SameAntipsychoticContinuationScope",
+        "state": "UrgentSeparateAssessment",
+        "operator": "=="
+      },
+      "text": "Candidate urgent-scope topic: urgent concerns need separate immediate clinician assessment per local protocol, independently of this review distribution Distribution: {SameAntipsychoticContinuationScope}."
+    },
+    {
+      "when": {
+        "node": "SameAgentDiscussion",
+        "state": "OutsideScope",
+        "operator": "=="
+      },
+      "text": "Candidate discussion topic outside scope: no same-agent continuation discussion applies in this context Distribution: {SameAgentDiscussion}."
+    },
+    {
+      "when": {
+        "node": "SameAgentDiscussion",
+        "state": "ContinuationDiscussion",
+        "operator": "=="
+      },
+      "text": "Candidate continuation-discussion topic: discuss continuing the same agent, tolerability, availability and preferences with the clinician; this topic does not order continuation Distribution: {SameAgentDiscussion}."
+    },
+    {
+      "when": {
+        "node": "SameAgentDiscussion",
+        "state": "IndividualizedChangeReview",
+        "operator": "=="
+      },
+      "text": "Candidate individualized-change-review topic: discuss clinical and practical change reasons, LAI formulation questions and preferences with the clinician; this topic does not order a switch Distribution: {SameAgentDiscussion}."
+    },
+    {
+      "when": {
+        "node": "SameAgentDiscussion",
+        "state": "UrgentSeparateAssessment",
+        "operator": "=="
+      },
+      "text": "Candidate urgent-discussion topic: arrange separate immediate clinician assessment per local protocol, independently of this review distribution Distribution: {SameAgentDiscussion}."
+    },
+    {
+      "when": {
+        "node": "ObservedSameAntipsychoticStrategy",
+        "state": "ContinueSameAgent",
+        "operator": "=="
+      },
+      "text": "Candidate observed scenario strategy category ContinueSameAgent, including a same-agent formulation change; an observed category, never an intervention order Distribution: {ObservedSameAntipsychoticStrategy}."
+    },
+    {
+      "when": {
+        "node": "ObservedSameAntipsychoticStrategy",
+        "state": "SwitchAgent",
+        "operator": "=="
+      },
+      "text": "Candidate observed scenario strategy category SwitchAgent; an observed category that still needs monitoring discussion, never an intervention order Distribution: {ObservedSameAntipsychoticStrategy}."
+    },
+    {
+      "when": {
+        "node": "ObservedSameAntipsychoticStrategy",
+        "state": "OtherStrategy",
+        "operator": "=="
+      },
+      "text": "Candidate observed scenario strategy category OtherStrategy, covering combinations and cessation; an observed category needing separate plan review, never an intervention order Distribution: {ObservedSameAntipsychoticStrategy}."
+    },
+    {
+      "when": {
+        "node": "TolerabilityReview",
+        "state": "No",
+        "operator": "=="
+      },
+      "text": "Candidate tolerability topic not raised; retained adverse-effect concerns remain reviewable and are never declared absent Distribution: {TolerabilityReview}."
+    },
+    {
+      "when": {
+        "node": "TolerabilityReview",
+        "state": "Yes",
+        "operator": "=="
+      },
+      "text": "Candidate tolerability-review topic: discuss recorded metabolic and other tolerability concerns with the clinician; this topic does not diagnose an effect Distribution: {TolerabilityReview}."
+    },
+    {
+      "when": {
+        "node": "ClinicalChangeReason",
+        "state": "No",
+        "operator": "=="
+      },
+      "text": "Candidate clinical change-reason topic not raised; residual burden review remains explicit and is never assumed absent Distribution: {ClinicalChangeReason}."
+    },
+    {
+      "when": {
+        "node": "ClinicalChangeReason",
+        "state": "Yes",
+        "operator": "=="
+      },
+      "text": "Candidate clinical change-reason topic: discuss residual symptoms, functioning and tolerability as possible change reasons with the clinician Distribution: {ClinicalChangeReason}."
+    },
+    {
+      "when": {
+        "node": "PracticalChangeReason",
+        "state": "No",
+        "operator": "=="
+      },
+      "text": "Candidate practical change-reason topic not raised; availability and formulation questions remain reviewable Distribution: {PracticalChangeReason}."
+    },
+    {
+      "when": {
+        "node": "PracticalChangeReason",
+        "state": "Yes",
+        "operator": "=="
+      },
+      "text": "Candidate practical change-reason topic: discuss availability, LAI formulation questions and preferences with the clinician Distribution: {PracticalChangeReason}."
+    },
+    {
+      "when": {
+        "node": "SwitchMonitoringContext",
+        "state": "RoutineReview",
+        "operator": "=="
+      },
+      "text": "Candidate routine-review monitoring topic alongside any continuation discussion Distribution: {SwitchMonitoringContext}."
+    },
+    {
+      "when": {
+        "node": "SwitchMonitoringContext",
+        "state": "SwitchMonitoringDiscussion",
+        "operator": "=="
+      },
+      "text": "Candidate switch-monitoring discussion topic: gradual change with close monitoring for recurrent symptoms remains explicit Distribution: {SwitchMonitoringContext}."
+    },
+    {
+      "when": {
+        "node": "SwitchMonitoringContext",
+        "state": "SeparatePlanReview",
+        "operator": "=="
+      },
+      "text": "Candidate separate-plan-review topic for observed strategies outside simple continuation Distribution: {SwitchMonitoringContext}."
+    },
+    {
+      "when": {
+        "node": "MetabolicTrajectory",
+        "state": "Improved",
+        "operator": "=="
+      },
+      "text": "Candidate metabolic-trajectory topic showing improvement on the selected endpoint from baseline to week 24 Distribution: {MetabolicTrajectory}."
+    },
+    {
+      "when": {
+        "node": "MetabolicTrajectory",
+        "state": "NoMeaningfulChange",
+        "operator": "=="
+      },
+      "text": "Candidate metabolic-trajectory topic showing no meaningful change on the selected endpoint Distribution: {MetabolicTrajectory}."
+    },
+    {
+      "when": {
+        "node": "MetabolicTrajectory",
+        "state": "Worsened",
+        "operator": "=="
+      },
+      "text": "Candidate metabolic-trajectory topic showing worsening on the selected endpoint; discuss monitoring with the clinician Distribution: {MetabolicTrajectory}."
+    },
+    {
+      "when": {
+        "node": "AssignedRegimenDiscontinued",
+        "state": "No",
+        "operator": "=="
+      },
+      "text": "Candidate regimen-continuation topic: the baseline regimen category is not recorded as discontinued in this scenario Distribution: {AssignedRegimenDiscontinued}."
+    },
+    {
+      "when": {
+        "node": "AssignedRegimenDiscontinued",
+        "state": "Yes",
+        "operator": "=="
+      },
+      "text": "Candidate regimen-discontinuation topic: switching away counts as discontinuation; discuss monitoring with the clinician Distribution: {AssignedRegimenDiscontinued}."
+    },
+    {
+      "when": {
+        "node": "ClinicalDestabilization",
+        "state": "No",
+        "operator": "=="
+      },
+      "text": "Candidate no-destabilization topic; symptom worsening is reviewed explicitly and never assumed absent Distribution: {ClinicalDestabilization}."
+    },
+    {
+      "when": {
+        "node": "ClinicalDestabilization",
+        "state": "Yes",
+        "operator": "=="
+      },
+      "text": "Candidate destabilization topic: symptom worsening distinct from regimen discontinuation; arrange clinician review Distribution: {ClinicalDestabilization}."
+    }
+  ]
+}

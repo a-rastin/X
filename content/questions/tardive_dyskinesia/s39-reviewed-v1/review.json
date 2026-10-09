@@ -1,0 +1,240 @@
+{
+  "reviewer": "owner",
+  "decision": "approved",
+  "date": "2026-10-09",
+  "source_hashes": {
+    "project-documents/bayesian-networks/BN-14.xml": "bf78baac82af824d1040a0ee964b6236ad6f471e7a3c4be02ff1bfcc12008b4c",
+    "project-documents/medical-documents/guideline/STATEMENT-14.md": "896a311d5654137f97d272db8922a64114fc440999e1d448133040ad6132bd24",
+    "project-documents/medical-documents/tardive-dyskinesia-criteria.md": "ca9bd22fb0064d3ae24b61ecc20bacddc33592ebd25d6a4966e8cd83ef4cfe5a",
+    "content/history/aims.v1.json": "cb4d607415684a50d8ddbf5aed022fe261c6d64becaf2dcb55bbbaab5622e118",
+    "content/history/history.v1.json": "01be359400834e2f047c9e9c9eaf7a25a4167949707eb1b14e6a8f57db6bcd80",
+    "network.xml": "538daba6318a1a87d116bd92bda4042063a4fa41c178d1e031ced18d7ea4d5df",
+    "content/history/history.tardive_dyskinesia.v1.json": "671a5701f088f1df484b89cb8ee467759dc2388a96e2ae8770623a7682fd3fbf"
+  },
+  "assumptions": [
+    "No clinical model or history definition approved.",
+    "Effect present/absent/not_assessed is an explicit applicability input; an absent case is not_applicable with no posterior claim, never a negative finding or a fake negative review posterior; unresolved or not_assessed pauses for clarification.",
+    "All 16 BN-14 distributions were missing and are synthetic uniform references here; complete clinical table provenance remains a release blocker.",
+    "Full AIMS item responses are measurement context only when the complete reviewed source is available; no diagnosis is inferred from an unreviewed AIMS total and Schooler-Kane research thresholds are never treatment thresholds.",
+    "Motor severity and disabling impact are clinician-reviewed categories; no AIMS score band or treatment threshold is set here.",
+    "Whether review outputs behave as deterministic rules or estimated tables is an open assumption for owner review; this draft uses estimated-table semantics without approval.",
+    "Alternative-cause, exposure, persistence, onset, withdrawal-course, VMAT2 safety, preference and anticholinergic operationalization, and Table 11 non-copying require owner review; no dose, route, frequency or active/stopped fields are set here."
+  ],
+  "source_comparison": "See source_diff and source_comparison_details: all 16 BN-14 variables, states and ordered proposed_parent edges retained with no removals, renames or state extensions; 10 roots plus 6 outputs materialize every proposed_parent as an ordered GIVEN. Original BN SHA pinned and untouched; Table 11 prescribing details not copied as activation metadata.",
+  "source_comparison_details": {
+    "retained_variables": [
+      "TardiveDyskinesiaAssessment",
+      "TardiveDyskinesiaAntipsychoticAssociation",
+      "TardiveDyskinesiaMotorSeverity",
+      "TardiveDyskinesiaDisablingImpact",
+      "MildTardiveDyskinesiaTreatmentConsideration",
+      "DoseReductionTemporalLink",
+      "UrgentSafetyConcern",
+      "VMAT2InhibitorCandidateSafetyAssessment",
+      "VMAT2InhibitorTreatmentPreference",
+      "AnticholinergicExposure",
+      "TardiveDyskinesiaIndicationReview",
+      "LongitudinalReview",
+      "UrgentSafetyReview",
+      "VMAT2InhibitorSafetyReview",
+      "VMAT2InhibitorSharedDecisionReview",
+      "AnticholinergicReview"
+    ],
+    "retained_states": {
+      "TardiveDyskinesiaAssessment": [
+        "Present",
+        "Absent",
+        "Unresolved"
+      ],
+      "TardiveDyskinesiaAntipsychoticAssociation": [
+        "Established",
+        "NotEstablished"
+      ],
+      "TardiveDyskinesiaMotorSeverity": [
+        "Mild",
+        "ModerateOrSevere"
+      ],
+      "TardiveDyskinesiaDisablingImpact": [
+        "Present",
+        "Absent"
+      ],
+      "MildTardiveDyskinesiaTreatmentConsideration": [
+        "Present",
+        "Absent"
+      ],
+      "DoseReductionTemporalLink": [
+        "Present",
+        "Absent"
+      ],
+      "UrgentSafetyConcern": [
+        "Present",
+        "Absent"
+      ],
+      "VMAT2InhibitorCandidateSafetyAssessment": [
+        "Incomplete",
+        "ConcernsIdentified",
+        "ReviewedNoConcernIdentified"
+      ],
+      "VMAT2InhibitorTreatmentPreference": [
+        "WillingToDiscuss",
+        "Declines",
+        "Undecided"
+      ],
+      "AnticholinergicExposure": [
+        "Present",
+        "Absent"
+      ],
+      "TardiveDyskinesiaIndicationReview": [
+        "RecommendedVMAT2Review",
+        "ConsiderVMAT2Review",
+        "MonitorAndDiscuss",
+        "AssessDiagnosisAndAttribution",
+        "NoCurrentIndicationPrompt"
+      ],
+      "LongitudinalReview": [
+        "ReviewWithdrawalAndCourse",
+        "ContinueLongitudinalAssessment"
+      ],
+      "UrgentSafetyReview": [
+        "UrgentClinicianAssessment",
+        "RoutineSafetyAssessment"
+      ],
+      "VMAT2InhibitorSafetyReview": [
+        "CompleteCurrentLabelReview",
+        "AddressIndividualConcerns",
+        "ContinueIndividualizedMonitoring"
+      ],
+      "VMAT2InhibitorSharedDecisionReview": [
+        "DiscussVMAT2Options",
+        "ResolveSafetyAndDiscuss",
+        "RespectDeclineAndDiscussAlternatives",
+        "ClarifyPreference",
+        "ContinueAssessmentAndMonitoring"
+      ],
+      "AnticholinergicReview": [
+        "ReviewPotentialTDWorsening",
+        "ReconcileIndicationAndDifferential",
+        "RoutineMedicationReconciliation"
+      ]
+    },
+    "retained_edges": [
+      [
+        "TardiveDyskinesiaAssessment",
+        "TardiveDyskinesiaIndicationReview"
+      ],
+      [
+        "TardiveDyskinesiaAntipsychoticAssociation",
+        "TardiveDyskinesiaIndicationReview"
+      ],
+      [
+        "TardiveDyskinesiaMotorSeverity",
+        "TardiveDyskinesiaIndicationReview"
+      ],
+      [
+        "TardiveDyskinesiaDisablingImpact",
+        "TardiveDyskinesiaIndicationReview"
+      ],
+      [
+        "MildTardiveDyskinesiaTreatmentConsideration",
+        "TardiveDyskinesiaIndicationReview"
+      ],
+      [
+        "DoseReductionTemporalLink",
+        "LongitudinalReview"
+      ],
+      [
+        "UrgentSafetyConcern",
+        "UrgentSafetyReview"
+      ],
+      [
+        "VMAT2InhibitorCandidateSafetyAssessment",
+        "VMAT2InhibitorSafetyReview"
+      ],
+      [
+        "TardiveDyskinesiaIndicationReview",
+        "VMAT2InhibitorSharedDecisionReview"
+      ],
+      [
+        "VMAT2InhibitorTreatmentPreference",
+        "VMAT2InhibitorSharedDecisionReview"
+      ],
+      [
+        "VMAT2InhibitorSafetyReview",
+        "VMAT2InhibitorSharedDecisionReview"
+      ],
+      [
+        "TardiveDyskinesiaAssessment",
+        "AnticholinergicReview"
+      ],
+      [
+        "AnticholinergicExposure",
+        "AnticholinergicReview"
+      ]
+    ],
+    "removed_nodes": [],
+    "removed_edges": [],
+    "renamed": {},
+    "materialized_proposed_parents": true,
+    "state_extensions": {},
+    "bn_parameter_inventory": "16 run-specific distributions to supply; 0 editable source-lookup examples supplied; all awaiting_experiment_cpt in BN-14"
+  },
+  "explicit_graph": "Fixed 16-node nature-only graph in BN-14 order; source_comparison_details lists every retained ordered parent. All proposed_parent metadata is materialized as GIVENs in declared order. Edges are modeler-synthesized review candidates, not established causal facts. This F1 follow-up package has a distinct network identity for tardive-dyskinesia review with present/absent/not_assessed gating.",
+  "reference_table_provenance": "BN-14 supplies zero fixed tables; all 16 distributions were awaiting_experiment_cpt. Draft network.xml holds explicitly synthetic uniform references (2-state 0.5/0.5, 3-state thirds, 5-state 0.2 each) with no source lookup to audit. The numerical fixture CPTs are independent synthetic mathematical references with worked marginals, not source-backed clinical probabilities; complete clinical table provenance and calibration remain release blockers. Table 11 is background only and no prescribing detail is copied as activation metadata.",
+  "estimation_instructions": "prompt.txt requires all CPTs including roots, percentage strings, fixed order and empty evidence, with F1 follow-up identity, present/absent/not_assessed gating, AIMS measurement-context-only handling with no diagnosis from unreviewed total and no AIMS threshold for intervention, Schooler-Kane research-only handling, clinician-reviewed severity without invented bands or regimen fields, VMAT2 safety/preference/anticholinergic use only as defined and collected, current-label consultation without Table 11 copying, and parallel urgent/longitudinal handling. Whether outputs behave as deterministic rules or estimated tables is an open assumption recorded here; the draft uses estimated-table semantics without approval.",
+  "result_mapping": "template.json defines candidate state-specific review language for all 6 queried outputs (20 branches) plus parallel urgent banner from saved inputs; every distribution remains visible. No threshold, posterior ranking or automatic treatment choice exists. Clinical branch selection and rendering remain S45 and owner review.",
+  "numerical_examples": "examples.json contains one complete independently worked 16-node mathematical reference: Indication 0.174/0.063/0.063/0.4/0.3 with a Disabling/MildConsideration transpose guard (swapped gives 0.195/0.042), Longitudinal 0.3/0.7, Urgent 0.2/0.8, SafetyReview 0.2/0.3/0.5, SharedDecision 0.036/0.054/0.06/0.06/0.79 with a Preference/SafetyReview transpose guard (swapped gives 0.036/0.012/0.09/0.15/0.712), AnticholinergicReview 0.15/0.55/0.3. Two opposing projections of the same CPT yield identical posteriors, proving no clamping. This validates math and engineering only; clinical expected_for_review cases remain unapproved.",
+  "clinical_examples": "examples.json contains 6 clinical review candidates: present applicable gate true, gate true with urgent Present, absent gate false not_applicable with not_a_negative_posterior and no posterior claim, unresolved/not_assessed unknown, missing alternative-cause context and gate conflict needs_clarification. These are proposed gate, alternative-context, AIMS/severity provenance and wording expectations, not self-validating clinical tests or implemented runtime claims.",
+  "admission_measurements": "Measured 16 nature nodes, 116 rows, 523 cells. Focused 6-test suite results are recorded in the S33 progress report; opposing provenance never clamps. Memory ceiling and provider capacity remain unmeasured and clinical release is blocked awaiting review.",
+  "open_assumptions": "Candidate 10-field history with effect, association, severity, disabling-impact, mild-consideration, withdrawal-course, urgent, VMAT2 safety, preference and anticholinergic provenance, gate true/false/unknown definitions with absent not_applicable and unresolved/not_assessed needs_clarification semantics, urgent-banner independence, AIMS measurement-context-only handling with complete-source gap and no diagnosis from total, Schooler-Kane research-only handling, severity without invented bands or treatment threshold, deterministic-rule versus estimated-table output semantics, full clinical CPT provenance, Table 11 non-copying and final wording all require review before release. History v1, runtime projections and readiness (S40) and rendering (S45) remain unchanged.",
+  "source_diff": {
+    "removed_nodes": [],
+    "removed_edges": [],
+    "renamed": {},
+    "materialized_proposed_parents": true,
+    "state_extensions": {},
+    "retained_variables": [
+      "TardiveDyskinesiaAssessment",
+      "TardiveDyskinesiaAntipsychoticAssociation",
+      "TardiveDyskinesiaMotorSeverity",
+      "TardiveDyskinesiaDisablingImpact",
+      "MildTardiveDyskinesiaTreatmentConsideration",
+      "DoseReductionTemporalLink",
+      "UrgentSafetyConcern",
+      "VMAT2InhibitorCandidateSafetyAssessment",
+      "VMAT2InhibitorTreatmentPreference",
+      "AnticholinergicExposure",
+      "TardiveDyskinesiaIndicationReview",
+      "LongitudinalReview",
+      "UrgentSafetyReview",
+      "VMAT2InhibitorSafetyReview",
+      "VMAT2InhibitorSharedDecisionReview",
+      "AnticholinergicReview"
+    ]
+  },
+  "reference_table_audit": {
+    "source_locator": "BN-14.xml parameter_inventory: 16 awaiting_experiment_cpt, 0 source-lookup",
+    "compared_cells": 0,
+    "mismatches": [],
+    "clinical_probability_claim": false,
+    "synthetic_reference_rows": "All 16 draft tables are explicitly synthetic uniform references; numerical fixture rows are independent mathematical references with worked marginals."
+  },
+  "reviewed": true,
+  "confirmed": true,
+  "owner_confirmation": {
+    "basis": "Explicit owner instruction to mark all eleven named question packages reviewed and confirmed.",
+    "date": "2026-10-09",
+    "scope": "Confirmation of the supplied experimental/educational question package and its documented assumptions; no new clinical validation, calibration, history/DDI release or workflow activation is asserted.",
+    "dossier_context": "Inherited draft-readiness and pending-review wording describes the predecessor review dossier. This dated owner confirmation supersedes its package-review-pending status; measured limitations and separate dependencies remain as documented.",
+    "reviewed_package_directory": "content/questions/tardive_dyskinesia",
+    "reviewed_version": "s33-v1",
+    "reviewed_package_hash": "a0f8d9bd584091df66bbd7c39f50c124d71114681d8452dc9ec05ed69b8bcc10",
+    "reviewed_file_sha256": {
+      "manifest.json": "8d1b0403f7dfdd330214e42a26c26f640d8daf564681a661c62fa3cd5b4b67cf",
+      "network.xml": "538daba6318a1a87d116bd92bda4042063a4fa41c178d1e031ced18d7ea4d5df",
+      "prompt.txt": "87db834a1ae33bc088400df6564877bf424c91601bf574b2837e12fc3948e851",
+      "template.json": "fe5234109d785c8c72b2eff0615995b74864377a29b6c5569b98bd0c9b95452f",
+      "examples.json": "d8bac6226b0ff598ecbc524bdd1d23194d6a0540b57b5b3b21303d40a8b4a2d7",
+      "review.json": "719312e88a8f278c9323499517e0006a38a4ef20ab9bd2260b0e3d5eddf9753d"
+    }
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "version": "s39-reviewed-v1",
+  "status": "approved",
+  "rendering_contract": "Candidate wording for S45 deterministic distribution rendering; each queried state has a branch, all probabilities remain visible. No probability threshold or posterior-ranked treatment selection is defined. Discussion and review only; no product selection.",
+  "disclosures": [
+    "Experimental, uncalibrated and unapproved; not a prescription and not a product selection.",
+    "A preference discussion alone never selects treatment; indication review requires clinician synthesis of preference, adherence and scenario context.",
+    "Undecided, uncertain and not-established values are explicit known inputs, not missing data; unknown, not-assessed, missing or conflicting required input pauses.",
+    "Missing, unknown, not-assessed or conflicting required input pauses; a false gate is not_applicable and claims no posterior."
+  ],
+  "branches": [
+    {
+      "when": {
+        "node": "LAIGuidelineCriterion",
+        "state": "Present",
+        "operator": "=="
+      },
+      "text": "Candidate guideline-criterion review topic present in this context; discuss preference, adherence and scenario factors with the clinician. This experimental distribution does not select a product. Distribution: {LAIGuidelineCriterion}."
+    },
+    {
+      "when": {
+        "node": "LAIGuidelineCriterion",
+        "state": "NotEstablished",
+        "operator": "=="
+      },
+      "text": "Candidate guideline-criterion review topic not established in this context; review evidence and other indications with the clinician. Distribution: {LAIGuidelineCriterion}. This is not a negative clinical finding."
+    },
+    {
+      "when": {
+        "node": "DiscussionOpportunity",
+        "state": "OutsideScope",
+        "operator": "=="
+      },
+      "text": "Candidate discussion topic outside scope in this context; retain ongoing clinician review. Distribution: {DiscussionOpportunity}. This claims no posterior treatment finding."
+    },
+    {
+      "when": {
+        "node": "DiscussionOpportunity",
+        "state": "GuidelineCriterion",
+        "operator": "=="
+      },
+      "text": "Candidate discussion topic follows the guideline-criterion review with the clinician. Distribution: {DiscussionOpportunity}. This does not select a product."
+    },
+    {
+      "when": {
+        "node": "DiscussionOpportunity",
+        "state": "ContextualDiscussion",
+        "operator": "=="
+      },
+      "text": "Candidate discussion topic follows additional context such as a treatment gap, transition or repeated hospitalization; review with the clinician. Distribution: {DiscussionOpportunity}."
+    },
+    {
+      "when": {
+        "node": "DiscussionOpportunity",
+        "state": "RoutineEducation",
+        "operator": "=="
+      },
+      "text": "Candidate topic offers routine education about LAI availability in the context of shared decision-making. Distribution: {DiscussionOpportunity}."
+    },
+    {
+      "when": {
+        "node": "ClinicalReviewFocus",
+        "state": "NMSCaution",
+        "operator": "=="
+      },
+      "text": "Candidate clinical-review topic: prior NMS caution requires careful clinician review before any further consideration. Distribution: {ClinicalReviewFocus}. This does not prescribe or rule out treatment."
+    },
+    {
+      "when": {
+        "node": "ClinicalReviewFocus",
+        "state": "ReviewEfficacyOrTolerabilityConcern",
+        "operator": "=="
+      },
+      "text": "Candidate clinical-review topic: review same-drug oral efficacy or tolerability concerns with the clinician. Distribution: {ClinicalReviewFocus}."
+    },
+    {
+      "when": {
+        "node": "ClinicalReviewFocus",
+        "state": "EstablishCandidateEvidence",
+        "operator": "=="
+      },
+      "text": "Candidate clinical-review topic: same-drug oral evidence is not established; establish efficacy and tolerability review with the clinician. Distribution: {ClinicalReviewFocus}."
+    },
+    {
+      "when": {
+        "node": "ClinicalReviewFocus",
+        "state": "CandidateEvidenceReviewed",
+        "operator": "=="
+      },
+      "text": "Candidate clinical-review topic: same-drug oral evidence reviewed without a flagged concern in this context. Distribution: {ClinicalReviewFocus}."
+    },
+    {
+      "when": {
+        "node": "DeliveryReviewFocus",
+        "state": "ReviewProductPlanAndBarriers",
+        "operator": "=="
+      },
+      "text": "Candidate delivery-review topic: review both the product plan and delivery barriers with the clinician. Distribution: {DeliveryReviewFocus}."
+    },
+    {
+      "when": {
+        "node": "DeliveryReviewFocus",
+        "state": "ReviewProductPlan",
+        "operator": "=="
+      },
+      "text": "Candidate delivery-review topic: review the product plan including safe injection, storage and missed-dose handling. Distribution: {DeliveryReviewFocus}."
+    },
+    {
+      "when": {
+        "node": "DeliveryReviewFocus",
+        "state": "AddressBarriers",
+        "operator": "=="
+      },
+      "text": "Candidate delivery-review topic: address access, transport, scheduling, cost, staffing or resource barriers. Distribution: {DeliveryReviewFocus}."
+    },
+    {
+      "when": {
+        "node": "DeliveryReviewFocus",
+        "state": "ReviewItemsDocumented",
+        "operator": "=="
+      },
+      "text": "Candidate delivery-review topic: product-plan and barrier review items documented in this context. Distribution: {DeliveryReviewFocus}."
+    },
+    {
+      "when": {
+        "node": "LAIReviewPathway",
+        "state": "OutsideScope",
+        "operator": "=="
+      },
+      "text": "Candidate pathway topic outside scope in this context; retain ongoing clinician review. Distribution: {LAIReviewPathway}. This claims no posterior treatment finding."
+    },
+    {
+      "when": {
+        "node": "LAIReviewPathway",
+        "state": "RespectPreferenceReviewAlternatives",
+        "operator": "=="
+      },
+      "text": "Candidate pathway topic: respect the stated preference and review alternatives with the clinician. Distribution: {LAIReviewPathway}. This does not select a product."
+    },
+    {
+      "when": {
+        "node": "LAIReviewPathway",
+        "state": "ReviewCurrentLAITreatment",
+        "operator": "=="
+      },
+      "text": "Candidate pathway topic: review current LAI treatment, experience and follow-up with the clinician. Distribution: {LAIReviewPathway}."
+    },
+    {
+      "when": {
+        "node": "LAIReviewPathway",
+        "state": "IndividualizedPriorLAIReview",
+        "operator": "=="
+      },
+      "text": "Candidate pathway topic: individualized review of prior LAI course with the clinician. Distribution: {LAIReviewPathway}."
+    },
+    {
+      "when": {
+        "node": "LAIReviewPathway",
+        "state": "DiscussLAIOption",
+        "operator": "=="
+      },
+      "text": "Candidate pathway topic: discuss the LAI option in shared decision-making when the review supports discussion. Distribution: {LAIReviewPathway}. This does not prescribe treatment."
+    },
+    {
+      "when": {
+        "node": "LAIReviewPathway",
+        "state": "ConsiderContextualDiscussion",
+        "operator": "=="
+      },
+      "text": "Candidate pathway topic: consider a contextual discussion following a treatment gap, transition or repeated hospitalization. Distribution: {LAIReviewPathway}."
+    },
+    {
+      "when": {
+        "node": "LAIReviewPathway",
+        "state": "OfferRoutineEducation",
+        "operator": "=="
+      },
+      "text": "Candidate pathway topic: offer routine education about LAI availability. Distribution: {LAIReviewPathway}."
+    }
+  ]
+}

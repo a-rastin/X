@@ -1,0 +1,527 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<BIF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="0.3" xsi:noNamespaceSchemaLocation="schema.xml">
+  <NETWORK>
+    <NAME>BN_07_Established_Case_Clozapine_Review_S32_v1</NAME>
+    <PROPERTY>clinical_question=How do scenario factors affect experimental clozapine review for established schizophrenia cases at registration?</PROPERTY>
+    <PROPERTY>question_key=established_case_clozapine</PROPERTY>
+    <PROPERTY>workflow=registration</PROPERTY>
+    <PROPERTY>statement_id=7</PROPERTY>
+    <PROPERTY>recommendation_strength=1</PROPERTY>
+    <PROPERTY>evidence_quality=B</PROPERTY>
+    <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-07.md</PROPERTY>
+    <PROPERTY>source_locator=Statement 7, printed pages 88-96</PROPERTY>
+    <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
+    <PROPERTY>population=Adult schizophrenia and antipsychotic-treatment scenarios for experimentation</PROPERTY>
+    <PROPERTY>setting=Experimental and educational application</PROPERTY>
+    <PROPERTY>time_horizon=Current encounter synthesis of trial history, observation windows and lifetime context</PROPERTY>
+    <PROPERTY>model_version=s32-v1</PROPERTY>
+    <PROPERTY>validation_status=AWAITING_REVIEW_SYNTHETIC_REFERENCE_CPTS</PROPERTY>
+    <PROPERTY>parameter_policy=All 23 nodes including roots require fresh complete percentage CPT estimation; XML tables are explicitly synthetic uniform mathematical references</PROPERTY>
+    <PROPERTY>edge_encoding=Ordered GIVEN elements materialize all BN-07 ordered proposed_parent properties; no edges removed or renamed</PROPERTY>
+    <PROPERTY>table_order=FOR outcome fastest; last GIVEN parent next; first GIVEN parent slowest</PROPERTY>
+    <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting context pauses for clarification; no guessed negatives and no coercion to No</PROPERTY>
+    <PROPERTY>gate_policy=Gate true executes for established cases with known inputs; first-time gate false records not_applicable with reason and claims no posterior; unknown pauses for clarification</PROPERTY>
+    <PROPERTY>registration_scope=R7 registration established-case review; distinct package identity from F5 no-improvement follow-up even though BN-07 concepts overlap</PROPERTY>
+    <PROPERTY>use_context=experimental_educational_awaiting_review</PROPERTY>
+    <PROPERTY>inference_mode=complete_CPT_estimation_empty_evidence</PROPERTY>
+    <PROPERTY>scope=Established-case applicability gate plus trial-adequacy and observation-window review; no invented thresholds or regimen fields</PROPERTY>
+    <PROPERTY>input_policy=Versioned candidate structured context only; no dose, route, frequency or active/stopped fields and no page notes</PROPERTY>
+    <PROPERTY>graph_semantics=Candidate retained BN-07 dependencies; all proposed_parent edges materialized in declared order</PROPERTY>
+    <PROPERTY>execution_contract=Complete fixed ordered CPTs and empty execution evidence; unapproved content cannot activate</PROPERTY>
+    <PROPERTY>source_policy=Pinned original BN-07 and STATEMENT-07 attribution required; review not yet granted</PROPERTY>
+    <PROPERTY>parameter_inventory=23 complete reference distributions: 15 roots plus 8 outputs; all explicitly synthetic uniform references</PROPERTY>
+    <VARIABLE TYPE="nature">
+      <NAME>SchizophreniaEstablished</NAME>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>label=Schizophrenia Established</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Schizophrenia status represented by the scenario.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-07.md</PROPERTY>
+      <PROPERTY>source_locator=Identification of Treatment-Resistant Schizophrenia, p. 88</PROPERTY>
+      <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; trial-history and observation-window facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>PersistentSignificantSymptoms</NAME>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>label=Persistent Significant Symptoms</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Persistent significant symptoms represented in the scenario.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-07.md</PROPERTY>
+      <PROPERTY>source_locator=Identification of Treatment-Resistant Schizophrenia, p. 88</PROPERTY>
+      <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; trial-history and observation-window facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>Trial1Assessment</NAME>
+      <OUTCOME>AdequateSuboptimalResponse</OUTCOME>
+      <OUTCOME>AdequateSatisfactoryResponse</OUTCOME>
+      <OUTCOME>InadequateExposure</OUTCOME>
+      <OUTCOME>TruncatedByIntolerance</OUTCOME>
+      <PROPERTY>label=Trial1 Assessment</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=First prior antipsychotic trial, categorized by exposure adequacy, response or intolerance for the experiment.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-07.md</PROPERTY>
+      <PROPERTY>source_locator=Identification of Treatment-Resistant Schizophrenia, p. 88</PROPERTY>
+      <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; trial-history and observation-window facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=4</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>Trial2Assessment</NAME>
+      <OUTCOME>AdequateSuboptimalResponse</OUTCOME>
+      <OUTCOME>AdequateSatisfactoryResponse</OUTCOME>
+      <OUTCOME>InadequateExposure</OUTCOME>
+      <OUTCOME>TruncatedByIntolerance</OUTCOME>
+      <PROPERTY>label=Trial2 Assessment</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Second prior antipsychotic trial, categorized by exposure adequacy, response or intolerance for the experiment.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-07.md</PROPERTY>
+      <PROPERTY>source_locator=Identification of Treatment-Resistant Schizophrenia, p. 88</PROPERTY>
+      <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; trial-history and observation-window facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=4</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>TrialsUseDifferentDrugs</NAME>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>label=Trials Use Different Drugs</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Whether the two scenario trials use different antipsychotic agents.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-07.md</PROPERTY>
+      <PROPERTY>source_locator=Identification of Treatment-Resistant Schizophrenia, p. 88</PROPERTY>
+      <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; trial-history and observation-window facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>SymptomsAtLeast12Weeks</NAME>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>label=Symptoms At Least12 Weeks</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Whether the scenario includes significant symptoms lasting at least 12 weeks.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-07.md</PROPERTY>
+      <PROPERTY>source_locator=Identification of Treatment-Resistant Schizophrenia, p. 88</PROPERTY>
+      <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; trial-history and observation-window facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ModerateSymptomsAndFunctionalImpairment</NAME>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>label=Moderate Symptoms and Functional Impairment</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Whether the scenario includes at least moderate symptoms and functional impairment.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-07.md</PROPERTY>
+      <PROPERTY>source_locator=Identification of Treatment-Resistant Schizophrenia, p. 88</PROPERTY>
+      <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; trial-history and observation-window facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ClozapineTreatmentStatus</NAME>
+      <OUTCOME>NeverTreated</OUTCOME>
+      <OUTCOME>CurrentTreatment</OUTCOME>
+      <OUTCOME>PreviouslyTreated</OUTCOME>
+      <PROPERTY>label=Clozapine Treatment Status</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Never, current or previous clozapine treatment represented in the scenario.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-07.md</PROPERTY>
+      <PROPERTY>source_locator=Initiation of Treatment With Clozapine, pp. 89-90</PROPERTY>
+      <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; trial-history and observation-window facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=3</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>WillingToDiscussClozapine</NAME>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>label=Willing To Discuss Clozapine</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Willingness to discuss clozapine represented in the scenario.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-07.md</PROPERTY>
+      <PROPERTY>source_locator=Initiation of Treatment With Clozapine, pp. 89-90</PROPERTY>
+      <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; trial-history and observation-window facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ClozapineMonitoringPlanAvailable</NAME>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>label=Clozapine Monitoring Plan Available</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Availability of a clozapine monitoring and follow-up plan represented in the scenario.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-07.md</PROPERTY>
+      <PROPERTY>source_locator=Monitoring for Side Effects During Treatment With Clozapine, pp. 90-93</PROPERTY>
+      <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; trial-history and observation-window facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ClozapineInitiationDiscussionAppropriate</NAME>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>label=Clozapine Initiation Discussion Appropriate</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Appropriateness of a clozapine initiation discussion represented as a scenario assumption.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-07.md</PROPERTY>
+      <PROPERTY>source_locator=Initiation of Treatment With Clozapine, pp. 89-90</PROPERTY>
+      <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; trial-history and observation-window facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>UrgentSafetyConcern</NAME>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>label=Urgent Safety Concern</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Presence or absence of an urgent safety concern in the scenario.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-07.md</PROPERTY>
+      <PROPERTY>source_locator=Monitoring for Side Effects During Treatment With Clozapine, pp. 90-93</PROPERTY>
+      <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; trial-history and observation-window facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ExposureInterpretationConcern</NAME>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>label=Exposure Interpretation Concern</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Concern about adherence, smoking or caffeine changes, interactions, concentrations or sample timing in the scenario.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-07.md</PROPERTY>
+      <PROPERTY>source_locator=Use of Clozapine Levels During Treatment With Clozapine, p. 90</PROPERTY>
+      <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; trial-history and observation-window facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ClozapineTrialAdequate</NAME>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>label=Clozapine Trial Adequate</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Adequacy of the clozapine trial represented as a scenario assumption.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-07.md</PROPERTY>
+      <PROPERTY>source_locator=Optimizing Treatment With Clozapine, p. 94</PROPERTY>
+      <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; trial-history and observation-window facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ResidualSymptomsOnClozapine</NAME>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>label=Residual Symptoms on Clozapine</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Residual symptoms during clozapine treatment represented in the scenario.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-07.md</PROPERTY>
+      <PROPERTY>source_locator=Optimizing Treatment With Clozapine, p. 94</PROPERTY>
+      <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; trial-history and observation-window facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>TwoAdequateSuboptimalTrials</NAME>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>label=Two Adequate Suboptimal Trials</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for Two Adequate Suboptimal Trials; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-07.md</PROPERTY>
+      <PROPERTY>source_locator=Identification of Treatment-Resistant Schizophrenia, p. 88</PROPERTY>
+      <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; trial-history and observation-window facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=64</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>TreatmentResistantSchizophreniaReview</NAME>
+      <OUTCOME>Triggered</OUTCOME>
+      <OUTCOME>NotTriggered</OUTCOME>
+      <PROPERTY>label=Treatment Resistant Schizophrenia Review</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for Treatment Resistant Schizophrenia Review; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-07.md</PROPERTY>
+      <PROPERTY>source_locator=Identification of Treatment-Resistant Schizophrenia, p. 88</PROPERTY>
+      <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; trial-history and observation-window facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=16</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AdditionalResearchFeatures</NAME>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>NotAllPresent</OUTCOME>
+      <PROPERTY>label=Additional Research Features</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for Additional Research Features; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-07.md</PROPERTY>
+      <PROPERTY>source_locator=Identification of Treatment-Resistant Schizophrenia, p. 88</PROPERTY>
+      <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; trial-history and observation-window facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=8</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>PriorTrialAdequacyReview</NAME>
+      <OUTCOME>Triggered</OUTCOME>
+      <OUTCOME>NotTriggered</OUTCOME>
+      <PROPERTY>label=Prior Trial Adequacy Review</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for Prior Trial Adequacy Review; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-07.md</PROPERTY>
+      <PROPERTY>source_locator=Identification of Treatment-Resistant Schizophrenia, p. 88</PROPERTY>
+      <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; trial-history and observation-window facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=32</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ClozapineInitiationDiscussionPreparation</NAME>
+      <OUTCOME>AddressBarriers</OUTCOME>
+      <OUTCOME>PreparedForDiscussion</OUTCOME>
+      <PROPERTY>label=Clozapine Initiation Discussion Preparation</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for Clozapine Initiation Discussion Preparation; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-07.md</PROPERTY>
+      <PROPERTY>source_locator=Initiation of Treatment With Clozapine, pp. 89-90</PROPERTY>
+      <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; trial-history and observation-window facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=16</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>TreatmentResistanceClozapineReviewPathway</NAME>
+      <OUTCOME>UrgentClinicalAssessment</OUTCOME>
+      <OUTCOME>ReviewCurrentTreatment</OUTCOME>
+      <OUTCOME>IndividualizedPriorClozapineReview</OUTCOME>
+      <OUTCOME>ReviewEvidenceAndOtherIndications</OUTCOME>
+      <OUTCOME>DiscussClozapine</OUTCOME>
+      <OUTCOME>AddressDiscussionBarriers</OUTCOME>
+      <PROPERTY>label=Treatment Resistance Clozapine Review Pathway</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for Treatment Resistance Clozapine Review Pathway; the state distribution is supplied per run instead of a fixed treatment rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-07.md</PROPERTY>
+      <PROPERTY>source_locator=Initiation of Treatment With Clozapine, pp. 89-90</PROPERTY>
+      <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; trial-history and observation-window facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=144</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ClozapineExposureReview</NAME>
+      <OUTCOME>Triggered</OUTCOME>
+      <OUTCOME>NotTriggered</OUTCOME>
+      <PROPERTY>label=Clozapine Exposure Review</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for Clozapine Exposure Review; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-07.md</PROPERTY>
+      <PROPERTY>source_locator=Use of Clozapine Levels During Treatment With Clozapine, p. 90</PROPERTY>
+      <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; trial-history and observation-window facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=12</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>PersistentSymptomsReview</NAME>
+      <OUTCOME>OutsideCurrentTreatmentScope</OUTCOME>
+      <OUTCOME>ContinuePeriodicReview</OUTCOME>
+      <OUTCOME>ReviewTrialAdequacy</OUTCOME>
+      <OUTCOME>SpecialistPersistentSymptomsReview</OUTCOME>
+      <PROPERTY>label=Persistent Symptoms Review</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for Persistent Symptoms Review; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-07.md</PROPERTY>
+      <PROPERTY>source_locator=Optimizing Treatment With Clozapine, p. 94</PROPERTY>
+      <PROPERTY>source_sha256=b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; trial-history and observation-window facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=48</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <DEFINITION>
+      <FOR>SchizophreniaEstablished</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>PersistentSignificantSymptoms</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>Trial1Assessment</FOR>
+      <TABLE>0.25 0.25 0.25 0.25</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>Trial2Assessment</FOR>
+      <TABLE>0.25 0.25 0.25 0.25</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>TrialsUseDifferentDrugs</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>SymptomsAtLeast12Weeks</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>ModerateSymptomsAndFunctionalImpairment</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>ClozapineTreatmentStatus</FOR>
+      <TABLE>0.33333333 0.33333333 0.33333334</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>WillingToDiscussClozapine</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>ClozapineMonitoringPlanAvailable</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>ClozapineInitiationDiscussionAppropriate</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>UrgentSafetyConcern</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>ExposureInterpretationConcern</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>ClozapineTrialAdequate</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>ResidualSymptomsOnClozapine</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>TwoAdequateSuboptimalTrials</FOR>
+      <GIVEN>Trial1Assessment</GIVEN>
+      <GIVEN>Trial2Assessment</GIVEN>
+      <GIVEN>TrialsUseDifferentDrugs</GIVEN>
+      <TABLE>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>TreatmentResistantSchizophreniaReview</FOR>
+      <GIVEN>SchizophreniaEstablished</GIVEN>
+      <GIVEN>PersistentSignificantSymptoms</GIVEN>
+      <GIVEN>TwoAdequateSuboptimalTrials</GIVEN>
+      <TABLE>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>AdditionalResearchFeatures</FOR>
+      <GIVEN>SymptomsAtLeast12Weeks</GIVEN>
+      <GIVEN>ModerateSymptomsAndFunctionalImpairment</GIVEN>
+      <TABLE>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>PriorTrialAdequacyReview</FOR>
+      <GIVEN>Trial1Assessment</GIVEN>
+      <GIVEN>Trial2Assessment</GIVEN>
+      <TABLE>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>ClozapineInitiationDiscussionPreparation</FOR>
+      <GIVEN>WillingToDiscussClozapine</GIVEN>
+      <GIVEN>ClozapineMonitoringPlanAvailable</GIVEN>
+      <GIVEN>ClozapineInitiationDiscussionAppropriate</GIVEN>
+      <TABLE>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>TreatmentResistanceClozapineReviewPathway</FOR>
+      <GIVEN>UrgentSafetyConcern</GIVEN>
+      <GIVEN>ClozapineTreatmentStatus</GIVEN>
+      <GIVEN>TreatmentResistantSchizophreniaReview</GIVEN>
+      <GIVEN>ClozapineInitiationDiscussionPreparation</GIVEN>
+      <TABLE>0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666665</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>ClozapineExposureReview</FOR>
+      <GIVEN>ClozapineTreatmentStatus</GIVEN>
+      <GIVEN>ExposureInterpretationConcern</GIVEN>
+      <TABLE>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>PersistentSymptomsReview</FOR>
+      <GIVEN>ClozapineTreatmentStatus</GIVEN>
+      <GIVEN>ResidualSymptomsOnClozapine</GIVEN>
+      <GIVEN>ClozapineTrialAdequate</GIVEN>
+      <TABLE>0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25</TABLE>
+    </DEFINITION>
+  </NETWORK>
+</BIF>

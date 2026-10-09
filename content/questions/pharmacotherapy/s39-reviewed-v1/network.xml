@@ -1,0 +1,843 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<BIF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="0.3" xsi:noNamespaceSchemaLocation="schema.xml">
+  <NETWORK>
+    <NAME>BN_04_Pharmacotherapy_Review_S27_v1</NAME>
+    <PROPERTY>clinical_question=Established antipsychotic treatment-context review; no initial medication selection</PROPERTY>
+    <PROPERTY>statement_id=4</PROPERTY>
+    <PROPERTY>recommendation_strength=1</PROPERTY>
+    <PROPERTY>evidence_quality=A</PROPERTY>
+    <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+    <PROPERTY>source_locator=Pharmacotherapy; General Principles; Monitoring During Treatment With an Antipsychotic Medication; Table 6</PROPERTY>
+    <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+    <PROPERTY>source_version=APA 2020 guideline; local Markdown derivative; extraction date unknown</PROPERTY>
+    <PROPERTY>population=Adult schizophrenia and antipsychotic-treatment scenarios for experimentation</PROPERTY>
+    <PROPERTY>setting=Experimental and educational application</PROPERTY>
+    <PROPERTY>time_horizon=Current scenario treatment episode; response and adverse-effect intervals may be selected for the experiment</PROPERTY>
+    <PROPERTY>model_version=s27-v1</PROPERTY>
+    <PROPERTY>validation_status=AWAITING_REVIEW_SYNTHETIC_REFERENCE_CPTS</PROPERTY>
+    <PROPERTY>parameter_policy=All nodes including roots require fresh complete percentage CPT estimation; XML tables are explicitly synthetic mathematical references except source-label lookup rows</PROPERTY>
+    <PROPERTY>edge_encoding=Ordered GIVEN elements define all retained source proposed_parent edges; removed DoseExposureCategory edge documented in review</PROPERTY>
+    <PROPERTY>table_order=FOR outcome fastest; last GIVEN parent next; first GIVEN parent slowest</PROPERTY>
+    <PROPERTY>missingness_policy=Required unknown, missing, not-assessed or conflicting context pauses for clarification; no guessed negatives</PROPERTY>
+    <PROPERTY>source_caveat=Lines 248-262 concern Statement 3 and are excluded; Table 3 clozapine titration summary conflicts with detailed narrative; no dosing rules encoded</PROPERTY>
+    <PROPERTY>regulatory_update=FDA removed US clozapine REMS effective 2025-06-13; ANC monitoring remains per prescribing information</PROPERTY>
+    <PROPERTY>regulatory_source_url=https://www.fda.gov/drugs/drug-safety-communications/fda-removes-risk-evaluation-and-mitigation-strategy-rems-program-antipsychotic-drug-clozapine</PROPERTY>
+    <PROPERTY>regulatory_access_date=2026-09-16</PROPERTY>
+    <PROPERTY>use_context=experimental_educational_awaiting_review</PROPERTY>
+    <PROPERTY>inference_mode=complete_CPT_estimation_empty_evidence</PROPERTY>
+    <PROPERTY>scope=Established-treatment review remains applicable without established treatment; no product selection</PROPERTY>
+    <PROPERTY>input_policy=Versioned candidate structured context only; no regimen fields or page notes</PROPERTY>
+    <PROPERTY>graph_semantics=Candidate retained treatment-review dependencies; metadata-only parents materialized; dose node removed</PROPERTY>
+    <PROPERTY>execution_contract=Complete fixed ordered CPTs and empty execution evidence; unapproved content cannot activate</PROPERTY>
+    <PROPERTY>source_policy=Pinned original BN-04 and STATEMENT-04 attribution required; review not yet granted</PROPERTY>
+    <PROPERTY>parameter_inventory=31 complete reference distributions: 18 synthetic mathematical distributions and 13 historical Table-6 label lookups with candidate no-treatment extensions</PROPERTY>
+    <VARIABLE TYPE="nature">
+      <NAME>PriorTreatmentDifficulty</NAME>
+      <OUTCOME>Absent</OUTCOME>
+      <OUTCOME>Present</OUTCOME>
+      <PROPERTY>label=Prior Treatment Difficulty</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Prior inadequate treatment response or intolerance represented in the scenario.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=General Principles</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>discretization=Candidate source categories; concrete operationalization awaits owner review</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown context pauses for clarification; mappings are CPT estimation context only</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_reference_only_awaiting_review</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>s27_state_extensions=Candidate NotAssessable/NotApplicable/NoEstablishedTreatment values represent no treatment under review; they are not negative findings</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>PreferenceBarrier</NAME>
+      <OUTCOME>Absent</OUTCOME>
+      <OUTCOME>Present</OUTCOME>
+      <PROPERTY>label=Preference Barrier</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=An objection or practical barrier to the treatment regimen represented in the scenario.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Patient Preferences</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>discretization=Candidate source categories; concrete operationalization awaits owner review</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown context pauses for clarification; mappings are CPT estimation context only</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_reference_only_awaiting_review</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>s27_state_extensions=Candidate NotAssessable/NotApplicable/NoEstablishedTreatment values represent no treatment under review; they are not negative findings</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>PhysicalVulnerability</NAME>
+      <OUTCOME>Absent</OUTCOME>
+      <OUTCOME>Present</OUTCOME>
+      <PROPERTY>label=Physical Vulnerability</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Physical illness or age-related vulnerability relevant to the selected agent.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Side-Effect Profile; Pharmacokinetic Properties</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>discretization=Candidate source categories; concrete operationalization awaits owner review</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown context pauses for clarification; mappings are CPT estimation context only</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_reference_only_awaiting_review</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>s27_state_extensions=Candidate NotAssessable/NotApplicable/NoEstablishedTreatment values represent no treatment under review; they are not negative findings</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>SubstanceContribution</NAME>
+      <OUTCOME>Absent</OUTCOME>
+      <OUTCOME>Present</OUTCOME>
+      <PROPERTY>label=Substance Contribution</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Concomitant substance use potentially affecting symptom response.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Strategies to Address Initial Nonresponse or Partial Response</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>discretization=Candidate source categories; concrete operationalization awaits owner review</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown context pauses for clarification; mappings are CPT estimation context only</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_reference_only_awaiting_review</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>s27_state_extensions=Candidate NotAssessable/NotApplicable/NoEstablishedTreatment values represent no treatment under review; they are not negative findings</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ExposureModifier</NAME>
+      <OUTCOME>NoIdentifiedModifier</OUTCOME>
+      <OUTCOME>PossibleLowerExposure</OUTCOME>
+      <OUTCOME>PossibleHigherExposure</OUTCOME>
+      <OUTCOME>MixedModifiers</OUTCOME>
+      <PROPERTY>label=Exposure Modifier</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Scenario exposure modifiers involving smoking, interacting drugs, organ function or metabolism; opposing modifiers are represented by MixedModifiers.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Drug-Drug Interactions and Metabolism; Pharmacokinetic Properties</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>discretization=Candidate source categories; concrete operationalization awaits owner review</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown context pauses for clarification; mappings are CPT estimation context only</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_reference_only_awaiting_review</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>required_table_entries=4</PROPERTY>
+      <PROPERTY>s27_state_extensions=Candidate NotAssessable/NotApplicable/NoEstablishedTreatment values represent no treatment under review; they are not negative findings</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>OralAntipsychoticMedication</NAME>
+      <OUTCOME>Chlorpromazine</OUTCOME>
+      <OUTCOME>Fluphenazine</OUTCOME>
+      <OUTCOME>Haloperidol</OUTCOME>
+      <OUTCOME>Loxapine</OUTCOME>
+      <OUTCOME>Molindone</OUTCOME>
+      <OUTCOME>Perphenazine</OUTCOME>
+      <OUTCOME>Pimozide</OUTCOME>
+      <OUTCOME>Thioridazine</OUTCOME>
+      <OUTCOME>Thiothixene</OUTCOME>
+      <OUTCOME>Trifluoperazine</OUTCOME>
+      <OUTCOME>Aripiprazole</OUTCOME>
+      <OUTCOME>Asenapine</OUTCOME>
+      <OUTCOME>Brexpiprazole</OUTCOME>
+      <OUTCOME>Cariprazine</OUTCOME>
+      <OUTCOME>Clozapine</OUTCOME>
+      <OUTCOME>Iloperidone</OUTCOME>
+      <OUTCOME>Lurasidone</OUTCOME>
+      <OUTCOME>Olanzapine</OUTCOME>
+      <OUTCOME>Paliperidone</OUTCOME>
+      <OUTCOME>Quetiapine</OUTCOME>
+      <OUTCOME>Risperidone</OUTCOME>
+      <OUTCOME>Ziprasidone</OUTCOME>
+      <OUTCOME>NoEstablishedTreatment</OUTCOME>
+      <PROPERTY>label=Oral Antipsychotic Medication</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Historical Table-6 medication reference category for established treatment context, or explicit NoEstablishedTreatment; catalog identifiers do not imply patient route/formulation or select a drug</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>discretization=Candidate source categories; concrete operationalization awaits owner review</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown context pauses for clarification; mappings are CPT estimation context only</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_reference_only_awaiting_review</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>required_table_entries=23</PROPERTY>
+      <PROPERTY>s27_state_extensions=Candidate NotAssessable/NotApplicable/NoEstablishedTreatment values represent no treatment under review; they are not negative findings</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>TrialDuration</NAME>
+      <OUTCOME>BeforeResponseWindow</OUTCOME>
+      <OUTCOME>WithinResponseWindow</OUTCOME>
+      <OUTCOME>BeyondResponseWindow</OUTCOME>
+      <OUTCOME>NoEstablishedTreatment</OUTCOME>
+      <PROPERTY>label=Trial Duration</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Trial duration relative to the response window chosen for the experiment.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Initiation of Treatment With an Antipsychotic Medication</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>discretization=Candidate source categories; concrete operationalization awaits owner review</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown context pauses for clarification; mappings are CPT estimation context only</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_reference_only_awaiting_review</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>required_table_entries=4</PROPERTY>
+      <PROPERTY>s27_state_extensions=Candidate NotAssessable/NotApplicable/NoEstablishedTreatment values represent no treatment under review; they are not negative findings</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AdherenceDifficulty</NAME>
+      <OUTCOME>Absent</OUTCOME>
+      <OUTCOME>Present</OUTCOME>
+      <PROPERTY>label=Adherence Difficulty</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Difficulty taking or maintaining the selected treatment during the scenario interval.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Monitoring During Treatment With an Antipsychotic Medication; Quality Measurement Considerations</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>discretization=Candidate source categories; concrete operationalization awaits owner review</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown context pauses for clarification; mappings are CPT estimation context only</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_reference_only_awaiting_review</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=PreferenceBarrier</PROPERTY>
+      <PROPERTY>proposed_parent=PriorTreatmentDifficulty</PROPERTY>
+      <PROPERTY>required_table_entries=8</PROPERTY>
+      <PROPERTY>s27_state_extensions=Candidate NotAssessable/NotApplicable/NoEstablishedTreatment values represent no treatment under review; they are not negative findings</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>EffectiveExposure</NAME>
+      <OUTCOME>Low</OUTCOME>
+      <OUTCOME>Reference</OUTCOME>
+      <OUTCOME>High</OUTCOME>
+      <OUTCOME>NotAssessable</OUTCOME>
+      <PROPERTY>label=Effective Exposure</PROPERTY>
+      <PROPERTY>clinical_role=experimental_latent</PROPERTY>
+      <PROPERTY>definition=Latent effective treatment exposure represented in the scenario.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Drug-Drug Interactions and Metabolism; Strategies to Address Initial Nonresponse or Partial Response</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>discretization=Candidate source categories; concrete operationalization awaits owner review</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown context pauses for clarification; mappings are CPT estimation context only</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_reference_only_awaiting_review</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=OralAntipsychoticMedication</PROPERTY>
+      <PROPERTY>proposed_parent=AdherenceDifficulty</PROPERTY>
+      <PROPERTY>proposed_parent=ExposureModifier</PROPERTY>
+      <PROPERTY>required_table_entries=736</PROPERTY>
+      <PROPERTY>s27_state_extensions=Candidate NotAssessable/NotApplicable/NoEstablishedTreatment values represent no treatment under review; they are not negative findings</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>SymptomResponse</NAME>
+      <OUTCOME>Inadequate</OUTCOME>
+      <OUTCOME>Partial</OUTCOME>
+      <OUTCOME>Adequate</OUTCOME>
+      <OUTCOME>NotAssessable</OUTCOME>
+      <PROPERTY>label=Symptom Response</PROPERTY>
+      <PROPERTY>clinical_role=experimental_outcome</PROPERTY>
+      <PROPERTY>definition=Change in target symptoms relative to the scenario baseline; categories are selected for the experiment.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Strategies to Address Initial Nonresponse or Partial Response; Monitoring During Treatment With an Antipsychotic Medication</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>discretization=Candidate source categories; concrete operationalization awaits owner review</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown context pauses for clarification; mappings are CPT estimation context only</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_reference_only_awaiting_review</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=EffectiveExposure</PROPERTY>
+      <PROPERTY>proposed_parent=TrialDuration</PROPERTY>
+      <PROPERTY>proposed_parent=PriorTreatmentDifficulty</PROPERTY>
+      <PROPERTY>proposed_parent=SubstanceContribution</PROPERTY>
+      <PROPERTY>required_table_entries=256</PROPERTY>
+      <PROPERTY>s27_state_extensions=Candidate NotAssessable/NotApplicable/NoEstablishedTreatment values represent no treatment under review; they are not negative findings</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>FunctionalBenefit</NAME>
+      <OUTCOME>NotMeaningful</OUTCOME>
+      <OUTCOME>Meaningful</OUTCOME>
+      <OUTCOME>NotAssessable</OUTCOME>
+      <PROPERTY>label=Functional Benefit</PROPERTY>
+      <PROPERTY>clinical_role=experimental_outcome</PROPERTY>
+      <PROPERTY>definition=Change in functioning relative to the scenario baseline.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Benefits; Monitoring During Treatment With an Antipsychotic Medication</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>discretization=Candidate source categories; concrete operationalization awaits owner review</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown context pauses for clarification; mappings are CPT estimation context only</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_reference_only_awaiting_review</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=SymptomResponse</PROPERTY>
+      <PROPERTY>proposed_parent=PhysicalVulnerability</PROPERTY>
+      <PROPERTY>required_table_entries=24</PROPERTY>
+      <PROPERTY>s27_state_extensions=Candidate NotAssessable/NotApplicable/NoEstablishedTreatment values represent no treatment under review; they are not negative findings</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>SignificantAntipsychoticSideEffects</NAME>
+      <OUTCOME>Absent</OUTCOME>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>NotAssessable</OUTCOME>
+      <PROPERTY>label=Significant Antipsychotic Side Effects</PROPERTY>
+      <PROPERTY>clinical_role=experimental_outcome</PROPERTY>
+      <PROPERTY>definition=Significant medication side effects affecting functioning or acceptability in the scenario.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Harms; Side-Effect Profile</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>discretization=Candidate source categories; concrete operationalization awaits owner review</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown context pauses for clarification; mappings are CPT estimation context only</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_reference_only_awaiting_review</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=OralAntipsychoticMedication</PROPERTY>
+      <PROPERTY>proposed_parent=EffectiveExposure</PROPERTY>
+      <PROPERTY>proposed_parent=PhysicalVulnerability</PROPERTY>
+      <PROPERTY>proposed_parent=TrialDuration</PROPERTY>
+      <PROPERTY>required_table_entries=2208</PROPERTY>
+      <PROPERTY>s27_state_extensions=Candidate NotAssessable/NotApplicable/NoEstablishedTreatment values represent no treatment under review; they are not negative findings</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>UrgentSafetyConcern</NAME>
+      <OUTCOME>Absent</OUTCOME>
+      <OUTCOME>Present</OUTCOME>
+      <PROPERTY>label=Urgent Safety Concern</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Presence or absence of an urgent safety concern in the scenario.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Neuroleptic Malignant Syndrome; Gastrointestinal Side Effects; Hematological Effects; Tachycardia; Seizures</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>discretization=Candidate source categories; concrete operationalization awaits owner review</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown context pauses for clarification; mappings are CPT estimation context only</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_reference_only_awaiting_review</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>s27_state_extensions=Candidate NotAssessable/NotApplicable/NoEstablishedTreatment values represent no treatment under review; they are not negative findings</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>MonitoringGap</NAME>
+      <OUTCOME>Absent</OUTCOME>
+      <OUTCOME>Present</OUTCOME>
+      <PROPERTY>label=Monitoring Gap</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Presence or absence of a monitoring gap in the scenario.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Monitoring During Treatment With an Antipsychotic Medication</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>discretization=Candidate source categories; concrete operationalization awaits owner review</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown context pauses for clarification; mappings are CPT estimation context only</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_reference_only_awaiting_review</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>s27_state_extensions=Candidate NotAssessable/NotApplicable/NoEstablishedTreatment values represent no treatment under review; they are not negative findings</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ResponseReviewFlag</NAME>
+      <OUTCOME>NotTriggered</OUTCOME>
+      <OUTCOME>Triggered</OUTCOME>
+      <OUTCOME>NotAssessable</OUTCOME>
+      <PROPERTY>label=Response Review Flag</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for Response Review Flag; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Strategies to Address Initial Nonresponse or Partial Response</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>discretization=Candidate source categories; concrete operationalization awaits owner review</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown context pauses for clarification; mappings are CPT estimation context only</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_reference_only_awaiting_review</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>required_table_entries=12</PROPERTY>
+      <PROPERTY>proposed_parent=SymptomResponse</PROPERTY>
+      <PROPERTY>s27_state_extensions=Candidate NotAssessable/NotApplicable/NoEstablishedTreatment values represent no treatment under review; they are not negative findings</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>TolerabilityReviewFlag</NAME>
+      <OUTCOME>NotTriggered</OUTCOME>
+      <OUTCOME>Triggered</OUTCOME>
+      <OUTCOME>NotAssessable</OUTCOME>
+      <PROPERTY>label=Tolerability Review Flag</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for Tolerability Review Flag; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Side-Effect Profile; Patient Preferences</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>discretization=Candidate source categories; concrete operationalization awaits owner review</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown context pauses for clarification; mappings are CPT estimation context only</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_reference_only_awaiting_review</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>required_table_entries=18</PROPERTY>
+      <PROPERTY>proposed_parent=SignificantAntipsychoticSideEffects</PROPERTY>
+      <PROPERTY>proposed_parent=PreferenceBarrier</PROPERTY>
+      <PROPERTY>s27_state_extensions=Candidate NotAssessable/NotApplicable/NoEstablishedTreatment values represent no treatment under review; they are not negative findings</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>SafetyAssessmentFlag</NAME>
+      <OUTCOME>NotTriggered</OUTCOME>
+      <OUTCOME>Triggered</OUTCOME>
+      <PROPERTY>label=Safety Assessment Flag</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for Safety Assessment Flag; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Neuroleptic Malignant Syndrome; Tachycardia; Gastrointestinal Side Effects</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>discretization=Candidate source categories; concrete operationalization awaits owner review</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown context pauses for clarification; mappings are CPT estimation context only</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_reference_only_awaiting_review</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>required_table_entries=4</PROPERTY>
+      <PROPERTY>proposed_parent=UrgentSafetyConcern</PROPERTY>
+      <PROPERTY>s27_state_extensions=Candidate NotAssessable/NotApplicable/NoEstablishedTreatment values represent no treatment under review; they are not negative findings</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>MonitoringReviewFlag</NAME>
+      <OUTCOME>NotTriggered</OUTCOME>
+      <OUTCOME>Triggered</OUTCOME>
+      <PROPERTY>label=Monitoring Review Flag</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for Monitoring Review Flag; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Monitoring During Treatment With an Antipsychotic Medication</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Scenario interval selected for the experiment</PROPERTY>
+      <PROPERTY>discretization=Candidate source categories; concrete operationalization awaits owner review</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown context pauses for clarification; mappings are CPT estimation context only</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_reference_only_awaiting_review</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>required_table_entries=4</PROPERTY>
+      <PROPERTY>proposed_parent=MonitoringGap</PROPERTY>
+      <PROPERTY>s27_state_extensions=Candidate NotAssessable/NotApplicable/NoEstablishedTreatment values represent no treatment under review; they are not negative findings</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AkathisiaSourceCategory</NAME>
+      <OUTCOME>Seldom</OUTCOME>
+      <OUTCOME>Sometimes</OUTCOME>
+      <OUTCOME>Often</OUTCOME>
+      <OUTCOME>NotApplicable</OUTCOME>
+      <PROPERTY>label=Akathisia Source Category</PROPERTY>
+      <PROPERTY>clinical_role=source_lookup</PROPERTY>
+      <PROPERTY>definition=Historical Table 6 ordinal label for Akathisia. A drug attribute, not a patient adverse-event state or risk estimate. Applies only to oral formulations.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Historical source profile; no incidence horizon</PROPERTY>
+      <PROPERTY>discretization=Candidate source categories; concrete operationalization awaits owner review</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown context pauses for clarification; mappings are CPT estimation context only</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_reference_only_awaiting_review</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=OralAntipsychoticMedication</PROPERTY>
+      <PROPERTY>required_table_entries=92</PROPERTY>
+      <PROPERTY>s27_state_extensions=Candidate NotAssessable/NotApplicable/NoEstablishedTreatment values represent no treatment under review; they are not negative findings</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ParkinsonismSourceCategory</NAME>
+      <OUTCOME>Seldom</OUTCOME>
+      <OUTCOME>Sometimes</OUTCOME>
+      <OUTCOME>Often</OUTCOME>
+      <OUTCOME>NotApplicable</OUTCOME>
+      <PROPERTY>label=Parkinsonism Source Category</PROPERTY>
+      <PROPERTY>clinical_role=source_lookup</PROPERTY>
+      <PROPERTY>definition=Historical Table 6 ordinal label for Parkinsonism. A drug attribute, not a patient adverse-event state or risk estimate. Applies only to oral formulations.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Historical source profile; no incidence horizon</PROPERTY>
+      <PROPERTY>discretization=Candidate source categories; concrete operationalization awaits owner review</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown context pauses for clarification; mappings are CPT estimation context only</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_reference_only_awaiting_review</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=OralAntipsychoticMedication</PROPERTY>
+      <PROPERTY>required_table_entries=92</PROPERTY>
+      <PROPERTY>s27_state_extensions=Candidate NotAssessable/NotApplicable/NoEstablishedTreatment values represent no treatment under review; they are not negative findings</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>DystoniaSourceCategory</NAME>
+      <OUTCOME>Seldom</OUTCOME>
+      <OUTCOME>Sometimes</OUTCOME>
+      <OUTCOME>Often</OUTCOME>
+      <OUTCOME>NotApplicable</OUTCOME>
+      <PROPERTY>label=Dystonia Source Category</PROPERTY>
+      <PROPERTY>clinical_role=source_lookup</PROPERTY>
+      <PROPERTY>definition=Historical Table 6 ordinal label for Dystonia. A drug attribute, not a patient adverse-event state or risk estimate. Applies only to oral formulations.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Historical source profile; no incidence horizon</PROPERTY>
+      <PROPERTY>discretization=Candidate source categories; concrete operationalization awaits owner review</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown context pauses for clarification; mappings are CPT estimation context only</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_reference_only_awaiting_review</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=OralAntipsychoticMedication</PROPERTY>
+      <PROPERTY>required_table_entries=92</PROPERTY>
+      <PROPERTY>s27_state_extensions=Candidate NotAssessable/NotApplicable/NoEstablishedTreatment values represent no treatment under review; they are not negative findings</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>TardiveDyskinesiaSourceCategory</NAME>
+      <OUTCOME>Seldom</OUTCOME>
+      <OUTCOME>Sometimes</OUTCOME>
+      <OUTCOME>Often</OUTCOME>
+      <OUTCOME>NotApplicable</OUTCOME>
+      <PROPERTY>label=Tardive Dyskinesia Source Category</PROPERTY>
+      <PROPERTY>clinical_role=source_lookup</PROPERTY>
+      <PROPERTY>definition=Historical Table 6 ordinal label for TardiveDyskinesia. A drug attribute, not a patient adverse-event state or risk estimate. Applies only to oral formulations.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Historical source profile; no incidence horizon</PROPERTY>
+      <PROPERTY>discretization=Candidate source categories; concrete operationalization awaits owner review</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown context pauses for clarification; mappings are CPT estimation context only</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_reference_only_awaiting_review</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=OralAntipsychoticMedication</PROPERTY>
+      <PROPERTY>required_table_entries=92</PROPERTY>
+      <PROPERTY>s27_state_extensions=Candidate NotAssessable/NotApplicable/NoEstablishedTreatment values represent no treatment under review; they are not negative findings</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>HyperprolactinemiaSourceCategory</NAME>
+      <OUTCOME>Seldom</OUTCOME>
+      <OUTCOME>Sometimes</OUTCOME>
+      <OUTCOME>Often</OUTCOME>
+      <OUTCOME>NotApplicable</OUTCOME>
+      <PROPERTY>label=Hyperprolactinemia Source Category</PROPERTY>
+      <PROPERTY>clinical_role=source_lookup</PROPERTY>
+      <PROPERTY>definition=Historical Table 6 ordinal label for Hyperprolactinemia. A drug attribute, not a patient adverse-event state or risk estimate. Applies only to oral formulations.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Historical source profile; no incidence horizon</PROPERTY>
+      <PROPERTY>discretization=Candidate source categories; concrete operationalization awaits owner review</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown context pauses for clarification; mappings are CPT estimation context only</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_reference_only_awaiting_review</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=OralAntipsychoticMedication</PROPERTY>
+      <PROPERTY>required_table_entries=92</PROPERTY>
+      <PROPERTY>s27_state_extensions=Candidate NotAssessable/NotApplicable/NoEstablishedTreatment values represent no treatment under review; they are not negative findings</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AnticholinergicEffectsSourceCategory</NAME>
+      <OUTCOME>Seldom</OUTCOME>
+      <OUTCOME>Sometimes</OUTCOME>
+      <OUTCOME>Often</OUTCOME>
+      <OUTCOME>NotApplicable</OUTCOME>
+      <PROPERTY>label=Anticholinergic Effects Source Category</PROPERTY>
+      <PROPERTY>clinical_role=source_lookup</PROPERTY>
+      <PROPERTY>definition=Historical Table 6 ordinal label for Anticholinergic. A drug attribute, not a patient adverse-event state or risk estimate. Applies only to oral formulations.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Historical source profile; no incidence horizon</PROPERTY>
+      <PROPERTY>discretization=Candidate source categories; concrete operationalization awaits owner review</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown context pauses for clarification; mappings are CPT estimation context only</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_reference_only_awaiting_review</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=OralAntipsychoticMedication</PROPERTY>
+      <PROPERTY>required_table_entries=92</PROPERTY>
+      <PROPERTY>s27_state_extensions=Candidate NotAssessable/NotApplicable/NoEstablishedTreatment values represent no treatment under review; they are not negative findings</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>SedationSourceCategory</NAME>
+      <OUTCOME>Seldom</OUTCOME>
+      <OUTCOME>Sometimes</OUTCOME>
+      <OUTCOME>Often</OUTCOME>
+      <OUTCOME>NotApplicable</OUTCOME>
+      <PROPERTY>label=Sedation Source Category</PROPERTY>
+      <PROPERTY>clinical_role=source_lookup</PROPERTY>
+      <PROPERTY>definition=Historical Table 6 ordinal label for Sedation. A drug attribute, not a patient adverse-event state or risk estimate. Applies only to oral formulations.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Historical source profile; no incidence horizon</PROPERTY>
+      <PROPERTY>discretization=Candidate source categories; concrete operationalization awaits owner review</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown context pauses for clarification; mappings are CPT estimation context only</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_reference_only_awaiting_review</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=OralAntipsychoticMedication</PROPERTY>
+      <PROPERTY>required_table_entries=92</PROPERTY>
+      <PROPERTY>s27_state_extensions=Candidate NotAssessable/NotApplicable/NoEstablishedTreatment values represent no treatment under review; they are not negative findings</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>SeizuresSourceCategory</NAME>
+      <OUTCOME>Seldom</OUTCOME>
+      <OUTCOME>Sometimes</OUTCOME>
+      <OUTCOME>Often</OUTCOME>
+      <OUTCOME>NotApplicable</OUTCOME>
+      <PROPERTY>label=Seizures Source Category</PROPERTY>
+      <PROPERTY>clinical_role=source_lookup</PROPERTY>
+      <PROPERTY>definition=Historical Table 6 ordinal label for Seizures. A drug attribute, not a patient adverse-event state or risk estimate. Applies only to oral formulations.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Historical source profile; no incidence horizon</PROPERTY>
+      <PROPERTY>discretization=Candidate source categories; concrete operationalization awaits owner review</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown context pauses for clarification; mappings are CPT estimation context only</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_reference_only_awaiting_review</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=OralAntipsychoticMedication</PROPERTY>
+      <PROPERTY>required_table_entries=92</PROPERTY>
+      <PROPERTY>s27_state_extensions=Candidate NotAssessable/NotApplicable/NoEstablishedTreatment values represent no treatment under review; they are not negative findings</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>OrthostasisSourceCategory</NAME>
+      <OUTCOME>Seldom</OUTCOME>
+      <OUTCOME>Sometimes</OUTCOME>
+      <OUTCOME>Often</OUTCOME>
+      <OUTCOME>NotApplicable</OUTCOME>
+      <PROPERTY>label=Orthostasis Source Category</PROPERTY>
+      <PROPERTY>clinical_role=source_lookup</PROPERTY>
+      <PROPERTY>definition=Historical Table 6 ordinal label for Orthostasis. A drug attribute, not a patient adverse-event state or risk estimate. Applies only to oral formulations.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Historical source profile; no incidence horizon</PROPERTY>
+      <PROPERTY>discretization=Candidate source categories; concrete operationalization awaits owner review</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown context pauses for clarification; mappings are CPT estimation context only</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_reference_only_awaiting_review</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=OralAntipsychoticMedication</PROPERTY>
+      <PROPERTY>required_table_entries=92</PROPERTY>
+      <PROPERTY>s27_state_extensions=Candidate NotAssessable/NotApplicable/NoEstablishedTreatment values represent no treatment under review; they are not negative findings</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>QTProlongationSourceCategory</NAME>
+      <OUTCOME>Seldom</OUTCOME>
+      <OUTCOME>Sometimes</OUTCOME>
+      <OUTCOME>Often</OUTCOME>
+      <OUTCOME>NotApplicable</OUTCOME>
+      <PROPERTY>label=QT Prolongation Source Category</PROPERTY>
+      <PROPERTY>clinical_role=source_lookup</PROPERTY>
+      <PROPERTY>definition=Historical Table 6 ordinal label for QTProlongation. A drug attribute, not a patient adverse-event state or risk estimate. Applies only to oral formulations.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Historical source profile; no incidence horizon</PROPERTY>
+      <PROPERTY>discretization=Candidate source categories; concrete operationalization awaits owner review</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown context pauses for clarification; mappings are CPT estimation context only</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_reference_only_awaiting_review</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=OralAntipsychoticMedication</PROPERTY>
+      <PROPERTY>required_table_entries=92</PROPERTY>
+      <PROPERTY>s27_state_extensions=Candidate NotAssessable/NotApplicable/NoEstablishedTreatment values represent no treatment under review; they are not negative findings</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>WeightGainSourceCategory</NAME>
+      <OUTCOME>Seldom</OUTCOME>
+      <OUTCOME>Sometimes</OUTCOME>
+      <OUTCOME>Often</OUTCOME>
+      <OUTCOME>NotApplicable</OUTCOME>
+      <PROPERTY>label=Weight Gain Source Category</PROPERTY>
+      <PROPERTY>clinical_role=source_lookup</PROPERTY>
+      <PROPERTY>definition=Historical Table 6 ordinal label for WeightGain. A drug attribute, not a patient adverse-event state or risk estimate. Applies only to oral formulations.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Historical source profile; no incidence horizon</PROPERTY>
+      <PROPERTY>discretization=Candidate source categories; concrete operationalization awaits owner review</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown context pauses for clarification; mappings are CPT estimation context only</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_reference_only_awaiting_review</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=OralAntipsychoticMedication</PROPERTY>
+      <PROPERTY>required_table_entries=92</PROPERTY>
+      <PROPERTY>s27_state_extensions=Candidate NotAssessable/NotApplicable/NoEstablishedTreatment values represent no treatment under review; they are not negative findings</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>HyperlipidemiaSourceCategory</NAME>
+      <OUTCOME>Seldom</OUTCOME>
+      <OUTCOME>Sometimes</OUTCOME>
+      <OUTCOME>Often</OUTCOME>
+      <OUTCOME>NotApplicable</OUTCOME>
+      <PROPERTY>label=Hyperlipidemia Source Category</PROPERTY>
+      <PROPERTY>clinical_role=source_lookup</PROPERTY>
+      <PROPERTY>definition=Historical Table 6 ordinal label for Hyperlipidemia. A drug attribute, not a patient adverse-event state or risk estimate. Applies only to oral formulations.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Historical source profile; no incidence horizon</PROPERTY>
+      <PROPERTY>discretization=Candidate source categories; concrete operationalization awaits owner review</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown context pauses for clarification; mappings are CPT estimation context only</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_reference_only_awaiting_review</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=OralAntipsychoticMedication</PROPERTY>
+      <PROPERTY>required_table_entries=92</PROPERTY>
+      <PROPERTY>s27_state_extensions=Candidate NotAssessable/NotApplicable/NoEstablishedTreatment values represent no treatment under review; they are not negative findings</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>GlucoseAbnormalitiesSourceCategory</NAME>
+      <OUTCOME>Seldom</OUTCOME>
+      <OUTCOME>Sometimes</OUTCOME>
+      <OUTCOME>Often</OUTCOME>
+      <OUTCOME>NotApplicable</OUTCOME>
+      <PROPERTY>label=Glucose Abnormalities Source Category</PROPERTY>
+      <PROPERTY>clinical_role=source_lookup</PROPERTY>
+      <PROPERTY>definition=Historical Table 6 ordinal label for GlucoseAbnormalities. A drug attribute, not a patient adverse-event state or risk estimate. Applies only to oral formulations.</PROPERTY>
+      <PROPERTY>source_path=medical-knowledge/02-md/STATEMENT-04.md</PROPERTY>
+      <PROPERTY>source_locator=Table 6</PROPERTY>
+      <PROPERTY>source_sha256=08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444</PROPERTY>
+      <PROPERTY>time_window=Historical source profile; no incidence horizon</PROPERTY>
+      <PROPERTY>discretization=Candidate source categories; concrete operationalization awaits owner review</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown context pauses for clarification; mappings are CPT estimation context only</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_reference_only_awaiting_review</PROPERTY>
+      <PROPERTY>structure_method=modeler_synthesis_of_source</PROPERTY>
+      <PROPERTY>proposed_parent=OralAntipsychoticMedication</PROPERTY>
+      <PROPERTY>required_table_entries=92</PROPERTY>
+      <PROPERTY>s27_state_extensions=Candidate NotAssessable/NotApplicable/NoEstablishedTreatment values represent no treatment under review; they are not negative findings</PROPERTY>
+    </VARIABLE>
+    <PROPERTY>original_network_sha256=5e059514127a618ac887a04a04180afa1f8b768fa2a5b27f34a3eb13fc5a8e05</PROPERTY>
+    <DEFINITION>
+      <FOR>PriorTreatmentDifficulty</FOR>
+      <TABLE>0.8 0.2</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>PreferenceBarrier</FOR>
+      <TABLE>0.8 0.2</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>PhysicalVulnerability</FOR>
+      <TABLE>0.8 0.2</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>SubstanceContribution</FOR>
+      <TABLE>0.8 0.2</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>ExposureModifier</FOR>
+      <TABLE>1 0 0 0</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>OralAntipsychoticMedication</FOR>
+      <TABLE>0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>TrialDuration</FOR>
+      <TABLE>0 1 0 0</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>AdherenceDifficulty</FOR>
+      <GIVEN>PreferenceBarrier</GIVEN>
+      <GIVEN>PriorTreatmentDifficulty</GIVEN>
+      <TABLE>0.9 0.1 0.5 0.5 0.5 0.5 0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>EffectiveExposure</FOR>
+      <GIVEN>OralAntipsychoticMedication</GIVEN>
+      <GIVEN>AdherenceDifficulty</GIVEN>
+      <GIVEN>ExposureModifier</GIVEN>
+      <TABLE>0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.2 0.7 0.1 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0.7 0.25 0.05 0 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>SymptomResponse</FOR>
+      <GIVEN>EffectiveExposure</GIVEN>
+      <GIVEN>TrialDuration</GIVEN>
+      <GIVEN>PriorTreatmentDifficulty</GIVEN>
+      <GIVEN>SubstanceContribution</GIVEN>
+      <TABLE>0.4 0.4 0.2 0 0.4 0.4 0.2 0 0.4 0.4 0.2 0 0.4 0.4 0.2 0 0.4 0.4 0.2 0 0.4 0.4 0.2 0 0.4 0.4 0.2 0 0.4 0.4 0.2 0 0.4 0.4 0.2 0 0.4 0.4 0.2 0 0.4 0.4 0.2 0 0.4 0.4 0.2 0 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0.1 0.3 0.6 0 0.1 0.3 0.6 0 0.1 0.3 0.6 0 0.1 0.3 0.6 0 0.1 0.3 0.6 0 0.1 0.3 0.6 0 0.1 0.3 0.6 0 0.1 0.3 0.6 0 0.1 0.3 0.6 0 0.1 0.3 0.6 0 0.1 0.3 0.6 0 0.1 0.3 0.6 0 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0.1 0.1 0.8 0 0.1 0.1 0.8 0 0.1 0.1 0.8 0 0.1 0.1 0.8 0 0.1 0.1 0.8 0 0.1 0.1 0.8 0 0.1 0.1 0.8 0 0.1 0.1 0.8 0 0.1 0.1 0.8 0 0.1 0.1 0.8 0 0.1 0.1 0.8 0 0.1 0.1 0.8 0 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>FunctionalBenefit</FOR>
+      <GIVEN>SymptomResponse</GIVEN>
+      <GIVEN>PhysicalVulnerability</GIVEN>
+      <TABLE>0.7 0.3 0 0.7 0.3 0 0.7 0.3 0 0.7 0.3 0 0.7 0.3 0 0.7 0.3 0 0 0 1 0 0 1</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>SignificantAntipsychoticSideEffects</FOR>
+      <GIVEN>OralAntipsychoticMedication</GIVEN>
+      <GIVEN>EffectiveExposure</GIVEN>
+      <GIVEN>PhysicalVulnerability</GIVEN>
+      <GIVEN>TrialDuration</GIVEN>
+      <TABLE>0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0.6 0.4 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>UrgentSafetyConcern</FOR>
+      <TABLE>0.8 0.2</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>MonitoringGap</FOR>
+      <TABLE>0.8 0.2</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>ResponseReviewFlag</FOR>
+      <GIVEN>SymptomResponse</GIVEN>
+      <TABLE>0 1 0 0 1 0 1 0 0 0 0 1</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>TolerabilityReviewFlag</FOR>
+      <GIVEN>SignificantAntipsychoticSideEffects</GIVEN>
+      <GIVEN>PreferenceBarrier</GIVEN>
+      <TABLE>1 0 0 0 1 0 0 1 0 0 1 0 0 0 1 0 0 1</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>SafetyAssessmentFlag</FOR>
+      <GIVEN>UrgentSafetyConcern</GIVEN>
+      <TABLE>1 0 0 1</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>MonitoringReviewFlag</FOR>
+      <GIVEN>MonitoringGap</GIVEN>
+      <TABLE>1 0 0 1</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>AkathisiaSourceCategory</FOR>
+      <GIVEN>OralAntipsychoticMedication</GIVEN>
+      <TABLE>0 1 0 0 0 0 1 0 0 0 1 0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 1 0 1 0 0 0 0 0 1 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 1 0 0 0 1 0 0 0 0 1 0 0 0 1 0 0 0 1 0 0 1 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>ParkinsonismSourceCategory</FOR>
+      <GIVEN>OralAntipsychoticMedication</GIVEN>
+      <TABLE>0 1 0 0 0 0 1 0 0 0 1 0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 1 0 1 0 0 0 0 0 1 0 0 1 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 1 0 0 0 1 0 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 0 0 1</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>DystoniaSourceCategory</FOR>
+      <GIVEN>OralAntipsychoticMedication</GIVEN>
+      <TABLE>0 1 0 0 0 0 1 0 0 0 1 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 1 0 0 0 0 0 1 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 0 0 1</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>TardiveDyskinesiaSourceCategory</FOR>
+      <GIVEN>OralAntipsychoticMedication</GIVEN>
+      <TABLE>0 0 1 0 0 0 1 0 0 0 1 0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 1 0 1 0 0 0 0 0 1 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 0 0 1</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>HyperprolactinemiaSourceCategory</FOR>
+      <GIVEN>OralAntipsychoticMedication</GIVEN>
+      <TABLE>1 0 0 0 0 0 1 0 0 0 1 0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1 0 0 0 0 0 1 0 0 1 0 0 0 0 0 1</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>AnticholinergicEffectsSourceCategory</FOR>
+      <GIVEN>OralAntipsychoticMedication</GIVEN>
+      <TABLE>0 0 1 0 1 0 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 0 1 0 1 0 0 0 0 1 0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1 0 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 1 0 0 0 0 0 0 1</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>SedationSourceCategory</FOR>
+      <GIVEN>OralAntipsychoticMedication</GIVEN>
+      <TABLE>0 0 1 0 1 0 0 0 1 0 0 0 0 1 0 0 0 1 0 0 0 1 0 0 1 0 0 0 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 1 0 0 1 0 0 0 1 0 0 0 0 1 0 1 0 0 0 0 0 1 0 0 1 0 0 0 1 0 0 0 0 0 1</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>SeizuresSourceCategory</FOR>
+      <GIVEN>OralAntipsychoticMedication</GIVEN>
+      <TABLE>0 1 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 1 0 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 1 0 0 0 0 0 0 1</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>OrthostasisSourceCategory</FOR>
+      <GIVEN>OralAntipsychoticMedication</GIVEN>
+      <TABLE>0 0 1 0 1 0 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 0 1 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 1 0 1 0 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 0 1</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>QTProlongationSourceCategory</FOR>
+      <GIVEN>OralAntipsychoticMedication</GIVEN>
+      <TABLE>0 0 1 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 1 0 0 0 1 0 0 1 0 0 0 1 0 0 1 0 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 1 0 1 0 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 1 0 0 0 0 1</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>WeightGainSourceCategory</FOR>
+      <GIVEN>OralAntipsychoticMedication</GIVEN>
+      <TABLE>0 1 0 0 0 1 0 0 0 1 0 0 1 0 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 1 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0 1 0 0 0 1 0 0 1 0 0 0 0 0 0 1</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>HyperlipidemiaSourceCategory</FOR>
+      <GIVEN>OralAntipsychoticMedication</GIVEN>
+      <TABLE>1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 1 0 0 0 1 0 0 1 0 0 0 0 0 1 0 1 0 0 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 1 0 0 0 1 0 0 0 0 0 0 1</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>GlucoseAbnormalitiesSourceCategory</FOR>
+      <GIVEN>OralAntipsychoticMedication</GIVEN>
+      <TABLE>0 1 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 1 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0 1 0 0 0 0 1 0 1 0 0 0 0 1 0 0 0 1 0 0 1 0 0 0 0 0 0 1</TABLE>
+    </DEFINITION>
+  </NETWORK>
+</BIF>

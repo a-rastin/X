@@ -1,0 +1,152 @@
+{
+  "branches": [
+    {
+      "text": "Urgent airway assessment topic from saved structured airway inputs, shown independently of estimation latency and not a computed risk percentage: arrange emergency airway evaluation now for stridor or breathing difficulty suggesting laryngeal dystonia in this context. This experimental distribution does not prescribe treatment Distribution: {AcuteDystoniaReviewPathway}.",
+      "when": {
+        "node": "AcuteDystoniaReviewPathway",
+        "operator": "==",
+        "state": "UrgentAirwayAssessment"
+      }
+    },
+    {
+      "text": "Candidate acute-treatment review topic: review acute anticholinergic treatment with the clinician for a present episode with established antipsychotic association and no airway concern in this context. This does not prescribe a medication, dose, or route Distribution: {AcuteDystoniaReviewPathway}.",
+      "when": {
+        "node": "AcuteDystoniaReviewPathway",
+        "operator": "==",
+        "state": "ReviewAcuteAnticholinergicTreatment"
+      }
+    },
+    {
+      "text": "Candidate episode review topic: assess episode and differential with the clinician, including medication timeline, distribution and persistence, and exclusion of catatonia, primary neurological or medical cause, and tardive movement disorder in this context Distribution: {AcuteDystoniaReviewPathway}.",
+      "when": {
+        "node": "AcuteDystoniaReviewPathway",
+        "operator": "==",
+        "state": "AssessEpisodeAndDifferential"
+      }
+    },
+    {
+      "text": "Candidate post-resolution review topic: review recurrence prevention, need, and stopping or continuation tradeoffs with the clinician after resolution in this context. This does not prescribe continuation or stopping Distribution: {AcuteDystoniaReviewPathway}.",
+      "when": {
+        "node": "AcuteDystoniaReviewPathway",
+        "operator": "==",
+        "state": "PostResolutionReview"
+      }
+    },
+    {
+      "text": "Candidate review topic: no acute treatment rule in this absent context; retain ongoing clinician review. This is not a negative clinical finding Distribution: {AcuteDystoniaReviewPathway}.",
+      "when": {
+        "node": "AcuteDystoniaReviewPathway",
+        "operator": "==",
+        "state": "NoAcuteTreatmentRule"
+      }
+    },
+    {
+      "text": "Candidate safety review topic: review patient-specific anticholinergic concern and concurrent burden with the clinician in this context. This does not prescribe a medication change Distribution: {AnticholinergicSafetyReviewFocus}.",
+      "when": {
+        "node": "AnticholinergicSafetyReviewFocus",
+        "operator": "==",
+        "state": "ReviewPatientSpecificConcernAndBurden"
+      }
+    },
+    {
+      "text": "Candidate safety review topic: review patient-specific anticholinergic concern with the clinician in this context. This does not prescribe a medication change Distribution: {AnticholinergicSafetyReviewFocus}.",
+      "when": {
+        "node": "AnticholinergicSafetyReviewFocus",
+        "operator": "==",
+        "state": "ReviewPatientSpecificConcern"
+      }
+    },
+    {
+      "text": "Candidate safety review topic: review age-related vulnerability or concurrent anticholinergic burden with the clinician in this context Distribution: {AnticholinergicSafetyReviewFocus}.",
+      "when": {
+        "node": "AnticholinergicSafetyReviewFocus",
+        "operator": "==",
+        "state": "ReviewAgeOrMedicationBurden"
+      }
+    },
+    {
+      "text": "Candidate safety review topic: routine individualized safety review with the clinician in this context Distribution: {AnticholinergicSafetyReviewFocus}.",
+      "when": {
+        "node": "AnticholinergicSafetyReviewFocus",
+        "operator": "==",
+        "state": "RoutineIndividualizedReview"
+      }
+    },
+    {
+      "text": "Candidate continuation review topic: not a post-resolution review in this absent context; retain ongoing clinician review. This is not a negative clinical finding Distribution: {AcuteDystoniaAnticholinergicContinuationReview}.",
+      "when": {
+        "node": "AcuteDystoniaAnticholinergicContinuationReview",
+        "operator": "==",
+        "state": "NotPostResolutionReview"
+      }
+    },
+    {
+      "text": "Candidate continuation review topic: establish episode association and differential with the clinician before any prevention review in this context Distribution: {AcuteDystoniaAnticholinergicContinuationReview}.",
+      "when": {
+        "node": "AcuteDystoniaAnticholinergicContinuationReview",
+        "operator": "==",
+        "state": "EstablishEpisodeAssociation"
+      }
+    },
+    {
+      "text": "Candidate continuation review topic: review recurrence-prevention need and patient concerns about continuation with the clinician in this context. This does not prescribe continuation Distribution: {AcuteDystoniaAnticholinergicContinuationReview}.",
+      "when": {
+        "node": "AcuteDystoniaAnticholinergicContinuationReview",
+        "operator": "==",
+        "state": "ReviewNeedAndPatientConcerns"
+      }
+    },
+    {
+      "text": "Candidate continuation review topic: consider short-term prevention review with the clinician, using the lowest dose for the shortest time needed, with monitoring for anticholinergic effects in this context. This does not prescribe a dose or duration Distribution: {AcuteDystoniaAnticholinergicContinuationReview}.",
+      "when": {
+        "node": "AcuteDystoniaAnticholinergicContinuationReview",
+        "operator": "==",
+        "state": "ConsiderShortTermPreventionReview"
+      }
+    },
+    {
+      "text": "Candidate continuation review topic: review stopping or avoiding unneeded continuation with the clinician when prevention need is absent in this context. This does not prescribe stopping Distribution: {AcuteDystoniaAnticholinergicContinuationReview}.",
+      "when": {
+        "node": "AcuteDystoniaAnticholinergicContinuationReview",
+        "operator": "==",
+        "state": "ReviewStoppingOrAvoidingUnneededContinuation"
+      }
+    },
+    {
+      "text": "Candidate regimen review topic: review dose or alternative-antipsychotic considerations with the clinician for an established association in this context. This does not prescribe a dose change or switch Distribution: {AcuteDystoniaAntipsychoticRegimenReview}.",
+      "when": {
+        "node": "AcuteDystoniaAntipsychoticRegimenReview",
+        "operator": "==",
+        "state": "ReviewDoseOrAlternative"
+      }
+    },
+    {
+      "text": "Candidate regimen review topic: assess medication association and differential with the clinician, including exposure timeline and alternative explanations in this context Distribution: {AcuteDystoniaAntipsychoticRegimenReview}.",
+      "when": {
+        "node": "AcuteDystoniaAntipsychoticRegimenReview",
+        "operator": "==",
+        "state": "AssessMedicationAssociation"
+      }
+    },
+    {
+      "text": "Candidate regimen review topic: no episode-specific regimen review in this absent context; retain ongoing clinician review. This is not a negative clinical finding Distribution: {AcuteDystoniaAntipsychoticRegimenReview}.",
+      "when": {
+        "node": "AcuteDystoniaAntipsychoticRegimenReview",
+        "operator": "==",
+        "state": "NoEpisodeSpecificReview"
+      }
+    }
+  ],
+  "disclosures": [
+    "Experimental, uncalibrated and unapproved; not a prescription.",
+    "An absent case is not_applicable and claims no posterior; it is never a negative finding or a fake negative review posterior.",
+    "Unresolved, unknown, not_assessed, missing or conflicting required context pauses; absent is never coerced from not assessed and no missing finding maps to No; a missing Dx item never becomes a negative finding.",
+    "Acute Dystonia Dx Criteria supports measurement; its items alone never establish a total and no score threshold determines intervention; severity is independent mild, moderate or severe and never derived from a total.",
+    "Urgent banner comes from saved structured airway inputs, not model output, and never shows a fabricated risk percentage; Table 10 prescribing details are background only and not copied as activation metadata.",
+    "No dose, route, frequency, active/stopped or free-text fields are collected or accepted."
+  ],
+  "rendering_contract": "Candidate wording for S45 deterministic distribution rendering; each queried state has a branch, all probabilities remain visible. No probability threshold or posterior-ranked treatment selection is defined. Urgent banner renders from saved inputs in parallel with review topics. Whether outputs behave as deterministic rules or estimated tables is an open assumption for owner review; this wording assumes neither.",
+  "status": "approved",
+  "urgent_banner": "Urgent airway banner from saved structured airway inputs, shown independently of estimation latency and not a computed risk percentage: stridor or breathing difficulty suggesting laryngeal dystonia requires emergency assessment now; do not delay airway evaluation to complete the checklist or wait for inference.",
+  "version": "s39-reviewed-v1"
+}

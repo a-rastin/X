@@ -1,0 +1,125 @@
+{
+  "version": "s39-reviewed-v1",
+  "status": "approved",
+  "rendering_contract": "Candidate wording for S45 deterministic distribution rendering; each queried state has a branch, all probabilities remain visible. No probability threshold or posterior-ranked treatment selection is defined. Urgent banner renders from saved inputs in parallel with review topics.",
+  "disclosures": [
+    "Experimental, uncalibrated and unapproved; not a prescription.",
+    "A C-SSRS scale level alone never authorizes clozapine; indication requires clinician persistence and treatment-context review.",
+    "Urgent banner comes from saved structured assessment inputs, not model output, and never shows a fabricated risk percentage.",
+    "Missing, unknown, not-assessed or conflicting required input pauses; a false gate is not_applicable and claims no posterior."
+  ],
+  "branches": [
+    {
+      "when": {
+        "node": "ClozapineSuicideRiskIndication",
+        "state": "Present",
+        "operator": "=="
+      },
+      "text": "Candidate indication-review topic present; discuss persistence, prior treatment and preferences with the clinician. This experimental distribution does not prescribe clozapine. Distribution: {ClozapineSuicideRiskIndication}. No scale level alone authorizes treatment."
+    },
+    {
+      "when": {
+        "node": "ClozapineSuicideRiskIndication",
+        "state": "NotEstablished",
+        "operator": "=="
+      },
+      "text": "Candidate indication-review topic not established in this context; review evidence and other indications with the clinician. Distribution: {ClozapineSuicideRiskIndication}. This is not a negative clinical finding."
+    },
+    {
+      "when": {
+        "node": "SuicideRiskTreatmentPlanReview",
+        "state": "AdherenceAndRiskTargets",
+        "operator": "=="
+      },
+      "text": "Candidate review covers both adherence and modifiable risk targets; construct an intervention plan with the clinician. Distribution: {SuicideRiskTreatmentPlanReview}."
+    },
+    {
+      "when": {
+        "node": "SuicideRiskTreatmentPlanReview",
+        "state": "AdherenceReview",
+        "operator": "=="
+      },
+      "text": "Candidate review emphasizes adherence; review exposure and follow-up with the clinician. Distribution: {SuicideRiskTreatmentPlanReview}."
+    },
+    {
+      "when": {
+        "node": "SuicideRiskTreatmentPlanReview",
+        "state": "RiskTargetReview",
+        "operator": "=="
+      },
+      "text": "Candidate review emphasizes modifiable risk targets; review intervention options with the clinician. Distribution: {SuicideRiskTreatmentPlanReview}."
+    },
+    {
+      "when": {
+        "node": "SuicideRiskTreatmentPlanReview",
+        "state": "NoAdditionalFlag",
+        "operator": "=="
+      },
+      "text": "Candidate review identifies no additional adherence or risk-target flag in this context; retain ongoing clinician review. Distribution: {SuicideRiskTreatmentPlanReview}."
+    },
+    {
+      "when": {
+        "node": "ClozapineDiscussionPreparation",
+        "state": "AddressReviewNeeds",
+        "operator": "=="
+      },
+      "text": "Candidate preparation topic: address willingness, monitoring and medical-review needs before discussion. Distribution: {ClozapineDiscussionPreparation}."
+    },
+    {
+      "when": {
+        "node": "ClozapineDiscussionPreparation",
+        "state": "PreparedForDiscussion",
+        "operator": "=="
+      },
+      "text": "Candidate preparation topic: willingness, monitoring and medical review support a prepared discussion. Distribution: {ClozapineDiscussionPreparation}. This does not schedule treatment."
+    },
+    {
+      "when": {
+        "node": "SuicideRiskClozapineReviewPathway",
+        "state": "UrgentClinicalAssessment",
+        "operator": "=="
+      },
+      "text": "Urgent clinical assessment topic from saved structured C-SSRS and urgent inputs, shown independently of estimation latency; arrange immediate clinician assessment per local protocol. Distribution: {SuicideRiskClozapineReviewPathway}. This is not a computed risk percentage."
+    },
+    {
+      "when": {
+        "node": "SuicideRiskClozapineReviewPathway",
+        "state": "ReviewCurrentClozapine",
+        "operator": "=="
+      },
+      "text": "Candidate pathway topic: review current clozapine treatment, monitoring and response with the clinician. Distribution: {SuicideRiskClozapineReviewPathway}."
+    },
+    {
+      "when": {
+        "node": "SuicideRiskClozapineReviewPathway",
+        "state": "IndividualizedPriorClozapineReview",
+        "operator": "=="
+      },
+      "text": "Candidate pathway topic: individualized review of prior clozapine course with the clinician. Distribution: {SuicideRiskClozapineReviewPathway}."
+    },
+    {
+      "when": {
+        "node": "SuicideRiskClozapineReviewPathway",
+        "state": "DiscussClozapine",
+        "operator": "=="
+      },
+      "text": "Candidate pathway topic: discuss clozapine consideration with a willing patient when monitoring and review support discussion. Distribution: {SuicideRiskClozapineReviewPathway}. This does not prescribe treatment."
+    },
+    {
+      "when": {
+        "node": "SuicideRiskClozapineReviewPathway",
+        "state": "DiscussClozapineAndAddressReviewNeeds",
+        "operator": "=="
+      },
+      "text": "Candidate pathway topic: discuss clozapine while addressing willingness, monitoring or medical-review needs. Distribution: {SuicideRiskClozapineReviewPathway}."
+    },
+    {
+      "when": {
+        "node": "SuicideRiskClozapineReviewPathway",
+        "state": "ReviewEvidenceAndOtherIndications",
+        "operator": "=="
+      },
+      "text": "Candidate pathway topic: review research evidence and other indications with the clinician. Distribution: {SuicideRiskClozapineReviewPathway}."
+    }
+  ]
+}

@@ -1,0 +1,727 @@
+{
+  "schema_version": "question-package-v1",
+  "question_key": "continue_or_adjust",
+  "title": "Continue-versus-adjust follow-up review (experimental/educational)",
+  "workflow": "followup",
+  "version": "s39-reviewed-v1",
+  "review_status": "approved",
+  "network_file": "network.xml",
+  "network_hash": "70bce25d3c9d283d09840f8d594a4b3203ada92fc14515b039a57ddffdd100db",
+  "source_refs": [
+    "project-documents/bayesian-networks/BN-04.xml",
+    "project-documents/bayesian-networks/BN-05.xml",
+    "project-documents/bayesian-networks/BN-06.xml",
+    "project-documents/medical-documents/guideline/STATEMENT-04.md",
+    "project-documents/medical-documents/guideline/STATEMENT-05.md",
+    "project-documents/medical-documents/guideline/STATEMENT-06.md",
+    "content/history/history.continue_or_adjust.v1.json"
+  ],
+  "declared_node_order": [
+    "SchizophreniaEstablished",
+    "SymptomImprovementOnCurrentAntipsychotic",
+    "UrgentSafetyConcern",
+    "ResidualClinicalBurden",
+    "MetabolicConcern",
+    "OtherTolerabilityConcern",
+    "SameAntipsychoticContinuationPreference",
+    "CurrentAgentAvailable",
+    "LAIUnderConsideration",
+    "SameAgentLAIAvailable",
+    "SameAntipsychoticContinuationScope",
+    "LAIAgentMismatch",
+    "TolerabilityReview",
+    "ClinicalChangeReason",
+    "PracticalChangeReason",
+    "SameAgentDiscussion",
+    "ObservedSameAntipsychoticStrategy",
+    "SwitchMonitoringContext",
+    "AssignedRegimenDiscontinued",
+    "ClinicalDestabilization",
+    "MetabolicTrajectory"
+  ],
+  "variables": [
+    {
+      "node_id": "SchizophreniaEstablished",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "No",
+        "Yes"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "SymptomImprovementOnCurrentAntipsychotic",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "No",
+        "Yes"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "UrgentSafetyConcern",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Absent",
+        "Present"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "ResidualClinicalBurden",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "No",
+        "Yes"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "MetabolicConcern",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "No",
+        "Yes"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "OtherTolerabilityConcern",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "No",
+        "Yes"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "SameAntipsychoticContinuationPreference",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "ContinueSame",
+        "DiscussChange",
+        "NoExpressedPreference"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "CurrentAgentAvailable",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "No",
+        "Yes"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "LAIUnderConsideration",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "No",
+        "Yes"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "SameAgentLAIAvailable",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "No",
+        "Yes"
+      ],
+      "ordered_parents": []
+    },
+    {
+      "node_id": "SameAntipsychoticContinuationScope",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "OutsideScope",
+        "WithinScope",
+        "UrgentSeparateAssessment"
+      ],
+      "ordered_parents": [
+        "SchizophreniaEstablished",
+        "SymptomImprovementOnCurrentAntipsychotic",
+        "UrgentSafetyConcern"
+      ]
+    },
+    {
+      "node_id": "LAIAgentMismatch",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "No",
+        "Yes"
+      ],
+      "ordered_parents": [
+        "LAIUnderConsideration",
+        "SameAgentLAIAvailable"
+      ]
+    },
+    {
+      "node_id": "TolerabilityReview",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "No",
+        "Yes"
+      ],
+      "ordered_parents": [
+        "MetabolicConcern",
+        "OtherTolerabilityConcern"
+      ]
+    },
+    {
+      "node_id": "ClinicalChangeReason",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "No",
+        "Yes"
+      ],
+      "ordered_parents": [
+        "ResidualClinicalBurden",
+        "TolerabilityReview"
+      ]
+    },
+    {
+      "node_id": "PracticalChangeReason",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "No",
+        "Yes"
+      ],
+      "ordered_parents": [
+        "CurrentAgentAvailable",
+        "LAIAgentMismatch"
+      ]
+    },
+    {
+      "node_id": "SameAgentDiscussion",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "OutsideScope",
+        "ContinuationDiscussion",
+        "IndividualizedChangeReview",
+        "UrgentSeparateAssessment"
+      ],
+      "ordered_parents": [
+        "SameAntipsychoticContinuationScope",
+        "ClinicalChangeReason",
+        "PracticalChangeReason",
+        "SameAntipsychoticContinuationPreference"
+      ]
+    },
+    {
+      "node_id": "ObservedSameAntipsychoticStrategy",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "ContinueSameAgent",
+        "SwitchAgent",
+        "OtherStrategy"
+      ],
+      "ordered_parents": [
+        "ClinicalChangeReason",
+        "PracticalChangeReason",
+        "SameAntipsychoticContinuationPreference"
+      ]
+    },
+    {
+      "node_id": "SwitchMonitoringContext",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "RoutineReview",
+        "SwitchMonitoringDiscussion",
+        "SeparatePlanReview"
+      ],
+      "ordered_parents": [
+        "ObservedSameAntipsychoticStrategy"
+      ]
+    },
+    {
+      "node_id": "AssignedRegimenDiscontinued",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "No",
+        "Yes"
+      ],
+      "ordered_parents": [
+        "ObservedSameAntipsychoticStrategy",
+        "SameAntipsychoticContinuationPreference"
+      ]
+    },
+    {
+      "node_id": "ClinicalDestabilization",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "No",
+        "Yes"
+      ],
+      "ordered_parents": [
+        "ObservedSameAntipsychoticStrategy",
+        "ResidualClinicalBurden"
+      ]
+    },
+    {
+      "node_id": "MetabolicTrajectory",
+      "kind": "nature",
+      "patient_value_type": "categorical",
+      "states": [
+        "Improved",
+        "NoMeaningfulChange",
+        "Worsened"
+      ],
+      "ordered_parents": [
+        "ObservedSameAntipsychoticStrategy",
+        "MetabolicConcern"
+      ]
+    }
+  ],
+  "patient_mappings": [
+    {
+      "node_id": "SchizophreniaEstablished",
+      "allowed_source_paths": [
+        "candidate/history/continue_or_adjust.v1/h_schizophrenia_established"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "SymptomImprovementOnCurrentAntipsychotic",
+      "allowed_source_paths": [
+        "candidate/history/continue_or_adjust.v1/h_symptom_improvement_current"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "UrgentSafetyConcern",
+      "allowed_source_paths": [
+        "candidate/history/continue_or_adjust.v1/h_urgent_safety_concern"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "ResidualClinicalBurden",
+      "allowed_source_paths": [
+        "candidate/history/continue_or_adjust.v1/h_residual_clinical_burden"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "MetabolicConcern",
+      "allowed_source_paths": [
+        "candidate/history/continue_or_adjust.v1/h_metabolic_concern"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "OtherTolerabilityConcern",
+      "allowed_source_paths": [
+        "candidate/history/continue_or_adjust.v1/h_other_tolerability_concern"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "SameAntipsychoticContinuationPreference",
+      "allowed_source_paths": [
+        "candidate/history/continue_or_adjust.v1/h_continuation_preference"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "CurrentAgentAvailable",
+      "allowed_source_paths": [
+        "candidate/history/continue_or_adjust.v1/h_current_agent_available"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "LAIUnderConsideration",
+      "allowed_source_paths": [
+        "candidate/history/continue_or_adjust.v1/h_lai_under_consideration"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    },
+    {
+      "node_id": "SameAgentLAIAvailable",
+      "allowed_source_paths": [
+        "candidate/history/continue_or_adjust.v1/h_same_agent_lai_available"
+      ],
+      "transform": "copy",
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification"
+    }
+  ],
+  "applicability": {
+    "expression": "true",
+    "required_fields": [
+      "candidate/history/continue_or_adjust.v1/h_schizophrenia_established",
+      "candidate/history/continue_or_adjust.v1/h_symptom_improvement_current",
+      "candidate/history/continue_or_adjust.v1/h_urgent_safety_concern",
+      "candidate/history/continue_or_adjust.v1/h_residual_clinical_burden",
+      "candidate/history/continue_or_adjust.v1/h_metabolic_concern",
+      "candidate/history/continue_or_adjust.v1/h_other_tolerability_concern",
+      "candidate/history/continue_or_adjust.v1/h_continuation_preference",
+      "candidate/history/continue_or_adjust.v1/h_current_agent_available",
+      "candidate/history/continue_or_adjust.v1/h_lai_under_consideration",
+      "candidate/history/continue_or_adjust.v1/h_same_agent_lai_available",
+      "candidate/history/continue_or_adjust.v1/h_baseline_encounter_ref",
+      "candidate/history/continue_or_adjust.v1/h_baseline_window_validity"
+    ],
+    "unknown_policy": "needs_clarification"
+  },
+  "cpt_contract": {
+    "nodes": [
+      {
+        "node_id": "SchizophreniaEstablished",
+        "parent_ids": [],
+        "states": [
+          "No",
+          "Yes"
+        ]
+      },
+      {
+        "node_id": "SymptomImprovementOnCurrentAntipsychotic",
+        "parent_ids": [],
+        "states": [
+          "No",
+          "Yes"
+        ]
+      },
+      {
+        "node_id": "UrgentSafetyConcern",
+        "parent_ids": [],
+        "states": [
+          "Absent",
+          "Present"
+        ]
+      },
+      {
+        "node_id": "ResidualClinicalBurden",
+        "parent_ids": [],
+        "states": [
+          "No",
+          "Yes"
+        ]
+      },
+      {
+        "node_id": "MetabolicConcern",
+        "parent_ids": [],
+        "states": [
+          "No",
+          "Yes"
+        ]
+      },
+      {
+        "node_id": "OtherTolerabilityConcern",
+        "parent_ids": [],
+        "states": [
+          "No",
+          "Yes"
+        ]
+      },
+      {
+        "node_id": "SameAntipsychoticContinuationPreference",
+        "parent_ids": [],
+        "states": [
+          "ContinueSame",
+          "DiscussChange",
+          "NoExpressedPreference"
+        ]
+      },
+      {
+        "node_id": "CurrentAgentAvailable",
+        "parent_ids": [],
+        "states": [
+          "No",
+          "Yes"
+        ]
+      },
+      {
+        "node_id": "LAIUnderConsideration",
+        "parent_ids": [],
+        "states": [
+          "No",
+          "Yes"
+        ]
+      },
+      {
+        "node_id": "SameAgentLAIAvailable",
+        "parent_ids": [],
+        "states": [
+          "No",
+          "Yes"
+        ]
+      },
+      {
+        "node_id": "SameAntipsychoticContinuationScope",
+        "parent_ids": [
+          "SchizophreniaEstablished",
+          "SymptomImprovementOnCurrentAntipsychotic",
+          "UrgentSafetyConcern"
+        ],
+        "states": [
+          "OutsideScope",
+          "WithinScope",
+          "UrgentSeparateAssessment"
+        ]
+      },
+      {
+        "node_id": "LAIAgentMismatch",
+        "parent_ids": [
+          "LAIUnderConsideration",
+          "SameAgentLAIAvailable"
+        ],
+        "states": [
+          "No",
+          "Yes"
+        ]
+      },
+      {
+        "node_id": "TolerabilityReview",
+        "parent_ids": [
+          "MetabolicConcern",
+          "OtherTolerabilityConcern"
+        ],
+        "states": [
+          "No",
+          "Yes"
+        ]
+      },
+      {
+        "node_id": "ClinicalChangeReason",
+        "parent_ids": [
+          "ResidualClinicalBurden",
+          "TolerabilityReview"
+        ],
+        "states": [
+          "No",
+          "Yes"
+        ]
+      },
+      {
+        "node_id": "PracticalChangeReason",
+        "parent_ids": [
+          "CurrentAgentAvailable",
+          "LAIAgentMismatch"
+        ],
+        "states": [
+          "No",
+          "Yes"
+        ]
+      },
+      {
+        "node_id": "SameAgentDiscussion",
+        "parent_ids": [
+          "SameAntipsychoticContinuationScope",
+          "ClinicalChangeReason",
+          "PracticalChangeReason",
+          "SameAntipsychoticContinuationPreference"
+        ],
+        "states": [
+          "OutsideScope",
+          "ContinuationDiscussion",
+          "IndividualizedChangeReview",
+          "UrgentSeparateAssessment"
+        ]
+      },
+      {
+        "node_id": "ObservedSameAntipsychoticStrategy",
+        "parent_ids": [
+          "ClinicalChangeReason",
+          "PracticalChangeReason",
+          "SameAntipsychoticContinuationPreference"
+        ],
+        "states": [
+          "ContinueSameAgent",
+          "SwitchAgent",
+          "OtherStrategy"
+        ]
+      },
+      {
+        "node_id": "SwitchMonitoringContext",
+        "parent_ids": [
+          "ObservedSameAntipsychoticStrategy"
+        ],
+        "states": [
+          "RoutineReview",
+          "SwitchMonitoringDiscussion",
+          "SeparatePlanReview"
+        ]
+      },
+      {
+        "node_id": "AssignedRegimenDiscontinued",
+        "parent_ids": [
+          "ObservedSameAntipsychoticStrategy",
+          "SameAntipsychoticContinuationPreference"
+        ],
+        "states": [
+          "No",
+          "Yes"
+        ]
+      },
+      {
+        "node_id": "ClinicalDestabilization",
+        "parent_ids": [
+          "ObservedSameAntipsychoticStrategy",
+          "ResidualClinicalBurden"
+        ],
+        "states": [
+          "No",
+          "Yes"
+        ]
+      },
+      {
+        "node_id": "MetabolicTrajectory",
+        "parent_ids": [
+          "ObservedSameAntipsychoticStrategy",
+          "MetabolicConcern"
+        ],
+        "states": [
+          "Improved",
+          "NoMeaningfulChange",
+          "Worsened"
+        ]
+      }
+    ]
+  },
+  "query_nodes": [
+    "SameAntipsychoticContinuationScope",
+    "SameAgentDiscussion",
+    "ObservedSameAntipsychoticStrategy",
+    "TolerabilityReview",
+    "ClinicalChangeReason",
+    "PracticalChangeReason",
+    "SwitchMonitoringContext",
+    "MetabolicTrajectory",
+    "AssignedRegimenDiscontinued",
+    "ClinicalDestabilization"
+  ],
+  "execution_evidence": {},
+  "prompt_version": "s38-v2",
+  "template_version": "s39-reviewed-v1",
+  "history_definition": "content/history/history.continue_or_adjust.v1.json",
+  "reference_cpts_status": "Synthetic mathematical references only; BN-04 holds 13 Table-6 lookup definitions (not reused here), so BN-04/05/06 supply zero reused fixed tables for this graph; no clinical calibration or approval",
+  "missingness_contract": {
+    "required_source_paths": [
+      "candidate/history/continue_or_adjust.v1/h_schizophrenia_established",
+      "candidate/history/continue_or_adjust.v1/h_symptom_improvement_current",
+      "candidate/history/continue_or_adjust.v1/h_urgent_safety_concern",
+      "candidate/history/continue_or_adjust.v1/h_residual_clinical_burden",
+      "candidate/history/continue_or_adjust.v1/h_metabolic_concern",
+      "candidate/history/continue_or_adjust.v1/h_other_tolerability_concern",
+      "candidate/history/continue_or_adjust.v1/h_continuation_preference",
+      "candidate/history/continue_or_adjust.v1/h_current_agent_available",
+      "candidate/history/continue_or_adjust.v1/h_lai_under_consideration",
+      "candidate/history/continue_or_adjust.v1/h_same_agent_lai_available",
+      "candidate/history/continue_or_adjust.v1/h_baseline_encounter_ref",
+      "candidate/history/continue_or_adjust.v1/h_baseline_window_validity"
+    ],
+    "required_unknown_values": [
+      "unknown",
+      "not_assessed"
+    ],
+    "required_unknown_policy": "needs_clarification",
+    "required_missing_policy": "needs_clarification",
+    "required_conflict_policy": "needs_clarification",
+    "gate_definition": "Universal follow-up gate true: every follow-up encounter is applicable, including continuation and adjustment review. Execution still needs all required typed inputs known with a current baseline; unknown, missing, not_assessed or conflicting required context pauses as needs_clarification and is never coerced.",
+    "stale_baseline_rule": "Baseline encounter reference documented_current with window validity current is required; an outdated or missing baseline pauses as needs_clarification with a fresh baseline choice and never silently reuses a stale baseline. No recency threshold is set here; it requires owner review.",
+    "urgent_banner_rule": "UrgentSafetyConcern Present renders a parallel urgent banner from saved structured inputs independently of estimation latency, never a computed risk percentage.",
+    "no_intervention_conditioning": "ObservedSameAntipsychoticStrategy and outcome nodes are observed-scenario review categories; execution uses empty evidence with no causal intervention conditioning and no do-operator.",
+    "no_runtime_merge": "One BN-06-derived network executes per run; BN-04/05 overlap informs background comparison only and is never merged at runtime.",
+    "evidence": {}
+  },
+  "input_consistency_contract": {
+    "baseline_scope": "documented_current reference requires current window validity, and conversely. Any mismatch is needs_clarification; review never proceeds on a stale baseline alone.",
+    "history_review": "Candidate v1 definitions require owner review before release. No runtime form or projection added by S38.",
+    "missingness_scope": "These declarations are content proposals for the S40 projection/readiness implementation, not executed clinical runtime behavior."
+  },
+  "numerical_policy": {
+    "cpt_policy": "cpt-decimal-v1",
+    "evidence": {},
+    "comparison_tolerance": 1e-06,
+    "engine": {
+      "python": "3.12.14",
+      "pgmpy": "1.1.2",
+      "lxml": "6.1.3",
+      "float_dtype": "float64",
+      "elimination_order": "source_order"
+    }
+  },
+  "engine_configuration": {
+    "evidence": "empty",
+    "evidence_order": "given_order",
+    "float_dtype": "float64",
+    "elimination_order": "source_order",
+    "tie_break": "source_order"
+  },
+  "numerical_tolerances": {
+    "percentage_decimal_places": 6,
+    "units_for_100_percent": 100000000,
+    "row_total": "exact integer units; never normalize or repair",
+    "posterior_comparison_absolute": 1e-06
+  },
+  "resource_limits": {
+    "status": "Candidate engineering limits; existing inference limits preserved, provider capability not yet measured",
+    "max_network_xml_bytes": 1048576,
+    "max_effective_xml_bytes": 1048576,
+    "max_inference_nodes": 64,
+    "max_inference_cells": 131072,
+    "inference_timeout_seconds": 30,
+    "max_prompt_bytes": 65536,
+    "max_context_bytes": 65536,
+    "max_cpt_output_bytes": 524288,
+    "hard_memory_limit_bytes": null,
+    "memory_limitation": "Existing bounded child process/node/table limits do not establish an OS memory ceiling or bound every induced intermediate factor. No such memory admission claim is made.",
+    "overflow_policy": "Reject admission or fail explicitly; no truncation, approximation or incomplete-table fallback."
+  },
+  "applicability_truth_table": {
+    "true": "Every follow-up encounter is applicable for continuation-versus-adjustment review. Execution still requires clarified typed inputs, a current baseline and a reviewed release.",
+    "false": "Unreachable for a valid follow-up encounter. Requests outside the followup workflow are invalid workflow requests, not a clinical false gate.",
+    "unknown": "The universal follow-up gate itself does not depend on clinical findings. Unknown, missing, not-assessed or conflicting required context yields needs_clarification before estimation; never coerce uncertainty to false."
+  }
+}
