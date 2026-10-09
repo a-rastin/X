@@ -1,0 +1,486 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<BIF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="0.3" xsi:noNamespaceSchemaLocation="schema.xml">
+  <NETWORK>
+    <NAME>BN_06_Continue_Or_Adjust_Review_F6_v1</NAME>
+    <PROPERTY>clinical_question=How do follow-up review factors affect experimental continuation-versus-adjustment discussion topics for the current antipsychotic?</PROPERTY>
+    <PROPERTY>question_key=continue_or_adjust</PROPERTY>
+    <PROPERTY>workflow=followup</PROPERTY>
+    <PROPERTY>statement_id=6</PROPERTY>
+    <PROPERTY>recommendation_strength=2</PROPERTY>
+    <PROPERTY>evidence_quality=B</PROPERTY>
+    <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-06.md</PROPERTY>
+    <PROPERTY>source_locator=STATEMENT 6: Continuing the Same Medications; Implementation; Balancing of Benefits and Harms; Patient Preferences; Quality Measurement Considerations</PROPERTY>
+    <PROPERTY>source_sha256=8cdf5bf124996870dd1212f9851a36fc1e1bbb88b7de6fcdd2a00a6365d37f60</PROPERTY>
+    <PROPERTY>population=Adults with schizophrenia and symptom improvement on a current antipsychotic at follow-up, for experimentation</PROPERTY>
+    <PROPERTY>setting=Experimental and educational application</PROPERTY>
+    <PROPERTY>time_horizon=Follow-up encounter comparison against a documented baseline encounter and window; proposed outcome horizon 24 weeks, a modeler assumption for review</PROPERTY>
+    <PROPERTY>model_version=s38-v1</PROPERTY>
+    <PROPERTY>validation_status=AWAITING_REVIEW_SYNTHETIC_REFERENCE_CPTS</PROPERTY>
+    <PROPERTY>parameter_policy=All 21 nodes including roots require fresh complete percentage CPT estimation; XML tables are explicitly synthetic uniform mathematical references</PROPERTY>
+    <PROPERTY>edge_encoding=Ordered GIVEN elements materialize all BN-06 ordered proposed_parent properties; no edges removed, renamed or merged</PROPERTY>
+    <PROPERTY>table_order=FOR outcome fastest; last GIVEN parent next; first GIVEN parent slowest</PROPERTY>
+    <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting context pauses for clarification; outdated baseline pauses; no guessed negatives and no coercion</PROPERTY>
+    <PROPERTY>owner_retention_2026_10_04=BN-06-derived continuation content retained within experimental/educational scope; retention does not remove the STATEMENT-06 limitation and does not approve graph or templates</PROPERTY>
+    <PROPERTY>source_limitation=STATEMENT-06 Quality Measurement Considerations: this suggestion is not appropriate for use as a quality measure or for electronic decision support; current XML lacks that literal restriction text and review must resolve wording before release</PROPERTY>
+    <PROPERTY>use_context=experimental_educational_awaiting_review</PROPERTY>
+    <PROPERTY>inference_mode=complete_CPT_estimation_empty_evidence</PROPERTY>
+    <PROPERTY>scope=Follow-up continuation-versus-adjustment review for all follow-up encounters; no causal intervention conditioning and no runtime merge of BN-04/05/06</PROPERTY>
+    <PROPERTY>input_policy=Versioned candidate structured context only with baseline encounter reference; no dose, route, frequency or active/stopped fields and no page notes</PROPERTY>
+    <PROPERTY>graph_semantics=Candidate retained BN-06 dependencies for follow-up review; all proposed_parent edges materialized in declared order</PROPERTY>
+    <PROPERTY>execution_contract=Complete fixed ordered CPTs and empty execution evidence; unapproved content cannot activate</PROPERTY>
+    <PROPERTY>source_policy=Pinned original BN-04/05/06, STATEMENT-04/05/06 and approved history/effects/preferences attribution required; review not yet granted</PROPERTY>
+    <PROPERTY>parameter_inventory=21 complete reference distributions: 10 roots plus 11 outputs; all explicitly synthetic uniform references</PROPERTY>
+    <VARIABLE TYPE="nature">
+      <NAME>SchizophreniaEstablished</NAME>
+      <OUTCOME>No</OUTCOME>
+      <OUTCOME>Yes</OUTCOME>
+      <PROPERTY>label=Schizophrenia Established</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Schizophrenia status for this follow-up encounter with baseline provenance.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-06.md Implementation; follow-up synthesis uses baseline encounter provenance per history.v1 reconciliation</PROPERTY>
+      <PROPERTY>source_sha256=8cdf5bf124996870dd1212f9851a36fc1e1bbb88b7de6fcdd2a00a6365d37f60</PROPERTY>
+      <PROPERTY>time_window=current_encounter follow-up synthesis with baseline encounter reference</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>SymptomImprovementOnCurrentAntipsychotic</NAME>
+      <OUTCOME>No</OUTCOME>
+      <OUTCOME>Yes</OUTCOME>
+      <PROPERTY>label=Symptom Improvement On Current Antipsychotic</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Symptom improvement with the current antipsychotic at this follow-up encounter, synthesized with baseline comparison.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-06.md Implementation (response with the current antipsychotic); STATEMENT-05.md Implementation (maintained improvement)</PROPERTY>
+      <PROPERTY>source_sha256=8cdf5bf124996870dd1212f9851a36fc1e1bbb88b7de6fcdd2a00a6365d37f60</PROPERTY>
+      <PROPERTY>time_window=current_encounter follow-up synthesis with baseline encounter reference</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>UrgentSafetyConcern</NAME>
+      <OUTCOME>Absent</OUTCOME>
+      <OUTCOME>Present</OUTCOME>
+      <PROPERTY>label=Urgent Safety Concern</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Presence or absence of an urgent safety concern at this follow-up encounter from saved structured inputs.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-06.md Implementation; STATEMENT-04.md Harms; urgent banner uses saved structured inputs only</PROPERTY>
+      <PROPERTY>source_sha256=8cdf5bf124996870dd1212f9851a36fc1e1bbb88b7de6fcdd2a00a6365d37f60</PROPERTY>
+      <PROPERTY>time_window=current_encounter follow-up synthesis with baseline encounter reference</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ResidualClinicalBurden</NAME>
+      <OUTCOME>No</OUTCOME>
+      <OUTCOME>Yes</OUTCOME>
+      <PROPERTY>label=Residual Clinical Burden</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Residual symptoms or functional difficulties despite some response at this follow-up encounter.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-06.md Implementation (significant symptoms or functional difficulties warranting a different-medication trial)</PROPERTY>
+      <PROPERTY>source_sha256=8cdf5bf124996870dd1212f9851a36fc1e1bbb88b7de6fcdd2a00a6365d37f60</PROPERTY>
+      <PROPERTY>time_window=current_encounter follow-up synthesis with baseline encounter reference</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>MetabolicConcern</NAME>
+      <OUTCOME>No</OUTCOME>
+      <OUTCOME>Yes</OUTCOME>
+      <PROPERTY>label=Metabolic Concern</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Significant weight gain, diabetes or metabolic syndrome recorded at this follow-up encounter.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-06.md Implementation and Harms (weight gain, diabetes, metabolic syndrome); adverse-effect questionnaires retained as parallel concerns</PROPERTY>
+      <PROPERTY>source_sha256=8cdf5bf124996870dd1212f9851a36fc1e1bbb88b7de6fcdd2a00a6365d37f60</PROPERTY>
+      <PROPERTY>time_window=current_encounter follow-up synthesis with baseline encounter reference</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>OtherTolerabilityConcern</NAME>
+      <OUTCOME>No</OUTCOME>
+      <OUTCOME>Yes</OUTCOME>
+      <PROPERTY>label=Other Tolerability Concern</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Significant nonmetabolic adverse effects recorded at this follow-up encounter.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-06.md Implementation (side effects); STATEMENT-05.md Harms and Patient Preferences; adverse-effect questionnaires retained as parallel concerns</PROPERTY>
+      <PROPERTY>source_sha256=8cdf5bf124996870dd1212f9851a36fc1e1bbb88b7de6fcdd2a00a6365d37f60</PROPERTY>
+      <PROPERTY>time_window=current_encounter follow-up synthesis with baseline encounter reference</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>SameAntipsychoticContinuationPreference</NAME>
+      <OUTCOME>ContinueSame</OUTCOME>
+      <OUTCOME>DiscussChange</OUTCOME>
+      <OUTCOME>NoExpressedPreference</OUTCOME>
+      <PROPERTY>label=Same Antipsychotic Continuation Preference</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Preference regarding continuation of the same antipsychotic; NoExpressedPreference is an unspecified preference, never opposition.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-06.md Patient Preferences; STATEMENT-05.md Patient Preferences and shared decision-making</PROPERTY>
+      <PROPERTY>source_sha256=8cdf5bf124996870dd1212f9851a36fc1e1bbb88b7de6fcdd2a00a6365d37f60</PROPERTY>
+      <PROPERTY>time_window=current_encounter follow-up synthesis with baseline encounter reference</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=3</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>CurrentAgentAvailable</NAME>
+      <OUTCOME>No</OUTCOME>
+      <OUTCOME>Yes</OUTCOME>
+      <PROPERTY>label=Current Agent Available</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Availability and accessibility of the current antipsychotic at this follow-up encounter.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-06.md Implementation (medication availability)</PROPERTY>
+      <PROPERTY>source_sha256=8cdf5bf124996870dd1212f9851a36fc1e1bbb88b7de6fcdd2a00a6365d37f60</PROPERTY>
+      <PROPERTY>time_window=current_encounter follow-up synthesis with baseline encounter reference</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>LAIUnderConsideration</NAME>
+      <OUTCOME>No</OUTCOME>
+      <OUTCOME>Yes</OUTCOME>
+      <PROPERTY>label=LAI Under Consideration</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Whether an LAI formulation is being considered at this follow-up encounter.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-06.md Implementation (LAI initiation when the current oral is unavailable in LAI); distinct from the R5 LAI discussion package</PROPERTY>
+      <PROPERTY>source_sha256=8cdf5bf124996870dd1212f9851a36fc1e1bbb88b7de6fcdd2a00a6365d37f60</PROPERTY>
+      <PROPERTY>time_window=current_encounter follow-up synthesis with baseline encounter reference</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>SameAgentLAIAvailable</NAME>
+      <OUTCOME>No</OUTCOME>
+      <OUTCOME>Yes</OUTCOME>
+      <PROPERTY>label=Same Agent LAI Available</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Availability of an LAI formulation of the current active molecule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-06.md Implementation (same-agent LAI formulation availability)</PROPERTY>
+      <PROPERTY>source_sha256=8cdf5bf124996870dd1212f9851a36fc1e1bbb88b7de6fcdd2a00a6365d37f60</PROPERTY>
+      <PROPERTY>time_window=current_encounter follow-up synthesis with baseline encounter reference</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>SameAntipsychoticContinuationScope</NAME>
+      <OUTCOME>OutsideScope</OUTCOME>
+      <OUTCOME>WithinScope</OUTCOME>
+      <OUTCOME>UrgentSeparateAssessment</OUTCOME>
+      <PROPERTY>label=Same Antipsychotic Continuation Scope</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Candidate continuation-scope review topic for this follow-up encounter; estimated per run, never a fixed rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-06.md Implementation; experimental/educational scope per 2026-10-04 owner retention</PROPERTY>
+      <PROPERTY>source_sha256=8cdf5bf124996870dd1212f9851a36fc1e1bbb88b7de6fcdd2a00a6365d37f60</PROPERTY>
+      <PROPERTY>time_window=current_encounter follow-up synthesis with baseline encounter reference</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=24</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>LAIAgentMismatch</NAME>
+      <OUTCOME>No</OUTCOME>
+      <OUTCOME>Yes</OUTCOME>
+      <PROPERTY>label=LAI Agent Mismatch</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Candidate same-agent LAI formulation review topic; estimated per run, never a fixed rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-06.md Implementation (oral-to-LAI formulation relationship)</PROPERTY>
+      <PROPERTY>source_sha256=8cdf5bf124996870dd1212f9851a36fc1e1bbb88b7de6fcdd2a00a6365d37f60</PROPERTY>
+      <PROPERTY>time_window=current_encounter follow-up synthesis with baseline encounter reference</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=8</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>TolerabilityReview</NAME>
+      <OUTCOME>No</OUTCOME>
+      <OUTCOME>Yes</OUTCOME>
+      <PROPERTY>label=Tolerability Review</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Candidate tolerability review topic from metabolic and other concerns; estimated per run, never a fixed rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-06.md Harms; STATEMENT-05.md Implementation (dose/exposure review)</PROPERTY>
+      <PROPERTY>source_sha256=8cdf5bf124996870dd1212f9851a36fc1e1bbb88b7de6fcdd2a00a6365d37f60</PROPERTY>
+      <PROPERTY>time_window=current_encounter follow-up synthesis with baseline encounter reference</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=8</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ClinicalChangeReason</NAME>
+      <OUTCOME>No</OUTCOME>
+      <OUTCOME>Yes</OUTCOME>
+      <PROPERTY>label=Clinical Change Reason</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Candidate clinical change-reason review topic; estimated per run, never a fixed rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-06.md Implementation (residual burden and tolerability as change reasons)</PROPERTY>
+      <PROPERTY>source_sha256=8cdf5bf124996870dd1212f9851a36fc1e1bbb88b7de6fcdd2a00a6365d37f60</PROPERTY>
+      <PROPERTY>time_window=current_encounter follow-up synthesis with baseline encounter reference</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=8</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>PracticalChangeReason</NAME>
+      <OUTCOME>No</OUTCOME>
+      <OUTCOME>Yes</OUTCOME>
+      <PROPERTY>label=Practical Change Reason</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Candidate practical change-reason review topic; estimated per run, never a fixed rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-06.md Implementation (preferences, availability, LAI formulation as change reasons)</PROPERTY>
+      <PROPERTY>source_sha256=8cdf5bf124996870dd1212f9851a36fc1e1bbb88b7de6fcdd2a00a6365d37f60</PROPERTY>
+      <PROPERTY>time_window=current_encounter follow-up synthesis with baseline encounter reference</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=8</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>SameAgentDiscussion</NAME>
+      <OUTCOME>OutsideScope</OUTCOME>
+      <OUTCOME>ContinuationDiscussion</OUTCOME>
+      <OUTCOME>IndividualizedChangeReview</OUTCOME>
+      <OUTCOME>UrgentSeparateAssessment</OUTCOME>
+      <PROPERTY>label=Same Agent Discussion</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Candidate same-agent continuation-versus-change discussion topic; estimated per run, never a treatment decision.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-06.md Implementation and Patient Preferences; experimental/educational scope per 2026-10-04 owner retention</PROPERTY>
+      <PROPERTY>source_sha256=8cdf5bf124996870dd1212f9851a36fc1e1bbb88b7de6fcdd2a00a6365d37f60</PROPERTY>
+      <PROPERTY>time_window=current_encounter follow-up synthesis with baseline encounter reference</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=144</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ObservedSameAntipsychoticStrategy</NAME>
+      <OUTCOME>ContinueSameAgent</OUTCOME>
+      <OUTCOME>SwitchAgent</OUTCOME>
+      <OUTCOME>OtherStrategy</OUTCOME>
+      <PROPERTY>label=Observed Same Antipsychotic Strategy</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Observed scenario strategy category; a same-agent formulation change is ContinueSameAgent, combinations and cessation are OtherStrategy. An observed category, never an intervention order.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-06.md Implementation (continuation optimal for most; change under some circumstances)</PROPERTY>
+      <PROPERTY>source_sha256=8cdf5bf124996870dd1212f9851a36fc1e1bbb88b7de6fcdd2a00a6365d37f60</PROPERTY>
+      <PROPERTY>time_window=current_encounter follow-up synthesis with baseline encounter reference</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=36</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>SwitchMonitoringContext</NAME>
+      <OUTCOME>RoutineReview</OUTCOME>
+      <OUTCOME>SwitchMonitoringDiscussion</OUTCOME>
+      <OUTCOME>SeparatePlanReview</OUTCOME>
+      <PROPERTY>label=Switch Monitoring Context</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Candidate switch-monitoring discussion topic; estimated per run, never a fixed rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-06.md Implementation; STATEMENT-05.md Implementation (gradual change with close monitoring)</PROPERTY>
+      <PROPERTY>source_sha256=8cdf5bf124996870dd1212f9851a36fc1e1bbb88b7de6fcdd2a00a6365d37f60</PROPERTY>
+      <PROPERTY>time_window=current_encounter follow-up synthesis with baseline encounter reference</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=9</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AssignedRegimenDiscontinued</NAME>
+      <OUTCOME>No</OUTCOME>
+      <OUTCOME>Yes</OUTCOME>
+      <PROPERTY>label=Assigned Regimen Discontinued</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Discontinuation of the baseline regimen during the follow-up interval; switching away counts as discontinuation. An observed category, never an intervention order.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-06.md Balancing of Benefits and Harms (early discontinuation with change)</PROPERTY>
+      <PROPERTY>source_sha256=8cdf5bf124996870dd1212f9851a36fc1e1bbb88b7de6fcdd2a00a6365d37f60</PROPERTY>
+      <PROPERTY>time_window=current_encounter follow-up synthesis with baseline encounter reference</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=18</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ClinicalDestabilization</NAME>
+      <OUTCOME>No</OUTCOME>
+      <OUTCOME>Yes</OUTCOME>
+      <PROPERTY>label=Clinical Destabilization</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Symptom worsening during the follow-up interval, distinct from discontinuation of the baseline regimen.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-06.md Balancing of Benefits and Harms (destabilization with switching)</PROPERTY>
+      <PROPERTY>source_sha256=8cdf5bf124996870dd1212f9851a36fc1e1bbb88b7de6fcdd2a00a6365d37f60</PROPERTY>
+      <PROPERTY>time_window=current_encounter follow-up synthesis with baseline encounter reference</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=12</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>MetabolicTrajectory</NAME>
+      <OUTCOME>Improved</OUTCOME>
+      <OUTCOME>NoMeaningfulChange</OUTCOME>
+      <OUTCOME>Worsened</OUTCOME>
+      <PROPERTY>label=Metabolic Trajectory</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Change in the selected metabolic endpoint from baseline to week 24.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-06.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-06.md Harms (long-term metabolic effects); 24-week horizon is a modeler assumption for review</PROPERTY>
+      <PROPERTY>source_sha256=8cdf5bf124996870dd1212f9851a36fc1e1bbb88b7de6fcdd2a00a6365d37f60</PROPERTY>
+      <PROPERTY>time_window=current_encounter follow-up synthesis with baseline encounter reference</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=18</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <DEFINITION>
+      <FOR>SchizophreniaEstablished</FOR>
+      <TABLE>0.5 0.5 0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>SymptomImprovementOnCurrentAntipsychotic</FOR>
+      <TABLE>0.5 0.5 0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>UrgentSafetyConcern</FOR>
+      <TABLE>0.5 0.5 0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>ResidualClinicalBurden</FOR>
+      <TABLE>0.5 0.5 0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>MetabolicConcern</FOR>
+      <TABLE>0.5 0.5 0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>OtherTolerabilityConcern</FOR>
+      <TABLE>0.5 0.5 0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>SameAntipsychoticContinuationPreference</FOR>
+      <TABLE>0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>CurrentAgentAvailable</FOR>
+      <TABLE>0.5 0.5 0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>LAIUnderConsideration</FOR>
+      <TABLE>0.5 0.5 0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>SameAgentLAIAvailable</FOR>
+      <TABLE>0.5 0.5 0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>SameAntipsychoticContinuationScope</FOR>
+      <GIVEN>SchizophreniaEstablished</GIVEN>
+      <GIVEN>SymptomImprovementOnCurrentAntipsychotic</GIVEN>
+      <GIVEN>UrgentSafetyConcern</GIVEN>
+      <TABLE>0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>LAIAgentMismatch</FOR>
+      <GIVEN>LAIUnderConsideration</GIVEN>
+      <GIVEN>SameAgentLAIAvailable</GIVEN>
+      <TABLE>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>TolerabilityReview</FOR>
+      <GIVEN>MetabolicConcern</GIVEN>
+      <GIVEN>OtherTolerabilityConcern</GIVEN>
+      <TABLE>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>ClinicalChangeReason</FOR>
+      <GIVEN>ResidualClinicalBurden</GIVEN>
+      <GIVEN>TolerabilityReview</GIVEN>
+      <TABLE>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>PracticalChangeReason</FOR>
+      <GIVEN>CurrentAgentAvailable</GIVEN>
+      <GIVEN>LAIAgentMismatch</GIVEN>
+      <TABLE>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>SameAgentDiscussion</FOR>
+      <GIVEN>SameAntipsychoticContinuationScope</GIVEN>
+      <GIVEN>ClinicalChangeReason</GIVEN>
+      <GIVEN>PracticalChangeReason</GIVEN>
+      <GIVEN>SameAntipsychoticContinuationPreference</GIVEN>
+      <TABLE>0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>ObservedSameAntipsychoticStrategy</FOR>
+      <GIVEN>ClinicalChangeReason</GIVEN>
+      <GIVEN>PracticalChangeReason</GIVEN>
+      <GIVEN>SameAntipsychoticContinuationPreference</GIVEN>
+      <TABLE>0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>SwitchMonitoringContext</FOR>
+      <GIVEN>ObservedSameAntipsychoticStrategy</GIVEN>
+      <TABLE>0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>AssignedRegimenDiscontinued</FOR>
+      <GIVEN>ObservedSameAntipsychoticStrategy</GIVEN>
+      <GIVEN>SameAntipsychoticContinuationPreference</GIVEN>
+      <TABLE>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>ClinicalDestabilization</FOR>
+      <GIVEN>ObservedSameAntipsychoticStrategy</GIVEN>
+      <GIVEN>ResidualClinicalBurden</GIVEN>
+      <TABLE>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>MetabolicTrajectory</FOR>
+      <GIVEN>ObservedSameAntipsychoticStrategy</GIVEN>
+      <GIVEN>MetabolicConcern</GIVEN>
+      <TABLE>0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334 0.333333 0.333333 0.333334</TABLE>
+    </DEFINITION>
+  </NETWORK>
+</BIF>

@@ -1,0 +1,3351 @@
+{
+  "numerical": [
+    {
+      "id": "full-graph-asymmetric-mathematical",
+      "classification": "Independent synthetic mathematical reference, not clinical calibration or clinical expected treatment",
+      "inputs": {},
+      "cpt_payload": {
+        "network_hash": "5f0d4eca4637a6cd1bc9e67bb55bea93f98c335cdc98f98552be4808b8cfb3e5",
+        "tables": [
+          {
+            "node_id": "SchizophreniaEstablished",
+            "parent_ids": [],
+            "states": [
+              "No",
+              "Yes"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "15",
+                  "85"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "SymptomImprovementOnCurrentAntipsychotic",
+            "parent_ids": [],
+            "states": [
+              "No",
+              "Yes"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "35",
+                  "65"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "UrgentSafetyConcern",
+            "parent_ids": [],
+            "states": [
+              "Absent",
+              "Present"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "90",
+                  "10"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "ResidualClinicalBurden",
+            "parent_ids": [],
+            "states": [
+              "No",
+              "Yes"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "55",
+                  "45"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "MetabolicConcern",
+            "parent_ids": [],
+            "states": [
+              "No",
+              "Yes"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "75",
+                  "25"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "OtherTolerabilityConcern",
+            "parent_ids": [],
+            "states": [
+              "No",
+              "Yes"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "80",
+                  "20"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "SameAntipsychoticContinuationPreference",
+            "parent_ids": [],
+            "states": [
+              "ContinueSame",
+              "DiscussChange",
+              "NoExpressedPreference"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "60",
+                  "25",
+                  "15"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "CurrentAgentAvailable",
+            "parent_ids": [],
+            "states": [
+              "No",
+              "Yes"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "10",
+                  "90"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "LAIUnderConsideration",
+            "parent_ids": [],
+            "states": [
+              "No",
+              "Yes"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "70",
+                  "30"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "SameAgentLAIAvailable",
+            "parent_ids": [],
+            "states": [
+              "No",
+              "Yes"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "40",
+                  "60"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "SameAntipsychoticContinuationScope",
+            "parent_ids": [
+              "SchizophreniaEstablished",
+              "SymptomImprovementOnCurrentAntipsychotic",
+              "UrgentSafetyConcern"
+            ],
+            "states": [
+              "OutsideScope",
+              "WithinScope",
+              "UrgentSeparateAssessment"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "No",
+                  "No",
+                  "Absent"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "No",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Yes",
+                  "Absent"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Yes",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "No",
+                  "Absent"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "No",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "Yes",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "Yes",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "LAIAgentMismatch",
+            "parent_ids": [
+              "LAIUnderConsideration",
+              "SameAgentLAIAvailable"
+            ],
+            "states": [
+              "No",
+              "Yes"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "No",
+                  "No"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Yes"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "Yes"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "TolerabilityReview",
+            "parent_ids": [
+              "MetabolicConcern",
+              "OtherTolerabilityConcern"
+            ],
+            "states": [
+              "No",
+              "Yes"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "No",
+                  "No"
+                ],
+                "percentages": [
+                  "95",
+                  "5"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Yes"
+                ],
+                "percentages": [
+                  "50",
+                  "50"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "No"
+                ],
+                "percentages": [
+                  "10",
+                  "90"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "Yes"
+                ],
+                "percentages": [
+                  "5",
+                  "95"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "ClinicalChangeReason",
+            "parent_ids": [
+              "ResidualClinicalBurden",
+              "TolerabilityReview"
+            ],
+            "states": [
+              "No",
+              "Yes"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "No",
+                  "No"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "PracticalChangeReason",
+            "parent_ids": [
+              "CurrentAgentAvailable",
+              "LAIAgentMismatch"
+            ],
+            "states": [
+              "No",
+              "Yes"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "No",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "No"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "SameAgentDiscussion",
+            "parent_ids": [
+              "SameAntipsychoticContinuationScope",
+              "ClinicalChangeReason",
+              "PracticalChangeReason",
+              "SameAntipsychoticContinuationPreference"
+            ],
+            "states": [
+              "OutsideScope",
+              "ContinuationDiscussion",
+              "IndividualizedChangeReview",
+              "UrgentSeparateAssessment"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "OutsideScope",
+                  "No",
+                  "No",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OutsideScope",
+                  "No",
+                  "No",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OutsideScope",
+                  "No",
+                  "No",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OutsideScope",
+                  "No",
+                  "Yes",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OutsideScope",
+                  "No",
+                  "Yes",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OutsideScope",
+                  "No",
+                  "Yes",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OutsideScope",
+                  "Yes",
+                  "No",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OutsideScope",
+                  "Yes",
+                  "No",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OutsideScope",
+                  "Yes",
+                  "No",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OutsideScope",
+                  "Yes",
+                  "Yes",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OutsideScope",
+                  "Yes",
+                  "Yes",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OutsideScope",
+                  "Yes",
+                  "Yes",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "WithinScope",
+                  "No",
+                  "No",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "WithinScope",
+                  "No",
+                  "No",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "WithinScope",
+                  "No",
+                  "No",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "WithinScope",
+                  "No",
+                  "Yes",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "WithinScope",
+                  "No",
+                  "Yes",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "WithinScope",
+                  "No",
+                  "Yes",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "WithinScope",
+                  "Yes",
+                  "No",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "WithinScope",
+                  "Yes",
+                  "No",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "WithinScope",
+                  "Yes",
+                  "No",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "WithinScope",
+                  "Yes",
+                  "Yes",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "WithinScope",
+                  "Yes",
+                  "Yes",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "WithinScope",
+                  "Yes",
+                  "Yes",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "UrgentSeparateAssessment",
+                  "No",
+                  "No",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "UrgentSeparateAssessment",
+                  "No",
+                  "No",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "UrgentSeparateAssessment",
+                  "No",
+                  "No",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "UrgentSeparateAssessment",
+                  "No",
+                  "Yes",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "UrgentSeparateAssessment",
+                  "No",
+                  "Yes",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "UrgentSeparateAssessment",
+                  "No",
+                  "Yes",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "UrgentSeparateAssessment",
+                  "Yes",
+                  "No",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "UrgentSeparateAssessment",
+                  "Yes",
+                  "No",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "UrgentSeparateAssessment",
+                  "Yes",
+                  "No",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "UrgentSeparateAssessment",
+                  "Yes",
+                  "Yes",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "UrgentSeparateAssessment",
+                  "Yes",
+                  "Yes",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "UrgentSeparateAssessment",
+                  "Yes",
+                  "Yes",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "ObservedSameAntipsychoticStrategy",
+            "parent_ids": [
+              "ClinicalChangeReason",
+              "PracticalChangeReason",
+              "SameAntipsychoticContinuationPreference"
+            ],
+            "states": [
+              "ContinueSameAgent",
+              "SwitchAgent",
+              "OtherStrategy"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "No",
+                  "No",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "No",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "No",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Yes",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Yes",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Yes",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "No",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "No",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "No",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "Yes",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "Yes",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "Yes",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "SwitchMonitoringContext",
+            "parent_ids": [
+              "ObservedSameAntipsychoticStrategy"
+            ],
+            "states": [
+              "RoutineReview",
+              "SwitchMonitoringDiscussion",
+              "SeparatePlanReview"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "ContinueSameAgent"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "SwitchAgent"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OtherStrategy"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "AssignedRegimenDiscontinued",
+            "parent_ids": [
+              "ObservedSameAntipsychoticStrategy",
+              "SameAntipsychoticContinuationPreference"
+            ],
+            "states": [
+              "No",
+              "Yes"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "ContinueSameAgent",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "ContinueSameAgent",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "ContinueSameAgent",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "SwitchAgent",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "SwitchAgent",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "SwitchAgent",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OtherStrategy",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OtherStrategy",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OtherStrategy",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "ClinicalDestabilization",
+            "parent_ids": [
+              "ObservedSameAntipsychoticStrategy",
+              "ResidualClinicalBurden"
+            ],
+            "states": [
+              "No",
+              "Yes"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "ContinueSameAgent",
+                  "No"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "ContinueSameAgent",
+                  "Yes"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "SwitchAgent",
+                  "No"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "SwitchAgent",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OtherStrategy",
+                  "No"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OtherStrategy",
+                  "Yes"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "MetabolicTrajectory",
+            "parent_ids": [
+              "ObservedSameAntipsychoticStrategy",
+              "MetabolicConcern"
+            ],
+            "states": [
+              "Improved",
+              "NoMeaningfulChange",
+              "Worsened"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "ContinueSameAgent",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "ContinueSameAgent",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "SwitchAgent",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "SwitchAgent",
+                  "Yes"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OtherStrategy",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OtherStrategy",
+                  "Yes"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "SchizophreniaEstablished": {
+          "No": 0.15,
+          "Yes": 0.85
+        },
+        "SymptomImprovementOnCurrentAntipsychotic": {
+          "No": 0.35,
+          "Yes": 0.65
+        },
+        "UrgentSafetyConcern": {
+          "Absent": 0.9,
+          "Present": 0.1
+        },
+        "ResidualClinicalBurden": {
+          "No": 0.55,
+          "Yes": 0.45
+        },
+        "MetabolicConcern": {
+          "No": 0.75,
+          "Yes": 0.25
+        },
+        "OtherTolerabilityConcern": {
+          "No": 0.8,
+          "Yes": 0.2
+        },
+        "SameAntipsychoticContinuationPreference": {
+          "ContinueSame": 0.6,
+          "DiscussChange": 0.25,
+          "NoExpressedPreference": 0.15
+        },
+        "CurrentAgentAvailable": {
+          "No": 0.1,
+          "Yes": 0.9
+        },
+        "LAIUnderConsideration": {
+          "No": 0.7,
+          "Yes": 0.3
+        },
+        "SameAgentLAIAvailable": {
+          "No": 0.4,
+          "Yes": 0.6
+        },
+        "SameAntipsychoticContinuationScope": {
+          "OutsideScope": 0.40275,
+          "WithinScope": 0.49725,
+          "UrgentSeparateAssessment": 0.1
+        },
+        "LAIAgentMismatch": {
+          "No": 0.88,
+          "Yes": 0.12
+        },
+        "TolerabilityReview": {
+          "No": 0.6675,
+          "Yes": 0.3325
+        },
+        "ClinicalChangeReason": {
+          "No": 0.367125,
+          "Yes": 0.632875
+        },
+        "PracticalChangeReason": {
+          "No": 0.792,
+          "Yes": 0.208
+        },
+        "SameAgentDiscussion": {
+          "OutsideScope": 0.40275,
+          "ContinuationDiscussion": 0.1445819,
+          "IndividualizedChangeReview": 0.3526681,
+          "UrgentSeparateAssessment": 0.1
+        },
+        "ObservedSameAntipsychoticStrategy": {
+          "ContinueSameAgent": 0.290763,
+          "SwitchAgent": 0.17730925,
+          "OtherStrategy": 0.53192775
+        },
+        "SwitchMonitoringContext": {
+          "RoutineReview": 0.290763,
+          "SwitchMonitoringDiscussion": 0.17730925,
+          "SeparatePlanReview": 0.53192775
+        },
+        "AssignedRegimenDiscontinued": {
+          "No": 0.7163052,
+          "Yes": 0.2836948
+        },
+        "ClinicalDestabilization": {
+          "No": 0.8875,
+          "Yes": 0.1125
+        },
+        "MetabolicTrajectory": {
+          "Improved": 0.240199,
+          "NoMeaningfulChange": 0.75,
+          "Worsened": 0.009801
+        }
+      },
+      "context_examples": [
+        {
+          "SchizophreniaEstablished": "Yes"
+        },
+        {
+          "SchizophreniaEstablished": "No"
+        }
+      ],
+      "work": "Roots read directly from their single rows. Scope Within = P(Schiz=Yes)*P(Improv=Yes)*P(Urgent=Absent) = 0.85*0.65*0.9 = 0.49725; Urgent = 0.1; Outside = 1-0.49725-0.1 = 0.40275. Mismatch Yes = P(LAI=Yes)*P(Avail=No) = 0.3*0.4 = 0.12. Tolerability Yes = 0.75*0.8*0.05+0.75*0.2*0.5+0.25*0.8*0.9+0.25*0.2*0.95 = 0.03+0.075+0.18+0.0475 = 0.3325. Reading its two parents swapped gives 0.75*0.2*0.9+0.25*0.8*0.5+0.0475+0.03 = 0.3125, so a transpose bug fails. Clinical No = P(Resid=No)*P(Tol=No) = 0.55*0.6675 = 0.367125; Yes = 0.632875. Practical No = P(Avail=Yes)*P(Mismatch=No) = 0.9*0.88 = 0.792; Yes = 0.208. Discussion Continuation = P(Within)*P(Clin=No)*P(Pract=No) = 0.49725*0.367125*0.792 = 0.1445819; Individualized = 0.49725*(1-0.367125*0.792) = 0.49725*0.709237 = 0.3526681; Outside = 0.40275; Urgent = 0.1; sum = 1.0. Strategy Continue = 0.367125*0.792 = 0.290763; Switch = 0.709237*0.25 = 0.17730925; Other = 0.709237*0.75 = 0.53192775; sum = 1.0. Monitoring mirrors strategy row-for-row. Discontinued Yes = P(notContinue)*P(Pref in {DiscussChange,NoExpressedPreference}) = 0.709237*0.4 = 0.2836948; No = 0.7163052. Destabilization Yes = P(Resid=Yes)*P(Pref=DiscussChange) = 0.45*0.25 = 0.1125 since Resid=Yes forces notContinue; No = 0.8875. Given Met=No, Trajectory is NoMeaningfulChange (0.75). Given Met=Yes: Continue w.p. 0.0495*0.792 = 0.039204 so Worsened = 0.25*0.039204 = 0.009801; Improved = 0.25*(1-0.039204) = 0.240199; sum = 1.0."
+    },
+    {
+      "id": "full-graph-urgent-present-contrast-mathematical",
+      "classification": "Independent synthetic mathematical reference, not clinical calibration or clinical expected treatment",
+      "inputs": {},
+      "cpt_payload": {
+        "network_hash": "5f0d4eca4637a6cd1bc9e67bb55bea93f98c335cdc98f98552be4808b8cfb3e5",
+        "tables": [
+          {
+            "node_id": "SchizophreniaEstablished",
+            "parent_ids": [],
+            "states": [
+              "No",
+              "Yes"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "15",
+                  "85"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "SymptomImprovementOnCurrentAntipsychotic",
+            "parent_ids": [],
+            "states": [
+              "No",
+              "Yes"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "35",
+                  "65"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "UrgentSafetyConcern",
+            "parent_ids": [],
+            "states": [
+              "Absent",
+              "Present"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "ResidualClinicalBurden",
+            "parent_ids": [],
+            "states": [
+              "No",
+              "Yes"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "55",
+                  "45"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "MetabolicConcern",
+            "parent_ids": [],
+            "states": [
+              "No",
+              "Yes"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "75",
+                  "25"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "OtherTolerabilityConcern",
+            "parent_ids": [],
+            "states": [
+              "No",
+              "Yes"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "80",
+                  "20"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "SameAntipsychoticContinuationPreference",
+            "parent_ids": [],
+            "states": [
+              "ContinueSame",
+              "DiscussChange",
+              "NoExpressedPreference"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "60",
+                  "25",
+                  "15"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "CurrentAgentAvailable",
+            "parent_ids": [],
+            "states": [
+              "No",
+              "Yes"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "10",
+                  "90"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "LAIUnderConsideration",
+            "parent_ids": [],
+            "states": [
+              "No",
+              "Yes"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "70",
+                  "30"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "SameAgentLAIAvailable",
+            "parent_ids": [],
+            "states": [
+              "No",
+              "Yes"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "40",
+                  "60"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "SameAntipsychoticContinuationScope",
+            "parent_ids": [
+              "SchizophreniaEstablished",
+              "SymptomImprovementOnCurrentAntipsychotic",
+              "UrgentSafetyConcern"
+            ],
+            "states": [
+              "OutsideScope",
+              "WithinScope",
+              "UrgentSeparateAssessment"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "No",
+                  "No",
+                  "Absent"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "No",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Yes",
+                  "Absent"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Yes",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "No",
+                  "Absent"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "No",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "Yes",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "Yes",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "LAIAgentMismatch",
+            "parent_ids": [
+              "LAIUnderConsideration",
+              "SameAgentLAIAvailable"
+            ],
+            "states": [
+              "No",
+              "Yes"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "No",
+                  "No"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Yes"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "Yes"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "TolerabilityReview",
+            "parent_ids": [
+              "MetabolicConcern",
+              "OtherTolerabilityConcern"
+            ],
+            "states": [
+              "No",
+              "Yes"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "No",
+                  "No"
+                ],
+                "percentages": [
+                  "95",
+                  "5"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Yes"
+                ],
+                "percentages": [
+                  "50",
+                  "50"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "No"
+                ],
+                "percentages": [
+                  "10",
+                  "90"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "Yes"
+                ],
+                "percentages": [
+                  "5",
+                  "95"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "ClinicalChangeReason",
+            "parent_ids": [
+              "ResidualClinicalBurden",
+              "TolerabilityReview"
+            ],
+            "states": [
+              "No",
+              "Yes"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "No",
+                  "No"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "PracticalChangeReason",
+            "parent_ids": [
+              "CurrentAgentAvailable",
+              "LAIAgentMismatch"
+            ],
+            "states": [
+              "No",
+              "Yes"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "No",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "No"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "SameAgentDiscussion",
+            "parent_ids": [
+              "SameAntipsychoticContinuationScope",
+              "ClinicalChangeReason",
+              "PracticalChangeReason",
+              "SameAntipsychoticContinuationPreference"
+            ],
+            "states": [
+              "OutsideScope",
+              "ContinuationDiscussion",
+              "IndividualizedChangeReview",
+              "UrgentSeparateAssessment"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "OutsideScope",
+                  "No",
+                  "No",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OutsideScope",
+                  "No",
+                  "No",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OutsideScope",
+                  "No",
+                  "No",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OutsideScope",
+                  "No",
+                  "Yes",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OutsideScope",
+                  "No",
+                  "Yes",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OutsideScope",
+                  "No",
+                  "Yes",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OutsideScope",
+                  "Yes",
+                  "No",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OutsideScope",
+                  "Yes",
+                  "No",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OutsideScope",
+                  "Yes",
+                  "No",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OutsideScope",
+                  "Yes",
+                  "Yes",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OutsideScope",
+                  "Yes",
+                  "Yes",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OutsideScope",
+                  "Yes",
+                  "Yes",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "WithinScope",
+                  "No",
+                  "No",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "WithinScope",
+                  "No",
+                  "No",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "WithinScope",
+                  "No",
+                  "No",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "WithinScope",
+                  "No",
+                  "Yes",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "WithinScope",
+                  "No",
+                  "Yes",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "WithinScope",
+                  "No",
+                  "Yes",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "WithinScope",
+                  "Yes",
+                  "No",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "WithinScope",
+                  "Yes",
+                  "No",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "WithinScope",
+                  "Yes",
+                  "No",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "WithinScope",
+                  "Yes",
+                  "Yes",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "WithinScope",
+                  "Yes",
+                  "Yes",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "WithinScope",
+                  "Yes",
+                  "Yes",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "UrgentSeparateAssessment",
+                  "No",
+                  "No",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "UrgentSeparateAssessment",
+                  "No",
+                  "No",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "UrgentSeparateAssessment",
+                  "No",
+                  "No",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "UrgentSeparateAssessment",
+                  "No",
+                  "Yes",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "UrgentSeparateAssessment",
+                  "No",
+                  "Yes",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "UrgentSeparateAssessment",
+                  "No",
+                  "Yes",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "UrgentSeparateAssessment",
+                  "Yes",
+                  "No",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "UrgentSeparateAssessment",
+                  "Yes",
+                  "No",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "UrgentSeparateAssessment",
+                  "Yes",
+                  "No",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "UrgentSeparateAssessment",
+                  "Yes",
+                  "Yes",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "UrgentSeparateAssessment",
+                  "Yes",
+                  "Yes",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "UrgentSeparateAssessment",
+                  "Yes",
+                  "Yes",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "ObservedSameAntipsychoticStrategy",
+            "parent_ids": [
+              "ClinicalChangeReason",
+              "PracticalChangeReason",
+              "SameAntipsychoticContinuationPreference"
+            ],
+            "states": [
+              "ContinueSameAgent",
+              "SwitchAgent",
+              "OtherStrategy"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "No",
+                  "No",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "No",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "No",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Yes",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Yes",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Yes",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "No",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "No",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "No",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "Yes",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "Yes",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "Yes",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "SwitchMonitoringContext",
+            "parent_ids": [
+              "ObservedSameAntipsychoticStrategy"
+            ],
+            "states": [
+              "RoutineReview",
+              "SwitchMonitoringDiscussion",
+              "SeparatePlanReview"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "ContinueSameAgent"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "SwitchAgent"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OtherStrategy"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "AssignedRegimenDiscontinued",
+            "parent_ids": [
+              "ObservedSameAntipsychoticStrategy",
+              "SameAntipsychoticContinuationPreference"
+            ],
+            "states": [
+              "No",
+              "Yes"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "ContinueSameAgent",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "ContinueSameAgent",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "ContinueSameAgent",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "SwitchAgent",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "SwitchAgent",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "SwitchAgent",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OtherStrategy",
+                  "ContinueSame"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OtherStrategy",
+                  "DiscussChange"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OtherStrategy",
+                  "NoExpressedPreference"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "ClinicalDestabilization",
+            "parent_ids": [
+              "ObservedSameAntipsychoticStrategy",
+              "ResidualClinicalBurden"
+            ],
+            "states": [
+              "No",
+              "Yes"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "ContinueSameAgent",
+                  "No"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "ContinueSameAgent",
+                  "Yes"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "SwitchAgent",
+                  "No"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "SwitchAgent",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OtherStrategy",
+                  "No"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OtherStrategy",
+                  "Yes"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "MetabolicTrajectory",
+            "parent_ids": [
+              "ObservedSameAntipsychoticStrategy",
+              "MetabolicConcern"
+            ],
+            "states": [
+              "Improved",
+              "NoMeaningfulChange",
+              "Worsened"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "ContinueSameAgent",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "ContinueSameAgent",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "SwitchAgent",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "SwitchAgent",
+                  "Yes"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OtherStrategy",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "OtherStrategy",
+                  "Yes"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "SchizophreniaEstablished": {
+          "No": 0.15,
+          "Yes": 0.85
+        },
+        "SymptomImprovementOnCurrentAntipsychotic": {
+          "No": 0.35,
+          "Yes": 0.65
+        },
+        "UrgentSafetyConcern": {
+          "Absent": 0.0,
+          "Present": 1.0
+        },
+        "ResidualClinicalBurden": {
+          "No": 0.55,
+          "Yes": 0.45
+        },
+        "MetabolicConcern": {
+          "No": 0.75,
+          "Yes": 0.25
+        },
+        "OtherTolerabilityConcern": {
+          "No": 0.8,
+          "Yes": 0.2
+        },
+        "SameAntipsychoticContinuationPreference": {
+          "ContinueSame": 0.6,
+          "DiscussChange": 0.25,
+          "NoExpressedPreference": 0.15
+        },
+        "CurrentAgentAvailable": {
+          "No": 0.1,
+          "Yes": 0.9
+        },
+        "LAIUnderConsideration": {
+          "No": 0.7,
+          "Yes": 0.3
+        },
+        "SameAgentLAIAvailable": {
+          "No": 0.4,
+          "Yes": 0.6
+        },
+        "SameAntipsychoticContinuationScope": {
+          "OutsideScope": 0.0,
+          "WithinScope": 0.0,
+          "UrgentSeparateAssessment": 1.0
+        },
+        "LAIAgentMismatch": {
+          "No": 0.88,
+          "Yes": 0.12
+        },
+        "TolerabilityReview": {
+          "No": 0.6675,
+          "Yes": 0.3325
+        },
+        "ClinicalChangeReason": {
+          "No": 0.367125,
+          "Yes": 0.632875
+        },
+        "PracticalChangeReason": {
+          "No": 0.792,
+          "Yes": 0.208
+        },
+        "SameAgentDiscussion": {
+          "OutsideScope": 0.0,
+          "ContinuationDiscussion": 0.0,
+          "IndividualizedChangeReview": 0.0,
+          "UrgentSeparateAssessment": 1.0
+        },
+        "ObservedSameAntipsychoticStrategy": {
+          "ContinueSameAgent": 0.290763,
+          "SwitchAgent": 0.17730925,
+          "OtherStrategy": 0.53192775
+        },
+        "SwitchMonitoringContext": {
+          "RoutineReview": 0.290763,
+          "SwitchMonitoringDiscussion": 0.17730925,
+          "SeparatePlanReview": 0.53192775
+        },
+        "AssignedRegimenDiscontinued": {
+          "No": 0.7163052,
+          "Yes": 0.2836948
+        },
+        "ClinicalDestabilization": {
+          "No": 0.8875,
+          "Yes": 0.1125
+        },
+        "MetabolicTrajectory": {
+          "Improved": 0.240199,
+          "NoMeaningfulChange": 0.75,
+          "Worsened": 0.009801
+        }
+      },
+      "context_examples": [
+        {
+          "UrgentSafetyConcern": "Present"
+        },
+        {
+          "UrgentSafetyConcern": "Absent"
+        }
+      ],
+      "work": "Same payload as the asymmetric fixture except the UrgentSafetyConcern root row is [0, 100]. Scope UrgentSeparateAssessment = 1.0 and Discussion UrgentSeparateAssessment = 1.0 follow directly from the deterministic scope/discussion rows; all other 19 node marginals equal the asymmetric fixture since no other node descends from UrgentSafetyConcern. Opposing projections must still return identical posteriors with empty evidence and no clamping."
+    }
+  ],
+  "clinical": [
+    {
+      "id": "continuation-applicable",
+      "inputs": {
+        "candidate/history/continue_or_adjust.v1/h_schizophrenia_established": "Yes",
+        "candidate/history/continue_or_adjust.v1/h_symptom_improvement_current": "Yes",
+        "candidate/history/continue_or_adjust.v1/h_urgent_safety_concern": "Absent",
+        "candidate/history/continue_or_adjust.v1/h_residual_clinical_burden": "No",
+        "candidate/history/continue_or_adjust.v1/h_metabolic_concern": "No",
+        "candidate/history/continue_or_adjust.v1/h_other_tolerability_concern": "No",
+        "candidate/history/continue_or_adjust.v1/h_continuation_preference": "ContinueSame",
+        "candidate/history/continue_or_adjust.v1/h_current_agent_available": "Yes",
+        "candidate/history/continue_or_adjust.v1/h_lai_under_consideration": "No",
+        "candidate/history/continue_or_adjust.v1/h_same_agent_lai_available": "No",
+        "candidate/history/continue_or_adjust.v1/h_baseline_encounter_ref": "documented_current",
+        "candidate/history/continue_or_adjust.v1/h_baseline_window_validity": "current"
+      },
+      "expected_for_review": {
+        "status": "execute",
+        "applicability": "true",
+        "discussion_context": "ContinuationDiscussion candidate with residual burden No and preference ContinueSame",
+        "urgent_banner_from_saved_inputs": "Absent",
+        "baseline": "current with documented_current reference"
+      },
+      "note": "Candidate review expectation: follow-up continuation applicable with current baseline executes with empty evidence; urgent Absent still shows parallel review topics; no intervention is ordered."
+    },
+    {
+      "id": "adjustment-change-reason-review",
+      "inputs": {
+        "candidate/history/continue_or_adjust.v1/h_schizophrenia_established": "Yes",
+        "candidate/history/continue_or_adjust.v1/h_symptom_improvement_current": "Yes",
+        "candidate/history/continue_or_adjust.v1/h_urgent_safety_concern": "Absent",
+        "candidate/history/continue_or_adjust.v1/h_residual_clinical_burden": "Yes",
+        "candidate/history/continue_or_adjust.v1/h_metabolic_concern": "Yes",
+        "candidate/history/continue_or_adjust.v1/h_other_tolerability_concern": "No",
+        "candidate/history/continue_or_adjust.v1/h_continuation_preference": "DiscussChange",
+        "candidate/history/continue_or_adjust.v1/h_current_agent_available": "Yes",
+        "candidate/history/continue_or_adjust.v1/h_lai_under_consideration": "No",
+        "candidate/history/continue_or_adjust.v1/h_same_agent_lai_available": "No",
+        "candidate/history/continue_or_adjust.v1/h_baseline_encounter_ref": "documented_current",
+        "candidate/history/continue_or_adjust.v1/h_baseline_window_validity": "current"
+      },
+      "expected_for_review": {
+        "status": "execute",
+        "applicability": "true",
+        "discussion_context": "IndividualizedChangeReview candidate with residual burden and metabolic concern",
+        "urgent_banner_from_saved_inputs": "Absent",
+        "baseline": "current with documented_current reference"
+      },
+      "note": "Candidate review expectation: adjustment review with clinical change reasons executes with empty evidence; the topic does not order a switch."
+    },
+    {
+      "id": "urgent-present-parallel-banner",
+      "inputs": {
+        "candidate/history/continue_or_adjust.v1/h_schizophrenia_established": "Yes",
+        "candidate/history/continue_or_adjust.v1/h_symptom_improvement_current": "Yes",
+        "candidate/history/continue_or_adjust.v1/h_urgent_safety_concern": "Present",
+        "candidate/history/continue_or_adjust.v1/h_residual_clinical_burden": "No",
+        "candidate/history/continue_or_adjust.v1/h_metabolic_concern": "No",
+        "candidate/history/continue_or_adjust.v1/h_other_tolerability_concern": "No",
+        "candidate/history/continue_or_adjust.v1/h_continuation_preference": "ContinueSame",
+        "candidate/history/continue_or_adjust.v1/h_current_agent_available": "Yes",
+        "candidate/history/continue_or_adjust.v1/h_lai_under_consideration": "No",
+        "candidate/history/continue_or_adjust.v1/h_same_agent_lai_available": "No",
+        "candidate/history/continue_or_adjust.v1/h_baseline_encounter_ref": "documented_current",
+        "candidate/history/continue_or_adjust.v1/h_baseline_window_validity": "current"
+      },
+      "expected_for_review": {
+        "status": "execute",
+        "applicability": "true",
+        "discussion_context": "UrgentSeparateAssessment candidate",
+        "urgent_banner_from_saved_inputs": "Present",
+        "baseline": "current with documented_current reference"
+      },
+      "note": "Candidate review expectation: urgent Present executes the review and renders the parallel urgent banner from saved inputs independently of estimation latency, never a computed risk percentage."
+    },
+    {
+      "id": "insufficient-unknown-preference",
+      "inputs": {
+        "candidate/history/continue_or_adjust.v1/h_schizophrenia_established": "Yes",
+        "candidate/history/continue_or_adjust.v1/h_symptom_improvement_current": "Yes",
+        "candidate/history/continue_or_adjust.v1/h_urgent_safety_concern": "Absent",
+        "candidate/history/continue_or_adjust.v1/h_residual_clinical_burden": "No",
+        "candidate/history/continue_or_adjust.v1/h_metabolic_concern": "No",
+        "candidate/history/continue_or_adjust.v1/h_other_tolerability_concern": "No",
+        "candidate/history/continue_or_adjust.v1/h_continuation_preference": "unknown",
+        "candidate/history/continue_or_adjust.v1/h_current_agent_available": "Yes",
+        "candidate/history/continue_or_adjust.v1/h_lai_under_consideration": "No",
+        "candidate/history/continue_or_adjust.v1/h_same_agent_lai_available": "No",
+        "candidate/history/continue_or_adjust.v1/h_baseline_encounter_ref": "documented_current",
+        "candidate/history/continue_or_adjust.v1/h_baseline_window_validity": "current"
+      },
+      "expected_for_review": {
+        "status": "needs_clarification",
+        "applicability": "true",
+        "reason": "unknown continuation preference pauses estimation",
+        "baseline": "current with documented_current reference"
+      },
+      "note": "Candidate review expectation: unknown required preference pauses for clarification and is never coerced to ContinueSame or DiscussChange."
+    },
+    {
+      "id": "stale-baseline-outdated",
+      "inputs": {
+        "candidate/history/continue_or_adjust.v1/h_schizophrenia_established": "Yes",
+        "candidate/history/continue_or_adjust.v1/h_symptom_improvement_current": "Yes",
+        "candidate/history/continue_or_adjust.v1/h_urgent_safety_concern": "Absent",
+        "candidate/history/continue_or_adjust.v1/h_residual_clinical_burden": "No",
+        "candidate/history/continue_or_adjust.v1/h_metabolic_concern": "No",
+        "candidate/history/continue_or_adjust.v1/h_other_tolerability_concern": "No",
+        "candidate/history/continue_or_adjust.v1/h_continuation_preference": "ContinueSame",
+        "candidate/history/continue_or_adjust.v1/h_current_agent_available": "Yes",
+        "candidate/history/continue_or_adjust.v1/h_lai_under_consideration": "No",
+        "candidate/history/continue_or_adjust.v1/h_same_agent_lai_available": "No",
+        "candidate/history/continue_or_adjust.v1/h_baseline_encounter_ref": "outdated_encounter",
+        "candidate/history/continue_or_adjust.v1/h_baseline_window_validity": "outdated"
+      },
+      "expected_for_review": {
+        "status": "needs_clarification",
+        "applicability": "true",
+        "reason": "outdated baseline pauses for a fresh baseline choice",
+        "baseline": "outdated; contrasted with the continuation-applicable current-baseline case"
+      },
+      "note": "Candidate review expectation: an outdated baseline window pauses and never silently reuses the stale baseline; no recency threshold is set here."
+    },
+    {
+      "id": "required-missing-baseline",
+      "inputs": {
+        "candidate/history/continue_or_adjust.v1/h_schizophrenia_established": "Yes",
+        "candidate/history/continue_or_adjust.v1/h_symptom_improvement_current": "Yes",
+        "candidate/history/continue_or_adjust.v1/h_urgent_safety_concern": "Absent",
+        "candidate/history/continue_or_adjust.v1/h_residual_clinical_burden": "No",
+        "candidate/history/continue_or_adjust.v1/h_metabolic_concern": "No",
+        "candidate/history/continue_or_adjust.v1/h_other_tolerability_concern": "No",
+        "candidate/history/continue_or_adjust.v1/h_continuation_preference": "ContinueSame",
+        "candidate/history/continue_or_adjust.v1/h_current_agent_available": "Yes",
+        "candidate/history/continue_or_adjust.v1/h_lai_under_consideration": "No",
+        "candidate/history/continue_or_adjust.v1/h_same_agent_lai_available": "No",
+        "candidate/history/continue_or_adjust.v1/h_baseline_window_validity": "current"
+      },
+      "expected_for_review": {
+        "status": "needs_clarification",
+        "applicability": "true",
+        "reason": "missing baseline reference pauses estimation",
+        "baseline": "absent; contrasted with the continuation-applicable current-baseline case"
+      },
+      "note": "Candidate review expectation: a missing required baseline reference pauses for clarification and is never defaulted to the stale baseline."
+    },
+    {
+      "id": "conflict-needs-clarification",
+      "inputs": {
+        "candidate/history/continue_or_adjust.v1/h_schizophrenia_established": "Yes",
+        "candidate/history/continue_or_adjust.v1/h_symptom_improvement_current": [
+          "Yes",
+          "No"
+        ],
+        "candidate/history/continue_or_adjust.v1/h_urgent_safety_concern": "Absent",
+        "candidate/history/continue_or_adjust.v1/h_residual_clinical_burden": "No",
+        "candidate/history/continue_or_adjust.v1/h_metabolic_concern": "No",
+        "candidate/history/continue_or_adjust.v1/h_other_tolerability_concern": "No",
+        "candidate/history/continue_or_adjust.v1/h_continuation_preference": "ContinueSame",
+        "candidate/history/continue_or_adjust.v1/h_current_agent_available": "Yes",
+        "candidate/history/continue_or_adjust.v1/h_lai_under_consideration": "No",
+        "candidate/history/continue_or_adjust.v1/h_same_agent_lai_available": "No",
+        "candidate/history/continue_or_adjust.v1/h_baseline_encounter_ref": "documented_current",
+        "candidate/history/continue_or_adjust.v1/h_baseline_window_validity": "current"
+      },
+      "expected_for_review": {
+        "status": "needs_clarification",
+        "applicability": "true",
+        "reason": "conflicting improvement inputs pause estimation",
+        "baseline": "current with documented_current reference"
+      },
+      "note": "Candidate review expectation: conflicting required inputs pause for clarification and are never resolved by choosing one value."
+    }
+  ]
+}

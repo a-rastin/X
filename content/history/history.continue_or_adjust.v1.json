@@ -1,0 +1,367 @@
+{
+  "schema_version": "candidate-history-additions-v1",
+  "version": "continue_or_adjust.v1",
+  "status": "awaiting_review",
+  "extends": "history.v1",
+  "purpose": "Isolated S38 F6 follow-up review proposal; not loaded by runtime, not replacing or approving v1. No medication regimen fields. Universal follow-up gate with a documented baseline encounter/window; outdated baselines pause. BN-06-derived continuation content retained within experimental/educational scope per the 2026-10-04 owner decision; the STATEMENT-06 quality-measure/electronic-decision-support limitation stays explicit.",
+  "fields": [
+    {
+      "id": "h_schizophrenia_established",
+      "source_path": "candidate/history/continue_or_adjust.v1/h_schizophrenia_established",
+      "node_id": "SchizophreniaEstablished",
+      "permitted": [
+        "No",
+        "Yes",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Schizophrenia status for this follow-up encounter with baseline provenance.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-06.md \u2014 STATEMENT-06.md Implementation; follow-up synthesis uses baseline encounter provenance per history.v1 reconciliation; follow-up synthesis uses baseline encounter provenance per history.v1 reconciliation",
+      "source_sha256": "8cdf5bf124996870dd1212f9851a36fc1e1bbb88b7de6fcdd2a00a6365d37f60",
+      "operationalization": "No requires the documented finding at this follow-up encounter with baseline encounter attribution; otherwise record the assessed category. Unknown or not_assessed pauses. Copied baseline requires reconciliation. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution, baseline encounter reference and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "No": "No",
+        "Yes": "Yes"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_symptom_improvement_current",
+      "source_path": "candidate/history/continue_or_adjust.v1/h_symptom_improvement_current",
+      "node_id": "SymptomImprovementOnCurrentAntipsychotic",
+      "permitted": [
+        "No",
+        "Yes",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Symptom improvement with the current antipsychotic at this follow-up encounter, synthesized with baseline comparison.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-06.md \u2014 STATEMENT-06.md Implementation (response with the current antipsychotic); STATEMENT-05.md Implementation (maintained improvement); follow-up synthesis uses baseline encounter provenance per history.v1 reconciliation",
+      "source_sha256": "8cdf5bf124996870dd1212f9851a36fc1e1bbb88b7de6fcdd2a00a6365d37f60",
+      "operationalization": "No requires the documented finding at this follow-up encounter with baseline encounter attribution; otherwise record the assessed category. Unknown or not_assessed pauses. Copied baseline requires reconciliation. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution, baseline encounter reference and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "No": "No",
+        "Yes": "Yes"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_urgent_safety_concern",
+      "source_path": "candidate/history/continue_or_adjust.v1/h_urgent_safety_concern",
+      "node_id": "UrgentSafetyConcern",
+      "permitted": [
+        "Absent",
+        "Present",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Presence or absence of an urgent safety concern at this follow-up encounter from saved structured inputs.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-06.md \u2014 STATEMENT-06.md Implementation; STATEMENT-04.md Harms; urgent banner uses saved structured inputs only; follow-up synthesis uses baseline encounter provenance per history.v1 reconciliation",
+      "source_sha256": "8cdf5bf124996870dd1212f9851a36fc1e1bbb88b7de6fcdd2a00a6365d37f60",
+      "operationalization": "Absent requires the documented finding at this follow-up encounter with baseline encounter attribution; otherwise record the assessed category. Unknown or not_assessed pauses. Copied baseline requires reconciliation. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution, baseline encounter reference and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Absent": "Absent",
+        "Present": "Present"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_residual_clinical_burden",
+      "source_path": "candidate/history/continue_or_adjust.v1/h_residual_clinical_burden",
+      "node_id": "ResidualClinicalBurden",
+      "permitted": [
+        "No",
+        "Yes",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Residual symptoms or functional difficulties despite some response at this follow-up encounter.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-06.md \u2014 STATEMENT-06.md Implementation (significant symptoms or functional difficulties warranting a different-medication trial); follow-up synthesis uses baseline encounter provenance per history.v1 reconciliation",
+      "source_sha256": "8cdf5bf124996870dd1212f9851a36fc1e1bbb88b7de6fcdd2a00a6365d37f60",
+      "operationalization": "No requires the documented finding at this follow-up encounter with baseline encounter attribution; otherwise record the assessed category. Unknown or not_assessed pauses. Copied baseline requires reconciliation. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution, baseline encounter reference and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "No": "No",
+        "Yes": "Yes"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_metabolic_concern",
+      "source_path": "candidate/history/continue_or_adjust.v1/h_metabolic_concern",
+      "node_id": "MetabolicConcern",
+      "permitted": [
+        "No",
+        "Yes",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Significant weight gain, diabetes or metabolic syndrome recorded at this follow-up encounter.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-06.md \u2014 STATEMENT-06.md Implementation and Harms (weight gain, diabetes, metabolic syndrome); adverse-effect questionnaires retained as parallel concerns; follow-up synthesis uses baseline encounter provenance per history.v1 reconciliation",
+      "source_sha256": "8cdf5bf124996870dd1212f9851a36fc1e1bbb88b7de6fcdd2a00a6365d37f60",
+      "operationalization": "No requires the documented finding at this follow-up encounter with baseline encounter attribution; otherwise record the assessed category. Unknown or not_assessed pauses. Copied baseline requires reconciliation. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution, baseline encounter reference and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "No": "No",
+        "Yes": "Yes"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_other_tolerability_concern",
+      "source_path": "candidate/history/continue_or_adjust.v1/h_other_tolerability_concern",
+      "node_id": "OtherTolerabilityConcern",
+      "permitted": [
+        "No",
+        "Yes",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Significant nonmetabolic adverse effects recorded at this follow-up encounter.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-06.md \u2014 STATEMENT-06.md Implementation (side effects); STATEMENT-05.md Harms and Patient Preferences; adverse-effect questionnaires retained as parallel concerns; follow-up synthesis uses baseline encounter provenance per history.v1 reconciliation",
+      "source_sha256": "8cdf5bf124996870dd1212f9851a36fc1e1bbb88b7de6fcdd2a00a6365d37f60",
+      "operationalization": "No requires the documented finding at this follow-up encounter with baseline encounter attribution; otherwise record the assessed category. Unknown or not_assessed pauses. Copied baseline requires reconciliation. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution, baseline encounter reference and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "No": "No",
+        "Yes": "Yes"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_continuation_preference",
+      "source_path": "candidate/history/continue_or_adjust.v1/h_continuation_preference",
+      "node_id": "SameAntipsychoticContinuationPreference",
+      "permitted": [
+        "ContinueSame",
+        "DiscussChange",
+        "NoExpressedPreference",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Preference regarding continuation of the same antipsychotic; NoExpressedPreference is an unspecified preference, never opposition.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-06.md \u2014 STATEMENT-06.md Patient Preferences; STATEMENT-05.md Patient Preferences and shared decision-making; follow-up synthesis uses baseline encounter provenance per history.v1 reconciliation",
+      "source_sha256": "8cdf5bf124996870dd1212f9851a36fc1e1bbb88b7de6fcdd2a00a6365d37f60",
+      "operationalization": "ContinueSame requires the documented finding at this follow-up encounter with baseline encounter attribution; otherwise record the assessed category. Unknown or not_assessed pauses. Copied baseline requires reconciliation. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution, baseline encounter reference and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "ContinueSame": "ContinueSame",
+        "DiscussChange": "DiscussChange",
+        "NoExpressedPreference": "NoExpressedPreference"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_current_agent_available",
+      "source_path": "candidate/history/continue_or_adjust.v1/h_current_agent_available",
+      "node_id": "CurrentAgentAvailable",
+      "permitted": [
+        "No",
+        "Yes",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Availability and accessibility of the current antipsychotic at this follow-up encounter.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-06.md \u2014 STATEMENT-06.md Implementation (medication availability); follow-up synthesis uses baseline encounter provenance per history.v1 reconciliation",
+      "source_sha256": "8cdf5bf124996870dd1212f9851a36fc1e1bbb88b7de6fcdd2a00a6365d37f60",
+      "operationalization": "No requires the documented finding at this follow-up encounter with baseline encounter attribution; otherwise record the assessed category. Unknown or not_assessed pauses. Copied baseline requires reconciliation. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution, baseline encounter reference and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "No": "No",
+        "Yes": "Yes"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_lai_under_consideration",
+      "source_path": "candidate/history/continue_or_adjust.v1/h_lai_under_consideration",
+      "node_id": "LAIUnderConsideration",
+      "permitted": [
+        "No",
+        "Yes",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Whether an LAI formulation is being considered at this follow-up encounter.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-06.md \u2014 STATEMENT-06.md Implementation (LAI initiation when the current oral is unavailable in LAI); distinct from the R5 LAI discussion package; follow-up synthesis uses baseline encounter provenance per history.v1 reconciliation",
+      "source_sha256": "8cdf5bf124996870dd1212f9851a36fc1e1bbb88b7de6fcdd2a00a6365d37f60",
+      "operationalization": "No requires the documented finding at this follow-up encounter with baseline encounter attribution; otherwise record the assessed category. Unknown or not_assessed pauses. Copied baseline requires reconciliation. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution, baseline encounter reference and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "No": "No",
+        "Yes": "Yes"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_same_agent_lai_available",
+      "source_path": "candidate/history/continue_or_adjust.v1/h_same_agent_lai_available",
+      "node_id": "SameAgentLAIAvailable",
+      "permitted": [
+        "No",
+        "Yes",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Availability of an LAI formulation of the current active molecule.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-06.md \u2014 STATEMENT-06.md Implementation (same-agent LAI formulation availability); follow-up synthesis uses baseline encounter provenance per history.v1 reconciliation",
+      "source_sha256": "8cdf5bf124996870dd1212f9851a36fc1e1bbb88b7de6fcdd2a00a6365d37f60",
+      "operationalization": "No requires the documented finding at this follow-up encounter with baseline encounter attribution; otherwise record the assessed category. Unknown or not_assessed pauses. Copied baseline requires reconciliation. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution, baseline encounter reference and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "No": "No",
+        "Yes": "Yes"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_baseline_encounter_ref",
+      "source_path": "candidate/history/continue_or_adjust.v1/h_baseline_encounter_ref",
+      "node_id": null,
+      "permitted": [
+        "documented_current",
+        "outdated_encounter",
+        "missing",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "applicability_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Baseline encounter reference for this follow-up comparison; gate-only applicability input recording which encounter the review compares against, not a clinical finding.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-06.md \u2014 Implementation (maintained treatment comparison); history.v1 reconciliation contract",
+      "source_sha256": "8cdf5bf124996870dd1212f9851a36fc1e1bbb88b7de6fcdd2a00a6365d37f60",
+      "operationalization": "documented_current requires a named signed baseline encounter; outdated_encounter or missing pauses for a fresh baseline choice and never silently reuses a stale baseline. No recency threshold is set here. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window and author attribution. Page notes are never mapping input.",
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review",
+      "gate_only": true
+    },
+    {
+      "id": "h_baseline_window_validity",
+      "source_path": "candidate/history/continue_or_adjust.v1/h_baseline_window_validity",
+      "node_id": null,
+      "permitted": [
+        "current",
+        "outdated",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "applicability_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Baseline window validity for this follow-up comparison; gate-only applicability input recording whether the referenced baseline window is current.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-06.md \u2014 Implementation; history.v1 reconciliation contract",
+      "source_sha256": "8cdf5bf124996870dd1212f9851a36fc1e1bbb88b7de6fcdd2a00a6365d37f60",
+      "operationalization": "current requires the referenced baseline window to cover this comparison; outdated pauses for a fresh baseline choice. No recency threshold is set here. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window and author attribution. Page notes are never mapping input.",
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review",
+      "gate_only": true
+    }
+  ],
+  "retained_history_v1": "Twelve original v1 fields and runtime remain unchanged; this separately versioned adjunct proposes 10 node-mapped CPT-context categories plus 2 gate-only baseline applicability categories (12 total), none approved."
+}
