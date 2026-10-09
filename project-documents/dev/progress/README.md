@@ -3,9 +3,9 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest recorded checkpoint is [S34](s34.md): akathisia review draft
-green (T5: 6 focused / 162 model tests; `make check` green).
-Content remains `awaiting_review`; see report for release blockers and S35 handoff.
+The latest recorded checkpoint is [S35](s35.md): parkinsonism review draft
+green (T5: 6 focused / 168 model tests; `make check` green).
+Content remains `awaiting_review`; see report for release blockers and S36 handoff.
 
 ## Reading and updating progress
 
@@ -65,3 +65,4 @@ Content remains `awaiting_review`; see report for release blockers and S35 hando
 | S32 | [Build and verify the established_case_clozapine review draft (2026-10-09)](s32.md) |
 | S33 | [Build and verify the tardive_dyskinesia review draft (2026-10-09)](s33.md) |
 | S34 | [Build and verify the akathisia review draft (2026-10-09)](s34.md) |
+| S35 | [Build and verify the parkinsonism review draft (2026-10-09)](s35.md) |

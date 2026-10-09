@@ -1,0 +1,464 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<BIF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="0.3" xsi:noNamespaceSchemaLocation="schema.xml">
+  <NETWORK>
+    <NAME>BN_12_Parkinsonism_Followup_Review_S35_v1</NAME>
+    <PROPERTY>clinical_question=How do follow-up factors affect experimental parkinsonism review topics and tradeoffs?</PROPERTY>
+    <PROPERTY>question_key=parkinsonism</PROPERTY>
+    <PROPERTY>workflow=followup</PROPERTY>
+    <PROPERTY>statement_id=12</PROPERTY>
+    <PROPERTY>recommendation_strength=2</PROPERTY>
+    <PROPERTY>evidence_quality=C</PROPERTY>
+    <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-12.md</PROPERTY>
+    <PROPERTY>source_locator=Statement 12, Treatments for Parkinsonism; Implementation</PROPERTY>
+    <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+    <PROPERTY>population=Adult schizophrenia follow-up scenarios with parkinsonism review for experimentation</PROPERTY>
+    <PROPERTY>setting=Experimental and educational application</PROPERTY>
+    <PROPERTY>time_horizon=Current follow-up encounter synthesis of slowness, rigidity, tremor, exposure, onset, differential and safety context</PROPERTY>
+    <PROPERTY>model_version=s35-v1</PROPERTY>
+    <PROPERTY>validation_status=AWAITING_REVIEW_SYNTHETIC_REFERENCE_CPTS</PROPERTY>
+    <PROPERTY>parameter_policy=All 20 nodes including roots require fresh complete percentage CPT estimation; XML tables are explicitly synthetic uniform mathematical references</PROPERTY>
+    <PROPERTY>edge_encoding=Ordered GIVEN elements materialize all BN-12 ordered proposed_parent properties; no edges removed or renamed</PROPERTY>
+    <PROPERTY>table_order=FOR outcome fastest; last GIVEN parent next; first GIVEN parent slowest</PROPERTY>
+    <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting context pauses for clarification; absent distinct from not assessed; no guessed negatives and no coercion to Absent</PROPERTY>
+    <PROPERTY>gate_policy=Gate true executes for present effect with known inputs; gate false records not_applicable for absent with reason and claims no posterior; unresolved or not_assessed pauses for clarification</PROPERTY>
+    <PROPERTY>followup_scope=F3 parkinsonism follow-up review; effect present/absent/not_assessed gate with reviewed severity; no diagnosis from unreviewed SAS total and no universal severity bands</PROPERTY>
+    <PROPERTY>use_context=experimental_educational_awaiting_review</PROPERTY>
+    <PROPERTY>inference_mode=complete_CPT_estimation_empty_evidence</PROPERTY>
+    <PROPERTY>scope=Parkinsonism applicability gate plus indication, regimen, anticholinergic safety, symptomatic medication, continuation, amantadine and prophylaxis review; no invented thresholds or regimen fields</PROPERTY>
+    <PROPERTY>input_policy=Versioned candidate structured context only; full SAS item responses preserved when the complete reviewed source is available; no dose, route, frequency or active/stopped fields and no page notes</PROPERTY>
+    <PROPERTY>graph_semantics=Candidate retained BN-12 dependencies; all proposed_parent edges materialized in declared order</PROPERTY>
+    <PROPERTY>execution_contract=Complete fixed ordered CPTs and empty execution evidence; unapproved content cannot activate</PROPERTY>
+    <PROPERTY>source_policy=Pinned original BN-12 and STATEMENT-12 attribution required; Table 10 prescribing details are background only and not copied as activation metadata; review not yet granted</PROPERTY>
+    <PROPERTY>parameter_inventory=20 complete reference distributions: 13 roots plus 7 outputs; all explicitly synthetic uniform references</PROPERTY>
+
+    <VARIABLE TYPE="nature">
+      <NAME>ParkinsonismAssessment</NAME>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <OUTCOME>Unresolved</OUTCOME>
+      <PROPERTY>label=Parkinsonism Assessment</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Parkinsonism assessment for follow-up review: present, absent or unresolved including bradykinesia/akinesia, rigidity or parkinsonian tremor.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=parkinsonism-criteria.md Diagnostic features (bradykinesia/akinesia, rigidity, parkinsonian tremor; onset commonly within weeks) and STATEMENT-12 Implementation</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up slowness, rigidity, tremor, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=3</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ParkinsonismAntipsychoticAssociation</NAME>
+      <OUTCOME>Established</OUTCOME>
+      <OUTCOME>NotEstablished</OUTCOME>
+      <PROPERTY>label=Parkinsonism Antipsychotic Association</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Association between parkinsonism and antipsychotic exposure with onset timing and alternative explanations considered.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-12 Implementation (medication-induced parkinsonism definition; dose-dependent; generally resolves with discontinuation)</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up slowness, rigidity, tremor, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>TardiveDyskinesiaConcern</NAME>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>label=Tardive Dyskinesia Concern</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Possible or coexisting tardive dyskinesia in the follow-up scenario; anticholinergic treatment can worsen tardive dyskinesia.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-12 Implementation (distinguish parkinsonism from tardive dyskinesia, which can be worsened by anticholinergic medications)</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up slowness, rigidity, tremor, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>DoseReductionFeasible</NAME>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>label=Dose Reduction Feasible</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Feasibility of antipsychotic dose reduction as a review assumption.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-12 Implementation (dose reduction if feasible; weigh against psychotic symptoms)</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up slowness, rigidity, tremor, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>LowerParkinsonismRiskSwitchFeasible</NAME>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>label=Lower Parkinsonism Risk Switch Feasible</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Feasibility of switching to a lower parkinsonism propensity agent as a review assumption.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-12 Implementation (switch to a lower-likelihood agent; see Statement 4 Table 6; clozapine for highly sensitive individuals)</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up slowness, rigidity, tremor, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>PsychoticWorseningConcern</NAME>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>label=Psychotic Worsening Concern</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Concern about psychotic worsening following a regimen change.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-12 Implementation and Balancing Harms (increase in psychotic symptoms; careful monitoring for recurrence)</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up slowness, rigidity, tremor, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ParkinsonismMedicationPreferenceConcern</NAME>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>label=Parkinsonism Medication Preference Concern</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Concern about parkinsonism treatment options or tradeoffs and patient preferences.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-12 Patient Preferences (minimize parkinsonism and psychotic increase; concern about anticholinergic side effects)</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up slowness, rigidity, tremor, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>OlderAgeVulnerability</NAME>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>label=Older Age Vulnerability</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Age-related vulnerability to anticholinergic effects in the scenario.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-12 Implementation and Balancing Harms (older individuals particularly sensitive: urinary retention, confusion, toxicity)</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up slowness, rigidity, tremor, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>OtherAnticholinergicBurden</NAME>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>label=Other Anticholinergic Burden</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Concomitant anticholinergic exposure apart from the target symptomatic treatment.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-12 Implementation (consider anticholinergic effects of other medications: antipsychotics, antidepressants, urological agents, antihistamines)</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up slowness, rigidity, tremor, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AnticholinergicSafetyConcern</NAME>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>label=Anticholinergic Safety Concern</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Concern about cognitive, urinary, bowel, ocular, cardiac, thermoregulatory or other anticholinergic effects.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-12 Implementation and Balancing Harms (dry mouth, blurred vision, constipation, tachycardia, urinary retention, thermoregulation, cognition)</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up slowness, rigidity, tremor, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>CurrentParkinsonismAnticholinergicUse</NAME>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>label=Current Parkinsonism Anticholinergic Use</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Current anticholinergic use for parkinsonism or prevention in the scenario.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-12 Implementation (short-term until change or longer-term if change not feasible; lowest dose and shortest time)</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up slowness, rigidity, tremor, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>PriorSignificantParkinsonism</NAME>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>label=Prior Significant Parkinsonism</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=History of significant parkinsonism with prior treatment in the scenario.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-12 Implementation (increased risk with significant prior parkinsonism; prophylaxis occasionally warranted; BAP/PORT note no routine prophylaxis)</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up slowness, rigidity, tremor, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AmantadineSafetyConcern</NAME>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>label=Amantadine Safety Concern</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Concern involving renal function, hallucinations, suicidal thoughts, seizures or amantadine tolerability.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-12 Implementation (amantadine alternative with less cognitive impairment; renal, hallucination, suicidal-thought and seizure concerns)</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up slowness, rigidity, tremor, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ParkinsonismIndicationReview</NAME>
+      <OUTCOME>EstablishedCurrentAssociation</OUTCOME>
+      <OUTCOME>AssessDifferentialAndAssociation</OUTCOME>
+      <OUTCOME>NoCurrentTreatmentRule</OUTCOME>
+      <PROPERTY>label=Parkinsonism Indication Review</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for Parkinsonism Indication Review; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-12 Implementation (differential: Parkinson disease, neurological disorder, catatonia, negative symptoms, depressive slowing)</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up slowness, rigidity, tremor, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=18</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ParkinsonismAntipsychoticRegimenReview</NAME>
+      <OUTCOME>ReviewDoseAndSwitch</OUTCOME>
+      <OUTCOME>ReviewDose</OUTCOME>
+      <OUTCOME>ReviewSwitch</OUTCOME>
+      <OUTCOME>ReviewConstraints</OUTCOME>
+      <OUTCOME>PrioritizePsychosisTradeoff</OUTCOME>
+      <OUTCOME>EstablishIndicationFirst</OUTCOME>
+      <PROPERTY>label=Parkinsonism Antipsychotic Regimen Review</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for Parkinsonism Antipsychotic Regimen Review; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-12 Implementation (dose reduction; switch; weigh against psychotic symptoms; monitoring)</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up slowness, rigidity, tremor, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=144</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AnticholinergicSafetyReview</NAME>
+      <OUTCOME>EnhancedIndividualizedReview</OUTCOME>
+      <OUTCOME>RoutineIndividualizedReview</OUTCOME>
+      <PROPERTY>label=Anticholinergic Safety Review</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for Anticholinergic Safety Review; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-12 Implementation and Balancing Harms (multiple difficulties: cognition, quality of life, health complications)</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up slowness, rigidity, tremor, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=16</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>SymptomaticMedicationReview</NAME>
+      <OUTCOME>ReviewTardiveDifferential</OUTCOME>
+      <OUTCOME>DiscussPatientConcerns</OUTCOME>
+      <OUTCOME>DiscussAnticholinergicOption</OUTCOME>
+      <OUTCOME>EstablishIndicationFirst</OUTCOME>
+      <PROPERTY>label=Symptomatic Medication Review</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for Symptomatic Medication Review; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-12 Implementation and Patient Preferences (anticholinergic option; tardive differential; Table 10 background only)</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up slowness, rigidity, tremor, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=48</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ParkinsonismAnticholinergicContinuationReview</NAME>
+      <OUTCOME>ReviewLowestDoseAndDuration</OUTCOME>
+      <OUTCOME>ReassessNeedAndDifferential</OUTCOME>
+      <OUTCOME>NoCurrentContinuationRule</OUTCOME>
+      <PROPERTY>label=Parkinsonism Anticholinergic Continuation Review</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for Parkinsonism Anticholinergic Continuation Review; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-12 Implementation (lowest dose; shortest time; reduction or withdrawal after weeks to months without recurrence)</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up slowness, rigidity, tremor, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=18</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AmantadineReview</NAME>
+      <OUTCOME>DiscussAlternativeAndSafety</OUTCOME>
+      <OUTCOME>ReviewSpecificSafetyConcerns</OUTCOME>
+      <OUTCOME>EstablishIndicationFirst</OUTCOME>
+      <PROPERTY>label=Amantadine Review</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for Amantadine Review; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-12 Implementation (amantadine comparable or somewhat less benefit; fewer anticholinergic side effects)</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up slowness, rigidity, tremor, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=18</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ProphylaxisReview</NAME>
+      <OUTCOME>IndividualizedExceptionalRiskReview</OUTCOME>
+      <OUTCOME>NoRoutineProphylaxisRule</OUTCOME>
+      <OUTCOME>AddressCurrentAssessment</OUTCOME>
+      <PROPERTY>label=Prophylaxis Review</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for Prophylaxis Review; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-12.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT-12 Implementation and Review of Other Guidelines (WFSBP/BAP/PORT: no routine prophylaxis; exceptional individual basis only)</PROPERTY>
+      <PROPERTY>source_sha256=79490eff4830bd90d3cdd4b60b5158d267de13a1740a051fd011304e1f4480d3</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis; follow-up slowness, rigidity, tremor, exposure, onset, differential and safety facts inform this encounter value</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=18</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for follow-up review; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <DEFINITION>
+      <FOR>ParkinsonismAssessment</FOR>
+      <TABLE>0.33333333 0.33333333 0.33333334</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>ParkinsonismAntipsychoticAssociation</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>TardiveDyskinesiaConcern</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>DoseReductionFeasible</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>LowerParkinsonismRiskSwitchFeasible</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>PsychoticWorseningConcern</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>ParkinsonismMedicationPreferenceConcern</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>OlderAgeVulnerability</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>OtherAnticholinergicBurden</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>AnticholinergicSafetyConcern</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>CurrentParkinsonismAnticholinergicUse</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>PriorSignificantParkinsonism</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>AmantadineSafetyConcern</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>ParkinsonismIndicationReview</FOR>
+      <GIVEN>ParkinsonismAssessment</GIVEN>
+      <GIVEN>ParkinsonismAntipsychoticAssociation</GIVEN>
+      <TABLE>0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>ParkinsonismAntipsychoticRegimenReview</FOR>
+      <GIVEN>ParkinsonismIndicationReview</GIVEN>
+      <GIVEN>DoseReductionFeasible</GIVEN>
+      <GIVEN>LowerParkinsonismRiskSwitchFeasible</GIVEN>
+      <GIVEN>PsychoticWorseningConcern</GIVEN>
+      <TABLE>0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666 0.16666667 0.16666667 0.16666667 0.16666667 0.16666666 0.16666666</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>AnticholinergicSafetyReview</FOR>
+      <GIVEN>AnticholinergicSafetyConcern</GIVEN>
+      <GIVEN>OlderAgeVulnerability</GIVEN>
+      <GIVEN>OtherAnticholinergicBurden</GIVEN>
+      <TABLE>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>SymptomaticMedicationReview</FOR>
+      <GIVEN>ParkinsonismIndicationReview</GIVEN>
+      <GIVEN>TardiveDyskinesiaConcern</GIVEN>
+      <GIVEN>ParkinsonismMedicationPreferenceConcern</GIVEN>
+      <TABLE>0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>ParkinsonismAnticholinergicContinuationReview</FOR>
+      <GIVEN>CurrentParkinsonismAnticholinergicUse</GIVEN>
+      <GIVEN>ParkinsonismAssessment</GIVEN>
+      <TABLE>0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>AmantadineReview</FOR>
+      <GIVEN>ParkinsonismIndicationReview</GIVEN>
+      <GIVEN>AmantadineSafetyConcern</GIVEN>
+      <TABLE>0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>ProphylaxisReview</FOR>
+      <GIVEN>ParkinsonismAssessment</GIVEN>
+      <GIVEN>PriorSignificantParkinsonism</GIVEN>
+      <TABLE>0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334 0.33333333 0.33333333 0.33333334</TABLE>
+    </DEFINITION>
+  </NETWORK>
+</BIF>

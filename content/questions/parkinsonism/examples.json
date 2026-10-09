@@ -1,0 +1,1501 @@
+{
+  "clinical": [
+    {
+      "expected_for_review": {
+        "applicability": "gate == 'true'",
+        "gate": "true",
+        "status": "execute",
+        "urgent_banner_from_saved_inputs": "Absent"
+      },
+      "id": "gate-true-present-applicable",
+      "inputs": {
+        "candidate/history/parkinsonism.v1/h_p_amantadine_safety_concern": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_anticholinergic_safety_concern": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_antipsychotic_association": "Established",
+        "candidate/history/parkinsonism.v1/h_p_assessment": "Present",
+        "candidate/history/parkinsonism.v1/h_p_current_anticholinergic_use": "No",
+        "candidate/history/parkinsonism.v1/h_p_dose_reduction_feasible": "Yes",
+        "candidate/history/parkinsonism.v1/h_p_older_age_vulnerability": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_other_anticholinergic_burden": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_preference_concern": "Present",
+        "candidate/history/parkinsonism.v1/h_p_prior_significant_parkinsonism": "No",
+        "candidate/history/parkinsonism.v1/h_p_psychotic_worsening_concern": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_switch_feasible": "Yes",
+        "candidate/history/parkinsonism.v1/h_p_tardive_concern": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_urgent_nms_concern": "Absent"
+      },
+      "note": "Candidate review expectation: present applicable gate true executes with empty evidence; urgent Absent still shows parallel review topics."
+    },
+    {
+      "expected_for_review": {
+        "applicability": "gate == 'true'",
+        "fabricated_risk_percentage": null,
+        "gate": "true",
+        "status": "execute",
+        "urgent_banner_from_saved_inputs": "Present",
+        "urgent_latency": "independent_of_estimation"
+      },
+      "id": "gate-true-urgent-present",
+      "inputs": {
+        "candidate/history/parkinsonism.v1/h_p_amantadine_safety_concern": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_anticholinergic_safety_concern": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_antipsychotic_association": "Established",
+        "candidate/history/parkinsonism.v1/h_p_assessment": "Present",
+        "candidate/history/parkinsonism.v1/h_p_current_anticholinergic_use": "No",
+        "candidate/history/parkinsonism.v1/h_p_dose_reduction_feasible": "Yes",
+        "candidate/history/parkinsonism.v1/h_p_older_age_vulnerability": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_other_anticholinergic_burden": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_preference_concern": "Present",
+        "candidate/history/parkinsonism.v1/h_p_prior_significant_parkinsonism": "No",
+        "candidate/history/parkinsonism.v1/h_p_psychotic_worsening_concern": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_switch_feasible": "Yes",
+        "candidate/history/parkinsonism.v1/h_p_tardive_concern": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_urgent_nms_concern": "Present"
+      },
+      "note": "Candidate review expectation: urgent NMS-triage Present executes and adds a parallel urgent banner from saved inputs independently of estimation latency; never a fabricated risk percentage."
+    },
+    {
+      "expected_for_review": {
+        "applicability": "gate == 'true'",
+        "gate": "false",
+        "not_a_negative_posterior": true,
+        "posterior_claim": null,
+        "reason": "absent parkinsonism without present effect",
+        "status": "not_applicable"
+      },
+      "id": "gate-false-absent",
+      "inputs": {
+        "candidate/history/parkinsonism.v1/h_p_amantadine_safety_concern": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_anticholinergic_safety_concern": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_antipsychotic_association": "Established",
+        "candidate/history/parkinsonism.v1/h_p_assessment": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_current_anticholinergic_use": "No",
+        "candidate/history/parkinsonism.v1/h_p_dose_reduction_feasible": "Yes",
+        "candidate/history/parkinsonism.v1/h_p_older_age_vulnerability": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_other_anticholinergic_burden": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_preference_concern": "Present",
+        "candidate/history/parkinsonism.v1/h_p_prior_significant_parkinsonism": "No",
+        "candidate/history/parkinsonism.v1/h_p_psychotic_worsening_concern": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_switch_feasible": "Yes",
+        "candidate/history/parkinsonism.v1/h_p_tardive_concern": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_urgent_nms_concern": "Absent"
+      },
+      "note": "Candidate review expectation: absent gate false records not_applicable with reason and claims no posterior; never a fake negative review posterior or a negative finding."
+    },
+    {
+      "expected_for_review": {
+        "applicability": "gate == 'true'",
+        "gate": "unknown",
+        "reason": "effect unresolved/not_assessed",
+        "status": "needs_clarification"
+      },
+      "id": "gate-unknown-not-assessed",
+      "inputs": {
+        "candidate/history/parkinsonism.v1/h_p_amantadine_safety_concern": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_anticholinergic_safety_concern": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_antipsychotic_association": "Established",
+        "candidate/history/parkinsonism.v1/h_p_assessment": "Unresolved",
+        "candidate/history/parkinsonism.v1/h_p_current_anticholinergic_use": "No",
+        "candidate/history/parkinsonism.v1/h_p_dose_reduction_feasible": "Yes",
+        "candidate/history/parkinsonism.v1/h_p_older_age_vulnerability": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_other_anticholinergic_burden": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_preference_concern": "Present",
+        "candidate/history/parkinsonism.v1/h_p_prior_significant_parkinsonism": "No",
+        "candidate/history/parkinsonism.v1/h_p_psychotic_worsening_concern": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_switch_feasible": "Yes",
+        "candidate/history/parkinsonism.v1/h_p_tardive_concern": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_urgent_nms_concern": "Absent"
+      },
+      "note": "Candidate review expectation: unresolved or not_assessed required input pauses before estimation; never coerces to false and never coerces to Absent."
+    },
+    {
+      "expected_for_review": {
+        "applicability": "gate == 'true'",
+        "gate": "unknown",
+        "reason": "required antipsychotic-association/alternative-cause context missing",
+        "status": "needs_clarification"
+      },
+      "id": "gate-missing-alternative-context",
+      "inputs": {
+        "candidate/history/parkinsonism.v1/h_p_amantadine_safety_concern": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_anticholinergic_safety_concern": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_assessment": "Present",
+        "candidate/history/parkinsonism.v1/h_p_current_anticholinergic_use": "No",
+        "candidate/history/parkinsonism.v1/h_p_dose_reduction_feasible": "Yes",
+        "candidate/history/parkinsonism.v1/h_p_older_age_vulnerability": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_other_anticholinergic_burden": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_preference_concern": "Present",
+        "candidate/history/parkinsonism.v1/h_p_prior_significant_parkinsonism": "No",
+        "candidate/history/parkinsonism.v1/h_p_psychotic_worsening_concern": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_switch_feasible": "Yes",
+        "candidate/history/parkinsonism.v1/h_p_tardive_concern": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_urgent_nms_concern": "Absent"
+      },
+      "note": "Candidate review expectation: missing alternative-cause context pauses; a missing association assessment is never mapped to NotEstablished and never treated as an established finding."
+    },
+    {
+      "expected_for_review": {
+        "applicability": "gate == 'true'",
+        "gate": "unknown",
+        "reason": "conflicting effect-status inputs",
+        "status": "needs_clarification"
+      },
+      "id": "gate-conflict-needs-clarification",
+      "inputs": {
+        "candidate/history/parkinsonism.v1/h_p_amantadine_safety_concern": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_anticholinergic_safety_concern": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_antipsychotic_association": "Established",
+        "candidate/history/parkinsonism.v1/h_p_assessment": [
+          "Present",
+          "Absent"
+        ],
+        "candidate/history/parkinsonism.v1/h_p_current_anticholinergic_use": "No",
+        "candidate/history/parkinsonism.v1/h_p_dose_reduction_feasible": "Yes",
+        "candidate/history/parkinsonism.v1/h_p_older_age_vulnerability": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_other_anticholinergic_burden": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_preference_concern": "Present",
+        "candidate/history/parkinsonism.v1/h_p_prior_significant_parkinsonism": "No",
+        "candidate/history/parkinsonism.v1/h_p_psychotic_worsening_concern": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_switch_feasible": "Yes",
+        "candidate/history/parkinsonism.v1/h_p_tardive_concern": "Absent",
+        "candidate/history/parkinsonism.v1/h_p_urgent_nms_concern": "Absent"
+      },
+      "note": "Candidate review expectation: conflicting required inputs pause; conflict never resolves by choosing one value and never coerces to Absent."
+    }
+  ],
+  "numerical": [
+    {
+      "classification": "Independent synthetic mathematical reference, not clinical calibration or clinical expected treatment",
+      "context_examples": [
+        {
+          "ParkinsonismAssessment": "Present"
+        },
+        {
+          "ParkinsonismAssessment": "Absent"
+        }
+      ],
+      "cpt_payload": {
+        "network_hash": "504e34c5e23967373292c43499e73dce8abe78fcd4d5c1986ddb018ed2730547",
+        "question_key": "parkinsonism",
+        "tables": [
+          {
+            "node_id": "ParkinsonismAssessment",
+            "parent_ids": [],
+            "states": [
+              "Present",
+              "Absent",
+              "Unresolved"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "50",
+                  "30",
+                  "20"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "ParkinsonismAntipsychoticAssociation",
+            "parent_ids": [],
+            "states": [
+              "Established",
+              "NotEstablished"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "60",
+                  "40"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "TardiveDyskinesiaConcern",
+            "parent_ids": [],
+            "states": [
+              "Present",
+              "Absent"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "25",
+                  "75"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "DoseReductionFeasible",
+            "parent_ids": [],
+            "states": [
+              "Yes",
+              "No"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "40",
+                  "60"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "LowerParkinsonismRiskSwitchFeasible",
+            "parent_ids": [],
+            "states": [
+              "Yes",
+              "No"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "50",
+                  "50"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "PsychoticWorseningConcern",
+            "parent_ids": [],
+            "states": [
+              "Present",
+              "Absent"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "30",
+                  "70"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "ParkinsonismMedicationPreferenceConcern",
+            "parent_ids": [],
+            "states": [
+              "Present",
+              "Absent"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "40",
+                  "60"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "OlderAgeVulnerability",
+            "parent_ids": [],
+            "states": [
+              "Present",
+              "Absent"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "35",
+                  "65"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "OtherAnticholinergicBurden",
+            "parent_ids": [],
+            "states": [
+              "Present",
+              "Absent"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "20",
+                  "80"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "AnticholinergicSafetyConcern",
+            "parent_ids": [],
+            "states": [
+              "Present",
+              "Absent"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "30",
+                  "70"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "CurrentParkinsonismAnticholinergicUse",
+            "parent_ids": [],
+            "states": [
+              "Yes",
+              "No"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "45",
+                  "55"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "PriorSignificantParkinsonism",
+            "parent_ids": [],
+            "states": [
+              "Yes",
+              "No"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "25",
+                  "75"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "AmantadineSafetyConcern",
+            "parent_ids": [],
+            "states": [
+              "Present",
+              "Absent"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "20",
+                  "80"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "ParkinsonismIndicationReview",
+            "parent_ids": [
+              "ParkinsonismAssessment",
+              "ParkinsonismAntipsychoticAssociation"
+            ],
+            "states": [
+              "EstablishedCurrentAssociation",
+              "AssessDifferentialAndAssociation",
+              "NoCurrentTreatmentRule"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "Present",
+                  "Established"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "NotEstablished"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "Established"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "NotEstablished"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Unresolved",
+                  "Established"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Unresolved",
+                  "NotEstablished"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "ParkinsonismAntipsychoticRegimenReview",
+            "parent_ids": [
+              "ParkinsonismIndicationReview",
+              "DoseReductionFeasible",
+              "LowerParkinsonismRiskSwitchFeasible",
+              "PsychoticWorseningConcern"
+            ],
+            "states": [
+              "ReviewDoseAndSwitch",
+              "ReviewDose",
+              "ReviewSwitch",
+              "ReviewConstraints",
+              "PrioritizePsychosisTradeoff",
+              "EstablishIndicationFirst"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "EstablishedCurrentAssociation",
+                  "Yes",
+                  "Yes",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "EstablishedCurrentAssociation",
+                  "Yes",
+                  "Yes",
+                  "Absent"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "EstablishedCurrentAssociation",
+                  "Yes",
+                  "No",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "EstablishedCurrentAssociation",
+                  "Yes",
+                  "No",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "EstablishedCurrentAssociation",
+                  "No",
+                  "Yes",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "EstablishedCurrentAssociation",
+                  "No",
+                  "Yes",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "EstablishedCurrentAssociation",
+                  "No",
+                  "No",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "EstablishedCurrentAssociation",
+                  "No",
+                  "No",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AssessDifferentialAndAssociation",
+                  "Yes",
+                  "Yes",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AssessDifferentialAndAssociation",
+                  "Yes",
+                  "Yes",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AssessDifferentialAndAssociation",
+                  "Yes",
+                  "No",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AssessDifferentialAndAssociation",
+                  "Yes",
+                  "No",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AssessDifferentialAndAssociation",
+                  "No",
+                  "Yes",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AssessDifferentialAndAssociation",
+                  "No",
+                  "Yes",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AssessDifferentialAndAssociation",
+                  "No",
+                  "No",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AssessDifferentialAndAssociation",
+                  "No",
+                  "No",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NoCurrentTreatmentRule",
+                  "Yes",
+                  "Yes",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NoCurrentTreatmentRule",
+                  "Yes",
+                  "Yes",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NoCurrentTreatmentRule",
+                  "Yes",
+                  "No",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NoCurrentTreatmentRule",
+                  "Yes",
+                  "No",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NoCurrentTreatmentRule",
+                  "No",
+                  "Yes",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NoCurrentTreatmentRule",
+                  "No",
+                  "Yes",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NoCurrentTreatmentRule",
+                  "No",
+                  "No",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NoCurrentTreatmentRule",
+                  "No",
+                  "No",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "AnticholinergicSafetyReview",
+            "parent_ids": [
+              "AnticholinergicSafetyConcern",
+              "OlderAgeVulnerability",
+              "OtherAnticholinergicBurden"
+            ],
+            "states": [
+              "EnhancedIndividualizedReview",
+              "RoutineIndividualizedReview"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "Present",
+                  "Present",
+                  "Present"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "Present",
+                  "Absent"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "Absent",
+                  "Present"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "Absent",
+                  "Absent"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "Present",
+                  "Present"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "Present",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "Absent",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "Absent",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "SymptomaticMedicationReview",
+            "parent_ids": [
+              "ParkinsonismIndicationReview",
+              "TardiveDyskinesiaConcern",
+              "ParkinsonismMedicationPreferenceConcern"
+            ],
+            "states": [
+              "ReviewTardiveDifferential",
+              "DiscussPatientConcerns",
+              "DiscussAnticholinergicOption",
+              "EstablishIndicationFirst"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "EstablishedCurrentAssociation",
+                  "Present",
+                  "Present"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "EstablishedCurrentAssociation",
+                  "Present",
+                  "Absent"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "EstablishedCurrentAssociation",
+                  "Absent",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "EstablishedCurrentAssociation",
+                  "Absent",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AssessDifferentialAndAssociation",
+                  "Present",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AssessDifferentialAndAssociation",
+                  "Present",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AssessDifferentialAndAssociation",
+                  "Absent",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AssessDifferentialAndAssociation",
+                  "Absent",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NoCurrentTreatmentRule",
+                  "Present",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NoCurrentTreatmentRule",
+                  "Present",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NoCurrentTreatmentRule",
+                  "Absent",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NoCurrentTreatmentRule",
+                  "Absent",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "ParkinsonismAnticholinergicContinuationReview",
+            "parent_ids": [
+              "CurrentParkinsonismAnticholinergicUse",
+              "ParkinsonismAssessment"
+            ],
+            "states": [
+              "ReviewLowestDoseAndDuration",
+              "ReassessNeedAndDifferential",
+              "NoCurrentContinuationRule"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "Yes",
+                  "Present"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "Unresolved"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Unresolved"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "AmantadineReview",
+            "parent_ids": [
+              "ParkinsonismIndicationReview",
+              "AmantadineSafetyConcern"
+            ],
+            "states": [
+              "DiscussAlternativeAndSafety",
+              "ReviewSpecificSafetyConcerns",
+              "EstablishIndicationFirst"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "EstablishedCurrentAssociation",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "EstablishedCurrentAssociation",
+                  "Absent"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AssessDifferentialAndAssociation",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "AssessDifferentialAndAssociation",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NoCurrentTreatmentRule",
+                  "Present"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "NoCurrentTreatmentRule",
+                  "Absent"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "ProphylaxisReview",
+            "parent_ids": [
+              "ParkinsonismAssessment",
+              "PriorSignificantParkinsonism"
+            ],
+            "states": [
+              "IndividualizedExceptionalRiskReview",
+              "NoRoutineProphylaxisRule",
+              "AddressCurrentAssessment"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "Present",
+                  "Yes"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Unresolved",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Unresolved",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "AmantadineReview": {
+          "DiscussAlternativeAndSafety": 0.24,
+          "EstablishIndicationFirst": 0.7,
+          "ReviewSpecificSafetyConcerns": 0.06
+        },
+        "AmantadineSafetyConcern": {
+          "Absent": 0.8,
+          "Present": 0.2
+        },
+        "AnticholinergicSafetyConcern": {
+          "Absent": 0.7,
+          "Present": 0.3
+        },
+        "AnticholinergicSafetyReview": {
+          "EnhancedIndividualizedReview": 0.349,
+          "RoutineIndividualizedReview": 0.651
+        },
+        "CurrentParkinsonismAnticholinergicUse": {
+          "No": 0.55,
+          "Yes": 0.45
+        },
+        "DoseReductionFeasible": {
+          "No": 0.6,
+          "Yes": 0.4
+        },
+        "LowerParkinsonismRiskSwitchFeasible": {
+          "No": 0.5,
+          "Yes": 0.5
+        },
+        "OlderAgeVulnerability": {
+          "Absent": 0.65,
+          "Present": 0.35
+        },
+        "OtherAnticholinergicBurden": {
+          "Absent": 0.8,
+          "Present": 0.2
+        },
+        "ParkinsonismAnticholinergicContinuationReview": {
+          "NoCurrentContinuationRule": 0.55,
+          "ReassessNeedAndDifferential": 0.225,
+          "ReviewLowestDoseAndDuration": 0.225
+        },
+        "ParkinsonismAntipsychoticRegimenReview": {
+          "EstablishIndicationFirst": 0.7,
+          "PrioritizePsychosisTradeoff": 0.018,
+          "ReviewConstraints": 0.09,
+          "ReviewDose": 0.06,
+          "ReviewDoseAndSwitch": 0.042,
+          "ReviewSwitch": 0.09
+        },
+        "ParkinsonismAssessment": {
+          "Absent": 0.3,
+          "Present": 0.5,
+          "Unresolved": 0.2
+        },
+        "ParkinsonismAntipsychoticAssociation": {
+          "Established": 0.6,
+          "NotEstablished": 0.4
+        },
+        "ParkinsonismIndicationReview": {
+          "AssessDifferentialAndAssociation": 0.4,
+          "EstablishedCurrentAssociation": 0.3,
+          "NoCurrentTreatmentRule": 0.3
+        },
+        "ParkinsonismMedicationPreferenceConcern": {
+          "Absent": 0.6,
+          "Present": 0.4
+        },
+        "PriorSignificantParkinsonism": {
+          "No": 0.75,
+          "Yes": 0.25
+        },
+        "ProphylaxisReview": {
+          "AddressCurrentAssessment": 0.375,
+          "IndividualizedExceptionalRiskReview": 0.125,
+          "NoRoutineProphylaxisRule": 0.5
+        },
+        "PsychoticWorseningConcern": {
+          "Absent": 0.7,
+          "Present": 0.3
+        },
+        "SymptomaticMedicationReview": {
+          "DiscussAnticholinergicOption": 0.135,
+          "DiscussPatientConcerns": 0.09,
+          "EstablishIndicationFirst": 0.7,
+          "ReviewTardiveDifferential": 0.075
+        },
+        "TardiveDyskinesiaConcern": {
+          "Absent": 0.75,
+          "Present": 0.25
+        }
+      },
+      "id": "full-graph-asymmetric-mathematical",
+      "inputs": {},
+      "work": "Indication Established=P(Assessment Present 0.5)*P(Assoc Established 0.6)=0.3. NoCurrent=P(Assessment Absent 0.3)=0.3. Assess=1-0.3-0.3=0.4=P(Present 0.5)*P(NotEst 0.4)+P(Unresolved 0.2)=0.2+0.2=0.4. Regimen within Established 0.3: DoseAndSwitch=0.3*P(DoseYes 0.4)*P(SwitchYes 0.5)*P(PsychAbsent 0.7)=0.3*0.14=0.042. Prioritize=0.3*0.4*0.5*0.3=0.3*0.06=0.018. ReviewDose=0.3*0.4*0.5=0.06. ReviewSwitch=0.3*0.6*0.5=0.09. Constraints=0.3*0.6*0.5=0.09. Establish=0.7. Sum=1.0. Swapping Dose and Switch (both binary with Yes 0.4 vs 0.5) gives ReviewDose 0.09 and ReviewSwitch 0.06 swapped, so a transpose bug fails. AnticholinergicSafety Enhanced=P(SafetyPresent 0.3)+P(SafetyAbsent 0.7)*P(OlderPresent 0.35)*P(BurdenPresent 0.2)=0.3+0.049=0.349. Routine=0.651. Sum=1.0. Swapping Safety (0.3) and Burden (0.2) gives Enhanced 0.2+0.8*0.35*0.3=0.2+0.084=0.284, so a transpose bug fails. Symptomatic TardiveDifferential=P(Est 0.3)*P(TardivePresent 0.25)=0.075. PatientConcerns=0.3*0.75*0.4=0.09. AnticholinergicOption=0.3*0.75*0.6=0.135. Establish=0.7. Sum=1.0. Swapping Tardive (0.25) and Preference (0.4) gives TardiveDifferential 0.12, so a transpose bug fails. Continuation Lowest=P(UseYes 0.45)*P(AssessmentPresent 0.5)=0.225. Reassess=0.45*(0.3+0.2)=0.225. NoRule=0.55. Sum=1.0. Swapping Use Yes/No gives Lowest 0.275, so a misassignment fails. Amantadine Specific=P(Est 0.3)*P(ConcernPresent 0.2)=0.06. Alternative=0.3*0.8=0.24. Establish=0.7. Sum=1.0. Prophylaxis Exceptional=P(Present 0.5)*P(PriorYes 0.25)=0.125. Address=0.5*0.75=0.375. NoRoutine=0.3+0.2=0.5. Sum=1.0. Swapping Prior Yes/No gives Exceptional 0.375, so a misassignment fails."
+    }
+  ]
+}
