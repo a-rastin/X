@@ -3,9 +3,9 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest recorded checkpoint is [S27](s27.md): pharmacotherapy draft green
-(T5: 128 model tests; `make check` green). Content remains `awaiting_review`;
-see the report for release blockers and the S29 handoff.
+The latest recorded checkpoint is [S29](s29.md): high_suicide_clozapine draft green
+(T5: 5 focused / 133 model tests; `make check` green). Content remains `awaiting_review`;
+see the report for release blockers and the S30 handoff.
 
 ## Reading and updating progress
 
@@ -59,3 +59,4 @@ see the report for release blockers and the S29 handoff.
 | S24 | [Model version administration + read-only graph (2026-10-06)](s24.md) |
 | S25 | [Define the reusable question-package contract and review harness (2026-10-06)](s25.md) |
 | S27 | [Build and verify the pharmacotherapy review draft (2026-10-09)](s27.md) |
+| S29 | [Build and verify the high_suicide_clozapine review draft (2026-10-09)](s29.md) |
