@@ -3,11 +3,11 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest recorded checkpoint is [S46](s46.md): ordered 5/6-question
-workflows via T1/T8 (pinned position, one eligible at a time) assembling
-the stored sections plus the pinned DDI report into one immutable
-proposal; 10 new workflow tests + 29 worker + 24 MCP/provider + 95 http +
-298 assessment/model regressions, ruff+mypy clean, DB at 0012; no frontend
+The latest recorded checkpoint is [S47](s47.md): bound mixed failures
+to one shared 3-attempt budget with backoff/Retry-After cap, resuming at
+the exact failed stage reusing persisted CPT/result artifacts; 12 new
+recovery tests + 39 worker + 24 MCP/provider + 95 http + 298
+assessment/model regressions, ruff+mypy clean, DB at 0012; no frontend
 change.
 Content approvals remain as recorded in S39.b; bundle release and activation
 retain their independent status.
@@ -83,3 +83,4 @@ retain their independent status.
 | S43 | [Bounded provider CPT estimation and tool bridging (2026-10-09)](s43.md) |
 | S45 | [Run one full synthetic clinical question end to end (2026-10-09)](s45.md) |
 | S46 | [Execute ordered workflows and assemble a complete proposal (2026-10-09)](s46.md) |
+| S47 | [Bound failures and recover at exact failed stage (2026-10-09)](s47.md) |

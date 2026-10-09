@@ -55,7 +55,10 @@ def run_once(
     Returns one of:
     - ``{'status': 'idle'}`` (no eligible work)
     - ``{'status': 'busy', ...}`` (slots saturated, work stays queued)
-    - ``{'status': 'succeeded'|'failed'|'cancelled', 'job_id': ...}``
+    - ``{'status': 'succeeded'|'failed'|'cancelled'|'queued', 'job_id': ...}``
+      (``queued`` = retryable failure, backoff persisted in
+      ``next_eligible_at``; the next ``run_once()`` past eligibility
+      consumes the next shared-budget attempt)
     - ``{'status': 'fencing_failed', ...}`` (old token lost the race)
     All observable via public run status (GET batch); no SQL-row asserts.
     """
@@ -121,6 +124,8 @@ def run_once(
                 provider_payload=dict(result.payload),
                 provider_error=result.error_code,
                 now=moment,
+                retryable=bool(result.retryable),
+                stage="estimating_cpts",
             )
         except contracts.ContractError as exc:
             if exc.code in (

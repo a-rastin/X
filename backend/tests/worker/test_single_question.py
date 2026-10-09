@@ -294,7 +294,7 @@ def _start_batch(client, csrf, encounter_id: str, revision: int, package: dict[s
     )
 
 
-def _run_bounded_once(engine, cpt_payload: dict[str, Any]):
+def _run_bounded_once(engine, cpt_payload: dict[str, Any], now: Any = None):
     endpoint = provider_module.DeterministicProviderEndpoint(
         script=[{"type": "final", "cpt": cpt_payload}]
     )
@@ -307,10 +307,31 @@ def _run_bounded_once(engine, cpt_payload: dict[str, Any]):
             config, grant_token="", database_url=db_module.get_test_database_url()
         )
         outcome = worker_module.run_once(
-            engine, adapter, database_url=db_module.get_test_database_url()
+            engine, adapter, now=now, database_url=db_module.get_test_database_url()
         )
     finally:
         endpoint.stop()
+    return outcome
+
+
+def _run_bounded_until_terminal(
+    engine, cpt_payload: dict[str, Any], now: Any = None
+) -> dict[str, Any]:
+    """Exhaust the S47 shared budget (initial + two retries, three total).
+
+    Retryable failures return the job to queued with persisted
+    ``next_eligible_at``; each subsequent call past eligibility consumes
+    the next attempt. Returns the terminal outcome.
+    """
+    from datetime import timedelta as _timedelta
+
+    moment = now or contracts.utcnow()
+    outcome = _run_bounded_once(engine, cpt_payload, now=moment)
+    for _ in range(2):
+        if outcome.get("status") in ("failed", "succeeded", "cancelled", "fencing_failed"):
+            return outcome
+        moment = moment + _timedelta(seconds=70)
+        outcome = _run_bounded_once(engine, cpt_payload, now=moment)
     return outcome
 
 
@@ -412,11 +433,12 @@ def test_missing_root_table_fails_without_baseline(clean_registry, monkeypatch) 
         ],
     }
 
-    outcome = _run_bounded_once(clean_registry, mutated)
+    outcome = _run_bounded_until_terminal(clean_registry, mutated)
     assert outcome["status"] == "failed", outcome
 
     body = client.get(f"/api/v1/generation-batches/{batch_id}").json()
     assert body["job"]["status"] == "failed", body["job"]
+    assert body["attempts"] == 3, "shared budget exhausts three total attempts"
     assert body["baseline"] is None, "failed originals persist no baseline"
     assert body["transparency"] is None
     review = client.get(f"/api/v1/question-runs/{run_id}/review")
@@ -454,11 +476,12 @@ def test_swapped_parent_structure_fails(clean_registry, monkeypatch) -> None:
         ],
     }
 
-    outcome = _run_bounded_once(clean_registry, mutated)
+    outcome = _run_bounded_until_terminal(clean_registry, mutated)
     assert outcome["status"] == "failed", outcome
 
     body = client.get(f"/api/v1/generation-batches/{batch_id}").json()
     assert body["job"]["status"] == "failed", body["job"]
+    assert body["attempts"] == 3, "shared budget exhausts three total attempts"
     assert body["baseline"] is None
     assert body["transparency"] is None
 
@@ -527,11 +550,12 @@ def test_provider_prose_extra_field_never_becomes_recommendation(
     payload["prose"] = "Take drug X now!"
     payload["recommendation"] = "LLM says yes"
 
-    outcome = _run_bounded_once(clean_registry, payload)
+    outcome = _run_bounded_until_terminal(clean_registry, payload)
     assert outcome["status"] == "failed", outcome
 
     body = client.get(f"/api/v1/generation-batches/{batch_id}").json()
     assert body["job"]["status"] == "failed"
+    assert body["attempts"] == 3, "shared budget exhausts three total attempts"
     assert body["baseline"] is None
     assert "Take drug" not in str(body)
 

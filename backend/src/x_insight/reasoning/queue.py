@@ -24,6 +24,7 @@ commit transaction fences on token + deployment generation.
 from __future__ import annotations
 
 import hashlib
+import random
 import secrets
 import uuid
 from datetime import datetime, timedelta
@@ -40,6 +41,61 @@ LEASE_SECONDS = 120
 MAX_PROVIDER_SLOTS = 2
 MAX_QUEUED_RUNS = 100
 MAX_ATTEMPTS = 3
+
+# S47 shared retry budget (plan §8.5): initial attempt + two retries, three
+# total across transport/validation/stage failures. One backoff function
+# serves every failure path (no nested adapter retries, no sleep holding a
+# lease transaction — eligibility is a persisted timestamp instead).
+RETRY_BASE_DELAY_SECONDS = 2.0
+RETRY_MAX_DELAY_SECONDS = 60.0
+
+# Config/content errors fail immediately; repair starts a new pinned run.
+# Everything else retries within the shared 3-attempt budget.
+NON_RETRYABLE_ERROR_CODES = frozenset(
+    {
+        "PROVIDER_AUTH",
+        "PROVIDER_MODEL",
+        "PROVIDER_CAPABILITY",
+        "PROVIDER_BUDGET_EXCEEDED",
+        "PROVIDER_TOOL_REJECTED",
+        "PROVIDER_CONTEXT",
+        "MISSING_PACKAGE",
+        "PACKAGE_INVALID",
+        "NETWORK_INVALID",
+        "NETWORK_TOO_LARGE",
+        "HASH_MISMATCH",
+    }
+)
+
+
+def is_retryable_error(error_code: str | None) -> bool:
+    """False for config/content errors, True for transient/stage failures."""
+    if not error_code:
+        return True
+    return str(error_code) not in NON_RETRYABLE_ERROR_CODES
+
+
+def compute_retry_delay(attempt_index: int, retry_after_seconds: float | None = None) -> float:
+    """Exponential backoff + bounded jitter, capped at 60s (shared cap).
+
+    ``attempt_index`` is the just-finished 1-based attempt (1 → ~2s,
+    2 → ~4s). ``retry_after_seconds`` (provider Retry-After when known)
+    raises the delay but never past the cap. Pure function (no sleep).
+    """
+    try:
+        index = max(1, int(attempt_index))
+    except Exception:
+        index = 1
+    delay = RETRY_BASE_DELAY_SECONDS * (2.0 ** (index - 1)) + random.uniform(0.0, 1.0)
+    if retry_after_seconds is not None:
+        try:
+            hint = float(retry_after_seconds)
+        except Exception:
+            hint = 0.0
+        if hint > 0:
+            delay = max(delay, min(hint, RETRY_MAX_DELAY_SECONDS))
+    return min(delay, RETRY_MAX_DELAY_SECONDS)
+
 
 GENERATION_CLASS = "generation"
 LOCAL_CALCULATION_CLASS = "local_calculation"
@@ -806,12 +862,22 @@ def _is_job_eligible(
     Returns (eligible, reason).
     """
     from x_insight.cases import encounters as encounters_service
+    from x_insight.cases import patients as patients_service
     from x_insight.identity import service as identity_service
     from x_insight.reasoning import snapshots as snapshots_service
 
     encounter = encounters_service.get_encounter(session, batch["encounter_id"])
     if encounter is None or encounter.get("lifecycle") != "draft":
         return False, "encounter not draft"
+    # S47 §4: analytical edits are covered by the fingerprint check below;
+    # discard/archive/deactivation fence here so late commits never land.
+    # Discard moves lifecycle off draft (above); archive flips the patient
+    # flag (no archive route until S51); deactivation clears author active.
+    patient_id = encounter.get("patient_id")
+    if patient_id is not None:
+        patient = patients_service.get_patient(session, patient_id)
+        if patient is None or bool(patient.get("archived", False)):
+            return False, "patient archived"
     author = identity_service.get_user_by_id(session, batch["author_id"])
     if author is None or not author.get("active", False):
         return False, "author inactive"
@@ -1114,6 +1180,10 @@ def commit_job_result(
     provider_payload: dict[str, Any] | None,
     provider_error: str | None = None,
     now: datetime | None = None,
+    retryable: bool = False,
+    stage: str = "preparing_question",
+    stage_artifact: dict[str, Any] | None = None,
+    retry_after_seconds: float | None = None,
 ) -> dict[str, Any]:
     """Commit a provider attempt result with fencing (separate transaction).
 
@@ -1121,6 +1191,13 @@ def commit_job_result(
     the deployment generation must match. Old tokens after reclaim never
     commit (409). Re-checks draft/author/freshness: stale/ineligible jobs
     cancel without committing late artifacts. Returns the committed job.
+
+    S47 shared budget: retryable failures with attempts remaining return
+    the job to ``queued`` with ``next_eligible_at`` (exponential backoff +
+    bounded jitter, max 60s) instead of failing; the attempt ledger keeps
+    the failed stage + error. Exhausted (attempts >= max) or non-retryable
+    failures mark ``failed``. Success clears eligibility state. No sleep
+    holds any transaction; the caller already finished outbound work.
     """
     moment = now or contracts.utcnow()
     row = (
@@ -1216,12 +1293,45 @@ def commit_job_result(
         assert cancelled is not None
         return dict(cancelled)
     final_status = SUCCEEDED if provider_ok else FAILED
+    next_eligible: datetime | None = None
+    if not provider_ok and bool(retryable) and is_retryable_error(provider_error):
+        try:
+            used = int(job.get("attempt_index", 0))
+        except Exception:
+            used = 0
+        try:
+            budget = int(job.get("max_attempts", MAX_ATTEMPTS))
+        except Exception:
+            budget = MAX_ATTEMPTS
+        if used < budget:
+            final_status = QUEUED
+            delay = compute_retry_delay(used, retry_after_seconds)
+            next_eligible = moment + timedelta(seconds=delay)
+    existing_diag = job.get("diagnostics")
+    merged_diag: dict[str, Any] = dict(existing_diag) if isinstance(existing_diag, dict) else {}
+    if not provider_ok:
+        merged_diag["last_error"] = provider_error or "PROVIDER_FAILED"
+        merged_diag["last_stage"] = stage
+        try:
+            merged_diag["attempts_used"] = int(job.get("attempt_index", 0))
+        except Exception:
+            pass
+        if isinstance(stage_artifact, dict) and stage_artifact:
+            artifacts = merged_diag.get("stage_artifacts")
+            if not isinstance(artifacts, dict):
+                artifacts = {}
+            else:
+                artifacts = dict(artifacts)
+            artifacts.update(dict(stage_artifact))
+            merged_diag["stage_artifacts"] = artifacts
     session.execute(
         update(reasoning_tables.reasoning_jobs)
         .where(reasoning_tables.reasoning_jobs.c.id == job_id)
         .values(
             lease_token=None,
             status=final_status,
+            next_eligible_at=next_eligible,
+            diagnostics=merged_diag,
             result=dict(provider_payload or {}),
             updated_at=moment,
         )
@@ -1235,6 +1345,7 @@ def commit_job_result(
         )
         .values(
             finished_at=moment,
+            stage=stage,
             outcome="succeeded" if provider_ok else "failed",
             error_code=None if provider_ok else (provider_error or "PROVIDER_FAILED"),
             result=dict(provider_payload or {}),

@@ -587,9 +587,16 @@ def _workflow_batch_status(statuses: list[str]) -> str:
     return NOT_APPLICABLE
 
 
-def _first_eligible_index(statuses: list[str]) -> int | None:
-    """Index of the first eligible ready run (skips not_applicable, stops on clarification)."""
+def _first_eligible_index(statuses: list[str], skip: set[int] | None = None) -> int | None:
+    """Index of the first eligible ready run (skips not_applicable, stops on clarification).
+
+    ``skip`` holds positions already solved (S47 carried baselines): they
+    need no job, and successors after them stay eligible.
+    """
+    skipped = skip or set()
     for index, status in enumerate(statuses):
+        if index in skipped:
+            continue
         if status == NOT_APPLICABLE:
             continue
         if status == NEEDS_CLARIFICATION:
@@ -597,6 +604,66 @@ def _first_eligible_index(statuses: list[str]) -> int | None:
         if status == READY:
             return index
     return None
+
+
+def _carried_baselines(
+    session: Session,
+    encounter_id: uuid.UUID,
+    fingerprint: str,
+    question_keys: list[str],
+) -> dict[str, dict[str, Any]]:
+    """Latest accepted baseline per question under the same fingerprint (S47).
+
+    Author retry of an unchanged failed stage starts a new bounded batch;
+    questions already solved under identical facts + pinned content carry
+    their immutable baselines forward, so the new batch resumes at the
+    failed stage with no new provider request for earlier questions.
+    Returns {question_key: baseline row} (at most one per key, newest first).
+    """
+    wanted = set(question_keys)
+    carried: dict[str, dict[str, Any]] = {}
+    if not wanted:
+        return carried
+    prior_ids = [
+        row[0]
+        for row in session.execute(
+            select(reasoning_tables.generation_batches.c.id)
+            .where(
+                reasoning_tables.generation_batches.c.encounter_id == encounter_id,
+                reasoning_tables.generation_batches.c.fingerprint == fingerprint,
+            )
+            .order_by(reasoning_tables.generation_batches.c.created_at.desc())
+        ).all()
+    ]
+    for batch_id in prior_ids:
+        if len(carried) >= len(wanted):
+            break
+        runs = (
+            session.execute(
+                select(
+                    reasoning_tables.question_runs.c.id,
+                    reasoning_tables.question_runs.c.question_key,
+                ).where(reasoning_tables.question_runs.c.batch_id == batch_id)
+            )
+            .mappings()
+            .all()
+        )
+        for entry in runs:
+            key = str(entry["question_key"])
+            if key not in wanted or key in carried:
+                continue
+            stored = (
+                session.execute(
+                    select(reasoning_tables.original_baselines).where(
+                        reasoning_tables.original_baselines.c.question_run_id == entry["id"]
+                    )
+                )
+                .mappings()
+                .first()
+            )
+            if stored is not None:
+                carried[key] = dict(stored)
+    return carried
 
 
 def start_generation_batch(
@@ -707,7 +774,6 @@ def start_generation_batch(
         statuses.append(status)
         reasons.append(reason)
     batch_status = _workflow_batch_status(statuses)
-    first_eligible = _first_eligible_index(statuses)
 
     # S44 admission (lazy import: queue imports snapshots for eligibility).
     from x_insight.reasoning import queue as queue_module
@@ -735,6 +801,13 @@ def start_generation_batch(
         assert batch is not None
         runs = _list_runs(session, reusable["id"])
         return batch, runs
+
+    # S47 author retry: identical facts + pinned content carry already
+    # accepted baselines into the new bounded batch, so it resumes at the
+    # failed stage (earlier questions cost no new provider request).
+    carried = _carried_baselines(session, encounter_id, fingerprint, requested_keys)
+    carried_positions = {index for index, key in enumerate(requested_keys) if key in carried}
+    first_eligible = _first_eligible_index(statuses, carried_positions)
 
     batch_id = uuid.uuid4()
     session.execute(
@@ -787,8 +860,41 @@ def start_generation_batch(
             )
         )
     session.flush()
+    # S47 carried baselines: copy accepted rows onto the new runs (new
+    # identities, identical artifact data, retry provenance). Old batches
+    # stay immutable history; the new batch resumes at the failed stage.
+    for position, run_id in enumerate(run_ids):
+        old = carried.get(requested_keys[position])
+        if old is None:
+            continue
+        provenance = dict(old.get("provenance") or {})
+        provenance["retried_from_baseline_id"] = str(old.get("id"))
+        session.execute(
+            insert(reasoning_tables.original_baselines).values(
+                id=uuid.uuid4(),
+                question_run_id=run_id,
+                batch_id=batch_id,
+                source_hash=str(old.get("source_hash")),
+                effective_xml=str(old.get("effective_xml")),
+                effective_hash=str(old.get("effective_hash")),
+                raw_response=dict(old.get("raw_response") or {}),
+                validated_tables=list(old.get("validated_tables") or []),
+                query_nodes=list(old.get("query_nodes") or []),
+                posteriors=list(old.get("posteriors") or []),
+                section_text=str(old.get("section_text")),
+                template_version=str(old.get("template_version")),
+                prompt_version=str(old.get("prompt_version")),
+                network_version=str(old.get("network_version")),
+                provider_model=str(old.get("provider_model")),
+                projection_hash=str(old.get("projection_hash")),
+                provenance=provenance,
+                created_at=moment,
+            )
+        )
+    session.flush()
     # Enqueue only the first eligible ready run (ordered eligibility;
-    # not_applicable needs no job, needs_clarification blocks successors).
+    # not_applicable needs no job, needs_clarification blocks successors;
+    # carried runs are already solved).
     if first_eligible is not None:
         queue_module.insert_initial_job(
             session,
@@ -797,6 +903,16 @@ def start_generation_batch(
             deployment_generation=int(deployment_generation),
             now=moment,
         )
+        session.flush()
+    elif batch_status == READY and all(
+        position in carried_positions or status != READY for position, status in enumerate(statuses)
+    ):
+        # Full retry: every applicable question already solved under this
+        # fingerprint — assemble the immutable proposal now (same rules as
+        # the worker path, no LLM writing).
+        from x_insight.reasoning import coordinator as coordinator_module
+
+        coordinator_module.try_assemble_proposal(session, batch_id, moment)
         session.flush()
     # Full DDI report is NOT stored in pinned_bundle (it carries
     # ``generated_at`` which would destabilize the fingerprint). The stable
@@ -813,6 +929,7 @@ def start_generation_batch(
             "encounter_id": str(encounter_id),
             "batch_id": str(batch_id),
             "question_keys": requested_keys,
+            "carried_question_keys": sorted(carried),
             "source_revision": expected_revision,
             "status": batch_status,
         },

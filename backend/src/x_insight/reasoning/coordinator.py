@@ -641,12 +641,78 @@ def build_transparency(
     }
 
 
+def _resume_bundle(
+    job: Mapping[str, Any], manifest: Mapping[str, Any], run: Mapping[str, Any]
+) -> dict[str, Any] | None:
+    """Accepted stage artifacts from a prior attempt of this same job (S47).
+
+    Returns ``{"kind": "render", ...}`` (resume template rendering from the
+    stored inference result) or ``{"kind": "infer", ...}`` (resume inference
+    from the stored CPTs without re-estimating), or None for a fresh
+    estimate. Bundles only match the same pinned network + projection; a
+    mismatch (new inputs) never reuses stale artifacts.
+    """
+    diagnostics = job.get("diagnostics")
+    store = diagnostics.get("stage_artifacts") if isinstance(diagnostics, dict) else None
+    if not isinstance(store, dict):
+        return None
+    want_network = str(manifest.get("network_hash") or "")
+    want_projection = str(run.get("projection_hash") or "")
+    for key, kind in (("s47_inference", "render"), ("s47_validated", "infer")):
+        bundle = store.get(key)
+        if not isinstance(bundle, dict):
+            continue
+        if str(bundle.get("network_hash") or "") != want_network:
+            continue
+        if str(bundle.get("projection_hash") or "") != want_projection:
+            continue
+        if not isinstance(bundle.get("tables"), list) or not bundle["tables"]:
+            continue
+        if kind == "render":
+            if not isinstance(bundle.get("posteriors"), list) or not bundle["posteriors"]:
+                continue
+            if not isinstance(bundle.get("effective_xml"), str) or not bundle["effective_xml"]:
+                continue
+            if not isinstance(bundle.get("effective_hash"), str):
+                continue
+            if not isinstance(bundle.get("validated_tables"), list):
+                continue
+        return {"kind": kind, **{k: v for k, v in bundle.items()}}
+    return None
+
+
+def _validated_bundle(
+    network_hash: str,
+    projection_hash: str,
+    tables: Any,
+    validated_json: list[dict[str, Any]] | None,
+    payload: Mapping[str, Any],
+) -> dict[str, Any]:
+    """Stage artifact persisted when inference fails (resume without re-estimating)."""
+    meta = payload if isinstance(payload, Mapping) else {}
+    return {
+        "s47_validated": {
+            "network_hash": str(network_hash),
+            "projection_hash": str(projection_hash),
+            "tables": tables,
+            "validated_tables": list(validated_json or []),
+            "payload_meta": {
+                "tool_calls_made": int(meta.get("tool_calls_made", 0) or 0),
+                "capability": str(meta.get("capability", "") or ""),
+            },
+        }
+    }
+
+
 def _commit_failure(
     engine: Engine,
     job_id: Any,
     lease_token: str,
     error_code: str,
     now: datetime,
+    retryable: bool = False,
+    stage: str = "preparing_question",
+    stage_artifact: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     with db_module.session_scope(engine) as session:
         try:
@@ -658,6 +724,9 @@ def _commit_failure(
                 provider_payload={},
                 provider_error=error_code,
                 now=now,
+                retryable=retryable,
+                stage=stage,
+                stage_artifact=stage_artifact,
             )
         except contracts.ContractError as exc:
             if exc.code in (
@@ -748,82 +817,238 @@ def execute_claimed_job(
             "batch_id": str(batch.get("id")),
         }
 
-    # Bounded estimation over real MCP (initial + tool-bridged reads).
-    try:
-        request = build_provider_request(run, batch, package)
-    except Exception:
-        return {
-            **_commit_failure(engine, job_id, lease_token, "PROVIDER_CAPABILITY", now),
-            "worker_id": worker_id,
-            "batch_id": str(batch.get("id")),
-        }
-    try:
-        estimate = adapter.estimate(request)
-    except Exception:
-        return {
-            **_commit_failure(engine, job_id, lease_token, "PROVIDER_TRANSIENT", now),
-            "worker_id": worker_id,
-            "batch_id": str(batch.get("id")),
-        }
-    if not bool(getattr(estimate, "ok", False)):
-        code = str(getattr(estimate, "error_code", None) or "PROVIDER_FAILED")
-        return {
-            **_commit_failure(engine, job_id, lease_token, code, now),
-            "worker_id": worker_id,
-            "batch_id": str(batch.get("id")),
-        }
-    payload = getattr(estimate, "payload", {}) or {}
-    if not isinstance(payload, dict):
-        return {
-            **_commit_failure(engine, job_id, lease_token, "PROVIDER_INVALID_RESPONSE", now),
-            "worker_id": worker_id,
-            "batch_id": str(batch.get("id")),
-        }
-    tables = payload.get("tables")
-    network_hash = payload.get("network_hash", manifest.get("network_hash"))
-    s23_payload: dict[str, Any] = {"network_hash": network_hash, "tables": tables}
-
-    # All-CPT validation against the registered document (no defaults).
-    try:
-        cpt_report = validate_cpts(document, s23_payload)
-    except Exception:
-        return {
-            **_commit_failure(engine, job_id, lease_token, "CPT_INVALID", now),
-            "worker_id": worker_id,
-            "batch_id": str(batch.get("id")),
-        }
-    if not cpt_report.valid:
-        cpt_first = cpt_report.errors[0] if cpt_report.errors else None
-        code = str(cpt_first.code).upper() if cpt_first is not None else "CPT_INVALID"
-        return {
-            **_commit_failure(engine, job_id, lease_token, code, now),
-            "worker_id": worker_id,
-            "batch_id": str(batch.get("id")),
-        }
-
-    # Effective XML (new run-local bytes; registered source untouched).
+    # S47 stage resume: a prior attempt of this job may have persisted
+    # accepted CPTs (resume inference without a new provider request) or a
+    # full inference result (resume rendering). Fresh attempts estimate.
+    resume = _resume_bundle(job, manifest, run)
+    render_posteriors_source: Any = None
+    posteriors_json: list[dict[str, Any]] = []
+    validated_json: list[dict[str, Any]] = []
+    raw_json: dict[str, Any] = {}
+    effective_text = ""
+    effective_hash = ""
     query_nodes = list(manifest.get("query_nodes", []))
-    try:
-        artifact = build_effective_artifact(document, s23_payload, query_nodes=query_nodes or None)
-    except Exception as exc:
-        code = getattr(exc, "code", "EFFECTIVE_INVALID")
-        return {
-            **_commit_failure(engine, job_id, lease_token, str(code).upper(), now),
-            "worker_id": worker_id,
-            "batch_id": str(batch.get("id")),
-        }
-    # Empty-evidence exact inference (projection is provenance only).
-    try:
-        inference = infer_effective(artifact, patient_projection=run.get("projection"))
-    except Exception as exc:
-        code = getattr(exc, "code", "INFERENCE_FAILED")
-        return {
-            **_commit_failure(engine, job_id, lease_token, str(code).upper(), now),
-            "worker_id": worker_id,
-            "batch_id": str(batch.get("id")),
-        }
+    payload: dict[str, Any] = {}
+    cpt_report: Any = None
+    artifact: Any = None
+    inference: Any = None
+
+    if resume is not None and resume.get("kind") == "render":
+        # Rendering retry reuses the stored result (no provider/inference).
+        posteriors_json = [dict(p) for p in resume["posteriors"] if isinstance(p, dict)]
+        validated_json = list(resume["validated_tables"])
+        raw_json = {"network_hash": resume["network_hash"], "tables": resume["tables"]}
+        effective_text = str(resume["effective_xml"])
+        effective_hash = str(resume["effective_hash"])
+        if isinstance(resume.get("query_nodes"), list) and resume["query_nodes"]:
+            query_nodes = [str(q) for q in resume["query_nodes"]]
+        meta = resume.get("payload_meta")
+        payload = dict(meta) if isinstance(meta, dict) else {}
+        render_posteriors_source = list(posteriors_json)
+    else:
+        resumed_tables: Any = None
+        if resume is not None and resume.get("kind") == "infer":
+            resumed_tables = resume["tables"]
+            meta = resume.get("payload_meta")
+            payload = dict(meta) if isinstance(meta, dict) else {}
+        # Bounded estimation over real MCP (initial + tool-bridged reads).
+        # Skipped only when resuming inference from accepted CPTs.
+        tables: Any = resumed_tables
+        network_hash: Any = manifest.get("network_hash")
+        if resumed_tables is None:
+            try:
+                request = build_provider_request(run, batch, package)
+            except Exception:
+                return {
+                    **_commit_failure(engine, job_id, lease_token, "PROVIDER_CAPABILITY", now),
+                    "worker_id": worker_id,
+                    "batch_id": str(batch.get("id")),
+                }
+            try:
+                estimate = adapter.estimate(request)
+            except Exception:
+                return {
+                    **_commit_failure(
+                        engine,
+                        job_id,
+                        lease_token,
+                        "PROVIDER_TRANSIENT",
+                        now,
+                        retryable=True,
+                        stage="estimating_cpts",
+                    ),
+                    "worker_id": worker_id,
+                    "batch_id": str(batch.get("id")),
+                }
+            if not bool(getattr(estimate, "ok", False)):
+                code = str(getattr(estimate, "error_code", None) or "PROVIDER_FAILED")
+                return {
+                    **_commit_failure(
+                        engine,
+                        job_id,
+                        lease_token,
+                        code,
+                        now,
+                        retryable=bool(getattr(estimate, "retryable", False)),
+                        stage="estimating_cpts",
+                    ),
+                    "worker_id": worker_id,
+                    "batch_id": str(batch.get("id")),
+                }
+            payload = getattr(estimate, "payload", {}) or {}
+            if not isinstance(payload, dict):
+                return {
+                    **_commit_failure(
+                        engine,
+                        job_id,
+                        lease_token,
+                        "PROVIDER_INVALID_RESPONSE",
+                        now,
+                        retryable=True,
+                        stage="validating_cpts",
+                    ),
+                    "worker_id": worker_id,
+                    "batch_id": str(batch.get("id")),
+                }
+            tables = payload.get("tables")
+            network_hash = payload.get("network_hash", manifest.get("network_hash"))
+        s23_payload = {"network_hash": network_hash, "tables": tables}
+
+        # All-CPT validation against the registered document (no defaults).
+        # Resumed CPTs revalidate locally (no provider request); accepted
+        # tables were already valid under this same pinned package.
+        try:
+            cpt_report = validate_cpts(document, s23_payload)
+        except Exception:
+            return {
+                **_commit_failure(
+                    engine,
+                    job_id,
+                    lease_token,
+                    "CPT_INVALID",
+                    now,
+                    retryable=True,
+                    stage="validating_cpts",
+                ),
+                "worker_id": worker_id,
+                "batch_id": str(batch.get("id")),
+            }
+        if not cpt_report.valid:
+            cpt_first = cpt_report.errors[0] if cpt_report.errors else None
+            code = str(cpt_first.code).upper() if cpt_first is not None else "CPT_INVALID"
+            return {
+                **_commit_failure(
+                    engine,
+                    job_id,
+                    lease_token,
+                    code,
+                    now,
+                    retryable=True,
+                    stage="validating_cpts",
+                ),
+                "worker_id": worker_id,
+                "batch_id": str(batch.get("id")),
+            }
+
+        # Effective XML (new run-local bytes; registered source untouched).
+        try:
+            artifact = build_effective_artifact(
+                document, s23_payload, query_nodes=query_nodes or None
+            )
+        except Exception as exc:
+            code = getattr(exc, "code", "EFFECTIVE_INVALID")
+            return {
+                **_commit_failure(
+                    engine,
+                    job_id,
+                    lease_token,
+                    str(code).upper(),
+                    now,
+                    retryable=True,
+                    stage="inferring",
+                    stage_artifact=_validated_bundle(
+                        str(network_hash),
+                        str(run.get("projection_hash", "")),
+                        tables,
+                        _validated_tables_to_json(cpt_report),
+                        payload,
+                    ),
+                ),
+                "worker_id": worker_id,
+                "batch_id": str(batch.get("id")),
+            }
+        # Empty-evidence exact inference (projection is provenance only).
+        try:
+            inference = infer_effective(artifact, patient_projection=run.get("projection"))
+        except Exception as exc:
+            code = getattr(exc, "code", "INFERENCE_FAILED")
+            return {
+                **_commit_failure(
+                    engine,
+                    job_id,
+                    lease_token,
+                    str(code).upper(),
+                    now,
+                    retryable=True,
+                    stage="inferring",
+                    stage_artifact=_validated_bundle(
+                        str(network_hash),
+                        str(run.get("projection_hash", "")),
+                        tables,
+                        _validated_tables_to_json(cpt_report),
+                        payload,
+                    ),
+                ),
+                "worker_id": worker_id,
+                "batch_id": str(batch.get("id")),
+            }
+        render_posteriors_source = list(inference.posteriors)
+        posteriors_json = _posteriors_to_json(list(inference.posteriors))
+        validated_json = _validated_tables_to_json(cpt_report)
+        raw_json = {"network_hash": network_hash, "tables": tables}
+        try:
+            effective_text = bytes(artifact.effective_bytes).decode("utf-8")
+        except Exception:
+            return {
+                **_commit_failure(
+                    engine,
+                    job_id,
+                    lease_token,
+                    "EFFECTIVE_INVALID",
+                    now,
+                    retryable=True,
+                    stage="rendering",
+                    stage_artifact={
+                        **_validated_bundle(
+                            str(network_hash),
+                            str(run.get("projection_hash", "")),
+                            tables,
+                            _validated_tables_to_json(cpt_report),
+                            payload,
+                        ),
+                        "s47_inference": {
+                            "network_hash": str(network_hash),
+                            "projection_hash": str(run.get("projection_hash", "")),
+                            "tables": tables,
+                            "validated_tables": _validated_tables_to_json(cpt_report),
+                            "posteriors": _posteriors_to_json(list(inference.posteriors)),
+                            "query_nodes": list(query_nodes),
+                            "effective_xml": "",
+                            "effective_hash": str(artifact.effective_sha256),
+                            "payload_meta": {
+                                "tool_calls_made": int(payload.get("tool_calls_made", 0) or 0),
+                                "capability": str(payload.get("capability", "") or ""),
+                            },
+                        },
+                    },
+                ),
+                "worker_id": worker_id,
+                "batch_id": str(batch.get("id")),
+            }
+        effective_hash = str(artifact.effective_sha256)
 
     # Local template rendering from the reviewed mapping + stored result.
+    # Resumed attempts render the persisted posteriors (never provider text).
     declared_states: dict[str, Sequence[str]] = {}
     variables = manifest.get("variables", [])
     if isinstance(variables, (list, tuple)):
@@ -833,27 +1058,47 @@ def execute_claimed_job(
                 if isinstance(states, (list, tuple)):
                     declared_states[str(entry["node_id"])] = [str(s) for s in states]
     try:
-        section = render_section(template, list(inference.posteriors), declared_states)
+        section = render_section(template, list(render_posteriors_source), declared_states)
     except ValueError as exc:
         code = str(exc).split(":", 1)[0].strip() or "TEMPLATE_INVALID"
         return {
-            **_commit_failure(engine, job_id, lease_token, code, now),
+            **_commit_failure(
+                engine,
+                job_id,
+                lease_token,
+                code,
+                now,
+                retryable=True,
+                stage="rendering",
+                stage_artifact={
+                    **_validated_bundle(
+                        str(raw_json.get("network_hash", "")),
+                        str(run.get("projection_hash", "")),
+                        raw_json.get("tables"),
+                        validated_json or None,
+                        payload,
+                    ),
+                    "s47_inference": {
+                        "network_hash": str(raw_json.get("network_hash", "")),
+                        "projection_hash": str(run.get("projection_hash", "")),
+                        "tables": raw_json.get("tables"),
+                        "validated_tables": list(validated_json),
+                        "posteriors": list(posteriors_json),
+                        "query_nodes": list(query_nodes),
+                        "effective_xml": str(effective_text),
+                        "effective_hash": str(effective_hash),
+                        "payload_meta": {
+                            "tool_calls_made": int(payload.get("tool_calls_made", 0) or 0),
+                            "capability": str(payload.get("capability", "") or ""),
+                        },
+                    },
+                },
+            ),
             "worker_id": worker_id,
             "batch_id": str(batch.get("id")),
         }
 
     # Atomic success: fencing + eligibility + baseline insert + job success.
-    posteriors_json = _posteriors_to_json(list(inference.posteriors))
-    validated_json = _validated_tables_to_json(cpt_report)
-    raw_json: dict[str, Any] = {"network_hash": network_hash, "tables": tables}
-    try:
-        effective_text = bytes(artifact.effective_bytes).decode("utf-8")
-    except Exception:
-        return {
-            **_commit_failure(engine, job_id, lease_token, "EFFECTIVE_INVALID", now),
-            "worker_id": worker_id,
-            "batch_id": str(batch.get("id")),
-        }
     model_name = ""
     try:
         model_name = str(adapter.config.model or "")
@@ -872,7 +1117,7 @@ def execute_claimed_job(
         "tool_calls_made": int(payload.get("tool_calls_made", 0) or 0),
         "capability": str(payload.get("capability", "") or ""),
         "query_nodes": list(query_nodes),
-        "effective_hash": str(artifact.effective_sha256),
+        "effective_hash": str(effective_hash),
     }
     with db_module.session_scope(engine) as session:
         # Same fencing as queue.commit_job_result, kept inline so the
@@ -988,7 +1233,7 @@ def execute_claimed_job(
                     batch_id=batch["id"],
                     source_hash=str(document.source_sha256),
                     effective_xml=effective_text,
-                    effective_hash=str(artifact.effective_sha256),
+                    effective_hash=str(effective_hash),
                     raw_response=dict(raw_json),
                     validated_tables=list(validated_json),
                     query_nodes=list(query_nodes),
@@ -1011,7 +1256,7 @@ def execute_claimed_job(
                 status=queue_module.SUCCEEDED,
                 result={
                     "projection_hash": str(run.get("projection_hash", "")),
-                    "effective_hash": str(artifact.effective_sha256),
+                    "effective_hash": str(effective_hash),
                     "query_nodes": list(query_nodes),
                     "posteriors": list(posteriors_json),
                 },
@@ -1031,7 +1276,7 @@ def execute_claimed_job(
                 error_code=None,
                 result={
                     "projection_hash": str(run.get("projection_hash", "")),
-                    "effective_hash": str(artifact.effective_sha256),
+                    "effective_hash": str(effective_hash),
                 },
             )
         )
