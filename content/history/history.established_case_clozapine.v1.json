@@ -1,0 +1,470 @@
+{
+  "schema_version": "candidate-history-additions-v1",
+  "version": "established_case_clozapine.v1",
+  "status": "awaiting_review",
+  "extends": "history.v1",
+  "purpose": "Isolated S32 review proposal; not loaded by runtime, not replacing or approving v1. No medication regimen fields. Established status gates applicability; trial-adequacy and observation-window context use window attribution with no invented thresholds.",
+  "fields": [
+    {
+      "id": "h_schizophrenia_established",
+      "source_path": "candidate/history/established_case_clozapine.v1/h_schizophrenia_established",
+      "node_id": "SchizophreniaEstablished",
+      "permitted": [
+        "Yes",
+        "No",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Schizophrenia status represented by the scenario; registration diagnosis review establishes Yes/No for this encounter.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-07.md \u2014 Identification of Treatment-Resistant Schizophrenia, p. 88; diagnosis v1 supplies structured diagnosis, this field is the reviewed encounter synthesis",
+      "source_sha256": "b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57",
+      "operationalization": "Yes requires a documented current schizophrenia diagnosis review at this encounter; No requires a documented assessment finding schizophrenia not established (first-time case). Unknown assessment pauses. Copied baseline requires reconciliation. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Yes": "Yes",
+        "No": "No"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_persistent_symptoms",
+      "source_path": "candidate/history/established_case_clozapine.v1/h_persistent_symptoms",
+      "node_id": "PersistentSignificantSymptoms",
+      "permitted": [
+        "Yes",
+        "No",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Persistent significant symptoms represented in the scenario, with symptom-domain note where recorded.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-07.md \u2014 Identification of Treatment-Resistant Schizophrenia, p. 88",
+      "source_sha256": "b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57",
+      "operationalization": "Yes requires clinician-recorded persistent significant symptoms despite pharmacological treatment; No requires assessment finding no such persistence. Unknown pauses. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Yes": "Yes",
+        "No": "No"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_trial1_assessment",
+      "source_path": "candidate/history/established_case_clozapine.v1/h_trial1_assessment",
+      "node_id": "Trial1Assessment",
+      "permitted": [
+        "AdequateSuboptimalResponse",
+        "AdequateSatisfactoryResponse",
+        "InadequateExposure",
+        "TruncatedByIntolerance",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "First prior antipsychotic trial categorized by exposure adequacy, response or intolerance; agents and changes only, no regimen details.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-07.md \u2014 Identification of Treatment-Resistant Schizophrenia, p. 88 (treatment adequacy review)",
+      "source_sha256": "b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57",
+      "operationalization": "Assessment cites the prior trial agent and window with exposure/response/intolerance category. Duration, dose and adherence thresholds require owner review; none are set here. Missing assessment pauses and is never coerced to an adequate-trial finding. No dose/route/frequency collected. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "AdequateSuboptimalResponse": "AdequateSuboptimalResponse",
+        "AdequateSatisfactoryResponse": "AdequateSatisfactoryResponse",
+        "InadequateExposure": "InadequateExposure",
+        "TruncatedByIntolerance": "TruncatedByIntolerance"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_trial2_assessment",
+      "source_path": "candidate/history/established_case_clozapine.v1/h_trial2_assessment",
+      "node_id": "Trial2Assessment",
+      "permitted": [
+        "AdequateSuboptimalResponse",
+        "AdequateSatisfactoryResponse",
+        "InadequateExposure",
+        "TruncatedByIntolerance",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Second prior antipsychotic trial categorized by exposure adequacy, response or intolerance; agents and changes only, no regimen details.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-07.md \u2014 Identification of Treatment-Resistant Schizophrenia, p. 88 (treatment adequacy review)",
+      "source_sha256": "b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57",
+      "operationalization": "Assessment cites the prior trial agent and window with exposure/response/intolerance category. Duration, dose and adherence thresholds require owner review; none are set here. Missing assessment pauses and is never coerced to an adequate-trial finding. No dose/route/frequency collected. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "AdequateSuboptimalResponse": "AdequateSuboptimalResponse",
+        "AdequateSatisfactoryResponse": "AdequateSatisfactoryResponse",
+        "InadequateExposure": "InadequateExposure",
+        "TruncatedByIntolerance": "TruncatedByIntolerance"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_trials_different_drugs",
+      "source_path": "candidate/history/established_case_clozapine.v1/h_trials_different_drugs",
+      "node_id": "TrialsUseDifferentDrugs",
+      "permitted": [
+        "Yes",
+        "No",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Whether the two prior trials used different antipsychotic agents.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-07.md \u2014 Identification of Treatment-Resistant Schizophrenia, p. 88",
+      "source_sha256": "b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57",
+      "operationalization": "Yes requires two documented distinct trial agents; No requires documented same-agent trials. Unknown pauses. Agent identities only; no regimen details. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Yes": "Yes",
+        "No": "No"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_symptoms_12_weeks",
+      "source_path": "candidate/history/established_case_clozapine.v1/h_symptoms_12_weeks",
+      "node_id": "SymptomsAtLeast12Weeks",
+      "permitted": [
+        "Yes",
+        "No",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Whether significant symptoms lasted at least the reviewed observation window, recorded without inventing a new threshold.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-07.md \u2014 Identification of Treatment-Resistant Schizophrenia, p. 88 (research observation window)",
+      "source_sha256": "b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57",
+      "operationalization": "Yes/No records the clinician-reviewed observation-window finding with window attribution. The concrete window operationalization requires owner review. Unknown pauses. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Yes": "Yes",
+        "No": "No"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_moderate_symptoms_impairment",
+      "source_path": "candidate/history/established_case_clozapine.v1/h_moderate_symptoms_impairment",
+      "node_id": "ModerateSymptomsAndFunctionalImpairment",
+      "permitted": [
+        "Yes",
+        "No",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Whether at least moderate symptoms and functional impairment were recorded, without inventing scale cutoffs.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-07.md \u2014 Identification of Treatment-Resistant Schizophrenia, p. 88 (validated rating scales and functioning)",
+      "source_sha256": "b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57",
+      "operationalization": "Yes/No records the clinician-reviewed severity/impairment finding with scale and window attribution. Concrete cutoffs require owner review; none are set here. Unknown pauses. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Yes": "Yes",
+        "No": "No"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_clozapine_treatment_status",
+      "source_path": "candidate/history/established_case_clozapine.v1/h_clozapine_treatment_status",
+      "node_id": "ClozapineTreatmentStatus",
+      "permitted": [
+        "NeverTreated",
+        "CurrentTreatment",
+        "PreviouslyTreated",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Never, current or previous clozapine treatment represented in the scenario.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-07.md \u2014 Initiation of Treatment With Clozapine, pp. 89-90",
+      "source_sha256": "b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57",
+      "operationalization": "NeverTreated requires explicit assessment of no prior or current clozapine; CurrentTreatment/PreviouslyTreated require documented status with encounter/window. Unknown history pauses. No dose/route/frequency collected. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "NeverTreated": "NeverTreated",
+        "CurrentTreatment": "CurrentTreatment",
+        "PreviouslyTreated": "PreviouslyTreated"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_willing_to_discuss",
+      "source_path": "candidate/history/established_case_clozapine.v1/h_willing_to_discuss",
+      "node_id": "WillingToDiscussClozapine",
+      "permitted": [
+        "Yes",
+        "No",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Willingness to discuss clozapine; shared decision-making review input used only as defined and collected.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-07.md \u2014 Initiation of Treatment With Clozapine, pp. 89-90 (shared decision-making)",
+      "source_sha256": "b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57",
+      "operationalization": "Yes means patient is willing to discuss clozapine after shared discussion; No means unwillingness or unresolved concerns documented. Missing discussion remains unknown, not No. Operational meaning requires owner review. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Yes": "Yes",
+        "No": "No"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_monitoring_plan",
+      "source_path": "candidate/history/established_case_clozapine.v1/h_monitoring_plan",
+      "node_id": "ClozapineMonitoringPlanAvailable",
+      "permitted": [
+        "Yes",
+        "No",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Availability of a clozapine monitoring and follow-up plan per current prescribing information.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-07.md \u2014 Monitoring for Side Effects During Treatment With Clozapine, pp. 90-93",
+      "source_sha256": "b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57",
+      "operationalization": "Yes means a monitoring and follow-up plan is available per current prescribing information; No means no such plan available. Operational meaning requires owner review. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Yes": "Yes",
+        "No": "No"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_initiation_discussion_appropriate",
+      "source_path": "candidate/history/established_case_clozapine.v1/h_initiation_discussion_appropriate",
+      "node_id": "ClozapineInitiationDiscussionAppropriate",
+      "permitted": [
+        "Yes",
+        "No",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Appropriateness of a clozapine initiation discussion represented as a scenario assumption for review.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-07.md \u2014 Initiation of Treatment With Clozapine, pp. 89-90",
+      "source_sha256": "b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57",
+      "operationalization": "Yes/No records the clinician-reviewed appropriateness finding with encounter attribution. Operational meaning requires owner review. Unknown pauses. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Yes": "Yes",
+        "No": "No"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_urgent_safety_concern",
+      "source_path": "candidate/history/established_case_clozapine.v1/h_urgent_safety_concern",
+      "node_id": "UrgentSafetyConcern",
+      "permitted": [
+        "Present",
+        "Absent",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Clinician-determined urgent safety concern from saved structured urgent inputs at this encounter; displayed independently of estimation latency.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-07.md \u2014 Monitoring for Side Effects During Treatment With Clozapine, pp. 90-93; Balancing of Potential Benefits and Harms in Rating the Strength of the Guideline Statement / Harms",
+      "source_sha256": "b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57",
+      "operationalization": "Present means clinician identifies an urgent safety concern from saved structured urgent inputs during current assessment; Absent means urgent assessment was completed without identified concern. This banner renders from saved inputs independently of estimation latency and is never a model-computed risk percentage. Unknown assessment pauses. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Present": "Present",
+        "Absent": "Absent"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_exposure_interpretation_concern",
+      "source_path": "candidate/history/established_case_clozapine.v1/h_exposure_interpretation_concern",
+      "node_id": "ExposureInterpretationConcern",
+      "permitted": [
+        "Yes",
+        "No",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Concern about adherence, smoking or caffeine changes, interactions, concentrations or sample timing.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-07.md \u2014 Use of Clozapine Levels During Treatment With Clozapine, p. 90",
+      "source_sha256": "b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57",
+      "operationalization": "Yes means clinician records an exposure-interpretation concern with factor attribution; No means review found none. Unknown pauses. No regimen details collected. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Yes": "Yes",
+        "No": "No"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_clozapine_trial_adequate",
+      "source_path": "candidate/history/established_case_clozapine.v1/h_clozapine_trial_adequate",
+      "node_id": "ClozapineTrialAdequate",
+      "permitted": [
+        "Yes",
+        "No",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Adequacy of the clozapine trial represented as a scenario assumption for review, without inventing thresholds.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-07.md \u2014 Optimizing Treatment With Clozapine, p. 94",
+      "source_sha256": "b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57",
+      "operationalization": "Yes/No records the clinician-reviewed adequacy finding with window attribution. Target dose, level and duration thresholds require owner review; none are set here. Unknown pauses. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Yes": "Yes",
+        "No": "No"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_residual_symptoms",
+      "source_path": "candidate/history/established_case_clozapine.v1/h_residual_symptoms",
+      "node_id": "ResidualSymptomsOnClozapine",
+      "permitted": [
+        "Yes",
+        "No",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Residual symptoms during clozapine treatment represented in the scenario.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-07.md \u2014 Optimizing Treatment With Clozapine, p. 94",
+      "source_sha256": "b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57",
+      "operationalization": "Yes means clinician records residual symptoms during clozapine treatment with window attribution; No means review found none. Unknown pauses. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Yes": "Yes",
+        "No": "No"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    }
+  ],
+  "retained_history_v1": "Twelve original v1 fields and runtime remain unchanged; this separately versioned adjunct proposes 15 additional CPT-context categories, none approved."
+}
