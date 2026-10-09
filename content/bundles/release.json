@@ -1,0 +1,605 @@
+{
+  "schema_version": "workflow-release-v1",
+  "version": "s39-v1",
+  "date": "2026-10-09",
+  "approval_basis": "Author reviewed and verified all 11 drafts (S27,S29-S38) per S39 manager instruction 2026-10-09; recorded as owner-approval basis without batch-approving. All packages remain awaiting_review; activation blocked.",
+  "author_verified_instruction": "S39 manager instruction 2026-10-09: Author has reviewed and verified all 11 question drafts (S27,S29-S38).",
+  "review": {
+    "reviewer": "owner review pending",
+    "decision": "awaiting_review",
+    "date": "2026-10-09"
+  },
+  "bundles": {
+    "registration": {
+      "file": "content/bundles/registration.json",
+      "version": "s39-v1",
+      "workflow": "registration",
+      "order": [
+        "pharmacotherapy",
+        "high_suicide_clozapine",
+        "lai_indication_choice",
+        "aggression_clozapine",
+        "established_case_clozapine"
+      ],
+      "bundle_hash": "ad3eb79a53c5fc2b6f4fbd5fec5e83476a8bf7834e9e49b6ce3a916290c39f1e",
+      "file_sha256": "16427b9a40047bb090b5146448529924de0c64110df1fb2498131f9ed7533905"
+    },
+    "followup": {
+      "file": "content/bundles/followup.json",
+      "version": "s39-v1",
+      "workflow": "followup",
+      "order": [
+        "tardive_dyskinesia",
+        "akathisia",
+        "parkinsonism",
+        "acute_dystonia",
+        "no_improvement_clozapine",
+        "continue_or_adjust"
+      ],
+      "bundle_hash": "8557ae3f725b3b7470186785c2dd0fffc7dd908961c3aff56190e6db641ecd7f",
+      "file_sha256": "aa37dbc76d50fdebe3ab653ac10520d09f30e32d8fcada545bd6e86985209688"
+    }
+  },
+  "assessment_refs": [
+    "content/assessments/diagnosis.v1.json",
+    "content/assessments/panss.v1.json",
+    "content/assessments/cssrs.v1.json"
+  ],
+  "assessment_sha256": {
+    "content/assessments/diagnosis.v1.json": "1888879cb611692cc9fdc617fc9bf948fe8e2b652da7e960a677dbccc23a85ca",
+    "content/assessments/panss.v1.json": "0cc9c2176819b7a65750b6f16ed5437d5b81d8ff0e2dd5c07b2285034a35d98f",
+    "content/assessments/cssrs.v1.json": "ee7802636ad88d4834452d4274045f2b4c53c8a1f603e7280328080549617757"
+  },
+  "ddi_ref": "content/ddi/unreleased (template only, no DatasetRelease; coverage_unavailable until S18 release)",
+  "packages": [
+    {
+      "question_key": "pharmacotherapy",
+      "order": "R2",
+      "workflow": "registration",
+      "version": "s27-v1",
+      "network_hash": "937ddcd7a5d5477a098462bf1360972aa867bacf4715a9970ca8663b852bfc67",
+      "package_hash": "5ad05dd65bf7479f9699372706df839b99fc63cc88328f1d24034215309a41c2",
+      "prompt_version": "s27-v1",
+      "template_version": "s27-v1",
+      "history_definition": "content/history/history.pharmacotherapy.v2.json",
+      "history_sha256": "77fade2e518a0e77450a1044676eb854e32530e930532239592bc71565a5e2c8",
+      "review": {
+        "reviewer": "owner review pending",
+        "decision": "awaiting_review",
+        "date": "2026-10-09"
+      },
+      "manifest_review_status": "awaiting_review",
+      "gate": {
+        "expression": "true",
+        "required_fields": 9,
+        "unknown_policy": "needs_clarification",
+        "clinical_ids": [
+          "established-response-concern",
+          "established-tolerability-concern",
+          "no-established-treatment",
+          "required-unknown",
+          "required-not-assessed",
+          "required-missing",
+          "required-conflict"
+        ],
+        "numerical_ids": [
+          "full-graph-asymmetric-mathematical",
+          "full-graph-no-established-treatment-mathematical"
+        ]
+      },
+      "admission": {
+        "nodes": 31,
+        "xml_bytes": 69782,
+        "xsd_valid": true,
+        "activatable_v1": true,
+        "semantic_valid": true,
+        "semantic_codes": []
+      },
+      "reference_table": {
+        "provenance": "reference_table_audit.cells enumerates all 286 printed Table-6 medication/side-effect symbols with exact Markdown line/column and original lookup definition. All match preserved categorical rows. Synthetic no-treatment reference rows map NotApplicable. The remaining 18 distributions are explicitly u",
+        "compared_cells": 286,
+        "clinical_claim": false
+      }
+    },
+    {
+      "question_key": "high_suicide_clozapine",
+      "order": "R4",
+      "workflow": "registration",
+      "version": "s29-v1",
+      "network_hash": "a1561ea425dcbe876ebc1330a17e3224e8aad3ca867f15953a4f18e8ddc49a3b",
+      "package_hash": "4818aec5305508cbaec424a028e6c8a47d508b3c4b660996c903ab23aa12e05d",
+      "prompt_version": "s29-v1",
+      "template_version": "s29-v1",
+      "history_definition": "content/history/history.high_suicide_clozapine.v1.json",
+      "history_sha256": "eb8488db368ede6c1412cb33f2cd768e2d91b1dace280c9a027bfef10e2ac553",
+      "review": {
+        "reviewer": "owner review pending",
+        "decision": "awaiting_review",
+        "date": "2026-10-09"
+      },
+      "manifest_review_status": "awaiting_review",
+      "gate": {
+        "expression": "gate == 'true'",
+        "required_fields": 10,
+        "unknown_policy": "needs_clarification",
+        "clinical_ids": [
+          "gate-true-standard",
+          "gate-true-urgent",
+          "gate-false-not-applicable",
+          "gate-unknown-needs-clarification",
+          "gate-missing-needs-clarification",
+          "gate-conflict-needs-clarification"
+        ],
+        "numerical_ids": [
+          "full-graph-asymmetric-mathematical"
+        ]
+      },
+      "admission": {
+        "nodes": 14,
+        "xml_bytes": 26001,
+        "xsd_valid": true,
+        "activatable_v1": true,
+        "semantic_valid": true,
+        "semantic_codes": []
+      },
+      "reference_table": {
+        "provenance": "BN-08 supplies zero fixed tables; all 14 distributions were awaiting_experiment_cpt. Draft network.xml holds explicitly synthetic uniform references (roots 0.5/0.5 or 0.5/0.3/0.2, outputs uniform per row) with no source lookup to audit. The numerical fixture CPTs are independent synthetic mathematic",
+        "compared_cells": 0,
+        "clinical_claim": false
+      }
+    },
+    {
+      "question_key": "lai_indication_choice",
+      "order": "R5",
+      "workflow": "registration",
+      "version": "s30-v1",
+      "network_hash": "e0bc286f7402c5e73905830b1ae9ee88ca6d9d911500a99e7b8e9d67d315a806",
+      "package_hash": "d1c85f66e5388187ecea198207639dfe5473b1650ee9a6acb538fde806daeae7",
+      "prompt_version": "s30-v1",
+      "template_version": "s30-v1",
+      "history_definition": "content/history/history.lai_indication_choice.v1.json",
+      "history_sha256": "8139ff7a6489f3e62c88921df256aed1b96e349b9665bffe896380acf03e4717",
+      "review": {
+        "reviewer": "owner review pending",
+        "decision": "awaiting_review",
+        "date": "2026-10-09"
+      },
+      "manifest_review_status": "awaiting_review",
+      "gate": {
+        "expression": "gate == 'true'",
+        "required_fields": 9,
+        "unknown_policy": "needs_clarification",
+        "clinical_ids": [
+          "gate-true-standard",
+          "gate-true-declines-respect",
+          "gate-false-not-applicable",
+          "gate-unknown-needs-clarification",
+          "gate-missing-needs-clarification",
+          "gate-conflict-needs-clarification"
+        ],
+        "numerical_ids": [
+          "full-graph-asymmetric-mathematical"
+        ]
+      },
+      "admission": {
+        "nodes": 14,
+        "xml_bytes": 26379,
+        "xsd_valid": true,
+        "activatable_v1": true,
+        "semantic_valid": true,
+        "semantic_codes": []
+      },
+      "reference_table": {
+        "provenance": "BN-10 supplies zero fixed tables; all 14 distributions were awaiting_experiment_cpt. Draft network.xml holds explicitly synthetic uniform references (roots 0.5/0.5, 0.25 x4 or 0.33333333 x2 plus 0.33333334, outputs uniform per row) with no source lookup to audit. The numerical fixture CPTs are indep",
+        "compared_cells": 0,
+        "clinical_claim": false
+      }
+    },
+    {
+      "question_key": "aggression_clozapine",
+      "order": "R6",
+      "workflow": "registration",
+      "version": "s31-v1",
+      "network_hash": "341fb155315276d6cd1028b32e681d622998122fb5503c4dcdff0df1092829cf",
+      "package_hash": "c21aee05a2a21ab102f9193a9180179b47ad6fcbb7dde94f0e6128ec5a1d1a1c",
+      "prompt_version": "s31-v1",
+      "template_version": "s31-v1",
+      "history_definition": "content/history/history.aggression_clozapine.v1.json",
+      "history_sha256": "306a75b5b867ddc1039dae0724b60175dfebd90d9f169a542dd28aec80513ca6",
+      "review": {
+        "reviewer": "owner review pending",
+        "decision": "awaiting_review",
+        "date": "2026-10-09"
+      },
+      "manifest_review_status": "awaiting_review",
+      "gate": {
+        "expression": "gate == 'true'",
+        "required_fields": 10,
+        "unknown_policy": "needs_clarification",
+        "clinical_ids": [
+          "gate-true-standard",
+          "gate-true-urgent",
+          "gate-false-not-applicable",
+          "gate-unknown-needs-clarification",
+          "gate-missing-needs-clarification",
+          "gate-conflict-needs-clarification"
+        ],
+        "numerical_ids": [
+          "full-graph-asymmetric-mathematical"
+        ]
+      },
+      "admission": {
+        "nodes": 14,
+        "xml_bytes": 25905,
+        "xsd_valid": true,
+        "activatable_v1": true,
+        "semantic_valid": true,
+        "semantic_codes": []
+      },
+      "reference_table": {
+        "provenance": "BN-09 supplies zero fixed tables; all 14 distributions were awaiting_experiment_cpt. Draft network.xml holds explicitly synthetic uniform references (roots 0.5/0.5 or 0.5/0.3/0.2, outputs uniform per row) with no source lookup to audit. The numerical fixture CPTs are independent synthetic mathematic",
+        "compared_cells": 0,
+        "clinical_claim": false
+      }
+    },
+    {
+      "question_key": "established_case_clozapine",
+      "order": "R7",
+      "workflow": "registration",
+      "version": "s32-v1",
+      "network_hash": "5a91aa677cda1c27943f29084d5b017c27bca7b5a4353684549a80fa9251daa5",
+      "package_hash": "9151e5dd66f3eff75c9a87a4e14757326a44b7546f3c1f13b76642ede891cd78",
+      "prompt_version": "s32-v1",
+      "template_version": "s32-v1",
+      "history_definition": "content/history/history.established_case_clozapine.v1.json",
+      "history_sha256": "836b625ff0a3bde359ce767b43fc453566f6096e3fcfbcbebac044777237f1fb",
+      "review": {
+        "reviewer": "owner review pending",
+        "decision": "awaiting_review",
+        "date": "2026-10-09"
+      },
+      "manifest_review_status": "awaiting_review",
+      "gate": {
+        "expression": "gate == 'true'",
+        "required_fields": 15,
+        "unknown_policy": "needs_clarification",
+        "clinical_ids": [
+          "gate-true-established-applicable",
+          "gate-true-urgent-present",
+          "gate-false-first-time",
+          "gate-unknown-needs-clarification",
+          "gate-missing-trial-context",
+          "gate-conflict-needs-clarification"
+        ],
+        "numerical_ids": [
+          "full-graph-asymmetric-mathematical"
+        ]
+      },
+      "admission": {
+        "nodes": 23,
+        "xml_bytes": 39286,
+        "xsd_valid": true,
+        "activatable_v1": true,
+        "semantic_valid": true,
+        "semantic_codes": []
+      },
+      "reference_table": {
+        "provenance": "BN-07 supplies zero fixed tables; all 23 distributions were awaiting_experiment_cpt. Draft network.xml holds explicitly synthetic uniform references (2-state 0.5/0.5, 4-state 0.25 each, 3-state thirds, outputs uniform per row) with no source lookup to audit. The numerical fixture CPTs are independen",
+        "compared_cells": 0,
+        "clinical_claim": false
+      }
+    },
+    {
+      "question_key": "tardive_dyskinesia",
+      "order": "F1",
+      "workflow": "followup",
+      "version": "s33-v1",
+      "network_hash": "538daba6318a1a87d116bd92bda4042063a4fa41c178d1e031ced18d7ea4d5df",
+      "package_hash": "a0f8d9bd584091df66bbd7c39f50c124d71114681d8452dc9ec05ed69b8bcc10",
+      "prompt_version": "s33-v1",
+      "template_version": "s33-v1",
+      "history_definition": "content/history/history.tardive_dyskinesia.v1.json",
+      "history_sha256": "671a5701f088f1df484b89cb8ee467759dc2388a96e2ae8770623a7682fd3fbf",
+      "review": {
+        "reviewer": "owner review pending",
+        "decision": "awaiting_review",
+        "date": "2026-10-09"
+      },
+      "manifest_review_status": "awaiting_review",
+      "gate": {
+        "expression": "gate == 'true'",
+        "required_fields": 10,
+        "unknown_policy": "needs_clarification",
+        "clinical_ids": [
+          "gate-true-present-applicable",
+          "gate-true-urgent-present",
+          "gate-false-absent",
+          "gate-unknown-not-assessed",
+          "gate-missing-alternative-context",
+          "gate-conflict-needs-clarification"
+        ],
+        "numerical_ids": [
+          "full-graph-asymmetric-mathematical"
+        ]
+      },
+      "admission": {
+        "nodes": 16,
+        "xml_bytes": 30988,
+        "xsd_valid": true,
+        "activatable_v1": true,
+        "semantic_valid": true,
+        "semantic_codes": []
+      },
+      "reference_table": {
+        "provenance": "BN-14 supplies zero fixed tables; all 16 distributions were awaiting_experiment_cpt. Draft network.xml holds explicitly synthetic uniform references (2-state 0.5/0.5, 3-state thirds, 5-state 0.2 each) with no source lookup to audit. The numerical fixture CPTs are independent synthetic mathematical r",
+        "compared_cells": 0,
+        "clinical_claim": false
+      }
+    },
+    {
+      "question_key": "akathisia",
+      "order": "F2",
+      "workflow": "followup",
+      "version": "s34-v1",
+      "network_hash": "a9b73a43701e6e7d4213e7877781f4c819dd8745fd463320bbd8348c3745de55",
+      "package_hash": "c5416eb6b405299635c8877af66a56cf586214a57fae9482778a4bb6712d09f6",
+      "prompt_version": "s34-v1",
+      "template_version": "s34-v1",
+      "history_definition": "content/history/history.akathisia.v1.json",
+      "history_sha256": "8379f3b561a04c8359509ee7ae2f568e03190424504ecd9126ce643d04de766a",
+      "review": {
+        "reviewer": "owner review pending",
+        "decision": "awaiting_review",
+        "date": "2026-10-09"
+      },
+      "manifest_review_status": "awaiting_review",
+      "gate": {
+        "expression": "gate == 'true'",
+        "required_fields": 13,
+        "unknown_policy": "needs_clarification",
+        "clinical_ids": [
+          "gate-true-present-applicable",
+          "gate-true-urgent-present",
+          "gate-false-absent",
+          "gate-unknown-not-assessed",
+          "gate-missing-alternative-context",
+          "gate-conflict-needs-clarification"
+        ],
+        "numerical_ids": [
+          "full-graph-asymmetric-mathematical"
+        ]
+      },
+      "admission": {
+        "nodes": 20,
+        "xml_bytes": 35976,
+        "xsd_valid": true,
+        "activatable_v1": true,
+        "semantic_valid": true,
+        "semantic_codes": []
+      },
+      "reference_table": {
+        "provenance": "BN-13 supplies zero fixed tables; all 20 distributions were awaiting_experiment_cpt. Draft network.xml holds explicitly synthetic uniform references (2-state 0.5/0.5, 3-state thirds, 6-state sixths) with no source lookup to audit. The numerical fixture CPTs are independent synthetic mathematical ref",
+        "compared_cells": 0,
+        "clinical_claim": false
+      }
+    },
+    {
+      "question_key": "parkinsonism",
+      "order": "F3",
+      "workflow": "followup",
+      "version": "s35-v1",
+      "network_hash": "504e34c5e23967373292c43499e73dce8abe78fcd4d5c1986ddb018ed2730547",
+      "package_hash": "e7147a45aee24c206efe633e130889b4b2fcc368a9095569d6f01e90b5e3de65",
+      "prompt_version": "s35-v1",
+      "template_version": "s35-v1",
+      "history_definition": "content/history/history.parkinsonism.v1.json",
+      "history_sha256": "3a02b7ea10fa46ec70002f48cd025d53895e329ce2b6b722e9728b3f23177743",
+      "review": {
+        "reviewer": "owner review pending",
+        "decision": "awaiting_review",
+        "date": "2026-10-09"
+      },
+      "manifest_review_status": "awaiting_review",
+      "gate": {
+        "expression": "gate == 'true'",
+        "required_fields": 14,
+        "unknown_policy": "needs_clarification",
+        "clinical_ids": [
+          "gate-true-present-applicable",
+          "gate-true-urgent-present",
+          "gate-false-absent",
+          "gate-unknown-not-assessed",
+          "gate-missing-alternative-context",
+          "gate-conflict-needs-clarification"
+        ],
+        "numerical_ids": [
+          "full-graph-asymmetric-mathematical"
+        ]
+      },
+      "admission": {
+        "nodes": 20,
+        "xml_bytes": 38063,
+        "xsd_valid": true,
+        "activatable_v1": true,
+        "semantic_valid": true,
+        "semantic_codes": []
+      },
+      "reference_table": {
+        "provenance": "BN-12 supplies zero fixed tables; all 20 distributions were awaiting_experiment_cpt. Draft network.xml holds explicitly synthetic uniform references (2-state 0.5/0.5, 3-state thirds, 4-state quarters, 6-state sixths) with no source lookup to audit. The numerical fixture CPTs are independent syntheti",
+        "compared_cells": 0,
+        "clinical_claim": false
+      }
+    },
+    {
+      "question_key": "acute_dystonia",
+      "order": "F4",
+      "workflow": "followup",
+      "version": "s36-v1",
+      "network_hash": "2ddda6893800e0441326004af9d83c42385924738ae3d37af177b3be9b71e031",
+      "package_hash": "6f702f5baceaab84502d87ad5c3c26b44c36522a977e7f41d92ea3f34f4684a8",
+      "prompt_version": "s36-v1",
+      "template_version": "s36-v1",
+      "history_definition": "content/history/history.acute_dystonia.v1.json",
+      "history_sha256": "cfeda12172f93ff6d162be858757f45f16effc38a7407b5bf26e624b212c0e98",
+      "review": {
+        "reviewer": "owner review pending",
+        "decision": "awaiting_review",
+        "date": "2026-10-09"
+      },
+      "manifest_review_status": "awaiting_review",
+      "gate": {
+        "expression": "gate == 'true'",
+        "required_fields": 8,
+        "unknown_policy": "needs_clarification",
+        "clinical_ids": [
+          "gate-true-present-applicable",
+          "gate-true-urgent-present",
+          "gate-false-absent",
+          "gate-unknown-not-assessed",
+          "gate-missing-alternative-context",
+          "gate-conflict-needs-clarification"
+        ],
+        "numerical_ids": [
+          "full-graph-asymmetric-mathematical"
+        ]
+      },
+      "admission": {
+        "nodes": 12,
+        "xml_bytes": 22751,
+        "xsd_valid": true,
+        "activatable_v1": true,
+        "semantic_valid": true,
+        "semantic_codes": []
+      },
+      "reference_table": {
+        "provenance": "BN-11 supplies zero fixed tables; all 12 distributions were awaiting_experiment_cpt. Draft network.xml holds explicitly synthetic uniform references (2-state 0.5/0.5, 3-state thirds, 4-state 0.25, 5-state 0.2) with no source lookup to audit. The numerical fixture CPTs are independent synthetic mathe",
+        "compared_cells": 0,
+        "clinical_claim": false
+      }
+    },
+    {
+      "question_key": "no_improvement_clozapine",
+      "order": "F5",
+      "workflow": "followup",
+      "version": "s37-v1",
+      "network_hash": "4a1863d996efddae0b8904d28868af90030e7f30be56a97666c1dfd165801435",
+      "package_hash": "af32c0055c83c85edd454089ade53e0c4bb68e86496d0fc1ff7de5b50ac3753c",
+      "prompt_version": "s37-v1",
+      "template_version": "s37-v1",
+      "history_definition": "content/history/history.no_improvement_clozapine.v1.json",
+      "history_sha256": "940daff4ba8ec74d222a77934a378da7484ffc05422a932bf407eb6763ffbcc8",
+      "review": {
+        "reviewer": "owner review pending",
+        "decision": "awaiting_review",
+        "date": "2026-10-09"
+      },
+      "manifest_review_status": "awaiting_review",
+      "gate": {
+        "expression": "gate == 'true'",
+        "required_fields": 19,
+        "unknown_policy": "needs_clarification",
+        "clinical_ids": [
+          "gate-true-no-improvement-applicable",
+          "gate-true-no-improvement-urgent-present",
+          "gate-false-improvement-documented",
+          "gate-unknown-panss-followup-missing",
+          "gate-unknown-outdated-baseline",
+          "gate-unknown-not-assessed-severity",
+          "gate-conflict-needs-clarification"
+        ],
+        "numerical_ids": [
+          "full-graph-asymmetric-mathematical"
+        ]
+      },
+      "admission": {
+        "nodes": 23,
+        "xml_bytes": 39423,
+        "xsd_valid": true,
+        "activatable_v1": true,
+        "semantic_valid": true,
+        "semantic_codes": []
+      },
+      "reference_table": {
+        "provenance": "BN-07 supplies zero fixed tables; all 23 distributions were awaiting_experiment_cpt. Draft network.xml holds explicitly synthetic uniform references (2-state 0.5/0.5, 4-state 0.25 each, 3-state thirds, outputs uniform per row) with no source lookup to audit. The numerical fixture CPTs are independen",
+        "compared_cells": 0,
+        "clinical_claim": false
+      }
+    },
+    {
+      "question_key": "continue_or_adjust",
+      "order": "F6",
+      "workflow": "followup",
+      "version": "s38-v1",
+      "network_hash": "5f0d4eca4637a6cd1bc9e67bb55bea93f98c335cdc98f98552be4808b8cfb3e5",
+      "package_hash": "199c61814ceea876d16b2547ecd996ad90ba7fc16be26c4a5b7cc334fa794899",
+      "prompt_version": "s38-v1",
+      "template_version": "s38-v1",
+      "history_definition": "content/history/history.continue_or_adjust.v1.json",
+      "history_sha256": "cfc8cdf6cccb5d4575e5002d03762ef201f7dca79e3d7611a2b08dc9c60e90a9",
+      "review": {
+        "reviewer": "owner review pending",
+        "decision": "awaiting_review",
+        "date": "2026-10-09"
+      },
+      "manifest_review_status": "awaiting_review",
+      "gate": {
+        "expression": "true",
+        "required_fields": 12,
+        "unknown_policy": "needs_clarification",
+        "clinical_ids": [
+          "continuation-applicable",
+          "adjustment-change-reason-review",
+          "urgent-present-parallel-banner",
+          "insufficient-unknown-preference",
+          "stale-baseline-outdated",
+          "required-missing-baseline",
+          "conflict-needs-clarification"
+        ],
+        "numerical_ids": [
+          "full-graph-asymmetric-mathematical",
+          "full-graph-urgent-present-contrast-mathematical"
+        ]
+      },
+      "admission": {
+        "nodes": 21,
+        "xml_bytes": 40367,
+        "xsd_valid": true,
+        "activatable_v1": true,
+        "semantic_valid": false,
+        "semantic_codes": [
+          "wrong_dimensions",
+          "wrong_dimensions",
+          "wrong_dimensions",
+          "wrong_dimensions",
+          "wrong_dimensions"
+        ]
+      },
+      "reference_table": {
+        "provenance": "BN-04/05/06 supply zero fixed tables for this graph (BN-04 holds 13 oral-formulation lookup definitions that are not reused here; BN-05/06 hold none); all 21 distributions were awaiting_experiment_cpt. Draft network.xml holds explicitly synthetic uniform references (compared_cells 0). Complete clini",
+        "compared_cells": 0,
+        "clinical_claim": false
+      }
+    }
+  ],
+  "s38_prose_fixes": {
+    "continue_or_adjust": {
+      "old_package_hash": "f75cd60091b5c3a1d83a37473b18ba74d048a11422f263b380dca904150fe569",
+      "new_package_hash": "199c61814ceea876d16b2547ecd996ad90ba7fc16be26c4a5b7cc334fa794899",
+      "changes": [
+        "review.json clinical_examples 6->7 adding required-missing-baseline",
+        "manifest.json reference_cpts_status clarify zero-reused (BN-04 13 lookups not reused)"
+      ]
+    }
+  },
+  "blockers": [
+    "All 11 packages awaiting_review (R2,R4,R5,R6,R7,F1-F6); owner approval pending, no batch-approval.",
+    "continue_or_adjust network.xml synthetic TABLEs dimension-invalid (roots hold 4 values, expected 2) -> semantic wrong_dimensions, nonexecutable; needs new version, not a flag flip.",
+    "History/DDI/assessments remain awaiting_review/draft (history review.json, DDI template only); pinned as unreleased.",
+    "Activation blocked: use registry.activate_bundle only (no direct DB flag flip); S24 synthetic pointers remain; S40-S58 may proceed synthetically, S59/release blocked."
+  ],
+  "activation": {
+    "status": "blocked",
+    "method": "registry.activate_bundle / rollback_bundle only (no direct DB flag flip)",
+    "event": "none - no pointer move in S39; S24 synthetic bundles remain active"
+  }
+}

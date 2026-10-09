@@ -3,9 +3,9 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest recorded checkpoint is [S38](s38.md): continue_or_adjust review draft
-green (T5: 6 focused / 186 model tests; `make check` green).
-Content remains `awaiting_review`; see report for release blockers and S39 handoff.
+The latest recorded checkpoint is [S39](s39.md): both workflow bundles
+verifier-green (T5: 12 focused / 198 model tests; `make check` green).
+Content remains `awaiting_review`; see report for hashes and release blockers.
 
 ## Reading and updating progress
 
@@ -69,3 +69,4 @@ Content remains `awaiting_review`; see report for release blockers and S39 hando
 | S36 | [Build and verify the acute_dystonia review draft (2026-10-09)](s36.md) |
 | S37 | [Build and verify the no_improvement_clozapine review draft (2026-10-09)](s37.md) |
 | S38 | [Build and verify the continue_or_adjust review draft (2026-10-09)](s38.md) |
+| S39 | [Review and release both complete workflow bundles (2026-10-09)](s39.md) |

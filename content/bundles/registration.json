@@ -1,0 +1,64 @@
+{
+  "schema_version": "workflow-bundle-v1",
+  "workflow": "registration",
+  "version": "s39-v1",
+  "assessment_refs": [
+    "content/assessments/diagnosis.v1.json",
+    "content/assessments/panss.v1.json",
+    "content/assessments/cssrs.v1.json"
+  ],
+  "ddi_ref": "content/ddi/unreleased (template only, no DatasetRelease; coverage_unavailable until S18 release)",
+  "questions": [
+    {
+      "question_key": "pharmacotherapy",
+      "version": "s27-v1",
+      "network_hash": "937ddcd7a5d5477a098462bf1360972aa867bacf4715a9970ca8663b852bfc67",
+      "package_hash": "5ad05dd65bf7479f9699372706df839b99fc63cc88328f1d24034215309a41c2",
+      "prompt_version": "s27-v1",
+      "template_version": "s27-v1",
+      "history_definition": "content/history/history.pharmacotherapy.v2.json"
+    },
+    {
+      "question_key": "high_suicide_clozapine",
+      "version": "s29-v1",
+      "network_hash": "a1561ea425dcbe876ebc1330a17e3224e8aad3ca867f15953a4f18e8ddc49a3b",
+      "package_hash": "4818aec5305508cbaec424a028e6c8a47d508b3c4b660996c903ab23aa12e05d",
+      "prompt_version": "s29-v1",
+      "template_version": "s29-v1",
+      "history_definition": "content/history/history.high_suicide_clozapine.v1.json"
+    },
+    {
+      "question_key": "lai_indication_choice",
+      "version": "s30-v1",
+      "network_hash": "e0bc286f7402c5e73905830b1ae9ee88ca6d9d911500a99e7b8e9d67d315a806",
+      "package_hash": "d1c85f66e5388187ecea198207639dfe5473b1650ee9a6acb538fde806daeae7",
+      "prompt_version": "s30-v1",
+      "template_version": "s30-v1",
+      "history_definition": "content/history/history.lai_indication_choice.v1.json"
+    },
+    {
+      "question_key": "aggression_clozapine",
+      "version": "s31-v1",
+      "network_hash": "341fb155315276d6cd1028b32e681d622998122fb5503c4dcdff0df1092829cf",
+      "package_hash": "c21aee05a2a21ab102f9193a9180179b47ad6fcbb7dde94f0e6128ec5a1d1a1c",
+      "prompt_version": "s31-v1",
+      "template_version": "s31-v1",
+      "history_definition": "content/history/history.aggression_clozapine.v1.json"
+    },
+    {
+      "question_key": "established_case_clozapine",
+      "version": "s32-v1",
+      "network_hash": "5a91aa677cda1c27943f29084d5b017c27bca7b5a4353684549a80fa9251daa5",
+      "package_hash": "9151e5dd66f3eff75c9a87a4e14757326a44b7546f3c1f13b76642ede891cd78",
+      "prompt_version": "s32-v1",
+      "template_version": "s32-v1",
+      "history_definition": "content/history/history.established_case_clozapine.v1.json"
+    }
+  ],
+  "review": {
+    "reviewer": "owner review pending",
+    "decision": "awaiting_review",
+    "date": "2026-10-09",
+    "basis": "S39 author-verified drafts S27,S29-S38 per manager instruction 2026-10-09; owner approval still pending, activation blocked"
+  }
+}

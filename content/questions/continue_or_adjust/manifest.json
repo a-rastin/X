@@ -645,7 +645,7 @@
   "prompt_version": "s38-v1",
   "template_version": "s38-v1",
   "history_definition": "content/history/history.continue_or_adjust.v1.json",
-  "reference_cpts_status": "Synthetic mathematical references only; BN-04/05/06 supply zero fixed tables and no clinical calibration or approval",
+  "reference_cpts_status": "Synthetic mathematical references only; BN-04 holds 13 Table-6 lookup definitions (not reused here), so BN-04/05/06 supply zero reused fixed tables for this graph; no clinical calibration or approval",
   "missingness_contract": {
     "required_source_paths": [
       "candidate/history/continue_or_adjust.v1/h_schizophrenia_established",
