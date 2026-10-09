@@ -3,9 +3,9 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest recorded checkpoint is [S35](s35.md): parkinsonism review draft
-green (T5: 6 focused / 168 model tests; `make check` green).
-Content remains `awaiting_review`; see report for release blockers and S36 handoff.
+The latest recorded checkpoint is [S36](s36.md): acute-dystonia review draft
+green (T5: 6 focused / 174 model tests; `make check` green).
+Content remains `awaiting_review`; see report for release blockers and S37 handoff.
 
 ## Reading and updating progress
 
@@ -66,3 +66,4 @@ Content remains `awaiting_review`; see report for release blockers and S36 hando
 | S33 | [Build and verify the tardive_dyskinesia review draft (2026-10-09)](s33.md) |
 | S34 | [Build and verify the akathisia review draft (2026-10-09)](s34.md) |
 | S35 | [Build and verify the parkinsonism review draft (2026-10-09)](s35.md) |
+| S36 | [Build and verify the acute_dystonia review draft (2026-10-09)](s36.md) |
