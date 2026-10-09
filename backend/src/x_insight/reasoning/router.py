@@ -1,4 +1,4 @@
-"""Generation start/read HTTP routes (S40+S44, seams T1/T8; plan.md §§4.3, 8.1, 8.4).
+"""Generation start/read/review routes (S40+S44+S45, T1/T8).
 
 ``POST /api/v1/encounters/{id}/generation-batches`` — author-only freeze
 (physician + CSRF, ``If-Match`` with the current encounter revision,
@@ -16,9 +16,15 @@ create no partial rows.
 projection plus derived freshness (``stale`` when later relevant edits
 moved the analysis fingerprint; note-only edits stay fresh) plus S44
 queue visibility (``job``/``attempts``/``queue`` with busy state, no
-fencing tokens). Old snapshots remain readable history. No general
-patient snapshot endpoint exists and no direct-record provider path is
-added here.
+fencing tokens) plus S45 baseline/transparency (``baseline``/
+``transparency`` from persisted data, null until success). Old snapshots
+remain readable history. No general patient snapshot endpoint exists and
+no direct-record provider path is added here.
+
+``GET /api/v1/question-runs/{id}/review`` — author-only question review
+(original/validated CPTs, posteriors, section, five transparency fields,
+freshness, adjustable flag). Failed originals expose no adjustable
+baseline (``baseline`` null, ``adjustable`` false).
 """
 
 from __future__ import annotations
@@ -136,6 +142,8 @@ def _batch_response(
     queue_view: dict[str, Any] | None = None,
     *,
     status_code: int,
+    baseline: dict[str, Any] | None = None,
+    transparency: dict[str, Any] | None = None,
 ) -> JSONResponse:
     content: dict[str, Any] = {
         "batch": snapshots_service.safe_batch(batch),
@@ -148,6 +156,10 @@ def _batch_response(
         content["job"] = queue_view.get("job")
         content["attempts"] = queue_view.get("attempts", 0)
         content["queue"] = queue_view.get("queue")
+    # S45: persisted baseline + five transparency fields (null until success).
+    # ponytail: single-question proof; S46 workflows expose per-run baselines.
+    content["baseline"] = baseline
+    content["transparency"] = transparency
     return JSONResponse(status_code=status_code, content=content)
 
 
@@ -213,6 +225,7 @@ def start_generation(
 def read_generation(
     batch_id: uuid.UUID, request: Request, session: Session = Depends(get_session)
 ) -> JSONResponse:
+    from x_insight.reasoning import coordinator as coordinator_module
     from x_insight.reasoning import queue as queue_module
 
     user = _require_user(request, session)
@@ -221,4 +234,78 @@ def read_generation(
     assert isinstance(user, dict)
     batch, runs, freshness = snapshots_service.get_generation_batch(session, batch_id, user)
     queue_view = queue_module.get_batch_queue_view(session, batch_id)
-    return _batch_response(batch, runs, freshness, queue_view, status_code=200)
+    # S45: attach the persisted baseline + transparency for the single run.
+    baseline: dict[str, Any] | None = None
+    transparency: dict[str, Any] | None = None
+    if runs:
+        stored = coordinator_module.get_baseline(session, runs[0]["id"])
+        if stored is not None:
+            baseline = coordinator_module.safe_baseline(stored)
+            transparency = coordinator_module.build_transparency(runs[0], stored)
+    # Always expose the keys once S45 tables exist (null until success),
+    # so T8 consumers need not branch on presence.
+    return _batch_response(
+        batch,
+        runs,
+        freshness,
+        queue_view,
+        status_code=200,
+        baseline=baseline,
+        transparency=transparency,
+    )
+
+
+@router.get("/question-runs/{run_id}/review")
+def read_question_review(
+    run_id: uuid.UUID, request: Request, session: Session = Depends(get_session)
+) -> JSONResponse:
+    """Author-only question review (S45, seam T1).
+
+    Returns the frozen run, its batch, the immutable baseline (or null),
+    ``adjustable`` (true only with a baseline), the five transparency
+    fields (or null), derived freshness, and queue visibility. Wrong-author
+    reads are 403 without content; missing runs are 404. Failed originals
+    expose no adjustable baseline.
+    """
+    from sqlalchemy import select
+
+    from x_insight.reasoning import coordinator as coordinator_module
+    from x_insight.reasoning import queue as queue_module
+    from x_insight.reasoning import tables as reasoning_tables
+
+    user = _require_user(request, session)
+    if isinstance(user, JSONResponse):
+        return user
+    assert isinstance(user, dict)
+    run_row = (
+        session.execute(
+            select(reasoning_tables.question_runs).where(
+                reasoning_tables.question_runs.c.id == run_id
+            )
+        )
+        .mappings()
+        .first()
+    )
+    if run_row is None:
+        return error_response(404, "NOT_FOUND", "Question run not found.", get_request_id(request))
+    run = dict(run_row)
+    batch, runs, freshness = snapshots_service.get_generation_batch(session, run["batch_id"], user)
+    # get_generation_batch enforces author-only (403 for strangers).
+    stored = coordinator_module.get_baseline(session, run_id)
+    baseline = coordinator_module.safe_baseline(stored) if stored is not None else None
+    transparency = (
+        coordinator_module.build_transparency(run, stored) if stored is not None else None
+    )
+    queue_view = queue_module.get_batch_queue_view(session, run["batch_id"])
+    content: dict[str, Any] = {
+        "question_run": snapshots_service.safe_run(run),
+        "batch": snapshots_service.safe_batch(batch),
+        "baseline": baseline,
+        "adjustable": baseline is not None,
+        "transparency": transparency,
+        "freshness": freshness,
+        "job": queue_view.get("job"),
+        "attempts": queue_view.get("attempts", 0),
+        "queue": queue_view.get("queue"),
+    }
+    return JSONResponse(status_code=200, content=content)

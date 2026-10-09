@@ -1,4 +1,4 @@
-"""Reasoning snapshots + durable queue storage (S40, S44; plan.md §§4.1, 8.1, 8.4-8.5).
+"""Reasoning snapshots + queue + S45 baselines (S40,S44,S45).
 
 Tables (S40-owned; migration ``0009`` owns the DDL, this module is the
 read model for queries):
@@ -26,6 +26,16 @@ Tables (S44-owned; migration ``0010`` owns the DDL):
   grant then oldest job (FIFO within physician).
 - ``reasoning_deployment`` — singleton deployment generation (id=1).
   Claim/commit checks equality; restores bump it to fence old workers.
+
+Tables (S45-owned; migration ``0011`` owns the DDL):
+- ``original_baselines`` — one immutable row per successful question run:
+  run/batch FKs (run unique), source/effective hashes, raw/validated CPTs,
+  effective XML, query/posteriors, rendered section, versions/model,
+  projection hash, provenance. Immutable (app SELECT+INSERT only);
+  failed originals create no row.
+- ``question_runs.pinned_package`` — frozen full question package
+  (manifest/prompt/template/examples/review + ``network_xml``) stored at
+  start for the worker. Nullable for pre-S45 rows.
 """
 
 from __future__ import annotations
@@ -94,6 +104,7 @@ question_runs = Table(
     Column("projection_hash", Text, nullable=False),
     Column("fingerprint", Text, nullable=False),
     Column("pinned_versions", JSONB, nullable=False),
+    Column("pinned_package", JSONB, nullable=True),
     Column("created_at", DateTime(timezone=True), nullable=False),
     CheckConstraint(
         "status IN ('ready', 'not_applicable', 'needs_clarification', 'stale')",
@@ -222,6 +233,45 @@ reasoning_deployment = Table(
     Column("updated_at", DateTime(timezone=True), nullable=False),
 )
 
+
+original_baselines = Table(
+    "original_baselines",
+    metadata,
+    Column("id", PG_UUID(as_uuid=True), primary_key=True),
+    Column(
+        "question_run_id",
+        PG_UUID(as_uuid=True),
+        ForeignKey("question_runs.id", ondelete="CASCADE"),
+        nullable=False,
+        unique=True,
+    ),
+    Column(
+        "batch_id",
+        PG_UUID(as_uuid=True),
+        ForeignKey("generation_batches.id", ondelete="CASCADE"),
+        nullable=False,
+    ),
+    Column("source_hash", Text, nullable=False),
+    Column("effective_xml", Text, nullable=False),
+    Column("effective_hash", Text, nullable=False),
+    Column("raw_response", JSONB, nullable=False),
+    Column("validated_tables", JSONB, nullable=False),
+    Column("query_nodes", JSONB, nullable=False),
+    Column("posteriors", JSONB, nullable=False),
+    Column("section_text", Text, nullable=False),
+    Column("template_version", Text, nullable=False),
+    Column("prompt_version", Text, nullable=False),
+    Column("network_version", Text, nullable=False),
+    Column("provider_model", Text, nullable=False),
+    Column("projection_hash", Text, nullable=False),
+    Column("provenance", JSONB, nullable=False),
+    Column("created_at", DateTime(timezone=True), nullable=False),
+    CheckConstraint("char_length(source_hash) = 64", name="ck_original_baselines_src_sha256"),
+    CheckConstraint("char_length(effective_hash) = 64", name="ck_original_baselines_eff_sha256"),
+    CheckConstraint("char_length(projection_hash) = 64", name="ck_original_baselines_proj_sha256"),
+)
+
+Index("ix_original_baselines_batch_id", original_baselines.c.batch_id)
 Index("ix_reasoning_jobs_batch_id", reasoning_jobs.c.batch_id)
 Index(
     "ix_reasoning_jobs_claim",

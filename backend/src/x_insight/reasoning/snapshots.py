@@ -556,6 +556,10 @@ def start_generation_batch(
             created_at=moment,
         )
     )
+    # S45: freeze the full question package (manifest/prompt/template +
+    # ``network_xml``) for the worker. Stored verbatim; never read from
+    # mutable files at execution time.
+    frozen_package = dict(package) if isinstance(package, dict) else {}
     session.execute(
         insert(reasoning_tables.question_runs).values(
             id=run_id,
@@ -567,6 +571,7 @@ def start_generation_batch(
             projection_hash=projection_hash,
             fingerprint=fingerprint,
             pinned_versions=pinned,
+            pinned_package=frozen_package,
             created_at=moment,
         )
     )

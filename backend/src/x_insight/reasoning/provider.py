@@ -435,6 +435,16 @@ class BoundedProviderAdapter:
         self._database_url = database_url
         self.tool_calls_made = 0
 
+    @property
+    def config(self) -> ProviderConfig:
+        """Explicit accessor for the injected provider config (no _ access)."""
+        return self._config
+
+    @property
+    def database_url(self) -> str | None:
+        """Explicit accessor for the MCP read URL override (or None)."""
+        return self._database_url
+
     def _grant(self) -> str:
         import os
 

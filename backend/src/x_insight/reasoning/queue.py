@@ -647,6 +647,17 @@ def _is_job_eligible(
     return True, "eligible"
 
 
+def is_job_eligible(
+    session: Session,
+    job: dict[str, Any],
+    batch: dict[str, Any],
+    run: dict[str, Any],
+    now: datetime,
+) -> tuple[bool, str]:
+    """Public eligibility check for cross-module use (wraps the same checks)."""
+    return _is_job_eligible(session, job, batch, run, now)
+
+
 def claim_next_job(
     session: Session, worker_id: str, now: datetime | None = None
 ) -> dict[str, Any] | None:

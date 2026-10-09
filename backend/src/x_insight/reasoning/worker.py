@@ -1,9 +1,16 @@
-"""Durable worker entry point (S44, seam T8; plan.md §§8.4-8.5).
+"""Durable worker entry point (S44+S45, seam T8; plan.md §§8.4-8.5, 8.2-8.3, 7.4, 9).
 
 One ``run_once()`` used by tests and the polling process: reclaim expired
 leases, claim one fairly-ordered eligible job (short transaction, SKIP
-LOCKED), run the controlled provider stub outside any DB transaction,
-then commit with fencing token + deployment generation checks.
+LOCKED), execute outside any DB transaction, then commit with fencing
+token + deployment generation checks.
+
+- S44 path (``ControlledStubAdapter``): deterministic stub outside any tx,
+  then ``queue.commit_job_result`` (queue mechanics, no CPT work).
+- S45 path (``BoundedProviderAdapter``): full synthetic question via
+  ``coordinator.execute_claimed_job`` — real MCP → controlled provider →
+  all-CPT validation → effective XML → empty-evidence inference → template
+  section with atomic baseline creation (no fake succeeded endpoint).
 
 No DB lock/transaction is held while awaiting the provider. Restart
 retains attempts + terminal artifacts (all rows persistent). Old tokens
@@ -30,14 +37,20 @@ def run_once(
     provider: provider_module.ProviderAdapter | None = None,
     now: datetime | None = None,
     worker_id: str | None = None,
+    database_url: str | None = None,
 ) -> dict[str, Any]:
-    """Execute one durable work unit (reclaim → claim → stub → commit).
+    """Execute one durable work unit (reclaim → claim → execute → commit).
 
     Deterministic clock adapter: pass ``now`` to control lease deadlines,
     heartbeats, and fencing in tests (defaults to ``utcnow`` in production).
     The same ``now`` drives reclaim, claim, and commit in this call, so
     expiry/reclaim probes are fully deterministic. Production polling
-    passes no clock (real time).
+    passes no clock (real time). ``database_url`` overrides the MCP read
+    URL for this call (tests pass the isolated test URL; production uses
+    the adapter value or environment).
+
+    S44 stub providers keep the original minimal-request path; S45 bounded
+    providers delegate to the coordinator full pipeline (same entry point).
 
     Returns one of:
     - ``{'status': 'idle'}`` (no eligible work)
@@ -67,9 +80,26 @@ def run_once(
     run = claimed["run"]
     batch = claimed["batch"]
     lease_token = str(claimed["lease_token"])
+    grant_token = str(claimed.get("grant_token") or "")
 
+    # S45 path: bounded estimation with real MCP + full pipeline. The
+    # per-job grant binds this claim; rebuild the adapter around it so a
+    # probe-constructed adapter (empty grant) still crosses real stdio.
+    if isinstance(provider, provider_module.BoundedProviderAdapter):
+        from x_insight.reasoning import coordinator as coordinator_module
+
+        per_job = provider_module.BoundedProviderAdapter(
+            provider.config,
+            grant_token=grant_token,
+            database_url=database_url or provider.database_url,
+        )
+        return coordinator_module.execute_claimed_job(
+            engine, job, run, batch, lease_token, per_job, moment, wid
+        )
+
+    # S44 stub path (unchanged): minimal request, deterministic stub.
     # Provider runs outside any DB transaction or lock (real projection +
-    # pinned contract only; stub is deterministic, S43/S45 completes it).
+    # pinned contract only; stub is deterministic).
     projection = run.get("projection") or {}
     request = provider_module.ProviderRequest(
         question_key=str(run.get("question_key", "")),
