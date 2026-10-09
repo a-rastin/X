@@ -1,0 +1,340 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<BIF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="0.3" xsi:noNamespaceSchemaLocation="schema.xml">
+  <NETWORK>
+    <NAME>BN_10_LAI_Review_S30_v1</NAME>
+    <PROPERTY>clinical_question=How do scenario factors affect experimental LAI consideration and delivery results?</PROPERTY>
+    <PROPERTY>statement_id=10</PROPERTY>
+    <PROPERTY>recommendation_strength=2</PROPERTY>
+    <PROPERTY>evidence_quality=B</PROPERTY>
+    <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-10.md</PROPERTY>
+    <PROPERTY>source_locator=STATEMENT 10: Long-Acting Injectable Antipsychotic Medications; Implementation; Patient Preferences; Quality Measurement Considerations</PROPERTY>
+    <PROPERTY>source_sha256=3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827</PROPERTY>
+    <PROPERTY>population=Adult schizophrenia and antipsychotic-treatment scenarios for experimentation</PROPERTY>
+    <PROPERTY>setting=Experimental and educational application</PROPERTY>
+    <PROPERTY>time_horizon=Current encounter synthesis of scenario inputs</PROPERTY>
+    <PROPERTY>model_version=s30-v1</PROPERTY>
+    <PROPERTY>validation_status=AWAITING_REVIEW_SYNTHETIC_REFERENCE_CPTS</PROPERTY>
+    <PROPERTY>parameter_policy=All 14 nodes including roots require fresh complete percentage CPT estimation; XML tables are explicitly synthetic uniform mathematical references</PROPERTY>
+    <PROPERTY>edge_encoding=Ordered GIVEN elements materialize all BN-10 ordered proposed_parent properties; no edges removed or renamed</PROPERTY>
+    <PROPERTY>table_order=FOR outcome fastest; last GIVEN parent next; first GIVEN parent slowest</PROPERTY>
+    <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting context pauses for clarification; no guessed negatives</PROPERTY>
+    <PROPERTY>gate_policy=Gate true executes, false records not_applicable with reason and claims no posterior, unknown pauses for clarification</PROPERTY>
+    <PROPERTY>use_context=experimental_educational_awaiting_review</PROPERTY>
+    <PROPERTY>inference_mode=complete_CPT_estimation_empty_evidence</PROPERTY>
+    <PROPERTY>scope=LAI discussion and review only; no specific product selection and no product-choice contract</PROPERTY>
+    <PROPERTY>input_policy=Versioned candidate structured context only; no regimen fields or page notes</PROPERTY>
+    <PROPERTY>graph_semantics=Candidate retained BN-10 dependencies; all proposed_parent edges materialized in declared order</PROPERTY>
+    <PROPERTY>execution_contract=Complete fixed ordered CPTs and empty execution evidence; unapproved content cannot activate</PROPERTY>
+    <PROPERTY>source_policy=Pinned original BN-10 and STATEMENT-10 attribution required; review not yet granted</PROPERTY>
+    <PROPERTY>parameter_inventory=14 complete reference distributions: 9 roots plus 5 outputs; all explicitly synthetic uniform references</PROPERTY>
+    <VARIABLE TYPE="nature">
+      <NAME>SchizophreniaEstablished</NAME>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>label=Schizophrenia Established</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Schizophrenia status represented by the scenario.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-10.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT 10: Long-Acting Injectable Antipsychotic Medications</PROPERTY>
+      <PROPERTY>source_sha256=3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>LAIPreference</NAME>
+      <OUTCOME>PrefersLAI</OUTCOME>
+      <OUTCOME>PrefersOral</OUTCOME>
+      <OUTCOME>Undecided</OUTCOME>
+      <OUTCOME>DeclinesLAI</OUTCOME>
+      <PROPERTY>label=LAI Preference</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Scenario preference for an LAI or oral treatment, including declining an LAI or being undecided.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-10.md</PROPERTY>
+      <PROPERTY>source_locator=Patient Preferences</PROPERTY>
+      <PROPERTY>source_sha256=3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=4</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AdherenceHistory</NAME>
+      <OUTCOME>Adequate</OUTCOME>
+      <OUTCOME>Poor</OUTCOME>
+      <OUTCOME>Uncertain</OUTCOME>
+      <PROPERTY>label=Adherence History</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Adequate, poor or uncertain antipsychotic adherence represented in the scenario.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-10.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT 10: Long-Acting Injectable Antipsychotic Medications</PROPERTY>
+      <PROPERTY>source_sha256=3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=3</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>AdditionalDiscussionContext</NAME>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>label=Additional Discussion Context</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Additional scenario context for exploring an LAI, such as treatment gaps, care transitions or repeated hospitalizations.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-10.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Quality Measurement Considerations</PROPERTY>
+      <PROPERTY>source_sha256=3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>SameDrugOralExperience</NAME>
+      <OUTCOME>Supported</OUTCOME>
+      <OUTCOME>Concern</OUTCOME>
+      <OUTCOME>NotEstablished</OUTCOME>
+      <PROPERTY>label=Same Drug Oral Experience</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Scenario experience with the candidate oral antipsychotic: supported efficacy and tolerability, concern, or not established.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-10.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=3</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>PriorNeurolepticMalignantSyndrome</NAME>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>label=Prior Neuroleptic Malignant Syndrome</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=History of neuroleptic malignant syndrome represented in the scenario.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-10.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ProductPlanReviewed</NAME>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY>label=Product Plan Reviewed</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Completion status of a hypothetical product-plan review in the scenario; supporting documentation is optional.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-10.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>DeliveryBarriers</NAME>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>Absent</OUTCOME>
+      <PROPERTY>label=Delivery Barriers</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Scenario barriers involving access, transport, scheduling, cost, staffing or resources.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-10.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=2</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>LAITreatmentStatus</NAME>
+      <OUTCOME>Considering</OUTCOME>
+      <OUTCOME>Current</OUTCOME>
+      <OUTCOME>Previous</OUTCOME>
+      <PROPERTY>label=LAI Treatment Status</PROPERTY>
+      <PROPERTY>clinical_role=experimental_input</PROPERTY>
+      <PROPERTY>definition=Current, previous or considered LAI use represented in the scenario.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-10.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Patient Preferences</PROPERTY>
+      <PROPERTY>source_sha256=3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=3</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>LAIGuidelineCriterion</NAME>
+      <OUTCOME>Present</OUTCOME>
+      <OUTCOME>NotEstablished</OUTCOME>
+      <PROPERTY>label=LAI Guideline Criterion</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for LAI Guideline Criterion; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-10.md</PROPERTY>
+      <PROPERTY>source_locator=STATEMENT 10: Long-Acting Injectable Antipsychotic Medications</PROPERTY>
+      <PROPERTY>source_sha256=3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=48</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>DiscussionOpportunity</NAME>
+      <OUTCOME>OutsideScope</OUTCOME>
+      <OUTCOME>GuidelineCriterion</OUTCOME>
+      <OUTCOME>ContextualDiscussion</OUTCOME>
+      <OUTCOME>RoutineEducation</OUTCOME>
+      <PROPERTY>label=Discussion Opportunity</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for Discussion Opportunity; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-10.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Quality Measurement Considerations</PROPERTY>
+      <PROPERTY>source_sha256=3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=32</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>ClinicalReviewFocus</NAME>
+      <OUTCOME>NMSCaution</OUTCOME>
+      <OUTCOME>ReviewEfficacyOrTolerabilityConcern</OUTCOME>
+      <OUTCOME>EstablishCandidateEvidence</OUTCOME>
+      <OUTCOME>CandidateEvidenceReviewed</OUTCOME>
+      <PROPERTY>label=Clinical Review Focus</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for Clinical Review Focus; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-10.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=24</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>DeliveryReviewFocus</NAME>
+      <OUTCOME>ReviewProductPlanAndBarriers</OUTCOME>
+      <OUTCOME>ReviewProductPlan</OUTCOME>
+      <OUTCOME>AddressBarriers</OUTCOME>
+      <OUTCOME>ReviewItemsDocumented</OUTCOME>
+      <PROPERTY>label=Delivery Review Focus</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for Delivery Review Focus; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-10.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation</PROPERTY>
+      <PROPERTY>source_sha256=3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=16</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>LAIReviewPathway</NAME>
+      <OUTCOME>OutsideScope</OUTCOME>
+      <OUTCOME>RespectPreferenceReviewAlternatives</OUTCOME>
+      <OUTCOME>ReviewCurrentLAITreatment</OUTCOME>
+      <OUTCOME>IndividualizedPriorLAIReview</OUTCOME>
+      <OUTCOME>DiscussLAIOption</OUTCOME>
+      <OUTCOME>ConsiderContextualDiscussion</OUTCOME>
+      <OUTCOME>OfferRoutineEducation</OUTCOME>
+      <PROPERTY>label=LAI Review Pathway</PROPERTY>
+      <PROPERTY>clinical_role=experimental_output</PROPERTY>
+      <PROPERTY>definition=Experimental output for LAI Review Pathway; the state distribution is supplied per run instead of a fixed review rule.</PROPERTY>
+      <PROPERTY>source_path=project-documents/medical-documents/guideline/STATEMENT-10.md</PROPERTY>
+      <PROPERTY>source_locator=Implementation; Patient Preferences</PROPERTY>
+      <PROPERTY>source_sha256=3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827</PROPERTY>
+      <PROPERTY>time_window=current_encounter synthesis</PROPERTY>
+      <PROPERTY>missingness_policy=Required unknown, missing, not_assessed or conflicting pauses for clarification</PROPERTY>
+      <PROPERTY>parameter_status=synthetic_uniform_reference_awaiting_review</PROPERTY>
+      <PROPERTY>required_table_entries=336</PROPERTY>
+      <PROPERTY>discretization=Declared categories are used for scenario construction; clinical operationalization requires review</PROPERTY>
+    </VARIABLE>
+    <DEFINITION>
+      <FOR>SchizophreniaEstablished</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>LAIPreference</FOR>
+      <TABLE>0.25 0.25 0.25 0.25</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>AdherenceHistory</FOR>
+      <TABLE>0.33333333 0.33333333 0.33333334</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>AdditionalDiscussionContext</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>SameDrugOralExperience</FOR>
+      <TABLE>0.33333333 0.33333333 0.33333334</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>PriorNeurolepticMalignantSyndrome</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>ProductPlanReviewed</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>DeliveryBarriers</FOR>
+      <TABLE>0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>LAITreatmentStatus</FOR>
+      <TABLE>0.33333333 0.33333333 0.33333334</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>LAIGuidelineCriterion</FOR>
+      <GIVEN>SchizophreniaEstablished</GIVEN>
+      <GIVEN>LAIPreference</GIVEN>
+      <GIVEN>AdherenceHistory</GIVEN>
+      <TABLE>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>DiscussionOpportunity</FOR>
+      <GIVEN>SchizophreniaEstablished</GIVEN>
+      <GIVEN>LAIGuidelineCriterion</GIVEN>
+      <GIVEN>AdditionalDiscussionContext</GIVEN>
+      <TABLE>0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>ClinicalReviewFocus</FOR>
+      <GIVEN>PriorNeurolepticMalignantSyndrome</GIVEN>
+      <GIVEN>SameDrugOralExperience</GIVEN>
+      <TABLE>0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>DeliveryReviewFocus</FOR>
+      <GIVEN>ProductPlanReviewed</GIVEN>
+      <GIVEN>DeliveryBarriers</GIVEN>
+      <TABLE>0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25</TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>LAIReviewPathway</FOR>
+      <GIVEN>DiscussionOpportunity</GIVEN>
+      <GIVEN>LAIPreference</GIVEN>
+      <GIVEN>LAITreatmentStatus</GIVEN>
+      <TABLE>0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285714 0.14285716</TABLE>
+    </DEFINITION>
+  </NETWORK>
+</BIF>
