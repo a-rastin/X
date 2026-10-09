@@ -3,12 +3,11 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest recorded checkpoint is [S47](s47.md): bound mixed failures
-to one shared 3-attempt budget with backoff/Retry-After cap, resuming at
-the exact failed stage reusing persisted CPT/result artifacts; 12 new
-recovery tests + 39 worker + 24 MCP/provider + 95 http + 298
-assessment/model regressions, ruff+mypy clean, DB at 0012; no frontend
-change.
+The latest recorded checkpoint is [S48](s48.md): automatic proposal
+review + transparency UI (wizard step 8) with auto entry/flush/gate,
+ordered 7 states + retry, lazy five-field transparency, proposal + pinned
+DDI with sign-blocked reasons; 11 e2e chromium + 11 firefox (22 total),
+web build 55 modules, backend 75 still valid; no backend change.
 Content approvals remain as recorded in S39.b; bundle release and activation
 retain their independent status.
 
@@ -84,3 +83,4 @@ retain their independent status.
 | S45 | [Run one full synthetic clinical question end to end (2026-10-09)](s45.md) |
 | S46 | [Execute ordered workflows and assemble a complete proposal (2026-10-09)](s46.md) |
 | S47 | [Bound failures and recover at exact failed stage (2026-10-09)](s47.md) |
+| S48 | [Build automatic proposal review and transparency UI (2026-10-09)](s48.md) |

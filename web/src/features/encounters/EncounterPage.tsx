@@ -37,6 +37,7 @@ import { CssrsSection } from "../assessments/cssrs/CssrsSection";
 import { HistorySection } from "../history/HistorySection";
 import { EffectsSection } from "../history/EffectsSection";
 import { MedicationsSection } from "../medications/MedicationsSection";
+import { ProposalReviewPanel } from "../reasoning/ProposalReviewPanel";
 import { NotesSection } from "../notes/NotesSection";
 import { FollowupBaselinePanel } from "../patients/chart/FollowupBaselinePanel";
 import { useAutosave } from "./useAutosave";
@@ -580,6 +581,28 @@ function EncounterWizard({
       <NotesSection
         encounterId={encounterId}
         page="medications"
+        autosave={autosave}
+        onSessionExpired={sessionExpired}
+      />
+
+      {/* S48 proposal review (plan.md §§8-9; FR-15-16, FR-35-36): entry
+        flushes the shared autosave and automatically creates/reuses a
+        generation run once the draft is saved and the diagnosis/medication
+        gates pass — no extra Generate click, no run per keystroke. Ordered
+        per-question states, lazy persisted transparency, the immutable
+        proposal with pinned DDI, and a sign entry blocked with reasons for
+        failed/stale/partial runs (S49/S50 own signing). Page notes render
+        separately below via the reusable control (page key matches backend
+        ALLOWED_PAGES; notes never enter projections — see
+        features/reasoning/api.ts). */}
+      <ProposalReviewPanel
+        encounterId={encounterId}
+        autosave={autosave}
+        onSessionExpired={sessionExpired}
+      />
+      <NotesSection
+        encounterId={encounterId}
+        page="proposal"
         autosave={autosave}
         onSessionExpired={sessionExpired}
       />

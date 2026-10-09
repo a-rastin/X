@@ -604,6 +604,98 @@ body {
   align-items: flex-end;
 }
 
+/* S48 proposal review: ordered run states, persisted transparency, pinned
+ * proposal/DDI, and the blocked sign entry. Mirrors the dense clinical
+ * panels above — semantic tokens only (both deliberate themes), ink text
+ * throughout, state always paired with an explicit text label plus a shape
+ * glyph (never color alone). Primary buttons reuse .xi-btn-primary (the
+ * compliant --primary-action fill); no small teal text anywhere. */
+.xi-proposal-meta {
+  margin-bottom: var(--space-4);
+}
+
+.xi-mono {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  overflow-wrap: anywhere;
+}
+
+.xi-proposal-runs {
+  list-style: none;
+  margin: 0 0 var(--space-4);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.xi-proposal-run {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--canvas);
+  padding: var(--space-3) var(--space-4);
+}
+
+.xi-proposal-status {
+  font-size: 14px;
+  margin: 0 0 var(--space-1);
+}
+
+.xi-proposal-subhead {
+  font-size: 14px;
+  font-weight: 700;
+  margin: var(--space-4) 0 var(--space-2);
+}
+
+.xi-proposal-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-2) var(--space-4);
+  margin: 0 0 var(--space-2);
+}
+
+.xi-proposal-facts > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.xi-proposal-facts dt {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-muted);
+}
+
+.xi-proposal-facts dd {
+  margin: 0;
+  font-size: 14px;
+}
+
+.xi-proposal-transparency {
+  margin-top: var(--space-3);
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-2);
+}
+
+.xi-proposal-details {
+  margin: var(--space-2) 0;
+}
+
+.xi-proposal-details summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.xi-proposal-sections {
+  margin: 0 0 var(--space-4);
+  padding-left: var(--space-6);
+}
+
+.xi-proposal-sections li {
+  margin-bottom: var(--space-3);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
