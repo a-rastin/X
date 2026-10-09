@@ -3,9 +3,10 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest recorded checkpoint is [S39](s39.md): both workflow bundles
-verifier-green (T5: 12 focused / 198 model tests; `make check` green).
-Content remains `awaiting_review`; see report for hashes and release blockers.
+The latest recorded checkpoint is [S39.a](s39-a.md): F6 reference TABLEs
+corrected in immutable `s38-v2` / `s39-v2` candidates; full semantic validation
+and `make check` pass (208 model tests). Content remains `awaiting_review`; see the report for
+new artifact paths and release blockers.
 
 ## Reading and updating progress
 
@@ -70,3 +71,4 @@ Content remains `awaiting_review`; see report for hashes and release blockers.
 | S37 | [Build and verify the no_improvement_clozapine review draft (2026-10-09)](s37.md) |
 | S38 | [Build and verify the continue_or_adjust review draft (2026-10-09)](s38.md) |
 | S39 | [Review and release both complete workflow bundles (2026-10-09)](s39.md) |
+| S39.a | [Immutable F6 reference-table correction (2026-10-09)](s39-a.md) |

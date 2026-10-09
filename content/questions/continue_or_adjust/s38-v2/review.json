@@ -1,0 +1,332 @@
+{
+  "reviewer": "owner review pending",
+  "decision": "awaiting_review",
+  "date": "2026-10-09",
+  "source_hashes": {
+    "project-documents/bayesian-networks/BN-04.xml": "5e059514127a618ac887a04a04180afa1f8b768fa2a5b27f34a3eb13fc5a8e05",
+    "project-documents/bayesian-networks/BN-05.xml": "27b92883167c639859f99db7b5d7610862d90f11d69d0d34ff581e76c22e3fac",
+    "project-documents/bayesian-networks/BN-06.xml": "e29107fa432b29ca082a66dcae6aae7b3ecdf8aad00f9610c699c6da61518f96",
+    "project-documents/medical-documents/guideline/STATEMENT-04.md": "08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444",
+    "project-documents/medical-documents/guideline/STATEMENT-05.md": "3c1e65c840f3510792459691e1f3c952fe8b62f1643cce397cddf8b518384b36",
+    "project-documents/medical-documents/guideline/STATEMENT-06.md": "8cdf5bf124996870dd1212f9851a36fc1e1bbb88b7de6fcdd2a00a6365d37f60",
+    "content/history/history.v1.json": "01be359400834e2f047c9e9c9eaf7a25a4167949707eb1b14e6a8f57db6bcd80",
+    "network.xml": "70bce25d3c9d283d09840f8d594a4b3203ada92fc14515b039a57ddffdd100db",
+    "content/history/history.continue_or_adjust.v1.json": "cfc8cdf6cccb5d4575e5002d03762ef201f7dca79e3d7611a2b08dc9c60e90a9"
+  },
+  "assumptions": [
+    "No clinical model or history definition approved.",
+    "One BN-06-derived network executes per run; BN-04/05 overlap is background comparison, never a runtime merge.",
+    "STATEMENT-06 quality-measure/electronic-decision-support limitation stays explicit; retention does not approve graph or templates."
+  ],
+  "source_comparison": "See source_diff, bn_comparison and source_comparison_details: all 21 BN-06 variables, states and ordered proposed_parent edges retained with no removals, renames, merges or state extensions. BN-04 contributes background tolerability/preference/adherence context and BN-05 contributes background continuation-after-improvement context; neither is merged at runtime. Original BN SHA-256 hashes pinned and unchanged.",
+  "explicit_graph": "Fixed 21-node nature-only F6 follow-up graph in BN-06 order; source_comparison_details lists every retained ordered parent. All proposed_parent metadata is materialized as GIVENs. Edges are modeler-synthesized review candidates, not established causal facts.",
+  "reference_table_provenance": "BN-04/05/06 supply zero fixed tables for this graph (BN-04 holds 13 oral-formulation lookup definitions that are not reused here; BN-05/06 hold none); all 21 distributions were awaiting_experiment_cpt. Draft network.xml holds explicitly synthetic uniform references (compared_cells 0). Complete clinical table provenance remains a release blocker.",
+  "estimation_instructions": "prompt.txt requires all CPTs including roots, percentage strings, fixed order and empty evidence, with F6 follow-up identity, stale-baseline pausing, no causal intervention conditioning and the experimental/educational limitation.",
+  "result_mapping": "template.json defines candidate state-specific continuation-versus-adjustment review language for all 10 queried outputs (26 branches) plus a parallel urgent banner from saved inputs. Every queried state has a deterministic candidate wording branch; all distributions remain visible. No threshold/argmax treatment selection exists. Clinical branch selection/rendering remains S45 and owner review.",
+  "numerical_examples": "examples.json contains two complete independently worked 21-node mathematical references. The asymmetric fixture gives TolerabilityReview Yes 0.3325 with the ordered-parent transpose guard that gives 0.3125 swapped, Scope Within 0.49725, Discussion Continuation 0.1445819 and Individualized 0.3526681, Strategy Continue 0.290763 with Switch 0.17730925, Discontinued Yes 0.2836948, Destabilization Yes 0.1125 and MetabolicTrajectory Improved 0.240199. The urgent-present contrast fixture pins Scope and Discussion to UrgentSeparateAssessment 1.0 with all other marginals unchanged. Opposing projections return identical posteriors plus replay with empty evidence and no clamping. These validate math/engineering only; clinical expected_for_review cases remain unapproved.",
+  "clinical_examples": "examples.json contains 7 clinical review candidates: continuation applicable, adjustment change-reason review, urgent-present parallel banner, insufficient unknown preference, stale outdated baseline contrasted with the current-baseline case, required missing baseline, and conflict. These are proposed readiness/scope/wording expectations, not self-validating clinical tests or implemented runtime claims.",
+  "admission_measurements": "Measured 21 nature nodes, 106 rows, 314 cells per full fixture. Network XML 36267 bytes. Independent ordered-parent marginals, urgent-present contrast, opposing-projection inference plus replay with empty evidence and no clamping passed within 1e-6. Memory ceiling/provider capacity remain unmeasured and clinical release is blocked awaiting review.",
+  "open_assumptions": "Candidate 12-field history (10 node-mapped CPT-context plus 2 gate-only baseline applicability) with baseline-window, tolerability-synthesis, preference, availability and LAI-formulation provenance, 24-week metabolic horizon, deterministic-rule versus estimated-table output semantics, urgent-banner independence, BN-04/05 background reuse without merge, full clinical CPT provenance and final candidate wording all require review before release. History v1, runtime projections/readiness and active bundles remain unchanged.",
+  "source_diff": {
+    "removed_nodes": [],
+    "removed_edges": [],
+    "renamed": {},
+    "materialized_proposed_parents": true,
+    "state_extensions": {},
+    "retained_variables": [
+      "SchizophreniaEstablished",
+      "SymptomImprovementOnCurrentAntipsychotic",
+      "UrgentSafetyConcern",
+      "ResidualClinicalBurden",
+      "MetabolicConcern",
+      "OtherTolerabilityConcern",
+      "SameAntipsychoticContinuationPreference",
+      "CurrentAgentAvailable",
+      "LAIUnderConsideration",
+      "SameAgentLAIAvailable",
+      "SameAntipsychoticContinuationScope",
+      "LAIAgentMismatch",
+      "TolerabilityReview",
+      "ClinicalChangeReason",
+      "PracticalChangeReason",
+      "SameAgentDiscussion",
+      "ObservedSameAntipsychoticStrategy",
+      "SwitchMonitoringContext",
+      "AssignedRegimenDiscontinued",
+      "ClinicalDestabilization",
+      "MetabolicTrajectory"
+    ]
+  },
+  "reference_table_audit": {
+    "source_locator": "BN-04/05/06 parameter_inventory: 21 mapped BN-06 distributions awaiting_experiment_cpt, 0 reused source-lookup",
+    "compared_cells": 0,
+    "mismatches": [],
+    "clinical_probability_claim": false,
+    "synthetic_reference_rows": "All 21 draft tables are explicitly synthetic uniform references; numerical fixture rows are independent mathematical references with worked marginals."
+  },
+  "source_comparison_details": {
+    "retained_variables": [
+      "SchizophreniaEstablished",
+      "SymptomImprovementOnCurrentAntipsychotic",
+      "UrgentSafetyConcern",
+      "ResidualClinicalBurden",
+      "MetabolicConcern",
+      "OtherTolerabilityConcern",
+      "SameAntipsychoticContinuationPreference",
+      "CurrentAgentAvailable",
+      "LAIUnderConsideration",
+      "SameAgentLAIAvailable",
+      "SameAntipsychoticContinuationScope",
+      "LAIAgentMismatch",
+      "TolerabilityReview",
+      "ClinicalChangeReason",
+      "PracticalChangeReason",
+      "SameAgentDiscussion",
+      "ObservedSameAntipsychoticStrategy",
+      "SwitchMonitoringContext",
+      "AssignedRegimenDiscontinued",
+      "ClinicalDestabilization",
+      "MetabolicTrajectory"
+    ],
+    "retained_states": {
+      "SchizophreniaEstablished": [
+        "No",
+        "Yes"
+      ],
+      "SymptomImprovementOnCurrentAntipsychotic": [
+        "No",
+        "Yes"
+      ],
+      "UrgentSafetyConcern": [
+        "Absent",
+        "Present"
+      ],
+      "ResidualClinicalBurden": [
+        "No",
+        "Yes"
+      ],
+      "MetabolicConcern": [
+        "No",
+        "Yes"
+      ],
+      "OtherTolerabilityConcern": [
+        "No",
+        "Yes"
+      ],
+      "SameAntipsychoticContinuationPreference": [
+        "ContinueSame",
+        "DiscussChange",
+        "NoExpressedPreference"
+      ],
+      "CurrentAgentAvailable": [
+        "No",
+        "Yes"
+      ],
+      "LAIUnderConsideration": [
+        "No",
+        "Yes"
+      ],
+      "SameAgentLAIAvailable": [
+        "No",
+        "Yes"
+      ],
+      "SameAntipsychoticContinuationScope": [
+        "OutsideScope",
+        "WithinScope",
+        "UrgentSeparateAssessment"
+      ],
+      "LAIAgentMismatch": [
+        "No",
+        "Yes"
+      ],
+      "TolerabilityReview": [
+        "No",
+        "Yes"
+      ],
+      "ClinicalChangeReason": [
+        "No",
+        "Yes"
+      ],
+      "PracticalChangeReason": [
+        "No",
+        "Yes"
+      ],
+      "SameAgentDiscussion": [
+        "OutsideScope",
+        "ContinuationDiscussion",
+        "IndividualizedChangeReview",
+        "UrgentSeparateAssessment"
+      ],
+      "ObservedSameAntipsychoticStrategy": [
+        "ContinueSameAgent",
+        "SwitchAgent",
+        "OtherStrategy"
+      ],
+      "SwitchMonitoringContext": [
+        "RoutineReview",
+        "SwitchMonitoringDiscussion",
+        "SeparatePlanReview"
+      ],
+      "AssignedRegimenDiscontinued": [
+        "No",
+        "Yes"
+      ],
+      "ClinicalDestabilization": [
+        "No",
+        "Yes"
+      ],
+      "MetabolicTrajectory": [
+        "Improved",
+        "NoMeaningfulChange",
+        "Worsened"
+      ]
+    },
+    "retained_edges": [
+      [
+        "SchizophreniaEstablished",
+        "SameAntipsychoticContinuationScope"
+      ],
+      [
+        "SymptomImprovementOnCurrentAntipsychotic",
+        "SameAntipsychoticContinuationScope"
+      ],
+      [
+        "UrgentSafetyConcern",
+        "SameAntipsychoticContinuationScope"
+      ],
+      [
+        "LAIUnderConsideration",
+        "LAIAgentMismatch"
+      ],
+      [
+        "SameAgentLAIAvailable",
+        "LAIAgentMismatch"
+      ],
+      [
+        "MetabolicConcern",
+        "TolerabilityReview"
+      ],
+      [
+        "OtherTolerabilityConcern",
+        "TolerabilityReview"
+      ],
+      [
+        "ResidualClinicalBurden",
+        "ClinicalChangeReason"
+      ],
+      [
+        "TolerabilityReview",
+        "ClinicalChangeReason"
+      ],
+      [
+        "CurrentAgentAvailable",
+        "PracticalChangeReason"
+      ],
+      [
+        "LAIAgentMismatch",
+        "PracticalChangeReason"
+      ],
+      [
+        "SameAntipsychoticContinuationScope",
+        "SameAgentDiscussion"
+      ],
+      [
+        "ClinicalChangeReason",
+        "SameAgentDiscussion"
+      ],
+      [
+        "PracticalChangeReason",
+        "SameAgentDiscussion"
+      ],
+      [
+        "SameAntipsychoticContinuationPreference",
+        "SameAgentDiscussion"
+      ],
+      [
+        "ClinicalChangeReason",
+        "ObservedSameAntipsychoticStrategy"
+      ],
+      [
+        "PracticalChangeReason",
+        "ObservedSameAntipsychoticStrategy"
+      ],
+      [
+        "SameAntipsychoticContinuationPreference",
+        "ObservedSameAntipsychoticStrategy"
+      ],
+      [
+        "ObservedSameAntipsychoticStrategy",
+        "SwitchMonitoringContext"
+      ],
+      [
+        "ObservedSameAntipsychoticStrategy",
+        "AssignedRegimenDiscontinued"
+      ],
+      [
+        "SameAntipsychoticContinuationPreference",
+        "AssignedRegimenDiscontinued"
+      ],
+      [
+        "ObservedSameAntipsychoticStrategy",
+        "ClinicalDestabilization"
+      ],
+      [
+        "ResidualClinicalBurden",
+        "ClinicalDestabilization"
+      ],
+      [
+        "ObservedSameAntipsychoticStrategy",
+        "MetabolicTrajectory"
+      ],
+      [
+        "MetabolicConcern",
+        "MetabolicTrajectory"
+      ]
+    ],
+    "removed_nodes": [],
+    "removed_edges": [],
+    "renamed": {},
+    "materialized_proposed_parents": true,
+    "state_extensions": {},
+    "bn_parameter_inventory": "BN-06: 21 awaiting_experiment_cpt, 0 source-lookup; BN-05: 20 awaiting_experiment_cpt, 0 source-lookup; BN-04: 19 awaiting_experiment_cpt plus 13 Table-6 lookup definitions (not reused)"
+  },
+  "bn_comparison": {
+    "BN-04_Antipsychotic_Treatment_Review": "32 variables incl. 22-state oral agent, DoseExposureCategory, EffectiveExposure, SymptomResponse and 13 Table-6 lookup definitions; registration established-treatment review scope. Background only: tolerability/preference/adherence/exposure concepts inform wording, never merged; dose concepts stay excluded per FR-14.",
+    "BN-05_Continuing_Antipsychotic_Treatment": "20 variables incl. ObservedMaintenanceStrategy, SustainedExposure, Relapse and PsychiatricHospitalization with a 12-month modeler-assumption horizon; continuation-after-improvement scope. Background only: adherence/support and gradual-change monitoring concepts inform wording, never merged.",
+    "BN-06_Continuing_Same_Antipsychotic": "21 variables retained in full as the single executable backbone: same-agent continuation scope, LAI mismatch, tolerability/clinical/practical reviews, same-agent discussion, observed strategy, switch monitoring and 24-week follow-up outcomes. No runtime merge of the three models.",
+    "decision": "One BN-06-derived question/graph per the 2026-10-04 owner retention; BN-04/05 remain comparison background with originals untouched."
+  },
+  "owner_retention_decision": "2026-10-04 owner decision: BN-06-derived continuation content is retained within the experimental/educational scope (content-decisions.md Pharmacotherapy scope and BN-06 retention). Retention does not remove the STATEMENT-06 limitation below and does not approve the concrete graph, CPTs or templates; release stays blocked on owner review (S39).",
+  "statement_06_limitation": "Supplied STATEMENT-06 section Quality Measurement Considerations states: As a suggestion, this guideline statement is not appropriate for use as a quality measure or for electronic decision support. However, health plans may wish to implement internal process measures to assess and reduce rates at which changes to stable medication regimens are made on the basis of nonclinical factors such as pre-authorization requirements or formulary changes. The derived BN-06 XML lacks this literal restriction text; it is recorded here and stays explicit until owner review resolves wording before release.",
+  "immutable_revision": {
+    "supersedes_version": "s38-v1",
+    "supersedes_package_hash": "199c61814ceea876d16b2547ecd996ad90ba7fc16be26c4a5b7cc334fa794899",
+    "supersedes_network_hash": "5f0d4eca4637a6cd1bc9e67bb55bea93f98c335cdc98f98552be4808b8cfb3e5",
+    "reason": "Correct repeated synthetic reference rows: all 21 TABLEs had an extra child-cardinality multiplier. The prior release recorded only the first five semantic diagnostics. Preserve prior artifacts; no review approval or activation implied.",
+    "corrected_nodes": [
+      "SchizophreniaEstablished",
+      "SymptomImprovementOnCurrentAntipsychotic",
+      "UrgentSafetyConcern",
+      "ResidualClinicalBurden",
+      "MetabolicConcern",
+      "OtherTolerabilityConcern",
+      "SameAntipsychoticContinuationPreference",
+      "CurrentAgentAvailable",
+      "LAIUnderConsideration",
+      "SameAgentLAIAvailable",
+      "SameAntipsychoticContinuationScope",
+      "LAIAgentMismatch",
+      "TolerabilityReview",
+      "ClinicalChangeReason",
+      "PracticalChangeReason",
+      "SameAgentDiscussion",
+      "ObservedSameAntipsychoticStrategy",
+      "SwitchMonitoringContext",
+      "AssignedRegimenDiscontinued",
+      "ClinicalDestabilization",
+      "MetabolicTrajectory"
+    ],
+    "semantic_valid": true,
+    "semantic_codes": []
+  }
+}

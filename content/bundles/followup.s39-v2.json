@@ -1,0 +1,73 @@
+{
+  "schema_version": "workflow-bundle-v1",
+  "workflow": "followup",
+  "version": "s39-v2",
+  "assessment_refs": [
+    "content/assessments/diagnosis.v1.json",
+    "content/assessments/panss.v1.json",
+    "content/assessments/cssrs.v1.json"
+  ],
+  "ddi_ref": "content/ddi/unreleased (template only, no DatasetRelease; coverage_unavailable until S18 release)",
+  "questions": [
+    {
+      "question_key": "tardive_dyskinesia",
+      "version": "s33-v1",
+      "network_hash": "538daba6318a1a87d116bd92bda4042063a4fa41c178d1e031ced18d7ea4d5df",
+      "package_hash": "a0f8d9bd584091df66bbd7c39f50c124d71114681d8452dc9ec05ed69b8bcc10",
+      "prompt_version": "s33-v1",
+      "template_version": "s33-v1",
+      "history_definition": "content/history/history.tardive_dyskinesia.v1.json"
+    },
+    {
+      "question_key": "akathisia",
+      "version": "s34-v1",
+      "network_hash": "a9b73a43701e6e7d4213e7877781f4c819dd8745fd463320bbd8348c3745de55",
+      "package_hash": "c5416eb6b405299635c8877af66a56cf586214a57fae9482778a4bb6712d09f6",
+      "prompt_version": "s34-v1",
+      "template_version": "s34-v1",
+      "history_definition": "content/history/history.akathisia.v1.json"
+    },
+    {
+      "question_key": "parkinsonism",
+      "version": "s35-v1",
+      "network_hash": "504e34c5e23967373292c43499e73dce8abe78fcd4d5c1986ddb018ed2730547",
+      "package_hash": "e7147a45aee24c206efe633e130889b4b2fcc368a9095569d6f01e90b5e3de65",
+      "prompt_version": "s35-v1",
+      "template_version": "s35-v1",
+      "history_definition": "content/history/history.parkinsonism.v1.json"
+    },
+    {
+      "question_key": "acute_dystonia",
+      "version": "s36-v1",
+      "network_hash": "2ddda6893800e0441326004af9d83c42385924738ae3d37af177b3be9b71e031",
+      "package_hash": "6f702f5baceaab84502d87ad5c3c26b44c36522a977e7f41d92ea3f34f4684a8",
+      "prompt_version": "s36-v1",
+      "template_version": "s36-v1",
+      "history_definition": "content/history/history.acute_dystonia.v1.json"
+    },
+    {
+      "question_key": "no_improvement_clozapine",
+      "version": "s37-v1",
+      "network_hash": "4a1863d996efddae0b8904d28868af90030e7f30be56a97666c1dfd165801435",
+      "package_hash": "af32c0055c83c85edd454089ade53e0c4bb68e86496d0fc1ff7de5b50ac3753c",
+      "prompt_version": "s37-v1",
+      "template_version": "s37-v1",
+      "history_definition": "content/history/history.no_improvement_clozapine.v1.json"
+    },
+    {
+      "question_key": "continue_or_adjust",
+      "version": "s38-v2",
+      "network_hash": "70bce25d3c9d283d09840f8d594a4b3203ada92fc14515b039a57ddffdd100db",
+      "package_hash": "27374d0598af67fca1615f2fbe86acc5367fc4d4a74e3195286b68da88f4c03d",
+      "prompt_version": "s38-v2",
+      "template_version": "s38-v2",
+      "history_definition": "content/history/history.continue_or_adjust.v1.json"
+    }
+  ],
+  "review": {
+    "reviewer": "owner review pending",
+    "decision": "awaiting_review",
+    "date": "2026-10-09",
+    "basis": "S39 corrective revision: F6 s38-v2 reference TABLE dimensions verified; owner approval still pending, activation blocked."
+  }
+}

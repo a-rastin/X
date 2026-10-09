@@ -77,6 +77,18 @@ QUERY_NODES = (
 )
 
 
+@pytest.fixture(autouse=True, params=("s38-v1", "s38-v2"))
+def package_revision(request: pytest.FixtureRequest, monkeypatch: pytest.MonkeyPatch) -> None:
+    path = ROOT / "content/questions/continue_or_adjust"
+    if request.param == "s38-v2":
+        path /= "s38-v2"
+    monkeypatch.setitem(globals(), "PACKAGE", path)
+
+
+def _revision() -> str:
+    return "s38-v2" if PACKAGE.name == "s38-v2" else "s38-v1"
+
+
 def _read_package() -> tuple[dict[str, Any], bytes]:
     package = {
         name: json.loads((PACKAGE / f"{name}.json").read_text())
@@ -100,7 +112,7 @@ def test_continue_or_adjust_six_file_draft_validates_without_approval_or_evidenc
     loaded = load_question_package(package, document, known_source_prefixes=CANDIDATE_SOURCE_PATHS)
     assert loaded.question_key == "continue_or_adjust"
     assert package["manifest"]["workflow"] == "followup"
-    assert package["manifest"]["version"] == "s38-v1"
+    assert package["manifest"]["version"] == _revision()
     assert package["manifest"]["review_status"] == "awaiting_review"
     assert package["review"]["decision"] == "awaiting_review"
     assert package["manifest"]["execution_evidence"] == {}
@@ -269,15 +281,18 @@ def test_continue_or_adjust_source_fidelity_is_auditable_without_clinical_probab
 
     # Distinct F6 follow-up identity on a BN-06-derived single graph.
     own_head = source[:4000].decode()
-    assert "BN_06_Continue_Or_Adjust_Review_F6_v1" in own_head
+    assert f"BN_06_Continue_Or_Adjust_Review_F6_v{_revision()[-1]}" in own_head
     assert package["manifest"]["question_key"] == "continue_or_adjust"
     assert package["manifest"]["workflow"] == "followup"
-    assert package["manifest"]["prompt_version"] == "s38-v1"
-    assert package["manifest"]["template_version"] == "s38-v1"
+    assert package["manifest"]["prompt_version"] == _revision()
+    assert package["manifest"]["template_version"] == _revision()
     assert validate(source).source_sha256 != original06.source_sha256
     assert (
         validate(source).source_sha256
-        == "5f0d4eca4637a6cd1bc9e67bb55bea93f98c335cdc98f98552be4808b8cfb3e5"
+        == {
+            "s38-v1": "5f0d4eca4637a6cd1bc9e67bb55bea93f98c335cdc98f98552be4808b8cfb3e5",
+            "s38-v2": "70bce25d3c9d283d09840f8d594a4b3203ada92fc14515b039a57ddffdd100db",
+        }[_revision()]
     )
 
 
@@ -591,7 +606,7 @@ def test_continue_or_adjust_review_template_preserves_urgent_without_treatment_c
     assert "synthetic mathematical references" in lowered_prompt
 
     template = package["template"]
-    assert template["version"] == "s38-v1"
+    assert template["version"] == _revision()
     assert template["status"] == "awaiting_review"
     assert "prose" not in template and "free_text" not in template
     branches = template["branches"]
