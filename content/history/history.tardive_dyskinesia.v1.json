@@ -1,0 +1,316 @@
+{
+  "schema_version": "candidate-history-additions-v1",
+  "version": "tardive_dyskinesia.v1",
+  "status": "awaiting_review",
+  "extends": "history.v1",
+  "purpose": "Isolated S33 review proposal; not loaded by runtime, not replacing or approving v1. No medication regimen fields. Effect present/absent/not_assessed gates applicability with reviewed severity; AIMS item responses are measurement context only pending the complete reviewed source; no diagnosis from unreviewed total and no treatment threshold.",
+  "fields": [
+    {
+      "id": "h_td_assessment",
+      "source_path": "candidate/history/tardive_dyskinesia.v1/h_td_assessment",
+      "node_id": "TardiveDyskinesiaAssessment",
+      "permitted": [
+        "Present",
+        "Absent",
+        "Unresolved",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Tardive dyskinesia effect status for this follow-up encounter: present, absent or unresolved assessment requiring clinician review of movement pattern, persistence, exposure, onset and alternative explanations with AIMS measurement context when the complete reviewed source is available.",
+      "source_locator": "project-documents/medical-documents/tardive-dyskinesia-criteria.md — Diagnostic features (movement pattern, persistence, exposure, onset) and Differential diagnosis; STATEMENT-14 Implementation (evaluation, AIMS/DISCUS, no score threshold for intervention)",
+      "source_sha256": "896a311d5654137f97d272db8922a64114fc440999e1d448133040ad6132bd24",
+      "operationalization": "Present requires clinician-recorded involuntary choreiform/at athetoid/stereotyped movements with persistence, exposure and onset review plus alternative explanations considered; Absent requires assessment finding no such persistence; Unresolved/not_assessed/unknown means assessment incomplete or conflicting and pauses. AIMS item responses are measurement context only when the complete reviewed source is available; no diagnosis is inferred from an unreviewed AIMS total and Schooler-Kane research thresholds are never treatment thresholds. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Present": "Present",
+        "Absent": "Absent",
+        "Unresolved": "Unresolved"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_td_antipsychotic_association",
+      "source_path": "candidate/history/tardive_dyskinesia.v1/h_td_antipsychotic_association",
+      "node_id": "TardiveDyskinesiaAntipsychoticAssociation",
+      "permitted": [
+        "Established",
+        "NotEstablished",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Whether tardive dyskinesia is associated with antipsychotic exposure in this follow-up context, after alternative explanations are considered.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-14.md — Implementation (tardive syndromes caused by sustained antipsychotic exposure; assessment for other contributors including history, examination and indicated studies)",
+      "source_sha256": "896a311d5654137f97d272db8922a64114fc440999e1d448133040ad6132bd24",
+      "operationalization": "Established requires documented dopamine-blocker exposure with onset during exposure or within withdrawal windows and alternative contributors reviewed; NotEstablished requires assessment finding no such association or an alternative explanation. Unknown pauses. Exposure agents and windows only; no dose/route/frequency. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Established": "Established",
+        "NotEstablished": "NotEstablished"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_td_motor_severity",
+      "source_path": "candidate/history/tardive_dyskinesia.v1/h_td_motor_severity",
+      "node_id": "TardiveDyskinesiaMotorSeverity",
+      "permitted": [
+        "Mild",
+        "ModerateOrSevere",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Clinician-reviewed motor severity for this encounter, separate from disabling impact; never inferred from an unreviewed AIMS total.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-14.md — Implementation (no specific AIMS score threshold suggests need for intervention; ranges correspond with mild, moderate and severe; same total varies)",
+      "source_sha256": "896a311d5654137f97d272db8922a64114fc440999e1d448133040ad6132bd24",
+      "operationalization": "Mild/ModerateOrSevere records the clinician-reviewed motor severity with examination and window attribution. No AIMS total band or numeric cutoff is set here; Schooler-Kane research thresholds are not severity bands. Unknown pauses. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Mild": "Mild",
+        "ModerateOrSevere": "ModerateOrSevere"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_td_disabling_impact",
+      "source_path": "candidate/history/tardive_dyskinesia.v1/h_td_disabling_impact",
+      "node_id": "TardiveDyskinesiaDisablingImpact",
+      "permitted": [
+        "Present",
+        "Absent",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Disabling impact of tardive dyskinesia for this encounter, separate from motor severity, including functioning, health status and quality of life.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-14.md — Implementation (impact on functioning, health status including dentition, and quality of life) and Balancing Benefits (moderate to severe or disabling)",
+      "source_sha256": "896a311d5654137f97d272db8922a64114fc440999e1d448133040ad6132bd24",
+      "operationalization": "Present means clinician records disabling impact with functional attribution; Absent means review found none. Unknown pauses. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Present": "Present",
+        "Absent": "Absent"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_td_mild_consideration",
+      "source_path": "candidate/history/tardive_dyskinesia.v1/h_td_mild_consideration",
+      "node_id": "MildTardiveDyskinesiaTreatmentConsideration",
+      "permitted": [
+        "Present",
+        "Absent",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Reason for reviewing mild tardive dyskinesia, such as patient preference, associated impairment or psychosocial functioning.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-14.md — Implementation (mild tardive dyskinesia review on preference, impairment or psychosocial functioning)",
+      "source_sha256": "896a311d5654137f97d272db8922a64114fc440999e1d448133040ad6132bd24",
+      "operationalization": "Present means clinician records a mild-case review reason with attribution; Absent means no such reason recorded. Unknown pauses. This is a review reason, never a treatment order. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Present": "Present",
+        "Absent": "Absent"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_td_dose_temporal_link",
+      "source_path": "candidate/history/tardive_dyskinesia.v1/h_td_dose_temporal_link",
+      "node_id": "DoseReductionTemporalLink",
+      "permitted": [
+        "Present",
+        "Absent",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Temporal relationship between dyskinesia and antipsychotic dose reduction, including withdrawal-emergent course requiring longitudinal reassessment.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-14.md — Implementation (withdrawal-emergent dyskinesia with dose reduction; assess longitudinal course for months; persistence despite reduction)",
+      "source_sha256": "896a311d5654137f97d272db8922a64114fc440999e1d448133040ad6132bd24",
+      "operationalization": "Present means movements began or increased with dose reduction with window attribution; Absent means review found no such link. Brief withdrawal movements require longitudinal reassessment; unknown pauses. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Present": "Present",
+        "Absent": "Absent"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_td_urgent_safety_concern",
+      "source_path": "candidate/history/tardive_dyskinesia.v1/h_td_urgent_safety_concern",
+      "node_id": "UrgentSafetyConcern",
+      "permitted": [
+        "Present",
+        "Absent",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Clinician-determined urgent safety concern from saved structured urgent inputs at this encounter; displayed independently of estimation latency.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-14.md — Implementation (life-threatening constant movement, gagging or choking rapid suppression context) and Balancing Harms",
+      "source_sha256": "896a311d5654137f97d272db8922a64114fc440999e1d448133040ad6132bd24",
+      "operationalization": "Present means clinician identifies an urgent safety concern from saved structured urgent inputs during current assessment; Absent means urgent assessment completed without identified concern. Banner renders from saved inputs independently of estimation latency and is never a model-computed risk percentage. Unknown pauses. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Present": "Present",
+        "Absent": "Absent"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_td_vmat2_safety_assessment",
+      "source_path": "candidate/history/tardive_dyskinesia.v1/h_td_vmat2_safety_assessment",
+      "node_id": "VMAT2InhibitorCandidateSafetyAssessment",
+      "permitted": [
+        "Incomplete",
+        "ConcernsIdentified",
+        "ReviewedNoConcernIdentified",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Candidate-specific VMAT2 safety context for review: incomplete review, concerns identified or reviewed with no concern identified; current label context only, no prescribing rule copied.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-14.md — Table 11 and Implementation (hepatic/renal, CYP2D6/CYP3A4, QTc, depression/suicidal ideas monitoring; consult current product labeling)",
+      "source_sha256": "896a311d5654137f97d272db8922a64114fc440999e1d448133040ad6132bd24",
+      "operationalization": "Incomplete means safety review not yet completed; ConcernsIdentified means clinician records a safety concern with factor attribution; ReviewedNoConcernIdentified means review completed without identified concern. Table 11 details are background only and are not copied as activation metadata. Unknown pauses. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Incomplete": "Incomplete",
+        "ConcernsIdentified": "ConcernsIdentified",
+        "ReviewedNoConcernIdentified": "ReviewedNoConcernIdentified"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_td_vmat2_preference",
+      "source_path": "candidate/history/tardive_dyskinesia.v1/h_td_vmat2_preference",
+      "node_id": "VMAT2InhibitorTreatmentPreference",
+      "permitted": [
+        "WillingToDiscuss",
+        "Declines",
+        "Undecided",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Patient preference about VMAT2 review for shared decision review, used only as defined and collected.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-14.md — Patient Preferences (most moderate to severe wish diminution; willingness when well tolerated) and Balancing Benefits/Harms",
+      "source_sha256": "896a311d5654137f97d272db8922a64114fc440999e1d448133040ad6132bd24",
+      "operationalization": "WillingToDiscuss means patient is willing to discuss VMAT2 review after shared discussion; Declines means documented decline with alternatives discussion; Undecided means preference not yet clarified. Missing discussion remains Undecided/unknown, never Declines. Operational meaning requires owner review. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "WillingToDiscuss": "WillingToDiscuss",
+        "Declines": "Declines",
+        "Undecided": "Undecided"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_td_anticholinergic_exposure",
+      "source_path": "candidate/history/tardive_dyskinesia.v1/h_td_anticholinergic_exposure",
+      "node_id": "AnticholinergicExposure",
+      "permitted": [
+        "Present",
+        "Absent",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Current anticholinergic use represented for review, including worsening and reconciliation context.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-14.md — Implementation (anticholinergics do not improve and may worsen tardive dyskinesia; high-dose dystonia use is not a dyskinesia rule)",
+      "source_sha256": "896a311d5654137f97d272db8922a64114fc440999e1d448133040ad6132bd24",
+      "operationalization": "Present means clinician records current anticholinergic use with agent/window attribution; Absent means review found none. No dose/route/frequency collected. Unknown pauses. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Present": "Present",
+        "Absent": "Absent"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    }
+  ],
+  "retained_history_v1": "Twelve original v1 fields and runtime remain unchanged; this separately versioned adjunct proposes 10 additional CPT-context categories for F1, none approved."
+}

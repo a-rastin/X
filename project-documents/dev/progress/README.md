@@ -3,9 +3,9 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest recorded checkpoint is [S32](s32.md): established_case_clozapine review draft green
-(T5: 6 focused / 150 model tests; `make check` green). Content remains `awaiting_review`;
-see the report for release blockers and the S33 handoff.
+The latest recorded checkpoint is [S33](s33.md): tardive_dyskinesia review draft green
+(T5: 6 focused / 156 model tests; `make check` green). Content remains `awaiting_review`;
+see the report for release blockers and the S34 handoff.
 
 ## Reading and updating progress
 
@@ -63,3 +63,4 @@ see the report for release blockers and the S33 handoff.
 | S30 | [Build and verify the lai_indication_choice review draft (2026-10-09)](s30.md) |
 | S31 | [Build and verify the aggression_clozapine review draft (2026-10-09)](s31.md) |
 | S32 | [Build and verify the established_case_clozapine review draft (2026-10-09)](s32.md) |
+| S33 | [Build and verify the tardive_dyskinesia review draft (2026-10-09)](s33.md) |

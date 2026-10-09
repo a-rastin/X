@@ -1,0 +1,175 @@
+{
+  "version": "s33-v1",
+  "status": "awaiting_review",
+  "rendering_contract": "Candidate wording for S45 deterministic distribution rendering; each queried state has a branch, all probabilities remain visible. No probability threshold or posterior-ranked treatment selection is defined. Urgent banner renders from saved inputs in parallel with review topics. Whether outputs behave as deterministic rules or estimated tables is an open assumption for owner review; this wording assumes neither.",
+  "disclosures": [
+    "Experimental, uncalibrated and unapproved; not a prescription.",
+    "An absent case is not_applicable and claims no posterior; it is never a negative finding or a fake negative review posterior.",
+    "Unresolved, unknown, not_assessed, missing or conflicting required context pauses; absent is never coerced from not assessed and no missing finding maps to No.",
+    "AIMS supports measurement; its total alone never establishes diagnosis and no AIMS score threshold determines intervention; Schooler-Kane research thresholds are never treatment thresholds.",
+    "Urgent banner comes from saved structured urgent inputs, not model output, and never shows a fabricated risk percentage.",
+    "No dose, route, frequency or active/stopped fields are collected or accepted; Table 11 prescribing details are not copied as activation metadata."
+  ],
+  "branches": [
+    {
+      "when": {
+        "node": "TardiveDyskinesiaIndicationReview",
+        "state": "RecommendedVMAT2Review",
+        "operator": "=="
+      },
+      "text": "Candidate indication review topic: moderate to severe or disabling tardive dyskinesia with established association is recorded in this context; review VMAT2 consideration, safety, preference and alternatives with the clinician. This experimental distribution does not prescribe treatment Distribution: {TardiveDyskinesiaIndicationReview}."
+    },
+    {
+      "when": {
+        "node": "TardiveDyskinesiaIndicationReview",
+        "state": "ConsiderVMAT2Review",
+        "operator": "=="
+      },
+      "text": "Candidate indication review topic: mild tardive dyskinesia with a recorded review reason such as preference, impairment or psychosocial impact is recorded in this context; review consideration with the clinician. This does not prescribe treatment Distribution: {TardiveDyskinesiaIndicationReview}."
+    },
+    {
+      "when": {
+        "node": "TardiveDyskinesiaIndicationReview",
+        "state": "MonitorAndDiscuss",
+        "operator": "=="
+      },
+      "text": "Candidate indication review topic: monitor and discuss tardive dyskinesia course with the clinician in this context Distribution: {TardiveDyskinesiaIndicationReview}."
+    },
+    {
+      "when": {
+        "node": "TardiveDyskinesiaIndicationReview",
+        "state": "AssessDiagnosisAndAttribution",
+        "operator": "=="
+      },
+      "text": "Candidate indication review topic: assess diagnosis and attribution with the clinician, including alternative explanations, exposure history and longitudinal course in this context Distribution: {TardiveDyskinesiaIndicationReview}."
+    },
+    {
+      "when": {
+        "node": "TardiveDyskinesiaIndicationReview",
+        "state": "NoCurrentIndicationPrompt",
+        "operator": "=="
+      },
+      "text": "Candidate indication review topic: no current indication prompt in this absent context; retain ongoing clinician review. This is not a negative clinical finding Distribution: {TardiveDyskinesiaIndicationReview}."
+    },
+    {
+      "when": {
+        "node": "LongitudinalReview",
+        "state": "ReviewWithdrawalAndCourse",
+        "operator": "=="
+      },
+      "text": "Candidate longitudinal review topic: review withdrawal-emergent course over months with the clinician, including dose-reduction temporal link in this context Distribution: {LongitudinalReview}."
+    },
+    {
+      "when": {
+        "node": "LongitudinalReview",
+        "state": "ContinueLongitudinalAssessment",
+        "operator": "=="
+      },
+      "text": "Candidate longitudinal review topic: continue longitudinal assessment with the clinician in this context Distribution: {LongitudinalReview}."
+    },
+    {
+      "when": {
+        "node": "UrgentSafetyReview",
+        "state": "UrgentClinicianAssessment",
+        "operator": "=="
+      },
+      "text": "Urgent clinical assessment topic from saved structured urgent inputs, shown independently of estimation latency; arrange immediate clinician assessment per local protocol. This is not a computed risk percentage Distribution: {UrgentSafetyReview}."
+    },
+    {
+      "when": {
+        "node": "UrgentSafetyReview",
+        "state": "RoutineSafetyAssessment",
+        "operator": "=="
+      },
+      "text": "Candidate safety review topic: routine safety assessment with the clinician in this context Distribution: {UrgentSafetyReview}."
+    },
+    {
+      "when": {
+        "node": "VMAT2InhibitorSafetyReview",
+        "state": "CompleteCurrentLabelReview",
+        "operator": "=="
+      },
+      "text": "Candidate VMAT2 safety review topic: complete current label review with the clinician per current prescribing information in this context Distribution: {VMAT2InhibitorSafetyReview}."
+    },
+    {
+      "when": {
+        "node": "VMAT2InhibitorSafetyReview",
+        "state": "AddressIndividualConcerns",
+        "operator": "=="
+      },
+      "text": "Candidate VMAT2 safety review topic: address individual safety concerns with the clinician in this context Distribution: {VMAT2InhibitorSafetyReview}."
+    },
+    {
+      "when": {
+        "node": "VMAT2InhibitorSafetyReview",
+        "state": "ContinueIndividualizedMonitoring",
+        "operator": "=="
+      },
+      "text": "Candidate VMAT2 safety review topic: continue individualized monitoring with the clinician in this context Distribution: {VMAT2InhibitorSafetyReview}."
+    },
+    {
+      "when": {
+        "node": "VMAT2InhibitorSharedDecisionReview",
+        "state": "DiscussVMAT2Options",
+        "operator": "=="
+      },
+      "text": "Candidate shared-decision review topic: discuss VMAT2 options with a willing patient when safety and indication review support discussion. This does not prescribe treatment Distribution: {VMAT2InhibitorSharedDecisionReview}."
+    },
+    {
+      "when": {
+        "node": "VMAT2InhibitorSharedDecisionReview",
+        "state": "ResolveSafetyAndDiscuss",
+        "operator": "=="
+      },
+      "text": "Candidate shared-decision review topic: resolve safety concerns with the clinician and then discuss options in this context Distribution: {VMAT2InhibitorSharedDecisionReview}."
+    },
+    {
+      "when": {
+        "node": "VMAT2InhibitorSharedDecisionReview",
+        "state": "RespectDeclineAndDiscussAlternatives",
+        "operator": "=="
+      },
+      "text": "Candidate shared-decision review topic: respect decline and discuss alternatives with the clinician in this context Distribution: {VMAT2InhibitorSharedDecisionReview}."
+    },
+    {
+      "when": {
+        "node": "VMAT2InhibitorSharedDecisionReview",
+        "state": "ClarifyPreference",
+        "operator": "=="
+      },
+      "text": "Candidate shared-decision review topic: clarify preference with the clinician in this context Distribution: {VMAT2InhibitorSharedDecisionReview}."
+    },
+    {
+      "when": {
+        "node": "VMAT2InhibitorSharedDecisionReview",
+        "state": "ContinueAssessmentAndMonitoring",
+        "operator": "=="
+      },
+      "text": "Candidate shared-decision review topic: continue assessment and monitoring with the clinician in this context Distribution: {VMAT2InhibitorSharedDecisionReview}."
+    },
+    {
+      "when": {
+        "node": "AnticholinergicReview",
+        "state": "ReviewPotentialTDWorsening",
+        "operator": "=="
+      },
+      "text": "Candidate anticholinergic review topic: review potential tardive dyskinesia worsening with current anticholinergic use in this context Distribution: {AnticholinergicReview}."
+    },
+    {
+      "when": {
+        "node": "AnticholinergicReview",
+        "state": "ReconcileIndicationAndDifferential",
+        "operator": "=="
+      },
+      "text": "Candidate anticholinergic review topic: reconcile indication and differential with the clinician in this context Distribution: {AnticholinergicReview}."
+    },
+    {
+      "when": {
+        "node": "AnticholinergicReview",
+        "state": "RoutineMedicationReconciliation",
+        "operator": "=="
+      },
+      "text": "Candidate anticholinergic review topic: routine medication reconciliation with the clinician in this context Distribution: {AnticholinergicReview}."
+    }
+  ]
+}
