@@ -1,18 +1,24 @@
-"""Generation start/read HTTP routes (S40, seam T1; plan.md §§4.3, 8.1).
+"""Generation start/read HTTP routes (S40+S44, seams T1/T8; plan.md §§4.3, 8.1, 8.4).
 
 ``POST /api/v1/encounters/{id}/generation-batches`` — author-only freeze
 (physician + CSRF, ``If-Match`` with the current encounter revision,
 optional ``Idempotency-Key``). Carries the synthetic question package
 inline for this engineering proof (S39 bundles + S24 registry supply
 pinned packages later). Returns ``202`` with the immutable batch and its
-single projected question run. Failures (401/403/404/409/412/422) create
-no partial rows.
+single projected question run. S44: same-fingerprint triggers reuse the
+active run (terminal batches admit a fresh batch, never resurrect); a
+different fingerprint supersedes the prior active generation (old jobs
+cancelled, history kept, never 409); a full queue is ``429``. ``409`` is
+idempotency-key conflict only. Failures (401/403/404/409/412/422/429)
+create no partial rows.
 
 ``GET /api/v1/generation-batches/{id}`` — author-only read of the frozen
 projection plus derived freshness (``stale`` when later relevant edits
-moved the analysis fingerprint; note-only edits stay fresh). Old
-snapshots remain readable history. No general patient snapshot endpoint
-exists and no direct-record provider path is added here.
+moved the analysis fingerprint; note-only edits stay fresh) plus S44
+queue visibility (``job``/``attempts``/``queue`` with busy state, no
+fencing tokens). Old snapshots remain readable history. No general
+patient snapshot endpoint exists and no direct-record provider path is
+added here.
 """
 
 from __future__ import annotations
@@ -127,6 +133,7 @@ def _batch_response(
     batch: dict[str, Any],
     runs: list[dict[str, Any]],
     freshness: dict[str, Any] | None = None,
+    queue_view: dict[str, Any] | None = None,
     *,
     status_code: int,
 ) -> JSONResponse:
@@ -136,6 +143,11 @@ def _batch_response(
     }
     if freshness is not None:
         content["freshness"] = freshness
+    if queue_view is not None:
+        # S44 queue visibility (T8): job progress + busy state, no tokens.
+        content["job"] = queue_view.get("job")
+        content["attempts"] = queue_view.get("attempts", 0)
+        content["queue"] = queue_view.get("queue")
     return JSONResponse(status_code=status_code, content=content)
 
 
@@ -201,9 +213,12 @@ def start_generation(
 def read_generation(
     batch_id: uuid.UUID, request: Request, session: Session = Depends(get_session)
 ) -> JSONResponse:
+    from x_insight.reasoning import queue as queue_module
+
     user = _require_user(request, session)
     if isinstance(user, JSONResponse):
         return user
     assert isinstance(user, dict)
     batch, runs, freshness = snapshots_service.get_generation_batch(session, batch_id, user)
-    return _batch_response(batch, runs, freshness, status_code=200)
+    queue_view = queue_module.get_batch_queue_view(session, batch_id)
+    return _batch_response(batch, runs, freshness, queue_view, status_code=200)

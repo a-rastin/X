@@ -457,12 +457,17 @@ def start_generation_batch(
     package: dict[str, Any],
     request_id: str,
 ) -> tuple[dict[str, Any], list[dict[str, Any]]]:
-    """Freeze one question's snapshot + projection in a single transaction.
+    """Freeze one question's snapshot + projection and enqueue its first job.
 
     Privacy first (404 missing/released, 403 stranger), then the revision
     fence (412 stale changes nothing), then S25 package validation (422
-    changes nothing). Only a fully valid start inserts the immutable batch
-    + run rows and audits — failures create no partial rows.
+    changes nothing). S44 admission (single active generation per encounter,
+    fingerprint reuse, 100-queued cap) runs under the encounter lock plus
+    the deployment global lock, so simultaneous triggers serialize. Only a
+    fully valid start inserts the immutable batch + run rows plus the first
+    eligible queued job atomically — failures create no partial rows.
+    Repeated same-fingerprint triggers reuse the existing run (no duplicate
+    batch, backfilling a queued job for pre-S44 batches when ready).
     """
     if not isinstance(package, dict):
         raise _fail(422, "missing_package", "No question package supplied.")
@@ -512,7 +517,30 @@ def start_generation_batch(
     projection, projection_hash = build_question_projection(manifest, draft_data, expected_revision)
     status, reason = evaluate_gate(manifest, draft_data)
 
+    # S44 admission (lazy import: queue imports snapshots for eligibility).
+    from x_insight.reasoning import queue as queue_module
+
     moment = contracts.utcnow()
+    deployment_generation = queue_module.lock_deployment(session)
+    reusable = queue_module.check_start_admission(
+        session,
+        encounter_id=encounter_id,
+        fingerprint=fingerprint,
+        question_key=loaded.question_key,
+    )
+    if reusable is not None:
+        queue_module.ensure_job_for_reused_batch(
+            session,
+            batch=reusable,
+            question_key=loaded.question_key,
+            deployment_generation=int(deployment_generation),
+            now=moment,
+        )
+        batch = _get_batch(session, reusable["id"])
+        assert batch is not None
+        runs = _list_runs(session, reusable["id"])
+        return batch, runs
+
     batch_id = uuid.uuid4()
     run_id = uuid.uuid4()
     session.execute(
@@ -543,6 +571,15 @@ def start_generation_batch(
         )
     )
     session.flush()
+    if status == READY:
+        queue_module.insert_initial_job(
+            session,
+            batch_id=batch_id,
+            question_run_id=run_id,
+            deployment_generation=int(deployment_generation),
+            now=moment,
+        )
+        session.flush()
     audit_module.record_audit(
         session,
         operation="generation.start.success",

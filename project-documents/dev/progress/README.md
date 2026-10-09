@@ -3,10 +3,13 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest recorded checkpoint is [S40](s40.md): analysis snapshots frozen and one
-question's inputs projected via public T1 seams (synthetic scope;
-queue/provider/MCP deferred). Content approvals remain as recorded in S39.b;
-bundle release and activation retain their independent status.
+The latest recorded checkpoint is [S41](s41.md): real private MCP transport
+and context grants over S40 snapshots and S44 leases via T6 (synthetic
+single-question scope; durable dev-tests committed — 14 queue + 9 snapshots
++ 13 MCP, 95 http + 298 assessment/model regressions, ruff+mypy clean,
+`mcp==2.3.0` pinned; provider/full-question/workflows/retries deferred).
+Content approvals remain as recorded in S39.b; bundle release and activation
+retain their independent status.
 
 ## Reading and updating progress
 
@@ -74,3 +77,5 @@ bundle release and activation retain their independent status.
 | S39.a | [Immutable F6 reference-table correction (2026-10-09)](s39-a.md) |
 | S39.b | [Owner confirmation of all 11 question packages (2026-10-09)](s39-b.md) |
 | S40 | [Freeze analysis snapshots and project one question's inputs (2026-10-09)](s40.md) |
+| S44 | [Durable leased jobs and global admission (2026-10-09)](s44.md) |
+| S41 | [Real private MCP transport and context grants (2026-10-09)](s41.md) |

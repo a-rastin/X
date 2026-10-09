@@ -62,7 +62,8 @@ def _truncate(engine) -> None:
     with engine.begin() as connection:
         connection.execute(
             text(
-                "TRUNCATE question_runs, generation_batches, notes, encounters, "
+                "TRUNCATE reasoning_grants, reasoning_job_attempts, reasoning_jobs, "
+                "reasoning_fairness, question_runs, generation_batches, notes, encounters, "
                 "patients, idempotency_records, sessions, users, audit_events CASCADE"
             )
         )
@@ -745,12 +746,12 @@ def test_start_ownership_not_found_idempotency_and_no_partial_rows(
     assert invalid.status_code == 422, invalid.text
     assert _batch_counts(clean_registry) == (1, 1)
 
-    # A valid retry with a fresh key still succeeds with the same fingerprint.
+    # S44 reuse: same fingerprint with a fresh key reuses the run (no duplicate).
     retry = _start_batch(owner, owner_csrf, encounter_id, revision, package, key="s40-idem-002")
     assert retry.status_code == 202, retry.text
     assert retry.json()["batch"]["fingerprint"] == fingerprint
-    assert retry.json()["batch"]["id"] != batch_id
-    assert _batch_counts(clean_registry) == (2, 2)
+    assert retry.json()["batch"]["id"] == batch_id
+    assert _batch_counts(clean_registry) == (1, 1)
 
     # No general snapshot collection or provider path exists.
     assert owner.get("/api/v1/generation-batches").status_code in (404, 405)
