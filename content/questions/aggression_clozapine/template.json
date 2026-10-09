@@ -1,0 +1,125 @@
+{
+  "version": "s31-v1",
+  "status": "awaiting_review",
+  "rendering_contract": "Candidate wording for S45 deterministic distribution rendering; each queried state has a branch, all probabilities remain visible. No probability threshold or posterior-ranked treatment selection is defined. Urgent banner renders from saved inputs in parallel with review topics. Whether outputs behave as deterministic rules or estimated tables is an open assumption for owner review; this wording assumes neither.",
+  "disclosures": [
+    "Experimental, uncalibrated and unapproved; not a prescription.",
+    "A PANSS hostility item score alone never authorizes clozapine; indication requires clinician persistence and treatment-context review.",
+    "Urgent banner comes from saved structured urgent inputs, not model output, and never shows a fabricated risk percentage.",
+    "Missing, unknown, not-assessed or conflicting required input pauses; a false gate is not_applicable and claims no posterior."
+  ],
+  "branches": [
+    {
+      "when": {
+        "node": "ClozapineAggressionRiskIndication",
+        "state": "Present",
+        "operator": "=="
+      },
+      "text": "Candidate indication-review topic present; discuss persistence, prior treatment and preferences with the clinician. This experimental distribution does not prescribe clozapine. Distribution: {ClozapineAggressionRiskIndication}. No hostility score alone authorizes treatment."
+    },
+    {
+      "when": {
+        "node": "ClozapineAggressionRiskIndication",
+        "state": "NotEstablished",
+        "operator": "=="
+      },
+      "text": "Candidate indication-review topic not established in this context; review evidence and other indications with the clinician. Distribution: {ClozapineAggressionRiskIndication}. This is not a negative clinical finding."
+    },
+    {
+      "when": {
+        "node": "AggressionRiskTreatmentPlanReview",
+        "state": "AdherenceAndRiskTargets",
+        "operator": "=="
+      },
+      "text": "Candidate review covers both adherence and modifiable aggression-risk targets; construct an intervention plan with the clinician. Distribution: {AggressionRiskTreatmentPlanReview}."
+    },
+    {
+      "when": {
+        "node": "AggressionRiskTreatmentPlanReview",
+        "state": "AdherenceReview",
+        "operator": "=="
+      },
+      "text": "Candidate review emphasizes adherence; review exposure and follow-up with the clinician. Distribution: {AggressionRiskTreatmentPlanReview}."
+    },
+    {
+      "when": {
+        "node": "AggressionRiskTreatmentPlanReview",
+        "state": "RiskTargetReview",
+        "operator": "=="
+      },
+      "text": "Candidate review emphasizes modifiable aggression-risk targets; review intervention options with the clinician. Distribution: {AggressionRiskTreatmentPlanReview}."
+    },
+    {
+      "when": {
+        "node": "AggressionRiskTreatmentPlanReview",
+        "state": "NoAdditionalFlag",
+        "operator": "=="
+      },
+      "text": "Candidate review identifies no additional adherence or risk-target flag in this context; retain ongoing clinician review. Distribution: {AggressionRiskTreatmentPlanReview}."
+    },
+    {
+      "when": {
+        "node": "ClozapineDiscussionPreparation",
+        "state": "AddressReviewNeeds",
+        "operator": "=="
+      },
+      "text": "Candidate preparation topic: address willingness, monitoring and medical-review needs before discussion. Distribution: {ClozapineDiscussionPreparation}."
+    },
+    {
+      "when": {
+        "node": "ClozapineDiscussionPreparation",
+        "state": "PreparedForDiscussion",
+        "operator": "=="
+      },
+      "text": "Candidate preparation topic: willingness, monitoring and medical review support a prepared discussion. Distribution: {ClozapineDiscussionPreparation}. This does not schedule treatment."
+    },
+    {
+      "when": {
+        "node": "AggressionRiskClozapineReviewPathway",
+        "state": "UrgentClinicalAssessment",
+        "operator": "=="
+      },
+      "text": "Urgent clinical assessment topic from saved structured urgent inputs, shown independently of estimation latency; arrange immediate clinician assessment per local protocol. Distribution: {AggressionRiskClozapineReviewPathway}. This is not a computed risk percentage."
+    },
+    {
+      "when": {
+        "node": "AggressionRiskClozapineReviewPathway",
+        "state": "ReviewCurrentClozapine",
+        "operator": "=="
+      },
+      "text": "Candidate pathway topic: review current clozapine treatment, monitoring and response with the clinician. Distribution: {AggressionRiskClozapineReviewPathway}."
+    },
+    {
+      "when": {
+        "node": "AggressionRiskClozapineReviewPathway",
+        "state": "IndividualizedPriorClozapineReview",
+        "operator": "=="
+      },
+      "text": "Candidate pathway topic: individualized review of prior clozapine course with the clinician. Distribution: {AggressionRiskClozapineReviewPathway}."
+    },
+    {
+      "when": {
+        "node": "AggressionRiskClozapineReviewPathway",
+        "state": "DiscussClozapine",
+        "operator": "=="
+      },
+      "text": "Candidate pathway topic: discuss clozapine consideration with a willing patient when monitoring and review support discussion. Distribution: {AggressionRiskClozapineReviewPathway}. This does not prescribe treatment."
+    },
+    {
+      "when": {
+        "node": "AggressionRiskClozapineReviewPathway",
+        "state": "DiscussClozapineAndAddressReviewNeeds",
+        "operator": "=="
+      },
+      "text": "Candidate pathway topic: discuss clozapine while addressing willingness, monitoring or medical-review needs. Distribution: {AggressionRiskClozapineReviewPathway}."
+    },
+    {
+      "when": {
+        "node": "AggressionRiskClozapineReviewPathway",
+        "state": "ReviewEvidenceAndOtherIndications",
+        "operator": "=="
+      },
+      "text": "Candidate pathway topic: review research evidence and other indications with the clinician. Distribution: {AggressionRiskClozapineReviewPathway}."
+    }
+  ]
+}

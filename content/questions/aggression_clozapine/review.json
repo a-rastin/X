@@ -1,0 +1,197 @@
+{
+  "reviewer": "owner review pending",
+  "decision": "awaiting_review",
+  "date": "2026-10-09",
+  "source_hashes": {
+    "project-documents/bayesian-networks/BN-09.xml": "b655bada91b9dbe9b89419e924b416559af676bf3fe2adf8ea2f9892a325b6a1",
+    "project-documents/medical-documents/guideline/STATEMENT-09.md": "73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6",
+    "content/assessments/panss.v1.json": "0cc9c2176819b7a65750b6f16ed5437d5b81d8ff0e2dd5c07b2285034a35d98f",
+    "content/history/history.v1.json": "01be359400834e2f047c9e9c9eaf7a25a4167949707eb1b14e6a8f57db6bcd80",
+    "network.xml": "341fb155315276d6cd1028b32e681d622998122fb5503c4dcdff0df1092829cf",
+    "content/history/history.aggression_clozapine.v1.json": "306a75b5b867ddc1039dae0724b60175dfebd90d9f169a542dd28aec80513ca6"
+  },
+  "assumptions": [
+    "No clinical model or history definition approved.",
+    "Substantial/persistent aggression gate, urgent findings and review outputs are distinct; a PANSS hostility item score alone never maps the gate.",
+    "All 14 BN-09 distributions were missing and are synthetic uniform references here; complete clinical table provenance remains a release blocker.",
+    "Whether review outputs behave as deterministic rules or estimated tables is an open assumption for owner review; this draft uses estimated-table semantics without approval."
+  ],
+  "source_comparison": "See source_diff and source_comparison_details: all 14 BN-09 variables, states and ordered proposed_parent edges retained with no removals, renames or state extensions; 10 roots plus 4 outputs materialize every proposed_parent as an ordered GIVEN. Original BN SHA pinned and untouched.",
+  "source_comparison_details": {
+    "retained_variables": [
+      "SchizophreniaEstablished",
+      "SubstantialAggressionRisk",
+      "AggressionRiskPersistsDespiteOtherTreatments",
+      "UrgentSafetyConcern",
+      "AdherenceConcern",
+      "ModifiableAggressionRiskTargetsPresent",
+      "ClozapineTreatmentStatus",
+      "WillingToDiscussClozapine",
+      "ClozapineMonitoringPlanAvailable",
+      "ClozapineMedicalReviewCompleted",
+      "ClozapineAggressionRiskIndication",
+      "AggressionRiskTreatmentPlanReview",
+      "ClozapineDiscussionPreparation",
+      "AggressionRiskClozapineReviewPathway"
+    ],
+    "retained_states": {
+      "SchizophreniaEstablished": [
+        "Yes",
+        "No"
+      ],
+      "SubstantialAggressionRisk": [
+        "Yes",
+        "No"
+      ],
+      "AggressionRiskPersistsDespiteOtherTreatments": [
+        "Yes",
+        "No"
+      ],
+      "UrgentSafetyConcern": [
+        "Present",
+        "Absent"
+      ],
+      "AdherenceConcern": [
+        "Yes",
+        "No"
+      ],
+      "ModifiableAggressionRiskTargetsPresent": [
+        "Yes",
+        "No"
+      ],
+      "ClozapineTreatmentStatus": [
+        "NeverTreated",
+        "CurrentTreatment",
+        "PreviouslyTreated"
+      ],
+      "WillingToDiscussClozapine": [
+        "Yes",
+        "No"
+      ],
+      "ClozapineMonitoringPlanAvailable": [
+        "Yes",
+        "No"
+      ],
+      "ClozapineMedicalReviewCompleted": [
+        "Yes",
+        "No"
+      ],
+      "ClozapineAggressionRiskIndication": [
+        "Present",
+        "NotEstablished"
+      ],
+      "AggressionRiskTreatmentPlanReview": [
+        "AdherenceAndRiskTargets",
+        "AdherenceReview",
+        "RiskTargetReview",
+        "NoAdditionalFlag"
+      ],
+      "ClozapineDiscussionPreparation": [
+        "AddressReviewNeeds",
+        "PreparedForDiscussion"
+      ],
+      "AggressionRiskClozapineReviewPathway": [
+        "UrgentClinicalAssessment",
+        "ReviewCurrentClozapine",
+        "IndividualizedPriorClozapineReview",
+        "DiscussClozapine",
+        "DiscussClozapineAndAddressReviewNeeds",
+        "ReviewEvidenceAndOtherIndications"
+      ]
+    },
+    "retained_edges": [
+      [
+        "SchizophreniaEstablished",
+        "ClozapineAggressionRiskIndication"
+      ],
+      [
+        "SubstantialAggressionRisk",
+        "ClozapineAggressionRiskIndication"
+      ],
+      [
+        "AggressionRiskPersistsDespiteOtherTreatments",
+        "ClozapineAggressionRiskIndication"
+      ],
+      [
+        "AdherenceConcern",
+        "AggressionRiskTreatmentPlanReview"
+      ],
+      [
+        "ModifiableAggressionRiskTargetsPresent",
+        "AggressionRiskTreatmentPlanReview"
+      ],
+      [
+        "WillingToDiscussClozapine",
+        "ClozapineDiscussionPreparation"
+      ],
+      [
+        "ClozapineMonitoringPlanAvailable",
+        "ClozapineDiscussionPreparation"
+      ],
+      [
+        "ClozapineMedicalReviewCompleted",
+        "ClozapineDiscussionPreparation"
+      ],
+      [
+        "UrgentSafetyConcern",
+        "AggressionRiskClozapineReviewPathway"
+      ],
+      [
+        "ClozapineTreatmentStatus",
+        "AggressionRiskClozapineReviewPathway"
+      ],
+      [
+        "ClozapineAggressionRiskIndication",
+        "AggressionRiskClozapineReviewPathway"
+      ],
+      [
+        "ClozapineDiscussionPreparation",
+        "AggressionRiskClozapineReviewPathway"
+      ]
+    ],
+    "removed_nodes": [],
+    "removed_edges": [],
+    "renamed": {},
+    "materialized_proposed_parents": true,
+    "state_extensions": {},
+    "bn_parameter_inventory": "14 run-specific distributions to supply; 0 editable source-lookup examples supplied; all awaiting_experiment_cpt in BN-09"
+  },
+  "explicit_graph": "Fixed 14-node nature-only graph in BN-09 order; source_comparison_details lists every retained ordered parent. All proposed_parent metadata is materialized as GIVENs in declared order. Edges are modeler-synthesized review candidates, not established causal facts.",
+  "reference_table_provenance": "BN-09 supplies zero fixed tables; all 14 distributions were awaiting_experiment_cpt. Draft network.xml holds explicitly synthetic uniform references (roots 0.5/0.5 or 0.5/0.3/0.2, outputs uniform per row) with no source lookup to audit. The numerical fixture CPTs are independent synthetic mathematical references with worked marginals, not source-backed clinical probabilities; complete clinical table provenance and calibration remain release blockers.",
+  "estimation_instructions": "prompt.txt requires all CPTs including roots, percentage strings, fixed order and empty evidence, with urgent/persistence/hostility-score distinctions, source-period and clinician-reported-field provenance, and parallel urgent handling. Whether outputs behave as deterministic rules or estimated tables is an open assumption recorded here; the draft uses estimated-table semantics without approval.",
+  "result_mapping": "template.json defines candidate state-specific review language for all 4 queried outputs (14 branches) plus parallel urgent banner from saved inputs; every distribution remains visible. No threshold, posterior ranking or automatic treatment choice exists. Clinical branch selection and rendering remain S45 and owner review.",
+  "numerical_examples": "examples.json contains one complete independently worked 14-node mathematical reference: Indication Present 0.36, PlanReview 0.172/0.208/0.268/0.352 with an ordered-parent transpose guard (swapped parents swap 0.208 and 0.268), DiscussionPrep Prepared 0.329, Pathway 0.2/0.24/0.16/0.047376/0.096624/0.256 with urgent 0.2 preserved. Two opposing projections of the same CPT yield identical posteriors, proving no clamping. This validates math and engineering only; clinical expected_for_review cases remain unapproved.",
+  "clinical_examples": "examples.json contains 6 clinical review candidates: gate true standard, gate true with urgent Present, gate false not_applicable with not_a_negative_posterior, gate unknown, gate missing and gate conflict needs_clarification. These are proposed gate, urgency, hostility non-equivalence, provenance and wording expectations, not self-validating clinical tests or implemented runtime claims.",
+  "admission_measurements": "Measured 14 nature nodes, 54 rows, 213 cells, 6844 compact CPT payload bytes, 25905 network XML bytes and 24562 effective XML bytes. Focused 5-test suite passed in 3.67 s; full models 143 tests passed in 30.65 s. Full-graph 2 inference + 1 replay measured 3.732 s combined (build 0.002 s, infer 1.244 s + 1.204 s, replay 1.283 s) within 1e-6; opposing provenance never clamps. Memory ceiling and provider capacity remain unmeasured and clinical release is blocked awaiting review.",
+  "open_assumptions": "Candidate 10-field history with scenario-interval, lifetime-context and current-encounter synthesis provenance, gate true/false/unknown definitions, urgent-banner independence, PANSS hostility non-equivalence, persistence versus resistance distinction, deterministic-rule versus estimated-table output semantics, full clinical CPT provenance and final wording all require review before release. History v1, runtime projections and readiness (S40) and rendering (S45) remain unchanged.",
+  "source_diff": {
+    "removed_nodes": [],
+    "removed_edges": [],
+    "renamed": {},
+    "materialized_proposed_parents": true,
+    "state_extensions": {},
+    "retained_variables": [
+      "SchizophreniaEstablished",
+      "SubstantialAggressionRisk",
+      "AggressionRiskPersistsDespiteOtherTreatments",
+      "UrgentSafetyConcern",
+      "AdherenceConcern",
+      "ModifiableAggressionRiskTargetsPresent",
+      "ClozapineTreatmentStatus",
+      "WillingToDiscussClozapine",
+      "ClozapineMonitoringPlanAvailable",
+      "ClozapineMedicalReviewCompleted",
+      "ClozapineAggressionRiskIndication",
+      "AggressionRiskTreatmentPlanReview",
+      "ClozapineDiscussionPreparation",
+      "AggressionRiskClozapineReviewPathway"
+    ]
+  },
+  "reference_table_audit": {
+    "source_locator": "BN-09.xml parameter_inventory: 14 awaiting_experiment_cpt, 0 source-lookup",
+    "compared_cells": 0,
+    "mismatches": [],
+    "clinical_probability_claim": false,
+    "synthetic_reference_rows": "All 14 draft tables are explicitly synthetic uniform references; numerical fixture rows are independent mathematical references with worked marginals."
+  }
+}

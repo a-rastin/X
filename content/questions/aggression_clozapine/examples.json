@@ -1,0 +1,1071 @@
+{
+  "numerical": [
+    {
+      "id": "full-graph-asymmetric-mathematical",
+      "classification": "Independent synthetic mathematical reference, not clinical calibration or clinical expected treatment",
+      "inputs": {},
+      "cpt_payload": {
+        "network_hash": "341fb155315276d6cd1028b32e681d622998122fb5503c4dcdff0df1092829cf",
+        "tables": [
+          {
+            "node_id": "SchizophreniaEstablished",
+            "parent_ids": [],
+            "states": [
+              "Yes",
+              "No"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "90",
+                  "10"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "SubstantialAggressionRisk",
+            "parent_ids": [],
+            "states": [
+              "Yes",
+              "No"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "60",
+                  "40"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "AggressionRiskPersistsDespiteOtherTreatments",
+            "parent_ids": [],
+            "states": [
+              "Yes",
+              "No"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "50",
+                  "50"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "UrgentSafetyConcern",
+            "parent_ids": [],
+            "states": [
+              "Present",
+              "Absent"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "20",
+                  "80"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "AdherenceConcern",
+            "parent_ids": [],
+            "states": [
+              "Yes",
+              "No"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "30",
+                  "70"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "ModifiableAggressionRiskTargetsPresent",
+            "parent_ids": [],
+            "states": [
+              "Yes",
+              "No"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "40",
+                  "60"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "ClozapineTreatmentStatus",
+            "parent_ids": [],
+            "states": [
+              "NeverTreated",
+              "CurrentTreatment",
+              "PreviouslyTreated"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "50",
+                  "30",
+                  "20"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "WillingToDiscussClozapine",
+            "parent_ids": [],
+            "states": [
+              "Yes",
+              "No"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "70",
+                  "30"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "ClozapineMonitoringPlanAvailable",
+            "parent_ids": [],
+            "states": [
+              "Yes",
+              "No"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "60",
+                  "40"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "ClozapineMedicalReviewCompleted",
+            "parent_ids": [],
+            "states": [
+              "Yes",
+              "No"
+            ],
+            "rows": [
+              {
+                "parent_states": [],
+                "percentages": [
+                  "50",
+                  "50"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "ClozapineAggressionRiskIndication",
+            "parent_ids": [
+              "SchizophreniaEstablished",
+              "SubstantialAggressionRisk",
+              "AggressionRiskPersistsDespiteOtherTreatments"
+            ],
+            "states": [
+              "Present",
+              "NotEstablished"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "Yes",
+                  "Yes",
+                  "Yes"
+                ],
+                "percentages": [
+                  "90",
+                  "10"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "Yes",
+                  "No"
+                ],
+                "percentages": [
+                  "20",
+                  "80"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "No",
+                  "Yes"
+                ],
+                "percentages": [
+                  "30",
+                  "70"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "No",
+                  "No"
+                ],
+                "percentages": [
+                  "5",
+                  "95"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Yes",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Yes",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "No",
+                  "Yes"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "No",
+                  "No"
+                ],
+                "percentages": [
+                  "0",
+                  "100"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "AggressionRiskTreatmentPlanReview",
+            "parent_ids": [
+              "AdherenceConcern",
+              "ModifiableAggressionRiskTargetsPresent"
+            ],
+            "states": [
+              "AdherenceAndRiskTargets",
+              "AdherenceReview",
+              "RiskTargetReview",
+              "NoAdditionalFlag"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "Yes",
+                  "Yes"
+                ],
+                "percentages": [
+                  "70",
+                  "10",
+                  "10",
+                  "10"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "No"
+                ],
+                "percentages": [
+                  "10",
+                  "70",
+                  "10",
+                  "10"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Yes"
+                ],
+                "percentages": [
+                  "10",
+                  "10",
+                  "70",
+                  "10"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "No"
+                ],
+                "percentages": [
+                  "10",
+                  "10",
+                  "10",
+                  "70"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "ClozapineDiscussionPreparation",
+            "parent_ids": [
+              "WillingToDiscussClozapine",
+              "ClozapineMonitoringPlanAvailable",
+              "ClozapineMedicalReviewCompleted"
+            ],
+            "states": [
+              "AddressReviewNeeds",
+              "PreparedForDiscussion"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "Yes",
+                  "Yes",
+                  "Yes"
+                ],
+                "percentages": [
+                  "10",
+                  "90"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "Yes",
+                  "No"
+                ],
+                "percentages": [
+                  "60",
+                  "40"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "No",
+                  "Yes"
+                ],
+                "percentages": [
+                  "70",
+                  "30"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Yes",
+                  "No",
+                  "No"
+                ],
+                "percentages": [
+                  "90",
+                  "10"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Yes",
+                  "Yes"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "Yes",
+                  "No"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "No",
+                  "Yes"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "No",
+                  "No",
+                  "No"
+                ],
+                "percentages": [
+                  "100",
+                  "0"
+                ]
+              }
+            ]
+          },
+          {
+            "node_id": "AggressionRiskClozapineReviewPathway",
+            "parent_ids": [
+              "UrgentSafetyConcern",
+              "ClozapineTreatmentStatus",
+              "ClozapineAggressionRiskIndication",
+              "ClozapineDiscussionPreparation"
+            ],
+            "states": [
+              "UrgentClinicalAssessment",
+              "ReviewCurrentClozapine",
+              "IndividualizedPriorClozapineReview",
+              "DiscussClozapine",
+              "DiscussClozapineAndAddressReviewNeeds",
+              "ReviewEvidenceAndOtherIndications"
+            ],
+            "rows": [
+              {
+                "parent_states": [
+                  "Present",
+                  "NeverTreated",
+                  "Present",
+                  "AddressReviewNeeds"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "NeverTreated",
+                  "Present",
+                  "PreparedForDiscussion"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "NeverTreated",
+                  "NotEstablished",
+                  "AddressReviewNeeds"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "NeverTreated",
+                  "NotEstablished",
+                  "PreparedForDiscussion"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "CurrentTreatment",
+                  "Present",
+                  "AddressReviewNeeds"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "CurrentTreatment",
+                  "Present",
+                  "PreparedForDiscussion"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "CurrentTreatment",
+                  "NotEstablished",
+                  "AddressReviewNeeds"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "CurrentTreatment",
+                  "NotEstablished",
+                  "PreparedForDiscussion"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "PreviouslyTreated",
+                  "Present",
+                  "AddressReviewNeeds"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "PreviouslyTreated",
+                  "Present",
+                  "PreparedForDiscussion"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "PreviouslyTreated",
+                  "NotEstablished",
+                  "AddressReviewNeeds"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Present",
+                  "PreviouslyTreated",
+                  "NotEstablished",
+                  "PreparedForDiscussion"
+                ],
+                "percentages": [
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "NeverTreated",
+                  "Present",
+                  "AddressReviewNeeds"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "NeverTreated",
+                  "Present",
+                  "PreparedForDiscussion"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "NeverTreated",
+                  "NotEstablished",
+                  "AddressReviewNeeds"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "NeverTreated",
+                  "NotEstablished",
+                  "PreparedForDiscussion"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "100"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "CurrentTreatment",
+                  "Present",
+                  "AddressReviewNeeds"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "CurrentTreatment",
+                  "Present",
+                  "PreparedForDiscussion"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "CurrentTreatment",
+                  "NotEstablished",
+                  "AddressReviewNeeds"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "CurrentTreatment",
+                  "NotEstablished",
+                  "PreparedForDiscussion"
+                ],
+                "percentages": [
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "PreviouslyTreated",
+                  "Present",
+                  "AddressReviewNeeds"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "PreviouslyTreated",
+                  "Present",
+                  "PreparedForDiscussion"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "PreviouslyTreated",
+                  "NotEstablished",
+                  "AddressReviewNeeds"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "parent_states": [
+                  "Absent",
+                  "PreviouslyTreated",
+                  "NotEstablished",
+                  "PreparedForDiscussion"
+                ],
+                "percentages": [
+                  "0",
+                  "0",
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "SchizophreniaEstablished": {
+          "Yes": 0.9,
+          "No": 0.1
+        },
+        "SubstantialAggressionRisk": {
+          "Yes": 0.6,
+          "No": 0.4
+        },
+        "AggressionRiskPersistsDespiteOtherTreatments": {
+          "Yes": 0.5,
+          "No": 0.5
+        },
+        "UrgentSafetyConcern": {
+          "Present": 0.2,
+          "Absent": 0.8
+        },
+        "AdherenceConcern": {
+          "Yes": 0.3,
+          "No": 0.7
+        },
+        "ModifiableAggressionRiskTargetsPresent": {
+          "Yes": 0.4,
+          "No": 0.6
+        },
+        "ClozapineTreatmentStatus": {
+          "NeverTreated": 0.5,
+          "CurrentTreatment": 0.3,
+          "PreviouslyTreated": 0.2
+        },
+        "WillingToDiscussClozapine": {
+          "Yes": 0.7,
+          "No": 0.3
+        },
+        "ClozapineMonitoringPlanAvailable": {
+          "Yes": 0.6,
+          "No": 0.4
+        },
+        "ClozapineMedicalReviewCompleted": {
+          "Yes": 0.5,
+          "No": 0.5
+        },
+        "ClozapineAggressionRiskIndication": {
+          "Present": 0.36,
+          "NotEstablished": 0.64
+        },
+        "AggressionRiskTreatmentPlanReview": {
+          "AdherenceAndRiskTargets": 0.172,
+          "AdherenceReview": 0.208,
+          "RiskTargetReview": 0.268,
+          "NoAdditionalFlag": 0.352
+        },
+        "ClozapineDiscussionPreparation": {
+          "AddressReviewNeeds": 0.671,
+          "PreparedForDiscussion": 0.329
+        },
+        "AggressionRiskClozapineReviewPathway": {
+          "UrgentClinicalAssessment": 0.2,
+          "ReviewCurrentClozapine": 0.24,
+          "IndividualizedPriorClozapineReview": 0.16,
+          "DiscussClozapine": 0.047376,
+          "DiscussClozapineAndAddressReviewNeeds": 0.096624,
+          "ReviewEvidenceAndOtherIndications": 0.256
+        }
+      },
+      "context_examples": [
+        {
+          "SchizophreniaEstablished": "Yes"
+        },
+        {
+          "SchizophreniaEstablished": "No"
+        }
+      ],
+      "work": "Indication Present = 0.9*0.6*0.5*0.9 + 0.9*0.6*0.5*0.2 + 0.9*0.4*0.5*0.3 + 0.9*0.4*0.5*0.05 = 0.243+0.054+0.054+0.009 = 0.36. PlanReview AdherenceAndRiskTargets = 0.3*0.4*0.7 + 0.3*0.6*0.1 + 0.7*0.4*0.1 + 0.7*0.6*0.1 = 0.084+0.018+0.028+0.042 = 0.172; AdherenceReview = 0.012+0.126+0.028+0.042 = 0.208; RiskTargetReview = 0.012+0.018+0.196+0.042 = 0.268; NoAdditionalFlag = 0.012+0.018+0.028+0.294 = 0.352. Swapping the two PlanReview parents would swap 0.208 and 0.268, so a transpose bug fails. Prep Prepared = 0.21*0.9 + 0.21*0.4 + 0.14*0.3 + 0.14*0.1 = 0.189+0.084+0.042+0.014 = 0.329. Pathway Urgent = 0.2; Current = 0.8*0.3 = 0.24; Prior = 0.8*0.2 = 0.16; Discuss = 0.8*0.5*0.36*0.329 = 0.047376; DiscussAndAddress = 0.8*0.5*0.36*0.671 = 0.096624; Evidence = 0.8*0.5*0.64 = 0.256."
+    }
+  ],
+  "clinical": [
+    {
+      "id": "gate-true-standard",
+      "inputs": {
+        "candidate/history/aggression_clozapine.v1/h_schizophrenia_established": "Yes",
+        "candidate/history/aggression_clozapine.v1/h_substantial_aggression_risk": "Yes",
+        "candidate/history/aggression_clozapine.v1/h_persistence_despite_treatment": "Yes",
+        "candidate/history/aggression_clozapine.v1/h_urgent_safety_concern": "Absent",
+        "candidate/history/aggression_clozapine.v1/h_adherence_concern": "No",
+        "candidate/history/aggression_clozapine.v1/h_modifiable_targets": "No",
+        "candidate/history/aggression_clozapine.v1/h_clozapine_treatment_status": "NeverTreated",
+        "candidate/history/aggression_clozapine.v1/h_willing_to_discuss": "Yes",
+        "candidate/history/aggression_clozapine.v1/h_monitoring_plan": "Yes",
+        "candidate/history/aggression_clozapine.v1/h_medical_review": "Yes"
+      },
+      "expected_for_review": {
+        "status": "execute",
+        "gate": "true",
+        "applicability": "gate == 'true'",
+        "urgent_banner_from_saved_inputs": "Absent",
+        "hostility_score_alone_authorizes_treatment": false
+      },
+      "note": "Candidate review expectation: gate true executes with empty evidence; urgent Absent still shows parallel review topics."
+    },
+    {
+      "id": "gate-true-urgent",
+      "inputs": {
+        "candidate/history/aggression_clozapine.v1/h_schizophrenia_established": "Yes",
+        "candidate/history/aggression_clozapine.v1/h_substantial_aggression_risk": "Yes",
+        "candidate/history/aggression_clozapine.v1/h_persistence_despite_treatment": "Yes",
+        "candidate/history/aggression_clozapine.v1/h_urgent_safety_concern": "Present",
+        "candidate/history/aggression_clozapine.v1/h_adherence_concern": "No",
+        "candidate/history/aggression_clozapine.v1/h_modifiable_targets": "No",
+        "candidate/history/aggression_clozapine.v1/h_clozapine_treatment_status": "NeverTreated",
+        "candidate/history/aggression_clozapine.v1/h_willing_to_discuss": "Yes",
+        "candidate/history/aggression_clozapine.v1/h_monitoring_plan": "Yes",
+        "candidate/history/aggression_clozapine.v1/h_medical_review": "Yes"
+      },
+      "expected_for_review": {
+        "status": "execute",
+        "gate": "true",
+        "applicability": "gate == 'true'",
+        "urgent_banner_from_saved_inputs": "Present",
+        "urgent_latency": "independent_of_estimation",
+        "fabricated_risk_percentage": null
+      },
+      "note": "Candidate review expectation: urgent Present executes and adds a parallel urgent banner from saved inputs independently of estimation latency; never a fabricated risk percentage."
+    },
+    {
+      "id": "gate-false-not-applicable",
+      "inputs": {
+        "candidate/history/aggression_clozapine.v1/h_schizophrenia_established": "Yes",
+        "candidate/history/aggression_clozapine.v1/h_substantial_aggression_risk": "No",
+        "candidate/history/aggression_clozapine.v1/h_persistence_despite_treatment": "No",
+        "candidate/history/aggression_clozapine.v1/h_urgent_safety_concern": "Absent",
+        "candidate/history/aggression_clozapine.v1/h_adherence_concern": "No",
+        "candidate/history/aggression_clozapine.v1/h_modifiable_targets": "No",
+        "candidate/history/aggression_clozapine.v1/h_clozapine_treatment_status": "NeverTreated",
+        "candidate/history/aggression_clozapine.v1/h_willing_to_discuss": "Yes",
+        "candidate/history/aggression_clozapine.v1/h_monitoring_plan": "Yes",
+        "candidate/history/aggression_clozapine.v1/h_medical_review": "Yes"
+      },
+      "expected_for_review": {
+        "status": "not_applicable",
+        "gate": "false",
+        "applicability": "gate == 'true'",
+        "reason": "substantial aggression risk explicitly not present",
+        "not_a_negative_posterior": true,
+        "posterior_claim": null
+      },
+      "note": "Candidate review expectation: gate false records not_applicable with reason and claims no posterior; never a negative risk finding."
+    },
+    {
+      "id": "gate-unknown-needs-clarification",
+      "inputs": {
+        "candidate/history/aggression_clozapine.v1/h_schizophrenia_established": "Yes",
+        "candidate/history/aggression_clozapine.v1/h_substantial_aggression_risk": "unknown",
+        "candidate/history/aggression_clozapine.v1/h_persistence_despite_treatment": "Yes",
+        "candidate/history/aggression_clozapine.v1/h_urgent_safety_concern": "Absent",
+        "candidate/history/aggression_clozapine.v1/h_adherence_concern": "No",
+        "candidate/history/aggression_clozapine.v1/h_modifiable_targets": "No",
+        "candidate/history/aggression_clozapine.v1/h_clozapine_treatment_status": "NeverTreated",
+        "candidate/history/aggression_clozapine.v1/h_willing_to_discuss": "Yes",
+        "candidate/history/aggression_clozapine.v1/h_monitoring_plan": "Yes",
+        "candidate/history/aggression_clozapine.v1/h_medical_review": "Yes"
+      },
+      "expected_for_review": {
+        "status": "needs_clarification",
+        "gate": "unknown",
+        "applicability": "gate == 'true'",
+        "reason": "required substantial-aggression synthesis unknown"
+      },
+      "note": "Candidate review expectation: unknown required gate pauses before estimation; never coerces to false."
+    },
+    {
+      "id": "gate-missing-needs-clarification",
+      "inputs": {
+        "candidate/history/aggression_clozapine.v1/h_schizophrenia_established": "Yes",
+        "candidate/history/aggression_clozapine.v1/h_substantial_aggression_risk": "Yes",
+        "candidate/history/aggression_clozapine.v1/h_urgent_safety_concern": "Absent",
+        "candidate/history/aggression_clozapine.v1/h_adherence_concern": "No",
+        "candidate/history/aggression_clozapine.v1/h_modifiable_targets": "No",
+        "candidate/history/aggression_clozapine.v1/h_clozapine_treatment_status": "NeverTreated",
+        "candidate/history/aggression_clozapine.v1/h_willing_to_discuss": "Yes",
+        "candidate/history/aggression_clozapine.v1/h_monitoring_plan": "Yes",
+        "candidate/history/aggression_clozapine.v1/h_medical_review": "Yes"
+      },
+      "expected_for_review": {
+        "status": "needs_clarification",
+        "gate": "unknown",
+        "applicability": "gate == 'true'",
+        "reason": "required persistence input missing"
+      },
+      "note": "Candidate review expectation: missing required input pauses; a missing persistence finding is never mapped to No."
+    },
+    {
+      "id": "gate-conflict-needs-clarification",
+      "inputs": {
+        "candidate/history/aggression_clozapine.v1/h_schizophrenia_established": [
+          "Yes",
+          "No"
+        ],
+        "candidate/history/aggression_clozapine.v1/h_substantial_aggression_risk": "Yes",
+        "candidate/history/aggression_clozapine.v1/h_persistence_despite_treatment": "Yes",
+        "candidate/history/aggression_clozapine.v1/h_urgent_safety_concern": "Absent",
+        "candidate/history/aggression_clozapine.v1/h_adherence_concern": "No",
+        "candidate/history/aggression_clozapine.v1/h_modifiable_targets": "No",
+        "candidate/history/aggression_clozapine.v1/h_clozapine_treatment_status": "NeverTreated",
+        "candidate/history/aggression_clozapine.v1/h_willing_to_discuss": "Yes",
+        "candidate/history/aggression_clozapine.v1/h_monitoring_plan": "Yes",
+        "candidate/history/aggression_clozapine.v1/h_medical_review": "Yes"
+      },
+      "expected_for_review": {
+        "status": "needs_clarification",
+        "gate": "unknown",
+        "applicability": "gate == 'true'",
+        "reason": "conflicting schizophrenia inputs"
+      },
+      "note": "Candidate review expectation: conflicting required inputs pause; conflict never resolves by choosing one value."
+    }
+  ]
+}

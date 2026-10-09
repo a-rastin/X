@@ -1,0 +1,312 @@
+{
+  "schema_version": "candidate-history-additions-v1",
+  "version": "aggression_clozapine.v1",
+  "status": "awaiting_review",
+  "extends": "history.v1",
+  "purpose": "Isolated S31 review proposal; not loaded by runtime, not replacing or approving v1. No medication regimen fields. Substantial/persistent aggression synthesis uses source periods (scenario interval, lifetime treatment context, current_encounter synthesis) with clinician-reported fields; a PANSS hostility item score alone never maps the gate.",
+  "fields": [
+    {
+      "id": "h_schizophrenia_established",
+      "source_path": "candidate/history/aggression_clozapine.v1/h_schizophrenia_established",
+      "node_id": "SchizophreniaEstablished",
+      "permitted": [
+        "Yes",
+        "No",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Schizophrenia status represented by the scenario; registration diagnosis review establishes Yes/No for this encounter.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-09.md — Implementation (schizophrenia context); diagnosis v1 supplies structured diagnosis, this field is the reviewed encounter synthesis",
+      "source_sha256": "73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6",
+      "operationalization": "Yes requires a documented current schizophrenia diagnosis review at this encounter; No requires a documented assessment finding schizophrenia not established. Unknown assessment pauses. Copied baseline requires reconciliation. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Yes": "Yes",
+        "No": "No"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_substantial_aggression_risk",
+      "source_path": "candidate/history/aggression_clozapine.v1/h_substantial_aggression_risk",
+      "node_id": "SubstantialAggressionRisk",
+      "permitted": [
+        "Yes",
+        "No",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Clinician synthesis of substantial aggression-related risk; informed by clinician-reported aggression fields over the scenario interval with lifetime context, never a PANSS hostility item score alone.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-09.md — Implementation (risk remains substantial despite other treatments); Quality Measurement Considerations (structured diagnosis and risk-factor entry with rating-scale data); content/assessments/panss.v1.json hostility item is a non-equivalent input, never the gate",
+      "source_sha256": "73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6",
+      "operationalization": "Yes requires clinician synthesis of substantial aggression-related risk from clinician-reported fields: scenario-interval aggression observations plus lifetime aggression and treatment context, recorded at the current encounter with encounter/window attribution. A PANSS hostility item score alone never maps Yes. No requires a completed structured assessment finding no substantial aggression risk. Missing synthesis pauses. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record (scenario-interval observations and lifetime context where applicable); copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Yes": "Yes",
+        "No": "No"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_persistence_despite_treatment",
+      "source_path": "candidate/history/aggression_clozapine.v1/h_persistence_despite_treatment",
+      "node_id": "AggressionRiskPersistsDespiteOtherTreatments",
+      "permitted": [
+        "Yes",
+        "No",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Persistence of aggression-related risk despite other treatments, with prior-treatment context and window; distinct from the two-trial treatment-resistance construct.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-09.md — Implementation (risk remains substantial despite other treatments; attention to adherence)",
+      "source_sha256": "73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6",
+      "operationalization": "Yes requires documented persistence of aggression-related risk despite other treatments with prior-treatment context (agents and changes, no regimen details) and scenario-interval window; distinct from two-trial resistance. No requires assessment finding risk did not persist despite treatment. Unknown pauses. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Yes": "Yes",
+        "No": "No"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_urgent_safety_concern",
+      "source_path": "candidate/history/aggression_clozapine.v1/h_urgent_safety_concern",
+      "node_id": "UrgentSafetyConcern",
+      "permitted": [
+        "Present",
+        "Absent",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Clinician-determined urgent safety concern from saved structured urgent inputs at this encounter; displayed independently of estimation latency.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-09.md — Implementation; Balancing of Potential Benefits and Harms in Rating the Strength of the Guideline Statement / Harms",
+      "source_sha256": "73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6",
+      "operationalization": "Present means clinician identifies an urgent safety concern from saved structured urgent inputs during current assessment; Absent means urgent assessment was completed without identified concern. This banner renders from saved inputs independently of estimation latency and is never a model-computed risk percentage. Unknown assessment pauses. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Present": "Present",
+        "Absent": "Absent"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_adherence_concern",
+      "source_path": "candidate/history/aggression_clozapine.v1/h_adherence_concern",
+      "node_id": "AdherenceConcern",
+      "permitted": [
+        "Yes",
+        "No",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "An adherence problem or uncertainty about treatment exposure represented in the scenario.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-09.md — Implementation (attention to adherence is crucial)",
+      "source_sha256": "73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6",
+      "operationalization": "Yes means clinician identifies an adherence problem or exposure uncertainty; No means adherence review found no identified concern. Unknown pauses. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Yes": "Yes",
+        "No": "No"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_modifiable_targets",
+      "source_path": "candidate/history/aggression_clozapine.v1/h_modifiable_targets",
+      "node_id": "ModifiableAggressionRiskTargetsPresent",
+      "permitted": [
+        "Yes",
+        "No",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Presence of modifiable aggression-risk factors that can serve as intervention targets in constructing a plan of treatment.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-09.md — Implementation (modifiable risk factors as intervention targets)",
+      "source_sha256": "73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6",
+      "operationalization": "Yes means clinician identifies at least one modifiable aggression-risk target for intervention planning; No means review found none. Unknown pauses. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Yes": "Yes",
+        "No": "No"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_clozapine_treatment_status",
+      "source_path": "candidate/history/aggression_clozapine.v1/h_clozapine_treatment_status",
+      "node_id": "ClozapineTreatmentStatus",
+      "permitted": [
+        "NeverTreated",
+        "CurrentTreatment",
+        "PreviouslyTreated",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Never, current or previous clozapine treatment represented in the scenario.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-09.md — Implementation; Patient Preferences",
+      "source_sha256": "73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6",
+      "operationalization": "NeverTreated requires explicit assessment of no prior or current clozapine; CurrentTreatment/PreviouslyTreated require documented status with encounter/window. Unknown history pauses. No dose/route/frequency collected. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "NeverTreated": "NeverTreated",
+        "CurrentTreatment": "CurrentTreatment",
+        "PreviouslyTreated": "PreviouslyTreated"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_willing_to_discuss",
+      "source_path": "candidate/history/aggression_clozapine.v1/h_willing_to_discuss",
+      "node_id": "WillingToDiscussClozapine",
+      "permitted": [
+        "Yes",
+        "No",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Willingness to discuss clozapine; patient-preference review input.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-09.md — Patient Preferences",
+      "source_sha256": "73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6",
+      "operationalization": "Yes means patient is willing to discuss clozapine after shared discussion; No means unwillingness or unresolved concerns documented. Missing discussion remains unknown, not No. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Yes": "Yes",
+        "No": "No"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_monitoring_plan",
+      "source_path": "candidate/history/aggression_clozapine.v1/h_monitoring_plan",
+      "node_id": "ClozapineMonitoringPlanAvailable",
+      "permitted": [
+        "Yes",
+        "No",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Availability of a clozapine monitoring and follow-up plan per current prescribing information.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-09.md — Implementation; Harms; Patient Preferences",
+      "source_sha256": "73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6",
+      "operationalization": "Yes means a clozapine monitoring and follow-up plan is available per current prescribing information; No means no such plan available. Unknown pauses. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Yes": "Yes",
+        "No": "No"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    },
+    {
+      "id": "h_medical_review",
+      "source_path": "candidate/history/aggression_clozapine.v1/h_medical_review",
+      "node_id": "ClozapineMedicalReviewCompleted",
+      "permitted": [
+        "Yes",
+        "No",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Completion status of a clozapine medical review for harms and suitability.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-09.md — Balancing of Benefits and Harms; Harms",
+      "source_sha256": "73f9dcc0f619739feb3baf159a3fe55b17de388fcf522675c68cefabc8dc71d6",
+      "operationalization": "Yes means clozapine medical review for harms/suitability is completed; No means not completed. Unknown pauses. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Yes": "Yes",
+        "No": "No"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review"
+    }
+  ],
+  "retained_history_v1": "Twelve original v1 fields and runtime remain unchanged; this separately versioned adjunct proposes 10 additional CPT-context categories, none approved."
+}
