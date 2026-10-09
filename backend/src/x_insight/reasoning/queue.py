@@ -120,22 +120,67 @@ def count_leased(session: Session, job_class: str = GENERATION_CLASS) -> int:
     )
 
 
+def _ordered_batch_runs(session: Session, batch_id: uuid.UUID) -> list[dict[str, Any]]:
+    """Ordered runs for one batch (S46 pinned position first)."""
+    rows = (
+        session.execute(
+            select(reasoning_tables.question_runs)
+            .where(reasoning_tables.question_runs.c.batch_id == batch_id)
+            .order_by(
+                reasoning_tables.question_runs.c.position.asc(),
+                reasoning_tables.question_runs.c.question_key.asc(),
+                reasoning_tables.question_runs.c.created_at.asc(),
+            )
+        )
+        .mappings()
+        .all()
+    )
+    return [dict(row) for row in rows]
+
+
+def _batch_jobs(session: Session, batch_id: uuid.UUID) -> list[dict[str, Any]]:
+    rows = (
+        session.execute(
+            select(reasoning_tables.reasoning_jobs)
+            .where(reasoning_tables.reasoning_jobs.c.batch_id == batch_id)
+            .order_by(reasoning_tables.reasoning_jobs.c.created_at.asc())
+        )
+        .mappings()
+        .all()
+    )
+    return [dict(row) for row in rows]
+
+
 def find_reusable_batch(
     session: Session,
     *,
     encounter_id: uuid.UUID,
     fingerprint: str,
-    question_key: str,
+    question_key: str | None = None,
+    question_keys: list[str] | None = None,
 ) -> dict[str, Any] | None:
-    """Latest reusable batch for the encounter with same fingerprint + question.
+    """Latest reusable batch for the encounter with same fingerprint + ordered keys.
 
-    Same fingerprint implies same facts + pinned package (fingerprint covers
-    both), so repeated triggers reuse the run instead of duplicating it.
-    Only active batches reuse: ready runs with a queued/leased job, or runs
-    without a job yet (non-ready gate or pre-S44 backfill). Terminal jobs
-    (cancelled/failed/succeeded) never reuse — callers admit a fresh batch
-    so dead history stays history. Returns the batch row or None.
+    Same fingerprint implies same facts + pinned ordered packages + DDI pin
+    (fingerprint covers all), so repeated triggers reuse the batch instead
+    of duplicating it. Only active batches reuse: batches with a
+    queued/leased job, or jobless non-ready batches (clarification or
+    pre-S44 backfill). Terminal batches (all jobs
+    cancelled/failed/succeeded, no active) never reuse — callers admit a
+    fresh batch so dead history stays history. ``question_key`` stays for
+    single-question callers; ``question_keys`` carries pinned order for
+    workflows (both accepted, at least one required).
+    Returns the batch row or None.
     """
+    if question_keys is None:
+        if question_key is None:
+            raise ValueError("question_key or question_keys is required")
+        requested = [question_key]
+    else:
+        requested = list(question_keys)
+        if question_key is not None and requested != [question_key]:
+            # Both supplied but disagree: prefer the explicit ordered list.
+            pass
     rows = (
         session.execute(
             select(reasoning_tables.generation_batches)
@@ -150,35 +195,17 @@ def find_reusable_batch(
     )
     for entry in rows:
         batch = dict(entry)
-        run_row = (
-            session.execute(
-                select(reasoning_tables.question_runs).where(
-                    reasoning_tables.question_runs.c.batch_id == batch["id"],
-                    reasoning_tables.question_runs.c.question_key == question_key,
-                )
-            )
-            .mappings()
-            .first()
-        )
-        if run_row is None:
+        runs = _ordered_batch_runs(session, batch["id"])
+        if [run.get("question_key") for run in runs] != requested:
             continue
-        run = dict(run_row)
-        if str(run.get("status")) != "ready":
+        jobs = _batch_jobs(session, batch["id"])
+        if not jobs:
+            # Jobless batch: non-ready gates reuse (no job needed); ready
+            # batches reuse for backfill (pre-S44 or pre-S46 gaps).
             return batch
-        job_row = (
-            session.execute(
-                select(reasoning_tables.reasoning_jobs).where(
-                    reasoning_tables.reasoning_jobs.c.question_run_id == run["id"]
-                )
-            )
-            .mappings()
-            .first()
-        )
-        if job_row is None:
+        if any(str(job.get("status")) in ACTIVE_JOB_STATUSES for job in jobs):
             return batch
-        if str(dict(job_row).get("status")) in ACTIVE_JOB_STATUSES:
-            return batch
-        # Terminal job: keep looking at older batches, never resurrect this one.
+        # All jobs terminal: keep looking at older batches, never resurrect.
     return None
 
 
@@ -256,26 +283,29 @@ def check_start_admission(
     *,
     encounter_id: uuid.UUID,
     fingerprint: str,
-    question_key: str,
+    question_key: str | None = None,
+    question_keys: list[str] | None = None,
     now: datetime | None = None,
 ) -> dict[str, Any] | None:
     """Enforce single-active + queued-cap before inserting a new batch.
 
-    Returns a reusable batch when the same fingerprint already exists.
-    A different fingerprint supersedes the prior active generation (old
-    jobs cancelled, history retained) so sequential edits keep S40 history
-    while never leaving two active generations. Simultaneous triggers with
-    the same fingerprint reuse; truly concurrent different-fingerprint
-    triggers serialize on the encounter + deployment locks, the loser
-    supersedes the winner (one active, history kept). Raises 429 when the
-    global queued cap is reached. Drafts/jobs are never deleted here.
-    Must run under the encounter lock with the deployment row locked.
+    Returns a reusable batch when the same fingerprint + ordered keys
+    already exists. A different fingerprint supersedes the prior active
+    generation (old jobs cancelled, history retained) so sequential edits
+    keep S40 history while never leaving two active generations.
+    Simultaneous triggers with the same fingerprint reuse; truly concurrent
+    different-fingerprint triggers serialize on the encounter + deployment
+    locks, the loser supersedes the winner (one active, history kept).
+    Raises 429 when the global queued cap is reached. Drafts/jobs are never
+    deleted here. Must run under the encounter lock with the deployment row
+    locked.
     """
     reusable = find_reusable_batch(
         session,
         encounter_id=encounter_id,
         fingerprint=fingerprint,
         question_key=question_key,
+        question_keys=question_keys,
     )
     if reusable is not None:
         return reusable
@@ -359,33 +389,61 @@ def ensure_job_for_reused_batch(
     session: Session,
     *,
     batch: dict[str, Any],
-    question_key: str,
+    question_key: str | None = None,
+    question_keys: list[str] | None = None,
     deployment_generation: int,
     now: datetime | None = None,
 ) -> None:
-    """Backfill a queued job for a reused ready batch that predates S44."""
-    run = (
-        session.execute(
-            select(reasoning_tables.question_runs).where(
-                reasoning_tables.question_runs.c.batch_id == batch["id"],
-                reasoning_tables.question_runs.c.question_key == question_key,
+    """Backfill the first eligible job for a reused batch missing it.
+
+    Single-question pre-S44 batches get their ready job; workflow batches
+    get the earliest pending ready run (skips not_applicable, stops on
+    clarification). Already-enqueued batches are untouched (idempotent per
+    run via ``insert_initial_job``).
+    """
+    _ = question_key
+    _ = question_keys
+    runs = _ordered_batch_runs(session, batch["id"])
+    for run in runs:
+        status = str(run.get("status"))
+        if status == "not_applicable":
+            continue
+        if status == "needs_clarification":
+            return
+        if status != "ready":
+            return
+        # First eligible ready run: backfill when it has no job and no baseline.
+        existing_job = (
+            session.execute(
+                select(reasoning_tables.reasoning_jobs).where(
+                    reasoning_tables.reasoning_jobs.c.question_run_id == run["id"]
+                )
             )
+            .mappings()
+            .first()
         )
-        .mappings()
-        .first()
-    )
-    if run is None:
+        if existing_job is not None:
+            return
+        existing_baseline = (
+            session.execute(
+                select(reasoning_tables.original_baselines).where(
+                    reasoning_tables.original_baselines.c.question_run_id == run["id"]
+                )
+            )
+            .mappings()
+            .first()
+        )
+        if existing_baseline is not None:
+            # Already succeeded: look for the next pending successor instead.
+            continue
+        insert_initial_job(
+            session,
+            batch_id=batch["id"],
+            question_run_id=run["id"],
+            deployment_generation=deployment_generation,
+            now=now,
+        )
         return
-    run_dict = dict(run)
-    if str(run_dict.get("status")) != "ready":
-        return
-    insert_initial_job(
-        session,
-        batch_id=batch["id"],
-        question_run_id=run_dict["id"],
-        deployment_generation=deployment_generation,
-        now=now,
-    )
 
 
 def safe_job(row: dict[str, Any]) -> dict[str, Any]:
@@ -420,6 +478,81 @@ def safe_job(row: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def insert_successor_job(
+    session: Session,
+    *,
+    batch_id: uuid.UUID,
+    completed_run_id: uuid.UUID,
+    deployment_generation: int,
+    now: datetime | None = None,
+) -> dict[str, Any] | None:
+    """Atomically enable the next eligible successor after one success.
+
+    Called in the same transaction as the baseline insert + job success
+    (persist result + rendered section before enabling next). Skips
+    ``not_applicable`` (no job), stops on ``needs_clarification`` (later
+    pending), enqueues the next pending ``ready`` run without a job or
+    baseline. Returns the new/existing successor job or None (blocked/done).
+    Only one queued job exists per batch at a time: no intra-run parallelism.
+    """
+    moment = now or contracts.utcnow()
+    runs = _ordered_batch_runs(session, batch_id)
+    completed_pos: int | None = None
+    for run in runs:
+        if str(run.get("id")) == str(completed_run_id):
+            try:
+                completed_pos = int(run.get("position", 0))
+            except Exception:
+                completed_pos = 0
+            break
+    if completed_pos is None:
+        return None
+    for run in runs:
+        try:
+            pos = int(run.get("position", 0))
+        except Exception:
+            pos = 0
+        if pos <= int(completed_pos):
+            continue
+        status = str(run.get("status"))
+        if status == "not_applicable":
+            continue
+        if status == "needs_clarification":
+            return None
+        if status != "ready":
+            return None
+        baseline = (
+            session.execute(
+                select(reasoning_tables.original_baselines).where(
+                    reasoning_tables.original_baselines.c.question_run_id == run["id"]
+                )
+            )
+            .mappings()
+            .first()
+        )
+        if baseline is not None:
+            continue
+        existing = (
+            session.execute(
+                select(reasoning_tables.reasoning_jobs).where(
+                    reasoning_tables.reasoning_jobs.c.question_run_id == run["id"]
+                )
+            )
+            .mappings()
+            .first()
+        )
+        if existing is not None:
+            return dict(existing)
+        return insert_initial_job(
+            session,
+            batch_id=batch_id,
+            question_run_id=run["id"],
+            deployment_generation=int(deployment_generation),
+            now=moment,
+        )
+    return None
+
+
 def get_job_for_batch(session: Session, batch_id: uuid.UUID) -> dict[str, Any] | None:
     row = (
         session.execute(
@@ -432,6 +565,11 @@ def get_job_for_batch(session: Session, batch_id: uuid.UUID) -> dict[str, Any] |
         .first()
     )
     return dict(row) if row is not None else None
+
+
+def list_jobs_for_batch(session: Session, batch_id: uuid.UUID) -> list[dict[str, Any]]:
+    """All jobs for one batch in creation order (S46 ordered successors)."""
+    return _batch_jobs(session, batch_id)
 
 
 def count_attempts(session: Session, job_id: uuid.UUID) -> int:
@@ -449,13 +587,17 @@ def get_batch_queue_view(
 ) -> dict[str, Any]:
     """Public queue visibility for one batch (job + busy + position).
 
-    - ``job`` is the safe job shape or None (non-ready batches have no job).
+    - ``job`` is the safe job shape or None (non-ready batches have no job;
+      kept as the first job for single-question compat).
+    - ``jobs`` lists every job for the batch in creation order (S46 ordered
+      successors; single-question batches hold one).
     - ``queue`` carries leased/queued counts, this job's FIFO position
       among queued generation jobs, and ``busy`` (slots saturated).
     Never exposes lease/grant tokens.
     """
     _ = now
     job = get_job_for_batch(session, batch_id)
+    jobs = list_jobs_for_batch(session, batch_id)
     leased = count_leased(session)
     queued = count_queued(session)
     busy = leased >= MAX_PROVIDER_SLOTS
@@ -474,6 +616,7 @@ def get_batch_queue_view(
         )
     return {
         "job": safe_job(job) if job is not None else None,
+        "jobs": [safe_job(entry) for entry in jobs],
         "attempts": count_attempts(session, job["id"]) if job is not None else 0,
         "queue": {
             "busy": bool(busy),
@@ -607,6 +750,45 @@ def heartbeat_job(
     return True
 
 
+def _predecessors_complete(
+    session: Session, batch_id: uuid.UUID, position: int
+) -> tuple[bool, str]:
+    """Ordered S46 check: every earlier run must be done or validly skipped.
+
+    Earlier ``not_applicable`` is a valid skip (no baseline needed);
+    earlier ``ready`` needs its immutable baseline (prior inference + section
+    committed before this job); earlier ``needs_clarification`` blocks
+    successors (later questions stay pending). Returns (ok, reason).
+    """
+    runs = _ordered_batch_runs(session, batch_id)
+    for run in runs:
+        try:
+            run_pos = int(run.get("position", 0))
+        except Exception:
+            run_pos = 0
+        if run_pos >= int(position):
+            continue
+        status = str(run.get("status"))
+        if status == "not_applicable":
+            continue
+        if status == "needs_clarification":
+            return False, "blocked by clarification"
+        if status != "ready":
+            return False, f"predecessor {run.get('question_key')} not eligible"
+        baseline = (
+            session.execute(
+                select(reasoning_tables.original_baselines).where(
+                    reasoning_tables.original_baselines.c.question_run_id == run["id"]
+                )
+            )
+            .mappings()
+            .first()
+        )
+        if baseline is None:
+            return False, "predecessor pending"
+    return True, "predecessors complete"
+
+
 def _is_job_eligible(
     session: Session,
     job: dict[str, Any],
@@ -614,11 +796,13 @@ def _is_job_eligible(
     run: dict[str, Any],
     now: datetime,
 ) -> tuple[bool, str]:
-    """Real snapshot/gate/account/lifecycle checks before expensive work.
+    """Real snapshot/gate/account/lifecycle + ordered checks before work.
 
     Uses ``snapshots`` helpers (never mocked): encounter must be draft,
-    author active, run gate ready, and current fingerprint must match the
-    frozen batch (relevant edits supersede; note-only stays eligible).
+    author active, run gate ready, current fingerprint must match the frozen
+    batch (relevant edits supersede; note-only stays eligible), and S46
+    predecessors must be complete (no intra-run parallelism: the next
+    request is absent until prior inference and section commit).
     Returns (eligible, reason).
     """
     from x_insight.cases import encounters as encounters_service
@@ -636,6 +820,13 @@ def _is_job_eligible(
     next_at = job.get("next_eligible_at")
     if next_at is not None and isinstance(next_at, datetime) and next_at > now:
         return False, "not yet eligible"
+    try:
+        position = int(run.get("position", 0))
+    except Exception:
+        position = 0
+    ok, reason = _predecessors_complete(session, batch["id"], position)
+    if not ok:
+        return False, reason
     draft_data = encounter.get("draft_data") or {}
     pinned = batch.get("pinned_bundle") or {}
     try:
@@ -775,10 +966,13 @@ def claim_next_job(
         ).first()
         if other_leased is not None:
             continue
-        eligible, _ = _is_job_eligible(session, job, batch, run, moment)
+        eligible, reason = _is_job_eligible(session, job, batch, run, moment)
         if not eligible:
-            # Stale/ineligible: cancel to keep one active + history (same
-            # supersede rule as start admission).
+            # Ordered workflows: predecessor-pending/blocked is temporary —
+            # leave queued for the successor path (never cancel future work).
+            # Stale/account/lifecycle mismatches cancel (same supersede rule).
+            if reason in ("predecessor pending", "blocked by clarification"):
+                continue
             session.execute(
                 update(reasoning_tables.reasoning_jobs)
                 .where(reasoning_tables.reasoning_jobs.c.id == job["id"])

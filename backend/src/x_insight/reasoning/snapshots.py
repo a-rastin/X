@@ -62,8 +62,10 @@ NEEDS_CLARIFICATION = "needs_clarification"
 
 BATCH_STATUSES = (READY, NOT_APPLICABLE, NEEDS_CLARIFICATION)
 
-# ponytail: single-question proof; multi-question ordered batches land with S46 workflows.
+# S46 ordered workflows: batches hold 1..11 questions in pinned ``packages`` order.
+# Single-question starts stay backward compatible (``package`` wraps to one).
 MAX_PROJECTION_VARIABLES = 64
+MAX_WORKFLOW_QUESTIONS = 11
 
 
 def _is_note_path(path: str) -> bool:
@@ -418,6 +420,19 @@ def idempotency_request_hash(
     )
 
 
+def idempotency_workflow_hash(
+    target_id: uuid.UUID, expected_revision: int, packages: list[dict[str, Any]]
+) -> str:
+    """Idempotency hash for ordered workflow starts (pinned package order matters)."""
+    return contracts.canonical_hash(
+        {
+            "target_id": str(target_id),
+            "expected_revision": expected_revision,
+            "packages": list(packages),
+        }
+    )
+
+
 def safe_batch(row: dict[str, Any]) -> dict[str, Any]:
     return {
         "id": str(row["id"]),
@@ -448,43 +463,183 @@ def safe_run(row: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def _validate_workflow_packages(
+    packages: list[dict[str, Any]],
+) -> list[Any]:
+    """Validate ordered packages (S25 each) with distinct keys in pinned order."""
+    if not isinstance(packages, list) or not packages:
+        raise _fail(422, "missing_package", "No question packages supplied.")
+    if len(packages) > MAX_WORKFLOW_QUESTIONS:
+        raise _fail(422, "too_many_questions", "Too many questions in one workflow.")
+    seen: set[str] = set()
+    loaded_list: list[Any] = []
+    for package in packages:
+        if not isinstance(package, dict):
+            raise _fail(422, "missing_package", "No question package supplied.")
+        report = package_module.validate_question_package(package, None)
+        if not report.valid:
+            first = report.errors[0] if report.errors else None
+            code = first.code if first is not None else "invalid_package"
+            detail = first.message if first is not None else "Invalid package."
+            raise contracts.ContractError(422, code, f"Invalid question package: {detail}")
+        try:
+            loaded = package_module.load_question_package(package, None)
+        except package_module.QuestionPackageError as exc:
+            raise contracts.ContractError(
+                422, exc.code, f"Invalid question package: {exc.message}"
+            ) from exc
+        if loaded.question_key in seen:
+            raise _fail(422, "duplicate_question", f"Duplicate question {loaded.question_key!r}.")
+        seen.add(loaded.question_key)
+        loaded_list.append(loaded)
+    return loaded_list
+
+
+def _pin_ddi_for_start(session: Session, draft_data: Any) -> dict[str, Any]:
+    """Pin the DDI dataset/catalog/fingerprint/report for one batch start.
+
+    Reuses the S19 ``checker.check`` seam (engine DI). Synthetic
+    limited-coverage fixtures are acceptable mechanics here; S18 gates real
+    data. Valid reports pin ``ddi_status='valid'`` with the full report;
+    missing/broken datasets or unknown catalog IDs pin
+    ``ddi_status='unavailable'`` with the error code (proposal stays
+    incomplete, questions still execute). Never raises: start succeeds so
+    partial sections stay readable; proposal assembly enforces validity.
+    """
+    from x_insight import db as db_module
+    from x_insight.ddi import checker as checker_module
+
+    med_ids = _get_medication_ids(draft_data)
+    stored_version: str | None = None
+    if isinstance(draft_data, dict):
+        section = draft_data.get("medications")
+        if isinstance(section, dict) and isinstance(section.get("dataset_version"), str):
+            stored_version = str(section["dataset_version"]).strip() or None
+    try:
+        engine = session.get_bind()
+    except Exception:
+        engine = None
+    if engine is None:
+        try:
+            engine = db_module.get_engine()
+        except Exception:
+            engine = None
+    dataset_version = stored_version
+    if not dataset_version and engine is not None:
+        try:
+            dataset_version = checker_module.latest_release_version(engine)
+        except Exception:
+            dataset_version = None
+    if engine is None or not dataset_version:
+        return {
+            "dataset_version": dataset_version,
+            "catalog_version": None,
+            "medication_fingerprint": None,
+            "ddi_status": "unavailable",
+            "ddi_error": "DATASET_UNAVAILABLE",
+            "ddi_report": None,
+        }
+    try:
+        ddi_report = checker_module.check(engine, list(med_ids), str(dataset_version))
+    except checker_module.CheckError as exc:
+        return {
+            "dataset_version": str(dataset_version),
+            "catalog_version": None,
+            "medication_fingerprint": None,
+            "ddi_status": "unavailable",
+            "ddi_error": str(exc.code),
+            "ddi_report": None,
+        }
+    except Exception:
+        return {
+            "dataset_version": str(dataset_version),
+            "catalog_version": None,
+            "medication_fingerprint": None,
+            "ddi_status": "unavailable",
+            "ddi_error": "DATASET_UNAVAILABLE",
+            "ddi_report": None,
+        }
+    return {
+        "dataset_version": str(ddi_report.get("dataset_version")),
+        "catalog_version": str(ddi_report.get("catalog_version") or ""),
+        "medication_fingerprint": str(ddi_report.get("medication_fingerprint") or ""),
+        "ddi_status": "valid",
+        "ddi_error": None,
+        "ddi_report": dict(ddi_report),
+    }
+
+
+def _workflow_batch_status(statuses: list[str]) -> str:
+    """Overall batch status from ordered per-question gates.
+
+    Skips ``not_applicable`` (no job, recorded skipped); the first
+    ``needs_clarification`` blocks successors (batch clarification); the
+    first ``ready`` makes the batch ready; all skipped → not_applicable.
+    """
+    for status in statuses:
+        if status == NOT_APPLICABLE:
+            continue
+        if status == NEEDS_CLARIFICATION:
+            return NEEDS_CLARIFICATION
+        if status == READY:
+            return READY
+    # Either all skipped or empty (empty rejected earlier); all skipped.
+    return NOT_APPLICABLE
+
+
+def _first_eligible_index(statuses: list[str]) -> int | None:
+    """Index of the first eligible ready run (skips not_applicable, stops on clarification)."""
+    for index, status in enumerate(statuses):
+        if status == NOT_APPLICABLE:
+            continue
+        if status == NEEDS_CLARIFICATION:
+            return None
+        if status == READY:
+            return index
+    return None
+
+
 def start_generation_batch(
     session: Session,
     *,
     author: dict[str, Any],
     encounter_id: uuid.UUID,
     expected_revision: int,
-    package: dict[str, Any],
+    package: dict[str, Any] | None = None,
+    packages: list[dict[str, Any]] | None = None,
     request_id: str,
 ) -> tuple[dict[str, Any], list[dict[str, Any]]]:
-    """Freeze one question's snapshot + projection and enqueue its first job.
+    """Freeze ordered snapshots + projections and enqueue the first eligible job.
 
-    Privacy first (404 missing/released, 403 stranger), then the revision
-    fence (412 stale changes nothing), then S25 package validation (422
-    changes nothing). S44 admission (single active generation per encounter,
-    fingerprint reuse, 100-queued cap) runs under the encounter lock plus
-    the deployment global lock, so simultaneous triggers serialize. Only a
-    fully valid start inserts the immutable batch + run rows plus the first
-    eligible queued job atomically — failures create no partial rows.
-    Repeated same-fingerprint triggers reuse the existing run (no duplicate
-    batch, backfilling a queued job for pre-S44 batches when ready).
+    Backward compatible single-question path: ``package={...}`` wraps to a
+    one-element workflow. Ordered path: ``packages=[...]`` in pinned order
+    (distinct ``question_key`` values, S46 five/six-question synthetic
+    workflows). Privacy first (404/403), then revision fence (412), then
+    S25 validation per package (422 changes nothing). S44 admission (single
+    active generation per encounter, fingerprint reuse, 100-queued cap)
+    runs under the encounter + deployment locks. Only a fully valid start
+    inserts the immutable batch + ordered run rows plus the first eligible
+    queued job atomically — failures create no partial rows. Repeated
+    same-fingerprint triggers reuse the existing batch (no duplicate,
+    backfilling the first eligible job when missing).
     """
-    if not isinstance(package, dict):
-        raise _fail(422, "missing_package", "No question package supplied.")
-    report = package_module.validate_question_package(package, None)
-    if not report.valid:
-        first = report.errors[0] if report.errors else None
-        code = first.code if first is not None else "invalid_package"
-        detail = first.message if first is not None else "Invalid package."
-        raise contracts.ContractError(422, code, f"Invalid question package: {detail}")
-    try:
-        loaded = package_module.load_question_package(package, None)
-    except package_module.QuestionPackageError as exc:
-        raise contracts.ContractError(
-            422, exc.code, f"Invalid question package: {exc.message}"
-        ) from exc
-    manifest = package["manifest"]
-    assert isinstance(manifest, Mapping)
+    if packages is not None and package is not None:
+        raise _fail(422, "missing_package", "Supply package or packages, not both.")
+    if packages is None:
+        if not isinstance(package, dict):
+            raise _fail(422, "missing_package", "No question package supplied.")
+        ordered_packages: list[dict[str, Any]] = [package]
+    else:
+        if not isinstance(packages, list):
+            raise _fail(422, "missing_package", "No question packages supplied.")
+        ordered_packages = list(packages)
+    loaded_list = _validate_workflow_packages(ordered_packages)
+    manifests: list[Mapping[str, Any]] = []
+    for entry, loaded in zip(ordered_packages, loaded_list):
+        manifest = entry.get("manifest")
+        if not isinstance(manifest, Mapping):
+            raise _fail(422, "missing_package", "No question package supplied.")
+        manifests.append(manifest)
 
     row = (
         session.execute(
@@ -505,34 +660,74 @@ def start_generation_batch(
             412, "STALE_REVISION", "The draft changed. Reload and reconcile your edits."
         )
     draft_data = encounter.get("draft_data") or {}
+    # S46 DDI pin (S19 checker seam): dataset/catalog/fingerprint/report per batch.
+    ddi_pin = _pin_ddi_for_start(session, draft_data)
+    # Workflow-level pinned bundle: ordered keys + per-question hashes for the
+    # fingerprint, plus legacy single-question keys for T8 compat (first
+    # question) and the DDI pin. Fingerprint covers ordered content + DDI.
+    first_manifest = manifests[0]
+    first_loaded = loaded_list[0]
+    per_question: dict[str, Any] = {}
+    for loaded, manifest in zip(loaded_list, manifests):
+        per_question[loaded.question_key] = {
+            "package_hash": loaded.package_hash,
+            "network_hash": str(manifest.get("network_hash", "")),
+            "prompt_version": str(manifest.get("prompt_version", "")),
+            "template_version": str(manifest.get("template_version", "")),
+            "package_version": str(manifest.get("version", "")),
+        }
     pinned: dict[str, Any] = {
-        "question_key": loaded.question_key,
-        "package_hash": loaded.package_hash,
-        "network_hash": str(manifest.get("network_hash", "")),
-        "prompt_version": str(manifest.get("prompt_version", "")),
-        "template_version": str(manifest.get("template_version", "")),
-        "package_version": str(manifest.get("version", "")),
+        "question_key": first_loaded.question_key,
+        "package_hash": first_loaded.package_hash,
+        "network_hash": str(first_manifest.get("network_hash", "")),
+        "prompt_version": str(first_manifest.get("prompt_version", "")),
+        "template_version": str(first_manifest.get("template_version", "")),
+        "package_version": str(first_manifest.get("version", "")),
+        "workflow": str(first_manifest.get("workflow", "registration")),
+        "question_keys": [loaded.question_key for loaded in loaded_list],
+        "per_question": per_question,
+        "ddi_dataset_version": ddi_pin.get("dataset_version"),
+        "ddi_catalog_version": ddi_pin.get("catalog_version"),
+        "ddi_medication_fingerprint": ddi_pin.get("medication_fingerprint"),
+        "ddi_status": ddi_pin.get("ddi_status"),
     }
     fingerprint, payload = compute_analysis_fingerprint(draft_data, pinned)
-    projection, projection_hash = build_question_projection(manifest, draft_data, expected_revision)
-    status, reason = evaluate_gate(manifest, draft_data)
+    # Per-question projections/gates in pinned order (S40 reuse, no second path).
+    projections: list[dict[str, Any]] = []
+    projection_hashes: list[str] = []
+    statuses: list[str] = []
+    reasons: list[str] = []
+    for manifest in manifests:
+        projection, projection_hash = build_question_projection(
+            manifest, draft_data, expected_revision
+        )
+        status, reason = evaluate_gate(manifest, draft_data)
+        projections.append(projection)
+        projection_hashes.append(projection_hash)
+        statuses.append(status)
+        reasons.append(reason)
+    batch_status = _workflow_batch_status(statuses)
+    first_eligible = _first_eligible_index(statuses)
 
     # S44 admission (lazy import: queue imports snapshots for eligibility).
     from x_insight.reasoning import queue as queue_module
 
     moment = contracts.utcnow()
     deployment_generation = queue_module.lock_deployment(session)
+    requested_keys = [loaded.question_key for loaded in loaded_list]
     reusable = queue_module.check_start_admission(
         session,
         encounter_id=encounter_id,
         fingerprint=fingerprint,
-        question_key=loaded.question_key,
+        question_key=requested_keys[0] if len(requested_keys) == 1 else None,
+        question_keys=requested_keys,
     )
     if reusable is not None:
         queue_module.ensure_job_for_reused_batch(
             session,
             batch=reusable,
-            question_key=loaded.question_key,
+            question_key=requested_keys[0] if len(requested_keys) == 1 else None,
+            question_keys=requested_keys,
             deployment_generation=int(deployment_generation),
             now=moment,
         )
@@ -542,7 +737,6 @@ def start_generation_batch(
         return batch, runs
 
     batch_id = uuid.uuid4()
-    run_id = uuid.uuid4()
     session.execute(
         insert(reasoning_tables.generation_batches).values(
             id=batch_id,
@@ -552,39 +746,64 @@ def start_generation_batch(
             fingerprint=fingerprint,
             fingerprint_payload=payload,
             pinned_bundle=pinned,
-            status=status,
+            status=batch_status,
             created_at=moment,
         )
     )
-    # S45: freeze the full question package (manifest/prompt/template +
-    # ``network_xml``) for the worker. Stored verbatim; never read from
-    # mutable files at execution time.
-    frozen_package = dict(package) if isinstance(package, dict) else {}
-    session.execute(
-        insert(reasoning_tables.question_runs).values(
-            id=run_id,
-            batch_id=batch_id,
-            question_key=loaded.question_key,
-            status=status,
-            gate_reason=reason,
-            projection=projection,
-            projection_hash=projection_hash,
-            fingerprint=fingerprint,
-            pinned_versions=pinned,
-            pinned_package=frozen_package,
-            created_at=moment,
+    # S45+S46: freeze each full package verbatim in pinned order with an
+    # explicit position (never read from mutable files at execution time).
+    # Activating new content never UPDATEs these rows (old batches immutable).
+    run_ids: list[uuid.UUID] = []
+    for position, (entry, loaded, projection, projection_hash, status, reason) in enumerate(
+        zip(ordered_packages, loaded_list, projections, projection_hashes, statuses, reasons)
+    ):
+        run_id = uuid.uuid4()
+        run_ids.append(run_id)
+        manifest = manifests[position]
+        run_pinned: dict[str, Any] = {
+            "question_key": loaded.question_key,
+            "package_hash": loaded.package_hash,
+            "network_hash": str(manifest.get("network_hash", "")),
+            "prompt_version": str(manifest.get("prompt_version", "")),
+            "template_version": str(manifest.get("template_version", "")),
+            "package_version": str(manifest.get("version", "")),
+            "position": int(position),
+        }
+        frozen_package = dict(entry) if isinstance(entry, dict) else {}
+        session.execute(
+            insert(reasoning_tables.question_runs).values(
+                id=run_id,
+                batch_id=batch_id,
+                question_key=loaded.question_key,
+                status=status,
+                gate_reason=reason,
+                projection=projection,
+                projection_hash=projection_hash,
+                fingerprint=fingerprint,
+                pinned_versions=run_pinned,
+                pinned_package=frozen_package,
+                position=int(position),
+                created_at=moment,
+            )
         )
-    )
     session.flush()
-    if status == READY:
+    # Enqueue only the first eligible ready run (ordered eligibility;
+    # not_applicable needs no job, needs_clarification blocks successors).
+    if first_eligible is not None:
         queue_module.insert_initial_job(
             session,
             batch_id=batch_id,
-            question_run_id=run_id,
+            question_run_id=run_ids[first_eligible],
             deployment_generation=int(deployment_generation),
             now=moment,
         )
         session.flush()
+    # Full DDI report is NOT stored in pinned_bundle (it carries
+    # ``generated_at`` which would destabilize the fingerprint). The stable
+    # pin (dataset/catalog/medication fingerprint/status) lives in
+    # ``pinned_bundle`` above and in the fingerprint; proposal assembly
+    # recomputes the full report from frozen payload meds + pinned dataset
+    # (never live chart) and stores it immutably in the proposal row.
     audit_module.record_audit(
         session,
         operation="generation.start.success",
@@ -593,9 +812,9 @@ def start_generation_batch(
         details={
             "encounter_id": str(encounter_id),
             "batch_id": str(batch_id),
-            "question_key": loaded.question_key,
+            "question_keys": requested_keys,
             "source_revision": expected_revision,
-            "status": status,
+            "status": batch_status,
         },
     )
     batch = _get_batch(session, batch_id)
@@ -618,11 +837,14 @@ def _get_batch(session: Session, batch_id: uuid.UUID) -> dict[str, Any] | None:
 
 
 def _list_runs(session: Session, batch_id: uuid.UUID) -> list[dict[str, Any]]:
+    # S46 pinned order first (position), then key/created for stability.
+    # Legacy single-question rows all carry position 0, preserving old order.
     rows = (
         session.execute(
             select(reasoning_tables.question_runs)
             .where(reasoning_tables.question_runs.c.batch_id == batch_id)
             .order_by(
+                reasoning_tables.question_runs.c.position.asc(),
                 reasoning_tables.question_runs.c.question_key.asc(),
                 reasoning_tables.question_runs.c.created_at.asc(),
             )

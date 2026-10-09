@@ -3,12 +3,12 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest recorded checkpoint is [S45](s45.md): one full synthetic
-question end to end via T1/T8 exercising T5–T7 (real MCP → controlled
-provider → all-CPT validation → effective XML → empty-evidence inference
-→ template section with atomic OriginalBaseline; 0.20/0.22; 6 S45 probes
-+ 23 worker + 13 MCP + 11 provider, 95 http + 298 assessment/model
-regressions, ruff+mypy clean; no frontend change).
+The latest recorded checkpoint is [S46](s46.md): ordered 5/6-question
+workflows via T1/T8 (pinned position, one eligible at a time) assembling
+the stored sections plus the pinned DDI report into one immutable
+proposal; 10 new workflow tests + 29 worker + 24 MCP/provider + 95 http +
+298 assessment/model regressions, ruff+mypy clean, DB at 0012; no frontend
+change.
 Content approvals remain as recorded in S39.b; bundle release and activation
 retain their independent status.
 
@@ -82,3 +82,4 @@ retain their independent status.
 | S41 | [Real private MCP transport and context grants (2026-10-09)](s41.md) |
 | S43 | [Bounded provider CPT estimation and tool bridging (2026-10-09)](s43.md) |
 | S45 | [Run one full synthetic clinical question end to end (2026-10-09)](s45.md) |
+| S46 | [Execute ordered workflows and assemble a complete proposal (2026-10-09)](s46.md) |

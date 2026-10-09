@@ -72,6 +72,311 @@ from x_insight.reasoning import tables as reasoning_tables
 RENDER_UNSUPPORTED_OPERATORS = frozenset({"in", "and", "or", "not"})
 
 
+def safe_proposal(row: Mapping[str, Any]) -> dict[str, Any]:
+    """Public proposal shape (persisted assembly only, never LLM prose)."""
+    return {
+        "id": str(row.get("id")),
+        "batch_id": str(row.get("batch_id")),
+        "fingerprint": str(row.get("fingerprint")),
+        "sections": list(row.get("sections") or []),
+        "skipped": list(row.get("skipped") or []),
+        "coverage_warnings": list(row.get("coverage_warnings") or []),
+        "ddi_report": dict(row.get("ddi_report") or {}),
+        "created_at": contracts.serialize_utc(row["created_at"]),
+    }
+
+
+def get_proposal(session: Session, batch_id: Any) -> dict[str, Any] | None:
+    row = (
+        session.execute(
+            select(reasoning_tables.proposal_snapshots).where(
+                reasoning_tables.proposal_snapshots.c.batch_id == batch_id
+            )
+        )
+        .mappings()
+        .first()
+    )
+    return dict(row) if row is not None else None
+
+
+def list_baselines_for_batch(session: Session, batch_id: Any) -> list[dict[str, Any]]:
+    """Ordered baselines per run (S46 sections; null when pending)."""
+    runs = (
+        session.execute(
+            select(reasoning_tables.question_runs)
+            .where(reasoning_tables.question_runs.c.batch_id == batch_id)
+            .order_by(
+                reasoning_tables.question_runs.c.position.asc(),
+                reasoning_tables.question_runs.c.question_key.asc(),
+            )
+        )
+        .mappings()
+        .all()
+    )
+    ordered: list[dict[str, Any]] = []
+    for entry in runs:
+        run = dict(entry)
+        stored = get_baseline(session, run["id"])
+        baseline = safe_baseline(stored) if stored is not None else None
+        transparency = build_transparency(run, stored) if stored is not None else None
+        try:
+            position = int(run.get("position", 0))
+        except Exception:
+            position = 0
+        ordered.append(
+            {
+                "question_run_id": str(run.get("id")),
+                "question_key": str(run.get("question_key", "")),
+                "position": int(position),
+                "status": str(run.get("status", "")),
+                "baseline": baseline,
+                "transparency": transparency,
+            }
+        )
+    return ordered
+
+
+def build_coverage_warnings(ddi_report: Mapping[str, Any]) -> list[str]:
+    """Coverage warnings from a pinned valid DDI report (limited vs complete)."""
+    warnings: list[str] = []
+    limitations = ddi_report.get("limitations")
+    if isinstance(limitations, list):
+        for entry in limitations:
+            if isinstance(entry, str) and entry.strip():
+                warnings.append(str(entry))
+            elif entry is not None:
+                warnings.append(str(entry))
+    uncovered_meds = ddi_report.get("coverage_unavailable_medications")
+    if isinstance(uncovered_meds, list):
+        for entry in uncovered_meds:
+            if isinstance(entry, Mapping):
+                catalog = entry.get("catalog_drug_id") or entry.get("concept_id")
+                warnings.append(f"coverage unavailable: {catalog}")
+            elif entry is not None:
+                warnings.append(f"coverage unavailable: {entry}")
+    pairs = ddi_report.get("pairs")
+    if isinstance(pairs, list):
+        for pair in pairs:
+            if not isinstance(pair, Mapping):
+                continue
+            if str(pair.get("status")) == "coverage_unavailable":
+                warnings.append(
+                    f"coverage unavailable: {pair.get('drug_a')} + {pair.get('drug_b')}"
+                )
+    # Deduplicate preserving order (small N).
+    seen: set[str] = set()
+    deduped: list[str] = []
+    for warning in warnings:
+        if warning not in seen:
+            seen.add(warning)
+            deduped.append(warning)
+    return deduped
+
+
+def recompute_pinned_ddi(
+    session: Session, batch: Mapping[str, Any]
+) -> tuple[dict[str, Any] | None, str | None]:
+    """Recompute the pinned DDI report from frozen facts (never live chart).
+
+    Uses the frozen fingerprint payload medications + pinned dataset version
+    (both immutable at start). Returns (report, None) when valid, or
+    (None, error_code) when the dataset is failed/unavailable. Valid
+    limited-coverage reports (``released_limited`` with
+    ``coverage_unavailable``) return valid here — absence is only claimed
+    via explicit complete coverage, never synthesized.
+    """
+    from x_insight import db as db_module
+    from x_insight.ddi import checker as checker_module
+
+    raw_pinned = batch.get("pinned_bundle")
+    pinned: dict[str, Any] = raw_pinned if isinstance(raw_pinned, dict) else {}
+    dataset_version = pinned.get("ddi_dataset_version")
+    if not isinstance(dataset_version, str) or not dataset_version.strip():
+        return None, "DATASET_UNAVAILABLE"
+    payload = batch.get("fingerprint_payload")
+    frozen_meds: list[str] = []
+    if isinstance(payload, Mapping):
+        meds = payload.get("medications")
+        if isinstance(meds, list):
+            frozen_meds = [str(entry) for entry in meds if isinstance(entry, str)]
+    try:
+        engine = session.get_bind()
+    except Exception:
+        engine = None
+    if engine is None:
+        try:
+            engine = db_module.get_engine()
+        except Exception:
+            engine = None
+    if engine is None:
+        return None, "DATASET_UNAVAILABLE"
+    try:
+        report = checker_module.check(engine, list(frozen_meds), str(dataset_version))
+    except checker_module.CheckError as exc:
+        return None, str(exc.code)
+    except Exception:
+        return None, "DATASET_UNAVAILABLE"
+    return dict(report), None
+
+
+def try_assemble_proposal(session: Session, batch_id: Any, now: datetime) -> dict[str, Any] | None:
+    """Assemble the immutable proposal when complete (same tx as success).
+
+    Succeeds only after every applicable question has its baseline and a
+    valid pinned DDI report exists. Skipped ``not_applicable`` reasons and
+    DDI coverage warnings are stored in the row. Partial runs return None
+    (no row, derived incomplete view). No LLM proposal-writing request
+    exists: sections come from stored baselines, DDI from the pinned report.
+    SELECT+INSERT only (immutable proposals, never UPDATE).
+    """
+    batch_row = (
+        session.execute(
+            select(reasoning_tables.generation_batches).where(
+                reasoning_tables.generation_batches.c.id == batch_id
+            )
+        )
+        .mappings()
+        .first()
+    )
+    if batch_row is None:
+        return None
+    batch = dict(batch_row)
+    existing = get_proposal(session, batch_id)
+    if existing is not None:
+        return existing
+    runs = (
+        session.execute(
+            select(reasoning_tables.question_runs)
+            .where(reasoning_tables.question_runs.c.batch_id == batch_id)
+            .order_by(
+                reasoning_tables.question_runs.c.position.asc(),
+                reasoning_tables.question_runs.c.question_key.asc(),
+            )
+        )
+        .mappings()
+        .all()
+    )
+    ordered_runs = [dict(entry) for entry in runs]
+    sections: list[dict[str, Any]] = []
+    skipped: list[dict[str, Any]] = []
+    for run in ordered_runs:
+        status = str(run.get("status"))
+        try:
+            position = int(run.get("position", 0))
+        except Exception:
+            position = 0
+        if status == "not_applicable":
+            skipped.append(
+                {
+                    "question_key": str(run.get("question_key", "")),
+                    "position": int(position),
+                    "reason": str(run.get("gate_reason", "")),
+                }
+            )
+            continue
+        if status == "needs_clarification":
+            return None
+        if status != "ready":
+            return None
+        stored = get_baseline(session, run["id"])
+        if stored is None:
+            return None
+        safe = safe_baseline(stored)
+        sections.append(
+            {
+                "question_run_id": str(run.get("id")),
+                "question_key": str(run.get("question_key", "")),
+                "position": int(position),
+                "baseline_id": str(safe.get("id")),
+                "section_text": str(safe.get("section_text", "")),
+                "posteriors": list(safe.get("posteriors") or []),
+                "query_nodes": list(safe.get("query_nodes") or []),
+                "effective_hash": str(safe.get("effective_hash", "")),
+                "template_version": str(safe.get("template_version", "")),
+                "network_version": str(safe.get("network_version", "")),
+            }
+        )
+    ddi_report, _ = recompute_pinned_ddi(session, batch)
+    if ddi_report is None:
+        return None
+    coverage_warnings = build_coverage_warnings(ddi_report)
+    session.execute(
+        insert(reasoning_tables.proposal_snapshots).values(
+            id=uuid.uuid4(),
+            batch_id=batch["id"],
+            fingerprint=str(batch.get("fingerprint")),
+            sections=list(sections),
+            skipped=list(skipped),
+            coverage_warnings=list(coverage_warnings),
+            ddi_report=dict(ddi_report),
+            created_at=now,
+        )
+    )
+    session.flush()
+    created = get_proposal(session, batch_id)
+    return created
+
+
+def build_workflow_view(
+    session: Session, batch: Mapping[str, Any], runs: Sequence[Mapping[str, Any]]
+) -> dict[str, Any]:
+    """Derived complete/incomplete view (partial labeled incomplete)."""
+    proposal = get_proposal(session, batch["id"])
+    if proposal is not None:
+        safe = safe_proposal(proposal)
+        raw_bundle = batch.get("pinned_bundle")
+        bundle: dict[str, Any] = raw_bundle if isinstance(raw_bundle, dict) else {}
+        return {
+            "complete": True,
+            "status": "complete",
+            "pending_question_keys": [],
+            "needs_clarification": [],
+            "skipped": list(safe.get("skipped") or []),
+            "coverage_warnings": list(safe.get("coverage_warnings") or []),
+            "ddi_status": str(bundle.get("ddi_status") or "valid"),
+        }
+    pending: list[str] = []
+    clarification: list[str] = []
+    skipped: list[dict[str, Any]] = []
+    for run in runs:
+        status = str(run.get("status"))
+        key = str(run.get("question_key", ""))
+        if status == "not_applicable":
+            try:
+                position = int(run.get("position", 0))  # type: ignore[arg-type]
+            except Exception:
+                position = 0
+            skipped.append(
+                {
+                    "question_key": key,
+                    "position": int(position),
+                    "reason": str(run.get("gate_reason", "")),
+                }
+            )
+            continue
+        if status == "needs_clarification":
+            clarification.append(key)
+            continue
+        if status != "ready":
+            pending.append(key)
+            continue
+        stored = get_baseline(session, run.get("id"))
+        if stored is None:
+            pending.append(key)
+    raw_pinned = batch.get("pinned_bundle")
+    pinned_bundle: dict[str, Any] = raw_pinned if isinstance(raw_pinned, dict) else {}
+    ddi_status = str(pinned_bundle.get("ddi_status") or "unavailable")
+    return {
+        "complete": False,
+        "status": "incomplete",
+        "pending_question_keys": pending,
+        "needs_clarification": clarification,
+        "skipped": skipped,
+        "coverage_warnings": [],
+        "ddi_status": ddi_status,
+    }
+
+
 def _fail_result(error_code: str, retryable: bool) -> dict[str, Any]:
     return {"ok": False, "error_code": error_code, "retryable": retryable}
 
@@ -738,6 +1043,24 @@ def execute_claimed_job(
             )
             .values(revoked_at=now)
         )
+        session.flush()
+        # S46 ordered workflows, same atomic transaction: persist result +
+        # rendered section (baseline above) before enabling the successor.
+        # Only one queued job exists per batch at a time (no intra-run
+        # parallelism). Then attempt immutable proposal assembly (all
+        # applicable baselines + valid pinned DDI, no LLM writing).
+        try:
+            deployment_for_next = int(current.get("deployment_generation", 0))
+        except Exception:
+            deployment_for_next = int(queue_module.get_deployment_generation(session))
+        queue_module.insert_successor_job(
+            session,
+            batch_id=batch["id"],
+            completed_run_id=run_id,
+            deployment_generation=int(deployment_for_next),
+            now=now,
+        )
+        try_assemble_proposal(session, batch["id"], now)
         session.flush()
         committed = (
             session.execute(

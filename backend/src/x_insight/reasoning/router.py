@@ -128,11 +128,12 @@ def _idempotency_conflict(request_id: str) -> JSONResponse:
 
 
 class GenerationStartRequest(BaseModel):
-    """Synthetic start body: the question package to freeze (extra=forbid)."""
+    """Synthetic start body: one package or an ordered workflow (extra=forbid)."""
 
     model_config = {"extra": "forbid"}
 
-    package: dict[str, Any] = Field(min_length=1)
+    package: dict[str, Any] | None = Field(default=None, min_length=1)
+    packages: list[dict[str, Any]] | None = Field(default=None, min_length=1)
 
 
 def _batch_response(
@@ -144,6 +145,9 @@ def _batch_response(
     status_code: int,
     baseline: dict[str, Any] | None = None,
     transparency: dict[str, Any] | None = None,
+    baselines: list[dict[str, Any]] | None = None,
+    proposal: dict[str, Any] | None = None,
+    workflow: dict[str, Any] | None = None,
 ) -> JSONResponse:
     content: dict[str, Any] = {
         "batch": snapshots_service.safe_batch(batch),
@@ -154,12 +158,22 @@ def _batch_response(
     if queue_view is not None:
         # S44 queue visibility (T8): job progress + busy state, no tokens.
         content["job"] = queue_view.get("job")
+        content["jobs"] = queue_view.get("jobs", [])
         content["attempts"] = queue_view.get("attempts", 0)
         content["queue"] = queue_view.get("queue")
-    # S45: persisted baseline + five transparency fields (null until success).
-    # ponytail: single-question proof; S46 workflows expose per-run baselines.
+    # S45: persisted baseline + five transparency fields (null until success;
+    # kept as the first run for single-question compat).
     content["baseline"] = baseline
     content["transparency"] = transparency
+    # S46: per-run baselines + immutable proposal + derived workflow view
+    # (partial labeled incomplete, never mistaken for review-ready).
+    if baselines is not None:
+        content["baselines"] = baselines
+    if proposal is not None or workflow is not None:
+        content["proposal"] = proposal
+        content["workflow"] = workflow
+    else:
+        content["proposal"] = None
     return JSONResponse(status_code=status_code, content=content)
 
 
@@ -178,12 +192,28 @@ def start_generation(
     expected = encounters_service.require_if_match_revision(
         request.headers.get(contracts.IF_MATCH_HEADER)
     )
+    # S46 workflows: exactly one of package/packages (distinct keys in order).
+    if (payload.package is None) == (payload.packages is None):
+        return error_response(
+            422,
+            "VALIDATION_FAILED",
+            "Supply package or packages, not both.",
+            request_id,
+            {"package": ["Supply package or packages, not both."]},
+        )
+    assert payload.package is not None or payload.packages is not None
     key = _idempotency_key_or_none(request)
     request_hash: str | None = None
     if key is not None:
-        request_hash = snapshots_service.idempotency_request_hash(
-            encounter_id, expected, payload.package
-        )
+        if payload.packages is None:
+            assert payload.package is not None
+            request_hash = snapshots_service.idempotency_request_hash(
+                encounter_id, expected, payload.package
+            )
+        else:
+            request_hash = snapshots_service.idempotency_workflow_hash(
+                encounter_id, expected, list(payload.packages)
+            )
         stored = identity_service.lookup_idempotency(
             session,
             operation=snapshots_service.GENERATION_START_OPERATION,
@@ -195,14 +225,25 @@ def start_generation(
                 return _idempotency_conflict(request_id)
             replay = dict(stored["response_body"])
             return JSONResponse(status_code=int(stored["response_status"]), content=replay)
-    batch, runs = snapshots_service.start_generation_batch(
-        session,
-        author=physician,
-        encounter_id=encounter_id,
-        expected_revision=expected,
-        package=payload.package,
-        request_id=request_id,
-    )
+    if payload.packages is None:
+        assert payload.package is not None
+        batch, runs = snapshots_service.start_generation_batch(
+            session,
+            author=physician,
+            encounter_id=encounter_id,
+            expected_revision=expected,
+            package=payload.package,
+            request_id=request_id,
+        )
+    else:
+        batch, runs = snapshots_service.start_generation_batch(
+            session,
+            author=physician,
+            encounter_id=encounter_id,
+            expected_revision=expected,
+            packages=list(payload.packages),
+            request_id=request_id,
+        )
     response_body: dict[str, Any] = {
         "batch": snapshots_service.safe_batch(batch),
         "question_runs": [snapshots_service.safe_run(run) for run in runs],
@@ -234,7 +275,7 @@ def read_generation(
     assert isinstance(user, dict)
     batch, runs, freshness = snapshots_service.get_generation_batch(session, batch_id, user)
     queue_view = queue_module.get_batch_queue_view(session, batch_id)
-    # S45: attach the persisted baseline + transparency for the single run.
+    # S45 compat: first-run baseline + transparency (null until success).
     baseline: dict[str, Any] | None = None
     transparency: dict[str, Any] | None = None
     if runs:
@@ -242,6 +283,12 @@ def read_generation(
         if stored is not None:
             baseline = coordinator_module.safe_baseline(stored)
             transparency = coordinator_module.build_transparency(runs[0], stored)
+    # S46: ordered per-run baselines + immutable proposal + workflow view.
+    # Partial runs expose sections but label incomplete (never review-ready).
+    baselines = coordinator_module.list_baselines_for_batch(session, batch_id)
+    proposal_row = coordinator_module.get_proposal(session, batch_id)
+    proposal = coordinator_module.safe_proposal(proposal_row) if proposal_row is not None else None
+    workflow = coordinator_module.build_workflow_view(session, batch, runs)
     # Always expose the keys once S45 tables exist (null until success),
     # so T8 consumers need not branch on presence.
     return _batch_response(
@@ -252,6 +299,9 @@ def read_generation(
         status_code=200,
         baseline=baseline,
         transparency=transparency,
+        baselines=baselines,
+        proposal=proposal,
+        workflow=workflow,
     )
 
 

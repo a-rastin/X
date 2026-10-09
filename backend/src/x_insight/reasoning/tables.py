@@ -1,4 +1,4 @@
-"""Reasoning snapshots + queue + S45 baselines (S40,S44,S45).
+"""Reasoning snapshots + queue + S45 baselines + S46 workflows (S40,S44,S45,S46).
 
 Tables (S40-owned; migration ``0009`` owns the DDL, this module is the
 read model for queries):
@@ -8,6 +8,7 @@ read model for queries):
 - ``question_runs`` — one row per projected question: batch FK, question
   key, gate status + explicit reason, immutable projection + hash,
   fingerprint copy, pinned versions. Immutable, unique per batch/key.
+  S46 adds ``position`` (pinned order index, migration ``0012``).
 
 Tables (S44-owned; migration ``0010`` owns the DDL):
 - ``reasoning_jobs`` — one mutable row per eligible run: batch/run FKs,
@@ -36,6 +37,14 @@ Tables (S45-owned; migration ``0011`` owns the DDL):
 - ``question_runs.pinned_package`` — frozen full question package
   (manifest/prompt/template/examples/review + ``network_xml``) stored at
   start for the worker. Nullable for pre-S45 rows.
+
+Tables (S46-owned; migration ``0012`` owns the DDL):
+- ``proposal_snapshots`` — one immutable row per completed batch: batch
+  FK (unique), fingerprint, ordered sections, skipped reasons, coverage
+  warnings, pinned DDI report. Immutable (app SELECT+INSERT only);
+  incomplete runs have no row (derived incomplete view).
+- ``question_runs.position`` — pinned order index within the batch
+  (0-based, 0 for legacy single-question rows).
 """
 
 from __future__ import annotations
@@ -105,6 +114,7 @@ question_runs = Table(
     Column("fingerprint", Text, nullable=False),
     Column("pinned_versions", JSONB, nullable=False),
     Column("pinned_package", JSONB, nullable=True),
+    Column("position", Integer, nullable=False, default=0),
     Column("created_at", DateTime(timezone=True), nullable=False),
     CheckConstraint(
         "status IN ('ready', 'not_applicable', 'needs_clarification', 'stale')",
@@ -271,7 +281,29 @@ original_baselines = Table(
     CheckConstraint("char_length(projection_hash) = 64", name="ck_original_baselines_proj_sha256"),
 )
 
+proposal_snapshots = Table(
+    "proposal_snapshots",
+    metadata,
+    Column("id", PG_UUID(as_uuid=True), primary_key=True),
+    Column(
+        "batch_id",
+        PG_UUID(as_uuid=True),
+        ForeignKey("generation_batches.id", ondelete="CASCADE"),
+        nullable=False,
+        unique=True,
+    ),
+    Column("fingerprint", Text, nullable=False),
+    Column("sections", JSONB, nullable=False),
+    Column("skipped", JSONB, nullable=False),
+    Column("coverage_warnings", JSONB, nullable=False),
+    Column("ddi_report", JSONB, nullable=False),
+    Column("created_at", DateTime(timezone=True), nullable=False),
+    CheckConstraint("char_length(fingerprint) = 64", name="ck_proposal_snapshots_fp_sha256"),
+)
+
+
 Index("ix_original_baselines_batch_id", original_baselines.c.batch_id)
+Index("ix_proposal_snapshots_batch_id", proposal_snapshots.c.batch_id)
 Index("ix_reasoning_jobs_batch_id", reasoning_jobs.c.batch_id)
 Index(
     "ix_reasoning_jobs_claim",
