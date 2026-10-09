@@ -1,0 +1,299 @@
+{
+  "reviewer": "owner review pending",
+  "decision": "awaiting_review",
+  "date": "2026-10-09",
+  "source_hashes": {
+    "project-documents/bayesian-networks/BN-07.xml": "ab947f741f0d4a76d01bacf3327fd6c6457cb61eaf08bcfb19a85da4695a222f",
+    "project-documents/medical-documents/guideline/STATEMENT-07.md": "b17d50118726361c28fc612f15e6b5c60bea41cd3b16ff91c6c9112e49d3de57",
+    "content/assessments/panss.v1.json": "0cc9c2176819b7a65750b6f16ed5437d5b81d8ff0e2dd5c07b2285034a35d98f",
+    "content/history/history.v1.json": "01be359400834e2f047c9e9c9eaf7a25a4167949707eb1b14e6a8f57db6bcd80",
+    "network.xml": "4a1863d996efddae0b8904d28868af90030e7f30be56a97666c1dfd165801435",
+    "content/history/history.no_improvement_clozapine.v1.json": "940daff4ba8ec74d222a77934a378da7484ffc05422a932bf407eb6763ffbcc8"
+  },
+  "assumptions": [
+    "No clinical model or history definition approved.",
+    "Follow-up no-improvement review needs a documented current baseline encounter/window, completed PANSS baseline and follow-up per the S08 validated released definition, and adequate clozapine-trial context; improvement documents gate false not_applicable with no posterior claim, never a negative finding or a fake negative review posterior.",
+    "All 23 BN-07 distributions were missing and are synthetic uniform references here; complete clinical table provenance remains a release blocker.",
+    "Whether review outputs behave as deterministic rules or estimated tables is an open assumption for owner review; this draft uses estimated-table semantics without approval.",
+    "No percent-change cutoff, denominator or zero case is set here; the cutoff requires owner review. A missing PANSS follow-up is never treated as no improvement.",
+    "Outdated baselines pause for a fresh baseline choice with no recency threshold set here; not-assessed severity pauses and never coerces to No.",
+    "Trial-adequacy and observation-window operationalization, and monitoring/willingness input meanings, are open assumptions for owner review; no duration, dose or adherence thresholds are set here.",
+    "S08 PANSS is used without owner approval per the S08 exception; no owner-approval dependency is added for PANSS."
+  ],
+  "source_comparison": "See source_diff and source_comparison_details: all 23 BN-07 variables, states and ordered proposed_parent edges retained with no removals, renames or state extensions; 15 roots plus 8 outputs materialize every proposed_parent as an ordered GIVEN. Original BN SHA pinned and untouched. This F5 follow-up package keeps a separate network identity, gate, prompt and template from the R7 registration package even though BN-07 concepts overlap.",
+  "source_comparison_details": {
+    "retained_variables": [
+      "SchizophreniaEstablished",
+      "PersistentSignificantSymptoms",
+      "Trial1Assessment",
+      "Trial2Assessment",
+      "TrialsUseDifferentDrugs",
+      "SymptomsAtLeast12Weeks",
+      "ModerateSymptomsAndFunctionalImpairment",
+      "ClozapineTreatmentStatus",
+      "WillingToDiscussClozapine",
+      "ClozapineMonitoringPlanAvailable",
+      "ClozapineInitiationDiscussionAppropriate",
+      "UrgentSafetyConcern",
+      "ExposureInterpretationConcern",
+      "ClozapineTrialAdequate",
+      "ResidualSymptomsOnClozapine",
+      "TwoAdequateSuboptimalTrials",
+      "TreatmentResistantSchizophreniaReview",
+      "AdditionalResearchFeatures",
+      "PriorTrialAdequacyReview",
+      "ClozapineInitiationDiscussionPreparation",
+      "TreatmentResistanceClozapineReviewPathway",
+      "ClozapineExposureReview",
+      "PersistentSymptomsReview"
+    ],
+    "retained_states": {
+      "SchizophreniaEstablished": [
+        "Yes",
+        "No"
+      ],
+      "PersistentSignificantSymptoms": [
+        "Yes",
+        "No"
+      ],
+      "Trial1Assessment": [
+        "AdequateSuboptimalResponse",
+        "AdequateSatisfactoryResponse",
+        "InadequateExposure",
+        "TruncatedByIntolerance"
+      ],
+      "Trial2Assessment": [
+        "AdequateSuboptimalResponse",
+        "AdequateSatisfactoryResponse",
+        "InadequateExposure",
+        "TruncatedByIntolerance"
+      ],
+      "TrialsUseDifferentDrugs": [
+        "Yes",
+        "No"
+      ],
+      "SymptomsAtLeast12Weeks": [
+        "Yes",
+        "No"
+      ],
+      "ModerateSymptomsAndFunctionalImpairment": [
+        "Yes",
+        "No"
+      ],
+      "ClozapineTreatmentStatus": [
+        "NeverTreated",
+        "CurrentTreatment",
+        "PreviouslyTreated"
+      ],
+      "WillingToDiscussClozapine": [
+        "Yes",
+        "No"
+      ],
+      "ClozapineMonitoringPlanAvailable": [
+        "Yes",
+        "No"
+      ],
+      "ClozapineInitiationDiscussionAppropriate": [
+        "Yes",
+        "No"
+      ],
+      "UrgentSafetyConcern": [
+        "Present",
+        "Absent"
+      ],
+      "ExposureInterpretationConcern": [
+        "Yes",
+        "No"
+      ],
+      "ClozapineTrialAdequate": [
+        "Yes",
+        "No"
+      ],
+      "ResidualSymptomsOnClozapine": [
+        "Yes",
+        "No"
+      ],
+      "TwoAdequateSuboptimalTrials": [
+        "Yes",
+        "No"
+      ],
+      "TreatmentResistantSchizophreniaReview": [
+        "Triggered",
+        "NotTriggered"
+      ],
+      "AdditionalResearchFeatures": [
+        "Present",
+        "NotAllPresent"
+      ],
+      "PriorTrialAdequacyReview": [
+        "Triggered",
+        "NotTriggered"
+      ],
+      "ClozapineInitiationDiscussionPreparation": [
+        "AddressBarriers",
+        "PreparedForDiscussion"
+      ],
+      "TreatmentResistanceClozapineReviewPathway": [
+        "UrgentClinicalAssessment",
+        "ReviewCurrentTreatment",
+        "IndividualizedPriorClozapineReview",
+        "ReviewEvidenceAndOtherIndications",
+        "DiscussClozapine",
+        "AddressDiscussionBarriers"
+      ],
+      "ClozapineExposureReview": [
+        "Triggered",
+        "NotTriggered"
+      ],
+      "PersistentSymptomsReview": [
+        "OutsideCurrentTreatmentScope",
+        "ContinuePeriodicReview",
+        "ReviewTrialAdequacy",
+        "SpecialistPersistentSymptomsReview"
+      ]
+    },
+    "retained_edges": [
+      [
+        "Trial1Assessment",
+        "TwoAdequateSuboptimalTrials"
+      ],
+      [
+        "Trial2Assessment",
+        "TwoAdequateSuboptimalTrials"
+      ],
+      [
+        "TrialsUseDifferentDrugs",
+        "TwoAdequateSuboptimalTrials"
+      ],
+      [
+        "SchizophreniaEstablished",
+        "TreatmentResistantSchizophreniaReview"
+      ],
+      [
+        "PersistentSignificantSymptoms",
+        "TreatmentResistantSchizophreniaReview"
+      ],
+      [
+        "TwoAdequateSuboptimalTrials",
+        "TreatmentResistantSchizophreniaReview"
+      ],
+      [
+        "SymptomsAtLeast12Weeks",
+        "AdditionalResearchFeatures"
+      ],
+      [
+        "ModerateSymptomsAndFunctionalImpairment",
+        "AdditionalResearchFeatures"
+      ],
+      [
+        "Trial1Assessment",
+        "PriorTrialAdequacyReview"
+      ],
+      [
+        "Trial2Assessment",
+        "PriorTrialAdequacyReview"
+      ],
+      [
+        "WillingToDiscussClozapine",
+        "ClozapineInitiationDiscussionPreparation"
+      ],
+      [
+        "ClozapineMonitoringPlanAvailable",
+        "ClozapineInitiationDiscussionPreparation"
+      ],
+      [
+        "ClozapineInitiationDiscussionAppropriate",
+        "ClozapineInitiationDiscussionPreparation"
+      ],
+      [
+        "UrgentSafetyConcern",
+        "TreatmentResistanceClozapineReviewPathway"
+      ],
+      [
+        "ClozapineTreatmentStatus",
+        "TreatmentResistanceClozapineReviewPathway"
+      ],
+      [
+        "TreatmentResistantSchizophreniaReview",
+        "TreatmentResistanceClozapineReviewPathway"
+      ],
+      [
+        "ClozapineInitiationDiscussionPreparation",
+        "TreatmentResistanceClozapineReviewPathway"
+      ],
+      [
+        "ClozapineTreatmentStatus",
+        "ClozapineExposureReview"
+      ],
+      [
+        "ExposureInterpretationConcern",
+        "ClozapineExposureReview"
+      ],
+      [
+        "ClozapineTreatmentStatus",
+        "PersistentSymptomsReview"
+      ],
+      [
+        "ResidualSymptomsOnClozapine",
+        "PersistentSymptomsReview"
+      ],
+      [
+        "ClozapineTrialAdequate",
+        "PersistentSymptomsReview"
+      ]
+    ],
+    "removed_nodes": [],
+    "removed_edges": [],
+    "renamed": {},
+    "materialized_proposed_parents": true,
+    "state_extensions": {},
+    "bn_parameter_inventory": "23 run-specific distributions to supply; 0 editable source-lookup examples supplied; all awaiting_experiment_cpt in BN-07"
+  },
+  "explicit_graph": "Fixed 23-node nature-only F5 follow-up graph in BN-07 order; source_comparison_details lists every retained ordered parent. All proposed_parent metadata is materialized as GIVENs in declared order. Edges are modeler-synthesized review candidates, not established causal facts. This F5 follow-up no-improvement package has a distinct network identity (BN_07_No_Improvement_Clozapine_Review_F5_v1, workflow followup, s37-v1) from the separate R7 registration package (different NAME, question_key, workflow, gate, prompt and template) even though BN-07 concepts overlap; no R7 activation metadata was copied.",
+  "reference_table_provenance": "BN-07 supplies zero fixed tables; all 23 distributions were awaiting_experiment_cpt. Draft network.xml holds explicitly synthetic uniform references (2-state 0.5/0.5, 4-state 0.25 each, 3-state thirds, outputs uniform per row) with no source lookup to audit. The numerical fixture CPTs are independent synthetic mathematical references with worked marginals, not source-backed clinical probabilities; complete clinical table provenance and calibration remain release blockers. S08 PANSS supplies instrument completeness only, never probability values.",
+  "estimation_instructions": "prompt.txt requires all CPTs including roots, percentage strings, fixed order and empty evidence, with F5 follow-up identity distinct from R7, baseline encounter/window plus PANSS baseline and follow-up completeness without any percent-change cutoff, adequate-trial review without invented thresholds or regimen fields, monitoring/willingness use only as defined and collected, and parallel urgent handling. Whether outputs behave as deterministic rules or estimated tables is an open assumption recorded here; the draft uses estimated-table semantics without approval.",
+  "result_mapping": "template.json defines candidate state-specific follow-up review language for all 8 queried outputs (22 branches) plus parallel urgent banner from saved inputs; every distribution remains visible with baseline comparison. No threshold, posterior ranking, percent-change rule or automatic treatment choice exists. Clinical branch selection and rendering remain S45 and owner review.",
+  "numerical_examples": "examples.json contains one complete independently worked 23-node mathematical reference: TwoAdequate Yes 0.3375 with a Trial1/Trial2 transpose guard (swapped gives 0.2625), TreatmentResistantSchizophreniaReview Triggered 0.18646875, AdditionalResearchFeatures Present 0.539 with an ordered-parent transpose guard (swapped gives 0.514), PriorTrialAdequacyReview Triggered 0.545, Preparation PreparedForDiscussion 0.268125, Pathway UrgentClinicalAssessment 0.15 with ReviewCurrentTreatment 0.2975 and others summing to 1.0, ExposureReview Triggered 0.1375, PersistentSymptomsReview Outside 0.45 with Continue 0.3025, ReviewTrialAdequacy 0.111375 and Specialist 0.136125. Two opposing projections of the same CPT yield identical posteriors, proving no clamping. This validates math and engineering only; clinical expected_for_review cases remain unapproved.",
+  "clinical_examples": "examples.json contains 7 clinical review candidates: no-improvement applicable gate true with current baseline and completed PANSS, gate true with urgent Present, improvement documented gate false not_applicable with not_a_negative_posterior and no posterior claim, PANSS follow-up missing needs_clarification (missing never maps to no improvement), outdated baseline needs_clarification as the differing-baseline contrast to the current-baseline case, not-assessed severity needs_clarification, and conflicting inputs needs_clarification. These are proposed gate, baseline, PANSS, provenance and wording expectations, not self-validating clinical tests or implemented runtime claims.",
+  "admission_measurements": "Measured 23 nature nodes, 125 rows, 375 cells, 14718 compact CPT payload bytes, 39423 network XML bytes and 37871 effective XML bytes. Opposing provenance never clamps. Memory ceiling and provider capacity remain unmeasured and clinical release is blocked awaiting review.",
+  "open_assumptions": "Candidate 19-field history (15 node-mapped CPT-context plus 4 gate-only baseline/PANSS applicability) with trial-history, baseline-window, PANSS completeness and current-encounter synthesis provenance, gate true/false/unknown definitions with improvement not_applicable semantics, no percent-change cutoff with missing follow-up never mapping to no improvement, outdated-baseline pausing with no recency threshold, not-assessed severity pausing with no score bands, urgent-banner independence, trial-adequacy and observation-window operationalization with no invented thresholds, monitoring and willingness input meanings, deterministic-rule versus estimated-table output semantics, full clinical CPT provenance and final wording all require review before release. S08 PANSS use needs no owner approval and adds no approval dependency. History v1, runtime projections and readiness (S40) and rendering (S45) remain unchanged. This F5 follow-up package stays distinct from the R7 registration package.",
+  "source_diff": {
+    "removed_nodes": [],
+    "removed_edges": [],
+    "renamed": {},
+    "materialized_proposed_parents": true,
+    "state_extensions": {},
+    "retained_variables": [
+      "SchizophreniaEstablished",
+      "PersistentSignificantSymptoms",
+      "Trial1Assessment",
+      "Trial2Assessment",
+      "TrialsUseDifferentDrugs",
+      "SymptomsAtLeast12Weeks",
+      "ModerateSymptomsAndFunctionalImpairment",
+      "ClozapineTreatmentStatus",
+      "WillingToDiscussClozapine",
+      "ClozapineMonitoringPlanAvailable",
+      "ClozapineInitiationDiscussionAppropriate",
+      "UrgentSafetyConcern",
+      "ExposureInterpretationConcern",
+      "ClozapineTrialAdequate",
+      "ResidualSymptomsOnClozapine",
+      "TwoAdequateSuboptimalTrials",
+      "TreatmentResistantSchizophreniaReview",
+      "AdditionalResearchFeatures",
+      "PriorTrialAdequacyReview",
+      "ClozapineInitiationDiscussionPreparation",
+      "TreatmentResistanceClozapineReviewPathway",
+      "ClozapineExposureReview",
+      "PersistentSymptomsReview"
+    ]
+  },
+  "reference_table_audit": {
+    "source_locator": "BN-07.xml parameter_inventory: 23 awaiting_experiment_cpt, 0 source-lookup",
+    "compared_cells": 0,
+    "mismatches": [],
+    "clinical_probability_claim": false,
+    "synthetic_reference_rows": "All 23 draft tables are explicitly synthetic uniform references; numerical fixture rows are independent mathematical references with worked marginals."
+  }
+}

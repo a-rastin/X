@@ -1,0 +1,192 @@
+{
+  "version": "s37-v1",
+  "status": "awaiting_review",
+  "rendering_contract": "Candidate wording for S45 deterministic distribution rendering of this F5 follow-up no-improvement review; each queried state has a branch, all probabilities remain visible. No probability threshold or posterior-ranked treatment selection is defined. Urgent banner renders from saved inputs in parallel with review topics. Whether outputs behave as deterministic rules or estimated tables is an open assumption for owner review; this wording assumes neither.",
+  "disclosures": [
+    "Experimental, uncalibrated and unapproved; not a prescription.",
+    "No-improvement review needs a documented current baseline encounter/window with completed PANSS baseline and follow-up and adequate clozapine-trial context; no percent-change cutoff is set here.",
+    "Improvement documented with current baseline and completed PANSS is not_applicable and claims no posterior; it is never a negative finding or a fake negative review posterior.",
+    "Missing PANSS follow-up is never treated as no improvement; outdated baselines and not-assessed severity pause for clarification.",
+    "Urgent banner comes from saved structured urgent inputs, not model output, and never shows a fabricated risk percentage.",
+    "No dose, route, frequency or active/stopped fields are collected or accepted."
+  ],
+  "urgent_banner": "Urgent safety banner from saved structured urgent inputs, shown independently of estimation latency and not a computed risk percentage: arrange immediate clinician assessment per local protocol when Present in this follow-up context.",
+  "branches": [
+    {
+      "when": {
+        "node": "TwoAdequateSuboptimalTrials",
+        "state": "Yes",
+        "operator": "=="
+      },
+      "text": "Candidate follow-up two-trial review topic: two adequate suboptimal trials are recorded with baseline provenance in this context; review trial adequacy with the clinician. Distribution: {TwoAdequateSuboptimalTrials}."
+    },
+    {
+      "when": {
+        "node": "TwoAdequateSuboptimalTrials",
+        "state": "No",
+        "operator": "=="
+      },
+      "text": "Candidate follow-up two-trial review topic: two adequate suboptimal trials are not recorded in this context; review exposure and trial adequacy with the clinician. Distribution: {TwoAdequateSuboptimalTrials}. This is not a negative clinical finding."
+    },
+    {
+      "when": {
+        "node": "TreatmentResistantSchizophreniaReview",
+        "state": "Triggered",
+        "operator": "=="
+      },
+      "text": "Candidate follow-up treatment-resistance review topic triggered with baseline comparison; review persistence, symptoms and trial history with the clinician. This experimental distribution does not prescribe clozapine. Distribution: {TreatmentResistantSchizophreniaReview}."
+    },
+    {
+      "when": {
+        "node": "TreatmentResistantSchizophreniaReview",
+        "state": "NotTriggered",
+        "operator": "=="
+      },
+      "text": "Candidate follow-up treatment-resistance review topic not triggered in this context; retain ongoing clinician review with baseline comparison. Distribution: {TreatmentResistantSchizophreniaReview}. This is not a negative clinical finding."
+    },
+    {
+      "when": {
+        "node": "AdditionalResearchFeatures",
+        "state": "Present",
+        "operator": "=="
+      },
+      "text": "Candidate follow-up additional research-features topic present; review observation windows and functional impairment with the clinician. Distribution: {AdditionalResearchFeatures}."
+    },
+    {
+      "when": {
+        "node": "AdditionalResearchFeatures",
+        "state": "NotAllPresent",
+        "operator": "=="
+      },
+      "text": "Candidate follow-up additional research-features topic: not all features present in this context; review observation windows with the clinician. Distribution: {AdditionalResearchFeatures}."
+    },
+    {
+      "when": {
+        "node": "PriorTrialAdequacyReview",
+        "state": "Triggered",
+        "operator": "=="
+      },
+      "text": "Candidate follow-up prior-trial adequacy review topic triggered; review exposure adequacy and intolerance history with the clinician. Distribution: {PriorTrialAdequacyReview}."
+    },
+    {
+      "when": {
+        "node": "PriorTrialAdequacyReview",
+        "state": "NotTriggered",
+        "operator": "=="
+      },
+      "text": "Candidate follow-up prior-trial adequacy review topic not triggered in this context; retain ongoing clinician review. Distribution: {PriorTrialAdequacyReview}."
+    },
+    {
+      "when": {
+        "node": "ClozapineInitiationDiscussionPreparation",
+        "state": "AddressBarriers",
+        "operator": "=="
+      },
+      "text": "Candidate follow-up preparation topic: address willingness, monitoring and discussion-appropriateness needs before discussion. Distribution: {ClozapineInitiationDiscussionPreparation}."
+    },
+    {
+      "when": {
+        "node": "ClozapineInitiationDiscussionPreparation",
+        "state": "PreparedForDiscussion",
+        "operator": "=="
+      },
+      "text": "Candidate follow-up preparation topic: willingness, monitoring and discussion review support a prepared discussion. Distribution: {ClozapineInitiationDiscussionPreparation}. This does not schedule treatment."
+    },
+    {
+      "when": {
+        "node": "TreatmentResistanceClozapineReviewPathway",
+        "state": "UrgentClinicalAssessment",
+        "operator": "=="
+      },
+      "text": "Urgent clinical assessment topic from saved structured urgent inputs at follow-up, shown independently of estimation latency; arrange immediate clinician assessment per local protocol. Distribution: {TreatmentResistanceClozapineReviewPathway}. This is not a computed risk percentage."
+    },
+    {
+      "when": {
+        "node": "TreatmentResistanceClozapineReviewPathway",
+        "state": "ReviewCurrentTreatment",
+        "operator": "=="
+      },
+      "text": "Candidate follow-up pathway topic: review current clozapine treatment, monitoring, baseline comparison and response with the clinician. Distribution: {TreatmentResistanceClozapineReviewPathway}."
+    },
+    {
+      "when": {
+        "node": "TreatmentResistanceClozapineReviewPathway",
+        "state": "IndividualizedPriorClozapineReview",
+        "operator": "=="
+      },
+      "text": "Candidate follow-up pathway topic: individualized review of prior clozapine course with baseline comparison and the clinician. Distribution: {TreatmentResistanceClozapineReviewPathway}."
+    },
+    {
+      "when": {
+        "node": "TreatmentResistanceClozapineReviewPathway",
+        "state": "ReviewEvidenceAndOtherIndications",
+        "operator": "=="
+      },
+      "text": "Candidate follow-up pathway topic: review research evidence and other indications with the clinician. Distribution: {TreatmentResistanceClozapineReviewPathway}."
+    },
+    {
+      "when": {
+        "node": "TreatmentResistanceClozapineReviewPathway",
+        "state": "DiscussClozapine",
+        "operator": "=="
+      },
+      "text": "Candidate follow-up pathway topic: discuss clozapine continuation with a willing patient when monitoring, baseline comparison and review support discussion. Distribution: {TreatmentResistanceClozapineReviewPathway}. This does not prescribe treatment."
+    },
+    {
+      "when": {
+        "node": "TreatmentResistanceClozapineReviewPathway",
+        "state": "AddressDiscussionBarriers",
+        "operator": "=="
+      },
+      "text": "Candidate follow-up pathway topic: discuss clozapine while addressing willingness, monitoring or discussion-appropriateness needs at follow-up. Distribution: {TreatmentResistanceClozapineReviewPathway}."
+    },
+    {
+      "when": {
+        "node": "ClozapineExposureReview",
+        "state": "Triggered",
+        "operator": "=="
+      },
+      "text": "Candidate follow-up exposure review topic triggered; review adherence, interactions, concentrations and sample timing with the clinician. Distribution: {ClozapineExposureReview}."
+    },
+    {
+      "when": {
+        "node": "ClozapineExposureReview",
+        "state": "NotTriggered",
+        "operator": "=="
+      },
+      "text": "Candidate follow-up exposure review topic not triggered in this context; retain ongoing clinician review. Distribution: {ClozapineExposureReview}."
+    },
+    {
+      "when": {
+        "node": "PersistentSymptomsReview",
+        "state": "OutsideCurrentTreatmentScope",
+        "operator": "=="
+      },
+      "text": "Candidate follow-up persistent-symptoms topic outside current treatment scope in this context; review treatment history and baseline comparison with the clinician. Distribution: {PersistentSymptomsReview}."
+    },
+    {
+      "when": {
+        "node": "PersistentSymptomsReview",
+        "state": "ContinuePeriodicReview",
+        "operator": "=="
+      },
+      "text": "Candidate follow-up persistent-symptoms topic: continue periodic review with baseline comparison and the clinician. Distribution: {PersistentSymptomsReview}."
+    },
+    {
+      "when": {
+        "node": "PersistentSymptomsReview",
+        "state": "ReviewTrialAdequacy",
+        "operator": "=="
+      },
+      "text": "Candidate follow-up persistent-symptoms topic: review current clozapine trial adequacy with baseline comparison and the clinician; no percent-change cutoff is used. Distribution: {PersistentSymptomsReview}."
+    },
+    {
+      "when": {
+        "node": "PersistentSymptomsReview",
+        "state": "SpecialistPersistentSymptomsReview",
+        "operator": "=="
+      },
+      "text": "Candidate follow-up persistent-symptoms topic: specialist persistent-symptoms review with baseline comparison and the clinician. Distribution: {PersistentSymptomsReview}."
+    }
+  ]
+}
