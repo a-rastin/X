@@ -309,16 +309,20 @@ def read_generation(
 def read_question_review(
     run_id: uuid.UUID, request: Request, session: Session = Depends(get_session)
 ) -> JSONResponse:
-    """Author-only question review (S45, seam T1).
+    """Author-only question review (S45+S48a, seam T1).
 
     Returns the frozen run, its batch, the immutable baseline (or null),
     ``adjustable`` (true only with a baseline), the five transparency
-    fields (or null), derived freshness, and queue visibility. Wrong-author
+    fields (or null), derived freshness, and queue visibility. S48a adds
+    every root/conditional row with original/current values, full parent
+    assignments and read-only outputs (``original_tables``/
+    ``current_tables``/``revisions``/``review_revision``). Wrong-author
     reads are 403 without content; missing runs are 404. Failed originals
     expose no adjustable baseline.
     """
     from sqlalchemy import select
 
+    from x_insight.probability_review import service as review_service
     from x_insight.reasoning import coordinator as coordinator_module
     from x_insight.reasoning import queue as queue_module
     from x_insight.reasoning import tables as reasoning_tables
@@ -347,6 +351,15 @@ def read_question_review(
         coordinator_module.build_transparency(run, stored) if stored is not None else None
     )
     queue_view = queue_module.get_batch_queue_view(session, run["batch_id"])
+    # S48a: original/current CPTs with full parent assignments, revision
+    # history, optimistic pointer, and read-only output marker.
+    revisions = [
+        review_service.safe_revision(row) for row in review_service.list_revisions(session, run_id)
+    ]
+    state_row = review_service.get_review_state(session, run_id)
+    latest = review_service.get_latest_revision(session, run_id)
+    current_tables = review_service.current_tables_for_run(stored, latest)
+    original_tables = list(baseline["validated_tables"]) if baseline is not None else None
     content: dict[str, Any] = {
         "question_run": snapshots_service.safe_run(run),
         "batch": snapshots_service.safe_batch(batch),
@@ -357,5 +370,14 @@ def read_question_review(
         "job": queue_view.get("job"),
         "attempts": queue_view.get("attempts", 0),
         "queue": queue_view.get("queue"),
+        "original_tables": original_tables,
+        "current_tables": current_tables,
+        "current_cpt_revision_id": str(latest["id"]) if latest is not None else None,
+        "review_revision": int(state_row["review_revision"])
+        if state_row is not None
+        else review_service.INITIAL_REVIEW_REVISION,
+        "revisions": revisions,
+        "cpt_hash": str(latest["cpt_hash"]) if latest is not None else None,
+        "outputs_read_only": True,
     }
     return JSONResponse(status_code=200, content=content)

@@ -3,13 +3,12 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest recorded checkpoint is [S48](s48.md): automatic proposal
-review + transparency UI (wizard step 8) with auto entry/flush/gate,
-ordered 7 states + retry, lazy five-field transparency, proposal + pinned
-DDI with sign-blocked reasons; 11 e2e chromium + 11 firefox (22 total),
-web build 55 modules, backend 75 still valid; no backend change.
-Content approvals remain as recorded in S39.b; bundle release and activation
-retain their independent status.
+The latest recorded checkpoint is [S48a](s48-a.md): durable planned-seam
+tests for complete CPT adjustments and deterministic redistribution (T1/T5,
+21 new tests, no implementation fix); regressions hold except pre-existing
+`test_only_s02_tables_exist` table-list drift. Content approvals remain as
+recorded in S39.b; bundle release and activation retain their independent
+status.
 
 ## Reading and updating progress
 
@@ -84,3 +83,4 @@ retain their independent status.
 | S46 | [Execute ordered workflows and assemble a complete proposal (2026-10-09)](s46.md) |
 | S47 | [Bound failures and recover at exact failed stage (2026-10-09)](s47.md) |
 | S48 | [Build automatic proposal review and transparency UI (2026-10-09)](s48.md) |
+| S48a | [Persist complete CPT adjustments and deterministic redistribution (2026-10-10)](s48-a.md) |
