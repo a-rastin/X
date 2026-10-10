@@ -533,17 +533,24 @@ def test_no_bypass_sign_route_exists(clean_all, tmp_path) -> None:
     client, csrf, _, encounter_id, _ = _setup_draft_with_release(
         clean_all, tmp_path, "dr_med_nosign", "0012350010"
     )
-    for method in ("post", "put", "patch"):
+    for method in ("put", "patch"):
         response = getattr(client, method)(
             f"/api/v1/encounters/{encounter_id}/sign",
             json={},
             headers={"X-CSRF-Token": csrf},
         )
         assert response.status_code in (404, 405), response.text
+    # S49 real sign exists (POST validates, no bypass): empty body is 422.
+    empty_post = client.post(
+        f"/api/v1/encounters/{encounter_id}/sign",
+        json={},
+        headers={"X-CSRF-Token": csrf},
+    )
+    assert empty_post.status_code == 422, empty_post.text
     openapi = client.get("/openapi.json")
     assert openapi.status_code == 200
     paths = " ".join(openapi.json()["paths"].keys())
-    assert "/sign" not in paths
+    assert "/api/v1/encounters/{encounter_id}/sign" in paths
 
 
 # --- Slice 2: fresh versioned report, stale fencing, reference persistence ---
@@ -968,9 +975,7 @@ def test_followup_explicit_reconcile_makes_report_current(clean_all, tmp_path) -
     assert current["report_status"] == "current"
     assert current["report"] is not None
     assert current["report"]["pairs"] == []
-    # Prior signed lists/reports are unchanged: no sign route, no mutation.
-    openapi = client.get("/openapi.json")
-    assert "/sign" not in " ".join(openapi.json()["paths"].keys())
+    # Meds saves never sign by themselves (S49 sign is a separate explicit route).
 
 
 # --- S20 exit gaps: order-independent fingerprint, error fencing, escape,

@@ -203,6 +203,27 @@ def _validate_adjustment_inputs(
     )
 
 
+def _require_draft_encounter(session: Session, batch: Mapping[str, Any]) -> None:
+    """S49 §4: signed encounters are immutable — no probability mutation.
+
+    Draft routes already 404 for signed; this fences adjustment/reset/retry/
+    acceptance after signing (409, no content leak — author already checked).
+    """
+    from x_insight.cases import tables as cases_tables
+
+    row = (
+        session.execute(
+            select(cases_tables.encounters).where(
+                cases_tables.encounters.c.id == batch.get("encounter_id")
+            )
+        )
+        .mappings()
+        .first()
+    )
+    if row is not None and str(dict(row).get("lifecycle")) != "draft":
+        raise contracts.ContractError(409, "ENCOUNTER_SIGNED", "Encounter is signed and immutable.")
+
+
 def apply_adjustment(
     session: Session,
     *,
@@ -226,6 +247,7 @@ def apply_adjustment(
     rows are never updated. Raises ``ContractError`` (422 invalid,
     412 stale) without repairing input.
     """
+    _require_draft_encounter(session, batch)
     clean_node, clean_parents, clean_state, clean_target, expected = _validate_adjustment_inputs(
         node_id, parent_states, state, target_percentage, expected_review_revision
     )
@@ -576,6 +598,7 @@ def apply_reset(
     on freshness. Raises ContractError (422 no baseline, 412 stale).
     Returns (revision, review_state, calculation_result).
     """
+    _require_draft_encounter(session, batch)
     if not isinstance(expected_review_revision, int) or expected_review_revision < 1:
         raise contracts.ContractError(
             422,
@@ -791,6 +814,7 @@ def ensure_retry_job(
     """
     from x_insight.reasoning import queue as queue_module
 
+    _require_draft_encounter(session, batch)
     if not isinstance(expected_review_revision, int) or expected_review_revision < 1:
         raise contracts.ContractError(
             422,
@@ -1262,6 +1286,7 @@ def apply_acceptance(
     exact state returns the existing row (no duplicate, no extra audit).
     Raises ContractError (422 malformed, 412 stale pointer, 409 state).
     """
+    _require_draft_encounter(session, batch)
     if not isinstance(expected_review_revision, int) or expected_review_revision < 1:
         raise contracts.ContractError(
             422,

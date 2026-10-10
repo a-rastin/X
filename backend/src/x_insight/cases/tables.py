@@ -126,3 +126,100 @@ notes = Table(
 
 Index("ix_notes_encounter_id", notes.c.encounter_id)
 Index("ix_notes_encounter_page", notes.c.encounter_id, notes.c.page)
+
+# S49 secondary plans + signed snapshots + addenda (plan.md §§4.1, 9.2;
+# FR-15, FR-22, FR-57, NFR-04): separate revisioned physician plan text
+# (own If-Match fence, never in the analysis fingerprint), one immutable
+# signed snapshot per encounter (full frozen record + hash), append-only
+# attributed addenda. Migration ``0016`` owns the DDL, this module is the
+# read model for queries (no migrations here).
+secondary_plans = Table(
+    "secondary_plans",
+    metadata,
+    Column(
+        "encounter_id",
+        PG_UUID(as_uuid=True),
+        ForeignKey("encounters.id", ondelete="CASCADE"),
+        primary_key=True,
+    ),
+    Column("text", Text, nullable=False, default=""),
+    Column("revision", Integer, nullable=False, default=1),
+    Column("created_at", DateTime(timezone=True), nullable=False),
+    Column("updated_at", DateTime(timezone=True), nullable=False),
+    CheckConstraint("revision >= 1", name="ck_secondary_plans_rev_gte_1"),
+)
+
+signed_encounter_snapshots = Table(
+    "signed_encounter_snapshots",
+    metadata,
+    Column("id", PG_UUID(as_uuid=True), primary_key=True),
+    Column(
+        "encounter_id",
+        PG_UUID(as_uuid=True),
+        ForeignKey("encounters.id", ondelete="CASCADE"),
+        nullable=False,
+        unique=True,
+    ),
+    Column(
+        "patient_id",
+        PG_UUID(as_uuid=True),
+        ForeignKey("patients.id", ondelete="CASCADE"),
+        nullable=False,
+    ),
+    Column(
+        "batch_id",
+        PG_UUID(as_uuid=True),
+        ForeignKey("generation_batches.id", ondelete="CASCADE"),
+        nullable=False,
+    ),
+    Column(
+        "proposal_id",
+        PG_UUID(as_uuid=True),
+        ForeignKey("proposal_snapshots.id", ondelete="CASCADE"),
+        nullable=False,
+    ),
+    Column("secondary_plan_revision", Integer, nullable=False),
+    Column("secondary_plan_text", Text, nullable=False),
+    Column("snapshot", JSONB, nullable=False),
+    Column("snapshot_hash", Text, nullable=False),
+    Column(
+        "signer_id",
+        PG_UUID(as_uuid=True),
+        ForeignKey("users.id", ondelete="CASCADE"),
+        nullable=False,
+    ),
+    Column("signer_username", Text, nullable=False),
+    Column("signed_at", DateTime(timezone=True), nullable=False),
+    Column("encounter_revision", Integer, nullable=False),
+    Column("created_at", DateTime(timezone=True), nullable=False),
+    CheckConstraint("secondary_plan_revision >= 1", name="ck_signed_plan_rev_gte_1"),
+    CheckConstraint("encounter_revision >= 1", name="ck_signed_enc_rev_gte_1"),
+    CheckConstraint("char_length(snapshot_hash) = 64", name="ck_signed_snapshot_sha256"),
+)
+
+encounter_addenda = Table(
+    "encounter_addenda",
+    metadata,
+    Column("id", PG_UUID(as_uuid=True), primary_key=True),
+    Column(
+        "encounter_id",
+        PG_UUID(as_uuid=True),
+        ForeignKey("encounters.id", ondelete="CASCADE"),
+        nullable=False,
+    ),
+    Column(
+        "author_id",
+        PG_UUID(as_uuid=True),
+        ForeignKey("users.id", ondelete="CASCADE"),
+        nullable=False,
+    ),
+    # Username snapshot at write time (stable attribution even if renamed).
+    Column("author_display", Text, nullable=False),
+    Column("created_at", DateTime(timezone=True), nullable=False),
+    Column("text", Text, nullable=False),
+    CheckConstraint("char_length(text) BETWEEN 1 AND 2000", name="ck_addenda_text_bounds"),
+)
+
+Index("ix_encounter_addenda_encounter_id", encounter_addenda.c.encounter_id)
+Index("ix_signed_snapshots_patient_id", signed_encounter_snapshots.c.patient_id)
+Index("ix_signed_snapshots_batch_id", signed_encounter_snapshots.c.batch_id)

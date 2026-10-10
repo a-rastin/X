@@ -1,4 +1,4 @@
-"""Shared chart read + follow-up baseline preview (S14, plan.md §§2.2-2.3; FR-20-23).
+"""Shared chart read + follow-up baseline preview (S14+S49, plan.md §§2.2-2.3; FR-20-23).
 
 Chart (``GET /patients/{id}/chart``): demographics plus the signed chart for
 any active authenticated user (physician or administrator — plan §2.1 reads
@@ -9,11 +9,11 @@ content, no author oracle, and no revision — just slot occupancy
 (``open_draft: {exists}``) for directory badging, so stranger-draft content
 never leaks through chart/search/report shapes (transitive privacy, like S07).
 
-Signed rows do not exist yet (signing is S49 scope): ``signed_encounters`` /
-``chronology`` derive from the encounters table's ``signed`` lifecycle and
-are empty until S49, and the proposal reports honestly as unavailable
-(``generation_not_implemented`` — no fake successful proposal until reasoning
-exists).
+S49 signed reads: ``signed_snapshots`` carries the immutable frozen record
+per signed encounter (original/final CPTs/results, plan, inputs/versions,
+attribution, hash) plus ``addenda`` (append-only corrections); ordinary
+draft routes stay draft-only (404 for signed) so live draft bodies never
+leak here.
 
 Follow-up baseline (``GET /encounters/{id}/followup-baseline``): author-only
 preview of the copied baseline + reconciliation + historical scores (404
@@ -53,9 +53,24 @@ def read_chart(session: Session, patient_id: uuid.UUID, user: dict[str, Any]) ->
     occupying = encounters_service.get_open_draft_for_patient(session, patient_id)
     signed = encounters_service.list_signed_for_patient(session, patient_id)
     references = [encounters_service.safe_signed_reference(row) for row in signed]
+    # S49 signed reads (shared, no drafts): frozen snapshots + addenda per
+    # signed encounter. Draft clinical bodies never appear here by
+    # construction (only immutable snapshots + shared demographics).
+    from x_insight.cases import signing as signing_service
+
+    snapshots: list[dict[str, Any]] = []
+    all_addenda: list[dict[str, Any]] = []
+    for row in signed:
+        stored = signing_service.get_snapshot(session, row["id"])
+        if stored is not None:
+            snapshots.append(signing_service.safe_snapshot(stored))
+            for entry in signing_service.list_addenda(session, row["id"]):
+                all_addenda.append(signing_service.safe_addendum(entry))
     return {
         "patient": patients_service.safe_patient(patient),
         "signed_encounters": references,
+        "signed_snapshots": snapshots,
+        "addenda": all_addenda,
         "open_draft": {"exists": occupying is not None},
         "chronology": references,
         "proposal": {"status": "unavailable", "reason": "generation_not_implemented"},

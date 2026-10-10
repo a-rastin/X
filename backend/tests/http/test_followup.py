@@ -810,7 +810,7 @@ def test_followup_phone_history_effect_pages_author_only_with_review_path(
 
 
 def test_no_bypass_sign_production_route_exists(admin_client, clean_registry, monkeypatch) -> None:
-    """Temporary signed fixtures stay test-only: no sign/bypass endpoint ships."""
+    """Test-only baselines stay inline; S49 real sign validates (no bypass)."""
     _make_physician(admin_client, "dr_nosign")
     owner, owner_csrf, _ = _physician_client(clean_registry, monkeypatch, "dr_nosign", "pw123")
     created = _create_patient(owner, owner_csrf)
@@ -819,19 +819,26 @@ def test_no_bypass_sign_production_route_exists(admin_client, clean_registry, mo
     assert started.status_code == 201, started.text
     encounter_id = started.json()["encounter"]["id"]
 
-    for method in ("post", "put", "patch"):
+    for method in ("put", "patch"):
         response = getattr(owner, method)(
             f"/api/v1/encounters/{encounter_id}/sign",
             json={},
             headers=_auth_headers(owner_csrf),
         )
         assert response.status_code in (404, 405), response.text
+    # S49 real sign exists (POST validates, no bypass): empty body is 422.
+    empty_post = owner.post(
+        f"/api/v1/encounters/{encounter_id}/sign",
+        json={},
+        headers=_auth_headers(owner_csrf),
+    )
+    assert empty_post.status_code == 422, empty_post.text
 
     openapi = owner.get("/openapi.json")
     assert openapi.status_code == 200
     paths = " ".join(openapi.json()["paths"].keys())
-    assert "/sign" not in paths
+    # S49 ships the real sign/addenda/secondary-plan routes (no bypass shortcut).
+    assert "/api/v1/encounters/{encounter_id}/sign" in paths
     # The only bypass route is the S09 diagnosis bypass; no follow-up or
-    # signing bypass exists for the test-only baseline fixture.
+    # fake-success signing bypass exists for the test-only baseline fixture.
     assert "followup" not in paths.lower().replace("followup-baseline", "")
-    assert "/encounters/{encounter_id}/sign" not in paths

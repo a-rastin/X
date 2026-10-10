@@ -1235,3 +1235,386 @@ def get_ddi_report(
     response = JSONResponse(status_code=200, content=content)
     response.headers["ETag"] = contracts.format_etag(int(encounter["revision"]))
     return response
+
+
+# --- S49 secondary plan + atomic sign + addenda (plan.md §§4.1, 9.2; T1) ---
+#
+# - ``GET/PATCH /encounters/{id}/secondary-plan`` — author-only separate
+#   revisioned edit (own If-Match fence on the plan revision, never the
+#   encounter revision; never in the analysis fingerprint).
+# - ``POST /encounters/{id}/sign`` — author-only atomic sign (encounter +
+#   plan + review revisions, batch + exact per-question acceptances).
+# - ``POST /encounters/{id}/addenda`` — any active physician appends to a
+#   signed encounter (server-derived actor/time, append-only, idempotent).
+# Signed reads travel via ``GET /patients/{id}/chart`` (shared, no drafts).
+
+
+class SecondaryPlanPatchRequest(BaseModel):
+    """Secondary-plan save body: verbatim text + explicit plan revision."""
+
+    model_config = {"extra": "forbid"}
+
+    text: str
+    expected_plan_revision: int = Field(ge=1)
+
+
+class SignAcceptanceRef(BaseModel):
+    """One exact per-question acceptance reference for signing."""
+
+    model_config = {"extra": "forbid"}
+
+    question_run_id: str = Field(min_length=1)
+    acceptance_id: str = Field(min_length=1)
+    expected_review_revision: int = Field(ge=1)
+
+
+class SignRequest(BaseModel):
+    """Atomic sign body: revisions + batch + exact acceptances (extra=forbid).
+
+    Server recomputes eligibility (proposal completeness, per-question
+    freshness inside the locked transaction, live revision/result/input
+    match); client flags never grant authority. No plan/proposal text here
+    — forged manual plans are 422/409, never signed.
+    """
+
+    model_config = {"extra": "forbid"}
+
+    expected_encounter_revision: int = Field(ge=1)
+    expected_plan_revision: int = Field(ge=1)
+    batch_id: str = Field(min_length=1)
+    acceptances: list[SignAcceptanceRef]
+
+
+class AddendumRequest(BaseModel):
+    """Addendum body: verbatim text + explicit signed revision."""
+
+    model_config = {"extra": "forbid"}
+
+    text: str
+    expected_encounter_revision: int = Field(ge=1)
+
+
+def _secondary_plan_response(
+    encounter: dict[str, Any],
+    plan: dict[str, Any],
+    *,
+    status_code: int,
+    server_timestamp: str | None = None,
+) -> JSONResponse:
+    from x_insight.cases import signing as signing_service
+
+    safe = signing_service.safe_secondary_plan(plan, encounter["id"])
+    content: dict[str, Any] = {
+        "encounter": encounters_service.safe_encounter_reference(encounter),
+        "revision": int(safe["revision"]),
+        "text": str(safe["text"]),
+        "encounter_revision": int(encounter["revision"]),
+    }
+    if server_timestamp is not None:
+        content["server_timestamp"] = server_timestamp
+    response = JSONResponse(status_code=status_code, content=content)
+    response.headers["ETag"] = contracts.format_etag(int(safe["revision"]))
+    return response
+
+
+def _secondary_plan_replay(stored: dict[str, Any]) -> JSONResponse:
+    body = dict(stored["response_body"])
+    response = JSONResponse(status_code=int(stored["response_status"]), content=body)
+    revision = body.get("revision")
+    if isinstance(revision, int) and revision >= 1:
+        response.headers["ETag"] = contracts.format_etag(revision)
+    return response
+
+
+@router.get("/encounters/{encounter_id}/secondary-plan")
+def get_secondary_plan(
+    encounter_id: uuid.UUID, request: Request, session: Session = Depends(get_session)
+) -> JSONResponse:
+    """Author-only secondary-plan read (draft only; reads need no CSRF)."""
+    from x_insight.cases import signing as signing_service
+
+    user = _require_user(request, session)
+    if isinstance(user, JSONResponse):
+        return user
+    assert isinstance(user, dict)
+    encounter, plan = signing_service.read_secondary_plan_for_author(session, encounter_id, user)
+    return _secondary_plan_response(encounter, plan, status_code=200)
+
+
+@router.patch("/encounters/{encounter_id}/secondary-plan")
+def patch_secondary_plan(
+    encounter_id: uuid.UUID,
+    payload: SecondaryPlanPatchRequest,
+    request: Request,
+    session: Session = Depends(get_session),
+) -> JSONResponse:
+    from x_insight.cases import signing as signing_service
+
+    request_id = get_request_id(request)
+    physician = _require_physician_mutation(request, session)
+    if isinstance(physician, JSONResponse):
+        return physician
+    assert isinstance(physician, dict)
+    expected = encounters_service.require_if_match_revision(
+        request.headers.get(contracts.IF_MATCH_HEADER)
+    )
+    if int(expected) != int(payload.expected_plan_revision):
+        return error_response(
+            412,
+            "STALE_REVISION",
+            "The secondary plan changed. Reload and reconcile your edits.",
+            request_id,
+            {"expected_plan_revision": ["Stale plan revision."]},
+        )
+    key = _idempotency_key_or_none(request)
+    request_hash: str | None = None
+    if key is not None:
+        request_hash = signing_service.secondary_plan_request_hash(
+            encounter_id, int(expected), str(payload.text)
+        )
+        stored = identity_service.lookup_idempotency(
+            session,
+            operation=signing_service.SECONDARY_PLAN_SAVE_OPERATION,
+            actor_id=physician["id"],
+            key=key,
+        )
+        if stored is not None:
+            if stored["request_hash"] != request_hash:
+                return _idempotency_conflict(request_id)
+            return _secondary_plan_replay(stored)
+    plan, encounter, server_timestamp = signing_service.save_secondary_plan(
+        session,
+        author=physician,
+        encounter_id=encounter_id,
+        expected_plan_revision=int(expected),
+        text=payload.text,
+        request_id=request_id,
+    )
+    response_body: dict[str, Any] = {
+        "encounter": encounters_service.safe_encounter_reference(encounter),
+        "revision": int(plan["revision"]),
+        "text": str(plan["text"]),
+        "encounter_revision": int(encounter["revision"]),
+        "server_timestamp": server_timestamp,
+    }
+    if key is not None:
+        assert request_hash is not None
+        identity_service.store_idempotency(
+            session,
+            operation=signing_service.SECONDARY_PLAN_SAVE_OPERATION,
+            actor_id=physician["id"],
+            key=key,
+            request_hash=request_hash,
+            response_status=200,
+            response_body=response_body,
+        )
+    return _secondary_plan_response(
+        encounter, plan, status_code=200, server_timestamp=server_timestamp
+    )
+
+
+def _sign_response(
+    snapshot: dict[str, Any],
+    encounter: dict[str, Any],
+    *,
+    status_code: int,
+    server_timestamp: str | None = None,
+) -> JSONResponse:
+    from x_insight.cases import signing as signing_service
+
+    safe = signing_service.safe_snapshot(snapshot)
+    content: dict[str, Any] = {
+        "snapshot": safe,
+        "encounter": encounters_service.safe_encounter_reference(encounter),
+        "revision": int(encounter["revision"]),
+    }
+    if server_timestamp is not None:
+        content["server_timestamp"] = server_timestamp
+    response = JSONResponse(status_code=status_code, content=content)
+    response.headers["ETag"] = contracts.format_etag(int(encounter["revision"]))
+    return response
+
+
+def _sign_replay(stored: dict[str, Any]) -> JSONResponse:
+    body = dict(stored["response_body"])
+    response = JSONResponse(status_code=int(stored["response_status"]), content=body)
+    revision = body.get("revision")
+    if isinstance(revision, int) and revision >= 1:
+        response.headers["ETag"] = contracts.format_etag(revision)
+    return response
+
+
+@router.post("/encounters/{encounter_id}/sign", status_code=200)
+def sign_encounter(
+    encounter_id: uuid.UUID,
+    payload: SignRequest,
+    request: Request,
+    session: Session = Depends(get_session),
+) -> JSONResponse:
+    """Author-only atomic sign (single transaction, row locks, audit)."""
+    from x_insight.cases import signing as signing_service
+
+    request_id = get_request_id(request)
+    physician = _require_physician_mutation(request, session)
+    if isinstance(physician, JSONResponse):
+        return physician
+    assert isinstance(physician, dict)
+    expected = encounters_service.require_if_match_revision(
+        request.headers.get(contracts.IF_MATCH_HEADER)
+    )
+    if int(expected) != int(payload.expected_encounter_revision):
+        return error_response(
+            412,
+            "STALE_REVISION",
+            "The draft changed. Reload and reconcile your edits.",
+            request_id,
+            {"expected_encounter_revision": ["Stale encounter revision."]},
+        )
+    key = _idempotency_key_or_none(request)
+    request_hash: str | None = None
+    if key is not None:
+        request_hash = signing_service.sign_request_hash(
+            encounter_id,
+            int(expected),
+            int(payload.expected_plan_revision),
+            uuid.UUID(str(payload.batch_id)),
+            [entry.model_dump() for entry in payload.acceptances],
+        )
+        stored = identity_service.lookup_idempotency(
+            session,
+            operation=signing_service.SIGN_OPERATION,
+            actor_id=physician["id"],
+            key=key,
+        )
+        if stored is not None:
+            if stored["request_hash"] != request_hash:
+                return _idempotency_conflict(request_id)
+            return _sign_replay(stored)
+    snapshot, encounter, server_timestamp = signing_service.sign_encounter(
+        session,
+        author=physician,
+        encounter_id=encounter_id,
+        expected_encounter_revision=int(expected),
+        expected_plan_revision=int(payload.expected_plan_revision),
+        batch_id=payload.batch_id,
+        acceptances=[entry.model_dump() for entry in payload.acceptances],
+        request_id=request_id,
+    )
+    safe = signing_service.safe_snapshot(snapshot)
+    response_body: dict[str, Any] = {
+        "snapshot": safe,
+        "encounter": encounters_service.safe_encounter_reference(encounter),
+        "revision": int(encounter["revision"]),
+        "server_timestamp": server_timestamp,
+    }
+    if key is not None:
+        assert request_hash is not None
+        identity_service.store_idempotency(
+            session,
+            operation=signing_service.SIGN_OPERATION,
+            actor_id=physician["id"],
+            key=key,
+            request_hash=request_hash,
+            response_status=200,
+            response_body=response_body,
+        )
+    return _sign_response(snapshot, encounter, status_code=200, server_timestamp=server_timestamp)
+
+
+def _addendum_response(
+    addendum: dict[str, Any],
+    encounter: dict[str, Any],
+    *,
+    status_code: int,
+    server_timestamp: str,
+) -> JSONResponse:
+    from x_insight.cases import signing as signing_service
+
+    content: dict[str, Any] = {
+        "addendum": signing_service.safe_addendum(addendum),
+        "revision": int(encounter["revision"]),
+        "server_timestamp": server_timestamp,
+    }
+    response = JSONResponse(status_code=status_code, content=content)
+    response.headers["ETag"] = contracts.format_etag(int(encounter["revision"]))
+    return response
+
+
+def _addendum_replay(stored: dict[str, Any]) -> JSONResponse:
+    body = dict(stored["response_body"])
+    response = JSONResponse(status_code=int(stored["response_status"]), content=body)
+    revision = body.get("revision")
+    if isinstance(revision, int) and revision >= 1:
+        response.headers["ETag"] = contracts.format_etag(revision)
+    return response
+
+
+@router.post("/encounters/{encounter_id}/addenda", status_code=201)
+def create_addendum(
+    encounter_id: uuid.UUID,
+    payload: AddendumRequest,
+    request: Request,
+    session: Session = Depends(get_session),
+) -> JSONResponse:
+    """Any-active-physician append to a signed encounter (append-only)."""
+    from x_insight.cases import signing as signing_service
+
+    request_id = get_request_id(request)
+    physician = _require_physician_mutation(request, session)
+    if isinstance(physician, JSONResponse):
+        return physician
+    assert isinstance(physician, dict)
+    expected = encounters_service.require_if_match_revision(
+        request.headers.get(contracts.IF_MATCH_HEADER)
+    )
+    if int(expected) != int(payload.expected_encounter_revision):
+        return error_response(
+            412,
+            "STALE_REVISION",
+            "The signed encounter changed. Reload before appending.",
+            request_id,
+            {"expected_encounter_revision": ["Stale encounter revision."]},
+        )
+    key = _idempotency_key_or_none(request)
+    request_hash: str | None = None
+    if key is not None:
+        request_hash = signing_service.addendum_request_hash(
+            encounter_id, int(expected), str(payload.text)
+        )
+        stored = identity_service.lookup_idempotency(
+            session,
+            operation=signing_service.ADDENDUM_OPERATION,
+            actor_id=physician["id"],
+            key=key,
+        )
+        if stored is not None:
+            if stored["request_hash"] != request_hash:
+                return _idempotency_conflict(request_id)
+            return _addendum_replay(stored)
+    addendum, encounter, server_timestamp = signing_service.create_addendum(
+        session,
+        author=physician,
+        encounter_id=encounter_id,
+        expected_encounter_revision=int(expected),
+        text=payload.text,
+        request_id=request_id,
+    )
+    response_body: dict[str, Any] = {
+        "addendum": signing_service.safe_addendum(addendum),
+        "revision": int(encounter["revision"]),
+        "server_timestamp": server_timestamp,
+    }
+    if key is not None:
+        assert request_hash is not None
+        identity_service.store_idempotency(
+            session,
+            operation=signing_service.ADDENDUM_OPERATION,
+            actor_id=physician["id"],
+            key=key,
+            request_hash=request_hash,
+            response_status=201,
+            response_body=response_body,
+        )
+    return _addendum_response(
+        addendum, encounter, status_code=201, server_timestamp=server_timestamp
+    )

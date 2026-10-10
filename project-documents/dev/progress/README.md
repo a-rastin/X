@@ -3,15 +3,14 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest recorded checkpoint is [S48d](s48-d.md): S48d complete —
-affected-only per-question freshness/acceptance/regeneration (backend 5
-T1/T8 `BT/worker/test_question_freshness.py`; worker 69, http 270/1
-deselected, models 208, mcp+provider 24 regressions hold; frontend tsc/
-build green with proposal-review 11+11, probability-review 8+8,
-question-freshness 6+6, themes 14; ruff/mypy green) plus the S48d
-code-review follow-up (2026-10-10, docs only, non-blocking). Regressions
-hold except pre-existing `test_only_s02_tables_exist` drift. Next is S49.
-Prior slices remain [S48c](s48-c-devtest.md) (build + code review),
+The latest recorded checkpoint is [S49](s49.md): S49 complete — atomic plan
+signing + immutable snapshots/addenda (backend 10 T1
+`BT/http/test_signing.py`, migration 0016; http 280/1 deselected, worker 69,
+probability 34, models 208, mcp+provider 24 regressions hold; ruff/mypy
+green). Regressions hold except pre-existing `test_only_s02_tables_exist`
+drift. Next is S50 UI, then S51 races. Prior slices remain [S48d](s48-d.md)
+(per-question freshness + frontend + dev-test + code review),
+[S48c](s48-c-devtest.md) (build + code review),
 [S48c-frontend](s48-c-frontend.md) (UI) and [S48c-backend](s48-c-backend.md)
 (endpoint, migration 0015). Content approvals remain as recorded in S39.b;
 bundle release and activation retain their independent status.
@@ -95,3 +94,4 @@ bundle release and activation retain their independent status.
 | S48c-frontend | [Complete CPT review, comparison, and acceptance UI, frontend only (2026-10-10)](s48-c-frontend.md) |
 | S48c-devtest | [Complete CPT review, comparison, and acceptance tests, TESTS ONLY (2026-10-10)](s48-c-devtest.md) |
 | S48d | [Regenerate only questions affected by patient-data changes (2026-10-10)](s48-d.md) |
+| S49 | [Implement atomic plan signing and immutable snapshots (2026-10-10)](s49.md) |
