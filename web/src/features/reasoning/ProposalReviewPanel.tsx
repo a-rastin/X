@@ -37,13 +37,17 @@
  * CPT tables ("LLM-estimated") and posterior values ("computed") are labeled
  * distinctly. Failed originals expose no baseline (`adjustable` false).
  *
- * Proposal + sign (S48 §4): final proposal sections (position-ordered) with
+ * Proposal + sign (S48 §4, S50 §§1-2): final proposal sections (position-ordered) with
  * skipped reasons and DDI coverage_warnings/ddi_report (coverage_unavailable
  * kept explicit, never "safe"). Failed/stale/partial runs render a disabled
  * sign entry with the exact reason while draft editing and retry stay
- * available. The secondary plan is a placeholder link only (S50 owns
- * editing). A null proposal renders the honest unavailable state, matching
- * the ChartPage precedent.
+ * available. The successful proposal renders unchanged beside the editable
+ * secondary plan (S50 §1, features/plans/SecondaryPlanPanel — separately
+ * revisioned GET/PATCH, comparison proposal-vs-plan); complete + current
+ * runs render the explicit SignPanel (S50 §2: flush-then-sign with exact
+ * acceptance/encounter/plan/review references, blocked reasons preserved,
+ * plan text never lost). A null proposal renders the honest unavailable state,
+ * matching the ChartPage precedent.
  *
  * Accessibility + theming: native headings/lists/tables/buttons/details
  * (keyboard free), status role=status, errors role=alert with focus,
@@ -66,6 +70,11 @@
  * - DDI block `data-testid="proposal-ddi"` (`#proposal-ddi`)
  * - blocked sign entry `data-testid="proposal-sign-blocked"`
  *   (`#proposal-sign-blocked`)
+ * - S50 final-plan/sign selectors live in features/plans (see
+ *   SecondaryPlanPanel/SignPanel headers): `secondary-plan-panel`,
+ *   `secondary-plan-textarea/save/status/revision`, `plan-compare-proposal`,
+ *   `plan-compare-plan`, `plan-compare-status`, `sign-panel`, `sign-button`,
+ *   `sign-status` (dev-test owns e2e/signing.spec.ts)
  * Storage contract (dev-test seeds this to attach the UI to an API-created
  * batch): localStorage `xi.proposal.<encounterId>` =
  * `{batchId, packages, sourceRevision}` (see ./api.ts).
@@ -73,10 +82,11 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ApiError } from "../identity/api";
-import { chartHash } from "../../app/router";
 import { getEncounter } from "../encounters/api";
 import type { useAutosave } from "../encounters/useAutosave";
 import { CptReviewPanel } from "./CptReviewPanel";
+import { SecondaryPlanPanel } from "../plans/SecondaryPlanPanel";
+import { SignPanel } from "../plans/SignPanel";
 import { getDiagnosis, type DiagnosisPreview } from "../assessments/diagnosis/api";
 import { getMedications, type MedicationsPreview } from "../medications/api";
 import {
@@ -274,6 +284,19 @@ function incompleteReason(batch: BatchPayload): string {
     return `the pinned DDI report is ${batch.workflow.ddi_status}.`;
   }
   return "runs have not completed yet.";
+}
+
+/** Verbatim successful-proposal text for the S50 plan comparison:
+ * position-ordered sections joined, or null while incomplete (never
+ * invented — the comparison panel says so explicitly). */
+function proposalTextOf(batch: BatchPayload): string | null {
+  if (batch.proposal === null) {
+    return null;
+  }
+  const sections = [...(batch.proposal.sections ?? [])].sort(
+    (a, b) => a.position - b.position || a.question_key.localeCompare(b.question_key),
+  );
+  return sections.map((section) => section.section_text).join("\n\n");
 }
 
 function pairStatusText(status: string): string {
@@ -1006,28 +1029,32 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired }:
               </p>
             </div>
           ) : (
-            <div className="xi-notice" role="status">
-              <p style={{ margin: 0 }}>
-                Proposal complete and current. Secondary plan editing and sign-off arrive in
-                S49/S50 — nothing here signs yet.
-              </p>
-            </div>
+            /* S50 §2 explicit sign-off: flush-then-sign with exact references
+              (ready runs only — skipped runs carry no acceptance). The
+              secondary plan below stays editable and is never cleared here. */
+            <SignPanel
+              encounterId={encounterId}
+              patientId={patientId}
+              autosave={autosave}
+              batchId={batch.batch.id}
+              readyRunIds={joined
+                .filter((item) => item.run.status === "ready")
+                .map((item) => item.run.id)}
+              getBlockReason={() => signBlockReason(batch, joinRuns(batch))}
+              onSessionExpired={onSessionExpired}
+            />
           )}
 
-          <section className="xi-card" aria-labelledby="secondary-plan-heading" style={{ marginBottom: 0 }}>
-            <h4 className="xi-section-title" id="secondary-plan-heading" style={{ fontSize: 16 }}>
-              Secondary plan (S50)
-            </h4>
-            <p className="xi-hint" style={{ marginBottom: 8 }}>
-              The physician-edited secondary plan lands in S50. This placeholder holds its place;
-              no plan editing happens here.
-            </p>
-            {patientId !== null && (
-              <p style={{ margin: 0 }}>
-                <a href={chartHash(patientId)}>View shared chart</a>
-              </p>
-            )}
-          </section>
+          {/* S50 §1 secondary plan (plan.md §9.2; FR-15-16): the successful
+            proposal above stays unchanged system output beside this
+            separately revisioned physician edit, with a visible comparison.
+            Renders in both blocked and ready branches so blocked signing
+            never loses plan text. */}
+          <SecondaryPlanPanel
+            encounterId={encounterId}
+            proposalText={proposalTextOf(batch)}
+            onSessionExpired={onSessionExpired}
+          />
         </div>
       )}
     </section>

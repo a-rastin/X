@@ -34,6 +34,13 @@
  * - draft badge `data-testid="chart-draft-badge"` (`#chart-draft-badge`, role=status)
  * - proposal `data-testid="chart-proposal-unavailable"` (`#chart-proposal-unavailable`)
  * - create button `data-testid="chart-create-followup"` (`#chart-create-followup`)
+ *
+ * S50 signed views (dev-test owns e2e/signing.spec.ts; `<id>` is the full
+ * encounter UUID — see features/plans/SignedView.tsx for the full contract):
+ * - section `data-testid="signed-view-<id>"` (read-only original/final
+ *   probabilities, frozen plan, signer/time, hash)
+ * - addenda `data-testid="addendum-list-<id>"`,
+ *   `addendum-textarea-<id>`, `addendum-submit-<id>`, `addendum-status-<id>`
  */
 
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -45,6 +52,7 @@ import {
 } from "../../encounters/api";
 import { chartHash } from "../../../app/router";
 import { getChart, type ChartResponse } from "./api";
+import { SignedEncounterView } from "../../plans/SignedView";
 
 type LoadState =
   | { kind: "loading" }
@@ -183,6 +191,14 @@ export function ChartPage({ patientId }: { patientId: string }) {
   const { patient, signed_encounters, open_draft, chronology, proposal } =
     load.chart;
   const chartLink = chartHash(patient.id);
+  // S49/S50 signed reads (shared, no drafts): frozen snapshots + append-only
+  // addenda per signed encounter. Absent on old payloads → empty (the
+  // sections below stay honest instead of claiming no signatures).
+  const snapshots = load.chart.signed_snapshots ?? [];
+  const addenda = load.chart.addenda ?? [];
+  const revisionOf = (encounterId: string): number =>
+    signed_encounters.find((row) => row.id === encounterId)?.revision ?? 1;
+  const canAppend = user?.role === "physician";
 
   return (
     <div>
@@ -276,6 +292,49 @@ export function ChartPage({ patientId }: { patientId: string }) {
           author-only inside the encounter wizard.
         </p>
       </section>
+
+      {/* S50 §§3-4 signed views (plan.md §9.2; FR-20, FR-22): one read-only
+        frozen record per signed encounter — original/final probabilities,
+        frozen plan, signer/time, hash — plus the separately attributed
+        addenda list and the any-physician append form. Another physician
+        reads but cannot alter signed content; admins read but never append.
+        Print permission follows the declared provisional policy (see hint:
+        administrator print allowed, physician print provisional, never
+        claimed owner-confirmed). */}
+      {snapshots.length > 0 && (
+        <section className="xi-card" aria-labelledby="chart-signed-heading">
+          <h3 className="xi-section-title" id="chart-signed-heading">
+            Signed records ({snapshots.length})
+          </h3>
+          <p className="xi-hint" style={{ marginTop: 0 }}>
+            Each record below is immutable — original and final accepted
+            probabilities, the frozen secondary plan, and exact signer/time
+            attribution. Print permission follows the declared provisional
+            policy: administrator printing is allowed; physician printing is
+            provisional and not owner-confirmed.
+          </p>
+          <div className="xi-row-actions xi-no-print">
+            <button
+              className="xi-btn xi-btn-secondary"
+              type="button"
+              onClick={() => window.print()}
+            >
+              Print signed record
+            </button>
+          </div>
+        </section>
+      )}
+      {snapshots.map((snapshot) => (
+        <SignedEncounterView
+          key={snapshot.id}
+          snapshot={snapshot}
+          addenda={addenda.filter((entry) => entry.encounter_id === snapshot.encounter_id)}
+          encounterRevision={revisionOf(snapshot.encounter_id)}
+          canAppend={canAppend}
+          onSessionExpired={sessionExpired}
+          onChanged={() => void reload()}
+        />
+      ))}
 
       <section className="xi-card" aria-labelledby="chart-proposal-heading">
         <h3 className="xi-section-title" id="chart-proposal-heading">

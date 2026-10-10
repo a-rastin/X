@@ -16,6 +16,7 @@
 
 import { ApiError } from "../../identity/api";
 import type { Patient } from "../api";
+import type { AddendumRow, SignedSnapshotRow } from "../../plans/api";
 
 export interface SignedEncounterReference {
   id: string;
@@ -30,6 +31,10 @@ export interface SignedEncounterReference {
 export interface ChartResponse {
   patient: Patient;
   signed_encounters: SignedEncounterReference[];
+  /** Immutable frozen records per signed encounter (S49/S50, shared read). */
+  signed_snapshots?: SignedSnapshotRow[];
+  /** Append-only corrections across signed encounters (S49/S50). */
+  addenda?: AddendumRow[];
   open_draft: { exists: boolean };
   chronology: SignedEncounterReference[];
   proposal: { status: string; reason?: string };

@@ -762,6 +762,68 @@ body {
   }
 }
 
+/* S50 final plan + signed views (plan.md §9.2; FR-15-16, FR-22, NFR-03).
+ * Reuses the dense clinical panels above — semantic tokens only (both
+ * deliberate themes), ink text throughout, every state paired with explicit
+ * text plus a shape glyph (never color alone). The comparison reuses
+ * .xi-cpt-compare; frozen plan/addendum text keeps line breaks readable. */
+.xi-plan-text {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 14px;
+  margin: 0 0 var(--space-2);
+}
+
+/* S50 print: signed records stay readable on paper in both themes —
+ * ink on white, full width, no app chrome or action buttons. Print
+ * permission itself follows the declared provisional policy (see
+ * ChartPage/SignedView hints), never claimed owner-confirmed here. */
+@media print {
+  body {
+    background: #ffffff;
+    color: #111827;
+    font-size: 12px;
+  }
+
+  .xi-header,
+  .xi-nav,
+  .xi-header-meta,
+  .xi-row-actions,
+  .xi-no-print,
+  button,
+  textarea,
+  input {
+    display: none !important;
+  }
+
+  .xi-main {
+    max-width: none;
+    padding: 0;
+  }
+
+  .xi-card,
+  .xi-signed-view {
+    box-shadow: none;
+    border: 1px solid #111827;
+    background: #ffffff;
+    color: #111827;
+    break-inside: avoid;
+  }
+
+  .xi-table {
+    font-size: 11px;
+  }
+
+  .xi-cpt-compare {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  a {
+    color: #111827;
+    text-decoration: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
