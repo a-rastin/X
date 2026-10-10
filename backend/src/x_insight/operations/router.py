@@ -1,4 +1,4 @@
-"""Operations HTTP routes (S52/S54, seams T1/T10, plan.md §§4.3, 10.1–10.2).
+"""Operations HTTP routes (S52/S54/S55, seams T1/T10, plan.md §§4.3, 10.1–10.3).
 
 ``GET /api/v1/audit-events`` — admin-only inspection over the atomically
 committed events (S51 transactions own the commit; this route only reads).
@@ -22,9 +22,17 @@ S54 backups (plan.md §10.2; FR-41–42, seam T10 over T1): ``POST
 ``Idempotency-Key``; synchronous bounded build, 201 with the terminal job),
 ``GET /api/v1/backups/{id}`` (admin-only progress/manifest read,
 ``private, no-store``) and ``GET /api/v1/backups/{id}/download``
-(admin-only bounded zip download, ``private, no-store``). No restore
-routes exist here — staging/commit belong to S55/S56. Builders live in
+(admin-only bounded zip download, ``private, no-store``). Builders live in
 :mod:`x_insight.operations.backup`; this router only gates and serves.
+
+S55 staged restores (plan.md §10.3 steps 1-3, staging only; FR-41,
+NFR-02/04, seam T10 over T1): ``POST /api/v1/restores/validate``
+(admin-only upload-to-staging with CSRF; raw zip body, synchronous bounded
+staging, 201 with the terminal job) and ``GET /api/v1/restores/{id}``
+(admin-only progress/impact read, ``private, no-store``). No
+``POST /restores/commit`` or any live-mutation path exists here — commit /
+switch / rollback belong to S56. Builders live in
+:mod:`x_insight.operations.restore`; this router only gates and serves.
 """
 
 from __future__ import annotations
@@ -44,6 +52,7 @@ from x_insight.db import get_engine, get_session
 from x_insight.identity import service as identity_service
 from x_insight.operations import audit as audit_module
 from x_insight.operations import backup as backup_module
+from x_insight.operations import restore as restore_module
 
 router = APIRouter()
 
@@ -421,4 +430,107 @@ def download_backup(
             "Content-Disposition": f'attachment; filename="x-insight-backup-{target}.zip"',
             "Cache-Control": "private, no-store",
         },
+    )
+
+
+# --- S55 staged restore validation (admin-only, audited, private/no-store) ---
+# Staging only: no commit/switch/rollback route exists here by design (S56).
+
+
+def _parse_restore_id(value: str) -> uuid.UUID:
+    try:
+        return uuid.UUID(str(value))
+    except Exception as exc:
+        raise contracts.ContractError(
+            422,
+            "VALIDATION_FAILED",
+            "Restore id must be a UUID.",
+            {"restore_id": ["Must be a UUID."]},
+        ) from exc
+
+
+@router.post("/restores/validate", status_code=201, response_model=None)
+async def validate_restore(
+    request: Request, session: Session = Depends(get_session)
+) -> JSONResponse:
+    """Stage one uploaded archive without touching live state (admin-only).
+
+    Raw zip body (``application/zip`` or ``application/octet-stream``) is
+    validated into isolated staging storage; the terminal job carries the
+    backup date/schema/content/checksums/impact report plus the immutable
+    confirmation digest S56 will require exactly. Only ``restore_jobs`` +
+    audit rows are written — clinical tables are never touched, so failed
+    staging leaves live patients/login/jobs unchanged. Never exposes Commit.
+    """
+    admin = _require_admin_mutation(request, session)
+    if isinstance(admin, JSONResponse):
+        return admin
+    assert isinstance(admin, dict)
+    request_id = get_request_id(request)
+    try:
+        blob = await request.body()
+    except Exception as exc:
+        return error_response(400, "BAD_REQUEST", f"Cannot read upload: {exc}", request_id)
+    if not blob:
+        return error_response(
+            422,
+            "VALIDATION_FAILED",
+            "Archive body is required.",
+            request_id,
+            {"archive": ["Must upload a backup zip."]},
+        )
+    if len(blob) > restore_module.MAX_ARCHIVE_BYTES:
+        return error_response(
+            413,
+            "REQUEST_TOO_LARGE",
+            f"Archive exceeds {restore_module.MAX_ARCHIVE_BYTES} bytes.",
+            request_id,
+        )
+    try:
+        job, _failed = restore_module.stage_restore(
+            session,
+            get_engine(),
+            actor=admin,
+            request_id=request_id,
+            archive_blob=bytes(blob),
+        )
+    except contracts.ContractError as exc:
+        return error_response(
+            exc.status_code, exc.code, exc.message, request_id, exc.field_errors, exc.retryable
+        )
+    return JSONResponse(
+        status_code=201,
+        content=restore_module.safe_job(job),
+        headers={"Cache-Control": "private, no-store"},
+    )
+
+
+@router.get("/restores/{restore_id}", response_model=None)
+def get_restore(
+    restore_id: str, request: Request, session: Session = Depends(get_session)
+) -> JSONResponse:
+    """Staging progress/impact read (admin-only, no CSRF, like audit reads).
+
+    Returns the terminal staging job with its impact report (backup date /
+    schema / content / checksums / live-vs-staged counts / key consequence /
+    confirmation digest / expiry). Expired or superseded digests are reported
+    as ``expired: true`` so S56 can reject stale confirmations.
+    """
+    admin = _require_admin(request, session)
+    if isinstance(admin, JSONResponse):
+        return admin
+    request_id = get_request_id(request)
+    try:
+        target = _parse_restore_id(restore_id)
+    except contracts.ContractError as exc:
+        return error_response(
+            exc.status_code, exc.code, exc.message, request_id, exc.field_errors, exc.retryable
+        )
+    job = restore_module.get_restore(session, target)
+    if job is None:
+        return error_response(404, "NOT_FOUND", "Restore not found.", request_id)
+    return JSONResponse(
+        status_code=200,
+        content=restore_module.safe_job(job),
+        headers={"Cache-Control": "private, no-store"},
     )

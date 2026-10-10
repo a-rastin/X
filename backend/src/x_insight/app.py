@@ -129,17 +129,41 @@ class RequestContextMiddleware:
 
 
 class SizeLimitMiddleware:
-    """Reject oversized request bodies with a safe ``413`` error body."""
+    """Reject oversized request bodies with a safe ``413`` error body.
 
-    def __init__(self, app: Callable, max_bytes: int = MAX_BODY_BYTES) -> None:
+    The default cap is ``contracts.MAX_BODY_BYTES`` (1 MiB). ``path_max_bytes``
+    raises the cap ONLY for the listed ``(method, path)`` pairs — currently
+    just ``POST /api/v1/restores/validate`` (raw-zip staging up to
+    ``MAX_ARCHIVE_BYTES``). Every other route, including
+    ``GET /api/v1/backups/{id}/download``, keeps the 1 MiB default; the
+    router-level ``MAX_ARCHIVE_BYTES`` check stays authoritative for truly
+    oversized archives.
+    """
+
+    def __init__(
+        self,
+        app: Callable,
+        max_bytes: int = MAX_BODY_BYTES,
+        path_max_bytes: dict[tuple[str, str], int] | None = None,
+    ) -> None:
         self.app = app
         self.max_bytes = max_bytes
+        self.path_max_bytes = dict(path_max_bytes or {})
 
-    def _too_large(self, request_id: str) -> JSONResponse:
+    def _limit_for(self, scope: dict) -> int:
+        method = scope.get("method", "")
+        path = scope.get("path", "")
+        normalized = path.rstrip("/") or "/"
+        for (override_method, override_path), override_limit in self.path_max_bytes.items():
+            if method == override_method and normalized == (override_path.rstrip("/") or "/"):
+                return override_limit
+        return self.max_bytes
+
+    def _too_large(self, request_id: str, limit: int) -> JSONResponse:
         return error_response(
             413,
             "REQUEST_TOO_LARGE",
-            f"Request body exceeds {self.max_bytes} bytes.",
+            f"Request body exceeds {limit} bytes.",
             request_id,
         )
 
@@ -148,6 +172,7 @@ class SizeLimitMiddleware:
             await self.app(scope, receive, send)
             return
         request_id = scope.get("request_id") or contracts.new_request_id()
+        limit = self._limit_for(scope)
         length: int | None = None
         for key, value in scope.get("headers", []):
             if key.decode("latin-1").lower() == "content-length":
@@ -156,8 +181,8 @@ class SizeLimitMiddleware:
                 except ValueError:
                     length = None
                 break
-        if length is not None and length > self.max_bytes:
-            response = self._too_large(str(request_id))
+        if length is not None and length > limit:
+            response = self._too_large(str(request_id), limit)
             await response(scope, receive, send)
             return
         # Enforce actual bytes read even when Content-Length is present and
@@ -172,8 +197,8 @@ class SizeLimitMiddleware:
                 break
             chunk = message.get("body", b"")
             total += len(chunk)
-            if total > self.max_bytes:
-                response = self._too_large(str(request_id))
+            if total > limit:
+                response = self._too_large(str(request_id), limit)
                 await response(scope, receive, send)
                 return
             chunks.append(chunk)
@@ -257,8 +282,15 @@ def create_app() -> FastAPI:
 
     # Starlette applies later-added middleware outermost, so correlation wraps
     # every edge rejection (size/idempotency) as well as routed responses.
+    # ponytail: raw-zip staging needs MAX_ARCHIVE_BYTES at the edge; every
+    # other route keeps the 1 MiB default (download is a GET with no body).
+    from x_insight.operations import backup as backup_module
+
     app.add_middleware(IdempotencyKeyMiddleware)
-    app.add_middleware(SizeLimitMiddleware)
+    app.add_middleware(
+        SizeLimitMiddleware,
+        path_max_bytes={("POST", "/api/v1/restores/validate"): backup_module.MAX_ARCHIVE_BYTES},
+    )
     app.add_middleware(RequestContextMiddleware)
 
     @app.exception_handler(contracts.ContractError)

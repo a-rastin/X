@@ -3,6 +3,7 @@ import { PasswordForm } from "../features/identity/PasswordForm";
 import { PhysiciansPanel } from "../features/identity/PhysiciansPanel";
 import { AuditPage } from "../features/admin/audit/AuditPage";
 import { BackupsPage } from "../features/admin/backups/BackupsPage";
+import { RestoresPage } from "../features/admin/restores/RestoresPage";
 import { ExportsPage } from "../features/admin/exports/ExportsPage";
 import { ReportPage } from "../features/admin/exports/ReportPage";
 import { NetworksPage } from "../features/admin/networks/NetworksPage";
@@ -148,6 +149,23 @@ export function BackupsRoutePage() {
     );
   }
   return <BackupsPage />;
+}
+
+export function RestoresRoutePage() {
+  const { user } = useAuth();
+  if (user?.role !== "admin") {
+    // Client-side complement to the server's 401/403 on /restores: never
+    // grant authority, just avoid rendering staging actions to the wrong role.
+    return (
+      <div>
+        <h2 className="xi-page-title">Staged restores</h2>
+        <p className="xi-form-error" role="alert">
+          Administrator access required.
+        </p>
+      </div>
+    );
+  }
+  return <RestoresPage />;
 }
 
 export function ReportRoutePage({ patientId }: { patientId: string }) {

@@ -26,6 +26,7 @@ import {
   PhysicianDashboard,
   PhysiciansPage,
   ReportRoutePage,
+  RestoresRoutePage,
 } from "./pages";
 
 function NavLink({
@@ -204,6 +205,11 @@ export function App() {
                 Backups
               </NavLink>
             )}
+            {user.role === "admin" && (
+              <NavLink route="restores" current={route} navigate={navigate}>
+                Restores
+              </NavLink>
+            )}
             <NavLink route="account" current={route} navigate={navigate}>
               Account
             </NavLink>
@@ -252,6 +258,7 @@ export function App() {
             {!showWarningGate && route === "audit" && <AuditRoutePage />}
             {!showWarningGate && route === "exports" && <ExportsRoutePage />}
             {!showWarningGate && route === "backups" && <BackupsRoutePage />}
+            {!showWarningGate && route === "restores" && <RestoresRoutePage />}
             {!showWarningGate && route === "report" && <ReportRoute />}
             {!showWarningGate && route === "account" && <AccountPage />}
           </>
