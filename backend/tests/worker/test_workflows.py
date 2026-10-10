@@ -1113,6 +1113,10 @@ def test_freshness_new_batch_old_proposal_immutable(clean_registry, monkeypatch,
     assert new_batch_id != old_batch_id
     assert restarted.json()["batch"]["fingerprint"] != old_fingerprint
 
+    # S48d affected-only (FR-59, plan §4.2): DDI-only changes refresh the
+    # proposal without unrelated LLM requests. Both questions carry their
+    # baselines (identical projections/gates/packages), so zero new provider
+    # calls occur; the new proposal assembles immediately with the new DDI.
     endpoint_new = provider_module.DeterministicProviderEndpoint(
         script=[{"type": "final", "cpt": _valid_cpt()} for _ in range(2)]
     )
@@ -1124,14 +1128,13 @@ def test_freshness_new_batch_old_proposal_immutable(clean_registry, monkeypatch,
         adapter_new = provider_module.BoundedProviderAdapter(
             config_new, grant_token="", database_url=db_module.get_test_database_url()
         )
-        for _ in range(2):
-            outcome = worker_module.run_once(
-                clean_registry, adapter_new, database_url=db_module.get_test_database_url()
-            )
-            assert outcome["status"] == "succeeded", outcome
+        idle = worker_module.run_once(
+            clean_registry, adapter_new, database_url=db_module.get_test_database_url()
+        )
+        assert idle["status"] == "idle", idle
     finally:
         endpoint_new.stop()
-    assert len(endpoint_new.captured) == 2
+    assert len(endpoint_new.captured) == 0
     _assert_no_proposal_writing(list(endpoint_old.captured) + list(endpoint_new.captured))
 
     new_view = _read_batch(client, new_batch_id)

@@ -931,6 +931,13 @@ function CptReviewBody({
             panels stay unchanged and history is retained. Retry targets exactly the current
             revision without re-estimation.
           </p>
+          {stale && (
+            <p className="xi-hint" role="status">
+              This run is out of date — reset and retry apply to superseded inputs and stay
+              out of date. Start a new run from Proposal review for current inputs; the
+              regenerated original needs explicit review before it can be accepted.
+            </p>
+          )}
         </div>
       )}
 

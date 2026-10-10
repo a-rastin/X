@@ -387,11 +387,11 @@ def read_question_review(
         results=[dict(r) for r in raw_results],
         local_jobs=[dict(j) for j in raw_local_jobs],
     )
-    input_freshness = {
-        "stale": bool(freshness.get("stale", False)),
-        "reason": str(freshness.get("reason", "current")),
-        "current_fingerprint": str(freshness.get("current_fingerprint", "")),
-    }
+    # S48d affected-only: per-question input freshness compares typed
+    # projections + applicability, not the whole-batch fingerprint. Batch
+    # ``freshness`` stays whole-batch for the batch view; ``input_freshness``
+    # drives acceptance so unrelated questions stay fresh/accepted.
+    input_freshness = snapshots_service.get_question_input_freshness(session, run, batch)
     # S48c: acceptance state — latest exact current match (or null) plus the
     # retained per-run history (older rows stop matching after later edits).
     question_key = str(run.get("question_key", ""))

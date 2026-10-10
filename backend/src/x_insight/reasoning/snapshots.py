@@ -53,6 +53,7 @@ from x_insight.reasoning import tables as reasoning_tables
 
 FINGERPRINT_SCHEMA_VERSION = "analysis-fingerprint-v1"
 PROJECTION_SCHEMA_VERSION = "question-projection-v1"
+QUESTION_INPUT_SCHEMA_VERSION = "question-input-v1"
 
 GENERATION_START_OPERATION = "generation.start"
 
@@ -805,7 +806,22 @@ def start_generation_batch(
     # S47 author retry: identical facts + pinned content carry already
     # accepted baselines into the new bounded batch, so it resumes at the
     # failed stage (earlier questions cost no new provider request).
+    # S48d affected-only: per-question carry reuses unaffected baselines when
+    # projection+gate+package match, even when the batch fingerprint moved
+    # (unrelated-field or DDI-only changes cost zero LLM calls).
     carried = _carried_baselines(session, encounter_id, fingerprint, requested_keys)
+    new_package_hashes = [loaded.package_hash for loaded in loaded_list]
+    carried_per_question = _carried_baselines_per_question(
+        session,
+        encounter_id,
+        requested_keys,
+        projections,
+        statuses,
+        new_package_hashes,
+    )
+    for key, baseline in carried_per_question.items():
+        if key not in carried:
+            carried[key] = baseline
     carried_positions = {index for index, key in enumerate(requested_keys) if key in carried}
     first_eligible = _first_eligible_index(statuses, carried_positions)
 
@@ -1015,3 +1031,250 @@ def get_generation_batch(
             "current_fingerprint": current_fp,
         }
     return batch, runs, freshness
+
+
+def question_input_hash(projection_hash: str, gate_status: str) -> str:
+    """Per-question input hash (S48d, plan §4.2 + system-design §7.5).
+
+    Covers only this question's typed projection + applicability state, not
+    the whole-batch fingerprint. Unrelated questions' fields, DDI-only
+    changes, notes, names/ID/phone, UI state and secondary-plan edits leave
+    it unchanged. Compare projections, not timestamps: the stored
+    ``source_revision`` is reused on recompute so revision bumps alone never
+    stale.
+    """
+    return contracts.canonical_hash(
+        {
+            "schema_version": QUESTION_INPUT_SCHEMA_VERSION,
+            "projection_hash": str(projection_hash),
+            "gate_status": str(gate_status),
+        }
+    )
+
+
+def compute_question_freshness(
+    run: Mapping[str, Any], batch: Mapping[str, Any], draft_data: Any
+) -> dict[str, Any]:
+    """Derive per-question freshness for one immutable run (S48d).
+
+    Recomputes the typed projection + gate from the run's frozen
+    ``pinned_package`` manifest against current ``draft_data`` (using the
+    stored projection ``source_revision`` so unrelated revision bumps stay
+    fresh). Stale when the projection hash or gate status moved; otherwise
+    current. Notes/plan/UI/identifying fields never enter the projection by
+    construction (S40 allowlists). Legacy runs without a frozen package fall
+    back to batch-fingerprint comparison (safe stale).
+    """
+    stored_hash = str(run.get("projection_hash", ""))
+    stored_status = str(run.get("status", ""))
+    stored_input = question_input_hash(stored_hash, stored_status)
+    pinned_package = run.get("pinned_package")
+    if not isinstance(pinned_package, dict) or not isinstance(
+        pinned_package.get("manifest"), Mapping
+    ):
+        # Legacy pre-S45 rows: no frozen manifest to compare; fall back to
+        # the batch fingerprint (whole-batch stale, safe direction).
+        batch_fp = str(batch.get("fingerprint", ""))
+        try:
+            pinned = batch.get("pinned_bundle") or {}
+            current_fp, _ = compute_analysis_fingerprint(
+                draft_data if isinstance(draft_data, dict) else {}, pinned
+            )
+        except Exception:
+            return {
+                "stale": True,
+                "reason": "legacy run without pinned package",
+                "current_fingerprint": stored_input,
+                "current_projection_hash": stored_hash,
+                "current_gate_status": stored_status,
+            }
+        if current_fp == batch_fp:
+            return {
+                "stale": False,
+                "reason": "current",
+                "current_fingerprint": stored_input,
+                "current_projection_hash": stored_hash,
+                "current_gate_status": stored_status,
+            }
+        return {
+            "stale": True,
+            "reason": "analysis facts changed since freeze",
+            "current_fingerprint": stored_input,
+            "current_projection_hash": stored_hash,
+            "current_gate_status": stored_status,
+        }
+    manifest = pinned_package["manifest"]
+    assert isinstance(manifest, Mapping)
+    projection = run.get("projection")
+    stored_revision = 1
+    if isinstance(projection, dict) and isinstance(projection.get("source_revision"), int):
+        stored_revision = int(projection["source_revision"])
+    elif isinstance(batch.get("source_revision"), int):
+        stored_revision = int(batch["source_revision"])
+    try:
+        _, current_hash = build_question_projection(manifest, draft_data, stored_revision)
+        current_status, _ = evaluate_gate(manifest, draft_data)
+    except contracts.ContractError as exc:
+        # Manifest mismatch against current facts fails closed as stale
+        # (e.g. allowlisted source removed); never fresh on error.
+        return {
+            "stale": True,
+            "reason": f"question inputs not projectable: {exc.code}",
+            "current_fingerprint": stored_input,
+            "current_projection_hash": stored_hash,
+            "current_gate_status": stored_status,
+        }
+    current_input = question_input_hash(current_hash, current_status)
+    if current_hash == stored_hash and current_status == stored_status:
+        return {
+            "stale": False,
+            "reason": "current",
+            "current_fingerprint": current_input,
+            "current_projection_hash": current_hash,
+            "current_gate_status": current_status,
+        }
+    if current_status != stored_status:
+        reason = f"applicability {stored_status} -> {current_status}"
+    else:
+        reason = "represented patient inputs changed since freeze"
+    return {
+        "stale": True,
+        "reason": reason,
+        "current_fingerprint": current_input,
+        "current_projection_hash": current_hash,
+        "current_gate_status": current_status,
+    }
+
+
+def get_question_input_freshness(
+    session: Session, run: Mapping[str, Any], batch: Mapping[str, Any]
+) -> dict[str, Any]:
+    """Per-question input freshness for review/acceptance (S48d, read-only).
+
+    Loads the current draft facts and compares per-question projections, not
+    batch timestamps. Missing encounters (signed/discarded) report current
+    (history remains readable). Never UPDATEs rows.
+    """
+    encounter = encounters_service.get_encounter(session, batch["encounter_id"])
+    if encounter is None or not isinstance(encounter.get("draft_data"), dict):
+        stored_hash = str(run.get("projection_hash", ""))
+        stored_status = str(run.get("status", ""))
+        return {
+            "stale": False,
+            "reason": "current",
+            "current_fingerprint": question_input_hash(stored_hash, stored_status),
+        }
+    full = compute_question_freshness(run, batch, encounter.get("draft_data"))
+    return {
+        "stale": bool(full["stale"]),
+        "reason": str(full["reason"]),
+        "current_fingerprint": str(full["current_fingerprint"]),
+    }
+
+
+def _projection_values_key(projection: Any) -> str:
+    """Stable key for typed projection values ignoring source revisions (S48d).
+
+    ``source_revision`` bumps on every save; affected-only comparison must
+    compare represented values (node/type/status/value/path), not timestamps.
+    """
+    variables: Any = projection.get("variables") if isinstance(projection, Mapping) else None
+    stripped: list[dict[str, Any]] = []
+    if isinstance(variables, list):
+        for entry in variables:
+            if not isinstance(entry, Mapping):
+                continue
+            stripped.append(
+                {
+                    "node_id": str(entry.get("node_id", "")),
+                    "patient_type": str(entry.get("patient_type", "")),
+                    "status": str(entry.get("status", "")),
+                    "value": entry.get("value"),
+                    "source_path": str(entry.get("source_path", "")),
+                }
+            )
+    return contracts.canonical_hash({"variables": stripped})
+
+
+def _carried_baselines_per_question(
+    session: Session,
+    encounter_id: Any,
+    requested_keys: list[str],
+    new_projections: list[dict[str, Any]],
+    new_statuses: list[str],
+    new_package_hashes: list[str],
+) -> dict[str, dict[str, Any]]:
+    """Latest baseline per question with identical values+gate+package (S48d).
+
+    Unlike S47's whole-fingerprint carry (identical facts + pinned content),
+    this carries per-question: a new batch reuses an unaffected question's
+    immutable baseline without a new provider request when its typed
+    projection values, applicability status and package hash are unchanged.
+    Source revisions are ignored (revision bumps alone never block carry);
+    DDI-only and unrelated-field changes therefore cost zero LLM calls while
+    affected questions get fresh jobs. Returns {question_key: baseline row}.
+    """
+    wanted = set(requested_keys)
+    if not wanted:
+        return {}
+    want_by_key: dict[str, tuple[str, str, str]] = {}
+    for key, projection, status, pkg_hash in zip(
+        requested_keys, new_projections, new_statuses, new_package_hashes
+    ):
+        want_by_key[str(key)] = (
+            _projection_values_key(projection),
+            str(status),
+            str(pkg_hash),
+        )
+    carried: dict[str, dict[str, Any]] = {}
+    prior_batch_ids = [
+        row[0]
+        for row in session.execute(
+            select(reasoning_tables.generation_batches.c.id)
+            .where(reasoning_tables.generation_batches.c.encounter_id == encounter_id)
+            .order_by(reasoning_tables.generation_batches.c.created_at.desc())
+        ).all()
+    ]
+    for batch_id in prior_batch_ids:
+        if len(carried) >= len(wanted):
+            break
+        runs = (
+            session.execute(
+                select(reasoning_tables.question_runs).where(
+                    reasoning_tables.question_runs.c.batch_id == batch_id
+                )
+            )
+            .mappings()
+            .all()
+        )
+        for entry in runs:
+            run = dict(entry)
+            key = str(run.get("question_key", ""))
+            if key not in wanted or key in carried:
+                continue
+            want = want_by_key.get(key)
+            if want is None:
+                continue
+            want_values, want_status, want_pkg = want
+            if _projection_values_key(run.get("projection")) != want_values:
+                continue
+            if str(run.get("status", "")) != want_status:
+                continue
+            pinned_versions = run.get("pinned_versions")
+            run_pkg = ""
+            if isinstance(pinned_versions, dict):
+                run_pkg = str(pinned_versions.get("package_hash", ""))
+            if run_pkg != want_pkg:
+                continue
+            stored = (
+                session.execute(
+                    select(reasoning_tables.original_baselines).where(
+                        reasoning_tables.original_baselines.c.question_run_id == run["id"]
+                    )
+                )
+                .mappings()
+                .first()
+            )
+            if stored is not None:
+                carried[key] = dict(stored)
+    return carried

@@ -53,6 +53,8 @@
  * E2E selector contract (for dev-test e2e/proposal-review.spec.ts):
  * - panel `data-testid="proposal-review"` (`#proposal-review`)
  * - per-question status `data-testid="proposal-status-<question_key>"`
+ * - per-question freshness `data-testid="proposal-freshness-<question_key>"`
+ *   (S48d, stale batches only: out-of-date ◍ vs current-inputs per question)
  * - per-question retry `data-testid="proposal-retry-<question_key>"`
  *   (failed runs with recorded packages only)
  * - per-question transparency region
@@ -80,12 +82,14 @@ import { getMedications, type MedicationsPreview } from "../medications/api";
 import {
   clearStoredProposal,
   getBatch,
+  getQuestionInputFreshness,
   getQuestionReview,
   readStoredProposal,
   startGeneration,
   writeStoredProposal,
   type BaselineEntry,
   type BatchPayload,
+  type InputFreshness,
   type Posterior,
   type ProjectionVariable,
   type QuestionRun,
@@ -337,6 +341,14 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired }:
   const [actionError, setActionError] = useState<string | null>(null);
   const [patientId, setPatientId] = useState<string | null>(null);
   const [reloadKey, setReloadKey] = useState(0);
+  // S48d affected-only freshness: per-question input_freshness by run id,
+  // fetched only while the batch is stale (fresh batches imply every
+  // question is fresh). `freshDone` distinguishes "still checking" from a
+  // failed fetch (failed entries stay absent; the batch banner still covers
+  // them — never claim a question is fresh without a successful read).
+  const [freshByRun, setFreshByRun] = useState<Record<string, InputFreshness>>({});
+  const [freshDone, setFreshDone] = useState(false);
+  const freshKeyRef = useRef<string | null>(null);
   const [prereq, setPrereq] = useState<{
     diag: DiagnosisPreview | null;
     meds: MedicationsPreview | null;
@@ -371,6 +383,9 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired }:
     setPollError(null);
     setExpanded({});
     setReviews({});
+    setFreshByRun({});
+    setFreshDone(false);
+    freshKeyRef.current = null;
     const stored = readStoredProposal(encounterId);
     setPkgsKnown(stored !== null && Array.isArray(stored.packages) && stored.packages.length > 0);
     if (stored !== null) {
@@ -608,6 +623,56 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired }:
       document.removeEventListener("visibilitychange", onVisibility);
     };
   }, [batchId, reloadKey, encounterId, failAs, onSessionExpired]);
+
+  // S48d affected-only labels (FR-59; seam T1): the whole-batch fingerprint
+  // moves on any relevant edit, so a stale batch banner alone cannot say
+  // which questions are affected. When (and only when) the batch is stale,
+  // fetch each run's per-question input_freshness via the public GET review.
+  // Skipped/clarification runs are not labeled here — their gate message
+  // already explains them. Failures stay unlabeled (batch banner covers).
+  const freshKey = batchId !== null ? `${batchId}|${reloadKey}` : null;
+  useEffect(() => {
+    if (phase.kind !== "tracking" || batch === null || batchId === null || freshKey === null) {
+      return;
+    }
+    if (batch.freshness?.stale !== true) {
+      return;
+    }
+    // ponytail: ref guard — batch identity changes on every poll tick;
+    // one fetch per batch per explicit refresh, not per tick.
+    if (freshKeyRef.current === freshKey) {
+      return;
+    }
+    freshKeyRef.current = freshKey;
+    setFreshByRun({});
+    setFreshDone(false);
+    let cancelled = false;
+    void (async () => {
+      const settled = await Promise.all(
+        (batch.question_runs ?? []).map(async (run) => {
+          try {
+            return { id: run.id, fresh: await getQuestionInputFreshness(run.id) };
+          } catch {
+            return { id: run.id, fresh: null as InputFreshness | null };
+          }
+        }),
+      );
+      if (cancelled) {
+        return;
+      }
+      const next: Record<string, InputFreshness> = {};
+      for (const entry of settled) {
+        if (entry.fresh !== null) {
+          next[entry.id] = entry.fresh;
+        }
+      }
+      setFreshByRun(next);
+      setFreshDone(true);
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [phase.kind, batch, batchId, freshKey]);
 
   /** Precise failed-question retry: re-POST the same stored packages at the
    * current revision. The backend carries completed baselines forward and
@@ -857,7 +922,9 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired }:
           {batch.freshness?.stale === true && (
             <div className="xi-warning-panel" role="status">
               <p style={{ margin: 0 }}>
-                This run is stale — {batch.freshness.reason}. New inputs need a new run; this
+                This run is stale — {batch.freshness.reason}. Only affected questions are
+                marked out of date below; unaffected questions stay valid and carry
+                forward with their acceptance intact. New inputs need a new run; this
                 run stays readable history.
               </p>
               {pkgsKnown ? (
@@ -900,6 +967,9 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired }:
                     item={item}
                     expanded={expanded[item.run.question_key] ?? false}
                     review={reviews[item.run.id] ?? null}
+                    fresh={freshByRun[item.run.id] ?? null}
+                    freshDone={freshDone}
+                    batchStale={batch.freshness?.stale === true}
                     pkgsKnown={pkgsKnown}
                     actionBusy={actionBusy}
                     onSessionExpired={onSessionExpired}
@@ -993,6 +1063,9 @@ function QuestionBlock({
   item,
   expanded,
   review,
+  fresh,
+  freshDone,
+  batchStale,
   pkgsKnown,
   actionBusy,
   onSessionExpired,
@@ -1003,6 +1076,9 @@ function QuestionBlock({
   item: JoinedRun;
   expanded: boolean;
   review: ReviewState | null;
+  fresh: InputFreshness | null;
+  freshDone: boolean;
+  batchStale: boolean;
   pkgsKnown: boolean;
   actionBusy: boolean;
   onSessionExpired: () => void;
@@ -1012,6 +1088,12 @@ function QuestionBlock({
 }) {
   const key = item.run.question_key;
   const regionId = `proposal-transparency-region-${key}`;
+  // S48d: gate-explained runs (skipped/clarification) keep their gate
+  // message; per-question freshness labels apply to the rest so affected
+  // runs show out-of-date ◍ with a regenerate affordance while unaffected
+  // retain valid references + accepted state (shown in their CPT panel).
+  const showFresh =
+    batchStale && item.display !== "skipped" && item.display !== "clarification";
   return (
     <div data-testid={`proposal-status-${key}`} id={`proposal-status-${key}`}>
       <p className="xi-proposal-status">
@@ -1023,6 +1105,27 @@ function QuestionBlock({
       <p className="xi-hint" style={{ marginTop: 0 }}>
         Position {item.position} · {item.detail}
       </p>
+      {showFresh && (
+        <div data-testid={`proposal-freshness-${key}`} role="status">
+          {fresh !== null && fresh.stale ? (
+            <p className="xi-hint" style={{ marginTop: 0 }}>
+              <span aria-hidden="true">◍</span> Out of date — {fresh.reason}. Only this
+              question needs regeneration; starting a new run above regenerates
+              affected questions while unaffected ones carry forward.
+            </p>
+          ) : fresh !== null ? (
+            <p className="xi-hint" style={{ marginTop: 0 }}>
+              <span aria-hidden="true">●</span> Current inputs — this question stays valid
+              and is carried into the next run without recalculation; its acceptance
+              stands.
+            </p>
+          ) : !freshDone ? (
+            <p className="xi-hint" style={{ marginTop: 0 }}>
+              Checking which questions are affected…
+            </p>
+          ) : null}
+        </div>
+      )}
       {item.display === "failed" && (
         <div>
           {pkgsKnown ? (

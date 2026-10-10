@@ -3,17 +3,18 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest recorded checkpoint is [S48c](s48-c-devtest.md): S48c build
-complete — acceptance endpoint (migration 0015), CPT review/comparison/
-acceptance UI, and T1/T9 suites (13 T1; new e2e/probability-review.spec.ts
-8 journeys × chromium/firefox; proposal-review 11+11 no regression); code
-review held with non-blocking follow-ups recorded in the report.
-Regressions hold except pre-existing `test_only_s02_tables_exist` drift.
-Next is S48d, then S49.
-Prior S48c slices remain [S48c-frontend](s48-c-frontend.md) (UI) and
-[S48c-backend](s48-c-backend.md) (endpoint, migration 0015). Content approvals
-remain as recorded in S39.b; bundle release and activation retain their
-independent status.
+The latest recorded checkpoint is [S48d](s48-d.md): S48d complete —
+affected-only per-question freshness/acceptance/regeneration (backend 5
+T1/T8 `BT/worker/test_question_freshness.py`; worker 69, http 270/1
+deselected, models 208, mcp+provider 24 regressions hold; frontend tsc/
+build green with proposal-review 11+11, probability-review 8+8,
+question-freshness 6+6, themes 14; ruff/mypy green) plus the S48d
+code-review follow-up (2026-10-10, docs only, non-blocking). Regressions
+hold except pre-existing `test_only_s02_tables_exist` drift. Next is S49.
+Prior slices remain [S48c](s48-c-devtest.md) (build + code review),
+[S48c-frontend](s48-c-frontend.md) (UI) and [S48c-backend](s48-c-backend.md)
+(endpoint, migration 0015). Content approvals remain as recorded in S39.b;
+bundle release and activation retain their independent status.
 
 ## Reading and updating progress
 
@@ -93,3 +94,4 @@ independent status.
 | S48c-backend | [Exact current-result acceptance endpoint (2026-10-10)](s48-c-backend.md) |
 | S48c-frontend | [Complete CPT review, comparison, and acceptance UI, frontend only (2026-10-10)](s48-c-frontend.md) |
 | S48c-devtest | [Complete CPT review, comparison, and acceptance tests, TESTS ONLY (2026-10-10)](s48-c-devtest.md) |
+| S48d | [Regenerate only questions affected by patient-data changes (2026-10-10)](s48-d.md) |

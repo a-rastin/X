@@ -429,6 +429,19 @@ export async function getQuestionReview(runId: string): Promise<QuestionReviewPa
   );
 }
 
+/** Per-question input freshness only (S48d affected-only, seam T1).
+ *
+ * The batch `freshness` moves on ANY relevant edit, so a stale batch cannot
+ * say which questions are affected. This reads the same public GET review
+ * and returns just `input_freshness` so the proposal list can mark only
+ * affected runs out of date ◍ while unaffected keep valid references.
+ * Call it only when the batch is already stale — fresh batches imply every
+ * question is fresh (zero new requests). */
+export async function getQuestionInputFreshness(runId: string): Promise<InputFreshness> {
+  const review = await getQuestionReview(runId);
+  return review.input_freshness;
+}
+
 export interface AdjustmentPayload {
   revision: CptRevision;
   review_state: { review_revision: number; current_revision_id: string | null };

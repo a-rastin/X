@@ -546,9 +546,10 @@ def create_acceptance(
         return error_response(404, "NOT_FOUND", "Question run not found.", request_id)
     run = dict(run_row)
     # Author-only (403 for strangers/admin without content; 404 stays 404).
-    batch, _, freshness = snapshots_service.get_generation_batch(
-        session, run["batch_id"], physician
-    )
+    batch, _, _ = snapshots_service.get_generation_batch(session, run["batch_id"], physician)
+    # S48d affected-only: acceptance eligibility uses per-question inputs,
+    # not the whole-batch fingerprint (unrelated questions stay acceptable).
+    question_freshness = snapshots_service.get_question_input_freshness(session, run, batch)
     stored_baseline = coordinator_module.get_baseline(session, run_id)
     accepted = review_service.apply_acceptance(
         session,
@@ -556,8 +557,8 @@ def create_acceptance(
         run=run,
         batch=batch,
         baseline=stored_baseline,
-        stale=bool(freshness.get("stale", False)),
-        current_fingerprint=str(freshness.get("current_fingerprint", "")),
+        stale=bool(question_freshness.get("stale", False)),
+        current_fingerprint=str(question_freshness.get("current_fingerprint", "")),
         expected_review_revision=int(expected),
         baseline_id=payload.baseline_id,
         cpt_revision_id=payload.current_cpt_revision_id,
