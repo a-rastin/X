@@ -1,18 +1,16 @@
-"""CPT revision persistence + review snapshot (S48a, seams T1/T5).
+"""CPT revision persistence + local recalculation (S48a+S48b, seams T1/T5/T8).
 
-Plan.md §9.1 + system-design.md §§5, 8.2-8.3 (FR-50–52, FR-56, FR-42):
-completed slider commands persist one immutable complete ``cpt_revisions``
-row (full artifact/hash, parent/sequence, kind=adjustment, direct edit +
-redistributed before/after, actor/time) plus a mutable
-``question_review_states`` pointer, with atomic audit. All persistence uses
-the caller's transaction (never commits here). Original baselines and
-shared XML are read-only here (SELECT only, never UPDATE).
-
-Redistribution itself is pure ``redistribution.py`` (seam T5, integer
-units only); this module only looks up the target row, calls it, and
-persists the complete new artifact (other rows byte-for-byte unchanged).
-Local jobs/results, reset/retry, acceptance, freshness and signing arrive
-in S48b/S48c/S48d/S49 — none of those are created here.
+Plan.md §9.1 + system-design.md §§5, 8.2-8.4, 9 (FR-50–56, FR-58, FR-43):
+S48a persists immutable adjustments with deterministic redistribution;
+S48b queues revision-bound local jobs (no provider/MCP), executes only the
+fixed network/template/configuration with empty evidence, fences older
+responses, and supports explicit baseline-reuse reset + local-only retry.
+All persistence uses the caller's transaction (never commits here).
+Original baselines and shared XML are read-only (SELECT only, never UPDATE
+except the review-state pointer). Calculation state and displayed IDs
+derive on read (revisions + results + local jobs); acceptance clearing is
+the pointer move (old exact references no longer match; S48c owns the
+acceptance table).
 """
 
 from __future__ import annotations
@@ -32,8 +30,18 @@ from x_insight.probability_review import tables as review_tables
 
 ADJUSTMENT_IDEMPOTENCY_OPERATION = "cpt_adjustments"
 ADJUSTMENT_AUDIT_OPERATION = "cpt_adjustment.success"
+RESET_IDEMPOTENCY_OPERATION = "cpt_reset"
+RESET_AUDIT_OPERATION = "cpt_reset.success"
+RETRY_IDEMPOTENCY_OPERATION = "cpt_retry_calculation"
 
 INITIAL_REVIEW_REVISION = 1
+
+CALCULATION_STATES = (
+    "unchanged",
+    "recalculating",
+    "successfully_recalculated",
+    "failed",
+)
 
 
 def _fail(status: int, code: str, message: str, field: str) -> contracts.ContractError:
@@ -414,6 +422,27 @@ def apply_adjustment(
             "redistribution_version": redistribution_module.REDISTRIBUTION_RULE_VERSION,
         },
     )
+    # S48b: atomically clear acceptance (pointer move invalidates old
+    # exact-revision references; no acceptance table exists until S48c),
+    # mark recalculating and queue the exact saved revision/hash. Same
+    # transaction as the revision so acknowledgment always has a job.
+    # Local jobs need no provider/MCP context and touch no other run.
+    from x_insight.reasoning import queue as queue_module
+
+    try:
+        deployment = queue_module.get_deployment_generation(session)
+    except Exception:
+        deployment = 1
+    queue_module.insert_local_job(
+        session,
+        batch_id=run["batch_id"],
+        question_run_id=run["id"],
+        cpt_revision_id=revision_id,
+        cpt_hash=str(cpt_hash),
+        deployment_generation=int(deployment),
+        now=moment,
+    )
+    session.flush()
     created = (
         session.execute(
             select(review_tables.cpt_revisions).where(
@@ -437,3 +466,590 @@ def apply_adjustment(
     assert state_row is not None
     new_state = dict(state_row)
     return revision, new_state
+
+
+# --- S48b result storage + derivation (seams T1/T8) ---
+
+
+def safe_calculation_result(row: Mapping[str, Any]) -> dict[str, Any]:
+    """Public calculation-result shape (persisted data only, no secrets)."""
+    reused = row.get("reused_from_baseline_id")
+    return {
+        "id": str(row.get("id")),
+        "question_run_id": str(row.get("question_run_id")),
+        "batch_id": str(row.get("batch_id")),
+        "cpt_revision_id": str(row.get("cpt_revision_id")),
+        "cpt_hash": str(row.get("cpt_hash", "")),
+        "network_hash": str(row.get("network_hash", "")),
+        "network_version": str(row.get("network_version", "")),
+        "template_version": str(row.get("template_version", "")),
+        "query_nodes": list(row.get("query_nodes") or []),
+        "posteriors": list(row.get("posteriors") or []),
+        "section_text": str(row.get("section_text", "")),
+        "effective_hash": str(row.get("effective_hash", "")),
+        "effective_xml": str(row.get("effective_xml", "")),
+        "reused_from_baseline_id": str(reused) if reused is not None else None,
+        "provenance": dict(row.get("provenance") or {}),
+        "created_at": contracts.serialize_utc(row["created_at"]),
+    }
+
+
+def list_calculation_results(session: Session, run_id: Any) -> list[dict[str, Any]]:
+    rows = (
+        session.execute(
+            select(review_tables.calculation_results)
+            .where(review_tables.calculation_results.c.question_run_id == run_id)
+            .order_by(review_tables.calculation_results.c.created_at.asc())
+        )
+        .mappings()
+        .all()
+    )
+    return [dict(row) for row in rows]
+
+
+def get_calculation_result_for_revision(
+    session: Session, revision_id: Any
+) -> dict[str, Any] | None:
+    try:
+        want = uuid.UUID(str(revision_id))
+    except Exception:
+        return None
+    row = (
+        session.execute(
+            select(review_tables.calculation_results).where(
+                review_tables.calculation_results.c.cpt_revision_id == want
+            )
+        )
+        .mappings()
+        .first()
+    )
+    if row is not None:
+        return dict(row)
+    # Fallback string compare for UUID typing edges.
+    run_rows = session.execute(select(review_tables.calculation_results)).mappings().all()
+    for entry in run_rows:
+        if str(dict(entry).get("cpt_revision_id")) == str(revision_id):
+            return dict(entry)
+    return None
+
+
+def reset_request_hash(run_id: Any, expected_review_revision: int) -> str:
+    return contracts.canonical_hash(
+        {"run_id": str(run_id), "expected_review_revision": int(expected_review_revision)}
+    )
+
+
+def retry_request_hash(run_id: Any, expected_review_revision: int, revision_id: Any | None) -> str:
+    return contracts.canonical_hash(
+        {
+            "run_id": str(run_id),
+            "expected_review_revision": int(expected_review_revision),
+            "cpt_revision_id": str(revision_id) if revision_id is not None else None,
+        }
+    )
+
+
+def apply_reset(
+    session: Session,
+    *,
+    author: Mapping[str, Any],
+    run: Mapping[str, Any],
+    batch: Mapping[str, Any],
+    baseline: Mapping[str, Any] | None,
+    expected_review_revision: Any,
+    request_id: str,
+) -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
+    """Create an audited baseline-equal reset revision with verified reuse.
+
+    Restores every CPT row for this run from the immutable baseline,
+    clears acceptance via the pointer move, fences older in-flight
+    responses (they compare against the new pointer on commit), retains
+    history, and immediately binds the reset revision to the retained
+    original result (explicit verified reuse, no fresh execution). Other
+    runs/batches/DDI/generation are untouched. Stale inputs stay stale
+    (reset never regenerates); the caller still blocks acceptance/signing
+    on freshness. Raises ContractError (422 no baseline, 412 stale).
+    Returns (revision, review_state, calculation_result).
+    """
+    if not isinstance(expected_review_revision, int) or expected_review_revision < 1:
+        raise contracts.ContractError(
+            422,
+            "VALIDATION_FAILED",
+            "expected_review_revision must be a positive integer.",
+            {"expected_review_revision": ["Must be a positive integer."]},
+        )
+    expected = int(expected_review_revision)
+    if baseline is None:
+        raise contracts.ContractError(
+            422,
+            "ADJUSTMENT_NOT_AVAILABLE",
+            "No adjustable baseline exists for this question run.",
+            {"question_run": ["No successful original baseline to reset to."]},
+        )
+    locked_state_row = (
+        session.execute(
+            select(review_tables.question_review_states)
+            .where(review_tables.question_review_states.c.question_run_id == run["id"])
+            .with_for_update()
+        )
+        .mappings()
+        .first()
+    )
+    locked_state = dict(locked_state_row) if locked_state_row is not None else None
+    current_review = (
+        int(locked_state["review_revision"])
+        if locked_state is not None
+        else INITIAL_REVIEW_REVISION
+    )
+    if int(expected) != int(current_review):
+        raise contracts.ContractError(
+            412,
+            "STALE_REVISION",
+            "The probability review changed. Reload and reconcile your edits.",
+            {"expected_review_revision": ["Stale review revision."]},
+        )
+    latest = get_latest_revision(session, run["id"])
+    validated = baseline.get("validated_tables")
+    if not isinstance(validated, list) or not validated:
+        raise contracts.ContractError(
+            422,
+            "ADJUSTMENT_NOT_AVAILABLE",
+            "No adjustable baseline exists for this question run.",
+            {"question_run": ["No successful original baseline to reset to."]},
+        )
+    new_tables = copy.deepcopy([dict(t) for t in list(validated)])
+    cpt_hash = contracts.canonical_hash(new_tables)
+    if latest is None:
+        parent_id: Any = None
+        sequence = 1
+    else:
+        parent_id = latest["id"]
+        sequence = int(latest.get("sequence", 0)) + 1
+    moment = contracts.utcnow()
+    revision_id = uuid.uuid4()
+    # Verify reuse: reset artifact must equal the baseline tables exactly.
+    if contracts.canonical_hash(list(validated)) != cpt_hash:
+        raise contracts.ContractError(
+            422, "VALIDATION_FAILED", "Reset artifact does not match the baseline."
+        )
+    direct_edit = {"reset": True, "baseline_id": str(baseline.get("id"))}
+    before_hash = str(latest["cpt_hash"]) if latest is not None else None
+    before_row = {"cpt_hash": before_hash, "kind": "previous"}
+    after_row = {"cpt_hash": str(cpt_hash), "kind": "baseline_equal"}
+    session.execute(
+        insert(review_tables.cpt_revisions).values(
+            id=revision_id,
+            question_run_id=run["id"],
+            batch_id=run["batch_id"],
+            parent_revision_id=parent_id,
+            sequence=int(sequence),
+            kind="reset",
+            cpt_artifact=list(new_tables),
+            cpt_hash=str(cpt_hash),
+            direct_edit=dict(direct_edit),
+            before_row=dict(before_row),
+            after_row=dict(after_row),
+            actor_id=author["id"],
+            actor_username=str(author.get("username", "")),
+            redistribution_version=redistribution_module.REDISTRIBUTION_RULE_VERSION,
+            created_at=moment,
+        )
+    )
+    session.flush()
+    if locked_state is None:
+        session.execute(
+            insert(review_tables.question_review_states).values(
+                question_run_id=run["id"],
+                batch_id=run["batch_id"],
+                current_revision_id=revision_id,
+                review_revision=int(expected) + 1,
+                created_at=moment,
+                updated_at=moment,
+            )
+        )
+    else:
+        session.execute(
+            update(review_tables.question_review_states)
+            .where(review_tables.question_review_states.c.question_run_id == run["id"])
+            .values(
+                current_revision_id=revision_id,
+                review_revision=int(expected) + 1,
+                updated_at=moment,
+            )
+        )
+    session.flush()
+    # Explicit verified reuse: copy the immutable baseline output (same
+    # values + same network/template/query) without a new execution.
+    baseline_posteriors = list(baseline.get("posteriors") or [])
+    baseline_section = str(baseline.get("section_text", ""))
+    baseline_effective = str(baseline.get("effective_hash", ""))
+    baseline_xml = str(baseline.get("effective_xml", ""))
+    baseline_query = list(baseline.get("query_nodes") or [])
+    session.execute(
+        insert(review_tables.calculation_results).values(
+            id=uuid.uuid4(),
+            question_run_id=run["id"],
+            batch_id=run["batch_id"],
+            cpt_revision_id=revision_id,
+            cpt_hash=str(cpt_hash),
+            network_hash=str(baseline.get("source_hash", "")),
+            network_version=str(baseline.get("network_version", "")),
+            template_version=str(baseline.get("template_version", "")),
+            query_nodes=list(baseline_query),
+            posteriors=list(baseline_posteriors),
+            section_text=str(baseline_section),
+            effective_hash=str(baseline_effective),
+            effective_xml=str(baseline_xml),
+            reused_from_baseline_id=baseline.get("id"),
+            provenance={
+                "reuse": "verified_baseline",
+                "baseline_id": str(baseline.get("id")),
+                "question_key": str(run.get("question_key", "")),
+                "actor": str(author.get("username", "")),
+            },
+            created_at=moment,
+        )
+    )
+    session.flush()
+    audit_module.record_audit(
+        session,
+        operation=RESET_AUDIT_OPERATION,
+        actor=str(author.get("username")),
+        request_id=request_id,
+        details={
+            "encounter_id": str(batch.get("encounter_id")),
+            "batch_id": str(run.get("batch_id")),
+            "question_run_id": str(run.get("id")),
+            "question_key": str(run.get("question_key", "")),
+            "revision_id": str(revision_id),
+            "parent_revision_id": str(parent_id) if parent_id is not None else None,
+            "sequence": int(sequence),
+            "kind": "reset",
+            "baseline_id": str(baseline.get("id")),
+            "cpt_hash": str(cpt_hash),
+            "review_revision": int(expected) + 1,
+            "reuse": "verified_baseline",
+        },
+    )
+    created = (
+        session.execute(
+            select(review_tables.cpt_revisions).where(
+                review_tables.cpt_revisions.c.id == revision_id
+            )
+        )
+        .mappings()
+        .first()
+    )
+    assert created is not None
+    revision = dict(created)
+    state_row = (
+        session.execute(
+            select(review_tables.question_review_states).where(
+                review_tables.question_review_states.c.question_run_id == run["id"]
+            )
+        )
+        .mappings()
+        .first()
+    )
+    assert state_row is not None
+    new_state = dict(state_row)
+    result_row = (
+        session.execute(
+            select(review_tables.calculation_results).where(
+                review_tables.calculation_results.c.cpt_revision_id == revision_id
+            )
+        )
+        .mappings()
+        .first()
+    )
+    assert result_row is not None
+    return revision, new_state, dict(result_row)
+
+
+def ensure_retry_job(
+    session: Session,
+    *,
+    run: Mapping[str, Any],
+    batch: Mapping[str, Any],
+    expected_review_revision: Any,
+    revision_id: Any | None = None,
+    now: Any | None = None,
+) -> dict[str, Any]:
+    """Queue (or reuse) the local job for exactly the current revision.
+
+    Validates the optimistic pointer (412 when stale) and, when a revision
+    id is supplied, that it equals the current pointer (409 when
+    superseded). Targets the current saved revision only; never
+    re-estimates CPTs. Idempotent: queued/leased jobs for the revision
+    reuse; terminal jobs requeue on the same row. Raises ContractError
+    (422 no revision/baseline, 412 stale, 409 superseded).
+    """
+    from x_insight.reasoning import queue as queue_module
+
+    if not isinstance(expected_review_revision, int) or expected_review_revision < 1:
+        raise contracts.ContractError(
+            422,
+            "VALIDATION_FAILED",
+            "expected_review_revision must be a positive integer.",
+            {"expected_review_revision": ["Must be a positive integer."]},
+        )
+    expected = int(expected_review_revision)
+    moment = now or contracts.utcnow()
+    state = get_review_state(session, run["id"])
+    current_review = int(state["review_revision"]) if state is not None else INITIAL_REVIEW_REVISION
+    if int(expected) != int(current_review):
+        raise contracts.ContractError(
+            412,
+            "STALE_REVISION",
+            "The probability review changed. Reload and reconcile your edits.",
+            {"expected_review_revision": ["Stale review revision."]},
+        )
+    latest = get_latest_revision(session, run["id"])
+    if latest is None:
+        raise contracts.ContractError(
+            422,
+            "RETRY_NOT_AVAILABLE",
+            "No adjusted revision exists to retry.",
+            {"question_run": ["Nothing to retry."]},
+        )
+    current_id = str(latest["id"])
+    if revision_id is not None and str(revision_id) != current_id:
+        raise contracts.ContractError(
+            409,
+            "REVISION_SUPERSEDED",
+            "The revision was superseded. Retry the current revision.",
+            {"cpt_revision_id": ["Superseded revision."]},
+        )
+    existing = queue_module.find_local_job_for_revision(session, run["id"], current_id)
+    if existing is not None:
+        if str(existing.get("status")) in ("queued", "leased"):
+            return existing
+        if str(existing.get("status")) == "succeeded":
+            # Already solved: idempotent retry reuses (no duplicate work).
+            # Only failed/cancelled terminal rows requeue on the same row.
+            solved = get_calculation_result_for_revision(session, current_id)
+            if solved is not None:
+                return existing
+        return queue_module.requeue_local_job(session, existing["id"], now=moment)
+    try:
+        deployment = queue_module.get_deployment_generation(session)
+    except Exception:
+        deployment = 1
+    return queue_module.insert_local_job(
+        session,
+        batch_id=run["batch_id"],
+        question_run_id=run["id"],
+        cpt_revision_id=latest["id"],
+        cpt_hash=str(latest.get("cpt_hash", "")),
+        deployment_generation=int(deployment),
+        now=moment,
+    )
+
+
+def derive_calculation_view(
+    session: Session,
+    *,
+    run: Mapping[str, Any],
+    baseline: Mapping[str, Any] | None,
+    revisions: list[dict[str, Any]],
+    results: list[dict[str, Any]],
+    local_jobs: list[dict[str, Any]],
+) -> dict[str, Any]:
+    """Derive truthful calculation state + displayed IDs (no stored columns).
+
+    - ``unchanged``: baseline exists, no revisions (valid corresponding
+      result is the baseline itself).
+    - ``successfully_recalculated``: current revision has a successful
+      matching result.
+    - ``recalculating``: current revision is queued/leased (sliders stay
+      responsive, acceptance blocked).
+    - ``failed``: current revision preserved but unsolved (error in the
+      current job, or no job and no success); earlier success stays
+      separately labeled via ``displayed_*`` (null when the baseline is
+      the displayed success). Never labels an earlier result as solving
+      current CPTs (``current_result_matches`` false until solved).
+    """
+    by_revision: dict[str, dict[str, Any]] = {}
+    for entry in results:
+        by_revision[str(entry.get("cpt_revision_id"))] = entry
+    seq_by_revision: dict[str, int] = {}
+    for entry in revisions:
+        try:
+            seq_by_revision[str(entry.get("id"))] = int(entry.get("sequence", 0))
+        except Exception:
+            seq_by_revision[str(entry.get("id"))] = 0
+    if not revisions:
+        if baseline is None:
+            status = str(run.get("status", ""))
+            if status in ("not_applicable", "needs_clarification"):
+                state = "unchanged"
+            else:
+                state = "failed"
+            return {
+                "calculation_state": state,
+                "displayed_result_revision_id": None,
+                "current_result_matches": False if state == "failed" else True,
+                "calculation_result": None,
+                "displayed_result": None,
+            }
+        return {
+            "calculation_state": "unchanged",
+            "displayed_result_revision_id": None,
+            "current_result_matches": True,
+            "calculation_result": None,
+            "displayed_result": None,
+        }
+    current_id = str(revisions[-1].get("id"))
+    current_result = by_revision.get(current_id)
+    if current_result is not None:
+        safe = safe_calculation_result(current_result)
+        return {
+            "calculation_state": "successfully_recalculated",
+            "displayed_result_revision_id": current_id,
+            "current_result_matches": True,
+            "calculation_result": safe,
+            "displayed_result": safe,
+        }
+    # Current unsolved: find latest successful revision before current.
+    current_seq = seq_by_revision.get(current_id, 0)
+    earlier: dict[str, Any] | None = None
+    earlier_seq = -1
+    for rev_id, result in by_revision.items():
+        seq = seq_by_revision.get(rev_id, -1)
+        if seq < current_seq and seq > earlier_seq:
+            earlier = result
+            earlier_seq = seq
+    displayed_id = str(earlier.get("cpt_revision_id")) if earlier is not None else None
+    displayed_safe = safe_calculation_result(earlier) if earlier is not None else None
+    # Queued/leased for current => recalculating, else failed.
+    active = False
+    for job in local_jobs:
+        raw_diag: Any = job.get("diagnostics")
+        diag: dict[str, Any] = raw_diag if isinstance(raw_diag, dict) else {}
+        if str(diag.get("cpt_revision_id")) != current_id:
+            continue
+        if str(job.get("status")) in ("queued", "leased"):
+            active = True
+            break
+    return {
+        "calculation_state": "recalculating" if active else "failed",
+        "displayed_result_revision_id": displayed_id,
+        "current_result_matches": False,
+        "calculation_result": None,
+        "displayed_result": displayed_safe,
+    }
+
+
+def execute_local_revision(
+    revision: Mapping[str, Any],
+    run: Mapping[str, Any],
+    batch: Mapping[str, Any],
+    worker_id: str,
+) -> dict[str, Any]:
+    """Run only the fixed network/template/configuration with empty evidence.
+
+    Uses the saved revision CPTs + the run's pinned package (network XML,
+    template, query, versions). No provider/MCP access, no DDI, no other
+    run. Raises ``ValueError("<CODE>: ...")`` with a stable error code on
+    numerical/resource/template failures (caller marks the job failed and
+    preserves current CPTs + earlier success).
+    """
+    from x_insight.models.inference import (
+        build_effective_artifact,
+        infer_effective,
+        validate_cpts,
+    )
+    from x_insight.reasoning import coordinator as coordinator_module
+
+    package: Any = run.get("pinned_package")
+    if not isinstance(package, dict) or not isinstance(package.get("manifest"), Mapping):
+        raise ValueError("MISSING_PACKAGE: run has no pinned package")
+    try:
+        document = coordinator_module.load_document(package)
+    except ValueError as exc:
+        raise ValueError(str(exc)) from exc
+    manifest = package.get("manifest")
+    template = package.get("template")
+    if not isinstance(manifest, Mapping) or not isinstance(template, Mapping):
+        raise ValueError("PACKAGE_INVALID: manifest/template missing")
+    artifact_tables = revision.get("cpt_artifact")
+    if not isinstance(artifact_tables, list) or not artifact_tables:
+        raise ValueError("CPT_INVALID: revision holds no tables")
+    network_hash = str(manifest.get("network_hash", ""))
+    payload = {"network_hash": network_hash, "tables": list(artifact_tables)}
+    try:
+        report = validate_cpts(document, payload)
+    except Exception as exc:
+        raise ValueError(f"CPT_INVALID: {exc}") from exc
+    if not report.valid:
+        first = report.errors[0] if report.errors else None
+        code = str(getattr(first, "code", "CPT_INVALID") or "CPT_INVALID").upper()
+        raise ValueError(f"{code}: validated CPTs failed")
+    query_nodes = list(manifest.get("query_nodes", [])) or None
+    try:
+        artifact = build_effective_artifact(document, payload, query_nodes=query_nodes or None)
+    except Exception as exc:
+        code = str(getattr(exc, "code", "EFFECTIVE_INVALID") or "EFFECTIVE_INVALID").upper()
+        raise ValueError(f"{code}: effective artifact failed") from exc
+    try:
+        inference = infer_effective(artifact, patient_projection=run.get("projection"))
+    except Exception as exc:
+        code = str(getattr(exc, "code", "INFERENCE_FAILED") or "INFERENCE_FAILED").upper()
+        raise ValueError(f"{code}: local inference failed") from exc
+    declared: dict[str, Any] = {}
+    variables = manifest.get("variables", [])
+    if isinstance(variables, (list, tuple)):
+        for entry in variables:
+            if isinstance(entry, Mapping) and isinstance(entry.get("node_id"), str):
+                states = entry.get("states", [])
+                if isinstance(states, (list, tuple)):
+                    declared[str(entry["node_id"])] = [str(s) for s in states]
+    try:
+        section = coordinator_module.render_section(template, list(inference.posteriors), declared)
+    except ValueError as exc:
+        raise ValueError(str(exc)) from exc
+    posteriors_json: list[dict[str, Any]] = []
+    for post in inference.posteriors:
+        if isinstance(post, Mapping):
+            posteriors_json.append(
+                {
+                    "node_id": str(post.get("node_id", "")),
+                    "states": [str(s) for s in list(post.get("states", []))],
+                    "probabilities": [float(v) for v in list(post.get("probabilities", []))],
+                }
+            )
+        else:
+            posteriors_json.append(
+                {
+                    "node_id": str(getattr(post, "node_id", "")),
+                    "states": [str(s) for s in list(getattr(post, "states", []))],
+                    "probabilities": [float(v) for v in list(getattr(post, "probabilities", []))],
+                }
+            )
+    try:
+        effective_text = bytes(artifact.effective_bytes).decode("utf-8")
+    except Exception as exc:
+        raise ValueError("EFFECTIVE_INVALID: effective bytes not UTF-8") from exc
+    query_list = (
+        list(query_nodes)
+        if isinstance(query_nodes, list) and query_nodes
+        else list(artifact.query_nodes)
+    )
+    return {
+        "cpt_hash": str(revision.get("cpt_hash", "")),
+        "network_hash": str(network_hash),
+        "network_version": str(manifest.get("version", "v1")),
+        "template_version": str(manifest.get("template_version", "")),
+        "query_nodes": [str(q) for q in list(query_list)],
+        "posteriors": posteriors_json,
+        "section_text": str(section),
+        "effective_hash": str(artifact.effective_sha256),
+        "effective_xml": str(effective_text),
+        "reused_from_baseline_id": None,
+        "provenance": {
+            "question_key": str(run.get("question_key", "")),
+            "cpt_revision_id": str(revision.get("id")),
+            "worker_id": str(worker_id),
+            "engine": "local_empty_evidence",
+        },
+    }

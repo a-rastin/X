@@ -1,14 +1,21 @@
-"""Probability-review tables (S48a-owned; migration 0013 owns the DDL).
+"""Probability-review tables (S48a+S48b; migrations 0013-0014 own the DDL).
 
 - ``cpt_revisions`` — one immutable row per completed slider command:
-  run/batch FKs, parent revision, per-run sequence, kind ``adjustment``
-  (``reset`` reserved for S48b), complete CPT artifact + hash, direct edit
-  and redistributed before/after row values, actor/time. Immutable
+  run/batch FKs, parent revision, per-run sequence, kind ``adjustment`` or
+  ``reset`` (S48b), complete CPT artifact + hash, direct edit and
+  redistributed before/after row values, actor/time. Immutable
   (app SELECT+INSERT only).
 - ``question_review_states`` — one mutable pointer row per question run:
   current revision (null when baseline), optimistic ``review_revision``
-  (starts at 1, +1 per adjustment), timestamps. Mutable pointer only;
-  history lives in ``cpt_revisions``.
+  (starts at 1, +1 per adjustment/reset), timestamps. Mutable pointer only;
+  history lives in ``cpt_revisions``. Calculation state and displayed IDs
+  are derived on read (revisions + results + local jobs); no new columns.
+- ``calculation_results`` (S48b, migration 0014) — one immutable row per
+  successfully calculated revision: run/batch FKs, revision FK unique, CPT/
+  network hashes, versions, query/posteriors/section/effective artifact,
+  optional baseline reuse link, provenance. Failed locals create no row
+  (job + attempts carry the error), mirroring S45 baselines. App
+  SELECT+INSERT only.
 """
 
 from __future__ import annotations
@@ -89,3 +96,46 @@ question_review_states = Table(
 
 Index("ix_cpt_revisions_run_id", cpt_revisions.c.question_run_id)
 Index("ix_cpt_revisions_batch_id", cpt_revisions.c.batch_id)
+
+calculation_results = Table(
+    "calculation_results",
+    metadata,
+    Column("id", PG_UUID(as_uuid=True), primary_key=True),
+    Column(
+        "question_run_id",
+        PG_UUID(as_uuid=True),
+        ForeignKey("question_runs.id", ondelete="CASCADE"),
+        nullable=False,
+    ),
+    Column(
+        "batch_id",
+        PG_UUID(as_uuid=True),
+        ForeignKey("generation_batches.id", ondelete="CASCADE"),
+        nullable=False,
+    ),
+    Column(
+        "cpt_revision_id",
+        PG_UUID(as_uuid=True),
+        ForeignKey("cpt_revisions.id", ondelete="CASCADE"),
+        nullable=False,
+        unique=True,
+    ),
+    Column("cpt_hash", Text, nullable=False),
+    Column("network_hash", Text, nullable=False),
+    Column("network_version", Text, nullable=False),
+    Column("template_version", Text, nullable=False),
+    Column("query_nodes", JSONB, nullable=False),
+    Column("posteriors", JSONB, nullable=False),
+    Column("section_text", Text, nullable=False),
+    Column("effective_hash", Text, nullable=False),
+    Column("effective_xml", Text, nullable=False),
+    Column("reused_from_baseline_id", PG_UUID(as_uuid=True), nullable=True),
+    Column("provenance", JSONB, nullable=False),
+    Column("created_at", DateTime(timezone=True), nullable=False),
+    CheckConstraint("char_length(cpt_hash) = 64", name="ck_calc_results_cpt_sha256"),
+    CheckConstraint("char_length(network_hash) = 64", name="ck_calc_results_net_sha256"),
+    CheckConstraint("char_length(effective_hash) = 64", name="ck_calc_results_eff_sha256"),
+)
+
+Index("ix_calculation_results_run_id", calculation_results.c.question_run_id)
+Index("ix_calculation_results_batch_id", calculation_results.c.batch_id)

@@ -309,14 +309,20 @@ def read_generation(
 def read_question_review(
     run_id: uuid.UUID, request: Request, session: Session = Depends(get_session)
 ) -> JSONResponse:
-    """Author-only question review (S45+S48a, seam T1).
+    """Author-only question review (S45+S48a+S48b, seam T1).
 
     Returns the frozen run, its batch, the immutable baseline (or null),
     ``adjustable`` (true only with a baseline), the five transparency
     fields (or null), derived freshness, and queue visibility. S48a adds
     every root/conditional row with original/current values, full parent
     assignments and read-only outputs (``original_tables``/
-    ``current_tables``/``revisions``/``review_revision``). Wrong-author
+    ``current_tables``/``revisions``/``review_revision``). S48b adds exact
+    current/displayed-result revision IDs and freshness
+    (``calculation_state``/``displayed_result_revision_id``/
+    ``current_result_matches``/``input_freshness`` plus
+    ``calculation_result``/``displayed_result``/``calculation_results`` and
+    local-job visibility). Earlier successes stay labeled by their own
+    revision and are never presented as solving current CPTs. Wrong-author
     reads are 403 without content; missing runs are 404. Failed originals
     expose no adjustable baseline.
     """
@@ -353,13 +359,33 @@ def read_question_review(
     queue_view = queue_module.get_batch_queue_view(session, run["batch_id"])
     # S48a: original/current CPTs with full parent assignments, revision
     # history, optimistic pointer, and read-only output marker.
-    revisions = [
-        review_service.safe_revision(row) for row in review_service.list_revisions(session, run_id)
-    ]
+    raw_revisions = review_service.list_revisions(session, run_id)
+    revisions = [review_service.safe_revision(row) for row in raw_revisions]
     state_row = review_service.get_review_state(session, run_id)
     latest = review_service.get_latest_revision(session, run_id)
     current_tables = review_service.current_tables_for_run(stored, latest)
     original_tables = list(baseline["validated_tables"]) if baseline is not None else None
+    # S48b: derived calculation view (no stored columns) + local jobs/results.
+    raw_results = review_service.list_calculation_results(session, run_id)
+    safe_results = [review_service.safe_calculation_result(row) for row in raw_results]
+    local_jobs = [
+        queue_module.safe_job(job) for job in queue_module.list_local_jobs_for_run(session, run_id)
+    ]
+    # Raw jobs for derivation (diagnostics carry revision binding).
+    raw_local_jobs = queue_module.list_local_jobs_for_run(session, run_id)
+    view = review_service.derive_calculation_view(
+        session,
+        run=run,
+        baseline=stored,
+        revisions=[dict(r) for r in raw_revisions],
+        results=[dict(r) for r in raw_results],
+        local_jobs=[dict(j) for j in raw_local_jobs],
+    )
+    input_freshness = {
+        "stale": bool(freshness.get("stale", False)),
+        "reason": str(freshness.get("reason", "current")),
+        "current_fingerprint": str(freshness.get("current_fingerprint", "")),
+    }
     content: dict[str, Any] = {
         "question_run": snapshots_service.safe_run(run),
         "batch": snapshots_service.safe_batch(batch),
@@ -367,12 +393,20 @@ def read_question_review(
         "adjustable": baseline is not None,
         "transparency": transparency,
         "freshness": freshness,
+        "input_freshness": input_freshness,
         "job": queue_view.get("job"),
         "attempts": queue_view.get("attempts", 0),
         "queue": queue_view.get("queue"),
         "original_tables": original_tables,
         "current_tables": current_tables,
         "current_cpt_revision_id": str(latest["id"]) if latest is not None else None,
+        "displayed_result_revision_id": view.get("displayed_result_revision_id"),
+        "current_result_matches": bool(view.get("current_result_matches", False)),
+        "calculation_state": str(view.get("calculation_state", "unchanged")),
+        "calculation_result": view.get("calculation_result"),
+        "displayed_result": view.get("displayed_result"),
+        "calculation_results": safe_results,
+        "local_jobs": local_jobs,
         "review_revision": int(state_row["review_revision"])
         if state_row is not None
         else review_service.INITIAL_REVIEW_REVISION,
@@ -380,4 +414,20 @@ def read_question_review(
         "cpt_hash": str(latest["cpt_hash"]) if latest is not None else None,
         "outputs_read_only": True,
     }
+    # Current local job for convenience (null when baseline/reset-reuse).
+    current_id = str(latest["id"]) if latest is not None else None
+    current_job = None
+    if current_id is not None:
+        for job in local_jobs:
+            diag = None
+            for raw in raw_local_jobs:
+                if str(raw.get("id")) == str(job.get("id")):
+                    diag = (
+                        raw.get("diagnostics") if isinstance(raw.get("diagnostics"), dict) else {}
+                    )
+                    break
+            if diag is not None and str(diag.get("cpt_revision_id")) == current_id:
+                current_job = job
+                break
+    content["local_job"] = current_job
     return JSONResponse(status_code=200, content=content)

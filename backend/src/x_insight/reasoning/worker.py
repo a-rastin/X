@@ -1,10 +1,14 @@
-"""Durable worker entry point (S44+S45, seam T8; plan.md §§8.4-8.5, 8.2-8.3, 7.4, 9).
+"""Durable worker entry point (S44+S45+S48b, seam T8; plan.md §§8.4-8.5, 9.1).
 
 One ``run_once()`` used by tests and the polling process: reclaim expired
 leases, claim one fairly-ordered eligible job (short transaction, SKIP
 LOCKED), execute outside any DB transaction, then commit with fencing
 token + deployment generation checks.
 
+- S48b local path (tried first): revision-bound local recalculation with
+  separate capacity (``MAX_LOCAL_SLOTS``). Runs only the fixed network/
+  template/configuration with empty evidence; no provider/MCP access, no
+  DDI, no other run. Provider saturation never blocks this path.
 - S44 path (``ControlledStubAdapter``): deterministic stub outside any tx,
   then ``queue.commit_job_result`` (queue mechanics, no CPT work).
 - S45 path (``BoundedProviderAdapter``): full synthetic question via
@@ -12,10 +16,11 @@ token + deployment generation checks.
   all-CPT validation → effective XML → empty-evidence inference → template
   section with atomic baseline creation (no fake succeeded endpoint).
 
-No DB lock/transaction is held while awaiting the provider. Restart
-retains attempts + terminal artifacts (all rows persistent). Old tokens
-never commit after reclaim. Local-calculation jobs use separate capacity
-(S48b proof later); this worker only executes generation jobs.
+No DB lock/transaction is held while awaiting the provider or while
+running local inference. Restart retains attempts + terminal artifacts
+(all rows persistent). Old tokens never commit after reclaim. Superseded
+local successes remain historical; only the current revision moves
+derived state.
 """
 
 from __future__ import annotations
@@ -49,8 +54,9 @@ def run_once(
     URL for this call (tests pass the isolated test URL; production uses
     the adapter value or environment).
 
-    S44 stub providers keep the original minimal-request path; S45 bounded
-    providers delegate to the coordinator full pipeline (same entry point).
+    S48b local jobs run first (separate slots, no provider/MCP); S44 stub
+    providers keep the original minimal-request path; S45 bounded providers
+    delegate to the coordinator full pipeline (same entry point).
 
     Returns one of:
     - ``{'status': 'idle'}`` (no eligible work)
@@ -58,9 +64,10 @@ def run_once(
     - ``{'status': 'succeeded'|'failed'|'cancelled'|'queued', 'job_id': ...}``
       (``queued`` = retryable failure, backoff persisted in
       ``next_eligible_at``; the next ``run_once()`` past eligibility
-      consumes the next shared-budget attempt)
+      consumes the next shared-budget attempt; local jobs return
+      ``succeeded``/``failed``/``cancelled`` with ``job_class``)
     - ``{'status': 'fencing_failed', ...}`` (old token lost the race)
-    All observable via public run status (GET batch); no SQL-row asserts.
+    All observable via public run status (GET batch/review); no SQL-row asserts.
     """
     moment = now or contracts.utcnow()
     wid = worker_id or uuid.uuid4().hex[:12]
@@ -70,13 +77,29 @@ def run_once(
     with db_module.session_scope(engine) as session:
         queue_module.reclaim_expired_leases(session, now=moment)
 
+    # S48b local first: independent slots, no provider/MCP. Provider
+    # saturation (generation busy) never blocks this claim.
+    local_claimed: dict[str, Any] | None
+    with db_module.session_scope(engine) as session:
+        local_claimed = queue_module.claim_next_local_job(session, wid, now=moment)
+    local_busy = local_claimed is not None and "busy" in local_claimed
+    if local_claimed is not None and "job" in local_claimed:
+        assert "lease_token" in local_claimed
+        return _execute_local_claim(engine, local_claimed, moment, wid)
+
     claimed: dict[str, Any] | None
     with db_module.session_scope(engine) as session:
         claimed = queue_module.claim_next_job(session, wid, now=moment)
 
     if claimed is None:
+        if local_busy:
+            return {"status": "busy", "worker_id": wid, "job_class": "local_calculation"}
         return {"status": "idle", "worker_id": wid}
     if "busy" in claimed:
+        if local_busy:
+            return {"status": "busy", "worker_id": wid}
+        # Generation saturated but local had no work (None): report busy
+        # so callers see provider pressure; local progress already tried.
         return {"status": "busy", "worker_id": wid}
     assert "job" in claimed and "lease_token" in claimed
     job = claimed["job"]
@@ -145,4 +168,129 @@ def run_once(
         "worker_id": wid,
         "job_id": str(committed.get("id")),
         "batch_id": str(committed.get("batch_id")),
+    }
+
+
+def _execute_local_claim(
+    engine: Engine,
+    claimed: dict[str, Any],
+    moment: datetime,
+    worker_id: str,
+) -> dict[str, Any]:
+    """Execute one claimed local job (no provider/MCP, fixed snapshot only).
+
+    Runs outside any DB transaction; commits with lease + revision fencing
+    so older responses never replace current pointers (superseded successes
+    remain historical). Numerical/resource/template failures preserve
+    current CPTs and the earlier success (no result row, job failed).
+    """
+    from x_insight.probability_review import service as review_service
+
+    job = claimed["job"]
+    run = claimed["run"]
+    batch = claimed["batch"]
+    revision = claimed.get("revision")
+    lease_token = str(claimed["lease_token"])
+    if not isinstance(revision, dict) or not revision:
+        # Revision vanished after claim (should not happen; fence as failed).
+        with db_module.session_scope(engine) as session:
+            try:
+                committed = queue_module.commit_local_result(
+                    session,
+                    job["id"],
+                    lease_token,
+                    succeeded=False,
+                    result_payload=None,
+                    error_code="REVISION_MISSING",
+                    now=moment,
+                )
+            except contracts.ContractError as exc:
+                if exc.code in (
+                    "FENCING_TOKEN_MISMATCH",
+                    "LEASE_EXPIRED",
+                    "DEPLOYMENT_FENCED",
+                ):
+                    return {
+                        "status": "fencing_failed",
+                        "worker_id": worker_id,
+                        "job_id": str(job["id"]),
+                        "code": exc.code,
+                        "job_class": queue_module.LOCAL_CALCULATION_CLASS,
+                    }
+                raise
+        return {
+            "status": str(committed.get("status")),
+            "worker_id": worker_id,
+            "job_id": str(committed.get("id")),
+            "batch_id": str(committed.get("batch_id")),
+            "job_class": queue_module.LOCAL_CALCULATION_CLASS,
+        }
+    try:
+        payload = review_service.execute_local_revision(revision, run, batch, worker_id)
+    except ValueError as exc:
+        text = str(exc)
+        code = text.split(":", 1)[0].strip() or "CALCULATION_FAILED"
+        with db_module.session_scope(engine) as session:
+            try:
+                committed = queue_module.commit_local_result(
+                    session,
+                    job["id"],
+                    lease_token,
+                    succeeded=False,
+                    result_payload=None,
+                    error_code=code,
+                    now=moment,
+                )
+            except contracts.ContractError as fence:
+                if fence.code in (
+                    "FENCING_TOKEN_MISMATCH",
+                    "LEASE_EXPIRED",
+                    "DEPLOYMENT_FENCED",
+                ):
+                    return {
+                        "status": "fencing_failed",
+                        "worker_id": worker_id,
+                        "job_id": str(job["id"]),
+                        "code": fence.code,
+                        "job_class": queue_module.LOCAL_CALCULATION_CLASS,
+                    }
+                raise
+        return {
+            "status": str(committed.get("status")),
+            "worker_id": worker_id,
+            "job_id": str(committed.get("id")),
+            "batch_id": str(committed.get("batch_id")),
+            "job_class": queue_module.LOCAL_CALCULATION_CLASS,
+        }
+    with db_module.session_scope(engine) as session:
+        try:
+            committed = queue_module.commit_local_result(
+                session,
+                job["id"],
+                lease_token,
+                succeeded=True,
+                result_payload=dict(payload),
+                error_code=None,
+                now=moment,
+            )
+        except contracts.ContractError as exc:
+            if exc.code in (
+                "FENCING_TOKEN_MISMATCH",
+                "LEASE_EXPIRED",
+                "DEPLOYMENT_FENCED",
+            ):
+                return {
+                    "status": "fencing_failed",
+                    "worker_id": worker_id,
+                    "job_id": str(job["id"]),
+                    "code": exc.code,
+                    "job_class": queue_module.LOCAL_CALCULATION_CLASS,
+                }
+            raise
+    return {
+        "status": str(committed.get("status")),
+        "worker_id": worker_id,
+        "job_id": str(committed.get("id")),
+        "batch_id": str(committed.get("batch_id")),
+        "job_class": queue_module.LOCAL_CALCULATION_CLASS,
     }

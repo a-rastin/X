@@ -42,6 +42,13 @@ MAX_PROVIDER_SLOTS = 2
 MAX_QUEUED_RUNS = 100
 MAX_ATTEMPTS = 3
 
+# S48b separate local capacity (plan §§8.4, 9.1; FR-43, NFR-06): provider
+# saturation never consumes local slots. Tunable; 2 mirrors provider width
+# while keeping inference bounded (one process at a time per worker call).
+# ponytail: single constant, per-class counters reuse count_queued/leased.
+MAX_LOCAL_SLOTS = 2
+LOCAL_MAX_ATTEMPTS = 3
+
 # S47 shared retry budget (plan §8.5): initial attempt + two retries, three
 # total across transport/validation/stage failures. One backoff function
 # serves every failure path (no nested adapter retries, no sleep holding a
@@ -1358,6 +1365,717 @@ def commit_job_result(
             reasoning_tables.reasoning_grants.c.revoked_at.is_(None),
         )
         .values(revoked_at=moment)
+    )
+    session.flush()
+    committed = (
+        session.execute(
+            select(reasoning_tables.reasoning_jobs).where(
+                reasoning_tables.reasoning_jobs.c.id == job_id
+            )
+        )
+        .mappings()
+        .first()
+    )
+    assert committed is not None
+    return dict(committed)
+
+
+# --- S48b local calculation queue (seam T8; plan §9.1, system-design §§8.3-8.4) ---
+#
+# Local jobs share ``reasoning_jobs``/attempts/leases with a separate
+# ``job_class`` and capacity (``MAX_LOCAL_SLOTS``). Revision binding lives
+# in the existing ``diagnostics`` JSONB (``cpt_revision_id``/``cpt_hash``)
+# so no new job columns are needed; ``calculation_results`` (migration
+# 0014) holds one immutable success row per revision. No provider/MCP
+# context is created or consumed here.
+
+
+def _local_revision_of(job: dict[str, Any]) -> tuple[str | None, str | None]:
+    diag = job.get("diagnostics")
+    if not isinstance(diag, dict):
+        return None, None
+    rev = diag.get("cpt_revision_id")
+    h = diag.get("cpt_hash")
+    return (str(rev) if rev else None, str(h) if h else None)
+
+
+def list_local_jobs_for_run(session: Session, run_id: Any) -> list[dict[str, Any]]:
+    """All local jobs for one run in creation order (history, no tokens)."""
+    rows = (
+        session.execute(
+            select(reasoning_tables.reasoning_jobs)
+            .where(
+                reasoning_tables.reasoning_jobs.c.question_run_id == run_id,
+                reasoning_tables.reasoning_jobs.c.job_class == LOCAL_CALCULATION_CLASS,
+            )
+            .order_by(reasoning_tables.reasoning_jobs.c.created_at.asc())
+        )
+        .mappings()
+        .all()
+    )
+    return [dict(row) for row in rows]
+
+
+def find_local_job_for_revision(
+    session: Session, run_id: Any, revision_id: Any
+) -> dict[str, Any] | None:
+    """Latest local job for one run+revision (idempotent retry reuses it)."""
+    wanted = str(revision_id)
+    candidates = list_local_jobs_for_run(session, run_id)
+    matches = [job for job in candidates if _local_revision_of(job)[0] == wanted]
+    if not matches:
+        return None
+    # Latest by creation (requeue reuses the same row, so at most one
+    # queued/leased; terminal duplicates coalesce to the newest).
+    matches.sort(key=lambda job: str(job.get("created_at", "")))
+    return matches[-1]
+
+
+def insert_local_job(
+    session: Session,
+    *,
+    batch_id: Any,
+    question_run_id: Any,
+    cpt_revision_id: Any,
+    cpt_hash: str,
+    deployment_generation: int,
+    now: Any | None = None,
+) -> dict[str, Any]:
+    """Enqueue one revision-bound local job (caller's transaction).
+
+    One row per new revision (revision UUIDs are fresh, so no duplicate
+    check needed here). Retry for the same revision reuses via
+    ``find_local_job_for_revision`` + ``requeue`` instead of inserting.
+    Superseded queued jobs are left alone (fenced on commit, history kept;
+    coalescing is allowed but not required).
+    """
+    from datetime import datetime as _datetime  # local import, no new dep
+
+    _ = _datetime
+    moment = now or contracts.utcnow()
+    job_id = uuid.uuid4()
+    session.execute(
+        insert(reasoning_tables.reasoning_jobs).values(
+            id=job_id,
+            batch_id=batch_id,
+            question_run_id=question_run_id,
+            job_class=LOCAL_CALCULATION_CLASS,
+            status=QUEUED,
+            attempt_index=0,
+            max_attempts=LOCAL_MAX_ATTEMPTS,
+            lease_token=None,
+            lease_deadline=None,
+            last_heartbeat=None,
+            deployment_generation=int(deployment_generation),
+            next_eligible_at=None,
+            diagnostics={
+                "cpt_revision_id": str(cpt_revision_id),
+                "cpt_hash": str(cpt_hash),
+            },
+            result=None,
+            created_at=moment,
+            updated_at=moment,
+        )
+    )
+    session.flush()
+    row = (
+        session.execute(
+            select(reasoning_tables.reasoning_jobs).where(
+                reasoning_tables.reasoning_jobs.c.id == job_id
+            )
+        )
+        .mappings()
+        .first()
+    )
+    assert row is not None
+    return dict(row)
+
+
+def requeue_local_job(session: Session, job_id: Any, now: Any | None = None) -> dict[str, Any]:
+    """Return a terminal local job to queued for explicit retry (same row).
+
+    Keeps attempt history (ledger retains prior attempts); the next claim
+    consumes the next attempt index. Only terminal rows requeue; active
+    rows return unchanged (idempotent retry coalesces).
+    """
+    moment = now or contracts.utcnow()
+    row = (
+        session.execute(
+            select(reasoning_tables.reasoning_jobs).where(
+                reasoning_tables.reasoning_jobs.c.id == job_id
+            )
+        )
+        .mappings()
+        .first()
+    )
+    if row is None:
+        raise contracts.ContractError(404, "NOT_FOUND", "Job not found.")
+    job = dict(row)
+    if str(job.get("job_class")) != LOCAL_CALCULATION_CLASS:
+        raise contracts.ContractError(404, "NOT_FOUND", "Job not found.")
+    if str(job.get("status")) in ACTIVE_JOB_STATUSES:
+        return job
+    if str(job.get("status")) not in TERMINAL_JOB_STATUSES:
+        return job
+    session.execute(
+        update(reasoning_tables.reasoning_jobs)
+        .where(reasoning_tables.reasoning_jobs.c.id == job_id)
+        .values(lease_token=None, status=QUEUED, next_eligible_at=None, updated_at=moment)
+    )
+    session.flush()
+    reread = (
+        session.execute(
+            select(reasoning_tables.reasoning_jobs).where(
+                reasoning_tables.reasoning_jobs.c.id == job_id
+            )
+        )
+        .mappings()
+        .first()
+    )
+    assert reread is not None
+    return dict(reread)
+
+
+def _is_local_job_eligible(
+    session: Session,
+    job: dict[str, Any],
+    batch: dict[str, Any],
+    run: dict[str, Any],
+    now: Any,
+) -> tuple[bool, str]:
+    """Author/draft/baseline/revision checks before local work (no fingerprint).
+
+    Stale inputs stay eligible (fixed snapshot still calculates; freshness
+    remains stale and blocks acceptance/signing). Deactivation/discard
+    fences here so late commits never land. No provider/MCP checks.
+    Returns (eligible, reason).
+    """
+    from x_insight.cases import encounters as encounters_service
+    from x_insight.identity import service as identity_service
+    from x_insight.probability_review import service as review_service
+    from x_insight.reasoning import coordinator as coordinator_module
+
+    encounter = encounters_service.get_encounter(session, batch["encounter_id"])
+    if encounter is None or encounter.get("lifecycle") != "draft":
+        return False, "encounter not draft"
+    author = identity_service.get_user_by_id(session, batch["author_id"])
+    if author is None or not author.get("active", False):
+        return False, "author inactive"
+    rev_id, rev_hash = _local_revision_of(job)
+    if not rev_id or not rev_hash:
+        return False, "missing revision binding"
+    # Revision must still exist; hash must match the saved revision.
+    revision_row = None
+    for entry in review_service.list_revisions(session, run["id"]):
+        if str(entry.get("id")) == rev_id:
+            revision_row = entry
+            break
+    if revision_row is None:
+        return False, "revision missing"
+    if str(revision_row.get("cpt_hash", "")) != rev_hash:
+        return False, "hash mismatch"
+    stored = coordinator_module.get_baseline(session, run["id"])
+    if stored is None:
+        return False, "no baseline"
+    next_at = job.get("next_eligible_at")
+    try:
+        from datetime import datetime as _dt
+
+        if next_at is not None and isinstance(next_at, _dt) and next_at > now:
+            return False, "not yet eligible"
+    except Exception:
+        pass
+    return True, "eligible"
+
+
+def claim_next_local_job(
+    session: Session, worker_id: str, now: Any | None = None
+) -> dict[str, Any] | None:
+    """Claim one eligible local job (short transaction, separate capacity).
+
+    - Local slots only (``MAX_LOCAL_SLOTS``); provider saturation never
+      blocks this path and no provider grant is created.
+    - Fair rotation per local class (``reasoning_fairness`` keyed by
+      ``local_calculation``) then FIFO within physician.
+    - Per-run exclusivity: one leased local per question run (superseded
+      queued jobs wait; fenced on commit).
+    Returns ``{'job', 'lease_token', 'run', 'batch', 'revision'}`` or None /
+    ``{'busy': True}`` (local slots saturated).
+    """
+    moment = now or contracts.utcnow()
+    _ = worker_id
+    deployment = lock_deployment(session)
+    reclaim_expired_leases(session, now=moment)
+    if count_leased(session, LOCAL_CALCULATION_CLASS) >= MAX_LOCAL_SLOTS:
+        return {"busy": True}
+    candidates = (
+        session.execute(
+            select(reasoning_tables.reasoning_jobs)
+            .where(
+                reasoning_tables.reasoning_jobs.c.job_class == LOCAL_CALCULATION_CLASS,
+                reasoning_tables.reasoning_jobs.c.status == QUEUED,
+                (
+                    reasoning_tables.reasoning_jobs.c.next_eligible_at.is_(None)
+                    | (reasoning_tables.reasoning_jobs.c.next_eligible_at <= moment)
+                ),
+            )
+            .order_by(reasoning_tables.reasoning_jobs.c.created_at.asc())
+            .limit(50)
+        )
+        .mappings()
+        .all()
+    )
+    if not candidates:
+        return None
+    fairness_rows = {
+        str(dict(row)["author_id"]): dict(row)
+        for row in session.execute(select(reasoning_tables.reasoning_fairness)).mappings()
+    }
+    by_author: dict[str, dict[str, Any]] = {}
+    for entry in candidates:
+        job = dict(entry)
+        batch_row = (
+            session.execute(
+                select(reasoning_tables.generation_batches).where(
+                    reasoning_tables.generation_batches.c.id == job["batch_id"]
+                )
+            )
+            .mappings()
+            .first()
+        )
+        run_row = (
+            session.execute(
+                select(reasoning_tables.question_runs).where(
+                    reasoning_tables.question_runs.c.id == job["question_run_id"]
+                )
+            )
+            .mappings()
+            .first()
+        )
+        if batch_row is None or run_row is None:
+            continue
+        batch = dict(batch_row)
+        run = dict(run_row)
+        author_key = str(batch["author_id"])
+        if (
+            author_key not in by_author
+            or job["created_at"] < by_author[author_key]["job"]["created_at"]
+        ):
+            by_author[author_key] = {"job": job, "batch": batch, "run": run}
+
+    def _author_sort_key(item: tuple[str, dict[str, Any]]) -> tuple[Any, Any]:
+        author_key, bundle = item
+        fair = fairness_rows.get(author_key)
+        last = None
+        if fair is not None:
+            last = fair.get("last_granted_at") if isinstance(fair, dict) else None
+        return ((1, last) if last is not None else (0, moment), bundle["job"]["created_at"])
+
+    ordered_authors = sorted(by_author.items(), key=_author_sort_key)
+    chosen: dict[str, Any] | None = None
+    for _, bundle in ordered_authors:
+        job = bundle["job"]
+        batch = bundle["batch"]
+        run = bundle["run"]
+        other_leased = session.execute(
+            select(reasoning_tables.reasoning_jobs.c.id)
+            .where(
+                reasoning_tables.reasoning_jobs.c.question_run_id == run["id"],
+                reasoning_tables.reasoning_jobs.c.job_class == LOCAL_CALCULATION_CLASS,
+                reasoning_tables.reasoning_jobs.c.status == LEASED,
+            )
+            .limit(1)
+        ).first()
+        if other_leased is not None:
+            continue
+        eligible, reason = _is_local_job_eligible(session, job, batch, run, moment)
+        if not eligible:
+            if reason in ("not yet eligible",):
+                continue
+            session.execute(
+                update(reasoning_tables.reasoning_jobs)
+                .where(reasoning_tables.reasoning_jobs.c.id == job["id"])
+                .values(lease_token=None, status=CANCELLED, updated_at=moment)
+            )
+            continue
+        locked = (
+            session.execute(
+                select(reasoning_tables.reasoning_jobs)
+                .where(reasoning_tables.reasoning_jobs.c.id == job["id"])
+                .with_for_update(skip_locked=True)
+            )
+            .mappings()
+            .first()
+        )
+        if locked is None:
+            continue
+        locked_job = dict(locked)
+        if str(locked_job.get("status")) != QUEUED:
+            continue
+        chosen = {"job": locked_job, "batch": batch, "run": run}
+        break
+    if chosen is None:
+        if count_leased(session, LOCAL_CALCULATION_CLASS) >= MAX_LOCAL_SLOTS:
+            return {"busy": True}
+        return None
+    job = chosen["job"]
+    batch = chosen["batch"]
+    run = chosen["run"]
+    lease_token = new_fencing_token()
+    deadline = moment + timedelta(seconds=LEASE_SECONDS)
+    new_index = int(job.get("attempt_index", 0)) + 1
+    if new_index > int(job.get("max_attempts", LOCAL_MAX_ATTEMPTS)):
+        session.execute(
+            update(reasoning_tables.reasoning_jobs)
+            .where(reasoning_tables.reasoning_jobs.c.id == job["id"])
+            .values(lease_token=None, status=FAILED, updated_at=moment)
+        )
+        session.flush()
+        return None
+    session.execute(
+        update(reasoning_tables.reasoning_jobs)
+        .where(reasoning_tables.reasoning_jobs.c.id == job["id"])
+        .values(
+            status=LEASED,
+            lease_token=lease_token,
+            lease_deadline=deadline,
+            last_heartbeat=moment,
+            deployment_generation=int(deployment),
+            attempt_index=new_index,
+            updated_at=moment,
+        )
+    )
+    session.execute(
+        insert(reasoning_tables.reasoning_job_attempts).values(
+            id=uuid.uuid4(),
+            job_id=job["id"],
+            attempt_index=new_index,
+            stage="calculating",
+            lease_token=lease_token,
+            deployment_generation=int(deployment),
+            started_at=moment,
+            finished_at=None,
+            outcome="started",
+            error_code=None,
+            diagnostics={"worker_id": worker_id, "job_class": LOCAL_CALCULATION_CLASS},
+            result=None,
+        )
+    )
+    existing_fair = (
+        session.execute(
+            select(reasoning_tables.reasoning_fairness).where(
+                reasoning_tables.reasoning_fairness.c.job_class == LOCAL_CALCULATION_CLASS,
+                reasoning_tables.reasoning_fairness.c.author_id == batch["author_id"],
+            )
+        )
+        .mappings()
+        .first()
+    )
+    if existing_fair is None:
+        session.execute(
+            insert(reasoning_tables.reasoning_fairness).values(
+                job_class=LOCAL_CALCULATION_CLASS,
+                author_id=batch["author_id"],
+                last_granted_at=moment,
+            )
+        )
+    else:
+        session.execute(
+            update(reasoning_tables.reasoning_fairness)
+            .where(
+                reasoning_tables.reasoning_fairness.c.job_class == LOCAL_CALCULATION_CLASS,
+                reasoning_tables.reasoning_fairness.c.author_id == batch["author_id"],
+            )
+            .values(last_granted_at=moment)
+        )
+    session.flush()
+    claimed = (
+        session.execute(
+            select(reasoning_tables.reasoning_jobs).where(
+                reasoning_tables.reasoning_jobs.c.id == job["id"]
+            )
+        )
+        .mappings()
+        .first()
+    )
+    assert claimed is not None
+    claimed_job = dict(claimed)
+    rev_id, _ = _local_revision_of(claimed_job)
+    found_revision: dict[str, Any] | None = None
+    if rev_id is not None:
+        from x_insight.probability_review import service as review_service
+
+        for rev_entry in review_service.list_revisions(session, run["id"]):
+            rev_dict = dict(rev_entry)
+            if str(rev_dict.get("id")) == rev_id:
+                found_revision = rev_dict
+                break
+    return {
+        "job": claimed_job,
+        "lease_token": lease_token,
+        "run": dict(run),
+        "batch": dict(batch),
+        "revision": dict(found_revision) if found_revision is not None else None,
+    }
+
+
+def commit_local_result(
+    session: Session,
+    job_id: Any,
+    lease_token: str,
+    *,
+    succeeded: bool,
+    result_payload: dict[str, Any] | None = None,
+    error_code: str | None = None,
+    now: Any | None = None,
+) -> dict[str, Any]:
+    """Commit one local calculation with lease + revision fencing (one tx).
+
+    Fencing first (lease token, deadline, deployment). Then author/draft
+    eligibility: stale inputs stay eligible (fixed snapshot still solves),
+    deactivation/discard cancels without publishing. Then revision fencing:
+    the committing revision is compared to the current pointer; matches
+    publish (insert immutable success row when succeeded, job succeeded/
+    failed), superseded successes still insert as historical rows but never
+    move current pointers (derived state keeps truthful labels). Duplicate
+    success inserts are idempotent (existing row wins). Audit commits
+    atomically with the job/result.
+    """
+    from x_insight.operations import audit as audit_module
+    from x_insight.probability_review import tables as review_tables
+
+    moment = now or contracts.utcnow()
+    row = (
+        session.execute(
+            select(reasoning_tables.reasoning_jobs)
+            .where(reasoning_tables.reasoning_jobs.c.id == job_id)
+            .with_for_update()
+        )
+        .mappings()
+        .first()
+    )
+    if row is None:
+        raise contracts.ContractError(404, "NOT_FOUND", "Job not found.")
+    job = dict(row)
+    if str(job.get("job_class")) != LOCAL_CALCULATION_CLASS:
+        raise contracts.ContractError(404, "NOT_FOUND", "Job not found.")
+    if str(job.get("status")) != LEASED or str(job.get("lease_token") or "") != lease_token:
+        raise contracts.ContractError(
+            409,
+            "FENCING_TOKEN_MISMATCH",
+            "Lease expired or reclaimed; result not committed.",
+            {"job_id": ["Lease expired or reclaimed."]},
+        )
+    deadline = job.get("lease_deadline")
+    if not isinstance(deadline, datetime) or deadline <= moment:
+        raise contracts.ContractError(
+            409,
+            "LEASE_EXPIRED",
+            "Lease expired; result not committed.",
+            {"job_id": ["Lease expired."]},
+        )
+    if int(job.get("deployment_generation", 0)) != get_deployment_generation(session):
+        raise contracts.ContractError(
+            409,
+            "DEPLOYMENT_FENCED",
+            "Deployment changed; result not committed.",
+            {"job_id": ["Deployment changed."]},
+        )
+    batch = (
+        session.execute(
+            select(reasoning_tables.generation_batches).where(
+                reasoning_tables.generation_batches.c.id == job["batch_id"]
+            )
+        )
+        .mappings()
+        .first()
+    )
+    run = (
+        session.execute(
+            select(reasoning_tables.question_runs).where(
+                reasoning_tables.question_runs.c.id == job["question_run_id"]
+            )
+        )
+        .mappings()
+        .first()
+    )
+    if batch is None or run is None:
+        raise contracts.ContractError(404, "NOT_FOUND", "Batch or run missing.")
+    batch_dict = dict(batch)
+    run_dict = dict(run)
+    eligible, _ = _is_local_job_eligible(session, job, batch_dict, run_dict, moment)
+    if not eligible:
+        session.execute(
+            update(reasoning_tables.reasoning_jobs)
+            .where(reasoning_tables.reasoning_jobs.c.id == job_id)
+            .values(lease_token=None, status=CANCELLED, updated_at=moment)
+        )
+        session.execute(
+            update(reasoning_tables.reasoning_job_attempts)
+            .where(
+                reasoning_tables.reasoning_job_attempts.c.job_id == job_id,
+                reasoning_tables.reasoning_job_attempts.c.lease_token == lease_token,
+                reasoning_tables.reasoning_job_attempts.c.outcome == "started",
+            )
+            .values(finished_at=moment, outcome="failed", error_code="STALE_INPUT")
+        )
+        session.flush()
+        reread = (
+            session.execute(
+                select(reasoning_tables.reasoning_jobs).where(
+                    reasoning_tables.reasoning_jobs.c.id == job_id
+                )
+            )
+            .mappings()
+            .first()
+        )
+        assert reread is not None
+        return dict(reread)
+    rev_id, rev_hash = _local_revision_of(job)
+    assert rev_id is not None and rev_hash is not None
+    # Current pointer for revision fencing (no update here; state derives).
+    state_row = (
+        session.execute(
+            select(review_tables.question_review_states).where(
+                review_tables.question_review_states.c.question_run_id == job["question_run_id"]
+            )
+        )
+        .mappings()
+        .first()
+    )
+    current_rev = (
+        str(state_row["current_revision_id"])
+        if state_row is not None and state_row.get("current_revision_id") is not None
+        else None
+    )
+    is_current = current_rev is not None and current_rev == rev_id
+    final_status = SUCCEEDED if succeeded else FAILED
+    if succeeded:
+        payload = dict(result_payload or {})
+        # Idempotent: existing success for this revision wins (no duplicate).
+        try:
+            rev_uuid = uuid.UUID(str(rev_id))
+        except Exception:
+            rev_uuid = None
+        existing = None
+        if rev_uuid is not None:
+            existing = (
+                session.execute(
+                    select(review_tables.calculation_results).where(
+                        review_tables.calculation_results.c.cpt_revision_id == rev_uuid
+                    )
+                )
+                .mappings()
+                .first()
+            )
+        if existing is None:
+            # Fallback string compare for UUID typing edges.
+            all_for_run = (
+                session.execute(
+                    select(review_tables.calculation_results).where(
+                        review_tables.calculation_results.c.question_run_id
+                        == job["question_run_id"]
+                    )
+                )
+                .mappings()
+                .all()
+            )
+            for entry in all_for_run:
+                if str(dict(entry).get("cpt_revision_id")) == rev_id:
+                    existing = entry
+                    break
+        if existing is None:
+            try:
+                reused_raw = payload.get("reused_from_baseline_id")
+                reused_uuid = uuid.UUID(str(reused_raw)) if reused_raw else None
+            except Exception:
+                reused_uuid = None
+            session.execute(
+                insert(review_tables.calculation_results).values(
+                    id=uuid.uuid4(),
+                    question_run_id=job["question_run_id"],
+                    batch_id=job["batch_id"],
+                    cpt_revision_id=rev_uuid,
+                    cpt_hash=str(payload.get("cpt_hash") or rev_hash),
+                    network_hash=str(payload.get("network_hash") or ""),
+                    network_version=str(payload.get("network_version") or ""),
+                    template_version=str(payload.get("template_version") or ""),
+                    query_nodes=list(payload.get("query_nodes") or []),
+                    posteriors=list(payload.get("posteriors") or []),
+                    section_text=str(payload.get("section_text") or ""),
+                    effective_hash=str(payload.get("effective_hash") or ""),
+                    effective_xml=str(payload.get("effective_xml") or ""),
+                    reused_from_baseline_id=reused_uuid,
+                    provenance=dict(payload.get("provenance") or {}),
+                    created_at=moment,
+                )
+            )
+        audit_module.record_audit(
+            session,
+            operation="calculation.success",
+            actor="worker",
+            request_id=str(job_id),
+            details={
+                "encounter_id": str(batch_dict.get("encounter_id")),
+                "batch_id": str(job.get("batch_id")),
+                "question_run_id": str(job.get("question_run_id")),
+                "question_key": str(run_dict.get("question_key", "")),
+                "cpt_revision_id": str(rev_id),
+                "cpt_hash": str(rev_hash),
+                "is_current": bool(is_current),
+                "superseded": bool(not is_current),
+            },
+        )
+    else:
+        audit_module.record_audit(
+            session,
+            operation="calculation.failed",
+            actor="worker",
+            request_id=str(job_id),
+            details={
+                "encounter_id": str(batch_dict.get("encounter_id")),
+                "batch_id": str(job.get("batch_id")),
+                "question_run_id": str(job.get("question_run_id")),
+                "question_key": str(run_dict.get("question_key", "")),
+                "cpt_revision_id": str(rev_id),
+                "cpt_hash": str(rev_hash),
+                "error_code": str(error_code or "CALCULATION_FAILED"),
+                "is_current": bool(is_current),
+                "superseded": bool(not is_current),
+            },
+        )
+    session.execute(
+        update(reasoning_tables.reasoning_jobs)
+        .where(reasoning_tables.reasoning_jobs.c.id == job_id)
+        .values(
+            lease_token=None,
+            status=final_status,
+            diagnostics={
+                **(dict(job.get("diagnostics") or {})),
+                **(
+                    {"last_error": str(error_code or "CALCULATION_FAILED")} if not succeeded else {}
+                ),
+            },
+            result=dict(result_payload or {})
+            if succeeded
+            else {"error": str(error_code or "CALCULATION_FAILED")},
+            updated_at=moment,
+        )
+    )
+    session.execute(
+        update(reasoning_tables.reasoning_job_attempts)
+        .where(
+            reasoning_tables.reasoning_job_attempts.c.job_id == job_id,
+            reasoning_tables.reasoning_job_attempts.c.lease_token == lease_token,
+            reasoning_tables.reasoning_job_attempts.c.outcome == "started",
+        )
+        .values(
+            finished_at=moment,
+            stage="calculating",
+            outcome="succeeded" if succeeded else "failed",
+            error_code=None if succeeded else (error_code or "CALCULATION_FAILED"),
+            result=dict(result_payload or {}) if succeeded else None,
+        )
     )
     session.flush()
     committed = (

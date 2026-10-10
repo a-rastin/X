@@ -3,10 +3,10 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest recorded checkpoint is [S48a](s48-a.md): durable planned-seam
-tests for complete CPT adjustments and deterministic redistribution (T1/T5,
-21 new tests, no implementation fix); regressions hold except pre-existing
-`test_only_s02_tables_exist` table-list drift. Content approvals remain as
+The latest recorded checkpoint is [S48b](s48-b.md): durable planned-seam
+tests for local recalculation with revision integrity, retry, and reset
+(T1/T8, 13 new tests, no implementation fix); regressions hold except
+pre-existing `test_only_s02_tables_exist` table-list drift. Content approvals remain as
 recorded in S39.b; bundle release and activation retain their independent
 status.
 
@@ -84,3 +84,4 @@ status.
 | S47 | [Bound failures and recover at exact failed stage (2026-10-09)](s47.md) |
 | S48 | [Build automatic proposal review and transparency UI (2026-10-09)](s48.md) |
 | S48a | [Persist complete CPT adjustments and deterministic redistribution (2026-10-10)](s48-a.md) |
+| S48b | [Recalculate locally with revision integrity, retry, and reset (2026-10-10)](s48-b.md) |

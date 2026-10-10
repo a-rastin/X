@@ -142,7 +142,8 @@ reasoning_jobs = Table(
         PG_UUID(as_uuid=True),
         ForeignKey("question_runs.id", ondelete="CASCADE"),
         nullable=False,
-        unique=True,
+        # S48b: one generation per run via partial unique
+        # uq_reasoning_jobs_generation_run (migration 0014); locals share it.
     ),
     Column("job_class", Text, nullable=False, default="generation"),
     Column("status", Text, nullable=False, default="queued"),

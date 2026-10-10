@@ -1,4 +1,4 @@
-"""CPT adjustment commands (S48a, seam T1).
+"""CPT adjustment/reset/retry commands (S48a+S48b, seam T1).
 
 ``POST /api/v1/question-runs/{id}/cpt-adjustments`` — author-only
 (physician + CSRF). Body carries the target row identity
@@ -8,12 +8,27 @@ pointer, ``If-Match`` wins when present). The server redistributes from
 the immediately preceding committed row (integer units, largest-remainder,
 declared state-order ties), persists one immutable complete
 ``cpt_revisions`` row plus the ``question_review_states`` pointer and
-atomic audit, and returns the saved revision/state. ``Idempotency-Key``
-repeats return the original without duplicating revisions; same key with
-a different body is ``409``; stale expected revisions are ``412``;
-invalid targets/precision are ``422`` (never repaired). Failed originals
-(no ``OriginalBaseline``) have no adjustable baseline (``422``).
-Wrong-author/admin reads and adjustments are denied without content leak.
+atomic audit, clears acceptance via the pointer move, marks recalculating
+and queues the exact saved revision/hash (same transaction, no
+provider/MCP). ``Idempotency-Key`` repeats return the original without
+duplicating revisions/jobs; same key with a different body is ``409``;
+stale expected revisions are ``412``; invalid targets/precision are
+``422`` (never repaired). Failed originals (no ``OriginalBaseline``) have
+no adjustable baseline (``422``). Wrong-author/admin reads and adjustments
+are denied without content leak.
+
+``POST /api/v1/question-runs/{id}/reset`` — author-only baseline-equal
+reset (``expected_review_revision``). Creates an audited ``reset``
+revision restoring every CPT row from the immutable baseline, clears
+acceptance, fences older responses, retains history, and immediately
+binds the verified baseline result (explicit reuse, no new execution).
+Stale inputs stay stale (reset never regenerates).
+
+``POST /api/v1/question-runs/{id}/retry-calculation`` — author-only
+local-only retry for exactly the current revision
+(``expected_review_revision`` + optional ``current_cpt_revision_id``).
+Never re-estimates CPTs, never touches provider/MCP/DDI/generation.
+Superseded revision ids are ``409``; stale pointers are ``412``.
 """
 
 from __future__ import annotations
@@ -112,6 +127,23 @@ class AdjustmentRequest(BaseModel):
     state: str = Field(min_length=1)
     target_percentage: str = Field(min_length=1)
     expected_review_revision: int = Field(ge=1)
+
+
+class ResetRequest(BaseModel):
+    """Baseline-equal reset (extra=forbid, server verifies reuse)."""
+
+    model_config = {"extra": "forbid"}
+
+    expected_review_revision: int = Field(ge=1)
+
+
+class RetryRequest(BaseModel):
+    """Local-only retry for exactly the current revision (extra=forbid)."""
+
+    model_config = {"extra": "forbid"}
+
+    expected_review_revision: int = Field(ge=1)
+    current_cpt_revision_id: str | None = Field(default=None)
 
 
 @router.post("/question-runs/{run_id}/cpt-adjustments", status_code=200)
@@ -216,6 +248,207 @@ def create_adjustment(
         identity_service.store_idempotency(
             session,
             operation=review_service.ADJUSTMENT_IDEMPOTENCY_OPERATION,
+            actor_id=physician["id"],
+            key=key,
+            request_hash=request_hash,
+            response_status=200,
+            response_body=response_body,
+        )
+    return JSONResponse(status_code=200, content=response_body)
+
+
+def _resolve_expected(request: Request, body_expected: int) -> int | JSONResponse:
+    header_raw = request.headers.get(contracts.IF_MATCH_HEADER)
+    header_expected: int | None = None
+    if header_raw is not None and header_raw.strip() != "*":
+        header_expected = contracts.parse_if_match(header_raw)
+    expected = int(body_expected)
+    if header_expected is not None and int(header_expected) != int(expected):
+        return error_response(
+            412,
+            "STALE_REVISION",
+            "The probability review changed. Reload and reconcile your edits.",
+            get_request_id(request),
+            {"expected_review_revision": ["Stale review revision."]},
+        )
+    if header_expected is not None:
+        expected = int(header_expected)
+    return expected
+
+
+@router.post("/question-runs/{run_id}/reset", status_code=200)
+def create_reset(
+    run_id: uuid.UUID,
+    payload: ResetRequest,
+    request: Request,
+    session: Session = Depends(get_session),
+) -> JSONResponse:
+    from x_insight.reasoning import coordinator as coordinator_module
+    from x_insight.reasoning import snapshots as snapshots_service
+    from x_insight.reasoning import tables as reasoning_tables
+
+    request_id = get_request_id(request)
+    physician = _require_physician_mutation(request, session)
+    if isinstance(physician, JSONResponse):
+        return physician
+    assert isinstance(physician, dict)
+    resolved = _resolve_expected(request, int(payload.expected_review_revision))
+    if isinstance(resolved, JSONResponse):
+        return resolved
+    expected = int(resolved)
+    key = contracts.parse_idempotency_key(request.headers.get(contracts.IDEMPOTENCY_KEY_HEADER))
+    request_hash = review_service.reset_request_hash(run_id, expected)
+    if key is not None:
+        stored = identity_service.lookup_idempotency(
+            session,
+            operation=review_service.RESET_IDEMPOTENCY_OPERATION,
+            actor_id=physician["id"],
+            key=key,
+        )
+        if stored is not None:
+            if stored["request_hash"] != request_hash:
+                return error_response(
+                    409,
+                    "IDEMPOTENCY_CONFLICT",
+                    "Idempotency-Key was already used with a different request body.",
+                    request_id,
+                )
+            replay = dict(stored["response_body"])
+            return JSONResponse(status_code=int(stored["response_status"]), content=replay)
+    run_row = (
+        session.execute(
+            select(reasoning_tables.question_runs).where(
+                reasoning_tables.question_runs.c.id == run_id
+            )
+        )
+        .mappings()
+        .first()
+    )
+    if run_row is None:
+        return error_response(404, "NOT_FOUND", "Question run not found.", request_id)
+    run = dict(run_row)
+    batch, _, _ = snapshots_service.get_generation_batch(session, run["batch_id"], physician)
+    stored_baseline = coordinator_module.get_baseline(session, run_id)
+    revision, new_state, result = review_service.apply_reset(
+        session,
+        author=physician,
+        run=run,
+        batch=batch,
+        baseline=stored_baseline,
+        expected_review_revision=int(expected),
+        request_id=request_id,
+    )
+    safe_rev = review_service.safe_revision(revision)
+    safe_state = review_service.safe_review_state(new_state)
+    assert safe_state is not None
+    response_body: dict[str, Any] = {
+        "revision": safe_rev,
+        "review_state": safe_state,
+        "current_cpt_revision_id": safe_rev["id"],
+        "review_revision": int(safe_state["review_revision"]),
+        "cpt_hash": str(safe_rev["cpt_hash"]),
+        "current_tables": list(safe_rev["cpt_artifact"]),
+        "calculation_result": review_service.safe_calculation_result(result),
+        "reused_from_baseline_id": review_service.safe_calculation_result(result)[
+            "reused_from_baseline_id"
+        ],
+    }
+    if key is not None:
+        identity_service.store_idempotency(
+            session,
+            operation=review_service.RESET_IDEMPOTENCY_OPERATION,
+            actor_id=physician["id"],
+            key=key,
+            request_hash=request_hash,
+            response_status=200,
+            response_body=response_body,
+        )
+    return JSONResponse(status_code=200, content=response_body)
+
+
+@router.post("/question-runs/{run_id}/retry-calculation", status_code=200)
+def retry_calculation(
+    run_id: uuid.UUID,
+    payload: RetryRequest,
+    request: Request,
+    session: Session = Depends(get_session),
+) -> JSONResponse:
+    from x_insight.reasoning import queue as queue_module
+    from x_insight.reasoning import snapshots as snapshots_service
+    from x_insight.reasoning import tables as reasoning_tables
+
+    request_id = get_request_id(request)
+    physician = _require_physician_mutation(request, session)
+    if isinstance(physician, JSONResponse):
+        return physician
+    assert isinstance(physician, dict)
+    resolved = _resolve_expected(request, int(payload.expected_review_revision))
+    if isinstance(resolved, JSONResponse):
+        return resolved
+    expected = int(resolved)
+    supplied_rev = payload.current_cpt_revision_id
+    if supplied_rev is not None:
+        try:
+            uuid.UUID(str(supplied_rev))
+        except Exception:
+            return error_response(
+                422,
+                "VALIDATION_FAILED",
+                "current_cpt_revision_id must be a UUID.",
+                request_id,
+                {"current_cpt_revision_id": ["Must be a UUID."]},
+            )
+    key = contracts.parse_idempotency_key(request.headers.get(contracts.IDEMPOTENCY_KEY_HEADER))
+    request_hash = review_service.retry_request_hash(run_id, expected, supplied_rev)
+    if key is not None:
+        stored = identity_service.lookup_idempotency(
+            session,
+            operation=review_service.RETRY_IDEMPOTENCY_OPERATION,
+            actor_id=physician["id"],
+            key=key,
+        )
+        if stored is not None:
+            if stored["request_hash"] != request_hash:
+                return error_response(
+                    409,
+                    "IDEMPOTENCY_CONFLICT",
+                    "Idempotency-Key was already used with a different request body.",
+                    request_id,
+                )
+            replay = dict(stored["response_body"])
+            return JSONResponse(status_code=int(stored["response_status"]), content=replay)
+    run_row = (
+        session.execute(
+            select(reasoning_tables.question_runs).where(
+                reasoning_tables.question_runs.c.id == run_id
+            )
+        )
+        .mappings()
+        .first()
+    )
+    if run_row is None:
+        return error_response(404, "NOT_FOUND", "Question run not found.", request_id)
+    run = dict(run_row)
+    batch, _, _ = snapshots_service.get_generation_batch(session, run["batch_id"], physician)
+    job = review_service.ensure_retry_job(
+        session,
+        run=run,
+        batch=batch,
+        expected_review_revision=int(expected),
+        revision_id=supplied_rev,
+    )
+    safe = queue_module.safe_job(job)
+    # Never expose fencing tokens (safe_job already strips them).
+    response_body: dict[str, Any] = {
+        "job": safe,
+        "current_cpt_revision_id": str((job.get("diagnostics") or {}).get("cpt_revision_id")),
+        "review_revision": int(expected),
+        "cpt_hash": str((job.get("diagnostics") or {}).get("cpt_hash")),
+    }
+    if key is not None:
+        identity_service.store_idempotency(
+            session,
+            operation=review_service.RETRY_IDEMPOTENCY_OPERATION,
             actor_id=physician["id"],
             key=key,
             request_hash=request_hash,
