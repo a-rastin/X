@@ -3,25 +3,19 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest recorded checkpoint is [S53](s53.md): S53 complete —
-export lists and printable longitudinal patient reports
-(admin-only `GET /api/v1/exports/patients.csv` +
-`physicians.csv` + `GET /api/v1/patients/{id}/report` with
-`private, no-store` + export/report audit; stable
-headers/UTF-8/quoting, exact `0012345678` bytes,
-formula-neutralized text, escaped signed HTML with
-original+accepted CPTs/results/versions/indicators/
-attribution, drafts excluded; `BT/http/test_exports.py`
-14 T1; frontend ExportsPage/ReportPage/api + admin nav/guards +
-chart report link; `e2e/reporting.spec.ts` 6 × chromium/firefox
-12/12; tests/http 319 + 1 deselected, worker/probability 80,
-tsc clean, build 65 modules; regressions audit 7 + 43
-chromium). History is replaceable by DB-owner access/restore
-— NOT tamper-proof. Regressions hold except pre-existing
-`test_only_s02_tables_exist` drift, non-blocking identity pager
-gap (limit=100 vs 2139 rows), and the `ddi_*` suite-order
-workaround (truncate between http and worker suites). Next is
-S54 backups. Prior slices remain [S52](s52.md)
+The latest recorded checkpoint is [S54](s54.md): S54 complete —
+consistent full backups (admin-only `POST/GET /api/v1/backups` + download
+with `private, no-store` + audit; REPEATABLE READ snapshot, XML from
+snapshot, `backup-v1` manifest with runtime/config locks, sessions/key
+excluded with re-entry note, `*.part`-only cleanup, staging coherence;
+`BT/recovery/test_backup.py` 8 T10/T1; `e2e/backups.spec.ts` 4 ×
+chromium/firefox 8/8; tests/http 319 + 1 deselected, worker/probability
+80, tsc clean, build 67 modules; regressions audit 7 + reporting 6
+chromium). History is replaceable by DB-owner access/restore — NOT
+tamper-proof; regressions hold except `test_only_s02_tables_exist` drift
+(now misses `backup_jobs`), identity pager gap, and `ddi_*` suite-order
+workaround. Next is S55. Prior slices remain [S53](s53.md)
+(exports/reports), [S52](s52.md)
 (append-only audit/administration views), [S51](s51.md)
 (archive/deactivation/races), [S50](s50.md)
 (final-plan/sign/addenda UI), [S49](s49.md) (atomic signing
@@ -116,3 +110,4 @@ and activation retain their independent status.
 | S51 | [Close archive, deactivation, and multi-user race cases (2026-10-10)](s51.md) |
 | S52 | [Complete append-only audit and administration views (2026-10-10)](s52.md) |
 | S53 | [Export lists and printable longitudinal patient reports (2026-10-10)](s53.md) |
+| S54 | [Produce consistent full backups (2026-10-10)](s54.md) |

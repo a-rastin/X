@@ -2,6 +2,7 @@ import { useAuth } from "../features/identity/auth";
 import { PasswordForm } from "../features/identity/PasswordForm";
 import { PhysiciansPanel } from "../features/identity/PhysiciansPanel";
 import { AuditPage } from "../features/admin/audit/AuditPage";
+import { BackupsPage } from "../features/admin/backups/BackupsPage";
 import { ExportsPage } from "../features/admin/exports/ExportsPage";
 import { ReportPage } from "../features/admin/exports/ReportPage";
 import { NetworksPage } from "../features/admin/networks/NetworksPage";
@@ -130,6 +131,23 @@ export function ExportsRoutePage() {
     );
   }
   return <ExportsPage />;
+}
+
+export function BackupsRoutePage() {
+  const { user } = useAuth();
+  if (user?.role !== "admin") {
+    // Client-side complement to the server's 401/403 on /backups: never
+    // grant authority, just avoid rendering backup actions to the wrong role.
+    return (
+      <div>
+        <h2 className="xi-page-title">Full backups</h2>
+        <p className="xi-form-error" role="alert">
+          Administrator access required.
+        </p>
+      </div>
+    );
+  }
+  return <BackupsPage />;
 }
 
 export function ReportRoutePage({ patientId }: { patientId: string }) {

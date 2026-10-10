@@ -20,6 +20,7 @@ import {
   AccountPage,
   AdminDashboard,
   AuditRoutePage,
+  BackupsRoutePage,
   ExportsRoutePage,
   NetworksRoutePage,
   PhysicianDashboard,
@@ -198,6 +199,11 @@ export function App() {
                 Exports
               </NavLink>
             )}
+            {user.role === "admin" && (
+              <NavLink route="backups" current={route} navigate={navigate}>
+                Backups
+              </NavLink>
+            )}
             <NavLink route="account" current={route} navigate={navigate}>
               Account
             </NavLink>
@@ -245,6 +251,7 @@ export function App() {
             {!showWarningGate && route === "networks" && <NetworksRoutePage />}
             {!showWarningGate && route === "audit" && <AuditRoutePage />}
             {!showWarningGate && route === "exports" && <ExportsRoutePage />}
+            {!showWarningGate && route === "backups" && <BackupsRoutePage />}
             {!showWarningGate && route === "report" && <ReportRoute />}
             {!showWarningGate && route === "account" && <AccountPage />}
           </>

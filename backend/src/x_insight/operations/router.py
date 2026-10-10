@@ -1,4 +1,4 @@
-"""Operations HTTP routes (S52, seam T1, plan.md §§4.3, 10.1).
+"""Operations HTTP routes (S52/S54, seams T1/T10, plan.md §§4.3, 10.1–10.2).
 
 ``GET /api/v1/audit-events`` — admin-only inspection over the atomically
 committed events (S51 transactions own the commit; this route only reads).
@@ -16,10 +16,20 @@ audit), ``private, no-store``, audited atomically at the command path.
 Builders live in the cases owning module
 (:mod:`x_insight.cases.reporting`); this router only gates, audits, and
 serves bytes (no business logic here).
+
+S54 backups (plan.md §10.2; FR-41–42, seam T10 over T1): ``POST
+/api/v1/backups`` (admin-only mutation with CSRF + optional
+``Idempotency-Key``; synchronous bounded build, 201 with the terminal job),
+``GET /api/v1/backups/{id}`` (admin-only progress/manifest read,
+``private, no-store``) and ``GET /api/v1/backups/{id}/download``
+(admin-only bounded zip download, ``private, no-store``). No restore
+routes exist here — staging/commit belong to S55/S56. Builders live in
+:mod:`x_insight.operations.backup`; this router only gates and serves.
 """
 
 from __future__ import annotations
 
+import hmac as hmac_module
 import uuid
 from typing import Any
 
@@ -30,9 +40,10 @@ from sqlalchemy.orm import Session
 
 from x_insight import contracts
 from x_insight.cases import reporting as reporting_module
-from x_insight.db import get_session
+from x_insight.db import get_engine, get_session
 from x_insight.identity import service as identity_service
 from x_insight.operations import audit as audit_module
+from x_insight.operations import backup as backup_module
 
 router = APIRouter()
 
@@ -75,6 +86,43 @@ def _require_admin(request: Request, session: Session) -> dict[str, Any] | JSONR
             403, "FORBIDDEN", "Administrator access required.", get_request_id(request)
         )
     return user
+
+
+def _require_admin_mutation(request: Request, session: Session) -> dict[str, Any] | JSONResponse:
+    """Session + CSRF + admin gate for backup creation (plan.md §§4.3, 11).
+
+    Mirrors the cases archive/unarchive mutation gate: missing/revoked
+    sessions are 401, CSRF mismatch is 403, active physicians are 403.
+    """
+    raw_token = request.cookies.get(identity_service.SESSION_COOKIE_NAME)
+    if not raw_token:
+        return error_response(
+            401, "UNAUTHENTICATED", "Authentication required.", get_request_id(request)
+        )
+    row = identity_service.get_session_row(session, raw_token)
+    if row is None or row.get("revoked_at") is not None:
+        return error_response(
+            401, "UNAUTHENTICATED", "Authentication required.", get_request_id(request)
+        )
+    presented = request.headers.get(identity_service.CSRF_HEADER_NAME, "")
+    expected = row.get("csrf_token", "")
+    if not presented or not expected or not hmac_module.compare_digest(presented, expected):
+        return error_response(403, "FORBIDDEN", "CSRF validation failed.", get_request_id(request))
+    user = identity_service.get_session_user(session, raw_token)
+    if user is None:
+        return error_response(
+            401, "UNAUTHENTICATED", "Authentication required.", get_request_id(request)
+        )
+    if user.get("role") != "admin" or not user.get("active", False):
+        return error_response(
+            403, "FORBIDDEN", "Administrator access required.", get_request_id(request)
+        )
+    return user
+
+
+def _idempotency_key_or_none(request: Request) -> str | None:
+    raw = request.headers.get(contracts.IDEMPOTENCY_KEY_HEADER)
+    return contracts.parse_idempotency_key(raw)
 
 
 def _parse_uuid_param(value: str | None, field: str) -> str | None:
@@ -251,3 +299,126 @@ def export_physicians_csv(request: Request, session: Session = Depends(get_sessi
         },
     )
     return _csv_response("physicians.csv", body)
+
+
+# --- S54 consistent full backups (admin-only, audited, private/no-store) ---
+
+
+def _parse_backup_id(value: str) -> uuid.UUID:
+    try:
+        return uuid.UUID(str(value))
+    except Exception as exc:
+        raise contracts.ContractError(
+            422,
+            "VALIDATION_FAILED",
+            "Backup id must be a UUID.",
+            {"backup_id": ["Must be a UUID."]},
+        ) from exc
+
+
+@router.post("/backups", status_code=201, response_model=None)
+def create_backup(request: Request, session: Session = Depends(get_session)) -> JSONResponse:
+    """Create one consistent full backup (admin-only mutation).
+
+    Synchronous bounded build with an async-compatible polling shape: 201
+    carries the terminal job (``succeeded`` or ``failed``). Same
+    ``Idempotency-Key`` replays the original job without a new export; a
+    fresh key mints a fresh archive so retries never overwrite a good prior
+    backup. Audited atomically with safe details (hashes/counts only).
+    """
+    admin = _require_admin_mutation(request, session)
+    if isinstance(admin, JSONResponse):
+        return admin
+    assert isinstance(admin, dict)
+    request_id = get_request_id(request)
+    try:
+        key = _idempotency_key_or_none(request)
+    except contracts.ContractError as exc:
+        return error_response(
+            exc.status_code, exc.code, exc.message, request_id, exc.field_errors, exc.retryable
+        )
+    try:
+        job, _replayed, _failed = backup_module.create_backup(
+            session,
+            get_engine(),
+            actor=admin,
+            request_id=request_id,
+            idempotency_key=key,
+        )
+    except contracts.ContractError as exc:
+        return error_response(
+            exc.status_code, exc.code, exc.message, request_id, exc.field_errors, exc.retryable
+        )
+    return JSONResponse(
+        status_code=201,
+        content=backup_module.safe_job(job),
+        headers={"Cache-Control": "private, no-store"},
+    )
+
+
+@router.get("/backups/{backup_id}", response_model=None)
+def get_backup(
+    backup_id: str, request: Request, session: Session = Depends(get_session)
+) -> JSONResponse:
+    """Backup progress/manifest read (admin-only, no CSRF, like audit reads).
+
+    Returns the job with its manifest (hashes/inventory, no clinical
+    bodies, no secrets) so coherence checks work without downloading.
+    """
+    admin = _require_admin(request, session)
+    if isinstance(admin, JSONResponse):
+        return admin
+    request_id = get_request_id(request)
+    try:
+        target = _parse_backup_id(backup_id)
+    except contracts.ContractError as exc:
+        return error_response(
+            exc.status_code, exc.code, exc.message, request_id, exc.field_errors, exc.retryable
+        )
+    job = backup_module.get_backup(session, target)
+    if job is None:
+        return error_response(404, "NOT_FOUND", "Backup not found.", request_id)
+    return JSONResponse(
+        status_code=200,
+        content=backup_module.safe_job(job),
+        headers={"Cache-Control": "private, no-store"},
+    )
+
+
+@router.get("/backups/{backup_id}/download", response_model=None)
+def download_backup(
+    backup_id: str, request: Request, session: Session = Depends(get_session)
+) -> Response:
+    """Bounded zip download (admin-only, ``private, no-store``).
+
+    Only succeeded jobs with a staged final archive download; failed jobs
+    have no complete archive (409), purged files are 404. The staged bytes
+    are re-hashed before serving so a corrupted stage never downloads.
+    """
+    admin = _require_admin(request, session)
+    if isinstance(admin, JSONResponse):
+        return admin
+    request_id = get_request_id(request)
+    try:
+        target = _parse_backup_id(backup_id)
+    except contracts.ContractError as exc:
+        return error_response(
+            exc.status_code, exc.code, exc.message, request_id, exc.field_errors, exc.retryable
+        )
+    job = backup_module.get_backup(session, target)
+    if job is None:
+        return error_response(404, "NOT_FOUND", "Backup not found.", request_id)
+    try:
+        blob = backup_module.read_archive_bytes(job)
+    except contracts.ContractError as exc:
+        return error_response(
+            exc.status_code, exc.code, exc.message, request_id, exc.field_errors, exc.retryable
+        )
+    return Response(
+        content=blob,
+        media_type="application/zip",
+        headers={
+            "Content-Disposition": f'attachment; filename="x-insight-backup-{target}.zip"',
+            "Cache-Control": "private, no-store",
+        },
+    )
