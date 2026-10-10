@@ -31,8 +31,8 @@ APP_ROLE = "x_insight_app"
 MIGRATION_ROLE = "x_insight_migrate"
 READONLY_ROLE = "x_insight_readonly"
 
-# Alembic head this build is compatible with (migration ``0014``).
-EXPECTED_SCHEMA_VERSION = "0014"
+# Alembic head this build is compatible with (migration ``0015``).
+EXPECTED_SCHEMA_VERSION = "0015"
 
 DEFAULT_DATABASE_URL = "postgresql+psycopg://x_insight@localhost:5432/x_insight"
 DEFAULT_TEST_DATABASE_URL = "postgresql+psycopg://x_insight@localhost:5433/x_insight_test"

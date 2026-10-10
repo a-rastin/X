@@ -57,6 +57,10 @@
  *   (failed runs with recorded packages only)
  * - per-question transparency region
  *   `data-testid="proposal-transparency-<question_key>"` (after expansion)
+ * - per-question CPT review `data-testid="cpt-panel-<question_key>"` (own
+ *   lazy toggle `cpt-toggle-<key>`; accept/reset/retry
+ *   `cpt-accept/cpt-reset/cpt-retry-<key>` — see CptReviewPanel header;
+ *   full journey assertions belong to dev-test e2e/probability-review.spec.ts)
  * - DDI block `data-testid="proposal-ddi"` (`#proposal-ddi`)
  * - blocked sign entry `data-testid="proposal-sign-blocked"`
  *   (`#proposal-sign-blocked`)
@@ -70,6 +74,7 @@ import { ApiError } from "../identity/api";
 import { chartHash } from "../../app/router";
 import { getEncounter } from "../encounters/api";
 import type { useAutosave } from "../encounters/useAutosave";
+import { CptReviewPanel } from "./CptReviewPanel";
 import { getDiagnosis, type DiagnosisPreview } from "../assessments/diagnosis/api";
 import { getMedications, type MedicationsPreview } from "../medications/api";
 import {
@@ -897,6 +902,7 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired }:
                     review={reviews[item.run.id] ?? null}
                     pkgsKnown={pkgsKnown}
                     actionBusy={actionBusy}
+                    onSessionExpired={onSessionExpired}
                     onToggle={() => void toggleTransparency(item.run.question_key, item.run.id)}
                     onRetry={() => void retryRun()}
                     onReviewRetry={() => void toggleTransparency(item.run.question_key, item.run.id)}
@@ -989,6 +995,7 @@ function QuestionBlock({
   review,
   pkgsKnown,
   actionBusy,
+  onSessionExpired,
   onToggle,
   onRetry,
   onReviewRetry,
@@ -998,6 +1005,7 @@ function QuestionBlock({
   review: ReviewState | null;
   pkgsKnown: boolean;
   actionBusy: boolean;
+  onSessionExpired: () => void;
   onToggle: () => void;
   onRetry: () => void;
   onReviewRetry: () => void;
@@ -1047,6 +1055,12 @@ function QuestionBlock({
           {expanded ? `Hide transparency for ${key}` : `Show transparency for ${key}`}
         </button>
       </div>
+      {/* S48c complete CPT review (plan.md §9.1; FR-50-57): own lazy toggle +
+        own GET .../review so the S48 transparency fetch counts above stay
+        untouched. Per-question CPT sliders, comparison, reset/retry, and
+        acceptance live in CptReviewPanel; testids cpt-panel-<key> /
+        cpt-accept-<key>. */}
+      <CptReviewPanel questionKey={key} runId={item.run.id} onSessionExpired={onSessionExpired} />
       {expanded && (
         <div data-testid={`proposal-transparency-${key}`} id={regionId}>
           {review === null || review.status === "loading" ? (

@@ -322,7 +322,13 @@ def read_question_review(
     ``current_result_matches``/``input_freshness`` plus
     ``calculation_result``/``displayed_result``/``calculation_results`` and
     local-job visibility). Earlier successes stay labeled by their own
-    revision and are never presented as solving current CPTs. Wrong-author
+    revision and are never presented as solving current CPTs. S48c adds the
+    acceptance state (``acceptance``/``is_accepted``/``acceptances``): the
+    latest acceptance exactly matching the current revision/result/inputs,
+    or null, plus the retained per-run history. Later edits/reset move the
+    revision pointer and relevant patient edits move the input fingerprint,
+    so older acceptances stop matching without deletion; note-only edits
+    preserve. Wrong-author
     reads are 403 without content; missing runs are 404. Failed originals
     expose no adjustable baseline.
     """
@@ -386,6 +392,16 @@ def read_question_review(
         "reason": str(freshness.get("reason", "current")),
         "current_fingerprint": str(freshness.get("current_fingerprint", "")),
     }
+    # S48c: acceptance state — latest exact current match (or null) plus the
+    # retained per-run history (older rows stop matching after later edits).
+    question_key = str(run.get("question_key", ""))
+    raw_acceptances = review_service.list_acceptances(session, run_id)
+    current_acceptance = review_service.find_current_acceptance(
+        session,
+        run=run,
+        baseline=stored,
+        current_fingerprint=str(input_freshness["current_fingerprint"]),
+    )
     content: dict[str, Any] = {
         "question_run": snapshots_service.safe_run(run),
         "batch": snapshots_service.safe_batch(batch),
@@ -413,6 +429,14 @@ def read_question_review(
         "revisions": revisions,
         "cpt_hash": str(latest["cpt_hash"]) if latest is not None else None,
         "outputs_read_only": True,
+        "acceptance": review_service.safe_acceptance(current_acceptance, question_key=question_key)
+        if current_acceptance is not None
+        else None,
+        "is_accepted": current_acceptance is not None,
+        "acceptances": [
+            review_service.safe_acceptance(row, question_key=question_key)
+            for row in raw_acceptances
+        ],
     }
     # Current local job for convenience (null when baseline/reset-reuse).
     current_id = str(latest["id"]) if latest is not None else None

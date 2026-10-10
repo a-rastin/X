@@ -241,6 +241,74 @@ export interface BatchPayload {
   workflow: WorkflowView;
 }
 
+export type CalculationState =
+  | "unchanged"
+  | "recalculating"
+  | "successfully_recalculated"
+  | "failed";
+
+export interface InputFreshness {
+  stale: boolean;
+  reason: string;
+  current_fingerprint: string;
+}
+
+/** Immutable CPT revision (mirrors `safe_revision`; persisted data only). */
+export interface CptRevision {
+  id: string;
+  question_run_id: string;
+  batch_id: string;
+  parent_revision_id: string | null;
+  sequence: number;
+  kind: string;
+  cpt_hash: string;
+  cpt_artifact: CptTable[];
+  direct_edit: Record<string, unknown>;
+  before_row: Record<string, unknown>;
+  after_row: Record<string, unknown>;
+  actor_username: string;
+  redistribution_version: string;
+  created_at: string;
+}
+
+/** Local calculation result (mirrors `safe_calculation_result`). */
+export interface CalculationResult {
+  id: string;
+  question_run_id: string;
+  batch_id: string;
+  cpt_revision_id: string;
+  cpt_hash: string;
+  network_hash: string;
+  network_version: string;
+  template_version: string;
+  query_nodes: string[];
+  posteriors: Posterior[];
+  section_text: string;
+  effective_hash: string;
+  effective_xml: string;
+  reused_from_baseline_id: string | null;
+  provenance: Record<string, unknown>;
+  created_at: string;
+}
+
+/** Exact current-result acceptance (mirrors `safe_acceptance`). */
+export interface ProbabilityAcceptance {
+  id: string;
+  encounter_id: string;
+  question_run_id: string;
+  batch_id: string;
+  question_key: string;
+  baseline_id: string;
+  cpt_revision_id: string | null;
+  cpt_hash: string;
+  result_kind: string;
+  result_id: string;
+  input_hash: string;
+  projection_hash: string;
+  actor_username: string;
+  created_at: string;
+}
+
 export interface QuestionReviewPayload {
   question_run: QuestionRun;
   batch: GenerationBatch;
@@ -248,9 +316,28 @@ export interface QuestionReviewPayload {
   adjustable: boolean;
   transparency: QuestionTransparency | null;
   freshness: BatchFreshness;
+  input_freshness: InputFreshness;
   job: ReasonJob | null;
   attempts: number;
   queue: BatchQueue;
+  original_tables: CptTable[] | null;
+  current_tables: CptTable[] | null;
+  current_cpt_revision_id: string | null;
+  displayed_result_revision_id: string | null;
+  current_result_matches: boolean;
+  calculation_state: CalculationState;
+  calculation_result: CalculationResult | null;
+  displayed_result: CalculationResult | null;
+  calculation_results: CalculationResult[];
+  local_jobs: ReasonJob[];
+  local_job: ReasonJob | null;
+  review_revision: number;
+  revisions: CptRevision[];
+  cpt_hash: string | null;
+  outputs_read_only: boolean;
+  acceptance: ProbabilityAcceptance | null;
+  is_accepted: boolean;
+  acceptances: ProbabilityAcceptance[];
 }
 
 export interface StartPayload {
@@ -339,6 +426,222 @@ export async function getBatch(batchId: string): Promise<BatchPayload> {
 export async function getQuestionReview(runId: string): Promise<QuestionReviewPayload> {
   return request<QuestionReviewPayload>(
     `/question-runs/${encodeURIComponent(runId)}/review`,
+  );
+}
+
+export interface AdjustmentPayload {
+  revision: CptRevision;
+  review_state: { review_revision: number; current_revision_id: string | null };
+  current_cpt_revision_id: string;
+  review_revision: number;
+  cpt_hash: string;
+  current_tables: CptTable[];
+}
+
+/** One completed slider command (S48c §3): server redistributes authoritatively.
+ * Sends both If-Match and the body revision (If-Match wins server-side). */
+export async function postCptAdjustment(
+  runId: string,
+  args: {
+    node_id: string;
+    parent_states: string[];
+    state: string;
+    target_percentage: string;
+    expected_review_revision: number;
+  },
+  options: { idempotencyKey?: string } = {},
+): Promise<AdjustmentPayload> {
+  return request<AdjustmentPayload>(
+    `/question-runs/${encodeURIComponent(runId)}/cpt-adjustments`,
+    {
+      method: "POST",
+      ifMatch: args.expected_review_revision,
+      idempotencyKey: options.idempotencyKey ?? newIdempotencyKey(),
+      body: args,
+    },
+  );
+}
+
+export interface ResetPayload {
+  revision: CptRevision;
+  review_state: { review_revision: number; current_revision_id: string | null };
+  current_cpt_revision_id: string;
+  review_revision: number;
+  cpt_hash: string;
+  current_tables: CptTable[];
+  calculation_result: CalculationResult;
+  reused_from_baseline_id: string;
+}
+
+/** Per-question reset to original values (S48c §3): audited baseline-equal
+ * revision with verified reuse; one panel only, history retained. */
+export async function postCptReset(
+  runId: string,
+  expectedReviewRevision: number,
+  options: { idempotencyKey?: string } = {},
+): Promise<ResetPayload> {
+  return request<ResetPayload>(
+    `/question-runs/${encodeURIComponent(runId)}/reset`,
+    {
+      method: "POST",
+      ifMatch: expectedReviewRevision,
+      idempotencyKey: options.idempotencyKey ?? newIdempotencyKey(),
+      body: { expected_review_revision: expectedReviewRevision },
+    },
+  );
+}
+
+export interface RetryPayload {
+  job: ReasonJob;
+  current_cpt_revision_id: string;
+  review_revision: number;
+  cpt_hash: string;
+}
+
+/** Local-only retry for exactly the current revision (S48c §3). */
+export async function postRetryCalculation(
+  runId: string,
+  expectedReviewRevision: number,
+  currentCptRevisionId?: string | null,
+  options: { idempotencyKey?: string } = {},
+): Promise<RetryPayload> {
+  return request<RetryPayload>(
+    `/question-runs/${encodeURIComponent(runId)}/retry-calculation`,
+    {
+      method: "POST",
+      ifMatch: expectedReviewRevision,
+      idempotencyKey: options.idempotencyKey ?? newIdempotencyKey(),
+      body: {
+        expected_review_revision: expectedReviewRevision,
+        ...(currentCptRevisionId !== undefined && currentCptRevisionId !== null
+          ? { current_cpt_revision_id: currentCptRevisionId }
+          : {}),
+      },
+    },
+  );
+}
+
+export interface AcceptancePayload {
+  acceptance: ProbabilityAcceptance;
+  is_accepted: boolean;
+  current_cpt_revision_id: string | null;
+  review_revision: number;
+  cpt_hash: string;
+}
+
+export interface AcceptanceBody {
+  baseline_id: string;
+  current_cpt_revision_id: string | null;
+  cpt_hash: string;
+  result_id: string;
+  input_hash: string;
+  expected_review_revision: number;
+}
+
+function sortDeep(value: unknown): unknown {
+  if (Array.isArray(value)) {
+    return value.map(sortDeep);
+  }
+  if (value !== null && typeof value === "object") {
+    const entries = Object.entries(value as Record<string, unknown>).sort(([a], [b]) =>
+      a < b ? -1 : a > b ? 1 : 0,
+    );
+    const out: Record<string, unknown> = {};
+    for (const [key, entry] of entries) {
+      out[key] = sortDeep(entry);
+    }
+    return out;
+  }
+  return value;
+}
+
+/** Canonical JSON per plan.md §4.2 (sorted keys, compact, arrays preserved).
+ * Mirrors backend `contracts.canonical_json` for string-shaped CPT tables. */
+export function canonicalJson(value: unknown): string {
+  return JSON.stringify(sortDeep(value));
+}
+
+/** SHA-256 hex over canonical JSON (mirrors `contracts.canonical_hash`).
+ * Async: uses the platform primitive, no new dependency. */
+export async function canonicalHash(value: unknown): Promise<string> {
+  const bytes = new TextEncoder().encode(canonicalJson(value));
+  const digest = await crypto.subtle.digest("SHA-256", bytes);
+  return [...new Uint8Array(digest)]
+    .map((byte) => byte.toString(16).padStart(2, "0"))
+    .join("");
+}
+
+/** Exact current references from a GET review (mirrors backend test helper
+ * `_accept_body(review)`): unchanged originals hash the baseline tables and
+ * accept the baseline result; adjusted revisions use the live cpt_hash and
+ * the matching successful calculation result. Throws when no successful
+ * current result exists (caller blocks instead of omitting the field). */
+export async function buildAcceptanceBody(review: QuestionReviewPayload): Promise<AcceptanceBody> {
+  const baseline = review.baseline;
+  if (baseline === null) {
+    throw new Error("No successful result exists to accept for this question run.");
+  }
+  if (review.current_cpt_revision_id === null) {
+    return {
+      baseline_id: baseline.id,
+      current_cpt_revision_id: null,
+      cpt_hash: await canonicalHash(baseline.validated_tables),
+      result_id: baseline.id,
+      input_hash: review.input_freshness.current_fingerprint,
+      expected_review_revision: review.review_revision,
+    };
+  }
+  if (review.cpt_hash === null || review.calculation_result === null) {
+    throw new Error("The current revision has no successful result yet.");
+  }
+  return {
+    baseline_id: baseline.id,
+    current_cpt_revision_id: review.current_cpt_revision_id,
+    cpt_hash: review.cpt_hash,
+    result_id: review.calculation_result.id,
+    input_hash: review.input_freshness.current_fingerprint,
+    expected_review_revision: review.review_revision,
+  };
+}
+
+/** UI-side accept blocker (mirrors server 409/412 order): stale inputs,
+ * missing baseline, recalculating, failed. Null means acceptable. */
+export function acceptBlockedReason(review: QuestionReviewPayload): string | null {
+  if (review.input_freshness.stale) {
+    return `Out of date — ${review.input_freshness.reason}. Regeneration is required before acceptance; reset cannot make stale inputs current.`;
+  }
+  if (review.baseline === null) {
+    return "No successful result to accept — this question has no completed baseline.";
+  }
+  if (review.calculation_state === "recalculating") {
+    return "Recalculating — the current revision is queued or running. Wait for the successful result, then accept.";
+  }
+  if (review.calculation_state === "failed") {
+    return "Failed — the current revision is preserved but unsolved. Retry locally or reset first.";
+  }
+  if (review.current_cpt_revision_id !== null && review.calculation_result === null) {
+    return "No successful current result yet — wait for local calculation to finish.";
+  }
+  return null;
+}
+
+/** Author-only acceptance of the exact current result (S48c §4 frontend half):
+ * POSTs exact references from GET review with If-Match + Idempotency-Key.
+ * Signing enforcement itself belongs to S49 — only the references are
+ * exposed here. */
+export async function postAcceptance(
+  runId: string,
+  body: AcceptanceBody,
+  options: { idempotencyKey?: string } = {},
+): Promise<AcceptancePayload> {
+  return request<AcceptancePayload>(
+    `/question-runs/${encodeURIComponent(runId)}/acceptance`,
+    {
+      method: "POST",
+      ifMatch: body.expected_review_revision,
+      idempotencyKey: options.idempotencyKey ?? newIdempotencyKey(),
+      body,
+    },
   );
 }
 

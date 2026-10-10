@@ -696,6 +696,72 @@ body {
   margin-bottom: var(--space-3);
 }
 
+/* S48c complete CPT review (plan.md §9.1; FR-50-57, NFR-03/NFR-06). Mirrors
+ * the dense clinical panels above — semantic tokens only (both deliberate
+ * themes), ink text throughout, every state paired with explicit text plus
+ * a shape glyph (never color alone). Sliders keep the compliant
+ * --primary-action accent in both themes with visible keyboard focus from
+ * the global :focus-visible rule; exact percentages stay mono. */
+.xi-cpt-panel {
+  margin-top: var(--space-3);
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-2);
+}
+
+.xi-cpt-body {
+  margin-top: var(--space-3);
+}
+
+.xi-cpt-node {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--canvas);
+  padding: var(--space-2) var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.xi-cpt-node summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.xi-cpt-cell-label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.xi-cpt-slider {
+  width: 100%;
+  max-width: 320px;
+  accent-color: var(--primary-action);
+}
+
+.xi-cpt-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 1px var(--space-2);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--info);
+  background: var(--info-bg);
+  color: var(--ink);
+  vertical-align: middle;
+}
+
+.xi-cpt-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3) var(--space-4);
+}
+
+@media (max-width: 720px) {
+  .xi-cpt-compare {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

@@ -29,6 +29,21 @@ local-only retry for exactly the current revision
 (``expected_review_revision`` + optional ``current_cpt_revision_id``).
 Never re-estimates CPTs, never touches provider/MCP/DDI/generation.
 Superseded revision ids are ``409``; stale pointers are ``412``.
+
+``POST /api/v1/question-runs/{id}/acceptance`` — author-only acceptance
+of the exact current result (``expected_review_revision``,
+``baseline_id``, ``current_cpt_revision_id`` or null for unchanged
+originals, ``cpt_hash``, ``result_id``, ``input_hash``). The server
+recomputes the live baseline/revision/result/input point and rejects any
+mismatch (``409``), pending/recalculating/failed currents (``409``),
+stale inputs (``409``) and stale pointers (``412``). Unchanged originals
+are accepted too. Later edits/reset move the revision pointer and
+relevant patient edits move the input fingerprint, so older acceptances
+stop matching on read without deletion; note-only edits preserve. One
+immutable ``probability_acceptances`` row plus atomic
+``prob_acceptance.success`` audit per accepted exact state; re-accepting
+the same exact state returns the existing row. ``Idempotency-Key`` repeats
+return the original; same key with a different body is ``409``.
 """
 
 from __future__ import annotations
@@ -144,6 +159,19 @@ class RetryRequest(BaseModel):
 
     expected_review_revision: int = Field(ge=1)
     current_cpt_revision_id: str | None = Field(default=None)
+
+
+class AcceptanceRequest(BaseModel):
+    """Accept exactly the current result (extra=forbid, server rechecks all)."""
+
+    model_config = {"extra": "forbid"}
+
+    baseline_id: str = Field(min_length=1)
+    current_cpt_revision_id: str | None = Field(default=None)
+    cpt_hash: str = Field(min_length=1)
+    result_id: str = Field(min_length=1)
+    input_hash: str = Field(min_length=1)
+    expected_review_revision: int = Field(ge=1)
 
 
 @router.post("/question-runs/{run_id}/cpt-adjustments", status_code=200)
@@ -449,6 +477,110 @@ def retry_calculation(
         identity_service.store_idempotency(
             session,
             operation=review_service.RETRY_IDEMPOTENCY_OPERATION,
+            actor_id=physician["id"],
+            key=key,
+            request_hash=request_hash,
+            response_status=200,
+            response_body=response_body,
+        )
+    return JSONResponse(status_code=200, content=response_body)
+
+
+@router.post("/question-runs/{run_id}/acceptance", status_code=200)
+def create_acceptance(
+    run_id: uuid.UUID,
+    payload: AcceptanceRequest,
+    request: Request,
+    session: Session = Depends(get_session),
+) -> JSONResponse:
+    from x_insight.reasoning import coordinator as coordinator_module
+    from x_insight.reasoning import snapshots as snapshots_service
+    from x_insight.reasoning import tables as reasoning_tables
+
+    request_id = get_request_id(request)
+    physician = _require_physician_mutation(request, session)
+    if isinstance(physician, JSONResponse):
+        return physician
+    assert isinstance(physician, dict)
+    resolved = _resolve_expected(request, int(payload.expected_review_revision))
+    if isinstance(resolved, JSONResponse):
+        return resolved
+    expected = int(resolved)
+    key = contracts.parse_idempotency_key(request.headers.get(contracts.IDEMPOTENCY_KEY_HEADER))
+    request_hash = review_service.acceptance_request_hash(
+        run_id,
+        expected,
+        payload.baseline_id,
+        payload.current_cpt_revision_id,
+        payload.cpt_hash,
+        payload.result_id,
+        payload.input_hash,
+    )
+    if key is not None:
+        stored = identity_service.lookup_idempotency(
+            session,
+            operation=review_service.ACCEPTANCE_IDEMPOTENCY_OPERATION,
+            actor_id=physician["id"],
+            key=key,
+        )
+        if stored is not None:
+            if stored["request_hash"] != request_hash:
+                return error_response(
+                    409,
+                    "IDEMPOTENCY_CONFLICT",
+                    "Idempotency-Key was already used with a different request body.",
+                    request_id,
+                )
+            replay = dict(stored["response_body"])
+            return JSONResponse(status_code=int(stored["response_status"]), content=replay)
+    run_row = (
+        session.execute(
+            select(reasoning_tables.question_runs).where(
+                reasoning_tables.question_runs.c.id == run_id
+            )
+        )
+        .mappings()
+        .first()
+    )
+    if run_row is None:
+        return error_response(404, "NOT_FOUND", "Question run not found.", request_id)
+    run = dict(run_row)
+    # Author-only (403 for strangers/admin without content; 404 stays 404).
+    batch, _, freshness = snapshots_service.get_generation_batch(
+        session, run["batch_id"], physician
+    )
+    stored_baseline = coordinator_module.get_baseline(session, run_id)
+    accepted = review_service.apply_acceptance(
+        session,
+        author=physician,
+        run=run,
+        batch=batch,
+        baseline=stored_baseline,
+        stale=bool(freshness.get("stale", False)),
+        current_fingerprint=str(freshness.get("current_fingerprint", "")),
+        expected_review_revision=int(expected),
+        baseline_id=payload.baseline_id,
+        cpt_revision_id=payload.current_cpt_revision_id,
+        cpt_hash=payload.cpt_hash,
+        result_id=payload.result_id,
+        input_hash=payload.input_hash,
+        request_id=request_id,
+    )
+    safe = review_service.safe_acceptance(accepted, question_key=str(run.get("question_key", "")))
+    state_row = review_service.get_review_state(session, run_id)
+    response_body: dict[str, Any] = {
+        "acceptance": safe,
+        "is_accepted": True,
+        "current_cpt_revision_id": safe["cpt_revision_id"],
+        "review_revision": int(state_row["review_revision"])
+        if state_row is not None
+        else review_service.INITIAL_REVIEW_REVISION,
+        "cpt_hash": str(safe["cpt_hash"]),
+    }
+    if key is not None:
+        identity_service.store_idempotency(
+            session,
+            operation=review_service.ACCEPTANCE_IDEMPOTENCY_OPERATION,
             actor_id=physician["id"],
             key=key,
             request_hash=request_hash,

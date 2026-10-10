@@ -16,6 +16,12 @@
   optional baseline reuse link, provenance. Failed locals create no row
   (job + attempts carry the error), mirroring S45 baselines. App
   SELECT+INSERT only.
+- ``probability_acceptances`` (S48c, migration 0015) — one immutable row
+  per accepted exact state: run/batch/encounter FKs, baseline FK, nullable
+  revision FK (null for unchanged originals), CPT hash, polymorphic result
+  reference (kind baseline/calculation + id), input hash, projection hash,
+  actor/time. Invalidation is an exact-match check on read (never
+  deletion); history rows stay readable. App SELECT+INSERT only.
 """
 
 from __future__ import annotations
@@ -139,3 +145,57 @@ calculation_results = Table(
 
 Index("ix_calculation_results_run_id", calculation_results.c.question_run_id)
 Index("ix_calculation_results_batch_id", calculation_results.c.batch_id)
+
+probability_acceptances = Table(
+    "probability_acceptances",
+    metadata,
+    Column("id", PG_UUID(as_uuid=True), primary_key=True),
+    Column(
+        "question_run_id",
+        PG_UUID(as_uuid=True),
+        ForeignKey("question_runs.id", ondelete="CASCADE"),
+        nullable=False,
+    ),
+    Column(
+        "batch_id",
+        PG_UUID(as_uuid=True),
+        ForeignKey("generation_batches.id", ondelete="CASCADE"),
+        nullable=False,
+    ),
+    Column(
+        "encounter_id",
+        PG_UUID(as_uuid=True),
+        ForeignKey("encounters.id", ondelete="CASCADE"),
+        nullable=False,
+    ),
+    Column(
+        "baseline_id",
+        PG_UUID(as_uuid=True),
+        ForeignKey("original_baselines.id", ondelete="CASCADE"),
+        nullable=False,
+    ),
+    Column(
+        "cpt_revision_id",
+        PG_UUID(as_uuid=True),
+        ForeignKey("cpt_revisions.id", ondelete="CASCADE"),
+        nullable=True,
+    ),
+    Column("cpt_hash", Text, nullable=False),
+    Column("result_kind", Text, nullable=False),
+    Column("result_id", PG_UUID(as_uuid=True), nullable=False),
+    Column("input_hash", Text, nullable=False),
+    Column("projection_hash", Text, nullable=False),
+    Column("actor_id", PG_UUID(as_uuid=True), nullable=False),
+    Column("actor_username", Text, nullable=False),
+    Column("created_at", DateTime(timezone=True), nullable=False),
+    CheckConstraint(
+        "result_kind IN ('baseline', 'calculation')",
+        name="ck_prob_acceptances_kind",
+    ),
+    CheckConstraint("char_length(cpt_hash) = 64", name="ck_prob_acceptances_cpt_sha256"),
+    CheckConstraint("char_length(input_hash) = 64", name="ck_prob_acceptances_input_sha256"),
+    CheckConstraint("char_length(projection_hash) = 64", name="ck_prob_acceptances_proj_sha256"),
+)
+
+Index("ix_prob_acceptances_run_id", probability_acceptances.c.question_run_id)
+Index("ix_prob_acceptances_batch_id", probability_acceptances.c.batch_id)

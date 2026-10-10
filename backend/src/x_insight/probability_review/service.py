@@ -33,6 +33,11 @@ ADJUSTMENT_AUDIT_OPERATION = "cpt_adjustment.success"
 RESET_IDEMPOTENCY_OPERATION = "cpt_reset"
 RESET_AUDIT_OPERATION = "cpt_reset.success"
 RETRY_IDEMPOTENCY_OPERATION = "cpt_retry_calculation"
+ACCEPTANCE_IDEMPOTENCY_OPERATION = "prob_acceptance"
+ACCEPTANCE_AUDIT_OPERATION = "prob_acceptance.success"
+
+RESULT_KIND_BASELINE = "baseline"
+RESULT_KIND_CALCULATION = "calculation"
 
 INITIAL_REVIEW_REVISION = 1
 
@@ -1053,3 +1058,370 @@ def execute_local_revision(
             "engine": "local_empty_evidence",
         },
     }
+
+
+# --- S48c exact current-result acceptance (seam T1) ---
+
+
+def safe_acceptance(row: Mapping[str, Any], *, question_key: str = "") -> dict[str, Any]:
+    """Public acceptance shape (persisted data only, no secrets)."""
+    revision_id = row.get("cpt_revision_id")
+    return {
+        "id": str(row.get("id")),
+        "encounter_id": str(row.get("encounter_id")),
+        "question_run_id": str(row.get("question_run_id")),
+        "batch_id": str(row.get("batch_id")),
+        "question_key": str(row.get("question_key", question_key)),
+        "baseline_id": str(row.get("baseline_id")),
+        "cpt_revision_id": str(revision_id) if revision_id is not None else None,
+        "cpt_hash": str(row.get("cpt_hash", "")),
+        "result_kind": str(row.get("result_kind", "")),
+        "result_id": str(row.get("result_id")),
+        "input_hash": str(row.get("input_hash", "")),
+        "projection_hash": str(row.get("projection_hash", "")),
+        "actor_username": str(row.get("actor_username", "")),
+        "created_at": contracts.serialize_utc(row["created_at"]),
+    }
+
+
+def list_acceptances(session: Session, run_id: Any) -> list[dict[str, Any]]:
+    rows = (
+        session.execute(
+            select(review_tables.probability_acceptances)
+            .where(review_tables.probability_acceptances.c.question_run_id == run_id)
+            .order_by(review_tables.probability_acceptances.c.created_at.asc())
+        )
+        .mappings()
+        .all()
+    )
+    return [dict(row) for row in rows]
+
+
+def acceptance_request_hash(
+    run_id: Any,
+    expected_review_revision: int,
+    baseline_id: Any,
+    cpt_revision_id: Any | None,
+    cpt_hash: Any,
+    result_id: Any,
+    input_hash: Any,
+) -> str:
+    return contracts.canonical_hash(
+        {
+            "run_id": str(run_id),
+            "expected_review_revision": int(expected_review_revision),
+            "baseline_id": str(baseline_id),
+            "cpt_revision_id": str(cpt_revision_id) if cpt_revision_id is not None else None,
+            "cpt_hash": str(cpt_hash),
+            "result_id": str(result_id),
+            "input_hash": str(input_hash),
+        }
+    )
+
+
+def _parse_acceptance_uuid(value: Any, field: str) -> uuid.UUID:
+    try:
+        return uuid.UUID(str(value))
+    except Exception as exc:
+        raise contracts.ContractError(
+            422,
+            "VALIDATION_FAILED",
+            f"{field} must be a UUID.",
+            {field: ["Must be a UUID."]},
+        ) from exc
+
+
+def _live_acceptance_point(
+    session: Session,
+    *,
+    run: Mapping[str, Any],
+    baseline: Mapping[str, Any] | None,
+) -> dict[str, Any]:
+    """Exact current references an acceptance must carry (or why none exists).
+
+    Returns ``{"ok": True, baseline_id, cpt_revision_id|None, cpt_hash,
+    result_kind, result_id, question_key}`` for an acceptable current state,
+    else ``{"ok": False, "code", "message"}`` with a 409 code/message naming
+    the state (no successful original, recalculating, failed). Callers
+    compare every client-supplied reference against the ``ok`` point and
+    reject the first mismatch (409); the point itself is never trusted from
+    the client.
+    """
+    from x_insight.reasoning import queue as queue_module
+
+    if baseline is None:
+        return {
+            "ok": False,
+            "code": "NO_SUCCESSFUL_RESULT",
+            "message": "No successful result exists to accept for this question run.",
+        }
+    revisions = list_revisions(session, run["id"])
+    if not revisions:
+        validated = baseline.get("validated_tables")
+        if not isinstance(validated, list) or not validated:
+            return {
+                "ok": False,
+                "code": "NO_SUCCESSFUL_RESULT",
+                "message": "No successful result exists to accept for this question run.",
+            }
+        return {
+            "ok": True,
+            "baseline_id": str(baseline.get("id")),
+            "cpt_revision_id": None,
+            "cpt_hash": contracts.canonical_hash(list(validated)),
+            "result_kind": RESULT_KIND_BASELINE,
+            "result_id": str(baseline.get("id")),
+            "question_key": str(run.get("question_key", "")),
+        }
+    current = revisions[-1]
+    current_id = str(current.get("id"))
+    solved = get_calculation_result_for_revision(session, current["id"])
+    if solved is None:
+        raw_local_jobs = queue_module.list_local_jobs_for_run(session, run["id"])
+        active = any(
+            str(job.get("status")) in ("queued", "leased")
+            and isinstance(job.get("diagnostics"), dict)
+            and str(job["diagnostics"].get("cpt_revision_id")) == current_id
+            for job in (dict(j) for j in raw_local_jobs)
+        )
+        if active:
+            message = "The current revision is still recalculating. Wait for it to finish."
+        else:
+            message = "The current revision failed to calculate. Retry locally or reset first."
+        return {"ok": False, "code": "NO_SUCCESSFUL_RESULT", "message": message}
+    return {
+        "ok": True,
+        "baseline_id": str(baseline.get("id")),
+        "cpt_revision_id": current_id,
+        "cpt_hash": str(current.get("cpt_hash", "")),
+        "result_kind": RESULT_KIND_CALCULATION,
+        "result_id": str(solved.get("id")),
+        "question_key": str(run.get("question_key", "")),
+    }
+
+
+def find_current_acceptance(
+    session: Session,
+    *,
+    run: Mapping[str, Any],
+    baseline: Mapping[str, Any] | None,
+    current_fingerprint: str,
+) -> dict[str, Any] | None:
+    """Latest acceptance exactly matching the live revision/result/inputs.
+
+    Later edits/reset move the revision pointer, relevant patient edits move
+    the fingerprint, so older rows stop matching without deletion (history
+    stays via ``list_acceptances``). Never labels an earlier result as
+    current: only a full exact match counts.
+    """
+    point = _live_acceptance_point(session, run=run, baseline=baseline)
+    if not point.get("ok"):
+        return None
+    for entry in reversed(list_acceptances(session, run["id"])):
+        if (
+            str(entry.get("baseline_id")) == point["baseline_id"]
+            and (
+                str(entry.get("cpt_revision_id"))
+                if entry.get("cpt_revision_id") is not None
+                else None
+            )
+            == point["cpt_revision_id"]
+            and str(entry.get("cpt_hash")) == point["cpt_hash"]
+            and str(entry.get("result_kind")) == point["result_kind"]
+            and str(entry.get("result_id")) == point["result_id"]
+            and str(entry.get("input_hash")) == str(current_fingerprint)
+        ):
+            return entry
+    return None
+
+
+def apply_acceptance(
+    session: Session,
+    *,
+    author: Mapping[str, Any],
+    run: Mapping[str, Any],
+    batch: Mapping[str, Any],
+    baseline: Mapping[str, Any] | None,
+    stale: bool,
+    current_fingerprint: str,
+    expected_review_revision: Any,
+    baseline_id: Any,
+    cpt_revision_id: Any | None,
+    cpt_hash: Any,
+    result_id: Any,
+    input_hash: Any,
+    request_id: str,
+) -> dict[str, Any]:
+    """Persist one exact current-result acceptance (caller's transaction).
+
+    Validates the optimistic pointer (412 when stale), rejects pending /
+    failed / stale-input states (409), rejects any reference that does not
+    exactly equal the live baseline/revision/result/input hash (409), and
+    inserts one immutable ``probability_acceptances`` row plus the atomic
+    ``prob_acceptance.success`` audit. Re-accepting the already-accepted
+    exact state returns the existing row (no duplicate, no extra audit).
+    Raises ContractError (422 malformed, 412 stale pointer, 409 state).
+    """
+    if not isinstance(expected_review_revision, int) or expected_review_revision < 1:
+        raise contracts.ContractError(
+            422,
+            "VALIDATION_FAILED",
+            "expected_review_revision must be a positive integer.",
+            {"expected_review_revision": ["Must be a positive integer."]},
+        )
+    expected = int(expected_review_revision)
+    want_baseline = _parse_acceptance_uuid(baseline_id, "baseline_id")
+    want_result = _parse_acceptance_uuid(result_id, "result_id")
+    want_revision: uuid.UUID | None = None
+    if cpt_revision_id is not None:
+        want_revision = _parse_acceptance_uuid(cpt_revision_id, "current_cpt_revision_id")
+    if not isinstance(cpt_hash, str) or not cpt_hash.strip():
+        raise _fail(422, "VALIDATION_FAILED", "cpt_hash must be non-empty text.", "cpt_hash")
+    if not isinstance(input_hash, str) or not input_hash.strip():
+        raise _fail(422, "VALIDATION_FAILED", "input_hash must be non-empty text.", "input_hash")
+    locked_state_row = (
+        session.execute(
+            select(review_tables.question_review_states)
+            .where(review_tables.question_review_states.c.question_run_id == run["id"])
+            .with_for_update()
+        )
+        .mappings()
+        .first()
+    )
+    locked_state = dict(locked_state_row) if locked_state_row is not None else None
+    current_review = (
+        int(locked_state["review_revision"])
+        if locked_state is not None
+        else INITIAL_REVIEW_REVISION
+    )
+    if int(expected) != int(current_review):
+        raise contracts.ContractError(
+            412,
+            "STALE_REVISION",
+            "The probability review changed. Reload and reconcile your edits.",
+            {"expected_review_revision": ["Stale review revision."]},
+        )
+    if stale:
+        raise contracts.ContractError(
+            409,
+            "STALE_INPUTS",
+            "Patient inputs changed. Regenerate before accepting.",
+            {"input_hash": ["Stale patient inputs."]},
+        )
+    point = _live_acceptance_point(session, run=run, baseline=baseline)
+    if not point.get("ok"):
+        raise contracts.ContractError(
+            409,
+            str(point.get("code", "NO_SUCCESSFUL_RESULT")),
+            str(point.get("message", "No successful result exists to accept.")),
+            {"question_run": [str(point.get("message", "No successful result."))]},
+        )
+    live_revision = point["cpt_revision_id"]
+    if str(want_baseline) != point["baseline_id"]:
+        raise contracts.ContractError(
+            409,
+            "REFERENCE_MISMATCH",
+            "baseline_id does not match the current baseline.",
+            {"baseline_id": ["Does not match the current baseline."]},
+        )
+    if (str(want_revision) if want_revision is not None else None) != live_revision:
+        raise contracts.ContractError(
+            409,
+            "REFERENCE_MISMATCH",
+            "current_cpt_revision_id does not match the current revision.",
+            {"current_cpt_revision_id": ["Does not match the current revision."]},
+        )
+    if str(cpt_hash) != point["cpt_hash"]:
+        raise contracts.ContractError(
+            409,
+            "REFERENCE_MISMATCH",
+            "cpt_hash does not match the current CPT revision.",
+            {"cpt_hash": ["Does not match the current CPT revision."]},
+        )
+    if str(want_result) != point["result_id"]:
+        raise contracts.ContractError(
+            409,
+            "REFERENCE_MISMATCH",
+            "result_id does not match the current successful result.",
+            {"result_id": ["Does not match the current successful result."]},
+        )
+    if str(input_hash) != str(current_fingerprint):
+        raise contracts.ContractError(
+            409,
+            "REFERENCE_MISMATCH",
+            "input_hash does not match the current patient inputs.",
+            {"input_hash": ["Does not match the current patient inputs."]},
+        )
+    existing = find_current_acceptance(
+        session, run=run, baseline=baseline, current_fingerprint=str(current_fingerprint)
+    )
+    if existing is not None:
+        return existing
+    from x_insight.cases import tables as cases_tables
+
+    encounter_row = (
+        session.execute(
+            select(cases_tables.encounters).where(
+                cases_tables.encounters.c.id == batch["encounter_id"]
+            )
+        )
+        .mappings()
+        .first()
+    )
+    patient_id = str(dict(encounter_row).get("patient_id")) if encounter_row is not None else None
+    moment = contracts.utcnow()
+    acceptance_id = uuid.uuid4()
+    session.execute(
+        insert(review_tables.probability_acceptances).values(
+            id=acceptance_id,
+            question_run_id=run["id"],
+            batch_id=run["batch_id"],
+            encounter_id=batch["encounter_id"],
+            baseline_id=want_baseline,
+            cpt_revision_id=want_revision,
+            cpt_hash=str(point["cpt_hash"]),
+            result_kind=str(point["result_kind"]),
+            result_id=want_result,
+            input_hash=str(current_fingerprint),
+            projection_hash=str(run.get("projection_hash", "")),
+            actor_id=author["id"],
+            actor_username=str(author.get("username", "")),
+            created_at=moment,
+        )
+    )
+    session.flush()
+    audit_module.record_audit(
+        session,
+        operation=ACCEPTANCE_AUDIT_OPERATION,
+        actor=str(author.get("username")),
+        request_id=request_id,
+        details={
+            "encounter_id": str(batch.get("encounter_id")),
+            "patient_id": patient_id,
+            "batch_id": str(run.get("batch_id")),
+            "question_run_id": str(run.get("id")),
+            "question_key": str(point.get("question_key", "")),
+            "acceptance_id": str(acceptance_id),
+            "baseline_id": str(want_baseline),
+            "cpt_revision_id": str(want_revision) if want_revision is not None else None,
+            "cpt_hash": str(point["cpt_hash"]),
+            "result_kind": str(point["result_kind"]),
+            "result_id": str(want_result),
+            "input_hash": str(current_fingerprint),
+            "projection_hash": str(run.get("projection_hash", "")),
+            "review_revision": int(expected),
+        },
+    )
+    created = (
+        session.execute(
+            select(review_tables.probability_acceptances).where(
+                review_tables.probability_acceptances.c.id == acceptance_id
+            )
+        )
+        .mappings()
+        .first()
+    )
+    assert created is not None
+    stored = dict(created)
+    stored["question_key"] = str(point.get("question_key", ""))
+    return stored
