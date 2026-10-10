@@ -314,7 +314,10 @@ def save_secondary_plan(
         actor=str(author.get("username")),
         request_id=request_id,
         details={
+            "patient_id": str(encounter.get("patient_id")),
             "encounter_id": str(encounter_id),
+            "actor_id": str(author.get("id")),
+            "actor_display": str(author.get("username", "")),
             "revision": int(expected) + 1,
         },
     )
@@ -908,10 +911,13 @@ def sign_encounter(
             "patient_id": str(encounter.get("patient_id")),
             "batch_id": str(want_batch),
             "proposal_id": str(proposal.get("id")),
+            "actor_id": str(author.get("id")),
+            "actor_display": str(author.get("username", "")),
             "snapshot_id": str(snapshot_id),
             "snapshot_hash": str(snapshot_hash),
             "secondary_plan_revision": int(current_plan_revision),
             "question_keys": [str(r.get("question_key", "")) for r in runs],
+            "question_run_ids": [str(r.get("id")) for r in runs],
             "acceptance_ids": [str(acceptance_rows[k].get("id")) for k in sorted(acceptance_rows)],
             "encounter_revision": int(expected_encounter_revision) + 1,
         },
@@ -1018,7 +1024,10 @@ def create_addendum(
         actor=str(author.get("username")),
         request_id=request_id,
         details={
+            "patient_id": str(encounter.get("patient_id")),
             "encounter_id": str(encounter_id),
+            "actor_id": str(author.get("id")),
+            "actor_display": str(author.get("username", "")),
             "addendum_id": str(addendum_id),
         },
     )

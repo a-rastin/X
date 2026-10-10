@@ -1,6 +1,7 @@
 import { useAuth } from "../features/identity/auth";
 import { PasswordForm } from "../features/identity/PasswordForm";
 import { PhysiciansPanel } from "../features/identity/PhysiciansPanel";
+import { AuditPage } from "../features/admin/audit/AuditPage";
 import { NetworksPage } from "../features/admin/networks/NetworksPage";
 import { PatientDirectory } from "../features/patients/DirectoryPage";
 
@@ -93,4 +94,21 @@ export function NetworksRoutePage() {
     );
   }
   return <NetworksPage />;
+}
+
+export function AuditRoutePage() {
+  const { user } = useAuth();
+  if (user?.role !== "admin") {
+    // Client-side complement to the server's 403: never grant authority,
+    // just avoid rendering the audit trail to the wrong role.
+    return (
+      <div>
+        <h2 className="xi-page-title">Audit trail</h2>
+        <p className="xi-form-error" role="alert">
+          Administrator access required.
+        </p>
+      </div>
+    );
+  }
+  return <AuditPage />;
 }

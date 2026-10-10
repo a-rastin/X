@@ -1402,6 +1402,30 @@ def commit_job_result(
 # context is created or consumed here.
 
 
+def _audit_patient_id(session: Session, batch: dict[str, Any]) -> str | None:
+    """Patient id for audit target correlation (None when unresolvable)."""
+    try:
+        from x_insight.cases import tables as cases_tables
+
+        encounter_id = batch.get("encounter_id")
+        if encounter_id is None:
+            return None
+        row = (
+            session.execute(
+                select(cases_tables.encounters).where(
+                    cases_tables.encounters.c.id == encounter_id
+                )
+            )
+            .mappings()
+            .first()
+        )
+        if row is None:
+            return None
+        return str(dict(row).get("patient_id"))
+    except Exception:
+        return None
+
+
 def _local_revision_of(job: dict[str, Any]) -> tuple[str | None, str | None]:
     diag = job.get("diagnostics")
     if not isinstance(diag, dict):
@@ -2039,6 +2063,7 @@ def commit_local_result(
             actor="worker",
             request_id=str(job_id),
             details={
+                "patient_id": _audit_patient_id(session, batch_dict),
                 "encounter_id": str(batch_dict.get("encounter_id")),
                 "batch_id": str(job.get("batch_id")),
                 "question_run_id": str(job.get("question_run_id")),
@@ -2056,6 +2081,7 @@ def commit_local_result(
             actor="worker",
             request_id=str(job_id),
             details={
+                "patient_id": _audit_patient_id(session, batch_dict),
                 "encounter_id": str(batch_dict.get("encounter_id")),
                 "batch_id": str(job.get("batch_id")),
                 "question_run_id": str(job.get("question_run_id")),

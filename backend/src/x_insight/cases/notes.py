@@ -234,7 +234,10 @@ def create_note(
         actor=str(author.get("username")),
         request_id=request_id,
         details={
+            "patient_id": str(updated.get("patient_id")),
             "encounter_id": str(encounter_id),
+            "actor_id": str(author.get("id")),
+            "actor_display": str(author.get("username", "")),
             "note_id": str(note_id),
             "page": validated_page,
             "revision": expected_revision + 1,

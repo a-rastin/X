@@ -412,7 +412,10 @@ def save_history(
         actor=str(author.get("username")),
         request_id=request_id,
         details={
+            "patient_id": str(updated.get("patient_id")),
             "encounter_id": str(encounter_id),
+            "actor_id": str(author.get("id")),
+            "actor_display": str(author.get("username", "")),
             "revision": expected_revision + 1,
             "definition_version": definition_version(),
         },

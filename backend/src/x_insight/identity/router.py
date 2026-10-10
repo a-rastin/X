@@ -219,7 +219,12 @@ def login(
         operation="auth.login.success",
         actor=str(user["username"]),
         request_id=request_id,
-        details={"username": str(user["username"]), "role": str(user["role"])},
+        details={
+            "username": str(user["username"]),
+            "role": str(user["role"]),
+            "actor_id": str(user["id"]),
+            "actor_display": str(user["username"]),
+        },
     )
     body: dict[str, Any] = {
         "user": _public_user(user),
@@ -249,7 +254,11 @@ def logout(request: Request, session: Session = Depends(get_session)) -> JSONRes
         operation="auth.logout",
         actor=str(user["username"]),
         request_id=request_id,
-        details={"username": str(user["username"])},
+        details={
+            "username": str(user["username"]),
+            "actor_id": str(user["id"]),
+            "actor_display": str(user["username"]),
+        },
     )
     json_response = JSONResponse(status_code=200, content={"status": "ok"})
     _clear_session_cookie(json_response)
@@ -325,7 +334,11 @@ def change_password(
         operation="auth.password_change.success",
         actor=str(updated["username"]),
         request_id=request_id,
-        details={"username": str(updated["username"])},
+        details={
+            "username": str(updated["username"]),
+            "actor_id": str(updated["id"]),
+            "actor_display": str(updated["username"]),
+        },
     )
     json_response = JSONResponse(
         status_code=200,
@@ -371,7 +384,12 @@ def update_preferences(
         operation="auth.preferences.success",
         actor=str(updated["username"]),
         request_id=request_id,
-        details={"username": str(updated["username"]), "theme": payload.theme},
+        details={
+            "username": str(updated["username"]),
+            "theme": payload.theme,
+            "actor_id": str(updated["id"]),
+            "actor_display": str(updated["username"]),
+        },
     )
     return JSONResponse(status_code=200, content={"user": _public_user(updated)})
 
@@ -521,7 +539,12 @@ def create_physician(
         operation="physicians.create.success",
         actor=str(admin["username"]),
         request_id=request_id,
-        details={"username": str(created["username"])},
+        details={
+            "username": str(created["username"]),
+            "user_id": str(created["id"]),
+            "actor_id": str(admin["id"]),
+            "actor_display": str(admin["username"]),
+        },
     )
     safe = service.safe_physician(created)
     response_body = {"user": safe}
@@ -611,7 +634,12 @@ def patch_physician(
         operation="physicians.patch.success",
         actor=str(admin["username"]),
         request_id=request_id,
-        details={"username": str(updated["username"])},
+        details={
+            "username": str(updated["username"]),
+            "user_id": str(updated["id"]),
+            "actor_id": str(admin["id"]),
+            "actor_display": str(admin["username"]),
+        },
     )
     safe = service.safe_physician(updated)
     response_body = {"user": safe}
@@ -678,6 +706,9 @@ def deactivate_physician(
             request_id=request_id,
             details={
                 "username": str(updated["username"]),
+                "user_id": str(updated["id"]),
+                "actor_id": str(admin["id"]),
+                "actor_display": str(admin["username"]),
                 "draft_action": payload.draft_action,
                 "draft_set_revision": int(current_revision),
                 "reviewed_drafts": list(reviewed),
@@ -759,7 +790,12 @@ def reactivate_physician(
             operation="physicians.reactivate.success",
             actor=str(admin["username"]),
             request_id=request_id,
-            details={"username": str(updated["username"])},
+            details={
+                "username": str(updated["username"]),
+                "user_id": str(updated["id"]),
+                "actor_id": str(admin["id"]),
+                "actor_display": str(admin["username"]),
+            },
         )
     safe = service.safe_physician(updated)
     response_body = {"user": safe}

@@ -464,6 +464,8 @@ def retry_calculation(
         batch=batch,
         expected_review_revision=int(expected),
         revision_id=supplied_rev,
+        author=physician,
+        request_id=request_id,
     )
     safe = queue_module.safe_job(job)
     # Never expose fencing tokens (safe_job already strips them).

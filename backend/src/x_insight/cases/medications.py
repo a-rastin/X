@@ -400,7 +400,10 @@ def save_medications(
         actor=str(author.get("username")),
         request_id=request_id,
         details={
+            "patient_id": str(updated.get("patient_id")),
             "encounter_id": str(encounter_id),
+            "actor_id": str(author.get("id")),
+            "actor_display": str(author.get("username", "")),
             "revision": expected_revision + 1,
             "dataset_version": report["dataset_version"],
             "medication_fingerprint": report["medication_fingerprint"],

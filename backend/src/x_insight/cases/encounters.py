@@ -650,6 +650,8 @@ def create_open_draft(
         details={
             "encounter_id": str(encounter_id),
             "patient_id": str(patient_id),
+            "actor_id": str(author.get("id")),
+            "actor_display": str(author.get("username", "")),
             "kind": validated_kind,
         },
     )
@@ -713,7 +715,13 @@ def patch_draft(
         operation="encounters.patch.success",
         actor=str(author["username"]),
         request_id=request_id,
-        details={"encounter_id": str(encounter_id), "revision": expected_revision + 1},
+        details={
+            "encounter_id": str(encounter_id),
+            "patient_id": str(encounter.get("patient_id")),
+            "actor_id": str(author.get("id")),
+            "actor_display": str(author.get("username", "")),
+            "revision": expected_revision + 1,
+        },
     )
     return updated, contracts.serialize_utc(moment)
 
@@ -790,7 +798,13 @@ def discard_draft(
         operation="encounters.discard.success",
         actor=str(author["username"]),
         request_id=request_id,
-        details={"encounter_id": str(encounter_id), "revision": expected_revision + 1},
+        details={
+            "encounter_id": str(encounter_id),
+            "patient_id": str(encounter.get("patient_id")),
+            "actor_id": str(author.get("id")),
+            "actor_display": str(author.get("username", "")),
+            "revision": expected_revision + 1,
+        },
     )
     return updated, contracts.serialize_utc(moment)
 

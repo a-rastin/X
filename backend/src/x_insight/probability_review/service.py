@@ -49,6 +49,30 @@ CALCULATION_STATES = (
 )
 
 
+def _patient_id_for_batch(session: Session, batch: Mapping[str, Any]) -> str | None:
+    """Patient id for audit target correlation (None when unresolvable)."""
+    try:
+        from x_insight.cases import tables as cases_tables
+
+        encounter_id = batch.get("encounter_id")
+        if encounter_id is None:
+            return None
+        row = (
+            session.execute(
+                select(cases_tables.encounters).where(
+                    cases_tables.encounters.c.id == encounter_id
+                )
+            )
+            .mappings()
+            .first()
+        )
+        if row is None:
+            return None
+        return str(dict(row).get("patient_id"))
+    except Exception:
+        return None
+
+
 def _fail(status: int, code: str, message: str, field: str) -> contracts.ContractError:
     return contracts.ContractError(status, code, message, {field: [message]})
 
@@ -472,10 +496,13 @@ def apply_adjustment(
         actor=str(author.get("username")),
         request_id=request_id,
         details={
+            "patient_id": _patient_id_for_batch(session, batch),
             "encounter_id": str(batch.get("encounter_id")),
             "batch_id": str(run.get("batch_id")),
             "question_run_id": str(run.get("id")),
             "question_key": str(run.get("question_key", "")),
+            "actor_id": str(author.get("id")),
+            "actor_display": str(author.get("username", "")),
             "revision_id": str(revision_id),
             "parent_revision_id": str(parent_id) if parent_id is not None else None,
             "sequence": int(sequence),
@@ -787,10 +814,13 @@ def apply_reset(
         actor=str(author.get("username")),
         request_id=request_id,
         details={
+            "patient_id": _patient_id_for_batch(session, batch),
             "encounter_id": str(batch.get("encounter_id")),
             "batch_id": str(run.get("batch_id")),
             "question_run_id": str(run.get("id")),
             "question_key": str(run.get("question_key", "")),
+            "actor_id": str(author.get("id")),
+            "actor_display": str(author.get("username", "")),
             "revision_id": str(revision_id),
             "parent_revision_id": str(parent_id) if parent_id is not None else None,
             "sequence": int(sequence),
@@ -844,6 +874,8 @@ def ensure_retry_job(
     expected_review_revision: Any,
     revision_id: Any | None = None,
     now: Any | None = None,
+    author: Mapping[str, Any] | None = None,
+    request_id: str | None = None,
 ) -> dict[str, Any]:
     """Queue (or reuse) the local job for exactly the current revision.
 
@@ -901,12 +933,15 @@ def ensure_retry_job(
             solved = get_calculation_result_for_revision(session, current_id)
             if solved is not None:
                 return existing
-        return queue_module.requeue_local_job(session, existing["id"], now=moment)
+        requeued = queue_module.requeue_local_job(session, existing["id"], now=moment)
+        if author is not None and request_id is not None:
+            _audit_retry_requested(session, run, batch, author, request_id, current_id, latest)
+        return requeued
     try:
         deployment = queue_module.get_deployment_generation(session)
     except Exception:
         deployment = 1
-    return queue_module.insert_local_job(
+    inserted = queue_module.insert_local_job(
         session,
         batch_id=run["batch_id"],
         question_run_id=run["id"],
@@ -914,6 +949,38 @@ def ensure_retry_job(
         cpt_hash=str(latest.get("cpt_hash", "")),
         deployment_generation=int(deployment),
         now=moment,
+    )
+    if author is not None and request_id is not None:
+        _audit_retry_requested(session, run, batch, author, request_id, current_id, latest)
+    return inserted
+
+
+def _audit_retry_requested(
+    session: Session,
+    run: Mapping[str, Any],
+    batch: Mapping[str, Any],
+    author: Mapping[str, Any],
+    request_id: str,
+    current_id: str,
+    latest: Mapping[str, Any],
+) -> None:
+    """Audit an explicit local-retry request in the caller's transaction."""
+    audit_module.record_audit(
+        session,
+        operation=audit_module.LOCAL_RETRY_REQUESTED_OPERATION,
+        actor=str(author.get("username")),
+        request_id=request_id,
+        details={
+            "patient_id": _patient_id_for_batch(session, batch),
+            "encounter_id": str(batch.get("encounter_id")),
+            "batch_id": str(run.get("batch_id")),
+            "question_run_id": str(run.get("id")),
+            "question_key": str(run.get("question_key", "")),
+            "actor_id": str(author.get("id")),
+            "actor_display": str(author.get("username", "")),
+            "cpt_revision_id": str(current_id),
+            "cpt_hash": str(latest.get("cpt_hash", "")),
+        },
     )
 
 
@@ -1468,6 +1535,8 @@ def apply_acceptance(
             "batch_id": str(run.get("batch_id")),
             "question_run_id": str(run.get("id")),
             "question_key": str(point.get("question_key", "")),
+            "actor_id": str(author.get("id")),
+            "actor_display": str(author.get("username", "")),
             "acceptance_id": str(acceptance_id),
             "baseline_id": str(want_baseline),
             "cpt_revision_id": str(want_revision) if want_revision is not None else None,

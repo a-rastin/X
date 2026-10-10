@@ -293,7 +293,12 @@ def create_patient_with_draft(
         operation="patients.create.success",
         actor=str(author["username"]),
         request_id=request_id,
-        details={"patient_id": str(patient_id), "identifier": fields["identifier"]},
+        details={
+            "patient_id": str(patient_id),
+            "identifier": fields["identifier"],
+            "actor_id": str(author.get("id")),
+            "actor_display": str(author.get("username", "")),
+        },
     )
     return patient, draft, contracts.serialize_utc(moment)
 
@@ -432,7 +437,12 @@ def set_patient_archived(
         operation=("patients.archive.success" if archived else "patients.unarchive.success"),
         actor=str(actor.get("username")),
         request_id=request_id,
-        details={"patient_id": str(want), "archived": bool(archived)},
+        details={
+            "patient_id": str(want),
+            "archived": bool(archived),
+            "actor_id": str(actor.get("id")),
+            "actor_display": str(actor.get("username", "")),
+        },
     )
     return updated, contracts.serialize_utc(moment), True
 
@@ -622,7 +632,12 @@ def update_patient_demographics(
         operation="patients.update.success",
         actor=str(actor.get("username")),
         request_id=request_id,
-        details={"patient_id": str(want), "fields": sorted(normalized)},
+        details={
+            "patient_id": str(want),
+            "fields": sorted(normalized),
+            "actor_id": str(actor.get("id")),
+            "actor_display": str(actor.get("username", "")),
+        },
     )
     return updated, contracts.serialize_utc(moment)
 

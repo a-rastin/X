@@ -337,6 +337,10 @@ def create_app() -> FastAPI:
 
     app.include_router(review_router, prefix="/api/v1")
 
+    from x_insight.operations.router import router as operations_router
+
+    app.include_router(operations_router, prefix="/api/v1")
+
     @app.get("/api/v1/health")
     def health() -> dict[str, str]:
         return {"status": "ok", "service": "x-insight"}

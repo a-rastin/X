@@ -3,22 +3,31 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest recorded checkpoint is [S51](s51.md): S51 complete — archive,
-deactivation, and multi-user race cases (backend archive/unarchive +
-demographics relevant-hash + open-drafts preview + retain/discard revision +
-sign/queue fences, `BT/http/test_record_races.py` 15 T1/T8; frontend
-ArchivePanel/DemographicsForm/DeactivateForm/conflictHint/ChartPage lift;
-`e2e/shared-records` 8 × chromium/firefox 16/16 workers=1; tests/http 295 +
-1 deselected, worker/probability/signing 113, tsc clean, build 60 modules;
-regressions 35 chromium; S04/S07/S14 integration items closed explicitly).
-Regressions hold except pre-existing `test_only_s02_tables_exist`
-drift and non-blocking identity pager gap (limit=100 vs 2139 rows). Next
-is S52 audit. Prior slices remain [S50](s50.md) (final-plan/sign/addenda UI),
-[S49](s49.md) (atomic signing backend), [S48d](s48-d.md) (per-question freshness + frontend + dev-test +
-code review), [S48c](s48-c-devtest.md) (build + code review),
-[S48c-frontend](s48-c-frontend.md) (UI) and [S48c-backend](s48-c-backend.md)
-(endpoint, migration 0015). Content approvals remain as recorded in S39.b;
-bundle release and activation retain their independent status.
+The latest recorded checkpoint is [S52](s52.md): S52 complete —
+append-only audit and administration views (admin-only
+`GET /api/v1/audit-events` + filters/stable `(occurred_at,id)`
+pagination + 405 on writes + SELECT+INSERT-only grants probe,
+atomic run/slider/reset/calculation/acceptance/sign events with
+rename/deactivation-stable attribution, `BT/http/test_audit.py`
+10 T1; frontend AuditPage/api + admin nav/guard;
+`e2e/audit.spec.ts` 7 × chromium/firefox 14/14; tests/http 305 +
+1 deselected, worker/probability 128, assessments 90, tsc clean,
+build 62 modules; regressions 43 chromium (35 + 8
+shared-records); S51 audit-view carryover closed explicitly).
+History is replaceable by DB-owner access/restore — NOT
+tamper-proof. Regressions hold except pre-existing
+`test_only_s02_tables_exist` drift, non-blocking identity pager
+gap (limit=100 vs 2139 rows), and the `ddi_*` suite-order
+workaround (truncate between http and worker suites). Next is
+S53 exports/reports. Prior slices remain [S51](s51.md)
+(archive/deactivation/races), [S50](s50.md)
+(final-plan/sign/addenda UI), [S49](s49.md) (atomic signing
+backend), [S48d](s48-d.md) (per-question freshness + frontend +
+dev-test + code review), [S48c](s48-c-devtest.md) (build + code
+review), [S48c-frontend](s48-c-frontend.md) (UI) and
+[S48c-backend](s48-c-backend.md) (endpoint, migration 0015).
+Content approvals remain as recorded in S39.b; bundle release
+and activation retain their independent status.
 
 ## Reading and updating progress
 
@@ -102,3 +111,4 @@ bundle release and activation retain their independent status.
 | S49 | [Implement atomic plan signing and immutable snapshots (2026-10-10)](s49.md) |
 | S50 | [Build final-plan editing, comparison, sign, and addenda UI (2026-10-10)](s50.md) |
 | S51 | [Close archive, deactivation, and multi-user race cases (2026-10-10)](s51.md) |
+| S52 | [Complete append-only audit and administration views (2026-10-10)](s52.md) |

@@ -714,6 +714,8 @@ def _commit_failure(
     stage: str = "preparing_question",
     stage_artifact: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
+    from x_insight.operations import audit as audit_module
+
     with db_module.session_scope(engine) as session:
         try:
             committed = queue_module.commit_job_result(
@@ -736,7 +738,87 @@ def _commit_failure(
             ):
                 return {"status": "fencing_failed", "job_id": str(job_id), "code": exc.code}
             raise
+        # S52: terminal original-run failures audit accurate failure
+        # metadata in the same transaction (no false success: success rows
+        # are only written on the baseline path). Retryable intermediates
+        # that requeue stay in the attempt ledger, not audit.
+        if str(committed.get("status")) == queue_module.FAILED:
+            job_row = dict(committed)
+            batch_id = job_row.get("batch_id")
+            run_id = job_row.get("question_run_id")
+            batch_dict: dict[str, Any] = {}
+            run_dict: dict[str, Any] = {}
+            if batch_id is not None:
+                found = (
+                    session.execute(
+                        select(reasoning_tables.generation_batches).where(
+                            reasoning_tables.generation_batches.c.id == batch_id
+                        )
+                    )
+                    .mappings()
+                    .first()
+                )
+                batch_dict = dict(found) if found is not None else {}
+            if run_id is not None:
+                found = (
+                    session.execute(
+                        select(reasoning_tables.question_runs).where(
+                            reasoning_tables.question_runs.c.id == run_id
+                        )
+                    )
+                    .mappings()
+                    .first()
+                )
+                run_dict = dict(found) if found is not None else {}
+            patient_id = _patient_id_for_batch(session, batch_dict)
+            try:
+                attempt_index = int(job_row.get("attempt_index", 0))
+            except Exception:
+                attempt_index = 0
+            audit_module.record_audit(
+                session,
+                operation=audit_module.ORIGINAL_RUN_FAILED_OPERATION,
+                actor="worker",
+                request_id=str(job_id),
+                details={
+                    "patient_id": patient_id,
+                    "encounter_id": str(batch_dict.get("encounter_id"))
+                    if batch_dict.get("encounter_id") is not None
+                    else None,
+                    "batch_id": str(batch_id),
+                    "question_run_id": str(run_id),
+                    "question_key": str(run_dict.get("question_key", "")),
+                    "job_id": str(job_id),
+                    "error_code": str(error_code),
+                    "stage": str(stage),
+                    "attempt_index": int(attempt_index),
+                },
+            )
     return {"status": str(committed.get("status")), "job_id": str(committed.get("id"))}
+
+
+def _patient_id_for_batch(session: Session, batch: Mapping[str, Any]) -> str | None:
+    """Patient id for audit target correlation (None when unresolvable)."""
+    try:
+        from x_insight.cases import tables as cases_tables
+
+        encounter_id = batch.get("encounter_id")
+        if encounter_id is None:
+            return None
+        row = (
+            session.execute(
+                select(cases_tables.encounters).where(
+                    cases_tables.encounters.c.id == encounter_id
+                )
+            )
+            .mappings()
+            .first()
+        )
+        if row is None:
+            return None
+        return str(dict(row).get("patient_id"))
+    except Exception:
+        return None
 
 
 def execute_claimed_job(
@@ -1225,10 +1307,11 @@ def execute_claimed_job(
             .mappings()
             .first()
         )
+        baseline_id = uuid.uuid4()
         if existing is None:
             session.execute(
                 insert(reasoning_tables.original_baselines).values(
-                    id=uuid.uuid4(),
+                    id=baseline_id,
                     question_run_id=run_id,
                     batch_id=batch["id"],
                     source_hash=str(document.source_sha256),
@@ -1306,6 +1389,37 @@ def execute_claimed_job(
             now=now,
         )
         try_assemble_proposal(session, batch["id"], now)
+        session.flush()
+        # S52: original-run success audits tool/attempt metadata with the
+        # baseline in the same transaction (mutation + event are atomic).
+        from x_insight.operations import audit as audit_module
+
+        run_dict = dict(run_row)
+        batch_dict = dict(batch_row)
+        try:
+            attempt_index = int(current.get("attempt_index", 0))
+        except Exception:
+            attempt_index = 0
+        audit_module.record_audit(
+            session,
+            operation=audit_module.ORIGINAL_RUN_SUCCESS_OPERATION,
+            actor="worker",
+            request_id=str(job_id),
+            details={
+                "patient_id": _patient_id_for_batch(session, batch_dict),
+                "encounter_id": str(batch_dict.get("encounter_id")),
+                "batch_id": str(batch.get("id")),
+                "question_run_id": str(run_id),
+                "question_key": str(run_dict.get("question_key", "")),
+                "job_id": str(job_id),
+                "baseline_id": str(baseline_id if existing is None else dict(existing).get("id")),
+                "attempt_index": int(attempt_index),
+                "tool_calls_made": int(payload.get("tool_calls_made", 0) or 0),
+                "capability": str(payload.get("capability", "") or ""),
+                "provider_model": model_name,
+                "projection_hash": str(run.get("projection_hash", "")),
+            },
+        )
         session.flush()
         committed = (
             session.execute(
