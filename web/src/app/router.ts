@@ -9,8 +9,10 @@ export type Route =
   | "patients-new"
   | "networks"
   | "audit"
+  | "exports"
   | "encounter"
-  | "chart";
+  | "chart"
+  | "report";
 
 const HASHES: Record<string, Route> = {
   "#/login": "login",
@@ -21,9 +23,10 @@ const HASHES: Record<string, Route> = {
   "#/patients/new": "patients-new",
   "#/networks": "networks",
   "#/audit": "audit",
+  "#/exports": "exports",
 };
 
-const ROUTE_HASHES: Record<Exclude<Route, "encounter" | "chart">, string> = {
+const ROUTE_HASHES: Record<Exclude<Route, "encounter" | "chart" | "report">, string> = {
   login: "#/login",
   dashboard: "#/dashboard",
   physicians: "#/physicians",
@@ -32,6 +35,7 @@ const ROUTE_HASHES: Record<Exclude<Route, "encounter" | "chart">, string> = {
   "patients-new": "#/patients/new",
   networks: "#/networks",
   audit: "#/audit",
+  exports: "#/exports",
 };
 
 export function parseHash(hash: string): Route | null {
@@ -58,6 +62,20 @@ export function parseHash(hash: string): Route | null {
       return "chart";
     }
   }
+  // Admin printable report (S53): `#/patients/:id/report` mirrors the
+  // backend `GET /patients/{id}/report` resource (admin-only; physicians
+  // 403 per the provisional print policy). Patient-scoped like the chart,
+  // never draft content.
+  if (
+    hash.startsWith("#/patients/") &&
+    hash.endsWith("/report") &&
+    hash.length > "#/patients/".length + "/report".length
+  ) {
+    const middle = hash.slice("#/patients/".length, -"/report".length);
+    if (middle !== "" && !middle.includes("/")) {
+      return "report";
+    }
+  }
   return null;
 }
 
@@ -65,7 +83,7 @@ export function routeToHash(route: Route): string {
   if (route === "encounter") {
     return "#/encounters";
   }
-  if (route === "chart") {
+  if (route === "chart" || route === "report") {
     return "#/patients";
   }
   return ROUTE_HASHES[route];
@@ -97,6 +115,22 @@ export function chartHash(patientId: string): string {
   return `#/patients/${patientId}/chart`;
 }
 
+/** Hash for a patient's admin printable report (`#/patients/:id/report`). */
+export function reportHash(patientId: string): string {
+  return `#/patients/${patientId}/report`;
+}
+
+/** Current patient id for the `report` route (null elsewhere). */
+export function reportIdFromHash(hash: string): string | null {
+  const prefix = "#/patients/";
+  const suffix = "/report";
+  if (!hash.startsWith(prefix) || !hash.endsWith(suffix)) {
+    return null;
+  }
+  const id = hash.slice(prefix.length, -suffix.length).split(/[?#]/)[0] ?? "";
+  return id === "" || id.includes("/") ? null : id;
+}
+
 /** Minimal hash router (no extra dependency). Hash routes keep every view
  * servable from the static preview server, including on reload. The draft
  * route carries its encounter id (`#/encounters/:id`); navigate there by
@@ -104,7 +138,7 @@ export function chartHash(patientId: string): string {
  * bare route has no target. */
 export function useRoute(): [
   Route | null,
-  (route: Exclude<Route, "encounter" | "chart">) => void,
+  (route: Exclude<Route, "encounter" | "chart" | "report">) => void,
 ] {
   const [route, setRoute] = useState<Route | null>(() =>
     parseHash(window.location.hash),
@@ -116,7 +150,7 @@ export function useRoute(): [
     return () => window.removeEventListener("hashchange", onChange);
   }, []);
 
-  const navigate = useCallback((next: Exclude<Route, "encounter" | "chart">) => {
+  const navigate = useCallback((next: Exclude<Route, "encounter" | "chart" | "report">) => {
     if (parseHash(window.location.hash) === next) {
       setRoute(next);
       return;

@@ -3,23 +3,26 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest recorded checkpoint is [S52](s52.md): S52 complete —
-append-only audit and administration views (admin-only
-`GET /api/v1/audit-events` + filters/stable `(occurred_at,id)`
-pagination + 405 on writes + SELECT+INSERT-only grants probe,
-atomic run/slider/reset/calculation/acceptance/sign events with
-rename/deactivation-stable attribution, `BT/http/test_audit.py`
-10 T1; frontend AuditPage/api + admin nav/guard;
-`e2e/audit.spec.ts` 7 × chromium/firefox 14/14; tests/http 305 +
-1 deselected, worker/probability 128, assessments 90, tsc clean,
-build 62 modules; regressions 43 chromium (35 + 8
-shared-records); S51 audit-view carryover closed explicitly).
-History is replaceable by DB-owner access/restore — NOT
-tamper-proof. Regressions hold except pre-existing
+The latest recorded checkpoint is [S53](s53.md): S53 complete —
+export lists and printable longitudinal patient reports
+(admin-only `GET /api/v1/exports/patients.csv` +
+`physicians.csv` + `GET /api/v1/patients/{id}/report` with
+`private, no-store` + export/report audit; stable
+headers/UTF-8/quoting, exact `0012345678` bytes,
+formula-neutralized text, escaped signed HTML with
+original+accepted CPTs/results/versions/indicators/
+attribution, drafts excluded; `BT/http/test_exports.py`
+14 T1; frontend ExportsPage/ReportPage/api + admin nav/guards +
+chart report link; `e2e/reporting.spec.ts` 6 × chromium/firefox
+12/12; tests/http 319 + 1 deselected, worker/probability 80,
+tsc clean, build 65 modules; regressions audit 7 + 43
+chromium). History is replaceable by DB-owner access/restore
+— NOT tamper-proof. Regressions hold except pre-existing
 `test_only_s02_tables_exist` drift, non-blocking identity pager
 gap (limit=100 vs 2139 rows), and the `ddi_*` suite-order
 workaround (truncate between http and worker suites). Next is
-S53 exports/reports. Prior slices remain [S51](s51.md)
+S54 backups. Prior slices remain [S52](s52.md)
+(append-only audit/administration views), [S51](s51.md)
 (archive/deactivation/races), [S50](s50.md)
 (final-plan/sign/addenda UI), [S49](s49.md) (atomic signing
 backend), [S48d](s48-d.md) (per-question freshness + frontend +
@@ -112,3 +115,4 @@ and activation retain their independent status.
 | S50 | [Build final-plan editing, comparison, sign, and addenda UI (2026-10-10)](s50.md) |
 | S51 | [Close archive, deactivation, and multi-user race cases (2026-10-10)](s51.md) |
 | S52 | [Complete append-only audit and administration views (2026-10-10)](s52.md) |
+| S53 | [Export lists and printable longitudinal patient reports (2026-10-10)](s53.md) |

@@ -8,6 +8,14 @@ ordering, bounded pagination (default 25, max 100 via
 design (append-only; normal app role lacks UPDATE/DELETE grants). This is
 not tamper-proof storage: the database owner or a restore can replace
 history.
+
+S53 CSV exports (plan.md §10.1; FR-40) live here per plan §3.2
+(Operations owns export): ``GET /api/v1/exports/patients.csv`` and
+``GET /api/v1/exports/physicians.csv`` — admin-only (physicians 403, like
+audit), ``private, no-store``, audited atomically at the command path.
+Builders live in the cases owning module
+(:mod:`x_insight.cases.reporting`); this router only gates, audits, and
+serves bytes (no business logic here).
 """
 
 from __future__ import annotations
@@ -16,11 +24,12 @@ import uuid
 from typing import Any
 
 from fastapi import APIRouter, Depends, Request
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, Response
 from fastapi.responses import JSONResponse as _JSONResponse
 from sqlalchemy.orm import Session
 
 from x_insight import contracts
+from x_insight.cases import reporting as reporting_module
 from x_insight.db import get_session
 from x_insight.identity import service as identity_service
 from x_insight.operations import audit as audit_module
@@ -163,3 +172,82 @@ def list_audit_events(
             "offset": int(resolved_offset),
         },
     )
+
+
+# --- S53 CSV exports (admin-only, audited, private/no-store) ---
+
+
+def _csv_response(filename: str, body: bytes) -> Response:
+    return Response(
+        content=body,
+        media_type="text/csv; charset=utf-8",
+        headers={
+            "Content-Disposition": f'attachment; filename="{filename}"',
+            "Cache-Control": "private, no-store",
+        },
+    )
+
+
+@router.get("/exports/patients.csv", response_model=None)
+def export_patients_csv(request: Request, session: Session = Depends(get_session)) -> Response:
+    """Admin-only patient list CSV (physicians 403, like audit).
+
+    Stable English headers, UTF-8, QUOTE_MINIMAL, formula-neutralized text,
+    identifier as exact 10-digit text bytes (import the column as Text —
+    CSV carries no types, no ``="..."`` wrappers). Audited atomically with
+    actor + exported count (no clinical bodies beyond required refs).
+    """
+    admin = _require_admin(request, session)
+    if isinstance(admin, JSONResponse):
+        return admin
+    assert isinstance(admin, dict)
+    patients = reporting_module.list_all_patients(session)
+    body = reporting_module.build_patients_csv(
+        [
+            {
+                **row,
+                "created_at": contracts.serialize_utc(row["created_at"]),
+                "updated_at": contracts.serialize_utc(row["updated_at"]),
+            }
+            for row in patients
+        ]
+    )
+    audit_module.record_audit(
+        session,
+        operation=audit_module.EXPORT_PATIENTS_SUCCESS_OPERATION,
+        actor=str(admin.get("username")),
+        request_id=get_request_id(request),
+        details={
+            "actor_id": str(admin.get("id")),
+            "actor_display": str(admin.get("username", "")),
+            "exported_count": len(patients),
+        },
+    )
+    return _csv_response("patients.csv", body)
+
+
+@router.get("/exports/physicians.csv", response_model=None)
+def export_physicians_csv(request: Request, session: Session = Depends(get_session)) -> Response:
+    """Admin-only physician list CSV (physicians 403; safe fields only).
+
+    Never carries password hashes, tokens, or credential revisions — only
+    the admin table's safe columns. Audited atomically like patients.csv.
+    """
+    admin = _require_admin(request, session)
+    if isinstance(admin, JSONResponse):
+        return admin
+    assert isinstance(admin, dict)
+    physicians = reporting_module.list_all_physicians(session)
+    body = reporting_module.build_physicians_csv(physicians)
+    audit_module.record_audit(
+        session,
+        operation=audit_module.EXPORT_PHYSICIANS_SUCCESS_OPERATION,
+        actor=str(admin.get("username")),
+        request_id=get_request_id(request),
+        details={
+            "actor_id": str(admin.get("id")),
+            "actor_display": str(admin.get("username", "")),
+            "exported_count": len(physicians),
+        },
+    )
+    return _csv_response("physicians.csv", body)

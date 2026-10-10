@@ -11,6 +11,7 @@ import { shouldBlockNavigation } from "./navigationGuard";
 import {
   encounterIdFromHash,
   patientIdFromHash,
+  reportIdFromHash,
   useRoute,
   routeToHash,
   type Route,
@@ -19,9 +20,11 @@ import {
   AccountPage,
   AdminDashboard,
   AuditRoutePage,
+  ExportsRoutePage,
   NetworksRoutePage,
   PhysicianDashboard,
   PhysiciansPage,
+  ReportRoutePage,
 } from "./pages";
 
 function NavLink({
@@ -30,9 +33,9 @@ function NavLink({
   navigate,
   children,
 }: {
-  route: Exclude<Route, "encounter" | "chart">;
+  route: Exclude<Route, "encounter" | "chart" | "report">;
   current: Route;
-  navigate: (route: Exclude<Route, "encounter" | "chart">) => void;
+  navigate: (route: Exclude<Route, "encounter" | "chart" | "report">) => void;
   children: React.ReactNode;
 }) {
   return (
@@ -111,6 +114,36 @@ function ChartRoute() {
   return <ChartPage key={patientId} patientId={patientId} />;
 }
 
+function ReportRoute() {
+  const [hash, setHash] = React.useState(() =>
+    typeof window !== "undefined" ? window.location.hash : "",
+  );
+  React.useEffect(() => {
+    const onChange = () => setHash(window.location.hash);
+    window.addEventListener("hashchange", onChange);
+    return () => window.removeEventListener("hashchange", onChange);
+  }, []);
+  const patientId = reportIdFromHash(hash);
+  if (patientId === null) {
+    return (
+      <div>
+        <h2 className="xi-page-title" data-testid="report-heading" id="report-heading">
+          Longitudinal patient report
+        </h2>
+        <p className="xi-form-error" role="alert">
+          Missing patient id. Open the printable report from the patient chart.
+        </p>
+        <p>
+          <a className="xi-btn xi-btn-secondary" href="#/patients">
+            Back to directory
+          </a>
+        </p>
+      </div>
+    );
+  }
+  return <ReportRoutePage key={patientId} patientId={patientId} />;
+}
+
 export function App() {
   const { status, user, warningAcked, logout } = useAuth();
   const [hashRoute, navigate] = useRoute();
@@ -160,6 +193,11 @@ export function App() {
                 Audit
               </NavLink>
             )}
+            {user.role === "admin" && (
+              <NavLink route="exports" current={route} navigate={navigate}>
+                Exports
+              </NavLink>
+            )}
             <NavLink route="account" current={route} navigate={navigate}>
               Account
             </NavLink>
@@ -206,6 +244,8 @@ export function App() {
             {!showWarningGate && route === "physicians" && <PhysiciansPage />}
             {!showWarningGate && route === "networks" && <NetworksRoutePage />}
             {!showWarningGate && route === "audit" && <AuditRoutePage />}
+            {!showWarningGate && route === "exports" && <ExportsRoutePage />}
+            {!showWarningGate && route === "report" && <ReportRoute />}
             {!showWarningGate && route === "account" && <AccountPage />}
           </>
         )}

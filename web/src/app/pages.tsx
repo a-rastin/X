@@ -2,6 +2,8 @@ import { useAuth } from "../features/identity/auth";
 import { PasswordForm } from "../features/identity/PasswordForm";
 import { PhysiciansPanel } from "../features/identity/PhysiciansPanel";
 import { AuditPage } from "../features/admin/audit/AuditPage";
+import { ExportsPage } from "../features/admin/exports/ExportsPage";
+import { ReportPage } from "../features/admin/exports/ReportPage";
 import { NetworksPage } from "../features/admin/networks/NetworksPage";
 import { PatientDirectory } from "../features/patients/DirectoryPage";
 
@@ -111,4 +113,39 @@ export function AuditRoutePage() {
     );
   }
   return <AuditPage />;
+}
+
+export function ExportsRoutePage() {
+  const { user } = useAuth();
+  if (user?.role !== "admin") {
+    // Client-side complement to the server's 403: never grant authority,
+    // just avoid rendering the export actions to the wrong role.
+    return (
+      <div>
+        <h2 className="xi-page-title">Data exports</h2>
+        <p className="xi-form-error" role="alert">
+          Administrator access required.
+        </p>
+      </div>
+    );
+  }
+  return <ExportsPage />;
+}
+
+export function ReportRoutePage({ patientId }: { patientId: string }) {
+  const { user } = useAuth();
+  if (user?.role !== "admin") {
+    // Client-side complement to the server 403 on
+    // `GET /patients/{id}/report`: physicians never get a report button or
+    // report content here (provisional print policy, plan §§1.3, 2.1).
+    return (
+      <div>
+        <h2 className="xi-page-title">Longitudinal patient report</h2>
+        <p className="xi-form-error" role="alert">
+          Administrator access required.
+        </p>
+      </div>
+    );
+  }
+  return <ReportPage patientId={patientId} />;
 }

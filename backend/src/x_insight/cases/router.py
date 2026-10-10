@@ -77,7 +77,7 @@ import uuid
 from typing import Any, Literal
 
 from fastapi import APIRouter, Depends, Request
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, Response
 from fastapi.responses import JSONResponse as _JSONResponse
 from pydantic import BaseModel, Field, StrictInt
 from sqlalchemy.exc import IntegrityError
@@ -91,8 +91,10 @@ from x_insight.cases import history as history_service
 from x_insight.cases import medications as medications_service
 from x_insight.cases import notes as notes_service
 from x_insight.cases import patients as patients_service
+from x_insight.cases import reporting as reporting_module
 from x_insight.db import get_session
 from x_insight.identity import service as identity_service
+from x_insight.operations import audit as audit_module
 
 
 def get_request_id(request: Request) -> str:
@@ -213,6 +215,28 @@ def _require_admin_mutation(request: Request, session: Session) -> dict[str, Any
     if not presented or not expected or not hmac_module.compare_digest(presented, expected):
         return error_response(403, "FORBIDDEN", "CSRF validation failed.", get_request_id(request))
     user = identity_service.get_session_user(session, raw_token)
+    if user is None:
+        return error_response(
+            401, "UNAUTHENTICATED", "Authentication required.", get_request_id(request)
+        )
+    if user.get("role") != "admin" or not user.get("active", False):
+        return error_response(
+            403, "FORBIDDEN", "Administrator access required.", get_request_id(request)
+        )
+    return user
+
+
+def _require_admin_read(request: Request, session: Session) -> dict[str, Any] | JSONResponse:
+    """Session + admin gate for GET reads (no CSRF, like other GET previews).
+
+    Mirrors ``operations.router._require_admin`` 401/403 behavior: missing or
+    revoked sessions are 401, active physicians are 403. Used by the S53
+    printable report, which is admin-only until the provisional physician-
+    printing policy (plan §§1.3, 2.1) is owner-confirmed.
+    """
+    user = identity_service.get_session_user(
+        session, request.cookies.get(identity_service.SESSION_COOKIE_NAME)
+    )
     if user is None:
         return error_response(
             401, "UNAUTHENTICATED", "Authentication required.", get_request_id(request)
@@ -487,6 +511,47 @@ def get_chart(
     assert isinstance(user, dict)
     chart = chart_service.read_chart(session, patient_id, user)
     return JSONResponse(status_code=200, content=chart)
+
+
+@router.get("/patients/{patient_id}/report", response_model=None)
+def get_patient_report(
+    patient_id: uuid.UUID, request: Request, session: Session = Depends(get_session)
+) -> Response:
+    """Admin-only printable signed-patient HTML (S53, plan §10.1; FR-40).
+
+    Permission decision (explicit, per plan §§1.3, 2.1): physician printing
+    is PROPOSED, not owner-confirmed, so physicians get 403 here even though
+    the shared chart is readable by both roles. Widening this to physicians
+    needs the owner decision — do NOT treat the provisional text as approval.
+    Reads signed records only (never private drafts), escapes all text
+    (markup stays inert), serves ``private, no-store``, and audits
+    atomically with actor/time/target refs (no keys, no clinical bodies).
+    """
+    admin = _require_admin_read(request, session)
+    if isinstance(admin, JSONResponse):
+        return admin
+    assert isinstance(admin, dict)
+    data = reporting_module.get_report_data(session, patient_id)
+    body = reporting_module.build_patient_report_html(
+        data, generated_at=contracts.serialize_utc(contracts.utcnow())
+    )
+    audit_module.record_audit(
+        session,
+        operation=audit_module.PATIENT_REPORT_SUCCESS_OPERATION,
+        actor=str(admin.get("username")),
+        request_id=get_request_id(request),
+        details={
+            "actor_id": str(admin.get("id")),
+            "actor_display": str(admin.get("username", "")),
+            "patient_id": str(data["patient"]["id"]),
+            "signed_encounter_ids": [str(ref.get("id")) for ref in data["signed_encounters"]],
+        },
+    )
+    return Response(
+        content=body.encode("utf-8"),
+        media_type="text/html; charset=utf-8",
+        headers={"Cache-Control": "private, no-store"},
+    )
 
 
 def _archive_response(

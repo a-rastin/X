@@ -50,7 +50,7 @@ import {
   createEncounter,
   encounterHash,
 } from "../../encounters/api";
-import { chartHash } from "../../../app/router";
+import { chartHash, reportHash } from "../../../app/router";
 import { getChart, type ChartResponse } from "./api";
 import {
   archivePatient,
@@ -856,6 +856,19 @@ export function ChartPage({ patientId }: { patientId: string }) {
             >
               Print signed record
             </button>
+            {/* S53 admin printable report: signed records only. No report
+              button is rendered for physicians (provisional print policy,
+              plan §§1.3, 2.1 — the server 403s them on the report route). */}
+            {isAdmin && (
+              <a
+                className="xi-btn xi-btn-secondary"
+                href={reportHash(patient.id)}
+                data-testid="chart-report-link"
+                id="chart-report-link"
+              >
+                Open printable longitudinal report
+              </a>
+            )}
           </div>
         </section>
       )}

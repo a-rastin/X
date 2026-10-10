@@ -774,6 +774,21 @@ body {
   margin: 0 0 var(--space-2);
 }
 
+/* S53 admin exports + printable longitudinal report (plan.md §10.1;
+ * FR-40). Screen frame only — semantic tokens, both deliberate themes.
+ * The embedded report document is backend-escaped HTML carrying its own
+ * inline print rules (encounter page-break-before, table rows avoid
+ * breaks); the outer print block below keeps app chrome hidden, the frame
+ * borderless at its content height (set on load), and the research label
+ * readable on paper. No PDF library, no new runtime. */
+.xi-report-frame {
+  width: 100%;
+  min-height: 60vh;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  background: var(--canvas);
+}
+
 /* S50 print: signed records stay readable on paper in both themes —
  * ink on white, full width, no app chrome or action buttons. Print
  * permission itself follows the declared provisional policy (see
@@ -816,6 +831,25 @@ body {
 
   .xi-cpt-compare {
     grid-template-columns: 1fr 1fr;
+  }
+
+  /* S53: report frame prints borderless at content height; the research
+   * notice and hints print ink-on-white in both editor themes (dark-theme
+   * light text would otherwise vanish on paper with backgrounds off). */
+  .xi-report-frame {
+    border: 0;
+    border-radius: 0;
+    background: #ffffff;
+  }
+
+  .xi-notice,
+  .xi-hint,
+  .xi-status {
+    color: #111827;
+  }
+
+  .xi-notice {
+    background: #ffffff;
   }
 
   a {
