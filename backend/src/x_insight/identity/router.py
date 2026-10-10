@@ -664,7 +664,7 @@ def deactivate_physician(
             if stored["request_hash"] != request_hash:
                 return _idempotency_conflict(request_id)
             return _idempotency_replay(stored)
-    updated, changed = service.deactivate_physician(
+    updated, changed, current_revision, reviewed = service.deactivate_physician(
         session,
         user_id,
         draft_action=payload.draft_action,
@@ -679,16 +679,16 @@ def deactivate_physician(
             details={
                 "username": str(updated["username"]),
                 "draft_action": payload.draft_action,
-                "draft_set_revision": service.EMPTY_DRAFT_SET_REVISION,
-                "reviewed_drafts": [],
+                "draft_set_revision": int(current_revision),
+                "reviewed_drafts": list(reviewed),
             },
         )
     safe = service.safe_physician(updated)
     response_body: dict[str, Any] = {
         "user": safe,
         "draft_action": payload.draft_action,
-        "draft_set_revision": service.EMPTY_DRAFT_SET_REVISION,
-        "reviewed_drafts": [],
+        "draft_set_revision": int(current_revision),
+        "reviewed_drafts": list(reviewed),
     }
     if key is not None:
         assert request_hash is not None
@@ -704,6 +704,32 @@ def deactivate_physician(
     response = JSONResponse(status_code=200, content=response_body)
     response.headers["ETag"] = contracts.format_etag(int(safe["revision"]))
     return response
+
+
+@router.get("/physicians/{user_id}/open-drafts")
+def get_open_drafts(
+    user_id: uuid.UUID, request: Request, session: Session = Depends(get_session)
+) -> JSONResponse:
+    """Admin-only draft-set preview for discard confirmation (S51 §2).
+
+    Returns minimal identifiers (encounter/patient/revision, no clinical
+    content) + stable revision. Does not grant draft viewing/editing and does
+    not deactivate. Changing the set invalidates a previously reviewed
+    revision (discard then 409).
+    """
+    admin = _require_admin(request, session)
+    if isinstance(admin, JSONResponse):
+        return admin
+    target = service.get_user_by_id(session, user_id)
+    if target is None:
+        return error_response(404, "NOT_FOUND", "Physician not found.", get_request_id(request))
+    open_drafts = service.list_open_drafts_for_author(session, target["id"])
+    revision = service.compute_draft_set_revision(open_drafts)
+    reviewed = service.draft_set_identifiers(open_drafts)
+    return JSONResponse(
+        status_code=200,
+        content={"draft_set_revision": int(revision), "reviewed_drafts": list(reviewed)},
+    )
 
 
 @router.post("/physicians/{user_id}/reactivate")

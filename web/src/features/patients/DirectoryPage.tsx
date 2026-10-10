@@ -9,7 +9,7 @@
  */
 
 import { useCallback, useEffect, useId, useRef, useState } from "react";
-import { ApiError } from "../identity/api";
+import { ApiError, conflictHint } from "../identity/api";
 import { useAuth } from "../identity/auth";
 import { createEncounter, encounterHash } from "../encounters/api";
 import { chartHash } from "../../app/router";
@@ -126,10 +126,8 @@ export function PatientDirectory() {
         return;
       }
       if (err instanceof ApiError && err.status === 409) {
-        // Generic slot conflict: no author, no clinical content.
-        setDraftError(
-          "An open draft already exists for this patient. Ask its author to resume it.",
-        );
+        // Generic slot/archived conflict: no author, no clinical content.
+        setDraftError(conflictHint(err.code) ?? err.message);
         return;
       }
       setDraftError(
@@ -234,6 +232,7 @@ export function PatientDirectory() {
                   <th scope="col">Sex</th>
                   <th scope="col">Age</th>
                   <th scope="col">Status</th>
+                  <th scope="col">Archive</th>
                   <th scope="col">Chart</th>
                   {canRegister && <th scope="col">Draft</th>}
                 </tr>
@@ -247,6 +246,15 @@ export function PatientDirectory() {
                     <td>{patient.sex}</td>
                     <td>{patient.age}</td>
                     <td>{statusLabel(patient.clinical_status)}</td>
+                    <td>
+                      {patient.archived ? (
+                        <span className="xi-badge" role="status">
+                          ■ Archived
+                        </span>
+                      ) : (
+                        <span className="xi-hint">Active</span>
+                      )}
+                    </td>
                     <td>
                       <a
                         className="xi-btn xi-btn-secondary"

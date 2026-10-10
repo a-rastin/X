@@ -579,6 +579,21 @@ def create_open_draft(
     )
     if patient_row is None:
         raise contracts.ContractError(404, "NOT_FOUND", "Patient not found.")
+    # S51 §1 provisional: archived patients are read-only (409, no content leak).
+    if bool(dict(patient_row).get("archived", False)):
+        raise contracts.ContractError(
+            409,
+            "PATIENT_ARCHIVED",
+            "Patient is archived and read-only.",
+            {"patient_id": ["Patient is archived."]},
+        )
+    # S51 §4: inactive authors cannot create (route already 401/403; inside-tx
+    # recheck closes the sign/deactivation race window).
+    from x_insight.identity import service as _identity
+
+    _author_row = _identity.get_user_by_id(session, author["id"])
+    if _author_row is None or not bool(_author_row.get("active", False)):
+        raise contracts.ContractError(403, "FORBIDDEN", "Author is inactive.")
     occupying = get_open_draft_for_patient(session, patient_id)
     if occupying is not None:
         raise contracts.ContractError(
@@ -674,6 +689,10 @@ def patch_draft(
     encounter = dict(row)
     require_draft_lifecycle(encounter)
     require_author(encounter, author)
+    # S51 §1+§4 provisional read-only + inactive fence (patient lock inside).
+    from x_insight.cases import patients as _patients
+
+    _patients.require_encounter_mutable(session, encounter, author)
     if int(encounter["revision"]) != expected_revision:
         raise contracts.ContractError(
             412,
@@ -743,6 +762,10 @@ def discard_draft(
     encounter = dict(row)
     require_draft_lifecycle(encounter)
     require_author(encounter, author)
+    # S51 §1 provisional read-only (patient lock inside, no leak).
+    from x_insight.cases import patients as _patients
+
+    _patients.require_encounter_mutable(session, encounter, author)
     validate_discard_confirm(confirm)
     if int(encounter["revision"]) != expected_revision:
         raise contracts.ContractError(

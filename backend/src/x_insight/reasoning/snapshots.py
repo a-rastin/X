@@ -723,6 +723,32 @@ def start_generation_batch(
     encounter = dict(row)
     encounters_service.require_draft_lifecycle(encounter)
     encounters_service.require_author(encounter, author)
+    # S51 §1+§4: fence archived (409, no leak) + inactive author (403) inside
+    # the tx; serialize with archive/demographics via patient lock.
+    from x_insight.identity import service as _identity
+
+    _patient_row = (
+        session.execute(
+            select(encounters_service.tables.patients)
+            .where(encounters_service.tables.patients.c.id == encounter["patient_id"])
+            .with_for_update()
+        )
+        .mappings()
+        .first()
+    )
+    if _patient_row is None:
+        raise contracts.ContractError(404, "NOT_FOUND", "Patient not found.")
+    _patient = dict(_patient_row)
+    if bool(_patient.get("archived", False)):
+        raise contracts.ContractError(
+            409,
+            "PATIENT_ARCHIVED",
+            "Patient is archived and read-only.",
+            {"patient_id": ["Patient is archived."]},
+        )
+    _author_row = _identity.get_user_by_id(session, author["id"])
+    if _author_row is None or not bool(_author_row.get("active", False)):
+        raise contracts.ContractError(403, "FORBIDDEN", "Author is inactive.")
     if int(encounter["revision"]) != expected_revision:
         raise contracts.ContractError(
             412, "STALE_REVISION", "The draft changed. Reload and reconcile your edits."
@@ -759,6 +785,16 @@ def start_generation_batch(
         "ddi_medication_fingerprint": ddi_pin.get("medication_fingerprint"),
         "ddi_status": ddi_pin.get("ddi_status"),
     }
+    # S51 §2 provisional: freeze relevant demographics hash (age/sex/status)
+    # alongside the batch; phone/name excluded per plan §4.2. Stored in the
+    # pinned bundle (no migration); freshness compares stored vs current.
+    try:
+        from x_insight.cases import patients as _patients
+
+        pinned["patient_relevant_hash"] = _patients.relevant_demographics_hash(_patient)
+        pinned["patient_revision"] = int(_patient.get("revision", 1))
+    except Exception:
+        pass
     fingerprint, payload = compute_analysis_fingerprint(draft_data, pinned)
     # Per-question projections/gates in pinned order (S40 reuse, no second path).
     projections: list[dict[str, Any]] = []
@@ -808,9 +844,16 @@ def start_generation_batch(
     # failed stage (earlier questions cost no new provider request).
     # S48d affected-only: per-question carry reuses unaffected baselines when
     # projection+gate+package match, even when the batch fingerprint moved
-    # (unrelated-field or DDI-only changes cost zero LLM calls).
+    # (unrelated-field or DDI-only changes cost zero LLM calls). S51 adds
+    # patient-relevant fencing: relevant demographics changes never carry.
     carried = _carried_baselines(session, encounter_id, fingerprint, requested_keys)
     new_package_hashes = [loaded.package_hash for loaded in loaded_list]
+    try:
+        _current_patient_hash: str | None = pinned.get("patient_relevant_hash")  # type: ignore[assignment]
+        if not isinstance(_current_patient_hash, str):
+            _current_patient_hash = None
+    except Exception:
+        _current_patient_hash = None
     carried_per_question = _carried_baselines_per_question(
         session,
         encounter_id,
@@ -818,6 +861,7 @@ def start_generation_batch(
         projections,
         statuses,
         new_package_hashes,
+        current_patient_hash=_current_patient_hash,
     )
     for key, baseline in carried_per_question.items():
         if key not in carried:
@@ -1018,19 +1062,55 @@ def get_generation_batch(
         return batch, runs, freshness
     current_fp, _ = compute_analysis_fingerprint(encounter.get("draft_data"), pinned)
     stored_fp = str(batch.get("fingerprint"))
-    if current_fp == stored_fp:
-        freshness = {
+    if current_fp != stored_fp:
+        return (
+            batch,
+            runs,
+            {
+                "stale": True,
+                "reason": "analysis facts changed since freeze",
+                "current_fingerprint": current_fp,
+            },
+        )
+    # S51 §2: relevant demographics (age/sex/status) stale the batch; phone/
+    # name/notes/plan do not. Stored hash lives in pinned_bundle (no migration).
+    try:
+        stored_patient_hash = pinned.get("patient_relevant_hash")
+        if isinstance(stored_patient_hash, str) and stored_patient_hash:
+            from x_insight.cases import patients as _patients
+
+            patient_row = (
+                session.execute(
+                    select(encounters_service.tables.patients).where(
+                        encounters_service.tables.patients.c.id == encounter["patient_id"]
+                    )
+                )
+                .mappings()
+                .first()
+            )
+            if patient_row is not None:
+                current_patient_hash = _patients.relevant_demographics_hash(dict(patient_row))
+                if current_patient_hash != str(stored_patient_hash):
+                    return (
+                        batch,
+                        runs,
+                        {
+                            "stale": True,
+                            "reason": "relevant patient demographics changed",
+                            "current_fingerprint": current_fp,
+                        },
+                    )
+    except Exception:
+        pass
+    return (
+        batch,
+        runs,
+        {
             "stale": False,
             "reason": "current",
             "current_fingerprint": current_fp,
-        }
-    else:
-        freshness = {
-            "stale": True,
-            "reason": "analysis facts changed since freeze",
-            "current_fingerprint": current_fp,
-        }
-    return batch, runs, freshness
+        },
+    )
 
 
 def question_input_hash(projection_hash: str, gate_status: str) -> str:
@@ -1048,6 +1128,26 @@ def question_input_hash(projection_hash: str, gate_status: str) -> str:
             "schema_version": QUESTION_INPUT_SCHEMA_VERSION,
             "projection_hash": str(projection_hash),
             "gate_status": str(gate_status),
+        }
+    )
+
+
+def patient_aware_input_hash(per_question_hash: str, patient_hash: str | None) -> str:
+    """S51 §2: per-question hash bound to relevant demographics (age/sex/status).
+
+    When the batch pins a relevant-demographics hash, the acceptance input
+    hash covers per-question inputs + relevant patient hash (phone/name
+    excluded). Relevant edits change this hash (stale, no silent carry);
+    phone/name leave it unchanged. Legacy batches without a pinned hash use
+    the per-question hash unchanged (no fence).
+    """
+    if not isinstance(patient_hash, str) or not patient_hash:
+        return str(per_question_hash)
+    return contracts.canonical_hash(
+        {
+            "schema_version": QUESTION_INPUT_SCHEMA_VERSION,
+            "per_question_hash": str(per_question_hash),
+            "patient_relevant_hash": str(patient_hash),
         }
     )
 
@@ -1104,7 +1204,14 @@ def compute_question_freshness(
             "current_gate_status": stored_status,
         }
     manifest = pinned_package["manifest"]
-    assert isinstance(manifest, Mapping)
+    if not isinstance(manifest, Mapping):
+        return {
+            "stale": True,
+            "reason": "question inputs not projectable: bad_manifest",
+            "current_fingerprint": stored_input,
+            "current_projection_hash": stored_hash,
+            "current_gate_status": stored_status,
+        }
     projection = run.get("projection")
     stored_revision = 1
     if isinstance(projection, dict) and isinstance(projection.get("source_revision"), int):
@@ -1149,11 +1256,13 @@ def compute_question_freshness(
 def get_question_input_freshness(
     session: Session, run: Mapping[str, Any], batch: Mapping[str, Any]
 ) -> dict[str, Any]:
-    """Per-question input freshness for review/acceptance (S48d, read-only).
+    """Per-question input freshness for review/acceptance (S48d+S51, read-only).
 
     Loads the current draft facts and compares per-question projections, not
-    batch timestamps. Missing encounters (signed/discarded) report current
-    (history remains readable). Never UPDATEs rows.
+    batch timestamps. S51 adds relevant-demographics comparison (age/sex/
+    status stale; phone/name/notes/plan do not). Missing encounters
+    (signed/discarded) report current (history remains readable). Never
+    UPDATEs rows.
     """
     encounter = encounters_service.get_encounter(session, batch["encounter_id"])
     if encounter is None or not isinstance(encounter.get("draft_data"), dict):
@@ -1165,8 +1274,53 @@ def get_question_input_freshness(
             "current_fingerprint": question_input_hash(stored_hash, stored_status),
         }
     full = compute_question_freshness(run, batch, encounter.get("draft_data"))
+    if bool(full.get("stale", False)):
+        return {
+            "stale": True,
+            "reason": str(full["reason"]),
+            "current_fingerprint": str(full["current_fingerprint"]),
+        }
+    # S51 §2: relevant demographics stale even when projections match. The
+    # current fingerprint binds per-question inputs + relevant patient hash
+    # (phone/name excluded), so old acceptances mismatch after relevant edits
+    # (is_accepted false) while phone/notes preserve (is_accepted true).
+    try:
+        pinned = batch.get("pinned_bundle") or {}
+        stored_patient_hash = (
+            pinned.get("patient_relevant_hash") if isinstance(pinned, dict) else None
+        )
+        if isinstance(stored_patient_hash, str) and stored_patient_hash:
+            from x_insight.cases import patients as _patients
+
+            patient_row = (
+                session.execute(
+                    select(encounters_service.tables.patients).where(
+                        encounters_service.tables.patients.c.id == encounter["patient_id"]
+                    )
+                )
+                .mappings()
+                .first()
+            )
+            if patient_row is not None:
+                current_patient_hash = _patients.relevant_demographics_hash(dict(patient_row))
+                aware = patient_aware_input_hash(
+                    str(full["current_fingerprint"]), current_patient_hash
+                )
+                if current_patient_hash != str(stored_patient_hash):
+                    return {
+                        "stale": True,
+                        "reason": "relevant patient demographics changed",
+                        "current_fingerprint": aware,
+                    }
+                return {
+                    "stale": False,
+                    "reason": str(full["reason"]),
+                    "current_fingerprint": aware,
+                }
+    except Exception:
+        pass
     return {
-        "stale": bool(full["stale"]),
+        "stale": False,
         "reason": str(full["reason"]),
         "current_fingerprint": str(full["current_fingerprint"]),
     }
@@ -1203,6 +1357,7 @@ def _carried_baselines_per_question(
     new_projections: list[dict[str, Any]],
     new_statuses: list[str],
     new_package_hashes: list[str],
+    current_patient_hash: str | None = None,
 ) -> dict[str, dict[str, Any]]:
     """Latest baseline per question with identical values+gate+package (S48d).
 
@@ -1212,7 +1367,10 @@ def _carried_baselines_per_question(
     projection values, applicability status and package hash are unchanged.
     Source revisions are ignored (revision bumps alone never block carry);
     DDI-only and unrelated-field changes therefore cost zero LLM calls while
-    affected questions get fresh jobs. Returns {question_key: baseline row}.
+    affected questions get fresh jobs. S51 adds patient fencing: when the
+    current relevant-demographics hash differs from an old batch's stored
+    hash, that old baseline never carries (relevant edits regenerate).
+    Returns {question_key: baseline row}.
     """
     wanted = set(requested_keys)
     if not wanted:
@@ -1238,6 +1396,23 @@ def _carried_baselines_per_question(
     for batch_id in prior_batch_ids:
         if len(carried) >= len(wanted):
             break
+        # S51 patient fencing: old batch's stored relevant hash must match the
+        # current hash, else relevant demographics changed and nothing carries
+        # from that batch (regenerate). Legacy rows without a stored hash carry
+        # as before (no fence) to keep pre-S51 history readable.
+        if current_patient_hash is not None:
+            try:
+                old_batch = _get_batch(session, batch_id)
+                old_pinned = (old_batch.get("pinned_bundle") or {}) if old_batch else {}
+                old_hash = (
+                    old_pinned.get("patient_relevant_hash")
+                    if isinstance(old_pinned, dict)
+                    else None
+                )
+                if isinstance(old_hash, str) and old_hash and old_hash != str(current_patient_hash):
+                    continue
+            except Exception:
+                pass
         runs = (
             session.execute(
                 select(reasoning_tables.question_runs).where(

@@ -876,11 +876,11 @@ def _is_job_eligible(
     encounter = encounters_service.get_encounter(session, batch["encounter_id"])
     if encounter is None or encounter.get("lifecycle") != "draft":
         return False, "encounter not draft"
-    # S47 §4: analytical edits are covered by the fingerprint check below;
-    # discard/archive/deactivation fence here so late commits never land.
-    # Discard moves lifecycle off draft (above); archive flips the patient
-    # flag (no archive route until S51); deactivation clears author active.
+    # S47 §4 + S51 §1: discard/archive/deactivation fence so late commits never
+    # land. Discard moves lifecycle off draft (above); archive flips the patient
+    # flag; deactivation clears author active.
     patient_id = encounter.get("patient_id")
+    patient: dict[str, Any] | None = None
     if patient_id is not None:
         patient = patients_service.get_patient(session, patient_id)
         if patient is None or bool(patient.get("archived", False)):
@@ -908,6 +908,18 @@ def _is_job_eligible(
         return False, "fingerprint error"
     if current_fp != str(batch.get("fingerprint")):
         return False, "stale fingerprint"
+    # S51 §2: relevant demographics (age/sex/status) supersede; phone/name do
+    # not. Stored hash lives in pinned_bundle (no migration); legacy rows
+    # without it stay eligible (no fence).
+    try:
+        stored_patient_hash = (
+            pinned.get("patient_relevant_hash") if isinstance(pinned, dict) else None
+        )
+        if isinstance(stored_patient_hash, str) and stored_patient_hash and patient is not None:
+            if patients_service.relevant_demographics_hash(patient) != str(stored_patient_hash):
+                return False, "stale fingerprint"
+    except Exception:
+        pass
     return True, "eligible"
 
 
@@ -1546,11 +1558,12 @@ def _is_local_job_eligible(
     """Author/draft/baseline/revision checks before local work (no fingerprint).
 
     Stale inputs stay eligible (fixed snapshot still calculates; freshness
-    remains stale and blocks acceptance/signing). Deactivation/discard
-    fences here so late commits never land. No provider/MCP checks.
+    remains stale and blocks acceptance/signing). Deactivation/discard/
+    archive fences here so late commits never land. No provider/MCP checks.
     Returns (eligible, reason).
     """
     from x_insight.cases import encounters as encounters_service
+    from x_insight.cases import patients as patients_service
     from x_insight.identity import service as identity_service
     from x_insight.probability_review import service as review_service
     from x_insight.reasoning import coordinator as coordinator_module
@@ -1558,6 +1571,16 @@ def _is_local_job_eligible(
     encounter = encounters_service.get_encounter(session, batch["encounter_id"])
     if encounter is None or encounter.get("lifecycle") != "draft":
         return False, "encounter not draft"
+    # S51 §1 provisional: archived blocks local calculation (409 path fences
+    # at HTTP; queue fences here so late commits never land).
+    try:
+        _pid = encounter.get("patient_id")
+        if _pid is not None:
+            patient = patients_service.get_patient(session, _pid)
+            if patient is not None and bool(patient.get("archived", False)):
+                return False, "patient archived"
+    except Exception:
+        pass
     author = identity_service.get_user_by_id(session, batch["author_id"])
     if author is None or not author.get("active", False):
         return False, "author inactive"

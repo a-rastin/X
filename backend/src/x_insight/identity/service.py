@@ -13,6 +13,7 @@ import hashlib
 import secrets
 import uuid
 from datetime import datetime
+from typing import Any
 
 from sqlalchemy import func, insert, select, update
 from sqlalchemy.orm import Session
@@ -408,18 +409,15 @@ def patch_physician(
     return updated
 
 
-# --- S04 Slice 2/3: deactivation lifecycle + empty draft-set contract ---
+# --- S04 Slice 2/3 + S51 deactivation-to-Cases integration (plan §§2.1, 4.3) ---
 #
-# Until drafts exist (Cases S07/S14), the reviewed draft set is empty and no
-# draft tables are fabricated for this test (tasks.md S04.3). The deactivation
-# command still carries an explicit retain/discard choice plus the reviewed
-# draft-set revision; a mismatched revision is 409 so a changing set
-# invalidates the confirmation. Real draft/job race cases land in S51, which
-# is explicitly marked incomplete here (see router audit + handoff).
-# Cases integration point (S51): replace EMPTY_DRAFT_SET_* with the author's
-# open-draft identifiers + revision, confirm discard only against that
-# revision, cancel pending jobs on confirmed discard, keep retained drafts
-# reserved to the author occupying the single-draft slot.
+# S51 replaces the empty-set contract with the author's real open-draft set:
+# retain keeps drafts occupying the slot (author inactive, others 409) and
+# cancels/fences queued jobs; discard requires the exact reviewed revision
+# (409 on change), discards all open drafts (releasing slots, cancelling jobs,
+# auditing), then deactivates. Reactivation never resurrects discarded drafts
+# nor old sessions. Minimal identifiers for confirmation never grant draft
+# viewing.
 
 EMPTY_DRAFT_SET_REVISION = 0
 
@@ -437,23 +435,83 @@ def validate_draft_action(action: str | None) -> str:
     return action
 
 
-def validate_draft_set_revision(provided: int | None) -> int:
-    """Empty-set contract: only revision 0 (no drafts) is current.
+def list_open_drafts_for_author(session: Session, author_id: Any) -> list[dict]:
+    """Author's open drafts (lifecycle draft) ordered stably, no clinical body."""
+    from x_insight.cases import tables as cases_tables
 
-    A provided revision that differs means the reviewed set changed since
-    the admin confirmed → 409 DRAFT_SET_CHANGED. Absent means the caller
-    reviewed the empty set.
+    try:
+        import uuid as _uuid
+
+        want = _uuid.UUID(str(author_id))
+    except Exception:
+        return []
+    rows = (
+        session.execute(
+            select(cases_tables.encounters)
+            .where(
+                cases_tables.encounters.c.author_id == want,
+                cases_tables.encounters.c.lifecycle == "draft",
+            )
+            .order_by(cases_tables.encounters.c.created_at, cases_tables.encounters.c.id)
+        )
+        .mappings()
+        .all()
+    )
+    return [dict(row) for row in rows]
+
+
+def compute_draft_set_revision(open_drafts: list[dict]) -> int:
+    """Stable int revision for the open-draft set (0 when empty).
+
+    Covers count + IDs + revisions hash (sorted); any create/discard/sign or
+    content-revision bump changes it, so a changing set invalidates the
+    discard confirmation. Empty stays 0 for S04 backward compat.
     """
-    if provided is None:
+    if not open_drafts:
         return EMPTY_DRAFT_SET_REVISION
-    if provided != EMPTY_DRAFT_SET_REVISION:
+    ordered = sorted(
+        [{"id": str(d.get("id")), "revision": int(d.get("revision", 1))} for d in open_drafts],
+        key=lambda e: str(e["id"]),
+    )
+    digest = contracts.canonical_hash({"drafts": ordered})
+    try:
+        value = int(digest[:8], 16)
+    except Exception:
+        value = 1
+    return value if value != 0 else 1
+
+
+def draft_set_identifiers(open_drafts: list[dict]) -> list[dict]:
+    """Minimal identifiers for discard confirmation (no clinical content)."""
+    ordered = sorted(open_drafts, key=lambda d: str(d.get("id")))
+    return [
+        {
+            "encounter_id": str(d.get("id")),
+            "patient_id": str(d.get("patient_id")),
+            "revision": int(d.get("revision", 1)),
+        }
+        for d in ordered
+    ]
+
+
+def validate_draft_set_revision(provided: int | None, current: int | None = None) -> int:
+    """Draft-set confirmation: provided must equal current (409 on change).
+
+    Absent means the caller reviewed the empty set (0). S51 discard calls
+    this with the live current; retain skips it (non-destructive, returns
+    current for discovery). Changing the set (create/discard/sign/revision)
+    invalidates the confirmation.
+    """
+    want = EMPTY_DRAFT_SET_REVISION if current is None else int(current)
+    got = EMPTY_DRAFT_SET_REVISION if provided is None else int(provided)
+    if int(got) != int(want):
         raise contracts.ContractError(
             409,
             "DRAFT_SET_CHANGED",
             "The draft set changed. Review and reconfirm.",
             {"draft_set_revision": ["Reviewed set is stale."]},
         )
-    return provided
+    return got
 
 
 def deactivate_physician(
@@ -463,17 +521,29 @@ def deactivate_physician(
     draft_action: str,
     draft_set_revision: int | None = None,
     now: datetime | None = None,
-) -> tuple[dict, bool]:
+) -> tuple[dict, bool, int, list[dict]]:
     """Deactivate (active=false + revoke all sessions immediately).
 
-    Returns (user, changed). Already-inactive is an idempotent no-op
-    (changed=False, no revision bump). Admin accounts cannot be deactivated.
-    Credential revision bumps so pre-deactivation sessions stay invalid
-    across a later reactivation (old sessions never resurrect).
+    S51 integration: locks the user row FOR UPDATE (serializes sign vs
+    deactivation), computes the live open-draft set, enforces the discard
+    confirmation (retain skips validation and returns current for discovery;
+    discard requires exact match, 409 on change), cancels/fences queued jobs,
+    discards (lifecycle draft->discarded, slot release, audit) on confirmed
+    discard, then deactivates. Returns (user, changed, revision, identifiers).
+    Already-inactive is an idempotent no-op (changed=False, no bump).
+    Admin accounts cannot be deactivated. Credential revision bumps so old
+    sessions never resurrect across reactivation.
     """
     validate_draft_action(draft_action)
-    validate_draft_set_revision(draft_set_revision)
-    target = get_user_by_id(session, target_id)
+    # Lock the user row first (serializes concurrent sign/deactivation).
+    locked = (
+        session.execute(
+            select(tables.users).where(tables.users.c.id == target_id).with_for_update()
+        )
+        .mappings()
+        .first()
+    )
+    target = dict(locked) if locked is not None else get_user_by_id(session, target_id)
     if target is None:
         raise contracts.ContractError(404, "NOT_FOUND", "Physician not found.")
     if target.get("role") == "admin":
@@ -483,9 +553,70 @@ def deactivate_physician(
             "Admin account cannot be deactivated.",
             {"role": ["Admin account must stay active."]},
         )
+    open_drafts = list_open_drafts_for_author(session, target["id"])
+    current_revision = compute_draft_set_revision(open_drafts)
+    reviewed = draft_set_identifiers(open_drafts)
+    if draft_action == "discard":
+        validate_draft_set_revision(draft_set_revision, current_revision)
     if not target.get("active", False):
-        return target, False
+        return target, False, int(current_revision), reviewed
     moment = now or contracts.utcnow()
+    # Cancel/fence queued jobs for the author's open drafts (both classes);
+    # retained drafts keep occupying the slot, discarded release it below.
+    try:
+        from x_insight.reasoning import queue as _queue
+
+        for draft in open_drafts:
+            try:
+                _queue.cancel_active_jobs_for_encounter(session, draft["id"], now=moment)
+            except Exception:
+                pass
+            # Local jobs share the same tables with a different class; fence
+            # them explicitly (claim/commit already fences author inactive).
+            try:
+                session.execute(
+                    update(_queue.reasoning_tables.reasoning_jobs)
+                    .where(
+                        _queue.reasoning_tables.reasoning_jobs.c.batch_id.in_(
+                            select(_queue.reasoning_tables.generation_batches.c.id).where(
+                                _queue.reasoning_tables.generation_batches.c.encounter_id
+                                == draft["id"]
+                            )
+                        ),
+                        _queue.reasoning_tables.reasoning_jobs.c.status.in_(["queued", "leased"]),
+                    )
+                    .values(lease_token=None, status="cancelled", updated_at=moment)
+                )
+            except Exception:
+                pass
+    except Exception:
+        pass
+    if draft_action == "discard" and open_drafts:
+        from x_insight.cases import tables as cases_tables
+        from x_insight.operations import audit as _audit
+
+        for draft in open_drafts:
+            session.execute(
+                update(cases_tables.encounters)
+                .where(cases_tables.encounters.c.id == draft["id"])
+                .values(
+                    lifecycle="discarded",
+                    revision=int(draft.get("revision", 1)) + 1,
+                    updated_at=moment,
+                )
+            )
+            _audit.record_audit(
+                session,
+                operation="encounters.discard.success",
+                actor="admin",
+                request_id=str(target_id),
+                details={
+                    "encounter_id": str(draft.get("id")),
+                    "patient_id": str(draft.get("patient_id")),
+                    "reason": "deactivation_discard",
+                },
+            )
+        session.flush()
     session.execute(
         update(tables.users)
         .where(tables.users.c.id == target["id"])
@@ -499,7 +630,7 @@ def deactivate_physician(
     revoke_all_user_sessions(session, target["id"], now=moment)
     updated = get_user_by_id(session, target["id"])
     assert updated is not None
-    return updated, True
+    return updated, True, int(current_revision), reviewed
 
 
 def reactivate_physician(

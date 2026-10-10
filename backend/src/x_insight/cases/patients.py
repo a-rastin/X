@@ -33,7 +33,7 @@ import unicodedata
 import uuid
 from typing import Any
 
-from sqlalchemy import func, insert, or_, select
+from sqlalchemy import func, insert, or_, select, update
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
@@ -42,8 +42,17 @@ from x_insight.cases import tables
 from x_insight.operations import audit as audit_module
 
 PATIENTS_CREATE_OPERATION = "patients.create"
+PATIENTS_ARCHIVE_OPERATION = "patients.archive"
+PATIENTS_UNARCHIVE_OPERATION = "patients.unarchive"
+PATIENTS_UPDATE_OPERATION = "patients.update"
 REGISTRATION_KIND = "registration"
 DRAFT_LIFECYCLE = "draft"
+
+# S51 §2 provisional analysis-visible demographics (plan §4.2): age/sex/
+# clinical_status are relevant inputs (included in freshness); names/
+# identifier/phone are identifying and excluded (never model inputs).
+# Provisional only - NOT owner-confirmed, no clinical thresholds invented.
+RELEVANT_DEMOGRAPHIC_FIELDS = ("age", "sex", "clinical_status")
 
 SEXES = ("M", "F")
 CLINICAL_STATUSES = ("first_time", "established")
@@ -349,3 +358,277 @@ def search_patients(
 def idempotency_request_hash(fields: dict[str, Any]) -> str:
     """Canonical hash of the normalized registration body (replay key)."""
     return contracts.canonical_hash({"body": fields})
+
+
+def require_patient_not_archived(patient: dict[str, Any]) -> dict[str, Any]:
+    """Provisional archive policy: archived patients are read-only (409).
+
+    Archived blocks create/edit/sign and CPT/generation mutations without
+    leaking draft content. Reads (author GET draft, shared chart) stay
+    allowed; unarchive resumes writes. This policy is provisional per
+    plan §1.3 - NOT owner-confirmed, do not mark confirmed.
+    """
+    if bool(patient.get("archived", False)):
+        raise contracts.ContractError(
+            409,
+            "PATIENT_ARCHIVED",
+            "Patient is archived and read-only.",
+            {"patient_id": ["Patient is archived."]},
+        )
+    return patient
+
+
+def set_patient_archived(
+    session: Session,
+    patient_id: Any,
+    *,
+    archived: bool,
+    expected_revision: int,
+    actor: dict[str, Any],
+    request_id: str,
+) -> tuple[dict[str, Any], str, bool]:
+    """Admin-only archive/unarchive with patient-revision fence (412 stale).
+
+    Row-locked read-modify-write in the caller's transaction: 404 missing,
+    412 on revision mismatch (changes nothing), idempotent no-op when already
+    in the desired state (no bump, no audit). Success flips the flag with
+    revision+1 and audits. Returns (patient, server_timestamp, changed).
+    """
+    import uuid as _uuid
+
+    try:
+        want = _uuid.UUID(str(patient_id))
+    except Exception as exc:
+        raise contracts.ContractError(404, "NOT_FOUND", "Patient not found.") from exc
+    row = (
+        session.execute(
+            select(tables.patients).where(tables.patients.c.id == want).with_for_update()
+        )
+        .mappings()
+        .first()
+    )
+    if row is None:
+        raise contracts.ContractError(404, "NOT_FOUND", "Patient not found.")
+    patient = dict(row)
+    if int(patient["revision"]) != int(expected_revision):
+        raise contracts.ContractError(
+            412,
+            "STALE_REVISION",
+            "The patient changed. Reload and reconcile your edits.",
+        )
+    if bool(patient.get("archived", False)) == bool(archived):
+        return patient, contracts.serialize_utc(patient["updated_at"]), False
+    moment = contracts.utcnow()
+    session.execute(
+        update(tables.patients)
+        .where(tables.patients.c.id == want)
+        .values(archived=bool(archived), revision=int(expected_revision) + 1, updated_at=moment)
+    )
+    session.flush()
+    updated = get_patient(session, want)
+    assert updated is not None
+    audit_module.record_audit(
+        session,
+        operation=("patients.archive.success" if archived else "patients.unarchive.success"),
+        actor=str(actor.get("username")),
+        request_id=request_id,
+        details={"patient_id": str(want), "archived": bool(archived)},
+    )
+    return updated, contracts.serialize_utc(moment), True
+
+
+def archive_request_hash(patient_id: Any, expected_revision: int, archived: bool) -> str:
+    """Canonical hash for archive/unarchive idempotency (target + rev + flag)."""
+    return contracts.canonical_hash(
+        {
+            "target_id": str(patient_id),
+            "expected_revision": int(expected_revision),
+            "archived": bool(archived),
+        }
+    )
+
+
+def require_encounter_mutable(
+    session: Session, encounter: dict[str, Any], author: dict[str, Any] | None = None
+) -> dict[str, Any]:
+    """S51 §1+§4 provisional read-only fence for draft mutations (409/403).
+
+    Locks the patient row FOR UPDATE (serializes archive/demographics vs
+    draft writes), raises 409 PATIENT_ARCHIVED when archived (no content
+    leak), and 403 when the author is inactive (closes deactivation races).
+    Reads stay allowed; unarchive resumes writes. Provisional per plan §1.3.
+    """
+    from sqlalchemy import select as _select
+
+    patient_row = (
+        session.execute(
+            _select(tables.patients)
+            .where(tables.patients.c.id == encounter["patient_id"])
+            .with_for_update()
+        )
+        .mappings()
+        .first()
+    )
+    if patient_row is None:
+        raise contracts.ContractError(404, "NOT_FOUND", "Patient not found.")
+    if bool(dict(patient_row).get("archived", False)):
+        raise contracts.ContractError(
+            409,
+            "PATIENT_ARCHIVED",
+            "Patient is archived and read-only.",
+            {"patient_id": ["Patient is archived."]},
+        )
+    if author is not None:
+        from x_insight.identity import service as _identity
+
+        author_row = _identity.get_user_by_id(session, author["id"])
+        if author_row is None or not bool(author_row.get("active", False)):
+            raise contracts.ContractError(403, "FORBIDDEN", "Author is inactive.")
+    return encounter
+
+
+def relevant_demographics(patient: dict[str, Any]) -> dict[str, Any]:
+    """Provisional analysis-visible demographics (S51 §2, plan §4.2).
+
+    Only age/sex/clinical_status enter freshness; names/identifier/phone are
+    identifying and excluded (never model inputs). Provisional - NOT
+    owner-confirmed, no clinical thresholds invented.
+    """
+    return {
+        "age": int(patient.get("age", 0)),
+        "sex": str(patient.get("sex", "")),
+        "clinical_status": str(patient.get("clinical_status", "")),
+    }
+
+
+def relevant_demographics_hash(patient: dict[str, Any]) -> str:
+    """Stable hash of relevant demographics for staleness comparison."""
+    return contracts.canonical_hash(relevant_demographics(patient))
+
+
+def validate_patch_fields(body: dict[str, Any]) -> dict[str, Any]:
+    """Validate shared demographics PATCH (422, identifier/archived immutable).
+
+    Allows given_name/family_name/sex/age/clinical_status/phone; identifier
+    and archived travel via their own routes (422 here, never silently
+    ignored). Empty body is 422. Returns normalized storage fields.
+    """
+    if not isinstance(body, dict) or not body:
+        raise contracts.ContractError(
+            422, "VALIDATION_FAILED", "Nothing to update.", {"request": ["Provide fields."]}
+        )
+    allowed = {"given_name", "family_name", "sex", "age", "clinical_status", "phone"}
+    unknown = set(body) - allowed
+    if unknown:
+        raise contracts.ContractError(
+            422,
+            "VALIDATION_FAILED",
+            "Unknown or immutable field.",
+            {name: ["Unknown or immutable field."] for name in sorted(unknown)},
+        )
+    normalized: dict[str, Any] = {}
+    errors: dict[str, list[str]] = {}
+    if "given_name" in body:
+        try:
+            normalized["given_name"] = normalize_person_name(body["given_name"], "given_name")
+        except contracts.ContractError as exc:
+            errors.update(exc.field_errors)
+    if "family_name" in body:
+        try:
+            normalized["family_name"] = normalize_person_name(body["family_name"], "family_name")
+        except contracts.ContractError as exc:
+            errors.update(exc.field_errors)
+    if "sex" in body:
+        if body["sex"] not in SEXES:
+            errors["sex"] = ["Must be 'M' or 'F'."]
+        else:
+            normalized["sex"] = body["sex"]
+    if "age" in body:
+        age = body["age"]
+        if isinstance(age, bool) or not isinstance(age, int) or not 18 <= age <= 99:
+            errors["age"] = ["Must be an integer 18-99."]
+        else:
+            normalized["age"] = age
+    if "clinical_status" in body:
+        if body["clinical_status"] not in CLINICAL_STATUSES:
+            errors["clinical_status"] = ["Must be 'first_time' or 'established'."]
+        else:
+            normalized["clinical_status"] = body["clinical_status"]
+    if "phone" in body:
+        phone = body["phone"]
+        if phone is not None and not isinstance(phone, str):
+            errors["phone"] = ["Must be text."]
+        else:
+            normalized["phone"] = phone
+    if errors:
+        raise contracts.ContractError(
+            422, "VALIDATION_FAILED", "Patient demographics are invalid.", errors
+        )
+    return normalized
+
+
+def update_patient_demographics(
+    session: Session,
+    patient_id: Any,
+    *,
+    fields: dict[str, Any],
+    expected_revision: int,
+    actor: dict[str, Any],
+    request_id: str,
+) -> tuple[dict[str, Any], str]:
+    """Physician-only shared demographics edit (If-Match fence, revision bump).
+
+    Row-locked read-modify-write: 404 missing, 412 stale (changes nothing),
+    422 invalid (changes nothing). Bumps revision+1 and audits; never carries
+    draft content (no draft grant - stranger cannot read drafts via this
+    route). Relevant edits (age/sex/status) invalidate affected results via
+    S48d per-question freshness (stored relevant hash vs current); phone/name
+    do not. Returns (patient, server_timestamp).
+    """
+    import uuid as _uuid
+
+    try:
+        want = _uuid.UUID(str(patient_id))
+    except Exception as exc:
+        raise contracts.ContractError(404, "NOT_FOUND", "Patient not found.") from exc
+    row = (
+        session.execute(
+            select(tables.patients).where(tables.patients.c.id == want).with_for_update()
+        )
+        .mappings()
+        .first()
+    )
+    if row is None:
+        raise contracts.ContractError(404, "NOT_FOUND", "Patient not found.")
+    patient = dict(row)
+    if int(patient["revision"]) != int(expected_revision):
+        raise contracts.ContractError(
+            412,
+            "STALE_REVISION",
+            "The patient changed. Reload and reconcile your edits.",
+        )
+    normalized = validate_patch_fields(fields)
+    moment = contracts.utcnow()
+    session.execute(
+        update(tables.patients)
+        .where(tables.patients.c.id == want)
+        .values(**normalized, revision=int(expected_revision) + 1, updated_at=moment)
+    )
+    session.flush()
+    updated = get_patient(session, want)
+    assert updated is not None
+    audit_module.record_audit(
+        session,
+        operation="patients.update.success",
+        actor=str(actor.get("username")),
+        request_id=request_id,
+        details={"patient_id": str(want), "fields": sorted(normalized)},
+    )
+    return updated, contracts.serialize_utc(moment)
+
+
+def update_request_hash(patient_id: Any, expected_revision: int, body: dict[str, Any]) -> str:
+    """Canonical hash for demographics PATCH idempotency (target + rev + body)."""
+    return contracts.canonical_hash(
+        {"target_id": str(patient_id), "expected_revision": int(expected_revision), "body": body}
+    )

@@ -1,12 +1,15 @@
 import { useCallback, useEffect, useState } from "react";
 import {
   ApiError,
+  conflictHint,
   createPhysician,
   deactivatePhysician,
+  getOpenDrafts,
   listPhysicians,
   patchPhysician,
   reactivatePhysician,
   type DraftAction,
+  type OpenDraftPreview,
   type SafePhysician,
 } from "./api";
 import { useAuth } from "./auth";
@@ -249,38 +252,112 @@ function EditForm({
   );
 }
 
+/* Deactivation with confirmed draft disposition (S51 §2, plan §2.1).
+ *
+ * The form opens by fetching the admin-only open-draft preview (GET
+ * .../open-drafts): a count of open-draft IDs plus the stable
+ * draft_set_revision — never clinical content. Retain revokes access and
+ * fences queued work while keeping drafts occupying the single-draft slot
+ * (author-reserved); discard needs the exact reviewed revision, so a changed
+ * set answers 409 DRAFT_SET_CHANGED and forces a re-review + reconfirm.
+ * Discard is a second explicit confirmation (checkbox) and reactivation
+ * never resurrects discarded drafts nor old sessions. */
+
+type PreviewState =
+  | { kind: "loading" }
+  | { kind: "error"; message: string }
+  | { kind: "ready"; preview: OpenDraftPreview };
+
 function DeactivateForm({
   physician,
   onDeactivated,
   onCancel,
 }: {
   physician: SafePhysician;
-  onDeactivated: () => void;
+  onDeactivated: (message: string) => void;
   onCancel: () => void;
 }) {
   const { sessionExpired } = useAuth();
   const [draftAction, setDraftAction] = useState<DraftAction>("retain");
-  const [draftSetRevision, setDraftSetRevision] = useState("0");
+  const [preview, setPreview] = useState<PreviewState>({ kind: "loading" });
+  const [reviewed, setReviewed] = useState(false);
+  const [confirmedDiscard, setConfirmedDiscard] = useState(false);
   const [formError, setFormError] = useState<string | null>(null);
   const [done, setDone] = useState(false);
   const [busy, setBusy] = useState(false);
 
-  async function handleSubmit(event: React.FormEvent) {
-    event.preventDefault();
-    setFormError(null);
-    setBusy(true);
+  const loadPreview = useCallback(async () => {
+    setPreview({ kind: "loading" });
     try {
-      // Until drafts exist the reviewed set is empty: revision 0.
-      await deactivatePhysician(physician.id, draftAction, Number(draftSetRevision));
-      setDone(true);
-      onDeactivated();
+      const result = await getOpenDrafts(physician.id);
+      setPreview({ kind: "ready", preview: result });
     } catch (err) {
       if (err instanceof ApiError && err.status === 401) {
         sessionExpired();
         return;
       }
+      setPreview({
+        kind: "error",
+        message:
+          err instanceof ApiError
+            ? err.message
+            : "Open-draft preview failed to load. Check the connection and retry.",
+      });
+    }
+  }, [physician.id, sessionExpired]);
+
+  useEffect(() => {
+    void loadPreview();
+  }, [loadPreview]);
+
+  const draftCount =
+    preview.kind === "ready" ? preview.preview.reviewed_drafts.length : null;
+  const draftRevision =
+    preview.kind === "ready" ? preview.preview.draft_set_revision : null;
+  const needsReview = draftAction === "discard" && (draftCount ?? 0) > 0;
+  const canSubmit =
+    !busy &&
+    !done &&
+    preview.kind === "ready" &&
+    (!needsReview || (reviewed && confirmedDiscard));
+
+  async function handleSubmit(event: React.FormEvent) {
+    event.preventDefault();
+    if (!canSubmit || draftRevision === null) {
+      return;
+    }
+    setFormError(null);
+    setBusy(true);
+    try {
+      const result = await deactivatePhysician(physician.id, draftAction, draftRevision);
+      setDone(true);
+      onDeactivated(
+        result.draft_action === "discard"
+          ? `Physician deactivated; ${result.reviewed_drafts.length} open draft(s) discarded and the slots released. Access revoked immediately; queued work cancelled. Reactivation does not resurrect discarded drafts.`
+          : `Physician deactivated; ${result.reviewed_drafts.length} open draft(s) retained (author-reserved, still occupying the single-draft slot). Access revoked immediately; queued work cancelled.`,
+      );
+    } catch (err) {
+      if (err instanceof ApiError && err.status === 401) {
+        sessionExpired();
+        return;
+      }
+      if (
+        err instanceof ApiError &&
+        err.status === 409 &&
+        err.code === "DRAFT_SET_CHANGED"
+      ) {
+        // The set changed under review: force a re-review + reconfirm
+        // against the fresh set, never submit the stale revision.
+        setReviewed(false);
+        setConfirmedDiscard(false);
+        setFormError(
+          `${conflictHint(err.code)} The preview below is refreshed — review the current set and confirm again.`,
+        );
+        void loadPreview();
+        return;
+      }
       if (err instanceof ApiError) {
-        setFormError(err.message);
+        setFormError(`${err.message} (${err.code}). Nothing was changed.`);
         return;
       }
       setFormError("Deactivation failed. Check the connection and retry.");
@@ -291,6 +368,39 @@ function DeactivateForm({
 
   return (
     <form aria-label="Deactivate physician" onSubmit={handleSubmit} noValidate>
+      <div data-testid={`deactivate-preview-${physician.id}`} role="status">
+        {preview.kind === "loading" && (
+          <p className="xi-hint">Loading open-draft preview…</p>
+        )}
+        {preview.kind === "error" && (
+          <div>
+            <p className="xi-form-error" role="alert">
+              {preview.message}
+            </p>
+            <button
+              className="xi-btn xi-btn-secondary"
+              type="button"
+              onClick={() => void loadPreview()}
+            >
+              Retry preview
+            </button>
+          </div>
+        )}
+        {preview.kind === "ready" && (
+          <p className="xi-hint" style={{ marginBottom: 4 }}>
+            Open drafts: {preview.preview.reviewed_drafts.length} (set revision{" "}
+            {preview.preview.draft_set_revision}; identifiers only, no draft contents).{" "}
+            <button
+              className="xi-btn xi-btn-secondary"
+              type="button"
+              disabled={busy}
+              onClick={() => void loadPreview()}
+            >
+              Refresh preview
+            </button>
+          </p>
+        )}
+      </div>
       <div className="xi-radio-group" role="radiogroup" aria-label="Draft handling">
         <label htmlFor={`draft-retain-${physician.id}`}>
           <input
@@ -301,7 +411,7 @@ function DeactivateForm({
             checked={draftAction === "retain"}
             onChange={() => setDraftAction("retain")}
           />
-          Retain drafts (read-only)
+          Retain drafts (read-only, still occupy the single-draft slot)
         </label>
         <label htmlFor={`draft-discard-${physician.id}`}>
           <input
@@ -312,21 +422,32 @@ function DeactivateForm({
             checked={draftAction === "discard"}
             onChange={() => setDraftAction("discard")}
           />
-          Discard drafts
+          Discard drafts (releases the slots; reactivation never resurrects them)
         </label>
       </div>
-      <div className="xi-field">
-        <label className="xi-label" htmlFor={`draft-revision-${physician.id}`}>
-          Draft set revision
-        </label>
-        <input
-          className="xi-input"
-          id={`draft-revision-${physician.id}`}
-          inputMode="numeric"
-          value={draftSetRevision}
-          onChange={(event) => setDraftSetRevision(event.target.value)}
-        />
-      </div>
+      {needsReview && (
+        <div className="xi-notice" role="group" aria-label="Confirmed discard">
+          <label htmlFor={`draft-reviewed-${physician.id}`}>
+            <input
+              id={`draft-reviewed-${physician.id}`}
+              type="checkbox"
+              checked={reviewed}
+              onChange={(event) => setReviewed(event.target.checked)}
+            />
+            I reviewed the current set of {draftCount} open draft(s) at revision{" "}
+            {draftRevision} (identifiers only).
+          </label>
+          <label htmlFor={`draft-confirm-discard-${physician.id}`}>
+            <input
+              id={`draft-confirm-discard-${physician.id}`}
+              type="checkbox"
+              checked={confirmedDiscard}
+              onChange={(event) => setConfirmedDiscard(event.target.checked)}
+            />
+            Confirm discard: the drafts release their slots permanently.
+          </label>
+        </div>
+      )}
       {formError !== null && (
         <p className="xi-form-error" role="alert">
           {formError}
@@ -337,8 +458,15 @@ function DeactivateForm({
           Physician deactivated.
         </p>
       )}
+      <p className="xi-hint">
+        Deactivation revokes access and cancels queued work immediately.
+      </p>
       <div className="xi-row-actions">
-        <button className="xi-btn xi-btn-primary" type="submit" disabled={busy || done}>
+        <button
+          className="xi-btn xi-btn-primary"
+          type="submit"
+          disabled={!canSubmit}
+        >
           {busy ? "Deactivating…" : "Confirm deactivation"}
         </button>
         <button
@@ -396,7 +524,9 @@ export function PhysiciansPanel() {
     setBusyId(physician.id);
     try {
       await reactivatePhysician(physician.id);
-      setNotice("Physician reactivated.");
+      setNotice(
+        "Physician reactivated (new login required; old sessions stay revoked). Discarded drafts are not resurrected.",
+      );
       await reload();
     } catch (err) {
       if (err instanceof ApiError && err.status === 401) {
@@ -493,8 +623,9 @@ export function PhysiciansPanel() {
                       ) : deactivatingId === physician.id ? (
                         <DeactivateForm
                           physician={physician}
-                          onDeactivated={() => {
-                            setNotice("Physician deactivated.");
+                          onDeactivated={(message) => {
+                            setNotice(message);
+                            setDeactivatingId(null);
                             void reload();
                           }}
                           onCancel={() => setDeactivatingId(null)}
@@ -530,6 +661,7 @@ export function PhysiciansPanel() {
                               type="button"
                               disabled={busyId === physician.id}
                               onClick={() => void handleReactivate(physician)}
+                              title="Reactivation does not resurrect discarded drafts nor old sessions."
                             >
                               Reactivate
                             </button>

@@ -37,7 +37,7 @@
  */
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { ApiError } from "../identity/api";
+import { ApiError, conflictHint } from "../identity/api";
 import {
   MAX_SECONDARY_PLAN_CHARS,
   getSecondaryPlan,
@@ -176,6 +176,17 @@ export function SecondaryPlanPanel({
         } catch {
           // Truth fetch failed: the conflict message already keeps edits safe.
         }
+        return;
+      }
+      if (err instanceof ApiError && err.status === 409) {
+        // S51 race messaging (archived patient, signed encounter): edits are
+        // kept, the canned hint names the outcome, no draft content leaks.
+        const hint = conflictHint(err.code);
+        setSaveError(
+          hint !== null
+            ? `${hint} Your edits are kept above.`
+            : failText(err, "Secondary plan failed to save. Check the connection and retry."),
+        );
         return;
       }
       setSaveError(failText(err, "Secondary plan failed to save. Check the connection and retry."));

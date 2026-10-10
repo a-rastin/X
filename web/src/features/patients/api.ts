@@ -76,6 +76,7 @@ interface RequestOptions {
   method?: string;
   body?: unknown;
   idempotencyKey?: string;
+  ifMatch?: number;
 }
 
 async function request<T>(path: string, options: RequestOptions = {}): Promise<T> {
@@ -83,6 +84,9 @@ async function request<T>(path: string, options: RequestOptions = {}): Promise<T
   const token = getCsrfToken();
   if (token) {
     headers[CSRF_HEADER] = token;
+  }
+  if (options.ifMatch !== undefined) {
+    headers["If-Match"] = `"${options.ifMatch}"`;
   }
   if (options.idempotencyKey !== undefined) {
     headers["Idempotency-Key"] = options.idempotencyKey;
@@ -160,4 +164,84 @@ export async function createPatient(
     idempotencyKey: newIdempotencyKey(),
     body: payload,
   });
+}
+
+/** Shared demographics edit (S51 §2, plan §2.1: physician writes, admin reads).
+ * Any active physician may edit with If-Match on the patient revision
+ * (412 stale, revision bump). The response carries the patient only — never
+ * draft content, so this route grants no draft access. `identifier` and
+ * `archived` travel via their own routes (never sent here). */
+export interface DemographicsPatch {
+  given_name?: string;
+  family_name?: string;
+  sex?: Sex;
+  age?: number;
+  clinical_status?: ClinicalStatus;
+  phone?: string | null;
+}
+
+export interface PatientMutationResult {
+  patient: Patient;
+  revision: number;
+  server_timestamp: string;
+}
+
+/** Relevant (analysis-visible) edit fields (S51 §2, provisional): age/sex/
+ * clinical_status stale affected results; names/phone do not. */
+export function isRelevantDemographicsEdit(patch: DemographicsPatch): boolean {
+  return (
+    patch.age !== undefined || patch.sex !== undefined || patch.clinical_status !== undefined
+  );
+}
+
+export async function patchPatientDemographics(
+  id: string,
+  patch: DemographicsPatch,
+  expectedRevision: number,
+  options: { idempotencyKey?: string } = {},
+): Promise<PatientMutationResult> {
+  // Fresh key per explicit Save (same key + changed body is a server 409);
+  // the button stays disabled while pending so double-click cannot
+  // double-submit.
+  return request<PatientMutationResult>(`/patients/${encodeURIComponent(id)}`, {
+    method: "PATCH",
+    ifMatch: expectedRevision,
+    idempotencyKey: options.idempotencyKey ?? newIdempotencyKey(),
+    body: patch,
+  });
+}
+
+/** Admin-only archive/unarchive (S51 §1, provisional policy): If-Match on
+ * the patient revision (412 stale, 422 missing, 404 unknown) plus a fresh
+ * Idempotency-Key per explicit confirm. No delete route exists. */
+export async function archivePatient(
+  id: string,
+  expectedRevision: number,
+  options: { idempotencyKey?: string } = {},
+): Promise<PatientMutationResult> {
+  return request<PatientMutationResult>(
+    `/patients/${encodeURIComponent(id)}/archive`,
+    {
+      method: "POST",
+      ifMatch: expectedRevision,
+      idempotencyKey: options.idempotencyKey ?? newIdempotencyKey(),
+      body: {},
+    },
+  );
+}
+
+export async function unarchivePatient(
+  id: string,
+  expectedRevision: number,
+  options: { idempotencyKey?: string } = {},
+): Promise<PatientMutationResult> {
+  return request<PatientMutationResult>(
+    `/patients/${encodeURIComponent(id)}/unarchive`,
+    {
+      method: "POST",
+      ifMatch: expectedRevision,
+      idempotencyKey: options.idempotencyKey ?? newIdempotencyKey(),
+      body: {},
+    },
+  );
 }

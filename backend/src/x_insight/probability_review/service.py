@@ -204,24 +204,66 @@ def _validate_adjustment_inputs(
 
 
 def _require_draft_encounter(session: Session, batch: Mapping[str, Any]) -> None:
-    """S49 §4: signed encounters are immutable — no probability mutation.
+    """S49 §4 + S51 §1/§4: signed immutable; archived read-only; inactive fenced.
 
     Draft routes already 404 for signed; this fences adjustment/reset/retry/
-    acceptance after signing (409, no content leak — author already checked).
+    acceptance after signing (409, no leak). S51 adds provisional archived
+    fencing (409 PATIENT_ARCHIVED, no content leak) and inactive-author fencing
+    (403) inside the tx to close sign/deactivation races. Locks the encounter
+    row FOR UPDATE so sign vs slider/reset serialize to one valid outcome.
     """
     from x_insight.cases import tables as cases_tables
 
     row = (
         session.execute(
-            select(cases_tables.encounters).where(
-                cases_tables.encounters.c.id == batch.get("encounter_id")
-            )
+            select(cases_tables.encounters)
+            .where(cases_tables.encounters.c.id == batch.get("encounter_id"))
+            .with_for_update()
         )
         .mappings()
         .first()
     )
-    if row is not None and str(dict(row).get("lifecycle")) != "draft":
+    if row is None:
+        return
+    encounter = dict(row)
+    if str(encounter.get("lifecycle")) != "draft":
         raise contracts.ContractError(409, "ENCOUNTER_SIGNED", "Encounter is signed and immutable.")
+    patient_row = (
+        session.execute(
+            select(cases_tables.patients)
+            .where(cases_tables.patients.c.id == encounter.get("patient_id"))
+            .with_for_update()
+        )
+        .mappings()
+        .first()
+    )
+    if patient_row is not None and bool(dict(patient_row).get("archived", False)):
+        raise contracts.ContractError(
+            409,
+            "PATIENT_ARCHIVED",
+            "Patient is archived and read-only.",
+            {"patient_id": ["Patient is archived."]},
+        )
+    # Inactive-author fence (author comes from batch; route already 401/403).
+    try:
+        from x_insight.identity import service as _identity
+
+        author_id = batch.get("author_id")
+        if author_id is not None:
+            import uuid as _uuid
+
+            try:
+                want = _uuid.UUID(str(author_id))
+            except Exception:
+                want = None
+            if want is not None:
+                author_row = _identity.get_user_by_id(session, want)
+                if author_row is not None and not bool(author_row.get("active", False)):
+                    raise contracts.ContractError(403, "FORBIDDEN", "Author is inactive.")
+    except contracts.ContractError:
+        raise
+    except Exception:
+        pass
 
 
 def apply_adjustment(

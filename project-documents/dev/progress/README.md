@@ -3,14 +3,18 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest recorded checkpoint is [S50](s50.md): S50 complete — final-plan
-editing, comparison, sign, and addenda UI (frontend `plans/` + `e2e/signing`
-10 T9 × chromium/firefox; tsc clean, build 60 modules; proposal-review 11,
-probability-review 8, question-freshness 6, themes 7, followup 5 chromium +
-backend signing 10 hold; S49 API/migration 0016 reused, no backend change).
+The latest recorded checkpoint is [S51](s51.md): S51 complete — archive,
+deactivation, and multi-user race cases (backend archive/unarchive +
+demographics relevant-hash + open-drafts preview + retain/discard revision +
+sign/queue fences, `BT/http/test_record_races.py` 15 T1/T8; frontend
+ArchivePanel/DemographicsForm/DeactivateForm/conflictHint/ChartPage lift;
+`e2e/shared-records` 8 × chromium/firefox 16/16 workers=1; tests/http 295 +
+1 deselected, worker/probability/signing 113, tsc clean, build 60 modules;
+regressions 35 chromium; S04/S07/S14 integration items closed explicitly).
 Regressions hold except pre-existing `test_only_s02_tables_exist`
-drift. Next is S51 races. Prior slices remain [S49](s49.md) (atomic signing
-backend), [S48d](s48-d.md) (per-question freshness + frontend + dev-test +
+drift and non-blocking identity pager gap (limit=100 vs 2139 rows). Next
+is S52 audit. Prior slices remain [S50](s50.md) (final-plan/sign/addenda UI),
+[S49](s49.md) (atomic signing backend), [S48d](s48-d.md) (per-question freshness + frontend + dev-test +
 code review), [S48c](s48-c-devtest.md) (build + code review),
 [S48c-frontend](s48-c-frontend.md) (UI) and [S48c-backend](s48-c-backend.md)
 (endpoint, migration 0015). Content approvals remain as recorded in S39.b;
@@ -97,3 +101,4 @@ bundle release and activation retain their independent status.
 | S48d | [Regenerate only questions affected by patient-data changes (2026-10-10)](s48-d.md) |
 | S49 | [Implement atomic plan signing and immutable snapshots (2026-10-10)](s49.md) |
 | S50 | [Build final-plan editing, comparison, sign, and addenda UI (2026-10-10)](s50.md) |
+| S51 | [Close archive, deactivation, and multi-user race cases (2026-10-10)](s51.md) |

@@ -219,7 +219,7 @@ test("administrator deactivates and reactivates a physician", async ({
 
   const form = page.getByRole("form", { name: "Deactivate physician" });
   await form.getByLabel(/Retain/).check();
-  await expect(form.getByLabel("Draft set revision")).toHaveValue("0");
+  // S51: no manual Draft set revision input — the form submits the preview revision.
   await form.getByRole("button", { name: "Confirm deactivation" }).click();
   await expect(form.getByText("Physician deactivated.")).toBeVisible();
 

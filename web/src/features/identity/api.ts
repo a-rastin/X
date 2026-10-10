@@ -247,13 +247,37 @@ export async function patchPhysician(
 
 export type DraftAction = "retain" | "discard";
 
+/** Minimal open-draft identifiers for discard confirmation (S51 §2).
+ * No clinical content by construction — ids + revision only. */
+export interface OpenDraftIdentifier {
+  encounter_id: string;
+  patient_id: string;
+  revision: number;
+}
+
+export interface OpenDraftPreview {
+  draft_set_revision: number;
+  reviewed_drafts: OpenDraftIdentifier[];
+}
+
+/** Admin-only draft-set preview (no clinical content, does not deactivate). */
+export async function getOpenDrafts(physicianId: string): Promise<OpenDraftPreview> {
+  return request<OpenDraftPreview>(`/physicians/${physicianId}/open-drafts`);
+}
+
+export interface DeactivateResult {
+  user: SafePhysician;
+  draft_action: DraftAction;
+  draft_set_revision: number;
+  reviewed_drafts: OpenDraftIdentifier[];
+}
+
 export async function deactivatePhysician(
   id: string,
   draftAction: DraftAction,
   draftSetRevision: number,
-): Promise<SafePhysician> {
-  const result = await request<{ user: SafePhysician }>(
-    `/physicians/${id}/deactivate`,
+): Promise<DeactivateResult> {
+  return request<DeactivateResult>(`/physicians/${id}/deactivate`,
     {
       method: "POST",
       csrf: true,
@@ -264,7 +288,6 @@ export async function deactivatePhysician(
       },
     },
   );
-  return result.user;
 }
 
 export async function reactivatePhysician(id: string): Promise<SafePhysician> {
@@ -277,4 +300,27 @@ export async function reactivatePhysician(id: string): Promise<SafePhysician> {
     },
   );
   return result.user;
+}
+
+/** Generic S51 race-conflict hint by server error code (no draft content:
+ * every sentence is static UI text; the server message stays separate).
+ * Returns null when the code has no canned hint — callers then render the
+ * server message + code verbatim. */
+export function conflictHint(code: string): string | null {
+  switch (code) {
+    case "PATIENT_ARCHIVED":
+      return "Patient is archived and read-only under the provisional archive policy (not owner-confirmed): creating, editing, or signing drafts is blocked. Nothing was changed.";
+    case "STALE_INPUTS":
+      return "Relevant patient inputs changed — affected results are out of date (◍). Start a new run for the current inputs; nothing was signed.";
+    case "OPEN_DRAFT_EXISTS":
+      return "An open draft already exists for this patient. Ask its author to resume it — no second draft is possible.";
+    case "DRAFT_SET_CHANGED":
+      return "The draft set changed since it was reviewed. Review the current set and confirm again.";
+    case "STALE_REVISION":
+      return "The record changed. Reload and reconcile before retrying — nothing was overwritten.";
+    case "ALREADY_SIGNED":
+      return "This encounter is already signed. The frozen record on the chart is read-only; double-submit is safe and created nothing new.";
+    default:
+      return null;
+  }
 }

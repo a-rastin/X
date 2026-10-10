@@ -192,6 +192,38 @@ def _require_physician_mutation(
     return user
 
 
+def _require_admin_mutation(request: Request, session: Session) -> dict[str, Any] | JSONResponse:
+    """Session + CSRF + admin gate for archive/unarchive (plan §2.1).
+
+    Only active administrators may archive; physicians get 403 here (they
+    edit demographics, they do not archive).
+    """
+    raw_token = request.cookies.get(identity_service.SESSION_COOKIE_NAME)
+    if not raw_token:
+        return error_response(
+            401, "UNAUTHENTICATED", "Authentication required.", get_request_id(request)
+        )
+    row = identity_service.get_session_row(session, raw_token)
+    if row is None or row.get("revoked_at") is not None:
+        return error_response(
+            401, "UNAUTHENTICATED", "Authentication required.", get_request_id(request)
+        )
+    presented = request.headers.get(identity_service.CSRF_HEADER_NAME, "")
+    expected = row.get("csrf_token", "")
+    if not presented or not expected or not hmac_module.compare_digest(presented, expected):
+        return error_response(403, "FORBIDDEN", "CSRF validation failed.", get_request_id(request))
+    user = identity_service.get_session_user(session, raw_token)
+    if user is None:
+        return error_response(
+            401, "UNAUTHENTICATED", "Authentication required.", get_request_id(request)
+        )
+    if user.get("role") != "admin" or not user.get("active", False):
+        return error_response(
+            403, "FORBIDDEN", "Administrator access required.", get_request_id(request)
+        )
+    return user
+
+
 def _idempotency_key_or_none(request: Request) -> str | None:
     raw = request.headers.get(contracts.IDEMPOTENCY_KEY_HEADER)
     return contracts.parse_idempotency_key(raw)
@@ -292,6 +324,112 @@ def get_patient(
     )
 
 
+class PatientPatchRequest(BaseModel):
+    """Shared demographics edit: physician-only, no identifier/archived (422).
+
+    Structural typing only; semantics live in patients.validate_patch_fields.
+    Never carries draft content (no draft grant).
+    """
+
+    model_config = {"extra": "forbid"}
+
+    given_name: str | None = None
+    family_name: str | None = None
+    sex: Literal["M", "F"] | None = None
+    age: StrictInt | None = Field(default=None, ge=18, le=99)
+    clinical_status: Literal["first_time", "established"] | None = None
+    phone: str | None = None
+
+
+def _patient_response(patient: dict[str, Any], server_timestamp: str | None = None) -> JSONResponse:
+    safe = patients_service.safe_patient(patient)
+    content: dict[str, Any] = {"patient": safe, "revision": int(safe["revision"])}
+    if server_timestamp is not None:
+        content["server_timestamp"] = server_timestamp
+    response = JSONResponse(status_code=200, content=content)
+    response.headers["ETag"] = contracts.format_etag(int(safe["revision"]))
+    return response
+
+
+def _patient_replay(stored: dict[str, Any]) -> JSONResponse:
+    body = dict(stored["response_body"])
+    response = JSONResponse(status_code=int(stored["response_status"]), content=body)
+    revision = body.get("revision")
+    if isinstance(revision, int) and revision >= 1:
+        response.headers["ETag"] = contracts.format_etag(revision)
+    return response
+
+
+@router.patch("/patients/{patient_id}", status_code=200)
+def patch_patient(
+    patient_id: uuid.UUID,
+    payload: PatientPatchRequest,
+    request: Request,
+    session: Session = Depends(get_session),
+) -> JSONResponse:
+    """Shared demographics edit (S51 §2, plan §2.1: physician writes, admin reads).
+
+    Any active physician may edit (If-Match on patient revision, revision bump,
+    audit). Must NOT grant draft access: response carries patient only, never
+    draft content. Relevant edits (age/sex/status) stale affected results via
+    S48d freshness; phone/name do not. Admin gets 403 here (reads + archives,
+    does not edit demographics).
+    """
+    request_id = get_request_id(request)
+    physician = _require_physician_mutation(request, session)
+    if isinstance(physician, JSONResponse):
+        return physician
+    assert isinstance(physician, dict)
+    expected = encounters_service.require_if_match_revision(
+        request.headers.get(contracts.IF_MATCH_HEADER)
+    )
+    body = {k: v for k, v in payload.model_dump().items() if v is not None}
+    # Empty body (all None) is 422, never a no-op.
+    if not body:
+        raise contracts.ContractError(
+            422, "VALIDATION_FAILED", "Nothing to update.", {"request": ["Provide fields."]}
+        )
+    key = _idempotency_key_or_none(request)
+    request_hash: str | None = None
+    if key is not None:
+        request_hash = patients_service.update_request_hash(patient_id, expected, body)
+        stored = identity_service.lookup_idempotency(
+            session,
+            operation=patients_service.PATIENTS_UPDATE_OPERATION,
+            actor_id=physician["id"],
+            key=key,
+        )
+        if stored is not None:
+            if stored["request_hash"] != request_hash:
+                return _idempotency_conflict(request_id)
+            return _patient_replay(stored)
+    patient, server_timestamp = patients_service.update_patient_demographics(
+        session,
+        patient_id,
+        fields=body,
+        expected_revision=expected,
+        actor=physician,
+        request_id=request_id,
+    )
+    response_body: dict[str, Any] = {
+        "patient": patients_service.safe_patient(patient),
+        "revision": int(patient["revision"]),
+        "server_timestamp": server_timestamp,
+    }
+    if key is not None:
+        assert request_hash is not None
+        identity_service.store_idempotency(
+            session,
+            operation=patients_service.PATIENTS_UPDATE_OPERATION,
+            actor_id=physician["id"],
+            key=key,
+            request_hash=request_hash,
+            response_status=200,
+            response_body=response_body,
+        )
+    return _patient_response(patient, server_timestamp)
+
+
 @router.get("/patients")
 def list_patients(
     request: Request,
@@ -349,6 +487,116 @@ def get_chart(
     assert isinstance(user, dict)
     chart = chart_service.read_chart(session, patient_id, user)
     return JSONResponse(status_code=200, content=chart)
+
+
+def _archive_response(
+    patient: dict[str, Any], server_timestamp: str, *, status_code: int = 200
+) -> JSONResponse:
+    safe = patients_service.safe_patient(patient)
+    content: dict[str, Any] = {
+        "patient": safe,
+        "revision": int(safe["revision"]),
+        "server_timestamp": server_timestamp,
+    }
+    response = JSONResponse(status_code=status_code, content=content)
+    response.headers["ETag"] = contracts.format_etag(int(safe["revision"]))
+    return response
+
+
+def _archive_replay(stored: dict[str, Any]) -> JSONResponse:
+    body = dict(stored["response_body"])
+    response = JSONResponse(status_code=int(stored["response_status"]), content=body)
+    revision = body.get("revision")
+    if isinstance(revision, int) and revision >= 1:
+        response.headers["ETag"] = contracts.format_etag(revision)
+    return response
+
+
+def _do_archive(
+    patient_id: uuid.UUID,
+    request: Request,
+    session: Session,
+    *,
+    archived: bool,
+    operation: str,
+) -> JSONResponse:
+    """Shared admin-only archive/unarchive (If-Match + Idempotency-Key, ErrorBody).
+
+    Provisional policy per patients.require_patient_not_archived: archived is
+    read-only, no deletion route exists. NOT owner-confirmed.
+    """
+    from x_insight.cases import patients as _patients
+
+    request_id = get_request_id(request)
+    admin = _require_admin_mutation(request, session)
+    if isinstance(admin, JSONResponse):
+        return admin
+    assert isinstance(admin, dict)
+    expected = encounters_service.require_if_match_revision(
+        request.headers.get(contracts.IF_MATCH_HEADER)
+    )
+    key = _idempotency_key_or_none(request)
+    request_hash: str | None = None
+    if key is not None:
+        request_hash = _patients.archive_request_hash(patient_id, expected, archived)
+        stored = identity_service.lookup_idempotency(
+            session, operation=operation, actor_id=admin["id"], key=key
+        )
+        if stored is not None:
+            if stored["request_hash"] != request_hash:
+                return _idempotency_conflict(request_id)
+            return _archive_replay(stored)
+    patient, server_timestamp, _ = _patients.set_patient_archived(
+        session,
+        patient_id,
+        archived=archived,
+        expected_revision=expected,
+        actor=admin,
+        request_id=request_id,
+    )
+    response_body: dict[str, Any] = {
+        "patient": _patients.safe_patient(patient),
+        "revision": int(patient["revision"]),
+        "server_timestamp": server_timestamp,
+    }
+    if key is not None:
+        assert request_hash is not None
+        identity_service.store_idempotency(
+            session,
+            operation=operation,
+            actor_id=admin["id"],
+            key=key,
+            request_hash=request_hash,
+            response_status=200,
+            response_body=response_body,
+        )
+    return _archive_response(patient, server_timestamp)
+
+
+@router.post("/patients/{patient_id}/archive", status_code=200)
+def archive_patient(
+    patient_id: uuid.UUID, request: Request, session: Session = Depends(get_session)
+) -> JSONResponse:
+    return _do_archive(
+        patient_id,
+        request,
+        session,
+        archived=True,
+        operation=patients_service.PATIENTS_ARCHIVE_OPERATION,
+    )
+
+
+@router.post("/patients/{patient_id}/unarchive", status_code=200)
+def unarchive_patient(
+    patient_id: uuid.UUID, request: Request, session: Session = Depends(get_session)
+) -> JSONResponse:
+    return _do_archive(
+        patient_id,
+        request,
+        session,
+        archived=False,
+        operation=patients_service.PATIENTS_UNARCHIVE_OPERATION,
+    )
 
 
 # --- S07 author-owned drafts (plan.md §§2.3, 4.3; FR-16, FR-22) ---

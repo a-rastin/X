@@ -276,6 +276,9 @@ def save_secondary_plan(
     encounter = dict(row)
     encounters_service.require_draft_lifecycle(encounter)
     encounters_service.require_author(encounter, author)
+    from x_insight.cases import patients as _patients
+
+    _patients.require_encounter_mutable(session, encounter, author)
     plan = _get_plan_row(session, encounter_id)
     current = int(plan["revision"]) if plan is not None else 1
     if int(expected) != int(current):
@@ -433,8 +436,8 @@ def sign_encounter(
             }
         )
 
-    # Lock encounter + patient (single-transaction fencing; UNIQUE backstop
-    # for concurrent signs belongs to S51 beyond this).
+    # Lock encounter + patient + author (single-transaction fencing; UNIQUE
+    # backstop for concurrent signs; S51 race hardening).
     row = (
         session.execute(
             select(cases_tables.encounters)
@@ -457,13 +460,34 @@ def sign_encounter(
             "STALE_REVISION",
             "The draft changed. Reload and reconcile your edits.",
         )
-    patient = patients_service.get_patient(session, encounter["patient_id"])
-    if patient is None:
+    # S51: patient lock + archived + author-active inside the tx.
+    patient_row = (
+        session.execute(
+            select(cases_tables.patients)
+            .where(cases_tables.patients.c.id == encounter["patient_id"])
+            .with_for_update()
+        )
+        .mappings()
+        .first()
+    )
+    if patient_row is None:
         raise contracts.ContractError(404, "NOT_FOUND", "Patient not found.")
+    patient = dict(patient_row)
     if bool(patient.get("archived", False)):
         raise contracts.ContractError(
             409, "PATIENT_ARCHIVED", "Archived patients cannot be signed."
         )
+    from x_insight.identity import service as _identity
+
+    _author_row = _identity.get_user_by_id(session, author["id"])
+    if _author_row is None or not bool(_author_row.get("active", False)):
+        raise contracts.ContractError(403, "FORBIDDEN", "Author is inactive.")
+    # Lock the author user row to serialize sign vs deactivation.
+    session.execute(
+        select(_identity.tables.users)
+        .where(_identity.tables.users.c.id == author["id"])
+        .with_for_update()
+    ).mappings().first()
 
     plan = _get_plan_row(session, encounter_id)
     current_plan_revision = int(plan["revision"]) if plan is not None else 1
@@ -509,6 +533,24 @@ def sign_encounter(
             "Batch does not belong to this author.",
             {"batch_id": ["Does not match this author."]},
         )
+    # S51 §2: relevant demographics (age/sex/status) inside the locked tx;
+    # phone/name do not stale. Stored hash lives in pinned_bundle.
+    try:
+        _pinned = batch.get("pinned_bundle") or {}
+        _stored_hash = _pinned.get("patient_relevant_hash") if isinstance(_pinned, dict) else None
+        if isinstance(_stored_hash, str) and _stored_hash:
+            _current_hash = patients_service.relevant_demographics_hash(patient)
+            if _current_hash != str(_stored_hash):
+                raise contracts.ContractError(
+                    409,
+                    "STALE_INPUTS",
+                    "Patient inputs changed. Regenerate before signing.",
+                    {"patient_id": ["Stale patient inputs."]},
+                )
+    except contracts.ContractError:
+        raise
+    except Exception:
+        pass
     proposal = coordinator_module.get_proposal(session, want_batch)
     if proposal is None:
         raise contracts.ContractError(
@@ -571,7 +613,8 @@ def sign_encounter(
                 {"expected_review_revision": ["Stale review revision."]},
             )
         # Freshness INSIDE the locked transaction (S48d per-question hash,
-        # stored source_revision so bumps alone never stale).
+        # stored source_revision so bumps alone never stale; S51 binds relevant
+        # demographics via patient-aware hash, phone/name excluded).
         full = snapshots_service.compute_question_freshness(run, batch, draft_data)
         if bool(full.get("stale", True)):
             raise contracts.ContractError(
@@ -581,6 +624,28 @@ def sign_encounter(
                 {"question_run_id": ["Stale patient inputs."]},
             )
         current_fp = str(full.get("current_fingerprint", ""))
+        # S51: bind relevant demographics inside the tx (stored vs current).
+        try:
+            _pinned = batch.get("pinned_bundle") or {}
+            _stored_patient = (
+                _pinned.get("patient_relevant_hash") if isinstance(_pinned, dict) else None
+            )
+            if isinstance(_stored_patient, str) and _stored_patient:
+                _current_patient = patients_service.relevant_demographics_hash(patient)
+                if _current_patient != str(_stored_patient):
+                    raise contracts.ContractError(
+                        409,
+                        "STALE_INPUTS",
+                        "Patient inputs changed. Regenerate before signing.",
+                        {"question_run_id": ["Stale patient inputs."]},
+                    )
+                current_fp = snapshots_service.patient_aware_input_hash(
+                    current_fp, _current_patient
+                )
+        except contracts.ContractError:
+            raise
+        except Exception:
+            pass
         baseline = coordinator_module.get_baseline(session, run["id"])
         live = review_service._live_acceptance_point(session, run=run, baseline=baseline)
         if not live.get("ok"):
@@ -773,7 +838,6 @@ def sign_encounter(
             }
         )
 
-    from x_insight.cases import patients as patients_service
     from x_insight.reasoning import snapshots as snapshots_service
 
     snapshot: dict[str, Any] = {
@@ -899,6 +963,24 @@ def create_addendum(
     if str(encounter.get("lifecycle")) != "signed":
         raise contracts.ContractError(
             409, "ENCOUNTER_NOT_SIGNED", "Addenda apply to signed encounters only."
+        )
+    # S51 §1 provisional: archived blocks addenda (409, no leak).
+
+    _patient_row = (
+        session.execute(
+            select(cases_tables.patients)
+            .where(cases_tables.patients.c.id == encounter.get("patient_id"))
+            .with_for_update()
+        )
+        .mappings()
+        .first()
+    )
+    if _patient_row is not None and bool(dict(_patient_row).get("archived", False)):
+        raise contracts.ContractError(
+            409,
+            "PATIENT_ARCHIVED",
+            "Patient is archived and read-only.",
+            {"patient_id": ["Patient is archived."]},
         )
     if int(encounter["revision"]) != int(expected_encounter_revision):
         raise contracts.ContractError(

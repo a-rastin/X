@@ -348,6 +348,9 @@ def save_history(
     encounter = dict(row)
     encounters_service.require_draft_lifecycle(encounter)
     encounters_service.require_author(encounter, author)
+    from x_insight.cases import patients as _patients
+
+    _patients.require_encounter_mutable(session, encounter, author)
     if int(encounter["revision"]) != expected_revision:
         raise contracts.ContractError(
             412,

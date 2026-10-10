@@ -30,7 +30,7 @@
  */
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { ApiError } from "../identity/api";
+import { ApiError, conflictHint } from "../identity/api";
 import { chartHash } from "../../app/router";
 import { getEncounter } from "../encounters/api";
 import type { useAutosave } from "../encounters/useAutosave";
@@ -150,13 +150,28 @@ export function SignPanel({
         onSessionExpired();
         return;
       }
-      setError(
-        err instanceof ApiError
-          ? `${err.message} (${err.code}). Nothing was signed and the plan text is preserved.`
-          : err instanceof Error
-            ? err.message
-            : "Sign-off failed. Check the connection and try again — nothing was signed.",
-      );
+      // S51 race messaging: every 409/412 denial names the serial outcome
+      // (archived, stale inputs, occupied slot, already signed) via the
+      // canned hint plus the server message — never draft content (the
+      // server ErrorBody carries none). Single POST per explicit click with
+      // a fresh Idempotency-Key; the button stays disabled while pending so
+      // no second signature is possible.
+      if (err instanceof ApiError && (err.status === 409 || err.status === 412)) {
+        const hint = conflictHint(err.code);
+        setError(
+          hint !== null
+            ? `${hint} Server: ${err.message} (${err.code}). Nothing was signed and the plan text is preserved.`
+            : `${err.message} (${err.code}). Nothing was signed and the plan text is preserved.`,
+        );
+      } else {
+        setError(
+          err instanceof ApiError
+            ? `${err.message} (${err.code}). Nothing was signed and the plan text is preserved.`
+            : err instanceof Error
+              ? err.message
+              : "Sign-off failed. Check the connection and try again — nothing was signed.",
+        );
+      }
     } finally {
       setSigning(false);
     }

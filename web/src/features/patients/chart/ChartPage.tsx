@@ -44,7 +44,7 @@
  */
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { ApiError } from "../../identity/api";
+import { ApiError, conflictHint } from "../../identity/api";
 import { useAuth } from "../../identity/auth";
 import {
   createEncounter,
@@ -52,6 +52,15 @@ import {
 } from "../../encounters/api";
 import { chartHash } from "../../../app/router";
 import { getChart, type ChartResponse } from "./api";
+import {
+  archivePatient,
+  getPatient,
+  isRelevantDemographicsEdit,
+  patchPatientDemographics,
+  unarchivePatient,
+  type DemographicsPatch,
+  type Patient,
+} from "../api";
 import { SignedEncounterView } from "../../plans/SignedView";
 
 type LoadState =
@@ -63,12 +72,489 @@ function statusLabel(status: string): string {
   return status === "first_time" ? "First-time" : "Established";
 }
 
+/* Admin-only archive/unarchive (S51 §1, provisional policy — NOT
+ * owner-confirmed). Explicit confirmation shows the patient identifier +
+ * current revision and POSTs with that revision as If-Match (412 stale
+ * reloads, 409 already-in-state reloads). Physicians never see these
+ * buttons (server 403 complements this hiding). There is no delete button:
+ * archive is read-only retention, never deletion. Retained private drafts
+ * stay author-only with no contents shown here; the generic slot badge
+ * below covers resumability without an author oracle. */
+function ArchivePanel({
+  patient,
+  initialDone,
+  onChanged,
+  onSessionExpired,
+}: {
+  patient: Patient;
+  initialDone: string | null;
+  onChanged: (done: string | null) => void;
+  onSessionExpired: () => void;
+}) {
+  const [confirming, setConfirming] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  // ponytail: success toast lifted via onChanged/initialDone so it survives
+  // the parent reload (which unmounts this panel before paint); per-call
+  // error stays local (412/409 paths without reload keep it; with reload the
+  // reloaded badge/truth is the stable proof).
+  const [done, setDone] = useState<string | null>(initialDone);
+  const errorRef = useRef<HTMLParagraphElement>(null);
+
+  useEffect(() => {
+    if (error !== null) {
+      errorRef.current?.focus();
+    }
+  }, [error]);
+
+  // Revision captured when the dialog opens — the confirm POSTs exactly it.
+  const [confirmRevision, setConfirmRevision] = useState(patient.revision);
+  function openConfirm(): void {
+    setError(null);
+    setDone(null);
+    setConfirmRevision(patient.revision);
+    setConfirming(true);
+  }
+
+  async function run(): Promise<void> {
+    if (busy) {
+      return;
+    }
+    setError(null);
+    setBusy(true);
+    try {
+      const result = patient.archived
+        ? await unarchivePatient(patient.id, confirmRevision)
+        : await archivePatient(patient.id, confirmRevision);
+      setConfirming(false);
+      const doneText = result.patient.archived
+        ? `Patient ${patient.identifier} archived (revision ${result.revision}). Creates, edits, and sign-off are now blocked under the provisional policy.`
+        : `Patient ${patient.identifier} unarchived (revision ${result.revision}). The retained draft slot is resumed — its author can continue.`;
+      setDone(doneText);
+      onChanged(doneText);
+    } catch (err) {
+      if (err instanceof ApiError && err.status === 401) {
+        onSessionExpired();
+        return;
+      }
+      if (err instanceof ApiError && (err.status === 409 || err.status === 412)) {
+        // Already-in-state or stale: reload server truth, keep nothing local.
+        setConfirming(false);
+        setError(
+          `${conflictHint(err.code) ?? err.message} (reloaded revision ${patient.revision}).`,
+        );
+        onChanged(null);
+        return;
+      }
+      setError(
+        err instanceof ApiError
+          ? `${err.message} (${err.code}). Nothing was changed.`
+          : "Archive request failed. Check the connection and retry — nothing was changed.",
+      );
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  return (
+    <section className="xi-card" aria-labelledby="chart-archive-heading" data-testid="archive-panel">
+      <h3 className="xi-section-title" id="chart-archive-heading">
+        Archive
+      </h3>
+      <p
+        className="xi-badge"
+        data-testid="chart-archived-badge"
+        id="chart-archived-badge"
+        role="status"
+      >
+        {patient.archived
+          ? "■ Archived — read-only under the provisional policy (not owner-confirmed)"
+          : "● Active"}
+      </p>
+      {patient.archived && (
+        <div className="xi-notice" role="status">
+          <p style={{ margin: 0 }}>
+            Archived patients are read-only under the provisional archive policy (not
+            owner-confirmed): creating, editing, or signing drafts is blocked, while shared reads
+            stay available. Retained private drafts stay author-only with no contents shown here;
+            the author can resume after unarchive.
+          </p>
+        </div>
+      )}
+      {error !== null && (
+        <p className="xi-form-error" role="alert" tabIndex={-1} ref={errorRef} data-testid="archive-status">
+          {error}
+        </p>
+      )}
+      {done !== null && (
+        <p className="xi-status" role="status" data-testid="archive-status">
+          {done}
+        </p>
+      )}
+      {!confirming ? (
+        <div className="xi-row-actions">
+          <button
+            className="xi-btn xi-btn-secondary"
+            type="button"
+            data-testid={patient.archived ? "unarchive-button" : "archive-button"}
+            disabled={busy}
+            onClick={openConfirm}
+          >
+            {patient.archived ? "Unarchive patient" : "Archive patient"}
+          </button>
+        </div>
+      ) : (
+        <div data-testid="archive-confirm" role="group" aria-label="Confirm archive change">
+          <p role="status">
+            {patient.archived ? "Unarchive" : "Archive"} patient{" "}
+            <code className="xi-mono">{patient.identifier}</code> at revision{" "}
+            {confirmRevision}?{" "}
+            {patient.archived
+              ? "Writes resume; the retained draft slot stays with its author."
+              : "Creates, edits, and sign-off block under the provisional policy (not owner-confirmed). This is reversible via Unarchive — nothing is deleted."}
+          </p>
+          <div className="xi-row-actions">
+            <button
+              className="xi-btn xi-btn-primary"
+              type="button"
+              data-testid="archive-confirm-button"
+              disabled={busy}
+              onClick={() => void run()}
+            >
+              {busy
+                ? "Working…"
+                : `Confirm ${patient.archived ? "unarchive" : "archive"} ${patient.identifier} (rev ${confirmRevision})`}
+            </button>
+            <button
+              className="xi-btn xi-btn-secondary"
+              type="button"
+              disabled={busy}
+              onClick={() => setConfirming(false)}
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
+
+/* Shared demographics edit (S51 §2: physician writes, admin reads).
+ * If-Match on the patient revision with saving/saved/failed states and the
+ * S07-style 412 reconcile flow (edits kept, server truth shown, explicit
+ * Reload/Retry — never silent overwrite). Relevant edits (age/sex/status)
+ * surface the ◍ out-of-date staleness banner reusing the proposal-freshness
+ * wording; phone/name edits preserve acceptance (no stale banner). This
+ * form reads/writes patient fields only — no draft content passes through
+ * it, so it grants no draft access. */
+function DemographicsForm({
+  patient,
+  initialNotice,
+  onChanged,
+  onSessionExpired,
+}: {
+  patient: Patient;
+  initialNotice: { message: string; staleRelevant: boolean } | null;
+  onChanged: (notice: { message: string; staleRelevant: boolean } | null) => void;
+  onSessionExpired: () => void;
+}) {
+  const [givenName, setGivenName] = useState(patient.given_name);
+  const [familyName, setFamilyName] = useState(patient.family_name);
+  const [sex, setSex] = useState(patient.sex);
+  const [age, setAge] = useState(String(patient.age));
+  const [clinicalStatus, setClinicalStatus] = useState(patient.clinical_status);
+  const [phone, setPhone] = useState(patient.phone ?? "");
+  const [baseRevision, setBaseRevision] = useState(patient.revision);
+  const [saving, setSaving] = useState(false);
+  // ponytail: saved/stale lifted via onChanged/initialNotice so the ◍ banner
+  // survives the parent reload (which unmounts this form before paint).
+  const [saved, setSaved] = useState<string | null>(initialNotice?.message ?? null);
+  const [error, setError] = useState<string | null>(null);
+  const [conflictServer, setConflictServer] = useState<Patient | null>(null);
+  const [staleRelevant, setStaleRelevant] = useState(initialNotice?.staleRelevant ?? false);
+  const errorRef = useRef<HTMLParagraphElement>(null);
+
+  // Adopt a freshly loaded patient (post-save reload or conflict truth).
+  function adopt(next: Patient): void {
+    setGivenName(next.given_name);
+    setFamilyName(next.family_name);
+    setSex(next.sex);
+    setAge(String(next.age));
+    setClinicalStatus(next.clinical_status);
+    setPhone(next.phone ?? "");
+    setBaseRevision(next.revision);
+  }
+
+  useEffect(() => {
+    if (error !== null) {
+      errorRef.current?.focus();
+    }
+  }, [error]);
+
+  const dirty =
+    givenName !== patient.given_name ||
+    familyName !== patient.family_name ||
+    sex !== patient.sex ||
+    age !== String(patient.age) ||
+    clinicalStatus !== patient.clinical_status ||
+    phone !== (patient.phone ?? "");
+
+  async function save(): Promise<void> {
+    if (saving || !dirty) {
+      return;
+    }
+    setError(null);
+    setSaved(null);
+    setConflictServer(null);
+    setSaving(true);
+    try {
+      const patch: DemographicsPatch = {};
+      if (givenName !== patient.given_name) {
+        patch.given_name = givenName;
+      }
+      if (familyName !== patient.family_name) {
+        patch.family_name = familyName;
+      }
+      if (sex !== patient.sex) {
+        patch.sex = sex;
+      }
+      if (age !== String(patient.age)) {
+        const parsed = Number(age);
+        patch.age = Number.isInteger(parsed) ? parsed : (age as unknown as number);
+      }
+      if (clinicalStatus !== patient.clinical_status) {
+        patch.clinical_status = clinicalStatus;
+      }
+      if (phone !== (patient.phone ?? "")) {
+        patch.phone = phone.trim() === "" ? null : phone;
+      }
+      const relevant = isRelevantDemographicsEdit(patch);
+      const result = await patchPatientDemographics(patient.id, patch, baseRevision);
+      setBaseRevision(result.revision);
+      const message =
+        `Saved demographics (revision ${result.revision}).${relevant ? "" : " Phone/name edits preserve acceptance — no question is marked out of date."}`;
+      setSaved(message);
+      setStaleRelevant(relevant);
+      onChanged({ message, staleRelevant: relevant });
+    } catch (err) {
+      if (err instanceof ApiError && err.status === 401) {
+        onSessionExpired();
+        return;
+      }
+      if (err instanceof ApiError && err.status === 412) {
+        // Stale patient revision: keep every edit, fetch server truth for
+        // the reconcile UI, never overwrite the form.
+        try {
+          setConflictServer(await getPatient(patient.id));
+        } catch {
+          // Truth fetch failed: the conflict message already keeps edits safe.
+        }
+        setError(
+          "The patient changed (revision mismatch). Your edits are kept — review the current values, Reload them, or Retry your save. Nothing was overwritten.",
+        );
+        return;
+      }
+      if (err instanceof ApiError && err.status === 409 && err.code === "PATIENT_ARCHIVED") {
+        setError(`${conflictHint(err.code)} Your edits are kept.`);
+        onChanged(null);
+        return;
+      }
+      setError(
+        err instanceof ApiError
+          ? `${err.message} (${err.code}). Your edits are kept — nothing was saved.`
+          : "Demographics save failed. Check the connection and retry — your edits are kept.",
+      );
+    } finally {
+      setSaving(false);
+    }
+  }
+
+  return (
+    <form
+      aria-label="Edit demographics"
+      data-testid="demographics-form"
+      onSubmit={(event) => {
+        event.preventDefault();
+        void save();
+      }}
+      noValidate
+    >
+      <div className="xi-form-row">
+        <div className="xi-field">
+          <label className="xi-label" htmlFor="demo-given-name">
+            Given name
+          </label>
+          <input
+            className="xi-input"
+            id="demo-given-name"
+            value={givenName}
+            onChange={(event) => setGivenName(event.target.value)}
+            autoComplete="off"
+          />
+        </div>
+        <div className="xi-field">
+          <label className="xi-label" htmlFor="demo-family-name">
+            Family name
+          </label>
+          <input
+            className="xi-input"
+            id="demo-family-name"
+            value={familyName}
+            onChange={(event) => setFamilyName(event.target.value)}
+            autoComplete="off"
+          />
+        </div>
+      </div>
+      <div className="xi-form-row">
+        <div className="xi-field">
+          <label className="xi-label" htmlFor="demo-sex">
+            Sex
+          </label>
+          <select
+            className="xi-select"
+            id="demo-sex"
+            value={sex}
+            onChange={(event) => setSex(event.target.value as Patient["sex"])}
+          >
+            <option value="M">M</option>
+            <option value="F">F</option>
+          </select>
+        </div>
+        <div className="xi-field">
+          <label className="xi-label" htmlFor="demo-age">
+            Age
+          </label>
+          <input
+            className="xi-input"
+            id="demo-age"
+            inputMode="numeric"
+            value={age}
+            onChange={(event) => setAge(event.target.value)}
+            autoComplete="off"
+          />
+        </div>
+        <div className="xi-field">
+          <label className="xi-label" htmlFor="demo-status">
+            Clinical status
+          </label>
+          <select
+            className="xi-select"
+            id="demo-status"
+            value={clinicalStatus}
+            onChange={(event) => setClinicalStatus(event.target.value as Patient["clinical_status"])}
+          >
+            <option value="first_time">First-time</option>
+            <option value="established">Established</option>
+          </select>
+        </div>
+        <div className="xi-field">
+          <label className="xi-label" htmlFor="demo-phone">
+            Phone (blank keeps current)
+          </label>
+          <input
+            className="xi-input"
+            id="demo-phone"
+            value={phone}
+            onChange={(event) => setPhone(event.target.value)}
+            autoComplete="off"
+          />
+        </div>
+      </div>
+      {error !== null && (
+        <p className="xi-form-error" role="alert" tabIndex={-1} ref={errorRef} data-testid="demographics-status">
+          {error}
+        </p>
+      )}
+      {conflictServer !== null && (
+        <div className="xi-notice" role="status">
+          <p style={{ marginTop: 0 }}>
+            Current server values (revision {conflictServer.revision}): {conflictServer.sex} ·{" "}
+            {conflictServer.age} · {statusLabel(conflictServer.clinical_status)} ·{" "}
+            {conflictServer.given_name} {conflictServer.family_name} ·{" "}
+            {conflictServer.phone ?? "—"}.
+          </p>
+          <div className="xi-row-actions" style={{ marginBottom: 0 }}>
+            <button
+              className="xi-btn xi-btn-secondary"
+              type="button"
+              onClick={() => {
+                adopt(conflictServer);
+                setConflictServer(null);
+                setError(null);
+              }}
+            >
+              Reload server values
+            </button>
+            <button
+              className="xi-btn xi-btn-secondary"
+              type="button"
+              disabled={saving}
+              onClick={() => {
+                setBaseRevision(conflictServer.revision);
+                setConflictServer(null);
+                setError(null);
+                void save();
+              }}
+            >
+              Retry save at revision {conflictServer.revision}
+            </button>
+          </div>
+        </div>
+      )}
+      {saved !== null && error === null && (
+        <p className="xi-status" role="status" data-testid="demographics-status">
+          {saving ? "Saving…" : saved}
+        </p>
+      )}
+      {saving && (
+        <p className="xi-hint" role="status">
+          Saving…
+        </p>
+      )}
+      {staleRelevant && saved !== null && error === null && (
+        <div className="xi-warning-panel" role="status" data-testid="demographics-freshness">
+          <p style={{ margin: 0 }}>
+            <span aria-hidden="true">◍</span> Out of date — a relevant demographic (age, sex, or
+            clinical status) changed. Affected questions need a new run for the current inputs;
+            unaffected questions stay valid. Notes never cause this. No draft content is shown
+            here.
+          </p>
+        </div>
+      )}
+      <div className="xi-row-actions">
+        <button
+          className="xi-btn xi-btn-primary"
+          type="submit"
+          data-testid="demographics-save"
+          disabled={saving || !dirty}
+        >
+          {saving ? "Saving…" : "Save demographics"}
+        </button>
+      </div>
+      <p className="xi-hint" style={{ marginBottom: 0 }}>
+        Shared edit (revision {baseRevision}): any active physician may edit; only acknowledged
+        saves are durable. Age, sex, and clinical status are analysis-visible under the
+        provisional policy; phone and names never mark questions out of date.
+      </p>
+    </form>
+  );
+}
+
 export function ChartPage({ patientId }: { patientId: string }) {
   const { user, sessionExpired } = useAuth();
   const [load, setLoad] = useState<LoadState>({ kind: "loading" });
   const [createBusy, setCreateBusy] = useState(false);
   const [createError, setCreateError] = useState<string | null>(null);
   const createErrorRef = useRef<HTMLParagraphElement>(null);
+  // Persisted transient notices: child success state lifted here so it
+  // survives reload() unmounting the panels before React paints. Cleared on
+  // patient change so one patient's toast never leaks into another chart.
+  const [demoNotice, setDemoNotice] = useState<{
+    message: string;
+    staleRelevant: boolean;
+  } | null>(null);
+  const [archiveDone, setArchiveDone] = useState<string | null>(null);
 
   const reload = useCallback(async () => {
     setLoad({ kind: "loading" });
@@ -104,6 +590,11 @@ export function ChartPage({ patientId }: { patientId: string }) {
   }, [reload]);
 
   useEffect(() => {
+    setDemoNotice(null);
+    setArchiveDone(null);
+  }, [patientId]);
+
+  useEffect(() => {
     if (createError !== null) {
       createErrorRef.current?.focus();
     }
@@ -126,10 +617,9 @@ export function ChartPage({ patientId }: { patientId: string }) {
         return;
       }
       if (err instanceof ApiError && err.status === 409) {
-        // Generic slot conflict: no author, no clinical content.
-        setCreateError(
-          "An open draft already exists for this patient. Ask its author to resume it.",
-        );
+        // Generic slot/archived conflict: no author, no clinical content —
+        // the canned hint carries the provisional-policy wording.
+        setCreateError(conflictHint(err.code) ?? err.message);
         return;
       }
       setCreateError(
@@ -143,6 +633,8 @@ export function ChartPage({ patientId }: { patientId: string }) {
   }
 
   const canCreateFollowup = user?.role === "physician";
+  const isAdmin = user?.role === "admin";
+  const isPhysician = user?.role === "physician";
 
   if (load.kind === "loading") {
     return (
@@ -243,6 +735,35 @@ export function ChartPage({ patientId }: { patientId: string }) {
           Shared demographics (revision {patient.revision}) ·{" "}
           <a href={chartLink}>Permalink {chartLink}</a>
         </p>
+        {patient.archived && !isAdmin && (
+          <p
+            className="xi-badge"
+            data-testid="chart-archived-badge"
+            id="chart-archived-badge"
+            role="status"
+          >
+            ■ Archived — read-only under the provisional policy (not owner-confirmed)
+          </p>
+        )}
+        {isPhysician && !patient.archived && (
+          <DemographicsForm
+            patient={patient}
+            initialNotice={demoNotice}
+            onChanged={(notice) => {
+              setDemoNotice(notice);
+              void reload();
+            }}
+            onSessionExpired={sessionExpired}
+          />
+        )}
+        {isPhysician && patient.archived && (
+          <div className="xi-notice" role="status">
+            <p style={{ margin: 0 }}>
+              Archived patients are read-only under the provisional archive policy (not
+              owner-confirmed): demographics editing is blocked. Shared reads stay available.
+            </p>
+          </div>
+        )}
         <p
           className="xi-badge"
           data-testid="chart-draft-badge"
@@ -250,10 +771,24 @@ export function ChartPage({ patientId }: { patientId: string }) {
           role="status"
         >
           {open_draft.exists
-            ? "Open draft exists — ask its author to resume it"
+            ? patient.archived
+              ? "Archived with a retained private draft — no contents shown; its author can resume it after unarchive"
+              : "Open draft exists — ask its author to resume it"
             : "No open draft"}
         </p>
       </section>
+
+      {isAdmin && (
+        <ArchivePanel
+          patient={patient}
+          initialDone={archiveDone}
+          onChanged={(done) => {
+            setArchiveDone(done);
+            void reload();
+          }}
+          onSessionExpired={sessionExpired}
+        />
+      )}
 
       <section className="xi-card" aria-labelledby="chart-chronology-heading">
         <h3 className="xi-section-title" id="chart-chronology-heading">
@@ -375,6 +910,14 @@ export function ChartPage({ patientId }: { patientId: string }) {
           >
             {createError}
           </p>
+        )}
+        {patient.archived && (
+          <div className="xi-notice" role="status">
+            <p style={{ margin: 0 }}>
+              Follow-up creation is blocked while archived under the provisional archive policy
+              (not owner-confirmed). Unarchive resumes the retained draft slot.
+            </p>
+          </div>
         )}
         {canCreateFollowup ? (
           <div className="xi-row-actions">
