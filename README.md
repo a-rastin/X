@@ -64,3 +64,12 @@ From `backend/`, verify the package with:
 ```sh
 .venv/bin/python -m pytest tests/models/test_pharmacotherapy_package.py -q
 ```
+
+## One-host production deployment (S57)
+
+Packaging (`compose.prod.yaml`, digest-pinned images, Caddy edge) and the
+operator runbook live in [deploy/](deploy/) with a `deploy/check.sh`
+self-check (`make prod-check`). See the
+[S57 report](project-documents/dev/progress/s57.md) for scope, drill
+evidence, and the code-review outcome. Drill-only: never deployed to an
+external/live host.

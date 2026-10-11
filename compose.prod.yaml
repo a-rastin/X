@@ -1,0 +1,120 @@
+# X-INSIGHT one-host production topology (S57, plan.md §3.1).
+#
+#   edge   HTTPS edge + static bundle + same-origin /api proxy (ports 80/443)
+#   app    FastAPI HTTP interface (no published ports; ingress via edge only)
+#   worker production polling loop `python -m x_insight.reasoning`, spawning
+#          private MCP stdio subprocesses internally (no published ports)
+#   db     PostgreSQL 16-alpine, digest-pinned (no published ports)
+#
+# Persistence: prod_pgdata (authoritative records/jobs) and prod_recovery
+# (backup staging, restore staging, maintenance lock, operator log — shared by
+# app AND worker so S56 maintenance fencing quiesces both processes).
+#
+# The local dev loop is untouched (compose.yaml: db + db-test only, app/web
+# via `make dev`). Production never enables dev overrides or the S44 test
+# provider stub: with no X_INSIGHT_PROVIDER_ENDPOINT/MODEL the worker fails
+# generation closed (PROVIDER_NOT_CONFIGURED) while charts/admin stay usable.
+#
+# Order: make prod-build && make prod-up && make prod-migrate
+# (explicit migration step; never destructive reseeding). Admin seeding is
+# one-time at app startup and preserves a changed password (S03).
+# Never `down -v` in production (drops the database); see deploy/README.md.
+
+name: x-insight-prod
+
+services:
+  db:
+    image: postgres@sha256:721873c34ceb9f8d8fc265984940dc982404c105f19ad51be9fdc5970a6080ea # postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-x_insight}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in your prod env file (see .env.example)}
+      POSTGRES_DB: ${POSTGRES_DB:-x_insight}
+    volumes:
+      - prod_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-x_insight}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    # No ports: reachable only on the internal network.
+
+  app:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile.app
+    image: x-insight-app:${APP_IMAGE_TAG:-prod}
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:-x_insight}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB:-x_insight}
+      # Trust X-Forwarded-Proto/For from the in-network edge so Secure cookies
+      # and request schemes follow the public scheme. Safe ONLY because the
+      # app publishes no host ports — the edge is its sole upstream.
+      FORWARDED_ALLOW_IPS: "*"
+      BACKUP_STAGING_DIR: /var/lib/x-insight/recovery/backups
+      RESTORE_STAGING_DIR: /var/lib/x-insight/recovery/restores
+      X_INSIGHT_PROVIDER_ENDPOINT: ${X_INSIGHT_PROVIDER_ENDPOINT:-}
+      X_INSIGHT_PROVIDER_MODEL: ${X_INSIGHT_PROVIDER_MODEL:-}
+      X_INSIGHT_PROVIDER_CAPABILITY: ${X_INSIGHT_PROVIDER_CAPABILITY:-schema}
+    volumes:
+      - prod_recovery:/var/lib/x-insight/recovery
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/v1/health')\""]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    # No ports: ingress only through the edge (same-origin /api proxy).
+
+  worker:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile.app
+    image: x-insight-app:${APP_IMAGE_TAG:-prod}
+    command: [".venv/bin/python", "-m", "x_insight.reasoning"]
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:-x_insight}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB:-x_insight}
+      BACKUP_STAGING_DIR: /var/lib/x-insight/recovery/backups
+      RESTORE_STAGING_DIR: /var/lib/x-insight/recovery/restores
+      X_INSIGHT_PROVIDER_ENDPOINT: ${X_INSIGHT_PROVIDER_ENDPOINT:-}
+      X_INSIGHT_PROVIDER_MODEL: ${X_INSIGHT_PROVIDER_MODEL:-}
+      X_INSIGHT_PROVIDER_CAPABILITY: ${X_INSIGHT_PROVIDER_CAPABILITY:-schema}
+      X_INSIGHT_WORKER_POLL_SECONDS: ${X_INSIGHT_WORKER_POLL_SECONDS:-5}
+    volumes:
+      - prod_recovery:/var/lib/x-insight/recovery
+    # No ports: private MCP subprocesses are spawned internally only.
+
+  migrate:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile.app
+    image: x-insight-app:${APP_IMAGE_TAG:-prod}
+    command: [".venv/bin/alembic", "upgrade", "head"]
+    profiles: ["tools"]
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:-x_insight}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB:-x_insight}
+
+  edge:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile.edge
+    image: x-insight-edge:${APP_IMAGE_TAG:-prod}
+    depends_on:
+      app:
+        condition: service_healthy
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      SITE_ADDRESS: ${SITE_ADDRESS:-http://localhost}
+
+volumes:
+  prod_pgdata:
+  prod_recovery:

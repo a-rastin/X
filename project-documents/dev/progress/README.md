@@ -3,7 +3,24 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest recorded checkpoint is [S56](s56.md): S56 complete —
+The latest recorded checkpoint is [S57](s57.md): S57 complete —
+one-host Linux deployment packaging (digest-pinned app/edge/db images,
+edge/app/worker/db Compose topology with no public DB/MCP ports,
+fail-closed worker polling entry + `PROVIDER_NOT_CONFIGURED` non-retryable,
+explicit migrate + one-time admin seed, auto-TLS outside localhost with
+`Secure` cookies, backup-before-upgrade/rollback/migration-recovery runbook,
+independent app/worker/db restarts with draft/queue preservation and
+`/health` vs `/ready` semantics, secret-free logs; `BT/worker/
+test_prod_worker.py` 8 tests + `deploy/check.sh` green; live
+disposable-host install + 0017→0018 upgrade drill with two in-slice fixes
+(recovery-volume ownership, `FORWARDED_ALLOW_IPS`); code review Standards
+clean + Spec 7 findings fixed in-slice (rollback annotation, check.sh
+secrets/comment-stripped HTTPS/origin asserts, Caddy log-discard + explicit
+redir with `caddy validate` + live 301/200); `BT/http` 319 + 1
+deselected, worker/probability 88, restore commit/validation 30, tsc clean,
+build green, edge smoke 2/2 + journey 4/4, backups regression 4/4. Drill volumes kept
+stopped on the drill host. Next is S58. Prior slice [S56](s56.md) below.
+Predecessor [S56](s56.md): S56 complete —
 commit restore with maintenance, fencing, and rollback (admin-only exact-digest
 commit + quiesce/pre-restore backup, phased switch/restart behind maintenance
 with `/ready` 503, session/grant revocation + pending-job reconciliation +
@@ -118,3 +135,4 @@ and activation retain their independent status.
 | S54 | [Produce consistent full backups (2026-10-10)](s54.md) |
 | S55 | [Validate and stage restores without touching live state (2026-10-10)](s55.md) |
 | S56 | [Commit restore with maintenance, fencing, and rollback (2026-10-11)](s56.md) |
+| S57 | [Package one-host Linux deployment and upgrades (2026-10-11)](s57.md) |

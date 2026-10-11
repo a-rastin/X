@@ -1,0 +1,20 @@
+# X-INSIGHT production edge image (S57, plan.md §3.1).
+#
+# Stage 1 (build): node:22-alpine
+# (node@sha256:0a7108bf6c7bf5de370ffb1a3ed6be93d405b43ff159f681a8d18c0e2bc2e402,
+#  Node 22 / npm 10 — matches the S01 local loop: Node 22.23.2 / npm 10.9.8).
+# Stage 2 (runtime): caddy:2-alpine
+# (caddy@sha256:d8542f48d34a9cf4e4c11a478865229840e87e4c96ea3f439101f31a5d35f75f).
+# Caddy is the native HTTPS edge: automatic certificates + :80→https redirect
+# for public origins, plain HTTP for loopback (plan §11: HTTPS outside
+# localhost). No credentials are baked in; SITE_ADDRESS arrives as env.
+FROM node@sha256:0a7108bf6c7bf5de370ffb1a3ed6be93d405b43ff159f681a8d18c0e2bc2e402 AS webbuild
+WORKDIR /srv/web
+COPY web/package.json web/package-lock.json ./
+RUN npm ci
+COPY web/ ./
+RUN npm run build
+
+FROM caddy@sha256:d8542f48d34a9cf4e4c11a478865229840e87e4c96ea3f439101f31a5d35f75f
+COPY --from=webbuild /srv/web/dist /srv/web
+COPY deploy/Caddyfile /etc/caddy/Caddyfile

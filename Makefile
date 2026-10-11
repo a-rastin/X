@@ -20,7 +20,7 @@
 #   react 19.3.0, vite 8.3.2, typescript 7.0.2,
 #   @vitejs/plugin-react 6.1.1, @playwright/test 1.63.0, @types/node 26.6.4
 
-.PHONY: setup dev stop migrate check test-backend test-web test-e2e test-recovery test-load verify help
+.PHONY: setup dev stop migrate check test-backend test-web test-e2e test-recovery test-load verify help prod-build prod-up prod-migrate prod-stop prod-logs prod-check
 
 TEST ?=
 E2E_BASE_URL ?= http://localhost:5173
@@ -37,6 +37,12 @@ help:
 	@echo "make test-recovery# recovery drill (no suite yet in S01)"
 	@echo "make test-load    # load check (no suite yet in S01)"
 	@echo "make verify       # defined offline CI gate; no live provider credentials"
+	@echo "make prod-build   # build pinned production images (app + edge)"
+	@echo "make prod-up       # start one-host production stack (db + app + worker + edge)"
+	@echo "make prod-migrate  # explicit production migration step (never destructive)"
+	@echo "make prod-stop     # stop the production stack (keeps database volumes)"
+	@echo "make prod-logs     # tail production app/worker/edge logs"
+	@echo "make prod-check    # production packaging self-check (deploy/check.sh)"
 
 setup:
 	cd backend && uv sync --locked --group dev
@@ -106,3 +112,31 @@ verify:
 	$(MAKE) test-backend
 	$(MAKE) test-e2e
 	@echo "verify: offline CI gate passed (check + backend tests + web build + browser smoke); no live provider credentials used."
+
+# One-host production (S57; see compose.prod.yaml + deploy/README.md).
+# Requires a prod env file: POSTGRES_PASSWORD at minimum (see .env.example).
+# Order on a clean host: prod-build, prod-up, prod-migrate (then open edge :80).
+
+# Prod env lives in .env.prod (never commit it); the local dev .env is untouched.
+PROD_ENV_FILE ?= .env.prod
+PROD_COMPOSE = docker compose -f compose.prod.yaml --env-file $(PROD_ENV_FILE)
+
+prod-build:
+	$(PROD_COMPOSE) build
+
+prod-up:
+	$(PROD_COMPOSE) up -d db app worker edge
+	@echo "production stack starting; next: 'make prod-migrate' (explicit migration step)."
+
+prod-migrate:
+	$(PROD_COMPOSE) run --rm migrate
+
+prod-stop:
+	$(PROD_COMPOSE) down
+	@echo "production stack stopped; database volumes kept (never 'down -v' in production)."
+
+prod-logs:
+	$(PROD_COMPOSE) logs --tail=200 app worker edge
+
+prod-check:
+	./deploy/check.sh

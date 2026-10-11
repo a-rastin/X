@@ -1,0 +1,53 @@
+# X-INSIGHT one-host edge (S57, plan.md §§3.1, 11).
+#
+# {$SITE_ADDRESS} defaults to http://localhost (loopback stays plain HTTP —
+# plan §11 requires HTTPS outside localhost only). Production:
+#   SITE_ADDRESS=https://<public-host>
+# and Caddy terminates TLS with automatic certificates and redirects :80 to
+# https. Only this edge is externally reachable; the database and the worker's
+# private MCP subprocesses have no public ports. The browser talks to the API
+# at the same origin (relative /api/v1 routes, proxied below).
+{
+	# S57 §4 log secrecy (operative, second half): requests whose Host does
+	# not match the site below never enter it, so the site `log` block
+	# cannot cover them — keep them off the default logger too. Error and
+	# startup lines still go to stderr; only per-request access entries
+	# (whose URIs embed patient/record IDs) are excluded.
+	log default {
+		exclude http.log.access
+	}
+}
+{$SITE_ADDRESS:http://localhost} {
+	root * /srv/web
+
+	# S57 §4 log secrecy (operative): Caddy access-logs every request URI
+	# by default, and URIs embed patient/record IDs — discard edge access
+	# lines. Error logs still go to stderr; app/worker log safe metadata
+	# only (see deploy/README.md §8).
+	log {
+		output discard
+	}
+
+	# Operative HTTPS enforcement (plan §11: HTTPS required outside
+	# localhost). A public https:// SITE_ADDRESS gets automatic TLS
+	# certificates plus Caddy's automatic :80→https redirect; the matcher
+	# below makes that redirect explicit for any residual plain-HTTP
+	# request to a non-loopback host. http://localhost loopback stays
+	# plain HTTP (matched out, never redirected).
+	@http_to_non_loopback {
+		expression {http.request.scheme} == 'http'
+		not {
+			host localhost 127.0.0.1 [::1]
+		}
+	}
+	redir @http_to_non_loopback https://{host}{uri} permanent
+
+	handle /api/* {
+		reverse_proxy app:8000
+	}
+
+	handle {
+		try_files {path} /index.html
+		file_server
+	}
+}

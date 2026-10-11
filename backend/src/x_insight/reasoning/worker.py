@@ -25,6 +25,10 @@ derived state.
 
 from __future__ import annotations
 
+import logging
+import os
+import signal
+import time
 import uuid
 from datetime import datetime
 from typing import Any
@@ -305,3 +309,99 @@ def _execute_local_claim(
         "batch_id": str(committed.get("batch_id")),
         "job_class": queue_module.LOCAL_CALCULATION_CLASS,
     }
+
+
+logger = logging.getLogger(__name__)
+
+# S57 production worker entry point (plan.md §3; compose.prod.yaml `worker`
+# runs `python -m x_insight.reasoning`). The polling loop reuses run_once();
+# adapter selection below is the only production-specific behavior: a
+# configured endpoint yields the real BoundedProviderAdapter, otherwise the
+# worker fails closed (PROVIDER_NOT_CONFIGURED, non-retryable) so generation
+# is honestly unavailable while charts/admin stay usable. The S44
+# ControlledStubAdapter is never selected here — no test provider runs in
+# production. Provider bearer-key persistence/encryption arrives with S42;
+# endpoints requiring keys stay unconfigured (fail closed) until then.
+
+PROVIDER_ENDPOINT_ENV_VAR = "X_INSIGHT_PROVIDER_ENDPOINT"
+PROVIDER_MODEL_ENV_VAR = "X_INSIGHT_PROVIDER_MODEL"
+PROVIDER_CAPABILITY_ENV_VAR = "X_INSIGHT_PROVIDER_CAPABILITY"
+WORKER_POLL_SECONDS_ENV_VAR = "X_INSIGHT_WORKER_POLL_SECONDS"
+DEFAULT_POLL_SECONDS = 5.0
+
+
+class UnconfiguredProvider:
+    """Fail-closed adapter: no provider endpoint is configured.
+
+    Every estimation attempt returns a non-retryable configuration error so
+    the job fails with a clear stage/error code, the draft is retained, and
+    ordinary record work is unaffected. Local recalculation jobs never touch
+    this adapter (separate slots, no provider/MCP).
+    """
+
+    def estimate(self, request: provider_module.ProviderRequest) -> provider_module.ProviderResult:
+        return provider_module.ProviderResult(
+            ok=False, error_code="PROVIDER_NOT_CONFIGURED", retryable=False
+        )
+
+
+def build_adapter_from_env() -> provider_module.ProviderAdapter:
+    """Select the production estimation adapter from operator environment."""
+    endpoint = (os.environ.get(PROVIDER_ENDPOINT_ENV_VAR) or "").strip()
+    model = (os.environ.get(PROVIDER_MODEL_ENV_VAR) or "").strip()
+    if not endpoint or not model:
+        return UnconfiguredProvider()
+    capability = (os.environ.get(PROVIDER_CAPABILITY_ENV_VAR) or "schema").strip() or "schema"
+    return provider_module.BoundedProviderAdapter(
+        provider_module.ProviderConfig(endpoint_url=endpoint, model=model, capability=capability)
+    )
+
+
+def poll_forever(
+    engine: Engine | None = None,
+    poll_seconds: float | None = None,
+    stop_after: int | None = None,
+) -> None:
+    """Run run_once() until SIGTERM/SIGINT (production polling process).
+
+    ``poll_seconds`` defaults to X_INSIGHT_WORKER_POLL_SECONDS (5s); sleeps
+    in 0.2s slices so shutdown is prompt. ``stop_after`` caps iterations for
+    supervised drills (None = run until signalled). Only safe metadata is
+    logged (status/worker/job/batch ids); never projections, prompts, or
+    record content.
+    """
+    if poll_seconds is None:
+        try:
+            poll_seconds = float(os.environ.get(WORKER_POLL_SECONDS_ENV_VAR, "") or 0) or (
+                DEFAULT_POLL_SECONDS
+            )
+        except ValueError:
+            poll_seconds = DEFAULT_POLL_SECONDS
+    stop = {"requested": False}
+
+    def _request_stop(signum: int, frame: Any) -> None:
+        stop["requested"] = True
+
+    previous_term = signal.signal(signal.SIGTERM, _request_stop)
+    previous_int = signal.signal(signal.SIGINT, _request_stop)
+    try:
+        adapter = build_adapter_from_env()
+        logger.warning("worker polling started adapter=%s", type(adapter).__name__)
+        iterations = 0
+        while not stop["requested"]:
+            outcome = run_once(engine=engine, provider=adapter)
+            logger.warning(
+                "worker outcome status=%s job_id=%s batch_id=%s",
+                outcome.get("status"),
+                outcome.get("job_id"),
+                outcome.get("batch_id"),
+            )
+            iterations += 1
+            if stop_after is not None and iterations >= stop_after:
+                return
+            deadline = time.monotonic() + max(0.0, float(poll_seconds))
+            while not stop["requested"] and time.monotonic() < deadline:
+                time.sleep(0.2)
+    finally:
+        signal.signal(signal.SIGTERM, previous_term)
+        signal.signal(signal.SIGINT, previous_int)
