@@ -222,6 +222,59 @@ class SizeLimitMiddleware:
         return
 
 
+class MaintenanceMiddleware:
+    """Quiesce HTTP writes behind the S56 filesystem maintenance lock.
+
+    When ``restore.is_maintenance_active()`` (filesystem file, independent of
+    either database), mutating methods (POST/PUT/PATCH/DELETE) fail safe 503
+    ``MAINTENANCE`` except the allowlist that must stay usable behind the
+    lock: ``POST /api/v1/auth/login`` (health-check login before reopening),
+    every ``/api/v1/restores/*`` route (validate/commit progress/reopen), and
+    ``/api/v1/health`` + ``/api/v1/ready`` (liveness/readiness probes).
+    Reads (GET) are never blocked so the operator can verify login/read
+    during maintenance. No secrets or tracebacks leave this edge.
+    """
+
+    def __init__(self, app: Callable) -> None:
+        self.app = app
+
+    async def __call__(self, scope: dict, receive: Callable, send: Callable) -> None:
+        if scope.get("type") != "http" or scope.get("method") not in {
+            "POST",
+            "PUT",
+            "PATCH",
+            "DELETE",
+        }:
+            await self.app(scope, receive, send)
+            return
+        path = str(scope.get("path", "") or "")
+        normalized = path.rstrip("/") or "/"
+        if normalized == "/api/v1/auth/login" or normalized.startswith("/api/v1/restores"):
+            await self.app(scope, receive, send)
+            return
+        if normalized in ("/api/v1/health", "/api/v1/ready"):
+            await self.app(scope, receive, send)
+            return
+        try:
+            from x_insight.operations import restore as restore_module
+
+            active = restore_module.is_maintenance_active()
+        except Exception:
+            active = False
+        if not active:
+            await self.app(scope, receive, send)
+            return
+        request_id = str(scope.get("request_id") or contracts.new_request_id())
+        response = error_response(
+            503,
+            "MAINTENANCE",
+            "System is under maintenance. Retry shortly.",
+            request_id,
+            retryable=True,
+        )
+        await response(scope, receive, send)
+
+
 class IdempotencyKeyMiddleware:
     """Enforce the ``Idempotency-Key`` format on mutating requests (S02 edge).
 
@@ -286,6 +339,7 @@ def create_app() -> FastAPI:
     # other route keeps the 1 MiB default (download is a GET with no body).
     from x_insight.operations import backup as backup_module
 
+    app.add_middleware(MaintenanceMiddleware)
     app.add_middleware(IdempotencyKeyMiddleware)
     app.add_middleware(
         SizeLimitMiddleware,
@@ -379,7 +433,28 @@ def create_app() -> FastAPI:
 
     @app.get("/api/v1/ready", response_model=None)
     def ready(request: Request):
-        """Readiness: 200 when the database/schema are usable, else safe 503."""
+        """Readiness: 200 when the database/schema are usable, else safe 503.
+
+        S56: while the filesystem maintenance lock is held the system is not
+        ready for writes — 503 ``MAINTENANCE`` (retryable, no config
+        disclosure) so the disposable drill can observe maintenance via T1.
+        """
+        try:
+            from x_insight.operations import restore as restore_module
+
+            if restore_module.is_maintenance_active():
+                return JSONResponse(
+                    status_code=503,
+                    content=contracts.ErrorBody(
+                        code="MAINTENANCE",
+                        message="System is under maintenance. Retry shortly.",
+                        field_errors={},
+                        request_id=get_request_id(request),
+                        retryable=True,
+                    ).model_dump(),
+                )
+        except Exception:
+            pass
         result = db.check_readiness(db.get_engine())
         if result.ok:
             return {

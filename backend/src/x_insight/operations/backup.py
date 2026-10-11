@@ -102,8 +102,13 @@ BACKUP_MANIFEST_VERSION = "backup-v1"
 # ponytail: 100 MiB ceiling; S58 measures real CPT/snapshot sizes first.
 MAX_ARCHIVE_BYTES = 100 * 1024 * 1024
 
-# Tables captured in stable order (deterministic inventory). ``sessions`` is
-# deliberately absent (§3: usable sessions never travel). No lifecycle /
+# Tables captured in stable FK-dependency order (deterministic inventory AND
+# root-first: every table's FK parents appear earlier). ``sessions`` is
+# deliberately absent (§3: usable sessions never travel). Restore's phased
+# switch (restore.py ``_apply_tables``) INSERTs in this order and DELETEs in
+# reverse, so parents must precede children here — e.g.
+# ``signed_encounter_snapshots`` (FKs to ``generation_batches`` +
+# ``proposal_snapshots``) must stay AFTER both. No lifecycle /
 # status / kind filters are applied anywhere below, so adjusted-signed
 # (cpt_revisions + signed snapshots with accepted CPTs), failed-revision
 # (reasoning_jobs/attempts with failed outcomes, which correctly have NO
@@ -115,12 +120,12 @@ BACKUP_TABLES: tuple[str, ...] = (
     "encounters",
     "notes",
     "secondary_plans",
-    "signed_encounter_snapshots",
     "encounter_addenda",
     "generation_batches",
     "question_runs",
     "original_baselines",
     "proposal_snapshots",
+    "signed_encounter_snapshots",
     "reasoning_jobs",
     "reasoning_job_attempts",
     "reasoning_grants",

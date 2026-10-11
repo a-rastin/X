@@ -1,4 +1,4 @@
-"""Operations HTTP routes (S52/S54/S55, seams T1/T10, plan.md §§4.3, 10.1–10.3).
+"""Operations HTTP routes (S52/S54/S55/S56, seams T1/T10/T8, plan.md §§4.3, 10.1–10.3).
 
 ``GET /api/v1/audit-events`` — admin-only inspection over the atomically
 committed events (S51 transactions own the commit; this route only reads).
@@ -29,10 +29,17 @@ S55 staged restores (plan.md §10.3 steps 1-3, staging only; FR-41,
 NFR-02/04, seam T10 over T1): ``POST /api/v1/restores/validate``
 (admin-only upload-to-staging with CSRF; raw zip body, synchronous bounded
 staging, 201 with the terminal job) and ``GET /api/v1/restores/{id}``
-(admin-only progress/impact read, ``private, no-store``). No
-``POST /restores/commit`` or any live-mutation path exists here — commit /
-switch / rollback belong to S56. Builders live in
+(admin-only progress/impact read, ``private, no-store``). Builders live in
 :mod:`x_insight.operations.restore`; this router only gates and serves.
+
+S56 commit (plan.md §10.3 steps 4-6; FR-41–42, NFR-04; seams T10/T1/T8):
+``POST /api/v1/restores/{id}/commit`` (admin-only + CSRF, JSON
+``{"confirmation_digest": "<64hex>"}``; exact validated staged digest only,
+stale/mismatched 409; synchronous phased replacement 200 with the terminal
+job, phase failure 500 with the rolled-back job + maintenance held) and
+``POST /api/v1/restores/{id}/reopen`` (admin-only + CSRF; verifies health
+then clears maintenance, 200 reopened / 503 still held). ``GET
+/api/v1/restores/{id}`` polls commit phases + ``maintenance_active``.
 """
 
 from __future__ import annotations
@@ -434,7 +441,7 @@ def download_backup(
 
 
 # --- S55 staged restore validation (admin-only, audited, private/no-store) ---
-# Staging only: no commit/switch/rollback route exists here by design (S56).
+# S56 commit/rollback/reopen routes follow (phased replacement behind maintenance).
 
 
 def _parse_restore_id(value: str) -> uuid.UUID:
@@ -509,12 +516,14 @@ async def validate_restore(
 def get_restore(
     restore_id: str, request: Request, session: Session = Depends(get_session)
 ) -> JSONResponse:
-    """Staging progress/impact read (admin-only, no CSRF, like audit reads).
+    """Staging + commit progress read (admin-only, no CSRF, like audit reads).
 
-    Returns the terminal staging job with its impact report (backup date /
-    schema / content / checksums / live-vs-staged counts / key consequence /
-    confirmation digest / expiry). Expired or superseded digests are reported
-    as ``expired: true`` so S56 can reject stale confirmations.
+    Returns the staging job with its impact report (backup date / schema /
+    content / checksums / live-vs-staged counts / key consequence /
+    confirmation digest / expiry) plus S56 commit polling (``commit_status`` /
+    ``commit_phase`` / ``pre_restore_backup_id`` / ``commit_history`` /
+    ``maintenance_active``). Expired or superseded digests are reported as
+    ``expired: true`` so commit rejects stale confirmations.
     """
     admin = _require_admin(request, session)
     if isinstance(admin, JSONResponse):
@@ -529,6 +538,143 @@ def get_restore(
     job = restore_module.get_restore(session, target)
     if job is None:
         return error_response(404, "NOT_FOUND", "Restore not found.", request_id)
+    return JSONResponse(
+        status_code=200,
+        content=restore_module.safe_job(job),
+        headers={"Cache-Control": "private, no-store"},
+    )
+
+
+# --- S56 commit with maintenance, fencing, and rollback (admin-only) ---
+
+
+@router.post("/restores/{restore_id}/commit", response_model=None)
+async def commit_restore(
+    restore_id: str, request: Request, session: Session = Depends(get_session)
+) -> JSONResponse:
+    """Commit one staged restore behind maintenance (admin-only mutation).
+
+    Body ``{"confirmation_digest": "<64hex>"}`` must exactly match the
+    validated staged digest; stale/expired/mismatched confirmations fail 409
+    with no mutation. Success runs the phased replacement (maintenance →
+    quiesce → fence → pre-restore backup → switch → restart → revoke →
+    reconcile → audit → verify → reopen): 200 carries the terminal job with
+    ``commit_status: succeeded`` + ``pre_restore_backup_id`` +
+    ``maintenance_active: false``. Phase failures (including
+    ``RESTORE_COMMIT_FAIL_AT`` injection) roll back to the pre-switch
+    snapshot, keep maintenance, audit ``restores.commit.failed`` + operator
+    log, and return 500 with the rolled-back job (``commit_status:
+    failed``/``rolled_back``, ``maintenance_active: true``). Old sessions
+    are revoked (re-login required) and old provider commits fail
+    ``DEPLOYMENT_FENCED`` after the generation bump.
+    """
+    admin = _require_admin_mutation(request, session)
+    if isinstance(admin, JSONResponse):
+        return admin
+    assert isinstance(admin, dict)
+    request_id = get_request_id(request)
+    try:
+        target = _parse_restore_id(restore_id)
+    except contracts.ContractError as exc:
+        return error_response(
+            exc.status_code, exc.code, exc.message, request_id, exc.field_errors, exc.retryable
+        )
+    try:
+        payload = await request.json()
+    except Exception:
+        return error_response(
+            422,
+            "VALIDATION_FAILED",
+            "confirmation_digest is required.",
+            request_id,
+            {"confirmation_digest": ["Must be a 64-char hex digest."]},
+        )
+    if not isinstance(payload, dict):
+        return error_response(
+            422,
+            "VALIDATION_FAILED",
+            "confirmation_digest is required.",
+            request_id,
+            {"confirmation_digest": ["Must be a 64-char hex digest."]},
+        )
+    presented = payload.get("confirmation_digest")
+    if not isinstance(presented, str) or not presented.strip():
+        return error_response(
+            422,
+            "VALIDATION_FAILED",
+            "confirmation_digest is required.",
+            request_id,
+            {"confirmation_digest": ["Must be a 64-char hex digest."]},
+        )
+    try:
+        job, failed, _rolled_back = restore_module.commit_restore(
+            session,
+            get_engine(),
+            actor=admin,
+            request_id=request_id,
+            job_id=target,
+            confirmation_digest=presented,
+        )
+    except contracts.ContractError as exc:
+        return error_response(
+            exc.status_code, exc.code, exc.message, request_id, exc.field_errors, exc.retryable
+        )
+    return JSONResponse(
+        status_code=500 if failed else 200,
+        content=restore_module.safe_job(job),
+        headers={"Cache-Control": "private, no-store"},
+    )
+
+
+@router.post("/restores/{restore_id}/reopen", response_model=None)
+def reopen_restore(
+    restore_id: str, request: Request, session: Session = Depends(get_session)
+) -> JSONResponse:
+    """Clear maintenance after verifying healthy (admin-only mutation).
+
+    Verifies readiness + admin + reads + saved-CPT replay; on success clears
+    the filesystem maintenance lock (200, ``maintenance_active: false``), on
+    failure keeps it (503, ``maintenance_active: true``) so the operator
+    retries after fixing the deployment.
+    """
+    admin = _require_admin_mutation(request, session)
+    if isinstance(admin, JSONResponse):
+        return admin
+    assert isinstance(admin, dict)
+    request_id = get_request_id(request)
+    try:
+        target = _parse_restore_id(restore_id)
+    except contracts.ContractError as exc:
+        return error_response(
+            exc.status_code, exc.code, exc.message, request_id, exc.field_errors, exc.retryable
+        )
+    try:
+        job, reopened = restore_module.reopen_restore(
+            get_engine(), actor=admin, request_id=request_id, job_id=target
+        )
+    except contracts.ContractError as exc:
+        # Still surface the polled job so callers see maintenance_active.
+        try:
+            current = restore_module.get_restore(session, target)
+            content: dict[str, Any] = (
+                restore_module.safe_job(current) if current is not None else {"id": str(target)}
+            )
+        except Exception:
+            content = {"id": str(target)}
+        content["maintenance_active"] = True
+        return JSONResponse(
+            status_code=exc.status_code,
+            content={
+                "code": exc.code,
+                "message": exc.message,
+                "field_errors": exc.field_errors,
+                "request_id": request_id,
+                "retryable": exc.retryable,
+                "job": content,
+            },
+            headers={"Cache-Control": "private, no-store"},
+        )
+    _ = reopened
     return JSONResponse(
         status_code=200,
         content=restore_module.safe_job(job),

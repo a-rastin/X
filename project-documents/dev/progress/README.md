@@ -3,20 +3,22 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest recorded checkpoint is [S55](s55.md): S55 complete —
-staged restore validation (admin-only `POST /api/v1/restores/validate` +
-`GET /api/v1/restores/{id}` with `private, no-store` + audit; archive
-guards, singleton/refs/model-effective checks, impact report, immutable
-confirmation digest with `commit_available:false`, no commit route,
-filesystem staging, successful-staging-only expiry;
-`BT/recovery/test_restore_validation.py` 18 T10/T1;
-`e2e/restores.spec.ts` 4 × chromium/firefox 8/8 (`--workers=1`);
-tests/http 319 + 1 deselected, worker/probability
-80, tsc clean, build 69 modules; backups regression 4/4
+The latest recorded checkpoint is [S56](s56.md): S56 complete —
+commit restore with maintenance, fencing, and rollback (admin-only exact-digest
+commit + quiesce/pre-restore backup, phased switch/restart behind maintenance
+with `/ready` 503, session/grant revocation + pending-job reconciliation +
+operator log, 3-point failure-injection rollback with Held banner + reopen;
+`BT/recovery/test_restore_commit.py` 12 T10/T1/T8 + validation 18 T10/T1;
+`e2e/restores.spec.ts` 7 tests — chromium/firefox 14/14 (`--workers=1`)
+after backend `BACKUP_TABLES` FK reorder; code review Standards clean (one
+duplicated-422 nit) + Spec fully covers §§1-4 + Verify/exit with two
+documented non-blocking partials; tests/http 319 + 1 deselected,
+worker/probability 80, tsc clean, build 69 modules; backups regression 4/4
 chromium). History is replaceable by DB-owner access/restore — NOT
 tamper-proof; regressions hold except `test_only_s02_tables_exist` drift
 (now misses `backup_jobs`/`restore_jobs`), identity pager gap, and `ddi_*` suite-order
-workaround. Next is S56. Prior slices remain [S54](s54.md)
+workaround. Next is S57. Prior slices remain [S55](s55.md)
+(validate/stage restores), [S54](s54.md)
 (consistent full backups), [S53](s53.md)
 (exports/reports), [S52](s52.md)
 (append-only audit/administration views), [S51](s51.md)
@@ -115,3 +117,4 @@ and activation retain their independent status.
 | S53 | [Export lists and printable longitudinal patient reports (2026-10-10)](s53.md) |
 | S54 | [Produce consistent full backups (2026-10-10)](s54.md) |
 | S55 | [Validate and stage restores without touching live state (2026-10-10)](s55.md) |
+| S56 | [Commit restore with maintenance, fencing, and rollback (2026-10-11)](s56.md) |

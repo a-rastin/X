@@ -67,12 +67,23 @@ def run_once(
       consumes the next shared-budget attempt; local jobs return
       ``succeeded``/``failed``/``cancelled`` with ``job_class``)
     - ``{'status': 'fencing_failed', ...}`` (old token lost the race)
+    - ``{'status': 'maintenance', ...}`` (S56: filesystem maintenance lock
+      held — quiesced, claims nothing so no mixed old/new traffic)
     All observable via public run status (GET batch/review); no SQL-row asserts.
     """
     moment = now or contracts.utcnow()
     wid = worker_id or uuid.uuid4().hex[:12]
     engine = engine or db_module.get_engine()
     provider = provider or provider_module.ControlledStubAdapter()
+
+    # S56 §1 quiesce (T8): behind maintenance the worker claims nothing.
+    try:
+        from x_insight.operations import restore as restore_module
+
+        if restore_module.is_maintenance_active():
+            return {"status": "maintenance", "worker_id": wid}
+    except Exception:
+        pass
 
     with db_module.session_scope(engine) as session:
         queue_module.reclaim_expired_leases(session, now=moment)
