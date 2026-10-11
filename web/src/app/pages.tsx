@@ -7,6 +7,7 @@ import { RestoresPage } from "../features/admin/restores/RestoresPage";
 import { ExportsPage } from "../features/admin/exports/ExportsPage";
 import { ReportPage } from "../features/admin/exports/ReportPage";
 import { NetworksPage } from "../features/admin/networks/NetworksPage";
+import { StatusPage } from "../features/admin/status/StatusPage";
 import { PatientDirectory } from "../features/patients/DirectoryPage";
 
 export function AdminDashboard() {
@@ -166,6 +167,23 @@ export function RestoresRoutePage() {
     );
   }
   return <RestoresPage />;
+}
+
+export function StatusRoutePage() {
+  const { user } = useAuth();
+  if (user?.role !== "admin") {
+    // Client-side complement to the server's 401/403 on /ops/status: never
+    // grant authority, just avoid rendering gauges to the wrong role.
+    return (
+      <div>
+        <h2 className="xi-page-title">Operational status</h2>
+        <p className="xi-form-error" role="alert">
+          Administrator access required.
+        </p>
+      </div>
+    );
+  }
+  return <StatusPage />;
 }
 
 export function ReportRoutePage({ patientId }: { patientId: string }) {

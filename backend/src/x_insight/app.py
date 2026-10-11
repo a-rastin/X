@@ -338,6 +338,7 @@ def create_app() -> FastAPI:
     # ponytail: raw-zip staging needs MAX_ARCHIVE_BYTES at the edge; every
     # other route keeps the 1 MiB default (download is a GET with no body).
     from x_insight.operations import backup as backup_module
+    from x_insight.operations import status as status_module
 
     app.add_middleware(MaintenanceMiddleware)
     app.add_middleware(IdempotencyKeyMiddleware)
@@ -346,6 +347,10 @@ def create_app() -> FastAPI:
         path_max_bytes={("POST", "/api/v1/restores/validate"): backup_module.MAX_ARCHIVE_BYTES},
     )
     app.add_middleware(RequestContextMiddleware)
+    # S58 §3: outermost request gauge (counts/errors/latency per save/search/
+    # poll group). Added last so edge rejections (413/422) count too; fixed
+    # keys keep memory bounded.
+    app.add_middleware(status_module.RequestMetricsMiddleware)
 
     @app.exception_handler(contracts.ContractError)
     async def contract_error_handler(

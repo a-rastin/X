@@ -104,8 +104,11 @@ test-recovery:
 	@exit 1
 
 test-load:
-	@echo "test-load: no load suite yet (S01 bootstrap; synthetic load lands with capacity work)." >&2
-	@exit 1
+	set -a; if [ -f .env ]; then . ./.env; fi; set +a; \
+	cd backend && uv run python -m x_insight.operations.load_probe \
+		--patients $${LOAD_PATIENTS:-50} --workers $${LOAD_WORKERS:-4} \
+		--provider-samples $${LOAD_PROVIDER_SAMPLES:-5} \
+		--output $${LOAD_REPORT:-/tmp/opencode/x-insight-load-report.json}
 
 verify:
 	$(MAKE) check

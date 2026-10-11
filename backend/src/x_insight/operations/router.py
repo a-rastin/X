@@ -60,6 +60,7 @@ from x_insight.identity import service as identity_service
 from x_insight.operations import audit as audit_module
 from x_insight.operations import backup as backup_module
 from x_insight.operations import restore as restore_module
+from x_insight.operations import status as status_module
 
 router = APIRouter()
 
@@ -236,6 +237,24 @@ def list_audit_events(
             "offset": int(resolved_offset),
         },
     )
+
+
+# --- S58 operational status (admin-only safe metrics, seam T1) ---
+
+
+@router.get("/ops/status", response_model=None)
+def get_ops_status(request: Request, session: Session = Depends(get_session)) -> JSONResponse:
+    """Safe operational status snapshot (admin-only read, like audit reads).
+
+    Counts and timestamps only — queue age/heartbeat, provider
+    attempt/auth/ retry counters, inference limits, disk usage, last backup
+    success, process-local request gauges, and the initial alert list.
+    Never carries secrets, record text, tokens, or clinical payloads.
+    """
+    admin = _require_admin(request, session)
+    if isinstance(admin, JSONResponse):
+        return admin
+    return JSONResponse(status_code=200, content=status_module.collect_status(session))
 
 
 # --- S53 CSV exports (admin-only, audited, private/no-store) ---

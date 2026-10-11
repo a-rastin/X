@@ -3,7 +3,20 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest recorded checkpoint is [S57](s57.md): S57 complete —
+The latest recorded checkpoint is [S58](s58.md): S58 complete —
+synthetic capacity measurement + safe operational status (10k load
+9950/10000 in 394 s, ~151 ops/s, ordinary p95 0.052–0.076 s vs <1 s
+target; all-11-network admission 213–4509 cells vs 131072 limit with
+2–29× headroom; admin-only `GET /api/v1/ops/status` with queue/heartbeat/
+provider/inference/disk/backup/request gauges + 4 initial alerts,
+`QUEUE_AGE` fired live; admin Status page; `make test-load` runner;
+`BT/http` 329 + 1 deselected, `BT/models` 212, worker/probability 89 + 1
+suite-order fail passing isolated, recovery 30, tsc clean, build green,
+e2e/status 5/5 + smoke 2/2; code review Standards clean + 6 Spec partials
+recorded as explicit misses M1–M6 with remediation, no SLA claimed;
+`/tmp/opencode` artifacts uncommitted, this report is the committed
+record). Next is S59. Prior slice [S57](s57.md) below.
+Predecessor [S57](s57.md): S57 complete —
 one-host Linux deployment packaging (digest-pinned app/edge/db images,
 edge/app/worker/db Compose topology with no public DB/MCP ports,
 fail-closed worker polling entry + `PROVIDER_NOT_CONFIGURED` non-retryable,
@@ -19,8 +32,7 @@ secrets/comment-stripped HTTPS/origin asserts, Caddy log-discard + explicit
 redir with `caddy validate` + live 301/200); `BT/http` 319 + 1
 deselected, worker/probability 88, restore commit/validation 30, tsc clean,
 build green, edge smoke 2/2 + journey 4/4, backups regression 4/4. Drill volumes kept
-stopped on the drill host. Next is S58. Prior slice [S56](s56.md) below.
-Predecessor [S56](s56.md): S56 complete —
+stopped on the drill host. Next is S58. Prior slices remain [S56](s56.md): S56 complete —
 commit restore with maintenance, fencing, and rollback (admin-only exact-digest
 commit + quiesce/pre-restore backup, phased switch/restart behind maintenance
 with `/ready` 503, session/grant revocation + pending-job reconciliation +
@@ -136,3 +148,4 @@ and activation retain their independent status.
 | S55 | [Validate and stage restores without touching live state (2026-10-10)](s55.md) |
 | S56 | [Commit restore with maintenance, fencing, and rollback (2026-10-11)](s56.md) |
 | S57 | [Package one-host Linux deployment and upgrades (2026-10-11)](s57.md) |
+| S58 | [Measure capacity and expose useful operational status (2026-10-11)](s58.md) |

@@ -159,3 +159,36 @@ destructive reset.
   the only residual URI echo is a proxy error line when the upstream is
   down — the grep above covers that path too. (S58 adds safe operational
   metrics; no clinical payloads ever enter logs or audit metadata.)
+
+## 9. Capacity and operational status (S58)
+
+Provisional targets (plan §11 — assumptions until measured on the
+operator's own host): ~20 ordinary HTTP req/s, ordinary p95 < 1s,
+2 vCPU / 4 GB RAM / 20 GB disk reference, 2 provider slots, restore drill
+< 30 min. No SLA is promised; measure before claiming capacity.
+
+- Synthetic load: `make test-load` (defaults: 50 patients, 4 workers,
+  5 provider samples; report in `$LOAD_REPORT`). Scale with
+  `LOAD_PATIENTS=10000 LOAD_WORKERS=8 make test-load`. Synthetic `9xxx`
+  identifiers and letter-only names only — never real records. The report
+  records host, dataset, duration, per-operation p95 (ordinary requests),
+  and provider-path latency separately (deterministic stub stand-in; live
+  LLM latency is NOT measured — keep provider p95 out of ordinary SLOs).
+- Status: `GET /api/v1/ops/status` (admin only) exposes queue age /
+  heartbeat, provider attempt/auth/retry counters, inference limits +
+  local failures, staging-disk usage, last backup success, per-group
+  request gauges, and the alert list. Counts/timestamps only. The same
+  snapshot renders in the browser on the admin Status page (auto-refresh).
+- Initial alerts: `QUEUE_AGE` (eligible work older than 5 min),
+  `HEARTBEAT_STALE` (leased job silent over 2 min — check the worker
+  process, then watch the next pass reclaim it), `PROVIDER_AUTH_FAILURES`
+  (repeated auth failures in 24h — fix settings; repair starts a new
+  pinned run), `DISK_USAGE` (staging disk over 80% — free space or move
+  `BACKUP_STAGING_DIR` before the next backup).
+- Admission limits (measured headroom, S58): at most 64 inference nodes,
+  131 072 CPT cells, 1 MiB effective XML, 30 s per inference, 2 provider
+  + 2 local slots, 100 queued runs, 3 attempts. Largest admitted content
+  network measures 31 nodes / 4 509 cells / ~161 KB request / ~93 KB
+  output / ~1.4 s inference — limits hold 2–29× headroom. Over-limit
+  work fails closed with `inference_resource` (rejection diagnostics are
+  preserved, never truncated into success).
