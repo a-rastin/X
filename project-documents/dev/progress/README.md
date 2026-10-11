@@ -3,50 +3,31 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest recorded checkpoint is [S58](s58.md): S58 complete —
-synthetic capacity measurement + safe operational status (10k load
-9950/10000 in 394 s, ~151 ops/s, ordinary p95 0.052–0.076 s vs <1 s
-target; all-11-network admission 213–4509 cells vs 131072 limit with
-2–29× headroom; admin-only `GET /api/v1/ops/status` with queue/heartbeat/
-provider/inference/disk/backup/request gauges + 4 initial alerts,
-`QUEUE_AGE` fired live; admin Status page; `make test-load` runner;
-`BT/http` 329 + 1 deselected, `BT/models` 212, worker/probability 89 + 1
-suite-order fail passing isolated, recovery 30, tsc clean, build green,
-e2e/status 5/5 + smoke 2/2; code review Standards clean + 6 Spec partials
-recorded as explicit misses M1–M6 with remediation, no SLA claimed;
-`/tmp/opencode` artifacts uncommitted, this report is the committed
-record). Next is S59. Prior slice [S57](s57.md) below.
-Predecessor [S57](s57.md): S57 complete —
-one-host Linux deployment packaging (digest-pinned app/edge/db images,
-edge/app/worker/db Compose topology with no public DB/MCP ports,
-fail-closed worker polling entry + `PROVIDER_NOT_CONFIGURED` non-retryable,
-explicit migrate + one-time admin seed, auto-TLS outside localhost with
-`Secure` cookies, backup-before-upgrade/rollback/migration-recovery runbook,
-independent app/worker/db restarts with draft/queue preservation and
-`/health` vs `/ready` semantics, secret-free logs; `BT/worker/
-test_prod_worker.py` 8 tests + `deploy/check.sh` green; live
-disposable-host install + 0017→0018 upgrade drill with two in-slice fixes
-(recovery-volume ownership, `FORWARDED_ALLOW_IPS`); code review Standards
-clean + Spec 7 findings fixed in-slice (rollback annotation, check.sh
-secrets/comment-stripped HTTPS/origin asserts, Caddy log-discard + explicit
-redir with `caddy validate` + live 301/200); `BT/http` 319 + 1
-deselected, worker/probability 88, restore commit/validation 30, tsc clean,
-build green, edge smoke 2/2 + journey 4/4, backups regression 4/4. Drill volumes kept
-stopped on the drill host. Next is S58. Prior slices remain [S56](s56.md): S56 complete —
-commit restore with maintenance, fencing, and rollback (admin-only exact-digest
-commit + quiesce/pre-restore backup, phased switch/restart behind maintenance
-with `/ready` 503, session/grant revocation + pending-job reconciliation +
-operator log, 3-point failure-injection rollback with Held banner + reopen;
-`BT/recovery/test_restore_commit.py` 12 T10/T1/T8 + validation 18 T10/T1;
-`e2e/restores.spec.ts` 7 tests — chromium/firefox 14/14 (`--workers=1`)
-after backend `BACKUP_TABLES` FK reorder; code review Standards clean (one
-duplicated-422 nit) + Spec fully covers §§1-4 + Verify/exit with two
-documented non-blocking partials; tests/http 319 + 1 deselected,
-worker/probability 80, tsc clean, build 69 modules; backups regression 4/4
-chromium). History is replaceable by DB-owner access/restore — NOT
-tamper-proof; regressions hold except `test_only_s02_tables_exist` drift
-(now misses `backup_jobs`/`restore_jobs`), identity pager gap, and `ddi_*` suite-order
-workaround. Next is S57. Prior slices remain [S55](s55.md)
+The latest recorded checkpoint is [S59](s59.md): S59 complete —
+verify complete registration + follow-up with CPT review (synthetic
+`s59-test-v1` packages; 5-question registration 4-ready+1-skip with
+S08 diagnosis/PANSS + synthetic meds/DDI + sequential generation +
+adjust/compare + acceptance + sign + snapshots + report; follow-up
+new encounter preserving priors; affected-only regen + fencing;
+new `BT/http/test_complete_workflows.py` 3 T1/T8 +
+`e2e/clinical-workflows.spec.ts` 9/9 × chromium+firefox;
+`BT/http` 332 + 1 deselected, `BT/models` 212, mcp+provider 24,
+worker 78 + 1 suite-order flake exonerated, probability_review 11,
+`web/src` unchanged with tsc clean + build green 71 modules; code
+review 0 hard + judgement nits + synthetic-only partials recorded
+as explicit misses M1–M6, nothing S59-blocking; new test files
+uncommitted, this report is the committed record). Next is S60.
+Prior slice [S58](s58.md) below.
+Predecessor [S58](s58.md): S58 complete — synthetic capacity
+measurement + safe operational status (10k load + admission +
+admin Status page/endpoint; misses M1–M6; artifacts uncommitted,
+report is the committed record). Next was S59. Prior slices remain
+[S57](s57.md) (one-host deployment packaging + upgrade drill),
+[S56](s56.md) (commit restore with maintenance/fencing/rollback;
+history replaceable by DB-owner/restore — NOT tamper-proof;
+regressions hold except `test_only_s02_tables_exist` drift,
+identity pager gap, and `ddi_*` suite-order workaround),
+[S55](s55.md)
 (validate/stage restores), [S54](s54.md)
 (consistent full backups), [S53](s53.md)
 (exports/reports), [S52](s52.md)
@@ -149,3 +130,4 @@ and activation retain their independent status.
 | S56 | [Commit restore with maintenance, fencing, and rollback (2026-10-11)](s56.md) |
 | S57 | [Package one-host Linux deployment and upgrades (2026-10-11)](s57.md) |
 | S58 | [Measure capacity and expose useful operational status (2026-10-11)](s58.md) |
+| S59 | [Verify complete registration and follow-up with CPT review (2026-10-11)](s59.md) |
