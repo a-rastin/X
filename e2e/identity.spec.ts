@@ -363,3 +363,32 @@ test("physicians table surfaces endpoint failure with Retry and recovers", async
     page.getByRole("table", { name: "Physicians" }),
   ).toBeVisible();
 });
+
+test("S61 physician list says when the table is shorter than the total", async ({
+  page,
+}) => {
+  await loginAs(page, "admin", "admin", "admin");
+  await page.getByRole("link", { name: "Physicians" }).click();
+
+  const heading = page.getByRole("heading", {
+    name: /Physician accounts \(\d+\)/,
+  });
+  await expect(heading).toBeVisible();
+  const total = Number(
+    (await heading.innerText())
+      .replace(/\s+/g, " ")
+      .match(/Physician accounts \((\d+)\)/)?.[1],
+  );
+
+  const table = page.getByRole("table", { name: "Physicians" });
+  const dataRows = (await table.getByRole("row").count()) - 1;
+
+  if (dataRows < total) {
+    await expect(
+      page.getByText(`Showing ${dataRows} of ${total}`, { exact: true }),
+    ).toBeVisible();
+  } else {
+    expect(dataRows).toBe(total);
+    await expect(page.getByText("Showing ")).toHaveCount(0);
+  }
+});

@@ -570,6 +570,10 @@ export function PhysiciansPanel() {
           {(state.kind === "ready" || state.kind === "refreshing") &&
             ` (${state.total})`}
         </h3>
+        {(state.kind === "ready" || state.kind === "refreshing") &&
+          state.items.length < state.total && (
+            <p className="xi-hint">{`Showing ${state.items.length} of ${state.total}`}</p>
+          )}
         {state.kind === "loading" && <p>Loading physicians…</p>}
         {state.kind === "error" && (
           <div>

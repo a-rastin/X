@@ -10,13 +10,14 @@ The reasoning behind project decisions is recorded in the
 
 ## Current engineering checkpoint
 
-[S60 is complete (2026-10-16)](project-documents/dev/progress/s60.md):
-cross-user failure isolation, durable acknowledgements, recovery/fencing,
-security boundaries, and strict Chromium/Firefox checks. The report separates
-real backend integration evidence from browser presentation fixtures and lists
-known regression/tooling carryovers. Next: S61 desktop usability, both themes,
-and administration. This is not a content-release or clinical-validation claim;
-S42 and the S62 release rehearsal remain outstanding.
+[S61 is complete for the defects proven this session (2026-10-16)](project-documents/dev/progress/s61.md):
+light `--normal` is `#04835c`, the physician list states when the loaded page
+is shorter than the total, and navigation wraps so 200% desktop width does not
+scroll horizontally. Explicit verification gaps remain; NFR-03 is not fully
+re-proven by this session. This is not a content-release or clinical-validation
+claim. No provider-settings screen, disabled Provider action, or paging. S42
+stays deferred. Next: S62 clean-checkout install and full restore/rollback
+rehearsal.
 
 ## Offline DDI ingestion and terminology
 

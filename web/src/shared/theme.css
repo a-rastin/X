@@ -35,7 +35,8 @@
   --warning: #d97706;
   --warning-bg: #fffbeb;
 
-  --normal: #059669;
+  /* Light success text #04835c: on #f9fafb = 4.56:1; on #ecfdf5 = 4.52:1. */
+  --normal: #04835c;
   --normal-bg: #ecfdf5;
 
   --follow-up: #7c3aed;
@@ -204,6 +205,8 @@ body {
 
 .xi-nav {
   display: flex;
+  /* Wrap so a 200% desktop width does not scroll horizontally. */
+  flex-wrap: wrap;
   gap: var(--space-1);
   align-items: center;
   flex: 1;

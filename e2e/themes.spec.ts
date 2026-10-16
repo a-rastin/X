@@ -9,6 +9,49 @@ async function canvasColor(page: import("@playwright/test").Page): Promise<strin
   return page.evaluate(() => getComputedStyle(document.body).backgroundColor);
 }
 
+/** WCAG 2.x contrast of computed `color` on the nearest non-transparent background. */
+async function contrastRatio(
+  locator: import("@playwright/test").Locator,
+): Promise<number> {
+  return locator.evaluate((el) => {
+    const parsed = (color: string): number[] | null => {
+      const match = color.match(
+        /rgba?\(\s*([\d.]+)\s*,\s*([\d.]+)\s*,\s*([\d.]+)\s*(?:,\s*([\d.]+)\s*)?\)/,
+      );
+      if (!match) return null;
+      return [
+        Number(match[1]),
+        Number(match[2]),
+        Number(match[3]),
+        match[4] === undefined ? 1 : Number(match[4]),
+      ];
+    };
+    // Walk parents while background alpha is 0; stop at the first painted one.
+    let node: Element | null = el;
+    let bg: number[] | null = null;
+    while (node) {
+      const color = parsed(getComputedStyle(node).backgroundColor);
+      if (color && color[3] !== 0) {
+        bg = color;
+        break;
+      }
+      node = node.parentElement;
+    }
+    if (!bg) bg = [255, 255, 255, 1];
+    const fg = parsed(getComputedStyle(el).color);
+    if (!fg) throw new Error(`unparsed color ${getComputedStyle(el).color}`);
+    const channel = (c: number): number => {
+      const s = c / 255;
+      return s <= 0.03928 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4;
+    };
+    const lum = (rgb: number[]): number =>
+      0.2126 * channel(rgb[0]) + 0.7152 * channel(rgb[1]) + 0.0722 * channel(rgb[2]);
+    const lighter = Math.max(lum(fg), lum(bg));
+    const darker = Math.min(lum(fg), lum(bg));
+    return (lighter + 0.05) / (darker + 0.05);
+  });
+}
+
 test("theme toggle persists via /me/preferences across reload", async ({
   page,
   request,
@@ -183,6 +226,82 @@ test("admin theme preference persists independently", async ({ page }) => {
   await expect.poll(() => themeOf(page)).toBe(after);
   // Restore light for a stable starting point for other specs.
   if (after === "dark") {
+    await page.getByRole("button", { name: "Switch to light theme" }).click();
+    await expect.poll(() => themeOf(page)).toBe("light");
+  }
+});
+
+test("S61 light-theme success and active text meets 4.5:1", async ({ page }) => {
+  const username = uniqueName("e2econtrast");
+  await loginAs(page, "admin", "admin", "admin");
+  await expect(
+    page.getByRole("heading", { name: "Administrator dashboard" }),
+  ).toBeVisible();
+  // Admin preference persists; this case measures light theme only.
+  if ((await themeOf(page)) !== "light") {
+    await page.getByRole("button", { name: "Switch to light theme" }).click();
+    await expect.poll(() => themeOf(page)).toBe("light");
+  }
+
+  await page.getByRole("link", { name: "Physicians" }).click();
+  const form = page.getByRole("form", { name: "Create physician" });
+  await form.locator("#create-username").fill(username);
+  await form.locator("#create-password").fill("secret123");
+  await form.getByRole("button", { name: "Create physician" }).click();
+  const status = form.getByText("Physician created.");
+  await expect(status).toBeVisible();
+
+  // ?limit=100 can omit the new username. Any visible active badge is that surface.
+  await expect(page.getByRole("table", { name: "Physicians" })).toBeVisible();
+  const badge = page.locator(".xi-badge-active").first();
+  if (!(await badge.isVisible())) {
+    throw new Error(
+      "the list cap hid every active badge, not a contrast failure",
+    );
+  }
+
+  const statusRatio = await contrastRatio(status);
+  const badgeRatio = await contrastRatio(badge);
+  const detail = `light-theme contrast: status ${statusRatio.toFixed(2)}:1, active badge ${badgeRatio.toFixed(2)}:1`;
+  expect(statusRatio, detail).toBeGreaterThanOrEqual(4.5);
+  expect(badgeRatio, detail).toBeGreaterThanOrEqual(4.5);
+});
+
+test("S61 dark-theme success and active text meets 4.5:1", async ({ page }) => {
+  const username = uniqueName("e2econtrast");
+  await loginAs(page, "admin", "admin", "admin");
+  await expect(
+    page.getByRole("heading", { name: "Administrator dashboard" }),
+  ).toBeVisible();
+  if ((await themeOf(page)) !== "dark") {
+    await page.getByRole("button", { name: "Switch to dark theme" }).click();
+  }
+  await expect.poll(() => themeOf(page)).toBe("dark");
+
+  await page.getByRole("link", { name: "Physicians" }).click();
+  const form = page.getByRole("form", { name: "Create physician" });
+  await form.locator("#create-username").fill(username);
+  await form.locator("#create-password").fill("secret123");
+  await form.getByRole("button", { name: "Create physician" }).click();
+  const status = form.getByText("Physician created.");
+  await expect(status).toBeVisible();
+
+  await expect(page.getByRole("table", { name: "Physicians" })).toBeVisible();
+  const badge = page.locator(".xi-badge-active").first();
+  if (!(await badge.isVisible())) {
+    throw new Error(
+      "the list cap hid every active badge, not a contrast failure",
+    );
+  }
+
+  const statusRatio = await contrastRatio(status);
+  const badgeRatio = await contrastRatio(badge);
+  const detail = `dark-theme contrast: status ${statusRatio.toFixed(2)}:1, active badge ${badgeRatio.toFixed(2)}:1`;
+  expect(statusRatio, detail).toBeGreaterThanOrEqual(4.5);
+  expect(badgeRatio, detail).toBeGreaterThanOrEqual(4.5);
+
+  // Restore light for a stable starting point for other specs.
+  if ((await themeOf(page)) === "dark") {
     await page.getByRole("button", { name: "Switch to light theme" }).click();
     await expect.poll(() => themeOf(page)).toBe("light");
   }
