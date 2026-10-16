@@ -116,3 +116,11 @@ remain as recorded: web build passed; whole-repo TypeScript has the unrelated
 
 This follow-up changes only this report and its index label. No production
 code, test changes, backend regressions, isolated test DB access, or commits.
+
+## Completed checkpoint follow-up — 2026-10-16
+
+See the canonical [S60 completed report](s60.md) for combined backend/browser
+evidence, final review closure, known carryovers, and S61 handoff. The browser
+proof boundaries above remain unchanged; the original blocked state is
+preserved as history, not the current checkpoint. No browser rerun was made
+by this documentation follow-up.

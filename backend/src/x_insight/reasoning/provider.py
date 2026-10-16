@@ -661,6 +661,9 @@ class DeterministicProviderEndpoint:
         {"type": "tool", "calls": [{"id":..,"name":..,"arguments":..}]}
         {"type": "status", "status": 401, "body": {...}}
         {"type": "delay", "seconds": 2.0, "then": {"type": "final", ...}}
+        {"type": "hold", "release": <threading.Event>, "timeout": 60.0,
+         "then": {...}}  # block until the test releases (bounded wait),
+                         # proving work ordered strictly before release
     ``on_exchange`` (optional) is called with each decoded request body
     before the scripted step is served — the public hook for proving a
     request is in flight (claim complete) without touching privates.
@@ -718,6 +721,16 @@ class DeterministicProviderEndpoint:
             import time as _time
 
             _time.sleep(float(step.get("seconds", 0.0)))
+            then = step.get("then")
+            if isinstance(then, dict):
+                return self._envelope(then)
+            return 200, {"choices": [{"message": {"role": "assistant", "content": "{}"}}]}
+        if kind == "hold":
+            release = step.get("release")
+            timeout = float(step.get("timeout", 60.0))
+            wait = getattr(release, "wait", None)
+            if callable(wait):
+                wait(timeout=timeout)
             then = step.get("then")
             if isinstance(then, dict):
                 return self._envelope(then)

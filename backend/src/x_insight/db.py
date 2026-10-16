@@ -26,10 +26,10 @@ from dataclasses import dataclass
 from fastapi import Request
 from fastapi.responses import Response
 from fastapi.routing import APIRoute
-from starlette.concurrency import run_in_threadpool
 from sqlalchemy import create_engine, text
 from sqlalchemy.engine import Connection, Engine
 from sqlalchemy.orm import Session, sessionmaker
+from starlette.concurrency import run_in_threadpool
 
 APP_ROLE = "x_insight_app"
 MIGRATION_ROLE = "x_insight_migrate"

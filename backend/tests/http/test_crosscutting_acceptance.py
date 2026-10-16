@@ -338,6 +338,57 @@ def _login_physician(clean_registry, monkeypatch, username: str):
     return client, response.json()["csrf_token"]
 
 
+def _setup_sentinel_encounter(
+    client: TestClient, csrf: str, identifier: str, tag: str
+) -> tuple[str, str, int, dict[str, str]]:
+    """Patient + draft seeded with encounter-owned sentinels (notes/phone/
+    unrelated history field) that must never reach provider payloads."""
+    sentinels = {
+        "given": "Sentinelgiven",
+        "family": "Sentinelfamily",
+        "phone": f"{tag}-SENTINEL-PHONE-999",
+        "note": f"{tag}-SENTINEL-NOTE-SECRET <b>markup</b>",
+        "unrelated": f"{tag}-SENTINEL-UNRELATED-FIELD",
+    }
+    created = client.post(
+        "/api/v1/patients",
+        json={
+            "identifier": identifier,
+            "given_name": sentinels["given"],
+            "family_name": sentinels["family"],
+            "sex": "F",
+            "age": 30,
+            "clinical_status": "first_time",
+            "phone": sentinels["phone"],
+        },
+        headers=_auth_headers(csrf),
+    )
+    assert created.status_code == 201, created.text
+    patient_id = created.json()["patient"]["id"]
+    encounter_id = created.json()["draft"]["id"]
+    saved = client.patch(
+        f"/api/v1/encounters/{encounter_id}",
+        json={
+            "draft_data": {
+                "history": {
+                    "values": {
+                        "h_a": "yes",
+                        "h_b": "no",
+                        "h_unrelated": sentinels["unrelated"],
+                    }
+                },
+                "gate": "true",
+            }
+        },
+        headers={**_auth_headers(csrf), "If-Match": contracts.format_etag(1)},
+    )
+    assert saved.status_code == 200, saved.text
+    revision = int(saved.json()["revision"])
+    noted = _post_note(client, csrf, encounter_id, "diagnosis", sentinels["note"], revision)
+    assert noted.status_code == 201, noted.text
+    return patient_id, encounter_id, int(noted.json()["revision"]), sentinels
+
+
 def _setup_encounter(
     client: TestClient, csrf: str, identifier: str, values: dict[str, Any]
 ) -> tuple[str, str, int]:
@@ -956,6 +1007,70 @@ def test_payloads_exclude_notes_sentinels_and_forgeries_denied_without_mutation(
     ):
         assert leaked not in blob, f"provider payload leaked {leaked!r}"
 
+    # Exact grant value exclusion at the T7 seam: claim mints the known
+    # grant for this tool-bound encounter (its only queued job, so the
+    # claim is deterministic), then a direct tool-bridged estimate scans
+    # both exchanges for the encounter's own sentinels and the exact
+    # grant value — not just the key name.
+    from x_insight.reasoning import queue as queue_module
+
+    _, encounter_grant, revision_grant, grant_sentinels = _setup_sentinel_encounter(
+        client, csrf, "0012345609", "S60T7"
+    )
+    package_grant = _package("s60_grant_q", "h_a", "h_b")
+    started_grant = _start_batches(client, csrf, encounter_grant, revision_grant, [package_grant])
+    assert started_grant.status_code == 202, started_grant.text
+    grant_run = started_grant.json()["question_runs"][0]
+    with db_module.session_scope(engine) as session:
+        claimed = queue_module.claim_next_job(session, "worker-s60-grant")
+    assert claimed is not None and "grant_token" in claimed, claimed
+    assert str(claimed["run"]["id"]) == str(grant_run["id"]), "must claim the tool-bound job"
+    known_grant = str(claimed["grant_token"])
+    assert len(known_grant) > 16, "opaque grant expected"
+    endpoint = provider_module.DeterministicProviderEndpoint(
+        script=[
+            {"type": "tool", "calls": [{"id": "call_grant", "name": TOOL_NAME, "arguments": {}}]},
+            {"type": "final", "cpt": _valid_cpt()},
+        ]
+    )
+    url = endpoint.start()
+    try:
+        config = provider_module.ProviderConfig(
+            endpoint_url=url, model="test-model", capability="schema", timeout_seconds=10.0
+        )
+        adapter = provider_module.BoundedProviderAdapter(
+            config, grant_token=known_grant, database_url=db_module.get_test_database_url()
+        )
+        grant_request = provider_module.ProviderRequest(
+            question_key=str(grant_run["question_key"]),
+            projection=dict(grant_run["projection"]),
+            projection_hash=str(grant_run["projection_hash"]),
+            prompt_version="v1",
+            question_run_id=str(grant_run["id"]),
+            batch_id=str(started_grant.json()["batch"]["id"]),
+            prompt_text=str(package_grant["prompt"]["text"]),
+            network_hash=NETWORK_HASH,
+            network_version="s60-test-v1",
+            cpt_contract=dict(package_grant["manifest"]["cpt_contract"]),
+        )
+        grant_result = adapter.estimate(grant_request)
+    finally:
+        endpoint.stop()
+    assert grant_result.ok, grant_result.error_code
+    assert grant_result.payload["tool_calls_made"] == 1
+    assert len(endpoint.captured) == 2
+    grant_values = [grant_sentinels["note"], grant_sentinels["unrelated"], known_grant]
+    for exchange in endpoint.captured:
+        grant_blob = json.dumps(exchange, sort_keys=True, separators=(",", ":"))
+        for leaked in (
+            grant_sentinels["given"],
+            grant_sentinels["family"],
+            "0012345609",
+            grant_sentinels["phone"],
+            *grant_values,
+        ):
+            assert leaked not in grant_blob, f"tool exchange leaked {leaked[:24]!r}…"
+
     # Forged tool args fail safely: no baseline, no draft mutation.
     _, encounter_forge, revision_forge = _setup_encounter(
         client, csrf, "0012345606", {"h_a": "yes", "h_b": "no"}
@@ -985,12 +1100,14 @@ def test_payloads_exclude_notes_sentinels_and_forgeries_denied_without_mutation(
     assert view_forge["baseline"] is None, "forged tool args must not produce a section"
 
     # Valid MCP tool exchange + echoed MCP result carry only the bound
-    # projection: both outbound exchanges exclude notes, unrelated
-    # sentinels, identifiers, secrets, and any grant key.
-    _, encounter_tool, revision_tool = _setup_encounter(
-        client, csrf, "0012345608", {"h_a": "yes", "h_b": "no"}
+    # projection: the tool-bound encounter carries its OWN notes and
+    # unrelated sentinels, and both outbound exchanges exclude them plus
+    # identifiers, secrets, and any grant key.
+    _, encounter_tool, revision_tool, tool_sentinels = _setup_sentinel_encounter(
+        client, csrf, "0012345608", "S60T8"
     )
-    started_tool = _start_batches(client, csrf, encounter_tool, revision_tool, [package])
+    package_tool = _package("s60_tool_q", "h_a", "h_b")
+    started_tool = _start_batches(client, csrf, encounter_tool, revision_tool, [package_tool])
     assert started_tool.status_code == 202, started_tool.text
     batch_tool = started_tool.json()["batch"]["id"]
     bridged, bridged_captured = _run_with_script(
@@ -1006,16 +1123,16 @@ def test_payloads_exclude_notes_sentinels_and_forgeries_denied_without_mutation(
     for exchange in bridged_captured:
         blob = json.dumps(exchange, sort_keys=True, separators=(",", ":"))
         for leaked in (
-            "SentinelGiven",
-            "SentinelFamily",
-            "0012345605",
+            tool_sentinels["given"],
+            tool_sentinels["family"],
             "0012345608",
-            "SENTINEL-PHONE-999",
-            "SENTINEL-NOTE-SECRET",
-            "SENTINEL-UNRELATED-FIELD",
+            tool_sentinels["phone"],
+            tool_sentinels["note"],
+            tool_sentinels["unrelated"],
+            "markup",
             "grant_token",
         ):
-            assert leaked not in blob, f"tool-bridged exchange leaked {leaked!r}"
+            assert leaked not in blob, f"tool-bridged exchange leaked {leaked[:24]!r}…"
     assert "get_question_patient_inputs" in str(bridged_captured[0])
     second = bridged_captured[1]
     tool_results = [
@@ -1026,12 +1143,12 @@ def test_payloads_exclude_notes_sentinels_and_forgeries_denied_without_mutation(
     echoed = str(tool_results[0].get("content", ""))
     assert "projection_hash" in echoed, "MCP result stays bound to its projection"
     for leaked in (
-        "SENTINEL-NOTE-SECRET",
-        "SENTINEL-UNRELATED-FIELD",
-        "SENTINEL-PHONE-999",
+        tool_sentinels["note"],
+        tool_sentinels["unrelated"],
+        tool_sentinels["phone"],
         "grant_token",
     ):
-        assert leaked not in echoed, f"echoed MCP result leaked {leaked!r}"
+        assert leaked not in echoed, f"echoed MCP result leaked {leaked[:24]!r}…"
     # Stored provider responses hold only percentages: no secrets logged.
     stored = client.get(f"/api/v1/generation-batches/{batch_tool}").json()
     raw_blob = json.dumps(stored["baselines"][0]["baseline"]["raw_response"], sort_keys=True)
@@ -1309,14 +1426,15 @@ def test_sign_denials_then_exact_acceptance_and_safe_outputs(
 def test_overlapping_provider_hold_with_restart_durable_reread(clean_registry, monkeypatch) -> None:
     """S60 §1: B acknowledges during A's held attempt; restart rereads durably.
 
-    A's provider attempt is HELD open (5s delay, ``on_exchange``-synced so
-    the claim is complete and the request outstanding), and WHILE it is
-    held B saves, adjusts, recalculates locally, and accepts — every one
-    acknowledged before the hold releases. A worker SUBPROCESS (separate
-    OS process, frozen clock) then observes the durable state, and the API
-    server is restarted twice (new instances, rebuilt engines) with
-    byte-identical rereads of B's acceptance and A's ledger. No sleeps:
-    the exchange event and joins order everything.
+    A's provider attempt is HELD behind a release gate
+    (``on_exchange``-synced, then gated — never a fixed delay), and B
+    saves, adjusts, recalculates locally, and accepts strictly BEFORE
+    the release (A provably still leased with no baseline at release
+    time). A worker SUBPROCESS (separate OS process, frozen clock)
+    then observes the durable state, and the API server is restarted
+    twice (new instances, rebuilt engines) with byte-identical rereads
+    of B's acceptance and A's ledger. No sleeps: the exchange event
+    and joins order everything.
     """
     engine = clean_registry
     _new_physician(engine, monkeypatch, "dr_s60_ov_a")
@@ -1349,20 +1467,26 @@ def test_overlapping_provider_hold_with_restart_durable_reread(clean_registry, m
     assert started_a.status_code == 202, started_a.text
     batch_a = started_a.json()["batch"]["id"]
 
-    # Hold A's attempt open; B acknowledges entirely inside the hold.
-    held = threading.Event()
+    # Hold A's attempt open behind a release gate; B acknowledges
+    # entirely before the release. The gate (not a fixed delay) proves
+    # strict ordering: B's acknowledgments precede A's completion.
+    # Two distinct events: exchange synchronization vs release gate —
+    # sharing one would open the gate the moment the exchange fires.
+    exchange_fired = threading.Event()
+    release_gate = threading.Event()
     holder: dict[str, Any] = {}
 
     def _hold_a() -> None:
         endpoint = provider_module.DeterministicProviderEndpoint(
             script=[
                 {
-                    "type": "delay",
-                    "seconds": 5.0,
+                    "type": "hold",
+                    "release": release_gate,
+                    "timeout": 120.0,
                     "then": {"type": "final", "cpt": _invalid_cpt()},
                 }
             ],
-            on_exchange=lambda _body: held.set(),
+            on_exchange=lambda _body: exchange_fired.set(),
         )
         url = endpoint.start()
         try:
@@ -1384,42 +1508,58 @@ def test_overlapping_provider_hold_with_restart_durable_reread(clean_registry, m
 
     thread = threading.Thread(target=_hold_a)
     thread.start()
-    assert held.wait(timeout=30), "A's provider exchange must be outstanding"
+    try:
+        assert exchange_fired.wait(timeout=30), "A's provider exchange must be outstanding"
 
-    saved_b = client_b.patch(
-        f"/api/v1/encounters/{encounter_b}",
-        json={"draft_data": {"history": {"values": {"h_a": "no", "h_b": "yes"}}, "gate": "true"}},
-        headers={**_auth_headers(csrf_b), "If-Match": contracts.format_etag(revision_b)},
-    )
-    assert saved_b.status_code == 200, saved_b.text
-    posted = client_b.post(
-        f"/api/v1/question-runs/{run_b}/cpt-adjustments",
-        json={
-            "node_id": "A",
-            "parent_states": [],
-            "state": "yes",
-            "target_percentage": "40",
-            "expected_review_revision": 1,
-        },
-        headers=_auth_headers(csrf_b),
-    )
-    assert posted.status_code == 200, posted.text
-    revision_id = posted.json()["revision"]["id"]
-    stub = provider_module.ControlledStubAdapter(mode="succeed")
-    local = worker_module.run_once(engine, stub)
-    assert local["status"] == "succeeded", local
-    assert local.get("job_class") == "local_calculation"
-    review_b = client_b.get(f"/api/v1/question-runs/{run_b}/review").json()
-    assert review_b["calculation_result"]["cpt_revision_id"] == revision_id
-    accepted = client_b.post(
-        f"/api/v1/question-runs/{run_b}/acceptance",
-        json=_accept_body(review_b),
-        headers=_auth_headers(csrf_b),
-    )
-    assert accepted.status_code == 200, accepted.text
-    acceptance_id = accepted.json()["acceptance"]["id"]
+        saved_b = client_b.patch(
+            f"/api/v1/encounters/{encounter_b}",
+            json={
+                "draft_data": {
+                    "history": {"values": {"h_a": "no", "h_b": "yes"}},
+                    "gate": "true",
+                }
+            },
+            headers={**_auth_headers(csrf_b), "If-Match": contracts.format_etag(revision_b)},
+        )
+        assert saved_b.status_code == 200, saved_b.text
+        posted = client_b.post(
+            f"/api/v1/question-runs/{run_b}/cpt-adjustments",
+            json={
+                "node_id": "A",
+                "parent_states": [],
+                "state": "yes",
+                "target_percentage": "40",
+                "expected_review_revision": 1,
+            },
+            headers=_auth_headers(csrf_b),
+        )
+        assert posted.status_code == 200, posted.text
+        revision_id = posted.json()["revision"]["id"]
+        stub = provider_module.ControlledStubAdapter(mode="succeed")
+        local = worker_module.run_once(engine, stub)
+        assert local["status"] == "succeeded", local
+        assert local.get("job_class") == "local_calculation"
+        review_b = client_b.get(f"/api/v1/question-runs/{run_b}/review").json()
+        assert review_b["calculation_result"]["cpt_revision_id"] == revision_id
+        accepted = client_b.post(
+            f"/api/v1/question-runs/{run_b}/acceptance",
+            json=_accept_body(review_b),
+            headers=_auth_headers(csrf_b),
+        )
+        assert accepted.status_code == 200, accepted.text
+        acceptance_id = accepted.json()["acceptance"]["id"]
 
-    thread.join(timeout=60)
+        # B fully acknowledged while A is provably still pending: A holds
+        # its lease with no baseline and no completed attempt yet.
+        pending_a = client_a.get(f"/api/v1/generation-batches/{batch_a}").json()
+        print("OVERLAP pending_a job:", pending_a["job"])
+        print("OVERLAP pending_a attempts:", pending_a.get("attempts"))
+        print("OVERLAP pending_a jobs:", pending_a.get("jobs"))
+        assert pending_a["baseline"] is None, "A must still be pending at release time"
+        assert pending_a["job"]["status"] == "leased", pending_a["job"]
+    finally:
+        release_gate.set()
+        thread.join(timeout=60)
     assert holder.get("outcome") is not None, "held worker must finish"
     assert holder["outcome"]["status"] == "queued", holder["outcome"]
     view_a = client_a.get(f"/api/v1/generation-batches/{batch_a}").json()

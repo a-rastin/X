@@ -3,21 +3,13 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest recorded checkpoint is [S59](s59.md): S59 complete —
-verify complete registration + follow-up with CPT review (synthetic
-`s59-test-v1` packages; 5-question registration 4-ready+1-skip with
-S08 diagnosis/PANSS + synthetic meds/DDI + sequential generation +
-adjust/compare + acceptance + sign + snapshots + report; follow-up
-new encounter preserving priors; affected-only regen + fencing;
-new `BT/http/test_complete_workflows.py` 3 T1/T8 +
-`e2e/clinical-workflows.spec.ts` 9/9 × chromium+firefox;
-`BT/http` 332 + 1 deselected, `BT/models` 212, mcp+provider 24,
-worker 78 + 1 suite-order flake exonerated, probability_review 11,
-`web/src` unchanged with tsc clean + build green 71 modules; code
-review 0 hard + judgement nits + synthetic-only partials recorded
-as explicit misses M1–M6, nothing S59-blocking; new test files
-uncommitted, this report is the committed record). Next is S60.
-Prior slice [S58](s58.md) below.
+The latest recorded checkpoint is [S60](s60.md): complete (2026-10-16).
+Cross-user/failure/security acceptance and pre-response commit fix are proven
+at backend seams; strict Chromium/Firefox presentation checks pass 8/8.
+Final focused backend checks pass 10/10; Standards and Spec reviews have no
+blocking findings. Known suite/tooling carryovers and restart/restore proof
+limits are recorded in the report. Next: S61 usability/themes/administration;
+S42 and content/release gates remain unchanged. Prior: [S59](s59.md).
 Predecessor [S58](s58.md): S58 complete — synthetic capacity
 measurement + safe operational status (10k load + admission +
 admin Status page/endpoint; misses M1–M6; artifacts uncommitted,
@@ -131,4 +123,6 @@ and activation retain their independent status.
 | S57 | [Package one-host Linux deployment and upgrades (2026-10-11)](s57.md) |
 | S58 | [Measure capacity and expose useful operational status (2026-10-11)](s58.md) |
 | S59 | [Verify complete registration and follow-up with CPT review (2026-10-11)](s59.md) |
+| S60 | [Completed cross-user, failure, and security acceptance; S61 handoff (2026-10-16)](s60.md) |
 | S60 frontend dev-test | [Strict browser rerun 8/8 after backend fix; proof limits recorded (2026-10-16)](s60-frontend-devtest.md) |
+| S60 backend | [Cross-user, failure, and security acceptance incl. commit-timing fix + review blockers (2026-10-16)](s60-backend.md) |
