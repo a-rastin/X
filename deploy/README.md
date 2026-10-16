@@ -44,12 +44,36 @@ terminates TLS with automatic certificates and redirects `:80` to https.
 Loopback stays plain HTTP. Session cookies are `Secure` whenever the public
 scheme is https (uvicorn `--proxy-headers` + edge `X-Forwarded-Proto`).
 
+2026-10-16 clean-checkout note. This does not replace the commands above.
+`make prod-up` was not part of that drill. An archive of HEAD
+`217b1567eaefeedbc71a164f91db65a616df71da` plus the dirty recovery Makefile
+was installed with the locked `uv` and `npm` installs, migrated to head
+`0018` on a throwaway PostgreSQL 16 database (removed afterward), and showed
+one `admin` row before the app started. `GET /api/v1/health` and
+`POST /api/v1/auth/login` (`admin` / `admin`) were both 200.
+`make prod-check` and `make prod-build` exited 0. Local image ids, not a
+registry push; app and worker share the app image:
+
+- `x-insight-app:prod` `sha256:0577b391dab80800465ece25ffc06ca3792f6fefa9a66fc1f9e8dbae4160c04e` (1368697406 bytes, 2026-10-16T19:13:57Z)
+- `x-insight-edge:prod` `sha256:4427696632ef3af9dd1b23dceee6785df23317bc1d7a577195e09a77ce83f87d` (93551187 bytes, 2026-10-16T18:47:47Z)
+
+The build log also printed manifest list
+`sha256:ae25b8fc792a626b17ea4ec6f54d885b3615762b9314d9f620afa88d400544b1`
+while naming the app tag. The tag's inspected id after the build is
+`0577b391…`, not `ae25b8fc…`. Full record:
+[S62](../project-documents/dev/progress/s62.md).
+
 ## 2. Environment and key handling
 
 - `.env.example` holds placeholders only — never commit a real `.env.prod`.
   `POSTGRES_PASSWORD` must be URL-safe (embedded in `DATABASE_URL`); the
   deployment encryption key for provider credentials (S42) is held outside
   the database and is never included in backups (plan §10.2).
+- Key escrow: that deployment encryption key is not in the archive. Without
+  it, provider credentials cannot be decrypted and generation stays
+  unavailable until re-entry; charts and administration stay usable. S42
+  storage is not implemented, so there is no settings screen to re-enter a
+  key yet. Escrow is an operator responsibility.
 - Provider settings: `X_INSIGHT_PROVIDER_ENDPOINT` (full POST URL of an
   OpenAI-compatible endpoint), `X_INSIGHT_PROVIDER_MODEL`, optional
   `X_INSIGHT_PROVIDER_CAPABILITY` (`schema`|`json`). Bearer-key persistence
@@ -92,7 +116,9 @@ disposable copy, then `make prod-migrate`, then login/read/replay checks.
   backup with the S56 staged-restore procedure (validate → confirm exact
   digest → quiesce/pre-restore backup → switch/restart → verify → reopen),
   which revokes sessions/grants, fences old workers, and keeps maintenance
-  held until verified healthy.
+  held until verified healthy. S62 (2026-10-16) re-ran the public commit,
+  session-revocation, and failed-switch rollback tests on the test database.
+  That is not a second production-volume drill.
 
 ## 5. Migration failure recovery
 
@@ -192,3 +218,18 @@ operator's own host): ~20 ordinary HTTP req/s, ordinary p95 < 1s,
   output / ~1.4 s inference — limits hold 2–29× headroom. Over-limit
   work fails closed with `inference_resource` (rejection diagnostics are
   preserved, never truncated into success).
+
+## 10. Known limits (S62 rehearsal, 2026-10-16)
+
+These limits are current. The rehearsal did not remove them.
+
+- No high availability. No automatic backup schedule; take a backup before
+  an upgrade (§3). Not clinical validation. S39.b approved the 11 question
+  packages; the DDI corpus and other instruments stay as their own reports
+  left them.
+- Live provider calls were not part of this drill. S42 storage is not
+  implemented. S58 did not measure live-LLM latency.
+- `make test-recovery` runs `cd backend && uv run pytest tests/recovery`.
+  It does not source `.env` and does not create or drop a volume. It needs
+  `TEST_DATABASE_URL` when the test port is not 5433. On the rehearsal host,
+  `db-test` is port 5443, database `x_insight_test`.

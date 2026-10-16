@@ -10,14 +10,13 @@ The reasoning behind project decisions is recorded in the
 
 ## Current engineering checkpoint
 
-[S61 is complete for the defects proven this session (2026-10-16)](project-documents/dev/progress/s61.md):
-light `--normal` is `#04835c`, the physician list states when the loaded page
-is shorter than the total, and navigation wraps so 200% desktop width does not
-scroll horizontally. Explicit verification gaps remain; NFR-03 is not fully
-re-proven by this session. This is not a content-release or clinical-validation
-claim. No provider-settings screen, disabled Provider action, or paging. S42
-stays deferred. Next: S62 clean-checkout install and full restore/rollback
-rehearsal.
+[S62 recorded a release rehearsal on 2026-10-16](project-documents/dev/progress/s62.md).
+The application is not release-ready, not clinically validated, and not highly
+available. S42 provider-settings encryption stays deferred. tasks.md plans no
+session after S62; the release gate stays open.
+`make test-recovery` runs `backend/tests/recovery` on the disposable test
+database (`TEST_DATABASE_URL`), and the operator runbook remains
+[deploy/README.md](deploy/README.md).
 
 ## Offline DDI ingestion and terminology
 

@@ -34,7 +34,7 @@ help:
 	@echo "make test-backend # backend tests (TEST=tests/http/test_health.py for a selector)"
 	@echo "make test-web     # web unit tests (no suite yet in S01)"
 	@echo "make test-e2e     # browser smoke (TEST=e2e/smoke.spec.ts for a selector)"
-	@echo "make test-recovery# recovery drill (no suite yet in S01)"
+	@echo "make test-recovery # recovery drill (pytest tests/recovery)"
 	@echo "make test-load    # load check (no suite yet in S01)"
 	@echo "make verify       # defined offline CI gate; no live provider credentials"
 	@echo "make prod-build   # build pinned production images (app + edge)"
@@ -100,8 +100,7 @@ else
 endif
 
 test-recovery:
-	@echo "test-recovery: no recovery suite yet (S01 bootstrap; recovery lands with operations work)." >&2
-	@exit 1
+	cd backend && uv run pytest tests/recovery
 
 test-load:
 	set -a; if [ -f .env ]; then . ./.env; fi; set +a; \

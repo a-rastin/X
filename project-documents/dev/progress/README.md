@@ -3,36 +3,21 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest recorded checkpoint is [S61](s61.md): complete for the defects
-proven this session (2026-10-16), with explicit verification gaps. Light
-`--normal` is `#04835c`; the physician list states when its page is shorter
-than the total; navigation wraps so 200% desktop width does not scroll
-horizontally. Not a content release or clinical validation. No
-provider-settings screen, disabled Provider action, or paging. NFR-03 is not
-fully re-proven here. Next: S62 clean-checkout install and full
-restore/rollback rehearsal. S42 stays deferred. Prior: [S60](s60.md).
-Predecessor [S58](s58.md): S58 complete — synthetic capacity
-measurement + safe operational status (10k load + admission +
-admin Status page/endpoint; misses M1–M6; artifacts uncommitted,
-report is the committed record). Next was S59. Prior slices remain
-[S57](s57.md) (one-host deployment packaging + upgrade drill),
-[S56](s56.md) (commit restore with maintenance/fencing/rollback;
-history replaceable by DB-owner/restore — NOT tamper-proof;
-regressions hold except `test_only_s02_tables_exist` drift,
-identity pager gap, and `ddi_*` suite-order workaround),
-[S55](s55.md)
-(validate/stage restores), [S54](s54.md)
-(consistent full backups), [S53](s53.md)
-(exports/reports), [S52](s52.md)
-(append-only audit/administration views), [S51](s51.md)
-(archive/deactivation/races), [S50](s50.md)
-(final-plan/sign/addenda UI), [S49](s49.md) (atomic signing
-backend), [S48d](s48-d.md) (per-question freshness + frontend +
-dev-test + code review), [S48c](s48-c-devtest.md) (build + code
-review), [S48c-frontend](s48-c-frontend.md) (UI) and
-[S48c-backend](s48-c-backend.md) (endpoint, migration 0015).
-Content approvals remain as recorded in S39.b; bundle release
-and activation retain their independent status.
+The latest recorded checkpoint is [S62](s62.md) (2026-10-16): a release
+rehearsal was recorded, not a release. `make test-recovery` runs the T10
+suite (`backend/tests/recovery`); the backup manifest expectation is schema
+`0018`. A clean-checkout install and local image build were recorded, and
+restore commit, session revocation, and failed-switch rollback were re-run
+on the test database. This is not a content release, not clinical validation,
+and not high availability. S42 provider-settings encryption stays deferred.
+tasks.md has no session after S62. The release gate stays open: live provider
+unmeasured; full backend, e2e, and load suites not run from the clean tree;
+`make prod-up` and `make prod-migrate` not run; browser backup/restore e2e
+not run; full recovery suite not re-run after the `0018` literal; S61 NFR-03
+walks still unrun; carryovers remain table-list drift, `ddi_*` suite order,
+physicians past the first 100, the signing-spec diagnostic recorded in S61,
+and content that is not fully owner-approved (S39.b approved the 11 question
+packages only).
 
 ## Reading and updating progress
 
@@ -128,3 +113,4 @@ and activation retain their independent status.
 | S60 frontend dev-test | [Strict browser rerun 8/8 after backend fix; proof limits recorded (2026-10-16)](s60-frontend-devtest.md) |
 | S60 backend | [Cross-user, failure, and security acceptance incl. commit-timing fix + review blockers (2026-10-16)](s60-backend.md) |
 | S61 | [Desktop usability defects proven, with verification gaps (2026-10-16)](s61.md) |
+| S62 | [Release rehearsal recorded; gate still open (2026-10-16)](s62.md) |
