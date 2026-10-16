@@ -55,14 +55,14 @@ from sqlalchemy.orm import Session
 
 from x_insight import contracts
 from x_insight.cases import reporting as reporting_module
-from x_insight.db import get_engine, get_session
+from x_insight.db import CommittedRoute, get_engine, get_session
 from x_insight.identity import service as identity_service
 from x_insight.operations import audit as audit_module
 from x_insight.operations import backup as backup_module
 from x_insight.operations import restore as restore_module
 from x_insight.operations import status as status_module
 
-router = APIRouter()
+router = APIRouter(route_class=CommittedRoute)
 
 
 def get_request_id(request: Request) -> str:

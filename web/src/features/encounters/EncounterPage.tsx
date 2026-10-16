@@ -18,6 +18,12 @@
  * Discard needs explicit confirmation + current revision, releases the slot
  * without deleting the patient. Navigation warns while edits remain
  * (beforeunload + in-app hash guard); flush persists on page transition.
+ *
+ * E2E selector contract (dev-test owns the journey specs; S60
+ * e2e/failure-recovery.spec.ts asserts the denied view):
+ * - denied view `data-testid="encounter-denied"` (role=alert, author-only
+ *   message + shared-directory hint, never draft content)
+ * - load-error view `data-testid="encounter-error"` (role=alert + Retry)
  */
 
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -152,7 +158,7 @@ export function EncounterPage({ encounterId }: { encounterId: string }) {
     return (
       <div>
         <h2 className="xi-page-title">Encounter draft</h2>
-        <p className="xi-form-error" role="alert">
+        <p className="xi-form-error" role="alert" data-testid="encounter-denied">
           {load.message}
         </p>
         <p className="xi-hint">
@@ -172,7 +178,7 @@ export function EncounterPage({ encounterId }: { encounterId: string }) {
     return (
       <div>
         <h2 className="xi-page-title">Encounter draft</h2>
-        <p className="xi-form-error" role="alert">
+        <p className="xi-form-error" role="alert" data-testid="encounter-error">
           {load.message}
         </p>
         <div className="xi-row-actions">

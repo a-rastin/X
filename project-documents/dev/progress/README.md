@@ -131,3 +131,4 @@ and activation retain their independent status.
 | S57 | [Package one-host Linux deployment and upgrades (2026-10-11)](s57.md) |
 | S58 | [Measure capacity and expose useful operational status (2026-10-11)](s58.md) |
 | S59 | [Verify complete registration and follow-up with CPT review (2026-10-11)](s59.md) |
+| S60 frontend dev-test | [Strict browser rerun 8/8 after backend fix; proof limits recorded (2026-10-16)](s60-frontend-devtest.md) |

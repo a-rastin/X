@@ -234,7 +234,8 @@ def _truncate(engine) -> None:
                 "reasoning_jobs, reasoning_fairness, original_baselines, "
                 "proposal_snapshots, question_runs, generation_batches, notes, "
                 "encounters, patients, idempotency_records, sessions, users, "
-                "audit_events CASCADE"
+                "audit_events, ddi_dataset_releases, ddi_source_documents, "
+                "ddi_concepts, ddi_interaction_evidence CASCADE"
             )
         )
 

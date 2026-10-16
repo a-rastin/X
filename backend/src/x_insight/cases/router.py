@@ -92,7 +92,7 @@ from x_insight.cases import medications as medications_service
 from x_insight.cases import notes as notes_service
 from x_insight.cases import patients as patients_service
 from x_insight.cases import reporting as reporting_module
-from x_insight.db import get_session
+from x_insight.db import CommittedRoute, get_session
 from x_insight.identity import service as identity_service
 from x_insight.operations import audit as audit_module
 
@@ -122,7 +122,7 @@ def error_response(
     return _JSONResponse(status_code=status_code, content=body.model_dump())
 
 
-router = APIRouter()
+router = APIRouter(route_class=CommittedRoute)
 
 
 class PatientCreateRequest(BaseModel):

@@ -64,7 +64,9 @@ def _truncate(engine) -> None:
             text(
                 "TRUNCATE reasoning_grants, reasoning_job_attempts, reasoning_jobs, "
                 "reasoning_fairness, question_runs, generation_batches, notes, encounters, "
-                "patients, idempotency_records, sessions, users, audit_events CASCADE"
+                "patients, idempotency_records, sessions, users, audit_events, "
+                "ddi_dataset_releases, ddi_source_documents, ddi_concepts, "
+                "ddi_interaction_evidence CASCADE"
             )
         )
 

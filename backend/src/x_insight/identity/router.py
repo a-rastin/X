@@ -21,7 +21,7 @@ from sqlalchemy import update
 from sqlalchemy.orm import Session
 
 from x_insight import contracts
-from x_insight.db import get_session
+from x_insight.db import CommittedRoute, get_session
 from x_insight.identity import passwords, service, tables
 from x_insight.operations import audit as audit_module
 
@@ -51,7 +51,7 @@ def error_response(
     return _JSONResponse(status_code=status_code, content=body.model_dump())
 
 
-router = APIRouter()
+router = APIRouter(route_class=CommittedRoute)
 
 _GENERIC_LOGIN_MESSAGE = "Invalid username, password, or role."
 

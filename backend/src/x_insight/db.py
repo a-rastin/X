@@ -23,6 +23,10 @@ from collections.abc import Iterator
 from contextlib import contextmanager
 from dataclasses import dataclass
 
+from fastapi import Request
+from fastapi.responses import Response
+from fastapi.routing import APIRoute
+from starlette.concurrency import run_in_threadpool
 from sqlalchemy import create_engine, text
 from sqlalchemy.engine import Connection, Engine
 from sqlalchemy.orm import Session, sessionmaker
@@ -105,10 +109,60 @@ def session_scope(engine: Engine | None = None) -> Iterator[Session]:
         session.close()
 
 
-def get_session() -> Iterator[Session]:
-    """FastAPI dependency yielding the shared transaction-scoped session."""
+def get_session(request: Request) -> Iterator[Session]:
+    """FastAPI dependency yielding the shared transaction-scoped session.
+
+    The session is published on ``request.state`` so routes using
+    :class:`CommittedRoute` can commit request writes BEFORE the response
+    is sent (yield-dependency teardown runs after send, which left fast
+    follow-up reads racing the commit: login 200 then immediate /me 401).
+    Teardown commit below stays as the idempotent safety net.
+    """
     with session_scope() as session:
+        request.state.db_session = session
         yield session
+
+
+class CommittedRoute(APIRoute):
+    """Route that commits request writes before the response is sent.
+
+    FastAPI runs yield-dependency teardown (where :func:`session_scope`
+    commits) only after the response is sent, so a client that acts
+    immediately (login -> /me, create -> use) could read pre-commit
+    state and receive a spurious 401/404/409. Committing here — after
+    the endpoint ran, before send and before teardown — makes every
+    mutating route's writes visible to the very next request.
+
+    The commit runs in a worker thread (never blocking the ASGI event
+    loop, even for slow commits), and handler errors propagate to the
+    teardown rollback without committing. Teardown commit stays (no-op)
+    for unhandled paths.
+    """
+
+    def get_route_handler(self):  # type: ignore[no-untyped-def]
+        inner = super().get_route_handler()
+
+        async def handler_with_commit(request: Request) -> Response:
+            response = await inner(request)
+            session = getattr(request.state, "db_session", None)
+            # NOTE: the codebase persists via Core DML
+            # (``session.execute(insert/...)``), which never appears
+            # in ``session.new/dirty/deleted`` (ORM identity-map only),
+            # so a dirty-check would skip every real write. Commit any
+            # open transaction instead: read-only requests cost one no-op
+            # COMMIT that today's teardown commit performs anyway (now a
+            # no-op). The commit runs off-loop: a slow commit must not
+            # stall concurrent requests (S60 responsiveness proof in
+            # ``BT/http/test_commit_visibility.py``).
+            if session is not None and session.is_active:
+                try:
+                    await run_in_threadpool(session.commit)
+                except Exception:
+                    await run_in_threadpool(session.rollback)
+                    raise
+            return response
+
+        return handler_with_commit
 
 
 def get_applied_versions(connection: Connection) -> list[str]:

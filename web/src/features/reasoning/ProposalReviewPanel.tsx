@@ -68,6 +68,10 @@
  *   `cpt-accept/cpt-reset/cpt-retry-<key>` — see CptReviewPanel header;
  *   full journey assertions belong to dev-test e2e/probability-review.spec.ts)
  * - DDI block `data-testid="proposal-ddi"` (`#proposal-ddi`)
+ * - honest unavailable proposal `data-testid="proposal-unavailable"`
+ *   (failed/incomplete runs render this, never a fake successful proposal)
+ * - stale-run banner `data-testid="proposal-stale-banner"` (whole-batch
+ *   stale; per-question labels stay on `proposal-freshness-<key>`)
  * - blocked sign entry `data-testid="proposal-sign-blocked"`
  *   (`#proposal-sign-blocked`)
  * - S50 final-plan/sign selectors live in features/plans (see
@@ -943,7 +947,7 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired }:
         <div>
           <BatchHeader batch={batch} />
           {batch.freshness?.stale === true && (
-            <div className="xi-warning-panel" role="status">
+            <div className="xi-warning-panel" role="status" data-testid="proposal-stale-banner">
               <p style={{ margin: 0 }}>
                 This run is stale — {batch.freshness.reason}. Only affected questions are
                 marked out of date below; unaffected questions stay valid and carry
@@ -1441,7 +1445,7 @@ function ProposalBlock({ batch }: { batch: BatchPayload }) {
   const proposal = batch.proposal;
   if (proposal === null) {
     return (
-      <div className="xi-notice" role="status">
+      <div className="xi-notice" role="status" data-testid="proposal-unavailable" id="proposal-unavailable">
         <p style={{ margin: 0 }}>Proposal unavailable — {incompleteReason(batch)}</p>
       </div>
     );

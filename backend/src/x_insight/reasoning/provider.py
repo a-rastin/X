@@ -661,11 +661,19 @@ class DeterministicProviderEndpoint:
         {"type": "tool", "calls": [{"id":..,"name":..,"arguments":..}]}
         {"type": "status", "status": 401, "body": {...}}
         {"type": "delay", "seconds": 2.0, "then": {"type": "final", ...}}
+    ``on_exchange`` (optional) is called with each decoded request body
+    before the scripted step is served — the public hook for proving a
+    request is in flight (claim complete) without touching privates.
     """
 
-    def __init__(self, script: list[dict[str, Any]] | None = None) -> None:
+    def __init__(
+        self,
+        script: list[dict[str, Any]] | None = None,
+        on_exchange: Any | None = None,
+    ) -> None:
         self.script: list[dict[str, Any]] = list(script or [])
         self.captured: list[Any] = []
+        self.on_exchange = on_exchange
         self._server: ThreadingHTTPServer | None = None
         self._thread: threading.Thread | None = None
         self.url = ""
@@ -738,6 +746,9 @@ class DeterministicProviderEndpoint:
                 except Exception:
                     decoded = {"_raw_unparseable": raw.decode("utf-8", "replace")[:2000]}
                 endpoint.captured.append(decoded)
+                hook = endpoint.on_exchange
+                if hook is not None:
+                    hook(decoded)
                 status, body = endpoint._envelope(endpoint._next())
                 encoded = json.dumps(body).encode("utf-8")
                 self.send_response(status)

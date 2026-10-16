@@ -232,7 +232,8 @@ def _truncate(engine) -> None:
                 "proposal_snapshots, question_runs, generation_batches, "
                 "encounter_addenda, signed_encounter_snapshots, secondary_plans, "
                 "notes, encounters, patients, idempotency_records, sessions, users, "
-                "audit_events CASCADE"
+                "audit_events, ddi_dataset_releases, ddi_source_documents, "
+                "ddi_concepts, ddi_interaction_evidence CASCADE"
             )
         )
 

@@ -67,7 +67,7 @@ from x_insight.assessments import diagnosis as diagnosis_service
 from x_insight.assessments import panss as panss_service
 from x_insight.assessments.released import RELEASED_TYPES, get_released_definition
 from x_insight.cases import encounters as encounters_service
-from x_insight.db import get_session
+from x_insight.db import CommittedRoute, get_session
 from x_insight.identity import service as identity_service
 
 
@@ -96,7 +96,7 @@ def error_response(
     return _JSONResponse(status_code=status_code, content=body.model_dump())
 
 
-router = APIRouter()
+router = APIRouter(route_class=CommittedRoute)
 
 
 @router.get("/content/assessments/{assessment_type}")

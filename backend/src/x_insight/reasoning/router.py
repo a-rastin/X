@@ -41,11 +41,11 @@ from sqlalchemy.orm import Session
 
 from x_insight import contracts
 from x_insight.cases import encounters as encounters_service
-from x_insight.db import get_session
+from x_insight.db import CommittedRoute, get_session
 from x_insight.identity import service as identity_service
 from x_insight.reasoning import snapshots as snapshots_service
 
-router = APIRouter()
+router = APIRouter(route_class=CommittedRoute)
 
 
 def get_request_id(request: Request) -> str:
