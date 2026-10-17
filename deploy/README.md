@@ -1,5 +1,11 @@
 # X-INSIGHT one-host production runbook (S57)
 
+For prerequisites, source checkout, environment setup, first startup and login,
+use the [Installation and Running Guide](../docs/installation.md). This runbook
+covers deployment operation, upgrades, backup, restore, and rollback. Current
+provider-storage behavior is recorded in [S42](../project-documents/dev/progress/s42.md);
+the dated rehearsal notes below retain their original scope.
+
 Topology (plan.md §3.1): `edge` (Caddy: TLS + static bundle + same-origin
 `/api` proxy, the only externally reachable service) → `app` (FastAPI) +
 `worker` (`python -m x_insight.reasoning` polling loop, spawning private MCP
@@ -17,14 +23,10 @@ Pinned images/runtimes (see Dockerfiles for digests; verified 2026-10-11):
 
 ## 1. Fresh install (clean disposable host)
 
-```sh
-cp .env.example .env.prod          # then set POSTGRES_PASSWORD (URL-safe secret)
-make prod-build                     # SITE_ADDRESS etc. come from .env.prod
-make prod-up                        # starts db + app + worker + edge
-make prod-migrate                   # explicit migration step (alembic upgrade head)
-curl http://localhost/api/v1/health # {"status":"ok","service":"x-insight"}
-curl http://localhost/api/v1/ready  # {"status":"ready",...} after migrate
-```
+Follow the [Docker installation steps](../docs/installation.md#docker-deployment-on-linux):
+`prod-build`, `prod-up`, then explicit `prod-migrate`, using the same external
+`PROD_ENV_FILE` throughout. Check both health and readiness through the edge.
+These instructions do not close the S62 release gate.
 
 Login with `admin` / `admin` once, then change the password: the singleton
 seed runs one time at app startup and a changed password is never recreated
@@ -65,21 +67,30 @@ while naming the app tag. The tag's inspected id after the build is
 
 ## 2. Environment and key handling
 
-- `.env.example` holds placeholders only — never commit a real `.env.prod`.
-  `POSTGRES_PASSWORD` must be URL-safe (embedded in `DATABASE_URL`); the
-  deployment encryption key for provider credentials (S42) is held outside
-  the database and is never included in backups (plan §10.2).
-- Key escrow: that deployment encryption key is not in the archive. Without
-  it, provider credentials cannot be decrypted and generation stays
-  unavailable until re-entry; charts and administration stay usable. S42
-  storage is not implemented, so there is no settings screen to re-enter a
-  key yet. Escrow is an operator responsibility.
+- `.env.example` holds placeholders only. Keep the server environment file
+  outside the checkout: `.env.prod` is not currently Git-ignored. The installation
+  guide uses `X_INSIGHT_PROD_ENV_FILE="$HOME/.config/x-insight/production.env"`;
+  define that shell variable in each operator terminal and pass
+  `PROD_ENV_FILE="$X_INSIGHT_PROD_ENV_FILE"` to every production Make command.
+  Use a fresh shell without exported development configuration, which can
+  override Compose environment-file values. `POSTGRES_PASSWORD` must be
+  URL-safe because Compose embeds it in `DATABASE_URL`.
+- Key escrow: S42 stores provider credentials using `X_INSIGHT_PROVIDER_DATA_KEY`
+  (base64 of exactly 32 bytes), held outside the database and backup archive.
+  Stored credentials cannot be decrypted without the matching deployment key;
+  retain it separately for recovery. The Provider page accepts provider settings
+  and API keys, not the deployment encryption key. Ordinary charts and
+  administration do not require provider generation.
 - Provider settings: `X_INSIGHT_PROVIDER_ENDPOINT` (full POST URL of an
   OpenAI-compatible endpoint), `X_INSIGHT_PROVIDER_MODEL`, optional
-  `X_INSIGHT_PROVIDER_CAPABILITY` (`schema`|`json`). Bearer-key persistence
-  arrives with S42; until then only keyless endpoints (e.g. an explicitly
-  allowed local model endpoint) can be configured — otherwise leave both
-  empty for honest unavailable generation.
+  `X_INSIGHT_PROVIDER_CAPABILITY` (`schema`|`json`). S42's masked/encrypted
+  administration is implemented, but the worker still does not load saved
+  endpoint/model/credentials. Production Compose also does not pass
+  `X_INSIGHT_PROVIDER_DATA_KEY` or `X_INSIGHT_PROVIDER_ALLOWED_HOSTS` to app/worker.
+  Adding them only to the environment file does not enable them in containers.
+  Leave generation unconfigured unless the environment-based adapter and endpoint
+  are deliberately compatible; do not treat a successful settings test as runtime
+  integration. The saved-settings allowed-host checks do not restrict that adapter.
 - Recovery state (`prod_recovery` volume, shared by app AND worker):
   backup staging, restore staging, the S56 maintenance lock, and the
   external operator recovery log.
@@ -90,10 +101,10 @@ Take a consistent full backup through the admin Backup surface (S54) and
 confirm the downloadable archive before touching anything. Upgrades:
 
 ```sh
-make prod-build                       # build the new images
+make prod-build PROD_ENV_FILE="$X_INSIGHT_PROD_ENV_FILE"
 # backup via admin UI/API first (see above); note the backup id
-docker compose -f compose.prod.yaml up -d db app worker edge
-make prod-migrate                     # forward-only to the new schema
+make prod-up PROD_ENV_FILE="$X_INSIGHT_PROD_ENV_FILE"
+make prod-migrate PROD_ENV_FILE="$X_INSIGHT_PROD_ENV_FILE"
 curl http://localhost/api/v1/ready
 ```
 
@@ -104,14 +115,15 @@ disposable copy, then `make prod-migrate`, then login/read/replay checks.
 ## 4. Compatible application/schema rollback
 
 - Application rollback: redeploy the previous image tag
-  (`APP_IMAGE_TAG=<prior> make prod-up`); the prior app refuses an
+  (`APP_IMAGE_TAG=<prior> make prod-up PROD_ENV_FILE="$X_INSIGHT_PROD_ENV_FILE"`);
+  replace `<prior>` with the retained image tag. The prior app refuses an
   incompatible schema honestly (`/ready` 503 `SCHEMA_INCOMPATIBLE`) instead
   of half-working.
 - Schema rollback for a compatible step down: stop app/worker, then run the
   one-off `migrate` compose service with an Alembic entrypoint (`migrate`
   below is the compose service name — Alembic has no `migrate` subcommand —
   and `downgrade -1` replaces the service's default `upgrade head` command):
-  `docker compose -f compose.prod.yaml run --rm --entrypoint .venv/bin/alembic migrate downgrade -1`.
+  `docker compose -f compose.prod.yaml --env-file "$X_INSIGHT_PROD_ENV_FILE" run --rm --entrypoint .venv/bin/alembic migrate downgrade -1`.
   Only compatible downgrades are safe; otherwise restore the pre-upgrade
   backup with the S56 staged-restore procedure (validate → confirm exact
   digest → quiesce/pre-restore backup → switch/restart → verify → reopen),
@@ -127,8 +139,9 @@ failed `make prod-migrate` leaves the database at its prior version — the
 app keeps serving that version (`/ready` goes 503 only if the schema is
 forward-incompatible, never with partial DDL). Recover by:
 
-1. `docker compose -f compose.prod.yaml logs migrate` — read the Alembic error.
-2. `docker compose -f compose.prod.yaml run --rm --entrypoint .venv/bin/alembic migrate current`
+1. Read the Alembic error in the `prod-migrate` terminal output; the migration
+   container uses `--rm`, so its container logs are not retained afterward.
+2. `docker compose -f compose.prod.yaml --env-file "$X_INSIGHT_PROD_ENV_FILE" run --rm --entrypoint .venv/bin/alembic migrate current`
    — confirm the database is still at the prior version (`migrate` is the
    compose service name; `current` replaces its default `upgrade head`).
 3. Fix forward (new image with a corrected migration) or roll back the
@@ -143,9 +156,9 @@ is journaled in PostgreSQL (named volume `prod_pgdata`), never in process
 memory:
 
 ```sh
-docker compose -f compose.prod.yaml restart app     # HTTP only
-docker compose -f compose.prod.yaml restart worker  # polling only
-docker compose -f compose.prod.yaml restart db      # database only
+docker compose -f compose.prod.yaml --env-file "$X_INSIGHT_PROD_ENV_FILE" restart app
+docker compose -f compose.prod.yaml --env-file "$X_INSIGHT_PROD_ENV_FILE" restart worker
+docker compose -f compose.prod.yaml --env-file "$X_INSIGHT_PROD_ENV_FILE" restart db
 ```
 
 - Restarting `app`: acknowledged drafts, signed records, and admin state
@@ -164,7 +177,7 @@ docker compose -f compose.prod.yaml restart db      # database only
 ## 7. Stopping processes
 
 ```sh
-make prod-stop        # == docker compose down; volumes (database + recovery) are kept
+make prod-stop PROD_ENV_FILE="$X_INSIGHT_PROD_ENV_FILE"
 ```
 
 Never `docker compose -f compose.prod.yaml down -v` in production — that
@@ -178,7 +191,8 @@ destructive reset.
   paths, which embed patient/record IDs). Structured app/worker logs carry
   only safe metadata: request/run/question/job IDs and status codes — never
   projections, prompts, CPTs, notes, names, identifiers, cookies, or keys.
-- Verify after any change: `make prod-logs` and grep for a known drill
+- Verify after any change: `make prod-logs PROD_ENV_FILE="$X_INSIGHT_PROD_ENV_FILE"`
+  and grep for a known drill
   patient name/identifier and for `POSTGRES_PASSWORD`/token shapes; any hit
   is a release-blocking defect. Edge access entries are discarded at both
   the site and default Caddy loggers (and uvicorn runs `--no-access-log`);
@@ -221,14 +235,18 @@ operator's own host): ~20 ordinary HTTP req/s, ordinary p95 < 1s,
 
 ## 10. Known limits (S62 rehearsal, 2026-10-16)
 
-These limits are current. The rehearsal did not remove them.
+The rehearsal did not remove the release limits. S42 subsequently implemented
+provider administration; the runtime/environment integration boundary below is
+current. Older dated rehearsal evidence remains unchanged.
 
 - No high availability. No automatic backup schedule; take a backup before
   an upgrade (§3). Not clinical validation. S39.b approved the 11 question
   packages; the DDI corpus and other instruments stay as their own reports
   left them.
-- Live provider calls were not part of this drill. S42 storage is not
-  implemented. S58 did not measure live-LLM latency.
+- Live provider calls were not part of this drill. S42 storage and the Provider
+  page are implemented; saved configuration is not yet consumed by the worker,
+  and production encryption-key/allowed-host wiring remains open. S58 did not
+  measure live-LLM latency.
 - `make test-recovery` runs `cd backend && uv run pytest tests/recovery`.
   It does not source `.env` and does not create or drop a volume. It needs
   `TEST_DATABASE_URL` when the test port is not 5433. On the rehearsal host,

@@ -11,8 +11,9 @@ otherwise stays open: not a release, not clinical validation, not high
 availability. tasks.md has no session after S62 and no S63.
 [The 2026-10-18 documentation assessment](s62.md#follow-up-2026-10-18--documentation-assessment-and-next-work)
 recommends provider runtime integration first, then content and release evidence.
-The [README rewrite](s62.md#follow-up-2026-10-18--root-readme-rewrite) adds current
-project orientation, setup instructions, and verification/deployment pointers.
+The [README rewrite](s62.md#follow-up-2026-10-18--root-readme-rewrite) and
+[installation guide](s62.md#follow-up-2026-10-18--installation-and-running-guide)
+provide current project orientation and local/server setup instructions.
 
 ## Reading and updating progress
 

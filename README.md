@@ -21,7 +21,7 @@ deployment.
 > must not be used as the sole basis for treating patients. The release gate remains
 > open; one-host deployment packaging does not provide high availability.
 
-[Local development](#local-development) · [Architecture](#architecture) ·
+[Installation guide](docs/installation.md) · [Architecture](#architecture) ·
 [Checks and tests](#checks-and-tests) · [Documentation](#documentation)
 
 ## Capabilities
@@ -130,86 +130,15 @@ in [deploy/](deploy/).
 
 ## Local development
 
-### Prerequisites
+Follow the [Installation and Running Guide](docs/installation.md) for prerequisites,
+source checkout, local configuration, migrations, first login, the separate worker,
+and troubleshooting. It also covers Docker deployment on a Linux host.
 
-- Python **3.12** and `uv` (see [backend/.python-version](backend/.python-version)).
-- Node.js **22 or newer** and npm.
-- Docker with the Compose plugin, GNU Make, and Bash.
-- Free default ports: `8000` for the API, `5173` for the web interface, and
-  `5432`/`5433` for development/test PostgreSQL.
-
-Run commands from the repository root unless stated otherwise.
-
-### 1. Install and configure
-
-```sh
-make setup
-cp .env.example .env
-```
-
-Edit `.env` before starting the stack. Replace `POSTGRES_PASSWORD` and update the
-password in **both** `DATABASE_URL` and `TEST_DATABASE_URL` to match. Use a URL-safe
-password, or URL-encode it in the connection strings. Keep the test URL pointed at
-the separate, disposable `x_insight_test` database.
-
-If PostgreSQL ports are occupied, change `DB_PORT` and `TEST_DB_PORT` and update the
-corresponding connection-string ports. Keep real credentials in ignored local
-environment files.
-
-### 2. Start the development stack
-
-In the first terminal, export the configuration before launching the processes:
-
-```sh
-set -a
-. ./.env
-set +a
-make dev
-```
-
-`make dev` starts both PostgreSQL containers, the API with reload, and Vite. It
-does not source `.env` for the API process, apply migrations, or start the worker.
-Its port preflight requires the database ports to be free before launch; if a
-previous Compose stack is still running, stop it with `make stop` first.
-
-### 3. Apply migrations and verify readiness
-
-In a second terminal at the repository root:
-
-```sh
-docker compose up -d --wait db db-test
-make migrate
-curl --fail http://localhost:8000/api/v1/health
-curl --fail http://localhost:8000/api/v1/ready
-```
-
-`make migrate` loads `.env` and runs `alembic upgrade head`. On an empty database,
-readiness is unavailable until migration completes. `/health` checks process
-liveness; `/ready` checks database/schema readiness and maintenance state.
-
-Open [http://localhost:5173](http://localhost:5173). A fresh database has the
-administrator account `admin` / `admin`; change that password before shared use.
-The administrator creates physician accounts; self-registration is unavailable.
-
-### 4. Run the worker when needed
-
-In another terminal, starting from the repository root:
-
-```sh
-set -a
-. ./.env
-set +a
-cd backend
-uv run python -m x_insight.reasoning
-```
-
-Without a configured provider, generation reports `PROVIDER_NOT_CONFIGURED` while
-saved records and administration remain available. Starting a worker does not
-resolve the provider/content integration gaps listed above.
-
-To stop local development, press `Ctrl+C` in the foreground process terminals,
-then run `make stop`. This preserves database volumes; `docker compose down -v`
-deletes development and test data.
+The local stack uses PostgreSQL containers and host API/Vite processes on ports
+8000/5173. Load `.env` before `make dev`; migrations and the background worker are
+separate steps. The guide explains the required terminal sequence and database-port
+preflight. For shared deployment, use its Docker instructions and external
+credentials file.
 
 ## Configuration
 
@@ -312,10 +241,12 @@ setup, HTTPS, upgrades, schema compatibility, backup, staged restore, and rollba
 one-off migration service. Only the edge is externally exposed.
 
 The recorded rehearsal verified selected installation, image-build, and recovery
-steps; it did not establish release readiness. Some runbook notes still predate
-S42: use the [current provider checkpoint](project-documents/dev/progress/s42.md)
-for implemented settings behavior and outstanding production environment wiring.
-Keep the deployment encryption key separately from backup archives.
+steps; it did not establish release readiness. Use the
+[installation guide](docs/installation.md#docker-deployment-on-linux) for setup and
+credentials-file handling, and the
+[current provider checkpoint](project-documents/dev/progress/s42.md) for outstanding
+runtime/environment integration. Keep the deployment encryption key separately
+from backup archives.
 
 ## Repository layout
 
@@ -325,6 +256,7 @@ web/                 React application and shared styles
 content/             Versioned assessments, history, question packages, bundles, DDI
 e2e/                 Playwright browser scenarios
 deploy/              Dockerfiles, Caddy configuration, and operator runbook
+docs/                Installation and running instructions
 project-documents/   Requirements, design, planning, source material, and progress
 context/             Decision rationale maintained with Keep the Why
 compose.yaml         Local development and test databases
@@ -336,6 +268,7 @@ Makefile             Development, verification, and deployment commands
 
 | Start here for… | Reference |
 | --- | --- |
+| Installation, configuration, and startup | [Installation and Running Guide](docs/installation.md) |
 | Recorded progress and the next handoff | [Progress index](project-documents/dev/progress/README.md) |
 | Product scope and requirements | [User requirements](project-documents/dev/user-requirements.md) |
 | Behavior and architectural contracts | [System design](project-documents/dev/system-design.md), [system architecture](project-documents/dev/system-architecture.md) |
