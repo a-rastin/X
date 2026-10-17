@@ -1,85 +1,355 @@
+# X-INSIGHT
+
+**A research prototype for exploring schizophrenia treatment options through
+structured assessments, Bayesian networks, and physician review.**
+
 [![Keep the Why](https://keepthewhy.com/assets/badge.svg)](https://keepthewhy.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-# X
+X-INSIGHT combines patient and encounter records with versioned clinical content,
+drug–drug interaction (DDI) checks, and a traceable reasoning pipeline. An LLM
+estimates conditional probability tables (CPTs); the application validates those
+tables, executes the Bayesian networks, and renders recommendations from templates.
+Physicians can inspect and adjust probabilities, compare results, and sign a
+separate final treatment plan while retaining the original system proposal.
 
-Project documentation lives in [project-documents/dev/](project-documents/dev/).
-Recorded progress and agent handoffs start at the
-[progress index](project-documents/dev/progress/README.md).
-The reasoning behind project decisions is recorded in the
-[context index](context/index.md).
+The application has an English desktop interface for one administrator and a small
+physician team sharing a patient pool. It is designed for self-hosted Linux or VPS
+deployment.
 
-## Current engineering checkpoint
+> **Research status:** X-INSIGHT is not release-ready or clinically validated and
+> must not be used as the sole basis for treating patients. The release gate remains
+> open; one-host deployment packaging does not provide high availability.
 
-[S62 recorded a release rehearsal on 2026-10-16](project-documents/dev/progress/s62.md).
-The application is not release-ready, not clinically validated, and not highly
-available. S42 provider-settings encryption stays deferred. tasks.md plans no
-session after S62; the release gate stays open.
-`make test-recovery` runs `backend/tests/recovery` on the disposable test
-database (`TEST_DATABASE_URL`), and the operator runbook remains
-[deploy/README.md](deploy/README.md).
+[Local development](#local-development) · [Architecture](#architecture) ·
+[Checks and tests](#checks-and-tests) · [Documentation](#documentation)
 
-## Offline DDI ingestion and terminology
+## Capabilities
 
-From `backend/`, build a candidate dataset and validation report with the bundled
-draft terminology:
+| Area | Implemented surfaces |
+| --- | --- |
+| Patient records | Registration, search, shared signed charts, follow-up encounters, and archival administration |
+| Assessments | Diagnosis, PANSS, C-SSRS, structured history, medications, and adverse-effect forms with explicit completeness states |
+| Drafts and notes | Autosave, resume/discard, author-only clinical draft access, and attributed page notes |
+| Decision support | Versioned XMLBIF networks, scoped patient inputs through private MCP, queued CPT estimation, validation, deterministic inference, and templated proposals |
+| Probability review | Original/current CPT inspection, sliders with proportional redistribution, local recalculation, reset, comparison, and explicit result acceptance |
+| Signed plans | Physician-edited final plans, atomic signing, immutable snapshots, and attributed addenda |
+| Administration | Physician accounts, network versions and graph viewing, encrypted provider settings, audit views, exports, backups, staged restore, and operational status |
+
+These interfaces do not imply that every content dependency is released or that
+every acceptance check has passed. See the current boundaries below.
+
+## Current engineering status
+
+The latest implementation checkpoint is [S42, recorded on
+2026-10-17](project-documents/dev/progress/s42.md), completed after the
+[S62 release rehearsal](project-documents/dev/progress/s62.md). Current schema head
+is `0021`; fresh backups include a 32-table inventory.
+
+- **Provider administration is implemented.** Administrators can save encrypted
+  credentials, inspect masked settings and revisions, and run capability checks.
+  The generation worker still reads environment configuration; it does not consume
+  saved provider settings or their credentials. Production Compose also needs
+  deployment-key and allowed-host environment wiring.
+- **Question-package approval is recorded.** All 11 `s39-reviewed-v1` packages have
+  [explicit owner approval](content/questions/review-confirmation.s39-v1.json).
+  Historical workflow bundles still reference predecessor drafts and require their
+  own review and activation. History/instrument dependencies and the real DDI
+  corpus retain their separate review requirements.
+- **Release evidence is incomplete.** Provider runtime integration, content
+  projection/integration, acceptance gaps, known test failures, and a fresh release
+  rehearsal remain open. Live-provider behavior and latency have not been proven
+  by the recorded rehearsal.
+
+Use the [progress index](project-documents/dev/progress/README.md) and
+[current release follow-up](project-documents/dev/progress/s62.md#follow-up-2026-10-18--documentation-assessment-and-next-work)
+for the detailed handoff. Earlier reports describe their dated scope;
+[tasks.md](project-documents/dev/tasks.md) currently ends at S62.
+
+## Workflow and data boundaries
+
+Registration proceeds through demographics, diagnosis, severity, suicide
+assessment, history/medications, proposal review, and final-plan signing. Follow-up
+starts from a signed baseline, reconciles current information, and adds adverse
+effect assessment before proposal review and signing.
+
+The core record and reasoning rules are:
+
+- A patient has at most one open draft across all physicians and encounter types.
+  Only its author can access its clinical content or edit, adjust, accept, discard,
+  or sign it.
+- Patient variables inform LLM estimation of every CPT, including root-node
+  distributions. Bayesian inference then runs with an **empty evidence set**.
+- Page notes do not enter prompts, patient projections, applicability rules,
+  inference, or DDI checks. Unanswered assessments do not become zero or minimum
+  scores.
+- Slider changes recalculate locally without another LLM or MCP request. Original
+  estimates and results remain available alongside adjusted revisions.
+- Signing requires successful, current executions and acceptance of their current
+  results. Failed initial generation has no manual-plan signing bypass.
+- Signed records remain immutable. Corrections use attributed addenda; a later
+  assessment is a new follow-up encounter.
+- Runtime DDI checks use a versioned local knowledge base. Missing coverage is
+  reported as unavailable rather than interpreted as an absence of interactions.
+
+The [system design](project-documents/dev/system-design.md) defines the full
+contract; [context/](context/index.md) records the reasoning behind key choices.
+
+## Architecture
+
+The system is a modular monolith with a separate background worker, private MCP
+subprocesses, and one authoritative PostgreSQL database. In the packaged deployment,
+Caddy serves the web bundle and proxies same-origin `/api` requests.
+
+```mermaid
+flowchart LR
+    Browser[React browser] --> Edge[Caddy edge]
+    Edge --> API[FastAPI application]
+    API --> DB[(PostgreSQL)]
+    Worker[Background worker] --> DB
+    Worker --> MCP[Private MCP subprocess]
+    MCP --> DB
+    Worker --> Provider[Configured LLM endpoint]
+    Worker --> Inference[Bounded Bayesian inference]
+    Inference --> Templates[Versioned templates]
+    Templates --> DB
+```
+
+| Layer | Technology |
+| --- | --- |
+| Web | React, TypeScript, Vite |
+| API and persistence | Python 3.12, FastAPI, Pydantic, SQLAlchemy, Alembic, psycopg |
+| Reasoning | pgmpy, XMLBIF validation with lxml, private stdio MCP |
+| Storage and deployment | PostgreSQL 16, Docker Compose, Caddy |
+| Verification | pytest, Ruff, mypy, TypeScript, Playwright Chromium and Firefox |
+
+Dependencies are pinned in [backend/uv.lock](backend/uv.lock),
+[web/package-lock.json](web/package-lock.json), and the
+[root package-lock.json](package-lock.json). Production image pins are maintained
+in [deploy/](deploy/).
+
+## Local development
+
+### Prerequisites
+
+- Python **3.12** and `uv` (see [backend/.python-version](backend/.python-version)).
+- Node.js **22 or newer** and npm.
+- Docker with the Compose plugin, GNU Make, and Bash.
+- Free default ports: `8000` for the API, `5173` for the web interface, and
+  `5432`/`5433` for development/test PostgreSQL.
+
+Run commands from the repository root unless stated otherwise.
+
+### 1. Install and configure
+
+```sh
+make setup
+cp .env.example .env
+```
+
+Edit `.env` before starting the stack. Replace `POSTGRES_PASSWORD` and update the
+password in **both** `DATABASE_URL` and `TEST_DATABASE_URL` to match. Use a URL-safe
+password, or URL-encode it in the connection strings. Keep the test URL pointed at
+the separate, disposable `x_insight_test` database.
+
+If PostgreSQL ports are occupied, change `DB_PORT` and `TEST_DB_PORT` and update the
+corresponding connection-string ports. Keep real credentials in ignored local
+environment files.
+
+### 2. Start the development stack
+
+In the first terminal, export the configuration before launching the processes:
+
+```sh
+set -a
+. ./.env
+set +a
+make dev
+```
+
+`make dev` starts both PostgreSQL containers, the API with reload, and Vite. It
+does not source `.env` for the API process, apply migrations, or start the worker.
+Its port preflight requires the database ports to be free before launch; if a
+previous Compose stack is still running, stop it with `make stop` first.
+
+### 3. Apply migrations and verify readiness
+
+In a second terminal at the repository root:
+
+```sh
+docker compose up -d --wait db db-test
+make migrate
+curl --fail http://localhost:8000/api/v1/health
+curl --fail http://localhost:8000/api/v1/ready
+```
+
+`make migrate` loads `.env` and runs `alembic upgrade head`. On an empty database,
+readiness is unavailable until migration completes. `/health` checks process
+liveness; `/ready` checks database/schema readiness and maintenance state.
+
+Open [http://localhost:5173](http://localhost:5173). A fresh database has the
+administrator account `admin` / `admin`; change that password before shared use.
+The administrator creates physician accounts; self-registration is unavailable.
+
+### 4. Run the worker when needed
+
+In another terminal, starting from the repository root:
+
+```sh
+set -a
+. ./.env
+set +a
+cd backend
+uv run python -m x_insight.reasoning
+```
+
+Without a configured provider, generation reports `PROVIDER_NOT_CONFIGURED` while
+saved records and administration remain available. Starting a worker does not
+resolve the provider/content integration gaps listed above.
+
+To stop local development, press `Ctrl+C` in the foreground process terminals,
+then run `make stop`. This preserves database volumes; `docker compose down -v`
+deletes development and test data.
+
+## Configuration
+
+[.env.example](.env.example) lists the configuration placeholders.
+
+| Variable | Purpose |
+| --- | --- |
+| `DATABASE_URL` | Application PostgreSQL connection |
+| `TEST_DATABASE_URL` | Separate disposable database for backend/recovery tests |
+| `DB_PORT`, `TEST_DB_PORT` | Host ports for local database containers |
+| `X_INSIGHT_PROVIDER_ENDPOINT`, `X_INSIGHT_PROVIDER_MODEL` | Current worker configuration; endpoint is the full provider POST URL |
+| `X_INSIGHT_PROVIDER_CAPABILITY` | Worker response mode: `schema` or `json`; defaults to `schema` |
+| `X_INSIGHT_PROVIDER_DATA_KEY` | Operator-held AES-GCM key for stored provider credentials: base64 encoding of exactly 32 bytes; excluded from backups |
+| `X_INSIGHT_PROVIDER_ALLOWED_HOSTS` | Exact hostnames allowed by provider-settings validation and capability checks; comma-separated, empty denies all |
+| `API_PROXY_TARGET` | Optional Vite API proxy override; defaults to `http://localhost:8000` |
+
+Saving settings and passing a capability check do not configure the current
+generation worker. The saved-settings host checks also do not establish destination
+restrictions for the environment-configured worker. See [S42's remaining
+work](project-documents/dev/progress/s42.md#remaining) before relying on that path.
+
+## Checks and tests
+
+Load `.env` into the test shell using the export block above. Backend and recovery
+tests need a reachable disposable `TEST_DATABASE_URL`; their Make targets do not
+load `.env` themselves. Browser tests use the running API behind the web proxy,
+so run them against a separate test API/database as well. Some recovery browser
+scenarios replace database state.
+
+Install the browser binaries once before browser checks:
+
+```sh
+npx playwright install chromium firefox
+```
+
+| Command | Scope |
+| --- | --- |
+| `make check` | Backend formatting, lint and types; web build; root TypeScript checks |
+| `make test-backend` | Backend pytest suite |
+| `make test-backend TEST=tests/http/test_health.py` | One selected backend test file |
+| `make test-e2e` | Playwright suite in Chromium and Firefox |
+| `make test-e2e TEST=e2e/smoke.spec.ts` | Selected browser smoke scenario |
+| `make test-recovery` | Backend backup/restore suite under `tests/recovery` |
+| `make test-load` | Synthetic load probe; configurable with `LOAD_PATIENTS`, `LOAD_WORKERS`, and `LOAD_REPORT` |
+| `make verify` | Combined check, backend, and browser gate; no live provider credentials required |
+| `make prod-check` | Production packaging self-check |
+
+`make test-e2e` starts a Vite preview on port `5173`, which must be free. Its API
+proxy defaults to port `8000`; set `API_PROXY_TARGET` for an isolated API.
+`E2E_BASE_URL` changes the browser destination only. `make test-web` currently exits
+with an explicit unimplemented-suite message.
+
+These are the available verification commands, not a claim that the current tree
+passes every gate. Recorded failures and unrun checks remain in the
+[release handoff](project-documents/dev/progress/s62.md).
+
+## Clinical content and DDI tooling
+
+Clinical assets live under [content/](content/); supplied medical references and
+Bayesian-network sources live under [project-documents/](project-documents/).
+Track current approvals in the [content review ledger](content/review-ledger.md)
+and the exact [question-package confirmation
+manifest](content/questions/review-confirmation.s39-v1.json). Package approval,
+workflow-bundle release, activation, and clinical validation are separate states.
+
+The DDI CLI builds offline candidates independently of runtime lookup. From
+`backend/`:
 
 ```sh
 uv run python -m x_insight.ddi build \
   --sources ../project-documents/medical-documents/DDI-text \
   --terminology ../content/ddi/aliases.json \
-  --output /tmp/x-s17-ddi
+  --output /tmp/x-insight-ddi-candidate
 ```
 
-This is an offline candidate build. The current corpus writes both outputs and
-exits with status 1 because 26 of 128 documents fail structural validation.
-The draft contains 136 concepts, 128 proposed catalog IDs and 415 pending aliases;
-no aliases have owner approval, and proposed catalog IDs are not activated.
-Unresolved names and pending decisions require review before an S18 release.
-Omitting `--terminology` retains raw parsing; an explicitly supplied missing or
-invalid terminology file fails and writes a report.
+The last recorded corpus build had **26 structural failures across 128 documents**
+and no approved aliases. It wrote candidate/report outputs and exited with status
+`1`; it did not produce an approved corpus release. See
+[S17](project-documents/dev/progress/s17.md) for terminology and validation evidence.
 
-See the [S17 outcome and verification commands](project-documents/dev/progress/s17.md#s17--controlled-medication-concepts-and-aliases)
-and the [DDI decision record](context/ddi.md).
-
-## Immutable DDI release (S18)
-
-From `backend/`, publish a staged candidate with an owner-reviewed manifest
-(`content/ddi/review-manifest.template.json` defaults to `awaiting_review`
-and never imports):
+Publication requires an explicitly owner-reviewed manifest with decision
+`approved_complete` or `approved_limited`:
 
 ```sh
 uv run python -m x_insight.ddi publish \
-  --staging /tmp/x-s17-ddi \
-  --manifest ../content/ddi/review-manifest.template.json
+  --staging /tmp/x-insight-ddi-candidate \
+  --manifest /path/to/owner-reviewed-manifest.json
 ```
 
-Only explicit owner `approved_complete`/`approved_limited` publishes; the same
-content hash reuses version `ddi-<12hex>`, changed sources yield a new version,
-and rejected/invalid publishes leave the prior release readable. The real
-corpus remains `awaiting_review` (0 approved aliases + 26 structural
-failures); S18 verification used synthetic fixtures only.
+The bundled [manifest template](content/ddi/review-manifest.template.json) remains
+`awaiting_review` and cannot authorize publication. Releases are content-addressed
+and immutable; [S18](project-documents/dev/progress/s18.md) records the publication
+contract and its synthetic verification scope.
 
-See the [S18 outcome and verification commands](project-documents/dev/progress/s18.md#s18--build-review-and-publish-an-immutable-ddi-release-2026-10-06).
+## Deployment and recovery
 
-## Pharmacotherapy review draft (S27)
+Follow [deploy/README.md](deploy/README.md) for the one-host install, environment
+setup, HTTPS, upgrades, schema compatibility, backup, staged restore, and rollback.
+[compose.prod.yaml](compose.prod.yaml) packages `edge`, `app`, `worker`, `db`, and a
+one-off migration service. Only the edge is externally exposed.
 
-The [pharmacotherapy package](content/questions/pharmacotherapy/manifest.json)
-and isolated candidate history describe established-treatment review. They remain
-`awaiting_review`; the runtime defaults and active clinical content are unchanged.
-See the [S27 report](project-documents/dev/progress/s27.md) for source provenance,
-public verification seams, review questions and the S29 handoff.
+The recorded rehearsal verified selected installation, image-build, and recovery
+steps; it did not establish release readiness. Some runbook notes still predate
+S42: use the [current provider checkpoint](project-documents/dev/progress/s42.md)
+for implemented settings behavior and outstanding production environment wiring.
+Keep the deployment encryption key separately from backup archives.
 
-From `backend/`, verify the package with:
+## Repository layout
 
-```sh
-.venv/bin/python -m pytest tests/models/test_pharmacotherapy_package.py -q
+```text
+backend/             FastAPI modules, migrations, CLI tools, and pytest suites
+web/                 React application and shared styles
+content/             Versioned assessments, history, question packages, bundles, DDI
+e2e/                 Playwright browser scenarios
+deploy/              Dockerfiles, Caddy configuration, and operator runbook
+project-documents/   Requirements, design, planning, source material, and progress
+context/             Decision rationale maintained with Keep the Why
+compose.yaml         Local development and test databases
+compose.prod.yaml    One-host deployment services
+Makefile             Development, verification, and deployment commands
 ```
 
-## One-host production deployment (S57)
+## Documentation
 
-Packaging (`compose.prod.yaml`, digest-pinned images, Caddy edge) and the
-operator runbook live in [deploy/](deploy/) with a `deploy/check.sh`
-self-check (`make prod-check`). See the
-[S57 report](project-documents/dev/progress/s57.md) for scope, drill
-evidence, and the code-review outcome. Drill-only: never deployed to an
-external/live host.
+| Start here for… | Reference |
+| --- | --- |
+| Recorded progress and the next handoff | [Progress index](project-documents/dev/progress/README.md) |
+| Product scope and requirements | [User requirements](project-documents/dev/user-requirements.md) |
+| Behavior and architectural contracts | [System design](project-documents/dev/system-design.md), [system architecture](project-documents/dev/system-architecture.md) |
+| Implementation policy and scheduled work | [Plan](project-documents/dev/plan.md), [tasks](project-documents/dev/tasks.md) |
+| Clinical asset review and approval | [Content review ledger](content/review-ledger.md) |
+| Installation, upgrades, and recovery | [Operator runbook](deploy/README.md) |
+| Why key decisions were made | [Context index](context/index.md) |
+| Agent contribution instructions | [AGENTS.md](AGENTS.md) |
+
+Before contributing, read the progress index and the relevant checkpoint/handoff,
+then follow the implementation plan. Record new progress in the appropriate report
+and keep the index short. The project uses [Keep the Why](https://keepthewhy.com)
+to preserve decision rationale alongside procedural documentation.
+
+## License
+
+The project is licensed under the [MIT License](LICENSE).
