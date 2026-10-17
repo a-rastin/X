@@ -131,10 +131,12 @@ from x_insight.operations import backup as backup_module
 # Supported app-generated envelope (reuse, never a new version here).
 RESTORE_BACKUP_SCHEMA_VERSION = backup_module.BACKUP_MANIFEST_VERSION
 
-# 0018 only adds the staging table; clinical rows are identical to 0017, so
-# both manifests restore through the same staging checks. Bump only with a
-# clinical migration, per plan.md §4.2 versioning discipline.
-SUPPORTED_APP_SCHEMA_VERSIONS = frozenset({"0017", "0018"})
+# 0018 adds only the staging table. 0019 adds operational
+# ``provider_settings``. 0020 makes its key columns nullable (clear).
+# 0021 adds ``capability_status`` (still operational, not clinical).
+# 0017 and 0018 archives omit the table and stay valid via the special
+# case; 0019 and later must include it.
+SUPPORTED_APP_SCHEMA_VERSIONS = frozenset({"0017", "0018", "0019", "0020", "0021"})
 
 # Bounds (ponytail: 256 MiB expanded / 4096 entries / 100 MiB per file;
 # S58 measures real 10k-patient sizes first).
@@ -902,6 +904,8 @@ def validate_archive_bytes(blob: bytes) -> dict[str, Any]:
                 }
         for name in backup_module.BACKUP_TABLES:
             if name not in db_tables:
+                if name == "provider_settings" and app_schema in ("0017", "0018"):
+                    continue
                 return {"ok": False, "errors": [f"missing staged table: {name}"], "warnings": []}
             if not isinstance(db_tables[name], list):
                 return {

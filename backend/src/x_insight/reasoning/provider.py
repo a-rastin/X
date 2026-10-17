@@ -33,11 +33,11 @@ contract) and S41 (real private MCP transport):
 
 Deferred (NOT implemented here):
 
-- S42 provider-settings persistence (``reasoning/provider_config.py``,
-  api-settings routes, encryption, allowlists) is deferred. This module
-  accepts an explicit injected :class:`ProviderConfig` (endpoint, model,
-  capability mode, budgets; deployment key material out of scope) so S43
-  mechanics are testable without S42.
+- S42 persistence, encryption, allowlists, and the capability check live
+  in ``reasoning/provider_config.py``. This module still accepts an
+  injected :class:`ProviderConfig` and does not load saved rows. The
+  generation worker still uses the environment endpoint. ``post_json`` is
+  the one HTTP POST and does not follow redirects.
 - S45 CPT validation/inference/rendering/OriginalBaseline, S46 ordered
   workflows and proposal assembly, S47 retry budgets/backoff/fencing
   re-exercise and S48b local-calculation proof are deferred. Success here
@@ -146,14 +146,14 @@ class ControlledStubAdapter:
 
 @dataclass(frozen=True)
 class ProviderConfig:
-    """Explicit injected endpoint config (S42 persistence deferred).
+    """Injected endpoint config. S42 stores settings in ``provider_config``.
 
-    ``endpoint_url`` is the full POST URL of an OpenAI-compatible
-    ``chat/completions`` endpoint (tests point it at the deterministic
-    double; production wiring arrives with S42). ``capability`` is the
-    verified mode: ``"schema"`` sends ``response_format json_schema``,
-    ``"json"`` sends ``json_object``; both share the strict validator.
-    No secret/key material lives here (S42 owns encryption/allowists).
+    This adapter does not load them. ``endpoint_url`` is the full POST URL
+    of an OpenAI-compatible ``chat/completions`` endpoint (tests point it
+    at the deterministic double). ``capability`` is the verified mode:
+    ``"schema"`` sends ``response_format json_schema``, ``"json"`` sends
+    ``json_object``; both share the strict validator. No secret material
+    lives on :class:`ProviderConfig`.
     """
 
     endpoint_url: str
@@ -412,6 +412,24 @@ def _parse_tool_arguments(raw: Any) -> dict[str, Any] | None:
     return None
 
 
+def post_json(
+    url: str,
+    payload: dict[str, Any],
+    headers: dict[str, str],
+    timeout: float,
+) -> Any:
+    """One HTTP POST. Redirects are not followed."""
+    import httpx
+
+    return httpx.post(
+        url,
+        json=payload,
+        headers=headers,
+        timeout=timeout,
+        follow_redirects=False,
+    )
+
+
 class BoundedProviderAdapter:
     """Real bounded estimation adapter (one attempt, no hidden retries).
 
@@ -479,16 +497,14 @@ class BoundedProviderAdapter:
         return output, None
 
     def _post_once(self, payload: dict[str, Any]) -> tuple[Any, ProviderResult | None]:
-        import httpx
-
         if len(_payload_bytes(payload)) > int(self._config.max_request_bytes):
             return None, _fail("PROVIDER_BUDGET_EXCEEDED", False)
         try:
-            response = httpx.post(
+            response = post_json(
                 self._config.endpoint_url,
-                json=payload,
-                headers={"Content-Type": "application/json"},
-                timeout=float(self._config.timeout_seconds),
+                payload,
+                {"Content-Type": "application/json"},
+                float(self._config.timeout_seconds),
             )
         except Exception as exc:
             name = type(exc).__name__.lower()

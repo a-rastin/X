@@ -6,13 +6,13 @@ export default defineConfig({
   server: {
     port: 5173,
     proxy: {
-      "/api": "http://localhost:8000",
+      "/api": process.env.API_PROXY_TARGET ?? "http://localhost:8000",
     },
   },
   preview: {
     port: 5173,
     proxy: {
-      "/api": "http://localhost:8000",
+      "/api": process.env.API_PROXY_TARGET ?? "http://localhost:8000",
     },
   },
 });

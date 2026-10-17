@@ -25,6 +25,7 @@ import {
   NetworksRoutePage,
   PhysicianDashboard,
   PhysiciansPage,
+  ProviderSettingsRoutePage,
   ReportRoutePage,
   RestoresRoutePage,
   StatusRoutePage,
@@ -212,6 +213,11 @@ export function App() {
               </NavLink>
             )}
             {user.role === "admin" && (
+              <NavLink route="provider-settings" current={route} navigate={navigate}>
+                Provider
+              </NavLink>
+            )}
+            {user.role === "admin" && (
               <NavLink route="status" current={route} navigate={navigate}>
                 Status
               </NavLink>
@@ -265,6 +271,9 @@ export function App() {
             {!showWarningGate && route === "exports" && <ExportsRoutePage />}
             {!showWarningGate && route === "backups" && <BackupsRoutePage />}
             {!showWarningGate && route === "restores" && <RestoresRoutePage />}
+            {!showWarningGate && route === "provider-settings" && (
+              <ProviderSettingsRoutePage />
+            )}
             {!showWarningGate && route === "status" && <StatusRoutePage />}
             {!showWarningGate && route === "report" && <ReportRoute />}
             {!showWarningGate && route === "account" && <AccountPage />}

@@ -10,7 +10,7 @@ content. Expected literals are worked fixtures, never implementation output.
 
 Covers tasks.md S54 §§1-4 (FR-41–42; plan.md §§4.1, 10.2):
 
-- §1: backup zip holds manifest.json (backup-v1, 31-table inventory, hashes),
+- §1: backup zip holds manifest.json (backup-v1, 32-table inventory, hashes),
   database.json (users/patients/encounters+draft_data/notes/plans/snapshots/
   addenda/batches/runs/baselines/raw jobs/CPT revisions+resets/review states/
   results/acceptances/audit/DDI/models/idempotency), networks/*.xml exact
@@ -87,11 +87,12 @@ TWO_NODE_XML_V2 = (
 )
 NETWORK_HASH = hashlib.sha256(TWO_NODE_XML).hexdigest()
 
-# Independent spec inventory (plan.md §§4.1, 10.2 + backup docstring): 31
+# Independent spec inventory (plan.md §§4.1, 10.2 + backup docstring): 32
 # tables, sessions deliberately absent. Hardcoded here, never imported from
 # the implementation, so the test can disagree with the code.
 EXPECTED_TABLES: tuple[str, ...] = (
     "users",
+    "provider_settings",
     "patients",
     "encounters",
     "notes",
@@ -1013,13 +1014,13 @@ def test_backup_includes_full_snapshot_networks_and_policies(
 
     manifest, database, policies, networks = _parse_zip(blob)
 
-    # Manifest envelope: version, identity, inventory of exactly the 31 owned
+    # Manifest envelope: version, identity, inventory of exactly the 32 owned
     # tables (sessions never), per-file hashes, deployment + runtime.
     assert manifest["schema_version"] == "backup-v1"
     assert manifest["backup_id"] == backup_id
-    assert manifest["app_schema_version"] == "0018"
+    assert manifest["app_schema_version"] == "0021"
     assert set(manifest["inventory"].keys()) == set(EXPECTED_TABLES)
-    assert len(manifest["inventory"]) == 31
+    assert len(manifest["inventory"]) == 32
     assert "sessions" not in manifest["inventory"]
     for name, info in manifest["inventory"].items():
         assert isinstance(info.get("rows"), int), name
@@ -1039,7 +1040,7 @@ def test_backup_includes_full_snapshot_networks_and_policies(
     assert runtime["pinned"]["pgmpy"] and runtime["pinned"]["lxml"]
     assert any(k.startswith("lock_") for k in runtime), runtime.keys()
 
-    # database.json: same 31 tables, sessions absent, row counts match manifest.
+    # database.json: same 32 tables, sessions absent, row counts match manifest.
     tables = database["tables"]
     assert set(tables.keys()) == set(EXPECTED_TABLES)
     assert "sessions" not in tables

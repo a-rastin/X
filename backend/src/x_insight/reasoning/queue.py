@@ -342,6 +342,39 @@ def cancel_active_jobs_for_encounter(
     return len(active_ids)
 
 
+def cancel_active_generation_jobs(session: Session, now: datetime | None = None) -> int:
+    """Cancel every queued/leased generation job. local_calculation stays.
+
+    History rows are updated, not deleted. Returns the cancelled count.
+    """
+    moment = now or contracts.utcnow()
+    active_ids = [
+        row[0]
+        for row in session.execute(
+            select(reasoning_tables.reasoning_jobs.c.id).where(
+                reasoning_tables.reasoning_jobs.c.job_class == GENERATION_CLASS,
+                reasoning_tables.reasoning_jobs.c.status.in_(ACTIVE_JOB_STATUSES),
+            )
+        ).all()
+    ]
+    if not active_ids:
+        return 0
+    session.execute(
+        update(reasoning_tables.reasoning_jobs)
+        .where(reasoning_tables.reasoning_jobs.c.id.in_(active_ids))
+        .values(lease_token=None, status=CANCELLED, updated_at=moment)
+    )
+    session.execute(
+        update(reasoning_tables.reasoning_grants)
+        .where(
+            reasoning_tables.reasoning_grants.c.job_id.in_(active_ids),
+            reasoning_tables.reasoning_grants.c.revoked_at.is_(None),
+        )
+        .values(revoked_at=moment)
+    )
+    return len(active_ids)
+
+
 def check_start_admission(
     session: Session,
     *,
@@ -1413,9 +1446,7 @@ def _audit_patient_id(session: Session, batch: dict[str, Any]) -> str | None:
             return None
         row = (
             session.execute(
-                select(cases_tables.encounters).where(
-                    cases_tables.encounters.c.id == encounter_id
-                )
+                select(cases_tables.encounters).where(cases_tables.encounters.c.id == encounter_id)
             )
             .mappings()
             .first()

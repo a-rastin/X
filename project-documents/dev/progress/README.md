@@ -3,21 +3,12 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest recorded checkpoint is [S62](s62.md) (2026-10-16): a release
-rehearsal was recorded, not a release. `make test-recovery` runs the T10
-suite (`backend/tests/recovery`); the backup manifest expectation is schema
-`0018`. A clean-checkout install and local image build were recorded, and
-restore commit, session revocation, and failed-switch rollback were re-run
-on the test database. This is not a content release, not clinical validation,
-and not high availability. S42 provider-settings encryption stays deferred.
-tasks.md has no session after S62. The release gate stays open: live provider
-unmeasured; full backend, e2e, and load suites not run from the clean tree;
-`make prod-up` and `make prod-migrate` not run; browser backup/restore e2e
-not run; full recovery suite not re-run after the `0018` literal; S61 NFR-03
-walks still unrun; carryovers remain table-list drift, `ddi_*` suite order,
-physicians past the first 100, the signing-spec diagnostic recorded in S61,
-and content that is not fully owner-approved (S39.b approved the 11 question
-packages only).
+The latest recorded checkpoint is [S42](s42.md) (2026-10-17): provider
+settings are implemented (encryption, masked admin API, capability check,
+admin page). Schema head and the fresh-backup expectation are `0021`, with
+`provider_settings` in a 32-table inventory. The [S62](s62.md) release gate
+otherwise stays open: not a release, not clinical validation, not high
+availability. tasks.md has no session after S62 and no S63.
 
 ## Reading and updating progress
 
@@ -114,3 +105,4 @@ packages only).
 | S60 backend | [Cross-user, failure, and security acceptance incl. commit-timing fix + review blockers (2026-10-16)](s60-backend.md) |
 | S61 | [Desktop usability defects proven, with verification gaps (2026-10-16)](s61.md) |
 | S62 | [Release rehearsal recorded; gate still open (2026-10-16)](s62.md) |
+| S42 | [Store and test provider settings securely (2026-10-17)](s42.md) |

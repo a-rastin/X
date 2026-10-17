@@ -424,6 +424,10 @@ def create_app() -> FastAPI:
 
     app.include_router(reasoning_router, prefix="/api/v1")
 
+    from x_insight.reasoning.provider_config import router as provider_config_router
+
+    app.include_router(provider_config_router, prefix="/api/v1")
+
     from x_insight.probability_review.router import router as review_router
 
     app.include_router(review_router, prefix="/api/v1")

@@ -116,6 +116,7 @@ MAX_ARCHIVE_BYTES = 100 * 1024 * 1024
 # lifecycle draft + draft_data, notes) are all exported as stored.
 BACKUP_TABLES: tuple[str, ...] = (
     "users",
+    "provider_settings",
     "patients",
     "encounters",
     "notes",

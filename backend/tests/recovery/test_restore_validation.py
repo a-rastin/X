@@ -28,9 +28,9 @@ Covers tasks.md S55 §§1-4 (FR-41, NFR-02/04; plan.md §10.3 steps 1-3):
 Isolation: per-test BACKUP_STAGING_DIR + RESTORE_STAGING_DIR under tmp_path
 (env overrides, no global state); truncate covers restore_jobs (+ S54 tables)
 so sequential suites sharing one test DB stay green. App-schema literals accept
-0017/0018 here (0018 only adds the staging table; clinical rows identical) —
-stale-literal updates live ONLY in this file, never test_backup.py or
-test_contracts drift (recorded as carryover).
+0017 through 0021 here (0018 only adds the staging table; clinical rows identical) —
+stale-literal updates for the current head are in this file and
+test_backup.py; test_contracts drift remains a separate carryover.
 """
 
 from __future__ import annotations
@@ -67,9 +67,9 @@ TWO_NODE_XML = (
 )
 
 # 0018 adds only restore_jobs (staging metadata, excluded from portable
-# archives like sessions); clinical rows are identical to 0017, so both
-# manifests restore through the same staging checks.
-SUPPORTED_APP_SCHEMAS = frozenset({"0017", "0018"})
+# archives like sessions); clinical rows are identical to 0017. 0019, 0020,
+# and 0021 are also accepted (a fresh backup reports the current head).
+SUPPORTED_APP_SCHEMAS = frozenset({"0017", "0018", "0019", "0020", "0021"})
 
 
 @pytest.fixture(scope="session")

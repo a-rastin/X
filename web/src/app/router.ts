@@ -12,6 +12,7 @@ export type Route =
   | "exports"
   | "backups"
   | "restores"
+  | "provider-settings"
   | "status"
   | "encounter"
   | "chart"
@@ -29,6 +30,7 @@ const HASHES: Record<string, Route> = {
   "#/exports": "exports",
   "#/backups": "backups",
   "#/restores": "restores",
+  "#/provider-settings": "provider-settings",
   "#/status": "status",
 };
 
@@ -44,6 +46,7 @@ const ROUTE_HASHES: Record<Exclude<Route, "encounter" | "chart" | "report">, str
   exports: "#/exports",
   backups: "#/backups",
   restores: "#/restores",
+  "provider-settings": "#/provider-settings",
   status: "#/status",
 };
 

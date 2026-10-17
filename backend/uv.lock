@@ -1219,6 +1219,7 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "alembic" },
+    { name = "cryptography" },
     { name = "fastapi" },
     { name = "httpx" },
     { name = "lxml" },
@@ -1245,6 +1246,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "alembic", specifier = "==1.20.0" },
+    { name = "cryptography", specifier = "==50.0.2" },
     { name = "fastapi", specifier = "==0.142.2" },
     { name = "httpx", specifier = "==0.28.1" },
     { name = "lxml", specifier = "==6.1.3" },
