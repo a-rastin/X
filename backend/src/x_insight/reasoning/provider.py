@@ -495,6 +495,20 @@ def _error_tokens(body: Any) -> frozenset[str]:
     return frozenset(found)
 
 
+def _assistant_text(message: dict[str, Any]) -> Any:
+    """Reply text. Some reasoning models leave content empty and put the JSON in reasoning_content.
+
+    Non-empty content wins, so thinking prose is never used when a visible reply exists.
+    """
+    content = message.get("content")
+    if isinstance(content, dict) or (isinstance(content, str) and content.strip()):
+        return content
+    reasoning = message.get("reasoning_content")
+    if isinstance(reasoning, str) and reasoning.strip():
+        return reasoning
+    return content
+
+
 def _json_object_content(content: Any) -> bool:
     if isinstance(content, dict):
         return True
@@ -635,7 +649,7 @@ def probe_capability(url: str, model: str, api_key: str) -> tuple[bool, str]:
     if kind != "ok":
         return False, kind
     message, _reason = BoundedProviderAdapter._envelope_message(body)
-    if not isinstance(message, dict) or not _json_object_content(message.get("content")):
+    if not isinstance(message, dict) or not _json_object_content(_assistant_text(message)):
         return False, CAPABILITY_JSON
     return True, CAPABILITY_SUPPORTS
 
@@ -657,10 +671,13 @@ class BoundedProviderAdapter:
         *,
         grant_token: str | None = None,
         database_url: str | None = None,
+        api_key: str | None = None,
     ) -> None:
         self._config = config
         self._grant_token = grant_token
         self._database_url = database_url
+        # Not on ProviderConfig: that object is logged and copied. Never log this.
+        self._api_key = api_key if isinstance(api_key, str) and api_key else None
         self.tool_calls_made = 0
 
     @property
@@ -672,6 +689,11 @@ class BoundedProviderAdapter:
     def database_url(self) -> str | None:
         """Explicit accessor for the MCP read URL override (or None)."""
         return self._database_url
+
+    @property
+    def api_key(self) -> str | None:
+        """Bearer token for this attempt. Callers must not log it."""
+        return self._api_key
 
     def _grant(self) -> str:
         import os
@@ -706,14 +728,19 @@ class BoundedProviderAdapter:
             return None, _fail("PROVIDER_TRANSIENT", True)
         return output, None
 
-    def _post_once(self, payload: dict[str, Any]) -> tuple[Any, ProviderResult | None]:
+    def _post_once(
+        self, payload: dict[str, Any], *, allow_format_retry: bool = True
+    ) -> tuple[Any, ProviderResult | None]:
         if len(_payload_bytes(payload)) > int(self._config.max_request_bytes):
             return None, _fail("PROVIDER_BUDGET_EXCEEDED", False)
         try:
+            headers = {"Content-Type": "application/json"}
+            if self._api_key:
+                headers["Authorization"] = f"Bearer {self._api_key}"
             response = post_json(
                 self._config.endpoint_url,
                 payload,
-                {"Content-Type": "application/json"},
+                headers,
                 float(self._config.timeout_seconds),
             )
         except Exception as exc:
@@ -737,6 +764,17 @@ class BoundedProviderAdapter:
             return None, _fail("PROVIDER_AUTH", False)
         if status in (404, 422):
             return None, _fail("PROVIDER_MODEL", False)
+        # Same one-shot format fallback as the capability probe. Not a retry
+        # budget: NVIDIA-style endpoints reject json_schema and still return
+        # JSON the strict validator accepts.
+        if (
+            allow_format_retry
+            and status == 400
+            and "response_format" in payload
+            and _error_tokens(_read_body(response)) & _FORMAT_TOKENS
+        ):
+            stripped = {key: value for key, value in payload.items() if key != "response_format"}
+            return self._post_once(stripped, allow_format_retry=False)
         if status == 400:
             return None, _fail("PROVIDER_CAPABILITY", False)
         if status == 429:
@@ -804,7 +842,7 @@ class BoundedProviderAdapter:
                 return _fail("PROVIDER_INVALID_RESPONSE", True)
             tool_calls = message.get("tool_calls")
             if not tool_calls:
-                content = message.get("content")
+                content = _assistant_text(message)
                 if len(str(content or "").encode("utf-8")) > int(config.max_response_bytes):
                     return _fail("PROVIDER_BUDGET_EXCEEDED", False)
                 validated, _ = validate_strict_response(
@@ -902,6 +940,7 @@ class DeterministicProviderEndpoint:
     ) -> None:
         self.script: list[dict[str, Any]] = list(script or [])
         self.captured: list[Any] = []
+        self.captured_auth: list[str] = []
         self.on_exchange = on_exchange
         self._server: ThreadingHTTPServer | None = None
         self._thread: threading.Thread | None = None
@@ -985,6 +1024,7 @@ class DeterministicProviderEndpoint:
                 except Exception:
                     decoded = {"_raw_unparseable": raw.decode("utf-8", "replace")[:2000]}
                 endpoint.captured.append(decoded)
+                endpoint.captured_auth.append(self.headers.get("Authorization", ""))
                 hook = endpoint.on_exchange
                 if hook is not None:
                     hook(decoded)

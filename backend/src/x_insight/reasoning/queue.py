@@ -67,6 +67,7 @@ NON_RETRYABLE_ERROR_CODES = frozenset(
         "PROVIDER_TOOL_REJECTED",
         "PROVIDER_CONTEXT",
         "PROVIDER_NOT_CONFIGURED",
+        "PROVIDER_DESTINATION_DENIED",
         "MISSING_PACKAGE",
         "PACKAGE_INVALID",
         "NETWORK_INVALID",
@@ -420,6 +421,30 @@ def check_start_admission(
     return None
 
 
+def _pinned_provider_revision(session: Session, batch_id: uuid.UUID) -> int | None:
+    """Revision already pinned on this batch, else the latest saved row.
+
+    Later questions keep the revision the batch started with. An unchanged
+    save can change the URL without cancelling jobs; those jobs must not
+    follow it. No saved row means no pin (env fallback stays available).
+    """
+    rows = session.execute(
+        select(reasoning_tables.reasoning_jobs.c.diagnostics).where(
+            reasoning_tables.reasoning_jobs.c.batch_id == batch_id,
+            reasoning_tables.reasoning_jobs.c.job_class == GENERATION_CLASS,
+        )
+    ).all()
+    for (diagnostics,) in rows:
+        if not isinstance(diagnostics, dict):
+            continue
+        revision = diagnostics.get("provider_settings_revision")
+        if isinstance(revision, int) and revision >= 1:
+            return revision
+    from x_insight.reasoning.provider_config import latest_settings_revision
+
+    return latest_settings_revision(session)
+
+
 def insert_initial_job(
     session: Session,
     *,
@@ -448,6 +473,10 @@ def insert_initial_job(
     if existing is not None:
         return dict(existing)
     job_id = uuid.uuid4()
+    diagnostics: dict[str, Any] = {}
+    pinned_revision = _pinned_provider_revision(session, batch_id)
+    if pinned_revision is not None:
+        diagnostics["provider_settings_revision"] = pinned_revision
     session.execute(
         insert(reasoning_tables.reasoning_jobs).values(
             id=job_id,
@@ -462,7 +491,7 @@ def insert_initial_job(
             last_heartbeat=None,
             deployment_generation=int(deployment_generation),
             next_eligible_at=None,
-            diagnostics={},
+            diagnostics=diagnostics,
             result=None,
             created_at=moment,
             updated_at=moment,

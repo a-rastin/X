@@ -123,6 +123,11 @@ def run_once(
     lease_token = str(claimed["lease_token"])
     grant_token = str(claimed.get("grant_token") or "")
 
+    # Resolve after claim so the job's pinned settings revision is known.
+    # Local jobs already returned and never reach this.
+    if isinstance(provider, ProductionProvider):
+        provider = resolve_production_provider(engine, job, database_url)
+
     # S45 path: bounded estimation with real MCP + full pipeline. The
     # per-job grant binds this claim; rebuild the adapter around it so a
     # probe-constructed adapter (empty grant) still crosses real stdio.
@@ -133,6 +138,7 @@ def run_once(
             provider.config,
             grant_token=grant_token,
             database_url=database_url or provider.database_url,
+            api_key=provider.api_key,
         )
         return coordinator_module.execute_claimed_job(
             engine, job, run, batch, lease_token, per_job, moment, wid
@@ -183,6 +189,7 @@ def run_once(
         "worker_id": wid,
         "job_id": str(committed.get("id")),
         "batch_id": str(committed.get("batch_id")),
+        "error_code": result.error_code,
     }
 
 
@@ -320,8 +327,9 @@ logger = logging.getLogger(__name__)
 # worker fails closed (PROVIDER_NOT_CONFIGURED, non-retryable) so generation
 # is honestly unavailable while charts/admin stay usable. The S44
 # ControlledStubAdapter is never selected here — no test provider runs in
-# production. Provider bearer-key persistence/encryption arrives with S42;
-# endpoints requiring keys stay unconfigured (fail closed) until then.
+# production. A job pinned to a saved settings revision uses that row's
+# endpoint, model, and decrypted bearer. Env endpoint/model is only the
+# keyless fallback for jobs that were queued before any settings existed.
 
 PROVIDER_ENDPOINT_ENV_VAR = "X_INSIGHT_PROVIDER_ENDPOINT"
 PROVIDER_MODEL_ENV_VAR = "X_INSIGHT_PROVIDER_MODEL"
@@ -331,7 +339,7 @@ DEFAULT_POLL_SECONDS = 5.0
 
 
 class UnconfiguredProvider:
-    """Fail-closed adapter: no provider endpoint is configured.
+    """Fail-closed adapter: generation cannot call a provider.
 
     Every estimation attempt returns a non-retryable configuration error so
     the job fails with a clear stage/error code, the draft is retained, and
@@ -339,10 +347,49 @@ class UnconfiguredProvider:
     this adapter (separate slots, no provider/MCP).
     """
 
+    def __init__(self, error_code: str = "PROVIDER_NOT_CONFIGURED") -> None:
+        self.error_code = error_code
+
+    def estimate(self, request: provider_module.ProviderRequest) -> provider_module.ProviderResult:
+        return provider_module.ProviderResult(ok=False, error_code=self.error_code, retryable=False)
+
+
+class ProductionProvider:
+    """Marker. ``run_once`` replaces this with the job's pinned settings."""
+
     def estimate(self, request: provider_module.ProviderRequest) -> provider_module.ProviderResult:
         return provider_module.ProviderResult(
             ok=False, error_code="PROVIDER_NOT_CONFIGURED", retryable=False
         )
+
+
+def resolve_production_provider(
+    engine: Engine,
+    job: dict[str, Any],
+    database_url: str | None = None,
+) -> provider_module.ProviderAdapter:
+    """Saved revision for a pinned job; env only when the job has no pin."""
+    from x_insight.reasoning import provider_config
+
+    diagnostics = job.get("diagnostics")
+    pinned = None
+    if isinstance(diagnostics, dict):
+        pinned = diagnostics.get("provider_settings_revision")
+    if not isinstance(pinned, int):
+        return build_adapter_from_env()
+    with db_module.session_scope(engine) as session:
+        loaded = provider_config.open_runtime(session, pinned)
+    if isinstance(loaded, str):
+        return UnconfiguredProvider(loaded)
+    endpoint, model, api_key = loaded
+    capability = (os.environ.get(PROVIDER_CAPABILITY_ENV_VAR) or "schema").strip() or "schema"
+    if capability not in ("schema", "json"):
+        capability = "schema"
+    return provider_module.BoundedProviderAdapter(
+        provider_module.ProviderConfig(endpoint_url=endpoint, model=model, capability=capability),
+        database_url=database_url,
+        api_key=api_key,
+    )
 
 
 def build_adapter_from_env() -> provider_module.ProviderAdapter:
@@ -385,7 +432,7 @@ def poll_forever(
     previous_term = signal.signal(signal.SIGTERM, _request_stop)
     previous_int = signal.signal(signal.SIGINT, _request_stop)
     try:
-        adapter = build_adapter_from_env()
+        adapter = ProductionProvider()
         logger.warning("worker polling started adapter=%s", type(adapter).__name__)
         iterations = 0
         while not stop["requested"]:

@@ -149,16 +149,19 @@ credentials file.
 | `DATABASE_URL` | Application PostgreSQL connection |
 | `TEST_DATABASE_URL` | Separate disposable database for backend/recovery tests |
 | `DB_PORT`, `TEST_DB_PORT` | Host ports for local database containers |
-| `X_INSIGHT_PROVIDER_ENDPOINT`, `X_INSIGHT_PROVIDER_MODEL` | Current worker configuration; endpoint is the full provider POST URL |
-| `X_INSIGHT_PROVIDER_CAPABILITY` | Worker response mode: `schema` or `json`; defaults to `schema` |
-| `X_INSIGHT_PROVIDER_DATA_KEY` | Operator-held AES-GCM key for stored provider credentials: base64 encoding of exactly 32 bytes; excluded from backups |
-| `X_INSIGHT_PROVIDER_ALLOWED_HOSTS` | Exact hostnames allowed by provider-settings validation and capability checks; comma-separated, empty denies all |
+| `X_INSIGHT_PROVIDER_ENDPOINT`, `X_INSIGHT_PROVIDER_MODEL` | Keyless fallback when a job has no saved settings revision; endpoint is the full provider POST URL |
+| `X_INSIGHT_PROVIDER_CAPABILITY` | Response mode for generation: `schema` or `json`; defaults to `schema`. A `response_format` rejection is retried once without it |
+| `X_INSIGHT_PROVIDER_DATA_KEY` | Operator-held AES-GCM key for stored provider credentials: base64 encoding of exactly 32 bytes; excluded from backups. Required to decrypt the key generation sends |
+| `X_INSIGHT_PROVIDER_ALLOWED_HOSTS` | Exact hostnames allowed for saved settings, capability checks, and generation; comma-separated, empty denies all |
 | `API_PROXY_TARGET` | Optional Vite API proxy override; defaults to `http://localhost:8000` |
 
-Saving settings and passing a capability check do not configure the current
-generation worker. The saved-settings host checks also do not establish destination
-restrictions for the environment-configured worker. See [S42's remaining
-work](project-documents/dev/progress/s42.md#remaining) before relying on that path.
+An administrator saves the endpoint, model, and API key on the Provider page.
+A queued generation uses the settings revision pinned when that job was
+created, including the decrypted bearer, and refuses a destination that is
+no longer allowlisted. Replacing or clearing the key cancels active
+generation jobs. Local recalculation does not use the provider. The
+environment endpoint is only the fallback for jobs queued before any
+settings existed, and that fallback does not send a bearer token.
 
 ## Checks and tests
 

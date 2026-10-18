@@ -450,6 +450,54 @@ def save_settings(
     return body
 
 
+def latest_settings_revision(session: Session) -> int | None:
+    """Newest stored revision, or None when the administrator has saved nothing."""
+    row = _latest_stored(session)
+    if row is None:
+        return None
+    return int(row["revision"])
+
+
+def open_runtime(session: Session, revision: int) -> tuple[str, str, str] | str:
+    """Pinned endpoint, model, and API key, or a non-retryable error code.
+
+    The key is returned only to the caller that builds the Authorization
+    header. This function does not log it.
+    """
+    row = (
+        session.execute(
+            select(
+                provider_settings.c.base_url,
+                provider_settings.c.model,
+                provider_settings.c.key_nonce,
+                provider_settings.c.key_ciphertext,
+            ).where(provider_settings.c.revision == revision)
+        )
+        .mappings()
+        .first()
+    )
+    if row is None:
+        return "PROVIDER_NOT_CONFIGURED"
+    base_url = str(row["base_url"])
+    try:
+        _require_allowed_destination(base_url)
+    except contracts.ContractError:
+        return "PROVIDER_DESTINATION_DENIED"
+    if not _resolved_destination_allowed(base_url):
+        return "PROVIDER_DESTINATION_DENIED"
+    nonce = _as_bytes(row["key_nonce"])
+    ciphertext = _as_bytes(row["key_ciphertext"])
+    if nonce is None or ciphertext is None:
+        return "PROVIDER_AUTH"
+    try:
+        api_key = _open_key(nonce, ciphertext)
+    except ProviderKeyError:
+        return "PROVIDER_AUTH"
+    if not api_key:
+        return "PROVIDER_AUTH"
+    return base_url, str(row["model"]), api_key
+
+
 def _open_key(nonce: bytes, ciphertext: bytes) -> str:
     key = _deployment_key()
     try:

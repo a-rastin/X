@@ -35,11 +35,11 @@ the process runs); `/ready` is readiness (200 only with a reachable,
 schema-compatible database; 503 `MAINTENANCE` while a restore holds the
 maintenance lock, S56).
 
-Missing provider or content bundle: with no `X_INSIGHT_PROVIDER_ENDPOINT` /
-`X_INSIGHT_PROVIDER_MODEL`, generation jobs fail closed with
-`PROVIDER_NOT_CONFIGURED` (no retries consumed, draft retained) while
-patient charts, search, and every admin surface stay usable. No test/stub
-provider is ever enabled in production.
+Missing provider or content bundle: with no saved provider revision and no
+`X_INSIGHT_PROVIDER_ENDPOINT` / `X_INSIGHT_PROVIDER_MODEL`, generation jobs
+fail closed with `PROVIDER_NOT_CONFIGURED` (no retries consumed, draft
+retained) while patient charts, search, and every admin surface stay usable.
+No test/stub provider is ever enabled in production.
 
 HTTPS outside localhost: set `SITE_ADDRESS=https://<public-host>`; Caddy
 terminates TLS with automatic certificates and redirects `:80` to https.
@@ -81,16 +81,17 @@ while naming the app tag. The tag's inspected id after the build is
   retain it separately for recovery. The Provider page accepts provider settings
   and API keys, not the deployment encryption key. Ordinary charts and
   administration do not require provider generation.
-- Provider settings: `X_INSIGHT_PROVIDER_ENDPOINT` (full POST URL of an
-  OpenAI-compatible endpoint), `X_INSIGHT_PROVIDER_MODEL`, optional
-  `X_INSIGHT_PROVIDER_CAPABILITY` (`schema`|`json`). S42's masked/encrypted
-  administration is implemented, but the worker still does not load saved
-  endpoint/model/credentials. Production Compose also does not pass
-  `X_INSIGHT_PROVIDER_DATA_KEY` or `X_INSIGHT_PROVIDER_ALLOWED_HOSTS` to app/worker.
-  Adding them only to the environment file does not enable them in containers.
-  Leave generation unconfigured unless the environment-based adapter and endpoint
-  are deliberately compatible; do not treat a successful settings test as runtime
-  integration. The saved-settings allowed-host checks do not restrict that adapter.
+- Provider settings: save the full OpenAI-compatible POST URL, model, and API
+  key on the Provider page. Generation uses the revision pinned on the job,
+  decrypts the key with `X_INSIGHT_PROVIDER_DATA_KEY`, and sends it as a bearer
+  token. The host must be in `X_INSIGHT_PROVIDER_ALLOWED_HOSTS`. Production
+  Compose passes both variables to the app and the worker. Replacing or
+  clearing the key cancels active generation jobs; local recalculation is
+  independent. `X_INSIGHT_PROVIDER_ENDPOINT` / `MODEL` / optional `CAPABILITY`
+  (`schema`|`json`) are the keyless fallback for jobs queued before any saved
+  revision. Leave generation unconfigured unless a saved provider, or that
+  keyless fallback, is deliberately compatible. A capability test is not by
+  itself a successful generation.
 - Recovery state (`prod_recovery` volume, shared by app AND worker):
   backup staging, restore staging, the S56 maintenance lock, and the
   external operator recovery log.

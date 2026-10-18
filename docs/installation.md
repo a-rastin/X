@@ -276,15 +276,16 @@ provider paths have different behavior:
 
 | Path | Current behavior |
 | --- | --- |
-| Generation worker | Reads `X_INSIGHT_PROVIDER_ENDPOINT`, `X_INSIGHT_PROVIDER_MODEL`, and `X_INSIGHT_PROVIDER_CAPABILITY` when the process starts |
-| Administrator Provider page | Saves encrypted credentials, displays masked revisions, and performs a capability check |
-| Saved-settings integration | The worker does not load saved endpoint/model/credentials; passing the settings check does not configure generation |
-| Production environment wiring | `compose.prod.yaml` currently passes neither the provider data key nor the allowed-host list to the API/worker |
+| Generation worker | Uses the settings revision pinned on the job: saved endpoint, model, and decrypted bearer. Reloads that revision on each claim |
+| Administrator Provider page | Saves encrypted credentials, displays masked revisions, and performs a capability check. Replace or clear cancels active generation jobs |
+| Keyless fallback | Jobs queued before any saved revision still read `X_INSIGHT_PROVIDER_ENDPOINT`, `X_INSIGHT_PROVIDER_MODEL`, and `X_INSIGHT_PROVIDER_CAPABILITY`. That path sends no bearer |
+| Production environment wiring | `compose.prod.yaml` passes `X_INSIGHT_PROVIDER_DATA_KEY` and `X_INSIGHT_PROVIDER_ALLOWED_HOSTS` to the API and the worker |
 
-For the worker, the endpoint is the full provider POST URL and capability is
-`schema` or `json` (default `schema`). The current environment-based adapter does
-not load the stored bearer credential. Do not assume an arbitrary provider URL
-or a saved API key is sufficient for a working generation path.
+The saved endpoint is the full provider POST URL. Capability is `schema` or
+`json` (default `schema`). If the endpoint rejects `response_format`, generation
+retries that one request without it and still validates the JSON. A saved key
+is not enough: the deployment key must decrypt it, and the host must stay on
+the allowlist at call time. Local recalculation never calls the provider.
 
 For local testing of the administrator settings surface, put the following in
 your private `.env`, then reload it and restart the API:
@@ -296,16 +297,14 @@ your private `.env`, then reload it and restart the API:
 
 Capability checks also resolve DNS. Special-use addresses require the resolved
 IP to be explicitly allowed, except `198.18.0.0/15` (fake-IP proxy range).
-Redirects are not followed. The allowed-host
-checks on saved settings do not restrict the environment-configured worker path.
-Choose destinations under operator control; capability checks send an outbound
-request.
+Redirects are not followed. The same allowlist restricts generation calls that use a saved revision.
+Choose destinations under operator control; capability checks and generation
+send an outbound request.
 
 Keep the same deployment key available for encrypted-credential recovery; entering
-the provider API key in the browser does not supply this encryption key. Adding
-the two variables to the server environment file alone does not pass them into
-unmodified production containers. Follow [S42's remaining
-work](../project-documents/dev/progress/s42.md#remaining) for that boundary.
+the provider API key in the browser does not supply this encryption key. Production
+Compose passes both variables into the API and the worker from the external
+environment file. A container built before that wiring still needs a recreate.
 
 The approved [11 question packages](../content/questions/review-confirmation.s39-v1.json)
 do not by themselves release workflow bundles, history/instrument dependencies,

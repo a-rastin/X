@@ -12,8 +12,10 @@
 #
 # The local dev loop is untouched (compose.yaml: db + db-test only, app/web
 # via `make dev`). Production never enables dev overrides or the S44 test
-# provider stub: with no X_INSIGHT_PROVIDER_ENDPOINT/MODEL the worker fails
-# generation closed (PROVIDER_NOT_CONFIGURED) while charts/admin stay usable.
+# provider stub. Generation uses the saved provider revision (endpoint, model,
+# decrypted bearer). Env endpoint/model is only the keyless fallback. With
+# neither, the worker fails generation closed (PROVIDER_NOT_CONFIGURED) while
+# charts/admin stay usable.
 #
 # Order: make prod-build && make prod-up && make prod-migrate
 # (explicit migration step; never destructive reseeding). Admin seeding is
@@ -57,6 +59,8 @@ services:
       X_INSIGHT_PROVIDER_ENDPOINT: ${X_INSIGHT_PROVIDER_ENDPOINT:-}
       X_INSIGHT_PROVIDER_MODEL: ${X_INSIGHT_PROVIDER_MODEL:-}
       X_INSIGHT_PROVIDER_CAPABILITY: ${X_INSIGHT_PROVIDER_CAPABILITY:-schema}
+      X_INSIGHT_PROVIDER_DATA_KEY: ${X_INSIGHT_PROVIDER_DATA_KEY:-}
+      X_INSIGHT_PROVIDER_ALLOWED_HOSTS: ${X_INSIGHT_PROVIDER_ALLOWED_HOSTS:-}
     volumes:
       - prod_recovery:/var/lib/x-insight/recovery
     healthcheck:
@@ -83,6 +87,8 @@ services:
       X_INSIGHT_PROVIDER_ENDPOINT: ${X_INSIGHT_PROVIDER_ENDPOINT:-}
       X_INSIGHT_PROVIDER_MODEL: ${X_INSIGHT_PROVIDER_MODEL:-}
       X_INSIGHT_PROVIDER_CAPABILITY: ${X_INSIGHT_PROVIDER_CAPABILITY:-schema}
+      X_INSIGHT_PROVIDER_DATA_KEY: ${X_INSIGHT_PROVIDER_DATA_KEY:-}
+      X_INSIGHT_PROVIDER_ALLOWED_HOSTS: ${X_INSIGHT_PROVIDER_ALLOWED_HOSTS:-}
       X_INSIGHT_WORKER_POLL_SECONDS: ${X_INSIGHT_WORKER_POLL_SECONDS:-5}
     volumes:
       - prod_recovery:/var/lib/x-insight/recovery
