@@ -469,46 +469,10 @@ def _capability_outcome(base_url: str, model: str, nonce: Any, ciphertext: Any) 
         api_key = _open_key(bytes(nonce), bytes(ciphertext))
     except ProviderKeyError:
         return CAPABILITY_FAILED, "Provider API key could not be read."
-    payload = {
-        "purpose": "capability",
-        "model": model,
-        "tools": [
-            {
-                "type": "function",
-                "function": {
-                    "name": "ping",
-                    "parameters": {"type": "object", "properties": {}},
-                },
-            }
-        ],
-    }
-    try:
-        from x_insight.reasoning.provider import PROVIDER_TIMEOUT_SECONDS, post_json
+    from x_insight.reasoning.provider import probe_capability
 
-        response = post_json(
-            base_url,
-            payload,
-            {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
-            PROVIDER_TIMEOUT_SECONDS,
-        )
-    except Exception:
-        return CAPABILITY_FAILED, "Provider capability check could not connect."
-    status = int(getattr(response, "status_code", 0) or 0)
-    if 300 <= status < 400:
-        return CAPABILITY_FAILED, "Provider returned a redirect."
-    if status == 200:
-        try:
-            body = response.json()
-        except Exception:
-            body = None
-        if (
-            isinstance(body, dict)
-            and body.get("ok") is True
-            and body.get("supports_tools") is True
-            and body.get("supports_json") is True
-        ):
-            return CAPABILITY_VERIFIED, "Provider supports tools and JSON."
-    return CAPABILITY_FAILED, "Provider capability check did not succeed."
+    ok, diagnostic = probe_capability(base_url, model, api_key)
+    return (CAPABILITY_VERIFIED if ok else CAPABILITY_FAILED), diagnostic
 
 
 def record_capability_test(

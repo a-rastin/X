@@ -208,8 +208,7 @@ def _decrypt_revision(engine, revision: int) -> bytes:
     with engine.connect() as connection:
         row = connection.execute(
             text(
-                "SELECT key_nonce, key_ciphertext FROM provider_settings "
-                "WHERE revision = :revision"
+                "SELECT key_nonce, key_ciphertext FROM provider_settings WHERE revision = :revision"
             ),
             {"revision": revision},
         ).one()
@@ -385,7 +384,7 @@ def _assert_no_probe_leak(response) -> None:
 @contextmanager
 def _capability_probe():
     """Localhost probe. Server A accepts one capability POST; B counts redirects."""
-    counts = {"chat_ok": 0, "b_hits": 0}
+    counts = {"chat_ok": 0, "b_hits": 0, "steps": {}, "captured": []}
     lock = threading.Lock()
     ports = {"b": 0}
 
@@ -424,28 +423,98 @@ def _capability_probe():
                 self.end_headers()
                 self.wfile.write(body)
                 return
-            if path != "/v1/chat/completions":
-                self._json(404, {"ok": False})
-                return
             try:
                 payload = json.loads(raw.decode("utf-8"))
             except (UnicodeDecodeError, json.JSONDecodeError):
                 payload = None
+            if path == "/echo":
+                self._json(200, {"ok": True, "supports_tools": True, "supports_json": True})
+                return
+            if path == "/auth":
+                self._json(401, {"error": {"message": SENTINEL_KEY, "type": "auth"}})
+                return
+            if path == "/model":
+                self._json(404, {"error": {"message": SENTINEL_KEY, "code": "model_not_found"}})
+                return
+            if path == "/tools":
+                self._json(400, {"error": {"message": SENTINEL_KEY, "param": "tools"}})
+                return
+            if path == "/format" and isinstance(payload, dict) and "response_format" in payload:
+                self._json(400, {"error": {"message": SENTINEL_KEY, "param": "response_format"}})
+                return
+            if path not in ("/v1/chat/completions", "/json", "/format"):
+                self._json(404, {"error": {"message": SENTINEL_KEY, "code": "model_not_found"}})
+                return
             tools = payload.get("tools") if isinstance(payload, dict) else None
+            messages = payload.get("messages") if isinstance(payload, dict) else None
             accepted = (
                 isinstance(payload, dict)
                 and self.headers.get("Authorization") == f"Bearer {SENTINEL_KEY}"
                 and payload.get("model") == MODEL
-                and payload.get("purpose") == "capability"
+                and "purpose" not in payload
                 and isinstance(tools, list)
                 and len(tools) > 0
+                and isinstance(messages, list)
+                and len(messages) > 0
             )
             if not accepted:
-                self._json(400, {"ok": False})
+                self._json(400, {"error": {"message": SENTINEL_KEY, "param": "tools"}})
+                return
+            with lock:
+                counts["captured"].append(payload)
+                step = counts["steps"].get(path, 0)
+                counts["steps"][path] = step + 1
+            has_tool_result = any(
+                isinstance(item, dict) and item.get("role") == "tool" for item in messages
+            )
+            if step == 0:
+                if has_tool_result:
+                    self._json(400, {"error": {"param": "tools"}})
+                    return
+                self._json(
+                    200,
+                    {
+                        "choices": [
+                            {
+                                "message": {
+                                    "role": "assistant",
+                                    "tool_calls": [
+                                        {
+                                            "id": "call_ping",
+                                            "type": "function",
+                                            "function": {"name": "ping", "arguments": "{}"},
+                                        }
+                                    ],
+                                }
+                            }
+                        ]
+                    },
+                )
+                return
+            if not has_tool_result:
+                self._json(400, {"error": {"param": "tools"}})
                 return
             with lock:
                 counts["chat_ok"] += 1
-            self._json(200, {"ok": True, "supports_tools": True, "supports_json": True})
+            if path == "/json":
+                self._json(
+                    200,
+                    {
+                        "choices": [
+                            {
+                                "message": {
+                                    "role": "assistant",
+                                    "content": f"not-json {SENTINEL_KEY}",
+                                }
+                            }
+                        ]
+                    },
+                )
+                return
+            self._json(
+                200,
+                {"choices": [{"message": {"role": "assistant", "content": '{"ready":true}'}}]},
+            )
 
         def _json(self, status: int, payload: dict) -> None:
             body = json.dumps(payload).encode()
@@ -509,6 +578,20 @@ def test_capability_check_uses_the_real_client_and_save_is_not_verification(clea
         assert isinstance(checked_body.get("diagnostic"), str) and checked_body["diagnostic"]
         _assert_no_probe_leak(checked)
         assert counts["chat_ok"] >= 1
+        assert counts["captured"], "capability check did not POST a chat body"
+        posted = json.dumps(counts["captured"])
+        assert "purpose" not in posted
+        assert "projection" not in posted
+        assert "get_question_patient_inputs" not in posted
+        assert SENTINEL_KEY not in posted
+        first = counts["captured"][0]
+        assert first.get("model") == MODEL
+        assert isinstance(first.get("messages"), list) and first["messages"]
+        assert isinstance(first.get("tools"), list) and first["tools"]
+        assert any(
+            isinstance(item, dict) and item.get("role") == "tool"
+            for item in counts["captured"][-1].get("messages", [])
+        )
 
         verified = client.get(SETTINGS_PATH)
         assert verified.status_code == 200, verified.text
@@ -538,7 +621,7 @@ def test_capability_check_uses_the_real_client_and_save_is_not_verification(clea
         assert failed.status_code == 200, failed.text
         failed_body = failed.json()
         assert failed_body.get("capability") == "failed", failed_body
-        assert isinstance(failed_body.get("diagnostic"), str) and failed_body["diagnostic"]
+        assert failed_body.get("diagnostic") == "Provider returned a redirect."
         _assert_no_probe_leak(failed)
         assert counts["b_hits"] == 0
 
@@ -560,8 +643,58 @@ def test_capability_check_uses_the_real_client_and_save_is_not_verification(clea
         )
         assert blocked.status_code == 200, blocked.text
         assert blocked.json().get("capability") == "failed", blocked.json()
+        assert blocked.json().get("diagnostic") == "Resolved address is not an allowlisted IP."
         _assert_no_probe_leak(blocked)
         assert counts["chat_ok"] == chat_before
+
+
+def test_capability_diagnostics_stay_distinct_and_echo_is_not_verified(clean_all):
+    with _capability_probe() as (port, _counts):
+        client, csrf = _login()
+
+        def check(path: str) -> dict:
+            saved = _put(
+                client,
+                csrf,
+                {
+                    "api_key": SENTINEL_KEY,
+                    "base_url": f"http://127.0.0.1:{port}{path}",
+                    "model": MODEL,
+                },
+            )
+            assert saved.status_code == 200, saved.text
+            checked = client.post(
+                "/api/v1/api-settings/test",
+                json={},
+                headers={"X-CSRF-Token": csrf},
+            )
+            assert checked.status_code == 200, checked.text
+            _assert_no_probe_leak(checked)
+            return checked.json()
+
+        echo = check("/echo")
+        assert echo["capability"] == "failed", echo
+        assert echo["diagnostic"] == "Provider does not support tools."
+
+        auth = check("/auth")
+        assert auth["capability"] == "failed", auth
+        assert auth["diagnostic"] == "Provider rejected the API key."
+
+        missing = check("/model")
+        assert missing["capability"] == "failed", missing
+        assert missing["diagnostic"] == "Provider model was not found."
+
+        tools = check("/tools")
+        assert tools["capability"] == "failed", tools
+        assert tools["diagnostic"] == "Provider does not support tools."
+
+        not_json = check("/json")
+        assert not_json["capability"] == "failed", not_json
+        assert not_json["diagnostic"] == "Provider does not support JSON responses."
+
+        retried = check("/format")
+        assert retried["capability"] == "verified", retried
+        assert retried["diagnostic"] == "Provider supports tools and JSON."
 
 
 def test_prior_revision_stays_readable_after_clear(clean_all):

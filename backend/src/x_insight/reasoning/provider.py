@@ -33,11 +33,13 @@ contract) and S41 (real private MCP transport):
 
 Deferred (NOT implemented here):
 
-- S42 persistence, encryption, allowlists, and the capability check live
-  in ``reasoning/provider_config.py``. This module still accepts an
-  injected :class:`ProviderConfig` and does not load saved rows. The
-  generation worker still uses the environment endpoint. ``post_json`` is
-  the one HTTP POST and does not follow redirects.
+- S42 persistence, encryption, and allowlists live in
+  ``reasoning/provider_config.py``. The capability exchange is
+  ``probe_capability`` here, on the same chat payload and ``post_json``
+  path as estimation. This module still accepts an injected
+  :class:`ProviderConfig` and does not load saved rows. The generation
+  worker still uses the environment endpoint. ``post_json`` is the one
+  HTTP POST and does not follow redirects.
 - S45 CPT validation/inference/rendering/OriginalBaseline, S46 ordered
   workflows and proposal assembly, S47 retry budgets/backoff/fencing
   re-exercise and S48b local-calculation proof are deferred. Success here
@@ -257,6 +259,26 @@ def _response_schema(nodes: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
+def chat_completion_payload(
+    *,
+    model: str,
+    messages: list[dict[str, Any]],
+    tools: list[dict[str, Any]],
+    tool_choice: Any,
+    response_format: dict[str, Any] | None,
+) -> dict[str, Any]:
+    """OpenAI chat/completions body shared by estimation and the capability probe."""
+    payload: dict[str, Any] = {
+        "model": model,
+        "messages": messages,
+        "tools": tools,
+        "tool_choice": tool_choice,
+    }
+    if response_format is not None:
+        payload["response_format"] = response_format
+    return payload
+
+
 def build_outbound_payload(config: ProviderConfig, request: ProviderRequest) -> dict[str, Any]:
     """Build the pinned outbound payload (no template/notes/PII/secrets).
 
@@ -288,13 +310,24 @@ def build_outbound_payload(config: ProviderConfig, request: ProviderRequest) -> 
         separators=(",", ":"),
         ensure_ascii=False,
     )
-    payload: dict[str, Any] = {
-        "model": config.model,
-        "messages": [
+    if config.capability == "schema":
+        response_format: dict[str, Any] = {
+            "type": "json_schema",
+            "json_schema": {
+                "name": "cpt_tables",
+                "strict": True,
+                "schema": _response_schema(nodes),
+            },
+        }
+    else:
+        response_format = {"type": "json_object"}
+    return chat_completion_payload(
+        model=config.model,
+        messages=[
             {"role": "system", "content": request.prompt_text},
             {"role": "user", "content": user_content},
         ],
-        "tools": [
+        tools=[
             {
                 "type": "function",
                 "function": {
@@ -306,20 +339,9 @@ def build_outbound_payload(config: ProviderConfig, request: ProviderRequest) -> 
                 },
             }
         ],
-        "tool_choice": "auto",
-    }
-    if config.capability == "schema":
-        payload["response_format"] = {
-            "type": "json_schema",
-            "json_schema": {
-                "name": "cpt_tables",
-                "strict": True,
-                "schema": _response_schema(nodes),
-            },
-        }
-    else:
-        payload["response_format"] = {"type": "json_object"}
-    return payload
+        tool_choice="auto",
+        response_format=response_format,
+    )
 
 
 def _payload_bytes(payload: dict[str, Any]) -> bytes:
@@ -428,6 +450,194 @@ def post_json(
         timeout=timeout,
         follow_redirects=False,
     )
+
+
+CAPABILITY_SUPPORTS = "Provider supports tools and JSON."
+CAPABILITY_CONNECT = "Provider capability check could not connect."
+CAPABILITY_REDIRECT = "Provider returned a redirect."
+CAPABILITY_AUTH = "Provider rejected the API key."
+CAPABILITY_MODEL = "Provider model was not found."
+CAPABILITY_TOOLS = "Provider does not support tools."
+CAPABILITY_JSON = "Provider does not support JSON responses."
+CAPABILITY_INCOMPLETE = "Provider capability check did not succeed."
+
+_CAPABILITY_TOOL_NAME = "ping"
+_RETRY_FORMAT = "retry-format"
+_MODEL_TOKENS = frozenset({"model", "model_not_found"})
+_TOOL_TOKENS = frozenset({"tools", "tool_choice", "functions", "function"})
+_FORMAT_TOKENS = frozenset({"response_format"})
+_CAPABILITY_MESSAGES: tuple[dict[str, str], ...] = (
+    {"role": "system", "content": "Return one JSON object and no prose."},
+    {"role": "user", "content": 'Call ping, then return {"ready":true}.'},
+)
+_CAPABILITY_TOOL: dict[str, Any] = {
+    "type": "function",
+    "function": {
+        "name": _CAPABILITY_TOOL_NAME,
+        "description": "Synthetic capability probe. Takes no arguments.",
+        "parameters": {"type": "object", "properties": {}, "additionalProperties": False},
+    },
+}
+
+
+def _error_tokens(body: Any) -> frozenset[str]:
+    """Structured error fields only. Never the message, which may echo the key."""
+    if not isinstance(body, dict):
+        return frozenset()
+    error = body.get("error")
+    if not isinstance(error, dict):
+        return frozenset()
+    found: set[str] = set()
+    for key in ("param", "code", "type"):
+        value = error.get(key)
+        if isinstance(value, str) and value.isascii() and 0 < len(value) <= 64:
+            found.add(value)
+    return frozenset(found)
+
+
+def _json_object_content(content: Any) -> bool:
+    if isinstance(content, dict):
+        return True
+    if not isinstance(content, str) or not content.strip():
+        return False
+    if len(content.encode("utf-8")) > MAX_PROVIDER_BYTES:
+        return False
+    try:
+        parsed = json.loads(content)
+    except Exception:
+        return False
+    return isinstance(parsed, dict)
+
+
+def _ping_call_id(message: dict[str, Any]) -> str | None:
+    calls = message.get("tool_calls")
+    if not isinstance(calls, list) or len(calls) != 1 or not isinstance(calls[0], dict):
+        return None
+    call = calls[0]
+    call_id = call.get("id")
+    function = call.get("function")
+    if not isinstance(call_id, str) or not call_id or len(call_id) > 128:
+        return None
+    if not isinstance(function, dict) or function.get("name") != _CAPABILITY_TOOL_NAME:
+        return None
+    args = _parse_tool_arguments(function.get("arguments"))
+    if args != {}:
+        return None
+    return call_id
+
+
+def _capability_payload(
+    model: str,
+    messages: list[dict[str, Any]],
+    tool_choice: Any,
+    use_format: bool,
+) -> dict[str, Any]:
+    return chat_completion_payload(
+        model=model,
+        messages=messages,
+        tools=[_CAPABILITY_TOOL],
+        tool_choice=tool_choice,
+        response_format={"type": "json_object"} if use_format else None,
+    )
+
+
+def _read_body(response: Any) -> Any:
+    raw = getattr(response, "content", b"")
+    if isinstance(raw, (bytes, bytearray)) and len(raw) > MAX_PROVIDER_BYTES:
+        return None
+    try:
+        return response.json()
+    except Exception:
+        return None
+
+
+def _classify_http(response: Any, *, allow_format_retry: bool) -> tuple[str, Any]:
+    """Return ``("ok", body)``, ``("retry-format", None)``, or a fixed diagnostic."""
+    status = int(getattr(response, "status_code", 0) or 0)
+    if 300 <= status < 400:
+        return CAPABILITY_REDIRECT, None
+    if status in (401, 403):
+        return CAPABILITY_AUTH, None
+    if status in (404, 422):
+        return CAPABILITY_MODEL, None
+    body = _read_body(response)
+    if status == 400:
+        tokens = _error_tokens(body)
+        if tokens & _MODEL_TOKENS:
+            return CAPABILITY_MODEL, None
+        if tokens & _TOOL_TOKENS:
+            return CAPABILITY_TOOLS, None
+        if allow_format_retry and tokens & _FORMAT_TOKENS:
+            return _RETRY_FORMAT, None
+        if tokens & _FORMAT_TOKENS:
+            return CAPABILITY_JSON, None
+        return CAPABILITY_INCOMPLETE, None
+    if status != 200 or body is None:
+        return CAPABILITY_INCOMPLETE, None
+    return "ok", body
+
+
+def probe_capability(url: str, model: str, api_key: str) -> tuple[bool, str]:
+    """Synthetic chat/tool exchange. No patient payload. Fixed diagnostics only.
+
+    One forced ``ping`` call, then one JSON object. ``json_schema`` is not
+    required. A ``response_format`` rejection is retried once without it.
+    """
+    headers = {
+        "Authorization": f"Bearer {api_key}",
+        "Content-Type": "application/json",
+    }
+    use_format = True
+
+    def post(payload: dict[str, Any]) -> tuple[str, Any]:
+        try:
+            response = post_json(url, payload, headers, PROVIDER_TIMEOUT_SECONDS)
+        except Exception:
+            return CAPABILITY_CONNECT, None
+        retry = use_format and "response_format" in payload
+        return _classify_http(response, allow_format_retry=retry)
+
+    def post_with_format_fallback(
+        messages: list[dict[str, Any]], tool_choice: Any
+    ) -> tuple[str, Any]:
+        nonlocal use_format
+        kind, body = post(_capability_payload(model, messages, tool_choice, use_format))
+        if kind != _RETRY_FORMAT:
+            return kind, body
+        use_format = False
+        return post(_capability_payload(model, messages, tool_choice, False))
+
+    messages: list[dict[str, Any]] = [dict(item) for item in _CAPABILITY_MESSAGES]
+    kind, body = post_with_format_fallback(
+        messages, {"type": "function", "function": {"name": _CAPABILITY_TOOL_NAME}}
+    )
+    if kind != "ok":
+        return False, kind
+    message, _reason = BoundedProviderAdapter._envelope_message(body)
+    call_id = _ping_call_id(message) if isinstance(message, dict) else None
+    if call_id is None:
+        return False, CAPABILITY_TOOLS
+    messages.append(
+        {
+            "role": "assistant",
+            "content": None,
+            "tool_calls": [
+                {
+                    "id": call_id,
+                    "type": "function",
+                    "function": {"name": _CAPABILITY_TOOL_NAME, "arguments": "{}"},
+                }
+            ],
+        }
+    )
+    messages.append({"role": "tool", "tool_call_id": call_id, "content": "{}"})
+    kind, body = post_with_format_fallback(messages, "none")
+    if kind != "ok":
+        return False, kind
+    message, _reason = BoundedProviderAdapter._envelope_message(body)
+    if not isinstance(message, dict) or not _json_object_content(message.get("content")):
+        return False, CAPABILITY_JSON
+    return True, CAPABILITY_SUPPORTS
 
 
 class BoundedProviderAdapter:

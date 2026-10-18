@@ -81,9 +81,11 @@ async function acquireProviderLock(): Promise<void> {
   }
 }
 
-/** Local capability endpoint. Drains the POST and answers 200. Does not log
- * the Authorization header or the body. */
+/** Local chat/tool endpoint. Drains the POST and does not log the
+ * Authorization header or the body. First POST is a ping tool call; the
+ * next is a JSON object. */
 function startProbe(): Promise<{ server: Server; port: number }> {
+  let step = 0;
   const server = createServer((req, res) => {
     req.on("data", () => undefined);
     req.on("end", () => {
@@ -92,11 +94,30 @@ function startProbe(): Promise<{ server: Server; port: number }> {
         res.end();
         return;
       }
-      const body = JSON.stringify({
-        ok: true,
-        supports_tools: true,
-        supports_json: true,
-      });
+      step += 1;
+      const body =
+        step === 1
+          ? JSON.stringify({
+              choices: [
+                {
+                  message: {
+                    role: "assistant",
+                    tool_calls: [
+                      {
+                        id: "call_ping",
+                        type: "function",
+                        function: { name: "ping", arguments: "{}" },
+                      },
+                    ],
+                  },
+                },
+              ],
+            })
+          : JSON.stringify({
+              choices: [
+                { message: { role: "assistant", content: '{"ready":true}' } },
+              ],
+            });
       res.writeHead(200, {
         "Content-Type": "application/json",
         "Content-Length": Buffer.byteLength(body),
