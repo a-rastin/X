@@ -80,6 +80,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       ingestSession(result.user, result.research_warning);
     } catch (error) {
       if (error instanceof ApiError && error.status === 401) {
+        setCsrfToken(null);
         setUser(null);
         setResearchWarning(null);
         setStatus("anonymous");

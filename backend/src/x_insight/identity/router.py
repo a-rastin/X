@@ -268,15 +268,21 @@ def logout(request: Request, session: Session = Depends(get_session)) -> JSONRes
 @router.get("/me")
 def me(request: Request, session: Session = Depends(get_session)) -> JSONResponse:
     request_id = get_request_id(request)
-    user = _current_user(request, session)
+    raw_token = _raw_session_token(request)
+    user = service.get_session_user(session, raw_token)
     if user is None:
         return error_response(401, "UNAUTHENTICATED", "Authentication required.", request_id)
+    assert raw_token is not None
+    session_row = service.get_session_row(session, raw_token)
+    assert session_row is not None
     return JSONResponse(
         status_code=200,
         content={
             "user": _public_user(user),
+            "csrf_token": str(session_row["csrf_token"]),
             "research_warning": _warning_for(str(user["role"])),
         },
+        headers={"Cache-Control": "private, no-store"},
     )
 
 

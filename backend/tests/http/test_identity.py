@@ -187,6 +187,16 @@ def test_login_and_me_flow(clean_identity, monkeypatch) -> None:
     me = client.get("/api/v1/me")
     assert me.status_code == 200
     assert me.json()["user"]["username"] == "admin"
+    assert me.json()["csrf_token"] == body["csrf_token"]
+    assert me.headers["Cache-Control"] == "private, no-store"
+    # A freshly opened tab can obtain the token bound to its shared cookie
+    # and use it without asking the user to sign in again.
+    updated = client.patch(
+        "/api/v1/me/preferences",
+        json={"theme": "dark"},
+        headers=_auth_headers(me.json()["csrf_token"]),
+    )
+    assert updated.status_code == 200
 
 
 def test_login_generic_errors_mask_details(clean_identity, monkeypatch) -> None:

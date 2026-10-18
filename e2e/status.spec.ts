@@ -209,10 +209,10 @@ test("S58 §§3-4 status renders safe metrics with no secrets or record text", a
   });
   await expect(page.getByTestId("status-alerts")).toBeVisible();
 
-  // The page's own session token (sessionStorage backup of the in-memory
-  // CSRF token): must never appear in rendered body text.
+  // The page's own session token (origin-shared storage aligned with the
+  // shared session cookie): must never appear in rendered body text.
   const ownToken = await page.evaluate(
-    () => sessionStorage.getItem("xi_csrf_token") ?? "",
+    () => localStorage.getItem("xi_csrf_token") ?? "",
   );
   expect(ownToken, "test needs a live session token").not.toBe("");
 

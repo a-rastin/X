@@ -6,7 +6,13 @@ older next-session and status statements are historical, not current instruction
 The latest recorded checkpoint is [S42](s42.md) (2026-10-17): provider
 settings are implemented (encryption, masked admin API, capability check,
 admin page). Its [2026-10-18 UI follow-up](s42.md#follow-up-2026-10-18--disable-testing-before-the-first-save)
-disables capability testing until a settings revision has been saved. Schema
+disables capability testing until a settings revision has been saved.
+Its [CSRF diagnosis](s42.md#follow-up-2026-10-18--csrf-failure-diagnosis)
+records the tab-local token/shared-cookie mismatch and links the
+[resolved issue](../issue-csrf-session-desynchronization.md). The
+[CSRF follow-up](s42.md#follow-up-2026-10-18--synchronize-csrf-with-the-shared-session)
+synchronizes the token during startup and across tabs without weakening the
+backend gate. Schema
 head and the fresh-backup expectation are `0021`, with
 `provider_settings` in a 32-table inventory. The [S62](s62.md) release gate
 otherwise stays open: not a release, not clinical validation, not high

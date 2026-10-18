@@ -203,6 +203,45 @@ test("administrator creates a physician through the browser", async ({
   ).toBeVisible();
 });
 
+test("tabs keep mutation CSRF aligned with the shared session cookie", async ({
+  page,
+  context,
+}) => {
+  const otherTab = await context.newPage();
+  await otherTab.goto("/");
+  await expect(otherTab.getByRole("button", { name: "Sign in" })).toBeVisible();
+
+  await loginAs(page, "admin", "admin", "admin");
+  await expect(
+    page.getByRole("heading", { name: "Administrator dashboard" }),
+  ).toBeVisible();
+  const firstToken = await page.evaluate(
+    () => localStorage.getItem("xi_csrf_token") ?? "",
+  );
+  expect(firstToken).not.toBe("");
+
+  // The second login replaces the cookie shared by both tabs. Its token must
+  // become the token used by the first tab's next mutation as well.
+  await otherTab.getByLabel("Role").selectOption("admin");
+  await otherTab.getByLabel("Username").fill("admin");
+  await otherTab.getByLabel("Password").fill("admin");
+  await otherTab.getByRole("button", { name: "Sign in" }).click();
+  await expect(
+    otherTab.getByRole("heading", { name: "Administrator dashboard" }),
+  ).toBeVisible();
+  await expect
+    .poll(() => page.evaluate(() => localStorage.getItem("xi_csrf_token") ?? ""))
+    .not.toBe(firstToken);
+
+  const username = uniqueName("e2ecsrftab");
+  await page.getByRole("link", { name: "Physicians" }).click();
+  const form = page.getByRole("form", { name: "Create physician" });
+  await form.getByLabel("Username").fill(username);
+  await form.getByLabel("Password").fill("createdpass1");
+  await form.getByRole("button", { name: "Create physician" }).click();
+  await expect(form.getByText("Physician created.")).toBeVisible();
+});
+
 test("administrator deactivates and reactivates a physician", async ({
   page,
   request,

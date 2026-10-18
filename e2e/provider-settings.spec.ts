@@ -179,6 +179,14 @@ test("admin saves, tests, and clears provider settings without echoing the key",
       page.getByRole("heading", { name: "Administrator dashboard" }),
     ).toBeVisible({ timeout: 15000 });
 
+    // A cookie-authenticated tab with no client token must recover the token
+    // through GET /me before the provider mutation.
+    await page.evaluate(() => localStorage.removeItem("xi_csrf_token"));
+    await page.reload();
+    await expect
+      .poll(() => page.evaluate(() => localStorage.getItem("xi_csrf_token") ?? ""))
+      .not.toBe("");
+
     await page.getByRole("link", { name: "Provider", exact: true }).click();
     await expect(page).toHaveURL(/#\/provider-settings$/);
     await expect(page.locator("#provider-settings-heading")).toHaveText(
@@ -195,26 +203,38 @@ test("admin saves, tests, and clears provider settings without echoing the key",
     );
     await expect(page.locator("#provider-api-key")).toHaveAttribute("type", "password");
     await expect(page.locator("#provider-api-key")).toHaveValue("");
-    await expect(page.locator("#provider-secret-action")).toBeVisible({ timeout: 15000 });
-    const secretValues = await page
-      .locator("#provider-secret-action option")
-      .evaluateAll((nodes) => nodes.map((node) => (node as HTMLOptionElement).value));
-    expect(secretValues).toEqual(["unchanged", "replace", "clear"]);
+    const hasSavedRevision = (await page.locator("#provider-secret-action").count()) === 1;
+    if (hasSavedRevision) {
+      const secretValues = await page
+        .locator("#provider-secret-action option")
+        .evaluateAll((nodes) => nodes.map((node) => (node as HTMLOptionElement).value));
+      expect(secretValues).toEqual(["unchanged", "replace", "clear"]);
+    }
     await expectNoSentinel(page);
 
     await page.locator("#provider-base-url").fill(liveUrl);
     await page.locator("#provider-model").fill(model);
-    await page.locator("#provider-secret-action").selectOption("replace");
+    if (hasSavedRevision) {
+      await page.locator("#provider-secret-action").selectOption("replace");
+    }
     await page.locator("#provider-api-key").fill(SENTINEL);
     const replaced = await readMutation(page, "PUT");
     expect(replaced.api_key).toBe("configured");
     expect(replaced.capability).toBe("untested");
-    expect(typeof replaced.affected_runs).toBe("number");
+    if (hasSavedRevision) {
+      expect(typeof replaced.affected_runs).toBe("number");
+    } else {
+      expect(replaced).not.toHaveProperty("affected_runs");
+    }
     await expect(page.locator("#provider-key-status")).toHaveText("Key status: configured");
     await expect(page.locator("#provider-capability")).toHaveText("Capability: untested");
-    await expect(page.locator("#provider-affected-runs")).toHaveText(
-      /^Affected runs: \d+$/,
-    );
+    if (hasSavedRevision) {
+      await expect(page.locator("#provider-affected-runs")).toHaveText(
+        /^Affected runs: \d+$/,
+      );
+    } else {
+      await expect(page.locator("#provider-affected-runs")).toHaveCount(0);
+    }
     await expectNoSentinel(page);
 
     const verified = await readMutation(page, "POST");

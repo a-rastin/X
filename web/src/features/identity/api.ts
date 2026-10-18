@@ -3,8 +3,9 @@
  * All routes live under /api/v1 at the same origin (dev/preview proxy
  * forwards /api to the backend). Mutations carry the per-session CSRF token
  * in the X-CSRF-Token header plus the HttpOnly session cookie. The token is
- * kept in memory with a sessionStorage backup so a page refresh (GET /me)
- * does not lose mutation ability within the tab session.
+ * kept in origin-shared localStorage because the HttpOnly session cookie is
+ * also shared across tabs. GET /me restores the token for the current cookie
+ * on startup, including after an upgrade from the former tab-local storage.
  */
 
 export type Role = "admin" | "physician";
@@ -30,26 +31,33 @@ export const CSRF_HEADER = "X-CSRF-Token";
 const CSRF_STORAGE_KEY = "xi_csrf_token";
 
 let csrfToken: string | null = null;
-try {
-  csrfToken = sessionStorage.getItem(CSRF_STORAGE_KEY);
-} catch {
-  csrfToken = null;
-}
 
 export function getCsrfToken(): string | null {
-  return csrfToken;
+  try {
+    // Read on every mutation so another tab's login/session rotation is
+    // observed together with the browser-shared session cookie.
+    return localStorage.getItem(CSRF_STORAGE_KEY);
+  } catch {
+    return csrfToken;
+  }
 }
 
 export function setCsrfToken(token: string | null): void {
   csrfToken = token;
   try {
     if (token === null) {
-      sessionStorage.removeItem(CSRF_STORAGE_KEY);
+      localStorage.removeItem(CSRF_STORAGE_KEY);
     } else {
-      sessionStorage.setItem(CSRF_STORAGE_KEY, token);
+      localStorage.setItem(CSRF_STORAGE_KEY, token);
     }
   } catch {
     /* storage unavailable: memory copy still works for this page lifetime */
+  }
+  try {
+    // Remove the obsolete tab-local copy after upgrades.
+    sessionStorage.removeItem(CSRF_STORAGE_KEY);
+  } catch {
+    /* storage unavailable: nothing to migrate */
   }
 }
 
@@ -153,11 +161,14 @@ export async function login(
 
 export interface MeResult {
   user: PublicUser;
+  csrf_token: string;
   research_warning: string | null;
 }
 
 export async function me(): Promise<MeResult> {
-  return request<MeResult>("/me");
+  const result = await request<MeResult>("/me");
+  setCsrfToken(result.csrf_token);
+  return result;
 }
 
 export async function logout(): Promise<void> {
