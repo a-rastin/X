@@ -13,7 +13,7 @@ import {
 /* S07 draft autosave journeys (seam T9 browser; backend covered by
  * BT/http/test_drafts.py and not duplicated here). Selectors used below
  * are the handoff contract for the test agent:
- * - heading "Encounter draft"
+ * - heading "Register patient" on `#/encounters/:id#register` (working note home)
  * - textarea labelled "Draft working note" (#draft-working-note)
  * - save status #draft-save-status (role=status): Saving… / Unsaved changes…
  *   / Saved (revision N) / Save failed: … / Conflict: …
@@ -26,7 +26,7 @@ import {
  *   buttons "Confirm discard" / "Cancel"
  * - directory: per-row "Start follow-up" (aria-label includes identifier),
  *   generic 409 alert "An open draft already exists for this patient."
- * - registration success: link "Open registration draft" to #/encounters/:id
+ * - registration success: link "Open registration draft" to #/encounters/:id#register
  */
 
 async function loginPhysician(
@@ -94,9 +94,9 @@ test("autosaved note shows Saved only after 2xx and survives reload", async ({
   const physician = await loginPhysician(page, request, "e2eautosave");
   const { draftId } = await createPatientWithDraft(request, physician);
 
-  await page.goto(`/#/encounters/${draftId}`);
+  await page.goto(`/#/encounters/${draftId}#register`);
   await expect(
-    page.getByRole("heading", { name: "Encounter draft" }),
+    page.getByRole("heading", { name: "Register patient" }),
   ).toBeVisible();
   const note = page.getByLabel("Draft working note");
   await expect(note).toBeVisible();
@@ -122,7 +122,7 @@ test("stale-tab 412 keeps edits and reconciles via Reload/Retry", async ({
   const physician = await loginPhysician(page, request, "e2estale");
   const { draftId } = await createPatientWithDraft(request, physician);
 
-  await page.goto(`/#/encounters/${draftId}`);
+  await page.goto(`/#/encounters/${draftId}#register`);
   const note = page.getByLabel("Draft working note");
   const status = page.locator("#draft-save-status");
   await expect(status).toContainText("Saved (revision 1)");
@@ -165,7 +165,7 @@ test("failed network save never shows Saved; Retry recovers", async ({
   const physician = await loginPhysician(page, request, "e2enetfail");
   const { draftId } = await createPatientWithDraft(request, physician);
 
-  await page.goto(`/#/encounters/${draftId}`);
+  await page.goto(`/#/encounters/${draftId}#register`);
   const note = page.getByLabel("Draft working note");
   const status = page.locator("#draft-save-status");
   await expect(status).toContainText("Saved (revision 1)");
@@ -197,7 +197,7 @@ test("navigation warns while unsaved edits remain", async ({
   const physician = await loginPhysician(page, request, "e2enavguard");
   const { draftId } = await createPatientWithDraft(request, physician);
 
-  await page.goto(`/#/encounters/${draftId}`);
+  await page.goto(`/#/encounters/${draftId}#register`);
   const status = page.locator("#draft-save-status");
   await expect(status).toContainText("Saved (revision 1)");
 

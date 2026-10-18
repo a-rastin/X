@@ -2459,12 +2459,15 @@ test("S59 §3 note-only edit shows no spinners and preserves acceptance", async 
     await expect(page.locator("#notes-proposal-list")).toContainText(sentinel, { timeout: 10000 });
     await expect(panel).not.toContainText(sentinel);
     await expect(cpt).not.toContainText(sentinel);
+    await page.locator("#wizard-step-register").click();
     await page.getByLabel("Draft working note").fill("s59 note probe, no new run");
     await expect(page.locator("#draft-save-status")).toContainText("Saved (revision", {
       timeout: 10000,
     });
     expect(postCount).toBe(0);
-    await expect(cpt).toContainText("Accepted");
+    await page.locator("#wizard-step-proposal-review").click();
+    await page.getByTestId("cpt-toggle-s59_r1").click();
+    await expect(page.getByTestId("cpt-panel-s59_r1")).toContainText("Accepted");
   } finally {
     await page.unroute("**/api/v1/encounters/*/generation-batches");
     await page.unroute("**/api/v1/generation-batches/*");

@@ -6,13 +6,15 @@
  * against the matching labels (role=alert, aria-describedby) with keyboard
  * focus moved to the summary, and 409 duplicates keep every keystroke. The
  * identifier is handled as text throughout (leading zeros preserved, never
- * stored numerically). No clinical content beyond demographics.
+ * stored numerically). No clinical content beyond demographics until the
+ * draft exists; then this page shows demographics notes and the working note.
  */
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ApiError } from "../identity/api";
 import { useAuth } from "../identity/auth";
 import { createPatient } from "./api";
+import { RegistrationDraftHost } from "../encounters/DemographicsDraftPanels";
 import {
   toClientField,
   toRegistrationPayload,
@@ -38,6 +40,7 @@ interface Success {
   identifier: string;
   serverTimestamp: string;
   revision: number;
+  draftRevision: number;
   draftId: string;
 }
 
@@ -123,6 +126,7 @@ function RegistrationForm() {
         identifier: result.patient.identifier,
         serverTimestamp: result.server_timestamp,
         revision: result.revision,
+        draftRevision: result.draft.revision,
         draftId: result.draft.id,
       });
       setFields(EMPTY);
@@ -197,14 +201,6 @@ function RegistrationForm() {
             <p className="xi-status" role="status">
               Patient {success.identifier} registered. Server time{" "}
               {success.serverTimestamp}, revision {success.revision}.
-            </p>
-            <p>
-              <a
-                className="xi-btn xi-btn-primary"
-                href={`#/encounters/${success.draftId}`}
-              >
-                Open registration draft
-              </a>
             </p>
           </div>
         )}
@@ -416,6 +412,13 @@ function RegistrationForm() {
           </div>
         </form>
       </section>
+      {success !== null && (
+        <RegistrationDraftHost
+          encounterId={success.draftId}
+          initialRevision={success.draftRevision}
+          initialServerTimestamp={success.serverTimestamp}
+        />
+      )}
     </div>
   );
 }

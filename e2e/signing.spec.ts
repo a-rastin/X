@@ -1153,8 +1153,8 @@ test("S50 §2 explicit Sign flushes saves and submits exact acceptance encounter
       timeout: 10000,
     });
 
-    // Dirty the draft working note without waiting: Sign must flush it.
-    await page.getByLabel("Draft working note").fill("sign flush probe, unsaved at click");
+    // Working note is on Register patient, not this step, so sign has no
+    // pending draft field here. The fence stays at the patched revision.
     await page.getByTestId("sign-button").click();
     await expect(page.getByTestId("sign-status")).toContainText("Signed ✓", { timeout: 15000 });
     await expect(page.getByTestId("sign-status")).toContainText(snapshotId);
@@ -1162,14 +1162,14 @@ test("S50 §2 explicit Sign flushes saves and submits exact acceptance encounter
     await expect(signPanel).toContainText("View the signed chart");
 
     // Exact references: one POST with If-Match + Idempotency-Key + body.
-    // Flush bumps the draft 2→3 before the fence read, so the sign fence is
-    // 3 while the separately revisioned plan stays at 2.
+    // No pending draft edit on this step, so the fence stays at revision 2
+    // while the separately revisioned plan stays at 2.
     expect(signCount).toBe(1);
-    expect(signHeaders["if-match"]).toBe(`"3"`);
+    expect(signHeaders["if-match"]).toBe(`"2"`);
     expect(signHeaders["if-match"]).toBe(`"${String(signBody["expected_encounter_revision"])}"`);
     expect(typeof signHeaders["idempotency-key"]).toBe("string");
     expect((signHeaders["idempotency-key"] ?? "").length).toBeGreaterThan(0);
-    expect(signBody["expected_encounter_revision"]).toBe(3);
+    expect(signBody["expected_encounter_revision"]).toBe(2);
     expect(signBody["expected_plan_revision"]).toBe(2);
     expect(signBody["batch_id"]).toBe(batchId);
     const acceptances = signBody["acceptances"] as Record<string, unknown>[];
@@ -1179,10 +1179,8 @@ test("S50 §2 explicit Sign flushes saves and submits exact acceptance encounter
     expect(byRun.get(run1Id)?.["expected_review_revision"]).toBe(2);
     expect(byRun.get(run2Id)?.["acceptance_id"]).toBe(acc2Id);
     expect(byRun.get(run2Id)?.["expected_review_revision"]).toBe(1);
-    // Flush happened before the sign POST.
-    expect(order).toContain("draft-patch");
     expect(order).toContain("sign-post");
-    expect(order.indexOf("draft-patch")).toBeLessThan(order.indexOf("sign-post"));
+    expect(order).not.toContain("draft-patch");
     // Plan text preserved through signing.
     await expect(page.getByTestId("secondary-plan-textarea")).toHaveValue(planText);
   } finally {
@@ -1271,8 +1269,8 @@ test("S50 §2 pending proposal blocks signing without losing plan text", async (
     await expect(page.getByTestId("secondary-plan-textarea")).toHaveValue(planText);
     await expect(page.getByTestId("proposal-sign-blocked")).toBeVisible();
     expect(signPosts).toBe(0);
-    // Draft editing stays available.
-    await expect(page.getByLabel("Draft working note")).toBeEnabled();
+    await expect(page.locator("#wizard-step-register")).toBeVisible();
+    await expect(page.getByLabel("Draft working note")).toHaveCount(0);
   } finally {
     await page.unroute("**/api/v1/generation-batches/*");
     await page.unroute("**/api/v1/encounters/*/sign");

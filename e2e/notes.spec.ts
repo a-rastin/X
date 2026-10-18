@@ -109,15 +109,20 @@ test("demographics + diagnosis + history note controls mount with stable selecto
 
   await gotoEncounter(page, draftId);
 
-  for (const section of ["demographics", "diagnosis"]) {
-    await expect(page.locator(`#notes-${section}-heading`)).toBeVisible();
-    // Stable anchor: always rendered, but an empty <ul> has no bounding box
-    // (Playwright reports hidden) until the first note arrives.
-    await expect(page.locator(`#notes-${section}-list`)).toBeAttached();
-    await expect(page.locator(`#notes-${section}-input`)).toBeVisible();
-    await expect(page.locator(`#notes-${section}-add`)).toBeVisible();
-    await expect(page.locator(`#notes-${section}-status`)).toBeVisible();
-  }
+  await expect(page.locator("#notes-diagnosis-heading")).toBeVisible();
+  await expect(page.locator("#notes-diagnosis-list")).toBeAttached();
+  await expect(page.locator("#notes-diagnosis-input")).toBeVisible();
+  await expect(page.locator("#notes-diagnosis-add")).toBeVisible();
+  await expect(page.locator("#notes-diagnosis-status")).toBeVisible();
+  // Demographics notes live on Register patient, not the encounter-draft page.
+  await expect(page.locator("#notes-demographics-heading")).toHaveCount(0);
+  await page.locator("#wizard-step-register").click();
+  await expect(page.getByRole("heading", { name: "Register patient" })).toBeVisible();
+  await expect(page.locator("#notes-demographics-heading")).toBeVisible();
+  await expect(page.locator("#notes-demographics-list")).toBeAttached();
+  await expect(page.locator("#notes-demographics-input")).toBeVisible();
+  await expect(page.locator("#notes-demographics-add")).toBeVisible();
+  await expect(page.locator("#notes-demographics-status")).toBeVisible();
   await page.locator("#wizard-step-history").click();
   await expect(page.locator("#notes-history-heading")).toBeVisible();
   await expect(page.locator("#notes-history-list")).toBeAttached();
@@ -164,6 +169,7 @@ test("demographics note after creation survives reload and re-login with author/
   const { draftId } = await createPatientWithDraft(request, physician);
 
   await gotoEncounter(page, draftId);
+  await page.locator("#wizard-step-register").click();
 
   const input = page.locator("#notes-demographics-input");
   const add = page.locator("#notes-demographics-add");
@@ -187,6 +193,7 @@ test("demographics note after creation survives reload and re-login with author/
   await loginAs(page, "physician", physician.username, physician.password);
   await acknowledgeWarning(page);
   await gotoEncounter(page, draftId);
+  await page.locator("#wizard-step-register").click();
   const resumed = page.locator("#notes-demographics-list");
   await expect(resumed).toContainText(probe, { timeout: 10000 });
   await expect(resumed).toContainText(physician.username);

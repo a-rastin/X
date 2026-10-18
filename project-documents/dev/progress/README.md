@@ -31,7 +31,9 @@ The [README rewrite](s62.md#follow-up-2026-10-18--root-readme-rewrite) and
 [installation guide](s62.md#follow-up-2026-10-18--installation-and-running-guide)
 provide current project orientation and local/server setup instructions.
 The [encounter-draft follow-up](s07.md#follow-up-2026-10-18--one-page-per-wizard-step)
-shows each wizard step on its own page.
+shows each wizard step on its own page. A later
+[placement follow-up](s07.md#follow-up-2026-10-18--demographics-notes-on-register-patient)
+moves demographics notes and the working note onto Register patient.
 
 ## Reading and updating progress
 

@@ -1028,7 +1028,7 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired }:
                 </button>
               </div>
               <p className="xi-hint" style={{ marginBottom: 0 }}>
-                Draft editing above stays available, and each failed question keeps its own retry
+                Draft editing stays available, and each failed question keeps its own retry
                 action.
               </p>
             </div>

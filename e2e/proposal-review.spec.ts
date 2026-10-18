@@ -348,8 +348,8 @@ test("S48 §1 fresh entry shows honest unavailable with no POST and no Generate 
     // No Generate affordance anywhere in the proposal step.
     await expect(panel.getByRole("button", { name: /Generate/i })).toHaveCount(0);
     await expect(page.locator("body").getByRole("button", { name: /^Generate/ })).toHaveCount(0);
-    // Draft stays editable: working note + save status visible.
-    await expect(page.getByLabel("Draft working note")).toBeVisible();
+    // Working note is on Register patient, not this encounter-draft step.
+    await expect(page.getByLabel("Draft working note")).toHaveCount(0);
     await expect(page.locator("#draft-save-status")).toContainText("Saved (revision 1)");
     expect(postCount).toBe(0);
   } finally {
@@ -385,7 +385,9 @@ test("S48 §1 entry flushes autosave and never creates a run per keystroke", asy
     const panel = page.getByTestId("proposal-review");
     await expect(panel).toContainText("Proposal unavailable", { timeout: 15000 });
 
-    // One keystroke burst: autosave flushes (PATCH) and acknowledges.
+    // Working note lives on Register patient. Keystrokes there still autosave
+    // and must not create a generation run.
+    await page.locator("#wizard-step-register").click();
     const note = page.getByLabel("Draft working note");
     await note.fill("flush probe one");
     await expect(page.locator("#draft-save-status")).toContainText("Saved (revision 2)", {
@@ -398,7 +400,6 @@ test("S48 §1 entry flushes autosave and never creates a run per keystroke", asy
     await expect(page.locator("#draft-save-status")).toContainText("Saved (revision 3)", {
       timeout: 10000,
     });
-    await expect(panel).toContainText("Proposal unavailable", { timeout: 10000 });
     expect(postCount).toBe(0);
   } finally {
     await page.unroute("**/api/v1/encounters/*/generation-batches");
@@ -573,13 +574,15 @@ test("S48 §§1-2 pre-seeded real batch tracks via GET with no POST, restores DO
     expect(getCount).toBeGreaterThanOrEqual(1);
     expect(getUrls.some((u) => u.includes(batchId))).toBe(true);
 
-    // Typing never creates a run per keystroke.
+    // Typing the working note (Register patient) never creates a run per keystroke.
+    await page.locator("#wizard-step-register").click();
     await page.getByLabel("Draft working note").fill("reuse probe, no new run");
     await expect(page.locator("#draft-save-status")).toContainText("Saved (revision", {
       timeout: 10000,
     });
-    await expect(page.getByTestId("proposal-status-s48_q1")).toBeVisible();
     expect(postCount).toBe(0);
+    await page.locator("#wizard-step-proposal-review").click();
+    await expect(page.getByTestId("proposal-status-s48_q1")).toBeVisible();
 
     // Reload restores the same DOM from GET without a new POST.
     const getBeforeReload = getCount;
@@ -1185,7 +1188,8 @@ test("S48 §4 complete proposal with DDI and secondary plan, stale blocks signin
     // Complete + current: no sign block, ready notice instead.
     await expect(page.getByTestId("proposal-sign-blocked")).toHaveCount(0);
     await expect(panel).toContainText("Proposal complete and current");
-    await expect(page.getByLabel("Draft working note")).toBeEnabled();
+    await expect(page.locator("#wizard-step-register")).toBeVisible();
+    await expect(page.getByLabel("Draft working note")).toHaveCount(0);
     // No note leakage in proposal DOM.
     await expect(page.locator("#notes-proposal-list")).toContainText(sentinel, { timeout: 10000 });
     await expect(page.getByTestId("proposal-review")).not.toContainText(sentinel);
@@ -1270,7 +1274,8 @@ test("S48 §4 stale run blocks signing with reason, draft editing preserved", as
     await expect(blocked).toContainText("Run is stale");
     await expect(blocked).toContainText("Signing is blocked");
     await expect(blocked.getByRole("button", { name: "Sign encounter (blocked)" })).toBeDisabled();
-    await expect(page.getByLabel("Draft working note")).toBeEnabled();
+    await expect(page.locator("#wizard-step-register")).toBeVisible();
+    await expect(page.getByLabel("Draft working note")).toHaveCount(0);
     await expect(panel).toContainText("Start new run with current inputs");
   } finally {
     await page.unroute("**/api/v1/encounters/*/generation-batches");
@@ -1656,9 +1661,9 @@ test("S48 §§2+4 two-question failure shows partial, retry re-POSTs exact packa
     await expect(blocked).toContainText("Signing is blocked");
     await expect(blocked).toContainText("s48_q2");
     await expect(blocked.getByRole("button", { name: "Sign encounter (blocked)" })).toBeDisabled();
-    await expect(blocked).toContainText("Draft editing above stays available");
-    // Draft editing preserved.
-    await expect(page.getByLabel("Draft working note")).toBeEnabled();
+    await expect(blocked).toContainText("Draft editing stays available");
+    await expect(page.locator("#wizard-step-register")).toBeVisible();
+    await expect(page.getByLabel("Draft working note")).toHaveCount(0);
     // Failed question keeps its precise retry.
     const retry = page.getByTestId("proposal-retry-s48_q2");
     await expect(retry).toBeVisible();

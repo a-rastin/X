@@ -21,6 +21,9 @@
  * Assessment steps are separate pages (`#/encounters/:id#<step>`), not one
  * stacked form: Diagnosis, PANSS, C-SSRS, History, then effects, medications,
  * and proposal review. Back/Continue and the step list move one page at a time.
+ * Demographics notes and the working note are the Register patient page
+ * (`#register` on a registration draft, and `#/patients/new` once the draft
+ * exists) — not chrome on Encounter draft.
  *
  * E2E selector contract (dev-test owns the journey specs; S60
  * e2e/failure-recovery.spec.ts asserts the denied view):
@@ -49,6 +52,10 @@ import { ProposalReviewPanel } from "../reasoning/ProposalReviewPanel";
 import { NotesSection } from "../notes/NotesSection";
 import { FollowupBaselinePanel } from "../patients/chart/FollowupBaselinePanel";
 import { useAutosave } from "./useAutosave";
+import {
+  DemographicsDraftPanels,
+  DraftSaveStatus,
+} from "./DemographicsDraftPanels";
 
 type LoadState =
   | { kind: "loading" }
@@ -72,9 +79,8 @@ export function parseEncounterId(hash: string): string | null {
   return id !== "" ? id : null;
 }
 
-/** One encounter-draft page. Order matches the section headings (step 2+).
- * Demographics (step 1) is the registration form, already completed. */
-const WIZARD_STEPS = [
+/** Encounter-draft steps. Registration adds Register patient as step 1. */
+const ASSESSMENT_STEPS = [
   { id: "diagnosis", label: "Diagnosis" },
   { id: "panss", label: "PANSS" },
   { id: "cssrs", label: "C-SSRS" },
@@ -84,26 +90,33 @@ const WIZARD_STEPS = [
   { id: "proposal-review", label: "Proposal review" },
 ] as const;
 
-type WizardStepId = (typeof WIZARD_STEPS)[number]["id"];
+const REGISTER_STEP = { id: "register", label: "Register patient" } as const;
 
-const WIZARD_STEP_IDS = new Set<string>(WIZARD_STEPS.map((item) => item.id));
+type WizardStepId =
+  | (typeof ASSESSMENT_STEPS)[number]["id"]
+  | (typeof REGISTER_STEP)["id"];
 
-function wizardStepFromHash(hash: string): WizardStepId {
+function stepsFor(kind: string): ReadonlyArray<{ id: WizardStepId; label: string }> {
+  return kind === "registration"
+    ? [REGISTER_STEP, ...ASSESSMENT_STEPS]
+    : ASSESSMENT_STEPS;
+}
+
+function wizardStepFromHash(hash: string, kind: string): WizardStepId {
+  const steps = stepsFor(kind);
   if (!hash.startsWith("#/encounters/")) {
-    return "diagnosis";
+    return steps[0]?.id ?? "diagnosis";
   }
   // `#/encounters/:id#panss` — the fragment after the encounter id.
+  // Missing fragment stays on Diagnosis so existing draft links keep that page.
   const fragment = hash.split("#")[2] ?? "";
-  return WIZARD_STEP_IDS.has(fragment) ? (fragment as WizardStepId) : "diagnosis";
+  return steps.some((item) => item.id === fragment)
+    ? (fragment as WizardStepId)
+    : "diagnosis";
 }
 
 function encounterStepHash(encounterId: string, step: WizardStepId): string {
   return `#/encounters/${encounterId}#${step}`;
-}
-
-function workingNoteOf(data: Record<string, unknown>): string {
-  const value = data["working_note"];
-  return typeof value === "string" ? value : "";
 }
 
 export function EncounterPage({ encounterId }: { encounterId: string }) {
@@ -288,23 +301,20 @@ function EncounterWizard({
   const [discardConfirm, setDiscardConfirm] = useState(false);
   const [discardBusy, setDiscardBusy] = useState(false);
   const [discardError, setDiscardError] = useState<string | null>(null);
-  const conflictHeadingRef = useRef<HTMLHeadingElement>(null);
   const discardDialogRef = useRef<HTMLDivElement>(null);
   const pageRef = useRef<HTMLDivElement>(null);
   const skipPageFocus = useRef(true);
+  const steps = stepsFor(encounter.kind);
   const [step, setStep] = useState<WizardStepId>(() =>
-    wizardStepFromHash(window.location.hash),
+    wizardStepFromHash(window.location.hash, encounter.kind),
   );
   const lastEncounterHashRef = useRef(window.location.hash);
 
-  const note = workingNoteOf(autosave.localData);
-  const stepIndex = WIZARD_STEPS.findIndex((item) => item.id === step);
-  const currentStep = WIZARD_STEPS[stepIndex] ?? WIZARD_STEPS[0];
-  const previousStep = stepIndex > 0 ? WIZARD_STEPS[stepIndex - 1] : null;
+  const stepIndex = steps.findIndex((item) => item.id === step);
+  const currentStep = steps[stepIndex] ?? steps[0];
+  const previousStep = stepIndex > 0 ? steps[stepIndex - 1] : null;
   const nextStep =
-    stepIndex >= 0 && stepIndex < WIZARD_STEPS.length - 1
-      ? WIZARD_STEPS[stepIndex + 1]
-      : null;
+    stepIndex >= 0 && stepIndex < steps.length - 1 ? steps[stepIndex + 1] : null;
 
   function followStepLink(event: MouseEvent<HTMLAnchorElement>): void {
     if (
@@ -328,7 +338,7 @@ function EncounterWizard({
     } else {
       void autosave.flush();
     }
-    setStep(wizardStepFromHash(hash));
+    setStep(wizardStepFromHash(hash, encounter.kind));
   }
 
   // Navigation guard: warn while local edits remain (in-app + beforeunload).
@@ -383,11 +393,11 @@ function EncounterWizard({
         return;
       }
       void flushDraft();
-      setStep(wizardStepFromHash(window.location.hash));
+      setStep(wizardStepFromHash(window.location.hash, encounter.kind));
     };
     window.addEventListener("hashchange", onHashChange);
     return () => window.removeEventListener("hashchange", onHashChange);
-  }, [flushDraft]);
+  }, [flushDraft, encounter.kind]);
 
   useEffect(() => {
     if (skipPageFocus.current) {
@@ -396,12 +406,6 @@ function EncounterWizard({
     }
     pageRef.current?.focus();
   }, [step]);
-
-  useEffect(() => {
-    if (autosave.saveState.kind === "conflict") {
-      conflictHeadingRef.current?.focus();
-    }
-  }, [autosave.saveState.kind]);
 
   useEffect(() => {
     if (discardOpen) {
@@ -443,30 +447,12 @@ function EncounterWizard({
     }
   }
 
-  const saveState = autosave.saveState;
-  let statusText: string;
-  let statusClass = "xi-hint";
-  if (saveState.kind === "saving") {
-    statusText = "Saving…";
-  } else if (saveState.kind === "dirty") {
-    statusText = "Unsaved changes…";
-  } else if (saveState.kind === "saved") {
-    statusText = `Saved (revision ${saveState.revision})`;
-    statusClass = "xi-status";
-    if (saveState.serverTimestamp !== null) {
-      statusText += ` · ${saveState.serverTimestamp}`;
-    }
-  } else if (saveState.kind === "failed") {
-    statusText = `Save failed: ${saveState.message}`;
-    statusClass = "xi-form-error";
-  } else {
-    statusText = `Conflict: ${saveState.message} Your edits are kept.`;
-    statusClass = "xi-form-error";
-  }
+  const pageTitle =
+    currentStep.id === "register" ? "Register patient" : "Encounter draft";
 
   return (
     <div>
-      <h2 className="xi-page-title">Encounter draft</h2>
+      <h2 className="xi-page-title">{pageTitle}</h2>
       <section className="xi-card" aria-labelledby="draft-context-heading">
         <h3 className="xi-section-title" id="draft-context-heading">
           Draft context
@@ -494,115 +480,16 @@ function EncounterWizard({
         />
       )}
 
-      {/* S13 page notes for demographics: the demographics form itself stays
-        local until valid, but once this draft exists (encounterId present)
-        the author can attach attributed demographics notes here. Reusable
-        NotesSection per wizard page; page key matches backend ALLOWED_PAGES.
-        No snapshot machinery: S40/S41/S59 carry the mandatory end-to-end
-        note-noninterference checks. */}
-      <NotesSection
-        encounterId={encounterId}
-        page="demographics"
-        autosave={autosave}
-        onSessionExpired={sessionExpired}
-      />
-
-      <section className="xi-card" aria-labelledby="draft-editor-heading">
-        <h3 className="xi-section-title" id="draft-editor-heading">
-          Working note (draft only)
-        </h3>
-        <p className="xi-hint">
-          Autosaves about one second after typing and when leaving the page.
-          Only server-acknowledged saves count as Saved.
-        </p>
-        <div className="xi-field">
-          <label className="xi-label" htmlFor="draft-working-note">
-            Draft working note
-          </label>
-          <textarea
-            className="xi-input"
-            id="draft-working-note"
-            rows={4}
-            autoComplete="off"
-            value={note}
-            onChange={(event) =>
-              autosave.setDraftValue("working_note", event.target.value)
-            }
-            aria-describedby="draft-save-status"
-          />
-        </div>
-        <p className={statusClass} role="status" id="draft-save-status">
-          {statusText}
-        </p>
-        {(saveState.kind === "failed" || saveState.kind === "conflict") && (
-          <div className="xi-row-actions">
-            {saveState.kind === "failed" && saveState.retryable && (
-              <button
-                className="xi-btn xi-btn-secondary"
-                type="button"
-                onClick={() => void autosave.retry()}
-              >
-                Retry save
-              </button>
-            )}
-            <button
-              className="xi-btn xi-btn-secondary"
-              type="button"
-              onClick={() => void autosave.reloadTruth()}
-            >
-              Reload server version
-            </button>
-          </div>
-        )}
-
-        {saveState.kind === "conflict" && (
-          <div
-            className="xi-notice"
-            role="alert"
-            aria-labelledby="draft-conflict-heading"
-            style={{ marginTop: 12 }}
-          >
-            <h4
-              className="xi-section-title"
-              id="draft-conflict-heading"
-              tabIndex={-1}
-              ref={conflictHeadingRef}
-              style={{ fontSize: 16 }}
-            >
-              Another tab saved first — your edits are kept
-            </h4>
-            <p style={{ marginBottom: 8 }}>
-              The server revision moved. Nothing was overwritten. Compare and
-              choose how to reconcile.
-            </p>
-            {autosave.serverTruth !== null && (
-              <p className="xi-hint" style={{ marginBottom: 8 }}>
-                Server revision {autosave.serverTruth.revision}:{" "}
-                {JSON.stringify(autosave.serverTruth.draftData)}
-              </p>
-            )}
-            <div className="xi-row-actions">
-              <button
-                className="xi-btn xi-btn-secondary"
-                type="button"
-                onClick={() => autosave.adoptServerVersion()}
-              >
-                Use server version
-              </button>
-              <button
-                className="xi-btn xi-btn-primary"
-                type="button"
-                onClick={() => void autosave.retryOnFreshRevision()}
-              >
-                Keep my edits and retry
-              </button>
-            </div>
-          </div>
-        )}
-      </section>
+      {/* Save status stays on encounter-draft steps. Demographics notes and
+          the working note render only on Register patient (below). */}
+      {currentStep.id !== "register" && (
+        <section className="xi-card" aria-label="Draft save">
+          <DraftSaveStatus autosave={autosave} />
+        </section>
+      )}
 
       <nav className="xi-wizard-nav" aria-label="Encounter pages" id="wizard-pages">
-        {WIZARD_STEPS.map((item, index) => (
+        {steps.map((item, index) => (
           <a
             key={item.id}
             id={`wizard-step-${item.id}`}
@@ -610,7 +497,7 @@ function EncounterWizard({
             aria-current={item.id === currentStep.id ? "page" : undefined}
             onClick={followStepLink}
           >
-            {index + 2}. {item.label}
+            {index + 1}. {item.label}
           </a>
         ))}
       </nav>
@@ -619,10 +506,18 @@ function EncounterWizard({
         className="xi-wizard-page"
         id="wizard-page"
         role="region"
-        aria-label={`${currentStep.label}, step ${stepIndex + 2} of ${WIZARD_STEPS.length + 1}`}
+        aria-label={`${currentStep.label}, step ${stepIndex + 1} of ${steps.length}`}
         tabIndex={-1}
         ref={pageRef}
       >
+        {currentStep.id === "register" && (
+          <DemographicsDraftPanels
+            encounterId={encounterId}
+            autosave={autosave}
+            onSessionExpired={sessionExpired}
+          />
+        )}
+
         {currentStep.id === "diagnosis" && (
           <>
             <DiagnosisSection

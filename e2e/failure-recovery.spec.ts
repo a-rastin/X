@@ -582,7 +582,9 @@ test("S60 §1 failed run keeps saves responsive and revisions durable with hones
     await expect(blocked).toContainText("s60_q1");
     await expect(blocked).toContainText("failed");
 
-    // Draft saves stay responsive while the run sits failed (real autosave).
+    // Working note is on Register patient. Autosave there stays responsive
+    // while the failed run is unchanged.
+    await page.locator("#wizard-step-register").click();
     const note = page.getByLabel("Draft working note");
     await note.fill("s60 acknowledged edit while failed");
     // Generous auto-wait (not a sleep): the contended-host PATCH can take
@@ -598,6 +600,7 @@ test("S60 §1 failed run keeps saves responsive and revisions durable with hones
       "s60 acknowledged edit while failed",
     );
 
+    await page.locator("#wizard-step-proposal-review").click();
     // Failed originals expose no adjustable baseline and block acceptance.
     await page.getByTestId("cpt-toggle-s60_q1").click();
     const panel = page.getByTestId("cpt-panel-s60_q1");
@@ -610,10 +613,6 @@ test("S60 §1 failed run keeps saves responsive and revisions durable with hones
     await expect(page.getByRole("heading", { name: "Encounter draft" })).toBeVisible({
       timeout: 15000,
     });
-    await expect(page.getByLabel("Draft working note")).toHaveValue(
-      "s60 acknowledged edit while failed",
-      { timeout: 15000 },
-    );
     await expect(page.locator("#draft-save-status")).toContainText("Saved (revision", {
       timeout: 15000,
     });
