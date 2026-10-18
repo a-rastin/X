@@ -295,7 +295,8 @@ your private `.env`, then reload it and restart the API:
 | `X_INSIGHT_PROVIDER_ALLOWED_HOSTS` | Comma-separated exact hostnames, without URL scheme/path; an empty list denies all destinations |
 
 Capability checks also resolve DNS. Special-use addresses require the resolved
-IP to be explicitly allowed, and redirects are not followed. The allowed-host
+IP to be explicitly allowed, except `198.18.0.0/15` (fake-IP proxy range).
+Redirects are not followed. The allowed-host
 checks on saved settings do not restrict the environment-configured worker path.
 Choose destinations under operator control; capability checks send an outbound
 request.

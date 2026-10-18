@@ -12,7 +12,9 @@ records the tab-local token/shared-cookie mismatch and links the
 [resolved issue](../issue-csrf-session-desynchronization.md). The
 [CSRF follow-up](s42.md#follow-up-2026-10-18--synchronize-csrf-with-the-shared-session)
 synchronizes the token during startup and across tabs without weakening the
-backend gate. Schema
+backend gate. The [fake-IP follow-up](s42.md#follow-up-2026-10-18--fake-ip-capability-check-and-failure-color)
+stops treating `198.18.0.0/15` as a blocked special-use address and colors a
+failed capability diagnostic as an error. Schema
 head and the fresh-backup expectation are `0021`, with
 `provider_settings` in a 32-table inventory. The [S62](s62.md) release gate
 otherwise stays open: not a release, not clinical validation, not high

@@ -312,6 +312,30 @@ def test_secret_action_keeps_placeholder_out_of_storage_and_stale_write_fails(cl
     assert stale_key not in audit.text
 
 
+def test_fake_ip_proxy_range_is_not_blocked_special_use(monkeypatch):
+    """198.18.0.0/15 is fake-IP, not an internal target. RFC1918 and metadata stay blocked."""
+    from x_insight.reasoning import provider_config
+
+    monkeypatch.setenv("X_INSIGHT_PROVIDER_ALLOWED_HOSTS", "api.openai.com")
+
+    def resolve(ip):
+        def getaddrinfo(host, port, *args, **kwargs):
+            assert host == "api.openai.com"
+            return [(None, None, None, None, (ip, port))]
+
+        return getaddrinfo
+
+    url = "https://api.openai.com/v1/chat/completions"
+    monkeypatch.setattr(provider_config.socket, "getaddrinfo", resolve("198.18.0.128"))
+    assert provider_config._resolved_destination_allowed(url)
+    for blocked in ("10.1.2.3", "169.254.169.254", "127.0.0.1"):
+        monkeypatch.setattr(provider_config.socket, "getaddrinfo", resolve(blocked))
+        assert not provider_config._resolved_destination_allowed(url)
+    monkeypatch.setenv("X_INSIGHT_PROVIDER_ALLOWED_HOSTS", "api.openai.com,10.1.2.3")
+    monkeypatch.setattr(provider_config.socket, "getaddrinfo", resolve("10.1.2.3"))
+    assert provider_config._resolved_destination_allowed(url)
+
+
 def test_save_rejects_destinations_outside_the_operator_allowlist(clean_all):
     client, csrf = _login()
     saved = _put(client, csrf, _payload())

@@ -241,7 +241,11 @@ export function ProviderSettingsPage() {
             </p>
           )}
           {diagnostic !== null && (
-            <p className="xi-status" id="provider-diagnostic" role="status">
+            <p
+              className={capability === "failed" ? "xi-form-error" : "xi-status"}
+              id="provider-diagnostic"
+              role={capability === "failed" ? "alert" : "status"}
+            >
               {diagnostic}
             </p>
           )}

@@ -19,7 +19,7 @@ import {
  * - #provider-api-key (password, cleared after save)
  * - #provider-save, #provider-test
  * - #provider-affected-runs only when the save returned affected_runs
- * - #provider-diagnostic after a successful test
+ * - #provider-diagnostic after a test (xi-status when verified, xi-form-error when failed)
  * Physician guard is a plain h2 plus role=alert, not those ids.
  *
  * ponytail: mkdir lock because both browser projects share one If-Match
@@ -243,6 +243,7 @@ test("admin saves, tests, and clears provider settings without echoing the key",
     expect(String(verified.diagnostic)).not.toContain(SENTINEL);
     await expect(page.locator("#provider-capability")).toHaveText("Capability: verified");
     await expect(page.locator("#provider-diagnostic")).toHaveText(VERIFIED);
+    await expect(page.locator("#provider-diagnostic")).toHaveClass(/xi-status/);
     await expectNoSentinel(page);
 
     await page.locator("#provider-base-url").fill(deadUrl);
@@ -261,6 +262,7 @@ test("admin saves, tests, and clears provider settings without echoing the key",
     expect(String(failed.diagnostic)).not.toContain(SENTINEL);
     await expect(page.locator("#provider-capability")).toHaveText("Capability: failed");
     await expect(page.locator("#provider-diagnostic")).toHaveText(COULD_NOT_CONNECT);
+    await expect(page.locator("#provider-diagnostic")).toHaveClass(/xi-form-error/);
     await expectNoSentinel(page);
 
     await page.locator("#provider-secret-action").selectOption("clear");

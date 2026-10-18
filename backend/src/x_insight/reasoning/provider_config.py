@@ -314,11 +314,17 @@ def _require_allowed_destination(base_url: str) -> None:
         )
 
 
+# RFC 2544 block used by fake-IP proxies. Not RFC1918 or link-local metadata.
+_FAKE_IP_NETWORK = ipaddress.ip_network("198.18.0.0/15")
+
+
 def _special_address(ip_text: str) -> bool:
     try:
         ip = ipaddress.ip_address(ip_text.split("%", 1)[0])
     except ValueError:
         return True
+    if ip.version == 4 and ip in _FAKE_IP_NETWORK:
+        return False
     return bool(
         ip.is_loopback
         or ip.is_link_local
