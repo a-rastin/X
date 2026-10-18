@@ -7,7 +7,7 @@ progress in the appropriate report and update the index; keep the index short.
 ## Keep the Why
 
 This project records the reasoning behind its code with the Keep the Why
-skill (https://keepthewhy.com) — the `.keep-the-why` file at the project
+skill — the `.keep-the-why` file at the project
 root is its config. Before doing anything else in a session, whatever the
 first request is about, load the skill: in OpenCode, invoke
 the `keep-the-why` skill (Skill tool); in any other agent, read
