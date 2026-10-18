@@ -26,7 +26,7 @@ import {
  *   buttons "Confirm discard" / "Cancel"
  * - directory: per-row "Start follow-up" (aria-label includes identifier),
  *   generic 409 alert "An open draft already exists for this patient."
- * - registration success: link "Open registration draft" to #/encounters/:id#register
+ * - registration success: `#/patients/new` opens #/encounters/:id#register
  */
 
 async function loginPhysician(

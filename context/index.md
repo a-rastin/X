@@ -65,6 +65,8 @@
 
 ## R
 
+- [registration-flow.md](registration-flow.md) — Why new-patient registration opens the 8-step wizard instead of a separate notes page.
+
 ## S
 
 ## T

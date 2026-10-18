@@ -57,6 +57,22 @@ test("physician registers a patient; leading-zero ID round-trips with timestamp 
   await expect(
     page.getByRole("heading", { name: "Register patient" }),
   ).toBeVisible();
+  // The button opens the 8-step wizard. Demographics and both note boxes
+  // are step 1; later steps stay closed until a draft exists.
+  await expect(page.locator("#wizard-step-register")).toHaveAttribute(
+    "aria-current",
+    "page",
+  );
+  await expect(page.locator("#wizard-step-proposal-review")).toHaveAttribute(
+    "aria-disabled",
+    "true",
+  );
+  await expect(
+    page.getByRole("heading", { name: "Page notes — demographics" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Working note (draft only)" }),
+  ).toBeVisible();
 
   // Leading zeros are part of the identifier, not a number to normalize.
   const identifier = `00${uniquePatientId().slice(2)}`;
@@ -68,10 +84,21 @@ test("physician registers a patient; leading-zero ID round-trips with timestamp 
   await expect(register).toBeEnabled();
   await register.click();
 
-  const confirmation = page.getByRole("status");
-  await expect(confirmation).toContainText(`Patient ${identifier} registered.`);
+  await expect(page).toHaveURL(/#\/encounters\/[^#]+#register$/);
+  const confirmation = page.getByText(`Patient ${identifier} registered.`);
   await expect(confirmation).toContainText("Server time");
   await expect(confirmation).toContainText("revision 1");
+  await expect(page.getByLabel("Given name")).toHaveValue(given);
+  await expect(page.getByLabel("Family name")).toHaveValue(family);
+  await expect(page.getByLabel("Patient ID")).toHaveValue(identifier);
+  await expect(page.getByLabel("Draft working note")).toBeEnabled();
+  await expect(
+    page.getByRole("link", { name: "Open registration draft" }),
+  ).toHaveCount(0);
+  await expect(page.locator("#wizard-step-proposal-review")).not.toHaveAttribute(
+    "aria-disabled",
+    "true",
+  );
 });
 
 test("Register stays disabled until every demographics field is valid", async ({

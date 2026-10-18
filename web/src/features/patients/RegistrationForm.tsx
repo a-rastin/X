@@ -6,15 +6,17 @@
  * against the matching labels (role=alert, aria-describedby) with keyboard
  * focus moved to the summary, and 409 duplicates keep every keystroke. The
  * identifier is handled as text throughout (leading zeros preserved, never
- * stored numerically). No clinical content beyond demographics until the
- * draft exists; then this page shows demographics notes and the working note.
+ * stored numerically). This route is step 1 of the registration wizard.
+ * Notes are visible here but stay local until a valid create; that create
+ * opens `#/encounters/:id#register`, where the same step saves them.
  */
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type MouseEvent } from "react";
 import { ApiError } from "../identity/api";
 import { useAuth } from "../identity/auth";
 import { createPatient } from "./api";
-import { RegistrationDraftHost } from "../encounters/DemographicsDraftPanels";
+import { REGISTRATION_WIZARD_STEPS } from "../encounters/EncounterPage";
+import { stageRegistrationNotice } from "../encounters/DemographicsDraftPanels";
 import {
   toClientField,
   toRegistrationPayload,
@@ -35,14 +37,6 @@ const EMPTY: DemographicsFields = {
 };
 
 type Touched = Partial<Record<DemographicsField, boolean>>;
-
-interface Success {
-  identifier: string;
-  serverTimestamp: string;
-  revision: number;
-  draftRevision: number;
-  draftId: string;
-}
 
 export function RegistrationPage() {
   const { user, sessionExpired } = useAuth();
@@ -70,7 +64,6 @@ function RegistrationForm() {
   const [touched, setTouched] = useState<Touched>({});
   const [serverErrors, setServerErrors] = useState<ClientFieldErrors>({});
   const [formError, setFormError] = useState<string | null>(null);
-  const [success, setSuccess] = useState<Success | null>(null);
   const [busy, setBusy] = useState(false);
   const summaryRef = useRef<HTMLParagraphElement>(null);
 
@@ -118,19 +111,20 @@ function RegistrationForm() {
     }
     setServerErrors({});
     setFormError(null);
-    setSuccess(null);
     setBusy(true);
+    let created = false;
     try {
       const result = await createPatient(toRegistrationPayload(fields));
-      setSuccess({
+      stageRegistrationNotice({
+        draftId: result.draft.id,
         identifier: result.patient.identifier,
         serverTimestamp: result.server_timestamp,
         revision: result.revision,
-        draftRevision: result.draft.revision,
-        draftId: result.draft.id,
       });
-      setFields(EMPTY);
-      setTouched({});
+      created = true;
+      // Same assignment the wizard already uses, so the step fragment is not
+      // encoded away. Back returns to a fresh form, not a second submit.
+      window.location.hash = `#/encounters/${result.draft.id}#register`;
     } catch (err) {
       if (err instanceof ApiError && err.status === 401) {
         sessionExpired();
@@ -168,7 +162,9 @@ function RegistrationForm() {
       }
       setFormError("Registration failed. Check the connection and retry.");
     } finally {
-      setBusy(false);
+      if (!created) {
+        setBusy(false);
+      }
     }
   }
 
@@ -187,6 +183,30 @@ function RegistrationForm() {
   return (
     <div>
       <h2 className="xi-page-title">Register patient</h2>
+      <nav className="xi-wizard-nav" aria-label="Encounter pages" id="wizard-pages">
+        {REGISTRATION_WIZARD_STEPS.map((item, index) => {
+          const current = item.id === "register";
+          return (
+            <a
+              key={item.id}
+              id={`wizard-step-${item.id}`}
+              href="#/patients/new"
+              aria-current={current ? "page" : undefined}
+              aria-disabled={current ? undefined : true}
+              tabIndex={current ? undefined : -1}
+              onClick={(event) => holdStep(event, current)}
+            >
+              {index + 1}. {item.label}
+            </a>
+          );
+        })}
+      </nav>
+      <div
+        className="xi-wizard-page"
+        id="wizard-page"
+        role="region"
+        aria-label="Register patient, step 1 of 8"
+      >
       <section className="xi-card" aria-labelledby="demographics-heading">
         <h3 className="xi-section-title" id="demographics-heading">
           Demographics (step 1)
@@ -194,16 +214,8 @@ function RegistrationForm() {
         <p className="xi-hint">
           Names use Unicode letters only; the patient ID is exactly 10 ASCII
           digits and keeps leading zeros. Nothing is sent until the form is
-          valid.
+          valid. Later steps open after the patient is registered.
         </p>
-        {success !== null && (
-          <div>
-            <p className="xi-status" role="status">
-              Patient {success.identifier} registered. Server time{" "}
-              {success.serverTimestamp}, revision {success.revision}.
-            </p>
-          </div>
-        )}
         <form
           className="xi-form-grid"
           aria-label="Register patient"
@@ -404,21 +416,85 @@ function RegistrationForm() {
             >
               {busy ? "Registering…" : "Register patient"}
             </button>
-            {success !== null && (
-              <a className="xi-btn xi-btn-secondary" href="#/patients">
-                Back to directory
-              </a>
-            )}
           </div>
         </form>
       </section>
-      {success !== null && (
-        <RegistrationDraftHost
-          encounterId={success.draftId}
-          initialRevision={success.draftRevision}
-          initialServerTimestamp={success.serverTimestamp}
-        />
-      )}
+      <PendingRegistrationNotes />
+      </div>
     </div>
+  );
+}
+
+function holdStep(event: MouseEvent<HTMLAnchorElement>, current: boolean): void {
+  if (
+    event.metaKey ||
+    event.ctrlKey ||
+    event.shiftKey ||
+    event.altKey ||
+    event.button !== 0
+  ) {
+    return;
+  }
+  event.preventDefault();
+  if (!current) {
+    return;
+  }
+}
+
+/** Same two boxes as step 1 after create. Not durable until a draft exists. */
+function PendingRegistrationNotes() {
+  return (
+    <>
+      <section className="xi-card" aria-labelledby="notes-demographics-heading">
+        <h4 className="xi-section-title" id="notes-demographics-heading">
+          Page notes — demographics
+        </h4>
+        <p className="xi-hint">
+          Attributed notes for this page. They can be left empty. They save
+          after the patient is registered — nothing here is saved yet.
+        </p>
+        <div className="xi-field">
+          <label className="xi-label" htmlFor="notes-demographics-input">
+            Page note for demographics
+          </label>
+          <textarea
+            className="xi-input"
+            id="notes-demographics-input"
+            rows={3}
+            disabled
+            autoComplete="off"
+          />
+        </div>
+        <button
+          className="xi-btn xi-btn-secondary"
+          type="button"
+          id="notes-demographics-add"
+          disabled
+        >
+          Add page note
+        </button>
+      </section>
+      <section className="xi-card" aria-labelledby="draft-editor-heading">
+        <h3 className="xi-section-title" id="draft-editor-heading">
+          Working note (draft only)
+        </h3>
+        <p className="xi-hint">
+          Autosaves after the patient is registered. Leave it empty, or fill
+          it on this step once the draft exists.
+        </p>
+        <div className="xi-field">
+          <label className="xi-label" htmlFor="draft-working-note">
+            Draft working note
+          </label>
+          <textarea
+            className="xi-input"
+            id="draft-working-note"
+            rows={4}
+            disabled
+            autoComplete="off"
+          />
+        </div>
+      </section>
+    </>
   );
 }

@@ -916,6 +916,11 @@ code {
   border-bottom-color: var(--primary-action);
 }
 
+.xi-main .xi-wizard-nav a[aria-disabled="true"] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
 .xi-wizard-page:focus {
   outline: none;
 }

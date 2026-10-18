@@ -21,9 +21,9 @@
  * Assessment steps are separate pages (`#/encounters/:id#<step>`), not one
  * stacked form: Diagnosis, PANSS, C-SSRS, History, then effects, medications,
  * and proposal review. Back/Continue and the step list move one page at a time.
- * Demographics notes and the working note are the Register patient page
- * (`#register` on a registration draft, and `#/patients/new` once the draft
- * exists) — not chrome on Encounter draft.
+ * Registration opens on that same wizard (`#/patients/new` before a draft
+ * exists). Saved demographics, page notes, and the working note are step 1
+ * (`#register`) only — not a second page, and not chrome on later steps.
  *
  * E2E selector contract (dev-test owns the journey specs; S60
  * e2e/failure-recovery.spec.ts asserts the denied view):
@@ -55,6 +55,7 @@ import { useAutosave } from "./useAutosave";
 import {
   DemographicsDraftPanels,
   DraftSaveStatus,
+  registrationNoticeFor,
 } from "./DemographicsDraftPanels";
 
 type LoadState =
@@ -96,10 +97,11 @@ type WizardStepId =
   | (typeof ASSESSMENT_STEPS)[number]["id"]
   | (typeof REGISTER_STEP)["id"];
 
+/** Same eight labels on `#/patients/new` and a registration draft. */
+export const REGISTRATION_WIZARD_STEPS = [REGISTER_STEP, ...ASSESSMENT_STEPS] as const;
+
 function stepsFor(kind: string): ReadonlyArray<{ id: WizardStepId; label: string }> {
-  return kind === "registration"
-    ? [REGISTER_STEP, ...ASSESSMENT_STEPS]
-    : ASSESSMENT_STEPS;
+  return kind === "registration" ? REGISTRATION_WIZARD_STEPS : ASSESSMENT_STEPS;
 }
 
 function wizardStepFromHash(hash: string, kind: string): WizardStepId {
@@ -117,6 +119,89 @@ function wizardStepFromHash(hash: string, kind: string): WizardStepId {
 
 function encounterStepHash(encounterId: string, step: WizardStepId): string {
   return `#/encounters/${encounterId}#${step}`;
+}
+
+function RegisteredDemographics({
+  patient,
+  notice,
+}: {
+  patient: Patient | null;
+  notice: ReturnType<typeof registrationNoticeFor>;
+}) {
+  const status =
+    patient === null
+      ? ""
+      : patient.clinical_status === "first_time"
+        ? "First-time"
+        : "Established";
+  return (
+    <>
+      {notice !== null && (
+        <p className="xi-status" role="status">
+          Patient {notice.identifier} registered. Server time{" "}
+          {notice.serverTimestamp}, revision {notice.revision}.
+        </p>
+      )}
+      <section className="xi-card" aria-labelledby="demographics-heading">
+        <h3 className="xi-section-title" id="demographics-heading">
+          Demographics (step 1)
+        </h3>
+        <p className="xi-hint">
+          Registered with this draft. Further demographic edits are on the
+          patient chart.
+        </p>
+        {patient === null ? (
+          <p>Loading demographics…</p>
+        ) : (
+          <div className="xi-form-grid">
+            <ReadOnlyField id="saved-given-name" label="Given name" value={patient.given_name} />
+            <ReadOnlyField id="saved-family-name" label="Family name" value={patient.family_name} />
+            <ReadOnlyField
+              id="saved-identifier"
+              label="Patient ID"
+              value={patient.identifier}
+              mono
+            />
+            <ReadOnlyField id="saved-sex" label="Sex" value={patient.sex} />
+            <ReadOnlyField id="saved-age" label="Age" value={String(patient.age)} />
+            <ReadOnlyField id="saved-clinical-status" label="Clinical status" value={status} />
+            <ReadOnlyField
+              id="saved-phone"
+              label="Phone (optional)"
+              value={patient.phone ?? ""}
+            />
+          </div>
+        )}
+      </section>
+    </>
+  );
+}
+
+function ReadOnlyField({
+  id,
+  label,
+  value,
+  mono = false,
+}: {
+  id: string;
+  label: string;
+  value: string;
+  mono?: boolean;
+}) {
+  return (
+    <div className="xi-field">
+      <label className="xi-label" htmlFor={id}>
+        {label}
+      </label>
+      <input
+        className={mono ? "xi-input xi-mono" : "xi-input"}
+        id={id}
+        value={value}
+        readOnly
+        autoComplete="off"
+      />
+    </div>
+  );
 }
 
 export function EncounterPage({ encounterId }: { encounterId: string }) {
@@ -480,8 +565,8 @@ function EncounterWizard({
         />
       )}
 
-      {/* Save status stays on encounter-draft steps. Demographics notes and
-          the working note render only on Register patient (below). */}
+      {/* Save status stays on later steps. Register patient (below) has the
+          working-note status instead, so this page has one `#draft-save-status`. */}
       {currentStep.id !== "register" && (
         <section className="xi-card" aria-label="Draft save">
           <DraftSaveStatus autosave={autosave} />
@@ -511,11 +596,17 @@ function EncounterWizard({
         ref={pageRef}
       >
         {currentStep.id === "register" && (
-          <DemographicsDraftPanels
-            encounterId={encounterId}
-            autosave={autosave}
-            onSessionExpired={sessionExpired}
-          />
+          <>
+            <RegisteredDemographics
+              patient={patient}
+              notice={registrationNoticeFor(encounterId)}
+            />
+            <DemographicsDraftPanels
+              encounterId={encounterId}
+              autosave={autosave}
+              onSessionExpired={sessionExpired}
+            />
+          </>
         )}
 
         {currentStep.id === "diagnosis" && (

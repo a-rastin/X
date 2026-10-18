@@ -1,14 +1,34 @@
 /* Demographics page notes and the draft working note (plan.md §2.2).
 
-   These belong on Register patient, not on later encounter-draft steps.
-   The save-status line stays available on every step: assessment pages
-   share one autosave fence and one `#draft-save-status`. */
+   These belong on the registration wizard's Register patient step, not on
+   later encounter-draft steps. The save-status line stays available on
+   every step: assessment pages share one autosave fence and one
+   `#draft-save-status`. */
 
 import { useEffect, useRef } from "react";
-import { useAuth } from "../identity/auth";
-import { registerUnsavedGuard, shouldBlockNavigation } from "../../app/navigationGuard";
 import { NotesSection } from "../notes/NotesSection";
 import { useAutosave, type SaveState } from "./useAutosave";
+
+/** Shown once on `#register` after a successful create. Not sessionStorage:
+ * a StrictMode initializer would consume that on the discarded first call. */
+export interface RegistrationNotice {
+  draftId: string;
+  identifier: string;
+  serverTimestamp: string;
+  revision: number;
+}
+
+let pendingRegistrationNotice: RegistrationNotice | null = null;
+
+export function stageRegistrationNotice(notice: RegistrationNotice): void {
+  pendingRegistrationNotice = notice;
+}
+
+export function registrationNoticeFor(draftId: string): RegistrationNotice | null {
+  return pendingRegistrationNotice?.draftId === draftId
+    ? pendingRegistrationNotice
+    : null;
+}
 
 type AutosaveApi = ReturnType<typeof useAutosave>;
 
@@ -170,87 +190,6 @@ export function DemographicsDraftPanels({
         </div>
         <DraftSaveStatus autosave={autosave} />
       </section>
-    </>
-  );
-}
-
-/** Register-patient page after the draft exists (no encounter chrome). */
-export function RegistrationDraftHost({
-  encounterId,
-  initialRevision,
-  initialServerTimestamp,
-}: {
-  encounterId: string;
-  initialRevision: number;
-  initialServerTimestamp: string | null;
-}) {
-  const { sessionExpired } = useAuth();
-  const autosave = useAutosave({
-    encounterId,
-    initialData: {},
-    initialRevision,
-    initialServerTimestamp,
-    onSessionExpired: sessionExpired,
-  });
-
-  useEffect(() => {
-    registerUnsavedGuard(() => autosave.hasUnsaved);
-    return () => registerUnsavedGuard(null);
-  }, [autosave.hasUnsaved]);
-
-  useEffect(() => {
-    if (!autosave.hasUnsaved) {
-      return;
-    }
-    const onBeforeUnload = (event: BeforeUnloadEvent) => {
-      event.preventDefault();
-    };
-    window.addEventListener("beforeunload", onBeforeUnload);
-    return () => window.removeEventListener("beforeunload", onBeforeUnload);
-  }, [autosave.hasUnsaved]);
-
-  useEffect(() => {
-    const onHashChange = () => {
-      void autosave.flush();
-    };
-    window.addEventListener("hashchange", onHashChange);
-    return () => window.removeEventListener("hashchange", onHashChange);
-  }, [autosave]);
-
-  return (
-    <>
-      <p>
-        <a
-          className="xi-btn xi-btn-primary"
-          href={`#/encounters/${encounterId}#register`}
-          onClick={(event) => {
-            if (
-              event.metaKey ||
-              event.ctrlKey ||
-              event.shiftKey ||
-              event.altKey ||
-              event.button !== 0
-            ) {
-              return;
-            }
-            event.preventDefault();
-            void (async () => {
-              await autosave.flush();
-              if (shouldBlockNavigation()) {
-                return;
-              }
-              window.location.hash = `#/encounters/${encounterId}#register`;
-            })();
-          }}
-        >
-          Open registration draft
-        </a>
-      </p>
-      <DemographicsDraftPanels
-        encounterId={encounterId}
-        autosave={autosave}
-        onSessionExpired={sessionExpired}
-      />
     </>
   );
 }
