@@ -31,9 +31,21 @@ export function LoginPage() {
   }
 
   return (
-    <div className="xi-auth">
-      <h2 className="xi-section-title">Sign in</h2>
-      <form onSubmit={handleSubmit} noValidate>
+    <div className="xi-auth-layout">
+      <div className="xi-auth-intro">
+        <p className="xi-auth-title">Decision support for psychiatrists</p>
+        <p>
+          Registration, assessments, medication review, and signed plans stay
+          in one draft.
+        </p>
+        <p>
+          Research prototype. Not a treatment system, and not a substitute for
+          clinical judgment.
+        </p>
+      </div>
+      <div className="xi-auth">
+        <h2 className="xi-section-title">Sign in</h2>
+        <form onSubmit={handleSubmit} noValidate>
         <div className="xi-field">
           <label className="xi-label" htmlFor="login-role">
             Role
@@ -87,11 +99,12 @@ export function LoginPage() {
         <button className="xi-btn xi-btn-primary" type="submit" disabled={busy}>
           {busy ? "Signing in…" : "Sign in"}
         </button>
-      </form>
-      <p className="xi-hint">
-        To register a new account, contact administrator. There is no
-        self-registration.
-      </p>
+        </form>
+        <p className="xi-hint">
+          To register a new account, contact administrator. There is no
+          self-registration.
+        </p>
+      </div>
     </div>
   );
 }

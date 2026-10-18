@@ -240,7 +240,7 @@ export function PatientDirectory() {
               <tbody>
                 {data.items.map((patient) => (
                   <tr key={patient.id}>
-                    <td>{patient.identifier}</td>
+                    <td className="xi-mono">{patient.identifier}</td>
                     <td>{patient.given_name}</td>
                     <td>{patient.family_name}</td>
                     <td>{patient.sex}</td>

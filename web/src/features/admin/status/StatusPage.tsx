@@ -294,7 +294,7 @@ export function StatusPage() {
               ]}
             />
 
-            <h4 className="xi-section-title" style={{ marginTop: 16 }}>
+            <h4 className="xi-section-title">
               Provider
             </h4>
             <MetricTable
@@ -310,7 +310,7 @@ export function StatusPage() {
               ]}
             />
 
-            <h4 className="xi-section-title" style={{ marginTop: 16 }}>
+            <h4 className="xi-section-title">
               Inference limits
             </h4>
             <MetricTable
@@ -326,7 +326,7 @@ export function StatusPage() {
               ]}
             />
 
-            <h4 className="xi-section-title" style={{ marginTop: 16 }}>
+            <h4 className="xi-section-title">
               Disk
             </h4>
             <MetricTable
@@ -343,7 +343,7 @@ export function StatusPage() {
               ]}
             />
 
-            <h4 className="xi-section-title" style={{ marginTop: 16 }}>
+            <h4 className="xi-section-title">
               Backup
             </h4>
             <MetricTable
@@ -355,7 +355,7 @@ export function StatusPage() {
               ]}
             />
 
-            <h4 className="xi-section-title" style={{ marginTop: 16 }}>
+            <h4 className="xi-section-title">
               Requests
             </h4>
             <table className="xi-table" aria-label="Requests">

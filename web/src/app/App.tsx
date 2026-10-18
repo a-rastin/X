@@ -168,12 +168,15 @@ export function App() {
     status === "ready" && user !== null && user.role === "physician" && !warningAcked;
 
   return (
-    <div className="xi-shell">
+    <div className={user === null ? "xi-shell xi-shell-gate" : "xi-shell"}>
       <a className="xi-skip-link" href="#main-content">
         Skip to content
       </a>
       <header className="xi-header">
-        <h1 className="xi-wordmark">X-INSIGHT</h1>
+        <h1 className="xi-wordmark">
+          <span className="xi-mark" aria-hidden="true" />
+          X-INSIGHT
+        </h1>
         {user !== null && (
           <nav className="xi-nav" aria-label="Primary">
             <NavLink route="dashboard" current={route} navigate={navigate}>
@@ -227,14 +230,13 @@ export function App() {
             </NavLink>
           </nav>
         )}
-        <div className="xi-header-meta">
-          {user !== null && <ThemeToggle />}
-          {user !== null && (
+        {user !== null && (
+          <div className="xi-header-meta">
             <span className="xi-identity">
-              {user.username} ({user.role})
+              <span className="xi-identity-name">{user.username}</span>
+              <span className="xi-identity-role">{user.role}</span>
             </span>
-          )}
-          {user !== null && (
+            <ThemeToggle />
             <button
               className="xi-btn xi-btn-secondary"
               type="button"
@@ -244,11 +246,11 @@ export function App() {
             >
               Sign out
             </button>
-          )}
-        </div>
+          </div>
+        )}
       </header>
       <main className="xi-main" id="main-content" tabIndex={-1}>
-        {status === "loading" && <p>Loading…</p>}
+        {status === "loading" && <p className="xi-hint">Loading…</p>}
         {status !== "loading" && route === "login" && <LoginPage />}
         {status === "ready" && user !== null && route !== "login" && (
           <>

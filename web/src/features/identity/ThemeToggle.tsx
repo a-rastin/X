@@ -46,7 +46,7 @@ export function ThemeToggle() {
         disabled={busy}
         aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
       >
-        <span aria-hidden="true">{theme === "dark" ? "☾ Dark" : "☀ Light"}</span>
+        <span aria-hidden="true">{theme === "dark" ? "Dark" : "Light"}</span>
       </button>{" "}
       {error !== null && (
         <span className="xi-field-error" role="alert">

@@ -154,8 +154,10 @@ export function ProviderSettingsPage() {
       )}
       {ready && (
         <form className="xi-card" onSubmit={(event) => void save(event)} noValidate>
-          <p id="provider-key-status">Key status: {keyStatus}</p>
-          <p id="provider-capability">Capability: {capability}</p>
+          <div className="xi-meta-pair">
+            <p id="provider-key-status">Key status: {keyStatus}</p>
+            <p id="provider-capability">Capability: {capability}</p>
+          </div>
           <div className="xi-field">
             <label className="xi-label" htmlFor="provider-base-url">
               Base URL

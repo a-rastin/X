@@ -706,7 +706,7 @@ export function ChartPage({ patientId }: { patientId: string }) {
         <h3 className="xi-section-title" id="chart-demographics-heading">
           Demographics
         </h3>
-        <dl>
+        <dl className="xi-facts">
           <div>
             <dt className="xi-hint">Name</dt>
             <dd>

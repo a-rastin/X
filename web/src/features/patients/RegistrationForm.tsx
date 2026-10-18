@@ -208,7 +208,12 @@ function RegistrationForm() {
             </p>
           </div>
         )}
-        <form aria-label="Register patient" onSubmit={handleSubmit} noValidate>
+        <form
+          className="xi-form-grid"
+          aria-label="Register patient"
+          onSubmit={handleSubmit}
+          noValidate
+        >
           <div className="xi-field">
             <label className="xi-label" htmlFor="reg-given-name">
               Given name
@@ -252,7 +257,7 @@ function RegistrationForm() {
               Patient ID
             </label>
             <input
-              className="xi-input"
+              className="xi-input xi-mono"
               id="reg-identifier"
               inputMode="numeric"
               autoComplete="off"

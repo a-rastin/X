@@ -19,7 +19,7 @@ export function AdminDashboard() {
         <h3 className="xi-section-title" id="governance-heading">
           Governance
         </h3>
-        <p>
+        <p className="xi-lede">
           Manage physician accounts, review identity settings, and adjust the
           workspace theme. The patient directory below is read-only.
         </p>
