@@ -114,10 +114,11 @@ async function patchDraftApi(
 async function gotoEncounter(
   page: import("@playwright/test").Page,
   draftId: string,
+  step: "history" | "effects" = "history",
 ): Promise<void> {
-  await page.goto(`/#/encounters/${draftId}`);
-  await expect(page.getByRole("heading", { name: "History (step 5)" })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "Adverse effects (step 6)" })).toBeVisible();
+  await page.goto(`/#/encounters/${draftId}#${step}`);
+  const heading = step === "history" ? "History (step 5)" : "Adverse effects (step 6)";
+  await expect(page.getByRole("heading", { name: heading })).toBeVisible();
 }
 
 test("fresh history form has 12 unanswered fields, no pre-selected radios", async ({
@@ -231,7 +232,7 @@ test("fresh effects are unrecorded with null severity and no completion demand",
   const physician = await loginPhysician(page, request, "e2eefffresh");
   const { draftId } = await createPatientWithDraft(request, physician);
 
-  await gotoEncounter(page, draftId);
+  await gotoEncounter(page, draftId, "effects");
 
   await expect(page.locator("#effects-heading")).toBeVisible();
   await expect(page.locator('input[name^="effect-"]:checked')).toHaveCount(0);
@@ -258,7 +259,7 @@ test("akathisia present via UI needs complete BARS and matching global severity"
   const physician = await loginPhysician(page, request, "e2eeffbars");
   const { draftId } = await createPatientWithDraft(request, physician);
 
-  await gotoEncounter(page, draftId);
+  await gotoEncounter(page, draftId, "effects");
 
   await page.locator("#effect-akathisia-present").check();
   // Questionnaire appears only for present; severity starts unchosen.
@@ -287,7 +288,7 @@ test("switching present to absent clears obsolete severity in the same edit", as
   const physician = await loginPhysician(page, request, "e2eeffstale");
   const { draftId } = await createPatientWithDraft(request, physician);
 
-  await gotoEncounter(page, draftId);
+  await gotoEncounter(page, draftId, "effects");
 
   await page.locator("#effect-akathisia-present").check();
   await page.locator("#bars-bars_objective-2").check();
@@ -324,7 +325,7 @@ test("urgent airway alert shows before checklist completion and persists", async
   const physician = await loginPhysician(page, request, "e2eeffurgent");
   const { draftId } = await createPatientWithDraft(request, physician);
 
-  await gotoEncounter(page, draftId);
+  await gotoEncounter(page, draftId, "effects");
 
   await page.locator("#effect-acute_dystonia-present").check();
   await expect(page.locator("#acute-addx_urgent_airway-yes")).toBeVisible();

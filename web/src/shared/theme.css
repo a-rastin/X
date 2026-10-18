@@ -885,6 +885,52 @@ code {
   text-underline-offset: 2px;
 }
 
+/* Encounter draft pages: one step visible, same underline as the header nav.
+ * Wraps at 200% / narrow desktop instead of scrolling sideways. */
+.xi-wizard-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+  margin: 0 0 var(--space-4);
+  border-bottom: 1px solid var(--border);
+}
+
+.xi-main .xi-wizard-nav a {
+  color: var(--ink-muted);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 13.5px;
+  line-height: 1.2;
+  padding: 10px 12px;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.xi-main .xi-wizard-nav a:hover {
+  color: var(--ink);
+}
+
+.xi-main .xi-wizard-nav a[aria-current="page"] {
+  color: var(--ink);
+  border-bottom-color: var(--primary-action);
+}
+
+.xi-wizard-page:focus {
+  outline: none;
+}
+
+.xi-wizard-pager {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin: 0 0 var(--space-5);
+}
+
+.xi-wizard-pager .xi-btn-primary {
+  margin-left: auto;
+}
+
 @media (max-width: 720px) {
   .xi-header {
     grid-template-columns: minmax(0, 1fr);
@@ -1123,6 +1169,8 @@ code {
 
   .xi-header,
   .xi-nav,
+  .xi-wizard-nav,
+  .xi-wizard-pager,
   .xi-header-meta,
   .xi-row-actions,
   .xi-no-print,

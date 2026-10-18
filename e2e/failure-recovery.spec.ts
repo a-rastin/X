@@ -182,7 +182,7 @@ async function gotoEncounter(
   page: import("@playwright/test").Page,
   draftId: string,
 ): Promise<void> {
-  await page.goto(`/#/encounters/${draftId}`);
+  await page.goto(`/#/encounters/${draftId}#proposal-review`);
   await expect(page.getByRole("heading", { name: "Encounter draft" })).toBeVisible({
     timeout: 15000,
   });

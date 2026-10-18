@@ -109,7 +109,7 @@ test("demographics + diagnosis + history note controls mount with stable selecto
 
   await gotoEncounter(page, draftId);
 
-  for (const section of ["demographics", "diagnosis", "history"]) {
+  for (const section of ["demographics", "diagnosis"]) {
     await expect(page.locator(`#notes-${section}-heading`)).toBeVisible();
     // Stable anchor: always rendered, but an empty <ul> has no bounding box
     // (Playwright reports hidden) until the first note arrives.
@@ -118,6 +118,12 @@ test("demographics + diagnosis + history note controls mount with stable selecto
     await expect(page.locator(`#notes-${section}-add`)).toBeVisible();
     await expect(page.locator(`#notes-${section}-status`)).toBeVisible();
   }
+  await page.locator("#wizard-step-history").click();
+  await expect(page.locator("#notes-history-heading")).toBeVisible();
+  await expect(page.locator("#notes-history-list")).toBeAttached();
+  await expect(page.locator("#notes-history-input")).toBeVisible();
+  await expect(page.locator("#notes-history-add")).toBeVisible();
+  await expect(page.locator("#notes-history-status")).toBeVisible();
   await expect(page.locator(".xi-notes-panel").first()).toBeVisible();
 });
 
@@ -195,6 +201,7 @@ test("note markup renders literally and stays separate from history", async ({
   const { draftId } = await createPatientWithDraft(request, physician);
 
   await gotoEncounter(page, draftId);
+  await page.locator("#wizard-step-history").click();
 
   const literal = "<b>hello</b> <script>alert(1)</script>";
   await page.locator("#notes-history-input").fill(literal);
@@ -289,6 +296,7 @@ test("failed note save never shows Saved and retry recovers", async ({
     return route.continue();
   });
   try {
+    await page.locator("#wizard-step-panss").click();
     const probe = `offline probe ${uniqueLetters("ww")}`;
     const input = page.locator("#notes-panss-input");
     const status = page.locator("#notes-panss-status");

@@ -157,13 +157,17 @@ test("follow-up creation from chart navigates to draft with phone/history/effect
   await expect(page.getByRole("heading", { name: "Encounter draft" })).toBeVisible({
     timeout: 15000,
   });
-  // Follow-up baseline panel (empty shell) plus every wizard page mounts.
+  // Follow-up baseline stays in the draft chrome. Each wizard page is its own step.
   await expect(page.getByTestId("followup-baseline")).toBeVisible({ timeout: 15000 });
   await expect(page.locator("#followup-baseline-status")).toContainText("not_required");
+  await page.locator("#wizard-step-history").click();
   await expect(page.locator("#history-heading")).toBeVisible();
   await expect(page.locator("#history-phone-update")).toBeVisible();
+  await page.locator("#wizard-step-effects").click();
   await expect(page.locator("#effects-heading")).toBeVisible();
+  await page.locator("#wizard-step-panss").click();
   await expect(page.locator("#panss-heading")).toBeVisible();
+  await page.locator("#wizard-step-cssrs").click();
   await expect(page.locator("#cssrs-heading")).toBeVisible();
 
   // Resume: reload keeps the same draft with no fake proposal.
@@ -268,9 +272,11 @@ test("baseline provenance, pending reconciliation, and historical prior scores r
   await expect(prior).toContainText("C-SSRS severity");
 
   // Prior scores never fill the fresh forms: PANSS/C-SSRS stay unanswered.
+  await page.locator("#wizard-step-panss").click();
   await expect(page.locator("#panss-preview-status")).toContainText("unanswered", {
     timeout: 15000,
   });
+  await page.locator("#wizard-step-cssrs").click();
   await expect(page.locator("#cssrs-heading")).toBeVisible();
 });
 

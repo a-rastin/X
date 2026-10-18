@@ -110,7 +110,7 @@ async function gotoPanss(
   page: import("@playwright/test").Page,
   draftId: string,
 ): Promise<void> {
-  await page.goto(`/#/encounters/${draftId}`);
+  await page.goto(`/#/encounters/${draftId}#panss`);
   await expect(
     page.getByRole("heading", { name: "PANSS (step 3)" }),
   ).toBeVisible();

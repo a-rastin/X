@@ -18,6 +18,9 @@
  * Discard needs explicit confirmation + current revision, releases the slot
  * without deleting the patient. Navigation warns while edits remain
  * (beforeunload + in-app hash guard); flush persists on page transition.
+ * Assessment steps are separate pages (`#/encounters/:id#<step>`), not one
+ * stacked form: Diagnosis, PANSS, C-SSRS, History, then effects, medications,
+ * and proposal review. Back/Continue and the step list move one page at a time.
  *
  * E2E selector contract (dev-test owns the journey specs; S60
  * e2e/failure-recovery.spec.ts asserts the denied view):
@@ -26,14 +29,13 @@
  * - load-error view `data-testid="encounter-error"` (role=alert + Retry)
  */
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState, type MouseEvent } from "react";
 import { ApiError } from "../identity/api";
 import { useAuth } from "../identity/auth";
 import { getPatient, type Patient } from "../patients/api";
 import { registerUnsavedGuard } from "../../app/navigationGuard";
 import {
   discardEncounter,
-  encounterHash,
   getEncounter,
   type EncounterReference,
 } from "./api";
@@ -68,6 +70,35 @@ export function parseEncounterId(hash: string): string | null {
   }
   const id = hash.slice(prefix.length).split(/[?#]/)[0];
   return id !== "" ? id : null;
+}
+
+/** One encounter-draft page. Order matches the section headings (step 2+).
+ * Demographics (step 1) is the registration form, already completed. */
+const WIZARD_STEPS = [
+  { id: "diagnosis", label: "Diagnosis" },
+  { id: "panss", label: "PANSS" },
+  { id: "cssrs", label: "C-SSRS" },
+  { id: "history", label: "History" },
+  { id: "effects", label: "Adverse effects" },
+  { id: "medications", label: "Medications" },
+  { id: "proposal-review", label: "Proposal review" },
+] as const;
+
+type WizardStepId = (typeof WIZARD_STEPS)[number]["id"];
+
+const WIZARD_STEP_IDS = new Set<string>(WIZARD_STEPS.map((item) => item.id));
+
+function wizardStepFromHash(hash: string): WizardStepId {
+  if (!hash.startsWith("#/encounters/")) {
+    return "diagnosis";
+  }
+  // `#/encounters/:id#panss` — the fragment after the encounter id.
+  const fragment = hash.split("#")[2] ?? "";
+  return WIZARD_STEP_IDS.has(fragment) ? (fragment as WizardStepId) : "diagnosis";
+}
+
+function encounterStepHash(encounterId: string, step: WizardStepId): string {
+  return `#/encounters/${encounterId}#${step}`;
 }
 
 function workingNoteOf(data: Record<string, unknown>): string {
@@ -259,8 +290,46 @@ function EncounterWizard({
   const [discardError, setDiscardError] = useState<string | null>(null);
   const conflictHeadingRef = useRef<HTMLHeadingElement>(null);
   const discardDialogRef = useRef<HTMLDivElement>(null);
+  const pageRef = useRef<HTMLDivElement>(null);
+  const skipPageFocus = useRef(true);
+  const [step, setStep] = useState<WizardStepId>(() =>
+    wizardStepFromHash(window.location.hash),
+  );
+  const lastEncounterHashRef = useRef(window.location.hash);
 
   const note = workingNoteOf(autosave.localData);
+  const stepIndex = WIZARD_STEPS.findIndex((item) => item.id === step);
+  const currentStep = WIZARD_STEPS[stepIndex] ?? WIZARD_STEPS[0];
+  const previousStep = stepIndex > 0 ? WIZARD_STEPS[stepIndex - 1] : null;
+  const nextStep =
+    stepIndex >= 0 && stepIndex < WIZARD_STEPS.length - 1
+      ? WIZARD_STEPS[stepIndex + 1]
+      : null;
+
+  function followStepLink(event: MouseEvent<HTMLAnchorElement>): void {
+    if (
+      event.metaKey ||
+      event.ctrlKey ||
+      event.shiftKey ||
+      event.altKey ||
+      event.button !== 0
+    ) {
+      return;
+    }
+    event.preventDefault();
+    const hash = event.currentTarget.getAttribute("href");
+    if (hash === null || hash === "") {
+      return;
+    }
+    // Hash change flushes (page transition). Answers live in the parent autosave,
+    // so unmounting this step does not drop them.
+    if (window.location.hash !== hash) {
+      window.location.hash = hash;
+    } else {
+      void autosave.flush();
+    }
+    setStep(wizardStepFromHash(hash));
+  }
 
   // Navigation guard: warn while local edits remain (in-app + beforeunload).
   useEffect(() => {
@@ -281,11 +350,11 @@ function EncounterWizard({
 
   // In-app hash-route guard for manual hash edits and back/forward: confirm
   // before leaving the draft with unsaved edits, restoring the draft hash
-  // when the user stays.
+  // (including the open step) when the user stays.
   useEffect(() => {
-    const ownHash = encounterHash(encounterId);
     const onHashChange = () => {
       if (window.location.hash.startsWith("#/encounters/")) {
+        lastEncounterHashRef.current = window.location.hash;
         return;
       }
       if (!autosave.hasUnsaved) {
@@ -296,7 +365,7 @@ function EncounterWizard({
         "You have unsaved draft changes. Leave without saving?",
       );
       if (stay) {
-        window.location.hash = ownHash;
+        window.location.hash = lastEncounterHashRef.current;
       } else {
         void autosave.flush();
       }
@@ -304,6 +373,29 @@ function EncounterWizard({
     window.addEventListener("hashchange", onHashChange);
     return () => window.removeEventListener("hashchange", onHashChange);
   }, [autosave, encounterId]);
+
+  // Browser back/forward and pasted step URLs. Clicks already set the step;
+  // this covers the cases that only change the hash.
+  const flushDraft = autosave.flush;
+  useEffect(() => {
+    const onHashChange = () => {
+      if (!window.location.hash.startsWith("#/encounters/")) {
+        return;
+      }
+      void flushDraft();
+      setStep(wizardStepFromHash(window.location.hash));
+    };
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
+  }, [flushDraft]);
+
+  useEffect(() => {
+    if (skipPageFocus.current) {
+      skipPageFocus.current = false;
+      return;
+    }
+    pageRef.current?.focus();
+  }, [step]);
 
   useEffect(() => {
     if (autosave.saveState.kind === "conflict") {
@@ -509,109 +601,182 @@ function EncounterWizard({
         )}
       </section>
 
-      <DiagnosisSection
-        encounterId={encounterId}
-        autosave={autosave}
-        onSessionExpired={sessionExpired}
-      />
-      <NotesSection
-        encounterId={encounterId}
-        page="diagnosis"
-        autosave={autosave}
-        onSessionExpired={sessionExpired}
-      />
+      <nav className="xi-wizard-nav" aria-label="Encounter pages" id="wizard-pages">
+        {WIZARD_STEPS.map((item, index) => (
+          <a
+            key={item.id}
+            id={`wizard-step-${item.id}`}
+            href={encounterStepHash(encounterId, item.id)}
+            aria-current={item.id === currentStep.id ? "page" : undefined}
+            onClick={followStepLink}
+          >
+            {index + 2}. {item.label}
+          </a>
+        ))}
+      </nav>
 
-      <PanssSection
-        encounterId={encounterId}
-        autosave={autosave}
-        onSessionExpired={sessionExpired}
-      />
-      <NotesSection
-        encounterId={encounterId}
-        page="panss"
-        autosave={autosave}
-        onSessionExpired={sessionExpired}
-      />
+      <div
+        className="xi-wizard-page"
+        id="wizard-page"
+        role="region"
+        aria-label={`${currentStep.label}, step ${stepIndex + 2} of ${WIZARD_STEPS.length + 1}`}
+        tabIndex={-1}
+        ref={pageRef}
+      >
+        {currentStep.id === "diagnosis" && (
+          <>
+            <DiagnosisSection
+              encounterId={encounterId}
+              autosave={autosave}
+              onSessionExpired={sessionExpired}
+            />
+            <NotesSection
+              encounterId={encounterId}
+              page="diagnosis"
+              autosave={autosave}
+              onSessionExpired={sessionExpired}
+            />
+          </>
+        )}
 
-      <CssrsSection
-        encounterId={encounterId}
-        autosave={autosave}
-        onSessionExpired={sessionExpired}
-      />
-      <NotesSection
-        encounterId={encounterId}
-        page="cssrs"
-        autosave={autosave}
-        onSessionExpired={sessionExpired}
-      />
+        {currentStep.id === "panss" && (
+          <>
+            <PanssSection
+              encounterId={encounterId}
+              autosave={autosave}
+              onSessionExpired={sessionExpired}
+            />
+            <NotesSection
+              encounterId={encounterId}
+              page="panss"
+              autosave={autosave}
+              onSessionExpired={sessionExpired}
+            />
+          </>
+        )}
 
-      <HistorySection
-        encounterId={encounterId}
-        autosave={autosave}
-        onSessionExpired={sessionExpired}
-      />
-      {/* Page notes render SEPARATELY from history: never inside the history
-        analysis_visible list. This distinct panel carries page/author/time
-        from server values; S40/S41/S59 assert the noninterference end to end. */}
-      <NotesSection
-        encounterId={encounterId}
-        page="history"
-        autosave={autosave}
-        onSessionExpired={sessionExpired}
-      />
+        {currentStep.id === "cssrs" && (
+          <>
+            <CssrsSection
+              encounterId={encounterId}
+              autosave={autosave}
+              onSessionExpired={sessionExpired}
+            />
+            <NotesSection
+              encounterId={encounterId}
+              page="cssrs"
+              autosave={autosave}
+              onSessionExpired={sessionExpired}
+            />
+          </>
+        )}
 
-      <EffectsSection
-        encounterId={encounterId}
-        autosave={autosave}
-        onSessionExpired={sessionExpired}
-      />
-      <NotesSection
-        encounterId={encounterId}
-        page="effects"
-        autosave={autosave}
-        onSessionExpired={sessionExpired}
-      />
+        {currentStep.id === "history" && (
+          <>
+            <HistorySection
+              encounterId={encounterId}
+              autosave={autosave}
+              onSessionExpired={sessionExpired}
+            />
+            {/* Page notes render SEPARATELY from history: never inside the history
+              analysis_visible list. This distinct panel carries page/author/time
+              from server values; S40/S41/S59 assert the noninterference end to end. */}
+            <NotesSection
+              encounterId={encounterId}
+              page="history"
+              autosave={autosave}
+              onSessionExpired={sessionExpired}
+            />
+          </>
+        )}
 
-      {/* S20 medications + DDI (plan.md §§2.2, 6.3, 9; FR-14-16, FR-20):
-        demo-catalog drug-only selection in the shared autosave body with a
-        strict validating save + explicit follow-up reconciliation, and the
-        versioned DDI evidence panel with stale fencing. Mounted after
-        history/effects, before proposal review. Page notes render separately
-        below via the reusable control (page key matches backend
-        ALLOWED_PAGES). */}
-      <MedicationsSection
-        encounterId={encounterId}
-        autosave={autosave}
-        onSessionExpired={sessionExpired}
-      />
-      <NotesSection
-        encounterId={encounterId}
-        page="medications"
-        autosave={autosave}
-        onSessionExpired={sessionExpired}
-      />
+        {currentStep.id === "effects" && (
+          <>
+            <EffectsSection
+              encounterId={encounterId}
+              autosave={autosave}
+              onSessionExpired={sessionExpired}
+            />
+            <NotesSection
+              encounterId={encounterId}
+              page="effects"
+              autosave={autosave}
+              onSessionExpired={sessionExpired}
+            />
+          </>
+        )}
 
-      {/* S48 proposal review (plan.md §§8-9; FR-15-16, FR-35-36): entry
-        flushes the shared autosave and automatically creates/reuses a
-        generation run once the draft is saved and the diagnosis/medication
-        gates pass — no extra Generate click, no run per keystroke. Ordered
-        per-question states, lazy persisted transparency, the immutable
-        proposal with pinned DDI, and a sign entry blocked with reasons for
-        failed/stale/partial runs (S49/S50 own signing). Page notes render
-        separately below via the reusable control (page key matches backend
-        ALLOWED_PAGES; notes never enter projections — see
-        features/reasoning/api.ts). */}
-      <ProposalReviewPanel
-        encounterId={encounterId}
-        autosave={autosave}
-        onSessionExpired={sessionExpired}
-      />
-      <NotesSection
-        encounterId={encounterId}
-        page="proposal"
-        autosave={autosave}
-        onSessionExpired={sessionExpired}
-      />
+        {currentStep.id === "medications" && (
+          <>
+            {/* S20 medications + DDI (plan.md §§2.2, 6.3, 9; FR-14-16, FR-20):
+              demo-catalog drug-only selection in the shared autosave body with a
+              strict validating save + explicit follow-up reconciliation, and the
+              versioned DDI evidence panel with stale fencing. Page notes render
+              separately below via the reusable control (page key matches backend
+              ALLOWED_PAGES). */}
+            <MedicationsSection
+              encounterId={encounterId}
+              autosave={autosave}
+              onSessionExpired={sessionExpired}
+            />
+            <NotesSection
+              encounterId={encounterId}
+              page="medications"
+              autosave={autosave}
+              onSessionExpired={sessionExpired}
+            />
+          </>
+        )}
+
+        {currentStep.id === "proposal-review" && (
+          <>
+            {/* S48 proposal review (plan.md §§8-9; FR-15-16, FR-35-36): entry
+              flushes the shared autosave and automatically creates/reuses a
+              generation run once the draft is saved and the diagnosis/medication
+              gates pass — no extra Generate click, no run per keystroke. Ordered
+              per-question states, lazy persisted transparency, the immutable
+              proposal with pinned DDI, and a sign entry blocked with reasons for
+              failed/stale/partial runs (S49/S50 own signing). Page notes render
+              separately below via the reusable control (page key matches backend
+              ALLOWED_PAGES; notes never enter projections — see
+              features/reasoning/api.ts). */}
+            <ProposalReviewPanel
+              encounterId={encounterId}
+              autosave={autosave}
+              onSessionExpired={sessionExpired}
+            />
+            <NotesSection
+              encounterId={encounterId}
+              page="proposal"
+              autosave={autosave}
+              onSessionExpired={sessionExpired}
+            />
+          </>
+        )}
+      </div>
+
+      <div className="xi-wizard-pager">
+        {previousStep !== null && (
+          <a
+            id="wizard-back"
+            className="xi-btn xi-btn-secondary"
+            href={encounterStepHash(encounterId, previousStep.id)}
+            onClick={followStepLink}
+          >
+            Back to {previousStep.label}
+          </a>
+        )}
+        {nextStep !== null && (
+          <a
+            id="wizard-continue"
+            className="xi-btn xi-btn-primary"
+            href={encounterStepHash(encounterId, nextStep.id)}
+            onClick={followStepLink}
+          >
+            Continue to {nextStep.label}
+          </a>
+        )}
+      </div>
 
       <section className="xi-card" aria-labelledby="draft-danger-heading">
         <h3 className="xi-section-title" id="draft-danger-heading">

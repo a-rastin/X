@@ -161,7 +161,7 @@ async function gotoCssrs(
   page: import("@playwright/test").Page,
   draftId: string,
 ): Promise<void> {
-  await page.goto(`/#/encounters/${draftId}`);
+  await page.goto(`/#/encounters/${draftId}#cssrs`);
   await expect(
     page.getByRole("heading", { name: "C-SSRS (step 4)" }),
   ).toBeVisible();

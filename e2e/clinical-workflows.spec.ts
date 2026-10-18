@@ -150,7 +150,7 @@ async function gotoEncounter(
   page: import("@playwright/test").Page,
   draftId: string,
 ): Promise<void> {
-  await page.goto(`/#/encounters/${draftId}`);
+  await page.goto(`/#/encounters/${draftId}#proposal-review`);
   await expect(page.getByRole("heading", { name: "Encounter draft" })).toBeVisible({
     timeout: 15000,
   });
@@ -1153,21 +1153,30 @@ test("S59 §1 registration journey renders assessments meds DDI and five-questio
     await seedStoredProposal(page, draftId, { batchId, packages, sourceRevision: 2 });
     await gotoEncounter(page, draftId);
 
-    // Assessment pages render on the wizard.
-    await expect(page.locator("#diagnosis-heading")).toBeVisible();
-    await expect(page.locator("#panss-heading")).toBeVisible();
-    await expect(page.locator("#cssrs-heading")).toBeVisible();
-    await expect(page.locator("#history-heading")).toBeVisible();
-    await expect(page.locator("#effects-heading")).toBeVisible();
+    // Each assessment page is its own step, not stacked on the draft.
+    for (const [step, heading] of [
+      ["diagnosis", "#diagnosis-heading"],
+      ["panss", "#panss-heading"],
+      ["cssrs", "#cssrs-heading"],
+      ["history", "#history-heading"],
+      ["effects", "#effects-heading"],
+    ] as const) {
+      await page.locator(`#wizard-step-${step}`).click();
+      await expect(page.locator(heading)).toBeVisible();
+    }
 
     // Catalog medications + DDI panel render (seed-independent structure;
     // selection mechanics are owned by e2e/ddi.spec.ts).
+    await page.locator("#wizard-step-medications").click();
     await expect(page.locator("#medications-heading")).toBeVisible();
     await expect(page.locator("#meds-search")).toBeVisible();
     await expect(page.locator("#meds-catalog-info")).toBeVisible();
     await expect(page.locator("#meds-selected-empty")).toBeVisible();
     await expect(page.locator("#ddi-report-panel")).toBeVisible();
     await expect(page.locator("#ddi-pending")).toBeVisible();
+
+    await page.locator("#wizard-step-proposal-review").click();
+    await expect(page.getByTestId("proposal-review")).toBeVisible({ timeout: 15000 });
 
     // Five-question sequential progress: position-ordered statuses.
     const panel = page.getByTestId("proposal-review");

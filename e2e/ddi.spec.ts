@@ -82,7 +82,7 @@ async function gotoEncounter(
   page: import("@playwright/test").Page,
   draftId: string,
 ): Promise<void> {
-  await page.goto(`/#/encounters/${draftId}`);
+  await page.goto(`/#/encounters/${draftId}#medications`);
   await expect(page.locator("#medications-heading")).toBeVisible({
     timeout: 15000,
   });
