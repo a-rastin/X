@@ -229,7 +229,7 @@ export function ProviderSettingsPage() {
               className="xi-btn xi-btn-secondary"
               type="button"
               id="provider-test"
-              disabled={busy !== null}
+              disabled={busy !== null || revision === null}
               onClick={() => void test()}
             >
               {busy === "test" ? "Testing…" : "Test provider"}

@@ -261,6 +261,35 @@ test("admin saves, tests, and clears provider settings without echoing the key",
   }
 });
 
+test("admin cannot test provider settings before the first save", async ({ page }) => {
+  const login = page.waitForResponse(
+    (res) =>
+      res.request().method() === "POST" &&
+      new URL(res.url()).pathname === "/api/v1/auth/login",
+  );
+  await loginAs(page, "admin", "admin", "admin");
+  expect((await login).status(), "admin login").toBe(200);
+
+  await page.route("**/api/v1/api-settings", (route) =>
+    route.fulfill({
+      status: 404,
+      contentType: "application/json",
+      body: JSON.stringify({
+        code: "NOT_FOUND",
+        message: "Provider settings are not configured.",
+      }),
+    }),
+  );
+  await page.getByRole("link", { name: "Provider", exact: true }).click();
+  await expect(page.locator("#provider-key-status")).toHaveText("Key status: absent");
+  await expect(page.locator("#provider-test")).toBeDisabled();
+
+  await page.locator("#provider-base-url").fill("https://provider.example/v1");
+  await page.locator("#provider-model").fill("example-model");
+  await page.locator("#provider-api-key").fill(SENTINEL);
+  await expect(page.locator("#provider-test")).toBeDisabled();
+});
+
 test("physician is refused provider settings", async ({ page, request }) => {
   const username = uniqueName("s42phys");
   await ensurePhysician(request, username, "secret123");

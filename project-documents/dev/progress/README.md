@@ -5,7 +5,9 @@ handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
 The latest recorded checkpoint is [S42](s42.md) (2026-10-17): provider
 settings are implemented (encryption, masked admin API, capability check,
-admin page). Schema head and the fresh-backup expectation are `0021`, with
+admin page). Its [2026-10-18 UI follow-up](s42.md#follow-up-2026-10-18--disable-testing-before-the-first-save)
+disables capability testing until a settings revision has been saved. Schema
+head and the fresh-backup expectation are `0021`, with
 `provider_settings` in a 32-table inventory. The [S62](s62.md) release gate
 otherwise stays open: not a release, not clinical validation, not high
 availability. tasks.md has no session after S62 and no S63.
