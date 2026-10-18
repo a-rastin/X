@@ -38,6 +38,9 @@ are step 1, and the post-create notes page is gone. A later
 [follow-up](s07.md#follow-up-2026-10-18--adverse-effects-leave-the-registration-wizard)
 removes Adverse effects from that registration wizard and keeps them on follow-up.
 
+The [diagnosis UI follow-up](s09.md#follow-up-2026-10-18--diagnosis-criteria-presentation)
+groups criteria A–F into cards with accessible answer controls and a clearer summary.
+
 ## Reading and updating progress
 
 - Use [../tasks.md](../tasks.md) for planned sessions and

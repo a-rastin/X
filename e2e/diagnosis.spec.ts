@@ -164,7 +164,7 @@ test("qualifying case shows every required criterion satisfied and can proceed",
   const criteria = page.locator("#diagnosis-criteria");
   await expect(criteria).toBeVisible();
   for (const criterion of ["A", "B", "C", "D", "E", "F"]) {
-    await expect(criteria.getByRole("row", { name: `${criterion} met` })).toBeVisible();
+    await expect(criteria.getByRole("row", { name: new RegExp(`^${criterion} · .+ Met$`) })).toBeVisible();
   }
   await expect(page.getByText("Can proceed to the next step:")).toContainText(
     "Yes — criteria_satisfied",
@@ -197,7 +197,7 @@ test("symptom-count-only case does not satisfy and requests acknowledgment", asy
   );
   // Criterion A met, but the full document is not satisfied.
   const criteria = page.locator("#diagnosis-criteria");
-  await expect(criteria.getByRole("row", { name: "A met" })).toBeVisible();
+  await expect(criteria.getByRole("row", { name: /^A · .+ Met$/ })).toBeVisible();
   await expect(verdict).not.toContainText("Every required criterion satisfied");
 });
 

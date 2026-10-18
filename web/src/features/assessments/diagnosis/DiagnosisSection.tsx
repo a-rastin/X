@@ -37,6 +37,8 @@
  *   "Bypass diagnosis", bypassed state text "Diagnosis bypassed"
  */
 
+import "./diagnosis.css";
+
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ApiError } from "../../identity/api";
 import {
@@ -100,6 +102,13 @@ const ANSWER_OPTIONS: { value: DiagnosisAnswer; label: string }[] = [
   { value: "no", label: "No" },
   { value: "unknown", label: "Unknown" },
 ];
+
+// Presentation labels only; prompts and evaluation remain server-authoritative.
+const CRITERION_TITLES: Record<string, string> = {
+  A: "Characteristic symptoms", B: "Functioning", C: "Duration",
+  D: "Mood disorder exclusion", E: "Substance & medical exclusion",
+  F: "Developmental history",
+};
 
 export function DiagnosisSection({
   encounterId,
@@ -343,15 +352,13 @@ export function DiagnosisSection({
   }
 
   return (
-    <section className="xi-card" aria-labelledby="diagnosis-heading">
+    <section className="xi-card xi-diagnosis" aria-labelledby="diagnosis-heading">
       <h3 className="xi-section-title" id="diagnosis-heading">
         Diagnosis (step {stepNumber})
       </h3>
       <p className="xi-hint">
-        Answers autosave through the same draft as the rest of this encounter
-        (about one second after changing an answer). The threshold preview
-        below is computed by the server from the released criteria — the
-        browser never decides the result itself.
+        Review each criterion and record your assessment. Select Unknown when
+        you cannot determine an answer. Your responses save automatically.
       </p>
 
       {definitionError !== null && (
@@ -371,46 +378,74 @@ export function DiagnosisSection({
       )}
 
       {definition !== null && (
-        <div>
-          {definition.items.map((item) => (
-            <fieldset key={item.id} className="xi-field">
-              <legend className="xi-label">{item.prompt}</legend>
-              <div className="xi-radio-group">
-                {ANSWER_OPTIONS.map((option) => (
-                  <label
-                    key={option.value}
-                    htmlFor={`diag-${item.id}-${option.value}`}
-                  >
-                    <input
-                      id={`diag-${item.id}-${option.value}`}
-                      type="radio"
-                      name={`diagnosis-${item.id}`}
-                      value={option.value}
-                      checked={answers[item.id] === option.value}
-                      onChange={() => setAnswer(item.id, option.value)}
-                      aria-describedby={
-                        itemErrors[item.id] !== undefined
-                          ? `diag-${item.id}-error`
-                          : undefined
-                      }
-                    />
-                    {option.label}
-                  </label>
-                ))}
-              </div>
-              {itemErrors[item.id] !== undefined && (
-                <p className="xi-field-error" id={`diag-${item.id}-error`}>
-                  {itemErrors[item.id].join(" ")}
-                </p>
-              )}
-            </fieldset>
-          ))}
+        <div className="xi-diagnosis-checklist">
+          <div className="xi-diagnosis-overview">
+            <div>
+              <h4>Diagnostic criteria</h4>
+              <p>Work through criteria A–F. Response counts track answers, not whether criteria are met.</p>
+            </div>
+            <span className="xi-diagnosis-count">
+              {definition.items.filter((item) => ANSWER_OPTIONS.some((option) => option.value === answers[item.id])).length}
+              {" / "}{definition.items.length} responses
+            </span>
+          </div>
+          {Array.from(new Set(definition.items.map((item) => item.id.split("_")[0].toUpperCase()))).map((criterion) => {
+            const items = definition.items.filter((item) => item.id.split("_")[0].toUpperCase() === criterion);
+            const answered = items.filter((item) => ANSWER_OPTIONS.some((option) => option.value === answers[item.id])).length;
+            return (
+              <section className="xi-diagnosis-criterion" key={criterion} aria-labelledby={`diag-group-${criterion}`}>
+                <header className="xi-diagnosis-criterion-header">
+                  <span className="xi-diagnosis-letter" aria-hidden="true">{criterion}</span>
+                  <h4 id={`diag-group-${criterion}`}>
+                    <span className="xi-diagnosis-eyebrow">Criterion {criterion}</span>
+                    {CRITERION_TITLES[criterion] ?? "Additional criteria"}
+                  </h4>
+                  <span className="xi-diagnosis-count">{answered} / {items.length} answered</span>
+                </header>
+                <div className="xi-diagnosis-items">
+                  {items.map((item) => (
+                    <fieldset key={item.id} className="xi-diagnosis-item" disabled={busy !== null}>
+                      <legend>{item.prompt}</legend>
+                      <div className="xi-diagnosis-answer-row">
+                        <span className="xi-diagnosis-item-hint">
+                          {item.required ? "Required" : "Required when applicable"}
+                          {!ANSWER_OPTIONS.some((option) => option.value === answers[item.id]) && " · Unanswered"}
+                        </span>
+                        <div className="xi-diagnosis-options">
+                          {ANSWER_OPTIONS.map((option) => (
+                            <label key={option.value} htmlFor={`diag-${item.id}-${option.value}`}>
+                              <input
+                                id={`diag-${item.id}-${option.value}`}
+                                type="radio"
+                                name={`diagnosis-${item.id}`}
+                                value={option.value}
+                                checked={answers[item.id] === option.value}
+                                onChange={() => setAnswer(item.id, option.value)}
+                                aria-invalid={itemErrors[item.id] !== undefined || undefined}
+                                aria-describedby={itemErrors[item.id] !== undefined ? `diag-${item.id}-error` : undefined}
+                              />
+                              <span>{option.label}</span>
+                            </label>
+                          ))}
+                        </div>
+                      </div>
+                      {itemErrors[item.id] !== undefined && (
+                        <p className="xi-field-error" id={`diag-${item.id}-error`}>
+                          {itemErrors[item.id].join(" ")}
+                        </p>
+                      )}
+                    </fieldset>
+                  ))}
+                </div>
+              </section>
+            );
+          })}
         </div>
       )}
 
-      <div style={{ marginTop: 16 }}>
-        <h4 className="xi-section-title" style={{ fontSize: 16 }}>
-          Server threshold preview
+      <div className="xi-diagnosis-result">
+        <h4 className="xi-section-title">
+          Assessment summary
         </h4>
         {previewLoading && preview === null && <p>Loading diagnosis preview…</p>}
         {previewError !== null && preview === null && (
@@ -439,7 +474,7 @@ export function DiagnosisSection({
               role=status): the wizard's save status keeps the page's single
               status role per the S07 e2e contract. */}
             <p
-              className="xi-status"
+              className="xi-status xi-diagnosis-verdict"
               id="diagnosis-preview-status"
               aria-live="polite"
             >
@@ -465,10 +500,13 @@ export function DiagnosisSection({
             {evaluation?.status === "partial" && definition !== null && (
               <div>
                 <p className="xi-hint">Still needed:</p>
-                <ul>
+                <ul className="xi-diagnosis-missing">
                   {evaluation.missing_item_ids.map((id) => (
                     <li key={id}>
-                      {definition.items.find((item) => item.id === id)?.prompt ?? id}
+                      <a href={`#diag-${id}-yes`} onClick={(event) => {
+                        event.preventDefault();
+                        document.getElementById(`diag-${id}-yes`)?.focus();
+                      }}>{definition.items.find((item) => item.id === id)?.prompt ?? id}</a>
                     </li>
                   ))}
                 </ul>
@@ -486,8 +524,10 @@ export function DiagnosisSection({
                 <tbody>
                   {Object.entries(criteria).map(([criterion, state]) => (
                     <tr key={criterion}>
-                      <td>{criterion}</td>
-                      <td>{state}</td>
+                      <td><strong>{criterion}</strong>{" · "}{CRITERION_TITLES[criterion] ?? "Criterion"}</td>
+                      <td><span className={`xi-diagnosis-state xi-diagnosis-state--${state}`}>
+                        {state === "met" ? "Met" : state === "not_met" ? "Not met" : state === "unknown" ? "Unknown" : state}
+                      </span></td>
                     </tr>
                   ))}
                 </tbody>
