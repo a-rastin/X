@@ -26,7 +26,8 @@
  * semantic tokens only (both themes), no motion to reduce.
  *
  * E2E selector contract (mirrors e2e/autosave.spec.ts style):
- * - section heading "Diagnosis (step 2)"
+ * - section heading `#diagnosis-heading`: "Diagnosis (step 2)" on
+ *   registration, "Diagnosis (step 1)" on follow-up (wizard index)
  * - radios `#diag-{itemId}-yes|no|unknown`
  * - verdict `#diagnosis-preview-status` (role=status)
  * - criteria table `#diagnosis-criteria`
@@ -59,6 +60,8 @@ interface DiagnosisSectionProps {
   encounterId: string;
   autosave: AutosaveApi;
   onSessionExpired: () => void;
+  /** 1-based wizard index (registration 2, follow-up 1). */
+  stepNumber: number;
 }
 
 interface SectionData {
@@ -102,6 +105,7 @@ export function DiagnosisSection({
   encounterId,
   autosave,
   onSessionExpired,
+  stepNumber,
 }: DiagnosisSectionProps) {
   const [definition, setDefinition] = useState<DiagnosisDefinition | null>(null);
   const [definitionError, setDefinitionError] = useState<string | null>(null);
@@ -341,7 +345,7 @@ export function DiagnosisSection({
   return (
     <section className="xi-card" aria-labelledby="diagnosis-heading">
       <h3 className="xi-section-title" id="diagnosis-heading">
-        Diagnosis (step 2)
+        Diagnosis (step {stepNumber})
       </h3>
       <p className="xi-hint">
         Answers autosave through the same draft as the rest of this encounter

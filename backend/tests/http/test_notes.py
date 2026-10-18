@@ -17,6 +17,8 @@ Through public HTTP + real PostgreSQL (no frontend, no snapshot machinery):
    (``notes.exclude_notes_from_analysis``) plus HTTP assertions that history
    and draft serializers never carry notes. Text is verbatim (literal markup
    kept); bounds are non-empty / max 2000 chars with a page allowlist (422).
+   ``page == "effects"`` succeeds only on a follow-up draft; registration is
+   422 and writes no note.
 4. S40/S41/S59 are recorded (module docstring + pinned test) as the
    mandatory end-to-end note-noninterference checks; they are NOT
    implemented here.
@@ -159,11 +161,32 @@ def _create_draft(client, csrf, identifier="0012345678") -> dict:
     return created.json()
 
 
-def _setup_draft(admin_client, clean_registry, monkeypatch, username, identifier):
+def _discard_draft(client, csrf, encounter_id, revision: int):
+    return client.post(
+        f"/api/v1/encounters/{encounter_id}/discard",
+        json={"confirm": True},
+        headers={**_auth_headers(csrf), "If-Match": contracts.format_etag(revision)},
+    )
+
+
+def _setup_draft(
+    admin_client, clean_registry, monkeypatch, username, identifier, *, follow_up: bool = False
+):
     _make_physician(admin_client, username)
     client, csrf, user = _physician_client(clean_registry, monkeypatch, username, "pw123")
     created = _create_draft(client, csrf, identifier)
-    return client, csrf, user, created["draft"]["id"]
+    encounter_id = created["draft"]["id"]
+    if not follow_up:
+        return client, csrf, user, encounter_id
+    discarded = _discard_draft(client, csrf, encounter_id, 1)
+    assert discarded.status_code == 200, discarded.text
+    started = client.post(
+        f"/api/v1/patients/{created['patient']['id']}/encounters",
+        json={"kind": "follow_up"},
+        headers=_auth_headers(csrf),
+    )
+    assert started.status_code == 201, started.text
+    return client, csrf, user, started.json()["encounter"]["id"]
 
 
 def _post_note(client, csrf, encounter_id, page, note_text, revision, key=None):
@@ -298,7 +321,12 @@ def test_stranger_and_admin_cannot_author_or_list(
     admin_client, clean_registry, monkeypatch
 ) -> None:
     owner, owner_csrf, _, encounter_id = _setup_draft(
-        admin_client, clean_registry, monkeypatch, "dr_notes_owner", "0012345683"
+        admin_client,
+        clean_registry,
+        monkeypatch,
+        "dr_notes_owner",
+        "0012345683",
+        follow_up=True,
     )
     _make_physician(admin_client, "dr_notes_stranger")
     stranger, stranger_csrf, _ = _physician_client(
@@ -391,7 +419,12 @@ def test_actor_and_time_are_server_derived(admin_client, clean_registry, monkeyp
 
 def test_notes_are_append_only(admin_client, clean_registry, monkeypatch) -> None:
     client, csrf, _, encounter_id = _setup_draft(
-        admin_client, clean_registry, monkeypatch, "dr_notes_append", "0012345688"
+        admin_client,
+        clean_registry,
+        monkeypatch,
+        "dr_notes_append",
+        "0012345688",
+        follow_up=True,
     )
     created = _post_note(client, csrf, encounter_id, "effects", "first impression", 1)
     assert created.status_code == 201
@@ -478,7 +511,7 @@ def test_note_audit_is_attributed_without_note_body(
 
 def test_notes_never_appear_in_draft_or_history(admin_client, clean_registry, monkeypatch) -> None:
     client, csrf, _, encounter_id = _setup_draft(
-        admin_client, clean_registry, monkeypatch, "dr_notes_sep", "0012345692"
+        admin_client, clean_registry, monkeypatch, "dr_notes_sep", "0012345692", follow_up=True
     )
     secret = "separate-channel wording"
     assert _post_note(client, csrf, encounter_id, "history", secret, 1).status_code == 201
@@ -532,6 +565,29 @@ def test_note_text_preserved_verbatim_including_markup(
     assert _get_notes(client, encounter_id).json()["items"][0]["text"] == literal
 
 
+EFFECTS_FOLLOW_UP_ONLY = "Adverse effects are recorded on follow-up encounters only."
+
+
+def test_registration_refuses_effects_page_note(
+    admin_client, clean_registry, monkeypatch
+) -> None:
+    client, csrf, _, encounter_id = _setup_draft(
+        admin_client, clean_registry, monkeypatch, "dr_notes_fx_reg", "0012345798"
+    )
+    refused = _post_note(client, csrf, encounter_id, "effects", "must not land", 1)
+    assert refused.status_code == 422, refused.text
+    body = refused.json()
+    assert body["code"] == "VALIDATION_FAILED"
+    assert body["message"] == EFFECTS_FOLLOW_UP_ONLY
+    assert body["field_errors"] == {"page": [EFFECTS_FOLLOW_UP_ONLY]}
+    assert _get_notes(client, encounter_id).json()["total"] == 0
+    draft = client.get(f"/api/v1/encounters/{encounter_id}")
+    assert draft.status_code == 200, draft.text
+    assert draft.json()["revision"] == 1
+    other = _post_note(client, csrf, encounter_id, "diagnosis", "still allowed", 1)
+    assert other.status_code == 201, other.text
+
+
 def test_note_text_bounds(admin_client, clean_registry, monkeypatch) -> None:
     client, csrf, _, encounter_id = _setup_draft(
         admin_client, clean_registry, monkeypatch, "dr_notes_bounds", "0012345695"
@@ -562,11 +618,19 @@ def test_note_page_allowlist(admin_client, clean_registry, monkeypatch) -> None:
     )
     assert missing.status_code == 422
     revision = 1
-    for page in notes_service.ALLOWED_PAGES:
+    registration_pages = [page for page in notes_service.ALLOWED_PAGES if page != "effects"]
+    for page in registration_pages:
         created = _post_note(client, csrf, encounter_id, page, f"note for {page}", revision)
         assert created.status_code == 201, (page, created.text)
         revision = created.json()["revision"]
-    assert _get_notes(client, encounter_id).json()["total"] == len(notes_service.ALLOWED_PAGES)
+    assert _get_notes(client, encounter_id).json()["total"] == len(registration_pages)
+
+    fu_client, fu_csrf, _, fu_id = _setup_draft(
+        admin_client, clean_registry, monkeypatch, "dr_notes_fx_ok", "0012345799", follow_up=True
+    )
+    effects_note = _post_note(fu_client, fu_csrf, fu_id, "effects", "note for effects", 1)
+    assert effects_note.status_code == 201, effects_note.text
+    assert effects_note.json()["note"]["page"] == "effects"
 
 
 # --- Slice 4: list filtering, pagination, mandatory future checks ---

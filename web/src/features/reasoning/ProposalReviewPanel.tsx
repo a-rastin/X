@@ -55,6 +55,8 @@
  * (global reduced-motion rule covers).
  *
  * E2E selector contract (for dev-test e2e/proposal-review.spec.ts):
+ * - section heading `#proposal-review-heading`: "Proposal review (step 7)"
+ *   on both registration and follow-up (wizard index)
  * - panel `data-testid="proposal-review"` (`#proposal-review`)
  * - per-question status `data-testid="proposal-status-<question_key>"`
  * - per-question freshness `data-testid="proposal-freshness-<question_key>"`
@@ -117,6 +119,8 @@ interface ProposalReviewPanelProps {
   encounterId: string;
   autosave: AutosaveApi;
   onSessionExpired: () => void;
+  /** 1-based wizard index (7 on both registration and follow-up). */
+  stepNumber: number;
 }
 
 type Phase =
@@ -356,7 +360,7 @@ interface ReviewState {
   message: string | null;
 }
 
-export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired }: ProposalReviewPanelProps) {
+export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, stepNumber }: ProposalReviewPanelProps) {
   const [phase, setPhase] = useState<Phase>({ kind: "boot" });
   const [batchId, setBatchId] = useState<string | null>(null);
   const [batch, setBatch] = useState<BatchPayload | null>(null);
@@ -871,7 +875,7 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired }:
   return (
     <section className="xi-card" aria-labelledby="proposal-review-heading" id="proposal-review" data-testid="proposal-review">
       <h3 className="xi-section-title" id="proposal-review-heading">
-        Proposal review (step 8)
+        Proposal review (step {stepNumber})
       </h3>
       <p className="xi-hint" style={{ marginTop: 0 }}>
         Entering this step flushes the draft and starts generation automatically once the draft is

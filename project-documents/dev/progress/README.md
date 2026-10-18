@@ -34,7 +34,9 @@ The [encounter-draft follow-up](s07.md#follow-up-2026-10-18--one-page-per-wizard
 shows each wizard step on its own page. The
 [registration entry follow-up](s07.md#follow-up-2026-10-18--registration-opens-on-the-wizard)
 opens Register new patient on that wizard: demographics and both note boxes
-are step 1, and the post-create notes page is gone.
+are step 1, and the post-create notes page is gone. A later
+[follow-up](s07.md#follow-up-2026-10-18--adverse-effects-leave-the-registration-wizard)
+removes Adverse effects from that registration wizard and keeps them on follow-up.
 
 ## Reading and updating progress
 

@@ -37,7 +37,7 @@ async function fillValidForm(
   await page.getByLabel("Family name").fill(fields.family);
   await page.getByLabel("Patient ID").fill(fields.identifier);
   await page.getByRole("radio", { name: "M", exact: true }).check();
-  await page.getByLabel("Age").fill(fields.age ?? "30");
+  await page.getByLabel("Age", { exact: true }).fill(fields.age ?? "30");
   await page.getByRole("radio", { name: "First-time" }).check();
   if (fields.phone !== undefined) {
     await page.getByLabel("Phone").fill(fields.phone);
@@ -57,8 +57,22 @@ test("physician registers a patient; leading-zero ID round-trips with timestamp 
   await expect(
     page.getByRole("heading", { name: "Register patient" }),
   ).toBeVisible();
-  // The button opens the 8-step wizard. Demographics and both note boxes
+  // Seven steps, no adverse effects. Demographics and both note boxes
   // are step 1; later steps stay closed until a draft exists.
+  await expect(page.locator("#wizard-pages a")).toHaveText([
+    "1. Register patient",
+    "2. Diagnosis",
+    "3. PANSS",
+    "4. C-SSRS",
+    "5. History",
+    "6. Medications",
+    "7. Proposal review",
+  ]);
+  await expect(page.locator("#wizard-step-effects")).toHaveCount(0);
+  await expect(page.locator("#wizard-page")).toHaveAttribute(
+    "aria-label",
+    "Register patient, step 1 of 7",
+  );
   await expect(page.locator("#wizard-step-register")).toHaveAttribute(
     "aria-current",
     "page",
@@ -85,6 +99,12 @@ test("physician registers a patient; leading-zero ID round-trips with timestamp 
   await register.click();
 
   await expect(page).toHaveURL(/#\/encounters\/[^#]+#register$/);
+  await expect(page.locator("#wizard-pages a")).toHaveCount(7);
+  await expect(page.locator("#wizard-step-effects")).toHaveCount(0);
+  await expect(page.locator("#wizard-page")).toHaveAttribute(
+    "aria-label",
+    "Register patient, step 1 of 7",
+  );
   const confirmation = page.getByText(`Patient ${identifier} registered.`);
   await expect(confirmation).toContainText("Server time");
   await expect(confirmation).toContainText("revision 1");
@@ -99,6 +119,11 @@ test("physician registers a patient; leading-zero ID round-trips with timestamp 
     "aria-disabled",
     "true",
   );
+
+  // A registration draft has no effects step; an effects fragment does not open it.
+  await page.goto(page.url().replace(/#register$/, "#effects"));
+  await expect(page.locator("#wizard-step-effects")).toHaveCount(0);
+  await expect(page.locator("#effects-heading")).toHaveCount(0);
 });
 
 test("Register stays disabled until every demographics field is valid", async ({
@@ -120,12 +145,12 @@ test("Register stays disabled until every demographics field is valid", async ({
 
   // Out-of-range and decimal ages never enable the button.
   await page.getByRole("radio", { name: "M", exact: true }).check();
-  await page.getByLabel("Age").fill("17");
+  await page.getByLabel("Age", { exact: true }).fill("17");
   await page.getByRole("radio", { name: "First-time" }).check();
   await expect(register).toBeDisabled();
-  await page.getByLabel("Age").fill("30.5");
+  await page.getByLabel("Age", { exact: true }).fill("30.5");
   await expect(register).toBeDisabled();
-  await page.getByLabel("Age").fill("30");
+  await page.getByLabel("Age", { exact: true }).fill("30");
   await expect(register).toBeEnabled();
 
   // A malformed ID disables again; fixing it re-enables.
@@ -326,7 +351,7 @@ test("server field errors render against their labels and keep input", async ({
     await expect(alert).toContainText("Patient demographics are invalid.");
     // Keyboard focus moves to the summary; inputs name their errors.
     await expect(alert).toBeFocused();
-    await expect(page.getByLabel("Age")).toHaveAttribute(
+    await expect(page.getByLabel("Age", { exact: true })).toHaveAttribute(
       "aria-describedby",
       "age-error",
     );
@@ -338,7 +363,7 @@ test("server field errors render against their labels and keep input", async ({
       page.getByText("Must be an integer 18-99."),
     ).toBeVisible();
     // Nothing the physician typed is lost.
-    await expect(page.getByLabel("Age")).toHaveValue("30");
+    await expect(page.getByLabel("Age", { exact: true })).toHaveValue("30");
     await expect(page.getByLabel("Patient ID")).toHaveValue(identifier);
     await expect(page.getByLabel("Given name")).toHaveValue(given);
     await expect(page.getByLabel("Family name")).toHaveValue(family);

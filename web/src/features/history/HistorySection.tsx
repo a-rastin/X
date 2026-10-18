@@ -41,7 +41,9 @@
  * escaped text only, styling uses semantic tokens only (both themes).
  *
  * E2E selector contract (for the test agent's e2e/history.spec.ts):
- * - section heading "History (step 5)" (#history-heading)
+ * - section heading `#history-heading`: "History (step 5)" on registration,
+ *   "History (step 4)" on follow-up (wizard index, not a fixed label).
+ *   Adverse effects is follow-up only and is not this section.
  * - radios `#hist-{fieldId}-{value}` (name `hist-{fieldId}`), e.g.
  *   `#hist-h_exposure_dopamine_blocker-yes`,
  *   `#hist-h_onset_timing-within_4w_oral_withdrawal`
@@ -70,6 +72,8 @@ interface HistorySectionProps {
   encounterId: string;
   autosave: AutosaveApi;
   onSessionExpired: () => void;
+  /** 1-based wizard index (registration 5, follow-up 4). */
+  stepNumber: number;
 }
 
 /** Typed inventory mirroring content/history/history.v1.json (draft v1). */
@@ -290,6 +294,7 @@ export function HistorySection({
   encounterId,
   autosave,
   onSessionExpired,
+  stepNumber,
 }: HistorySectionProps) {
   const [preview, setPreview] = useState<HistoryPreview | null>(null);
   const [previewLoading, setPreviewLoading] = useState(true);
@@ -416,7 +421,7 @@ export function HistorySection({
   return (
     <section className="xi-card" aria-labelledby="history-heading">
       <h3 className="xi-section-title" id="history-heading">
-        History (step 5)
+        History (step {stepNumber})
       </h3>
       <p className="xi-hint">
         Structured history for this encounter. Nothing is pre-filled — every

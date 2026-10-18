@@ -48,7 +48,7 @@ machinery is added here.
 from __future__ import annotations
 
 import uuid
-from typing import Any
+from typing import Any, NoReturn
 
 from sqlalchemy import insert, select, update
 from sqlalchemy.exc import IntegrityError
@@ -227,7 +227,8 @@ def build_followup_draft_data(
     answers start empty regardless of prior scores (displayed as historical
     only under ``followup_baseline.prior_scores``). Without a baseline,
     history and medications start empty with ``not_required`` reconciliation
-    and empty answers.
+    and empty answers. Prior effect questionnaires are not copied; effects
+    are recorded fresh on the follow-up step.
     """
     if baseline is None:
         return {
@@ -658,6 +659,54 @@ def create_open_draft(
     return encounter, contracts.serialize_utc(moment)
 
 
+EFFECTS_FOLLOW_UP_ONLY = "Adverse effects are recorded on follow-up encounters only."
+
+
+def _refuse_effects_capture(field: str) -> NoReturn:
+    raise contracts.ContractError(
+        422,
+        "VALIDATION_FAILED",
+        EFFECTS_FOLLOW_UP_ONLY,
+        {field: [EFFECTS_FOLLOW_UP_ONLY]},
+    )
+
+
+def require_follow_up_for_effects(encounter: dict[str, Any], field: str) -> None:
+    """Registration drafts cannot capture adverse effects (422 on ``field``)."""
+    if encounter.get("kind") == "registration":
+        _refuse_effects_capture(field)
+
+
+def _effects_section_equal(left: Any, right: Any) -> bool:
+    try:
+        return contracts.canonical_json(left) == contracts.canonical_json(right)
+    except TypeError:
+        return False
+
+
+def registration_effects_for_save(stored_draft: Any, incoming: dict[str, Any]) -> dict[str, Any]:
+    """Registration autosave must not add, change, or delete ``effects``.
+
+    An omitted key is not a change: other keys save, and a stored section is
+    copied forward (both sides missing saves as sent). A present section that
+    is deeply equal to storage saves as sent. Newly added or changed content
+    is ``422`` on ``draft_data.effects`` and is not persisted.
+    """
+    from x_insight.cases import effects as effects_service
+
+    key = effects_service.EFFECTS_KEY
+    stored = stored_draft if isinstance(stored_draft, dict) else {}
+    if key not in incoming:
+        if key not in stored:
+            return incoming
+        merged = dict(incoming)
+        merged[key] = stored[key]
+        return merged
+    if key not in stored or not _effects_section_equal(incoming[key], stored[key]):
+        _refuse_effects_capture("draft_data.effects")
+    return incoming
+
+
 def patch_draft(
     session: Session,
     *,
@@ -672,10 +721,12 @@ def patch_draft(
     Row-locked read-modify-write in the caller's transaction: privacy first
     (404 missing/released, 403 stranger), then the revision fence (a mismatch
     is ``412 STALE_REVISION`` and changes nothing), then body validation
-    (``422`` changes nothing). Only a fully valid write bumps
-    ``revision = expected + 1`` and records audit — a failed save never looks
-    saved because server truth (``GET`` + revision) only moves on success.
-    Returns (encounter, server timestamp).
+    (``422`` changes nothing). A registration draft may round-trip an
+    unchanged ``effects`` section but cannot add, change, or drop one
+    (``422`` on ``draft_data.effects``; follow-up may still change effects).
+    Only a fully valid write bumps ``revision = expected + 1`` and records
+    audit — a failed save never looks saved because server truth (``GET`` +
+    revision) only moves on success. Returns (encounter, server timestamp).
     """
     row = (
         session.execute(
@@ -701,6 +752,8 @@ def patch_draft(
             "STALE_REVISION",
             "The draft changed. Reload and reconcile your edits.",
         )
+    if encounter.get("kind") == "registration" and isinstance(draft_data, dict):
+        draft_data = registration_effects_for_save(encounter.get("draft_data"), draft_data)
     validated = validate_draft_data(draft_data)
     moment = contracts.utcnow()
     session.execute(

@@ -65,7 +65,7 @@
 
 ## R
 
-- [registration-flow.md](registration-flow.md) — Why new-patient registration opens the 8-step wizard instead of a separate notes page.
+- [registration-flow.md](registration-flow.md) — Why new-patient registration opens the wizard, and why adverse effects are follow-up only.
 
 ## S
 

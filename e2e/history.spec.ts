@@ -24,7 +24,8 @@ import {
  * - history provenance `#hist-{fieldId}-provenance`
  * - reconciliation `#history-reconciliation-status`, `#history-reconciliation-baseline`
  * - phone `#history-phone-update`
- * - effects heading "Adverse effects (step 6)" (#effects-heading)
+ * - effects heading "Adverse effects (step 5)" (#effects-heading) on a follow-up
+ *   draft only (registration has no effects step; `#wizard-step-effects` absent)
  * - status radios `#effect-{key}-{present|absent|not_assessed}`
  * - BARS radios `#bars-{item}-{n}` (e.g. `#bars-bars_global-3`)
  * - SAS radios `#sas-{item}-{n}` (e.g. `#sas-sas_gait-1`)
@@ -69,7 +70,7 @@ async function loginPhysician(
 async function createPatientWithDraft(
   request: import("@playwright/test").APIRequestContext,
   physician: { username: string; password: string },
-): Promise<{ draftId: string }> {
+): Promise<{ draftId: string; patientId: string }> {
   const key = `e2e${Date.now().toString(36)}${Math.random().toString(36).slice(2, 10)}`;
   const payload = {
     identifier: uniquePatientId(),
@@ -92,7 +93,43 @@ async function createPatientWithDraft(
   }
   expect(create.status(), await create.text()).toBe(201);
   const body = await create.json();
-  return { draftId: body.draft.id as string };
+  return {
+    draftId: body.draft.id as string,
+    patientId: body.patient.id as string,
+  };
+}
+
+async function discardDraftApi(
+  request: import("@playwright/test").APIRequestContext,
+  physician: { username: string; password: string },
+  draftId: string,
+  revision = 1,
+): Promise<void> {
+  const csrf = await physicianSession(request, physician);
+  const response = await request.post(`/api/v1/encounters/${draftId}/discard`, {
+    headers: { "X-CSRF-Token": csrf, "If-Match": `"${revision}"` },
+    data: { confirm: true },
+  });
+  expect(response.status(), await response.text()).toBe(200);
+}
+
+/** Registration occupies the one-open-draft slot. Effects capture is follow-up only. */
+async function createFollowupDraft(
+  request: import("@playwright/test").APIRequestContext,
+  physician: { username: string; password: string },
+): Promise<string> {
+  const { draftId, patientId } = await createPatientWithDraft(request, physician);
+  await discardDraftApi(request, physician, draftId);
+  const csrf = await physicianSession(request, physician);
+  const response = await request.post(`/api/v1/patients/${patientId}/encounters`, {
+    headers: {
+      "X-CSRF-Token": csrf,
+      "Idempotency-Key": `e2e${Date.now().toString(36)}${Math.random().toString(36).slice(2, 10)}`,
+    },
+    data: { kind: "follow_up" },
+  });
+  expect(response.status(), await response.text()).toBe(201);
+  return (await response.json()).encounter.id as string;
 }
 
 async function patchDraftApi(
@@ -117,7 +154,7 @@ async function gotoEncounter(
   step: "history" | "effects" = "history",
 ): Promise<void> {
   await page.goto(`/#/encounters/${draftId}#${step}`);
-  const heading = step === "history" ? "History (step 5)" : "Adverse effects (step 6)";
+  const heading = step === "history" ? "History (step 5)" : "Adverse effects (step 5)";
   await expect(page.getByRole("heading", { name: heading })).toBeVisible();
 }
 
@@ -230,7 +267,7 @@ test("fresh effects are unrecorded with null severity and no completion demand",
   request,
 }) => {
   const physician = await loginPhysician(page, request, "e2eefffresh");
-  const { draftId } = await createPatientWithDraft(request, physician);
+  const draftId = await createFollowupDraft(request, physician);
 
   await gotoEncounter(page, draftId, "effects");
 
@@ -257,7 +294,7 @@ test("akathisia present via UI needs complete BARS and matching global severity"
   request,
 }) => {
   const physician = await loginPhysician(page, request, "e2eeffbars");
-  const { draftId } = await createPatientWithDraft(request, physician);
+  const draftId = await createFollowupDraft(request, physician);
 
   await gotoEncounter(page, draftId, "effects");
 
@@ -286,7 +323,7 @@ test("switching present to absent clears obsolete severity in the same edit", as
   request,
 }) => {
   const physician = await loginPhysician(page, request, "e2eeffstale");
-  const { draftId } = await createPatientWithDraft(request, physician);
+  const draftId = await createFollowupDraft(request, physician);
 
   await gotoEncounter(page, draftId, "effects");
 
@@ -323,7 +360,7 @@ test("urgent airway alert shows before checklist completion and persists", async
   request,
 }) => {
   const physician = await loginPhysician(page, request, "e2eeffurgent");
-  const { draftId } = await createPatientWithDraft(request, physician);
+  const draftId = await createFollowupDraft(request, physician);
 
   await gotoEncounter(page, draftId, "effects");
 

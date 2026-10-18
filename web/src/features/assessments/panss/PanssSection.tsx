@@ -29,7 +29,8 @@
  * real endpoints, styling uses semantic tokens only (both themes).
  *
  * E2E selector contract (for e2e/panss.spec.ts):
- * - section heading "PANSS (step 3)"
+ * - section heading `#panss-heading`: "PANSS (step 3)" on registration,
+ *   "PANSS (step 2)" on follow-up (wizard index)
  * - radios `#panss-{P1..G16}-{1..7}` (name `panss-{itemId}`)
  * - verdict `#panss-preview-status` (aria-live)
  * - scores `#panss-scores`
@@ -55,6 +56,8 @@ interface PanssSectionProps {
   encounterId: string;
   autosave: AutosaveApi;
   onSessionExpired: () => void;
+  /** 1-based wizard index (registration 3, follow-up 2). */
+  stepNumber: number;
 }
 
 function answersOf(data: DraftData): Record<string, unknown> {
@@ -97,6 +100,7 @@ export function PanssSection({
   encounterId,
   autosave,
   onSessionExpired,
+  stepNumber,
 }: PanssSectionProps) {
   const [definition, setDefinition] = useState<PanssDefinition | null>(null);
   const [definitionError, setDefinitionError] = useState<string | null>(null);
@@ -281,7 +285,7 @@ export function PanssSection({
   return (
     <section className="xi-card" aria-labelledby="panss-heading">
       <h3 className="xi-section-title" id="panss-heading">
-        PANSS (step 3)
+        PANSS (step {stepNumber})
       </h3>
       <p className="xi-hint">
         Rate each of the 30 items from 1 (absent) to 7 (extreme) for the

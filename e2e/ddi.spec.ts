@@ -14,7 +14,8 @@ import {
  * BT/http/test_medications.py and not duplicated here).
  *
  * Selector contract (see MedicationsSection.tsx / DdiReportPanel.tsx headers):
- * - section heading `#medications-heading` ("Medications (step 7)")
+ * - section heading `#medications-heading` ("Medications (step 6)" on
+ *   registration and follow-up)
  * - search input `#meds-search`, results `#meds-search-results`,
  *   per-row add `#meds-add-{index}` (aria-label "Add {name}")
  * - catalog versions `#meds-catalog-info`

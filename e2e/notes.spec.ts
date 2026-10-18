@@ -347,7 +347,28 @@ test("stranger physician and admin see a denial without note content", async ({
     },
   });
   expect(created.status(), await created.text()).toBe(201);
-  const draftId = ((await created.json()).draft.id as string) ?? "";
+  const createdBody = await created.json();
+  const patientId = createdBody.patient.id as string;
+  const registrationDraftId = createdBody.draft.id as string;
+  // Effects notes are follow-up only. Discard the registration draft, then
+  // open a follow-up before posting the secret.
+  const discard = await request.post(`/api/v1/encounters/${registrationDraftId}/discard`, {
+    headers: {
+      "X-CSRF-Token": await physicianSession(request, authorCreds),
+      "If-Match": '"1"',
+    },
+    data: { confirm: true },
+  });
+  expect(discard.status(), await discard.text()).toBe(200);
+  const followup = await request.post(`/api/v1/patients/${patientId}/encounters`, {
+    headers: {
+      "X-CSRF-Token": await physicianSession(request, authorCreds),
+      "Idempotency-Key": `e2e${Date.now().toString(36)}${Math.random().toString(36).slice(2, 10)}`,
+    },
+    data: { kind: "follow_up" },
+  });
+  expect(followup.status(), await followup.text()).toBe(201);
+  const draftId = ((await followup.json()).encounter.id as string) ?? "";
   await postNoteApi(request, authorCreds, draftId, "effects", secret, 1);
 
   await loginAs(page, "physician", stranger, "secret123");

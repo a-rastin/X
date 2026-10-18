@@ -39,7 +39,8 @@
  * themes), reduced motion is handled by the global theme media query.
  *
  * E2E selector contract (for the test agent's e2e/cssrs.spec.ts):
- * - section heading "C-SSRS (step 4)" (#cssrs-heading)
+ * - section heading `#cssrs-heading`: "C-SSRS (step 4)" on registration,
+ *   "C-SSRS (step 3)" on follow-up (wizard index)
  * - yes/no radios `#cssrs-{itemId}-yes|no` (name `cssrs-{itemId}`)
  * - numeric radios `#cssrs-{itemId}-{n}` (name `cssrs-{itemId}`), e.g.
  *   `#cssrs-css_frequency-2`, `#cssrs-css_leth_actual_recent-0`
@@ -72,6 +73,8 @@ interface CssrsSectionProps {
   encounterId: string;
   autosave: AutosaveApi;
   onSessionExpired: () => void;
+  /** 1-based wizard index (registration 4, follow-up 3). */
+  stepNumber: number;
 }
 
 function answersOf(data: DraftData): Record<string, unknown> {
@@ -212,6 +215,7 @@ export function CssrsSection({
   encounterId,
   autosave,
   onSessionExpired,
+  stepNumber,
 }: CssrsSectionProps) {
   const [definition, setDefinition] = useState<CssrsDefinition | null>(null);
   const [definitionError, setDefinitionError] = useState<string | null>(null);
@@ -434,7 +438,7 @@ export function CssrsSection({
   return (
     <section className="xi-card" aria-labelledby="cssrs-heading">
       <h3 className="xi-section-title" id="cssrs-heading">
-        C-SSRS (step 4)
+        C-SSRS (step {stepNumber})
       </h3>
       <p className="xi-hint">
         Clinician-administered assessment of suicidal ideation and behavior.

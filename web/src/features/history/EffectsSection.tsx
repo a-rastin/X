@@ -44,7 +44,9 @@
  * aria-describedby, styling uses semantic tokens only (both themes).
  *
  * E2E selector contract (for the test agent's e2e/history.spec.ts):
- * - section heading "Adverse effects (step 6)" (#effects-heading)
+ * - section heading "Adverse effects (step 5)" (#effects-heading).
+ *   Follow-up only: registration does not mount this section, so the
+ *   heading is never step 6.
  * - status radios `#effect-{key}-present|absent|not_assessed`
  *   (name `effect-{key}`), e.g. `#effect-akathisia-present`
  * - BARS radios `#bars-{item}-{n}` (name `bars-{item}`), items
@@ -79,6 +81,8 @@ interface EffectsSectionProps {
   encounterId: string;
   autosave: AutosaveApi;
   onSessionExpired: () => void;
+  /** 1-based wizard index (follow-up 5). Registration does not mount this. */
+  stepNumber: number;
 }
 
 const EFFECT_KEYS: EffectKey[] = [
@@ -286,6 +290,7 @@ export function EffectsSection({
   encounterId,
   autosave,
   onSessionExpired,
+  stepNumber,
 }: EffectsSectionProps) {
   const [preview, setPreview] = useState<EffectsPreview | null>(null);
   const [previewLoading, setPreviewLoading] = useState(true);
@@ -806,7 +811,7 @@ export function EffectsSection({
   return (
     <section className="xi-card" aria-labelledby="effects-heading">
       <h3 className="xi-section-title" id="effects-heading">
-        Adverse effects (step 6)
+        Adverse effects (step {stepNumber})
       </h3>
       <p className="xi-hint">
         Each of the four follow-up effects is present, absent, or not

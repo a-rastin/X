@@ -25,7 +25,9 @@ Write contract (``POST /encounters/{id}/notes``):
 - Bounds: ``page`` must be in :data:`ALLOWED_PAGES` (demographics plus the
   wizard steps); ``text`` is preserved verbatim (literal markup kept, no
   stripping) and must be non-empty with at most :data:`MAX_NOTE_CHARS`
-  characters. Violations are ``422`` with ``field_errors``.
+  characters. Violations are ``422`` with ``field_errors``. ``page ==
+  "effects"`` is follow-up only: a registration draft is ``422`` on
+  ``page`` after the author and revision checks.
 
 Read contract (``GET /encounters/{id}/notes``): author-only list with an
 optional ``?page=`` filter and bounded ``limit``/``offset``
@@ -67,7 +69,8 @@ from x_insight.operations import audit as audit_module
 NOTES_CREATE_OPERATION = "notes.create"
 
 #: Pages that may carry attributed notes: demographics (supported after the
-#: initial draft creation) plus every wizard step string.
+#: initial draft creation) plus wizard step strings. ``effects`` is a
+#: follow-up page; registration drafts refuse that page with ``422``.
 ALLOWED_PAGES = (
     "demographics",
     "diagnosis",
@@ -176,6 +179,8 @@ def create_note(
     Row-locked read-modify-write in the caller's transaction: privacy first
     (404 missing/discarded, 403 stranger), then the revision fence (``412``
     changes nothing), then page/text validation (``422`` changes nothing).
+    ``page == "effects"`` on a registration draft is ``422`` and writes
+    nothing; follow-up may still post that page.
     Success inserts one row with server-derived author snapshot + UTC time,
     bumps ``revision = expected + 1`` (S07 autosave coherence), and audits.
     Returns (note, encounter, server timestamp).
@@ -204,6 +209,8 @@ def create_note(
             "The draft changed. Reload and reconcile your edits.",
         )
     validated_page = validate_page(page)
+    if validated_page == "effects":
+        encounters_service.require_follow_up_for_effects(encounter, "page")
     validated_text = validate_text(text)
     moment = contracts.utcnow()
     note_id = uuid.uuid4()

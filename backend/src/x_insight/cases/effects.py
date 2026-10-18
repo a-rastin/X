@@ -17,6 +17,11 @@ existing ``PATCH /encounters/{id}`` path; effect status/severity travel via
 the strict ``POST .../effects/{effect}/status`` command here (revision-fenced,
 audited). No new table — no migration.
 
+Adverse-effect capture is follow-up only (``encounter.kind == "follow_up"``).
+A registration draft refuses GET and status POST with ``422`` after the
+author and revision checks. Registration PATCH may round-trip an unchanged
+``effects`` section but cannot add, change, or delete one.
+
 Instruments (drafts under ``content/history/``, awaiting owner review):
 - akathisia: full BARS, 4 items (0-3/0-3/0-3/0-5); global is the principal
   severity; threshold global>=2 indicates present; no invented summed rule.
@@ -506,8 +511,13 @@ def compute_effects_state(draft_data: Any, *, author_id: str, revision: int) -> 
 def read_effects_for_author(
     session: Session, encounter_id: uuid.UUID, user: dict[str, Any]
 ) -> tuple[dict[str, Any], dict[str, Any]]:
-    """Author-only effects read: 404 missing/released, 403 strangers."""
+    """Author-only effects read: 404 missing/released, 403 strangers.
+
+    Registration drafts are ``422`` after the author check (follow-up only),
+    so a stranger still gets 403/404 and not a kind leak.
+    """
     encounter = encounters_service.read_draft_for_author(session, encounter_id, user)
+    encounters_service.require_follow_up_for_effects(encounter, "kind")
     state = compute_effects_state(
         encounter.get("draft_data") or {},
         author_id=str(encounter["author_id"]),
@@ -530,8 +540,10 @@ def set_effect_status(
     """Strict effect status transition (422 on stale severity or incomplete).
 
     Row-locked read-modify-write in the caller's transaction: privacy first
-    (404/403), then the revision fence (412), then the effect/status/severity
-    contract (422). Questionnaire answers are preserved verbatim from storage
+    (404/403), then the revision fence (412), then the follow-up-only kind
+    check (registration is 422 and writes nothing), then the
+    effect/status/severity contract (422). Questionnaire answers are preserved
+    verbatim from storage
     (they travel via PATCH); this command never invents or repairs them.
     Present requires a complete questionnaire (except AIMS awaiting_source)
     plus the reviewed severity; absent/not_assessed require null severity and
@@ -562,6 +574,7 @@ def set_effect_status(
             "STALE_REVISION",
             "The draft changed. Reload and reconcile your edits.",
         )
+    encounters_service.require_follow_up_for_effects(encounter, "kind")
     draft_data = dict(encounter.get("draft_data") or {})
     section = get_effects_section(draft_data)
     current_answers = section.get(effect_key, {}).get("questionnaire", {}).get("answers", {})

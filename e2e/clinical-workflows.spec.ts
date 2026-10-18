@@ -24,7 +24,7 @@ import {
  * live-clinical verification.
  *
  * Frontend (read-only): no web/src changes. Encounter wizard sections
- * (diagnosis/panss/cssrs/history/medications/effects headings,
+ * (diagnosis/panss/cssrs/history/medications headings; effects is follow-up only;
  * meds search plus catalog info, DDI report panel), ProposalReviewPanel
  * (proposal-review, per-question status/freshness/retry/transparency,
  * proposal-ddi, proposal-sign-blocked),
@@ -1159,7 +1159,6 @@ test("S59 §1 registration journey renders assessments meds DDI and five-questio
       ["panss", "#panss-heading"],
       ["cssrs", "#cssrs-heading"],
       ["history", "#history-heading"],
-      ["effects", "#effects-heading"],
     ] as const) {
       await page.locator(`#wizard-step-${step}`).click();
       await expect(page.locator(heading)).toBeVisible();

@@ -5,9 +5,12 @@ Plan.md §§4.2, 8.1 (FR-16, FR-32, FR-35, NFR-04):
 - Fingerprint (plan §4.2): canonical UTF-8 JSON sorted keys, explicit
   null/missing, schema version. Includes analysis-visible facts
   (history values, reconciled medications, effects, gate, assessment
-  answers, baseline), plus pinned content. Excludes notes (separate
-  table, never read), names/ID/phone (patient row never read), UI state
-  and secondary-plan edits (unallowlisted top-level keys ignored).
+  answers, baseline), plus pinned content. The effects key stays for every
+  encounter (empty map when none were recorded); registration capture is
+  refused elsewhere — do not drop the key or already-stored effects.
+  Excludes notes (separate table, never read), names/ID/phone (patient
+  row never read), UI state and secondary-plan edits (unallowlisted
+  top-level keys ignored).
   ``notes.exclude_notes_from_analysis`` is the same exclusion by
   construction: this module never queries ``notes`` or ``patients``.
 - Projection (plan §8.1): per-question typed allowlisted projection

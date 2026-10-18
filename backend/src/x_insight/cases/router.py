@@ -27,21 +27,26 @@ S12 history/effects page state (plan.md §§2.2, 5; FR-14, FR-20-21; T2/T1):
   update, evaluation, definition version, revision) with ETag.
 - ``POST .../history`` — author-only strict save (If-Match-fenced,
   server-stamped provenance, 422 on undeclared/excluded/invalid).
-- ``GET /encounters/{id}/effects`` — author-only preview of the four
-  effects with questionnaires, reviewed severities, urgent flag, and
-  definition versions, with ETag.
-- ``POST .../effects/{effect}/status`` — author-only status transition
-  (present requires complete questionnaire + reviewed severity;
+- ``GET /encounters/{id}/effects`` — author-only follow-up preview of the
+  four effects with questionnaires, reviewed severities, urgent flag, and
+  definition versions, with ETag. Registration is ``422`` after the author
+  check (adverse effects are follow-up only).
+- ``POST .../effects/{effect}/status`` — author-only follow-up status
+  transition (present requires complete questionnaire + reviewed severity;
   absent/not_assessed require null severity; stale severity is 422).
+  Registration is ``422`` after the revision fence and writes nothing.
 
-History/effects answers travel via the existing S07 ``PATCH`` autosave
-(``draft_data["history"]`` / ``draft_data["effects"]``); no new table.
+History answers and follow-up effect answers travel via the existing S07
+``PATCH`` autosave (``draft_data["history"]`` / ``draft_data["effects"]``);
+no new table. A registration PATCH may round-trip an unchanged ``effects``
+section but cannot add, change, or delete one.
 
 S13 attributed page notes (plan.md §§2.3, 4.1-4.3; FR-16, FR-22; T1 only):
 - ``POST /encounters/{id}/notes`` — author-only append of ``{page, text}``
   (If-Match-fenced, server-derived actor/time, revision-bumping, 201
   ``{note, revision, server_timestamp}`` + ETag). Per-command
   ``Idempotency-Key`` store (``notes.create``) like S04/S06/S07/S12.
+  ``page == "effects"`` is follow-up only (registration is ``422``).
 - ``GET /encounters/{id}/notes`` — author-only list (``403`` strangers,
   ``404`` missing/discarded) with optional ``?page=`` filter and bounded
   ``limit``/``offset`` (25/100), ``{items, total, revision}`` + ETag.
@@ -983,6 +988,7 @@ def discard_encounter(
 
 
 # --- S12 history/effects page state (author-only, draft_data + revision) ---
+# Effects routes are follow-up only. Registration is 422 after privacy checks.
 
 
 class HistorySaveRequest(BaseModel):

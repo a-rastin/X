@@ -42,7 +42,8 @@
  * (no dangerouslySetInnerHTML). No animation (global reduced-motion rule).
  *
  * E2E selector contract (for dev-test e2e/ddi.spec.ts):
- * - section heading `#medications-heading` ("Medications (step 7)")
+ * - section heading `#medications-heading`: "Medications (step 6)" on
+ *   both registration and follow-up (wizard index)
  * - search input `#meds-search`, results `#meds-search-results`,
  *   per-row add `#meds-add-{index}` (aria-label "Add {name}")
  * - catalog versions `#meds-catalog-info`
@@ -81,6 +82,8 @@ interface MedicationsSectionProps {
   encounterId: string;
   autosave: AutosaveApi;
   onSessionExpired: () => void;
+  /** 1-based wizard index (6 on both registration and follow-up). */
+  stepNumber: number;
 }
 
 interface MedicationsSlice {
@@ -183,6 +186,7 @@ export function MedicationsSection({
   encounterId,
   autosave,
   onSessionExpired,
+  stepNumber,
 }: MedicationsSectionProps) {
   const [serverState, setServerState] = useState<MedicationsPreview | null>(
     null,
@@ -535,7 +539,7 @@ export function MedicationsSection({
   return (
     <section className="xi-card" aria-labelledby="medications-heading">
       <h3 className="xi-section-title" id="medications-heading">
-        Medications (step 7)
+        Medications (step {stepNumber})
       </h3>
       <p className="xi-hint">
         Demo-catalog medications only — no free-text additions and no

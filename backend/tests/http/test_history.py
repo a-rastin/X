@@ -21,9 +21,10 @@ frontend, no live provider/MCP):
 History lives in ``draft_data["history"]``; effects in
 ``draft_data["effects"]``. Answers travel via the S07 PATCH autosave;
 strict ``POST .../history`` and ``POST .../effects/{effect}/status``
-stamp provenance and enforce the present/severity contract. Definitions
-under ``content/history/`` are drafts awaiting owner review — tests assert
-against them, never approve them.
+stamp provenance and enforce the present/severity contract. Effect capture
+(GET, status POST, answer PATCH) is follow-up only; registration is 422
+and does not write. Definitions under ``content/history/`` are drafts
+awaiting owner review — tests assert against them, never approve them.
 """
 
 from __future__ import annotations
@@ -35,13 +36,14 @@ from pathlib import Path
 
 import pytest
 from fastapi.testclient import TestClient
-from sqlalchemy import text
+from sqlalchemy import text, update
 
 from x_insight import contracts
 from x_insight import db as db_module
 from x_insight.app import app
 from x_insight.cases import effects as effects_service
 from x_insight.cases import history as history_service
+from x_insight.cases import tables as cases_tables
 from x_insight.identity import service
 
 
@@ -206,15 +208,58 @@ def _post_effect(client, csrf, encounter_id, effect, status, severity, revision,
     )
 
 
-def _setup_draft(admin_client, clean_registry, monkeypatch, username, identifier):
+def _discard_draft(client, csrf, encounter_id, revision: int):
+    return client.post(
+        f"/api/v1/encounters/{encounter_id}/discard",
+        json={"confirm": True},
+        headers={**_auth_headers(csrf), "If-Match": contracts.format_etag(revision)},
+    )
+
+
+def _setup_draft(
+    admin_client, clean_registry, monkeypatch, username, identifier, *, follow_up: bool = False
+):
     _make_physician(admin_client, username)
     client, csrf, user = _physician_client(clean_registry, monkeypatch, username, "pw123")
     created = _create_draft(client, csrf, identifier)
-    return client, csrf, user, created["draft"]["id"]
+    encounter_id = created["draft"]["id"]
+    if not follow_up:
+        return client, csrf, user, encounter_id
+    # POST /patients occupies the one open slot; discard it, then open follow-up.
+    discarded = _discard_draft(client, csrf, encounter_id, 1)
+    assert discarded.status_code == 200, discarded.text
+    started = client.post(
+        f"/api/v1/patients/{created['patient']['id']}/encounters",
+        json={"kind": "follow_up"},
+        headers=_auth_headers(csrf),
+    )
+    assert started.status_code == 201, started.text
+    return client, csrf, user, started.json()["encounter"]["id"]
+
+
+def _seed_draft_data(engine, encounter_id: str, draft_data: dict) -> None:
+    """Plant a section the registration API will no longer write."""
+    with engine.begin() as connection:
+        connection.execute(
+            update(cases_tables.encounters)
+            .where(cases_tables.encounters.c.id == uuid.UUID(str(encounter_id)))
+            .values(draft_data=draft_data)
+        )
 
 
 def _effects_draft(effect_key: str, answers: dict) -> dict:
     return {"effects": {effect_key: {"questionnaire": {"answers": dict(answers)}}}}
+
+
+EFFECTS_FOLLOW_UP_ONLY = "Adverse effects are recorded on follow-up encounters only."
+
+
+def _assert_effects_follow_up_only(response, field: str) -> None:
+    assert response.status_code == 422, response.text
+    body = response.json()
+    assert body["code"] == "VALIDATION_FAILED"
+    assert body["message"] == EFFECTS_FOLLOW_UP_ONLY
+    assert body["field_errors"] == {field: [EFFECTS_FOLLOW_UP_ONLY]}
 
 
 # Independent literals (worked from content/history/*.v1.json, never from code).
@@ -462,7 +507,7 @@ def test_history_invalid_values_rejected_server_side(
 
 def test_effects_fresh_all_unrecorded(admin_client, clean_registry, monkeypatch) -> None:
     client, _, _, encounter_id = _setup_draft(
-        admin_client, clean_registry, monkeypatch, "dr_eff1", "0012348101"
+        admin_client, clean_registry, monkeypatch, "dr_eff1", "0012348101", follow_up=True
     )
     body = _get_effects(client, encounter_id).json()
     assert body["definition_versions"] == {
@@ -491,7 +536,7 @@ def test_effects_absent_and_not_assessed_need_null_severity_no_completion(
     admin_client, clean_registry, monkeypatch
 ) -> None:
     client, csrf, _, encounter_id = _setup_draft(
-        admin_client, clean_registry, monkeypatch, "dr_eff2", "0012348102"
+        admin_client, clean_registry, monkeypatch, "dr_eff2", "0012348102", follow_up=True
     )
     revision = 1
     for effect, status in (
@@ -519,7 +564,7 @@ def test_effects_stale_severity_must_be_cleared_explicitly(
     admin_client, clean_registry, monkeypatch
 ) -> None:
     client, csrf, _, encounter_id = _setup_draft(
-        admin_client, clean_registry, monkeypatch, "dr_eff3", "0012348103"
+        admin_client, clean_registry, monkeypatch, "dr_eff3", "0012348103", follow_up=True
     )
     assert (
         _patch(
@@ -552,7 +597,7 @@ def test_akathisia_present_requires_complete_bars_and_matching_global(
     admin_client, clean_registry, monkeypatch
 ) -> None:
     client, csrf, _, encounter_id = _setup_draft(
-        admin_client, clean_registry, monkeypatch, "dr_eff4", "0012348104"
+        admin_client, clean_registry, monkeypatch, "dr_eff4", "0012348104", follow_up=True
     )
     # Incomplete BARS cannot support present.
     assert (
@@ -602,7 +647,7 @@ def test_parkinsonism_present_requires_complete_sas_and_reviewed_severity(
     admin_client, clean_registry, monkeypatch
 ) -> None:
     client, csrf, _, encounter_id = _setup_draft(
-        admin_client, clean_registry, monkeypatch, "dr_eff5", "0012348105"
+        admin_client, clean_registry, monkeypatch, "dr_eff5", "0012348105", follow_up=True
     )
     partial = dict(SAS_ALL_ONE)
     del partial["sas_salivation"]
@@ -632,7 +677,7 @@ def test_tardive_present_always_awaiting_source_422(
     admin_client, clean_registry, monkeypatch
 ) -> None:
     client, csrf, _, encounter_id = _setup_draft(
-        admin_client, clean_registry, monkeypatch, "dr_eff6", "0012348106"
+        admin_client, clean_registry, monkeypatch, "dr_eff6", "0012348106", follow_up=True
     )
     direct = effects_service.evaluate_aims({})
     assert direct["status"] == "awaiting_source"
@@ -651,7 +696,7 @@ def test_acute_present_requires_all_five_criteria(
     admin_client, clean_registry, monkeypatch
 ) -> None:
     client, csrf, _, encounter_id = _setup_draft(
-        admin_client, clean_registry, monkeypatch, "dr_eff7", "0012348107"
+        admin_client, clean_registry, monkeypatch, "dr_eff7", "0012348107", follow_up=True
     )
     partial = dict(ACUTE_COMPLETE)
     del partial["addx_urgent_airway"]
@@ -680,13 +725,98 @@ def test_acute_present_requires_all_five_criteria(
 
 def test_effects_unknown_effect_or_status_422(admin_client, clean_registry, monkeypatch) -> None:
     client, csrf, _, encounter_id = _setup_draft(
-        admin_client, clean_registry, monkeypatch, "dr_eff8", "0012348108"
+        admin_client, clean_registry, monkeypatch, "dr_eff8", "0012348108", follow_up=True
     )
     unknown_effect = _post_effect(client, csrf, encounter_id, "headache", "present", "mild", 1)
     assert unknown_effect.status_code == 422, unknown_effect.text
     unknown_status = _post_effect(client, csrf, encounter_id, "akathisia", "maybe", None, 1)
     assert unknown_status.status_code == 422, unknown_status.text
     assert _get_effects(client, encounter_id).json()["revision"] == 1
+
+
+# --- Registration cannot capture effects (422, no write) ---
+
+
+def test_registration_refuses_effects_read_and_status(
+    admin_client, clean_registry, monkeypatch
+) -> None:
+    client, csrf, _, encounter_id = _setup_draft(
+        admin_client, clean_registry, monkeypatch, "dr_eff_reg", "0012348501"
+    )
+    _assert_effects_follow_up_only(_get_effects(client, encounter_id), "kind")
+    refused = _post_effect(client, csrf, encounter_id, "akathisia", "absent", None, 1)
+    _assert_effects_follow_up_only(refused, "kind")
+    draft = client.get(f"/api/v1/encounters/{encounter_id}")
+    assert draft.status_code == 200, draft.text
+    assert draft.json()["revision"] == 1
+    assert draft.json()["draft_data"] == {}
+
+
+def test_registration_patch_effects_refuses_change_and_keeps_equal(
+    admin_client, clean_registry, monkeypatch
+) -> None:
+    client, csrf, _, encounter_id = _setup_draft(
+        admin_client, clean_registry, monkeypatch, "dr_eff_patch", "0012348502"
+    )
+    added = _patch(
+        client,
+        csrf,
+        encounter_id,
+        {"working_note": "nope", "effects": {"akathisia": {"status": "absent"}}},
+        1,
+    )
+    _assert_effects_follow_up_only(added, "draft_data.effects")
+    fresh = client.get(f"/api/v1/encounters/{encounter_id}")
+    assert fresh.status_code == 200, fresh.text
+    assert fresh.json()["revision"] == 1
+    assert fresh.json()["draft_data"] == {}
+
+    stored_effects = {
+        "akathisia": {"status": "absent", "marker": "legacy"},
+        "kept": "yes",
+    }
+    seeded = {"effects": stored_effects, "drop_me": True}
+    _seed_draft_data(clean_registry, encounter_id, seeded)
+    planted = client.get(f"/api/v1/encounters/{encounter_id}")
+    assert planted.json()["draft_data"] == seeded
+
+    changed = _patch(
+        client,
+        csrf,
+        encounter_id,
+        {
+            "working_note": "nope",
+            "effects": {"kept": "yes", "akathisia": {"status": "present", "marker": "legacy"}},
+        },
+        1,
+    )
+    _assert_effects_follow_up_only(changed, "draft_data.effects")
+    unchanged = client.get(f"/api/v1/encounters/{encounter_id}")
+    assert unchanged.json()["revision"] == 1
+    assert unchanged.json()["draft_data"] == seeded
+
+    omitted = _patch(client, csrf, encounter_id, {"working_note": "saved"}, 1)
+    assert omitted.status_code == 200, omitted.text
+    kept = client.get(f"/api/v1/encounters/{encounter_id}")
+    assert kept.json()["revision"] == 2
+    assert kept.json()["draft_data"] == {"working_note": "saved", "effects": stored_effects}
+
+    # Canonical JSON ignores key order: a reordered equal section still saves.
+    equal_effects = {"kept": "yes", "akathisia": {"marker": "legacy", "status": "absent"}}
+    round_trip = _patch(
+        client,
+        csrf,
+        encounter_id,
+        {"working_note": "round-trip", "effects": equal_effects},
+        2,
+    )
+    assert round_trip.status_code == 200, round_trip.text
+    saved = client.get(f"/api/v1/encounters/{encounter_id}")
+    assert saved.json()["revision"] == 3
+    assert saved.json()["draft_data"] == {
+        "working_note": "round-trip",
+        "effects": stored_effects,
+    }
 
 
 # --- Slice 3: evaluators, preservation, urgent, phone/reconciliation, notes ---
@@ -731,7 +861,7 @@ def test_questionnaire_evaluators_direct_match_route_preview(
     assert sas_one["findings"]["no_severity_bands"] is True
 
     client, csrf, _, encounter_id = _setup_draft(
-        admin_client, clean_registry, monkeypatch, "dr_eval1", "0012348201"
+        admin_client, clean_registry, monkeypatch, "dr_eval1", "0012348201", follow_up=True
     )
     assert (
         _patch(
@@ -791,7 +921,7 @@ def test_missing_items_suppress_results_to_null_never_zero(
     assert acute_partial["scores"] is None
 
     client, csrf, _, encounter_id = _setup_draft(
-        admin_client, clean_registry, monkeypatch, "dr_eval2", "0012348202"
+        admin_client, clean_registry, monkeypatch, "dr_eval2", "0012348202", follow_up=True
     )
     assert (
         _patch(
@@ -814,7 +944,7 @@ def test_urgent_airway_independent_of_completion(admin_client, clean_registry, m
     assert lone["findings"]["urgent"] is True
 
     client, csrf, _, encounter_id = _setup_draft(
-        admin_client, clean_registry, monkeypatch, "dr_eval3", "0012348203"
+        admin_client, clean_registry, monkeypatch, "dr_eval3", "0012348203", follow_up=True
     )
     assert (
         _patch(
@@ -989,7 +1119,7 @@ def test_history_effects_stale_revision_412_and_if_match_422(
 
 def test_history_effects_csrf_403(admin_client, clean_registry, monkeypatch) -> None:
     client, csrf, _, encounter_id = _setup_draft(
-        admin_client, clean_registry, monkeypatch, "dr_csrf1", "0012348403"
+        admin_client, clean_registry, monkeypatch, "dr_csrf1", "0012348403", follow_up=True
     )
     no_csrf_history = client.post(
         f"/api/v1/encounters/{encounter_id}/history",
@@ -1018,7 +1148,7 @@ def test_history_effects_idempotency_replay_and_conflict(
     admin_client, clean_registry, monkeypatch
 ) -> None:
     client, csrf, _, encounter_id = _setup_draft(
-        admin_client, clean_registry, monkeypatch, "dr_idem1", "0012348404"
+        admin_client, clean_registry, monkeypatch, "dr_idem1", "0012348404", follow_up=True
     )
     first = _post_history(
         client, csrf, encounter_id, {"h_exposure_dopamine_blocker": "yes"}, 1, key="hist-key-001"

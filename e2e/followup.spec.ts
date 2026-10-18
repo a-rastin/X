@@ -23,8 +23,8 @@ import {
  * - reconciliation `#followup-baseline-status` (role=status)
  * - prior scores `data-testid="followup-prior-scores"` (`#followup-prior-scores`)
  * Wizard pages (see EncounterPage/HistorySection/EffectsSection headers):
- * - history `#history-heading`, phone `#history-phone-update`
- * - effects `#effects-heading`, panss `#panss-heading`, cssrs `#cssrs-heading`
+ * - history `#history-heading` "History (step 4)", phone `#history-phone-update`
+ * - effects `#effects-heading` "Adverse effects (step 5)", panss `#panss-heading`, cssrs `#cssrs-heading`
  *
  * Test-only baseline fixtures travel inline (S49 is not a dependency); no
  * bypass-sign production route exists.
@@ -161,10 +161,10 @@ test("follow-up creation from chart navigates to draft with phone/history/effect
   await expect(page.getByTestId("followup-baseline")).toBeVisible({ timeout: 15000 });
   await expect(page.locator("#followup-baseline-status")).toContainText("not_required");
   await page.locator("#wizard-step-history").click();
-  await expect(page.locator("#history-heading")).toBeVisible();
+  await expect(page.locator("#history-heading")).toContainText("History (step 4)");
   await expect(page.locator("#history-phone-update")).toBeVisible();
   await page.locator("#wizard-step-effects").click();
-  await expect(page.locator("#effects-heading")).toBeVisible();
+  await expect(page.locator("#effects-heading")).toContainText("Adverse effects (step 5)");
   await page.locator("#wizard-step-panss").click();
   await expect(page.locator("#panss-heading")).toBeVisible();
   await page.locator("#wizard-step-cssrs").click();

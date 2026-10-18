@@ -68,10 +68,15 @@ for the detailed handoff. Earlier reports describe their dated scope;
 
 ## Workflow and data boundaries
 
-Registration proceeds through demographics, diagnosis, severity, suicide
-assessment, history/medications, proposal review, and final-plan signing. Follow-up
-starts from a signed baseline, reconciles current information, and adds adverse
-effect assessment before proposal review and signing.
+Registration (`#/patients/new` and a registration draft) is seven steps:
+Register patient, Diagnosis, PANSS, C-SSRS, History, Medications, and Proposal
+review, then final-plan signing. Adverse effects are not a registration step.
+Follow-up starts from a signed baseline and reconciles current information; its
+seven steps are Diagnosis, PANSS, C-SSRS, History, Adverse effects, Medications,
+and Proposal review, before final-plan signing. The same section can show a
+different step number by encounter kind. The
+[2026-10-18 follow-up](project-documents/dev/progress/s07.md#follow-up-2026-10-18--adverse-effects-leave-the-registration-wizard)
+records the refusal contract.
 
 The core record and reasoning rules are:
 

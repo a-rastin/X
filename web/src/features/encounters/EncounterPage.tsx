@@ -19,8 +19,11 @@
  * without deleting the patient. Navigation warns while edits remain
  * (beforeunload + in-app hash guard); flush persists on page transition.
  * Assessment steps are separate pages (`#/encounters/:id#<step>`), not one
- * stacked form: Diagnosis, PANSS, C-SSRS, History, then effects, medications,
- * and proposal review. Back/Continue and the step list move one page at a time.
+ * stacked form. Registration is seven steps and does not include adverse
+ * effects: Register patient, Diagnosis, PANSS, C-SSRS, History, Medications,
+ * Proposal review. Follow-up is Diagnosis, PANSS, C-SSRS, History, Adverse
+ * effects, Medications, Proposal review (FR-20). Back/Continue and the step
+ * list move one page at a time.
  * Registration opens on that same wizard (`#/patients/new` before a draft
  * exists). Saved demographics, page notes, and the working note are step 1
  * (`#register`) only — not a second page, and not chrome on later steps.
@@ -80,8 +83,21 @@ export function parseEncounterId(hash: string): string | null {
   return id !== "" ? id : null;
 }
 
-/** Encounter-draft steps. Registration adds Register patient as step 1. */
-const ASSESSMENT_STEPS = [
+const REGISTER_STEP = { id: "register", label: "Register patient" } as const;
+
+/** Seven steps on `#/patients/new` and a registration draft. No adverse effects. */
+export const REGISTRATION_WIZARD_STEPS = [
+  REGISTER_STEP,
+  { id: "diagnosis", label: "Diagnosis" },
+  { id: "panss", label: "PANSS" },
+  { id: "cssrs", label: "C-SSRS" },
+  { id: "history", label: "History" },
+  { id: "medications", label: "Medications" },
+  { id: "proposal-review", label: "Proposal review" },
+] as const;
+
+/** Follow-up only. Adverse effects sits between history and medications. */
+const FOLLOW_UP_STEPS = [
   { id: "diagnosis", label: "Diagnosis" },
   { id: "panss", label: "PANSS" },
   { id: "cssrs", label: "C-SSRS" },
@@ -91,17 +107,12 @@ const ASSESSMENT_STEPS = [
   { id: "proposal-review", label: "Proposal review" },
 ] as const;
 
-const REGISTER_STEP = { id: "register", label: "Register patient" } as const;
-
 type WizardStepId =
-  | (typeof ASSESSMENT_STEPS)[number]["id"]
-  | (typeof REGISTER_STEP)["id"];
-
-/** Same eight labels on `#/patients/new` and a registration draft. */
-export const REGISTRATION_WIZARD_STEPS = [REGISTER_STEP, ...ASSESSMENT_STEPS] as const;
+  | (typeof REGISTRATION_WIZARD_STEPS)[number]["id"]
+  | (typeof FOLLOW_UP_STEPS)[number]["id"];
 
 function stepsFor(kind: string): ReadonlyArray<{ id: WizardStepId; label: string }> {
-  return kind === "registration" ? REGISTRATION_WIZARD_STEPS : ASSESSMENT_STEPS;
+  return kind === "registration" ? REGISTRATION_WIZARD_STEPS : FOLLOW_UP_STEPS;
 }
 
 function wizardStepFromHash(hash: string, kind: string): WizardStepId {
@@ -615,6 +626,7 @@ function EncounterWizard({
               encounterId={encounterId}
               autosave={autosave}
               onSessionExpired={sessionExpired}
+              stepNumber={stepIndex + 1}
             />
             <NotesSection
               encounterId={encounterId}
@@ -631,6 +643,7 @@ function EncounterWizard({
               encounterId={encounterId}
               autosave={autosave}
               onSessionExpired={sessionExpired}
+              stepNumber={stepIndex + 1}
             />
             <NotesSection
               encounterId={encounterId}
@@ -647,6 +660,7 @@ function EncounterWizard({
               encounterId={encounterId}
               autosave={autosave}
               onSessionExpired={sessionExpired}
+              stepNumber={stepIndex + 1}
             />
             <NotesSection
               encounterId={encounterId}
@@ -663,6 +677,7 @@ function EncounterWizard({
               encounterId={encounterId}
               autosave={autosave}
               onSessionExpired={sessionExpired}
+              stepNumber={stepIndex + 1}
             />
             {/* Page notes render SEPARATELY from history: never inside the history
               analysis_visible list. This distinct panel carries page/author/time
@@ -682,6 +697,7 @@ function EncounterWizard({
               encounterId={encounterId}
               autosave={autosave}
               onSessionExpired={sessionExpired}
+              stepNumber={stepIndex + 1}
             />
             <NotesSection
               encounterId={encounterId}
@@ -704,6 +720,7 @@ function EncounterWizard({
               encounterId={encounterId}
               autosave={autosave}
               onSessionExpired={sessionExpired}
+              stepNumber={stepIndex + 1}
             />
             <NotesSection
               encounterId={encounterId}
@@ -730,6 +747,7 @@ function EncounterWizard({
               encounterId={encounterId}
               autosave={autosave}
               onSessionExpired={sessionExpired}
+              stepNumber={stepIndex + 1}
             />
             <NotesSection
               encounterId={encounterId}

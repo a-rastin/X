@@ -16,7 +16,7 @@ import {
  * supply ordered states, baselines join, five transparency fields, proposal,
  * workflow, freshness, safe_* no-note-leakage (verified 75 passed worker+mcp+provider).
  * Frontend (read-only): web/src/features/reasoning/api.ts + ProposalReviewPanel.tsx
- * (wizard step 8, auto entry flushes autosave + gates, POST If-Match+Idempotency-Key,
+ * (wizard step 7, auto entry flushes autosave + gates, POST If-Match+Idempotency-Key,
  * polls ~2s active / 15s hidden backoff, stops terminal; testids proposal-review,
  * proposal-status-<key>, proposal-retry-<key>, proposal-transparency-<key>,
  * proposal-ddi, proposal-sign-blocked; storage xi.proposal.<encounterId>).
