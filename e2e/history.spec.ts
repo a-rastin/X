@@ -257,7 +257,9 @@ test("complete history via UI keeps unknown distinct from false", async ({
   await expect(verdict).toContainText("Complete — all 12 history fields answered", {
     timeout: 25000,
   });
-  await expect(verdict).toContainText("unknown and not assessed stay distinct from false");
+  await expect(page.locator(".xi-history-summary-note")).toContainText(
+    "Unknown and Not assessed are recorded separately from No",
+  );
   await expect(page.locator("#history-still-needed")).toHaveCount(0);
   await expect(page.locator("#hist-h_alternative_cause_considered-unknown")).toBeChecked();
 });

@@ -45,8 +45,9 @@ removes Adverse effects from that registration wizard and keeps them on follow-u
 
 The [diagnosis worksheet redesign](s09.md#follow-up-2026-10-20--diagnosis-worksheet-redesign)
 replaces criterion cards with aligned response rows, A–F navigation, and a desktop review sidebar.
-The [PANSS](s10.md#follow-up-2026-10-20--panss-worksheet-redesign) and
-[C-SSRS](s11.md#follow-up-2026-10-20--c-ssrs-worksheet-redesign) follow-ups apply
+The [PANSS](s10.md#follow-up-2026-10-20--panss-worksheet-redesign),
+[C-SSRS](s11.md#follow-up-2026-10-20--c-ssrs-worksheet-redesign), and
+[History](s12.md#follow-up-2026-10-20--history-worksheet-redesign) follow-ups apply
 the same worksheet language to response controls, navigation, and result review.
 
 ## Reading and updating progress
@@ -84,7 +85,7 @@ the same worksheet language to response controls, navigation, and result review.
 | S09 | [Implement diagnosis, threshold warning, and bypass (2026-10-04)](s09.md) |
 | S10 | [Implement PANSS without implicit minimum answers (2026-10-04)](s10.md) |
 | S11 | [Implement C-SSRS form and distinct results (2026-10-04)](s11.md) |
-| S12 | [Draft and implement structured history and adverse effects (2026-10-05)](s12.md) |
+| S12 | [Structured history and adverse effects; History UI redesign (2026-10-20)](s12.md) |
 | S13 | [Page notes (2026-10-05); removed, working note retained (2026-10-20)](s13.md) |
 | S14 | [Build shared chart and follow-up draft entry (2026-10-05)](s14.md) |
 | S15 | [Parse one source through the ingestion interface (2026-10-05)](s15.md) |

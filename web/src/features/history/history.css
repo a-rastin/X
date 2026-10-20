@@ -1,0 +1,76 @@
+/* History uses Diagnosis's worksheet; longer clinical choices need more room. */
+.xi-history-item {
+  grid-template-columns: minmax(0, 1fr) 320px;
+  column-gap: 24px;
+  row-gap: 8px;
+}
+.xi-history-period {
+  margin: 5px 0 0;
+  color: var(--ink-muted);
+  font-size: 12px;
+}
+.xi-history-options-long {
+  flex-direction: column;
+}
+.xi-history-options-paired {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.xi-history .xi-diagnosis-options input {
+  flex-shrink: 0;
+}
+.xi-history-options-long label {
+  justify-content: flex-start;
+  padding: 8px;
+}
+.xi-history-provenance {
+  grid-column: 1 / -1;
+  color: var(--ink-muted);
+  font-size: 12px;
+}
+.xi-history-provenance summary {
+  width: fit-content;
+  padding: 6px 0;
+  cursor: pointer;
+}
+.xi-history-provenance p {
+  overflow-wrap: anywhere;
+}
+.xi-history-provenance summary:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+.xi-history-followup {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 2px solid var(--border-strong);
+}
+.xi-history-summary-note {
+  line-height: 1.6;
+}
+@media (max-width: 760px) {
+  .xi-history-item {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+  .xi-history .xi-diagnosis-answer-row {
+    align-self: stretch;
+  }
+  .xi-history .xi-diagnosis-options label {
+    min-height: 44px;
+  }
+}
+@media (max-width: 640px) {
+  .xi-history-nav a {
+    flex: 1 1 auto;
+  }
+  .xi-history .xi-diagnosis-criterion-header > .xi-diagnosis-count {
+    padding-left: 0;
+  }
+}
+@media (max-width: 440px) {
+  .xi-history .xi-diagnosis-options:not(.xi-history-options-long) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

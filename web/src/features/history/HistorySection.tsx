@@ -57,6 +57,8 @@
  */
 
 import { useCallback, useEffect, useState } from "react";
+import "../assessments/diagnosis/diagnosis.css";
+import "./history.css";
 import { ApiError } from "../identity/api";
 import type { DraftData } from "../encounters/api";
 import type { useAutosave } from "../encounters/useAutosave";
@@ -177,6 +179,21 @@ const HISTORY_FIELDS: HistoryField[] = [
     period: "current encounter",
     category: "exposure",
   },
+];
+
+// Presentation groups only; the clinical inventory and stored values are unchanged.
+const HISTORY_GROUPS = [
+  { id: "exposure", title: "Medication exposure", fields: [
+    "h_exposure_dopamine_blocker", "h_exposure_duration_3m",
+    "h_exposure_1m_if_60plus", "h_onset_timing", "h_medication_timeline_documented",
+  ] },
+  { id: "treatment", title: "Prior treatment", fields: [
+    "h_trial_adequacy_prior", "h_prior_response",
+  ] },
+  { id: "movement", title: "Movement & monitoring", fields: [
+    "h_movement_persistence_4w", "h_monitoring_baseline",
+    "h_alternative_cause_considered", "h_functional_impact", "h_falls_or_limitation",
+  ] },
 ];
 
 const FIELD_IDS = HISTORY_FIELDS.map((field) => field.id);
@@ -407,213 +424,227 @@ export function HistorySection({
   if (preview === null) {
     verdict = "";
   } else if (evaluation?.status === "complete") {
-    verdict = `Complete — all 12 history fields answered (server evaluation ${preview.definition_version}). Explicit no answers stay no; unknown and not assessed stay distinct from false.`;
+    verdict = "Complete — all 12 history fields answered.";
   } else if (evaluation?.status === "partial") {
     const missing = evaluation.missing_item_ids.length;
-    verdict = `Incomplete — ${missing} of 12 fields still need${missing === 1 ? "s" : ""} an answer. Saved as incomplete; history carries no scores, only completeness.`;
+    verdict = `Incomplete — ${missing} of 12 fields still need${missing === 1 ? "s" : ""} an answer.`;
   } else {
     verdict =
-      "No answers yet. History is unanswered — 12 fields with nothing selected.";
+      "No answers yet. 12 fields with nothing selected.";
   }
 
   const previewProvenance = preview?.provenance ?? {};
 
+  const hasResponse = (field: HistoryField): boolean =>
+    field.values.some((value) => value === slice.values[field.id]);
+  const responseCount = HISTORY_FIELDS.filter(hasResponse).length;
+
   return (
-    <section className="xi-card" aria-labelledby="history-heading">
+    <section className="xi-card xi-diagnosis xi-history" aria-labelledby="history-heading">
       <h3 className="xi-section-title" id="history-heading">
         History (step {stepNumber})
       </h3>
       <p className="xi-hint">
-        Structured history for this encounter. Nothing is pre-filled — every
-        field is an explicit selection. Answers autosave through the same draft
-        as the rest of this encounter (about one second after changing an
-        answer). Completeness below is computed by the server — the browser
-        never fills in missing fields.
+        Review medication exposure, prior treatment and movement history.
+        Select Unknown when you cannot determine an answer, or Not assessed
+        when it has not been reviewed. Responses save automatically.
       </p>
-      <p className="xi-hint">
-        These typed fields are the only analysis-visible history source
-        (analysis_visible true). The optional phone update below is an
-        identifier (analysis_visible false, never a model input), and page
-        notes added elsewhere never influence history.
-      </p>
+      <div className="xi-diagnosis-workspace">
+        <div className="xi-diagnosis-checklist">
+          <div className="xi-diagnosis-overview">
+            <div>
+              <h4>Past medical history</h4>
+              <p>Record a response for each question. No answers are preselected.</p>
+            </div>
+            <span className="xi-diagnosis-count">{responseCount} / 12 responses</span>
+          </div>
+          <nav className="xi-diagnosis-nav xi-history-nav" aria-label="Jump to history section">
+            {HISTORY_GROUPS.map((group) => (
+              <a key={group.id} href={`#history-group-${group.id}`} onClick={(event) => {
+                event.preventDefault();
+                document.getElementById(`history-group-${group.id}`)?.focus();
+              }}>{group.title}</a>
+            ))}
+          </nav>
+          {HISTORY_GROUPS.map((group) => {
+            const fields = group.fields.map((id) => HISTORY_FIELDS.find((field) => field.id === id)!);
+            return (
+              <section className="xi-diagnosis-criterion" key={group.id} aria-labelledby={`history-group-${group.id}`}>
+                <header className="xi-diagnosis-criterion-header">
+                  <h4 id={`history-group-${group.id}`} tabIndex={-1}>{group.title}</h4>
+                  <span className="xi-diagnosis-count">{fields.filter(hasResponse).length} / {fields.length} answered</span>
+                </header>
+                {fields.map((field) => {
+                  const errorId = itemErrors[field.id] !== undefined ? `hist-${field.id}-error` : undefined;
+                  return (
+                    <fieldset key={field.id} className="xi-diagnosis-item xi-history-item">
+                      <legend className="xi-sr-only">{field.label}</legend>
+                      <div className="xi-diagnosis-question">
+                        <div aria-hidden="true">{field.label}</div>
+                        <p className="xi-history-period">{field.period}</p>
+                      </div>
+                      <div className="xi-diagnosis-answer-row">
+                        <span className="xi-diagnosis-item-hint">{hasResponse(field) ? "Answered" : "Awaiting response"}</span>
+                        <div className={`xi-diagnosis-options${field.id === "h_onset_timing" ? " xi-history-options-long" : group.id === "treatment" ? " xi-history-options-paired" : ""}`}>
+                          {field.values.map((value) => (
+                            <label key={value} htmlFor={`hist-${field.id}-${value}`}>
+                              <input id={`hist-${field.id}-${value}`} type="radio"
+                                name={`hist-${field.id}`} value={value}
+                                checked={slice.values[field.id] === value}
+                                onChange={() => setValue(field.id, value)}
+                                aria-invalid={errorId !== undefined || undefined}
+                                aria-describedby={errorId}
+                              />
+                              <span>{valueLabel(value)}</span>
+                            </label>
+                          ))}
+                        </div>
+                      </div>
+                      {errorId !== undefined && (
+                        <p className="xi-field-error" id={errorId} role="alert">{(itemErrors[field.id] ?? []).join(" ")}</p>
+                      )}
+                      <details className="xi-history-provenance">
+                        <summary>Response source{previewProvenance[field.id]?.source === "copied_baseline" ? ": copied from baseline" : ""}</summary>
+                        <p className="xi-hint" id={`hist-${field.id}-provenance`}>{provenanceText(previewProvenance[field.id])}</p>
+                      </details>
+                    </fieldset>
+                  );
+                })}
+              </section>
+            );
+          })}
 
-      <div style={{ marginTop: 8 }}>
-        {HISTORY_FIELDS.map((field) => {
-          const errorId =
-            itemErrors[field.id] !== undefined
-              ? `hist-${field.id}-error`
-              : undefined;
-          return (
-            <fieldset key={field.id} className="xi-field">
-              <legend className="xi-label">
-                {field.label}{" "}
-                <span className="xi-hint">
-                  · {field.period} · {field.category}
-                </span>
-              </legend>
-              <div
-                className="xi-radio-group"
-                role="radiogroup"
-                aria-label={field.label}
-              >
-                {field.values.map((value) => (
-                  <label key={value} htmlFor={`hist-${field.id}-${value}`}>
-                    <input
-                      id={`hist-${field.id}-${value}`}
-                      type="radio"
-                      name={`hist-${field.id}`}
-                      value={value}
-                      checked={slice.values[field.id] === value}
-                      onChange={() => setValue(field.id, value)}
-                      aria-describedby={
-                        errorId !== undefined
-                          ? `${errorId} hist-${field.id}-provenance`
-                          : `hist-${field.id}-provenance`
-                      }
-                    />
-                    {valueLabel(value)}
-                  </label>
-                ))}
-              </div>
-              {errorId !== undefined && (
-                <p className="xi-field-error" id={errorId} role="alert">
-                  {(itemErrors[field.id] ?? []).join(" ")}
-                </p>
-              )}
-              <p className="xi-hint" id={`hist-${field.id}-provenance`}>
-                {provenanceText(previewProvenance[field.id])}
-              </p>
-            </fieldset>
-          );
-        })}
-      </div>
-
-      <div className="xi-history-panel" aria-label="History reconciliation">
-        <h4 className="xi-section-title" style={{ fontSize: 15 }}>
-          Reconciliation (follow-up)
-        </h4>
-        <p className="xi-hint" style={{ marginTop: 0 }}>
-          Follow-up drafts copy baseline history with status pending; the
-          author reconciles explicitly. Registration drafts are not required.
-        </p>
-        <div className="xi-field">
-          <label className="xi-label" htmlFor="history-reconciliation-status">
-            Reconciliation status
-          </label>
-          <select
-            className="xi-select"
-            id="history-reconciliation-status"
-            value={slice.reconciliation?.status ?? ""}
-            onChange={(event) => setReconciliationStatus(event.target.value)}
-          >
-            <option value="">Not set</option>
-            <option value="not_required">Not required</option>
-            <option value="pending">Pending</option>
-            <option value="reconciled">Reconciled</option>
-          </select>
-        </div>
-        <div className="xi-field">
-          <label className="xi-label" htmlFor="history-reconciliation-baseline">
-            Baseline encounter id (optional)
-          </label>
-          <input
-            className="xi-input"
-            id="history-reconciliation-baseline"
-            type="text"
-            autoComplete="off"
-            value={slice.reconciliation?.baseline_encounter_id ?? ""}
-            onChange={(event) => setBaselineId(event.target.value)}
-          />
-        </div>
-      </div>
-
-      <div className="xi-field" style={{ marginTop: 12 }}>
-        <label className="xi-label" htmlFor="history-phone-update">
-          Phone update (optional, free text — never a model input)
-        </label>
-        <input
-          className="xi-input"
-          id="history-phone-update"
-          type="text"
-          autoComplete="off"
-          value={slice.phone_update ?? ""}
-          onChange={(event) => setPhoneUpdate(event.target.value)}
-        />
-        <p className="xi-hint">
-          Optional follow-up phone update. No country validation is applied.
-        </p>
-      </div>
-
-      <div style={{ marginTop: 16 }}>
-        <h4 className="xi-section-title" style={{ fontSize: 16 }}>
-          Server completeness preview
-        </h4>
-        {previewLoading && preview === null && <p>Loading history preview…</p>}
-        {previewError !== null && preview === null && (
-          <div>
-            <p className="xi-form-error" role="alert">
-              {previewError}
+          <div className="xi-history-followup" aria-label="History reconciliation">
+            <h4 className="xi-section-title" style={{ fontSize: 15 }}>
+              Reconciliation (follow-up)
+            </h4>
+            <p className="xi-hint" style={{ marginTop: 0 }}>
+              For follow-up encounters, review the copied history and mark it
+              reconciled. For registration, select Not required.
             </p>
-            <div className="xi-row-actions" style={{ marginTop: 8 }}>
-              <button
-                className="xi-btn xi-btn-secondary"
-                type="button"
-                onClick={() => {
-                  setPreviewLoading(true);
-                  setPreviewError(null);
-                  void refreshPreview();
-                }}
+            <div className="xi-field">
+              <label className="xi-label" htmlFor="history-reconciliation-status">
+                Reconciliation status
+              </label>
+              <select
+                className="xi-select"
+                id="history-reconciliation-status"
+                value={slice.reconciliation?.status ?? ""}
+                onChange={(event) => setReconciliationStatus(event.target.value)}
               >
-                Retry
-              </button>
+                <option value="">Not set</option>
+                <option value="not_required">Not required</option>
+                <option value="pending">Pending</option>
+                <option value="reconciled">Reconciled</option>
+              </select>
+            </div>
+            <div className="xi-field">
+              <label className="xi-label" htmlFor="history-reconciliation-baseline">
+                Baseline encounter ID (optional)
+              </label>
+              <input
+                className="xi-input"
+                id="history-reconciliation-baseline"
+                type="text"
+                autoComplete="off"
+                value={slice.reconciliation?.baseline_encounter_id ?? ""}
+                onChange={(event) => setBaselineId(event.target.value)}
+              />
             </div>
           </div>
-        )}
-        {preview !== null && (
-          <div>
-            {/* Verdict announces via a role-less live region (not
-              role=status): the wizard's save status keeps the page's single
-              status role per the S07 e2e contract. */}
-            <p
-              className="xi-status"
-              id="history-preview-status"
-              aria-live="polite"
-            >
-              {verdict}
-            </p>
+
+          <div className="xi-field" style={{ marginTop: 12 }}>
+            <label className="xi-label" htmlFor="history-phone-update">
+              Phone update (optional)
+            </label>
+            <input
+              className="xi-input"
+              id="history-phone-update"
+              type="text"
+              autoComplete="off"
+              value={slice.phone_update ?? ""}
+              onChange={(event) => setPhoneUpdate(event.target.value)}
+            />
             <p className="xi-hint">
-              Server evaluation · definition {preview.definition_version} ·
-              saved revision {preview.revision}
-              {answersPending &&
-                " · unsaved edits pending — preview reflects the last saved revision"}
-              {previewError !== null &&
-                " · preview refresh failed; showing last loaded state"}
+              Contact information only; not used in clinical analysis.
             </p>
+          </div>
 
-            {itemErrorIds.length > 0 && (
-              <p className="xi-form-error" role="alert">
-                The saved values contain server-reported problems:{" "}
-                {itemErrorIds
-                  .map((id) => `${id}: ${(itemErrors[id] ?? []).join(" ")}`)
-                  .join("; ")}
-              </p>
+        </div>
+        <aside className="xi-diagnosis-review" aria-label="History review">
+          <div className="xi-diagnosis-result">
+            <h4 className="xi-section-title">
+              History summary
+            </h4>
+            {previewLoading && preview === null && <p>Loading history preview…</p>}
+            {previewError !== null && preview === null && (
+              <div>
+                <p className="xi-form-error" role="alert">
+                  {previewError}
+                </p>
+                <div className="xi-row-actions" style={{ marginTop: 8 }}>
+                  <button
+                    className="xi-btn xi-btn-secondary"
+                    type="button"
+                    onClick={() => {
+                      setPreviewLoading(true);
+                      setPreviewError(null);
+                      void refreshPreview();
+                    }}
+                  >
+                    Retry
+                  </button>
+                </div>
+              </div>
             )}
+            {preview !== null && (
+              <div>
+                {/* Verdict announces via a role-less live region (not
+                  role=status): the wizard's save status keeps the page's single
+                  status role per the S07 e2e contract. */}
+                <p
+                  className="xi-status xi-diagnosis-verdict"
+                  id="history-preview-status"
+                  aria-live="polite"
+                >
+                  {verdict}
+                </p>
+                <p className="xi-hint">
+                  Based on saved responses.
+                  {answersPending &&
+                    " Changes pending — summary reflects the last saved responses."}
+                  {previewError !== null &&
+                    " Summary refresh failed; showing the last loaded responses."}
+                </p>
 
-            {evaluation?.status === "partial" && (
-              <div id="history-still-needed">
-                <p className="xi-hint">Still needed:</p>
-                <ul>
-                  {evaluation.missing_item_ids.map((id) => (
-                    <li key={id}>
-                      {HISTORY_FIELDS.find((field) => field.id === id)?.label ??
-                        id}
-                    </li>
-                  ))}
-                </ul>
+                {itemErrorIds.length > 0 && (
+                  <p className="xi-form-error" role="alert">
+                    The saved values contain server-reported problems:{" "}
+                    {itemErrorIds
+                      .map((id) => `${id}: ${(itemErrors[id] ?? []).join(" ")}`)
+                      .join("; ")}
+                  </p>
+                )}
+
+                {evaluation?.status === "partial" && (
+                  <div id="history-still-needed">
+                    <p className="xi-hint">Still needed:</p>
+                    <ul className="xi-diagnosis-missing">
+                      {evaluation.missing_item_ids.map((id) => {
+                        const field = HISTORY_FIELDS.find((candidate) => candidate.id === id);
+                        return <li key={id}><a href={`#hist-${id}-${field?.values[0]}`} onClick={(event) => {
+                          event.preventDefault();
+                          document.getElementById(`hist-${id}-${field?.values[0]}`)?.focus();
+                        }}>{field?.label ?? id}</a></li>;
+                      })}
+                    </ul>
+                  </div>
+                )}
               </div>
             )}
           </div>
-        )}
+          <p className="xi-hint xi-history-summary-note">Unknown and Not assessed are recorded separately from No. Response counts do not indicate clinical findings.</p>
+        </aside>
       </div>
     </section>
   );
