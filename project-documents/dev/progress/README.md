@@ -43,8 +43,8 @@ note only. A later
 [follow-up](s07.md#follow-up-2026-10-18--adverse-effects-leave-the-registration-wizard)
 removes Adverse effects from that registration wizard and keeps them on follow-up.
 
-The [diagnosis UI follow-up](s09.md#follow-up-2026-10-18--diagnosis-criteria-presentation)
-groups criteria A–F into cards with accessible answer controls and a clearer summary.
+The [diagnosis worksheet redesign](s09.md#follow-up-2026-10-20--diagnosis-worksheet-redesign)
+replaces criterion cards with aligned response rows, A–F navigation, and a desktop review sidebar.
 
 ## Reading and updating progress
 

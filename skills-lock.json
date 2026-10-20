@@ -7,6 +7,12 @@
       "skillPath": "skills/deepeval/SKILL.md",
       "computedHash": "1513200bf41565e1bf84146882166bfb772d96887b0733f320eae5aa86443748"
     },
+    "frontend-design": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/frontend-design/SKILL.md",
+      "computedHash": "89496d5dd00f4810205f351759594fc2742bf8eea85a2f2b2d1de59f4bd91576"
+    },
     "keep-the-why": {
       "source": "oliver-zehentleitner/keep-the-why",
       "ref": "latest",

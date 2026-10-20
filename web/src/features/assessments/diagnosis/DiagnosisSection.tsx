@@ -377,18 +377,30 @@ export function DiagnosisSection({
         <p>Loading diagnosis form…</p>
       )}
 
+      <div className="xi-diagnosis-workspace">
       {definition !== null && (
         <div className="xi-diagnosis-checklist">
           <div className="xi-diagnosis-overview">
             <div>
-              <h4>Diagnostic criteria</h4>
-              <p>Work through criteria A–F. Response counts track answers, not whether criteria are met.</p>
+              <h4>Schizophrenia diagnostic criteria</h4>
+              <p>Counts show responses, not criteria met.</p>
             </div>
             <span className="xi-diagnosis-count">
               {definition.items.filter((item) => ANSWER_OPTIONS.some((option) => option.value === answers[item.id])).length}
               {" / "}{definition.items.length} responses
             </span>
           </div>
+          <nav className="xi-diagnosis-nav" aria-label="Jump to criterion">
+            {Object.entries(CRITERION_TITLES).map(([letter, title]) => (
+              <a key={letter} href={`#diag-group-${letter}`} title={title}
+                onClick={(event) => {
+                  event.preventDefault();
+                  document.getElementById(`diag-group-${letter}`)?.focus();
+                }}>
+                <span>{letter}</span><span>{title}</span>
+              </a>
+            ))}
+          </nav>
           {Array.from(new Set(definition.items.map((item) => item.id.split("_")[0].toUpperCase()))).map((criterion) => {
             const items = definition.items.filter((item) => item.id.split("_")[0].toUpperCase() === criterion);
             const answered = items.filter((item) => ANSWER_OPTIONS.some((option) => option.value === answers[item.id])).length;
@@ -396,8 +408,8 @@ export function DiagnosisSection({
               <section className="xi-diagnosis-criterion" key={criterion} aria-labelledby={`diag-group-${criterion}`}>
                 <header className="xi-diagnosis-criterion-header">
                   <span className="xi-diagnosis-letter" aria-hidden="true">{criterion}</span>
-                  <h4 id={`diag-group-${criterion}`}>
-                    <span className="xi-diagnosis-eyebrow">Criterion {criterion}</span>
+                  <h4 id={`diag-group-${criterion}`} tabIndex={-1}>
+                    <span className="xi-sr-only">Criterion {criterion}: </span>
                     {CRITERION_TITLES[criterion] ?? "Additional criteria"}
                   </h4>
                   <span className="xi-diagnosis-count">{answered} / {items.length} answered</span>
@@ -405,11 +417,13 @@ export function DiagnosisSection({
                 <div className="xi-diagnosis-items">
                   {items.map((item) => (
                     <fieldset key={item.id} className="xi-diagnosis-item" disabled={busy !== null}>
-                      <legend>{item.prompt}</legend>
+                      <legend className="xi-sr-only">{item.prompt}</legend>
+                      <div className="xi-diagnosis-question" aria-hidden="true">{item.prompt}</div>
                       <div className="xi-diagnosis-answer-row">
                         <span className="xi-diagnosis-item-hint">
-                          {item.required ? "Required" : "Required when applicable"}
-                          {!ANSWER_OPTIONS.some((option) => option.value === answers[item.id]) && " · Unanswered"}
+                          {item.required
+                            ? (ANSWER_OPTIONS.some((option) => option.value === answers[item.id]) ? "Answered" : "Awaiting response")
+                            : "Required when applicable"}
                         </span>
                         <div className="xi-diagnosis-options">
                           {ANSWER_OPTIONS.map((option) => (
@@ -443,6 +457,7 @@ export function DiagnosisSection({
         </div>
       )}
 
+      <aside className="xi-diagnosis-review" aria-label="Diagnosis review">
       <div className="xi-diagnosis-result">
         <h4 className="xi-section-title">
           Assessment summary
@@ -498,8 +513,8 @@ export function DiagnosisSection({
             )}
 
             {evaluation?.status === "partial" && definition !== null && (
-              <div>
-                <p className="xi-hint">Still needed:</p>
+              <details className="xi-diagnosis-outstanding">
+                <summary>Still needed: {evaluation.missing_item_ids.length} answers</summary>
                 <ul className="xi-diagnosis-missing">
                   {evaluation.missing_item_ids.map((id) => (
                     <li key={id}>
@@ -510,7 +525,7 @@ export function DiagnosisSection({
                     </li>
                   ))}
                 </ul>
-              </div>
+              </details>
             )}
 
             {criteria !== null && evaluation?.status === "complete" && (
@@ -592,10 +607,8 @@ export function DiagnosisSection({
         ) : (
           <div>
             <p style={{ marginTop: 0 }}>
-              Bypass records who bypassed and when, without asking for a
-              reason. It clears these answers on the server and survives
-              resume. Bypass is visibly different from completing the
-              checklist.
+              Continue without completing this assessment. This clears the
+              responses and records who bypassed it and when. No reason is required.
             </p>
             {preview !== null &&
               preview.bypass !== null &&
@@ -615,6 +628,9 @@ export function DiagnosisSection({
             </button>
           </div>
         )}
+      </div>
+
+      </aside>
       </div>
 
       {notice !== null && (
