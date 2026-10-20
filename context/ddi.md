@@ -4,10 +4,11 @@
 
 **Id:** e0809f6b-19b4-4666-b22b-60d4ff23afda
 **Type:** decision
-**Status:** active
+**Status:** needs-review
 **Evidence:** confirmed
 **Source:** project design doc DDI-Module.md, 2026-10-03
 **Revisit when:** the DDI module is implemented or the checker strategy changes
+**Verification:** contradicted — as of 2026-10-20, backend/src/x_insight/ddi/checker.py implements the deterministic checker and router.py exposes runtime lookup; the description below that this is only a proposed design needs review. The original rationale is retained pending that review.
 
 The runtime DDI checker is a deterministic database lookup over a
 versioned knowledge base built offline. The LLM is never asked at

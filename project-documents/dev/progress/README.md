@@ -52,6 +52,9 @@ the same worksheet language to response controls, navigation, and result review.
 
 ## Reading and updating progress
 
+The [Step 6 DDI diagnosis (2026-10-20)](s20.md#follow-up-2026-10-20--step-6-dataset-unavailable-diagnosis)
+confirms the current corpus still requires review/publication and traces the shared unavailable error.
+
 - Use [../tasks.md](../tasks.md) for planned sessions and
   [../plan.md](../plan.md) for implementation policy.
 - Each session or bounded checkpoint has its own file: `s00.md`, `s16-a.md`,

@@ -3,7 +3,7 @@
   "reviewer": "owner",
   "decision": "awaiting_review",
   "date": "2026-10-06",
-  "record": "TEMPLATE - owner review pending. Do not publish from this template: publication requires an explicit approved_complete or approved_limited decision with this same reviewer/date/record shape.",
+  "record": "",
   "parser_version": "ddi-ingestion/0.1.0",
   "terminology_version": "ddi-terminology/0.1.0",
   "terminology_checksum": "f89b7142b804a78f3ad39a5ad3a97005f49a0ea63245403cc578e7f4d967d05e",
@@ -35,13 +35,10 @@
     }
   ],
   "limitations": [
-    "TEMPLATE - real corpus baseline (project-documents/dev/progress/ S15-S17 report leads, not re-parsed here): 128 documents, 102 passed / 26 failed, ~30,667 entries; aliases.json draft with 415 pending / 0 approved aliases and terminology_complete=false. Uncovered pairs remain coverage_unavailable; excluded sources above stay named here. Do not claim the corpus is ready."
+    "TEMPLATE - real corpus baseline (project-documents/dev/progress/ S15-S17 report leads, not re-parsed here): 128 documents, 102 passed / 26 failed, ~30,667 entries; aliases.json draft with 415 pending / 0 approved aliases and terminology_complete=false. Uncovered pairs remain coverage_unavailable; excluded sources above stay named here."
   ],
   "_notes": [
-    "decision must become approved_complete (with coverage.scope complete and empty excluded_sources) or approved_limited (with coverage.scope limited, non-empty excluded_sources with reasons, and non-empty limitations) before publish accepts it.",
     "parser/terminology versions and terminology_checksum must exactly match the staging candidate_dataset.json built from the reviewed sources.",
-    "every contraindicated/serious entry in the included set needs a matching reviewed_evidence record (source_path + span_start/span_end); any included count failure, unresolved name, or colliding alias rejects the publish.",
-    "corrections reference real source spans and are stored as overlays; the staged raw_text and the originals under project-documents/ are never rewritten.",
-    "The 2026-10-04 owner decision permits a reviewed limited-coverage release; uncovered pairs remain coverage_unavailable (S19 checker), never safe/no-interaction."
+    "every contraindicated/serious entry in the included set needs a matching reviewed_evidence record (source_path + span_start/span_end); any included count failure, unresolved name, or colliding alias rejects the publish."
   ]
 }
