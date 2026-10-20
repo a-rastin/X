@@ -198,7 +198,7 @@ test("fresh form has 29 unanswered items and null severity, keyboard accessible"
 
   const verdict = page.locator("#cssrs-preview-status");
   await expect(verdict).toContainText("No answers yet", { timeout: 10000 });
-  await expect(verdict).toContainText("29 items with nothing selected");
+  await expect(verdict).toContainText("Select responses to begin the assessment");
   await expect(verdict).not.toContainText("Complete");
 
   // Null severities render as em dashes, never zeros.
@@ -212,7 +212,7 @@ test("fresh form has 29 unanswered items and null severity, keyboard accessible"
   await page.keyboard.press(" ");
   await expect(page.locator("#cssrs-css_i1_recent-yes")).toBeChecked();
   await expect(verdict).toContainText("Incomplete", { timeout: 15000 });
-  await expect(verdict).toContainText("suppressed to null");
+  await expect(verdict).toContainText("Severity will appear when all required items are answered.");
 });
 
 test("skip persists not_assessed across reload; resume clears it", async ({
@@ -267,7 +267,7 @@ test("one missing item suppresses severity with Still needed guidance", async ({
   const verdict = page.locator("#cssrs-preview-status");
   await expect(verdict).toContainText("Incomplete", { timeout: 10000 });
   await expect(verdict).toContainText("1 required item");
-  await expect(verdict).toContainText("suppressed to null");
+  await expect(verdict).toContainText("Severity will appear when all required items are answered.");
 
   // Null severities render as em dashes, never zeros or guessed negatives.
   const scores = page.locator("#cssrs-scores");
@@ -302,7 +302,7 @@ test("level-3 yes never auto-fills lower levels", async ({
   // Partial work reports what is still needed, never a severity.
   const verdict = page.locator("#cssrs-preview-status");
   await expect(verdict).toContainText("Incomplete", { timeout: 15000 });
-  await expect(verdict).toContainText("suppressed to null");
+  await expect(verdict).toContainText("Severity will appear when all required items are answered.");
   await expect(page.locator("#cssrs-still-needed")).toBeVisible();
 });
 
@@ -334,7 +334,7 @@ test("level-3 completion via seeded answers yields severity 3, dimensions separa
 
   // Intensity, behavior, and lethality render as separate panels with no
   // composite risk score anywhere.
-  await expect(page.locator("#cssrs-intensity")).toContainText("frequency 2");
+  await expect(page.locator("#cssrs-intensity dl > div").filter({ has: page.getByText("Frequency", { exact: true }) })).toHaveText("Frequency2");
   await expect(page.locator("#cssrs-behavior")).toBeVisible();
   await expect(page.locator("#cssrs-lethality")).toBeVisible();
   await expect(page.getByText("No composite risk score")).toBeVisible();
@@ -434,7 +434,7 @@ test("forged invalid values are rejected server-side, never zero-filled", async 
   await gotoCssrs(page, draftId);
   const verdict = page.locator("#cssrs-preview-status");
   await expect(verdict).toContainText("Incomplete", { timeout: 10000 });
-  await expect(verdict).toContainText("suppressed to null");
+  await expect(verdict).toContainText("Severity will appear when all required items are answered.");
   await expect(
     page.getByText("rejected (never zero-filled)"),
   ).toBeVisible();

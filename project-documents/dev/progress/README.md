@@ -45,6 +45,9 @@ removes Adverse effects from that registration wizard and keeps them on follow-u
 
 The [diagnosis worksheet redesign](s09.md#follow-up-2026-10-20--diagnosis-worksheet-redesign)
 replaces criterion cards with aligned response rows, A–F navigation, and a desktop review sidebar.
+The [PANSS](s10.md#follow-up-2026-10-20--panss-worksheet-redesign) and
+[C-SSRS](s11.md#follow-up-2026-10-20--c-ssrs-worksheet-redesign) follow-ups apply
+the same worksheet language to response controls, navigation, and result review.
 
 ## Reading and updating progress
 

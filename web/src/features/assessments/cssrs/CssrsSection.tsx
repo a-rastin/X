@@ -56,6 +56,7 @@
  */
 
 import { useCallback, useEffect, useState, type ReactNode } from "react";
+import "../assessment-worksheet.css";
 import { ApiError } from "../../identity/api";
 import type { DraftData } from "../../encounters/api";
 import type { useAutosave } from "../../encounters/useAutosave";
@@ -323,18 +324,18 @@ export function CssrsSection({
     verdict =
       "C-SSRS skipped — not assessed. No severity is reported for a skipped assessment.";
   } else if (evaluation?.status === "complete" && hasNoPositives) {
-    verdict = `Complete — no ideation or behavior endorsed (no-ideation result, severity 0 recent / 0 lifetime / 0 max, server evaluation ${preview.definition_version}). A negative screen does not prove absence of risk.`;
+    verdict = `Complete — no ideation or behavior endorsed (no-ideation result, severity 0 recent / 0 lifetime / 0 max). A negative screen does not prove absence of risk.`;
   } else if (evaluation?.status === "complete" && scores !== null) {
-    verdict = `Complete — Recent severity ${scores.ideation_severity_recent}, Lifetime severity ${scores.ideation_severity_lifetime}, Max ${scores.ideation_severity_max} (server evaluation ${preview.definition_version}). Intensity, behavior, and lethality below stay separate — no composite score.`;
+    verdict = `Complete — Recent severity ${scores.ideation_severity_recent}, Lifetime severity ${scores.ideation_severity_lifetime}, Max ${scores.ideation_severity_max}. Intensity, behavior, and lethality below stay separate — no composite score.`;
   } else if (evaluation?.status === "complete") {
     verdict =
-      "Complete but the severity is unavailable — the server suppressed it. This needs no treatment decision.";
+      "Complete. Severity is currently unavailable.";
   } else if (evaluation?.status === "partial") {
     const missing = evaluation.missing_item_ids.length;
-    verdict = `Incomplete — ${missing} required item${missing === 1 ? "" : "s"} still need${missing === 1 ? "s" : ""} an answer. Saved as incomplete; severity is suppressed to null (never zero, never a guessed negative).`;
+    verdict = `Incomplete — ${missing} required item${missing === 1 ? "" : "s"} still need${missing === 1 ? "s" : ""} an answer. Severity will appear when all required items are answered.`;
   } else {
     verdict =
-      "No answers yet. C-SSRS is unanswered — 29 items with nothing selected and no assessed result (null, never zero).";
+      "No answers yet. Select responses to begin the assessment.";
   }
 
   function formatScore(value: number | null | undefined): string {
@@ -355,9 +356,10 @@ export function CssrsSection({
         : undefined;
     if (isYesNo(item)) {
       return (
-        <fieldset key={item.id} className="xi-field">
-          <legend className="xi-label">{item.prompt}</legend>
-          <div className="xi-radio-group" aria-label={item.prompt}>
+        <fieldset key={item.id} className="xi-assessment-item">
+          <legend className="xi-assessment-sr-only">{item.prompt}</legend>
+          <div className="xi-assessment-question" aria-hidden="true">{item.prompt}</div>
+          <div className="xi-assessment-options" aria-label={item.prompt}>
             {YES_NO_OPTIONS.map((option) => (
               <label
                 key={option.value}
@@ -377,7 +379,8 @@ export function CssrsSection({
               </label>
             ))}
           </div>
-          {errorId !== undefined && (
+          <p className="xi-assessment-answer-state">{answers[item.id] === undefined ? (item.required ? "Not answered" : "Conditional · not answered") : `Selected: ${answers[item.id]}`}</p>
+            {errorId !== undefined && (
             <p className="xi-field-error" id={errorId} role="alert">
               {(itemErrors[item.id] ?? []).join(" ")}
             </p>
@@ -387,9 +390,10 @@ export function CssrsSection({
     }
     const options = numericOptions(item.value_type);
     return (
-      <fieldset key={item.id} className="xi-field">
-        <legend className="xi-label">{item.prompt}</legend>
-        <div className="xi-radio-group" aria-label={item.prompt}>
+      <fieldset key={item.id} className="xi-assessment-item">
+        <legend className="xi-assessment-sr-only">{item.prompt}</legend>
+          <div className="xi-assessment-question" aria-hidden="true">{item.prompt}</div>
+        <div className="xi-assessment-options" aria-label={item.prompt}>
           {options.map((value) => (
             <label key={value} htmlFor={`cssrs-${item.id}-${value}`}>
               <input
@@ -406,7 +410,8 @@ export function CssrsSection({
             </label>
           ))}
         </div>
-        {errorId !== undefined && (
+        <p className="xi-assessment-answer-state">{answers[item.id] === undefined ? (item.required ? "Not answered" : "Conditional · not answered") : `Selected: ${answers[item.id]}`}</p>
+            {errorId !== undefined && (
           <p className="xi-field-error" id={errorId} role="alert">
             {(itemErrors[item.id] ?? []).join(" ")}
           </p>
@@ -420,10 +425,11 @@ export function CssrsSection({
       return null;
     }
     return (
-      <div key={group.key}>
-        <h4 className="xi-section-title" style={{ fontSize: 16 }}>
-          {group.title}
-        </h4>
+      <div key={group.key} className="xi-assessment-group">
+        <div className="xi-assessment-group-heading">
+          <h4 id={`cssrs-group-${group.key}`} tabIndex={-1}>{group.title}</h4>
+          <span>{group.items.filter(item => answers[item.id] !== undefined).length} / {group.items.length} answered</span>
+        </div>
         <p className="xi-hint">{group.hint}</p>
         {group.items.map(renderItem)}
       </div>
@@ -436,24 +442,12 @@ export function CssrsSection({
   const lethality = findings?.lethality ?? null;
 
   return (
-    <section className="xi-card" aria-labelledby="cssrs-heading">
+    <section className="xi-card xi-assessment" aria-labelledby="cssrs-heading">
       <h3 className="xi-section-title" id="cssrs-heading">
         C-SSRS (step {stepNumber})
       </h3>
-      <p className="xi-hint">
-        Clinician-administered assessment of suicidal ideation and behavior.
-        Nothing is pre-filled — every answer is an explicit selection. Answers
-        autosave through the same draft as the rest of this encounter (about
-        one second after changing an answer). Ideation severity, intensity,
-        behavior, and lethality below are computed by the server from the
-        released definition — the browser never combines them into a
-        composite score.
-      </p>
-      <p className="xi-hint">
-        Periods: recent ideation covers the past month, recent behavior covers
-        the past 3 months, and lifetime sections cover lifetime history.
-        Recent and lifetime answers are kept separate.
-      </p>
+      <p className="xi-hint">Assess suicidal ideation and behavior, keeping recent and lifetime responses separate. Answers save automatically; each result is reported separately.</p>
+      <p className="xi-assessment-window">Recent ideation: past month <span>Recent behavior: past 3 months</span></p>
       <p className="xi-hint">
         Item wording below is an experimental paraphrase of the source table;
         the authorized form governs exact administration wording and probes.
@@ -478,40 +472,20 @@ export function CssrsSection({
         <p>Loading C-SSRS form…</p>
       )}
 
+      <div className="xi-assessment-workspace">
+      <div className="xi-assessment-worksheet">
+      <nav className="xi-assessment-nav" aria-label="C-SSRS sections">
+        {groups.filter(group => group.items.length > 0).map(group => (
+          <a key={group.key} href={`#cssrs-group-${group.key}`} onClick={event => { event.preventDefault(); document.getElementById(`cssrs-group-${group.key}`)?.focus(); }}>{group.title.split(" — ")[0].replace(" of the most severe recent ideation", "")}</a>
+        ))}
+        <a href="#cssrs-review" onClick={event => { event.preventDefault(); document.getElementById("cssrs-review")?.focus(); }}>Review results</a>
+      </nav>
       {definition !== null && <div>{groups.map(renderGroup)}</div>}
 
-      <div className="xi-row-actions" style={{ marginTop: 8 }}>
-        {skipped ? (
-          <button
-            className="xi-btn xi-btn-secondary"
-            type="button"
-            onClick={handleResume}
-          >
-            Resume C-SSRS (clear skip)
-          </button>
-        ) : (
-          <button
-            className="xi-btn xi-btn-secondary"
-            type="button"
-            disabled={definition === null}
-            onClick={handleSkip}
-          >
-            Skip C-SSRS (not assessed)
-          </button>
-        )}
       </div>
-      {skipped && (
-        <p className="xi-hint" style={{ marginTop: 8 }}>
-          Skipped — the saved answers are {"{__skipped: true}"} and the server
-          reports not_assessed. Choose an answer above to replace the skip, or
-          resume to clear it. A skip never becomes zero.
-        </p>
-      )}
-
-      <div style={{ marginTop: 16 }}>
-        <h4 className="xi-section-title" style={{ fontSize: 16 }}>
-          Server severity preview
-        </h4>
+      <aside className="xi-assessment-review" aria-labelledby="cssrs-review">
+      <div className="xi-assessment-result">
+        <h4 id="cssrs-review" tabIndex={-1}>Assessment review</h4>
         {previewLoading && preview === null && <p>Loading C-SSRS preview…</p>}
         {previewError !== null && preview === null && (
           <div>
@@ -545,75 +519,23 @@ export function CssrsSection({
             >
               {verdict}
             </p>
-            <p className="xi-hint">
-              Server evaluation · definition {preview.definition_version} ·
-              saved revision {preview.revision}
-              {answersPending &&
-                " · unsaved answer edits pending — preview reflects the last saved revision"}
-              {previewError !== null &&
-                " · preview refresh failed; showing last loaded state"}
-            </p>
+            {(answersPending || previewError !== null) && <p className="xi-hint" aria-live="polite">
+              {answersPending && "Answers have changed. Results reflect the last saved assessment. "}
+              {previewError !== null && "Results could not refresh. Showing the last available assessment."}
+            </p>}
+            <details className="xi-assessment-provenance">
+              <summary>Assessment details</summary>
+              <p className="xi-hint">Definition {preview.definition_version}; saved revision {preview.revision}.</p>
+            </details>
 
             {itemErrorIds.length > 0 && (
               <p className="xi-form-error" role="alert">
-                The saved answers contain server-reported problems and were
-                rejected (never zero-filled):{" "}
+                Review these answers:{" "}
                 {itemErrorIds
                   .map((id) => `${id}: ${(itemErrors[id] ?? []).join(" ")}`)
                   .join("; ")}
               </p>
             )}
-
-            {evaluation?.status === "partial" && definition !== null && (
-              <div id="cssrs-still-needed">
-                <p className="xi-hint">Still needed:</p>
-                <ul>
-                  {evaluation.missing_item_ids.map((id) => (
-                    <li key={id}>
-                      {definition.items.find((item) => item.id === id)?.prompt ??
-                        id}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {scores !== null && (
-              <table
-                className="xi-table"
-                id="cssrs-scores"
-                aria-label="C-SSRS ideation severity scores"
-              >
-                <thead>
-                  <tr>
-                    <th scope="col">Dimension</th>
-                    <th scope="col">Severity</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Recent ideation severity (past month)</td>
-                    <td>{formatScore(scores.ideation_severity_recent)}</td>
-                  </tr>
-                  <tr>
-                    <td>Lifetime ideation severity (lifetime)</td>
-                    <td>{formatScore(scores.ideation_severity_lifetime)}</td>
-                  </tr>
-                  <tr>
-                    <td>Maximum endorsed severity</td>
-                    <td>{formatScore(scores.ideation_severity_max)}</td>
-                  </tr>
-                </tbody>
-              </table>
-            )}
-            {evaluation?.status !== "complete" &&
-              evaluation?.status !== "not_assessed" && (
-                <p className="xi-hint">
-                  Severity appears only when every required item in the active
-                  branches is validly answered — one missing item suppresses
-                  it to null (never zero, never a guessed negative).
-                </p>
-              )}
 
             {(hasHighRisk || hasReview || hasNoPositives) && (
               <div id="cssrs-flags" aria-live="polite">
@@ -692,67 +614,108 @@ export function CssrsSection({
               </div>
             )}
 
-            {evaluation?.status === "complete" && (
-              <div>
-                <div
-                  className="xi-cssrs-panel"
-                  id="cssrs-intensity"
-                  aria-label="C-SSRS intensity (separate dimension)"
-                >
-                  <p style={{ margin: 0 }}>
-                    Intensity (most severe recent ideation, separate — no
-                    composite): frequency{" "}
-                    {formatFinding(intensity?.frequency)}, duration{" "}
-                    {formatFinding(intensity?.duration)}, controllability{" "}
-                    {formatFinding(intensity?.controllability)}, deterrents{" "}
-                    {formatFinding(intensity?.deterrents)}, reasons{" "}
-                    {formatFinding(intensity?.reasons)}
-                    {intensity === null &&
-                      " — none (no recent ideation endorsed)."}
-                  </p>
-                </div>
-                <div
-                  className="xi-cssrs-panel"
-                  id="cssrs-behavior"
-                  aria-label="C-SSRS behavior (separate dimension)"
-                >
-                  <p style={{ margin: 0 }}>
-                    Behavior by window (separate — no composite): recent{" "}
-                    {behavior !== null
-                      ? Object.entries(behavior.recent ?? {})
-                          .map(([category, value]) => `${category}: ${formatFinding(value)}`)
-                          .join(", ")
-                      : "—"}
-                    {" · "}lifetime{" "}
-                    {behavior !== null
-                      ? Object.entries(behavior.lifetime ?? {})
-                          .map(([category, value]) => `${category}: ${formatFinding(value)}`)
-                          .join(", ")
-                      : "—"}
-                  </p>
-                </div>
-                <div
-                  className="xi-cssrs-panel"
-                  id="cssrs-lethality"
-                  aria-label="C-SSRS lethality (separate dimension)"
-                >
-                  <p style={{ margin: 0 }}>
-                    Lethality by window (separate — no composite): recent
-                    actual {formatFinding(lethality?.recent?.actual)},
-                    potential {formatFinding(lethality?.recent?.potential)}
-                    {" · "}lifetime actual{" "}
-                    {formatFinding(lethality?.lifetime?.actual)}, potential{" "}
-                    {formatFinding(lethality?.lifetime?.potential)}
-                  </p>
-                </div>
+            {evaluation?.status === "partial" && definition !== null && (
+              <details id="cssrs-still-needed" className="xi-assessment-outstanding">
+                <summary>Still needed: {evaluation.missing_item_ids.length} answers</summary>
+                <ul>
+                  {evaluation.missing_item_ids.map((id) => (
+                    <li key={id}>
+                      <a href={`#cssrs-heading`} onClick={event => {
+                        event.preventDefault();
+                        document.querySelector<HTMLInputElement>(`input[name="cssrs-${id}"]`)?.focus();
+                      }}>{definition.items.find(item => item.id === id)?.prompt ?? id}</a>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            )}
+
+            {scores !== null && (
+              <table
+                className="xi-table"
+                id="cssrs-scores"
+                aria-label="C-SSRS ideation severity scores"
+              >
+                <thead>
+                  <tr>
+                    <th scope="col">Dimension</th>
+                    <th scope="col">Severity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Recent ideation severity (past month)</td>
+                    <td>{formatScore(scores.ideation_severity_recent)}</td>
+                  </tr>
+                  <tr>
+                    <td>Lifetime ideation severity (lifetime)</td>
+                    <td>{formatScore(scores.ideation_severity_lifetime)}</td>
+                  </tr>
+                  <tr>
+                    <td>Maximum endorsed severity</td>
+                    <td>{formatScore(scores.ideation_severity_max)}</td>
+                  </tr>
+                </tbody>
+              </table>
+            )}
+            {evaluation?.status !== "complete" &&
+              evaluation?.status !== "not_assessed" && (
                 <p className="xi-hint">
-                  No composite risk score is defined or shown — severity,
-                  intensity, behavior, and lethality stay separate.
+                  Severity appears when all required items have valid answers, including applicable conditional items. A dash means a result is not available.
                 </p>
+              )}
+
+            {evaluation?.status === "complete" && (
+              <div className="xi-assessment-dimensions">
+                <div id="cssrs-intensity" aria-label="C-SSRS intensity (separate dimension)">
+                  <h5>Intensity</h5>
+                  {intensity === null ? <p className="xi-hint">None (no recent ideation endorsed).</p> :
+                    <dl>{Object.entries(intensity).map(([key, value]) => <div key={key}><dt>{key.charAt(0).toUpperCase() + key.slice(1)}</dt><dd>{formatFinding(value)}</dd></div>)}</dl>}
+                </div>
+                <div id="cssrs-behavior" aria-label="C-SSRS behavior (separate dimension)">
+                  <h5>Behavior</h5>
+                  {(["recent", "lifetime"] as const).map(window => <div key={window}>
+                    <h6>{window === "recent" ? "Past 3 months" : "Lifetime"}</h6>
+                    {behavior?.[window] ? <dl>{Object.entries(behavior[window]).map(([key, value]) => <div key={key}><dt>{key.replaceAll("_", " ")}</dt><dd>{formatFinding(value)}</dd></div>)}</dl> : <p className="xi-hint">Not available</p>}
+                  </div>)}
+                </div>
+                <div id="cssrs-lethality" aria-label="C-SSRS lethality (separate dimension)">
+                  <h5>Lethality</h5>
+                  {(["recent", "lifetime"] as const).map(window => <div key={window}>
+                    <h6>{window === "recent" ? "Past 3 months" : "Lifetime"}</h6>
+                    <dl><div><dt>Actual</dt><dd>{formatFinding(lethality?.[window]?.actual)}</dd></div><div><dt>Potential</dt><dd>{formatFinding(lethality?.[window]?.potential)}</dd></div></dl>
+                  </div>)}
+                </div>
+                <p className="xi-hint">Severity, intensity, behavior, and lethality are separate results. No composite risk score is calculated.</p>
               </div>
             )}
           </div>
         )}
+      </div>
+      <div className="xi-assessment-skip">
+      <div className="xi-row-actions" style={{ marginTop: 8 }}>
+        {skipped ? (
+          <button
+            className="xi-btn xi-btn-secondary"
+            type="button"
+            onClick={handleResume}
+          >
+            Resume C-SSRS (clear skip)
+          </button>
+        ) : (
+          <button
+            className="xi-btn xi-btn-secondary"
+            type="button"
+            disabled={definition === null}
+            onClick={handleSkip}
+          >
+            Skip C-SSRS (not assessed)
+          </button>
+        )}
+      </div>
+      <p className="xi-hint">{skipped ? "Not assessed. Resume to start answering." : "Skipping clears all answers in this assessment and records it as not assessed."}</p>
+      </div>
+      </aside>
       </div>
     </section>
   );

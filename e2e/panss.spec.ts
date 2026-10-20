@@ -138,7 +138,7 @@ test("fresh form has 30 unanswered items and null total, no pre-filled 1s", asyn
 
   const verdict = page.locator("#panss-preview-status");
   await expect(verdict).toContainText("No answers yet", { timeout: 10000 });
-  await expect(verdict).toContainText("30 items with nothing selected");
+  await expect(verdict).toContainText("Answer all 30 items");
   await expect(verdict).not.toContainText("Complete");
 
   // Null scores render as em dashes, never zeros or ones.
@@ -200,7 +200,7 @@ test("one missing item suppresses the total with Still needed guidance", async (
   const verdict = page.locator("#panss-preview-status");
   await expect(verdict).toContainText("Incomplete", { timeout: 10000 });
   await expect(verdict).toContainText("1 required item");
-  await expect(verdict).toContainText("suppressed to null");
+  await expect(verdict).toContainText("The total will appear when all items are answered.");
 
   // Complete subscales still show; the incomplete General and Total do not.
   const scores = page.locator("#panss-scores");
@@ -288,7 +288,7 @@ test("forged invalid values are rejected server-side, never zero-filled", async 
   await gotoPanss(page, draftId);
   const verdict = page.locator("#panss-preview-status");
   await expect(verdict).toContainText("Incomplete", { timeout: 10000 });
-  await expect(verdict).toContainText("suppressed to null");
+  await expect(verdict).toContainText("The total will appear when all items are answered.");
   await expect(
     page.getByText("rejected (never zero-filled)"),
   ).toBeVisible();

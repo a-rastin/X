@@ -1,0 +1,65 @@
+/* Assessment worksheets follow Diagnosis: quiet rules, aligned answers, separate review. */
+.xi-assessment > .xi-hint { max-width: 78ch; line-height: 1.6; }
+.xi-assessment-window { display: flex; flex-wrap: wrap; gap: 8px 24px; color: var(--selected-nav-ink); font-size: 13px; font-weight: 600; }
+.xi-assessment-workspace { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 32px; align-items: start; margin-top: 28px; }
+.xi-assessment-worksheet, .xi-assessment-review { min-width: 0; }
+.xi-assessment-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+.xi-assessment-nav a { display: flex; align-items: center; min-height: 44px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; color: var(--ink); text-decoration: none; font-size: 12px; }
+.xi-assessment-nav a:hover { background: var(--selected-nav-bg); border-color: var(--primary-action); }
+.xi-assessment-group + .xi-assessment-group { margin-top: 32px; }
+.xi-assessment-group-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; border-bottom: 2px solid var(--border-strong); padding: 12px 0; }
+.xi-assessment-group-heading h4 { margin: 0; font-size: 16px; line-height: 1.5; scroll-margin-top: 24px; }
+.xi-assessment-group-heading span { color: var(--ink-muted); font-size: 12px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.xi-assessment-group > .xi-hint { font-size: 12px; line-height: 1.6; }
+.xi-assessment-item { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 280px; column-gap: 20px; row-gap: 6px; align-items: center; min-width: 0; border: 0; padding: 20px 0; margin: 0; }
+.xi-assessment-item + .xi-assessment-item { border-top: 1px solid var(--border); }
+.xi-assessment-question { font-size: 14px; line-height: 1.65; grid-row: 1 / 3; }
+.xi-assessment-options { display: flex; gap: 2px; padding: 3px; border: 1px solid var(--border-strong); border-radius: 7px; background: var(--surface-1); }
+.xi-assessment-options label { position: relative; display: flex; flex: 1; align-items: center; justify-content: center; min-width: 0; min-height: 44px; padding: 4px; border-radius: 4px; font-size: 13px; cursor: pointer; }
+.xi-assessment-options label:hover { background: var(--surface-2); }
+.xi-assessment-options label:has(input:checked) { background: var(--primary-action); color: var(--on-action); font-weight: 700; }
+.xi-assessment-options input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.xi-assessment-options label:has(input:disabled) { opacity: .55; cursor: not-allowed; }
+.xi-assessment-options label:has(input:focus-visible), .xi-assessment a:focus-visible, .xi-assessment h4:focus-visible, .xi-assessment summary:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+.xi-assessment-answer-state { grid-column: 2; margin: 0; text-align: right; font-size: 11px; color: var(--ink-muted); }
+.xi-assessment-item .xi-field-error { grid-column: 1 / -1; margin: 0; }
+.xi-assessment-review { border-left: 1px solid var(--border); padding-left: 24px; }
+.xi-assessment-result { background: var(--surface-1); border-top: 3px solid var(--primary-action); border-radius: 8px; padding: 20px; }
+.xi-assessment-result > h4 { margin: 0 0 16px; font-size: 17px; }
+.xi-assessment-result .xi-status { font-size: 14px; line-height: 1.65; }
+.xi-assessment-result .xi-hint { font-size: 12px; line-height: 1.6; overflow-wrap: anywhere; }
+.xi-assessment-result .xi-table th, .xi-assessment-result .xi-table td { padding: 10px 4px; font-size: 12px; }
+.xi-assessment-result .xi-table td:last-child { font-weight: 600; font-variant-numeric: tabular-nums; }
+.xi-assessment-result .xi-cssrs-panel, .xi-assessment-result .xi-urgent-panel, .xi-assessment-result .xi-warning-panel, .xi-assessment-result .xi-panss-panel { font-size: 13px; line-height: 1.65; overflow-wrap: anywhere; }
+.xi-assessment-outstanding { margin: 16px 0; font-size: 13px; line-height: 1.7; }
+.xi-assessment-outstanding summary { cursor: pointer; padding: 8px 0; font-weight: 600; }
+.xi-assessment-outstanding ul { padding-left: 18px; }
+.xi-assessment-outstanding li + li { margin-top: 8px; }
+.xi-assessment-outstanding a { color: var(--selected-nav-ink); text-underline-offset: 3px; }
+.xi-assessment-skip { margin-top: 24px; }
+.xi-assessment-skip .xi-btn { white-space: normal; }
+.xi-assessment-skip .xi-hint { font-size: 12px; line-height: 1.6; }
+.xi-assessment-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+@media (max-width: 1190px) {
+  .xi-assessment-workspace { grid-template-columns: minmax(0, 1fr); }
+  .xi-assessment-review { border-left: 0; padding-left: 0; }
+}
+@media (max-width: 640px) {
+  .xi-assessment-group-heading { flex-wrap: wrap; gap: 4px; }
+  .xi-assessment-item { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .xi-assessment-question { grid-row: auto; }
+  .xi-assessment-answer-state { grid-column: 1; }
+  .xi-assessment-result { padding: 16px; }
+}
+.xi-assessment-provenance { margin: 12px 0; font-size: 12px; color: var(--ink-muted); }
+.xi-assessment-provenance summary { cursor: pointer; padding: 6px 0; }
+.xi-assessment-dimensions > div { border-top: 1px solid var(--border-strong); margin-top: 24px; padding-top: 16px; }
+.xi-assessment-dimensions h5 { font-size: 14px; margin: 0 0 12px; }
+.xi-assessment-dimensions h6 { font-size: 12px; margin: 16px 0 8px; color: var(--ink-muted); }
+.xi-assessment-dimensions dl { margin: 0; font-size: 12px; line-height: 1.6; }
+.xi-assessment-dimensions dl > div { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; }
+.xi-assessment-dimensions dt { text-transform: capitalize; }
+.xi-assessment-dimensions dd { margin: 0; font-weight: 600; font-variant-numeric: tabular-nums; }
+/* Completion is an assessment state, not a favorable clinical finding. */
+.xi-assessment-result .xi-status { color: var(--ink); font-weight: 400; }
+.xi-assessment-result .xi-table th { text-transform: none; letter-spacing: normal; }

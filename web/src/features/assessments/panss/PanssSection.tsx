@@ -39,6 +39,7 @@
  */
 
 import { useCallback, useEffect, useState } from "react";
+import "../assessment-worksheet.css";
 import { ApiError } from "../../identity/api";
 import type { DraftData } from "../../encounters/api";
 import type { useAutosave } from "../../encounters/useAutosave";
@@ -205,16 +206,16 @@ export function PanssSection({
     verdict =
       "PANSS skipped — not assessed. No scores are reported for a skipped assessment.";
   } else if (evaluation?.status === "complete" && scores?.total !== null) {
-    verdict = `Complete — Positive ${scores?.positive}, Negative ${scores?.negative}, General ${scores?.general}, Total ${scores?.total} (server evaluation ${preview.definition_version}).`;
+    verdict = `Complete — Positive ${scores?.positive}, Negative ${scores?.negative}, General ${scores?.general}, Total ${scores?.total}.`;
   } else if (evaluation?.status === "complete") {
     verdict =
-      "Complete but the total is unavailable — the server suppressed it. This needs no treatment decision.";
+      "Complete. The total is currently unavailable.";
   } else if (evaluation?.status === "partial") {
     const missing = evaluation.missing_item_ids.length;
-    verdict = `Incomplete — ${missing} required item${missing === 1 ? "" : "s"} still need${missing === 1 ? "s" : ""} an answer. Saved as incomplete; the total is suppressed to null (never zero).`;
+    verdict = `Incomplete — ${missing} required item${missing === 1 ? "" : "s"} still need${missing === 1 ? "s" : ""} an answer. The total will appear when all items are answered.`;
   } else {
     verdict =
-      "No answers yet. PANSS is unanswered — 30 items with nothing selected and no scores.";
+      "No answers yet. Answer all 30 items to see the assessment results.";
   }
 
   function formatScore(value: number | null | undefined): string {
@@ -239,15 +240,17 @@ export function PanssSection({
       return null;
     }
     return (
-      <div>
-        <h4 className="xi-section-title" style={{ fontSize: 16 }}>
-          {title}
-        </h4>
+      <div className="xi-assessment-group">
+        <div className="xi-assessment-group-heading">
+          <h4 id={`panss-group-${items[0].id}`} tabIndex={-1}>{title}</h4>
+          <span>{items.filter(item => SCALE_VALUES.includes(answers[item.id] as PanssAnswer)).length} / {items.length} answered</span>
+        </div>
         {items.map((item) => (
-          <fieldset key={item.id} className="xi-field">
-            <legend className="xi-label">{item.prompt}</legend>
+          <fieldset key={item.id} className="xi-assessment-item">
+            <legend className="xi-assessment-sr-only">{item.prompt}</legend>
+          <div className="xi-assessment-question" aria-hidden="true">{item.prompt}</div>
             <div
-              className="xi-radio-group"
+              className="xi-assessment-options"
               role="radiogroup"
               aria-label={item.prompt}
             >
@@ -271,6 +274,7 @@ export function PanssSection({
                 </label>
               ))}
             </div>
+            <p className="xi-assessment-answer-state">{answers[item.id] === undefined ? "Not answered" : `Selected: ${answers[item.id]}`}</p>
             {itemErrors[item.id] !== undefined && (
               <p className="xi-field-error" id={`panss-${item.id}-error`}>
                 {itemErrors[item.id].join(" ")}
@@ -283,27 +287,12 @@ export function PanssSection({
   }
 
   return (
-    <section className="xi-card" aria-labelledby="panss-heading">
+    <section className="xi-card xi-assessment" aria-labelledby="panss-heading">
       <h3 className="xi-section-title" id="panss-heading">
         PANSS (step {stepNumber})
       </h3>
-      <p className="xi-hint">
-        Rate each of the 30 items from 1 (absent) to 7 (extreme) for the
-        previous 7 days. Nothing is pre-filled — every answer is an explicit
-        selection. Answers autosave through the same draft as the rest of
-        this encounter (about one second after changing an answer). The
-        scores below are computed by the server from the released definition
-        — the browser never adds them up itself.
-      </p>
-      <p className="xi-hint">
-        Assessment window: previous 7 days — rate symptoms present during the
-        previous 7 days, using the interview and available collateral
-        information.
-      </p>
-      <p className="xi-hint">
-        Prior encounter score: shown as historical when available. This form
-        never fetches other encounters and never invents prior numbers.
-      </p>
+      <p className="xi-hint">Rate symptoms over the previous 7 days using the interview and available collateral information. Select a rating for each item; answers save automatically.</p>
+      <p className="xi-assessment-window">1 = absent <span>7 = extreme</span></p>
 
       {definitionError !== null && (
         <p className="xi-form-error" role="alert">
@@ -321,6 +310,14 @@ export function PanssSection({
         <p>Loading PANSS form…</p>
       )}
 
+      <div className="xi-assessment-workspace">
+      <div className="xi-assessment-worksheet">
+      <nav className="xi-assessment-nav" aria-label="PANSS subscales">
+        {[["P1", "Positive"], ["N1", "Negative"], ["G1", "General"]].map(([id, label]) => (
+          <a key={id} href={`#panss-group-${id}`} onClick={event => { event.preventDefault(); document.getElementById(`panss-group-${id}`)?.focus(); }}>{label}</a>
+        ))}
+        <a href="#panss-review" onClick={event => { event.preventDefault(); document.getElementById("panss-review")?.focus(); }}>Review scores</a>
+      </nav>
       {definition !== null && (
         <div>
           {renderSubscale("Positive symptoms (P1–P7)", positiveItems)}
@@ -332,38 +329,10 @@ export function PanssSection({
         </div>
       )}
 
-      <div className="xi-row-actions" style={{ marginTop: 8 }}>
-        {skipped ? (
-          <button
-            className="xi-btn xi-btn-secondary"
-            type="button"
-            onClick={handleResume}
-          >
-            Resume PANSS (clear skip)
-          </button>
-        ) : (
-          <button
-            className="xi-btn xi-btn-secondary"
-            type="button"
-            disabled={definition === null}
-            onClick={handleSkip}
-          >
-            Skip PANSS (not assessed)
-          </button>
-        )}
       </div>
-      {skipped && (
-        <p className="xi-hint" style={{ marginTop: 8 }}>
-          Skipped — the saved answers are {"{__skipped: true}"} and the server
-          reports not_assessed. Choose an answer above to replace the skip, or
-          resume to clear it.
-        </p>
-      )}
-
-      <div style={{ marginTop: 16 }}>
-        <h4 className="xi-section-title" style={{ fontSize: 16 }}>
-          Server score preview
-        </h4>
+      <aside className="xi-assessment-review" aria-labelledby="panss-review">
+      <div className="xi-assessment-result">
+        <h4 id="panss-review" tabIndex={-1}>Assessment review</h4>
         {previewLoading && preview === null && <p>Loading PANSS preview…</p>}
         {previewError !== null && preview === null && (
           <div>
@@ -397,19 +366,18 @@ export function PanssSection({
             >
               {verdict}
             </p>
-            <p className="xi-hint">
-              Server evaluation · definition {preview.definition_version} ·
-              saved revision {preview.revision}
-              {answersPending &&
-                " · unsaved answer edits pending — preview reflects the last saved revision"}
-              {previewError !== null &&
-                " · preview refresh failed; showing last loaded state"}
-            </p>
+            {(answersPending || previewError !== null) && <p className="xi-hint" aria-live="polite">
+              {answersPending && "Answers have changed. Results reflect the last saved assessment. "}
+              {previewError !== null && "Results could not refresh. Showing the last available assessment."}
+            </p>}
+            <details className="xi-assessment-provenance">
+              <summary>Assessment details</summary>
+              <p className="xi-hint">Definition {preview.definition_version}; saved revision {preview.revision}.</p>
+            </details>
 
             {itemErrorIds.length > 0 && (
               <p className="xi-form-error" role="alert">
-                The saved answers contain server-reported problems and were
-                rejected (never zero-filled):{" "}
+                Review these answers:{" "}
                 {itemErrorIds
                   .map((id) => `${id}: ${(itemErrors[id] ?? []).join(" ")}`)
                   .join("; ")}
@@ -417,17 +385,19 @@ export function PanssSection({
             )}
 
             {evaluation?.status === "partial" && definition !== null && (
-              <div id="panss-still-needed">
-                <p className="xi-hint">Still needed:</p>
+              <details id="panss-still-needed" className="xi-assessment-outstanding">
+                <summary>Still needed: {evaluation.missing_item_ids.length} answers</summary>
                 <ul>
                   {evaluation.missing_item_ids.map((id) => (
                     <li key={id}>
-                      {definition.items.find((item) => item.id === id)?.prompt ??
-                        id}
+                      <a href={`#panss-heading`} onClick={event => {
+                        event.preventDefault();
+                        document.querySelector<HTMLInputElement>(`input[name="panss-${id}"]`)?.focus();
+                      }}>{definition.items.find(item => item.id === id)?.prompt ?? id}</a>
                     </li>
                   ))}
                 </ul>
-              </div>
+              </details>
             )}
 
             {scores !== null && (
@@ -465,8 +435,7 @@ export function PanssSection({
             {evaluation?.status !== "complete" &&
               evaluation?.status !== "not_assessed" && (
                 <p className="xi-hint">
-                  The total appears only when all 30 items are validly
-                  answered — one missing item suppresses it to null.
+                  The total appears when all 30 items have valid answers. A dash means a score is not available.
                 </p>
               )}
 
@@ -483,6 +452,31 @@ export function PanssSection({
             )}
           </div>
         )}
+      </div>
+      <div className="xi-assessment-skip">
+      <div className="xi-row-actions" style={{ marginTop: 8 }}>
+        {skipped ? (
+          <button
+            className="xi-btn xi-btn-secondary"
+            type="button"
+            onClick={handleResume}
+          >
+            Resume PANSS (clear skip)
+          </button>
+        ) : (
+          <button
+            className="xi-btn xi-btn-secondary"
+            type="button"
+            disabled={definition === null}
+            onClick={handleSkip}
+          >
+            Skip PANSS (not assessed)
+          </button>
+        )}
+      </div>
+      <p className="xi-hint">{skipped ? "Not assessed. Resume to start answering." : "Skipping clears all answers in this assessment and records it as not assessed."}</p>
+      </div>
+      </aside>
       </div>
     </section>
   );
