@@ -33,18 +33,34 @@ export function LoginPage() {
   return (
     <div className="xi-auth-layout">
       <div className="xi-auth-intro">
-        <p className="xi-auth-title">Decision support for psychiatrists</p>
+        <span className="xi-eyebrow">A connected research workflow</span>
+        <h2 className="xi-auth-title">Decision support for psychiatrists</h2>
         <p>
-          Registration, assessments, medication review, and signed plans stay
-          in one draft.
+          Bring registration, assessments, medication review, and signed plans
+          together in one workspace.
         </p>
         <p>
           Research prototype. Not a treatment system, and not a substitute for
           clinical judgment.
         </p>
+        <ol className="xi-auth-workflow" aria-label="Workspace workflow">
+          <li>
+            <span>01</span>
+            <div><strong>Build the patient record</strong><p>Registration and structured history</p></div>
+          </li>
+          <li>
+            <span>02</span>
+            <div><strong>Assess and review</strong><p>Assessments and medication review</p></div>
+          </li>
+          <li>
+            <span>03</span>
+            <div><strong>Document the plan</strong><p>Clinician review and signed records</p></div>
+          </li>
+        </ol>
       </div>
       <div className="xi-auth">
         <h2 className="xi-section-title">Sign in</h2>
+        <p className="xi-auth-subtitle">Access your X-INSIGHT workspace.</p>
         <form onSubmit={handleSubmit} noValidate>
         <div className="xi-field">
           <label className="xi-label" htmlFor="login-role">

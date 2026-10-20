@@ -15,6 +15,7 @@ export function AdminDashboard() {
   return (
     <div>
       <h2 className="xi-page-title">Administrator dashboard</h2>
+      <p className="xi-hint">Workspace oversight, account management, and patient records.</p>
       <section className="xi-card" aria-labelledby="governance-heading">
         <h3 className="xi-section-title" id="governance-heading">
           Governance
@@ -34,6 +35,7 @@ export function PhysicianDashboard() {
   return (
     <div>
       <h2 className="xi-page-title">Physician dashboard</h2>
+      <p className="xi-hint">Find a patient, resume an encounter, or begin a new registration.</p>
       {researchWarning !== null && (
         <div className="xi-notice">
           <p style={{ margin: 0 }}>{researchWarning}</p>

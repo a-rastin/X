@@ -174,8 +174,11 @@ export function App() {
       </a>
       <header className="xi-header">
         <h1 className="xi-wordmark">
-          <span className="xi-mark" aria-hidden="true" />
-          X-INSIGHT
+          <span className="xi-mark" aria-hidden="true">X</span>
+          <span className="xi-brand-copy">
+            X-INSIGHT
+            <span className="xi-brand-caption">Research workspace</span>
+          </span>
         </h1>
         {user !== null && (
           <nav className="xi-nav" aria-label="Primary">

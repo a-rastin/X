@@ -3,6 +3,8 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
+The [2026-10-20 UI refinement](s61.md#follow-up-2026-10-20--shared-ui-refinement)
+updates shared navigation, typography, cards, forms, tables, and sign-in presentation.
 The latest recorded checkpoint is [S42](s42.md) (2026-10-17): provider
 settings are implemented (encryption, masked admin API, capability check,
 admin page). Its [2026-10-18 UI follow-up](s42.md#follow-up-2026-10-18--disable-testing-before-the-first-save)

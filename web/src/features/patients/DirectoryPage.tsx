@@ -165,6 +165,7 @@ export function PatientDirectory() {
               className="xi-input"
               id={searchId}
               type="search"
+              placeholder="Enter a patient name or ID…"
               autoComplete="off"
               value={query}
               onChange={(event) => {

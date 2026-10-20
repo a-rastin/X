@@ -207,7 +207,7 @@ body {
     "nav nav";
   align-items: center;
   column-gap: var(--space-4);
-  padding: 0 var(--space-6);
+  padding: 0 max(var(--space-6), calc((100vw - 1132px) / 2));
   background: var(--canvas);
   border-bottom: 1px solid var(--border);
 }
@@ -222,7 +222,7 @@ body {
   align-items: center;
   gap: 10px;
   margin: 0;
-  padding: 14px 0;
+  padding: 20px 0;
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -231,11 +231,16 @@ body {
 }
 
 .xi-mark {
-  width: 10px;
-  height: 10px;
-  flex: 0 0 10px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
   background: var(--primary-action);
-  border-radius: 2px;
+  color: var(--on-action);
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .xi-nav {
@@ -243,7 +248,8 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0;
+  gap: 4px;
+  padding: 10px 0;
   min-width: 0;
   border-top: 1px solid var(--border);
 }
@@ -256,16 +262,17 @@ body {
   line-height: 1.2;
   padding: 10px 12px;
   border-bottom: 2px solid transparent;
-  border-radius: 0;
+  border-radius: 6px;
 }
 
 .xi-nav a:hover {
+  background: var(--surface-2);
   color: var(--ink);
 }
 
 .xi-nav a[aria-current="page"] {
-  color: var(--ink);
-  background: transparent;
+  color: var(--selected-nav-ink);
+  background: var(--selected-nav-bg);
   border-bottom-color: var(--primary-action);
 }
 
@@ -282,9 +289,11 @@ body {
 
 .xi-identity {
   display: flex;
-  align-items: baseline;
-  gap: var(--space-2);
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0;
   font-size: 13px;
+  line-height: 1.5;
   color: var(--ink);
   min-width: 0;
 }
@@ -300,7 +309,7 @@ body {
 }
 
 .xi-main {
-  padding: 28px var(--space-6) var(--space-12);
+  padding: 36px var(--space-6) var(--space-12);
   max-width: 1180px;
   width: 100%;
   margin: 0 auto;
@@ -316,20 +325,18 @@ body {
   grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
   gap: var(--space-10) var(--space-12);
   align-items: start;
-  max-width: 880px;
+  max-width: 980px;
   margin: var(--space-8) auto 0;
 }
 
 .xi-auth-intro {
-  padding-top: var(--space-2);
-  border-left: 3px solid var(--primary-action);
-  padding-left: var(--space-5);
-  max-width: 42ch;
+  padding: var(--space-6) 0;
+  max-width: 46ch;
 }
 
 .xi-auth-title {
   margin: 0 0 var(--space-3);
-  font-size: 22px;
+  font-size: clamp(28px, 3vw, 38px);
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: -0.015em;
@@ -351,11 +358,11 @@ body {
 .xi-auth {
   margin: 0;
   max-width: none;
-  padding: 28px;
+  padding: 32px;
   background: var(--canvas);
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius-md);
-  box-shadow: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-elevated);
 }
 
 :root[data-theme="dark"] .xi-auth {
@@ -368,10 +375,10 @@ body {
 
 .xi-card {
   background: var(--canvas);
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius-md);
-  box-shadow: none;
-  padding: var(--space-5) var(--space-6);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-6);
   margin-bottom: var(--space-5);
 }
 
@@ -404,8 +411,7 @@ body {
   letter-spacing: -0.02em;
   line-height: 1.2;
   margin: 0 0 var(--space-4);
-  padding-bottom: var(--space-3);
-  border-bottom: 1px solid var(--border);
+  padding-bottom: var(--space-1);
 }
 
 .xi-section-title {
@@ -457,7 +463,7 @@ body {
   border: 1px solid var(--border-strong);
   border-radius: 6px;
   padding: 8px var(--space-3);
-  min-height: 36px;
+  min-height: 40px;
   width: 100%;
   max-width: 100%;
 }
@@ -520,7 +526,7 @@ textarea.xi-input {
   font-weight: 600;
   font-size: 14px;
   line-height: 1.25;
-  min-height: 36px;
+  min-height: 40px;
   border-radius: 6px;
   padding: 8px var(--space-4);
   cursor: pointer;
@@ -580,7 +586,7 @@ a.xi-btn-secondary {
 .xi-table th,
 .xi-table td {
   text-align: left;
-  padding: 10px var(--space-3);
+  padding: 14px var(--space-3);
   border-bottom: 1px solid var(--border);
   vertical-align: middle;
 }
@@ -588,8 +594,8 @@ a.xi-btn-secondary {
 .xi-table th {
   font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0;
-  text-transform: none;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
   color: var(--ink-muted);
   background: var(--surface-2);
 }
@@ -936,6 +942,89 @@ code {
   margin-left: auto;
 }
 
+/* Shared brand and entry-page hierarchy. */
+.xi-brand-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.xi-brand-caption {
+  color: var(--ink-muted);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.xi-eyebrow {
+  display: block;
+  color: var(--ink-muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4);
+}
+
+.xi-auth .xi-section-title {
+  font-size: 24px;
+  margin-bottom: var(--space-1);
+}
+
+.xi-auth-subtitle {
+  color: var(--ink-muted);
+  font-size: 14px;
+  margin: 0 0 var(--space-6);
+}
+
+.xi-auth-workflow {
+  list-style: none;
+  padding: var(--space-6) 0 0;
+  margin: var(--space-6) 0 0;
+  border-top: 1px solid var(--border-strong);
+  display: grid;
+  gap: var(--space-5);
+}
+
+.xi-auth-workflow li {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+  font-size: 14px;
+}
+
+.xi-auth-workflow li > span {
+  display: grid;
+  place-items: center;
+  flex: 0 0 36px;
+  height: 36px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  color: var(--ink-muted);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.xi-auth-workflow li p {
+  font-size: 13px;
+  margin: 2px 0 0;
+}
+
+.xi-auth > .xi-hint {
+  border-top: 1px solid var(--border);
+  margin: var(--space-6) 0 0;
+  padding-top: var(--space-5);
+}
+
+.xi-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.xi-input:not([aria-invalid="true"]):hover,
+.xi-select:not([aria-invalid="true"]):hover {
+  border-color: var(--ink-muted);
+}
+
 @media (max-width: 720px) {
   .xi-header {
     grid-template-columns: minmax(0, 1fr);
@@ -961,6 +1050,14 @@ code {
     grid-template-columns: minmax(0, 1fr);
     gap: var(--space-6);
     margin-top: var(--space-4);
+  }
+
+  .xi-auth-intro {
+    padding: 0;
+  }
+
+  .xi-auth-workflow {
+    display: none;
   }
 
   .xi-form-grid {
