@@ -318,12 +318,17 @@ def _setup_projection(
     assert saved.status_code == 200, saved.text
     revision = saved.json()["revision"]
     if note_text is not None:
-        noted = client.post(
-            f"/api/v1/encounters/{encounter_id}/notes",
-            json={"page": "history", "text": note_text},
+        noted = client.patch(
+            f"/api/v1/encounters/{encounter_id}",
+            json={
+                "draft_data": {
+                    **client.get(f"/api/v1/encounters/{encounter_id}").json()["draft_data"],
+                    "working_note": note_text,
+                }
+            },
             headers={**_auth_headers(csrf), "If-Match": contracts.format_etag(revision)},
         )
-        assert noted.status_code == 201, noted.text
+        assert noted.status_code == 200, noted.text
         revision = noted.json()["revision"]
     package = _synthetic_package()
     started = client.post(

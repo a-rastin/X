@@ -6,6 +6,7 @@ import {
   uniquePatientId,
   ensurePhysician,
   physicianSession,
+  saveWorkingNoteWithRetry,
   loginAs,
   acknowledgeWarning,
 } from "./helpers";
@@ -99,7 +100,7 @@ async function gotoEncounter(
 
 // Backend commit-visibility race (see helpers.ensurePatient): an immediate
 // write after login can 401 while the session row becomes visible; one fresh
-// login retry then fails loudly. Used for PATCH/notes setup writes.
+// login retry then fails loudly. Used for working-note PATCH setup writes.
 async function patchDraftWithRetry(
   request: import("@playwright/test").APIRequestContext,
   physician: { username: string; password: string },
@@ -120,26 +121,6 @@ async function patchDraftWithRetry(
   return ((await response.json()).revision as number) ?? revision + 1;
 }
 
-async function postNoteWithRetry(
-  request: import("@playwright/test").APIRequestContext,
-  physician: { username: string; password: string },
-  draftId: string,
-  pageKey: string,
-  text: string,
-  revision: number,
-): Promise<number> {
-  const attempt = async (csrfToken: string) =>
-    request.post(`/api/v1/encounters/${draftId}/notes`, {
-      headers: { "X-CSRF-Token": csrfToken, "If-Match": `"${revision}"` },
-      data: { page: pageKey, text },
-    });
-  let response = await attempt(await physicianSession(request, physician));
-  if (response.status() === 401) {
-    response = await attempt(await physicianSession(request, physician));
-  }
-  expect(response.status(), await response.text()).toBe(201);
-  return ((await response.json()).revision as number) ?? revision + 1;
-}
 
 // Synthetic two-question packages (S45/S46 shape, S39 bundles pending).
 // Controlled e2e alternative: real POST via T1, no worker runs.
@@ -1080,7 +1061,7 @@ test("S48 §4 complete proposal with DDI and secondary plan, stale blocks signin
     1,
   );
   const sentinel = `propsentinel${Date.now().toString(36)}`;
-  await postNoteWithRetry(request, physician, draftId, "proposal", sentinel, 2);
+  await saveWorkingNoteWithRetry(request, physician, draftId, sentinel, 2);
 
   const batchId = "prop-batch-1111-4111-8111-111111111111";
   const run1 = "prop-run-2222-4222-8222-222222222222";
@@ -1191,7 +1172,7 @@ test("S48 §4 complete proposal with DDI and secondary plan, stale blocks signin
     await expect(page.locator("#wizard-step-register")).toBeVisible();
     await expect(page.getByLabel("Draft working note")).toHaveCount(0);
     // No note leakage in proposal DOM.
-    await expect(page.locator("#notes-proposal-list")).toContainText(sentinel, { timeout: 10000 });
+    await expect(page.locator(".xi-notes-panel")).toHaveCount(0);
     await expect(page.getByTestId("proposal-review")).not.toContainText(sentinel);
   } finally {
     await page.unroute("**/api/v1/encounters/*/generation-batches");
@@ -1307,7 +1288,7 @@ test("S48 §3 transparency shows five fields, distinct CPT/posterior, exact save
     1,
   );
   const sentinel = `transsentinel${Date.now().toString(36)}`;
-  await postNoteWithRetry(request, physician, draftId, "proposal", sentinel, rev2);
+  await saveWorkingNoteWithRetry(request, physician, draftId, sentinel, rev2);
 
   const batchId = "99999999-9999-4999-8999-999999999999";
   const run1 = "aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa";
@@ -1432,8 +1413,8 @@ test("S48 §3 transparency shows five fields, distinct CPT/posterior, exact save
     await expect(region2).toContainText("No completed baseline", { timeout: 10000 });
     expect(reviewCount).toBe(2);
 
-    // No note leakage: sentinel only in notes, never in proposal/transparency.
-    await expect(page.locator("#notes-proposal-list")).toContainText(sentinel, { timeout: 10000 });
+    // No working-note leakage: sentinel stays in the draft, never in proposal/transparency.
+    await expect(page.locator(".xi-notes-panel")).toHaveCount(0);
     await expect(page.getByTestId("proposal-review")).not.toContainText(sentinel);
   } finally {
     await page.unroute("**/api/v1/encounters/*/generation-batches");
@@ -1470,11 +1451,11 @@ test("S48 §§2+4 two-question failure shows partial, retry re-POSTs exact packa
   // Sentinel note: must never leak into proposal/transparency payloads or DOM.
   const sentinel = `notesentinel${Date.now().toString(36)}`;
   csrf = await physicianSession(request, physician);
-  const noted = await request.post(`/api/v1/encounters/${draftId}/notes`, {
+  const noted = await request.patch(`/api/v1/encounters/${draftId}`, {
     headers: { "X-CSRF-Token": csrf, "If-Match": '"2"' },
-    data: { page: "proposal", text: sentinel },
+    data: { draft_data: { ...(await patched.json()).draft_data, working_note: sentinel } },
   });
-  expect(noted.status(), await noted.text()).toBe(201);
+  expect(noted.status(), await noted.text()).toBe(200);
 
   const batchId = "11111111-1111-4111-8111-111111111111";
   const run1 = "22222222-2222-4222-8222-222222222222";
@@ -1677,8 +1658,8 @@ test("S48 §§2+4 two-question failure shows partial, retry re-POSTs exact packa
     expect(storedAfter).not.toBeNull();
     expect(storedAfter as string).toContain(nextBatchId);
 
-    // No note leakage in DOM: sentinel lives only in the notes panel.
-    await expect(page.locator("#notes-proposal-list")).toContainText(sentinel, { timeout: 10000 });
+    // No working-note leakage in the proposal DOM.
+    await expect(page.locator(".xi-notes-panel")).toHaveCount(0);
     await expect(page.getByTestId("proposal-review")).not.toContainText(sentinel);
     expect(getBatchCount).toBeGreaterThan(0);
   } finally {

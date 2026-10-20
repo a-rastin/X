@@ -17,8 +17,8 @@ stamps provenance. No new table, no new persistence mechanism — no migration.
 Shape: ``draft_data["history"] = {values: {field_id: value},
 provenance: {field_id: {source, author_id, recorded_at, baseline...}},
 reconciliation: {status, ...}, phone_update: str | None}``. All history
-values are analysis-visible (analysis_visible true); page notes (S13) are a
-separate analysis_visible false channel enforced by serialization allowlists.
+values are analysis-visible (analysis_visible true); working notes and legacy
+note keys stay excluded by serialization allowlists.
 
 Content: versioned draft ``content/history/history.v1.json`` (awaiting owner
 review, not approved). The backend mirrors its 12 field ids, permitted

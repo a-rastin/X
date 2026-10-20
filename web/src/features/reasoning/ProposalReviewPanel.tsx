@@ -7,7 +7,7 @@
  * read for every POST fence. It never writes draft_data and never touches
  * the chart: transparency shows exact SAVED inputs from persisted
  * `GET .../review` payloads, and only `safe_*` serializer fields are typed
- * or rendered (see ./api.ts), so page notes cannot leak by code path.
+ * or rendered (see ./api.ts), so working notes cannot leak by code path.
  *
  * Entry (S48 §1): flushes autosave, then automatically creates or reuses a
  * run — one POST per mount at most (`attemptedRef`), never per keystroke,

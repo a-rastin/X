@@ -119,7 +119,7 @@ BACKUP_TABLES: tuple[str, ...] = (
     "provider_settings",
     "patients",
     "encounters",
-    "notes",
+    "notes",  # Legacy storage: preserve historical backups after feature removal.
     "secondary_plans",
     "encounter_addenda",
     "generation_batches",

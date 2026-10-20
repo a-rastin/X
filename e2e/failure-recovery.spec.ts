@@ -32,7 +32,7 @@ test.setTimeout(120000);
  *   and the client blocks manual sign without acceptance, preserving plan text.
  *
  * Conventions follow e2e/proposal-review.spec.ts + probability-review: real
- * auth/draft/notes/plan via T1; failed/stale/complete batch + review
+ * auth/draft/working-note/plan via T1; failed/stale/complete batch + review
  * payloads via controlled page.route mocks (deterministic, no sleeps);
  * localStorage `xi.proposal.<encounterId>` seeds the recorded batch so the
  * panel resumes via GET without a new POST. Retry POST-to-server and real
@@ -49,7 +49,7 @@ test.setTimeout(120000);
  *   proposal-freshness-<key>, proposal-sign-blocked, cpt-panel/toggle/
  *   accept/retry-<key>, secondary-plan-textarea/save/status,
  *   plan-compare-proposal/plan, sign-panel/button,
- *   notes-<page>-input/add/list, chart-heading.
+ *   draft-working-note, chart-heading.
  *
  * Run with --workers=1 to avoid unnecessary load on the shared dev stack.
  * This is not concurrent two-physician or process-restart coverage.
@@ -704,7 +704,7 @@ test("S60 §§2+4 stale run fences acceptance and sign-off with exact reasons", 
   }
 });
 
-// S60 §§3-4 (mocked proposal + real plan/notes): markup renders literally,
+// S60 §§3-4 (mocked proposal + real plan/working-note): markup renders literally,
 // client preflight blocks manual sign without acceptance; no sign POST.
 test("S60 §§3-4 markup renders literally and manual sign is denied with plan kept", async ({
   page,
@@ -780,14 +780,16 @@ test("S60 §§3-4 markup renders literally and manual sign is denied with plan k
     await expect(planCompare).toContainText("<b>markup</b>");
     expect(await planCompare.locator("b").count()).toBe(0);
 
-    // Real page note with markup renders literally too.
-    const noteText = "<i>s60 note</i> & check =SUM(C1:C2)";
-    await page.locator("#notes-proposal-input").fill(noteText);
-    await page.locator("#notes-proposal-add").click();
-    const noteList = page.locator("#notes-proposal-list");
-    // Multi-round-trip note save (flush + list + POST + list); auto-wait only.
-    await expect(noteList).toContainText("<i>s60 note</i>", { timeout: 30000 });
-    expect(await noteList.locator("i").count()).toBe(0);
+    // Working-note markup remains literal after saving.
+    const noteText = "<i>s60 working note</i> & check =SUM(C1:C2)";
+    await page.locator("#wizard-step-register").click();
+    await page.getByLabel("Draft working note").fill(noteText);
+    await expect(page.locator("#draft-save-status")).toContainText("Saved (revision", {
+      timeout: 30000,
+    });
+    await expect(page.getByLabel("Draft working note")).toHaveValue(noteText);
+    expect(await page.locator("#wizard-page i").count()).toBe(0);
+    await page.locator("#wizard-step-proposal-review").click();
 
     // Client preflight blocks sign without acceptance; no backend denial proof.
     await page.getByTestId("sign-button").click();

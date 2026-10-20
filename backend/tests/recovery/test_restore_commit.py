@@ -49,9 +49,11 @@ drift (now also misses ``backup_jobs``/``restore_jobs``) stays deselected.
 
 from __future__ import annotations
 
+import io
 import json
 import os
 import uuid as uuid_module
+import zipfile
 from pathlib import Path
 from typing import Any
 
@@ -685,6 +687,26 @@ def test_phased_switch_replaces_live_without_mixed_traffic(clean_registry, monke
     old_job_id = claimed["job"]["id"]
     old_token = str(claimed["lease_token"])
 
+    # Historical-only fixture: verify retained legacy notes survive replacement.
+    from x_insight.cases import tables as cases_tables
+
+    legacy_id = uuid_module.uuid4()
+    with clean_registry.begin() as connection:
+        owner = connection.execute(
+            text("SELECT author_id FROM encounters WHERE id = :id"), {"id": encounter_id}
+        ).scalar_one()
+        connection.execute(
+            cases_tables.notes.insert().values(
+                id=legacy_id,
+                encounter_id=uuid_module.UUID(encounter_id),
+                page="history",
+                author_id=owner,
+                author_display="historical physician",
+                created_at=contracts.utcnow(),
+                text="LEGACY-NOTE-RESTORE-SENTINEL",
+            )
+        )
+
     monkeypatch.setattr(db_module, "get_engine", lambda: clean_registry)
     admin, admin_csrf = _admin_client(clean_registry, monkeypatch)
     _import_network(admin, admin_csrf, "s56-switch-net")
@@ -712,6 +734,15 @@ def test_phased_switch_replaces_live_without_mixed_traffic(clean_registry, monke
     author, _ = _login_physician(clean_registry, monkeypatch, "dr_s56_switch")
     batches = author.get(f"/api/v1/generation-batches/{batch_id}")
     assert batches.status_code == 200, batches.text
+    # Observe restored historical storage through the portable backup interface.
+    anew, anew_csrf = _admin_client(clean_registry, monkeypatch)
+    restored_blob, _ = _make_backup_blob(anew, anew_csrf, key="s56-restored-legacy-notes")
+    with zipfile.ZipFile(io.BytesIO(restored_blob)) as archive:
+        stored = json.loads(archive.read("database.json"))
+    legacy = next(note for note in stored["tables"]["notes"] if note["id"] == str(legacy_id))
+    assert legacy["text"] == "LEGACY-NOTE-RESTORE-SENTINEL"
+    assert legacy["page"] == "history"
+    assert author.get(f"/api/v1/encounters/{encounter_id}/notes").status_code == 404
 
     # No mixed old/new traffic: the pre-switch lease is rejected after the
     # generation fence (heartbeat refuses; a late commit cannot land).

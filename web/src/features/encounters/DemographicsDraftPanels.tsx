@@ -1,12 +1,11 @@
-/* Demographics page notes and the draft working note (plan.md §2.2).
+/* Registration draft working note (plan.md §2.2).
 
-   These belong on the registration wizard's Register patient step, not on
+   This belongs on the registration wizard's Register patient step, not on
    later encounter-draft steps. The save-status line stays available on
    every step: assessment pages share one autosave fence and one
    `#draft-save-status`. */
 
 import { useEffect, useRef } from "react";
-import { NotesSection } from "../notes/NotesSection";
 import { useAutosave, type SaveState } from "./useAutosave";
 
 /** Shown once on `#register` after a successful create. Not sessionStorage:
@@ -145,51 +144,39 @@ function workingNoteOf(data: Record<string, unknown>): string {
   return typeof value === "string" ? value : "";
 }
 
-/** Page notes — demographics and the working note. Register patient only. */
+/** Working note. Register patient only. */
 export function DemographicsDraftPanels({
-  encounterId,
   autosave,
-  onSessionExpired,
 }: {
-  encounterId: string;
   autosave: AutosaveApi;
-  onSessionExpired: () => void;
 }) {
   const note = workingNoteOf(autosave.localData);
   return (
-    <>
-      <NotesSection
-        encounterId={encounterId}
-        page="demographics"
-        autosave={autosave}
-        onSessionExpired={onSessionExpired}
-      />
-      <section className="xi-card" aria-labelledby="draft-editor-heading">
-        <h3 className="xi-section-title" id="draft-editor-heading">
-          Working note (draft only)
-        </h3>
-        <p className="xi-hint">
-          Autosaves about one second after typing and when leaving the page.
-          Only server-acknowledged saves count as Saved.
-        </p>
-        <div className="xi-field">
-          <label className="xi-label" htmlFor="draft-working-note">
-            Draft working note
-          </label>
-          <textarea
-            className="xi-input"
-            id="draft-working-note"
-            rows={4}
-            autoComplete="off"
-            value={note}
-            onChange={(event) =>
-              autosave.setDraftValue("working_note", event.target.value)
-            }
-            aria-describedby="draft-save-status"
-          />
-        </div>
-        <DraftSaveStatus autosave={autosave} />
-      </section>
-    </>
+    <section className="xi-card" aria-labelledby="draft-editor-heading">
+      <h3 className="xi-section-title" id="draft-editor-heading">
+        Working note (draft only)
+      </h3>
+      <p className="xi-hint">
+        Autosaves about one second after typing and when leaving the page.
+        Only server-acknowledged saves count as Saved.
+      </p>
+      <div className="xi-field">
+        <label className="xi-label" htmlFor="draft-working-note">
+          Draft working note
+        </label>
+        <textarea
+          className="xi-input"
+          id="draft-working-note"
+          rows={4}
+          autoComplete="off"
+          value={note}
+          onChange={(event) =>
+            autosave.setDraftValue("working_note", event.target.value)
+          }
+          aria-describedby="draft-save-status"
+        />
+      </div>
+      <DraftSaveStatus autosave={autosave} />
+    </section>
   );
 }

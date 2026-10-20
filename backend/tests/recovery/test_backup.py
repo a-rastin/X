@@ -724,12 +724,17 @@ def _signed_multi_encounter_setup(clean_registry, monkeypatch, tmp_path, usernam
     assert run_to_acc[runs["s54_q2"]["id"]]["result_kind"] == "calculation"
 
     draft = client.get(f"/api/v1/encounters/{encounter_id}").json()
-    noted = client.post(
-        f"/api/v1/encounters/{encounter_id}/notes",
-        json={"page": "proposal", "text": "Signed proposal note."},
+    noted = client.patch(
+        f"/api/v1/encounters/{encounter_id}",
+        json={
+            "draft_data": {
+                **client.get(f"/api/v1/encounters/{encounter_id}").json()["draft_data"],
+                "working_note": "Signed proposal note.",
+            }
+        },
         headers={**_auth_headers(csrf), "If-Match": contracts.format_etag(draft["revision"])},
     )
-    assert noted.status_code == 201, noted.text
+    assert noted.status_code == 200, noted.text
     revision = int(noted.json()["revision"])
     planned = client.patch(
         f"/api/v1/encounters/{encounter_id}/secondary-plan",
@@ -973,15 +978,39 @@ def test_backup_includes_full_snapshot_networks_and_policies(
         headers={**_auth_headers(csrf), "If-Match": contracts.format_etag(draft["revision"])},
     )
     assert sneaky.status_code == 200, sneaky.text
-    noted = client.post(
-        f"/api/v1/encounters/{draft_id}/notes",
-        json={"page": "history", "text": f"Private note {marker}"},
+    noted = client.patch(
+        f"/api/v1/encounters/{draft_id}",
+        json={
+            "draft_data": {
+                **client.get(f"/api/v1/encounters/{draft_id}").json()["draft_data"],
+                "working_note": f"Private note {marker}",
+            }
+        },
         headers={
             **_auth_headers(csrf),
             "If-Match": contracts.format_etag(int(sneaky.json()["revision"])),
         },
     )
-    assert noted.status_code == 201, noted.text
+    assert noted.status_code == 200, noted.text
+
+    # Historical-only fixture: the retired API cannot create legacy rows.
+    from x_insight.cases import tables as cases_tables
+
+    with clean_registry.begin() as connection:
+        owner = connection.execute(
+            text("SELECT author_id FROM encounters WHERE id = :id"), {"id": draft_id}
+        ).scalar_one()
+        connection.execute(
+            cases_tables.notes.insert().values(
+                id=uuid_module.uuid4(),
+                encounter_id=uuid_module.UUID(draft_id),
+                page="history",
+                author_id=owner,
+                author_display="historical physician",
+                created_at=contracts.utcnow(),
+                text=f"Legacy private note {marker}",
+            )
+        )
 
     monkeypatch.setattr(db_module, "get_engine", lambda: clean_registry)
     admin, admin_csrf = _admin_client(clean_registry, monkeypatch)

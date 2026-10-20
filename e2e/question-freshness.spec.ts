@@ -6,6 +6,7 @@ import {
   uniquePatientId,
   ensurePhysician,
   physicianSession,
+  saveWorkingNoteWithRetry,
   loginAs,
   acknowledgeWarning,
 } from "./helpers";
@@ -111,26 +112,6 @@ async function patchDraftWithRetry(
   return ((await response.json()).revision as number) ?? revision + 1;
 }
 
-async function postNoteWithRetry(
-  request: import("@playwright/test").APIRequestContext,
-  physician: { username: string; password: string },
-  draftId: string,
-  pageKey: string,
-  text: string,
-  revision: number,
-): Promise<number> {
-  const attempt = async (csrfToken: string) =>
-    request.post(`/api/v1/encounters/${draftId}/notes`, {
-      headers: { "X-CSRF-Token": csrfToken, "If-Match": `"${revision}"` },
-      data: { page: pageKey, text },
-    });
-  let response = await attempt(await physicianSession(request, physician));
-  if (response.status() === 401) {
-    response = await attempt(await physicianSession(request, physician));
-  }
-  expect(response.status(), await response.text()).toBe(201);
-  return ((await response.json()).revision as number) ?? revision + 1;
-}
 
 const TWO_NODE_XML =
   '<BIF VERSION="0.3"><NETWORK><NAME>TwoNode</NAME>' +
@@ -881,7 +862,7 @@ test("S48d §3 applicability keeps gate text, DDI carried shows Completed withou
 });
 
 // S48d §4 (T9): note edit causes no spinners and preserves acceptance.
-test("S48d §4 note edit shows no spinners and preserves acceptance", async ({ page, request }) => {
+test("S48d §4 working-note edit shows no spinners and preserves acceptance", async ({ page, request }) => {
   const physician = await loginPhysician(page, request, "e2eqfreshfour");
   const { draftId } = await createPatientWithDraft(request, physician);
   const networkHash = createHash("sha256").update(TWO_NODE_XML, "utf8").digest("hex");
@@ -900,7 +881,7 @@ test("S48d §4 note edit shows no spinners and preserves acceptance", async ({ p
     1,
   );
   const sentinel = `freshnote${Date.now().toString(36)}`;
-  await postNoteWithRetry(request, physician, draftId, "proposal", sentinel, rev2);
+  await saveWorkingNoteWithRetry(request, physician, draftId, sentinel, rev2);
 
   const batchId = "qfr-nt-batch-1111-4111-8111-111111111111";
   const run1 = mockRun("qfr-nt-run-2222-4222-8222-222222222222", batchId, "s48_q1");
@@ -978,8 +959,8 @@ test("S48d §4 note edit shows no spinners and preserves acceptance", async ({ p
     await expect(cpt).toContainText("✓");
     await expect(cpt).toContainText(acc1.id);
 
-    // Notes never leak into proposal/CPT DOM; typing a working note starts no run.
-    await expect(page.locator("#notes-proposal-list")).toContainText(sentinel, { timeout: 10000 });
+    // Working notes never leak into proposal/CPT DOM; typing a working note starts no run.
+    await expect(page.locator(".xi-notes-panel")).toHaveCount(0);
     await expect(panel).not.toContainText(sentinel);
     await expect(cpt).not.toContainText(sentinel);
     await page.locator("#wizard-step-register").click();

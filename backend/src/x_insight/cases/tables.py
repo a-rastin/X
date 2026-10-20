@@ -95,10 +95,9 @@ Index(
     postgresql_where=(encounters.c.lifecycle == "draft"),
 )
 
-# S13 attributed page notes (plan.md §§2.3, 4.1; FR-16, FR-22): one row per
-# note, separate from ``draft_data`` and from the analysis-visible history
-# channel. Append-only (no UPDATE/DELETE grant); migration ``0006`` owns
-# the DDL, this module is the read model for queries (no migrations here).
+# Legacy page-note storage is retained for complete backup/restore of historical
+# records from migration ``0006``. No application feature reads or writes it;
+# dropping it would destroy data and break compatibility with existing backups.
 notes = Table(
     "notes",
     metadata,

@@ -866,12 +866,17 @@ def test_notes_plan_preserve_and_stale_reset_retry_blocked(clean_registry, monke
 
     # Note-only edit preserves probability acceptance and freshness.
     encounter = client.get(f"/api/v1/encounters/{encounter_id}").json()
-    noted = client.post(
-        f"/api/v1/encounters/{encounter_id}/notes",
-        json={"page": "proposal", "text": "Review note: looks right."},
+    noted = client.patch(
+        f"/api/v1/encounters/{encounter_id}",
+        json={
+            "draft_data": {
+                **client.get(f"/api/v1/encounters/{encounter_id}").json()["draft_data"],
+                "working_note": "Review note: looks right.",
+            }
+        },
         headers={**_auth_headers(csrf), "If-Match": contracts.format_etag(encounter["revision"])},
     )
-    assert noted.status_code == 201, noted.text
+    assert noted.status_code == 200, noted.text
     note_revision = int(noted.json()["revision"])
     after_note = client.get(f"/api/v1/question-runs/{runs['s48d_q1']['id']}/review").json()
     assert after_note["input_freshness"]["stale"] is False

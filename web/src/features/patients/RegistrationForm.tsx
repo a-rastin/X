@@ -419,7 +419,7 @@ function RegistrationForm() {
           </div>
         </form>
       </section>
-      <PendingRegistrationNotes />
+      <PendingRegistrationWorkingNote />
       </div>
     </div>
   );
@@ -441,60 +441,29 @@ function holdStep(event: MouseEvent<HTMLAnchorElement>, current: boolean): void 
   }
 }
 
-/** Same two boxes as step 1 after create. Not durable until a draft exists. */
-function PendingRegistrationNotes() {
+/** Working note placeholder until registration creates a draft. */
+function PendingRegistrationWorkingNote() {
   return (
-    <>
-      <section className="xi-card" aria-labelledby="notes-demographics-heading">
-        <h4 className="xi-section-title" id="notes-demographics-heading">
-          Page notes — demographics
-        </h4>
-        <p className="xi-hint">
-          Attributed notes for this page. They can be left empty. They save
-          after the patient is registered — nothing here is saved yet.
-        </p>
-        <div className="xi-field">
-          <label className="xi-label" htmlFor="notes-demographics-input">
-            Page note for demographics
-          </label>
-          <textarea
-            className="xi-input"
-            id="notes-demographics-input"
-            rows={3}
-            disabled
-            autoComplete="off"
-          />
-        </div>
-        <button
-          className="xi-btn xi-btn-secondary"
-          type="button"
-          id="notes-demographics-add"
+    <section className="xi-card" aria-labelledby="draft-editor-heading">
+      <h3 className="xi-section-title" id="draft-editor-heading">
+        Working note (draft only)
+      </h3>
+      <p className="xi-hint">
+        Autosaves after the patient is registered. Leave it empty, or fill
+        it on this step once the draft exists.
+      </p>
+      <div className="xi-field">
+        <label className="xi-label" htmlFor="draft-working-note">
+          Draft working note
+        </label>
+        <textarea
+          className="xi-input"
+          id="draft-working-note"
+          rows={4}
           disabled
-        >
-          Add page note
-        </button>
-      </section>
-      <section className="xi-card" aria-labelledby="draft-editor-heading">
-        <h3 className="xi-section-title" id="draft-editor-heading">
-          Working note (draft only)
-        </h3>
-        <p className="xi-hint">
-          Autosaves after the patient is registered. Leave it empty, or fill
-          it on this step once the draft exists.
-        </p>
-        <div className="xi-field">
-          <label className="xi-label" htmlFor="draft-working-note">
-            Draft working note
-          </label>
-          <textarea
-            className="xi-input"
-            id="draft-working-note"
-            rows={4}
-            disabled
-            autoComplete="off"
-          />
-        </div>
-      </section>
-    </>
+          autoComplete="off"
+        />
+      </div>
+    </section>
   );
 }

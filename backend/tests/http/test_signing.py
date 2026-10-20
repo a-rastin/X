@@ -953,7 +953,7 @@ def test_sign_freezes_releases_slot_idempotent(clean_registry, monkeypatch, tmp_
     assert snapshot["secondary_plan_text"] == "Secondary: continue current care, follow up."
     assert len(snapshot["snapshot_hash"]) == 64
     frozen = snapshot["snapshot"]
-    assert frozen["schema_version"] == "signed-encounter-v1"
+    assert frozen["schema_version"] == "signed-encounter-v2"
     assert frozen["patient"]["identifier"] == "0012345678"
     assert frozen["proposal"]["id"] is not None
     assert len(frozen["questions"]) == 2
@@ -965,7 +965,7 @@ def test_sign_freezes_releases_slot_idempotent(clean_registry, monkeypatch, tmp_
     assert frozen["secondary_plan"]["text"] == "Secondary: continue current care, follow up."
     assert frozen["signer"]["signer_username"] == "dr_s49_sign"
     assert frozen["signer"]["signed_at"].endswith("Z")
-    assert len(frozen["notes"]) == 0
+    assert "notes" not in frozen
 
     # Slot released: new draft for the same patient succeeds; old draft reads 404.
     assert client.get(f"/api/v1/patients/{patient_id}/chart").json()["open_draft"] == {
@@ -1435,14 +1435,19 @@ def test_signed_immutable_live_demographics_addenda_chart(
         )
         acc[runs[key]["id"]] = p.json()["acceptance"]
         revmap[runs[key]["id"]] = int(p.json()["review_revision"])
-    # One attributed note before sign freezes into the snapshot.
+    # The working note is preserved in the signed draft data.
     draft = client.get(f"/api/v1/encounters/{encounter_id}").json()
-    noted = client.post(
-        f"/api/v1/encounters/{encounter_id}/notes",
-        json={"page": "proposal", "text": "Pre-sign note."},
+    noted = client.patch(
+        f"/api/v1/encounters/{encounter_id}",
+        json={
+            "draft_data": {
+                **client.get(f"/api/v1/encounters/{encounter_id}").json()["draft_data"],
+                "working_note": "Pre-sign note.",
+            }
+        },
         headers={**_auth_headers(csrf), "If-Match": contracts.format_etag(draft["revision"])},
     )
-    assert noted.status_code == 201, noted.text
+    assert noted.status_code == 200, noted.text
     revision = int(noted.json()["revision"])
     planned = client.patch(
         f"/api/v1/encounters/{encounter_id}/secondary-plan",
@@ -1463,7 +1468,8 @@ def test_signed_immutable_live_demographics_addenda_chart(
     signed_revision = int(signed_body["revision"])
     assert signed_revision == revision + 1
     frozen = signed_body["snapshot"]["snapshot"]
-    assert frozen["notes"][0]["text"] == "Pre-sign note."
+    assert "notes" not in frozen
+    assert frozen["draft_data"]["working_note"] == "Pre-sign note."
     assert frozen["secondary_plan"]["text"] == "Secondary: signed plan."
 
     # Post-sign clinical/plan/note/probability mutations are all blocked.

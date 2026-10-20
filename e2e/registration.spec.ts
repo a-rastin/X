@@ -57,7 +57,7 @@ test("physician registers a patient; leading-zero ID round-trips with timestamp 
   await expect(
     page.getByRole("heading", { name: "Register patient" }),
   ).toBeVisible();
-  // Seven steps, no adverse effects. Demographics and both note boxes
+  // Seven steps, no adverse effects. Demographics and the working note
   // are step 1; later steps stay closed until a draft exists.
   await expect(page.locator("#wizard-pages a")).toHaveText([
     "1. Register patient",
@@ -83,7 +83,7 @@ test("physician registers a patient; leading-zero ID round-trips with timestamp 
   );
   await expect(
     page.getByRole("heading", { name: "Page notes — demographics" }),
-  ).toBeVisible();
+  ).toHaveCount(0);
   await expect(
     page.getByRole("heading", { name: "Working note (draft only)" }),
   ).toBeVisible();

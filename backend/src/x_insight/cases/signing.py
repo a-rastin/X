@@ -17,7 +17,7 @@ Plan.md §§4.1, 9.2 (FR-15, FR-22, FR-57, FR-42, NFR-04):
   ``evaluate_gate`` with the stored ``source_revision``), never the batch
   hash; client flags never grant authority. Freezes the full record
   (patient/encounter, batch/proposal/DDI, per-question original + final
-  CPTs/results/acceptances, secondary plan, notes, inputs/versions), moves
+  CPTs/results/acceptances, secondary plan, draft data, inputs/versions), moves
   lifecycle draft→signed (releasing the single-draft slot via the partial
   unique index), and audits atomically. ``UNIQUE(encounter_id)`` is the
   backstop for concurrent signs; idempotent repeats return the original.
@@ -64,7 +64,7 @@ ADDENDUM_AUDIT_OPERATION = "encounters.addendum.success"
 
 MAX_SECONDARY_PLAN_CHARS = 10_000
 MAX_ADDENDUM_CHARS = 2000
-SNAPSHOT_SCHEMA_VERSION = "signed-encounter-v1"
+SNAPSHOT_SCHEMA_VERSION = "signed-encounter-v2"
 
 
 def _fail(status: int, code: str, message: str, field: str) -> contracts.ContractError:
@@ -731,26 +731,6 @@ def sign_encounter(
 
     # Build the frozen snapshot (persisted data only, no secrets).
     moment = contracts.utcnow()
-    notes_rows = (
-        session.execute(
-            select(cases_tables.notes)
-            .where(cases_tables.notes.c.encounter_id == encounter_id)
-            .order_by(cases_tables.notes.c.created_at, cases_tables.notes.c.id)
-        )
-        .mappings()
-        .all()
-    )
-    frozen_notes = [
-        {
-            "id": str(dict(r).get("id")),
-            "page": str(dict(r).get("page")),
-            "author_id": str(dict(r).get("author_id")),
-            "author_display": str(dict(r).get("author_display", "")),
-            "created_at": contracts.serialize_utc(dict(r)["created_at"]),
-            "text": str(dict(r).get("text", "")),
-        }
-        for r in notes_rows
-    ]
     frozen_per_question: list[dict[str, Any]] = []
     for run in runs:
         key = str(run.get("question_key", ""))
@@ -854,7 +834,6 @@ def sign_encounter(
             "text": str(current_plan_text),
         },
         "questions": frozen_per_question,
-        "notes": frozen_notes,
         "draft_data": dict(draft_data) if isinstance(draft_data, dict) else {},
         "fingerprint_payload": dict(batch.get("fingerprint_payload") or {}),
         "pinned_bundle": dict(batch.get("pinned_bundle") or {}),

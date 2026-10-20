@@ -109,6 +109,36 @@ export async function physicianSession(
   return csrf_token as string;
 }
 
+/** Save a non-analysis working note through T1 without replacing clinical inputs. */
+export async function saveWorkingNoteWithRetry(
+  request: import("@playwright/test").APIRequestContext,
+  physician: PhysicianCredentials,
+  draftId: string,
+  text: string,
+  revision: number,
+): Promise<number> {
+  const csrf = await physicianSession(request, physician);
+  const current = await request.get(`/api/v1/encounters/${draftId}`);
+  expect(current.status(), await current.text()).toBe(200);
+  const draft = await current.json();
+  // PATCH replaces the full draft object; retain all existing clinical inputs.
+  const attempt = (csrfToken: string) =>
+    request.patch(`/api/v1/encounters/${draftId}`, {
+      headers: { "X-CSRF-Token": csrfToken, "If-Match": `"${revision}"` },
+      data: { draft_data: { ...draft.draft_data, working_note: text } },
+    });
+  let response = await attempt(csrf);
+  if (response.status() === 401) {
+    response = await attempt(await physicianSession(request, physician));
+  }
+  expect(response.status(), await response.text()).toBe(200);
+  const savedRevision = ((await response.json()).revision as number) ?? revision + 1;
+  const saved = await request.get(`/api/v1/encounters/${draftId}`);
+  expect(saved.status(), await saved.text()).toBe(200);
+  expect((await saved.json()).draft_data.working_note).toBe(text);
+  return savedRevision;
+}
+
 /** Register a patient through the real backend API (seam T1) as a physician.
  * Returns the created patient row. Pass a `physicianSession` CSRF token to
  * reuse one login across many calls in the same test jar. */

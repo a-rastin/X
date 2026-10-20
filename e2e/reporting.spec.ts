@@ -42,7 +42,7 @@ import {
  * provider endpoint (original generation) plus stub drains (local
  * recalculation), a real CPT adjustment, exact acceptance, two atomic
  * signs (registration + follow-up), an any-physician addendum, and a
- * frozen note — all through public HTTP except the in-process worker
+ * private working note — all through public HTTP except the in-process worker
  * steps, which are the same production run_once() entry point the T1 suite
  * proves. Synthetic two-node A->B content only; expected literals are
  * worked fixtures (question keys, indicator copy, evil strings).
@@ -60,7 +60,7 @@ import {
 
 const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const VENV_PYTHON = join(REPO_ROOT, "backend", ".venv", "bin", "python");
-const API_BASE = "http://127.0.0.1:8000";
+const API_BASE = process.env.E2E_API_BASE_URL ?? "http://127.0.0.1:8000";
 
 const EVIL_PLAN = "<script>alert('plan-xss')</script> Keep monitoring monthly.";
 const EVIL_NOTE = "<img src=x onerror=alert('note-xss')> Proposal looks complete.";
@@ -290,7 +290,7 @@ function helperSource(): string {
     "    ACC[RUNS[key]['id']] = posted['acceptance']",
     "    REVMAP[RUNS[key]['id']] = int(posted['review_revision'])",
     "draft = need(*call('GET', '/api/v1/encounters/' + ENC), 200, 'draft read')",
-    "need(*call('POST', '/api/v1/encounters/' + ENC + '/notes', {'page': 'proposal', 'text': NOTE_EVIL}, {**PHEAD, 'If-Match': ETAG(draft['revision'])}), 201, 'note create')",
+    "need(*call('PATCH', '/api/v1/encounters/' + ENC, {'draft_data': {**draft['draft_data'], 'working_note': NOTE_EVIL}}, {**PHEAD, 'If-Match': ETAG(draft['revision'])}), 200, 'working note save')",
     "REV = int(need(*call('GET', '/api/v1/encounters/' + ENC), 200, 'draft reread')['revision'])",
     "need(*call('PATCH', '/api/v1/encounters/' + ENC + '/secondary-plan', {'text': PLAN_EVIL, 'expected_plan_revision': 1}, {**PHEAD, 'If-Match': ETAG(1)}), 200, 'plan save')",
     "sign_payload = {'expected_encounter_revision': REV, 'expected_plan_revision': 2, 'batch_id': BATCH['id'], 'acceptances': [{'question_run_id': rid, 'acceptance_id': acc['id'], 'expected_review_revision': REVMAP[rid]} for rid, acc in sorted(ACC.items())]}",
@@ -519,16 +519,17 @@ test("S53 §3 signed patient report renders chronology, CPTs, adjustments, adden
   // Worked CPT literals from the real pipeline (original 80/20, adjusted 60/40).
   expect(text).toContain("80");
   expect(text).toContain("60");
-  // Attribution: accepting/signing physician, addendum author, frozen note.
+  // Attribution: accepting/signing physician, addendum author; working notes stay private.
   expect(text).toContain(fx.username);
   expect(text).toContain(fx.otherUsername);
   expect(text).toContain("Addenda");
   expect(text).toContain("Keep monitoring monthly.");
-  expect(text).toContain("Proposal looks complete.");
+  expect(text).not.toContain("Proposal looks complete.");
   expect(text).toContain("Correction");
   // Malicious markup renders as inert text (decoded entities in textContent).
   expect(text).toContain(EVIL_PLAN);
-  expect(text).toContain(EVIL_NOTE);
+  expect(text).not.toContain(EVIL_NOTE);
+  expect(text).not.toContain("Signed notes");
   expect(text).toContain(EVIL_ADDENDUM);
   // No script from the report ever executed.
   expect(dialogSeen).toBeNull();

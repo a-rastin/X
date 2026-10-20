@@ -399,7 +399,6 @@ def build_patient_report_html(data: dict[str, Any], *, generated_at: str) -> str
         encounter = _as_dict(inner.get("encounter"))
         proposal = _as_dict(inner.get("proposal"))
         questions = _as_list(inner.get("questions"))
-        notes = _as_list(inner.get("notes"))
         draft_data = _as_dict(inner.get("draft_data"))
         enc_id = str(snap.get("encounter_id", ""))
         out.append('<div class="encounter">')
@@ -553,16 +552,6 @@ def build_patient_report_html(data: dict[str, Any], *, generated_at: str) -> str
                     f"(result {_e(acceptance.get('result_kind', ''))})</p>"
                 )
         out.append("</div>")
-        if notes:
-            out.append("<h3>Signed notes (frozen)</h3><ul>")
-            for note in notes:
-                if not isinstance(note, dict):
-                    continue
-                out.append(
-                    f"<li>[{_e(note.get('page', ''))}] {_e(note.get('author_display', ''))} "
-                    f"at {_e(note.get('created_at', ''))}: {_e(note.get('text', ''))}</li>"
-                )
-            out.append("</ul>")
         enc_addenda = by_encounter.get(enc_id, [])
         if enc_addenda:
             out.append("<h3>Addenda</h3><ul>")

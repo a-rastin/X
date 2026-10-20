@@ -11,8 +11,8 @@ Plan.md §§4.2, 8.1 (FR-16, FR-32, FR-35, NFR-04):
   Excludes notes (separate table, never read), names/ID/phone (patient
   row never read), UI state and secondary-plan edits (unallowlisted
   top-level keys ignored).
-  ``notes.exclude_notes_from_analysis`` is the same exclusion by
-  construction: this module never queries ``notes`` or ``patients``.
+  This module never queries legacy note storage or ``patients``. Working
+  notes and any legacy note keys remain excluded by the input allowlist.
 - Projection (plan §8.1): per-question typed allowlisted projection
   persisted before provider access. Each entry holds node ID, patient
   type, observed/not-assessed/missing/conflict status, source

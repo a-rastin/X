@@ -6,7 +6,7 @@
  * ProposalReviewPanel's per-question block behind its own lazy toggle so the
  * S48 transparency fetch counts are untouched (this panel GETs
  * `/question-runs/{id}/review` itself, same typed client, no second data
- * path, never recomputed from the chart). Page notes never enter this panel:
+ * path, never recomputed from the chart). Working notes never enter this panel:
  * only the typed `safe_*` review fields below are rendered.
  *
  * §1: every root/conditional row with original/current exact percentages

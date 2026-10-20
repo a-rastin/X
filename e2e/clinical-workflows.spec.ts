@@ -6,6 +6,7 @@ import {
   uniquePatientId,
   ensurePhysician,
   physicianSession,
+  saveWorkingNoteWithRetry,
   loginAs,
   acknowledgeWarning,
   signOut,
@@ -36,7 +37,7 @@ import {
  * ReportPage (report heading/research-label/frame/print/status).
  *
  * Constraints (follow signing/proposal-review/probability-review/
- * question-freshness): real auth/draft PATCH/notes/secondary-plan/follow-up
+ * question-freshness): real auth/draft PATCH/working-note/secondary-plan/follow-up
  * via T1; controlled batch/review/cpt/sign/chart/report route fixtures
  * only; no page.route mocks for app shell/auth; no full-page snapshots;
  * synthetic two-node A->B (80/20, 90/10, 30/70) literals with 64-char
@@ -185,26 +186,6 @@ async function patchDraftWithRetry(
   return ((await response.json()).revision as number) ?? revision + 1;
 }
 
-async function postNoteWithRetry(
-  request: import("@playwright/test").APIRequestContext,
-  physician: { username: string; password: string },
-  draftId: string,
-  pageKey: string,
-  text: string,
-  revision: number,
-): Promise<number> {
-  const attempt = async (csrfToken: string) =>
-    request.post(`/api/v1/encounters/${draftId}/notes`, {
-      headers: { "X-CSRF-Token": csrfToken, "If-Match": `"${revision}"` },
-      data: { page: pageKey, text },
-    });
-  let response = await attempt(await physicianSession(request, physician));
-  if (response.status() === 401) {
-    response = await attempt(await physicianSession(request, physician));
-  }
-  expect(response.status(), await response.text()).toBe(201);
-  return ((await response.json()).revision as number) ?? revision + 1;
-}
 
 function s59Package(
   questionKey: string,
@@ -2342,8 +2323,8 @@ test("S59 §3 affected-only stale then regen needs re-review without adjustment 
   }
 });
 
-// S59 §3: note-only edits cause no spinners and preserve acceptance.
-test("S59 §3 note-only edit shows no spinners and preserves acceptance", async ({
+// S59 §3: working-note-only edits cause no spinners and preserve acceptance.
+test("S59 §3 working-note-only edit shows no spinners and preserves acceptance", async ({
   page,
   request,
 }) => {
@@ -2358,7 +2339,7 @@ test("S59 §3 note-only edit shows no spinners and preserves acceptance", async 
     1,
   );
   const sentinel = `s59note${Date.now().toString(36)}`;
-  await postNoteWithRetry(request, physician, draftId, "proposal", sentinel, rev2);
+  await saveWorkingNoteWithRetry(request, physician, draftId, sentinel, rev2);
 
   const batchId = "s59-note-batch-1111-4111-8111-111111111111";
   const runIds = [
@@ -2454,8 +2435,8 @@ test("S59 §3 note-only edit shows no spinners and preserves acceptance", async 
     await expect(cpt).toContainText("✓");
     await expect(cpt).toContainText(accId);
 
-    // Notes never leak into proposal/CPT DOM; typing starts no run.
-    await expect(page.locator("#notes-proposal-list")).toContainText(sentinel, { timeout: 10000 });
+    // Working notes never leak into proposal/CPT DOM; typing starts no run.
+    await expect(page.locator(".xi-notes-panel")).toHaveCount(0);
     await expect(panel).not.toContainText(sentinel);
     await expect(cpt).not.toContainText(sentinel);
     await page.locator("#wizard-step-register").click();

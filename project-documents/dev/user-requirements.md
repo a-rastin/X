@@ -47,7 +47,7 @@ MCP provides the tool-access environment. The LLM estimates CPT values; the appl
 
 **FR-15:** The initial treatment proposal is system-generated and incorporates the DDI checker and Bayesian-network recommendations. For each completed clinical question, the physician can inspect all CPT values, adjust them using sliders, and review the recalculated recommendation before finalizing the secondary treatment plan. The application records the physician’s plan edits and sign-off, while retaining the original system-generated proposal separately from physician-adjusted recommendations.
 
-**FR-16:** Every page supports timestamped, physician-attributed notes. Notes never influence algorithms. Drafts, including CPT adjustments and their calculation state, are automatically saved and resumable. Explicit Discard requires confirmation.
+**FR-16:** Register patient supports one editable working note in the encounter draft; page notes are removed throughout the app. The working note never influences algorithms and is disabled until patient and draft creation. Drafts, including the working note, CPT adjustments and their calculation state, are automatically saved and resumable. Explicit Discard requires confirmation. Historical page-note storage and existing immutable signed payloads remain retained; no active page-note capture or read route is provided.
 
 ### Follow-up and Records
 

@@ -30,7 +30,7 @@ deployment.
 | --- | --- |
 | Patient records | Registration, search, shared signed charts, follow-up encounters, and archival administration |
 | Assessments | Diagnosis, PANSS, C-SSRS, structured history, medications, and adverse-effect forms with explicit completeness states |
-| Drafts and notes | Autosave, resume/discard, author-only clinical draft access, and attributed page notes |
+| Drafts and working note | Autosave, resume/discard, author-only clinical draft access, and an editable working note on Register patient |
 | Decision support | Versioned XMLBIF networks, scoped patient inputs through private MCP, queued CPT estimation, validation, deterministic inference, and templated proposals |
 | Probability review | Original/current CPT inspection, sliders with proportional redistribution, local recalculation, reset, comparison, and explicit result acceptance |
 | Signed plans | Physician-edited final plans, atomic signing, immutable snapshots, and attributed addenda |
@@ -41,7 +41,9 @@ every acceptance check has passed. See the current boundaries below.
 
 ## Current engineering status
 
-The latest implementation checkpoint is [S42, recorded on
+The latest bounded follow-up [removes page notes and preserves the working
+note (2026-10-20)](project-documents/dev/progress/s13.md#follow-up-2026-10-20--remove-page-notes-keep-the-working-note).
+The latest numbered implementation checkpoint is [S42, recorded on
 2026-10-17](project-documents/dev/progress/s42.md), completed after the
 [S62 release rehearsal](project-documents/dev/progress/s62.md). Current schema head
 is `0021`; fresh backups include a 32-table inventory.
@@ -85,9 +87,10 @@ The core record and reasoning rules are:
   or sign it.
 - Patient variables inform LLM estimation of every CPT, including root-node
   distributions. Bayesian inference then runs with an **empty evidence set**.
-- Page notes do not enter prompts, patient projections, applicability rules,
-  inference, or DDI checks. Unanswered assessments do not become zero or minimum
-  scores.
+- The Register patient working note autosaves once a draft exists and does not
+  enter prompts, patient projections, applicability rules, inference, or DDI
+  checks. Page-note controls and routes have been removed. Unanswered assessments
+  do not become zero or minimum scores.
 - Slider changes recalculate locally without another LLM or MCP request. Original
   estimates and results remain available alongside adjusted revisions.
 - Signing requires successful, current executions and acceptance of their current
@@ -96,6 +99,11 @@ The core record and reasoning rules are:
   assessment is a new follow-up encounter.
 - Runtime DDI checks use a versioned local knowledge base. Missing coverage is
   reported as unavailable rather than interpreted as an absence of interactions.
+
+New signatures use `signed-encounter-v2` without a page-notes field, and printable
+reports omit page notes. Historical note storage and existing v1 signed payloads
+and hashes remain intact for record and backup compatibility. This change adds
+no migration; schema head remains `0021` with 32 backup tables.
 
 The [system design](project-documents/dev/system-design.md) defines the full
 contract; [context/](context/index.md) records the reasoning behind key choices.

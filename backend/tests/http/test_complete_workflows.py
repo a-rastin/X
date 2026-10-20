@@ -973,15 +973,20 @@ def test_complete_workflow_affected_only_regeneration_and_fencing(
 
     # Note-only edit preserves every acceptance and freshness.
     encounter = client.get(f"/api/v1/encounters/{encounter_id}").json()
-    noted = client.post(
-        f"/api/v1/encounters/{encounter_id}/notes",
-        json={"page": "proposal", "text": "Note: reviewed all five questions."},
+    noted = client.patch(
+        f"/api/v1/encounters/{encounter_id}",
+        json={
+            "draft_data": {
+                **client.get(f"/api/v1/encounters/{encounter_id}").json()["draft_data"],
+                "working_note": "Note: reviewed all five questions.",
+            }
+        },
         headers={
             **_auth_headers(csrf),
             "If-Match": contracts.format_etag(encounter["revision"]),
         },
     )
-    assert noted.status_code == 201, noted.text
+    assert noted.status_code == 200, noted.text
     revision = int(noted.json()["revision"])
     for key in ("s59_r1", "s59_r2", "s59_r3", "s59_r4"):
         review = client.get(f"/api/v1/question-runs/{runs[key]['id']}/review").json()

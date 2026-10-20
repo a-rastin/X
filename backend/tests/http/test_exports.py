@@ -81,8 +81,7 @@ NETWORK_HASH = hashlib.sha256(TWO_NODE_XML).hexdigest()
 PLAN_EVIL = "<script>alert('plan-xss')</script> Keep monitoring monthly."
 NOTE_EVIL = "<img src=x onerror=alert('note-xss')> Proposal looks complete."
 ADDENDUM_EVIL = (
-    "Correction <b>bold</b> & <i>italic</i> with "
-    "<a href='http://example.invalid'>link</a>."
+    "Correction <b>bold</b> & <i>italic</i> with <a href='http://example.invalid'>link</a>."
 )
 
 EXPECTED_PATIENT_HEADERS = (
@@ -648,12 +647,17 @@ def _signed_multi_encounter_setup(clean_registry, monkeypatch, tmp_path, usernam
     assert run_to_acc[runs["s53_q2"]["id"]]["result_kind"] == "calculation"
 
     draft = client.get(f"/api/v1/encounters/{encounter_id}").json()
-    noted = client.post(
-        f"/api/v1/encounters/{encounter_id}/notes",
-        json={"page": "proposal", "text": NOTE_EVIL},
+    noted = client.patch(
+        f"/api/v1/encounters/{encounter_id}",
+        json={
+            "draft_data": {
+                **client.get(f"/api/v1/encounters/{encounter_id}").json()["draft_data"],
+                "working_note": NOTE_EVIL,
+            }
+        },
         headers={**_auth_headers(csrf), "If-Match": contracts.format_etag(draft["revision"])},
     )
-    assert noted.status_code == 201, noted.text
+    assert noted.status_code == 200, noted.text
     revision = int(noted.json()["revision"])
     planned = client.patch(
         f"/api/v1/encounters/{encounter_id}/secondary-plan",
@@ -808,14 +812,14 @@ def test_exports_require_admin(clean_registry, monkeypatch) -> None:
         assert allowed.status_code == 200, (route, allowed.text)
         assert allowed.headers["Cache-Control"] == "private, no-store", route
     assert admin.get("/api/v1/exports/patients.csv").headers["content-type"].startswith("text/csv")
-    assert admin.get("/api/v1/exports/physicians.csv").headers["content-type"].startswith("text/csv")
+    assert (
+        admin.get("/api/v1/exports/physicians.csv").headers["content-type"].startswith("text/csv")
+    )
     report = admin.get(f"/api/v1/patients/{patient_id}/report")
     assert report.headers["content-type"].startswith("text/html")
 
 
-def test_patients_csv_stable_headers_utf8_identifier_bytes(
-    clean_registry, monkeypatch
-) -> None:
+def test_patients_csv_stable_headers_utf8_identifier_bytes(clean_registry, monkeypatch) -> None:
     """S53 §1: stable headers, UTF-8 names, exact ``0012345678`` bytes."""
     _new_physician(clean_registry, monkeypatch, "dr_s53_csv")
     client, csrf = _login_physician(clean_registry, monkeypatch, "dr_s53_csv")
@@ -849,9 +853,7 @@ def test_patients_csv_stable_headers_utf8_identifier_bytes(
     assert by_identifier["0012345678"][8] == "false"
 
 
-def test_physicians_csv_safe_fields_excludes_non_physicians(
-    clean_registry, monkeypatch
-) -> None:
+def test_physicians_csv_safe_fields_excludes_non_physicians(clean_registry, monkeypatch) -> None:
     """S53 §1: safe columns only; admin excluded; active flag round-trips."""
     admin, admin_csrf = _new_physician(clean_registry, monkeypatch, "dr_s53_list_a")
     second = admin.post(
@@ -950,9 +952,7 @@ def test_patients_csv_quotes_and_newlines_round_trip(clean_registry, monkeypatch
 # --- S53 §3: escaped signed HTML with complete per-question content ---
 
 
-def test_report_unknown_is_404_and_unsigned_shows_empty_state(
-    clean_registry, monkeypatch
-) -> None:
+def test_report_unknown_is_404_and_unsigned_shows_empty_state(clean_registry, monkeypatch) -> None:
     """S53 §3: unknown patient 404; unsigned patient reports no encounters."""
     _new_physician(clean_registry, monkeypatch, "dr_s53_empty")
     client, csrf = _login_physician(clean_registry, monkeypatch, "dr_s53_empty")
@@ -971,7 +971,7 @@ def test_report_unknown_is_404_and_unsigned_shows_empty_state(
 
 
 def test_report_escapes_malicious_text(clean_registry, monkeypatch, tmp_path) -> None:
-    """S53 §3/Verify: plan/note/addendum markup renders inert (escaped)."""
+    """Plan/addendum markup renders escaped; private working notes are excluded."""
     fixture = _signed_multi_encounter_setup(clean_registry, monkeypatch, tmp_path, "dr_s53_xss")
     admin, _ = _admin_client(clean_registry, monkeypatch)
     response = admin.get(f"/api/v1/patients/{fixture['patient_id']}/report")
@@ -979,13 +979,13 @@ def test_report_escapes_malicious_text(clean_registry, monkeypatch, tmp_path) ->
     body = response.text
     assert "&lt;script&gt;" in body
     assert "<script>alert" not in body
-    assert "&lt;img" in body
+    assert "&lt;img" not in body
     assert "<img src=x" not in body
     assert "&lt;b&gt;bold&lt;/b&gt;" in body
     assert "<b>bold</b>" not in body
-    # Escaped content is still present (nothing dropped, attribution kept).
+    # Displayed plan/addendum text retains attribution; working note stays private.
     assert "Keep monitoring monthly." in body
-    assert "Proposal looks complete." in body
+    assert "Proposal looks complete." not in body
     assert "Correction" in body
     assert fixture["other_username"] in body
 
@@ -1021,7 +1021,7 @@ def test_report_has_original_and_accepted_cpts_results_versions_attribution(
     assert "History values" in body
     assert "catalog_alpha" in body
     assert "Secondary plan" in body
-    assert "Signed notes (frozen)" in body
+    assert "Signed notes (frozen)" not in body
     assert "Addenda" in body
 
 
@@ -1078,15 +1078,20 @@ def test_report_excludes_open_draft_content(clean_registry, monkeypatch, tmp_pat
         headers={**_auth_headers(csrf), "If-Match": contracts.format_etag(draft["revision"])},
     )
     assert sneaky.status_code == 200, sneaky.text
-    noted = client.post(
-        f"/api/v1/encounters/{draft_id}/notes",
-        json={"page": "history", "text": f"Private note {marker}"},
+    noted = client.patch(
+        f"/api/v1/encounters/{draft_id}",
+        json={
+            "draft_data": {
+                **client.get(f"/api/v1/encounters/{draft_id}").json()["draft_data"],
+                "working_note": f"Private note {marker}",
+            }
+        },
         headers={
             **_auth_headers(csrf),
             "If-Match": contracts.format_etag(int(sneaky.json()["revision"])),
         },
     )
-    assert noted.status_code == 201, noted.text
+    assert noted.status_code == 200, noted.text
 
     admin, _ = _admin_client(clean_registry, monkeypatch)
     response = admin.get(f"/api/v1/patients/{fixture['patient_id']}/report")
@@ -1151,9 +1156,9 @@ def test_denied_export_attempts_leave_no_success_events(
     fixture = _signed_multi_encounter_setup(clean_registry, monkeypatch, tmp_path, "dr_s53_deny")
     admin, _ = _admin_client(clean_registry, monkeypatch)
     before = {
-        operation: admin.get(
-            "/api/v1/audit-events", params={"operation": operation}
-        ).json()["total"]
+        operation: admin.get("/api/v1/audit-events", params={"operation": operation}).json()[
+            "total"
+        ]
         for operation in (
             "exports.patients.success",
             "exports.physicians.success",
@@ -1166,9 +1171,9 @@ def test_denied_export_attempts_leave_no_success_events(
     assert physician.get(f"/api/v1/patients/{fixture['patient_id']}/report").status_code == 403
 
     after = {
-        operation: admin.get(
-            "/api/v1/audit-events", params={"operation": operation}
-        ).json()["total"]
+        operation: admin.get("/api/v1/audit-events", params={"operation": operation}).json()[
+            "total"
+        ]
         for operation in (
             "exports.patients.success",
             "exports.physicians.success",
@@ -1176,3 +1181,81 @@ def test_denied_export_attempts_leave_no_success_events(
         )
     }
     assert after == before
+
+
+def test_legacy_v1_snapshot_remains_immutable_but_page_notes_are_not_reported(
+    clean_registry, monkeypatch, tmp_path
+):
+    """Historical fixture keeps its payload/hash through public chart, report and addendum reads."""
+    from sqlalchemy import select, update
+
+    from x_insight.cases import tables as cases_tables
+
+    fixture = _signed_multi_encounter_setup(
+        clean_registry, monkeypatch, tmp_path, "dr_legacy_notes"
+    )
+    # Seed a pre-retirement signed record; no current API can create v1.
+    with clean_registry.begin() as connection:
+        row = (
+            connection.execute(
+                select(cases_tables.signed_encounter_snapshots).where(
+                    cases_tables.signed_encounter_snapshots.c.encounter_id
+                    == uuid_module.UUID(fixture["encounter_id"])
+                )
+            )
+            .mappings()
+            .one()
+        )
+        legacy = dict(row["snapshot"])
+        legacy["schema_version"] = "signed-encounter-v1"
+        legacy["notes"] = [
+            {
+                "id": str(uuid_module.uuid4()),
+                "page": "proposal",
+                "text": "LEGACY-PAGE-NOTE-MUST-NOT-RENDER",
+                "author_display": "historical physician",
+                "created_at": "2026-01-01T00:00:00Z",
+            }
+        ]
+        legacy_hash = contracts.canonical_hash(legacy)
+        connection.execute(
+            update(cases_tables.signed_encounter_snapshots)
+            .where(cases_tables.signed_encounter_snapshots.c.id == row["id"])
+            .values(snapshot=legacy, snapshot_hash=legacy_hash)
+        )
+
+    client, csrf = fixture["client"], fixture["csrf"]
+    chart_url = f"/api/v1/patients/{fixture['patient_id']}/chart"
+
+    def historical_snapshot():
+        chart = client.get(chart_url)
+        assert chart.status_code == 200, chart.text
+        return next(
+            item
+            for item in chart.json()["signed_snapshots"]
+            if item["encounter_id"] == fixture["encounter_id"]
+        )
+
+    before = historical_snapshot()
+    assert before["snapshot"] == legacy
+    assert before["snapshot_hash"] == legacy_hash
+    admin, _ = _admin_client(clean_registry, monkeypatch)
+    report = admin.get(f"/api/v1/patients/{fixture['patient_id']}/report")
+    assert report.status_code == 200, report.text
+    assert "Signed notes" not in report.text
+    assert "LEGACY-PAGE-NOTE-MUST-NOT-RENDER" not in report.text
+    appended = client.post(
+        f"/api/v1/encounters/{fixture['encounter_id']}/addenda",
+        json={
+            "text": "Historical record follow-up.",
+            "expected_encounter_revision": fixture["signed_revision"],
+        },
+        headers={
+            **_auth_headers(csrf),
+            "If-Match": contracts.format_etag(fixture["signed_revision"]),
+        },
+    )
+    assert appended.status_code == 201, appended.text
+    after = historical_snapshot()
+    assert after["snapshot"] == legacy
+    assert after["snapshot_hash"] == legacy_hash

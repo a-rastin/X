@@ -65,7 +65,7 @@ Generation and local recalculation use separate job classes and capacity limits.
 |---|---|
 | Identity and access | Accounts, sessions, active-account checks and permissions |
 | Patient registry | Demographics, unique Patient ID, archive state and demographic revisions |
-| Encounter workflow | Single-open-draft rule, assessments, history, notes, secondary plan, signing and addenda |
+| Encounter workflow | Single-open-draft rule, assessments, history, working note, secondary plan, signing and addenda |
 | Knowledge registry | Network definitions, prompts, templates, content versions and activation |
 | Initial reasoning | Scoped patient projections, sequential LLM estimation, original runs and proposals |
 | Probability review | Revisioned CPT changes, redistribution, reset, comparison and local calculation state |
@@ -114,7 +114,7 @@ Create the patient and registration draft atomically. Duplicate registration ret
 | Proposal review | Automatic initial processing, DDI report, per-question original baseline and CPT review; optional local adjustment |
 | Finalization | Review/accept current probabilities and results, edit secondary plan and sign explicitly |
 
-Every page supports timestamped, physician-attributed notes. Notes are a separate field type excluded from patient projections, prompts, MCP responses, applicability rules and all algorithms. Never turn notes into algorithm-visible history implicitly.
+Register patient supports one editable `draft_data.working_note`, disabled until patient/draft creation and then saved with the normal approximately one-second debounce and navigation flush/retry/conflict handling. It is excluded from patient projections, prompts, MCP responses, applicability rules and all algorithms. There are no page-note controls or GET/POST note routes on registration or follow-up. Never turn the working note or legacy note keys into algorithm-visible history implicitly.
 
 ### 4.2 Follow-up
 
@@ -134,7 +134,7 @@ Other physicians can update shared demographics without viewing the draft. Such 
 
 ### 4.4 Signed records, addenda, archive and discard
 
-Signed encounters, CPT snapshots, accepted results, notes and plan text are immutable. Any active physician can append an attributed, timestamped addendum referencing a signed encounter. The new author does not replace the original signer. Addenda do not overwrite assessment fields, accepted probabilities or prior results; new clinical assessment uses a new encounter.
+Signed encounters, CPT snapshots, accepted results and plan text are immutable. New `signed-encounter-v2` snapshots omit page notes and retain the full draft data, including the working note. Existing v1 signed payloads and hashes remain unchanged, including any historical page notes; printable reports omit page notes for both versions. Any active physician can append an attributed, timestamped addendum referencing a signed encounter. The new author does not replace the original signer. Addenda do not overwrite assessment fields, accepted probabilities or prior results; new clinical assessment uses a new encounter.
 
 Archive behavior remains a **proposed policy, not a confirmed owner decision**: block new encounters and signing while archived, preserve existing drafts read-only, and permit the author to resume after unarchive. Such a retained draft still occupies the patient's single slot. This does not change the confirmed single-draft constraint.
 
@@ -150,7 +150,7 @@ Use relational identities, lifecycle/ownership columns and foreign keys, with sc
 | Patient / PatientRevision | Unique ten-digit text identifier, demographics, clinical status, optional phone, archive state, revision and change attribution |
 | Encounter | Patient, author, encounter type, lifecycle, visit timestamp, revision and prior signed source; at most one draft per patient |
 | Assessment / History / MedicationEntry / AdverseEffect | Encounter-owned clinical data, completeness/status, content versions and provenance |
-| PageNote | Encounter/page, text, author and timestamp; never included in algorithm inputs |
+| Legacy page-note storage | Existing encounter/page, text, author and timestamp retained for history and backup compatibility; no active capture/read route or report rendering; never included in algorithm inputs |
 | NetworkVersion / ContentVersion | Immutable XML, structure hash, manifest, prompt, template, scoring/catalog/DDI definitions and versioned numerical rules |
 | ModelBundle | Ordered clinical-question mappings, versions, applicability and missing-data rules; versioned active pointer |
 | GenerationBatch | Encounter, source revision, ordered work list, pinned bundle/configuration, progress and retries |
@@ -225,7 +225,7 @@ Maintain per-question dependency fingerprints for represented patient variables 
 
 Regenerate affected applicable questions in declared order using new patient projections and new QuestionRun identities. New runs establish new original baselines; never copy old physician adjustments into them. Unaffected, still-current question baselines and adjustments remain valid and retain their references. Record transitions into/out of applicability and refresh the proposal snapshot's question set. An obsolete run remains historical rather than being relabeled as current.
 
-A note-only edit does not regenerate questions or invalidate probability acceptance. A plan-text edit requires final plan review but does not cause inference. Changing active model versions does not silently rebase an open encounter; preserve its pinned definitions. Patient-input regeneration uses the encounter's existing pinned bundle so unaffected questions remain coherent with regenerated questions. Newly created encounters select the then-active bundle.
+A working-note-only edit does not regenerate questions or invalidate probability acceptance. A plan-text edit requires final plan review but does not cause inference. Changing active model versions does not silently rebase an open encounter; preserve its pinned definitions. Patient-input regeneration uses the encounter's existing pinned bundle so unaffected questions remain coherent with regenerated questions. Newly created encounters select the then-active bundle.
 
 ## 8. Interactive CPT review and local calculation
 
@@ -332,7 +332,7 @@ Use `/api/v1`, internal UUIDs, schema-versioned JSON, decimal percentage strings
 | `POST /patients/{id}/archive`, `/unarchive` | Admin; preserve records and apply declared archive policy |
 | `POST /patients/{id}/encounters` | Atomic single-draft creation; `409 OPEN_DRAFT_EXISTS` without another author's clinical content |
 | `GET/PATCH /encounters/{id}` | Draft author only for drafts; shared authorized read after signing |
-| `POST /encounters/{id}/notes`, `/discard` | Author-only note creation/confirmed discard |
+| `POST /encounters/{id}/discard` | Author-only confirmed discard; working note is saved through draft PATCH; GET/POST notes routes removed |
 | `POST /encounters/{id}/generation-batches` | Automatic author-context generation trigger; expected source revision; returns `202` and batch ID |
 | `GET /generation-batches/{id}`; `POST /question-runs/{id}/retry-original` | Author-only progress/resume; retain completed questions |
 | `GET /question-runs/{id}/review` | Original/current CPTs, results, revision IDs, input freshness, history and permissions |
@@ -441,4 +441,4 @@ The owner has resolved evidence semantics, draft privacy, addendum authorship an
 | Provider/model capabilities and numerical/runtime validation | Verify during implementation; six-decimal storage and 0.01 slider step are explicit proposed technical choices |
 | Dataset size, exact resource budgets and recovery targets | Benchmark representative networks and retained revision volumes; no unapproved SLA |
 
-The supplied requirements remain unchanged. This design incorporates the owner's clarifications without adding observed-evidence inference, shared drafts, parallel drafts for one patient, or manual signing after failed generation.
+This design incorporates the owner's clarifications and the 2026-10-20 removal of page notes in FR-16, while retaining the working note. It does not add observed-evidence inference, shared drafts, parallel drafts for one patient, or manual signing after failed generation.

@@ -28,7 +28,7 @@ import {
  * SignPanel) and `ChartPage.tsx` (Signed records + print provisional hint).
  *
  * Constraints (follow proposal-review/probability-review/question-freshness):
- * real auth/draft PATCH/notes via T1, no worker in e2e — complete/failed/
+ * real auth/draft working-note PATCH via T1, no worker in e2e — complete/failed/
  * stale journeys use controlled batch + review route fixtures as the
  * documented alternative (deterministic, no sleeps for concurrency). Mocks
  * carry 64-char hashes, fixed UUIDs, two-node 80/20 + 90/10 + 30/70 literals.
@@ -819,7 +819,7 @@ function mockSignedSnapshot(opts: {
     secondary_plan_revision: opts.planRevision ?? 2,
     secondary_plan_text: opts.planText,
     snapshot: {
-      schema_version: "signed-encounter-v1",
+      schema_version: "signed-encounter-v2",
       questions,
       secondary_plan: { revision: opts.planRevision ?? 2, text: opts.planText },
       signer: {
@@ -845,7 +845,7 @@ function mockChart(opts: {
   encounterRevision?: number;
 }) {
   const refs = opts.snapshots.map((snap) => ({
-    id: (snap as Record<string, string>).encounter_id as string,
+    id: snap.encounter_id,
     patient_id: opts.patientId,
     kind: "registration",
     lifecycle: "signed",

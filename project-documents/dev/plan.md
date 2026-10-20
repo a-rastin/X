@@ -49,7 +49,7 @@ Retained drafts remain private and occupy the patient's single open-draft slot u
 
 ### 2.2 Registration and follow-up
 
-Registration pages: demographics → diagnosis → severity → suicide → history/medications/DDI → proposal review → secondary plan/sign. Every page supports attributed notes and autosave once a draft exists. The demographic form before initial creation remains local until valid; do not claim its unsent values are saved.
+Registration pages: demographics → diagnosis → severity → suicide → history/medications/DDI → proposal review → secondary plan/sign. Draft edits autosave once a draft exists. Register patient includes one editable working note; page notes are removed throughout registration and follow-up. The demographic form before initial creation remains local until valid, and the working note is disabled; do not claim unsent values are saved.
 
 - Names: Unicode letters after NFC normalization, nonempty, no whitespace/digits/punctuation; preserve casing. Sex `M|F`; integer age 18–99. Patient ID is exactly ten **ASCII digits stored as text**, globally unique even among archived patients. Clinical status `first_time|established` is required. Phone is optional text, not a number; do not invent country validation.
 - Valid demographics atomically create patient plus registration draft. A duplicate race yields one creation and a clear conflict for the other; never automatically merge records.
@@ -67,11 +67,11 @@ The shared chart includes demographics, signed chronology, signed assessment com
 
 Autosave: approximately one-second debounce and save on page transition. Show saving/saved/failed; only acknowledged writes are durable. Preserve in-memory edits on error and warn on navigation with pending edits. Offline editing is out of scope. Use revisions for patient, draft, plan, and administrative pointers; a stale update returns `412` and requires reconciliation, never silent overwrite.
 
-Page notes carry page, author ID/display snapshot, server timestamp, and text. They never influence applicability, patient projections, inference evidence, prompts, CPTs, DDI, or proposal selection. Enforce this by serialization allowlists. Signed notes are frozen; corrections use addenda. Notes can change the encounter revision without changing the analysis fingerprint.
+The working note is `draft_data.working_note`, shown on Register patient and saved through normal draft autosave. It never influences applicability, patient projections, inference evidence, prompts, CPTs, DDI, or proposal selection. Enforce this by serialization allowlists. Working-note edits can change the encounter revision without changing the analysis fingerprint. There are no page-note controls or GET/POST note routes. Legacy note rows and immutable v1 signed payloads/hashes are retained; new `signed-encounter-v2` snapshots omit page notes. Addenda remain available for signed-record corrections.
 
 Enforce at most one open draft per patient with a partial database uniqueness constraint on lifecycle `draft`, plus a patient-row lock during creation. Generation/review readiness is separate state; failures and deactivation do not release the slot. Concurrent creation, including two requests by the same author, permits one draft only. Another physician receives a generic open-draft conflict without contents; the author can resume it. Signing or confirmed discard releases the slot atomically.
 
-Relevant patient or applicability changes invalidate only affected questions and their acceptances. Regeneration preserves earlier runs/history, establishes new originals under the encounter's pinned bundle, and does not carry forward old adjustments. Unaffected questions retain their valid references; notes and plan edits do not trigger inference.
+Relevant patient or applicability changes invalidate only affected questions and their acceptances. Regeneration preserves earlier runs/history, establishes new originals under the encounter's pinned bundle, and does not carry forward old adjustments. Unaffected questions retain their valid references; working-note and plan edits do not trigger inference.
 
 ## 3. Architecture and repository structure
 
@@ -175,7 +175,7 @@ Use relational columns for identifiers, ownership, state, uniqueness, revisions,
 | Patients/revisions | Unique ten-digit text ID, names, sex, age, clinical status, phone, archive flag, revision; changed fields/actor/time history |
 | Encounters | Patient, kind, author, visit time, prior signed source, lifecycle (`draft`, `signed`, `discarded`), revision; partial unique constraint on patient for `draft`; derived generation/review readiness |
 | Assessments/history/medications/effects | Encounter and definition version; explicit completeness/status, typed answers and nullable results; drug-only entries; effect status plus nullable severity, versioned adverse-effect questionnaire item responses/completeness/results |
-| Notes | Encounter/page, immutable note ID, author snapshot, time/text; separate from analysis-visible history |
+| Legacy notes (retained storage only) | Existing encounter/page, immutable note ID, author snapshot, time/text; no active capture/read route; retained for historical and backup compatibility |
 | Plans/signed snapshots/addenda | Immutable initial proposal reference; revisioned secondary text/change history; full signed snapshot/hash, signer/time; append-only attributed correction |
 | Content/network versions/bundles | Immutable payload/XML/manifest, source hash, status and review record; versions retained; activation pointer revision per workflow |
 | DDI data | Dataset release, concepts/aliases, source documents/bytes or immutable raw source artifacts, directional evidence, coverage declarations, review decisions/import report |
@@ -194,13 +194,13 @@ Add migrations with the feature using them. Use foreign keys and uniqueness to e
 
 Hash canonical UTF-8 JSON with sorted object keys, preserved semantically ordered arrays, explicit null/missing status, schema version, and finite numeric values. Never hash a presentation string. For XML keep both exact source bytes/hash and a parsed ordered contract/hash; do not assume arbitrary XML serialization preserves metadata or CPT ordering. A content approval references the hash of the immutable content files; keep the approval record outside that hash to avoid a self-referential digest. Changing content invalidates its prior approval.
 
-The analysis fingerprint includes analysis-visible patient/draft facts, reconciled medications, baseline clinical facts, and pinned content. It excludes notes, names/identifier/phone unless an explicitly permitted analytical field is needed (identifiers and names are never model inputs), UI state, and secondary-plan edits. A run additionally pins network/bundle, DDI, prompt/template/mapping, provider configuration, and engine versions. Signed snapshots preserve the full displayed record, including notes and demographics, even when those fields are not analytical.
+The analysis fingerprint includes analysis-visible patient/draft facts, reconciled medications, baseline clinical facts, and pinned content. It excludes the working note and legacy note keys, names/identifier/phone unless an explicitly permitted analytical field is needed (identifiers and names are never model inputs), UI state, and secondary-plan edits. A run additionally pins network/bundle, DDI, prompt/template/mapping, provider configuration, and engine versions. New `signed-encounter-v2` snapshots retain demographics and full draft data, including the working note, but omit the page-notes field. Existing v1 payloads and hashes remain unchanged.
 
-A new active bundle/configuration does not silently rebase a pinned encounter or its saved runs. Compare per-question typed patient projections and applicability dependencies, not just the encounter timestamp. Changed relevant facts invalidate the affected run/adjustments and acceptance; regenerate only affected applicable questions, preserving unaffected current artifacts and the encounter's pinned bundle. A note-only change does not invalidate probability acceptance. DDI-only changes refresh the proposal and final review without an unrelated LLM call.
+A new active bundle/configuration does not silently rebase a pinned encounter or its saved runs. Compare per-question typed patient projections and applicability dependencies, not just the encounter timestamp. Changed relevant facts invalidate the affected run/adjustments and acceptance; regenerate only affected applicable questions, preserving unaffected current artifacts and the encounter's pinned bundle. A working-note-only change does not invalidate probability acceptance. DDI-only changes refresh the proposal and final review without an unrelated LLM call.
 
 ### 4.3 HTTP conventions
 
-All routes below are under `/api/v1`. Internal IDs are UUIDs. JSON has explicit schema versions and decimal percentage strings; list queries use bounded cursor pagination (default 25, maximum 100), stable ordering, and validated filters. Mutations require session/role checks and CSRF protection. Use `If-Match`/ETag for mutable revisions and `Idempotency-Key` for create/generate/adjust/reset/retry/accept/sign/note/addendum/recovery commands. Same key and body returns the original result; changed body with the same key is `409`.
+All routes below are under `/api/v1`. Internal IDs are UUIDs. JSON has explicit schema versions and decimal percentage strings; list queries use bounded cursor pagination (default 25, maximum 100), stable ordering, and validated filters. Mutations require session/role checks and CSRF protection. Use `If-Match`/ETag for mutable revisions and `Idempotency-Key` for create/generate/adjust/reset/retry/accept/sign/addendum/recovery commands. Same key and body returns the original result; changed body with the same key is `409`.
 
 ```json
 {"code":"STALE_REVISION","message":"The draft changed. Reload and reconcile your edits.","field_errors":{},"request_id":"uuid","retryable":false}
@@ -213,7 +213,7 @@ Use `401` missing/revoked session, `403` denied role/ownership, `404` inaccessib
 | `POST /auth/login`, `/auth/logout`; `GET /me`; `PATCH /me/preferences`; `POST /me/password` | Identity, research-warning requirement, preference, revocation |
 | `GET/POST /physicians`; `PATCH /physicians/{id}`; `POST .../deactivate`, `.../reactivate` | Admin-only credentials/state; reviewed draft-set confirmation on discard |
 | `GET/POST /patients`; `GET/PATCH /patients/{id}`; `POST .../archive`, `.../unarchive` | Shared reads, physician writes, admin archive; create returns patient and registration draft |
-| `POST /patients/{id}/encounters`; `GET/PATCH /encounters/{id}`; `POST .../notes`, `.../discard` | Single-draft creation; generic `409 OPEN_DRAFT_EXISTS`; author-only draft reads/writes and artifacts; shared authorized read after signing |
+| `POST /patients/{id}/encounters`; `GET/PATCH /encounters/{id}`; `POST .../discard` | Single-draft creation; generic `409 OPEN_DRAFT_EXISTS`; author-only draft reads/writes and artifacts; shared authorized read after signing; working note uses draft PATCH |
 | `GET /content/assessments/{type}`; `GET /content/history`; `GET /drugs?query=...` | Authenticated released definitions and catalog for forms; expose version IDs |
 | `POST /ddi/check` | Local drug-only check, explicit dataset version; report is not an LLM response |
 | `POST /encounters/{id}/generation-batches`; `GET /generation-batches/{id}`; `POST /question-runs/{id}/retry-original` | Automatic author-context generation, durable progress/transparency, exact failed-question resume |
@@ -482,9 +482,9 @@ For every question display together: question, network version, **exact saved pa
 
 The author explicitly accepts each question's exact current probabilities and matching successful result, including unchanged originals. Probability edits/reset, relevant input changes and regeneration invalidate affected acceptance. Pending, failed or stale current values cannot be accepted; successful recalculation or reset and renewed review are required.
 
-Signing is one transaction locking patient/encounter: check active author, single-draft lifecycle, expected encounter/plan/review revisions, acknowledged saves, a complete current original proposal/DDI report, and exact current per-question acceptances and successful matching results. Recheck projection/applicability freshness and the declared archive policy. Freeze original and accepted CPTs/outputs, adjusted recommendations, patient inputs, network/prompt/template/execution versions, plan edits and acceptor/signer/timestamps in the signed snapshot. Release the draft slot and append audit atomically. Idempotent repeats return the same signed record. An unrelated note change needs the latest encounter revision, without rerunning inference or invalidating probability acceptance.
+Signing is one transaction locking patient/encounter: check active author, single-draft lifecycle, expected encounter/plan/review revisions, acknowledged saves, a complete current original proposal/DDI report, and exact current per-question acceptances and successful matching results. Recheck projection/applicability freshness and the declared archive policy. Freeze original and accepted CPTs/outputs, adjusted recommendations, patient inputs, network/prompt/template/execution versions, plan edits and acceptor/signer/timestamps in the signed snapshot. Release the draft slot and append audit atomically. Idempotent repeats return the same signed record. An unrelated working-note change needs the latest encounter revision, without rerunning inference or invalidating probability acceptance.
 
-After signing, no clinical/plan/note/probability mutation is allowed through any route. Any active physician may append dated correction text with their own attribution to any signed encounter; original signer attribution remains intact. Changed structured assessments belong in a new follow-up.
+After signing, no clinical/plan/working-note/probability mutation is allowed through any route. Any active physician may append dated correction text with their own attribution to any signed encounter; original signer attribution remains intact. Changed structured assessments belong in a new follow-up.
 
 Required browser surfaces:
 
@@ -492,7 +492,7 @@ Required browser surfaces:
 |---|---|
 | Login/research notice | Role/username/password, generic failure, Register message, every-login physician notice |
 | Role dashboards | Shared searchable directory, own resumable drafts; admin navigation to all governance tools |
-| Registration/follow-up wizard | Validated progression, autosave state, notes, explicit skip/bypass, source dates, conflict/retry/readonly states |
+| Registration/follow-up wizard | Validated progression, autosave state, Register patient working note, explicit skip/bypass, source dates, conflict/retry/readonly states |
 | History/DDI | Drug-only demo-catalog input, reconciliation, severity/conflict/evidence and uncovered catalog drugs |
 | Proposal/final plan | Sequential progress, all transparency fields, every CPT slider/row, original-adjusted comparison, reset/local retry, calculation/freshness labels, acceptance, separate plan edits and sign eligibility |
 | Patient chart | Signed snapshots versus current demographics, author-only draft content, chronology, any-physician addenda, authorized print |
@@ -507,7 +507,7 @@ Use X-INSIGHT wordmark, restrained teal, dense clinical layout, semantic state l
 
 CSV: stable English headers, UTF-8, proper quoting, spreadsheet-formula neutralization for text fields, no credentials. Preserve Patient ID as ten digit bytes; document importing the column as text because CSV has no type information. Do not use spreadsheet formulas to preserve zeros.
 
-Printable HTML: current demographics and signed chronology, assessment completeness, history, medications/DDI coverage, original proposal and secondary plans, signatures and attributed notes/addenda. For every clinical question include complete original CPTs/output/recommendation and final accepted CPTs/output/recommendation, network/template versions, adjustment indicators and accepting physician/timestamps. Report final equality separately from adjustment history when adjusted then reset. Exclude private drafts from shared reports; physician printing remains proposed under §1.3. Escape text and provide legible page breaks for complete CPT tables. No PDF dependency.
+Printable HTML: current demographics and signed chronology, assessment completeness, history, medications/DDI coverage, original proposal and secondary plans, signatures and attributed addenda. Omit page notes, including those retained inside historical v1 snapshots; do not rewrite those snapshots. For every clinical question include complete original CPTs/output/recommendation and final accepted CPTs/output/recommendation, network/template versions, adjustment indicators and accepting physician/timestamps. Report final equality separately from adjustment history when adjusted then reset. Exclude private drafts from shared reports; physician printing remains proposed under §1.3. Escape text and provide legible page breaks for complete CPT tables. No PDF dependency.
 
 Append audit for login successes/failures, administrator actions, record/model changes, original runs/retries/tool access, completed slider adjustments and automatic redistribution, resets, calculation outcomes, probability acceptance, signing/addenda, exports and recovery. Include actor/time/patient/encounter/question/run/revision and required before-and-after CPT values, including redistributed states. Successful mutations and audit commit together. Failure/historical outcomes must not claim current success. Stable attribution survives renaming/deactivation; admin can view/filter, and application roles cannot edit/delete events. Exclude keys and unrelated clinical text.
 
@@ -632,7 +632,7 @@ The session-level mapping is in tasks.md. This matrix prevents scope loss.
 | FR-13 | §5 unanswered C-SSRS, completeness, skip |
 | FR-14 | §2.2, §5–6 structured history, drug-only catalog, DDI coverage |
 | FR-15 | §7–9 original proposal, CPT review/adjusted recommendations, separate secondary plan/signature |
-| FR-16 | §2.3, §8.1, §9.1 notes, saved draft/adjustment state and confirmed discard |
+| FR-16 | §2.3, §8.1, §9.1 working note, saved draft/adjustment state and confirmed discard |
 | FR-20 | §2.2 follow-up, §7.1 follow-up questions, §9 sign/chronology |
 | FR-21 | §2.2, §5 four tri-state effects and severity |
 | FR-22 | §2.1–2.3, §4, §9 ownership, immutable signatures, addenda |

@@ -27,7 +27,7 @@
  * Phone update is optional free text with no country validation (like S06);
  * it is analysis_visible false (an identifier, never a model input), unlike
  * the 12 typed values which are the only analysis-visible history source.
- * Page notes (S13) are a separate channel and never influence history.
+ * The draft working note never influences history.
  *
  * The 412 path stays inside the shared useAutosave hook (keeps edits +
  * reload/reconcile UI); a failed save never shows Saved (the wizard save

@@ -3,6 +3,8 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
+The latest bounded follow-up [removes page notes and keeps the working note
+(2026-10-20)](s13.md#follow-up-2026-10-20--remove-page-notes-keep-the-working-note).
 The [2026-10-20 UI refinement](s61.md#follow-up-2026-10-20--shared-ui-refinement)
 updates shared navigation, typography, cards, forms, tables, and sign-in presentation.
 The latest recorded checkpoint is [S42](s42.md) (2026-10-17): provider
@@ -35,8 +37,9 @@ provide current project orientation and local/server setup instructions.
 The [encounter-draft follow-up](s07.md#follow-up-2026-10-18--one-page-per-wizard-step)
 shows each wizard step on its own page. The
 [registration entry follow-up](s07.md#follow-up-2026-10-18--registration-opens-on-the-wizard)
-opens Register new patient on that wizard: demographics and both note boxes
-are step 1, and the post-create notes page is gone. A later
+opens Register new patient on that wizard; the post-create notes page is gone.
+The S13 follow-up above supersedes its two-note-box placement with the working
+note only. A later
 [follow-up](s07.md#follow-up-2026-10-18--adverse-effects-leave-the-registration-wizard)
 removes Adverse effects from that registration wizard and keeps them on follow-up.
 
@@ -79,7 +82,7 @@ groups criteria A–F into cards with accessible answer controls and a clearer s
 | S10 | [Implement PANSS without implicit minimum answers (2026-10-04)](s10.md) |
 | S11 | [Implement C-SSRS form and distinct results (2026-10-04)](s11.md) |
 | S12 | [Draft and implement structured history and adverse effects (2026-10-05)](s12.md) |
-| S13 | [Add attributed page notes and prove separation (2026-10-05)](s13.md) |
+| S13 | [Page notes (2026-10-05); removed, working note retained (2026-10-20)](s13.md) |
 | S14 | [Build shared chart and follow-up draft entry (2026-10-05)](s14.md) |
 | S15 | [Parse one source through the ingestion interface (2026-10-05)](s15.md) |
 | S16.a | [First bounded cut across real source formats (2026-10-06)](s16-a.md) |

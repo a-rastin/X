@@ -25,7 +25,7 @@
  * effects, Medications, Proposal review (FR-20). Back/Continue and the step
  * list move one page at a time.
  * Registration opens on that same wizard (`#/patients/new` before a draft
- * exists). Saved demographics, page notes, and the working note are step 1
+ * exists). Saved demographics and the working note are step 1
  * (`#register`) only — not a second page, and not chrome on later steps.
  *
  * E2E selector contract (dev-test owns the journey specs; S60
@@ -52,7 +52,6 @@ import { HistorySection } from "../history/HistorySection";
 import { EffectsSection } from "../history/EffectsSection";
 import { MedicationsSection } from "../medications/MedicationsSection";
 import { ProposalReviewPanel } from "../reasoning/ProposalReviewPanel";
-import { NotesSection } from "../notes/NotesSection";
 import { FollowupBaselinePanel } from "../patients/chart/FollowupBaselinePanel";
 import { useAutosave } from "./useAutosave";
 import {
@@ -612,100 +611,53 @@ function EncounterWizard({
               patient={patient}
               notice={registrationNoticeFor(encounterId)}
             />
-            <DemographicsDraftPanels
-              encounterId={encounterId}
-              autosave={autosave}
-              onSessionExpired={sessionExpired}
-            />
+            <DemographicsDraftPanels autosave={autosave} />
           </>
         )}
 
         {currentStep.id === "diagnosis" && (
-          <>
-            <DiagnosisSection
-              encounterId={encounterId}
-              autosave={autosave}
-              onSessionExpired={sessionExpired}
-              stepNumber={stepIndex + 1}
-            />
-            <NotesSection
-              encounterId={encounterId}
-              page="diagnosis"
-              autosave={autosave}
-              onSessionExpired={sessionExpired}
-            />
-          </>
+          <DiagnosisSection
+            encounterId={encounterId}
+            autosave={autosave}
+            onSessionExpired={sessionExpired}
+            stepNumber={stepIndex + 1}
+          />
         )}
 
         {currentStep.id === "panss" && (
-          <>
-            <PanssSection
-              encounterId={encounterId}
-              autosave={autosave}
-              onSessionExpired={sessionExpired}
-              stepNumber={stepIndex + 1}
-            />
-            <NotesSection
-              encounterId={encounterId}
-              page="panss"
-              autosave={autosave}
-              onSessionExpired={sessionExpired}
-            />
-          </>
+          <PanssSection
+            encounterId={encounterId}
+            autosave={autosave}
+            onSessionExpired={sessionExpired}
+            stepNumber={stepIndex + 1}
+          />
         )}
 
         {currentStep.id === "cssrs" && (
-          <>
-            <CssrsSection
-              encounterId={encounterId}
-              autosave={autosave}
-              onSessionExpired={sessionExpired}
-              stepNumber={stepIndex + 1}
-            />
-            <NotesSection
-              encounterId={encounterId}
-              page="cssrs"
-              autosave={autosave}
-              onSessionExpired={sessionExpired}
-            />
-          </>
+          <CssrsSection
+            encounterId={encounterId}
+            autosave={autosave}
+            onSessionExpired={sessionExpired}
+            stepNumber={stepIndex + 1}
+          />
         )}
 
         {currentStep.id === "history" && (
-          <>
-            <HistorySection
-              encounterId={encounterId}
-              autosave={autosave}
-              onSessionExpired={sessionExpired}
-              stepNumber={stepIndex + 1}
-            />
-            {/* Page notes render SEPARATELY from history: never inside the history
-              analysis_visible list. This distinct panel carries page/author/time
-              from server values; S40/S41/S59 assert the noninterference end to end. */}
-            <NotesSection
-              encounterId={encounterId}
-              page="history"
-              autosave={autosave}
-              onSessionExpired={sessionExpired}
-            />
-          </>
+          <HistorySection
+            encounterId={encounterId}
+            autosave={autosave}
+            onSessionExpired={sessionExpired}
+            stepNumber={stepIndex + 1}
+          />
         )}
 
         {currentStep.id === "effects" && (
-          <>
-            <EffectsSection
-              encounterId={encounterId}
-              autosave={autosave}
-              onSessionExpired={sessionExpired}
-              stepNumber={stepIndex + 1}
-            />
-            <NotesSection
-              encounterId={encounterId}
-              page="effects"
-              autosave={autosave}
-              onSessionExpired={sessionExpired}
-            />
-          </>
+          <EffectsSection
+            encounterId={encounterId}
+            autosave={autosave}
+            onSessionExpired={sessionExpired}
+            stepNumber={stepIndex + 1}
+          />
         )}
 
         {currentStep.id === "medications" && (
@@ -713,20 +665,12 @@ function EncounterWizard({
             {/* S20 medications + DDI (plan.md §§2.2, 6.3, 9; FR-14-16, FR-20):
               demo-catalog drug-only selection in the shared autosave body with a
               strict validating save + explicit follow-up reconciliation, and the
-              versioned DDI evidence panel with stale fencing. Page notes render
-              separately below via the reusable control (page key matches backend
-              ALLOWED_PAGES). */}
+              versioned DDI evidence panel with stale fencing. */}
             <MedicationsSection
               encounterId={encounterId}
               autosave={autosave}
               onSessionExpired={sessionExpired}
               stepNumber={stepIndex + 1}
-            />
-            <NotesSection
-              encounterId={encounterId}
-              page="medications"
-              autosave={autosave}
-              onSessionExpired={sessionExpired}
             />
           </>
         )}
@@ -739,21 +683,12 @@ function EncounterWizard({
               gates pass — no extra Generate click, no run per keystroke. Ordered
               per-question states, lazy persisted transparency, the immutable
               proposal with pinned DDI, and a sign entry blocked with reasons for
-              failed/stale/partial runs (S49/S50 own signing). Page notes render
-              separately below via the reusable control (page key matches backend
-              ALLOWED_PAGES; notes never enter projections — see
-              features/reasoning/api.ts). */}
+              failed/stale/partial runs (S49/S50 own signing). */}
             <ProposalReviewPanel
               encounterId={encounterId}
               autosave={autosave}
               onSessionExpired={sessionExpired}
               stepNumber={stepIndex + 1}
-            />
-            <NotesSection
-              encounterId={encounterId}
-              page="proposal"
-              autosave={autosave}
-              onSessionExpired={sessionExpired}
             />
           </>
         )}

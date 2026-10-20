@@ -300,12 +300,17 @@ def test_start_freezes_facts_and_hides_sentinels(admin_client, clean_registry, m
     assert saved.status_code == 200, saved.text
     revision = saved.json()["revision"]
 
-    noted = owner.post(
-        f"/api/v1/encounters/{encounter_id}/notes",
-        json={"page": "history", "text": "SENTINEL-NOTE-SECRET"},
+    noted = owner.patch(
+        f"/api/v1/encounters/{encounter_id}",
+        json={
+            "draft_data": {
+                **owner.get(f"/api/v1/encounters/{encounter_id}").json()["draft_data"],
+                "working_note": "SENTINEL-NOTE-SECRET",
+            }
+        },
         headers={**_auth_headers(owner_csrf), "If-Match": contracts.format_etag(revision)},
     )
-    assert noted.status_code == 201, noted.text
+    assert noted.status_code == 200, noted.text
     revision = noted.json()["revision"]
 
     package = _synthetic_package()
@@ -478,12 +483,17 @@ def test_note_only_edits_keep_fingerprint_while_relevant_edits_stale(
     first_fp = first_body["batch"]["fingerprint"]
     first_id = first_body["batch"]["id"]
 
-    noted = owner.post(
-        f"/api/v1/encounters/{encounter_id}/notes",
-        json={"page": "history", "text": "just a note"},
+    noted = owner.patch(
+        f"/api/v1/encounters/{encounter_id}",
+        json={
+            "draft_data": {
+                **owner.get(f"/api/v1/encounters/{encounter_id}").json()["draft_data"],
+                "working_note": "just a note",
+            }
+        },
         headers={**_auth_headers(owner_csrf), "If-Match": contracts.format_etag(revision)},
     )
-    assert noted.status_code == 201, noted.text
+    assert noted.status_code == 200, noted.text
     note_revision = noted.json()["revision"]
 
     read_after_note = owner.get(f"/api/v1/generation-batches/{first_id}")
@@ -624,12 +634,17 @@ def test_start_ownership_not_found_idempotency_and_no_partial_rows(
     )
     assert saved.status_code == 200, saved.text
     revision = saved.json()["revision"]
-    noted = owner.post(
-        f"/api/v1/encounters/{encounter_id}/notes",
-        json={"page": "history", "text": "SENTINEL-NOTE-SECRET"},
+    noted = owner.patch(
+        f"/api/v1/encounters/{encounter_id}",
+        json={
+            "draft_data": {
+                **owner.get(f"/api/v1/encounters/{encounter_id}").json()["draft_data"],
+                "working_note": "SENTINEL-NOTE-SECRET",
+            }
+        },
         headers={**_auth_headers(owner_csrf), "If-Match": contracts.format_etag(revision)},
     )
-    assert noted.status_code == 201, noted.text
+    assert noted.status_code == 200, noted.text
     revision = noted.json()["revision"]
 
     package = _synthetic_package()

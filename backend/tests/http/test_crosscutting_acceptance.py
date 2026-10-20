@@ -384,8 +384,8 @@ def _setup_sentinel_encounter(
     )
     assert saved.status_code == 200, saved.text
     revision = int(saved.json()["revision"])
-    noted = _post_note(client, csrf, encounter_id, "diagnosis", sentinels["note"], revision)
-    assert noted.status_code == 201, noted.text
+    noted = _save_working_note(client, csrf, encounter_id, sentinels["note"], revision)
+    assert noted.status_code == 200, noted.text
     return patient_id, encounter_id, int(noted.json()["revision"]), sentinels
 
 
@@ -416,12 +416,17 @@ def _setup_encounter(
     return patient_id, encounter_id, int(saved.json()["revision"])
 
 
-def _post_note(
-    client: TestClient, csrf: str, encounter_id: str, page: str, note_text: str, revision: int
+def _save_working_note(
+    client: TestClient, csrf: str, encounter_id: str, note_text: str, revision: int
 ):
-    return client.post(
-        f"/api/v1/encounters/{encounter_id}/notes",
-        json={"page": page, "text": note_text},
+    return client.patch(
+        f"/api/v1/encounters/{encounter_id}",
+        json={
+            "draft_data": {
+                **client.get(f"/api/v1/encounters/{encounter_id}").json()["draft_data"],
+                "working_note": note_text,
+            }
+        },
         headers={**_auth_headers(csrf), "If-Match": contracts.format_etag(revision)},
     )
 
@@ -509,18 +514,18 @@ def test_two_physicians_isolated_while_one_run_fails(clean_registry, monkeypatch
     patient_a, encounter_a, revision_a = _setup_encounter(
         client_a, csrf_a, "0012345601", {"h_a": "yes", "h_b": "no"}
     )
-    noted_a = _post_note(
-        client_a, csrf_a, encounter_a, "diagnosis", "SENTINEL-NOTE-A-SECRET", revision_a
+    noted_a = _save_working_note(
+        client_a, csrf_a, encounter_a, "SENTINEL-NOTE-A-SECRET", revision_a
     )
-    assert noted_a.status_code == 201, noted_a.text
+    assert noted_a.status_code == 200, noted_a.text
     revision_a = int(noted_a.json()["revision"])
     _patient_b, encounter_b, revision_b = _setup_encounter(
         client_b, csrf_b, "0012345602", {"h_a": "no", "h_b": "yes"}
     )
-    noted_b = _post_note(
-        client_b, csrf_b, encounter_b, "diagnosis", "SENTINEL-NOTE-B-SECRET", revision_b
+    noted_b = _save_working_note(
+        client_b, csrf_b, encounter_b, "SENTINEL-NOTE-B-SECRET", revision_b
     )
-    assert noted_b.status_code == 201, noted_b.text
+    assert noted_b.status_code == 200, noted_b.text
     revision_b = int(noted_b.json()["revision"])
 
     started_a = _start_batches(
@@ -978,10 +983,10 @@ def test_payloads_exclude_notes_sentinels_and_forgeries_denied_without_mutation(
     )
     assert saved.status_code == 200, saved.text
     revision = int(saved.json()["revision"])
-    noted = _post_note(
-        client, csrf, encounter_id, "diagnosis", "SENTINEL-NOTE-SECRET <b>markup</b>", revision
+    noted = _save_working_note(
+        client, csrf, encounter_id, "SENTINEL-NOTE-SECRET <b>markup</b>", revision
     )
-    assert noted.status_code == 201, noted.text
+    assert noted.status_code == 200, noted.text
     revision = int(noted.json()["revision"])
 
     package = _package("s60_sec_q", "h_a", "h_b")
@@ -1227,7 +1232,7 @@ def test_payloads_exclude_notes_sentinels_and_forgeries_denied_without_mutation(
             f"/api/v1/encounters/{encounter_id}/notes",
             headers=_auth_headers(admin_csrf),
         ).status_code
-        == 403
+        == 404
     )
     xxe = admin.post(
         "/api/v1/networks",

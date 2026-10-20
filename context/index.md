@@ -65,7 +65,7 @@
 
 ## R
 
-- [registration-flow.md](registration-flow.md) — Why new-patient registration opens the wizard, and why adverse effects are follow-up only.
+- [registration-flow.md](registration-flow.md) — Wizard entry, follow-up-only adverse effects, working-note retention and historical compatibility after page-note removal.
 
 ## S
 

@@ -6,6 +6,7 @@ import {
   uniquePatientId,
   ensurePhysician,
   physicianSession,
+  saveWorkingNoteWithRetry,
   loginAs,
   acknowledgeWarning,
 } from "./helpers";
@@ -109,26 +110,6 @@ async function patchDraftWithRetry(
   return ((await response.json()).revision as number) ?? revision + 1;
 }
 
-async function postNoteWithRetry(
-  request: import("@playwright/test").APIRequestContext,
-  physician: { username: string; password: string },
-  draftId: string,
-  pageKey: string,
-  text: string,
-  revision: number,
-): Promise<number> {
-  const attempt = async (csrfToken: string) =>
-    request.post(`/api/v1/encounters/${draftId}/notes`, {
-      headers: { "X-CSRF-Token": csrfToken, "If-Match": `"${revision}"` },
-      data: { page: pageKey, text },
-    });
-  let response = await attempt(await physicianSession(request, physician));
-  if (response.status() === 401) {
-    response = await attempt(await physicianSession(request, physician));
-  }
-  expect(response.status(), await response.text()).toBe(201);
-  return ((await response.json()).revision as number) ?? revision + 1;
-}
 
 const TWO_NODE_XML =
   '<BIF VERSION="0.3"><NETWORK><NAME>TwoNode</NAME>' +
@@ -845,7 +826,7 @@ test("S48c §1 completed CPT exposes roots, totals, diffs, badges, single-state,
     1,
   );
   const sentinel = `cptsentinel${Date.now().toString(36)}`;
-  await postNoteWithRetry(request, physician, draftId, "proposal", sentinel, rev2);
+  await saveWorkingNoteWithRetry(request, physician, draftId, sentinel, rev2);
 
   const batchId = "cpt-batch-1111-4111-8111-111111111111";
   const runId = "cpt-run-2222-4222-8222-222222222222";
@@ -941,10 +922,8 @@ test("S48c §1 completed CPT exposes roots, totals, diffs, badges, single-state,
     await firstNode.locator("summary").click();
     await expect(cpt).toContainText("Showing 4 of 4 rows");
 
-    // Sentinel: notes never leak into CPT DOM.
-    await expect(page.locator("#notes-proposal-list")).toContainText(sentinel, {
-      timeout: 10000,
-    });
+    // Sentinel: working notes never leak into CPT DOM.
+    await expect(page.locator(".xi-notes-panel")).toHaveCount(0);
     await expect(page.getByTestId("proposal-review")).not.toContainText(sentinel);
     await expect(cpt).not.toContainText(sentinel);
   } finally {

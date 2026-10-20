@@ -349,7 +349,7 @@ test("registration form stays local-only until POST succeeds", async ({
   await page.getByLabel("Family name").fill(uniqueLetters("novak"));
   await page.getByLabel("Patient ID").fill(uniquePatientId());
   await page.getByRole("radio", { name: "M", exact: true }).check();
-  await page.getByLabel("Age").fill("30");
+  await page.getByLabel("Age", { exact: true }).fill("30");
   await page.getByRole("radio", { name: "First-time" }).check();
   await expect(page.getByRole("button", { name: "Register patient" })).toBeEnabled();
   // Pre-creation demographics are local only: never advertised as durable.

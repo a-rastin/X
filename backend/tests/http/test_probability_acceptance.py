@@ -1011,12 +1011,17 @@ def test_note_only_edit_preserves_acceptance(clean_registry, monkeypatch) -> Non
     acc_id = accepted.json()["acceptance"]["id"]
 
     encounter = client.get(f"/api/v1/encounters/{encounter_id}").json()
-    noted = client.post(
-        f"/api/v1/encounters/{encounter_id}/notes",
-        json={"page": "proposal", "text": "Review note: probabilities look right."},
+    noted = client.patch(
+        f"/api/v1/encounters/{encounter_id}",
+        json={
+            "draft_data": {
+                **client.get(f"/api/v1/encounters/{encounter_id}").json()["draft_data"],
+                "working_note": "Review note: probabilities look right.",
+            }
+        },
         headers={**_auth_headers(csrf), "If-Match": contracts.format_etag(encounter["revision"])},
     )
-    assert noted.status_code == 201, noted.text
+    assert noted.status_code == 200, noted.text
 
     reread = client.get(f"/api/v1/question-runs/{run_id}/review").json()
     assert reread["input_freshness"]["stale"] is False

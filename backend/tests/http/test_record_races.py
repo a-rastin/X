@@ -1041,12 +1041,17 @@ def test_shared_demographics_edit_stales_without_granting_draft_access(
     assert after_phone["input_freshness"]["stale"] is False
     assert after_phone["is_accepted"] is True
     # Note-only edit preserves as well (encounter revision unchanged by patient edit).
-    noted = phone_client.post(
-        f"/api/v1/encounters/{phone_enc}/notes",
-        json={"page": "proposal", "text": "Review note."},
+    noted = phone_client.patch(
+        f"/api/v1/encounters/{phone_enc}",
+        json={
+            "draft_data": {
+                **phone_client.get(f"/api/v1/encounters/{phone_enc}").json()["draft_data"],
+                "working_note": "Review note.",
+            }
+        },
         headers={**_auth_headers(phone_csrf), "If-Match": contracts.format_etag(phone_rev)},
     )
-    assert noted.status_code == 201, noted.text
+    assert noted.status_code == 200, noted.text
     reread = phone_client.get(f"/api/v1/question-runs/{run_id}/review").json()
     assert reread["input_freshness"]["stale"] is False
     assert reread["is_accepted"] is True

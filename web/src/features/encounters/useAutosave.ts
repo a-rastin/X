@@ -20,9 +20,7 @@
  * Command POSTs that bump the encounter revision outside this PATCH path
  * (diagnosis acknowledgment/bypass) resynchronize through
  * `applyServerSnapshot` instead of another PATCH — one saved base, one
- * revision fence, no separate persistence mechanism. S13 page notes bump the
- * revision without changing draft_data and resynchronize through
- * `applyExternalRevision` instead (same fence, editor untouched). S20
+ * revision fence, no separate persistence mechanism. S20
  * medications strict saves change only the medications slice outside PATCH
  * and resynchronize through `applySavedSlice` (same fence, other keys kept).
  */
@@ -302,26 +300,6 @@ export function useAutosave(options: UseAutosaveOptions) {
     [clearTimer],
   );
 
-  /** Advance the revision fence after an out-of-band command POST bumped it
-   * without changing draft_data (S13 page notes). The draft editor is left
-   * untouched — only the base revision/timestamp move — so concurrent
-   * unsaved edits survive and the next PATCH fences the fresh revision. A
-   * currently-saved status advances to the new revision; dirty/failed/
-   * conflict states keep their kind (the next explicit save reconciles). */
-  const applyExternalRevision = useCallback(
-    (revision: number, timestamp: string | null) => {
-      clearTimer();
-      setBaseRevision(revision);
-      setServerTimestamp(timestamp);
-      setSaveState((previous) =>
-        previous.kind === "saved"
-          ? { kind: "saved", revision, serverTimestamp: timestamp }
-          : previous,
-      );
-    },
-    [clearTimer],
-  );
-
   /** Adopt one server-stamped slice after a command POST changed only that
    * key outside this PATCH path (S20 medications strict save stamps
    * provenance + pins + reconciliation server-side). Merges the server
@@ -371,7 +349,6 @@ export function useAutosave(options: UseAutosaveOptions) {
     adoptServerVersion,
     retryOnFreshRevision,
     applyServerSnapshot,
-    applyExternalRevision,
     applySavedSlice,
     saveNow,
   };
