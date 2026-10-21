@@ -176,6 +176,8 @@ def test_prod_topology_only_edge_publishes_ports() -> None:
     assert "prod_recovery" in blocks["app"] and "prod_recovery" in blocks["worker"]
     assert "db:5432" in compose_text, "prod DATABASE_URL stays on the internal network"
     assert "x_insight.reasoning" in blocks["worker"]
+    for service in ("app", "worker"):
+        assert "DDI_DEFAULT_DATASET_VERSION: ${DDI_DEFAULT_DATASET_VERSION:-}" in blocks[service]
     for banned in ("ControlledStub", "TEST_", "VITE_", "target: development"):
         assert banned not in compose_text, f"prod compose must not contain {banned!r}"
 

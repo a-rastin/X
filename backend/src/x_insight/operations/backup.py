@@ -101,6 +101,8 @@ BACKUP_MANIFEST_VERSION = "backup-v1"
 
 # ponytail: 100 MiB ceiling; S58 measures real CPT/snapshot sizes first.
 MAX_ARCHIVE_BYTES = 100 * 1024 * 1024
+MAX_FILE_BYTES = 256 * 1024 * 1024
+MAX_EXPANDED_BYTES = 512 * 1024 * 1024
 
 # Tables captured in stable FK-dependency order (deterministic inventory AND
 # root-first: every table's FK parents appear earlier). ``sessions`` is
@@ -410,6 +412,11 @@ def write_archive(part_path: Path, payloads: dict[str, bytes], manifest: dict[st
     owns the atomic rename/cleanup.
     """
     manifest_bytes = _canonical_bytes(manifest)
+    sizes = [len(value) for value in payloads.values()] + [len(manifest_bytes)]
+    if any(size > MAX_FILE_BYTES for size in sizes):
+        raise ValueError(f"backup file exceeds {MAX_FILE_BYTES} byte bound")
+    if sum(sizes) > MAX_EXPANDED_BYTES:
+        raise ValueError(f"backup expands beyond {MAX_EXPANDED_BYTES} byte bound")
     with zipfile.ZipFile(
         part_path, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=6
     ) as archive:

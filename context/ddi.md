@@ -4,17 +4,18 @@
 
 **Id:** e0809f6b-19b4-4666-b22b-60d4ff23afda
 **Type:** decision
-**Status:** needs-review
+**Status:** active
 **Evidence:** confirmed
 **Source:** project design doc DDI-Module.md, 2026-10-03
-**Revisit when:** the DDI module is implemented or the checker strategy changes
-**Verification:** contradicted — as of 2026-10-20, backend/src/x_insight/ddi/checker.py implements the deterministic checker and router.py exposes runtime lookup; the description below that this is only a proposed design needs review. The original rationale is retained pending that review.
+**Revisit when:** the checker strategy changes
+**Verification:** corroborated — re-confirmed on 2026-10-21 against the confirmed existing foundation and backend/src/x_insight/ddi/checker.py and router.py. The 2026-10-20 review flag identified a stale proposed-only description; implementation is now acknowledged without changing the original rationale.
 
 The runtime DDI checker is a deterministic database lookup over a
 versioned knowledge base built offline. The LLM is never asked at
 runtime whether two drugs interact. This is recorded in the design as
-the most important architectural decision. The module is a proposed
-design, not an implemented checker.
+the most important architectural decision. The deterministic checker and runtime
+HTTP lookup are implemented; real source publication remains separately gated
+by owner approval.
 
 **Reason:** an LLM answering "do these interact?" would introduce
 hallucination risk, nondeterministic answers, latency, difficult
@@ -142,3 +143,86 @@ medication strings or strength stripping.
 reviewed rules. Rejected because silent mismatches would corrupt
 interaction results; salt removal, strength stripping and
 combination-drug splitting are applied only under reviewed rules.
+
+## Complete supplied DDInter scope with stable source identities
+
+**Id:** fc8a7ef1-c2f4-4e9d-8941-d0d5b0732578
+**Type:** decision
+**Status:** active
+**Evidence:** confirmed
+**Source:** explicit implementation request, 2026-10-21
+
+Include every drug ID from both endpoints of the eight supplied DDInter CSVs:
+1,939 IDs in this snapshot, including non-psychiatric entries. Completeness means
+the supplied files, not DDInter's broader catalog. The supporting explanation is
+preserved with the eight CSVs. Stable concept/catalog identifiers derive from the
+DDInter ID, not a name or file order; source spelling is retained and the generic
+type is `drug`.
+
+**Reason:** the supplied files define the requested scope. Their rows do not
+reliably classify ingredients, combinations, herbal products, or other subtypes;
+assigning finer types would manufacture source knowledge.
+
+**Rejected alternatives:** a psychiatric-only filter or 100-drug cap would omit
+requested supplied entities. Name/order-derived identities would break the
+confirmed source-identity contract. Additional catalog acquisition, scraping, and
+monograph merging are outside this release's chosen source boundary.
+
+The [operations runbook](../docs/ddinter-operations.md) covers reproducible builds,
+review, and publication; snapshot counts/hashes are in its linked evidence.
+
+## Positive assertions remain limited clinical coverage
+
+**Id:** 21e2d4e0-bfaf-4e14-824d-406b3d06a5d7
+**Type:** decision
+**Status:** active
+**Evidence:** confirmed
+**Source:** explicit implementation request, 2026-10-21
+**See:** ddi.md#evidence-model-preserves-every-source-assertion — fe841c13-85c8-4146-a20a-29e08e4d91c7 — as of 2026-10-21
+
+The DDInter profile includes every supplied occurrence (222,383 in this snapshot),
+including repeated exports of the same unordered pair. Repetition preserves source
+locations and is not independent clinical corroboration. A/B order is retained as
+source provenance while causal direction stays unknown.
+
+**Reason:** the CSVs provide positive severity assertions, not complete pair
+coverage, mechanisms, management recommendations, or pair-specific citations.
+Therefore a complete input import still becomes `released_limited`, with no excluded
+sources and missing pairs reported as `coverage_unavailable`. This exception to
+the excluded-source rule applies only to `ddinter-positive-assertions/1`.
+
+**Rejected alternatives:** deduplicating away occurrences would lose traceability;
+interpreting an absent row as no interaction would overstate coverage. Generated
+clinical prose or scraped explanations would exceed the accepted severity-only
+scope. Native `Major > Moderate > Minor > Unknown` is preserved instead of
+relabeling Major as Contraindicated or inferring management advice. Unknown-only
+assertions are still interactions, not missing coverage.
+
+Explicit owner approval remains required, including every Major occurrence's
+hash/location reference and explicit acceptance of severity-only data and
+unavailable pair coverage. Successful parsing is not clinical review. The
+operational approval procedure is in the [runbook](../docs/ddinter-operations.md#2-complete-explicit-owner-review).
+
+## Release association survives default changes without legacy conversion
+
+**Id:** 1c054d08-2d65-42b1-94da-c1fffe7dce14
+**Type:** decision
+**Status:** active
+**Evidence:** confirmed
+**Source:** explicit implementation request, 2026-10-21
+
+Search, medication validation/checking, analysis, follow-up, and signed history
+retain their associated immutable release. Existing `catalog_*` IDs are not
+automatically matched or converted to DDInter IDs. Before a strict report pin,
+a separately validated selection-release association preserves the catalog used
+for the selected IDs; only strict medication save establishes a current report.
+
+**Reason:** a medication shown from one release must not later be validated
+against another after default publication, reload, or reentry. Existing encounter
+provenance, fingerprints, analysis references, and signed records must remain
+interpretable against their original release.
+
+**Rejected alternative:** automatically rebase drafts or convert legacy IDs when
+publishing DDInter. This would silently change the release/identity meaning of
+existing data. A configurable default instead changes selection for unassociated
+work; previous releases remain readable and support rollback without deletion.

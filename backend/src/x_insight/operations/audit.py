@@ -19,6 +19,7 @@ migrations; this table is append-only and never updated in place).
 from __future__ import annotations
 
 import uuid
+from collections.abc import Mapping
 from typing import Any
 
 from sqlalchemy import (
@@ -247,7 +248,7 @@ def safe_event(row: Mapping[str, Any]) -> dict[str, Any]:
     safe_details = dict(details) if isinstance(details, _Mapping) else {}
     occurred = row.get("occurred_at")
     try:
-        occurred_text = contracts.serialize_utc(occurred)
+        occurred_text = contracts.serialize_utc(occurred) if occurred is not None else str(occurred)
     except Exception:
         occurred_text = str(occurred)
     actor_display = safe_details.get("actor_display")

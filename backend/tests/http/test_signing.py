@@ -1015,6 +1015,138 @@ def test_sign_freezes_releases_slot_idempotent(clean_registry, monkeypatch, tmp_
 # --- S49 §2: stale/pending/mismatched currents rejected; freshness inside tx ---
 
 
+def test_signed_legacy_medications_keep_release_pin_after_ddinter_default(
+    clean_registry, monkeypatch, tmp_path
+) -> None:
+    """A signed monograph list can resume and reconcile after DDInter publication."""
+    from tests.ddi.test_ddinter_release import fixture_approval, stage
+    from x_insight.ddi import publish
+
+    client, csrf, encounter_id, patient_id, revision, batch, runs = _signable_two_question_setup(
+        clean_registry, monkeypatch, tmp_path, "dr_ddinter_pin"
+    )
+    old_medications = client.get(f"/api/v1/encounters/{encounter_id}/medications").json()
+    original_version = old_medications["dataset_version"]
+    acceptances, review_revisions = {}, {}
+    for run in runs.values():
+        review = client.get(f"/api/v1/question-runs/{run['id']}/review").json()
+        accepted = client.post(
+            f"/api/v1/question-runs/{run['id']}/acceptance",
+            json=_accept_body(review),
+            headers=_auth_headers(csrf),
+        )
+        assert accepted.status_code == 200, accepted.text
+        acceptances[run["id"]] = accepted.json()["acceptance"]
+        review_revisions[run["id"]] = accepted.json()["review_revision"]
+    planned = client.patch(
+        f"/api/v1/encounters/{encounter_id}/secondary-plan",
+        json={"text": "Synthetic test plan", "expected_plan_revision": 1},
+        headers={**_auth_headers(csrf), "If-Match": contracts.format_etag(1)},
+    )
+    assert planned.status_code == 200, planned.text
+    signed = client.post(
+        f"/api/v1/encounters/{encounter_id}/sign",
+        json=_sign_body_after_accept(revision, 2, batch["id"], acceptances, review_revisions),
+        headers={**_auth_headers(csrf), "If-Match": contracts.format_etag(revision)},
+    )
+    assert signed.status_code == 200, signed.text
+    frozen = signed.json()["snapshot"]
+    root, _, _ = stage(tmp_path / "ddinter")
+    new_version = publish.publish_release(root, fixture_approval(root), clean_registry)["version"]
+    monkeypatch.setenv("DDI_DEFAULT_DATASET_VERSION", new_version)
+    assert client.get("/api/v1/drugs").json()["dataset_version"] == new_version
+    baseline = {
+        "history_values": {},
+        "prior_scores": {},
+        "medications": [{"catalog_drug_id": "catalog_alpha"}, {"catalog_drug_id": "catalog_gamma"}],
+    }
+    # Client-supplied release claims are rejected; only the stored signature can pin.
+    forged = client.post(
+        f"/api/v1/patients/{patient_id}/encounters",
+        json={
+            "kind": "follow_up",
+            "baseline_encounter_id": encounter_id,
+            "baseline": {**baseline, "dataset_version": new_version},
+        },
+        headers=_auth_headers(csrf),
+    )
+    assert forged.status_code == 422, forged.text
+    mismatch = client.post(
+        f"/api/v1/patients/{patient_id}/encounters",
+        json={
+            "kind": "follow_up",
+            "baseline_encounter_id": encounter_id,
+            "baseline": {**baseline, "medications": [{"catalog_drug_id": "catalog_alpha"}]},
+        },
+        headers=_auth_headers(csrf),
+    )
+    assert mismatch.status_code == 422, mismatch.text
+    assert mismatch.json()["code"] == "BASELINE_MEDICATIONS_MISMATCH"
+    other = client.post(
+        "/api/v1/patients",
+        json={
+            "identifier": "0012345688",
+            "given_name": "Other",
+            "family_name": "Patient",
+            "sex": "F",
+            "age": 30,
+            "clinical_status": "first_time",
+        },
+        headers=_auth_headers(csrf),
+    )
+    assert other.status_code == 201, other.text
+    discarded = client.post(
+        f"/api/v1/encounters/{other.json()['draft']['id']}/discard",
+        json={"confirm": True},
+        headers={**_auth_headers(csrf), "If-Match": contracts.format_etag(1)},
+    )
+    assert discarded.status_code == 200, discarded.text
+    cross_patient = client.post(
+        f"/api/v1/patients/{other.json()['patient']['id']}/encounters",
+        json={"kind": "follow_up", "baseline_encounter_id": encounter_id, "baseline": baseline},
+        headers=_auth_headers(csrf),
+    )
+    assert cross_patient.status_code == 422, cross_patient.text
+    assert cross_patient.json()["code"] == "INVALID_BASELINE"
+    resumed = client.post(
+        f"/api/v1/patients/{patient_id}/encounters",
+        json={"kind": "follow_up", "baseline_encounter_id": encounter_id, "baseline": baseline},
+        headers=_auth_headers(csrf),
+    )
+    assert resumed.status_code == 201, resumed.text
+    copied = resumed.json()["draft_data"]["medications"]
+    assert copied["dataset_version"] == original_version
+    assert copied["catalog_version"] == old_medications["catalog_version"]
+    assert copied["medication_fingerprint"] is None and copied["generated_at"] is None
+    followup_id = resumed.json()["encounter"]["id"]
+    forged_patch = client.patch(
+        f"/api/v1/encounters/{followup_id}",
+        json={"draft_data": {"medications": {**copied, "dataset_version": new_version}}},
+        headers={**_auth_headers(csrf), "If-Match": contracts.format_etag(1)},
+    )
+    assert forged_patch.status_code == 200, forged_patch.text
+    assert (
+        client.get(f"/api/v1/encounters/{followup_id}/medications").json()["dataset_version"]
+        == original_version
+    )
+    saved = client.post(
+        f"/api/v1/encounters/{followup_id}/medications",
+        json={
+            "medications": baseline["medications"],
+            "dataset_version": original_version,
+            "reconciliation": {"status": "reconciled", "baseline_encounter_id": encounter_id},
+        },
+        headers={**_auth_headers(csrf), "If-Match": contracts.format_etag(2)},
+    )
+    assert saved.status_code == 200, saved.text
+    assert saved.json()["dataset_version"] == original_version
+    report = client.get(f"/api/v1/encounters/{followup_id}/ddi-report").json()
+    assert report["report_status"] == "current"
+    assert report["report"]["dataset_version"] == original_version
+    chart = client.get(f"/api/v1/patients/{patient_id}/chart").json()
+    assert chart["signed_snapshots"][0] == frozen
+
+
 def test_sign_rejects_stale_pending_mismatched_with_server_recheck(
     clean_registry, monkeypatch, tmp_path
 ) -> None:

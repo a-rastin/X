@@ -11,7 +11,7 @@ from pathlib import Path
 from typing import Any
 
 CONCEPT_TYPES = frozenset(
-    {"ingredient", "combination_drug", "herbal", "food", "substance", "other"}
+    {"ingredient", "combination_drug", "herbal", "food", "substance", "other", "drug"}
 )
 
 
@@ -128,7 +128,7 @@ def _validate(payload: Mapping[str, Any]) -> None:
         if catalog_id is not None:
             _text(catalog_id, "catalog_drug_id")
             if (
-                row["concept_type"] not in {"ingredient", "combination_drug"}
+                row["concept_type"] not in {"ingredient", "combination_drug", "drug"}
                 or catalog_id in catalog_ids
             ):
                 raise ValueError("catalog must contain unique drug-only identifiers")

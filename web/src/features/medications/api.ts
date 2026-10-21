@@ -9,7 +9,7 @@
  *
  * Contract (see backend/src/x_insight/cases/medications.py, read-only):
  * - GET /drugs?query=&limit=&offset=&dataset_version= — authenticated
- *   demo-catalog search for the form (no CSRF on reads, like other GET
+ *   release catalog search for the form (no CSRF on reads, like other GET
  *   previews). Returns {dataset_version, catalog_version, items[]
  *   {catalog_drug_id, concept_id, canonical_name, concept_type}, total,
  *   limit, offset}.
@@ -57,6 +57,9 @@ export interface CatalogDrug {
 export interface DrugSearchResult {
   dataset_version: string;
   catalog_version: string;
+  source_label?: string;
+  source_profile?: string;
+  detail_availability?: string;
   items: CatalogDrug[];
   total: number;
   limit: number;
@@ -79,6 +82,7 @@ export interface MedicationsPreview {
   provenance: Record<string, Record<string, unknown>>;
   reconciliation: MedicationsReconciliation | null;
   dataset_version: string | null;
+  selection_dataset_version?: string | null;
   catalog_version: string | null;
   medication_fingerprint: string | null;
   generated_at: string | null;
@@ -91,6 +95,11 @@ export interface MedicationsPreview {
 }
 
 export interface DdiEvidence {
+  source_format?: string | null;
+  source_name?: string | null;
+  source_record?: Record<string, unknown> | null;
+  source_record_number?: number | null;
+  detail_availability?: string | null;
   source_severity: string | null;
   direction: string | null;
   raw_text: string | null;
@@ -120,6 +129,9 @@ export interface DdiPair {
 export interface DdiReport {
   dataset_version: string;
   catalog_version: string;
+  source_label?: string;
+  source_profile?: string;
+  detail_availability?: string;
   medication_fingerprint: string;
   resolved_medications: CatalogDrug[];
   coverage_unavailable_medications: CatalogDrug[];
@@ -191,17 +203,21 @@ async function request<T>(path: string, options: RequestOptions = {}): Promise<T
   return (payload ?? {}) as T;
 }
 
-/** Demo-catalog search for the medication form (reads need no CSRF). */
+/** Release catalog search for the medication form (reads need no CSRF). */
 export async function searchDrugs(
   query: string,
   limit = 25,
   offset = 0,
+  datasetVersion?: string | null,
 ): Promise<DrugSearchResult> {
   const params = new URLSearchParams({
     query,
     limit: String(limit),
     offset: String(offset),
   });
+  if (datasetVersion) {
+    params.set("dataset_version", datasetVersion);
+  }
   return request<DrugSearchResult>(`/drugs?${params.toString()}`);
 }
 
@@ -217,6 +233,7 @@ export async function getMedications(
 export interface SaveMedicationsOptions {
   /** Reuse only for retry of the same attempt; new edits need a fresh key. */
   idempotencyKey?: string;
+  datasetVersion?: string;
   reconciliation?: MedicationsReconciliation | null;
 }
 
@@ -230,6 +247,9 @@ export async function saveMedications(
   options: SaveMedicationsOptions = {},
 ): Promise<MedicationsPreview> {
   const body: Record<string, unknown> = { medications: entries };
+  if (options.datasetVersion !== undefined) {
+    body["dataset_version"] = options.datasetVersion;
+  }
   if (options.reconciliation !== undefined) {
     body["reconciliation"] = options.reconciliation;
   }

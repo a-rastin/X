@@ -129,41 +129,23 @@ def search_drugs(
     engine = db_module.get_engine()
     from x_insight.ddi import checker as checker_module
 
-    version = dataset_version or checker_module.latest_release_version(engine)
-    if version is None:
-        return error_response(503, "DATASET_UNAVAILABLE", "DDI dataset is unavailable.", request_id)
     try:
+        version = dataset_version or checker_module.latest_release_version(engine)
+        if version is None:
+            return error_response(
+                503, "DATASET_UNAVAILABLE", "DDI dataset is unavailable.", request_id
+            )
         release = checker_module.get_release_row(engine, version)
+        resolved_limit, resolved_offset = contracts.parse_pagination(limit, offset)
+        page, total = checker_module.search_concepts(
+            engine, release["id"], query, resolved_limit, resolved_offset
+        )
     except checker_module.CheckError as exc:
+        return error_response(exc.status_code, exc.code, exc.message, request_id, exc.field_errors)
+    except contracts.ContractError as exc:
         return error_response(exc.status_code, exc.code, exc.message, request_id, exc.field_errors)
     except Exception:
         return error_response(503, "DATASET_UNAVAILABLE", "DDI dataset is unavailable.", request_id)
-    try:
-        rows = checker_module.list_concepts(engine, release["id"])
-    except checker_module.CheckError as exc:
-        return error_response(exc.status_code, exc.code, exc.message, request_id, exc.field_errors)
-    except Exception:
-        return error_response(503, "DATASET_UNAVAILABLE", "DDI dataset is unavailable.", request_id)
-    items = [
-        {
-            "catalog_drug_id": row["catalog_drug_id"],
-            "concept_id": row["concept_id"],
-            "canonical_name": row["canonical_name"],
-            "concept_type": row["concept_type"],
-        }
-        for row in rows
-    ]
-    if query is not None and query.strip() != "":
-        needle = " ".join(query.lower().split())
-        items = [
-            row
-            for row in items
-            if needle in str(row["canonical_name"]).lower()
-            or needle in str(row["catalog_drug_id"]).lower()
-        ]
-    resolved_limit, resolved_offset = contracts.parse_pagination(limit, offset)
-    total = len(items)
-    page = items[resolved_offset : resolved_offset + resolved_limit]
     return JSONResponse(
         status_code=200,
         content={
@@ -173,6 +155,7 @@ def search_drugs(
             "total": total,
             "limit": resolved_limit,
             "offset": resolved_offset,
+            **checker_module.source_details(release),
         },
     )
 

@@ -59,9 +59,7 @@ def _patient_id_for_batch(session: Session, batch: Mapping[str, Any]) -> str | N
             return None
         row = (
             session.execute(
-                select(cases_tables.encounters).where(
-                    cases_tables.encounters.c.id == encounter_id
-                )
+                select(cases_tables.encounters).where(cases_tables.encounters.c.id == encounter_id)
             )
             .mappings()
             .first()

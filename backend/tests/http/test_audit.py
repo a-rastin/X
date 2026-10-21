@@ -459,8 +459,6 @@ def _single_question_setup(clean_registry, monkeypatch, tmp_path, username: str)
 
 
 def _run_generation_once(engine, cpt_payload: dict[str, Any]):
-    from datetime import timedelta as _timedelta
-
     endpoint = provider_module.DeterministicProviderEndpoint(
         script=[{"type": "final", "cpt": cpt_payload}]
     )
@@ -584,9 +582,7 @@ def test_audit_filters_by_actor_operation_time_target(clean_registry, monkeypatc
     assert by_operation["total"] >= 1
     assert all(item["operation"] == "patients.create.success" for item in by_operation["items"])
 
-    by_target = admin.get(
-        "/api/v1/audit-events", params={"patient_id": patient_id}
-    ).json()
+    by_target = admin.get("/api/v1/audit-events", params={"patient_id": patient_id}).json()
     assert by_target["total"] >= 1
     for item in by_target["items"]:
         assert item["details"].get("patient_id") == patient_id
@@ -598,18 +594,12 @@ def test_audit_filters_by_actor_operation_time_target(clean_registry, monkeypatc
     ).json()
     assert empty_target["total"] == 0 and empty_target["items"] == []
 
-    by_actor = admin.get(
-        "/api/v1/audit-events", params={"actor": "dr_s52_filter"}
-    ).json()
+    by_actor = admin.get("/api/v1/audit-events", params={"actor": "dr_s52_filter"}).json()
     assert by_actor["total"] >= 1
 
-    future = admin.get(
-        "/api/v1/audit-events", params={"since": "2999-01-01T00:00:00Z"}
-    ).json()
+    future = admin.get("/api/v1/audit-events", params={"since": "2999-01-01T00:00:00Z"}).json()
     assert future["total"] == 0
-    past = admin.get(
-        "/api/v1/audit-events", params={"until": "2000-01-01T00:00:00Z"}
-    ).json()
+    past = admin.get("/api/v1/audit-events", params={"until": "2000-01-01T00:00:00Z"}).json()
     assert past["total"] == 0
 
     bad_time = admin.get("/api/v1/audit-events", params={"since": "not-a-time"})
@@ -738,9 +728,7 @@ def test_attribution_survives_rename_and_deactivation(clean_registry, monkeypatc
     ).json()
     assert events["total"] >= 1
     event = next(
-        item
-        for item in events["items"]
-        if item["details"].get("identifier") == "0012345678"
+        item for item in events["items"] if item["details"].get("identifier") == "0012345678"
     )
     # Snapshot display name survives the rename; immutable id still matches.
     assert event["actor"] == "dr_s52_rename"
@@ -871,7 +859,9 @@ def test_adjustment_reset_acceptance_sign_events_through_http(
         "/api/v1/audit-events", params={"operation": "cpt_adjustment.success"}
     ).json()
     adjustment = next(
-        item for item in adjustment_events["items"] if item["details"].get("question_run_id") == run_id
+        item
+        for item in adjustment_events["items"]
+        if item["details"].get("question_run_id") == run_id
     )
     assert adjustment["details"]["patient_id"] == patient_id
     assert adjustment["details"]["encounter_id"] == encounter_id
@@ -971,7 +961,9 @@ def test_original_run_failure_audited_without_false_success(
             config, grant_token="", database_url=db_module.get_test_database_url()
         )
         outcome = worker_module.run_once(
-            clean_registry, adapter, now=contracts.utcnow(),
+            clean_registry,
+            adapter,
+            now=contracts.utcnow(),
             database_url=db_module.get_test_database_url(),
         )
     finally:
@@ -993,9 +985,7 @@ def test_original_run_failure_audited_without_false_success(
     successes = admin.get(
         "/api/v1/audit-events", params={"operation": "generation.run.success"}
     ).json()
-    assert all(
-        item["details"].get("question_run_id") != run_id for item in successes["items"]
-    )
+    assert all(item["details"].get("question_run_id") != run_id for item in successes["items"])
 
     review = client.get(f"/api/v1/question-runs/{run_id}/review").json()
     assert review["baseline"] is None

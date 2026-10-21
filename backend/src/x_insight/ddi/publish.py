@@ -461,6 +461,11 @@ def publish_release(
     """Validate staging + manifest, then import the release in one transaction."""
     from sqlalchemy import text
 
+    candidate = _load_json(Path(staging_dir) / "candidate_dataset.json", "candidate_dataset.json")
+    if isinstance(candidate, dict) and candidate.get("format") == "ddi-ddinter-stream/1":
+        from x_insight.ddi.ddinter import publish_ddinter
+
+        return publish_ddinter(staging_dir, _load_manifest(manifest_path), engine)
     dataset, report = _load_staging(staging_dir)
     manifest = _load_manifest(manifest_path)
     gate = validate_for_publish(dataset, report, manifest)
@@ -470,6 +475,9 @@ def publish_release(
     corpus = build_corpus_report(dataset, report, manifest)
 
     with engine.begin() as connection:
+        connection.execute(
+            text("SELECT pg_advisory_xact_lock(:key)"), {"key": int(content_hash[:15], 16)}
+        )
         existing = (
             connection.execute(
                 text("SELECT version FROM ddi_dataset_releases WHERE content_hash = :hash"),

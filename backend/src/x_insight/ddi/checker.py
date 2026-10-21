@@ -35,6 +35,7 @@ only; unknown stays visible via ``has_unknown_severity``.
 
 from __future__ import annotations
 
+import os
 import re
 from typing import Any
 
@@ -101,23 +102,27 @@ def _fetch_release_row(engine: Any, version: str) -> dict[str, Any]:
     return dict(row)
 
 
-def _fetch_catalog(engine: Any, release_id: Any) -> list[dict[str, Any]]:
-    from sqlalchemy import text
+def _fetch_catalog(
+    engine: Any, release_id: Any, catalog_ids: list[str] | None = None
+) -> list[dict[str, Any]]:
+    from sqlalchemy import bindparam, text
 
+    if catalog_ids == []:
+        return []
     try:
         with engine.connect() as connection:
-            rows = (
-                connection.execute(
-                    text(
-                        "SELECT concept_id, canonical_name, concept_type, catalog_drug_id "
-                        "FROM ddi_concepts WHERE release_id = :rid "
-                        "AND catalog_drug_id IS NOT NULL ORDER BY catalog_drug_id ASC"
-                    ),
-                    {"rid": release_id},
-                )
-                .mappings()
-                .all()
+            sql = (
+                "SELECT concept_id, canonical_name, concept_type, catalog_drug_id "
+                "FROM ddi_concepts WHERE release_id = :rid AND catalog_drug_id IS NOT NULL "
             )
+            params: dict[str, Any] = {"rid": release_id}
+            if catalog_ids is not None:
+                sql += "AND catalog_drug_id IN :ids "
+                params["ids"] = sorted(set(catalog_ids))
+            statement = text(sql + "ORDER BY catalog_drug_id ASC")
+            if catalog_ids is not None:
+                statement = statement.bindparams(bindparam("ids", expanding=True))
+            rows = connection.execute(statement, params).mappings().all()
     except Exception as exc:
         raise CheckError(503, "DATASET_UNAVAILABLE", "DDI dataset is unavailable.") from exc
     return [dict(row) for row in rows]
@@ -126,6 +131,24 @@ def _fetch_catalog(engine: Any, release_id: Any) -> list[dict[str, Any]]:
 def get_release_row(engine: Any, version: str) -> dict[str, Any]:
     """Public release reader (same interface ``check`` uses internally)."""
     return _fetch_release_row(engine, version)
+
+
+def validate_catalog_selection(engine: Any, catalog_ids: list[str], version: str) -> None:
+    """Validate a resumable selection association without generating a DDI report."""
+    if not isinstance(version, str) or not _VERSION_RE.fullmatch(version):
+        raise CheckError(422, "INVALID_DATASET_VERSION", "Invalid selection dataset version.")
+    release = get_release_row(engine, version)
+    if release.get("status") not in ("released_complete", "released_limited"):
+        raise CheckError(503, "DATASET_UNAVAILABLE", "DDI dataset is unavailable.")
+    found = {row["catalog_drug_id"] for row in _fetch_catalog(engine, release["id"], catalog_ids)}
+    missing = sorted(set(catalog_ids) - found)
+    if missing:
+        raise CheckError(
+            422,
+            "INVALID_MEDICATION",
+            f"Unknown catalog drug: {missing[0]}.",
+            {"medications": [f"Unknown catalog_drug_id: {missing[0]}."]},
+        )
 
 
 def list_concepts(engine: Any, release_id: Any) -> list[dict[str, Any]]:
@@ -151,24 +174,80 @@ def list_concepts(engine: Any, release_id: Any) -> list[dict[str, Any]]:
     return [dict(row) for row in rows]
 
 
-def latest_release_version(engine: Any) -> str | None:
-    """Newest published release version (oldest-first, publish-compatible)."""
+def search_concepts(
+    engine: Any, release_id: Any, query: str | None, limit: int, offset: int
+) -> tuple[list[dict[str, Any]], int]:
+    """Filter, count and page the immutable catalog entirely in PostgreSQL."""
     from sqlalchemy import text
 
+    needle = " ".join((query or "").lower().split())
+    where = (
+        "release_id=:rid AND catalog_drug_id IS NOT NULL AND "
+        "(:needle='' OR lower(catalog_drug_id)=:needle OR ("
+        "NOT EXISTS (SELECT 1 FROM ddi_concepts exact WHERE exact.release_id=:rid "
+        "AND lower(exact.catalog_drug_id)=:needle) AND ("
+        "strpos(lower(canonical_name),:needle)>0 OR strpos(lower(catalog_drug_id),:needle)>0)))"
+    )
+    params = {"rid": release_id, "needle": needle, "limit": limit, "offset": offset}
     try:
         with engine.connect() as connection:
+            total = connection.execute(
+                text("SELECT count(*) FROM ddi_concepts WHERE " + where), params
+            ).scalar()
             rows = (
                 connection.execute(
-                    text("SELECT version FROM ddi_dataset_releases ORDER BY created_at ASC")
+                    text(
+                        "SELECT concept_id,canonical_name,concept_type,"
+                        "catalog_drug_id FROM ddi_concepts WHERE "
+                        + where
+                        + " ORDER BY canonical_name ASC,catalog_drug_id ASC "
+                        "LIMIT :limit OFFSET :offset"
+                    ),
+                    params,
                 )
                 .mappings()
                 .all()
             )
-    except Exception:
-        return None
-    if not rows:
-        return None
-    return str(rows[-1]["version"])
+    except Exception as exc:
+        raise CheckError(503, "DATASET_UNAVAILABLE", "DDI catalog is unavailable.") from exc
+    return [dict(row) for row in rows], int(total or 0)
+
+
+def source_details(release: dict[str, Any]) -> dict[str, Any]:
+    manifest = release.get("manifest") or {}
+    if manifest.get("source_profile") == "ddinter-positive-assertions/1":
+        return {
+            "source_label": "DDInter supplied CSV exports",
+            "source_profile": manifest["source_profile"],
+            "detail_availability": "severity_only",
+        }
+    return {"source_label": "Medication monograph catalog"}
+
+
+def latest_release_version(engine: Any) -> str | None:
+    """Configured immutable default, or newest release with deterministic ties."""
+    from sqlalchemy import text
+
+    configured = os.environ.get("DDI_DEFAULT_DATASET_VERSION")
+    if configured:
+        try:
+            get_release_row(engine, configured)
+        except CheckError as exc:
+            raise CheckError(
+                503, "INVALID_DEFAULT_DATASET", "Configured default DDI release is unavailable."
+            ) from exc
+        return configured
+    try:
+        with engine.connect() as connection:
+            value = connection.execute(
+                text(
+                    "SELECT version FROM ddi_dataset_releases ORDER BY created_at "
+                    "DESC,version DESC LIMIT 1"
+                )
+            ).scalar()
+    except Exception as exc:
+        raise CheckError(503, "DATASET_UNAVAILABLE", "DDI dataset is unavailable.") from exc
+    return str(value) if value else None
 
 
 def _fetch_evidence_batch(
@@ -185,7 +264,7 @@ def _fetch_evidence_batch(
             stmt = text(
                 "SELECT source_path, checksum, source_severity, interacting_name, "
                 "raw_text, span_start, span_end, subject_concept_id, "
-                "interacting_concept_id, pair_key, direction, correction "
+                "interacting_concept_id, pair_key, direction, correction, source_record_metadata "
                 "FROM ddi_interaction_evidence WHERE release_id = :rid "
                 "AND pair_key IN :keys ORDER BY source_path ASC, span_start ASC"
             ).bindparams(bindparam("keys", expanding=True))
@@ -217,6 +296,7 @@ def _evidence_entry(row: dict[str, Any]) -> dict[str, Any]:
         "source_hash": row.get("checksum"),
         "subject_concept_id": row.get("subject_concept_id"),
         "interacting_concept_id": row.get("interacting_concept_id"),
+        **(row.get("source_record_metadata") or {}),
     }
 
 
@@ -225,26 +305,30 @@ def _aggregate_pair(
     drug_b: str,
     rows: list[dict[str, Any]],
     release_status: str,
+    source_profile: str | None = None,
 ) -> dict[str, Any]:
     evidence = [_evidence_entry(row) for row in rows]
     severities = [row.get("source_severity") for row in rows]
-    known = [s for s in severities if _rank(s) is not None and str(s).lower() != "unknown"]
-    has_unknown = (
-        any(
-            (not isinstance(s, str))
-            or (str(s).lower() not in SEVERITY_RANK)
-            or (str(s).lower() == "unknown")
-            for s in severities
-        )
-        if severities
-        else False
+    order = (
+        ("Major", "Moderate", "Minor", "Unknown")
+        if source_profile == "ddinter-positive-assertions/1"
+        else SEVERITY_ORDER
     )
-    # Unknown severity stays visible; highest_known excludes it when known exists.
+    ranks = {value.lower(): index for index, value in enumerate(order)}
+    known = [
+        value
+        for value in severities
+        if isinstance(value, str) and value.lower() in ranks and value.lower() != "unknown"
+    ]
+    has_unknown = any(
+        not isinstance(value, str) or value.lower() not in ranks or value.lower() == "unknown"
+        for value in severities
+    )
     highest: str | None = None
     if known:
-        highest = str(sorted(set(known), key=_sort_rank)[0])
+        highest = min(set(known), key=lambda value: ranks[value.lower()])
     elif severities:
-        highest = "unknown"
+        highest = "Unknown" if source_profile == "ddinter-positive-assertions/1" else "unknown"
     distinct = sorted({str(s) for s in severities}) if severities else []
     conflicts = distinct if len(distinct) > 1 else []
     if evidence:
@@ -252,7 +336,12 @@ def _aggregate_pair(
         basis: dict[str, Any] = {
             "basis": "reviewed_evidence",
             "release_status": release_status,
-            "detail": f"{len(evidence)} reviewed assertion(s) for this pair",
+            "detail": (
+                f"{len(evidence)} source occurrence(s); "
+                "repeated exports do not establish independent corroboration"
+                if source_profile == "ddinter-positive-assertions/1"
+                else f"{len(evidence)} reviewed assertion(s) for this pair"
+            ),
         }
     elif release_status == "released_complete":
         status = "covered_no_listed_interaction"
@@ -328,7 +417,7 @@ def check(engine: Any, medications: list[str], dataset_version: str) -> dict[str
     status = str(release.get("status", ""))
     if status not in ("released_complete", "released_limited"):
         raise CheckError(503, "DATASET_UNAVAILABLE", "DDI dataset is unavailable.")
-    catalog = _fetch_catalog(engine, release_id)
+    catalog = _fetch_catalog(engine, release_id, medications)
     by_catalog = {row["catalog_drug_id"]: row for row in catalog}
     for catalog_id in medications:
         if catalog_id not in by_catalog:
@@ -379,7 +468,13 @@ def check(engine: Any, medications: list[str], dataset_version: str) -> dict[str
     evidence_by_key = _fetch_evidence_batch(engine, release_id, [key for _, _, key in pairs_keys])
 
     pairs = [
-        _aggregate_pair(drug_a, drug_b, evidence_by_key[pair_key], status)
+        _aggregate_pair(
+            drug_a,
+            drug_b,
+            evidence_by_key[pair_key],
+            status,
+            source_details(release).get("source_profile"),
+        )
         for drug_a, drug_b, pair_key in pairs_keys
     ]
 
@@ -402,4 +497,5 @@ def check(engine: Any, medications: list[str], dataset_version: str) -> dict[str
         "pairs": pairs,
         "limitations": list(limitations),
         "generated_at": serialize_utc(utcnow()),
+        **source_details(release),
     }

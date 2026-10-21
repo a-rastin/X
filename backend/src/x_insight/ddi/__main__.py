@@ -95,6 +95,11 @@ def main(argv: list[str] | None = None) -> int:
         help="controlled terminology JSON; supplied file must exist and validate",
     )
     build_parser.add_argument("--output", required=True, help="staging directory for outputs")
+    ddinter_parser = sub.add_parser(
+        "build-ddinter", help="build severity-only DDInter CSV review bundle"
+    )
+    ddinter_parser.add_argument("--sources", required=True)
+    ddinter_parser.add_argument("--output", required=True)
     publish_parser = sub.add_parser("publish", help="validate approvals and import a release")
     publish_parser.add_argument(
         "--staging", required=True, help="staging directory holding candidate_dataset.json"
@@ -108,6 +113,20 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
     if args.command == "build":
         return _cmd_build(args)
+    if args.command == "build-ddinter":
+        from x_insight.ddi.ddinter import build_ddinter
+
+        try:
+            report = build_ddinter(args.sources, args.output)
+        except (OSError, ValueError) as exc:
+            print(f"FAILED: {exc}", file=sys.stderr)
+            return 1
+        print(
+            f"{'PASS' if report['passed'] else 'FAIL'}: "
+            f"{report['catalog_count']} drugs, {report['evidence_count']} occurrences; "
+            "owner review awaiting_review"
+        )
+        return 0 if report["passed"] else 1
     if args.command == "publish":
         return _cmd_publish(args)
     parser.error(f"unknown command {args.command}")

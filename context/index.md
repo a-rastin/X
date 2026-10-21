@@ -33,7 +33,7 @@
 
 ## D
 
-- [ddi.md](ddi.md) — DDI module design: deterministic KB lookup, no runtime LLM, evidence model, ingestion pipeline.
+- [ddi.md](ddi.md) — Deterministic DDI lookup, preserved assertions, supplied DDInter scope, limited coverage, stable identities and release association.
 
 ## E
 

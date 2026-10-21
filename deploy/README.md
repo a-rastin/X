@@ -6,6 +6,17 @@ covers deployment operation, upgrades, backup, restore, and rollback. Current
 provider-storage behavior is recorded in [S42](../project-documents/dev/progress/s42.md);
 the dated rehearsal notes below retain their original scope.
 
+For supplied DDInter data, use the [DDInter operations runbook](../docs/ddinter-operations.md)
+for migration `0022`, source/evidence review, privileged atomic publication,
+verification and default rollback. `DDI_DEFAULT_DATASET_VERSION` is forwarded to
+both app and worker; changing its environment value requires recreating both
+services. Existing report pins and selection associations retain their release.
+The full review candidate is ready; genuine owner approval and publication into
+an identified application target remain pending. The isolated full-volume
+[acceptance evidence](../docs/verification/ddinter-2026-10-21/README.md) includes
+backup/restore measurements and their limits. Take pre-upgrade backups using the
+currently deployed version before migration; older `0021` archives remain supported.
+
 Topology (plan.md §3.1): `edge` (Caddy: TLS + static bundle + same-origin
 `/api` proxy, the only externally reachable service) → `app` (FastAPI) +
 `worker` (`python -m x_insight.reasoning` polling loop, spawning private MCP

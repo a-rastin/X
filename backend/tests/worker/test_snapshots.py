@@ -282,6 +282,50 @@ def _start_batch(client, csrf, encounter_id, revision, package, key=None):
 # --- Slice 1: freeze + sentinel exclusion + ownership + stale/invalid denial ---
 
 
+def test_analysis_uses_autosaved_selection_release_before_strict_medication_pin(
+    admin_client, clean_registry, monkeypatch, tmp_path
+) -> None:
+    from tests.ddi.test_ddinter_release import fixture_approval, stage
+    from tests.http.test_medications import _publish_complete
+    from x_insight.ddi import publish
+
+    original = _publish_complete(clean_registry, tmp_path / "original")["version"]
+    client, csrf, encounter_id = _setup_owner_with_draft(
+        admin_client, clean_registry, monkeypatch, "dr_selection_snapshot"
+    )
+    patched = _patch_draft(
+        client,
+        csrf,
+        encounter_id,
+        {
+            "history": {"values": {"h_a": "yes", "h_b": "no"}},
+            "gate": "true",
+            "medications": {
+                "entries": [{"catalog_drug_id": "catalog_alpha"}],
+                "selection_dataset_version": original,
+            },
+        },
+        1,
+    )
+    assert patched.status_code == 200, patched.text
+    root, _, _ = stage(tmp_path / "new")
+    newer = publish.publish_release(root, fixture_approval(root), clean_registry)["version"]
+    monkeypatch.setenv("DDI_DEFAULT_DATASET_VERSION", newer)
+    before = client.get(f"/api/v1/encounters/{encounter_id}/medications").json()
+    assert before["selection_dataset_version"] == original and before["dataset_version"] is None
+    started = _start_batch(client, csrf, encounter_id, 2, _synthetic_package())
+    assert started.status_code == 202, started.text
+    pinned = started.json()["batch"]["pinned_bundle"]
+    assert pinned["ddi_status"] == "valid"
+    assert pinned["ddi_dataset_version"] == original
+    reloaded = client.get(f"/api/v1/generation-batches/{started.json()['batch']['id']}").json()
+    assert reloaded["batch"]["pinned_bundle"]["ddi_dataset_version"] == original
+    after = client.get(f"/api/v1/encounters/{encounter_id}/medications").json()
+    assert after["dataset_version"] is None and after["medication_fingerprint"] is None
+    report = client.get(f"/api/v1/encounters/{encounter_id}/ddi-report").json()
+    assert report["report_status"] == "pending" and report["reason"] == "dataset_not_pinned"
+
+
 def test_start_freezes_facts_and_hides_sentinels(admin_client, clean_registry, monkeypatch) -> None:
     _make_physician(admin_client, "dr_s40_owner")
     _make_physician(admin_client, "dr_s40_other")

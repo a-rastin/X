@@ -126,6 +126,25 @@ EXPECTED_TABLES: tuple[str, ...] = (
 )
 
 
+@pytest.mark.parametrize(
+    "bound,message",
+    [
+        ("MAX_FILE_BYTES", "file exceeds"),
+        ("MAX_EXPANDED_BYTES", "expands beyond"),
+        ("MAX_ARCHIVE_BYTES", "archive"),
+    ],
+)
+def test_backup_enforces_recovery_capacity_bounds(tmp_path, monkeypatch, bound, message):
+    from x_insight.operations import backup, restore
+
+    assert backup.MAX_FILE_BYTES == restore.MAX_FILE_BYTES == 256 * 1024 * 1024
+    assert backup.MAX_EXPANDED_BYTES == restore.MAX_EXPANDED_BYTES == 512 * 1024 * 1024
+    assert backup.MAX_ARCHIVE_BYTES == restore.MAX_ARCHIVE_BYTES == 100 * 1024 * 1024
+    monkeypatch.setattr(backup, bound, 1)
+    with pytest.raises(ValueError, match=message):
+        backup.write_archive(tmp_path / "rejected.zip.part", {"database.json": b"{}"}, {})
+
+
 def _package(question_key: str, field_a: str, field_b: str) -> dict[str, Any]:
     return {
         "manifest": {
@@ -1047,7 +1066,7 @@ def test_backup_includes_full_snapshot_networks_and_policies(
     # tables (sessions never), per-file hashes, deployment + runtime.
     assert manifest["schema_version"] == "backup-v1"
     assert manifest["backup_id"] == backup_id
-    assert manifest["app_schema_version"] == "0021"
+    assert manifest["app_schema_version"] == "0022"
     assert set(manifest["inventory"].keys()) == set(EXPECTED_TABLES)
     assert len(manifest["inventory"]) == 32
     assert "sessions" not in manifest["inventory"]

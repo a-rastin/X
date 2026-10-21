@@ -437,6 +437,52 @@ def _open_draft(client, csrf, identifier: str, values: dict[str, str]):
 # --- S56 §1: exact-digest commit succeeds with fencing + pre-restore backup ---
 
 
+def test_restore_0021_monograph_backup_without_ddinter_columns(
+    clean_registry, monkeypatch, tmp_path
+) -> None:
+    """Historical backups retain the old checker profile after the 0022 migration."""
+    import hashlib
+
+    from tests.http.test_medications import _publish_complete
+    from x_insight.ddi import checker, publish
+
+    version = _publish_complete(clean_registry, tmp_path)["version"]
+    admin, csrf = _admin_client(clean_registry, monkeypatch)
+    blob, _ = _make_backup_blob(admin, csrf, "legacy-0021-ddi")
+    with zipfile.ZipFile(io.BytesIO(blob)) as archive:
+        entries = {name: archive.read(name) for name in archive.namelist()}
+    database = json.loads(entries["database.json"])
+    for row in database["tables"]["ddi_source_documents"]:
+        for column in ("source_format", "source_bytes", "source_metadata"):
+            row.pop(column)
+    for row in database["tables"]["ddi_interaction_evidence"]:
+        row.pop("source_record_metadata")
+    database["tables"]["alembic_version"] = [{"version_num": "0021"}]
+    entries["database.json"] = json.dumps(database, sort_keys=True).encode()
+    manifest = json.loads(entries["manifest.json"])
+    manifest["app_schema_version"] = "0021"
+    manifest["artifacts"]["database.json"] = hashlib.sha256(entries["database.json"]).hexdigest()
+    for name, rows in database["tables"].items():
+        encoded = sorted(contracts.canonical_json(row) for row in rows)
+        manifest["inventory"][name]["sha256"] = hashlib.sha256(
+            b"".join(row + b"\n" for row in encoded)
+        ).hexdigest()
+    entries["manifest.json"] = json.dumps(manifest, sort_keys=True).encode()
+    rewritten = io.BytesIO()
+    with zipfile.ZipFile(rewritten, "w", compression=zipfile.ZIP_DEFLATED) as archive:
+        for name, raw in entries.items():
+            archive.writestr(name, raw)
+    staged = _post_validate(admin, csrf, rewritten.getvalue())
+    assert staged.status_code == 201, staged.text
+    assert staged.json()["status"] == "succeeded", staged.text
+    restored = _post_commit(admin, csrf, staged.json()["id"], staged.json()["confirmation_digest"])
+    assert restored.status_code == 200, restored.text
+    assert publish.get_release(clean_registry, version)["evidence_count"] == 2
+    report = checker.check(clean_registry, ["catalog_alpha", "catalog_beta"], version)
+    assert report["pairs"][0]["highest_known_severity"] == "serious"
+    assert report["pairs"][0]["status"] == "interaction_found"
+
+
 def test_commit_exact_digest_succeeds_with_fencing_and_prebackup(
     clean_registry, monkeypatch
 ) -> None:

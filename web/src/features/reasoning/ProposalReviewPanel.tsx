@@ -94,7 +94,8 @@ import { CptReviewPanel } from "./CptReviewPanel";
 import { SecondaryPlanPanel } from "../plans/SecondaryPlanPanel";
 import { SignPanel } from "../plans/SignPanel";
 import { getDiagnosis, type DiagnosisPreview } from "../assessments/diagnosis/api";
-import { getMedications, type MedicationsPreview } from "../medications/api";
+import { getMedications, type DdiEvidence, type MedicationsPreview } from "../medications/api";
+import { DdiEvidenceList } from "../medications/DdiEvidenceList";
 import {
   clearStoredProposal,
   getBatch,
@@ -1519,6 +1520,8 @@ function ProposalBlock({ batch }: { batch: BatchPayload }) {
           <p className="xi-hint">No pinned DDI report.</p>
         ) : (
           <DdiSummary
+            sourceLabel={report.source_label}
+            detailAvailability={report.detail_availability}
             datasetVersion={report.dataset_version}
             catalogVersion={report.catalog_version}
             generatedAt={report.generated_at}
@@ -1531,9 +1534,7 @@ function ProposalBlock({ batch }: { batch: BatchPayload }) {
               severity: pair.highest_known_severity,
               unknown: pair.has_unknown_severity,
               conflicts: pair.conflicts ?? [],
-              evidence: (pair.evidence ?? []).map(
-                (item) => item.raw_text ?? item.management ?? "Evidence assertion retained.",
-              ),
+              evidence: pair.evidence ?? [],
             }))}
             limitations={(report.limitations ?? []).map((entry) => String(entry))}
           />
@@ -1544,6 +1545,8 @@ function ProposalBlock({ batch }: { batch: BatchPayload }) {
 }
 
 function DdiSummary({
+  sourceLabel,
+  detailAvailability,
   datasetVersion,
   catalogVersion,
   generatedAt,
@@ -1551,6 +1554,8 @@ function DdiSummary({
   pairs,
   limitations,
 }: {
+  sourceLabel?: string;
+  detailAvailability?: string;
   datasetVersion: string;
   catalogVersion: string;
   generatedAt: string;
@@ -1561,16 +1566,19 @@ function DdiSummary({
     severity: string | null;
     unknown: boolean;
     conflicts: string[];
-    evidence: string[];
+    evidence: DdiEvidence[];
   }[];
   limitations: string[];
 }) {
   return (
     <div>
       <p className="xi-hint" style={{ marginTop: 0 }}>
-        Dataset <code className="xi-mono">{datasetVersion}</code> · catalog{" "}
+        {sourceLabel ? `${sourceLabel} · ` : ""}Dataset <code className="xi-mono">{datasetVersion}</code> · catalog{" "}
         <code className="xi-mono">{catalogVersion}</code> · generated {generatedAt}
       </p>
+      {detailAvailability === "severity_only" && (
+        <p className="xi-hint">Mechanism and management details were not supplied; this source provides severity assertions only.</p>
+      )}
       {uncovered.length > 0 && (
         <div className="xi-warning-panel" role="status">
           <p style={{ margin: "0 0 4px" }}>
@@ -1601,20 +1609,7 @@ function DdiSummary({
                   Conflicting severities reported: {pair.conflicts.join(", ")}
                 </p>
               )}
-              {pair.evidence.length > 0 && (
-                <details className="xi-proposal-details">
-                  <summary>
-                    Evidence assertions ({pair.evidence.length})
-                  </summary>
-                  <ul>
-                    {pair.evidence.map((text, index) => (
-                      // ponytail: index key is fine — evidence arrives in
-                      // source order; upgrade if reorderable.
-                      <li key={index}>{text}</li>
-                    ))}
-                  </ul>
-                </details>
-              )}
+              <DdiEvidenceList evidence={pair.evidence} />
             </li>
           ))}
         </ul>

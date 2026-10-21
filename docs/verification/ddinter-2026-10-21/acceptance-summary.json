@@ -1,0 +1,83 @@
+{
+  "recorded_date": "2026-10-21",
+  "scope": "Isolated named disposable PostgreSQL databases only; simulated test approval; no real owner approval or application deployment publication.",
+  "host_context": "Shared 2 CPU / approximately 4 GB RAM host with concurrent tests; timings reflect contention.",
+  "candidate_hash": "ed2811f81e566c753aad4772ca81f0ea85e40365d8694e192739660b2fff52b4",
+  "approval_status": {
+    "decision": "awaiting_review",
+    "reviewed_evidence": [],
+    "accept_severity_only": false,
+    "accept_unavailable_pair_coverage": false
+  },
+  "build": {
+    "seconds": 20.98539535600048,
+    "peak_rss_kib": 90432
+  },
+  "import_acceptance_phase": {
+    "seconds": 192.96325288499975,
+    "peak_rss_kib": 206240
+  },
+  "publication_seconds": 83.97134494700003,
+  "publication_measurement_scope": "Approved publish_release call including source/artifact revalidation before the database transaction.",
+  "database_bytes": 193420311,
+  "provenance_records_checked": 222383,
+  "catalog_pagination_ids": 1939,
+  "backup": {
+    "seconds": 146.049082902,
+    "peak_rss_kib": 1511668
+  },
+  "archive_bytes": 19038844,
+  "archive_entries": {
+    "database.json": {
+      "bytes": 219115919,
+      "compressed_bytes": 19036591
+    },
+    "policies.json": {
+      "bytes": 274,
+      "compressed_bytes": 168
+    },
+    "manifest.json": {
+      "bytes": 5232,
+      "compressed_bytes": 1757
+    }
+  },
+  "lookup": {
+    "seconds_10_drugs_45_pairs": 0.1514335950005261,
+    "evidence_query_count": 1,
+    "index": "ix_ddi_evidence_release_pair",
+    "sample_query_execution_milliseconds": 0.039
+  },
+  "restore": {
+    "status": "succeeded",
+    "canonical_table_sha256": {
+      "ddi_dataset_releases": "ccaafe7d7656c780315f3f4b339c666c44a13d6abd7a1a88e6612c9c4cd21323",
+      "ddi_source_documents": "07d43e98dd643404d933b533bbddf38359e3129f01fb808fdce5852617dd9e45",
+      "ddi_concepts": "d03459bfb058a63564893f4c3bc63a7fb42bf0fa844bc5d9817ef06661203021",
+      "ddi_interaction_evidence": "328ef48a547c1a05db44981cdf2d9c5ce9cb18b29eec38d5ce1978c2fac91b16"
+    },
+    "expected_canonical_table_sha256": {
+      "ddi_dataset_releases": "ccaafe7d7656c780315f3f4b339c666c44a13d6abd7a1a88e6612c9c4cd21323",
+      "ddi_source_documents": "07d43e98dd643404d933b533bbddf38359e3129f01fb808fdce5852617dd9e45",
+      "ddi_concepts": "d03459bfb058a63564893f4c3bc63a7fb42bf0fa844bc5d9817ef06661203021",
+      "ddi_interaction_evidence": "328ef48a547c1a05db44981cdf2d9c5ce9cb18b29eec38d5ce1978c2fac91b16"
+    },
+    "original_source_sha256": {
+      "ddinter_downloads_code_A.csv": "a22ca451d2b755ca2331886f7e00540c86f555f9f55704a59a19c691251f52e0",
+      "ddinter_downloads_code_B.csv": "76de5115a55587f0e822e1096b684fd3ddde058fbefcbb19896df58820ace130",
+      "ddinter_downloads_code_D.csv": "c0627ec39965dbe27829e4934cd20d71eb079f4e373287678737bba9423a306a",
+      "ddinter_downloads_code_H.csv": "f0f925f0ba1ee68c4668d3e7a6732719b34623b22a0f5d017f9090e59f63c88e",
+      "ddinter_downloads_code_L.csv": "f54f4486cc00344f8c86508c31c2ca3fad6d1d37ec3af5bcf609b4bbda5507ef",
+      "ddinter_downloads_code_P.csv": "83f8c0edb20d09ef29b8500b48f9623e208379525688ade9e70a7df2d8749d55",
+      "ddinter_downloads_code_R.csv": "1c39c3d4a6e41659b7a988538d7f363867592abc6f41a815de8746f6e2150574",
+      "ddinter_downloads_code_V.csv": "353973fb300453946aea95733e8fb52338e4b59426d2ce6ca318363d4f84f10a",
+      "docs/explanation.txt": "bf4d0bd016c3b0e68a4f96735d789dac16baa9a69495c6019761968dd2d48a4f"
+    },
+    "all_four_ddi_tables_exactly_preserved": true,
+    "measurement_note": "Restore committed; original phase failed a textual JSON ordering comparison before saving metrics. Canonical semantic verification resumed read-only and passed. Precise original restore duration and peak RSS were not recorded."
+  },
+  "resumed_read_only_verification": {
+    "seconds": 65.4066577929998,
+    "peak_rss_kib": 166384,
+    "measurement_scope": "Read-only verification after already committed restore; NOT full restore duration or peak RSS."
+  }
+}

@@ -606,6 +606,273 @@ def test_ddi_report_pending_before_any_save(clean_all, tmp_path) -> None:
     assert body["reason"] in ("dataset_not_pinned", "stale_fingerprint", "reconciliation_required")
 
 
+@pytest.mark.parametrize("new_catalog", ["shared_ids", "disjoint_ddinter_ids"])
+def test_autosaved_selection_release_survives_reload_before_first_strict_pin(
+    clean_all, tmp_path, monkeypatch, new_catalog
+):
+    from sqlalchemy import event
+
+    from tests.ddi.test_ddinter_release import fixture_approval, stage
+    from x_insight.ddi import publish
+
+    client, csrf, _, encounter_id, original = _setup_draft_with_release(
+        clean_all, tmp_path / "original", "dr_selection_resume", "0012350094"
+    )
+    searched = client.get("/api/v1/drugs", params={"query": "Alpha"}).json()
+    assert searched["dataset_version"] == original
+    entries = [{"catalog_drug_id": "catalog_alpha"}]
+    section = {
+        "entries": entries,
+        "provenance": {},
+        "reconciliation": {"status": "not_required", "baseline_encounter_id": None},
+        "selection_dataset_version": searched["dataset_version"],
+        "dataset_version": "ddi-000000000000",
+        "catalog_version": "forged",
+        "medication_fingerprint": "0" * 64,
+        "generated_at": "2000-01-01T00:00:00Z",
+    }
+    statements = []
+
+    def observed(conn, cursor, statement, parameters, context, many):
+        statements.append(statement)
+
+    event.listen(clean_all, "before_cursor_execute", observed)
+    try:
+        associated = client.patch(
+            f"/api/v1/encounters/{encounter_id}",
+            json={"draft_data": {"medications": section}},
+            headers={"X-CSRF-Token": csrf, "If-Match": contracts.format_etag(1)},
+        )
+    finally:
+        event.remove(clean_all, "before_cursor_execute", observed)
+    assert associated.status_code == 200, associated.text
+    assert not any("FROM ddi_interaction_evidence" in sql for sql in statements)
+    pending = _get_report(client, encounter_id).json()
+    assert pending["report_status"] == "pending" and pending["reason"] == "dataset_not_pinned"
+    assert pending["report"] is None
+    if new_catalog == "disjoint_ddinter_ids":
+        root, _, _ = stage(tmp_path / "new")
+        newer = publish.publish_release(root, fixture_approval(root), clean_all)["version"]
+    else:
+        source = tmp_path / "new_sources"
+        source.mkdir()
+        for subject, target in (("Alpha", "Beta"), ("Beta", "Alpha")):
+            monograph(source, subject, [target])
+            with (source / f"{subject}.txt").open("a") as handle:
+                handle.write("\nSynthetic alternate source revision\n")
+        root = tmp_path / "new_shared_candidate"
+        _stage(
+            source,
+            root,
+            vocabulary(
+                [
+                    concept("alpha", "Alpha", catalog="catalog_alpha"),
+                    concept("beta", "Beta", catalog="catalog_beta"),
+                ]
+            ),
+        )
+        approval = _manifest_for_staging(
+            root,
+            tmp_path / "new_shared_approval.json",
+            reviewed_evidence=_reviewed_for_staging(root, ["Alpha.txt", "Beta.txt"]),
+        )
+        newer = publish.publish_release(root, approval, clean_all)["version"]
+    assert newer != original
+    monkeypatch.setenv("DDI_DEFAULT_DATASET_VERSION", newer)
+    assert client.get("/api/v1/drugs").json()["dataset_version"] == newer
+    preview = _get_meds(client, encounter_id).json()
+    assert preview["selection_dataset_version"] == original
+    for key in ("dataset_version", "catalog_version", "medication_fingerprint", "generated_at"):
+        assert preview[key] is None
+    historical = client.get(
+        "/api/v1/drugs",
+        params={
+            "dataset_version": preview["selection_dataset_version"],
+            "query": "Alpha",
+        },
+    ).json()
+    assert historical["items"][0]["catalog_drug_id"] == "catalog_alpha"
+    changed_hint = client.patch(
+        f"/api/v1/encounters/{encounter_id}",
+        json={
+            "draft_data": {"medications": {"entries": entries, "selection_dataset_version": newer}}
+        },
+        headers={"X-CSRF-Token": csrf, "If-Match": contracts.format_etag(2)},
+    )
+    assert changed_hint.status_code == 409, changed_hint.text
+    assert changed_hint.json()["code"] == "DATASET_PIN_CONFLICT"
+    # Other wizard sections and older autosave clients cannot erase the association.
+    revision = 2
+    for draft in (
+        {},
+        {"medications": {"entries": entries, "selection_dataset_version": None}},
+        {"medications": {"entries": entries}},
+    ):
+        saved = client.patch(
+            f"/api/v1/encounters/{encounter_id}",
+            json={"draft_data": draft},
+            headers={"X-CSRF-Token": csrf, "If-Match": contracts.format_etag(revision)},
+        )
+        assert saved.status_code == 200, saved.text
+        revision += 1
+        assert _get_meds(client, encounter_id).json()["selection_dataset_version"] == original
+    conflict = _post_meds(client, csrf, encounter_id, entries, revision, dataset_version=newer)
+    assert conflict.status_code == 409, conflict.text
+    strict = _post_meds(client, csrf, encounter_id, entries, revision, key="selection-first-save")
+    assert strict.status_code == 200, strict.text
+    assert strict.json()["dataset_version"] == original
+    assert strict.json()["selection_dataset_version"] == original
+    replay = _post_meds(client, csrf, encounter_id, entries, revision, key="selection-first-save")
+    assert replay.status_code == 200, replay.text
+    assert replay.json() == strict.json()
+    assert replay.json()["selection_dataset_version"] == original
+    report = _get_report(client, encounter_id).json()
+    assert report["report_status"] == "current"
+    assert report["report"]["dataset_version"] == original
+
+
+@pytest.mark.parametrize(
+    "hint,identifier,status",
+    [
+        ("", "catalog_alpha", 422),
+        (True, "catalog_alpha", 422),
+        ("not-a-release", "catalog_alpha", 422),
+        ("ddi-000000000000", "catalog_alpha", 404),
+        ("original", "DDInter1", 422),
+    ],
+)
+def test_autosave_selection_rejects_invalid_release_or_catalog_without_pinning(
+    clean_all, tmp_path, hint, identifier, status
+):
+    client, csrf, _, encounter_id, original = _setup_draft_with_release(
+        clean_all, tmp_path, "dr_invalid_selection", "0012350095"
+    )
+    rejected = client.patch(
+        f"/api/v1/encounters/{encounter_id}",
+        json={
+            "draft_data": {
+                "medications": {
+                    "entries": [{"catalog_drug_id": identifier}],
+                    "selection_dataset_version": original if hint == "original" else hint,
+                }
+            }
+        },
+        headers={"X-CSRF-Token": csrf, "If-Match": contracts.format_etag(1)},
+    )
+    assert rejected.status_code == status, rejected.text
+    state = _get_meds(client, encounter_id).json()
+    assert state["revision"] == 1
+    assert state["selection_dataset_version"] is None and state["dataset_version"] is None
+
+
+def test_first_save_uses_searched_version_after_default_changes(clean_all, tmp_path, monkeypatch):
+    from tests.ddi.test_ddinter_release import fixture_approval, stage
+    from x_insight.ddi import publish
+
+    client, csrf, _, encounter_id, original = _setup_draft_with_release(
+        clean_all, tmp_path / "original", "dr_search_pin", "0012350093"
+    )
+    searched = client.get("/api/v1/drugs", params={"query": "Alpha"}).json()
+    assert searched["dataset_version"] == original
+    root, _, _ = stage(tmp_path / "new")
+    newest = publish.publish_release(root, fixture_approval(root), clean_all)["version"]
+    monkeypatch.setenv("DDI_DEFAULT_DATASET_VERSION", newest)
+    assert client.get("/api/v1/drugs").json()["dataset_version"] == newest
+    saved = _post_meds(
+        client,
+        csrf,
+        encounter_id,
+        [{"catalog_drug_id": "catalog_alpha"}],
+        1,
+        dataset_version=searched["dataset_version"],
+    )
+    assert saved.status_code == 200, saved.text
+    assert saved.json()["dataset_version"] == original
+    historical = client.get(
+        "/api/v1/drugs", params={"dataset_version": original, "query": "Alpha"}
+    ).json()
+    assert historical["items"][0]["catalog_drug_id"] == "catalog_alpha"
+    assert _get_report(client, encounter_id).json()["report"]["dataset_version"] == original
+    # A later medication save cannot silently move this encounter onto the new catalog.
+    rebase = _post_meds(
+        client, csrf, encounter_id, [{"catalog_drug_id": "DDInter1"}], 2, dataset_version=newest
+    )
+    assert rebase.status_code == 409, rebase.text
+    assert _get_meds(client, encounter_id).json()["dataset_version"] == original
+
+
+@pytest.mark.parametrize("mode", ["forged", "removed", "section_omitted"])
+def test_autosave_preserves_server_owned_ddi_pin(clean_all, tmp_path, mode) -> None:
+    client, csrf, _, encounter_id, version = _setup_draft_with_release(
+        clean_all, tmp_path, "dr_pin_patch", "0012350091"
+    )
+    medications = [{"catalog_drug_id": "catalog_alpha"}, {"catalog_drug_id": "catalog_beta"}]
+    saved = _post_meds(client, csrf, encounter_id, medications, 1)
+    assert saved.status_code == 200, saved.text
+    section = {
+        "entries": [{"catalog_drug_id": "catalog_alpha"}],
+        "provenance": {},
+        "reconciliation": {"status": "not_required", "baseline_encounter_id": None},
+    }
+    if mode == "forged":
+        section.update(
+            dataset_version="ddi-000000000000",
+            catalog_version="forged",
+            medication_fingerprint="0" * 64,
+            generated_at="2000-01-01T00:00:00Z",
+        )
+    patched = client.patch(
+        f"/api/v1/encounters/{encounter_id}",
+        json={"draft_data": {} if mode == "section_omitted" else {"medications": section}},
+        headers={"X-CSRF-Token": csrf, "If-Match": contracts.format_etag(2)},
+    )
+    assert patched.status_code == 200, patched.text
+    current = _get_meds(client, encounter_id).json()
+    for key in ("dataset_version", "catalog_version", "medication_fingerprint", "generated_at"):
+        assert current[key] == saved.json()[key]
+    assert current["dataset_version"] == version
+    if mode != "section_omitted":
+        report = _get_report(client, encounter_id).json()
+        assert report["report_status"] == "pending" and report["reason"] == "stale_fingerprint"
+
+
+def test_unpinned_autosave_cannot_mint_a_ddi_reference(clean_all, tmp_path) -> None:
+    client, csrf, _, encounter_id, version = _setup_draft_with_release(
+        clean_all, tmp_path, "dr_unpinned_patch", "0012350092"
+    )
+    patched = client.patch(
+        f"/api/v1/encounters/{encounter_id}",
+        json={
+            "draft_data": {
+                "medications": {
+                    "entries": [{"catalog_drug_id": "catalog_alpha"}],
+                    "provenance": {},
+                    "reconciliation": {"status": "not_required", "baseline_encounter_id": None},
+                    "dataset_version": version,
+                    "catalog_version": "forged",
+                    "medication_fingerprint": "0" * 64,
+                    "generated_at": "2000-01-01T00:00:00Z",
+                }
+            }
+        },
+        headers={"X-CSRF-Token": csrf, "If-Match": contracts.format_etag(1)},
+    )
+    assert patched.status_code == 200, patched.text
+    preview = _get_meds(client, encounter_id).json()
+    for key in ("dataset_version", "catalog_version", "medication_fingerprint", "generated_at"):
+        assert preview[key] is None
+    strict = _post_meds(
+        client,
+        csrf,
+        encounter_id,
+        [{"catalog_drug_id": "catalog_alpha"}],
+        2,
+        dataset_version=version,
+    )
+    assert strict.status_code == 200, strict.text
+    assert strict.json()["dataset_version"] == version
+
+
 def test_changed_medications_invalidate_cached_report(clean_all, tmp_path) -> None:
     client, csrf, _, encounter_id, _ = _setup_draft_with_release(
         clean_all, tmp_path, "dr_rep_stale", "0012350023"

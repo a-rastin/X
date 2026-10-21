@@ -3,8 +3,12 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest bounded follow-up [removes page notes and keeps the working note
-(2026-10-20)](s13.md#follow-up-2026-10-20--remove-page-notes-keep-the-working-note).
+The latest bounded follow-up is the [complete supplied DDInter candidate and
+verification (2026-10-21)](s18.md#follow-up-2026-10-21--complete-supplied-ddinter-candidate),
+with [medication integration and release association](s20.md#follow-up-2026-10-21--ddinter-workflow-and-release-association).
+Owner approval and application publication remain pending. The earlier
+[page-note follow-up (2026-10-20)](s13.md#follow-up-2026-10-20--remove-page-notes-keep-the-working-note)
+keeps the working note.
 The [2026-10-20 UI refinement](s61.md#follow-up-2026-10-20--shared-ui-refinement)
 updates shared navigation, typography, cards, forms, tables, and sign-in presentation.
 The latest recorded checkpoint is [S42](s42.md) (2026-10-17): provider
@@ -21,7 +25,7 @@ stops treating `198.18.0.0/15` as a blocked special-use address and colors a
 failed capability diagnostic as an error. The
 [capability-check issue](../issue-provider-capability-check.md) is fixed: Test
 provider uses a synthetic chat/tool exchange, not the private echo. Schema
-head and the fresh-backup expectation are `0021`, with
+head and the fresh-backup expectation are now `0022` (DDInter follow-up above), with
 `provider_settings` in a 32-table inventory. The [S62](s62.md) release gate
 otherwise stays open: not a release, not clinical validation, not high
 availability. tasks.md has no session after S62 and no S63.

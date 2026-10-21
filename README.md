@@ -41,12 +41,15 @@ every acceptance check has passed. See the current boundaries below.
 
 ## Current engineering status
 
-The latest bounded follow-up [removes page notes and preserves the working
-note (2026-10-20)](project-documents/dev/progress/s13.md#follow-up-2026-10-20--remove-page-notes-keep-the-working-note).
+The latest bounded follow-up implements the complete supplied DDInter import and
+[medication workflow integration (2026-10-21)](project-documents/dev/progress/s20.md#follow-up-2026-10-21--ddinter-workflow-and-release-association).
+The full candidate is ready for owner review; application publication is pending.
+The earlier [page-note follow-up](project-documents/dev/progress/s13.md#follow-up-2026-10-20--remove-page-notes-keep-the-working-note)
+preserves the working note.
 The latest numbered implementation checkpoint is [S42, recorded on
 2026-10-17](project-documents/dev/progress/s42.md), completed after the
 [S62 release rehearsal](project-documents/dev/progress/s62.md). Current schema head
-is `0021`; fresh backups include a 32-table inventory.
+is `0022`; fresh backups include a 32-table inventory.
 
 - **Provider administration is implemented.** Administrators can save encrypted
   credentials, inspect masked settings and revisions, and run capability checks.
@@ -103,7 +106,8 @@ The core record and reasoning rules are:
 New signatures use `signed-encounter-v2` without a page-notes field, and printable
 reports omit page notes. Historical note storage and existing v1 signed payloads
 and hashes remain intact for record and backup compatibility. This change adds
-no migration; schema head remains `0021` with 32 backup tables.
+no migration; the later DDInter migration advances schema head to `0022` while
+retaining 32 backup tables.
 
 The [system design](project-documents/dev/system-design.md) defines the full
 contract; [context/](context/index.md) records the reasoning behind key choices.
@@ -160,6 +164,7 @@ credentials file.
 | Variable | Purpose |
 | --- | --- |
 | `DATABASE_URL` | Application PostgreSQL connection |
+| `DDI_DEFAULT_DATASET_VERSION` | Optional existing immutable DDI default; invalid versions fail explicitly; encounter pins/selection associations take precedence |
 | `TEST_DATABASE_URL` | Separate disposable database for backend/recovery tests |
 | `DB_PORT`, `TEST_DB_PORT` | Host ports for local database containers |
 | `X_INSIGHT_PROVIDER_ENDPOINT`, `X_INSIGHT_PROVIDER_MODEL` | Keyless fallback when a job has no saved settings revision; endpoint is the full provider POST URL |
@@ -220,8 +225,15 @@ and the exact [question-package confirmation
 manifest](content/questions/review-confirmation.s39-v1.json). Package approval,
 workflow-bundle release, activation, and clinical validation are separate states.
 
-The DDI CLI builds offline candidates independently of runtime lookup. From
-`backend/`:
+The DDI CLI builds offline candidates independently of runtime lookup.
+
+For the complete supplied DDInter CSV release, follow the
+[DDInter operations runbook](docs/ddinter-operations.md) for build, owner review,
+privileged publication, verification, default selection, and rollback. The
+[2026-10-21 evidence](docs/verification/ddinter-2026-10-21/README.md) covers all
+1,939 IDs and 222,383 occurrences in isolated databases. The pending candidate
+does not authorize publication; its severity-only positive assertions retain
+unavailable pair coverage. The monograph path below remains separate. From `backend/`:
 
 ```sh
 uv run python -m x_insight.ddi build \
@@ -291,6 +303,7 @@ Makefile             Development, verification, and deployment commands
 | Implementation policy and scheduled work | [Plan](project-documents/dev/plan.md), [tasks](project-documents/dev/tasks.md) |
 | Clinical asset review and approval | [Content review ledger](content/review-ledger.md) |
 | Installation, upgrades, and recovery | [Operator runbook](deploy/README.md) |
+| DDInter build, review, publish, and default rollback | [DDInter operations](docs/ddinter-operations.md) |
 | Why key decisions were made | [Context index](context/index.md) |
 | Agent contribution instructions | [AGENTS.md](AGENTS.md) |
 

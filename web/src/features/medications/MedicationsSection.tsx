@@ -31,7 +31,7 @@
  * draft section. The DDI panel below reports pending/reconciliation_required
  * until the gate clears.
  *
- * Catalog search is GET /drugs (demo catalog only, no free-text additions —
+ * Catalog search is GET /drugs (released catalog only, no free-text additions —
  * unknown labels are server 422, never stored). DDI evidence itself renders
  * in DdiReportPanel, refreshed after every acknowledged save/revision.
  *
@@ -73,6 +73,7 @@ import {
   type DrugSearchResult,
   type MedicationEntry,
   type MedicationsPreview,
+  type SaveMedicationsOptions,
 } from "./api";
 import { DdiReportPanel } from "./DdiReportPanel";
 
@@ -91,6 +92,7 @@ interface MedicationsSlice {
   provenance: Record<string, Record<string, unknown>>;
   reconciliation: MedicationsPreview["reconciliation"];
   dataset_version: unknown;
+  selection_dataset_version: unknown;
   catalog_version: unknown;
   medication_fingerprint: unknown;
   generated_at: unknown;
@@ -104,6 +106,7 @@ function sliceOf(data: DraftData): MedicationsSlice {
       provenance: {},
       reconciliation: null,
       dataset_version: null,
+      selection_dataset_version: null,
       catalog_version: null,
       medication_fingerprint: null,
       generated_at: null,
@@ -122,6 +125,7 @@ function sliceOf(data: DraftData): MedicationsSlice {
       (section["reconciliation"] as MedicationsSlice["reconciliation"]) ??
       null,
     dataset_version: section["dataset_version"] ?? null,
+    selection_dataset_version: section["selection_dataset_version"] ?? null,
     catalog_version: section["catalog_version"] ?? null,
     medication_fingerprint: section["medication_fingerprint"] ?? null,
     generated_at: section["generated_at"] ?? null,
@@ -159,6 +163,7 @@ function sectionOfPreview(preview: MedicationsPreview): Record<string, unknown> 
     provenance: preview.provenance,
     reconciliation: preview.reconciliation,
     dataset_version: preview.dataset_version,
+    selection_dataset_version: preview.selection_dataset_version ?? null,
     catalog_version: preview.catalog_version,
     medication_fingerprint: preview.medication_fingerprint,
     generated_at: preview.generated_at,
@@ -195,6 +200,8 @@ export function MedicationsSection({
   const [serverError, setServerError] = useState<string | null>(null);
 
   const [query, setQuery] = useState("");
+  const [offset, setOffset] = useState(0);
+  const [catalogDataset, setCatalogDataset] = useState<string | null>(null);
   const [search, setSearch] = useState<DrugSearchResult | null>(null);
   const [searchLoading, setSearchLoading] = useState(false);
   const [searchError, setSearchError] = useState<string | null>(null);
@@ -202,9 +209,39 @@ export function MedicationsSection({
   const [saveState, setSaveState] = useState<MedsSaveState>({ kind: "idle" });
   const [busy, setBusy] = useState<"save" | "reconcile" | null>(null);
   const [postTick, setPostTick] = useState(0);
-  const attemptKeyRef = useRef<string | null>(null);
+  const attemptRef = useRef<{
+    ids: string[];
+    revision: number;
+    options: SaveMedicationsOptions;
+  } | null>(null);
   const alertRef = useRef<HTMLParagraphElement>(null);
   const mountedRef = useRef(true);
+  const [names, setNames] = useState<Record<string, string>>({});
+  const [nameError, setNameError] = useState(false);
+  const [nameRetry, setNameRetry] = useState(0);
+
+  const slice = sliceOf(autosave.localData);
+  const localIds = entryIds(slice.entries);
+  const selectedIdsKey = JSON.stringify(localIds);
+  const pinnedDataset =
+    typeof slice.dataset_version === "string"
+      ? slice.dataset_version
+      : serverState?.dataset_version ?? null;
+  const selectionDataset =
+    typeof slice.selection_dataset_version === "string"
+      ? slice.selection_dataset_version
+      : serverState?.selection_dataset_version ?? null;
+  const datasetVersion = pinnedDataset ?? selectionDataset ?? catalogDataset;
+
+  function rememberNames(result: DrugSearchResult): void {
+    setNames((previous) => ({
+      ...previous,
+      ...Object.fromEntries(result.items.map((drug) => [
+        `${result.dataset_version}|${drug.catalog_drug_id}`,
+        drug.canonical_name,
+      ])),
+    }));
+  }
 
   useEffect(() => {
     mountedRef.current = true;
@@ -251,19 +288,27 @@ export function MedicationsSection({
     void refreshServer();
   }, [refreshServer, savedRevision]);
 
-  // Demo-catalog search, debounced; empty query lists the first page.
+  // Saved selections retain their search release across resume, before a
+  // strict save establishes the authoritative report pin.
   useEffect(() => {
+    if (serverState === null) {
+      return;
+    }
+    let active = true;
     setSearchLoading(true);
+    setSearchError(null);
     const timer = window.setTimeout(() => {
-      searchDrugs(query, 25, 0)
+      searchDrugs(query, 25, offset, datasetVersion)
         .then((result) => {
-          if (mountedRef.current) {
+          if (active) {
+            setCatalogDataset(result.dataset_version);
             setSearch(result);
+            rememberNames(result);
             setSearchError(null);
           }
         })
         .catch((err: unknown) => {
-          if (!mountedRef.current) {
+          if (!active) {
             return;
           }
           if (err instanceof ApiError && err.status === 401) {
@@ -277,13 +322,48 @@ export function MedicationsSection({
           );
         })
         .finally(() => {
-          if (mountedRef.current) {
+          if (active) {
             setSearchLoading(false);
           }
         });
     }, SEARCH_DEBOUNCE_MS);
-    return () => window.clearTimeout(timer);
-  }, [query, onSessionExpired]);
+    return () => {
+      active = false;
+      window.clearTimeout(timer);
+    };
+  }, [query, offset, datasetVersion, serverState === null, onSessionExpired]);
+
+  // Resolve saved selections outside the current page without loading the
+  // whole catalog; exact IDs retain their original release's names.
+  useEffect(() => {
+    if (datasetVersion === null) {
+      return;
+    }
+    let active = true;
+    setNameError(false);
+    const ids = JSON.parse(selectedIdsKey) as string[];
+    void Promise.all(ids
+      .filter((id) => names[`${datasetVersion}|${id}`] === undefined)
+      .map(async (id) => {
+        try {
+          const result = await searchDrugs(id, 25, 0, datasetVersion);
+          if (active) {
+            const matches = result.items.filter((item) => item.catalog_drug_id === id);
+            rememberNames({ ...result, items: matches });
+            if (matches.length === 0) setNameError(true);
+          }
+        } catch (err) {
+          if (active) {
+            if (err instanceof ApiError && err.status === 401) {
+              onSessionExpired();
+            } else {
+              setNameError(true);
+            }
+          }
+        }
+      }));
+    return () => { active = false; };
+  }, [datasetVersion, selectedIdsKey, nameRetry, onSessionExpired]);
 
   useEffect(() => {
     if (saveState.kind === "failed" || saveState.kind === "conflict") {
@@ -291,8 +371,6 @@ export function MedicationsSection({
     }
   }, [saveState.kind]);
 
-  const slice = sliceOf(autosave.localData);
-  const localIds = entryIds(slice.entries);
   const serverIds =
     serverState !== null ? entryIds(serverState.entries) : null;
   const medsDirty =
@@ -300,9 +378,14 @@ export function MedicationsSection({
   const autosaveSaving = autosave.saveState.kind === "saving";
 
   function writeEntries(ids: string[]): void {
+    if (datasetVersion === null) return;
     autosave.setDraftValue(
       "medications",
-      { ...slice, entries: ids.map((id) => ({ catalog_drug_id: id })) },
+      {
+        ...slice,
+        entries: ids.map((id) => ({ catalog_drug_id: id })),
+        selection_dataset_version: datasetVersion,
+      },
     );
   }
 
@@ -322,7 +405,7 @@ export function MedicationsSection({
 
   function failed(message: string, retryable: boolean): void {
     if (mountedRef.current) {
-      attemptKeyRef.current = null;
+      if (!retryable) attemptRef.current = null;
       setSaveState({ kind: "failed", message, retryable });
     }
   }
@@ -333,28 +416,35 @@ export function MedicationsSection({
     revision: number,
     key: string,
     reconcile: boolean,
+    release: string,
+  ): Promise<void> {
+    const options: SaveMedicationsOptions = {
+      idempotencyKey: key,
+      datasetVersion: release,
+      ...(reconcile
+        ? {
+            reconciliation: {
+              status: "reconciled" as const,
+              baseline_encounter_id:
+                serverState?.reconciliation?.baseline_encounter_id ?? null,
+            },
+          }
+        : {}),
+    };
+    attemptRef.current = { ids, revision, options };
+    await submitAttempt(ids, revision, options);
+  }
+
+  async function submitAttempt(
+    ids: string[], revision: number, options: SaveMedicationsOptions,
   ): Promise<void> {
     const result = await saveMedications(
-      encounterId,
-      ids.map((id) => ({ catalog_drug_id: id })),
-      revision,
-      {
-        idempotencyKey: key,
-        ...(reconcile
-          ? {
-              reconciliation: {
-                status: "reconciled" as const,
-                baseline_encounter_id:
-                  serverState?.reconciliation?.baseline_encounter_id ?? null,
-              },
-            }
-          : {}),
-      },
+      encounterId, ids.map((id) => ({ catalog_drug_id: id })), revision, options,
     );
     if (!mountedRef.current) {
       return;
     }
-    attemptKeyRef.current = null;
+    attemptRef.current = null;
     // Adopt the server-stamped section (provenance + pins + reconciliation)
     // without touching other draft keys — one fence, no phantom PATCH.
     autosave.applySavedSlice(
@@ -374,14 +464,14 @@ export function MedicationsSection({
   }
 
   async function handleSave(reconcile: boolean): Promise<void> {
-    if (busy !== null) {
+    if (busy !== null || datasetVersion === null) {
       return;
     }
     setBusy(reconcile ? "reconcile" : "save");
     setSaveState({ kind: "saving" });
     // Fresh attempt, fresh key; conflict retries below mint their own.
     const key = newIdempotencyKey();
-    attemptKeyRef.current = key;
+    attemptRef.current = null;
     try {
       // Flush pending draft edits so the fence sees the latest base, then
       // read the fresh revision for If-Match (a note POST from another
@@ -392,7 +482,12 @@ export function MedicationsSection({
         failed("Could not read the current revision. Retry the save.", true);
         return;
       }
-      await submitList(entryIds(sliceOf(autosave.localData).entries), fresh.revision, key, reconcile);
+      const freshDataset = fresh.dataset_version ?? fresh.selection_dataset_version;
+      if (freshDataset != null && freshDataset !== datasetVersion) {
+        failed("The saved dataset changed in another tab. Reload the server list before saving.", false);
+        return;
+      }
+      await submitList(entryIds(sliceOf(autosave.localData).entries), fresh.revision, key, reconcile, datasetVersion);
     } catch (err) {
       if (!mountedRef.current) {
         return;
@@ -438,6 +533,9 @@ export function MedicationsSection({
     ) {
       return;
     }
+    if (datasetVersion === null) {
+      return;
+    }
     const isConflict = saveState.kind === "conflict";
     setBusy("save");
     setSaveState({ kind: "saving" });
@@ -445,18 +543,25 @@ export function MedicationsSection({
       // Transport-failure retry of the same attempt reuses the key so a lost
       // response replays instead of double-saving; a 412 conflict is a new
       // attempt on the fresh revision with a fresh key (same list kept).
-      let key = attemptKeyRef.current;
-      if (isConflict || key === null) {
-        key = newIdempotencyKey();
-        attemptKeyRef.current = key;
+      const attempt = attemptRef.current;
+      if (!isConflict && attempt !== null && sameIdSet(localIds, attempt.ids) &&
+        attempt.options.datasetVersion === datasetVersion) {
+        await submitAttempt(attempt.ids, attempt.revision, attempt.options);
+        return;
       }
+      const key = newIdempotencyKey();
       await autosave.flush();
       const fresh = await refreshServer();
       if (fresh === null) {
         failed("Could not read the current revision. Retry the save.", true);
         return;
       }
-      await submitList(entryIds(sliceOf(autosave.localData).entries), fresh.revision, key, false);
+      const freshDataset = fresh.dataset_version ?? fresh.selection_dataset_version;
+      if (freshDataset != null && freshDataset !== datasetVersion) {
+        failed("The saved dataset changed in another tab. Reload the server list before saving.", false);
+        return;
+      }
+      await submitList(entryIds(sliceOf(autosave.localData).entries), fresh.revision, key, false, datasetVersion);
     } catch (err) {
       if (!mountedRef.current) {
         return;
@@ -534,7 +639,7 @@ export function MedicationsSection({
   }
 
   const saveDisabled =
-    busy !== null || autosaveSaving || (serverIds !== null && !medsDirty);
+    busy !== null || autosaveSaving || datasetVersion === null || serverState === null;
 
   return (
     <section className="xi-card" aria-labelledby="medications-heading">
@@ -542,30 +647,32 @@ export function MedicationsSection({
         Medications (step {stepNumber})
       </h3>
       <p className="xi-hint">
-        Demo-catalog medications only — no free-text additions and no
-        dose, unit, route, frequency, or status fields. Selecting drugs edits
-        the shared draft (autosaves like every other page);{" "}
-        <strong>Save medications</strong> validates the drug-only list and pins
-        the versioned DDI report below. Only a saved list counts as durable.
+        Select medications from {search?.source_label ?? "the released catalog"}.
+        Search by name or catalog ID. <strong>Save medications</strong> checks
+        the saved list against this release and refreshes the DDI report below.
       </p>
 
       <div className="xi-field">
         <label className="xi-label" htmlFor="meds-search">
-          Search demo catalog
+          Search medication catalog
         </label>
         <input
           className="xi-input"
           id="meds-search"
           type="search"
           autoComplete="off"
-          placeholder="Type to filter catalog drugs"
+          placeholder="Search drug name or catalog ID"
           value={query}
-          onChange={(event) => setQuery(event.target.value)}
+          onChange={(event) => {
+            setQuery(event.target.value);
+            setOffset(0);
+            setSearchLoading(true);
+          }}
           aria-describedby="meds-catalog-info"
         />
         {search !== null && (
           <p className="xi-hint" id="meds-catalog-info">
-            Catalog {search.catalog_version} · dataset {search.dataset_version}{" "}
+            {search.source_label ?? "Medication catalog"} · catalog {search.catalog_version} · dataset {search.dataset_version}{" "}
             · {search.total} drug{search.total === 1 ? "" : "s"}
           </p>
         )}
@@ -576,7 +683,7 @@ export function MedicationsSection({
           {searchError}
         </p>
       )}
-      {searchLoading && search === null && <p>Loading catalog…</p>}
+      {searchLoading && <p aria-live="polite">Loading catalog…</p>}
       {search !== null && (
         <ul id="meds-search-results" aria-label="Catalog search results">
           {search.items.map((drug: CatalogDrug, index: number) => {
@@ -590,7 +697,7 @@ export function MedicationsSection({
                   type="button"
                   id={`meds-add-${index}`}
                   aria-label={`Add ${drug.canonical_name}`}
-                  disabled={selected || busy !== null}
+                  disabled={selected || busy !== null || searchLoading || searchError !== null}
                   onClick={() => addDrug(drug.catalog_drug_id)}
                 >
                   {selected ? "Added" : "Add"}
@@ -604,12 +711,26 @@ export function MedicationsSection({
         </ul>
       )}
 
+      {search !== null && (
+        <div className="xi-row-actions" aria-label="Catalog pagination">
+          <button className="xi-btn xi-btn-secondary" type="button" id="meds-previous"
+            disabled={searchLoading || offset === 0}
+            onClick={() => setOffset(Math.max(0, offset - 25))}>Previous</button>
+          <span className="xi-hint" aria-live="polite">
+            {search.total === 0 ? "0 results" : `${search.offset + 1}–${Math.min(search.offset + search.items.length, search.total)} of ${search.total}`}
+          </span>
+          <button className="xi-btn xi-btn-secondary" type="button" id="meds-next"
+            disabled={searchLoading || offset + 25 >= search.total}
+            onClick={() => setOffset(offset + 25)}>Next</button>
+        </div>
+      )}
+
       <h4 className="xi-section-title" style={{ fontSize: 15 }}>
         Selected medications
       </h4>
       {localIds.length === 0 ? (
         <p className="xi-hint" id="meds-selected-empty">
-          No medications selected. Search the demo catalog above to add
+          No medications selected. Search the catalog above to add
           drugs — saving an empty list records an intentionally empty list.
         </p>
       ) : (
@@ -618,7 +739,9 @@ export function MedicationsSection({
             const source = provenanceSource(serverState?.provenance[id]);
             return (
               <li key={id}>
-                {id}
+                {names[`${datasetVersion}|${id}`] !== undefined
+                  ? `${names[`${datasetVersion}|${id}`]} (${id})`
+                  : id}
                 {source !== null && (
                   <span className="xi-hint"> · provenance {source}</span>
                 )}{" "}
@@ -636,6 +759,14 @@ export function MedicationsSection({
             );
           })}
         </ul>
+      )}
+      {nameError && (
+        <p className="xi-form-error" role="alert">
+          Some medication names could not be loaded; selected IDs are kept.{" "}
+          <button className="xi-btn xi-btn-secondary" type="button" onClick={() => setNameRetry((tick) => tick + 1)}>
+            Retry names
+          </button>
+        </p>
       )}
 
       {serverLoading && serverState === null && serverError === null && (
@@ -774,7 +905,7 @@ export function MedicationsSection({
               className="xi-btn xi-btn-primary"
               type="button"
               id="meds-reconcile-action"
-              disabled={busy !== null || autosaveSaving}
+              disabled={saveDisabled}
               onClick={() => void handleSave(true)}
             >
               {busy === "reconcile"

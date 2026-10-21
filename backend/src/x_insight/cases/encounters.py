@@ -213,12 +213,60 @@ def validate_followup_baseline(value: Any) -> dict[str, Any] | None:
     }
 
 
+def _trusted_followup_medication_pin(
+    session: Session,
+    patient_id: uuid.UUID,
+    baseline: dict[str, Any] | None,
+    baseline_encounter_id: str | None,
+) -> dict[str, Any]:
+    """Inherit only server-stored signed pins for the same patient's copied list.
+
+    Legacy opaque references remain unpinned. Inline baseline input never
+    supplies release metadata; otherwise it could rebase copied catalog IDs.
+    """
+    if baseline is None or not baseline_encounter_id:
+        return {}
+    try:
+        reference = uuid.UUID(baseline_encounter_id)
+    except ValueError:
+        return {}
+    from x_insight.cases import signing as signing_service
+
+    stored = signing_service.get_snapshot(session, reference)
+    if stored is None:
+        return {}
+    if str(stored["patient_id"]) != str(patient_id):
+        raise contracts.ContractError(
+            422, "INVALID_BASELINE", "Signed baseline is unavailable for this patient."
+        )
+    snapshot = stored.get("snapshot") or {}
+    section = (snapshot.get("draft_data") or {}).get(MEDICATIONS_STATE_KEY)
+    if not isinstance(section, dict):
+        return {}
+    signed_ids = sorted({entry["catalog_drug_id"] for entry in section.get("entries", [])})
+    copied_ids = sorted({entry["catalog_drug_id"] for entry in baseline["medications"]})
+    if copied_ids != signed_ids:
+        raise contracts.ContractError(
+            422,
+            "BASELINE_MEDICATIONS_MISMATCH",
+            "Copied medications must match the referenced signed baseline.",
+        )
+    dataset_version = section.get("dataset_version")
+    catalog_version = section.get("catalog_version")
+    bundle = snapshot.get("pinned_bundle") or {}
+    if not dataset_version and bundle.get("ddi_status") == "valid":
+        dataset_version = bundle.get("ddi_dataset_version")
+        catalog_version = bundle.get("ddi_catalog_version")
+    return {"dataset_version": dataset_version, "catalog_version": catalog_version}
+
+
 def build_followup_draft_data(
     *,
     author_id: str,
     baseline: dict[str, Any] | None,
     baseline_encounter_id: str | None,
     recorded_at: str,
+    medication_pin: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Initial follow-up draft body: copied history/meds + empty answers (S14/S20).
 
@@ -281,8 +329,8 @@ def build_followup_draft_data(
             "entries": baseline_meds,
             "provenance": meds_provenance,
             "reconciliation": {"status": "pending", "baseline_encounter_id": baseline_encounter_id},
-            "dataset_version": None,
-            "catalog_version": None,
+            "dataset_version": (medication_pin or {}).get("dataset_version"),
+            "catalog_version": (medication_pin or {}).get("catalog_version"),
             "medication_fingerprint": None,
             "generated_at": None,
         },
@@ -611,6 +659,9 @@ def create_open_draft(
             baseline=validated_baseline,
             baseline_encounter_id=baseline_encounter_id,
             recorded_at=contracts.serialize_utc(moment),
+            medication_pin=_trusted_followup_medication_pin(
+                session, patient_id, validated_baseline, baseline_encounter_id
+            ),
         )
     else:
         initial_body = {}
@@ -754,6 +805,12 @@ def patch_draft(
         )
     if encounter.get("kind") == "registration" and isinstance(draft_data, dict):
         draft_data = registration_effects_for_save(encounter.get("draft_data"), draft_data)
+    if isinstance(draft_data, dict):
+        from x_insight.cases import medications as medications_service
+
+        draft_data = medications_service.preserve_autosave_report_metadata(
+            encounter.get("draft_data"), draft_data, engine=session.get_bind()
+        )
     validated = validate_draft_data(draft_data)
     moment = contracts.utcnow()
     session.execute(

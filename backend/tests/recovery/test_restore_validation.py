@@ -69,7 +69,7 @@ TWO_NODE_XML = (
 # 0018 adds only restore_jobs (staging metadata, excluded from portable
 # archives like sessions); clinical rows are identical to 0017. 0019, 0020,
 # and 0021 are also accepted (a fresh backup reports the current head).
-SUPPORTED_APP_SCHEMAS = frozenset({"0017", "0018", "0019", "0020", "0021"})
+SUPPORTED_APP_SCHEMAS = frozenset({"0017", "0018", "0019", "0020", "0021", "0022"})
 
 
 @pytest.fixture(scope="session")
@@ -234,7 +234,9 @@ def _setup_valid_archive(clean_registry, monkeypatch, tmp_path, tag: str) -> dic
     monkeypatch.setattr(db_module, "get_engine", lambda: clean_registry)
     admin, admin_csrf = _admin_client(clean_registry, monkeypatch)
     _import_network(admin, admin_csrf, f"s55-net-{tag}")
-    blob, backup_id = _make_valid_blob(admin, admin_csrf, key=f"s55-{tag}-{uuid_module.uuid4().hex[:8]}")
+    blob, backup_id = _make_valid_blob(
+        admin, admin_csrf, key=f"s55-{tag}-{uuid_module.uuid4().hex[:8]}"
+    )
     return {
         "admin": admin,
         "admin_csrf": admin_csrf,
@@ -398,7 +400,7 @@ def test_rejects_symlink(clean_registry, monkeypatch, tmp_path) -> None:
             out.writestr(name, entries[name])
         link = zipfile.ZipInfo("evil-link")
         link.create_system = 3
-        link.external_attr = (0o120777 << 16)
+        link.external_attr = 0o120777 << 16
         out.writestr(link, "networks/manifest.json")
     hostile = buffer.getvalue()
 
@@ -420,9 +422,10 @@ def test_rejects_oversized_expansion(clean_registry, monkeypatch, tmp_path) -> N
     assert posted.status_code == 201, posted.text
     job = posted.json()
     assert job["status"] == "failed", job
-    assert "expand" in (job["error_message"] or "").lower() or "bound" in (
-        job["error_message"] or ""
-    ).lower()
+    assert (
+        "expand" in (job["error_message"] or "").lower()
+        or "bound" in (job["error_message"] or "").lower()
+    )
 
 
 def test_rejects_corrupt_hash(clean_registry, monkeypatch, tmp_path) -> None:
@@ -610,7 +613,7 @@ def test_failed_staging_leaves_live_unchanged(clean_registry, monkeypatch, tmp_p
     """S55 §4: failed staging keeps patients/login/jobs readable and intact."""
     fixture = _setup_valid_archive(clean_registry, monkeypatch, tmp_path, "liveintact")
     admin, admin_csrf, blob = fixture["admin"], fixture["admin_csrf"], fixture["blob"]
-    physician, physician_csrf = fixture["physician"], fixture["physician_csrf"]
+    physician = fixture["physician"]
 
     patient_before = physician.get("/api/v1/patients").json()
     me_before = admin.get("/api/v1/me").json()
@@ -649,9 +652,7 @@ def test_failed_staging_leaves_live_unchanged(clean_registry, monkeypatch, tmp_p
     )
 
 
-def test_replace_upload_and_expiry_invalidate_prior(
-    clean_registry, monkeypatch, tmp_path
-) -> None:
+def test_replace_upload_and_expiry_invalidate_prior(clean_registry, monkeypatch, tmp_path) -> None:
     """S55 §4: a replacing upload expires the prior confirmation (expired flag)."""
     fixture = _setup_valid_archive(clean_registry, monkeypatch, tmp_path, "expiry")
     admin, admin_csrf = fixture["admin"], fixture["admin_csrf"]
@@ -752,9 +753,7 @@ def test_admin_gates_and_private_headers(clean_registry, monkeypatch, tmp_path) 
     assert forged.status_code == 403, forged.text
 
 
-def test_safe_audit_and_malformed_ids_and_no_commit(
-    clean_registry, monkeypatch, tmp_path
-) -> None:
+def test_safe_audit_and_malformed_ids_and_no_commit(clean_registry, monkeypatch, tmp_path) -> None:
     """Safe validate audit, denied→no success, malformed/unknown IDs, no commit."""
     _new_physician(clean_registry, monkeypatch, "dr_s55_audit")
     physician, physician_csrf = _login_physician(clean_registry, monkeypatch, "dr_s55_audit")

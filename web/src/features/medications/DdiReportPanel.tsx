@@ -39,6 +39,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ApiError } from "../identity/api";
 import { getDdiReport, type DdiPair, type DdiReportPayload } from "./api";
+import { DdiEvidenceList } from "./DdiEvidenceList";
 
 interface DdiReportPanelProps {
   encounterId: string;
@@ -82,13 +83,6 @@ function errorText(reason: string | null): string {
   return "Report failed to load — the saved list is kept. Check the connection and retry.";
 }
 
-function spanText(start: unknown, end: unknown): string {
-  if (typeof start === "number" && typeof end === "number") {
-    return `span ${start}–${end}`;
-  }
-  return "span unknown";
-}
-
 export function DdiReportPanel({
   encounterId,
   refreshKey,
@@ -96,12 +90,16 @@ export function DdiReportPanel({
 }: DdiReportPanelProps) {
   const [load, setLoad] = useState<LoadState>({ kind: "loading" });
   const errorRef = useRef<HTMLParagraphElement>(null);
+  const requestRef = useRef(0);
 
   const refresh = useCallback(async (): Promise<void> => {
+    const request = ++requestRef.current;
     try {
       const payload = await getDdiReport(encounterId);
+      if (request !== requestRef.current) return;
       setLoad({ kind: "ready", payload });
     } catch (err) {
+      if (request !== requestRef.current) return;
       if (err instanceof ApiError && err.status === 401) {
         onSessionExpired();
         return;
@@ -119,6 +117,7 @@ export function DdiReportPanel({
   useEffect(() => {
     setLoad({ kind: "loading" });
     void refresh();
+    return () => { requestRef.current += 1; };
   }, [refresh, refreshKey]);
 
   useEffect(() => {
@@ -206,6 +205,10 @@ export function DdiReportPanel({
               {load.payload.report.pairs.length} pair
               {load.payload.report.pairs.length === 1 ? "" : "s"}
             </p>
+            {load.payload.report.source_label && <p>{load.payload.report.source_label}</p>}
+            {load.payload.report.detail_availability === "severity_only" && (
+              <p className="xi-hint">Mechanism and management details were not supplied; this source provides severity assertions only.</p>
+            )}
             <p className="xi-hint" style={{ marginBottom: 8 }}>
               Fingerprint{" "}
               <code>{load.payload.report.medication_fingerprint}</code> ·
@@ -272,38 +275,7 @@ export function DdiReportPanel({
                         {pair.conflicts.join(", ")}
                       </p>
                     )}
-                    {pair.evidence.length > 0 && (
-                      <ul style={{ marginTop: 4 }}>
-                        {pair.evidence.map((item, itemIndex) => (
-                          <li
-                            // ponytail: index key is fine — evidence arrives in
-                            // source_path/span order; upgrade if reorderable.
-                            key={`${item.source_path}:${String(item.span_start)}:${itemIndex}`}
-                          >
-                            <p style={{ marginBottom: 2 }}>
-                              Severity: {item.source_severity ?? "unknown"} ·
-                              direction: {item.direction ?? "unknown"}
-                            </p>
-                            {item.raw_text !== null &&
-                              item.raw_text !== "" && (
-                                <p style={{ margin: "4px 0" }}>
-                                  {item.raw_text}
-                                </p>
-                              )}
-                            {item.management !== null &&
-                              item.management !== "" && (
-                                <p style={{ margin: "4px 0" }}>
-                                  Management: {item.management}
-                                </p>
-                              )}
-                            <p className="xi-hint" style={{ marginTop: 0 }}>
-                              Source: {item.source_path ?? "unknown"} (
-                              {spanText(item.span_start, item.span_end)})
-                            </p>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
+                    <DdiEvidenceList evidence={pair.evidence} />
                   </li>
                 ))}
               </ul>

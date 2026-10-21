@@ -517,8 +517,12 @@ def _pin_ddi_for_start(session: Session, draft_data: Any) -> dict[str, Any]:
     stored_version: str | None = None
     if isinstance(draft_data, dict):
         section = draft_data.get("medications")
-        if isinstance(section, dict) and isinstance(section.get("dataset_version"), str):
-            stored_version = str(section["dataset_version"]).strip() or None
+        if isinstance(section, dict):
+            selected_version = section.get("dataset_version") or section.get(
+                "selection_dataset_version"
+            )
+            if isinstance(selected_version, str):
+                stored_version = selected_version.strip() or None
     try:
         engine = session.get_bind()
     except Exception:

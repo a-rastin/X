@@ -42,6 +42,7 @@ ENTRIES_KEY = "entries"
 PROVENANCE_KEY = "provenance"
 RECONCILIATION_KEY = "reconciliation"
 DATASET_VERSION_KEY = "dataset_version"
+SELECTION_DATASET_VERSION_KEY = "selection_dataset_version"
 CATALOG_VERSION_KEY = "catalog_version"
 FINGERPRINT_KEY = "medication_fingerprint"
 GENERATED_AT_KEY = "generated_at"
@@ -63,6 +64,7 @@ def get_medications_section(draft_data: Any) -> dict[str, Any]:
             "provenance": {},
             "reconciliation": None,
             "dataset_version": None,
+            "selection_dataset_version": None,
             "catalog_version": None,
             "medication_fingerprint": None,
             "generated_at": None,
@@ -74,6 +76,7 @@ def get_medications_section(draft_data: Any) -> dict[str, Any]:
             "provenance": {},
             "reconciliation": None,
             "dataset_version": None,
+            "selection_dataset_version": None,
             "catalog_version": None,
             "medication_fingerprint": None,
             "generated_at": None,
@@ -85,10 +88,73 @@ def get_medications_section(draft_data: Any) -> dict[str, Any]:
         "provenance": dict(provenance) if isinstance(provenance, dict) else {},
         "reconciliation": section.get(RECONCILIATION_KEY),
         "dataset_version": section.get(DATASET_VERSION_KEY),
+        "selection_dataset_version": section.get(SELECTION_DATASET_VERSION_KEY),
         "catalog_version": section.get(CATALOG_VERSION_KEY),
         "medication_fingerprint": section.get(FINGERPRINT_KEY),
         "generated_at": section.get(GENERATED_AT_KEY),
     }
+
+
+def preserve_autosave_report_metadata(
+    stored_draft: Any, incoming: dict[str, Any], *, engine: Any
+) -> dict[str, Any]:
+    """Autosave edits entries; strict save owns the release/report reference.
+
+    Preserve an omitted pinned section when another wizard page saves a partial
+    body. An explicit empty entries list still clears selections and makes the
+    retained fingerprint stale. Unpinned drafts cannot establish a client pin.
+    """
+    stored = stored_draft.get(MEDICATIONS_KEY) if isinstance(stored_draft, dict) else None
+    stored = stored if isinstance(stored, dict) else {}
+    if MEDICATIONS_KEY not in incoming:
+        if not (stored.get(DATASET_VERSION_KEY) or stored.get(SELECTION_DATASET_VERSION_KEY)):
+            return incoming
+        return {**incoming, MEDICATIONS_KEY: dict(stored)}
+    section = incoming[MEDICATIONS_KEY]
+    if not isinstance(section, dict):
+        if stored.get(DATASET_VERSION_KEY) or stored.get(SELECTION_DATASET_VERSION_KEY):
+            raise contracts.ContractError(
+                422, "INVALID_MEDICATIONS", "Medication autosave must preserve the pinned section."
+            )
+        return incoming
+    merged = dict(section)
+    for key in (DATASET_VERSION_KEY, CATALOG_VERSION_KEY, FINGERPRINT_KEY, GENERATED_AT_KEY):
+        if key in stored:
+            merged[key] = stored[key]
+        else:
+            merged.pop(key, None)
+    stored_selection = stored.get(DATASET_VERSION_KEY) or stored.get(SELECTION_DATASET_VERSION_KEY)
+    requested_selection = section.get(SELECTION_DATASET_VERSION_KEY)
+    if requested_selection is not None:
+        if not isinstance(requested_selection, str) or not requested_selection.strip():
+            raise contracts.ContractError(
+                422, "INVALID_DATASET_VERSION", "Selection dataset version must be nonblank text."
+            )
+        if stored_selection and requested_selection != stored_selection:
+            raise contracts.ContractError(
+                409, "DATASET_PIN_CONFLICT", "Selected medications belong to another DDI release."
+            )
+    selection_version = stored_selection or requested_selection
+    if selection_version is not None:
+        from x_insight.ddi import checker as checker_module
+
+        if not isinstance(selection_version, str) or not selection_version.strip():
+            raise contracts.ContractError(
+                422, "INVALID_DATASET_VERSION", "Selection dataset version must be nonblank text."
+            )
+        entries = validate_entries_structure(merged.get(ENTRIES_KEY, []))
+        try:
+            checker_module.validate_catalog_selection(
+                engine, [entry["catalog_drug_id"] for entry in entries], selection_version
+            )
+        except checker_module.CheckError as exc:
+            raise contracts.ContractError(
+                exc.status_code, exc.code, exc.message, exc.field_errors
+            ) from exc
+        merged[SELECTION_DATASET_VERSION_KEY] = selection_version
+    else:
+        merged.pop(SELECTION_DATASET_VERSION_KEY, None)
+    return {**incoming, MEDICATIONS_KEY: merged}
 
 
 def validate_entries_structure(entries: Any) -> list[dict[str, Any]]:
@@ -227,6 +293,7 @@ def compute_medications_state(draft_data: Any, *, author_id: str, revision: int)
         "provenance": section["provenance"],
         "reconciliation": section["reconciliation"],
         "dataset_version": section["dataset_version"],
+        "selection_dataset_version": section["selection_dataset_version"],
         "catalog_version": section["catalog_version"],
         "medication_fingerprint": section["medication_fingerprint"],
         "generated_at": section["generated_at"],
@@ -248,10 +315,24 @@ def read_medications_for_author(
     return encounter, state
 
 
-def _resolve_dataset_version(requested: Any, stored: Any, engine: Any) -> str:
-    """Pinned version resolution: explicit > stored > latest (never silent)."""
+def _resolve_dataset_version(
+    requested: Any, stored: Any, engine: Any, selection: Any = None
+) -> str:
+    """Existing encounter pins take precedence; first save can pin search version."""
     from x_insight.ddi import checker as checker_module
 
+    if isinstance(stored, str) and stored.strip():
+        if requested is not None and requested != stored:
+            raise contracts.ContractError(
+                409, "DATASET_PIN_CONFLICT", "This encounter is pinned to another DDI release."
+            )
+        return stored
+    if isinstance(selection, str) and selection.strip():
+        if requested is not None and requested != selection:
+            raise contracts.ContractError(
+                409, "DATASET_PIN_CONFLICT", "Selected medications belong to another DDI release."
+            )
+        return selection
     if requested is not None:
         if not isinstance(requested, str) or not requested.strip():
             raise contracts.ContractError(
@@ -263,7 +344,10 @@ def _resolve_dataset_version(requested: Any, stored: Any, engine: Any) -> str:
         return requested
     if isinstance(stored, str) and stored.strip():
         return stored
-    latest = checker_module.latest_release_version(engine)
+    try:
+        latest = checker_module.latest_release_version(engine)
+    except checker_module.CheckError as exc:
+        raise contracts.ContractError(exc.status_code, exc.code, exc.message) from exc
     if latest is None:
         raise contracts.ContractError(503, "DATASET_UNAVAILABLE", "DDI dataset is unavailable.")
     return latest
@@ -337,7 +421,10 @@ def save_medications(
             validated_recon = {"status": "not_required", "baseline_encounter_id": None}
     engine = db_module.get_engine()
     pinned_version = _resolve_dataset_version(
-        dataset_version, prior_section["dataset_version"], engine
+        dataset_version,
+        prior_section["dataset_version"],
+        engine,
+        prior_section["selection_dataset_version"],
     )
     catalog_ids = [entry["catalog_drug_id"] for entry in cleaned]
     try:
@@ -376,6 +463,7 @@ def save_medications(
         PROVENANCE_KEY: provenance,
         RECONCILIATION_KEY: validated_recon,
         DATASET_VERSION_KEY: report["dataset_version"],
+        SELECTION_DATASET_VERSION_KEY: report["dataset_version"],
         CATALOG_VERSION_KEY: report["catalog_version"],
         FINGERPRINT_KEY: report["medication_fingerprint"],
         GENERATED_AT_KEY: report["generated_at"],
