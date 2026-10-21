@@ -8,7 +8,9 @@ verification (2026-10-21)](s18.md#follow-up-2026-10-21--complete-supplied-ddinte
 with [medication integration and release association](s20.md#follow-up-2026-10-21--ddinter-workflow-and-release-association).
 The [complete review bundle archive](s18.md#follow-up-2026-10-21--archive-complete-ddinter-review-bundle)
 retains all source/generated files, with evidence in Git LFS.
-Owner approval and application publication remain pending. The earlier
+The [owner-confirmed local application publication](s18.md#follow-up-2026-10-21--owner-confirmation-and-local-application-publication)
+published `ddi-c45e2051cf16` into `x_insight` on port 5432 after backup and migration
+to `0022`; the separate reviewed manifest records approval. The earlier
 [page-note follow-up (2026-10-20)](s13.md#follow-up-2026-10-20--remove-page-notes-keep-the-working-note)
 keeps the working note.
 The [2026-10-20 UI refinement](s61.md#follow-up-2026-10-20--shared-ui-refinement)
@@ -59,7 +61,8 @@ the same worksheet language to response controls, navigation, and result review.
 ## Reading and updating progress
 
 The [Step 6 DDI diagnosis (2026-10-20)](s20.md#follow-up-2026-10-20--step-6-dataset-unavailable-diagnosis)
-confirms the current corpus still requires review/publication and traces the shared unavailable error.
+traces the earlier shared unavailable error; the DDInter publication above resolves
+the missing release in the local application database.
 
 - Use [../tasks.md](../tasks.md) for planned sessions and
   [../plan.md](../plan.md) for implementation policy.

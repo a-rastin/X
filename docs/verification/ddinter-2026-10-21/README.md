@@ -1,5 +1,9 @@
 # DDInter isolated acceptance evidence — 2026-10-21
 
+Subsequent owner-confirmed publication to the local application database is
+recorded separately in [publication.md](publication.md). The account below
+describes the earlier simulated acceptance drill and its then-pending review.
+
 This is deployment planning evidence, **not owner approval or application
 publication**. The candidate remains `awaiting_review`; no application
 `DATABASE_URL` was configured. Only named disposable databases were used, with

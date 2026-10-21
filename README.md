@@ -43,7 +43,8 @@ every acceptance check has passed. See the current boundaries below.
 
 The latest bounded follow-up implements the complete supplied DDInter import and
 [medication workflow integration (2026-10-21)](project-documents/dev/progress/s20.md#follow-up-2026-10-21--ddinter-workflow-and-release-association).
-The full candidate is ready for owner review; application publication is pending.
+The owner confirmed completed review, and release `ddi-c45e2051cf16` is
+[published into the local application database](docs/verification/ddinter-2026-10-21/publication.md).
 The earlier [page-note follow-up](project-documents/dev/progress/s13.md#follow-up-2026-10-20--remove-page-notes-keep-the-working-note)
 preserves the working note.
 The latest numbered implementation checkpoint is [S42, recorded on
@@ -230,10 +231,12 @@ The DDI CLI builds offline candidates independently of runtime lookup.
 For the complete supplied DDInter CSV release, follow the
 [DDInter operations runbook](docs/ddinter-operations.md) for build, owner review,
 privileged publication, verification, default selection, and rollback. The
-[2026-10-21 evidence](docs/verification/ddinter-2026-10-21/README.md) covers all
-1,939 IDs and 222,383 occurrences in isolated databases. The pending candidate
-does not authorize publication; its severity-only positive assertions retain
-unavailable pair coverage. The monograph path below remains separate. From `backend/`:
+[earlier acceptance evidence](docs/verification/ddinter-2026-10-21/README.md) covers
+all 1,939 IDs and 222,383 occurrences in isolated databases. The subsequent
+[owner-confirmed publication](docs/verification/ddinter-2026-10-21/publication.md)
+records the local application release, target checks and backups. Its severity-only
+positive assertions retain unavailable pair coverage. The monograph path below
+remains separate. From `backend/`:
 
 ```sh
 uv run python -m x_insight.ddi build \

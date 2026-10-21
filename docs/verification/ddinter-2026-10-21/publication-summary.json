@@ -1,0 +1,161 @@
+{
+  "date": "2026-10-21",
+  "target": {
+    "database": "x_insight",
+    "role": "x_insight",
+    "host": "loopback",
+    "port": 5432,
+    "schema_before": "0021",
+    "schema_after": "0022"
+  },
+  "before_ddi_counts": {
+    "ddi_dataset_releases": 0,
+    "ddi_source_documents": 0,
+    "ddi_concepts": 0,
+    "ddi_interaction_evidence": 0
+  },
+  "review": {
+    "candidate_hash": "ed2811f81e566c753aad4772ca81f0ea85e40365d8694e192739660b2fff52b4",
+    "expected_release_version": "ddi-c45e2051cf16",
+    "expected_release_content_hash": "c45e2051cf16dfb6b0d7253ce87589ef293f6ee64cf78066e3d2a59bdaa8c039",
+    "reviewed_major_occurrences": 33896,
+    "source_count": 9,
+    "artifact_revalidation": "passed",
+    "approval_validation": "passed"
+  },
+  "verification": {
+    "release": {
+      "version": "ddi-c45e2051cf16",
+      "content_hash": "c45e2051cf16dfb6b0d7253ce87589ef293f6ee64cf78066e3d2a59bdaa8c039",
+      "status": "released_limited"
+    },
+    "schema": "0022",
+    "state": {
+      "concepts": 1939,
+      "evidence": 222383,
+      "pairs": 160235,
+      "repeated_occurrences": 62148,
+      "unique_severities": {
+        "Major": 26914,
+        "Minor": 6833,
+        "Moderate": 96675,
+        "Unknown": 29813
+      },
+      "dangling_endpoints": 0,
+      "table_sha256": {
+        "ddi_dataset_releases": "dc860ce5c22a35c84dbec98265be93c95c168ca1db5b5223afe78cd74e388e54",
+        "ddi_source_documents": "ad3a0769f7fc9fe0995f06cf62d74a2c4308883dd035d85f251a6c6d2405783a",
+        "ddi_concepts": "b7fc68b5bd5909c51581482e3b1277c00af1ab89dc648501ecb903e09ffea587",
+        "ddi_interaction_evidence": "ccc0a9e73b22a6b6f013d85a16576cb0802cd239a5c0784b2da932162813459d"
+      },
+      "canonical_table_sha256": {
+        "ddi_dataset_releases": "40c0ec0a49de995f55fb124f3ed1cf0dcd86d583637dbd91ec6735b6291ce3b9",
+        "ddi_source_documents": "a990310d8aa8fb048448505835ba8e595778ac2d47ebfe8160c90d150a5214ad",
+        "ddi_concepts": "78e607ef4ac2d9499452cae846b870507da8e369ea1873ee09e78801259bfc64",
+        "ddi_interaction_evidence": "7871aec5b9c7a2bb8656cdbb38fd1303c373e2da4e3d666bedbe01fde6b22309"
+      },
+      "database_bytes": 196795415,
+      "source_hashes": {
+        "ddinter_downloads_code_A.csv": "a22ca451d2b755ca2331886f7e00540c86f555f9f55704a59a19c691251f52e0",
+        "ddinter_downloads_code_B.csv": "76de5115a55587f0e822e1096b684fd3ddde058fbefcbb19896df58820ace130",
+        "ddinter_downloads_code_D.csv": "c0627ec39965dbe27829e4934cd20d71eb079f4e373287678737bba9423a306a",
+        "ddinter_downloads_code_H.csv": "f0f925f0ba1ee68c4668d3e7a6732719b34623b22a0f5d017f9090e59f63c88e",
+        "ddinter_downloads_code_L.csv": "f54f4486cc00344f8c86508c31c2ca3fad6d1d37ec3af5bcf609b4bbda5507ef",
+        "ddinter_downloads_code_P.csv": "83f8c0edb20d09ef29b8500b48f9623e208379525688ade9e70a7df2d8749d55",
+        "ddinter_downloads_code_R.csv": "1c39c3d4a6e41659b7a988538d7f363867592abc6f41a815de8746f6e2150574",
+        "ddinter_downloads_code_V.csv": "353973fb300453946aea95733e8fb52338e4b59426d2ce6ca318363d4f84f10a",
+        "docs/explanation.txt": "bf4d0bd016c3b0e68a4f96735d789dac16baa9a69495c6019761968dd2d48a4f"
+      }
+    },
+    "authenticated_api": {
+      "ready_status": 200,
+      "catalog_ids_reached": 1939,
+      "exact_id_search": true,
+      "check_cases": {
+        "Major": {
+          "pair_count": 1,
+          "statuses": [
+            "interaction_found"
+          ]
+        },
+        "Unknown": {
+          "pair_count": 1,
+          "statuses": [
+            "interaction_found"
+          ]
+        },
+        "Absent": {
+          "pair_count": 1,
+          "statuses": [
+            "coverage_unavailable"
+          ]
+        },
+        "Zero": {
+          "pair_count": 0,
+          "statuses": []
+        },
+        "One": {
+          "pair_count": 0,
+          "statuses": []
+        }
+      },
+      "symmetric_deduplicated": true
+    },
+    "patient_encounter_user_counts_unchanged": true,
+    "default_selection": "newest release; no environment override",
+    "provider_disabled": true
+  },
+  "backups": {
+    "preupgrade": {
+      "job_id": "ed42128a-6646-410f-9b41-6b4ea8d6504f",
+      "archive_sha256": "12f484d235186662ef6a04e46a2c0c2dff7c563a072176dea6987c4c67887265",
+      "archive_bytes": 393837,
+      "schema": "0021",
+      "verify_ok": true,
+      "restore_validation_ok": true,
+      "table_count": 32,
+      "retained_archive_path": ".operator/ddinter-2026-10-21/preupgrade-0021.zip"
+    },
+    "postpublication": {
+      "job_id": "8a9e1257-e397-462c-b394-6370b71183fb",
+      "archive_sha256": "07f74a35a399882611b148fc2bda3dfa0a8c75178c80f6bd660ac607aa4596d8",
+      "archive_bytes": 19432211,
+      "schema": "0022",
+      "verify_ok": true,
+      "restore_validation_ok": true,
+      "table_count": 32,
+      "retained_archive_path": ".operator/ddinter-2026-10-21/postpublication-0022.zip"
+    }
+  },
+  "restore": {
+    "database": "x_insight_ddinter_restore_20261021",
+    "job_id": "3b26cafa-1b5e-4e2f-a4b8-d156eac4c07d",
+    "failed": false,
+    "rolled_back": false,
+    "commit_status": "succeeded",
+    "elapsed_seconds": 227.42,
+    "peak_rss_kib": 866808,
+    "canonical_ddi_tables_match": true,
+    "all_nine_source_hashes_match": true,
+    "ready": true,
+    "maintenance_cleared": true,
+    "instance": "separate PostgreSQL 16; private Unix socket; TCP disabled",
+    "instance_stopped": true
+  },
+  "verification_scope": "Authenticated in-process HTTP against the real application database; no browser, patient mutations or provider generation.",
+  "final_target_check": {
+    "identity": {
+      "database": "x_insight",
+      "port": 5432
+    },
+    "schema": "0022",
+    "ready_status": 200,
+    "ddi_counts": {
+      "ddi_dataset_releases": 1,
+      "ddi_source_documents": 9,
+      "ddi_concepts": 1939,
+      "ddi_interaction_evidence": 222383
+    },
+    "default_release": "ddi-c45e2051cf16"
+  }
+}

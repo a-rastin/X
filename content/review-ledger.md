@@ -22,6 +22,17 @@ Documentation only. Tracks content requiring owner review: every question in pla
 
 ## 3. DDI aliases and coverage (S15–S18; owner review required)
 
+- **Supplied DDInter snapshot approved and published (2026-10-21):** the owner
+  confirmed completed review and directed application-database publication.
+  [Owner-reviewed manifest](ddi/ddinter/2026-10-21/owner-reviewed-manifest.json)
+  pins candidate `ed2811f81e566c753aad4772ca81f0ea85e40365d8694e192739660b2fff52b4`,
+  all 33,896 Major occurrence references, both explicit limitation acceptance flags,
+  and `approved_limited`. The local `x_insight` database now contains immutable
+  release `ddi-c45e2051cf16` (`released_limited`); see the
+  [publication record](../docs/verification/ddinter-2026-10-21/publication.md).
+  The original archived pending manifest and separate monograph review status
+  below remain historical records; this approval covers the supplied DDInter
+  snapshot only.
 - **Corpus baseline:** 128 `.txt` files in 15 categories under `project-documents/medical-documents/DDI-text/` (verified by `find`/`wc -l` this session); Sitagliptin sha256 `e7c9bc45…4022f` (verified by `sha256sum`; full hashes in [S00 hash appendix](../project-documents/dev/progress/s00.md#hash-appendix-verified-by-sha256sum-this-session-sitagliptin-049270--ofloxacin-counts-are-planmd-62-source-expectations-to-be-validated-in-s15-not-verified-here)). Sitagliptin 0/4/92/70 counts with Ofloxacin retained in both applicable categories are source-derived expectations per plan.md §6.2, to be validated during S15 ingestion — not verified this session.
 - **Deliverables:** `content/ddi/aliases.json` (controlled concepts + reviewed aliases), corpus report (discovered/processed/pass/fail, counts, checksums, parser version, anomalies), `review.json` manifest (contraindicated/serious evidence, unresolved names, severity/management conflicts), immutable `DatasetRelease` with explicit coverage declarations.
 - **Approval record:** release manifest `{reviewer: "owner", decision, date, source_hashes, parser/terminology versions, coverage declarations}`. Status: `draft`.

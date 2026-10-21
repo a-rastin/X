@@ -1,4 +1,6 @@
 .env
+# Private operator recovery archives can contain application data.
+/.operator/
 backend/.venv/
 node_modules/
 web/node_modules/

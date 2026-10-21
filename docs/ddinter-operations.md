@@ -5,13 +5,19 @@ Use this runbook for the eight supplied DDInter CSV exports and their
 and preserves the existing monograph build/publish path. Commands below run from
 `backend/` unless a repository-root working directory is stated.
 
-As of 2026-10-21, the full candidate is archived for owner review in
+The full candidate is archived in
 [`content/ddi/ddinter/2026-10-21/`](../content/ddi/ddinter/2026-10-21/).
-It is **not approved or published into an application deployment**. No application
-`DATABASE_URL` was configured and no target deployment was inspected. Isolated
-acceptance databases used explicitly simulated test approval. The
-[recorded evidence](verification/ddinter-2026-10-21/README.md) distinguishes that
-drill from deployment publication.
+On 2026-10-21, the owner confirmed completed review and directed publication.
+The separate [`owner-reviewed-manifest.json`](../content/ddi/ddinter/2026-10-21/owner-reviewed-manifest.json)
+records that confirmation, all 33,896 Major occurrence references, and the limited
+coverage acceptance. The local application database `x_insight` on port 5432 was
+backed up, migrated from `0021` to `0022`, and published as
+`ddi-c45e2051cf16` (`released_limited`). See the
+[publication record](verification/ddinter-2026-10-21/publication.md) for target
+verification and recovery evidence. Another deployment needs its own target
+checks and publication. The earlier
+[isolated acceptance evidence](verification/ddinter-2026-10-21/README.md)
+used explicitly simulated test approval and remains a separate historical drill.
 
 The archive contains all 16 original and generated files, byte for byte. Only
 `evidence.jsonl` uses Git LFS; its Git entry is a pointer to the full payload.
@@ -25,9 +31,9 @@ git lfs pull --include="content/ddi/ddinter/2026-10-21/evidence.jsonl"
 
 After downloading the LFS payload, copy the archived directory to a separate
 operator-owned working directory such as `/tmp/ddinter-candidate` for the commands
-below. The archive retains the pending review state; keep the owner's reviewed
-manifest separately. Committing the bundle is separate from pushing Git commits
-and LFS objects to the remote.
+below. The original `review-manifest.json` retains the pending review state; the
+owner's reviewed manifest is separate. Committing the bundle is separate from
+pushing Git commits and LFS objects to the remote.
 
 ## 1. Build and retain a review bundle
 
@@ -102,10 +108,12 @@ Only after actual review, save a separate `owner-reviewed-manifest.json` with:
   `true`; all generated limitations retained; `corrections: []`.
 - The reviewed Major occurrence references described above.
 
-A fresh generated manifest starts with both acceptance flags `false`. The archived
-manifest currently has both flags `true`, while retaining `decision: awaiting_review`,
+A fresh generated manifest starts with both acceptance flags `false`. The original
+archived `review-manifest.json` has both flags `true`, while retaining
+`decision: awaiting_review`,
 `date: null`, `record: null`, and `reviewed_evidence: []`. It is not an approval:
-the review decision, record, date, and complete Major occurrence review remain pending.
+it preserves the pre-approval snapshot. The separate owner-reviewed manifest
+records the subsequently confirmed review.
 Ingestion success and this runbook provide no approval. Keep the separate
 monograph review and [content ledger](../content/review-ledger.md) statuses intact.
 
@@ -276,5 +284,5 @@ default rollback does not undo migration `0022`.
 If target identity, backup validation, privilege, review evidence, or readiness
 fails, stop publication and retain the previous release/default. Resolve operator
 connection/schema/backup failures with the deployment maintainer; unresolved
-approval/coverage questions belong to the owner. Current next step is the genuine
-owner review and identification of the configured application target.
+approval/coverage questions belong to the owner. For another deployment, identify
+and inspect its configured application target before following the publication steps.
