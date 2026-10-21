@@ -6,6 +6,8 @@ older next-session and status statements are historical, not current instruction
 The latest bounded follow-up is the [complete supplied DDInter candidate and
 verification (2026-10-21)](s18.md#follow-up-2026-10-21--complete-supplied-ddinter-candidate),
 with [medication integration and release association](s20.md#follow-up-2026-10-21--ddinter-workflow-and-release-association).
+The [complete review bundle archive](s18.md#follow-up-2026-10-21--archive-complete-ddinter-review-bundle)
+retains all source/generated files, with evidence in Git LFS.
 Owner approval and application publication remain pending. The earlier
 [page-note follow-up (2026-10-20)](s13.md#follow-up-2026-10-20--remove-page-notes-keep-the-working-note)
 keeps the working note.

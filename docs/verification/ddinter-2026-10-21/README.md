@@ -17,11 +17,16 @@ servers have been stopped.
   `/tmp/ddinter-acceptance-results.json`. It excludes connection strings,
   simulated approval/release identities, backup archives, and source/evidence payloads.
 
-The full pending review bundle is at `/tmp/ddinter-candidate`; the independent
-build is `/tmp/ddinter-acceptance/candidate`. Rebuild/retain the complete bundle
-using the [operator runbook](../../ddinter-operations.md); these temporary paths
-are not durable source storage. The original backend handoffs/logs remain under
-`/tmp/ddinter-*`; S18/S20 record the relevant test commands and limits.
+The complete pending review bundle is archived at
+[`content/ddi/ddinter/2026-10-21/`](../../../content/ddi/ddinter/2026-10-21/),
+with `evidence.jsonl` stored through Git LFS. Follow the
+[operator runbook](../../ddinter-operations.md) to download that payload before
+review or publication. All 16 archived files preserve the bytes from
+`/tmp/ddinter-candidate`, including the current pending manifest (both acceptance
+flags true, decision `awaiting_review`, no review date/record or reviewed evidence).
+The independently built acceptance copy is `/tmp/ddinter-acceptance/candidate`;
+that copy and original backend handoffs/logs under `/tmp/ddinter-*` are temporary.
+S18/S20 record the relevant test commands and limits.
 
 ## Full supplied snapshot
 

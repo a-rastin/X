@@ -1,0 +1,68 @@
+5. Criteria for mechanism annotation
+5.1 Absorption
+
+Absorption-related drug interactions are commonly associated with various mechanisms, with most cases hindering and very few promoting. First, decreased absorption may be secondary to chelation with a cation such as calcium or iron. Second, absorption may be decreased when the dissolution of the medication is highly dependent on gastric pH. Third, intestinal absorption may be influenced by inhibition or induction of the p-glycoprotein efflux transporter in the intestinal epithelium. These mechanisms also apply to drug-food interactions (DFIs).
+
+    The absorption of itraconazole is pH-dependent and may be impaired when gastric pH is increased after antacid administration such as proton pump inhibitor omeprazole.
+    The macrolides may potentiate digoxin toxicity. The inhibition of the P-gp transporter in the intestine is the mechanism of this interaction, as digoxin is a p-glycoprotein substrate and the macrolides may inhibit this transporter.
+    The absorption of certain antibiotics, such as ciprofloxacin and tetracyclines, can be significantly reduced when taken with foods high in calcium, such as dairy products, due to the formation of insoluble chelation complexes.
+
+5.2 Distribution
+
+The distribution of medications into tissues is mediated by drug influx and efflux transporters and influenced by protein binding as only the free fraction will be able to penetrate across tissue membranes. Distribution-related drug interactions include competing for the plasma protein binding sites, changing the free-drug fraction, or influencing the distribution in some tissues and organs, etc.
+
+    Methotrexate leads to hematological toxicity when coadministered with acetylsalicylic acid. This interaction occurs due to decreased clearance of methotrexate through competition with acetylsalicylic acid, resulting in methotrexate being displaced from its plasma protein binding site.
+    Coadministration with drugs that reduce catecholamine uptake or deplete catecholamine stores may interfere with iobenguane I-131 uptake into neuroendocrine tumors such as pheochromocytoma and paraganglioma that express high levels of norepinephrine transporter on their cell surfaces.
+
+5.3 Metabolism
+
+Metabolic interactions are mostly due to CYP450 isoenzymes and are responsible for up to 40% of DDIs found in patients. Medications interacting with the CYP450 system can be classified as substrates, inhibitors, or inducers. Inhibitors decrease the activity of CYP450 enzymes, while inducers increase their activity. These interactions can also occur between drugs and certain foods or beverages that contain compounds capable of inhibiting or inducing CYP450 enzymes.
+
+    Coadministration of ketoconazole, a potent CYP3A4 inhibitor, with lovastatin, a CYP3A4 substrate, may increase the risk of myopathy by increasing plasma concentrations of lovastatin. Rifampin, a potent CYP3A4 inducer, may decrease the plasma concentrations and pharmacologic effects of verapamil.
+    Grapefruit juice contains compounds that inhibit CYP3A4, which can lead to increased plasma concentrations of certain drugs metabolized by this enzyme, such as simvastatin, potentially increasing the risk of adverse effects.
+
+5.4 Excretion
+
+Excretion-related drug interactions can occur through various mechanisms, such as changes in renal blood flow, competition for active tubular secretion, or alterations in urinary pH. These interactions can lead to increased or decreased elimination of drugs, potentially affecting their plasma concentrations and therapeutic effects. As the main excretion organ, most excretion-related interactions occur in the kidney.
+
+    Probenecid may increase plasma concentrations of penicillins by competing for active tubular secretion in the kidneys. Probenecid is an uricosuric and renal tubular blocking agent that inhibits the tubular secretion of penicillin and usually increases penicillin plasma levels by any route the antibiotic is given. Probenecid is indicated to be given as an adjuvant to therapy to penicillin to enhance their plasma levels, and concomitant use has been associated with increased penicillin-related adverse reactions.
+    Coadministration of methenamine with urinary acidifying agents may increase the antibacterial activity of methenamine in the urinary tract by lowering urinary pH. Diuretics may increase serum lithium concentration by reducing sodium reabsorption and increasing the reabsorption of lithium, resulting in increased serum lithium concentrations. Diuretics affect filtration rates and affect electrolyte exchange in the nephron.
+
+5.5 Synergy
+
+The synergistic effect occurs when the overall effect of the drug combination is greater than the sum of the effects of the individual drugs. Synergistic interactions can be beneficial when used to enhance therapeutic efficacy or reduce side effects, but they can also lead to increased toxicity if not properly managed.
+
+    Aminoglycoside antibiotics have the potential to cause ototoxicity, and furosemide may increase the ototoxic potential of aminoglycoside antibiotics, especially in the presence of impaired renal function. Following furosemide injection, there was a rapid and reversible decrease in the endocochlear potential and eighth nerve action potential with a more gradual decrease of the endolymph potassium concentration, leading to transient or permanent ototoxicity.
+    The combination of certain foods, such as tyramine-rich foods (e.g., aged cheeses, cured meats), with monoamine oxidase inhibitors (MAOIs) can lead to a synergistic effect, potentially causing a hypertensive crisis due to the accumulation of tyramine in the body.
+    The additive effects between benzodiazepines and opiates can lead to respiratory depression and possibly cause coma and death. This interaction occurs due to the co-location of GABA and opiate receptors in the central nervous system, and cross-reactivity and common pathways of intracellular transduction for these agents.
+
+5.6 Antagonism
+
+The antagonistic effect occurs when the overall effect of the drug combination is less than additive. Sometimes antagonistic interactions are used to alleviate the harmful effects of certain medications clinically, while they may also offset the pharmacological effects of the drugs taken together.
+
+    The concomitant administration of an opioid antagonist with an opioid can result in the mitigation of both classes of medications' therapeutic effects for the patient. While the pharmacological effect of the opioid antagonist to treat or manage opiate abuse or overdose can be inhibited, at the same time the legitimate pharmacological effect of any opioids administered for the genuine management of pain can also be decreased.
+    Some beta-blockers, such as propranolol, may antagonize the bronchodilatory, hypotensive, and tachycardic effects of isoproterenol. The mechanism is blockade of beta-adrenergic receptors, which leads to bronchoconstriction, vasodilation, and increased heart rate. Beta-blockers have been used successfully to treat catecholamine or isoproterenol-induced tachyarrhythmias.
+    Vitamin K-rich foods, such as green leafy vegetables, can antagonize the anticoagulant effects of warfarin by providing additional vitamin K, which is essential for the synthesis of clotting factors in the liver.
+
+5.7 Others and Unknown
+
+The expanded descriptions of some interactions were ambiguous, which made it difficult work to identify the concrete categories. Therefore, these interactions were annotated with 'Others'. In addition, the DDIs collected from the article published in Sci Transl Med were lack of mechanism descriptions, and thus these DDIs were annotated with 'Unknown'.
+6. Criteria for severity annotation
+
+Categories of severity were accepted as suggested by DRUGDEX and other similar resources:
+
+    Major: The interactions are life-threatening and/or require medical treatment or intervention to minimize or prevent severe adverse effects.
+    Moderate: The interactions may result in exacerbation of the disease of the patient and/or change in therapy.
+    Minor: The interactions would limit the clinical effects. The manifestations may include an increase in frequency or severity of adverse effects, but usually they do not require changes in therapy.
+    Unknown: The DDIs collected from the article published in Sci Transl Med were lack of mechanism descriptions, and thus the severity classifications of these DDIs were annotated with 'Unknown'.
+
+7. Statistic
+
+DDInter 2.0 is a comprehensive, professional, and open-access database dedicated to drug interactions, including drug-drug interactions (DDIs), drug-food interactions (DFIs), drug-disease interactions (DDSIs), and therapeutic duplications. The interaction data is extracted from scientific literature, package inserts, and labels of production information. DDInter 2.0 provides detailed interaction information, including mechanisms, risk levels, strategies for managing potential problems, suggestions for drug adjustment, and detailed citations. The data statistics of the latest version are as follows:
+
+    2,310 approved drug entries
+    302,516 DDI records, accompanied by 8,398 distinct and high-quality mechanism descriptions and management recommendations
+    857 DFI records involving 29 foods, with 430high-quality mechanism descriptions and management recommendations
+    8,359 DDSI records involving 472 diseases, with 3,300detailed interaction information and management recommendations
+    6,033 therapeutic duplication records involving 317 combination drugs and 96pharmacological classes, each accompanied by a specific warning and note
+    Interaction data extracted from 16028 relevant literature pieces (12298 on DDIs, 430 on DFIs, and 3,300on DDSIs)
