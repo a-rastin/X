@@ -1,0 +1,81 @@
+{
+  "schema_version": "workflow-bundle-v1",
+  "workflow": "followup",
+  "version": "owner-reviewed-2026-10-22",
+  "assessment_refs": [
+    "content/assessments/diagnosis.v1.json",
+    "content/assessments/panss.v1.json",
+    "content/assessments/cssrs.v1.json"
+  ],
+  "ddi_ref": "runtime DatasetRelease pinned atomically at generation start",
+  "questions": [
+    {
+      "question_key": "tardive_dyskinesia",
+      "version": "s39-reviewed-v1",
+      "network_hash": "538daba6318a1a87d116bd92bda4042063a4fa41c178d1e031ced18d7ea4d5df",
+      "package_hash": "40b7b3abfd22860c8595ba300d77c558354fc254b549a7c7047c954952397012",
+      "prompt_version": "s33-v1",
+      "template_version": "s39-reviewed-v1",
+      "history_definition": "content/history/history.tardive_dyskinesia.v1.json",
+      "package_directory": "content/questions/tardive_dyskinesia/s39-reviewed-v1"
+    },
+    {
+      "question_key": "akathisia",
+      "version": "s39-reviewed-v1",
+      "network_hash": "a9b73a43701e6e7d4213e7877781f4c819dd8745fd463320bbd8348c3745de55",
+      "package_hash": "958559a96cf0cfc819e34e79cb1015c166bc8be184df3feffe287ebf965d6b0b",
+      "prompt_version": "s34-v1",
+      "template_version": "s39-reviewed-v1",
+      "history_definition": "content/history/history.akathisia.v1.json",
+      "package_directory": "content/questions/akathisia/s39-reviewed-v1"
+    },
+    {
+      "question_key": "parkinsonism",
+      "version": "s39-reviewed-v1",
+      "network_hash": "504e34c5e23967373292c43499e73dce8abe78fcd4d5c1986ddb018ed2730547",
+      "package_hash": "c376fc15b5aa49e8bc316e045501f93659ecf9ed1c0fe8d51ff5e68961750dc4",
+      "prompt_version": "s35-v1",
+      "template_version": "s39-reviewed-v1",
+      "history_definition": "content/history/history.parkinsonism.v1.json",
+      "package_directory": "content/questions/parkinsonism/s39-reviewed-v1"
+    },
+    {
+      "question_key": "acute_dystonia",
+      "version": "s39-reviewed-v1",
+      "network_hash": "2ddda6893800e0441326004af9d83c42385924738ae3d37af177b3be9b71e031",
+      "package_hash": "13da77bd82e500cdfe3db33da1359128f4238d401e01c864250276aebc2c9625",
+      "prompt_version": "s36-v1",
+      "template_version": "s39-reviewed-v1",
+      "history_definition": "content/history/history.acute_dystonia.v1.json",
+      "package_directory": "content/questions/acute_dystonia/s39-reviewed-v1"
+    },
+    {
+      "question_key": "no_improvement_clozapine",
+      "version": "s39-reviewed-v1",
+      "network_hash": "4a1863d996efddae0b8904d28868af90030e7f30be56a97666c1dfd165801435",
+      "package_hash": "d26f242cc77f8c4d81c9c0d722d84bcead3451981ddb0cb52b255e24acf7be62",
+      "prompt_version": "s37-v1",
+      "template_version": "s39-reviewed-v1",
+      "history_definition": "content/history/history.no_improvement_clozapine.v1.json",
+      "package_directory": "content/questions/no_improvement_clozapine/s39-reviewed-v1"
+    },
+    {
+      "question_key": "continue_or_adjust",
+      "version": "s39-reviewed-v1",
+      "network_hash": "70bce25d3c9d283d09840f8d594a4b3203ada92fc14515b039a57ddffdd100db",
+      "package_hash": "c64950924a52b08180bba6e83abc046a4247e1e31b87795cd7c293ab18ed80e5",
+      "prompt_version": "s38-v2",
+      "template_version": "s39-reviewed-v1",
+      "history_definition": "content/history/history.continue_or_adjust.v1.json",
+      "package_directory": "content/questions/continue_or_adjust/s39-reviewed-v1"
+    }
+  ],
+  "review": {
+    "reviewer": "owner",
+    "decision": "approved",
+    "reviewed": true,
+    "confirmed": true,
+    "date": "2026-10-22",
+    "basis": "Explicit owner confirmation that all files were read, verified and reviewed; Step 7 integration request."
+  }
+}

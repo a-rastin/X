@@ -7,14 +7,11 @@
  * CSRF token.
  *
  * Backend contract (see backend/src/x_insight/reasoning/router.py, read-only):
- * - POST /encounters/{id}/generation-batches {packages: [...]} with
- *   If-Match "<revision>" + fresh Idempotency-Key → 202 {batch,
- *   question_runs}. Same-fingerprint triggers reuse the existing batch (no
- *   duplicate); a 422 without packages means no question packages are pinned
- *   (content bundles arrive in S39) — the UI shows that honestly and never
- *   invents packages. There is no separate retry route: retry re-POSTs the
- *   same packages at the current revision and the backend resumes at the
- *   failed stage with artifact reuse (S47 carry-forward).
+ * - POST /encounters/{id}/generation-batches {} resolves the reviewed workflow
+ *   server-side. {source_batch_id} retries its exact frozen packages at the
+ *   current revision. Inline packages remain supported for engineering clients.
+ *   If-Match and Idempotency-Key retain the shared request contract.
+ * - GET /encounters/{id}/generation-batches/latest discovers the latest run.
  * - GET /generation-batches/{id} → batch + question_runs (position-ordered)
  *   + freshness + job/jobs/attempts/queue + baseline/transparency (first-run
  *   compat) + baselines[] {question_run_id/question_key/position/status/
@@ -31,12 +28,8 @@
  * names, patient identifiers, or phone — the panel renders only these typed
  * fields and never reads draft_data or the chart.
  *
- * Batch discovery across reloads: the backend has no list-batches-by-
- * encounter route, so the browser remembers `{batchId, packages,
- * sourceRevision}` per encounter in localStorage (`xi.proposal.<id>`).
- * Reloads resume from GET without a new POST; retries re-POST the stored
- * packages. The e2e stage (dev-test) seeds the same key to attach the UI to
- * an API-created batch.
+ * Browser storage caches the batch id. Server discovery and pinned-package
+ * retry work when browser storage is absent or unavailable.
  */
 
 import {
@@ -395,13 +388,12 @@ async function request<T>(path: string, options: RequestOptions = {}): Promise<T
   return (payload ?? {}) as T;
 }
 
-/** Author-only generation start (or fingerprint reuse). Fresh key per attempt
- * unless retrying the same attempt. `packages` are passed through opaquely —
- * the UI stores what it sent for retry and never invents packages. */
+/** Author-only generation start or reuse. A source batch selects its frozen
+ * retry packages; first generation resolves the reviewed workflow server-side. */
 export async function startGeneration(
   encounterId: string,
   revision: number,
-  packages: Array<Record<string, unknown>>,
+  sourceBatchId?: string,
   options: { idempotencyKey?: string } = {},
 ): Promise<StartPayload> {
   return request<StartPayload>(
@@ -410,9 +402,13 @@ export async function startGeneration(
       method: "POST",
       ifMatch: revision,
       idempotencyKey: options.idempotencyKey ?? newIdempotencyKey(),
-      body: { packages },
+      body: sourceBatchId ? { source_batch_id: sourceBatchId } : {},
     },
   );
+}
+
+export async function getLatestGeneration(encounterId: string): Promise<{ batch: GenerationBatch | null }> {
+  return request(`/encounters/${encodeURIComponent(encounterId)}/generation-batches/latest`);
 }
 
 /** Author-only batch read (frozen projection + progress + proposal views). */
@@ -675,8 +671,8 @@ function storageKey(encounterId: string): string {
   return `xi.proposal.${encounterId}`;
 }
 
-/** Browser memory of the encounter's generation request: batch id for
- * resume-without-POST plus the exact packages sent for precise retry. */
+/** Optional batch-id cache. Legacy package fields are read for compatibility;
+ * starts and retries resolve package content exclusively on the server. */
 export function readStoredProposal(encounterId: string): StoredProposal | null {
   try {
     const raw = localStorage.getItem(storageKey(encounterId));
@@ -704,8 +700,7 @@ export function writeStoredProposal(encounterId: string, value: StoredProposal):
   try {
     localStorage.setItem(storageKey(encounterId), JSON.stringify(value));
   } catch {
-    /* quota/unavailable: resume degrades to re-entry, retry keeps working
-     * only while the packages stay in memory for this page lifetime */
+    /* Storage is optional: server discovery and batch-id retries still work. */
   }
 }
 

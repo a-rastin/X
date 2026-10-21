@@ -26,10 +26,9 @@ Plan.md §§4.2, 8.1 (FR-16, FR-32, FR-35, NFR-04):
   clarification with persisted explicit reasons. Undeclared
   cross-question result inputs (``posterior``/``questions/``) are
   rejected at start.
-- Synthetic scope (tasks.md S40 permits it): source prefixes are the S25
-  synthetic allowlist (``synthetic/history|assessments|demographics``).
-  ``candidate/...`` histories and the S24 registry pointer are future
-  wiring; a package using them fails closed here as ``unknown_source``.
+- Default starts resolve reviewed server workflow bundles; inline synthetic
+  packages remain supported for engineering clients. Versioned history uses
+  exact declared paths, with unknown fields rejected at runtime.
   Demographic paths that name identifiers/phones are rejected, so
   sentinel names/ID/phone can never enter a projection. Queue execution
   is S44; this module only freezes and reads.
@@ -212,6 +211,12 @@ def _check_source_path(path: Any) -> str:
         raise _fail(422, "posterior_chaining", f"Source path {path!r} chains another result.")
     if _is_identifying_demographic(path):
         raise _fail(422, "identifying_source_path", f"Source path {path!r} is identifying.")
+    if path.startswith("candidate/history/"):
+        from x_insight.models.workflow_release import history_fields
+
+        if path not in history_fields():
+            raise _fail(422, "unknown_source_path", "Unknown versioned history field.")
+        return path
     allowed = package_module.KNOWN_SOURCE_PREFIXES
     if not any(path.startswith(prefix) for prefix in allowed):
         raise _fail(422, "unknown_source_path", f"Source path {path!r} is not allowlisted.")
@@ -228,6 +233,16 @@ def _resolve_raw_value(source_path: str, draft_data: Any) -> Any:
     fields return the ``MISSING`` sentinel (absent, never null-coerced).
     """
     _check_source_path(source_path)
+    if source_path.startswith("candidate/history/"):
+        from x_insight.models.workflow_release import history_fields
+
+        spec = history_fields()[source_path]
+        raw = _get_history_values(draft_data).get(source_path, _MISSING)
+        if isinstance(raw, (list, _MissingType)) or raw is None:
+            return raw
+        if not isinstance(raw, str) or raw not in spec["permitted"]:
+            return "unknown"
+        return raw
     if source_path.startswith("synthetic/history/"):
         field = source_path[len("synthetic/history/") :]
         if not field:
@@ -383,6 +398,18 @@ def evaluate_gate(manifest: Mapping[str, Any], draft_data: Any) -> tuple[str, st
             raise _fail(422, "posterior_chaining", f"Required field {field!r} chains a result.")
         if _is_note_path(field):
             raise _fail(422, "note_source_path", f"Required field {field!r} references notes.")
+    if any(field.startswith("candidate/history/") for field in required):
+        from x_insight.reasoning.history_gates import evaluate_history_gate
+
+        values = {field: _resolve_raw_value(field, draft_data) for field in required}
+        for field, raw in values.items():
+            status, _ = _typed_status(raw)
+            if status != "observed" or raw == "Unresolved":
+                return (
+                    NEEDS_CLARIFICATION,
+                    f"required field {field} is {status if status != 'observed' else 'unresolved'}",
+                )
+        return evaluate_history_gate(str(manifest.get("question_key", "")), values)
     gate = _get_gate_value(draft_data)
     if expression == "true":
         gate_state: str | None = "true"
@@ -683,6 +710,7 @@ def start_generation_batch(
     package: dict[str, Any] | None = None,
     packages: list[dict[str, Any]] | None = None,
     request_id: str,
+    pinned_release: dict[str, Any] | None = None,
 ) -> tuple[dict[str, Any], list[dict[str, Any]]]:
     """Freeze ordered snapshots + projections and enqueue the first eligible job.
 
@@ -700,22 +728,6 @@ def start_generation_batch(
     """
     if packages is not None and package is not None:
         raise _fail(422, "missing_package", "Supply package or packages, not both.")
-    if packages is None:
-        if not isinstance(package, dict):
-            raise _fail(422, "missing_package", "No question package supplied.")
-        ordered_packages: list[dict[str, Any]] = [package]
-    else:
-        if not isinstance(packages, list):
-            raise _fail(422, "missing_package", "No question packages supplied.")
-        ordered_packages = list(packages)
-    loaded_list = _validate_workflow_packages(ordered_packages)
-    manifests: list[Mapping[str, Any]] = []
-    for entry, loaded in zip(ordered_packages, loaded_list):
-        manifest = entry.get("manifest")
-        if not isinstance(manifest, Mapping):
-            raise _fail(422, "missing_package", "No question package supplied.")
-        manifests.append(manifest)
-
     row = (
         session.execute(
             select(encounters_service.tables.encounters)
@@ -760,6 +772,28 @@ def start_generation_batch(
         raise contracts.ContractError(
             412, "STALE_REVISION", "The draft changed. Reload and reconcile your edits."
         )
+    release_pin = dict(pinned_release or {})
+    if packages is None and package is None:
+        from x_insight.models.workflow_release import resolve_workflow
+
+        workflow = "followup" if encounter["kind"] == "follow_up" else "registration"
+        packages, release_pin = resolve_workflow(workflow)
+    if packages is None:
+        if not isinstance(package, dict):
+            raise _fail(422, "missing_package", "No question package supplied.")
+        ordered_packages: list[dict[str, Any]] = [package]
+    else:
+        if not isinstance(packages, list):
+            raise _fail(422, "missing_package", "No question packages supplied.")
+        ordered_packages = list(packages)
+    loaded_list = _validate_workflow_packages(ordered_packages)
+    manifests: list[Mapping[str, Any]] = []
+    for entry, loaded in zip(ordered_packages, loaded_list):
+        manifest = entry.get("manifest")
+        if not isinstance(manifest, Mapping):
+            raise _fail(422, "missing_package", "No question package supplied.")
+        manifests.append(manifest)
+
     draft_data = encounter.get("draft_data") or {}
     # S46 DDI pin (S19 checker seam): dataset/catalog/fingerprint/report per batch.
     ddi_pin = _pin_ddi_for_start(session, draft_data)
@@ -778,6 +812,7 @@ def start_generation_batch(
             "package_version": str(manifest.get("version", "")),
         }
     pinned: dict[str, Any] = {
+        **release_pin,
         "question_key": first_loaded.question_key,
         "package_hash": first_loaded.package_hash,
         "network_hash": str(first_manifest.get("network_hash", "")),

@@ -23,6 +23,12 @@ COPY backend/pyproject.toml backend/uv.lock backend/README.md ./
 COPY backend/src ./src
 COPY backend/migrations ./migrations
 COPY backend/alembic.ini ./alembic.ini
+COPY content/assessments ./content/assessments
+COPY content/history ./content/history
+COPY content/questions ./content/questions
+COPY content/bundles ./content/bundles
+ENV X_INSIGHT_CONTENT_DIR=/srv/app/content \
+    X_INSIGHT_ASSESSMENTS_DIR=/srv/app/content/assessments
 # Sources are copied before sync so the locked project install sees the real
 # package (a manifest-only sync would bake an empty wheel). The uv cache
 # mount keeps rebuilds fast without shipping the cache in the image.

@@ -1,39 +1,17 @@
-/* Structured history form with server-computed preview (S12,
- * plan.md §§2.2, 5; FR-14, FR-20).
+/* Structured history in the shared draft autosave body (S12).
  *
- * Wizard integration (not separate persistence): history lives in the shared
- * S07 autosave body as `draft_data["history"] = {values, provenance,
- * reconciliation, phone_update}` and saves through the same debounced PATCH +
- * revision fence. This component only edits that slice of `localData`; every
- * verdict comes from GET /encounters/{id}/history, which runs the same
- * `evaluate_history()` as the backend — the browser never computes
- * completeness, so the display cannot drift from history.v1 (draft v1,
- * awaiting owner review; not approved).
+ * The original twelve fields retain their ids and response controls. Reviewed
+ * workflow fields come from GET /encounters/{id}/history with exact versioned
+ * source-path ids, definitions and permitted responses. Namespace separation
+ * prevents similarly named questions from sharing different assessments.
+ * Writes preserve all server-allowlisted history ids, including copied prior
+ * workflow context, and discard undeclared keys. Nothing is preselected.
  *
- * Explicit selection only: nothing is pre-filled. A fresh form has 12
- * unanswered fields; unknown and not_assessed stay distinct from no (false).
- * The 12 typed fields below mirror content/history/history.v1.json exactly
- * (ids, labels, periods, permitted values); there is no GET /content/history
- * route, so this file is the rendering contract. Undeclared or FR-14-excluded
- * ids (dose, route, frequency, active/stopped, free text) are never rendered,
- * and writes carry only the 12 known ids — a forged key already in storage
- * is dropped on the next history save rather than echoed back. Invalid
- * values for known ids are kept verbatim so the server item_errors stay
- * visible next to the unselected field.
- *
- * Provenance is server-stamped by the strict POST .../history command; PATCH
- * bodies preserve it verbatim and this UI never invents it, so fields saved
- * through autosave show "not yet recorded" until a strict save stamps them.
- * Phone update is optional free text with no country validation (like S06);
- * it is analysis_visible false (an identifier, never a model input), unlike
- * the 12 typed values which are the only analysis-visible history source.
- * The draft working note never influences history.
- *
- * The 412 path stays inside the shared useAutosave hook (keeps edits +
- * reload/reconcile UI); a failed save never shows Saved (the wizard save
- * status owns that). No applyServerSnapshot resync is needed: there are no
- * command POSTs here, so the preview simply refreshes after each
- * acknowledged autosave (same pattern as PANSS/C-SSRS).
+ * Server previews evaluate saved responses. Unknown and not assessed remain
+ * distinct from No. Required proposal context must be clarified before its
+ * question can execute; no history score or clinical threshold is invented.
+ * The strict history command stamps provenance; autosave preserves it.
+ * Working notes and phone updates never enter question projections.
  *
  * Accessibility: native fieldset/legend + radios (keyboard free), preview
  * verdict is an aria-live region, per-field errors use role=alert with
@@ -213,7 +191,7 @@ const VALUE_LABELS: Record<string, string> = {
 };
 
 function valueLabel(value: string): string {
-  return VALUE_LABELS[value] ?? value;
+  return VALUE_LABELS[value] ?? value.replace(/([a-z])([A-Z])/g, "$1 $2");
 }
 
 interface HistorySlice {
@@ -253,9 +231,9 @@ function sliceOf(data: DraftData): HistorySlice {
 /** Writes carry only the 12 known field ids: undeclared or FR-14-excluded
  * keys already in storage are dropped rather than echoed back. Invalid
  * values for known ids are kept verbatim so server item_errors stay visible. */
-function sanitizedValues(values: Record<string, unknown>): Record<string, unknown> {
+function sanitizedValues(values: Record<string, unknown>, ids = FIELD_IDS): Record<string, unknown> {
   const next: Record<string, unknown> = {};
-  for (const id of FIELD_IDS) {
+  for (const id of ids) {
     if (values[id] !== undefined) {
       next[id] = values[id];
     }
@@ -263,9 +241,9 @@ function sanitizedValues(values: Record<string, unknown>): Record<string, unknow
   return next;
 }
 
-function sameSlice(a: HistorySlice, b: HistorySlice): boolean {
-  const keysA = Object.keys(sanitizedValues(a.values));
-  const keysB = Object.keys(sanitizedValues(b.values));
+function sameSlice(a: HistorySlice, b: HistorySlice, ids = FIELD_IDS): boolean {
+  const keysA = Object.keys(sanitizedValues(a.values, ids));
+  const keysB = Object.keys(sanitizedValues(b.values, ids));
   if (keysA.length !== keysB.length) {
     return false;
   }
@@ -345,6 +323,9 @@ export function HistorySection({
   }, [refreshPreview, savedRevision]);
 
   const slice = sliceOf(autosave.localData);
+  const allowedIds = preview?.allowed_field_ids ?? FIELD_IDS;
+  const workflowFields = preview?.workflow_fields ?? [];
+  const questionKeys = [...new Set(workflowFields.map((field) => field.question_key))];
   const previewSlice: HistorySlice | null =
     preview === null
       ? null
@@ -355,11 +336,12 @@ export function HistorySection({
           phone_update: preview.phone_update,
         };
   const answersPending =
-    previewSlice !== null && !sameSlice(slice, previewSlice);
+    previewSlice !== null && !sameSlice(slice, previewSlice, allowedIds);
 
   function writeSlice(next: HistorySlice): void {
+    if (preview === null) return;
     autosave.setDraftValue("history", {
-      values: sanitizedValues(next.values),
+      values: sanitizedValues(next.values, allowedIds),
       provenance: next.provenance,
       reconciliation: next.reconciliation,
       phone_update: next.phone_update,
@@ -370,7 +352,10 @@ export function HistorySection({
     if (slice.values[fieldId] === value) {
       return;
     }
-    writeSlice({ ...slice, values: { ...slice.values, [fieldId]: value } });
+    const values = { ...slice.values };
+    if (value === "") delete values[fieldId];
+    else values[fieldId] = value;
+    writeSlice({ ...slice, values });
   }
 
   function setReconciliationStatus(status: string): void {
@@ -477,7 +462,7 @@ export function HistorySection({
                 {fields.map((field) => {
                   const errorId = itemErrors[field.id] !== undefined ? `hist-${field.id}-error` : undefined;
                   return (
-                    <fieldset key={field.id} className="xi-diagnosis-item xi-history-item">
+                    <fieldset key={field.id} className="xi-diagnosis-item xi-history-item" disabled={preview === null}>
                       <legend className="xi-sr-only">{field.label}</legend>
                       <div className="xi-diagnosis-question">
                         <div aria-hidden="true">{field.label}</div>
@@ -510,6 +495,34 @@ export function HistorySection({
                     </fieldset>
                   );
                 })}
+              </section>
+            );
+          })}
+
+          {questionKeys.map((key) => {
+            const fields = workflowFields.filter((field) => field.question_key === key);
+            const answered = fields.filter((field) => field.permitted.includes(String(slice.values[field.id] ?? ""))).length;
+            return (
+              <section className="xi-diagnosis-criterion" key={key} aria-labelledby={`history-workflow-${key}`}>
+                <header className="xi-diagnosis-criterion-header">
+                  <h4 id={`history-workflow-${key}`}>{key.replaceAll("_", " ").replace(/^./, (letter) => letter.toUpperCase())}</h4>
+                  <span className="xi-diagnosis-count">{answered} / {fields.length} answered</span>
+                </header>
+                <p className="xi-hint">Review this context for proposal generation. Unknown or unassessed required context pauses the affected question.</p>
+                {fields.map((field) => (
+                  <div className="xi-diagnosis-item xi-history-item" key={field.id}>
+                    <label htmlFor={`hist-${field.id}`}>{field.definition}</label>
+                    <p className="xi-history-period">{field.time_window.replaceAll("_", " ")}</p>
+                    <select id={`hist-${field.id}`} className="xi-input"
+                      value={typeof slice.values[field.id] === "string" ? String(slice.values[field.id]) : ""}
+                      onChange={(event) => setValue(field.id, event.target.value)}>
+                      <option value="">Select a response</option>
+                      {field.permitted.map((value) => <option key={value} value={value}>{valueLabel(value)}</option>)}
+                    </select>
+                    {itemErrors[field.id] && <p className="xi-field-error" role="alert">{itemErrors[field.id].join(" ")}</p>}
+                    {field.operationalization && <details className="xi-history-provenance"><summary>Assessment guidance</summary><p className="xi-hint">{field.operationalization}</p></details>}
+                  </div>
+                ))}
               </section>
             );
           })}
@@ -574,7 +587,7 @@ export function HistorySection({
         <aside className="xi-diagnosis-review" aria-label="History review">
           <div className="xi-diagnosis-result">
             <h4 className="xi-section-title">
-              History summary
+              Core history summary
             </h4>
             {previewLoading && preview === null && <p>Loading history preview…</p>}
             {previewError !== null && preview === null && (

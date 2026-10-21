@@ -1,0 +1,62 @@
+"""Typed implementation of the reviewed manifests' applicability truth tables.
+
+The caller first requires every declared input to be known and valid. A false
+gate never turns unknown context into a negative finding. No model output is
+used as evidence for another question.
+"""
+
+from __future__ import annotations
+
+from typing import Any
+
+
+def evaluate_history_gate(key: str, paths: dict[str, Any]) -> tuple[str, str]:
+    values = {path.rsplit("/", 1)[-1]: value for path, value in paths.items()}
+    false = False
+    if key in ("high_suicide_clozapine", "aggression_clozapine"):
+        risk = (
+            "h_substantial_suicide_risk"
+            if key.startswith("high_")
+            else "h_substantial_aggression_risk"
+        )
+        false = any(
+            values.get(field) == "No"
+            for field in ("h_schizophrenia_established", risk, "h_persistence_despite_treatment")
+        )
+    elif key in ("lai_indication_choice", "established_case_clozapine"):
+        false = values.get("h_schizophrenia_established") == "No"
+    elif key in ("tardive_dyskinesia", "akathisia", "parkinsonism"):
+        field = {
+            "tardive_dyskinesia": "h_td_assessment",
+            "akathisia": "h_ak_assessment",
+            "parkinsonism": "h_p_assessment",
+        }[key]
+        false = values.get(field) == "Absent"
+    elif key == "acute_dystonia":
+        false = values.get("h_ad_episode_phase") == "NoEpisode"
+    elif key not in ("pharmacotherapy", "continue_or_adjust", "no_improvement_clozapine"):
+        return "needs_clarification", "No reviewed history gate is registered for this question."
+    if key in ("continue_or_adjust", "no_improvement_clozapine"):
+        if (
+            values.get("h_baseline_encounter_ref") != "documented_current"
+            or values.get("h_baseline_window_validity") != "current"
+        ):
+            return "needs_clarification", "A current baseline is required."
+    if key == "no_improvement_clozapine":
+        if (
+            values.get("h_clozapine_treatment_status") != "CurrentTreatment"
+            or values.get("h_panss_baseline_status") != "completed"
+            or values.get("h_panss_followup_status") != "completed"
+            or values.get("h_clozapine_trial_adequate") != "Yes"
+        ):
+            return (
+                "needs_clarification",
+                "Current clozapine, completed PANSS and adequate trial context are required.",
+            )
+        false = values.get("h_residual_symptoms") == "No"
+    if false:
+        return (
+            "not_applicable",
+            "Reviewed applicability gate is false; all required context is known.",
+        )
+    return "ready", "Reviewed applicability gate is true; all required context is known."

@@ -211,12 +211,13 @@ def _manifest_override(package: dict[str, Any], **fields: Any) -> dict[str, Any]
 # --- Slice 1: complete package validates; one reusable loader ---
 
 
-def test_registry_allowists_are_explicit_synthetic_default_deny() -> None:
+def test_registry_allowlists_include_synthetic_and_versioned_history() -> None:
     assert MANIFEST_SCHEMA_VERSION == "question-package-v1"
     assert KNOWN_SOURCE_PREFIXES == (
         "synthetic/history/",
         "synthetic/assessments/",
         "synthetic/demographics/",
+        "candidate/history/",
     )
     assert SAFE_EXPRESSIONS == frozenset(
         {"true", "gate == 'true'", "gate == 'false'", "gate == 'unknown'"}

@@ -20,9 +20,10 @@ reconciliation: {status, ...}, phone_update: str | None}``. All history
 values are analysis-visible (analysis_visible true); working notes and legacy
 note keys stay excluded by serialization allowlists.
 
-Content: versioned draft ``content/history/history.v1.json`` (awaiting owner
-review, not approved). The backend mirrors its 12 field ids, permitted
-values, periods, and excluded list without inventing thresholds.
+Content: the original twelve field ids retain their contract. The server also
+loads exact versioned fields from the owner-confirmed workflow release and
+exposes workflow-specific controls with their permitted values. Historical
+content status is retained; the release inventory records the approval basis.
 """
 
 from __future__ import annotations
@@ -174,12 +175,15 @@ def validate_history_values(values: Any) -> dict[str, Any]:
             "History values must be a JSON object.",
             {"history.values": ["Must be a JSON object."]},
         )
+    from x_insight.models.workflow_release import history_fields
+
+    allowed = {**ALLOWED_FIELDS, **history_fields()}
     errors: dict[str, list[str]] = {}
     for key, value in values.items():
         if key in EXCLUDED_FIELDS:
             errors.update(_field_error(key, "This field is excluded and cannot be stored."))
             continue
-        spec = ALLOWED_FIELDS.get(key)
+        spec = allowed.get(key)
         if spec is None:
             errors.update(_field_error(key, "Unknown history field."))
             continue
@@ -203,20 +207,21 @@ def evaluate_history(values: Any) -> dict[str, Any]:
     """
     if not isinstance(values, dict):
         values = {}
+    from x_insight.models.workflow_release import history_fields
+
+    allowed = {**ALLOWED_FIELDS, **history_fields()}
     item_errors: dict[str, list[str]] = {}
     for key, value in values.items():
         if key in EXCLUDED_FIELDS:
             item_errors.setdefault(key, []).append("This field is excluded.")
             continue
-        spec = ALLOWED_FIELDS.get(key)
+        spec = allowed.get(key)
         if spec is None:
             item_errors.setdefault(key, []).append("Unknown history field.")
         elif value not in spec["permitted"]:
             item_errors.setdefault(key, []).append(f"Invalid value for {key}.")
     valid = {
-        key: value
-        for key, value in values.items()
-        if key in ALLOWED_FIELDS and key not in item_errors
+        key: value for key, value in values.items() if key in allowed and key not in item_errors
     }
     missing = [field_id for field_id in FIELD_IDS if field_id not in valid]
     if item_errors or missing:
@@ -279,9 +284,13 @@ def validate_phone_update(value: Any) -> str | None:
     return value
 
 
-def compute_history_state(draft_data: Any, *, author_id: str, revision: int) -> dict[str, Any]:
+def compute_history_state(
+    draft_data: Any, *, author_id: str, revision: int, workflow: str = "registration"
+) -> dict[str, Any]:
     """Server-authoritative history preview for one draft revision."""
     del author_id  # provenance carries attribution; preview needs no gate.
+    from x_insight.models.workflow_release import history_fields, workflow_history_fields
+
     section = get_history_section(draft_data)
     values = section["values"]
     evaluation = evaluate_history(values)
@@ -295,6 +304,8 @@ def compute_history_state(draft_data: Any, *, author_id: str, revision: int) -> 
         "revision": revision,
         "analysis_visible": True,
         "analysis_visible_label": "analysis_visible",
+        "workflow_fields": workflow_history_fields(workflow),
+        "allowed_field_ids": [*FIELD_IDS, *history_fields()],
     }
 
 
@@ -307,6 +318,7 @@ def read_history_for_author(
         encounter.get("draft_data") or {},
         author_id=str(encounter["author_id"]),
         revision=int(encounter["revision"]),
+        workflow="followup" if encounter["kind"] == "follow_up" else "registration",
     )
     return encounter, state
 
@@ -424,6 +436,7 @@ def save_history(
         updated.get("draft_data") or {},
         author_id=author_id,
         revision=int(updated["revision"]),
+        workflow="followup" if updated["kind"] == "follow_up" else "registration",
     )
     return updated, state, stamp
 

@@ -54,11 +54,12 @@ from typing import Any
 #: Single package schema version; bump only with a migration.
 MANIFEST_SCHEMA_VERSION = "question-package-v1"
 
-#: Allowlisted synthetic source prefixes for ``allowed_source_paths``.
+#: Mapping families; runtime additionally requires exact declared history paths.
 KNOWN_SOURCE_PREFIXES: tuple[str, ...] = (
     "synthetic/history/",
     "synthetic/assessments/",
     "synthetic/demographics/",
+    "candidate/history/",
 )
 
 #: Allowlisted applicability expressions (gate language, nothing else).

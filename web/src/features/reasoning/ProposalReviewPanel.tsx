@@ -13,17 +13,16 @@
  * run — one POST per mount at most (`attemptedRef`), never per keystroke,
  * and never while a prerequisite gate is missing (dirty/saving/failed/
  * conflict autosave, unacknowledged below-threshold diagnosis, pending
- * medication reconciliation). Without previously-used packages there is
- * nothing honest to send (content bundles arrive in S39), so entry shows
- * the unavailable state instead of inventing packages; reloads resume from
- * GET via the stored batch id without a new POST.
+ * medication reconciliation). The server resolves reviewed, pinned packages
+ * for first generation. Reloads and other browsers discover the latest run
+ * through GET; retries reference its immutable server-stored packages.
  *
  * Progress (S48 §2): ordered per-question states derived by joining
  * `question_runs` + `baselines[].question_run_id` + `jobs[].
  * question_run_id` — pending/running/skipped/clarification/failed/completed/
  * stale, each with a text label plus a shape glyph (never color alone).
  * Partial sections stay visible but incomplete. Each failed question gets a
- * precise retry button that re-POSTs the same stored packages at the current
+ * precise retry button that references the original server batch at the current
  * revision (the backend resumes at the failed stage, S47). Active runs poll
  * roughly every 2s with hidden-tab backoff; polling stops at terminal
  * states (workflow.complete or nothing left to run).
@@ -62,7 +61,7 @@
  * - per-question freshness `data-testid="proposal-freshness-<question_key>"`
  *   (S48d, stale batches only: out-of-date ◍ vs current-inputs per question)
  * - per-question retry `data-testid="proposal-retry-<question_key>"`
- *   (failed runs with recorded packages only)
+ *   (failed runs use their server-pinned packages)
  * - per-question transparency region
  *   `data-testid="proposal-transparency-<question_key>"` (after expansion)
  * - per-question CPT review `data-testid="cpt-panel-<question_key>"` (own
@@ -99,6 +98,7 @@ import { DdiEvidenceList } from "../medications/DdiEvidenceList";
 import {
   clearStoredProposal,
   getBatch,
+  getLatestGeneration,
   getQuestionInputFreshness,
   getQuestionReview,
   readStoredProposal,
@@ -366,7 +366,6 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
   const [batchId, setBatchId] = useState<string | null>(null);
   const [batch, setBatch] = useState<BatchPayload | null>(null);
   const [pollError, setPollError] = useState<string | null>(null);
-  const [pkgsKnown, setPkgsKnown] = useState(false);
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
   const [reviews, setReviews] = useState<Record<string, ReviewState>>({});
   const [actionBusy, setActionBusy] = useState(false);
@@ -419,7 +418,6 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
     setFreshDone(false);
     freshKeyRef.current = null;
     const stored = readStoredProposal(encounterId);
-    setPkgsKnown(stored !== null && Array.isArray(stored.packages) && stored.packages.length > 0);
     if (stored !== null) {
       batchIdRef.current = stored.batchId;
       setBatchId(stored.batchId);
@@ -435,12 +433,23 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
     let cancelled = false;
     void (async () => {
       try {
-        const [diag, meds, meta] = await Promise.all([
+        const [diag, meds, meta, latest] = await Promise.all([
           getDiagnosis(encounterId),
           getMedications(encounterId),
           getEncounter(encounterId),
+          stored === null ? getLatestGeneration(encounterId) : Promise.resolve({ batch: null }),
         ]);
         if (!cancelled) {
+          if (latest.batch !== null) {
+            batchIdRef.current = latest.batch.id;
+            setBatchId(latest.batch.id);
+            setPhase({ kind: "tracking" });
+            writeStoredProposal(encounterId, {
+              batchId: latest.batch.id,
+              packages: null,
+              sourceRevision: latest.batch.source_revision,
+            });
+          }
           setPrereq({ diag, meds, failed: false });
           const pid = (meta.encounter as { patient_id?: unknown }).patient_id;
           setPatientId(typeof pid === "string" ? pid : null);
@@ -468,18 +477,6 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
   const runStart = useCallback(async () => {
     setActionError(null);
     setPollError(null);
-    const stored = readStoredProposal(encounterId);
-    const packages = stored?.packages ?? null;
-    if (packages === null || packages.length === 0) {
-      // No honest body to send: content bundles (S39) pin the question
-      // packages server-side. Never invent packages for a real encounter.
-      setPhase({
-        kind: "unavailable",
-        message:
-          "No generation run yet for this draft and no question packages are recorded in this browser. Automatic generation starts once the pinned content bundle supplies the question packages (S39); the draft below stays editable.",
-      });
-      return;
-    }
     setPhase({ kind: "starting" });
     setActionBusy(true);
     try {
@@ -487,13 +484,12 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
         /* fence below reads the fresh revision regardless */
       });
       const meta = await getEncounter(encounterId);
-      const started = await startGeneration(encounterId, meta.revision, packages);
+      const started = await startGeneration(encounterId, meta.revision);
       writeStoredProposal(encounterId, {
         batchId: started.batch.id,
-        packages,
+        packages: null,
         sourceRevision: meta.revision,
       });
-      setPkgsKnown(true);
       batchIdRef.current = started.batch.id;
       setBatch(null);
       setBatchId(started.batch.id);
@@ -706,18 +702,10 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
     };
   }, [phase.kind, batch, batchId, freshKey]);
 
-  /** Precise failed-question retry: re-POST the same stored packages at the
+  /** Precise failed-question retry: reference the server-pinned batch at the
    * current revision. The backend carries completed baselines forward and
    * resumes at the failed stage (S47); unchanged inputs reuse the batch. */
   const retryRun = useCallback(async () => {
-    const stored = readStoredProposal(encounterId);
-    const packages = stored?.packages ?? null;
-    if (packages === null || packages.length === 0) {
-      setActionError(
-        "Retry is unavailable — the original request packages were not recorded in this browser, so there is nothing exact to resend.",
-      );
-      return;
-    }
     setActionError(null);
     setActionBusy(true);
     try {
@@ -725,13 +713,14 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
         /* fence below reads the fresh revision regardless */
       });
       const meta = await getEncounter(encounterId);
-      const started = await startGeneration(encounterId, meta.revision, packages);
+      const started = await startGeneration(
+        encounterId, meta.revision, batchIdRef.current ?? undefined,
+      );
       writeStoredProposal(encounterId, {
         batchId: started.batch.id,
-        packages,
+        packages: null,
         sourceRevision: meta.revision,
       });
-      setPkgsKnown(true);
       batchIdRef.current = started.batch.id;
       setBatch(null);
       setPollError(null);
@@ -959,23 +948,16 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
                 forward with their acceptance intact. New inputs need a new run; this
                 run stays readable history.
               </p>
-              {pkgsKnown ? (
-                <div className="xi-row-actions" style={{ marginTop: 8 }}>
-                  <button
-                    className="xi-btn xi-btn-secondary"
-                    type="button"
-                    disabled={actionBusy}
-                    onClick={() => void retryRun()}
-                  >
-                    {actionBusy ? "Starting…" : "Start new run with current inputs"}
-                  </button>
-                </div>
-              ) : (
-                <p className="xi-hint" style={{ marginBottom: 0 }}>
-                  The original request packages were not recorded in this browser, so a new run
-                  cannot be started from here.
-                </p>
-              )}
+              <div className="xi-row-actions" style={{ marginTop: 8 }}>
+                <button
+                  className="xi-btn xi-btn-secondary"
+                  type="button"
+                  disabled={actionBusy}
+                  onClick={() => void retryRun()}
+                >
+                  {actionBusy ? "Starting…" : "Start new run with current inputs"}
+                </button>
+              </div>
             </div>
           )}
           {pollError !== null && (
@@ -1002,7 +984,6 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
                     fresh={freshByRun[item.run.id] ?? null}
                     freshDone={freshDone}
                     batchStale={batch.freshness?.stale === true}
-                    pkgsKnown={pkgsKnown}
                     actionBusy={actionBusy}
                     onSessionExpired={onSessionExpired}
                     onToggle={() => void toggleTransparency(item.run.question_key, item.run.id)}
@@ -1102,7 +1083,6 @@ function QuestionBlock({
   fresh,
   freshDone,
   batchStale,
-  pkgsKnown,
   actionBusy,
   onSessionExpired,
   onToggle,
@@ -1115,7 +1095,6 @@ function QuestionBlock({
   fresh: InputFreshness | null;
   freshDone: boolean;
   batchStale: boolean;
-  pkgsKnown: boolean;
   actionBusy: boolean;
   onSessionExpired: () => void;
   onToggle: () => void;
@@ -1163,24 +1142,16 @@ function QuestionBlock({
         </div>
       )}
       {item.display === "failed" && (
-        <div>
-          {pkgsKnown ? (
-            <div className="xi-row-actions">
-              <button
-                className="xi-btn xi-btn-secondary"
-                type="button"
-                data-testid={`proposal-retry-${key}`}
-                disabled={actionBusy}
-                onClick={onRetry}
-              >
-                {actionBusy ? "Retrying…" : `Retry ${key}`}
-              </button>
-            </div>
-          ) : (
-            <p className="xi-hint">
-              Retry unavailable — the original request packages were not recorded in this browser.
-            </p>
-          )}
+        <div className="xi-row-actions">
+          <button
+            className="xi-btn xi-btn-secondary"
+            type="button"
+            data-testid={`proposal-retry-${key}`}
+            disabled={actionBusy}
+            onClick={onRetry}
+          >
+            {actionBusy ? "Retrying…" : `Retry ${key}`}
+          </button>
         </div>
       )}
       <div className="xi-row-actions" style={{ marginTop: 8 }}>

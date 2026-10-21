@@ -8,10 +8,9 @@
  * Server-authoritative contract (no client-side evaluation duplication —
  * the browser never computes completeness or scores, so the display cannot
  * drift from the versioned drafts under content/history/):
- * - field inventory comes from the embedded HISTORY_FIELDS below, typed from
- *   content/history/history.v1.json (12 ids, periods, permitted values);
- *   there is no GET /content/history route, so the file is the contract and
- *   undeclared/excluded ids are never rendered or sent;
+ * - original fields mirror content/history/history.v1.json; reviewed workflow
+ *   fields and the complete allowed id inventory come from the history GET.
+ *   Versioned source paths preserve each question's assessment namespace;
  * - the verdict (status / missing_item_ids / item_errors) comes from
  *   GET /encounters/{id}/history, which runs the same evaluate_history() as
  *   the backend (history has no scores, only completeness);
@@ -53,7 +52,19 @@ export interface HistoryReconciliation {
   [key: string]: unknown;
 }
 
+export interface WorkflowHistoryField {
+  id: string;
+  question_key: string;
+  node_id?: string;
+  permitted: string[];
+  definition: string;
+  operationalization?: string;
+  time_window: string;
+}
+
 export interface HistoryPreview {
+  workflow_fields?: WorkflowHistoryField[];
+  allowed_field_ids?: string[];
   values: Record<string, unknown>;
   provenance: Record<string, HistoryProvenanceEntry>;
   reconciliation: HistoryReconciliation | null;

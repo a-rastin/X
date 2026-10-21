@@ -2,10 +2,11 @@
 
 ``POST /api/v1/encounters/{id}/generation-batches`` — author-only freeze
 (physician + CSRF, ``If-Match`` with the current encounter revision,
-optional ``Idempotency-Key``). Carries the synthetic question package
-inline for this engineering proof (S39 bundles + S24 registry supply
-pinned packages later). Returns ``202`` with the immutable batch and its
-single projected question run. S44: same-fingerprint triggers reuse the
+optional ``Idempotency-Key``). An empty body resolves the encounter's reviewed
+workflow release server-side; ``source_batch_id`` retries frozen packages.
+Inline package(s) remain supported for engineering clients. Returns ``202``
+with the immutable batch and ordered projected question runs. S44: same-fingerprint
+triggers reuse the
 active run (terminal batches admit a fresh batch, never resurrect); a
 different fingerprint supersedes the prior active generation (old jobs
 cancelled, history kept, never 409); a full queue is ``429``. ``409`` is
@@ -128,12 +129,13 @@ def _idempotency_conflict(request_id: str) -> JSONResponse:
 
 
 class GenerationStartRequest(BaseModel):
-    """Synthetic start body: one package or an ordered workflow (extra=forbid)."""
+    """Server workflow by default, original batch retry, or inline engineering packages."""
 
     model_config = {"extra": "forbid"}
 
     package: dict[str, Any] | None = Field(default=None, min_length=1)
     packages: list[dict[str, Any]] | None = Field(default=None, min_length=1)
+    source_batch_id: uuid.UUID | None = None
 
 
 def _batch_response(
@@ -192,27 +194,36 @@ def start_generation(
     expected = encounters_service.require_if_match_revision(
         request.headers.get(contracts.IF_MATCH_HEADER)
     )
-    # S46 workflows: exactly one of package/packages (distinct keys in order).
-    if (payload.package is None) == (payload.packages is None):
-        return error_response(
-            422,
-            "VALIDATION_FAILED",
-            "Supply package or packages, not both.",
-            request_id,
-            {"package": ["Supply package or packages, not both."]},
+    if (
+        sum(
+            value is not None
+            for value in (payload.package, payload.packages, payload.source_batch_id)
         )
-    assert payload.package is not None or payload.packages is not None
+        > 1
+    ):
+        return error_response(
+            422, "VALIDATION_FAILED", "Supply only one package source.", request_id
+        )
     key = _idempotency_key_or_none(request)
     request_hash: str | None = None
     if key is not None:
-        if payload.packages is None:
-            assert payload.package is not None
+        if payload.packages is None and payload.package is not None:
             request_hash = snapshots_service.idempotency_request_hash(
                 encounter_id, expected, payload.package
             )
-        else:
+        elif payload.packages is not None:
             request_hash = snapshots_service.idempotency_workflow_hash(
                 encounter_id, expected, list(payload.packages)
+            )
+        else:
+            request_hash = contracts.canonical_hash(
+                {
+                    "encounter_id": str(encounter_id),
+                    "expected_revision": expected,
+                    "source_batch_id": str(payload.source_batch_id)
+                    if payload.source_batch_id
+                    else None,
+                }
             )
         stored = identity_service.lookup_idempotency(
             session,
@@ -225,25 +236,32 @@ def start_generation(
                 return _idempotency_conflict(request_id)
             replay = dict(stored["response_body"])
             return JSONResponse(status_code=int(stored["response_status"]), content=replay)
-    if payload.packages is None:
-        assert payload.package is not None
-        batch, runs = snapshots_service.start_generation_batch(
-            session,
-            author=physician,
-            encounter_id=encounter_id,
-            expected_revision=expected,
-            package=payload.package,
-            request_id=request_id,
+    packages = payload.packages
+    release_pin: dict[str, Any] = {}
+    if payload.source_batch_id is not None:
+        original, runs, _ = snapshots_service.get_generation_batch(
+            session, payload.source_batch_id, physician
         )
-    else:
-        batch, runs = snapshots_service.start_generation_batch(
-            session,
-            author=physician,
-            encounter_id=encounter_id,
-            expected_revision=expected,
-            packages=list(payload.packages),
-            request_id=request_id,
-        )
+        if str(original["encounter_id"]) != str(encounter_id):
+            return error_response(
+                422, "VALIDATION_FAILED", "Retry batch belongs to another encounter.", request_id
+            )
+        packages = [dict(run["pinned_package"]) for run in runs]
+        release_pin = {
+            key: value
+            for key, value in original["pinned_bundle"].items()
+            if key in ("release_version", "release_hash", "bundle_version", "bundle_hash")
+        }
+    batch, runs = snapshots_service.start_generation_batch(
+        session,
+        author=physician,
+        encounter_id=encounter_id,
+        expected_revision=expected,
+        package=payload.package,
+        packages=packages,
+        pinned_release=release_pin,
+        request_id=request_id,
+    )
     response_body: dict[str, Any] = {
         "batch": snapshots_service.safe_batch(batch),
         "question_runs": [snapshots_service.safe_run(run) for run in runs],
@@ -260,6 +278,31 @@ def start_generation(
             response_body=response_body,
         )
     return JSONResponse(status_code=202, content=response_body)
+
+
+@router.get("/encounters/{encounter_id}/generation-batches/latest")
+def latest_generation(
+    encounter_id: uuid.UUID, request: Request, session: Session = Depends(get_session)
+) -> JSONResponse:
+    from sqlalchemy import select
+
+    from x_insight.reasoning.tables import generation_batches
+
+    user = _require_user(request, session)
+    if isinstance(user, JSONResponse):
+        return user
+    encounters_service.read_draft_for_author(session, encounter_id, user)
+    row = (
+        session.execute(
+            select(generation_batches)
+            .where(generation_batches.c.encounter_id == encounter_id)
+            .order_by(generation_batches.c.created_at.desc(), generation_batches.c.id.desc())
+            .limit(1)
+        )
+        .mappings()
+        .first()
+    )
+    return JSONResponse(content={"batch": snapshots_service.safe_batch(dict(row)) if row else None})
 
 
 @router.get("/generation-batches/{batch_id}")

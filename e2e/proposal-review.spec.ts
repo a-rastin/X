@@ -23,10 +23,9 @@ import {
  * proposal-ddi, proposal-sign-blocked; storage xi.proposal.<encounterId>).
  *
  * Known constraints (dev-frontend handoff):
- * - Browser has no package source (S39 bundles pending): fresh entry with no
- *   stored packages shows honest unavailable; §§2-4 mocked fixtures seed
- *   localStorage xi.proposal.<encounterId> with {batchId, packages (exact
- *   array POSTed), sourceRevision} then Check-again POST mock.
+ * - Fresh entry starts with server-resolved reviewed content. Display fixtures
+ *   restore synthetic runs before mount; the final retry uses only a batch id.
+ *   No worker runs in browser tests; provider execution is covered separately.
  * - No worker runs in e2e: real queued jobs stay pending; failed/completed/
  *   ordered/partial/transparency/proposal fixtures below use controlled
  *   page.route mocks as the documented alternative (deterministic, no sleeps
@@ -305,9 +304,8 @@ async function seedStoredProposal(
   expect(check).not.toBeNull();
 }
 
-// S48 §1: fresh entry with no stored packages shows honest unavailable,
-// makes no generation POST, keeps the draft editable, has no Generate click.
-test("S48 §1 fresh entry shows honest unavailable with no POST and no Generate click", async ({
+// First entry starts the pinned workflow; removing storage still recovers the run.
+test("S48 §1 fresh entry starts server-pinned generation and resumes without browser storage", async ({
   page,
   request,
 }) => {
@@ -324,15 +322,47 @@ test("S48 §1 fresh entry shows honest unavailable with no POST and no Generate 
   try {
     await gotoEncounter(page, draftId);
     const panel = page.getByTestId("proposal-review");
-    await expect(panel).toContainText("Proposal unavailable", { timeout: 15000 });
-    await expect(panel).toContainText("No generation run yet", { timeout: 15000 });
+    await expect(panel).toContainText("Questions (5)", { timeout: 15000 });
+    await expect(page.getByTestId("proposal-status-pharmacotherapy")).toContainText("Needs clarification");
+    expect(postCount).toBe(1);
+    const stored = await page.evaluate((id) => localStorage.getItem(`xi.proposal.${id}`), draftId);
+    expect(stored).not.toBeNull();
+    await page.evaluate((id) => localStorage.removeItem(`xi.proposal.${id}`), draftId);
+    await page.reload();
+    await expect(page.getByTestId("proposal-review")).toContainText("Questions (5)", { timeout: 15000 });
+    expect(postCount).toBe(1);
+    await page.locator("#wizard-step-history").click();
+    const prefix = "candidate/history/pharmacotherapy.v2/";
+    const answers: Record<string, string> = {
+      h_prior_treatment_difficulty: "Absent", h_preference_barrier: "Absent",
+      h_physical_vulnerability: "Absent", h_substance_contribution: "Absent",
+      h_exposure_modifier: "NoIdentifiedModifier",
+      h_antipsychotic_treatment_context: "NoEstablishedTreatment",
+      h_trial_duration_review: "NoEstablishedTreatment",
+      h_urgent_safety_concern: "Absent", h_monitoring_gap: "Absent",
+    };
+    for (const [field, value] of Object.entries(answers)) {
+      await page.locator(`[id="hist-${prefix}${field}"]`).selectOption(value);
+    }
+    // A legacy-field edit must preserve all versioned question answers.
+    await page.locator("#hist-h_exposure_dopamine_blocker-yes").check();
+    await expect(page.locator("#draft-save-status")).toContainText("Saved (revision", { timeout: 10000 });
+    await expect.poll(async () => {
+      const response = await request.get(`/api/v1/encounters/${draftId}/history`);
+      const history = await response.json();
+      return history.values[prefix + "h_monitoring_gap"];
+    }).toBe("Absent");
+    await page.locator("#wizard-step-proposal-review").click();
+    await page.getByRole("button", { name: "Start new run with current inputs" }).click();
+    await expect(page.getByTestId("proposal-status-pharmacotherapy")).toContainText(/Pending|Running/);
+    expect(postCount).toBe(2);
     // No Generate affordance anywhere in the proposal step.
     await expect(panel.getByRole("button", { name: /Generate/i })).toHaveCount(0);
     await expect(page.locator("body").getByRole("button", { name: /^Generate/ })).toHaveCount(0);
     // Working note is on Register patient, not this encounter-draft step.
     await expect(page.getByLabel("Draft working note")).toHaveCount(0);
-    await expect(page.locator("#draft-save-status")).toContainText("Saved (revision 1)");
-    expect(postCount).toBe(0);
+    await expect(page.locator("#draft-save-status")).toContainText("Saved (revision");
+    expect(postCount).toBe(2);
   } finally {
     await page.unroute("**/api/v1/encounters/*/generation-batches");
   }
@@ -364,7 +394,7 @@ test("S48 §1 entry flushes autosave and never creates a run per keystroke", asy
   try {
     await gotoEncounter(page, draftId);
     const panel = page.getByTestId("proposal-review");
-    await expect(panel).toContainText("Proposal unavailable", { timeout: 15000 });
+    await expect(panel).toContainText("Questions (5)", { timeout: 15000 });
 
     // Working note lives on Register patient. Keystrokes there still autosave
     // and must not create a generation run.
@@ -381,7 +411,7 @@ test("S48 §1 entry flushes autosave and never creates a run per keystroke", asy
     await expect(page.locator("#draft-save-status")).toContainText("Saved (revision 3)", {
       timeout: 10000,
     });
-    expect(postCount).toBe(0);
+    expect(postCount).toBe(1);
   } finally {
     await page.unroute("**/api/v1/encounters/*/generation-batches");
     await page.unroute("**/api/v1/encounters/*");
@@ -444,7 +474,8 @@ test("S48 §1 diagnosis below-threshold without ack blocks generation with no PO
     });
     await expect(panel.getByRole("button", { name: "Check again" })).toBeVisible();
     expect(postCount).toBe(0);
-    // Prerequisite hint stays honest: diagnosis verdict is below threshold.
+    // The wizard mounts one step at a time; visit Diagnosis for its verdict.
+    await page.locator("#wizard-step-diagnosis").click();
     await expect(page.locator("#diagnosis-preview-status")).toContainText(
       "Completed below threshold",
       { timeout: 10000 },
@@ -850,11 +881,9 @@ test("S48 §2 ordered seven states render position-ordered with glyphs", async (
     }),
   );
   try {
+    await seedStoredProposal(page, draftId, { batchId, packages, sourceRevision: 2 });
     await gotoEncounter(page, draftId);
     const panel = page.getByTestId("proposal-review");
-    await expect(panel).toContainText("Proposal unavailable", { timeout: 15000 });
-    await seedStoredProposal(page, draftId, { batchId: "pending-ui-post", packages, sourceRevision: 2 });
-    await panel.getByRole("button", { name: "Check again" }).click();
     const expected: Array<[string, string, string]> = [
       ["s48_pend", "Pending", "○"],
       ["s48_run", "Running", "◐"],
@@ -993,11 +1022,9 @@ test("S48 §2 active polls, hidden backoff delays, terminal stops polling", asyn
   );
 
   try {
+    await seedStoredProposal(page, draftId, { batchId, packages, sourceRevision: 2 });
     await gotoEncounter(page, draftId);
     const panel = page.getByTestId("proposal-review");
-    await expect(panel).toContainText("Proposal unavailable", { timeout: 15000 });
-    await seedStoredProposal(page, draftId, { batchId: "pending-ui-post", packages, sourceRevision: 2 });
-    await panel.getByRole("button", { name: "Check again" }).click();
     await expect(page.getByTestId("proposal-status-s48_q1")).toBeVisible({ timeout: 15000 });
 
     // Active polls roughly every 2s: at least 2 GETs within 7s (web-first poll).
@@ -1140,11 +1167,9 @@ test("S48 §4 complete proposal with DDI and secondary plan, stale blocks signin
   );
 
   try {
+    await seedStoredProposal(page, draftId, { batchId, packages, sourceRevision: 2 });
     await gotoEncounter(page, draftId);
     const panel = page.getByTestId("proposal-review");
-    await expect(panel).toContainText("Proposal unavailable", { timeout: 15000 });
-    await seedStoredProposal(page, draftId, { batchId: "pending-ui-post", packages, sourceRevision: 2 });
-    await panel.getByRole("button", { name: "Check again" }).click();
 
     // Final proposal: position-ordered sections + skipped + DDI.
     await expect(page.getByTestId("proposal-status-s48_q1")).toContainText("Completed", { timeout: 15000 });
@@ -1241,11 +1266,9 @@ test("S48 §4 stale run blocks signing with reason, draft editing preserved", as
     route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify(stalePayload) }),
   );
   try {
+    await seedStoredProposal(page, draftId, { batchId, packages, sourceRevision: 2 });
     await gotoEncounter(page, draftId);
     const panel = page.getByTestId("proposal-review");
-    await expect(panel).toContainText("Proposal unavailable", { timeout: 15000 });
-    await seedStoredProposal(page, draftId, { batchId: "pending-ui-post", packages, sourceRevision: 2 });
-    await panel.getByRole("button", { name: "Check again" }).click();
     await expect(page.getByTestId("proposal-status-s48_q1")).toContainText("Completed", { timeout: 15000 });
     // Stale banner + sign blocked with reason, draft editing + retry preserved.
     await expect(panel).toContainText("This run is stale");
@@ -1363,11 +1386,9 @@ test("S48 §3 transparency shows five fields, distinct CPT/posterior, exact save
   });
 
   try {
+    await seedStoredProposal(page, draftId, { batchId, packages, sourceRevision: 2 });
     await gotoEncounter(page, draftId);
     const panel = page.getByTestId("proposal-review");
-    await expect(panel).toContainText("Proposal unavailable", { timeout: 15000 });
-    await seedStoredProposal(page, draftId, { batchId: "pending-ui-post", packages, sourceRevision: 2 });
-    await panel.getByRole("button", { name: "Check again" }).click();
     await expect(page.getByTestId("proposal-status-s48_q1")).toContainText("Completed", { timeout: 15000 });
 
     // Lazy: no review fetch before expansion.
@@ -1425,17 +1446,13 @@ test("S48 §3 transparency shows five fields, distinct CPT/posterior, exact save
 
 // Two-question failure→retry browser case (S48 §§2+4 verify): q1 completed,
 // q2 failed (config-error style), partial proposal null, sign blocked.
-test("S48 §§2+4 two-question failure shows partial, retry re-POSTs exact packages, sign blocked", async ({
+test("S48 §§2+4 two-question failure shows partial, retry references server-pinned packages, sign blocked", async ({
   page,
   request,
 }) => {
   const physician = await loginPhysician(page, request, "e2eprfail");
   const { draftId } = await createPatientWithDraft(request, physician);
   const networkHash = createHash("sha256").update(TWO_NODE_XML, "utf8").digest("hex");
-  const packages = [
-    s48Package("s48_q1", "h_s48_a", "h_s48_b", networkHash),
-    s48Package("s48_q2", "h_s48_c", "h_s48_d", networkHash),
-  ];
   let csrf = await physicianSession(request, physician);
   const patched = await request.patch(`/api/v1/encounters/${draftId}`, {
     headers: { "X-CSRF-Token": csrf, "If-Match": '"1"' },
@@ -1584,10 +1601,10 @@ test("S48 §§2+4 two-question failure shows partial, retry re-POSTs exact packa
         status: 202,
         contentType: "application/json",
         body: JSON.stringify({
-          batch: { ...batchPayload.batch, id: postCount === 1 ? batchId : nextBatchId },
+          batch: { ...batchPayload.batch, id: nextBatchId },
           question_runs: batchPayload.question_runs.map((r) => ({
             ...r,
-            batch_id: postCount === 1 ? batchId : nextBatchId,
+            batch_id: nextBatchId,
           })),
         }),
       });
@@ -1614,11 +1631,9 @@ test("S48 §§2+4 two-question failure shows partial, retry re-POSTs exact packa
   });
 
   try {
+    await seedStoredProposal(page, draftId, { batchId, packages: null, sourceRevision: 2 });
     await gotoEncounter(page, draftId);
     const panel = page.getByTestId("proposal-review");
-    await expect(panel).toContainText("Proposal unavailable", { timeout: 15000 });
-    await seedStoredProposal(page, draftId, { batchId: "pending-ui-post", packages, sourceRevision: 2 });
-    await panel.getByRole("button", { name: "Check again" }).click();
 
     // Ordered failed/completed with glyph + text (never color alone).
     await expect(page.getByTestId("proposal-status-s48_q1")).toContainText("Completed", { timeout: 15000 });
@@ -1631,8 +1646,7 @@ test("S48 §§2+4 two-question failure shows partial, retry re-POSTs exact packa
     const q1Pos = await page.getByTestId("proposal-status-s48_q1").evaluate((el) => el.getBoundingClientRect().top);
     const q2Pos = await page.getByTestId("proposal-status-s48_q2").evaluate((el) => el.getBoundingClientRect().top);
     expect(q1Pos).toBeLessThan(q2Pos);
-    expect(postCount).toBe(1);
-    expect((postedBodies[0] as Record<string, unknown>)["packages"]).toEqual(packages);
+    expect(postCount).toBe(0);
 
     // Partial stays readable but incomplete; sign visibly blocked with reason.
     await expect(panel).toContainText("Proposal unavailable");
@@ -1652,8 +1666,8 @@ test("S48 §§2+4 two-question failure shows partial, retry re-POSTs exact packa
 
     // Precise retry re-POSTs the exact stored packages at the current revision.
     await retry.click();
-    await expect.poll(() => postCount, { timeout: 10000 }).toBe(2);
-    expect((postedBodies[1] as Record<string, unknown>)["packages"]).toEqual(packages);
+    await expect.poll(() => postCount, { timeout: 10000 }).toBe(1);
+    expect(postedBodies[0]).toEqual({ source_batch_id: batchId });
     const storedAfter = await page.evaluate((id) => localStorage.getItem(`xi.proposal.${id}`), draftId);
     expect(storedAfter).not.toBeNull();
     expect(storedAfter as string).toContain(nextBatchId);

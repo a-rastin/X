@@ -60,6 +60,10 @@ the same worksheet language to response controls, navigation, and result review.
 
 ## Reading and updating progress
 
+The [Step 7 integration fix (2026-10-22)](s48.md#follow-up-2026-10-22--connect-step-7-to-reviewed-workflow-generation)
+connects owner-confirmed pinned bundles, typed history inputs and browser-independent
+run recovery; the earlier diagnosis is retained in the same report.
+
 The [Step 6 DDI diagnosis (2026-10-20)](s20.md#follow-up-2026-10-20--step-6-dataset-unavailable-diagnosis)
 traces the earlier shared unavailable error; the DDInter publication above resolves
 the missing release in the local application database.

@@ -1021,6 +1021,8 @@ def _history_response(
         "evaluation": state["evaluation"],
         "analysis_visible": state["analysis_visible"],
         "analysis_visible_label": state["analysis_visible_label"],
+        "workflow_fields": state["workflow_fields"],
+        "allowed_field_ids": state["allowed_field_ids"],
     }
     if server_timestamp is not None:
         content["server_timestamp"] = server_timestamp
@@ -1137,6 +1139,8 @@ def save_history(
         "evaluation": state["evaluation"],
         "analysis_visible": state["analysis_visible"],
         "analysis_visible_label": state["analysis_visible_label"],
+        "workflow_fields": state["workflow_fields"],
+        "allowed_field_ids": state["allowed_field_ids"],
         "server_timestamp": server_timestamp,
     }
     if key is not None:

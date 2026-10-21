@@ -1,0 +1,71 @@
+{
+  "schema_version": "workflow-bundle-v1",
+  "workflow": "registration",
+  "version": "owner-reviewed-2026-10-22",
+  "assessment_refs": [
+    "content/assessments/diagnosis.v1.json",
+    "content/assessments/panss.v1.json",
+    "content/assessments/cssrs.v1.json"
+  ],
+  "ddi_ref": "runtime DatasetRelease pinned atomically at generation start",
+  "questions": [
+    {
+      "question_key": "pharmacotherapy",
+      "version": "s39-reviewed-v1",
+      "network_hash": "937ddcd7a5d5477a098462bf1360972aa867bacf4715a9970ca8663b852bfc67",
+      "package_hash": "3b51459b774e59cef402a448dfc026a05657cafedfd37bdcb8f7fdf4e8c14a1b",
+      "prompt_version": "s27-v1",
+      "template_version": "s39-reviewed-v1",
+      "history_definition": "content/history/history.pharmacotherapy.v2.json",
+      "package_directory": "content/questions/pharmacotherapy/s39-reviewed-v1"
+    },
+    {
+      "question_key": "high_suicide_clozapine",
+      "version": "s39-reviewed-v1",
+      "network_hash": "a1561ea425dcbe876ebc1330a17e3224e8aad3ca867f15953a4f18e8ddc49a3b",
+      "package_hash": "f1e103b7e8b3d7723c36ce75eb9fd6e2e2cf61b170648c598c7c730bb5f63c6d",
+      "prompt_version": "s29-v1",
+      "template_version": "s39-reviewed-v1",
+      "history_definition": "content/history/history.high_suicide_clozapine.v1.json",
+      "package_directory": "content/questions/high_suicide_clozapine/s39-reviewed-v1"
+    },
+    {
+      "question_key": "lai_indication_choice",
+      "version": "s39-reviewed-v1",
+      "network_hash": "e0bc286f7402c5e73905830b1ae9ee88ca6d9d911500a99e7b8e9d67d315a806",
+      "package_hash": "a5484c2d026c4ba20d8683a76c58a426cfb51ae2d6a4a5036e46fbda4485f18b",
+      "prompt_version": "s30-v1",
+      "template_version": "s39-reviewed-v1",
+      "history_definition": "content/history/history.lai_indication_choice.v1.json",
+      "package_directory": "content/questions/lai_indication_choice/s39-reviewed-v1"
+    },
+    {
+      "question_key": "aggression_clozapine",
+      "version": "s39-reviewed-v1",
+      "network_hash": "341fb155315276d6cd1028b32e681d622998122fb5503c4dcdff0df1092829cf",
+      "package_hash": "b8febec0ab25f570a58c0befc88c39bcca0808ca7b194c92b88e729e636d2837",
+      "prompt_version": "s31-v1",
+      "template_version": "s39-reviewed-v1",
+      "history_definition": "content/history/history.aggression_clozapine.v1.json",
+      "package_directory": "content/questions/aggression_clozapine/s39-reviewed-v1"
+    },
+    {
+      "question_key": "established_case_clozapine",
+      "version": "s39-reviewed-v1",
+      "network_hash": "5a91aa677cda1c27943f29084d5b017c27bca7b5a4353684549a80fa9251daa5",
+      "package_hash": "f723e513b443b631a9d7499f61ef12d43db27fc45d8175b84e6c832490ad9f63",
+      "prompt_version": "s32-v1",
+      "template_version": "s39-reviewed-v1",
+      "history_definition": "content/history/history.established_case_clozapine.v1.json",
+      "package_directory": "content/questions/established_case_clozapine/s39-reviewed-v1"
+    }
+  ],
+  "review": {
+    "reviewer": "owner",
+    "decision": "approved",
+    "reviewed": true,
+    "confirmed": true,
+    "date": "2026-10-22",
+    "basis": "Explicit owner confirmation that all files were read, verified and reviewed; Step 7 integration request."
+  }
+}
