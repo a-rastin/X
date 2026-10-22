@@ -406,8 +406,14 @@ def validate_question_package(
 
     # --- Patient mappings (estimation context only) ---
     mappings = manifest.get("patient_mappings")
-    if not isinstance(mappings, (list, tuple)) or not mappings:
-        add("bad_manifest", "manifest needs a non-empty patient_mappings list.")
+    assessment_source = manifest.get("assessment_context_source")
+    if assessment_source is not None and (
+        assessment_source != "synthetic/assessments/cssrs"
+        or manifest.get("question_key") != "high_suicide_clozapine"
+    ):
+        add("unknown_source_path", "Unsupported assessment context source.")
+    if not isinstance(mappings, (list, tuple)) or (not mappings and assessment_source is None):
+        add("bad_manifest", "manifest needs patient mappings or an explicit assessment context.")
     else:
         seen_mapping_nodes: set[str] = set()
         for idx, entry in enumerate(mappings):

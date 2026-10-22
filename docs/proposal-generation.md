@@ -48,8 +48,11 @@ including when embedded in a newer analysis snapshot's fingerprint payload.
 
 ## Complete proposal context
 
-History exposes up to 47 registration or 76 follow-up context controls.
-Registration has 46 applicable controls when lifetime exposure is No or Unknown.
+History exposes up to **28 registration** or **76 follow-up** context controls.
+Registration has **26** applicable controls when lifetime exposure is No or Unknown,
+and **28** when it is Yes: established antipsychotic and prior NMS become applicable.
+These counts exclude core History. Registration readiness additionally requires
+the completed Step 4 C-SSRS assessment, giving **27 or 29** required context inputs.
 The revised pharmacotherapy contract retains physical vulnerability and substance
 contribution as Yes/No/Unknown, default Unknown. Established antipsychotic appears
 only for lifetime exposure Yes and defaults to Unknown. Legacy Present/Absent
@@ -58,9 +61,41 @@ Six pharmacotherapy questions are retired: prior treatment difficulty, preferenc
 barrier, exposure modifier, trial duration review, urgent safety concern and
 monitoring gap. Their network nodes remain in full CPT estimation without patient
 input mappings; retirement does not assign those nodes clinical values.
-Other workflow controls retain their existing categories and have no defaults. The
+
+The revised LAI contract retains five controls:
+
+| Question | Choices | Shown when / default |
+| --- | --- | --- |
+| Scenario preference for an LAI or oral treatment | Prefers LAI, Prefers oral, Undecided, Declines LAI, Unknown | Always; Unknown |
+| Antipsychotic adherence | Adequate, Poor, Unknown | Always; Unknown |
+| Additional scenario context for exploring an LAI, such as treatment gaps, care transitions, repeated hospitalizations or emergency visits. | Present, Absent, Unknown | Always; Unknown |
+| History of neuroleptic malignant syndrome represented in the scenario. | Yes, No, Unknown, Not assessed | Lifetime exposure is Yes; Unknown |
+| Scenario barriers involving access, transport, scheduling, cost, staffing or resources for LAI delivery. | Present, Absent, Unknown | Always; Unknown |
+
+The schizophrenia-status, candidate oral-antipsychotic experience, product-plan
+review and current/previous/considered LAI-use controls are retired. Not assessed
+is removed from preference, adherence, discussion context and delivery barriers;
+Uncertain is also removed from adherence. Those legacy values normalize to
+unattributed Unknown. Hiding prior NMS clears its current answer and provenance.
+
+The aggression contract retains five controls: **Substantial aggression-related
+risk** (Yes, No, Unknown; default Unknown), clozapine treatment status, willingness
+to discuss clozapine, monitoring-plan availability and medical-review completion.
+The latter four retain their existing choices and lack implicit defaults.
+Schizophrenia status, persistence despite other treatments, urgent safety concern,
+adherence/exposure uncertainty and modifiable risk-factor controls are retired.
+
+High-suicide clozapine has **no History controls**. Its context comes from the
+saved complete, released Step 4 C-SSRS assessment: released item responses,
+completeness and results flow through the frozen patient projection, provider
+context and scoped private MCP. The assessment is an input prerequisite, not a
+new categorical suicide-risk mapping or clinical applicability rule. No threshold,
+treatment-persistence value or other missing clinical state is inferred from it.
+Assessment changes participate in fingerprint freshness and selective regeneration.
+
+Other workflow controls retain their existing categories and defaults. The
 separate **Proposal readiness** summary lists every unresolved requirement with
-a readable field label, a reason and a link to its exact History control.
+a readable field label, a reason and a link to its History control or Step 4 assessment.
 Controls wait for the server's field inventory to load before accepting edits.
 
 Response counts distinguish **answered** from **execution-ready**. Unknown and
@@ -84,8 +119,8 @@ and unreadable checks prevent a start. **Check again** repeats the checks.
 
 ## Recover an earlier clarification run
 
-1. Follow the proposal-readiness links to History. Review every unresolved field
-   and save the assessed responses. Confirm the save succeeds and readiness
+1. Follow the proposal-readiness links to History or Step 4 C-SSRS. Review every
+   unresolved input and save the assessed responses. Confirm the save succeeds and readiness
    reflects the saved revision.
 2. Return to Step 7. If an earlier run exists, use **Start new run with current
    inputs** explicitly. Reloading or returning to the step restores that
@@ -94,7 +129,8 @@ and unreadable checks prevent a start. **Check again** repeats the checks.
    preserve that batch's frozen question packages, use current saved inputs and
    must pass readiness again. An initial start without `source_batch_id` resolves
    the active release. A worker must be running to process any queued questions.
-   Exception: a frozen pharmacotherapy package requiring retired History inputs
+   Exception: a frozen pharmacotherapy, high-suicide, LAI or aggression application
+   package with an obsolete History input contract
    returns `HISTORY_INPUT_CONTRACT_CHANGED`. Use **Start new run with current
    History** to resolve the current contract without `source_batch_id`; the old
    recorded run remains readable.
@@ -152,9 +188,12 @@ independent clinical validation. Historical content artifacts remain unchanged.
 The server pins the content, patient projection, provider settings and DDI release
 into each batch. It loads only the checked-in release inventory, verifies
 dependency hashes, and validates package approval, network semantics and workflow
-order. After validating the original release, it derives the pharmacotherapy
-application contract `history-inputs-2026-10-22-v2`, pinned to
-`content/history/history.pharmacotherapy.v3.json`. The derived manifest records
+order. After validating the original release, it derives application contract
+`history-inputs-2026-10-22-v3`, with exact hash-pinned definitions
+`history.pharmacotherapy.v3.json`, `history.high_suicide_clozapine.v2.json`
+(empty fields), `history.lai_indication_choice.v2.json` and
+`history.aggression_clozapine.v2.json` under `content/history/`. Original artifacts
+remain available as historical records. The derived manifest records
 `awaiting_review`; original clinical approval is provenance and does not approve
 the changed inputs. Network bytes, CPT contracts, queries, templates and empty
 inference evidence remain unchanged. Each batch pins the derived contract's
@@ -169,8 +208,8 @@ Local source runs resolve `content/` beside the repository. Deployments can set
 includes workflow bundles, question packages, history definitions and assessments
 for API and worker. Apply the updated source by restarting API and worker and
 serving the rebuilt UI. History inventory caching detects file revision changes;
-the active pharmacotherapy definition is integrity checked on access. Basic draft
+all four active derived definitions are integrity checked on access. Basic draft
 normalization remains available during content outages; generation stays blocked.
 The 2026-10-22 cleanup adds no migration. Its saved verification logs do not claim
-an application runtime restart or live provider completion. It is not blanket approval of the
+an application runtime restart or external provider completion. It is not blanket approval of the
 History/adverse-effect instrument drafts; their review status remains pending.

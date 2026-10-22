@@ -42,18 +42,12 @@ def history_gate_requirements(key: str, paths: dict[str, Any]) -> list[tuple[str
 def evaluate_history_gate(key: str, paths: dict[str, Any]) -> tuple[str, str]:
     values = {path.rsplit("/", 1)[-1]: value for path, value in paths.items()}
     false = False
-    if key in ("high_suicide_clozapine", "aggression_clozapine"):
-        risk = (
-            "h_substantial_suicide_risk"
-            if key.startswith("high_")
-            else "h_substantial_aggression_risk"
-        )
-        false = any(
-            values.get(field) == "No"
-            for field in ("h_schizophrenia_established", risk, "h_persistence_despite_treatment")
-        )
-    elif key in ("lai_indication_choice", "established_case_clozapine"):
+    if key == "aggression_clozapine":
+        false = values.get("h_substantial_aggression_risk") == "No"
+    elif key == "established_case_clozapine":
         false = values.get("h_schizophrenia_established") == "No"
+    elif key == "lai_indication_choice":
+        false = False  # Current contract has no duplicate diagnosis control.
     elif key in ("tardive_dyskinesia", "akathisia", "parkinsonism"):
         field = {
             "tardive_dyskinesia": "h_td_assessment",

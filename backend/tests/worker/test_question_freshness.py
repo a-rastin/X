@@ -279,7 +279,14 @@ def _login_physician(clean_registry, monkeypatch, username: str):
     return client, response.json()["csrf_token"]
 
 
-def _new_two_question_setup(clean_registry, monkeypatch, username: str, identifier: str):
+def _new_two_question_setup(
+    clean_registry,
+    monkeypatch,
+    username: str,
+    identifier: str,
+    *,
+    cssrs_answers: dict | None = None,
+):
     """Author + patient + draft with disjoint Q1/Q2 history fields + workflow start."""
     monkeypatch.setattr(db_module, "get_engine", lambda: clean_registry)
     admin = TestClient(app)
@@ -310,9 +317,12 @@ def _new_two_question_setup(clean_registry, monkeypatch, username: str, identifi
     assert made.status_code == 201, made.text
     encounter_id = made.json()["draft"]["id"]
     values = {"h_q1_a": "yes", "h_q1_b": "no", "h_q2_a": "yes", "h_q2_b": "no"}
+    draft_data = {"history": {"values": dict(values)}, "gate": "true"}
+    if cssrs_answers is not None:
+        draft_data["cssrs"] = {"answers": cssrs_answers}
     saved = client.patch(
         f"/api/v1/encounters/{encounter_id}",
-        json={"draft_data": {"history": {"values": dict(values)}, "gate": "true"}},
+        json={"draft_data": draft_data},
         headers={**_auth_headers(csrf), "If-Match": contracts.format_etag(1)},
     )
     assert saved.status_code == 200, saved.text
@@ -321,6 +331,9 @@ def _new_two_question_setup(clean_registry, monkeypatch, username: str, identifi
         _package("s48d_q1", "h_q1_a", "h_q1_b"),
         _package("s48d_q2", "h_q2_a", "h_q2_b"),
     ]
+    if cssrs_answers is not None:
+        packages[0]["manifest"]["question_key"] = "high_suicide_clozapine"
+        packages[0]["manifest"]["assessment_context_source"] = "synthetic/assessments/cssrs"
     started = client.post(
         f"/api/v1/encounters/{encounter_id}/generation-batches",
         json={"packages": packages},
@@ -1021,3 +1034,64 @@ def test_notes_plan_preserve_and_stale_reset_retry_blocked(clean_registry, monke
         ).status_code
         == 200
     )
+
+
+def test_cssrs_context_change_regenerates_only_high_suicide_and_carries_sibling(
+    clean_registry, monkeypatch
+):
+    from tests.assessments.test_cssrs import _all_no, _level3_complete
+
+    client, csrf, eid, revision, packages, first = _new_two_question_setup(
+        clean_registry, monkeypatch, "dr_cssrs_carry", "0012345891", cssrs_answers=_all_no()
+    )
+    endpoint, outcomes = _run_bounded_times(clean_registry, _valid_cpt(), 2)
+    try:
+        assert [outcome["status"] for outcome in outcomes] == ["succeeded", "succeeded"]
+        assert [_question_key_of(entry) for entry in endpoint.captured] == [
+            "high_suicide_clozapine",
+            "s48d_q2",
+        ]
+    finally:
+        endpoint.stop()
+    original_runs = {run["question_key"]: run for run in first["question_runs"]}
+    sibling_before = client.get(
+        f"/api/v1/question-runs/{original_runs['s48d_q2']['id']}/review"
+    ).json()
+    data = client.get(f"/api/v1/encounters/{eid}").json()["draft_data"]
+    data["cssrs"] = {"answers": _level3_complete()}
+    changed = client.patch(
+        f"/api/v1/encounters/{eid}",
+        json={"draft_data": data},
+        headers={**_auth_headers(csrf), "If-Match": contracts.format_etag(revision)},
+    )
+    assert changed.status_code == 200, changed.text
+    restarted = client.post(
+        f"/api/v1/encounters/{eid}/generation-batches",
+        json={"packages": packages},
+        headers={
+            **_auth_headers(csrf),
+            "If-Match": contracts.format_etag(changed.json()["revision"]),
+        },
+    )
+    assert restarted.status_code == 202, restarted.text
+    runs = {run["question_key"]: run for run in restarted.json()["question_runs"]}
+    high_before = client.get(
+        f"/api/v1/question-runs/{runs['high_suicide_clozapine']['id']}/review"
+    ).json()
+    assert high_before["baseline"] is None
+    assert (
+        runs["high_suicide_clozapine"]["projection"]["assessment_context"]["value"]["answers"]
+        == _level3_complete()
+    )
+    sibling_after = client.get(f"/api/v1/question-runs/{runs['s48d_q2']['id']}/review").json()
+    assert (
+        sibling_after["baseline"]["effective_hash"] == sibling_before["baseline"]["effective_hash"]
+    )
+    endpoint, outcomes = _run_bounded_times(clean_registry, _valid_cpt(), 2)
+    try:
+        assert [outcome["status"] for outcome in outcomes] == ["succeeded", "idle"]
+        assert [_question_key_of(entry) for entry in endpoint.captured] == [
+            "high_suicide_clozapine"
+        ]
+    finally:
+        endpoint.stop()

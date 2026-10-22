@@ -113,6 +113,63 @@ RETIRED_FIELD_IDS = frozenset(
         ),
     }
 )
+# Stable application cleanup also applies during content outages.
+LAI_PREFIX = "candidate/history/lai_indication_choice.v1/"
+AGGRESSION_PREFIX = "candidate/history/aggression_clozapine.v1/"
+SUICIDE_PREFIX = "candidate/history/high_suicide_clozapine.v1/"
+RETIRED_FIELD_IDS = RETIRED_FIELD_IDS | frozenset(
+    {
+        *(
+            LAI_PREFIX + field
+            for field in (
+                "h_schizophrenia_established",
+                "h_oral_experience",
+                "h_product_plan",
+                "h_lai_treatment_status",
+            )
+        ),
+        *(
+            AGGRESSION_PREFIX + field
+            for field in (
+                "h_schizophrenia_established",
+                "h_persistence_despite_treatment",
+                "h_urgent_safety_concern",
+                "h_adherence_concern",
+                "h_modifiable_targets",
+            )
+        ),
+        *(
+            SUICIDE_PREFIX + field
+            for field in (
+                "h_schizophrenia_established",
+                "h_substantial_suicide_risk",
+                "h_persistence_despite_treatment",
+                "h_urgent_safety_concern",
+                "h_adherence_concern",
+                "h_modifiable_targets",
+                "h_clozapine_treatment_status",
+                "h_willing_to_discuss",
+                "h_monitoring_plan",
+                "h_medical_review",
+            )
+        ),
+    }
+)
+REVISED_CONTEXT_FIELDS = {
+    **{
+        LAI_PREFIX + field: {"not_assessed": "unknown"}
+        for field in (
+            "h_lai_preference",
+            "h_adherence_history",
+            "h_discussion_context",
+            "h_delivery_barriers",
+        )
+    },
+    AGGRESSION_PREFIX + "h_substantial_aggression_risk": {"not_assessed": "unknown"},
+}
+REVISED_CONTEXT_FIELDS[LAI_PREFIX + "h_adherence_history"]["Uncertain"] = "unknown"
+NMS_FIELD = LAI_PREFIX + "h_prior_nms"
+
 DEFAULT_UNKNOWN_FIELD_IDS = frozenset(set(ALLOWED_FIELDS))
 
 # Application-level cleanup must work even when generation content is unavailable.
@@ -202,6 +259,15 @@ def normalize_history_values(values: Any) -> dict[str, Any]:
         if isinstance(raw, str) and raw in legacy_mapping:
             normalized[path] = legacy_mapping[raw]
         normalized.setdefault(path, "unknown")
+    for path, legacy in REVISED_CONTEXT_FIELDS.items():
+        raw = normalized.get(path)
+        if isinstance(raw, str) and raw in legacy:
+            normalized[path] = legacy[raw]
+        normalized.setdefault(path, "unknown")
+    if normalized["h_exposure_dopamine_blocker"] != "yes":
+        normalized.pop(NMS_FIELD, None)
+    else:
+        normalized.setdefault(NMS_FIELD, "unknown")
     return normalized
 
 

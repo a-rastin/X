@@ -4,12 +4,13 @@ from __future__ import annotations
 
 import pytest
 
+from tests.assessments.test_cssrs import _all_no
 from x_insight.cases.history import ALLOWED_FIELDS, compute_history_state
 from x_insight.models.workflow_release import history_fields, resolve_workflow
 from x_insight.reasoning.readiness import compute_proposal_readiness
 from x_insight.reasoning.snapshots import evaluate_gate
 
-FIRST_PATH = "candidate/history/high_suicide_clozapine.v1/h_urgent_safety_concern"
+FIRST_PATH = "candidate/history/established_case_clozapine.v1/h_urgent_safety_concern"
 
 
 def known_context(workflow="registration"):
@@ -19,6 +20,7 @@ def known_context(workflow="registration"):
         path: fields[path]["permitted"][0]
         for package in resolve_workflow(workflow)[0]
         for path in package["manifest"]["applicability"]["required_fields"]
+        if path in fields
     }
     if workflow == "registration":
         values["h_exposure_dopamine_blocker"] = "yes"
@@ -29,7 +31,7 @@ def known_context(workflow="registration"):
     return values
 
 
-def test_complete_core_history_still_lists_all_47_proposal_blockers():
+def test_complete_core_history_still_lists_all_29_proposal_blockers():
     core = {key: spec["permitted"][0] for key, spec in ALLOWED_FIELDS.items()}
     state = compute_history_state(
         {"history": {"values": core}}, revision=54, author_id="synthetic-author"
@@ -38,10 +40,10 @@ def test_complete_core_history_still_lists_all_47_proposal_blockers():
     readiness = state["proposal_readiness"]
     assert readiness["source_revision"] == 54
     assert readiness["ready"] is False
-    assert readiness["required_count"] == 47
-    assert readiness["answered_count"] == 3
+    assert readiness["required_count"] == 29
+    assert readiness["answered_count"] == 9
     assert readiness["execution_ready_count"] == 0
-    assert len(readiness["blockers"]) == 47
+    assert len(readiness["blockers"]) == 29
     assert (
         readiness["blockers"][0]["source_path"]
         == "candidate/history/pharmacotherapy.v2/h_physical_vulnerability"
@@ -49,29 +51,31 @@ def test_complete_core_history_still_lists_all_47_proposal_blockers():
     assert {item["status"] for item in readiness["blockers"]} == {"missing", "unknown"}
     assert all(item["label"] != item["source_path"] for item in readiness["blockers"])
     assert all(item["question_label"] and item["reason"] for item in readiness["blockers"])
-    assert len({item["source_path"] for item in readiness["blockers"]}) == 47
+    assert len({item["source_path"] for item in readiness["blockers"]}) == 29
 
 
 @pytest.mark.parametrize(
     "value,status,answered",
     [
-        ("unknown", "unknown", 47),
-        ("not_assessed", "not_assessed", 47),
-        (None, "null", 46),
-        ("invented", "invalid", 46),
-        (42, "invalid", 46),
-        ({"value": "Present"}, "invalid", 46),
-        (["Absent", "Present"], "conflict", 46),
-        ("conflict", "invalid", 46),
+        ("unknown", "unknown", 29),
+        ("not_assessed", "not_assessed", 29),
+        (None, "null", 28),
+        ("invented", "invalid", 28),
+        (42, "invalid", 28),
+        ({"value": "Present"}, "invalid", 28),
+        (["Absent", "Present"], "conflict", 28),
+        ("conflict", "invalid", 28),
     ],
 )
 def test_uncertainty_is_reported_without_counting_it_execution_ready(value, status, answered):
     values = known_context()
     values[FIRST_PATH] = value
-    readiness = compute_proposal_readiness({"history": {"values": values}}, 54, "registration")
+    readiness = compute_proposal_readiness(
+        {"history": {"values": values}, "cssrs": {"answers": _all_no()}}, 54, "registration"
+    )
     assert readiness["ready"] is False
     assert readiness["answered_count"] == answered
-    assert readiness["execution_ready_count"] == 46
+    assert readiness["execution_ready_count"] == 28
     assert len(readiness["blockers"]) == 1
     blocker = readiness["blockers"][0]
     assert blocker["source_path"] == FIRST_PATH
@@ -85,24 +89,26 @@ def test_versioned_requirement_cannot_borrow_unversioned_or_other_question_answe
     values["h_urgent_safety_concern"] = "Present"
     values["candidate/history/high_suicide_clozapine.v2/h_urgent_safety_concern"] = "Present"
     values["candidate/history/aggression_clozapine.v1/h_urgent_safety_concern"] = "Present"
-    readiness = compute_proposal_readiness({"history": {"values": values}}, 3, "registration")
+    readiness = compute_proposal_readiness(
+        {"history": {"values": values}, "cssrs": {"answers": _all_no()}}, 3, "registration"
+    )
     assert readiness["ready"] is False
-    assert readiness["execution_ready_count"] == 46
+    assert readiness["execution_ready_count"] == 28
     assert [(b["source_path"], b["status"]) for b in readiness["blockers"]] == [
         (FIRST_PATH, "missing")
     ]
 
 
-@pytest.mark.parametrize("workflow,count", [("registration", 47), ("followup", 76)])
+@pytest.mark.parametrize("workflow,count", [("registration", 29), ("followup", 76)])
 def test_known_context_and_known_false_applicability_are_ready(workflow, count):
     values = known_context(workflow)
     false_field = (
-        "candidate/history/high_suicide_clozapine.v1/h_substantial_suicide_risk"
+        "candidate/history/aggression_clozapine.v1/h_substantial_aggression_risk"
         if workflow == "registration"
         else "candidate/history/no_improvement_clozapine.v1/h_residual_symptoms"
     )
     values[false_field] = "No"
-    data = {"history": {"values": values}}
+    data = {"history": {"values": values}, "cssrs": {"answers": _all_no()}}
     readiness = compute_proposal_readiness(data, 7, workflow)
     assert readiness["ready"] is True
     assert readiness["blockers"] == []
@@ -131,7 +137,9 @@ def test_followup_lists_every_known_but_invalid_baseline_trial_and_panss_control
         "continue_or_adjust.v1/h_baseline_window_validity": "outdated",
     }
     values.update({"candidate/history/" + path: value for path, value in invalid.items()})
-    readiness = compute_proposal_readiness({"history": {"values": values}}, 12, "followup")
+    readiness = compute_proposal_readiness(
+        {"history": {"values": values}, "cssrs": {"answers": _all_no()}}, 12, "followup"
+    )
     assert readiness["ready"] is False
     assert readiness["answered_count"] == 76
     assert readiness["execution_ready_count"] == 68
@@ -147,7 +155,9 @@ def test_explicit_unresolved_assessment_is_answered_but_cannot_execute():
     values = known_context("followup")
     path = "candidate/history/tardive_dyskinesia.v1/h_td_assessment"
     values[path] = "Unresolved"
-    readiness = compute_proposal_readiness({"history": {"values": values}}, 8, "followup")
+    readiness = compute_proposal_readiness(
+        {"history": {"values": values}, "cssrs": {"answers": _all_no()}}, 8, "followup"
+    )
     assert readiness["ready"] is False
     assert readiness["answered_count"] == 76
     assert readiness["execution_ready_count"] == 75
@@ -156,13 +166,13 @@ def test_explicit_unresolved_assessment_is_answered_but_cannot_execute():
     ]
 
 
-@pytest.mark.parametrize("exposure,count", [("yes", 47), ("no", 46), ("unknown", 46)])
+@pytest.mark.parametrize("exposure,count", [("yes", 29), ("no", 27), ("unknown", 27)])
 def test_exposure_conditional_treatment_matches_readiness_and_execution(exposure, count):
     treatment = "candidate/history/pharmacotherapy.v2/h_antipsychotic_treatment_context"
     values = known_context()
     values["h_exposure_dopamine_blocker"] = exposure
     values[treatment] = "unknown"
-    data = {"history": {"values": values}}
+    data = {"history": {"values": values}, "cssrs": {"answers": _all_no()}}
     readiness = compute_proposal_readiness(data, 4, "registration")
     pharmacotherapy = readiness["questions"][0]
     manifest = resolve_workflow("registration")[0][0]["manifest"]

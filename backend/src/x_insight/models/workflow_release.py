@@ -19,9 +19,26 @@ from typing import Any
 from x_insight import contracts
 from x_insight.models import bundles, question_package, validation
 
-ACTIVE_HISTORY_VERSION = "history-inputs-2026-10-22-v2"
+ACTIVE_HISTORY_VERSION = "history-inputs-2026-10-22-v3"
 ACTIVE_PHARMACOTHERAPY_PATH = "content/history/history.pharmacotherapy.v3.json"
 ACTIVE_PHARMACOTHERAPY_SHA256 = "7e045f7fb3e0a1bd6a194107ad96659bb42f6367b005db78c905bf4dfb0360dc"
+
+ACTIVE_HISTORY_DEFINITIONS = {
+    "pharmacotherapy": (ACTIVE_PHARMACOTHERAPY_PATH, ACTIVE_PHARMACOTHERAPY_SHA256),
+    "high_suicide_clozapine": (
+        "content/history/history.high_suicide_clozapine.v2.json",
+        "a4811a366de06aea03df98d368701edb93231136b902338fce656e1747495a87",
+    ),
+    "lai_indication_choice": (
+        "content/history/history.lai_indication_choice.v2.json",
+        "c7bb78ba48a500ed6d6314095b44acfb0e0088509418891033155ec19fe099a3",
+    ),
+    "aggression_clozapine": (
+        "content/history/history.aggression_clozapine.v2.json",
+        "3fe0ef21d9537f532805d5d13631b50fab40291731bb8eecbcf049efb88e2dfb",
+    ),
+}
+CSSRS_CONTEXT_PATH = "synthetic/assessments/cssrs"
 
 
 def content_root() -> Path:
@@ -86,16 +103,18 @@ def resolve_workflow(workflow: str) -> tuple[list[dict[str, Any]], dict[str, Any
         loaded = bundles.load_bundle(bundle, packages, documents)
         if loaded.bundle_hash != ref["bundle_hash"] or loaded.workflow != workflow:
             raise ValueError("Workflow bundle identity mismatch.")
-        active_definition = _active_pharmacotherapy_definition()
+        active_definitions = {
+            key: _active_history_definition(key) for key in ACTIVE_HISTORY_DEFINITIONS
+        }
         active_packages = [
-            _apply_history_contract(packages[key], active_definition)
-            if key == "pharmacotherapy"
+            _apply_history_contract(packages[key], active_definitions[key])
+            if key in active_definitions
             else packages[key]
             for key in loaded.question_keys
         ]
         return active_packages, {
             "history_input_contract_version": ACTIVE_HISTORY_VERSION,
-            "history_input_contract_hash": ACTIVE_PHARMACOTHERAPY_SHA256,
+            "history_input_contract_hash": contracts.canonical_hash(ACTIVE_HISTORY_DEFINITIONS),
             "release_version": release["version"],
             "release_hash": contracts.canonical_hash(release),
             "bundle_version": loaded.version,
@@ -112,12 +131,13 @@ def resolve_workflow(workflow: str) -> tuple[list[dict[str, Any]], dict[str, Any
 def history_fields() -> dict[str, dict[str, Any]]:
     """Exact versioned paths; repeated field names stay in separate namespaces."""
     try:
-        _active_pharmacotherapy_definition()
+        for key in ACTIVE_HISTORY_DEFINITIONS:
+            _active_history_definition(key)
         directory = content_root().resolve()
         paths = [
             directory / "history" / f"history.{key}.v1.json"
             for key in (*bundles.REGISTRATION_ORDER, *bundles.FOLLOWUP_ORDER)
-            if key != "pharmacotherapy"
+            if key not in ACTIVE_HISTORY_DEFINITIONS
         ]
         # Decode once per file revision, while detecting missing or changed
         # definitions even after this process has cached a valid inventory.
@@ -140,8 +160,8 @@ def _history_fields(
     result: dict[str, dict[str, Any]] = {}
     for key in (*bundles.REGISTRATION_ORDER, *bundles.FOLLOWUP_ORDER):
         definition = (
-            _active_pharmacotherapy_definition()
-            if key == "pharmacotherapy"
+            _active_history_definition(key)
+            if key in ACTIVE_HISTORY_DEFINITIONS
             else json.loads((directory / "history" / f"history.{key}.v1.json").read_bytes())
         )
         for field in definition["fields"]:
@@ -160,9 +180,10 @@ def workflow_history_fields(workflow: str) -> list[dict[str, Any]]:
     ]
 
 
-def _active_pharmacotherapy_definition() -> dict[str, Any]:
-    payload = read_content(ACTIVE_PHARMACOTHERAPY_PATH)
-    if hashlib.sha256(payload).hexdigest() != ACTIVE_PHARMACOTHERAPY_SHA256:
+def _active_history_definition(key: str) -> dict[str, Any]:
+    path, expected_hash = ACTIVE_HISTORY_DEFINITIONS[key]
+    payload = read_content(path)
+    if hashlib.sha256(payload).hexdigest() != expected_hash:
         raise contracts.ContractError(
             422,
             "WORKFLOW_CONTENT_UNAVAILABLE",
@@ -181,22 +202,24 @@ def _apply_history_contract(package: dict[str, Any], definition: dict[str, Any])
     """
     adapted = deepcopy(package)
     manifest = adapted["manifest"]
+    key = manifest["question_key"]
+    definition_path, definition_hash = ACTIVE_HISTORY_DEFINITIONS[key]
     paths = {field["source_path"] for field in definition["fields"]}
     manifest["version"] = ACTIVE_HISTORY_VERSION
     manifest["review_status"] = "awaiting_review"
     manifest["history_input_contract"] = {
         "version": ACTIVE_HISTORY_VERSION,
-        "sha256": ACTIVE_PHARMACOTHERAPY_SHA256,
+        "sha256": definition_hash,
         "basis": "Explicit requested application-question cleanup on 2026-10-22.",
         "clinical_approval": "none; original model and its review preserved",
         "source_package_version": package["manifest"]["version"],
     }
-    manifest["history_definition"] = ACTIVE_PHARMACOTHERAPY_PATH
+    manifest["history_definition"] = definition_path
     manifest["source_refs"] = [
         path
         for path in manifest["source_refs"]
         if path != package["manifest"]["history_definition"]
-    ] + [ACTIVE_PHARMACOTHERAPY_PATH]
+    ] + [definition_path]
     manifest["patient_mappings"] = [
         mapping
         for mapping in manifest["patient_mappings"]
@@ -218,6 +241,34 @@ def _apply_history_contract(package: dict[str, Any], definition: dict[str, Any])
             "All network CPTs are still estimated; inference evidence remains empty."
         ),
     }
+    if key != "pharmacotherapy":
+        # The derived prompt must not request the retired inputs still described
+        # by the immutable original model-review artifacts.
+        text = package["prompt"]["text"].split("Keep ", 1)[0]
+        text += (
+            "Use only the represented current inputs; retired controls are not prerequisites. "
+            "Unrepresented nodes remain latent; do not invent patient values for them. "
+            "Preserve all network CPTs and empty inference evidence. "
+            "Do not author recommendations, "
+            "rank treatments, or supply dosing, route or frequency. "
+            "This changed application input contract awaits review "
+            "and has no new clinical approval."
+        )
+        if key == "high_suicide_clozapine":
+            manifest["assessment_context_source"] = CSSRS_CONTEXT_PATH
+            manifest["applicability"]["expression"] = "true"
+            manifest["applicability"]["required_fields"] = [CSSRS_CONTEXT_PATH]
+            manifest["missingness_contract"]["required_source_paths"] = [CSSRS_CONTEXT_PATH]
+            manifest["input_consistency_contract"]["assessment_context"] = (
+                "Completed released C-SSRS supplies separate structured estimation context. "
+                "Completion is an input-readiness gate, "
+                "not a substantial-risk applicability finding. "
+                "No C-SSRS threshold is equated to clinician synthesis, "
+                "persistence or treatment history."
+            )
+            text += " " + manifest["input_consistency_contract"]["assessment_context"]
+        manifest["prompt_version"] = ACTIVE_HISTORY_VERSION
+        adapted["prompt"] = {"version": ACTIVE_HISTORY_VERSION, "text": text}
     question_package.load_question_package(adapted)
     return adapted
 
@@ -232,15 +283,36 @@ def is_history_field_applicable(
 
 def require_current_history_contract(manifest: Any) -> None:
     """Old frozen contracts remain readable, but cannot request retired inputs."""
-    if not isinstance(manifest, dict) or manifest.get("question_key") != "pharmacotherapy":
-        return
     if (
-        any(
-            path.startswith("candidate/history/pharmacotherapy.v2/")
-            for path in manifest.get("applicability", {}).get("required_fields", [])
-        )
-        and manifest.get("history_input_contract", {}).get("version") != ACTIVE_HISTORY_VERSION
+        not isinstance(manifest, dict)
+        or manifest.get("question_key") not in ACTIVE_HISTORY_DEFINITIONS
     ):
+        return
+    key = manifest["question_key"]
+    applicability = manifest.get("applicability")
+    required = applicability.get("required_fields") if isinstance(applicability, dict) else None
+    paths = list(required) if isinstance(required, (list, tuple)) else []
+    mappings = manifest.get("patient_mappings")
+    for mapping in mappings if isinstance(mappings, (list, tuple)) else []:
+        sources = mapping.get("allowed_source_paths") if isinstance(mapping, dict) else None
+        if isinstance(sources, (list, tuple)):
+            paths.extend(sources)
+    definition = manifest.get("history_definition", "")
+    application_contract = (
+        "history_input_contract" in manifest
+        or (
+            isinstance(definition, str) and definition.startswith(f"content/history/history.{key}.")
+        )
+        or any(
+            isinstance(path, str) and path.startswith(f"candidate/history/{key}.") for path in paths
+        )
+    )
+    # Engineering packages may share a question key while using unrelated
+    # synthetic inputs. Only the actual application contracts retire questions.
+    if not application_contract:
+        return
+    contract = manifest.get("history_input_contract")
+    if not isinstance(contract, dict) or contract.get("version") != ACTIVE_HISTORY_VERSION:
         raise contracts.ContractError(
             422,
             "HISTORY_INPUT_CONTRACT_CHANGED",

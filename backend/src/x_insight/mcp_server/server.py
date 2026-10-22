@@ -245,6 +245,8 @@ def resolve_projection(
             "projection_hash": str(run_row.get("projection_hash", "")),
             "variables": variables,
         }
+        if "assessment_context" in projection:
+            output["assessment_context"] = projection["assessment_context"]
         try:
             encoded = contracts.canonical_json(output)
         except Exception as exc:

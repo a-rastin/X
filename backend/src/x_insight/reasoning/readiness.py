@@ -46,6 +46,8 @@ def compute_proposal_readiness(
             values[path] = raw
             input_status, _ = snapshots._typed_status(raw)
             spec = definitions.get(path, {})
+            if path == "synthetic/assessments/cssrs":
+                spec = {"definition": "C-SSRS assessment"}
             saved = snapshots._get_history_values(draft_data).get(path, snapshots._MISSING)
             if input_status == "observed" and raw != "Unresolved":
                 answered += 1

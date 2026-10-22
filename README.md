@@ -41,10 +41,14 @@ every acceptance check has passed. See the current boundaries below.
 
 ## Current engineering status
 
-The [2026-10-22 History cleanup](project-documents/dev/progress/s12.md#follow-up-2026-10-22--history-cleanup-and-versioned-pharmacotherapy-inputs)
-uses seven conditional core questions with Unknown defaults and removes six
-pharmacotherapy inputs from active readiness and patient mappings. See the [current History contract](docs/proposal-generation.md#core-history)
-for choices, completeness and older-record compatibility.
+The [2026-10-22 History input follow-up](project-documents/dev/progress/s12.md#follow-up-2026-10-22--lai-aggression-and-c-ssrs-input-cleanup)
+removes the duplicate high-suicide History questions and carries the completed
+Step 4 C-SSRS assessment into generation. LAI and aggression inputs use the revised
+choices, Unknown defaults and conditional NMS question. The seven conditional core
+questions and preceding pharmacotherapy cleanup remain in place. See the
+[current History contract](docs/proposal-generation.md#complete-proposal-context)
+for choices, readiness and older-run recovery. Changed input contracts await review;
+original package approval does not approve these changes.
 
 The preceding [proposal-readiness fix](project-documents/dev/progress/s48.md#follow-up-2026-10-22--check-proposal-readiness-before-creating-a-run)
 checks saved required context before Step 7 creates a run, lists all blockers

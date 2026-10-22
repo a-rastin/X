@@ -1,0 +1,8 @@
+{
+  "schema_version": "candidate-history-additions-v1",
+  "version": "high_suicide_clozapine.v2",
+  "status": "awaiting_review",
+  "extends": "history.v1",
+  "purpose": "Current application input contract requested on 2026-10-22; original models and clinical review preserved, no new clinical approval.",
+  "fields": []
+}

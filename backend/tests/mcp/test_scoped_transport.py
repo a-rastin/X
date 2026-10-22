@@ -807,3 +807,57 @@ def test_cleanup_revokes_and_deployment_fencing_respected(
     backend_root = Path(__file__).resolve().parents[2]
     queue_src = (backend_root / "src/x_insight/reasoning/queue.py").read_text()
     assert "FENCING_TOKEN_MISMATCH" in queue_src and "DEPLOYMENT_FENCED" in queue_src
+
+
+def test_high_suicide_cssrs_context_reaches_real_mcp_and_freezes_without_notes(
+    admin_client, clean_registry, monkeypatch
+):
+    from tests.assessments.test_cssrs import _all_no, _level3_complete
+    from tests.worker.test_snapshots import _patch_draft, _setup_owner_with_draft, _start_batch
+    from x_insight.models.workflow_release import resolve_workflow
+    from x_insight.reasoning import mcp_host
+
+    client, csrf, eid = _setup_owner_with_draft(
+        admin_client, clean_registry, monkeypatch, "dr_cssrs_mcp"
+    )
+    answers = _all_no()
+    data = {
+        "cssrs": {
+            "answers": {
+                **answers,
+                "__skipped": {"note": "PRIVATE-RESERVED-MCP"},
+                "__bypass": "PRIVATE-RESERVED-MCP",
+            }
+        },
+        "working_note": "PRIVATE-MCP-NOTE",
+    }
+    saved = _patch_draft(client, csrf, eid, data, 1)
+    assert saved.status_code == 200, saved.text
+    package = resolve_workflow("registration")[0][1]
+    started = _start_batch(client, csrf, eid, 2, package)
+    assert started.status_code == 202, started.text
+    original = started.json()
+    run = original["question_runs"][0]
+    assert run["status"] == "ready"
+    assert run["projection"]["variables"] == []
+    claimed = _claim_job(clean_registry, "cssrs-mcp")
+    context = mcp_host.read_projection_blocking(
+        str(claimed["grant_token"]), database_url=db_module.get_test_database_url()
+    )
+    assert context["assessment_context"] == run["projection"]["assessment_context"]
+    assert context["assessment_context"]["value"]["answers"] == answers
+    assert context["variables"] == []
+    assert "PRIVATE-MCP-NOTE" not in str(context)
+    assert "PRIVATE-RESERVED-MCP" not in str(context)
+    # Notes do not change freshness; actual Step4 facts do, preserving frozen context.
+    note_saved = _patch_draft(client, csrf, eid, {**data, "working_note": "CHANGED-PRIVATE"}, 2)
+    assert note_saved.status_code == 200, note_saved.text
+    before = client.get(f"/api/v1/generation-batches/{original['batch']['id']}")
+    assert before.status_code == 200, before.text
+    assert before.json()["freshness"]["stale"] is False
+    changed = _patch_draft(client, csrf, eid, {"cssrs": {"answers": _level3_complete()}}, 3)
+    assert changed.status_code == 200, changed.text
+    after = client.get(f"/api/v1/generation-batches/{original['batch']['id']}")
+    assert after.status_code == 200, after.text
+    assert after.json()["freshness"]["stale"] is True
+    assert after.json()["question_runs"][0]["projection"] == run["projection"]

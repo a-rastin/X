@@ -220,7 +220,10 @@ function normalizedValues(values: Record<string, unknown>, workflowFields: Workf
   }
   for (const field of workflowFields) {
     if (!workflowFieldApplies(field, next)) delete next[field.id];
-    else if (field.default_value && (next[field.id] === undefined || next[field.id] === "not_assessed")) {
+    else if (field.default_value && (
+      next[field.id] === undefined || next[field.id] === "not_assessed" ||
+      (next[field.id] === "Uncertain" && !field.permitted.includes("Uncertain"))
+    )) {
       next[field.id] = field.default_value;
     }
   }
@@ -350,8 +353,11 @@ export function HistorySection({
   }, [preview !== null]);
 
   const workflowInventory = preview?.workflow_fields ?? [];
+  const allowedIds = preview?.allowed_field_ids ?? FIELD_IDS;
   const rawSlice = sliceOf(autosave.localData);
-  const normalized = normalizedValues(rawSlice.values, workflowInventory);
+  const normalized = preview === null
+    ? normalizedValues(rawSlice.values, workflowInventory)
+    : sanitizedValues(rawSlice.values, allowedIds, workflowInventory);
   const slice = {
     ...rawSlice,
     values: normalized,
@@ -363,7 +369,6 @@ export function HistorySection({
   const visibleGroups = HISTORY_GROUPS.map((group) => ({
     ...group, fields: visibleFields.filter((field) => group.fields.includes(field.id)),
   })).filter((group) => group.fields.length > 0);
-  const allowedIds = preview?.allowed_field_ids ?? FIELD_IDS;
   const workflowFields = workflowInventory.filter((field) => workflowFieldApplies(field, slice.values));
   const questionKeys = [...new Set(workflowFields.map((field) => field.question_key))];
   const previewSlice: HistorySlice | null =

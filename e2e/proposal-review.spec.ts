@@ -313,8 +313,12 @@ async function seedReadyContext(request: import("@playwright/test").APIRequestCo
   const current = await (await request.get(`/api/v1/encounters/${draftId}`)).json();
   const values = { ...history.values, h_exposure_dopamine_blocker: "yes" };
   for (const field of history.workflow_fields) values[field.id] = field.permitted[0];
+  const answers = Object.fromEntries([
+    ...["recent", "lifetime"].flatMap((window) => [1, 2, 3, 4, 5].map((n) => `css_i${n}_${window}`)),
+    ...["recent", "lifetime"].flatMap((window) => ["actual", "interrupted", "aborted", "preparatory", "nssi"].map((kind) => `css_beh_${kind}_${window}`)),
+  ].map((id) => [id, "no"]));
   return patchDraftWithRetry(request, physician, draftId,
-    { ...current.draft_data, history: { ...current.draft_data.history, values } }, current.revision);
+    { ...current.draft_data, cssrs: { answers }, history: { ...current.draft_data.history, values } }, current.revision);
 }
 
 function countGenerationPosts(page: import("@playwright/test").Page): { count: number } {
@@ -375,14 +379,22 @@ test("S48 readiness core completion does not start generation; all blockers link
   const posts = countGenerationPosts(page);
   await gotoEncounter(page, draftId);
   const summary = page.getByTestId("proposal-readiness");
-  await expect(summary).toContainText("3 / 47 required responses answered; 0 / 47 execution-ready.");
-  await expect(summary.getByRole("link")).toHaveCount(47);
+  await expect(summary).toContainText("9 / 29 required responses answered; 0 / 29 execution-ready.");
+  await expect(summary.getByRole("link")).toHaveCount(29);
   const server = await (await request.get(`/api/v1/encounters/${draftId}/proposal-readiness`)).json();
-  expect(server.blockers).toHaveLength(47);
+  expect(server.blockers).toHaveLength(29);
   for (const blocker of server.blockers) {
-    await expect(summary.locator(`a[href*="${encodeURIComponent(blocker.source_path)}"]`)).toHaveText(blocker.label);
+    const link = blocker.source_path === "synthetic/assessments/cssrs"
+      ? summary.getByRole("link", { name: "C-SSRS assessment", exact: true })
+      : summary.locator(`a[href*="${encodeURIComponent(blocker.source_path)}"]`);
+    await expect(link).toHaveText(blocker.label);
   }
   expect(posts.count).toBe(0);
+  const cssrs = summary.getByRole("link", { name: "C-SSRS assessment", exact: true });
+  await cssrs.click();
+  await expect(page.locator("#cssrs-heading")).toBeVisible();
+  await page.locator("#wizard-step-proposal-review").click();
+  await expect(summary).toBeVisible();
   const path = "candidate/history/pharmacotherapy.v2/h_physical_vulnerability";
   await summary.locator(`a[href*="${encodeURIComponent(path)}"]`).click();
   const control = page.locator(`[id="hist-${path}"]`);
@@ -403,7 +415,7 @@ test("S48 readiness uncertainty is answered but unresolved; saving corrections p
     values: { ...current.draft_data.history.values, [prefix + "h_physical_vulnerability"]: "unknown", [prefix + "h_substance_contribution"]: "unknown" } } }, current.revision);
   const posts = countGenerationPosts(page);
   await gotoEncounter(page, draftId);
-  await expect(page.getByTestId("proposal-readiness")).toContainText("47 / 47 required responses answered; 45 / 47 execution-ready.");
+  await expect(page.getByTestId("proposal-readiness")).toContainText("29 / 29 required responses answered; 27 / 29 execution-ready.");
   await expect(page.getByTestId("proposal-readiness")).toContainText("Unknown does not resolve this required input.");
   expect(posts.count).toBe(0);
   await page.locator("#wizard-step-history").click();

@@ -23,6 +23,17 @@ Documentation only. Tracks content requiring owner review: every question in pla
   approval does not approve this changed input contract. See the
   [current contract](../docs/proposal-generation.md) and
   [engineering handoff](../project-documents/dev/progress/s12.md#follow-up-2026-10-22--history-cleanup-and-versioned-pharmacotherapy-inputs).
+- **2026-10-22 subsequent LAI/aggression/C-SSRS cleanup:** application contract
+  `history-inputs-2026-10-22-v3` also pins derived
+  `history.high_suicide_clozapine.v2.json` (no History fields),
+  `history.lai_indication_choice.v2.json` (five fields) and
+  `history.aggression_clozapine.v2.json` (five fields). The completed released
+  C-SSRS assessment supplies structured high-suicide context without introducing
+  a clinical threshold or categorical risk mapping. These derived input contracts
+  remain `awaiting_review`; the original approved packages and review records
+  remain unchanged and do not approve the changed contracts. See the
+  [current input contract](../docs/proposal-generation.md#complete-proposal-context)
+  and [verification handoff](../project-documents/dev/progress/s12.md#follow-up-2026-10-22--lai-aggression-and-c-ssrs-input-cleanup).
 - **Owner questions (substantive only):**
   1. Approve the minimum typed history inventory S12 drafts from question mappings, or name additions — proposal: approve the S12 minimum as-is so S27 and S29–S38 can draft against a frozen inventory, with additions as versioned changes.
   2. **Full standardized questionnaires selected (2026-10-04):** use complete standardized instruments for adverse-effect assessment rather than short custom severity definitions or network-state-only inputs. Exact forms, versions, item wording, administration, completeness, scoring and network mappings require source-backed owner review; this is a drafting requirement, not package approval. BARS for akathisia and SAS for parkinsonism have instrument sections in the supplied criteria; the tardive-dyskinesia criteria reference AIMS but do not contain its complete form. Full completion is required only when the corresponding effect is `present`; `absent` and `not_assessed` do not require questionnaire completion. The acute-dystonia form is named **Acute Dystonia Dx Criteria** (confirmed 2026-10-04), with the supplied `acute-dystonia-criteria.md` as the drafting lead; its name does not establish a validated scored scale. Open: identify the complete AIMS source/form and review concrete item/completeness/severity/network definitions, including the acute-dystonia criteria form. Retain explicit not-assessed/missing states and no guessed score or severity bands. The reason for preferring full instruments was not separately supplied.

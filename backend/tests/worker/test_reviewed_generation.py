@@ -10,6 +10,7 @@ import pytest
 from fastapi.testclient import TestClient
 from sqlalchemy import text
 
+from tests.assessments.test_cssrs import _all_no
 from tests.models.test_proposal_readiness import FIRST_PATH, known_context
 from tests.worker.test_snapshots import (  # noqa: F401 - shared integration fixtures
     _create_patient,
@@ -52,7 +53,9 @@ def test_complete_core_history_rejects_reviewed_start_before_batch_or_job_creati
     owner, csrf, created = _setup(admin_client, clean_registry, monkeypatch)
     eid = created["draft"]["id"]
     values = {key: spec["permitted"][0] for key, spec in ALLOWED_FIELDS.items()}
-    saved = _patch_draft(owner, csrf, eid, {"history": {"values": values}}, 1)
+    saved = _patch_draft(
+        owner, csrf, eid, {"history": {"values": values}, "cssrs": {"answers": _all_no()}}, 1
+    )
     assert saved.status_code == 200, saved.text
     history = owner.get(f"/api/v1/encounters/{eid}/history").json()
     assert history["evaluation"]["status"] == "complete"
@@ -62,7 +65,7 @@ def test_complete_core_history_rejects_reviewed_start_before_batch_or_job_creati
     assert readiness.status_code == 200, readiness.text
     assert readiness.json() == history["proposal_readiness"]
     assert readiness.json()["source_revision"] == 2
-    assert len(readiness.json()["blockers"]) == 47
+    assert len(readiness.json()["blockers"]) == 28
     assert owner.get(f"/api/v1/encounters/{eid}").json() == before
     assert _latest_batch(owner, eid) is None
     key = str(uuid.uuid4())
@@ -116,7 +119,13 @@ def test_new_registration_resolves_packages_resumes_and_retries_exact_pins(
 ):
     owner, csrf, created = _setup(admin_client, clean_registry, monkeypatch)
     eid = created["draft"]["id"]
-    saved = _patch_draft(owner, csrf, eid, {"history": {"values": known_context()}}, 1)
+    saved = _patch_draft(
+        owner,
+        csrf,
+        eid,
+        {"history": {"values": known_context()}, "cssrs": {"answers": _all_no()}},
+        1,
+    )
     assert saved.status_code == 200, saved.text
     endpoint = f"/api/v1/encounters/{eid}/generation-batches"
     headers = {"Idempotency-Key": str(uuid.uuid4())}
@@ -184,7 +193,13 @@ def test_new_registration_resolves_packages_resumes_and_retries_exact_pins(
     assert retry.status_code == 202, retry.text
     assert retry.json()["batch"]["pinned_bundle"] == body["batch"]["pinned_bundle"]
     values[FIRST_PATH] = "unknown"
-    saved = _patch_draft(other_browser, other_csrf, eid, {"history": {"values": values}}, 2)
+    saved = _patch_draft(
+        other_browser,
+        other_csrf,
+        eid,
+        {"history": {"values": values}, "cssrs": {"answers": _all_no()}},
+        2,
+    )
     assert saved.status_code == 200, saved.text
     blocked = other_browser.get(
         f"/api/v1/encounters/{eid}/proposal-readiness",
@@ -300,7 +315,13 @@ def test_frozen_historical_contract_stays_readable_but_requires_new_current_prop
 
     owner, csrf, created = _setup(admin_client, clean_registry, monkeypatch, "dr_old_contract")
     eid = created["draft"]["id"]
-    saved = _patch_draft(owner, csrf, eid, {"history": {"values": known_context()}}, 1)
+    saved = _patch_draft(
+        owner,
+        csrf,
+        eid,
+        {"history": {"values": known_context()}, "cssrs": {"answers": _all_no()}},
+        1,
+    )
     assert saved.status_code == 200, saved.text
     started = _start(owner, csrf, eid, 2)
     assert started.status_code == 202, started.text
@@ -374,6 +395,6 @@ def test_frozen_historical_contract_stays_readable_but_requires_new_current_prop
     assert current.json()["batch"]["id"] != batch["batch"]["id"]
     assert (
         current.json()["batch"]["pinned_bundle"]["history_input_contract_version"]
-        == "history-inputs-2026-10-22-v2"
+        == "history-inputs-2026-10-22-v3"
     )
     assert owner.get(batch_url).json()["question_runs"] == historical_read.json()["question_runs"]

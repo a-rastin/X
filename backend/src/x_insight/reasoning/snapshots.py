@@ -253,6 +253,24 @@ def _resolve_raw_value(source_path: str, draft_data: Any) -> Any:
             raise _fail(422, "unknown_source_path", f"Source path {source_path!r} is empty.")
         values = _get_history_values(draft_data)
         return values[field] if field in values else _MISSING
+    if source_path == "synthetic/assessments/cssrs":
+        from x_insight.assessments import cssrs
+        from x_insight.assessments.released import get_released_definition
+
+        answers = cssrs.get_answers(draft_data)
+        evaluation = cssrs.evaluate_answers(answers)
+        if evaluation.get("status") != "complete":
+            return _MISSING
+        # Completion validates every actual item answer. Reserved control keys
+        # are assessment commands, not patient data; their ignored malformed
+        # values must never cross the model-context boundary.
+        definition = get_released_definition("cssrs")
+        item_ids = {item["id"] for item in definition["items"]}
+        return {
+            "definition_version": str(definition["version"]),
+            "answers": {key: value for key, value in answers.items() if key in item_ids},
+            "evaluation": evaluation,
+        }
     if source_path.startswith("synthetic/assessments/"):
         field = source_path[len("synthetic/assessments/") :]
         if not field:
@@ -319,7 +337,9 @@ def build_question_projection(
         raise _fail(422, "bad_manifest", "Manifest needs declared_node_order.")
     if not isinstance(variables, (list, tuple)) or not variables:
         raise _fail(422, "bad_manifest", "Manifest needs variables.")
-    if not isinstance(mappings, (list, tuple)) or not mappings:
+    if not isinstance(mappings, (list, tuple)) or (
+        not mappings and manifest.get("assessment_context_source") != "synthetic/assessments/cssrs"
+    ):
         raise _fail(422, "bad_manifest", "Manifest needs patient_mappings.")
     type_by_node: dict[str, str] = {}
     for entry in variables:
@@ -378,6 +398,16 @@ def build_question_projection(
         "source_revision": int(source_revision),
         "variables": entries,
     }
+    if manifest.get("assessment_context_source") == "synthetic/assessments/cssrs":
+        if question_key != "high_suicide_clozapine":
+            raise _fail(422, "unknown_source_path", "Unsupported assessment context question.")
+        raw = _resolve_raw_value("synthetic/assessments/cssrs", draft_data)
+        status, value = _typed_status(raw)
+        projection["assessment_context"] = {
+            "source_path": "synthetic/assessments/cssrs",
+            "status": status,
+            "value": value,
+        }
     return projection, contracts.canonical_hash(projection)
 
 
@@ -433,6 +463,14 @@ def evaluate_gate(manifest: Mapping[str, Any], draft_data: Any) -> tuple[str, st
                     f"required field {field} is {status if status != 'observed' else 'unresolved'}",
                 )
         return evaluate_history_gate(str(manifest.get("question_key", "")), values)
+    if manifest.get("assessment_context_source") == "synthetic/assessments/cssrs":
+        raw = _resolve_raw_value("synthetic/assessments/cssrs", draft_data)
+        if isinstance(raw, _MissingType):
+            return NEEDS_CLARIFICATION, "Complete the C-SSRS assessment in Step 4."
+        return READY, (
+            "Completed C-SSRS supplies estimation context; "
+            "completion does not establish substantial-risk applicability."
+        )
     gate = _get_gate_value(draft_data)
     if expression == "true":
         gate_state: str | None = "true"
@@ -1437,7 +1475,10 @@ def _projection_values_key(projection: Any) -> str:
                     "source_path": str(entry.get("source_path", "")),
                 }
             )
-    return contracts.canonical_hash({"variables": stripped})
+    payload: dict[str, Any] = {"variables": stripped}
+    if isinstance(projection, Mapping) and "assessment_context" in projection:
+        payload["assessment_context"] = projection["assessment_context"]
+    return contracts.canonical_hash(payload)
 
 
 def _carried_baselines_per_question(

@@ -2077,7 +2077,30 @@ def test_historical_signed_history_is_preserved_but_followup_copy_uses_current_c
     )
     assert planned.status_code == 200, planned.text
     raw_draft = client.get(f"/api/v1/encounters/{eid}").json()["draft_data"]
+    retired_workflow = {
+        "candidate/history/high_suicide_clozapine.v1/h_substantial_suicide_risk": "Yes",
+        **{
+            f"candidate/history/lai_indication_choice.v1/{key}": "Yes"
+            for key in (
+                "h_schizophrenia_established",
+                "h_oral_experience",
+                "h_product_plan",
+                "h_lai_treatment_status",
+            )
+        },
+        **{
+            f"candidate/history/aggression_clozapine.v1/{key}": "Yes"
+            for key in (
+                "h_schizophrenia_established",
+                "h_persistence_despite_treatment",
+                "h_urgent_safety_concern",
+                "h_adherence_concern",
+                "h_modifiable_targets",
+            )
+        },
+    }
     obsolete = {
+        **retired_workflow,
         "h_exposure_duration_3m": "yes",
         "h_exposure_1m_if_60plus": "yes",
         "h_medication_timeline_documented": "yes",
@@ -2099,6 +2122,8 @@ def test_historical_signed_history_is_preserved_but_followup_copy_uses_current_c
     )
     assert signed.status_code == 200, signed.text
     legacy_values = {
+        **retired_workflow,
+        "candidate/history/lai_indication_choice.v1/h_adherence_history": "Uncertain",
         "h_exposure_dopamine_blocker": "yes",
         "h_exposure_duration_3m": "yes",
         "h_exposure_1m_if_60plus": "yes",
@@ -2120,6 +2145,13 @@ def test_historical_signed_history_is_preserved_but_followup_copy_uses_current_c
     historical["draft_data"]["history"] = {
         "values": legacy_values,
         "provenance": {
+            **{
+                key: {"source": "clinician_entry", "recorded_at": "2020-01-01T00:00:00Z"}
+                for key in (
+                    *retired_workflow,
+                    "candidate/history/lai_indication_choice.v1/h_adherence_history",
+                )
+            },
             "h_movement_persistence_4w": {
                 "source": "clinician_entry",
                 "author_id": client.get("/api/v1/me").json()["user"]["id"],
@@ -2163,7 +2195,11 @@ def test_historical_signed_history_is_preserved_but_followup_copy_uses_current_c
     )
     assert copied.status_code == 201, copied.text
     copied_values = copied.json()["draft_data"]["history"]["values"]
+    from tests.http.test_history import REVISED_DEFAULTS
+
     assert copied_values == {
+        **REVISED_DEFAULTS,
+        "candidate/history/lai_indication_choice.v1/h_prior_nms": "unknown",
         "h_exposure_dopamine_blocker": "yes",
         "h_movement_persistence_4w": "unknown",
         "h_onset_timing": "unknown",

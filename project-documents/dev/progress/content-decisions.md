@@ -68,3 +68,20 @@
   and original package review remains historical provenance. Older frozen runs
   remain readable but require an explicit new run with the current input contract.
 
+### LAI, aggression and C-SSRS input cleanup — 2026-10-22
+
+- The explicit application request removes all high-suicide History controls;
+  generation instead receives the complete released Step 4 C-SSRS assessment as
+  structured context. This does not define a categorical risk mapping, clinical
+  applicability rule, treatment-persistence answer or new clinical threshold.
+- LAI retains five controls, including exposure-conditional prior NMS; aggression
+  retains five, including renamed Substantial aggression-related risk with
+  Yes/No/Unknown and Unknown default. Exact choices, removed controls and
+  defaults are in the [current contract](../../../docs/proposal-generation.md#complete-proposal-context).
+  Defaults and normalized legacy uncertainty are not clinician-attributed entries.
+- Application contract `history-inputs-2026-10-22-v3` pins the derived high-suicide,
+  LAI and aggression v2 definitions alongside pharmacotherapy v3. The request
+  authorizes these application changes; it does not establish clinical approval
+  for changed input contracts. Derived manifests remain `awaiting_review`, original
+  approvals/artifacts remain historical, and signed records are not rewritten.
+

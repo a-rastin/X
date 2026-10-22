@@ -630,7 +630,20 @@ def build_transparency(
     return {
         "question_key": str(run.get("question_key", "")),
         "network_version": str(baseline.get("network_version", "")),
-        "saved_patient_inputs": list(variables or []),
+        "saved_patient_inputs": list(variables or [])
+        + (
+            [
+                dict(
+                    projection["assessment_context"],
+                    input_kind="assessment_context",
+                    node_id="C-SSRS assessment context",
+                    patient_type="structured",
+                    source_revision=projection.get("source_revision"),
+                )
+            ]
+            if isinstance(projection, dict) and "assessment_context" in projection
+            else []
+        ),
         "returned_cpt_percentages": list(baseline.get("validated_tables") or []),
         "deterministic_result": {
             "posteriors": list(baseline.get("posteriors") or []),

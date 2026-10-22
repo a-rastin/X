@@ -36,6 +36,8 @@ export function ProposalReadinessSummary({ readiness, encounterId, local = false
                     onClick={local ? (event) => { event.preventDefault(); focusHistoryControl(blocker.source_path!); } : undefined}>
                     {blocker.label}
                   </a>
+                ) : blocker.source_path === "synthetic/assessments/cssrs" ? (
+                  <a href={`#/encounters/${encounterId}#cssrs`}>{blocker.label}</a>
                 ) : blocker.label}
                 {" — "}{blocker.reason}
               </li>

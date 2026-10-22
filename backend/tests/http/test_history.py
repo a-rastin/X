@@ -277,7 +277,20 @@ HISTORY_IDS = (
 PHYSICAL_PATH = "candidate/history/pharmacotherapy.v2/h_physical_vulnerability"
 SUBSTANCE_PATH = "candidate/history/pharmacotherapy.v2/h_substance_contribution"
 TREATMENT_PATH = "candidate/history/pharmacotherapy.v2/h_antipsychotic_treatment_context"
+REVISED_DEFAULTS = {
+    **{
+        f"candidate/history/lai_indication_choice.v1/{field}": "unknown"
+        for field in (
+            "h_lai_preference",
+            "h_adherence_history",
+            "h_discussion_context",
+            "h_delivery_barriers",
+        )
+    },
+    "candidate/history/aggression_clozapine.v1/h_substantial_aggression_risk": "unknown",
+}
 FRESH_HISTORY = {
+    **REVISED_DEFAULTS,
     "h_exposure_dopamine_blocker": "unknown",
     "h_movement_persistence_4w": "unknown",
     PHYSICAL_PATH: "unknown",
@@ -285,6 +298,7 @@ FRESH_HISTORY = {
 }
 
 COMPLETE_HISTORY = {
+    **REVISED_DEFAULTS,
     PHYSICAL_PATH: "unknown",
     SUBSTANCE_PATH: "unknown",
     "h_exposure_dopamine_blocker": "no",
@@ -1188,11 +1202,11 @@ def test_history_effects_idempotency_replay_and_conflict(
 @pytest.mark.parametrize(
     ("exposure", "adequacy", "count"),
     [
-        ("no", "inadequate", 4),
-        ("unknown", "inadequate", 4),
-        ("yes", "adequate", 7),
-        ("yes", "unknown", 7),
-        ("yes", "inadequate", 8),
+        ("no", "inadequate", 9),
+        ("unknown", "inadequate", 9),
+        ("yes", "adequate", 13),
+        ("yes", "unknown", 13),
+        ("yes", "inadequate", 14),
     ],
 )
 def test_conditional_questions_roundtrip(
@@ -1219,7 +1233,9 @@ def test_conditional_questions_roundtrip(
     assert ("h_prior_response" in state["values"]) == (
         exposure == "yes" and adequacy == "inadequate"
     )
-    assert set(state["provenance"]) == set(state["values"])
+    assert set(state["provenance"]) == set(state["values"]) - {
+        "candidate/history/lai_indication_choice.v1/h_prior_nms"
+    }
     assert _get_history(client, eid).json()["values"] == state["values"]
     draft = client.get(f"/api/v1/encounters/{eid}").json()
     patched = _patch(client, csrf, eid, draft["draft_data"], 2)
@@ -1455,6 +1471,7 @@ def test_all_revised_choices_and_versioned_context_survive_autosave(
         "h_exposure_dopamine_blocker": "yes",
         "h_trial_adequacy_prior": "inadequate",
         context_key: "Clozapine",
+        "candidate/history/lai_indication_choice.v1/h_prior_nms": "unknown",
     }
     revision = 1
     for onset, response in [
@@ -1569,7 +1586,7 @@ def test_existing_draft_and_unrelated_autosave_survive_workflow_content_outage(
     )
     # Observe application errors as HTTP responses, including missing deployment files.
     client = TestClient(app, raise_server_exceptions=False, cookies=client.cookies)
-    other_path = "candidate/history/high_suicide_clozapine.v1/h_urgent_safety_concern"
+    other_path = "candidate/history/established_case_clozapine.v1/h_urgent_safety_concern"
     values = {**COMPLETE_HISTORY, PHYSICAL_PATH: "yes", SUBSTANCE_PATH: "no", other_path: "Present"}
     saved = _post_history(client, csrf, eid, values, 1)
     assert saved.status_code == 200, saved.text
@@ -1607,7 +1624,7 @@ def test_existing_draft_and_unrelated_autosave_survive_workflow_content_outage(
         target = deployed / "history/history.pharmacotherapy.v3.json"
         target.write_text(target.read_text() + " ")
     else:
-        (deployed / "history/history.high_suicide_clozapine.v1.json").unlink()
+        (deployed / "history/history.established_case_clozapine.v1.json").unlink()
     monkeypatch.setenv("X_INSIGHT_CONTENT_DIR", str(deployed))
 
     reopened = client.get(f"/api/v1/encounters/{eid}")
@@ -1659,3 +1676,64 @@ def test_existing_draft_and_unrelated_autosave_survive_workflow_content_outage(
         assert rejected.status_code == 422, rejected.text
         assert rejected.json()["code"] in {"VALIDATION_FAILED", "WORKFLOW_CONTENT_UNAVAILABLE"}
     assert client.get(f"/api/v1/encounters/{eid}").json() == current.json()
+
+
+def test_revised_history_http_rejects_retired_and_obsolete_choices_and_clears_nms(
+    admin_client, clean_registry, monkeypatch
+):
+    client, csrf, _, eid = _setup_draft(
+        admin_client, clean_registry, monkeypatch, "dr_revised_history", "0012348821"
+    )
+    lai = "candidate/history/lai_indication_choice.v1/"
+    aggression = "candidate/history/aggression_clozapine.v1/"
+    for path, value in [
+        (lai + "h_schizophrenia_established", "Yes"),
+        (lai + "h_oral_experience", "Supported"),
+        (lai + "h_product_plan", "Complete"),
+        (lai + "h_lai_treatment_status", "CurrentTreatment"),
+        (aggression + "h_persistence_despite_treatment", "Yes"),
+        (aggression + "h_urgent_safety_concern", "Present"),
+        (aggression + "h_adherence_concern", "Present"),
+        (aggression + "h_modifiable_targets", "Present"),
+        ("candidate/history/high_suicide_clozapine.v1/h_substantial_suicide_risk", "Yes"),
+        (lai + "h_adherence_history", "Uncertain"),
+        (lai + "h_adherence_history", "not_assessed"),
+        (lai + "h_lai_preference", "not_assessed"),
+        (lai + "h_discussion_context", "not_assessed"),
+        (lai + "h_delivery_barriers", "not_assessed"),
+        (aggression + "h_substantial_aggression_risk", "not_assessed"),
+    ]:
+        for rejected in (
+            _post_history(client, csrf, eid, {path: value}, 1),
+            _patch(client, csrf, eid, {"history": {"values": {path: value}}}, 1),
+        ):
+            assert rejected.status_code == 422, (path, rejected.text)
+            assert path in rejected.json()["field_errors"]
+    initial = _get_history(client, eid).json()
+    assert initial["revision"] == 1
+    assert lai + "h_prior_nms" not in initial["values"]
+    saved = _post_history(
+        client,
+        csrf,
+        eid,
+        {**COMPLETE_HISTORY, "h_exposure_dopamine_blocker": "yes", lai + "h_prior_nms": "Yes"},
+        1,
+    )
+    assert saved.status_code == 200, saved.text
+    assert saved.json()["values"][lai + "h_prior_nms"] == "Yes"
+    assert saved.json()["provenance"][lai + "h_prior_nms"]["source"] == "clinician_entry"
+    for exposure in ("no", "unknown", "yes"):
+        previous = saved.json()
+        saved = _post_history(
+            client,
+            csrf,
+            eid,
+            {**previous["values"], "h_exposure_dopamine_blocker": exposure},
+            previous["revision"],
+        )
+        assert saved.status_code == 200, saved.text
+        if exposure == "yes":
+            assert saved.json()["values"][lai + "h_prior_nms"] == "unknown"
+        else:
+            assert lai + "h_prior_nms" not in saved.json()["values"]
+        assert lai + "h_prior_nms" not in saved.json()["provenance"]

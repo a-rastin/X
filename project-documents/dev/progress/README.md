@@ -3,9 +3,9 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest bounded follow-up is the [History cleanup (2026-10-22)](s12.md#follow-up-2026-10-22--history-cleanup-and-versioned-pharmacotherapy-inputs):
-seven core fields, conditional movement questions, and a versioned three-input
-pharmacotherapy contract. Implementation and verification are recovered; see the handoff.
+The latest bounded follow-up is the [LAI, aggression and C-SSRS input cleanup (2026-10-22)](s12.md#follow-up-2026-10-22--lai-aggression-and-c-ssrs-input-cleanup):
+revised History controls, Step 4 C-SSRS generation context and input contract v3.
+Implementation, tests and independent review are complete; see the commit handoff.
 The preceding [proposal-readiness fix (2026-10-22)](s48.md#follow-up-2026-10-22--check-proposal-readiness-before-creating-a-run):
 History lists unresolved required context and Step 7 checks saved readiness before creating a run.
 The preceding [complete supplied DDInter candidate and

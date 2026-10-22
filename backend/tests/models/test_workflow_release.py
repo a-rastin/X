@@ -16,7 +16,12 @@ from x_insight.reasoning.snapshots import build_question_projection, evaluate_ga
 def _known_values(manifest):
     fields = history_fields()
     return {
-        path: fields[path]["permitted"][0] for path in manifest["applicability"]["required_fields"]
+        **{
+            path: fields[path]["permitted"][0]
+            for path in manifest["applicability"]["required_fields"]
+            if path in fields
+        },
+        "h_exposure_dopamine_blocker": "yes",
     }
 
 
@@ -60,22 +65,23 @@ def test_versioned_history_namespaces_never_borrow_same_named_answers():
 
 
 def test_reviewed_gate_uses_per_question_facts_and_unknown_precedes_false():
-    packages, _ = resolve_workflow("registration")
-    manifest = packages[1]["manifest"]
+    manifest = resolve_workflow("registration")[0][3]["manifest"]
     values = _known_values(manifest)
-    prefix = "candidate/history/high_suicide_clozapine.v1/"
-    values[prefix + "h_schizophrenia_established"] = "No"
+    prefix = "candidate/history/aggression_clozapine.v1/"
+    values[prefix + "h_substantial_aggression_risk"] = "No"
     data = {"history": {"values": values}, "gate": "true"}
     assert evaluate_gate(manifest, data)[0] == "not_applicable"
-    values[prefix + "h_urgent_safety_concern"] = "unknown"
+    values[prefix + "h_monitoring_plan"] = "unknown"
     assert evaluate_gate(manifest, data)[0] == "needs_clarification"
-    values[prefix + "h_urgent_safety_concern"] = "Present"
-    values[prefix + "h_schizophrenia_established"] = "Yes"
+    values[prefix + "h_monitoring_plan"] = "Yes"
+    values[prefix + "h_substantial_aggression_risk"] = "Yes"
     assert evaluate_gate(manifest, data)[0] == "ready"
-    values[prefix + "h_urgent_safety_concern"] = "invented"
+    values[prefix + "h_monitoring_plan"] = "invented"
     projection, _ = build_question_projection(manifest, data, 1)
     assert (
-        next(v for v in projection["variables"] if v["node_id"] == "UrgentSafetyConcern")["status"]
+        next(
+            v for v in projection["variables"] if v["node_id"] == "ClozapineMonitoringPlanAvailable"
+        )["status"]
         == "missing"
     )
     assert evaluate_gate(manifest, data)[0] == "needs_clarification"
@@ -109,8 +115,7 @@ def test_release_hash_mismatch_fails_closed(tmp_path, monkeypatch):
     "key,false_field,false_value",
     [
         ("pharmacotherapy", None, None),
-        ("high_suicide_clozapine", "h_substantial_suicide_risk", "No"),
-        ("lai_indication_choice", "h_schizophrenia_established", "No"),
+        ("lai_indication_choice", None, None),
         ("aggression_clozapine", "h_substantial_aggression_risk", "No"),
         ("established_case_clozapine", "h_schizophrenia_established", "No"),
         ("tardive_dyskinesia", "h_td_assessment", "Absent"),
@@ -176,7 +181,7 @@ def test_active_pharmacotherapy_omits_retired_and_inapplicable_inputs(exposure, 
     }
     assert len(projection["variables"]) == required
     assert evaluate_gate(manifest, data)[0] == "ready"
-    assert pin["history_input_contract_version"] == "history-inputs-2026-10-22-v2"
+    assert pin["history_input_contract_version"] == "history-inputs-2026-10-22-v3"
     assert manifest["review_status"] == "awaiting_review"
 
 
@@ -237,7 +242,7 @@ def test_history_inventory_fails_closed_after_cached_definition_damage(
         path = tmp_path / "history/history.pharmacotherapy.v3.json"
         path.write_text(path.read_text() + " ")
     else:
-        path = tmp_path / "history/history.high_suicide_clozapine.v1.json"
+        path = tmp_path / "history/history.established_case_clozapine.v1.json"
         if damage == "other_missing":
             path.unlink()
         else:

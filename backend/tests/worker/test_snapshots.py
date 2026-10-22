@@ -975,6 +975,26 @@ def test_legacy_hidden_and_removed_answers_do_not_affect_new_snapshot_or_fingerp
         admin_client, clean_registry, monkeypatch, "dr_history_snapshot"
     )
     legacy = {
+        "candidate/history/high_suicide_clozapine.v1/h_substantial_suicide_risk": "Yes",
+        **{
+            f"candidate/history/lai_indication_choice.v1/{key}": "Yes"
+            for key in (
+                "h_schizophrenia_established",
+                "h_oral_experience",
+                "h_product_plan",
+                "h_lai_treatment_status",
+            )
+        },
+        **{
+            f"candidate/history/aggression_clozapine.v1/{key}": "Yes"
+            for key in (
+                "h_schizophrenia_established",
+                "h_persistence_despite_treatment",
+                "h_urgent_safety_concern",
+                "h_adherence_concern",
+                "h_modifiable_targets",
+            )
+        },
         "h_a": "yes",
         "h_b": "no",
         "h_exposure_dopamine_blocker": "no",
@@ -1050,3 +1070,63 @@ def test_absent_and_empty_history_have_same_default_fingerprint(
     reread = owner.get(f"/api/v1/generation-batches/{first.json()['batch']['id']}")
     assert reread.status_code == 200, reread.text
     assert reread.json()["freshness"]["stale"] is False
+
+
+def test_current_history_retry_works_and_historical_frozen_contract_is_readable_only(
+    admin_client, clean_registry, monkeypatch
+):
+    import json
+
+    from sqlalchemy import update
+
+    from tests.assessments.test_cssrs import _all_no
+    from x_insight.models.workflow_release import content_root, resolve_workflow
+    from x_insight.reasoning import tables as reasoning_tables
+
+    owner, csrf, eid = _setup_owner_with_draft(
+        admin_client, clean_registry, monkeypatch, "dr_history_retry"
+    )
+    saved = _patch_draft(owner, csrf, eid, {"cssrs": {"answers": _all_no()}}, 1)
+    assert saved.status_code == 200, saved.text
+    package = resolve_workflow("registration")[0][1]
+    first = _start_batch(owner, csrf, eid, 2, package)
+    assert first.status_code == 202, first.text
+    batch_id = first.json()["batch"]["id"]
+    headers = {**_auth_headers(csrf), "If-Match": '"2"'}
+    current = owner.post(
+        f"/api/v1/encounters/{eid}/generation-batches",
+        json={"source_batch_id": batch_id},
+        headers=headers,
+    )
+    assert current.status_code == 202, current.text
+    assert current.json()["batch"]["id"] == batch_id
+    # Represent an already persisted historical run; newly writing this old
+    # package through the generation API is intentionally prohibited.
+    directory = content_root() / "questions/high_suicide_clozapine/s39-reviewed-v1"
+    historical = {
+        key: json.loads((directory / f"{key}.json").read_text())
+        for key in ("manifest", "template", "examples", "review")
+    }
+    historical["prompt"] = {
+        "version": historical["manifest"]["prompt_version"],
+        "text": (directory / "prompt.txt").read_text(),
+    }
+    historical["network_xml"] = (directory / "network.xml").read_text()
+    with clean_registry.begin() as connection:
+        connection.execute(
+            update(reasoning_tables.question_runs)
+            .where(
+                reasoning_tables.question_runs.c.id
+                == uuid.UUID(first.json()["question_runs"][0]["id"])
+            )
+            .values(pinned_package=historical)
+        )
+    old_read = owner.get(f"/api/v1/generation-batches/{batch_id}")
+    assert old_read.status_code == 200, old_read.text
+    old_retry = owner.post(
+        f"/api/v1/encounters/{eid}/generation-batches",
+        json={"source_batch_id": batch_id},
+        headers=headers,
+    )
+    assert old_retry.status_code == 422, old_retry.text
+    assert old_retry.json()["code"] == "HISTORY_INPUT_CONTRACT_CHANGED"

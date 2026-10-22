@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { execFileSync } from "node:child_process";
 import {
   uniqueName,
   uniqueLetters,
@@ -134,10 +135,12 @@ async function gotoEncounter(
   page: import("@playwright/test").Page,
   draftId: string,
   step: "history" | "effects" = "history",
+  waitForInventory = true,
 ): Promise<void> {
   await page.goto(`/#/encounters/${draftId}#${step}`);
   const heading = step === "history" ? "History (step 5)" : "Adverse effects (step 5)";
   await expect(page.getByRole("heading", { name: heading })).toBeVisible();
+  if (step === "history" && waitForInventory) await expect(page.locator("#history-phone-update")).toBeEnabled({ timeout: 20000 });
 }
 
 test("fresh history defaults to Unknown with two applicable fields and no retired controls", async ({ page, request }) => {
@@ -376,8 +379,7 @@ test("pharmacotherapy tri-state defaults persist and retired controls never appe
   }
   const readiness = await (await request.get(`/api/v1/encounters/${draftId}/proposal-readiness`)).json();
   for (const id of retired) expect(readiness.blockers.map((b: { source_path: string }) => b.source_path)).not.toContain(prefix + id);
-  // A similarly named question in another package remains independently assessed.
-  await expect(page.locator('[id="hist-candidate/history/high_suicide_clozapine.v1/h_urgent_safety_concern"]')).toBeVisible();
+  await expect(page.locator('[id="history-workflow-high_suicide_clozapine"]')).toHaveCount(0);
 });
 
 test("all five onset choices persist through autosave and reload", async ({ page, request }) => {
@@ -598,7 +600,7 @@ test("history controls wait for the saved field inventory before accepting edits
     await loaded;
     return route.continue();
   });
-  await gotoEncounter(page, draftId);
+  await gotoEncounter(page, draftId, "history", false);
   await expect(page.locator("#history-phone-update")).toBeDisabled();
   await expect(page.locator("#history-reconciliation-status")).toBeDisabled();
   await expect(page.locator("#history-reconciliation-baseline")).toBeDisabled();
@@ -635,4 +637,146 @@ test("reconciliation and phone update save and survive reload", async ({
   await expect(page.locator("#history-reconciliation-status")).toHaveValue("pending");
   await expect(page.locator("#history-reconciliation-baseline")).toHaveValue("baseline-enc-001");
   await expect(page.locator("#history-phone-update")).toHaveValue("+43 699 111");
+});
+
+// Owner-requested 2026-10-22 public UI + saved History/readiness seams.
+test("LAI and aggression controls use exact titles, constrained options and Unknown defaults without retired questions", async ({ page, request }) => {
+  const physician = await loginPhysician(page, request, "e2ehistlaifresh");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  await gotoEncounter(page, draftId);
+  const lai = "candidate/history/lai_indication_choice.v1/";
+  const aggression = "candidate/history/aggression_clozapine.v1/";
+  const specs = [
+    [lai + "h_lai_preference", "Scenario preference for an LAI or oral treatment", ["PrefersLAI", "PrefersOral", "Undecided", "DeclinesLAI", "unknown"]],
+    [lai + "h_adherence_history", "Antipsychotic adherence", ["Adequate", "Poor", "unknown"]],
+    [lai + "h_discussion_context", "Additional scenario context for exploring an LAI, such as treatment gaps, care transitions, repeated hospitalizations or emergency visits.", ["Present", "Absent", "unknown"]],
+    [lai + "h_delivery_barriers", "Scenario barriers involving access, transport, scheduling, cost, staffing or resources for LAI delivery.", ["Present", "Absent", "unknown"]],
+    [aggression + "h_substantial_aggression_risk", "Substantial aggression-related risk", ["Yes", "No", "unknown"]],
+  ] as const;
+  const retired = [
+    ...["h_schizophrenia_established", "h_oral_experience", "h_product_plan", "h_lai_treatment_status"].map((id) => lai + id),
+    ...["h_schizophrenia_established", "h_persistence_despite_treatment", "h_urgent_safety_concern", "h_adherence_concern", "h_modifiable_targets"].map((id) => aggression + id),
+  ];
+  for (const reload of [false, true]) {
+    if (reload) await page.reload();
+    for (const [id, label, options] of specs) {
+      const select = page.getByLabel(label, { exact: true });
+      await expect(select).toHaveAttribute("id", "hist-" + id);
+      await expect(select).toHaveValue("unknown");
+      expect(await select.locator("option").evaluateAll((nodes) => nodes.map((node) => (node as HTMLOptionElement).value))).toEqual(options);
+    }
+    for (const id of retired) await expect(page.locator(`[id="hist-${id}"]`)).toHaveCount(0);
+    await expect(page.locator('[id^="hist-candidate/history/high_suicide_clozapine.v1/"]')).toHaveCount(0);
+  }
+  const saved = await (await request.get(`/api/v1/encounters/${draftId}/history`)).json();
+  expect(saved.workflow_fields).toHaveLength(28);
+  expect(saved.proposal_readiness.required_count).toBe(27);
+  for (const [id] of specs) { expect(saved.values[id]).toBe("unknown"); expect(saved.provenance[id]).toBeUndefined(); }
+  const readiness = await (await request.get(`/api/v1/encounters/${draftId}/proposal-readiness`)).json();
+  const paths = readiness.blockers.map((b: { source_path: string }) => b.source_path);
+  expect(paths).toContain("synthetic/assessments/cssrs");
+  for (const id of retired) expect(paths).not.toContain(id);
+  expect(paths.some((id: string) => id.startsWith("candidate/history/high_suicide_clozapine.v1/"))).toBe(false);
+});
+
+test("prior NMS follows lifetime exposure and clears hidden saved value and attribution", async ({ page, request }) => {
+  test.setTimeout(90000);
+  const physician = await loginPhysician(page, request, "e2ehistnms");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  const id = "candidate/history/lai_indication_choice.v1/h_prior_nms";
+  const select = page.locator(`[id="hist-${id}"]`);
+  const read = async () => (await (await request.get(`/api/v1/encounters/${draftId}/history`)).json());
+  await gotoEncounter(page, draftId);
+  await expect(select).toHaveCount(0);
+  for (const value of ["no", "unknown"]) {
+    await page.locator("#hist-h_exposure_dopamine_blocker-yes").check();
+    await expect(select).toHaveValue("unknown");
+    await expect.poll(async () => (await read()).values.h_exposure_dopamine_blocker).toBe("yes");
+    const current = await read();
+    const csrf = await physicianSession(request, physician);
+    const seeded = await request.post(`/api/v1/encounters/${draftId}/history`, {
+      headers: { "X-CSRF-Token": csrf, "If-Match": `"${current.revision}"` },
+      data: { values: { ...current.values, [id]: "Yes" } },
+    });
+    expect(seeded.status(), await seeded.text()).toBe(200);
+    await page.reload();
+    await expect(select).toHaveValue("Yes");
+    await expect.poll(async () => { const h = await read(); return [h.values[id], h.provenance[id]?.source, h.proposal_readiness.required_count]; }).toEqual(["Yes", "clinician_entry", 29]);
+    await page.locator(`#hist-h_exposure_dopamine_blocker-${value}`).check();
+    await expect(select).toHaveCount(0);
+    await expect.poll(async () => { const h = await read(); return [h.values.h_exposure_dopamine_blocker, h.values[id] ?? null, h.provenance[id] ?? null, h.proposal_readiness.required_count]; }).toEqual([value, null, null, 27]);
+    await page.reload();
+    await expect(select).toHaveCount(0);
+  }
+  await page.locator("#hist-h_exposure_dopamine_blocker-yes").check();
+  await expect(select).toHaveValue("unknown");
+});
+
+test("History C-SSRS readiness link opens the assessment step", async ({ page, request }) => {
+  const physician = await loginPhysician(page, request, "e2ehistcsslink");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  await gotoEncounter(page, draftId);
+  const link = page.getByRole("link", { name: "C-SSRS assessment", exact: true });
+  await expect(link).toBeVisible();
+  await link.click();
+  await expect(page.locator("#cssrs-heading")).toBeVisible();
+  await expect(page.locator("#history-heading")).toHaveCount(0);
+});
+
+test("legacy LAI uncertainty and retired answers normalize without attribution and stay removed after reload", async ({ page, request }) => {
+  const database = process.env.E2E_LEGACY_DATABASE_URL;
+  test.skip(!database, "Requires an explicitly configured isolated legacy-fixture database");
+  const physician = await loginPhysician(page, request, "e2ehistlegacy");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  const lai = "candidate/history/lai_indication_choice.v1/";
+  const aggression = "candidate/history/aggression_clozapine.v1/";
+  const legacy = {
+    [lai + "h_adherence_history"]: "Uncertain",
+    [lai + "h_lai_preference"]: "not_assessed",
+    [lai + "h_discussion_context"]: "not_assessed",
+    [lai + "h_delivery_barriers"]: "not_assessed",
+    [aggression + "h_substantial_aggression_risk"]: "not_assessed",
+  };
+  const removed = {
+    [lai + "h_schizophrenia_established"]: "Yes",
+    [lai + "h_oral_experience"]: "Established",
+    [lai + "h_product_plan"]: "Completed",
+    [lai + "h_lai_treatment_status"]: "Current",
+    [aggression + "h_persistence_despite_treatment"]: "Yes",
+    [aggression + "h_urgent_safety_concern"]: "Yes",
+    [aggression + "h_adherence_concern"]: "Yes",
+    [aggression + "h_modifiable_targets"]: "Yes",
+    [aggression + "h_schizophrenia_established"]: "Yes",
+    "candidate/history/high_suicide_clozapine.v1/h_substantial_suicide_risk": "Yes",
+  };
+  // Fixture setup only: old versions could persist answers new writes reject.
+  // Guard the dedicated loopback port/database before touching any rows.
+  execFileSync("backend/.venv/bin/python", ["-c", `
+import json,sys
+from urllib.parse import urlparse
+import psycopg
+url,encounter,values=sys.argv[1:]
+u=urlparse(url)
+assert u.hostname=='127.0.0.1' and u.port==55441 and u.path=='/xi_history_frontend_test'
+values=json.loads(values)
+history={'values': values, 'provenance': {key: {'source': 'clinician_entry', 'author_id': 'legacy-fixture'} for key in values}}
+with psycopg.connect(url) as db:
+    db.execute("UPDATE encounters SET draft_data=jsonb_set(draft_data, '{history}', %s::jsonb) WHERE id=%s", (json.dumps(history), encounter))
+`, database!, draftId, JSON.stringify({ ...legacy, ...removed })]);
+  await gotoEncounter(page, draftId);
+  const read = async () => (await (await request.get(`/api/v1/encounters/${draftId}/history`)).json());
+  for (const reload of [false, true]) {
+    if (reload) { await page.reload(); await expect(page.locator("#history-phone-update")).toBeEnabled(); }
+    const saved = await read();
+    for (const id of Object.keys(legacy)) {
+      await expect(page.locator(`[id="hist-${id}"]`)).toHaveValue("unknown");
+      expect(saved.values[id]).toBe("unknown");
+      expect(saved.provenance[id]).toBeUndefined();
+    }
+    for (const id of Object.keys(removed)) {
+      await expect(page.locator(`[id="hist-${id}"]`)).toHaveCount(0);
+      expect(saved.values[id]).toBeUndefined();
+      expect(saved.provenance[id]).toBeUndefined();
+    }
+  }
 });

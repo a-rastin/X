@@ -1,0 +1,177 @@
+{
+  "schema_version": "candidate-history-additions-v1",
+  "version": "lai_indication_choice.v2",
+  "status": "awaiting_review",
+  "extends": "history.v1",
+  "purpose": "Current application input contract requested on 2026-10-22; original models and clinical review preserved, no new clinical approval.",
+  "fields": [
+    {
+      "id": "h_lai_preference",
+      "source_path": "candidate/history/lai_indication_choice.v1/h_lai_preference",
+      "node_id": "LAIPreference",
+      "permitted": [
+        "PrefersLAI",
+        "PrefersOral",
+        "Undecided",
+        "DeclinesLAI",
+        "unknown"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Scenario preference for an LAI or oral treatment",
+      "source_locator": "Patient Preferences \u2014 shared decision-making; pluses and minuses of LAIs reviewed; prior LAI experience",
+      "source_sha256": "3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827",
+      "operationalization": "PrefersLAI/PrefersOral require documented shared discussion of pluses and minuses. Undecided means the patient has not settled a preference after discussion and is a known explicit value that still executes. DeclinesLAI means explicit decline and still executes with a preference-respecting review. Absent or uncertain discussion (unknown/not_assessed/missing/conflict) pauses for clarification and is never coerced to PrefersOral or DeclinesLAI. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "PrefersLAI": "PrefersLAI",
+        "PrefersOral": "PrefersOral",
+        "Undecided": "Undecided",
+        "DeclinesLAI": "DeclinesLAI"
+      },
+      "unknown_values": [
+        "unknown"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review",
+      "legacy_value_mapping": {
+        "not_assessed": "unknown"
+      },
+      "default_value": "unknown"
+    },
+    {
+      "id": "h_adherence_history",
+      "source_path": "candidate/history/lai_indication_choice.v1/h_adherence_history",
+      "node_id": "AdherenceHistory",
+      "permitted": [
+        "Adequate",
+        "Poor",
+        "unknown"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Antipsychotic adherence",
+      "source_locator": "STATEMENT 10: Long-Acting Injectable Antipsychotic Medications \u2014 prefer LAI if poor or uncertain adherence; discussions often occur with difficulty adhering to oral medications",
+      "source_sha256": "3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827",
+      "operationalization": "Poor means clinician identifies difficulty adhering to oral medications or breaks in continuity. Adequate means review found no identified adherence concern. Unknown assessment pauses; legacy Uncertain is converted to unattributed Unknown. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Adequate": "Adequate",
+        "Poor": "Poor"
+      },
+      "unknown_values": [
+        "unknown"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review",
+      "legacy_value_mapping": {
+        "not_assessed": "unknown",
+        "Uncertain": "unknown"
+      },
+      "default_value": "unknown"
+    },
+    {
+      "id": "h_discussion_context",
+      "source_path": "candidate/history/lai_indication_choice.v1/h_discussion_context",
+      "node_id": "AdditionalDiscussionContext",
+      "permitted": [
+        "Present",
+        "Absent",
+        "unknown"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Additional scenario context for exploring an LAI, such as treatment gaps, care transitions, repeated hospitalizations or emergency visits.",
+      "source_locator": "Implementation; Quality Measurement Considerations \u2014 transitions between settings; repeated hospitalizations or emergency visits",
+      "source_sha256": "3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827",
+      "operationalization": "Present means documented treatment gap, care transition, repeated hospitalization or emergency visit context at this encounter. Absent means review found no such additional context. Unknown pauses. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Present": "Present",
+        "Absent": "Absent"
+      },
+      "unknown_values": [
+        "unknown"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review",
+      "legacy_value_mapping": {
+        "not_assessed": "unknown"
+      },
+      "default_value": "unknown"
+    },
+    {
+      "id": "h_prior_nms",
+      "source_path": "candidate/history/lai_indication_choice.v1/h_prior_nms",
+      "node_id": "PriorNeurolepticMalignantSyndrome",
+      "permitted": [
+        "Yes",
+        "No",
+        "unknown",
+        "not_assessed"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "History of neuroleptic malignant syndrome represented in the scenario.",
+      "source_locator": "Implementation \u2014 caution warranted in a patient who has experienced NMS previously",
+      "source_sha256": "3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827",
+      "operationalization": "Yes requires documented prior NMS history with caution review. No requires assessment finding no prior NMS. Unknown pauses. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Yes": "Yes",
+        "No": "No"
+      },
+      "unknown_values": [
+        "unknown",
+        "not_assessed"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review",
+      "default_value": "unknown",
+      "show_if": {
+        "field_id": "h_exposure_dopamine_blocker",
+        "value": "yes"
+      }
+    },
+    {
+      "id": "h_delivery_barriers",
+      "source_path": "candidate/history/lai_indication_choice.v1/h_delivery_barriers",
+      "node_id": "DeliveryBarriers",
+      "permitted": [
+        "Present",
+        "Absent",
+        "unknown"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Scenario barriers involving access, transport, scheduling, cost, staffing or resources for LAI delivery.",
+      "source_locator": "Implementation \u2014 logistical barriers for patients, clinicians and organizations",
+      "source_sha256": "3450e0bcafd525f9b861c7173bea13c2ae8708ccda1830272c40a4994355a827",
+      "operationalization": "Present means documented access, transport, scheduling, cost, staffing or resource barrier. Absent means review found no such barrier. Unknown pauses. Page notes are never mapping input.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Present": "Present",
+        "Absent": "Absent"
+      },
+      "unknown_values": [
+        "unknown"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review",
+      "legacy_value_mapping": {
+        "not_assessed": "unknown"
+      },
+      "default_value": "unknown"
+    }
+  ]
+}
