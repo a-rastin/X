@@ -290,6 +290,7 @@ def compute_history_state(
     """Server-authoritative history preview for one draft revision."""
     del author_id  # provenance carries attribution; preview needs no gate.
     from x_insight.models.workflow_release import history_fields, workflow_history_fields
+    from x_insight.reasoning.readiness import compute_proposal_readiness
 
     section = get_history_section(draft_data)
     values = section["values"]
@@ -305,6 +306,7 @@ def compute_history_state(
         "analysis_visible": True,
         "analysis_visible_label": "analysis_visible",
         "workflow_fields": workflow_history_fields(workflow),
+        "proposal_readiness": compute_proposal_readiness(draft_data, revision, workflow),
         "allowed_field_ids": [*FIELD_IDS, *history_fields()],
     }
 

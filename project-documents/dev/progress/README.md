@@ -3,9 +3,11 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest bounded follow-up is the [complete supplied DDInter candidate and
-verification (2026-10-21)](s18.md#follow-up-2026-10-21--complete-supplied-ddinter-candidate),
-with [medication integration and release association](s20.md#follow-up-2026-10-21--ddinter-workflow-and-release-association).
+The latest bounded follow-up is the [proposal-readiness fix (2026-10-22)](s48.md#follow-up-2026-10-22--check-proposal-readiness-before-creating-a-run):
+History lists unresolved required context and Step 7 checks saved readiness before creating a run.
+The preceding [complete supplied DDInter candidate and
+verification (2026-10-21)](s18.md#follow-up-2026-10-21--complete-supplied-ddinter-candidate)
+includes [medication integration and release association](s20.md#follow-up-2026-10-21--ddinter-workflow-and-release-association).
 The [complete review bundle archive](s18.md#follow-up-2026-10-21--archive-complete-ddinter-review-bundle)
 retains all source/generated files, with evidence in Git LFS.
 The [owner-confirmed local application publication](s18.md#follow-up-2026-10-21--owner-confirmation-and-local-application-publication)
@@ -63,6 +65,8 @@ the same worksheet language to response controls, navigation, and result review.
 The [Step 7 integration fix (2026-10-22)](s48.md#follow-up-2026-10-22--connect-step-7-to-reviewed-workflow-generation)
 connects owner-confirmed pinned bundles, typed history inputs and browser-independent
 run recovery; the earlier diagnosis is retained in the same report.
+The [History readiness diagnosis](s48.md#follow-up-2026-10-22--proposal-blocked-by-missing-history-context)
+explains the subsequent clarification/no-baseline messages and recovery.
 
 The [Step 6 DDI diagnosis (2026-10-20)](s20.md#follow-up-2026-10-20--step-6-dataset-unavailable-diagnosis)
 traces the earlier shared unavailable error; the DDInter publication above resolves

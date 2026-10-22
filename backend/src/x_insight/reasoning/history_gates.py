@@ -10,6 +10,35 @@ from __future__ import annotations
 from typing import Any
 
 
+def history_gate_requirements(key: str, paths: dict[str, Any]) -> list[tuple[str, str]]:
+    """Known answers that still cannot satisfy the reviewed follow-up gate."""
+    values = {path.rsplit("/", 1)[-1]: value for path, value in paths.items()}
+    blockers: list[tuple[str, str]] = []
+    if key in ("continue_or_adjust", "no_improvement_clozapine"):
+        for field, expected in (
+            ("h_baseline_encounter_ref", "documented_current"),
+            ("h_baseline_window_validity", "current"),
+        ):
+            if values.get(field) != expected:
+                blockers.append((field, "A current baseline is required."))
+    if key == "no_improvement_clozapine":
+        for field, expected in (
+            ("h_clozapine_treatment_status", "CurrentTreatment"),
+            ("h_panss_baseline_status", "completed"),
+            ("h_panss_followup_status", "completed"),
+            ("h_clozapine_trial_adequate", "Yes"),
+        ):
+            if values.get(field) != expected:
+                blockers.append(
+                    (
+                        field,
+                        "Current clozapine, completed PANSS and adequate trial context "
+                        "are required.",
+                    )
+                )
+    return blockers
+
+
 def evaluate_history_gate(key: str, paths: dict[str, Any]) -> tuple[str, str]:
     values = {path.rsplit("/", 1)[-1]: value for path, value in paths.items()}
     false = False
@@ -36,23 +65,10 @@ def evaluate_history_gate(key: str, paths: dict[str, Any]) -> tuple[str, str]:
         false = values.get("h_ad_episode_phase") == "NoEpisode"
     elif key not in ("pharmacotherapy", "continue_or_adjust", "no_improvement_clozapine"):
         return "needs_clarification", "No reviewed history gate is registered for this question."
-    if key in ("continue_or_adjust", "no_improvement_clozapine"):
-        if (
-            values.get("h_baseline_encounter_ref") != "documented_current"
-            or values.get("h_baseline_window_validity") != "current"
-        ):
-            return "needs_clarification", "A current baseline is required."
+    requirements = history_gate_requirements(key, paths)
+    if requirements:
+        return "needs_clarification", requirements[0][1]
     if key == "no_improvement_clozapine":
-        if (
-            values.get("h_clozapine_treatment_status") != "CurrentTreatment"
-            or values.get("h_panss_baseline_status") != "completed"
-            or values.get("h_panss_followup_status") != "completed"
-            or values.get("h_clozapine_trial_adequate") != "Yes"
-        ):
-            return (
-                "needs_clarification",
-                "Current clozapine, completed PANSS and adequate trial context are required.",
-            )
         false = values.get("h_residual_symptoms") == "No"
     if false:
         return (

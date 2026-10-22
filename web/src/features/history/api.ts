@@ -30,6 +30,7 @@
  */
 
 import { ApiError } from "../identity/api";
+import type { ProposalReadiness } from "../reasoning/api";
 
 export interface HistoryEvaluation {
   status: "unanswered" | "partial" | "complete";
@@ -63,6 +64,7 @@ export interface WorkflowHistoryField {
 }
 
 export interface HistoryPreview {
+  proposal_readiness?: ProposalReadiness;
   workflow_fields?: WorkflowHistoryField[];
   allowed_field_ids?: string[];
   values: Record<string, unknown>;

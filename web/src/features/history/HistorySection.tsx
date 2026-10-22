@@ -34,12 +34,13 @@
  * - phone input `#history-phone-update`
  */
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import "../assessments/diagnosis/diagnosis.css";
 import "./history.css";
 import { ApiError } from "../identity/api";
 import type { DraftData } from "../encounters/api";
 import type { useAutosave } from "../encounters/useAutosave";
+import { focusHistoryControl, ProposalReadinessSummary } from "../reasoning/ProposalReadinessSummary";
 import {
   getHistory,
   type HistoryPreview,
@@ -294,13 +295,17 @@ export function HistorySection({
   const [preview, setPreview] = useState<HistoryPreview | null>(null);
   const [previewLoading, setPreviewLoading] = useState(true);
   const [previewError, setPreviewError] = useState<string | null>(null);
+  const previewRequest = useRef(0);
 
   const refreshPreview = useCallback(async (): Promise<void> => {
+    const request = ++previewRequest.current;
     try {
       const fresh = await getHistory(encounterId);
+      if (request !== previewRequest.current) return;
       setPreview(fresh);
       setPreviewError(null);
     } catch (err) {
+      if (request !== previewRequest.current) return;
       if (err instanceof ApiError && err.status === 401) {
         onSessionExpired();
         return;
@@ -311,7 +316,7 @@ export function HistorySection({
           : "History preview failed to load. Check the connection and retry.",
       );
     } finally {
-      setPreviewLoading(false);
+      if (request === previewRequest.current) setPreviewLoading(false);
     }
   }, [encounterId, onSessionExpired]);
 
@@ -320,7 +325,25 @@ export function HistorySection({
     autosave.saveState.kind === "saved" ? autosave.saveState.revision : 0;
   useEffect(() => {
     void refreshPreview();
+    return () => { previewRequest.current += 1; };
   }, [refreshPreview, savedRevision]);
+
+  useEffect(() => {
+    if (preview === null) return;
+    const focusLinkedField = () => {
+      const fragment = window.location.hash.split("#")[2] ?? "";
+      const field = new URLSearchParams(fragment.split("?")[1] ?? "").get("field");
+      if (field?.startsWith("candidate/history/")) focusHistoryControl(field);
+    };
+    // The wizard focuses its page after a step transition; focus the requested
+    // native control once the loaded History controls have mounted.
+    const frame = requestAnimationFrame(focusLinkedField);
+    window.addEventListener("hashchange", focusLinkedField);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("hashchange", focusLinkedField);
+    };
+  }, [preview !== null]);
 
   const slice = sliceOf(autosave.localData);
   const allowedIds = preview?.allowed_field_ids ?? FIELD_IDS;
@@ -502,23 +525,30 @@ export function HistorySection({
           {questionKeys.map((key) => {
             const fields = workflowFields.filter((field) => field.question_key === key);
             const answered = fields.filter((field) => field.permitted.includes(String(slice.values[field.id] ?? ""))).length;
+            const readiness = preview?.proposal_readiness?.questions.find((question) => question.question_key === key);
             return (
               <section className="xi-diagnosis-criterion" key={key} aria-labelledby={`history-workflow-${key}`}>
                 <header className="xi-diagnosis-criterion-header">
-                  <h4 id={`history-workflow-${key}`}>{key.replaceAll("_", " ").replace(/^./, (letter) => letter.toUpperCase())}</h4>
+                  <h4 id={`history-workflow-${key}`} tabIndex={-1}>{readiness?.question_label ?? key.replaceAll("_", " ").replace(/^./, (letter) => letter.toUpperCase())}</h4>
                   <span className="xi-diagnosis-count">{answered} / {fields.length} answered</span>
                 </header>
                 <p className="xi-hint">Review this context for proposal generation. Unknown or unassessed required context pauses the affected question.</p>
+                {readiness && <p className="xi-hint">Saved required inputs: {readiness.execution_ready_count} / {readiness.required_count} execution-ready.{answersPending && " Changes pending."}</p>}
                 {fields.map((field) => (
                   <div className="xi-diagnosis-item xi-history-item" key={field.id}>
                     <label htmlFor={`hist-${field.id}`}>{field.definition}</label>
                     <p className="xi-history-period">{field.time_window.replaceAll("_", " ")}</p>
                     <select id={`hist-${field.id}`} className="xi-input"
+                      disabled={preview === null}
+                      aria-describedby={preview?.proposal_readiness?.blockers.some((blocker) => blocker.source_path === field.id) ? `hist-${field.id}-readiness` : undefined}
                       value={typeof slice.values[field.id] === "string" ? String(slice.values[field.id]) : ""}
                       onChange={(event) => setValue(field.id, event.target.value)}>
                       <option value="">Select a response</option>
                       {field.permitted.map((value) => <option key={value} value={value}>{valueLabel(value)}</option>)}
                     </select>
+                    {preview?.proposal_readiness?.blockers.filter((blocker) => blocker.source_path === field.id).map((blocker) => (
+                      <p className="xi-hint" key={blocker.question_key} id={`hist-${field.id}-readiness`}>{blocker.reason}{answersPending && " Based on saved responses."}</p>
+                    ))}
                     {itemErrors[field.id] && <p className="xi-field-error" role="alert">{itemErrors[field.id].join(" ")}</p>}
                     {field.operationalization && <details className="xi-history-provenance"><summary>Assessment guidance</summary><p className="xi-hint">{field.operationalization}</p></details>}
                   </div>
@@ -542,6 +572,7 @@ export function HistorySection({
               <select
                 className="xi-select"
                 id="history-reconciliation-status"
+                disabled={preview === null}
                 value={slice.reconciliation?.status ?? ""}
                 onChange={(event) => setReconciliationStatus(event.target.value)}
               >
@@ -558,6 +589,7 @@ export function HistorySection({
               <input
                 className="xi-input"
                 id="history-reconciliation-baseline"
+                disabled={preview === null}
                 type="text"
                 autoComplete="off"
                 value={slice.reconciliation?.baseline_encounter_id ?? ""}
@@ -573,6 +605,7 @@ export function HistorySection({
             <input
               className="xi-input"
               id="history-phone-update"
+              disabled={preview === null}
               type="text"
               autoComplete="off"
               value={slice.phone_update ?? ""}
@@ -624,6 +657,7 @@ export function HistorySection({
                 </p>
                 <p className="xi-hint">
                   Based on saved responses.
+                  {" "}Core completion is separate from proposal readiness below.
                   {answersPending &&
                     " Changes pending — summary reflects the last saved responses."}
                   {previewError !== null &&
@@ -655,6 +689,14 @@ export function HistorySection({
                 )}
               </div>
             )}
+          </div>
+          <div className="xi-diagnosis-result">
+            {preview?.proposal_readiness && previewError === null ? (
+              <>
+                {(answersPending || autosave.hasUnsaved || preview.revision !== autosave.baseRevision) && <p className="xi-hint">Changes pending — proposal readiness reflects the last loaded saved responses.</p>}
+                <ProposalReadinessSummary readiness={preview.proposal_readiness} encounterId={encounterId} local />
+              </>
+            ) : <p className="xi-hint">{previewLoading ? "Loading proposal readiness…" : "Proposal readiness could not be verified."}{previewError && ` ${previewError}`}</p>}
           </div>
           <p className="xi-hint xi-history-summary-note">Unknown and Not assessed are recorded separately from No. Response counts do not indicate clinical findings.</p>
         </aside>

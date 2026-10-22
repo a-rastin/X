@@ -95,10 +95,12 @@ import { SignPanel } from "../plans/SignPanel";
 import { getDiagnosis, type DiagnosisPreview } from "../assessments/diagnosis/api";
 import { getMedications, type DdiEvidence, type MedicationsPreview } from "../medications/api";
 import { DdiEvidenceList } from "../medications/DdiEvidenceList";
+import { ProposalReadinessSummary } from "./ProposalReadinessSummary";
 import {
   clearStoredProposal,
   getBatch,
   getLatestGeneration,
+  getProposalReadiness,
   getQuestionInputFreshness,
   getQuestionReview,
   readStoredProposal,
@@ -112,6 +114,7 @@ import {
   type QuestionRun,
   type QuestionTransparency,
   type ReasonJob,
+  type ProposalReadiness,
 } from "./api";
 
 type AutosaveApi = ReturnType<typeof useAutosave>;
@@ -372,6 +375,12 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
   const [actionError, setActionError] = useState<string | null>(null);
   const [patientId, setPatientId] = useState<string | null>(null);
   const [reloadKey, setReloadKey] = useState(0);
+  const [readiness, setReadiness] = useState<ProposalReadiness | null>(null);
+  const [readinessError, setReadinessError] = useState<string | null>(null);
+  const autosaveRef = useRef(autosave);
+  autosaveRef.current = autosave;
+  const mountedRef = useRef(true);
+  const startBusyRef = useRef(false);
   // S48d affected-only freshness: per-question input_freshness by run id,
   // fetched only while the batch is stale (fresh batches imply every
   // question is fresh). `freshDone` distinguishes "still checking" from a
@@ -405,6 +414,7 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
 
   // Mount: remember flush + load prerequisites + encounter meta + stored batch.
   useEffect(() => {
+    mountedRef.current = true;
     attemptedRef.current = false;
     batchIdRef.current = null;
     setBatch(null);
@@ -414,6 +424,8 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
     setPollError(null);
     setExpanded({});
     setReviews({});
+    setReadiness(null);
+    setReadinessError(null);
     setFreshByRun({});
     setFreshDone(false);
     freshKeyRef.current = null;
@@ -468,27 +480,67 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
     })();
     return () => {
       cancelled = true;
+      mountedRef.current = false;
     };
     // Mount-per-encounter only: later autosave revisions must not retrigger
     // entry (no run per keystroke); staleness is shown, refresh is explicit.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [encounterId]);
 
+  /** Every start, including retries, reads saved readiness after flushing.
+   * flush is best effort, so inspect live save state as well as revision fences. */
+  const prepareStart = useCallback(async (sourceBatchId?: string): Promise<number | null> => {
+    setReadiness(null);
+    setReadinessError(null);
+    await autosaveRef.current.flush();
+    const meta = await getEncounter(encounterId);
+    const assertSaved = () => {
+      const live = autosaveRef.current;
+      if (!mountedRef.current) throw new Error("The proposal step was closed before generation started.");
+      if (live.isDirty() || live.saveState.kind !== "saved" || live.saveState.revision !== meta.revision) {
+        throw new Error("Wait for the draft save to succeed, resolve any save conflict, then check again.");
+      }
+    };
+    assertSaved();
+    const [diag, meds, ready] = await Promise.all([
+      getDiagnosis(encounterId), getMedications(encounterId), getProposalReadiness(encounterId, sourceBatchId),
+    ]);
+    assertSaved();
+    if (ready.source_revision !== meta.revision || typeof ready.ready !== "boolean" || !Array.isArray(ready.blockers) || !Array.isArray(ready.questions) ||
+      (ready.ready && (ready.status !== "ready" || ready.blockers.length > 0))) {
+      throw new Error("Proposal readiness could not be verified for the saved revision. Check again.");
+    }
+    setReadiness(ready);
+    if (!ready.ready) {
+      if (batchIdRef.current === null) setPhase({ kind: "blocked", message: "Review the unresolved proposal inputs below, then return to this step." });
+      else setActionError("Generation paused. Review the unresolved proposal inputs below before starting a new run.");
+      return null;
+    }
+    if (diag.requires_acknowledgment && !diag.acknowledgment_valid && !diag.bypass_valid) {
+      throw new Error("Review Diagnosis and acknowledge the below-threshold result or use the available bypass before generation.");
+    }
+    if (meds.reconciliation?.status === "pending") {
+      throw new Error("Reconcile the copied list in Medications before generation.");
+    }
+    return meta.revision;
+  }, [encounterId]);
+
   const runStart = useCallback(async () => {
+    if (startBusyRef.current) return;
+    startBusyRef.current = true;
     setActionError(null);
     setPollError(null);
-    setPhase({ kind: "starting" });
+    setPhase({ kind: "waiting-save" });
     setActionBusy(true);
     try {
-      await autosave.flush().catch(() => {
-        /* fence below reads the fresh revision regardless */
-      });
-      const meta = await getEncounter(encounterId);
-      const started = await startGeneration(encounterId, meta.revision);
+      const revision = await prepareStart();
+      if (revision === null || !mountedRef.current) return;
+      setPhase({ kind: "starting" });
+      const started = await startGeneration(encounterId, revision);
       writeStoredProposal(encounterId, {
         batchId: started.batch.id,
         packages: null,
-        sourceRevision: meta.revision,
+        sourceRevision: revision,
       });
       batchIdRef.current = started.batch.id;
       setBatch(null);
@@ -504,17 +556,38 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
         message:
           err instanceof ApiError
             ? `Generation could not start: ${err.message}`
-            : "Generation could not start. Check the connection and try again.",
+            : err instanceof Error ? err.message : "Generation could not start. Check the connection and try again.",
       });
     } finally {
+      startBusyRef.current = false;
       setActionBusy(false);
     }
-  }, [encounterId, autosave, onSessionExpired]);
+  }, [encounterId, prepareStart, onSessionExpired]);
 
   // Automatic entry: exactly one attempt per mount, only when the draft is
   // saved, the gates are readable, and no stored batch exists.
   const saveKind = autosave.saveState.kind;
   const hasUnsaved = autosave.hasUnsaved;
+  const savedRevision = autosave.saveState.kind === "saved" ? autosave.saveState.revision : null;
+  useEffect(() => {
+    if (batchId === null || savedRevision === null || hasUnsaved) return;
+    let cancelled = false;
+    setReadiness(null);
+    setReadinessError(null);
+    void getProposalReadiness(encounterId, batchId).then((ready) => {
+      if (cancelled) return;
+      if (ready.source_revision !== savedRevision || typeof ready.ready !== "boolean" || !Array.isArray(ready.questions) || !Array.isArray(ready.blockers)) {
+        setReadinessError("Proposal readiness could not be verified for the saved revision.");
+        return;
+      }
+      setReadiness(ready);
+    }).catch((err: unknown) => {
+      if (cancelled) return;
+      if (err instanceof ApiError && err.status === 401) onSessionExpired();
+      else setReadinessError(failAs(err, "Proposal readiness could not be read. Check again before starting a new run."));
+    });
+    return () => { cancelled = true; };
+  }, [batchId, encounterId, savedRevision, hasUnsaved, reloadKey, failAs, onSessionExpired]);
   useEffect(() => {
     // ponytail: ref guard — batchId state is still null in the mount commit
     // where restore already set tracking; state alone would POST over it.
@@ -706,20 +779,20 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
    * current revision. The backend carries completed baselines forward and
    * resumes at the failed stage (S47); unchanged inputs reuse the batch. */
   const retryRun = useCallback(async () => {
+    if (startBusyRef.current) return;
+    startBusyRef.current = true;
     setActionError(null);
     setActionBusy(true);
     try {
-      await autosave.flush().catch(() => {
-        /* fence below reads the fresh revision regardless */
-      });
-      const meta = await getEncounter(encounterId);
+      const revision = await prepareStart(batchIdRef.current ?? undefined);
+      if (revision === null || !mountedRef.current) return;
       const started = await startGeneration(
-        encounterId, meta.revision, batchIdRef.current ?? undefined,
+        encounterId, revision, batchIdRef.current ?? undefined,
       );
       writeStoredProposal(encounterId, {
         batchId: started.batch.id,
         packages: null,
-        sourceRevision: meta.revision,
+        sourceRevision: revision,
       });
       batchIdRef.current = started.batch.id;
       setBatch(null);
@@ -734,12 +807,13 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
       setActionError(
         err instanceof ApiError
           ? `Retry failed: ${err.message}`
-          : "Retry failed. Check the connection and try again.",
+          : err instanceof Error ? err.message : "Retry failed. Check the connection and try again.",
       );
     } finally {
+      startBusyRef.current = false;
       setActionBusy(false);
     }
-  }, [encounterId, autosave, onSessionExpired]);
+  }, [encounterId, prepareStart, onSessionExpired]);
 
   const toggleTransparency = useCallback(
     async (questionKey: string, runId: string) => {
@@ -781,7 +855,7 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
               templateVersion: null,
               effectiveHash: null,
               provenance: {},
-              message: "No completed baseline — this question has not completed.",
+              message: "Result details will be available after this question completes successfully.",
             },
           }));
           return;
@@ -869,7 +943,7 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
       </h3>
       <p className="xi-hint" style={{ marginTop: 0 }}>
         Entering this step flushes the draft and starts generation automatically once the draft is
-        saved and the diagnosis and medication gates pass. Reloads resume the recorded run without
+        saved and proposal inputs, diagnosis and medication checks pass. Reloads resume the recorded run without
         a new request.
       </p>
 
@@ -891,8 +965,8 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
         <div className="xi-warning-panel" role="status">
           <p style={{ margin: 0 }}>Generation paused: {phase.message}</p>
           <p className="xi-hint" style={{ marginBottom: 0 }}>
-            See the <a href="#diagnosis-preview-status">diagnosis status</a> and{" "}
-            <a href="#meds-save-status">medications status</a> above.
+            Review <a href={`#/encounters/${encounterId}#diagnosis`}>Diagnosis</a>,{" "}
+            <a href={`#/encounters/${encounterId}#medications`}>Medications</a> and the proposal requirements below.
           </p>
           <div className="xi-row-actions" style={{ marginTop: 8 }}>
             <button className="xi-btn xi-btn-secondary" type="button" onClick={checkAgain}>
@@ -914,6 +988,9 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
       )}
 
       {phase.kind === "starting" && <p role="status">Starting generation…</p>}
+
+      {readinessError && <p className="xi-form-error" role="alert">{readinessError}</p>}
+      {readiness && !hasUnsaved && readiness.source_revision === savedRevision && <ProposalReadinessSummary readiness={readiness} encounterId={encounterId} />}
 
       {phase.kind === "error" && (
         <div>
@@ -1170,7 +1247,7 @@ function QuestionBlock({
         untouched. Per-question CPT sliders, comparison, reset/retry, and
         acceptance live in CptReviewPanel; testids cpt-panel-<key> /
         cpt-accept-<key>. */}
-      <CptReviewPanel questionKey={key} runId={item.run.id} onSessionExpired={onSessionExpired} />
+      {item.entry?.baseline && <CptReviewPanel questionKey={key} runId={item.run.id} onSessionExpired={onSessionExpired} />}
       {expanded && (
         <div data-testid={`proposal-transparency-${key}`} id={regionId}>
           {review === null || review.status === "loading" ? (

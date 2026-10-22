@@ -773,6 +773,9 @@ def start_generation_batch(
             412, "STALE_REVISION", "The draft changed. Reload and reconcile your edits."
         )
     release_pin = dict(pinned_release or {})
+    reviewed_workflow = (packages is None and package is None) or bool(
+        release_pin.get("bundle_hash")
+    )
     if packages is None and package is None:
         from x_insight.models.workflow_release import resolve_workflow
 
@@ -795,6 +798,24 @@ def start_generation_batch(
         manifests.append(manifest)
 
     draft_data = encounter.get("draft_data") or {}
+    if reviewed_workflow:
+        from x_insight.reasoning.readiness import compute_proposal_readiness
+
+        workflow = "followup" if encounter["kind"] == "follow_up" else "registration"
+        readiness = compute_proposal_readiness(
+            draft_data, expected_revision, workflow, ordered_packages
+        )
+        if not readiness["ready"]:
+            field_errors: dict[str, list[str]] = {}
+            for blocker in readiness["blockers"]:
+                path = blocker["source_path"] or "proposal_readiness"
+                field_errors.setdefault(path, []).append(blocker["reason"])
+            raise contracts.ContractError(
+                422,
+                "PROPOSAL_INPUTS_INCOMPLETE",
+                "Required proposal context needs clarification. Review History before starting.",
+                field_errors,
+            )
     # S46 DDI pin (S19 checker seam): dataset/catalog/fingerprint/report per batch.
     ddi_pin = _pin_ddi_for_start(session, draft_data)
     # Workflow-level pinned bundle: ordered keys + per-question hashes for the

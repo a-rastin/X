@@ -1,5 +1,6 @@
 import { test, expect } from "@playwright/test";
 import { createHash } from "crypto";
+import { readFile } from "node:fs/promises";
 import {
   uniqueName,
   uniqueLetters,
@@ -304,13 +305,189 @@ async function seedStoredProposal(
   expect(check).not.toBeNull();
 }
 
-// First entry starts the pinned workflow; removing storage still recovers the run.
-test("S48 §1 fresh entry starts server-pinned generation and resumes without browser storage", async ({
+// Synthetic engineering setup through the public field inventory and save API.
+async function seedReadyContext(request: import("@playwright/test").APIRequestContext,
+  physician: { username: string; password: string }, draftId: string): Promise<number> {
+  await physicianSession(request, physician);
+  const history = await (await request.get(`/api/v1/encounters/${draftId}/history`)).json();
+  const current = await (await request.get(`/api/v1/encounters/${draftId}`)).json();
+  const values = { ...history.values };
+  for (const field of history.workflow_fields) values[field.id] = field.permitted[0];
+  return patchDraftWithRetry(request, physician, draftId,
+    { ...current.draft_data, history: { ...current.draft_data.history, values } }, current.revision);
+}
+
+function countGenerationPosts(page: import("@playwright/test").Page): { count: number } {
+  const posts = { count: 0 };
+  page.on("request", (request) => {
+    if (request.method() === "POST" && /\/generation-batches$/.test(new URL(request.url()).pathname)) posts.count++;
+  });
+  return posts;
+}
+
+test("S48 readiness core completion does not start generation; all blockers link to exact History controls", async ({ page, request }) => {
+  const physician = await loginPhysician(page, request, "e2eprmissing");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  const definition = JSON.parse(await readFile("content/history/history.v1.json", "utf8"));
+  const core = Object.fromEntries(definition.fields.map((field: { id: string; permitted_values: string[] }) => [field.id, field.permitted_values[0]]));
+  await patchDraftWithRetry(request, physician, draftId, { history: { values: core } }, 1);
+  const posts = countGenerationPosts(page);
+  await gotoEncounter(page, draftId);
+  const summary = page.getByTestId("proposal-readiness");
+  await expect(summary).toContainText("0 / 53 required responses answered; 0 / 53 execution-ready.");
+  await expect(summary.getByRole("link")).toHaveCount(53);
+  const server = await (await request.get(`/api/v1/encounters/${draftId}/proposal-readiness`)).json();
+  expect(server.blockers).toHaveLength(53);
+  for (const blocker of server.blockers) {
+    await expect(summary.locator(`a[href*="${encodeURIComponent(blocker.source_path)}"]`)).toHaveText(blocker.label);
+  }
+  expect(posts.count).toBe(0);
+  const path = "candidate/history/pharmacotherapy.v2/h_prior_treatment_difficulty";
+  await summary.locator(`a[href*="${encodeURIComponent(path)}"]`).click();
+  const control = page.locator(`[id="hist-${path}"]`);
+  await expect(control).toBeVisible();
+  await expect(control).toBeFocused();
+  await expect(page.locator("#history-workflow-pharmacotherapy")).toBeVisible();
+  await expect(page.getByText("Complete — all 12 history fields answered.", { exact: true })).toBeVisible();
+  expect(posts.count).toBe(0);
+});
+
+test("S48 readiness uncertainty is answered but unresolved; saving corrections permits automatic start", async ({ page, request }) => {
+  const physician = await loginPhysician(page, request, "e2eprunknown");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  await seedReadyContext(request, physician, draftId);
+  const current = await (await request.get(`/api/v1/encounters/${draftId}`)).json();
+  const prefix = "candidate/history/pharmacotherapy.v2/";
+  await patchDraftWithRetry(request, physician, draftId, { ...current.draft_data, history: { ...current.draft_data.history,
+    values: { ...current.draft_data.history.values, [prefix + "h_prior_treatment_difficulty"]: "unknown", [prefix + "h_preference_barrier"]: "not_assessed" } } }, current.revision);
+  const posts = countGenerationPosts(page);
+  await gotoEncounter(page, draftId);
+  await expect(page.getByTestId("proposal-readiness")).toContainText("53 / 53 required responses answered; 51 / 53 execution-ready.");
+  await expect(page.getByTestId("proposal-readiness")).toContainText("Unknown does not resolve this required input.");
+  await expect(page.getByTestId("proposal-readiness")).toContainText("This required input has not been assessed.");
+  expect(posts.count).toBe(0);
+  await page.locator("#wizard-step-history").click();
+  const group = page.locator("#history-workflow-pharmacotherapy").locator("..");
+  await expect(group).toContainText("9 / 9 answered");
+  await expect(group.locator("..")).toContainText("7 / 9 execution-ready");
+  await page.locator(`[id="hist-${prefix}h_prior_treatment_difficulty"]`).selectOption("Absent");
+  await page.locator(`[id="hist-${prefix}h_preference_barrier"]`).selectOption("Absent");
+  await expect.poll(async () => (await (await request.get(`/api/v1/encounters/${draftId}/proposal-readiness`)).json()).ready).toBe(true);
+  await expect(page.locator("#draft-save-status")).toContainText("Saved (revision", { timeout: 10000 });
+  await page.locator("#wizard-step-proposal-review").click();
+  await expect(page.getByTestId("proposal-status-pharmacotherapy")).toContainText(/Pending|Running/);
+  expect(posts.count).toBe(1);
+});
+
+for (const failure of ["read failure", "stale revision"] as const) {
+  test(`S48 readiness ${failure} prevents generation until a fresh successful check`, async ({ page, request }) => {
+    const physician = await loginPhysician(page, request, "e2eprread");
+    const { draftId } = await createPatientWithDraft(request, physician);
+    await seedReadyContext(request, physician, draftId);
+    const posts = countGenerationPosts(page);
+    await page.route("**/proposal-readiness*", async (route) => {
+      if (failure === "read failure") return route.fulfill({ status: 503, json: { message: "Readiness service unavailable" } });
+      const response = await route.fetch();
+      const payload = await response.json();
+      return route.fulfill({ response, json: { ...payload, source_revision: payload.source_revision - 1 } });
+    });
+    await gotoEncounter(page, draftId);
+    await expect(page.getByTestId("proposal-review").getByRole("alert")).toContainText(failure === "read failure" ? "Readiness service unavailable" : "saved revision");
+    expect(posts.count).toBe(0);
+    await page.unroute("**/proposal-readiness*");
+    await page.getByRole("button", { name: "Try again", exact: true }).click();
+    await expect(page.getByTestId("proposal-status-pharmacotherapy")).toContainText(/Pending|Running/);
+    expect(posts.count).toBe(1);
+  });
+}
+
+test("S48 readiness old clarification run remains readable and requires saved correction plus explicit new run", async ({ page, request }) => {
+  const physician = await loginPhysician(page, request, "e2eprold");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  // Inline synthetic engineering packages retain the old gate contract. Use
+  // this public fixture boundary to create an immutable no-result legacy run
+  // without bypassing the reviewed workflow's new backend preflight.
+  await patchDraftWithRetry(request, physician, draftId, { gate: "true" }, 1);
+  const csrf = await physicianSession(request, physician);
+  const hash = createHash("sha256").update(TWO_NODE_XML, "utf8").digest("hex");
+  const started = await request.post(`/api/v1/encounters/${draftId}/generation-batches`, {
+    headers: { "X-CSRF-Token": csrf, "If-Match": '"2"', "Idempotency-Key": uniqueName("oldrun") },
+    data: { package: s48Package("pharmacotherapy", "h_s48_a", "h_s48_b", hash) },
+  });
+  expect(started.status(), await started.text()).toBe(202);
+  const oldBatchId = (await started.json()).batch.id;
+  const posts = countGenerationPosts(page);
+  await gotoEncounter(page, draftId);
+  const panel = page.getByTestId("proposal-review");
+  await expect(page.getByTestId("proposal-status-pharmacotherapy")).toContainText("Needs clarification");
+  await expect(panel).not.toContainText("Acceptance blocked");
+  await expect(panel).not.toContainText("No completed baseline");
+  await expect(page.getByTestId("cpt-panel-pharmacotherapy")).toHaveCount(0);
+  await page.getByRole("button", { name: "Show transparency for pharmacotherapy", exact: true }).click();
+  await expect(page.getByTestId("proposal-transparency-pharmacotherapy")).toContainText("Result details will be available after this question completes successfully.");
+  expect(posts.count).toBe(0);
+  await seedReadyContext(request, physician, draftId);
+  const current = await (await request.get(`/api/v1/encounters/${draftId}`)).json();
+  await patchDraftWithRetry(request, physician, draftId, { ...current.draft_data,
+    history: { ...current.draft_data.history, values: { ...current.draft_data.history.values, h_s48_a: "yes", h_s48_b: "no" } } }, current.revision);
+  await page.reload();
+  await expect(page.getByTestId("proposal-stale-banner")).toBeVisible();
+  await expect(page.getByTestId("proposal-status-pharmacotherapy")).toContainText("Needs clarification");
+  expect(posts.count).toBe(0);
+  // Rechecking current saved inputs never mutates the old frozen run.
+  const old = await (await request.get(`/api/v1/generation-batches/${oldBatchId}`)).json();
+  expect(old.batch.status).toBe("needs_clarification");
+  await page.route("**/proposal-readiness*", (route) => route.fulfill({ status: 503, json: { message: "Retry preflight unavailable" } }));
+  await page.getByRole("button", { name: "Start new run with current inputs", exact: true }).click();
+  await expect(panel.getByRole("alert")).toContainText("Retry preflight unavailable");
+  expect(posts.count).toBe(0);
+  await page.unroute("**/proposal-readiness*");
+  await page.getByRole("button", { name: "Start new run with current inputs", exact: true }).click();
+  await expect(page.getByTestId("proposal-status-pharmacotherapy")).toContainText(/Pending|Running/);
+  expect(posts.count).toBe(1);
+});
+
+test("S48 readiness in-flight and failed autosave prevent generation until the save succeeds", async ({ page, request }) => {
+  const physician = await loginPhysician(page, request, "e2eprsave");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  await seedReadyContext(request, physician, draftId);
+  const posts = countGenerationPosts(page);
+  await page.goto(`/#/encounters/${draftId}#register`);
+  await expect(page.getByLabel("Draft working note")).toBeVisible();
+  let entered!: () => void;
+  const patchStarted = new Promise<void>((resolve) => { entered = resolve; });
+  let release!: () => void;
+  const patchRelease = new Promise<void>((resolve) => { release = resolve; });
+  await page.route(`**/api/v1/encounters/${draftId}`, async (route) => {
+    if (route.request().method() !== "PATCH") return route.continue();
+    entered();
+    await patchRelease;
+    return route.fulfill({ status: 503, json: { message: "Synthetic save failure", retryable: true } });
+  });
+  await page.getByLabel("Draft working note").fill("Synthetic pending save probe");
+  await page.locator("#wizard-step-proposal-review").click();
+  await patchStarted;
+  await expect(page.locator("#draft-save-status")).toContainText("Saving");
+  await expect(page.getByTestId("proposal-review")).toContainText("generation starts after the save is acknowledged");
+  expect(posts.count).toBe(0);
+  release();
+  await expect(page.locator("#draft-save-status")).toContainText("Synthetic save failure");
+  await expect(page.getByTestId("proposal-review")).toContainText("draft save needs attention");
+  expect(posts.count).toBe(0);
+  await page.unroute(`**/api/v1/encounters/${draftId}`);
+  await page.getByRole("button", { name: "Check again", exact: true }).click();
+  await expect(page.getByTestId("proposal-status-pharmacotherapy")).toContainText(/Pending|Running/);
+  expect(posts.count).toBe(1);
+});
+
+// First ready entry starts the pinned workflow; removing storage still recovers.
+test("S48 §1 saved ready entry starts server-pinned generation and resumes without browser storage", async ({
   page,
   request,
 }) => {
   const physician = await loginPhysician(page, request, "e2eprfresh");
   const { draftId } = await createPatientWithDraft(request, physician);
+  await seedReadyContext(request, physician, draftId);
 
   let postCount = 0;
   await page.route("**/api/v1/encounters/*/generation-batches", (route) => {
@@ -323,7 +500,7 @@ test("S48 §1 fresh entry starts server-pinned generation and resumes without br
     await gotoEncounter(page, draftId);
     const panel = page.getByTestId("proposal-review");
     await expect(panel).toContainText("Questions (5)", { timeout: 15000 });
-    await expect(page.getByTestId("proposal-status-pharmacotherapy")).toContainText("Needs clarification");
+    await expect(page.getByTestId("proposal-status-pharmacotherapy")).toContainText(/Pending|Running/);
     expect(postCount).toBe(1);
     const stored = await page.evaluate((id) => localStorage.getItem(`xi.proposal.${id}`), draftId);
     expect(stored).not.toBeNull();
@@ -332,37 +509,24 @@ test("S48 §1 fresh entry starts server-pinned generation and resumes without br
     await expect(page.getByTestId("proposal-review")).toContainText("Questions (5)", { timeout: 15000 });
     expect(postCount).toBe(1);
     await page.locator("#wizard-step-history").click();
-    const prefix = "candidate/history/pharmacotherapy.v2/";
-    const answers: Record<string, string> = {
-      h_prior_treatment_difficulty: "Absent", h_preference_barrier: "Absent",
-      h_physical_vulnerability: "Absent", h_substance_contribution: "Absent",
-      h_exposure_modifier: "NoIdentifiedModifier",
-      h_antipsychotic_treatment_context: "NoEstablishedTreatment",
-      h_trial_duration_review: "NoEstablishedTreatment",
-      h_urgent_safety_concern: "Absent", h_monitoring_gap: "Absent",
-    };
-    for (const [field, value] of Object.entries(answers)) {
-      await page.locator(`[id="hist-${prefix}${field}"]`).selectOption(value);
-    }
     // A legacy-field edit must preserve all versioned question answers.
     await page.locator("#hist-h_exposure_dopamine_blocker-yes").check();
     await expect(page.locator("#draft-save-status")).toContainText("Saved (revision", { timeout: 10000 });
     await expect.poll(async () => {
       const response = await request.get(`/api/v1/encounters/${draftId}/history`);
       const history = await response.json();
-      return history.values[prefix + "h_monitoring_gap"];
+      return history.values["candidate/history/pharmacotherapy.v2/h_monitoring_gap"];
     }).toBe("Absent");
     await page.locator("#wizard-step-proposal-review").click();
-    await page.getByRole("button", { name: "Start new run with current inputs" }).click();
     await expect(page.getByTestId("proposal-status-pharmacotherapy")).toContainText(/Pending|Running/);
-    expect(postCount).toBe(2);
+    expect(postCount).toBe(1);
     // No Generate affordance anywhere in the proposal step.
     await expect(panel.getByRole("button", { name: /Generate/i })).toHaveCount(0);
     await expect(page.locator("body").getByRole("button", { name: /^Generate/ })).toHaveCount(0);
     // Working note is on Register patient, not this encounter-draft step.
     await expect(page.getByLabel("Draft working note")).toHaveCount(0);
     await expect(page.locator("#draft-save-status")).toContainText("Saved (revision");
-    expect(postCount).toBe(2);
+    expect(postCount).toBe(1);
   } finally {
     await page.unroute("**/api/v1/encounters/*/generation-batches");
   }
@@ -394,7 +558,7 @@ test("S48 §1 entry flushes autosave and never creates a run per keystroke", asy
   try {
     await gotoEncounter(page, draftId);
     const panel = page.getByTestId("proposal-review");
-    await expect(panel).toContainText("Questions (5)", { timeout: 15000 });
+    await expect(panel).toContainText("Proposal inputs need clarification", { timeout: 15000 });
 
     // Working note lives on Register patient. Keystrokes there still autosave
     // and must not create a generation run.
@@ -411,7 +575,7 @@ test("S48 §1 entry flushes autosave and never creates a run per keystroke", asy
     await expect(page.locator("#draft-save-status")).toContainText("Saved (revision 3)", {
       timeout: 10000,
     });
-    expect(postCount).toBe(1);
+    expect(postCount).toBe(0);
   } finally {
     await page.unroute("**/api/v1/encounters/*/generation-batches");
     await page.unroute("**/api/v1/encounters/*");
@@ -1431,7 +1595,7 @@ test("S48 §3 transparency shows five fields, distinct CPT/posterior, exact save
     // Failed original exposes no baseline (adjustable false).
     await page.getByRole("button", { name: "Show transparency for s48_q2" }).click();
     const region2 = page.getByTestId("proposal-transparency-s48_q2");
-    await expect(region2).toContainText("No completed baseline", { timeout: 10000 });
+    await expect(region2).toContainText("Result details will be available after this question completes successfully.", { timeout: 10000 });
     expect(reviewCount).toBe(2);
 
     // No working-note leakage: sentinel stays in the draft, never in proposal/transparency.
@@ -1474,7 +1638,14 @@ test("S48 §§2+4 two-question failure shows partial, retry references server-pi
   });
   expect(noted.status(), await noted.text()).toBe(200);
 
-  const batchId = "11111111-1111-4111-8111-111111111111";
+  // Keep retry preflight real even though worker completion/failure is a
+  // controlled display fixture: it must read the server's pinned manifests.
+  const fixtureStart = await request.post(`/api/v1/encounters/${draftId}/generation-batches`, {
+    headers: { "X-CSRF-Token": csrf, "If-Match": '"3"', "Idempotency-Key": uniqueName("retryfixture") },
+    data: { packages: [s48Package("s48_q1", "h_s48_a", "h_s48_b", networkHash), s48Package("s48_q2", "h_s48_c", "h_s48_d", networkHash)] },
+  });
+  expect(fixtureStart.status(), await fixtureStart.text()).toBe(202);
+  const batchId = (await fixtureStart.json()).batch.id as string;
   const run1 = "22222222-2222-4222-8222-222222222222";
   const run2 = "33333333-3333-4333-8333-333333333333";
   const base1 = mockBaseline("44444444-4444-4444-8444-444444444444", run1, batchId, "s48_q1");

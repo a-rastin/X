@@ -41,7 +41,12 @@ every acceptance check has passed. See the current boundaries below.
 
 ## Current engineering status
 
-The latest bounded follow-up implements the complete supplied DDInter import and
+The [2026-10-22 proposal-readiness fix](project-documents/dev/progress/s48.md#follow-up-2026-10-22--check-proposal-readiness-before-creating-a-run)
+checks saved required context before Step 7 creates a run, lists all blockers
+with links to their History controls, and keeps core History completion separate.
+See [proposal generation](docs/proposal-generation.md) for recovery and API details.
+
+The preceding bounded follow-up implements the complete supplied DDInter import and
 [medication workflow integration (2026-10-21)](project-documents/dev/progress/s20.md#follow-up-2026-10-21--ddinter-workflow-and-release-association).
 The owner confirmed completed review, and release `ddi-c45e2051cf16` is
 [published into the local application database](docs/verification/ddinter-2026-10-21/publication.md).
@@ -59,9 +64,9 @@ is `0022`; fresh backups include a 32-table inventory.
   deployment-key and allowed-host environment wiring.
 - **Question-package approval is recorded.** All 11 `s39-reviewed-v1` packages have
   [explicit owner approval](content/questions/review-confirmation.s39-v1.json).
-  Historical workflow bundles still reference predecessor drafts and require their
-  own review and activation. History/instrument dependencies and the real DDI
-  corpus retain their separate review requirements.
+  The separately owner-confirmed active workflow release pins these packages;
+  historical bundles retain their earlier review states. See
+  [proposal generation](docs/proposal-generation.md) for the release contract.
 - **Release evidence is incomplete.** Provider runtime integration, content
   projection/integration, acceptance gaps, known test failures, and a fresh release
   rehearsal remain open. Live-provider behavior and latency have not been proven
@@ -307,6 +312,7 @@ Makefile             Development, verification, and deployment commands
 | Clinical asset review and approval | [Content review ledger](content/review-ledger.md) |
 | Installation, upgrades, and recovery | [Operator runbook](deploy/README.md) |
 | DDInter build, review, publish, and default rollback | [DDInter operations](docs/ddinter-operations.md) |
+| Proposal readiness, generation, and existing-run recovery | [Proposal generation](docs/proposal-generation.md) |
 | Why key decisions were made | [Context index](context/index.md) |
 | Agent contribution instructions | [AGENTS.md](AGENTS.md) |
 

@@ -280,6 +280,36 @@ def start_generation(
     return JSONResponse(status_code=202, content=response_body)
 
 
+@router.get("/encounters/{encounter_id}/proposal-readiness")
+def proposal_readiness(
+    encounter_id: uuid.UUID,
+    request: Request,
+    source_batch_id: uuid.UUID | None = None,
+    session: Session = Depends(get_session),
+) -> JSONResponse:
+    from x_insight.reasoning.readiness import compute_proposal_readiness
+
+    user = _require_user(request, session)
+    if isinstance(user, JSONResponse):
+        return user
+    encounter = encounters_service.read_draft_for_author(session, encounter_id, user)
+    packages = None
+    if source_batch_id is not None:
+        batch, runs, _ = snapshots_service.get_generation_batch(session, source_batch_id, user)
+        if str(batch["encounter_id"]) != str(encounter_id):
+            raise contracts.ContractError(
+                422, "VALIDATION_FAILED", "Retry batch belongs to another encounter."
+            )
+        packages = [dict(run["pinned_package"]) for run in runs]
+    readiness = compute_proposal_readiness(
+        encounter.get("draft_data") or {},
+        int(encounter["revision"]),
+        "followup" if encounter["kind"] == "follow_up" else "registration",
+        packages,
+    )
+    return JSONResponse(content=readiness)
+
+
 @router.get("/encounters/{encounter_id}/generation-batches/latest")
 def latest_generation(
     encounter_id: uuid.UUID, request: Request, session: Session = Depends(get_session)

@@ -452,6 +452,32 @@ test("failed history save never shows Saved; Retry recovers", async ({
   await expect(status).toContainText("Saved (revision 2)", { timeout: 15000 });
 });
 
+test("history controls wait for the saved field inventory before accepting edits", async ({ page, request }) => {
+  const physician = await loginPhysician(page, request, "e2ehistload");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  let release!: () => void;
+  const loaded = new Promise<void>((resolve) => { release = resolve; });
+  await page.route(`**/api/v1/encounters/${draftId}/history`, async (route) => {
+    await loaded;
+    return route.continue();
+  });
+  await gotoEncounter(page, draftId);
+  await expect(page.locator("#history-phone-update")).toBeDisabled();
+  await expect(page.locator("#history-reconciliation-status")).toBeDisabled();
+  await expect(page.locator("#history-reconciliation-baseline")).toBeDisabled();
+  await expect(page.locator("#hist-h_exposure_dopamine_blocker-yes")).toBeDisabled();
+  release();
+  await expect(page.locator("#history-phone-update")).toBeEnabled();
+  await page.locator("#history-reconciliation-status").selectOption("pending");
+  await page.locator("#history-reconciliation-baseline").fill("synthetic-baseline");
+  await page.locator("#history-phone-update").fill("+43 699 222");
+  await expect(page.locator("#draft-save-status")).toContainText("Saved (revision 2)", { timeout: 15000 });
+  await page.reload();
+  await expect(page.locator("#history-reconciliation-status")).toHaveValue("pending");
+  await expect(page.locator("#history-reconciliation-baseline")).toHaveValue("synthetic-baseline");
+  await expect(page.locator("#history-phone-update")).toHaveValue("+43 699 222");
+});
+
 test("reconciliation and phone update save and survive reload", async ({
   page,
   request,

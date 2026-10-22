@@ -121,7 +121,7 @@ function wizardStepFromHash(hash: string, kind: string): WizardStepId {
   }
   // `#/encounters/:id#panss` — the fragment after the encounter id.
   // Missing fragment stays on Diagnosis so existing draft links keep that page.
-  const fragment = hash.split("#")[2] ?? "";
+  const fragment = (hash.split("#")[2] ?? "").split("?")[0] ?? "";
   return steps.some((item) => item.id === fragment)
     ? (fragment as WizardStepId)
     : "diagnosis";

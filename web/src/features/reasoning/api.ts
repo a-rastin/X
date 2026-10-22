@@ -41,6 +41,36 @@ import {
 import { formatIfMatch } from "../encounters/api";
 import type { DdiReport } from "../medications/api";
 
+export interface ProposalBlocker {
+  question_key: string;
+  question_label: string;
+  source_path: string | null;
+  label: string;
+  status: string;
+  reason: string;
+}
+
+export interface ProposalReadiness {
+  workflow: string;
+  source_revision: number;
+  ready: boolean;
+  status: "ready" | "needs_clarification";
+  required_count: number;
+  answered_count: number;
+  execution_ready_count: number;
+  blockers: ProposalBlocker[];
+  questions: {
+    question_key: string;
+    question_label: string;
+    status: "ready" | "not_applicable" | "needs_clarification";
+    reason: string;
+    required_count: number;
+    answered_count: number;
+    execution_ready_count: number;
+    blockers: ProposalBlocker[];
+  }[];
+}
+
 /** One persisted projection variable (CPT-estimation context only). */
 export interface ProjectionVariable {
   node_id: string;
@@ -409,6 +439,12 @@ export async function startGeneration(
 
 export async function getLatestGeneration(encounterId: string): Promise<{ batch: GenerationBatch | null }> {
   return request(`/encounters/${encodeURIComponent(encounterId)}/generation-batches/latest`);
+}
+
+/** Saved server inputs, evaluated against the same pinned manifests as start. */
+export async function getProposalReadiness(encounterId: string, sourceBatchId?: string): Promise<ProposalReadiness> {
+  const query = sourceBatchId ? `?source_batch_id=${encodeURIComponent(sourceBatchId)}` : "";
+  return request(`/encounters/${encodeURIComponent(encounterId)}/proposal-readiness${query}`);
 }
 
 /** Author-only batch read (frozen projection + progress + proposal views). */

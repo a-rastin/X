@@ -1022,6 +1022,7 @@ def _history_response(
         "analysis_visible": state["analysis_visible"],
         "analysis_visible_label": state["analysis_visible_label"],
         "workflow_fields": state["workflow_fields"],
+        "proposal_readiness": state["proposal_readiness"],
         "allowed_field_ids": state["allowed_field_ids"],
     }
     if server_timestamp is not None:
@@ -1140,6 +1141,7 @@ def save_history(
         "analysis_visible": state["analysis_visible"],
         "analysis_visible_label": state["analysis_visible_label"],
         "workflow_fields": state["workflow_fields"],
+        "proposal_readiness": state["proposal_readiness"],
         "allowed_field_ids": state["allowed_field_ids"],
         "server_timestamp": server_timestamp,
     }
