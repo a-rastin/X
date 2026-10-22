@@ -3,9 +3,10 @@
 Plan.md §§2.2, 5 (FR-14, FR-20): history is structured, with only expressly
 defined analysis-visible fields. Medications contain bundled catalog
 references only; dose, unit, route, frequency, active/stopped, and free-text
-entries stay excluded even if forged. Unknown and not-assessed are distinct
-from false (no). Undeclared or excluded field ids fail validation (422 on
-strict writes; item_errors on previews).
+entries stay excluded even if forged. Unknown is distinct from false (no).
+Core History and revised pharmacotherapy controls omit not_assessed; other
+workflow controls retain it where explicitly permitted. Undeclared or excluded
+field ids fail validation (422 on strict writes; item_errors on previews).
 
 Storage: history lives in ``encounters.draft_data["history"]`` through the
 shared S07 autosave contract (opaque ``draft_data`` object + revision +
@@ -20,10 +21,11 @@ reconciliation: {status, ...}, phone_update: str | None}``. All history
 values are analysis-visible (analysis_visible true); working notes and legacy
 note keys stay excluded by serialization allowlists.
 
-Content: core fields follow the current conditional History inventory. The server also
-loads exact versioned fields from the owner-confirmed workflow release and
-exposes workflow-specific controls with their permitted values. Historical
-content status is retained; the release inventory records the approval basis.
+Content: core fields follow the current conditional History inventory. The server
+validates the owner-confirmed workflow release, then derives the versioned
+application input contract and exposes its permitted workflow controls. Original
+clinical review is retained as provenance; the derived input contract records no
+new clinical approval.
 """
 
 from __future__ import annotations
@@ -47,9 +49,9 @@ PHONE_UPDATE_KEY = "phone_update"
 
 HISTORY_SAVE_OPERATION = "history.save"
 
-HISTORY_VERSION = "v1"
+HISTORY_VERSION = "v2"
 
-TRISTATE_NOT_ASSESSED = ("yes", "no", "unknown", "not_assessed")
+TRISTATE = ("yes", "no", "unknown")
 
 ALLOWED_FIELDS: dict[str, dict[str, Any]] = {
     "h_exposure_dopamine_blocker": {
@@ -57,7 +59,7 @@ ALLOWED_FIELDS: dict[str, dict[str, Any]] = {
         "category": "exposure",
     },
     "h_movement_persistence_4w": {
-        "permitted": list(TRISTATE_NOT_ASSESSED),
+        "permitted": list(TRISTATE),
         "category": "duration",
     },
     "h_onset_timing": {
@@ -78,20 +80,12 @@ ALLOWED_FIELDS: dict[str, dict[str, Any]] = {
         "permitted": ["response", "no_response", "unknown"],
         "category": "prior_response",
     },
-    "h_monitoring_baseline": {
-        "permitted": list(TRISTATE_NOT_ASSESSED),
-        "category": "monitoring",
-    },
     "h_alternative_cause_considered": {
-        "permitted": list(TRISTATE_NOT_ASSESSED),
+        "permitted": list(TRISTATE),
         "category": "exposure",
     },
-    "h_functional_impact": {
-        "permitted": list(TRISTATE_NOT_ASSESSED),
-        "category": "monitoring",
-    },
     "h_falls_or_limitation": {
-        "permitted": list(TRISTATE_NOT_ASSESSED),
+        "permitted": list(TRISTATE),
         "category": "monitoring",
     },
 }
@@ -100,11 +94,48 @@ FIELD_IDS = tuple(ALLOWED_FIELDS)
 
 # Read compatibility only: these ids cannot be introduced by a new write.
 RETIRED_FIELD_IDS = frozenset(
-    {"h_exposure_duration_3m", "h_exposure_1m_if_60plus", "h_medication_timeline_documented"}
+    {
+        "h_exposure_duration_3m",
+        "h_exposure_1m_if_60plus",
+        "h_medication_timeline_documented",
+        "h_monitoring_baseline",
+        "h_functional_impact",
+        *(
+            f"candidate/history/pharmacotherapy.v2/{field}"
+            for field in (
+                "h_prior_treatment_difficulty",
+                "h_preference_barrier",
+                "h_exposure_modifier",
+                "h_trial_duration_review",
+                "h_urgent_safety_concern",
+                "h_monitoring_gap",
+            )
+        ),
+    }
 )
-DEFAULT_UNKNOWN_FIELD_IDS = frozenset(
-    {"h_exposure_dopamine_blocker", "h_onset_timing", "h_trial_adequacy_prior", "h_prior_response"}
-)
+DEFAULT_UNKNOWN_FIELD_IDS = frozenset(set(ALLOWED_FIELDS))
+
+# Application-level cleanup must work even when generation content is unavailable.
+# These stable form rules mirror the pinned pharmacotherapy.v3 input contract;
+# permitted model categories remain validated through the strict content inventory.
+PHARMACOTHERAPY_PREFIX = "candidate/history/pharmacotherapy.v2/"
+TREATMENT_CONTEXT_FIELD = f"{PHARMACOTHERAPY_PREFIX}h_antipsychotic_treatment_context"
+PHARMACOTHERAPY_LEGACY_VALUES = {
+    f"{PHARMACOTHERAPY_PREFIX}h_physical_vulnerability": {
+        "Present": "yes",
+        "Absent": "no",
+        "not_assessed": "unknown",
+    },
+    f"{PHARMACOTHERAPY_PREFIX}h_substance_contribution": {
+        "Present": "yes",
+        "Absent": "no",
+        "not_assessed": "unknown",
+    },
+    TREATMENT_CONTEXT_FIELD: {
+        "not_assessed": "unknown",
+        "NoEstablishedTreatment": "unknown",
+    },
+}
 
 EXCLUDED_FIELDS = frozenset(
     {
@@ -127,7 +158,7 @@ PROVENANCE_SOURCES = ("clinician_entry", "copied_baseline")
 
 
 def definition_version() -> str:
-    """History inventory version (draft v1, awaiting owner review)."""
+    """Current History inventory version (awaiting owner review)."""
     return HISTORY_VERSION
 
 
@@ -138,6 +169,8 @@ def applicable_field_ids(values: dict[str, Any]) -> tuple[str, ...]:
         hidden.update({"h_onset_timing", "h_trial_adequacy_prior", "h_prior_response"})
     elif values.get("h_trial_adequacy_prior") != "inadequate":
         hidden.add("h_prior_response")
+    if values.get("h_movement_persistence_4w") != "yes":
+        hidden.update({"h_alternative_cause_considered", "h_falls_or_limitation"})
     return tuple(field_id for field_id in FIELD_IDS if field_id not in hidden)
 
 
@@ -154,12 +187,21 @@ def normalize_history_values(values: Any) -> dict[str, Any]:
         if normalized.get(field_id) == "not_assessed":
             normalized[field_id] = "unknown"
     normalized.setdefault("h_exposure_dopamine_blocker", "unknown")
+    normalized.setdefault("h_movement_persistence_4w", "unknown")
     applicable = applicable_field_ids(normalized)
     for field_id in DEFAULT_UNKNOWN_FIELD_IDS - {"h_exposure_dopamine_blocker"}:
         if field_id in applicable:
             normalized.setdefault(field_id, "unknown")
         else:
             normalized.pop(field_id, None)
+    for path, legacy_mapping in PHARMACOTHERAPY_LEGACY_VALUES.items():
+        if path == TREATMENT_CONTEXT_FIELD and normalized["h_exposure_dopamine_blocker"] != "yes":
+            normalized.pop(path, None)
+            continue
+        raw = normalized.get(path)
+        if isinstance(raw, str) and raw in legacy_mapping:
+            normalized[path] = legacy_mapping[raw]
+        normalized.setdefault(path, "unknown")
     return normalized
 
 
@@ -170,7 +212,8 @@ def normalize_draft_history(draft_data: Any) -> Any:
     updated = dict(draft_data)
     section = dict(draft_data[HISTORY_KEY])
     if VALUES_KEY not in section and any(
-        key in ALLOWED_FIELDS or key in RETIRED_FIELD_IDS for key in section
+        key in ALLOWED_FIELDS or key in RETIRED_FIELD_IDS or key.startswith("candidate/history/")
+        for key in section
     ):
         # Retain the engineering client's historical direct-value shape.
         metadata = {PROVENANCE_KEY, RECONCILIATION_KEY, PHONE_UPDATE_KEY}
@@ -180,7 +223,11 @@ def normalize_draft_history(draft_data: Any) -> Any:
         provenance = section.get(PROVENANCE_KEY)
         if isinstance(provenance, dict):
             section[PROVENANCE_KEY] = {
-                key: value for key, value in provenance.items() if key in normalized and key in raw
+                key: value
+                for key, value in provenance.items()
+                if key in normalized
+                and key in raw
+                and not (normalized[key] == "unknown" and raw[key] != "unknown")
             }
         section.update(normalized)
         updated[HISTORY_KEY] = section
@@ -209,21 +256,41 @@ def history_for_autosave(previous: Any, incoming: dict[str, Any]) -> dict[str, A
         prior_section.get(VALUES_KEY, prior_section) if isinstance(prior_section, dict) else None
     )
     prior = prior if isinstance(prior, dict) else {}
+    normalized_prior = normalize_history_values(prior)
     errors = {}
+    workflow_changes = {}
     for field_id, value in values.items():
-        unchanged = field_id in prior and value == prior[field_id]
+        unchanged = (field_id in prior and value == prior[field_id]) or (
+            field_id in normalized_prior and value == normalized_prior[field_id]
+        )
         if field_id in RETIRED_FIELD_IDS and not unchanged:
             errors[field_id] = ["This history field has been removed."]
         elif (
-            field_id in DEFAULT_UNKNOWN_FIELD_IDS
+            field_id in ALLOWED_FIELDS
             and value not in ALLOWED_FIELDS[field_id]["permitted"]
             and not unchanged
         ):
             errors[field_id] = [f"Must be one of {ALLOWED_FIELDS[field_id]['permitted']}."]
+        elif field_id.startswith("candidate/history/") and not unchanged:
+            workflow_changes[field_id] = value
     if errors:
         raise contracts.ContractError(
             422, "VALIDATION_FAILED", "History values are invalid.", errors
         )
+    if workflow_changes:
+        # A full autosave body may merely echo normalized History while editing
+        # another page. Only new workflow answers require available content.
+        from x_insight.models.workflow_release import history_fields
+
+        fields = history_fields()
+        for field_id, value in workflow_changes.items():
+            spec = fields.get(field_id, {})
+            if "default_value" in spec and value not in spec["permitted"]:
+                errors[field_id] = [f"Must be one of {spec['permitted']}."]
+        if errors:
+            raise contracts.ContractError(
+                422, "VALIDATION_FAILED", "History values are invalid.", errors
+            )
     return normalize_draft_history(incoming)
 
 
@@ -241,7 +308,11 @@ def get_history_section(draft_data: Any) -> dict[str, Any]:
     return {
         "values": values,
         "provenance": {
-            key: value for key, value in provenance.items() if key in values and key in raw_values
+            key: value
+            for key, value in provenance.items()
+            if key in values
+            and key in raw_values
+            and not (values[key] == "unknown" and raw_values[key] != "unknown")
         }
         if isinstance(provenance, dict)
         else {},
@@ -262,9 +333,10 @@ def _field_error(field: str, message: str) -> dict[str, list[str]]:
 def validate_history_values(values: Any) -> dict[str, Any]:
     """Strict validation for history values (422 on undeclared/excluded/invalid).
 
-    Unknown and not_assessed are distinct permitted values, never coerced to
-    false. Excluded FR-14 regimen fields are rejected even when they look
-    well-formed. Valid values receive defaults and conditional cleanup.
+    Unknown never becomes false. Core and revised pharmacotherapy controls
+    reject not_assessed; other workflow controls permit it only when declared.
+    Excluded FR-14 regimen fields are rejected even when they look well-formed.
+    Valid values receive defaults and conditional cleanup.
     """
     if not isinstance(values, dict):
         raise contracts.ContractError(

@@ -5,8 +5,8 @@
  * source-path ids, definitions and permitted responses. Namespace separation
  * prevents similarly named questions from sharing different assessments.
  * Writes preserve all server-allowlisted history ids, including copied prior
- * workflow context, and discard undeclared keys. Exposure and treatment default
- * to Unknown; hidden dependent answers are cleared.
+ * workflow context, and discard undeclared keys. Core and declared workflow
+ * responses default to Unknown; hidden dependent answers are cleared.
  *
  * Server previews evaluate saved responses. Unknown and not assessed remain
  * distinct from No. Required proposal context must be clarified before its
@@ -46,6 +46,7 @@ import {
   getHistory,
   type HistoryPreview,
   type HistoryReconciliation,
+  type WorkflowHistoryField,
 } from "./api";
 
 type AutosaveApi = ReturnType<typeof useAutosave>;
@@ -78,7 +79,7 @@ const HISTORY_FIELDS: HistoryField[] = [
   {
     id: "h_movement_persistence_4w",
     label: "Involuntary movements persist over at least 4 weeks",
-    values: ["yes", "no", "unknown", "not_assessed"],
+    values: ["yes", "no", "unknown"],
     period: "past 4 weeks",
     category: "duration",
   },
@@ -110,30 +111,16 @@ const HISTORY_FIELDS: HistoryField[] = [
     category: "prior response",
   },
   {
-    id: "h_monitoring_baseline",
-    label: "Baseline movement examination documented for monitoring",
-    values: ["yes", "no", "unknown", "not_assessed"],
-    period: "current encounter",
-    category: "monitoring",
-  },
-  {
     id: "h_alternative_cause_considered",
-    label: "Alternative explanations considered and documented",
-    values: ["yes", "no", "unknown", "not_assessed"],
+    label: "Alternative explanations ruled out",
+    values: ["yes", "no", "unknown"],
     period: "current encounter",
     category: "exposure",
   },
   {
-    id: "h_functional_impact",
-    label: "Functional impact of movements or restlessness",
-    values: ["yes", "no", "unknown", "not_assessed"],
-    period: "current encounter",
-    category: "monitoring",
-  },
-  {
     id: "h_falls_or_limitation",
     label: "Falls or functional limitation from parkinsonian signs",
-    values: ["yes", "no", "unknown", "not_assessed"],
+    values: ["yes", "no", "unknown"],
     period: "current encounter",
     category: "monitoring",
   },
@@ -148,8 +135,7 @@ const HISTORY_GROUPS = [
     "h_trial_adequacy_prior", "h_prior_response",
   ] },
   { id: "movement", title: "Movement & monitoring", fields: [
-    "h_movement_persistence_4w", "h_monitoring_baseline",
-    "h_alternative_cause_considered", "h_functional_impact", "h_falls_or_limitation",
+    "h_movement_persistence_4w", "h_alternative_cause_considered", "h_falls_or_limitation",
   ] },
 ];
 
@@ -214,28 +200,41 @@ function applicableFields(values: Record<string, unknown>): HistoryField[] {
       if (values.h_exposure_dopamine_blocker !== "yes") return false;
       if (field.id === "h_prior_response" && values.h_trial_adequacy_prior !== "inadequate") return false;
     }
+    if (["h_alternative_cause_considered", "h_falls_or_limitation"].includes(field.id)) {
+      return values.h_movement_persistence_4w === "yes";
+    }
     return true;
   });
 }
 
-/** Unknown is the explicit default for active exposure/treatment questions.
+/** Unknown is the explicit default for active core and declared workflow questions.
  * Hidden children cannot retain a previous assessment after a parent changes. */
-function normalizedValues(values: Record<string, unknown>): Record<string, unknown> {
+function normalizedValues(values: Record<string, unknown>, workflowFields: WorkflowHistoryField[] = []): Record<string, unknown> {
   const next = { ...values };
-  for (const id of ["h_exposure_dopamine_blocker", "h_onset_timing", "h_trial_adequacy_prior", "h_prior_response"]) {
+  for (const id of FIELD_IDS) {
     if (next[id] === undefined || next[id] === "not_assessed") next[id] = "unknown";
   }
   const applicableIds = applicableFields(next).map((field) => field.id);
   for (const id of FIELD_IDS) {
     if (!applicableIds.includes(id)) delete next[id];
   }
+  for (const field of workflowFields) {
+    if (!workflowFieldApplies(field, next)) delete next[field.id];
+    else if (field.default_value && (next[field.id] === undefined || next[field.id] === "not_assessed")) {
+      next[field.id] = field.default_value;
+    }
+  }
   return next;
+}
+
+function workflowFieldApplies(field: WorkflowHistoryField, values: Record<string, unknown>): boolean {
+  return !field.show_if || values[field.show_if.field_id] === field.show_if.value;
 }
 
 /** Writes preserve server-allowlisted context. Undeclared keys are discarded;
  * invalid active values stay visible through server-reported item errors. */
-function sanitizedValues(values: Record<string, unknown>, ids = FIELD_IDS): Record<string, unknown> {
-  const normalized = normalizedValues(values);
+function sanitizedValues(values: Record<string, unknown>, ids = FIELD_IDS, workflowFields: WorkflowHistoryField[] = []): Record<string, unknown> {
+  const normalized = normalizedValues(values, workflowFields);
   const next: Record<string, unknown> = {};
   for (const id of ids) {
     if (normalized[id] !== undefined) {
@@ -245,9 +244,9 @@ function sanitizedValues(values: Record<string, unknown>, ids = FIELD_IDS): Reco
   return next;
 }
 
-function sameSlice(a: HistorySlice, b: HistorySlice, ids = FIELD_IDS): boolean {
-  const valuesA = sanitizedValues(a.values, ids);
-  const valuesB = sanitizedValues(b.values, ids);
+function sameSlice(a: HistorySlice, b: HistorySlice, ids = FIELD_IDS, workflowFields: WorkflowHistoryField[] = []): boolean {
+  const valuesA = sanitizedValues(a.values, ids, workflowFields);
+  const valuesB = sanitizedValues(b.values, ids, workflowFields);
   const keysA = Object.keys(valuesA);
   const keysB = Object.keys(valuesB);
   if (keysA.length !== keysB.length) {
@@ -350,14 +349,22 @@ export function HistorySection({
     };
   }, [preview !== null]);
 
+  const workflowInventory = preview?.workflow_fields ?? [];
   const rawSlice = sliceOf(autosave.localData);
-  const slice = { ...rawSlice, values: normalizedValues(rawSlice.values) };
+  const normalized = normalizedValues(rawSlice.values, workflowInventory);
+  const slice = {
+    ...rawSlice,
+    values: normalized,
+    provenance: Object.fromEntries(Object.entries(rawSlice.provenance).filter(([id]) =>
+      normalized[id] !== undefined && rawSlice.values[id] === normalized[id],
+    )),
+  };
   const visibleFields = applicableFields(slice.values);
   const visibleGroups = HISTORY_GROUPS.map((group) => ({
     ...group, fields: visibleFields.filter((field) => group.fields.includes(field.id)),
   })).filter((group) => group.fields.length > 0);
   const allowedIds = preview?.allowed_field_ids ?? FIELD_IDS;
-  const workflowFields = preview?.workflow_fields ?? [];
+  const workflowFields = workflowInventory.filter((field) => workflowFieldApplies(field, slice.values));
   const questionKeys = [...new Set(workflowFields.map((field) => field.question_key))];
   const previewSlice: HistorySlice | null =
     preview === null
@@ -369,11 +376,11 @@ export function HistorySection({
           phone_update: preview.phone_update,
         };
   const answersPending =
-    previewSlice !== null && !sameSlice(slice, previewSlice, allowedIds);
+    previewSlice !== null && !sameSlice(slice, previewSlice, allowedIds, workflowInventory);
 
   function writeSlice(next: HistorySlice): void {
     if (preview === null) return;
-    const values = sanitizedValues(next.values, allowedIds);
+    const values = sanitizedValues(next.values, allowedIds, workflowInventory);
     autosave.setDraftValue("history", {
       values,
       provenance: Object.fromEntries(Object.entries(next.provenance).filter(([id]) =>
@@ -391,7 +398,9 @@ export function HistorySection({
     const values = { ...slice.values };
     if (value === "") delete values[fieldId];
     else values[fieldId] = value;
-    writeSlice({ ...slice, values });
+    const provenance = { ...slice.provenance };
+    delete provenance[fieldId];
+    writeSlice({ ...slice, values, provenance });
   }
 
   function setReconciliationStatus(status: string): void {
@@ -457,7 +466,9 @@ export function HistorySection({
       `No answers yet. ${savedFields.length} applicable history fields need review.`;
   }
 
-  const previewProvenance = preview?.provenance ?? {};
+  const previewProvenance = Object.fromEntries(Object.entries(preview?.provenance ?? {}).filter(([id]) =>
+    slice.values[id] !== undefined && slice.values[id] === preview?.values[id],
+  ));
 
   const hasResponse = (field: HistoryField): boolean =>
     field.values.some((value) => value === slice.values[field.id]);
@@ -470,15 +481,15 @@ export function HistorySection({
       </h3>
       <p className="xi-hint">
         Review medication exposure, prior treatment and movement history.
-        Select Unknown when you cannot determine an answer, or Not assessed
-        when it has not been reviewed. Responses save automatically.
+        Select Unknown when you cannot determine an answer. Other proposal context
+        may also offer Not assessed when it has not been reviewed. Responses save automatically.
       </p>
       <div className="xi-diagnosis-workspace">
         <div className="xi-diagnosis-checklist">
           <div className="xi-diagnosis-overview">
             <div>
               <h4>Past medical history</h4>
-              <p>Record a response for each question. Exposure and treatment responses default to Unknown.</p>
+              <p>Record a response for each question. Core history responses default to Unknown.</p>
             </div>
             <span className="xi-diagnosis-count">{responseCount} / {visibleFields.length} responses</span>
           </div>
@@ -559,7 +570,7 @@ export function HistorySection({
                       aria-describedby={preview?.proposal_readiness?.blockers.some((blocker) => blocker.source_path === field.id) ? `hist-${field.id}-readiness` : undefined}
                       value={typeof slice.values[field.id] === "string" ? String(slice.values[field.id]) : ""}
                       onChange={(event) => setValue(field.id, event.target.value)}>
-                      <option value="">Select a response</option>
+                      {!field.default_value && <option value="">Select a response</option>}
                       {field.permitted.map((value) => <option key={value} value={value}>{valueLabel(value)}</option>)}
                     </select>
                     {preview?.proposal_readiness?.blockers.filter((blocker) => blocker.source_path === field.id).map((blocker) => (

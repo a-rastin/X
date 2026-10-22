@@ -311,7 +311,7 @@ async function seedReadyContext(request: import("@playwright/test").APIRequestCo
   await physicianSession(request, physician);
   const history = await (await request.get(`/api/v1/encounters/${draftId}/history`)).json();
   const current = await (await request.get(`/api/v1/encounters/${draftId}`)).json();
-  const values = { ...history.values };
+  const values = { ...history.values, h_exposure_dopamine_blocker: "yes" };
   for (const field of history.workflow_fields) values[field.id] = field.permitted[0];
   return patchDraftWithRetry(request, physician, draftId,
     { ...current.draft_data, history: { ...current.draft_data.history, values } }, current.revision);
@@ -325,6 +325,47 @@ function countGenerationPosts(page: import("@playwright/test").Page): { count: n
   return posts;
 }
 
+test("frozen earlier History contract offers a new current run without replacing its recorded batch", async ({ page, request }) => {
+  test.setTimeout(90000);
+  const physician = await loginPhysician(page, request, "e2eproldhistory");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  const old = await seedHistoryAndStartTwoQuestionBatch(request, physician, draftId);
+  const revision = await seedReadyContext(request, physician, draftId);
+  const recorded = await (await request.get(`/api/v1/generation-batches/${old.batchId}`)).json();
+  const posts: unknown[] = [];
+  // Frozen worker outcomes are display fixtures; current readiness and the
+  // new-generation POST use the real API and current server-owned packages.
+  await page.route("**/proposal-readiness*", (route) => {
+    if (new URL(route.request().url()).searchParams.get("source_batch_id") === old.batchId) {
+      return route.fulfill({ status: 422, json: {
+        code: "HISTORY_INPUT_CONTRACT_CHANGED", message: "This saved run uses retired History questions. Start a new proposal with the current History contract.",
+        field_errors: {}, retryable: false,
+      } });
+    }
+    return route.continue();
+  });
+  await page.route("**/api/v1/encounters/*/generation-batches", (route) => {
+    if (route.request().method() === "POST") posts.push(route.request().postDataJSON());
+    return route.continue();
+  });
+  await seedStoredProposal(page, draftId, { batchId: old.batchId, packages: null, sourceRevision: revision });
+  await gotoEncounter(page, draftId);
+  const start = page.getByTestId("proposal-start-current-history");
+  await expect(start).toBeVisible();
+  await expect(page.getByTestId("proposal-review")).toContainText("recorded run remains available for review");
+  expect(posts).toHaveLength(0);
+  await start.click();
+  await expect.poll(() => posts.length).toBe(1);
+  expect(posts[0]).toEqual({});
+  await expect(page.getByTestId("proposal-status-pharmacotherapy")).toContainText(/Pending|Running/);
+  await expect(start).toHaveCount(0);
+  const stored = await page.evaluate((id) => JSON.parse(localStorage.getItem(`xi.proposal.${id}`) ?? "null"), draftId);
+  expect(stored.batchId).not.toBe(old.batchId);
+  const preserved = await (await request.get(`/api/v1/generation-batches/${old.batchId}`)).json();
+  expect(preserved.batch).toEqual(recorded.batch);
+  expect(preserved.question_runs).toEqual(recorded.question_runs);
+});
+
 test("S48 readiness core completion does not start generation; all blockers link to exact History controls", async ({ page, request }) => {
   const physician = await loginPhysician(page, request, "e2eprmissing");
   const { draftId } = await createPatientWithDraft(request, physician);
@@ -334,21 +375,21 @@ test("S48 readiness core completion does not start generation; all blockers link
   const posts = countGenerationPosts(page);
   await gotoEncounter(page, draftId);
   const summary = page.getByTestId("proposal-readiness");
-  await expect(summary).toContainText("0 / 53 required responses answered; 0 / 53 execution-ready.");
-  await expect(summary.getByRole("link")).toHaveCount(53);
+  await expect(summary).toContainText("3 / 47 required responses answered; 0 / 47 execution-ready.");
+  await expect(summary.getByRole("link")).toHaveCount(47);
   const server = await (await request.get(`/api/v1/encounters/${draftId}/proposal-readiness`)).json();
-  expect(server.blockers).toHaveLength(53);
+  expect(server.blockers).toHaveLength(47);
   for (const blocker of server.blockers) {
     await expect(summary.locator(`a[href*="${encodeURIComponent(blocker.source_path)}"]`)).toHaveText(blocker.label);
   }
   expect(posts.count).toBe(0);
-  const path = "candidate/history/pharmacotherapy.v2/h_prior_treatment_difficulty";
+  const path = "candidate/history/pharmacotherapy.v2/h_physical_vulnerability";
   await summary.locator(`a[href*="${encodeURIComponent(path)}"]`).click();
   const control = page.locator(`[id="hist-${path}"]`);
   await expect(control).toBeVisible();
   await expect(control).toBeFocused();
   await expect(page.locator("#history-workflow-pharmacotherapy")).toBeVisible();
-  await expect(page.getByText("Complete — all 8 applicable history fields answered.", { exact: true })).toBeVisible();
+  await expect(page.getByText("Complete — all 6 applicable history fields answered.", { exact: true })).toBeVisible();
   expect(posts.count).toBe(0);
 });
 
@@ -359,19 +400,18 @@ test("S48 readiness uncertainty is answered but unresolved; saving corrections p
   const current = await (await request.get(`/api/v1/encounters/${draftId}`)).json();
   const prefix = "candidate/history/pharmacotherapy.v2/";
   await patchDraftWithRetry(request, physician, draftId, { ...current.draft_data, history: { ...current.draft_data.history,
-    values: { ...current.draft_data.history.values, [prefix + "h_prior_treatment_difficulty"]: "unknown", [prefix + "h_preference_barrier"]: "not_assessed" } } }, current.revision);
+    values: { ...current.draft_data.history.values, [prefix + "h_physical_vulnerability"]: "unknown", [prefix + "h_substance_contribution"]: "unknown" } } }, current.revision);
   const posts = countGenerationPosts(page);
   await gotoEncounter(page, draftId);
-  await expect(page.getByTestId("proposal-readiness")).toContainText("53 / 53 required responses answered; 51 / 53 execution-ready.");
+  await expect(page.getByTestId("proposal-readiness")).toContainText("47 / 47 required responses answered; 45 / 47 execution-ready.");
   await expect(page.getByTestId("proposal-readiness")).toContainText("Unknown does not resolve this required input.");
-  await expect(page.getByTestId("proposal-readiness")).toContainText("This required input has not been assessed.");
   expect(posts.count).toBe(0);
   await page.locator("#wizard-step-history").click();
   const group = page.locator("#history-workflow-pharmacotherapy").locator("..");
-  await expect(group).toContainText("9 / 9 answered");
-  await expect(group.locator("..")).toContainText("7 / 9 execution-ready");
-  await page.locator(`[id="hist-${prefix}h_prior_treatment_difficulty"]`).selectOption("Absent");
-  await page.locator(`[id="hist-${prefix}h_preference_barrier"]`).selectOption("Absent");
+  await expect(group).toContainText("3 / 3 answered");
+  await expect(group.locator("..")).toContainText("1 / 3 execution-ready");
+  await page.locator(`[id="hist-${prefix}h_physical_vulnerability"]`).selectOption("no");
+  await page.locator(`[id="hist-${prefix}h_substance_contribution"]`).selectOption("no");
   await expect.poll(async () => (await (await request.get(`/api/v1/encounters/${draftId}/proposal-readiness`)).json()).ready).toBe(true);
   await expect(page.locator("#draft-save-status")).toContainText("Saved (revision", { timeout: 10000 });
   await page.locator("#wizard-step-proposal-review").click();
@@ -502,8 +542,7 @@ test("S48 §1 saved ready entry starts server-pinned generation and resumes with
     await expect(panel).toContainText("Questions (5)", { timeout: 15000 });
     await expect(page.getByTestId("proposal-status-pharmacotherapy")).toContainText(/Pending|Running/);
     expect(postCount).toBe(1);
-    const stored = await page.evaluate((id) => localStorage.getItem(`xi.proposal.${id}`), draftId);
-    expect(stored).not.toBeNull();
+    await expect.poll(() => page.evaluate((id) => localStorage.getItem(`xi.proposal.${id}`), draftId)).not.toBeNull();
     await page.evaluate((id) => localStorage.removeItem(`xi.proposal.${id}`), draftId);
     await page.reload();
     await expect(page.getByTestId("proposal-review")).toContainText("Questions (5)", { timeout: 15000 });
@@ -515,8 +554,8 @@ test("S48 §1 saved ready entry starts server-pinned generation and resumes with
     await expect.poll(async () => {
       const response = await request.get(`/api/v1/encounters/${draftId}/history`);
       const history = await response.json();
-      return history.values["candidate/history/pharmacotherapy.v2/h_monitoring_gap"];
-    }).toBe("Absent");
+      return history.values["candidate/history/pharmacotherapy.v2/h_physical_vulnerability"];
+    }).toBe("yes");
     await page.locator("#wizard-step-proposal-review").click();
     await expect(page.getByTestId("proposal-status-pharmacotherapy")).toContainText(/Pending|Running/);
     expect(postCount).toBe(1);
@@ -1610,7 +1649,8 @@ test("S48 §3 transparency shows five fields, distinct CPT/posterior, exact save
 
 // Two-question failure→retry browser case (S48 §§2+4 verify): q1 completed,
 // q2 failed (config-error style), partial proposal null, sign blocked.
-test("S48 §§2+4 two-question failure shows partial, retry references server-pinned packages, sign blocked", async ({
+for (const historyChanged of [false, true]) {
+test(`S48 §§2+4 two-question failure shows partial, ${historyChanged ? "retired History retry offers the current contract" : "retry references server-pinned packages"}, sign blocked`, async ({
   page,
   request,
 }) => {
@@ -1646,6 +1686,7 @@ test("S48 §§2+4 two-question failure shows partial, retry references server-pi
   });
   expect(fixtureStart.status(), await fixtureStart.text()).toBe(202);
   const batchId = (await fixtureStart.json()).batch.id as string;
+  if (historyChanged) await seedReadyContext(request, physician, draftId);
   const run1 = "22222222-2222-4222-8222-222222222222";
   const run2 = "33333333-3333-4333-8333-333333333333";
   const base1 = mockBaseline("44444444-4444-4444-8444-444444444444", run1, batchId, "s48_q1");
@@ -1766,6 +1807,12 @@ test("S48 §§2+4 two-question failure shows partial, retry references server-pi
       } catch {
         postedBodies.push(null);
       }
+      if (historyChanged && postCount === 1) {
+        return route.fulfill({ status: 422, json: {
+          code: "HISTORY_INPUT_CONTRACT_CHANGED", message: "This saved run uses retired History questions. Start a new proposal with the current History contract.",
+          field_errors: {}, retryable: false,
+        } });
+      }
       // Precise retry: re-POST same stored packages; backend resumes at the
       // failed stage (S47). Return a fresh batch identity with the same runs.
       return route.fulfill({
@@ -1839,6 +1886,14 @@ test("S48 §§2+4 two-question failure shows partial, retry references server-pi
     await retry.click();
     await expect.poll(() => postCount, { timeout: 10000 }).toBe(1);
     expect(postedBodies[0]).toEqual({ source_batch_id: batchId });
+    if (historyChanged) {
+      const currentHistory = page.getByTestId("proposal-start-current-history");
+      await expect(currentHistory).toBeVisible();
+      await expect(panel.locator(".xi-proposal-meta")).toContainText(batchId);
+      await currentHistory.click();
+      await expect.poll(() => postCount).toBe(2);
+      expect(postedBodies[1]).toEqual({});
+    }
     await expect(panel.locator(".xi-proposal-meta")).toContainText(nextBatchId);
     const storedAfter = await page.evaluate((id) => localStorage.getItem(`xi.proposal.${id}`), draftId);
     expect(storedAfter).not.toBeNull();
@@ -1854,3 +1909,4 @@ test("S48 §§2+4 two-question failure shows partial, retry references server-pi
     await page.unroute("**/api/v1/question-runs/*/review");
   }
 });
+}

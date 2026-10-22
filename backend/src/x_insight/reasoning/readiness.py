@@ -34,7 +34,9 @@ def compute_proposal_readiness(
         status, reason = snapshots.evaluate_gate(manifest, draft_data)
         key = str(manifest["question_key"])
         question_label = key.replace("_", " ").capitalize()
-        required = manifest["applicability"]["required_fields"]
+        required = snapshots.applicable_required_fields(
+            manifest["applicability"]["required_fields"], draft_data
+        )
         values: dict[str, Any] = {}
         blockers: list[dict[str, Any]] = []
         answered = 0

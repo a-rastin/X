@@ -1,8 +1,8 @@
 {
   "id": "history",
-  "version": "v1",
-  "title": "Structured history inventory (draft v1, awaiting owner review)",
-  "description": "Minimum typed history fields for registration and follow-up encounters. Every field is analysis-visible structured history (analysis_visible true), distinct from page notes (S13, analysis_visible false, never model inputs). Values persist with provenance; unknown and not_assessed are distinct from false (no). Undeclared or FR-14-excluded fields fail validation. Draft for owner review; not approved.",
+  "version": "v2",
+  "title": "Structured history inventory (draft v2, awaiting owner review)",
+  "description": "Minimum typed history fields for registration and follow-up encounters. Every field is analysis-visible structured history (analysis_visible true), distinct from page notes (S13, analysis_visible false, never model inputs). Values persist with provenance; unknown is distinct from false (no). Core questions default to unknown and do not permit not_assessed. Undeclared or FR-14-excluded fields fail validation. Draft for owner review; not approved.",
   "review_status": "awaiting_review",
   "approval": "none",
   "periods": [
@@ -37,38 +37,53 @@
       "id": "h_exposure_dopamine_blocker",
       "label": "History of lifetime antipsychotic exposure",
       "type": "tristate",
-      "permitted_values": ["yes", "no", "unknown"],
+      "permitted_values": [
+        "yes",
+        "no",
+        "unknown"
+      ],
       "period": "lifetime",
       "category": "exposure",
       "provenance": "clinician_entry_or_copied_baseline",
       "analysis_visible": true,
       "reconciliation_rule": "follow_up_copies_require_reconciliation",
-      "source_locator": "tardive-dyskinesia-criteria.md §Diagnostic features (Exposure); parkinsonism-criteria.md §Clinical assessment (complete medication history)",
+      "source_locator": "tardive-dyskinesia-criteria.md \u00a7Diagnostic features (Exposure); parkinsonism-criteria.md \u00a7Clinical assessment (complete medication history)",
       "default": "unknown"
     },
     {
       "id": "h_movement_persistence_4w",
       "label": "Involuntary movements persist over at least 4 weeks",
-      "type": "tristate_plus_not_assessed",
-      "permitted_values": ["yes", "no", "unknown", "not_assessed"],
+      "type": "tristate",
+      "permitted_values": [
+        "yes",
+        "no",
+        "unknown"
+      ],
       "period": "past_4_weeks",
       "category": "duration",
       "provenance": "clinician_entry_or_copied_baseline",
       "analysis_visible": true,
       "reconciliation_rule": "follow_up_copies_require_reconciliation",
-      "source_locator": "tardive-dyskinesia-criteria.md §Diagnostic features (Persistence)"
+      "source_locator": "tardive-dyskinesia-criteria.md \u00a7Diagnostic features (Persistence)",
+      "default": "unknown"
     },
     {
       "id": "h_onset_timing",
       "label": "Onset timing relative to exposure or withdrawal",
       "type": "enum",
-      "permitted_values": ["during_exposure", "within_4w_oral_withdrawal", "within_8w_lai_withdrawal", "other", "unknown"],
+      "permitted_values": [
+        "during_exposure",
+        "within_4w_oral_withdrawal",
+        "within_8w_lai_withdrawal",
+        "other",
+        "unknown"
+      ],
       "period": "current_encounter",
       "category": "exposure",
       "provenance": "clinician_entry_or_copied_baseline",
       "analysis_visible": true,
       "reconciliation_rule": "follow_up_copies_require_reconciliation",
-      "source_locator": "tardive-dyskinesia-criteria.md §Diagnostic features (Onset); akathisia-criteria.md §Diagnostic features (Medication relationship: within 4 weeks); acute-dystonia-criteria.md §Diagnostic features (usually within days)",
+      "source_locator": "tardive-dyskinesia-criteria.md \u00a7Diagnostic features (Onset); akathisia-criteria.md \u00a7Diagnostic features (Medication relationship: within 4 weeks); acute-dystonia-criteria.md \u00a7Diagnostic features (usually within days)",
       "default": "unknown",
       "visible_when": {
         "h_exposure_dopamine_blocker": "yes"
@@ -86,7 +101,11 @@
       "id": "h_trial_adequacy_prior",
       "label": "Adequacy of prior treatment trial",
       "type": "enum",
-      "permitted_values": ["adequate", "inadequate", "unknown"],
+      "permitted_values": [
+        "adequate",
+        "inadequate",
+        "unknown"
+      ],
       "period": "lifetime",
       "category": "trial_adequacy",
       "provenance": "clinician_entry_or_copied_baseline",
@@ -102,7 +121,11 @@
       "id": "h_prior_response",
       "label": "Response to prior treatment",
       "type": "enum",
-      "permitted_values": ["response", "no_response", "unknown"],
+      "permitted_values": [
+        "response",
+        "no_response",
+        "unknown"
+      ],
       "period": "lifetime",
       "category": "prior_response",
       "provenance": "clinician_entry_or_copied_baseline",
@@ -121,52 +144,44 @@
       }
     },
     {
-      "id": "h_monitoring_baseline",
-      "label": "Baseline movement examination documented for monitoring",
-      "type": "tristate_plus_not_assessed",
-      "permitted_values": ["yes", "no", "unknown", "not_assessed"],
-      "period": "current_encounter",
-      "category": "monitoring",
-      "provenance": "clinician_entry_or_copied_baseline",
-      "analysis_visible": true,
-      "reconciliation_rule": "follow_up_copies_require_reconciliation",
-      "source_locator": "Owner-permitted monitoring field (2026-10-04 Q/A); parkinsonism-criteria.md §Clinical assessment (document examination, follow-up findings)"
-    },
-    {
       "id": "h_alternative_cause_considered",
-      "label": "Alternative explanations considered and documented",
-      "type": "tristate_plus_not_assessed",
-      "permitted_values": ["yes", "no", "unknown", "not_assessed"],
+      "label": "Alternative explanations ruled out",
+      "type": "tristate",
+      "permitted_values": [
+        "yes",
+        "no",
+        "unknown"
+      ],
       "period": "current_encounter",
       "category": "exposure",
       "provenance": "clinician_entry_or_copied_baseline",
       "analysis_visible": true,
       "reconciliation_rule": "follow_up_copies_require_reconciliation",
-      "source_locator": "tardive-dyskinesia-criteria.md §Differential diagnosis; akathisia-criteria.md §Clinical assessment and exclusions; parkinsonism-criteria.md §Clinical assessment and exclusions; acute-dystonia-criteria.md §Clinical assessment and exclusions"
-    },
-    {
-      "id": "h_functional_impact",
-      "label": "Functional impact of movements or restlessness",
-      "type": "tristate_plus_not_assessed",
-      "permitted_values": ["yes", "no", "unknown", "not_assessed"],
-      "period": "current_encounter",
-      "category": "monitoring",
-      "provenance": "clinician_entry_or_copied_baseline",
-      "analysis_visible": true,
-      "reconciliation_rule": "follow_up_copies_require_reconciliation",
-      "source_locator": "tardive-dyskinesia-criteria.md §Research criteria (functional impact); akathisia-criteria.md §Assessment tool (functional impact)"
+      "source_locator": "tardive-dyskinesia-criteria.md \u00a7Differential diagnosis; akathisia-criteria.md \u00a7Clinical assessment and exclusions; parkinsonism-criteria.md \u00a7Clinical assessment and exclusions; acute-dystonia-criteria.md \u00a7Clinical assessment and exclusions",
+      "default": "unknown",
+      "visible_when": {
+        "h_movement_persistence_4w": "yes"
+      }
     },
     {
       "id": "h_falls_or_limitation",
       "label": "Falls or functional limitation from parkinsonian signs",
-      "type": "tristate_plus_not_assessed",
-      "permitted_values": ["yes", "no", "unknown", "not_assessed"],
+      "type": "tristate",
+      "permitted_values": [
+        "yes",
+        "no",
+        "unknown"
+      ],
       "period": "current_encounter",
       "category": "monitoring",
       "provenance": "clinician_entry_or_copied_baseline",
       "analysis_visible": true,
       "reconciliation_rule": "follow_up_copies_require_reconciliation",
-      "source_locator": "parkinsonism-criteria.md §Assessment tool (falls or functional limitations)"
+      "source_locator": "parkinsonism-criteria.md \u00a7Assessment tool (falls or functional limitations)",
+      "default": "unknown",
+      "visible_when": {
+        "h_movement_persistence_4w": "yes"
+      }
     }
   ],
   "excluded_fields": [
@@ -201,11 +216,15 @@
   ],
   "provenance_contract": {
     "per_field": "Explicitly stored answers may carry {source: clinician_entry|copied_baseline, author_id, recorded_at (UTC Z), baseline_encounter_id when copied}. Default unknown values do not fabricate clinician or baseline attribution.",
-    "unknown_distinct_from_false": "unknown means uncertain; not_assessed means skipped; no means explicitly false. None becomes false.",
+    "unknown_distinct_from_false": "unknown means uncertain; no means explicitly false. Default unknown is unattributed.",
     "server_attribution": "Strict writes stamp author_id/recorded_at server-side; autosaved PATCH bodies preserve client-supplied provenance verbatim."
   },
   "reconciliation_contract": {
-    "status_values": ["not_required", "pending", "reconciled"],
+    "status_values": [
+      "not_required",
+      "pending",
+      "reconciled"
+    ],
     "rule": "Follow-up drafts copy baseline history with source copied_baseline and status pending; the author must explicitly reconcile (pending -> reconciled) with the current revision. Registration drafts are not_required.",
     "phone_update": "Optional free-text phone update rides with history for follow-up (no country validation, like S06 phone). It is analysis_visible false (identifier, never a model input) and does not affect history completeness."
   },
@@ -215,13 +234,13 @@
   },
   "completeness": {
     "type": "all_applicable_fields_answered",
-    "rule": "Complete when every currently visible core field holds a permitted value. Revised exposure, onset, adequacy and response fields default to unknown without clinician attribution. Onset and prior treatment apply only to lifetime exposure yes; response additionally requires an inadequate prior trial. Hidden answers and their provenance are omitted. Missing applicable fields are missing_item_ids; undeclared and excluded ids are item_errors. History has no scores."
+    "rule": "Complete when every currently visible core field holds a permitted value. All seven core questions default to unknown without attribution. Exposure gates onset and trial adequacy; inadequate trial additionally gates prior response. Persistent movements yes gates alternative explanations and falls. Hidden answers and provenance are omitted. History has no scores."
   },
   "source": {
     "note": "Minimum inventory derived from the four adverse-effect criteria documents plus owner-permitted exposure/duration/trial-adequacy/prior-response/monitoring categories (2026-10-04 Q/A). Concrete thresholds require owner review; none invented here."
   },
   "release": {
-    "version": "v1",
+    "version": "v2",
     "reviewer": "none",
     "approval": "none",
     "review_status": "awaiting_review",
@@ -243,23 +262,24 @@
         "sha256": "495a60d767a32558583b092fcf072ec1a7eb49d70a730725e97986d11a01db7d"
       }
     ],
-    "assumptions": ["The current core inventory contains nine fields; conditional exposure and treatment questions contribute only while visible. The three removed questions are not analysis inputs. Versioned reviewed workflow context remains separate.", "Revised exposure and treatment questions use unknown as the uncertain default, with no not_assessed option. Other tri-state plus not_assessed fields retain their existing distinction from false."],
-    "source_gaps": ["Concrete trial-adequacy thresholds and no-improvement percent-change cutoffs are not defined here (S37 owns the no-improvement definition).", "Observation windows for established-case review (R7) require owner approval of the concrete inventory."],
+    "assumptions": [
+      "Current core inventory contains seven fields with Unknown defaults. Only applicable questions contribute to completeness. Retired questions are not active analysis inputs; immutable historical evidence is preserved."
+    ],
+    "source_gaps": [
+      "Concrete trial-adequacy thresholds and no-improvement percent-change cutoffs are not defined here (S37 owns the no-improvement definition).",
+      "Observation windows for established-case review (R7) require owner approval of the concrete inventory."
+    ],
     "independent_examples": [
       {
         "name": "all_unknown_fresh",
         "values": {},
-        "expected": "status partial, exposure unknown without attribution, five remaining applicable core fields missing, no scores."
+        "expected": "status complete, exposure and movement persistence unknown without attribution, no scores."
       },
       {
         "name": "complete_explicit_negatives",
         "values": {
           "h_exposure_dopamine_blocker": "no",
-          "h_movement_persistence_4w": "no",
-          "h_monitoring_baseline": "no",
-          "h_alternative_cause_considered": "unknown",
-          "h_functional_impact": "no",
-          "h_falls_or_limitation": "no"
+          "h_movement_persistence_4w": "no"
         },
         "expected": "status complete, missing [], explicit no stays no (never unknown)."
       },
@@ -274,12 +294,34 @@
     ],
     "severity_mapping": "History carries no severity; severity lives on the four effects under reviewed definitions.",
     "network_mappings": {
-      "F1_tardive_dyskinesia": ["h_exposure_dopamine_blocker", "h_movement_persistence_4w", "h_onset_timing", "h_alternative_cause_considered", "h_functional_impact"],
-      "F2_akathisia": ["h_onset_timing", "h_alternative_cause_considered", "h_functional_impact"],
-      "F3_parkinsonism": ["h_alternative_cause_considered", "h_falls_or_limitation", "h_monitoring_baseline"],
-      "F4_acute_dystonia": ["h_onset_timing", "h_alternative_cause_considered"],
-      "R7_F5_trial_context": ["h_trial_adequacy_prior", "h_prior_response", "h_exposure_dopamine_blocker"]
+      "F1_tardive_dyskinesia": [
+        "h_exposure_dopamine_blocker",
+        "h_movement_persistence_4w",
+        "h_onset_timing",
+        "h_alternative_cause_considered"
+      ],
+      "F2_akathisia": [
+        "h_onset_timing",
+        "h_alternative_cause_considered"
+      ],
+      "F3_parkinsonism": [
+        "h_alternative_cause_considered",
+        "h_falls_or_limitation"
+      ],
+      "F4_acute_dystonia": [
+        "h_onset_timing",
+        "h_alternative_cause_considered"
+      ],
+      "R7_F5_trial_context": [
+        "h_trial_adequacy_prior",
+        "h_prior_response",
+        "h_exposure_dopamine_blocker"
+      ]
     },
-    "mapping_gaps": ["R7/F5 concrete trial-adequacy windows and no-improvement baselines need owner review before package use (S32/S37).", "F2/F3 differential-diagnosis fields beyond h_alternative_cause_considered need owner review before package use (S34/S35).", "No history field maps dose/route/frequency/active-stopped by design (FR-14 exclusion)."]
+    "mapping_gaps": [
+      "R7/F5 concrete trial-adequacy windows and no-improvement baselines need owner review before package use (S32/S37).",
+      "F2/F3 differential-diagnosis fields beyond h_alternative_cause_considered need owner review before package use (S34/S35).",
+      "No history field maps dose/route/frequency/active-stopped by design (FR-14 exclusion)."
+    ]
   }
 }

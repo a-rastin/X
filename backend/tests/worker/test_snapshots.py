@@ -984,6 +984,18 @@ def test_legacy_hidden_and_removed_answers_do_not_affect_new_snapshot_or_fingerp
         "h_exposure_duration_3m": "yes",
         "h_exposure_1m_if_60plus": "yes",
         "h_medication_timeline_documented": "yes",
+        "h_monitoring_baseline": "yes",
+        "h_functional_impact": "yes",
+        "h_movement_persistence_4w": "unknown",
+        "h_alternative_cause_considered": "yes",
+        "h_falls_or_limitation": "yes",
+        "candidate/history/pharmacotherapy.v2/h_prior_treatment_difficulty": "Present",
+        "candidate/history/pharmacotherapy.v2/h_preference_barrier": "Present",
+        "candidate/history/pharmacotherapy.v2/h_exposure_modifier": "Present",
+        "candidate/history/pharmacotherapy.v2/h_trial_duration_review": "Elapsed",
+        "candidate/history/pharmacotherapy.v2/h_urgent_safety_concern": "Present",
+        "candidate/history/pharmacotherapy.v2/h_monitoring_gap": "Present",
+        "candidate/history/pharmacotherapy.v2/h_antipsychotic_treatment_context": "Clozapine",
     }
     # Synthetic historical fixture: these retired fields cannot be newly written.
     with clean_registry.begin() as connection:

@@ -9,7 +9,7 @@ from x_insight.models.workflow_release import history_fields, resolve_workflow
 from x_insight.reasoning.readiness import compute_proposal_readiness
 from x_insight.reasoning.snapshots import evaluate_gate
 
-FIRST_PATH = "candidate/history/pharmacotherapy.v2/h_prior_treatment_difficulty"
+FIRST_PATH = "candidate/history/high_suicide_clozapine.v1/h_urgent_safety_concern"
 
 
 def known_context(workflow="registration"):
@@ -20,6 +20,8 @@ def known_context(workflow="registration"):
         for package in resolve_workflow(workflow)[0]
         for path in package["manifest"]["applicability"]["required_fields"]
     }
+    if workflow == "registration":
+        values["h_exposure_dopamine_blocker"] = "yes"
     if workflow == "followup":
         values["candidate/history/no_improvement_clozapine.v1/h_clozapine_treatment_status"] = (
             "CurrentTreatment"
@@ -27,7 +29,7 @@ def known_context(workflow="registration"):
     return values
 
 
-def test_complete_core_history_still_lists_all_53_proposal_blockers():
+def test_complete_core_history_still_lists_all_47_proposal_blockers():
     core = {key: spec["permitted"][0] for key, spec in ALLOWED_FIELDS.items()}
     state = compute_history_state(
         {"history": {"values": core}}, revision=54, author_id="synthetic-author"
@@ -36,27 +38,31 @@ def test_complete_core_history_still_lists_all_53_proposal_blockers():
     readiness = state["proposal_readiness"]
     assert readiness["source_revision"] == 54
     assert readiness["ready"] is False
-    assert readiness["required_count"] == 53
-    assert readiness["answered_count"] == readiness["execution_ready_count"] == 0
-    assert len(readiness["blockers"]) == 53
-    assert readiness["blockers"][0]["source_path"] == FIRST_PATH
-    assert {item["status"] for item in readiness["blockers"]} == {"missing"}
+    assert readiness["required_count"] == 47
+    assert readiness["answered_count"] == 3
+    assert readiness["execution_ready_count"] == 0
+    assert len(readiness["blockers"]) == 47
+    assert (
+        readiness["blockers"][0]["source_path"]
+        == "candidate/history/pharmacotherapy.v2/h_physical_vulnerability"
+    )
+    assert {item["status"] for item in readiness["blockers"]} == {"missing", "unknown"}
     assert all(item["label"] != item["source_path"] for item in readiness["blockers"])
     assert all(item["question_label"] and item["reason"] for item in readiness["blockers"])
-    assert len({item["source_path"] for item in readiness["blockers"]}) == 53
+    assert len({item["source_path"] for item in readiness["blockers"]}) == 47
 
 
 @pytest.mark.parametrize(
     "value,status,answered",
     [
-        ("unknown", "unknown", 53),
-        ("not_assessed", "not_assessed", 53),
-        (None, "null", 52),
-        ("invented", "invalid", 52),
-        (42, "invalid", 52),
-        ({"value": "Present"}, "invalid", 52),
-        (["Absent", "Present"], "conflict", 52),
-        ("conflict", "invalid", 52),
+        ("unknown", "unknown", 47),
+        ("not_assessed", "not_assessed", 47),
+        (None, "null", 46),
+        ("invented", "invalid", 46),
+        (42, "invalid", 46),
+        ({"value": "Present"}, "invalid", 46),
+        (["Absent", "Present"], "conflict", 46),
+        ("conflict", "invalid", 46),
     ],
 )
 def test_uncertainty_is_reported_without_counting_it_execution_ready(value, status, answered):
@@ -65,7 +71,7 @@ def test_uncertainty_is_reported_without_counting_it_execution_ready(value, stat
     readiness = compute_proposal_readiness({"history": {"values": values}}, 54, "registration")
     assert readiness["ready"] is False
     assert readiness["answered_count"] == answered
-    assert readiness["execution_ready_count"] == 52
+    assert readiness["execution_ready_count"] == 46
     assert len(readiness["blockers"]) == 1
     blocker = readiness["blockers"][0]
     assert blocker["source_path"] == FIRST_PATH
@@ -76,18 +82,18 @@ def test_uncertainty_is_reported_without_counting_it_execution_ready(value, stat
 def test_versioned_requirement_cannot_borrow_unversioned_or_other_question_answer():
     values = known_context()
     del values[FIRST_PATH]
-    values["h_prior_treatment_difficulty"] = "Absent"
-    values["candidate/history/pharmacotherapy.v1/h_prior_treatment_difficulty"] = "Absent"
-    values["candidate/history/high_suicide_clozapine.v1/h_prior_treatment_difficulty"] = "Absent"
+    values["h_urgent_safety_concern"] = "Present"
+    values["candidate/history/high_suicide_clozapine.v2/h_urgent_safety_concern"] = "Present"
+    values["candidate/history/aggression_clozapine.v1/h_urgent_safety_concern"] = "Present"
     readiness = compute_proposal_readiness({"history": {"values": values}}, 3, "registration")
     assert readiness["ready"] is False
-    assert readiness["execution_ready_count"] == 52
+    assert readiness["execution_ready_count"] == 46
     assert [(b["source_path"], b["status"]) for b in readiness["blockers"]] == [
         (FIRST_PATH, "missing")
     ]
 
 
-@pytest.mark.parametrize("workflow,count", [("registration", 53), ("followup", 76)])
+@pytest.mark.parametrize("workflow,count", [("registration", 47), ("followup", 76)])
 def test_known_context_and_known_false_applicability_are_ready(workflow, count):
     values = known_context(workflow)
     false_field = (
@@ -148,3 +154,27 @@ def test_explicit_unresolved_assessment_is_answered_but_cannot_execute():
     assert [(b["source_path"], b["status"]) for b in readiness["blockers"]] == [
         (path, "unresolved")
     ]
+
+
+@pytest.mark.parametrize("exposure,count", [("yes", 47), ("no", 46), ("unknown", 46)])
+def test_exposure_conditional_treatment_matches_readiness_and_execution(exposure, count):
+    treatment = "candidate/history/pharmacotherapy.v2/h_antipsychotic_treatment_context"
+    values = known_context()
+    values["h_exposure_dopamine_blocker"] = exposure
+    values[treatment] = "unknown"
+    data = {"history": {"values": values}}
+    readiness = compute_proposal_readiness(data, 4, "registration")
+    pharmacotherapy = readiness["questions"][0]
+    manifest = resolve_workflow("registration")[0][0]["manifest"]
+    assert readiness["required_count"] == count
+    assert pharmacotherapy["required_count"] == (3 if exposure == "yes" else 2)
+    assert pharmacotherapy["status"] == evaluate_gate(manifest, data)[0]
+    if exposure == "yes":
+        assert readiness["ready"] is False
+        assert [(b["source_path"], b["status"]) for b in readiness["blockers"]] == [
+            (treatment, "unknown")
+        ]
+    else:
+        assert readiness["ready"] is True
+        assert readiness["blockers"] == []
+        assert readiness["execution_ready_count"] == count

@@ -250,7 +250,15 @@ def start_generation(
         release_pin = {
             key: value
             for key, value in original["pinned_bundle"].items()
-            if key in ("release_version", "release_hash", "bundle_version", "bundle_hash")
+            if key
+            in (
+                "release_version",
+                "release_hash",
+                "bundle_version",
+                "bundle_hash",
+                "history_input_contract_version",
+                "history_input_contract_hash",
+            )
         }
     batch, runs = snapshots_service.start_generation_batch(
         session,

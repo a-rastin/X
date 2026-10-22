@@ -634,14 +634,25 @@ def create_open_draft(
             frozen_history = frozen.get(HISTORY_STATE_KEY) or {}
             frozen_values = frozen_history.get("values")
             if isinstance(frozen_values, dict) and baseline.get("history_values") == frozen_values:
+                current_history = history_service.get_history_section(frozen)
+                recorded_unknowns = {
+                    key
+                    for key, provenance in current_history["provenance"].items()
+                    if isinstance(provenance, dict)
+                    and provenance.get("source") in history_service.PROVENANCE_SOURCES
+                    and isinstance(provenance.get("author_id"), str)
+                    and provenance["author_id"]
+                    and isinstance(provenance.get("recorded_at"), str)
+                    and provenance["recorded_at"]
+                }
                 baseline = {
                     **baseline,
                     "history_values": {
                         key: answer
-                        for key, answer in history_service.normalize_history_values(
-                            frozen_values
-                        ).items()
+                        for key, answer in current_history["values"].items()
                         if key in frozen_values
+                        # Defaults and converted legacy uncertainty are not copied findings.
+                        and (answer != "unknown" or key in recorded_unknowns)
                     },
                 }
     validated_baseline = validate_followup_baseline(baseline)

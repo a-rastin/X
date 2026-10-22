@@ -120,13 +120,15 @@ async function createFollowupApi(
   return ((await response.json()).encounter.id as string) ?? "";
 }
 
-// Test-only signed baseline snapshot (inline; S49 is not a dependency).
+// Synthetic inline baseline: new API input, validated against current History.
 function testBaseline() {
   return {
     history_values: {
       h_exposure_dopamine_blocker: "yes",
-      h_monitoring_baseline: "no",
       h_onset_timing: "unknown",
+      h_movement_persistence_4w: "no",
+      h_alternative_cause_considered: "yes",
+      h_falls_or_limitation: "yes",
     },
     prior_scores: { panss_total: 68, cssrs_severity: 3 },
     medications: [{ catalog_drug_id: "demo-aspirin" }],
@@ -270,6 +272,21 @@ test("baseline provenance, pending reconciliation, and historical prior scores r
   await expect(prior).toContainText("68");
   await expect(prior).toContainText("historical — not a current answer");
   await expect(prior).toContainText("C-SSRS severity");
+
+  // The inline baseline is a current API write; dependent answers hidden by
+  // movement No must not revive in the copied worksheet.
+  await page.locator("#wizard-step-history").click();
+  await expect(page.locator("#hist-h_movement_persistence_4w-no")).toBeChecked();
+  for (const field of ["h_monitoring_baseline", "h_functional_impact", "h_alternative_cause_considered", "h_falls_or_limitation"]) {
+    await expect(page.locator(`[name="hist-${field}"]`)).toHaveCount(0);
+  }
+  await expect(page.locator('[id="hist-candidate/history/pharmacotherapy.v2/h_monitoring_gap"]')).toHaveCount(0);
+  await page.locator("#hist-h_movement_persistence_4w-yes").check();
+  for (const field of ["h_alternative_cause_considered", "h_falls_or_limitation"]) await expect(page.locator(`#hist-${field}-unknown`)).toBeChecked();
+  await expect(page.locator("#draft-save-status")).toContainText("Saved (revision 2)", { timeout: 15000 });
+  await expect.poll(async () => (await (await request.get(`/api/v1/encounters/${draftId}/history`)).json()).values.h_movement_persistence_4w).toBe("yes");
+  await page.reload();
+  for (const field of ["h_alternative_cause_considered", "h_falls_or_limitation"]) await expect(page.locator(`#hist-${field}-unknown`)).toBeChecked();
 
   // Prior scores never fill the fresh forms: PANSS/C-SSRS stay unanswered.
   await page.locator("#wizard-step-panss").click();

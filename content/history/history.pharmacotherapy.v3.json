@@ -1,0 +1,155 @@
+{
+  "schema_version": "candidate-history-additions-v1",
+  "version": "pharmacotherapy.v3",
+  "status": "awaiting_review",
+  "extends": "history.v1",
+  "purpose": "Current application input contract requested on 2026-10-22. Clinical graph, all CPTs, empty inference evidence and original review artifacts are preserved. This records no new clinical approval.",
+  "fields": [
+    {
+      "id": "h_physical_vulnerability",
+      "source_path": "candidate/history/pharmacotherapy.v2/h_physical_vulnerability",
+      "node_id": "PhysicalVulnerability",
+      "permitted": [
+        "yes",
+        "no",
+        "unknown"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Assessed physical illness or age-related susceptibility relevant to treatment tolerability.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-04.md \u2014 Side-Effect Profile (lines300\u2013304); Pharmacokinetic Properties (lines296\u2013298)",
+      "source_sha256": "08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444",
+      "operationalization": "Present means clinician identifies a specific relevant physical condition or age-related vulnerability after assessment; Absent means relevant vulnerability was assessed and none identified. No age cutoff, automatic diagnosis or implication that physical illness is absent.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "yes": "Present",
+        "no": "Absent"
+      },
+      "unknown_values": [
+        "unknown"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review",
+      "default_value": "unknown",
+      "legacy_value_mapping": {
+        "Present": "yes",
+        "Absent": "no",
+        "not_assessed": "unknown"
+      }
+    },
+    {
+      "id": "h_substance_contribution",
+      "source_path": "candidate/history/pharmacotherapy.v2/h_substance_contribution",
+      "node_id": "SubstanceContribution",
+      "permitted": [
+        "yes",
+        "no",
+        "unknown"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Assessed concomitant substance use potentially contributing to symptom response.",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-04.md \u2014 Strategies to Address Initial Nonresponse or Partial Response (lines314\u2013320)",
+      "source_sha256": "08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444",
+      "operationalization": "Present means clinician identifies a potential current substance contribution; Absent means assessment found no identified contribution. Substance history not obtained is unknown. A positive category does not assign causation or establish nonresponse.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "yes": "Present",
+        "no": "Absent"
+      },
+      "unknown_values": [
+        "unknown"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review",
+      "default_value": "unknown",
+      "legacy_value_mapping": {
+        "Present": "yes",
+        "Absent": "no",
+        "not_assessed": "unknown"
+      }
+    },
+    {
+      "id": "h_antipsychotic_treatment_context",
+      "source_path": "candidate/history/pharmacotherapy.v2/h_antipsychotic_treatment_context",
+      "node_id": "OralAntipsychoticMedication",
+      "permitted": [
+        "Chlorpromazine",
+        "Fluphenazine",
+        "Haloperidol",
+        "Loxapine",
+        "Molindone",
+        "Perphenazine",
+        "Pimozide",
+        "Thioridazine",
+        "Thiothixene",
+        "Trifluoperazine",
+        "Aripiprazole",
+        "Asenapine",
+        "Brexpiprazole",
+        "Cariprazine",
+        "Clozapine",
+        "Iloperidone",
+        "Lurasidone",
+        "Olanzapine",
+        "Paliperidone",
+        "Quetiapine",
+        "Risperidone",
+        "Ziprasidone",
+        "unknown"
+      ],
+      "time_window": "current_encounter",
+      "usage": "cpt_context",
+      "missing_policy": "needs_clarification",
+      "definition": "Explicit established antipsychotic",
+      "source_locator": "project-documents/medical-documents/guideline/STATEMENT-04.md \u2014 General Principles (lines276\u2013280); Table6 (lines129\u2013183)",
+      "source_sha256": "08f963e7b8ee138b0c69c25c0d8245699e2ff31069a912579f26a226b8bc5444",
+      "operationalization": "Clinician-confirmed established antipsychotic category. Visible only after lifetime antipsychotic exposure yes; absence or uncertainty never asserts an established treatment or its absence.",
+      "provenance_required": true,
+      "provenance_contract": "Clinician-entered structured category with encounter/window, author attribution and assessment record; copied baseline requires reconciliation. Page notes are never mapping input.",
+      "value_mapping": {
+        "Chlorpromazine": "Chlorpromazine",
+        "Fluphenazine": "Fluphenazine",
+        "Haloperidol": "Haloperidol",
+        "Loxapine": "Loxapine",
+        "Molindone": "Molindone",
+        "Perphenazine": "Perphenazine",
+        "Pimozide": "Pimozide",
+        "Thioridazine": "Thioridazine",
+        "Thiothixene": "Thiothixene",
+        "Trifluoperazine": "Trifluoperazine",
+        "Aripiprazole": "Aripiprazole",
+        "Asenapine": "Asenapine",
+        "Brexpiprazole": "Brexpiprazole",
+        "Cariprazine": "Cariprazine",
+        "Clozapine": "Clozapine",
+        "Iloperidone": "Iloperidone",
+        "Lurasidone": "Lurasidone",
+        "Olanzapine": "Olanzapine",
+        "Paliperidone": "Paliperidone",
+        "Quetiapine": "Quetiapine",
+        "Risperidone": "Risperidone",
+        "Ziprasidone": "Ziprasidone"
+      },
+      "unknown_values": [
+        "unknown"
+      ],
+      "conflict_policy": "needs_clarification",
+      "review_status": "awaiting_review",
+      "default_value": "unknown",
+      "show_if": {
+        "field_id": "h_exposure_dopamine_blocker",
+        "value": "yes"
+      },
+      "legacy_value_mapping": {
+        "not_assessed": "unknown",
+        "NoEstablishedTreatment": "unknown"
+      }
+    }
+  ],
+  "retained_history_v1": "Current conditional core History is separate. Six retired pharmacotherapy questions have no active mappings, validation or readiness requirements; network variables remain unobserved CPT context."
+}

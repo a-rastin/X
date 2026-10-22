@@ -2107,10 +2107,26 @@ def test_historical_signed_history_is_preserved_but_followup_copy_uses_current_c
         "h_trial_adequacy_prior": "adequate",
         "h_prior_response": "response",
         "h_monitoring_baseline": "no",
+        "h_functional_impact": "yes",
+        "h_movement_persistence_4w": "unknown",
+        "candidate/history/pharmacotherapy.v2/h_physical_vulnerability": "Present",
+        "candidate/history/pharmacotherapy.v2/h_substance_contribution": "unknown",
+        "candidate/history/pharmacotherapy.v2/h_antipsychotic_treatment_context": (
+            "NoEstablishedTreatment"
+        ),
     }
     historical = signed.json()["snapshot"]["snapshot"]
     assert not set(obsolete) & set(historical["draft_data"]["history"]["values"])
-    historical["draft_data"]["history"] = {"values": legacy_values}
+    historical["draft_data"]["history"] = {
+        "values": legacy_values,
+        "provenance": {
+            "h_movement_persistence_4w": {
+                "source": "clinician_entry",
+                "author_id": client.get("/api/v1/me").json()["user"]["id"],
+                "recorded_at": "2020-01-01T00:00:00Z",
+            },
+        },
+    }
     # A genuine historical fixture is immutable to callers; insert its old shape once.
     with clean_registry.begin() as connection:
         connection.execute(
@@ -2149,11 +2165,19 @@ def test_historical_signed_history_is_preserved_but_followup_copy_uses_current_c
     copied_values = copied.json()["draft_data"]["history"]["values"]
     assert copied_values == {
         "h_exposure_dopamine_blocker": "yes",
+        "h_movement_persistence_4w": "unknown",
         "h_onset_timing": "unknown",
         "h_trial_adequacy_prior": "adequate",
-        "h_monitoring_baseline": "no",
+        "candidate/history/pharmacotherapy.v2/h_physical_vulnerability": "yes",
+        "candidate/history/pharmacotherapy.v2/h_substance_contribution": "unknown",
+        "candidate/history/pharmacotherapy.v2/h_antipsychotic_treatment_context": "unknown",
     }
-    assert set(copied.json()["draft_data"]["history"]["provenance"]) == set(copied_values)
+    assert set(copied.json()["draft_data"]["history"]["provenance"]) == {
+        "h_exposure_dopamine_blocker",
+        "h_trial_adequacy_prior",
+        "h_movement_persistence_4w",
+        "candidate/history/pharmacotherapy.v2/h_physical_vulnerability",
+    }
     followup_id = copied.json()["encounter"]["id"]
     preview = client.get(f"/api/v1/encounters/{followup_id}/followup-baseline")
     assert preview.status_code == 200, preview.text

@@ -34,7 +34,12 @@ def test_reviewed_release_projects_all_packages_and_pins_order(workflow, order):
     for package in packages:
         manifest = package["manifest"]
         values = _known_values(manifest)
-        assert validate_history_values(values) == values
+        normalized = validate_history_values(values)
+        assert all(
+            normalized.get(path) == value
+            for path, value in values.items()
+            if not path.endswith("/h_antipsychotic_treatment_context")
+        )
         projection, _ = build_question_projection(manifest, {"history": {"values": values}}, 7)
         assert all(entry["status"] == "observed" for entry in projection["variables"])
         assert all(entry["source_revision"] == 7 for entry in projection["variables"])
@@ -78,7 +83,7 @@ def test_reviewed_gate_uses_per_question_facts_and_unknown_precedes_false():
 
 @pytest.mark.parametrize(
     "value,status",
-    [("unknown", "missing"), ("not_assessed", "not_assessed"), (["Absent", "Present"], "conflict")],
+    [("unknown", "missing"), ("not_assessed", "missing"), (["Absent", "Present"], "conflict")],
 )
 def test_history_unknown_and_conflicts_are_typed(value, status):
     manifest = resolve_workflow("registration")[0][0]["manifest"]
@@ -143,3 +148,115 @@ def test_each_reviewed_applicability_truth_table(key, false_field, false_value):
         assert evaluate_gate(manifest, data)[0] == "not_applicable"
     values[next(iter(values))] = "not_assessed"
     assert evaluate_gate(manifest, data)[0] == "needs_clarification"
+
+
+@pytest.mark.parametrize("exposure,required", [("yes", 3), ("no", 2), ("unknown", 2)])
+def test_active_pharmacotherapy_omits_retired_and_inapplicable_inputs(exposure, required):
+    package, pin = resolve_workflow("registration")
+    manifest = package[0]["manifest"]
+    prefix = "candidate/history/pharmacotherapy.v2/"
+    values = {
+        "h_exposure_dopamine_blocker": exposure,
+        prefix + "h_physical_vulnerability": "yes",
+        prefix + "h_substance_contribution": "no",
+        prefix + "h_antipsychotic_treatment_context": "Clozapine",
+        prefix + "h_prior_treatment_difficulty": "Present",
+        prefix + "h_preference_barrier": "Present",
+        prefix + "h_exposure_modifier": "Present",
+        prefix + "h_trial_duration_review": "Elapsed",
+        prefix + "h_urgent_safety_concern": "Present",
+        prefix + "h_monitoring_gap": "Present",
+    }
+    data = {"history": {"values": values}}
+    projection, _ = build_question_projection(manifest, data, 7)
+    assert {entry["node_id"]: entry["value"] for entry in projection["variables"]} == {
+        "PhysicalVulnerability": "Present",
+        "SubstanceContribution": "Absent",
+        **({"OralAntipsychoticMedication": "Clozapine"} if exposure == "yes" else {}),
+    }
+    assert len(projection["variables"]) == required
+    assert evaluate_gate(manifest, data)[0] == "ready"
+    assert pin["history_input_contract_version"] == "history-inputs-2026-10-22-v2"
+    assert manifest["review_status"] == "awaiting_review"
+
+
+def test_active_contract_preserves_full_network_estimation_and_historical_package():
+    import json
+
+    from x_insight.models.question_package import load_question_package
+
+    package = resolve_workflow("registration")[0][0]
+    directory = content_root() / "questions/pharmacotherapy/s39-reviewed-v1"
+    original = json.loads((directory / "manifest.json").read_text())
+    manifest = package["manifest"]
+    assert package["network_xml"] == (directory / "network.xml").read_text()
+    assert package["template"] == json.loads((directory / "template.json").read_text())
+    assert package["review"] == json.loads((directory / "review.json").read_text())
+    assert manifest["declared_node_order"] == original["declared_node_order"]
+    assert manifest["variables"] == original["variables"]
+    assert manifest["execution_evidence"] == original["execution_evidence"] == {}
+    assert manifest["cpt_contract"] == original["cpt_contract"]
+    assert manifest["query_nodes"] == original["query_nodes"]
+    assert len(original["patient_mappings"]) == 9
+    assert len(manifest["patient_mappings"]) == 3
+    from x_insight.reasoning.provider import ProviderConfig, ProviderRequest, build_outbound_payload
+
+    payload = build_outbound_payload(
+        ProviderConfig(endpoint_url="http://127.0.0.1:1/synthetic", model="synthetic"),
+        ProviderRequest(
+            question_key="pharmacotherapy",
+            projection={"variables": []},
+            projection_hash="0" * 64,
+            prompt_version=manifest["prompt_version"],
+            question_run_id="synthetic-run",
+            batch_id="synthetic-batch",
+            prompt_text=package["prompt"]["text"],
+            network_hash=manifest["network_hash"],
+            network_version=manifest["version"],
+            cpt_contract=manifest["cpt_contract"],
+        ),
+    )
+    outbound = json.loads(payload["messages"][1]["content"])
+    assert outbound["network_contract"] == {"nodes": original["cpt_contract"]["nodes"]}
+    table_schema = payload["response_format"]["json_schema"]["schema"]["properties"]["tables"]
+    assert (
+        table_schema["minItems"] == table_schema["maxItems"] == len(original["declared_node_order"])
+    )
+    loaded = load_question_package(package)
+    assert list(loaded.declared_node_order) == original["declared_node_order"]
+
+
+@pytest.mark.parametrize("damage", ["active_changed", "other_missing", "other_invalid"])
+def test_history_inventory_fails_closed_after_cached_definition_damage(
+    tmp_path, monkeypatch, damage
+):
+    shutil.copytree(content_root() / "history", tmp_path / "history")
+    monkeypatch.setenv("X_INSIGHT_CONTENT_DIR", str(tmp_path))
+    history_fields()
+    if damage == "active_changed":
+        path = tmp_path / "history/history.pharmacotherapy.v3.json"
+        path.write_text(path.read_text() + " ")
+    else:
+        path = tmp_path / "history/history.high_suicide_clozapine.v1.json"
+        if damage == "other_missing":
+            path.unlink()
+        else:
+            path.write_text("{")
+    with pytest.raises(contracts.ContractError) as caught:
+        history_fields()
+    assert caught.value.code == "WORKFLOW_CONTENT_UNAVAILABLE"
+
+
+def test_frozen_historical_pharmacotherapy_cannot_execute_retired_contract():
+    import json
+
+    old = json.loads(
+        (content_root() / "questions/pharmacotherapy/s39-reviewed-v1/manifest.json").read_text()
+    )
+    for operation in [
+        lambda: evaluate_gate(old, {}),
+        lambda: build_question_projection(old, {}, 7),
+    ]:
+        with pytest.raises(contracts.ContractError) as caught:
+            operation()
+        assert caught.value.code == "HISTORY_INPUT_CONTRACT_CHANGED"

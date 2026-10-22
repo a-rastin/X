@@ -3,8 +3,9 @@
 Through public HTTP + real PostgreSQL and the T2 module evaluators (no
 frontend, no live provider/MCP):
 
-1. History persists with provenance; unknown/not_assessed stay distinct from
-   false (no); undeclared/excluded (dose/route/frequency/active-stopped/
+1. Current History uses Unknown defaults and conditional questions with
+   provenance; retired inputs and invalid choices are rejected. Undeclared/excluded
+   (dose/route/frequency/active-stopped/
    free-text) fail strict validation with 422.
 2. Each of four effects accepts present/absent/not_assessed; present requires
    the corresponding complete reviewed questionnaire + reviewed severity
@@ -269,19 +270,25 @@ HISTORY_IDS = (
     "h_onset_timing",
     "h_trial_adequacy_prior",
     "h_prior_response",
-    "h_monitoring_baseline",
     "h_alternative_cause_considered",
-    "h_functional_impact",
     "h_falls_or_limitation",
 )
 
+PHYSICAL_PATH = "candidate/history/pharmacotherapy.v2/h_physical_vulnerability"
+SUBSTANCE_PATH = "candidate/history/pharmacotherapy.v2/h_substance_contribution"
+TREATMENT_PATH = "candidate/history/pharmacotherapy.v2/h_antipsychotic_treatment_context"
+FRESH_HISTORY = {
+    "h_exposure_dopamine_blocker": "unknown",
+    "h_movement_persistence_4w": "unknown",
+    PHYSICAL_PATH: "unknown",
+    SUBSTANCE_PATH: "unknown",
+}
+
 COMPLETE_HISTORY = {
+    PHYSICAL_PATH: "unknown",
+    SUBSTANCE_PATH: "unknown",
     "h_exposure_dopamine_blocker": "no",
     "h_movement_persistence_4w": "no",
-    "h_monitoring_baseline": "no",
-    "h_alternative_cause_considered": "unknown",
-    "h_functional_impact": "no",
-    "h_falls_or_limitation": "no",
 }
 
 BARS_COMPLETE = {
@@ -339,11 +346,11 @@ def test_history_definitions_stay_awaiting_review() -> None:
     assert {entry["path"] for entry in review["files"]} == expected
     for name in expected:
         payload = json.loads((root / name).read_text())
-        assert payload["version"] == "v1"
+        assert payload["version"] == ("v2" if name == "history.v1.json" else "v1")
         assert payload["review_status"] == "awaiting_review"
         assert payload["approval"] == "none"
     history_payload = json.loads((root / "history.v1.json").read_text())
-    assert len(history_payload["fields"]) == 9
+    assert len(history_payload["fields"]) == 7
     assert {field["id"] for field in history_payload["fields"]} == set(HISTORY_IDS)
     assert all(field["analysis_visible"] is True for field in history_payload["fields"])
 
@@ -351,30 +358,24 @@ def test_history_definitions_stay_awaiting_review() -> None:
 # --- Slice 1: history persists with provenance; unknown distinct from false ---
 
 
-def test_fresh_history_defaults_unknown_and_five_movement_items_missing(
+def test_fresh_history_defaults_unknown_without_hidden_questions(
     admin_client, clean_registry, monkeypatch
 ) -> None:
     client, _, _, encounter_id = _setup_draft(
         admin_client, clean_registry, monkeypatch, "dr_hist1", "0012348001"
     )
     direct = history_service.evaluate_history({})
-    assert direct["status"] == "partial"
-    assert direct["missing_item_ids"] == [
-        "h_movement_persistence_4w",
-        "h_monitoring_baseline",
-        "h_alternative_cause_considered",
-        "h_functional_impact",
-        "h_falls_or_limitation",
-    ]
+    assert direct["status"] == "complete"
+    assert direct["missing_item_ids"] == []
     assert direct["item_errors"] == {}
-    assert direct["definition_version"] == "v1"
+    assert direct["definition_version"] == "v2"
 
     preview = _get_history(client, encounter_id)
     assert preview.status_code == 200, preview.text
     body = preview.json()
-    assert body["values"] == {"h_exposure_dopamine_blocker": "unknown"}
+    assert body["values"] == FRESH_HISTORY
     assert body["evaluation"] == direct
-    assert body["definition_version"] == "v1"
+    assert body["definition_version"] == "v2"
     assert body["revision"] == 1
     assert body["analysis_visible"] is True
     assert body["analysis_visible_label"] == "analysis_visible"
@@ -413,7 +414,7 @@ def test_history_strict_save_persists_values_with_server_provenance(
     assert draft["revision"] == 2
 
 
-def test_history_unknown_and_not_assessed_stay_distinct_from_false(
+def test_history_unknown_stays_distinct_from_explicit_no(
     admin_client, clean_registry, monkeypatch
 ) -> None:
     client, csrf, _, encounter_id = _setup_draft(
@@ -421,7 +422,6 @@ def test_history_unknown_and_not_assessed_stay_distinct_from_false(
     )
     values = dict(COMPLETE_HISTORY)
     values["h_exposure_dopamine_blocker"] = "unknown"
-    values["h_monitoring_baseline"] = "not_assessed"
     values["h_movement_persistence_4w"] = "no"
     direct = history_service.evaluate_history(values)
     assert direct["status"] == "complete"
@@ -430,7 +430,6 @@ def test_history_unknown_and_not_assessed_stay_distinct_from_false(
     assert saved.status_code == 200, saved.text
     body = saved.json()
     assert body["values"]["h_exposure_dopamine_blocker"] == "unknown"
-    assert body["values"]["h_monitoring_baseline"] == "not_assessed"
     assert body["values"]["h_movement_persistence_4w"] == "no"
     # None was coerced to false: explicit no stays no, unknown stays unknown.
     assert body["values"]["h_exposure_dopamine_blocker"] != "no"
@@ -469,9 +468,7 @@ def test_history_undeclared_and_excluded_fields_fail_422(
     assert undeclared.status_code == 422, undeclared.text
     assert "h_fake" in undeclared.json()["field_errors"]
     # Nothing wrote: revision and values unchanged.
-    assert _get_history(client, encounter_id).json()["values"] == {
-        "h_exposure_dopamine_blocker": "unknown"
-    }
+    assert _get_history(client, encounter_id).json()["values"] == FRESH_HISTORY
 
 
 def test_history_invalid_values_rejected_server_side(
@@ -1037,23 +1034,13 @@ def test_history_notes_separation_via_serializer_and_http(
         "working_note": "free-text note that must never become history",
         "panss": {"answers": {"P1": 1}},
         "notes": [{"page": "history", "text": "page note text"}],
-        "history": {"values": {"h_exposure_dopamine_blocker": "unknown"}},
+        "history": {"values": FRESH_HISTORY},
     }
     assert _patch(client, csrf, encounter_id, noise, 1).status_code == 200
     after = _get_history(client, encounter_id).json()
-    assert after["values"] == {"h_exposure_dopamine_blocker": "unknown"}
-    assert after["evaluation"]["status"] == "partial"
-    assert after["evaluation"]["missing_item_ids"] == [
-        fid
-        for fid in HISTORY_IDS
-        if fid
-        not in {
-            "h_exposure_dopamine_blocker",
-            "h_onset_timing",
-            "h_trial_adequacy_prior",
-            "h_prior_response",
-        }
-    ]
+    assert after["values"] == FRESH_HISTORY
+    assert after["evaluation"]["status"] == "complete"
+    assert after["evaluation"]["missing_item_ids"] == []
     # Notes text never leaks into the history serializer.
     blob = contracts.canonical_json(after).decode()
     assert "free-text note that must never become history" not in blob
@@ -1201,11 +1188,11 @@ def test_history_effects_idempotency_replay_and_conflict(
 @pytest.mark.parametrize(
     ("exposure", "adequacy", "count"),
     [
-        ("no", "inadequate", 6),
-        ("unknown", "inadequate", 6),
-        ("yes", "adequate", 8),
-        ("yes", "unknown", 8),
-        ("yes", "inadequate", 9),
+        ("no", "inadequate", 4),
+        ("unknown", "inadequate", 4),
+        ("yes", "adequate", 7),
+        ("yes", "unknown", 7),
+        ("yes", "inadequate", 8),
     ],
 )
 def test_conditional_questions_roundtrip(
@@ -1220,6 +1207,7 @@ def test_conditional_questions_roundtrip(
         "h_onset_timing": "other",
         "h_trial_adequacy_prior": adequacy,
         "h_prior_response": "response",
+        **({TREATMENT_PATH: "unknown"} if exposure == "yes" else {}),
     }
     saved = _post_history(client, csrf, eid, values, 1)
     assert saved.status_code == 200, saved.text
@@ -1286,7 +1274,24 @@ def test_parent_transitions_clear_children_and_default_without_provenance(
 
 @pytest.mark.parametrize(
     "field_id",
-    ["h_exposure_duration_3m", "h_exposure_1m_if_60plus", "h_medication_timeline_documented"],
+    [
+        "h_exposure_duration_3m",
+        "h_exposure_1m_if_60plus",
+        "h_medication_timeline_documented",
+        "h_monitoring_baseline",
+        "h_functional_impact",
+        *[
+            "candidate/history/pharmacotherapy.v2/" + name
+            for name in (
+                "h_prior_treatment_difficulty",
+                "h_preference_barrier",
+                "h_exposure_modifier",
+                "h_trial_duration_review",
+                "h_urgent_safety_concern",
+                "h_monitoring_gap",
+            )
+        ],
+    ],
 )
 def test_removed_history_fields_rejected_on_new_writes(
     admin_client, clean_registry, monkeypatch, field_id
@@ -1305,7 +1310,18 @@ def test_removed_history_fields_rejected_on_new_writes(
 
 @pytest.mark.parametrize(
     "field_id",
-    ["h_exposure_dopamine_blocker", "h_onset_timing", "h_trial_adequacy_prior", "h_prior_response"],
+    [
+        "h_exposure_dopamine_blocker",
+        "h_onset_timing",
+        "h_trial_adequacy_prior",
+        "h_prior_response",
+        "h_movement_persistence_4w",
+        "h_alternative_cause_considered",
+        "h_falls_or_limitation",
+        PHYSICAL_PATH,
+        SUBSTANCE_PATH,
+        TREATMENT_PATH,
+    ],
 )
 @pytest.mark.parametrize("bad", ["not_assessed", None])
 def test_invalid_revised_answers_rejected_on_both_paths(
@@ -1337,6 +1353,22 @@ def test_legacy_read_autosave_cleanup_preserves_frozen_baseline(
     legacy = {
         **COMPLETE_HISTORY,
         "h_exposure_dopamine_blocker": "not_assessed",
+        "h_monitoring_baseline": "yes",
+        "h_functional_impact": "yes",
+        PHYSICAL_PATH: "Present",
+        SUBSTANCE_PATH: "Absent",
+        TREATMENT_PATH: "NoEstablishedTreatment",
+        **{
+            "candidate/history/pharmacotherapy.v2/" + field: "Present"
+            for field in (
+                "h_prior_treatment_difficulty",
+                "h_preference_barrier",
+                "h_exposure_modifier",
+                "h_trial_duration_review",
+                "h_urgent_safety_concern",
+                "h_monitoring_gap",
+            )
+        },
         "h_exposure_duration_3m": "yes",
         "h_exposure_1m_if_60plus": "no",
         "h_medication_timeline_documented": "yes",
@@ -1352,10 +1384,15 @@ def test_legacy_read_autosave_cleanup_preserves_frozen_baseline(
         "followup_baseline": {"history_values": dict(legacy)},
     }
     _seed_draft_data(clean_registry, eid, raw)
-    expected = {**COMPLETE_HISTORY, "h_exposure_dopamine_blocker": "unknown"}
+    expected = {
+        **COMPLETE_HISTORY,
+        "h_exposure_dopamine_blocker": "unknown",
+        PHYSICAL_PATH: "yes",
+        SUBSTANCE_PATH: "no",
+    }
     read = _get_history(client, eid).json()
     assert read["values"] == expected
-    assert set(read["provenance"]) == set(expected)
+    assert set(read["provenance"]) == set(expected) - {"h_exposure_dopamine_blocker"}
     draft = client.get(f"/api/v1/encounters/{eid}").json()["draft_data"]
     assert draft["history"]["values"] == expected
     assert draft["followup_baseline"]["history_values"] == legacy
@@ -1412,12 +1449,12 @@ def test_all_revised_choices_and_versioned_context_survive_autosave(
         "h_exposure_1m_if_60plus",
         "h_medication_timeline_documented",
     } & set(initial["allowed_field_ids"])
-    context_key = "candidate/history/pharmacotherapy.v2/h_prior_treatment_difficulty"
+    context_key = TREATMENT_PATH
     values = {
         **COMPLETE_HISTORY,
         "h_exposure_dopamine_blocker": "yes",
         "h_trial_adequacy_prior": "inadequate",
-        context_key: "Absent",
+        context_key: "Clozapine",
     }
     revision = 1
     for onset, response in [
@@ -1438,3 +1475,187 @@ def test_all_revised_choices_and_versioned_context_survive_autosave(
         assert patched.status_code == 200, patched.text
         revision = patched.json()["revision"]
         assert _get_history(client, eid).json()["values"] == values
+
+
+def test_movement_parent_clears_hidden_answers_and_provenance_on_both_save_paths(
+    admin_client, clean_registry, monkeypatch
+):
+    client, csrf, _, eid = _setup_draft(
+        admin_client, clean_registry, monkeypatch, "dr_movement_cleanup", "0012348701"
+    )
+    saved = _post_history(
+        client,
+        csrf,
+        eid,
+        {
+            **COMPLETE_HISTORY,
+            "h_movement_persistence_4w": "yes",
+            "h_alternative_cause_considered": "yes",
+            "h_falls_or_limitation": "no",
+        },
+        1,
+    )
+    assert saved.status_code == 200, saved.text
+    state = saved.json()
+    children = {"h_alternative_cause_considered", "h_falls_or_limitation"}
+    assert children <= set(state["provenance"])
+    for parent, autosave in [("no", False), ("yes", True), ("unknown", True), ("yes", False)]:
+        values = {**state["values"], "h_movement_persistence_4w": parent}
+        response = (
+            _patch(client, csrf, eid, {"history": {"values": values}}, state["revision"])
+            if autosave
+            else _post_history(client, csrf, eid, values, state["revision"])
+        )
+        assert response.status_code == 200, response.text
+        state = _get_history(client, eid).json()
+        if parent == "yes":
+            assert {key: state["values"][key] for key in children} == {
+                "h_alternative_cause_considered": "unknown",
+                "h_falls_or_limitation": "unknown",
+            }
+        else:
+            assert not children & set(state["values"])
+        assert not children & set(state["provenance"])
+        assert state["evaluation"]["status"] == "complete"
+
+
+def test_pharmacotherapy_choices_and_exposure_cleanup(admin_client, clean_registry, monkeypatch):
+    client, csrf, _, eid = _setup_draft(
+        admin_client, clean_registry, monkeypatch, "dr_pharma_cleanup", "0012348702"
+    )
+    state = _get_history(client, eid).json()
+    for bad in ["not_assessed", "NoEstablishedTreatment", None]:
+        values = {**COMPLETE_HISTORY, "h_exposure_dopamine_blocker": "yes", TREATMENT_PATH: bad}
+        for response in [
+            _post_history(client, csrf, eid, values, 1),
+            _patch(client, csrf, eid, {"history": {"values": values}}, 1),
+        ]:
+            assert response.status_code == 422, response.text
+            assert TREATMENT_PATH in response.json()["field_errors"]
+    values = {
+        **COMPLETE_HISTORY,
+        "h_exposure_dopamine_blocker": "yes",
+        PHYSICAL_PATH: "yes",
+        SUBSTANCE_PATH: "no",
+        TREATMENT_PATH: "Clozapine",
+    }
+    saved = _post_history(client, csrf, eid, values, 1)
+    assert saved.status_code == 200, saved.text
+    assert saved.json()["values"][TREATMENT_PATH] == "Clozapine"
+    assert TREATMENT_PATH in saved.json()["provenance"]
+    for exposure in ["no", "unknown", "yes"]:
+        state = saved.json()
+        values = {**state["values"], "h_exposure_dopamine_blocker": exposure}
+        saved = _post_history(client, csrf, eid, values, state["revision"])
+        assert saved.status_code == 200, saved.text
+        if exposure == "yes":
+            assert saved.json()["values"][TREATMENT_PATH] == "unknown"
+        else:
+            assert TREATMENT_PATH not in saved.json()["values"]
+        assert TREATMENT_PATH not in saved.json()["provenance"]
+
+
+@pytest.mark.parametrize("outage", ["missing_active", "corrupt_active", "missing_other"])
+def test_existing_draft_and_unrelated_autosave_survive_workflow_content_outage(
+    admin_client, clean_registry, monkeypatch, tmp_path, outage
+):
+    from copy import deepcopy
+    from shutil import copytree, ignore_patterns
+
+    from x_insight.models.workflow_release import content_root
+
+    client, csrf, _, eid = _setup_draft(
+        admin_client, clean_registry, monkeypatch, "dr_content_outage", "0012348801"
+    )
+    # Observe application errors as HTTP responses, including missing deployment files.
+    client = TestClient(app, raise_server_exceptions=False, cookies=client.cookies)
+    other_path = "candidate/history/high_suicide_clozapine.v1/h_urgent_safety_concern"
+    values = {**COMPLETE_HISTORY, PHYSICAL_PATH: "yes", SUBSTANCE_PATH: "no", other_path: "Present"}
+    saved = _post_history(client, csrf, eid, values, 1)
+    assert saved.status_code == 200, saved.text
+    expected_values = {**values, SUBSTANCE_PATH: "unknown"}
+    expected_provenance = saved.json()["provenance"]
+    expected_provenance.pop(SUBSTANCE_PATH)
+    existing = client.get(f"/api/v1/encounters/{eid}")
+    assert existing.status_code == 200, existing.text
+    raw = deepcopy(existing.json()["draft_data"])
+    # Older persisted records can omit a newly defaulted workflow question.
+    raw["history"]["values"].pop(SUBSTANCE_PATH)
+    raw["history"]["provenance"].pop(SUBSTANCE_PATH)
+    raw["history"]["values"][PHYSICAL_PATH] = "Present"
+    legacy = {
+        "h_monitoring_baseline": "yes",
+        "h_functional_impact": "yes",
+        "h_alternative_cause_considered": "yes",
+        "h_falls_or_limitation": "yes",
+        TREATMENT_PATH: "Clozapine",
+        "candidate/history/pharmacotherapy.v2/h_monitoring_gap": "Present",
+    }
+    raw["history"]["values"].update(legacy)
+    raw["history"]["provenance"].update(
+        {
+            key: {"source": "copied_baseline", "recorded_at": "2020-01-01T00:00:00Z"}
+            for key in legacy
+        }
+    )
+    _seed_draft_data(clean_registry, eid, raw)
+    deployed = tmp_path / "content"
+    copytree(content_root(), deployed, ignore=ignore_patterns("ddi", "medications"))
+    if outage == "missing_active":
+        (deployed / "history/history.pharmacotherapy.v3.json").unlink()
+    elif outage == "corrupt_active":
+        target = deployed / "history/history.pharmacotherapy.v3.json"
+        target.write_text(target.read_text() + " ")
+    else:
+        (deployed / "history/history.high_suicide_clozapine.v1.json").unlink()
+    monkeypatch.setenv("X_INSIGHT_CONTENT_DIR", str(deployed))
+
+    reopened = client.get(f"/api/v1/encounters/{eid}")
+    assert reopened.status_code == 200, reopened.text
+    assert reopened.json()["revision"] == 2
+    assert reopened.json()["draft_data"]["history"]["values"] == expected_values
+    assert reopened.json()["draft_data"]["history"]["provenance"] == expected_provenance
+    # A browser may still hold the complete body fetched before the content outage.
+    raw["history"]["values"][SUBSTANCE_PATH] = "unknown"
+    raw["working_note"] = "Synthetic unrelated note during content outage"
+    note_saved = _patch(client, csrf, eid, raw, 2)
+    assert note_saved.status_code == 200, note_saved.text
+    assert note_saved.json()["draft_data"]["history"]["values"] == expected_values
+    assessment_body = deepcopy(note_saved.json()["draft_data"])
+    assessment_body["panss"] = {"answers": {"P1": 3}}
+    assessment_saved = _patch(client, csrf, eid, assessment_body, 3)
+    assert assessment_saved.status_code == 200, assessment_saved.text
+    current = client.get(f"/api/v1/encounters/{eid}")
+    assert current.status_code == 200, current.text
+    assert current.json()["revision"] == 4
+    assert current.json()["draft_data"]["working_note"] == raw["working_note"]
+    assert current.json()["draft_data"]["panss"] == {"answers": {"P1": 3}}
+    assert current.json()["draft_data"]["history"]["values"] == expected_values
+    assert current.json()["draft_data"]["history"]["provenance"] == expected_provenance
+
+    for response in (
+        client.get(f"/api/v1/encounters/{eid}/proposal-readiness"),
+        client.post(
+            f"/api/v1/encounters/{eid}/generation-batches",
+            json={},
+            headers={**_auth_headers(csrf), "If-Match": '"4"'},
+        ),
+        _post_history(client, csrf, eid, expected_values, 4),
+    ):
+        assert response.status_code == 422, response.text
+        assert response.json()["code"] == "WORKFLOW_CONTENT_UNAVAILABLE"
+    assert client.get(f"/api/v1/encounters/{eid}/generation-batches/latest").json() == {
+        "batch": None
+    }
+    for field, bad in [
+        ("h_movement_persistence_4w", "not_assessed"),
+        ("h_monitoring_baseline", "yes"),
+        (PHYSICAL_PATH, "not_assessed"),
+        (other_path, "invented"),
+    ]:
+        invalid = deepcopy(current.json()["draft_data"])
+        invalid["history"]["values"][field] = bad
+        rejected = _patch(client, csrf, eid, invalid, 4)
+        assert rejected.status_code == 422, rejected.text
+        assert rejected.json()["code"] in {"VALIDATION_FAILED", "WORKFLOW_CONTENT_UNAVAILABLE"}
+    assert client.get(f"/api/v1/encounters/{eid}").json() == current.json()

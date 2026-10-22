@@ -41,9 +41,9 @@ every acceptance check has passed. See the current boundaries below.
 
 ## Current engineering status
 
-The [2026-10-22 History correction](project-documents/dev/progress/s12.md#follow-up-2026-10-22--conditional-history-and-unknown-defaults)
-removes three exposure/timeline questions and makes onset and prior treatment
-conditional, with Unknown defaults. See the [current History contract](docs/proposal-generation.md#core-history)
+The [2026-10-22 History cleanup](project-documents/dev/progress/s12.md#follow-up-2026-10-22--history-cleanup-and-versioned-pharmacotherapy-inputs)
+uses seven conditional core questions with Unknown defaults and removes six
+pharmacotherapy inputs from active readiness and patient mappings. See the [current History contract](docs/proposal-generation.md#core-history)
 for choices, completeness and older-record compatibility.
 
 The preceding [proposal-readiness fix](project-documents/dev/progress/s48.md#follow-up-2026-10-22--check-proposal-readiness-before-creating-a-run)

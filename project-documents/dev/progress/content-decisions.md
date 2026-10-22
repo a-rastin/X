@@ -35,7 +35,7 @@
 - No established treatment does not mark registration pharmacotherapy not_applicable. The question remains applicable; S27 defines source-compatible mappings for that case. Missing/unknown required network inputs still pause rather than being guessed.
 - LAI preserves BN-10's existing discussion/review scope; specific product selection and a new product-choice contract are outside the question. Existing package identity is retained, while displayed wording and template outputs use the preserved scope. Concrete packages still require review.
 
-### Requested History field correction — 2026-10-22
+### Requested History field correction — 2026-10-22 (preceding contract)
 
 - The current core History inventory has nine fields. Lifetime antipsychotic
   exposure is Yes/No/Unknown, default Unknown. Onset and prior treatment appear
@@ -51,4 +51,20 @@
   owner-review states remain. Separately reviewed versioned question packages and
   proposal-readiness gates are unchanged; no clinical rationale or validation is
   inferred from this implementation request.
+
+### History cleanup and derived pharmacotherapy contract — 2026-10-22
+
+- The subsequent implementation uses seven core fields, with movement-related
+  children conditional on persistence Yes. All applicable core fields default to
+  Unknown. Baseline movement examination and functional impact are additionally
+  retired. See the [current contract](../../../docs/proposal-generation.md#core-history).
+- The application pharmacotherapy definition retains physical vulnerability,
+  substance contribution and exposure-conditional established antipsychotic.
+  Six other pharmacotherapy patient mappings and readiness requirements are
+  retired. Network structure, full CPT estimation and empty inference evidence
+  remain unchanged; omitted patient inputs do not assert clinical states.
+- These statements describe the recovered implementation. No new owner clinical
+  approval is inferred from resuming it. The derived manifest is `awaiting_review`,
+  and original package review remains historical provenance. Older frozen runs
+  remain readable but require an explicit new run with the current input contract.
 

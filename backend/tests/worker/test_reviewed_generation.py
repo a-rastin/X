@@ -62,7 +62,7 @@ def test_complete_core_history_rejects_reviewed_start_before_batch_or_job_creati
     assert readiness.status_code == 200, readiness.text
     assert readiness.json() == history["proposal_readiness"]
     assert readiness.json()["source_revision"] == 2
-    assert len(readiness.json()["blockers"]) == 53
+    assert len(readiness.json()["blockers"]) == 47
     assert owner.get(f"/api/v1/encounters/{eid}").json() == before
     assert _latest_batch(owner, eid) is None
     key = str(uuid.uuid4())
@@ -284,3 +284,96 @@ def test_readiness_does_not_expose_released_drafts(
     assert owner.get(f"/api/v1/encounters/{eid}/proposal-readiness").status_code == 404
     assert _start(owner, csrf, eid, 1).status_code == 404
     assert owner.get(f"/api/v1/encounters/{eid}/generation-batches/latest").status_code == 404
+
+
+def test_frozen_historical_contract_stays_readable_but_requires_new_current_proposal(
+    admin_client, clean_registry, monkeypatch
+):
+    import json
+    from copy import deepcopy
+
+    from sqlalchemy import update
+
+    from x_insight.models.question_package import load_question_package
+    from x_insight.reasoning.snapshots import compute_analysis_fingerprint
+    from x_insight.reasoning.tables import generation_batches, question_runs
+
+    owner, csrf, created = _setup(admin_client, clean_registry, monkeypatch, "dr_old_contract")
+    eid = created["draft"]["id"]
+    saved = _patch_draft(owner, csrf, eid, {"history": {"values": known_context()}}, 1)
+    assert saved.status_code == 200, saved.text
+    started = _start(owner, csrf, eid, 2)
+    assert started.status_code == 202, started.text
+    batch = started.json()
+    run = batch["question_runs"][0]
+    directory = content_root() / "questions/pharmacotherapy/s39-reviewed-v1"
+    historic_package = {
+        name: json.loads((directory / f"{name}.json").read_text())
+        for name in ("manifest", "template", "examples", "review")
+    }
+    historic_package["network_xml"] = (directory / "network.xml").read_text()
+    historic_package["prompt"] = {
+        "version": historic_package["manifest"]["prompt_version"],
+        "text": (directory / "prompt.txt").read_text(),
+    }
+    historic_pin = deepcopy(batch["batch"]["pinned_bundle"])
+    historic_pin.pop("history_input_contract_version")
+    historic_pin.pop("history_input_contract_hash")
+    historic_versions = {
+        **historic_pin["per_question"]["pharmacotherapy"],
+        "package_hash": load_question_package(historic_package).package_hash,
+        "package_version": historic_package["manifest"]["version"],
+    }
+    historic_pin["per_question"]["pharmacotherapy"] = historic_versions
+    historic_pin.update(historic_versions)
+    historic_fingerprint, historic_payload = compute_analysis_fingerprint(
+        saved.json()["draft_data"], historic_pin
+    )
+    # Historical fixture includes its old package pin and matching fingerprint.
+    # Callers cannot rewrite these immutable records through HTTP.
+    with clean_registry.begin() as connection:
+        connection.execute(
+            update(generation_batches)
+            .where(generation_batches.c.id == uuid.UUID(batch["batch"]["id"]))
+            .values(
+                pinned_bundle=historic_pin,
+                fingerprint=historic_fingerprint,
+                fingerprint_payload=historic_payload,
+            )
+        )
+        connection.execute(
+            update(question_runs)
+            .where(question_runs.c.batch_id == uuid.UUID(batch["batch"]["id"]))
+            .values(fingerprint=historic_fingerprint)
+        )
+        connection.execute(
+            update(question_runs)
+            .where(question_runs.c.id == uuid.UUID(run["id"]))
+            .values(
+                pinned_package=historic_package,
+                pinned_versions={**historic_versions, "position": 0},
+            )
+        )
+    batch_url = "/api/v1/generation-batches/" + batch["batch"]["id"]
+    historical_read = owner.get(batch_url)
+    assert historical_read.status_code == 200, historical_read.text
+    historical_run = next(
+        r for r in historical_read.json()["question_runs"] if r["id"] == run["id"]
+    )
+    assert historical_run["projection"] == run["projection"]
+    assert historical_run["projection_hash"] == run["projection_hash"]
+    retry_body = {"source_batch_id": batch["batch"]["id"]}
+    readiness = owner.get(f"/api/v1/encounters/{eid}/proposal-readiness", params=retry_body)
+    retry = _start(owner, csrf, eid, 2, retry_body)
+    for denied in (readiness, retry):
+        assert denied.status_code == 422, denied.text
+        assert denied.json()["code"] == "HISTORY_INPUT_CONTRACT_CHANGED"
+    assert _latest_batch(owner, eid)["id"] == batch["batch"]["id"]
+    current = _start(owner, csrf, eid, 2)
+    assert current.status_code == 202, current.text
+    assert current.json()["batch"]["id"] != batch["batch"]["id"]
+    assert (
+        current.json()["batch"]["pinned_bundle"]["history_input_contract_version"]
+        == "history-inputs-2026-10-22-v2"
+    )
+    assert owner.get(batch_url).json()["question_runs"] == historical_read.json()["question_runs"]

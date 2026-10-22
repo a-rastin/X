@@ -1,7 +1,7 @@
 # Proposal generation
 
 Step 7 checks the saved draft's proposal readiness before creating a generation
-batch. Core History completion covers only the applicable fields from the nine-field
+batch. Core History completion covers only the applicable fields from the seven-field
 inventory below; it does not establish that the proposal-context answers are ready.
 
 ## Core History
@@ -15,30 +15,29 @@ History uses the same contract.
 | Onset timing relative to exposure or withdrawal | During exposure; Within 4 weeks after oral withdrawal; Within 8 weeks after LAI withdrawal; Other; Unknown | Lifetime exposure is Yes; Unknown |
 | Adequacy of prior treatment trial | Adequate, Inadequate, Unknown | Lifetime exposure is Yes; Unknown |
 | Response to prior treatment | Some level of response, No response, Unknown | Lifetime exposure is Yes and adequacy is Inadequate; Unknown |
+| Involuntary movements persist over at least 4 weeks | Yes, No, Unknown | Always; Unknown |
+| Alternative explanations ruled out | Yes, No, Unknown | Movement persistence is Yes; Unknown |
+| Falls or functional limitation from parkinsonian signs | Yes, No, Unknown | Movement persistence is Yes; Unknown |
 
 Other means a time outside the three named onset timings. The Prior treatment
 heading and navigation link appear only for lifetime exposure Yes. Changing a
 controlling answer clears hidden answers and their provenance; revealing them
 again starts at Unknown. A default is not attributed as a clinician entry.
 
-The other five movement/monitoring questions keep their existing choices and
-completion rules. The three questions about cumulative exposure of at least
-three months, exposure of at least one month at age 60 or older, and a documented
-medication timeline have been removed from the active inventory.
+The baseline movement-examination and functional-impact questions are retired,
+alongside the three previously removed exposure-duration/timeline questions.
+Core completeness starts at **2** applicable questions, adds **2** for lifetime
+exposure Yes, **1** for Inadequate adequacy when exposure is Yes, and **2** for
+movement persistence Yes (maximum **7**). An allowed Unknown counts as answered
+for core completion; proposal readiness remains a separate gate.
 
-Core completeness counts **6** applicable questions for lifetime exposure No or
-Unknown, **8** for Yes with Adequate/Unknown adequacy, and **9** for Yes with
-Inadequate adequacy. An allowed Unknown counts as answered for core completion;
-proposal readiness remains a separate gate.
-
-The nine core IDs are `h_exposure_dopamine_blocker`,
+The seven core IDs are `h_exposure_dopamine_blocker`,
 `h_movement_persistence_4w`, `h_onset_timing`, `h_trial_adequacy_prior`,
-`h_prior_response`, `h_monitoring_baseline`, `h_alternative_cause_considered`,
-`h_functional_impact` and `h_falls_or_limitation`.
+`h_prior_response`, `h_alternative_cause_considered` and `h_falls_or_limitation`.
 
 Strict History writes reject new retired IDs and null/Not assessed values for the
-four revised questions with HTTP `422`. Older drafts normalize Not assessed on
-those questions to Unknown; malformed legacy nulls remain visible as validation
+seven core questions with HTTP `422`. Older drafts normalize Not assessed on
+these questions to Unknown; malformed legacy nulls remain visible as validation
 errors. Reads and resaves clear retired/hidden current answers and their
 provenance. The general draft PATCH retains its legacy compatibility behavior.
 Follow-up copies normalize current History while preserving trusted same-patient
@@ -49,9 +48,17 @@ including when embedded in a newer analysis snapshot's fingerprint payload.
 
 ## Complete proposal context
 
-History exposes 53 registration or 76 follow-up context controls, using the
-reviewed definitions and response categories. These context controls have no
-preselected answers; the core Unknown defaults above do not apply to them. The
+History exposes up to 47 registration or 76 follow-up context controls.
+Registration has 46 applicable controls when lifetime exposure is No or Unknown.
+The revised pharmacotherapy contract retains physical vulnerability and substance
+contribution as Yes/No/Unknown, default Unknown. Established antipsychotic appears
+only for lifetime exposure Yes and defaults to Unknown. Legacy Present/Absent
+answers map to Yes/No; Not assessed and NoEstablishedTreatment map to Unknown.
+Six pharmacotherapy questions are retired: prior treatment difficulty, preference
+barrier, exposure modifier, trial duration review, urgent safety concern and
+monitoring gap. Their network nodes remain in full CPT estimation without patient
+input mappings; retirement does not assign those nodes clinical values.
+Other workflow controls retain their existing categories and have no defaults. The
 separate **Proposal readiness** summary lists every unresolved requirement with
 a readable field label, a reason and a link to its exact History control.
 Controls wait for the server's field inventory to load before accepting edits.
@@ -87,6 +94,10 @@ and unreadable checks prevent a start. **Check again** repeats the checks.
    preserve that batch's frozen question packages, use current saved inputs and
    must pass readiness again. An initial start without `source_batch_id` resolves
    the active release. A worker must be running to process any queued questions.
+   Exception: a frozen pharmacotherapy package requiring retired History inputs
+   returns `HISTORY_INPUT_CONTRACT_CHANGED`. Use **Start new run with current
+   History** to resolve the current contract without `source_batch_id`; the old
+   recorded run remains readable.
 
 An old run can still show `needs_clarification`, its earlier source revision,
 or a raw first-blocker reason. **Current inputs** describes snapshot freshness,
@@ -141,7 +152,14 @@ independent clinical validation. Historical content artifacts remain unchanged.
 The server pins the content, patient projection, provider settings and DDI release
 into each batch. It loads only the checked-in release inventory, verifies
 dependency hashes, and validates package approval, network semantics and workflow
-order. A missing or changed dependency produces `WORKFLOW_CONTENT_UNAVAILABLE`
+order. After validating the original release, it derives the pharmacotherapy
+application contract `history-inputs-2026-10-22-v2`, pinned to
+`content/history/history.pharmacotherapy.v3.json`. The derived manifest records
+`awaiting_review`; original clinical approval is provenance and does not approve
+the changed inputs. Network bytes, CPT contracts, queries, templates and empty
+inference evidence remain unchanged. Each batch pins the derived contract's
+version and hash as well as the original bundle identity.
+A missing or changed dependency produces `WORKFLOW_CONTENT_UNAVAILABLE`
 before provider access. The older Networks administration pointers select XML
 versions; they do not describe complete question packages and do not replace
 this release. New content needs a new reviewed bundle and pinned inventory.
@@ -150,9 +168,9 @@ Local source runs resolve `content/` beside the repository. Deployments can set
 `X_INSIGHT_CONTENT_DIR` to the shipped content directory. The application image
 includes workflow bundles, question packages, history definitions and assessments
 for API and worker. Apply the updated source by restarting API and worker and
-serving the rebuilt UI; history definitions are cached per process. The
-2026-10-22 History correction adds no migration and does not change the separately
-reviewed question packages or their readiness gates. Neither this correction nor
-the preceding readiness fix restarted the application runtime or called a live
-provider during verification. The correction is not blanket approval of the
+serving the rebuilt UI. History inventory caching detects file revision changes;
+the active pharmacotherapy definition is integrity checked on access. Basic draft
+normalization remains available during content outages; generation stays blocked.
+The 2026-10-22 cleanup adds no migration. Its saved verification logs do not claim
+an application runtime restart or live provider completion. It is not blanket approval of the
 History/adverse-effect instrument drafts; their review status remains pending.

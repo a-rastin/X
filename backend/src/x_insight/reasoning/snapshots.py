@@ -246,7 +246,7 @@ def _resolve_raw_value(source_path: str, draft_data: Any) -> Any:
             return raw
         if not isinstance(raw, str) or raw not in spec["permitted"]:
             return "unknown"
-        return raw
+        return spec.get("value_mapping", {}).get(raw, raw)
     if source_path.startswith("synthetic/history/"):
         field = source_path[len("synthetic/history/") :]
         if not field:
@@ -306,6 +306,12 @@ def build_question_projection(
     null, source path and frozen source revision. Note/unrelated paths
     raise 422 regardless of what the prompt instructs.
     """
+    from x_insight.models.workflow_release import (
+        is_history_field_applicable,
+        require_current_history_contract,
+    )
+
+    require_current_history_contract(manifest)
     declared = manifest.get("declared_node_order")
     variables = manifest.get("variables")
     mappings = manifest.get("patient_mappings")
@@ -352,6 +358,8 @@ def build_question_projection(
         paths = mapping["allowed_source_paths"]
         assert isinstance(paths, (list, tuple)) and paths
         source_path = str(paths[0])
+        if not is_history_field_applicable(source_path, _get_history_values(draft_data)):
+            continue
         raw = _resolve_raw_value(source_path, draft_data)
         status, value = _typed_status(raw)
         entries.append(
@@ -373,6 +381,13 @@ def build_question_projection(
     return projection, contracts.canonical_hash(projection)
 
 
+def applicable_required_fields(required: Any, draft_data: Any) -> list[str]:
+    from x_insight.models.workflow_release import is_history_field_applicable
+
+    values = _get_history_values(draft_data)
+    return [path for path in required if is_history_field_applicable(path, values)]
+
+
 def evaluate_gate(manifest: Mapping[str, Any], draft_data: Any) -> tuple[str, str]:
     """Evaluate applicability against saved facts (three-valued gate).
 
@@ -382,6 +397,9 @@ def evaluate_gate(manifest: Mapping[str, Any], draft_data: Any) -> tuple[str, st
     missing/conflict/not_assessed → needs_clarification. Returns
     (status, explicit reason). Cross-question references raise 422.
     """
+    from x_insight.models.workflow_release import require_current_history_contract
+
+    require_current_history_contract(manifest)
     applicability = manifest.get("applicability")
     if not isinstance(applicability, Mapping):
         raise _fail(422, "bad_applicability", "Manifest needs applicability.")
@@ -405,6 +423,7 @@ def evaluate_gate(manifest: Mapping[str, Any], draft_data: Any) -> tuple[str, st
     if any(field.startswith("candidate/history/") for field in required):
         from x_insight.reasoning.history_gates import evaluate_history_gate
 
+        required = applicable_required_fields(required, draft_data)
         values = {field: _resolve_raw_value(field, draft_data) for field in required}
         for field, raw in values.items():
             status, _ = _typed_status(raw)

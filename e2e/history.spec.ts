@@ -140,7 +140,7 @@ async function gotoEncounter(
   await expect(page.getByRole("heading", { name: heading })).toBeVisible();
 }
 
-test("fresh history defaults to Unknown with six applicable fields and no retired controls", async ({ page, request }) => {
+test("fresh history defaults to Unknown with two applicable fields and no retired controls", async ({ page, request }) => {
   const physician = await loginPhysician(page, request, "e2ehistfresh");
   const { draftId } = await createPatientWithDraft(request, physician);
   await gotoEncounter(page, draftId);
@@ -148,10 +148,11 @@ test("fresh history defaults to Unknown with six applicable fields and no retire
   await expect(exposure.getByRole("radio")).toHaveCount(3);
   for (const label of ["Yes", "No", "Unknown"]) await expect(exposure.getByRole("radio", { name: label, exact: true })).toBeVisible();
   await expect(exposure.getByRole("radio", { name: "Unknown", exact: true })).toBeChecked();
-  await expect(page.locator('input[name^="hist-"]:checked')).toHaveCount(1);
-  await expect(page.locator(".xi-diagnosis-overview")).toContainText("1 / 6 responses");
-  await expect(page.locator("#history-preview-status")).toContainText("5 of 6 applicable fields still need", { timeout: 10000 });
-  for (const field of ["h_exposure_duration_3m", "h_exposure_1m_if_60plus", "h_medication_timeline_documented", "h_onset_timing", "h_trial_adequacy_prior", "h_prior_response"]) {
+  await expect(page.locator('input[name^="hist-"]:checked')).toHaveCount(2);
+  await expect(page.locator(".xi-diagnosis-overview")).toContainText("2 / 2 responses");
+  await expect(page.locator("#history-preview-status")).toContainText("Complete — all 2 applicable history fields answered", { timeout: 10000 });
+  await expect(page.locator("#hist-h_movement_persistence_4w-unknown")).toBeChecked();
+  for (const field of ["h_exposure_duration_3m", "h_exposure_1m_if_60plus", "h_medication_timeline_documented", "h_onset_timing", "h_trial_adequacy_prior", "h_prior_response", "h_monitoring_baseline", "h_functional_impact", "h_alternative_cause_considered", "h_falls_or_limitation"]) {
     await expect(page.locator(`[name="hist-${field}"]`)).toHaveCount(0);
     await expect(page.locator(`#history-still-needed a[href*="${field}"]`)).toHaveCount(0);
   }
@@ -163,7 +164,7 @@ test("fresh history defaults to Unknown with six applicable fields and no retire
   await expect(page.locator("#hist-h_exposure_dopamine_blocker-provenance")).toContainText("Not yet recorded");
 });
 
-test("history answers save, survive reload and re-login with still-needed guidance", async ({
+test("history answers save and keep applicable completeness after reload and re-login", async ({
   page,
   request,
 }) => {
@@ -179,15 +180,13 @@ test("history answers save, survive reload and re-login with still-needed guidan
   });
 
   const verdict = page.locator("#history-preview-status");
-  await expect(verdict).toContainText("Incomplete", { timeout: 10000 });
-  await expect(verdict).toContainText("5 of 8 applicable fields still need");
-  await expect(page.locator("#history-still-needed")).toBeVisible();
-  await expect(page.locator("#history-still-needed")).toContainText("Still needed:");
+  await expect(verdict).toContainText("Complete — all 4 applicable history fields answered", { timeout: 10000 });
+  await expect(page.locator("#history-still-needed")).toHaveCount(0);
 
   await page.reload();
   await expect(page.locator("#hist-h_exposure_dopamine_blocker-yes")).toBeChecked();
   await expect(page.locator("#hist-h_onset_timing-unknown")).toBeChecked();
-  await expect(page.locator("#history-preview-status")).toContainText("Incomplete", {
+  await expect(page.locator("#history-preview-status")).toContainText("Complete", {
     timeout: 10000,
   });
 
@@ -196,7 +195,7 @@ test("history answers save, survive reload and re-login with still-needed guidan
   await acknowledgeWarning(page);
   await gotoEncounter(page, draftId);
   await expect(page.locator("#hist-h_exposure_dopamine_blocker-yes")).toBeChecked();
-  await expect(page.locator("#history-preview-status")).toContainText("Incomplete", {
+  await expect(page.locator("#history-preview-status")).toContainText("Complete", {
     timeout: 10000,
   });
 });
@@ -212,10 +211,8 @@ test("complete history via UI keeps unknown distinct from false", async ({
 
   const choices: Record<string, string> = {
     h_exposure_dopamine_blocker: "no",
-    h_movement_persistence_4w: "no",
-    h_monitoring_baseline: "no",
+    h_movement_persistence_4w: "yes",
     h_alternative_cause_considered: "unknown",
-    h_functional_impact: "no",
     h_falls_or_limitation: "no",
   };
   for (const [field, value] of Object.entries(choices)) {
@@ -223,7 +220,7 @@ test("complete history via UI keeps unknown distinct from false", async ({
   }
 
   const verdict = page.locator("#history-preview-status");
-  await expect(verdict).toContainText("Complete — all 6 applicable history fields answered", {
+  await expect(verdict).toContainText("Complete — all 4 applicable history fields answered", {
     timeout: 25000,
   });
   await expect(page.locator(".xi-history-summary-note")).toContainText(
@@ -247,7 +244,7 @@ test("exposure and treatment transitions clear hidden answers and provenance whi
   expect(inventory.provenance.h_prior_response.source).toBe("clinician_entry");
   const workflow = inventory.workflow_fields[0];
   await gotoEncounter(page, draftId);
-  await expect(page.locator(".xi-diagnosis-overview")).toContainText("4 / 9 responses");
+  await expect(page.locator(".xi-diagnosis-overview")).toContainText("5 / 5 responses");
   const trial = page.getByRole("group", { name: "Adequacy of prior treatment trial", exact: true });
   const response = page.getByRole("group", { name: "Response to prior treatment", exact: true });
   await expect(trial.getByRole("radio")).toHaveCount(3);
@@ -261,7 +258,7 @@ test("exposure and treatment transitions clear hidden answers and provenance whi
   for (const adequacy of ["adequate", "unknown"]) {
     await page.locator(`#hist-h_trial_adequacy_prior-${adequacy}`).check();
     await expect(response).toHaveCount(0);
-    await expect(page.locator(".xi-diagnosis-overview")).toContainText("3 / 8 responses");
+    await expect(page.locator(".xi-diagnosis-overview")).toContainText("4 / 4 responses");
     await expect.poll(async () => {
       const history = await savedHistory();
       return [history.values.h_trial_adequacy_prior, history.values.h_prior_response ?? null, history.provenance.h_prior_response ?? null];
@@ -276,7 +273,7 @@ test("exposure and treatment transitions clear hidden answers and provenance whi
     await page.locator(`#hist-h_exposure_dopamine_blocker-${exposure}`).check();
     await expect(page.locator("#history-group-treatment")).toHaveCount(0);
     await expect(page.getByRole("link", { name: "Prior treatment", exact: true })).toHaveCount(0);
-    await expect(page.locator(".xi-diagnosis-overview")).toContainText("1 / 6 responses");
+    await expect(page.locator(".xi-diagnosis-overview")).toContainText("2 / 2 responses");
     await expect.poll(async () => {
       const history = await savedHistory();
       return [history.values.h_exposure_dopamine_blocker,
@@ -293,6 +290,94 @@ test("exposure and treatment transitions clear hidden answers and provenance whi
     await expect.poll(async () => (await savedHistory()).values.h_trial_adequacy_prior).toBe("inadequate");
     expect((await savedHistory()).values[workflow.id]).toBe(workflow.permitted[0]);
   }
+});
+
+test("movement and established treatment reveal only applicable controls and clear hidden saved provenance", async ({ page, request }) => {
+  test.setTimeout(120000);
+  const physician = await loginPhysician(page, request, "e2ehistmovement");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  const prefix = "candidate/history/pharmacotherapy.v2/";
+  const context = prefix + "h_antipsychotic_treatment_context";
+  const csrf = await physicianSession(request, physician);
+  const seeded = await request.post(`/api/v1/encounters/${draftId}/history`, {
+    headers: { "X-CSRF-Token": csrf, "If-Match": '"1"' },
+    data: { values: { h_exposure_dopamine_blocker: "yes", h_movement_persistence_4w: "yes",
+      h_trial_adequacy_prior: "inadequate", h_alternative_cause_considered: "yes", h_falls_or_limitation: "no", [context]: "Aripiprazole" } },
+  });
+  expect(seeded.status(), await seeded.text()).toBe(200);
+  const read = async () => (await (await request.get(`/api/v1/encounters/${draftId}/history`)).json());
+  expect((await read()).provenance.h_alternative_cause_considered.source).toBe("clinician_entry");
+  expect((await read()).provenance[context].source).toBe("clinician_entry");
+  await gotoEncounter(page, draftId);
+  await expect(page.locator(".xi-diagnosis-overview")).toContainText("7 / 7 responses");
+  for (const label of ["Involuntary movements persist over at least 4 weeks", "Alternative explanations ruled out", "Falls or functional limitation from parkinsonian signs"]) {
+    const group = page.getByRole("group", { name: label, exact: true });
+    await expect(group.getByRole("radio")).toHaveCount(3);
+    for (const name of ["Yes", "No", "Unknown"]) await expect(group.getByRole("radio", { name, exact: true })).toBeVisible();
+  }
+  const established = page.getByLabel("Explicit established antipsychotic", { exact: true });
+  await expect(established).toHaveValue("Aripiprazole");
+  const options = await established.locator("option").evaluateAll((nodes) => nodes.map((node) => (node as HTMLOptionElement).value));
+  expect(options).toHaveLength(23);
+  expect(options).toContain("unknown");
+  for (const value of ["", "not_assessed", "NoEstablishedTreatment"]) expect(options).not.toContain(value);
+  for (const value of ["no", "unknown"]) {
+    await page.locator(`#hist-h_movement_persistence_4w-${value}`).check();
+    for (const id of ["h_alternative_cause_considered", "h_falls_or_limitation"]) {
+      await expect(page.locator(`[name="hist-${id}"]`)).toHaveCount(0);
+      await expect(page.locator(`#history-still-needed a[href*="${id}"]`)).toHaveCount(0);
+    }
+    await expect.poll(async () => {
+      const h = await read();
+      return [h.values.h_movement_persistence_4w, ...["h_alternative_cause_considered", "h_falls_or_limitation"].flatMap((id) => [h.values[id] ?? null, h.provenance[id] ?? null])];
+    }).toEqual([value, null, null, null, null]);
+    await page.reload();
+    await page.locator("#hist-h_movement_persistence_4w-yes").check();
+    for (const id of ["h_alternative_cause_considered", "h_falls_or_limitation"]) await expect(page.locator(`#hist-${id}-unknown`)).toBeChecked();
+    await expect.poll(async () => (await read()).values.h_movement_persistence_4w).toBe("yes");
+    await page.reload();
+    await expect(page.locator("#hist-h_alternative_cause_considered-unknown")).toBeChecked();
+    await page.locator("#hist-h_alternative_cause_considered-no").check();
+    await expect.poll(async () => (await read()).values.h_alternative_cause_considered).toBe("no");
+  }
+  for (const value of ["no", "unknown"]) {
+    await page.locator(`#hist-h_exposure_dopamine_blocker-${value}`).check();
+    await expect(established).toHaveCount(0);
+    await expect.poll(async () => {
+      const h = await read(); return [h.values.h_exposure_dopamine_blocker, h.values[context] ?? null, h.provenance[context] ?? null];
+    }).toEqual([value, null, null]);
+    await page.reload();
+    await expect(established).toHaveCount(0);
+    await page.locator("#hist-h_exposure_dopamine_blocker-yes").check();
+    await expect(established).toHaveValue("unknown");
+    await established.selectOption("Aripiprazole");
+    await expect.poll(async () => (await read()).values[context]).toBe("Aripiprazole");
+  }
+});
+
+test("pharmacotherapy tri-state defaults persist and retired controls never appear in readiness", async ({ page, request }) => {
+  const physician = await loginPhysician(page, request, "e2ehistpharm");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  await gotoEncounter(page, draftId);
+  const prefix = "candidate/history/pharmacotherapy.v2/";
+  for (const field of ["h_physical_vulnerability", "h_substance_contribution"]) {
+    const select = page.locator(`[id="hist-${prefix}${field}"]`);
+    await expect(select).toHaveValue("unknown");
+    expect(await select.locator("option").evaluateAll((nodes) => nodes.map((node) => (node as HTMLOptionElement).value))).toEqual(["yes", "no", "unknown"]);
+    await select.selectOption("no");
+  }
+  await expect.poll(async () => (await (await request.get(`/api/v1/encounters/${draftId}/history`)).json()).values[prefix + "h_substance_contribution"]).toBe("no");
+  await page.reload();
+  for (const field of ["h_physical_vulnerability", "h_substance_contribution"]) await expect(page.locator(`[id="hist-${prefix}${field}"]`)).toHaveValue("no");
+  const retired = ["h_prior_treatment_difficulty", "h_preference_barrier", "h_exposure_modifier", "h_trial_duration_review", "h_urgent_safety_concern", "h_monitoring_gap"];
+  for (const id of retired) {
+    await expect(page.locator(`[id="hist-${prefix}${id}"]`)).toHaveCount(0);
+    await expect(page.locator(`a[href*="${encodeURIComponent(prefix + id)}"]`)).toHaveCount(0);
+  }
+  const readiness = await (await request.get(`/api/v1/encounters/${draftId}/proposal-readiness`)).json();
+  for (const id of retired) expect(readiness.blockers.map((b: { source_path: string }) => b.source_path)).not.toContain(prefix + id);
+  // A similarly named question in another package remains independently assessed.
+  await expect(page.locator('[id="hist-candidate/history/high_suicide_clozapine.v1/h_urgent_safety_concern"]')).toBeVisible();
 });
 
 test("all five onset choices persist through autosave and reload", async ({ page, request }) => {
@@ -460,10 +545,10 @@ test("history 412 keeps edits and reconciles via Reload/Retry", async ({
   expect(winner).toBe(3);
 
   // This tab is stale on revision 2: the autosave 412s and keeps the edit.
-  await page.locator("#hist-h_monitoring_baseline-no").check();
+  await page.locator("#hist-h_movement_persistence_4w-no").check();
   const conflict = page.getByRole("heading", { name: "Another tab saved first" });
   await expect(conflict).toBeVisible({ timeout: 15000 });
-  await expect(page.locator("#hist-h_monitoring_baseline-no")).toBeChecked();
+  await expect(page.locator("#hist-h_movement_persistence_4w-no")).toBeChecked();
   await expect(status).toContainText("Conflict");
 
   await page.getByRole("button", { name: "Keep my edits and retry" }).click();
@@ -471,7 +556,7 @@ test("history 412 keeps edits and reconciles via Reload/Retry", async ({
 
   await page.reload();
   await expect(page.locator("#hist-h_exposure_dopamine_blocker-yes")).toBeChecked();
-  await expect(page.locator("#hist-h_monitoring_baseline-no")).toBeChecked();
+  await expect(page.locator("#hist-h_movement_persistence_4w-no")).toBeChecked();
 });
 
 test("failed history save never shows Saved; Retry recovers", async ({

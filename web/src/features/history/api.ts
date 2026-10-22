@@ -61,6 +61,8 @@ export interface WorkflowHistoryField {
   definition: string;
   operationalization?: string;
   time_window: string;
+  default_value?: string;
+  show_if?: { field_id: string; value: string };
 }
 
 export interface HistoryPreview {

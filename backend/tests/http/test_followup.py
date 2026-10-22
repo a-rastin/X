@@ -198,7 +198,10 @@ def _free_slot_for_followup(client, csrf, created: dict) -> str:
 # Test-only signed baseline fixture (inline snapshot; S49 is not a dependency).
 BASELINE_HISTORY = {
     "h_exposure_dopamine_blocker": "yes",
-    "h_monitoring_baseline": "no",
+    "h_movement_persistence_4w": "unknown",
+    "candidate/history/pharmacotherapy.v2/h_physical_vulnerability": "unknown",
+    "candidate/history/pharmacotherapy.v2/h_substance_contribution": "unknown",
+    "candidate/history/pharmacotherapy.v2/h_antipsychotic_treatment_context": "unknown",
     "h_onset_timing": "unknown",
     "h_trial_adequacy_prior": "unknown",
 }
@@ -478,7 +481,13 @@ def test_followup_without_baseline_has_empty_shell(
     assert started.status_code == 201, started.text
     encounter_id = started.json()["encounter"]["id"]
     draft_data = started.json()["draft_data"]
-    assert draft_data["history"]["values"] == {"h_exposure_dopamine_blocker": "unknown"}
+    assert draft_data["history"]["values"] == {
+        "h_exposure_dopamine_blocker": "unknown",
+        "h_movement_persistence_4w": "unknown",
+        "candidate/history/pharmacotherapy.v2/h_physical_vulnerability": "unknown",
+        "candidate/history/pharmacotherapy.v2/h_substance_contribution": "unknown",
+    }
+    assert draft_data["history"]["provenance"] == {}
     assert draft_data["history"]["reconciliation"] == {
         "status": "not_required",
         "baseline_encounter_id": None,

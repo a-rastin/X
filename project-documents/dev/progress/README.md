@@ -3,8 +3,9 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest bounded follow-up is the [conditional History correction (2026-10-22)](s12.md#follow-up-2026-10-22--conditional-history-and-unknown-defaults):
-nine core fields, 6/8/9 applicable, three retired questions, and Unknown defaults.
+The latest bounded follow-up is the [History cleanup (2026-10-22)](s12.md#follow-up-2026-10-22--history-cleanup-and-versioned-pharmacotherapy-inputs):
+seven core fields, conditional movement questions, and a versioned three-input
+pharmacotherapy contract. Implementation and verification are recovered; see the handoff.
 The preceding [proposal-readiness fix (2026-10-22)](s48.md#follow-up-2026-10-22--check-proposal-readiness-before-creating-a-run):
 History lists unresolved required context and Step 7 checks saved readiness before creating a run.
 The preceding [complete supplied DDInter candidate and

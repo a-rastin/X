@@ -388,6 +388,7 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
   // them — never claim a question is fresh without a successful read).
   const [freshByRun, setFreshByRun] = useState<Record<string, InputFreshness>>({});
   const [freshDone, setFreshDone] = useState(false);
+  const [historyContractChanged, setHistoryContractChanged] = useState(false);
   const freshKeyRef = useRef<string | null>(null);
   const [prereq, setPrereq] = useState<{
     diag: DiagnosisPreview | null;
@@ -426,6 +427,7 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
     setReviews({});
     setReadiness(null);
     setReadinessError(null);
+    setHistoryContractChanged(false);
     setFreshByRun({});
     setFreshDone(false);
     freshKeyRef.current = null;
@@ -543,6 +545,7 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
         sourceRevision: revision,
       });
       batchIdRef.current = started.batch.id;
+      setHistoryContractChanged(false);
       setBatch(null);
       setBatchId(started.batch.id);
       setPhase({ kind: "tracking" });
@@ -584,7 +587,10 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
     }).catch((err: unknown) => {
       if (cancelled) return;
       if (err instanceof ApiError && err.status === 401) onSessionExpired();
-      else setReadinessError(failAs(err, "Proposal readiness could not be read. Check again before starting a new run."));
+      else {
+        if (err instanceof ApiError && err.code === "HISTORY_INPUT_CONTRACT_CHANGED") setHistoryContractChanged(true);
+        setReadinessError(failAs(err, "Proposal readiness could not be read. Check again before starting a new run."));
+      }
     });
     return () => { cancelled = true; };
   }, [batchId, encounterId, savedRevision, hasUnsaved, reloadKey, failAs, onSessionExpired]);
@@ -778,16 +784,17 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
   /** Precise failed-question retry: reference the server-pinned batch at the
    * current revision. The backend carries completed baselines forward and
    * resumes at the failed stage (S47); unchanged inputs reuse the batch. */
-  const retryRun = useCallback(async () => {
+  const retryRun = useCallback(async (useCurrentRelease = false) => {
     if (startBusyRef.current) return;
     startBusyRef.current = true;
     setActionError(null);
     setActionBusy(true);
     try {
-      const revision = await prepareStart(batchIdRef.current ?? undefined);
+      const sourceBatchId = useCurrentRelease ? undefined : batchIdRef.current ?? undefined;
+      const revision = await prepareStart(sourceBatchId);
       if (revision === null || !mountedRef.current) return;
       const started = await startGeneration(
-        encounterId, revision, batchIdRef.current ?? undefined,
+        encounterId, revision, sourceBatchId,
       );
       writeStoredProposal(encounterId, {
         batchId: started.batch.id,
@@ -795,6 +802,7 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
         sourceRevision: revision,
       });
       batchIdRef.current = started.batch.id;
+      setHistoryContractChanged(false);
       setBatch(null);
       setPollError(null);
       setBatchId(started.batch.id);
@@ -804,6 +812,7 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
         onSessionExpired();
         return;
       }
+      if (err instanceof ApiError && err.code === "HISTORY_INPUT_CONTRACT_CHANGED") setHistoryContractChanged(true);
       setActionError(
         err instanceof ApiError
           ? `Retry failed: ${err.message}`
@@ -990,6 +999,15 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
       {phase.kind === "starting" && <p role="status">Starting generation…</p>}
 
       {readinessError && <p className="xi-form-error" role="alert">{readinessError}</p>}
+      {historyContractChanged && (
+        <div className="xi-warning-panel">
+          <p>This recorded run uses earlier History questions. Review current History before starting a new run. The recorded run remains available for review.</p>
+          <button className="xi-btn xi-btn-secondary" type="button" data-testid="proposal-start-current-history"
+            disabled={actionBusy} onClick={() => void retryRun(true)}>
+            {actionBusy ? "Starting…" : "Start new run with current History"}
+          </button>
+        </div>
+      )}
       {readiness && !hasUnsaved && readiness.source_revision === savedRevision && <ProposalReadinessSummary readiness={readiness} encounterId={encounterId} />}
 
       {phase.kind === "error" && (
