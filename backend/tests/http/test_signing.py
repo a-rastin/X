@@ -2045,3 +2045,118 @@ def test_sign_rejects_failed_current_calculation(clean_registry, monkeypatch, tm
     # No partial snapshot; draft still readable.
     assert client.get(f"/api/v1/patients/{patient_id}/chart").json()["signed_snapshots"] == []
     assert client.get(f"/api/v1/encounters/{encounter_id}").status_code == 200
+
+
+def test_historical_signed_history_is_preserved_but_followup_copy_uses_current_contract(
+    clean_registry, monkeypatch, tmp_path
+) -> None:
+    import uuid
+
+    from sqlalchemy import update
+
+    from x_insight.cases import tables as cases_tables
+
+    client, csrf, eid, patient_id, revision, batch, runs = _signable_two_question_setup(
+        clean_registry, monkeypatch, tmp_path, "dr_history_signed"
+    )
+    acceptances, review_revisions = {}, {}
+    for run in runs.values():
+        review = client.get(f"/api/v1/question-runs/{run['id']}/review").json()
+        accepted = client.post(
+            f"/api/v1/question-runs/{run['id']}/acceptance",
+            json=_accept_body(review),
+            headers=_auth_headers(csrf),
+        )
+        assert accepted.status_code == 200, accepted.text
+        acceptances[run["id"]] = accepted.json()["acceptance"]
+        review_revisions[run["id"]] = accepted.json()["review_revision"]
+    planned = client.patch(
+        f"/api/v1/encounters/{eid}/secondary-plan",
+        json={"text": "Synthetic History compatibility plan", "expected_plan_revision": 1},
+        headers={**_auth_headers(csrf), "If-Match": contracts.format_etag(1)},
+    )
+    assert planned.status_code == 200, planned.text
+    raw_draft = client.get(f"/api/v1/encounters/{eid}").json()["draft_data"]
+    obsolete = {
+        "h_exposure_duration_3m": "yes",
+        "h_exposure_1m_if_60plus": "yes",
+        "h_medication_timeline_documented": "yes",
+        "h_onset_timing": "during_exposure",
+        "h_trial_adequacy_prior": "inadequate",
+        "h_prior_response": "response",
+    }
+    raw_draft["history"]["values"].update(obsolete)
+    with clean_registry.begin() as connection:
+        connection.execute(
+            update(cases_tables.encounters)
+            .where(cases_tables.encounters.c.id == uuid.UUID(eid))
+            .values(draft_data=raw_draft)
+        )
+    signed = client.post(
+        f"/api/v1/encounters/{eid}/sign",
+        json=_sign_body_after_accept(revision, 2, batch["id"], acceptances, review_revisions),
+        headers={**_auth_headers(csrf), "If-Match": contracts.format_etag(revision)},
+    )
+    assert signed.status_code == 200, signed.text
+    legacy_values = {
+        "h_exposure_dopamine_blocker": "yes",
+        "h_exposure_duration_3m": "yes",
+        "h_exposure_1m_if_60plus": "yes",
+        "h_medication_timeline_documented": "yes",
+        "h_onset_timing": "not_assessed",
+        "h_trial_adequacy_prior": "adequate",
+        "h_prior_response": "response",
+        "h_monitoring_baseline": "no",
+    }
+    historical = signed.json()["snapshot"]["snapshot"]
+    assert not set(obsolete) & set(historical["draft_data"]["history"]["values"])
+    historical["draft_data"]["history"] = {"values": legacy_values}
+    # A genuine historical fixture is immutable to callers; insert its old shape once.
+    with clean_registry.begin() as connection:
+        connection.execute(
+            update(cases_tables.signed_encounter_snapshots)
+            .where(cases_tables.signed_encounter_snapshots.c.encounter_id == uuid.UUID(eid))
+            .values(snapshot=historical, snapshot_hash=contracts.canonical_hash(historical))
+        )
+    chart = client.get(f"/api/v1/patients/{patient_id}/chart").json()
+    assert (
+        chart["signed_snapshots"][0]["snapshot"]["draft_data"]["history"]["values"] == legacy_values
+    )
+    baseline = {
+        "history_values": legacy_values,
+        "prior_scores": {},
+        "medications": [{"catalog_drug_id": "catalog_alpha"}, {"catalog_drug_id": "catalog_gamma"}],
+    }
+    forged = client.post(
+        f"/api/v1/patients/{patient_id}/encounters",
+        json={
+            "kind": "follow_up",
+            "baseline_encounter_id": eid,
+            "baseline": {
+                **baseline,
+                "history_values": {**legacy_values, "h_exposure_duration_3m": "no"},
+            },
+        },
+        headers=_auth_headers(csrf),
+    )
+    assert forged.status_code == 422, forged.text
+    copied = client.post(
+        f"/api/v1/patients/{patient_id}/encounters",
+        json={"kind": "follow_up", "baseline_encounter_id": eid, "baseline": baseline},
+        headers=_auth_headers(csrf),
+    )
+    assert copied.status_code == 201, copied.text
+    copied_values = copied.json()["draft_data"]["history"]["values"]
+    assert copied_values == {
+        "h_exposure_dopamine_blocker": "yes",
+        "h_onset_timing": "unknown",
+        "h_trial_adequacy_prior": "adequate",
+        "h_monitoring_baseline": "no",
+    }
+    assert set(copied.json()["draft_data"]["history"]["provenance"]) == set(copied_values)
+    followup_id = copied.json()["encounter"]["id"]
+    preview = client.get(f"/api/v1/encounters/{followup_id}/followup-baseline")
+    assert preview.status_code == 200, preview.text
+    assert preview.json()["baseline"]["history_values"] == copied_values
+    reread = client.get(f"/api/v1/patients/{patient_id}/chart").json()
+    assert reread["signed_snapshots"][0]["snapshot"] == historical

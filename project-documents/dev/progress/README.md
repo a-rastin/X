@@ -3,7 +3,9 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest bounded follow-up is the [proposal-readiness fix (2026-10-22)](s48.md#follow-up-2026-10-22--check-proposal-readiness-before-creating-a-run):
+The latest bounded follow-up is the [conditional History correction (2026-10-22)](s12.md#follow-up-2026-10-22--conditional-history-and-unknown-defaults):
+nine core fields, 6/8/9 applicable, three retired questions, and Unknown defaults.
+The preceding [proposal-readiness fix (2026-10-22)](s48.md#follow-up-2026-10-22--check-proposal-readiness-before-creating-a-run):
 History lists unresolved required context and Step 7 checks saved readiness before creating a run.
 The preceding [complete supplied DDInter candidate and
 verification (2026-10-21)](s18.md#follow-up-2026-10-21--complete-supplied-ddinter-candidate)
@@ -105,7 +107,7 @@ the missing release in the local application database.
 | S09 | [Implement diagnosis, threshold warning, and bypass (2026-10-04)](s09.md) |
 | S10 | [Implement PANSS without implicit minimum answers (2026-10-04)](s10.md) |
 | S11 | [Implement C-SSRS form and distinct results (2026-10-04)](s11.md) |
-| S12 | [Structured history and adverse effects; History UI redesign (2026-10-20)](s12.md) |
+| S12 | [Structured history and adverse effects; conditional History correction (2026-10-22)](s12.md) |
 | S13 | [Page notes (2026-10-05); removed, working note retained (2026-10-20)](s13.md) |
 | S14 | [Build shared chart and follow-up draft entry (2026-10-05)](s14.md) |
 | S15 | [Parse one source through the ingestion interface (2026-10-05)](s15.md) |

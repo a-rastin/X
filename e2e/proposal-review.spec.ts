@@ -348,7 +348,7 @@ test("S48 readiness core completion does not start generation; all blockers link
   await expect(control).toBeVisible();
   await expect(control).toBeFocused();
   await expect(page.locator("#history-workflow-pharmacotherapy")).toBeVisible();
-  await expect(page.getByText("Complete — all 12 history fields answered.", { exact: true })).toBeVisible();
+  await expect(page.getByText("Complete — all 8 applicable history fields answered.", { exact: true })).toBeVisible();
   expect(posts.count).toBe(0);
 });
 
@@ -1839,6 +1839,7 @@ test("S48 §§2+4 two-question failure shows partial, retry references server-pi
     await retry.click();
     await expect.poll(() => postCount, { timeout: 10000 }).toBe(1);
     expect(postedBodies[0]).toEqual({ source_batch_id: batchId });
+    await expect(panel.locator(".xi-proposal-meta")).toContainText(nextBatchId);
     const storedAfter = await page.evaluate((id) => localStorage.getItem(`xi.proposal.${id}`), draftId);
     expect(storedAfter).not.toBeNull();
     expect(storedAfter as string).toContain(nextBatchId);

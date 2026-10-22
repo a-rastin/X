@@ -273,9 +273,10 @@ test("baseline provenance, pending reconciliation, and historical prior scores r
 
   // Prior scores never fill the fresh forms: PANSS/C-SSRS stay unanswered.
   await page.locator("#wizard-step-panss").click();
-  await expect(page.locator("#panss-preview-status")).toContainText("unanswered", {
+  await expect(page.locator("#panss-preview-status")).toContainText("No answers yet. Answer all 30 items", {
     timeout: 15000,
   });
+  await expect(page.locator('input[name^="panss-"]:checked')).toHaveCount(0);
   await page.locator("#wizard-step-cssrs").click();
   await expect(page.locator("#cssrs-heading")).toBeVisible();
 });

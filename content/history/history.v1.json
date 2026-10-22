@@ -12,11 +12,6 @@
       "note": "Any time before the current encounter, including prior treatment episodes."
     },
     {
-      "id": "past_3_months",
-      "window": "past_3_months",
-      "note": "Three months before the current assessment; covers the 3-month dopamine-blocker exposure rule."
-    },
-    {
       "id": "past_4_weeks",
       "window": "past_4_weeks",
       "note": "Four weeks before the current assessment; covers movement persistence and withdrawal windows."
@@ -40,39 +35,16 @@
   "fields": [
     {
       "id": "h_exposure_dopamine_blocker",
-      "label": "Dopamine-blocker exposure (lifetime)",
-      "type": "tristate_plus_not_assessed",
-      "permitted_values": ["yes", "no", "unknown", "not_assessed"],
+      "label": "History of lifetime antipsychotic exposure",
+      "type": "tristate",
+      "permitted_values": ["yes", "no", "unknown"],
       "period": "lifetime",
       "category": "exposure",
       "provenance": "clinician_entry_or_copied_baseline",
       "analysis_visible": true,
       "reconciliation_rule": "follow_up_copies_require_reconciliation",
-      "source_locator": "tardive-dyskinesia-criteria.md §Diagnostic features (Exposure); parkinsonism-criteria.md §Clinical assessment (complete medication history)"
-    },
-    {
-      "id": "h_exposure_duration_3m",
-      "label": "Cumulative antipsychotic exposure of at least 3 months",
-      "type": "tristate_plus_not_assessed",
-      "permitted_values": ["yes", "no", "unknown", "not_assessed"],
-      "period": "past_3_months",
-      "category": "duration",
-      "provenance": "clinician_entry_or_copied_baseline",
-      "analysis_visible": true,
-      "reconciliation_rule": "follow_up_copies_require_reconciliation",
-      "source_locator": "tardive-dyskinesia-criteria.md §Diagnostic features (Exposure: at least 3 months); §Research criteria (Schooler-Kane: at least 3 months cumulative)"
-    },
-    {
-      "id": "h_exposure_1m_if_60plus",
-      "label": "Exposure of at least 1 month at age 60 or older",
-      "type": "tristate_plus_not_assessed",
-      "permitted_values": ["yes", "no", "unknown", "not_assessed"],
-      "period": "past_3_months",
-      "category": "duration",
-      "provenance": "clinician_entry_or_copied_baseline",
-      "analysis_visible": true,
-      "reconciliation_rule": "follow_up_copies_require_reconciliation",
-      "source_locator": "tardive-dyskinesia-criteria.md §Diagnostic features (Exposure: 1 month at age 60 or older)"
+      "source_locator": "tardive-dyskinesia-criteria.md §Diagnostic features (Exposure); parkinsonism-criteria.md §Clinical assessment (complete medication history)",
+      "default": "unknown"
     },
     {
       "id": "h_movement_persistence_4w",
@@ -90,37 +62,63 @@
       "id": "h_onset_timing",
       "label": "Onset timing relative to exposure or withdrawal",
       "type": "enum",
-      "permitted_values": ["during_exposure", "within_4w_oral_withdrawal", "within_8w_lai_withdrawal", "unknown", "not_assessed"],
+      "permitted_values": ["during_exposure", "within_4w_oral_withdrawal", "within_8w_lai_withdrawal", "other", "unknown"],
       "period": "current_encounter",
       "category": "exposure",
       "provenance": "clinician_entry_or_copied_baseline",
       "analysis_visible": true,
       "reconciliation_rule": "follow_up_copies_require_reconciliation",
-      "source_locator": "tardive-dyskinesia-criteria.md §Diagnostic features (Onset); akathisia-criteria.md §Diagnostic features (Medication relationship: within 4 weeks); acute-dystonia-criteria.md §Diagnostic features (usually within days)"
+      "source_locator": "tardive-dyskinesia-criteria.md §Diagnostic features (Onset); akathisia-criteria.md §Diagnostic features (Medication relationship: within 4 weeks); acute-dystonia-criteria.md §Diagnostic features (usually within days)",
+      "default": "unknown",
+      "visible_when": {
+        "h_exposure_dopamine_blocker": "yes"
+      },
+      "value_labels": {
+        "during_exposure": "During exposure",
+        "within_4w_oral_withdrawal": "Within 4 weeks after oral withdrawal",
+        "within_8w_lai_withdrawal": "Within 8 weeks after LAI withdrawal",
+        "other": "Other",
+        "unknown": "Unknown"
+      },
+      "other_description": "Other onset timing outside the exposure and withdrawal options listed above."
     },
     {
       "id": "h_trial_adequacy_prior",
       "label": "Adequacy of prior treatment trial",
       "type": "enum",
-      "permitted_values": ["adequate", "inadequate", "unknown", "not_assessed"],
+      "permitted_values": ["adequate", "inadequate", "unknown"],
       "period": "lifetime",
       "category": "trial_adequacy",
       "provenance": "clinician_entry_or_copied_baseline",
       "analysis_visible": true,
       "reconciliation_rule": "follow_up_copies_require_reconciliation",
-      "source_locator": "Owner-permitted trial-adequacy field for R7/F5 review (2026-10-04 Q/A); concrete thresholds require owner review, none invented here"
+      "source_locator": "Owner-permitted trial-adequacy field for R7/F5 review (2026-10-04 Q/A); concrete thresholds require owner review, none invented here",
+      "default": "unknown",
+      "visible_when": {
+        "h_exposure_dopamine_blocker": "yes"
+      }
     },
     {
       "id": "h_prior_response",
       "label": "Response to prior treatment",
       "type": "enum",
-      "permitted_values": ["response", "no_response", "unknown", "not_assessed"],
+      "permitted_values": ["response", "no_response", "unknown"],
       "period": "lifetime",
       "category": "prior_response",
       "provenance": "clinician_entry_or_copied_baseline",
       "analysis_visible": true,
       "reconciliation_rule": "follow_up_copies_require_reconciliation",
-      "source_locator": "Owner-permitted prior-response field for R7/F5 review (2026-10-04 Q/A); no percent-change cutoff invented here"
+      "source_locator": "Owner-permitted prior-response field for R7/F5 review (2026-10-04 Q/A); no percent-change cutoff invented here",
+      "default": "unknown",
+      "visible_when": {
+        "h_exposure_dopamine_blocker": "yes",
+        "h_trial_adequacy_prior": "inadequate"
+      },
+      "value_labels": {
+        "response": "Some level of response",
+        "no_response": "No response",
+        "unknown": "Unknown"
+      }
     },
     {
       "id": "h_monitoring_baseline",
@@ -169,18 +167,6 @@
       "analysis_visible": true,
       "reconciliation_rule": "follow_up_copies_require_reconciliation",
       "source_locator": "parkinsonism-criteria.md §Assessment tool (falls or functional limitations)"
-    },
-    {
-      "id": "h_medication_timeline_documented",
-      "label": "Medication timeline documented (agents and changes, no regimen details)",
-      "type": "tristate_plus_not_assessed",
-      "permitted_values": ["yes", "no", "unknown", "not_assessed"],
-      "period": "current_encounter",
-      "category": "exposure",
-      "provenance": "clinician_entry_or_copied_baseline",
-      "analysis_visible": true,
-      "reconciliation_rule": "follow_up_copies_require_reconciliation",
-      "source_locator": "acute-dystonia-criteria.md §Clinical assessment (medication timeline); akathisia-criteria.md §Clinical assessment (sequence of medication changes); regimen details excluded per FR-14"
     }
   ],
   "excluded_fields": [
@@ -214,7 +200,7 @@
     }
   ],
   "provenance_contract": {
-    "per_field": "Each stored value carries {source: clinician_entry|copied_baseline, author_id, recorded_at (UTC Z), baseline_encounter_id when copied}.",
+    "per_field": "Explicitly stored answers may carry {source: clinician_entry|copied_baseline, author_id, recorded_at (UTC Z), baseline_encounter_id when copied}. Default unknown values do not fabricate clinician or baseline attribution.",
     "unknown_distinct_from_false": "unknown means uncertain; not_assessed means skipped; no means explicitly false. None becomes false.",
     "server_attribution": "Strict writes stamp author_id/recorded_at server-side; autosaved PATCH bodies preserve client-supplied provenance verbatim."
   },
@@ -228,8 +214,8 @@
     "notes": "analysis_visible false: page notes (S13) never influence applicability, projections, inference, prompts, CPTs, DDI, or selection; enforced by serialization allowlists."
   },
   "completeness": {
-    "type": "all_fields_answered_or_explicitly_unknown_or_not_assessed",
-    "rule": "Complete when every field id holds a permitted value (yes/no/unknown/not_assessed or its enum). Missing field ids are missing_item_ids; undeclared ids are item_errors; excluded ids are rejected. Null scores do not apply to history; completeness is the result."
+    "type": "all_applicable_fields_answered",
+    "rule": "Complete when every currently visible core field holds a permitted value. Revised exposure, onset, adequacy and response fields default to unknown without clinician attribution. Onset and prior treatment apply only to lifetime exposure yes; response additionally requires an inadequate prior trial. Hidden answers and their provenance are omitted. Missing applicable fields are missing_item_ids; undeclared and excluded ids are item_errors. History has no scores."
   },
   "source": {
     "note": "Minimum inventory derived from the four adverse-effect criteria documents plus owner-permitted exposure/duration/trial-adequacy/prior-response/monitoring categories (2026-10-04 Q/A). Concrete thresholds require owner review; none invented here."
@@ -257,56 +243,43 @@
         "sha256": "495a60d767a32558583b092fcf072ec1a7eb49d70a730725e97986d11a01db7d"
       }
     ],
-    "assumptions": [
-      "Twelve fields are the minimum covering F1-F4 context plus R7/F5 trial-adequacy/prior-response review; additions arrive as versioned changes.",
-      "Tri-state plus not_assessed (yes/no/unknown/not_assessed) keeps uncertain and skipped distinct from false."
-    ],
-    "source_gaps": [
-      "Concrete trial-adequacy thresholds and no-improvement percent-change cutoffs are not defined here (S37 owns the no-improvement definition).",
-      "Observation windows for established-case review (R7) require owner approval of the concrete inventory."
-    ],
+    "assumptions": ["The current core inventory contains nine fields; conditional exposure and treatment questions contribute only while visible. The three removed questions are not analysis inputs. Versioned reviewed workflow context remains separate.", "Revised exposure and treatment questions use unknown as the uncertain default, with no not_assessed option. Other tri-state plus not_assessed fields retain their existing distinction from false."],
+    "source_gaps": ["Concrete trial-adequacy thresholds and no-improvement percent-change cutoffs are not defined here (S37 owns the no-improvement definition).", "Observation windows for established-case review (R7) require owner approval of the concrete inventory."],
     "independent_examples": [
       {
         "name": "all_unknown_fresh",
         "values": {},
-        "expected": "status unanswered, missing all 12 field ids, no scores."
+        "expected": "status partial, exposure unknown without attribution, five remaining applicable core fields missing, no scores."
       },
       {
         "name": "complete_explicit_negatives",
         "values": {
           "h_exposure_dopamine_blocker": "no",
-          "h_exposure_duration_3m": "no",
-          "h_exposure_1m_if_60plus": "no",
           "h_movement_persistence_4w": "no",
-          "h_onset_timing": "not_assessed",
-          "h_trial_adequacy_prior": "not_assessed",
-          "h_prior_response": "not_assessed",
           "h_monitoring_baseline": "no",
           "h_alternative_cause_considered": "unknown",
           "h_functional_impact": "no",
-          "h_falls_or_limitation": "no",
-          "h_medication_timeline_documented": "no"
+          "h_falls_or_limitation": "no"
         },
         "expected": "status complete, missing [], explicit no stays no (never unknown)."
       },
       {
         "name": "undeclared_rejected",
-        "values": {"h_exposure_dopamine_blocker": "yes", "dose": "5mg"},
+        "values": {
+          "h_exposure_dopamine_blocker": "yes",
+          "dose": "5mg"
+        },
         "expected": "item_errors for dose (excluded) and missing remaining fields; aggregates suppressed."
       }
     ],
     "severity_mapping": "History carries no severity; severity lives on the four effects under reviewed definitions.",
     "network_mappings": {
-      "F1_tardive_dyskinesia": ["h_exposure_dopamine_blocker", "h_exposure_duration_3m", "h_exposure_1m_if_60plus", "h_movement_persistence_4w", "h_onset_timing", "h_alternative_cause_considered", "h_functional_impact"],
-      "F2_akathisia": ["h_onset_timing", "h_medication_timeline_documented", "h_alternative_cause_considered", "h_functional_impact"],
-      "F3_parkinsonism": ["h_medication_timeline_documented", "h_alternative_cause_considered", "h_falls_or_limitation", "h_monitoring_baseline"],
-      "F4_acute_dystonia": ["h_medication_timeline_documented", "h_onset_timing", "h_alternative_cause_considered"],
+      "F1_tardive_dyskinesia": ["h_exposure_dopamine_blocker", "h_movement_persistence_4w", "h_onset_timing", "h_alternative_cause_considered", "h_functional_impact"],
+      "F2_akathisia": ["h_onset_timing", "h_alternative_cause_considered", "h_functional_impact"],
+      "F3_parkinsonism": ["h_alternative_cause_considered", "h_falls_or_limitation", "h_monitoring_baseline"],
+      "F4_acute_dystonia": ["h_onset_timing", "h_alternative_cause_considered"],
       "R7_F5_trial_context": ["h_trial_adequacy_prior", "h_prior_response", "h_exposure_dopamine_blocker"]
     },
-    "mapping_gaps": [
-      "R7/F5 concrete trial-adequacy windows and no-improvement baselines need owner review before package use (S32/S37).",
-      "F2/F3 differential-diagnosis fields beyond h_alternative_cause_considered need owner review before package use (S34/S35).",
-      "No history field maps dose/route/frequency/active-stopped by design (FR-14 exclusion)."
-    ]
+    "mapping_gaps": ["R7/F5 concrete trial-adequacy windows and no-improvement baselines need owner review before package use (S32/S37).", "F2/F3 differential-diagnosis fields beyond h_alternative_cause_considered need owner review before package use (S34/S35).", "No history field maps dose/route/frequency/active-stopped by design (FR-14 exclusion)."]
   }
 }

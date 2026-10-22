@@ -96,20 +96,24 @@ def _fail(status: int, code: str, message: str, field: str = "package") -> contr
 
 
 def _get_history_values(draft_data: Any) -> dict[str, Any]:
+    from x_insight.cases.history import normalize_history_values
+
     if not isinstance(draft_data, dict):
-        return {}
+        return normalize_history_values({})
     section = draft_data.get("history")
     if not isinstance(section, dict):
-        return {}
+        return normalize_history_values({})
     values = section.get("values")
     if isinstance(values, dict):
-        return dict(values)
+        return normalize_history_values(values)
     # Synthetic direct shape: {"history": {"h_a": "yes"}} (PATCH-permissive).
-    return {
-        key: value
-        for key, value in section.items()
-        if key not in ("provenance", "reconciliation", "phone_update")
-    }
+    return normalize_history_values(
+        {
+            key: value
+            for key, value in section.items()
+            if key not in ("provenance", "reconciliation", "phone_update")
+        }
+    )
 
 
 def _get_medication_ids(draft_data: Any) -> list[str]:

@@ -1,11 +1,12 @@
 /* Structured history in the shared draft autosave body (S12).
  *
- * The original twelve fields retain their ids and response controls. Reviewed
+ * Core fields retain their ids with conditional exposure and treatment controls. Reviewed
  * workflow fields come from GET /encounters/{id}/history with exact versioned
  * source-path ids, definitions and permitted responses. Namespace separation
  * prevents similarly named questions from sharing different assessments.
  * Writes preserve all server-allowlisted history ids, including copied prior
- * workflow context, and discard undeclared keys. Nothing is preselected.
+ * workflow context, and discard undeclared keys. Exposure and treatment default
+ * to Unknown; hidden dependent answers are cleared.
  *
  * Server previews evaluate saved responses. Unknown and not assessed remain
  * distinct from No. Required proposal context must be clarified before its
@@ -69,24 +70,10 @@ interface HistoryField {
 const HISTORY_FIELDS: HistoryField[] = [
   {
     id: "h_exposure_dopamine_blocker",
-    label: "Dopamine-blocker exposure (lifetime)",
-    values: ["yes", "no", "unknown", "not_assessed"],
+    label: "History of lifetime antipsychotic exposure",
+    values: ["yes", "no", "unknown"],
     period: "lifetime",
     category: "exposure",
-  },
-  {
-    id: "h_exposure_duration_3m",
-    label: "Cumulative antipsychotic exposure of at least 3 months",
-    values: ["yes", "no", "unknown", "not_assessed"],
-    period: "past 3 months",
-    category: "duration",
-  },
-  {
-    id: "h_exposure_1m_if_60plus",
-    label: "Exposure of at least 1 month at age 60 or older",
-    values: ["yes", "no", "unknown", "not_assessed"],
-    period: "past 3 months",
-    category: "duration",
   },
   {
     id: "h_movement_persistence_4w",
@@ -102,8 +89,8 @@ const HISTORY_FIELDS: HistoryField[] = [
       "during_exposure",
       "within_4w_oral_withdrawal",
       "within_8w_lai_withdrawal",
+      "other",
       "unknown",
-      "not_assessed",
     ],
     period: "current encounter",
     category: "exposure",
@@ -111,14 +98,14 @@ const HISTORY_FIELDS: HistoryField[] = [
   {
     id: "h_trial_adequacy_prior",
     label: "Adequacy of prior treatment trial",
-    values: ["adequate", "inadequate", "unknown", "not_assessed"],
+    values: ["adequate", "inadequate", "unknown"],
     period: "lifetime",
     category: "trial adequacy",
   },
   {
     id: "h_prior_response",
     label: "Response to prior treatment",
-    values: ["response", "no_response", "unknown", "not_assessed"],
+    values: ["response", "no_response", "unknown"],
     period: "lifetime",
     category: "prior response",
   },
@@ -150,21 +137,12 @@ const HISTORY_FIELDS: HistoryField[] = [
     period: "current encounter",
     category: "monitoring",
   },
-  {
-    id: "h_medication_timeline_documented",
-    label:
-      "Medication timeline documented (agents and changes, no regimen details)",
-    values: ["yes", "no", "unknown", "not_assessed"],
-    period: "current encounter",
-    category: "exposure",
-  },
 ];
 
-// Presentation groups only; the clinical inventory and stored values are unchanged.
+// Presentation groups follow the applicable core questions.
 const HISTORY_GROUPS = [
   { id: "exposure", title: "Medication exposure", fields: [
-    "h_exposure_dopamine_blocker", "h_exposure_duration_3m",
-    "h_exposure_1m_if_60plus", "h_onset_timing", "h_medication_timeline_documented",
+    "h_exposure_dopamine_blocker", "h_onset_timing",
   ] },
   { id: "treatment", title: "Prior treatment", fields: [
     "h_trial_adequacy_prior", "h_prior_response",
@@ -187,7 +165,8 @@ const VALUE_LABELS: Record<string, string> = {
   within_8w_lai_withdrawal: "Within 8 weeks after LAI withdrawal",
   adequate: "Adequate",
   inadequate: "Inadequate",
-  response: "Response",
+  response: "Some level of response",
+  other: "Other",
   no_response: "No response",
 };
 
@@ -229,26 +208,52 @@ function sliceOf(data: DraftData): HistorySlice {
   };
 }
 
-/** Writes carry only the 12 known field ids: undeclared or FR-14-excluded
- * keys already in storage are dropped rather than echoed back. Invalid
- * values for known ids are kept verbatim so server item_errors stay visible. */
+function applicableFields(values: Record<string, unknown>): HistoryField[] {
+  return HISTORY_FIELDS.filter((field) => {
+    if (["h_onset_timing", "h_trial_adequacy_prior", "h_prior_response"].includes(field.id)) {
+      if (values.h_exposure_dopamine_blocker !== "yes") return false;
+      if (field.id === "h_prior_response" && values.h_trial_adequacy_prior !== "inadequate") return false;
+    }
+    return true;
+  });
+}
+
+/** Unknown is the explicit default for active exposure/treatment questions.
+ * Hidden children cannot retain a previous assessment after a parent changes. */
+function normalizedValues(values: Record<string, unknown>): Record<string, unknown> {
+  const next = { ...values };
+  for (const id of ["h_exposure_dopamine_blocker", "h_onset_timing", "h_trial_adequacy_prior", "h_prior_response"]) {
+    if (next[id] === undefined || next[id] === "not_assessed") next[id] = "unknown";
+  }
+  const applicableIds = applicableFields(next).map((field) => field.id);
+  for (const id of FIELD_IDS) {
+    if (!applicableIds.includes(id)) delete next[id];
+  }
+  return next;
+}
+
+/** Writes preserve server-allowlisted context. Undeclared keys are discarded;
+ * invalid active values stay visible through server-reported item errors. */
 function sanitizedValues(values: Record<string, unknown>, ids = FIELD_IDS): Record<string, unknown> {
+  const normalized = normalizedValues(values);
   const next: Record<string, unknown> = {};
   for (const id of ids) {
-    if (values[id] !== undefined) {
-      next[id] = values[id];
+    if (normalized[id] !== undefined) {
+      next[id] = normalized[id];
     }
   }
   return next;
 }
 
 function sameSlice(a: HistorySlice, b: HistorySlice, ids = FIELD_IDS): boolean {
-  const keysA = Object.keys(sanitizedValues(a.values, ids));
-  const keysB = Object.keys(sanitizedValues(b.values, ids));
+  const valuesA = sanitizedValues(a.values, ids);
+  const valuesB = sanitizedValues(b.values, ids);
+  const keysA = Object.keys(valuesA);
+  const keysB = Object.keys(valuesB);
   if (keysA.length !== keysB.length) {
     return false;
   }
-  if (!keysA.every((key) => b.values[key] === a.values[key])) {
+  if (!keysA.every((key) => valuesB[key] === valuesA[key])) {
     return false;
   }
   const reconA = a.reconciliation;
@@ -345,7 +350,12 @@ export function HistorySection({
     };
   }, [preview !== null]);
 
-  const slice = sliceOf(autosave.localData);
+  const rawSlice = sliceOf(autosave.localData);
+  const slice = { ...rawSlice, values: normalizedValues(rawSlice.values) };
+  const visibleFields = applicableFields(slice.values);
+  const visibleGroups = HISTORY_GROUPS.map((group) => ({
+    ...group, fields: visibleFields.filter((field) => group.fields.includes(field.id)),
+  })).filter((group) => group.fields.length > 0);
   const allowedIds = preview?.allowed_field_ids ?? FIELD_IDS;
   const workflowFields = preview?.workflow_fields ?? [];
   const questionKeys = [...new Set(workflowFields.map((field) => field.question_key))];
@@ -363,9 +373,12 @@ export function HistorySection({
 
   function writeSlice(next: HistorySlice): void {
     if (preview === null) return;
+    const values = sanitizedValues(next.values, allowedIds);
     autosave.setDraftValue("history", {
-      values: sanitizedValues(next.values, allowedIds),
-      provenance: next.provenance,
+      values,
+      provenance: Object.fromEntries(Object.entries(next.provenance).filter(([id]) =>
+        allowedIds.includes(id) && values[id] !== undefined && next.values[id] === values[id],
+      )),
       reconciliation: next.reconciliation,
       phone_update: next.phone_update,
     });
@@ -426,26 +439,29 @@ export function HistorySection({
 
   const evaluation = preview?.evaluation ?? null;
   const itemErrors = evaluation?.item_errors ?? {};
-  const itemErrorIds = Object.keys(itemErrors);
+  const savedFields = applicableFields(normalizedValues(preview?.values ?? {}));
+  const savedFieldIds = savedFields.map((field) => field.id);
+  const missingFieldIds = (evaluation?.missing_item_ids ?? []).filter((id) => savedFieldIds.includes(id));
+  const itemErrorIds = Object.keys(itemErrors).filter((id) => savedFieldIds.includes(id) || workflowFields.some((field) => field.id === id));
 
   let verdict: string;
   if (preview === null) {
     verdict = "";
   } else if (evaluation?.status === "complete") {
-    verdict = "Complete — all 12 history fields answered.";
+    verdict = `Complete — all ${savedFields.length} applicable history fields answered.`;
   } else if (evaluation?.status === "partial") {
-    const missing = evaluation.missing_item_ids.length;
-    verdict = `Incomplete — ${missing} of 12 fields still need${missing === 1 ? "s" : ""} an answer.`;
+    const missing = missingFieldIds.length;
+    verdict = `Incomplete — ${missing} of ${savedFields.length} applicable fields still need${missing === 1 ? "s" : ""} an answer.`;
   } else {
     verdict =
-      "No answers yet. 12 fields with nothing selected.";
+      `No answers yet. ${savedFields.length} applicable history fields need review.`;
   }
 
   const previewProvenance = preview?.provenance ?? {};
 
   const hasResponse = (field: HistoryField): boolean =>
     field.values.some((value) => value === slice.values[field.id]);
-  const responseCount = HISTORY_FIELDS.filter(hasResponse).length;
+  const responseCount = visibleFields.filter(hasResponse).length;
 
   return (
     <section className="xi-card xi-diagnosis xi-history" aria-labelledby="history-heading">
@@ -462,20 +478,20 @@ export function HistorySection({
           <div className="xi-diagnosis-overview">
             <div>
               <h4>Past medical history</h4>
-              <p>Record a response for each question. No answers are preselected.</p>
+              <p>Record a response for each question. Exposure and treatment responses default to Unknown.</p>
             </div>
-            <span className="xi-diagnosis-count">{responseCount} / 12 responses</span>
+            <span className="xi-diagnosis-count">{responseCount} / {visibleFields.length} responses</span>
           </div>
           <nav className="xi-diagnosis-nav xi-history-nav" aria-label="Jump to history section">
-            {HISTORY_GROUPS.map((group) => (
+            {visibleGroups.map((group) => (
               <a key={group.id} href={`#history-group-${group.id}`} onClick={(event) => {
                 event.preventDefault();
                 document.getElementById(`history-group-${group.id}`)?.focus();
               }}>{group.title}</a>
             ))}
           </nav>
-          {HISTORY_GROUPS.map((group) => {
-            const fields = group.fields.map((id) => HISTORY_FIELDS.find((field) => field.id === id)!);
+          {visibleGroups.map((group) => {
+            const fields = group.fields;
             return (
               <section className="xi-diagnosis-criterion" key={group.id} aria-labelledby={`history-group-${group.id}`}>
                 <header className="xi-diagnosis-criterion-header">
@@ -677,7 +693,7 @@ export function HistorySection({
                   <div id="history-still-needed">
                     <p className="xi-hint">Still needed:</p>
                     <ul className="xi-diagnosis-missing">
-                      {evaluation.missing_item_ids.map((id) => {
+                      {missingFieldIds.map((id) => {
                         const field = HISTORY_FIELDS.find((candidate) => candidate.id === id);
                         return <li key={id}><a href={`#hist-${id}-${field?.values[0]}`} onClick={(event) => {
                           event.preventDefault();

@@ -1,13 +1,57 @@
 # Proposal generation
 
 Step 7 checks the saved draft's proposal readiness before creating a generation
-batch. Core History completion still covers the original twelve fields; it does
-not establish that the proposal-context answers are ready.
+batch. Core History completion covers only the applicable fields from the nine-field
+inventory below; it does not establish that the proposal-context answers are ready.
+
+## Core History
+
+Registration Step 5 (History) uses these current choices and conditions. Follow-up
+History uses the same contract.
+
+| Question | Choices | Shown when / default |
+| --- | --- | --- |
+| History of lifetime antipsychotic exposure | Yes, No, Unknown | Always; Unknown |
+| Onset timing relative to exposure or withdrawal | During exposure; Within 4 weeks after oral withdrawal; Within 8 weeks after LAI withdrawal; Other; Unknown | Lifetime exposure is Yes; Unknown |
+| Adequacy of prior treatment trial | Adequate, Inadequate, Unknown | Lifetime exposure is Yes; Unknown |
+| Response to prior treatment | Some level of response, No response, Unknown | Lifetime exposure is Yes and adequacy is Inadequate; Unknown |
+
+Other means a time outside the three named onset timings. The Prior treatment
+heading and navigation link appear only for lifetime exposure Yes. Changing a
+controlling answer clears hidden answers and their provenance; revealing them
+again starts at Unknown. A default is not attributed as a clinician entry.
+
+The other five movement/monitoring questions keep their existing choices and
+completion rules. The three questions about cumulative exposure of at least
+three months, exposure of at least one month at age 60 or older, and a documented
+medication timeline have been removed from the active inventory.
+
+Core completeness counts **6** applicable questions for lifetime exposure No or
+Unknown, **8** for Yes with Adequate/Unknown adequacy, and **9** for Yes with
+Inadequate adequacy. An allowed Unknown counts as answered for core completion;
+proposal readiness remains a separate gate.
+
+The nine core IDs are `h_exposure_dopamine_blocker`,
+`h_movement_persistence_4w`, `h_onset_timing`, `h_trial_adequacy_prior`,
+`h_prior_response`, `h_monitoring_baseline`, `h_alternative_cause_considered`,
+`h_functional_impact` and `h_falls_or_limitation`.
+
+Strict History writes reject new retired IDs and null/Not assessed values for the
+four revised questions with HTTP `422`. Older drafts normalize Not assessed on
+those questions to Unknown; malformed legacy nulls remain visible as validation
+errors. Reads and resaves clear retired/hidden current answers and their
+provenance. The general draft PATCH retains its legacy compatibility behavior.
+Follow-up copies normalize current History while preserving trusted same-patient
+baseline provenance. Existing signed records and analysis snapshots are immutable;
+new current-History projections and signatures use the cleaned inventory.
+Historical `followup_baseline.history_values` can retain retired IDs as evidence,
+including when embedded in a newer analysis snapshot's fingerprint payload.
 
 ## Complete proposal context
 
 History exposes 53 registration or 76 follow-up context controls, using the
-reviewed definitions and response categories. Nothing is preselected. The
+reviewed definitions and response categories. These context controls have no
+preselected answers; the core Unknown defaults above do not apply to them. The
 separate **Proposal readiness** summary lists every unresolved requirement with
 a readable field label, a reason and a link to its exact History control.
 Controls wait for the server's field inventory to load before accepting edits.
@@ -107,5 +151,8 @@ Local source runs resolve `content/` beside the repository. Deployments can set
 includes workflow bundles, question packages, history definitions and assessments
 for API and worker. Apply the updated source by restarting API and worker and
 serving the rebuilt UI; history definitions are cached per process. The
-2026-10-22 readiness fix adds no migration or clinical-content changes. Its
-verification did not restart the application runtime or call a live provider.
+2026-10-22 History correction adds no migration and does not change the separately
+reviewed question packages or their readiness gates. Neither this correction nor
+the preceding readiness fix restarted the application runtime or called a live
+provider during verification. The correction is not blanket approval of the
+History/adverse-effect instrument drafts; their review status remains pending.

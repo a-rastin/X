@@ -206,7 +206,9 @@ def validate_followup_baseline(value: Any) -> dict[str, Any] | None:
                 {"baseline.provenance_note": ["Must be short text or null."]},
             )
     return {
-        "history_values": dict(validated_history),
+        "history_values": {
+            key: answer for key, answer in validated_history.items() if key in raw_history
+        },
         "prior_scores": prior_scores,
         "medications": medications,
         "provenance_note": note,
@@ -298,7 +300,9 @@ def build_followup_draft_data(
             PANSS_STATE_KEY: {ANSWERS_STATE_KEY: {}},
             CSSRS_STATE_KEY: {ANSWERS_STATE_KEY: {}},
         }
-    history_values = baseline["history_values"]
+    from x_insight.cases import history as history_service
+
+    history_values = history_service.normalize_history_values(baseline["history_values"])
     provenance = {
         field_id: {
             "source": "copied_baseline",
@@ -307,6 +311,7 @@ def build_followup_draft_data(
             "baseline_encounter_id": baseline_encounter_id,
         }
         for field_id in history_values
+        if field_id in baseline["history_values"]
     }
     baseline_meds = [dict(entry) for entry in baseline["medications"]]
     meds_provenance = {
@@ -500,7 +505,11 @@ def safe_draft_for_author(row: dict[str, Any]) -> dict[str, Any]:
     """Author-only draft shape: reference fields plus the private body."""
     reference = safe_encounter_reference(row)
     body = row.get("draft_data")
-    reference["draft_data"] = dict(body) if isinstance(body, dict) else {}
+    from x_insight.cases import history as history_service
+
+    reference["draft_data"] = history_service.normalize_draft_history(
+        dict(body) if isinstance(body, dict) else {}
+    )
     return reference
 
 
@@ -602,7 +611,6 @@ def create_open_draft(
     :func:`build_followup_draft_data`. Returns (encounter, server timestamp).
     """
     validated_kind = validate_kind(kind)
-    validated_baseline = validate_followup_baseline(baseline)
     if baseline_encounter_id is not None and not isinstance(baseline_encounter_id, str):
         raise contracts.ContractError(
             422,
@@ -610,6 +618,33 @@ def create_open_draft(
             "Baseline encounter reference is invalid.",
             {"baseline_encounter_id": ["Must be text or null."]},
         )
+    if validated_kind == "follow_up" and baseline_encounter_id and isinstance(baseline, dict):
+        # Only a matching frozen signed copy may use the legacy read contract.
+        # New inline baselines still use strict validation below.
+        from x_insight.cases import history as history_service
+        from x_insight.cases import signing as signing_service
+
+        try:
+            reference_id = uuid.UUID(baseline_encounter_id)
+        except ValueError:
+            reference_id = None
+        stored = signing_service.get_snapshot(session, reference_id) if reference_id else None
+        if stored is not None and str(stored["patient_id"]) == str(patient_id):
+            frozen = (stored.get("snapshot") or {}).get("draft_data") or {}
+            frozen_history = frozen.get(HISTORY_STATE_KEY) or {}
+            frozen_values = frozen_history.get("values")
+            if isinstance(frozen_values, dict) and baseline.get("history_values") == frozen_values:
+                baseline = {
+                    **baseline,
+                    "history_values": {
+                        key: answer
+                        for key, answer in history_service.normalize_history_values(
+                            frozen_values
+                        ).items()
+                        if key in frozen_values
+                    },
+                }
+    validated_baseline = validate_followup_baseline(baseline)
     if validated_kind != "follow_up" and (
         validated_baseline is not None or baseline_encounter_id is not None
     ):
@@ -806,8 +841,10 @@ def patch_draft(
     if encounter.get("kind") == "registration" and isinstance(draft_data, dict):
         draft_data = registration_effects_for_save(encounter.get("draft_data"), draft_data)
     if isinstance(draft_data, dict):
+        from x_insight.cases import history as history_service
         from x_insight.cases import medications as medications_service
 
+        draft_data = history_service.history_for_autosave(encounter.get("draft_data"), draft_data)
         draft_data = medications_service.preserve_autosave_report_metadata(
             encounter.get("draft_data"), draft_data, engine=session.get_bind()
         )

@@ -36,24 +36,6 @@ import {
  * - urgent panel `#effect-acute_dystonia-urgent` (role=alert)
  */
 
-const HISTORY_FIELDS: { id: string; values: string[] }[] = [
-  { id: "h_exposure_dopamine_blocker", values: ["yes", "no", "unknown", "not_assessed"] },
-  { id: "h_exposure_duration_3m", values: ["yes", "no", "unknown", "not_assessed"] },
-  { id: "h_exposure_1m_if_60plus", values: ["yes", "no", "unknown", "not_assessed"] },
-  { id: "h_movement_persistence_4w", values: ["yes", "no", "unknown", "not_assessed"] },
-  {
-    id: "h_onset_timing",
-    values: ["during_exposure", "within_4w_oral_withdrawal", "within_8w_lai_withdrawal", "unknown", "not_assessed"],
-  },
-  { id: "h_trial_adequacy_prior", values: ["adequate", "inadequate", "unknown", "not_assessed"] },
-  { id: "h_prior_response", values: ["response", "no_response", "unknown", "not_assessed"] },
-  { id: "h_monitoring_baseline", values: ["yes", "no", "unknown", "not_assessed"] },
-  { id: "h_alternative_cause_considered", values: ["yes", "no", "unknown", "not_assessed"] },
-  { id: "h_functional_impact", values: ["yes", "no", "unknown", "not_assessed"] },
-  { id: "h_falls_or_limitation", values: ["yes", "no", "unknown", "not_assessed"] },
-  { id: "h_medication_timeline_documented", values: ["yes", "no", "unknown", "not_assessed"] },
-];
-
 async function loginPhysician(
   page: import("@playwright/test").Page,
   request: import("@playwright/test").APIRequestContext,
@@ -158,34 +140,27 @@ async function gotoEncounter(
   await expect(page.getByRole("heading", { name: heading })).toBeVisible();
 }
 
-test("fresh history form has 12 unanswered fields, no pre-selected radios", async ({
-  page,
-  request,
-}) => {
+test("fresh history defaults to Unknown with six applicable fields and no retired controls", async ({ page, request }) => {
   const physician = await loginPhysician(page, request, "e2ehistfresh");
   const { draftId } = await createPatientWithDraft(request, physician);
-
   await gotoEncounter(page, draftId);
-
-  await expect(page.locator("#history-heading")).toBeVisible();
-  await expect(page.locator('input[name^="hist-"]:checked')).toHaveCount(0);
-  for (const id of [
-    "#hist-h_exposure_dopamine_blocker-yes",
-    "#hist-h_exposure_dopamine_blocker-not_assessed",
-    "#hist-h_onset_timing-during_exposure",
-    "#hist-h_onset_timing-not_assessed",
-  ]) {
-    await expect(page.locator(id)).toBeVisible();
-    await expect(page.locator(id)).not.toBeChecked();
+  const exposure = page.getByRole("group", { name: "History of lifetime antipsychotic exposure", exact: true });
+  await expect(exposure.getByRole("radio")).toHaveCount(3);
+  for (const label of ["Yes", "No", "Unknown"]) await expect(exposure.getByRole("radio", { name: label, exact: true })).toBeVisible();
+  await expect(exposure.getByRole("radio", { name: "Unknown", exact: true })).toBeChecked();
+  await expect(page.locator('input[name^="hist-"]:checked')).toHaveCount(1);
+  await expect(page.locator(".xi-diagnosis-overview")).toContainText("1 / 6 responses");
+  await expect(page.locator("#history-preview-status")).toContainText("5 of 6 applicable fields still need", { timeout: 10000 });
+  for (const field of ["h_exposure_duration_3m", "h_exposure_1m_if_60plus", "h_medication_timeline_documented", "h_onset_timing", "h_trial_adequacy_prior", "h_prior_response"]) {
+    await expect(page.locator(`[name="hist-${field}"]`)).toHaveCount(0);
+    await expect(page.locator(`#history-still-needed a[href*="${field}"]`)).toHaveCount(0);
   }
-
-  const verdict = page.locator("#history-preview-status");
-  await expect(verdict).toContainText("No answers yet", { timeout: 10000 });
-  await expect(verdict).toContainText("12 fields with nothing selected");
-  await expect(verdict).not.toContainText("Complete");
-  await expect(page.locator("#hist-h_exposure_dopamine_blocker-provenance")).toContainText(
-    "Not yet recorded",
-  );
+  await expect(page.getByRole("heading", { name: "Prior treatment", exact: true })).toHaveCount(0);
+  await expect(page.getByRole("link", { name: "Prior treatment", exact: true })).toHaveCount(0);
+  const saved = await (await request.get(`/api/v1/encounters/${draftId}/history`)).json();
+  expect(saved.values.h_exposure_dopamine_blocker).toBe("unknown");
+  expect(saved.provenance.h_exposure_dopamine_blocker).toBeUndefined();
+  await expect(page.locator("#hist-h_exposure_dopamine_blocker-provenance")).toContainText("Not yet recorded");
 });
 
 test("history answers save, survive reload and re-login with still-needed guidance", async ({
@@ -205,7 +180,7 @@ test("history answers save, survive reload and re-login with still-needed guidan
 
   const verdict = page.locator("#history-preview-status");
   await expect(verdict).toContainText("Incomplete", { timeout: 10000 });
-  await expect(verdict).toContainText("10 of 12 fields still need");
+  await expect(verdict).toContainText("5 of 8 applicable fields still need");
   await expect(page.locator("#history-still-needed")).toBeVisible();
   await expect(page.locator("#history-still-needed")).toContainText("Still needed:");
 
@@ -237,24 +212,18 @@ test("complete history via UI keeps unknown distinct from false", async ({
 
   const choices: Record<string, string> = {
     h_exposure_dopamine_blocker: "no",
-    h_exposure_duration_3m: "no",
-    h_exposure_1m_if_60plus: "no",
     h_movement_persistence_4w: "no",
-    h_onset_timing: "not_assessed",
-    h_trial_adequacy_prior: "not_assessed",
-    h_prior_response: "not_assessed",
     h_monitoring_baseline: "no",
     h_alternative_cause_considered: "unknown",
     h_functional_impact: "no",
     h_falls_or_limitation: "no",
-    h_medication_timeline_documented: "no",
   };
   for (const [field, value] of Object.entries(choices)) {
     await page.locator(`#hist-${field}-${value}`).check();
   }
 
   const verdict = page.locator("#history-preview-status");
-  await expect(verdict).toContainText("Complete — all 12 history fields answered", {
+  await expect(verdict).toContainText("Complete — all 6 applicable history fields answered", {
     timeout: 25000,
   });
   await expect(page.locator(".xi-history-summary-note")).toContainText(
@@ -262,6 +231,89 @@ test("complete history via UI keeps unknown distinct from false", async ({
   );
   await expect(page.locator("#history-still-needed")).toHaveCount(0);
   await expect(page.locator("#hist-h_alternative_cause_considered-unknown")).toBeChecked();
+});
+
+test("exposure and treatment transitions clear hidden answers and provenance while preserving workflow context", async ({ page, request }) => {
+  test.setTimeout(90000);
+  const physician = await loginPhysician(page, request, "e2ehistconditional");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  const csrf = await physicianSession(request, physician);
+  const seeded = await request.post(`/api/v1/encounters/${draftId}/history`, {
+    headers: { "X-CSRF-Token": csrf, "If-Match": '"1"' },
+    data: { values: { h_exposure_dopamine_blocker: "yes", h_onset_timing: "other", h_trial_adequacy_prior: "inadequate", h_prior_response: "response" } },
+  });
+  expect(seeded.status(), await seeded.text()).toBe(200);
+  const inventory = await seeded.json();
+  expect(inventory.provenance.h_prior_response.source).toBe("clinician_entry");
+  const workflow = inventory.workflow_fields[0];
+  await gotoEncounter(page, draftId);
+  await expect(page.locator(".xi-diagnosis-overview")).toContainText("4 / 9 responses");
+  const trial = page.getByRole("group", { name: "Adequacy of prior treatment trial", exact: true });
+  const response = page.getByRole("group", { name: "Response to prior treatment", exact: true });
+  await expect(trial.getByRole("radio")).toHaveCount(3);
+  for (const label of ["Adequate", "Inadequate", "Unknown"]) await expect(trial.getByRole("radio", { name: label, exact: true })).toBeVisible();
+  await expect(response.getByRole("radio")).toHaveCount(3);
+  for (const label of ["Some level of response", "No response", "Unknown"]) await expect(response.getByRole("radio", { name: label, exact: true })).toBeVisible();
+  await page.locator(`[id="hist-${workflow.id}"]`).selectOption(workflow.permitted[0]);
+  const savedHistory = async () => (await (await request.get(`/api/v1/encounters/${draftId}/history`)).json());
+  await expect.poll(async () => (await savedHistory()).values[workflow.id]).toBe(workflow.permitted[0]);
+
+  for (const adequacy of ["adequate", "unknown"]) {
+    await page.locator(`#hist-h_trial_adequacy_prior-${adequacy}`).check();
+    await expect(response).toHaveCount(0);
+    await expect(page.locator(".xi-diagnosis-overview")).toContainText("3 / 8 responses");
+    await expect.poll(async () => {
+      const history = await savedHistory();
+      return [history.values.h_trial_adequacy_prior, history.values.h_prior_response ?? null, history.provenance.h_prior_response ?? null];
+    }).toEqual([adequacy, null, null]);
+    await page.reload();
+    await page.locator("#hist-h_trial_adequacy_prior-inadequate").check();
+    await expect(page.locator("#hist-h_prior_response-unknown")).toBeChecked();
+    await page.locator("#hist-h_prior_response-no_response").check();
+    await expect.poll(async () => (await savedHistory()).values.h_prior_response).toBe("no_response");
+  }
+  for (const exposure of ["no", "unknown"]) {
+    await page.locator(`#hist-h_exposure_dopamine_blocker-${exposure}`).check();
+    await expect(page.locator("#history-group-treatment")).toHaveCount(0);
+    await expect(page.getByRole("link", { name: "Prior treatment", exact: true })).toHaveCount(0);
+    await expect(page.locator(".xi-diagnosis-overview")).toContainText("1 / 6 responses");
+    await expect.poll(async () => {
+      const history = await savedHistory();
+      return [history.values.h_exposure_dopamine_blocker,
+        ...["h_onset_timing", "h_trial_adequacy_prior", "h_prior_response"].flatMap((id) => [history.values[id] ?? null, history.provenance[id] ?? null])];
+    }).toEqual([exposure, null, null, null, null, null, null]);
+    await page.reload();
+    await expect(page.locator(`#hist-h_exposure_dopamine_blocker-${exposure}`)).toBeChecked();
+    await page.locator("#hist-h_exposure_dopamine_blocker-yes").check();
+    await expect(page.locator("#hist-h_onset_timing-unknown")).toBeChecked();
+    await expect(page.locator("#hist-h_trial_adequacy_prior-unknown")).toBeChecked();
+    await expect(page.locator('[name="hist-h_prior_response"]')).toHaveCount(0);
+    await page.locator("#hist-h_trial_adequacy_prior-inadequate").check();
+    await expect(page.locator("#hist-h_prior_response-unknown")).toBeChecked();
+    await expect.poll(async () => (await savedHistory()).values.h_trial_adequacy_prior).toBe("inadequate");
+    expect((await savedHistory()).values[workflow.id]).toBe(workflow.permitted[0]);
+  }
+});
+
+test("all five onset choices persist through autosave and reload", async ({ page, request }) => {
+  test.setTimeout(60000);
+  const physician = await loginPhysician(page, request, "e2ehistonset");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  await gotoEncounter(page, draftId);
+  await page.locator("#hist-h_exposure_dopamine_blocker-yes").check();
+  await expect(page.locator("#hist-h_onset_timing-unknown")).toBeChecked();
+  await expect(page.locator("#hist-h_trial_adequacy_prior-unknown")).toBeChecked();
+  const onset = page.getByRole("group", { name: "Onset timing relative to exposure or withdrawal", exact: true });
+  await expect(onset.getByRole("radio")).toHaveCount(5);
+  for (const label of ["During exposure", "Within 4 weeks after oral withdrawal", "Within 8 weeks after LAI withdrawal", "Other", "Unknown"]) {
+    await expect(onset.getByRole("radio", { name: label, exact: true })).toBeVisible();
+  }
+  for (const value of ["during_exposure", "within_4w_oral_withdrawal", "within_8w_lai_withdrawal", "other", "unknown"]) {
+    await page.locator(`#hist-h_onset_timing-${value}`).check();
+    await expect.poll(async () => (await (await request.get(`/api/v1/encounters/${draftId}/history`)).json()).values.h_onset_timing).toBe(value);
+    await page.reload();
+    await expect(page.locator(`#hist-h_onset_timing-${value}`)).toBeChecked();
+  }
 });
 
 test("fresh effects are unrecorded with null severity and no completion demand", async ({
@@ -408,10 +460,10 @@ test("history 412 keeps edits and reconciles via Reload/Retry", async ({
   expect(winner).toBe(3);
 
   // This tab is stale on revision 2: the autosave 412s and keeps the edit.
-  await page.locator("#hist-h_exposure_duration_3m-no").check();
+  await page.locator("#hist-h_monitoring_baseline-no").check();
   const conflict = page.getByRole("heading", { name: "Another tab saved first" });
   await expect(conflict).toBeVisible({ timeout: 15000 });
-  await expect(page.locator("#hist-h_exposure_duration_3m-no")).toBeChecked();
+  await expect(page.locator("#hist-h_monitoring_baseline-no")).toBeChecked();
   await expect(status).toContainText("Conflict");
 
   await page.getByRole("button", { name: "Keep my edits and retry" }).click();
@@ -419,7 +471,7 @@ test("history 412 keeps edits and reconciles via Reload/Retry", async ({
 
   await page.reload();
   await expect(page.locator("#hist-h_exposure_dopamine_blocker-yes")).toBeChecked();
-  await expect(page.locator("#hist-h_exposure_duration_3m-no")).toBeChecked();
+  await expect(page.locator("#hist-h_monitoring_baseline-no")).toBeChecked();
 });
 
 test("failed history save never shows Saved; Retry recovers", async ({

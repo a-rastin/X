@@ -962,3 +962,79 @@ def test_secondary_plan_edits_keep_fingerprint_while_gate_edits_stale(
     }
     assert old_vars["A"]["value"] == "yes"
     assert old_vars["B"]["value"] == "no"
+
+
+def test_legacy_hidden_and_removed_answers_do_not_affect_new_snapshot_or_fingerprint(
+    admin_client, clean_registry, monkeypatch
+) -> None:
+    from sqlalchemy import update
+
+    from x_insight.cases import tables as cases_tables
+
+    owner, csrf, eid = _setup_owner_with_draft(
+        admin_client, clean_registry, monkeypatch, "dr_history_snapshot"
+    )
+    legacy = {
+        "h_a": "yes",
+        "h_b": "no",
+        "h_exposure_dopamine_blocker": "no",
+        "h_trial_adequacy_prior": "inadequate",
+        "h_prior_response": "response",
+        "h_onset_timing": "during_exposure",
+        "h_exposure_duration_3m": "yes",
+        "h_exposure_1m_if_60plus": "yes",
+        "h_medication_timeline_documented": "yes",
+    }
+    # Synthetic historical fixture: these retired fields cannot be newly written.
+    with clean_registry.begin() as connection:
+        connection.execute(
+            update(cases_tables.encounters)
+            .where(cases_tables.encounters.c.id == uuid.UUID(eid))
+            .values(draft_data={"history": {"values": legacy}})
+        )
+    package = _synthetic_package()
+    package["manifest"]["patient_mappings"][1]["allowed_source_paths"] = [
+        "synthetic/history/h_prior_response"
+    ]
+    package["manifest"]["applicability"]["required_fields"] = []
+    first = _start_batch(owner, csrf, eid, 1, package)
+    assert first.status_code == 202, first.text
+    frozen = first.json()
+    variables = {v["node_id"]: v for v in frozen["question_runs"][0]["projection"]["variables"]}
+    assert variables["A"]["value"] == "yes"
+    assert variables["B"]["status"] == "missing"
+    assert variables["B"]["value"] is None
+    cleaned = _patch_draft(
+        owner,
+        csrf,
+        eid,
+        {"history": {"values": {"h_a": "yes", "h_b": "no", "h_exposure_dopamine_blocker": "no"}}},
+        1,
+    )
+    assert cleaned.status_code == 200, cleaned.text
+    reread = owner.get(f"/api/v1/generation-batches/{frozen['batch']['id']}")
+    assert reread.status_code == 200, reread.text
+    assert reread.json()["freshness"]["stale"] is False
+    assert (
+        reread.json()["question_runs"][0]["projection"] == frozen["question_runs"][0]["projection"]
+    )
+    next_batch = _start_batch(owner, csrf, eid, 2, package)
+    assert next_batch.status_code == 202, next_batch.text
+    assert next_batch.json()["batch"]["fingerprint"] == frozen["batch"]["fingerprint"]
+
+
+def test_absent_and_empty_history_have_same_default_fingerprint(
+    admin_client, clean_registry, monkeypatch
+) -> None:
+    owner, csrf, eid = _setup_owner_with_draft(
+        admin_client, clean_registry, monkeypatch, "dr_history_empty"
+    )
+    package = _synthetic_package()
+    package["manifest"]["applicability"]["required_fields"] = []
+    first = _start_batch(owner, csrf, eid, 1, package)
+    assert first.status_code == 202, first.text
+    saved = _patch_draft(owner, csrf, eid, {"history": {"values": {}}}, 1)
+    assert saved.status_code == 200, saved.text
+    reread = owner.get(f"/api/v1/generation-batches/{first.json()['batch']['id']}")
+    assert reread.status_code == 200, reread.text
+    assert reread.json()["freshness"]["stale"] is False

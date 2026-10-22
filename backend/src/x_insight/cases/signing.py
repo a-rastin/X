@@ -595,7 +595,9 @@ def sign_encounter(
                 {"acceptances": ["Skipped question must not be accepted."]},
             )
 
-    draft_data = encounter.get("draft_data") or {}
+    from x_insight.cases import history as history_service
+
+    draft_data = history_service.normalize_draft_history(encounter.get("draft_data") or {})
     acceptance_rows: dict[str, dict[str, Any]] = {}
     for run in runs:
         if str(run.get("status")) != "ready":

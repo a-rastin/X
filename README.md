@@ -41,7 +41,12 @@ every acceptance check has passed. See the current boundaries below.
 
 ## Current engineering status
 
-The [2026-10-22 proposal-readiness fix](project-documents/dev/progress/s48.md#follow-up-2026-10-22--check-proposal-readiness-before-creating-a-run)
+The [2026-10-22 History correction](project-documents/dev/progress/s12.md#follow-up-2026-10-22--conditional-history-and-unknown-defaults)
+removes three exposure/timeline questions and makes onset and prior treatment
+conditional, with Unknown defaults. See the [current History contract](docs/proposal-generation.md#core-history)
+for choices, completeness and older-record compatibility.
+
+The preceding [proposal-readiness fix](project-documents/dev/progress/s48.md#follow-up-2026-10-22--check-proposal-readiness-before-creating-a-run)
 checks saved required context before Step 7 creates a run, lists all blockers
 with links to their History controls, and keeps core History completion separate.
 See [proposal generation](docs/proposal-generation.md) for recovery and API details.

@@ -35,3 +35,20 @@
 - No established treatment does not mark registration pharmacotherapy not_applicable. The question remains applicable; S27 defines source-compatible mappings for that case. Missing/unknown required network inputs still pause rather than being guessed.
 - LAI preserves BN-10's existing discussion/review scope; specific product selection and a new product-choice contract are outside the question. Existing package identity is retained, while displayed wording and template outputs use the preserved scope. Concrete packages still require review.
 
+### Requested History field correction — 2026-10-22
+
+- The current core History inventory has nine fields. Lifetime antipsychotic
+  exposure is Yes/No/Unknown, default Unknown. Onset and prior treatment appear
+  only for Yes; prior response appears only for Inadequate adequacy. All four
+  revised questions default to Unknown. All five explicitly listed onset choices
+  are retained despite the request's stated count of four. See the
+  [current contract](../../../docs/proposal-generation.md#core-history).
+- The three exposure-duration/timeline questions are retired from active current
+  History. Historical signed evidence is preserved. Hidden current answers and
+  their provenance are cleared rather than restored on redisplay.
+- This explicit field correction does not approve the complete History inventory,
+  BARS, SAS, AIMS or Acute Dystonia Dx Criteria drafts. Their existing pending
+  owner-review states remain. Separately reviewed versioned question packages and
+  proposal-readiness gates are unchanged; no clinical rationale or validation is
+  inferred from this implementation request.
+

@@ -20,7 +20,7 @@ reconciliation: {status, ...}, phone_update: str | None}``. All history
 values are analysis-visible (analysis_visible true); working notes and legacy
 note keys stay excluded by serialization allowlists.
 
-Content: the original twelve field ids retain their contract. The server also
+Content: core fields follow the current conditional History inventory. The server also
 loads exact versioned fields from the owner-confirmed workflow release and
 exposes workflow-specific controls with their permitted values. Historical
 content status is retained; the release inventory records the approval basis.
@@ -53,16 +53,8 @@ TRISTATE_NOT_ASSESSED = ("yes", "no", "unknown", "not_assessed")
 
 ALLOWED_FIELDS: dict[str, dict[str, Any]] = {
     "h_exposure_dopamine_blocker": {
-        "permitted": list(TRISTATE_NOT_ASSESSED),
+        "permitted": ["yes", "no", "unknown"],
         "category": "exposure",
-    },
-    "h_exposure_duration_3m": {
-        "permitted": list(TRISTATE_NOT_ASSESSED),
-        "category": "duration",
-    },
-    "h_exposure_1m_if_60plus": {
-        "permitted": list(TRISTATE_NOT_ASSESSED),
-        "category": "duration",
     },
     "h_movement_persistence_4w": {
         "permitted": list(TRISTATE_NOT_ASSESSED),
@@ -73,17 +65,17 @@ ALLOWED_FIELDS: dict[str, dict[str, Any]] = {
             "during_exposure",
             "within_4w_oral_withdrawal",
             "within_8w_lai_withdrawal",
+            "other",
             "unknown",
-            "not_assessed",
         ],
         "category": "exposure",
     },
     "h_trial_adequacy_prior": {
-        "permitted": ["adequate", "inadequate", "unknown", "not_assessed"],
+        "permitted": ["adequate", "inadequate", "unknown"],
         "category": "trial_adequacy",
     },
     "h_prior_response": {
-        "permitted": ["response", "no_response", "unknown", "not_assessed"],
+        "permitted": ["response", "no_response", "unknown"],
         "category": "prior_response",
     },
     "h_monitoring_baseline": {
@@ -102,13 +94,17 @@ ALLOWED_FIELDS: dict[str, dict[str, Any]] = {
         "permitted": list(TRISTATE_NOT_ASSESSED),
         "category": "monitoring",
     },
-    "h_medication_timeline_documented": {
-        "permitted": list(TRISTATE_NOT_ASSESSED),
-        "category": "exposure",
-    },
 }
 
 FIELD_IDS = tuple(ALLOWED_FIELDS)
+
+# Read compatibility only: these ids cannot be introduced by a new write.
+RETIRED_FIELD_IDS = frozenset(
+    {"h_exposure_duration_3m", "h_exposure_1m_if_60plus", "h_medication_timeline_documented"}
+)
+DEFAULT_UNKNOWN_FIELD_IDS = frozenset(
+    {"h_exposure_dopamine_blocker", "h_onset_timing", "h_trial_adequacy_prior", "h_prior_response"}
+)
 
 EXCLUDED_FIELDS = frozenset(
     {
@@ -135,25 +131,127 @@ def definition_version() -> str:
     return HISTORY_VERSION
 
 
+def applicable_field_ids(values: dict[str, Any]) -> tuple[str, ...]:
+    """Only visible core questions contribute to History completeness."""
+    hidden = set()
+    if values.get("h_exposure_dopamine_blocker") != "yes":
+        hidden.update({"h_onset_timing", "h_trial_adequacy_prior", "h_prior_response"})
+    elif values.get("h_trial_adequacy_prior") != "inadequate":
+        hidden.add("h_prior_response")
+    return tuple(field_id for field_id in FIELD_IDS if field_id not in hidden)
+
+
+def normalize_history_values(values: Any) -> dict[str, Any]:
+    """Read old drafts without reviving retired or currently hidden answers.
+
+    Unknown defaults carry no attribution. Other invalid/undeclared values stay
+    available to preview validation; this is not a replacement for strict writes.
+    """
+    normalized = dict(values) if isinstance(values, dict) else {}
+    for field_id in RETIRED_FIELD_IDS:
+        normalized.pop(field_id, None)
+    for field_id in DEFAULT_UNKNOWN_FIELD_IDS:
+        if normalized.get(field_id) == "not_assessed":
+            normalized[field_id] = "unknown"
+    normalized.setdefault("h_exposure_dopamine_blocker", "unknown")
+    applicable = applicable_field_ids(normalized)
+    for field_id in DEFAULT_UNKNOWN_FIELD_IDS - {"h_exposure_dopamine_blocker"}:
+        if field_id in applicable:
+            normalized.setdefault(field_id, "unknown")
+        else:
+            normalized.pop(field_id, None)
+    return normalized
+
+
+def normalize_draft_history(draft_data: Any) -> Any:
+    """Normalize mutable draft History while preserving unrelated page state."""
+    if not isinstance(draft_data, dict) or not isinstance(draft_data.get(HISTORY_KEY), dict):
+        return draft_data
+    updated = dict(draft_data)
+    section = dict(draft_data[HISTORY_KEY])
+    if VALUES_KEY not in section and any(
+        key in ALLOWED_FIELDS or key in RETIRED_FIELD_IDS for key in section
+    ):
+        # Retain the engineering client's historical direct-value shape.
+        metadata = {PROVENANCE_KEY, RECONCILIATION_KEY, PHONE_UPDATE_KEY}
+        raw = {key: value for key, value in section.items() if key not in metadata}
+        normalized = normalize_history_values(raw)
+        section = {key: value for key, value in section.items() if key in metadata}
+        provenance = section.get(PROVENANCE_KEY)
+        if isinstance(provenance, dict):
+            section[PROVENANCE_KEY] = {
+                key: value for key, value in provenance.items() if key in normalized and key in raw
+            }
+        section.update(normalized)
+        updated[HISTORY_KEY] = section
+        return updated
+    if VALUES_KEY not in section:
+        return updated
+    section.update(get_history_section(draft_data))
+    updated[HISTORY_KEY] = section
+    return updated
+
+
+def history_for_autosave(previous: Any, incoming: dict[str, Any]) -> dict[str, Any]:
+    """Clean legacy round trips, reject newly supplied retired/invalid choices.
+
+    The general autosave remains permissive for other pages and History fields;
+    the revised questions enforce their current contract on new answers.
+    """
+    section = incoming.get(HISTORY_KEY)
+    if not isinstance(section, dict):
+        return normalize_draft_history(incoming)
+    values = section.get(VALUES_KEY, section)
+    if not isinstance(values, dict):
+        return normalize_draft_history(incoming)
+    prior_section = previous.get(HISTORY_KEY) if isinstance(previous, dict) else None
+    prior = (
+        prior_section.get(VALUES_KEY, prior_section) if isinstance(prior_section, dict) else None
+    )
+    prior = prior if isinstance(prior, dict) else {}
+    errors = {}
+    for field_id, value in values.items():
+        unchanged = field_id in prior and value == prior[field_id]
+        if field_id in RETIRED_FIELD_IDS and not unchanged:
+            errors[field_id] = ["This history field has been removed."]
+        elif (
+            field_id in DEFAULT_UNKNOWN_FIELD_IDS
+            and value not in ALLOWED_FIELDS[field_id]["permitted"]
+            and not unchanged
+        ):
+            errors[field_id] = [f"Must be one of {ALLOWED_FIELDS[field_id]['permitted']}."]
+    if errors:
+        raise contracts.ContractError(
+            422, "VALIDATION_FAILED", "History values are invalid.", errors
+        )
+    return normalize_draft_history(incoming)
+
+
 def get_history_section(draft_data: Any) -> dict[str, Any]:
     """History sub-object inside the opaque autosave body (never None)."""
     if not isinstance(draft_data, dict):
-        return {"values": {}, "provenance": {}, "reconciliation": None, "phone_update": None}
+        draft_data = {}
     section = draft_data.get(HISTORY_KEY)
     if not isinstance(section, dict):
-        return {"values": {}, "provenance": {}, "reconciliation": None, "phone_update": None}
-    values = section.get(VALUES_KEY)
+        section = {}
+    raw_values = section.get(VALUES_KEY)
+    raw_values = raw_values if isinstance(raw_values, dict) else {}
+    values = normalize_history_values(raw_values)
     provenance = section.get(PROVENANCE_KEY)
     return {
-        "values": dict(values) if isinstance(values, dict) else {},
-        "provenance": dict(provenance) if isinstance(provenance, dict) else {},
+        "values": values,
+        "provenance": {
+            key: value for key, value in provenance.items() if key in values and key in raw_values
+        }
+        if isinstance(provenance, dict)
+        else {},
         "reconciliation": section.get(RECONCILIATION_KEY),
         "phone_update": section.get(PHONE_UPDATE_KEY),
     }
 
 
 def get_values(draft_data: Any) -> dict[str, Any]:
-    """Current history values ({} when unanswered)."""
+    """Current history values including applicable Unknown defaults."""
     return get_history_section(draft_data)["values"]
 
 
@@ -166,7 +264,7 @@ def validate_history_values(values: Any) -> dict[str, Any]:
 
     Unknown and not_assessed are distinct permitted values, never coerced to
     false. Excluded FR-14 regimen fields are rejected even when they look
-    well-formed. Returns the values unchanged when valid.
+    well-formed. Valid values receive defaults and conditional cleanup.
     """
     if not isinstance(values, dict):
         raise contracts.ContractError(
@@ -195,7 +293,7 @@ def validate_history_values(values: Any) -> dict[str, Any]:
         raise contracts.ContractError(
             422, "VALIDATION_FAILED", "History values are invalid.", errors
         )
-    return values
+    return normalize_history_values(values)
 
 
 def evaluate_history(values: Any) -> dict[str, Any]:
@@ -205,8 +303,7 @@ def evaluate_history(values: Any) -> dict[str, Any]:
     suppressed; missing declared ids appear as missing_item_ids. Never
     zero-fills: history has no scores, only completeness.
     """
-    if not isinstance(values, dict):
-        values = {}
+    values = normalize_history_values(values)
     from x_insight.models.workflow_release import history_fields
 
     allowed = {**ALLOWED_FIELDS, **history_fields()}
@@ -223,7 +320,7 @@ def evaluate_history(values: Any) -> dict[str, Any]:
     valid = {
         key: value for key, value in values.items() if key in allowed and key not in item_errors
     }
-    missing = [field_id for field_id in FIELD_IDS if field_id not in valid]
+    missing = [field_id for field_id in applicable_field_ids(values) if field_id not in valid]
     if item_errors or missing:
         status = "unanswered" if (not valid and not item_errors) else "partial"
         return {
@@ -382,6 +479,8 @@ def save_history(
     prior_provenance = prior_section["provenance"]
     provenance: dict[str, Any] = {}
     for field_id in validated_values:
+        if field_id not in values:
+            continue  # Defaults express uncertainty; they are not clinician entries.
         prior = prior_provenance.get(field_id)
         if (
             isinstance(prior, dict)

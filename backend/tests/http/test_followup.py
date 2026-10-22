@@ -200,6 +200,7 @@ BASELINE_HISTORY = {
     "h_exposure_dopamine_blocker": "yes",
     "h_monitoring_baseline": "no",
     "h_onset_timing": "unknown",
+    "h_trial_adequacy_prior": "unknown",
 }
 BASELINE_MEDICATIONS = [
     {"catalog_drug_id": "demo-aspirin"},
@@ -477,7 +478,7 @@ def test_followup_without_baseline_has_empty_shell(
     assert started.status_code == 201, started.text
     encounter_id = started.json()["encounter"]["id"]
     draft_data = started.json()["draft_data"]
-    assert draft_data["history"]["values"] == {}
+    assert draft_data["history"]["values"] == {"h_exposure_dopamine_blocker": "unknown"}
     assert draft_data["history"]["reconciliation"] == {
         "status": "not_required",
         "baseline_encounter_id": None,

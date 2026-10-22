@@ -90,9 +90,10 @@ def read_followup_baseline_for_author(
     encounter = encounters_service.read_draft_for_author(session, encounter_id, user)
     draft_data = encounter.get("draft_data") or {}
     baseline = draft_data.get(encounters_service.FOLLOWUP_BASELINE_KEY)
-    history_section = draft_data.get(encounters_service.HISTORY_STATE_KEY)
-    raw_values = history_section.get("values") if isinstance(history_section, dict) else None
-    current_values = dict(raw_values) if isinstance(raw_values, dict) else {}
+    from x_insight.cases import history as history_service
+
+    history_section = history_service.get_history_section(draft_data)
+    current_values = history_section["values"]
     raw_reconciliation = (
         history_section.get("reconciliation") if isinstance(history_section, dict) else None
     )

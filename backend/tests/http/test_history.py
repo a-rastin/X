@@ -265,8 +265,6 @@ def _assert_effects_follow_up_only(response, field: str) -> None:
 # Independent literals (worked from content/history/*.v1.json, never from code).
 HISTORY_IDS = (
     "h_exposure_dopamine_blocker",
-    "h_exposure_duration_3m",
-    "h_exposure_1m_if_60plus",
     "h_movement_persistence_4w",
     "h_onset_timing",
     "h_trial_adequacy_prior",
@@ -275,22 +273,15 @@ HISTORY_IDS = (
     "h_alternative_cause_considered",
     "h_functional_impact",
     "h_falls_or_limitation",
-    "h_medication_timeline_documented",
 )
 
 COMPLETE_HISTORY = {
     "h_exposure_dopamine_blocker": "no",
-    "h_exposure_duration_3m": "no",
-    "h_exposure_1m_if_60plus": "no",
     "h_movement_persistence_4w": "no",
-    "h_onset_timing": "not_assessed",
-    "h_trial_adequacy_prior": "not_assessed",
-    "h_prior_response": "not_assessed",
     "h_monitoring_baseline": "no",
     "h_alternative_cause_considered": "unknown",
     "h_functional_impact": "no",
     "h_falls_or_limitation": "no",
-    "h_medication_timeline_documented": "no",
 }
 
 BARS_COMPLETE = {
@@ -352,7 +343,7 @@ def test_history_definitions_stay_awaiting_review() -> None:
         assert payload["review_status"] == "awaiting_review"
         assert payload["approval"] == "none"
     history_payload = json.loads((root / "history.v1.json").read_text())
-    assert len(history_payload["fields"]) == 12
+    assert len(history_payload["fields"]) == 9
     assert {field["id"] for field in history_payload["fields"]} == set(HISTORY_IDS)
     assert all(field["analysis_visible"] is True for field in history_payload["fields"])
 
@@ -360,22 +351,28 @@ def test_history_definitions_stay_awaiting_review() -> None:
 # --- Slice 1: history persists with provenance; unknown distinct from false ---
 
 
-def test_fresh_history_is_unanswered_with_12_missing(
+def test_fresh_history_defaults_unknown_and_five_movement_items_missing(
     admin_client, clean_registry, monkeypatch
 ) -> None:
     client, _, _, encounter_id = _setup_draft(
         admin_client, clean_registry, monkeypatch, "dr_hist1", "0012348001"
     )
     direct = history_service.evaluate_history({})
-    assert direct["status"] == "unanswered"
-    assert direct["missing_item_ids"] == list(HISTORY_IDS)
+    assert direct["status"] == "partial"
+    assert direct["missing_item_ids"] == [
+        "h_movement_persistence_4w",
+        "h_monitoring_baseline",
+        "h_alternative_cause_considered",
+        "h_functional_impact",
+        "h_falls_or_limitation",
+    ]
     assert direct["item_errors"] == {}
     assert direct["definition_version"] == "v1"
 
     preview = _get_history(client, encounter_id)
     assert preview.status_code == 200, preview.text
     body = preview.json()
-    assert body["values"] == {}
+    assert body["values"] == {"h_exposure_dopamine_blocker": "unknown"}
     assert body["evaluation"] == direct
     assert body["definition_version"] == "v1"
     assert body["revision"] == 1
@@ -424,7 +421,7 @@ def test_history_unknown_and_not_assessed_stay_distinct_from_false(
     )
     values = dict(COMPLETE_HISTORY)
     values["h_exposure_dopamine_blocker"] = "unknown"
-    values["h_exposure_duration_3m"] = "not_assessed"
+    values["h_monitoring_baseline"] = "not_assessed"
     values["h_movement_persistence_4w"] = "no"
     direct = history_service.evaluate_history(values)
     assert direct["status"] == "complete"
@@ -433,7 +430,7 @@ def test_history_unknown_and_not_assessed_stay_distinct_from_false(
     assert saved.status_code == 200, saved.text
     body = saved.json()
     assert body["values"]["h_exposure_dopamine_blocker"] == "unknown"
-    assert body["values"]["h_exposure_duration_3m"] == "not_assessed"
+    assert body["values"]["h_monitoring_baseline"] == "not_assessed"
     assert body["values"]["h_movement_persistence_4w"] == "no"
     # None was coerced to false: explicit no stays no, unknown stays unknown.
     assert body["values"]["h_exposure_dopamine_blocker"] != "no"
@@ -472,7 +469,9 @@ def test_history_undeclared_and_excluded_fields_fail_422(
     assert undeclared.status_code == 422, undeclared.text
     assert "h_fake" in undeclared.json()["field_errors"]
     # Nothing wrote: revision and values unchanged.
-    assert _get_history(client, encounter_id).json()["values"] == {}
+    assert _get_history(client, encounter_id).json()["values"] == {
+        "h_exposure_dopamine_blocker": "unknown"
+    }
 
 
 def test_history_invalid_values_rejected_server_side(
@@ -1045,7 +1044,15 @@ def test_history_notes_separation_via_serializer_and_http(
     assert after["values"] == {"h_exposure_dopamine_blocker": "unknown"}
     assert after["evaluation"]["status"] == "partial"
     assert after["evaluation"]["missing_item_ids"] == [
-        fid for fid in HISTORY_IDS if fid != "h_exposure_dopamine_blocker"
+        fid
+        for fid in HISTORY_IDS
+        if fid
+        not in {
+            "h_exposure_dopamine_blocker",
+            "h_onset_timing",
+            "h_trial_adequacy_prior",
+            "h_prior_response",
+        }
     ]
     # Notes text never leaks into the history serializer.
     blob = contracts.canonical_json(after).decode()
@@ -1189,3 +1196,245 @@ def test_history_effects_idempotency_replay_and_conflict(
         key="eff-key-001",
     )
     assert conflict_effect.status_code == 409, conflict_effect.text
+
+
+@pytest.mark.parametrize(
+    ("exposure", "adequacy", "count"),
+    [
+        ("no", "inadequate", 6),
+        ("unknown", "inadequate", 6),
+        ("yes", "adequate", 8),
+        ("yes", "unknown", 8),
+        ("yes", "inadequate", 9),
+    ],
+)
+def test_conditional_questions_roundtrip(
+    admin_client, clean_registry, monkeypatch, exposure, adequacy, count
+):
+    client, csrf, _, eid = _setup_draft(
+        admin_client, clean_registry, monkeypatch, "dr_conditional", "0012348601"
+    )
+    values = {
+        **COMPLETE_HISTORY,
+        "h_exposure_dopamine_blocker": exposure,
+        "h_onset_timing": "other",
+        "h_trial_adequacy_prior": adequacy,
+        "h_prior_response": "response",
+    }
+    saved = _post_history(client, csrf, eid, values, 1)
+    assert saved.status_code == 200, saved.text
+    state = saved.json()
+    assert len(state["values"]) == count
+    assert state["evaluation"]["status"] == "complete"
+    assert ("h_onset_timing" in state["values"]) == (exposure == "yes")
+    assert ("h_trial_adequacy_prior" in state["values"]) == (exposure == "yes")
+    assert ("h_prior_response" in state["values"]) == (
+        exposure == "yes" and adequacy == "inadequate"
+    )
+    assert set(state["provenance"]) == set(state["values"])
+    assert _get_history(client, eid).json()["values"] == state["values"]
+    draft = client.get(f"/api/v1/encounters/{eid}").json()
+    patched = _patch(client, csrf, eid, draft["draft_data"], 2)
+    assert patched.status_code == 200, patched.text
+    assert _get_history(client, eid).json()["values"] == state["values"]
+
+
+def test_parent_transitions_clear_children_and_default_without_provenance(
+    admin_client, clean_registry, monkeypatch
+):
+    client, csrf, _, eid = _setup_draft(
+        admin_client, clean_registry, monkeypatch, "dr_defaults", "0012348602"
+    )
+    saved = _post_history(
+        client, csrf, eid, {**COMPLETE_HISTORY, "h_exposure_dopamine_blocker": "yes"}, 1
+    )
+    assert saved.status_code == 200, saved.text
+    state = saved.json()
+    assert state["values"]["h_onset_timing"] == "unknown"
+    assert state["values"]["h_trial_adequacy_prior"] == "unknown"
+    assert "h_onset_timing" not in state["provenance"]
+    assert "h_trial_adequacy_prior" not in state["provenance"]
+    for exposure, adequacy in [
+        ("yes", "inadequate"),
+        ("yes", "adequate"),
+        ("yes", "unknown"),
+        ("no", "inadequate"),
+        ("unknown", "inadequate"),
+        ("yes", "inadequate"),
+    ]:
+        values = {
+            **state["values"],
+            "h_exposure_dopamine_blocker": exposure,
+            "h_trial_adequacy_prior": adequacy,
+        }
+        changed = _post_history(client, csrf, eid, values, state["revision"])
+        assert changed.status_code == 200, changed.text
+        state = changed.json()
+        active = exposure == "yes" and adequacy == "inadequate"
+        assert ("h_prior_response" in state["values"]) == active
+        assert "h_prior_response" not in state["provenance"]
+        if active:
+            assert state["values"]["h_prior_response"] == "unknown"
+        if exposure != "yes":
+            assert not {"h_onset_timing", "h_trial_adequacy_prior", "h_prior_response"} & set(
+                state["values"]
+            )
+            assert not {"h_onset_timing", "h_trial_adequacy_prior", "h_prior_response"} & set(
+                state["provenance"]
+            )
+
+
+@pytest.mark.parametrize(
+    "field_id",
+    ["h_exposure_duration_3m", "h_exposure_1m_if_60plus", "h_medication_timeline_documented"],
+)
+def test_removed_history_fields_rejected_on_new_writes(
+    admin_client, clean_registry, monkeypatch, field_id
+):
+    client, csrf, _, eid = _setup_draft(
+        admin_client, clean_registry, monkeypatch, "dr_removed", "0012348603"
+    )
+    for response in [
+        _post_history(client, csrf, eid, {field_id: "yes"}, 1),
+        _patch(client, csrf, eid, {"history": {"values": {field_id: "yes"}}}, 1),
+    ]:
+        assert response.status_code == 422, response.text
+        assert field_id in response.json()["field_errors"]
+    assert _get_history(client, eid).json()["revision"] == 1
+
+
+@pytest.mark.parametrize(
+    "field_id",
+    ["h_exposure_dopamine_blocker", "h_onset_timing", "h_trial_adequacy_prior", "h_prior_response"],
+)
+@pytest.mark.parametrize("bad", ["not_assessed", None])
+def test_invalid_revised_answers_rejected_on_both_paths(
+    admin_client, clean_registry, monkeypatch, field_id, bad
+):
+    client, csrf, _, eid = _setup_draft(
+        admin_client, clean_registry, monkeypatch, "dr_badchoices", "0012348604"
+    )
+    values = {
+        "h_exposure_dopamine_blocker": "yes",
+        "h_trial_adequacy_prior": "inadequate",
+        field_id: bad,
+    }
+    for response in [
+        _post_history(client, csrf, eid, values, 1),
+        _patch(client, csrf, eid, {"history": {"values": values}}, 1),
+    ]:
+        assert response.status_code == 422, response.text
+        assert field_id in response.json()["field_errors"]
+    assert _get_history(client, eid).json()["revision"] == 1
+
+
+def test_legacy_read_autosave_cleanup_preserves_frozen_baseline(
+    admin_client, clean_registry, monkeypatch
+):
+    client, csrf, _, eid = _setup_draft(
+        admin_client, clean_registry, monkeypatch, "dr_legacy", "0012348605"
+    )
+    legacy = {
+        **COMPLETE_HISTORY,
+        "h_exposure_dopamine_blocker": "not_assessed",
+        "h_exposure_duration_3m": "yes",
+        "h_exposure_1m_if_60plus": "no",
+        "h_medication_timeline_documented": "yes",
+        "h_onset_timing": "during_exposure",
+        "h_trial_adequacy_prior": "inadequate",
+        "h_prior_response": "response",
+    }
+    provenance = {
+        key: {"source": "copied_baseline", "recorded_at": "2020-01-01T00:00:00Z"} for key in legacy
+    }
+    raw = {
+        "history": {"values": legacy, "provenance": provenance},
+        "followup_baseline": {"history_values": dict(legacy)},
+    }
+    _seed_draft_data(clean_registry, eid, raw)
+    expected = {**COMPLETE_HISTORY, "h_exposure_dopamine_blocker": "unknown"}
+    read = _get_history(client, eid).json()
+    assert read["values"] == expected
+    assert set(read["provenance"]) == set(expected)
+    draft = client.get(f"/api/v1/encounters/{eid}").json()["draft_data"]
+    assert draft["history"]["values"] == expected
+    assert draft["followup_baseline"]["history_values"] == legacy
+    saved = _patch(client, csrf, eid, raw, 1)
+    assert saved.status_code == 200, saved.text
+    assert saved.json()["draft_data"]["history"]["values"] == expected
+    assert _get_history(client, eid).json()["values"] == expected
+    assert saved.json()["draft_data"]["followup_baseline"]["history_values"] == legacy
+    strict_resave = _post_history(client, csrf, eid, read["values"], 2)
+    assert strict_resave.status_code == 200, strict_resave.text
+    assert strict_resave.json()["values"] == expected
+    assert _get_history(client, eid).json()["values"] == expected
+
+
+def test_legacy_defaults_active_children_but_explicit_null_stays_invalid(
+    admin_client, clean_registry, monkeypatch
+):
+    client, _, _, eid = _setup_draft(
+        admin_client, clean_registry, monkeypatch, "dr_legacy_null", "0012348606"
+    )
+    _seed_draft_data(
+        clean_registry,
+        eid,
+        {
+            "history": {
+                "values": {
+                    **COMPLETE_HISTORY,
+                    "h_exposure_dopamine_blocker": "yes",
+                    "h_trial_adequacy_prior": "inadequate",
+                    "h_onset_timing": "not_assessed",
+                    "h_prior_response": None,
+                }
+            }
+        },
+    )
+    state = _get_history(client, eid).json()
+    assert state["values"]["h_onset_timing"] == "unknown"
+    assert state["values"]["h_prior_response"] is None
+    assert "h_prior_response" in state["evaluation"]["item_errors"]
+    assert state["evaluation"]["status"] == "partial"
+    assert state["provenance"] == {}
+
+
+def test_all_revised_choices_and_versioned_context_survive_autosave(
+    admin_client, clean_registry, monkeypatch
+):
+    client, csrf, _, eid = _setup_draft(
+        admin_client, clean_registry, monkeypatch, "dr_options", "0012348607"
+    )
+    initial = _get_history(client, eid).json()
+    assert set(HISTORY_IDS) <= set(initial["allowed_field_ids"])
+    assert not {
+        "h_exposure_duration_3m",
+        "h_exposure_1m_if_60plus",
+        "h_medication_timeline_documented",
+    } & set(initial["allowed_field_ids"])
+    context_key = "candidate/history/pharmacotherapy.v2/h_prior_treatment_difficulty"
+    values = {
+        **COMPLETE_HISTORY,
+        "h_exposure_dopamine_blocker": "yes",
+        "h_trial_adequacy_prior": "inadequate",
+        context_key: "Absent",
+    }
+    revision = 1
+    for onset, response in [
+        ("during_exposure", "response"),
+        ("within_4w_oral_withdrawal", "no_response"),
+        ("within_8w_lai_withdrawal", "unknown"),
+        ("other", "response"),
+        ("unknown", "unknown"),
+    ]:
+        values = {**values, "h_onset_timing": onset, "h_prior_response": response}
+        saved = _post_history(client, csrf, eid, values, revision)
+        assert saved.status_code == 200, saved.text
+        revision = saved.json()["revision"]
+        assert saved.json()["values"] == values
+        assert saved.json()["evaluation"]["status"] == "complete"
+        draft = client.get(f"/api/v1/encounters/{eid}").json()["draft_data"]
+        patched = _patch(client, csrf, eid, draft, revision)
+        assert patched.status_code == 200, patched.text
+        revision = patched.json()["revision"]
+        assert _get_history(client, eid).json()["values"] == values

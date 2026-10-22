@@ -161,8 +161,8 @@ export function FollowupBaselinePanel({
 
       {baseline === null ? (
         <p className="xi-hint" role="status">
-          No copied baseline — history starts empty. Answer each history field
-          explicitly in the history section below.
+          No copied baseline — review each history field in the history section
+          below. Exposure and treatment responses default to Unknown.
         </p>
       ) : (
         <div>
