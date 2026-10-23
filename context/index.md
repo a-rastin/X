@@ -33,7 +33,7 @@
 
 ## D
 
-- [ddi.md](ddi.md) — Deterministic DDI lookup, preserved assertions, supplied DDInter scope, limited coverage, stable identities and release association.
+- [ddi.md](ddi.md) — Deterministic DDI lookup, preserved assertions, supplied DDInter scope, limited coverage, stable identities, release association and source-only setup.
 
 ## E
 

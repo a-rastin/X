@@ -144,11 +144,21 @@ curl --fail http://localhost:8000/api/v1/health
 curl --fail http://localhost:8000/api/v1/ready
 ```
 
-`make migrate` loads `.env` itself and applies `alembic upgrade head`. A new
+`make migrate` loads `.env` itself, applies Alembic migrations, then installs the
+bundled owner-approved DDInter release into a database with no released DDI data.
+It rebuilds offline from committed sources without Git LFS, manual publication,
+or a model provider. The first rebuild/import may take several minutes; wait for
+`READY: ddi-c45e2051cf16` (1,939 drugs, 222,383 source occurrences). Repeats reuse
+the exact immutable release. Existing released datasets are preserved unless the
+bundled version is explicitly configured; see the [bootstrap rules](ddinter-operations.md#fresh-installation-with-the-bundled-approved-release).
+
+A new
 database has no usable application schema before this step; startup seeding may
-log an error until the schema exists. Current head is `0021`. Continue only when
-readiness returns HTTP 200. The public liveness endpoint can return 200 even while
-the database is unavailable or incompatible.
+log an error until the schema exists. Current head is `0022`. Continue only when
+the migration command succeeds and readiness returns HTTP 200. Plain
+`alembic upgrade head` creates schema without provisioning DDI data; `/ready`
+alone does not prove a DDI release is available. The public liveness endpoint can
+return 200 even while the database is unavailable or incompatible.
 
 ### 5. Sign in
 
@@ -241,6 +251,10 @@ This follows the operator-runbook order: build, start, then explicitly migrate.
 `prod-up` starts `db`, `app`, `worker`, and `edge`; `prod-migrate` runs a disposable
 migration container. A running or healthy API container is not proof of schema
 readiness: its container health check uses `/health`, not `/ready`.
+The migration container applies schema and the same bundled approved DDI bootstrap
+as local setup. The image includes the ordinary Git sources and approval inputs;
+it rebuilds generated evidence locally instead of requiring the archived LFS
+payload. Wait for successful `READY` output on a fresh database before using Medications.
 
 Only Caddy publishes host ports. The API and database remain on the internal
 Compose network. Persistent volumes hold the database (`prod_pgdata`) and shared
@@ -322,6 +336,10 @@ The basic installation check is:
 4. If background processing is needed, the worker is running and uses the intended
    database. Provider/content failures remain explicit rather than becoming mock
    successful proposals.
+5. In a new registration draft, Medications shows `DDInter supplied CSV exports`,
+   version `ddi-c45e2051cf16`, and `1939 drugs` after fresh setup. The normal setup
+   command must have completed successfully; schema readiness alone does not check
+   the DDI catalog. Severity-only details and unavailable missing-pair coverage remain.
 
 For developer verification, use a disposable database and synthetic records.
 From the repository root, load `.env` before backend/recovery checks:
@@ -383,7 +401,8 @@ again. Do not clear a maintenance lock as a generic startup fix.
 | Docker daemon or permission error | Confirm `docker info` succeeds for the installation account before retrying Compose |
 | `make dev` reports an occupied database port | Inspect this checkout's Compose stack; stop it if already running, or choose free database ports and update both URLs |
 | API/web ports are occupied | Use separate terminals/ports for an isolated instance; `BACKEND_PORT`/`WEB_PORT` do not alter the current `make dev` commands |
-| `/health` is 200 but `/ready` is 503 `SCHEMA_INCOMPATIBLE` | Apply the migration for the matching application revision with `make migrate` or `prod-migrate`; current expected head is `0021` |
+| `/health` is 200 but `/ready` is 503 `SCHEMA_INCOMPATIBLE` | Apply the migration for the matching application revision with `make migrate` or `prod-migrate`; current expected head is `0022` |
+| Medications shows `DDI dataset is unavailable.` after a fresh installation | Complete `make migrate` or `make prod-migrate` against the API's database and check its bootstrap output; direct Alembic migration is schema only. See [DDI bootstrap recovery](ddinter-operations.md#fresh-installation-with-the-bundled-approved-release). An invalid `DDI_DEFAULT_DATASET_VERSION` still fails explicitly |
 | `/ready` reports `DB_UNAVAILABLE` | Check database health and the API process's actual connection configuration; confirm password, hostname, port, and database name |
 | Password changes in `.env` do not fix database login | PostgreSQL initialization variables do not change credentials inside an existing volume; use its existing credentials or a deliberate database password change |
 | Vite loads but API calls fail | Check the API on port 8000 and `API_PROXY_TARGET`; restart Vite after changing its proxy environment |

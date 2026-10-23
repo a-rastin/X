@@ -7,12 +7,14 @@ provider-storage behavior is recorded in [S42](../project-documents/dev/progress
 the dated rehearsal notes below retain their original scope.
 
 For supplied DDInter data, use the [DDInter operations runbook](../docs/ddinter-operations.md)
-for migration `0022`, source/evidence review, privileged atomic publication,
+for migration `0022`, bundled bootstrap, source/evidence review, privileged atomic publication,
 verification and default rollback. `DDI_DEFAULT_DATASET_VERSION` is forwarded to
 both app and worker; changing its environment value requires recreating both
 services. Existing report pins and selection associations retain their release.
-The full review candidate is ready; genuine owner approval and publication into
-an identified application target remain pending. The isolated full-volume
+The owner-approved `ddi-c45e2051cf16` release is bundled: `prod-migrate` rebuilds
+and installs it on a database without released DDI data. Existing released datasets
+are preserved unless this bundled version is explicitly configured as the default.
+The isolated full-volume
 [acceptance evidence](../docs/verification/ddinter-2026-10-21/README.md) includes
 backup/restore measurements and their limits. Take pre-upgrade backups using the
 currently deployed version before migration; older `0021` archives remain supported.
@@ -37,6 +39,10 @@ Pinned images/runtimes (see Dockerfiles for digests; verified 2026-10-11):
 Follow the [Docker installation steps](../docs/installation.md#docker-deployment-on-linux):
 `prod-build`, `prod-up`, then explicit `prod-migrate`, using the same external
 `PROD_ENV_FILE` throughout. Check both health and readiness through the edge.
+`prod-migrate` applies schema, then bootstraps the bundled approved DDInter release
+from source files included in the app image; it does not require Git LFS. First
+setup may take several minutes. Wait for `READY: ddi-c45e2051cf16` on a fresh database
+and verify the Medications catalog. Repeats reuse the exact immutable release.
 These instructions do not close the S62 release gate.
 
 Login with `admin` / `admin` once, then change the password: the singleton
@@ -134,7 +140,7 @@ disposable copy, then `make prod-migrate`, then login/read/replay checks.
 - Schema rollback for a compatible step down: stop app/worker, then run the
   one-off `migrate` compose service with an Alembic entrypoint (`migrate`
   below is the compose service name — Alembic has no `migrate` subcommand —
-  and `downgrade -1` replaces the service's default `upgrade head` command):
+  and `downgrade -1` replaces the service's default schema-and-data setup command):
   `docker compose -f compose.prod.yaml --env-file "$X_INSIGHT_PROD_ENV_FILE" run --rm --entrypoint .venv/bin/alembic migrate downgrade -1`.
   Only compatible downgrades are safe; otherwise restore the pre-upgrade
   backup with the S56 staged-restore procedure (validate → confirm exact
@@ -146,20 +152,23 @@ disposable copy, then `make prod-migrate`, then login/read/replay checks.
 
 ## 5. Migration failure recovery
 
-Migrations run inside transactions (PostgreSQL DDL is transactional): a
-failed `make prod-migrate` leaves the database at its prior version — the
-app keeps serving that version (`/ready` goes 503 only if the schema is
-forward-incompatible, never with partial DDL). Recover by:
+`prod-migrate` applies Alembic schema migrations first and then bootstraps approved
+DDI data. These are separate transactions. A failed schema migration rolls back
+its transaction; a later `DDI bootstrap FAILED` can leave schema head `0022`
+committed while no new DDI release was published. A readiness response checks
+schema compatibility, not DDI availability. Recover by:
 
-1. Read the Alembic error in the `prod-migrate` terminal output; the migration
+1. Read the schema or DDI bootstrap error in the `prod-migrate` terminal output; the migration
    container uses `--rm`, so its container logs are not retained afterward.
 2. `docker compose -f compose.prod.yaml --env-file "$X_INSIGHT_PROD_ENV_FILE" run --rm --entrypoint .venv/bin/alembic migrate current`
-   — confirm the database is still at the prior version (`migrate` is the
-   compose service name; `current` replaces its default `upgrade head`).
+   — establish the actual schema version (`migrate` is the compose service name;
+   `current` replaces its default setup command).
 3. Fix forward (new image with a corrected migration) or roll back the
    application image (§4). Never hand-edit schema or `alembic_version`.
-4. Re-run `make prod-migrate`, then verify `/ready`, login, and a
-   patient read before reopening to users.
+4. For a bootstrap error, restore the matching committed bundle inputs or fix
+   target/default configuration as described in [DDI bootstrap recovery](../docs/ddinter-operations.md#fresh-installation-with-the-bundled-approved-release).
+   Re-run `make prod-migrate`, then verify `/ready`, login, a patient read, and
+   Medications catalog/report access before reopening to users.
 
 ## 6. Restart semantics (independent restarts)
 

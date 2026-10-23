@@ -59,6 +59,10 @@ The preceding bounded follow-up implements the complete supplied DDInter import 
 [medication workflow integration (2026-10-21)](project-documents/dev/progress/s20.md#follow-up-2026-10-21--ddinter-workflow-and-release-association).
 The owner confirmed completed review, and release `ddi-c45e2051cf16` is
 [published into the local application database](docs/verification/ddinter-2026-10-21/publication.md).
+The [fresh-clone setup fix (2026-10-23)](project-documents/dev/progress/s18.md#follow-up-2026-10-23--bundle-approved-ddinter-for-fresh-installations)
+also installs that same approved release during `make migrate` or `make prod-migrate`
+when a database has no released DDI dataset. Its committed sources rebuild offline;
+Git LFS and a separate manual publication are unnecessary for normal setup.
 The earlier [page-note follow-up](project-documents/dev/progress/s13.md#follow-up-2026-10-20--remove-page-notes-keep-the-working-note)
 preserves the working note.
 The latest numbered implementation checkpoint is [S42, recorded on
@@ -172,6 +176,12 @@ separate steps. The guide explains the required terminal sequence and database-p
 preflight. For shared deployment, use its Docker instructions and external
 credentials file.
 
+`make migrate` applies schema migrations and provisions the bundled owner-approved
+DDInter dataset: **1,939 drugs and 222,383 source occurrences**. The first offline
+rebuild/import may take several minutes; wait for `READY: ddi-c45e2051cf16` before
+using Medications. Repeated setup reuses the immutable release. Existing deployments
+retain their released dataset; see the [bootstrap rules](docs/ddinter-operations.md#fresh-installation-with-the-bundled-approved-release).
+
 ## Configuration
 
 [.env.example](.env.example) lists the configuration placeholders.
@@ -217,6 +227,7 @@ npx playwright install chromium firefox
 | `make test-backend TEST=tests/http/test_health.py` | One selected backend test file |
 | `make test-e2e` | Playwright suite in Chromium and Firefox |
 | `make test-e2e TEST=e2e/smoke.spec.ts` | Selected browser smoke scenario |
+| `bash e2e/run-ddi-fresh-install.sh` | Isolated PostgreSQL 16 setup and real bundled-DDInter registration in Chromium and Firefox; see [prerequisites](docs/ddinter-operations.md#fresh-install-verification) |
 | `make test-recovery` | Backend backup/restore suite under `tests/recovery` |
 | `make test-load` | Synthetic load probe; configurable with `LOAD_PATIENTS`, `LOAD_WORKERS`, and `LOAD_REPORT` |
 | `make verify` | Combined check, backend, and browser gate; no live provider credentials required |
@@ -240,7 +251,8 @@ and the exact [question-package confirmation
 manifest](content/questions/review-confirmation.s39-v1.json). Package approval,
 workflow-bundle release, activation, and clinical validation are separate states.
 
-The DDI CLI builds offline candidates independently of runtime lookup.
+Normal setup installs the existing owner-approved DDInter release automatically;
+the DDI CLI also builds offline candidates independently of runtime lookup.
 
 For the complete supplied DDInter CSV release, follow the
 [DDInter operations runbook](docs/ddinter-operations.md) for build, owner review,

@@ -226,3 +226,36 @@ interpretable against their original release.
 publishing DDInter. This would silently change the release/identity meaning of
 existing data. A configurable default instead changes selection for unassociated
 work; previous releases remain readable and support rollback without deletion.
+
+## Bootstrap from committed sources without generated LFS evidence
+
+**Id:** 80c59e6c-ce6d-43a5-9e97-745b698d9a9f
+**Type:** decision
+**Status:** active
+**Evidence:** inferred
+**Verification:** corroborated — source-only setup reproduced the approved release and passed real registration in both browsers
+**Revisit when:** the bundled source snapshot, parser, approval manifest or provisioning path changes
+
+Explicit database setup rebuilds the existing approved DDInter release from ordinary
+Git source files and its retained approval inputs, then publishes through the normal
+validator. Runtime requests do not import the dataset. Existing released datasets
+are retained unless the bundled version is explicitly selected.
+
+**Reason:** the confirmed requirement is that a GitHub clone can use DDI during
+new-patient registration after normal setup. A release published only into one
+local database cannot meet that requirement. Rebuilding from source avoids making
+setup depend on downloading the large generated evidence archive through Git LFS,
+while preserving the exact reviewed content identity and approval gate. This
+implementation tradeoff is inferred from the selected design and its verification;
+it does not represent a new owner approval of clinical data.
+
+**Rejected alternative:** retain manual-only publication for each clone. It leaves
+normal migration with empty DDI tables and the registration failure unresolved.
+
+**Rejected alternative:** add another compressed generated bundle for setup.
+Source reconstruction uses the already committed source/approval inventory and
+avoids a second generated payload to retain and keep aligned with that inventory.
+
+**Consequence:** first setup pays the offline rebuild/import cost; exact repeats
+reuse the immutable release. Operational commands and recovery live in the
+[DDInter runbook](../docs/ddinter-operations.md#fresh-installation-with-the-bundled-approved-release).

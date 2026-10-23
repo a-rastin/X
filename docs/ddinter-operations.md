@@ -14,15 +14,18 @@ coverage acceptance. The local application database `x_insight` on port 5432 was
 backed up, migrated from `0021` to `0022`, and published as
 `ddi-c45e2051cf16` (`released_limited`). See the
 [publication record](verification/ddinter-2026-10-21/publication.md) for target
-verification and recovery evidence. Another deployment needs its own target
-checks and publication. The earlier
+verification and recovery evidence. Normal fresh-deployment setup now installs
+this same approved release as described below; existing deployments still need
+their own target checks before deliberate publication or default changes. The earlier
 [isolated acceptance evidence](verification/ddinter-2026-10-21/README.md)
 used explicitly simulated test approval and remains a separate historical drill.
 
 The archive contains all 16 original and generated files, byte for byte. Only
 `evidence.jsonl` uses Git LFS; its Git entry is a pointer to the full payload.
-Install Git LFS before cloning, or run these commands from the repository root
-in an existing checkout:
+Normal application setup does **not** require this LFS payload: the bootstrap
+rebuilds the generated artifacts from ordinary Git files. To inspect or manually
+publish the archived generated bundle without rebuilding it, install Git LFS
+before cloning, or run these commands from the repository root in an existing checkout:
 
 ```sh
 git lfs install --local
@@ -34,6 +37,67 @@ operator-owned working directory such as `/tmp/ddinter-candidate` for the comman
 below. The original `review-manifest.json` retains the pending review state; the
 owner's reviewed manifest is separate. Committing the bundle is separate from
 pushing Git commits and LFS objects to the remote.
+
+## Fresh installation with the bundled approved release
+
+From the repository root, use `make migrate` for local setup or
+`make prod-migrate PROD_ENV_FILE="$X_INSIGHT_PROD_ENV_FILE"` after the documented
+production build/start steps. Both run `x_insight.operations.migrate`, which
+upgrades the schema to `0022` and then runs the explicit DDI bootstrap with the
+privileged migration connection. Direct `alembic upgrade head` is schema only.
+
+The bundle under `content/ddi/ddinter/2026-10-21/` supplies the eight CSVs,
+`sources/docs/explanation.txt`, `candidate_dataset.json`, and the separate
+`owner-reviewed-manifest.json` as ordinary Git files. The production image copies
+these inputs. Bootstrap rebuilds into temporary staging, checks that the candidate
+matches the committed inventory, and uses the existing approval/publish validator.
+It needs no generated LFS evidence, network, LLM, or new clinical approval. It
+reuses the existing `approved_limited` decision; data and coverage do not change.
+
+On a database with no released dataset, successful setup prints
+`READY: ddi-c45e2051cf16 (reused=False)`. Expect 1,939 drugs and 222,383 occurrences,
+with release content hash
+`c45e2051cf16dfb6b0d7253ce87589ef293f6ee64cf78066e3d2a59bdaa8c039`.
+First setup may take several minutes for the offline rebuild/import; allow it to
+finish before using Medications. This remains `released_limited`: severity-only
+positive assertions, no inferred management advice, missing pairs unavailable.
+
+Repeated setup finds the exact release hash and prints `reused=True` without
+rebuilding sources. If any other released dataset already exists, bootstrap prints
+`SKIPPED: existing DDI release preserved` and leaves it in place. Setting
+`DDI_DEFAULT_DATASET_VERSION=ddi-c45e2051cf16` explicitly allows installation of the
+bundle alongside existing releases. Bootstrap does not repair any other invalid
+configured default; runtime lookup continues to fail explicitly until it is corrected.
+Existing encounter pins and selection associations retain their release.
+
+For an already schema-migrated target that lacks DDI data, run from `backend/`
+with its privileged `DATABASE_URL` securely configured:
+
+```sh
+uv run python -m x_insight.ddi bootstrap
+```
+
+The subcommand also accepts `--database-url` and `--bundle`; avoid putting secrets
+in shell history. A missing/changed source, changed candidate, or invalid approval
+fails setup without a partial DDI publication. Schema migration and DDI publication
+are separate transactions: a bootstrap failure can leave the schema at head with
+no dataset. Restore the matching committed inputs, correct the target/default
+configuration as applicable, and rerun normal setup; `/ready` alone checks schema,
+not DDI availability. Back up existing deployments before upgrades as in section 3.
+
+### Fresh-install verification
+
+From the repository root, `bash e2e/run-ddi-fresh-install.sh` creates an isolated
+PostgreSQL 16 cluster, copies only ordinary Git bundle inputs, runs normal migration,
+starts a private API/web preview, and tests real registration, lookup, save and
+reload in Chromium and Firefox. It requires installed locked backend/web/root
+dependencies, Playwright browser binaries, PostgreSQL tools at
+`/usr/lib/postgresql/16/bin` (override `PG_BIN`), and free ports 55582/18082/15182
+(override `DDI_E2E_PG_PORT`, `DDI_E2E_API_PORT`, `DDI_E2E_WEB_PORT`). When run as root,
+it uses the local `postgres` account for PostgreSQL. Services stop on exit; logs and
+source-only content remain under the printed `/tmp/x-insight-ddi-e2e.*` directory.
+This suite uses `e2e/playwright.fresh-install.config.ts`; the default browser suite
+excludes it because other DDI scenarios use synthetic database fixtures.
 
 ## 1. Build and retain a review bundle
 
@@ -150,10 +214,11 @@ backup peak RSS was about 1.44 GiB on the shared acceptance host.
 
 Migration `0022` follows `0021`, adds original source bytes/format/metadata and
 structured evidence metadata plus catalog indexes; it adds no tables (32 backup
-tables remain). Run migrations with the privileged migration connection:
+tables remain). For normal setup run schema and bundled-data migration with the
+privileged migration connection:
 
 ```sh
-uv run alembic upgrade head
+uv run python -m x_insight.operations.migrate
 uv run alembic current
 ```
 
@@ -162,6 +227,8 @@ For packaged deployment, from the repository root use
 image upgrade/backup steps. Verify head `0022` and `/api/v1/ready`. Runtime release
 access remains read-only for the application role; publication needs the
 privileged import connection, not a grant of runtime write access.
+For a separately reviewed replacement release, follow section 4 after migration;
+the bundled bootstrap does not approve that new candidate.
 
 ## 4. Publish the reviewed release atomically
 

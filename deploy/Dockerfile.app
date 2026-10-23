@@ -7,7 +7,7 @@
 # One image, three commands (see compose.prod.yaml):
 #   app     uvicorn x_insight.app:app            (default CMD below)
 #   worker  python -m x_insight.reasoning         (production polling loop, T8)
-#   migrate alembic upgrade head                 (explicit migration step)
+#   migrate python -m x_insight.operations.migrate (schema + approved DDI)
 #
 # No credentials are baked in: DATABASE_URL/provider/staging paths all arrive
 # as container environment (see .env.example placeholders + deploy/README.md).
@@ -27,6 +27,10 @@ COPY content/assessments ./content/assessments
 COPY content/history ./content/history
 COPY content/questions ./content/questions
 COPY content/bundles ./content/bundles
+# Original sources and approval are ordinary Git files; the archived LFS
+# evidence JSONL is deterministically rebuilt only during initial provisioning.
+COPY content/ddi/ddinter/2026-10-21/sources ./content/ddi/ddinter/2026-10-21/sources
+COPY content/ddi/ddinter/2026-10-21/candidate_dataset.json content/ddi/ddinter/2026-10-21/owner-reviewed-manifest.json ./content/ddi/ddinter/2026-10-21/
 ENV X_INSIGHT_CONTENT_DIR=/srv/app/content \
     X_INSIGHT_ASSESSMENTS_DIR=/srv/app/content/assessments
 # Sources are copied before sync so the locked project install sees the real

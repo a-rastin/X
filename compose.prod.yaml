@@ -101,13 +101,14 @@ services:
       context: .
       dockerfile: deploy/Dockerfile.app
     image: x-insight-app:${APP_IMAGE_TAG:-prod}
-    command: [".venv/bin/alembic", "upgrade", "head"]
+    command: [".venv/bin/python", "-m", "x_insight.operations.migrate"]
     profiles: ["tools"]
     depends_on:
       db:
         condition: service_healthy
     environment:
       DATABASE_URL: postgresql://${POSTGRES_USER:-x_insight}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB:-x_insight}
+      DDI_DEFAULT_DATASET_VERSION: ${DDI_DEFAULT_DATASET_VERSION:-}
 
   edge:
     build:

@@ -29,7 +29,7 @@ help:
 	@echo "make setup        # locked dependencies and development prerequisites"
 	@echo "make dev          # documented local stack (db + backend :8000 + web :5173)"
 	@echo "make stop         # stop the local stack"
-	@echo "make migrate      # apply database migrations (DATABASE_URL or .env)"
+	@echo "make migrate      # apply schema + bundled approved DDI data (DATABASE_URL or .env)"
 	@echo "make check        # formatting/lint/types/build, excluding network access"
 	@echo "make test-backend # backend tests (TEST=tests/http/test_health.py for a selector)"
 	@echo "make test-web     # web unit tests (no suite yet in S01)"
@@ -70,7 +70,7 @@ stop:
 	docker compose down
 
 migrate:
-	set -a; if [ -f .env ]; then . ./.env; fi; cd backend && uv run alembic upgrade head
+	set -a; if [ -f .env ]; then . ./.env; fi; cd backend && uv run python -m x_insight.operations.migrate
 
 check:
 	cd backend && uv run ruff format --check src tests

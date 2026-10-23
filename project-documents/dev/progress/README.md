@@ -3,7 +3,10 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest bounded follow-up is the [C-SSRS recent ideation form cut (2026-10-23)](s11.md#follow-up-2026-10-23--c-ssrs-recent-ideation-form-cut):
+The latest bounded follow-up is [bundled approved DDInter setup (2026-10-23)](s18.md#follow-up-2026-10-23--bundle-approved-ddinter-for-fresh-installations):
+normal local/production migration provisions fresh databases from committed sources;
+real Chromium/Firefox registration and backend regression checks passed.
+The preceding [C-SSRS recent ideation form cut (2026-10-23)](s11.md#follow-up-2026-10-23--c-ssrs-recent-ideation-form-cut):
 Step 4 and follow-up ask five recent-ideation items, each Yes, No, or Unknown, default Unknown.
 The preceding [LAI, aggression and C-SSRS input cleanup (2026-10-22)](s12.md#follow-up-2026-10-22--lai-aggression-and-c-ssrs-input-cleanup):
 revised History controls, Step 4 C-SSRS generation context and input contract v3.
@@ -74,8 +77,8 @@ The [History readiness diagnosis](s48.md#follow-up-2026-10-22--proposal-blocked-
 explains the subsequent clarification/no-baseline messages and recovery.
 
 The [Step 6 DDI diagnosis (2026-10-20)](s20.md#follow-up-2026-10-20--step-6-dataset-unavailable-diagnosis)
-traces the earlier shared unavailable error; the DDInter publication above resolves
-the missing release in the local application database.
+traces the earlier shared unavailable error; the local publication and fresh-install
+bootstrap follow-ups above resolve missing releases within their respective scope.
 
 - Use [../tasks.md](../tasks.md) for planned sessions and
   [../plan.md](../plan.md) for implementation policy.

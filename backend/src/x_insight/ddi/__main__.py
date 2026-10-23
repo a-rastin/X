@@ -84,6 +84,25 @@ def _cmd_publish(args: argparse.Namespace) -> int:
         engine.dispose()
 
 
+def _cmd_bootstrap(args: argparse.Namespace) -> int:
+    from x_insight import db as db_module
+    from x_insight.ddi.bootstrap import bootstrap_release
+
+    engine = db_module.build_engine(args.database_url or db_module.get_database_url())
+    try:
+        result = bootstrap_release(engine, args.bundle)
+        if result["skipped"]:
+            print("SKIPPED: existing DDI release preserved")
+        else:
+            print(f"READY: {result['version']} (reused={result['reused']})")
+        return 0
+    except Exception as exc:  # noqa: BLE001 - explicit setup must fail on unavailable data
+        print(f"DDI bootstrap FAILED: {exc}", file=sys.stderr)
+        return 1
+    finally:
+        engine.dispose()
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="x_insight.ddi", description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
@@ -110,6 +129,11 @@ def main(argv: list[str] | None = None) -> int:
         default=None,
         help="database URL override (default DATABASE_URL env)",
     )
+    bootstrap_parser = sub.add_parser(
+        "bootstrap", help="install bundled owner-approved DDInter data on an empty database"
+    )
+    bootstrap_parser.add_argument("--bundle", default=None, help="approved bundle directory")
+    bootstrap_parser.add_argument("--database-url", default=None, help="database URL override")
     args = parser.parse_args(argv)
     if args.command == "build":
         return _cmd_build(args)
@@ -129,6 +153,8 @@ def main(argv: list[str] | None = None) -> int:
         return 0 if report["passed"] else 1
     if args.command == "publish":
         return _cmd_publish(args)
+    if args.command == "bootstrap":
+        return _cmd_bootstrap(args)
     parser.error(f"unknown command {args.command}")
     return 2
 
