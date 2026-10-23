@@ -6,7 +6,7 @@ import json
 
 import pytest
 
-from tests.assessments.test_cssrs import _all_no, _level3_complete
+from tests.assessments.test_cssrs import _all_no, _all_unknown, _level3_complete
 from x_insight import contracts
 from x_insight.cases.history import compute_history_state, validate_history_values
 from x_insight.models.question_package import load_question_package
@@ -106,17 +106,34 @@ def test_legacy_cleanup_removes_retired_values_and_changed_attribution(exposure)
 
 
 @pytest.mark.parametrize(
-    "answers,ready",
+    "answers,ready,projected",
     [
-        ({}, False),
-        ({"__skipped": True}, False),
-        ({"css_i1_recent": "no"}, False),
-        ({"css_i1_recent": "invented"}, False),
-        (_all_no(), True),
-        (_level3_complete(), True),
+        ({}, True, _all_unknown()),
+        ({"__skipped": True}, False, None),
+        (
+            {"css_i1_recent": "no"},
+            True,
+            {**_all_unknown(), "css_i1_recent": "no"},
+        ),
+        ({"css_i1_recent": "invented"}, False, None),
+        (_all_no(), True, _all_no()),
+        (_level3_complete(), True, _level3_complete()),
+        (
+            {
+                **_all_no(),
+                "css_i5_lifetime": "yes",
+                "css_frequency": 4,
+                "css_beh_actual_recent": "yes",
+                "css_leth_actual_recent": 2,
+            },
+            True,
+            _all_no(),
+        ),
     ],
 )
-def test_high_suicide_consumes_released_assessment_without_invented_node_mapping(answers, ready):
+def test_high_suicide_consumes_released_assessment_without_invented_node_mapping(
+    answers, ready, projected
+):
     package = resolve_workflow("registration")[0][1]
     manifest = package["manifest"]
     data = {
@@ -136,9 +153,17 @@ def test_high_suicide_consumes_released_assessment_without_invented_node_mapping
     assert evaluate_gate(manifest, data)[0] == ("ready" if ready else "needs_clarification")
     assert "PRIVATE-SENTINEL" not in str(projection)
     if ready:
-        assert context["value"]["answers"] == answers
-        assert context["value"]["evaluation"]["status"] == "complete"
-        assert context["value"]["definition_version"] == "v1"
+        value = context["value"]
+        assert value["answers"] == projected
+        assert value["definition_version"] == "v2"
+        assert value["evaluation"]["status"] == "complete"
+        assert set(value["evaluation"]["scores"]) == {"ideation_severity_recent"}
+        assert "behavior" not in value["evaluation"]["findings"]
+        assert "lethality" not in value["evaluation"]["findings"]
+        assert "intensity" not in value["evaluation"]["findings"]
+        assert "css_i1_lifetime" not in value["answers"]
+        assert "css_beh_actual_recent" not in value["answers"]
+        assert "css_leth_actual_recent" not in value["answers"]
     else:
         assert context["value"] is None
         readiness = compute_proposal_readiness(data, 3, "registration")
@@ -147,6 +172,19 @@ def test_high_suicide_consumes_released_assessment_without_invented_node_mapping
             for b in readiness["blockers"]
         )
     load_question_package(package)
+
+
+def test_fresh_draft_cssrs_projection_is_complete_v2():
+    manifest = resolve_workflow("registration")[0][1]["manifest"]
+    projection, _ = build_question_projection(manifest, {}, 1)
+    context = projection["assessment_context"]
+    assert context["status"] == "observed"
+    assert context["value"]["definition_version"] == "v2"
+    assert context["value"]["answers"] == _all_unknown()
+    assert context["value"]["evaluation"]["status"] == "complete"
+    assert context["value"]["evaluation"]["scores"] == {"ideation_severity_recent": 0}
+    assert context["value"]["evaluation"]["findings"]["flags"] == []
+    assert evaluate_gate(manifest, {})[0] == "ready"
 
 
 @pytest.mark.parametrize(

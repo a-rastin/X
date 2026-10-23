@@ -32,6 +32,7 @@ import pytest
 from fastapi.testclient import TestClient
 from sqlalchemy import text
 
+from tests.assessments.test_cssrs import _all_unknown
 from x_insight import contracts
 from x_insight import db as db_module
 from x_insight.app import app
@@ -485,7 +486,7 @@ def test_concurrent_creates_allow_one_draft_only(admin_client, clean_registry, m
     assert sorted(outcomes) == [201] + [409] * 6, outcomes
     # Losers get the generic conflict with no content/author oracle; the one
     # winner sees only its own fresh body (S14: empty history shell with
-    # not_required reconciliation plus empty PANSS/C-SSRS answers).
+    # not_required reconciliation, empty PANSS, unknown C-SSRS).
     for status, body in bodies:
         if status == 409:
             assert '"OPEN_DRAFT_EXISTS"' in body
@@ -496,7 +497,7 @@ def test_concurrent_creates_allow_one_draft_only(admin_client, clean_registry, m
             assert fresh["history"]["values"] == {}
             assert fresh["history"]["reconciliation"]["status"] == "not_required"
             assert fresh["panss"] == {"answers": {}}
-            assert fresh["cssrs"] == {"answers": {}}
+            assert fresh["cssrs"] == {"answers": _all_unknown()}
     with clean_registry.begin() as connection:
         drafts = connection.execute(
             text("SELECT count(*) FROM encounters WHERE patient_id = :pid AND lifecycle = 'draft'"),
@@ -568,13 +569,13 @@ def test_discard_requires_confirmation_and_current_revision(
     )
     assert freed.status_code == 201, freed.text
     assert freed.json()["encounter"]["id"] != encounter_id
-    # S14: a fresh follow-up starts with an empty history shell (not_required)
-    # plus empty PANSS/C-SSRS answers — fresh, never another draft's content.
+    # S14: a fresh follow-up starts with an empty history shell (not_required),
+    # empty PANSS, and unknown C-SSRS — fresh, never another draft's content.
     fresh = freed.json()["draft_data"]
     assert fresh["history"]["values"] == {}
     assert fresh["history"]["reconciliation"]["status"] == "not_required"
     assert fresh["panss"] == {"answers": {}}
-    assert fresh["cssrs"] == {"answers": {}}
+    assert fresh["cssrs"] == {"answers": _all_unknown()}
 
 
 def test_draft_storage_column_grants_and_object_check(clean_registry) -> None:

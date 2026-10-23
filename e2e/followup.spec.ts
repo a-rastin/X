@@ -288,7 +288,8 @@ test("baseline provenance, pending reconciliation, and historical prior scores r
   await page.reload();
   for (const field of ["h_alternative_cause_considered", "h_falls_or_limitation"]) await expect(page.locator(`#hist-${field}-unknown`)).toBeChecked();
 
-  // Prior scores never fill the fresh forms: PANSS/C-SSRS stay unanswered.
+  // Prior scores never fill the fresh forms. PANSS stays unanswered.
+  // C-SSRS is the five Unknown answers, not the historical severity.
   await page.locator("#wizard-step-panss").click();
   await expect(page.locator("#panss-preview-status")).toContainText("No answers yet. Answer all 30 items", {
     timeout: 15000,
@@ -296,6 +297,12 @@ test("baseline provenance, pending reconciliation, and historical prior scores r
   await expect(page.locator('input[name^="panss-"]:checked')).toHaveCount(0);
   await page.locator("#wizard-step-cssrs").click();
   await expect(page.locator("#cssrs-heading")).toBeVisible();
+  await expect(page.locator("#cssrs-group-recent-ideation")).toHaveText(
+    "Recent ideation — past month",
+  );
+  for (const level of [1, 2, 3, 4, 5]) {
+    await expect(page.locator(`#cssrs-css_i${level}_recent-unknown`)).toBeChecked();
+  }
 });
 
 test("occupied slot shows a generic conflict; different patients stay independent", async ({

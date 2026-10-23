@@ -3,7 +3,9 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest bounded follow-up is the [LAI, aggression and C-SSRS input cleanup (2026-10-22)](s12.md#follow-up-2026-10-22--lai-aggression-and-c-ssrs-input-cleanup):
+The latest bounded follow-up is the [C-SSRS recent ideation form cut (2026-10-23)](s11.md#follow-up-2026-10-23--c-ssrs-recent-ideation-form-cut):
+Step 4 and follow-up ask five recent-ideation items, each Yes, No, or Unknown, default Unknown.
+The preceding [LAI, aggression and C-SSRS input cleanup (2026-10-22)](s12.md#follow-up-2026-10-22--lai-aggression-and-c-ssrs-input-cleanup):
 revised History controls, Step 4 C-SSRS generation context and input contract v3.
 Implementation, tests and independent review are complete; see the commit handoff.
 The preceding [proposal-readiness fix (2026-10-22)](s48.md#follow-up-2026-10-22--check-proposal-readiness-before-creating-a-run):

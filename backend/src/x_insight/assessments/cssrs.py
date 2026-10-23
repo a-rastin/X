@@ -1,27 +1,18 @@
 """C-SSRS page state: live preview over the shared autosave body (S11).
 
-Plan.md §§2.2, 5 (FR-13, FR-20): C-SSRS is ideation 1-5 in two windows,
-five intensity dimensions, five behavior categories in two windows, and
-lethality codings (S08 released ``cssrs.v1`` — no owner review). Ideation
-severity, intensity, behavior, and lethality remain separate with no
-composite score; a higher-level yes never auto-fills lower levels; ``{}``
-is unanswered distinct from explicit negatives; Skip is
-``answers {"__skipped": true}`` which evaluates to ``not_assessed``;
-complete explicit negatives give the S08-defined no-ideation result
-(severity 0); incomplete required branches report ``missing_item_ids``,
-never guessed negatives. NSSI contributes to ``clinical_review`` but never
-triggers ``high_risk_alert`` by itself.
+The live instrument is recent ideation levels 1-5 (past month) from
+``cssrs.v2``. Each item is yes, no, or unknown. Unknown is an explicit
+answer. Absent answers become unknown unless the section is skipped.
+A higher-level yes never fills lower levels. Severity is the highest
+level answered yes, otherwise 0. There is no composite score. Skip is
+``answers {"__skipped": true}`` and evaluates to ``not_assessed``.
+Retired stored ids are stripped and are not scored. No new clinical
+approval is recorded.
 
 Storage: C-SSRS answers live in ``encounters.draft_data["cssrs"]`` through
-the shared S07 autosave contract (opaque ``draft_data`` object + revision +
-``If-Match``/``412`` + ``Idempotency-Key``). Answers travel via the existing
-``PATCH /encounters/{id}`` path; this module only reads page state. No new
-table, no new persistence mechanism — no migration. No ack/bypass POSTs, no
-treatment gate.
-
-Live preview uses the same T2 ``evaluate()`` as S08 (no drift): invalid
-values are rejected server-side in the evaluation (``item_errors`` +
-aggregates suppressed to null, never zero).
+the shared S07 autosave contract. Author draft reads, draft saves, and
+the draft copy frozen at signing canonicalize the cssrs answers slice
+only. Already stored signed snapshots are not rewritten. No new table.
 """
 
 from __future__ import annotations
@@ -31,7 +22,7 @@ from typing import Any
 
 from sqlalchemy.orm import Session
 
-from x_insight.assessments.engine import evaluate
+from x_insight.assessments.engine import evaluate, normalize_cssrs_answers
 from x_insight.assessments.released import get_released_definition
 from x_insight.cases import encounters as encounters_service
 
@@ -51,8 +42,33 @@ def get_cssrs_section(draft_data: Any) -> dict[str, Any]:
 
 
 def get_answers(draft_data: Any) -> dict[str, Any]:
-    """Current C-SSRS item answers ({} when unanswered)."""
-    return get_cssrs_section(draft_data)["answers"]
+    """Live C-SSRS answers: retired ids removed, absent recent items unknown."""
+    return normalize_cssrs_answers(get_cssrs_section(draft_data)["answers"])
+
+
+def canonicalize_draft(draft_data: Any) -> Any:
+    """Canonicalize the cssrs answers slice only.
+
+    Other slices are not copied into a new shape. A non-dict answers object
+    is left unchanged so a corrupt slice is not rewritten as a completed
+    screen. Already stored signed snapshots are not rewritten.
+    """
+    if not isinstance(draft_data, dict):
+        return draft_data
+    section = draft_data.get(CSSRS_KEY)
+    if not isinstance(section, dict):
+        return draft_data
+    answers = section.get(ANSWERS_KEY)
+    if not isinstance(answers, dict):
+        return draft_data
+    normalized = normalize_cssrs_answers(answers)
+    if normalized == answers:
+        return draft_data
+    updated = dict(draft_data)
+    new_section = dict(section)
+    new_section[ANSWERS_KEY] = normalized
+    updated[CSSRS_KEY] = new_section
+    return updated
 
 
 def evaluate_answers(answers: dict[str, Any]) -> dict[str, Any]:
@@ -62,7 +78,7 @@ def evaluate_answers(answers: dict[str, Any]) -> dict[str, Any]:
 
 
 def definition_version() -> str:
-    """Released C-SSRS definition version (S08, no owner review)."""
+    """Live C-SSRS definition version. No new clinical approval."""
     return str(get_released_definition("cssrs")["version"])
 
 

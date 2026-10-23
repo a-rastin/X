@@ -4,26 +4,25 @@
  * backend). Reads need any active authenticated session; author-only
  * enforcement stays server-side (403 strangers, 404 missing/released).
  *
- * Server-authoritative contract (no client-side arithmetic duplication — the
- * browser never computes severity or flags, so the display cannot drift from
- * the S08 evaluator):
- * - item prompts come from GET /content/assessments/cssrs (released v1,
- *   29 items: ideation 1-5 recent+lifetime yes_no, five intensity
- *   dimensions, behavior recent+lifetime yes_no, lethality codings);
- * - the verdict (status / scores.ideation_severity_* / findings.flags /
+ * Server-authoritative contract (no client-side arithmetic — the browser
+ * never computes severity or flags):
+ * - prompts may come from GET /content/assessments/cssrs. The worksheet
+ *   renders only css_i1_recent .. css_i5_recent, each yes / no / unknown,
+ *   even when that payload still lists other items or value_type yes_no;
+ * - the verdict (status / scores.ideation_severity_recent / findings.flags /
  *   missing_item_ids / item_errors) comes from
  *   GET /encounters/{id}/cssrs, which runs the same T2 evaluate() as the
- *   backend;
+ *   backend. Older preview fields are ignored by the page;
  * - answers travel through the shared S07 autosave PATCH
  *   (draft_data["cssrs"]["answers"]) — see features/encounters/api.ts.
  * - Skip is answers {"__skipped": true} (evaluates to not_assessed). There
  *   is no ack/bypass, no new migration, no composite risk score, no
- *   treatment gate. Intensity, behavior, and lethality stay separate.
+ *   treatment gate.
  */
 
 import { ApiError } from "../../identity/api";
 
-export type CssrsYesNo = "yes" | "no";
+export type CssrsAnswerValue = "yes" | "no" | "unknown";
 
 export interface CssrsItem {
   id: string;
@@ -42,22 +41,10 @@ export interface CssrsDefinition {
 
 export interface CssrsScores {
   ideation_severity_recent: number | null;
-  ideation_severity_lifetime: number | null;
-  ideation_severity_max: number | null;
 }
 
 export interface CssrsFindings {
-  intensity?: {
-    frequency: number | null;
-    duration: number | null;
-    controllability: number | null;
-    deterrents: number | null;
-    reasons: number | null;
-  } | null;
-  behavior?: Record<string, Record<string, string | null>>;
-  lethality?: Record<string, Record<string, number | null>>;
   flags?: string[];
-  windows?: Record<string, string>;
   notes?: string[];
   skipped?: boolean;
   [key: string]: unknown;

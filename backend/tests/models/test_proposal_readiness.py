@@ -31,7 +31,7 @@ def known_context(workflow="registration"):
     return values
 
 
-def test_complete_core_history_still_lists_all_29_proposal_blockers():
+def test_complete_core_history_blocks_on_workflow_fields_not_fresh_cssrs():
     core = {key: spec["permitted"][0] for key, spec in ALLOWED_FIELDS.items()}
     state = compute_history_state(
         {"history": {"values": core}}, revision=54, author_id="synthetic-author"
@@ -41,9 +41,21 @@ def test_complete_core_history_still_lists_all_29_proposal_blockers():
     assert readiness["source_revision"] == 54
     assert readiness["ready"] is False
     assert readiness["required_count"] == 29
-    assert readiness["answered_count"] == 9
-    assert readiness["execution_ready_count"] == 0
-    assert len(readiness["blockers"]) == 29
+    # The live C-SSRS path is complete with five unknowns, so it is answered
+    # and execution-ready. The other 28 required fields stay blocked.
+    assert readiness["answered_count"] == 10
+    assert readiness["execution_ready_count"] == 1
+    assert len(readiness["blockers"]) == 28
+    assert all(
+        item["source_path"] != "synthetic/assessments/cssrs" for item in readiness["blockers"]
+    )
+    high = next(
+        question
+        for question in readiness["questions"]
+        if question["question_key"] == "high_suicide_clozapine"
+    )
+    assert high["status"] == "ready"
+    assert high["blockers"] == []
     assert (
         readiness["blockers"][0]["source_path"]
         == "candidate/history/pharmacotherapy.v2/h_physical_vulnerability"
@@ -51,7 +63,7 @@ def test_complete_core_history_still_lists_all_29_proposal_blockers():
     assert {item["status"] for item in readiness["blockers"]} == {"missing", "unknown"}
     assert all(item["label"] != item["source_path"] for item in readiness["blockers"])
     assert all(item["question_label"] and item["reason"] for item in readiness["blockers"])
-    assert len({item["source_path"] for item in readiness["blockers"]}) == 29
+    assert len({item["source_path"] for item in readiness["blockers"]}) == 28
 
 
 @pytest.mark.parametrize(

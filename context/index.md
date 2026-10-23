@@ -65,7 +65,7 @@
 
 ## R
 
-- [registration-flow.md](registration-flow.md) — Wizard entry, follow-up-only adverse effects, working-note retention and historical compatibility after page-note removal.
+- [registration-flow.md](registration-flow.md) — Wizard entry, follow-up-only adverse effects, working-note retention, historical page-note compatibility, and the recent-ideation-only C-SSRS step.
 
 ## S
 

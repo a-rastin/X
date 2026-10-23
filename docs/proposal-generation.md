@@ -51,8 +51,10 @@ including when embedded in a newer analysis snapshot's fingerprint payload.
 History exposes up to **28 registration** or **76 follow-up** context controls.
 Registration has **26** applicable controls when lifetime exposure is No or Unknown,
 and **28** when it is Yes: established antipsychotic and prior NMS become applicable.
-These counts exclude core History. Registration readiness additionally requires
-the completed Step 4 C-SSRS assessment, giving **27 or 29** required context inputs.
+These counts exclude core History. Registration readiness still requires the
+Step 4 C-SSRS assessment, so required context inputs stay **27 or 29**. A fresh
+draft is already complete — five Unknown recent-ideation answers — and is not
+a blocker. Unknown is not a negative screen.
 The revised pharmacotherapy contract retains physical vulnerability and substance
 contribution as Yes/No/Unknown, default Unknown. Established antipsychotic appears
 only for lifetime exposure Yes and defaults to Unknown. Legacy Present/Absent
@@ -86,11 +88,16 @@ Schizophrenia status, persistence despite other treatments, urgent safety concer
 adherence/exposure uncertainty and modifiable risk-factor controls are retired.
 
 High-suicide clozapine has **no History controls**. Its context comes from the
-saved complete, released Step 4 C-SSRS assessment: released item responses,
-completeness and results flow through the frozen patient projection, provider
-context and scoped private MCP. The assessment is an input prerequisite, not a
-new categorical suicide-risk mapping or clinical applicability rule. No threshold,
-treatment-persistence value or other missing clinical state is inferred from it.
+saved complete Step 4 C-SSRS assessment. The live definition is
+`content/assessments/cssrs.v2.json`: Recent ideation — past month only
+(`css_i1_recent` through `css_i5_recent`; Yes, No, or Unknown; default Unknown).
+`get_released_definition("cssrs")` loads that file. Hash-pinned `cssrs.v1.json`
+is unchanged and is not the live instrument. Item responses, completeness and
+results flow through the frozen patient projection, provider context and scoped
+private MCP. Version v2 records no new clinical approval. The assessment is an
+input prerequisite, not a new categorical suicide-risk mapping or clinical
+applicability rule. No threshold, treatment-persistence value or other missing
+clinical state is inferred from it.
 Assessment changes participate in fingerprint freshness and selective regeneration.
 
 Other workflow controls retain their existing categories and defaults. The

@@ -85,3 +85,27 @@
   for changed input contracts. Derived manifests remain `awaiting_review`, original
   approvals/artifacts remain historical, and signed records are not rewritten.
 
+### C-SSRS recent ideation form cut — 2026-10-23
+
+- The owner instructed this form cut on 2026-10-23. Registration step 4 and the
+  follow-up C-SSRS section ask only Recent ideation — past month:
+  `css_i1_recent` through `css_i5_recent`. Each answer is Yes, No, or Unknown.
+  The default is Unknown. No clinical reason was stated, and this instruction
+  records no new clinical approval.
+- A fresh draft is those five Unknown answers, evaluation status complete,
+  score only `ideation_severity_recent` 0, and no flags. Unknown is not a
+  negative screen. All five explicit No is the only `no_positive_items` result.
+  Any Yes also raises `clinical_review`. Yes on level 4 or 5 raises
+  `high_risk_alert`. A higher yes does not fill lower levels. Skip remains
+  not assessed.
+- Lifetime ideation, intensity of the most severe recent ideation, recent
+  behavior (past 3 months), lifetime behavior, and lethality codings are not
+  collected. The live file is `content/assessments/cssrs.v2.json` (version v2,
+  approval none). `get_released_definition("cssrs")` loads it. Hash-pinned
+  `content/assessments/cssrs.v1.json` is unchanged (sha256
+  `ee7802636ad88d4834452d4274045f2b4c53c8a1f603e7280328080549617757`).
+- `content/bundles/active-release.json` and the s39-reviewed packages were not
+  modified and are not newly approved. Registration required counts stay 27 or
+  29. Because the default is complete, a fresh C-SSRS is not a blocker. See the
+  [current contract](../../../docs/proposal-generation.md#complete-proposal-context).
+

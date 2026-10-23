@@ -674,7 +674,7 @@ test("LAI and aggression controls use exact titles, constrained options and Unkn
   for (const [id] of specs) { expect(saved.values[id]).toBe("unknown"); expect(saved.provenance[id]).toBeUndefined(); }
   const readiness = await (await request.get(`/api/v1/encounters/${draftId}/proposal-readiness`)).json();
   const paths = readiness.blockers.map((b: { source_path: string }) => b.source_path);
-  expect(paths).toContain("synthetic/assessments/cssrs");
+  expect(paths).not.toContain("synthetic/assessments/cssrs");
   for (const id of retired) expect(paths).not.toContain(id);
   expect(paths.some((id: string) => id.startsWith("candidate/history/high_suicide_clozapine.v1/"))).toBe(false);
 });
@@ -712,15 +712,20 @@ test("prior NMS follows lifetime exposure and clears hidden saved value and attr
   await expect(select).toHaveValue("unknown");
 });
 
-test("History C-SSRS readiness link opens the assessment step", async ({ page, request }) => {
+test("fresh draft has no C-SSRS blocker and the wizard step opens five Unknown answers", async ({ page, request }) => {
   const physician = await loginPhysician(page, request, "e2ehistcsslink");
   const { draftId } = await createPatientWithDraft(request, physician);
   await gotoEncounter(page, draftId);
-  const link = page.getByRole("link", { name: "C-SSRS assessment", exact: true });
-  await expect(link).toBeVisible();
-  await link.click();
+  await expect(page.getByRole("link", { name: "C-SSRS assessment", exact: true })).toHaveCount(0);
+  await page.locator("#wizard-step-cssrs").click();
   await expect(page.locator("#cssrs-heading")).toBeVisible();
+  await expect(page.locator("#cssrs-group-recent-ideation")).toHaveText(
+    "Recent ideation — past month",
+  );
   await expect(page.locator("#history-heading")).toHaveCount(0);
+  for (const level of [1, 2, 3, 4, 5]) {
+    await expect(page.locator(`#cssrs-css_i${level}_recent-unknown`)).toBeChecked();
+  }
 });
 
 test("legacy LAI uncertainty and retired answers normalize without attribution and stay removed after reload", async ({ page, request }) => {

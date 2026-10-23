@@ -8,7 +8,7 @@ Slices through the real module interfaces (plan.md §5; FR-11–13; NFR-05):
 2. PANSS exact sums (all-1 → 7/7/16/30, all-7 → 49/49/112/210), one missing
    item suppresses the total, Skip persists not_assessed, no default 1s.
 3. Diagnosis full-criteria / below-threshold / partial / bypass + unknown.
-4. C-SSRS severity-3-no-autofill, separation (no composite), periods, flags.
+4. Live C-SSRS v2: five recent items, unknown is not a negative, no retired scores.
 5. Release validation (version, source hashes, assumptions, experimental
    defaults, validation results) + authenticated routes (T1).
 
@@ -21,6 +21,8 @@ from __future__ import annotations
 import pytest
 
 from x_insight.assessments import DefinitionError, evaluate, load_definition
+from x_insight.assessments.engine import normalize_cssrs_answers
+from x_insight.assessments.released import get_released_definition
 
 # --- Slice 1 fixture: tiny synthetic definition (T2 contract first) ---
 
@@ -395,144 +397,140 @@ def test_diagnosis_bypass_and_skip_are_distinct_from_completion() -> None:
     assert evaluate(_released("diagnosis"), {"__skipped": True})["status"] == "not_assessed"
 
 
-# --- Slice 3: C-SSRS (source: CSSRS.md; experimental form/windows in release) ---
+# --- Slice 3: live C-SSRS v2 (cssrs.v1.json stays hash-pinned and unused) ---
 
-CSSRS_IDEATION = [
-    f"css_i{level}_{window}" for window in ("recent", "lifetime") for level in (1, 2, 3, 4, 5)
-]
-CSSRS_BEHAVIOR = [
-    f"css_beh_{category}_{window}"
-    for window in ("recent", "lifetime")
-    for category in ("actual", "interrupted", "aborted", "preparatory", "nssi")
-]
-
-
-def _cssrs_all_no() -> dict:
-    return {**dict.fromkeys(CSSRS_IDEATION, "no"), **dict.fromkeys(CSSRS_BEHAVIOR, "no")}
+CSSRS_RECENT = (
+    "css_i1_recent",
+    "css_i2_recent",
+    "css_i3_recent",
+    "css_i4_recent",
+    "css_i5_recent",
+)
+CSSRS_V1_SHA256 = "ee7802636ad88d4834452d4274045f2b4c53c8a1f603e7280328080549617757"
 
 
-def test_cssrs_unanswered_is_distinct_from_explicit_negatives() -> None:
-    empty = evaluate(_released("cssrs"), {})
-    assert empty["status"] == "unanswered"
-    assert empty["scores"] == {
-        "ideation_severity_recent": None,
-        "ideation_severity_lifetime": None,
-        "ideation_severity_max": None,
-    }
-    assert empty["findings"] == {}
-    negatives = evaluate(_released("cssrs"), _cssrs_all_no())
-    assert negatives["status"] == "complete"
-    assert negatives["scores"] == {
-        "ideation_severity_recent": 0,
-        "ideation_severity_lifetime": 0,
-        "ideation_severity_max": 0,
-    }
-    assert negatives["findings"]["flags"] == ["no_positive_items"]
+def _cssrs_live():
+    return get_released_definition("cssrs")
 
 
-def test_cssrs_level3_endorsed_without_autofilling_lower_levels() -> None:
-    partial = evaluate(_released("cssrs"), {"css_i3_recent": "yes"})
-    assert partial["status"] == "partial"
-    # Lower levels are still missing: nothing is inferred from the level-3 yes.
-    assert "css_i1_recent" in partial["missing_item_ids"]
-    assert "css_i2_recent" in partial["missing_item_ids"]
-    assert partial["scores"]["ideation_severity_recent"] is None
-    answers = _cssrs_all_no()
-    answers["css_i3_recent"] = "yes"
-    answers.update(
-        {
-            "css_frequency": 2,
-            "css_duration": 2,
-            "css_controllability": 3,
-            "css_deterrents": 1,
-            "css_reasons": 4,
-        }
+def _assert_cssrs_scores_only_recent(result: dict) -> None:
+    assert set(result["scores"]) == {"ideation_severity_recent"}
+    assert "behavior" not in result["findings"]
+    assert "lethality" not in result["findings"]
+    assert "intensity" not in result["findings"]
+
+
+def test_live_cssrs_is_five_required_recent_items() -> None:
+    definition = _cssrs_live()
+    assert definition["version"] == "v2"
+    assert [item["id"] for item in definition["items"]] == list(CSSRS_RECENT)
+    assert all(
+        item["value_type"] == "yes_no_unknown" and item["required"] is True
+        for item in definition["items"]
     )
-    result = evaluate(_released("cssrs"), answers)
+    assert definition["periods"] == [{"id": "recent_ideation", "window": "past_month"}]
+    assert definition["release"]["no_composite_score"] is True
+
+
+def test_cssrs_v1_file_hash_is_unchanged() -> None:
+    digest = hashlib.sha256((CONTENT_DIR / "cssrs.v1.json").read_bytes()).hexdigest()
+    assert digest == CSSRS_V1_SHA256
+    assert (
+        _json_module.loads((CONTENT_DIR / "cssrs.v1.json").read_text(encoding="utf-8"))["version"]
+        == "v1"
+    )
+
+
+def test_cssrs_empty_is_five_unknowns_not_a_negative() -> None:
+    empty = evaluate(_cssrs_live(), {})
+    assert empty["status"] == "complete"
+    assert empty["missing_item_ids"] == []
+    assert empty["item_errors"] == {}
+    assert empty["scores"] == {"ideation_severity_recent": 0}
+    assert empty["findings"]["flags"] == []
+    assert empty["findings"]["windows"] == {"recent_ideation": "past_month"}
+    assert empty["definition_version"] == "v2"
+    _assert_cssrs_scores_only_recent(empty)
+    mixed = dict.fromkeys(CSSRS_RECENT, "unknown")
+    mixed["css_i1_recent"] = "no"
+    mixed["css_i2_recent"] = "no"
+    partial_no = evaluate(_cssrs_live(), mixed)
+    assert partial_no["status"] == "complete"
+    assert partial_no["scores"] == {"ideation_severity_recent": 0}
+    assert partial_no["findings"]["flags"] == []
+
+
+def test_cssrs_explicit_no_is_the_only_negative_screen() -> None:
+    result = evaluate(_cssrs_live(), dict.fromkeys(CSSRS_RECENT, "no"))
     assert result["status"] == "complete"
-    assert result["scores"]["ideation_severity_recent"] == 3
-    assert result["scores"]["ideation_severity_max"] == 3
-    assert result["findings"]["intensity"] == {
-        "frequency": 2,
-        "duration": 2,
-        "controllability": 3,
-        "deterrents": 1,
-        "reasons": 4,
-    }
+    assert result["scores"] == {"ideation_severity_recent": 0}
+    assert result["findings"]["flags"] == ["no_positive_items"]
+    _assert_cssrs_scores_only_recent(result)
 
 
-def test_cssrs_severity_is_highest_endorsed_with_separate_dimensions() -> None:
-    answers = _cssrs_all_no()
-    answers.update({"css_i2_recent": "yes", "css_i4_recent": "yes", "css_i5_lifetime": "yes"})
-    answers.update(
+def test_cssrs_higher_yes_does_not_fill_lower_levels_or_score_retired_sections() -> None:
+    normalized = normalize_cssrs_answers(
         {
+            "css_i3_recent": "yes",
+            "css_i1_recent": None,
+            "css_i5_lifetime": "yes",
             "css_frequency": 4,
-            "css_duration": 3,
-            "css_controllability": 4,
-            "css_deterrents": 5,
-            "css_reasons": 5,
+            "css_beh_actual_recent": "yes",
+            "css_leth_actual_recent": 2,
         }
     )
-    result = evaluate(_released("cssrs"), answers)
-    assert result["status"] == "complete"
-    assert result["scores"]["ideation_severity_recent"] == 4
-    assert result["scores"]["ideation_severity_lifetime"] == 5
-    assert result["scores"]["ideation_severity_max"] == 5
-    findings = result["findings"]
-    assert set(findings) >= {"intensity", "behavior", "lethality", "flags", "windows", "notes"}
-    assert "high_risk_alert" in findings["flags"]
-    # No composite risk score anywhere in the result payload: severity keys
-    # only, and no composite/total/risk field beside them.
-    assert set(result["scores"]) == {
-        "ideation_severity_recent",
-        "ideation_severity_lifetime",
-        "ideation_severity_max",
+    assert normalized == {
+        "css_i1_recent": "unknown",
+        "css_i2_recent": "unknown",
+        "css_i3_recent": "yes",
+        "css_i4_recent": "unknown",
+        "css_i5_recent": "unknown",
     }
-    assert not {key for key in findings if "composite" in key or "risk" in key}
-
-
-def test_cssrs_recent_behavior_triggers_alert_and_requires_lethality() -> None:
-    answers = _cssrs_all_no()
-    answers["css_beh_actual_recent"] = "yes"
-    missing_lethality = evaluate(_released("cssrs"), answers)
-    assert missing_lethality["status"] == "partial"
-    assert "css_leth_actual_recent" in missing_lethality["missing_item_ids"]
-    answers["css_leth_actual_recent"] = 0
-    needs_potential = evaluate(_released("cssrs"), answers)
-    assert needs_potential["status"] == "partial"
-    assert "css_leth_potential_recent" in needs_potential["missing_item_ids"]
-    answers["css_leth_potential_recent"] = 1
-    result = evaluate(_released("cssrs"), answers)
+    result = evaluate(_cssrs_live(), normalized)
     assert result["status"] == "complete"
-    assert result["findings"]["lethality"]["recent"] == {"actual": 0, "potential": 1}
-    assert "high_risk_alert" in result["findings"]["flags"]
+    assert result["scores"] == {"ideation_severity_recent": 3}
+    assert result["findings"]["flags"] == ["clinical_review"]
+    _assert_cssrs_scores_only_recent(result)
+    urgent = dict.fromkeys(CSSRS_RECENT, "no")
+    urgent["css_i2_recent"] = "yes"
+    urgent["css_i4_recent"] = "yes"
+    level4 = evaluate(_cssrs_live(), urgent)
+    assert level4["scores"] == {"ideation_severity_recent": 4}
+    assert level4["findings"]["flags"] == ["clinical_review", "high_risk_alert"]
+    level5 = evaluate(_cssrs_live(), {"css_i5_recent": "yes"})
+    assert level5["scores"] == {"ideation_severity_recent": 5}
+    assert level5["findings"]["flags"] == ["clinical_review", "high_risk_alert"]
+    mild = dict.fromkeys(CSSRS_RECENT, "unknown")
+    mild["css_i1_recent"] = "yes"
+    assert evaluate(_cssrs_live(), mild)["findings"]["flags"] == ["clinical_review"]
 
 
-def test_cssrs_historical_behavior_needs_review_without_recent_alert() -> None:
-    answers = _cssrs_all_no()
-    answers["css_beh_actual_lifetime"] = "yes"
-    answers["css_leth_actual_lifetime"] = 2
-    result = evaluate(_released("cssrs"), answers)
-    assert result["status"] == "complete"
-    assert result["scores"]["ideation_severity_recent"] == 0
-    assert result["findings"]["intensity"] is None
-    assert "clinical_review" in result["findings"]["flags"]
-    assert "high_risk_alert" not in result["findings"]["flags"]
-
-
-def test_cssrs_windows_and_periods_are_recorded() -> None:
-    result = evaluate(_released("cssrs"), _cssrs_all_no())
-    assert result["findings"]["windows"] == {
-        "recent_ideation": "past_month",
-        "recent_behavior": "past_3_months",
-        "lifetime": "lifetime",
-    }
-
-
-def test_cssrs_skip_is_not_assessed() -> None:
-    result = evaluate(_released("cssrs"), {"__skipped": True})
-    assert result["status"] == "not_assessed"
-    assert result["scores"]["ideation_severity_max"] is None
+def test_cssrs_retired_ids_are_stripped_not_errors_and_skip_is_not_assessed() -> None:
+    assert normalize_cssrs_answers({"__skipped": True}) == {"__skipped": True}
+    skipped = evaluate(_cssrs_live(), {"__skipped": True})
+    assert skipped["status"] == "not_assessed"
+    assert skipped["scores"] == {"ideation_severity_recent": None}
+    assert skipped["findings"] == {"skipped": True}
+    retired = evaluate(
+        _cssrs_live(),
+        {
+            **dict.fromkeys(CSSRS_RECENT, "no"),
+            "css_i5_lifetime": "sometimes",
+            "css_frequency": 9,
+            "css_beh_nssi_recent": "yes",
+            "css_leth_potential_lifetime": 2,
+        },
+    )
+    assert retired["status"] == "complete"
+    assert retired["item_errors"] == {}
+    assert retired["findings"]["flags"] == ["no_positive_items"]
+    invalid = evaluate(
+        _cssrs_live(), {**dict.fromkeys(CSSRS_RECENT, "no"), "css_i1_recent": "maybe"}
+    )
+    assert invalid["status"] == "partial"
+    assert "css_i1_recent" in invalid["item_errors"]
+    assert invalid["scores"] == {"ideation_severity_recent": None}
+    assert invalid["findings"] == {}
 
 
 # --- Slice 4: release validation (version, hashes, assumptions, defaults) ---
@@ -705,12 +703,17 @@ def test_any_active_session_may_read_released_definitions(_admin, _clean, monkey
             assert response.status_code == 200, response.text
             body = response.json()
             assert body["type"] == instrument
-            assert body["version"] == "v1"
+            assert body["version"] == ("v2" if instrument == "cssrs" else "v1")
             assert body["definition"]["id"] == instrument
             assert response.headers.get("X-Request-ID")
             # The served payload is a loadable definition for the T2 engine.
             loaded = load_definition(body["definition"])
-            assert evaluate(loaded, {})["definition_version"] == "v1"
+            evaluated = evaluate(loaded, {})
+            assert evaluated["definition_version"] == body["version"]
+            if instrument == "cssrs":
+                assert evaluated["status"] == "complete"
+                assert evaluated["scores"] == {"ideation_severity_recent": 0}
+                assert evaluated["findings"]["flags"] == []
 
 
 def test_unknown_assessment_type_is_404(_admin) -> None:

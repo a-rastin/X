@@ -505,10 +505,11 @@ def safe_draft_for_author(row: dict[str, Any]) -> dict[str, Any]:
     """Author-only draft shape: reference fields plus the private body."""
     reference = safe_encounter_reference(row)
     body = row.get("draft_data")
+    from x_insight.assessments import cssrs as cssrs_service
     from x_insight.cases import history as history_service
 
-    reference["draft_data"] = history_service.normalize_draft_history(
-        dict(body) if isinstance(body, dict) else {}
+    reference["draft_data"] = cssrs_service.canonicalize_draft(
+        history_service.normalize_draft_history(dict(body) if isinstance(body, dict) else {})
     )
     return reference
 
@@ -852,6 +853,7 @@ def patch_draft(
     if encounter.get("kind") == "registration" and isinstance(draft_data, dict):
         draft_data = registration_effects_for_save(encounter.get("draft_data"), draft_data)
     if isinstance(draft_data, dict):
+        from x_insight.assessments import cssrs as cssrs_service
         from x_insight.cases import history as history_service
         from x_insight.cases import medications as medications_service
 
@@ -859,6 +861,7 @@ def patch_draft(
         draft_data = medications_service.preserve_autosave_report_metadata(
             encounter.get("draft_data"), draft_data, engine=session.get_bind()
         )
+        draft_data = cssrs_service.canonicalize_draft(draft_data)
     validated = validate_draft_data(draft_data)
     moment = contracts.utcnow()
     session.execute(

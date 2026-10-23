@@ -10,8 +10,11 @@ required input missing or any answer error), ``complete`` (every required
 item validly answered), ``not_assessed`` (explicit ``__skipped`` Skip — never
 zero/minimum), and ``bypassed`` (diagnosis-only explicit ``__bypass``).
 Observed negatives (``"no"`` / ``1`` = absent) are always distinct from
-unanswered: a missing answer suppresses its aggregates to null, it never
-becomes zero.
+unanswered. Except for C-SSRS, a missing answer suppresses its aggregates
+to null and never becomes zero. C-SSRS recent ideation treats an absent
+answer as the explicit value ``unknown`` before validation, unless the
+section is skipped; severity 0 then means no level was answered yes.
+Unknown is not a negative and not unanswered.
 
 Rule model: a small allowlisted declarative rule set per versioned
 instrument plus explicit typed implementations below — not a general rules
@@ -289,11 +292,7 @@ def _null_scores(instrument: str) -> dict[str, Any]:
     if instrument == "panss":
         return {"positive": None, "negative": None, "general": None, "total": None}
     if instrument == "cssrs":
-        return {
-            "ideation_severity_recent": None,
-            "ideation_severity_lifetime": None,
-            "ideation_severity_max": None,
-        }
+        return {"ideation_severity_recent": None}
     return {}
 
 
@@ -430,84 +429,99 @@ def _results_diagnosis(definition: dict[str, Any], valid: dict[str, Any]) -> tup
 
 
 _CSSRS_IDEATION_LEVELS = (1, 2, 3, 4, 5)
-_CSSRS_BEHAVIOR = ("actual", "interrupted", "aborted", "preparatory", "nssi")
-_CSSRS_SUICIDAL_BEHAVIOR = ("actual", "interrupted", "aborted", "preparatory")
+CSSRS_RECENT_IDS = tuple(f"css_i{level}_recent" for level in _CSSRS_IDEATION_LEVELS)
+# Stored answers from the retired instrument are ignored, not validated.
+_CSSRS_RETIRED_IDS = frozenset(
+    (
+        *(f"css_i{level}_lifetime" for level in _CSSRS_IDEATION_LEVELS),
+        "css_frequency",
+        "css_duration",
+        "css_controllability",
+        "css_deterrents",
+        "css_reasons",
+        *(
+            f"css_beh_{category}_{window}"
+            for window in ("recent", "lifetime")
+            for category in ("actual", "interrupted", "aborted", "preparatory", "nssi")
+        ),
+        *(
+            f"css_leth_{kind}_{window}"
+            for window in ("recent", "lifetime")
+            for kind in ("actual", "potential")
+        ),
+    )
+)
+_CSSRS_RETIRED_RESULT_OPS = frozenset(
+    {
+        "intensity_separate",
+        "behavior_separate",
+        "lethality_separate",
+        "flag_recent_45_or_behavior",
+        "flag_any_13_or_history",
+    }
+)
+
+
+def normalize_cssrs_answers(answers: dict[str, Any]) -> dict[str, Any]:
+    """Drop retired ids. Absent recent items become unknown unless skipped.
+
+    Does not mutate ``answers``. A higher-level yes does not fill lower
+    levels. Explicit invalid values are left for validation.
+    """
+    kept = {key: value for key, value in answers.items() if key not in _CSSRS_RETIRED_IDS}
+    if kept.get(SKIP_KEY) is True:
+        return kept
+    normalized: dict[str, Any] = {}
+    for key, value in kept.items():
+        if key not in CSSRS_RECENT_IDS:
+            normalized[key] = value
+    for item_id in CSSRS_RECENT_IDS:
+        value = kept.get(item_id, "unknown")
+        normalized[item_id] = "unknown" if value is None else value
+    return normalized
 
 
 def _results_cssrs(definition: dict[str, Any], valid: dict[str, Any]) -> tuple[dict, dict]:
-    del definition  # severity/flag logic is fixed by the versioned instrument
-    recent = [
+    del definition  # severity/flag logic is fixed by the live instrument
+    endorsed = [
         level for level in _CSSRS_IDEATION_LEVELS if valid.get(f"css_i{level}_recent") == "yes"
     ]
-    lifetime = [
-        level for level in _CSSRS_IDEATION_LEVELS if valid.get(f"css_i{level}_lifetime") == "yes"
-    ]
-    severity_recent = max(recent) if recent else 0
-    severity_lifetime = max(lifetime) if lifetime else 0
-    scores = {
-        "ideation_severity_recent": severity_recent,
-        "ideation_severity_lifetime": severity_lifetime,
-        "ideation_severity_max": max(severity_recent, severity_lifetime),
-    }
-    # Intensity, behavior, and lethality stay separate: no composite score.
-    intensity = (
-        {
-            "frequency": valid.get("css_frequency"),
-            "duration": valid.get("css_duration"),
-            "controllability": valid.get("css_controllability"),
-            "deterrents": valid.get("css_deterrents"),
-            "reasons": valid.get("css_reasons"),
-        }
-        if any(valid.get(f"css_i{level}_recent") == "yes" for level in _CSSRS_IDEATION_LEVELS)
-        else None
-    )
-    behavior = {
-        window: {
-            category: valid.get(f"css_beh_{category}_{window}") for category in _CSSRS_BEHAVIOR
-        }
-        for window in ("recent", "lifetime")
-    }
-    lethality = {
-        window: {
-            "actual": valid.get(f"css_leth_actual_{window}"),
-            "potential": valid.get(f"css_leth_potential_{window}"),
-        }
-        for window in ("recent", "lifetime")
-    }
+    severity_recent = max(endorsed) if endorsed else 0
     flags: list[str] = []
-    any_ideation = bool(recent or lifetime)
-    any_history_behavior = any(
-        valid.get(f"css_beh_{category}_lifetime") == "yes" for category in _CSSRS_SUICIDAL_BEHAVIOR
-    ) or any(valid.get(f"css_beh_nssi_{window}") == "yes" for window in ("recent", "lifetime"))
-    recent_high_ideation = severity_recent >= 4
-    recent_behavior = any(
-        valid.get(f"css_beh_{category}_recent") == "yes" for category in _CSSRS_SUICIDAL_BEHAVIOR
-    )
-    if not any_ideation and not any_history_behavior and not recent_behavior:
+    if all(valid.get(item_id) == "no" for item_id in CSSRS_RECENT_IDS):
         flags.append("no_positive_items")
-    if any_ideation or any_history_behavior or recent_behavior:
+    if endorsed:
         flags.append("clinical_review")
-    if recent_high_ideation or recent_behavior:
+    if severity_recent >= 4:
         flags.append("high_risk_alert")
     findings = {
-        "intensity": intensity,
-        "behavior": behavior,
-        "lethality": lethality,
         "flags": flags,
-        "windows": {
-            "recent_ideation": "past_month",
-            "recent_behavior": "past_3_months",
-            "lifetime": "lifetime",
-        },
+        "windows": {"recent_ideation": "past_month"},
         "notes": [
-            "Ideation severity is the highest endorsed level; lower levels are never inferred.",
-            "Intensity, behavior, and lethality stay separate; no composite score.",
+            "Ideation severity is the highest level answered yes; lower levels are never inferred.",
+            "Unknown is an explicit answer, not a negative and not unanswered.",
+            "No composite score is calculated.",
             "Immediate emergency concern (current intent/plan, attempt in progress, "
             "inability to stay safe) is clinician-determined, never a calculated flag.",
             "A negative screen does not prove absence of risk.",
         ],
     }
-    return scores, findings
+    return {"ideation_severity_recent": severity_recent}, findings
+
+
+def require_live_cssrs_definition(definition: dict[str, Any]) -> None:
+    """Reject a live C-SSRS file that drifted from the five-item contract."""
+    live_ids = [item["id"] for item in definition["items"]]
+    if live_ids != list(CSSRS_RECENT_IDS):
+        raise DefinitionError("live cssrs items are not the five recent ideation ids")
+    for item in definition["items"]:
+        if item.get("value_type") != "yes_no_unknown" or item.get("required") is not True:
+            raise DefinitionError("live cssrs items must be required yes_no_unknown")
+    if definition.get("periods") != [{"id": "recent_ideation", "window": "past_month"}]:
+        raise DefinitionError("live cssrs period must be recent ideation past_month")
+    ops = {rule.get("op") for rule in definition["result_rules"]}
+    if ops & _CSSRS_RETIRED_RESULT_OPS:
+        raise DefinitionError("live cssrs definition still declares retired result rules")
 
 
 _RESULTS = {
@@ -529,6 +543,8 @@ def evaluate(definition: dict[str, Any], answers: dict[str, Any]) -> dict[str, A
     if not isinstance(answers, dict):
         raise DefinitionError("answers must be an object")
     instrument = definition["instrument"]
+    if instrument == "cssrs":
+        answers = normalize_cssrs_answers(answers)
     items = {item["id"]: item for item in definition["items"]}
 
     skipped = answers.get(SKIP_KEY) is True

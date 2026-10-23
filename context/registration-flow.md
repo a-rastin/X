@@ -132,3 +132,22 @@ reason for removing page notes.
 
 **Alternatives:** unknown — no separately authorized data-destruction or
 historical snapshot rewrite was established.
+
+## Recent ideation is the live C-SSRS section
+
+**Id:** acf3c233-4ce9-4a90-91ea-19d9ec5104f7
+**Type:** decision
+**Status:** active
+**Evidence:** unknown
+**Source:** product instruction, 2026-10-23
+**Revisit when:** the live C-SSRS item set changes
+
+Registration step 4 and the follow-up C-SSRS section collect five recent
+ideation items (`css_i1_recent` through `css_i5_recent`). Each answer is Yes,
+No, or Unknown, and the default is Unknown. Lifetime ideation, intensity,
+behavior, and lethality are not collected.
+
+**Reason:** the instruction to use this form is confirmed. No clinical reason
+for the cut was stated, so that reason is unknown.
+
+**Alternatives:** unknown — no competing clinical alternative was stated.

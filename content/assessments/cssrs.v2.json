@@ -1,0 +1,106 @@
+{
+  "instrument": "cssrs",
+  "id": "cssrs",
+  "version": "v2",
+  "title": "Columbia-Suicide Severity Rating Scale (experimental v2)",
+  "description": "Clinician-administered recent suicidal ideation (past month), levels 1-5. Each item is yes, no, or unknown. Severity is the highest level answered yes, otherwise 0. Unknown is an explicit answer, not a negative and not unanswered. No composite score.",
+  "items": [
+    {
+      "id": "css_i1_recent",
+      "prompt": "Ideation 1 (Wish to be dead, recent): Have you wished you were dead, or wished you could go to sleep and not wake up?",
+      "value_type": "yes_no_unknown",
+      "required": true,
+      "source_locator": "CSSRS.md §1 Suicidal ideation severity",
+      "experimental_paraphrase": true
+    },
+    {
+      "id": "css_i2_recent",
+      "prompt": "Ideation 2 (Nonspecific active thoughts, recent): Have you had thoughts of killing yourself, without thinking about a method, intent, or plan?",
+      "value_type": "yes_no_unknown",
+      "required": true,
+      "source_locator": "CSSRS.md §1 Suicidal ideation severity",
+      "experimental_paraphrase": true
+    },
+    {
+      "id": "css_i3_recent",
+      "prompt": "Ideation 3 (Method, without intent, recent): Have you thought about how you might kill yourself, without intending to act on those thoughts?",
+      "value_type": "yes_no_unknown",
+      "required": true,
+      "source_locator": "CSSRS.md §1 Suicidal ideation severity",
+      "experimental_paraphrase": true
+    },
+    {
+      "id": "css_i4_recent",
+      "prompt": "Ideation 4 (Some intent, no specific plan, recent): Have you had suicidal thoughts and some intention of acting on them, but without a specific plan?",
+      "value_type": "yes_no_unknown",
+      "required": true,
+      "source_locator": "CSSRS.md §1 Suicidal ideation severity",
+      "experimental_paraphrase": true
+    },
+    {
+      "id": "css_i5_recent",
+      "prompt": "Ideation 5 (Specific plan and intent, recent): Have you worked out a method or plan for killing yourself, and do you intend to carry it out?",
+      "value_type": "yes_no_unknown",
+      "required": true,
+      "source_locator": "CSSRS.md §1 Suicidal ideation severity",
+      "experimental_paraphrase": true
+    }
+  ],
+  "completion_rules": {
+    "type": "all_required"
+  },
+  "result_rules": [
+    {
+      "op": "max_endorsed"
+    }
+  ],
+  "periods": [
+    {
+      "id": "recent_ideation",
+      "window": "past_month"
+    }
+  ],
+  "source": {
+    "doc": "project-documents/medical-documents/CSSRS.md",
+    "note": "Live instrument is recent ideation levels 1-5 only (past month). Intensity, behavior, lethality, and lifetime items are not part of this version."
+  },
+  "release": {
+    "version": "v2",
+    "released_at": "2026-10-23",
+    "reviewer": "none",
+    "approval": "none",
+    "source_documents": [
+      {
+        "path": "project-documents/medical-documents/CSSRS.md",
+        "sha256": "610ecf937795c695828d15376a2555e3e153f97307f7b758dc9c1e7b6bdc9ced"
+      }
+    ],
+    "assumptions": [
+      "Ideation item wording is a concise paraphrase of the source table; the authorized form governs exact administration wording and probes.",
+      "The live instrument asks only recent ideation levels 1-5 (past month). Each answer is yes, no, or unknown.",
+      "Unknown is an explicit answer. It is not a negative and it is not unanswered. A draft with no saved answers is the five unknown answers.",
+      "A yes to a higher ideation level does not fill lower levels.",
+      "Severity is the highest level answered yes, otherwise 0. There is no composite score.",
+      "high_risk_alert applies only when that severity is 4 or 5. clinical_review applies when any level is yes. no_positive_items applies only when all five are no.",
+      "This version records no new clinical approval. The hash-pinned v1 file is unchanged and is not the live instrument."
+    ],
+    "experimental_defaults": [
+      "Form choice: five recent ideation items only. Lifetime ideation, intensity, behavior, and lethality are not collected.",
+      "Time window: recent ideation = past_month. The section label is Recent ideation — past month.",
+      "No branching skips: all five levels are asked explicitly and a higher-level yes never fills in lower levels.",
+      "An absent recent answer is unknown, except when the section is skipped.",
+      "Immediate emergency concern (current intent/plan, attempt in progress, inability to stay safe) is clinician-determined and is never a calculated flag."
+    ],
+    "source_gaps": [
+      "The supplied source does not contain the authorized exact administration wording/probes; paraphrase status is preserved.",
+      "The source gives no composite or cutoff; none is defined here.",
+      "Behavior, intensity, lethality, and lifetime sections of the source are outside this live instrument."
+    ],
+    "validation_results": {
+      "notes": "v1 reference examples do not define this five-item instrument. No new clinical approval is claimed."
+    },
+    "disclaimer": "Experimental assessment package. This does NOT establish clinical validation, records no new clinical approval, and introduces no treatment thresholds.",
+    "no_composite_score": true,
+    "release_notes": "Live C-SSRS is the five recent-ideation items (yes/no/unknown). Retired sections are not scored. No new clinical approval."
+  }
+}

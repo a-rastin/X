@@ -1,61 +1,55 @@
-/* C-SSRS 29-item form with server-computed preview (S11,
- * plan.md §§2.2, 5; FR-13, FR-20).
+/* C-SSRS recent-ideation worksheet with server-computed preview
+ * (S11, plan.md §§2.2, 5; FR-13, FR-20).
  *
  * Wizard integration (not separate persistence): answers live in the shared
  * S07 autosave body as `draft_data["cssrs"] = {answers}` and save through
  * the same debounced PATCH + revision fence. This component only edits that
- * slice of `localData`; every severity/flag comes from
- * GET /encounters/{id}/cssrs, which runs the same T2 `evaluate()` as the
- * backend — the browser never computes severity or flags, so the display
- * cannot drift from the S08 released definition (cssrs.v1, no owner
- * review, no_composite_score).
+ * slice of `localData`. Severity and flags come from
+ * GET /encounters/{id}/cssrs — the browser never computes them.
  *
- * Explicit selection only: nothing is pre-filled, no defaults, no hidden
- * zeros. A fresh form is 29 unanswered items with null severities. Skip
- * writes `{"__skipped": true}` (evaluates to not_assessed). Complete
- * explicit negatives give the S08-defined no-ideation result (severity 0 +
- * no_positive_items flag). A yes to a higher ideation level never fills in
- * lower levels — each level stays explicitly answered, and partial work
- * reports missing_item_ids (never a guessed negative).
+ * One group, five items (css_i1_recent .. css_i5_recent). Each item is
+ * yes / no / unknown. A missing saved answer selects Unknown and, when the
+ * section is not skipped, is persisted as "unknown". An explicit yes or no
+ * is left as stored. A higher-level yes does not change any other item.
+ * Skip writes `{"__skipped": true}` (evaluates to not_assessed) and the five
+ * items are not shown as required while skipped. Resume clears the skip and
+ * returns each item without an explicit yes or no to Unknown.
  *
- * Periods stay distinct: recent ideation = past_month, recent behavior =
- * past_3_months, lifetime = lifetime. Intensity, behavior, and lethality
- * render as separate panels from the server findings — no composite risk
- * score anywhere. Alert logic (high_risk_alert vs clinical_review) is read
- * from the evaluation flags, never derived here.
+ * The definition payload may still list other items or value_type yes_no.
+ * Only these five prompts are rendered; a missing prompt keeps the wording
+ * from the current released recent items. Older preview fields are not
+ * rendered. No numeric scales.
  *
  * No ack/bypass here (unlike diagnosis): there are no command POSTs, so no
- * `applyServerSnapshot` resync is needed — the preview simply refreshes
- * after each acknowledged autosave (same pattern as PANSS). The 412 path
- * stays inside the shared useAutosave hook (keeps edits + reload/reconcile
- * UI); a failed save never shows Saved (the wizard save status owns that).
- * Switching pages or autosaving never erases responses and never turns a
- * skip into zero; reload/resume preserves state via the saved draft_data.
+ * `applyServerSnapshot` resync is needed — the preview refreshes after each
+ * acknowledged autosave (same pattern as PANSS). The 412 path stays inside
+ * the shared useAutosave hook. A failed save never shows Saved. Switching
+ * pages or autosaving never turns a skip into a yes or no; reload/resume
+ * preserves state via the saved draft_data.
  *
  * Accessibility: native fieldset/legend + radios (keyboard free), preview
  * verdict is an aria-live region, urgent/review panels are persistent text
  * (never auto-dismissed, never color-alone) with headings, item errors use
- * role=alert + aria-describedby, styling uses semantic tokens only (both
- * themes), reduced motion is handled by the global theme media query.
+ * role=alert + aria-describedby, styling uses the existing worksheet tokens.
  *
  * E2E selector contract (for the test agent's e2e/cssrs.spec.ts):
  * - section heading `#cssrs-heading`: "C-SSRS (step 4)" on registration,
  *   "C-SSRS (step 3)" on follow-up (wizard index)
- * - yes/no radios `#cssrs-{itemId}-yes|no` (name `cssrs-{itemId}`)
- * - numeric radios `#cssrs-{itemId}-{n}` (name `cssrs-{itemId}`), e.g.
- *   `#cssrs-css_frequency-2`, `#cssrs-css_leth_actual_recent-0`
+ * - one group `#cssrs-group-recent-ideation`: "Recent ideation — past month"
+ * - tri-state radios `#cssrs-{itemId}-yes`, `#cssrs-{itemId}-no`,
+ *   `#cssrs-{itemId}-unknown` (name `cssrs-{itemId}`) for css_i1_recent,
+ *   css_i2_recent, css_i3_recent, css_i4_recent, css_i5_recent.
+ *   Unknown is selected when the saved answer is missing.
  * - verdict `#cssrs-preview-status` (aria-live polite)
- * - scores `#cssrs-scores`
+ * - scores `#cssrs-scores` (recent ideation severity only)
  * - flags container `#cssrs-flags`; urgent panel `#cssrs-high-risk-alert`
  *   (role=alert); review panel `#cssrs-clinical-review`
- * - dimension panels `#cssrs-intensity`, `#cssrs-behavior`,
- *   `#cssrs-lethality` (separate, never combined)
  * - skip button "Skip C-SSRS (not assessed)"
  * - resume button "Resume C-SSRS (clear skip)"
- * - still-needed list `#cssrs-still-needed`
+ * - still-needed list `#cssrs-still-needed` (these five items only)
  */
 
-import { useCallback, useEffect, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import "../assessment-worksheet.css";
 import { ApiError } from "../../identity/api";
 import type { DraftData } from "../../encounters/api";
@@ -63,8 +57,8 @@ import type { useAutosave } from "../../encounters/useAutosave";
 import {
   getCssrs,
   getCssrsDefinition,
+  type CssrsAnswerValue,
   type CssrsDefinition,
-  type CssrsItem,
   type CssrsPreview,
 } from "./api";
 
@@ -77,6 +71,41 @@ interface CssrsSectionProps {
   /** 1-based wizard index (registration 4, follow-up 3). */
   stepNumber: number;
 }
+
+/** Prompts from the current released recent items, used when the definition omits one. */
+const RECENT_IDEATION: { id: string; prompt: string }[] = [
+  {
+    id: "css_i1_recent",
+    prompt:
+      "Ideation 1 (Wish to be dead, recent): Have you wished you were dead, or wished you could go to sleep and not wake up?",
+  },
+  {
+    id: "css_i2_recent",
+    prompt:
+      "Ideation 2 (Nonspecific active thoughts, recent): Have you had thoughts of killing yourself, without thinking about a method, intent, or plan?",
+  },
+  {
+    id: "css_i3_recent",
+    prompt:
+      "Ideation 3 (Method, without intent, recent): Have you thought about how you might kill yourself, without intending to act on those thoughts?",
+  },
+  {
+    id: "css_i4_recent",
+    prompt:
+      "Ideation 4 (Some intent, no specific plan, recent): Have you had suicidal thoughts and some intention of acting on them, but without a specific plan?",
+  },
+  {
+    id: "css_i5_recent",
+    prompt:
+      "Ideation 5 (Specific plan and intent, recent): Have you worked out a method or plan for killing yourself, and do you intend to carry it out?",
+  },
+];
+
+const ANSWER_OPTIONS: { value: CssrsAnswerValue; label: string }[] = [
+  { value: "yes", label: "Yes" },
+  { value: "no", label: "No" },
+  { value: "unknown", label: "Unknown" },
+];
 
 function answersOf(data: DraftData): Record<string, unknown> {
   const raw = data["cssrs"];
@@ -95,121 +124,76 @@ function sameAnswers(
   a: Record<string, unknown>,
   b: Record<string, unknown>,
 ): boolean {
-  const keysA = Object.keys(a);
-  const keysB = Object.keys(b);
-  return (
-    keysA.length === keysB.length && keysA.every((key) => b[key] === a[key])
-  );
-}
-
-const YES_NO_OPTIONS: { value: "yes" | "no"; label: string }[] = [
-  { value: "yes", label: "Yes" },
-  { value: "no", label: "No" },
-];
-
-function numericOptions(valueType: string): number[] {
-  switch (valueType) {
-    case "frequency_1_5":
-    case "duration_1_5":
-      return [1, 2, 3, 4, 5];
-    case "control_0_5":
-    case "deterrent_0_5":
-    case "reason_0_5":
-    case "lethality_0_5":
-      return [0, 1, 2, 3, 4, 5];
-    case "potential_0_2":
-      return [0, 1, 2];
-    default:
-      return [];
+  const keys = new Set([...Object.keys(a), ...Object.keys(b)]);
+  for (const key of keys) {
+    if (a[key] !== b[key]) {
+      return false;
+    }
   }
+  return true;
 }
 
-function isYesNo(item: CssrsItem): boolean {
-  return item.value_type === "yes_no";
+function explicitAnswer(value: unknown): CssrsAnswerValue | null {
+  return value === "yes" || value === "no" || value === "unknown" ? value : null;
 }
 
-const INTENSITY_IDS = [
-  "css_frequency",
-  "css_duration",
-  "css_controllability",
-  "css_deterrents",
-  "css_reasons",
-];
-
-const LETHALITY_RECENT_IDS = [
-  "css_leth_actual_recent",
-  "css_leth_potential_recent",
-];
-
-const LETHALITY_LIFETIME_IDS = [
-  "css_leth_actual_lifetime",
-  "css_leth_potential_lifetime",
-];
-
-interface ItemGroup {
-  key: string;
-  title: string;
-  hint: string;
-  items: CssrsItem[];
+function isRecentId(id: string): boolean {
+  return RECENT_IDEATION.some((item) => item.id === id);
 }
 
-function groupItems(definition: CssrsDefinition): ItemGroup[] {
-  const byId = new Map(definition.items.map((item) => [item.id, item]));
-  const pick = (ids: string[]): CssrsItem[] =>
-    ids.flatMap((id) => {
-      const item = byId.get(id);
-      return item !== undefined ? [item] : [];
-    });
-  const recentIdeation = definition.items.filter((item) =>
-    /^css_i[1-5]_recent$/.test(item.id),
+/** Five tri-state answers, or null when the stored slice already matches.
+ * Missing keys become "unknown". Any other key is dropped. Yes and no stay. */
+function normalizedAnswers(
+  answers: Record<string, unknown>,
+): Record<string, CssrsAnswerValue> | null {
+  if (answers["__skipped"] === true) {
+    return null;
+  }
+  const next: Record<string, CssrsAnswerValue> = {};
+  let changed = false;
+  for (const item of RECENT_IDEATION) {
+    const explicit = explicitAnswer(answers[item.id]);
+    if (explicit === null) {
+      next[item.id] = "unknown";
+      changed = true;
+    } else {
+      next[item.id] = explicit;
+    }
+  }
+  if (Object.keys(answers).some((key) => !isRecentId(key))) {
+    changed = true;
+  }
+  return changed ? next : null;
+}
+
+function answeredItems(
+  answers: Record<string, unknown>,
+  itemId: string,
+  value: CssrsAnswerValue,
+): Record<string, CssrsAnswerValue> {
+  const next: Record<string, CssrsAnswerValue> = {};
+  for (const item of RECENT_IDEATION) {
+    next[item.id] =
+      item.id === itemId
+        ? value
+        : (explicitAnswer(answers[item.id]) ?? "unknown");
+  }
+  return next;
+}
+
+function recentItems(
+  definition: CssrsDefinition | null,
+): { id: string; prompt: string }[] {
+  const byId = new Map(
+    (definition?.items ?? []).map((item) => [item.id, item.prompt]),
   );
-  const lifetimeIdeation = definition.items.filter((item) =>
-    /^css_i[1-5]_lifetime$/.test(item.id),
-  );
-  const recentBehavior = definition.items.filter((item) =>
-    /^css_beh_.+_recent$/.test(item.id),
-  );
-  const lifetimeBehavior = definition.items.filter((item) =>
-    /^css_beh_.+_lifetime$/.test(item.id),
-  );
-  return [
-    {
-      key: "recent-ideation",
-      title: "Recent ideation — past month",
-      hint: "Current ideation levels 1–5 for the past month. Each level is asked explicitly; a higher-level yes never fills in lower levels.",
-      items: recentIdeation,
-    },
-    {
-      key: "lifetime-ideation",
-      title: "Lifetime ideation — lifetime history",
-      hint: "Historical ideation levels 1–5 over the lifetime. Kept separate from recent answers; history never overwrites the current window.",
-      items: lifetimeIdeation,
-    },
-    {
-      key: "intensity",
-      title: "Intensity of the most severe recent ideation",
-      hint: "Five intensity dimensions for the most severe recent ideation. Required if and only if any recent ideation (levels 1–5) is endorsed. Recorded separately — never combined into a score.",
-      items: pick(INTENSITY_IDS),
-    },
-    {
-      key: "recent-behavior",
-      title: "Recent behavior — past 3 months",
-      hint: "Suicidal and self-injury behavior in the past 3 months, including nonsuicidal self-injury documented separately.",
-      items: recentBehavior,
-    },
-    {
-      key: "lifetime-behavior",
-      title: "Lifetime behavior — lifetime history",
-      hint: "Historical behavior over the lifetime. Kept separate from recent behavior; history never overwrites the current window.",
-      items: lifetimeBehavior,
-    },
-    {
-      key: "lethality",
-      title: "Lethality codings",
-      hint: "Actual and potential lethality per window, using the authorized form codings. Required if and only if an actual attempt occurred in that window (potential additionally requires actual damage 0).",
-      items: [...pick(LETHALITY_RECENT_IDS), ...pick(LETHALITY_LIFETIME_IDS)],
-    },
-  ];
+  return RECENT_IDEATION.map((item) => {
+    const prompt = byId.get(item.id);
+    return {
+      id: item.id,
+      prompt: prompt !== undefined && prompt !== "" ? prompt : item.prompt,
+    };
+  });
 }
 
 export function CssrsSection({
@@ -224,7 +208,6 @@ export function CssrsSection({
   const [previewLoading, setPreviewLoading] = useState(true);
   const [previewError, setPreviewError] = useState<string | null>(null);
 
-  // Released definition: prompts + value types for rendering the form.
   useEffect(() => {
     let cancelled = false;
     void (async () => {
@@ -274,7 +257,6 @@ export function CssrsSection({
     }
   }, [encounterId, onSessionExpired]);
 
-  // Live preview follows every acknowledged save.
   const savedRevision =
     autosave.saveState.kind === "saved" ? autosave.saveState.revision : 0;
   useEffect(() => {
@@ -283,28 +265,42 @@ export function CssrsSection({
 
   const answers = answersOf(autosave.localData);
   const skipped = answers["__skipped"] === true;
+  const answerKey = JSON.stringify(answers);
+  const answersRef = useRef(answers);
+  answersRef.current = answers;
+  const { setDraftValue } = autosave;
+
+  // Absent recent answers are stored as "unknown"; retired ids are dropped
+  // on that same write. Skip is left untouched. The ref is the latest slice
+  // so a queued write cannot replace a newer yes or no.
+  useEffect(() => {
+    const next = normalizedAnswers(answersRef.current);
+    if (next === null) {
+      return;
+    }
+    setDraftValue("cssrs", { answers: next });
+  }, [answerKey, setDraftValue]);
+
   const answersPending =
     preview !== null && !sameAnswers(answers, preview.answers);
 
-  function setAnswer(itemId: string, value: string | number): void {
-    if (answers[itemId] === value) {
+  function setAnswer(itemId: string, value: CssrsAnswerValue): void {
+    if (!skipped && answers[itemId] === value && normalizedAnswers(answers) === null) {
       return;
     }
-    // Any explicit answer replaces a prior Skip: Skip must not accompany
-    // other answers (server rejects the combination).
-    const { __skipped: _removed, ...rest } = answers;
-    void _removed;
-    autosave.setDraftValue("cssrs", {
-      answers: { ...rest, [itemId]: value },
-    });
+    setDraftValue("cssrs", { answers: answeredItems(answers, itemId, value) });
   }
 
   function handleSkip(): void {
-    autosave.setDraftValue("cssrs", { answers: { __skipped: true } });
+    setDraftValue("cssrs", { answers: { __skipped: true } });
   }
 
   function handleResume(): void {
-    autosave.setDraftValue("cssrs", { answers: {} });
+    const next: Record<string, CssrsAnswerValue> = {};
+    for (const item of RECENT_IDEATION) {
+      next[item.id] = explicitAnswer(answers[item.id]) ?? "unknown";
+    }
+    setDraftValue("cssrs", { answers: next });
   }
 
   const evaluation = preview?.evaluation ?? null;
@@ -312,10 +308,12 @@ export function CssrsSection({
   const findings = evaluation?.findings ?? null;
   const flags = findings?.flags ?? [];
   const itemErrors = evaluation?.item_errors ?? {};
-  const itemErrorIds = Object.keys(itemErrors);
+  const visibleErrorIds = Object.keys(itemErrors).filter(isRecentId);
+  const visibleMissing = (evaluation?.missing_item_ids ?? []).filter(isRecentId);
   const hasHighRisk = flags.includes("high_risk_alert");
   const hasReview = flags.includes("clinical_review");
   const hasNoPositives = flags.includes("no_positive_items");
+  const items = recentItems(definition);
 
   let verdict: string;
   if (preview === null) {
@@ -324,94 +322,52 @@ export function CssrsSection({
     verdict =
       "C-SSRS skipped — not assessed. No severity is reported for a skipped assessment.";
   } else if (evaluation?.status === "complete" && hasNoPositives) {
-    verdict = `Complete — no ideation or behavior endorsed (no-ideation result, severity 0 recent / 0 lifetime / 0 max). A negative screen does not prove absence of risk.`;
+    verdict = `Complete — no positive items (recent ideation severity ${formatScore(scores?.ideation_severity_recent)}). A negative screen does not prove absence of risk.`;
   } else if (evaluation?.status === "complete" && scores !== null) {
-    verdict = `Complete — Recent severity ${scores.ideation_severity_recent}, Lifetime severity ${scores.ideation_severity_lifetime}, Max ${scores.ideation_severity_max}. Intensity, behavior, and lethality below stay separate — no composite score.`;
+    verdict = `Complete — recent ideation severity ${formatScore(scores.ideation_severity_recent)}.`;
   } else if (evaluation?.status === "complete") {
-    verdict =
-      "Complete. Severity is currently unavailable.";
+    verdict = "Complete. Severity is currently unavailable.";
   } else if (evaluation?.status === "partial") {
-    const missing = evaluation.missing_item_ids.length;
-    verdict = `Incomplete — ${missing} required item${missing === 1 ? "" : "s"} still need${missing === 1 ? "s" : ""} an answer. Severity will appear when all required items are answered.`;
-  } else {
+    const missing = visibleMissing.length;
     verdict =
-      "No answers yet. Select responses to begin the assessment.";
+      missing === 0
+        ? "Recent ideation answers are saved. Severity appears when the server evaluation is complete."
+        : `Incomplete — ${missing} required item${missing === 1 ? "" : "s"} still need${missing === 1 ? "s" : ""} an answer. Severity will appear when all required items are answered.`;
+  } else {
+    verdict = "No answers yet. Select responses to begin the assessment.";
   }
 
-  function formatScore(value: number | null | undefined): string {
-    return typeof value === "number" ? String(value) : "—";
-  }
-
-  function formatFinding(value: unknown): string {
-    if (value === null || value === undefined) {
-      return "—";
-    }
-    return String(value);
-  }
-
-  function renderItem(item: CssrsItem): ReactNode {
+  function renderItem(item: { id: string; prompt: string }): ReactNode {
     const errorId =
-      itemErrors[item.id] !== undefined
-        ? `cssrs-${item.id}-error`
-        : undefined;
-    if (isYesNo(item)) {
-      return (
-        <fieldset key={item.id} className="xi-assessment-item">
-          <legend className="xi-assessment-sr-only">{item.prompt}</legend>
-          <div className="xi-assessment-question" aria-hidden="true">{item.prompt}</div>
-          <div className="xi-assessment-options" aria-label={item.prompt}>
-            {YES_NO_OPTIONS.map((option) => (
-              <label
-                key={option.value}
-                htmlFor={`cssrs-${item.id}-${option.value}`}
-              >
-                <input
-                  id={`cssrs-${item.id}-${option.value}`}
-                  type="radio"
-                  name={`cssrs-${item.id}`}
-                  value={option.value}
-                  checked={answers[item.id] === option.value}
-                  onChange={() => setAnswer(item.id, option.value)}
-                  disabled={skipped}
-                  aria-describedby={errorId}
-                />
-                {option.label}
-              </label>
-            ))}
-          </div>
-          <p className="xi-assessment-answer-state">{answers[item.id] === undefined ? (item.required ? "Not answered" : "Conditional · not answered") : `Selected: ${answers[item.id]}`}</p>
-            {errorId !== undefined && (
-            <p className="xi-field-error" id={errorId} role="alert">
-              {(itemErrors[item.id] ?? []).join(" ")}
-            </p>
-          )}
-        </fieldset>
-      );
-    }
-    const options = numericOptions(item.value_type);
+      itemErrors[item.id] !== undefined ? `cssrs-${item.id}-error` : undefined;
+    const selected = explicitAnswer(answers[item.id]) ?? "unknown";
     return (
       <fieldset key={item.id} className="xi-assessment-item">
         <legend className="xi-assessment-sr-only">{item.prompt}</legend>
-          <div className="xi-assessment-question" aria-hidden="true">{item.prompt}</div>
+        <div className="xi-assessment-question" aria-hidden="true">
+          {item.prompt}
+        </div>
         <div className="xi-assessment-options" aria-label={item.prompt}>
-          {options.map((value) => (
-            <label key={value} htmlFor={`cssrs-${item.id}-${value}`}>
+          {ANSWER_OPTIONS.map((option) => (
+            <label key={option.value} htmlFor={`cssrs-${item.id}-${option.value}`}>
               <input
-                id={`cssrs-${item.id}-${value}`}
+                id={`cssrs-${item.id}-${option.value}`}
                 type="radio"
                 name={`cssrs-${item.id}`}
-                value={value}
-                checked={answers[item.id] === value}
-                onChange={() => setAnswer(item.id, value)}
+                value={option.value}
+                checked={selected === option.value}
+                onChange={() => setAnswer(item.id, option.value)}
                 disabled={skipped}
                 aria-describedby={errorId}
               />
-              {value}
+              <span>{option.label}</span>
             </label>
           ))}
         </div>
-        <p className="xi-assessment-answer-state">{answers[item.id] === undefined ? (item.required ? "Not answered" : "Conditional · not answered") : `Selected: ${answers[item.id]}`}</p>
-            {errorId !== undefined && (
+        <p className="xi-assessment-answer-state">
+          {skipped ? "Not assessed" : `Selected: ${ANSWER_OPTIONS.find((option) => option.value === selected)?.label}`}
+        </p>
+        {errorId !== undefined && !skipped && (
           <p className="xi-field-error" id={errorId} role="alert">
             {(itemErrors[item.id] ?? []).join(" ")}
           </p>
@@ -420,34 +376,15 @@ export function CssrsSection({
     );
   }
 
-  function renderGroup(group: ItemGroup): ReactNode {
-    if (group.items.length === 0) {
-      return null;
-    }
-    return (
-      <div key={group.key} className="xi-assessment-group">
-        <div className="xi-assessment-group-heading">
-          <h4 id={`cssrs-group-${group.key}`} tabIndex={-1}>{group.title}</h4>
-          <span>{group.items.filter(item => answers[item.id] !== undefined).length} / {group.items.length} answered</span>
-        </div>
-        <p className="xi-hint">{group.hint}</p>
-        {group.items.map(renderItem)}
-      </div>
-    );
-  }
-
-  const groups = definition !== null ? groupItems(definition) : [];
-  const intensity = findings?.intensity ?? null;
-  const behavior = findings?.behavior ?? null;
-  const lethality = findings?.lethality ?? null;
-
   return (
     <section className="xi-card xi-assessment" aria-labelledby="cssrs-heading">
       <h3 className="xi-section-title" id="cssrs-heading">
         C-SSRS (step {stepNumber})
       </h3>
-      <p className="xi-hint">Assess suicidal ideation and behavior, keeping recent and lifetime responses separate. Answers save automatically; each result is reported separately.</p>
-      <p className="xi-assessment-window">Recent ideation: past month <span>Recent behavior: past 3 months</span></p>
+      <p className="xi-hint">
+        Assess recent suicidal ideation for the past month. Answers save
+        automatically.
+      </p>
       <p className="xi-hint">
         Item wording below is an experimental paraphrase of the source table;
         the authorized form governs exact administration wording and probes.
@@ -468,255 +405,277 @@ export function CssrsSection({
           </button>
         </p>
       )}
-      {definition === null && definitionError === null && (
-        <p>Loading C-SSRS form…</p>
-      )}
 
       <div className="xi-assessment-workspace">
-      <div className="xi-assessment-worksheet">
-      <nav className="xi-assessment-nav" aria-label="C-SSRS sections">
-        {groups.filter(group => group.items.length > 0).map(group => (
-          <a key={group.key} href={`#cssrs-group-${group.key}`} onClick={event => { event.preventDefault(); document.getElementById(`cssrs-group-${group.key}`)?.focus(); }}>{group.title.split(" — ")[0].replace(" of the most severe recent ideation", "")}</a>
-        ))}
-        <a href="#cssrs-review" onClick={event => { event.preventDefault(); document.getElementById("cssrs-review")?.focus(); }}>Review results</a>
-      </nav>
-      {definition !== null && <div>{groups.map(renderGroup)}</div>}
-
-      </div>
-      <aside className="xi-assessment-review" aria-labelledby="cssrs-review">
-      <div className="xi-assessment-result">
-        <h4 id="cssrs-review" tabIndex={-1}>Assessment review</h4>
-        {previewLoading && preview === null && <p>Loading C-SSRS preview…</p>}
-        {previewError !== null && preview === null && (
-          <div>
-            <p className="xi-form-error" role="alert">
-              {previewError}
-            </p>
-            <div className="xi-row-actions" style={{ marginTop: 8 }}>
-              <button
-                className="xi-btn xi-btn-secondary"
-                type="button"
-                onClick={() => {
-                  setPreviewLoading(true);
-                  setPreviewError(null);
-                  void refreshPreview();
-                }}
-              >
-                Retry
-              </button>
-            </div>
-          </div>
-        )}
-        {preview !== null && (
-          <div>
-            {/* Verdict announces via a role-less live region (not
-              role=status): the wizard's save status keeps the page's single
-              status role per the S07 e2e contract. */}
-            <p
-              className="xi-status"
-              id="cssrs-preview-status"
-              aria-live="polite"
+        <div className="xi-assessment-worksheet">
+          <nav className="xi-assessment-nav" aria-label="C-SSRS sections">
+            <a
+              href="#cssrs-group-recent-ideation"
+              onClick={(event) => {
+                event.preventDefault();
+                document.getElementById("cssrs-group-recent-ideation")?.focus();
+              }}
             >
-              {verdict}
+              Recent ideation
+            </a>
+            <a
+              href="#cssrs-review"
+              onClick={(event) => {
+                event.preventDefault();
+                document.getElementById("cssrs-review")?.focus();
+              }}
+            >
+              Review results
+            </a>
+          </nav>
+          <div className="xi-assessment-group">
+            <div className="xi-assessment-group-heading">
+              <h4 id="cssrs-group-recent-ideation" tabIndex={-1}>
+                Recent ideation — past month
+              </h4>
+              <span>
+                {skipped
+                  ? "Not assessed"
+                  : `${items.length} / ${items.length} answered`}
+              </span>
+            </div>
+            <p className="xi-hint">
+              Current ideation levels 1–5 for the past month. Each level is
+              asked explicitly; a higher-level yes never fills in lower levels.
             </p>
-            {(answersPending || previewError !== null) && <p className="xi-hint" aria-live="polite">
-              {answersPending && "Answers have changed. Results reflect the last saved assessment. "}
-              {previewError !== null && "Results could not refresh. Showing the last available assessment."}
-            </p>}
-            <details className="xi-assessment-provenance">
-              <summary>Assessment details</summary>
-              <p className="xi-hint">Definition {preview.definition_version}; saved revision {preview.revision}.</p>
-            </details>
-
-            {itemErrorIds.length > 0 && (
-              <p className="xi-form-error" role="alert">
-                Review these answers:{" "}
-                {itemErrorIds
-                  .map((id) => `${id}: ${(itemErrors[id] ?? []).join(" ")}`)
-                  .join("; ")}
-              </p>
+            {items.map(renderItem)}
+          </div>
+        </div>
+        <aside className="xi-assessment-review" aria-labelledby="cssrs-review">
+          <div className="xi-assessment-result">
+            <h4 id="cssrs-review" tabIndex={-1}>
+              Assessment review
+            </h4>
+            {previewLoading && preview === null && <p>Loading C-SSRS preview…</p>}
+            {previewError !== null && preview === null && (
+              <div>
+                <p className="xi-form-error" role="alert">
+                  {previewError}
+                </p>
+                <div className="xi-row-actions" style={{ marginTop: 8 }}>
+                  <button
+                    className="xi-btn xi-btn-secondary"
+                    type="button"
+                    onClick={() => {
+                      setPreviewLoading(true);
+                      setPreviewError(null);
+                      void refreshPreview();
+                    }}
+                  >
+                    Retry
+                  </button>
+                </div>
+              </div>
             )}
-
-            {(hasHighRisk || hasReview || hasNoPositives) && (
-              <div id="cssrs-flags" aria-live="polite">
-                {hasHighRisk && (
-                  <div
-                    className="xi-urgent-panel"
-                    id="cssrs-high-risk-alert"
-                    role="alert"
-                    aria-labelledby="cssrs-urgent-heading"
-                  >
-                    <h5
-                      id="cssrs-urgent-heading"
-                      style={{ margin: "0 0 8px" }}
-                    >
-                      Urgent: server reports high-risk findings needing prompt
-                      clinical review
-                    </h5>
-                    <p style={{ marginTop: 0, marginBottom: 0 }}>
-                      The server evaluation reports high_risk_alert (recent
-                      ideation level 4–5 or recent suicidal behavior in the
-                      past-3-months window). This message persists until the
-                      server state changes. Immediate emergency concern
-                      (current intent or plan, attempt in progress, inability
-                      to stay safe) is clinician-determined and is never a
-                      calculated flag.
-                    </p>
-                  </div>
-                )}
-                {hasReview && !hasHighRisk && (
-                  <div
-                    className="xi-warning-panel"
-                    id="cssrs-clinical-review"
-                    aria-labelledby="cssrs-review-heading"
-                  >
-                    <h5
-                      id="cssrs-review-heading"
-                      style={{ margin: "0 0 8px" }}
-                    >
-                      Clinical review flagged
-                    </h5>
-                    <p style={{ marginTop: 0, marginBottom: 0 }}>
-                      The server evaluation reports clinical_review (ideation
-                      or historical behavior endorsed without recent high-risk
-                      findings). This message persists until the server state
-                      changes. Nonsuicidal self-injury contributes to review
-                      but never triggers a high-risk alert by itself.
-                    </p>
-                  </div>
-                )}
-                {hasReview && hasHighRisk && (
-                  <div
-                    className="xi-warning-panel"
-                    id="cssrs-clinical-review"
-                    aria-labelledby="cssrs-review-heading"
-                  >
-                    <h5
-                      id="cssrs-review-heading"
-                      style={{ margin: "0 0 8px" }}
-                    >
-                      Clinical review also flagged
-                    </h5>
-                    <p style={{ marginTop: 0, marginBottom: 0 }}>
-                      The server evaluation also reports clinical_review
-                      alongside the urgent finding above. Both messages persist
-                      until the server state changes.
-                    </p>
-                  </div>
-                )}
-                {hasNoPositives && (
-                  <p className="xi-hint">
-                    Server flags: no_positive_items — complete explicit
-                    negatives (no-ideation result). A negative screen does not
-                    prove absence of risk.
+            {preview !== null && (
+              <div>
+                {/* Verdict announces via a role-less live region (not
+                  role=status): the wizard's save status keeps the page's single
+                  status role per the S07 e2e contract. */}
+                <p
+                  className="xi-status"
+                  id="cssrs-preview-status"
+                  aria-live="polite"
+                >
+                  {verdict}
+                </p>
+                {(answersPending || previewError !== null) && (
+                  <p className="xi-hint" aria-live="polite">
+                    {answersPending &&
+                      "Answers have changed. Results reflect the last saved assessment. "}
+                    {previewError !== null &&
+                      "Results could not refresh. Showing the last available assessment."}
                   </p>
                 )}
-              </div>
-            )}
+                <details className="xi-assessment-provenance">
+                  <summary>Assessment details</summary>
+                  <p className="xi-hint">
+                    Definition {preview.definition_version}; saved revision{" "}
+                    {preview.revision}.
+                  </p>
+                </details>
 
-            {evaluation?.status === "partial" && definition !== null && (
-              <details id="cssrs-still-needed" className="xi-assessment-outstanding">
-                <summary>Still needed: {evaluation.missing_item_ids.length} answers</summary>
-                <ul>
-                  {evaluation.missing_item_ids.map((id) => (
-                    <li key={id}>
-                      <a href={`#cssrs-heading`} onClick={event => {
-                        event.preventDefault();
-                        document.querySelector<HTMLInputElement>(`input[name="cssrs-${id}"]`)?.focus();
-                      }}>{definition.items.find(item => item.id === id)?.prompt ?? id}</a>
-                    </li>
-                  ))}
-                </ul>
-              </details>
-            )}
+                {visibleErrorIds.length > 0 && !skipped && (
+                  <p className="xi-form-error" role="alert">
+                    Review these answers:{" "}
+                    {visibleErrorIds
+                      .map((id) => `${id}: ${(itemErrors[id] ?? []).join(" ")}`)
+                      .join("; ")}
+                  </p>
+                )}
 
-            {scores !== null && (
-              <table
-                className="xi-table"
-                id="cssrs-scores"
-                aria-label="C-SSRS ideation severity scores"
-              >
-                <thead>
-                  <tr>
-                    <th scope="col">Dimension</th>
-                    <th scope="col">Severity</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Recent ideation severity (past month)</td>
-                    <td>{formatScore(scores.ideation_severity_recent)}</td>
-                  </tr>
-                  <tr>
-                    <td>Lifetime ideation severity (lifetime)</td>
-                    <td>{formatScore(scores.ideation_severity_lifetime)}</td>
-                  </tr>
-                  <tr>
-                    <td>Maximum endorsed severity</td>
-                    <td>{formatScore(scores.ideation_severity_max)}</td>
-                  </tr>
-                </tbody>
-              </table>
-            )}
-            {evaluation?.status !== "complete" &&
-              evaluation?.status !== "not_assessed" && (
-                <p className="xi-hint">
-                  Severity appears when all required items have valid answers, including applicable conditional items. A dash means a result is not available.
-                </p>
-              )}
+                {(hasHighRisk || hasReview || hasNoPositives) && (
+                  <div id="cssrs-flags" aria-live="polite">
+                    {hasHighRisk && (
+                      <div
+                        className="xi-urgent-panel"
+                        id="cssrs-high-risk-alert"
+                        role="alert"
+                        aria-labelledby="cssrs-urgent-heading"
+                      >
+                        <h5
+                          id="cssrs-urgent-heading"
+                          style={{ margin: "0 0 8px" }}
+                        >
+                          Urgent: server reports high-risk findings needing prompt
+                          clinical review
+                        </h5>
+                        <p style={{ marginTop: 0, marginBottom: 0 }}>
+                          The server evaluation reports high_risk_alert. This
+                          message persists until the server state changes.
+                          Immediate emergency concern (current intent or plan,
+                          attempt in progress, inability to stay safe) is
+                          clinician-determined and is never a calculated flag.
+                        </p>
+                      </div>
+                    )}
+                    {hasReview && !hasHighRisk && (
+                      <div
+                        className="xi-warning-panel"
+                        id="cssrs-clinical-review"
+                        aria-labelledby="cssrs-review-heading"
+                      >
+                        <h5
+                          id="cssrs-review-heading"
+                          style={{ margin: "0 0 8px" }}
+                        >
+                          Clinical review flagged
+                        </h5>
+                        <p style={{ marginTop: 0, marginBottom: 0 }}>
+                          The server evaluation reports clinical_review. This
+                          message persists until the server state changes.
+                        </p>
+                      </div>
+                    )}
+                    {hasReview && hasHighRisk && (
+                      <div
+                        className="xi-warning-panel"
+                        id="cssrs-clinical-review"
+                        aria-labelledby="cssrs-review-heading"
+                      >
+                        <h5
+                          id="cssrs-review-heading"
+                          style={{ margin: "0 0 8px" }}
+                        >
+                          Clinical review also flagged
+                        </h5>
+                        <p style={{ marginTop: 0, marginBottom: 0 }}>
+                          The server evaluation also reports clinical_review
+                          alongside the urgent finding above. Both messages
+                          persist until the server state changes.
+                        </p>
+                      </div>
+                    )}
+                    {hasNoPositives && (
+                      <p className="xi-hint">
+                        Server flags: no_positive_items — complete explicit
+                        negatives (no-ideation result). A negative screen does not
+                        prove absence of risk.
+                      </p>
+                    )}
+                  </div>
+                )}
 
-            {evaluation?.status === "complete" && (
-              <div className="xi-assessment-dimensions">
-                <div id="cssrs-intensity" aria-label="C-SSRS intensity (separate dimension)">
-                  <h5>Intensity</h5>
-                  {intensity === null ? <p className="xi-hint">None (no recent ideation endorsed).</p> :
-                    <dl>{Object.entries(intensity).map(([key, value]) => <div key={key}><dt>{key.charAt(0).toUpperCase() + key.slice(1)}</dt><dd>{formatFinding(value)}</dd></div>)}</dl>}
-                </div>
-                <div id="cssrs-behavior" aria-label="C-SSRS behavior (separate dimension)">
-                  <h5>Behavior</h5>
-                  {(["recent", "lifetime"] as const).map(window => <div key={window}>
-                    <h6>{window === "recent" ? "Past 3 months" : "Lifetime"}</h6>
-                    {behavior?.[window] ? <dl>{Object.entries(behavior[window]).map(([key, value]) => <div key={key}><dt>{key.replaceAll("_", " ")}</dt><dd>{formatFinding(value)}</dd></div>)}</dl> : <p className="xi-hint">Not available</p>}
-                  </div>)}
-                </div>
-                <div id="cssrs-lethality" aria-label="C-SSRS lethality (separate dimension)">
-                  <h5>Lethality</h5>
-                  {(["recent", "lifetime"] as const).map(window => <div key={window}>
-                    <h6>{window === "recent" ? "Past 3 months" : "Lifetime"}</h6>
-                    <dl><div><dt>Actual</dt><dd>{formatFinding(lethality?.[window]?.actual)}</dd></div><div><dt>Potential</dt><dd>{formatFinding(lethality?.[window]?.potential)}</dd></div></dl>
-                  </div>)}
-                </div>
-                <p className="xi-hint">Severity, intensity, behavior, and lethality are separate results. No composite risk score is calculated.</p>
+                {!skipped &&
+                  evaluation?.status === "partial" &&
+                  visibleMissing.length > 0 && (
+                    <details
+                      id="cssrs-still-needed"
+                      className="xi-assessment-outstanding"
+                    >
+                      <summary>
+                        Still needed: {visibleMissing.length} answers
+                      </summary>
+                      <ul>
+                        {visibleMissing.map((id) => (
+                          <li key={id}>
+                            <a
+                              href={`#cssrs-${id}-yes`}
+                              onClick={(event) => {
+                                event.preventDefault();
+                                document
+                                  .querySelector<HTMLInputElement>(
+                                    `input[name="cssrs-${id}"]`,
+                                  )
+                                  ?.focus();
+                              }}
+                            >
+                              {items.find((item) => item.id === id)?.prompt ?? id}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </details>
+                  )}
+
+                {scores !== null && evaluation?.status !== "not_assessed" && (
+                  <table
+                    className="xi-table"
+                    id="cssrs-scores"
+                    aria-label="C-SSRS ideation severity scores"
+                  >
+                    <thead>
+                      <tr>
+                        <th scope="col">Dimension</th>
+                        <th scope="col">Severity</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Recent ideation severity (past month)</td>
+                        <td>{formatScore(scores.ideation_severity_recent)}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                )}
+                {evaluation?.status !== "complete" &&
+                  evaluation?.status !== "not_assessed" && (
+                    <p className="xi-hint">
+                      Recent ideation severity appears when the server
+                      evaluation is complete. A dash means a result is not
+                      available.
+                    </p>
+                  )}
               </div>
             )}
           </div>
-        )}
-      </div>
-      <div className="xi-assessment-skip">
-      <div className="xi-row-actions" style={{ marginTop: 8 }}>
-        {skipped ? (
-          <button
-            className="xi-btn xi-btn-secondary"
-            type="button"
-            onClick={handleResume}
-          >
-            Resume C-SSRS (clear skip)
-          </button>
-        ) : (
-          <button
-            className="xi-btn xi-btn-secondary"
-            type="button"
-            disabled={definition === null}
-            onClick={handleSkip}
-          >
-            Skip C-SSRS (not assessed)
-          </button>
-        )}
-      </div>
-      <p className="xi-hint">{skipped ? "Not assessed. Resume to start answering." : "Skipping clears all answers in this assessment and records it as not assessed."}</p>
-      </div>
-      </aside>
+          <div className="xi-assessment-skip">
+            <div className="xi-row-actions" style={{ marginTop: 8 }}>
+              {skipped ? (
+                <button
+                  className="xi-btn xi-btn-secondary"
+                  type="button"
+                  onClick={handleResume}
+                >
+                  Resume C-SSRS (clear skip)
+                </button>
+              ) : (
+                <button
+                  className="xi-btn xi-btn-secondary"
+                  type="button"
+                  onClick={handleSkip}
+                >
+                  Skip C-SSRS (not assessed)
+                </button>
+              )}
+            </div>
+            <p className="xi-hint">
+              {skipped
+                ? "Not assessed. Resume to start answering."
+                : "Skipping clears all answers in this assessment and records it as not assessed."}
+            </p>
+          </div>
+        </aside>
       </div>
     </section>
   );
+}
+
+function formatScore(value: number | null | undefined): string {
+  return typeof value === "number" ? String(value) : "—";
 }

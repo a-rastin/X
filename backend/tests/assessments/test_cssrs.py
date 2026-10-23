@@ -1,21 +1,14 @@
-"""C-SSRS form and distinct results (S11, backend only; seams T2/T1).
+"""C-SSRS form and distinct results (live cssrs.v2, backend only; seams T2/T1).
 
 Through public HTTP + real PostgreSQL and the T2 evaluator (no frontend):
 
-1. Fresh ``{}`` is unanswered with null severities (no defaults, no hidden
-   zeros); Skip persists ``not_assessed``; complete explicit negatives give
-   the S08-defined no-ideation result (severity 0/0/0 + ``no_positive_items``).
-   The GET preview always equals direct ``evaluate()`` (no drift).
-2. Source-derived worked example with level 3 endorsed gives severity 3
-   without auto-filling lower responses; intensity/behavior/lethality stay
-   separate dimensions with no composite score.
-3. Historical versus current answers retain their periods; an incomplete
-   required branch reports missing-item guidance (never a guessed negative);
-   S08 alert logic holds (``high_risk_alert`` vs ``clinical_review``; NSSI
-   never triggers ``high_risk_alert`` alone).
-4. Invalid/out-of-range values and undeclared period-like IDs are rejected
-   server-side with aggregates suppressed to null (never zero); author-only
-   access holds; resume preserves completeness after PATCH + GET.
+1. Fresh ``{}`` is complete: five recent unknowns, severity 0, flags empty.
+   Unknown is not a negative. Skip persists ``not_assessed``.
+2. Explicit all-no is the only ``no_positive_items`` result. A higher yes
+   does not fill lower levels. Severity 4 or 5 adds ``high_risk_alert``.
+3. Retired ids are stripped, not errors, and are not returned. Invalid live
+   values suppress the score. Null recent items become unknown.
+4. Author-only access holds. Resume preserves the five normalized answers.
 
 C-SSRS state lives in ``draft_data["cssrs"]``; answers travel through the
 existing S07 PATCH autosave, preview through ``GET .../cssrs`` only.
@@ -178,84 +171,68 @@ def _setup_draft(admin_client, clean_registry, monkeypatch, username, identifier
     return client, csrf, user, created["draft"]["id"]
 
 
-# Independent literal fixtures (worked from the S08 released cssrs.v1
-# definition: ideation levels 1-5 in two windows, five behavior categories
-# in two windows, five intensity dimensions, lethality codings — never
-# produced by the implementation under test).
-CSSRS_IDEATION = [
-    f"css_i{level}_{window}" for window in ("recent", "lifetime") for level in (1, 2, 3, 4, 5)
-]
-CSSRS_BEHAVIOR = [
-    f"css_beh_{category}_{window}"
-    for window in ("recent", "lifetime")
-    for category in ("actual", "interrupted", "aborted", "preparatory", "nssi")
-]
-NULL_SEVERITIES = {
-    "ideation_severity_recent": None,
-    "ideation_severity_lifetime": None,
-    "ideation_severity_max": None,
-}
-INTENSITY_L3 = {
-    "css_frequency": 2,
-    "css_duration": 2,
-    "css_controllability": 3,
-    "css_deterrents": 1,
-    "css_reasons": 4,
-}
-INTENSITY_L3_FINDINGS = {
-    "frequency": 2,
-    "duration": 2,
-    "controllability": 3,
-    "deterrents": 1,
-    "reasons": 4,
-}
+# Live-item literals. Retired lifetime, intensity, behavior, and lethality
+# ids are not part of this fixture.
+CSSRS_RECENT = (
+    "css_i1_recent",
+    "css_i2_recent",
+    "css_i3_recent",
+    "css_i4_recent",
+    "css_i5_recent",
+)
+NULL_SCORE = {"ideation_severity_recent": None}
+
+
+def _all_unknown() -> dict:
+    return dict.fromkeys(CSSRS_RECENT, "unknown")
 
 
 def _all_no() -> dict:
-    return {**dict.fromkeys(CSSRS_IDEATION, "no"), **dict.fromkeys(CSSRS_BEHAVIOR, "no")}
+    return dict.fromkeys(CSSRS_RECENT, "no")
 
 
 def _level3_complete() -> dict:
     answers = _all_no()
     answers["css_i3_recent"] = "yes"
-    answers.update(INTENSITY_L3)
     return answers
 
 
-def _assert_no_composite(result: dict) -> None:
-    assert set(result["scores"]) == {
-        "ideation_severity_recent",
-        "ideation_severity_lifetime",
-        "ideation_severity_max",
-    }
-    assert not {key for key in result["scores"] if "composite" in key or "risk" in key}
-    assert not {key for key in result["findings"] if "composite" in key or "risk" in key}
+def _assert_recent_only(result: dict) -> None:
+    assert set(result["scores"]) == {"ideation_severity_recent"}
+    assert "behavior" not in result["findings"]
+    assert "lethality" not in result["findings"]
+    assert "intensity" not in result["findings"]
 
 
-# --- Slice 1: fresh unanswered + skipped + explicit negatives; preview == direct ---
+def _live():
+    return get_released_definition("cssrs")
 
 
-def test_fresh_form_is_unanswered_with_null_severities(
+# --- Fresh complete unknowns, skip, explicit negatives ---
+
+
+def test_fresh_form_is_complete_with_five_unknowns(
     admin_client, clean_registry, monkeypatch
 ) -> None:
     client, _, _, encounter_id = _setup_draft(
         admin_client, clean_registry, monkeypatch, "dr_cssrs1", "0012347001"
     )
-    direct = evaluate(get_released_definition("cssrs"), {})
-    assert direct["status"] == "unanswered"
-    assert set(direct["missing_item_ids"]) == set(CSSRS_IDEATION + CSSRS_BEHAVIOR)
+    direct = evaluate(_live(), {})
+    assert direct["status"] == "complete"
+    assert direct["missing_item_ids"] == []
     assert direct["item_errors"] == {}
-    assert direct["scores"] == NULL_SEVERITIES
-    assert direct["findings"] == {}
-    assert direct["definition_version"] == "v1"
+    assert direct["scores"] == {"ideation_severity_recent": 0}
+    assert direct["findings"]["flags"] == []
+    assert direct["findings"]["windows"] == {"recent_ideation": "past_month"}
+    assert direct["definition_version"] == "v2"
+    _assert_recent_only(direct)
 
     preview = _get_cssrs(client, encounter_id)
     assert preview.status_code == 200, preview.text
     body = preview.json()
-    assert body["answers"] == {}
+    assert body["answers"] == _all_unknown()
     assert body["evaluation"] == direct
-    assert body["evaluation"]["scores"]["ideation_severity_max"] is None
-    assert body["definition_version"] == "v1"
+    assert body["definition_version"] == "v2"
     assert body["revision"] == 1
     assert preview.headers["etag"] == '"1"'
 
@@ -265,10 +242,11 @@ def test_skip_persists_not_assessed(admin_client, clean_registry, monkeypatch) -
         admin_client, clean_registry, monkeypatch, "dr_cssrs2", "0012347002"
     )
     skipped = {"__skipped": True}
-    direct = evaluate(get_released_definition("cssrs"), skipped)
+    direct = evaluate(_live(), skipped)
     assert direct["status"] == "not_assessed"
-    assert direct["scores"] == NULL_SEVERITIES
+    assert direct["scores"] == NULL_SCORE
     assert direct["findings"] == {"skipped": True}
+    assert direct["missing_item_ids"] == list(CSSRS_RECENT)
 
     saved = _patch(client, csrf, encounter_id, {"cssrs": {"answers": skipped}}, 1)
     assert saved.status_code == 200, saved.text
@@ -289,24 +267,15 @@ def test_complete_explicit_negatives_give_no_ideation_result(
         admin_client, clean_registry, monkeypatch, "dr_cssrs3", "0012347003"
     )
     answers = _all_no()
-    direct = evaluate(get_released_definition("cssrs"), answers)
+    direct = evaluate(_live(), answers)
     assert direct["status"] == "complete"
     assert direct["item_errors"] == {}
     assert direct["missing_item_ids"] == []
-    # S08-defined no-ideation result: severity 0/0/0, never null, never zero-filled.
-    assert direct["scores"] == {
-        "ideation_severity_recent": 0,
-        "ideation_severity_lifetime": 0,
-        "ideation_severity_max": 0,
-    }
+    assert direct["scores"] == {"ideation_severity_recent": 0}
     assert direct["findings"]["flags"] == ["no_positive_items"]
-    assert direct["findings"]["intensity"] is None
-    assert direct["findings"]["windows"] == {
-        "recent_ideation": "past_month",
-        "recent_behavior": "past_3_months",
-        "lifetime": "lifetime",
-    }
-    _assert_no_composite(direct)
+    assert direct["findings"]["windows"] == {"recent_ideation": "past_month"}
+    assert direct["definition_version"] == "v2"
+    _assert_recent_only(direct)
 
     saved = _patch(client, csrf, encounter_id, {"cssrs": {"answers": answers}}, 1)
     assert saved.status_code == 200, saved.text
@@ -315,278 +284,128 @@ def test_complete_explicit_negatives_give_no_ideation_result(
     body = preview.json()
     assert body["answers"] == answers
     assert body["evaluation"] == direct
-    assert body["definition_version"] == "v1"
+    assert body["definition_version"] == "v2"
     assert preview.headers["etag"] == '"2"'
 
 
-# --- Slice 2: level-3 severity without autofill; dimensions stay separate ---
-
-
-def test_level3_endorsed_gives_severity3_without_autofilling_lower(
-    admin_client, clean_registry, monkeypatch
-) -> None:
-    # A lone level-3 yes infers nothing: lower levels stay missing, no severity.
-    partial = evaluate(get_released_definition("cssrs"), {"css_i3_recent": "yes"})
-    assert partial["status"] == "partial"
-    assert "css_i1_recent" in partial["missing_item_ids"]
-    assert "css_i2_recent" in partial["missing_item_ids"]
-    assert partial["scores"] == NULL_SEVERITIES
-
-    answers = _level3_complete()
-    direct = evaluate(get_released_definition("cssrs"), answers)
+def test_level3_yes_does_not_fill_lower_levels(admin_client, clean_registry, monkeypatch) -> None:
+    direct = evaluate(_live(), {"css_i3_recent": "yes"})
     assert direct["status"] == "complete"
-    assert direct["item_errors"] == {}
-    assert direct["scores"]["ideation_severity_recent"] == 3
-    assert direct["scores"]["ideation_severity_lifetime"] == 0
-    assert direct["scores"]["ideation_severity_max"] == 3
-    assert direct["findings"]["intensity"] == INTENSITY_L3_FINDINGS
+    assert direct["scores"] == {"ideation_severity_recent": 3}
     assert direct["findings"]["flags"] == ["clinical_review"]
-    _assert_no_composite(direct)
+    assert "high_risk_alert" not in direct["findings"]["flags"]
+    _assert_recent_only(direct)
 
     client, csrf, _, encounter_id = _setup_draft(
         admin_client, clean_registry, monkeypatch, "dr_cssrs4", "0012347004"
     )
-    saved = _patch(client, csrf, encounter_id, {"cssrs": {"answers": answers}}, 1)
+    saved = _patch(client, csrf, encounter_id, {"cssrs": {"answers": {"css_i3_recent": "yes"}}}, 1)
     assert saved.status_code == 200, saved.text
-    preview = _get_cssrs(client, encounter_id)
-    assert preview.status_code == 200, preview.text
-    body = preview.json()
-    assert body["answers"] == answers
+    body = _get_cssrs(client, encounter_id).json()
+    assert body["answers"] == {
+        "css_i1_recent": "unknown",
+        "css_i2_recent": "unknown",
+        "css_i3_recent": "yes",
+        "css_i4_recent": "unknown",
+        "css_i5_recent": "unknown",
+    }
     assert body["evaluation"] == direct
-    assert body["evaluation"]["scores"]["ideation_severity_recent"] == 3
 
 
-def test_severity_is_highest_endorsed_with_separate_dimensions(
+def test_severity_four_and_five_raise_high_risk_alert(
     admin_client, clean_registry, monkeypatch
 ) -> None:
-    answers = _all_no()
-    answers.update({"css_i2_recent": "yes", "css_i4_recent": "yes", "css_i5_lifetime": "yes"})
-    intensity = {
-        "css_frequency": 4,
-        "css_duration": 3,
-        "css_controllability": 4,
-        "css_deterrents": 5,
-        "css_reasons": 5,
-    }
-    answers.update(intensity)
-    direct = evaluate(get_released_definition("cssrs"), answers)
+    level4 = _all_no()
+    level4["css_i2_recent"] = "yes"
+    level4["css_i4_recent"] = "yes"
+    direct = evaluate(_live(), level4)
     assert direct["status"] == "complete"
-    assert direct["scores"] == {
-        "ideation_severity_recent": 4,
-        "ideation_severity_lifetime": 5,
-        "ideation_severity_max": 5,
-    }
-    findings = direct["findings"]
-    assert set(findings) >= {"intensity", "behavior", "lethality", "flags", "windows", "notes"}
-    assert findings["intensity"] == {
-        "frequency": 4,
-        "duration": 3,
-        "controllability": 4,
-        "deterrents": 5,
-        "reasons": 5,
-    }
-    # Behavior/lethality are recorded separately even when nothing is endorsed.
-    assert findings["behavior"]["recent"] == {
-        "actual": "no",
-        "interrupted": "no",
-        "aborted": "no",
-        "preparatory": "no",
-        "nssi": "no",
-    }
-    assert findings["lethality"]["recent"] == {"actual": None, "potential": None}
-    assert findings["lethality"]["lifetime"] == {"actual": None, "potential": None}
-    _assert_no_composite(direct)
+    assert direct["scores"] == {"ideation_severity_recent": 4}
+    assert direct["findings"]["flags"] == ["clinical_review", "high_risk_alert"]
+    _assert_recent_only(direct)
+    level5 = _all_unknown()
+    level5["css_i5_recent"] = "yes"
+    assert evaluate(_live(), level5)["scores"] == {"ideation_severity_recent": 5}
+    assert evaluate(_live(), level5)["findings"]["flags"] == [
+        "clinical_review",
+        "high_risk_alert",
+    ]
 
     client, csrf, _, encounter_id = _setup_draft(
         admin_client, clean_registry, monkeypatch, "dr_cssrs5", "0012347005"
     )
-    assert _patch(client, csrf, encounter_id, {"cssrs": {"answers": answers}}, 1).status_code == 200
+    assert _patch(client, csrf, encounter_id, {"cssrs": {"answers": level4}}, 1).status_code == 200
     body = _get_cssrs(client, encounter_id).json()
+    assert body["answers"] == level4
     assert body["evaluation"] == direct
-    assert body["evaluation"]["scores"]["ideation_severity_max"] == 5
 
 
-# --- Slice 3: periods, missing-item guidance, alert logic ---
-
-
-def test_historical_vs_current_periods_retained(admin_client, clean_registry, monkeypatch) -> None:
+def test_retired_ids_are_stripped_and_null_becomes_unknown(
+    admin_client, clean_registry, monkeypatch
+) -> None:
     client, csrf, _, encounter_id = _setup_draft(
         admin_client, clean_registry, monkeypatch, "dr_cssrs6", "0012347006"
     )
-    answers = _all_no()
-    answers.update(
+    stored = _all_no()
+    stored["css_i1_recent"] = None
+    stored.update(
         {
             "css_i2_lifetime": "yes",
-            "css_beh_actual_lifetime": "yes",
-            "css_leth_actual_lifetime": 2,
+            "css_frequency": 9,
+            "css_beh_actual_recent": "yes",
+            "css_leth_actual_recent": 2,
+            "css_beh_nssi_lifetime": "yes",
         }
     )
-    direct = evaluate(get_released_definition("cssrs"), answers)
+    direct = evaluate(_live(), stored)
     assert direct["status"] == "complete"
-    # Recent and lifetime windows never overwrite each other.
-    assert direct["scores"]["ideation_severity_recent"] == 0
-    assert direct["scores"]["ideation_severity_lifetime"] == 2
-    assert direct["scores"]["ideation_severity_max"] == 2
-    assert direct["findings"]["intensity"] is None
-    assert direct["findings"]["behavior"]["recent"]["actual"] == "no"
-    assert direct["findings"]["behavior"]["lifetime"]["actual"] == "yes"
-    assert direct["findings"]["lethality"]["recent"] == {"actual": None, "potential": None}
-    assert direct["findings"]["lethality"]["lifetime"] == {"actual": 2, "potential": None}
-    assert direct["findings"]["flags"] == ["clinical_review"]
-    assert direct["findings"]["windows"] == {
-        "recent_ideation": "past_month",
-        "recent_behavior": "past_3_months",
-        "lifetime": "lifetime",
+    assert direct["item_errors"] == {}
+    assert direct["scores"] == {"ideation_severity_recent": 0}
+    assert direct["findings"]["flags"] == []
+    _assert_recent_only(direct)
+
+    assert _patch(client, csrf, encounter_id, {"cssrs": {"answers": stored}}, 1).status_code == 200
+    body = _get_cssrs(client, encounter_id).json()
+    assert body["answers"] == {
+        "css_i1_recent": "unknown",
+        "css_i2_recent": "no",
+        "css_i3_recent": "no",
+        "css_i4_recent": "no",
+        "css_i5_recent": "no",
     }
-
-    assert _patch(client, csrf, encounter_id, {"cssrs": {"answers": answers}}, 1).status_code == 200
-    body = _get_cssrs(client, encounter_id).json()
     assert body["evaluation"] == direct
-    assert body["evaluation"]["findings"]["behavior"]["lifetime"]["actual"] == "yes"
+    draft = client.get(f"/api/v1/encounters/{encounter_id}").json()
+    assert draft["draft_data"]["cssrs"]["answers"] == body["answers"]
 
 
-def test_incomplete_required_branch_has_missing_item_guidance(
-    admin_client, clean_registry, monkeypatch
-) -> None:
-    client, csrf, _, encounter_id = _setup_draft(
-        admin_client, clean_registry, monkeypatch, "dr_cssrs7", "0012347007"
-    )
-    started = _all_no()
-    started["css_beh_actual_recent"] = "yes"
-    direct = evaluate(get_released_definition("cssrs"), started)
-    assert direct["status"] == "partial"
-    assert "css_leth_actual_recent" in direct["missing_item_ids"]
-    assert direct["scores"] == NULL_SEVERITIES
-    assert direct["findings"] == {}
-
-    assert _patch(client, csrf, encounter_id, {"cssrs": {"answers": started}}, 1).status_code == 200
-    body = _get_cssrs(client, encounter_id).json()
-    assert body["evaluation"] == direct
-    assert body["evaluation"]["scores"] == NULL_SEVERITIES
-
-    # Actual damage 0 additionally requires potential lethality: still guidance, no guess.
-    damaged = dict(started)
-    damaged["css_leth_actual_recent"] = 0
-    needs_potential = evaluate(get_released_definition("cssrs"), damaged)
-    assert needs_potential["status"] == "partial"
-    assert "css_leth_potential_recent" in needs_potential["missing_item_ids"]
-    assert needs_potential["scores"] == NULL_SEVERITIES
-
-    complete = dict(damaged)
-    complete["css_leth_potential_recent"] = 1
-    finished = evaluate(get_released_definition("cssrs"), complete)
-    assert finished["status"] == "complete"
-    assert finished["findings"]["lethality"]["recent"] == {"actual": 0, "potential": 1}
-    assert "high_risk_alert" in finished["findings"]["flags"]
-
-    saved = _patch(client, csrf, encounter_id, {"cssrs": {"answers": complete}}, 2)
-    assert saved.status_code == 200, saved.text
-    resumed = _get_cssrs(client, encounter_id).json()
-    assert resumed["evaluation"] == finished
-    assert resumed["evaluation"]["findings"]["lethality"]["recent"] == {"actual": 0, "potential": 1}
-
-
-def test_alert_logic_high_risk_vs_clinical_review_nssi_never_high_risk(
-    admin_client, clean_registry, monkeypatch
-) -> None:
-    # Recent ideation level 4 triggers the urgent flag alongside review.
-    urgent = _all_no()
-    urgent["css_i4_recent"] = "yes"
-    urgent.update(INTENSITY_L3)
-    urgent_result = evaluate(get_released_definition("cssrs"), urgent)
-    assert urgent_result["status"] == "complete"
-    assert urgent_result["scores"]["ideation_severity_recent"] == 4
-    assert "high_risk_alert" in urgent_result["findings"]["flags"]
-    assert "clinical_review" in urgent_result["findings"]["flags"]
-
-    # Lifetime ideation alone needs review without the recent urgent flag.
-    historical = _all_no()
-    historical["css_i2_lifetime"] = "yes"
-    historical_result = evaluate(get_released_definition("cssrs"), historical)
-    assert historical_result["status"] == "complete"
-    assert historical_result["findings"]["flags"] == ["clinical_review"]
-
-    # NSSI alone contributes to review but never triggers high risk by itself.
-    for window in ("recent", "lifetime"):
-        nssi = _all_no()
-        nssi[f"css_beh_nssi_{window}"] = "yes"
-        result = evaluate(get_released_definition("cssrs"), nssi)
-        assert result["status"] == "complete", window
-        assert result["scores"] == {
-            "ideation_severity_recent": 0,
-            "ideation_severity_lifetime": 0,
-            "ideation_severity_max": 0,
-        }
-        assert result["findings"]["flags"] == ["clinical_review"], window
-
-    client, csrf, _, encounter_id = _setup_draft(
-        admin_client, clean_registry, monkeypatch, "dr_cssrs8", "0012347008"
-    )
-    nssi_recent = _all_no()
-    nssi_recent["css_beh_nssi_recent"] = "yes"
-    direct = evaluate(get_released_definition("cssrs"), nssi_recent)
-    assert (
-        _patch(client, csrf, encounter_id, {"cssrs": {"answers": nssi_recent}}, 1).status_code
-        == 200
-    )
-    body = _get_cssrs(client, encounter_id).json()
-    assert body["evaluation"] == direct
-    assert body["evaluation"]["findings"]["flags"] == ["clinical_review"]
-    assert "high_risk_alert" not in body["evaluation"]["findings"]["flags"]
-
-
-# --- Slice 4: server-side value/period validation, auth, resume ---
-
-
-def test_invalid_values_and_periods_rejected_server_side_aggregates_null_never_zero(
-    admin_client, clean_registry, monkeypatch
-) -> None:
+def test_invalid_live_values_suppress_scores(admin_client, clean_registry, monkeypatch) -> None:
     base = _level3_complete()
-    # Invalid yes/no, out-of-range numerics, wrong types, and undeclared
-    # period-like IDs are all answer errors with aggregates suppressed.
-    bad_cases = [
-        ("css_i1_recent", "maybe"),
-        ("css_i1_recent", 0),
-        ("css_i1_recent", 1),
-        ("css_i1_recent", True),
-        ("css_i1_recent", None),
-        ("css_i5_lifetime", "sometimes"),
-        ("css_frequency", 0),
-        ("css_frequency", 6),
-        ("css_frequency", "2"),
-        ("css_frequency", 2.5),
-        ("css_frequency", True),
+    for bad in ("maybe", 0, 1, True):
+        answers = dict(base)
+        answers["css_i1_recent"] = bad
+        result = evaluate(_live(), answers)
+        assert "css_i1_recent" in result["item_errors"], bad
+        assert result["status"] == "partial"
+        assert result["scores"] == NULL_SCORE
+        assert result["findings"] == {}
+    for item_id, bad in (
         ("css_i1_current", "yes"),
         ("css_beh_actual_now", "no"),
         ("PX", 1),
         ("__draft", True),
-    ]
-    for item_id, bad in bad_cases:
+    ):
         answers = dict(base)
         answers[item_id] = bad
-        result = evaluate(get_released_definition("cssrs"), answers)
-        assert item_id in result["item_errors"], (item_id, bad)
+        result = evaluate(_live(), answers)
+        assert item_id in result["item_errors"], item_id
         assert result["status"] == "partial"
-        assert result["scores"] == NULL_SEVERITIES
-        assert result["findings"] == {}
+        assert result["scores"] == NULL_SCORE
 
-    lethality_base = _all_no()
-    lethality_base["css_beh_actual_recent"] = "yes"
-    lethality_base["css_leth_actual_recent"] = 2
-    lethality_base["css_leth_potential_recent"] = 1
-    for bad in (6, -1, "1", 1.5, True, None):
-        answers = dict(lethality_base)
-        answers["css_leth_actual_recent"] = bad
-        result = evaluate(get_released_definition("cssrs"), answers)
-        assert "css_leth_actual_recent" in result["item_errors"], bad
-        assert result["scores"] == NULL_SEVERITIES
-
-    # The same rejection is visible through the GET route (never zero-filled).
     client, csrf, _, encounter_id = _setup_draft(
         admin_client, clean_registry, monkeypatch, "dr_cssrs9", "0012347009"
     )
     revision = 1
-    for item_id, bad in [("css_frequency", 9), ("css_i1_recent", "maybe"), ("PX", 1)]:
+    for item_id, bad in (("css_i1_recent", "maybe"), ("PX", 1)):
         answers = dict(base)
         answers[item_id] = bad
         saved = _patch(client, csrf, encounter_id, {"cssrs": {"answers": answers}}, revision)
@@ -594,7 +413,7 @@ def test_invalid_values_and_periods_rejected_server_side_aggregates_null_never_z
         revision = saved.json()["revision"]
         body = _get_cssrs(client, encounter_id).json()
         assert item_id in body["evaluation"]["item_errors"], (item_id, bad)
-        assert body["evaluation"]["scores"] == NULL_SEVERITIES
+        assert body["evaluation"]["scores"] == NULL_SCORE
         assert body["evaluation"]["findings"] == {}
 
 
@@ -605,12 +424,8 @@ def test_cssrs_author_only_and_auth(admin_client, clean_registry, monkeypatch) -
     _make_physician(admin_client, "dr_cssrs_stranger")
     stranger, _, _ = _physician_client(clean_registry, monkeypatch, "dr_cssrs_stranger", "pw123")
     assert stranger.get(f"/api/v1/encounters/{encounter_id}/cssrs").status_code == 403
-
-    # Administrator is not the author either.
     assert admin_client["client"].get(f"/api/v1/encounters/{encounter_id}/cssrs").status_code == 403
-    # Anonymous reads are 401.
     assert TestClient(app).get(f"/api/v1/encounters/{encounter_id}/cssrs").status_code == 401
-    # Unknown encounter is 404, not 403.
     assert client.get(f"/api/v1/encounters/{uuid.uuid4()}/cssrs").status_code == 404
 
 
@@ -621,7 +436,7 @@ def test_resume_preserves_completeness_after_patch_and_get(
         admin_client, clean_registry, monkeypatch, "dr_cssrs11", "0012347011"
     )
     answers = _level3_complete()
-    direct = evaluate(get_released_definition("cssrs"), answers)
+    direct = evaluate(_live(), answers)
     saved = _patch(client, csrf, encounter_id, {"cssrs": {"answers": answers}}, 1)
     assert saved.status_code == 200, saved.text
     assert saved.json()["revision"] == 2
@@ -629,7 +444,6 @@ def test_resume_preserves_completeness_after_patch_and_get(
     assert before["evaluation"] == direct
     assert before["evaluation"]["status"] == "complete"
 
-    # Resume after restart: a fresh client re-authenticates and sees the same state.
     fresh = TestClient(app)
     login = fresh.post(
         "/api/v1/auth/login",
@@ -641,14 +455,10 @@ def test_resume_preserves_completeness_after_patch_and_get(
     resumed_body = resumed.json()
     assert resumed_body["answers"] == answers
     assert resumed_body["evaluation"] == direct
-    assert resumed_body["evaluation"]["scores"] == {
-        "ideation_severity_recent": 3,
-        "ideation_severity_lifetime": 0,
-        "ideation_severity_max": 3,
-    }
+    assert resumed_body["evaluation"]["scores"] == {"ideation_severity_recent": 3}
+    assert resumed_body["evaluation"]["findings"]["flags"] == ["clinical_review"]
     assert resumed_body["revision"] == 2
     assert resumed.headers["etag"] == '"2"'
-    # The shared autosave body carries the answers through GET /encounters.
     draft = fresh.get(f"/api/v1/encounters/{encounter_id}").json()
     assert draft["draft_data"]["cssrs"]["answers"] == answers
     assert draft["revision"] == 2

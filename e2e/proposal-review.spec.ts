@@ -313,10 +313,9 @@ async function seedReadyContext(request: import("@playwright/test").APIRequestCo
   const current = await (await request.get(`/api/v1/encounters/${draftId}`)).json();
   const values = { ...history.values, h_exposure_dopamine_blocker: "yes" };
   for (const field of history.workflow_fields) values[field.id] = field.permitted[0];
-  const answers = Object.fromEntries([
-    ...["recent", "lifetime"].flatMap((window) => [1, 2, 3, 4, 5].map((n) => `css_i${n}_${window}`)),
-    ...["recent", "lifetime"].flatMap((window) => ["actual", "interrupted", "aborted", "preparatory", "nssi"].map((kind) => `css_beh_${kind}_${window}`)),
-  ].map((id) => [id, "no"]));
+  const answers = Object.fromEntries(
+    [1, 2, 3, 4, 5].map((level) => [`css_i${level}_recent`, "no"]),
+  );
   return patchDraftWithRetry(request, physician, draftId,
     { ...current.draft_data, cssrs: { answers }, history: { ...current.draft_data.history, values } }, current.revision);
 }
@@ -379,21 +378,19 @@ test("S48 readiness core completion does not start generation; all blockers link
   const posts = countGenerationPosts(page);
   await gotoEncounter(page, draftId);
   const summary = page.getByTestId("proposal-readiness");
-  await expect(summary).toContainText("9 / 29 required responses answered; 0 / 29 execution-ready.");
-  await expect(summary.getByRole("link")).toHaveCount(29);
+  // Absent C-SSRS normalizes to five explicit Unknown answers, which is a
+  // complete recent-ideation screen and the one execution-ready input here.
+  await expect(summary).toContainText("10 / 29 required responses answered; 1 / 29 execution-ready.");
+  await expect(summary.getByRole("link")).toHaveCount(28);
+  await expect(summary.getByRole("link", { name: "C-SSRS assessment", exact: true })).toHaveCount(0);
   const server = await (await request.get(`/api/v1/encounters/${draftId}/proposal-readiness`)).json();
-  expect(server.blockers).toHaveLength(29);
+  expect(server.blockers).toHaveLength(28);
+  expect(server.blockers.some((blocker: { source_path: string }) => blocker.source_path === "synthetic/assessments/cssrs")).toBe(false);
   for (const blocker of server.blockers) {
-    const link = blocker.source_path === "synthetic/assessments/cssrs"
-      ? summary.getByRole("link", { name: "C-SSRS assessment", exact: true })
-      : summary.locator(`a[href*="${encodeURIComponent(blocker.source_path)}"]`);
+    const link = summary.locator(`a[href*="${encodeURIComponent(blocker.source_path)}"]`);
     await expect(link).toHaveText(blocker.label);
   }
   expect(posts.count).toBe(0);
-  const cssrs = summary.getByRole("link", { name: "C-SSRS assessment", exact: true });
-  await cssrs.click();
-  await expect(page.locator("#cssrs-heading")).toBeVisible();
-  await page.locator("#wizard-step-proposal-review").click();
   await expect(summary).toBeVisible();
   const path = "candidate/history/pharmacotherapy.v2/h_physical_vulnerability";
   await summary.locator(`a[href*="${encodeURIComponent(path)}"]`).click();

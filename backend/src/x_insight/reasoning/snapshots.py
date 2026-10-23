@@ -187,7 +187,14 @@ def compute_analysis_fingerprint(
     (secondary plan, UI state, arbitrary client keys) are ignored, so
     note-only and plan-only edits leave the fingerprint unchanged.
     """
+    from x_insight.assessments.cssrs import get_answers as cssrs_live_answers
+    from x_insight.assessments.released import get_released_definition
+
     values = _get_history_values(draft_data)
+    # Live C-SSRS normalization plus definition version. Retired stored keys
+    # must not keep an old batch reusable, and missing versus unknown must not
+    # look like a clinical edit.
+    cssrs_definition = get_released_definition("cssrs")
     payload: dict[str, Any] = {
         "schema_version": FINGERPRINT_SCHEMA_VERSION,
         "history": values,
@@ -197,7 +204,8 @@ def compute_analysis_fingerprint(
         "gate": _get_gate_value(draft_data),
         "diagnosis_answers": _get_answers(draft_data, "diagnosis"),
         "panss_answers": _get_answers(draft_data, "panss"),
-        "cssrs_answers": _get_answers(draft_data, "cssrs"),
+        "cssrs_answers": cssrs_live_answers(draft_data),
+        "cssrs_definition_version": str(cssrs_definition["version"]),
         "baseline": draft_data.get("followup_baseline") if isinstance(draft_data, dict) else None,
         "pinned": dict(pinned),
     }
@@ -261,14 +269,12 @@ def _resolve_raw_value(source_path: str, draft_data: Any) -> Any:
         evaluation = cssrs.evaluate_answers(answers)
         if evaluation.get("status") != "complete":
             return _MISSING
-        # Completion validates every actual item answer. Reserved control keys
-        # are assessment commands, not patient data; their ignored malformed
-        # values must never cross the model-context boundary.
+        # Publish only the live definition's items after strip + unknown
+        # default. Retired stored keys never enter model context.
         definition = get_released_definition("cssrs")
-        item_ids = {item["id"] for item in definition["items"]}
         return {
             "definition_version": str(definition["version"]),
-            "answers": {key: value for key, value in answers.items() if key in item_ids},
+            "answers": {item["id"]: answers[item["id"]] for item in definition["items"]},
             "evaluation": evaluation,
         }
     if source_path.startswith("synthetic/assessments/"):
@@ -276,7 +282,12 @@ def _resolve_raw_value(source_path: str, draft_data: Any) -> Any:
         if not field:
             raise _fail(422, "unknown_source_path", f"Source path {source_path!r} is empty.")
         for key in ("diagnosis", "panss", "cssrs"):
-            answers = _get_answers(draft_data, key)
+            if key == "cssrs":
+                from x_insight.assessments.cssrs import get_answers as cssrs_live_answers
+
+                answers = cssrs_live_answers(draft_data)
+            else:
+                answers = _get_answers(draft_data, key)
             if field in answers:
                 return answers[field]
         values = _get_history_values(draft_data)

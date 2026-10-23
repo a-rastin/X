@@ -11,9 +11,9 @@ Slices (tasks.md S14, plan.md §§2.2-2.3; FR-20-23):
    the draft and its derived artifacts (GET followup-baseline author-only;
    strangers/admin 403 without content, anon 401, unknown 404).
 2. History/medications copy with baseline provenance (``copied_baseline`` +
-   ``baseline_encounter_id``) and reconciliation ``pending``; PANSS/C-SSRS
-   start unanswered (``answers {}``) with prior scores shown historical-only
-   (``historical: True`` display, never as answers).
+   ``baseline_encounter_id``) and reconciliation ``pending``. PANSS starts
+   empty and C-SSRS recent items read as unknown. Prior scores stay
+   historical-only (``historical: True`` display, never as answers).
 3. Concurrent creates for one patient yield one 201 + generic 409
    OPEN_DRAFT_EXISTS without leak; different patients stay independent.
    S48d/S51 demographic-change staleness is out-of-scope (hook documented
@@ -36,6 +36,7 @@ import pytest
 from fastapi.testclient import TestClient
 from sqlalchemy import text
 
+from tests.assessments.test_cssrs import _all_unknown
 from x_insight import contracts
 from x_insight import db as db_module
 from x_insight.app import app
@@ -408,9 +409,9 @@ def test_followup_baseline_copy_provenance_pending_and_empty_answers(
         "baseline_encounter_id": BASELINE_ENCOUNTER_ID,
     }
     assert draft_data["history"]["phone_update"] is None
-    # PANSS/C-SSRS always start unanswered, even with prior scores present.
+    # Prior scores stay historical. PANSS starts empty; C-SSRS reads as unknown.
     assert draft_data["panss"] == {"answers": {}}
-    assert draft_data["cssrs"] == {"answers": {}}
+    assert draft_data["cssrs"] == {"answers": _all_unknown()}
     # The stored snapshot keeps prior scores/meds/note for historical display.
     snapshot = draft_data["followup_baseline"]
     assert snapshot["prior_scores"] == BASELINE_SCORES
@@ -437,7 +438,7 @@ def test_followup_baseline_copy_provenance_pending_and_empty_answers(
     # Historical display is never seeded as current answers.
     authored = owner.get(f"/api/v1/encounters/{encounter_id}").json()["draft_data"]
     assert authored["panss"] == {"answers": {}}
-    assert authored["cssrs"] == {"answers": {}}
+    assert authored["cssrs"] == {"answers": _all_unknown()}
 
 
 def test_prior_scores_never_become_answers_and_partial_scores_allowed(
@@ -461,7 +462,7 @@ def test_prior_scores_never_become_answers_and_partial_scores_allowed(
     encounter_id = started.json()["encounter"]["id"]
     draft_data = started.json()["draft_data"]
     assert draft_data["panss"] == {"answers": {}}
-    assert draft_data["cssrs"] == {"answers": {}}
+    assert draft_data["cssrs"] == {"answers": _all_unknown()}
 
     preview = owner.get(f"/api/v1/encounters/{encounter_id}/followup-baseline").json()
     assert preview["prior_scores_display"] == {
@@ -493,7 +494,7 @@ def test_followup_without_baseline_has_empty_shell(
         "baseline_encounter_id": None,
     }
     assert draft_data["panss"] == {"answers": {}}
-    assert draft_data["cssrs"] == {"answers": {}}
+    assert draft_data["cssrs"] == {"answers": _all_unknown()}
     assert "followup_baseline" not in draft_data
 
     preview = owner.get(f"/api/v1/encounters/{encounter_id}/followup-baseline").json()
