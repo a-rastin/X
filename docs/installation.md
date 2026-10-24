@@ -110,52 +110,51 @@ values and percent-encode the password inside each URL. Keep the development and
 test database names distinct. Tests can replace or clear their database state.
 
 If ports 5432/5433 are occupied, choose available `DB_PORT`/`TEST_DB_PORT` values
-and update the respective URL ports. `BACKEND_PORT` and `WEB_PORT` appear in the
-example file, but `make dev` currently starts the API and Vite on fixed ports
-8000 and 5173.
+and update the respective URL ports. `BACKEND_PORT` and `WEB_PORT` select the API
+and Vite ports (defaults 8000 and 5173). Unless explicitly configured,
+`API_PROXY_TARGET` follows the selected backend port.
 
 ### 3. Start the API, web server, and databases
 
-In terminal A, load the configuration and keep the command running:
+At the repository root, run this command and keep it running:
 
 ```sh
-set -a
-. ./.env
-set +a
 make dev
 ```
 
-Exporting the variables is required: Docker Compose reads `.env`, but `make dev`
-does not source it for the host API process. It starts `db` and `db-test`, the
-reload-enabled API, and Vite. It does not run migrations or start a worker.
+`make dev` loads `.env` itself. Explicit caller database URLs, database/API/web
+ports, PostgreSQL credentials and DDI default selection take precedence over
+that file. It starts `db` and `db-test`, waits for database health, then applies
+schema migrations and approved DDI data automatically. Only after setup succeeds
+does it start the reload-enabled API and Vite. It does not start a local worker.
 
-The database-port preflight rejects occupied ports, including ports held by an
-earlier local Compose stack. If that stack belongs to this checkout, stop its
-foreground processes and run `make stop` before launching again.
+The database-port preflight permits this project's already-running database
+containers and rejects unrelated listeners. Stop a different stack or choose
+free ports and update the corresponding database URLs before retrying.
 
-### 4. Wait for PostgreSQL and migrate
+### 4. Wait for automatic setup and verify
 
-In terminal B at the repository root:
+No separate migration command is required. After the foreground startup reports
+the database and approved DDI are ready, verify from another terminal:
 
 ```sh
-docker compose up -d --wait db db-test
-make migrate
 curl --fail http://localhost:8000/api/v1/health
 curl --fail http://localhost:8000/api/v1/ready
 ```
 
-`make migrate` loads `.env` itself, applies Alembic migrations, then installs the
-bundled owner-approved DDInter release into a database with no released DDI data.
+Use the selected backend port if you overrode its default.
+
+Automatic startup installs the bundled owner-approved DDInter release into a
+database with no released DDI data.
 It rebuilds offline from committed sources without Git LFS, manual publication,
 or a model provider. The first rebuild/import may take several minutes; wait for
 `READY: ddi-c45e2051cf16` (1,939 drugs, 222,383 source occurrences). Repeats reuse
 the exact immutable release. Existing released datasets are preserved unless the
 bundled version is explicitly configured; see the [bootstrap rules](ddinter-operations.md#fresh-installation-with-the-bundled-approved-release).
 
-A new
-database has no usable application schema before this step; startup seeding may
-log an error until the schema exists. Current head is `0022`. Continue only when
-the migration command succeeds and readiness returns HTTP 200. Plain
+Current schema head is `0022`. Setup failure exits before either local server
+starts; correct the reported error and run `make dev` again. `make migrate`
+remains an optional operator tool for setup without launching servers. Plain
 `alembic upgrade head` creates schema without provisioning DDI data; `/ready`
 alone does not prove a DDI release is available. The public liveness endpoint can
 return 200 even while the database is unavailable or incompatible.
@@ -173,7 +172,7 @@ account check does not require a model provider.
 
 ### 6. Start the background worker
 
-To process queued generation and local-calculation work, open terminal C at the
+To process queued generation and local-calculation work, open another terminal at the
 repository root:
 
 ```sh
@@ -239,22 +238,23 @@ The build creates the application/worker image and Caddy/web image using the
 checked-in Dockerfiles and lockfiles. The packaging check is static and does not
 prove that the services can start. No host `make setup` is needed for this mode.
 
-### 3. Start services and apply migrations
+### 3. Start services with automatic setup
 
 ```sh
 make prod-up PROD_ENV_FILE="$X_INSIGHT_PROD_ENV_FILE"
-make prod-migrate PROD_ENV_FILE="$X_INSIGHT_PROD_ENV_FILE"
 docker compose -f compose.prod.yaml --env-file "$X_INSIGHT_PROD_ENV_FILE" ps
 ```
 
-This follows the operator-runbook order: build, start, then explicitly migrate.
-`prod-up` starts `db`, `app`, `worker`, and `edge`; `prod-migrate` runs a disposable
-migration container. A running or healthy API container is not proof of schema
-readiness: its container health check uses `/health`, not `/ready`.
-The migration container applies schema and the same bundled approved DDI bootstrap
-as local setup. The image includes the ordinary Git sources and approval inputs;
-it rebuilds generated evidence locally instead of requiring the archived LFS
-payload. Wait for successful `READY` output on a fresh database before using Medications.
+`prod-up` automatically runs the one-shot `migrate` setup service after database
+health succeeds. Both API and worker require its successful completion before
+starting; ordinary production Compose startup follows the same dependencies.
+Setup applies schema and the bundled approved DDI data from ordinary Git inputs
+included in the image. It rebuilds generated evidence locally without Git LFS.
+No separate `prod-migrate` command is needed for normal startup; that command
+remains available for operator diagnostics or deliberate setup without the app.
+Inspect setup output with `docker compose -f compose.prod.yaml --env-file "$X_INSIGHT_PROD_ENV_FILE" logs migrate`.
+First setup may take several minutes. Verify both `/health` and `/ready` after
+startup; the API container health check uses `/health` alone.
 
 Only Caddy publishes host ports. The API and database remain on the internal
 Compose network. Persistent volumes hold the database (`prod_pgdata`) and shared
@@ -371,7 +371,7 @@ checks remain recorded in the [release report](../project-documents/dev/progress
 | Task | Local development | Docker deployment |
 | --- | --- | --- |
 | Stop | `Ctrl+C` in API/web/worker terminals, then `make stop` | `make prod-stop PROD_ENV_FILE="$X_INSIGHT_PROD_ENV_FILE"` |
-| Start again | Reload `.env`, run `make dev`, then start the separate worker | `make prod-up PROD_ENV_FILE="$X_INSIGHT_PROD_ENV_FILE"` |
+| Start again | Run `make dev`, then start the separate worker | `make prod-up PROD_ENV_FILE="$X_INSIGHT_PROD_ENV_FILE"` |
 | Inspect services | `docker compose ps`; API/web/worker terminal output | `docker compose -f compose.prod.yaml --env-file "$X_INSIGHT_PROD_ENV_FILE" ps` |
 | Application logs | Foreground process terminals | `make prod-logs PROD_ENV_FILE="$X_INSIGHT_PROD_ENV_FILE"` |
 
@@ -380,8 +380,11 @@ records or recovery artifacts must survive. Current production Compose declares
 no automatic restart policy; arrange supervised startup or explicitly run
 `prod-up` after a host restart.
 
-After changing local environment values, reload `.env` and restart the affected
-host processes. After changing server environment values, use `prod-up` to
+`Ctrl+C`, or either local server exiting, stops the API/web launcher and its owned
+child processes so their ports can be reused. The separately started worker must
+be stopped separately. After changing local environment values, rerun `make dev`
+and reload `.env` for the separate worker. After changing server environment
+values, use `prod-up` to
 reconcile container configuration; `docker compose restart` alone does not apply
 new environment values. Rebuild images when source or locked dependencies change.
 
@@ -399,15 +402,15 @@ again. Do not clear a maintenance lock as a generic startup fix.
 | --- | --- |
 | `uv`, `node`, `npm`, `make`, or Compose is missing | Install the prerequisites for your chosen mode and repeat the version checks; host Python/Node are needed only for local development |
 | Docker daemon or permission error | Confirm `docker info` succeeds for the installation account before retrying Compose |
-| `make dev` reports an occupied database port | Inspect this checkout's Compose stack; stop it if already running, or choose free database ports and update both URLs |
-| API/web ports are occupied | Use separate terminals/ports for an isolated instance; `BACKEND_PORT`/`WEB_PORT` do not alter the current `make dev` commands |
-| `/health` is 200 but `/ready` is 503 `SCHEMA_INCOMPATIBLE` | Apply the migration for the matching application revision with `make migrate` or `prod-migrate`; current expected head is `0022` |
-| Medications shows `DDI dataset is unavailable.` after a fresh installation | Complete `make migrate` or `make prod-migrate` against the API's database and check its bootstrap output; direct Alembic migration is schema only. See [DDI bootstrap recovery](ddinter-operations.md#fresh-installation-with-the-bundled-approved-release). An invalid `DDI_DEFAULT_DATASET_VERSION` still fails explicitly |
+| `make dev` reports an occupied database port | This project's running containers are allowed; stop the unrelated listener or choose free database ports and update both URLs |
+| API/web ports are occupied | Stop the other process or choose available `BACKEND_PORT`/`WEB_PORT` values, then rerun `make dev` |
+| `/health` is 200 but `/ready` is 503 `SCHEMA_INCOMPATIBLE` | Confirm the API uses the startup target database and matching revision. Normal startup applies schema automatically; current expected head is `0022`. Manual migration commands remain optional recovery tools |
+| Medications shows `DDI dataset is unavailable.` after a fresh installation | Inspect `make dev` setup output or production `logs migrate`, confirm the API uses that database, and correct the reported setup error before restarting. See [DDI bootstrap recovery](ddinter-operations.md#fresh-installation-with-the-bundled-approved-release). An invalid `DDI_DEFAULT_DATASET_VERSION` still fails explicitly |
 | `/ready` reports `DB_UNAVAILABLE` | Check database health and the API process's actual connection configuration; confirm password, hostname, port, and database name |
 | Password changes in `.env` do not fix database login | PostgreSQL initialization variables do not change credentials inside an existing volume; use its existing credentials or a deliberate database password change |
 | Vite loads but API calls fail | Check the API on port 8000 and `API_PROXY_TARGET`; restart Vite after changing its proxy environment |
 | Admin login fails on a reused database | The original default password is not restored on restart; use the existing account credentials |
-| Migration container exits with an error | Read the `prod-migrate` terminal output; its `--rm` container is removed afterward. Follow the runbook's migration-failure procedure |
+| Migration container exits with an error | Inspect production `logs migrate`; API/worker startup waits for setup success. Follow the runbook's migration-failure procedure, then rerun `prod-up` |
 | Generation reports `PROVIDER_NOT_CONFIGURED` | The worker lacks an endpoint/model; configure its environment and restart it, accounting for the saved-settings integration gap |
 | Generation or local calculation stays queued | Confirm the separate worker is running, connected to the same database, and not held by restore maintenance |
 | Provider key cannot be saved | The API needs a valid deployment data key and an allowed destination; a browser API key alone is insufficient |

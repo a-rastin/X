@@ -59,10 +59,10 @@ The preceding bounded follow-up implements the complete supplied DDInter import 
 [medication workflow integration (2026-10-21)](project-documents/dev/progress/s20.md#follow-up-2026-10-21--ddinter-workflow-and-release-association).
 The owner confirmed completed review, and release `ddi-c45e2051cf16` is
 [published into the local application database](docs/verification/ddinter-2026-10-21/publication.md).
-The [fresh-clone setup fix (2026-10-23)](project-documents/dev/progress/s18.md#follow-up-2026-10-23--bundle-approved-ddinter-for-fresh-installations)
-also installs that same approved release during `make migrate` or `make prod-migrate`
-when a database has no released DDI dataset. Its committed sources rebuild offline;
-Git LFS and a separate manual publication are unnecessary for normal setup.
+The [automatic-startup follow-up (2026-10-23)](project-documents/dev/progress/s18.md#follow-up-2026-10-23--prepare-schema-and-ddinter-during-normal-startup)
+installs that same approved release during `make dev` or `make prod-up` when a
+database has no released DDI dataset. Its committed sources rebuild offline;
+normal startup needs no separate migration or manual publication command.
 The earlier [page-note follow-up](project-documents/dev/progress/s13.md#follow-up-2026-10-20--remove-page-notes-keep-the-working-note)
 preserves the working note.
 The latest numbered implementation checkpoint is [S42, recorded on
@@ -167,17 +167,18 @@ in [deploy/](deploy/).
 ## Local development
 
 Follow the [Installation and Running Guide](docs/installation.md) for prerequisites,
-source checkout, local configuration, migrations, first login, the separate worker,
+source checkout, local configuration, automatic setup, first login, the separate worker,
 and troubleshooting. It also covers Docker deployment on a Linux host.
 
-The local stack uses PostgreSQL containers and host API/Vite processes on ports
-8000/5173. Load `.env` before `make dev`; migrations and the background worker are
-separate steps. The guide explains the required terminal sequence and database-port
-preflight. For shared deployment, use its Docker instructions and external
-credentials file.
+After configuring `.env`, run `make dev`. It loads the configuration, waits for
+PostgreSQL, prepares schema and approved DDI data, then starts the API and Vite
+on ports 8000/5173 by default. The background worker remains a separate local
+process. For shared deployment, follow the guide's Docker instructions and run
+`make prod-up` after building images; production startup prepares data before
+starting the API and worker.
 
-`make migrate` applies schema migrations and provisions the bundled owner-approved
-DDInter dataset: **1,939 drugs and 222,383 source occurrences**. The first offline
+Startup provisions the bundled owner-approved DDInter dataset: **1,939 drugs and
+222,383 source occurrences**. The first offline
 rebuild/import may take several minutes; wait for `READY: ddi-c45e2051cf16` before
 using Medications. Repeated setup reuses the immutable release. Existing deployments
 retain their released dataset; see the [bootstrap rules](docs/ddinter-operations.md#fresh-installation-with-the-bundled-approved-release).
@@ -295,7 +296,8 @@ contract and its synthetic verification scope.
 Follow [deploy/README.md](deploy/README.md) for the one-host install, environment
 setup, HTTPS, upgrades, schema compatibility, backup, staged restore, and rollback.
 [compose.prod.yaml](compose.prod.yaml) packages `edge`, `app`, `worker`, `db`, and a
-one-off migration service. Only the edge is externally exposed.
+one-off setup service that must succeed before the API and worker start. Only
+the edge is externally exposed.
 
 The recorded rehearsal verified selected installation, image-build, and recovery
 steps; it did not establish release readiness. Use the

@@ -51,20 +51,44 @@ setup:
 
 dev: SHELL := /bin/bash
 dev:
-	@if [ ! -f .env ]; then echo "missing .env: copy .env.example to .env and set POSTGRES_PASSWORD" >&2; exit 1; fi
-	@for pair in "$(or $(DB_PORT),5432):db" "$(or $(TEST_DB_PORT),5433):db-test"; do \
+	@set -eu; \
+	if [ ! -f .env ]; then echo "missing .env: copy .env.example to .env and set POSTGRES_PASSWORD" >&2; exit 1; fi; \
+	declare -A dev_overrides; \
+	for name in DATABASE_URL TEST_DATABASE_URL DB_PORT TEST_DB_PORT BACKEND_PORT WEB_PORT POSTGRES_USER POSTGRES_PASSWORD POSTGRES_DB TEST_POSTGRES_DB DDI_DEFAULT_DATASET_VERSION; do \
+	if [[ -v $$name ]]; then dev_overrides[$$name]=$${!name}; fi; \
+	done; \
+	set -a; . ./.env; set +a; \
+	for name in "$${!dev_overrides[@]}"; do export "$$name=$${dev_overrides[$$name]}"; done; \
+	export DB_PORT=$${DB_PORT:-5432} TEST_DB_PORT=$${TEST_DB_PORT:-5433}; \
+	export BACKEND_PORT=$${BACKEND_PORT:-8000} WEB_PORT=$${WEB_PORT:-5173}; \
+	export API_PROXY_TARGET=$${API_PROXY_TARGET:-http://localhost:$$BACKEND_PORT}; \
+	for pair in "$$DB_PORT:db" "$$TEST_DB_PORT:db-test"; do \
 	port=$${pair%%:*}; svc=$${pair##*:}; \
-	if (echo >/dev/tcp/127.0.0.1/$$port) 2>/dev/null; then \
+	if (echo >/dev/tcp/127.0.0.1/$$port) 2>/dev/null && [ -z "$$(docker compose ps --status running -q "$$svc")" ]; then \
 	echo "port $$port ($$svc) is occupied (host PostgreSQL likely); stop host PG or rerun with e.g. DB_PORT=5442 TEST_DB_PORT=5443 make dev" >&2; exit 1; \
 	fi; \
-	done
-	docker compose up -d db db-test
-	@echo "databases up ($(or $(DB_PORT),5432) local, $(or $(TEST_DB_PORT),5433) test). Starting backend :8000 and web :5173."
-	@echo "Stop with 'make stop' (Ctrl-C then 'make stop' if running foreground)."
-	trap 'kill 0' INT TERM; \
-	cd backend && uv run uvicorn x_insight.app:app --host 0.0.0.0 --port 8000 --reload & \
-	cd web && npm run dev; \
-	wait
+	done; \
+	docker compose up -d --wait db db-test; \
+	(cd backend && uv run python -m x_insight.operations.migrate); \
+	echo "database and approved DDI ready. Starting backend :$$BACKEND_PORT and web :$$WEB_PORT."; \
+	echo "Stop with 'make stop' (Ctrl-C then 'make stop' if running foreground)."; \
+	api_pid=; web_pid=; \
+	cleanup() { \
+	for pid in "$$api_pid" "$$web_pid"; do \
+	if [ -n "$$pid" ]; then \
+	kill "$$pid" 2>/dev/null || true; \
+	kill -- "-$$pid" 2>/dev/null || true; \
+	fi; \
+	done; \
+	for pid in "$$api_pid" "$$web_pid"; do \
+	if [ -n "$$pid" ]; then wait "$$pid" 2>/dev/null || true; fi; \
+	done; \
+	}; \
+	trap cleanup EXIT; \
+	trap 'exit 130' INT; trap 'exit 143' TERM; \
+	setsid bash -c 'cd backend && exec uv run uvicorn x_insight.app:app --host 0.0.0.0 --port "$$BACKEND_PORT" --reload' & api_pid=$$!; \
+	setsid bash -c 'cd web && exec npm run dev -- --port "$$WEB_PORT" --strictPort' & web_pid=$$!; \
+	wait -n "$$api_pid" "$$web_pid"
 
 stop:
 	docker compose down
@@ -117,7 +141,7 @@ verify:
 
 # One-host production (S57; see compose.prod.yaml + deploy/README.md).
 # Requires a prod env file: POSTGRES_PASSWORD at minimum (see .env.example).
-# Order on a clean host: prod-build, prod-up, prod-migrate (then open edge :80).
+# Order on a clean host: prod-build, prod-up (automatic schema + DDI setup).
 
 # Prod env lives in .env.prod (never commit it); the local dev .env is untouched.
 PROD_ENV_FILE ?= .env.prod
@@ -128,7 +152,7 @@ prod-build:
 
 prod-up:
 	$(PROD_COMPOSE) up -d db app worker edge
-	@echo "production stack starting; next: 'make prod-migrate' (explicit migration step)."
+	@echo "production stack starting after automatic schema and approved DDI setup."
 
 prod-migrate:
 	$(PROD_COMPOSE) run --rm migrate

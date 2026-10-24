@@ -1,8 +1,8 @@
 import { test, expect } from "@playwright/test";
 import { acknowledgeWarning, ensurePhysician, loginAs, uniqueLetters, uniqueName, uniquePatientId } from "./helpers";
 
-// Run with bash e2e/run-ddi-fresh-install.sh: real bundled CSVs, normal
-// migration, a fresh PostgreSQL database, and no generated LFS artifacts.
+// Run with bash e2e/run-ddi-fresh-install.sh: make dev starts automatic setup
+// from real bundled CSVs in a fresh PostgreSQL DB without generated LFS artifacts.
 test("fresh install supports registration and a persistent real bundled DDI report", async ({ page, request }) => {
   test.setTimeout(90000);
   const username = uniqueName("freshddi");

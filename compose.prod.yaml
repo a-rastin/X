@@ -17,8 +17,8 @@
 # neither, the worker fails generation closed (PROVIDER_NOT_CONFIGURED) while
 # charts/admin stay usable.
 #
-# Order: make prod-build && make prod-up && make prod-migrate
-# (explicit migration step; never destructive reseeding). Admin seeding is
+# Order: make prod-build && make prod-up
+# (automatic schema + approved DDI setup; never destructive reseeding). Admin seeding is
 # one-time at app startup and preserves a changed password (S03).
 # Never `down -v` in production (drops the database); see deploy/README.md.
 
@@ -48,6 +48,8 @@ services:
     depends_on:
       db:
         condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
     environment:
       DATABASE_URL: postgresql://${POSTGRES_USER:-x_insight}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB:-x_insight}
       DDI_DEFAULT_DATASET_VERSION: ${DDI_DEFAULT_DATASET_VERSION:-}
@@ -81,6 +83,8 @@ services:
     depends_on:
       db:
         condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
     environment:
       DATABASE_URL: postgresql://${POSTGRES_USER:-x_insight}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB:-x_insight}
       DDI_DEFAULT_DATASET_VERSION: ${DDI_DEFAULT_DATASET_VERSION:-}
@@ -102,7 +106,6 @@ services:
       dockerfile: deploy/Dockerfile.app
     image: x-insight-app:${APP_IMAGE_TAG:-prod}
     command: [".venv/bin/python", "-m", "x_insight.operations.migrate"]
-    profiles: ["tools"]
     depends_on:
       db:
         condition: service_healthy

@@ -3,7 +3,10 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest bounded follow-up is [bundled approved DDInter setup (2026-10-23)](s18.md#follow-up-2026-10-23--bundle-approved-ddinter-for-fresh-installations):
+The latest bounded follow-up is [automatic schema/DDInter startup (2026-10-23)](s18.md#follow-up-2026-10-23--prepare-schema-and-ddinter-during-normal-startup):
+normal local/production launch prepares the database before dependent services;
+11 startup regressions and real Chromium/Firefox registration checks passed.
+The preceding [bundled approved DDInter setup (2026-10-23)](s18.md#follow-up-2026-10-23--bundle-approved-ddinter-for-fresh-installations):
 normal local/production migration provisions fresh databases from committed sources;
 real Chromium/Firefox registration and backend regression checks passed.
 The preceding [C-SSRS recent ideation form cut (2026-10-23)](s11.md#follow-up-2026-10-23--c-ssrs-recent-ideation-form-cut):

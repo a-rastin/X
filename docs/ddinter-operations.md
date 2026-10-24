@@ -40,11 +40,14 @@ pushing Git commits and LFS objects to the remote.
 
 ## Fresh installation with the bundled approved release
 
-From the repository root, use `make migrate` for local setup or
-`make prod-migrate PROD_ENV_FILE="$X_INSIGHT_PROD_ENV_FILE"` after the documented
-production build/start steps. Both run `x_insight.operations.migrate`, which
-upgrades the schema to `0022` and then runs the explicit DDI bootstrap with the
-privileged migration connection. Direct `alembic upgrade head` is schema only.
+After configuring the application, run `make dev` locally or
+`make prod-up PROD_ENV_FILE="$X_INSIGHT_PROD_ENV_FILE"` after building production
+images. No separate migration or import command is needed. Local startup waits
+for database health and runs `x_insight.operations.migrate` before API/web launch.
+Production startup runs that same operation in the one-shot `migrate` service;
+API and worker require successful completion. It upgrades schema to `0022` and
+bootstraps approved DDI using the setup connection. Manual `make migrate` and
+`make prod-migrate` remain optional operator tools; direct Alembic is schema only.
 
 The bundle under `content/ddi/ddinter/2026-10-21/` supplies the eight CSVs,
 `sources/docs/explanation.txt`, `candidate_dataset.json`, and the separate
@@ -70,8 +73,9 @@ bundle alongside existing releases. Bootstrap does not repair any other invalid
 configured default; runtime lookup continues to fail explicitly until it is corrected.
 Existing encounter pins and selection associations retain their release.
 
-For an already schema-migrated target that lacks DDI data, run from `backend/`
-with its privileged `DATABASE_URL` securely configured:
+An already schema-migrated target with no DDI data is also provisioned by normal
+startup. An operator who wants only the data step can optionally run from
+`backend/` with its privileged `DATABASE_URL` securely configured:
 
 ```sh
 uv run python -m x_insight.ddi bootstrap
@@ -82,16 +86,23 @@ in shell history. A missing/changed source, changed candidate, or invalid approv
 fails setup without a partial DDI publication. Schema migration and DDI publication
 are separate transactions: a bootstrap failure can leave the schema at head with
 no dataset. Restore the matching committed inputs, correct the target/default
-configuration as applicable, and rerun normal setup; `/ready` alone checks schema,
+configuration as applicable, and rerun `make dev` or `make prod-up`. Setup failures
+prevent the dependent servers from starting. Inspect local foreground output or
+production `docker compose -f compose.prod.yaml --env-file "$X_INSIGHT_PROD_ENV_FILE" logs migrate`.
+`/ready` alone checks schema,
 not DDI availability. Back up existing deployments before upgrades as in section 3.
 
 ### Fresh-install verification
 
 From the repository root, `bash e2e/run-ddi-fresh-install.sh` creates an isolated
-PostgreSQL 16 cluster, copies only ordinary Git bundle inputs, runs normal migration,
-starts a private API/web preview, and tests real registration, lookup, save and
-reload in Chromium and Firefox. It requires installed locked backend/web/root
-dependencies, Playwright browser binaries, PostgreSQL tools at
+PostgreSQL 16 cluster and copies ordinary Git bundle inputs. It launches the
+actual `make dev` recipe from a temporary checkout with test-only configuration,
+then tests real registration, lookup, save and reload in Chromium and Firefox.
+Only Docker's external commands are adapted to the already-healthy private
+database fixture; schema/DDI provisioning, API, Vite and browser operations run
+for real. This does not verify Docker runtime ordering. It requires installed
+locked backend/web/root
+dependencies, Playwright browser binaries, Linux `setsid`, PostgreSQL tools at
 `/usr/lib/postgresql/16/bin` (override `PG_BIN`), and free ports 55582/18082/15182
 (override `DDI_E2E_PG_PORT`, `DDI_E2E_API_PORT`, `DDI_E2E_WEB_PORT`). When run as root,
 it uses the local `postgres` account for PostgreSQL. Services stop on exit; logs and
@@ -214,17 +225,19 @@ backup peak RSS was about 1.44 GiB on the shared acceptance host.
 
 Migration `0022` follows `0021`, adds original source bytes/format/metadata and
 structured evidence metadata plus catalog indexes; it adds no tables (32 backup
-tables remain). For normal setup run schema and bundled-data migration with the
-privileged migration connection:
+tables remain). Normal startup performs this schema-and-data operation automatically.
+For deliberate operator setup without starting the application, the same operation
+can be run with the privileged migration connection:
 
 ```sh
 uv run python -m x_insight.operations.migrate
 uv run alembic current
 ```
 
-For packaged deployment, from the repository root use
-`make prod-migrate PROD_ENV_FILE="$X_INSIGHT_PROD_ENV_FILE"` after the documented
-image upgrade/backup steps. Verify head `0022` and `/api/v1/ready`. Runtime release
+For packaged deployment, follow the image upgrade/backup steps and start with
+`make prod-up PROD_ENV_FILE="$X_INSIGHT_PROD_ENV_FILE"`. The optional `prod-migrate`
+target remains available for operator use. Verify head `0022` and `/api/v1/ready`.
+Runtime release
 access remains read-only for the application role; publication needs the
 privileged import connection, not a grant of runtime write access.
 For a separately reviewed replacement release, follow section 4 after migration;

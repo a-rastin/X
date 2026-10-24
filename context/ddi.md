@@ -233,13 +233,14 @@ work; previous releases remain readable and support rollback without deletion.
 **Type:** decision
 **Status:** active
 **Evidence:** inferred
-**Verification:** corroborated — source-only setup reproduced the approved release and passed real registration in both browsers
+**Verification:** corroborated — rechecked on 2026-10-23 after the provisioning-path change; automatic local startup reproduced the approved release and passed real registration in both browsers
 **Revisit when:** the bundled source snapshot, parser, approval manifest or provisioning path changes
 
-Explicit database setup rebuilds the existing approved DDInter release from ordinary
+Startup preparation rebuilds the existing approved DDInter release from ordinary
 Git source files and its retained approval inputs, then publishes through the normal
-validator. Runtime requests do not import the dataset. Existing released datasets
-are retained unless the bundled version is explicitly selected.
+validator. The source-only choice remains current after moving setup into normal
+launch. Runtime requests do not import the dataset. Existing released datasets are
+retained unless the bundled version is explicitly selected.
 
 **Reason:** the confirmed requirement is that a GitHub clone can use DDI during
 new-patient registration after normal setup. A release published only into one
@@ -258,4 +259,33 @@ avoids a second generated payload to retain and keep aligned with that inventory
 
 **Consequence:** first setup pays the offline rebuild/import cost; exact repeats
 reuse the immutable release. Operational commands and recovery live in the
+[DDInter runbook](../docs/ddinter-operations.md#fresh-installation-with-the-bundled-approved-release).
+
+## Prepare the approved dataset during normal startup
+
+**Id:** c6ccdd94-6ee1-4978-8124-484cd9b2fd66
+**Type:** decision
+**Status:** active
+**Evidence:** confirmed
+**Source:** explicit startup requirement, 2026-10-23
+**Verification:** corroborated — actual local startup prepared the genuine release before API/Vite launch; both browser registration tests passed
+**Revisit when:** supported launch commands, setup privileges or schema/DDI preparation change
+**See:** ddi.md#bootstrap-from-committed-sources-without-generated-lfs-evidence — 80c59e6c-ce6d-43a5-9e97-745b698d9a9f — as of 2026-10-23
+
+Normal local and production launch includes schema and approved DDI preparation,
+and dependent application processes wait for successful completion. Manual setup
+commands remain available for operator recovery and inspection.
+
+**Reason:** the confirmed startup requirement excludes a separate migration command.
+Merely bundling the source data while requiring an additional setup action leaves
+the requested fresh-clone experience incomplete.
+
+**Rejected alternative:** require every installer to run the schema-and-data command
+separately. The earlier integration used that path, but it was explicitly rejected
+because ordinary startup must make the approved dataset ready to use.
+
+**Consequence:** first launch may spend several minutes rebuilding and importing
+the approved release. Setup failures stop dependent startup; exact repeated setup
+reuses the release. This is startup preparation, with the runtime lookup and
+clinical approval boundaries unchanged. Procedures and recovery are in the
 [DDInter runbook](../docs/ddinter-operations.md#fresh-installation-with-the-bundled-approved-release).
