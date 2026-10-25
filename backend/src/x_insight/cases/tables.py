@@ -142,10 +142,14 @@ secondary_plans = Table(
         primary_key=True,
     ),
     Column("text", Text, nullable=False, default=""),
+    Column("clozapine_included", Text, nullable=False, server_default="unknown"),
     Column("revision", Integer, nullable=False, default=1),
     Column("created_at", DateTime(timezone=True), nullable=False),
     Column("updated_at", DateTime(timezone=True), nullable=False),
     CheckConstraint("revision >= 1", name="ck_secondary_plans_rev_gte_1"),
+    CheckConstraint(
+        "clozapine_included IN ('yes', 'no', 'unknown')", name="ck_secondary_plan_clozapine"
+    ),
 )
 
 signed_encounter_snapshots = Table(
@@ -216,6 +220,11 @@ encounter_addenda = Table(
     Column("author_display", Text, nullable=False),
     Column("created_at", DateTime(timezone=True), nullable=False),
     Column("text", Text, nullable=False),
+    Column("clozapine_included", Text, nullable=True),
+    CheckConstraint(
+        "clozapine_included IS NULL OR clozapine_included IN ('yes', 'no', 'unknown')",
+        name="ck_addendum_clozapine",
+    ),
     CheckConstraint("char_length(text) BETWEEN 1 AND 2000", name="ck_addenda_text_bounds"),
 )
 

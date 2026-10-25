@@ -10,7 +10,7 @@ from x_insight.models.workflow_release import history_fields, resolve_workflow
 from x_insight.reasoning.readiness import compute_proposal_readiness
 from x_insight.reasoning.snapshots import evaluate_gate
 
-FIRST_PATH = "candidate/history/established_case_clozapine.v1/h_urgent_safety_concern"
+FIRST_PATH = "candidate/history/aggression_clozapine.v1/h_clozapine_treatment_status"
 
 
 def known_context(workflow="registration"):
@@ -40,12 +40,12 @@ def test_complete_core_history_blocks_on_workflow_fields_not_fresh_cssrs():
     readiness = state["proposal_readiness"]
     assert readiness["source_revision"] == 54
     assert readiness["ready"] is False
-    assert readiness["required_count"] == 29
+    assert readiness["required_count"] == 14
     # The live C-SSRS path is complete with five unknowns, so it is answered
-    # and execution-ready. The other 28 required fields stay blocked.
+    # and execution-ready. The other 13 required fields stay blocked.
     assert readiness["answered_count"] == 10
     assert readiness["execution_ready_count"] == 1
-    assert len(readiness["blockers"]) == 28
+    assert len(readiness["blockers"]) == 13
     assert all(
         item["source_path"] != "synthetic/assessments/cssrs" for item in readiness["blockers"]
     )
@@ -63,20 +63,20 @@ def test_complete_core_history_blocks_on_workflow_fields_not_fresh_cssrs():
     assert {item["status"] for item in readiness["blockers"]} == {"missing", "unknown"}
     assert all(item["label"] != item["source_path"] for item in readiness["blockers"])
     assert all(item["question_label"] and item["reason"] for item in readiness["blockers"])
-    assert len({item["source_path"] for item in readiness["blockers"]}) == 28
+    assert len({item["source_path"] for item in readiness["blockers"]}) == 13
 
 
 @pytest.mark.parametrize(
     "value,status,answered",
     [
-        ("unknown", "unknown", 29),
-        ("not_assessed", "not_assessed", 29),
-        (None, "null", 28),
-        ("invented", "invalid", 28),
-        (42, "invalid", 28),
-        ({"value": "Present"}, "invalid", 28),
-        (["Absent", "Present"], "conflict", 28),
-        ("conflict", "invalid", 28),
+        ("unknown", "unknown", 14),
+        ("not_assessed", "not_assessed", 14),
+        (None, "null", 13),
+        ("invented", "invalid", 13),
+        (42, "invalid", 13),
+        ({"value": "Present"}, "invalid", 13),
+        (["Absent", "Present"], "conflict", 13),
+        ("conflict", "invalid", 13),
     ],
 )
 def test_uncertainty_is_reported_without_counting_it_execution_ready(value, status, answered):
@@ -87,7 +87,7 @@ def test_uncertainty_is_reported_without_counting_it_execution_ready(value, stat
     )
     assert readiness["ready"] is False
     assert readiness["answered_count"] == answered
-    assert readiness["execution_ready_count"] == 28
+    assert readiness["execution_ready_count"] == 13
     assert len(readiness["blockers"]) == 1
     blocker = readiness["blockers"][0]
     assert blocker["source_path"] == FIRST_PATH
@@ -98,20 +98,21 @@ def test_uncertainty_is_reported_without_counting_it_execution_ready(value, stat
 def test_versioned_requirement_cannot_borrow_unversioned_or_other_question_answer():
     values = known_context()
     del values[FIRST_PATH]
-    values["h_urgent_safety_concern"] = "Present"
-    values["candidate/history/high_suicide_clozapine.v2/h_urgent_safety_concern"] = "Present"
-    values["candidate/history/aggression_clozapine.v1/h_urgent_safety_concern"] = "Present"
+    values["h_clozapine_treatment_status"] = "CurrentTreatment"
+    values["candidate/history/established_case_clozapine.v1/h_clozapine_treatment_status"] = (
+        "CurrentTreatment"
+    )
     readiness = compute_proposal_readiness(
         {"history": {"values": values}, "cssrs": {"answers": _all_no()}}, 3, "registration"
     )
     assert readiness["ready"] is False
-    assert readiness["execution_ready_count"] == 28
+    assert readiness["execution_ready_count"] == 13
     assert [(b["source_path"], b["status"]) for b in readiness["blockers"]] == [
         (FIRST_PATH, "missing")
     ]
 
 
-@pytest.mark.parametrize("workflow,count", [("registration", 29), ("followup", 76)])
+@pytest.mark.parametrize("workflow,count", [("registration", 14), ("followup", 76)])
 def test_known_context_and_known_false_applicability_are_ready(workflow, count):
     values = known_context(workflow)
     false_field = (
@@ -178,7 +179,7 @@ def test_explicit_unresolved_assessment_is_answered_but_cannot_execute():
     ]
 
 
-@pytest.mark.parametrize("exposure,count", [("yes", 29), ("no", 27), ("unknown", 27)])
+@pytest.mark.parametrize("exposure,count", [("yes", 14), ("no", 12), ("unknown", 12)])
 def test_exposure_conditional_treatment_matches_readiness_and_execution(exposure, count):
     treatment = "candidate/history/pharmacotherapy.v2/h_antipsychotic_treatment_context"
     values = known_context()

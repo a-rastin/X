@@ -13,7 +13,7 @@
  * Idempotency-Key + disabled-while-pending so double-click/retry does not
  * duplicate); chronology shows the original signer and each addendum
  * author/date separately. Another physician can read but not alter signed
- * content — the form POSTs only text for a signed encounter and the server
+ * content — the form POSTs text and optional structured confirmation for a signed encounter and the server
  * 403s/409s everything else.
  *
  * Accessibility + theming: native headings/tables/textarea/buttons, status
@@ -39,6 +39,8 @@ import { ApiError } from "../identity/api";
 import {
   MAX_ADDENDUM_CHARS,
   createAddendum,
+  CLOZAPINE_INCLUDED_LABELS,
+  type ClozapineIncluded,
   type AddendumRow,
   type SignedQuestionFrozen,
   type SignedSnapshotRow,
@@ -230,6 +232,7 @@ export function SignedEncounterView({
   const id = snapshot.encounter_id;
   const questions = snapshot.snapshot.questions ?? [];
   const [text, setText] = useState("");
+  const [inclusion, setInclusion] = useState<ClozapineIncluded | "">("");
   const [busy, setBusy] = useState(false);
   const [status, setStatus] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -260,8 +263,11 @@ export function SignedEncounterView({
     setStatus(null);
     setBusy(true);
     try {
-      const result = await createAddendum(id, encounterRevision, trimmed);
+      const result = await createAddendum(id, encounterRevision, trimmed, {
+        clozapineIncluded: inclusion === "" ? null : inclusion,
+      });
       setText("");
+      setInclusion("");
       setStatus(
         `✓ Addendum appended by ${result.addendum.author_display} at ${result.addendum.created_at}. The original signed content is unchanged.`,
       );
@@ -279,7 +285,7 @@ export function SignedEncounterView({
     } finally {
       setBusy(false);
     }
-  }, [busy, text, id, encounterRevision, onSessionExpired, onChanged]);
+  }, [busy, text, inclusion, id, encounterRevision, onSessionExpired, onChanged]);
 
   return (
     <section
@@ -310,6 +316,11 @@ export function SignedEncounterView({
           <p className="xi-plan-text">{snapshot.secondary_plan_text}</p>
         )}
       </div>
+      <p data-testid={`signed-view-clozapine-${id}`}>
+        Clozapine included in final treatment plan: <strong>
+          {CLOZAPINE_INCLUDED_LABELS[snapshot.snapshot.secondary_plan?.clozapine_included ?? "unknown"]}
+        </strong>
+      </p>
 
       <h5 className="xi-proposal-subhead">
         Questions — original vs final accepted ({questions.length})
@@ -344,6 +355,9 @@ export function SignedEncounterView({
                   <span className="xi-hint">· {entry.created_at}</span>
                 </p>
                 <p style={{ marginTop: 0 }}>{entry.text}</p>
+                {entry.clozapine_included != null && <p>
+                  Clozapine included in final treatment plan: <strong>{CLOZAPINE_INCLUDED_LABELS[entry.clozapine_included]}</strong>
+                </p>}
               </li>
             ))}
           </ul>
@@ -370,6 +384,20 @@ export function SignedEncounterView({
               aria-describedby={`addendum-status-${id}`}
               maxLength={MAX_ADDENDUM_CHARS + 1}
             />
+          </div>
+          <div className="xi-field">
+            <label className="xi-label" htmlFor={`addendum-clozapine-${id}`}>
+              Clozapine included in final treatment plan
+            </label>
+            <select className="xi-input" id={`addendum-clozapine-${id}`} data-testid={`addendum-clozapine-${id}`}
+              value={inclusion} disabled={busy}
+              onChange={(event) => { setInclusion(event.target.value as ClozapineIncluded | ""); setError(null); }}>
+              <option value="">No structured confirmation</option>
+              {(Object.entries(CLOZAPINE_INCLUDED_LABELS) as [ClozapineIncluded, string][]).map(([value, label]) => (
+                <option value={value} key={value}>{label}</option>
+              ))}
+            </select>
+            <p className="xi-hint">Optionally confirm this signed plan alongside your addendum. The original signed choice stays unchanged.</p>
           </div>
           <p className="xi-hint" style={{ marginTop: 0 }}>
             {text.trim().length} of {MAX_ADDENDUM_CHARS} characters · attributed to you with the

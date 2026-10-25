@@ -258,6 +258,9 @@ def start_generation(
                 "bundle_hash",
                 "history_input_contract_version",
                 "history_input_contract_hash",
+                "application_workflow_contract_version",
+                "established_clozapine_eligible",
+                "established_source_bundle_hash",
             )
         }
     batch, runs = snapshots_service.start_generation_batch(
@@ -295,12 +298,15 @@ def proposal_readiness(
     source_batch_id: uuid.UUID | None = None,
     session: Session = Depends(get_session),
 ) -> JSONResponse:
+    from x_insight.cases.signing import established_clozapine_eligible
+    from x_insight.models.workflow_release import require_current_workflow_contract
     from x_insight.reasoning.readiness import compute_proposal_readiness
 
     user = _require_user(request, session)
     if isinstance(user, JSONResponse):
         return user
     encounter = encounters_service.read_draft_for_author(session, encounter_id, user)
+    eligible = established_clozapine_eligible(session, encounter)
     packages = None
     if source_batch_id is not None:
         batch, runs, _ = snapshots_service.get_generation_batch(session, source_batch_id, user)
@@ -309,11 +315,13 @@ def proposal_readiness(
                 422, "VALIDATION_FAILED", "Retry batch belongs to another encounter."
             )
         packages = [dict(run["pinned_package"]) for run in runs]
+        require_current_workflow_contract(batch.get("pinned_bundle"), clozapine_eligible=eligible)
     readiness = compute_proposal_readiness(
         encounter.get("draft_data") or {},
         int(encounter["revision"]),
         "followup" if encounter["kind"] == "follow_up" else "registration",
         packages,
+        clozapine_eligible=eligible,
     )
     return JSONResponse(content=readiness)
 

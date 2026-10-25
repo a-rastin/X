@@ -23,7 +23,7 @@ from tests.worker.test_snapshots import (  # noqa: F401 - shared integration fix
 )
 from x_insight.app import app
 from x_insight.cases.history import ALLOWED_FIELDS
-from x_insight.models.bundles import FOLLOWUP_ORDER, REGISTRATION_ORDER
+from x_insight.models.bundles import FOLLOWUP_ORDER
 from x_insight.models.workflow_release import content_root
 
 
@@ -65,7 +65,7 @@ def test_complete_core_history_rejects_reviewed_start_before_batch_or_job_creati
     assert readiness.status_code == 200, readiness.text
     assert readiness.json() == history["proposal_readiness"]
     assert readiness.json()["source_revision"] == 2
-    assert len(readiness.json()["blockers"]) == 28
+    assert len(readiness.json()["blockers"]) == 13
     assert owner.get(f"/api/v1/encounters/{eid}").json() == before
     assert _latest_batch(owner, eid) is None
     key = str(uuid.uuid4())
@@ -109,7 +109,7 @@ def test_complete_core_history_rejects_reviewed_start_before_batch_or_job_creati
     assert latest["id"] == started.json()["batch"]["id"]
     visible = owner.get("/api/v1/generation-batches/" + latest["id"])
     assert visible.status_code == 200, visible.text
-    assert len(visible.json()["question_runs"]) == 5
+    assert len(visible.json()["question_runs"]) == 4
     assert len(visible.json()["jobs"]) == 1
     assert visible.json()["jobs"][0]["status"] == "queued"
 
@@ -132,7 +132,12 @@ def test_new_registration_resolves_packages_resumes_and_retries_exact_pins(
     started = _start(owner, csrf, eid, 2, **headers)
     assert started.status_code == 202, started.text
     body = started.json()
-    assert tuple(r["question_key"] for r in body["question_runs"]) == REGISTRATION_ORDER
+    assert tuple(r["question_key"] for r in body["question_runs"]) == (
+        "pharmacotherapy",
+        "high_suicide_clozapine",
+        "lai_indication_choice",
+        "aggression_clozapine",
+    )
     assert all(r["status"] == "ready" for r in body["question_runs"])
     assert body["batch"]["pinned_bundle"]["release_version"] == "2026-10-22"
     assert _start(owner, csrf, eid, 2, **headers).json() == body

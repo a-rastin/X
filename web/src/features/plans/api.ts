@@ -9,10 +9,10 @@
  * Backend contract (see backend/src/x_insight/cases/router.py + signing.py,
  * read-only — no other payloads are invented here):
  * - GET /encounters/{id}/secondary-plan → {encounter, revision: planRev,
- *   text, encounter_revision} + ETag planRev. 401/403/404.
+ *   text, clozapine_included: yes|no|unknown, encounter_revision} + ETag planRev. 401/403/404.
  * - PATCH /encounters/{id}/secondary-plan with If-Match planRev ==
  *   body expected_plan_revision, body {text <=10000, empty allowed,
- *   expected_plan_revision >=1} extra=forbid → 200 {encounter,
+ *   expected_plan_revision >=1, clozapine_included?: yes|no|unknown} extra=forbid → 200 {encounter,
  *   revision: new, text, encounter_revision, server_timestamp}.
  *   Idempotency-Key op secondary_plan.save, 409 on key-conflict. Does NOT
  *   bump the encounter revision.
@@ -26,7 +26,7 @@
  *   412 stale, 404/403/422. Idempotency-Key op encounters.sign.
  * - POST /encounters/{id}/addenda (any active physician, signed-only) with
  *   If-Match signedEncRev, body {text non-empty <=2000,
- *   expected_encounter_revision} → 201 {addendum: {id, encounter_id,
+ *   expected_encounter_revision, clozapine_included?: yes|no|unknown} → 201 {addendum: {id, encounter_id,
  *   author_id, author_display server, created_at server, text}, revision:
  *   unchanged}. 409 ENCOUNTER_NOT_SIGNED if draft, 404/412/422/403.
  *   Idempotency-Key op encounters.addendum.
@@ -49,6 +49,12 @@ import {
 import { formatIfMatch } from "../encounters/api";
 import type { CptTable, Posterior } from "../reasoning/api";
 
+export type ClozapineIncluded = "yes" | "no" | "unknown";
+
+export const CLOZAPINE_INCLUDED_LABELS: Record<ClozapineIncluded, string> = {
+  yes: "Yes", no: "No", unknown: "Unknown",
+};
+
 export interface SecondaryPlanPayload {
   encounter: {
     id: string;
@@ -59,6 +65,7 @@ export interface SecondaryPlanPayload {
   };
   revision: number;
   text: string;
+  clozapine_included: ClozapineIncluded;
   encounter_revision: number;
   server_timestamp?: string;
 }
@@ -131,7 +138,7 @@ export interface SignedSnapshotRow {
   secondary_plan_text: string;
   snapshot: {
     questions?: SignedQuestionFrozen[];
-    secondary_plan?: { revision: number; text: string };
+    secondary_plan?: { revision: number; text: string; clozapine_included?: ClozapineIncluded };
     signer?: { signer_id: string; signer_username: string; signed_at: string };
     [key: string]: unknown;
   };
@@ -158,6 +165,7 @@ export interface AddendumRow {
   author_display: string;
   created_at: string;
   text: string;
+  clozapine_included?: ClozapineIncluded | null;
 }
 
 export interface AddendumPayload {
@@ -231,7 +239,7 @@ export async function saveSecondaryPlan(
   encounterId: string,
   text: string,
   expectedPlanRevision: number,
-  options: { idempotencyKey?: string } = {},
+  options: { idempotencyKey?: string; clozapineIncluded?: ClozapineIncluded } = {},
 ): Promise<SecondaryPlanPayload> {
   return request<SecondaryPlanPayload>(
     `/encounters/${encodeURIComponent(encounterId)}/secondary-plan`,
@@ -239,7 +247,10 @@ export async function saveSecondaryPlan(
       method: "PATCH",
       ifMatch: expectedPlanRevision,
       idempotencyKey: options.idempotencyKey ?? newIdempotencyKey(),
-      body: { text, expected_plan_revision: expectedPlanRevision },
+      body: {
+        text, expected_plan_revision: expectedPlanRevision,
+        ...(options.clozapineIncluded !== undefined && { clozapine_included: options.clozapineIncluded }),
+      },
     },
   );
 }
@@ -273,7 +284,7 @@ export async function createAddendum(
   encounterId: string,
   expectedEncounterRevision: number,
   text: string,
-  options: { idempotencyKey?: string } = {},
+  options: { idempotencyKey?: string; clozapineIncluded?: ClozapineIncluded | null } = {},
 ): Promise<AddendumPayload> {
   return request<AddendumPayload>(
     `/encounters/${encodeURIComponent(encounterId)}/addenda`,
@@ -281,7 +292,10 @@ export async function createAddendum(
       method: "POST",
       ifMatch: expectedEncounterRevision,
       idempotencyKey: options.idempotencyKey ?? newIdempotencyKey(),
-      body: { text, expected_encounter_revision: expectedEncounterRevision },
+      body: {
+        text, expected_encounter_revision: expectedEncounterRevision,
+        ...(options.clozapineIncluded != null && { clozapine_included: options.clozapineIncluded }),
+      },
     },
   );
 }

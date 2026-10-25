@@ -28,7 +28,10 @@ def _known_values(manifest):
 @pytest.mark.parametrize(
     "workflow,order",
     [
-        ("registration", bundles.REGISTRATION_ORDER),
+        (
+            "registration",
+            tuple(key for key in bundles.REGISTRATION_ORDER if key != "established_case_clozapine"),
+        ),
         ("followup", bundles.FOLLOWUP_ORDER),
     ],
 )
@@ -50,7 +53,11 @@ def test_reviewed_release_projects_all_packages_and_pins_order(workflow, order):
         assert all(entry["source_revision"] == 7 for entry in projection["variables"])
         empty, _ = build_question_projection(manifest, {}, 1)
         assert all(entry["status"] == "missing" for entry in empty["variables"])
-        assert evaluate_gate(manifest, {})[0] == "needs_clarification"
+        assert evaluate_gate(manifest, {})[0] == (
+            "ready"
+            if manifest["question_key"] == "high_suicide_clozapine"
+            else "needs_clarification"
+        )
 
 
 def test_versioned_history_namespaces_never_borrow_same_named_answers():
@@ -128,8 +135,14 @@ def test_release_hash_mismatch_fails_closed(tmp_path, monkeypatch):
 )
 def test_each_reviewed_applicability_truth_table(key, false_field, false_value):
     workflow = "registration" if key in bundles.REGISTRATION_ORDER else "followup"
+    if key == "established_case_clozapine":
+        workflow = "followup"
     manifest = next(
-        p["manifest"] for p in resolve_workflow(workflow)[0] if p["manifest"]["question_key"] == key
+        p["manifest"]
+        for p in resolve_workflow(workflow, clozapine_eligible=key == "established_case_clozapine")[
+            0
+        ]
+        if p["manifest"]["question_key"] == key
     )
     values = _known_values(manifest)
     if key == "no_improvement_clozapine":

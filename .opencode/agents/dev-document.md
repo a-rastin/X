@@ -2,6 +2,7 @@
 name: dev-document
 description: Subagent to update the project documentation.
 mode: subagent
+model: GPT-6-Luna, High
 permission:
   edit: allow
   bash: deny

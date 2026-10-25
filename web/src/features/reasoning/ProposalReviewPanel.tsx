@@ -119,6 +119,12 @@ import {
 
 type AutosaveApi = ReturnType<typeof useAutosave>;
 
+function isProposalContractChange(error: unknown): boolean {
+  return error instanceof ApiError && [
+    "HISTORY_INPUT_CONTRACT_CHANGED", "WORKFLOW_INPUT_CONTRACT_CHANGED", "WORKFLOW_ELIGIBILITY_CHANGED",
+  ].includes(error.code);
+}
+
 interface ProposalReviewPanelProps {
   encounterId: string;
   autosave: AutosaveApi;
@@ -389,6 +395,11 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
   const [freshByRun, setFreshByRun] = useState<Record<string, InputFreshness>>({});
   const [freshDone, setFreshDone] = useState(false);
   const [historyContractChanged, setHistoryContractChanged] = useState(false);
+  const planFlushRef = useRef<(() => Promise<void>) | null>(null);
+  const flushPlan = useCallback(async () => {
+    if (planFlushRef.current === null) throw new Error("Wait for the secondary plan to load before signing.");
+    await planFlushRef.current();
+  }, []);
   const freshKeyRef = useRef<string | null>(null);
   const [prereq, setPrereq] = useState<{
     diag: DiagnosisPreview | null;
@@ -588,7 +599,7 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
       if (cancelled) return;
       if (err instanceof ApiError && err.status === 401) onSessionExpired();
       else {
-        if (err instanceof ApiError && err.code === "HISTORY_INPUT_CONTRACT_CHANGED") setHistoryContractChanged(true);
+        if (isProposalContractChange(err)) setHistoryContractChanged(true);
         setReadinessError(failAs(err, "Proposal readiness could not be read. Check again before starting a new run."));
       }
     });
@@ -812,7 +823,7 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
         onSessionExpired();
         return;
       }
-      if (err instanceof ApiError && err.code === "HISTORY_INPUT_CONTRACT_CHANGED") setHistoryContractChanged(true);
+      if (isProposalContractChange(err)) setHistoryContractChanged(true);
       setActionError(
         err instanceof ApiError
           ? `Retry failed: ${err.message}`
@@ -1001,7 +1012,7 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
       {readinessError && <p className="xi-form-error" role="alert">{readinessError}</p>}
       {historyContractChanged && (
         <div className="xi-warning-panel">
-          <p>This recorded run uses earlier History questions. Review current History before starting a new run. The recorded run remains available for review.</p>
+          <p>The current History requirements have changed since this run was recorded. Review current History, then start a new run. The recorded run remains available for review.</p>
           <button className="xi-btn xi-btn-secondary" type="button" data-testid="proposal-start-current-history"
             disabled={actionBusy} onClick={() => void retryRun(true)}>
             {actionBusy ? "Starting…" : "Start new run with current History"}
@@ -1121,6 +1132,7 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
               encounterId={encounterId}
               patientId={patientId}
               autosave={autosave}
+              flushPlan={flushPlan}
               batchId={batch.batch.id}
               readyRunIds={joined
                 .filter((item) => item.run.status === "ready")
@@ -1139,6 +1151,7 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
             encounterId={encounterId}
             proposalText={proposalTextOf(batch)}
             onSessionExpired={onSessionExpired}
+            flushRef={planFlushRef}
           />
         </div>
       )}

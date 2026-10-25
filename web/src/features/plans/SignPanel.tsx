@@ -2,7 +2,7 @@
  *
  * Rendered by ProposalReviewPanel only when the run-level gates already
  * pass (no proposal-sign-blocked reason). The button does flush-then-sign:
- * S07 autosave flush first, then fresh reads of the encounter revision, the
+ * S07 autosave and the separately revisioned plan flush first, then fresh reads of the encounter revision, the
  * separately revisioned secondary plan, and every ready run's GET review —
  * and submits the exact acceptance/encounter/plan/review references the
  * server rechecks inside its locked transaction (client flags never grant;
@@ -10,7 +10,7 @@
  *
  * §2: pending/failed/stale calculations block signing here without losing
  * plan text — every denial returns before the POST and this panel never
- * writes the plan (SecondaryPlanPanel owns it independently). Empty plan
+ * owns plan edits (SecondaryPlanPanel persists them through flushPlan). Empty plan
  * text blocks with the reason while the text stays in place. Double-click
  * is safe: the button stays disabled while pending and each explicit click
  * carries a fresh Idempotency-Key (replay returns the one signature).
@@ -50,6 +50,7 @@ export function SignPanel({
   encounterId,
   patientId,
   autosave,
+  flushPlan,
   batchId,
   readyRunIds,
   getBlockReason,
@@ -58,6 +59,7 @@ export function SignPanel({
   encounterId: string;
   patientId: string | null;
   autosave: AutosaveApi;
+  flushPlan: () => Promise<void>;
   batchId: string;
   /** Exactly the ready question-run ids (skipped runs carry no acceptance). */
   readyRunIds: string[];
@@ -96,6 +98,7 @@ export function SignPanel({
       await autosave.flush().catch(() => {
         /* fence below reads the fresh revision regardless */
       });
+      await flushPlan();
       const meta = await getEncounter(encounterId);
       const plan = await getSecondaryPlan(encounterId);
       if (plan.text.trim() === "") {
@@ -175,7 +178,7 @@ export function SignPanel({
     } finally {
       setSigning(false);
     }
-  }, [signing, autosave, encounterId, batchId, readyRunIds, getBlockReason, onSessionExpired]);
+  }, [signing, autosave, flushPlan, encounterId, batchId, readyRunIds, getBlockReason, onSessionExpired]);
 
   if (signed !== null) {
     return (

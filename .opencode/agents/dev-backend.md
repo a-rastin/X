@@ -2,6 +2,7 @@
 name: dev-backend
 description: subagent to build backend code.
 mode: subagent
+model: GPT-6.1-Sol, Medium
 permission:
   edit: allow
   bash: allow

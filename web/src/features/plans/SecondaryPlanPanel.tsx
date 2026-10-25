@@ -36,12 +36,14 @@
  * - comparison status `data-testid="plan-compare-status"` (role=status)
  */
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState, type RefObject } from "react";
 import { ApiError, conflictHint } from "../identity/api";
 import {
   MAX_SECONDARY_PLAN_CHARS,
   getSecondaryPlan,
   saveSecondaryPlan,
+  CLOZAPINE_INCLUDED_LABELS,
+  type ClozapineIncluded,
 } from "./api";
 
 type LoadState =
@@ -53,29 +55,41 @@ export function SecondaryPlanPanel({
   encounterId,
   proposalText,
   onSessionExpired,
+  flushRef,
 }: {
   encounterId: string;
   /** Verbatim successful-proposal text, or null while incomplete. */
   proposalText: string | null;
   onSessionExpired: () => void;
+  /** Sign waits for this panel's separately revisioned text and structured choice. */
+  flushRef: RefObject<(() => Promise<void>) | null>;
 }) {
   const [load, setLoad] = useState<LoadState>({ kind: "loading" });
   const [revision, setRevision] = useState(1);
   const [savedText, setSavedText] = useState("");
   const [draft, setDraft] = useState("");
+  const [inclusion, setInclusion] = useState<ClozapineIncluded>("unknown");
+  const [savedInclusion, setSavedInclusion] = useState<ClozapineIncluded>("unknown");
   const [dirty, setDirty] = useState(false);
   const [saving, setSaving] = useState(false);
   const [saveError, setSaveError] = useState<string | null>(null);
   const [conflict, setConflict] = useState(false);
   const [serverText, setServerText] = useState<string | null>(null);
+  const [serverInclusion, setServerInclusion] = useState<ClozapineIncluded>("unknown");
   const [savedAt, setSavedAt] = useState<string | null>(null);
 
   const draftRef = useRef("");
+  const inclusionRef = useRef<ClozapineIncluded>("unknown");
+  const savedRef = useRef({ text: "", inclusion: "unknown" as ClozapineIncluded });
+  const savingRef = useRef<Promise<boolean> | null>(null);
+  const conflictRef = useRef(false);
   const revisionRef = useRef(1);
   const timerRef = useRef<number | null>(null);
   const errorRef = useRef<HTMLParagraphElement>(null);
   draftRef.current = draft;
+  inclusionRef.current = inclusion;
   revisionRef.current = revision;
+  conflictRef.current = conflict;
 
   const failText = useCallback((err: unknown, fallback: string): string => {
     if (err instanceof ApiError) {
@@ -106,6 +120,13 @@ export function SecondaryPlanPanel({
         setRevision(plan.revision);
         setSavedText(plan.text);
         setDraft(plan.text);
+        const value = plan.clozapine_included ?? "unknown";
+        setInclusion(value);
+        setSavedInclusion(value);
+        savedRef.current = { text: plan.text, inclusion: value };
+        draftRef.current = plan.text;
+        inclusionRef.current = value;
+        revisionRef.current = plan.revision;
         setDirty(false);
         setServerText(null);
         setSavedAt(plan.server_timestamp ?? null);
@@ -138,62 +159,107 @@ export function SecondaryPlanPanel({
     };
   }, [encounterId, failText, onSessionExpired]);
 
-  const saveNow = useCallback(async (): Promise<void> => {
+  const saveNow: () => Promise<boolean> = useCallback(async (): Promise<boolean> => {
     if (timerRef.current !== null) {
       window.clearTimeout(timerRef.current);
       timerRef.current = null;
     }
+    // A sign click can arrive during autosave; wait for that exact write
+    // before deciding whether newer edits need a second save.
+    if (savingRef.current !== null) return savingRef.current;
     const text = draftRef.current;
+    const choice = inclusionRef.current;
     if (text.length > MAX_SECONDARY_PLAN_CHARS) {
       setSaveError(
         `Secondary plan must be at most ${MAX_SECONDARY_PLAN_CHARS} characters — shorten it before saving. Nothing was sent.`,
       );
-      return;
+      return false;
     }
     setSaveError(null);
     setSaving(true);
-    try {
-      const saved = await saveSecondaryPlan(encounterId, text, revisionRef.current);
-      setRevision(saved.revision);
-      setSavedText(saved.text);
-      setDirty(false);
-      setConflict(false);
-      setServerText(null);
-      setSavedAt(saved.server_timestamp ?? null);
-    } catch (err) {
-      if (err instanceof ApiError && err.status === 401) {
-        onSessionExpired();
-        return;
-      }
-      if (err instanceof ApiError && err.status === 412) {
-        // Stale plan revision: keep every keystroke, fetch server truth for
-        // the reconcile UI, never overwrite the editor.
-        setConflict(true);
-        try {
-          const truth = await getSecondaryPlan(encounterId);
-          setServerText(truth.text);
-          setRevision(truth.revision);
-        } catch {
-          // Truth fetch failed: the conflict message already keeps edits safe.
+    const attempt = (async () => {
+      try {
+        const saved = await saveSecondaryPlan(encounterId, text, revisionRef.current, { clozapineIncluded: choice });
+        const savedChoice = saved.clozapine_included ?? "unknown";
+        revisionRef.current = saved.revision;
+        savedRef.current = { text: saved.text, inclusion: savedChoice };
+        setRevision(saved.revision);
+        setSavedText(saved.text);
+        setSavedInclusion(savedChoice);
+        const newerEdits = draftRef.current !== saved.text || inclusionRef.current !== savedChoice;
+        setDirty(newerEdits);
+        if (newerEdits) {
+          timerRef.current = window.setTimeout(() => {
+            timerRef.current = null;
+            void saveNow();
+          }, 1000);
         }
-        return;
+        setConflict(false);
+        conflictRef.current = false;
+        setServerText(null);
+        setSavedAt(saved.server_timestamp ?? null);
+        return true;
+      } catch (err) {
+        if (err instanceof ApiError && err.status === 401) {
+          onSessionExpired();
+          return false;
+        }
+        if (err instanceof ApiError && err.status === 412) {
+          // Stale plan revision: keep every keystroke, fetch server truth for
+          // the reconcile UI, never overwrite the editor.
+          setConflict(true);
+          conflictRef.current = true;
+          try {
+            const truth = await getSecondaryPlan(encounterId);
+            setServerText(truth.text);
+            setServerInclusion(truth.clozapine_included ?? "unknown");
+            setRevision(truth.revision);
+            revisionRef.current = truth.revision;
+          } catch {
+            // Truth fetch failed: the conflict message already keeps edits safe.
+          }
+          return false;
+        }
+        if (err instanceof ApiError && err.status === 409) {
+          // S51 race messaging (archived patient, signed encounter): edits are
+          // kept, the canned hint names the outcome, no draft content leaks.
+          const hint = conflictHint(err.code);
+          setSaveError(
+            hint !== null
+              ? `${hint} Your edits are kept above.`
+              : failText(err, "Secondary plan failed to save. Check the connection and retry."),
+          );
+          return false;
+        }
+        setSaveError(failText(err, "Secondary plan failed to save. Check the connection and retry."));
+        return false;
+      } finally {
+        setSaving(false);
       }
-      if (err instanceof ApiError && err.status === 409) {
-        // S51 race messaging (archived patient, signed encounter): edits are
-        // kept, the canned hint names the outcome, no draft content leaks.
-        const hint = conflictHint(err.code);
-        setSaveError(
-          hint !== null
-            ? `${hint} Your edits are kept above.`
-            : failText(err, "Secondary plan failed to save. Check the connection and retry."),
-        );
-        return;
-      }
-      setSaveError(failText(err, "Secondary plan failed to save. Check the connection and retry."));
-    } finally {
-      setSaving(false);
-    }
+    })();
+    savingRef.current = attempt;
+    try { return await attempt; }
+    finally { savingRef.current = null; }
   }, [encounterId, failText, onSessionExpired]);
+
+  useEffect(() => {
+    const flush = async () => {
+      if (load.kind !== "ready") throw new Error("Wait for the saved secondary plan to load before signing.");
+      if (timerRef.current !== null) {
+        window.clearTimeout(timerRef.current);
+        timerRef.current = null;
+      }
+      if (savingRef.current !== null && !await savingRef.current) {
+        throw new Error("Save the secondary plan successfully before signing. Your edits are kept.");
+      }
+      if (conflictRef.current) throw new Error("Resolve the secondary plan save conflict before signing. Your edits are kept.");
+      while (draftRef.current !== savedRef.current.text || inclusionRef.current !== savedRef.current.inclusion) {
+        if (!await saveNow()) throw new Error("Save the secondary plan successfully before signing. Your edits are kept.");
+      }
+    };
+    flushRef.current = flush;
+    return () => { flushRef.current = null; };
+  }, [flushRef, load.kind, saveNow]);
 
   const schedule = useCallback(() => {
     if (timerRef.current !== null) {
@@ -210,11 +276,12 @@ export function SecondaryPlanPanel({
   const onChange = useCallback(
     (value: string) => {
       setDraft(value);
-      setDirty(value !== savedText);
+      draftRef.current = value;
+      setDirty(value !== savedText || inclusionRef.current !== savedInclusion);
       setSaveError(null);
       schedule();
     },
-    [savedText, schedule],
+    [savedText, savedInclusion, schedule],
   );
 
   // ponytail: explicit reload adopts server truth only on user action —
@@ -223,15 +290,22 @@ export function SecondaryPlanPanel({
     if (serverText !== null) {
       setDraft(serverText);
       setSavedText(serverText);
+      draftRef.current = serverText;
+      inclusionRef.current = serverInclusion;
+      savedRef.current = { text: serverText, inclusion: serverInclusion };
+      setInclusion(serverInclusion);
+      setSavedInclusion(serverInclusion);
       setDirty(false);
       setConflict(false);
+      conflictRef.current = false;
       setSaveError(null);
       setServerText(null);
     }
-  }, [serverText]);
+  }, [serverText, serverInclusion]);
 
   const retryKept = useCallback(() => {
     setConflict(false);
+    conflictRef.current = false;
     setServerText(null);
     void saveNow();
   }, [saveNow]);
@@ -308,6 +382,27 @@ export function SecondaryPlanPanel({
           maxLength={MAX_SECONDARY_PLAN_CHARS + 1}
         />
       </div>
+      <fieldset className="xi-field" aria-describedby="secondary-plan-clozapine-hint">
+        <legend className="xi-label">Clozapine included in final treatment plan</legend>
+        <div className="xi-row-actions">
+          {(Object.entries(CLOZAPINE_INCLUDED_LABELS) as [ClozapineIncluded, string][]).map(([value, label]) => (
+            <label key={value} htmlFor={`secondary-plan-clozapine-${value}`}>
+              <input type="radio" id={`secondary-plan-clozapine-${value}`} name="secondary-plan-clozapine"
+                data-testid={`secondary-plan-clozapine-${value}`} value={value} checked={inclusion === value}
+                onChange={() => {
+                  inclusionRef.current = value;
+                  setInclusion(value);
+                  setDirty(draftRef.current !== savedText || value !== savedInclusion);
+                  setSaveError(null);
+                  schedule();
+                }} /> {label}
+            </label>
+          ))}
+        </div>
+        <p className="xi-hint" id="secondary-plan-clozapine-hint">
+          This choice is saved with the plan and frozen when signed. A signed Yes enables the established-case questions at follow-up.
+        </p>
+      </fieldset>
       <p className="xi-hint" data-testid="secondary-plan-revision" style={{ marginTop: 0 }}>
         Plan revision {revision} · {draft.length} of {MAX_SECONDARY_PLAN_CHARS} characters
       </p>
@@ -339,7 +434,8 @@ export function SecondaryPlanPanel({
           </p>
           {serverText !== null && (
             <p className="xi-hint">
-              Saved plan (revision {revision}): {serverText === "" ? "— empty —" : serverText}
+              Saved plan (revision {revision}): {serverText === "" ? "— empty —" : serverText}.
+              Clozapine included: {CLOZAPINE_INCLUDED_LABELS[serverInclusion]}.
             </p>
           )}
           <div className="xi-row-actions">

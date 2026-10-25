@@ -953,7 +953,7 @@ def test_sign_freezes_releases_slot_idempotent(clean_registry, monkeypatch, tmp_
     assert snapshot["secondary_plan_text"] == "Secondary: continue current care, follow up."
     assert len(snapshot["snapshot_hash"]) == 64
     frozen = snapshot["snapshot"]
-    assert frozen["schema_version"] == "signed-encounter-v2"
+    assert frozen["schema_version"] == "signed-encounter-v3"
     assert frozen["patient"]["identifier"] == "0012345678"
     assert frozen["proposal"]["id"] is not None
     assert len(frozen["questions"]) == 2

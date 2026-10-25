@@ -845,6 +845,15 @@ def start_generation_batch(
             412, "STALE_REVISION", "The draft changed. Reload and reconcile your edits."
         )
     release_pin = dict(pinned_release or {})
+    from x_insight.cases.history import draft_for_encounter
+    from x_insight.cases.signing import established_clozapine_eligible
+    from x_insight.models.workflow_release import (
+        require_current_workflow_contract,
+        uses_established_history,
+    )
+
+    eligible = established_clozapine_eligible(session, encounter)
+    require_current_workflow_contract(release_pin, clozapine_eligible=eligible)
     reviewed_workflow = (packages is None and package is None) or bool(
         release_pin.get("bundle_hash")
     )
@@ -852,7 +861,7 @@ def start_generation_batch(
         from x_insight.models.workflow_release import resolve_workflow
 
         workflow = "followup" if encounter["kind"] == "follow_up" else "registration"
-        packages, release_pin = resolve_workflow(workflow)
+        packages, release_pin = resolve_workflow(workflow, clozapine_eligible=eligible)
     if packages is None:
         if not isinstance(package, dict):
             raise _fail(422, "missing_package", "No question package supplied.")
@@ -862,6 +871,14 @@ def start_generation_batch(
             raise _fail(422, "missing_package", "No question packages supplied.")
         ordered_packages = list(packages)
     loaded_list = _validate_workflow_packages(ordered_packages)
+    for entry in ordered_packages:
+        manifest = entry["manifest"]
+        if uses_established_history(manifest) and not eligible:
+            raise contracts.ContractError(
+                422,
+                "HISTORY_NOT_APPLICABLE",
+                "Established-case clozapine requires a prior signed final-plan Yes in follow-up.",
+            )
     manifests: list[Mapping[str, Any]] = []
     for entry, loaded in zip(ordered_packages, loaded_list):
         manifest = entry.get("manifest")
@@ -869,13 +886,13 @@ def start_generation_batch(
             raise _fail(422, "missing_package", "No question package supplied.")
         manifests.append(manifest)
 
-    draft_data = encounter.get("draft_data") or {}
+    draft_data = draft_for_encounter(session, encounter)
     if reviewed_workflow:
         from x_insight.reasoning.readiness import compute_proposal_readiness
 
         workflow = "followup" if encounter["kind"] == "follow_up" else "registration"
         readiness = compute_proposal_readiness(
-            draft_data, expected_revision, workflow, ordered_packages
+            draft_data, expected_revision, workflow, ordered_packages, clozapine_eligible=eligible
         )
         if not readiness["ready"]:
             field_errors: dict[str, list[str]] = {}
@@ -1199,7 +1216,18 @@ def get_generation_batch(
             "current_fingerprint": str(batch.get("fingerprint")),
         }
         return batch, runs, freshness
-    current_fp, _ = compute_analysis_fingerprint(encounter.get("draft_data"), pinned)
+    from x_insight.cases.history import draft_for_encounter
+    from x_insight.cases.signing import established_clozapine_eligible
+    from x_insight.models.workflow_release import ACTIVE_WORKFLOW_VERSION
+
+    current_pin = dict(pinned)
+    if pinned.get("application_workflow_contract_version") == ACTIVE_WORKFLOW_VERSION:
+        current_pin["established_clozapine_eligible"] = established_clozapine_eligible(
+            session, encounter
+        )
+    current_fp, _ = compute_analysis_fingerprint(
+        draft_for_encounter(session, encounter), current_pin
+    )
     stored_fp = str(batch.get("fingerprint"))
     if current_fp != stored_fp:
         return (
@@ -1412,7 +1440,22 @@ def get_question_input_freshness(
             "reason": "current",
             "current_fingerprint": question_input_hash(stored_hash, stored_status),
         }
-    full = compute_question_freshness(run, batch, encounter.get("draft_data"))
+    from x_insight.cases.history import draft_for_encounter
+    from x_insight.cases.signing import established_clozapine_eligible
+    from x_insight.models.workflow_release import require_current_workflow_contract
+
+    try:
+        require_current_workflow_contract(
+            batch.get("pinned_bundle"),
+            clozapine_eligible=established_clozapine_eligible(session, encounter),
+        )
+    except contracts.ContractError as exc:
+        return {
+            "stale": True,
+            "reason": exc.message,
+            "current_fingerprint": contracts.canonical_hash({"workflow_error": exc.code}),
+        }
+    full = compute_question_freshness(run, batch, draft_for_encounter(session, encounter))
     if bool(full.get("stale", False)):
         return {
             "stale": True,

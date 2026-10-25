@@ -669,8 +669,8 @@ test("LAI and aggression controls use exact titles, constrained options and Unkn
     await expect(page.locator('[id^="hist-candidate/history/high_suicide_clozapine.v1/"]')).toHaveCount(0);
   }
   const saved = await (await request.get(`/api/v1/encounters/${draftId}/history`)).json();
-  expect(saved.workflow_fields).toHaveLength(28);
-  expect(saved.proposal_readiness.required_count).toBe(27);
+  expect(saved.workflow_fields).toHaveLength(13);
+  expect(saved.proposal_readiness.required_count).toBe(12);
   for (const [id] of specs) { expect(saved.values[id]).toBe("unknown"); expect(saved.provenance[id]).toBeUndefined(); }
   const readiness = await (await request.get(`/api/v1/encounters/${draftId}/proposal-readiness`)).json();
   const paths = readiness.blockers.map((b: { source_path: string }) => b.source_path);
@@ -701,10 +701,10 @@ test("prior NMS follows lifetime exposure and clears hidden saved value and attr
     expect(seeded.status(), await seeded.text()).toBe(200);
     await page.reload();
     await expect(select).toHaveValue("Yes");
-    await expect.poll(async () => { const h = await read(); return [h.values[id], h.provenance[id]?.source, h.proposal_readiness.required_count]; }).toEqual(["Yes", "clinician_entry", 29]);
+    await expect.poll(async () => { const h = await read(); return [h.values[id], h.provenance[id]?.source, h.proposal_readiness.required_count]; }).toEqual(["Yes", "clinician_entry", 14]);
     await page.locator(`#hist-h_exposure_dopamine_blocker-${value}`).check();
     await expect(select).toHaveCount(0);
-    await expect.poll(async () => { const h = await read(); return [h.values.h_exposure_dopamine_blocker, h.values[id] ?? null, h.provenance[id] ?? null, h.proposal_readiness.required_count]; }).toEqual([value, null, null, 27]);
+    await expect.poll(async () => { const h = await read(); return [h.values.h_exposure_dopamine_blocker, h.values[id] ?? null, h.provenance[id] ?? null, h.proposal_readiness.required_count]; }).toEqual([value, null, null, 12]);
     await page.reload();
     await expect(select).toHaveCount(0);
   }

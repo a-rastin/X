@@ -15,6 +15,8 @@ def compute_proposal_readiness(
     source_revision: int,
     workflow: str,
     packages: list[dict[str, Any]] | None = None,
+    *,
+    clozapine_eligible: bool = False,
 ) -> dict[str, Any]:
     """Report every blocker without freezing a batch or changing any saved fact.
 
@@ -23,7 +25,7 @@ def compute_proposal_readiness(
     Optional packages are the immutable packages of a run being retried.
     """
     if packages is None:
-        packages, _ = resolve_workflow(workflow)
+        packages, _ = resolve_workflow(workflow, clozapine_eligible=clozapine_eligible)
     definitions = history_fields()
     questions: list[dict[str, Any]] = []
     for package in packages:

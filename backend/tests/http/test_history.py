@@ -1586,8 +1586,13 @@ def test_existing_draft_and_unrelated_autosave_survive_workflow_content_outage(
     )
     # Observe application errors as HTTP responses, including missing deployment files.
     client = TestClient(app, raise_server_exceptions=False, cookies=client.cookies)
-    other_path = "candidate/history/established_case_clozapine.v1/h_urgent_safety_concern"
-    values = {**COMPLETE_HISTORY, PHYSICAL_PATH: "yes", SUBSTANCE_PATH: "no", other_path: "Present"}
+    other_path = "candidate/history/lai_indication_choice.v1/h_lai_preference"
+    values = {
+        **COMPLETE_HISTORY,
+        PHYSICAL_PATH: "yes",
+        SUBSTANCE_PATH: "no",
+        other_path: "PrefersLAI",
+    }
     saved = _post_history(client, csrf, eid, values, 1)
     assert saved.status_code == 200, saved.text
     expected_values = {**values, SUBSTANCE_PATH: "unknown"}

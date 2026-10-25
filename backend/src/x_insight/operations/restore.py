@@ -136,7 +136,7 @@ RESTORE_BACKUP_SCHEMA_VERSION = backup_module.BACKUP_MANIFEST_VERSION
 # 0021 adds ``capability_status`` (still operational, not clinical).
 # 0017 and 0018 archives omit the table and stay valid via the special
 # case; 0019 and later must include it.
-SUPPORTED_APP_SCHEMA_VERSIONS = frozenset({"0017", "0018", "0019", "0020", "0021", "0022"})
+SUPPORTED_APP_SCHEMA_VERSIONS = frozenset({"0017", "0018", "0019", "0020", "0021", "0022", "0023"})
 
 # Bounds (ponytail: 256 MiB expanded / 4096 entries / 100 MiB per file;
 # S58 measures real 10k-patient sizes first).

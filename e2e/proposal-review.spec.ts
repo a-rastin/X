@@ -328,7 +328,8 @@ function countGenerationPosts(page: import("@playwright/test").Page): { count: n
   return posts;
 }
 
-test("frozen earlier History contract offers a new current run without replacing its recorded batch", async ({ page, request }) => {
+for (const contractCode of ["HISTORY_INPUT_CONTRACT_CHANGED", "WORKFLOW_INPUT_CONTRACT_CHANGED", "WORKFLOW_ELIGIBILITY_CHANGED"]) {
+test(`frozen ${contractCode} offers a new current run without replacing its recorded batch`, async ({ page, request }) => {
   test.setTimeout(90000);
   const physician = await loginPhysician(page, request, "e2eproldhistory");
   const { draftId } = await createPatientWithDraft(request, physician);
@@ -341,7 +342,7 @@ test("frozen earlier History contract offers a new current run without replacing
   await page.route("**/proposal-readiness*", (route) => {
     if (new URL(route.request().url()).searchParams.get("source_batch_id") === old.batchId) {
       return route.fulfill({ status: 422, json: {
-        code: "HISTORY_INPUT_CONTRACT_CHANGED", message: "This saved run uses retired History questions. Start a new proposal with the current History contract.",
+        code: contractCode, message: "This saved run uses retired inputs. Start a new proposal with the current workflow.",
         field_errors: {}, retryable: false,
       } });
     }
@@ -368,6 +369,7 @@ test("frozen earlier History contract offers a new current run without replacing
   expect(preserved.batch).toEqual(recorded.batch);
   expect(preserved.question_runs).toEqual(recorded.question_runs);
 });
+}
 
 test("S48 readiness core completion does not start generation; all blockers link to exact History controls", async ({ page, request }) => {
   const physician = await loginPhysician(page, request, "e2eprmissing");
@@ -380,11 +382,11 @@ test("S48 readiness core completion does not start generation; all blockers link
   const summary = page.getByTestId("proposal-readiness");
   // Absent C-SSRS normalizes to five explicit Unknown answers, which is a
   // complete recent-ideation screen and the one execution-ready input here.
-  await expect(summary).toContainText("10 / 29 required responses answered; 1 / 29 execution-ready.");
-  await expect(summary.getByRole("link")).toHaveCount(28);
+  await expect(summary).toContainText("10 / 14 required responses answered; 1 / 14 execution-ready.");
+  await expect(summary.getByRole("link")).toHaveCount(13);
   await expect(summary.getByRole("link", { name: "C-SSRS assessment", exact: true })).toHaveCount(0);
   const server = await (await request.get(`/api/v1/encounters/${draftId}/proposal-readiness`)).json();
-  expect(server.blockers).toHaveLength(28);
+  expect(server.blockers).toHaveLength(13);
   expect(server.blockers.some((blocker: { source_path: string }) => blocker.source_path === "synthetic/assessments/cssrs")).toBe(false);
   for (const blocker of server.blockers) {
     const link = summary.locator(`a[href*="${encodeURIComponent(blocker.source_path)}"]`);
@@ -412,7 +414,7 @@ test("S48 readiness uncertainty is answered but unresolved; saving corrections p
     values: { ...current.draft_data.history.values, [prefix + "h_physical_vulnerability"]: "unknown", [prefix + "h_substance_contribution"]: "unknown" } } }, current.revision);
   const posts = countGenerationPosts(page);
   await gotoEncounter(page, draftId);
-  await expect(page.getByTestId("proposal-readiness")).toContainText("29 / 29 required responses answered; 27 / 29 execution-ready.");
+  await expect(page.getByTestId("proposal-readiness")).toContainText("14 / 14 required responses answered; 12 / 14 execution-ready.");
   await expect(page.getByTestId("proposal-readiness")).toContainText("Unknown does not resolve this required input.");
   expect(posts.count).toBe(0);
   await page.locator("#wizard-step-history").click();

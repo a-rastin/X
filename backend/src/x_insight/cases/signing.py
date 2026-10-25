@@ -64,7 +64,58 @@ ADDENDUM_AUDIT_OPERATION = "encounters.addendum.success"
 
 MAX_SECONDARY_PLAN_CHARS = 10_000
 MAX_ADDENDUM_CHARS = 2000
-SNAPSHOT_SCHEMA_VERSION = "signed-encounter-v2"
+SNAPSHOT_SCHEMA_VERSION = "signed-encounter-v3"
+
+
+def validate_clozapine_included(value: Any) -> str:
+    if value not in ("yes", "no", "unknown"):
+        raise _fail(422, "VALIDATION_FAILED", "Must be yes, no or unknown.", "clozapine_included")
+    return str(value)
+
+
+def established_clozapine_eligible(session: Session, encounter: Mapping[str, Any]) -> bool:
+    """Any earlier signed final-plan Yes qualifies; missing evidence stays unknown.
+
+    Addenda explicitly confirm a signed plan, without changing its frozen bytes.
+    Free text, generated proposals and current draft/medication values are never read.
+    """
+    if encounter.get("kind") != "follow_up":
+        return False
+    snapshots = cases_tables.signed_encounter_snapshots
+    signed = cases_tables.encounters
+    rows = (
+        session.execute(
+            select(snapshots.c.encounter_id, snapshots.c.snapshot)
+            .join(signed, signed.c.id == snapshots.c.encounter_id)
+            .where(
+                snapshots.c.patient_id == encounter["patient_id"],
+                snapshots.c.encounter_id != encounter["id"],
+                signed.c.lifecycle == "signed",
+                snapshots.c.signed_at <= encounter["created_at"],
+            )
+        )
+        .mappings()
+        .all()
+    )
+    for row in rows:
+        payload = row["snapshot"]
+        plan = payload.get("secondary_plan") if isinstance(payload, dict) else None
+        if isinstance(plan, dict) and plan.get("clozapine_included") == "yes":
+            return True
+    prior_ids = [row["encounter_id"] for row in rows]
+    if not prior_ids:
+        return False
+    return (
+        session.execute(
+            select(cases_tables.encounter_addenda.c.id)
+            .where(
+                cases_tables.encounter_addenda.c.encounter_id.in_(prior_ids),
+                cases_tables.encounter_addenda.c.clozapine_included == "yes",
+            )
+            .limit(1)
+        ).first()
+        is not None
+    )
 
 
 def _fail(status: int, code: str, message: str, field: str) -> contracts.ContractError:
@@ -114,12 +165,15 @@ def validate_addendum_text(value: Any) -> str:
     return value
 
 
-def secondary_plan_request_hash(encounter_id: uuid.UUID, expected_revision: int, text: str) -> str:
+def secondary_plan_request_hash(
+    encounter_id: uuid.UUID, expected_revision: int, text: str, clozapine_included: Any = None
+) -> str:
     return contracts.canonical_hash(
         {
             "target_id": str(encounter_id),
             "expected_revision": int(expected_revision),
             "text": str(text),
+            "clozapine_included": clozapine_included,
         }
     )
 
@@ -153,12 +207,15 @@ def sign_request_hash(
     )
 
 
-def addendum_request_hash(encounter_id: uuid.UUID, expected_revision: int, text: str) -> str:
+def addendum_request_hash(
+    encounter_id: uuid.UUID, expected_revision: int, text: str, clozapine_included: Any = None
+) -> str:
     return contracts.canonical_hash(
         {
             "target_id": str(encounter_id),
             "expected_revision": int(expected_revision),
             "text": str(text),
+            "clozapine_included": clozapine_included,
         }
     )
 
@@ -168,6 +225,7 @@ def safe_secondary_plan(plan: Mapping[str, Any], encounter_id: Any) -> dict[str,
         "encounter_id": str(encounter_id),
         "revision": int(plan.get("revision", 1)),
         "text": str(plan.get("text", "")),
+        "clozapine_included": plan.get("clozapine_included", "unknown"),
         "updated_at": contracts.serialize_utc(plan["updated_at"])
         if plan.get("updated_at") is not None
         else None,
@@ -201,6 +259,7 @@ def safe_addendum(row: Mapping[str, Any]) -> dict[str, Any]:
         "author_display": str(row.get("author_display", "")),
         "created_at": contracts.serialize_utc(row["created_at"]),
         "text": str(row.get("text", "")),
+        "clozapine_included": row.get("clozapine_included"),
     }
 
 
@@ -222,6 +281,7 @@ def _default_plan(encounter: Mapping[str, Any]) -> dict[str, Any]:
         "encounter_id": encounter["id"],
         "revision": 1,
         "text": "",
+        "clozapine_included": "unknown",
         "updated_at": encounter.get("updated_at"),
     }
 
@@ -245,6 +305,7 @@ def save_secondary_plan(
     expected_plan_revision: Any,
     text: Any,
     request_id: str,
+    clozapine_included: Any = None,
 ) -> tuple[dict[str, Any], dict[str, Any], str]:
     """Author-only secondary-plan save with its own revision fence (412 stale).
 
@@ -280,6 +341,11 @@ def save_secondary_plan(
 
     _patients.require_encounter_mutable(session, encounter, author)
     plan = _get_plan_row(session, encounter_id)
+    inclusion = (
+        validate_clozapine_included(clozapine_included)
+        if clozapine_included is not None
+        else (plan or {}).get("clozapine_included", "unknown")
+    )
     current = int(plan["revision"]) if plan is not None else 1
     if int(expected) != int(current):
         raise contracts.ContractError(
@@ -294,6 +360,7 @@ def save_secondary_plan(
             insert(cases_tables.secondary_plans).values(
                 encounter_id=encounter_id,
                 text=validated,
+                clozapine_included=inclusion,
                 revision=expected + 1,
                 created_at=moment,
                 updated_at=moment,
@@ -303,7 +370,12 @@ def save_secondary_plan(
         session.execute(
             update(cases_tables.secondary_plans)
             .where(cases_tables.secondary_plans.c.encounter_id == encounter_id)
-            .values(text=validated, revision=expected + 1, updated_at=moment)
+            .values(
+                text=validated,
+                clozapine_included=inclusion,
+                revision=expected + 1,
+                updated_at=moment,
+            )
         )
     session.flush()
     stored = _get_plan_row(session, encounter_id)
@@ -597,9 +669,14 @@ def sign_encounter(
 
     from x_insight.assessments import cssrs as cssrs_service
     from x_insight.cases import history as history_service
+    from x_insight.models.workflow_release import require_current_workflow_contract
 
+    require_current_workflow_contract(
+        batch.get("pinned_bundle"),
+        clozapine_eligible=established_clozapine_eligible(session, encounter),
+    )
     draft_data = cssrs_service.canonicalize_draft(
-        history_service.normalize_draft_history(encounter.get("draft_data") or {})
+        history_service.draft_for_encounter(session, encounter)
     )
     acceptance_rows: dict[str, dict[str, Any]] = {}
     for run in runs:
@@ -837,6 +914,7 @@ def sign_encounter(
         "secondary_plan": {
             "revision": int(current_plan_revision),
             "text": str(current_plan_text),
+            "clozapine_included": (plan or {}).get("clozapine_included", "unknown"),
         },
         "questions": frozen_per_question,
         "draft_data": dict(draft_data) if isinstance(draft_data, dict) else {},
@@ -921,6 +999,7 @@ def create_addendum(
     expected_encounter_revision: Any,
     text: Any,
     request_id: str,
+    clozapine_included: Any = None,
 ) -> tuple[dict[str, Any], dict[str, Any], str]:
     """Any-active-physician append to a signed encounter (no snapshot mutation).
 
@@ -938,6 +1017,9 @@ def create_addendum(
             {"expected_encounter_revision": ["Must be a positive integer."]},
         )
     validated = validate_addendum_text(text)
+    inclusion = (
+        validate_clozapine_included(clozapine_included) if clozapine_included is not None else None
+    )
     row = (
         session.execute(
             select(cases_tables.encounters)
@@ -988,6 +1070,7 @@ def create_addendum(
             author_display=str(author.get("username", "")),
             created_at=moment,
             text=validated,
+            clozapine_included=inclusion,
         )
     )
     session.flush()

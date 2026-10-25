@@ -271,8 +271,65 @@ def normalize_history_values(values: Any) -> dict[str, Any]:
     return normalized
 
 
-def normalize_draft_history(draft_data: Any) -> Any:
+def without_established_history(draft_data: Any) -> Any:
+    """Omit hidden answers and attribution from mutable application views."""
+    from x_insight.models.workflow_release import ESTABLISHED_PREFIX
+
+    if not isinstance(draft_data, dict) or not isinstance(draft_data.get(HISTORY_KEY), dict):
+        return draft_data
+    updated = dict(draft_data)
+    section = {
+        key: value
+        for key, value in draft_data[HISTORY_KEY].items()
+        if not key.startswith(ESTABLISHED_PREFIX)
+    }
+    for name in (VALUES_KEY, PROVENANCE_KEY):
+        if isinstance(section.get(name), dict):
+            section[name] = {
+                key: value
+                for key, value in section[name].items()
+                if not key.startswith(ESTABLISHED_PREFIX)
+            }
+    updated[HISTORY_KEY] = section
+    return updated
+
+
+def draft_for_encounter(session: Session, encounter: dict[str, Any]) -> Any:
+    from x_insight.cases.signing import established_clozapine_eligible
+
+    return normalize_draft_history(
+        encounter.get("draft_data") or {},
+        clozapine_eligible=established_clozapine_eligible(session, encounter),
+    )
+
+
+def established_history_for_save(previous: Any, incoming: Any, *, clozapine_eligible: bool) -> Any:
+    """Old hidden values can round trip; new hidden answers cannot be captured."""
+    from x_insight.models.workflow_release import ESTABLISHED_PREFIX
+
+    if clozapine_eligible or not isinstance(incoming, dict):
+        return incoming
+    section = incoming.get(HISTORY_KEY)
+    values = section.get(VALUES_KEY, section) if isinstance(section, dict) else {}
+    prior_section = previous.get(HISTORY_KEY) if isinstance(previous, dict) else {}
+    prior = prior_section.get(VALUES_KEY, prior_section) if isinstance(prior_section, dict) else {}
+    prior = prior if isinstance(prior, dict) else {}
+    errors = {
+        key: ["Established-case clozapine needs follow-up with a prior signed final-plan Yes."]
+        for key, value in (values.items() if isinstance(values, dict) else [])
+        if key.startswith(ESTABLISHED_PREFIX) and (key not in prior or prior[key] != value)
+    }
+    if errors:
+        raise contracts.ContractError(
+            422, "HISTORY_NOT_APPLICABLE", "These History questions are not applicable.", errors
+        )
+    return without_established_history(incoming)
+
+
+def normalize_draft_history(draft_data: Any, *, clozapine_eligible: bool = True) -> Any:
     """Normalize mutable draft History while preserving unrelated page state."""
+    if not clozapine_eligible:
+        draft_data = without_established_history(draft_data)
     if not isinstance(draft_data, dict) or not isinstance(draft_data.get(HISTORY_KEY), dict):
         return draft_data
     updated = dict(draft_data)
@@ -520,13 +577,20 @@ def validate_phone_update(value: Any) -> str | None:
 
 
 def compute_history_state(
-    draft_data: Any, *, author_id: str, revision: int, workflow: str = "registration"
+    draft_data: Any,
+    *,
+    author_id: str,
+    revision: int,
+    workflow: str = "registration",
+    clozapine_eligible: bool = False,
 ) -> dict[str, Any]:
     """Server-authoritative history preview for one draft revision."""
     del author_id  # provenance carries attribution; preview needs no gate.
     from x_insight.models.workflow_release import history_fields, workflow_history_fields
     from x_insight.reasoning.readiness import compute_proposal_readiness
 
+    clozapine_eligible = workflow == "followup" and clozapine_eligible
+    draft_data = normalize_draft_history(draft_data, clozapine_eligible=clozapine_eligible)
     section = get_history_section(draft_data)
     values = section["values"]
     evaluation = evaluate_history(values)
@@ -540,9 +604,19 @@ def compute_history_state(
         "revision": revision,
         "analysis_visible": True,
         "analysis_visible_label": "analysis_visible",
-        "workflow_fields": workflow_history_fields(workflow),
-        "proposal_readiness": compute_proposal_readiness(draft_data, revision, workflow),
-        "allowed_field_ids": [*FIELD_IDS, *history_fields()],
+        "workflow_fields": workflow_history_fields(workflow, clozapine_eligible=clozapine_eligible),
+        "proposal_readiness": compute_proposal_readiness(
+            draft_data, revision, workflow, clozapine_eligible=clozapine_eligible
+        ),
+        "allowed_field_ids": [
+            *FIELD_IDS,
+            *[
+                path
+                for path in history_fields()
+                if clozapine_eligible
+                or not path.startswith("candidate/history/established_case_clozapine.v1/")
+            ],
+        ],
     }
 
 
@@ -551,11 +625,14 @@ def read_history_for_author(
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     """Author-only history read: 404 missing/released, 403 strangers."""
     encounter = encounters_service.read_draft_for_author(session, encounter_id, user)
+    from x_insight.cases.signing import established_clozapine_eligible
+
     state = compute_history_state(
         encounter.get("draft_data") or {},
         author_id=str(encounter["author_id"]),
         revision=int(encounter["revision"]),
         workflow="followup" if encounter["kind"] == "follow_up" else "registration",
+        clozapine_eligible=established_clozapine_eligible(session, encounter),
     )
     return encounter, state
 
@@ -606,7 +683,15 @@ def save_history(
             "STALE_REVISION",
             "The draft changed. Reload and reconcile your edits.",
         )
-    validated_values = validate_history_values(values)
+    from x_insight.cases.signing import established_clozapine_eligible
+
+    eligible = established_clozapine_eligible(session, encounter)
+    cleaned = established_history_for_save(
+        encounter.get("draft_data"),
+        {HISTORY_KEY: {VALUES_KEY: values}},
+        clozapine_eligible=eligible,
+    )
+    validated_values = validate_history_values(cleaned[HISTORY_KEY][VALUES_KEY])
     validated_reconciliation = validate_reconciliation(reconciliation)
     validated_phone = validate_phone_update(phone_update)
     moment = contracts.utcnow()
@@ -676,6 +761,7 @@ def save_history(
         author_id=author_id,
         revision=int(updated["revision"]),
         workflow="followup" if updated["kind"] == "follow_up" else "registration",
+        clozapine_eligible=eligible,
     )
     return updated, state, stamp
 

@@ -1435,6 +1435,7 @@ class SecondaryPlanPatchRequest(BaseModel):
     model_config = {"extra": "forbid"}
 
     text: str
+    clozapine_included: Literal["yes", "no", "unknown"] | None = None
     expected_plan_revision: int = Field(ge=1)
 
 
@@ -1471,6 +1472,7 @@ class AddendumRequest(BaseModel):
     model_config = {"extra": "forbid"}
 
     text: str
+    clozapine_included: Literal["yes", "no", "unknown"] | None = None
     expected_encounter_revision: int = Field(ge=1)
 
 
@@ -1488,6 +1490,7 @@ def _secondary_plan_response(
         "encounter": encounters_service.safe_encounter_reference(encounter),
         "revision": int(safe["revision"]),
         "text": str(safe["text"]),
+        "clozapine_included": safe["clozapine_included"],
         "encounter_revision": int(encounter["revision"]),
     }
     if server_timestamp is not None:
@@ -1550,7 +1553,7 @@ def patch_secondary_plan(
     request_hash: str | None = None
     if key is not None:
         request_hash = signing_service.secondary_plan_request_hash(
-            encounter_id, int(expected), str(payload.text)
+            encounter_id, int(expected), str(payload.text), payload.clozapine_included
         )
         stored = identity_service.lookup_idempotency(
             session,
@@ -1568,12 +1571,14 @@ def patch_secondary_plan(
         encounter_id=encounter_id,
         expected_plan_revision=int(expected),
         text=payload.text,
+        clozapine_included=payload.clozapine_included,
         request_id=request_id,
     )
     response_body: dict[str, Any] = {
         "encounter": encounters_service.safe_encounter_reference(encounter),
         "revision": int(plan["revision"]),
         "text": str(plan["text"]),
+        "clozapine_included": plan["clozapine_included"],
         "encounter_revision": int(encounter["revision"]),
         "server_timestamp": server_timestamp,
     }
@@ -1759,7 +1764,7 @@ def create_addendum(
     request_hash: str | None = None
     if key is not None:
         request_hash = signing_service.addendum_request_hash(
-            encounter_id, int(expected), str(payload.text)
+            encounter_id, int(expected), str(payload.text), payload.clozapine_included
         )
         stored = identity_service.lookup_idempotency(
             session,
@@ -1777,6 +1782,7 @@ def create_addendum(
         encounter_id=encounter_id,
         expected_encounter_revision=int(expected),
         text=payload.text,
+        clozapine_included=payload.clozapine_included,
         request_id=request_id,
     )
     response_body: dict[str, Any] = {

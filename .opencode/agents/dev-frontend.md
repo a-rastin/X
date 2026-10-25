@@ -2,6 +2,7 @@
 name: dev-frontend
 description: subagent to build the frontend.
 mode: subagent
+model: GPT-6.1-Sol, Medium
 permission:
   edit: allow
   bash: allow
@@ -14,3 +15,4 @@ permission:
 
 - `ponytail`
 - `frontend-design`
+- `tdd`

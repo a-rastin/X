@@ -206,6 +206,18 @@ BASELINE_HISTORY = {
     "h_onset_timing": "unknown",
     "h_trial_adequacy_prior": "unknown",
 }
+WORKFLOW_UNKNOWN_DEFAULTS = {
+    "candidate/history/lai_indication_choice.v1/h_lai_preference": "unknown",
+    "candidate/history/lai_indication_choice.v1/h_adherence_history": "unknown",
+    "candidate/history/lai_indication_choice.v1/h_discussion_context": "unknown",
+    "candidate/history/lai_indication_choice.v1/h_delivery_barriers": "unknown",
+    "candidate/history/aggression_clozapine.v1/h_substantial_aggression_risk": "unknown",
+}
+COPIED_HISTORY_VALUES = {
+    **BASELINE_HISTORY,
+    **WORKFLOW_UNKNOWN_DEFAULTS,
+    "candidate/history/lai_indication_choice.v1/h_prior_nms": "unknown",
+}
 BASELINE_MEDICATIONS = [
     {"catalog_drug_id": "demo-aspirin"},
     {"catalog_drug_id": "demo-metformin"},
@@ -395,8 +407,9 @@ def test_followup_baseline_copy_provenance_pending_and_empty_answers(
     encounter_id = body["encounter"]["id"]
     draft_data = body["draft_data"]
 
-    # History values are copied verbatim with per-field baseline provenance.
-    assert draft_data["history"]["values"] == BASELINE_HISTORY
+    # Copied answers retain provenance; current Unknown defaults add no attribution.
+    assert draft_data["history"]["values"] == COPIED_HISTORY_VALUES
+    assert set(draft_data["history"]["provenance"]) == set(BASELINE_HISTORY)
     for field_id in BASELINE_HISTORY:
         provenance = draft_data["history"]["provenance"][field_id]
         assert provenance["source"] == "copied_baseline"
@@ -423,7 +436,7 @@ def test_followup_baseline_copy_provenance_pending_and_empty_answers(
     preview = owner.get(f"/api/v1/encounters/{encounter_id}/followup-baseline")
     assert preview.status_code == 200, preview.text
     state = preview.json()
-    assert state["baseline"]["history_values"] == BASELINE_HISTORY
+    assert state["baseline"]["history_values"] == COPIED_HISTORY_VALUES
     assert state["baseline"]["medications"] == BASELINE_MEDICATIONS
     assert state["baseline"]["provenance_note"] == BASELINE_NOTE
     assert state["baseline"]["baseline_encounter_id"] == BASELINE_ENCOUNTER_ID
@@ -483,6 +496,7 @@ def test_followup_without_baseline_has_empty_shell(
     encounter_id = started.json()["encounter"]["id"]
     draft_data = started.json()["draft_data"]
     assert draft_data["history"]["values"] == {
+        **WORKFLOW_UNKNOWN_DEFAULTS,
         "h_exposure_dopamine_blocker": "unknown",
         "h_movement_persistence_4w": "unknown",
         "candidate/history/pharmacotherapy.v2/h_physical_vulnerability": "unknown",
@@ -567,7 +581,7 @@ def test_sequential_second_followup_conflicts_generically_without_leak(
         baseline_encounter_id=BASELINE_ENCOUNTER_ID,
     )
     assert first.status_code == 201, first.text
-    assert first.json()["draft_data"]["history"]["values"] == BASELINE_HISTORY
+    assert first.json()["draft_data"]["history"]["values"] == COPIED_HISTORY_VALUES
 
     for contender, csrf in ((client_a, csrf_a), (client_b, csrf_b)):
         denied = _create_followup(contender, csrf, patient_id)
@@ -769,7 +783,8 @@ def test_followup_phone_history_effect_pages_author_only_with_review_path(
     history = owner.get(f"/api/v1/encounters/{encounter_id}/history")
     assert history.status_code == 200, history.text
     hstate = history.json()
-    assert hstate["values"] == BASELINE_HISTORY
+    assert hstate["values"] == COPIED_HISTORY_VALUES
+    assert set(hstate["provenance"]) == set(BASELINE_HISTORY)
     assert hstate["phone_update"] is None
     assert hstate["reconciliation"] == {
         "status": "pending",
@@ -817,7 +832,8 @@ def test_followup_phone_history_effect_pages_author_only_with_review_path(
     )
     assert saved.status_code == 200, saved.text
     assert saved.json()["phone_update"] == "+43 699 999999"
-    assert saved.json()["values"] == BASELINE_HISTORY
+    assert saved.json()["values"] == COPIED_HISTORY_VALUES
+    assert set(saved.json()["provenance"]) == set(BASELINE_HISTORY)
 
 
 def test_no_bypass_sign_production_route_exists(admin_client, clean_registry, monkeypatch) -> None:

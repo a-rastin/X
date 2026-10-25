@@ -335,6 +335,14 @@ export function HistorySection({
     return () => { previewRequest.current += 1; };
   }, [refreshPreview, savedRevision]);
 
+  // A structured addendum in another chart tab can change the applicable
+  // inventory without changing this draft's revision.
+  useEffect(() => {
+    const refresh = () => { void refreshPreview(); };
+    window.addEventListener("focus", refresh);
+    return () => { window.removeEventListener("focus", refresh); };
+  }, [refreshPreview]);
+
   useEffect(() => {
     if (preview === null) return;
     const focusLinkedField = () => {

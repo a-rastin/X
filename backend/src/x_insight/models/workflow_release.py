@@ -11,6 +11,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+from collections.abc import Mapping
 from copy import deepcopy
 from functools import lru_cache
 from pathlib import Path
@@ -39,6 +40,33 @@ ACTIVE_HISTORY_DEFINITIONS = {
     ),
 }
 CSSRS_CONTEXT_PATH = "synthetic/assessments/cssrs"
+ACTIVE_WORKFLOW_VERSION = "application-workflow-2026-10-24-v1"
+ESTABLISHED_KEY = "established_case_clozapine"
+ESTABLISHED_PREFIX = "candidate/history/established_case_clozapine.v1/"
+
+
+def uses_established_history(manifest: Mapping[str, Any]) -> bool:
+    """Recognize application source paths even when an inline key is renamed."""
+    applicability = manifest.get("applicability")
+    required = (
+        applicability.get("required_fields", []) if isinstance(applicability, Mapping) else []
+    )
+    paths = list(required) if isinstance(required, (list, tuple)) else []
+    mappings = manifest.get("patient_mappings")
+    for mapping in mappings if isinstance(mappings, (list, tuple)) else []:
+        sources = mapping.get("allowed_source_paths") if isinstance(mapping, Mapping) else None
+        if isinstance(sources, (list, tuple)):
+            paths.extend(sources)
+    return any(isinstance(path, str) and path.startswith(ESTABLISHED_PREFIX) for path in paths)
+
+
+def active_workflow_order(workflow: str, *, clozapine_eligible: bool = False) -> tuple[str, ...]:
+    if workflow == "registration":
+        return tuple(key for key in bundles.REGISTRATION_ORDER if key != ESTABLISHED_KEY)
+    order = list(bundles.FOLLOWUP_ORDER)
+    if clozapine_eligible:
+        order.insert(order.index("no_improvement_clozapine"), ESTABLISHED_KEY)
+    return tuple(order)
 
 
 def content_root() -> Path:
@@ -55,7 +83,7 @@ def read_content(path: str) -> bytes:
     return target.read_bytes()
 
 
-def resolve_workflow(workflow: str) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+def _reviewed_workflow(workflow: str) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     """Validate the release, dependency bytes, approval, order and executability."""
     try:
         release = json.loads(read_content("content/bundles/active-release.json"))
@@ -128,6 +156,62 @@ def resolve_workflow(workflow: str) -> tuple[list[dict[str, Any]], dict[str, Any
         ) from exc
 
 
+def resolve_workflow(
+    workflow: str, *, clozapine_eligible: bool = False
+) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+    """Derive active placement without changing the immutable reviewed release."""
+    packages, pin = _reviewed_workflow(workflow)
+    by_key = {package["manifest"]["question_key"]: package for package in packages}
+    if workflow == "followup" and clozapine_eligible:
+        registration, registration_pin = _reviewed_workflow("registration")
+        original = next(p for p in registration if p["manifest"]["question_key"] == ESTABLISHED_KEY)
+        adapted = deepcopy(original)
+        adapted["manifest"].update(
+            workflow="followup",
+            version=ACTIVE_WORKFLOW_VERSION,
+            review_status="awaiting_review",
+            application_workflow_contract=ACTIVE_WORKFLOW_VERSION,
+        )
+        adapted["manifest"]["prompt_version"] = ACTIVE_WORKFLOW_VERSION
+        adapted["prompt"] = {
+            "version": ACTIVE_WORKFLOW_VERSION,
+            "text": (
+                "Application workflow: the historical R7 registration designation below is "
+                "provenance. This package now runs only in follow-up when a prior signed final "
+                "treatment plan explicitly includes clozapine. It remains separate from the "
+                "no-improvement clozapine package. No new clinical approval is claimed.\n\n"
+                + original["prompt"]["text"]
+            ),
+        }
+        question_package.load_question_package(adapted)
+        by_key[ESTABLISHED_KEY] = adapted
+        pin["established_source_bundle_hash"] = registration_pin["bundle_hash"]
+    order = active_workflow_order(workflow, clozapine_eligible=clozapine_eligible)
+    pin.update(
+        application_workflow_contract_version=ACTIVE_WORKFLOW_VERSION,
+        established_clozapine_eligible=bool(workflow == "followup" and clozapine_eligible),
+    )
+    return [by_key[key] for key in order], pin
+
+
+def require_current_workflow_contract(pin: Any, *, clozapine_eligible: bool) -> None:
+    """Frozen runs remain readable; a new start must use today's placement/evidence."""
+    if not isinstance(pin, dict) or not pin.get("bundle_hash"):
+        return
+    if pin.get("application_workflow_contract_version") != ACTIVE_WORKFLOW_VERSION:
+        raise contracts.ContractError(
+            422,
+            "WORKFLOW_INPUT_CONTRACT_CHANGED",
+            "This run uses a retired workflow. Start a new proposal with the current workflow.",
+        )
+    if pin.get("established_clozapine_eligible") is not clozapine_eligible:
+        raise contracts.ContractError(
+            422,
+            "WORKFLOW_ELIGIBILITY_CHANGED",
+            "Signed final-plan evidence changed. Start a new proposal with the current workflow.",
+        )
+
+
 def history_fields() -> dict[str, dict[str, Any]]:
     """Exact versioned paths; repeated field names stay in separate namespaces."""
     try:
@@ -169,8 +253,10 @@ def _history_fields(
     return result
 
 
-def workflow_history_fields(workflow: str) -> list[dict[str, Any]]:
-    order = bundles.REGISTRATION_ORDER if workflow == "registration" else bundles.FOLLOWUP_ORDER
+def workflow_history_fields(
+    workflow: str, *, clozapine_eligible: bool = False
+) -> list[dict[str, Any]]:
+    order = active_workflow_order(workflow, clozapine_eligible=clozapine_eligible)
     fields = history_fields()
     return [
         dict(field, id=path)
@@ -283,6 +369,16 @@ def is_history_field_applicable(
 
 def require_current_history_contract(manifest: Any) -> None:
     """Old frozen contracts remain readable, but cannot request retired inputs."""
+    if isinstance(manifest, dict) and uses_established_history(manifest):
+        if (
+            manifest.get("workflow") != "followup"
+            or manifest.get("application_workflow_contract") != ACTIVE_WORKFLOW_VERSION
+        ):
+            raise contracts.ContractError(
+                422,
+                "WORKFLOW_INPUT_CONTRACT_CHANGED",
+                "Established-case clozapine belongs to eligible follow-up. Start a new proposal.",
+            )
     if (
         not isinstance(manifest, dict)
         or manifest.get("question_key") not in ACTIVE_HISTORY_DEFINITIONS

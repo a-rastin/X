@@ -509,7 +509,10 @@ def safe_draft_for_author(row: dict[str, Any]) -> dict[str, Any]:
     from x_insight.cases import history as history_service
 
     reference["draft_data"] = cssrs_service.canonicalize_draft(
-        history_service.normalize_draft_history(dict(body) if isinstance(body, dict) else {})
+        history_service.normalize_draft_history(
+            dict(body) if isinstance(body, dict) else {},
+            clozapine_eligible=row.get("kind") == "follow_up",
+        )
     )
     return reference
 
@@ -586,6 +589,9 @@ def read_draft_for_author(
         raise contracts.ContractError(404, "NOT_FOUND", "Encounter not found.")
     require_draft_lifecycle(encounter)
     require_author(encounter, user)
+    from x_insight.cases.history import draft_for_encounter
+
+    encounter["draft_data"] = draft_for_encounter(session, encounter)
     return encounter
 
 
@@ -712,6 +718,19 @@ def create_open_draft(
         )
     else:
         initial_body = {}
+    from x_insight.cases import history as history_service
+    from x_insight.cases.signing import established_clozapine_eligible
+
+    if not established_clozapine_eligible(
+        session,
+        {
+            "id": encounter_id,
+            "patient_id": patient_id,
+            "kind": validated_kind,
+            "created_at": moment,
+        },
+    ):
+        initial_body = history_service.without_established_history(initial_body)
     validate_draft_data(initial_body)
     try:
         session.execute(
@@ -856,7 +875,13 @@ def patch_draft(
         from x_insight.assessments import cssrs as cssrs_service
         from x_insight.cases import history as history_service
         from x_insight.cases import medications as medications_service
+        from x_insight.cases.signing import established_clozapine_eligible
 
+        draft_data = history_service.established_history_for_save(
+            encounter.get("draft_data"),
+            draft_data,
+            clozapine_eligible=established_clozapine_eligible(session, encounter),
+        )
         draft_data = history_service.history_for_autosave(encounter.get("draft_data"), draft_data)
         draft_data = medications_service.preserve_autosave_report_metadata(
             encounter.get("draft_data"), draft_data, engine=session.get_bind()
