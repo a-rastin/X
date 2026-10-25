@@ -3,7 +3,9 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest bounded follow-up is [automatic schema/DDInter startup (2026-10-23)](s18.md#follow-up-2026-10-23--prepare-schema-and-ddinter-during-normal-startup):
+The latest diagnosis is [provider first-save destination rejection (2026-10-26)](s42.md#follow-up-2026-10-26--first-save-destination-rejection-diagnosis),
+with the root cause and fix plan in [issue-01.md](../../../issues/issue-01.md); implementation is open.
+The latest implementation follow-up is [automatic schema/DDInter startup (2026-10-23)](s18.md#follow-up-2026-10-23--prepare-schema-and-ddinter-during-normal-startup):
 normal local/production launch prepares the database before dependent services;
 11 startup regressions and real Chromium/Firefox registration checks passed.
 The preceding [bundled approved DDInter setup (2026-10-23)](s18.md#follow-up-2026-10-23--bundle-approved-ddinter-for-fresh-installations):
