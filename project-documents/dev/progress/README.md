@@ -3,6 +3,9 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
+The [Diagnosis Continue confirmation analysis (2026-10-27)](s09.md#follow-up-2026-10-27--diagnosis-continue-confirmation-analysis)
+links [issue-03.md](../../../issues/issue-03.md): proposed registration confirmation
+for nonconfirming diagnosis results; analysis only, implementation pending.
 The [skip/bypass diagnosis (2026-10-26)](s07.md#follow-up-2026-10-26--redundant-assessment-skipbypass-diagnosis)
 links [issue-02.md](../../../issues/issue-02.md): Continue already permits incomplete steps.
 The [skip/bypass removal implementation (2026-10-26)](s07.md#follow-up-2026-10-26--redundant-skipbypass-removal-implemented)
