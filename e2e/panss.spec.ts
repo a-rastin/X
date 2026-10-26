@@ -20,8 +20,8 @@ import {
  * - radios `#panss-{P1..P7,N1..N7,G1..G16}-{1..7}` (name `panss-{itemId}`)
  * - verdict `#panss-preview-status` (aria-live polite)
  * - scores `#panss-scores`
- * - skip button "Skip PANSS (not assessed)"
- * - resume button "Resume PANSS (clear skip)"
+ * - legacy skip shows "not assessed" with a "Resume PANSS (clear skip)"
+ *   recovery action (no Skip button)
  * - still-needed list `#panss-still-needed`
  */
 
@@ -148,20 +148,21 @@ test("fresh form has 30 unanswered items and null total, no pre-filled 1s", asyn
   await expect(scores).not.toContainText("Total bands are");
 });
 
-test("skip persists not_assessed across reload; resume clears it", async ({
+test("legacy skip shows not assessed with Resume recovery and no Skip button", async ({
   page,
   request,
 }) => {
   const physician = await loginPhysician(page, request, "e2epanssskip");
   const { draftId } = await createPatientWithDraft(request, physician);
+  await seedAnswersApi(request, physician, draftId, { __skipped: true });
 
   await gotoPanss(page, draftId);
-  await page
-    .getByRole("button", { name: "Skip PANSS (not assessed)" })
-    .click();
-
   const verdict = page.locator("#panss-preview-status");
   await expect(verdict).toContainText("not assessed", { timeout: 15000 });
+  // No control offers a new skip; only the legacy recovery action exists.
+  await expect(
+    page.getByRole("button", { name: "Skip PANSS (not assessed)" }),
+  ).toHaveCount(0);
   await expect(
     page.getByRole("button", { name: "Resume PANSS (clear skip)" }),
   ).toBeVisible();
@@ -182,7 +183,36 @@ test("skip persists not_assessed across reload; resume clears it", async ({
   );
   await expect(
     page.getByRole("button", { name: "Skip PANSS (not assessed)" }),
+  ).toHaveCount(0);
+});
+
+test("Continue navigates without completing the assessment", async ({
+  page,
+  request,
+}) => {
+  const physician = await loginPhysician(page, request, "e2epansscont");
+  const { draftId } = await createPatientWithDraft(request, physician);
+
+  await gotoPanss(page, draftId);
+  await page.locator("#panss-P1-1").check();
+  await expect(page.locator("#draft-save-status")).toContainText("Saved", {
+    timeout: 15000,
+  });
+
+  await page.locator("#wizard-continue").click();
+  await expect(
+    page.getByRole("heading", { name: "C-SSRS (step 4)" }),
   ).toBeVisible();
+
+  await page.locator("#wizard-back").click();
+  await expect(
+    page.getByRole("heading", { name: "PANSS (step 3)" }),
+  ).toBeVisible();
+  await expect(page.locator("#panss-P1-1")).toBeChecked();
+  await expect(page.locator("#panss-preview-status")).toContainText(
+    "Incomplete",
+    { timeout: 15000 },
+  );
 });
 
 test("one missing item suppresses the total with Still needed guidance", async ({

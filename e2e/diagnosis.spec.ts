@@ -9,10 +9,12 @@ import {
   acknowledgeWarning,
 } from "./helpers";
 
-/* S09 diagnosis threshold/bypass/resume journeys (seam T9 browser; evaluator
+/* S09 diagnosis threshold journeys (seam T9 browser; evaluator
  * and HTTP enforcement covered by BT/assessments/test_diagnosis.py and not
  * duplicated here). The verdict always comes from the server preview — the
- * browser never computes criteria itself.
+ * browser never computes criteria itself. Continue (`#wizard-continue`)
+ * navigates regardless of completion; completion and acknowledgment govern
+ * proposal generation, not page navigation.
  *
  * Selectors used below are the handoff contract for the test agent:
  * - section heading "Diagnosis (step 2)"
@@ -28,9 +30,8 @@ import {
  * - criteria table `#diagnosis-criteria` (A–F rows, met/not_met/unknown)
  * - warning panel text "Completed below threshold", button
  *   "Acknowledge below-threshold result"
- * - bypass panel `.xi-bypass-panel` heading "Bypass instead of completing",
- *   button "Bypass diagnosis", bypassed state "Diagnosis bypassed"
- * - gate line "Can proceed to the next step: Yes — … / No"
+ * - legacy bypass state text "Diagnosis bypassed" (status only, seeded via
+ *   API; no Bypass button exists)
  */
 
 const REQUIRED_ITEMS = [
@@ -166,9 +167,6 @@ test("qualifying case shows every required criterion satisfied and can proceed",
   for (const criterion of ["A", "B", "C", "D", "E", "F"]) {
     await expect(criteria.getByRole("row", { name: new RegExp(`^${criterion} · .+ Met$`) })).toBeVisible();
   }
-  await expect(page.getByText("Can proceed to the next step:")).toContainText(
-    "Yes — criteria_satisfied",
-  );
   // No warning, no acknowledgment CTA on a satisfied result.
   await expect(page.getByText("Completed below threshold")).toHaveCount(0);
   await expect(
@@ -192,9 +190,6 @@ test("symptom-count-only case does not satisfy and requests acknowledgment", asy
   await expect(
     page.getByRole("button", { name: "Acknowledge below-threshold result" }),
   ).toBeVisible();
-  await expect(page.getByText("Can proceed to the next step:")).toContainText(
-    "No",
-  );
   // Criterion A met, but the full document is not satisfied.
   const criteria = page.locator("#diagnosis-criteria");
   await expect(criteria.getByRole("row", { name: /^A · .+ Met$/ })).toBeVisible();
@@ -220,9 +215,6 @@ test("partial answers save as incomplete, never below threshold", async ({
   await expect(
     page.getByRole("button", { name: "Acknowledge below-threshold result" }),
   ).toHaveCount(0);
-  await expect(page.getByText("Can proceed to the next step:")).toContainText(
-    "No",
-  );
   await expect(page.getByText("Still needed:")).toBeVisible();
 });
 
@@ -241,12 +233,9 @@ test("indeterminate answers neither proceed nor request acknowledgment", async (
   await expect(
     page.getByRole("button", { name: "Acknowledge below-threshold result" }),
   ).toHaveCount(0);
-  await expect(page.getByText("Can proceed to the next step:")).toContainText(
-    "No",
-  );
 });
 
-test("below-threshold acknowledgment gates proceed; relevant edit invalidates", async ({
+test("below-threshold acknowledgment is recorded; relevant edit invalidates", async ({
   page,
   request,
 }) => {
@@ -264,9 +253,6 @@ test("below-threshold acknowledgment gates proceed; relevant edit invalidates", 
     .getByRole("button", { name: "Acknowledge below-threshold result" })
     .click();
   await expect(verdict).toContainText("acknowledged", { timeout: 10000 });
-  await expect(page.getByText("Can proceed to the next step:")).toContainText(
-    "Yes — acknowledged_below_threshold",
-  );
   await expect(page.getByText(/Acknowledged by author/)).toBeVisible();
 
   // A relevant edit flips one answer: the stored acknowledgment no longer
@@ -278,51 +264,105 @@ test("below-threshold acknowledgment gates proceed; relevant edit invalidates", 
   await expect(
     page.getByRole("button", { name: "Acknowledge below-threshold result" }),
   ).toBeVisible();
-  await expect(page.getByText("Can proceed to the next step:")).toContainText(
-    "No",
-  );
 });
 
-test("bypass is distinct from completion, needs no reason, survives reload", async ({
+async function seedBypassApi(
+  request: import("@playwright/test").APIRequestContext,
+  physician: { username: string; password: string },
+  draftId: string,
+  revision = 1,
+): Promise<void> {
+  const csrf = await physicianSession(request, physician);
+  const response = await request.post(
+    `/api/v1/encounters/${draftId}/diagnosis/bypass`,
+    {
+      headers: {
+        "X-CSRF-Token": csrf,
+        "If-Match": `"${revision}"`,
+        "Idempotency-Key": `e2e${Date.now().toString(36)}${Math.random().toString(36).slice(2, 10)}`,
+      },
+      data: {},
+    },
+  );
+  expect(response.status(), await response.text()).toBe(200);
+}
+
+test("Continue navigates without completing; partial answers survive", async ({
   page,
   request,
 }) => {
-  const physician = await loginPhysician(page, request, "e2ediagbyp");
+  const physician = await loginPhysician(page, request, "e2ediagcont");
   const { draftId } = await createPatientWithDraft(request, physician);
 
   await page.goto(`/#/encounters/${draftId}`);
   await expect(
-    page.getByRole("heading", { name: "Bypass instead of completing" }),
+    page.getByRole("heading", { name: "Diagnosis (step 2)" }),
   ).toBeVisible();
 
-  // No reason field exists on the bypass command (empty-{} POST by contract).
-  const bypassPanel = page.locator(".xi-bypass-panel");
-  await expect(bypassPanel.getByRole("textbox")).toHaveCount(0);
-  await expect(bypassPanel.locator("input[type='text']")).toHaveCount(0);
-  await expect(bypassPanel.locator("textarea")).toHaveCount(0);
+  // Partial answers, then Continue with no acknowledgment or bypass.
+  await page.locator("#diag-a_delusions-yes").check();
+  await page.locator("#diag-a_hallucinations-yes").check();
+  await expect(page.locator("#diagnosis-preview-status")).toContainText(
+    "Incomplete",
+    { timeout: 15000 },
+  );
 
-  await bypassPanel.getByRole("button", { name: "Bypass diagnosis" }).click();
+  await page.locator("#wizard-continue").click();
+  await expect(
+    page.getByRole("heading", { name: "PANSS (step 3)" }),
+  ).toBeVisible();
+
+  // Back keeps the answers; visiting never created a bypass or acknowledgment.
+  await page.locator("#wizard-back").click();
+  await expect(
+    page.getByRole("heading", { name: "Diagnosis (step 2)" }),
+  ).toBeVisible();
+  await expect(page.locator("#diag-a_delusions-yes")).toBeChecked();
+  await expect(page.locator("#diag-a_hallucinations-yes")).toBeChecked();
+  await expect(page.locator("#diagnosis-preview-status")).toContainText(
+    "Incomplete",
+    { timeout: 15000 },
+  );
+  await expect(
+    page.locator("#diagnosis-preview-status"),
+  ).not.toContainText("Diagnosis bypassed");
+  await expect(
+    page.getByRole("button", { name: "Bypass diagnosis" }),
+  ).toHaveCount(0);
+});
+
+test("legacy bypass record shows status without a new bypass action", async ({
+  page,
+  request,
+}) => {
+  const physician = await loginPhysician(page, request, "e2ediaglegbyp");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  await seedBypassApi(request, physician, draftId);
+
+  await page.goto(`/#/encounters/${draftId}`);
   const verdict = page.locator("#diagnosis-preview-status");
   await expect(verdict).toContainText("Diagnosis bypassed", { timeout: 10000 });
-  await expect(page.getByText("Can proceed to the next step:")).toContainText(
-    "Yes — bypass",
-  );
+  // Status only: no control encourages a new bypass.
+  await expect(
+    page.getByRole("button", { name: "Bypass diagnosis" }),
+  ).toHaveCount(0);
+  await expect(
+    page.getByRole("heading", { name: "Bypass instead of completing" }),
+  ).toHaveCount(0);
   // Bypassed, not completed: no criteria table, no warning CTA.
   await expect(page.locator("#diagnosis-criteria")).toHaveCount(0);
   await expect(
     page.getByRole("button", { name: "Acknowledge below-threshold result" }),
   ).toHaveCount(0);
 
-  // Resume after reload: the record survives via the same draft_data body.
+  // Reload keeps the record; Continue still navigates.
   await page.reload();
   await expect(page.locator("#diagnosis-preview-status")).toContainText(
     "Diagnosis bypassed",
     { timeout: 10000 },
   );
-  await expect(page.getByText("Can proceed to the next step:")).toContainText(
-    "Yes — bypass",
-  );
+  await page.locator("#wizard-continue").click();
   await expect(
-    page.locator("#diag-a_delusions-yes"),
-  ).not.toBeChecked();
+    page.getByRole("heading", { name: "PANSS (step 3)" }),
+  ).toBeVisible();
 });

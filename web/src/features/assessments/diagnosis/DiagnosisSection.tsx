@@ -10,15 +10,15 @@
  * threshold display cannot drift from the released definition.
  *
  * Server-authoritative gates (read from the preview, never derived here):
- * - `can_proceed` / `requires_acknowledgment` / `proceed_via` decide the
- *   warning and acknowledgment UI. Partial work has no completed threshold
- *   result and is never mislabeled below-threshold; indeterminate (unknowns,
- *   no criterion failed) neither proceeds nor requests acknowledgment.
+ * - `requires_acknowledgment` decides the warning and acknowledgment UI;
+ *   acknowledgment validity gates proposal generation. Partial work has no
+ *   completed threshold result and is never mislabeled below-threshold;
+ *   indeterminate (unknowns, no criterion failed) requests no acknowledgment.
  * - Acknowledgment is an empty-{} POST tied to the assessed revision +
  *   answers hash; any later relevant edit invalidates it server-side, which
  *   the refreshed preview then shows (the stale record is kept, not hidden).
- * - Bypass is a separate empty-{} POST with no reason field, visually
- *   distinct from completion; the record survives resume via draft_data.
+ * - Bypass records remain readable as status only (no new bypass action);
+ *   the record survives resume via draft_data.
  *
  * Accessibility: native fieldset/legend + radios (keyboard free), error
  * summary takes focus on action failure, preview verdict is role=status,
@@ -33,8 +33,7 @@
  * - criteria table `#diagnosis-criteria`
  * - warning panel text "Completed below threshold", button
  *   "Acknowledge below-threshold result"
- * - bypass panel heading "Bypass instead of completing", button
- *   "Bypass diagnosis", bypassed state text "Diagnosis bypassed"
+ * - bypassed state text "Diagnosis bypassed" (status only, no action)
  */
 
 import "./diagnosis.css";
@@ -48,7 +47,6 @@ import {
 import type { useAutosave } from "../../encounters/useAutosave";
 import {
   acknowledgeDiagnosis,
-  bypassDiagnosis,
   getDiagnosis,
   getDiagnosisDefinition,
   type DiagnosisAnswer,
@@ -121,7 +119,7 @@ export function DiagnosisSection({
   const [preview, setPreview] = useState<DiagnosisPreview | null>(null);
   const [previewLoading, setPreviewLoading] = useState(true);
   const [previewError, setPreviewError] = useState<string | null>(null);
-  const [busy, setBusy] = useState<"acknowledge" | "bypass" | null>(null);
+  const [busy, setBusy] = useState<"acknowledge" | null>(null);
   const [actionError, setActionError] = useState<string | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
   const actionErrorRef = useRef<HTMLParagraphElement>(null);
@@ -277,42 +275,6 @@ export function DiagnosisSection({
     }
   }
 
-  async function handleBypass(): Promise<void> {
-    if (busy !== null) {
-      return;
-    }
-    setActionError(null);
-    setNotice(null);
-    setBusy("bypass");
-    try {
-      const current = await currentRevision();
-      const result = await bypassDiagnosis(encounterId, current.revision);
-      await syncEditorToServer();
-      setPreview(result);
-    } catch (err) {
-      if (err instanceof ApiError && err.status === 401) {
-        onSessionExpired();
-        return;
-      }
-      if (err instanceof ApiError && err.status === 412) {
-        await autosave.reloadTruth();
-        await refreshPreview();
-        setActionError(
-          "The draft changed in another tab. Loaded the latest state — review and retry.",
-        );
-        return;
-      }
-      if (err instanceof ApiError && (err.status === 409 || err.status === 422)) {
-        await refreshPreview();
-        setActionError(err.message);
-        return;
-      }
-      setActionError(describeFailure(err));
-    } finally {
-      setBusy(null);
-    }
-  }
-
   const evaluation = preview?.evaluation ?? null;
   const overall = evaluation?.findings.overall;
   const criteria = evaluation?.findings.criteria ?? null;
@@ -325,24 +287,24 @@ export function DiagnosisSection({
   } else if (preview.bypass_valid) {
     verdict = "Diagnosis bypassed. Bypass is not a completed assessment.";
   } else if (evaluation?.status === "complete" && overall === "criteria_satisfied") {
-    verdict = `Every required criterion satisfied (server evaluation ${preview.definition_version}). This step can proceed.`;
+    verdict = `Every required criterion satisfied (server evaluation ${preview.definition_version}).`;
   } else if (
     evaluation?.status === "complete" &&
     overall === "below_threshold" &&
     preview.requires_acknowledgment
   ) {
     verdict =
-      "Completed below threshold. Continuing needs your attributed acknowledgment of this exact assessment.";
+      "Completed below threshold. Proposal generation requires your attributed acknowledgment of this exact assessment — use the acknowledgment action below.";
   } else if (
     evaluation?.status === "complete" &&
     overall === "below_threshold" &&
     preview.acknowledgment_valid
   ) {
     verdict =
-      "Completed below threshold and acknowledged. This step can proceed via the acknowledgment below.";
+      "Completed below threshold and acknowledged.";
   } else if (evaluation?.status === "complete") {
     verdict =
-      "Indeterminate: every required item is answered but some criteria are still unknown and none failed. This is incomplete — it cannot proceed and needs no acknowledgment.";
+      "Indeterminate: every required item is answered but some criteria are still unknown and none failed. This is incomplete and needs no acknowledgment.";
   } else if (evaluation?.status === "partial") {
     const missing = evaluation.missing_item_ids.length;
     verdict = `Incomplete — ${missing} required item${missing === 1 ? "" : "s"} still need${missing === 1 ? "s" : ""} an answer. Saved as incomplete; this is not a below-threshold result and needs no acknowledgment.`;
@@ -557,8 +519,9 @@ export function DiagnosisSection({
                 <p style={{ marginTop: 0 }}>
                   At least one required criterion is not met (server
                   evaluation {preview.definition_version}, saved revision{" "}
-                  {preview.revision}). Continuing past this step records your
-                  attributed acknowledgment of this exact assessment. Any later
+                  {preview.revision}). Acknowledgment is a separate recorded
+                  action required before proposal generation — continuing to
+                  the next step does not record it. Any later
                   change to these answers invalidates the acknowledgment.
                 </p>
                 <button
@@ -583,52 +546,26 @@ export function DiagnosisSection({
               </p>
             )}
 
-            <p className="xi-hint">
-              Can proceed to the next step:{" "}
-              {preview.can_proceed
-                ? `Yes — ${preview.proceed_via}`
-                : "No"}
-            </p>
           </div>
         )}
       </div>
 
-      <div className="xi-bypass-panel" aria-labelledby="diagnosis-bypass-heading">
-        <h4 id="diagnosis-bypass-heading" style={{ margin: "0 0 8px" }}>
-          Bypass instead of completing
-        </h4>
-        {preview?.bypass_valid === true && preview.bypass !== null ? (
-          <p style={{ marginTop: 0 }}>
-            Diagnosis bypassed — recorded for author {preview.bypass.actor_id}{" "}
-            at {preview.bypass.bypassed_at} (revision {preview.bypass.revision}).
-            Bypass is distinct from completion: it is not a completed
-            assessment and carries no reason.
-          </p>
-        ) : (
-          <div>
-            <p style={{ marginTop: 0 }}>
-              Continue without completing this assessment. This clears the
-              responses and records who bypassed it and when. No reason is required.
-            </p>
-            {preview !== null &&
-              preview.bypass !== null &&
-              !preview.bypass_valid && (
-              <p style={{ marginTop: 0 }}>
-                A previous bypass no longer applies because answers were added
-                afterwards.
-              </p>
-            )}
-            <button
-              className="xi-btn xi-btn-secondary"
-              type="button"
-              disabled={busy !== null || definition === null}
-              onClick={() => void handleBypass()}
-            >
-              {busy === "bypass" ? "Bypassing…" : "Bypass diagnosis"}
-            </button>
-          </div>
-        )}
-      </div>
+      {preview?.bypass_valid === true && preview.bypass !== null && (
+        <p className="xi-hint">
+          Diagnosis bypassed — recorded for author {preview.bypass.actor_id}{" "}
+          at {preview.bypass.bypassed_at} (revision {preview.bypass.revision}).
+          Bypass is distinct from completion: it is not a completed
+          assessment and carries no reason.
+        </p>
+      )}
+      {preview !== null &&
+        preview.bypass !== null &&
+        !preview.bypass_valid && (
+        <p className="xi-hint">
+          A previous bypass no longer applies because answers were added
+          afterwards.
+        </p>
+      )}
 
       </aside>
       </div>

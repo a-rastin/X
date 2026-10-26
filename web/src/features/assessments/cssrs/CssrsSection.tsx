@@ -11,9 +11,10 @@
  * yes / no / unknown. A missing saved answer selects Unknown and, when the
  * section is not skipped, is persisted as "unknown". An explicit yes or no
  * is left as stored. A higher-level yes does not change any other item.
- * Skip writes `{"__skipped": true}` (evaluates to not_assessed) and the five
- * items are not shown as required while skipped. Resume clears the skip and
- * returns each item without an explicit yes or no to Unknown.
+ * A legacy skip record is `{"__skipped": true}` (evaluates to
+ * not_assessed) and the five items are not shown as required while skipped.
+ * Resume clears the skip and returns each item without an explicit yes or
+ * no to Unknown. There is no Skip control.
  *
  * The definition payload may still list other items or value_type yes_no.
  * Only these five prompts are rendered; a missing prompt keeps the wording
@@ -44,8 +45,8 @@
  * - scores `#cssrs-scores` (recent ideation severity only)
  * - flags container `#cssrs-flags`; urgent panel `#cssrs-high-risk-alert`
  *   (role=alert); review panel `#cssrs-clinical-review`
- * - skip button "Skip C-SSRS (not assessed)"
- * - resume button "Resume C-SSRS (clear skip)"
+ * - legacy skip shows "not assessed" with a "Resume C-SSRS (clear skip)"
+ *   recovery action (no Skip button)
  * - still-needed list `#cssrs-still-needed` (these five items only)
  */
 
@@ -289,10 +290,6 @@ export function CssrsSection({
       return;
     }
     setDraftValue("cssrs", { answers: answeredItems(answers, itemId, value) });
-  }
-
-  function handleSkip(): void {
-    setDraftValue("cssrs", { answers: { __skipped: true } });
   }
 
   function handleResume(): void {
@@ -644,9 +641,9 @@ export function CssrsSection({
               </div>
             )}
           </div>
-          <div className="xi-assessment-skip">
-            <div className="xi-row-actions" style={{ marginTop: 8 }}>
-              {skipped ? (
+          {skipped && (
+            <div className="xi-assessment-skip">
+              <div className="xi-row-actions" style={{ marginTop: 8 }}>
                 <button
                   className="xi-btn xi-btn-secondary"
                   type="button"
@@ -654,22 +651,12 @@ export function CssrsSection({
                 >
                   Resume C-SSRS (clear skip)
                 </button>
-              ) : (
-                <button
-                  className="xi-btn xi-btn-secondary"
-                  type="button"
-                  onClick={handleSkip}
-                >
-                  Skip C-SSRS (not assessed)
-                </button>
-              )}
+              </div>
+              <p className="xi-hint">
+                Not assessed. Resume to start answering.
+              </p>
             </div>
-            <p className="xi-hint">
-              {skipped
-                ? "Not assessed. Resume to start answering."
-                : "Skipping clears all answers in this assessment and records it as not assessed."}
-            </p>
-          </div>
+          )}
         </aside>
       </div>
     </section>

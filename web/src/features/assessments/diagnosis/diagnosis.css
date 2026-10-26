@@ -243,17 +243,6 @@
   padding: 10px 4px;
   font-size: 12px;
 }
-.xi-diagnosis-review .xi-bypass-panel {
-  margin-top: 24px;
-  padding: 0;
-  background: none;
-  border: 0;
-  font-size: 13px;
-  line-height: 1.65;
-}
-.xi-diagnosis-review .xi-bypass-panel h4 {
-  font-size: 14px;
-}
 .xi-diagnosis-review .xi-btn {
   white-space: normal;
 }

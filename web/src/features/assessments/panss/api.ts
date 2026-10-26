@@ -14,8 +14,9 @@
  *   T2 evaluate() as the backend;
  * - answers travel through the shared S07 autosave PATCH
  *   (draft_data["panss"]["answers"]) — see features/encounters/api.ts.
- * - Skip is answers {"__skipped": true} (evaluates to not_assessed). There
- *   is no ack/bypass, no new migration, no treatment gate from score bands.
+ * - A legacy skip record is answers {"__skipped": true} (evaluates to
+ *   not_assessed). There is no ack/bypass, no new migration, no treatment
+ *   gate from score bands.
  */
 
 import { ApiError } from "../../identity/api";

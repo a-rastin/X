@@ -678,8 +678,8 @@ a.xi-btn-secondary {
   font-size: 14px;
 }
 
-/* S09 diagnosis states: warning (below-threshold acknowledgment) and bypass.
- * Both pair the state color with an explicit heading + text (never color
+/* S09 diagnosis warning state (below-threshold acknowledgment).
+ * It pairs the state color with an explicit heading + text (never color
  * alone), use ink text on tinted backgrounds in both themes, and stay
  * visible until the server state changes — urgent information never
  * disappears automatically. */
@@ -695,19 +695,7 @@ a.xi-btn-secondary {
   font-size: 14px;
 }
 
-.xi-bypass-panel {
-  border: 1px solid var(--info);
-  border-left-width: 6px;
-  background: var(--info-bg);
-  color: var(--ink);
-  border-radius: var(--radius-md);
-  padding: var(--space-3) var(--space-4);
-  margin-top: var(--space-4);
-  font-size: 14px;
-}
-
-/* S10 PANSS informational panel (total band + historical note): mirrors
- * .xi-bypass-panel — info color paired with explicit text (never color
+/* S10 PANSS informational panel (total band + historical note): info color paired with explicit text (never color
  * alone), ink text on tinted background in both themes. Bands are
  * informational only, never a treatment gate. */
 .xi-panss-panel {

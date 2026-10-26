@@ -15,9 +15,9 @@
  *   backend. Older preview fields are ignored by the page;
  * - answers travel through the shared S07 autosave PATCH
  *   (draft_data["cssrs"]["answers"]) — see features/encounters/api.ts.
- * - Skip is answers {"__skipped": true} (evaluates to not_assessed). There
- *   is no ack/bypass, no new migration, no composite risk score, no
- *   treatment gate.
+ * - A legacy skip record is answers {"__skipped": true} (evaluates to
+ *   not_assessed). There is no ack/bypass, no new migration, no composite
+ *   risk score, no treatment gate.
  */
 
 import { ApiError } from "../../identity/api";

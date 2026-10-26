@@ -114,6 +114,26 @@ async function createFollowup(
   return (await response.json()).encounter.id as string;
 }
 
+async function seedCssrsAnswersApi(
+  request: import("@playwright/test").APIRequestContext,
+  physician: { username: string; password: string },
+  draftId: string,
+  answers: Record<string, unknown>,
+): Promise<number> {
+  const csrf = await physicianSession(request, physician);
+  const current = await request.get(`/api/v1/encounters/${draftId}`, {
+    headers: { "X-CSRF-Token": csrf },
+  });
+  expect(current.status(), await current.text()).toBe(200);
+  const revision = ((await current.json()).revision as number) ?? 1;
+  const saved = await request.patch(`/api/v1/encounters/${draftId}`, {
+    headers: { "X-CSRF-Token": csrf, "If-Match": `"${revision}"` },
+    data: { draft_data: { cssrs: { answers } } },
+  });
+  expect(saved.status(), await saved.text()).toBe(200);
+  return (await saved.json()).revision as number;
+}
+
 async function gotoCssrs(
   page: import("@playwright/test").Page,
   draftId: string,
@@ -313,23 +333,23 @@ test("yes on ideation 4 or 5 shows the high-risk alert and recent severity only"
   await expectRecentIdeationOnly(page);
 });
 
-test("skip is not assessed and resume returns every item to Unknown", async ({
+test("legacy skip shows not assessed; Resume returns every item to Unknown", async ({
   page,
   request,
 }) => {
   const physician = await loginPhysician(page, request, "e2ecssrsskip");
   const { draftId } = await createPatientWithDraft(request, physician);
-  await gotoCssrs(page, draftId, "C-SSRS (step 4)");
-  await page.locator("#cssrs-css_i1_recent-yes").check();
-  await expect(page.locator("#draft-save-status")).toContainText("Saved", {
-    timeout: 15000,
-  });
+  await seedCssrsAnswersApi(request, physician, draftId, { __skipped: true });
 
-  await page.getByRole("button", { name: "Skip C-SSRS (not assessed)" }).click();
+  await gotoCssrs(page, draftId, "C-SSRS (step 4)");
   const verdict = page.locator("#cssrs-preview-status");
   await expect(verdict).toContainText("not assessed", { timeout: 15000 });
   await expect(verdict).toContainText("No severity is reported");
   await expect(page.locator("#cssrs-scores")).toHaveCount(0);
+  // No control offers a new skip; only the legacy recovery action exists.
+  await expect(
+    page.getByRole("button", { name: "Skip C-SSRS (not assessed)" }),
+  ).toHaveCount(0);
   await expect(
     page.getByRole("button", { name: "Resume C-SSRS (clear skip)" }),
   ).toBeVisible();
@@ -351,7 +371,7 @@ test("skip is not assessed and resume returns every item to Unknown", async ({
   );
   await expect(
     page.getByRole("button", { name: "Skip C-SSRS (not assessed)" }),
-  ).toBeVisible();
+  ).toHaveCount(0);
 });
 
 test("leaving the page keeps answers and does not turn skip into a negative screen", async ({
@@ -379,15 +399,17 @@ test("leaving the page keeps answers and does not turn skip into a negative scre
     { timeout: 15000 },
   );
 
-  await page.getByRole("button", { name: "Skip C-SSRS (not assessed)" }).click();
-  await expect(page.locator("#cssrs-preview-status")).toContainText(
-    "not assessed",
-    { timeout: 15000 },
-  );
-  await page.getByRole("link", { name: "Back to directory" }).click();
-  await expect(page).toHaveURL(/#\/patients/);
+  // Continue navigates without clearing answers or manufacturing a screen.
+  await page.locator("#wizard-continue").click();
+  await expect(page.getByRole("heading", { name: "History (step 5)" })).toBeVisible();
+  await page.locator("#wizard-back").click();
+  await expect(page.locator("#cssrs-heading")).toHaveText("C-SSRS (step 4)");
+  await expect(page.locator("#cssrs-css_i2_recent-yes")).toBeChecked();
 
-  await gotoCssrs(page, draftId, "C-SSRS (step 4)");
+  // A legacy skip seeded afterwards still reads as not assessed — never a
+  // negative screen — with Resume recovery and no new Skip control.
+  await seedCssrsAnswersApi(request, physician, draftId, { __skipped: true });
+  await page.reload();
   await expect(page.locator("#cssrs-preview-status")).toContainText(
     "not assessed",
     { timeout: 15000 },
@@ -399,6 +421,9 @@ test("leaving the page keeps answers and does not turn skip into a negative scre
   await expect(
     page.getByRole("button", { name: "Resume C-SSRS (clear skip)" }),
   ).toBeVisible();
+  await expect(
+    page.getByRole("button", { name: "Skip C-SSRS (not assessed)" }),
+  ).toHaveCount(0);
 });
 
 test("recent severity 3 survives reload and re-login", async ({

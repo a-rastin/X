@@ -10,8 +10,9 @@
  * released definition (panss.v1, no owner review).
  *
  * Explicit selection only: nothing is pre-filled, no default 1s, no hidden
- * zeros. A fresh form is 30 unanswered items with null scores. Skip writes
- * `{"__skipped": true}` (evaluates to not_assessed). The total appears only
+ * zeros. A fresh form is 30 unanswered items with null scores. A legacy
+ * skip record is `{"__skipped": true}` (evaluates to not_assessed); it stays
+ * readable with a Resume recovery action and no new Skip control. The total appears only
  * when all 30 items are valid; one missing item suppresses the total to
  * null. Total bands are informational only — never a treatment gate.
  *
@@ -34,7 +35,8 @@
  * - radios `#panss-{P1..G16}-{1..7}` (name `panss-{itemId}`)
  * - verdict `#panss-preview-status` (aria-live)
  * - scores `#panss-scores`
- * - skip button "Skip PANSS (not assessed)"
+ * - legacy skip shows "not assessed" with a "Resume PANSS (clear skip)"
+ *   recovery action (no Skip button)
  * - still-needed list `#panss-still-needed`
  */
 
@@ -182,10 +184,6 @@ export function PanssSection({
     autosave.setDraftValue("panss", {
       answers: { ...rest, [itemId]: value },
     });
-  }
-
-  function handleSkip(): void {
-    autosave.setDraftValue("panss", { answers: { __skipped: true } });
   }
 
   function handleResume(): void {
@@ -453,29 +451,20 @@ export function PanssSection({
           </div>
         )}
       </div>
-      <div className="xi-assessment-skip">
-      <div className="xi-row-actions" style={{ marginTop: 8 }}>
-        {skipped ? (
-          <button
-            className="xi-btn xi-btn-secondary"
-            type="button"
-            onClick={handleResume}
-          >
-            Resume PANSS (clear skip)
-          </button>
-        ) : (
-          <button
-            className="xi-btn xi-btn-secondary"
-            type="button"
-            disabled={definition === null}
-            onClick={handleSkip}
-          >
-            Skip PANSS (not assessed)
-          </button>
-        )}
-      </div>
-      <p className="xi-hint">{skipped ? "Not assessed. Resume to start answering." : "Skipping clears all answers in this assessment and records it as not assessed."}</p>
-      </div>
+      {skipped && (
+        <div className="xi-assessment-skip">
+          <div className="xi-row-actions" style={{ marginTop: 8 }}>
+            <button
+              className="xi-btn xi-btn-secondary"
+              type="button"
+              onClick={handleResume}
+            >
+              Resume PANSS (clear skip)
+            </button>
+          </div>
+          <p className="xi-hint">Not assessed. Resume to start answering.</p>
+        </div>
+      )}
       </aside>
       </div>
     </section>

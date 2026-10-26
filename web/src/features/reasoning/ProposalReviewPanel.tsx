@@ -530,7 +530,7 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
       return null;
     }
     if (diag.requires_acknowledgment && !diag.acknowledgment_valid && !diag.bypass_valid) {
-      throw new Error("Review Diagnosis and acknowledge the below-threshold result or use the available bypass before generation.");
+      throw new Error("Review Diagnosis and acknowledge the below-threshold result before generation.");
     }
     if (meds.reconciliation?.status === "pending") {
       throw new Error("Reconcile the copied list in Medications before generation.");
@@ -626,7 +626,7 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
       setPhase({
         kind: "blocked",
         message:
-          "Diagnosis is completed below threshold without a valid acknowledgment or bypass. Generation stays off until the Diagnosis step is acknowledged or bypassed.",
+          "Diagnosis is completed below threshold without a valid acknowledgment. Generation stays off until the Diagnosis step is acknowledged.",
       });
       return;
     }
