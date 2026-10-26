@@ -12,9 +12,16 @@ import {
 /* S09 diagnosis threshold journeys (seam T9 browser; evaluator
  * and HTTP enforcement covered by BT/assessments/test_diagnosis.py and not
  * duplicated here). The verdict always comes from the server preview — the
- * browser never computes criteria itself. Continue (`#wizard-continue`)
- * navigates regardless of completion; completion and acknowledgment govern
- * proposal generation, not page navigation.
+ * browser never computes criteria itself. Registration Diagnosis Continue
+ * (`#wizard-continue`, an action button on that step only) saves first,
+ * then navigates directly only for a complete criteria-satisfied server
+ * evaluation; every other state opens a confirmation dialog ("The current
+ * assessment does not confirm the diagnosis. Do you want to continue to
+ * PANSS anyway?") where only "Continue to PANSS anyway" navigates.
+ * Completion and acknowledgment govern proposal generation, not page
+ * navigation: confirming never calls bypass/acknowledgment and never
+ * writes a skip sentinel. Follow-up Diagnosis Continue keeps the plain
+ * pager link (no check).
  *
  * Selectors used below are the handoff contract for the test agent:
  * - section heading "Diagnosis (step 2)"
@@ -32,6 +39,8 @@ import {
  *   "Acknowledge below-threshold result"
  * - legacy bypass state text "Diagnosis bypassed" (status only, seeded via
  *   API; no Bypass button exists)
+ * - continue dialog text "The current assessment does not confirm the
+ *   diagnosis", buttons "Return to diagnosis" / "Continue to PANSS anyway"
  */
 
 const REQUIRED_ITEMS = [
@@ -85,6 +94,15 @@ function indeterminateAnswers(): Record<string, string> {
   return answers;
 }
 
+/** Explicit all-Unknown: complete but indeterminate, never below threshold. */
+function allUnknownAnswers(): Record<string, string> {
+  const answers: Record<string, string> = {};
+  for (const id of REQUIRED_ITEMS) {
+    answers[id] = "unknown";
+  }
+  return answers;
+}
+
 async function loginPhysician(
   page: import("@playwright/test").Page,
   request: import("@playwright/test").APIRequestContext,
@@ -101,7 +119,7 @@ async function loginPhysician(
 async function createPatientWithDraft(
   request: import("@playwright/test").APIRequestContext,
   physician: { username: string; password: string },
-): Promise<{ draftId: string }> {
+): Promise<{ draftId: string; patientId: string }> {
   const csrf = await physicianSession(request, physician);
   const key = `e2e${Date.now().toString(36)}${Math.random().toString(36).slice(2, 10)}`;
   const create = await request.post("/api/v1/patients", {
@@ -117,7 +135,7 @@ async function createPatientWithDraft(
   });
   expect(create.status(), await create.text()).toBe(201);
   const body = await create.json();
-  return { draftId: body.draft.id as string };
+  return { draftId: body.draft.id as string, patientId: body.patient.id as string };
 }
 
 async function seedAnswersApi(
@@ -287,7 +305,82 @@ async function seedBypassApi(
   expect(response.status(), await response.text()).toBe(200);
 }
 
-test("Continue navigates without completing; partial answers survive", async ({
+async function seedAcknowledgmentApi(
+  request: import("@playwright/test").APIRequestContext,
+  physician: { username: string; password: string },
+  draftId: string,
+  revision: number,
+): Promise<void> {
+  const csrf = await physicianSession(request, physician);
+  const response = await request.post(
+    `/api/v1/encounters/${draftId}/diagnosis/acknowledgment`,
+    {
+      headers: {
+        "X-CSRF-Token": csrf,
+        "If-Match": `"${revision}"`,
+        "Idempotency-Key": `e2e${Date.now().toString(36)}${Math.random().toString(36).slice(2, 10)}`,
+      },
+      data: {},
+    },
+  );
+  expect(response.status(), await response.text()).toBe(200);
+}
+
+async function readDiagnosisApi(
+  request: import("@playwright/test").APIRequestContext,
+  physician: { username: string; password: string },
+  draftId: string,
+): Promise<Record<string, unknown>> {
+  const csrf = await physicianSession(request, physician);
+  const response = await request.get(`/api/v1/encounters/${draftId}/diagnosis`, {
+    headers: { "X-CSRF-Token": csrf },
+  });
+  expect(response.status(), await response.text()).toBe(200);
+  return (await response.json()) as Record<string, unknown>;
+}
+
+/** Registration occupies the one-open-draft slot: discard it, then open a
+ * follow-up draft for the same patient. */
+async function createFollowupDraft(
+  request: import("@playwright/test").APIRequestContext,
+  physician: { username: string; password: string },
+  patientId: string,
+  draftId: string,
+): Promise<string> {
+  let csrf = await physicianSession(request, physician);
+  const discard = await request.post(`/api/v1/encounters/${draftId}/discard`, {
+    headers: { "X-CSRF-Token": csrf, "If-Match": `"1"` },
+    data: { confirm: true },
+  });
+  expect(discard.status(), await discard.text()).toBe(200);
+  csrf = await physicianSession(request, physician);
+  const response = await request.post(`/api/v1/patients/${patientId}/encounters`, {
+    headers: {
+      "X-CSRF-Token": csrf,
+      "Idempotency-Key": `e2e${Date.now().toString(36)}${Math.random().toString(36).slice(2, 10)}`,
+    },
+    data: { kind: "follow_up" },
+  });
+  expect(response.status(), await response.text()).toBe(201);
+  return (await response.json()).encounter.id as string;
+}
+
+const CONTINUE_DIALOG_TEXT =
+  "The current assessment does not confirm the diagnosis. Do you want to continue to PANSS anyway?";
+
+async function expectContinueDialog(
+  page: import("@playwright/test").Page,
+): Promise<void> {
+  await expect(page.getByText(CONTINUE_DIALOG_TEXT)).toBeVisible();
+  await expect(
+    page.getByRole("button", { name: "Return to diagnosis" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("button", { name: "Continue to PANSS anyway" }),
+  ).toBeVisible();
+}
+
+test("partial answers require confirmation; cancel/escape stay, confirm navigates", async ({
   page,
   request,
 }) => {
@@ -307,7 +400,34 @@ test("Continue navigates without completing; partial answers survive", async ({
     { timeout: 15000 },
   );
 
+  // The warning appears and the page stays on Diagnosis.
   await page.locator("#wizard-continue").click();
+  await expectContinueDialog(page);
+  await expect(
+    page.getByRole("heading", { name: "Diagnosis (step 2)" }),
+  ).toBeVisible();
+
+  // Return dismisses the dialog, stays, and restores Continue focus.
+  await page.getByRole("button", { name: "Return to diagnosis" }).click();
+  await expect(page.getByText(CONTINUE_DIALOG_TEXT)).toHaveCount(0);
+  await expect(
+    page.getByRole("heading", { name: "Diagnosis (step 2)" }),
+  ).toBeVisible();
+  await expect(page.locator("#wizard-continue")).toBeFocused();
+
+  // Escape also dismisses without navigating.
+  await page.locator("#wizard-continue").click();
+  await expectContinueDialog(page);
+  await page.keyboard.press("Escape");
+  await expect(page.getByText(CONTINUE_DIALOG_TEXT)).toHaveCount(0);
+  await expect(
+    page.getByRole("heading", { name: "Diagnosis (step 2)" }),
+  ).toBeVisible();
+
+  // Only explicit confirmation navigates.
+  await page.locator("#wizard-continue").click();
+  await expectContinueDialog(page);
+  await page.getByRole("button", { name: "Continue to PANSS anyway" }).click();
   await expect(
     page.getByRole("heading", { name: "PANSS (step 3)" }),
   ).toBeVisible();
@@ -329,6 +449,242 @@ test("Continue navigates without completing; partial answers survive", async ({
   await expect(
     page.getByRole("button", { name: "Bypass diagnosis" }),
   ).toHaveCount(0);
+  const preview = await readDiagnosisApi(request, physician, draftId);
+  expect(preview["acknowledgment"]).toBeNull();
+  expect(preview["bypass"]).toBeNull();
+  expect(preview["acknowledgment_valid"]).toBe(false);
+  expect(preview["bypass_valid"]).toBe(false);
+
+  // Confirmation is transient: continuing again rechecks and asks again.
+  await page.locator("#wizard-continue").click();
+  await expectContinueDialog(page);
+});
+
+test("untouched diagnosis requires confirmation; cancel stays, confirm navigates", async ({
+  page,
+  request,
+}) => {
+  const physician = await loginPhysician(page, request, "e2ediagfresh");
+  const { draftId } = await createPatientWithDraft(request, physician);
+
+  // Fresh draft: revision 1, zero answers, no seeding.
+  await page.goto(`/#/encounters/${draftId}`);
+  await expect(
+    page.getByRole("heading", { name: "Diagnosis (step 2)" }),
+  ).toBeVisible();
+  await expect(page.locator("#diagnosis-preview-status")).toContainText(
+    "No answers yet",
+    { timeout: 15000 },
+  );
+
+  // The warning appears and the page stays on Diagnosis.
+  await page.locator("#wizard-continue").click();
+  await expectContinueDialog(page);
+  await expect(
+    page.getByRole("heading", { name: "Diagnosis (step 2)" }),
+  ).toBeVisible();
+
+  // Return dismisses, stays, and restores Continue focus.
+  await page.getByRole("button", { name: "Return to diagnosis" }).click();
+  await expect(page.getByText(CONTINUE_DIALOG_TEXT)).toHaveCount(0);
+  await expect(
+    page.getByRole("heading", { name: "Diagnosis (step 2)" }),
+  ).toBeVisible();
+  await expect(page.locator("#wizard-continue")).toBeFocused();
+
+  // Only explicit confirmation navigates.
+  await page.locator("#wizard-continue").click();
+  await expectContinueDialog(page);
+  await page.getByRole("button", { name: "Continue to PANSS anyway" }).click();
+  await expect(
+    page.getByRole("heading", { name: "PANSS (step 3)" }),
+  ).toBeVisible();
+
+  // Confirming wrote no bypass, skip, or clinical acknowledgment.
+  const preview = await readDiagnosisApi(request, physician, draftId);
+  expect(preview["acknowledgment"]).toBeNull();
+  expect(preview["bypass"]).toBeNull();
+  expect(preview["acknowledgment_valid"]).toBe(false);
+  expect(preview["bypass_valid"]).toBe(false);
+});
+
+test("diagnosis check failure stays with retry, no navigation", async ({
+  page,
+  request,
+}) => {
+  const physician = await loginPhysician(page, request, "e2ediagchkfail");
+  const { draftId } = await createPatientWithDraft(request, physician);
+
+  await page.goto(`/#/encounters/${draftId}`);
+  await expect(
+    page.getByRole("heading", { name: "Diagnosis (step 2)" }),
+  ).toBeVisible();
+  await expect(page.locator("#diagnosis-preview-status")).toContainText(
+    "No answers yet",
+    { timeout: 15000 },
+  );
+
+  // Fail the guarded Continue's preview read after the save barrier passes.
+  await page.route(
+    `**/api/v1/encounters/${draftId}/diagnosis`,
+    (route) =>
+      route.fulfill({
+        status: 500,
+        contentType: "application/json",
+        body: JSON.stringify({ message: "Synthetic diagnosis failure" }),
+      }),
+  );
+  try {
+    await page.locator("#wizard-continue").click();
+    // Stays on Diagnosis with a retryable error: no dialog, no navigation.
+    await expect(
+      page.getByRole("heading", { name: "Diagnosis (step 2)" }),
+    ).toBeVisible();
+    await expect(page.getByText(/Synthetic diagnosis failure/)).toBeVisible({
+      timeout: 15000,
+    });
+    await expect(
+      page.getByRole("button", { name: "Retry" }),
+    ).toBeVisible();
+    await expect(page.getByText(CONTINUE_DIALOG_TEXT)).toHaveCount(0);
+    await expect(
+      page.getByRole("heading", { name: "PANSS (step 3)" }),
+    ).toHaveCount(0);
+  } finally {
+    await page.unroute(`**/api/v1/encounters/${draftId}/diagnosis`);
+  }
+
+  // Retry after recovery rechecks and asks again (still nonconfirming).
+  await page.getByRole("button", { name: "Retry" }).click();
+  await expectContinueDialog(page);
+  await expect(
+    page.getByRole("heading", { name: "Diagnosis (step 2)" }),
+  ).toBeVisible();
+});
+
+test("satisfied result continues directly without confirmation", async ({
+  page,
+  request,
+}) => {
+  const physician = await loginPhysician(page, request, "e2ediagsat");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  await seedAnswersApi(request, physician, draftId, qualifyingAnswers());
+
+  await page.goto(`/#/encounters/${draftId}`);
+  await expect(page.locator("#diagnosis-preview-status")).toContainText(
+    "Every required criterion satisfied",
+    { timeout: 15000 },
+  );
+
+  await page.locator("#wizard-continue").click();
+  await expect(
+    page.getByRole("heading", { name: "PANSS (step 3)" }),
+  ).toBeVisible();
+  await expect(page.getByText(CONTINUE_DIALOG_TEXT)).toHaveCount(0);
+});
+
+test("explicit all-Unknown answers require confirmation", async ({
+  page,
+  request,
+}) => {
+  const physician = await loginPhysician(page, request, "e2ediagunk");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  await seedAnswersApi(request, physician, draftId, allUnknownAnswers());
+
+  await page.goto(`/#/encounters/${draftId}`);
+  await expect(page.locator("#diagnosis-preview-status")).toContainText(
+    "Indeterminate",
+    { timeout: 15000 },
+  );
+
+  await page.locator("#wizard-continue").click();
+  await expectContinueDialog(page);
+  await page.getByRole("button", { name: "Continue to PANSS anyway" }).click();
+  await expect(
+    page.getByRole("heading", { name: "PANSS (step 3)" }),
+  ).toBeVisible();
+});
+
+test("indeterminate answers require confirmation", async ({
+  page,
+  request,
+}) => {
+  const physician = await loginPhysician(page, request, "e2ediagindc");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  await seedAnswersApi(request, physician, draftId, indeterminateAnswers());
+
+  await page.goto(`/#/encounters/${draftId}`);
+  await expect(page.locator("#diagnosis-preview-status")).toContainText(
+    "Indeterminate",
+    { timeout: 15000 },
+  );
+
+  await page.locator("#wizard-continue").click();
+  await expectContinueDialog(page);
+  await page.getByRole("button", { name: "Continue to PANSS anyway" }).click();
+  await expect(
+    page.getByRole("heading", { name: "PANSS (step 3)" }),
+  ).toBeVisible();
+});
+
+test("completed below-threshold answers require confirmation", async ({
+  page,
+  request,
+}) => {
+  const physician = await loginPhysician(page, request, "e2ediagbel");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  await seedAnswersApi(request, physician, draftId, symptomOnlyAnswers());
+
+  await page.goto(`/#/encounters/${draftId}`);
+  await expect(page.locator("#diagnosis-preview-status")).toContainText(
+    "Completed below threshold",
+    { timeout: 15000 },
+  );
+
+  await page.locator("#wizard-continue").click();
+  await expectContinueDialog(page);
+  // Cancel stays on Diagnosis; the clinical acknowledgment CTA is unchanged.
+  await page.getByRole("button", { name: "Return to diagnosis" }).click();
+  await expect(
+    page.getByRole("heading", { name: "Diagnosis (step 2)" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("button", { name: "Acknowledge below-threshold result" }),
+  ).toBeVisible();
+  await page.locator("#wizard-continue").click();
+  await expectContinueDialog(page);
+  await page.getByRole("button", { name: "Continue to PANSS anyway" }).click();
+  await expect(
+    page.getByRole("heading", { name: "PANSS (step 3)" }),
+  ).toBeVisible();
+  // Confirming wrote no clinical acknowledgment on its own.
+  const preview = await readDiagnosisApi(request, physician, draftId);
+  expect(preview["acknowledgment"]).toBeNull();
+  expect(preview["acknowledgment_valid"]).toBe(false);
+});
+
+test("acknowledged below-threshold answers still require confirmation", async ({
+  page,
+  request,
+}) => {
+  const physician = await loginPhysician(page, request, "e2ediagackc");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  // Seeded answers save as revision 2; acknowledgment fences that revision.
+  await seedAnswersApi(request, physician, draftId, symptomOnlyAnswers());
+  await seedAcknowledgmentApi(request, physician, draftId, 2);
+
+  await page.goto(`/#/encounters/${draftId}`);
+  await expect(page.locator("#diagnosis-preview-status")).toContainText(
+    "acknowledged",
+    { timeout: 15000 },
+  );
+
+  await page.locator("#wizard-continue").click();
+  await expectContinueDialog(page);
+  await page.getByRole("button", { name: "Continue to PANSS anyway" }).click();
+  await expect(
+    page.getByRole("heading", { name: "PANSS (step 3)" }),
+  ).toBeVisible();
 });
 
 test("legacy bypass record shows status without a new bypass action", async ({
@@ -355,14 +711,46 @@ test("legacy bypass record shows status without a new bypass action", async ({
     page.getByRole("button", { name: "Acknowledge below-threshold result" }),
   ).toHaveCount(0);
 
-  // Reload keeps the record; Continue still navigates.
+  // Reload keeps the record; Continue still asks for confirmation — a
+  // legacy bypass never silently skips the warning.
   await page.reload();
   await expect(page.locator("#diagnosis-preview-status")).toContainText(
     "Diagnosis bypassed",
     { timeout: 10000 },
   );
   await page.locator("#wizard-continue").click();
+  await expectContinueDialog(page);
+  await page.getByRole("button", { name: "Continue to PANSS anyway" }).click();
   await expect(
     page.getByRole("heading", { name: "PANSS (step 3)" }),
   ).toBeVisible();
+});
+
+test("follow-up Diagnosis Continue keeps the plain pager link", async ({
+  page,
+  request,
+}) => {
+  const physician = await loginPhysician(page, request, "e2ediagfol");
+  const { draftId, patientId } = await createPatientWithDraft(request, physician);
+  const followupId = await createFollowupDraft(request, physician, patientId, draftId);
+  await seedAnswersApi(request, physician, followupId, {
+    a_delusions: "yes",
+    a_hallucinations: "yes",
+  });
+
+  await page.goto(`/#/encounters/${followupId}`);
+  await expect(
+    page.getByRole("heading", { name: "Diagnosis (step 1)" }),
+  ).toBeVisible();
+  await expect(page.locator("#diagnosis-preview-status")).toContainText(
+    "Incomplete",
+    { timeout: 15000 },
+  );
+
+  // No confirmation on follow-up: partial answers continue directly.
+  await page.locator("#wizard-continue").click();
+  await expect(
+    page.getByRole("heading", { name: "PANSS (step 2)" }),
+  ).toBeVisible({ timeout: 15000 });
+  await expect(page.getByText(CONTINUE_DIALOG_TEXT)).toHaveCount(0);
 });

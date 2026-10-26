@@ -1,7 +1,7 @@
 # Issue 03 — Diagnosis Continue does not request confirmation
 
 Date: 2026-10-27  
-Status: analyzed; implementation proposed; no application code changed  
+Status: implemented on `dev` working tree (uncommitted); pending live verification  
 Affected flow: Register new patient → Diagnosis (step 2) → Continue to PANSS
 
 ## Finding
@@ -103,3 +103,19 @@ During implementation, run `make check`, the targeted `e2e/diagnosis.spec.ts` su
 ## Investigation scope and handoff
 
 Analysis used source, existing tests, session reports, requirements and Git history. The app and test suites were not run, so this report establishes a static root-cause trace rather than browser proof. Implementation and the verification plan remain pending. Only this issue document and required progress documentation were changed; application code, tests and clinical content were left unchanged. Rationale is kept here rather than duplicated in a new `context/` entry.
+
+## Implementation summary (2026-10-27, uncommitted on `dev`)
+
+Backend untouched; no migration, no new endpoint, no clinical-rule change.
+
+- `web/src/features/encounters/EncounterPage.tsx`: registration Diagnosis → PANSS Continue is a guarded action button (`#wizard-continue`, retained id) instead of a pager link, used only when `encounter.kind === "registration"`, current step is `diagnosis`, and next step is `panss`. `handleGuardedContinue()` runs `autosave.ensureSaved()` first, then `getDiagnosis(encounterId)`, verifies revision/answers against the saved snapshot with one reread on mismatch, ignores stale out-of-order responses via a sequence guard, navigates directly only when `evaluation.status === "complete"` and `evaluation.findings.overall === "criteria_satisfied"` (predicate `diagnosisConfirms()`; `can_proceed` / `requires_acknowledgment` are not substituted), and otherwise opens a transient confirmation dialog. Cancel/Escape/dismissal stays on Diagnosis with route unchanged and focus restored to Continue; only explicit confirm navigates. Dialog state is transient per press and rechecked on the next press. Never calls bypass/acknowledgment, never writes a skip sentinel or completed assessment. Duplicate presses and diagnosis edits are locked while checking/confirming. Other pager transitions, step links, hash/back-forward handling, and follow-up Diagnosis Continue (plain link) are unchanged.
+- `web/src/features/encounters/useAutosave.ts`: added narrowly scoped `ensureSaved()` save barrier alongside unchanged best-effort `flush()`. It waits for in-flight writes plus pending edits, reports an explicit `{ok, revision, data}` / `{ok: false, reason}` outcome (`conflict` / `failed` / `session`), carries the saved snapshot for caller verification, persists edits made during a save in a bounded follow-up pass, and reports failure rather than looping on continuous concurrent editing. `saveNow()` coalesces concurrent saves via `inflightRef`; saved/edit sequence counters keep the barrier exact without trusting render-synced refs.
+- `web/src/features/assessments/diagnosis/DiagnosisSection.tsx`: accepts parent `checkedPreview` / `locked` props. The visible Assessment summary adopts the exact server response the check decided on and invalidates older in-flight preview refreshes via a sequence guard, so the verdict shown matches the decision. Inputs lock while the parent checks or confirms. Existing below-threshold acknowledgment, bypass status-only display, and proposal-generation gates are unchanged.
+- `e2e/diagnosis.spec.ts`: revised unconditional partial-Continue expectation into guarded cancel/confirm coverage; added journeys for untouched diagnosis, check-failure retry, satisfied direct navigation, explicit all-Unknown, indeterminate, completed below-threshold, acknowledged below-threshold, legacy bypass status, and follow-up plain-link regression. Confirm/cancel assertions verify answers survive and no bypass, skip, or clinical acknowledgment is created.
+
+## Verification status
+
+- Static checks (reported): web build PASS, root `tsc` PASS, `ruff check` PASS, `mypy` PASS, `ruff format` pre-existing FAIL on `tls_fixture.py` only; backend non-DB 17+51 PASS.
+- BLOCKED (no PG/browsers in this environment): DB-backed backend suite and live Chromium/Firefox `e2e/diagnosis.spec.ts` plus registration/follow-up journeys.
+- Code-review must-fix repairs applied on the working tree; details in the S09 implementation follow-up.
+- Remaining gaps: live Chromium/Firefox e2e, in-flight/out-of-order preview behavior, conflict/session/double-click paths, reload and proposal-readiness after confirm, keyboard operation in both browsers, and a dedicated `ensureSaved` unit harness.

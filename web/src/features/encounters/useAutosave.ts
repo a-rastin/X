@@ -43,6 +43,28 @@ export interface ServerTruth {
   revision: number;
 }
 
+/** Outcome of one save attempt. Success carries the persisted snapshot and
+ * its new revision directly, so barriers never re-read render-synced refs
+ * after an await (a re-render may not have flushed yet). */
+export interface SaveAttemptResult {
+  outcome: "saved" | "failed" | "conflict" | "session";
+  /** New revision on "saved"; the attempted base otherwise. */
+  revision: number;
+  /** Persisted snapshot on "saved"; the attempted snapshot otherwise. */
+  data: DraftData;
+  /** Edit counter at capture: a higher counter after the attempt means the
+   * user edited during the save and another pass is needed. */
+  seqAtStart: number;
+}
+
+/** Result of the pre-navigation save barrier: an explicit outcome, never a
+ * best-effort guess. Success carries the saved base revision and the draft
+ * snapshot it covers so the caller can verify a later server read against
+ * the exact answers that were saved. */
+export type EnsureSavedResult =
+  | { ok: true; revision: number; data: DraftData }
+  | { ok: false; reason: "conflict" | "failed" | "session" };
+
 interface UseAutosaveOptions {
   encounterId: string;
   initialData: DraftData;
@@ -72,6 +94,18 @@ export function useAutosave(options: UseAutosaveOptions) {
   const timerRef = useRef<number | null>(null);
   const attemptKeyRef = useRef<string | null>(null);
   const mountedRef = useRef(true);
+  /** Latest in-flight PATCH, so the save barrier can wait for it instead of
+   * equating a resolved promise with saved current data. */
+  const inflightRef = useRef<Promise<SaveAttemptResult> | null>(null);
+  /** Set when a save fails with 401: the session is gone, so the barrier
+   * must report failure instead of spinning on a state that stays "saving". */
+  const sessionGoneRef = useRef(false);
+  /** Synchronous edit counter: incremented on every local edit before React
+   * re-renders, so the barrier can tell edits-during-save apart without
+   * trusting render-synced refs right after an await. */
+  const editSeqRef = useRef(0);
+  /** Edit counter value covered by the last acknowledged save. */
+  const savedSeqRef = useRef(0);
 
   // Keep refs in sync without re-subscribing timers.
   localRef.current = localData;
@@ -102,9 +136,22 @@ export function useAutosave(options: UseAutosaveOptions) {
   const hasUnsaved = isDirty();
 
   const saveNow = useCallback(
-    async (opts: { retrySameAttempt?: boolean } = {}): Promise<void> => {
+    async (opts: { retrySameAttempt?: boolean } = {}): Promise<SaveAttemptResult> => {
+      // Coalesce concurrent saves: a second caller waits for the in-flight
+      // write instead of racing it with the same If-Match base.
+      if (inflightRef.current !== null) {
+        return inflightRef.current;
+      }
+      const run = (async (): Promise<SaveAttemptResult> => {
       const data = localRef.current;
       const revision = baseRef.current;
+      const seqAtStart = editSeqRef.current;
+      const attempted: SaveAttemptResult = {
+        outcome: "failed",
+        revision,
+        data,
+        seqAtStart,
+      };
       // A fresh attempt gets a fresh key; a retry of the same attempt
       // (transport failure, same body + same base revision) reuses it so a
       // lost response replays instead of double-bumping.
@@ -121,7 +168,7 @@ export function useAutosave(options: UseAutosaveOptions) {
           idempotencyKey: key,
         });
         if (!mountedRef.current) {
-          return;
+          return { outcome: "saved", revision: result.revision, data, seqAtStart };
         }
         attemptKeyRef.current = null;
         setBaseRevision(result.revision);
@@ -132,13 +179,22 @@ export function useAutosave(options: UseAutosaveOptions) {
           revision: result.revision,
           serverTimestamp: result.server_timestamp ?? null,
         });
+        // Normal debounce/flush saves also cover the snapshot when no edits
+        // landed during the write; otherwise the barrier needs another pass.
+        // Revision-fenced acknowledgment stays exact: only the covered
+        // snapshot is marked, never concurrent edits.
+        if (editSeqRef.current === seqAtStart) {
+          savedSeqRef.current = seqAtStart;
+        }
+        return { outcome: "saved", revision: result.revision, data, seqAtStart };
       } catch (err) {
         if (!mountedRef.current) {
-          return;
+          return attempted;
         }
         if (err instanceof ApiError && err.status === 401) {
+          sessionGoneRef.current = true;
           onSessionExpired();
-          return;
+          return { ...attempted, outcome: "session" };
         }
         if (err instanceof ApiError && err.status === 412) {
           // Stale tab: keep every keystroke, fetch server truth for the
@@ -160,7 +216,7 @@ export function useAutosave(options: UseAutosaveOptions) {
             // Truth fetch failed: the conflict message already keeps edits
             // safe; Retry/Reload remain available.
           }
-          return;
+          return { ...attempted, outcome: "conflict" };
         }
         if (err instanceof ApiError && err.status === 409) {
           attemptKeyRef.current = null;
@@ -169,13 +225,23 @@ export function useAutosave(options: UseAutosaveOptions) {
             message: err.message,
             retryable: false,
           });
-          return;
+          return attempted;
         }
         const message =
           err instanceof ApiError
             ? err.message
             : "Save failed. Check the connection and retry.";
         setSaveState({ kind: "failed", message, retryable: true });
+        return attempted;
+      }
+      })();
+      inflightRef.current = run;
+      try {
+        return await run;
+      } finally {
+        if (inflightRef.current === run) {
+          inflightRef.current = null;
+        }
       }
     },
     [encounterId, onSessionExpired],
@@ -198,6 +264,7 @@ export function useAutosave(options: UseAutosaveOptions) {
    * their own keys through this same setter). */
   const setDraftValue = useCallback(
     (key: string, value: unknown) => {
+      editSeqRef.current += 1;
       setLocalData((previous) => ({ ...previous, [key]: value }));
       attemptKeyRef.current = null;
       setServerTruth((previous) => previous);
@@ -211,6 +278,7 @@ export function useAutosave(options: UseAutosaveOptions) {
 
   const setDraftData = useCallback(
     (next: DraftData) => {
+      editSeqRef.current += 1;
       setLocalData(next);
       attemptKeyRef.current = null;
       setSaveState((previous) =>
@@ -223,21 +291,78 @@ export function useAutosave(options: UseAutosaveOptions) {
 
   /** Page-transition flush: persist pending edits immediately (best effort;
    * navigation still warns via the guard when edits remain). */
-  const flush = useCallback((): Promise<void> => {
+  const flush = useCallback(async (): Promise<void> => {
     clearTimer();
     if (
       stateRef.current.kind === "dirty" ||
       stateRef.current.kind === "failed"
     ) {
-      return saveNow();
+      await saveNow();
+      return;
     }
-    return Promise.resolve();
+    return;
   }, [clearTimer, saveNow]);
 
   /** Explicit retry after failure: same attempt reuses the key. */
-  const retry = useCallback((): Promise<void> => {
+  const retry = useCallback(async (): Promise<void> => {
     clearTimer();
-    return saveNow({ retrySameAttempt: true });
+    await saveNow({ retrySameAttempt: true });
+  }, [clearTimer, saveNow]);
+
+  /** Pre-navigation save barrier (registration Diagnosis Continue only):
+   * waits for any in-flight write plus pending edits and reports an
+   * explicit outcome. A success carries the saved base revision and the
+   * draft snapshot it covers, so the caller can verify a later server read
+   * against the exact saved answers. Attempts report their own outcome and
+   * snapshot directly: the barrier never re-reads render-synced refs right
+   * after an await. Edits made during a save are persisted in a follow-up
+   * pass (bounded: continuous concurrent editing reports failure rather
+   * than looping forever). Existing `flush()` behavior for other callers
+   * is unchanged. */
+  const ensureSaved = useCallback(async (): Promise<EnsureSavedResult> => {
+    clearTimer();
+    for (let attempt = 0; attempt < 5; attempt += 1) {
+      if (sessionGoneRef.current) {
+        return { ok: false, reason: "session" };
+      }
+      if (stateRef.current.kind === "conflict") {
+        return { ok: false, reason: "conflict" };
+      }
+      if (
+        stateRef.current.kind === "saved" &&
+        editSeqRef.current === savedSeqRef.current
+      ) {
+        return { ok: true, revision: baseRef.current, data: localRef.current };
+      }
+      const editsBefore = editSeqRef.current;
+      const result = await saveNow();
+      if (result.outcome === "session") {
+        return { ok: false, reason: "session" };
+      }
+      if (result.outcome === "conflict") {
+        return { ok: false, reason: "conflict" };
+      }
+      if (result.outcome === "failed") {
+        // New edits arrived during the failed write: retry once bounded,
+        // otherwise report so the caller shows its retry action.
+        if (editSeqRef.current !== editsBefore) {
+          continue;
+        }
+        return { ok: false, reason: "failed" };
+      }
+      if (editSeqRef.current !== result.seqAtStart) {
+        continue;
+      }
+      savedSeqRef.current = result.seqAtStart;
+      return { ok: true, revision: result.revision, data: result.data };
+    }
+    if (sessionGoneRef.current) {
+      return { ok: false, reason: "session" };
+    }
+    if (stateRef.current.kind === "conflict") {
+      return { ok: false, reason: "conflict" };
+    }
+    return { ok: false, reason: "failed" };
   }, [clearTimer, saveNow]);
 
   /** Reload server truth without losing the editor (reconcile step). */
@@ -263,6 +388,7 @@ export function useAutosave(options: UseAutosaveOptions) {
   const adoptServerVersion = useCallback(() => {
     setServerTruth((truth) => {
       if (truth !== null) {
+        savedSeqRef.current = editSeqRef.current;
         setLocalData(truth.draftData);
         setBaseRevision(truth.revision);
         setSaveState({
@@ -277,10 +403,10 @@ export function useAutosave(options: UseAutosaveOptions) {
 
   /** Retry local edits onto the fresh base revision (explicit overwrite of
    * server truth with the kept edits — never silent). */
-  const retryOnFreshRevision = useCallback((): Promise<void> => {
+  const retryOnFreshRevision = useCallback(async (): Promise<void> => {
     clearTimer();
     attemptKeyRef.current = null;
-    return saveNow();
+    await saveNow();
   }, [clearTimer, saveNow]);
 
   /** Adopt an explicit server snapshot after a command POST bumped the
@@ -291,6 +417,7 @@ export function useAutosave(options: UseAutosaveOptions) {
     (draftData: DraftData, revision: number, timestamp: string | null) => {
       clearTimer();
       attemptKeyRef.current = null;
+      savedSeqRef.current = editSeqRef.current;
       setLocalData(draftData);
       setBaseRevision(revision);
       setServerTimestamp(timestamp);
@@ -314,6 +441,9 @@ export function useAutosave(options: UseAutosaveOptions) {
       revision: number,
       timestamp: string | null,
     ) => {
+      // Server-stamped merge, not a local edit: the saved counter follows
+      // so the barrier treats the merged snapshot as covered when saved.
+      savedSeqRef.current = editSeqRef.current;
       setLocalData((previous) => ({ ...previous, [key]: value }));
       setBaseRevision(revision);
       setServerTimestamp(timestamp);
@@ -344,6 +474,7 @@ export function useAutosave(options: UseAutosaveOptions) {
     hasUnsaved,
     isDirty,
     flush,
+    ensureSaved,
     retry,
     reloadTruth,
     adoptServerVersion,

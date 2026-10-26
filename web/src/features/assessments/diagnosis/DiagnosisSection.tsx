@@ -62,6 +62,13 @@ interface DiagnosisSectionProps {
   onSessionExpired: () => void;
   /** 1-based wizard index (registration 2, follow-up 1). */
   stepNumber: number;
+  /** The exact server response the parent navigation check decided on: the
+   * visible summary adopts it, so the verdict shown is never older or newer
+   * than the decision. Null until the first guarded check. */
+  checkedPreview?: DiagnosisPreview | null;
+  /** While the parent checks or confirms, edits that could invalidate the
+   * checked result are disabled alongside the pager. */
+  locked?: boolean;
 }
 
 interface SectionData {
@@ -113,6 +120,8 @@ export function DiagnosisSection({
   autosave,
   onSessionExpired,
   stepNumber,
+  checkedPreview = null,
+  locked = false,
 }: DiagnosisSectionProps) {
   const [definition, setDefinition] = useState<DiagnosisDefinition | null>(null);
   const [definitionError, setDefinitionError] = useState<string | null>(null);
@@ -123,6 +132,10 @@ export function DiagnosisSection({
   const [actionError, setActionError] = useState<string | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
   const actionErrorRef = useRef<HTMLParagraphElement>(null);
+  /** Guards the live preview against out-of-order responses: only the
+   * latest started request may replace the summary, so a slow background
+   * refresh can never overwrite the parent's checked result. */
+  const previewSeqRef = useRef(0);
 
   // Action failures announce via role=alert and take keyboard focus.
   useEffect(() => {
@@ -162,11 +175,18 @@ export function DiagnosisSection({
   }, [onSessionExpired]);
 
   const refreshPreview = useCallback(async (): Promise<void> => {
+    const seq = (previewSeqRef.current += 1);
     try {
       const fresh = await getDiagnosis(encounterId);
+      if (seq !== previewSeqRef.current) {
+        return;
+      }
       setPreview(fresh);
       setPreviewError(null);
     } catch (err) {
+      if (seq !== previewSeqRef.current) {
+        return;
+      }
       if (err instanceof ApiError && err.status === 401) {
         onSessionExpired();
         return;
@@ -177,7 +197,9 @@ export function DiagnosisSection({
           : "Diagnosis preview failed to load. Check the connection and retry.",
       );
     } finally {
-      setPreviewLoading(false);
+      if (seq === previewSeqRef.current) {
+        setPreviewLoading(false);
+      }
     }
   }, [encounterId, onSessionExpired]);
 
@@ -189,13 +211,24 @@ export function DiagnosisSection({
     void refreshPreview();
   }, [refreshPreview, savedRevision]);
 
+  // Parent navigation check: adopt its exact server response so the summary
+  // shows the decided state, and invalidate older in-flight refreshes.
+  useEffect(() => {
+    if (checkedPreview !== null) {
+      previewSeqRef.current += 1;
+      setPreview(checkedPreview);
+      setPreviewError(null);
+      setPreviewLoading(false);
+    }
+  }, [checkedPreview]);
+
   const section = sectionOf(autosave.localData);
   const answers = section.answers;
   const answersPending =
     preview !== null && !sameAnswers(answers, preview.answers);
 
   function setAnswer(itemId: string, value: DiagnosisAnswer): void {
-    if (answers[itemId] === value || busy !== null) {
+    if (answers[itemId] === value || busy !== null || locked) {
       return;
     }
     setActionError(null);
@@ -378,7 +411,7 @@ export function DiagnosisSection({
                 </header>
                 <div className="xi-diagnosis-items">
                   {items.map((item) => (
-                    <fieldset key={item.id} className="xi-diagnosis-item" disabled={busy !== null}>
+                    <fieldset key={item.id} className="xi-diagnosis-item" disabled={busy !== null || locked}>
                       <legend className="xi-sr-only">{item.prompt}</legend>
                       <div className="xi-diagnosis-question" aria-hidden="true">{item.prompt}</div>
                       <div className="xi-diagnosis-answer-row">
@@ -527,7 +560,7 @@ export function DiagnosisSection({
                 <button
                   className="xi-btn xi-btn-primary"
                   type="button"
-                  disabled={busy !== null}
+                  disabled={busy !== null || locked}
                   onClick={() => void handleAcknowledge()}
                 >
                   {busy === "acknowledge"

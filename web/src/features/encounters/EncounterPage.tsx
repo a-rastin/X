@@ -23,7 +23,9 @@
  * effects: Register patient, Diagnosis, PANSS, C-SSRS, History, Medications,
  * Proposal review. Follow-up is Diagnosis, PANSS, C-SSRS, History, Adverse
  * effects, Medications, Proposal review (FR-20). Back/Continue and the step
- * list move one page at a time.
+ * list move one page at a time — except registration Diagnosis Continue,
+ * which checks the saved server evaluation first and asks for confirmation
+ * unless the criteria are satisfied (no bypass/acknowledge is recorded).
  * Registration opens on that same wizard (`#/patients/new` before a draft
  * exists). Saved demographics and the working note are step 1
  * (`#register`) only — not a second page, and not chrome on later steps.
@@ -46,6 +48,10 @@ import {
   type EncounterReference,
 } from "./api";
 import { DiagnosisSection } from "../assessments/diagnosis/DiagnosisSection";
+import {
+  getDiagnosis,
+  type DiagnosisPreview,
+} from "../assessments/diagnosis/api";
 import { PanssSection } from "../assessments/panss/PanssSection";
 import { CssrsSection } from "../assessments/cssrs/CssrsSection";
 import { HistorySection } from "../history/HistorySection";
@@ -129,6 +135,39 @@ function wizardStepFromHash(hash: string, kind: string): WizardStepId {
 
 function encounterStepHash(encounterId: string, step: WizardStepId): string {
   return `#/encounters/${encounterId}#${step}`;
+}
+
+/** Registration Diagnosis Continue consults the server evaluation before
+ * navigating (issue-03): direct navigation only for a complete
+ * criteria-satisfied result; every other state asks for confirmation.
+ * No other transition consults assessment state. */
+function diagnosisConfirms(preview: DiagnosisPreview): boolean {
+  return (
+    preview.evaluation?.status === "complete" &&
+    preview.evaluation?.findings?.overall === "criteria_satisfied"
+  );
+}
+
+function sameAnswerRecord(
+  a: Record<string, string>,
+  b: Record<string, string>,
+): boolean {
+  const keysA = Object.keys(a);
+  const keysB = Object.keys(b);
+  return (
+    keysA.length === keysB.length && keysA.every((key) => b[key] === a[key])
+  );
+}
+
+function savedDiagnosisAnswers(data: Record<string, unknown>): Record<string, string> {
+  const section = data["diagnosis"];
+  if (typeof section !== "object" || section === null) {
+    return {};
+  }
+  const answers = (section as Record<string, unknown>)["answers"];
+  return typeof answers === "object" && answers !== null
+    ? { ...(answers as Record<string, string>) }
+    : {};
 }
 
 function RegisteredDemographics({
@@ -399,6 +438,21 @@ function EncounterWizard({
   const discardDialogRef = useRef<HTMLDivElement>(null);
   const pageRef = useRef<HTMLDivElement>(null);
   const skipPageFocus = useRef(true);
+  /** Guards the registration Diagnosis Continue check: only the latest
+   * server read may decide, so a slow earlier response never approves a
+   * newer answer set. */
+  const diagCheckSeqRef = useRef(0);
+  const continueBtnRef = useRef<HTMLButtonElement>(null);
+  const confirmCancelRef = useRef<HTMLButtonElement>(null);
+  /** Registration Diagnosis → PANSS confirmation state. Null means no
+   * dialog; transient per Continue press, rechecked on the next press. */
+  const [diagConfirm, setDiagConfirm] = useState<DiagnosisPreview | null>(null);
+  /** The exact server response the check decided on: the Assessment
+   * summary adopts it, so the verdict shown matches the decision. */
+  const [diagCheckedPreview, setDiagCheckedPreview] =
+    useState<DiagnosisPreview | null>(null);
+  const [diagChecking, setDiagChecking] = useState(false);
+  const [diagCheckError, setDiagCheckError] = useState<string | null>(null);
   const steps = stepsFor(encounter.kind);
   const [step, setStep] = useState<WizardStepId>(() =>
     wizardStepFromHash(window.location.hash, encounter.kind),
@@ -410,6 +464,13 @@ function EncounterWizard({
   const previousStep = stepIndex > 0 ? steps[stepIndex - 1] : null;
   const nextStep =
     stepIndex >= 0 && stepIndex < steps.length - 1 ? steps[stepIndex + 1] : null;
+
+  function goToStep(hash: string, step: WizardStepId): void {
+    if (window.location.hash !== hash) {
+      window.location.hash = hash;
+    }
+    setStep(step);
+  }
 
   function followStepLink(event: MouseEvent<HTMLAnchorElement>): void {
     if (
@@ -434,6 +495,118 @@ function EncounterWizard({
       void autosave.flush();
     }
     setStep(wizardStepFromHash(hash, encounter.kind));
+  }
+
+  const guardedDiagnosisContinue =
+    encounter.kind === "registration" &&
+    currentStep.id === "diagnosis" &&
+    nextStep?.id === "panss";
+  /** Diagnosis edits lock while checking or confirming; the Continue button
+   * locks only while checking so focus can return to an enabled control
+   * after the dialog closes. */
+  const diagnosisLocked = diagChecking || diagConfirm !== null;
+
+  function closeDiagConfirm(): void {
+    setDiagConfirm(null);
+  }
+
+  /** Registration Diagnosis → PANSS Continue: save first, then navigate
+   * directly only on a complete criteria-satisfied server evaluation.
+   * Every other result opens a confirmation dialog; only its explicit
+   * confirm navigates. Never calls bypass/acknowledge, never writes a
+   * skip sentinel or completed assessment. */
+  async function handleGuardedContinue(): Promise<void> {
+    if (diagChecking || diagConfirm !== null) {
+      return;
+    }
+    setDiagCheckError(null);
+    setDiagChecking(true);
+    try {
+      const saved = await autosave.ensureSaved();
+      if (!saved.ok) {
+        if (saved.reason === "conflict") {
+          setDiagCheckError(
+            "The draft changed in another tab. Reconcile with the conflict panel above, then retry Continue.",
+          );
+        } else if (saved.reason === "session") {
+          setDiagCheckError(
+            "Your session expired. Sign in again, then retry Continue — your answers are preserved.",
+          );
+        } else {
+          setDiagCheckError(
+            "Could not save your answers. Check the connection and retry Continue — your answers are preserved.",
+          );
+        }
+        return;
+      }
+      const seq = (diagCheckSeqRef.current += 1);
+      let preview: DiagnosisPreview;
+      try {
+        preview = await getDiagnosis(encounterId);
+      } catch (err) {
+        if (err instanceof ApiError && err.status === 401) {
+          sessionExpired();
+          return;
+        }
+        setDiagCheckError(
+          err instanceof ApiError
+            ? err.message
+            : "Diagnosis check failed. Check the connection and retry Continue — your answers are preserved.",
+        );
+        return;
+      }
+      if (seq !== diagCheckSeqRef.current) {
+        return;
+      }
+      // Verify the read covers the just-saved snapshot: an older satisfied
+      // preview must never approve a newer nonconfirming answer set.
+      const savedAnswers = savedDiagnosisAnswers(saved.data);
+      if (
+        preview.revision !== saved.revision ||
+        !sameAnswerRecord(preview.answers, savedAnswers)
+      ) {
+        try {
+          const reread = await getDiagnosis(encounterId);
+          if (seq !== diagCheckSeqRef.current) {
+            return;
+          }
+          if (
+            reread.revision !== saved.revision ||
+            !sameAnswerRecord(reread.answers, savedAnswers)
+          ) {
+            setDiagCheckError(
+              "The diagnosis check returned a stale result. Retry Continue to recheck the current answers.",
+            );
+            return;
+          }
+          preview = reread;
+        } catch (err) {
+          if (err instanceof ApiError && err.status === 401) {
+            sessionExpired();
+            return;
+          }
+          setDiagCheckError(
+            err instanceof ApiError
+              ? err.message
+              : "Diagnosis check failed. Check the connection and retry Continue — your answers are preserved.",
+          );
+          return;
+        }
+      }
+      if (diagnosisConfirms(preview)) {
+        goToStep(
+          encounterStepHash(encounterId, "panss"),
+          "panss",
+        );
+      } else {
+        // Dialog-scoped only: a satisfied direct navigation leaves no stale
+        // preview behind, so Back remounts with a fresh fetch.
+        setDiagCheckedPreview(preview);
+        setDiagConfirm(preview);
+      }
+    } finally {
+      setDiagChecking(false);
+    }
   }
 
   // Navigation guard: warn while local edits remain (in-app + beforeunload).
@@ -507,6 +680,46 @@ function EncounterWizard({
       discardDialogRef.current?.querySelector("button")?.focus();
     }
   }, [discardOpen]);
+
+  // Checked preview is dialog-scoped: clear on navigation so a Back
+  // remount fetches fresh instead of re-adopting a stale decision.
+  useEffect(() => {
+    setDiagCheckedPreview(null);
+  }, [step]);
+
+  // Confirmation dialog: initial focus on Return, Escape dismisses without
+  // navigating. Focus restoration runs in the effect below, after the
+  // Continue button is enabled again.
+  useEffect(() => {
+    if (diagConfirm === null) {
+      return;
+    }
+    confirmCancelRef.current?.focus();
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        closeDiagConfirm();
+      }
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [diagConfirm]);
+
+  const diagConfirmWasOpenRef = useRef(false);
+  useEffect(() => {
+    if (diagConfirm !== null) {
+      diagConfirmWasOpenRef.current = true;
+      return;
+    }
+    if (diagConfirmWasOpenRef.current) {
+      diagConfirmWasOpenRef.current = false;
+      // Dialog dismissed without navigating: Continue is enabled again
+      // (disabled only while checking), so restore focus there. After a
+      // confirm-navigation the guarded button is unmounted and this is a
+      // no-op; the page-focus effect handles the new step.
+      continueBtnRef.current?.focus();
+    }
+  }, [diagConfirm]);
 
   async function handleDiscard(): Promise<void> {
     if (!discardConfirm || discardBusy) {
@@ -621,6 +834,8 @@ function EncounterWizard({
             autosave={autosave}
             onSessionExpired={sessionExpired}
             stepNumber={stepIndex + 1}
+            checkedPreview={diagCheckedPreview}
+            locked={diagnosisLocked}
           />
         )}
 
@@ -705,17 +920,91 @@ function EncounterWizard({
             Back to {previousStep.label}
           </a>
         )}
-        {nextStep !== null && (
-          <a
-            id="wizard-continue"
-            className="xi-btn xi-btn-primary"
-            href={encounterStepHash(encounterId, nextStep.id)}
-            onClick={followStepLink}
-          >
-            Continue to {nextStep.label}
-          </a>
-        )}
+        {nextStep !== null &&
+          (guardedDiagnosisContinue ? (
+            // Registration Diagnosis → PANSS is a guarded action button, not
+            // a link: an anchor's modified-click/new-tab would bypass the
+            // confirmation handler. All other transitions keep the pager link.
+            <button
+              id="wizard-continue"
+              ref={continueBtnRef}
+              className="xi-btn xi-btn-primary"
+              type="button"
+              disabled={diagChecking}
+              onClick={() => void handleGuardedContinue()}
+            >
+              {diagChecking
+                ? "Checking diagnosis…"
+                : `Continue to ${nextStep.label}`}
+            </button>
+          ) : (
+            <a
+              id="wizard-continue"
+              className="xi-btn xi-btn-primary"
+              href={encounterStepHash(encounterId, nextStep.id)}
+              onClick={followStepLink}
+            >
+              Continue to {nextStep.label}
+            </a>
+          ))}
       </div>
+
+      {diagCheckError !== null && guardedDiagnosisContinue && (
+        <p className="xi-form-error" role="alert">
+          {diagCheckError}{" "}
+          <button
+            className="xi-btn xi-btn-secondary"
+            type="button"
+            disabled={diagChecking}
+            onClick={() => void handleGuardedContinue()}
+          >
+            Retry
+          </button>
+        </p>
+      )}
+
+      {diagConfirm !== null && (
+        <div className="xi-modal-backdrop">
+          <div
+            className="xi-modal"
+            role="alertdialog"
+            aria-modal="true"
+            aria-labelledby="diag-continue-title"
+            aria-describedby="diag-continue-text"
+          >
+            <h2 className="xi-section-title" id="diag-continue-title">
+              Continue without a confirmed diagnosis?
+            </h2>
+            <p id="diag-continue-text">
+              The current assessment does not confirm the diagnosis. Do you
+              want to continue to PANSS anyway?
+            </p>
+            <div className="xi-row-actions">
+              <button
+                className="xi-btn xi-btn-secondary"
+                type="button"
+                ref={confirmCancelRef}
+                onClick={closeDiagConfirm}
+              >
+                Return to diagnosis
+              </button>
+              <button
+                className="xi-btn xi-btn-primary"
+                type="button"
+                onClick={() => {
+                  setDiagConfirm(null);
+                  goToStep(
+                    encounterStepHash(encounterId, "panss"),
+                    "panss",
+                  );
+                }}
+              >
+                Continue to PANSS anyway
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       <section className="xi-card" aria-labelledby="draft-danger-heading">
         <h3 className="xi-section-title" id="draft-danger-heading">
