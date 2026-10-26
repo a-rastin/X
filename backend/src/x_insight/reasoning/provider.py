@@ -33,13 +33,14 @@ contract) and S41 (real private MCP transport):
 
 Deferred (NOT implemented here):
 
-- S42 persistence, encryption, and allowlists live in
+- S42 persistence and encryption live in
   ``reasoning/provider_config.py``. The capability exchange is
   ``probe_capability`` here, on the same chat payload and ``post_json``
   path as estimation. This module still accepts an injected
   :class:`ProviderConfig` and does not load saved rows. The generation
-  worker still uses the environment endpoint. ``post_json`` is the one
-  HTTP POST and does not follow redirects.
+  worker loads the pinned saved revision, with an environment fallback for
+  jobs without a settings revision. ``post_json`` applies the shared destination
+  policy at every DNS-bound HTTP connection and does not follow redirects.
 - S45 CPT validation/inference/rendering/OriginalBaseline, S46 ordered
   workflows and proposal assembly, S47 retry budgets/backoff/fencing
   re-exercise and S48b local-calculation proof are deferred. Success here
@@ -165,6 +166,8 @@ class ProviderConfig:
     max_tool_calls: int = MAX_TOOL_CALLS
     max_request_bytes: int = MAX_PROVIDER_BYTES
     max_response_bytes: int = MAX_PROVIDER_BYTES
+    local_endpoint_approved: bool = False
+    trusted_proxy_approved: bool = False
 
     def __post_init__(self) -> None:
         if not isinstance(self.endpoint_url, str) or not self.endpoint_url.startswith(
@@ -434,21 +437,36 @@ def _parse_tool_arguments(raw: Any) -> dict[str, Any] | None:
     return None
 
 
+class ApprovedEndpoint(str):
+    """Carry immutable revision approvals alongside the normalized endpoint."""
+
+    local_endpoint_approved: bool
+    trusted_proxy_approved: bool
+
+    def __new__(cls, url: str, local: bool = False, proxy: bool = False):
+        value = super().__new__(cls, url)
+        value.local_endpoint_approved = local
+        value.trusted_proxy_approved = proxy
+        return value
+
+
+def approved_endpoint(url: str, local: bool = False, proxy: bool = False) -> str:
+    return ApprovedEndpoint(url, local, proxy)
+
+
 def post_json(
     url: str,
     payload: dict[str, Any],
     headers: dict[str, str],
     timeout: float,
 ) -> Any:
-    """One HTTP POST. Redirects are not followed."""
-    import httpx
+    """One DNS-bound HTTP POST. Redirects and environment proxies are unused."""
+    from x_insight.reasoning.provider_destination import checked_post, destination
 
-    return httpx.post(
-        url,
-        json=payload,
-        headers=headers,
-        timeout=timeout,
-        follow_redirects=False,
+    local = bool(getattr(url, "local_endpoint_approved", False))
+    proxy = bool(getattr(url, "trusted_proxy_approved", False))
+    return checked_post(
+        destination(url, local=local, trusted_proxy=proxy), payload, headers, timeout
     )
 
 
@@ -606,7 +624,13 @@ def probe_capability(url: str, model: str, api_key: str) -> tuple[bool, str]:
     def post(payload: dict[str, Any]) -> tuple[str, Any]:
         try:
             response = post_json(url, payload, headers, PROVIDER_TIMEOUT_SECONDS)
-        except Exception:
+        except Exception as exc:
+            from x_insight.reasoning.provider_destination import DestinationDenied, ResolutionFailed
+
+            if isinstance(exc, DestinationDenied):
+                return "Provider destination is blocked by destination policy.", None
+            if isinstance(exc, ResolutionFailed):
+                return "Provider hostname could not be resolved.", None
             return CAPABILITY_CONNECT, None
         retry = use_format and "response_format" in payload
         return _classify_http(response, allow_format_retry=retry)
@@ -738,12 +762,22 @@ class BoundedProviderAdapter:
             if self._api_key:
                 headers["Authorization"] = f"Bearer {self._api_key}"
             response = post_json(
-                self._config.endpoint_url,
+                approved_endpoint(
+                    self._config.endpoint_url,
+                    self._config.local_endpoint_approved,
+                    self._config.trusted_proxy_approved,
+                ),
                 payload,
                 headers,
                 float(self._config.timeout_seconds),
             )
         except Exception as exc:
+            from x_insight.reasoning.provider_destination import DestinationDenied, ResolutionFailed
+
+            if isinstance(exc, DestinationDenied):
+                return None, _fail("PROVIDER_DESTINATION_DENIED", False)
+            if isinstance(exc, ResolutionFailed):
+                return None, _fail("PROVIDER_CONNECTION", True)
             name = type(exc).__name__.lower()
             text = str(exc).lower()
             if "timeout" in name or "timeout" in text or "timed out" in text:
@@ -760,6 +794,8 @@ class BoundedProviderAdapter:
             if size > int(self._config.max_response_bytes):
                 return None, _fail("PROVIDER_BUDGET_EXCEEDED", False)
             return body, None
+        if 300 <= status < 400:
+            return None, _fail("PROVIDER_CAPABILITY", False)
         if status in (401, 403):
             return None, _fail("PROVIDER_AUTH", False)
         if status in (404, 422):

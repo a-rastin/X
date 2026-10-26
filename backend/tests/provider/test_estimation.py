@@ -44,6 +44,11 @@ from x_insight.reasoning import provider as provider_module
 from x_insight.reasoning import queue as queue_module
 
 
+@pytest.fixture(autouse=True)
+def destination_policy_environment(monkeypatch):
+    monkeypatch.delenv("X_INSIGHT_PROVIDER_ALLOWED_HOSTS", raising=False)
+
+
 @pytest.fixture(scope="session")
 def migrated_test_engine():
     from alembic import command
@@ -390,6 +395,7 @@ def _estimate_with_script(
     try:
         config = provider_module.ProviderConfig(
             endpoint_url=url,
+            local_endpoint_approved=True,
             model="test-model",
             capability=capability,
             timeout_seconds=timeout_seconds,
@@ -449,6 +455,7 @@ def _estimate_raw_content(
         url = f"http://127.0.0.1:{server.server_address[1]}/chat/completions"
         config = provider_module.ProviderConfig(
             endpoint_url=url,
+            local_endpoint_approved=True,
             model="test-model",
             capability=capability,
             timeout_seconds=10.0,
@@ -612,7 +619,11 @@ def test_forged_hash_and_missing_grant_rejected(admin_client, clean_registry, mo
     url = endpoint.start()
     try:
         config = provider_module.ProviderConfig(
-            endpoint_url=url, model="m", capability="schema", timeout_seconds=10.0
+            endpoint_url=url,
+            local_endpoint_approved=True,
+            model="m",
+            capability="schema",
+            timeout_seconds=10.0,
         )
         adapter = provider_module.BoundedProviderAdapter(
             config, grant_token=setup["grant"], database_url=setup["test_url"]

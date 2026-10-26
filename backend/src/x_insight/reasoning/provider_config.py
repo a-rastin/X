@@ -2,29 +2,26 @@
 
 Append-only ``provider_settings`` revisions. The API key is AES-GCM
 ciphertext (12-byte nonce, no AAD, tag appended), copied as stored bytes
-on ``unchanged``, or NULL on ``clear``. The deployment key stays in
-``X_INSIGHT_PROVIDER_DATA_KEY`` and never enters the database, audit
-details, logs, or HTTP responses. Decryption happens only to build the
+on ``unchanged``, or NULL on ``clear``. The deployment key comes from an
+environment override or protected managed secret file and never enters the
+database, audit details, logs, or HTTP responses. Decryption only builds the
 Authorization header for the capability check, and plaintext is not
 logged, audited, or returned.
 """
 
 from __future__ import annotations
 
-import base64
 import hmac as hmac_module
-import ipaddress
 import os
-import socket
 import uuid
 from typing import Any, Literal
-from urllib.parse import urlsplit
 
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 from fastapi import APIRouter, Depends, Request
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, ConfigDict, Field
 from sqlalchemy import (
+    Boolean,
     Column,
     DateTime,
     Integer,
@@ -42,6 +39,7 @@ from x_insight import contracts
 from x_insight.db import CommittedRoute, get_session
 from x_insight.identity import service as identity_service
 from x_insight.operations.audit import record_audit
+from x_insight.reasoning.provider_key import ProviderKeyError, load_key
 
 PROVIDER_DATA_KEY_ENV = "X_INSIGHT_PROVIDER_DATA_KEY"
 ALLOWED_HOSTS_ENV = "X_INSIGHT_PROVIDER_ALLOWED_HOSTS"
@@ -64,6 +62,8 @@ provider_settings = Table(
     Column("revision", Integer, nullable=False),
     Column("base_url", Text, nullable=False),
     Column("model", Text, nullable=False),
+    Column("local_endpoint_approved", Boolean, nullable=False, server_default="false"),
+    Column("trusted_proxy_approved", Boolean, nullable=False, server_default="false"),
     Column("key_nonce", LargeBinary, nullable=True),
     Column("key_ciphertext", LargeBinary, nullable=True),
     Column("capability_status", Text, nullable=False),
@@ -74,16 +74,14 @@ provider_settings = Table(
 router = APIRouter(route_class=CommittedRoute)
 
 
-class ProviderKeyError(Exception):
-    """Deployment key missing or not 32 bytes. Message never includes key material."""
-
-
 class ProviderSettingsWrite(BaseModel):
     model_config = ConfigDict(extra="forbid", protected_namespaces=())
 
     api_key: str | None = Field(default=None, min_length=1, max_length=4096)
     base_url: str = Field(min_length=1, max_length=2048)
     model: str = Field(min_length=1, max_length=256)
+    local_endpoint_approved: bool = Field(default=False, strict=True)
+    trusted_proxy_approved: bool = Field(default=False, strict=True)
     secret_action: Literal["unchanged", "replace", "clear"] | None = None
 
 
@@ -165,14 +163,7 @@ def _require_admin_mutation(request: Request, session: Session) -> dict[str, Any
 
 
 def _deployment_key() -> bytes:
-    raw = os.environ.get(PROVIDER_DATA_KEY_ENV, "")
-    try:
-        key = base64.b64decode(raw, validate=True)
-    except Exception:
-        raise ProviderKeyError("Provider data key is not configured.") from None
-    if len(key) != 32:
-        raise ProviderKeyError("Provider data key is not configured.")
-    return key
+    return load_key()
 
 
 def _seal(api_key: str) -> tuple[bytes, bytes]:
@@ -192,11 +183,16 @@ def _masked(
     *,
     has_key: bool,
     capability: str = CAPABILITY_UNTESTED,
+    local_endpoint_approved: bool = False,
+    trusted_proxy_approved: bool = False,
 ) -> dict[str, Any]:
     return {
         "revision": revision,
         "api_key": KEY_STATUS_CONFIGURED if has_key else KEY_STATUS_ABSENT,
         "base_url": base_url,
+        "effective_endpoint": base_url,
+        "local_endpoint_approved": local_endpoint_approved,
+        "trusted_proxy_approved": trusted_proxy_approved,
         "model": model,
         "capability": capability,
     }
@@ -215,6 +211,8 @@ def _latest_stored(session: Session) -> dict[str, Any] | None:
                 provider_settings.c.revision,
                 provider_settings.c.base_url,
                 provider_settings.c.model,
+                provider_settings.c.local_endpoint_approved,
+                provider_settings.c.trusted_proxy_approved,
                 provider_settings.c.key_nonce,
                 provider_settings.c.key_ciphertext,
             )
@@ -234,6 +232,8 @@ def read_latest(session: Session) -> dict[str, Any] | None:
                 provider_settings.c.revision,
                 provider_settings.c.base_url,
                 provider_settings.c.model,
+                provider_settings.c.local_endpoint_approved,
+                provider_settings.c.trusted_proxy_approved,
                 provider_settings.c.capability_status,
                 provider_settings.c.key_ciphertext.is_not(None).label("has_key"),
             )
@@ -251,6 +251,8 @@ def read_latest(session: Session) -> dict[str, Any] | None:
         str(row["model"]),
         has_key=bool(row["has_key"]),
         capability=str(row["capability_status"]),
+        local_endpoint_approved=bool(row["local_endpoint_approved"]),
+        trusted_proxy_approved=bool(row["trusted_proxy_approved"]),
     )
 
 
@@ -262,6 +264,8 @@ def read_revision(session: Session, revision: int) -> dict[str, Any] | None:
                 provider_settings.c.revision,
                 provider_settings.c.base_url,
                 provider_settings.c.model,
+                provider_settings.c.local_endpoint_approved,
+                provider_settings.c.trusted_proxy_approved,
                 provider_settings.c.capability_status,
                 provider_settings.c.key_ciphertext.is_not(None).label("has_key"),
             ).where(provider_settings.c.revision == revision)
@@ -277,82 +281,22 @@ def read_revision(session: Session, revision: int) -> dict[str, Any] | None:
         str(row["model"]),
         has_key=bool(row["has_key"]),
         capability=str(row["capability_status"]),
+        local_endpoint_approved=bool(row["local_endpoint_approved"]),
+        trusted_proxy_approved=bool(row["trusted_proxy_approved"]),
     )
 
 
-def _allowed_hosts() -> set[str]:
-    raw = os.environ.get(ALLOWED_HOSTS_ENV, "")
-    return {part.strip().casefold() for part in raw.split(",") if part.strip()}
+def _require_allowed_destination(
+    base_url: str, local: bool = False, trusted_proxy: bool = False
+) -> str:
+    from x_insight.reasoning.provider_destination import DestinationDenied, destination
 
-
-def _require_allowed_destination(base_url: str) -> None:
-    """Fail closed. Exact host match only; no DNS and no loopback exception."""
     try:
-        parts = urlsplit(base_url)
-        host = parts.hostname
-    except ValueError:
-        parts = None
-        host = None
-    allowed = _allowed_hosts()
-    if (
-        parts is None
-        or parts.scheme not in ("http", "https")
-        or parts.username is not None
-        or parts.password is not None
-        or not host
-        or host.casefold() not in allowed
-    ):
+        return destination(base_url, local=local, trusted_proxy=trusted_proxy).url
+    except DestinationDenied as exc:
         raise contracts.ContractError(
-            422,
-            "PROVIDER_DESTINATION_DENIED",
-            "Provider base URL is not an allowed destination.",
-            {
-                "base_url": [
-                    "Use http or https with no userinfo, and a host on the operator allowlist."
-                ]
-            },
-        )
-
-
-# RFC 2544 block used by fake-IP proxies. Not RFC1918 or link-local metadata.
-_FAKE_IP_NETWORK = ipaddress.ip_network("198.18.0.0/15")
-
-
-def _special_address(ip_text: str) -> bool:
-    try:
-        ip = ipaddress.ip_address(ip_text.split("%", 1)[0])
-    except ValueError:
-        return True
-    if ip.version == 4 and ip in _FAKE_IP_NETWORK:
-        return False
-    return bool(
-        ip.is_loopback
-        or ip.is_link_local
-        or ip.is_private
-        or ip.is_multicast
-        or ip.is_reserved
-        or ip.is_unspecified
-    )
-
-
-def _resolved_destination_allowed(base_url: str) -> bool:
-    """DNS check for the capability POST. Special-use IPs must be allowlisted exactly."""
-    try:
-        parts = urlsplit(base_url)
-        host = parts.hostname
-        if not host:
-            return False
-        infos = socket.getaddrinfo(host, parts.port or 0, type=socket.SOCK_STREAM)
-    except Exception:
-        return False
-    if not infos:
-        return False
-    allowed = _allowed_hosts()
-    for info in infos:
-        ip_text = str(info[4][0]).split("%", 1)[0]
-        if _special_address(ip_text) and ip_text.casefold() not in allowed:
-            return False
-    return True
+            422, "PROVIDER_DESTINATION_DENIED", str(exc), {"base_url": [str(exc)]}
+        ) from None
 
 
 def _key_material(
@@ -392,9 +336,13 @@ def save_settings(
     username: str,
     request_id: str,
     if_match: int | None,
+    local_endpoint_approved: bool = False,
+    trusted_proxy_approved: bool = False,
 ) -> dict[str, Any]:
     """Insert the next revision. Plaintext is sealed only on replace."""
-    _require_allowed_destination(base_url)
+    base_url = _require_allowed_destination(
+        base_url, local_endpoint_approved, trusted_proxy_approved
+    )
     latest = _latest_stored(session)
     current = int(latest["revision"]) if latest is not None else None
     if if_match is not None and if_match != current:
@@ -422,6 +370,8 @@ def save_settings(
             revision=revision,
             base_url=base_url,
             model=model,
+            local_endpoint_approved=local_endpoint_approved,
+            trusted_proxy_approved=trusted_proxy_approved,
             key_nonce=nonce,
             key_ciphertext=ciphertext,
             capability_status=CAPABILITY_UNTESTED,
@@ -439,9 +389,18 @@ def save_settings(
             "model": model,
             "base_url": base_url,
             "key_status": key_status,
+            "local_endpoint_approved": local_endpoint_approved,
+            "trusted_proxy_approved": trusted_proxy_approved,
         },
     )
-    body = _masked(revision, base_url, model, has_key=has_key)
+    body = _masked(
+        revision,
+        base_url,
+        model,
+        has_key=has_key,
+        local_endpoint_approved=local_endpoint_approved,
+        trusted_proxy_approved=trusted_proxy_approved,
+    )
     # Initial save and unchanged keep the prior credential, so jobs stay.
     if secret_action in ("replace", "clear"):
         from x_insight.reasoning.queue import cancel_active_generation_jobs
@@ -469,6 +428,8 @@ def open_runtime(session: Session, revision: int) -> tuple[str, str, str] | str:
             select(
                 provider_settings.c.base_url,
                 provider_settings.c.model,
+                provider_settings.c.local_endpoint_approved,
+                provider_settings.c.trusted_proxy_approved,
                 provider_settings.c.key_nonce,
                 provider_settings.c.key_ciphertext,
             ).where(provider_settings.c.revision == revision)
@@ -480,10 +441,10 @@ def open_runtime(session: Session, revision: int) -> tuple[str, str, str] | str:
         return "PROVIDER_NOT_CONFIGURED"
     base_url = str(row["base_url"])
     try:
-        _require_allowed_destination(base_url)
+        base_url = _require_allowed_destination(
+            base_url, bool(row["local_endpoint_approved"]), bool(row["trusted_proxy_approved"])
+        )
     except contracts.ContractError:
-        return "PROVIDER_DESTINATION_DENIED"
-    if not _resolved_destination_allowed(base_url):
         return "PROVIDER_DESTINATION_DENIED"
     nonce = _as_bytes(row["key_nonce"])
     ciphertext = _as_bytes(row["key_ciphertext"])
@@ -495,7 +456,15 @@ def open_runtime(session: Session, revision: int) -> tuple[str, str, str] | str:
         return "PROVIDER_AUTH"
     if not api_key:
         return "PROVIDER_AUTH"
-    return base_url, str(row["model"]), api_key
+    from x_insight.reasoning.provider import approved_endpoint
+
+    return (
+        approved_endpoint(
+            base_url, bool(row["local_endpoint_approved"]), bool(row["trusted_proxy_approved"])
+        ),
+        str(row["model"]),
+        api_key,
+    )
 
 
 def _open_key(nonce: bytes, ciphertext: bytes) -> str:
@@ -509,8 +478,6 @@ def _open_key(nonce: bytes, ciphertext: bytes) -> str:
 
 def _capability_outcome(base_url: str, model: str, nonce: Any, ciphertext: Any) -> tuple[str, str]:
     """Check the saved endpoint. Fixed diagnostics only; never the upstream body or key."""
-    if not _resolved_destination_allowed(base_url):
-        return CAPABILITY_FAILED, "Resolved address is not an allowlisted IP."
     if nonce is None or ciphertext is None:
         return CAPABILITY_FAILED, "No provider API key is stored."
     try:
@@ -538,9 +505,15 @@ def record_capability_test(
             "Provider settings are not configured.",
         )
     base_url = str(latest["base_url"])
-    _require_allowed_destination(base_url)
+    local_endpoint_approved = bool(latest["local_endpoint_approved"])
+    trusted_proxy_approved = bool(latest["trusted_proxy_approved"])
+    base_url = _require_allowed_destination(
+        base_url, local_endpoint_approved, trusted_proxy_approved
+    )
+    from x_insight.reasoning.provider import approved_endpoint
+
     capability, diagnostic = _capability_outcome(
-        base_url,
+        approved_endpoint(base_url, local_endpoint_approved, trusted_proxy_approved),
         str(latest["model"]),
         latest["key_nonce"],
         latest["key_ciphertext"],
@@ -552,6 +525,8 @@ def record_capability_test(
             revision=revision,
             base_url=base_url,
             model=str(latest["model"]),
+            local_endpoint_approved=local_endpoint_approved,
+            trusted_proxy_approved=trusted_proxy_approved,
             key_nonce=_as_bytes(latest["key_nonce"]),
             key_ciphertext=_as_bytes(latest["key_ciphertext"]),
             capability_status=capability,
@@ -572,6 +547,9 @@ def record_capability_test(
         "revision": revision,
         "base_url": base_url,
         "model": str(latest["model"]),
+        "effective_endpoint": base_url,
+        "local_endpoint_approved": local_endpoint_approved,
+        "trusted_proxy_approved": trusted_proxy_approved,
     }
 
 
@@ -596,6 +574,8 @@ def put_api_settings(
             username=str(user.get("username") or ""),
             request_id=request_id,
             if_match=if_match,
+            local_endpoint_approved=payload.local_endpoint_approved,
+            trusted_proxy_approved=payload.trusted_proxy_approved,
         )
     except contracts.ContractError as exc:
         return error_response(

@@ -65,6 +65,7 @@ def _admin():
 
 
 def _save(client, csrf, body: dict, revision: int | None = None):
+    body = {"local_endpoint_approved": True, **body}
     headers = {"X-CSRF-Token": csrf}
     if revision is not None:
         headers["If-Match"] = contracts.format_etag(revision)
@@ -84,7 +85,8 @@ def _run(engine):
     )
 
 
-def test_probe_accepts_json_in_reasoning_content_when_content_empty() -> None:
+def test_probe_accepts_json_in_reasoning_content_when_content_empty(monkeypatch) -> None:
+    monkeypatch.delenv("X_INSIGHT_PROVIDER_ALLOWED_HOSTS", raising=False)
     """Step-style reasoning models return the JSON object with content null."""
 
     class _Handler(BaseHTTPRequestHandler):
@@ -129,7 +131,9 @@ def test_probe_accepts_json_in_reasoning_content_when_content_empty() -> None:
     thread.start()
     try:
         url = f"http://127.0.0.1:{server.server_address[1]}/v1/chat/completions"
-        ok, diagnostic = provider_module.probe_capability(url, MODEL, "test-key")
+        ok, diagnostic = provider_module.probe_capability(
+            provider_module.approved_endpoint(url, True), MODEL, "test-key"
+        )
     finally:
         server.shutdown()
         server.server_close()
@@ -138,12 +142,36 @@ def test_probe_accepts_json_in_reasoning_content_when_content_empty() -> None:
     assert diagnostic == "Provider supports tools and JSON."
 
 
-def test_generation_uses_pinned_saved_credential_not_later_url(saved_registry, monkeypatch) -> None:
+@pytest.mark.parametrize("public", [False, True])
+def test_generation_uses_pinned_saved_credential_not_later_url(
+    saved_registry, monkeypatch, public
+) -> None:
     """Pinned endpoint gets the bearer and model. A later unchanged URL is idle."""
     pinned = provider_module.DeterministicProviderEndpoint()
     later = provider_module.DeterministicProviderEndpoint()
     pinned_url = pinned.start()
     later_url = later.start()
+    from contextlib import ExitStack
+
+    from tests.provider.tls_fixture import public_provider_https
+
+    stack = ExitStack()
+    public_payloads = []
+    public_digest = ""
+    if public:
+        from x_insight.reasoning import provider_destination as policy
+
+        monkeypatch.delenv(policy.ALLOWED_HOSTS_ENV, raising=False)
+        pinned_url = "https://provider-one.example/v1/chat/completions"
+        later_url = "https://provider-two.example/v1/chat/completions"
+
+        def response_for(payload):
+            public_payloads.append(payload)
+            if "response_format" in payload:
+                return 400, {"error": {"param": "response_format"}}
+            return {"choices": [{"message": {"content": json.dumps(valid_cpt(public_digest))}}]}
+
+        public_calls = stack.enter_context(public_provider_https(response_for=response_for))
     try:
         admin, admin_csrf = _admin()
         first = _save(
@@ -152,6 +180,7 @@ def test_generation_uses_pinned_saved_credential_not_later_url(saved_registry, m
             {
                 "api_key": SENTINEL_KEY,
                 "base_url": pinned_url,
+                "local_endpoint_approved": not public,
                 "model": MODEL,
                 "secret_action": "replace",
             },
@@ -160,6 +189,7 @@ def test_generation_uses_pinned_saved_credential_not_later_url(saved_registry, m
             saved_registry, monkeypatch, "dr_saved_pin", "0012345601"
         )
         digest = package["manifest"]["network_hash"]
+        public_digest = digest
         pinned.script = [
             {
                 "type": "status",
@@ -171,7 +201,12 @@ def test_generation_uses_pinned_saved_credential_not_later_url(saved_registry, m
         moved = _save(
             admin,
             admin_csrf,
-            {"base_url": later_url, "model": "other-model", "secret_action": "unchanged"},
+            {
+                "base_url": later_url,
+                "model": "other-model",
+                "secret_action": "unchanged",
+                "local_endpoint_approved": not public,
+            },
             revision=int(first["revision"]),
         )
         assert moved["revision"] == int(first["revision"]) + 1
@@ -179,14 +214,22 @@ def test_generation_uses_pinned_saved_credential_not_later_url(saved_registry, m
         outcome = _run(saved_registry)
         body = client.get(f"/api/v1/generation-batches/{started['batch']['id']}")
     finally:
+        stack.close()
         pinned.stop()
         later.stop()
 
     assert outcome["status"] == "succeeded", outcome
-    assert pinned.captured_auth == [f"Bearer {SENTINEL_KEY}", f"Bearer {SENTINEL_KEY}"]
-    assert [item["model"] for item in pinned.captured] == [MODEL, MODEL]
-    assert "response_format" in pinned.captured[0]
-    assert "response_format" not in pinned.captured[1]
+    if public:
+        assert len(public_calls) == 2
+        assert {call["host"] for call in public_calls} == {"provider-one.example"}
+        assert [item["model"] for item in public_payloads] == [MODEL, MODEL]
+        assert "response_format" in public_payloads[0]
+        assert "response_format" not in public_payloads[1]
+    else:
+        assert pinned.captured_auth == [f"Bearer {SENTINEL_KEY}", f"Bearer {SENTINEL_KEY}"]
+        assert [item["model"] for item in pinned.captured] == [MODEL, MODEL]
+        assert "response_format" in pinned.captured[0]
+        assert "response_format" not in pinned.captured[1]
     assert later.captured == []
     assert later.captured_auth == []
     assert body.status_code == 200, body.text
@@ -194,7 +237,10 @@ def test_generation_uses_pinned_saved_credential_not_later_url(saved_registry, m
     assert SENTINEL_KEY not in body.text
 
 
-def test_denied_destination_and_unreadable_key_fail_closed(saved_registry, monkeypatch) -> None:
+@pytest.mark.parametrize("denial", ["legacy", "dns"])
+def test_denied_destination_and_unreadable_key_fail_closed(
+    saved_registry, monkeypatch, denial
+) -> None:
     """A pinned job does not call out when the allowlist or deployment key is gone."""
     endpoint = provider_module.DeterministicProviderEndpoint(
         script=[{"type": "final", "cpt": {"network_hash": "x", "tables": []}}]
@@ -208,7 +254,21 @@ def test_denied_destination_and_unreadable_key_fail_closed(saved_registry, monke
             {"api_key": SENTINEL_KEY, "base_url": url, "model": MODEL, "secret_action": "replace"},
         )
         _new_physician_batch(saved_registry, monkeypatch, "dr_saved_deny", "0012345602")
-        monkeypatch.setenv("X_INSIGHT_PROVIDER_ALLOWED_HOSTS", "")
+        if denial == "legacy":
+            monkeypatch.setenv("X_INSIGHT_PROVIDER_ALLOWED_HOSTS", "other.example")
+        else:
+            import socket
+            from urllib.parse import urlsplit
+
+            original_resolve = socket.getaddrinfo
+            endpoint_port = urlsplit(url).port
+
+            def unsafe_resolve(host, port, *args, **kwargs):
+                if host == "127.0.0.1" and port == endpoint_port:
+                    return [(socket.AF_INET, socket.SOCK_STREAM, 6, "", ("169.254.169.254", port))]
+                return original_resolve(host, port, *args, **kwargs)
+
+            monkeypatch.setattr(socket, "getaddrinfo", unsafe_resolve)
         denied = _run(saved_registry)
         assert denied["status"] == "failed", denied
         assert denied["error_code"] == "PROVIDER_DESTINATION_DENIED"

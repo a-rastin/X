@@ -244,7 +244,11 @@ def test_cssrs_change_invalidates_only_high_suicide_question_and_provider_receiv
             affected.append(manifest["question_key"])
         if manifest["question_key"] == "high_suicide_clozapine":
             payload = build_outbound_payload(
-                ProviderConfig(endpoint_url="http://127.0.0.1:1/synthetic", model="synthetic"),
+                ProviderConfig(
+                    local_endpoint_approved=True,
+                    endpoint_url="http://127.0.0.1:1/synthetic",
+                    model="synthetic",
+                ),
                 ProviderRequest(
                     question_key=manifest["question_key"],
                     projection=projection,

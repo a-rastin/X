@@ -220,7 +220,11 @@ def test_active_contract_preserves_full_network_estimation_and_historical_packag
     from x_insight.reasoning.provider import ProviderConfig, ProviderRequest, build_outbound_payload
 
     payload = build_outbound_payload(
-        ProviderConfig(endpoint_url="http://127.0.0.1:1/synthetic", model="synthetic"),
+        ProviderConfig(
+            local_endpoint_approved=True,
+            endpoint_url="http://127.0.0.1:1/synthetic",
+            model="synthetic",
+        ),
         ProviderRequest(
             question_key="pharmacotherapy",
             projection={"variables": []},

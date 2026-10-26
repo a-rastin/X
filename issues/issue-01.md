@@ -1,7 +1,7 @@
 # Issue 01 — Provider setup requires an environment allowlist
 
-Date: 2026-10-26  
-Status: root cause identified; fix proposed, not implemented  
+Date: 2026-10-26
+Status: implementation complete; targeted verification passed; broader backend run incomplete
 Affected flow: Administrator → Provider settings → Save, Test provider, generation
 
 ## Finding
@@ -301,3 +301,62 @@ These are alternatives evaluated in this investigation, not claims about the
 original implementation discussion. The recommended fix is a shared public-
 destination policy enforced at the transport, with application-managed settings
 and deployment-key provisioning.
+
+## Implementation follow-up — 2026-10-26
+
+The proposed behavior is implemented. This section records the outcome; the
+diagnosis and proposal above remain as the historical record of the issue.
+
+- A shared provider destination policy now accepts eligible public HTTPS
+  destinations when the host-list variable is unset or blank. A nonempty
+  `X_INSIGHT_PROVIDER_ALLOWED_HOSTS` remains an optional exact-host restriction.
+- Provider origins resolve to `/v1/chat/completions`; a `/v1` base gets that
+  suffix; full and custom paths are preserved. The settings UI shows the
+  effective endpoint.
+- HTTP is allowed only for an explicitly approved exact local endpoint with
+  local resolved addresses. `198.18.0.0/15` requires a separate explicit
+  trusted-proxy approval. Metadata, link-local, and unspecified destinations
+  remain blocked. Environment proxies are ignored, redirects are refused,
+  each DNS candidate is checked, and outbound sockets bind to the approved
+  address while preserving Host, SNI, and certificate verification.
+- Save performs structural destination-policy validation without a provider
+  network request. Capability checks, saved-revision generation, tool/fallback
+  requests, and keyless fallback requests use the checked transport. Request
+  deadlines cover DNS and HTTP work. Existing authorization, CSRF,
+  encrypted/masked secret handling, cancellation, and pinned job revisions are
+  retained.
+- Migration `0024` adds persisted local-endpoint and trusted-proxy approval
+  booleans. Restore validation requires those fields to be real booleans rather
+  than coercing truthy values.
+- Normal startup provisions one random 32-byte key atomically in persistent
+  protected storage if no key exists. Local default is
+  `backend/.secrets/provider-data.key`; `X_INSIGHT_PROVIDER_DATA_KEY_FILE`
+  selects a file, and the existing base64 `X_INSIGHT_PROVIDER_DATA_KEY`
+  remains an override. Production setup owns the `prod_secrets` volume; API and
+  worker mount it read-only. Existing missing, unreadable, or mismatched key
+  material never triggers silent rotation. The key is excluded from DB
+  archives; staged restore/commit requires the matching original key.
+- Runtime transport validates all DNS candidates and pins connections. DNS
+  resolver work is limited to four concurrent tasks; the overall provider
+  request has a shared deadline. No request is allowed to follow redirects or
+  inherit an environment proxy.
+
+Verification recorded for this implementation: 35 destination-policy tests
+passed; mypy passed on six touched backend modules; 8 key-lifecycle and 12
+startup tests passed against PostgreSQL; the 19-test restore-validation run
+passed before the boolean-coercion correction and five targeted restore
+regressions passed after it (these runs are distinct and not additive). A real
+fresh/repeated migration-startup check created a mode-0600 key and reused the
+same key. `sh deploy/check.sh`, the web production build, root TypeScript checks,
+and `git diff --check` passed. The real-TLS browser run passed 10/10 across
+Chromium and Firefox, including fresh public-provider saves and the
+provider-settings journey through the actual pinned transport.
+
+The broad backend integration suite has no final result. Its earlier run was
+interrupted after progress reporting about 79/98 tests without reported
+failures; the disposable PostgreSQL service was later unavailable. A final
+rerun could not start because the server at port 65433 was gone. The proposed
+PostgreSQL download was aborted, so the suite was not completed. Do not treat
+the earlier progress count as a completed suite pass. Docker image/live Compose
+execution was not verified because the Docker socket was unavailable. No live
+provider call, full repository suite, or clinical validation is claimed.

@@ -355,7 +355,11 @@ def _run_with_script(
     url = endpoint.start()
     try:
         config = provider_module.ProviderConfig(
-            endpoint_url=url, model="test-model", capability="schema", timeout_seconds=timeout
+            local_endpoint_approved=True,
+            endpoint_url=url,
+            model="test-model",
+            capability="schema",
+            timeout_seconds=timeout,
         )
         adapter = provider_module.BoundedProviderAdapter(
             config, grant_token="", database_url=db_module.get_test_database_url()
@@ -395,7 +399,11 @@ def test_shared_budget_timeout_invalid_ratelimit(clean_registry, monkeypatch) ->
     url = endpoint.start()
     try:
         config = provider_module.ProviderConfig(
-            endpoint_url=url, model="test-model", capability="schema", timeout_seconds=1.0
+            local_endpoint_approved=True,
+            endpoint_url=url,
+            model="test-model",
+            capability="schema",
+            timeout_seconds=1.0,
         )
         t0 = contracts.utcnow()
 
@@ -553,7 +561,11 @@ def test_rendering_retry_reuses_stored_result(clean_registry, monkeypatch) -> No
     url = endpoint.start()
     try:
         config = provider_module.ProviderConfig(
-            endpoint_url=url, model="test-model", capability="schema", timeout_seconds=10.0
+            local_endpoint_approved=True,
+            endpoint_url=url,
+            model="test-model",
+            capability="schema",
+            timeout_seconds=10.0,
         )
         t0 = contracts.utcnow()
 
@@ -710,7 +722,11 @@ def test_restart_retains_counts_and_never_duplicates(clean_registry, monkeypatch
         url = endpoint.start()
         try:
             config = provider_module.ProviderConfig(
-                endpoint_url=url, model="test-model", capability="schema", timeout_seconds=10.0
+                local_endpoint_approved=True,
+                endpoint_url=url,
+                model="test-model",
+                capability="schema",
+                timeout_seconds=10.0,
             )
             adapter = provider_module.BoundedProviderAdapter(
                 config, grant_token="", database_url=db_module.get_test_database_url()

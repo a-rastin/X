@@ -54,7 +54,7 @@ dev:
 	@set -eu; \
 	if [ ! -f .env ]; then echo "missing .env: copy .env.example to .env and set POSTGRES_PASSWORD" >&2; exit 1; fi; \
 	declare -A dev_overrides; \
-	for name in DATABASE_URL TEST_DATABASE_URL DB_PORT TEST_DB_PORT BACKEND_PORT WEB_PORT POSTGRES_USER POSTGRES_PASSWORD POSTGRES_DB TEST_POSTGRES_DB DDI_DEFAULT_DATASET_VERSION; do \
+	for name in DATABASE_URL TEST_DATABASE_URL DB_PORT TEST_DB_PORT BACKEND_PORT WEB_PORT POSTGRES_USER POSTGRES_PASSWORD POSTGRES_DB TEST_POSTGRES_DB DDI_DEFAULT_DATASET_VERSION X_INSIGHT_PROVIDER_DATA_KEY X_INSIGHT_PROVIDER_DATA_KEY_FILE X_INSIGHT_PROVIDER_ALLOWED_HOSTS; do \
 	if [[ -v $$name ]]; then dev_overrides[$$name]=$${!name}; fi; \
 	done; \
 	set -a; . ./.env; set +a; \

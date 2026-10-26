@@ -285,3 +285,22 @@ def test_production_startup_targets_require_completed_automatic_migration(checko
     assert not re.search(r"(?m)^    profiles:", migration)
     assert re.search(r"(?m)^      db:\n        condition: service_healthy$", migration)
     assert "DDI_DEFAULT_DATASET_VERSION: ${DDI_DEFAULT_DATASET_VERSION:-}" in migration
+
+
+def test_production_key_is_initialized_before_readonly_api_and_worker():
+    compose = (ROOT / "compose.prod.yaml").read_text()
+    initializer = service_block(compose, "migrate")
+    assert (
+        "X_INSIGHT_PROVIDER_DATA_KEY_FILE: /var/lib/x-insight/secrets/provider-data.key"
+        in initializer
+    )
+    assert "- prod_secrets:/var/lib/x-insight/secrets\n" in initializer
+    for name in ("app", "worker"):
+        block = service_block(compose, name)
+        assert "- prod_secrets:/var/lib/x-insight/secrets:ro" in block
+        assert (
+            "X_INSIGHT_PROVIDER_DATA_KEY_FILE: /var/lib/x-insight/secrets/provider-data.key"
+            in block
+        )
+        assert "migrate:\n        condition: service_completed_successfully" in block
+    assert "prod_secrets:" in compose

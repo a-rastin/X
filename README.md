@@ -65,25 +65,29 @@ database has no released DDI dataset. Its committed sources rebuild offline;
 normal startup needs no separate migration or manual publication command.
 The earlier [page-note follow-up](project-documents/dev/progress/s13.md#follow-up-2026-10-20--remove-page-notes-keep-the-working-note)
 preserves the working note.
-The latest numbered implementation checkpoint is [S42, recorded on
-2026-10-17](project-documents/dev/progress/s42.md), completed after the
-[S62 release rehearsal](project-documents/dev/progress/s62.md). Current schema head
-is `0022`; fresh backups include a 32-table inventory.
+The latest provider-security implementation follow-up is [S42, updated
+2026-10-26](project-documents/dev/progress/s42.md#follow-up-2026-10-26--provider-onboarding-and-destination-safety).
+It removes the mandatory public-host setup, provisions a persistent deployment
+key, and enforces destination checks at the outbound connection. Schema head is
+`0024`; encrypted provider credentials are included in database backups, while
+the deployment encryption key is stored separately and excluded.
 
-- **Provider administration is implemented.** Administrators can save encrypted
-  credentials, inspect masked settings and revisions, and run capability checks.
-  The generation worker still reads environment configuration; it does not consume
-  saved provider settings or their credentials. Production Compose also needs
-  deployment-key and allowed-host environment wiring.
+- **Provider administration and runtime integration are implemented.** An
+  administrator can save a public HTTPS provider using its URL, model, and API
+  key without editing an environment allowlist. The worker uses the job's pinned
+  settings revision. A persistent random deployment key is provisioned at
+  startup; existing managed keys are preserved across restarts and are required
+  to recover encrypted settings. Local HTTP endpoints and the `198.18.0.0/15`
+  transparent-proxy range require explicit persisted approval. A nonempty
+  `X_INSIGHT_PROVIDER_ALLOWED_HOSTS` remains an optional restrictive policy.
 - **Question-package approval is recorded.** All 11 `s39-reviewed-v1` packages have
   [explicit owner approval](content/questions/review-confirmation.s39-v1.json).
   The separately owner-confirmed active workflow release pins these packages;
   historical bundles retain their earlier review states. See
   [proposal generation](docs/proposal-generation.md) for the release contract.
-- **Release evidence is incomplete.** Provider runtime integration, content
-  projection/integration, acceptance gaps, known test failures, and a fresh release
-  rehearsal remain open. Live-provider behavior and latency have not been proven
-  by the recorded rehearsal.
+- **Release evidence is incomplete.** Content projection/integration, acceptance
+  gaps, known test failures, and a fresh release rehearsal remain open. No live
+  paid-provider request, full-repository suite, or clinical validation is claimed.
 
 Use the [progress index](project-documents/dev/progress/README.md) and
 [current release follow-up](project-documents/dev/progress/s62.md#follow-up-2026-10-18--documentation-assessment-and-next-work)
@@ -195,15 +199,21 @@ retain their released dataset; see the [bootstrap rules](docs/ddinter-operations
 | `DB_PORT`, `TEST_DB_PORT` | Host ports for local database containers |
 | `X_INSIGHT_PROVIDER_ENDPOINT`, `X_INSIGHT_PROVIDER_MODEL` | Keyless fallback when a job has no saved settings revision; endpoint is the full provider POST URL |
 | `X_INSIGHT_PROVIDER_CAPABILITY` | Response mode for generation: `schema` or `json`; defaults to `schema`. A `response_format` rejection is retried once without it |
-| `X_INSIGHT_PROVIDER_DATA_KEY` | Operator-held AES-GCM key for stored provider credentials: base64 encoding of exactly 32 bytes; excluded from backups. Required to decrypt the key generation sends |
-| `X_INSIGHT_PROVIDER_ALLOWED_HOSTS` | Exact hostnames allowed for saved settings, capability checks, and generation; comma-separated, empty denies all |
+| `X_INSIGHT_PROVIDER_DATA_KEY` | Optional existing deployment AES-GCM key override, base64 encoding of exactly 32 bytes; excluded from backups. Preserve the matching key to recover encrypted credentials |
+| `X_INSIGHT_PROVIDER_DATA_KEY_FILE` | Optional protected key-file path; local default is `backend/.secrets/provider-data.key`. Normal startup creates a random key once if none exists |
+| `X_INSIGHT_PROVIDER_ALLOWED_HOSTS` | Optional comma-separated exact-host restriction for saved providers. Unset/blank allows eligible public HTTPS destinations; a nonempty list restricts them |
 | `API_PROXY_TARGET` | Optional Vite API proxy override; defaults to `http://localhost:8000` |
 
 An administrator saves the endpoint, model, and API key on the Provider page.
 A queued generation uses the settings revision pinned when that job was
-created, including the decrypted bearer, and refuses a destination that is
-no longer allowlisted. Replacing or clearing the key cancels active
-generation jobs. Local recalculation does not use the provider. The
+created, including the decrypted bearer, and validates and pins resolved public
+addresses for each outbound request. An origin URL maps to
+`/v1/chat/completions`; a URL ending in `/v1` gets that suffix; an explicitly
+supplied full/custom endpoint is preserved and shown as the effective endpoint.
+Only an explicitly approved local endpoint may use HTTP, and it must resolve to
+local addresses. Metadata, link-local, and unspecified targets remain blocked.
+Replacing or clearing the key cancels active generation jobs. Local
+recalculation does not use the provider. The
 environment endpoint is only the fallback for jobs queued before any
 settings existed, and that fallback does not send a bearer token.
 
@@ -303,9 +313,10 @@ The recorded rehearsal verified selected installation, image-build, and recovery
 steps; it did not establish release readiness. Use the
 [installation guide](docs/installation.md#docker-deployment-on-linux) for setup and
 credentials-file handling, and the
-[current provider checkpoint](project-documents/dev/progress/s42.md) for outstanding
-runtime/environment integration. Keep the deployment encryption key separately
-from backup archives.
+[current provider checkpoint](project-documents/dev/progress/s42.md) for provider
+security behavior and verification limits. The deployment encryption key is
+stored in a persistent secret volume and is excluded from backup archives;
+escrow the original key separately so encrypted settings remain recoverable.
 
 ## Repository layout
 

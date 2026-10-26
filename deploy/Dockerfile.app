@@ -39,8 +39,9 @@ ENV X_INSIGHT_CONTENT_DIR=/srv/app/content \
 RUN --mount=type=cache,target=/root/.cache/uv uv sync --locked --no-dev
 
 RUN useradd -m -u 10001 app \
- && mkdir -p /var/lib/x-insight/recovery/backups /var/lib/x-insight/recovery/restores \
- && chown -R app:app /srv/app /var/lib/x-insight/recovery
+ && mkdir -p /var/lib/x-insight/recovery/backups /var/lib/x-insight/recovery/restores /var/lib/x-insight/secrets \
+ && chmod 700 /var/lib/x-insight/secrets \
+ && chown -R app:app /srv/app /var/lib/x-insight
 USER app
 
 EXPOSE 8000

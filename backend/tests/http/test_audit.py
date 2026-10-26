@@ -465,7 +465,11 @@ def _run_generation_once(engine, cpt_payload: dict[str, Any]):
     url = endpoint.start()
     try:
         config = provider_module.ProviderConfig(
-            endpoint_url=url, model="test-model", capability="schema", timeout_seconds=10.0
+            local_endpoint_approved=True,
+            endpoint_url=url,
+            model="test-model",
+            capability="schema",
+            timeout_seconds=10.0,
         )
         adapter = provider_module.BoundedProviderAdapter(
             config, grant_token="", database_url=db_module.get_test_database_url()
@@ -955,7 +959,11 @@ def test_original_run_failure_audited_without_false_success(
     url = endpoint.start()
     try:
         config = provider_module.ProviderConfig(
-            endpoint_url=url, model="test-model", capability="schema", timeout_seconds=10.0
+            local_endpoint_approved=True,
+            endpoint_url=url,
+            model="test-model",
+            capability="schema",
+            timeout_seconds=10.0,
         )
         adapter = provider_module.BoundedProviderAdapter(
             config, grant_token="", database_url=db_module.get_test_database_url()

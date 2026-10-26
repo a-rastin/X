@@ -3,9 +3,10 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The latest diagnosis is [provider first-save destination rejection (2026-10-26)](s42.md#follow-up-2026-10-26--first-save-destination-rejection-diagnosis),
-with the root cause and fix plan in [issue-01.md](../../../issues/issue-01.md); implementation is open.
-The latest implementation follow-up is [automatic schema/DDInter startup (2026-10-23)](s18.md#follow-up-2026-10-23--prepare-schema-and-ddinter-during-normal-startup):
+The latest provider implementation is [onboarding and destination safety (2026-10-26)](s42.md#follow-up-2026-10-26--provider-onboarding-and-destination-safety),
+with diagnosis, implementation details, and evidence in [issue-01.md](../../../issues/issue-01.md). The real-TLS browser run passed 10/10 across Chromium and Firefox; the release gate remains open.
+The preceding [S62 handoff](s62.md#follow-up-2026-10-26--provider-security-implementation-handoff) links that work without changing the rehearsal's release status.
+The latest unrelated implementation follow-up is [automatic schema/DDInter startup (2026-10-23)](s18.md#follow-up-2026-10-23--prepare-schema-and-ddinter-during-normal-startup):
 normal local/production launch prepares the database before dependent services;
 11 startup regressions and real Chromium/Firefox registration checks passed.
 The preceding [bundled approved DDInter setup (2026-10-23)](s18.md#follow-up-2026-10-23--bundle-approved-ddinter-for-fresh-installations):
@@ -178,4 +179,4 @@ bootstrap follow-ups above resolve missing releases within their respective scop
 | S60 backend | [Cross-user, failure, and security acceptance incl. commit-timing fix + review blockers (2026-10-16)](s60-backend.md) |
 | S61 | [Desktop usability defects proven, with verification gaps (2026-10-16)](s61.md) |
 | S62 | [Release rehearsal recorded; gate still open (2026-10-16)](s62.md) |
-| S42 | [Store and test provider settings securely (2026-10-17)](s42.md) |
+| S42 | [Store and test provider settings securely (2026-10-17); provider security follow-up (2026-10-26)](s42.md) |

@@ -69,7 +69,7 @@ TWO_NODE_XML = (
 # 0018 adds only restore_jobs (staging metadata, excluded from portable
 # archives like sessions); clinical rows are identical to 0017. 0019, 0020,
 # and 0021 are also accepted (a fresh backup reports the current head).
-SUPPORTED_APP_SCHEMAS = frozenset({"0017", "0018", "0019", "0020", "0021", "0022", "0023"})
+SUPPORTED_APP_SCHEMAS = frozenset({"0017", "0018", "0019", "0020", "0021", "0022", "0023", "0024"})
 
 
 @pytest.fixture(scope="session")
@@ -108,7 +108,7 @@ def _truncate(engine) -> None:
                 "audit_events, ddi_dataset_releases, ddi_source_documents, "
                 "ddi_concepts, ddi_interaction_evidence, model_networks, "
                 "model_network_versions, model_workflow_pointers, backup_jobs, "
-                "restore_jobs CASCADE"
+                "restore_jobs, provider_settings CASCADE"
             )
         )
 
@@ -831,3 +831,143 @@ def test_safe_audit_and_malformed_ids_and_no_commit(clean_registry, monkeypatch,
     )
     assert "commit" not in json.dumps(job).lower() or "commit_available" in json.dumps(job)
     assert job["report"]["commit_available"] is False
+
+
+def test_provider_archive_needs_original_managed_key_before_restore(
+    clean_registry, monkeypatch, tmp_path
+):
+    """Public backup/restore never transfers a deployment key or rotates ciphertext."""
+    from x_insight.reasoning.provider_key import initialize_key
+
+    monkeypatch.delenv("X_INSIGHT_PROVIDER_DATA_KEY", raising=False)
+    monkeypatch.delenv("X_INSIGHT_PROVIDER_ALLOWED_HOSTS", raising=False)
+    key_path = tmp_path / "secrets" / "provider-data.key"
+    monkeypatch.setenv("X_INSIGHT_PROVIDER_DATA_KEY_FILE", str(key_path))
+    initialize_key(clean_registry)
+    original_key = key_path.read_bytes()
+    admin, csrf = _admin_client(clean_registry, monkeypatch)
+    saved = admin.put(
+        "/api/v1/api-settings",
+        headers=_auth_headers(csrf),
+        json={
+            "base_url": "https://api.openai.com/v1/chat/completions",
+            "model": "synthetic-model",
+            "api_key": "synthetic-restored-api-key",
+        },
+    )
+    assert saved.status_code == 200, saved.text
+    blob, _ = _make_valid_blob(admin, csrf)
+    with zipfile.ZipFile(io.BytesIO(blob)) as archive:
+        assert not any(".key" in name or "secrets" in name for name in archive.namelist())
+        assert all(original_key not in archive.read(name) for name in archive.namelist())
+    key_path.unlink()
+    missing = _post_restore(admin, csrf, blob)
+    assert missing.status_code == 201, missing.text
+    assert missing.json()["status"] == "failed"
+    assert "original deployment key" in missing.text
+    assert not key_path.exists()
+    key_path.write_bytes(b"x" * 32)
+    key_path.chmod(0o600)
+    wrong = _post_restore(admin, csrf, blob)
+    assert wrong.status_code == 201, wrong.text
+    assert wrong.json()["status"] == "failed"
+    key_path.write_bytes(original_key)
+    recovered = _post_restore(admin, csrf, blob)
+    assert recovered.status_code == 201, recovered.text
+    assert recovered.json()["status"] == "succeeded"
+    # Recheck at commit too: a key lost after staging cannot destroy live settings.
+    key_path.unlink()
+    staged = recovered.json()
+    committed = admin.post(
+        f"/api/v1/restores/{staged['id']}/commit",
+        headers=_auth_headers(csrf),
+        json={"confirmation_digest": staged["confirmation_digest"]},
+    )
+    assert committed.status_code == 409, committed.text
+    assert admin.get("/api/v1/api-settings").json()["api_key"] == "configured"
+
+
+def _provider_approval_archive(clean_registry, monkeypatch):
+    monkeypatch.delenv("X_INSIGHT_PROVIDER_ALLOWED_HOSTS", raising=False)
+    admin, csrf = _admin_client(clean_registry, monkeypatch)
+    approvals = [(True, False), (False, True), (False, False)]
+    revisions = []
+    for local, proxy in approvals:
+        saved = admin.put(
+            "/api/v1/api-settings",
+            headers=_auth_headers(csrf),
+            json={
+                "base_url": "https://provider.example/custom",
+                "model": "synthetic",
+                "secret_action": "clear",
+                "local_endpoint_approved": local,
+                "trusted_proxy_approved": proxy,
+            },
+        )
+        assert saved.status_code == 200, saved.text
+        revisions.append(saved.json()["revision"])
+    blob, _ = _make_valid_blob(admin, csrf)
+    return admin, csrf, blob, revisions, approvals
+
+
+def test_restore_rejects_ambiguous_provider_approvals(clean_registry, monkeypatch):
+    admin, csrf, blob, _, _ = _provider_approval_archive(clean_registry, monkeypatch)
+    for field in ("local_endpoint_approved", "trusted_proxy_approved"):
+        for value in ("false", "true", 0, 1, None, [], {}):
+            hostile = _mutate_db(
+                blob,
+                lambda database: database["tables"]["provider_settings"][0].update({field: value}),
+            )
+            staged = _post_restore(admin, csrf, hostile)
+            assert staged.status_code == 201, staged.text
+            assert staged.json()["status"] == "failed", (field, value, staged.text)
+            assert "approval" in staged.json()["error_message"].lower()
+        missing = _mutate_db(
+            blob, lambda database: database["tables"]["provider_settings"][0].pop(field)
+        )
+        assert _post_restore(admin, csrf, missing).json()["status"] == "failed"
+
+
+@pytest.mark.parametrize("legacy", [False, True])
+def test_restore_roundtrips_boolean_provider_approvals_and_legacy_defaults(
+    clean_registry, monkeypatch, legacy
+):
+    admin, csrf, blob, revisions, approvals = _provider_approval_archive(
+        clean_registry, monkeypatch
+    )
+    if legacy:
+
+        def omit_approvals(database):
+            for row in database["tables"]["provider_settings"]:
+                row.pop("local_endpoint_approved")
+                row.pop("trusted_proxy_approved")
+
+        blob = _mutate_db(blob, omit_approvals)
+        blob = _mutate_manifest(blob, lambda manifest: manifest.update(app_schema_version="0023"))
+        approvals = [(False, False)] * len(revisions)
+    staged = _post_restore(admin, csrf, blob)
+    assert staged.status_code == 201, staged.text
+    assert staged.json()["status"] == "succeeded", staged.text
+    job = staged.json()
+    committed = admin.post(
+        f"/api/v1/restores/{job['id']}/commit",
+        headers=_auth_headers(csrf),
+        json={"confirmation_digest": job["confirmation_digest"]},
+    )
+    assert committed.status_code == 200, committed.text
+    assert committed.json()["commit_status"] == "succeeded", committed.text
+    recovered_admin, _ = _admin_client(clean_registry, monkeypatch)
+    for revision, (local, proxy) in zip(revisions, approvals, strict=True):
+        recovered = recovered_admin.get(f"/api/v1/api-settings/revisions/{revision}")
+        assert recovered.status_code == 200, recovered.text
+        assert recovered.json()["local_endpoint_approved"] is local
+        assert recovered.json()["trusted_proxy_approved"] is proxy
+
+
+def test_legacy_restore_cannot_smuggle_provider_approvals(clean_registry, monkeypatch):
+    admin, csrf, blob, _, _ = _provider_approval_archive(clean_registry, monkeypatch)
+    legacy = _mutate_manifest(blob, lambda manifest: manifest.update(app_schema_version="0023"))
+    staged = _post_restore(admin, csrf, legacy)
+    assert staged.status_code == 201, staged.text
+    assert staged.json()["status"] == "failed", staged.text
+    assert "cannot grant endpoint approvals" in staged.json()["error_message"]

@@ -136,7 +136,9 @@ RESTORE_BACKUP_SCHEMA_VERSION = backup_module.BACKUP_MANIFEST_VERSION
 # 0021 adds ``capability_status`` (still operational, not clinical).
 # 0017 and 0018 archives omit the table and stay valid via the special
 # case; 0019 and later must include it.
-SUPPORTED_APP_SCHEMA_VERSIONS = frozenset({"0017", "0018", "0019", "0020", "0021", "0022", "0023"})
+SUPPORTED_APP_SCHEMA_VERSIONS = frozenset(
+    {"0017", "0018", "0019", "0020", "0021", "0022", "0023", "0024"}
+)
 
 # Bounds (ponytail: 256 MiB expanded / 4096 entries / 100 MiB per file;
 # S58 measures real 10k-patient sizes first).
@@ -465,6 +467,40 @@ def _decode_bytes_cell(cell: Any) -> bytes | None:
             return None
     if isinstance(cell, (bytes, bytearray, memoryview)):
         return bytes(cell)
+    return None
+
+
+def _check_provider_approvals(tables: dict[str, Any], app_schema: str) -> str | None:
+    fields = ("local_endpoint_approved", "trusted_proxy_approved")
+    for row in tables.get("provider_settings") or []:
+        if not isinstance(row, dict):
+            return "Provider endpoint approval row is malformed."
+        for field in fields:
+            if app_schema == "0024":
+                if type(row.get(field)) is not bool:
+                    return "Provider endpoint approvals must be explicit JSON booleans."
+            elif field in row and row[field] is not False:
+                return "Legacy provider archives cannot grant endpoint approvals."
+    return None
+
+
+def _check_provider_key(tables: dict[str, Any]) -> str | None:
+    from x_insight.reasoning.provider_key import ProviderKeyError, verify_ciphertexts
+
+    rows = tables.get("provider_settings") or []
+    try:
+        decoded = []
+        for row in rows:
+            item = {}
+            for field in ("key_nonce", "key_ciphertext"):
+                value = row.get(field)
+                item[field] = _decode_bytes_cell(value)
+                if value is not None and item[field] is None:
+                    raise ProviderKeyError("Malformed encrypted credential.")
+            decoded.append(item)
+        verify_ciphertexts(decoded)
+    except (ProviderKeyError, AttributeError, TypeError):
+        return "Provider credentials require their original deployment key before restore."
     return None
 
 
@@ -913,6 +949,12 @@ def validate_archive_bytes(blob: bytes) -> dict[str, Any]:
                     "errors": [f"database content malformed: {name} is not a list"],
                     "warnings": [],
                 }
+        problem = _check_provider_approvals(db_tables, str(app_schema))
+        if problem is not None:
+            return {"ok": False, "errors": [problem], "warnings": []}
+        problem = _check_provider_key(db_tables)
+        if problem is not None:
+            return {"ok": False, "errors": [problem], "warnings": []}
         problem = _check_singleton_identity(db_tables)
         if problem is not None:
             return {"ok": False, "errors": [problem], "warnings": []}
@@ -1770,6 +1812,14 @@ def commit_restore(
         raise contracts.ContractError(
             409, "RESTORE_STALE_CONFIRMATION", "Staged archive is no longer present."
         )
+
+    staged_tables = _load_staged_tables(job_id)
+    problem = _check_provider_approvals(staged_tables, str(job.get("app_schema_version")))
+    if problem is not None:
+        raise contracts.ContractError(409, "RESTORE_PROVIDER_APPROVAL_INVALID", problem)
+    problem = _check_provider_key(staged_tables)
+    if problem is not None:
+        raise contracts.ContractError(409, "RESTORE_PROVIDER_KEY_UNAVAILABLE", problem)
 
     actor_name = str(actor.get("username", ""))
     switched = False

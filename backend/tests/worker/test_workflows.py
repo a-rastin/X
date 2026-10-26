@@ -554,7 +554,11 @@ def test_single_package_backward_compat(clean_registry, monkeypatch) -> None:
     url = endpoint.start()
     try:
         config = provider_module.ProviderConfig(
-            endpoint_url=url, model="test-model", capability="schema", timeout_seconds=10.0
+            local_endpoint_approved=True,
+            endpoint_url=url,
+            model="test-model",
+            capability="schema",
+            timeout_seconds=10.0,
         )
         adapter = provider_module.BoundedProviderAdapter(
             config, grant_token="", database_url=db_module.get_test_database_url()
@@ -616,7 +620,11 @@ def test_pinned_order_sequential_no_parallelism(clean_registry, monkeypatch) -> 
     url = endpoint.start()
     try:
         config = provider_module.ProviderConfig(
-            endpoint_url=url, model="test-model", capability="schema", timeout_seconds=10.0
+            local_endpoint_approved=True,
+            endpoint_url=url,
+            model="test-model",
+            capability="schema",
+            timeout_seconds=10.0,
         )
         adapter = provider_module.BoundedProviderAdapter(
             config, grant_token="", database_url=db_module.get_test_database_url()
@@ -728,7 +736,11 @@ def test_cross_encounter_independent_progress(clean_registry, monkeypatch) -> No
     url = endpoint.start()
     try:
         config = provider_module.ProviderConfig(
-            endpoint_url=url, model="test-model", capability="schema", timeout_seconds=10.0
+            local_endpoint_approved=True,
+            endpoint_url=url,
+            model="test-model",
+            capability="schema",
+            timeout_seconds=10.0,
         )
         adapter = provider_module.BoundedProviderAdapter(
             config, grant_token="", database_url=db_module.get_test_database_url()
@@ -797,7 +809,11 @@ def test_false_gate_skips_without_provider_call(clean_registry, monkeypatch) -> 
     url = endpoint.start()
     try:
         config = provider_module.ProviderConfig(
-            endpoint_url=url, model="test-model", capability="schema", timeout_seconds=10.0
+            local_endpoint_approved=True,
+            endpoint_url=url,
+            model="test-model",
+            capability="schema",
+            timeout_seconds=10.0,
         )
         adapter = provider_module.BoundedProviderAdapter(
             config, grant_token="", database_url=db_module.get_test_database_url()
@@ -884,7 +900,11 @@ def test_required_unknown_stops_progression(clean_registry, monkeypatch) -> None
     url = endpoint.start()
     try:
         config = provider_module.ProviderConfig(
-            endpoint_url=url, model="test-model", capability="schema", timeout_seconds=10.0
+            local_endpoint_approved=True,
+            endpoint_url=url,
+            model="test-model",
+            capability="schema",
+            timeout_seconds=10.0,
         )
         adapter = provider_module.BoundedProviderAdapter(
             config, grant_token="", database_url=db_module.get_test_database_url()
@@ -960,7 +980,11 @@ def test_proposal_limited_coverage_with_skipped_and_warnings(
     url = endpoint.start()
     try:
         config = provider_module.ProviderConfig(
-            endpoint_url=url, model="test-model", capability="schema", timeout_seconds=10.0
+            local_endpoint_approved=True,
+            endpoint_url=url,
+            model="test-model",
+            capability="schema",
+            timeout_seconds=10.0,
         )
         adapter = provider_module.BoundedProviderAdapter(
             config, grant_token="", database_url=db_module.get_test_database_url()
@@ -1032,7 +1056,11 @@ def test_missing_dataset_proposal_null_unavailable(clean_registry, monkeypatch) 
     url = endpoint.start()
     try:
         config = provider_module.ProviderConfig(
-            endpoint_url=url, model="test-model", capability="schema", timeout_seconds=10.0
+            local_endpoint_approved=True,
+            endpoint_url=url,
+            model="test-model",
+            capability="schema",
+            timeout_seconds=10.0,
         )
         adapter = provider_module.BoundedProviderAdapter(
             config, grant_token="", database_url=db_module.get_test_database_url()
@@ -1082,7 +1110,11 @@ def test_freshness_new_batch_old_proposal_immutable(clean_registry, monkeypatch,
     url_old = endpoint_old.start()
     try:
         config_old = provider_module.ProviderConfig(
-            endpoint_url=url_old, model="test-model", capability="schema", timeout_seconds=10.0
+            local_endpoint_approved=True,
+            endpoint_url=url_old,
+            model="test-model",
+            capability="schema",
+            timeout_seconds=10.0,
         )
         adapter_old = provider_module.BoundedProviderAdapter(
             config_old, grant_token="", database_url=db_module.get_test_database_url()
@@ -1123,7 +1155,11 @@ def test_freshness_new_batch_old_proposal_immutable(clean_registry, monkeypatch,
     url_new = endpoint_new.start()
     try:
         config_new = provider_module.ProviderConfig(
-            endpoint_url=url_new, model="test-model", capability="schema", timeout_seconds=10.0
+            local_endpoint_approved=True,
+            endpoint_url=url_new,
+            model="test-model",
+            capability="schema",
+            timeout_seconds=10.0,
         )
         adapter_new = provider_module.BoundedProviderAdapter(
             config_new, grant_token="", database_url=db_module.get_test_database_url()
@@ -1176,7 +1212,11 @@ def test_content_version_does_not_mutate_pinned(clean_registry, monkeypatch, tmp
     url_v1 = endpoint_v1.start()
     try:
         config_v1 = provider_module.ProviderConfig(
-            endpoint_url=url_v1, model="test-model", capability="schema", timeout_seconds=10.0
+            local_endpoint_approved=True,
+            endpoint_url=url_v1,
+            model="test-model",
+            capability="schema",
+            timeout_seconds=10.0,
         )
         adapter_v1 = provider_module.BoundedProviderAdapter(
             config_v1, grant_token="", database_url=db_module.get_test_database_url()
@@ -1262,7 +1302,11 @@ def test_lai_discussion_only_retained_branch(clean_registry, monkeypatch, tmp_pa
     url = endpoint.start()
     try:
         config = provider_module.ProviderConfig(
-            endpoint_url=url, model="test-model", capability="schema", timeout_seconds=10.0
+            local_endpoint_approved=True,
+            endpoint_url=url,
+            model="test-model",
+            capability="schema",
+            timeout_seconds=10.0,
         )
         adapter = provider_module.BoundedProviderAdapter(
             config, grant_token="", database_url=db_module.get_test_database_url()

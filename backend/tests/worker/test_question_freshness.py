@@ -352,7 +352,11 @@ def _run_bounded_times(engine, cpt_payload: dict[str, Any], times: int):
     url = endpoint.start()
     try:
         config = provider_module.ProviderConfig(
-            endpoint_url=url, model="test-model", capability="schema", timeout_seconds=10.0
+            local_endpoint_approved=True,
+            endpoint_url=url,
+            model="test-model",
+            capability="schema",
+            timeout_seconds=10.0,
         )
         adapter = provider_module.BoundedProviderAdapter(
             config, grant_token="", database_url=db_module.get_test_database_url()
@@ -624,7 +628,11 @@ def test_regenerate_affected_only_sequentially_retains_history(clean_registry, m
     url2 = endpoint2.start()
     try:
         config2 = provider_module.ProviderConfig(
-            endpoint_url=url2, model="test-model", capability="schema", timeout_seconds=10.0
+            local_endpoint_approved=True,
+            endpoint_url=url2,
+            model="test-model",
+            capability="schema",
+            timeout_seconds=10.0,
         )
         adapter2 = provider_module.BoundedProviderAdapter(
             config2, grant_token="", database_url=db_module.get_test_database_url()
@@ -988,7 +996,11 @@ def test_notes_plan_preserve_and_stale_reset_retry_blocked(clean_registry, monke
     url2 = endpoint2.start()
     try:
         config2 = provider_module.ProviderConfig(
-            endpoint_url=url2, model="test-model", capability="schema", timeout_seconds=10.0
+            local_endpoint_approved=True,
+            endpoint_url=url2,
+            model="test-model",
+            capability="schema",
+            timeout_seconds=10.0,
         )
         adapter2 = provider_module.BoundedProviderAdapter(
             config2, grant_token="", database_url=db_module.get_test_database_url()

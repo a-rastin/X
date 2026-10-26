@@ -31,7 +31,7 @@ from x_insight.identity import service as identity_service
 
 SENTINEL_KEY = "sk-sentinel-s42-do-not-echo"
 REPLACEMENT_KEY = "sk-sentinel-s42-replaced"
-BASE_URL = "http://127.0.0.1:9/v1"
+BASE_URL = "http://127.0.0.1:9/v1/chat/completions"
 MODEL = "s42-slice1"
 SETTINGS_PATH = "/api/v1/api-settings"
 _SECRETS = (SENTINEL_KEY, REPLACEMENT_KEY)
@@ -109,7 +109,12 @@ def _physician_client(clean_all):
 
 
 def _payload() -> dict[str, str]:
-    return {"api_key": SENTINEL_KEY, "base_url": BASE_URL, "model": MODEL}
+    return {
+        "api_key": SENTINEL_KEY,
+        "base_url": BASE_URL,
+        "model": MODEL,
+        "local_endpoint_approved": True,
+    }
 
 
 def _assert_no_secret(response) -> None:
@@ -163,6 +168,7 @@ def test_admin_saves_provider_settings_masked_and_unauthorized_denied(clean_all)
 
 
 def _put(client, csrf: str, body: dict, revision: int | None = None):
+    body = {"local_endpoint_approved": True, **body}
     headers = {"X-CSRF-Token": csrf}
     if revision is not None:
         headers["If-Match"] = contracts.format_etag(revision)
@@ -311,28 +317,13 @@ def test_secret_action_keeps_placeholder_out_of_storage_and_stale_write_fails(cl
     assert stale_key not in audit.text
 
 
-def test_fake_ip_proxy_range_is_not_blocked_special_use(monkeypatch):
-    """198.18.0.0/15 is fake-IP, not an internal target. RFC1918 and metadata stay blocked."""
-    from x_insight.reasoning import provider_config
+def test_fake_ip_proxy_range_requires_explicit_approval(monkeypatch):
+    from x_insight.reasoning.provider_destination import address_allowed
 
-    monkeypatch.setenv("X_INSIGHT_PROVIDER_ALLOWED_HOSTS", "api.openai.com")
-
-    def resolve(ip):
-        def getaddrinfo(host, port, *args, **kwargs):
-            assert host == "api.openai.com"
-            return [(None, None, None, None, (ip, port))]
-
-        return getaddrinfo
-
-    url = "https://api.openai.com/v1/chat/completions"
-    monkeypatch.setattr(provider_config.socket, "getaddrinfo", resolve("198.18.0.128"))
-    assert provider_config._resolved_destination_allowed(url)
-    for blocked in ("10.1.2.3", "169.254.169.254", "127.0.0.1"):
-        monkeypatch.setattr(provider_config.socket, "getaddrinfo", resolve(blocked))
-        assert not provider_config._resolved_destination_allowed(url)
-    monkeypatch.setenv("X_INSIGHT_PROVIDER_ALLOWED_HOSTS", "api.openai.com,10.1.2.3")
-    monkeypatch.setattr(provider_config.socket, "getaddrinfo", resolve("10.1.2.3"))
-    assert provider_config._resolved_destination_allowed(url)
+    assert not address_allowed("198.18.0.128", local=False, trusted_proxy=False)
+    assert address_allowed("198.18.0.128", local=False, trusted_proxy=True)
+    for ip in ("10.1.2.3", "169.254.169.254", "127.0.0.1"):
+        assert not address_allowed(ip, local=False, trusted_proxy=True)
 
 
 def test_save_rejects_destinations_outside_the_operator_allowlist(clean_all):
@@ -636,6 +627,18 @@ def test_capability_check_uses_the_real_client_and_save_is_not_verification(clea
             current,
         )
         assert moved.status_code == 200, moved.text
+        from x_insight.reasoning import provider_destination as policy
+
+        real_resolve = policy.socket.getaddrinfo
+
+        def unsafe_resolve(host, port, *args, **kwargs):
+            if host == "localhost":
+                import socket
+
+                return [(socket.AF_INET, socket.SOCK_STREAM, 6, "", ("169.254.169.254", port))]
+            return real_resolve(host, port, *args, **kwargs)
+
+        monkeypatch.setattr(policy.socket, "getaddrinfo", unsafe_resolve)
         blocked = client.post(
             "/api/v1/api-settings/test",
             json={},
@@ -643,7 +646,10 @@ def test_capability_check_uses_the_real_client_and_save_is_not_verification(clea
         )
         assert blocked.status_code == 200, blocked.text
         assert blocked.json().get("capability") == "failed", blocked.json()
-        assert blocked.json().get("diagnostic") == "Resolved address is not an allowlisted IP."
+        assert (
+            blocked.json().get("diagnostic")
+            == "Provider destination is blocked by destination policy."
+        )
         _assert_no_probe_leak(blocked)
         assert counts["chat_ok"] == chat_before
 
@@ -765,3 +771,47 @@ def test_prior_revision_stays_readable_after_clear(clean_all):
 
     physician, _physician_csrf = _physician_client(clean_all)
     _assert_error(physician.get(f"{SETTINGS_PATH}/revisions/{rev_a}"), 403, "FORBIDDEN")
+
+
+@pytest.mark.parametrize("restriction", [None, ""])
+@pytest.mark.parametrize("host", ["provider-one.example", "provider-two.example"])
+def test_default_public_save_reload_and_capability(clean_all, monkeypatch, restriction, host):
+    """Real admin API + local chat fixture; public policy is checked before test routing."""
+    from tests.provider.tls_fixture import public_provider_https
+    from x_insight.reasoning import provider_destination as policy
+
+    if restriction is None:
+        monkeypatch.delenv(policy.ALLOWED_HOSTS_ENV, raising=False)
+    else:
+        monkeypatch.setenv(policy.ALLOWED_HOSTS_ENV, restriction)
+    with public_provider_https() as calls:
+        client, csrf = _login()
+        saved = _put(
+            client,
+            csrf,
+            {
+                "api_key": SENTINEL_KEY,
+                "base_url": f"https://{host}",
+                "model": MODEL,
+                "local_endpoint_approved": False,
+            },
+        )
+        assert saved.status_code == 200, saved.text
+        body = saved.json()
+        assert body["api_key"] == "configured"
+        assert body["effective_endpoint"] == f"https://{host}/v1/chat/completions"
+        assert not body["local_endpoint_approved"]
+        assert client.get(SETTINGS_PATH).json() == body
+        tested = client.post(SETTINGS_PATH + "/test", json={}, headers={"X-CSRF-Token": csrf})
+        assert tested.status_code == 200, tested.text
+        assert tested.json()["capability"] == "verified"
+        assert not tested.json()["local_endpoint_approved"]
+        assert len(calls) == 2
+        assert {call["host"] for call in calls} == {host}
+
+
+@pytest.mark.parametrize("field", ["local_endpoint_approved", "trusted_proxy_approved"])
+def test_endpoint_approval_requires_a_json_boolean(clean_all, field):
+    client, csrf = _login()
+    response = _put(client, csrf, {**_payload(), field: "false"})
+    _assert_error(response, 422, "VALIDATION_FAILED")

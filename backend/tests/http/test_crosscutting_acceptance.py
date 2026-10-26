@@ -453,7 +453,11 @@ def _run_with_script(
     url = endpoint.start()
     try:
         config = provider_module.ProviderConfig(
-            endpoint_url=url, model="test-model", capability="schema", timeout_seconds=timeout
+            local_endpoint_approved=True,
+            endpoint_url=url,
+            model="test-model",
+            capability="schema",
+            timeout_seconds=timeout,
         )
         adapter = provider_module.BoundedProviderAdapter(
             config, grant_token="", database_url=db_module.get_test_database_url()
@@ -822,7 +826,11 @@ def test_lease_theft_crash_and_archive_fence_with_controlled_timing(
         url = endpoint.start()
         try:
             config = provider_module.ProviderConfig(
-                endpoint_url=url, model="test-model", capability="schema", timeout_seconds=30.0
+                local_endpoint_approved=True,
+                endpoint_url=url,
+                model="test-model",
+                capability="schema",
+                timeout_seconds=30.0,
             )
             adapter = provider_module.BoundedProviderAdapter(
                 config, grant_token="", database_url=db_module.get_test_database_url()
@@ -1041,7 +1049,11 @@ def test_payloads_exclude_notes_sentinels_and_forgeries_denied_without_mutation(
     url = endpoint.start()
     try:
         config = provider_module.ProviderConfig(
-            endpoint_url=url, model="test-model", capability="schema", timeout_seconds=10.0
+            local_endpoint_approved=True,
+            endpoint_url=url,
+            model="test-model",
+            capability="schema",
+            timeout_seconds=10.0,
         )
         adapter = provider_module.BoundedProviderAdapter(
             config, grant_token=known_grant, database_url=db_module.get_test_database_url()
@@ -1496,7 +1508,11 @@ def test_overlapping_provider_hold_with_restart_durable_reread(clean_registry, m
         url = endpoint.start()
         try:
             config = provider_module.ProviderConfig(
-                endpoint_url=url, model="test-model", capability="schema", timeout_seconds=30.0
+                local_endpoint_approved=True,
+                endpoint_url=url,
+                model="test-model",
+                capability="schema",
+                timeout_seconds=30.0,
             )
             adapter = provider_module.BoundedProviderAdapter(
                 config, grant_token="", database_url=db_module.get_test_database_url()
@@ -1707,7 +1723,11 @@ def test_inflight_generation_bump_fences_stale_commit(clean_registry, monkeypatc
         url = endpoint.start()
         try:
             config = provider_module.ProviderConfig(
-                endpoint_url=url, model="test-model", capability="schema", timeout_seconds=30.0
+                local_endpoint_approved=True,
+                endpoint_url=url,
+                model="test-model",
+                capability="schema",
+                timeout_seconds=30.0,
             )
             adapter = provider_module.BoundedProviderAdapter(
                 config, grant_token="", database_url=db_module.get_test_database_url()

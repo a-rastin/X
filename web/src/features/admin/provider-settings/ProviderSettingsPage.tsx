@@ -36,6 +36,10 @@ export function ProviderSettingsPage() {
   const [keyStatus, setKeyStatus] = useState<KeyStatus>("absent");
   const [capability, setCapability] = useState<Capability>("untested");
   const [baseUrl, setBaseUrl] = useState("");
+  const [effectiveEndpoint, setEffectiveEndpoint] = useState("");
+  const [localEndpointApproved, setLocalEndpointApproved] = useState(false);
+  const [trustedProxyApproved, setTrustedProxyApproved] = useState(false);
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string[]>>({});
   const [model, setModel] = useState("");
   const [secretAction, setSecretAction] = useState<SecretAction>("unchanged");
   const [apiKey, setApiKey] = useState("");
@@ -56,6 +60,9 @@ export function ProviderSettingsPage() {
         setKeyStatus(current.api_key);
         setCapability(current.capability);
         setBaseUrl(current.base_url);
+        setEffectiveEndpoint(current.effective_endpoint);
+        setLocalEndpointApproved(current.local_endpoint_approved);
+        setTrustedProxyApproved(current.trusted_proxy_approved);
         setModel(current.model);
         setReady(true);
       } catch (err) {
@@ -85,6 +92,7 @@ export function ProviderSettingsPage() {
     }
     setBusy("save");
     setError(null);
+    setFieldErrors({});
     try {
       const saved = await saveProviderSettings({
         baseUrl,
@@ -92,11 +100,16 @@ export function ProviderSettingsPage() {
         revision,
         secretAction,
         apiKey,
+        localEndpointApproved,
+        trustedProxyApproved,
       });
       setRevision(saved.revision);
       setKeyStatus(saved.api_key);
       setCapability(saved.capability);
       setBaseUrl(saved.base_url);
+      setEffectiveEndpoint(saved.effective_endpoint);
+      setLocalEndpointApproved(saved.local_endpoint_approved);
+      setTrustedProxyApproved(saved.trusted_proxy_approved);
       setModel(saved.model);
       setSecretAction("unchanged");
       setApiKey("");
@@ -110,6 +123,9 @@ export function ProviderSettingsPage() {
         return;
       }
       setError(messageFor(err));
+      if (err instanceof ApiError) {
+        setFieldErrors(err.fieldErrors);
+      }
     } finally {
       setBusy(null);
     }
@@ -121,6 +137,7 @@ export function ProviderSettingsPage() {
     }
     setBusy("test");
     setError(null);
+    setFieldErrors({});
     try {
       const result = await testProviderSettings();
       setCapability(result.capability);
@@ -132,6 +149,9 @@ export function ProviderSettingsPage() {
         return;
       }
       setError(messageFor(err));
+      if (err instanceof ApiError) {
+        setFieldErrors(err.fieldErrors);
+      }
     } finally {
       setBusy(null);
     }
@@ -166,9 +186,31 @@ export function ProviderSettingsPage() {
               className="xi-input"
               id="provider-base-url"
               value={baseUrl}
-              onChange={(event) => setBaseUrl(event.target.value)}
+              onChange={(event) => {
+                setBaseUrl(event.target.value);
+                setLocalEndpointApproved(false);
+                setTrustedProxyApproved(false);
+                setEffectiveEndpoint("");
+              }}
+              aria-invalid={Boolean(fieldErrors.base_url?.length)}
+              aria-describedby={`provider-base-url-help${fieldErrors.base_url?.length ? " provider-base-url-error" : ""}`}
               autoComplete="off"
             />
+            <p className="xi-hint" id="provider-base-url-help">
+              Enter an HTTPS origin, a base ending in /v1, or a full chat endpoint.
+              An origin uses /v1/chat/completions; /v1 adds /chat/completions.
+              Custom endpoint paths are preserved.
+            </p>
+            {fieldErrors.base_url?.length > 0 && (
+              <p className="xi-form-error" id="provider-base-url-error">
+                {fieldErrors.base_url.join(" ")}
+              </p>
+            )}
+            {effectiveEndpoint && (
+              <p className="xi-hint" id="provider-effective-endpoint">
+                Saved endpoint: {effectiveEndpoint}
+              </p>
+            )}
           </div>
           <div className="xi-field">
             <label className="xi-label" htmlFor="provider-model">
@@ -179,8 +221,61 @@ export function ProviderSettingsPage() {
               id="provider-model"
               value={model}
               onChange={(event) => setModel(event.target.value)}
+              aria-invalid={Boolean(fieldErrors.model?.length)}
+              aria-describedby={fieldErrors.model?.length ? "provider-model-error" : undefined}
               autoComplete="off"
             />
+            {fieldErrors.model?.length > 0 && (
+              <p className="xi-form-error" id="provider-model-error">
+                {fieldErrors.model.join(" ")}
+              </p>
+            )}
+          </div>
+          <div className="xi-field">
+            <label>
+              <input
+                id="provider-local-approval"
+                type="checkbox"
+                checked={localEndpointApproved}
+                onChange={(event) => setLocalEndpointApproved(event.target.checked)}
+                aria-invalid={Boolean(fieldErrors.local_endpoint_approved?.length)}
+                aria-describedby={`provider-local-approval-help${fieldErrors.local_endpoint_approved?.length ? " provider-local-approval-error" : ""}`}
+              />{" "}
+              Approve this local endpoint
+            </label>
+            <p className="xi-hint" id="provider-local-approval-help">
+              Allow a self-hosted provider on this saved host and port, including HTTP.
+              Metadata and link-local destinations remain blocked.
+              Changing the URL clears this approval.
+            </p>
+            {fieldErrors.local_endpoint_approved?.length > 0 && (
+              <p className="xi-form-error" id="provider-local-approval-error">
+                {fieldErrors.local_endpoint_approved.join(" ")}
+              </p>
+            )}
+          </div>
+          <div className="xi-field">
+            <label>
+              <input
+                id="provider-proxy-approval"
+                type="checkbox"
+                checked={trustedProxyApproved}
+                onChange={(event) => setTrustedProxyApproved(event.target.checked)}
+                aria-invalid={Boolean(fieldErrors.trusted_proxy_approved?.length)}
+                aria-describedby={`provider-proxy-approval-help${fieldErrors.trusted_proxy_approved?.length ? " provider-proxy-approval-error" : ""}`}
+              />{" "}
+              Trust this endpoint&apos;s fake-IP proxy
+            </label>
+            <p className="xi-hint" id="provider-proxy-approval-help">
+              Allow this saved host to resolve through a trusted proxy using 198.18.0.0/15.
+              Enable only when your network uses that proxy.
+              Changing the URL clears this approval.
+            </p>
+            {fieldErrors.trusted_proxy_approved?.length > 0 && (
+              <p className="xi-form-error" id="provider-proxy-approval-error">
+                {fieldErrors.trusted_proxy_approved.join(" ")}
+              </p>
+            )}
           </div>
           {revision !== null && (
             <div className="xi-field">
@@ -191,6 +286,8 @@ export function ProviderSettingsPage() {
                 className="xi-select"
                 id="provider-secret-action"
                 value={secretAction}
+                aria-invalid={Boolean(fieldErrors.secret_action?.length)}
+                aria-describedby={fieldErrors.secret_action?.length ? "provider-secret-action-error" : undefined}
                 onChange={(event) =>
                   setSecretAction(event.target.value as SecretAction)
                 }
@@ -203,6 +300,11 @@ export function ProviderSettingsPage() {
                 Unchanged keeps the saved key and does not send a new one.
                 Replace stores the key you type. Clear removes it.
               </p>
+              {fieldErrors.secret_action?.length > 0 && (
+                <p className="xi-form-error" id="provider-secret-action-error">
+                  {fieldErrors.secret_action.join(" ")}
+                </p>
+              )}
             </div>
           )}
           <div className="xi-field">
@@ -215,8 +317,15 @@ export function ProviderSettingsPage() {
               type="password"
               value={apiKey}
               onChange={(event) => setApiKey(event.target.value)}
+              aria-invalid={Boolean(fieldErrors.api_key?.length)}
+              aria-describedby={fieldErrors.api_key?.length ? "provider-api-key-error" : undefined}
               autoComplete="off"
             />
+            {fieldErrors.api_key?.length > 0 && (
+              <p className="xi-form-error" id="provider-api-key-error">
+                {fieldErrors.api_key.join(" ")}
+              </p>
+            )}
           </div>
           <div className="xi-row-actions">
             <button

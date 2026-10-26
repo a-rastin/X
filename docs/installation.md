@@ -152,7 +152,7 @@ or a model provider. The first rebuild/import may take several minutes; wait for
 the exact immutable release. Existing released datasets are preserved unless the
 bundled version is explicitly configured; see the [bootstrap rules](ddinter-operations.md#fresh-installation-with-the-bundled-approved-release).
 
-Current schema head is `0022`. Setup failure exits before either local server
+Current schema head is `0024`. Setup failure exits before either local server
 starts; correct the reported error and run `make dev` again. `make migrate`
 remains an optional operator tool for setup without launching servers. Plain
 `alembic upgrade head` creates schema without provisioning DDI data; `/ready`
@@ -257,9 +257,11 @@ First setup may take several minutes. Verify both `/health` and `/ready` after
 startup; the API container health check uses `/health` alone.
 
 Only Caddy publishes host ports. The API and database remain on the internal
-Compose network. Persistent volumes hold the database (`prod_pgdata`) and shared
-backup/restore state (`prod_recovery`); actual Docker volume names include the
-Compose project prefix.
+Compose network. Persistent volumes hold the database (`prod_pgdata`), shared
+backup/restore state (`prod_recovery`), and managed provider encryption key
+(`prod_secrets`); actual Docker volume names include the Compose project prefix.
+The setup service initializes the secret volume; API and worker mount it
+read-only.
 
 ### 4. Verify and sign in
 
@@ -293,32 +295,53 @@ provider paths have different behavior:
 | Generation worker | Uses the settings revision pinned on the job: saved endpoint, model, and decrypted bearer. Reloads that revision on each claim |
 | Administrator Provider page | Saves encrypted credentials, displays masked revisions, and performs a capability check. Replace or clear cancels active generation jobs |
 | Keyless fallback | Jobs queued before any saved revision still read `X_INSIGHT_PROVIDER_ENDPOINT`, `X_INSIGHT_PROVIDER_MODEL`, and `X_INSIGHT_PROVIDER_CAPABILITY`. That path sends no bearer |
-| Production environment wiring | `compose.prod.yaml` passes `X_INSIGHT_PROVIDER_DATA_KEY` and `X_INSIGHT_PROVIDER_ALLOWED_HOSTS` to the API and the worker |
+| Public destinations | Eligible public HTTPS destinations work by default. A nonempty `X_INSIGHT_PROVIDER_ALLOWED_HOSTS` optionally restricts saved settings, capability checks, and generation |
+| Deployment key | Normal startup creates a random 32-byte key once in persistent protected storage and shares it with the API and worker |
 
-The saved endpoint is the full provider POST URL. Capability is `schema` or
-`json` (default `schema`). If the endpoint rejects `response_format`, generation
-retries that one request without it and still validates the JSON. A saved key
-is not enough: the deployment key must decrypt it, and the host must stay on
-the allowlist at call time. Local recalculation never calls the provider.
+Enter a provider origin, a base ending in `/v1`, or a full/custom chat
+completions endpoint. An origin is completed as `/v1/chat/completions`; `/v1`
+gets the same suffix; a supplied full/custom path is preserved. The page shows
+the effective endpoint. Capability is `schema` or `json` (default `schema`). If
+the endpoint rejects `response_format`, generation retries that request once
+without it and still validates the JSON. Local recalculation never calls the
+provider.
 
-For local testing of the administrator settings surface, put the following in
-your private `.env`, then reload it and restart the API:
+For local development, the startup migration creates
+`backend/.secrets/provider-data.key` automatically when no key file or override
+exists. Keep `.secrets` out of source control and preserve this file with the
+database. Alternatively set `X_INSIGHT_PROVIDER_DATA_KEY_FILE` to a protected
+path, or keep using `X_INSIGHT_PROVIDER_DATA_KEY` as a base64 override for a
+deployment that already manages its key. The API and worker must use the same
+key. Do not replace or delete an existing key: encrypted provider credentials
+cannot be recovered without the original key. Startup fails safely if an
+existing key is missing, unreadable, or invalid; it does not silently rotate it.
+The key is not included in database backup archives, so keep a separate secure
+escrow copy and restore it before using encrypted provider settings from an
+archive. The encrypted provider credentials remain in the database backup; the
+separate decryption key does not.
 
-| Variable | Requirement |
-| --- | --- |
-| `X_INSIGHT_PROVIDER_DATA_KEY` | Base64 encoding of exactly 32 random bytes; keep this deployment key outside the database and backup archives |
-| `X_INSIGHT_PROVIDER_ALLOWED_HOSTS` | Comma-separated exact hostnames, without URL scheme/path; an empty list denies all destinations |
+`X_INSIGHT_PROVIDER_ALLOWED_HOSTS` is optional. If set to a nonempty
+comma-separated list, its entries are exact hostnames and restrict provider
+destinations; they are not full URLs. If unset or blank, public HTTPS
+destinations are checked for safety and allowed without an operator host entry.
+DNS results are validated at connection time and the socket is pinned to an
+approved address while preserving TLS hostname verification. Environment HTTP
+proxies are ignored. Redirects are not followed. Unsafe private, loopback,
+link-local, metadata, multicast, reserved, and unspecified destinations are
+blocked by default, including mixed safe/unsafe DNS results.
 
-Capability checks also resolve DNS. Special-use addresses require the resolved
-IP to be explicitly allowed, except `198.18.0.0/15` (fake-IP proxy range).
-Redirects are not followed. The same allowlist restricts generation calls that use a saved revision.
-Choose destinations under operator control; capability checks and generation
-send an outbound request.
+For an intentionally local/self-hosted provider, explicitly approve that exact
+endpoint on the Provider page. HTTP is allowed only for an approved local
+endpoint that resolves to local addresses; metadata, link-local, and
+unspecified addresses remain denied. Transparent proxies using
+`198.18.0.0/15` also require the explicit trusted-proxy approval. These
+approvals are stored with provider settings and are not implied by a host
+allowlist. Capability checks and generation send outbound requests.
 
-Keep the same deployment key available for encrypted-credential recovery; entering
-the provider API key in the browser does not supply this encryption key. Production
-Compose passes both variables into the API and the worker from the external
-environment file. A container built before that wiring still needs a recreate.
+Production Compose persists the managed key in the `prod_secrets` volume. The
+one-shot migration/setup service initializes it; API and worker mount the
+volume read-only. The provider API key entered in the browser is separate from
+this deployment encryption key. See the [key and recovery procedure](../deploy/README.md#2-environment-and-key-handling).
 
 The approved [11 question packages](../content/questions/review-confirmation.s39-v1.json)
 do not by themselves release workflow bundles, history/instrument dependencies,
@@ -404,18 +427,19 @@ again. Do not clear a maintenance lock as a generic startup fix.
 | Docker daemon or permission error | Confirm `docker info` succeeds for the installation account before retrying Compose |
 | `make dev` reports an occupied database port | This project's running containers are allowed; stop the unrelated listener or choose free database ports and update both URLs |
 | API/web ports are occupied | Stop the other process or choose available `BACKEND_PORT`/`WEB_PORT` values, then rerun `make dev` |
-| `/health` is 200 but `/ready` is 503 `SCHEMA_INCOMPATIBLE` | Confirm the API uses the startup target database and matching revision. Normal startup applies schema automatically; current expected head is `0022`. Manual migration commands remain optional recovery tools |
+| `/health` is 200 but `/ready` is 503 `SCHEMA_INCOMPATIBLE` | Confirm the API uses the startup target database and matching revision. Normal startup applies schema automatically; current expected head is `0024`. Manual migration commands remain optional recovery tools |
 | Medications shows `DDI dataset is unavailable.` after a fresh installation | Inspect `make dev` setup output or production `logs migrate`, confirm the API uses that database, and correct the reported setup error before restarting. See [DDI bootstrap recovery](ddinter-operations.md#fresh-installation-with-the-bundled-approved-release). An invalid `DDI_DEFAULT_DATASET_VERSION` still fails explicitly |
 | `/ready` reports `DB_UNAVAILABLE` | Check database health and the API process's actual connection configuration; confirm password, hostname, port, and database name |
 | Password changes in `.env` do not fix database login | PostgreSQL initialization variables do not change credentials inside an existing volume; use its existing credentials or a deliberate database password change |
 | Vite loads but API calls fail | Check the API on port 8000 and `API_PROXY_TARGET`; restart Vite after changing its proxy environment |
 | Admin login fails on a reused database | The original default password is not restored on restart; use the existing account credentials |
 | Migration container exits with an error | Inspect production `logs migrate`; API/worker startup waits for setup success. Follow the runbook's migration-failure procedure, then rerun `prod-up` |
-| Generation reports `PROVIDER_NOT_CONFIGURED` | The worker lacks an endpoint/model; configure its environment and restart it, accounting for the saved-settings integration gap |
+| Generation reports `PROVIDER_NOT_CONFIGURED` | No provider revision was pinned and no endpoint/model fallback is configured; save provider settings or configure the keyless fallback for newly queued work |
 | Generation or local calculation stays queued | Confirm the separate worker is running, connected to the same database, and not held by restore maintenance |
-| Provider key cannot be saved | The API needs a valid deployment data key and an allowed destination; a browser API key alone is insufficient |
-| Provider is saved/tested but generation still fails | Saved settings are not loaded by the current worker; review provider and content integration limits above |
-| Production settings ignore the data key/allowed hosts in the environment file | The checked-in Compose file does not forward those two variables; this remains implementation work |
+| Provider key cannot be saved | Check the specific URL or key error. Normal startup provisions a deployment key; verify the key file or `X_INSIGHT_PROVIDER_DATA_KEY` override is readable and consistent across API and worker. Public HTTPS destinations need no allowlist entry |
+| Provider destination is denied | Check URL syntax, DNS answers, and whether the destination is public HTTPS. For an intentional local endpoint, explicitly approve that exact endpoint in the Provider page; metadata and link-local destinations remain blocked |
+| Provider settings cannot be decrypted after restore | Restore the original deployment key from secure escrow. The key is excluded from the database archive and is never rotated automatically |
+| Production key file cannot be read | Confirm the setup service created `prod_secrets` and that API/worker mount it read-only; inspect `logs migrate` before retrying startup |
 | `/ready` reports `MAINTENANCE` after restore | Follow the operator recovery/rollback procedure and verify state before reopening access |
 
 ## Related documentation

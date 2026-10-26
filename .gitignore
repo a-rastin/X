@@ -14,3 +14,6 @@ __pycache__/
 .pytest_cache/
 .ruff_cache/
 .mypy_cache/
+
+# Deployment provider encryption keys are escrowed separately from Git.
+.secrets/

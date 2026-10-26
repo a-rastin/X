@@ -386,7 +386,13 @@ def resolve_production_provider(
     if capability not in ("schema", "json"):
         capability = "schema"
     return provider_module.BoundedProviderAdapter(
-        provider_module.ProviderConfig(endpoint_url=endpoint, model=model, capability=capability),
+        provider_module.ProviderConfig(
+            endpoint_url=endpoint,
+            model=model,
+            capability=capability,
+            local_endpoint_approved=bool(getattr(endpoint, "local_endpoint_approved", False)),
+            trusted_proxy_approved=bool(getattr(endpoint, "trusted_proxy_approved", False)),
+        ),
         database_url=database_url,
         api_key=api_key,
     )

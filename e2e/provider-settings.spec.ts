@@ -235,6 +235,7 @@ test("admin saves, tests, and clears provider settings without echoing the key",
 
     await page.locator("#provider-base-url").fill(liveUrl);
     await page.locator("#provider-model").fill(model);
+    await page.locator("#provider-local-approval").check();
     if (hasSavedRevision) {
       await page.locator("#provider-secret-action").selectOption("replace");
     }
@@ -258,6 +259,9 @@ test("admin saves, tests, and clears provider settings without echoing the key",
     }
     await expectNoSentinel(page);
 
+    await page.reload();
+    await expect(page.locator("#provider-local-approval")).toBeChecked();
+    await expect(page.locator("#provider-api-key")).toHaveValue("");
     const verified = await readMutation(page, "POST");
     expect(verified.capability).toBe("verified");
     expect(verified.diagnostic).toBe(VERIFIED);
@@ -268,6 +272,8 @@ test("admin saves, tests, and clears provider settings without echoing the key",
     await expectNoSentinel(page);
 
     await page.locator("#provider-base-url").fill(deadUrl);
+    await expect(page.locator("#provider-local-approval")).not.toBeChecked();
+    await page.locator("#provider-local-approval").check();
     await page.locator("#provider-secret-action").selectOption("unchanged");
     const kept = await readMutation(page, "PUT");
     expect(kept.capability).toBe("untested");
@@ -352,4 +358,33 @@ test("physician is refused provider settings", async ({ page, request }) => {
   await expect(page.getByRole("alert")).toContainText("Administrator access required.");
   await expect(page.locator("#provider-settings-heading")).toHaveCount(0);
   await expect(page.locator("#provider-api-key")).toHaveCount(0);
+});
+
+test("provider form displays field diagnostics and explicit endpoint approvals", async ({ page }) => {
+  await loginAs(page, "admin", "admin", "admin");
+  await page.route("**/api/v1/api-settings", (route) => {
+    if (route.request().method() === "PUT") {
+      return route.fulfill({ status: 422, contentType: "application/json", body: JSON.stringify({
+        code: "PROVIDER_DESTINATION_DENIED", message: "Provider URL is invalid.",
+        field_errors: {
+          base_url: ["Use HTTPS or explicitly approve this local endpoint."],
+          model: ["Choose an available model."],
+          api_key: ["Enter a provider API key."],
+        },
+      }) });
+    }
+    return route.fulfill({ status: 404, contentType: "application/json", body: JSON.stringify({ code: "NOT_FOUND" }) });
+  });
+  await page.getByRole("link", { name: "Provider", exact: true }).click();
+  await expect(page.getByLabel("Approve this local endpoint")).not.toBeChecked();
+  await expect(page.getByLabel("Trust this endpoint's fake-IP proxy")).not.toBeChecked();
+  await page.locator("#provider-base-url").fill("http://127.0.0.1:9000");
+  await page.locator("#provider-model").fill("fixture-model");
+  await page.locator("#provider-api-key").fill(SENTINEL);
+  await page.locator("#provider-save").click();
+  await expect(page.locator("#provider-base-url-error")).toHaveText("Use HTTPS or explicitly approve this local endpoint.");
+  await expect(page.locator("#provider-model-error")).toHaveText("Choose an available model.");
+  await expect(page.locator("#provider-api-key-error")).toHaveText("Enter a provider API key.");
+  await expect(page.locator("#provider-base-url")).toHaveAttribute("aria-invalid", "true");
+  await expect(page.locator("#provider-base-url")).toHaveAttribute("aria-describedby", /provider-base-url-error/);
 });

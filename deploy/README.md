@@ -94,23 +94,35 @@ while naming the app tag. The tag's inspected id after the build is
   Use a fresh shell without exported development configuration, which can
   override Compose environment-file values. `POSTGRES_PASSWORD` must be
   URL-safe because Compose embeds it in `DATABASE_URL`.
-- Key escrow: S42 stores provider credentials using `X_INSIGHT_PROVIDER_DATA_KEY`
-  (base64 of exactly 32 bytes), held outside the database and backup archive.
-  Stored credentials cannot be decrypted without the matching deployment key;
-  retain it separately for recovery. The Provider page accepts provider settings
-  and API keys, not the deployment encryption key. Ordinary charts and
-  administration do not require provider generation.
-- Provider settings: save the full OpenAI-compatible POST URL, model, and API
-  key on the Provider page. Generation uses the revision pinned on the job,
-  decrypts the key with `X_INSIGHT_PROVIDER_DATA_KEY`, and sends it as a bearer
-  token. The host must be in `X_INSIGHT_PROVIDER_ALLOWED_HOSTS`. Production
-  Compose passes both variables to the app and the worker. Replacing or
-  clearing the key cancels active generation jobs; local recalculation is
-  independent. `X_INSIGHT_PROVIDER_ENDPOINT` / `MODEL` / optional `CAPABILITY`
-  (`schema`|`json`) are the keyless fallback for jobs queued before any saved
-  revision. Leave generation unconfigured unless a saved provider, or that
-  keyless fallback, is deliberately compatible. A capability test is not by
-  itself a successful generation.
+- Deployment key: the one-shot setup service creates a random 32-byte provider
+  data key once in the persistent `prod_secrets` volume. API and worker mount
+  that volume read-only and use the same key. `X_INSIGHT_PROVIDER_DATA_KEY`
+  remains an override for installations that already manage a base64-encoded
+  32-byte key; `X_INSIGHT_PROVIDER_DATA_KEY_FILE` selects a protected key file
+  where needed. Preserve and escrow the original key separately from database
+  backups. It is never included in the archive. Missing, unreadable, or
+  mismatched key material does not trigger rotation; restore the original key
+  before provider settings can be decrypted. Encrypted provider credentials
+  remain in database backups; only their separate decryption key is excluded.
+  The Provider page accepts the upstream API key, not the deployment encryption
+  key.
+- Provider settings: enter an origin, a base ending in `/v1`, or a full/custom
+  OpenAI-compatible chat endpoint. The UI shows the effective endpoint:
+  origins map to `/v1/chat/completions`, `/v1` gets that suffix, and supplied
+  full/custom paths are preserved. Generation uses the settings revision pinned
+  on the job and sends the decrypted API key as a bearer token. Public HTTPS
+  destinations are validated at every outbound connection and require no host
+  environment entry. A nonempty `X_INSIGHT_PROVIDER_ALLOWED_HOSTS` is an
+  optional exact-host restriction; blank/unset means the safe public policy.
+  Local HTTP endpoints require explicit approval for the exact endpoint and
+  local resolved addresses. Metadata, link-local, and unspecified addresses
+  remain blocked. The `198.18.0.0/15` transparent-proxy range also requires an
+  explicit trusted-proxy approval. Environment HTTP proxies are ignored and
+  redirects are not followed. Replacing or clearing the key cancels active
+  generation jobs; local recalculation is independent.
+  `X_INSIGHT_PROVIDER_ENDPOINT` / `MODEL` / optional `CAPABILITY` (`schema` or
+  `json`) remain a keyless fallback for jobs queued before any saved revision.
+  A capability test is not by itself a successful generation.
 - Recovery state (`prod_recovery` volume, shared by app AND worker):
   backup staging, restore staging, the S56 maintenance lock, and the
   external operator recovery log.
@@ -211,7 +223,8 @@ make prod-stop PROD_ENV_FILE="$X_INSIGHT_PROD_ENV_FILE"
 ```
 
 Never `docker compose -f compose.prod.yaml down -v` in production — that
-deletes `prod_pgdata` (the database) and `prod_recovery`. For a full
+deletes `prod_pgdata` (the database), `prod_recovery`, and `prod_secrets` (the
+provider encryption key). For a full
 teardown of a disposable drill host only, `down -v` is the documented
 destructive reset.
 
@@ -265,18 +278,20 @@ operator's own host): ~20 ordinary HTTP req/s, ordinary p95 < 1s,
 
 ## 10. Known limits (S62 rehearsal, 2026-10-16)
 
-The rehearsal did not remove the release limits. S42 subsequently implemented
-provider administration; the runtime/environment integration boundary below is
-current. Older dated rehearsal evidence remains unchanged.
+The rehearsal did not remove the release limits. Its provider limitations below
+describe the state on 2026-10-16 and are superseded by the
+[2026-10-26 provider-security follow-up](../project-documents/dev/progress/s42.md#follow-up-2026-10-26--provider-onboarding-and-destination-safety).
+Older dated rehearsal evidence remains unchanged.
 
 - No high availability. No automatic backup schedule; take a backup before
   an upgrade (§3). Not clinical validation. S39.b approved the 11 question
   packages; the DDI corpus and other instruments stay as their own reports
   left them.
-- Live provider calls were not part of this drill. S42 storage and the Provider
-  page are implemented; saved configuration is not yet consumed by the worker,
-  and production encryption-key/allowed-host wiring remains open. S58 did not
-  measure live-LLM latency.
+- Live provider calls were not part of this drill. At that point, saved
+  configuration was not yet consumed by the worker and production key/host
+  wiring remained open. S42 later completed that integration; S58 did not
+  measure live-LLM latency, and this runbook still does not claim live provider
+  behavior or latency.
 - `make test-recovery` runs `cd backend && uv run pytest tests/recovery`.
   It does not source `.env` and does not create or drop a volume. It needs
   `TEST_DATABASE_URL` when the test port is not 5433. On the rehearsal host,

@@ -23,14 +23,13 @@ export interface ProviderSettings {
   base_url: string;
   model: string;
   capability: Capability;
+  effective_endpoint: string;
+  local_endpoint_approved: boolean;
+  trusted_proxy_approved: boolean;
 }
 
-export interface SavedProviderSettings {
+export interface SavedProviderSettings extends ProviderSettings {
   revision: number;
-  api_key: KeyStatus;
-  base_url: string;
-  model: string;
-  capability: Capability;
   affected_runs?: number;
 }
 
@@ -48,6 +47,9 @@ const UNSAVED: ProviderSettings = {
   base_url: "",
   model: "",
   capability: "untested",
+  effective_endpoint: "",
+  local_endpoint_approved: false,
+  trusted_proxy_approved: false,
 };
 
 function mutationHeaders(revision: number | null): Record<string, string> {
@@ -75,11 +77,16 @@ async function readJson(response: Response): Promise<unknown> {
     }
   }
   if (!response.ok) {
-    const body = (payload ?? {}) as { code?: string; message?: string };
+    const body = (payload ?? {}) as {
+      code?: string;
+      message?: string;
+      field_errors?: Record<string, string[]>;
+    };
     throw new ApiError(
       response.status,
       body.code ?? "REQUEST_FAILED",
       body.message ?? `Request failed (${response.status}).`,
+      body.field_errors ?? {},
     );
   }
   return payload;
@@ -110,6 +117,12 @@ function masked(payload: unknown): SavedProviderSettings {
     base_url: typeof body.base_url === "string" ? body.base_url : "",
     model: typeof body.model === "string" ? body.model : "",
     capability: capability(body.capability),
+    effective_endpoint:
+      typeof body.effective_endpoint === "string"
+        ? body.effective_endpoint
+        : typeof body.base_url === "string" ? body.base_url : "",
+    local_endpoint_approved: body.local_endpoint_approved === true,
+    trusted_proxy_approved: body.trusted_proxy_approved === true,
   };
   if (typeof body.affected_runs === "number") {
     saved.affected_runs = body.affected_runs;
@@ -139,6 +152,8 @@ export interface SaveProviderSettingsInput {
   revision: number | null;
   secretAction: SecretAction;
   apiKey: string;
+  localEndpointApproved: boolean;
+  trustedProxyApproved: boolean;
 }
 
 /** PUT. Omits If-Match and secret_action when nothing is saved. unchanged
@@ -146,9 +161,11 @@ export interface SaveProviderSettingsInput {
 export async function saveProviderSettings(
   input: SaveProviderSettingsInput,
 ): Promise<SavedProviderSettings> {
-  const body: Record<string, string> = {
+  const body: Record<string, string | boolean> = {
     base_url: input.baseUrl,
     model: input.model,
+    local_endpoint_approved: input.localEndpointApproved,
+    trusted_proxy_approved: input.trustedProxyApproved,
   };
   if (input.revision === null) {
     if (input.apiKey !== "") {
