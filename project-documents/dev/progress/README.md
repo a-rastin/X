@@ -3,6 +3,8 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
+The [skip/bypass diagnosis (2026-10-26)](s07.md#follow-up-2026-10-26--redundant-assessment-skipbypass-diagnosis)
+links [issue-02.md](../../../issues/issue-02.md): Continue already permits incomplete steps; UI removal and compatibility work are planned, not implemented.
 The latest provider implementation is [onboarding and destination safety (2026-10-26)](s42.md#follow-up-2026-10-26--provider-onboarding-and-destination-safety),
 with diagnosis, implementation details, and evidence in [issue-01.md](../../../issues/issue-01.md). The real-TLS browser run passed 10/10 across Chromium and Firefox; the release gate remains open.
 The preceding [S62 handoff](s62.md#follow-up-2026-10-26--provider-security-implementation-handoff) links that work without changing the rehearsal's release status.
