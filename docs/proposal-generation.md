@@ -105,17 +105,20 @@ separate **Proposal readiness** summary lists every unresolved requirement with
 a readable field label, a reason and a link to its History control or Step 4 assessment.
 Controls wait for the server's field inventory to load before accepting edits.
 
-Response counts distinguish **answered** from **execution-ready**. Unknown and
-Not assessed can count as answered while still requiring clarification. Missing,
-empty, conflicting, invalid and explicitly unresolved required values also
-block execution. Follow-up gates additionally identify known answers that fail
-their existing baseline, trial or PANSS prerequisites. Assess the actual facts;
-do not substitute an answer merely to make the gate pass.
+Response counts distinguish **answered** from **execution-ready**. Unknown,
+omitted, null, empty and whitespace-only required inputs are nonblocking
+uncertainty: they estimate with missing/null context and disclosed
+uncertainty, and never pause generation for being unresolved. Explicit Not
+assessed and Unresolved answers, conflicting responses, malformed nonempty
+values, invalid packages and missing follow-up baseline/trial prerequisites
+still need clarification before the affected question can execute. A known
+false gate stays not applicable and needs no job; unknown applicability
+estimates with disclosed uncertainty and never becomes false. Assess the
+actual facts; do not substitute an answer merely to make the gate pass.
 
 Readiness uses the same backend manifests, exact versioned source paths and gate
-rules as execution. It returns all blockers instead of only the first one.
-Required uncertainty is checked before false applicability: a question becomes
-not applicable only after all required context is known and its gate permits it.
+rules as execution. It returns all blockers with field labels, plus the
+nonblocking warnings separately, instead of only the first problem.
 Readiness is input validation, not a completed proposal or a signing permission.
 
 History labels its summary with the saved revision and shows when changes are
@@ -127,7 +130,8 @@ and unreadable checks prevent a start. **Check again** repeats the checks.
 ## Recover an earlier clarification run
 
 1. Follow the proposal-readiness links to History or Step 4 C-SSRS. Review every
-   unresolved input and save the assessed responses. Confirm the save succeeds and readiness
+   blocking input and save the assessed responses. Uncertain context needs no
+   resolution: it estimates with disclosed uncertainty. Confirm the save succeeds and readiness
    reflects the saved revision.
 2. Return to Step 7. If an earlier run exists, use **Start new run with current
    inputs** explicitly. Reloading or returning to the step restores that
@@ -162,17 +166,19 @@ Routes below use the `/api/v1` prefix and enforce the draft author's access.
   Optional `?source_batch_id={batch_id}` checks those inputs against the source
   batch's immutable packages for retry. The batch must belong to this encounter.
 - The response includes `workflow`, `source_revision`, `ready`, `status`,
-  `required_count`, `answered_count`, `execution_ready_count`, `blockers` and
-  `questions`. Each question includes its gate status, reason and counts.
-  Each blocker includes `question_key`, `question_label`, `source_path`,
-  `label`, `status` and `reason`. A question-wide blocker can have a null path.
+  `required_count`, `answered_count`, `execution_ready_count`, `blockers`,
+  `warnings` and `questions`. Each question includes its gate status, reason,
+  counts, `blockers` and `warnings`. Each blocker or warning includes
+  `question_key`, `question_label`, `source_path`, `label`, `status` and
+  `reason`. A question-wide blocker can have a null path.
 - History reads and saves include the same `proposal_readiness` object. A new
   idempotent History save and its replay retain that response field.
 - `POST /encounters/{id}/generation-batches` accepts `{}` for the current
   released workflow or `{ "source_batch_id": "…" }` for an exact-package retry.
-  Reviewed starts and retries reject incomplete context with HTTP `422`, code
+  Reviewed starts and retries reject genuinely blocking inputs with HTTP `422`, code
   `PROPOSAL_INPUTS_INCOMPLETE`, and field errors keyed by source path, before
-  batch persistence, admission or DDI pinning. A readiness read cannot reserve a
+  batch persistence, admission or DDI pinning. Incomplete-context warnings never
+  trigger that rejection. A readiness read cannot reserve a
   future revision: the POST independently validates inputs and `If-Match`.
 - `GET /encounters/{id}/generation-batches/latest` discovers an existing run
   without browser storage. Cached and server-discovered runs remain readable.
@@ -196,7 +202,7 @@ The server pins the content, patient projection, provider settings and DDI relea
 into each batch. It loads only the checked-in release inventory, verifies
 dependency hashes, and validates package approval, network semantics and workflow
 order. After validating the original release, it derives application contract
-`history-inputs-2026-10-22-v3`, with exact hash-pinned definitions
+`history-inputs-2026-10-27-v4`, with exact hash-pinned definitions
 `history.pharmacotherapy.v3.json`, `history.high_suicide_clozapine.v2.json`
 (empty fields), `history.lai_indication_choice.v2.json` and
 `history.aggression_clozapine.v2.json` under `content/history/`. Original artifacts

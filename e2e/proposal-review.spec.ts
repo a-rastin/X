@@ -357,9 +357,11 @@ test(`frozen ${contractCode} offers a new current run without replacing its reco
   const start = page.getByTestId("proposal-start-current-history");
   await expect(start).toBeVisible();
   await expect(page.getByTestId("proposal-review")).toContainText("recorded run remains available for review");
+  await expect(page.getByTestId("proposal-review")).toContainText("current policy");
   expect(posts).toHaveLength(0);
   await start.click();
   await expect.poll(() => posts.length).toBe(1);
+  await expect.poll(async () => (await page.evaluate((id) => JSON.parse(localStorage.getItem(`xi.proposal.${id}`) ?? "null"), draftId)).batchId).not.toBe(old.batchId);
   expect(posts[0]).toEqual({});
   await expect(page.getByTestId("proposal-status-pharmacotherapy")).toContainText(/Pending|Running/);
   await expect(start).toHaveCount(0);
@@ -371,7 +373,7 @@ test(`frozen ${contractCode} offers a new current run without replacing its reco
 });
 }
 
-test("S48 readiness core completion does not start generation; all blockers link to exact History controls", async ({ page, request }) => {
+test("S48 readiness core completion starts generation with uncertainty; warnings link to exact History controls", async ({ page, request }) => {
   const physician = await loginPhysician(page, request, "e2eprmissing");
   const { draftId } = await createPatientWithDraft(request, physician);
   const definition = JSON.parse(await readFile("content/history/history.v1.json", "utf8"));
@@ -381,19 +383,25 @@ test("S48 readiness core completion does not start generation; all blockers link
   await gotoEncounter(page, draftId);
   const summary = page.getByTestId("proposal-readiness");
   // Absent C-SSRS normalizes to five explicit Unknown answers, which is a
-  // complete recent-ideation screen and the one execution-ready input here.
-  await expect(summary).toContainText("10 / 14 required responses answered; 1 / 14 execution-ready.");
+  // complete recent-ideation screen and the one observed input here. The 13
+  // missing workflow fields are nonblocking uncertainty, not blockers.
+  await expect(summary).toContainText("Ready for proposal generation.");
+  await expect(summary).toContainText("10 / 14 required responses answered; 14 / 14 execution-ready.");
+  await expect(summary).toContainText("Uncertain context (does not block generation)");
   await expect(summary.getByRole("link")).toHaveCount(13);
-  await expect(summary.getByRole("link", { name: "C-SSRS assessment", exact: true })).toHaveCount(0);
   const server = await (await request.get(`/api/v1/encounters/${draftId}/proposal-readiness`)).json();
-  expect(server.blockers).toHaveLength(13);
-  expect(server.blockers.some((blocker: { source_path: string }) => blocker.source_path === "synthetic/assessments/cssrs")).toBe(false);
-  for (const blocker of server.blockers) {
-    const link = summary.locator(`a[href*="${encodeURIComponent(blocker.source_path)}"]`);
-    await expect(link).toHaveText(blocker.label);
+  expect(server.ready).toBe(true);
+  expect(server.blockers).toHaveLength(0);
+  expect(server.warnings).toHaveLength(13);
+  expect(server.warnings.some((warning: { source_path: string }) => warning.source_path === "synthetic/assessments/cssrs")).toBe(false);
+  for (const warning of server.warnings) {
+    const link = summary.locator(`a[href*="${encodeURIComponent(warning.source_path)}"]`);
+    await expect(link).toHaveText(warning.label);
   }
-  expect(posts.count).toBe(0);
-  await expect(summary).toBeVisible();
+  // Warnings alone never pause generation.
+  await expect(page.getByTestId("proposal-review")).not.toContainText("Generation paused");
+  await expect(page.getByTestId("proposal-status-pharmacotherapy")).toContainText(/Pending|Running/, { timeout: 15000 });
+  await expect.poll(() => posts.count).toBe(1);
   const path = "candidate/history/pharmacotherapy.v2/h_physical_vulnerability";
   await summary.locator(`a[href*="${encodeURIComponent(path)}"]`).click();
   const control = page.locator(`[id="hist-${path}"]`);
@@ -401,10 +409,10 @@ test("S48 readiness core completion does not start generation; all blockers link
   await expect(control).toBeFocused();
   await expect(page.locator("#history-workflow-pharmacotherapy")).toBeVisible();
   await expect(page.getByText("Complete — all 6 applicable history fields answered.", { exact: true })).toBeVisible();
-  expect(posts.count).toBe(0);
+  expect(posts.count).toBe(1);
 });
 
-test("S48 readiness uncertainty is answered but unresolved; saving corrections permits automatic start", async ({ page, request }) => {
+test("S48 readiness uncertainty estimates with missing context; only genuinely blocking inputs pause generation", async ({ page, request }) => {
   const physician = await loginPhysician(page, request, "e2eprunknown");
   const { draftId } = await createPatientWithDraft(request, physician);
   await seedReadyContext(request, physician, draftId);
@@ -414,20 +422,77 @@ test("S48 readiness uncertainty is answered but unresolved; saving corrections p
     values: { ...current.draft_data.history.values, [prefix + "h_physical_vulnerability"]: "unknown", [prefix + "h_substance_contribution"]: "unknown" } } }, current.revision);
   const posts = countGenerationPosts(page);
   await gotoEncounter(page, draftId);
-  await expect(page.getByTestId("proposal-readiness")).toContainText("14 / 14 required responses answered; 12 / 14 execution-ready.");
-  await expect(page.getByTestId("proposal-readiness")).toContainText("Unknown does not resolve this required input.");
-  expect(posts.count).toBe(0);
+  // Unknown inputs are answered but uncertain: disclosed in the summary and
+  // estimated with missing context. Generation starts without corrections.
+  await expect(page.getByTestId("proposal-readiness")).toContainText("Ready for proposal generation.");
+  await expect(page.getByTestId("proposal-readiness")).toContainText("does not block generation");
+  await expect(page.getByTestId("proposal-review")).not.toContainText("Generation paused");
+  await expect(page.getByTestId("proposal-status-pharmacotherapy")).toContainText(/Pending|Running/, { timeout: 15000 });
+  await expect.poll(() => posts.count).toBe(1);
+
+  // An explicitly unassessed required input is a genuine blocker: the recorded
+  // run restores read-only, stays stale, and a new run is refused until the
+  // blocking input is corrected.
+  const nms = "candidate/history/lai_indication_choice.v1/h_prior_nms";
+  const blocked = await (await request.get(`/api/v1/encounters/${draftId}`)).json();
+  await patchDraftWithRetry(request, physician, draftId, { ...blocked.draft_data, history: { ...blocked.draft_data.history,
+    values: { ...blocked.draft_data.history.values, [nms]: "not_assessed" } } }, blocked.revision);
+  await page.reload();
+  await expect(page.getByTestId("proposal-stale-banner")).toBeVisible({ timeout: 15000 });
+  await expect(page.getByTestId("proposal-readiness")).toContainText("Proposal inputs need clarification.");
+  expect(posts.count).toBe(1);
+  await page.getByRole("button", { name: "Start new run with current inputs", exact: true }).click();
+  await expect(page.getByTestId("proposal-review").getByRole("alert")).toContainText("1 proposal input needs clarification");
+  expect(posts.count).toBe(1);
+
+  // Correcting the blocking input and starting an explicit new run succeeds;
+  // the recorded run stays available and is never rewritten.
+  const fixed = await (await request.get(`/api/v1/encounters/${draftId}`)).json();
+  await patchDraftWithRetry(request, physician, draftId, { ...fixed.draft_data, history: { ...fixed.draft_data.history,
+    values: { ...fixed.draft_data.history.values, [nms]: "No" } } }, fixed.revision);
+  await page.reload();
+  await expect(page.getByTestId("proposal-stale-banner")).toBeVisible({ timeout: 15000 });
+  await page.getByRole("button", { name: "Start new run with current inputs", exact: true }).click();
+  await expect.poll(() => posts.count).toBe(2);
+  await expect(page.getByTestId("proposal-status-pharmacotherapy")).toContainText(/Pending|Running/, { timeout: 15000 });
+});
+
+test("S48 readiness Unknown-to-known edit stales the run; explicit new run replaces without rewriting history", async ({ page, request }) => {
+  const physician = await loginPhysician(page, request, "e2eprstale");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  await seedReadyContext(request, physician, draftId);
+  const posts = countGenerationPosts(page);
+  await gotoEncounter(page, draftId);
+  await expect(page.getByTestId("proposal-status-pharmacotherapy")).toContainText(/Pending|Running/, { timeout: 15000 });
+  await expect.poll(() => posts.count).toBe(1);
+  const first = await page.evaluate((id) => JSON.parse(localStorage.getItem(`xi.proposal.${id}`) ?? "null"), draftId);
+  expect(first.batchId).toBeTruthy();
+  const before = await (await request.get(`/api/v1/generation-batches/${first.batchId}`)).json();
+
+  // An Unknown-to-known edit moves the input fingerprint: refresh keeps the
+  // recorded run readable and stale, and never starts a replacement alone.
   await page.locator("#wizard-step-history").click();
-  const group = page.locator("#history-workflow-pharmacotherapy").locator("..");
-  await expect(group).toContainText("3 / 3 answered");
-  await expect(group.locator("..")).toContainText("1 / 3 execution-ready");
-  await page.locator(`[id="hist-${prefix}h_physical_vulnerability"]`).selectOption("no");
-  await page.locator(`[id="hist-${prefix}h_substance_contribution"]`).selectOption("no");
-  await expect.poll(async () => (await (await request.get(`/api/v1/encounters/${draftId}/proposal-readiness`)).json()).ready).toBe(true);
+  const prefix = "candidate/history/pharmacotherapy.v2/";
+  await page.locator(`[id="hist-${prefix}h_physical_vulnerability"]`).selectOption("unknown");
   await expect(page.locator("#draft-save-status")).toContainText("Saved (revision", { timeout: 10000 });
   await page.locator("#wizard-step-proposal-review").click();
-  await expect(page.getByTestId("proposal-status-pharmacotherapy")).toContainText(/Pending|Running/);
+  await expect(page.getByTestId("proposal-stale-banner")).toBeVisible({ timeout: 15000 });
   expect(posts.count).toBe(1);
+  await page.reload();
+  await expect(page.getByTestId("proposal-stale-banner")).toBeVisible({ timeout: 15000 });
+  expect(posts.count).toBe(1);
+
+  // Explicit new run uses current inputs under the current policy; the old
+  // batch stays readable with identical runs.
+  await page.getByRole("button", { name: "Start new run with current inputs", exact: true }).click();
+  await expect.poll(async () => (await page.evaluate((id) => JSON.parse(localStorage.getItem(`xi.proposal.${id}`) ?? "null"), draftId)).batchId).not.toBe(first.batchId);
+  expect(posts.count).toBe(2);
+  const second = await page.evaluate((id) => JSON.parse(localStorage.getItem(`xi.proposal.${id}`) ?? "null"), draftId);
+  expect(second.batchId).not.toBe(first.batchId);
+  await expect(page.getByTestId("proposal-status-pharmacotherapy")).toContainText(/Pending|Running/, { timeout: 15000 });
+  const after = await (await request.get(`/api/v1/generation-batches/${first.batchId}`)).json();
+  expect(after.batch).toEqual(before.batch);
+  expect(after.question_runs).toEqual(before.question_runs);
 });
 
 for (const failure of ["read failure", "stale revision"] as const) {
@@ -457,8 +522,10 @@ test("S48 readiness old clarification run remains readable and requires saved co
   const { draftId } = await createPatientWithDraft(request, physician);
   // Inline synthetic engineering packages retain the old gate contract. Use
   // this public fixture boundary to create an immutable no-result legacy run
-  // without bypassing the reviewed workflow's new backend preflight.
-  await patchDraftWithRetry(request, physician, draftId, { gate: "true" }, 1);
+  // without bypassing the reviewed workflow's new backend preflight. An
+  // explicit Unresolved answer stays a genuine blocker under the new policy
+  // (missing/unknown context alone would now estimate instead).
+  await patchDraftWithRetry(request, physician, draftId, { gate: "true", history: { values: { h_s48_a: "Unresolved" } } }, 1);
   const csrf = await physicianSession(request, physician);
   const hash = createHash("sha256").update(TWO_NODE_XML, "utf8").digest("hex");
   const started = await request.post(`/api/v1/encounters/${draftId}/generation-batches`, {
@@ -550,13 +617,13 @@ test("S48 §1 saved ready entry starts server-pinned generation and resumes with
   try {
     await gotoEncounter(page, draftId);
     const panel = page.getByTestId("proposal-review");
-    await expect(panel).toContainText("Questions (5)", { timeout: 15000 });
+    await expect(panel).toContainText("Questions (4)", { timeout: 15000 });
     await expect(page.getByTestId("proposal-status-pharmacotherapy")).toContainText(/Pending|Running/);
     expect(postCount).toBe(1);
     await expect.poll(() => page.evaluate((id) => localStorage.getItem(`xi.proposal.${id}`), draftId)).not.toBeNull();
     await page.evaluate((id) => localStorage.removeItem(`xi.proposal.${id}`), draftId);
     await page.reload();
-    await expect(page.getByTestId("proposal-review")).toContainText("Questions (5)", { timeout: 15000 });
+    await expect(page.getByTestId("proposal-review")).toContainText("Questions (4)", { timeout: 15000 });
     expect(postCount).toBe(1);
     await page.locator("#wizard-step-history").click();
     // A legacy-field edit must preserve all versioned question answers.
@@ -582,9 +649,9 @@ test("S48 §1 saved ready entry starts server-pinned generation and resumes with
   }
 });
 
-// S48 §1: entry flushes autosave (Saving→Saved) then auto-attempts; typing
-// more never creates a run per keystroke (POST stays 0 with no packages).
-test("S48 §1 entry flushes autosave and never creates a run per keystroke", async ({
+// S48 §1: entry starts exactly one server run for uncertain context;
+// typing more never creates a run per keystroke (POST stays 1).
+test("S48 §1 entry starts one run for uncertain context and never creates a run per keystroke", async ({
   page,
   request,
 }) => {
@@ -608,24 +675,27 @@ test("S48 §1 entry flushes autosave and never creates a run per keystroke", asy
   try {
     await gotoEncounter(page, draftId);
     const panel = page.getByTestId("proposal-review");
-    await expect(panel).toContainText("Proposal inputs need clarification", { timeout: 15000 });
+    // Uncertain context does not pause generation: one automatic start.
+    await expect(panel).toContainText("Ready for proposal generation.", { timeout: 15000 });
+    await expect(page.getByTestId("proposal-status-pharmacotherapy")).toContainText(/Pending|Running/, { timeout: 15000 });
+    await expect.poll(() => postCount).toBe(1);
 
     // Working note lives on Register patient. Keystrokes there still autosave
-    // and must not create a generation run.
+    // but must not create another generation run.
     await page.locator("#wizard-step-register").click();
     const note = page.getByLabel("Draft working note");
     await note.fill("flush probe one");
-    await expect(page.locator("#draft-save-status")).toContainText("Saved (revision 2)", {
+    await expect(page.locator("#draft-save-status")).toContainText("Saved (revision", {
       timeout: 10000,
     });
     expect(patchCount).toBeGreaterThanOrEqual(1);
 
-    // Second burst: still no generation POST (no run per keystroke).
+    // Second burst: still exactly one generation POST (no run per keystroke).
     await note.fill("flush probe two with more text");
-    await expect(page.locator("#draft-save-status")).toContainText("Saved (revision 3)", {
+    await expect(page.locator("#draft-save-status")).toContainText("Saved (revision", {
       timeout: 10000,
     });
-    expect(postCount).toBe(0);
+    expect(postCount).toBe(1);
   } finally {
     await page.unroute("**/api/v1/encounters/*/generation-batches");
     await page.unroute("**/api/v1/encounters/*");

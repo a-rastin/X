@@ -59,6 +59,7 @@ export interface ProposalReadiness {
   answered_count: number;
   execution_ready_count: number;
   blockers: ProposalBlocker[];
+  warnings: ProposalBlocker[];
   questions: {
     question_key: string;
     question_label: string;
@@ -68,6 +69,7 @@ export interface ProposalReadiness {
     answered_count: number;
     execution_ready_count: number;
     blockers: ProposalBlocker[];
+    warnings: ProposalBlocker[];
   }[];
 }
 

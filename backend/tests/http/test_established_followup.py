@@ -360,7 +360,7 @@ def test_legacy_workflow_run_is_readable_but_cannot_start_new_work(clean_registr
     assert fresh.status_code == 202, fresh.text
     assert fresh.json()["batch"]["id"] != original["batch"]["id"]
     assert fresh.json()["batch"]["pinned_bundle"]["application_workflow_contract_version"] == (
-        "application-workflow-2026-10-24-v1"
+        "application-workflow-2026-10-27-v1"
     )
     assert client.get(batch_url).json()["batch"]["pinned_bundle"] == legacy_pin
 
@@ -564,9 +564,12 @@ def test_append_only_confirmation_stales_runs_and_new_generation_requires_visibl
         assert review.status_code == 200, review.text
         assert review.json()["input_freshness"]["stale"] is True
     history = client.get(url + "/history").json()
-    blockers = history["proposal_readiness"]["blockers"]
-    assert len(blockers) == 15
-    assert all(b["source_path"].startswith(PREFIX) for b in blockers)
+    # Issue-04: missing established context warns without blocking generation.
+    assert history["proposal_readiness"]["ready"] is True
+    assert history["proposal_readiness"]["blockers"] == []
+    warnings = history["proposal_readiness"]["warnings"]
+    assert len(warnings) == 15
+    assert all(w["source_path"].startswith(PREFIX) for w in warnings)
     source = {"source_batch_id": old["batch"]["id"]}
     for denied in (
         client.get(url + "/proposal-readiness", params=source),
@@ -578,10 +581,26 @@ def test_append_only_confirmation_stales_runs_and_new_generation_requires_visibl
     ):
         assert denied.status_code == 422, denied.text
         assert denied.json()["code"] == "WORKFLOW_ELIGIBILITY_CHANGED"
+    # A genuinely blocking established answer still gates generation.
+    blocking_values = dict(known_context("followup"))
+    blocking_values[PREFIX + "h_schizophrenia_established"] = "not_assessed"
+    rejected = client.post(
+        url + "/history",
+        json={"values": blocking_values},
+        headers={**_auth_headers(csrf), "If-Match": contracts.format_etag(saved["revision"])},
+    )
+    assert rejected.status_code == 200, rejected.text
+    assert rejected.json()["proposal_readiness"]["ready"] is False
+    assert [
+        (b["source_path"], b["status"]) for b in rejected.json()["proposal_readiness"]["blockers"]
+    ] == [(PREFIX + "h_schizophrenia_established", "not_assessed")]
     blocked = client.post(
         url + "/generation-batches",
         json={},
-        headers={**_auth_headers(csrf), "If-Match": contracts.format_etag(saved["revision"])},
+        headers={
+            **_auth_headers(csrf),
+            "If-Match": contracts.format_etag(rejected.json()["revision"]),
+        },
     )
     assert blocked.status_code == 422, blocked.text
     assert blocked.json()["code"] == "PROPOSAL_INPUTS_INCOMPLETE"
@@ -592,7 +611,10 @@ def test_append_only_confirmation_stales_runs_and_new_generation_requires_visibl
     answered = client.post(
         url + "/history",
         json={"values": values},
-        headers={**_auth_headers(csrf), "If-Match": contracts.format_etag(saved["revision"])},
+        headers={
+            **_auth_headers(csrf),
+            "If-Match": contracts.format_etag(rejected.json()["revision"]),
+        },
     )
     assert answered.status_code == 200, answered.text
     assert answered.json()["proposal_readiness"]["ready"] is True

@@ -18,11 +18,14 @@ def compute_proposal_readiness(
     *,
     clozapine_eligible: bool = False,
 ) -> dict[str, Any]:
-    """Report every blocker without freezing a batch or changing any saved fact.
+    """Report blockers and nonblocking uncertainty without freezing a batch.
 
-    Required-input uncertainty is checked before false applicability, just as
-    execution does. A known false gate is execution-ready and needs no job.
-    Optional packages are the immutable packages of a run being retried.
+    Unknown, omitted, null, empty-string and whitespace-only clinical inputs
+    are nonblocking missing-context warnings: they allow estimation with
+    missing/null projection entries and disclosed uncertainty. Explicit
+    ``not_assessed``, ``Unresolved``, conflicting answers, malformed nonempty
+    values, invalid packages and follow-up baseline/trial prerequisites stay
+    blocking. A known false gate is execution-ready and needs no job.
     """
     if packages is None:
         packages, _ = resolve_workflow(workflow, clozapine_eligible=clozapine_eligible)
@@ -41,40 +44,48 @@ def compute_proposal_readiness(
         )
         values: dict[str, Any] = {}
         blockers: list[dict[str, Any]] = []
+        warnings: list[dict[str, Any]] = []
         answered = 0
         resolved = 0
         for path in required:
             raw = snapshots._resolve_raw_value(path, draft_data)
             values[path] = raw
-            input_status, _ = snapshots._typed_status(raw)
             spec = definitions.get(path, {})
             if path == "synthetic/assessments/cssrs":
                 spec = {"definition": "C-SSRS assessment"}
             saved = snapshots._get_history_values(draft_data).get(path, snapshots._MISSING)
-            if input_status == "observed" and raw != "Unresolved":
+            blocking, diagnostic = snapshots._diagnose_required_input(path, draft_data)
+            if not blocking and diagnostic == "observed":
                 answered += 1
                 resolved += 1
                 continue
-            if raw == "Unresolved":
-                input_status = "unresolved"
-            elif input_status == "missing":
-                if saved is None:
-                    input_status = "null"
-                elif saved == "unknown":
-                    input_status = "unknown"
-                elif not isinstance(saved, snapshots._MissingType):
-                    input_status = "invalid"
             if isinstance(saved, str) and saved in spec.get("permitted", []):
                 answered += 1
-            blockers.append(
-                _blocker(key, question_label, path, spec, input_status, _input_reason(input_status))
-            )
+            entry = _blocker(key, question_label, path, spec, diagnostic, _input_reason(diagnostic))
+            if blocking:
+                blockers.append(entry)
+            else:
+                # Nonblocking uncertainty stays visible but never blocks start.
+                warnings.append(entry)
+                resolved += 1
+            # Observed-but-Unresolved is handled as blocking above via diagnose.
+            # Keep the explicit answered/execution-ready split: answered counts
+            # permitted explicit answers (including Unknown), execution-ready
+            # counts everything that allows estimation (observed + warnings).
         # Follow-up baseline and trial prerequisites can be known but still
         # invalid for execution. Share their rules with the actual gate.
+        # Missing prerequisites must not be asserted as met: they stay blocking.
         blocked_paths = {entry["source_path"] for entry in blockers}
+        warned_paths = {entry["source_path"] for entry in warnings}
         for field, gate_reason in history_gate_requirements(key, values):
             for path in required:
                 if path.rsplit("/", 1)[-1] == field and path not in blocked_paths:
+                    # A prerequisite warning (e.g. unknown baseline) becomes a
+                    # blocker: relaxing missing context must not assert it met.
+                    if path in warned_paths:
+                        warnings = [w for w in warnings if w["source_path"] != path]
+                        warned_paths.discard(path)
+                        resolved -= 1
                     blockers.append(
                         _blocker(
                             key,
@@ -89,6 +100,8 @@ def compute_proposal_readiness(
                     resolved -= 1
         if status == snapshots.NEEDS_CLARIFICATION and not blockers:
             blockers.append(_blocker(key, question_label, None, {}, "gate_requirement", reason))
+        # A question with only warnings is executable: keep the READY gate
+        # from execution, with warnings carried separately.
         questions.append(
             {
                 "question_key": key,
@@ -99,6 +112,7 @@ def compute_proposal_readiness(
                 "answered_count": answered,
                 "execution_ready_count": resolved,
                 "blockers": blockers,
+                "warnings": warnings,
             }
         )
     ready = all(question["status"] != snapshots.NEEDS_CLARIFICATION for question in questions)
@@ -111,15 +125,17 @@ def compute_proposal_readiness(
         "answered_count": sum(question["answered_count"] for question in questions),
         "execution_ready_count": sum(question["execution_ready_count"] for question in questions),
         "blockers": [blocker for question in questions for blocker in question["blockers"]],
+        "warnings": [warning for question in questions for warning in question["warnings"]],
         "questions": questions,
     }
 
 
 def _input_reason(status: str) -> str:
     return {
-        "missing": "No saved response.",
-        "null": "The saved response is empty.",
-        "unknown": "Unknown does not resolve this required input.",
+        "missing": "No saved response; estimation proceeds with missing context.",
+        "null": "The saved response is empty; estimation proceeds with missing context.",
+        "empty": "The saved response is empty; estimation proceeds with missing context.",
+        "unknown": "Unknown remains uncertain; estimation proceeds with missing context.",
         "not_assessed": "This required input has not been assessed.",
         "conflict": "Conflicting responses need clarification.",
         "invalid": "The saved response is not a permitted answer.",

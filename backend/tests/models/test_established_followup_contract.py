@@ -59,19 +59,42 @@ def test_moved_fields_keep_exact_wording_choices_and_no_improvement_is_unchanged
     assert "established_case_clozapine" not in FOLLOWUP_ORDER
 
 
-def test_hidden_established_fields_never_block_but_eligible_followup_requires_all_fifteen():
+def test_hidden_established_fields_never_block_but_eligible_followup_warns_all_fifteen():
     data = {"history": {"values": known_context("followup")}}
     hidden = compute_proposal_readiness(data, 1, "followup")
     assert hidden["ready"] is True
     assert hidden["required_count"] == 76
+    assert hidden["blockers"] == []
     applicable = compute_proposal_readiness(data, 1, "followup", clozapine_eligible=True)
-    assert applicable["ready"] is False
+    # Issue-04: missing established context estimates with disclosed
+    # uncertainty; it warns without blocking generation.
+    assert applicable["ready"] is True
     assert applicable["required_count"] == 91
-    assert len(applicable["blockers"]) == 15
+    assert applicable["blockers"] == []
+    assert len(applicable["warnings"]) == 15
     assert all(
-        blocker["question_key"] == "established_case_clozapine"
-        for blocker in applicable["blockers"]
+        warning["question_key"] == "established_case_clozapine"
+        for warning in applicable["warnings"]
     )
+    assert {warning["status"] for warning in applicable["warnings"]} == {"missing"}
+    # A genuinely blocking established answer still needs clarification.
+    blocking_values = {
+        **known_context("followup"),
+        "candidate/history/established_case_clozapine.v1/h_schizophrenia_established": (
+            "not_assessed"
+        ),
+    }
+    blocking = compute_proposal_readiness(
+        {"history": {"values": blocking_values}}, 1, "followup", clozapine_eligible=True
+    )
+    assert blocking["ready"] is False
+    assert [(b["source_path"], b["status"]) for b in blocking["blockers"]] == [
+        (
+            "candidate/history/established_case_clozapine.v1/h_schizophrenia_established",
+            "not_assessed",
+        )
+    ]
+    assert len(blocking["warnings"]) == 14
     registration = compute_proposal_readiness(data, 1, "registration", clozapine_eligible=True)
     assert all(
         question["question_key"] != "established_case_clozapine"
@@ -81,7 +104,7 @@ def test_hidden_established_fields_never_block_but_eligible_followup_requires_al
 
 def test_active_workflow_pins_reject_old_placement_and_changed_eligibility():
     _, pin = resolve_workflow("followup")
-    assert pin["application_workflow_contract_version"] == "application-workflow-2026-10-24-v1"
+    assert pin["application_workflow_contract_version"] == "application-workflow-2026-10-27-v1"
     require_current_workflow_contract(pin, clozapine_eligible=False)
     for obsolete, code in (
         (

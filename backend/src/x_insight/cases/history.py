@@ -362,6 +362,16 @@ def normalize_draft_history(draft_data: Any, *, clozapine_eligible: bool = True)
     return updated
 
 
+def _is_missing_input_value(value: Any) -> bool:
+    """Null, empty-string and whitespace-only inputs are missing, not invalid.
+
+    They estimate with missing/null context and disclosed uncertainty; only
+    malformed nonempty values, conflicts and disallowed explicit answers stay
+    strict validation failures.
+    """
+    return value is None or (isinstance(value, str) and not value.strip())
+
+
 def history_for_autosave(previous: Any, incoming: dict[str, Any]) -> dict[str, Any]:
     """Clean legacy round trips, reject newly supplied retired/invalid choices.
 
@@ -391,6 +401,7 @@ def history_for_autosave(previous: Any, incoming: dict[str, Any]) -> dict[str, A
         elif (
             field_id in ALLOWED_FIELDS
             and value not in ALLOWED_FIELDS[field_id]["permitted"]
+            and not _is_missing_input_value(value)
             and not unchanged
         ):
             errors[field_id] = [f"Must be one of {ALLOWED_FIELDS[field_id]['permitted']}."]
@@ -408,7 +419,11 @@ def history_for_autosave(previous: Any, incoming: dict[str, Any]) -> dict[str, A
         fields = history_fields()
         for field_id, value in workflow_changes.items():
             spec = fields.get(field_id, {})
-            if "default_value" in spec and value not in spec["permitted"]:
+            if (
+                "default_value" in spec
+                and value not in spec["permitted"]
+                and not _is_missing_input_value(value)
+            ):
                 errors[field_id] = [f"Must be one of {spec['permitted']}."]
         if errors:
             raise contracts.ContractError(
@@ -458,7 +473,9 @@ def validate_history_values(values: Any) -> dict[str, Any]:
 
     Unknown never becomes false. Core and revised pharmacotherapy controls
     reject not_assessed; other workflow controls permit it only when declared.
-    Excluded FR-14 regimen fields are rejected even when they look well-formed.
+    Null, empty-string and whitespace-only inputs are accepted as missing
+    context (nonblocking estimation uncertainty), not 422. Malformed nonempty
+    values, conflicts and excluded FR-14 regimen fields stay rejected.
     Valid values receive defaults and conditional cleanup.
     """
     if not isinstance(values, dict):
@@ -479,6 +496,8 @@ def validate_history_values(values: Any) -> dict[str, Any]:
         spec = allowed.get(key)
         if spec is None:
             errors.update(_field_error(key, "Unknown history field."))
+            continue
+        if _is_missing_input_value(value):
             continue
         if value not in spec["permitted"]:
             errors.update(

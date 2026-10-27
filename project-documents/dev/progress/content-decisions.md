@@ -109,3 +109,22 @@
   29. Because the default is complete, a fresh C-SSRS is not a blocker. See the
   [current contract](../../../docs/proposal-generation.md#complete-proposal-context).
 
+### Unknown/empty inputs estimate with disclosure — 2026-10-27
+
+- The explicit application request in [issue-04](../../../issues/issue-04.md)
+  separates estimation eligibility from completeness: Unknown, omitted, null,
+  empty-string and whitespace-only clinical inputs estimate with missing/null
+  context and disclosed uncertainty and never block Step 7 generation solely
+  for being unresolved. Explicit Not assessed and `Unresolved`, conflicts,
+  malformed nonempty values, invalid packages, missing follow-up
+  baseline/trial prerequisites and incomplete C-SSRS assessment still need
+  clarification. Known-false applicability stays not applicable with no job;
+  unknown applicability estimates with disclosure and never becomes false.
+- Application contract `history-inputs-2026-10-27-v4` with derived prompts
+  (`estimate_with_disclosure`) and `application-workflow-2026-10-27-v1` pin
+  this policy per batch; reviewed bytes and owner approvals are preserved as
+  provenance. Derived manifests are `awaiting_review`; no new clinical
+  approval is claimed or inferred. Old frozen runs stay readable and require
+  an explicit new run under the current contract. See the
+  [current contract](../../../docs/proposal-generation.md#complete-proposal-context).
+

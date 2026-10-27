@@ -325,6 +325,125 @@ def _typed_status(raw: Any) -> tuple[str, Any]:
     return "observed", raw
 
 
+def _is_blank_string(value: Any) -> bool:
+    """Whitespace-only form values are empty, not clinical answers."""
+    return isinstance(value, str) and not value.strip()
+
+
+def _direct_saved_value(path: str, draft_data: Any) -> Any:
+    """Read the stored value without normalization.
+
+    Normalization maps legacy ``not_assessed`` to ``unknown`` and supplies
+    ``unknown`` defaults. Policy must see the original ``not_assessed``,
+    ``Unresolved``, blank, null or omitted choice before that mapping, so
+    existing mappings cannot accidentally decide the new estimation policy.
+    """
+    if not isinstance(draft_data, dict):
+        return _MISSING
+    section = draft_data.get("history")
+    if not isinstance(section, dict):
+        return _MISSING
+    values = section.get("values")
+    if isinstance(values, dict):
+        if path in values:
+            return values[path]
+        if path.startswith("synthetic/history/"):
+            field = path[len("synthetic/history/") :]
+            if field in values:
+                return values[field]
+        return _MISSING
+    # Synthetic direct shape without a ``values`` wrapper (PATCH-permissive).
+    if path in section:
+        return section[path]
+    if path.startswith("synthetic/history/"):
+        field = path[len("synthetic/history/") :]
+        if field in section:
+            return section[field]
+    return _MISSING
+
+
+def _diagnose_required_input(path: str, draft_data: Any) -> tuple[bool, str]:
+    """One server-owned estimation-eligibility decision.
+
+    Returns ``(blocking, diagnostic_status)``. Unknown, omitted, null,
+    empty-string and whitespace-only inputs are nonblocking missing context:
+    they allow estimation with ``missing``/null projection entries and must be
+    carried as warnings, never ``needs_clarification``. Explicit
+    ``not_assessed``, ``Unresolved``, conflicting answers, malformed nonempty
+    values, invalid packages and operational failures stay blocking.
+    Known-false applicability stays ``not_applicable`` elsewhere; an unknown
+    gate never becomes false.
+    """
+    # Synthetic C-SSRS assessment context is an assessment prerequisite, not
+    # optional history. Incomplete C-SSRS stays blocking for its question.
+    if path == "synthetic/assessments/cssrs":
+        try:
+            raw_assessment = _resolve_raw_value(path, draft_data)
+        except contracts.ContractError:
+            return True, "invalid"
+        if isinstance(raw_assessment, _MissingType):
+            return True, "missing"
+        return False, "observed"
+    direct = _direct_saved_value(path, draft_data)
+    if direct == "Unresolved":
+        return True, "unresolved"
+    if direct == "not_assessed":
+        return True, "not_assessed"
+    if isinstance(direct, list):
+        return True, "conflict"
+    if _is_blank_string(direct):
+        return False, "empty"
+    if direct is None or isinstance(direct, _MissingType):
+        # Null, omitted and default-absent inputs estimate with null context.
+        if direct is None:
+            return False, "null"
+        return False, "missing"
+    if direct == "unknown":
+        return False, "unknown"
+    # From here the stored value claims a nonempty clinical answer. Validate
+    # it against the versioned permitted inventory when one exists.
+    if isinstance(path, str) and path.startswith("candidate/history/"):
+        try:
+            from x_insight.models.workflow_release import history_fields
+
+            permitted = history_fields().get(path, {}).get("permitted", [])
+        except contracts.ContractError:
+            return True, "invalid"
+        if direct not in permitted:
+            return True, "invalid"
+        # Permitted but unobserved (e.g. explicit unknown already handled).
+        try:
+            raw = _resolve_raw_value(path, draft_data)
+        except contracts.ContractError:
+            return True, "invalid"
+        if raw == "Unresolved":
+            return True, "unresolved"
+        status, _ = _typed_status(raw)
+        if status == "conflict":
+            return True, "conflict"
+        if status == "not_assessed":
+            return True, "not_assessed"
+        if status == "missing":
+            return False, "unknown"
+        return False, "observed"
+    try:
+        raw = _resolve_raw_value(path, draft_data)
+    except contracts.ContractError:
+        return True, "invalid"
+    if raw == "Unresolved":
+        return True, "unresolved"
+    status, _ = _typed_status(raw)
+    if status == "conflict":
+        return True, "conflict"
+    if status == "not_assessed":
+        return True, "not_assessed"
+    if status == "missing":
+        # Synthetic unknown/blank/null without a versioned inventory still
+        # estimates with missing context rather than blocking successors.
+        return False, "unknown"
+    return False, "observed"
+
+
 def build_question_projection(
     manifest: Mapping[str, Any], draft_data: Any, source_revision: int
 ) -> tuple[dict[str, Any], str]:
@@ -432,11 +551,14 @@ def applicable_required_fields(required: Any, draft_data: Any) -> list[str]:
 def evaluate_gate(manifest: Mapping[str, Any], draft_data: Any) -> tuple[str, str]:
     """Evaluate applicability against saved facts (three-valued gate).
 
-    ``true`` is always applicable; ``gate == 'X'`` compares the saved
-    ``draft_data["gate"]`` fact. True + all required fields observed →
-    ready; false → not_applicable; unknown gate or any required
-    missing/conflict/not_assessed → needs_clarification. Returns
-    (status, explicit reason). Cross-question references raise 422.
+    Estimation eligibility is server-owned: unknown, omitted, null,
+    empty-string and whitespace-only clinical inputs allow estimation with
+    missing/null context and disclosed uncertainty. Explicit ``not_assessed``,
+    ``Unresolved``, conflicting answers, malformed nonempty values and
+    follow-up baseline/trial prerequisites still need clarification.
+    Known-false gates stay ``not_applicable``; unknown applicability never
+    becomes false and never drops a section. Returns (status, reason).
+    Cross-question references raise 422.
     """
     from x_insight.models.workflow_release import require_current_history_contract
 
@@ -453,7 +575,7 @@ def evaluate_gate(manifest: Mapping[str, Any], draft_data: Any) -> tuple[str, st
     ):
         raise _fail(422, "bad_required_fields", "required_fields must list strings.")
     unknown_policy = applicability.get("unknown_policy")
-    if unknown_policy not in ("needs_clarification", "not_applicable"):
+    if unknown_policy not in ("needs_clarification", "not_applicable", "estimate_with_disclosure"):
         raise _fail(422, "bad_unknown_policy", "unknown_policy must be allowlisted.")
     for field in required:
         assert isinstance(field, str)
@@ -466,12 +588,12 @@ def evaluate_gate(manifest: Mapping[str, Any], draft_data: Any) -> tuple[str, st
 
         required = applicable_required_fields(required, draft_data)
         values = {field: _resolve_raw_value(field, draft_data) for field in required}
-        for field, raw in values.items():
-            status, _ = _typed_status(raw)
-            if status != "observed" or raw == "Unresolved":
+        for field in required:
+            blocking, diagnostic = _diagnose_required_input(field, draft_data)
+            if blocking:
                 return (
                     NEEDS_CLARIFICATION,
-                    f"required field {field} is {status if status != 'observed' else 'unresolved'}",
+                    f"required field {field} is {diagnostic}",
                 )
         return evaluate_history_gate(str(manifest.get("question_key", "")), values)
     if manifest.get("assessment_context_source") == "synthetic/assessments/cssrs":
@@ -499,19 +621,28 @@ def evaluate_gate(manifest: Mapping[str, Any], draft_data: Any) -> tuple[str, st
         return NOT_APPLICABLE, f"gate false; expression {expression!r} is not satisfied"
     if gate_state == "unknown":
         return (
-            NEEDS_CLARIFICATION,
-            f"gate unknown; expression {expression!r} needs clarification",
+            READY,
+            f"gate unknown; expression {expression!r} estimates with disclosed uncertainty",
         )
     for field in required:
         assert isinstance(field, str)
         try:
-            raw = _resolve_raw_value(field, draft_data)
+            # Allowlisted-path failures stay blocking; missing context does not.
+            _resolve_raw_value(field, draft_data)
         except contracts.ContractError:
             return NEEDS_CLARIFICATION, f"required field {field} is not allowlisted"
-        status, _ = _typed_status(raw)
-        if status != "observed":
-            return NEEDS_CLARIFICATION, f"required field {field} is {status}"
+        blocking, diagnostic = _diagnose_required_input(field, draft_data)
+        if blocking:
+            return NEEDS_CLARIFICATION, f"required field {field} is {diagnostic}"
     count = len(list(required))
+    uncertain = [
+        field for field in required if _diagnose_required_input(field, draft_data)[1] != "observed"
+    ]
+    if uncertain:
+        return READY, (
+            f"gate true; estimating with {len(uncertain)} uncertain input(s) "
+            "preserved as missing context"
+        )
     return READY, f"gate true; all {count} required fields observed"
 
 

@@ -3,8 +3,8 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The [Step 7 incomplete-input diagnosis (2026-10-27)](s48.md#follow-up-2026-10-27--unknown-and-empty-inputs-block-proposal-generation)
-links [issue-04.md](../../../issues/issue-04.md): root cause and fix plan recorded; no application changes.
+The [Step 7 Unknown/empty-input implementation (2026-10-27)](s48.md#follow-up-2026-10-27--proposal-generation-with-unknownempty-inputs-implemented)
+implements [issue-04.md](../../../issues/issue-04.md): estimation proceeds with missing/null context and disclosed uncertainty; warnings no longer block generation. Diagnosis history is preserved in the same report.
 The [Diagnosis Continue confirmation implementation (2026-10-27)](s09.md#follow-up-2026-10-27--diagnosis-continue-confirmation-implemented)
 links [issue-03.md](../../../issues/issue-03.md): guarded registration Continue
 for nonconfirming results implemented, pending live verification.

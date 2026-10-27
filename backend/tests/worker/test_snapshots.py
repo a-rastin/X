@@ -430,8 +430,9 @@ def test_projection_holds_exact_typed_variables_with_sources(
     started = _start_batch(owner, owner_csrf, encounter_id, revision, package)
     assert started.status_code == 202, started.text
     run = started.json()["question_runs"][0]
-    assert run["status"] == "needs_clarification"
-    assert "h_b" in run["gate_reason"]
+    # Issue-04: missing synthetic context estimates with disclosed uncertainty.
+    assert run["status"] == "ready"
+    assert "uncertain" in run["gate_reason"]
     variables = run["projection"]["variables"]
     assert [entry["node_id"] for entry in variables] == ["A", "B"]
     by_node = {entry["node_id"]: entry for entry in variables}
@@ -626,7 +627,8 @@ def test_gates_true_false_unknown_and_cross_question_forbidden(
     unknown_revision = unknowned.json()["revision"]
     needs = _start_batch(owner, owner_csrf, encounter_id, unknown_revision, gated)
     assert needs.status_code == 202, needs.text
-    assert needs.json()["question_runs"][0]["status"] == "needs_clarification"
+    # Issue-04: unknown gate estimates with disclosed uncertainty, never blocks.
+    assert needs.json()["question_runs"][0]["status"] == "ready"
 
     chained = _synthetic_package()
     chained["manifest"]["patient_mappings"][0]["allowed_source_paths"] = [
@@ -853,8 +855,9 @@ def test_identifying_and_candidate_sources_rejected_and_unknown_maps_to_missing(
     started = _start_batch(owner, owner_csrf, encounter_id, revision, package)
     assert started.status_code == 202, started.text
     run = started.json()["question_runs"][0]
+    # Issue-04: unknown estimates with disclosure; conflict still blocks.
     assert run["status"] == "needs_clarification"
-    assert "h_a" in run["gate_reason"]
+    assert "h_b" in run["gate_reason"]
     by_node = {entry["node_id"]: entry for entry in run["projection"]["variables"]}
     assert by_node["A"]["status"] == "missing"
     assert by_node["A"]["value"] is None

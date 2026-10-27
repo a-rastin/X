@@ -80,9 +80,11 @@ SUPPORTED_TIME_WINDOWS: frozenset[str] = frozenset(
     {"current_encounter", "lifetime", "past_4_weeks", "past_3_months"}
 )
 SUPPORTED_MISSING_POLICIES: frozenset[str] = frozenset(
-    {"needs_clarification", "not_applicable", "use_unknown_state"}
+    {"needs_clarification", "not_applicable", "use_unknown_state", "estimate_with_disclosure"}
 )
-SUPPORTED_UNKNOWN_POLICIES: frozenset[str] = frozenset({"needs_clarification", "not_applicable"})
+SUPPORTED_UNKNOWN_POLICIES: frozenset[str] = frozenset(
+    {"needs_clarification", "not_applicable", "estimate_with_disclosure"}
+)
 SUPPORTED_WORKFLOWS: frozenset[str] = frozenset({"registration", "followup"})
 SUPPORTED_REVIEW_STATUSES: frozenset[str] = frozenset({"draft", "awaiting_review", "approved"})
 SUPPORTED_REVIEW_DECISIONS: frozenset[str] = frozenset(

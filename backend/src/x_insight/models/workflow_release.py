@@ -20,9 +20,9 @@ from typing import Any
 from x_insight import contracts
 from x_insight.models import bundles, question_package, validation
 
-ACTIVE_HISTORY_VERSION = "history-inputs-2026-10-22-v3"
+ACTIVE_HISTORY_VERSION = "history-inputs-2026-10-27-v4"
 ACTIVE_PHARMACOTHERAPY_PATH = "content/history/history.pharmacotherapy.v3.json"
-ACTIVE_PHARMACOTHERAPY_SHA256 = "7e045f7fb3e0a1bd6a194107ad96659bb42f6367b005db78c905bf4dfb0360dc"
+ACTIVE_PHARMACOTHERAPY_SHA256 = "1ce8eb83a5657b387a622a10fe325b4f9c01c9a4ed4149736ae3f038746f65ff"
 
 ACTIVE_HISTORY_DEFINITIONS = {
     "pharmacotherapy": (ACTIVE_PHARMACOTHERAPY_PATH, ACTIVE_PHARMACOTHERAPY_SHA256),
@@ -32,15 +32,15 @@ ACTIVE_HISTORY_DEFINITIONS = {
     ),
     "lai_indication_choice": (
         "content/history/history.lai_indication_choice.v2.json",
-        "c7bb78ba48a500ed6d6314095b44acfb0e0088509418891033155ec19fe099a3",
+        "59c94fad6fcac75809f111aec359aecee63600f3a74d1a097e1af6d17f6a51b3",
     ),
     "aggression_clozapine": (
         "content/history/history.aggression_clozapine.v2.json",
-        "3fe0ef21d9537f532805d5d13631b50fab40291731bb8eecbcf049efb88e2dfb",
+        "9c23c63bc7d11fcf5f9003594f5d1ae4d52708ad899d50ec565209e2c10eed90",
     ),
 }
 CSSRS_CONTEXT_PATH = "synthetic/assessments/cssrs"
-ACTIVE_WORKFLOW_VERSION = "application-workflow-2026-10-24-v1"
+ACTIVE_WORKFLOW_VERSION = "application-workflow-2026-10-27-v1"
 ESTABLISHED_KEY = "established_case_clozapine"
 ESTABLISHED_PREFIX = "candidate/history/established_case_clozapine.v1/"
 
@@ -282,8 +282,15 @@ def _active_history_definition(key: str) -> dict[str, Any]:
 def _apply_history_contract(package: dict[str, Any], definition: dict[str, Any]) -> dict[str, Any]:
     """Version the application input change without altering reviewed model bytes.
 
-    Missing patient mappings leave nodes unrepresented in estimation context;
-    full CPT estimation and empty inference evidence remain unchanged. Historical
+    Unknown, omitted, null, empty-string and whitespace-only clinical inputs
+    estimate with missing/null context and disclosed uncertainty; they never
+    block generation solely for being unresolved. Explicit ``not_assessed``,
+    ``Unresolved``, conflicting answers, malformed nonempty values and
+    follow-up baseline/trial prerequisites still need clarification.
+    Known-false applicability stays not applicable; unknown applicability
+    estimates with disclosure and never becomes false. Missing patient
+    mappings leave nodes unrepresented in estimation context; full CPT
+    estimation and empty inference evidence remain unchanged. Historical
     clinical review is provenance, not approval of this derived input contract.
     """
     adapted = deepcopy(package)
@@ -296,9 +303,20 @@ def _apply_history_contract(package: dict[str, Any], definition: dict[str, Any])
     manifest["history_input_contract"] = {
         "version": ACTIVE_HISTORY_VERSION,
         "sha256": definition_hash,
-        "basis": "Explicit requested application-question cleanup on 2026-10-22.",
+        "basis": (
+            "Issue-04: estimation eligibility separated from completeness on 2026-10-27. "
+            "Unknown/omitted/null/empty clinical inputs estimate with missing context."
+        ),
         "clinical_approval": "none; original model and its review preserved",
         "source_package_version": package["manifest"]["version"],
+        "estimation_policy": (
+            "estimate_with_disclosure: unknown/omitted/null/empty inputs use "
+            "missing/null estimation context with disclosed uncertainty. "
+            "not_assessed/Unresolved/conflict/invalid and follow-up "
+            "baseline/trial prerequisites still need clarification. "
+            "Known-false stays not applicable; unknown applicability estimates "
+            "with disclosure and never becomes false."
+        ),
     }
     manifest["history_definition"] = definition_path
     manifest["source_refs"] = [
@@ -311,13 +329,19 @@ def _apply_history_contract(package: dict[str, Any], definition: dict[str, Any])
         for mapping in manifest["patient_mappings"]
         if all(path in paths for path in mapping["allowed_source_paths"])
     ]
+    for mapping in manifest["patient_mappings"]:
+        mapping["missing_policy"] = "estimate_with_disclosure"
     manifest["applicability"]["required_fields"] = [
         path for path in manifest["applicability"]["required_fields"] if path in paths
     ]
+    manifest["applicability"]["unknown_policy"] = "estimate_with_disclosure"
     manifest["missingness_contract"]["required_source_paths"] = list(
         manifest["applicability"]["required_fields"]
     )
     manifest["missingness_contract"].pop("known_no_treatment", None)
+    manifest["missingness_contract"]["required_unknown_policy"] = "estimate_with_disclosure"
+    manifest["missingness_contract"]["required_missing_policy"] = "estimate_with_disclosure"
+    manifest["missingness_contract"]["required_conflict_policy"] = "needs_clarification"
     manifest["input_consistency_contract"] = {
         "history_review": (
             "Application input contract changed by explicit request; no new clinical approval."
@@ -326,35 +350,56 @@ def _apply_history_contract(package: dict[str, Any], definition: dict[str, Any])
             "Retired and inapplicable patient inputs are omitted, never assigned clinical values. "
             "All network CPTs are still estimated; inference evidence remains empty."
         ),
+        "estimation_policy": (
+            "Use available context, preserve missingness, estimate complete CPTs, "
+            "and avoid inventing observations. Unknown/empty inputs use null "
+            "estimation context with disclosed uncertainty; do not convert "
+            "uncertainty to a negative finding or a fabricated answer. "
+            "Strict table validation and empty inference evidence are preserved."
+        ),
     }
-    if key != "pharmacotherapy":
-        # The derived prompt must not request the retired inputs still described
-        # by the immutable original model-review artifacts.
-        text = package["prompt"]["text"].split("Keep ", 1)[0]
-        text += (
-            "Use only the represented current inputs; retired controls are not prerequisites. "
-            "Unrepresented nodes remain latent; do not invent patient values for them. "
-            "Preserve all network CPTs and empty inference evidence. "
-            "Do not author recommendations, "
-            "rank treatments, or supply dosing, route or frequency. "
-            "This changed application input contract awaits review "
-            "and has no new clinical approval."
+    # All derived prompts estimate with disclosed uncertainty and must not
+    # demand clarification for newly permitted incomplete context. The
+    # immutable reviewed prompt bytes are preserved; this derived text is the
+    # application contract used for generation.
+    base_text = package["prompt"]["text"].split("Keep ", 1)[0]
+    # Strip the superseded clarification pause that blocked estimation on
+    # unknown/missing inputs. The derived contract estimates instead.
+    for marker in (
+        "Required missing, unknown, not_assessed or conflicting context "
+        "pauses for clarification before estimation.",
+        "Required missing, unknown, not_assessed or conflicting context "
+        "pauses for clarification before estimation. ",
+    ):
+        base_text = base_text.replace(marker, "")
+    text = base_text.rstrip() + (
+        " Use only the represented current inputs; retired controls are not prerequisites. "
+        "Estimate with available context and preserve missingness: unknown, omitted, null, "
+        "empty or uncertain inputs use missing/null estimation context with disclosed "
+        "uncertainty. Estimate every declared CPT in percentage units with the fixed "
+        "ordered contract; never invent patient observations, negative findings, or "
+        "treatment facts. Unrepresented nodes remain latent. Preserve all network CPTs "
+        "and empty inference evidence. Do not author recommendations, rank treatments, "
+        "or supply dosing, route or frequency. Unknown applicability estimates with "
+        "disclosure and never becomes false; known-false applicability stays not "
+        "applicable. This changed application input contract awaits review "
+        "and has no new clinical approval."
+    )
+    if key == "high_suicide_clozapine":
+        manifest["assessment_context_source"] = CSSRS_CONTEXT_PATH
+        manifest["applicability"]["expression"] = "true"
+        manifest["applicability"]["required_fields"] = [CSSRS_CONTEXT_PATH]
+        manifest["missingness_contract"]["required_source_paths"] = [CSSRS_CONTEXT_PATH]
+        manifest["input_consistency_contract"]["assessment_context"] = (
+            "Completed released C-SSRS supplies separate structured estimation context. "
+            "Completion is an input-readiness gate, "
+            "not a substantial-risk applicability finding. "
+            "No C-SSRS threshold is equated to clinician synthesis, "
+            "persistence or treatment history."
         )
-        if key == "high_suicide_clozapine":
-            manifest["assessment_context_source"] = CSSRS_CONTEXT_PATH
-            manifest["applicability"]["expression"] = "true"
-            manifest["applicability"]["required_fields"] = [CSSRS_CONTEXT_PATH]
-            manifest["missingness_contract"]["required_source_paths"] = [CSSRS_CONTEXT_PATH]
-            manifest["input_consistency_contract"]["assessment_context"] = (
-                "Completed released C-SSRS supplies separate structured estimation context. "
-                "Completion is an input-readiness gate, "
-                "not a substantial-risk applicability finding. "
-                "No C-SSRS threshold is equated to clinician synthesis, "
-                "persistence or treatment history."
-            )
-            text += " " + manifest["input_consistency_contract"]["assessment_context"]
-        manifest["prompt_version"] = ACTIVE_HISTORY_VERSION
-        adapted["prompt"] = {"version": ACTIVE_HISTORY_VERSION, "text": text}
+        text += " " + manifest["input_consistency_contract"]["assessment_context"]
+    manifest["prompt_version"] = ACTIVE_HISTORY_VERSION
+    adapted["prompt"] = {"version": ACTIVE_HISTORY_VERSION, "text": text}
     question_package.load_question_package(adapted)
     return adapted
 

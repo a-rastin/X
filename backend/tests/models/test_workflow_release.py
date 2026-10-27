@@ -53,11 +53,16 @@ def test_reviewed_release_projects_all_packages_and_pins_order(workflow, order):
         assert all(entry["source_revision"] == 7 for entry in projection["variables"])
         empty, _ = build_question_projection(manifest, {}, 1)
         assert all(entry["status"] == "missing" for entry in empty["variables"])
-        assert evaluate_gate(manifest, {})[0] == (
-            "ready"
-            if manifest["question_key"] == "high_suicide_clozapine"
-            else "needs_clarification"
-        )
+        # Issue-04: empty history estimates with disclosed uncertainty, except
+        # follow-up baseline prerequisites which must not be asserted as met.
+        if workflow == "registration":
+            assert evaluate_gate(manifest, {})[0] == "ready"
+        else:
+            assert evaluate_gate(manifest, {})[0] == (
+                "needs_clarification"
+                if manifest["question_key"] in ("no_improvement_clozapine", "continue_or_adjust")
+                else "ready"
+            )
 
 
 def test_versioned_history_namespaces_never_borrow_same_named_answers():
@@ -78,10 +83,14 @@ def test_reviewed_gate_uses_per_question_facts_and_unknown_precedes_false():
     values[prefix + "h_substantial_aggression_risk"] = "No"
     data = {"history": {"values": values}, "gate": "true"}
     assert evaluate_gate(manifest, data)[0] == "not_applicable"
+    # Issue-04: known-false stays not applicable even with other uncertain
+    # inputs; uncertain applicability alone estimates with disclosure.
     values[prefix + "h_monitoring_plan"] = "unknown"
-    assert evaluate_gate(manifest, data)[0] == "needs_clarification"
+    assert evaluate_gate(manifest, data)[0] == "not_applicable"
     values[prefix + "h_monitoring_plan"] = "Yes"
     values[prefix + "h_substantial_aggression_risk"] = "Yes"
+    assert evaluate_gate(manifest, data)[0] == "ready"
+    values[prefix + "h_substantial_aggression_risk"] = "unknown"
     assert evaluate_gate(manifest, data)[0] == "ready"
     values[prefix + "h_monitoring_plan"] = "invented"
     projection, _ = build_question_projection(manifest, data, 1)
@@ -194,7 +203,7 @@ def test_active_pharmacotherapy_omits_retired_and_inapplicable_inputs(exposure, 
     }
     assert len(projection["variables"]) == required
     assert evaluate_gate(manifest, data)[0] == "ready"
-    assert pin["history_input_contract_version"] == "history-inputs-2026-10-22-v3"
+    assert pin["history_input_contract_version"] == "history-inputs-2026-10-27-v4"
     assert manifest["review_status"] == "awaiting_review"
 
 

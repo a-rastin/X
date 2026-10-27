@@ -47,7 +47,7 @@ def _latest_batch(owner, eid):
     return response.json()["batch"]
 
 
-def test_complete_core_history_rejects_reviewed_start_before_batch_or_job_creation(
+def test_complete_core_history_allows_reviewed_start_with_warnings(
     admin_client, clean_registry, monkeypatch
 ):
     owner, csrf, created = _setup(admin_client, clean_registry, monkeypatch)
@@ -65,48 +65,36 @@ def test_complete_core_history_rejects_reviewed_start_before_batch_or_job_creati
     assert readiness.status_code == 200, readiness.text
     assert readiness.json() == history["proposal_readiness"]
     assert readiness.json()["source_revision"] == 2
-    assert len(readiness.json()["blockers"]) == 13
+    # Issue-04: missing workflow context is a nonblocking warning, not a blocker.
+    assert readiness.json()["ready"] is True
+    assert readiness.json()["blockers"] == []
+    assert len(readiness.json()["warnings"]) == 13
     assert owner.get(f"/api/v1/encounters/{eid}").json() == before
-    assert _latest_batch(owner, eid) is None
     key = str(uuid.uuid4())
-    for _ in range(2):
-        blocked = _start(owner, csrf, eid, 2, **{"Idempotency-Key": key})
-        assert blocked.status_code == 422, blocked.text
-        assert blocked.json()["code"] == "PROPOSAL_INPUTS_INCOMPLETE"
-        assert set(blocked.json()["field_errors"]) == {
-            item["source_path"] for item in readiness.json()["blockers"]
-        }
-        assert FIRST_PATH in blocked.json()["field_errors"]
-        assert _latest_batch(owner, eid) is None
-    assert owner.get(f"/api/v1/encounters/{eid}/generation-batches/latest").json() == {
-        "batch": None
-    }
-    # The same idempotency key can succeed after the rejected start is corrected.
-    save_headers = {
+    started = _start(owner, csrf, eid, 2, **{"Idempotency-Key": key})
+    assert started.status_code == 202, started.text
+    assert FIRST_PATH in {w["source_path"] for w in readiness.json()["warnings"]}
+    latest = _latest_batch(owner, eid)
+    assert latest is not None
+    assert latest["id"] == started.json()["batch"]["id"]
+    # Genuinely invalid inputs still reject before batch persistence.
+    bad_headers = {
         "X-CSRF-Token": csrf,
         "If-Match": '"2"',
         "Idempotency-Key": str(uuid.uuid4()),
     }
-    saved = owner.post(
+    bad_values = dict(known_context())
+    bad_values[FIRST_PATH] = "invented"
+    denied_save = owner.post(
         f"/api/v1/encounters/{eid}/history",
-        json={"values": known_context()},
-        headers=save_headers,
+        json={"values": bad_values},
+        headers=bad_headers,
     )
-    assert saved.status_code == 200, saved.text
-    assert saved.json()["proposal_readiness"]["ready"] is True
-    assert saved.json()["proposal_readiness"]["source_revision"] == 3
-    assert saved.json()["proposal_readiness"] == owner.get(endpoint).json()
-    replay = owner.post(
-        f"/api/v1/encounters/{eid}/history",
-        json={"values": known_context()},
-        headers=save_headers,
-    )
-    assert replay.status_code == 200, replay.text
-    assert replay.json() == saved.json()
-    started = _start(owner, csrf, eid, 3, **{"Idempotency-Key": key})
-    assert started.status_code == 202, started.text
-    latest = _latest_batch(owner, eid)
-    assert latest["id"] == started.json()["batch"]["id"]
+    assert denied_save.status_code == 422, denied_save.text
+    # The same idempotency key replays the successful start.
+    replayed = _start(owner, csrf, eid, 2, **{"Idempotency-Key": key})
+    assert replayed.status_code == 202, replayed.text
+    assert replayed.json()["batch"]["id"] == started.json()["batch"]["id"]
     visible = owner.get("/api/v1/generation-batches/" + latest["id"])
     assert visible.status_code == 200, visible.text
     assert len(visible.json()["question_runs"]) == 4
@@ -206,25 +194,31 @@ def test_new_registration_resolves_packages_resumes_and_retries_exact_pins(
         2,
     )
     assert saved.status_code == 200, saved.text
-    blocked = other_browser.get(
+    warned = other_browser.get(
         f"/api/v1/encounters/{eid}/proposal-readiness",
         params={"source_batch_id": body["batch"]["id"]},
     )
-    assert blocked.status_code == 200, blocked.text
-    assert blocked.json()["ready"] is False
-    assert blocked.json()["source_revision"] == 3
-    assert blocked.json()["blockers"][0]["status"] == "unknown"
+    assert warned.status_code == 200, warned.text
+    assert warned.json()["ready"] is True
+    assert warned.json()["source_revision"] == 3
+    assert warned.json()["blockers"] == []
+    assert warned.json()["warnings"][0]["status"] == "unknown"
     batch_endpoint = "/api/v1/generation-batches/" + body["batch"]["id"]
-    before_denied = other_browser.get(batch_endpoint)
-    assert before_denied.status_code == 200, before_denied.text
-    denied = _start(other_browser, other_csrf, eid, 3, {"source_batch_id": body["batch"]["id"]})
-    assert denied.status_code == 422, denied.text
-    assert denied.json()["code"] == "PROPOSAL_INPUTS_INCOMPLETE"
-    assert _latest_batch(other_browser, eid)["id"] == body["batch"]["id"]
-    after_denied = other_browser.get(batch_endpoint)
-    assert after_denied.status_code == 200, after_denied.text
-    for key in ("batch", "question_runs", "jobs"):
-        assert after_denied.json()[key] == before_denied.json()[key]
+    before_retry = other_browser.get(batch_endpoint)
+    assert before_retry.status_code == 200, before_retry.text
+    # Issue-04: unknown inputs allow a new run with current inputs; the old
+    # immutable batch stays readable and is never rewritten.
+    retried = _start(other_browser, other_csrf, eid, 3, {"source_batch_id": body["batch"]["id"]})
+    assert retried.status_code == 202, retried.text
+    assert retried.json()["batch"]["id"] != body["batch"]["id"]
+    assert _latest_batch(other_browser, eid)["id"] == retried.json()["batch"]["id"]
+    after_retry = other_browser.get(batch_endpoint)
+    assert after_retry.status_code == 200, after_retry.text
+    for key in ("batch", "question_runs"):
+        assert after_retry.json()[key] == before_retry.json()[key]
+    # The new fingerprint supersedes the prior active generation: the old
+    # queued job is cancelled (history retained) while the new batch runs.
+    assert [job["status"] for job in after_retry.json()["jobs"]] == ["cancelled"]
 
 
 def test_followup_resolves_six_reviewed_packages_after_ready_context(
@@ -400,6 +394,6 @@ def test_frozen_historical_contract_stays_readable_but_requires_new_current_prop
     assert current.json()["batch"]["id"] != batch["batch"]["id"]
     assert (
         current.json()["batch"]["pinned_bundle"]["history_input_contract_version"]
-        == "history-inputs-2026-10-22-v3"
+        == "history-inputs-2026-10-27-v4"
     )
     assert owner.get(batch_url).json()["question_runs"] == historical_read.json()["question_runs"]

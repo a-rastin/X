@@ -501,7 +501,13 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
   }, [encounterId]);
 
   /** Every start, including retries, reads saved readiness after flushing.
-   * flush is best effort, so inspect live save state as well as revision fences. */
+   * Only genuine generation blockers (failed saves, conflicts, stale
+   * responses, failed readiness reads, author/save/revision/diagnosis-ack/
+   * medication/admission failures, backend 422 for truly blocking inputs)
+   * prevent the start. Incomplete-context warnings (Unknown, omitted, null,
+   * empty-string, whitespace-only) are estimated with disclosed missing
+   * context and never block startGeneration. flush is best effort, so
+   * inspect live save state as well as revision fences. */
   const prepareStart = useCallback(async (sourceBatchId?: string): Promise<number | null> => {
     setReadiness(null);
     setReadinessError(null);
@@ -519,14 +525,18 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
       getDiagnosis(encounterId), getMedications(encounterId), getProposalReadiness(encounterId, sourceBatchId),
     ]);
     assertSaved();
-    if (ready.source_revision !== meta.revision || typeof ready.ready !== "boolean" || !Array.isArray(ready.blockers) || !Array.isArray(ready.questions) ||
-      (ready.ready && (ready.status !== "ready" || ready.blockers.length > 0))) {
+    if (ready.source_revision !== meta.revision || typeof ready.ready !== "boolean" || !Array.isArray(ready.blockers) || !Array.isArray(ready.warnings) || !Array.isArray(ready.questions) ||
+      (ready.ready && ready.status !== "ready") || (!ready.ready && ready.status !== "needs_clarification")) {
       throw new Error("Proposal readiness could not be verified for the saved revision. Check again.");
     }
     setReadiness(ready);
-    if (!ready.ready) {
-      if (batchIdRef.current === null) setPhase({ kind: "blocked", message: "Review the unresolved proposal inputs below, then return to this step." });
-      else setActionError("Generation paused. Review the unresolved proposal inputs below before starting a new run.");
+    if (!ready.ready || ready.blockers.length > 0) {
+      const count = ready.blockers.length;
+      const detail = count > 0
+        ? `${count} proposal input${count === 1 ? "" : "s"} need${count === 1 ? "s" : ""} clarification before generation. Uncertain context below does not block generation.`
+        : "Proposal inputs need clarification before generation. Uncertain context below does not block generation.";
+      if (batchIdRef.current === null) setPhase({ kind: "blocked", message: detail });
+      else setActionError(`Generation paused. ${detail} Resolve the blocking inputs below before starting a new run.`);
       return null;
     }
     if (diag.requires_acknowledgment && !diag.acknowledgment_valid && !diag.bypass_valid) {
@@ -590,7 +600,7 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
     setReadinessError(null);
     void getProposalReadiness(encounterId, batchId).then((ready) => {
       if (cancelled) return;
-      if (ready.source_revision !== savedRevision || typeof ready.ready !== "boolean" || !Array.isArray(ready.questions) || !Array.isArray(ready.blockers)) {
+      if (ready.source_revision !== savedRevision || typeof ready.ready !== "boolean" || !Array.isArray(ready.questions) || !Array.isArray(ready.blockers) || !Array.isArray(ready.warnings)) {
         setReadinessError("Proposal readiness could not be verified for the saved revision.");
         return;
       }
@@ -963,8 +973,9 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
       </h3>
       <p className="xi-hint" style={{ marginTop: 0 }}>
         Entering this step flushes the draft and starts generation automatically once the draft is
-        saved and proposal inputs, diagnosis and medication checks pass. Reloads resume the recorded run without
-        a new request.
+        saved and blocking proposal inputs, diagnosis and medication checks pass. Uncertain
+        context is estimated with disclosed uncertainty and never blocks the start.
+        Reloads resume the recorded run without a new request.
       </p>
 
       {actionError !== null && (
@@ -1012,7 +1023,7 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
       {readinessError && <p className="xi-form-error" role="alert">{readinessError}</p>}
       {historyContractChanged && (
         <div className="xi-warning-panel">
-          <p>The current History requirements have changed since this run was recorded. Review current History, then start a new run. The recorded run remains available for review.</p>
+          <p>The current History requirements have changed since this run was recorded. Review current History, then start a new run under the current policy. The recorded run remains available for review.</p>
           <button className="xi-btn xi-btn-secondary" type="button" data-testid="proposal-start-current-history"
             disabled={actionBusy} onClick={() => void retryRun(true)}>
             {actionBusy ? "Starting…" : "Start new run with current History"}
@@ -1162,6 +1173,9 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
 function BatchHeader({ batch }: { batch: BatchPayload }) {
   const busy = batch.queue?.busy === true;
   const position = batch.queue?.queue_position;
+  // ponytail: pinned policy identity is one lookup — the fingerprint already
+  // covers it server-side, this only makes old vs current policy visible.
+  const historyContract = batch.batch.pinned_bundle["history_input_contract_version"];
   return (
     <div className="xi-proposal-meta">
       <p className="xi-hint" role="status" style={{ marginBottom: 4 }}>
@@ -1172,6 +1186,9 @@ function BatchHeader({ batch }: { batch: BatchPayload }) {
       </p>
       <p className="xi-hint" style={{ marginTop: 0 }}>
         Fingerprint <code className="xi-mono">{batch.batch.fingerprint}</code>
+        {typeof historyContract === "string" && historyContract !== "" && (
+          <> · inputs <code className="xi-mono">{historyContract}</code></>
+        )}
       </p>
       {busy && (
         <p className="xi-warning-panel" role="status">

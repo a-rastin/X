@@ -866,7 +866,12 @@ def test_false_gate_skips_without_provider_call(clean_registry, monkeypatch) -> 
 
 
 def test_required_unknown_stops_progression(clean_registry, monkeypatch) -> None:
-    """S46 §2: required-unknown → needs_clarification, later stays pending, no captures."""
+    """Issue-04: missing synthetic context estimates with disclosed uncertainty.
+
+    Omitted inputs no longer block successors; conflicting answers still do
+    (see ``test_conflict_still_blocks_successors``). Missing allows all three
+    questions to stay eligible with complete estimation.
+    """
     _, _, client, csrf = _new_physician(clean_registry, monkeypatch, "dr_s46_clar")
     encounter_id = _create_patient(client, csrf, "0012345678")
     values = {
@@ -890,8 +895,8 @@ def test_required_unknown_stops_progression(clean_registry, monkeypatch) -> None
     started = _start_workflow(client, csrf, encounter_id, revision, packages)
     assert started.status_code == 202, started.text
     runs = started.json()["question_runs"]
-    assert [run["status"] for run in runs] == ["ready", "needs_clarification", "ready"]
-    assert "h_missing_never" in runs[1]["gate_reason"]
+    assert [run["status"] for run in runs] == ["ready", "ready", "ready"]
+    assert "uncertain" in runs[1]["gate_reason"]
     batch_id = started.json()["batch"]["id"]
 
     endpoint = provider_module.DeterministicProviderEndpoint(
@@ -915,24 +920,51 @@ def test_required_unknown_stops_progression(clean_registry, monkeypatch) -> None
         assert first["status"] == "succeeded", first
         assert len(endpoint.captured) == 1
         assert _question_key_of(endpoint.captured[0]) == "s46_c1"
-        stalled = worker_module.run_once(
+        second = worker_module.run_once(
             clean_registry, adapter, database_url=db_module.get_test_database_url()
         )
-        assert stalled["status"] == "idle", stalled
-        assert len(endpoint.captured) == 1, "clarification must stop further captures"
+        assert second["status"] == "succeeded", second
+        third = worker_module.run_once(
+            clean_registry, adapter, database_url=db_module.get_test_database_url()
+        )
+        assert third["status"] == "succeeded", third
+        assert len(endpoint.captured) == 3, "missing context must not stop successors"
     finally:
         endpoint.stop()
 
     polled = _read_batch(client, batch_id)
     assert polled["baselines"][0]["baseline"] is not None
-    assert polled["baselines"][1]["baseline"] is None
-    assert polled["baselines"][1]["status"] == "needs_clarification"
-    assert polled["baselines"][2]["baseline"] is None
-    assert polled["proposal"] is None
-    assert polled["workflow"]["status"] == "incomplete"
-    assert "s46_c2" in polled["workflow"]["needs_clarification"]
-    assert "s46_c3" in polled["workflow"]["pending_question_keys"]
+    assert polled["baselines"][1]["baseline"] is not None
+    assert polled["baselines"][1]["status"] == "ready"
+    assert polled["baselines"][2]["baseline"] is not None
+    assert polled["proposal"] is not None
+    assert polled["workflow"]["status"] == "complete"
+    assert polled["workflow"]["needs_clarification"] == []
     _assert_no_proposal_writing(list(endpoint.captured))
+
+
+def test_conflict_still_blocks_successors(clean_registry, monkeypatch) -> None:
+    """Genuinely conflicting answers still need clarification and stop successors."""
+    _, _, client, csrf = _new_physician(clean_registry, monkeypatch, "dr_s46_conflict")
+    encounter_id = _create_patient(client, csrf, "0012345678")
+    values = {
+        "h_s46_c1_a": "yes",
+        "h_s46_c1_b": "no",
+        "h_s46_c2_a": ["yes", "no"],
+        "h_s46_c3_a": "yes",
+        "h_s46_c3_b": "no",
+    }
+    packages = [
+        _package("s46_c1", "h_s46_c1_a", "h_s46_c1_b"),
+        _package("s46_c2", "h_s46_c2_a", "h_s46_c2_b"),
+        _package("s46_c3", "h_s46_c3_a", "h_s46_c3_b"),
+    ]
+    revision = _patch_history(client, csrf, encounter_id, values, 1)
+    started = _start_workflow(client, csrf, encounter_id, revision, packages)
+    assert started.status_code == 202, started.text
+    runs = started.json()["question_runs"]
+    assert [run["status"] for run in runs] == ["ready", "needs_clarification", "ready"]
+    assert "conflict" in runs[1]["gate_reason"]
 
 
 # --- S46 §3: proposal assembly + DDI ---

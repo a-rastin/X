@@ -9,8 +9,10 @@
  * responses default to Unknown; hidden dependent answers are cleared.
  *
  * Server previews evaluate saved responses. Unknown and not assessed remain
- * distinct from No. Required proposal context must be clarified before its
- * question can execute; no history score or clinical threshold is invented.
+ * distinct from No; unknown, omitted and empty required context estimates
+ * with disclosed uncertainty, while conflicting, unassessed, invalid or
+ * missing prerequisite inputs must be clarified before the affected question
+ * can execute. No history score or clinical threshold is invented.
  * The strict history command stamps provenance; autosave preserves it.
  * Working notes and phone updates never enter question projections.
  *
@@ -572,7 +574,7 @@ export function HistorySection({
                   <h4 id={`history-workflow-${key}`} tabIndex={-1}>{readiness?.question_label ?? key.replaceAll("_", " ").replace(/^./, (letter) => letter.toUpperCase())}</h4>
                   <span className="xi-diagnosis-count">{answered} / {fields.length} answered</span>
                 </header>
-                <p className="xi-hint">Review this context for proposal generation. Unknown or unassessed required context pauses the affected question.</p>
+                <p className="xi-hint">Review this context for proposal generation. Uncertain context is estimated with disclosed uncertainty and does not block generation; only conflicting, unassessed, invalid or missing prerequisite inputs pause the affected question.</p>
                 {readiness && <p className="xi-hint">Saved required inputs: {readiness.execution_ready_count} / {readiness.required_count} execution-ready.{answersPending && " Changes pending."}</p>}
                 {fields.map((field) => (
                   <div className="xi-diagnosis-item xi-history-item" key={field.id}>
@@ -580,7 +582,7 @@ export function HistorySection({
                     <p className="xi-history-period">{field.time_window.replaceAll("_", " ")}</p>
                     <select id={`hist-${field.id}`} className="xi-input"
                       disabled={preview === null}
-                      aria-describedby={preview?.proposal_readiness?.blockers.some((blocker) => blocker.source_path === field.id) ? `hist-${field.id}-readiness` : undefined}
+                      aria-describedby={(preview?.proposal_readiness?.blockers.some((blocker) => blocker.source_path === field.id) || (preview?.proposal_readiness?.warnings ?? []).some((warning) => warning.source_path === field.id)) ? `hist-${field.id}-readiness` : undefined}
                       value={typeof slice.values[field.id] === "string" ? String(slice.values[field.id]) : ""}
                       onChange={(event) => setValue(field.id, event.target.value)}>
                       {!field.default_value && <option value="">Select a response</option>}
@@ -588,6 +590,9 @@ export function HistorySection({
                     </select>
                     {preview?.proposal_readiness?.blockers.filter((blocker) => blocker.source_path === field.id).map((blocker) => (
                       <p className="xi-hint" key={blocker.question_key} id={`hist-${field.id}-readiness`}>{blocker.reason}{answersPending && " Based on saved responses."}</p>
+                    ))}
+                    {(preview?.proposal_readiness?.warnings ?? []).filter((warning) => warning.source_path === field.id).map((warning) => (
+                      <p className="xi-hint" key={warning.question_key}>Uncertain context — {warning.reason}{answersPending && " Based on saved responses."}</p>
                     ))}
                     {itemErrors[field.id] && <p className="xi-field-error" role="alert">{itemErrors[field.id].join(" ")}</p>}
                     {field.operationalization && <details className="xi-history-provenance"><summary>Assessment guidance</summary><p className="xi-hint">{field.operationalization}</p></details>}

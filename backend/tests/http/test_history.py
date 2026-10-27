@@ -1339,7 +1339,7 @@ def test_removed_history_fields_rejected_on_new_writes(
         TREATMENT_PATH,
     ],
 )
-@pytest.mark.parametrize("bad", ["not_assessed", None])
+@pytest.mark.parametrize("bad", ["not_assessed"])
 def test_invalid_revised_answers_rejected_on_both_paths(
     admin_client, clean_registry, monkeypatch, field_id, bad
 ):
@@ -1358,6 +1358,39 @@ def test_invalid_revised_answers_rejected_on_both_paths(
         assert response.status_code == 422, response.text
         assert field_id in response.json()["field_errors"]
     assert _get_history(client, eid).json()["revision"] == 1
+
+
+@pytest.mark.parametrize(
+    "field_id",
+    [
+        "h_exposure_dopamine_blocker",
+        "h_onset_timing",
+        PHYSICAL_PATH,
+        SUBSTANCE_PATH,
+        TREATMENT_PATH,
+    ],
+)
+@pytest.mark.parametrize("empty", [None, "", "   "])
+def test_empty_inputs_accepted_as_missing_on_both_paths(
+    admin_client, clean_registry, monkeypatch, field_id, empty
+):
+    """Issue-04: null/empty/whitespace inputs save as missing, not 422."""
+    client, csrf, _, eid = _setup_draft(
+        admin_client, clean_registry, monkeypatch, "dr_empty", "0012348608"
+    )
+    values = {
+        "h_exposure_dopamine_blocker": "yes",
+        "h_trial_adequacy_prior": "inadequate",
+        field_id: empty,
+    }
+    for response in [
+        _post_history(client, csrf, eid, values, 1),
+        _patch(client, csrf, eid, {"history": {"values": values}}, 1),
+    ]:
+        assert response.status_code == 200, response.text
+    state = _get_history(client, eid).json()
+    assert state["proposal_readiness"]["ready"] is True
+    assert state["proposal_readiness"]["blockers"] == []
 
 
 def test_legacy_read_autosave_cleanup_preserves_frozen_baseline(

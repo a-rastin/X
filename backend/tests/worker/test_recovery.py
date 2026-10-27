@@ -855,10 +855,12 @@ def test_deactivation_cancels_without_late_commit(clean_registry, monkeypatch) -
 
 
 def test_clarification_never_blind_retries(clean_registry, monkeypatch) -> None:
-    """S47 §4: required-unknown yields clarification with no job and no calls."""
+    """Issue-04: genuinely conflicting inputs yield clarification with no job and no calls."""
     engine = clean_registry
     _, _, client, csrf = _new_physician_client(engine, monkeypatch, "dr_s47_clarify")
-    encounter_id, revision = _setup_encounter(client, csrf, "0012345678", {"h_a": "yes"})
+    encounter_id, revision = _setup_encounter(
+        client, csrf, "0012345678", {"h_a": "yes", "h_b": ["yes", "no"]}
+    )
     started = _start_single(client, csrf, encounter_id, revision, _package())
     assert started.status_code == 202, started.text
     assert started.json()["question_runs"][0]["status"] == "needs_clarification"
