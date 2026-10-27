@@ -56,6 +56,7 @@ const REQUIRED_ITEMS = [
   "d_mood_exclusion",
   "e_substance_medical_exclusion",
   "f_autism_present",
+  "f_prominent_psychosis",
 ];
 
 /** Source-derived qualifying case: every required criterion met. */
@@ -162,6 +163,55 @@ async function answerAll(
   }
 }
 
+async function readDraft(request: import("@playwright/test").APIRequestContext, draftId: string) {
+  const response = await request.get(`/api/v1/encounters/${draftId}`);
+  expect(response.status(), await response.text()).toBe(200);
+  return response.json();
+}
+
+async function seedDraft(request: import("@playwright/test").APIRequestContext, physician: { username: string; password: string }, draftId: string, data: Record<string, unknown>) {
+  const csrf = await physicianSession(request, physician);
+  const response = await request.patch(`/api/v1/encounters/${draftId}`, {
+    headers: { "X-CSRF-Token": csrf, "If-Match": '"1"' }, data: { draft_data: data },
+  });
+  expect(response.status(), await response.text()).toBe(200);
+}
+
+test("initialization preserves invalid values, extra keys and draft metadata", async ({ page, request }) => {
+  const physician = await loginPhysician(page, request, "e2ediagpreserve");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  await seedDraft(request, physician, draftId, {
+    working_note: "preserve note",
+    diagnosis: { answers: { a_delusions: "invalid", extra_key: "kept", f_prominent_psychosis: "yes" }, extra_metadata: "kept" },
+  });
+  await page.goto(`/#/encounters/${draftId}`);
+  await expect(page.locator("#diag-a_hallucinations-unknown")).toBeChecked();
+  await expect.poll(async () => (await readDraft(request, draftId)).revision).toBe(3);
+  const draft = await readDraft(request, draftId);
+  expect(draft.draft_data.working_note).toBe("preserve note");
+  expect(draft.draft_data.diagnosis.extra_metadata).toBe("kept");
+  expect(draft.draft_data.diagnosis.answers).toEqual({ ...allUnknownAnswers(), a_delusions: "invalid", extra_key: "kept", f_prominent_psychosis: "yes" });
+  await page.locator("#diag-f_autism_present-yes").check();
+  await expect(page.locator("#diag-f_prominent_psychosis-yes")).toBeChecked();
+  await page.locator("#diag-f_autism_present-no").check();
+  await expect(page.locator("#diag-f_prominent_psychosis-yes")).toBeChecked();
+});
+
+for (const sentinel of ["__bypass", "__skipped"]) {
+  test(`legacy ${sentinel} answers do not trigger initialization`, async ({ page, request }) => {
+    const physician = await loginPhysician(page, request, "e2ediagsentinel");
+    const { draftId } = await createPatientWithDraft(request, physician);
+    await seedAnswersApi(request, physician, draftId, { [sentinel]: "yes" });
+    await page.goto(`/#/encounters/${draftId}`);
+    await expect(page.locator("#wizard-continue")).toBeEnabled();
+    await page.reload();
+    await expect(page.locator("#wizard-continue")).toBeEnabled();
+    const draft = await readDraft(request, draftId);
+    expect(draft.revision).toBe(2);
+    expect(draft.draft_data.diagnosis.answers).toEqual({ [sentinel]: "yes" });
+  });
+}
+
 test("qualifying case shows every required criterion satisfied and can proceed", async ({
   page,
   request,
@@ -214,7 +264,7 @@ test("symptom-count-only case does not satisfy and requests acknowledgment", asy
   await expect(verdict).not.toContainText("Every required criterion satisfied");
 });
 
-test("partial answers save as incomplete, never below threshold", async ({
+test("partial saved answers retain selections and initialize missing values", async ({
   page,
   request,
 }) => {
@@ -227,13 +277,15 @@ test("partial answers save as incomplete, never below threshold", async ({
 
   await page.goto(`/#/encounters/${draftId}`);
   const verdict = page.locator("#diagnosis-preview-status");
-  await expect(verdict).toContainText("Incomplete", { timeout: 10000 });
-  await expect(verdict).toContainText("not a below-threshold result");
+  await expect(verdict).toContainText("Indeterminate", { timeout: 10000 });
+  await expect(page.locator("#diag-a_delusions-yes")).toBeChecked();
+  await expect(page.locator("#diag-f_prominent_psychosis-unknown")).toBeChecked();
   await expect(page.getByText("Completed below threshold")).toHaveCount(0);
   await expect(
     page.getByRole("button", { name: "Acknowledge below-threshold result" }),
   ).toHaveCount(0);
-  await expect(page.getByText("Still needed:")).toBeVisible();
+  const preview = await readDiagnosisApi(request, physician, draftId);
+  expect(preview["answers"]).toEqual({ ...allUnknownAnswers(), a_delusions: "yes", a_hallucinations: "yes" });
 });
 
 test("indeterminate answers neither proceed nor request acknowledgment", async ({
@@ -396,7 +448,7 @@ test("partial answers require confirmation; cancel/escape stay, confirm navigate
   await page.locator("#diag-a_delusions-yes").check();
   await page.locator("#diag-a_hallucinations-yes").check();
   await expect(page.locator("#diagnosis-preview-status")).toContainText(
-    "Incomplete",
+    "Indeterminate",
     { timeout: 15000 },
   );
 
@@ -440,7 +492,7 @@ test("partial answers require confirmation; cancel/escape stay, confirm navigate
   await expect(page.locator("#diag-a_delusions-yes")).toBeChecked();
   await expect(page.locator("#diag-a_hallucinations-yes")).toBeChecked();
   await expect(page.locator("#diagnosis-preview-status")).toContainText(
-    "Incomplete",
+    "Indeterminate",
     { timeout: 15000 },
   );
   await expect(
@@ -467,15 +519,26 @@ test("untouched diagnosis requires confirmation; cancel stays, confirm navigates
   const physician = await loginPhysician(page, request, "e2ediagfresh");
   const { draftId } = await createPatientWithDraft(request, physician);
 
-  // Fresh draft: revision 1, zero answers, no seeding.
+  // Fresh draft: missing values are initialized and saved.
   await page.goto(`/#/encounters/${draftId}`);
   await expect(
     page.getByRole("heading", { name: "Diagnosis (step 2)" }),
   ).toBeVisible();
   await expect(page.locator("#diagnosis-preview-status")).toContainText(
-    "No answers yet",
+    "Indeterminate",
     { timeout: 15000 },
   );
+
+  for (const id of REQUIRED_ITEMS) {
+    await expect(page.locator(`#diag-${id}-unknown`)).toBeChecked();
+  }
+  const initialized = await readDiagnosisApi(request, physician, draftId);
+  expect(initialized["answers"]).toEqual(allUnknownAnswers());
+  const revision = initialized["revision"];
+  await page.reload();
+  await expect(page.locator("#diag-f_prominent_psychosis-unknown")).toBeChecked();
+  await expect(page.locator("#diagnosis-preview-status")).toContainText("Indeterminate");
+  expect((await readDiagnosisApi(request, physician, draftId))["revision"]).toBe(revision);
 
   // The warning appears and the page stays on Diagnosis.
   await page.locator("#wizard-continue").click();
@@ -508,6 +571,71 @@ test("untouched diagnosis requires confirmation; cancel stays, confirm navigates
   expect(preview["bypass_valid"]).toBe(false);
 });
 
+test("an immediate answer edit keeps every default without repeated initialization", async ({ page, request }) => {
+  const physician = await loginPhysician(page, request, "e2ediagquick");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  let patches = 0;
+  await page.route(`**/api/v1/encounters/${draftId}`, async (route) => {
+    if (route.request().method() === "PATCH") patches += 1;
+    await route.continue();
+  });
+  await page.goto(`/#/encounters/${draftId}`);
+  await page.locator("#diag-a_delusions-yes").check();
+  const expected = { ...allUnknownAnswers(), a_delusions: "yes" };
+  await expect.poll(async () => (await readDiagnosisApi(request, physician, draftId)).answers).toEqual(expected);
+  await expect(page.locator("#draft-save-status")).toContainText("Saved", { timeout: 15000 });
+  await page.reload();
+  await expect(page.locator("#diag-a_delusions-yes")).toBeChecked();
+  await expect(page.locator("#diag-f_prominent_psychosis-unknown")).toBeChecked();
+  await page.waitForTimeout(1500);
+  expect(patches).toBe(1);
+});
+
+test("Continue waits for the definition and initialized answers", async ({ page, request }) => {
+  const physician = await loginPhysician(page, request, "e2ediagwait");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  let release!: () => void;
+  let started!: () => void;
+  const waiting = new Promise<void>((resolve) => { release = resolve; });
+  const requested = new Promise<void>((resolve) => { started = resolve; });
+  await page.route("**/api/v1/content/assessments/diagnosis", async (route) => {
+    started();
+    await waiting;
+    await route.continue();
+  });
+  await page.goto(`/#/encounters/${draftId}`);
+  await requested;
+  await expect(page.locator("#wizard-continue")).toBeDisabled();
+  release();
+  await expect(page.locator("#wizard-continue")).toBeEnabled();
+  await page.locator("#wizard-continue").click();
+  await expectContinueDialog(page);
+  const preview = await readDiagnosisApi(request, physician, draftId);
+  expect(preview["answers"]).toEqual(allUnknownAnswers());
+});
+
+for (const failure of [500, 412]) {
+  test(`initialization retains defaults after save failure ${failure} until explicit retry`, async ({ page, request }) => {
+    const physician = await loginPhysician(page, request, "e2ediagsavefail");
+    const { draftId } = await createPatientWithDraft(request, physician);
+    let attempts = 0;
+    await page.route(`**/api/v1/encounters/${draftId}`, async (route) => {
+      if (route.request().method() !== "PATCH") return route.continue();
+      attempts += 1;
+      if (attempts === 1) return route.fulfill({ status: failure, contentType: "application/json", body: JSON.stringify({ message: "Synthetic save failure" }) });
+      return route.continue();
+    });
+    await page.goto(`/#/encounters/${draftId}`);
+    await expect(page.locator("#draft-save-status")).toContainText(failure === 412 ? "Conflict" : "Save failed", { timeout: 15000 });
+    await expect(page.locator("#diag-a_delusions-unknown")).toBeChecked();
+    await page.waitForTimeout(1500);
+    expect(attempts).toBe(1);
+    await page.getByRole("button", { name: failure === 412 ? "Keep my edits and retry" : "Retry save" }).click();
+    await expect.poll(async () => (await readDiagnosisApi(request, physician, draftId)).answers).toEqual(allUnknownAnswers());
+    await expect(page.locator("#draft-save-status")).toContainText("Saved", { timeout: 15000 });
+  });
+}
+
 test("diagnosis check failure stays with retry, no navigation", async ({
   page,
   request,
@@ -520,7 +648,7 @@ test("diagnosis check failure stays with retry, no navigation", async ({
     page.getByRole("heading", { name: "Diagnosis (step 2)" }),
   ).toBeVisible();
   await expect(page.locator("#diagnosis-preview-status")).toContainText(
-    "No answers yet",
+    "Indeterminate",
     { timeout: 15000 },
   );
 
@@ -687,6 +815,24 @@ test("acknowledged below-threshold answers still require confirmation", async ({
   ).toBeVisible();
 });
 
+test("initialization preserves an acknowledgment but lets the server invalidate it", async ({ page, request }) => {
+  const physician = await loginPhysician(page, request, "e2ediagoldack");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  const answers = symptomOnlyAnswers();
+  delete answers.f_prominent_psychosis;
+  await seedAnswersApi(request, physician, draftId, answers);
+  await seedAcknowledgmentApi(request, physician, draftId, 2);
+  const before = await readDiagnosisApi(request, physician, draftId);
+  expect(before.acknowledgment_valid).toBe(true);
+  await page.goto(`/#/encounters/${draftId}`);
+  await expect.poll(async () => (await readDiagnosisApi(request, physician, draftId)).revision).toBe(4);
+  const after = await readDiagnosisApi(request, physician, draftId);
+  expect(after.acknowledgment).toEqual(before.acknowledgment);
+  expect(after.acknowledgment_valid).toBe(false);
+  expect(after.requires_acknowledgment).toBe(true);
+  await expect(page.getByRole("button", { name: "Acknowledge below-threshold result" })).toBeVisible();
+});
+
 test("legacy bypass record shows status without a new bypass action", async ({
   page,
   request,
@@ -694,6 +840,7 @@ test("legacy bypass record shows status without a new bypass action", async ({
   const physician = await loginPhysician(page, request, "e2ediaglegbyp");
   const { draftId } = await createPatientWithDraft(request, physician);
   await seedBypassApi(request, physician, draftId);
+  const bypassRevision = (await readDiagnosisApi(request, physician, draftId)).revision;
 
   await page.goto(`/#/encounters/${draftId}`);
   const verdict = page.locator("#diagnosis-preview-status");
@@ -718,6 +865,7 @@ test("legacy bypass record shows status without a new bypass action", async ({
     "Diagnosis bypassed",
     { timeout: 10000 },
   );
+  expect((await readDiagnosisApi(request, physician, draftId)).revision).toBe(bypassRevision);
   await page.locator("#wizard-continue").click();
   await expectContinueDialog(page);
   await page.getByRole("button", { name: "Continue to PANSS anyway" }).click();
@@ -743,7 +891,7 @@ test("follow-up Diagnosis Continue keeps the plain pager link", async ({
     page.getByRole("heading", { name: "Diagnosis (step 1)" }),
   ).toBeVisible();
   await expect(page.locator("#diagnosis-preview-status")).toContainText(
-    "Incomplete",
+    "Indeterminate",
     { timeout: 15000 },
   );
 

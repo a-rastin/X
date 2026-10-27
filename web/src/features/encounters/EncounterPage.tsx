@@ -452,6 +452,7 @@ function EncounterWizard({
   const [diagCheckedPreview, setDiagCheckedPreview] =
     useState<DiagnosisPreview | null>(null);
   const [diagChecking, setDiagChecking] = useState(false);
+  const [diagnosisReady, setDiagnosisReady] = useState(false);
   const [diagCheckError, setDiagCheckError] = useState<string | null>(null);
   const steps = stepsFor(encounter.kind);
   const [step, setStep] = useState<WizardStepId>(() =>
@@ -516,7 +517,7 @@ function EncounterWizard({
    * confirm navigates. Never calls bypass/acknowledge, never writes a
    * skip sentinel or completed assessment. */
   async function handleGuardedContinue(): Promise<void> {
-    if (diagChecking || diagConfirm !== null) {
+    if (diagChecking || diagConfirm !== null || !diagnosisReady) {
       return;
     }
     setDiagCheckError(null);
@@ -836,6 +837,7 @@ function EncounterWizard({
             stepNumber={stepIndex + 1}
             checkedPreview={diagCheckedPreview}
             locked={diagnosisLocked}
+            onInitializationReady={setDiagnosisReady}
           />
         )}
 
@@ -930,7 +932,7 @@ function EncounterWizard({
               ref={continueBtnRef}
               className="xi-btn xi-btn-primary"
               type="button"
-              disabled={diagChecking}
+              disabled={diagChecking || !diagnosisReady}
               onClick={() => void handleGuardedContinue()}
             >
               {diagChecking

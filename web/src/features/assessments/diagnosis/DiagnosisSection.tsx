@@ -69,6 +69,7 @@ interface DiagnosisSectionProps {
   /** While the parent checks or confirms, edits that could invalidate the
    * checked result are disabled alongside the pager. */
   locked?: boolean;
+  onInitializationReady?: (ready: boolean) => void;
 }
 
 interface SectionData {
@@ -92,6 +93,20 @@ function sectionOf(data: DraftData): SectionData {
     acknowledgment: section["acknowledgment"] ?? null,
     bypass: section["bypass"] ?? null,
   };
+}
+
+function hasLegacyState(value: SectionData): boolean {
+  return value.bypass !== null || "__bypass" in value.answers || "__skipped" in value.answers;
+}
+
+function withDefaults(section: SectionData, definition: DiagnosisDefinition): Record<string, string> {
+  const answers = { ...section.answers };
+  if (!hasLegacyState(section)) {
+    for (const item of definition.items) {
+      if (!Object.prototype.hasOwnProperty.call(answers, item.id)) answers[item.id] = "unknown";
+    }
+  }
+  return answers;
 }
 
 function sameAnswers(a: Record<string, string>, b: Record<string, string>): boolean {
@@ -122,6 +137,7 @@ export function DiagnosisSection({
   stepNumber,
   checkedPreview = null,
   locked = false,
+  onInitializationReady,
 }: DiagnosisSectionProps) {
   const [definition, setDefinition] = useState<DiagnosisDefinition | null>(null);
   const [definitionError, setDefinitionError] = useState<string | null>(null);
@@ -224,23 +240,55 @@ export function DiagnosisSection({
 
   const section = sectionOf(autosave.localData);
   const answers = section.answers;
+  const latestDataRef = useRef(autosave.localData);
+  latestDataRef.current = autosave.localData;
+  const needsDefaults = definition !== null && !hasLegacyState(section) &&
+    definition.items.some((item) => !Object.prototype.hasOwnProperty.call(answers, item.id));
   const answersPending =
     preview !== null && !sameAnswers(answers, preview.answers);
 
-  function setAnswer(itemId: string, value: DiagnosisAnswer): void {
-    if (answers[itemId] === value || busy !== null || locked) {
+  // Keep Continue fenced until defaults have entered the shared autosave
+  // state. In particular, an asynchronous definition must not let a check
+  // run against the old empty snapshot.
+  useEffect(() => {
+    onInitializationReady?.(definition !== null && !needsDefaults);
+    return () => onInitializationReady?.(false);
+  }, [definition, needsDefaults, onInitializationReady]);
+
+  useEffect(() => {
+    if (definition === null || locked || busy !== null ||
+        autosave.saveState.kind === "failed" || autosave.saveState.kind === "conflict") {
       return;
     }
+    const current = sectionOf(latestDataRef.current);
+    if (hasLegacyState(current)) return;
+    const merged = withDefaults(current, definition);
+    if (sameAnswers(merged, current.answers)) return;
+    const raw = latestDataRef.current["diagnosis"];
+    const next = {
+      ...(typeof raw === "object" && raw !== null ? raw : {}),
+      answers: merged,
+    };
+    // The ref also prevents effect replay or an immediate edit from losing
+    // the just-queued defaults before React renders the autosave update.
+    latestDataRef.current = { ...latestDataRef.current, diagnosis: next };
+    autosave.setDraftValue("diagnosis", next);
+  }, [definition, needsDefaults, locked, busy, autosave.saveState.kind, autosave.setDraftValue]);
+
+  function setAnswer(itemId: string, value: DiagnosisAnswer): void {
+    if (busy !== null || locked) return;
+    const current = sectionOf(latestDataRef.current);
+    if (current.answers[itemId] === value) return;
     setActionError(null);
     setNotice(null);
-    autosave.setDraftValue("diagnosis", {
-      answers: { ...answers, [itemId]: value },
-      // Keep the stale acknowledgment/bypass records: the server derives
-      // validity from the answers hash, so a relevant edit visibly
-      // invalidates instead of silently disappearing.
-      acknowledgment: section.acknowledgment,
-      bypass: section.bypass,
-    });
+    const merged = definition === null ? current.answers : withDefaults(current, definition);
+    const raw = latestDataRef.current["diagnosis"];
+    const next = {
+      ...(typeof raw === "object" && raw !== null ? raw : {}),
+      answers: { ...merged, [itemId]: value },
+    };
+    latestDataRef.current = { ...latestDataRef.current, diagnosis: next };
+    autosave.setDraftValue("diagnosis", next);
   }
 
   /** Flush pending autosave edits so a command fences the current revision. */
@@ -352,8 +400,8 @@ export function DiagnosisSection({
         Diagnosis (step {stepNumber})
       </h3>
       <p className="xi-hint">
-        Review each criterion and record your assessment. Select Unknown when
-        you cannot determine an answer. Your responses save automatically.
+        Questions start as Unknown. Review each criterion and change answers to Yes
+        or No as appropriate. Your responses save automatically.
       </p>
 
       {definitionError !== null && (
@@ -378,7 +426,7 @@ export function DiagnosisSection({
           <div className="xi-diagnosis-overview">
             <div>
               <h4>Schizophrenia diagnostic criteria</h4>
-              <p>Counts show responses, not criteria met.</p>
+              <p>Counts show available responses, not clinician review or criteria met.</p>
             </div>
             <span className="xi-diagnosis-count">
               {definition.items.filter((item) => ANSWER_OPTIONS.some((option) => option.value === answers[item.id])).length}

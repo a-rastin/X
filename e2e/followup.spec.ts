@@ -283,7 +283,7 @@ test("baseline provenance, pending reconciliation, and historical prior scores r
   await expect(page.locator('[id="hist-candidate/history/pharmacotherapy.v2/h_monitoring_gap"]')).toHaveCount(0);
   await page.locator("#hist-h_movement_persistence_4w-yes").check();
   for (const field of ["h_alternative_cause_considered", "h_falls_or_limitation"]) await expect(page.locator(`#hist-${field}-unknown`)).toBeChecked();
-  await expect(page.locator("#draft-save-status")).toContainText("Saved (revision 2)", { timeout: 15000 });
+  await expect(page.locator("#draft-save-status")).toContainText("Saved (revision", { timeout: 15000 });
   await expect.poll(async () => (await (await request.get(`/api/v1/encounters/${draftId}/history`)).json()).values.h_movement_persistence_4w).toBe("yes");
   await page.reload();
   for (const field of ["h_alternative_cause_considered", "h_falls_or_limitation"]) await expect(page.locator(`#hist-${field}-unknown`)).toBeChecked();

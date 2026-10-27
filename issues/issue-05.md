@@ -1,7 +1,7 @@
 # Issue 05 — Diagnosis questions have no default value
 
 Date: 2026-10-27  
-Status: analyzed; fix proposed; application code unchanged  
+Status: implemented; runtime verification pending
 Affected flow: Register new patient → step 2 (Diagnosis). The same component also renders follow-up Diagnosis at step 1.
 
 ## Requirement and finding
@@ -115,3 +115,11 @@ Other browser specs may need a **test-only** adjustment if a proven assertion as
 This report is based on source, existing tests, released content metadata, relevant progress handoffs, and local Git history. It supplies a static root-cause trace and a proposed implementation plan, not runtime proof or clinical guidance. Implementation and the verification plan remain pending.
 
 Only this report and the required progress follow-up/index were written for this investigation. Application code, tests, configuration, and released clinical content were not changed. The reasoning remains in this requested issue document rather than a duplicate `context/` entry.
+
+## Implementation follow-up — 2026-10-27
+
+The editable Diagnosis component now fills missing definition items with Unknown through the shared autosave setter, preserving existing answer keys and section metadata and leaving legacy bypass and sentinel states alone. The local merge is also used for immediate edits. Registration Continue is fenced until initialization is queued; the existing save barrier and server preview remain authoritative. The backend evaluator and released definition are unchanged.
+
+The change to `EncounterPage.tsx` expands the original allowlist narrowly: the child cannot prevent a fast parent Continue while its asynchronous definition is loading. The test-only change to `e2e/followup.spec.ts` removes a fixed revision assumption invalidated by the new initialization save. Diagnosis browser tests were updated and extended for defaults, persistence, preservation, legacy states, failure and conflict handling, and immediate editing.
+
+`git diff --check` passed. The frontend build, `make check`, backend regressions and browser/API tests were not run: this environment lacks Node/npm, `uv`, Docker and the running API. The new tests are therefore coverage to execute, not evidence of passing behavior. Run the acceptance plan above, including Chromium and Firefox, when the project runtime and services are available.
