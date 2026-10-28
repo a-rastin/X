@@ -583,7 +583,6 @@ test("an immediate answer edit keeps every default without repeated initializati
   await page.locator("#diag-a_delusions-yes").check();
   const expected = { ...allUnknownAnswers(), a_delusions: "yes" };
   await expect.poll(async () => (await readDiagnosisApi(request, physician, draftId)).answers).toEqual(expected);
-  await expect(page.locator("#draft-save-status")).toContainText("Saved", { timeout: 15000 });
   await page.reload();
   await expect(page.locator("#diag-a_delusions-yes")).toBeChecked();
   await expect(page.locator("#diag-f_prominent_psychosis-unknown")).toBeChecked();
@@ -632,7 +631,7 @@ for (const failure of [500, 412]) {
     expect(attempts).toBe(1);
     await page.getByRole("button", { name: failure === 412 ? "Keep my edits and retry" : "Retry save" }).click();
     await expect.poll(async () => (await readDiagnosisApi(request, physician, draftId)).answers).toEqual(allUnknownAnswers());
-    await expect(page.locator("#draft-save-status")).toContainText("Saved", { timeout: 15000 });
+    await expect(page.locator("#draft-save-status")).toHaveCount(0);
   });
 }
 

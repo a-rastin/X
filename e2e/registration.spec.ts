@@ -121,6 +121,10 @@ test("physician registers a patient; leading-zero ID round-trips with timestamp 
   );
   await expect(page.locator("#wizard-step-diagnosis")).toHaveAttribute("aria-current", "page");
   await expect(page.locator("#diagnosis-heading")).toHaveText("Diagnosis (step 2)");
+  await expect(page.getByRole("heading", { name: "Add New Patient" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Draft context" })).toHaveCount(0);
+  await expect(page.getByRole("navigation", { name: "Jump to criterion" })).toHaveCount(0);
+  await expect(page.locator(".xi-diagnosis-item-hint").getByText("Answered", { exact: true })).toHaveCount(0);
   const confirmation = page.getByText(`Patient ${identifier} registered.`);
   await expect(confirmation).toHaveCount(1);
   await expect(confirmation).toContainText(created.server_timestamp);
@@ -134,7 +138,7 @@ test("physician registers a patient; leading-zero ID round-trips with timestamp 
   ]) {
     await expect(page.locator(`#diag-${id}-unknown`)).toBeChecked();
   }
-  await expect(page.locator("#draft-save-status")).toContainText("Saved", { timeout: 15000 });
+  await expect(page.locator("#draft-save-status")).toHaveCount(0);
   await expect(page.locator("#diagnosis-preview-status")).toContainText("Indeterminate", { timeout: 15000 });
   await page.getByRole("button", { name: "Continue to PANSS", exact: true }).click();
   await expect(page.getByText("Continue without a confirmed diagnosis?")).toBeVisible();

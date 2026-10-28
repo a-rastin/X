@@ -399,10 +399,6 @@ export function DiagnosisSection({
       <h3 className="xi-section-title" id="diagnosis-heading">
         Diagnosis (step {stepNumber})
       </h3>
-      <p className="xi-hint">
-        Questions start as Unknown. Review each criterion and change answers to Yes
-        or No as appropriate. Your responses save automatically.
-      </p>
 
       {definitionError !== null && (
         <p className="xi-form-error" role="alert">
@@ -433,17 +429,6 @@ export function DiagnosisSection({
               {" / "}{definition.items.length} responses
             </span>
           </div>
-          <nav className="xi-diagnosis-nav" aria-label="Jump to criterion">
-            {Object.entries(CRITERION_TITLES).map(([letter, title]) => (
-              <a key={letter} href={`#diag-group-${letter}`} title={title}
-                onClick={(event) => {
-                  event.preventDefault();
-                  document.getElementById(`diag-group-${letter}`)?.focus();
-                }}>
-                <span>{letter}</span><span>{title}</span>
-              </a>
-            ))}
-          </nav>
           {Array.from(new Set(definition.items.map((item) => item.id.split("_")[0].toUpperCase()))).map((criterion) => {
             const items = definition.items.filter((item) => item.id.split("_")[0].toUpperCase() === criterion);
             const answered = items.filter((item) => ANSWER_OPTIONS.some((option) => option.value === answers[item.id])).length;
@@ -465,7 +450,7 @@ export function DiagnosisSection({
                       <div className="xi-diagnosis-answer-row">
                         <span className="xi-diagnosis-item-hint">
                           {item.required
-                            ? (ANSWER_OPTIONS.some((option) => option.value === answers[item.id]) ? "Answered" : "Awaiting response")
+                            ? (ANSWER_OPTIONS.some((option) => option.value === answers[item.id]) ? "" : "Awaiting response")
                             : "Required when applicable"}
                         </span>
                         <div className="xi-diagnosis-options">

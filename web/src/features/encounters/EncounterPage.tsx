@@ -750,7 +750,9 @@ function EncounterWizard({
 
   const notice = registrationNoticeFor(encounterId);
   const pageTitle =
-    currentStep.id === "register" ? "Register patient" : "Encounter draft";
+    currentStep.id === "diagnosis" && encounter.kind === "registration"
+      ? "Add New Patient"
+      : currentStep.id === "register" ? "Register patient" : "Encounter draft";
 
   return (
     <div>
@@ -761,6 +763,7 @@ function EncounterWizard({
           {notice.serverTimestamp}, revision {notice.revision}.
         </p>
       )}
+      {currentStep.id !== "diagnosis" && (
       <section className="xi-card" aria-labelledby="draft-context-heading">
         <h3 className="xi-section-title" id="draft-context-heading">
           Draft context
@@ -776,6 +779,7 @@ function EncounterWizard({
           persisted object, one revision fence, no separate mechanisms.
         </p>
       </section>
+      )}
 
       {/* S14 follow-up baseline: author-only copied history/medications with
         copied_baseline provenance + pending reconciliation; prior scores show
@@ -788,9 +792,11 @@ function EncounterWizard({
         />
       )}
 
-      {/* Save status stays on later steps. Register patient (below) has the
-          working-note status instead, so this page has one `#draft-save-status`. */}
-      {currentStep.id !== "register" && (
+      {/* Diagnosis only shows save status when recovery is needed. */}
+      {currentStep.id !== "register" &&
+        (currentStep.id !== "diagnosis" ||
+          autosave.saveState.kind === "failed" ||
+          autosave.saveState.kind === "conflict") && (
         <section className="xi-card" aria-label="Draft save">
           <DraftSaveStatus autosave={autosave} />
         </section>
