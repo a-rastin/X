@@ -97,6 +97,8 @@ The [expanded physician login disclaimer (2026-10-28)](s05.md#follow-up-2026-10-
 
 ## Reading and updating progress
 
+[Discard button presentation (issue 11)](../../../issues/issue-11.md) is implemented; browser verification remains pending ([S07 handoff](s07.md#follow-up-2026-10-28--discard-button-presentation-implementation)).
+
 The [Step 7 integration fix (2026-10-22)](s48.md#follow-up-2026-10-22--connect-step-7-to-reviewed-workflow-generation)
 connects owner-confirmed pinned bundles, typed history inputs and browser-independent
 run recovery; the earlier diagnosis is retained in the same report.

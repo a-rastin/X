@@ -754,6 +754,20 @@ function EncounterWizard({
       ? "Add New Patient"
       : currentStep.id === "register" ? "Register patient" : "Encounter draft";
 
+  const discardButton = (
+    <button
+      className="xi-btn xi-btn-secondary"
+      type="button"
+      onClick={() => {
+        setDiscardConfirm(false);
+        setDiscardError(null);
+        setDiscardOpen(true);
+      }}
+    >
+      Discard draft
+    </button>
+  );
+
   return (
     <div>
       <h2 className="xi-page-title">{pageTitle}</h2>
@@ -1010,27 +1024,21 @@ function EncounterWizard({
         </div>
       )}
 
-      <section className="xi-card" aria-labelledby="draft-danger-heading">
-        <h3 className="xi-section-title" id="draft-danger-heading">
-          Discard draft
-        </h3>
-        <p className="xi-hint">
-          Discarding releases the patient slot without deleting the patient.
-          It needs explicit confirmation and the current revision (
-          {autosave.baseRevision}).
-        </p>
-        <button
-          className="xi-btn xi-btn-secondary"
-          type="button"
-          onClick={() => {
-            setDiscardConfirm(false);
-            setDiscardError(null);
-            setDiscardOpen(true);
-          }}
-        >
-          Discard draft
-        </button>
-      </section>
+      {encounter.kind === "registration" ? (
+        discardButton
+      ) : (
+        <section className="xi-card" aria-labelledby="draft-danger-heading">
+          <h3 className="xi-section-title" id="draft-danger-heading">
+            Discard draft
+          </h3>
+          <p className="xi-hint">
+            Discarding releases the patient slot without deleting the patient.
+            It needs explicit confirmation and the current revision (
+            {autosave.baseRevision}).
+          </p>
+          {discardButton}
+        </section>
+      )}
 
       <p>
         <a

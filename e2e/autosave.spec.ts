@@ -230,6 +230,20 @@ test("navigation warns while unsaved edits remain", async ({
   ).toBeVisible({ timeout: 5000 });
 });
 
+test("registration steps show a standalone discard button", async ({ page, request }) => {
+  const physician = await loginPhysician(page, request, "e2ediscardlayout");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  for (const step of ["register", "diagnosis", "panss", "cssrs", "history", "medications", "proposal-review"]) {
+    await page.goto(`/#/encounters/${draftId}#${step}`);
+    await expect(page.locator(`#wizard-step-${step}`)).toHaveAttribute("aria-current", "page");
+    const button = page.getByRole("button", { name: "Discard draft", exact: true });
+    await expect(button).toHaveCount(1);
+    await expect(button).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Discard draft", exact: true })).toHaveCount(0);
+    await expect(button.locator("xpath=ancestor::section[@class='xi-card']")).toHaveCount(0);
+  }
+});
+
 test("discard needs explicit confirmation, frees the slot, keeps the patient", async ({
   page,
   request,
@@ -250,6 +264,10 @@ test("discard needs explicit confirmation, frees the slot, keeps the patient", a
   await expect(dialog).toContainText("Discard this draft?");
   const confirm = page.getByRole("button", { name: "Confirm discard" });
   // Explicit confirmation: the button stays disabled until the checkbox.
+  await expect(confirm).toBeDisabled();
+  await dialog.getByRole("button", { name: "Cancel" }).click();
+  await expect(dialog).toHaveCount(0);
+  await page.getByRole("button", { name: "Discard draft" }).click();
   await expect(confirm).toBeDisabled();
   await page
     .getByText("I understand this discards the draft but keeps the patient.")
