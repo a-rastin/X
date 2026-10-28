@@ -504,25 +504,15 @@ export function HistorySection({
           <div className="xi-diagnosis-overview">
             <div>
               <h4>Past medical history</h4>
-              <p>Record a response for each question. Core history responses default to Unknown.</p>
             </div>
             <span className="xi-diagnosis-count">{responseCount} / {visibleFields.length} responses</span>
           </div>
-          <nav className="xi-diagnosis-nav xi-history-nav" aria-label="Jump to history section">
-            {visibleGroups.map((group) => (
-              <a key={group.id} href={`#history-group-${group.id}`} onClick={(event) => {
-                event.preventDefault();
-                document.getElementById(`history-group-${group.id}`)?.focus();
-              }}>{group.title}</a>
-            ))}
-          </nav>
           {visibleGroups.map((group) => {
             const fields = group.fields;
             return (
               <section className="xi-diagnosis-criterion" key={group.id} aria-labelledby={`history-group-${group.id}`}>
                 <header className="xi-diagnosis-criterion-header">
                   <h4 id={`history-group-${group.id}`} tabIndex={-1}>{group.title}</h4>
-                  <span className="xi-diagnosis-count">{fields.filter(hasResponse).length} / {fields.length} answered</span>
                 </header>
                 {fields.map((field) => {
                   const errorId = itemErrors[field.id] !== undefined ? `hist-${field.id}-error` : undefined;
@@ -534,7 +524,6 @@ export function HistorySection({
                         <p className="xi-history-period">{field.period}</p>
                       </div>
                       <div className="xi-diagnosis-answer-row">
-                        <span className="xi-diagnosis-item-hint">{hasResponse(field) ? "Answered" : "Awaiting response"}</span>
                         <div className={`xi-diagnosis-options${field.id === "h_onset_timing" ? " xi-history-options-long" : group.id === "treatment" ? " xi-history-options-paired" : ""}`}>
                           {field.values.map((value) => (
                             <label key={value} htmlFor={`hist-${field.id}-${value}`}>
@@ -566,13 +555,11 @@ export function HistorySection({
 
           {questionKeys.map((key) => {
             const fields = workflowFields.filter((field) => field.question_key === key);
-            const answered = fields.filter((field) => field.permitted.includes(String(slice.values[field.id] ?? ""))).length;
             const readiness = preview?.proposal_readiness?.questions.find((question) => question.question_key === key);
             return (
               <section className="xi-diagnosis-criterion" key={key} aria-labelledby={`history-workflow-${key}`}>
                 <header className="xi-diagnosis-criterion-header">
                   <h4 id={`history-workflow-${key}`} tabIndex={-1}>{readiness?.question_label ?? key.replaceAll("_", " ").replace(/^./, (letter) => letter.toUpperCase())}</h4>
-                  <span className="xi-diagnosis-count">{answered} / {fields.length} answered</span>
                 </header>
                 <p className="xi-hint">Review this context for proposal generation. Uncertain context is estimated with disclosed uncertainty and does not block generation; only conflicting, unassessed, invalid or missing prerequisite inputs pause the affected question.</p>
                 {readiness && <p className="xi-hint">Saved required inputs: {readiness.execution_ready_count} / {readiness.required_count} execution-ready.{answersPending && " Changes pending."}</p>}

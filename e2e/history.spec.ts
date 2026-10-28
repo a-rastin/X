@@ -143,10 +143,22 @@ async function gotoEncounter(
   if (step === "history" && waitForInventory) await expect(page.locator("#history-phone-update")).toBeEnabled({ timeout: 20000 });
 }
 
+function nextSavedDraft(page: import("@playwright/test").Page, draftId: string) {
+  return page.waitForResponse((response) =>
+    response.url().endsWith(`/api/v1/encounters/${draftId}`) &&
+    response.request().method() === "PATCH" && response.ok(), { timeout: 15000 });
+}
+
 test("fresh history defaults to Unknown with two applicable fields and no retired controls", async ({ page, request }) => {
   const physician = await loginPhysician(page, request, "e2ehistfresh");
   const { draftId } = await createPatientWithDraft(request, physician);
   await gotoEncounter(page, draftId);
+  await expect(page.getByRole("heading", { name: "Add New Patient" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Draft context" })).toHaveCount(0);
+  await expect(page.locator("#draft-save-status")).toHaveCount(0);
+  await expect(page.getByRole("navigation", { name: "Jump to history section" })).toHaveCount(0);
+  await expect(page.locator(".xi-history .xi-diagnosis-item-hint")).toHaveCount(0);
+  await expect(page.getByText("Record a response for each question. Core history responses default to Unknown.")).toHaveCount(0);
   const exposure = page.getByRole("group", { name: "History of lifetime antipsychotic exposure", exact: true });
   await expect(exposure.getByRole("radio")).toHaveCount(3);
   for (const label of ["Yes", "No", "Unknown"]) await expect(exposure.getByRole("radio", { name: label, exact: true })).toBeVisible();
@@ -176,11 +188,10 @@ test("history answers save and keep applicable completeness after reload and re-
 
   await gotoEncounter(page, draftId);
 
+  const save = nextSavedDraft(page, draftId);
   await page.locator("#hist-h_exposure_dopamine_blocker-yes").check();
   await page.locator("#hist-h_onset_timing-unknown").check();
-  await expect(page.locator("#draft-save-status")).toContainText("Saved (revision 2)", {
-    timeout: 15000,
-  });
+  await save;
 
   const verdict = page.locator("#history-preview-status");
   await expect(verdict).toContainText("Complete — all 4 applicable history fields answered", { timeout: 10000 });
@@ -537,10 +548,11 @@ test("history 412 keeps edits and reconciles via Reload/Retry", async ({
 
   await gotoEncounter(page, draftId);
   const status = page.locator("#draft-save-status");
-  await expect(status).toContainText("Saved (revision 1)");
+  await expect(status).toHaveCount(0);
 
+  const firstSave = nextSavedDraft(page, draftId);
   await page.locator("#hist-h_exposure_dopamine_blocker-yes").check();
-  await expect(status).toContainText("Saved (revision 2)", { timeout: 15000 });
+  await firstSave;
 
   // Another tab wins the race through the real API (revision 2 -> 3).
   const winner = await patchDraftApi(request, physician, draftId, { working_note: "server-winner" }, 2);
@@ -553,8 +565,10 @@ test("history 412 keeps edits and reconciles via Reload/Retry", async ({
   await expect(page.locator("#hist-h_movement_persistence_4w-no")).toBeChecked();
   await expect(status).toContainText("Conflict");
 
+  const retrySave = nextSavedDraft(page, draftId);
   await page.getByRole("button", { name: "Keep my edits and retry" }).click();
-  await expect(status).toContainText("Saved (revision 4)", { timeout: 15000 });
+  await retrySave;
+  await expect(status).toHaveCount(0);
 
   await page.reload();
   await expect(page.locator("#hist-h_exposure_dopamine_blocker-yes")).toBeChecked();
@@ -570,7 +584,7 @@ test("failed history save never shows Saved; Retry recovers", async ({
 
   await gotoEncounter(page, draftId);
   const status = page.locator("#draft-save-status");
-  await expect(status).toContainText("Saved (revision 1)");
+  await expect(status).toHaveCount(0);
 
   await page.route("**/api/v1/encounters/*", (route) => {
     if (route.request().method() === "PATCH") {
@@ -587,8 +601,10 @@ test("failed history save never shows Saved; Retry recovers", async ({
     await page.unroute("**/api/v1/encounters/*");
   }
 
+  const retrySave = nextSavedDraft(page, draftId);
   await page.getByRole("button", { name: "Retry save" }).click();
-  await expect(status).toContainText("Saved (revision 2)", { timeout: 15000 });
+  await retrySave;
+  await expect(status).toHaveCount(0);
 });
 
 test("history controls wait for the saved field inventory before accepting edits", async ({ page, request }) => {
@@ -607,10 +623,11 @@ test("history controls wait for the saved field inventory before accepting edits
   await expect(page.locator("#hist-h_exposure_dopamine_blocker-yes")).toBeDisabled();
   release();
   await expect(page.locator("#history-phone-update")).toBeEnabled();
+  const save = nextSavedDraft(page, draftId);
   await page.locator("#history-reconciliation-status").selectOption("pending");
   await page.locator("#history-reconciliation-baseline").fill("synthetic-baseline");
   await page.locator("#history-phone-update").fill("+43 699 222");
-  await expect(page.locator("#draft-save-status")).toContainText("Saved (revision 2)", { timeout: 15000 });
+  await save;
   await page.reload();
   await expect(page.locator("#history-reconciliation-status")).toHaveValue("pending");
   await expect(page.locator("#history-reconciliation-baseline")).toHaveValue("synthetic-baseline");
@@ -626,12 +643,11 @@ test("reconciliation and phone update save and survive reload", async ({
 
   await gotoEncounter(page, draftId);
 
+  const save = nextSavedDraft(page, draftId);
   await page.locator("#history-reconciliation-status").selectOption("pending");
   await page.locator("#history-reconciliation-baseline").fill("baseline-enc-001");
   await page.locator("#history-phone-update").fill("+43 699 111");
-  await expect(page.locator("#draft-save-status")).toContainText("Saved (revision 2)", {
-    timeout: 15000,
-  });
+  await save;
 
   await page.reload();
   await expect(page.locator("#history-reconciliation-status")).toHaveValue("pending");
