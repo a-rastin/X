@@ -750,7 +750,7 @@ function EncounterWizard({
 
   const notice = registrationNoticeFor(encounterId);
   const pageTitle =
-    currentStep.id === "diagnosis" && encounter.kind === "registration"
+    (currentStep.id === "diagnosis" || currentStep.id === "panss") && encounter.kind === "registration"
       ? "Add New Patient"
       : currentStep.id === "register" ? "Register patient" : "Encounter draft";
 
@@ -763,7 +763,7 @@ function EncounterWizard({
           {notice.serverTimestamp}, revision {notice.revision}.
         </p>
       )}
-      {currentStep.id !== "diagnosis" && (
+      {currentStep.id !== "diagnosis" && currentStep.id !== "panss" && (
       <section className="xi-card" aria-labelledby="draft-context-heading">
         <h3 className="xi-section-title" id="draft-context-heading">
           Draft context
@@ -792,9 +792,9 @@ function EncounterWizard({
         />
       )}
 
-      {/* Diagnosis only shows save status when recovery is needed. */}
+      {/* Assessment pages only show save status when recovery is needed. */}
       {currentStep.id !== "register" &&
-        (currentStep.id !== "diagnosis" ||
+        ((currentStep.id !== "diagnosis" && currentStep.id !== "panss") ||
           autosave.saveState.kind === "failed" ||
           autosave.saveState.kind === "conflict") && (
         <section className="xi-card" aria-label="Draft save">

@@ -272,7 +272,9 @@ export function PanssSection({
                 </label>
               ))}
             </div>
-            <p className="xi-assessment-answer-state">{answers[item.id] === undefined ? "Not answered" : `Selected: ${answers[item.id]}`}</p>
+            {answers[item.id] !== undefined && (
+              <p className="xi-assessment-answer-state">{`Selected: ${answers[item.id]}`}</p>
+            )}
             {itemErrors[item.id] !== undefined && (
               <p className="xi-field-error" id={`panss-${item.id}-error`}>
                 {itemErrors[item.id].join(" ")}
@@ -289,7 +291,7 @@ export function PanssSection({
       <h3 className="xi-section-title" id="panss-heading">
         PANSS (step {stepNumber})
       </h3>
-      <p className="xi-hint">Rate symptoms over the previous 7 days using the interview and available collateral information. Select a rating for each item; answers save automatically.</p>
+      <p className="xi-hint">Rate symptoms over the previous 7 days using the interview and available collateral information.</p>
       <p className="xi-assessment-window">1 = absent <span>7 = extreme</span></p>
 
       {definitionError !== null && (
@@ -310,12 +312,6 @@ export function PanssSection({
 
       <div className="xi-assessment-workspace">
       <div className="xi-assessment-worksheet">
-      <nav className="xi-assessment-nav" aria-label="PANSS subscales">
-        {[["P1", "Positive"], ["N1", "Negative"], ["G1", "General"]].map(([id, label]) => (
-          <a key={id} href={`#panss-group-${id}`} onClick={event => { event.preventDefault(); document.getElementById(`panss-group-${id}`)?.focus(); }}>{label}</a>
-        ))}
-        <a href="#panss-review" onClick={event => { event.preventDefault(); document.getElementById("panss-review")?.focus(); }}>Review scores</a>
-      </nav>
       {definition !== null && (
         <div>
           {renderSubscale("Positive symptoms (P1–P7)", positiveItems)}

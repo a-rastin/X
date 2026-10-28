@@ -125,6 +125,14 @@ test("fresh form has 30 unanswered items and null total, no pre-filled 1s", asyn
 
   await gotoPanss(page, draftId);
 
+  await expect(page.getByRole("heading", { name: "Add New Patient" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Draft context" })).toHaveCount(0);
+  await expect(page.locator("#draft-save-status")).toHaveCount(0);
+  await expect(page.getByRole("navigation", { name: "PANSS subscales" })).toHaveCount(0);
+  await expect(page.locator(".xi-assessment-answer-state")).toHaveCount(0);
+  await expect(page.locator("#panss-heading").locator(".."))
+    .not.toContainText("answers save automatically");
+
   // No radio is pre-selected anywhere in the 30-item form.
   await expect(page.locator("#panss-heading")).toBeVisible();
   await expect(
@@ -194,10 +202,12 @@ test("Continue navigates without completing the assessment", async ({
   const { draftId } = await createPatientWithDraft(request, physician);
 
   await gotoPanss(page, draftId);
-  await page.locator("#panss-P1-1").check();
-  await expect(page.locator("#draft-save-status")).toContainText("Saved", {
-    timeout: 15000,
-  });
+  const save = page.waitForResponse(response =>
+    response.url().includes(`/api/v1/encounters/${draftId}`) &&
+    response.request().method() === "PATCH" && response.ok(),
+  );
+  await page.locator('label[for="panss-P1-1"]').click();
+  await save;
 
   await page.locator("#wizard-continue").click();
   await expect(
@@ -249,7 +259,7 @@ test("all-1 completion via UI yields 7/7/16/30", async ({ page, request }) => {
   await gotoPanss(page, draftId);
 
   for (const id of ALL_IDS) {
-    await page.locator(`#panss-${id}-1`).check();
+    await page.locator(`label[for="panss-${id}-1"]`).click();
   }
 
   const verdict = page.locator("#panss-preview-status");
@@ -319,9 +329,9 @@ test("forged invalid values are rejected server-side, never zero-filled", async 
   const verdict = page.locator("#panss-preview-status");
   await expect(verdict).toContainText("Incomplete", { timeout: 10000 });
   await expect(verdict).toContainText("The total will appear when all items are answered.");
-  await expect(
-    page.getByText("rejected (never zero-filled)"),
-  ).toBeVisible();
+  await expect(page.locator("#panss-P1-error")).toContainText(
+    body.evaluation.item_errors.P1[0],
+  );
 });
 
 test("resume preserves completeness after reload and re-login", async ({
