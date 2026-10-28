@@ -1,0 +1,43 @@
+# Bayesian Network 4 (based on STATEMENT 6: Continuing the Same Medications)
+
+## Clinical Phrases
+
+1. A change to aripiprazole was associated with improvements in non-HDL cholesterol, serum triglycerides, and weight as well as a small reduction in 10-year risk of coronary heart disease.
+
+2. A change to aripiprazole was associated with no difference in the odds of having metabolic syndrome.
+
+---
+
+## When should this bayesian network activates? 
+
+1. In the first visit (primary evaluation) of a known schizophrenia patient who has been taking antipsychotics.
+
+2. In follow up sessions of a previously registered patient.
+
+---
+
+## Clinical Routing
+
+```
+>  Acronyms: `BN=Bayesian Network`, `S=Scenario`, `Q=Question`, `SQ=Subquestion`.
+>  Legend used to describe probabilities: `++++=very strong (Ki<1 nM)`, `+++=strong (1–10 nM)`, `++=moderate (10–100 nM)`, `+=weak (100–1,000 nM)`, `0=very weak/negligible (Ki≥1,000 nM)`.
+
+```
+
+### Scenario 1 (First visit (primary evaluation) of a known schizophrenia patient who has been taking antipsychotics)
+
+**BN-3, S-1, Q-1:** Does the patient have high non-HDL cholesterol, serum triglycerides, coronary heart disease or increased risk of coronary heart disease?
+[The answer to this question (Yes, No, Unknown) should be obtained from the user inputs.]
+[The default answer to this question is `Unknown`.]
+    - If `Yes` then P(Aripiprazole is the first choice) = `+++` | P(Switch to another antipsychotic (including possiblitiy for Aripiprazole)) = `+`
+    - If `No` then P(Aripiprazole is the first choice) = `0` | P(Switch to another antipsychotic (including possiblitiy for Aripiprazole)) = `++++`
+    - If `Unknown` then P(Aripiprazole is the first choice) = `0` | P(Switch to another antipsychotic (including possiblitiy for Aripiprazole)) = `++++`
+
+### Scenario 2 (Follow up sessions of a previously registered patient)
+
+**BN-3, S-2, Q-1:** Does the patient have high non-HDL cholesterol, serum triglycerides, coronary heart disease or increased risk of coronary heart disease?
+[The answer to this question (Yes, No, Unknown) should be obtained from the user inputs.]
+[The default answer to this question is `Unknown`.]
+    - If `Yes` then P(Aripiprazole is the first choice) = `+++` | P(Switch to another antipsychotic (including possiblitiy for Aripiprazole)) = `+`
+    - If `No` then P(Aripiprazole is the first choice) = `0` | P(Switch to another antipsychotic (including possiblitiy for Aripiprazole)) = `++++`
+    - If `Unknown` then P(Aripiprazole is the first choice) = `0` | P(Switch to another antipsychotic (including possiblitiy for Aripiprazole)) = `++++`
