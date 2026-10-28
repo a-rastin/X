@@ -20,7 +20,7 @@ export function ResearchWarningGate() {
         aria-describedby="research-warning-text"
       >
         <h2 className="xi-section-title" id="research-warning-title">
-          Research use only
+          Research prototype — clinical use disclaimer
         </h2>
         <p id="research-warning-text">{researchWarning}</p>
         <button
