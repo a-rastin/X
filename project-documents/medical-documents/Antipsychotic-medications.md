@@ -118,3 +118,63 @@ Child-Pugh A=5–6, B=7–9, C=10–15. CrCl=creatinine clearance; MDD=major dep
 | Ziprasidone | Geodon | + | ++ | +++ | + | + | + |  |
 
 Sexual dysfunction generally parallels hyperprolactinemia except where noted.
+
+
+
+
+### Long-acting injectable antipsychotic medications: availability and injection-related considerations
+
+| Medication | Trade name | Available strengths | How supplied | Injection site / technique | Reactions at injection site | Comments |
+|---|---|---|---|---|---|---|
+| Fluphenazine decanoate | Prolixin Decanoate | 25/mL (5 mL) | Vial, sesame oil + 1.2% benzyl alcohol | Deep IM gluteal or deltoid; Z-track recommended | Skin reactions reported | Hypotension watch; sesame-oil allergy alert. Needle size/handling: see labeling. |
+| Haloperidol decanoate | Haldol Decanoate | 50/mL (1, 5 mL); 100/mL (1, 5 mL) | Vial, sesame oil + 1.2% benzyl alcohol | Deep IM gluteal or deltoid; Z-track recommended | Inflammation/nodules, especially >100 mg/mL | Max 3 mL per site. Sesame-oil allergy alert. Needle size: see labeling. |
+| Aripiprazole monohydrate | Abilify Maintena | 300, 400 | Kit: prefilled syringe or single-use vial | Slow IM gluteal or deltoid | Occasional redness/swelling/induration (mild–moderate) | Rotate sites; do not massage. |
+| Aripiprazole lauroxil (initiation) | Aristada Initio | 675/2.4 mL | Kit: prefilled syringe | IM deltoid or gluteal | Common pain; infrequent induration/swelling/redness | Single-dose initiation only (see Table 8). |
+| Aripiprazole lauroxil | Aristada | 441/1.6 mL; 662/2.4 mL; 882/3.2 mL; 1,064/3.9 mL | Kit: prefilled syringe | 441 mg: deltoid or gluteal; 662/882/1,064 mg: gluteal only | Common pain; infrequent induration/swelling/redness | — |
+| Olanzapine pamoate | Zyprexa Relprevv | 210, 300, 405 | Kit: vial diluent + powder vial | Deep IM gluteal only; never SC | Infrequent induration/mass | Post-injection delirium/sedation syndrome risk: registered facility, emergency access, observe ≥3 h, accompanied discharge. FDA REMS required. Do not massage. Age/smoking/sex affect PK. Reconstitution: see labeling. |
+| Paliperidone palmitate (monthly) | Invega Sustenna | 39/0.25 mL; 78/0.5 mL; 117/0.75 mL; 156/1 mL; 234/1.5 mL | Kit: prefilled syringe | IM only; slow deep deltoid × first 2 doses, then deltoid or gluteal (upper outer quadrant) | Occasional redness/swelling/induration | Initial deltoids attain levels rapidly; alternate right/left deltoid. Needle size/reconstitution: see labeling. |
+| Paliperidone palmitate (3-month) | Invega Trinza | 273/0.875 mL; 410/1.315 mL; 546/1.75 mL; 819/2.625 mL | Kit: prefilled syringe | IM only; slow deep deltoid or gluteal | Infrequent redness/swelling | Change to Trinza only after ≥4 Sustenna doses (2 at same strength); see labeling for Trinza→oral/Sustenna. |
+| Risperidone microspheres | Risperdal Consta | 12.5, 25, 37.5, 50 | Kit: prefilled syringe + vial | Deep IM deltoid or gluteal (upper outer quadrant) | Occasional redness/swelling/induration | Alternate sites. Refrigerate 2–8°C, protect light. Warm vial ≥30 min before reconstitution. May hold at 25°C ≤7 days pre-administration. |
+| Risperidone extended-release | Perseris | 90/0.6 mL; 120/0.8 mL | Kit: powder + diluent prefilled syringes | Abdominal SC only | Lump may persist weeks | Inject only intact skin (no irritation/redness/bruise/infection/scar); do not rub/massage. Refrigerate 2–8°C, protect light; warm ≥15 min pre-injection. |
+
+Always consult product labeling for dose regimen, adjustments, administration, needle size, handling, storage.
+
+
+
+### Table 8. Long-acting injectable antipsychotic medications: dosing
+
+| Medication | Trade name | Dose conversions | Initial dose | Typical dose | Maximum dose | Frequency | Need for initial oral supplementation | Comments |
+|---|---|---|---|---|---|---|---|---|
+| Fluphenazine decanoate | Prolixin Decanoate | Per 10 mg/day oral → 12.5 mg decanoate every 3 weeks | 6.25–25 every 2 weeks | 6.25–25 every 2–4 weeks | 100 | 2–4 weeks | Halve oral after 1st injection, stop with 2nd | Increase in 12.5 mg steps if >50 mg needed. |
+| Haloperidol decanoate | Haldol Decanoate | Per 5 mg/day oral → 50–75 mg decanoate every 4 weeks | Determined by oral dose / relapse risk, max 100 mg | 50–200 (10–15× prior oral dose) | 450/month | 4 weeks | Taper/stop after 2–3 injections | If initial >100 mg, split into 2 injections 3–7 days apart. 100 mg [per source row]. |
+| Aripiprazole monohydrate | Abilify Maintena | n/a | 400 | 400 | 400/month | Monthly | Continue oral ×14 days | Missed-dose handling per labeling. Adjust for CYP2D6 poor metabolizers, CYP2D6/CYP3A4 inhibitors, adverse effects. Avoid CYP3A4 inducers. |
+| Aripiprazole lauroxil | Aristada Initio | n/a | 675 | 675 | 675 | Single initiation/re-initiation dose; not for repeated dosing | Must give with one 30 mg oral aripiprazole dose | Establish tolerability with oral first if never on aripiprazole. Initio ≠ Aristada. Dose adjustments: see labeling. |
+| Aripiprazole lauroxil | Aristada | 10 mg/day oral → 441 mg IM/month; 15 mg/day → 662 mg/month, 882 mg q6wk, or 1,064 mg q2mo; ≥20 mg/day → 882 mg/month | Monthly: 441, 662, 882; q6wk: 882; q2mo: 1,064 | Monthly: 441, 662, 882; q6wk: 882; q2mo: 1,064 | 882/month | Monthly: 441, 662, 882; q6wk: 882; q2mo: 1,064 | Two initiation options: (1) one IM Initio 675 mg + one oral 30 mg (first Aristada same day as Initio or ≤10 days after); or (2) 21 days oral with first Aristada | Initio ≠ Aristada. |
+| Olanzapine pamoate | Zyprexa Relprevv | 10 mg/day oral → 210 mg q2wk ×4 or 405 mg q4wk; 15 mg/day → 300 mg q2wk ×4; 20 mg/day → 300 mg q2wk | Determined by oral dose | 150/210/300 mg q2wk or 300/405 mg q4wk | 300 mg q2wk or 405 mg q4wk | 2–4 weeks | Not required | 150 mg q4wk if sensitivity/slow metabolism. Smokers may need more; women may need less. |
+| Paliperidone palmitate | Invega Sustenna | 3 mg oral → 39–78 mg IM; 6 mg → 117 mg; 9 mg → 156 mg; 12 mg → 234 mg | 234 mg day 1 + 156 mg 1 week later (both deltoid) | 78–234 mg monthly from week 5 | 234 mg/month | Monthly | Not required | Mixed particle sizes (rapid + delayed). Oral/other-LAI→Sustenna: see labeling. Doses = paliperidone palmitate (not paliperidone). Avoid strong CYP3A4/P-gp inducers. |
+| Paliperidone palmitate | Invega Trinza | From monthly Sustenna: 78→273; 117→410; 156→546; 234→819 | Dependent on last monthly dose | 273–819 | 819/3 months | Every 3 months | n/a | Switch after ≥4 Sustenna doses (2 at same strength). Trinza→oral/Sustenna: see labeling. Doses = palmitate. Avoid strong CYP3A4/P-gp inducers. |
+| Risperidone microspheres | Risperdal Consta | Oral→Consta: ≤3 mg/day → 25 mg/2wk; >3–5 → 37.5 mg/2wk; >5 → 50 mg/2wk | 25 every 2 weeks | 25–50 every 2 weeks | 50 every 2 weeks | 2 weeks | Continue oral ×21 days | No upward adjustment more often than q4wk. |
+| Risperidone extended-release | Perseris | Oral→SC monthly: 3 mg/day → 90 mg/month; 4 mg/day → 120 mg/month | Determined by oral dose | 90–120 | 120/month | Monthly | No loading dose or oral overlap needed | May be unsuitable if <3 mg or >4 mg oral/day. Adjust with CYP2D6 inhibitors / CYP3A4 inducers. |
+
+CYP=cytochrome P450; LAI=long-acting injectable.
+
+
+
+
+### Long-acting injectable antipsychotic medications: pharmacological characteristics
+
+| Medication | Trade name | Time to peak plasma | Time to steady state | Elimination half-life | Comments |
+|---|---|---|---|---|---|
+| Fluphenazine decanoate | Prolixin | 8–10 h | 2 months | 6–9 days (single); 14–26 days (multiple) | Major CYP2D6 substrate |
+| Haloperidol decanoate | Haldol | 6 days | 3–4 months | 21 days | Major CYP2D6 + CYP3A4 substrate |
+| Aripiprazole monohydrate | Abilify Maintena | 4 days (deltoid); 5–7 days (gluteal) | By 4th dose | 300 mg: 29.9 days; 400 mg: 46.5 days (gluteal) | ≥26 days between injections. Major CYP2D6 + CYP3A4 substrate |
+| Aripiprazole lauroxil | Aristada Initio | 16–35 days (median 27) | n/a | 15–18 days | ≠ Aristada (different PK). CYP2D6 + CYP3A4 substrate |
+| Aripiprazole lauroxil | Aristada | Not available | 4 months | 53.9–57.2 days | ≠ Initio (different PK). CYP2D6 + CYP3A4 substrate |
+| Olanzapine pamoate | Zyprexa Relprevv | 7 days | ~3 months | 30 days | Major CYP1A2 substrate |
+| Paliperidone palmitate | Invega Sustenna | 13 days | 2–3 months | 25–49 days; increased in renal disease | CrCl 50–79: 156 mg day 1 + 117 mg week 1 (deltoid), maintenance 78 mg. Not recommended CrCl <50. P-gp/ABCB1 substrate |
+| Paliperidone palmitate | Invega Trinza | 30–33 days | n/a | 84–95 days (deltoid); 118–139 days (gluteal); increased in renal disease | Do not use CrCl <50. P-gp/ABCB1 substrate |
+| Risperidone microspheres | Risperdal Consta | 29–31 days | 2 months | 3–6 days; increased in renal/hepatic disease | Renal/hepatic: oral lead-in 0.5 mg BID ×1 wk → 1 mg BID or 2 mg QD ×1 wk; if tolerated 25 mg IM q2wk + oral ×21 days (12.5 mg IM also considerable). Major CYP2D6, minor CYP3A4; weak CYP2D6 inhibitor |
+| Risperidone extended-release | Perseris | Two peaks: 4–6 h and 10–14 days | 2 months | 9–11 days | Renal/hepatic: caution (not studied in renal). If oral ≤3 mg/day tolerated+effective, 90 mg/month considerable. Major CYP2D6, minor CYP3A4; weak CYP2D6 inhibitor |
+
+If an LAI dose is missed, see labeling for dose/frequency adjustments. CrCl=creatinine clearance.
+
