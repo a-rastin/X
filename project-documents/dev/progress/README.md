@@ -95,6 +95,8 @@ the same worksheet language to response controls, navigation, and result review.
 
 The [expanded physician login disclaimer (2026-10-28)](s05.md#follow-up-2026-10-28--expanded-physician-login-disclaimer) updates the warning and browser-test expectation; frontend build remains unverified because Node/npm are unavailable.
 
+[Registration C-SSRS Yes/No (issue 12)](../../../issues/issue-12.md) is implemented; Chromium passed and Firefox remains pending ([S11 handoff](s11.md#follow-up-2026-10-28--registration-c-ssrs-yesno-implementation-issue-12)).
+
 ## Reading and updating progress
 
 [Discard button presentation (issue 11)](../../../issues/issue-11.md) is implemented; browser verification remains pending ([S07 handoff](s07.md#follow-up-2026-10-28--discard-button-presentation-implementation)).

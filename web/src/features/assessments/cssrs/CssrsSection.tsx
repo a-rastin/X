@@ -8,13 +8,14 @@
  * GET /encounters/{id}/cssrs — the browser never computes them.
  *
  * One group, five items (css_i1_recent .. css_i5_recent). Each item is
- * yes / no / unknown. A missing saved answer selects Unknown and, when the
- * section is not skipped, is persisted as "unknown". An explicit yes or no
- * is left as stored. A higher-level yes does not change any other item.
+ * yes / no on registration, with No as the default; follow-up also offers
+ * Unknown and defaults to it. Registration normalizes saved Unknown to No.
+ * An explicit yes or no is left as stored. A higher-level yes does not change
+ * any other item.
  * A legacy skip record is `{"__skipped": true}` (evaluates to
  * not_assessed) and the five items are not shown as required while skipped.
- * Resume clears the skip and returns each item without an explicit yes or
- * no to Unknown. There is no Skip control.
+ * Resume clears the skip: registration resets to No; follow-up retains explicit
+ * answers and defaults missing ones to Unknown. There is no Skip control.
  *
  * The definition payload may still list other items or value_type yes_no.
  * Only these five prompts are rendered; a missing prompt keeps the wording
@@ -37,10 +38,10 @@
  * - section heading `#cssrs-heading`: "C-SSRS (step 4)" on registration,
  *   "C-SSRS (step 3)" on follow-up (wizard index)
  * - one group `#cssrs-group-recent-ideation`: "Recent ideation — past month"
- * - tri-state radios `#cssrs-{itemId}-yes`, `#cssrs-{itemId}-no`,
- *   `#cssrs-{itemId}-unknown` (name `cssrs-{itemId}`) for css_i1_recent,
+ * - radios `#cssrs-{itemId}-yes`, `#cssrs-{itemId}-no` and, on
+ *   follow-up, `#cssrs-{itemId}-unknown` (name `cssrs-{itemId}`) for css_i1_recent,
  *   css_i2_recent, css_i3_recent, css_i4_recent, css_i5_recent.
- *   Unknown is selected when the saved answer is missing.
+ *   Registration defaults to No; follow-up offers and defaults to Unknown.
  * - verdict `#cssrs-preview-status` (aria-live polite)
  * - scores `#cssrs-scores` (recent ideation severity only)
  * - flags container `#cssrs-flags`; urgent panel `#cssrs-high-risk-alert`
@@ -67,6 +68,7 @@ type AutosaveApi = ReturnType<typeof useAutosave>;
 
 interface CssrsSectionProps {
   encounterId: string;
+  isRegistration: boolean;
   autosave: AutosaveApi;
   onSessionExpired: () => void;
   /** 1-based wizard index (registration 4, follow-up 3). */
@@ -142,10 +144,10 @@ function isRecentId(id: string): boolean {
   return RECENT_IDEATION.some((item) => item.id === id);
 }
 
-/** Five tri-state answers, or null when the stored slice already matches.
- * Missing keys become "unknown". Any other key is dropped. Yes and no stay. */
+/** Normalize the five answers for the encounter, or return null if unchanged. */
 function normalizedAnswers(
   answers: Record<string, unknown>,
+  isRegistration: boolean,
 ): Record<string, CssrsAnswerValue> | null {
   if (answers["__skipped"] === true) {
     return null;
@@ -153,12 +155,9 @@ function normalizedAnswers(
   const next: Record<string, CssrsAnswerValue> = {};
   let changed = false;
   for (const item of RECENT_IDEATION) {
-    const explicit = explicitAnswer(answers[item.id]);
-    if (explicit === null) {
-      next[item.id] = "unknown";
+    next[item.id] = answerForMode(answers[item.id], isRegistration);
+    if (next[item.id] !== answers[item.id]) {
       changed = true;
-    } else {
-      next[item.id] = explicit;
     }
   }
   if (Object.keys(answers).some((key) => !isRecentId(key))) {
@@ -171,15 +170,23 @@ function answeredItems(
   answers: Record<string, unknown>,
   itemId: string,
   value: CssrsAnswerValue,
+  isRegistration: boolean,
 ): Record<string, CssrsAnswerValue> {
   const next: Record<string, CssrsAnswerValue> = {};
   for (const item of RECENT_IDEATION) {
     next[item.id] =
       item.id === itemId
         ? value
-        : (explicitAnswer(answers[item.id]) ?? "unknown");
+        : answerForMode(answers[item.id], isRegistration);
   }
   return next;
+}
+
+function answerForMode(value: unknown, isRegistration: boolean): CssrsAnswerValue {
+  const answer = explicitAnswer(value);
+  return answer === null || (isRegistration && answer === "unknown")
+    ? (isRegistration ? "no" : "unknown")
+    : answer;
 }
 
 function recentItems(
@@ -199,6 +206,7 @@ function recentItems(
 
 export function CssrsSection({
   encounterId,
+  isRegistration,
   autosave,
   onSessionExpired,
   stepNumber,
@@ -271,31 +279,31 @@ export function CssrsSection({
   answersRef.current = answers;
   const { setDraftValue } = autosave;
 
-  // Absent recent answers are stored as "unknown"; retired ids are dropped
+  // Default answers are stored for the encounter kind; retired ids are dropped
   // on that same write. Skip is left untouched. The ref is the latest slice
   // so a queued write cannot replace a newer yes or no.
   useEffect(() => {
-    const next = normalizedAnswers(answersRef.current);
+    const next = normalizedAnswers(answersRef.current, isRegistration);
     if (next === null) {
       return;
     }
     setDraftValue("cssrs", { answers: next });
-  }, [answerKey, setDraftValue]);
+  }, [answerKey, setDraftValue, isRegistration]);
 
   const answersPending =
     preview !== null && !sameAnswers(answers, preview.answers);
 
   function setAnswer(itemId: string, value: CssrsAnswerValue): void {
-    if (!skipped && answers[itemId] === value && normalizedAnswers(answers) === null) {
+    if (!skipped && answers[itemId] === value && normalizedAnswers(answers, isRegistration) === null) {
       return;
     }
-    setDraftValue("cssrs", { answers: answeredItems(answers, itemId, value) });
+    setDraftValue("cssrs", { answers: answeredItems(answers, itemId, value, isRegistration) });
   }
 
   function handleResume(): void {
     const next: Record<string, CssrsAnswerValue> = {};
     for (const item of RECENT_IDEATION) {
-      next[item.id] = explicitAnswer(answers[item.id]) ?? "unknown";
+      next[item.id] = isRegistration ? "no" : answerForMode(answers[item.id], false);
     }
     setDraftValue("cssrs", { answers: next });
   }
@@ -337,7 +345,7 @@ export function CssrsSection({
   function renderItem(item: { id: string; prompt: string }): ReactNode {
     const errorId =
       itemErrors[item.id] !== undefined ? `cssrs-${item.id}-error` : undefined;
-    const selected = explicitAnswer(answers[item.id]) ?? "unknown";
+    const selected = answerForMode(answers[item.id], isRegistration);
     return (
       <fieldset key={item.id} className="xi-assessment-item">
         <legend className="xi-assessment-sr-only">{item.prompt}</legend>
@@ -345,7 +353,7 @@ export function CssrsSection({
           {item.prompt}
         </div>
         <div className="xi-assessment-options" aria-label={item.prompt}>
-          {ANSWER_OPTIONS.map((option) => (
+          {ANSWER_OPTIONS.filter((option) => !isRegistration || option.value !== "unknown").map((option) => (
             <label key={option.value} htmlFor={`cssrs-${item.id}-${option.value}`}>
               <input
                 id={`cssrs-${item.id}-${option.value}`}

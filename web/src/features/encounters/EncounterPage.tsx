@@ -868,6 +868,7 @@ function EncounterWizard({
 
         {currentStep.id === "cssrs" && (
           <CssrsSection
+            isRegistration={encounter.kind === "registration"}
             encounterId={encounterId}
             autosave={autosave}
             onSessionExpired={sessionExpired}

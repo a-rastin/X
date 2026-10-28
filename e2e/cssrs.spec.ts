@@ -11,7 +11,7 @@ import {
 } from "./helpers";
 
 /* Registration step 4 and follow-up step 3 share one C-SSRS section:
- * recent ideation levels 1–5 (past month), each yes / no / unknown.
+ * recent ideation levels 1–5 (past month): registration yes / no, follow-up also unknown.
  * Severity and flags come from the server preview. Unknown is an explicit
  * answer, not a negative. A higher-level yes never changes other items.
  */
@@ -134,6 +134,22 @@ async function seedCssrsAnswersApi(
   return (await saved.json()).revision as number;
 }
 
+async function expectSavedAnswers(
+  request: import("@playwright/test").APIRequestContext,
+  physician: { username: string; password: string },
+  draftId: string,
+  expected: Record<string, string>,
+): Promise<void> {
+  const csrf = await physicianSession(request, physician);
+  await expect.poll(async () => {
+    const response = await request.get(`/api/v1/encounters/${draftId}/cssrs`, {
+      headers: { "X-CSRF-Token": csrf },
+    });
+    const preview = await response.json();
+    return preview.answers;
+  }, { timeout: 15000 }).toEqual(expected);
+}
+
 async function gotoCssrs(
   page: import("@playwright/test").Page,
   draftId: string,
@@ -145,15 +161,16 @@ async function gotoCssrs(
 
 async function expectRecentIdeationOnly(
   page: import("@playwright/test").Page,
+  followup = false,
 ): Promise<void> {
   await expect(page.locator("#cssrs-group-recent-ideation")).toHaveText(
     "Recent ideation — past month",
   );
-  await expect(page.locator('input[name^="cssrs-"]')).toHaveCount(15);
+  await expect(page.locator('input[name^="cssrs-"]')).toHaveCount(followup ? 15 : 10);
   for (const id of RECENT_IDS) {
     const radios = page.locator(`input[name="cssrs-${id}"]`);
-    await expect(radios).toHaveCount(3);
-    for (const value of ["yes", "no", "unknown"] as const) {
+    await expect(radios).toHaveCount(followup ? 3 : 2);
+    for (const value of (followup ? ["yes", "no", "unknown"] : ["yes", "no"])) {
       const radio = page.locator(`#cssrs-${id}-${value}`);
       await expect(radio).toHaveCount(1);
       await expect(radio).toHaveAttribute("name", `cssrs-${id}`);
@@ -167,11 +184,12 @@ async function expectRecentIdeationOnly(
   }
 }
 
-async function expectUnknownSelected(
+async function expectDefaultSelected(
   page: import("@playwright/test").Page,
+  value = "no",
 ): Promise<void> {
   for (const id of RECENT_IDS) {
-    await expect(page.locator(`#cssrs-${id}-unknown`)).toBeChecked();
+    await expect(page.locator(`#cssrs-${id}-${value}`)).toBeChecked();
   }
 }
 
@@ -191,7 +209,7 @@ async function expectRecentSeverityOnly(
   await expect(scores).not.toContainText("Lethality");
 }
 
-test("fresh registration step shows five recent items, Unknown selected", async ({
+test("fresh registration step shows five recent items, No selected", async ({
   page,
   request,
 }) => {
@@ -207,13 +225,20 @@ test("fresh registration step shows five recent items, Unknown selected", async 
   await expect(page.locator("#cssrs-heading").locator(".."))
     .not.toContainText("Item wording below is an experimental paraphrase");
   await expectRecentIdeationOnly(page);
-  await expectUnknownSelected(page);
+  await expectDefaultSelected(page);
+  await expectSavedAnswers(request, physician, draftId, Object.fromEntries(RECENT_IDS.map(id => [id, "no"])));
+  const preview = await (await request.get(`/api/v1/encounters/${draftId}/cssrs`)).json();
+  expect(preview.evaluation.status).toBe("complete");
+  expect(preview.evaluation.scores.ideation_severity_recent).toBe(0);
+  expect(preview.evaluation.findings.flags).toContain("no_positive_items");
+  expect(preview.evaluation.findings.flags).not.toContain("clinical_review");
+  expect(preview.evaluation.findings.flags).not.toContain("high_risk_alert");
 
   const verdict = page.locator("#cssrs-preview-status");
-  await expect(verdict).toContainText("Complete — recent ideation severity 0.", {
+  await expect(verdict).toContainText("Complete — no positive items (recent ideation severity 0).", {
     timeout: 15000,
   });
-  await expect(verdict).not.toContainText("no positive items");
+  await expect(verdict).toContainText("negative screen");
   await expect(page.locator("#cssrs-high-risk-alert")).toHaveCount(0);
   await expect(page.locator("#cssrs-still-needed")).toHaveCount(0);
   await expectRecentSeverityOnly(page, "0");
@@ -222,7 +247,7 @@ test("fresh registration step shows five recent items, Unknown selected", async 
   await page.keyboard.press(" ");
   await expect(page.locator("#cssrs-css_i1_recent-yes")).toBeChecked();
   for (const id of RECENT_IDS.slice(1)) {
-    await expect(page.locator(`#cssrs-${id}-unknown`)).toBeChecked();
+    await expect(page.locator(`#cssrs-${id}-no`)).toBeChecked();
   }
 });
 
@@ -236,8 +261,8 @@ test("follow-up C-SSRS step shows the same recent-ideation section", async ({
   const followId = await createFollowup(request, physician, created.patientId);
 
   await gotoCssrs(page, followId, "C-SSRS (step 3)");
-  await expectRecentIdeationOnly(page);
-  await expectUnknownSelected(page);
+  await expectRecentIdeationOnly(page, true);
+  await expectDefaultSelected(page, "unknown");
   await expect(page.locator("#cssrs-preview-status")).toContainText(
     "Complete — recent ideation severity 0.",
     { timeout: 15000 },
@@ -257,10 +282,10 @@ test("a higher-level yes does not change other items and is not high-risk below 
   await page.locator("#cssrs-css_i3_recent-yes").check();
 
   await expect(page.locator("#cssrs-css_i1_recent-no")).toBeChecked();
-  await expect(page.locator("#cssrs-css_i2_recent-unknown")).toBeChecked();
+  await expect(page.locator("#cssrs-css_i2_recent-no")).toBeChecked();
   await expect(page.locator("#cssrs-css_i3_recent-yes")).toBeChecked();
-  await expect(page.locator("#cssrs-css_i4_recent-unknown")).toBeChecked();
-  await expect(page.locator("#cssrs-css_i5_recent-unknown")).toBeChecked();
+  await expect(page.locator("#cssrs-css_i4_recent-no")).toBeChecked();
+  await expect(page.locator("#cssrs-css_i5_recent-no")).toBeChecked();
 
   const verdict = page.locator("#cssrs-preview-status");
   await expect(verdict).toContainText("Complete — recent ideation severity 3.", {
@@ -324,7 +349,7 @@ test("yes on ideation 4 or 5 shows the high-risk alert and recent severity only"
     if (id === "css_i4_recent") {
       continue;
     }
-    await expect(page.locator(`#cssrs-${id}-unknown`)).toBeChecked();
+    await expect(page.locator(`#cssrs-${id}-no`)).toBeChecked();
   }
 
   await page.locator("#cssrs-css_i4_recent-no").check();
@@ -335,12 +360,12 @@ test("yes on ideation 4 or 5 shows the high-risk alert and recent severity only"
   await expect(page.locator("#cssrs-high-risk-alert")).toBeVisible();
   await expect(page.locator("#cssrs-css_i4_recent-no")).toBeChecked();
   await expect(page.locator("#cssrs-css_i5_recent-yes")).toBeChecked();
-  await expect(page.locator("#cssrs-css_i1_recent-unknown")).toBeChecked();
+  await expect(page.locator("#cssrs-css_i1_recent-no")).toBeChecked();
   await expectRecentSeverityOnly(page, "5");
   await expectRecentIdeationOnly(page);
 });
 
-test("legacy skip shows not assessed; Resume returns every item to Unknown", async ({
+test("legacy skip shows not assessed; Resume returns every item to No", async ({
   page,
   request,
 }) => {
@@ -368,13 +393,11 @@ test("legacy skip shows not assessed; Resume returns every item to Unknown", asy
   );
 
   await page.getByRole("button", { name: "Resume C-SSRS (clear skip)" }).click();
-  await expectUnknownSelected(page);
+  await expectDefaultSelected(page);
+  await expectSavedAnswers(request, physician, draftId, Object.fromEntries(RECENT_IDS.map(id => [id, "no"])));
   await expect(page.locator("#cssrs-preview-status")).toContainText(
-    "Complete — recent ideation severity 0.",
+    "Complete — no positive items (recent ideation severity 0).",
     { timeout: 15000 },
-  );
-  await expect(page.locator("#cssrs-preview-status")).not.toContainText(
-    "no positive items",
   );
   await expect(
     page.getByRole("button", { name: "Skip C-SSRS (not assessed)" }),
@@ -401,7 +424,7 @@ test("leaving the page keeps answers and does not turn skip into a negative scre
   await gotoCssrs(page, draftId, "C-SSRS (step 4)");
   await expect(page.locator("#cssrs-css_i1_recent-no")).toBeChecked();
   await expect(page.locator("#cssrs-css_i2_recent-yes")).toBeChecked();
-  await expect(page.locator("#cssrs-css_i3_recent-unknown")).toBeChecked();
+  await expect(page.locator("#cssrs-css_i3_recent-no")).toBeChecked();
   await expect(page.locator("#cssrs-preview-status")).toContainText(
     "Complete — recent ideation severity 2.",
     { timeout: 15000 },
@@ -472,4 +495,46 @@ test("recent severity 3 survives reload and re-login", async ({
   await expectRecentSeverityOnly(page, "3");
   await expect(page.locator("#cssrs-clinical-review")).toBeVisible();
   await expect(page.locator("#cssrs-high-risk-alert")).toHaveCount(0);
+});
+
+test("registration normalizes a mixed saved draft and persists it", async ({ page, request }) => {
+  const physician = await loginPhysician(page, request, "e2ecssrsmixed");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  await seedCssrsAnswersApi(request, physician, draftId, {
+    css_i1_recent: "unknown", css_i2_recent: "yes", css_i3_recent: "no",
+    css_i4_recent: "unknown", css_i5_recent: "unknown",
+  });
+  await gotoCssrs(page, draftId, "C-SSRS (step 4)");
+  const expected = {
+    css_i1_recent: "no", css_i2_recent: "yes", css_i3_recent: "no",
+    css_i4_recent: "no", css_i5_recent: "no",
+  };
+  const csrf = await physicianSession(request, physician);
+  await expect.poll(async () => {
+    const response = await request.get(`/api/v1/encounters/${draftId}`, {
+      headers: { "X-CSRF-Token": csrf },
+    });
+    return (await response.json()).draft_data.cssrs.answers;
+  }, { timeout: 15000 }).toEqual(expected);
+  await expect(page.locator("#cssrs-css_i2_recent-yes")).toBeChecked();
+  await page.reload();
+  await expect(page.locator("#cssrs-css_i2_recent-yes")).toBeChecked();
+  await expect(page.locator("#cssrs-css_i1_recent-no")).toBeChecked();
+});
+
+ test("follow-up preserves Unknown and legacy skip through reload and resume", async ({ page, request }) => {
+  const physician = await loginPhysician(page, request, "e2ecssrsfuskip");
+  const created = await createPatientWithDraft(request, physician);
+  await discardDraft(request, physician, created.draftId);
+  const draftId = await createFollowup(request, physician, created.patientId);
+  await gotoCssrs(page, draftId, "C-SSRS (step 3)");
+  await expectSavedAnswers(request, physician, draftId, Object.fromEntries(RECENT_IDS.map(id => [id, "unknown"])));
+  await page.reload();
+  await expectDefaultSelected(page, "unknown");
+  await seedCssrsAnswersApi(request, physician, draftId, { __skipped: true });
+  await page.reload();
+  await expect(page.locator("#cssrs-preview-status")).toContainText("not assessed");
+  await page.getByRole("button", { name: "Resume C-SSRS (clear skip)" }).click();
+  await expectDefaultSelected(page, "unknown");
+  await expectSavedAnswers(request, physician, draftId, Object.fromEntries(RECENT_IDS.map(id => [id, "unknown"])));
 });

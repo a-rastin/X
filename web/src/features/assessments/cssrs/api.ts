@@ -7,7 +7,7 @@
  * Server-authoritative contract (no client-side arithmetic — the browser
  * never computes severity or flags):
  * - prompts may come from GET /content/assessments/cssrs. The worksheet
- *   renders only css_i1_recent .. css_i5_recent, each yes / no / unknown,
+ *   renders only css_i1_recent .. css_i5_recent, registration yes / no and follow-up yes / no / unknown,
  *   even when that payload still lists other items or value_type yes_no;
  * - the verdict (status / scores.ideation_severity_recent / findings.flags /
  *   missing_item_ids / item_errors) comes from
