@@ -199,6 +199,13 @@ test("fresh registration step shows five recent items, Unknown selected", async 
   const { draftId } = await createPatientWithDraft(request, physician);
 
   await gotoCssrs(page, draftId, "C-SSRS (step 4)");
+  await expect(page.getByRole("heading", { name: "Add New Patient" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Draft context" })).toHaveCount(0);
+  await expect(page.locator("#draft-save-status")).toHaveCount(0);
+  await expect(page.getByRole("navigation", { name: "C-SSRS sections" })).toHaveCount(0);
+  await expect(page.locator(".xi-assessment-answer-state")).toHaveCount(0);
+  await expect(page.locator("#cssrs-heading").locator(".."))
+    .not.toContainText("Item wording below is an experimental paraphrase");
   await expectRecentIdeationOnly(page);
   await expectUnknownSelected(page);
 
@@ -384,9 +391,10 @@ test("leaving the page keeps answers and does not turn skip into a negative scre
 
   await page.locator("#cssrs-css_i1_recent-no").check();
   await page.locator("#cssrs-css_i2_recent-yes").check();
-  await expect(page.locator("#draft-save-status")).toContainText("Saved", {
-    timeout: 15000,
-  });
+  await expect(page.locator("#cssrs-preview-status")).toContainText(
+    "Complete — recent ideation severity 2.",
+    { timeout: 15000 },
+  );
   await page.getByRole("link", { name: "Back to directory" }).click();
   await expect(page).toHaveURL(/#\/patients/);
 

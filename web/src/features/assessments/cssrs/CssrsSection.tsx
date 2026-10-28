@@ -361,9 +361,6 @@ export function CssrsSection({
             </label>
           ))}
         </div>
-        <p className="xi-assessment-answer-state">
-          {skipped ? "Not assessed" : `Selected: ${ANSWER_OPTIONS.find((option) => option.value === selected)?.label}`}
-        </p>
         {errorId !== undefined && !skipped && (
           <p className="xi-field-error" id={errorId} role="alert">
             {(itemErrors[item.id] ?? []).join(" ")}
@@ -382,14 +379,6 @@ export function CssrsSection({
         Assess recent suicidal ideation for the past month. Answers save
         automatically.
       </p>
-      <p className="xi-hint">
-        Item wording below is an experimental paraphrase of the source table;
-        the authorized form governs exact administration wording and probes.
-        For each positive response the clinician documents timing,
-        current-versus-historical status, the own description, and the
-        determination, outside this structured payload.
-      </p>
-
       {definitionError !== null && (
         <p className="xi-form-error" role="alert">
           {definitionError}{" "}
@@ -405,26 +394,6 @@ export function CssrsSection({
 
       <div className="xi-assessment-workspace">
         <div className="xi-assessment-worksheet">
-          <nav className="xi-assessment-nav" aria-label="C-SSRS sections">
-            <a
-              href="#cssrs-group-recent-ideation"
-              onClick={(event) => {
-                event.preventDefault();
-                document.getElementById("cssrs-group-recent-ideation")?.focus();
-              }}
-            >
-              Recent ideation
-            </a>
-            <a
-              href="#cssrs-review"
-              onClick={(event) => {
-                event.preventDefault();
-                document.getElementById("cssrs-review")?.focus();
-              }}
-            >
-              Review results
-            </a>
-          </nav>
           <div className="xi-assessment-group">
             <div className="xi-assessment-group-heading">
               <h4 id="cssrs-group-recent-ideation" tabIndex={-1}>
