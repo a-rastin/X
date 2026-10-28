@@ -87,7 +87,7 @@ were removed on 2026-10-20; the assessment and autosave restrictions remain.
 
 **Id:** f4ca7d60-2b97-490b-a1d3-6ccbb0d3ba60
 **Type:** decision
-**Status:** active
+**Status:** needs-review
 **Evidence:** unknown
 **Source:** product requirement, 2026-10-20; implementation and verification recorded in `project-documents/dev/progress/s13.md`
 **Verification:** corroborated — page-note UI and routes are removed; the Register patient working note remains
@@ -107,6 +107,10 @@ was not supplied and remains unknown; the evidence grade reflects that gap.
 
 **Alternatives:** unknown — no alternative product design or reason for its
 rejection was supplied.
+
+The 2026-10-28 direct-Diagnosis requirement triggers the registration-entry
+revisit condition; see `issues/issue-06.md`. Working-note placement is retained
+in the proposed fix. Implementation and final reconciliation remain pending.
 
 ## Historical notes survive removal of active capture
 
