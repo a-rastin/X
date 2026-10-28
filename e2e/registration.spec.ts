@@ -96,22 +96,63 @@ test("physician registers a patient; leading-zero ID round-trips with timestamp 
 
   const register = page.getByRole("button", { name: "Register patient" });
   await expect(register).toBeEnabled();
-  await register.click();
+  const createRequests: string[] = [];
+  page.on("request", (req) => {
+    if (req.method() === "POST" && /\/patients\/?$/.test(new URL(req.url()).pathname)) createRequests.push(req.url());
+    if (req.method() === "POST" && /\/encounters\/?$/.test(new URL(req.url()).pathname)) createRequests.push(req.url());
+  });
+  // Keep the create in flight while the second click arrives.
+  await page.route("**/api/v1/patients", async (route) => {
+    if (route.request().method() === "POST") await new Promise((resolve) => setTimeout(resolve, 500));
+    await route.continue();
+  });
+  const responsePromise = page.waitForResponse((response) =>
+    response.request().method() === "POST" && /\/patients\/?$/.test(new URL(response.url()).pathname),
+  );
+  await register.dblclick({ delay: 50 });
+  const created = await (await responsePromise).json();
 
-  await expect(page).toHaveURL(/#\/encounters\/[^#]+#register$/);
+  await expect(page).toHaveURL(new RegExp(`#/encounters/${created.draft.id}#diagnosis$`));
   await expect(page.locator("#wizard-pages a")).toHaveCount(7);
   await expect(page.locator("#wizard-step-effects")).toHaveCount(0);
   await expect(page.locator("#wizard-page")).toHaveAttribute(
     "aria-label",
-    "Register patient, step 1 of 7",
+    "Diagnosis, step 2 of 7",
   );
+  await expect(page.locator("#wizard-step-diagnosis")).toHaveAttribute("aria-current", "page");
+  await expect(page.locator("#diagnosis-heading")).toHaveText("Diagnosis (step 2)");
   const confirmation = page.getByText(`Patient ${identifier} registered.`);
-  await expect(confirmation).toContainText("Server time");
-  await expect(confirmation).toContainText("revision 1");
+  await expect(confirmation).toHaveCount(1);
+  await expect(confirmation).toContainText(created.server_timestamp);
+  await expect(confirmation).toContainText(`revision ${created.revision}`);
+  for (const id of [
+    "a_delusions", "a_hallucinations", "a_disorganized_speech",
+    "a_disorganized_behavior", "a_negative_symptoms", "b_functional_decline",
+    "c_six_months", "c_active_month", "c_shortened_by_intervention",
+    "d_mood_exclusion", "e_substance_medical_exclusion", "f_autism_present",
+    "f_prominent_psychosis",
+  ]) {
+    await expect(page.locator(`#diag-${id}-unknown`)).toBeChecked();
+  }
+  await expect(page.locator("#draft-save-status")).toContainText("Saved", { timeout: 15000 });
+  await expect(page.locator("#diagnosis-preview-status")).toContainText("Indeterminate", { timeout: 15000 });
+  await page.getByRole("button", { name: "Continue to PANSS", exact: true }).click();
+  await expect(page.getByText("Continue without a confirmed diagnosis?")).toBeVisible();
+  await expect(page).toHaveURL(/#diagnosis$/);
+  await page.getByRole("button", { name: "Return to diagnosis" }).click();
+  await expect(createRequests).toHaveLength(1);
+  await page.reload();
+  await expect(page).toHaveURL(/#diagnosis$/);
+  await expect(page.locator("#wizard-page")).toHaveAttribute("aria-label", "Diagnosis, step 2 of 7");
+  await page.getByRole("link", { name: "Back to Register patient" }).click();
+  await expect(page).toHaveURL(/#register$/);
   await expect(page.getByLabel("Given name")).toHaveValue(given);
   await expect(page.getByLabel("Family name")).toHaveValue(family);
   await expect(page.getByLabel("Patient ID")).toHaveValue(identifier);
   await expect(page.getByLabel("Draft working note")).toBeEnabled();
+  await expect(page.getByRole("button", { name: "Register patient" })).toHaveCount(0);
+  await page.getByRole("link", { name: "Continue to Diagnosis" }).click();
+  await expect(page).toHaveURL(/#diagnosis$/);
   await expect(
     page.getByRole("link", { name: "Open registration draft" }),
   ).toHaveCount(0);
@@ -121,7 +162,7 @@ test("physician registers a patient; leading-zero ID round-trips with timestamp 
   );
 
   // A registration draft has no effects step; an effects fragment does not open it.
-  await page.goto(page.url().replace(/#register$/, "#effects"));
+  await page.goto(page.url().replace(/#diagnosis$/, "#effects"));
   await expect(page.locator("#wizard-step-effects")).toHaveCount(0);
   await expect(page.locator("#effects-heading")).toHaveCount(0);
 });

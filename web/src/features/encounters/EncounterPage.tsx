@@ -172,10 +172,8 @@ function savedDiagnosisAnswers(data: Record<string, unknown>): Record<string, st
 
 function RegisteredDemographics({
   patient,
-  notice,
 }: {
   patient: Patient | null;
-  notice: ReturnType<typeof registrationNoticeFor>;
 }) {
   const status =
     patient === null
@@ -185,12 +183,6 @@ function RegisteredDemographics({
         : "Established";
   return (
     <>
-      {notice !== null && (
-        <p className="xi-status" role="status">
-          Patient {notice.identifier} registered. Server time{" "}
-          {notice.serverTimestamp}, revision {notice.revision}.
-        </p>
-      )}
       <section className="xi-card" aria-labelledby="demographics-heading">
         <h3 className="xi-section-title" id="demographics-heading">
           Demographics (step 1)
@@ -756,12 +748,19 @@ function EncounterWizard({
     }
   }
 
+  const notice = registrationNoticeFor(encounterId);
   const pageTitle =
     currentStep.id === "register" ? "Register patient" : "Encounter draft";
 
   return (
     <div>
       <h2 className="xi-page-title">{pageTitle}</h2>
+      {notice !== null && (
+        <p className="xi-status" role="status">
+          Patient {notice.identifier} registered. Server time{" "}
+          {notice.serverTimestamp}, revision {notice.revision}.
+        </p>
+      )}
       <section className="xi-card" aria-labelledby="draft-context-heading">
         <h3 className="xi-section-title" id="draft-context-heading">
           Draft context
@@ -821,10 +820,7 @@ function EncounterWizard({
       >
         {currentStep.id === "register" && (
           <>
-            <RegisteredDemographics
-              patient={patient}
-              notice={registrationNoticeFor(encounterId)}
-            />
+            <RegisteredDemographics patient={patient} />
             <DemographicsDraftPanels autosave={autosave} />
           </>
         )}

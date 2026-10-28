@@ -109,8 +109,9 @@ was not supplied and remains unknown; the evidence grade reflects that gap.
 rejection was supplied.
 
 The 2026-10-28 direct-Diagnosis requirement triggers the registration-entry
-revisit condition; see `issues/issue-06.md`. Working-note placement is retained
-in the proposed fix. Implementation and final reconciliation remain pending.
+revisit condition; see `issues/issue-06.md`. Successful creation now advances
+to Diagnosis while working-note placement on persisted step 1 is retained. The
+entry remains marked for review; the original product rationale is still unknown.
 
 ## Historical notes survive removal of active capture
 

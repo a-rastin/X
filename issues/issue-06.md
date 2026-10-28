@@ -1,7 +1,7 @@
 # Issue 06 — Registration repeats Demographics instead of advancing
 
 Date: 2026-10-28  
-Status: analyzed; fix proposed; no application code changed
+Status: implemented; browser verification pending
 
 ## Requirement
 
@@ -9,7 +9,7 @@ After valid Demographics submission at `#/patients/new`, open **Diagnosis, step 
 
 Currently creation opens `#/encounters/<id>#register`: saved demographics and the now-enabled working note appear, followed by Continue to Diagnosis. This is the same wizard step backed by a persisted draft, rather than another patient creation.
 
-## Root cause and evidence
+## Root cause and evidence (analysis before implementation)
 
 | Location | Finding |
 | --- | --- |
@@ -33,7 +33,7 @@ The earlier design allowed the working note to become editable after creation on
 
 Evidence: expected behavior is confirmed by the supplied requirement; the navigation mechanism is corroborated by code; historical behavior is corroborated by the commit, report and tests. Any additional author intent is unknown. No browser reproduction or runtime tests were performed for this analysis.
 
-## Proposed implementation
+## Proposed implementation (historical plan)
 
 1. Change only the successful-submit destination in `RegistrationForm.tsx` to explicit `#diagnosis`, using the returned draft ID. Correct the header comment describing the old destination. Preserve the single POST, notice staging, busy/double-submit protection, validation and error paths.
 2. Preserve registration feedback on the new landing page. The existing staged success notice is rendered only inside `RegisteredDemographics`, so a URL-only fix would hide it on arrival. Move its rendering in `EncounterPage.tsx` outside the step-1 branch into the encounter page, remove the nested rendering and now-unused notice prop, and show it once for the matching draft using the existing notice lookup. Preserve identifier, server timestamp and creation revision; do not confuse creation revision with later autosave revisions. Keep the existing in-memory lifecycle rather than introducing storage. Update the notice-location comment in `DemographicsDraftPanels.tsx`.
@@ -69,4 +69,20 @@ Keep the existing Diagnosis initialization and Diagnosis-to-PANSS confirmation f
 - Diagnosis initialization/default Unknown values, save status and guarded Continue to PANSS still work on immediate arrival. Preserve direct persisted `#register` visits, follow-up behavior, seven registration steps and exclusion of adverse effects.
 - Run frontend type/build checks and focused Playwright registration, notes, autosave, Diagnosis and fresh-install DDI coverage in configured Chromium/Firefox projects. Use the fresh-install environment for the DDI test. Record blockers honestly; broaden testing only if failures expose dependencies.
 
-No application code was changed and no runtime verification was performed. This report is repository-relative `issues/issue-06.md`; the repository root is already named `x`.
+## Implementation and verification — 2026-10-28
+
+Successful creation now opens Diagnosis using the returned draft ID. The existing
+matching-draft success notice is rendered at encounter level, so its creation
+metadata remains visible on arrival. Persisted Demographics and the working note
+remain accessible through Back. The affected browser tests now cover the direct
+destination, notice, reload, Back and Continue, rapid repeated clicks, and
+Diagnosis defaults and confirmation guard.
+
+The frontend production build and root TypeScript check passed; scoped
+`git diff --check` passed. Independent standards and specification reviews found
+no implementation defects; the specification review identified test gaps that
+were subsequently covered. The focused Chromium run could not reach
+`localhost:5173` (connection refused), so the browser assertions remain
+unverified. Docker was unavailable, preventing the fresh-install DDI environment;
+the requested Chromium and Firefox browser suites remain pending. This report is
+repository-relative `issues/issue-06.md`; the repository root is already named `x`.

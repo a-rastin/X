@@ -7,8 +7,8 @@
  * focus moved to the summary, and 409 duplicates keep every keystroke. The
  * identifier is handled as text throughout (leading zeros preserved, never
  * stored numerically). This route is step 1 of the registration wizard.
- * Notes are visible here but stay local until a valid create; that create
- * opens `#/encounters/:id#register`, where the same step saves them.
+ * The working note is disabled before creation. A valid create opens
+ * `#/encounters/:id#diagnosis`; step 1 remains available for the note.
  */
 
 import { useEffect, useMemo, useRef, useState, type MouseEvent } from "react";
@@ -124,7 +124,7 @@ function RegistrationForm() {
       created = true;
       // Same assignment the wizard already uses, so the step fragment is not
       // encoded away. Back returns to a fresh form, not a second submit.
-      window.location.hash = `#/encounters/${result.draft.id}#register`;
+      window.location.hash = `#/encounters/${result.draft.id}#diagnosis`;
     } catch (err) {
       if (err instanceof ApiError && err.status === 401) {
         sessionExpired();

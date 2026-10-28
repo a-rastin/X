@@ -8,7 +8,7 @@
 import { useEffect, useRef } from "react";
 import { useAutosave, type SaveState } from "./useAutosave";
 
-/** Shown once on `#register` after a successful create. Not sessionStorage:
+/** Shown on the matching encounter after a successful create. Not sessionStorage:
  * a StrictMode initializer would consume that on the discarded first call. */
 export interface RegistrationNotice {
   draftId: string;

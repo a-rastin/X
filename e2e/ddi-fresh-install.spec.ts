@@ -18,7 +18,7 @@ test("fresh install supports registration and a persistent real bundled DDI repo
   await page.getByLabel("Age", { exact: true }).fill("30");
   await page.getByRole("radio", { name: "First-time", exact: true }).check();
   await page.getByRole("button", { name: "Register patient", exact: true }).click();
-  await expect(page).toHaveURL(/\/encounters\/[^#]+#register$/);
+  await expect(page).toHaveURL(/\/encounters\/[^#]+#diagnosis$/);
   const encounterId = page.url().match(/\/encounters\/([^#]+)/)![1];
   await page.locator("#wizard-step-medications").click();
   const catalog = page.locator("#meds-catalog-info");

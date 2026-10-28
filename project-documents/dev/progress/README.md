@@ -3,8 +3,8 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
-The [direct Diagnosis registration analysis (2026-10-28)](s07.md#follow-up-2026-10-28--direct-diagnosis-registration-analysis)
-links [issue-06.md](../../../issues/issue-06.md); implementation pending.
+The [direct Diagnosis registration implementation (2026-10-28)](s07.md#follow-up-2026-10-28--direct-diagnosis-registration-implementation)
+addresses [issue-06.md](../../../issues/issue-06.md); browser verification remains pending.
 The [Diagnosis Unknown-default implementation (2026-10-27)](s09.md#follow-up-2026-10-27--diagnosis-unknown-default-implementation)
 addresses [issue-05.md](../../../issues/issue-05.md); runtime verification remains pending.
 The [Step 7 Unknown/empty-input implementation (2026-10-27)](s48.md#follow-up-2026-10-27--proposal-generation-with-unknownempty-inputs-implemented)
