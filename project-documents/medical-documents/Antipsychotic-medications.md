@@ -59,3 +59,62 @@ Table 3 notes: LAI formulations are in Tables 7–9. Droperidol (FGA, parenteral
 | Ziprasidone | Geodon | Oral with food 60%; IM 100% | Oral 6–8 h; IM 60 min | >99% | CYP1A2 + CYP3A4 minor; glutathione, aldehyde oxidase | Active: benzisothiazole sulfoxide/sulfone (major), sulfoxide, S-methyl-dihydro | Oral 7 h; IM 2–5 h | 66% fecal, 20% renal | Use with caution | Oral: no change; IM contains renally cleared cyclodextrin — caution |
 
 Child-Pugh A=5–6, B=7–9, C=10–15. CrCl=creatinine clearance; MDD=major depressive disorder; UGT=uridine diphospho-glucuronosyltransferase.
+
+
+
+
+
+
+### Antipsychotic medications: relative side effects of oral formulations
+
+| Medication | Trade name | Akathisia | Parkinsonism | Dystonia | Tardive dyskinesia | Hyperprolactinemia | Anticholinergic | Sedation |
+|---|---|---|---|---|---|---|---|---|
+| Chlorpromazine | Thorazine | ++ | ++ | ++ | +++ | + | +++ | +++ |
+| Fluphenazine | Prolixin | +++ | +++ | +++ | +++ | +++ | + | + |
+| Haloperidol | Haldol | +++ | +++ | +++ | +++ | +++ | + | + |
+| Loxapine | Loxitane | ++ | ++ | ++ | ++ | ++ | ++ | ++ |
+| Molindone | Moban | ++ | ++ | ++ | ++ | ++ | + | ++ |
+| Perphenazine | Trilafon | ++ | ++ | ++ | ++ | ++ | ++ | ++ |
+| Pimozide | Orap | +++ | +++ | ++ | +++ | +++ | + | + |
+| Thioridazine | Mellaril | + | + | + | + | ++ | +++ | +++ |
+| Thiothixene | Navane | +++ | +++ | +++ | +++ | +++ | + | + |
+| Trifluoperazine | Stelazine | ++ | ++ | ++ | ++ | ++ | ++ | + |
+| Aripiprazole | Abilify | ++ | + | + | + | + | + | + |
+| Asenapine | Saphris | ++ | + | ++ | ++ | ++ | + | ++ |
+| Brexpiprazole | Rexulti | ++ | + | + | + | + | + | ++ |
+| Cariprazine | Vraylar | ++ | + | + | + | + | ++ | ++ |
+| Clozapine | Clozaril, FazaClo, Versacloz | + | + | + | + | + | +++ | +++ |
+| Iloperidone | Fanapt | + | + | + | + | ++ | + | ++ |
+| Lurasidone | Latuda | ++ | ++ | ++ | ++ | + | + | ++ |
+| Olanzapine | Zyprexa | ++ | ++ | + | + | ++ | ++ | +++ |
+| Paliperidone | Invega | ++ | ++ | ++ | ++ | +++ | + | + |
+| Quetiapine | Seroquel | + | + | + | + | + | ++ | +++ |
+| Risperidone | Risperdal | ++ | ++ | ++ | ++ | +++ | + | ++ |
+| Ziprasidone | Geodon | ++ | + | + | + | ++ | + | ++ |
+
+| Medication | Trade name | Seizures | Orthostasis | QT prolongation | Weight gain | Hyperlipidemia | Glucose abnormalities | Comments |
+|---|---|---|---|---|---|---|---|---|
+| Chlorpromazine | Thorazine | ++ | +++ | +++ | ++ | + | ++ |  |
+| Fluphenazine | Prolixin | + | + | ++ | ++ | + | + |  |
+| Haloperidol | Haldol | + | + | ++ | ++ | + | + |  |
+| Loxapine | Loxitane | + | ++ | ++ | + | + | + |  |
+| Molindone | Moban | + | + | ++ | + | + | + |  |
+| Perphenazine | Trilafon | + | ++ | ++ | ++ | + | + |  |
+| Pimozide | Orap | +++ | + | +++ | + | + | + |  |
+| Thioridazine | Mellaril | ++ | +++ | +++ | ++ | + | + | Pigmentary retinopathy; high sexual dysfunction; avoid if QTc >450 msec or with QTc-prolonging drugs / CYP2D6 inhibitors |
+| Thiothixene | Navane | +++ | + | ++ | + | + | + |  |
+| Trifluoperazine | Stelazine | + | + | ++ | ++ | + | + |  |
+| Aripiprazole | Abilify | + | + | + | + | + | + | FDA impulse-control alert (gambling, binge eating); may reduce hyperprolactinemia from other agents |
+| Asenapine | Saphris | + | ++ | ++ | ++ | ++ | ++ | Oral hypoesthesia |
+| Brexpiprazole | Rexulti | + | + | ++ | + | ++ | + |  |
+| Cariprazine | Vraylar | + | + | ++ | ++ | + | + |  |
+| Clozapine | Clozaril, FazaClo, Versacloz | +++ | +++ | ++ | +++ | +++ | +++ | Salivation common; high sexual dysfunction; severe constipation/paralytic ileus possible; fever on initiation; myocarditis infrequent; cardiomyopathy/severe neutropenia rare |
+| Iloperidone | Fanapt | + | +++ | +++ | ++ | + | ++ |  |
+| Lurasidone | Latuda | + | + | + | + | ++ | ++ | Dose-related creatinine increase in some patients |
+| Olanzapine | Zyprexa | ++ | ++ | ++ | +++ | +++ | +++ |  |
+| Paliperidone | Invega | + | ++ | ++ | ++ | ++ | + |  |
+| Quetiapine | Seroquel | ++ | ++ | ++ | ++ | +++ | ++ |  |
+| Risperidone | Risperdal | + | ++ | ++ | ++ | + | ++ | Intraoperative floppy iris syndrome reported |
+| Ziprasidone | Geodon | + | ++ | +++ | + | + | + |  |
+
+Sexual dysfunction generally parallels hyperprolactinemia except where noted.
