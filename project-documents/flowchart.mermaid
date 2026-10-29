@@ -22,10 +22,17 @@ flowchart TD
         History11(Dystonia?)
         History12(Parkinsonism?)
         History13(Akathisia?)
-        History20(Lifetime Antipsychotic Exposure)
+        History14(Tabacco Smoker?)
+        History15(Marijuana Smoker?)
+        History16(Lifetime Antipsychotic Exposure)
         History21(Name of Antipsychotic)
     end
 
+    subgraph Step 5 - Treatment Considerations
+        Treat1(Sedation a Major Issue?)
+    end
+    
+    
     subgraph BN-1
         D[(Choose antipsychotic)]
     end
@@ -90,7 +97,15 @@ flowchart TD
         e15@{ animation: slow }
     History12 e16@--> History13
         e16@{ animation: slow }
-    History20 --> |Yes| History21
+    History13 e17@--> History14
+        e17@{ animation: slow }
+    History14 e18@--> History15
+        e18@{ animation: slow }
+    History15 e19@--> History16
+        e19@{ animation: slow }
+    History16 --> |Yes| History21
+    History16 e20@--> Treat1
+        e20@{ animation: slow }
                                                                                        
     B1(Name of the current antipsychotic known?)
     B2{{C-SSRS}}
