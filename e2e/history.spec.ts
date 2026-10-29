@@ -23,7 +23,6 @@ import {
  * - history still-needed `#history-still-needed`
  * - history per-field errors `#hist-{fieldId}-error` (role=alert)
  * - history provenance `#hist-{fieldId}-provenance`
- * - reconciliation `#history-reconciliation-status`, `#history-reconciliation-baseline`
  * - phone `#history-phone-update`
  * - effects heading "Adverse effects (step 5)" (#effects-heading) on a follow-up
  *   draft only (registration has no effects step; `#wizard-step-effects` absent)
@@ -618,41 +617,15 @@ test("history controls wait for the saved field inventory before accepting edits
   });
   await gotoEncounter(page, draftId, "history", false);
   await expect(page.locator("#history-phone-update")).toBeDisabled();
-  await expect(page.locator("#history-reconciliation-status")).toBeDisabled();
-  await expect(page.locator("#history-reconciliation-baseline")).toBeDisabled();
+  await expect(page.getByLabel("History reconciliation")).toHaveCount(0);
   await expect(page.locator("#hist-h_exposure_dopamine_blocker-yes")).toBeDisabled();
   release();
   await expect(page.locator("#history-phone-update")).toBeEnabled();
   const save = nextSavedDraft(page, draftId);
-  await page.locator("#history-reconciliation-status").selectOption("pending");
-  await page.locator("#history-reconciliation-baseline").fill("synthetic-baseline");
   await page.locator("#history-phone-update").fill("+43 699 222");
   await save;
   await page.reload();
-  await expect(page.locator("#history-reconciliation-status")).toHaveValue("pending");
-  await expect(page.locator("#history-reconciliation-baseline")).toHaveValue("synthetic-baseline");
   await expect(page.locator("#history-phone-update")).toHaveValue("+43 699 222");
-});
-
-test("reconciliation and phone update save and survive reload", async ({
-  page,
-  request,
-}) => {
-  const physician = await loginPhysician(page, request, "e2ehistrecon");
-  const { draftId } = await createPatientWithDraft(request, physician);
-
-  await gotoEncounter(page, draftId);
-
-  const save = nextSavedDraft(page, draftId);
-  await page.locator("#history-reconciliation-status").selectOption("pending");
-  await page.locator("#history-reconciliation-baseline").fill("baseline-enc-001");
-  await page.locator("#history-phone-update").fill("+43 699 111");
-  await save;
-
-  await page.reload();
-  await expect(page.locator("#history-reconciliation-status")).toHaveValue("pending");
-  await expect(page.locator("#history-reconciliation-baseline")).toHaveValue("baseline-enc-001");
-  await expect(page.locator("#history-phone-update")).toHaveValue("+43 699 111");
 });
 
 // Owner-requested 2026-10-22 public UI + saved History/readiness seams.

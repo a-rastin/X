@@ -3,6 +3,7 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
+The [History reconciliation UI removal (2026-10-29)](s12.md#follow-up-2026-10-29--remove-history-reconciliation-controls) removes its controls while preserving saved data; the frontend build passed.
 The [History presentation follow-up (2026-10-28)](s12.md#follow-up-2026-10-28--history-page-presentation) simplifies the History page; the frontend build and Chromium browser suite passed, with Firefox partially run.
 The [C-SSRS presentation follow-up (2026-10-28)](s11.md#follow-up-2026-10-28--c-ssrs-page-presentation) simplifies the assessment page; build and TypeScript checks passed.
 The [PANSS presentation follow-up (2026-10-28)](s10.md#follow-up-2026-10-28--panss-page-presentation) simplifies the PANSS page; frontend build, TypeScript checks, and Chromium/Firefox PANSS suites passed.

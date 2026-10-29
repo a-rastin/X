@@ -32,8 +32,6 @@
  * - still-needed list `#history-still-needed`
  * - per-field errors `#hist-{fieldId}-error` (role=alert)
  * - per-field provenance `#hist-{fieldId}-provenance`
- * - reconciliation select `#history-reconciliation-status`, baseline input
- *   `#history-reconciliation-baseline`
  * - phone input `#history-phone-update`
  */
 
@@ -418,41 +416,6 @@ export function HistorySection({
     writeSlice({ ...slice, values, provenance });
   }
 
-  function setReconciliationStatus(status: string): void {
-    if (status === "") {
-      writeSlice({ ...slice, reconciliation: null });
-      return;
-    }
-    if (
-      status === "not_required" ||
-      status === "pending" ||
-      status === "reconciled"
-    ) {
-      writeSlice({
-        ...slice,
-        reconciliation: {
-          status,
-          baseline_encounter_id:
-            slice.reconciliation?.baseline_encounter_id ?? null,
-        },
-      });
-    }
-  }
-
-  function setBaselineId(baselineId: string): void {
-    const current = slice.reconciliation ?? {
-      status: "pending" as const,
-      baseline_encounter_id: null,
-    };
-    writeSlice({
-      ...slice,
-      reconciliation: {
-        status: current.status,
-        baseline_encounter_id: baselineId === "" ? null : baselineId,
-      },
-    });
-  }
-
   function setPhoneUpdate(phone: string): void {
     const next = phone === "" ? null : phone;
     if ((slice.phone_update ?? null) === next) {
@@ -588,47 +551,6 @@ export function HistorySection({
               </section>
             );
           })}
-
-          <div className="xi-history-followup" aria-label="History reconciliation">
-            <h4 className="xi-section-title" style={{ fontSize: 15 }}>
-              Reconciliation (follow-up)
-            </h4>
-            <p className="xi-hint" style={{ marginTop: 0 }}>
-              For follow-up encounters, review the copied history and mark it
-              reconciled. For registration, select Not required.
-            </p>
-            <div className="xi-field">
-              <label className="xi-label" htmlFor="history-reconciliation-status">
-                Reconciliation status
-              </label>
-              <select
-                className="xi-select"
-                id="history-reconciliation-status"
-                disabled={preview === null}
-                value={slice.reconciliation?.status ?? ""}
-                onChange={(event) => setReconciliationStatus(event.target.value)}
-              >
-                <option value="">Not set</option>
-                <option value="not_required">Not required</option>
-                <option value="pending">Pending</option>
-                <option value="reconciled">Reconciled</option>
-              </select>
-            </div>
-            <div className="xi-field">
-              <label className="xi-label" htmlFor="history-reconciliation-baseline">
-                Baseline encounter ID (optional)
-              </label>
-              <input
-                className="xi-input"
-                id="history-reconciliation-baseline"
-                disabled={preview === null}
-                type="text"
-                autoComplete="off"
-                value={slice.reconciliation?.baseline_encounter_id ?? ""}
-                onChange={(event) => setBaselineId(event.target.value)}
-              />
-            </div>
-          </div>
 
           <div className="xi-field" style={{ marginTop: 12 }}>
             <label className="xi-label" htmlFor="history-phone-update">

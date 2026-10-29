@@ -40,11 +40,6 @@
   outline: 2px solid var(--focus);
   outline-offset: 3px;
 }
-.xi-history-followup {
-  margin-top: 28px;
-  padding-top: 24px;
-  border-top: 2px solid var(--border-strong);
-}
 .xi-history-summary-note {
   line-height: 1.6;
 }
