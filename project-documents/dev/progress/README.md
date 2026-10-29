@@ -94,7 +94,7 @@ The [PANSS](s10.md#follow-up-2026-10-20--panss-worksheet-redesign),
 [History](s12.md#follow-up-2026-10-20--history-worksheet-redesign) follow-ups apply
 the same worksheet language to response controls, navigation, and result review.
 
-The [expanded physician login disclaimer (2026-10-28)](s05.md#follow-up-2026-10-28--expanded-physician-login-disclaimer) updates the warning and browser-test expectation; frontend build remains unverified because Node/npm are unavailable.
+The [clinical disclaimer presentation (2026-10-29)](s05.md#follow-up-2026-10-29--professional-clinical-disclaimer-presentation) refines the expanded physician warning; build, TypeScript, and focused Chromium/Firefox UI checks passed (synthetic auth).
 
 [Registration C-SSRS Yes/No (issue 12)](../../../issues/issue-12.md) is implemented; Chromium passed and Firefox remains pending ([S11 handoff](s11.md#follow-up-2026-10-28--registration-c-ssrs-yesno-implementation-issue-12)).
 

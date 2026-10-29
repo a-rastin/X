@@ -8089,9 +8089,9 @@
         "frontend",
         "identity"
       ],
-      "purpose": null,
-      "summary": null,
-      "source_sha256": null
+      "purpose": "Blocking physician research disclaimer with native modal semantics and tab-session acknowledgment.",
+      "summary": "files/web/src/features/identity/ResearchWarning.tsx.md",
+      "source_sha256": "3fd12353a9c754ec762de2e5e6b73c7d7d49cce6467d2a93ffad1ba5a5a24921"
     },
     {
       "path": "web/src/features/identity/ThemeToggle.tsx",
@@ -8329,9 +8329,9 @@
         "frontend",
         "shared"
       ],
-      "purpose": "Design tokens for both themes plus the .xi-* component classes; no shared TS lives here.",
-      "summary": null,
-      "source_sha256": null
+      "purpose": "Semantic light/dark tokens and shared UI styles, including the responsive clinical disclaimer.",
+      "summary": "files/web/src/shared/theme.css.md",
+      "source_sha256": "0167351d6f09ce23ff6c1645e95db49f93d367160d2e7f33e995bab35123c977"
     },
     {
       "path": "web/src/vite-env.d.ts",

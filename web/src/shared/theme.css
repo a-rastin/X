@@ -667,6 +667,136 @@ a.xi-btn-secondary {
   background: var(--surface-1);
 }
 
+/* Physician research-use gate: a reading surface with a persistent action. */
+.xi-research-dialog {
+  width: min(720px, calc(100% - 32px));
+  max-width: none;
+  max-height: calc(100dvh - 48px);
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  color: var(--ink);
+  background: var(--canvas);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-overlay);
+}
+
+.xi-research-dialog[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.xi-research-dialog::backdrop {
+  background: rgb(11 18 32 / 64%);
+}
+
+.xi-research-header {
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 30px 32px 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.xi-research-icon {
+  flex: 0 0 28px;
+  width: 28px;
+  height: 28px;
+  margin-top: 4px;
+  color: var(--primary-action);
+}
+
+.xi-research-header h2 {
+  margin: 0;
+  max-width: 28ch;
+  font-size: 26px;
+  line-height: 1.3;
+  font-weight: 650;
+  letter-spacing: -0.025em;
+}
+
+.xi-research-body {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 24px 32px;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.xi-research-body p {
+  margin: 0 0 18px;
+}
+
+.xi-research-body p:last-child {
+  margin-bottom: 0;
+}
+
+.xi-research-body .xi-research-limitation {
+  padding: 16px 20px;
+  border-left: 3px solid var(--warning);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  background: var(--warning-bg);
+  font-weight: 550;
+}
+
+.xi-research-footer {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 32px;
+  border-top: 1px solid var(--border);
+  background: var(--surface-1);
+}
+
+.xi-research-footer p {
+  max-width: 26ch;
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.xi-research-footer .xi-btn {
+  flex-shrink: 0;
+  min-height: 44px;
+}
+
+@media (max-width: 560px) {
+  .xi-research-dialog {
+    max-height: calc(100dvh - 24px);
+  }
+
+  .xi-research-header {
+    gap: 12px;
+    padding: 22px 20px;
+  }
+
+  .xi-research-header h2 {
+    font-size: 22px;
+  }
+
+  .xi-research-body {
+    padding: 20px;
+    font-size: 14px;
+  }
+
+  .xi-research-footer {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 20px;
+  }
+
+  .xi-research-footer p {
+    max-width: none;
+  }
+}
+
 .xi-notice {
   border: 1px solid var(--info);
   border-left-width: 6px;
