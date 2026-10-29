@@ -54,26 +54,42 @@ flowchart TD
     subgraph Step 3
         A3{{C-SSRS}}
     end
+    A4(Consider Clozapine)
 
     A e1@--> A1
         e1@{ animation: slow }
-    A1 e1@--> A2
-        e1@{ animation: slow }
-    A2 e1@--> A3
-        e1@{ animation: slow }
-    A3 --> History1
-    History1 --> History2
-    History2 --> History3
-    History3 --> History4
-    History4 --> History5
-    History5 --> History6
-    History6 --> History7
-    History7 --> History8
-    History8 --> History9
-    History9 --> History10
-    History10 --> History11
-    History11 --> History12
-    History12 --> History13
+    A1 e2@--> A2
+        e2@{ animation: slow }
+    A2 e3@--> A3
+        e3@{ animation: slow }
+    A3 e4@--> History1
+        e4@{ animation: slow }
+    A3 --> |Low Risk| History1
+    A3 --> |High Risk| A4
+    History1 e5@--> History2
+        e5@{ animation: slow }
+    History2 e6@--> History3
+        e6@{ animation: slow }
+    History3 e7@--> History4
+        e7@{ animation: slow }
+    History4 e8@--> History5
+        e8@{ animation: slow }
+    History5 e9@--> History6
+        e9@{ animation: slow }
+    History6 e10@--> History7
+        e10@{ animation: slow }
+    History7 e11@--> History8
+        e11@{ animation: slow }
+    History8 e12@--> History9
+        e12@{ animation: slow }
+    History9 e13@--> History10
+        e13@{ animation: slow }
+    History10 e14@--> History11
+        e14@{ animation: slow }
+    History11 e15@--> History12
+        e15@{ animation: slow }
+    History12 e16@--> History13
+        e16@{ animation: slow }
     History20 --> |Yes| History21
                                                                                        
     B1(Name of the current antipsychotic known?)
