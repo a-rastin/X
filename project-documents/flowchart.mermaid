@@ -54,7 +54,7 @@ flowchart TD
     subgraph Step 3
         A3{{C-SSRS}}
     end
-    A4(Consider Clozapine)
+    A4@{ shape: flag, label: "Consider Clozapine" }
 
     A e1@--> A1
         e1@{ animation: slow }
@@ -62,10 +62,10 @@ flowchart TD
         e2@{ animation: slow }
     A2 e3@--> A3
         e3@{ animation: slow }
-    A3 e4@--> History1
+    A3 e4@--> |Low Risk| History1
         e4@{ animation: slow }
-    A3 --> |Low Risk| History1
     A3 --> |High Risk| A4
+    A4 --> History1
     History1 e5@--> History2
         e5@{ animation: slow }
     History2 e6@--> History3
