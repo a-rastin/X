@@ -8,6 +8,24 @@ flowchart TD
         C(follow up a registered patient)                          
     end
 
+    subgraph Step 4 - History
+        History1(Hepatic Impairment?)
+        History2(Renal Impairment?)
+        History3(Increased Risk of Seizure?)
+        History4(Glucose Abnormalities?)
+        History5(Hyperlipidemia?)
+        History6(Increased Risk of Weight Gain?)
+        History7(Risk of QT Prolongation?)
+        History8(Risk of Orthostatic Hypotension?)
+        History9(Hyperprolactinemia?)
+        History10(Tardive dyskinesia?)
+        History11(Dystonia?)
+        History12(Parkinsonism?)
+        History13(Akathisia?)
+        History20(Lifetime Antipsychotic Exposure)
+        History21(Name of Antipsychotic)
+    end
+
     subgraph BN-1
         D[(Choose antipsychotic)]
     end
@@ -26,16 +44,52 @@ flowchart TD
         G[(Indication for Aripiprazole?)]
         H((Aripiprazole))
     end
+
+    subgraph Step 1
+        A1(ID)
+    end
+    subgraph Step 2
+        A2{{PANSS}}
+    end
+    subgraph Step 3
+        A3{{C-SSRS}}
+    end
+
+    A e1@--> A1
+        e1@{ animation: slow }
+    A1 e1@--> A2
+        e1@{ animation: slow }
+    A2 e1@--> A3
+        e1@{ animation: slow }
+    A3 --> History1
+    History1 --> History2
+    History2 --> History3
+    History3 --> History4
+    History4 --> History5
+    History5 --> History6
+    History6 --> History7
+    History7 --> History8
+    History8 --> History9
+    History9 --> History10
+    History10 --> History11
+    History11 --> History12
+    History12 --> History13
+    History20 --> |Yes| History21
                                                                                        
     B1(Name of the current antipsychotic known?)
     B2{{C-SSRS}}
     B3(Consider Clozapine)
     B4{{PANSS}}
+    B5(Agressive behavior?)
+    B6(ID)
     
 
-    B --> B4
+    B --> B6
+    B6 --> B4
     B4 --> B2
-    B2 --> |Low Risk| B1
+    B2 --> |Low Risk| B5
+    B5 --> |No| B1
+    B5 --> |Yes| B3
     B2 --> |High Risk| B3
     B1 --> |No| D
     B1 --> |Yes| E
@@ -45,3 +99,8 @@ flowchart TD
     F1 --> F2
     G --> |Yes| H
     G --> |No| D
+
+
+    C1{{PANSS}}
+
+    C --> C1

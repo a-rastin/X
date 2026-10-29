@@ -94,7 +94,7 @@
 
 
 
-**BN-1, Q-9:**Is the patient at risk of weight gain?
+**BN-1, Q-9:**Is the patient at the increased risk of weight gain?
 [The answer to this question (Yes, No, Some degree of changes but not fully improved, Unknown) should be obtained from the user inputs.] 
 [The default answer to this question is `Unknown`.]
     - If `Yes` then P(Chlorpromazine) = `+` | P(Fluphenazine) = `+` | P(Haloperidol) = `+` | P(Loxapine) = `+++` | P(Molindone) = `+++` | P(Perphenazine) = `+`| P(Pimozide) = `+++` | P(Thioridazine) = `+` | P(Thiothixene) = `+++` | P(Trifluoperazine) = `+` | P(Aripiprazole) = `+++` | P(Asenapine) = `+` | P(Brexpiprazole) = `+++` | P(Cariprazine) = `+` | P(Clozapine) = `0` | P(Iloperidone) = `+` | P(Lurasidone) = `+++` | P(Olanzapine) = `0` | P(Paliperidone) = `+` | P(Quetiapine) = `+` | P(Risperidone) = `+` | P(Ziprasidone) = `+++`
@@ -112,7 +112,7 @@
 
 
 
-**BN-1, Q-11:**Is the patient at risk of orthostatic hypotension?
+**BN-1, Q-11:**Is the patient at increased risk of orthostatic hypotension?
 [The answer to this question (Yes, No, Some degree of changes but not fully improved, Unknown) should be obtained from the user inputs.] 
 [The default answer to this question is `Unknown`.]
     - If `Yes` then P(Chlorpromazine) = `0` | P(Fluphenazine) = `+++` | P(Haloperidol) = `+++` | P(Loxapine) = `+` | P(Molindone) = `+++` | P(Perphenazine) = `+`| P(Pimozide) = `+++` | P(Thioridazine) = `0` | P(Thiothixene) = `+++` | P(Trifluoperazine) = `+++` | P(Aripiprazole) = `+++` | P(Asenapine) = `+` | P(Brexpiprazole) = `+++` | P(Cariprazine) = `+++` | P(Clozapine) = `0` | P(Iloperidone) = `0` | P(Lurasidone) = `+++` | P(Olanzapine) = `+` | P(Paliperidone) = `+` | P(Quetiapine) = `+` | P(Risperidone) = `+` | P(Ziprasidone) = `+`
