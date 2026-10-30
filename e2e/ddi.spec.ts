@@ -136,8 +136,8 @@ test("covered, uncovered and conflicting severities render with HTTP readback", 
   );
   await expect(page.locator("#ddi-report-pairs")).toBeVisible();
   const pair0 = page.locator("#ddi-report-pair-0");
-  await expect(pair0).toContainText("catalog_e2e_alpha");
-  await expect(pair0).toContainText("catalog_e2e_beta");
+  await expect(pair0).toContainText("E2eAlpha");
+  await expect(pair0).toContainText("E2eBeta");
   await expect(pair0).toContainText("Interaction found");
   await expect(pair0).toContainText("serious");
   await expect(pair0).toContainText("Conflicting severities");
@@ -209,6 +209,10 @@ test("removing a drug shows pending without stale rows", async ({
   // Remove one drug through the shared draft: report must go pending,
   // never showing the old rows as current (fresh pin needs a strict save;
   // the stale-fingerprint pending itself is the browser assertion here).
+  const removalSaved = page.waitForResponse((response) =>
+    response.url().endsWith(`/api/v1/encounters/${draftId}`) &&
+    response.request().method() === "PATCH" && response.ok(),
+  );
   await page.locator("#meds-remove-0").click();
   await expect(page.locator("#ddi-pending")).toBeVisible({ timeout: 15000 });
   await expect(page.locator("#ddi-pending")).toContainText("changed", {
@@ -216,6 +220,8 @@ test("removing a drug shows pending without stale rows", async ({
   });
   await expect(page.locator("#ddi-report")).toHaveCount(0);
 
+  // Local findings hide immediately; server readback follows acknowledged autosave.
+  await removalSaved;
   // HTTP readback agrees: pending stale_fingerprint with no rows as current.
   const csrf = await physicianSession(request, physician);
   void csrf;

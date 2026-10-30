@@ -76,6 +76,7 @@ import {
   type SaveMedicationsOptions,
 } from "./api";
 import { DdiReportPanel } from "./DdiReportPanel";
+import "./medications.css";
 
 type AutosaveApi = ReturnType<typeof useAutosave>;
 
@@ -379,6 +380,7 @@ export function MedicationsSection({
 
   function writeEntries(ids: string[]): void {
     if (datasetVersion === null) return;
+    setSaveState({ kind: "idle" });
     autosave.setDraftValue(
       "medications",
       {
@@ -632,7 +634,7 @@ export function MedicationsSection({
   } else if (medsDirty) {
     statusText = "Unsaved medication changes…";
   } else if (serverState !== null) {
-    statusText = `Saved list matches revision ${serverState.revision}.`;
+    statusText = `Selection saved to draft (revision ${serverState.revision}).`;
     statusClass = "xi-status";
   } else {
     statusText = "";
@@ -642,16 +644,22 @@ export function MedicationsSection({
     busy !== null || autosaveSaving || datasetVersion === null || serverState === null;
 
   return (
-    <section className="xi-card" aria-labelledby="medications-heading">
-      <h3 className="xi-section-title" id="medications-heading">
-        Medications (step {stepNumber})
-      </h3>
-      <p className="xi-hint">
-        Select medications from {search?.source_label ?? "the released catalog"}.
-        Search by name or catalog ID. <strong>Save medications</strong> checks
-        the saved list against this release and refreshes the DDI report below.
-      </p>
-
+    <section className="xi-card xi-medications" aria-labelledby="medications-heading">
+      <header className="xi-meds-header">
+        <div>
+          <h3 className="xi-section-title" id="medications-heading">
+            Medications (step {stepNumber})
+          </h3>
+          <p>Build the medication list, then review interactions for the saved selection.</p>
+        </div>
+      </header>
+      <div className="xi-meds-workspace">
+      <div className="xi-meds-editor">
+      <div className="xi-meds-section-heading">
+        <h4>Medication list</h4>
+        <span className="xi-meds-count" aria-label={`${localIds.length} selected medications`}>{localIds.length}</span>
+      </div>
+      <p className="xi-hint">Choose from the released catalog. Save medications to refresh the interaction report.</p>
       <div className="xi-field">
         <label className="xi-label" htmlFor="meds-search">
           Search medication catalog
@@ -690,8 +698,10 @@ export function MedicationsSection({
             const selected = localIds.includes(drug.catalog_drug_id);
             return (
               <li key={drug.catalog_drug_id}>
-                {drug.canonical_name} ({drug.catalog_drug_id}) ·{" "}
-                {drug.concept_type}{" "}
+                <span className="xi-meds-drug-name">
+                  <strong>{drug.canonical_name}</strong>
+                  <span>({drug.catalog_drug_id})</span>
+                </span>
                 <button
                   className="xi-btn xi-btn-secondary"
                   type="button"
@@ -725,9 +735,7 @@ export function MedicationsSection({
         </div>
       )}
 
-      <h4 className="xi-section-title" style={{ fontSize: 15 }}>
-        Selected medications
-      </h4>
+      <h5 className="xi-meds-selected-heading">Selected medications</h5>
       {localIds.length === 0 ? (
         <p className="xi-hint" id="meds-selected-empty">
           No medications selected. Search the catalog above to add
@@ -739,12 +747,10 @@ export function MedicationsSection({
             const source = provenanceSource(serverState?.provenance[id]);
             return (
               <li key={id}>
-                {names[`${datasetVersion}|${id}`] !== undefined
-                  ? `${names[`${datasetVersion}|${id}`]} (${id})`
-                  : id}
-                {source !== null && (
-                  <span className="xi-hint"> · provenance {source}</span>
-                )}{" "}
+                <span className="xi-meds-drug-name">
+                  <strong>{names[`${datasetVersion}|${id}`] ?? id}</strong>
+                  <span>({id}){source === "copied_baseline" ? " · Copied from baseline" : ""}</span>
+                </span>
                 <button
                   className="xi-btn xi-btn-secondary"
                   type="button"
@@ -916,12 +922,15 @@ export function MedicationsSection({
         </div>
       )}
 
-      <div style={{ marginTop: 16 }}>
+      </div>
+      <div className="xi-meds-review">
         <DdiReportPanel
           encounterId={encounterId}
           refreshKey={`${savedRevision}:${postTick}`}
+          selectedIds={localIds}
           onSessionExpired={onSessionExpired}
         />
+      </div>
       </div>
     </section>
   );

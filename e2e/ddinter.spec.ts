@@ -312,3 +312,40 @@ test("unpinned autosaved selections retain their release and names across public
   expect(saved.selection_dataset_version).toBe(original);
   expect(saved.medication_fingerprint).toMatch(/^[a-f0-9]{64}$/);
 });
+
+test("interaction filters preserve coverage and hide findings immediately after a local medication edit", async ({ page, request }) => {
+  const { id, csrf } = await setup(page, request);
+  await strict(request, id, csrf, ["DDInter1", "DDInter2", "DDInter3", "DDInter4", "DDInter5"]);
+  await open(page, id);
+  const filters = page.getByRole("group", { name: "Filter interaction pairs" });
+  await expect(page.locator("#ddi-report-pairs > li")).toHaveCount(10);
+  await filters.getByRole("button", { name: /^Major/ }).click();
+  await expect(page.locator("#ddi-report-pairs > li")).toHaveCount(1);
+  await expect(page.locator("#ddi-report-pairs")).toContainText("highest known severity: Major");
+  await filters.getByRole("button", { name: /^Coverage unavailable/ }).focus();
+  await page.keyboard.press("Enter");
+  await expect(page.locator("#ddi-report-pairs > li")).toHaveCount(6);
+  await expect(filters.getByRole("button", { name: /^Coverage unavailable/ })).toHaveAttribute("aria-pressed", "true");
+  await filters.getByRole("button", { name: /^Unknown/ }).click();
+  await expect(page.locator("#ddi-report-pairs > li")).toHaveCount(1);
+  await expect(page.locator("#ddi-report-pairs")).toContainText("highest known severity: Unknown");
+  await filters.getByRole("button", { name: /^All pairs/ }).click();
+  await expect(page.locator("#ddi-report-pairs > li")).toHaveCount(10);
+  // Hold the structural save: the local selection itself must fence the old report.
+  let release!: () => void;
+  const held = new Promise<void>(resolve => { release = resolve; });
+  await page.route(`**/api/v1/encounters/${id}`, async route => {
+    if (route.request().method() === "PATCH") await held;
+    await route.continue();
+  });
+  await page.locator("#meds-remove-0").click();
+  await expect(page.locator("#ddi-report")).toHaveCount(0);
+  await expect(page.locator("#ddi-pending")).toContainText("Medication list changed");
+  release();
+  await expect(page.locator("#meds-save")).toBeEnabled();
+  await page.locator("#meds-save").click();
+  await expect(page.locator("#ddi-report-pairs > li")).toHaveCount(6);
+  await page.reload();
+  await expect(page.locator("#meds-selected-list > li")).toHaveCount(4);
+  await expect(page.locator("#ddi-report-pairs > li")).toHaveCount(6);
+});
