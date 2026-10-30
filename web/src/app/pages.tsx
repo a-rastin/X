@@ -31,16 +31,10 @@ export function AdminDashboard() {
 }
 
 export function PhysicianDashboard() {
-  const { researchWarning } = useAuth();
   return (
     <div>
       <h2 className="xi-page-title">Physician dashboard</h2>
       <p className="xi-hint">Find a patient, resume an encounter, or begin a new registration.</p>
-      {researchWarning !== null && (
-        <div className="xi-notice">
-          <p style={{ margin: 0 }}>{researchWarning}</p>
-        </div>
-      )}
       <PatientDirectory />
     </div>
   );

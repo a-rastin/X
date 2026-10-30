@@ -103,7 +103,7 @@ test("physician login shows the exact research warning before proceeding", async
   ).toBeVisible();
 });
 
-test("research warning persists across a session refresh", async ({
+test("research warning acknowledgement persists across a session refresh", async ({
   page,
   request,
 }) => {
@@ -115,14 +115,13 @@ test("research warning persists across a session refresh", async ({
     page.getByRole("heading", { name: "Physician dashboard" }),
   ).toBeVisible();
 
-  // GET /me refresh must not force a second blocking acknowledgement,
-  // but the exact warning remains surfaced on the physician dashboard.
+  // GET /me refresh must not force a second blocking acknowledgement.
   await page.reload();
   await expect(page.getByRole("alertdialog")).toHaveCount(0);
   await expect(
     page.getByRole("heading", { name: "Physician dashboard" }),
   ).toBeVisible();
-  await expect(page.getByText(RESEARCH_WARNING)).toBeVisible();
+  await expect(page.getByText(RESEARCH_WARNING)).toHaveCount(0);
 });
 
 test("sign-out clears identity and guards the dashboard", async ({ page }) => {
