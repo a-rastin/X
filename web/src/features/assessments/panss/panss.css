@@ -1,0 +1,106 @@
+/* PANSS presentation only; shared worksheet styles remain unchanged for C-SSRS. */
+.xi-main:has(.xi-panss) { max-width: 1560px; }
+.xi-panss.xi-card { padding: 0; overflow: clip; box-shadow: none; background: var(--canvas); }
+.xi-panss .xi-panss-header { display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 28px 32px; border-bottom: 1px solid var(--border); }
+.xi-panss .xi-panss-header h3 { margin: 0; font-size: 24px; letter-spacing: -.025em; line-height: 1.3; }
+.xi-panss .xi-panss-subtitle { margin: 6px 0 10px; font-size: 14px; font-weight: 600; }
+.xi-panss .xi-panss-header .xi-hint { max-width: 65ch; margin: 0; font-size: 13px; line-height: 1.65; }
+.xi-panss .xi-panss-progress { flex: 0 0 240px; font-size: 12px; color: var(--ink-muted); }
+.xi-panss .xi-panss-progress > div { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
+.xi-panss .xi-panss-progress strong { font-family: var(--font-mono); font-size: 22px; color: var(--ink); }
+.xi-panss .xi-panss-progress strong span { font-size: 13px; font-weight: 400; color: var(--ink-muted); }
+.xi-panss .xi-panss-progress progress { display: block; width: 100%; height: 6px; margin-bottom: 10px; border: 0; border-radius: 8px; overflow: hidden; appearance: none; background: var(--surface-2); }
+.xi-panss .xi-panss-progress progress::-webkit-progress-bar { background: var(--surface-2); }
+.xi-panss .xi-panss-progress progress::-webkit-progress-value { background: var(--primary-action); border-radius: 8px; }
+.xi-panss .xi-panss-progress progress::-moz-progress-bar { background: var(--primary-action); border-radius: 8px; }
+.xi-panss .xi-assessment-workspace { grid-template-columns: 190px minmax(0, 1fr) 280px; gap: 24px; margin: 0; padding: 24px; align-items: start; background: var(--surface-1); }
+.xi-panss .xi-panss-outline { position: sticky; top: 24px; min-width: 0; }
+.xi-panss .xi-panss-outline h4 { margin: 4px 10px 14px; font-size: 12px; color: var(--ink-muted); font-weight: 600; }
+.xi-panss .xi-panss-outline nav > a { display: flex; align-items: flex-start; gap: 10px; padding: 14px 10px; border: 1px solid transparent; border-radius: 8px; text-decoration: none; color: var(--ink); }
+.xi-panss .xi-panss-outline nav > a:hover, .xi-panss .xi-panss-outline nav > a:focus-visible { background: var(--selected-nav-bg); border-color: var(--border-strong); }
+.xi-panss .xi-panss-nav-code { display: flex; align-items: center; justify-content: center; flex: 0 0 28px; height: 28px; border: 1px solid var(--border-strong); border-radius: 6px; background: var(--canvas); font-family: var(--font-mono); font-size: 12px; font-weight: 600; }
+.xi-panss .xi-panss-nav-meta { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.xi-panss .xi-panss-nav-meta strong { font-size: 13px; font-weight: 600; line-height: 1.4; }
+.xi-panss .xi-panss-nav-meta > span { font-size: 11px; color: var(--ink-muted); line-height: 1.5; font-variant-numeric: tabular-nums; }
+.xi-panss .xi-panss-nav-complete { margin-left: auto; font-size: 13px; color: var(--selected-nav-ink); }
+.xi-panss .xi-panss-outline nav > .xi-panss-review-link { justify-content: space-between; margin-top: 16px; border-top: 1px solid var(--border); border-radius: 0; padding-top: 20px; font-size: 12px; color: var(--selected-nav-ink); }
+.xi-panss .xi-panss-navigation-hint { margin: 28px 10px 0; padding-top: 20px; border-top: 1px solid var(--border); font-size: 12px; line-height: 1.6; }
+.xi-panss .xi-panss-navigation-hint strong { font-weight: 600; }
+.xi-panss .xi-panss-navigation-hint p { margin: 6px 0 0; color: var(--ink-muted); }
+.xi-panss .xi-panss-rating-guide { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px 16px; padding: 0 2px 16px; font-size: 12px; color: var(--ink-muted); }
+.xi-panss .xi-assessment-window { margin: 0; gap: 8px; font-size: 12px; font-weight: 500; color: var(--ink-muted); }
+.xi-panss .xi-assessment-group { border: 1px solid var(--border); border-radius: 10px; background: var(--canvas); overflow: clip; }
+.xi-panss .xi-assessment-group + .xi-assessment-group { margin-top: 24px; }
+.xi-panss .xi-assessment-group-heading { padding: 18px 20px; gap: 8px 16px; flex-wrap: wrap; align-items: center; border-bottom: 1px solid var(--border); background: var(--canvas); }
+.xi-panss .xi-assessment-group-heading h4 { font-size: 15px; font-weight: 650; scroll-margin-top: 24px; }
+.xi-panss .xi-assessment-group-heading > span { border: 1px solid var(--border); border-radius: 6px; padding: 3px 7px; font-size: 11px; background: var(--surface-1); }
+.xi-panss .xi-assessment-item { grid-template-columns: minmax(0, 1fr); gap: 14px; padding: 20px; border-left: 3px solid transparent; transition: border-color var(--motion-fast) ease; }
+.xi-panss .xi-assessment-item:focus-within { border-left-color: var(--primary-action); background: var(--selected-nav-bg); }
+.xi-panss .xi-assessment-question { display: flex; align-items: baseline; gap: 10px; grid-row: auto; font-size: 14px; line-height: 1.65; }
+.xi-panss .xi-panss-item-code { flex: 0 0 28px; font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--selected-nav-ink); }
+.xi-panss .xi-assessment-options { gap: 6px; margin-left: 38px; padding: 0; border: 0; border-radius: 0; background: transparent; }
+.xi-panss .xi-assessment-options label { min-height: 44px; padding: 4px; border: 1px solid var(--border-strong); border-radius: 6px; background: var(--canvas); color: var(--ink); font-family: var(--font-mono); font-size: 13px; transition: background-color var(--motion-fast) ease, border-color var(--motion-fast) ease; }
+.xi-panss .xi-assessment-options label:hover { border-color: var(--primary-action); background: var(--surface-1); }
+.xi-panss .xi-assessment-options label:has(input:checked) { border-color: var(--primary-action); background: var(--primary-action); color: var(--on-action); font-weight: 700; }
+.xi-panss .xi-assessment-answer-state { grid-column: 1; margin-top: -6px; font-size: 11px; }
+.xi-panss .xi-assessment-review { position: sticky; top: 24px; max-height: calc(100dvh - 120px); overflow-y: auto; overscroll-behavior: contain; padding: 0; border: 0; scrollbar-width: thin; }
+.xi-panss .xi-assessment-result { padding: 20px; border: 1px solid var(--border); border-radius: 10px; background: var(--canvas); }
+.xi-panss .xi-panss-review-heading { padding-bottom: 16px; margin-bottom: 16px; border-bottom: 1px solid var(--border); }
+.xi-panss .xi-panss-review-heading h4 { font-size: 16px; margin: 0 0 4px; scroll-margin-top: 24px; }
+.xi-panss .xi-panss-review-heading > span { font-size: 11px; color: var(--ink-muted); }
+.xi-panss .xi-assessment-result .xi-status { font-size: 13px; margin: 0 0 16px; }
+.xi-panss .xi-panss-score-table { margin-top: 16px; }
+.xi-panss .xi-panss-score-table th { background: transparent; font-size: 11px; color: var(--ink-muted); }
+.xi-panss .xi-panss-score-table td { background: transparent; }
+.xi-panss .xi-panss-score-table th:last-child, .xi-panss .xi-panss-score-table td:last-child { text-align: right; }
+.xi-panss .xi-panss-score-table td:last-child { font-family: var(--font-mono); font-size: 17px; }
+.xi-panss .xi-panss-score-table .xi-panss-total-row td { border-top: 2px solid var(--border-strong); font-weight: 600; }
+.xi-panss .xi-panss-score-table .xi-panss-total-row td:last-child { font-size: 24px; color: var(--selected-nav-ink); }
+.xi-panss .xi-panss-panel { padding: 12px; border: 1px solid var(--border); border-left: 3px solid var(--primary-action); background: var(--surface-1); }
+.xi-panss .xi-assessment-provenance { margin: 12px 0; }
+.xi-panss .xi-assessment-skip { padding: 0 4px; }
+.xi-main:has(.xi-panss) .xi-wizard-pager { position: sticky; bottom: 0; z-index: 10; margin-top: 0; padding: 16px 20px; border: 1px solid var(--border); border-radius: 10px 10px 0 0; background: var(--canvas); box-shadow: 0 -2px 8px rgb(0 0 0 / .03); }
+@media (max-width: 1190px) {
+  .xi-panss .xi-assessment-workspace { grid-template-columns: minmax(0, 1fr) 280px; gap: 20px; }
+  .xi-panss .xi-panss-outline { grid-column: 1 / -1; position: static; }
+  .xi-panss .xi-panss-outline nav { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .xi-panss .xi-panss-outline h4 { width: 100%; margin: 0 0 2px; }
+  .xi-panss .xi-panss-outline nav > a { padding: 10px; border-color: var(--border); background: var(--canvas); flex: 1; }
+  .xi-panss .xi-panss-outline nav > .xi-panss-review-link { flex: 0 1 auto; align-items: center; margin: 0; padding: 12px; border: 0; background: transparent; }
+  .xi-panss .xi-panss-navigation-hint { display: none; }
+}
+@media (max-width: 940px) {
+  .xi-panss .xi-assessment-workspace { grid-template-columns: minmax(0, 1fr); }
+  .xi-panss .xi-assessment-review { position: static; max-height: none; overflow: visible; }
+  .xi-panss .xi-panss-header { padding: 24px; gap: 24px; }
+  .xi-panss .xi-panss-progress { flex-basis: 200px; }
+}
+@media (max-width: 640px) {
+  .xi-panss .xi-panss-header { align-items: stretch; flex-direction: column; padding: 20px 16px; gap: 20px; }
+  .xi-panss .xi-panss-header h3 { font-size: 22px; }
+  .xi-panss .xi-panss-progress { flex-basis: auto; }
+  .xi-panss .xi-assessment-workspace { padding: 16px 12px; gap: 20px; }
+  .xi-panss .xi-panss-outline nav { align-items: stretch; }
+  .xi-panss .xi-panss-outline nav > a { flex: 1 1 100%; padding: 10px 12px; align-items: center; }
+  .xi-panss .xi-panss-nav-meta { flex-direction: row; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; width: 100%; }
+  .xi-panss .xi-panss-nav-meta strong { flex-basis: 100%; }
+  .xi-panss .xi-panss-outline nav > .xi-panss-review-link { flex-basis: 100%; padding: 6px 0; justify-content: flex-start; }
+  .xi-panss .xi-assessment-group-heading { padding: 14px; }
+  .xi-panss .xi-assessment-item { padding: 16px 12px; }
+  .xi-panss .xi-assessment-question { gap: 6px; font-size: 13px; }
+  .xi-panss .xi-panss-item-code { flex-basis: 25px; }
+  .xi-panss .xi-assessment-options { margin-left: 0; gap: 4px; }
+  .xi-panss .xi-assessment-options label { min-height: 44px; }
+  .xi-main:has(.xi-panss) .xi-wizard-pager { padding: 12px; gap: 8px; }
+  .xi-main:has(.xi-panss) .xi-wizard-pager .xi-btn { padding: 10px 12px; font-size: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .xi-panss .xi-assessment-item, .xi-panss .xi-assessment-options label { transition: none; }
+}
+@media print {
+  .xi-main:has(.xi-panss) { max-width: none; }
+  .xi-panss .xi-panss-outline { display: none; }
+  .xi-panss .xi-assessment-workspace { display: block; padding: 0; }
+  .xi-panss .xi-assessment-review { position: static; max-height: none; overflow: visible; margin-top: 20px; }
+  .xi-panss .xi-assessment-item { break-inside: avoid; }
+}

@@ -6,7 +6,7 @@ older next-session and status statements are historical, not current instruction
 The [History reconciliation UI removal (2026-10-29)](s12.md#follow-up-2026-10-29--remove-history-reconciliation-controls) removes its controls while preserving saved data; the frontend build passed.
 The [History presentation follow-up (2026-10-28)](s12.md#follow-up-2026-10-28--history-page-presentation) simplifies the History page; the frontend build and Chromium browser suite passed, with Firefox partially run.
 The [C-SSRS presentation follow-up (2026-10-28)](s11.md#follow-up-2026-10-28--c-ssrs-page-presentation) simplifies the assessment page; build and TypeScript checks passed.
-The [PANSS presentation follow-up (2026-10-28)](s10.md#follow-up-2026-10-28--panss-page-presentation) simplifies the PANSS page; frontend build, TypeScript checks, and Chromium/Firefox PANSS suites passed.
+The [PANSS questionnaire redesign (2026-10-30)](s10.md#follow-up-2026-10-30--panss-desktop-questionnaire-redesign) adds subscale navigation, a rating worksheet, and a saved-results rail; build, TypeScript, and Chromium/Firefox checks passed.
 The [Diagnosis presentation follow-up (2026-10-28)](s09.md#follow-up-2026-10-28--diagnosis-page-presentation) simplifies the registration Diagnosis page; diagnosis and registration browser suites passed in Chromium and Firefox.
 The [direct Diagnosis registration implementation (2026-10-28)](s07.md#follow-up-2026-10-28--direct-diagnosis-registration-implementation)
 addresses [issue-06.md](../../../issues/issue-06.md); browser verification remains pending.

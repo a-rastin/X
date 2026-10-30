@@ -42,6 +42,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import "../assessment-worksheet.css";
+import "./panss.css";
 import { ApiError } from "../../identity/api";
 import type { DraftData } from "../../encounters/api";
 import type { useAutosave } from "../../encounters/useAutosave";
@@ -230,6 +231,16 @@ export function PanssSection({
     definition?.items.filter((item) => subscaleOf(item.id) === "General") ??
     [];
 
+  // Presentation counts describe local selections, never clinical scores or saved state.
+  const subscales = [
+    { code: "P", title: "Positive symptoms", range: "P1–P7", items: positiveItems },
+    { code: "N", title: "Negative symptoms", range: "N1–N7", items: negativeItems },
+    { code: "G", title: "General psychopathology", range: "G1–G16", items: generalItems },
+  ];
+  const selectedCount = (items: PanssDefinition["items"]) =>
+    items.filter(item => SCALE_VALUES.includes(answers[item.id] as PanssAnswer)).length;
+  const selectedTotal = selectedCount(definition?.items ?? []);
+
   function renderSubscale(
     title: string,
     items: PanssDefinition["items"],
@@ -238,15 +249,18 @@ export function PanssSection({
       return null;
     }
     return (
-      <div className="xi-assessment-group">
+      <section className="xi-assessment-group" aria-labelledby={`panss-group-${items[0].id}`}>
         <div className="xi-assessment-group-heading">
           <h4 id={`panss-group-${items[0].id}`} tabIndex={-1}>{title}</h4>
-          <span>{items.filter(item => SCALE_VALUES.includes(answers[item.id] as PanssAnswer)).length} / {items.length} answered</span>
+          <span>{selectedCount(items)} / {items.length} answered</span>
         </div>
         {items.map((item) => (
           <fieldset key={item.id} className="xi-assessment-item">
             <legend className="xi-assessment-sr-only">{item.prompt}</legend>
-          <div className="xi-assessment-question" aria-hidden="true">{item.prompt}</div>
+            <div className="xi-assessment-question" aria-hidden="true">
+              <span className="xi-panss-item-code">{item.id}</span>
+              <span>{item.prompt.replace(new RegExp(`^${item.id}\\.\\s*`), "")}</span>
+            </div>
             <div
               className="xi-assessment-options"
               role="radiogroup"
@@ -268,7 +282,7 @@ export function PanssSection({
                         : undefined
                     }
                   />
-                  {value}
+                  <span>{value}</span>
                 </label>
               ))}
             </div>
@@ -282,17 +296,28 @@ export function PanssSection({
             )}
           </fieldset>
         ))}
-      </div>
+      </section>
     );
   }
 
   return (
-    <section className="xi-card xi-assessment" aria-labelledby="panss-heading">
-      <h3 className="xi-section-title" id="panss-heading">
-        PANSS (step {stepNumber})
-      </h3>
-      <p className="xi-hint">Rate symptoms over the previous 7 days using the interview and available collateral information.</p>
-      <p className="xi-assessment-window">1 = absent <span>7 = extreme</span></p>
+    <section className="xi-card xi-assessment xi-panss" aria-labelledby="panss-heading">
+      <header className="xi-panss-header">
+        <div>
+          <h3 className="xi-section-title" id="panss-heading">
+            PANSS (step {stepNumber})
+          </h3>
+          <p className="xi-panss-subtitle">Positive and Negative Syndrome Scale</p>
+          <p className="xi-hint">Rate symptoms over the previous 7 days using the interview and available collateral information.</p>
+        </div>
+        {definition !== null && (
+          <div className="xi-panss-progress">
+            <div><span>Items selected</span><strong>{selectedTotal} <span>/ {definition.items.length}</span></strong></div>
+            <progress value={selectedTotal} max={definition.items.length} aria-label="PANSS items selected" />
+            <span>Assessment window: previous 7 days</span>
+          </div>
+        )}
+      </header>
 
       {definitionError !== null && (
         <p className="xi-form-error" role="alert">
@@ -311,7 +336,38 @@ export function PanssSection({
       )}
 
       <div className="xi-assessment-workspace">
+      <aside className="xi-panss-outline">
+        <nav aria-label="PANSS subscales">
+          <h4>Subscales</h4>
+          {subscales.filter(group => group.items.length > 0).map(group => (
+            <a key={group.code} href={`#panss-group-${group.items[0].id}`} onClick={event => {
+              event.preventDefault();
+              document.getElementById(`panss-group-${group.items[0].id}`)?.focus();
+            }}>
+              <span className="xi-panss-nav-code">{group.code}</span>
+              <span className="xi-panss-nav-meta">
+                <strong>{group.title}</strong>
+                <span>{group.range}</span>
+                <span>{selectedCount(group.items)} / {group.items.length} answered</span>
+              </span>
+              {selectedCount(group.items) === group.items.length && <span className="xi-panss-nav-complete" aria-label="All items selected">✓</span>}
+            </a>
+          ))}
+          <a className="xi-panss-review-link" href="#panss-review" onClick={event => {
+            event.preventDefault();
+            document.getElementById("panss-review")?.focus();
+          }}>Go to assessment review <span aria-hidden="true">↗</span></a>
+        </nav>
+        <div className="xi-panss-navigation-hint">
+          <strong>Keyboard navigation</strong>
+          <p>Use Tab to reach a rating, then arrow keys to choose a value.</p>
+        </div>
+      </aside>
       <div className="xi-assessment-worksheet">
+        <div className="xi-panss-rating-guide">
+          <span>Choose one rating per item</span>
+          <p className="xi-assessment-window">1 = absent <span aria-hidden="true">—</span> <span>7 = extreme</span></p>
+        </div>
       {definition !== null && (
         <div>
           {renderSubscale("Positive symptoms (P1–P7)", positiveItems)}
@@ -326,7 +382,10 @@ export function PanssSection({
       </div>
       <aside className="xi-assessment-review" aria-labelledby="panss-review">
       <div className="xi-assessment-result">
-        <h4 id="panss-review" tabIndex={-1}>Assessment review</h4>
+        <div className="xi-panss-review-heading">
+          <h4 id="panss-review" tabIndex={-1}>Assessment review</h4>
+          <span>Saved assessment results</span>
+        </div>
         {previewLoading && preview === null && <p>Loading PANSS preview…</p>}
         {previewError !== null && preview === null && (
           <div>
@@ -396,7 +455,7 @@ export function PanssSection({
 
             {scores !== null && (
               <table
-                className="xi-table"
+                className="xi-table xi-panss-score-table"
                 id="panss-scores"
                 aria-label="PANSS subscale scores"
               >
@@ -419,7 +478,7 @@ export function PanssSection({
                     <td>General (G1–G16)</td>
                     <td>{formatScore(scores.general)}</td>
                   </tr>
-                  <tr>
+                  <tr className="xi-panss-total-row">
                     <td>Total (30 items)</td>
                     <td>{formatScore(scores.total)}</td>
                   </tr>

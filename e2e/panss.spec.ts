@@ -128,7 +128,7 @@ test("fresh form has 30 unanswered items and null total, no pre-filled 1s", asyn
   await expect(page.getByRole("heading", { name: "Add New Patient" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Draft context" })).toHaveCount(0);
   await expect(page.locator("#draft-save-status")).toHaveCount(0);
-  await expect(page.getByRole("navigation", { name: "PANSS subscales" })).toHaveCount(0);
+  await expect(page.getByRole("navigation", { name: "PANSS subscales" })).toBeVisible();
   await expect(page.locator(".xi-assessment-answer-state")).toHaveCount(0);
   await expect(page.locator("#panss-heading").locator(".."))
     .not.toContainText("answers save automatically");
