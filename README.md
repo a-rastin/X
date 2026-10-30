@@ -338,6 +338,7 @@ Makefile             Development, verification, and deployment commands
 
 | Start here for… | Reference |
 | --- | --- |
+| Using the app as a physician or administrator | [User Guide](docs/user-guide.md) |
 | Installation, configuration, and startup | [Installation and Running Guide](docs/installation.md) |
 | Recorded progress and the next handoff | [Progress index](project-documents/dev/progress/README.md) |
 | Product scope and requirements | [User requirements](project-documents/dev/user-requirements.md) |

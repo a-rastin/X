@@ -3,6 +3,7 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
+The [User Guide (2026-10-30)](s62.md#follow-up-2026-10-30--application-user-guide) documents current physician and administrator workflows; documentation links and whitespace checks passed.
 The [registration title and draft context cleanup (2026-10-30)](s07.md#follow-up-2026-10-30--registration-page-title-and-draft-context) updates the first registration step; the frontend build passed.
 The [Medications and proposal header cleanup (2026-10-30)](s20.md#follow-up-2026-10-30--medications-and-proposal-header-cleanup) simplifies the registration title and draft cards; the frontend build passed.
 The [Medications workspace redesign (2026-10-30)](s20.md#follow-up-2026-10-30--medications-workspace-redesign) adds selection/review columns, severity filters and immediate stale-report hiding; build, TypeScript and focused Chromium/Firefox checks passed.
