@@ -749,8 +749,9 @@ function EncounterWizard({
   }
 
   const notice = registrationNoticeFor(encounterId);
+  const streamlinedStep = ["diagnosis", "panss", "cssrs", "history", "medications", "proposal-review"].includes(currentStep.id);
   const pageTitle =
-    (currentStep.id === "diagnosis" || currentStep.id === "panss" || currentStep.id === "cssrs" || currentStep.id === "history") && encounter.kind === "registration"
+    streamlinedStep && encounter.kind === "registration"
       ? "Add New Patient"
       : currentStep.id === "register" ? "Register patient" : "Encounter draft";
 
@@ -777,7 +778,7 @@ function EncounterWizard({
           {notice.serverTimestamp}, revision {notice.revision}.
         </p>
       )}
-      {currentStep.id !== "diagnosis" && currentStep.id !== "panss" && currentStep.id !== "cssrs" && currentStep.id !== "history" && (
+      {!streamlinedStep && (
       <section className="xi-card" aria-labelledby="draft-context-heading">
         <h3 className="xi-section-title" id="draft-context-heading">
           Draft context
@@ -808,7 +809,7 @@ function EncounterWizard({
 
       {/* Assessment pages only show save status when recovery is needed. */}
       {currentStep.id !== "register" &&
-        ((currentStep.id !== "diagnosis" && currentStep.id !== "panss" && currentStep.id !== "cssrs" && currentStep.id !== "history") ||
+        (!streamlinedStep ||
           autosave.saveState.kind === "failed" ||
           autosave.saveState.kind === "conflict") && (
         <section className="xi-card" aria-label="Draft save">

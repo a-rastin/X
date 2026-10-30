@@ -3,6 +3,7 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
+The [Medications and proposal header cleanup (2026-10-30)](s20.md#follow-up-2026-10-30--medications-and-proposal-header-cleanup) simplifies the registration title and draft cards; the frontend build passed.
 The [Medications workspace redesign (2026-10-30)](s20.md#follow-up-2026-10-30--medications-workspace-redesign) adds selection/review columns, severity filters and immediate stale-report hiding; build, TypeScript and focused Chromium/Firefox checks passed.
 The [History reconciliation UI removal (2026-10-29)](s12.md#follow-up-2026-10-29--remove-history-reconciliation-controls) removes its controls while preserving saved data; the frontend build passed.
 The [History presentation follow-up (2026-10-28)](s12.md#follow-up-2026-10-28--history-page-presentation) simplifies the History page; the frontend build and Chromium browser suite passed, with Firefox partially run.
