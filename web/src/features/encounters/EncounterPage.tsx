@@ -751,7 +751,7 @@ function EncounterWizard({
   const notice = registrationNoticeFor(encounterId);
   const streamlinedStep = ["diagnosis", "panss", "cssrs", "history", "medications", "proposal-review"].includes(currentStep.id);
   const pageTitle =
-    streamlinedStep && encounter.kind === "registration"
+    encounter.kind === "registration"
       ? "Add New Patient"
       : currentStep.id === "register" ? "Register patient" : "Encounter draft";
 
@@ -778,7 +778,7 @@ function EncounterWizard({
           {notice.serverTimestamp}, revision {notice.revision}.
         </p>
       )}
-      {!streamlinedStep && (
+      {!streamlinedStep && encounter.kind !== "registration" && (
       <section className="xi-card" aria-labelledby="draft-context-heading">
         <h3 className="xi-section-title" id="draft-context-heading">
           Draft context

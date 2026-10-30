@@ -55,7 +55,7 @@ test("physician registers a patient; leading-zero ID round-trips with timestamp 
   await expect(page.getByRole("heading", { name: "Patients" })).toBeVisible();
   await page.getByRole("link", { name: "Register new patient" }).click();
   await expect(
-    page.getByRole("heading", { name: "Register patient" }),
+    page.getByRole("heading", { name: "Add New Patient" }),
   ).toBeVisible();
   // Seven steps, no adverse effects. Demographics and the working note
   // are step 1; later steps stay closed until a draft exists.
@@ -150,6 +150,8 @@ test("physician registers a patient; leading-zero ID round-trips with timestamp 
   await expect(page.locator("#wizard-page")).toHaveAttribute("aria-label", "Diagnosis, step 2 of 7");
   await page.getByRole("link", { name: "Back to Register patient" }).click();
   await expect(page).toHaveURL(/#register$/);
+  await expect(page.getByRole("heading", { name: "Add New Patient" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Draft context" })).toHaveCount(0);
   await expect(page.getByLabel("Given name")).toHaveValue(given);
   await expect(page.getByLabel("Family name")).toHaveValue(family);
   await expect(page.getByLabel("Patient ID")).toHaveValue(identifier);

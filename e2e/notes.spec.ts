@@ -57,7 +57,7 @@ test("new-patient entry keeps the disabled working note without a page-note plac
   await setup(page, request);
   const requests = watchRetiredRequests(page);
   await page.goto("/#/patients/new");
-  await expect(page.getByRole("heading", { name: "Register patient", exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Add New Patient", exact: true })).toBeVisible();
   await expectNoPageNotes(page);
   await expect(page.getByLabel("Draft working note")).toBeDisabled();
   expect(requests).toEqual([]);

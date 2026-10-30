@@ -13,7 +13,7 @@ import {
 /* S07 draft autosave journeys (seam T9 browser; backend covered by
  * BT/http/test_drafts.py and not duplicated here). Selectors used below
  * are the handoff contract for the test agent:
- * - heading "Register patient" on `#/encounters/:id#register` (working note home)
+ * - heading "Add New Patient" on `#/encounters/:id#register` (working note home)
  * - textarea labelled "Draft working note" (#draft-working-note)
  * - save status #draft-save-status (role=status): Saving… / Unsaved changes…
  *   / Saved (revision N) / Save failed: … / Conflict: …
@@ -96,7 +96,7 @@ test("autosaved note shows Saved only after 2xx and survives reload", async ({
 
   await page.goto(`/#/encounters/${draftId}#register`);
   await expect(
-    page.getByRole("heading", { name: "Register patient" }),
+    page.getByRole("heading", { name: "Add New Patient" }),
   ).toBeVisible();
   const note = page.getByLabel("Draft working note");
   await expect(note).toBeVisible();

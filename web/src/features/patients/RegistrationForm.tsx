@@ -46,7 +46,7 @@ export function RegistrationPage() {
   if (user?.role !== "physician") {
     return (
       <div>
-        <h2 className="xi-page-title">Register patient</h2>
+        <h2 className="xi-page-title">Add New Patient</h2>
         <p className="xi-form-error" role="alert">
           Physician access required. Administrators read the patient directory;
           they do not register patients.
@@ -182,7 +182,7 @@ function RegistrationForm() {
 
   return (
     <div>
-      <h2 className="xi-page-title">Register patient</h2>
+      <h2 className="xi-page-title">Add New Patient</h2>
       <nav className="xi-wizard-nav" aria-label="Encounter pages" id="wizard-pages">
         {REGISTRATION_WIZARD_STEPS.map((item, index) => {
           const current = item.id === "register";
