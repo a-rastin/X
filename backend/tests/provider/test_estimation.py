@@ -692,7 +692,7 @@ def test_capability_modes_share_strict_validator(admin_client, clean_registry, m
 
 
 def test_strict_response_rejections(admin_client, clean_registry, monkeypatch) -> None:
-    """S43 §3: prose/ambiguous/malformed/S23 violations → INVALID_RESPONSE retryable."""
+    """Malformed responses and S23 violations → INVALID_RESPONSE retryable."""
     setup = _setup_projection(
         admin_client,
         clean_registry,
@@ -722,7 +722,6 @@ def test_strict_response_rejections(admin_client, clean_registry, monkeypatch) -
     def _inexact_total(tables: list[dict[str, Any]]) -> None:
         tables[0]["rows"][0]["percentages"] = ["80", "30"]
 
-    valid_blob = json.dumps(_valid_cpt(network_hash), separators=(",", ":"))
     structured: list[tuple[str, Any]] = [
         ("ambiguous_list", [_valid_cpt(network_hash), _valid_cpt(network_hash)]),
         (
@@ -762,7 +761,6 @@ def test_strict_response_rejections(admin_client, clean_registry, monkeypatch) -
         assert result.error_code == "PROVIDER_INVALID_RESPONSE", f"{name}: {result.error_code}"
         assert result.retryable is True, f"{name} must be retryable"
     raw_cases = [
-        ("extra_prose", f"Here you go: {valid_blob} done"),
         ("malformed", "{not json"),
         ("truncated", '{"network_hash": "bb"'),
     ]

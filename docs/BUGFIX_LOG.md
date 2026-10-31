@@ -1,10 +1,11 @@
 # Bug-fix log
 
 Baseline: `dev` at `c012ad4`; integration branch `bugfix/journey-2026-10`.
-Only B01 is in scope for this change.
+B01 and B26 are tracked separately.
 
 | Bug | Status | Commit | Tests added | Remaining |
 | --- | --- | --- | --- | --- |
+| B26 | Implemented; focused acceptance passed; committed at user request with gates incomplete | this commit | Response selection, fenced/prose JSON, strict malformed/empty rejection, and private diagnostics | Full backend suite not rerun: host disk is 99% full; existing formatting and frontend test gates remain red |
 | B01 | Implemented; acceptance passed; committed at user request with gates red | this commit | Timeout default/env/range/settings/history/restore; real 141 s HTTP and worker generation; lease reclamation; Status/settings browser checks | Repository gates remain red; baseline/host failures and unresolved broad-run failures are recorded below |
 
 ## B01 reproduction and baseline (2026-10-30)
@@ -72,3 +73,11 @@ validation ceiling, rejecting a provider response that takes 141 seconds; the
 worker also left its 120-second lease/MCP grant unrenewed during estimation.
 The fix resolves a bounded timeout from the pinned settings revision or
 operator environment, defaults to 300 seconds, and renews the existing lease.
+
+## B26 provider response parsing (2026-10-31)
+
+- The user authorized B26 to proceed despite the incomplete Phase 0 gate. The B26 branch was created from `dev` at `81ca561`, which contains B01.
+- Root cause: response selection allowed a non-string `content` to override `reasoning_content`, and the shared validator required the entire string to be JSON; Python's default decoder also accepts non-standard numeric constants.
+- Before the fix, the new focused cases produced **5 failed, 7 passed**. Afterward, the response cases and timeout regressions produced **32 passed**. The parser selects nonempty string content first, extracts the last balanced object with strict JSON decoding, and keeps CPT validation. Failures use the existing retryable `PROVIDER_INVALID_RESPONSE`; logs contain length and shape only.
+- Backend Ruff lint, mypy, web build and web TypeScript passed. Repository-wide format check still fails on the unchanged `tests/provider/tls_fixture.py`; `make test-web` reports that no web unit suite exists and exits nonzero. Full backend and browser suites were not rerun: only 281 MB remained on the filesystem, and the previous full-run handoff records a disk-full database failure. The disposable database was not started.
+- Committed on `dev` at the user’s subsequent request despite incomplete pre-commit gates. This work does not establish real-provider success. The branch-consolidation progress edits already present in the working tree were preserved.

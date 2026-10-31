@@ -19,8 +19,8 @@ contract) and S41 (real private MCP transport):
   with bounded errors. No direct-call production bypass exists here and no
   extra MCP tool is added.
 - §3: ``schema`` and ``json`` capability modes send their verified
-  ``response_format`` but share ONE strict validator. Extra prose,
-  ambiguous/multiple outputs, malformed/truncated/oversized payloads and
+  ``response_format`` but share ONE strict validator. Prose and fences may
+  surround the last JSON object; malformed/truncated/oversized payloads and
   S23 policy violations (out-of-range/nonfinite/excess-precision/inexact
   totals, missing tables/rows) are rejected. Numeric/table checks reuse
   ``models.inference.validate_cpts`` via a contract-derived document — no
@@ -63,6 +63,7 @@ working; the bounded adapter requires them.
 from __future__ import annotations
 
 import json
+import logging
 import threading
 from dataclasses import dataclass, field
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -74,6 +75,7 @@ from x_insight.reasoning.provider_timeout import effective_timeout, validate_tim
 MAX_TOOL_CALLS = 10
 MAX_PROVIDER_BYTES = 1_048_576  # ponytail: reuse 1 MiB edge cap; S58 measures real CPT sizes.
 RESPONSE_SCHEMA_VERSION = "cpt-response-v1"
+logger = logging.getLogger(__name__)
 
 
 @dataclass(frozen=True)
@@ -390,7 +392,7 @@ def validate_strict_response(
     """Shared strict validator for both capability modes.
 
     Returns (payload, None) on success or (None, reason) on rejection:
-    extra prose, non-object/multiple outputs, malformed/truncated JSON and
+    non-object, malformed/truncated JSON and
     any S23 contract violation (missing tables/rows, out-of-range,
     nonfinite, excess precision, inexact totals). Numeric checks delegate to
     ``inference.validate_cpts``; nothing here re-parses percentages.
@@ -401,12 +403,9 @@ def validate_strict_response(
         return None, "empty_response"
     if len(content.encode("utf-8")) > MAX_PROVIDER_BYTES:
         return None, "oversized_response"
-    try:
-        parsed = json.loads(content)
-    except Exception:
+    parsed = _extract_json_object(content)
+    if parsed is None:
         return None, "malformed_response"
-    if not isinstance(parsed, dict):
-        return None, "ambiguous_response"
     document = _contract_document(network_hash, nodes)
     try:
         report = validate_cpts(document, parsed)
@@ -517,7 +516,7 @@ def _assistant_text(message: dict[str, Any]) -> Any:
     Non-empty content wins, so thinking prose is never used when a visible reply exists.
     """
     content = message.get("content")
-    if isinstance(content, dict) or (isinstance(content, str) and content.strip()):
+    if isinstance(content, str) and content.strip():
         return content
     reasoning = message.get("reasoning_content")
     if isinstance(reasoning, str) and reasoning.strip():
@@ -525,18 +524,60 @@ def _assistant_text(message: dict[str, Any]) -> Any:
     return content
 
 
-def _json_object_content(content: Any) -> bool:
-    if isinstance(content, dict):
-        return True
-    if not isinstance(content, str) or not content.strip():
-        return False
-    if len(content.encode("utf-8")) > MAX_PROVIDER_BYTES:
-        return False
+def _extract_json_object(content: str) -> dict[str, Any] | None:
+    """Decode the last balanced top-level object, respecting JSON strings."""
+
+    def reject_constant(value: str) -> None:
+        raise ValueError("Non-standard JSON constant")
+
+    decoder = json.JSONDecoder(parse_constant=reject_constant)
     try:
-        parsed = json.loads(content)
-    except Exception:
-        return False
-    return isinstance(parsed, dict)
+        whole = decoder.decode(content.strip())
+    except ValueError:
+        pass
+    else:
+        return whole if isinstance(whole, dict) else None
+    depth = 0
+    start = 0
+    in_string = False
+    escaped = False
+    last: str | None = None
+    for index, char in enumerate(content):
+        if depth == 0:
+            if char == "{":
+                start = index
+                depth = 1
+            continue
+        if in_string:
+            if escaped:
+                escaped = False
+            elif char == "\\":
+                escaped = True
+            elif char == '"':
+                in_string = False
+        elif char == '"':
+            in_string = True
+        elif char == "{":
+            depth += 1
+        elif char == "}":
+            depth -= 1
+            if depth == 0:
+                last = content[start : index + 1]
+    if last is None:
+        return None
+    try:
+        parsed = decoder.decode(last)
+    except ValueError:
+        return None
+    return parsed if isinstance(parsed, dict) else None
+
+
+def _json_object_content(content: Any) -> bool:
+    return (
+        isinstance(content, str)
+        and len(content.encode("utf-8")) <= MAX_PROVIDER_BYTES
+        and _extract_json_object(content) is not None
+    )
 
 
 def _ping_call_id(message: dict[str, Any]) -> str | None:
@@ -789,6 +830,9 @@ class BoundedProviderAdapter:
             try:
                 body = response.json()
             except Exception:
+                raw = getattr(response, "content", b"")
+                size = len(raw) if isinstance(raw, (bytes, bytearray)) else 0
+                logger.warning("Provider response rejected: length=%d envelope_shape=invalid", size)
                 return None, _fail("PROVIDER_INVALID_RESPONSE", True)
             raw = getattr(response, "content", b"")
             size = len(bytes(raw)) if isinstance(raw, (bytes, bytearray)) else 0
@@ -873,9 +917,13 @@ class BoundedProviderAdapter:
             body, failure = self._post_once(step_payload)
             if failure is not None:
                 return failure
-            assert body is not None
             message, reason = self._envelope_message(body)
             if message is None:
+                logger.warning(
+                    "Provider response rejected: length=%d envelope_shape=%s",
+                    len(json.dumps(body).encode("utf-8")),
+                    type(body).__name__,
+                )
                 return _fail("PROVIDER_INVALID_RESPONSE", True)
             tool_calls = message.get("tool_calls")
             if not tool_calls:
@@ -886,6 +934,12 @@ class BoundedProviderAdapter:
                     content, network_hash=request.network_hash, nodes=nodes
                 )
                 if validated is None:
+                    logger.warning(
+                        "Provider response rejected: length=%d content_shape=%s reasoning_shape=%s",
+                        len(content.encode("utf-8")) if isinstance(content, str) else 0,
+                        type(message.get("content")).__name__,
+                        type(message.get("reasoning_content")).__name__,
+                    )
                     return _fail("PROVIDER_INVALID_RESPONSE", True)
                 return ProviderResult(
                     ok=True,
