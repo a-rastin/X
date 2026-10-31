@@ -5,6 +5,7 @@ B01, B02 and B26 are tracked separately.
 
 | Bug | Status | Commit | Tests added | Remaining |
 | --- | --- | --- | --- | --- |
+| B03 | Blocked by B05 prerequisite; provider not tested | — | None | Complete and merge B05, supply provider key through environment, then run the real walkthrough and record each attempt |
 | B05 | Reproduced; fix not implemented | this commit | Settings model rejects valid capability_mode (failing regression) | Persist and detect mode, honor and expose override, migrate and test; full gates remain open |
 | B02 | Acceptance passed; commit held because repository gates remain red | uncommitted | 23 regressions: real HTTP failure taxonomy; worker ledger/log/privacy; persisted retry budget; 0025→0026 preservation | 25 assertion failures reproduce on unchanged dev; full-run client-slot exhaustion required a workflow rerun; existing formatting and missing web-unit gate remain red; real streaming unverified |
 | B26 | Implemented; focused acceptance passed; committed at user request with gates incomplete | this commit | Response selection, fenced/prose JSON, strict malformed/empty rejection, and private diagnostics | Full backend suite not rerun: host disk is 99% full; existing formatting and frontend test gates remain red |
