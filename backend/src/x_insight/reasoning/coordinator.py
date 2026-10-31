@@ -724,7 +724,7 @@ def _commit_failure(
     job_id: Any,
     lease_token: str,
     error_code: str,
-    now: datetime,
+    now: datetime | None,
     retryable: bool = False,
     stage: str = "preparing_question",
     stage_artifact: dict[str, Any] | None = None,
@@ -843,7 +843,7 @@ def execute_claimed_job(
     batch: Mapping[str, Any],
     lease_token: str,
     adapter: Any,
-    now: datetime,
+    now: datetime | None,
     worker_id: str,
 ) -> dict[str, Any]:
     """Execute one claimed generation job end to end (S45 single-question).
@@ -1222,6 +1222,7 @@ def execute_claimed_job(
         "query_nodes": list(query_nodes),
         "effective_hash": str(effective_hash),
     }
+    now = now or contracts.utcnow()
     with db_module.session_scope(engine) as session:
         # Same fencing as queue.commit_job_result, kept inline so the
         # baseline insert stays atomic with the job success (one commit).
@@ -1377,7 +1378,9 @@ def execute_claimed_job(
             .values(
                 finished_at=now,
                 outcome="succeeded",
-                elapsed_seconds=queue_module.attempt_elapsed_seconds(session, job_id, lease_token),
+                elapsed_seconds=queue_module.attempt_elapsed_seconds(
+                    session, job_id, lease_token, now
+                ),
                 error_code=None,
                 result={
                     "projection_hash": str(run.get("projection_hash", "")),

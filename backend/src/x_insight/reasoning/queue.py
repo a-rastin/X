@@ -1271,18 +1271,17 @@ def claim_next_job(
     }
 
 
-def attempt_elapsed_seconds(session: Session, job_id: uuid.UUID, lease_token: str) -> float:
-    """Elapsed wall time fallback for failures outside the timed HTTP adapter.
-
-    This deliberately does not change the ledger timestamps (B21).
-    """
+def attempt_elapsed_seconds(
+    session: Session, job_id: uuid.UUID, lease_token: str, finished_at: datetime | None = None
+) -> float:
+    """Elapsed UTC span of the persisted attempt."""
     started = session.execute(
         select(reasoning_tables.reasoning_job_attempts.c.started_at).where(
             reasoning_tables.reasoning_job_attempts.c.job_id == job_id,
             reasoning_tables.reasoning_job_attempts.c.lease_token == lease_token,
         )
     ).scalar_one()
-    return max(0.0, (contracts.utcnow() - started).total_seconds())
+    return max(0.0, ((finished_at or contracts.utcnow()) - started).total_seconds())
 
 
 def commit_job_result(
@@ -1461,8 +1460,7 @@ def commit_job_result(
             "elapsed_seconds",
         )
     }
-    if details["elapsed_seconds"] is None:
-        details["elapsed_seconds"] = attempt_elapsed_seconds(session, job_id, lease_token)
+    details["elapsed_seconds"] = attempt_elapsed_seconds(session, job_id, lease_token, moment)
     if not provider_ok:
         details["failure_class"] = details["failure_class"] or (
             "parse" if provider_error == "PROVIDER_INVALID_RESPONSE" else "other"

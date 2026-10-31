@@ -5,6 +5,7 @@ B01, B02 and B26 are tracked separately.
 
 | Bug | Status | Commit | Tests added | Remaining |
 | --- | --- | --- | --- | --- |
+| B21 | Implemented; 3 timing regressions passed; commit authorized with open gates | this commit | Five-second success/failure UTC spans and coordinator failure timing | Existing format and missing web-unit gates; full backend and bounded HTTP success not verified this session |
 | B03 | Blocked by B05 prerequisite; provider not tested | — | None | Complete and merge B05, supply provider key through environment, then run the real walkthrough and record each attempt |
 | B05 | Reproduced; fix not implemented | this commit | Settings model rejects valid capability_mode (failing regression) | Persist and detect mode, honor and expose override, migrate and test; full gates remain open |
 | B02 | Acceptance passed; commit held because repository gates remain red | uncommitted | 23 regressions: real HTTP failure taxonomy; worker ledger/log/privacy; persisted retry budget; 0025→0026 preservation | 25 assertion failures reproduce on unchanged dev; full-run client-slot exhaustion required a workflow rerun; existing formatting and missing web-unit gate remain red; real streaming unverified |
@@ -216,3 +217,37 @@ lost failure identity. Bounded reads also hid truncated HTTP bodies as parse err
   been made. The next migration is 0027 (0025 and 0026 already exist). The test
   intentionally remains failing. Existing full-suite and formatting failures are
   recorded under B02; they are not waived.
+
+## B21 attempt timing (2026-10-31)
+
+- Root cause: `worker.run_once` captured the claim timestamp and passed it as an
+  explicit completion clock to both the simple provider path and coordinator.
+  Queue completion and coordinator success consequently wrote the claim time
+  into `finished_at`, even after slow estimation.
+- Before production edits, two actual five-second fake adapter calls (success
+  and failure) both failed the regression with a **0.0-second** ledger span.
+  Reproduction: from `backend`, set `TEST_DATABASE_URL` to an isolated UTF-8
+  PostgreSQL database and run `python3 -m pytest tests/worker/test_attempt_timing.py -q`.
+- Production now leaves the completion clock unset until work finishes. Explicit
+  deterministic test clocks remain fixed. Queue completion and coordinator success
+  compute elapsed seconds from the persisted UTC start and the same finish value.
+  No migration, clinical content, credentials or environment file changed.
+- B01 is already integrated; the reported hard-coded timeout edit is absent.
+  B05 remains reproduced but unimplemented in the current handoff; its persisted
+  capability setting and local override replacement remain open, outside B21.
+- Final timing regression: **3 passed in 24.19 s**: simple provider success and
+  failure plus coordinator failure, each sleeping five real seconds and requiring
+  a 4–6-second UTC span with elapsed seconds matching that span.
+- Ruff lint, mypy (78 modules), frontend build and root TypeScript passed.
+  Repository formatting still fails on unchanged `tests/provider/tls_fixture.py`;
+  `make test-web` exits nonzero because no web unit suite exists. The commit was
+  subsequently authorized with these gates open.
+  Full backend suite was not rerun; prior B02 baseline failures remain open.
+  The broader queue run was stopped after stalling; it is not counted as passing.
+  Local system Python lacks MCP, so bounded HTTP/inference success was not tested;
+  the timing tests use an explicit fake estimation adapter, including coordinator
+  failure routing, without claiming real-provider success.
+
+Commit subject: `fix(B21): record actual attempt completion time`.
+Commit body root cause: the worker passed its captured claim time as the completion
+clock, causing both attempt timestamps to be equal despite provider latency.

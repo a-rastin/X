@@ -1,5 +1,7 @@
 # X-INSIGHT progress tracker
 
+[B21 attempt timing (2026-10-31)](s43.md#follow-up-2026-10-31--b21-attempt-timing) fixes completion clock reuse; verification limits and open commit gates are recorded.
+
 [B03 prerequisite check (2026-10-31)](s43.md#follow-up-2026-10-31--b03-prerequisite-check): blocked on B05; no real-provider run was made.
 
 [B05 reproduction (2026-10-31)](s43.md#follow-up-2026-10-31--b05-reproduction) records a failing settings regression; implementation and acceptance remain open.

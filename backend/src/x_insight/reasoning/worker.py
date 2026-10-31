@@ -144,7 +144,7 @@ def run_once(
         )
         with _generation_heartbeat(engine, job["id"], lease_token, now):
             return coordinator_module.execute_claimed_job(
-                engine, job, run, batch, lease_token, per_job, moment, wid
+                engine, job, run, batch, lease_token, per_job, now, wid
             )
 
     # S44 stub path (unchanged): minimal request, deterministic stub.
@@ -171,7 +171,7 @@ def run_once(
                 provider_payload=dict(result.payload),
                 provider_error=result.error_code,
                 failure_details=result.failure_details(),
-                now=moment,
+                now=now,
                 retryable=bool(result.retryable),
                 stage="estimating_cpts",
             )
