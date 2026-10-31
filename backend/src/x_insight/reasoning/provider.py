@@ -27,7 +27,7 @@ contract) and S41 (real private MCP transport):
   second percentage validator lives here.
 - §4: explicit error/budget mapping (auth/model/capability = non-retryable
   config error; timeout/rate-limit/transient = retryable). Max ten tool
-  calls per attempt, request/response byte budgets, 60s per HTTP request.
+  calls per attempt, request/response byte budgets, configurable HTTP deadline.
   One attempt performs a single HTTP exchange per tool step with no hidden
   nested retries; the queue-level 3-attempt budget lives in S47 (deferred).
 
@@ -69,9 +69,9 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from typing import Any, Protocol
 
 from x_insight.mcp_server import TOOL_INPUT_SCHEMA, TOOL_NAME
+from x_insight.reasoning.provider_timeout import effective_timeout, validate_timeout
 
 MAX_TOOL_CALLS = 10
-PROVIDER_TIMEOUT_SECONDS = 60.0
 MAX_PROVIDER_BYTES = 1_048_576  # ponytail: reuse 1 MiB edge cap; S58 measures real CPT sizes.
 RESPONSE_SCHEMA_VERSION = "cpt-response-v1"
 
@@ -162,7 +162,7 @@ class ProviderConfig:
     endpoint_url: str
     model: str
     capability: str = "schema"
-    timeout_seconds: float = PROVIDER_TIMEOUT_SECONDS
+    timeout_seconds: float = field(default_factory=effective_timeout)
     max_tool_calls: int = MAX_TOOL_CALLS
     max_request_bytes: int = MAX_PROVIDER_BYTES
     max_response_bytes: int = MAX_PROVIDER_BYTES
@@ -178,9 +178,7 @@ class ProviderConfig:
             raise ValueError("model must be non-empty")
         if self.capability not in ("schema", "json"):
             raise ValueError("capability must be schema|json")
-        timeout = float(self.timeout_seconds)
-        if not 0 < timeout <= PROVIDER_TIMEOUT_SECONDS:
-            raise ValueError("timeout_seconds must be within (0, 60]")
+        object.__setattr__(self, "timeout_seconds", validate_timeout(self.timeout_seconds))
         if not 1 <= int(self.max_tool_calls) <= MAX_TOOL_CALLS:
             raise ValueError("max_tool_calls must be within [1, 10]")
         if int(self.max_request_bytes) <= 0 or int(self.max_response_bytes) <= 0:
@@ -609,7 +607,9 @@ def _classify_http(response: Any, *, allow_format_retry: bool) -> tuple[str, Any
     return "ok", body
 
 
-def probe_capability(url: str, model: str, api_key: str) -> tuple[bool, str]:
+def probe_capability(
+    url: str, model: str, api_key: str, *, timeout_seconds: float | None = None
+) -> tuple[bool, str]:
     """Synthetic chat/tool exchange. No patient payload. Fixed diagnostics only.
 
     One forced ``ping`` call, then one JSON object. ``json_schema`` is not
@@ -620,10 +620,11 @@ def probe_capability(url: str, model: str, api_key: str) -> tuple[bool, str]:
         "Content-Type": "application/json",
     }
     use_format = True
+    timeout = effective_timeout(timeout_seconds)
 
     def post(payload: dict[str, Any]) -> tuple[str, Any]:
         try:
-            response = post_json(url, payload, headers, PROVIDER_TIMEOUT_SECONDS)
+            response = post_json(url, payload, headers, timeout)
         except Exception as exc:
             from x_insight.reasoning.provider_destination import DestinationDenied, ResolutionFailed
 

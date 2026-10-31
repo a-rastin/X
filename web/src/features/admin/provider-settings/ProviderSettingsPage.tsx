@@ -41,6 +41,7 @@ export function ProviderSettingsPage() {
   const [trustedProxyApproved, setTrustedProxyApproved] = useState(false);
   const [fieldErrors, setFieldErrors] = useState<Record<string, string[]>>({});
   const [model, setModel] = useState("");
+  const [timeoutSeconds, setTimeoutSeconds] = useState("");
   const [secretAction, setSecretAction] = useState<SecretAction>("unchanged");
   const [apiKey, setApiKey] = useState("");
   const [affectedRuns, setAffectedRuns] = useState<number | null>(null);
@@ -64,6 +65,7 @@ export function ProviderSettingsPage() {
         setLocalEndpointApproved(current.local_endpoint_approved);
         setTrustedProxyApproved(current.trusted_proxy_approved);
         setModel(current.model);
+        setTimeoutSeconds(current.timeout_seconds === null ? "" : String(current.timeout_seconds));
         setReady(true);
       } catch (err) {
         if (cancelled) {
@@ -97,6 +99,7 @@ export function ProviderSettingsPage() {
       const saved = await saveProviderSettings({
         baseUrl,
         model,
+        timeoutSeconds,
         revision,
         secretAction,
         apiKey,
@@ -111,6 +114,7 @@ export function ProviderSettingsPage() {
       setLocalEndpointApproved(saved.local_endpoint_approved);
       setTrustedProxyApproved(saved.trusted_proxy_approved);
       setModel(saved.model);
+      setTimeoutSeconds(saved.timeout_seconds === null ? "" : String(saved.timeout_seconds));
       setSecretAction("unchanged");
       setApiKey("");
       setDiagnostic(null);
@@ -230,6 +234,28 @@ export function ProviderSettingsPage() {
                 {fieldErrors.model.join(" ")}
               </p>
             )}
+          </div>
+          <div className="xi-field">
+            <label className="xi-label" htmlFor="provider-timeout">Provider timeout (seconds)</label>
+            <input
+              className="xi-input"
+              id="provider-timeout"
+              type="number"
+              min={10}
+              max={900}
+              step="any"
+              value={timeoutSeconds}
+              onChange={(event) => setTimeoutSeconds(event.target.value)}
+              aria-describedby="provider-timeout-help provider-timeout-error"
+              aria-invalid={Boolean(fieldErrors.timeout_seconds?.length)}
+            />
+            <p className="xi-hint" id="provider-timeout-help">
+              10–900 seconds per provider request. Leave blank to use the deployment setting
+              (300 seconds by default). The effective value appears on Status.
+            </p>
+            <p className="xi-form-error" id="provider-timeout-error">
+              {fieldErrors.timeout_seconds?.join(" ")}
+            </p>
           </div>
           <div className="xi-field">
             <label>

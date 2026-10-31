@@ -27,6 +27,7 @@ export interface OpsQueue {
 }
 
 export interface OpsProvider {
+  timeout_seconds: number;
   attempts_24h: number;
   failures_24h: number;
   auth_failures_24h: number;

@@ -28,8 +28,10 @@ from __future__ import annotations
 import logging
 import os
 import signal
+import threading
 import time
 import uuid
+from contextlib import contextmanager
 from datetime import datetime
 from typing import Any
 
@@ -140,9 +142,10 @@ def run_once(
             database_url=database_url or provider.database_url,
             api_key=provider.api_key,
         )
-        return coordinator_module.execute_claimed_job(
-            engine, job, run, batch, lease_token, per_job, moment, wid
-        )
+        with _generation_heartbeat(engine, job["id"], lease_token, now):
+            return coordinator_module.execute_claimed_job(
+                engine, job, run, batch, lease_token, per_job, moment, wid
+            )
 
     # S44 stub path (unchanged): minimal request, deterministic stub.
     # Provider runs outside any DB transaction or lock (real projection +
@@ -320,6 +323,37 @@ def _execute_local_claim(
 
 logger = logging.getLogger(__name__)
 
+
+@contextmanager
+def _generation_heartbeat(engine: Engine, job_id: Any, lease_token: str, now: datetime | None):
+    """Keep the lease and MCP grant alive across slow HTTP/tool/inference work.
+
+    Each heartbeat uses a short independent transaction. Explicit test clocks
+    remain fixed; production uses the current UTC time. Joining before leaving
+    prevents a renewal thread surviving the work unit.
+    """
+    stopped = threading.Event()
+
+    def renew() -> None:
+        while not stopped.wait(queue_module.HEARTBEAT_INTERVAL_SECONDS):
+            try:
+                with db_module.session_scope(engine) as session:
+                    live = queue_module.heartbeat_job(session, job_id, lease_token, now=now)
+                if not live:
+                    return
+            except Exception:
+                logger.warning("generation heartbeat failed")
+                return
+
+    thread = threading.Thread(target=renew, daemon=True)
+    thread.start()
+    try:
+        yield
+    finally:
+        stopped.set()
+        thread.join()
+
+
 # S57 production worker entry point (plan.md §3; compose.prod.yaml `worker`
 # runs `python -m x_insight.reasoning`). The polling loop reuses run_once();
 # adapter selection below is the only production-specific behavior: a
@@ -379,6 +413,7 @@ def resolve_production_provider(
         return build_adapter_from_env()
     with db_module.session_scope(engine) as session:
         loaded = provider_config.open_runtime(session, pinned)
+        timeout = provider_config.runtime_timeout(session, pinned)
     if isinstance(loaded, str):
         return UnconfiguredProvider(loaded)
     endpoint, model, api_key = loaded
@@ -390,6 +425,7 @@ def resolve_production_provider(
             endpoint_url=endpoint,
             model=model,
             capability=capability,
+            timeout_seconds=timeout,
             local_endpoint_approved=bool(getattr(endpoint, "local_endpoint_approved", False)),
             trusted_proxy_approved=bool(getattr(endpoint, "trusted_proxy_approved", False)),
         ),

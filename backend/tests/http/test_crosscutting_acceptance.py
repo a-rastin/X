@@ -543,9 +543,9 @@ def test_two_physicians_isolated_while_one_run_fails(clean_registry, monkeypatch
     t0 = contracts.utcnow()
     _run_with_script(
         engine,
-        [{"type": "delay", "seconds": 2.0, "then": {"type": "final", "cpt": _invalid_cpt()}}],
+        [{"type": "delay", "seconds": 12.0, "then": {"type": "final", "cpt": _invalid_cpt()}}],
         t0,
-        timeout=1.0,
+        timeout=10.0,
     )
     _run_with_script(engine, [{"type": "final", "cpt": _invalid_cpt()}], t0 + timedelta(seconds=70))
     failed, _ = _run_with_script(
@@ -693,9 +693,9 @@ def test_mixed_exhaustion_then_stage_resume_keeps_completed_artifacts(
     assert out1["status"] == "succeeded", out1
     _run_with_script(
         engine,
-        [{"type": "delay", "seconds": 2.0, "then": {"type": "final", "cpt": _invalid_cpt()}}],
+        [{"type": "delay", "seconds": 12.0, "then": {"type": "final", "cpt": _invalid_cpt()}}],
         t0 + timedelta(seconds=5),
-        timeout=1.0,
+        timeout=10.0,
     )
     _run_with_script(engine, [{"type": "final", "cpt": _invalid_cpt()}], t0 + timedelta(seconds=80))
     out_fail, _ = _run_with_script(

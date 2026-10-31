@@ -22,6 +22,7 @@ export interface ProviderSettings {
   api_key: KeyStatus;
   base_url: string;
   model: string;
+  timeout_seconds: number | null;
   capability: Capability;
   effective_endpoint: string;
   local_endpoint_approved: boolean;
@@ -46,6 +47,7 @@ const UNSAVED: ProviderSettings = {
   api_key: "absent",
   base_url: "",
   model: "",
+  timeout_seconds: null,
   capability: "untested",
   effective_endpoint: "",
   local_endpoint_approved: false,
@@ -116,6 +118,7 @@ function masked(payload: unknown): SavedProviderSettings {
     api_key: keyStatus(body.api_key),
     base_url: typeof body.base_url === "string" ? body.base_url : "",
     model: typeof body.model === "string" ? body.model : "",
+    timeout_seconds: typeof body.timeout_seconds === "number" ? body.timeout_seconds : null,
     capability: capability(body.capability),
     effective_endpoint:
       typeof body.effective_endpoint === "string"
@@ -147,6 +150,7 @@ export async function getProviderSettings(): Promise<ProviderSettings> {
 }
 
 export interface SaveProviderSettingsInput {
+  timeoutSeconds: string;
   baseUrl: string;
   model: string;
   revision: number | null;
@@ -161,9 +165,10 @@ export interface SaveProviderSettingsInput {
 export async function saveProviderSettings(
   input: SaveProviderSettingsInput,
 ): Promise<SavedProviderSettings> {
-  const body: Record<string, string | boolean> = {
+  const body: Record<string, string | boolean | number | null> = {
     base_url: input.baseUrl,
     model: input.model,
+    timeout_seconds: input.timeoutSeconds.trim() === "" ? null : Number(input.timeoutSeconds),
     local_endpoint_approved: input.localEndpointApproved,
     trusted_proxy_approved: input.trustedProxyApproved,
   };

@@ -836,13 +836,11 @@ def test_error_status_mapping(admin_client, clean_registry, monkeypatch) -> None
     delayed = [
         {
             "type": "delay",
-            "seconds": 2.0,
+            "seconds": 12.0,
             "then": {"type": "final", "cpt": _valid_cpt(network_hash)},
         }
     ]
-    result, _ = _estimate_with_script(
-        setup, delayed, network_hash=network_hash, timeout_seconds=0.5
-    )
+    result, _ = _estimate_with_script(setup, delayed, network_hash=network_hash, timeout_seconds=10)
     assert not result.ok and result.error_code == "PROVIDER_TIMEOUT", result
     assert result.retryable is True
 
@@ -883,7 +881,7 @@ def test_tool_and_request_budgets(admin_client, clean_registry, monkeypatch) -> 
     assert len(captured_small) == 0, "oversized request must not POST"
     with pytest.raises(ValueError):
         provider_module.ProviderConfig(
-            endpoint_url="http://127.0.0.1:9/x", model="m", timeout_seconds=61.0
+            endpoint_url="http://127.0.0.1:9/x", model="m", timeout_seconds=901.0
         )
     with pytest.raises(ValueError):
         provider_module.ProviderConfig(
@@ -893,7 +891,7 @@ def test_tool_and_request_budgets(admin_client, clean_registry, monkeypatch) -> 
         provider_module.ProviderConfig(
             endpoint_url="http://127.0.0.1:9/x", model="m"
         ).timeout_seconds
-        == 60.0
+        == 300.0
     )
     assert (
         provider_module.ProviderConfig(

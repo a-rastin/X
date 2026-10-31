@@ -114,6 +114,10 @@ test("S58 §§3-4 admin sees live operational status and can refresh it", async 
   const probe = await request.get("/api/v1/ops/status");
   expect(probe.status(), await probe.text()).toBe(200);
   const payload = await probe.json();
+  const timeoutRow = metrics.getByRole("row", { name: /Provider timeout/ });
+  await expect(timeoutRow).toContainText(`${payload.provider.timeout_seconds} s`);
+  expect(payload.provider.timeout_seconds).toBeGreaterThanOrEqual(10);
+  expect(payload.provider.timeout_seconds).toBeLessThanOrEqual(900);
   for (const section of [
     "queue",
     "provider",

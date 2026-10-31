@@ -152,7 +152,7 @@ or a model provider. The first rebuild/import may take several minutes; wait for
 the exact immutable release. Existing released datasets are preserved unless the
 bundled version is explicitly configured; see the [bootstrap rules](ddinter-operations.md#fresh-installation-with-the-bundled-approved-release).
 
-Current schema head is `0024`. Setup failure exits before either local server
+Current schema head is `0025`. Setup failure exits before either local server
 starts; correct the reported error and run `make dev` again. `make migrate`
 remains an optional operator tool for setup without launching servers. Plain
 `alembic upgrade head` creates schema without provisioning DDI data; `/ready`
@@ -306,6 +306,16 @@ the endpoint rejects `response_format`, generation retries that request once
 without it and still validates the JSON. Local recalculation never calls the
 provider.
 
+Provider requests default to 300 seconds. Set **Provider timeout (seconds)**
+on the Provider page (10–900 seconds), or leave it blank to use
+`X_INSIGHT_PROVIDER_TIMEOUT_SECONDS` and then the 300-second default. A saved
+timeout belongs to its settings revision; queued jobs keep that revision.
+The Status page shows the current effective timeout. Production Compose passes
+the environment setting to both the API and worker; restart both after changing
+the environment. The worker renews its 120-second lease and MCP grant every
+15 seconds while generation runs. Three attempts use separate request deadlines
+and queue backoff; proposal polling continues until a terminal result.
+
 For local development, the startup migration creates
 `backend/.secrets/provider-data.key` automatically when no key file or override
 exists. Keep `.secrets` out of source control and preserve this file with the
@@ -427,7 +437,7 @@ again. Do not clear a maintenance lock as a generic startup fix.
 | Docker daemon or permission error | Confirm `docker info` succeeds for the installation account before retrying Compose |
 | `make dev` reports an occupied database port | This project's running containers are allowed; stop the unrelated listener or choose free database ports and update both URLs |
 | API/web ports are occupied | Stop the other process or choose available `BACKEND_PORT`/`WEB_PORT` values, then rerun `make dev` |
-| `/health` is 200 but `/ready` is 503 `SCHEMA_INCOMPATIBLE` | Confirm the API uses the startup target database and matching revision. Normal startup applies schema automatically; current expected head is `0024`. Manual migration commands remain optional recovery tools |
+| `/health` is 200 but `/ready` is 503 `SCHEMA_INCOMPATIBLE` | Confirm the API uses the startup target database and matching revision. Normal startup applies schema automatically; current expected head is `0025`. Manual migration commands remain optional recovery tools |
 | Medications shows `DDI dataset is unavailable.` after a fresh installation | Inspect `make dev` setup output or production `logs migrate`, confirm the API uses that database, and correct the reported setup error before restarting. See [DDI bootstrap recovery](ddinter-operations.md#fresh-installation-with-the-bundled-approved-release). An invalid `DDI_DEFAULT_DATASET_VERSION` still fails explicitly |
 | `/ready` reports `DB_UNAVAILABLE` | Check database health and the API process's actual connection configuration; confirm password, hostname, port, and database name |
 | Password changes in `.env` do not fix database login | PostgreSQL initialization variables do not change credentials inside an existing volume; use its existing credentials or a deliberate database password change |

@@ -188,6 +188,8 @@ def _queue_section(session: Session, moment: Any) -> dict[str, Any]:
 
 
 def _provider_section(session: Session, moment: Any) -> dict[str, Any]:
+    from x_insight.reasoning.provider_config import runtime_timeout
+
     window_start = moment - timedelta(hours=ATTEMPT_WINDOW_HOURS)
     rows = session.execute(
         select(_ATTEMPTS.c.outcome, _ATTEMPTS.c.error_code, _ATTEMPTS.c.attempt_index)
@@ -204,6 +206,7 @@ def _provider_section(session: Session, moment: Any) -> dict[str, Any]:
     retries = sum(1 for row in rows if int(row[2] or 0) >= 2)
     return {
         "attempts_24h": len(rows),
+        "timeout_seconds": runtime_timeout(session),
         "failures_24h": int(failed),
         "auth_failures_24h": int(auth_failures),
         "retries_24h": int(retries),

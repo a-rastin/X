@@ -137,7 +137,7 @@ RESTORE_BACKUP_SCHEMA_VERSION = backup_module.BACKUP_MANIFEST_VERSION
 # 0017 and 0018 archives omit the table and stay valid via the special
 # case; 0019 and later must include it.
 SUPPORTED_APP_SCHEMA_VERSIONS = frozenset(
-    {"0017", "0018", "0019", "0020", "0021", "0022", "0023", "0024"}
+    {"0017", "0018", "0019", "0020", "0021", "0022", "0023", "0024", "0025"}
 )
 
 # Bounds (ponytail: 256 MiB expanded / 4096 entries / 100 MiB per file;
@@ -476,11 +476,21 @@ def _check_provider_approvals(tables: dict[str, Any], app_schema: str) -> str | 
         if not isinstance(row, dict):
             return "Provider endpoint approval row is malformed."
         for field in fields:
-            if app_schema == "0024":
+            if app_schema in ("0024", "0025"):
                 if type(row.get(field)) is not bool:
                     return "Provider endpoint approvals must be explicit JSON booleans."
             elif field in row and row[field] is not False:
                 return "Legacy provider archives cannot grant endpoint approvals."
+        timeout = row.get("timeout_seconds")
+        if timeout is not None:
+            from x_insight.reasoning.provider_timeout import validate_timeout
+
+            try:
+                if not isinstance(timeout, (int, float)):
+                    raise ValueError
+                validate_timeout(timeout)
+            except ValueError:
+                return "Provider timeout_seconds must be a finite number within [10, 900]."
     return None
 
 

@@ -391,7 +391,7 @@ def test_shared_budget_timeout_invalid_ratelimit(clean_registry, monkeypatch) ->
 
     endpoint = provider_module.DeterministicProviderEndpoint(
         script=[
-            {"type": "delay", "seconds": 2.0, "then": {"type": "final", "cpt": _invalid_cpt()}},
+            {"type": "delay", "seconds": 12.0, "then": {"type": "final", "cpt": _invalid_cpt()}},
             {"type": "final", "cpt": _invalid_cpt()},
             {"type": "status", "status": 429, "body": {"error": "slow down"}},
         ]
@@ -403,7 +403,7 @@ def test_shared_budget_timeout_invalid_ratelimit(clean_registry, monkeypatch) ->
             endpoint_url=url,
             model="test-model",
             capability="schema",
-            timeout_seconds=1.0,
+            timeout_seconds=10.0,
         )
         t0 = contracts.utcnow()
 

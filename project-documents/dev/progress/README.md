@@ -3,6 +3,7 @@
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
+The [B01 provider-timeout follow-up (2026-10-30)](s43.md#follow-up-2026-10-30--b01-configurable-provider-timeout) records configurable deadlines and lease renewal; acceptance passed; repository gates remain red.
 The [User Guide (2026-10-30)](s62.md#follow-up-2026-10-30--application-user-guide) documents current physician and administrator workflows; documentation links and whitespace checks passed.
 The [registration title and draft context cleanup (2026-10-30)](s07.md#follow-up-2026-10-30--registration-page-title-and-draft-context) updates the first registration step; the frontend build passed.
 The [Medications and proposal header cleanup (2026-10-30)](s20.md#follow-up-2026-10-30--medications-and-proposal-header-cleanup) simplifies the registration title and draft cards; the frontend build passed.
@@ -27,7 +28,7 @@ The [skip/bypass removal implementation (2026-10-26)](s07.md#follow-up-2026-10-2
 removes the active Diagnosis bypass and PANSS/C-SSRS Skip controls (Resume-only recovery retained,
 acknowledgment-only proposal copy); `tsc` passes and independent review is PASS,
 with live-browser/backend proof still blocked by environment (uncommitted working tree on `dev`).
-The latest provider implementation is [onboarding and destination safety (2026-10-26)](s42.md#follow-up-2026-10-26--provider-onboarding-and-destination-safety),
+The preceding provider destination work is [onboarding and destination safety (2026-10-26)](s42.md#follow-up-2026-10-26--provider-onboarding-and-destination-safety),
 with diagnosis, implementation details, and evidence in [issue-01.md](../../../issues/issue-01.md). The real-TLS browser run passed 10/10 across Chromium and Firefox; the release gate remains open.
 The preceding [S62 handoff](s62.md#follow-up-2026-10-26--provider-security-implementation-handoff) links that work without changing the rehearsal's release status.
 The latest unrelated implementation follow-up is [automatic schema/DDInter startup (2026-10-23)](s18.md#follow-up-2026-10-23--prepare-schema-and-ddinter-during-normal-startup):
@@ -69,7 +70,7 @@ stops treating `198.18.0.0/15` as a blocked special-use address and colors a
 failed capability diagnostic as an error. The
 [capability-check issue](../issue-provider-capability-check.md) is fixed: Test
 provider uses a synthetic chat/tool exchange, not the private echo. Schema
-head and the fresh-backup expectation are now `0022` (DDInter follow-up above), with
+head and the fresh-backup expectation are now `0025` (B01 timeout follow-up above), with
 `provider_settings` in a 32-table inventory. The [S62](s62.md) release gate
 otherwise stays open: not a release, not clinical validation, not high
 availability. tasks.md has no session after S62 and no S63.

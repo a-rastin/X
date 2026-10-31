@@ -24,6 +24,7 @@ from sqlalchemy import (
     Boolean,
     Column,
     DateTime,
+    Float,
     Integer,
     LargeBinary,
     MetaData,
@@ -40,6 +41,7 @@ from x_insight.db import CommittedRoute, get_session
 from x_insight.identity import service as identity_service
 from x_insight.operations.audit import record_audit
 from x_insight.reasoning.provider_key import ProviderKeyError, load_key
+from x_insight.reasoning.provider_timeout import effective_timeout
 
 PROVIDER_DATA_KEY_ENV = "X_INSIGHT_PROVIDER_DATA_KEY"
 ALLOWED_HOSTS_ENV = "X_INSIGHT_PROVIDER_ALLOWED_HOSTS"
@@ -62,6 +64,7 @@ provider_settings = Table(
     Column("revision", Integer, nullable=False),
     Column("base_url", Text, nullable=False),
     Column("model", Text, nullable=False),
+    Column("timeout_seconds", Float, nullable=True),
     Column("local_endpoint_approved", Boolean, nullable=False, server_default="false"),
     Column("trusted_proxy_approved", Boolean, nullable=False, server_default="false"),
     Column("key_nonce", LargeBinary, nullable=True),
@@ -80,6 +83,9 @@ class ProviderSettingsWrite(BaseModel):
     api_key: str | None = Field(default=None, min_length=1, max_length=4096)
     base_url: str = Field(min_length=1, max_length=2048)
     model: str = Field(min_length=1, max_length=256)
+    timeout_seconds: float | None = Field(
+        default=None, ge=10, le=900, allow_inf_nan=False, strict=True
+    )
     local_endpoint_approved: bool = Field(default=False, strict=True)
     trusted_proxy_approved: bool = Field(default=False, strict=True)
     secret_action: Literal["unchanged", "replace", "clear"] | None = None
@@ -185,6 +191,7 @@ def _masked(
     capability: str = CAPABILITY_UNTESTED,
     local_endpoint_approved: bool = False,
     trusted_proxy_approved: bool = False,
+    timeout_seconds: float | None = None,
 ) -> dict[str, Any]:
     return {
         "revision": revision,
@@ -194,6 +201,7 @@ def _masked(
         "local_endpoint_approved": local_endpoint_approved,
         "trusted_proxy_approved": trusted_proxy_approved,
         "model": model,
+        "timeout_seconds": timeout_seconds,
         "capability": capability,
     }
 
@@ -211,6 +219,7 @@ def _latest_stored(session: Session) -> dict[str, Any] | None:
                 provider_settings.c.revision,
                 provider_settings.c.base_url,
                 provider_settings.c.model,
+                provider_settings.c.timeout_seconds,
                 provider_settings.c.local_endpoint_approved,
                 provider_settings.c.trusted_proxy_approved,
                 provider_settings.c.key_nonce,
@@ -232,6 +241,7 @@ def read_latest(session: Session) -> dict[str, Any] | None:
                 provider_settings.c.revision,
                 provider_settings.c.base_url,
                 provider_settings.c.model,
+                provider_settings.c.timeout_seconds,
                 provider_settings.c.local_endpoint_approved,
                 provider_settings.c.trusted_proxy_approved,
                 provider_settings.c.capability_status,
@@ -253,6 +263,7 @@ def read_latest(session: Session) -> dict[str, Any] | None:
         capability=str(row["capability_status"]),
         local_endpoint_approved=bool(row["local_endpoint_approved"]),
         trusted_proxy_approved=bool(row["trusted_proxy_approved"]),
+        timeout_seconds=row["timeout_seconds"],
     )
 
 
@@ -264,6 +275,7 @@ def read_revision(session: Session, revision: int) -> dict[str, Any] | None:
                 provider_settings.c.revision,
                 provider_settings.c.base_url,
                 provider_settings.c.model,
+                provider_settings.c.timeout_seconds,
                 provider_settings.c.local_endpoint_approved,
                 provider_settings.c.trusted_proxy_approved,
                 provider_settings.c.capability_status,
@@ -283,6 +295,7 @@ def read_revision(session: Session, revision: int) -> dict[str, Any] | None:
         capability=str(row["capability_status"]),
         local_endpoint_approved=bool(row["local_endpoint_approved"]),
         trusted_proxy_approved=bool(row["trusted_proxy_approved"]),
+        timeout_seconds=row["timeout_seconds"],
     )
 
 
@@ -338,6 +351,7 @@ def save_settings(
     if_match: int | None,
     local_endpoint_approved: bool = False,
     trusted_proxy_approved: bool = False,
+    timeout_seconds: float | None = None,
 ) -> dict[str, Any]:
     """Insert the next revision. Plaintext is sealed only on replace."""
     base_url = _require_allowed_destination(
@@ -370,6 +384,7 @@ def save_settings(
             revision=revision,
             base_url=base_url,
             model=model,
+            timeout_seconds=timeout_seconds,
             local_endpoint_approved=local_endpoint_approved,
             trusted_proxy_approved=trusted_proxy_approved,
             key_nonce=nonce,
@@ -389,6 +404,7 @@ def save_settings(
             "model": model,
             "base_url": base_url,
             "key_status": key_status,
+            "timeout_seconds": timeout_seconds,
             "local_endpoint_approved": local_endpoint_approved,
             "trusted_proxy_approved": trusted_proxy_approved,
         },
@@ -400,6 +416,7 @@ def save_settings(
         has_key=has_key,
         local_endpoint_approved=local_endpoint_approved,
         trusted_proxy_approved=trusted_proxy_approved,
+        timeout_seconds=timeout_seconds,
     )
     # Initial save and unchanged keep the prior credential, so jobs stay.
     if secret_action in ("replace", "clear"):
@@ -417,6 +434,16 @@ def latest_settings_revision(session: Session) -> int | None:
     return int(row["revision"])
 
 
+def runtime_timeout(session: Session, revision: int | None = None) -> float:
+    """Resolve the HTTP deadline for a pinned revision or the current status."""
+    statement = select(provider_settings.c.timeout_seconds)
+    if revision is None:
+        statement = statement.order_by(provider_settings.c.revision.desc()).limit(1)
+    else:
+        statement = statement.where(provider_settings.c.revision == revision)
+    return effective_timeout(session.execute(statement).scalar_one_or_none())
+
+
 def open_runtime(session: Session, revision: int) -> tuple[str, str, str] | str:
     """Pinned endpoint, model, and API key, or a non-retryable error code.
 
@@ -428,6 +455,7 @@ def open_runtime(session: Session, revision: int) -> tuple[str, str, str] | str:
             select(
                 provider_settings.c.base_url,
                 provider_settings.c.model,
+                provider_settings.c.timeout_seconds,
                 provider_settings.c.local_endpoint_approved,
                 provider_settings.c.trusted_proxy_approved,
                 provider_settings.c.key_nonce,
@@ -476,7 +504,9 @@ def _open_key(nonce: bytes, ciphertext: bytes) -> str:
         raise ProviderKeyError("Provider API key could not be read.") from None
 
 
-def _capability_outcome(base_url: str, model: str, nonce: Any, ciphertext: Any) -> tuple[str, str]:
+def _capability_outcome(
+    base_url: str, model: str, nonce: Any, ciphertext: Any, timeout_seconds: float | None = None
+) -> tuple[str, str]:
     """Check the saved endpoint. Fixed diagnostics only; never the upstream body or key."""
     if nonce is None or ciphertext is None:
         return CAPABILITY_FAILED, "No provider API key is stored."
@@ -486,7 +516,7 @@ def _capability_outcome(base_url: str, model: str, nonce: Any, ciphertext: Any) 
         return CAPABILITY_FAILED, "Provider API key could not be read."
     from x_insight.reasoning.provider import probe_capability
 
-    ok, diagnostic = probe_capability(base_url, model, api_key)
+    ok, diagnostic = probe_capability(base_url, model, api_key, timeout_seconds=timeout_seconds)
     return (CAPABILITY_VERIFIED if ok else CAPABILITY_FAILED), diagnostic
 
 
@@ -517,6 +547,7 @@ def record_capability_test(
         str(latest["model"]),
         latest["key_nonce"],
         latest["key_ciphertext"],
+        latest["timeout_seconds"],
     )
     revision = int(latest["revision"]) + 1
     session.execute(
@@ -525,6 +556,7 @@ def record_capability_test(
             revision=revision,
             base_url=base_url,
             model=str(latest["model"]),
+            timeout_seconds=latest["timeout_seconds"],
             local_endpoint_approved=local_endpoint_approved,
             trusted_proxy_approved=trusted_proxy_approved,
             key_nonce=_as_bytes(latest["key_nonce"]),
@@ -547,6 +579,7 @@ def record_capability_test(
         "revision": revision,
         "base_url": base_url,
         "model": str(latest["model"]),
+        "timeout_seconds": latest["timeout_seconds"],
         "effective_endpoint": base_url,
         "local_endpoint_approved": local_endpoint_approved,
         "trusted_proxy_approved": trusted_proxy_approved,
@@ -576,6 +609,7 @@ def put_api_settings(
             if_match=if_match,
             local_endpoint_approved=payload.local_endpoint_approved,
             trusted_proxy_approved=payload.trusted_proxy_approved,
+            timeout_seconds=payload.timeout_seconds,
         )
     except contracts.ContractError as exc:
         return error_response(

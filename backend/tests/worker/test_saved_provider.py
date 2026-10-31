@@ -182,6 +182,7 @@ def test_generation_uses_pinned_saved_credential_not_later_url(
                 "base_url": pinned_url,
                 "local_endpoint_approved": not public,
                 "model": MODEL,
+                "timeout_seconds": 60,
                 "secret_action": "replace",
             },
         )
@@ -204,6 +205,7 @@ def test_generation_uses_pinned_saved_credential_not_later_url(
             {
                 "base_url": later_url,
                 "model": "other-model",
+                "timeout_seconds": 900,
                 "secret_action": "unchanged",
                 "local_endpoint_approved": not public,
             },
@@ -211,6 +213,11 @@ def test_generation_uses_pinned_saved_credential_not_later_url(
         )
         assert moved["revision"] == int(first["revision"]) + 1
         assert moved.get("affected_runs", 0) == 0
+        resolved = worker_module.resolve_production_provider(
+            saved_registry, {"diagnostics": {"provider_settings_revision": first["revision"]}}
+        )
+        assert isinstance(resolved, provider_module.BoundedProviderAdapter)
+        assert resolved.config.timeout_seconds == 60
         outcome = _run(saved_registry)
         body = client.get(f"/api/v1/generation-batches/{started['batch']['id']}")
     finally:

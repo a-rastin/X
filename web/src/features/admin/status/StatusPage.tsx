@@ -300,6 +300,7 @@ export function StatusPage() {
             <MetricTable
               label="Provider"
               rows={[
+                ["Provider timeout", `${provider.timeout_seconds} s`],
                 ["Provider attempts (24h)", String(provider.attempts_24h)],
                 ["Provider failures (24h)", String(provider.failures_24h)],
                 [
