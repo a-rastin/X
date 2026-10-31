@@ -325,8 +325,19 @@ def checked_post(
         request_headers["Content-Type"] = "application/json"
         conn.request("POST", target, body=json.dumps(payload).encode(), headers=request_headers)
         response = conn.getresponse()
-        body = response.read(max_bytes + 1)
-        _remaining(deadline)
+        try:
+            body = response.read(max_bytes + 1)
+            _remaining(deadline)
+        except Exception as read_error:
+            # A timeout/chunked EOF after headers still has a known HTTP status.
+            setattr(read_error, "http_status", response.status)
+            raise
+        # read(amt) may return EOF silently with Content-Length bytes missing.
+        # Keep truncation distinct from a complete but invalid JSON response.
+        if len(body) <= max_bytes and response.length:
+            incomplete = http.client.IncompleteRead(b"", response.length)
+            setattr(incomplete, "http_status", response.status)
+            raise incomplete
         return httpx.Response(response.status, content=body, headers=dict(response.getheaders()))
     finally:
         conn.close()

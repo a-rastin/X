@@ -65,7 +65,8 @@ from __future__ import annotations
 import json
 import logging
 import threading
-from dataclasses import dataclass, field
+import time
+from dataclasses import dataclass, field, replace
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from typing import Any, Protocol
 
@@ -110,6 +111,24 @@ class ProviderResult:
     payload: dict[str, Any] = field(default_factory=dict)
     error_code: str | None = None
     retryable: bool = False
+    failure_class: str | None = None
+    http_status: int | None = None
+    exception_type: str | None = None
+    error_subcode: str | None = None
+    elapsed_seconds: float | None = None
+
+    def failure_details(self) -> dict[str, Any]:
+        """Only diagnostic scalars; never payloads, headers or exception messages."""
+        return {
+            key: getattr(self, key)
+            for key in (
+                "failure_class",
+                "http_status",
+                "exception_type",
+                "error_subcode",
+                "elapsed_seconds",
+            )
+        }
 
 
 class ProviderAdapter(Protocol):
@@ -187,8 +206,53 @@ class ProviderConfig:
             raise ValueError("byte budgets must be positive")
 
 
-def _fail(code: str, retryable: bool) -> ProviderResult:
-    return ProviderResult(ok=False, error_code=code, retryable=retryable)
+def _fail(code: str, retryable: bool, **details: Any) -> ProviderResult:
+    details.setdefault("failure_class", "parse" if code == "PROVIDER_INVALID_RESPONSE" else "other")
+    if code == "PROVIDER_INVALID_RESPONSE":
+        details.setdefault("http_status", 200)
+        details.setdefault("error_subcode", "INVALID_RESPONSE")
+    return ProviderResult(ok=False, error_code=code, retryable=retryable, **details)
+
+
+def transport_failure(exc: Exception) -> ProviderResult:
+    """Keep exception identity, never its potentially private message."""
+    import http.client
+
+    from x_insight.reasoning.provider_destination import DestinationDenied, ResolutionFailed
+
+    name = type(exc).__name__
+    details = {"exception_type": name, "http_status": getattr(exc, "http_status", None)}
+    if isinstance(exc, DestinationDenied):
+        return _fail("PROVIDER_DESTINATION_DENIED", False, **details)
+    if isinstance(exc, ResolutionFailed):
+        return _fail("PROVIDER_CONNECTION", True, **details)
+    if isinstance(exc, TimeoutError) or "timeout" in name.lower():
+        return _fail(
+            "PROVIDER_TIMEOUT", True, failure_class="timeout", error_subcode="TIMEOUT", **details
+        )
+    if isinstance(
+        exc,
+        (
+            http.client.RemoteDisconnected,
+            http.client.IncompleteRead,
+            ConnectionResetError,
+            ConnectionAbortedError,
+            BrokenPipeError,
+        ),
+    ):
+        subcode = (
+            "REMOTE_DISCONNECTED"
+            if isinstance(exc, http.client.RemoteDisconnected)
+            else (
+                "INCOMPLETE_READ"
+                if isinstance(exc, http.client.IncompleteRead)
+                else "CONNECTION_CLOSED"
+            )
+        )
+        return _fail(
+            "PROVIDER_TRANSIENT", True, failure_class="disconnect", error_subcode=subcode, **details
+        )
+    return _fail("PROVIDER_TRANSIENT", True, error_subcode="TRANSPORT_ERROR", **details)
 
 
 def _contract_nodes(cpt_contract: Any) -> list[dict[str, Any]] | None:
@@ -786,10 +850,10 @@ class BoundedProviderAdapter:
         except Exception as exc:
             name = type(exc).__name__
             if "Auth" in name:
-                return None, _fail("PROVIDER_AUTH", False)
+                return None, _fail("PROVIDER_AUTH", False, exception_type=name)
             if "Context" in name:
-                return None, _fail("PROVIDER_CONTEXT", False)
-            return None, _fail("PROVIDER_TRANSIENT", True)
+                return None, _fail("PROVIDER_CONTEXT", False, exception_type=name)
+            return None, _fail("PROVIDER_TRANSIENT", True, exception_type=name)
         if not isinstance(output, dict):
             return None, _fail("PROVIDER_TRANSIENT", True)
         return output, None
@@ -814,37 +878,43 @@ class BoundedProviderAdapter:
                 float(self._config.timeout_seconds),
             )
         except Exception as exc:
-            from x_insight.reasoning.provider_destination import DestinationDenied, ResolutionFailed
-
-            if isinstance(exc, DestinationDenied):
-                return None, _fail("PROVIDER_DESTINATION_DENIED", False)
-            if isinstance(exc, ResolutionFailed):
-                return None, _fail("PROVIDER_CONNECTION", True)
-            name = type(exc).__name__.lower()
-            text = str(exc).lower()
-            if "timeout" in name or "timeout" in text or "timed out" in text:
-                return None, _fail("PROVIDER_TIMEOUT", True)
-            return None, _fail("PROVIDER_TRANSIENT", True)
+            return None, transport_failure(exc)
         status = int(getattr(response, "status_code", 0) or 0)
+
+        def http_fail(code: str, retryable: bool) -> ProviderResult:
+            return _fail(
+                code,
+                retryable,
+                failure_class="http_status",
+                http_status=status,
+                error_subcode=f"HTTP_{status}",
+            )
+
         if status == 200:
             try:
                 body = response.json()
-            except Exception:
+            except Exception as exc:
                 raw = getattr(response, "content", b"")
                 size = len(raw) if isinstance(raw, (bytes, bytearray)) else 0
                 logger.warning("Provider response rejected: length=%d envelope_shape=invalid", size)
-                return None, _fail("PROVIDER_INVALID_RESPONSE", True)
+                return None, _fail(
+                    "PROVIDER_INVALID_RESPONSE",
+                    True,
+                    http_status=status,
+                    exception_type=type(exc).__name__,
+                    error_subcode="INVALID_JSON",
+                )
             raw = getattr(response, "content", b"")
             size = len(bytes(raw)) if isinstance(raw, (bytes, bytearray)) else 0
             if size > int(self._config.max_response_bytes):
-                return None, _fail("PROVIDER_BUDGET_EXCEEDED", False)
+                return None, _fail("PROVIDER_BUDGET_EXCEEDED", False, http_status=status)
             return body, None
         if 300 <= status < 400:
-            return None, _fail("PROVIDER_CAPABILITY", False)
+            return None, http_fail("PROVIDER_CAPABILITY", False)
         if status in (401, 403):
-            return None, _fail("PROVIDER_AUTH", False)
+            return None, http_fail("PROVIDER_AUTH", False)
         if status in (404, 422):
-            return None, _fail("PROVIDER_MODEL", False)
+            return None, http_fail("PROVIDER_MODEL", False)
         # Same one-shot format fallback as the capability probe. Not a retry
         # budget: NVIDIA-style endpoints reject json_schema and still return
         # JSON the strict validator accepts.
@@ -857,14 +927,14 @@ class BoundedProviderAdapter:
             stripped = {key: value for key, value in payload.items() if key != "response_format"}
             return self._post_once(stripped, allow_format_retry=False)
         if status == 400:
-            return None, _fail("PROVIDER_CAPABILITY", False)
+            return None, http_fail("PROVIDER_CAPABILITY", False)
         if status == 429:
-            return None, _fail("PROVIDER_RATE_LIMIT", True)
+            return None, http_fail("PROVIDER_RATE_LIMIT", True)
         if 500 <= status <= 599:
-            return None, _fail("PROVIDER_TRANSIENT", True)
+            return None, http_fail("PROVIDER_TRANSIENT", True)
         if 400 <= status < 500:
-            return None, _fail("PROVIDER_CAPABILITY", False)
-        return None, _fail("PROVIDER_TRANSIENT", True)
+            return None, http_fail("PROVIDER_CAPABILITY", False)
+        return None, http_fail("PROVIDER_TRANSIENT", True)
 
     @staticmethod
     def _envelope_message(body: Any) -> tuple[dict[str, Any] | None, str | None]:
@@ -880,6 +950,11 @@ class BoundedProviderAdapter:
         return message, None
 
     def estimate(self, request: ProviderRequest) -> ProviderResult:
+        started = time.monotonic()
+        result = self._estimate(request)
+        return replace(result, elapsed_seconds=max(0.0, time.monotonic() - started))
+
+    def _estimate(self, request: ProviderRequest) -> ProviderResult:
         config = self._config
         if (
             not isinstance(request.prompt_text, str)

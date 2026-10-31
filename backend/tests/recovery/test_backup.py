@@ -1070,7 +1070,7 @@ def test_backup_includes_full_snapshot_networks_and_policies(
     # tables (sessions never), per-file hashes, deployment + runtime.
     assert manifest["schema_version"] == "backup-v1"
     assert manifest["backup_id"] == backup_id
-    assert manifest["app_schema_version"] == "0025"
+    assert manifest["app_schema_version"] == "0026"
     assert set(manifest["inventory"].keys()) == set(EXPECTED_TABLES)
     assert len(manifest["inventory"]) == 32
     assert "sessions" not in manifest["inventory"]

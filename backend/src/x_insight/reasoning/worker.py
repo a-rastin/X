@@ -170,6 +170,7 @@ def run_once(
                 provider_ok=bool(result.ok),
                 provider_payload=dict(result.payload),
                 provider_error=result.error_code,
+                failure_details=result.failure_details(),
                 now=moment,
                 retryable=bool(result.retryable),
                 stage="estimating_cpts",

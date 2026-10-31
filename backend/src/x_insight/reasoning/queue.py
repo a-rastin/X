@@ -24,6 +24,10 @@ commit transaction fences on token + deployment generation.
 from __future__ import annotations
 
 import hashlib
+import json
+import logging
+import math
+import os
 import random
 import secrets
 import uuid
@@ -35,6 +39,8 @@ from sqlalchemy.orm import Session
 
 from x_insight import contracts
 from x_insight.reasoning import tables as reasoning_tables
+
+logger = logging.getLogger(__name__)
 
 HEARTBEAT_INTERVAL_SECONDS = 15
 LEASE_SECONDS = 120
@@ -84,26 +90,37 @@ def is_retryable_error(error_code: str | None) -> bool:
     return str(error_code) not in NON_RETRYABLE_ERROR_CODES
 
 
-def compute_retry_delay(attempt_index: int, retry_after_seconds: float | None = None) -> float:
-    """Exponential backoff + bounded jitter, capped at 60s (shared cap).
-
-    ``attempt_index`` is the just-finished 1-based attempt (1 → ~2s,
-    2 → ~4s). ``retry_after_seconds`` (provider Retry-After when known)
-    raises the delay but never past the cap. Pure function (no sleep).
-    """
+def retry_settings() -> tuple[int, float, float]:
+    """Operator settings, read per enqueue/backoff; existing jobs retain their budget."""
     try:
-        index = max(1, int(attempt_index))
-    except Exception:
-        index = 1
-    delay = RETRY_BASE_DELAY_SECONDS * (2.0 ** (index - 1)) + random.uniform(0.0, 1.0)
-    if retry_after_seconds is not None:
-        try:
-            hint = float(retry_after_seconds)
-        except Exception:
-            hint = 0.0
-        if hint > 0:
-            delay = max(delay, min(hint, RETRY_MAX_DELAY_SECONDS))
-    return min(delay, RETRY_MAX_DELAY_SECONDS)
+        attempts = int(os.getenv("X_INSIGHT_PROVIDER_MAX_ATTEMPTS", str(MAX_ATTEMPTS)))
+        base = float(
+            os.getenv("X_INSIGHT_PROVIDER_RETRY_BASE_SECONDS", str(RETRY_BASE_DELAY_SECONDS))
+        )
+        cap = float(os.getenv("X_INSIGHT_PROVIDER_RETRY_MAX_SECONDS", str(RETRY_MAX_DELAY_SECONDS)))
+        if not (
+            1 <= attempts <= 10
+            and math.isfinite(base)
+            and math.isfinite(cap)
+            and 0 <= base <= cap <= 900
+        ):
+            raise ValueError
+    except (ValueError, OverflowError):
+        raise ValueError(
+            "Provider retry settings require 1..10 attempts and "
+            "finite 0 <= base <= max <= 900 seconds"
+        ) from None
+    return attempts, base, cap
+
+
+def compute_retry_delay(attempt_index: int, retry_after_seconds: float | None = None) -> float:
+    """Exponential backoff with up to 1s jitter; persisted eligibility, no sleep."""
+    _, base, cap = retry_settings()
+    index = min(10, max(1, int(attempt_index)))
+    delay = base * (2.0 ** (index - 1)) + random.uniform(0.0, 1.0)
+    if retry_after_seconds is not None and math.isfinite(retry_after_seconds):
+        delay = max(delay, retry_after_seconds)
+    return min(delay, cap)
 
 
 GENERATION_CLASS = "generation"
@@ -485,7 +502,7 @@ def insert_initial_job(
             job_class=GENERATION_CLASS,
             status=QUEUED,
             attempt_index=0,
-            max_attempts=MAX_ATTEMPTS,
+            max_attempts=retry_settings()[0],
             lease_token=None,
             lease_deadline=None,
             last_heartbeat=None,
@@ -1254,6 +1271,20 @@ def claim_next_job(
     }
 
 
+def attempt_elapsed_seconds(session: Session, job_id: uuid.UUID, lease_token: str) -> float:
+    """Elapsed wall time fallback for failures outside the timed HTTP adapter.
+
+    This deliberately does not change the ledger timestamps (B21).
+    """
+    started = session.execute(
+        select(reasoning_tables.reasoning_job_attempts.c.started_at).where(
+            reasoning_tables.reasoning_job_attempts.c.job_id == job_id,
+            reasoning_tables.reasoning_job_attempts.c.lease_token == lease_token,
+        )
+    ).scalar_one()
+    return max(0.0, (contracts.utcnow() - started).total_seconds())
+
+
 def commit_job_result(
     session: Session,
     job_id: uuid.UUID,
@@ -1266,6 +1297,7 @@ def commit_job_result(
     stage: str = "preparing_question",
     stage_artifact: dict[str, Any] | None = None,
     retry_after_seconds: float | None = None,
+    failure_details: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Commit a provider attempt result with fencing (separate transaction).
 
@@ -1418,7 +1450,24 @@ def commit_job_result(
             updated_at=moment,
         )
     )
-    session.execute(
+    # Accept only the diagnostic scalars defined by the adapter contract.
+    details = {
+        key: (failure_details or {}).get(key)
+        for key in (
+            "failure_class",
+            "http_status",
+            "exception_type",
+            "error_subcode",
+            "elapsed_seconds",
+        )
+    }
+    if details["elapsed_seconds"] is None:
+        details["elapsed_seconds"] = attempt_elapsed_seconds(session, job_id, lease_token)
+    if not provider_ok:
+        details["failure_class"] = details["failure_class"] or (
+            "parse" if provider_error == "PROVIDER_INVALID_RESPONSE" else "other"
+        )
+    updated_attempt = session.execute(
         update(reasoning_tables.reasoning_job_attempts)
         .where(
             reasoning_tables.reasoning_job_attempts.c.job_id == job_id,
@@ -1431,8 +1480,24 @@ def commit_job_result(
             outcome="succeeded" if provider_ok else "failed",
             error_code=None if provider_ok else (provider_error or "PROVIDER_FAILED"),
             result=dict(provider_payload or {}),
+            **details,
         )
-    )
+        .returning(reasoning_tables.reasoning_job_attempts.c.id)
+    ).first()
+    if not provider_ok and updated_attempt is not None:
+        logger.warning(
+            "Provider attempt failed: %s",
+            json.dumps(
+                {
+                    "event": "provider_attempt_failed",
+                    "attempt_id": str(updated_attempt[0]),
+                    "job_id": str(job_id),
+                    "error_code": provider_error or "PROVIDER_FAILED",
+                    **details,
+                },
+                sort_keys=True,
+            ),
+        )
     session.execute(
         update(reasoning_tables.reasoning_grants)
         .where(

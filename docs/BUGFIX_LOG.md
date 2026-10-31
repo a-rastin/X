@@ -1,10 +1,11 @@
 # Bug-fix log
 
 Baseline: `dev` at `c012ad4`; integration branch `bugfix/journey-2026-10`.
-B01 and B26 are tracked separately.
+B01, B02 and B26 are tracked separately.
 
 | Bug | Status | Commit | Tests added | Remaining |
 | --- | --- | --- | --- | --- |
+| B02 | Acceptance passed; commit held because repository gates remain red | uncommitted | 23 regressions: real HTTP failure taxonomy; worker ledger/log/privacy; persisted retry budget; 0025→0026 preservation | 25 assertion failures reproduce on unchanged dev; full-run client-slot exhaustion required a workflow rerun; existing formatting and missing web-unit gate remain red; real streaming unverified |
 | B26 | Implemented; focused acceptance passed; committed at user request with gates incomplete | this commit | Response selection, fenced/prose JSON, strict malformed/empty rejection, and private diagnostics | Full backend suite not rerun: host disk is 99% full; existing formatting and frontend test gates remain red |
 | B01 | Implemented; acceptance passed; committed at user request with gates red | this commit | Timeout default/env/range/settings/history/restore; real 141 s HTTP and worker generation; lease reclamation; Status/settings browser checks | Repository gates remain red; baseline/host failures and unresolved broad-run failures are recorded below |
 
@@ -81,3 +82,119 @@ operator environment, defaults to 300 seconds, and renews the existing lease.
 - Before the fix, the new focused cases produced **5 failed, 7 passed**. Afterward, the response cases and timeout regressions produced **32 passed**. The parser selects nonempty string content first, extracts the last balanced object with strict JSON decoding, and keeps CPT validation. Failures use the existing retryable `PROVIDER_INVALID_RESPONSE`; logs contain length and shape only.
 - Backend Ruff lint, mypy, web build and web TypeScript passed. Repository-wide format check still fails on the unchanged `tests/provider/tls_fixture.py`; `make test-web` reports that no web unit suite exists and exits nonzero. Full backend and browser suites were not rerun: only 281 MB remained on the filesystem, and the previous full-run handoff records a disk-full database failure. The disposable database was not started.
 - Committed on `dev` at the user’s subsequent request despite incomplete pre-commit gates. This work does not establish real-provider success. The branch-consolidation progress edits already present in the working tree were preserved.
+
+
+## B02 failure classification and HTTP status (2026-10-31)
+
+- Scope: only B02, on `fix/B02-provider-failure-details` from `dev` at `00a47b2`
+  (B01 and B26 already integrated). Existing uncommitted progress edits were preserved.
+  The direct B02 request resumes work with the prerequisite fixes present; it does not
+  waive the all-green commit gate. No B05, B21 or B20 work was started.
+- Reproduced before production edits: five new regressions failed. A forced 503 lost
+  its status, a pre-header disconnect lost its exception identity, and a mid-body
+  disconnect was incorrectly treated as malformed JSON.
+- Confirmed root cause: `_post_once` reduced transport exceptions and HTTP responses
+  to `ProviderResult(error_code, retryable)`, whose contract had no diagnostic fields.
+  The coordinator discarded unexpected exception types, and fenced attempt completion
+  had nowhere to store these details or emit structured diagnostics. The bounded
+  `HTTPResponse.read(amt)` also silently returned short Content-Length bodies.
+- The result contract now carries failure class (`timeout`, `disconnect`,
+  `http_status`, `parse`, `other`), received HTTP status, exception type name, sub-code
+  and elapsed seconds. Existing top-level codes remain; a truncated HTTP body now
+  follows the existing `PROVIDER_TRANSIENT` transport path rather than parse failure.
+  Complete invalid responses retain `PROVIDER_INVALID_RESPONSE`. Exception messages,
+  bodies, headers and provider credentials are never copied into diagnostics.
+- Append-only migration **0026**, because B01 already owns 0025, adds nullable fields
+  and finite elapsed/status/class constraints. Schema readiness and backup/restore
+  compatibility advance together. The isolated database test downgrades only the new
+  migration around a seeded attempt, then tests upgrade from 0025 to 0026: original
+  columns are preserved and new diagnostics are null for the historical row.
+- Failed provider results reach the fenced ledger update and one structured
+  `provider_attempt_failed` log with matching fields and opaque job/attempt IDs.
+  Real-worker pre-header disconnect, mid-body disconnect and 503 checks compare the
+  actual ledger and log, reject prompt text/fictional identifier/header/key markers,
+  and verify that no baseline was created. Monotonic elapsed time covers estimation;
+  other completion paths use elapsed wall time from the claim. B21's existing
+  start/finish timestamps are intentionally not changed.
+- Retry settings are documented in `docs/installation.md`, exposed in `.env.example`
+  and forwarded to both production services. Defaults stay at three total attempts,
+  2-second exponential base plus 0–1-second jitter, and a 60-second cap. Bounds are
+  1–10 attempts and finite 0 ≤ base ≤ cap ≤ 900 seconds. One attempt disables
+  automatic retries. New jobs persist their budget; a test changes the environment
+  after enqueue and confirms the original two-attempt budget, two 503 ledger rows,
+  exactly two HTTP calls, and one log per attempt. No nested retry was added.
+- Focused provider/worker run: **111 passed, 4 skipped in 177.98 s**. This includes
+  the new worker, retry-budget and migration checks; skips are B01's separately
+  recorded slow wall-clock cases. Three additional 500/502/429 cases were added
+  afterward and are included in the subsequent full-suite run.
+- Backend lint and mypy (78 modules), frontend build and root TypeScript pass.
+  Formatting still fails only on unchanged `backend/tests/provider/tls_fixture.py`.
+  `make test-web` still exits nonzero because no unit suite exists. Chromium smoke
+  passed; Firefox also passed as the local browser user using its existing cached
+  installation after the initial root/HOME ownership launch failure.
+
+### B02 streaming spike
+
+Command: `cd backend && python -m tests.support.streaming_spike`.
+The small synthetic endpoint delays a buffered response for 400 ms or sends SSE
+heartbeats every 40 ms before completion. Under a 100 ms socket idle deadline,
+buffered mode timed out at **0.100 s**, while streaming completed at **0.406 s**.
+This demonstrates only that regular response bytes avoid a simulated idle timeout;
+it does not reproduce the remote gateway or demonstrate that the model sends early
+chunks. The production transport has an absolute request deadline, which streaming
+must not extend. No provider credential was found in the local environment file. A read-only check
+for a saved admin credential failed with `OperationalError`; availability could
+not be confirmed. No credential value was read and no real-provider call was made.
+Production streaming was deferred because this experiment does not establish a
+benefit for the reported remote disconnect. The spike took minutes, within the
+half-day limit; no dependency was added.
+
+Proposed commit subject (only after the commit gate passes):
+`fix(B02): retain provider failure details on attempts`
+
+Commit body root cause: the adapter collapsed transport exceptions and HTTP status
+into an error-code-only result; the coordinator and attempt schema consequently
+lost failure identity. Bounded reads also hid truncated HTTP bodies as parse errors.
+
+### B02 final regression and handoff
+
+- Complete backend command: `python -m pytest tests -q --tb=short` on Python
+  3.12.14 and the isolated PostgreSQL 16 database: **1,190 passed, 24 failed,
+  4 skipped, 11 setup errors in 2767.47 s (46:07)**. The four skips are the
+  opt-in slow B01 wall-clock cases; their earlier B01 evidence remains above.
+- The 11 setup errors all came from PostgreSQL's 100-client limit at the last
+  workflow module. Session-scoped fixture pools accumulated during the full run.
+  A fresh-process `python -m pytest tests/worker/test_workflows.py -q --tb=short`
+  ran all 11 cases: **10 passed, 1 failed in 163.45 s**. The remaining assertion
+  is `test_required_unknown_stops_progression` (proposal is null). This is a
+  targeted follow-up, not a claim that the single-process full gate passed.
+- The new B02 test module now disposes its imported fixture's idle pool at module
+  teardown, instead of adding retained connections until session exit. The broader
+  existing test-pool accumulation remains outside B02. No production connection
+  settings were changed, and no second 46-minute full run is claimed after this
+  test-only cleanup.
+- Final focused command: `python -m pytest tests/provider/test_failure_details.py
+  tests/provider/test_retry_settings.py tests/worker/test_failure_details.py -q
+  --tb=short`: **23 passed in 41.73 s**, after that cleanup. Every new B02 test also
+  passed in the complete run. The separate broader provider/worker run above was
+  111 passed with 4 skips before the three additional HTTP status cases.
+- All **25 distinct assertion failures** (24 from the full run plus the one from
+  the workflow rerun) were individually selected and reproduced on an untouched
+  archive of `dev` at `00a47b2`, with its own PostgreSQL database and schema 0025.
+  Comparisons: table inventory/draft cases **3 failed**; history invalid-values
+  **1 failed**; empty-history parameters **15 failed**; saved-provider DNS
+  **1 failed**; required-unknown workflow **1 failed**; remaining history choice,
+  Status disk-alert, archive and deactivation cases **4 failed**. This establishes
+  their pre-existing assertion failures; it does not waive their gates or fix them.
+- Backend Ruff lint and mypy (78 source modules), frontend build and root
+  TypeScript, deployment packaging and whitespace checks pass. Repository Ruff
+  formatting still fails on unchanged `tests/provider/tls_fixture.py`.
+  `make test-web` exits nonzero because no web unit suite exists. Existing shell
+  smoke passed in Chromium and Firefox; the complete browser suite was not rerun.
+  B02 has no UI change.
+- No source credential or environment file was changed or staged. Only disposable
+  fictional-data databases were migrated. The test cluster is stopped after the
+  run; no live application database was migrated. Original progress edits remain.
+- **Not committed.** The user's mandatory all-green pre-commit gate is unmet.
+  The B02 acceptance criterion is verified, while the full definition of done
+  remains open on the repository gates above. No next bug was started.

@@ -65,5 +65,5 @@ def test_mid_response_disconnect_is_reproduced(admin_client, clean_registry, mon
             database_url=setup["test_url"],
         )
         result = adapter.estimate(_provider_request(setup, network_hash=network_hash))
-        assert not result.ok and result.error_code == "PROVIDER_INVALID_RESPONSE", result
+        assert not result.ok and result.error_code == "PROVIDER_TRANSIENT", result
         assert result.retryable

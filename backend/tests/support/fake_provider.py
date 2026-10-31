@@ -8,7 +8,15 @@ from types import SimpleNamespace
 
 
 @contextmanager
-def fake_provider(*, cpt, delay=0, status=200, disconnect=False, reasoning_content=False):
+def fake_provider(
+    *,
+    cpt,
+    delay=0,
+    status=200,
+    disconnect=False,
+    reasoning_content=False,
+    disconnect_before_headers=False,
+):
     received = threading.Event()
     stop = threading.Event()
     requests = []
@@ -19,6 +27,9 @@ def fake_provider(*, cpt, delay=0, status=200, disconnect=False, reasoning_conte
             requests.append(json.loads(self.rfile.read(int(self.headers["Content-Length"]))))
             received.set()
             if stop.wait(delay):
+                return
+            if disconnect_before_headers:
+                self.close_connection = True
                 return
             message = {"role": "assistant", "content": json.dumps(cpt)}
             if reasoning_content:

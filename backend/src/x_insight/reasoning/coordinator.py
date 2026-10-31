@@ -55,6 +55,7 @@ Five transparency fields (all from persisted data, never recomputed chart):
 from __future__ import annotations
 
 import html
+import time
 import uuid
 from collections.abc import Mapping, Sequence
 from datetime import datetime
@@ -66,6 +67,7 @@ from sqlalchemy.orm import Session
 
 from x_insight import contracts
 from x_insight import db as db_module
+from x_insight.reasoning import provider as provider_module
 from x_insight.reasoning import queue as queue_module
 from x_insight.reasoning import tables as reasoning_tables
 
@@ -726,6 +728,7 @@ def _commit_failure(
     retryable: bool = False,
     stage: str = "preparing_question",
     stage_artifact: dict[str, Any] | None = None,
+    failure_details: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     from x_insight.operations import audit as audit_module
 
@@ -742,6 +745,7 @@ def _commit_failure(
                 retryable=retryable,
                 stage=stage,
                 stage_artifact=stage_artifact,
+                failure_details=failure_details,
             )
         except contracts.ContractError as exc:
             if exc.code in (
@@ -957,9 +961,13 @@ def execute_claimed_job(
                     "worker_id": worker_id,
                     "batch_id": str(batch.get("id")),
                 }
+            estimation_started = time.monotonic()
             try:
                 estimate = adapter.estimate(request)
-            except Exception:
+            except Exception as exc:
+                failure = provider_module.transport_failure(exc)
+                details = failure.failure_details()
+                details["elapsed_seconds"] = max(0.0, time.monotonic() - estimation_started)
                 return {
                     **_commit_failure(
                         engine,
@@ -969,6 +977,7 @@ def execute_claimed_job(
                         now,
                         retryable=True,
                         stage="estimating_cpts",
+                        failure_details=details,
                     ),
                     "worker_id": worker_id,
                     "batch_id": str(batch.get("id")),
@@ -984,6 +993,7 @@ def execute_claimed_job(
                         now,
                         retryable=bool(getattr(estimate, "retryable", False)),
                         stage="estimating_cpts",
+                        failure_details=estimate.failure_details(),
                     ),
                     "worker_id": worker_id,
                     "batch_id": str(batch.get("id")),
@@ -1367,6 +1377,7 @@ def execute_claimed_job(
             .values(
                 finished_at=now,
                 outcome="succeeded",
+                elapsed_seconds=queue_module.attempt_elapsed_seconds(session, job_id, lease_token),
                 error_code=None,
                 result={
                     "projection_hash": str(run.get("projection_hash", "")),

@@ -1,10 +1,14 @@
 # X-INSIGHT progress tracker
 
+[B02 provider failure details (2026-10-31)](s43.md#follow-up-2026-10-31--b02-provider-failure-details)
+records passing acceptance and baseline comparisons; repository gates remain red, and the user requested a commit.
+
 Start here for recorded progress, then read the relevant session report and its
 handoff, deferred items, and blockers. Reports describe their dated scope;
 older next-session and status statements are historical, not current instructions.
 The [B26 parsing follow-up (2026-10-31)](s43.md#follow-up-2026-10-31--b26-response-parsing) records focused passing tests and incomplete commit gates.
 The [B01 provider-timeout follow-up (2026-10-30)](s43.md#follow-up-2026-10-30--b01-configurable-provider-timeout) records configurable deadlines and lease renewal; acceptance passed; repository gates remain red.
+The [branch consolidation (2026-10-31)](s43.md#follow-up-2026-10-31--consolidate-development-branches) moves B01 into `dev` and removes the two merged local branches; only `main` and `dev` remain locally.
 The [User Guide (2026-10-30)](s62.md#follow-up-2026-10-30--application-user-guide) documents current physician and administrator workflows; documentation links and whitespace checks passed.
 The [registration title and draft context cleanup (2026-10-30)](s07.md#follow-up-2026-10-30--registration-page-title-and-draft-context) updates the first registration step; the frontend build passed.
 The [Medications and proposal header cleanup (2026-10-30)](s20.md#follow-up-2026-10-30--medications-and-proposal-header-cleanup) simplifies the registration title and draft cards; the frontend build passed.
@@ -71,7 +75,7 @@ stops treating `198.18.0.0/15` as a blocked special-use address and colors a
 failed capability diagnostic as an error. The
 [capability-check issue](../issue-provider-capability-check.md) is fixed: Test
 provider uses a synthetic chat/tool exchange, not the private echo. Schema
-head and the fresh-backup expectation are now `0025` (B01 timeout follow-up above), with
+head and the fresh-backup expectation are now `0026` (B02 follow-up above), with
 `provider_settings` in a 32-table inventory. The [S62](s62.md) release gate
 otherwise stays open: not a release, not clinical validation, not high
 availability. tasks.md has no session after S62 and no S63.

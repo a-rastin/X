@@ -70,7 +70,7 @@ TWO_NODE_XML = (
 # archives like sessions); clinical rows are identical to 0017. 0019, 0020,
 # and 0021 are also accepted (a fresh backup reports the current head).
 SUPPORTED_APP_SCHEMAS = frozenset(
-    {"0017", "0018", "0019", "0020", "0021", "0022", "0023", "0024", "0025"}
+    {"0017", "0018", "0019", "0020", "0021", "0022", "0023", "0024", "0025", "0026"}
 )
 
 

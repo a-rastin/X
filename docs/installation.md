@@ -152,7 +152,7 @@ or a model provider. The first rebuild/import may take several minutes; wait for
 the exact immutable release. Existing released datasets are preserved unless the
 bundled version is explicitly configured; see the [bootstrap rules](ddinter-operations.md#fresh-installation-with-the-bundled-approved-release).
 
-Current schema head is `0025`. Setup failure exits before either local server
+Current schema head is `0026`. Setup failure exits before either local server
 starts; correct the reported error and run `make dev` again. `make migrate`
 remains an optional operator tool for setup without launching servers. Plain
 `alembic upgrade head` creates schema without provisioning DDI data; `/ready`
@@ -313,8 +313,30 @@ timeout belongs to its settings revision; queued jobs keep that revision.
 The Status page shows the current effective timeout. Production Compose passes
 the environment setting to both the API and worker; restart both after changing
 the environment. The worker renews its 120-second lease and MCP grant every
-15 seconds while generation runs. Three attempts use separate request deadlines
-and queue backoff; proposal polling continues until a terminal result.
+15 seconds while generation runs. Each attempt has its own request deadline.
+The worker defaults to three total attempts (`X_INSIGHT_PROVIDER_MAX_ATTEMPTS`,
+range 1–10). Production Compose passes retry settings to the API and worker;
+restart both after changing them. Set 1 to disable automatic retries. The attempt budget is saved on
+new jobs; existing jobs retain their budget. Backoff uses
+`X_INSIGHT_PROVIDER_RETRY_BASE_SECONDS=2` times 2 to the power of the completed
+attempt index minus one, plus 0–1 second of jitter, capped by
+`X_INSIGHT_PROVIDER_RETRY_MAX_SECONDS=60`. Both delays must be finite, with
+0 ≤ base ≤ maximum ≤ 900 seconds; the worker reads backoff settings when scheduling
+a retry. Setting both delays to 0 makes retries immediately eligible. Workers
+schedule retries through persisted eligibility times; they do not sleep holding
+a database transaction. Authentication, model and capability failures still fail
+immediately. With three 300-second deadlines, a failing request can consume
+roughly 15 minutes; operators can reduce the budget for slow disconnects.
+
+Failed provider attempts retain the failure class (`timeout`, `disconnect`,
+`http_status`, `parse`, `other`), HTTP status if received, exception type name,
+sub-code and elapsed seconds in the attempt ledger. One structured
+`provider_attempt_failed` log line carries these fields and opaque job/attempt IDs.
+It excludes prompt/response text, headers, credentials and patient data. Existing
+top-level error codes remain in use. Migration 0026 adds nullable fields so older
+attempts remain readable; their missing diagnostics are not reconstructed.
+Elapsed time is measured independently of the ledger's start/finish timestamps;
+those timestamps are tracked separately under B21.
 
 For local development, the startup migration creates
 `backend/.secrets/provider-data.key` automatically when no key file or override
@@ -437,7 +459,7 @@ again. Do not clear a maintenance lock as a generic startup fix.
 | Docker daemon or permission error | Confirm `docker info` succeeds for the installation account before retrying Compose |
 | `make dev` reports an occupied database port | This project's running containers are allowed; stop the unrelated listener or choose free database ports and update both URLs |
 | API/web ports are occupied | Stop the other process or choose available `BACKEND_PORT`/`WEB_PORT` values, then rerun `make dev` |
-| `/health` is 200 but `/ready` is 503 `SCHEMA_INCOMPATIBLE` | Confirm the API uses the startup target database and matching revision. Normal startup applies schema automatically; current expected head is `0025`. Manual migration commands remain optional recovery tools |
+| `/health` is 200 but `/ready` is 503 `SCHEMA_INCOMPATIBLE` | Confirm the API uses the startup target database and matching revision. Normal startup applies schema automatically; current expected head is `0026`. Manual migration commands remain optional recovery tools |
 | Medications shows `DDI dataset is unavailable.` after a fresh installation | Inspect `make dev` setup output or production `logs migrate`, confirm the API uses that database, and correct the reported setup error before restarting. See [DDI bootstrap recovery](ddinter-operations.md#fresh-installation-with-the-bundled-approved-release). An invalid `DDI_DEFAULT_DATASET_VERSION` still fails explicitly |
 | `/ready` reports `DB_UNAVAILABLE` | Check database health and the API process's actual connection configuration; confirm password, hostname, port, and database name |
 | Password changes in `.env` do not fix database login | PostgreSQL initialization variables do not change credentials inside an existing volume; use its existing credentials or a deliberate database password change |
