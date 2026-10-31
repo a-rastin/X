@@ -5,6 +5,7 @@ B01, B02 and B26 are tracked separately.
 
 | Bug | Status | Commit | Tests added | Remaining |
 | --- | --- | --- | --- | --- |
+| B05 | Reproduced; fix not implemented | this commit | Settings model rejects valid capability_mode (failing regression) | Persist and detect mode, honor and expose override, migrate and test; full gates remain open |
 | B02 | Acceptance passed; commit held because repository gates remain red | uncommitted | 23 regressions: real HTTP failure taxonomy; worker ledger/log/privacy; persisted retry budget; 0025→0026 preservation | 25 assertion failures reproduce on unchanged dev; full-run client-slot exhaustion required a workflow rerun; existing formatting and missing web-unit gate remain red; real streaming unverified |
 | B26 | Implemented; focused acceptance passed; committed at user request with gates incomplete | this commit | Response selection, fenced/prose JSON, strict malformed/empty rejection, and private diagnostics | Full backend suite not rerun: host disk is 99% full; existing formatting and frontend test gates remain red |
 | B01 | Implemented; acceptance passed; committed at user request with gates red | this commit | Timeout default/env/range/settings/history/restore; real 141 s HTTP and worker generation; lease reclamation; Status/settings browser checks | Repository gates remain red; baseline/host failures and unresolved broad-run failures are recorded below |
@@ -198,3 +199,19 @@ lost failure identity. Bounded reads also hid truncated HTTP bodies as parse err
 - **Not committed.** The user's mandatory all-green pre-commit gate is unmet.
   The B02 acceptance criterion is verified, while the full definition of done
   remains open on the repository gates above. No next bug was started.
+
+
+## B05 capability mode reproduction (2026-10-31)
+
+- Branch `fix/B05-provider-capability` started from `dev` at `8229cf4`; the
+  worktree was clean. `python3 -m pytest backend/tests/provider/test_capability_mode.py -q`
+  fails because `ProviderSettingsWrite` rejects `capability_mode` as an extra field.
+- Root cause confirmed: the settings schema and revisions have no capability mode;
+  the worker selects it from `X_INSIGHT_PROVIDER_CAPABILITY` and defaults to schema.
+  The existing capability probe checks a generic tool/JSON exchange and does not
+  detect schema support. Production Compose also defaults the variable to schema,
+  which must be considered when making the environment override optional.
+- No production fix, migration, UI change, environment edit, or acceptance run has
+  been made. The next migration is 0027 (0025 and 0026 already exist). The test
+  intentionally remains failing. Existing full-suite and formatting failures are
+  recorded under B02; they are not waived.
