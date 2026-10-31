@@ -1,5 +1,7 @@
 # X-INSIGHT progress tracker
 
+[B20 audit reproduction (2026-10-31)](s43.md#follow-up-2026-10-31--b20-audit-reproduction) confirms missing attempt events and oldest-first pagination; the fix remains open.
+
 [B21 attempt timing (2026-10-31)](s43.md#follow-up-2026-10-31--b21-attempt-timing) fixes completion clock reuse; verification limits and open commit gates are recorded.
 
 [B03 prerequisite check (2026-10-31)](s43.md#follow-up-2026-10-31--b03-prerequisite-check): blocked on B05; no real-provider run was made.

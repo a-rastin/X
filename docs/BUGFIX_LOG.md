@@ -5,6 +5,7 @@ B01, B02 and B26 are tracked separately.
 
 | Bug | Status | Commit | Tests added | Remaining |
 | --- | --- | --- | --- | --- |
+| B20 | Reproduced; fix not implemented | this commit | Three failed worker attempts require three attempt audit events; paginated newest-first order with legacy row | Implement and verify all attempt completion paths, UI acceptance, and full commit gates |
 | B21 | Implemented; 3 timing regressions passed; commit authorized with open gates | this commit | Five-second success/failure UTC spans and coordinator failure timing | Existing format and missing web-unit gates; full backend and bounded HTTP success not verified this session |
 | B03 | Blocked by B05 prerequisite; provider not tested | — | None | Complete and merge B05, supply provider key through environment, then run the real walkthrough and record each attempt |
 | B05 | Reproduced; fix not implemented | this commit | Settings model rejects valid capability_mode (failing regression) | Persist and detect mode, honor and expose override, migrate and test; full gates remain open |
@@ -251,3 +252,9 @@ lost failure identity. Bounded reads also hid truncated HTTP bodies as parse err
 Commit subject: `fix(B21): record actual attempt completion time`.
 Commit body root cause: the worker passed its captured claim time as the completion
 clock, causing both attempt timestamps to be equal despite provider latency.
+
+## B20 audit reproduction (2026-10-31)
+
+- A real worker and synthetic 503 provider produced three failed ledger attempts but zero `generation.attempt.failed` audit events; the new regression failed as expected. The coordinator intentionally records only the final run failure, while queue completion logs each failure without inserting an audit event.
+- A separate HTTP regression with a legacy actor and tied timestamps failed because `list_audit_events` orders `(occurred_at, id)` ascending. It requires newest-first ordering with a deterministic descending ID tie-break across pages and legacy actor fallback.
+- Both reproductions used a new disposable PostgreSQL 16 cluster on port 55441 and Python 3.12.14, with no real provider or patient data. No production code, existing audit data, migration, or environment file was changed. Fix, UI acceptance, full gates, and commit remain outstanding. Success, stale-input, and expired-lease paths also need consideration before claiming one event per attempt.

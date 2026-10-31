@@ -560,6 +560,37 @@ def test_audit_pagination_bounded_and_stable(clean_registry, monkeypatch) -> Non
     assert not (first_ids & second_ids)
 
 
+def test_audit_newest_first_including_legacy_events(clean_registry, monkeypatch) -> None:
+    from datetime import datetime, timedelta, timezone
+    from x_insight.operations import audit
+
+    moment = datetime(2020, 1, 1, tzinfo=timezone.utc)
+    with db_module.session_scope(clean_registry) as session:
+        old = audit.record_audit(
+            session, operation="b20.test", actor="legacy worker", occurred_at=moment
+        )
+        newest = [
+            audit.record_audit(
+                session,
+                operation="b20.test",
+                actor="worker",
+                occurred_at=moment + timedelta(seconds=1),
+            )
+            for _ in range(2)
+        ]
+    admin, _ = _admin_client(clean_registry, monkeypatch)
+    pages = [
+        admin.get(
+            "/api/v1/audit-events", params={"operation": "b20.test", "limit": 2, "offset": offset}
+        ).json()
+        for offset in (0, 2)
+    ]
+    items = pages[0]["items"] + pages[1]["items"]
+    assert [item["id"] for item in items] == sorted(map(str, newest), reverse=True) + [str(old)]
+    assert all(page["total"] == 3 for page in pages)
+    assert items[-1]["actor_display"] == "legacy worker"
+
+
 def test_audit_filters_by_actor_operation_time_target(clean_registry, monkeypatch) -> None:
     """S52 §3: admin filters by actor/operation/time/target through HTTP."""
     _new_physician(clean_registry, monkeypatch, "dr_s52_filter")

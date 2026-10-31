@@ -135,6 +135,60 @@ def test_retry_budget_is_persisted_and_each_failure_is_logged(clean_registry, mo
     }
 
 
+def test_three_failed_attempts_have_audit_events(clean_registry, monkeypatch):
+    monkeypatch.setenv("X_INSIGHT_PROVIDER_MAX_ATTEMPTS", "3")
+    monkeypatch.setenv("X_INSIGHT_PROVIDER_RETRY_BASE_SECONDS", "0")
+    monkeypatch.setenv("X_INSIGHT_PROVIDER_RETRY_MAX_SECONDS", "0")
+    _, _, _, _, package, started = _new_physician_batch(
+        clean_registry, monkeypatch, "dr_b20", "9000000022"
+    )
+    with fake_provider(cpt=valid_cpt(package["manifest"]["network_hash"]), status=503) as endpoint:
+        adapter = provider.BoundedProviderAdapter(
+            provider.ProviderConfig(
+                endpoint_url=endpoint.url, model="test", local_endpoint_approved=True
+            ),
+            database_url=db.get_test_database_url(),
+        )
+        assert [worker.run_once(clean_registry, adapter)["status"] for _ in range(3)] == [
+            "queued",
+            "queued",
+            "failed",
+        ]
+    with clean_registry.connect() as connection:
+        attempts = (
+            connection.execute(
+                text(
+                    "SELECT a.* FROM reasoning_job_attempts a JOIN reasoning_jobs j ON j.id=a.job_id "
+                    "WHERE j.batch_id=:batch ORDER BY a.attempt_index"
+                ),
+                {"batch": started["batch"]["id"]},
+            )
+            .mappings()
+            .all()
+        )
+        events = (
+            connection.execute(
+                text(
+                    "SELECT operation, details FROM audit_events WHERE details->>'batch_id'=:batch "
+                    "AND operation LIKE 'generation.%'"
+                ),
+                {"batch": started["batch"]["id"]},
+            )
+            .mappings()
+            .all()
+        )
+    attempt_events = [
+        event for event in events if event["operation"] == "generation.attempt.failed"
+    ]
+    assert len(attempt_events) == 3
+    assert len([event for event in events if event["operation"] == "generation.run.failed"]) == 1
+    by_index = {event["details"]["attempt_index"]: event["details"] for event in attempt_events}
+    for attempt in attempts:
+        details = by_index[attempt["attempt_index"]]
+        assert details["failure_class"] == attempt["failure_class"]
+        assert details["elapsed_seconds"] == attempt["elapsed_seconds"]
+
+
 def test_0025_to_0026_preserves_existing_attempt(clean_registry, monkeypatch):
     """Round-trip only the new migration in the isolated test DB, retaining a row."""
     from alembic import command
