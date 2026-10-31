@@ -1,5 +1,7 @@
 # X-INSIGHT progress tracker
 
+[Provider branch consolidation (2026-10-31)](s43.md#follow-up-2026-10-31--consolidate-provider-fix-branches) preserves both fix branch tips on `dev`; only `main` and `dev` remain locally.
+
 [B02 provider failure details (2026-10-31)](s43.md#follow-up-2026-10-31--b02-provider-failure-details)
 records passing acceptance and baseline comparisons; repository gates remain red, and the user requested a commit.
 
