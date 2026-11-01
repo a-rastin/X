@@ -1,0 +1,53 @@
+# Issue 18 — Generation failure audit visibility
+
+Date: 2026-11-01  
+Status: **Historical audit defects fixed in current source; current end-to-end and deployed acceptance not verified.** Analysis only; no application code changed.
+
+## Finding
+
+The historical problem was real and reproduced: a worker making three synthetic failing attempts produced three attempt-ledger failures but **no per-attempt audit events**; the audit query also sorted oldest first. The existing final run event therefore could not explain each retry, and recent information appeared behind older pages. The historical reproduction and fix are documented in [B20](../docs/BUGFIX_LOG.md#b20-audit-reproduction-2026-10-31). The B20 fix is in commit `84d2d7d`, an ancestor of the current checkout. **Do not implement the requested audit changes a second time.**
+
+The particular tester's actual generation error and the version running during their test are **unknown**. No incident-specific database records, worker deployment, provider request, or production data were inspected. The history establishes the old audit-visibility defect, not the underlying cause of that generation failure or proof that the deployed app includes the fix.
+
+The problem statement's “oldest first” describes the old behavior, despite appearing under “How it should be.” The explicit steps and acceptance require **newest first**; this report follows those. A single newest-first list includes both attempts and the final event, so the final event ordinarily appears above the attempts. Equal timestamps use the descending event ID as a deterministic tie-break, not a promise of causal order.
+
+## Current behavior and evidence
+
+### Audit events
+
+- A claimed job gets a numbered attempt ledger record; retries use the existing bounded budget ([queue.py:1173–1215](../backend/src/x_insight/reasoning/queue.py#L1173)). Guarded completion writes `generation.attempt.success` or `generation.attempt.failed` with safe identifiers and diagnostics, including attempt number, error classification and elapsed time when available ([queue.py:1278–1345](../backend/src/x_insight/reasoning/queue.py#L1278)). Normal, coordinator and exceptional completion paths reuse the audit mechanism ([queue.py:1433–1454](../backend/src/x_insight/reasoning/queue.py#L1433), [queue.py:1519–1556](../backend/src/x_insight/reasoning/queue.py#L1519), [coordinator.py:1287–1310](../backend/src/x_insight/reasoning/coordinator.py#L1287), [coordinator.py:1375–1400](../backend/src/x_insight/reasoning/coordinator.py#L1375)). Audit insertion and the guarded ledger transition are in the same caller-owned transaction; the audit helper flushes but does not commit ([audit.py:85–121](../backend/src/x_insight/operations/audit.py#L85)). Existing run-level events remain separate.
+- The existing [three-failure worker test](../backend/tests/worker/test_failure_details.py#L138) checks three failed attempt events and one final run-failure event with a synthetic provider. The [rollback test](../backend/tests/worker/test_queue.py#L797) covers atomicity. These are existing tests, not runs performed during this analysis. The B20 handoff reports 34 focused tests passed, plus focused bounded-success and pagination/legacy tests; it also records missing coordinator-stale and concurrent re-lease coverage and an unsuccessful full-suite run ([B20 fix](../docs/BUGFIX_LOG.md#b20-audit-fix-2026-10-31)). Later baseline results are not a full acceptance gate.
+- Elapsed time means the job attempt's claim-to-completion span, not necessarily one provider HTTP call. Stale or expired-lease terminal paths do not currently populate elapsed duration in all cases ([queue.py:783–843](../backend/src/x_insight/reasoning/queue.py#L783), [queue.py:1433–1454](../backend/src/x_insight/reasoning/queue.py#L1433)). Cancellation can leave a leased attempt in `started` state without a terminal event ([queue.py:315–393](../backend/src/x_insight/reasoning/queue.py#L315)). These are **separate edge cases**, not proof that the specified three ordinary failures fail acceptance; do not expand scope without a reproduced acceptance failure or an explicit requirement covering them.
+
+### Ordering and old data
+
+- The server applies filters and orders by `occurred_at DESC, id DESC` **before** limit and offset ([audit.py:139–185](../backend/src/x_insight/operations/audit.py#L139)). The UI displays the response order and paginates it ([AuditPage.tsx:257–276](../web/src/features/admin/audit/AuditPage.tsx#L257), [AuditPage.tsx:505–555](../web/src/features/admin/audit/AuditPage.tsx#L505)). Existing [HTTP tests](../backend/tests/http/test_audit.py#L542) cover ordering, bounded pagination, equal timestamps and legacy actor rendering.
+- The backend supplies legacy `actor` as the display fallback and the UI also falls back to `actor` ([audit.py:237–264](../backend/src/x_insight/operations/audit.py#L237), [AuditPage.tsx:185–187](../web/src/features/admin/audit/AuditPage.tsx#L185)). Stored historical events were not modified or backfilled. Old runs can render their existing run events; they cannot show attempt events that were never recorded.
+- Offset pagination is deterministic for an unchanged dataset, but a new event inserted ahead of the current offset between page requests can cause repeats or omissions. Snapshot-stable browsing is not part of the stated acceptance; do not add cursor pagination for this issue.
+
+### Why Status can say “No active alerts”
+
+Status is a separate operational snapshot, not a projection of every failed audit event. Its four alert conditions are old queued work, stale leased-job heartbeat, repeated provider authentication failures, and high disk use ([status.py:285–325](../backend/src/x_insight/operations/status.py#L285)). A total failure caused by a different error can therefore legitimately return no active alerts; the UI renders that empty result ([StatusPage.tsx:233–258](../web/src/features/admin/status/StatusPage.tsx#L233)). This explains **how** the symptom can occur, not what happened in the tester's specific incident. The acceptance specifies audit visibility, not a new alert rule, threshold, or clearance policy. Changing Status to alert on all failed runs is a separate product decision and would not follow automatically from the requested audit fix.
+
+## Minimal implementation and verification plan
+
+1. **Verify before changing anything.** Check the deployed API and worker version and whether they include `84d2d7d`, using the normal authorized process. Inspect only existing safe diagnostics for a recent fresh run: run/job identity, attempt number, safe error class, timing and resulting audit events. Distinguish old records from fresh events; do not assume deployment matches this checkout. If unavailable, record the blocker rather than claiming success or a cause.
+2. **Run the existing focused backend checks on a disposable isolated PostgreSQL database**, never a real application database: `backend/tests/worker/test_failure_details.py`, `backend/tests/worker/test_queue.py`, and `backend/tests/http/test_audit.py`. The database fixture migrates/truncates its target. Confirm the existing three-failure test actually asserts each attempt's number, safe error class and elapsed value as well as exactly three attempt failures and one run failure for the same run; add only missing assertions to that existing test if needed. Verify ordering and legacy compatibility through the existing HTTP tests. Record commands and actual results; past B20 passes are not a new run.
+3. **Prove the full acceptance path with fresh synthetic data:** exercise an admin audit view backed by the real test API/database, using a fake provider with three failures. Check the four events belonging to that run, their diagnostic fields and newest-first order; include an old-format run event in the same view and confirm it renders. Extend the existing [audit browser spec](../e2e/audit.spec.ts) only if the real-endpoint journey does not already prove this. B20's controlled-response Chromium check establishes rendering but not real-server ordering; its Firefox attempt timed out. Do not call that proof end-to-end.
+4. **Only if a focused check or authorized fresh reproduction fails**, trace the failing completion path and callers. Make the smallest correction in the existing guarded transition/audit helper, server query or UI fallback as applicable; keep event insertion atomic and preserve current authorization, safe field allowlisting and tie-break. Add a targeted regression at the existing test location, then rerun affected checks. No application change is justified solely by this analysis.
+5. Report actual results, remaining gaps and any deployment mismatch. A worker rollout, incident investigation, or additional Status policy requires appropriate authorization; this plan does not execute any of them.
+
+## Complete change boundary for the implementation agent
+
+| Area | Allowed change, only if verification shows it is needed |
+| --- | --- |
+| Attempt event emission | `backend/src/x_insight/reasoning/queue.py` and, only for a separately proven coordinator path, `coordinator.py`; reuse existing helper and caller transaction. |
+| Audit list / legacy display | `backend/src/x_insight/operations/audit.py`, and `web/src/features/admin/audit/AuditPage.tsx` or its existing API types only if a reproducible query or rendering defect requires it. |
+| Acceptance tests | Extend the existing worker failure, queue, HTTP audit and/or `e2e/audit.spec.ts` tests minimally to cover a missing assertion or proven failing path; prefer a real test API for the browser ordering check. |
+| Handoff | Update this issue and the relevant progress report/index with actual verification and any changes. |
+
+**Do not change** audit schema or stored legacy rows, backfill old attempts, add dependencies, redesign pagination, change retry budgets or provider behavior, expose raw provider responses/credentials/patient data/lease tokens, weaken authorization or lease fencing, or alter unrelated UI. Do not add a Status alert or broaden cancellation/exception semantics without separately agreed requirements. If the current code and focused end-to-end acceptance pass, the correct implementation diff is **no application-code changes**.
+
+## Verification performed for this report
+
+Source, existing tests, B20 history and commit ancestry were inspected. **No tests were run** for this analysis; no deployment, production database or live provider was inspected. Current acceptance, the incident's underlying provider or generation error, and the deployed version remain unverified.

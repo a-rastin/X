@@ -1,5 +1,7 @@
 # X-INSIGHT progress tracker
 
+[Issue 18 audit analysis (2026-11-01)](s43.md#follow-up-2026-11-01--issue-18-audit-analysis): prior fix exists; current acceptance and deployment remain to be verified.
+
 [Issue 17 isolated timing verification (2026-11-01)](s43.md#follow-up-2026-11-01--issue-17-isolated-timing-verification): focused regression passed; incident cause and deployment acceptance remain unknown.
 
 [Issue 16 provider walkthrough analysis (2026-11-01)](s43.md#follow-up-2026-11-01--issue-16-walkthrough-analysis): root cause unconfirmed; live run blocked by missing environment-supplied NVIDIA credential.

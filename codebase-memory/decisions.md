@@ -25,6 +25,7 @@ captures what a future task needs before it re-derives the same conclusions.
 ## Reasoning pipeline (`context/mcp.md`, `docs/proposal-generation.md`)
 
 - **Attempt timing is claim-to-completion, not provider HTTP latency.** The previous worker reused the claim clock at completion, causing zero spans; B21 changed normal completion to resolve UTC after work while preserving explicit deterministic test clocks. See [B21 evidence](../docs/BUGFIX_LOG.md#b21-attempt-timing-2026-10-31) and [issue 17](../issues/issue-17.md). Deployment and current test results require separate verification.
+- **Audit and Status answer different questions.** B20 added transactional per-attempt audit events and newest-first listing without backfilling historical rows; Status alerts only on specific operational conditions, not every failed run. See [issue 18](../issues/issue-18.md); verify source and deployment before relying on either.
 
 - **One private stdio MCP tool, one scoped grant.** `get_question_patient_inputs` returns only the
   current question's saved projection; a worker-owned subprocess per read, no public MCP port and
