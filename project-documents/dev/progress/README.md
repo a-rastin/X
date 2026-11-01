@@ -1,5 +1,9 @@
 # X-INSIGHT progress tracker
 
+[Capability UI clarification (2026-11-01)](s43.md#follow-up-2026-11-01--capability-ui-clarification-and-focused-checks): mocked browser, TypeScript and selected DB-free checks pass; deployment acceptance and review remain open.
+
+[Issue 15 capability analysis (2026-11-01)](s43.md#follow-up-2026-11-01--issue-15-capability-analysis): B05 is already implemented; local override and end-to-end acceptance need verification.
+
 [Development commit handoff (2026-11-01)](s43.md#follow-up-2026-11-01--commit-current-development-changes): current changes committed on request; full acceptance and review remain open.
 
 [Agent worktree branch cleanup (2026-10-31)](s43.md#follow-up-2026-10-31--preserve-agent-worktree-during-branch-cleanup): only `main` and `dev` remain; a detached worktree preserves differing uncommitted files.
