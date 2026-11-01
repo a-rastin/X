@@ -415,12 +415,10 @@ def resolve_production_provider(
     with db_module.session_scope(engine) as session:
         loaded = provider_config.open_runtime(session, pinned)
         timeout = provider_config.runtime_timeout(session, pinned)
+        capability = provider_config.runtime_capability_mode(session, pinned)
     if isinstance(loaded, str):
         return UnconfiguredProvider(loaded)
     endpoint, model, api_key = loaded
-    capability = (os.environ.get(PROVIDER_CAPABILITY_ENV_VAR) or "schema").strip() or "schema"
-    if capability not in ("schema", "json"):
-        capability = "schema"
     return provider_module.BoundedProviderAdapter(
         provider_module.ProviderConfig(
             endpoint_url=endpoint,
@@ -441,7 +439,9 @@ def build_adapter_from_env() -> provider_module.ProviderAdapter:
     model = (os.environ.get(PROVIDER_MODEL_ENV_VAR) or "").strip()
     if not endpoint or not model:
         return UnconfiguredProvider()
-    capability = (os.environ.get(PROVIDER_CAPABILITY_ENV_VAR) or "schema").strip() or "schema"
+    from x_insight.reasoning.provider_config import effective_capability_mode
+
+    capability, _ = effective_capability_mode("schema")
     return provider_module.BoundedProviderAdapter(
         provider_module.ProviderConfig(endpoint_url=endpoint, model=model, capability=capability)
     )

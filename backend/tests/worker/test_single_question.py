@@ -188,7 +188,7 @@ def valid_cpt(network_hash: str) -> dict[str, Any]:
     }
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="module")
 def migrated_test_engine():
     from alembic import command
     from alembic.config import Config
@@ -376,6 +376,18 @@ def test_end_to_end_success_exact_posteriors(clean_registry, monkeypatch) -> Non
 
     outcome = _run_bounded_once(clean_registry, valid_cpt(network_hash))
     assert outcome["status"] == "succeeded", outcome
+    from x_insight.operations import audit
+
+    with db_module.session_scope(clean_registry) as session:
+        attempt_events = audit.list_audit_events(
+            session, operation="generation.attempt.success", batch_id=batch_id
+        )
+        run_events = audit.list_audit_events(
+            session, operation="generation.run.success", batch_id=batch_id
+        )
+    assert len(attempt_events) == len(run_events) == 1
+    assert attempt_events[0]["details"]["attempt_index"] == 1
+    assert attempt_events[0]["details"]["error_code"] is None
 
     body = client.get(f"/api/v1/generation-batches/{batch_id}").json()
     assert body["job"]["status"] == "succeeded", body["job"]

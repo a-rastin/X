@@ -36,7 +36,7 @@ from x_insight.app import app
 from x_insight.identity import service
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="module")
 def migrated_test_engine():
     from alembic import command
     from alembic.config import Config
@@ -166,11 +166,13 @@ def _get_status(client) -> dict[str, Any]:
     return response.json()
 
 
-def test_ops_status_healthy_shape_without_secrets(ops_client) -> None:
+def test_ops_status_healthy_shape_without_secrets(ops_client, monkeypatch) -> None:
     """S58 §3: fresh database exposes safe metrics with no alerts and no leakage."""
     from x_insight.models import inference as inference_module
     from x_insight.reasoning import queue as queue_module
 
+    healthy_disk = shutil.disk_usage(".")._replace(total=10000, used=1000, free=9000)
+    monkeypatch.setattr(shutil, "disk_usage", lambda _path: healthy_disk)
     body = _get_status(ops_client["client"])
     assert body["service"] == "x-insight"
     assert body["checked_at"]

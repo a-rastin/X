@@ -32,7 +32,7 @@ from x_insight.identity import passwords, service
 from x_insight.identity.service import SESSION_COOKIE_NAME
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="module")
 def migrated_test_engine():
     from alembic import command
     from alembic.config import Config

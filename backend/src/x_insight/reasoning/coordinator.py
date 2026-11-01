@@ -755,10 +755,8 @@ def _commit_failure(
             ):
                 return {"status": "fencing_failed", "job_id": str(job_id), "code": exc.code}
             raise
-        # S52: terminal original-run failures audit accurate failure
-        # metadata in the same transaction (no false success: success rows
-        # are only written on the baseline path). Retryable intermediates
-        # that requeue stay in the attempt ledger, not audit.
+        # Keep the terminal run event in addition to the per-attempt event
+        # written by commit_job_result in this transaction.
         if str(committed.get("status")) == queue_module.FAILED:
             job_row = dict(committed)
             batch_id = job_row.get("batch_id")
@@ -1295,15 +1293,21 @@ def execute_claimed_job(
                 .where(reasoning_tables.reasoning_jobs.c.id == job_id)
                 .values(lease_token=None, status=queue_module.CANCELLED, updated_at=now)
             )
-            session.execute(
-                update(reasoning_tables.reasoning_job_attempts)
-                .where(
-                    reasoning_tables.reasoning_job_attempts.c.job_id == job_id,
-                    reasoning_tables.reasoning_job_attempts.c.lease_token == lease_token,
-                    reasoning_tables.reasoning_job_attempts.c.outcome == "started",
+            attempt = (
+                session.execute(
+                    update(reasoning_tables.reasoning_job_attempts)
+                    .where(
+                        reasoning_tables.reasoning_job_attempts.c.job_id == job_id,
+                        reasoning_tables.reasoning_job_attempts.c.lease_token == lease_token,
+                        reasoning_tables.reasoning_job_attempts.c.outcome == "started",
+                    )
+                    .values(finished_at=now, outcome="failed", error_code="STALE_INPUT")
+                    .returning(reasoning_tables.reasoning_job_attempts)
                 )
-                .values(finished_at=now, outcome="failed", error_code="STALE_INPUT")
+                .mappings()
+                .first()
             )
+            queue_module.audit_generation_attempt(session, current, attempt)
             session.execute(
                 update(reasoning_tables.reasoning_grants)
                 .where(
@@ -1368,26 +1372,32 @@ def execute_claimed_job(
                 updated_at=now,
             )
         )
-        session.execute(
-            update(reasoning_tables.reasoning_job_attempts)
-            .where(
-                reasoning_tables.reasoning_job_attempts.c.job_id == job_id,
-                reasoning_tables.reasoning_job_attempts.c.lease_token == lease_token,
-                reasoning_tables.reasoning_job_attempts.c.outcome == "started",
+        attempt = (
+            session.execute(
+                update(reasoning_tables.reasoning_job_attempts)
+                .where(
+                    reasoning_tables.reasoning_job_attempts.c.job_id == job_id,
+                    reasoning_tables.reasoning_job_attempts.c.lease_token == lease_token,
+                    reasoning_tables.reasoning_job_attempts.c.outcome == "started",
+                )
+                .values(
+                    finished_at=now,
+                    outcome="succeeded",
+                    elapsed_seconds=queue_module.attempt_elapsed_seconds(
+                        session, job_id, lease_token, now
+                    ),
+                    error_code=None,
+                    result={
+                        "projection_hash": str(run.get("projection_hash", "")),
+                        "effective_hash": str(effective_hash),
+                    },
+                )
+                .returning(reasoning_tables.reasoning_job_attempts)
             )
-            .values(
-                finished_at=now,
-                outcome="succeeded",
-                elapsed_seconds=queue_module.attempt_elapsed_seconds(
-                    session, job_id, lease_token, now
-                ),
-                error_code=None,
-                result={
-                    "projection_hash": str(run.get("projection_hash", "")),
-                    "effective_hash": str(effective_hash),
-                },
-            )
+            .mappings()
+            .first()
         )
+        queue_module.audit_generation_attempt(session, current, attempt)
         session.execute(
             update(reasoning_tables.reasoning_grants)
             .where(

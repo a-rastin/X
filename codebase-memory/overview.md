@@ -18,7 +18,7 @@ Self-hosted, English desktop UI, one admin + a small physician team sharing a pa
   hand-rolled hash router in `web/src/app/router.ts`.
 - **DB**: PostgreSQL 16 (roles `x_insight_app` / `x_insight_migrate` / `x_insight_readonly`),
   Alembic migrations, SQLAlchemy Core DML. Schema head pinned as
-  `db.EXPECTED_SCHEMA_VERSION = "0024"`.
+  `db.EXPECTED_SCHEMA_VERSION = "0028"` in the current working tree.
 - **Commands**: all in `Makefile` — `make dev`, `make check`, `make test-backend`,
   `make test-e2e`, `make test-recovery`, `make verify`, `make prod-up`.
 

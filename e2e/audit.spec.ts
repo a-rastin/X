@@ -24,7 +24,7 @@ import {
  * patientId/encounterId/questionRunId/batchId/questionKey) mounted via
  * `#/audit` + `AuditRoutePage` guard (complement to server 403).
  *
- * Constraints: real endpoints only, no route mocks, no worker in e2e —
+ * S52 tests use real endpoints, no route mocks and no worker in e2e —
  * every row/detail/filter/page comes from `GET /audit-events` in the
  * shared dev DB. Fresh physician/patient creates via T1 give deterministic
  * target-filter proof without depending on exact dev-DB totals. No DB-row
@@ -100,6 +100,30 @@ async function gotoAuditViaNav(
     timeout: 15000,
   });
 }
+
+// B20 UI contract: the browser preserves server order and renders legacy actors.
+// The audit response is controlled here; backend ordering is tested against PostgreSQL.
+test("B20 displays newest-first audit rows and legacy actor", async ({ page }) => {
+  await loginAdmin(page);
+  const events = [
+    { id: "00000000-0000-0000-0000-000000000002", occurred_at: "2024-01-02T00:00:00Z", actor: "worker", actor_display: "worker", operation: "generation.attempt.failed" },
+    { id: "00000000-0000-0000-0000-000000000001", occurred_at: "2024-01-01T00:00:00Z", actor: "legacy worker", actor_display: null, operation: "generation.run.failed" },
+  ].map((event) => ({ ...event, actor_id: null, request_id: null, details: {}, payload_hash: "test" }));
+  await page.route("**/api/v1/audit-events**", async (route) => {
+    await route.fulfill({ json: { items: events, total: 2, limit: 25, offset: 0 } });
+  });
+  await gotoAuditViaNav(page);
+  const rows = page.getByTestId("audit-table").locator("tbody tr");
+  await expect(rows).toHaveCount(2);
+  await expect(rows.nth(0)).toContainText("2024-01-02T00:00:00Z");
+  await expect(rows.nth(0)).toContainText("generation.attempt.failed");
+  await expect(rows.nth(1)).toContainText("2024-01-01T00:00:00Z");
+  await expect(rows.nth(1)).toContainText("legacy worker");
+  await expect(rows.nth(1)).toContainText("generation.run.failed");
+  await rows.nth(1).getByRole("button", { name: /View detail/ }).click();
+  await expect(page.getByTestId("audit-detail")).toContainText("legacy worker");
+  await page.screenshot({ path: test.info().outputPath("audit.png"), fullPage: true });
+});
 
 // S52 §4: admin login → Audit nav → table with stable pager status.
 test("S52 §4 admin audit path loads table with stable pager status", async ({

@@ -337,7 +337,7 @@ def _publish_limited(engine: Any, tmp_path: Path) -> dict[str, Any]:
     return publish.publish_release(staging, manifest, engine)
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="module")
 def migrated_test_engine():
     from alembic import command
     from alembic.config import Config
@@ -865,13 +865,14 @@ def test_false_gate_skips_without_provider_call(clean_registry, monkeypatch) -> 
     _assert_posteriors_exact(final["baselines"][2]["baseline"])
 
 
-def test_required_unknown_stops_progression(clean_registry, monkeypatch) -> None:
+def test_required_unknown_allows_progression(clean_registry, monkeypatch, tmp_path) -> None:
     """Issue-04: missing synthetic context estimates with disclosed uncertainty.
 
     Omitted inputs no longer block successors; conflicting answers still do
     (see ``test_conflict_still_blocks_successors``). Missing allows all three
     questions to stay eligible with complete estimation.
     """
+    _publish_limited(clean_registry, tmp_path)
     _, _, client, csrf = _new_physician(clean_registry, monkeypatch, "dr_s46_clar")
     encounter_id = _create_patient(client, csrf, "0012345678")
     values = {

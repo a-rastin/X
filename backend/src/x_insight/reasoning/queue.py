@@ -788,41 +788,45 @@ def reclaim_expired_leases(session: Session, now: datetime | None = None) -> int
     rows are never touched. Returns the reclaimed count.
     """
     moment = now or contracts.utcnow()
-    expired_ids = [
-        row[0]
-        for row in session.execute(
-            select(reasoning_tables.reasoning_jobs.c.id).where(
+    # Lock the job before inspecting its token or touching its attempt/grant.
+    # PostgreSQL rechecks the expiry predicate if a concurrent heartbeat commits
+    # while this SELECT waits for the row lock.
+    jobs = (
+        session.execute(
+            select(reasoning_tables.reasoning_jobs)
+            .where(
                 reasoning_tables.reasoning_jobs.c.status == LEASED,
                 reasoning_tables.reasoning_jobs.c.lease_deadline < moment,
             )
-        ).all()
-    ]
+            .order_by(reasoning_tables.reasoning_jobs.c.id)
+            .with_for_update()
+        )
+        .mappings()
+        .all()
+    )
+    expired_ids = [job["id"] for job in jobs]
     if not expired_ids:
         return 0
-    for job_id in expired_ids:
-        job = (
-            session.execute(
-                select(reasoning_tables.reasoning_jobs).where(
-                    reasoning_tables.reasoning_jobs.c.id == job_id
-                )
-            )
-            .mappings()
-            .first()
-        )
-        if job is None:
-            continue
+    for job in jobs:
         job_dict = dict(job)
+        job_id = job_dict["id"]
         token = job_dict.get("lease_token")
         if isinstance(token, str) and token:
-            session.execute(
-                update(reasoning_tables.reasoning_job_attempts)
-                .where(
-                    reasoning_tables.reasoning_job_attempts.c.job_id == job_id,
-                    reasoning_tables.reasoning_job_attempts.c.lease_token == token,
-                    reasoning_tables.reasoning_job_attempts.c.outcome == "started",
+            attempt = (
+                session.execute(
+                    update(reasoning_tables.reasoning_job_attempts)
+                    .where(
+                        reasoning_tables.reasoning_job_attempts.c.job_id == job_id,
+                        reasoning_tables.reasoning_job_attempts.c.lease_token == token,
+                        reasoning_tables.reasoning_job_attempts.c.outcome == "started",
+                    )
+                    .values(finished_at=moment, outcome="failed", error_code="LEASE_EXPIRED")
+                    .returning(reasoning_tables.reasoning_job_attempts)
                 )
-                .values(finished_at=moment, outcome="failed", error_code="LEASE_EXPIRED")
+                .mappings()
+                .first()
             )
+            audit_generation_attempt(session, job_dict, attempt)
     session.execute(
         update(reasoning_tables.reasoning_jobs)
         .where(reasoning_tables.reasoning_jobs.c.id.in_(expired_ids))
@@ -1284,6 +1288,63 @@ def attempt_elapsed_seconds(
     return max(0.0, ((finished_at or contracts.utcnow()) - started).total_seconds())
 
 
+def audit_generation_attempt(session: Session, job: dict[str, Any], attempt: Any) -> None:
+    """Record a completed generation attempt in its caller's transaction."""
+    if attempt is None or str(job.get("job_class")) != GENERATION_CLASS:
+        return
+    from x_insight.operations import audit
+
+    row = dict(attempt)
+    batch = (
+        session.execute(
+            select(reasoning_tables.generation_batches).where(
+                reasoning_tables.generation_batches.c.id == job["batch_id"]
+            )
+        )
+        .mappings()
+        .first()
+    )
+    run = (
+        session.execute(
+            select(reasoning_tables.question_runs).where(
+                reasoning_tables.question_runs.c.id == job["question_run_id"]
+            )
+        )
+        .mappings()
+        .first()
+    )
+    batch_dict = dict(batch) if batch else {}
+    run_dict = dict(run) if run else {}
+    audit.record_audit(
+        session,
+        operation="generation.attempt.success"
+        if row["outcome"] == "succeeded"
+        else "generation.attempt.failed",
+        actor="worker",
+        request_id=str(job["id"]),
+        occurred_at=row["finished_at"],
+        details={
+            "patient_id": _audit_patient_id(session, batch_dict),
+            "encounter_id": str(batch_dict["encounter_id"])
+            if batch_dict.get("encounter_id")
+            else None,
+            "batch_id": str(job["batch_id"]),
+            "question_run_id": str(job["question_run_id"]),
+            "question_key": str(run_dict.get("question_key", "")),
+            "job_id": str(job["id"]),
+            "attempt_id": str(row["id"]),
+            "attempt_index": row["attempt_index"],
+            "stage": row["stage"],
+            "error_code": row["error_code"],
+            "failure_class": row["failure_class"],
+            "http_status": row["http_status"],
+            "exception_type": row["exception_type"],
+            "error_subcode": row["error_subcode"],
+            "elapsed_seconds": row["elapsed_seconds"],
+        },
+    )
+
+
 def commit_job_result(
     session: Session,
     job_id: uuid.UUID,
@@ -1376,15 +1437,21 @@ def commit_job_result(
             .where(reasoning_tables.reasoning_jobs.c.id == job_id)
             .values(lease_token=None, status=CANCELLED, updated_at=moment)
         )
-        session.execute(
-            update(reasoning_tables.reasoning_job_attempts)
-            .where(
-                reasoning_tables.reasoning_job_attempts.c.job_id == job_id,
-                reasoning_tables.reasoning_job_attempts.c.lease_token == lease_token,
-                reasoning_tables.reasoning_job_attempts.c.outcome == "started",
+        attempt = (
+            session.execute(
+                update(reasoning_tables.reasoning_job_attempts)
+                .where(
+                    reasoning_tables.reasoning_job_attempts.c.job_id == job_id,
+                    reasoning_tables.reasoning_job_attempts.c.lease_token == lease_token,
+                    reasoning_tables.reasoning_job_attempts.c.outcome == "started",
+                )
+                .values(finished_at=moment, outcome="failed", error_code="STALE_INPUT")
+                .returning(reasoning_tables.reasoning_job_attempts)
             )
-            .values(finished_at=moment, outcome="failed", error_code="STALE_INPUT")
+            .mappings()
+            .first()
         )
+        audit_generation_attempt(session, job, attempt)
         session.execute(
             update(reasoning_tables.reasoning_grants)
             .where(
@@ -1465,30 +1532,35 @@ def commit_job_result(
         details["failure_class"] = details["failure_class"] or (
             "parse" if provider_error == "PROVIDER_INVALID_RESPONSE" else "other"
         )
-    updated_attempt = session.execute(
-        update(reasoning_tables.reasoning_job_attempts)
-        .where(
-            reasoning_tables.reasoning_job_attempts.c.job_id == job_id,
-            reasoning_tables.reasoning_job_attempts.c.lease_token == lease_token,
-            reasoning_tables.reasoning_job_attempts.c.outcome == "started",
+    updated_attempt = (
+        session.execute(
+            update(reasoning_tables.reasoning_job_attempts)
+            .where(
+                reasoning_tables.reasoning_job_attempts.c.job_id == job_id,
+                reasoning_tables.reasoning_job_attempts.c.lease_token == lease_token,
+                reasoning_tables.reasoning_job_attempts.c.outcome == "started",
+            )
+            .values(
+                finished_at=moment,
+                stage=stage,
+                outcome="succeeded" if provider_ok else "failed",
+                error_code=None if provider_ok else (provider_error or "PROVIDER_FAILED"),
+                result=dict(provider_payload or {}),
+                **details,
+            )
+            .returning(reasoning_tables.reasoning_job_attempts)
         )
-        .values(
-            finished_at=moment,
-            stage=stage,
-            outcome="succeeded" if provider_ok else "failed",
-            error_code=None if provider_ok else (provider_error or "PROVIDER_FAILED"),
-            result=dict(provider_payload or {}),
-            **details,
-        )
-        .returning(reasoning_tables.reasoning_job_attempts.c.id)
-    ).first()
+        .mappings()
+        .first()
+    )
+    audit_generation_attempt(session, job, updated_attempt)
     if not provider_ok and updated_attempt is not None:
         logger.warning(
             "Provider attempt failed: %s",
             json.dumps(
                 {
                     "event": "provider_attempt_failed",
-                    "attempt_id": str(updated_attempt[0]),
+                    "attempt_id": str(updated_attempt["id"]),
                     "job_id": str(job_id),
                     "error_code": provider_error or "PROVIDER_FAILED",
                     **details,

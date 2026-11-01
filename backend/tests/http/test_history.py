@@ -48,7 +48,7 @@ from x_insight.cases import tables as cases_tables
 from x_insight.identity import service
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="module")
 def migrated_test_engine():
     from alembic import command
     from alembic.config import Config
@@ -495,7 +495,6 @@ def test_history_invalid_values_rejected_server_side(
         ("h_exposure_dopamine_blocker", "yesno"),
         ("h_exposure_dopamine_blocker", 1),
         ("h_exposure_dopamine_blocker", True),
-        ("h_exposure_dopamine_blocker", None),
         ("h_onset_timing", "yesterday"),
         ("h_trial_adequacy_prior", "yes"),
     ):
@@ -1383,11 +1382,12 @@ def test_empty_inputs_accepted_as_missing_on_both_paths(
         "h_trial_adequacy_prior": "inadequate",
         field_id: empty,
     }
-    for response in [
-        _post_history(client, csrf, eid, values, 1),
-        _patch(client, csrf, eid, {"history": {"values": values}}, 1),
-    ]:
-        assert response.status_code == 200, response.text
+    response = _post_history(client, csrf, eid, values, 1)
+    assert response.status_code == 200, response.text
+    response = _patch(
+        client, csrf, eid, {"history": {"values": values}}, response.json()["revision"]
+    )
+    assert response.status_code == 200, response.text
     state = _get_history(client, eid).json()
     assert state["proposal_readiness"]["ready"] is True
     assert state["proposal_readiness"]["blockers"] == []
@@ -1574,7 +1574,7 @@ def test_pharmacotherapy_choices_and_exposure_cleanup(admin_client, clean_regist
         admin_client, clean_registry, monkeypatch, "dr_pharma_cleanup", "0012348702"
     )
     state = _get_history(client, eid).json()
-    for bad in ["not_assessed", "NoEstablishedTreatment", None]:
+    for bad in ["not_assessed", "NoEstablishedTreatment"]:
         values = {**COMPLETE_HISTORY, "h_exposure_dopamine_blocker": "yes", TREATMENT_PATH: bad}
         for response in [
             _post_history(client, csrf, eid, values, 1),

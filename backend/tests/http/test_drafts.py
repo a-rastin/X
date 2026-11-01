@@ -33,6 +33,7 @@ from fastapi.testclient import TestClient
 from sqlalchemy import text
 
 from tests.assessments.test_cssrs import _all_unknown
+from tests.support.history_defaults import FRESH_HISTORY
 from x_insight import contracts
 from x_insight import db as db_module
 from x_insight.app import app
@@ -40,7 +41,7 @@ from x_insight.cases import encounters as encounters_service
 from x_insight.identity import service
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="module")
 def migrated_test_engine():
     from alembic import command
     from alembic.config import Config
@@ -485,7 +486,7 @@ def test_concurrent_creates_allow_one_draft_only(admin_client, clean_registry, m
         thread.join(timeout=30)
     assert sorted(outcomes) == [201] + [409] * 6, outcomes
     # Losers get the generic conflict with no content/author oracle; the one
-    # winner sees only its own fresh body (S14: empty history shell with
+    # winner sees only its own fresh body (unknown history defaults with
     # not_required reconciliation, empty PANSS, unknown C-SSRS).
     for status, body in bodies:
         if status == 409:
@@ -494,7 +495,8 @@ def test_concurrent_creates_allow_one_draft_only(admin_client, clean_registry, m
             assert "author_id" not in body
         else:
             fresh = json.loads(body)["draft_data"]
-            assert fresh["history"]["values"] == {}
+            assert fresh["history"]["values"] == FRESH_HISTORY
+            assert fresh["history"]["provenance"] == {}
             assert fresh["history"]["reconciliation"]["status"] == "not_required"
             assert fresh["panss"] == {"answers": {}}
             assert fresh["cssrs"] == {"answers": _all_unknown()}
@@ -569,10 +571,11 @@ def test_discard_requires_confirmation_and_current_revision(
     )
     assert freed.status_code == 201, freed.text
     assert freed.json()["encounter"]["id"] != encounter_id
-    # S14: a fresh follow-up starts with an empty history shell (not_required),
-    # empty PANSS, and unknown C-SSRS — fresh, never another draft's content.
+    # A fresh follow-up returns unknown history defaults (not_required), empty
+    # PANSS, and unknown C-SSRS — never another draft's content.
     fresh = freed.json()["draft_data"]
-    assert fresh["history"]["values"] == {}
+    assert fresh["history"]["values"] == FRESH_HISTORY
+    assert fresh["history"]["provenance"] == {}
     assert fresh["history"]["reconciliation"]["status"] == "not_required"
     assert fresh["panss"] == {"answers": {}}
     assert fresh["cssrs"] == {"answers": _all_unknown()}

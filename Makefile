@@ -32,7 +32,7 @@ help:
 	@echo "make migrate      # apply schema + bundled approved DDI data (DATABASE_URL or .env)"
 	@echo "make check        # formatting/lint/types/build, excluding network access"
 	@echo "make test-backend # backend tests (TEST=tests/http/test_health.py for a selector)"
-	@echo "make test-web     # web unit tests (no suite yet in S01)"
+	@echo "make test-web     # web unit tests"
 	@echo "make test-e2e     # browser smoke (TEST=e2e/smoke.spec.ts for a selector)"
 	@echo "make test-recovery # recovery drill (pytest tests/recovery)"
 	@echo "make test-load    # load check (no suite yet in S01)"
@@ -111,8 +111,7 @@ else
 endif
 
 test-web:
-	@echo "test-web: no web unit suite yet (S01 smoke is e2e/smoke.spec.ts via 'make test-e2e')." >&2
-	@exit 1
+	npm --prefix web run test-web
 
 test-e2e:
 ifdef TEST

@@ -1,7 +1,7 @@
 # backend/src/x_insight/operations/restore.py
 
-Source SHA-256: 62d100f2c35fe60857619de700f77d11bf44d6d85ccdaf6c8b4b0ea067a587ec
-Source commit: bad418cecdf013317df56751fec2c4a0158b305d
+Source SHA-256: f24379632df730317c4b1b90186a55f2a6df4dda5eeb05f39877e35902de04fc
+Source: working tree (includes uncommitted changes)
 
 ## Purpose
 Staged restore: inspect an uploaded backup without touching live state, gate the destructive
@@ -27,8 +27,8 @@ rollback.
 ## Behavior and Constraints
 - The maintenance lock is a **filesystem file independent of either database**; the API
   middleware 503s non-restore writes and the worker returns `maintenance` while it is held.
-- Supported application schema versions span `0017`…`0024`; inspection runs under the
-  SELECT-only role.
+- Supported application schema versions span `0017`…`0028`. Provider-mode and detection
+  fields are validated against the archive version; old rows restore with safe defaults.
 - `RESTORE_COMMIT_FAIL_AT` injects `before_switch` / `during_restart` / `health_check` faults
   for rehearsals.
 

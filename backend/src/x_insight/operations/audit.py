@@ -142,7 +142,7 @@ def list_audit_events(
     id in ``details``). Target filters match the ``details`` JSONB keys the
     command paths store (``patient_id``/``encounter_id``/``question_run_id``/
     ``batch_id``/``question_key``); events without that key simply do not
-    match. Stable order is (``occurred_at``, ``id``).
+    match. Stable newest-first order is (``occurred_at DESC``, ``id DESC``).
     """
     from sqlalchemy import and_, or_
 
@@ -178,7 +178,7 @@ def list_audit_events(
     if clauses:
         query = query.where(and_(*clauses))
     rows = session.execute(
-        query.order_by(audit_events.c.occurred_at, audit_events.c.id)
+        query.order_by(audit_events.c.occurred_at.desc(), audit_events.c.id.desc())
         .limit(resolved_limit)
         .offset(resolved_offset)
     )

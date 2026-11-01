@@ -1,7 +1,7 @@
 # backend/src/x_insight/reasoning/provider_config.py
 
-Source SHA-256: feda632eae3d071d7827350f3b47c62b9c9d1bd9b94b137290123d201c301361
-Source commit: bad418cecdf013317df56751fec2c4a0158b305d
+Source SHA-256: 8bad78141d828bce72347608e8277c923e56b858d821fa681a1c9d3119385a09
+Source: working tree (includes uncommitted B05 changes)
 
 ## Purpose
 Admin provider settings: encrypted API-key revisions, a masked HTTP API, and capability
@@ -21,7 +21,11 @@ diagnostics. Mounted at `/api/v1/api-settings*` under the `/api/v1` prefix.
 - Replacing or clearing the key **cancels active generation jobs**; the environment endpoint is
   only a fallback for jobs queued before any settings existed and sends no bearer token.
 - Later questions in a batch reuse the revision the batch pinned, so an "unchanged" save that
-  changes the URL cannot hijack running work.
+  changes the URL cannot hijack running work. A valid `X_INSIGHT_PROVIDER_CAPABILITY` overrides
+  the revision's saved mode; otherwise the pinned mode is used.
+- A capability test appends a revision and accepts an optional `If-Match` fence. Its stored
+  status covers the generic tool probe; the separately detected mode is nullable and persists
+  on the tested revision. A later save starts untested with no detection.
 - The AES-GCM deployment key lives outside the database (`provider_key.py`), optionally at
   `X_INSIGHT_PROVIDER_DATA_KEY_FILE`; it is excluded from backups and must be escrowed to keep
   encrypted settings recoverable.

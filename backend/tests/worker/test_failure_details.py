@@ -158,7 +158,8 @@ def test_three_failed_attempts_have_audit_events(clean_registry, monkeypatch):
         attempts = (
             connection.execute(
                 text(
-                    "SELECT a.* FROM reasoning_job_attempts a JOIN reasoning_jobs j ON j.id=a.job_id "
+                    "SELECT a.* FROM reasoning_job_attempts a "
+                    "JOIN reasoning_jobs j ON j.id=a.job_id "
                     "WHERE j.batch_id=:batch ORDER BY a.attempt_index"
                 ),
                 {"batch": started["batch"]["id"]},

@@ -198,7 +198,7 @@ retain their released dataset; see the [bootstrap rules](docs/ddinter-operations
 | `TEST_DATABASE_URL` | Separate disposable database for backend/recovery tests |
 | `DB_PORT`, `TEST_DB_PORT` | Host ports for local database containers |
 | `X_INSIGHT_PROVIDER_ENDPOINT`, `X_INSIGHT_PROVIDER_MODEL` | Keyless fallback when a job has no saved settings revision; endpoint is the full provider POST URL |
-| `X_INSIGHT_PROVIDER_CAPABILITY` | Response mode for generation: `schema` or `json`; defaults to `schema`. A `response_format` rejection is retried once without it |
+| `X_INSIGHT_PROVIDER_CAPABILITY` | Optional deployment override (`schema` or `json`) of the saved provider mode. Leave blank to use saved settings; the keyless fallback defaults to `schema` |
 | `X_INSIGHT_PROVIDER_DATA_KEY` | Optional existing deployment AES-GCM key override, base64 encoding of exactly 32 bytes; excluded from backups. Preserve the matching key to recover encrypted credentials |
 | `X_INSIGHT_PROVIDER_DATA_KEY_FILE` | Optional protected key-file path; local default is `backend/.secrets/provider-data.key`. Normal startup creates a random key once if none exists |
 | `X_INSIGHT_PROVIDER_ALLOWED_HOSTS` | Optional comma-separated exact-host restriction for saved providers. Unset/blank allows eligible public HTTPS destinations; a nonempty list restricts them |

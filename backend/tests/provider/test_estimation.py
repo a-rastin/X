@@ -49,7 +49,7 @@ def destination_policy_environment(monkeypatch):
     monkeypatch.delenv("X_INSIGHT_PROVIDER_ALLOWED_HOSTS", raising=False)
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="module")
 def migrated_test_engine():
     from alembic import command
     from alembic.config import Config

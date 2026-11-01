@@ -112,7 +112,7 @@ def _reviewed_for_staging(staging: Path, included: list[str]) -> list[dict]:
     return reviewed
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="module")
 def migrated_test_engine():
     from alembic import command
     from alembic.config import Config

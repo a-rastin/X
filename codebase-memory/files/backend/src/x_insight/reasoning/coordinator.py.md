@@ -1,7 +1,6 @@
 # backend/src/x_insight/reasoning/coordinator.py
 
-Source SHA-256: 2e90c88794068b945626a8c280aa99634a1a19af91645de4179e46fcaa4fef6b
-Source commit: bad418cecdf013317df56751fec2c4a0158b305d
+Source SHA-256: d571e624bee7c79796c8e69cc766e9759823d035d622001a9cdec0f63d4b087a
 
 ## Purpose
 Executes one claimed job end to end: package validation → provider estimation → CPT
@@ -21,7 +20,8 @@ success transaction.
 - `recompute_pinned_ddi()` — recomputes from the frozen medication fingerprint and pinned
   dataset version, never from the live chart.
 - `build_transparency()` — the five transparency fields, all read from persisted rows.
-- `_commit_failure()` — records stage + resume artifact; audits only terminal failures.
+- `_commit_failure()` records stage and resume artifacts through the queue, which audits
+  each completed attempt; the coordinator also retains the terminal run failure event.
 - Three-level recovery: job retry, stage resume (`s47_validated`, `s47_inference`), and
   carried baselines under a matching fingerprint or per-question projection.
 

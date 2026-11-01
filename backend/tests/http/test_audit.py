@@ -197,7 +197,7 @@ def _valid_cpt(network_hash: str = NETWORK_HASH) -> dict[str, Any]:
     }
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="module")
 def migrated_test_engine():
     from alembic import command
     from alembic.config import Config
@@ -541,7 +541,12 @@ def test_audit_has_no_write_interface(clean_registry, monkeypatch) -> None:
 
 def test_audit_pagination_bounded_and_stable(clean_registry, monkeypatch) -> None:
     """S52 §3: default 25 / max 100 bounds with stable (occurred_at, id) order."""
+    from x_insight.operations import audit
+
     admin, _ = _admin_client(clean_registry, monkeypatch)
+    with db_module.session_scope(clean_registry) as session:
+        for _ in range(3):
+            audit.record_audit(session, operation="pagination.fixture", actor="worker")
     bad = admin.get("/api/v1/audit-events", params={"limit": 101})
     assert bad.status_code == 422, bad.text
     bad_zero = admin.get("/api/v1/audit-events", params={"limit": 0})
@@ -551,7 +556,7 @@ def test_audit_pagination_bounded_and_stable(clean_registry, monkeypatch) -> Non
     assert first["limit"] == 2 and first["offset"] == 0
     assert len(first["items"]) <= 2
     keys = [(item["occurred_at"], item["id"]) for item in first["items"]]
-    assert keys == sorted(keys)
+    assert keys == sorted(keys, reverse=True)
 
     second = admin.get("/api/v1/audit-events", params={"limit": 2, "offset": 2}).json()
     assert second["offset"] == 2
@@ -561,10 +566,11 @@ def test_audit_pagination_bounded_and_stable(clean_registry, monkeypatch) -> Non
 
 
 def test_audit_newest_first_including_legacy_events(clean_registry, monkeypatch) -> None:
-    from datetime import datetime, timedelta, timezone
+    from datetime import UTC, datetime, timedelta
+
     from x_insight.operations import audit
 
-    moment = datetime(2020, 1, 1, tzinfo=timezone.utc)
+    moment = datetime(2020, 1, 1, tzinfo=UTC)
     with db_module.session_scope(clean_registry) as session:
         old = audit.record_audit(
             session, operation="b20.test", actor="legacy worker", occurred_at=moment

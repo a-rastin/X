@@ -1075,9 +1075,9 @@
         "backend",
         "config"
       ],
-      "purpose": "Engine lifecycle, schema pin (0024), transaction scope, readiness, and the committing route class.",
+      "purpose": "Engine lifecycle, schema pin (0028), transaction scope, readiness, and the committing route class.",
       "summary": "files/backend/src/x_insight/db.py.md",
-      "source_sha256": "a52fa827083e67d148ef90e89a580026fd22627997b5284a504366359c5936cb"
+      "source_sha256": "3b47fdd94c5ba2ee1ad802a010022b074cde4d8a21060a135acde10c2a5519f4"
     },
     {
       "path": "backend/src/x_insight/ddi/__init__.py",
@@ -1367,7 +1367,7 @@
       ],
       "purpose": "Append-only canonical-hashed audit trail that commits with the caller's mutation.",
       "summary": "files/backend/src/x_insight/operations/audit.py.md",
-      "source_sha256": "9df4a364f6e605bc4757961b42102185d80f27916c9f09aa00e17dc58ea18d0f"
+      "source_sha256": "eaf2acde9fa18b37bf1f7b51ca5d24a543f9cf491c17c76ce2d081c550b997f2"
     },
     {
       "path": "backend/src/x_insight/operations/backup.py",
@@ -1407,7 +1407,7 @@
       ],
       "purpose": "Staged restore: validation, confirmation digest, maintenance lock, phased commit with rollback.",
       "summary": "files/backend/src/x_insight/operations/restore.py.md",
-      "source_sha256": "62d100f2c35fe60857619de700f77d11bf44d6d85ccdaf6c8b4b0ea067a587ec"
+      "source_sha256": "f24379632df730317c4b1b90186a55f2a6df4dda5eeb05f39877e35902de04fc"
     },
     {
       "path": "backend/src/x_insight/operations/router.py",
@@ -1507,7 +1507,7 @@
       ],
       "purpose": "End-to-end execution of one claimed generation job through validation, inference and rendering.",
       "summary": "files/backend/src/x_insight/reasoning/coordinator.py.md",
-      "source_sha256": "2e90c88794068b945626a8c280aa99634a1a19af91645de4179e46fcaa4fef6b"
+      "source_sha256": "d571e624bee7c79796c8e69cc766e9759823d035d622001a9cdec0f63d4b087a"
     },
     {
       "path": "backend/src/x_insight/reasoning/history_gates.py",
@@ -1547,7 +1547,7 @@
       ],
       "purpose": "Encrypted provider settings revisions, masked admin API, capability diagnostics.",
       "summary": "files/backend/src/x_insight/reasoning/provider_config.py.md",
-      "source_sha256": "feda632eae3d071d7827350f3b47c62b9c9d1bd9b94b137290123d201c301361"
+      "source_sha256": "8bad78141d828bce72347608e8277c923e56b858d821fa681a1c9d3119385a09"
     },
     {
       "path": "backend/src/x_insight/reasoning/provider_destination.py",
@@ -1577,7 +1577,7 @@
       ],
       "purpose": "Queue mechanics: admission, durable leases, fairness, retry/backoff, MCP grants, fencing.",
       "summary": "files/backend/src/x_insight/reasoning/queue.py.md",
-      "source_sha256": "6052dafe3aa23588a41019407fdae029a451a45bc39072875c4e087674008469"
+      "source_sha256": "f87152865acb8deb3c1852d50202d47557395e650c3e3ed542559a83dabb129d"
     },
     {
       "path": "backend/src/x_insight/reasoning/readiness.py",
@@ -5393,7 +5393,7 @@
         "project-docs",
         "progress"
       ],
-      "purpose": "Progress index and current handoff \u2014 read this first per AGENTS.md.",
+      "purpose": "Progress index and current handoff — read this first per AGENTS.md.",
       "summary": null,
       "source_sha256": null
     },

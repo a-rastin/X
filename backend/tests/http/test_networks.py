@@ -58,7 +58,7 @@ APPROVED_REVIEW = {"reviewer": "owner", "decision": "approved", "date": "2026-10
 DRAFT_REVIEW = {"reviewer": "", "decision": "draft", "date": ""}
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="module")
 def migrated_test_engine():
     from alembic import command
     from alembic.config import Config

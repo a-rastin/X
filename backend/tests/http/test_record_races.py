@@ -42,6 +42,7 @@ import pytest
 from fastapi.testclient import TestClient
 from sqlalchemy import text
 
+from tests.support.history_defaults import FRESH_HISTORY
 from x_insight import contracts
 from x_insight import db as db_module
 from x_insight.app import app
@@ -199,7 +200,7 @@ def _valid_cpt(network_hash: str = NETWORK_HASH) -> dict[str, Any]:
     }
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="module")
 def migrated_test_engine():
     from alembic import command
     from alembic.config import Config
@@ -431,7 +432,7 @@ def test_archive_unarchive_admin_only_no_deletion_retained_readonly(
     # Retained draft stays private read-only: author GET allowed, others 403, chart shared.
     author_read = client.get(f"/api/v1/encounters/{encounter_id}")
     assert author_read.status_code == 200, author_read.text
-    assert author_read.json()["draft_data"]["history"]["values"] == {"h_a": "yes"}
+    assert author_read.json()["draft_data"]["history"]["values"] == {**FRESH_HISTORY, "h_a": "yes"}
     stranger_read = other.get(f"/api/v1/encounters/{encounter_id}")
     assert stranger_read.status_code == 403, stranger_read.text
     assert "h_a" not in stranger_read.text
@@ -462,7 +463,7 @@ def test_archive_unarchive_admin_only_no_deletion_retained_readonly(
         headers={**_auth_headers(csrf), "If-Match": contracts.format_etag(2)},
     )
     assert resumed.status_code == 200, resumed.text
-    assert resumed.json()["draft_data"]["history"]["values"] == {"h_a": "no"}
+    assert resumed.json()["draft_data"]["history"]["values"] == {**FRESH_HISTORY, "h_a": "no"}
 
 
 # --- S51 §1 helpers: DDI limited release + bounded pipeline (worked 80/20) ---
@@ -1147,7 +1148,7 @@ def test_deactivation_retain_keeps_slot_fences_jobs_reactivation_resumes(
     fresh_client, fresh_csrf = _login_physician(clean_registry, monkeypatch, "dr_s51_retain")
     resumed = fresh_client.get(f"/api/v1/encounters/{encounter_id}")
     assert resumed.status_code == 200, resumed.text
-    assert resumed.json()["draft_data"]["history"]["values"] == {"h_a": "yes"}
+    assert resumed.json()["draft_data"]["history"]["values"] == {**FRESH_HISTORY, "h_a": "yes"}
     # Author can save again after reactivation (slot retained, revision preserved).
     reread_rev = int(resumed.json()["revision"])
     saved_again = fresh_client.patch(

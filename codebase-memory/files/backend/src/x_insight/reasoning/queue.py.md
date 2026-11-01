@@ -1,7 +1,6 @@
 # backend/src/x_insight/reasoning/queue.py
 
-Source SHA-256: 6052dafe3aa23588a41019407fdae029a451a45bc39072875c4e087674008469
-Source commit: bad418cecdf013317df56751fec2c4a0158b305d
+Source SHA-256: f87152865acb8deb3c1852d50202d47557395e650c3e3ed542559a83dabb129d
 
 ## Purpose
 All queue mechanics for generation work: global admission, durable leases, fairness, attempt
@@ -31,8 +30,11 @@ ledger, retry/backoff, MCP grants and fencing. No CPT logic lives here.
   (`reasoning_fairness`), with `SKIP LOCKED` for rival workers.
 - The batch's provider settings revision is pinned once (`_pinned_provider_revision`), so a
   later settings save cannot hijack running jobs.
-- Hypothesis (no production caller found): `heartbeat_job` is exercised only by tests, so a
-  long single attempt can outlive the lease and be reclaimed.
+- Completed generation attempts emit `generation.attempt.success` or `.failed` in the
+  completion transaction, including stale cancellation and lease reclaim. Coordinator
+  completion uses the same audit helper; local calculations retain their separate events.
+- Reclaim locks expired job rows before touching attempt/grant state; a concurrent committed
+  heartbeat is rechecked against the expiry predicate when the row lock is acquired.
 
 ## Related Files
 - `backend/src/x_insight/reasoning/worker.py`, `coordinator.py`, `tables.py`.

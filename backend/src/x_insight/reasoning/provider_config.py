@@ -12,6 +12,7 @@ logged, audited, or returned.
 from __future__ import annotations
 
 import hmac as hmac_module
+import logging
 import os
 import uuid
 from typing import Any, Literal
@@ -54,6 +55,19 @@ CAPABILITY_VERIFIED = "verified"
 CAPABILITY_FAILED = "failed"
 _NONCE_BYTES = 12
 _ACTIONS = frozenset({"unchanged", "replace", "clear"})
+CAPABILITY_OVERRIDE_ENV = "X_INSIGHT_PROVIDER_CAPABILITY"
+logger = logging.getLogger(__name__)
+
+
+def effective_capability_mode(saved: str) -> tuple[str, bool]:
+    override = os.environ.get(CAPABILITY_OVERRIDE_ENV, "").strip()
+    if override in ("schema", "json"):
+        logger.warning("Provider capability mode explicitly overridden to %s", override)
+        return override, True
+    if override:
+        logger.warning("Ignoring invalid provider capability mode override")
+    return saved, False
+
 
 metadata = MetaData()
 
@@ -70,6 +84,8 @@ provider_settings = Table(
     Column("key_nonce", LargeBinary, nullable=True),
     Column("key_ciphertext", LargeBinary, nullable=True),
     Column("capability_status", Text, nullable=False),
+    Column("capability_mode", Text, nullable=False, server_default="schema"),
+    Column("detected_capability_mode", Text, nullable=True),
     Column("created_at", DateTime(timezone=True), nullable=False),
     Column("created_by", Text, nullable=False),
 )
@@ -89,6 +105,7 @@ class ProviderSettingsWrite(BaseModel):
     local_endpoint_approved: bool = Field(default=False, strict=True)
     trusted_proxy_approved: bool = Field(default=False, strict=True)
     secret_action: Literal["unchanged", "replace", "clear"] | None = None
+    capability_mode: Literal["schema", "json"] | None = None
 
 
 class CapabilityTestRequest(BaseModel):
@@ -192,8 +209,15 @@ def _masked(
     local_endpoint_approved: bool = False,
     trusted_proxy_approved: bool = False,
     timeout_seconds: float | None = None,
+    capability_mode: str = "schema",
+    detected_capability_mode: str | None = None,
 ) -> dict[str, Any]:
+    effective_mode, override_active = effective_capability_mode(capability_mode)
     return {
+        "capability_mode": capability_mode,
+        "detected_capability_mode": detected_capability_mode,
+        "effective_capability_mode": effective_mode,
+        "capability_override_active": override_active,
         "revision": revision,
         "api_key": KEY_STATUS_CONFIGURED if has_key else KEY_STATUS_ABSENT,
         "base_url": base_url,
@@ -220,6 +244,7 @@ def _latest_stored(session: Session) -> dict[str, Any] | None:
                 provider_settings.c.base_url,
                 provider_settings.c.model,
                 provider_settings.c.timeout_seconds,
+                provider_settings.c.capability_mode,
                 provider_settings.c.local_endpoint_approved,
                 provider_settings.c.trusted_proxy_approved,
                 provider_settings.c.key_nonce,
@@ -242,9 +267,11 @@ def read_latest(session: Session) -> dict[str, Any] | None:
                 provider_settings.c.base_url,
                 provider_settings.c.model,
                 provider_settings.c.timeout_seconds,
+                provider_settings.c.capability_mode,
                 provider_settings.c.local_endpoint_approved,
                 provider_settings.c.trusted_proxy_approved,
                 provider_settings.c.capability_status,
+                provider_settings.c.detected_capability_mode,
                 provider_settings.c.key_ciphertext.is_not(None).label("has_key"),
             )
             .order_by(provider_settings.c.revision.desc())
@@ -264,6 +291,8 @@ def read_latest(session: Session) -> dict[str, Any] | None:
         local_endpoint_approved=bool(row["local_endpoint_approved"]),
         trusted_proxy_approved=bool(row["trusted_proxy_approved"]),
         timeout_seconds=row["timeout_seconds"],
+        capability_mode=row["capability_mode"],
+        detected_capability_mode=row["detected_capability_mode"],
     )
 
 
@@ -276,9 +305,11 @@ def read_revision(session: Session, revision: int) -> dict[str, Any] | None:
                 provider_settings.c.base_url,
                 provider_settings.c.model,
                 provider_settings.c.timeout_seconds,
+                provider_settings.c.capability_mode,
                 provider_settings.c.local_endpoint_approved,
                 provider_settings.c.trusted_proxy_approved,
                 provider_settings.c.capability_status,
+                provider_settings.c.detected_capability_mode,
                 provider_settings.c.key_ciphertext.is_not(None).label("has_key"),
             ).where(provider_settings.c.revision == revision)
         )
@@ -296,6 +327,8 @@ def read_revision(session: Session, revision: int) -> dict[str, Any] | None:
         local_endpoint_approved=bool(row["local_endpoint_approved"]),
         trusted_proxy_approved=bool(row["trusted_proxy_approved"]),
         timeout_seconds=row["timeout_seconds"],
+        capability_mode=row["capability_mode"],
+        detected_capability_mode=row["detected_capability_mode"],
     )
 
 
@@ -352,12 +385,16 @@ def save_settings(
     local_endpoint_approved: bool = False,
     trusted_proxy_approved: bool = False,
     timeout_seconds: float | None = None,
+    capability_mode: str | None = None,
 ) -> dict[str, Any]:
     """Insert the next revision. Plaintext is sealed only on replace."""
     base_url = _require_allowed_destination(
         base_url, local_endpoint_approved, trusted_proxy_approved
     )
     latest = _latest_stored(session)
+    capability_mode = capability_mode or (latest["capability_mode"] if latest else "schema")
+    if capability_mode not in ("schema", "json"):
+        raise contracts.ContractError(422, "VALIDATION_FAILED", "Invalid capability mode.")
     current = int(latest["revision"]) if latest is not None else None
     if if_match is not None and if_match != current:
         raise contracts.ContractError(
@@ -390,6 +427,7 @@ def save_settings(
             key_nonce=nonce,
             key_ciphertext=ciphertext,
             capability_status=CAPABILITY_UNTESTED,
+            capability_mode=capability_mode,
             created_at=contracts.utcnow(),
             created_by=username,
         )
@@ -417,6 +455,7 @@ def save_settings(
         local_endpoint_approved=local_endpoint_approved,
         trusted_proxy_approved=trusted_proxy_approved,
         timeout_seconds=timeout_seconds,
+        capability_mode=capability_mode,
     )
     # Initial save and unchanged keep the prior credential, so jobs stay.
     if secret_action in ("replace", "clear"):
@@ -444,6 +483,13 @@ def runtime_timeout(session: Session, revision: int | None = None) -> float:
     return effective_timeout(session.execute(statement).scalar_one_or_none())
 
 
+def runtime_capability_mode(session: Session, revision: int) -> str:
+    mode = session.execute(
+        select(provider_settings.c.capability_mode).where(provider_settings.c.revision == revision)
+    ).scalar_one_or_none()
+    return effective_capability_mode(mode or "schema")[0]
+
+
 def open_runtime(session: Session, revision: int) -> tuple[str, str, str] | str:
     """Pinned endpoint, model, and API key, or a non-retryable error code.
 
@@ -456,6 +502,7 @@ def open_runtime(session: Session, revision: int) -> tuple[str, str, str] | str:
                 provider_settings.c.base_url,
                 provider_settings.c.model,
                 provider_settings.c.timeout_seconds,
+                provider_settings.c.capability_mode,
                 provider_settings.c.local_endpoint_approved,
                 provider_settings.c.trusted_proxy_approved,
                 provider_settings.c.key_nonce,
@@ -506,18 +553,23 @@ def _open_key(nonce: bytes, ciphertext: bytes) -> str:
 
 def _capability_outcome(
     base_url: str, model: str, nonce: Any, ciphertext: Any, timeout_seconds: float | None = None
-) -> tuple[str, str]:
+) -> tuple[str, str, str | None]:
     """Check the saved endpoint. Fixed diagnostics only; never the upstream body or key."""
     if nonce is None or ciphertext is None:
-        return CAPABILITY_FAILED, "No provider API key is stored."
+        return CAPABILITY_FAILED, "No provider API key is stored.", None
     try:
         api_key = _open_key(bytes(nonce), bytes(ciphertext))
     except ProviderKeyError:
-        return CAPABILITY_FAILED, "Provider API key could not be read."
-    from x_insight.reasoning.provider import probe_capability
+        return CAPABILITY_FAILED, "Provider API key could not be read.", None
+    from x_insight.reasoning.provider import detect_capability_mode, probe_capability
 
     ok, diagnostic = probe_capability(base_url, model, api_key, timeout_seconds=timeout_seconds)
-    return (CAPABILITY_VERIFIED if ok else CAPABILITY_FAILED), diagnostic
+    detected = (
+        detect_capability_mode(base_url, model, api_key, timeout_seconds=timeout_seconds)
+        if ok
+        else None
+    )
+    return (CAPABILITY_VERIFIED if ok else CAPABILITY_FAILED), diagnostic, detected
 
 
 def record_capability_test(
@@ -525,6 +577,7 @@ def record_capability_test(
     *,
     username: str,
     request_id: str,
+    if_match: int | None = None,
 ) -> dict[str, Any]:
     """Append one revision for this check. A save stays ``untested``."""
     latest = _latest_stored(session)
@@ -534,6 +587,10 @@ def record_capability_test(
             "NOT_FOUND",
             "Provider settings are not configured.",
         )
+    if if_match is not None and if_match != int(latest["revision"]):
+        raise contracts.ContractError(
+            412, "STALE_REVISION", "Provider settings changed. Reload and retry."
+        )
     base_url = str(latest["base_url"])
     local_endpoint_approved = bool(latest["local_endpoint_approved"])
     trusted_proxy_approved = bool(latest["trusted_proxy_approved"])
@@ -542,7 +599,7 @@ def record_capability_test(
     )
     from x_insight.reasoning.provider import approved_endpoint
 
-    capability, diagnostic = _capability_outcome(
+    capability, diagnostic, detected = _capability_outcome(
         approved_endpoint(base_url, local_endpoint_approved, trusted_proxy_approved),
         str(latest["model"]),
         latest["key_nonce"],
@@ -562,6 +619,8 @@ def record_capability_test(
             key_nonce=_as_bytes(latest["key_nonce"]),
             key_ciphertext=_as_bytes(latest["key_ciphertext"]),
             capability_status=capability,
+            capability_mode=latest["capability_mode"],
+            detected_capability_mode=detected,
             created_at=contracts.utcnow(),
             created_by=username,
         )
@@ -573,8 +632,13 @@ def record_capability_test(
         request_id=request_id,
         details={"capability": capability, "revision": revision},
     )
+    effective_mode, override_active = effective_capability_mode(latest["capability_mode"])
     return {
         "capability": capability,
+        "capability_mode": latest["capability_mode"],
+        "effective_capability_mode": effective_mode,
+        "capability_override_active": override_active,
+        "detected_capability_mode": detected,
         "diagnostic": diagnostic,
         "revision": revision,
         "base_url": base_url,
@@ -610,6 +674,7 @@ def put_api_settings(
             local_endpoint_approved=payload.local_endpoint_approved,
             trusted_proxy_approved=payload.trusted_proxy_approved,
             timeout_seconds=payload.timeout_seconds,
+            capability_mode=payload.capability_mode,
         )
     except contracts.ContractError as exc:
         return error_response(
@@ -640,6 +705,7 @@ def post_api_settings_test(
             session,
             username=str(user.get("username") or ""),
             request_id=request_id,
+            if_match=contracts.parse_if_match(request.headers.get("if-match")),
         )
     except contracts.ContractError as exc:
         return error_response(

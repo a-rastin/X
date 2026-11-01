@@ -37,7 +37,7 @@ SETTINGS_PATH = "/api/v1/api-settings"
 _SECRETS = (SENTINEL_KEY, REPLACEMENT_KEY)
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="module")
 def migrated_test_engine():
     from alembic import command
     from alembic.config import Config
@@ -806,7 +806,8 @@ def test_default_public_save_reload_and_capability(clean_all, monkeypatch, restr
         assert tested.status_code == 200, tested.text
         assert tested.json()["capability"] == "verified"
         assert not tested.json()["local_endpoint_approved"]
-        assert len(calls) == 2
+        # The tool exchange uses two calls; mode detection uses a third.
+        assert len(calls) == 3
         assert {call["host"] for call in calls} == {host}
 
 

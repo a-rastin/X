@@ -784,6 +784,53 @@ def probe_capability(
     return True, CAPABILITY_SUPPORTS
 
 
+def detect_capability_mode(
+    url: str, model: str, api_key: str, *, timeout_seconds: float | None = None
+) -> str | None:
+    """Probe formats separately; ambiguous or unrelated failures identify neither mode."""
+    headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
+    messages = [
+        {"role": "system", "content": "Return the JSON object specified by the response format."},
+        {"role": "user", "content": 'Return {"ready":true}.'},
+    ]
+    schema = {
+        "type": "json_schema",
+        "json_schema": {
+            "name": "capability_probe",
+            "strict": True,
+            "schema": {
+                "type": "object",
+                "properties": {"ready": {"const": True}},
+                "required": ["ready"],
+                "additionalProperties": False,
+            },
+        },
+    }
+
+    def check(response_format: dict[str, Any]) -> tuple[str, Any]:
+        payload = {"model": model, "messages": messages, "response_format": response_format}
+        try:
+            response = post_json(url, payload, headers, effective_timeout(timeout_seconds))
+        except Exception:
+            return "failure", None
+        return _classify_http(response, allow_format_retry=True)
+
+    def valid(body: Any) -> bool:
+        message, _ = BoundedProviderAdapter._envelope_message(body)
+        if not isinstance(message, dict):
+            return False
+        content = _assistant_text(message)
+        return isinstance(content, str) and _extract_json_object(content) == {"ready": True}
+
+    status, body = check(schema)
+    if status == "ok":
+        return "schema" if valid(body) else None
+    if status != _RETRY_FORMAT:
+        return None
+    status, body = check({"type": "json_object"})
+    return "json" if status == "ok" and valid(body) else None
+
+
 class BoundedProviderAdapter:
     """Real bounded estimation adapter (one attempt, no hidden retries).
 

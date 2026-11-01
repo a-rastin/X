@@ -15,6 +15,7 @@ export { ApiError };
 
 export type KeyStatus = "configured" | "absent";
 export type Capability = "untested" | "verified" | "failed";
+export type CapabilityMode = "schema" | "json";
 export type SecretAction = "unchanged" | "replace" | "clear";
 
 export interface ProviderSettings {
@@ -24,6 +25,10 @@ export interface ProviderSettings {
   model: string;
   timeout_seconds: number | null;
   capability: Capability;
+  capability_mode: CapabilityMode;
+  effective_capability_mode: CapabilityMode;
+  capability_override_active: boolean;
+  detected_capability_mode: CapabilityMode | null;
   effective_endpoint: string;
   local_endpoint_approved: boolean;
   trusted_proxy_approved: boolean;
@@ -36,6 +41,9 @@ export interface SavedProviderSettings extends ProviderSettings {
 
 export interface ProviderTestResult {
   capability: Capability;
+  effective_capability_mode: CapabilityMode;
+  capability_override_active: boolean;
+  detected_capability_mode: CapabilityMode | null;
   diagnostic: string;
   revision: number;
   base_url: string;
@@ -49,6 +57,10 @@ const UNSAVED: ProviderSettings = {
   model: "",
   timeout_seconds: null,
   capability: "untested",
+  capability_mode: "schema",
+  effective_capability_mode: "schema",
+  capability_override_active: false,
+  detected_capability_mode: null,
   effective_endpoint: "",
   local_endpoint_approved: false,
   trusted_proxy_approved: false,
@@ -108,6 +120,17 @@ function capability(value: unknown): Capability {
   throw new ApiError(200, "REQUEST_FAILED", "Provider settings response was incomplete.");
 }
 
+function capabilityMode(value: unknown): CapabilityMode {
+  if (value === "schema" || value === "json") {
+    return value;
+  }
+  throw new ApiError(200, "REQUEST_FAILED", "Provider settings response was incomplete.");
+}
+
+function detectedMode(value: unknown): CapabilityMode | null {
+  return value == null ? null : capabilityMode(value);
+}
+
 function masked(payload: unknown): SavedProviderSettings {
   const body = (payload ?? {}) as Record<string, unknown>;
   if (typeof body.revision !== "number") {
@@ -120,6 +143,10 @@ function masked(payload: unknown): SavedProviderSettings {
     model: typeof body.model === "string" ? body.model : "",
     timeout_seconds: typeof body.timeout_seconds === "number" ? body.timeout_seconds : null,
     capability: capability(body.capability),
+    capability_mode: capabilityMode(body.capability_mode),
+    effective_capability_mode: capabilityMode(body.effective_capability_mode),
+    capability_override_active: body.capability_override_active === true,
+    detected_capability_mode: detectedMode(body.detected_capability_mode),
     effective_endpoint:
       typeof body.effective_endpoint === "string"
         ? body.effective_endpoint
@@ -151,6 +178,7 @@ export async function getProviderSettings(): Promise<ProviderSettings> {
 
 export interface SaveProviderSettingsInput {
   timeoutSeconds: string;
+  capabilityMode: CapabilityMode;
   baseUrl: string;
   model: string;
   revision: number | null;
@@ -168,6 +196,7 @@ export async function saveProviderSettings(
   const body: Record<string, string | boolean | number | null> = {
     base_url: input.baseUrl,
     model: input.model,
+    capability_mode: input.capabilityMode,
     timeout_seconds: input.timeoutSeconds.trim() === "" ? null : Number(input.timeoutSeconds),
     local_endpoint_approved: input.localEndpointApproved,
     trusted_proxy_approved: input.trustedProxyApproved,
@@ -191,12 +220,12 @@ export async function saveProviderSettings(
   return masked(await readJson(response));
 }
 
-/** Capability check of the saved row. CSRF, empty body, no If-Match. */
-export async function testProviderSettings(): Promise<ProviderTestResult> {
+/** Capability check of the saved row, fenced to the loaded revision. */
+export async function testProviderSettings(revision: number | null): Promise<ProviderTestResult> {
   const response = await fetch("/api/v1/api-settings/test", {
     method: "POST",
     credentials: "include",
-    headers: mutationHeaders(null),
+    headers: mutationHeaders(revision),
     body: "{}",
   });
   const body = (await readJson(response) ?? {}) as Record<string, unknown>;
@@ -205,6 +234,9 @@ export async function testProviderSettings(): Promise<ProviderTestResult> {
   }
   return {
     capability: capability(body.capability),
+    effective_capability_mode: capabilityMode(body.effective_capability_mode),
+    capability_override_active: body.capability_override_active === true,
+    detected_capability_mode: detectedMode(body.detected_capability_mode),
     diagnostic: body.diagnostic,
     revision: body.revision,
     base_url: typeof body.base_url === "string" ? body.base_url : "",

@@ -295,7 +295,7 @@ def _valid_cpt(network_hash: str = NETWORK_HASH) -> dict[str, Any]:
     }
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="module")
 def migrated_test_engine():
     from alembic import command
     from alembic.config import Config
@@ -1070,7 +1070,7 @@ def test_backup_includes_full_snapshot_networks_and_policies(
     # tables (sessions never), per-file hashes, deployment + runtime.
     assert manifest["schema_version"] == "backup-v1"
     assert manifest["backup_id"] == backup_id
-    assert manifest["app_schema_version"] == "0026"
+    assert manifest["app_schema_version"] == "0028"
     assert set(manifest["inventory"].keys()) == set(EXPECTED_TABLES)
     assert len(manifest["inventory"]) == 32
     assert "sessions" not in manifest["inventory"]

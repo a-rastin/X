@@ -8,7 +8,7 @@
  *
  * Response shape mirrors `operations/audit.safe_event` (backend slice owns
  * it): `{items, total, limit, offset}` with stable server ordering
- * (`occurred_at`, `id`) and bounded pagination (default 25, max 100).
+ * (`occurred_at DESC`, `id DESC`) and bounded pagination (default 25, max 100).
  * Filters are passed through verbatim: actor/operation/since/until plus
  * target correlation keys (patient/encounter/question-run/batch/question).
  * Times travel as ISO-8601 UTC (`Z`); `since`/`until` inputs are converted

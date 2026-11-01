@@ -301,8 +301,13 @@ provider paths have different behavior:
 Enter a provider origin, a base ending in `/v1`, or a full/custom chat
 completions endpoint. An origin is completed as `/v1/chat/completions`; `/v1`
 gets the same suffix; a supplied full/custom path is preserved. The page shows
-the effective endpoint. Capability is `schema` or `json` (default `schema`). If
-the endpoint rejects `response_format`, generation retries that request once
+the effective endpoint. Choose `schema` or `json` on the Provider page; the
+saved mode applies to jobs pinned to that settings revision. An explicit
+`X_INSIGHT_PROVIDER_CAPABILITY` value overrides the saved mode for all jobs.
+Leave it blank to use the saved setting; the keyless fallback defaults to `schema`.
+If an existing environment was copied from an older example, remove or clear its
+`X_INSIGHT_PROVIDER_CAPABILITY=schema` line to allow the saved mode to take effect.
+If the endpoint rejects `response_format`, generation retries that request once
 without it and still validates the JSON. Local recalculation never calls the
 provider.
 

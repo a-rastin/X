@@ -196,7 +196,7 @@ def test_ready_unavailable_database_returns_safe_503(
 # --- Slice C: real-PostgreSQL fixtures, readiness-200, audit (T1) ---
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="module")
 def migrated_test_engine():
     """Isolated test database: migrated fresh via the real entry point."""
     from pathlib import Path
@@ -535,7 +535,7 @@ def test_audit_uncommitted_row_not_visible_until_commit(migrated_test_engine, cl
 
 
 def test_audit_list_ordered_by_time(migrated_test_engine, clean_audit) -> None:
-    """Reads come back in time order (stable for S03+ consumers)."""
+    """Reads come back in newest-first time order."""
     from datetime import UTC
 
     from x_insight import db as db_module
@@ -549,17 +549,14 @@ def test_audit_list_ordered_by_time(migrated_test_engine, clean_audit) -> None:
         audit_module.record_audit(session, operation="s02.order-1", occurred_at=t1)
         audit_module.record_audit(session, operation="s02.order-3", occurred_at=t3)
         assert [r["operation"] for r in audit_module.list_audit_events(session)] == [
-            "s02.order-1",
-            "s02.order-2",
             "s02.order-3",
+            "s02.order-2",
+            "s02.order-1",
         ]
 
 
-def test_only_s02_tables_exist(migrated_test_engine) -> None:
-    """S02 audit storage persists; S03 adds identity tables; S04 adds only the
-    idempotency store; S06 adds patients + encounters; S13 adds only the notes
-    table (no draft-content beyond S07 draft_data, no runs, or jobs tables);
-    S24 adds only the model registry (networks/versions/pointers)."""
+def test_migrated_schema_table_inventory(migrated_test_engine) -> None:
+    """The complete migration chain creates the expected public tables."""
     from sqlalchemy import text
 
     with migrated_test_engine.connect() as connection:
@@ -572,18 +569,37 @@ def test_only_s02_tables_exist(migrated_test_engine) -> None:
     assert tables == [
         "alembic_version",
         "audit_events",
+        "backup_jobs",
+        "calculation_results",
+        "cpt_revisions",
         "ddi_concepts",
         "ddi_dataset_releases",
         "ddi_interaction_evidence",
         "ddi_source_documents",
+        "encounter_addenda",
         "encounters",
+        "generation_batches",
         "idempotency_records",
         "model_network_versions",
         "model_networks",
         "model_workflow_pointers",
         "notes",
+        "original_baselines",
         "patients",
+        "probability_acceptances",
+        "proposal_snapshots",
+        "provider_settings",
+        "question_review_states",
+        "question_runs",
+        "reasoning_deployment",
+        "reasoning_fairness",
+        "reasoning_grants",
+        "reasoning_job_attempts",
+        "reasoning_jobs",
+        "restore_jobs",
+        "secondary_plans",
         "sessions",
+        "signed_encounter_snapshots",
         "users",
     ]
 

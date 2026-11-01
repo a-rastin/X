@@ -24,23 +24,25 @@ from __future__ import annotations
 
 import os
 import threading
+import time
 from datetime import timedelta
 from pathlib import Path
 from typing import Any
 
 import pytest
 from fastapi.testclient import TestClient
-from sqlalchemy import text
+from sqlalchemy import select, text
 
 from x_insight import contracts
 from x_insight import db as db_module
 from x_insight.app import app
 from x_insight.identity import service
 from x_insight.reasoning import provider as provider_module
+from x_insight.reasoning import tables as reasoning_tables
 from x_insight.reasoning import worker as worker_module
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="module")
 def migrated_test_engine():
     from alembic import command
     from alembic.config import Config
@@ -692,6 +694,150 @@ def test_expired_lease_reclaimed_and_old_token_fenced(
     assert read.status_code == 200, read.text
     assert read.json()["job"]["status"] == "queued", read.json()["job"]
     assert read.json()["attempts"] == 1
+    from x_insight.operations import audit
+
+    with db_module.session_scope(clean_registry) as session:
+        events = audit.list_audit_events(
+            session, operation="generation.attempt.failed", batch_id=batch_id
+        )
+    assert len(events) == 1
+    assert events[0]["details"]["error_code"] == "LEASE_EXPIRED"
+    assert events[0]["details"]["attempt_index"] == 1
+
+
+def test_reclaim_does_not_fence_concurrent_heartbeat(
+    admin_client, clean_registry, monkeypatch
+) -> None:
+    from x_insight.operations import audit
+    from x_insight.reasoning import queue as queue_module
+
+    _, _, batch_id, _, _ = _setup_batch(
+        admin_client, clean_registry, monkeypatch, "dr_q_heartbeat_race", "0012345678"
+    )
+    started = contracts.utcnow()
+    with db_module.session_scope(clean_registry) as session:
+        claimed = queue_module.claim_next_job(session, "worker-heartbeat", now=started)
+    assert claimed is not None
+    job_id, token = claimed["job"]["id"], claimed["lease_token"]
+    deadline = claimed["job"]["lease_deadline"]
+    reclaim_at = deadline + timedelta(seconds=1)
+    ready = threading.Event()
+    result: list[Any] = []
+    pids: list[int] = []
+
+    def reclaim() -> None:
+        try:
+            with db_module.session_scope(clean_registry) as session:
+                pids.append(session.execute(text("select pg_backend_pid()")).scalar_one())
+                ready.set()
+                result.append(queue_module.reclaim_expired_leases(session, now=reclaim_at))
+        except BaseException as exc:
+            result.append(exc)
+            ready.set()
+
+    with db_module.session_scope(clean_registry) as session:
+        assert queue_module.heartbeat_job(
+            session, job_id, token, now=deadline - timedelta(seconds=1)
+        )
+        thread = threading.Thread(target=reclaim, daemon=True)
+        thread.start()
+        assert ready.wait(10) and pids, result
+        end = time.monotonic() + 10
+        blocked = False
+        while time.monotonic() < end:
+            with clean_registry.connect() as connection:
+                blocked = connection.execute(
+                    text("select cardinality(pg_blocking_pids(:pid)) > 0"), {"pid": pids[0]}
+                ).scalar_one()
+            if blocked:
+                break
+            threading.Event().wait(0.02)
+        assert blocked, "reclaimer never reached the heartbeat's row lock"
+    # Commit the heartbeat only after the reclaim transaction is blocked.
+    thread.join(timeout=10)
+    assert not thread.is_alive()
+    assert result == [0]
+    with db_module.session_scope(clean_registry) as session:
+        job = (
+            session.execute(
+                select(reasoning_tables.reasoning_jobs).where(
+                    reasoning_tables.reasoning_jobs.c.id == job_id
+                )
+            )
+            .mappings()
+            .one()
+        )
+        assert job["status"] == queue_module.LEASED and job["lease_token"] == token
+        assert job["lease_deadline"] > reclaim_at
+        attempt = (
+            session.execute(
+                select(reasoning_tables.reasoning_job_attempts).where(
+                    reasoning_tables.reasoning_job_attempts.c.job_id == job_id
+                )
+            )
+            .mappings()
+            .one()
+        )
+        assert attempt["outcome"] == "started"
+        assert not audit.list_audit_events(
+            session, operation="generation.attempt.failed", batch_id=batch_id
+        )
+        grant = (
+            session.execute(
+                select(reasoning_tables.reasoning_grants).where(
+                    reasoning_tables.reasoning_grants.c.job_id == job_id
+                )
+            )
+            .mappings()
+            .one()
+        )
+        assert grant["revoked_at"] is None
+
+
+def test_attempt_audit_rolls_back_with_completion(
+    admin_client, clean_registry, monkeypatch
+) -> None:
+    from x_insight.operations import audit
+    from x_insight.reasoning import queue as queue_module
+
+    _, _, batch_id, _, _ = _setup_batch(
+        admin_client, clean_registry, monkeypatch, "dr_q_audit_rollback", "0012345678"
+    )
+    with db_module.session_scope(clean_registry) as session:
+        claimed = queue_module.claim_next_job(session, "worker-rollback")
+    assert claimed is not None
+    with pytest.raises(RuntimeError, match="rollback"):
+        with db_module.session_scope(clean_registry) as session:
+            queue_module.commit_job_result(
+                session,
+                claimed["job"]["id"],
+                claimed["lease_token"],
+                provider_ok=False,
+                provider_payload={},
+                provider_error="PROVIDER_FAILED",
+            )
+            assert (
+                len(
+                    audit.list_audit_events(
+                        session, operation="generation.attempt.failed", batch_id=batch_id
+                    )
+                )
+                == 1
+            )
+            raise RuntimeError("rollback")
+    with db_module.session_scope(clean_registry) as session:
+        assert not audit.list_audit_events(
+            session, operation="generation.attempt.failed", batch_id=batch_id
+        )
+        assert queue_module.count_attempts(session, claimed["job"]["id"]) == 1
+        assert (
+            session.execute(
+                select(reasoning_tables.reasoning_job_attempts.c.outcome).where(
+                    reasoning_tables.reasoning_job_attempts.c.job_id == claimed["job"]["id"]
+                )
+            ).scalar_one()
+            == "started"
+        )
 
 
 def test_restart_retains_attempts_and_terminal_artifacts(
@@ -720,6 +866,14 @@ def test_restart_retains_attempts_and_terminal_artifacts(
     body = read.json()
     assert body["job"]["status"] == "succeeded", body["job"]
     assert body["attempts"] == 2, f"both attempts retained, got {body}"
+    from x_insight.operations import audit
+
+    with db_module.session_scope(clean_registry) as session:
+        events = audit.list_audit_events(
+            session, operation="generation.attempt.success", batch_id=batch_id
+        )
+    assert len(events) == 1
+    assert events[0]["details"]["attempt_index"] == 2
     assert body["job"]["result"]["projection_hash"]
     again = worker_module.run_once(clean_registry, stub, worker_id="worker-restart")
     assert again["status"] == "idle", again
@@ -727,6 +881,43 @@ def test_restart_retains_attempts_and_terminal_artifacts(
     assert reread.status_code == 200, reread.text
     assert reread.json()["job"]["status"] == "succeeded"
     assert reread.json()["attempts"] == 2
+
+
+def test_stale_claim_completion_audits_failure(admin_client, clean_registry, monkeypatch) -> None:
+    from x_insight.operations import audit
+    from x_insight.reasoning import queue as queue_module
+
+    client, csrf, batch_id, encounter_id, revision = _setup_batch(
+        admin_client, clean_registry, monkeypatch, "dr_q_stale_audit", "0012345678"
+    )
+    with db_module.session_scope(clean_registry) as session:
+        claimed = queue_module.claim_next_job(session, "worker-stale")
+    assert claimed is not None
+    edited = _patch_draft(
+        client,
+        csrf,
+        encounter_id,
+        {"history": {"values": {"h_a": "no", "h_b": "no"}}, "gate": "true"},
+        revision,
+    )
+    assert edited.status_code == 200, edited.text
+    with db_module.session_scope(clean_registry) as session:
+        result = queue_module.commit_job_result(
+            session,
+            claimed["job"]["id"],
+            claimed["lease_token"],
+            provider_ok=True,
+            provider_payload={},
+        )
+        assert result["status"] == "cancelled"
+        events = audit.list_audit_events(
+            session, operation="generation.attempt.failed", batch_id=batch_id
+        )
+        assert len(events) == 1
+        assert events[0]["details"]["error_code"] == "STALE_INPUT"
+        assert not audit.list_audit_events(
+            session, operation="generation.attempt.success", batch_id=batch_id
+        )
 
 
 def test_stale_fingerprint_job_cancelled_without_provider_call(

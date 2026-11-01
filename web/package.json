@@ -10,7 +10,7 @@
     "dev": "vite --port 5173",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview --port 5173",
-    "test-web": "echo 'test-web: no web unit suite yet (S01 smoke is e2e/smoke.spec.ts)' >&2; exit 1"
+    "test-web": "node --experimental-strip-types --test tests/*.test.mjs"
   },
   "dependencies": {
     "react": "19.3.0",

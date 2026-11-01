@@ -13,6 +13,7 @@ import {
   saveProviderSettings,
   testProviderSettings,
   type Capability,
+  type CapabilityMode,
   type KeyStatus,
   type SecretAction,
 } from "./api";
@@ -35,6 +36,10 @@ export function ProviderSettingsPage() {
   const [revision, setRevision] = useState<number | null>(null);
   const [keyStatus, setKeyStatus] = useState<KeyStatus>("absent");
   const [capability, setCapability] = useState<Capability>("untested");
+  const [capabilityMode, setCapabilityMode] = useState<CapabilityMode>("schema");
+  const [effectiveMode, setEffectiveMode] = useState<CapabilityMode>("schema");
+  const [overrideActive, setOverrideActive] = useState(false);
+  const [detectedMode, setDetectedMode] = useState<CapabilityMode | null>(null);
   const [baseUrl, setBaseUrl] = useState("");
   const [effectiveEndpoint, setEffectiveEndpoint] = useState("");
   const [localEndpointApproved, setLocalEndpointApproved] = useState(false);
@@ -60,6 +65,10 @@ export function ProviderSettingsPage() {
         setRevision(current.revision);
         setKeyStatus(current.api_key);
         setCapability(current.capability);
+        setCapabilityMode(current.capability_mode);
+        setEffectiveMode(current.effective_capability_mode);
+        setOverrideActive(current.capability_override_active);
+        setDetectedMode(current.detected_capability_mode);
         setBaseUrl(current.base_url);
         setEffectiveEndpoint(current.effective_endpoint);
         setLocalEndpointApproved(current.local_endpoint_approved);
@@ -100,6 +109,7 @@ export function ProviderSettingsPage() {
         baseUrl,
         model,
         timeoutSeconds,
+        capabilityMode,
         revision,
         secretAction,
         apiKey,
@@ -109,6 +119,10 @@ export function ProviderSettingsPage() {
       setRevision(saved.revision);
       setKeyStatus(saved.api_key);
       setCapability(saved.capability);
+      setCapabilityMode(saved.capability_mode);
+      setEffectiveMode(saved.effective_capability_mode);
+      setOverrideActive(saved.capability_override_active);
+      setDetectedMode(saved.detected_capability_mode);
       setBaseUrl(saved.base_url);
       setEffectiveEndpoint(saved.effective_endpoint);
       setLocalEndpointApproved(saved.local_endpoint_approved);
@@ -143,8 +157,11 @@ export function ProviderSettingsPage() {
     setError(null);
     setFieldErrors({});
     try {
-      const result = await testProviderSettings();
+      const result = await testProviderSettings(revision);
       setCapability(result.capability);
+      setEffectiveMode(result.effective_capability_mode);
+      setOverrideActive(result.capability_override_active);
+      setDetectedMode(result.detected_capability_mode);
       setDiagnostic(result.diagnostic);
       setRevision(result.revision);
     } catch (err) {
@@ -180,7 +197,7 @@ export function ProviderSettingsPage() {
         <form className="xi-card" onSubmit={(event) => void save(event)} noValidate>
           <div className="xi-meta-pair">
             <p id="provider-key-status">Key status: {keyStatus}</p>
-            <p id="provider-capability">Capability: {capability}</p>
+            <p id="provider-capability">Tool probe: {capability}</p>
           </div>
           <div className="xi-field">
             <label className="xi-label" htmlFor="provider-base-url">
@@ -234,6 +251,26 @@ export function ProviderSettingsPage() {
                 {fieldErrors.model.join(" ")}
               </p>
             )}
+          </div>
+          <div className="xi-field">
+            <label className="xi-label" htmlFor="provider-capability-mode">Capability mode</label>
+            <select
+              className="xi-select"
+              id="provider-capability-mode"
+              value={capabilityMode}
+              onChange={(event) => setCapabilityMode(event.target.value as CapabilityMode)}
+              aria-describedby="provider-mode-help"
+            >
+              <option value="schema">Schema</option>
+              <option value="json">JSON</option>
+            </select>
+            <p className="xi-hint" id="provider-mode-help">
+              Effective saved mode: {effectiveMode}.
+              {overrideActive && ` Deployment override active: ${effectiveMode}.`}
+              {detectedMode !== null
+                ? ` Detected provider mode: ${detectedMode} (last test).${detectedMode !== effectiveMode ? " This differs from the effective mode." : ""}`
+                : " Detection result unavailable; test the provider to check the mode."}
+            </p>
           </div>
           <div className="xi-field">
             <label className="xi-label" htmlFor="provider-timeout">Provider timeout (seconds)</label>

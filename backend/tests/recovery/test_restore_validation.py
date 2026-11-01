@@ -70,11 +70,11 @@ TWO_NODE_XML = (
 # archives like sessions); clinical rows are identical to 0017. 0019, 0020,
 # and 0021 are also accepted (a fresh backup reports the current head).
 SUPPORTED_APP_SCHEMAS = frozenset(
-    {"0017", "0018", "0019", "0020", "0021", "0022", "0023", "0024", "0025", "0026"}
+    {"0017", "0018", "0019", "0020", "0021", "0022", "0023", "0024", "0025", "0026", "0027", "0028"}
 )
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="module")
 def migrated_test_engine():
     from alembic import command
     from alembic.config import Config
@@ -943,6 +943,7 @@ def test_restore_roundtrips_boolean_provider_approvals_and_legacy_defaults(
             for row in database["tables"]["provider_settings"]:
                 row.pop("local_endpoint_approved")
                 row.pop("trusted_proxy_approved")
+                row.pop("capability_mode")
 
         blob = _mutate_db(blob, omit_approvals)
         blob = _mutate_manifest(blob, lambda manifest: manifest.update(app_schema_version="0023"))
@@ -964,6 +965,56 @@ def test_restore_roundtrips_boolean_provider_approvals_and_legacy_defaults(
         assert recovered.status_code == 200, recovered.text
         assert recovered.json()["local_endpoint_approved"] is local
         assert recovered.json()["trusted_proxy_approved"] is proxy
+        assert recovered.json()["capability_mode"] == "schema"
+
+
+def test_restore_0027_provider_detection_defaults_to_unknown(clean_registry, monkeypatch):
+    admin, csrf, blob, revisions, _ = _provider_approval_archive(clean_registry, monkeypatch)
+
+    def omit_detection(database):
+        for row in database["tables"]["provider_settings"]:
+            row.pop("detected_capability_mode")
+
+    blob = _mutate_db(blob, omit_detection)
+    blob = _mutate_manifest(blob, lambda manifest: manifest.update(app_schema_version="0027"))
+    staged = _post_restore(admin, csrf, blob)
+    assert staged.json()["status"] == "succeeded", staged.text
+    job = staged.json()
+    committed = admin.post(
+        f"/api/v1/restores/{job['id']}/commit",
+        headers=_auth_headers(csrf),
+        json={"confirmation_digest": job["confirmation_digest"]},
+    )
+    assert committed.json()["commit_status"] == "succeeded", committed.text
+    recovered, _ = _admin_client(clean_registry, monkeypatch)
+    for revision in revisions:
+        result = recovered.get(f"/api/v1/api-settings/revisions/{revision}")
+        assert result.json()["detected_capability_mode"] is None
+
+
+def test_restore_preserves_detected_provider_mode(clean_registry, monkeypatch):
+    from x_insight.reasoning import provider_config
+
+    admin, csrf, _, _, _ = _provider_approval_archive(clean_registry, monkeypatch)
+    monkeypatch.setattr(
+        provider_config, "_capability_outcome", lambda *_: ("verified", "ok", "json")
+    )
+    tested = admin.post("/api/v1/api-settings/test", json={}, headers=_auth_headers(csrf))
+    assert tested.status_code == 200, tested.text
+    revision = tested.json()["revision"]
+    blob, _ = _make_valid_blob(admin, csrf)
+    staged = _post_restore(admin, csrf, blob)
+    assert staged.json()["status"] == "succeeded", staged.text
+    job = staged.json()
+    committed = admin.post(
+        f"/api/v1/restores/{job['id']}/commit",
+        headers=_auth_headers(csrf),
+        json={"confirmation_digest": job["confirmation_digest"]},
+    )
+    assert committed.json()["commit_status"] == "succeeded", committed.text
+    recovered, _ = _admin_client(clean_registry, monkeypatch)
+    result = recovered.get(f"/api/v1/api-settings/revisions/{revision}")
+    assert result.json()["detected_capability_mode"] == "json"
 
 
 def test_legacy_restore_cannot_smuggle_provider_approvals(clean_registry, monkeypatch):

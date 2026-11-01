@@ -142,6 +142,53 @@ def test_probe_accepts_json_in_reasoning_content_when_content_empty(monkeypatch)
     assert diagnostic == "Provider supports tools and JSON."
 
 
+def test_worker_uses_pinned_mode_then_new_mode_and_override(saved_registry, monkeypatch):
+    monkeypatch.delenv("X_INSIGHT_PROVIDER_CAPABILITY", raising=False)
+    endpoint = provider_module.DeterministicProviderEndpoint()
+    url = endpoint.start()
+    try:
+        admin, csrf = _admin()
+        saved = _save(
+            admin,
+            csrf,
+            {
+                "api_key": SENTINEL_KEY,
+                "base_url": url,
+                "model": MODEL,
+                "secret_action": "replace",
+                "capability_mode": "schema",
+            },
+        )
+        _, _, _, _, package, _ = _new_physician_batch(
+            saved_registry, monkeypatch, "dr_mode_first", "0012345602"
+        )
+        endpoint.script = [{"type": "final", "cpt": valid_cpt(package["manifest"]["network_hash"])}]
+        _save(
+            admin,
+            csrf,
+            {
+                "base_url": url,
+                "model": MODEL,
+                "secret_action": "unchanged",
+                "capability_mode": "json",
+            },
+            revision=saved["revision"],
+        )
+        assert _run(saved_registry)["status"] == "succeeded"
+        assert endpoint.captured[-1]["response_format"]["type"] == "json_schema"
+
+        _new_physician_batch(saved_registry, monkeypatch, "dr_mode_second", "0012345603")
+        assert _run(saved_registry)["status"] == "succeeded"
+        assert endpoint.captured[-1]["response_format"]["type"] == "json_object"
+
+        monkeypatch.setenv("X_INSIGHT_PROVIDER_CAPABILITY", "schema")
+        _new_physician_batch(saved_registry, monkeypatch, "dr_mode_third", "0012345604")
+        assert _run(saved_registry)["status"] == "succeeded"
+        assert endpoint.captured[-1]["response_format"]["type"] == "json_schema"
+    finally:
+        endpoint.stop()
+
+
 @pytest.mark.parametrize("public", [False, True])
 def test_generation_uses_pinned_saved_credential_not_later_url(
     saved_registry, monkeypatch, public
@@ -278,8 +325,15 @@ def test_denied_destination_and_unreadable_key_fail_closed(
             monkeypatch.setattr(socket, "getaddrinfo", unsafe_resolve)
         denied = _run(saved_registry)
         assert denied["status"] == "failed", denied
-        assert denied["error_code"] == "PROVIDER_DESTINATION_DENIED"
+        with saved_registry.connect() as connection:
+            code = connection.execute(
+                text("SELECT error_code FROM reasoning_job_attempts WHERE job_id = :job_id"),
+                {"job_id": denied["job_id"]},
+            ).scalar_one()
+        assert code == "PROVIDER_DESTINATION_DENIED"
         assert endpoint.captured == []
+        if denial == "dns":
+            monkeypatch.setattr(socket, "getaddrinfo", original_resolve)
 
         # New job, same saved row, deployment key no longer opens it.
         monkeypatch.setenv("X_INSIGHT_PROVIDER_ALLOWED_HOSTS", "127.0.0.1")

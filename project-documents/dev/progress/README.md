@@ -1,6 +1,20 @@
 # X-INSIGHT progress tracker
 
-[B20 audit reproduction (2026-10-31)](s43.md#follow-up-2026-10-31--b20-audit-reproduction) confirms missing attempt events and oldest-first pagination; the fix remains open.
+[Development commit handoff (2026-11-01)](s43.md#follow-up-2026-11-01--commit-current-development-changes): current changes committed on request; full acceptance and review remain open.
+
+[Agent worktree branch cleanup (2026-10-31)](s43.md#follow-up-2026-10-31--preserve-agent-worktree-during-branch-cleanup): only `main` and `dev` remain; a detached worktree preserves differing uncommitted files.
+
+[B05 detection and worker acceptance (2026-11-01)](s43.md#follow-up-2026-11-01--b05-detection-and-worker-acceptance): persisted detection, fake-provider worker and restore checks pass; full gates and review remain open.
+
+[Test-gate repairs (2026-10-31)](s43.md#follow-up-2026-10-31--test-database-fixture-lifetime): backend baseline passed 1,234 tests with B05's intentional reproduction excluded; full gate remains open.
+
+[B05 commit-gate conflict (2026-10-31)](s43.md#follow-up-2026-10-31--b05-commit-gate-conflict): full backend rerun completed with failures and database client exhaustion; investigation continues.
+
+[B20 audit fix (2026-10-31)](s43.md#follow-up-2026-10-31--b20-audit-fix): focused checks pass; full gate remains open and changes are uncommitted.
+
+[B06 prerequisite check (2026-10-31)](s43.md#follow-up-2026-10-31--b06-prerequisite-check): blocked on the requested B05 override replacement; no B06 reproduction or fix yet.
+
+[B20 audit reproduction (2026-10-31)](s43.md#follow-up-2026-10-31--b20-audit-reproduction) confirmed missing attempt events and oldest-first pagination before the fix.
 
 [B21 attempt timing (2026-10-31)](s43.md#follow-up-2026-10-31--b21-attempt-timing) fixes completion clock reuse; verification limits and open commit gates are recorded.
 

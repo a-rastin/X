@@ -26,7 +26,7 @@ from x_insight.identity import service
 from x_insight.operations import load_probe as probe_module
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="module")
 def migrated_test_engine():
     from alembic import command
     from alembic.config import Config
