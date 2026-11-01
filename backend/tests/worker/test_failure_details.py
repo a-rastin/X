@@ -158,7 +158,7 @@ def test_three_failed_attempts_have_audit_events(clean_registry, monkeypatch):
         attempts = (
             connection.execute(
                 text(
-                    "SELECT a.* FROM reasoning_job_attempts a "
+                    "SELECT a.*, j.question_run_id FROM reasoning_job_attempts a "
                     "JOIN reasoning_jobs j ON j.id=a.job_id "
                     "WHERE j.batch_id=:batch ORDER BY a.attempt_index"
                 ),
@@ -181,13 +181,21 @@ def test_three_failed_attempts_have_audit_events(clean_registry, monkeypatch):
     attempt_events = [
         event for event in events if event["operation"] == "generation.attempt.failed"
     ]
+    run_events = [event for event in events if event["operation"] == "generation.run.failed"]
+    assert len(attempts) == 3
     assert len(attempt_events) == 3
-    assert len([event for event in events if event["operation"] == "generation.run.failed"]) == 1
+    assert len(run_events) == 1
     by_index = {event["details"]["attempt_index"]: event["details"] for event in attempt_events}
+    assert set(by_index) == {1, 2, 3}
+    assert [attempt["attempt_index"] for attempt in attempts] == [1, 2, 3]
+    run_id = str(attempts[0]["question_run_id"])
+    assert run_events[0]["details"]["question_run_id"] == run_id
     for attempt in attempts:
         details = by_index[attempt["attempt_index"]]
-        assert details["failure_class"] == attempt["failure_class"]
+        assert str(attempt["question_run_id"]) == details["question_run_id"] == run_id
+        assert details["failure_class"] == attempt["failure_class"] == "http_status"
         assert details["elapsed_seconds"] == attempt["elapsed_seconds"]
+        assert details["elapsed_seconds"] > 0
 
 
 def test_0025_to_0026_preserves_existing_attempt(clean_registry, monkeypatch):

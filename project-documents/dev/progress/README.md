@@ -1,6 +1,6 @@
 # X-INSIGHT progress tracker
 
-[Issue 18 audit analysis (2026-11-01)](s43.md#follow-up-2026-11-01--issue-18-audit-analysis): prior fix exists; current acceptance and deployment remain to be verified.
+[Issue 18 verification (2026-11-01)](s43.md#follow-up-2026-11-01--issue-18-focused-backend-verification): backend and synthetic browser checks passed; review and corrected test rerun completed, deployment unknown.
 
 [Issue 17 isolated timing verification (2026-11-01)](s43.md#follow-up-2026-11-01--issue-17-isolated-timing-verification): focused regression passed; incident cause and deployment acceptance remain unknown.
 
