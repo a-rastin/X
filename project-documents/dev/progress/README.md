@@ -1,5 +1,7 @@
 # X-INSIGHT progress tracker
 
+[Issue 16 provider walkthrough analysis (2026-11-01)](s43.md#follow-up-2026-11-01--issue-16-walkthrough-analysis): root cause unconfirmed; live run blocked by missing environment-supplied NVIDIA credential.
+
 [Capability UI clarification (2026-11-01)](s43.md#follow-up-2026-11-01--capability-ui-clarification-and-focused-checks): mocked browser, TypeScript and selected DB-free checks pass; deployment acceptance and review remain open.
 
 [Issue 15 capability analysis (2026-11-01)](s43.md#follow-up-2026-11-01--issue-15-capability-analysis): B05 is already implemented; local override and end-to-end acceptance need verification.
