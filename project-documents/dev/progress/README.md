@@ -1,6 +1,6 @@
 # X-INSIGHT progress tracker
 
-[Issue 17 attempt timing analysis (2026-11-01)](s43.md#follow-up-2026-11-01--issue-17-attempt-timing-analysis): the B21 fix and five-second regression already exist; current deployment and test rerun remain unverified.
+[Issue 17 isolated timing verification (2026-11-01)](s43.md#follow-up-2026-11-01--issue-17-isolated-timing-verification): focused regression passed; incident cause and deployment acceptance remain unknown.
 
 [Issue 16 provider walkthrough analysis (2026-11-01)](s43.md#follow-up-2026-11-01--issue-16-walkthrough-analysis): root cause unconfirmed; live run blocked by missing environment-supplied NVIDIA credential.
 
