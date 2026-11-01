@@ -2441,6 +2441,17 @@
       "source_sha256": null
     },
     {
+      "path": "backend/tests/worker/test_failure_details.py",
+      "labels": [
+        "test",
+        "worker",
+        "audit"
+      ],
+      "purpose": "Verify safe provider failure diagnostics and per-attempt audit events.",
+      "summary": null,
+      "source_sha256": null
+    },
+    {
       "path": "backend/tests/worker/test_local_calculation.py",
       "labels": [
         "test",

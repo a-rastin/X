@@ -19,6 +19,9 @@ transparency and freshness, and exposes retry/refresh. The largest frontend file
   page silently.
 - The chart's honest-unavailable path renders `generation_not_implemented` verbatim instead of a
   placeholder proposal.
+- Lazy transparency calls the per-run review endpoint independently of batch polling. Its current
+  fetch has no deadline; the error retry reuses the expansion toggle and closes an open panel on
+  the first click. See `issues/issue-19.md` for the failure-state analysis and planned fix.
 - All request/response shapes live in `features/reasoning/api.ts` (~753 lines); this component
   owns presentation and polling only.
 
