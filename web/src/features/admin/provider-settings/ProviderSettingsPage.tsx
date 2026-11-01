@@ -37,6 +37,7 @@ export function ProviderSettingsPage() {
   const [keyStatus, setKeyStatus] = useState<KeyStatus>("absent");
   const [capability, setCapability] = useState<Capability>("untested");
   const [capabilityMode, setCapabilityMode] = useState<CapabilityMode>("schema");
+  const [savedMode, setSavedMode] = useState<CapabilityMode>("schema");
   const [effectiveMode, setEffectiveMode] = useState<CapabilityMode>("schema");
   const [overrideActive, setOverrideActive] = useState(false);
   const [detectedMode, setDetectedMode] = useState<CapabilityMode | null>(null);
@@ -66,6 +67,7 @@ export function ProviderSettingsPage() {
         setKeyStatus(current.api_key);
         setCapability(current.capability);
         setCapabilityMode(current.capability_mode);
+        setSavedMode(current.capability_mode);
         setEffectiveMode(current.effective_capability_mode);
         setOverrideActive(current.capability_override_active);
         setDetectedMode(current.detected_capability_mode);
@@ -120,6 +122,7 @@ export function ProviderSettingsPage() {
       setKeyStatus(saved.api_key);
       setCapability(saved.capability);
       setCapabilityMode(saved.capability_mode);
+      setSavedMode(saved.capability_mode);
       setEffectiveMode(saved.effective_capability_mode);
       setOverrideActive(saved.capability_override_active);
       setDetectedMode(saved.detected_capability_mode);
@@ -265,11 +268,12 @@ export function ProviderSettingsPage() {
               <option value="json">JSON</option>
             </select>
             <p className="xi-hint" id="provider-mode-help">
-              Effective saved mode: {effectiveMode}.
-              {overrideActive && ` Deployment override active: ${effectiveMode}.`}
+              {revision === null ? "No saved mode yet." : `Saved mode: ${savedMode}. Effective mode: ${effectiveMode}.`}
+              {revision !== null && overrideActive && ` Deployment override active: ${effectiveMode}.`}
               {detectedMode !== null
                 ? ` Detected provider mode: ${detectedMode} (last test).${detectedMode !== effectiveMode ? " This differs from the effective mode." : ""}`
                 : " Detection result unavailable; test the provider to check the mode."}
+              {" Test uses saved settings; detection does not select a mode."}
             </p>
           </div>
           <div className="xi-field">

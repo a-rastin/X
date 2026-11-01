@@ -208,6 +208,28 @@ def test_detection_only_falls_back_for_explicit_format_rejection(
     assert formats == (["json_schema", "json_object"] if expected == "json" else ["json_schema"])
 
 
+@pytest.mark.parametrize("schema_rejected", [False, True])
+@pytest.mark.parametrize("value", ["1", "1.0"])
+def test_detection_rejects_numeric_ready(monkeypatch, schema_rejected, value):
+    class Response:
+        content = b"{}"
+
+        def __init__(self, status, body):
+            self.status_code = status
+            self.body = body
+
+        def json(self):
+            return self.body
+
+    def post(_url, payload, _headers, _timeout):
+        if schema_rejected and payload["response_format"]["type"] == "json_schema":
+            return Response(400, {"error": {"param": "response_format"}})
+        return Response(200, {"choices": [{"message": {"content": f'{{"ready":{value}}}'}}]})
+
+    monkeypatch.setattr(provider, "post_json", post)
+    assert provider.detect_capability_mode("https://example.test", "model", "secret") is None
+
+
 def test_capability_mode_is_accepted_and_validated():
     body = {"base_url": "https://example.test/v1", "model": "fictional"}
     assert ProviderSettingsWrite(**body, capability_mode="json").capability_mode == "json"

@@ -16,12 +16,13 @@ test("provider mode selection shows detection and deployment override", async ({
     const request = route.request();
     if (request.url().endsWith("/test")) {
       expect(request.headers()["if-match"]).toBe(`"${saved.revision}"`);
+      expect(request.postDataJSON()).toEqual({});
       saved = { ...saved, revision: saved.revision + 1, capability: "verified", detected_capability_mode: "schema" };
       await route.fulfill({ json: { ...saved, diagnostic: "Synthetic test passed." } });
     } else if (request.method() === "PUT") {
       const body = request.postDataJSON();
       expect(body.capability_mode).toBe("json");
-      saved = { ...saved, revision: saved.revision + 1, capability_mode: body.capability_mode };
+      saved = { ...saved, revision: saved.revision + 1, capability_mode: body.capability_mode, capability: "untested", detected_capability_mode: null };
       await route.fulfill({ json: saved });
     } else {
       await route.fulfill({ json: saved });
@@ -31,6 +32,11 @@ test("provider mode selection shows detection and deployment override", async ({
   await expect(page.getByLabel("Capability mode")).toHaveValue("schema");
   await expect(page.getByText(/deployment override.*json/i)).toBeVisible();
   await page.getByLabel("Capability mode").selectOption("json");
+  await expect(page.getByText(/saved mode: schema\. effective mode: json/i)).toBeVisible();
+  await expect(page.getByText(/test uses saved settings.*detection does not select/i)).toBeVisible();
+  await page.getByRole("button", { name: "Test provider" }).click();
+  await expect(page.getByLabel("Capability mode")).toHaveValue("json");
+  expect(saved.capability_mode).toBe("schema");
   await page.getByRole("button", { name: "Save", exact: true }).click();
   await page.getByRole("button", { name: "Test provider" }).click();
   await expect(page.getByText(/detected.*schema/i)).toBeVisible();
@@ -40,4 +46,18 @@ test("provider mode selection shows detection and deployment override", async ({
   await expect(page.getByText(/detected provider mode: schema.*last test/i)).toBeVisible();
   await expect(page.getByText(/tool probe: verified/i)).toBeVisible();
   await expect(page.getByText(/deployment override.*json/i)).toBeVisible();
+});
+
+test("unsaved provider does not claim an effective mode", async ({ page }) => {
+  await page.route("**/api/v1/me", (route) => route.fulfill({ json: {
+    user: { id: "synthetic-admin", username: "admin", role: "admin", theme: "light" },
+    csrf_token: "synthetic-csrf", research_warning: null,
+  } }));
+  await page.route("**/api/v1/api-settings**", (route) => route.fulfill({
+    status: 404, json: { code: "NOT_FOUND" },
+  }));
+  await page.goto("/#/provider-settings");
+  await expect(page.getByText(/no saved mode yet/i)).toBeVisible();
+  await expect(page.getByText(/effective mode:/i)).toHaveCount(0);
+  await expect(page.getByRole("button", { name: "Test provider" })).toBeDisabled();
 });

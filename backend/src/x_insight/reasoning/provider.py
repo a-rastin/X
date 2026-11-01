@@ -820,7 +820,8 @@ def detect_capability_mode(
         if not isinstance(message, dict):
             return False
         content = _assistant_text(message)
-        return isinstance(content, str) and _extract_json_object(content) == {"ready": True}
+        result = _extract_json_object(content) if isinstance(content, str) else None
+        return isinstance(result, dict) and len(result) == 1 and result.get("ready") is True
 
     status, body = check(schema)
     if status == "ok":
