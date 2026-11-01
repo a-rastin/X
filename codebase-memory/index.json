@@ -1535,9 +1535,9 @@
         "backend",
         "reasoning"
       ],
-      "purpose": "The only LLM boundary: bounded CPT estimation and MCP tool bridging.",
+      "purpose": "Bounded CPT estimation, tool bridging, and provider capability probes.",
       "summary": "files/backend/src/x_insight/reasoning/provider.py.md",
-      "source_sha256": "061a88d9d6a22394d778e2ba892c640d326601667c61192918df9b50642d0852"
+      "source_sha256": "61c2bb49d2ad7e14b313a867d4d039d1a7ffc6f225f394372fc1577f5e7db51c"
     },
     {
       "path": "backend/src/x_insight/reasoning/provider_config.py",
@@ -2338,6 +2338,17 @@
       "purpose": null,
       "summary": null,
       "source_sha256": null
+    },
+    {
+      "path": "backend/tests/provider/test_capability_mode.py",
+      "labels": [
+        "backend",
+        "test",
+        "reasoning"
+      ],
+      "purpose": "Verify saved, detected, and effective provider capability modes.",
+      "summary": "files/backend/tests/provider/test_capability_mode.py.md",
+      "source_sha256": "cbc9b58cca2d9342dc34d7f206c773dd84e89b58d2750efacf8052f72e770324"
     },
     {
       "path": "backend/tests/provider/test_destination_policy.py",
@@ -4960,6 +4971,17 @@
       "purpose": null,
       "summary": null,
       "source_sha256": null
+    },
+    {
+      "path": "e2e/provider-capability-mode.spec.ts",
+      "labels": [
+        "test",
+        "frontend",
+        "admin"
+      ],
+      "purpose": "Exercise provider capability mode display and settings with mocked APIs.",
+      "summary": "files/e2e/provider-capability-mode.spec.ts.md",
+      "source_sha256": "6aee9d0bfcf6e1b526466d01608ff341793dd9256b151a725226cd97e7a59d07"
     },
     {
       "path": "e2e/provider-public-fixture.py",
@@ -7839,9 +7861,9 @@
         "frontend",
         "admin"
       ],
-      "purpose": null,
-      "summary": null,
-      "source_sha256": null
+      "purpose": "Admin provider settings and capability testing form.",
+      "summary": "files/web/src/features/admin/provider-settings/ProviderSettingsPage.tsx.md",
+      "source_sha256": "2e4a36a26183cadf412fc31b2e0a2a62a7377ca8f86c51e01570470a56bbcb10"
     },
     {
       "path": "web/src/features/admin/provider-settings/api.ts",

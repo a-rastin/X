@@ -1,14 +1,13 @@
 # backend/src/x_insight/reasoning/provider.py
 
-Source SHA-256: 061a88d9d6a22394d778e2ba892c640d326601667c61192918df9b50642d0852
-Source commit: bad418cecdf013317df56751fec2c4a0158b305d
+Source SHA-256: 61c2bb49d2ad7e14b313a867d4d039d1a7ffc6f225f394372fc1577f5e7db51c
 
 ## Purpose
 The only LLM boundary: bounded CPT estimation plus MCP tool bridging. Everything else in the
 pipeline is deterministic.
 
 ## Important Symbols
-- Bounds: `MAX_TOOL_CALLS=10`, `PROVIDER_TIMEOUT_SECONDS=60`, `MAX_PROVIDER_BYTES=1 MiB`,
+- Bounds: `MAX_TOOL_CALLS=10`, configurable provider timeout, `MAX_PROVIDER_BYTES=1 MiB`,
   `RESPONSE_SCHEMA_VERSION="cpt-response-v1"`.
 - `build_outbound_payload()` — system prompt + canonical JSON user message and exactly one
   function tool (the MCP tool), `tool_choice=auto`; capability `schema` → strict
@@ -22,6 +21,10 @@ pipeline is deterministic.
   401/403 auth, 404/422 model, 429 retryable, 5xx transient), plus one no-format retry when
   `response_format` is rejected.
 - `probe_capability()` — synthetic forced tool call + JSON object for the admin diagnostic.
+- `detect_capability_mode()` — separately detects schema or JSON format; JSON fallback is tried
+  only after an explicit response-format rejection. Success requires an object containing only
+  `ready` with the actual boolean `true` (numeric 1 and 1.0 are rejected). Detection does not
+  choose the saved mode.
 - `DeterministicProviderEndpoint` — test-only loopback double.
 
 ## Behavior and Constraints
