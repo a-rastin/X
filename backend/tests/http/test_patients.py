@@ -271,9 +271,6 @@ def test_create_authorization_admin_denied_unauthenticated_denied(
         {"clinical_status": "new"},
         {"clinical_status": ""},
         {"given_name": ""},
-        {"given_name": "John Doe"},
-        {"given_name": "Anne-Marie"},
-        {"given_name": "O'Brien"},
         {"given_name": "John3"},
         {"given_name": "   "},
         {"family_name": ""},
@@ -307,6 +304,93 @@ def test_missing_required_fields_fail_with_field_errors(
     assert response.status_code == 422, f"missing {missing}: {response.text}"
     assert missing in response.json()["field_errors"], response.json()
     assert _patient_count(clean_registry) == 0
+
+
+def test_registration_accepts_full_family_name(admin_client, clean_registry, monkeypatch) -> None:
+    _make_physician(admin_client, "dr_fullname")
+    client, csrf, _ = _physician_client(clean_registry, monkeypatch, "dr_fullname", "pw123")
+    response = client.post(
+        "/api/v1/patients",
+        json=_valid_payload(given_name="Test", family_name="Patient Alpha"),
+        headers=_auth_headers(csrf),
+    )
+    assert response.status_code == 201, response.text
+    patient = response.json()["patient"]
+    assert patient["given_name"] == "Test"
+    assert patient["family_name"] == "Patient Alpha"
+    readback = client.get(f"/api/v1/patients/{patient['id']}")
+    assert readback.status_code == 200, readback.text
+    assert readback.json()["patient"]["family_name"] == "Patient Alpha"
+
+
+def test_name_contract_for_registration_and_patch(
+    admin_client, clean_registry, monkeypatch
+) -> None:
+    _make_physician(admin_client, "dr_names")
+    client, csrf, _ = _physician_client(clean_registry, monkeypatch, "dr_names", "pw123")
+    headers = _auth_headers(csrf)
+    valid = [
+        ("John Doe", "John Doe"),
+        ("Anne-Marie", "Anne-Marie"),
+        ("O'Brien", "O'Brien"),
+        ("Jose\u0301", "José"),
+        ("𐐀" * 100, "𐐀" * 100),
+        ("-'A--'", "-'A--'"),
+    ]
+    for index, (name, expected) in enumerate(valid):
+        response = client.post(
+            "/api/v1/patients",
+            json=_valid_payload(f"{index + 100:010d}", given_name=name, family_name=name),
+            headers=headers,
+        )
+        assert response.status_code == 201, response.text
+        patient = response.json()["patient"]
+        assert patient["given_name"] == expected
+        assert patient["family_name"] == expected
+        readback = client.get(f"/api/v1/patients/{patient['id']}")
+        assert readback.status_code == 200, readback.text
+        assert readback.json()["patient"]["given_name"] == expected
+        assert readback.json()["patient"]["family_name"] == expected
+
+    invalid = [
+        "", "---'", " A", "A ", "A  B", "A\tB", "A\nB", "A\u00a0B",
+        "A1", "A@", "𐐀" * 101, "A\u0338",
+    ]
+    for field, label in (("given_name", "Given name"), ("family_name", "Family name")):
+        message = (
+            f"{label} may contain letters, spaces, hyphens and apostrophes. "
+            "Use 1–100 characters, with no leading, trailing or double spaces."
+        )
+        for name in invalid:
+            response = client.post(
+                "/api/v1/patients", json=_valid_payload(**{field: name}), headers=headers
+            )
+            assert response.status_code == 422, (field, name, response.text)
+            assert response.json()["field_errors"][field] == [message]
+
+    patient_id = patient["id"]
+    patch_headers = {**headers, "If-Match": contracts.format_etag(patient["revision"])}
+    response = client.patch(
+        f"/api/v1/patients/{patient_id}",
+        json={"given_name": "Anne-Marie", "family_name": "O'Ne\u0301ill"},
+        headers=patch_headers,
+    )
+    assert response.status_code == 200, response.text
+    updated = response.json()["patient"]
+    assert updated["given_name"] == "Anne-Marie"
+    assert updated["family_name"] == "O'Néill"
+    readback = client.get(f"/api/v1/patients/{patient_id}")
+    assert readback.json()["patient"]["family_name"] == "O'Néill"
+    patch_headers["If-Match"] = contracts.format_etag(updated["revision"])
+    for field, label in (("given_name", "Given name"), ("family_name", "Family name")):
+        response = client.patch(
+            f"/api/v1/patients/{patient_id}", json={field: "A@"}, headers=patch_headers
+        )
+        assert response.status_code == 422, response.text
+        assert response.json()["field_errors"][field] == [
+            f"{label} may contain letters, spaces, hyphens and apostrophes. "
+            "Use 1–100 characters, with no leading, trailing or double spaces."
+        ]
 
 
 def test_valid_unicode_name_after_nfc_passes(admin_client, clean_registry, monkeypatch) -> None:

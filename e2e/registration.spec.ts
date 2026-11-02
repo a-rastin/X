@@ -90,8 +90,8 @@ test("physician registers a patient; leading-zero ID round-trips with timestamp 
 
   // Leading zeros are part of the identifier, not a number to normalize.
   const identifier = `00${uniquePatientId().slice(2)}`;
-  const given = uniqueLetters("anna");
-  const family = uniqueLetters("novak");
+  const given = "Test";
+  const family = "Patient Alpha";
   await fillValidForm(page, { given, family, identifier, phone: "+43 699 123456" });
 
   const register = page.getByRole("button", { name: "Register patient" });
@@ -111,6 +111,8 @@ test("physician registers a patient; leading-zero ID round-trips with timestamp 
   );
   await register.dblclick({ delay: 50 });
   const created = await (await responsePromise).json();
+  expect(created.patient.given_name).toBe(given);
+  expect(created.patient.family_name).toBe(family);
 
   await expect(page).toHaveURL(new RegExp(`#/encounters/${created.draft.id}#diagnosis$`));
   await expect(page.locator("#wizard-pages a")).toHaveCount(7);
@@ -198,6 +200,18 @@ test("Register stays disabled until every demographics field is valid", async ({
   await page.getByLabel("Age", { exact: true }).fill("30.5");
   await expect(register).toBeDisabled();
   await page.getByLabel("Age", { exact: true }).fill("30");
+  await expect(register).toBeEnabled();
+
+  // Invalid name characters show the field-specific message and block submission.
+  const nameRule = "may contain letters, spaces, hyphens and apostrophes. Use 1–100 characters, with no leading, trailing or double spaces.";
+  await page.getByLabel("Given name").fill("Test1");
+  await expect(page.getByText(`Given name ${nameRule}`)).toBeVisible();
+  await expect(register).toBeDisabled();
+  await page.getByLabel("Given name").fill("Test");
+  await page.getByLabel("Family name").fill("Alpha@");
+  await expect(page.getByText(`Family name ${nameRule}`)).toBeVisible();
+  await expect(register).toBeDisabled();
+  await page.getByLabel("Family name").fill("Patient Alpha");
   await expect(register).toBeEnabled();
 
   // A malformed ID disables again; fixing it re-enables.
@@ -380,6 +394,7 @@ test("server field errors render against their labels and keep input", async ({
           code: "VALIDATION_FAILED",
           message: "Patient demographics are invalid.",
           field_errors: {
+            given_name: ["Given name may contain letters, spaces, hyphens and apostrophes. Use 1–100 characters, with no leading, trailing or double spaces."],
             age: ["Must be an integer 18-99."],
             identifier: ["Must be exactly 10 ASCII digits (0-9)."],
           },
@@ -398,6 +413,11 @@ test("server field errors render against their labels and keep input", async ({
     await expect(alert).toContainText("Patient demographics are invalid.");
     // Keyboard focus moves to the summary; inputs name their errors.
     await expect(alert).toBeFocused();
+    await expect(page.getByLabel("Given name")).toHaveAttribute(
+      "aria-describedby",
+      "givenName-error",
+    );
+    await expect(page.getByText("Given name may contain letters, spaces, hyphens and apostrophes. Use 1–100 characters, with no leading, trailing or double spaces.")).toBeVisible();
     await expect(page.getByLabel("Age", { exact: true })).toHaveAttribute(
       "aria-describedby",
       "age-error",

@@ -55,7 +55,7 @@ As a physician, select **Register new patient** from the patient directory. The 
 
    | Field | Accepted input |
    | --- | --- |
-   | Given name and family name | Nonempty Unicode letters only; spaces, punctuation, and digits are rejected. |
+   | Given name and family name | 1–100 characters after Unicode normalization, including at least one letter. Spaces, hyphens (`-`), and straight apostrophes (`'`) are allowed; spaces cannot lead, trail, or occur consecutively. Digits and other symbols are rejected. |
    | Patient ID | Exactly 10 digits, using `0`–`9`. Leading zeros are preserved. |
    | Sex | Select M or F from the available choices. |
    | Age | A whole number from 18 through 99. |

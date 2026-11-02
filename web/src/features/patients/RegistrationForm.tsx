@@ -212,7 +212,9 @@ function RegistrationForm() {
           Demographics (step 1)
         </h3>
         <p className="xi-hint">
-          Names use Unicode letters only; the patient ID is exactly 10 ASCII
+          Names use 1–100 letters, spaces, hyphens or apostrophes and must
+          include at least one letter, with no leading, trailing or double
+          spaces. The patient ID is exactly 10 ASCII
           digits and keeps leading zeros. Nothing is sent until the form is
           valid. Later steps open after the patient is registered.
         </p>

@@ -39,7 +39,12 @@ const AGE_RE = /^(1[89]|[2-8][0-9]|9[0-9])$/;
 
 export function isValidPersonName(value: string): boolean {
   const normalized = value.normalize("NFC");
-  return normalized.length > 0 && /^[\p{L}]+$/u.test(normalized);
+  return Array.from(normalized).length <= 100
+    && /^[\p{L} '\-]+$/u.test(normalized)
+    && /\p{L}/u.test(normalized)
+    && !normalized.startsWith(" ")
+    && !normalized.endsWith(" ")
+    && !normalized.includes("  ");
 }
 
 export function isValidIdentifier(value: string): boolean {
@@ -51,7 +56,7 @@ export function isValidAge(value: string): boolean {
 }
 
 const NAME_MESSAGE =
-  "Must be non-empty Unicode letters only (no spaces, digits, or punctuation).";
+  "may contain letters, spaces, hyphens and apostrophes. Use 1–100 characters, with no leading, trailing or double spaces.";
 
 export function validateDemographics(fields: DemographicsFields): {
   valid: boolean;

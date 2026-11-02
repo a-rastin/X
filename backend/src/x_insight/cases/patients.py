@@ -9,9 +9,9 @@ Plan.md §§2.2-2.3, 4.1-4.3 (FR-10, FR-23):
   (including archived rows): the loser gets a generic ``409 CONFLICT``, never
   a merge. There is deliberately no patient-row lock here — the patient does
   not exist yet, so the unique constraint is the race guard.
-- Validation mirrors plan §2.2 exactly: names are Unicode letters after NFC
-  normalization (nonempty, no whitespace/digits/punctuation, casing
-  preserved); sex ``M|F``; integer age 18-99; identifier exactly ten ASCII
+- Validation mirrors plan §2.2: names are NFC-normalized Unicode letters with
+  bounded length and permitted spaces, hyphens and apostrophes; sex ``M|F``;
+  integer age 18-99; identifier exactly ten ASCII
   digits stored as TEXT (never numeric — ``0012345678`` round-trips
   unchanged); clinical status ``first_time|established``; phone is optional
   free text with no country validation.
@@ -75,12 +75,7 @@ def validate_identifier(value: Any) -> str:
 
 
 def normalize_person_name(value: Any, field: str) -> str:
-    """NFC-normalize a name, then require nonempty Unicode letters only.
-
-    ``str.isalpha`` accepts Unicode letters (after NFC composition, e.g.
-    ``e`` + combining acute becomes ``é``) while rejecting whitespace,
-    digits, and punctuation. Casing is preserved as sent.
-    """
+    """NFC-normalize and validate a patient name, preserving accepted characters."""
     if not isinstance(value, str):
         raise contracts.ContractError(
             422,
@@ -89,17 +84,20 @@ def normalize_person_name(value: Any, field: str) -> str:
             {field: ["Must be text."]},
         )
     normalized = unicodedata.normalize("NFC", value)
-    if not normalized or not all(char.isalpha() for char in normalized):
-        raise contracts.ContractError(
-            422,
-            "VALIDATION_FAILED",
-            "Name must contain Unicode letters only.",
-            {
-                field: [
-                    "Must be non-empty Unicode letters only (no spaces, digits, or punctuation)."
-                ]
-            },  # noqa: E501
+    if (
+        not 1 <= len(normalized) <= 100
+        or not any(char.isalpha() for char in normalized)
+        or not all(char.isalpha() or char in " -'" for char in normalized)
+        or normalized.startswith(" ")
+        or normalized.endswith(" ")
+        or "  " in normalized
+    ):
+        label = "Given name" if field == "given_name" else "Family name"
+        message = (
+            f"{label} may contain letters, spaces, hyphens and apostrophes. "
+            "Use 1–100 characters, with no leading, trailing or double spaces."
         )
+        raise contracts.ContractError(422, "VALIDATION_FAILED", message, {field: [message]})
     return normalized
 
 
