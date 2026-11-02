@@ -1,5 +1,7 @@
 # X-INSIGHT progress tracker
 
+[Issue 24 disclaimer analysis (2026-11-02)](s05.md#follow-up-2026-11-02--issue-24-disclaimer-analysis): versioned server acknowledgement planned for both patient-reading roles; implementation and acceptance remain open.
+
 [Issue 23 physician list implementation (2026-11-02)](s04.md#follow-up-2026-11-02--issue-23-physician-list-implementation): focused backend and synthetic Chromium checks pass; broader and deployed verification remain open.
 
 [Issue 22 login URL implementation (2026-11-02)](s05.md#follow-up-2026-11-02--issue-22-login-url-implementation): focused browser checks pass on an isolated backend; deployed acceptance remains unverified.
