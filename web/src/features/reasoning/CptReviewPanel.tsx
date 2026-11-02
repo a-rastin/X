@@ -1,3 +1,4 @@
+import { questionLabel } from "./questionLabels";
 /* Complete CPT review, comparison, and acceptance UI (S48c §§1-3 + §4
  * frontend half; plan.md §9.1, system-design §§8.1/8.3/8.5, ui-context CPT
  * panel; FR-50-57, NFR-03/NFR-06).
@@ -159,10 +160,12 @@ function indexOriginals(original: CptTable[] | null): OriginalIndex {
 }
 
 export function CptReviewPanel({
+  advanced,
   questionKey,
   runId,
   onSessionExpired,
 }: {
+  advanced: boolean;
   questionKey: string;
   runId: string;
   onSessionExpired: () => void;
@@ -424,7 +427,7 @@ export function CptReviewPanel({
       className="xi-cpt-panel"
       data-testid={`cpt-panel-${questionKey}`}
       id={`cpt-panel-${questionKey}`}
-      aria-label={`CPT review for ${questionKey}`}
+      aria-label={`CPT review for ${questionLabel(questionKey)}`}
     >
       <div className="xi-row-actions">
         <button
@@ -435,7 +438,7 @@ export function CptReviewPanel({
           aria-controls={regionId}
           onClick={toggle}
         >
-          {open ? `Hide CPT review for ${questionKey}` : `Show CPT review for ${questionKey}`}
+          {open ? `Hide CPT review for ${questionLabel(questionKey)}` : `Show CPT review for ${questionLabel(questionKey)}`}
         </button>
       </div>
       {open && (
@@ -459,6 +462,7 @@ export function CptReviewPanel({
           )}
           {phase === "ready" && review !== null && (
             <CptReviewBody
+              advanced={advanced}
               review={review}
               drafts={drafts}
               saveStatus={saveStatus}
@@ -481,6 +485,7 @@ export function CptReviewPanel({
 }
 
 function CptReviewBody({
+  advanced,
   review,
   drafts,
   saveStatus,
@@ -495,6 +500,7 @@ function CptReviewBody({
   onRetry,
   onAccept,
 }: {
+  advanced: boolean;
   review: QuestionReviewPayload;
   drafts: Record<string, number>;
   saveStatus: string | null;
@@ -581,13 +587,13 @@ function CptReviewBody({
         <div>
           <dt>Current CPT revision</dt>
           <dd>
-            <code className="xi-mono">{review.current_cpt_revision_id ?? "original (no edits)"}</code>
+            <code className="xi-mono">{advanced ? review.current_cpt_revision_id ?? "original (no edits)" : review.current_cpt_revision_id ? "Adjusted" : "Original (no edits)"}</code>
           </dd>
         </div>
         <div>
           <dt>Displayed result revision</dt>
           <dd>
-            <code className="xi-mono">{review.displayed_result_revision_id ?? "—"}</code>
+            <code className="xi-mono">{advanced ? review.displayed_result_revision_id ?? "—" : review.displayed_result_revision_id ? "Adjusted" : "—"}</code>
             {latestIsEarlier && (
               <span className="xi-cpt-badge"> earlier revision</span>
             )}
@@ -707,7 +713,7 @@ function CptReviewBody({
               ) : null}
               <table
                 className="xi-table"
-                aria-label={`CPT review for ${table.node_id} in ${questionKey}`}
+                aria-label={`CPT review for ${table.node_id} in ${questionLabel(questionKey)}`}
               >
                 <thead>
                   <tr>
@@ -831,10 +837,10 @@ function CptReviewBody({
             <div>
               <p style={{ marginBottom: 4 }}>
                 <strong>Original result</strong>{" "}
-                <span className="xi-hint">
+                {advanced && <span className="xi-hint">
                   baseline{" "}
                   <code className="xi-mono">{review.baseline.id}</code>
-                </span>
+                </span>}
               </p>
               <p className="xi-hint" style={{ marginTop: 0 }}>
                 {posteriorsSummary(review.baseline.posteriors ?? [])}
@@ -846,18 +852,16 @@ function CptReviewBody({
                 <strong>Latest successful result</strong>{" "}
                 {latestResult !== null ? (
                   <span className="xi-hint">
-                    result <code className="xi-mono">{latestResult.id}</code> · revision{" "}
-                    <code className="xi-mono">{latestResult.cpt_revision_id}</code>
+                    {advanced && <>result <code className="xi-mono">{latestResult.id}</code> · revision{" "}
+                    <code className="xi-mono">{latestResult.cpt_revision_id}</code></>}
                     {latestIsEarlier && (
                       <span className="xi-cpt-badge"> earlier revision</span>
                     )}
                     {latestResult.reused_from_baseline_id !== null && (
                       <span className="xi-hint">
                         {" "}
-                        · verified reuse of baseline{" "}
-                        <code className="xi-mono">
-                          {latestResult.reused_from_baseline_id}
-                        </code>
+                        · verified reuse of the original baseline{" "}
+                        {advanced && <code className="xi-mono">{latestResult.reused_from_baseline_id}</code>}
                       </span>
                     )}
                   </span>
@@ -949,13 +953,13 @@ function CptReviewBody({
             {review.acceptance.created_at}
           </p>
           <p className="xi-hint" style={{ marginBottom: 0 }}>
-            Acceptance <code className="xi-mono">{review.acceptance.id}</code> · baseline{" "}
+            {advanced && <>Acceptance <code className="xi-mono">{review.acceptance.id}</code> · baseline{" "}
             <code className="xi-mono">{review.acceptance.baseline_id}</code> · revision{" "}
             <code className="xi-mono">{review.acceptance.cpt_revision_id ?? "original"}</code>{" "}
             · result <code className="xi-mono">{review.acceptance.result_id}</code> (
             {review.acceptance.result_kind}) · input{" "}
-            <code className="xi-mono">{review.acceptance.input_hash.slice(0, 12)}…</code>.
-            Sign-off (S49) consumes these references; editing, reset, or relevant patient
+            <code className="xi-mono">{review.acceptance.input_hash}</code>.
+            </>}Editing, reset, or relevant patient
             changes invalidate this acceptance.
           </p>
         </div>
@@ -1012,7 +1016,7 @@ function CptReviewBody({
               {review.revisions.map((revision) => (
                 <li key={revision.id}>
                   <code className="xi-mono">rev {revision.sequence}</code> · {revision.kind} ·{" "}
-                  <code className="xi-mono">{revision.id}</code> · {revision.actor_username} ·{" "}
+                  {advanced && <><code className="xi-mono">{revision.id}</code> · </>}{revision.actor_username} ·{" "}
                   {revision.created_at}
                 </li>
               ))}
@@ -1022,12 +1026,8 @@ function CptReviewBody({
             <ul>
               {review.acceptances.map((acceptance) => (
                 <li key={acceptance.id}>
-                  <code className="xi-mono">{acceptance.id}</code> ·{" "}
-                  {acceptance.result_kind} <code className="xi-mono">{acceptance.result_id}</code>{" "}
-                  · revision{" "}
-                  <code className="xi-mono">
-                    {acceptance.cpt_revision_id ?? "original"}
-                  </code>{" "}
+                  {advanced && <><code className="xi-mono">{acceptance.id}</code> · </>}
+                  {acceptance.result_kind} {advanced && <> <code className="xi-mono">{acceptance.result_id}</code> · revision <code className="xi-mono">{acceptance.cpt_revision_id ?? "original"}</code></>}
                   · {acceptance.actor_username} · {acceptance.created_at}
                 </li>
               ))}

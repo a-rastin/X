@@ -1,3 +1,4 @@
+import { questionLabel } from "./questionLabels";
 /* Automatic proposal review and transparency UI (S48, plan.md §§8-9;
  * FR-15-16, FR-35-36, NFR-03).
  *
@@ -280,17 +281,17 @@ function signBlockReason(batch: BatchPayload, joined: JoinedRun[]): string | nul
   if (batch.freshness?.stale === true) {
     return `Run is stale — ${batch.freshness.reason}. Signing is blocked; start a new run for the current inputs. Draft editing stays available.`;
   }
-  const failed = joined.filter((item) => item.display === "failed").map((item) => item.run.question_key);
+  const failed = joined.filter((item) => item.display === "failed").map((item) => questionLabel(item.run.question_key));
   if (failed.length > 0) {
     return `Signing is blocked — ${failed.length} question${failed.length === 1 ? " has" : "s have"} failed (${failed.join(", ")}). Retry the failed question below; draft editing stays available.`;
   }
-  const clarification = joined.filter((item) => item.display === "clarification").map((item) => item.run.question_key);
+  const clarification = joined.filter((item) => item.display === "clarification").map((item) => questionLabel(item.run.question_key));
   if (clarification.length > 0) {
     return `Signing is blocked — ${clarification.join(", ")} need${clarification.length === 1 ? "s" : ""} clarification. Correct the draft inputs, then start a new run.`;
   }
   if (batch.proposal === null || batch.workflow?.complete !== true) {
     const pending = batch.workflow?.pending_question_keys ?? [];
-    const tail = pending.length > 0 ? ` Waiting on: ${pending.join(", ")}.` : "";
+    const tail = pending.length > 0 ? ` Waiting on: ${pending.map((key) => questionLabel(key)).join(", ")}.` : "";
     return `Signing is blocked — the proposal is incomplete (not review-ready).${tail} Partial sections above stay readable.`;
   }
   return null;
@@ -300,10 +301,10 @@ function incompleteReason(batch: BatchPayload): string {
   const pending = batch.workflow?.pending_question_keys ?? [];
   const clarification = batch.workflow?.needs_clarification ?? [];
   if (clarification.length > 0) {
-    return `needs clarification for ${clarification.join(", ")} — correct the draft inputs, then start a new run.`;
+    return `needs clarification for ${clarification.map((key) => questionLabel(key)).join(", ")} — correct the draft inputs, then start a new run.`;
   }
   if (pending.length > 0) {
-    return `waiting on ${pending.join(", ")}.`;
+    return `waiting on ${pending.map((key) => questionLabel(key)).join(", ")}.`;
   }
   if (batch.workflow !== undefined && batch.workflow.ddi_status !== "valid") {
     return `the pinned DDI report is ${batch.workflow.ddi_status}.`;
@@ -406,6 +407,7 @@ function runHasBaseline(item: JoinedRun): boolean {
 }
 
 export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, stepNumber }: ProposalReviewPanelProps) {
+  const [advanced, setAdvanced] = useState(false);
   const [phase, setPhase] = useState<Phase>({ kind: "boot" });
   const [batchId, setBatchId] = useState<string | null>(null);
   const [batch, setBatch] = useState<BatchPayload | null>(null);
@@ -1139,7 +1141,7 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
 
       {phase.kind === "tracking" && batch !== null && (
         <div>
-          <BatchHeader batch={batch} />
+          <BatchHeader batch={batch} advanced={advanced} onAdvanced={setAdvanced} />
           {batch.freshness?.stale === true && (
             <div className="xi-warning-panel" role="status" data-testid="proposal-stale-banner">
               <p style={{ margin: 0 }}>
@@ -1179,6 +1181,7 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
                 <li key={item.run.id} className="xi-proposal-run">
                   <QuestionBlock
                     item={item}
+                    advanced={advanced}
                     expanded={expanded[item.run.question_key] ?? false}
                     review={reviews[item.run.id] ?? null}
                     fresh={freshByRun[item.run.id] ?? null}
@@ -1223,6 +1226,7 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
               (ready runs only — skipped runs carry no acceptance). The
               secondary plan below stays editable and is never cleared here. */
             <SignPanel
+              advanced={advanced}
               encounterId={encounterId}
               patientId={patientId}
               autosave={autosave}
@@ -1253,7 +1257,7 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
   );
 }
 
-function BatchHeader({ batch }: { batch: BatchPayload }) {
+function BatchHeader({ batch, advanced, onAdvanced }: { batch: BatchPayload; advanced: boolean; onAdvanced: (open: boolean) => void }) {
   const busy = batch.queue?.busy === true;
   const position = batch.queue?.queue_position;
   // ponytail: pinned policy identity is one lookup — the fingerprint already
@@ -1262,17 +1266,20 @@ function BatchHeader({ batch }: { batch: BatchPayload }) {
   return (
     <div className="xi-proposal-meta">
       <p className="xi-hint" role="status" style={{ marginBottom: 4 }}>
-        Run <code className="xi-mono">{batch.batch.id}</code> · batch gate {batch.batch.status} ·
+        Batch gate {batch.batch.status} ·
         source revision {batch.batch.source_revision} ·{" "}
         {batch.workflow?.complete === true ? "complete" : "incomplete"} ·{" "}
         {batch.freshness?.stale === true ? "stale inputs" : "current inputs"}
       </p>
-      <p className="xi-hint" style={{ marginTop: 0 }}>
-        Fingerprint <code className="xi-mono">{batch.batch.fingerprint}</code>
+      <details open={advanced} onToggle={(event) => onAdvanced(event.currentTarget.open)}>
+        <summary>Advanced details</summary>
+        <p className="xi-hint" style={{ marginTop: 0 }}>
+        Run <code className="xi-mono">{batch.batch.id}</code> · Fingerprint <code className="xi-mono">{batch.batch.fingerprint}</code>
         {typeof historyContract === "string" && historyContract !== "" && (
           <> · inputs <code className="xi-mono">{historyContract}</code></>
         )}
       </p>
+      </details>
       {busy && (
         <p className="xi-warning-panel" role="status">
           Provider queue is busy
@@ -1286,6 +1293,7 @@ function BatchHeader({ batch }: { batch: BatchPayload }) {
 
 function QuestionBlock({
   item,
+  advanced,
   expanded,
   review,
   fresh,
@@ -1298,6 +1306,7 @@ function QuestionBlock({
   onReviewRetry,
 }: {
   item: JoinedRun;
+  advanced: boolean;
   expanded: boolean;
   review: ReviewState | null;
   fresh: InputFreshness | null;
@@ -1322,7 +1331,7 @@ function QuestionBlock({
       <p className="xi-proposal-status">
         <span aria-hidden="true">{GLYPH[item.display]}</span>{" "}
         <span>
-          <strong>{key}</strong> — {LABEL[item.display]}
+          <strong>{questionLabel(key)}</strong> — {LABEL[item.display]}
         </span>
       </p>
       <p className="xi-hint" style={{ marginTop: 0 }}>
@@ -1358,7 +1367,7 @@ function QuestionBlock({
             disabled={actionBusy}
             onClick={onRetry}
           >
-            {actionBusy ? "Retrying…" : `Retry ${key}`}
+            {actionBusy ? "Retrying…" : `Retry ${questionLabel(key)}`}
           </button>
         </div>
       )}
@@ -1370,7 +1379,7 @@ function QuestionBlock({
           aria-controls={regionId}
           onClick={onToggle}
         >
-          {expanded ? `Hide transparency for ${key}` : `Show transparency for ${key}`}
+          {expanded ? `Hide transparency for ${questionLabel(key)}` : `Show transparency for ${questionLabel(key)}`}
         </button>
       </div>
       {/* S48c complete CPT review (plan.md §9.1; FR-50-57): own lazy toggle +
@@ -1378,7 +1387,7 @@ function QuestionBlock({
         untouched. Per-question CPT sliders, comparison, reset/retry, and
         acceptance live in CptReviewPanel; testids cpt-panel-<key> /
         cpt-accept-<key>. */}
-      {item.entry?.baseline && <CptReviewPanel questionKey={key} runId={item.run.id} onSessionExpired={onSessionExpired} />}
+      {item.entry?.baseline && <CptReviewPanel advanced={advanced} questionKey={key} runId={item.run.id} onSessionExpired={onSessionExpired} />}
       {expanded && (
         <div data-testid={`proposal-transparency-${key}`} id={regionId}>
           {review === null || review.status === "loading" ? (
@@ -1406,6 +1415,7 @@ function QuestionBlock({
             </p>
           ) : (
             <TransparencyView
+              advanced={advanced}
               transparency={review.transparency}
               baselineId={review.baselineId}
               networkVersion={review.networkVersion}
@@ -1422,6 +1432,7 @@ function QuestionBlock({
 }
 
 function TransparencyView({
+  advanced,
   transparency,
   baselineId,
   networkVersion,
@@ -1430,6 +1441,7 @@ function TransparencyView({
   effectiveHash,
   provenance,
 }: {
+  advanced: boolean;
   transparency: QuestionTransparency;
   baselineId: string | null;
   networkVersion: string | null;
@@ -1448,7 +1460,7 @@ function TransparencyView({
         <div>
           <dt>Question</dt>
           <dd>
-            <code className="xi-mono">{transparency.question_key}</code>
+            {questionLabel(transparency.question_key)}
           </dd>
         </div>
         <div>
@@ -1465,7 +1477,7 @@ function TransparencyView({
             </code>
           </dd>
         </div>
-        <div>
+        {advanced && <><div>
           <dt>Baseline</dt>
           <dd>
             <code className="xi-mono">{baselineId ?? "—"}</code>
@@ -1477,13 +1489,14 @@ function TransparencyView({
             <code className="xi-mono">{effectiveHash ?? result?.effective_hash ?? "—"}</code>
           </dd>
         </div>
+      </>}
       </dl>
 
       <h5 className="xi-proposal-subhead">Saved patient inputs (frozen at run start)</h5>
       {inputs.length === 0 ? (
         <p className="xi-hint">No projected inputs.</p>
       ) : (
-        <table className="xi-table" aria-label={`Saved patient inputs for ${transparency.question_key}`}>
+        <table className="xi-table" aria-label={`Saved patient inputs for ${questionLabel(transparency.question_key)}`}>
           <thead>
             <tr>
               <th scope="col">Node</th>
@@ -1570,7 +1583,7 @@ function TransparencyView({
       ) : (
         <div>
           {(result.posteriors ?? []).length > 0 && (
-            <table className="xi-table" aria-label={`Posterior probabilities for ${transparency.question_key}`}>
+            <table className="xi-table" aria-label={`Posterior probabilities for ${questionLabel(transparency.question_key)}`}>
               <thead>
                 <tr>
                   <th scope="col">Node</th>
@@ -1601,8 +1614,8 @@ function TransparencyView({
             </table>
           )}
           <p className="xi-hint">
-            Query nodes <code className="xi-mono">{(result.query_nodes ?? []).join(", ")}</code> ·
-            effective hash <code className="xi-mono">{result.effective_hash}</code>
+            Query nodes <code className="xi-mono">{(result.query_nodes ?? []).join(", ")}</code>
+            {advanced && <> · effective hash <code className="xi-mono">{result.effective_hash}</code></>}
           </p>
           <p style={{ marginBottom: 4 }}>
             <strong>Recommendation (templated section):</strong>
@@ -1611,7 +1624,7 @@ function TransparencyView({
         </div>
       )}
 
-      {provenanceEntries.length > 0 && (
+      {advanced && provenanceEntries.length > 0 && (
         <details className="xi-proposal-details">
           <summary>Run provenance (persisted)</summary>
           <ul>
@@ -1625,7 +1638,7 @@ function TransparencyView({
         </details>
       )}
       <p className="xi-hint">
-        Full effective XML is retained server-side; only its hash is shown here.
+        Full effective XML is retained server-side; its hash is available in advanced details.
       </p>
     </div>
   );
@@ -1663,7 +1676,7 @@ function ProposalBlock({ batch }: { batch: BatchPayload }) {
             <li key={section.question_run_id}>
               <p style={{ marginBottom: 2 }}>
                 <strong>
-                  <code className="xi-mono">{section.question_key}</code>
+                  {questionLabel(section.question_key)}
                 </strong>
               </p>
               <p style={{ marginTop: 0 }}>{section.section_text}</p>
@@ -1682,7 +1695,7 @@ function ProposalBlock({ batch }: { batch: BatchPayload }) {
           <ul>
             {skipped.map((entry) => (
               <li key={`${entry.question_key}|${entry.position}`}>
-                <code className="xi-mono">{entry.question_key}</code> — skipped: {entry.reason}
+                {questionLabel(entry.question_key)} — skipped: {entry.reason}
               </li>
             ))}
           </ul>

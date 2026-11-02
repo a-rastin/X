@@ -110,6 +110,9 @@ different step number by encounter kind. The
 [2026-10-18 follow-up](project-documents/dev/progress/s07.md#follow-up-2026-10-18--adverse-effects-leave-the-registration-wizard)
 records the refusal contract.
 
+Proposal review presents readable question names and keeps technical identifiers
+in an initially closed **Advanced details** section. See the [user guide](docs/user-guide.md#generate-and-review-a-proposal) for the review workflow.
+
 The core record and reasoning rules are:
 
 - A patient has at most one open draft across all physicians and encounter types.

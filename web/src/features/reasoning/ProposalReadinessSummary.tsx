@@ -1,3 +1,4 @@
+import { questionLabel } from "./questionLabels";
 import type { ProposalBlocker, ProposalReadiness } from "./api";
 
 export function historyControlId(sourcePath: string): string {
@@ -11,18 +12,19 @@ export function focusHistoryControl(sourcePath: string): void {
 }
 
 function blockerLink(blocker: ProposalBlocker, encounterId: string, local: boolean) {
+  const label = blocker.label === blocker.question_label ? questionLabel(blocker.question_key) : blocker.label;
   if (blocker.source_path?.startsWith("candidate/history/")) {
     return (
       <a href={local ? `#${historyControlId(blocker.source_path)}` : `#/encounters/${encounterId}#history?field=${encodeURIComponent(blocker.source_path)}`}
         onClick={local ? (event) => { event.preventDefault(); focusHistoryControl(blocker.source_path!); } : undefined}>
-        {blocker.label}
+        {label}
       </a>
     );
   }
   if (blocker.source_path === "synthetic/assessments/cssrs") {
-    return <a href={`#/encounters/${encounterId}#cssrs`}>{blocker.label}</a>;
+    return <a href={`#/encounters/${encounterId}#cssrs`}>{label}</a>;
   }
-  return blocker.label;
+  return label;
 }
 
 /** Shares labels and reasons from the server; never evaluates gates.
@@ -53,7 +55,7 @@ export function ProposalReadinessSummary({ readiness, encounterId, local = false
       </p>
       {readiness.questions.filter((question) => question.blockers.length > 0).map((question) => (
         <div key={question.question_key}>
-          <h5 className="xi-proposal-subhead">{question.question_label}</h5>
+          <h5 className="xi-proposal-subhead">{questionLabel(question.question_key)}</h5>
           <ul className="xi-diagnosis-missing">
             {question.blockers.map((blocker, index) => (
               <li key={`${blocker.source_path ?? "gate"}-${index}`}>
@@ -73,7 +75,7 @@ export function ProposalReadinessSummary({ readiness, encounterId, local = false
           </p>
           {warnedQuestions.map((question) => (
             <div key={question.question_key}>
-              <p className="xi-hint" style={{ marginBottom: 0 }}>{question.question_label}</p>
+              <p className="xi-hint" style={{ marginBottom: 0 }}>{questionLabel(question.question_key)}</p>
               <ul className="xi-diagnosis-missing">
                 {(question.warnings ?? []).map((warning, index) => (
                   <li key={`${warning.source_path ?? "gate"}-${index}`}>

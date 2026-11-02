@@ -1,3 +1,4 @@
+import { questionLabel } from "../reasoning/questionLabels";
 /* Explicit encounter sign-off (S50 §2, plan.md §9.2; FR-15, FR-57, NFR-03).
  *
  * Rendered by ProposalReviewPanel only when the run-level gates already
@@ -47,6 +48,7 @@ import {
 type AutosaveApi = ReturnType<typeof useAutosave>;
 
 export function SignPanel({
+  advanced,
   encounterId,
   patientId,
   autosave,
@@ -56,6 +58,7 @@ export function SignPanel({
   getBlockReason,
   onSessionExpired,
 }: {
+  advanced: boolean;
   encounterId: string;
   patientId: string | null;
   autosave: AutosaveApi;
@@ -121,12 +124,12 @@ export function SignPanel({
         const reason = acceptBlockedReason(review);
         if (reason !== null) {
           throw new Error(
-            `Signing is blocked — ${key}: ${reason} Nothing was signed and the plan text is preserved.`,
+            `Signing is blocked — ${questionLabel(key)}: ${reason} Nothing was signed and the plan text is preserved.`,
           );
         }
         if (!review.is_accepted || review.acceptance === null) {
           throw new Error(
-            `Signing is blocked — ${key} has no current acceptance yet. Accept its exact current result in the CPT review above first; nothing was signed and the plan text is preserved.`,
+            `Signing is blocked — ${questionLabel(key)} has no current acceptance yet. Accept its exact current result in the CPT review above first; nothing was signed and the plan text is preserved.`,
           );
         }
         acceptances.push({
@@ -185,8 +188,7 @@ export function SignPanel({
       <div className="xi-notice" role="status" data-testid="sign-panel" id="sign-panel">
         <p style={{ marginTop: 0 }} data-testid="sign-status" id="sign-status">
           <strong>● Signed ✓</strong> by {signed.signer} at {signed.signedAt} (encounter revision{" "}
-          {signed.revision}). Snapshot <code className="xi-mono">{signed.snapshotId}</code> ·
-          hash <code className="xi-mono">{signed.hash}</code>. The draft slot is released; the
+          {signed.revision}). {advanced && <>Snapshot <code className="xi-mono">{signed.snapshotId}</code> · hash <code className="xi-mono">{signed.hash}</code>. </>}The draft slot is released; the
           frozen record below is read-only.
         </p>
         <p className="xi-hint" style={{ marginBottom: 0 }}>

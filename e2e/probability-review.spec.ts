@@ -1215,6 +1215,7 @@ test("S48c §2 comparison shows original vs latest-successful even when wording 
     await expect(cpt2).toContainText("60");
     await expect(cpt2.getByText("verified reuse")).toHaveCount(0);
     // Latest result carries revision + result ids (explicit references for S49).
+    await page.getByText("Advanced details", { exact: true }).click();
     await expect(cpt2).toContainText(revId);
     await expect(cpt2).toContainText(calcId);
   } finally {
@@ -1343,6 +1344,7 @@ test("S48c §§2-3 recalculating keeps sliders live, failed/stale block accept w
     await expect(cpt1).toContainText("◐");
     await expect(cpt1).toContainText("sliders stay enabled");
     await expect(cpt1).toContainText("earlier revision");
+    await page.getByText("Advanced details", { exact: true }).click();
     await expect(cpt1).toContainText(rev1a.id);
     await expect(cpt1.getByLabel(/A.*yes/i).first()).toBeEnabled();
     await expect(cpt1).toContainText("Acceptance blocked");
@@ -1701,6 +1703,7 @@ test("S48c §3 reset affects one panel only and retains revision history", async
     await expect(cpt1).toContainText("80", { timeout: 15000 });
     await expect(cpt1).toContainText("2 revisions");
     await expect(cpt1).toContainText("verified reuse");
+    await page.getByText("Advanced details", { exact: true }).click();
     await expect(cpt1).toContainText(base1.id);
     // Other panel unchanged: still adjusted 60/40 with its own single revision.
     await expect(cpt2).toContainText("60");
@@ -1971,10 +1974,17 @@ test("S48c §4 accept exact current, forged rejected, retry isolates, edit inval
     // Exact current acceptance succeeds and exposes explicit references (S49 input).
     await cpt1.getByTestId("cpt-accept-s48_q1").click();
     await expect(cpt1).toContainText("Accepted", { timeout: 15000 });
+    await expect(cpt1).toContainText("1 acceptances");
+    await cpt1.getByText("Revision and acceptance history", { exact: false }).click();
+    await expect(cpt1).not.toContainText(acc1.id);
+    await expect(cpt1).not.toContainText(rev1.id);
+    await expect(cpt1).not.toContainText(calc1.id);
+    await page.getByText("Advanced details", { exact: true }).click();
     await expect(cpt1).toContainText(acc1.id);
     await expect(cpt1).toContainText(rev1.id);
     await expect(cpt1).toContainText(calc1.id);
-    await expect(cpt1).toContainText("1 acceptances");
+    await page.getByText("Advanced details", { exact: true }).click();
+    await expect(cpt1).not.toContainText(acc1.id);
 
     // Retry targets exactly the failed panel's current revision, q1 stays accepted.
     await cpt2.getByTestId("cpt-retry-s48_q2").click();
@@ -1990,7 +2000,9 @@ test("S48c §4 accept exact current, forged rejected, retry isolates, edit inval
     await expect(cpt1).toContainText("Recalculating", { timeout: 15000 });
     await expect(cpt1).toContainText("Not accepted");
     await expect(cpt1).toContainText("1 acceptances");
-    // Sign UI consumes explicit references (S49 owns enforcement — no signing here).
+    // Historical references remain available in advanced details.
+    await expect(cpt1).not.toContainText(acc1.id);
+    await page.getByText("Advanced details", { exact: true }).click();
     await expect(cpt1).toContainText(acc1.id);
   } finally {
     await page.unroute("**/api/v1/encounters/*/generation-batches");

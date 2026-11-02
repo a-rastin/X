@@ -1157,8 +1157,13 @@ test("S50 §2 explicit Sign flushes saves and submits exact acceptance encounter
     // pending draft field here. The fence stays at the patched revision.
     await page.getByTestId("sign-button").click();
     await expect(page.getByTestId("sign-status")).toContainText("Signed ✓", { timeout: 15000 });
+    await expect(page.getByTestId("sign-status")).not.toContainText(snapshotId);
+    await expect(page.getByTestId("sign-status")).not.toContainText("f".repeat(8));
+    await page.getByText("Advanced details", { exact: true }).click();
     await expect(page.getByTestId("sign-status")).toContainText(snapshotId);
-    await expect(page.getByTestId("sign-status")).toContainText("f".repeat(8));
+    await expect(page.getByTestId("sign-status")).toContainText("f".repeat(64));
+    await page.getByText("Advanced details", { exact: true }).click();
+    await expect(page.getByTestId("sign-status")).not.toContainText(snapshotId);
     await expect(signPanel).toContainText("View the signed chart");
 
     // Exact references: one POST with If-Match + Idempotency-Key + body.

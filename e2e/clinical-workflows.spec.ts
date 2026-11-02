@@ -1185,7 +1185,7 @@ test("S59 §1 registration journey renders assessments meds DDI and five-questio
     // Proposal sections + skipped tail + pinned DDI report.
     await expect(panel).toContainText("s59_r1 absent: B no 78.00% outcome.");
     await expect(panel).toContainText("Skipped questions");
-    await expect(panel).toContainText("s59_r5");
+    await expect(panel).toContainText("S59 r5");
     const ddi = page.getByTestId("proposal-ddi");
     await expect(ddi).toBeVisible();
     await expect(ddi).toContainText("DDI coverage (pinned report)");
@@ -1194,9 +1194,10 @@ test("S59 §1 registration journey renders assessments meds DDI and five-questio
     await expect(ddi).toContainText("catalog_e2e_gamma");
 
     // All-CPT inspection affordance per question; keyboard opens the first.
-    for (const key of REG_KEYS) {
+    for (const key of REG_KEYS.slice(0, 4)) {
       await expect(page.getByTestId(`cpt-toggle-${key}`)).toBeVisible();
     }
+    await expect(page.getByTestId("cpt-toggle-s59_r5")).toHaveCount(0);
     const toggle = page.getByTestId("cpt-toggle-s59_r1");
     await toggle.focus();
     await expect(toggle).toBeFocused();
@@ -1212,9 +1213,9 @@ test("S59 §1 registration journey renders assessments meds DDI and five-questio
     await expect(slider).toBeFocused();
 
     // Transparency shows the five persisted fields for the question.
-    await panel.getByRole("button", { name: "Show transparency for s59_r1" }).click();
+    await panel.getByRole("button", { name: "Show transparency for S59 r1" }).click();
     const transparency = page.getByTestId("proposal-transparency-s59_r1");
-    await expect(transparency).toContainText("s59_r1", { timeout: 15000 });
+    await expect(transparency).toContainText("S59 r1", { timeout: 15000 });
     await expect(transparency).toContainText("s59-test-v1");
 
     // Restored tracking issues no new generation run.
@@ -1592,6 +1593,7 @@ test("S59 §§1-2 four cases accept exact current with comparison and retained h
     await expect(cpt1).toContainText("80");
     await cpt1.getByTestId("cpt-accept-s59_r1").click();
     await expect(cpt1).toContainText("Accepted ✓", { timeout: 15000 });
+    await page.getByText("Advanced details", { exact: true }).click();
     await expect(cpt1).toContainText(accIds[0]);
 
     // Case 2 — adjusted: real keyboard slider edit, comparison, exact accept.
@@ -1910,6 +1912,7 @@ test("S59 §2 sign freezes snapshot and admin report shows indicators versions a
 
     await page.getByTestId("sign-button").click();
     await expect(page.getByTestId("sign-status")).toContainText("Signed ✓", { timeout: 15000 });
+    await page.getByText("Advanced details", { exact: true }).click();
     await expect(page.getByTestId("sign-status")).toContainText(snapshotId);
     await expect(page.getByTestId("sign-status")).toContainText("f".repeat(8));
 
@@ -2185,6 +2188,7 @@ test("S59 §3 affected-only stale then regen needs re-review without adjustment 
   let regenerated = false;
   const regenPosts: { headers: Record<string, string>; body: Record<string, unknown> }[] = [];
   await seedStoredProposal(page, draftId, { batchId, packages, sourceRevision: 2 });
+  await page.route("**/proposal-readiness*", (route) => route.fulfill({ status: 200, json: { workflow: "registration", source_revision: 2, ready: true, status: "ready", required_count: 0, answered_count: 0, execution_ready_count: 0, blockers: [], warnings: [], questions: [] } }));
   await page.route("**/api/v1/encounters/*/generation-batches", async (route) => {
     if (route.request().method() === "POST") {
       let body: Record<string, unknown> = {};
@@ -2286,18 +2290,19 @@ test("S59 §3 affected-only stale then regen needs re-review without adjustment 
     });
     expect(regenPosts).toHaveLength(1);
     expect((regenPosts[0].headers["idempotency-key"] ?? "").length).toBeGreaterThan(0);
-    expect((regenPosts[0].body["packages"] as unknown[]).length).toBe(5);
+    expect(regenPosts[0].body).toEqual({ source_batch_id: batchId });
 
     // New original baseline for r2: no transferred adjustment, re-review needed.
     await expect(page.getByTestId("proposal-freshness-s59_r2")).toHaveCount(0);
     await page.getByTestId("cpt-toggle-s59_r2").click();
     const cpt2 = page.getByTestId("cpt-panel-s59_r2");
     await expect(cpt2).toContainText("Current inputs", { timeout: 15000 });
-    await expect(cpt2).toContainText("original (no edits)");
+    await expect(cpt2).toContainText("Original (no edits)");
     await expect(cpt2).toContainText("Not accepted");
     await expect(cpt2.getByTestId("cpt-accept-s59_r2")).toBeEnabled();
     await cpt2.getByTestId("cpt-accept-s59_r2").click();
     await expect(cpt2).toContainText("Accepted ✓", { timeout: 15000 });
+    await page.getByText("Advanced details", { exact: true }).click();
     await expect(cpt2).toContainText(accR2new);
 
     // Other questions still need their own review: with a saved plan, sign
@@ -2313,10 +2318,11 @@ test("S59 §3 affected-only stale then regen needs re-review without adjustment 
     await expect(page.getByTestId("sign-panel")).toContainText("Signing is blocked", {
       timeout: 10000,
     });
-    await expect(page.getByTestId("sign-panel")).toContainText("s59_r1");
+    await expect(page.getByTestId("sign-panel")).toContainText("S59 r1");
     expect(signPosts).toBe(0);
     await expect(page.getByTestId("sign-panel")).not.toContainText("Signed ✓");
   } finally {
+    await page.unroute("**/proposal-readiness*");
     await page.unroute("**/api/v1/encounters/*/generation-batches");
     await page.unroute("**/api/v1/generation-batches/*");
     await page.unroute("**/api/v1/question-runs/*/review");
@@ -2435,6 +2441,7 @@ test("S59 §3 working-note-only edit shows no spinners and preserves acceptance"
     await expect(cpt).toContainText("●");
     await expect(cpt).toContainText("Accepted");
     await expect(cpt).toContainText("✓");
+    await page.getByText("Advanced details", { exact: true }).click();
     await expect(cpt).toContainText(accId);
 
     // Working notes never leak into proposal/CPT DOM; typing starts no run.
@@ -2644,6 +2651,7 @@ test("S59 §4 reload resumes batch CPT and plan with zero new generation POSTs",
     await expect(page.getByTestId("cpt-panel-s59_r1")).toContainText("Accepted ✓", {
       timeout: 15000,
     });
+    await page.getByText("Advanced details", { exact: true }).click();
     await expect(page.getByTestId("cpt-panel-s59_r1")).toContainText(accId);
     expect(postCount).toBe(0);
     expect(getCount).toBeGreaterThan(getsBefore);
@@ -2758,7 +2766,7 @@ test("S59 §4 pending and failed block sign with plan preserved, server denies f
       timeout: 15000,
     });
     await expect(page.getByTestId("proposal-status-s59_r2")).toContainText("✕");
-    await expect(page.getByTestId("proposal-sign-blocked")).toContainText("has failed (s59_r2)");
+    await expect(page.getByTestId("proposal-sign-blocked")).toContainText("has failed (S59 r2)");
     await expect(page.getByTestId("proposal-retry-s59_r2")).toBeVisible();
     await expect(page.getByTestId("secondary-plan-textarea")).toHaveValue(planText);
     expect(signPosts).toBe(0);

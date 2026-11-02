@@ -151,7 +151,7 @@ For copied follow-up medications, review the entire list and select **Reconcile 
 3. If a check blocks generation, follow its explanation to the relevant page, resolve the issue, and return. **Check again** repeats the checks.
 4. Watch the ordered per-question status displays. Questions can complete, be not applicable, require clarification, or fail. Background processing requires a running worker and configured provider.
 5. Review the proposal text, skipped-question reasons, uncertainty notices, and pinned medication-interaction coverage.
-6. Open **Show transparency for…** for a question to inspect the saved patient inputs, estimated probability tables, computed results, recommendation, and provenance.
+6. Open **Show transparency for…** for a question to inspect the saved patient inputs, estimated probability tables, computed results, and recommendation. Open **Advanced details** when technical identifiers, hashes, or provenance are needed; it starts closed.
 
 A run preserves the inputs used when it started. Returning to this page or reopening the browser restores the recorded run rather than silently regenerating it. If the patient inputs changed, use **Start new run with current inputs** when offered. For an older History contract, the page may instead offer **Start new run with current History**. Earlier runs remain historical records.
 

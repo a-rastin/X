@@ -1,3 +1,4 @@
+import { questionLabel } from "../reasoning/questionLabels";
 /* Structured history in the shared draft autosave body (S12).
  *
  * Core fields retain their ids with conditional exposure and treatment controls. Reviewed
@@ -522,7 +523,7 @@ export function HistorySection({
             return (
               <section className="xi-diagnosis-criterion" key={key} aria-labelledby={`history-workflow-${key}`}>
                 <header className="xi-diagnosis-criterion-header">
-                  <h4 id={`history-workflow-${key}`} tabIndex={-1}>{readiness?.question_label ?? key.replaceAll("_", " ").replace(/^./, (letter) => letter.toUpperCase())}</h4>
+                  <h4 id={`history-workflow-${key}`} tabIndex={-1}>{questionLabel(key)}</h4>
                 </header>
                 <p className="xi-hint">Review this context for proposal generation. Uncertain context is estimated with disclosed uncertainty and does not block generation; only conflicting, unassessed, invalid or missing prerequisite inputs pause the affected question.</p>
                 {readiness && <p className="xi-hint">Saved required inputs: {readiness.execution_ready_count} / {readiness.required_count} execution-ready.{answersPending && " Changes pending."}</p>}

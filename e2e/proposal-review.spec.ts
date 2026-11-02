@@ -1,3 +1,4 @@
+import { questionLabel } from "../web/src/features/reasoning/questionLabels";
 import { test, expect } from "@playwright/test";
 import { createHash } from "crypto";
 import { readFile } from "node:fs/promises";
@@ -388,6 +389,8 @@ test("S48 readiness core completion starts generation with uncertainty; warnings
   await expect(summary).toContainText("Ready for proposal generation.");
   await expect(summary).toContainText("10 / 14 required responses answered; 14 / 14 execution-ready.");
   await expect(summary).toContainText("Uncertain context (does not block generation)");
+  await expect(summary).toContainText("Pharmacotherapy");
+  await expect(summary).not.toContainText("pharmacotherapy");
   await expect(summary.getByRole("link")).toHaveCount(13);
   const server = await (await request.get(`/api/v1/encounters/${draftId}/proposal-readiness`)).json();
   expect(server.ready).toBe(true);
@@ -407,7 +410,7 @@ test("S48 readiness core completion starts generation with uncertainty; warnings
   const control = page.locator(`[id="hist-${path}"]`);
   await expect(control).toBeVisible();
   await expect(control).toBeFocused();
-  await expect(page.locator("#history-workflow-pharmacotherapy")).toBeVisible();
+  await expect(page.locator("#history-workflow-pharmacotherapy")).toHaveText("Pharmacotherapy");
   await expect(page.getByText("Complete — all 6 applicable history fields answered.", { exact: true })).toBeVisible();
   expect(posts.count).toBe(1);
 });
@@ -541,7 +544,7 @@ test("S48 readiness old clarification run remains readable and requires saved co
   await expect(panel).not.toContainText("Acceptance blocked");
   await expect(panel).not.toContainText("No completed baseline");
   await expect(page.getByTestId("cpt-panel-pharmacotherapy")).toHaveCount(0);
-  await page.getByRole("button", { name: "Show transparency for pharmacotherapy", exact: true }).click();
+  await page.getByRole("button", { name: "Show transparency for Pharmacotherapy", exact: true }).click();
   await expect(page.getByTestId("proposal-transparency-pharmacotherapy")).toContainText("Result details will be available after this question completes successfully.");
   expect(posts.count).toBe(0);
   await seedReadyContext(request, physician, draftId);
@@ -1182,6 +1185,10 @@ test("S48 §2 ordered seven states render position-ordered with glyphs", async (
       await expect(el).toBeVisible({ timeout: 15000 });
       await expect(el).toContainText(label);
       await expect(el).toContainText(glyph);
+      const expectedLabels: Record<string, string> = { s48_pend: "S48 pend", s48_run: "S48 run", s48_skip: "S48 skip", s48_clar: "S48 clar", s48_fail: "S48 fail", s48_done: "S48 done", s48_stale: "S48 stale" };
+      await expect(el).toContainText(expectedLabels[key]);
+      await expect(el).not.toContainText(key);
+      await expect(el.getByRole("button", { name: `Show transparency for ${expectedLabels[key]}` })).toBeVisible();
     }
     // Position order preserved in DOM (bounding tops strictly increasing).
     const tops: number[] = [];
@@ -1193,10 +1200,10 @@ test("S48 §2 ordered seven states render position-ordered with glyphs", async (
       expect(tops[i]).toBeGreaterThan(tops[i - 1]);
     }
     // Partial: clarification tail in proposal + failed precedence in sign block.
-    await expect(panel).toContainText("needs clarification for s48_clar");
+    await expect(panel).toContainText("needs clarification for S48 clar");
     const blocked = page.getByTestId("proposal-sign-blocked");
     await expect(blocked).toContainText("Signing is blocked");
-    await expect(blocked).toContainText("s48_fail");
+    await expect(blocked).toContainText("S48 fail");
   } finally {
     await page.unroute("**/api/v1/encounters/*/generation-batches");
     await page.unroute("**/api/v1/generation-batches/*");
@@ -1460,7 +1467,7 @@ test("S48 §4 complete proposal with DDI and secondary plan, stale blocks signin
     await expect(panel).toContainText("Proposal");
     await expect(panel).toContainText("s48_q1 absent: B no 78.00% outcome.");
     await expect(panel).toContainText("Skipped questions");
-    await expect(panel).toContainText("s48_q2");
+    await expect(panel).toContainText("S48 q2");
     await expect(panel).toContainText("skipped: gate false");
     const ddiBlock = page.getByTestId("proposal-ddi");
     await expect(ddiBlock).toBeVisible();
@@ -1602,6 +1609,7 @@ test("S48 §3 transparency shows five fields, distinct CPT/posterior, exact save
   const run2 = "bbbbbbbb-bbbb-4bbb-bbbb-bbbbbbbbbbbb";
   const base1 = mockBaseline("cccccccc-cccc-4ccc-cccc-cccccccccccc", run1, batchId, "s48_q1");
   const trans1 = mockTransparency("s48_q1", 2);
+  trans1.deterministic_result.section_text = "Clinical outcome: B no 78.00%.";
   const payload = {
     batch: { id: batchId, encounter_id: draftId, author_id: "a", source_revision: 2, fingerprint: "fp", status: "ready", pinned_bundle: {}, created_at: "2026-10-09T00:00:00Z" },
     question_runs: [
@@ -1677,21 +1685,32 @@ test("S48 §3 transparency shows five fields, distinct CPT/posterior, exact save
 
     // Lazy: no review fetch before expansion.
     expect(reviewCount).toBe(0);
-    await page.getByRole("button", { name: "Show transparency for s48_q1" }).click();
+    await page.getByRole("button", { name: "Show transparency for S48 q1" }).click();
     const region = page.getByTestId("proposal-transparency-s48_q1");
     await expect(region).toBeVisible({ timeout: 10000 });
     expect(reviewCount).toBe(1);
 
     // Five fields beside the recommendation: question, network, saved inputs,
     // returned CPTs, deterministic result (+ versions/hashes/provenance).
-    await expect(region).toContainText("s48_q1");
+    await expect(region).toContainText("S48 q1");
+    const visibleDefault = await panel.innerText();
+    for (const technical of ["s48_q1", "s48_q2", batchId, run1, run2, base1.id, base1.effective_hash]) {
+      expect(visibleDefault).not.toContain(technical);
+    }
+    await expect(region.getByText(base1.id, { exact: true })).toHaveCount(0);
+    await expect(region.getByText(base1.effective_hash, { exact: true })).toHaveCount(0);
+    await page.getByText("Advanced details", { exact: true }).click();
+    await expect(region.getByText(base1.id, { exact: true })).toBeVisible();
+    await expect(region.getByText(base1.effective_hash, { exact: true }).first()).toBeVisible();
+    await page.getByText("Advanced details", { exact: true }).click();
+    await expect(region.getByText(base1.id, { exact: true })).toHaveCount(0);
     await expect(region).toContainText("Network version");
     await expect(region).toContainText("s48-test-v1");
     await expect(region).toContainText("Saved patient inputs (frozen at run start)");
     await expect(region).toContainText("Returned CPT percentages (LLM-estimated values)");
     await expect(region).toContainText("Deterministic network result (computed posteriors)");
     await expect(region).toContainText("Recommendation (templated section)");
-    await expect(region).toContainText("s48_q1 absent: B no 78.00% outcome.");
+    await expect(region).toContainText("Clinical outcome: B no 78.00%.");
     // Sources / missingness / versions: exact saved-input display.
     await expect(region).toContainText("synthetic/history/h_s48_a");
     await expect(region).toContainText("yes");
@@ -1706,16 +1725,16 @@ test("S48 §3 transparency shows five fields, distinct CPT/posterior, exact save
     await expect(region).toContainText("LLM-estimated");
     await expect(region).toContainText("computed");
     // Persisted, not recomputed: second toggle uses cache (no refetch).
-    await page.getByRole("button", { name: "Hide transparency for s48_q1" }).click();
+    await page.getByRole("button", { name: "Hide transparency for S48 q1" }).click();
     await expect(region).toBeHidden();
-    await page.getByRole("button", { name: "Show transparency for s48_q1" }).click();
+    await page.getByRole("button", { name: "Show transparency for S48 q1" }).click();
     await expect(page.getByTestId("proposal-transparency-s48_q1")).toBeVisible();
     expect(reviewCount).toBe(1);
 
     // Failed original exposes no baseline (adjustable false) and now says why:
     // issue 19 renders the failure-specific empty state for a run joined as
     // failed, instead of implying it will finish later.
-    await page.getByRole("button", { name: "Show transparency for s48_q2" }).click();
+    await page.getByRole("button", { name: "Show transparency for S48 q2" }).click();
     const region2 = page.getByTestId("proposal-transparency-s48_q2");
     await expect(region2).toContainText("No transparency data because this run failed", {
       timeout: 10000,
@@ -1888,7 +1907,7 @@ test("Issue 19 unresolved review GET times out and one retry click recovers in p
     });
     await gotoEncounter(page, draftId);
     await expect(page.getByTestId(`proposal-status-${key}`)).toBeVisible({ timeout: 15000 });
-    await page.getByRole("button", { name: `Show transparency for ${key}` }).click();
+    await page.getByRole("button", { name: `Show transparency for ${questionLabel(key, false)}` }).click();
     const region = page.getByTestId(`proposal-transparency-${key}`);
     await expect(region.getByRole("alert")).toContainText(
       "Transparency did not load in time — check the connection and retry.",
@@ -1896,13 +1915,13 @@ test("Issue 19 unresolved review GET times out and one retry click recovers in p
     );
     expect(reviewCount).toBe(1);
     // The panel stayed expanded — the retry control belongs to it.
-    await expect(page.getByRole("button", { name: `Hide transparency for ${key}` })).toBeVisible();
+    await expect(page.getByRole("button", { name: `Hide transparency for ${questionLabel(key, false)}` })).toBeVisible();
 
     await page.getByRole("button", { name: "Retry transparency" }).click();
     await expect(region).toContainText("Returned CPT percentages", { timeout: 10000 });
     await expect(region.getByRole("alert")).toHaveCount(0);
     // Exactly one extra request, and still open: a single click sufficed.
-    await expect(page.getByRole("button", { name: `Hide transparency for ${key}` })).toBeVisible();
+    await expect(page.getByRole("button", { name: `Hide transparency for ${questionLabel(key, false)}` })).toBeVisible();
     expect(reviewCount).toBe(2);
   } finally {
     await page.unroute("**/api/v1/generation-batches/*");
@@ -1949,19 +1968,19 @@ test("Issue 19 failed review request retries in one click and recovers when answ
     });
     await gotoEncounter(page, draftId);
     await expect(page.getByTestId(`proposal-status-${key}`)).toBeVisible({ timeout: 15000 });
-    await page.getByRole("button", { name: `Show transparency for ${key}` }).click();
+    await page.getByRole("button", { name: `Show transparency for ${questionLabel(key, false)}` }).click();
     const region = page.getByTestId(`proposal-transparency-${key}`);
     await expect(region.getByRole("alert")).toContainText(
       "Transparency failed to load. Check the connection and retry.",
       { timeout: 10000 },
     );
     expect(reviewCount).toBe(1);
-    await expect(page.getByRole("button", { name: `Hide transparency for ${key}` })).toBeVisible();
+    await expect(page.getByRole("button", { name: `Hide transparency for ${questionLabel(key, false)}` })).toBeVisible();
 
     await page.getByRole("button", { name: "Retry transparency" }).click();
     await expect(region).toContainText("Returned CPT percentages", { timeout: 10000 });
     await expect(region.getByRole("alert")).toHaveCount(0);
-    await expect(page.getByRole("button", { name: `Hide transparency for ${key}` })).toBeVisible();
+    await expect(page.getByRole("button", { name: `Hide transparency for ${questionLabel(key, false)}` })).toBeVisible();
     expect(reviewCount).toBe(2);
   } finally {
     await page.unroute("**/api/v1/generation-batches/*");
@@ -2022,7 +2041,7 @@ test("Issue 19 null review stays neutral for unfinished questions and clears whe
     await expect(page.getByTestId(`proposal-status-${pendingKey}`)).toBeVisible({ timeout: 15000 });
 
     for (const key of [pendingKey, clarKey, skippedKey]) {
-      await page.getByRole("button", { name: `Show transparency for ${key}` }).click();
+      await page.getByRole("button", { name: `Show transparency for ${questionLabel(key, false)}` }).click();
       const region = page.getByTestId(`proposal-transparency-${key}`);
       await expect(region).toContainText(NEUTRAL_TRANSPARENCY, { timeout: 10000 });
       // Not a failure, and not a request error either.
@@ -2097,7 +2116,7 @@ test("Issue 19 a late answer from the superseded request does not overwrite the 
     });
     await gotoEncounter(page, draftId);
     await expect(page.getByTestId(`proposal-status-${key}`)).toBeVisible({ timeout: 15000 });
-    await page.getByRole("button", { name: `Show transparency for ${key}` }).click();
+    await page.getByRole("button", { name: `Show transparency for ${questionLabel(key, false)}` }).click();
     const region = page.getByTestId(`proposal-transparency-${key}`);
     await expect(region.getByRole("alert")).toContainText(
       "Transparency did not load in time — check the connection and retry.",
@@ -2340,11 +2359,11 @@ test(`S48 §§2+4 two-question failure shows partial, ${historyChanged ? "retire
 
     // Partial stays readable but incomplete; sign visibly blocked with reason.
     await expect(panel).toContainText("Proposal unavailable");
-    await expect(panel).toContainText("waiting on s48_q2");
+    await expect(panel).toContainText("waiting on S48 q2");
     const blocked = page.getByTestId("proposal-sign-blocked");
     await expect(blocked).toBeVisible();
     await expect(blocked).toContainText("Signing is blocked");
-    await expect(blocked).toContainText("s48_q2");
+    await expect(blocked).toContainText("S48 q2");
     await expect(blocked.getByRole("button", { name: "Sign encounter (blocked)" })).toBeDisabled();
     await expect(blocked).toContainText("Draft editing stays available");
     await expect(page.locator("#wizard-step-register")).toBeVisible();
@@ -2352,7 +2371,7 @@ test(`S48 §§2+4 two-question failure shows partial, ${historyChanged ? "retire
     // Failed question keeps its precise retry.
     const retry = page.getByTestId("proposal-retry-s48_q2");
     await expect(retry).toBeVisible();
-    await expect(retry).toContainText("Retry s48_q2");
+    await expect(retry).toContainText("Retry S48 q2");
 
     // Precise retry re-POSTs the exact stored packages at the current revision.
     await retry.click();
@@ -2361,11 +2380,13 @@ test(`S48 §§2+4 two-question failure shows partial, ${historyChanged ? "retire
     if (historyChanged) {
       const currentHistory = page.getByTestId("proposal-start-current-history");
       await expect(currentHistory).toBeVisible();
+      await panel.getByText("Advanced details", { exact: true }).click();
       await expect(panel.locator(".xi-proposal-meta")).toContainText(batchId);
       await currentHistory.click();
       await expect.poll(() => postCount).toBe(2);
       expect(postedBodies[1]).toEqual({});
     }
+    if (!historyChanged) await panel.getByText("Advanced details", { exact: true }).click();
     await expect(panel.locator(".xi-proposal-meta")).toContainText(nextBatchId);
     const storedAfter = await page.evaluate((id) => localStorage.getItem(`xi.proposal.${id}`), draftId);
     expect(storedAfter).not.toBeNull();

@@ -1,3 +1,4 @@
+import { questionLabel } from "../web/src/features/reasoning/questionLabels";
 import { test, expect } from "@playwright/test";
 import {
   uniqueName,
@@ -698,7 +699,7 @@ test("Issue 19 failed run states no transparency data within 2s of opening the p
     // page's own performance.now(): a capture-phase click listener records the
     // opening, and in-page watchers - every mutation batch and every painted
     // frame - record the first moment the failure text is in the DOM.
-    await page.evaluate((questionKey) => {
+    await page.evaluate(({ questionKey, questionName }) => {
       const w = window as Window & { __issue19Timing?: Issue19Timing };
       const timing: Issue19Timing = { openedAt: null, appearedAt: null };
       w.__issue19Timing = timing;
@@ -706,7 +707,7 @@ test("Issue 19 failed run states no transparency data within 2s of opening the p
         "click",
         (event) => {
           const label = (event.target as HTMLElement | null)?.closest("button")?.textContent ?? "";
-          if (label.includes(`Show transparency for ${questionKey}`)) {
+          if (label.includes(`Show transparency for ${questionName}`)) {
             // Capture phase: seen before React's own handler opens the panel.
             timing.openedAt = performance.now();
           }
@@ -742,8 +743,8 @@ test("Issue 19 failed run states no transparency data within 2s of opening the p
         }
       };
       requestAnimationFrame(frame);
-    }, key);
-    await page.getByRole("button", { name: `Show transparency for ${key}` }).click();
+    }, { questionKey: key, questionName: questionLabel(key, false) });
+    await page.getByRole("button", { name: `Show transparency for ${questionLabel(key, false)}` }).click();
     const region = page.getByTestId(`proposal-transparency-${key}`);
     // Strict bound: the two-second acceptance, measured from opening the panel
     // under a prompt mock (not from generation completing).
@@ -774,7 +775,7 @@ test("Issue 19 failed run states no transparency data within 2s of opening the p
     await expect(region).not.toContainText("Loading persisted transparency");
     await expect(region).not.toContainText("check the connection and retry");
     // Still open, and exactly one bounded request answered it.
-    await expect(page.getByRole("button", { name: `Hide transparency for ${key}` })).toBeVisible();
+    await expect(page.getByRole("button", { name: `Hide transparency for ${questionLabel(key, false)}` })).toBeVisible();
     expect(reviewCount).toBe(1);
   } finally {
     await page.unroute("**/api/v1/generation-batches/*");
