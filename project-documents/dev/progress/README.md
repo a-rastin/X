@@ -1,5 +1,7 @@
 # X-INSIGHT progress tracker
 
+[Issue 25 display analysis (2026-11-02)](s48.md#follow-up-2026-11-02--issue-25-display-analysis): minimal label and advanced-details plan; implementation and acceptance remain open.
+
 [Issue 24 disclaimer implementation (2026-11-02)](s05.md#follow-up-2026-11-02--issue-24-disclaimer-implementation): versioned server-persisted acknowledgement for both patient-reading roles; focused suites pass with two explained identity e2e failures; deployed acceptance still open.
 
 [Issue 23 physician list implementation (2026-11-02)](s04.md#follow-up-2026-11-02--issue-23-physician-list-implementation): focused backend and synthetic Chromium checks pass; broader and deployed verification remain open.
