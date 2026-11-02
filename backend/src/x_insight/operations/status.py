@@ -26,17 +26,20 @@ never mutates clinical or queue state.
 
 from __future__ import annotations
 
+import os
 import shutil
 import threading
 import time
+import uuid
 from datetime import timedelta
 from typing import Any
 
-from sqlalchemy import func, select
+from sqlalchemy import and_, func, or_, select
 from sqlalchemy.orm import Session
 
 from x_insight import contracts
 from x_insight.models import inference as inference_module
+from x_insight.operations import audit as audit_module
 from x_insight.operations import backup as backup_module
 from x_insight.reasoning import queue as queue_module
 from x_insight.reasoning import tables as reasoning_tables
@@ -282,6 +285,70 @@ def _backup_section(session: Session) -> dict[str, Any]:
     }
 
 
+def _run_failure_alert(session: Session, moment: Any) -> dict[str, Any] | None:
+    """Count terminal failures after the latest success, using only safe details."""
+    try:
+        threshold = int(os.getenv("X_INSIGHT_RUN_FAILURE_ALERT_COUNT", "3"))
+        minutes = int(os.getenv("X_INSIGHT_RUN_FAILURE_ALERT_WINDOW_MINUTES", "30"))
+        if threshold <= 0 or minutes <= 0:
+            raise ValueError
+        window_start = moment - timedelta(minutes=minutes)
+    except (ValueError, OverflowError):
+        raise ValueError("Run failure alert count and window must be positive integers") from None
+
+    events = audit_module.audit_events
+    bounded = (events.c.occurred_at >= window_start, events.c.occurred_at <= moment)
+    success = session.execute(
+        select(events.c.occurred_at, events.c.id)
+        .where(*bounded, events.c.operation == audit_module.ORIGINAL_RUN_SUCCESS_OPERATION)
+        .order_by(events.c.occurred_at.desc(), events.c.id.desc())
+        .limit(1)
+    ).first()
+    clauses = [*bounded, events.c.operation == audit_module.ORIGINAL_RUN_FAILED_OPERATION]
+    if success is not None:
+        clauses.append(
+            or_(
+                events.c.occurred_at > success[0],
+                and_(events.c.occurred_at == success[0], events.c.id > success[1]),
+            )
+        )
+    count = session.execute(select(func.count()).select_from(events).where(*clauses)).scalar_one()
+    if count < threshold:
+        return None
+    details = session.execute(
+        select(events.c.details)
+        .where(*clauses)
+        .order_by(events.c.occurred_at.desc(), events.c.id.desc())
+        .limit(1)
+    ).scalar_one()
+    failure_class = "unknown"
+    try:
+        job_id = uuid.UUID(str(details["job_id"]))
+        index = details["attempt_index"]
+        if isinstance(index, bool) or not isinstance(index, int) or index < 1:
+            raise ValueError
+        value = (
+            session.execute(
+                select(_ATTEMPTS.c.failure_class).where(
+                    _ATTEMPTS.c.job_id == job_id, _ATTEMPTS.c.attempt_index == index
+                )
+            )
+            .scalars()
+            .first()
+        )
+        if value in {"timeout", "disconnect", "http_status", "parse", "other"}:
+            failure_class = value
+    except (KeyError, TypeError, ValueError, AttributeError):
+        pass
+    return {
+        "name": "GENERATION_RUN_FAILURES",
+        "message": "Repeated terminal generation failures.",
+        "count": int(count),
+        "window_minutes": minutes,
+        "last_failure_class": failure_class,
+    }
+
+
 def _alerts(
     queue: dict[str, Any], provider: dict[str, Any], disk: dict[str, Any]
 ) -> list[dict[str, Any]]:
@@ -333,6 +400,10 @@ def collect_status(session: Session, now: Any | None = None) -> dict[str, Any]:
     inference = _inference_section(session, moment)
     disk = _disk_section()
     backup = _backup_section(session)
+    alerts = _alerts(queue, provider, disk)
+    run_failure_alert = _run_failure_alert(session, moment)
+    if run_failure_alert is not None:
+        alerts.append(run_failure_alert)
     return {
         "service": "x-insight",
         "checked_at": contracts.serialize_utc(moment),
@@ -342,7 +413,7 @@ def collect_status(session: Session, now: Any | None = None) -> dict[str, Any]:
         "disk": disk,
         "backup": backup,
         "requests": snapshot_requests(),
-        "alerts": _alerts(queue, provider, disk),
+        "alerts": alerts,
     }
 
 

@@ -60,6 +60,8 @@ services:
       # and request schemes follow the public scheme. Safe ONLY because the
       # app publishes no host ports — the edge is its sole upstream.
       FORWARDED_ALLOW_IPS: "*"
+      X_INSIGHT_RUN_FAILURE_ALERT_COUNT: ${X_INSIGHT_RUN_FAILURE_ALERT_COUNT:-3}
+      X_INSIGHT_RUN_FAILURE_ALERT_WINDOW_MINUTES: ${X_INSIGHT_RUN_FAILURE_ALERT_WINDOW_MINUTES:-30}
       BACKUP_STAGING_DIR: /var/lib/x-insight/recovery/backups
       RESTORE_STAGING_DIR: /var/lib/x-insight/recovery/restores
       X_INSIGHT_PROVIDER_ENDPOINT: ${X_INSIGHT_PROVIDER_ENDPOINT:-}

@@ -74,7 +74,7 @@ function alertDetail(alert: OpsAlert): string | null {
       continue;
     }
     if (typeof value === "number" || typeof value === "string") {
-      parts.push(`${key}: ${value}`);
+      parts.push(`${key === "last_failure_class" ? "Last failure class" : key}: ${value}`);
     }
   }
   return parts.length > 0 ? parts.join("; ") : null;
@@ -295,12 +295,12 @@ export function StatusPage() {
             />
 
             <h4 className="xi-section-title">
-              Provider
+              AI provider
             </h4>
             <MetricTable
-              label="Provider"
+              label="AI provider"
               rows={[
-                ["Provider timeout", `${provider.timeout_seconds} s`],
+                ["AI provider timeout (current setting)", `${provider.timeout_seconds} s`],
                 ["Provider attempts (24h)", String(provider.attempts_24h)],
                 ["Provider failures (24h)", String(provider.failures_24h)],
                 [
@@ -312,13 +312,16 @@ export function StatusPage() {
             />
 
             <h4 className="xi-section-title">
-              Inference limits
+              Bayesian inference
             </h4>
             <MetricTable
-              label="Inference limits"
+              label="Bayesian inference"
               rows={[
                 ...limitEntries.map(
-                  ([name, value]): [string, string] => [name, String(value)],
+                  ([name, value]): [string, string] =>
+                    name === "inference_timeout_seconds"
+                      ? ["Bayesian inference timeout", `${value} s`]
+                      : [name, String(value)],
                 ),
                 [
                   "Local calculation failures (24h)",

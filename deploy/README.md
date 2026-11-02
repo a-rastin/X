@@ -260,7 +260,8 @@ operator's own host): ~20 ordinary HTTP req/s, ordinary p95 < 1s,
 - Status: `GET /api/v1/ops/status` (admin only) exposes queue age /
   heartbeat, provider attempt/auth/retry counters, inference limits +
   local failures, staging-disk usage, last backup success, per-group
-  request gauges, and the alert list. Counts/timestamps only. The same
+  request gauges, and the alert list. Alert details contain only safe operational
+  summaries, not audit payloads or patient data. The same
   snapshot renders in the browser on the admin Status page (auto-refresh).
 - Initial alerts: `QUEUE_AGE` (eligible work older than 5 min),
   `HEARTBEAT_STALE` (leased job silent over 2 min — check the worker
@@ -268,6 +269,19 @@ operator's own host): ~20 ordinary HTTP req/s, ordinary p95 < 1s,
   (repeated auth failures in 24h — fix settings; repair starts a new
   pinned run), `DISK_USAGE` (staging disk over 80% — free space or move
   `BACKUP_STAGING_DIR` before the next backup).
+- `GENERATION_RUN_FAILURES` signals at least three terminal generation run
+  failures in the last 30 minutes by default. It counts runs, not provider
+  attempts, globally across the service. A successful run anywhere resets this
+  rule; three new failures are then needed to alert again. The rolling alert
+  also expires when fewer than the threshold remain in the window. Other
+  alerts are independent. The last failure class is shown when available and
+  otherwise is `unknown`; it does not include provider text or clinical data.
+  Set positive integers `X_INSIGHT_RUN_FAILURE_ALERT_COUNT` and
+  `X_INSIGHT_RUN_FAILURE_ALERT_WINDOW_MINUTES` in the deployment environment to
+  change the threshold and window. Restart the API after changing them.
+- Status labels the current AI provider timeout separately from the Bayesian
+  inference timeout. A queued or running job may use an older pinned provider
+  settings revision, so the current setting is not necessarily its deadline.
 - Admission limits (measured headroom, S58): at most 64 inference nodes,
   131 072 CPT cells, 1 MiB effective XML, 30 s per inference, 2 provider
   + 2 local slots, 100 queued runs, 3 attempts. Largest admitted content

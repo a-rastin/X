@@ -41,6 +41,10 @@ every acceptance check has passed. See the current boundaries below.
 
 ## Current engineering status
 
+The [Issue 20 Status follow-up](project-documents/dev/progress/s58.md#follow-up-2026-11-02--issue-20-implementation)
+adds a terminal-generation-failure alert and distinguishes provider and Bayesian
+inference timeouts; live browser and deployed acceptance remain open.
+
 The [2026-10-22 History input follow-up](project-documents/dev/progress/s12.md#follow-up-2026-10-22--lai-aggression-and-c-ssrs-input-cleanup)
 removes the duplicate high-suicide History questions and carries the completed
 Step 4 C-SSRS assessment into generation. LAI and aggression inputs use the revised

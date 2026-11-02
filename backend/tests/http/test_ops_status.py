@@ -332,3 +332,181 @@ def test_ops_status_counts_failed_saves(ops_client, monkeypatch) -> None:
     after = _get_status(ops_client["client"])
     assert after["requests"]["saves"]["count"] > before["requests"]["saves"]["count"]
     assert after["requests"]["saves"]["errors"] >= 1
+
+
+def test_terminal_run_failure_alert_resets_and_expires(ops_client, monkeypatch) -> None:
+    """Only terminal failures since the latest success in the window count."""
+    from sqlalchemy.orm import Session
+
+    from x_insight.operations import audit
+    from x_insight.operations import status as status_module
+
+    now = contracts.utcnow()
+    monkeypatch.setattr(status_module.contracts, "utcnow", lambda: now)
+    monkeypatch.setenv("X_INSIGHT_RUN_FAILURE_ALERT_COUNT", "3")
+    monkeypatch.setenv("X_INSIGHT_RUN_FAILURE_ALERT_WINDOW_MINUTES", "30")
+
+    def event(operation, at):
+        with Session(ops_client["engine"]) as session, session.begin():
+            audit.record_audit(
+                session, operation=operation, occurred_at=at, details={"patient_id": "PRIVATE"}
+            )
+
+    def alerts():
+        return [
+            a
+            for a in _get_status(ops_client["client"])["alerts"]
+            if a["name"] == "GENERATION_RUN_FAILURES"
+        ]
+
+    failure = audit.ORIGINAL_RUN_FAILED_OPERATION
+    success = audit.ORIGINAL_RUN_SUCCESS_OPERATION
+    event(failure, now + timedelta(days=1))  # Future events are outside this snapshot.
+    event(failure, now - timedelta(minutes=30))
+    event(failure, now - timedelta(minutes=29))
+    assert alerts() == []
+    event(failure, now - timedelta(minutes=28))
+    assert alerts() == [
+        {
+            "name": "GENERATION_RUN_FAILURES",
+            "message": "Repeated terminal generation failures.",
+            "count": 3,
+            "window_minutes": 30,
+            "last_failure_class": "unknown",
+        }
+    ]
+    assert "PRIVATE" not in str(_get_status(ops_client["client"]))
+    event(success, now - timedelta(minutes=27))
+    assert alerts() == []
+    for minute in (26, 25, 24):
+        event(failure, now - timedelta(minutes=minute))
+    assert alerts()[0]["count"] == 3
+    now += timedelta(minutes=7)
+    assert alerts() == []
+
+
+def test_terminal_failures_use_matching_attempt_and_success_clears(ops_client, monkeypatch) -> None:
+    """Linked failure events alert safely; a success event clears only this rule."""
+    from sqlalchemy.orm import Session
+
+    from x_insight.operations import audit
+    from x_insight.reasoning import provider as provider_module
+    from x_insight.reasoning import worker as worker_module
+
+    for number in range(3):
+        _make_batch(ops_client, monkeypatch, "dr_ops_runs", f"00990000{number + 10}")
+        result = worker_module.run_once(
+            engine=ops_client["engine"],
+            provider=provider_module.ControlledStubAdapter(mode="fail_fatal"),
+        )
+        assert result["status"] == "failed"
+        with Session(ops_client["engine"]) as session, session.begin():
+            audit.record_audit(
+                session,
+                operation=audit.ORIGINAL_RUN_FAILED_OPERATION,
+                details={"job_id": result["job_id"], "attempt_index": 1, "patient_id": "private"},
+            )
+    with ops_client["engine"].begin() as connection:
+        connection.execute(text("UPDATE reasoning_job_attempts SET failure_class = 'timeout'"))
+    body = _get_status(ops_client["client"])
+    alert = next(a for a in body["alerts"] if a["name"] == "GENERATION_RUN_FAILURES")
+    assert alert["count"] == 3
+    assert alert["last_failure_class"] == "timeout"
+    assert "PROVIDER_AUTH_FAILURES" in [a["name"] for a in body["alerts"]]
+    assert "0099000010" not in str(body)
+    with ops_client["engine"].begin() as connection:
+        connection.execute(text("UPDATE reasoning_job_attempts SET failure_class = NULL"))
+    alert = next(
+        a
+        for a in _get_status(ops_client["client"])["alerts"]
+        if a["name"] == "GENERATION_RUN_FAILURES"
+    )
+    assert alert["last_failure_class"] == "unknown"
+    assert "sensitive provider text" not in str(alert)
+    # An earlier attempt is not used for a later failed attempt, nor for another job.
+    with ops_client["engine"].begin() as connection:
+        connection.execute(text("UPDATE reasoning_job_attempts SET failure_class = 'timeout'"))
+    with Session(ops_client["engine"]) as session, session.begin():
+        audit.record_audit(
+            session,
+            operation=audit.ORIGINAL_RUN_FAILED_OPERATION,
+            details={"job_id": result["job_id"], "attempt_index": 2},
+        )
+    alert = next(
+        a
+        for a in _get_status(ops_client["client"])["alerts"]
+        if a["name"] == "GENERATION_RUN_FAILURES"
+    )
+    assert alert["last_failure_class"] == "unknown"
+    with Session(ops_client["engine"]) as session, session.begin():
+        audit.record_audit(
+            session,
+            operation=audit.ORIGINAL_RUN_FAILED_OPERATION,
+            details={"job_id": "00000000-0000-0000-0000-000000000001", "attempt_index": 1},
+        )
+    alert = next(
+        a
+        for a in _get_status(ops_client["client"])["alerts"]
+        if a["name"] == "GENERATION_RUN_FAILURES"
+    )
+    assert alert["last_failure_class"] == "unknown"
+    _make_batch(ops_client, monkeypatch, "dr_ops_runs", "0099000013")
+    result = worker_module.run_once(
+        engine=ops_client["engine"], provider=provider_module.ControlledStubAdapter()
+    )
+    assert result["status"] == "succeeded"
+    with Session(ops_client["engine"]) as session, session.begin():
+        audit.record_audit(session, operation=audit.ORIGINAL_RUN_SUCCESS_OPERATION)
+    names = [a["name"] for a in _get_status(ops_client["client"])["alerts"]]
+    assert "GENERATION_RUN_FAILURES" not in names
+    assert "PROVIDER_AUTH_FAILURES" in names
+
+
+def test_terminal_failure_alert_equal_time_and_configuration(ops_client, monkeypatch) -> None:
+    from uuid import UUID
+
+    from x_insight.operations import audit
+    from x_insight.operations import status as status_module
+
+    now = contracts.utcnow()
+    monkeypatch.setattr(status_module.contracts, "utcnow", lambda: now)
+    monkeypatch.setenv("X_INSIGHT_RUN_FAILURE_ALERT_COUNT", "2")
+    monkeypatch.setenv("X_INSIGHT_RUN_FAILURE_ALERT_WINDOW_MINUTES", "5")
+    with ops_client["engine"].begin() as connection:
+        for number, operation in [
+            (1, audit.ORIGINAL_RUN_FAILED_OPERATION),
+            (2, audit.ORIGINAL_RUN_SUCCESS_OPERATION),
+            (3, audit.ORIGINAL_RUN_FAILED_OPERATION),
+            (4, audit.ORIGINAL_RUN_FAILED_OPERATION),
+        ]:
+            connection.execute(
+                audit.audit_events.insert().values(
+                    id=UUID(int=number),
+                    occurred_at=now,
+                    operation=operation,
+                    details={},
+                    payload_hash=audit.audit_payload_hash({}),
+                )
+            )
+    alert = next(
+        a
+        for a in _get_status(ops_client["client"])["alerts"]
+        if a["name"] == "GENERATION_RUN_FAILURES"
+    )
+    assert alert["count"] == 2
+    assert alert["window_minutes"] == 5
+
+
+@pytest.mark.parametrize(
+    "name,value",
+    [
+        ("X_INSIGHT_RUN_FAILURE_ALERT_COUNT", "0"),
+        ("X_INSIGHT_RUN_FAILURE_ALERT_COUNT", "invalid"),
+        ("X_INSIGHT_RUN_FAILURE_ALERT_WINDOW_MINUTES", "-1"),
+        ("X_INSIGHT_RUN_FAILURE_ALERT_WINDOW_MINUTES", "999999999999999999999999"),
+    ],
+)
+def test_invalid_run_failure_alert_settings_fail_validation(ops_client, monkeypatch, name, value):
+    monkeypatch.setenv(name, value)
+    with pytest.raises(ValueError, match="positive integers"):
+        ops_client["client"].get("/api/v1/ops/status")

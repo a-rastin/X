@@ -36,8 +36,9 @@ import {
  *   hidden tabs skip ticks; the 30s interval re-reads with no further
  *   input (responses observed, never mocked).
  *
- * Constraints: real endpoints only — NO page.route mocks anywhere in this
- * spec. Every metric comes from the live backend over the shared dev
+ * Existing coverage uses real endpoints. The issue 20 presentation test uses
+ * controlled status responses so alert transitions can be checked reliably.
+ * Other metrics come from the live backend over the shared dev
  * database with real admin/physician auth flows. Assertions are structural
  * (sections render from the live payload) rather than exact counts, because
  * queue/provider/disk numbers move with shared dev-DB activity.
@@ -87,8 +88,8 @@ test("S58 §§3-4 admin sees live operational status and can refresh it", async 
   const metrics = page.getByTestId("status-metrics");
   for (const section of [
     "Queue",
-    "Provider",
-    "Inference limits",
+    "AI provider",
+    "Bayesian inference",
     "Disk",
     "Backup",
     "Requests",
@@ -114,8 +115,11 @@ test("S58 §§3-4 admin sees live operational status and can refresh it", async 
   const probe = await request.get("/api/v1/ops/status");
   expect(probe.status(), await probe.text()).toBe(200);
   const payload = await probe.json();
-  const timeoutRow = metrics.getByRole("row", { name: /Provider timeout/ });
+  const timeoutRow = metrics.getByRole("row", { name: /AI provider timeout \(current setting\)/ });
   await expect(timeoutRow).toContainText(`${payload.provider.timeout_seconds} s`);
+  await expect(metrics.getByRole("row", { name: /Bayesian inference timeout/ })).toContainText(
+    `${payload.inference.limits.inference_timeout_seconds} s`,
+  );
   expect(payload.provider.timeout_seconds).toBeGreaterThanOrEqual(10);
   expect(payload.provider.timeout_seconds).toBeLessThanOrEqual(900);
   for (const section of [
@@ -150,6 +154,40 @@ test("S58 §§3-4 admin sees live operational status and can refresh it", async 
     await page.getByRole("button", { name: "Switch to light theme" }).click();
   }
   await expect.poll(themeOf).toBe("light");
+});
+
+test("issue 20 shows separate timeouts and clears a generation alert on refresh", async ({ page }) => {
+  await page.route("**/api/v1/me", (route) => route.fulfill({ json: {
+    user: { id: "admin", username: "admin", role: "admin", theme: "light" },
+    csrf_token: "test-token", research_warning: null,
+  } }));
+  let failed = true;
+  await page.route("**/api/v1/ops/status", async (route) => {
+    await route.fulfill({ json: {
+      service: "test", checked_at: "2026-11-02T12:00:00Z",
+      queue: { queued: 0, leased: 0, local_queued: 0, local_leased: 0, oldest_queued_age_seconds: null, oldest_heartbeat_age_seconds: null },
+      provider: { timeout_seconds: 300, attempts_24h: 3, failures_24h: 3, auth_failures_24h: 0, retries_24h: 0 },
+      inference: { limits: { inference_timeout_seconds: 30, max_nodes: 99 }, local_failures_24h: 0 },
+      disk: { total_bytes: null, used_bytes: null, used_percent: null },
+      backup: { last_job_id: null, last_job_status: null, last_success_at: null },
+      requests: {},
+      alerts: [
+        ...(failed ? [{ name: "GENERATION_RUN_FAILURES", message: "Repeated generation failures", count: 3, window_minutes: 30, last_failure_class: "timeout" }] : []),
+        { name: "OTHER_ALERT", message: "An unrelated alert" },
+      ],
+    } });
+  });
+  await page.goto("/#/status");
+  const metrics = page.getByTestId("status-metrics");
+  await expect(metrics.getByRole("row", { name: "AI provider timeout (current setting) 300 s" })).toBeVisible();
+  await expect(metrics.getByRole("row", { name: "Bayesian inference timeout 30 s" })).toBeVisible();
+  await expect(metrics.getByRole("row", { name: "max_nodes 99" })).toBeVisible();
+  const alerts = page.locator('section[aria-labelledby="status-alerts"]');
+  await expect(alerts).toContainText("Last failure class: timeout");
+  failed = false;
+  await page.getByTestId("status-refresh").click();
+  await expect(alerts).not.toContainText("GENERATION_RUN_FAILURES");
+  await expect(alerts).toContainText("OTHER_ALERT");
 });
 
 // S58 §3 (403 complement): physician has no Status nav, the direct route
