@@ -9,6 +9,59 @@ import {
   signOut,
 } from "./helpers";
 
+for (const role of ["admin", "physician"] as const) {
+  test(`login URL: ${role} replaces the login entry and survives reload`, async ({ page, request }) => {
+    const username = role === "admin" ? "admin" : uniqueName("e2eurl");
+    const password = role === "admin" ? "admin" : "secret123";
+    if (role === "physician") await ensurePhysician(request, username, password);
+
+    await page.goto("/?source=history#/account");
+    await page.evaluate(() => { window.location.hash = "#/login"; });
+    await expect(page).toHaveURL(/\?source=history#\/login$/);
+    await page.getByLabel("Role").selectOption(role);
+    await page.getByLabel("Username").fill(username);
+    await page.getByLabel("Password").fill(password);
+    await page.getByRole("button", { name: "Sign in" }).click();
+    await expect(page).toHaveURL(/\?source=history#\/dashboard$/);
+    if (role === "physician") {
+      await expect(page.getByRole("alertdialog")).toContainText(RESEARCH_WARNING);
+      await expect(page.getByRole("heading", { name: "Physician dashboard" })).toHaveCount(0);
+      await acknowledgeWarning(page);
+    }
+    await expect(page.getByRole("heading", { name: role === "admin" ? "Administrator dashboard" : "Physician dashboard" })).toBeVisible();
+    await page.reload();
+    await expect(page).toHaveURL(/\?source=history#\/dashboard$/);
+    await expect(page.getByRole("button", { name: "Sign out" })).toBeVisible();
+    await page.goBack();
+    await expect(page).toHaveURL(/\?source=history#\/account$/);
+    await expect(page.getByRole("button", { name: "Sign in" })).toHaveCount(0);
+  });
+}
+
+test("login URL: authenticated login route redirects while deep links survive restoration", async ({ page }) => {
+  await loginAs(page, "admin", "admin", "admin");
+  await expect(page).toHaveURL(/#\/dashboard$/);
+  // Changing the query forces a document load and exercises startup restoration.
+  await page.goto("/?restore=1#/login");
+  await expect(page).toHaveURL(/\?restore=1#\/dashboard$/);
+  await page.evaluate(() => { window.location.hash = "#/login"; });
+  await expect(page).toHaveURL(/#\/dashboard$/);
+  await page.goto("/#/account");
+  await expect(page.getByRole("form", { name: "Change password" })).toBeVisible();
+  await page.reload();
+  await expect(page).toHaveURL(/#\/account$/);
+  await expect(page.getByRole("form", { name: "Change password" })).toBeVisible();
+});
+
+test("login URL: login from an anonymous protected route redirects", async ({ page }) => {
+  await page.goto("/#/account");
+  await page.getByLabel("Role").selectOption("admin");
+  await page.getByLabel("Username").fill("admin");
+  await page.getByLabel("Password").fill("admin");
+  await page.getByRole("button", { name: "Sign in" }).click();
+  await expect(page).toHaveURL(/#\/dashboard$/);
+});
+
 test("admin login lands on the administrator dashboard", async ({ page }) => {
   await loginAs(page, "admin", "admin", "admin");
   await expect(
@@ -34,6 +87,7 @@ test("login failure is generic and grants nothing", async ({ page }) => {
   await page.getByLabel("Password").fill("wrong-password");
   await page.getByRole("button", { name: "Sign in" }).click();
   await expect(page.getByText(GENERIC_LOGIN_ERROR)).toBeVisible();
+  await expect(page).toHaveURL(/\/$/);
   // Still on the login form; no dashboard leaked.
   await expect(page.getByRole("button", { name: "Sign in" })).toBeVisible();
   await expect(

@@ -150,7 +150,7 @@ export function reportIdFromHash(hash: string): string | null {
  * bare route has no target. */
 export function useRoute(): [
   Route | null,
-  (route: Exclude<Route, "encounter" | "chart" | "report">) => void,
+  (route: Exclude<Route, "encounter" | "chart" | "report">, options?: { replace?: boolean }) => void,
 ] {
   const [route, setRoute] = useState<Route | null>(() =>
     parseHash(window.location.hash),
@@ -162,12 +162,17 @@ export function useRoute(): [
     return () => window.removeEventListener("hashchange", onChange);
   }, []);
 
-  const navigate = useCallback((next: Exclude<Route, "encounter" | "chart" | "report">) => {
+  const navigate = useCallback((next: Exclude<Route, "encounter" | "chart" | "report">, options?: { replace?: boolean }) => {
     if (parseHash(window.location.hash) === next) {
       setRoute(next);
       return;
     }
-    window.location.hash = routeToHash(next);
+    if (options?.replace) {
+      window.history.replaceState(window.history.state, "", routeToHash(next));
+      setRoute(next);
+    } else {
+      window.location.hash = routeToHash(next);
+    }
   }, []);
 
   return [route, navigate];

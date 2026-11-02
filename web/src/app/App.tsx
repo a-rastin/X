@@ -151,6 +151,15 @@ function ReportRoute() {
 export function App() {
   const { status, user, warningAcked, logout } = useAuth();
   const [hashRoute, navigate] = useRoute();
+  const previousStatus = React.useRef(status);
+
+  React.useEffect(() => {
+    const loggedIn = previousStatus.current === "anonymous" && status === "ready";
+    previousStatus.current = status;
+    if (status === "ready" && user !== null && (loggedIn || hashRoute === "login")) {
+      navigate("dashboard", { replace: true });
+    }
+  }, [status, user, hashRoute, navigate]);
 
   // Route guards complement the server checks: anonymous users always land
   // on login, authenticated users never sit on it. Authority stays
