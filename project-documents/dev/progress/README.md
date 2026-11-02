@@ -1,5 +1,7 @@
 # X-INSIGHT progress tracker
 
+[Issue 26 readiness count analysis (2026-11-02)](s48.md#follow-up-2026-11-02--issue-26-readiness-count-analysis): dynamic totals explained and minimal fix planned; overflow and deployed acceptance unverified.
+
 [Issue 25 display implementation (2026-11-02)](s48.md#follow-up-2026-11-02--issue-25-display-implementation): readable question labels and closed advanced details implemented; focused checks pass, with follow-up History, Firefox, and deployed acceptance unverified.
 
 [Issue 24 disclaimer implementation (2026-11-02)](s05.md#follow-up-2026-11-02--issue-24-disclaimer-implementation): versioned server-persisted acknowledgement for both patient-reading roles; focused suites pass with two explained identity e2e failures; deployed acceptance still open.
