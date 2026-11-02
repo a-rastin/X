@@ -170,9 +170,8 @@ def list_all_patients(session: Session) -> list[dict[str, Any]]:
 def list_all_physicians(session: Session) -> list[dict[str, Any]]:
     """All physician accounts via the identity owning module (paged, filtered).
 
-    :func:`identity.service.list_physicians` lists every account row, so this
-    filters ``role == 'physician'`` and walks the bounded pages to cover more
-    than one page without inventing a new query path.
+    Walks the bounded pages from :func:`identity.service.list_physicians` to
+    cover more than one page without inventing a new query path.
     """
     from x_insight.identity import service as identity_service
 

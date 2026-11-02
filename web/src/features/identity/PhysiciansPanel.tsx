@@ -1,10 +1,11 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
   ApiError,
   conflictHint,
   createPhysician,
   deactivatePhysician,
   getOpenDrafts,
+  getPhysician,
   listPhysicians,
   patchPhysician,
   reactivatePhysician,
@@ -16,11 +17,11 @@ import { useAuth } from "./auth";
 
 type LoadState =
   | { kind: "loading" }
-  | { kind: "refreshing"; items: SafePhysician[]; total: number }
+  | { kind: "refreshing"; items: SafePhysician[]; total: number; additional: boolean }
   | { kind: "error"; message: string }
-  | { kind: "ready"; items: SafePhysician[]; total: number };
+  | { kind: "ready"; items: SafePhysician[]; total: number; additional: boolean };
 
-function CreateForm({ onCreated }: { onCreated: () => void }) {
+function CreateForm({ onCreated }: { onCreated: (physician: SafePhysician) => void }) {
   const { sessionExpired } = useAuth();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -28,19 +29,22 @@ function CreateForm({ onCreated }: { onCreated: () => void }) {
   const [formError, setFormError] = useState<string | null>(null);
   const [created, setCreated] = useState(false);
   const [busy, setBusy] = useState(false);
+  const inFlight = useRef(false);
 
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
+    if (inFlight.current) return;
+    inFlight.current = true;
     setErrors({});
     setFormError(null);
     setCreated(false);
     setBusy(true);
     try {
-      await createPhysician(username, password);
+      const physician = await createPhysician(username, password);
       setUsername("");
       setPassword("");
       setCreated(true);
-      onCreated();
+      onCreated(physician);
     } catch (err) {
       if (err instanceof ApiError && err.status === 401) {
         sessionExpired();
@@ -53,6 +57,7 @@ function CreateForm({ onCreated }: { onCreated: () => void }) {
       }
       setFormError("Physician creation failed. Check the connection and retry.");
     } finally {
+      inFlight.current = false;
       setBusy(false);
     }
   }
@@ -488,19 +493,29 @@ export function PhysiciansPanel() {
   const [editingId, setEditingId] = useState<string | null>(null);
   const [deactivatingId, setDeactivatingId] = useState<string | null>(null);
   const [busyId, setBusyId] = useState<string | null>(null);
+  const latestReload = useRef(0);
+  const createdPhysician = useRef<SafePhysician | null>(null);
 
   const reload = useCallback(async () => {
+    const request = ++latestReload.current;
     // Background refreshes keep the current rows (and any open row form
     // with its success/412 message) mounted; only the first load spins.
     setState((previous) =>
       previous.kind === "ready" || previous.kind === "refreshing"
-        ? { kind: "refreshing", items: previous.items, total: previous.total }
+        ? { ...previous, kind: "refreshing" }
         : { kind: "loading" },
     );
     try {
       const result = await listPhysicians();
-      setState({ kind: "ready", items: result.items, total: result.total });
+      if (request !== latestReload.current) return;
+      const created = createdPhysician.current;
+      const additional = created !== null && !result.items.some((item) => item.id === created.id);
+      const current = additional ? await getPhysician(created.id) : null;
+      if (request !== latestReload.current) return;
+      const items = current ? [...result.items, current].sort((a, b) => a.username.localeCompare(b.username)) : result.items;
+      setState({ kind: "ready", items, total: result.total, additional });
     } catch (err) {
+      if (request !== latestReload.current) return;
       if (err instanceof ApiError && err.status === 401) {
         sessionExpired();
         return;
@@ -559,8 +574,14 @@ export function PhysiciansPanel() {
         </p>
       )}
       <CreateForm
-        onCreated={() => {
-          setNotice("Physician created.");
+        onCreated={(physician) => {
+          setNotice(null);
+          createdPhysician.current = physician;
+          setState((previous) => {
+            if (previous.kind !== "ready" && previous.kind !== "refreshing") return previous;
+            if (previous.items.some((item) => item.id === physician.id)) return previous;
+            return { ...previous, items: [...previous.items, physician].sort((a, b) => a.username.localeCompare(b.username)), additional: true };
+          });
           void reload();
         }}
       />
@@ -570,6 +591,9 @@ export function PhysiciansPanel() {
           {(state.kind === "ready" || state.kind === "refreshing") &&
             ` (${state.total})`}
         </h3>
+        {(state.kind === "ready" || state.kind === "refreshing") && state.additional && (
+          <p className="xi-hint">Showing the first page and the newly created physician.</p>
+        )}
         {(state.kind === "ready" || state.kind === "refreshing") &&
           state.items.length < state.total && (
             <p className="xi-hint">{`Showing ${state.items.length} of ${state.total}`}</p>

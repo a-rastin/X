@@ -251,6 +251,7 @@ test("administrator creates a physician through the browser", async ({
   await form.getByLabel("Password").fill("createdpass1");
   await form.getByRole("button", { name: "Create physician" }).click();
   await expect(form.getByText("Physician created.")).toBeVisible();
+  await expect(page.getByRole("status").filter({ hasText: "Physician created." })).toHaveCount(1);
   await expect(
     page.getByRole("table", { name: "Physicians" }).getByText(username),
   ).toBeVisible();
@@ -483,4 +484,143 @@ test("S61 physician list says when the table is shorter than the total", async (
     expect(dataRows).toBe(total);
     await expect(page.getByText("Showing ")).toHaveCount(0);
   }
+});
+
+for (const oldResponse of ["success", "failure"] as const) {
+test(`physician creation guards submissions and ignores older ${oldResponse}`, async ({ page }) => {
+  await page.route("**/api/v1/me", (route) => route.fulfill({ json: {
+    user: { id: "admin", username: "admin", role: "admin", theme: "light" },
+    csrf_token: "test", research_warning: null,
+  } }));
+  const physician = (name: string) => ({ id: name, username: name, role: "physician", active: true, theme: "light", revision: 1 });
+  const firstPage = Array.from({ length: 100 }, (_, i) => physician(`a${String(i).padStart(3, "0")}`));
+  let posts = 0;
+  let gets = 0;
+  let releasePost!: () => void;
+  let releaseOldGet!: () => void;
+  let oldGetFinished!: () => void;
+  const postGate = new Promise<void>((resolve) => { releasePost = resolve; });
+  const oldGetGate = new Promise<void>((resolve) => { releaseOldGet = resolve; });
+  const oldGetDone = new Promise<void>((resolve) => { oldGetFinished = resolve; });
+  await page.route("**/api/v1/physicians**", async (route) => {
+    if (route.request().method() === "POST") {
+      posts++;
+      if (posts === 1) {
+        await postGate;
+        await route.fulfill({ status: 400, json: { code: "INVALID", message: "Invalid account" } });
+      } else {
+        const { username } = route.request().postDataJSON();
+        await route.fulfill({ status: 201, json: { user: physician(username) } });
+      }
+      return;
+    }
+    const itemPath = new URL(route.request().url()).pathname.match(/\/physicians\/([^/]+)$/);
+    if (itemPath) {
+      await route.fulfill({ json: { user: physician(itemPath[1]) } });
+      return;
+    }
+    if (posts === 0) {
+      await route.fulfill({ json: { items: firstPage, total: 103, limit: 100, offset: 0 } });
+      return;
+    }
+    gets++;
+    if (gets === 1) {
+      await oldGetGate;
+      if (oldResponse === "success") {
+        await route.fulfill({ json: { items: [physician("oldresponse")], total: 1, limit: 100, offset: 0 } });
+      } else {
+        await route.abort();
+      }
+      oldGetFinished();
+    } else if (gets === 3) {
+      await route.abort();
+    } else {
+      const items = gets === 2 ? [...firstPage.slice(0, 99), physician("zsecond")] : firstPage;
+      await route.fulfill({ json: { items, total: 103, limit: 100, offset: 0 } });
+    }
+  });
+  await page.goto("/#/physicians");
+  const form = page.getByRole("form", { name: "Create physician" });
+  await expect(page.getByText("Showing 100 of 103")).toBeVisible();
+  await form.getByLabel("Username").fill("zfirst");
+  await form.getByLabel("Password").fill("password123");
+  await form.getByRole("button", { name: "Create physician" }).click();
+  await expect(form.getByRole("button", { name: "Creating…" })).toBeDisabled();
+  await form.evaluate((element) => { element.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true })); });
+  expect(posts).toBe(1);
+  releasePost();
+  await expect(form.getByRole("alert")).toBeVisible();
+  await expect(form.getByRole("button", { name: "Create physician" })).toBeEnabled();
+  await form.getByRole("button", { name: "Create physician" }).click();
+  await expect(page.getByRole("table", { name: "Physicians" }).getByText("zfirst")).toBeVisible();
+  await expect.poll(() => gets).toBe(1);
+  await expect(page.getByRole("status").filter({ hasText: "Physician created." })).toHaveCount(1);
+  await form.getByLabel("Username").fill("zsecond");
+  await form.getByLabel("Password").fill("password123");
+  await form.getByRole("button", { name: "Create physician" }).click();
+  await expect.poll(() => gets).toBe(2);
+  await expect(page.getByRole("table", { name: "Physicians" }).getByText("zsecond")).toHaveCount(1);
+  await expect(page.getByRole("table", { name: "Physicians" }).getByText("zfirst")).toHaveCount(0);
+  releaseOldGet();
+  await oldGetDone;
+  await expect(page.getByRole("alert")).toHaveCount(0);
+  await expect(page.getByRole("table", { name: "Physicians" }).getByText("zsecond")).toBeVisible();
+  await form.getByLabel("Username").fill("zthird");
+  await form.getByLabel("Password").fill("password123");
+  await form.getByRole("button", { name: "Create physician" }).click();
+  await expect(page.getByRole("button", { name: "Retry", exact: true })).toBeVisible();
+  await expect(page.getByRole("table", { name: "Physicians" })).toHaveCount(0);
+  await page.getByRole("button", { name: "Retry", exact: true }).click();
+  await expect(page.getByRole("table", { name: "Physicians" }).getByText("zthird")).toBeVisible();
+  await expect(page.getByText("Showing the first page and the newly created physician.")).toBeVisible();
+});
+}
+
+test("an off-page created physician refreshes after an edit conflict", async ({ page }) => {
+  await page.route("**/api/v1/me", (route) => route.fulfill({ json: {
+    user: { id: "admin", username: "admin", role: "admin", theme: "light" },
+    csrf_token: "test", research_warning: null,
+  } }));
+  const physician = (name: string) => ({ id: name, username: name, role: "physician", active: true, theme: "light", revision: 1 });
+  const firstPage = Array.from({ length: 100 }, (_, i) => physician(`a${String(i).padStart(3, "0")}`));
+  let current = physician("zcreated");
+  let patches = 0;
+  await page.route("**/api/v1/physicians**", async (route) => {
+    const request = route.request();
+    if (request.method() === "POST") {
+      await route.fulfill({ status: 201, json: { user: current } });
+    } else if (request.method() === "PATCH") {
+      patches++;
+      if (patches === 1) {
+        expect(request.headers()["if-match"]).toBe('"1"');
+        current = { ...current, username: "zexternal", active: false, revision: 2 };
+        await route.fulfill({ status: 412, json: { code: "PRECONDITION_FAILED", message: "Account changed" } });
+      } else {
+        expect(request.headers()["if-match"]).toBe('"2"');
+        current = { ...current, username: "zsaved", revision: 3 };
+        await route.fulfill({ json: { user: current } });
+      }
+    } else if (new URL(request.url()).pathname.endsWith("/zcreated")) {
+      await route.fulfill({ json: { user: current } });
+    } else {
+      await route.fulfill({ json: { items: firstPage, total: 101, limit: 100, offset: 0 } });
+    }
+  });
+  await page.goto("/#/physicians");
+  await expect(page.getByText("Showing 100 of 101")).toBeVisible();
+  const create = page.getByRole("form", { name: "Create physician" });
+  await create.getByLabel("Username").fill("zcreated");
+  await create.getByLabel("Password").fill("password123");
+  await create.getByRole("button", { name: "Create physician" }).click();
+  const row = page.getByRole("row").filter({ hasText: "zcreated" });
+  await expect(row).toBeVisible();
+  await row.getByRole("button", { name: "Edit" }).click();
+  const edit = page.getByRole("form", { name: "Edit physician" });
+  await edit.getByLabel("Username").fill("zsaved");
+  await edit.getByRole("button", { name: "Save changes" }).click();
+  await expect(edit.getByRole("alert")).toContainText("account changed");
+  await expect(page.getByRole("row").filter({ hasText: "zexternal" })).toContainText("Inactive");
+  await edit.getByRole("button", { name: "Save changes" }).click();
+  await expect(page.getByRole("row").filter({ hasText: "zsaved" })).toContainText("Inactive");
+  expect(patches).toBe(2);
 });

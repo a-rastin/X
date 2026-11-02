@@ -226,6 +226,11 @@ export async function listPhysicians(): Promise<PhysicianList> {
   return request<PhysicianList>("/physicians?limit=100");
 }
 
+export async function getPhysician(id: string): Promise<SafePhysician> {
+  const result = await request<{ user: SafePhysician }>(`/physicians/${id}`);
+  return result.user;
+}
+
 export async function createPhysician(
   username: string,
   password: string,

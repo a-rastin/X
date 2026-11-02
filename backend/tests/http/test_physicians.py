@@ -160,6 +160,47 @@ def test_admin_creates_and_retrieves_physician_safe_fields(admin_client) -> None
         assert "csrf" not in lowered
 
 
+def test_list_contains_only_physicians_before_pagination(admin_client) -> None:
+    client = admin_client["client"]
+    headers = _auth_headers(admin_client["csrf"])
+    empty = client.get("/api/v1/physicians")
+    assert empty.status_code == 200
+    assert empty.json()["items"] == []
+    assert empty.json()["total"] == 0
+
+    created = []
+    for username in ("aaa_physician", "zzz_physician"):
+        response = client.post(
+            "/api/v1/physicians",
+            json={"username": username, "password": "secret123"},
+            headers=headers,
+        )
+        assert response.status_code == 201, response.text
+        created.append(response.json()["user"])
+
+    target_id = created[1]["id"]
+    preview = client.get(f"/api/v1/physicians/{target_id}/open-drafts")
+    assert preview.status_code == 200, preview.text
+    deactivated = client.post(
+        f"/api/v1/physicians/{target_id}/deactivate",
+        json={"draft_action": "retain", "draft_set_revision": preview.json()["draft_set_revision"]},
+        headers=headers,
+    )
+    assert deactivated.status_code == 200, deactivated.text
+
+    listed = client.get("/api/v1/physicians")
+    assert listed.status_code == 200
+    assert listed.json()["total"] == 2
+    assert [(item["username"], item["active"]) for item in listed.json()["items"]] == [
+        ("aaa_physician", True),
+        ("zzz_physician", False),
+    ]
+    page = client.get("/api/v1/physicians", params={"limit": 1, "offset": 1})
+    assert page.status_code == 200
+    assert page.json()["total"] == 2
+    assert [item["id"] for item in page.json()["items"]] == [target_id]
+
+
 def test_admin_edits_physician_preserves_stable_id(admin_client) -> None:
     client = admin_client["client"]
     csrf = admin_client["csrf"]
@@ -733,7 +774,8 @@ def test_physician_create_rejects_empty_fields_and_admin_role(admin_client) -> N
     names = {item["username"] for item in listed}
     assert "dr_empty_pw" not in names
     assert "admin2" not in names
-    assert sum(1 for item in listed if item["role"] == "admin") == 1
+    assert all(item["role"] == "physician" for item in listed)
+    assert client.get("/api/v1/me").json()["user"]["role"] == "admin"
 
 
 def test_physician_mutations_require_csrf(admin_client) -> None:

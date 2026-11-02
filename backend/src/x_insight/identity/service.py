@@ -344,10 +344,17 @@ def list_physicians(
     Stable ordering by username then id. Returns (items, total).
     """
     resolved_limit, resolved_offset = contracts.parse_pagination(limit, offset)
-    total = int(session.execute(select(func.count()).select_from(tables.users)).scalar_one())
+    total = int(
+        session.execute(
+            select(func.count())
+            .select_from(tables.users)
+            .where(tables.users.c.role == PHYSICIAN_ROLE)
+        ).scalar_one()
+    )
     rows = (
         session.execute(
             select(tables.users)
+            .where(tables.users.c.role == PHYSICIAN_ROLE)
             .order_by(tables.users.c.username, tables.users.c.id)
             .limit(resolved_limit)
             .offset(resolved_offset)
