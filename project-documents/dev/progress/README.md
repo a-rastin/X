@@ -1,5 +1,7 @@
 # X-INSIGHT progress tracker
 
+[Issue 22 login URL analysis (2026-11-02)](s05.md#follow-up-2026-11-02--issue-22-login-url-analysis): render-only guard identified; minimal routing fix planned, browser acceptance pending.
+
 [Issue 21 name validation implementation (2026-11-02)](s06.md#follow-up-2026-11-02--issue-21-name-validation-implementation): focused backend and browser checks passed with a Chromium rerun; deployed acceptance remains unverified.
 
 [Issue 20 status visibility implementation (2026-11-02)](s58.md#follow-up-2026-11-02--issue-20-implementation): focused and coordinator checks pass; live browser and deployed acceptance remain open.

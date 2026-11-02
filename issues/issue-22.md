@@ -1,0 +1,22 @@
+# Issue 22: login leaves the URL on the login route
+
+## Finding
+
+The dashboard is rendered after authentication, but the browser is not navigated there. This is a source-code diagnosis; the reported incident was not reproduced in a live browser during this analysis.
+
+- [`LoginPage.tsx`](../web/src/features/identity/LoginPage.tsx#L14) awaits `login` and does not navigate. [`auth.tsx`](../web/src/features/identity/auth.tsx#L102) ingests the returned session and changes auth state only. Startup session restoration similarly calls `ingestSession` via `refresh`.
+- [`App.tsx`](../web/src/app/App.tsx#L155) chooses `dashboard` **for rendering** when an authenticated user has `#/login` or an unrecognized hash; it never changes the hash. Both roles share `#/dashboard`, with the role selecting the dashboard component. The physician research warning remains a blocking gate before that component.
+- [`router.ts`](../web/src/app/router.ts#L151) stores the parsed hash in React state and listens for `hashchange`. Its `navigate` writes `location.hash`, which adds a history entry; there is no replace navigation. A bare `#/` is not a registered route; use the existing `#/dashboard`.
+- Anonymous users see the login form even on a protected hash, because the same guard only changes the rendered route. Therefore a fix restricted to `#/login` alone would still leave a successful login from `/` or a protected hash on its old URL. Conversely, redirecting every authenticated render to the dashboard would break restoration of valid deep links on reload.
+- The existing [identity browser tests](../e2e/identity.spec.ts#L12) assert visible dashboard content but not the hash or history. The shared `loginAs` helper starts at `/`, so those checks can pass while the URL is wrong.
+
+## Minimal implementation plan
+
+1. In [`router.ts`](../web/src/app/router.ts#L151), add an optional replace mode to the existing `navigate` function. For replacement use the native History API with `routeToHash`, then explicitly update the hook's route state: `history.replaceState` does **not** emit `hashchange`. Keep existing push navigation and callers unchanged. Preserve the current document path and query string. Avoid a router dependency or a second routing system.
+2. In [`App.tsx`](../web/src/app/App.tsx#L151), add one effect that replaces the current entry with `#/dashboard` when authentication transitions from `anonymous` to `ready`, and also whenever a ready authenticated user reaches `#/login` (including startup session restoration and Back/forward). Track the previous auth status across renders so an initial `loading` → `ready` restoration at a valid non-login route is left alone. Require a non-null authenticated user; failed login and initial loading must not redirect. The guard can continue rendering the dashboard while the effect synchronizes the URL. The login transition must apply regardless of the hash on which the anonymous form was shown.
+3. Extend [`e2e/identity.spec.ts`](../e2e/identity.spec.ts) with focused browser coverage using existing fixtures: for both roles start on `#/login` with a known earlier history entry, submit credentials, assert `#/dashboard`, exercise Back and verify the login form does not appear, and reload the dashboard. For the physician also verify the warning still blocks until acknowledged. Exercise an already-authenticated visit to `#/login`, including startup restoration, and a reload of a valid non-dashboard route to prove it stays there. Cover login from `/` or an anonymous protected hash, and failed credentials retaining the form. Structure the history setup so Back has a real earlier entry; do not assume it must remain on the dashboard when it can correctly return to an earlier page.
+4. Run the focused identity browser cases in Chromium and Firefox against the configured app/backend, plus `npm --prefix web run build`. Record actual results and any environment limitations in the progress handoff.
+
+## Change boundary
+
+Expected implementation files are `web/src/app/router.ts`, `web/src/app/App.tsx`, and `e2e/identity.spec.ts`, plus the required progress report/index updates. Do not change the backend, credentials, CSRF/session behavior, authorization, logout behavior, research warning, dashboard content, navigation destinations, other route handling, dependencies, or unrelated tests/styles. Preserve authenticated reloads and deep links; do not globally normalize unknown hashes or redirect anonymous protected routes as part of this issue. No code changes were made in this analysis.
