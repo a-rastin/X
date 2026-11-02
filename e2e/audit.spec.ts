@@ -7,6 +7,7 @@ import {
   physicianSession,
   loginAs,
   acknowledgeWarning,
+  acknowledgeWarningIfPresent,
 } from "./helpers";
 
 /* S52 append-only audit administration views (seams T1/T9).
@@ -41,6 +42,7 @@ import {
 
 async function loginAdmin(page: import("@playwright/test").Page): Promise<void> {
   await loginAs(page, "admin", "admin", "admin");
+  await acknowledgeWarningIfPresent(page);
   await expect(
     page.getByRole("heading", { name: "Administrator dashboard" }),
   ).toBeVisible({ timeout: 15000 });

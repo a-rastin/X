@@ -3,7 +3,7 @@ import { expect, test } from "@playwright/test";
 test("provider mode selection shows detection and deployment override", async ({ page }) => {
   await page.route("**/api/v1/me", (route) => route.fulfill({ json: {
     user: { id: "synthetic-admin", username: "admin", role: "admin", theme: "light" },
-    csrf_token: "synthetic-csrf", research_warning: null,
+    csrf_token: "synthetic-csrf", research_warning: null, research_warning_version: null,
   } }));
   let saved = {
     revision: 1, api_key: "configured", base_url: "https://provider.example/v1",
@@ -51,7 +51,7 @@ test("provider mode selection shows detection and deployment override", async ({
 test("unsaved provider does not claim an effective mode", async ({ page }) => {
   await page.route("**/api/v1/me", (route) => route.fulfill({ json: {
     user: { id: "synthetic-admin", username: "admin", role: "admin", theme: "light" },
-    csrf_token: "synthetic-csrf", research_warning: null,
+    csrf_token: "synthetic-csrf", research_warning: null, research_warning_version: null,
   } }));
   await page.route("**/api/v1/api-settings**", (route) => route.fulfill({
     status: 404, json: { code: "NOT_FOUND" },

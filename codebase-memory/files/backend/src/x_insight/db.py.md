@@ -1,6 +1,6 @@
 # backend/src/x_insight/db.py
 
-Source SHA-256: 3b47fdd94c5ba2ee1ad802a010022b074cde4d8a21060a135acde10c2a5519f4
+Source SHA-256: f8aafcd62c9293a6a6311bceb779b651a321c40e2f1cd78892d9e7c5b7561d88
 Source: working tree (includes uncommitted changes)
 
 ## Purpose
@@ -10,8 +10,8 @@ check — plus `CommittedRoute`, which makes every mutation visible before its r
 ## Important Symbols
 - `get_engine()` — lazy process-wide singleton; **import never connects**.
   `reset_engine()` disposes it. Pool 5/5, `pool_pre_ping`, `connect_timeout=3`.
-- `EXPECTED_SCHEMA_VERSION = "0028"` and `check_readiness()` — ready only when applied
-  Alembic versions equal `["0028"]`; otherwise `SCHEMA_INCOMPATIBLE` (not retryable) or
+- `EXPECTED_SCHEMA_VERSION = "0029"` and `check_readiness()` — ready only when applied
+  Alembic versions equal `["0029"]`; otherwise `SCHEMA_INCOMPATIBLE` (not retryable) or
   `DB_UNAVAILABLE` (retryable).
 - `session_scope()` — the only commit-or-rollback context; `get_session` publishes it on
   `request.state.db_session`.

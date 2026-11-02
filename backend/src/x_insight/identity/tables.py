@@ -7,6 +7,8 @@ for profile concurrency. Sessions: UUID, user FK, hashed opaque token
 (unique), CSRF token, credential-revision snapshot, created/revoked times.
 No timeout column: sessions never expire (NFR-02); revocation is explicit
 (logout, credential change) via ``revoked_at`` + revision mismatch.
+Users also keep one nullable last-acknowledged research-warning version (no
+history): the research warning is pending until it matches the current version.
 """
 
 from __future__ import annotations
@@ -40,6 +42,9 @@ users = Table(
     Column("created_at", DateTime(timezone=True), nullable=False),
     Column("updated_at", DateTime(timezone=True), nullable=False),
     Column("revision", Integer, nullable=False, default=1),
+    # Last research-warning version this account acknowledged (migration 0029);
+    # NULL or any other value means the current warning is still pending.
+    Column("research_warning_acknowledged_version", Text, nullable=True),
     CheckConstraint("role IN ('admin', 'physician')", name="ck_users_role"),
     CheckConstraint("theme IN ('light', 'dark')", name="ck_users_theme"),
 )

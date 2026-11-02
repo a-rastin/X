@@ -6,6 +6,7 @@ import {
   ensurePhysician,
   loginAs,
   acknowledgeWarning,
+  acknowledgeWarningIfPresent,
 } from "./helpers";
 
 /* S42 provider settings (seam T9). HTTP contract stays in
@@ -195,6 +196,7 @@ test("admin saves, tests, and clears provider settings without echoing the key",
         new URL(res.url()).pathname === "/api/v1/auth/login",
     );
     await loginAs(page, "admin", "admin", "admin");
+    await acknowledgeWarningIfPresent(page);
     expect((await login).status(), "admin login").toBe(200);
     await expect(
       page.getByRole("heading", { name: "Administrator dashboard" }),
@@ -317,6 +319,7 @@ test("admin cannot test provider settings before the first save", async ({ page 
       new URL(res.url()).pathname === "/api/v1/auth/login",
   );
   await loginAs(page, "admin", "admin", "admin");
+  await acknowledgeWarningIfPresent(page);
   expect((await login).status(), "admin login").toBe(200);
 
   await page.route("**/api/v1/api-settings", (route) =>
@@ -362,6 +365,7 @@ test("physician is refused provider settings", async ({ page, request }) => {
 
 test("provider form displays field diagnostics and explicit endpoint approvals", async ({ page }) => {
   await loginAs(page, "admin", "admin", "admin");
+  await acknowledgeWarningIfPresent(page);
   await page.route("**/api/v1/api-settings", (route) => {
     if (route.request().method() === "PUT") {
       return route.fulfill({ status: 422, contentType: "application/json", body: JSON.stringify({

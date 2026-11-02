@@ -5,6 +5,7 @@ import {
   physicianSession,
   loginAs,
   acknowledgeWarning,
+  acknowledgeWarningIfPresent,
   signOut,
 } from "./helpers";
 
@@ -50,6 +51,7 @@ import {
 
 async function loginAdmin(page: import("@playwright/test").Page): Promise<void> {
   await loginAs(page, "admin", "admin", "admin");
+  await acknowledgeWarningIfPresent(page);
   await expect(
     page.getByRole("heading", { name: "Administrator dashboard" }),
   ).toBeVisible({ timeout: 15000 });
@@ -159,7 +161,7 @@ test("S58 §§3-4 admin sees live operational status and can refresh it", async 
 test("issue 20 shows separate timeouts and clears a generation alert on refresh", async ({ page }) => {
   await page.route("**/api/v1/me", (route) => route.fulfill({ json: {
     user: { id: "admin", username: "admin", role: "admin", theme: "light" },
-    csrf_token: "test-token", research_warning: null,
+    csrf_token: "test-token", research_warning: null, research_warning_version: null,
   } }));
   let failed = true;
   await page.route("**/api/v1/ops/status", async (route) => {

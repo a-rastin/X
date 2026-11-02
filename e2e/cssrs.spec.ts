@@ -7,6 +7,7 @@ import {
   physicianSession,
   loginAs,
   acknowledgeWarning,
+  acknowledgeWarningIfPresent,
   signOut,
 } from "./helpers";
 
@@ -486,7 +487,7 @@ test("recent severity 3 survives reload and re-login", async ({
 
   await signOut(page);
   await loginAs(page, "physician", physician.username, physician.password);
-  await acknowledgeWarning(page);
+  await acknowledgeWarningIfPresent(page);
   await gotoCssrs(page, draftId, "C-SSRS (step 4)");
   await expect(page.locator("#cssrs-preview-status")).toContainText(
     "Complete — recent ideation severity 3.",

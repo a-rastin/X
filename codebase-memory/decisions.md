@@ -73,6 +73,22 @@ captures what a future task needs before it re-derives the same conclusions.
   [`issues/issue-19.md`](../issues/issue-19.md).
   Status: current. Evidence: source plus that issue; the tester's incident itself is unverified.
 
+## Identity and research warning
+
+- **The research warning is one nullable acknowledged version per account, for both roles.**
+  `users.research_warning_acknowledged_version` (migration 0029) holds only the last version
+  the account acknowledged; NULL or a different value means pending. Login and `GET /me` return
+  `research_warning` plus `research_warning_version` from the stored row, never from the login
+  role. Reason: issue 24 asked for one server-supplied text/version contract; no history,
+  timestamp, or table was requested. Acknowledgement (`POST /me/research-warning-acknowledgement`)
+  writes only that column: no credential or profile revision bump and no audit row. A stale
+  submitted version is 409 `RESEARCH_WARNING_CHANGED` with the current pending text, so text the
+  user did not see is never recorded. Bump `RESEARCH_WARNING_VERSION` in `identity/service.py`
+  whenever `RESEARCH_WARNING` wording changes. Restore: 0028 archives restore every account
+  unacknowledged; 0029 archives keep the column. Status: current. Evidence: `issues/issue-24.md`
+  plan and source; the backend tests in `tests/http/test_identity.py` (slice 5) and
+  `tests/recovery/test_restore_validation.py`.
+
 ## Testing and fixtures
 
 - **Child-first TRUNCATE order in test fixtures** (`TRUNCATE notes, encounters, patients`).

@@ -1,5 +1,5 @@
 import { expect, test, type Locator, type Page } from "@playwright/test";
-import { loginAs } from "./helpers";
+import { loginAs, acknowledgeWarningIfPresent } from "./helpers";
 
 // 640 CSS px is a 1280px desktop at 200% zoom. No CSS zoom.
 test.use({ viewport: { width: 640, height: 720 } });
@@ -35,6 +35,7 @@ async function expectHorizontallyInside(
 
 test("S61 200% zoom keeps every admin nav link on screen", async ({ page }) => {
   await loginAs(page, "admin", "admin", "admin");
+  await acknowledgeWarningIfPresent(page);
   const nav = page.getByRole("navigation", { name: "Primary" });
   await expect(nav).toBeVisible({ timeout: 15000 });
 

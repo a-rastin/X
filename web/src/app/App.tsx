@@ -174,7 +174,7 @@ export function App() {
   }
 
   const showWarningGate =
-    status === "ready" && user !== null && user.role === "physician" && !warningAcked;
+    status === "ready" && user !== null && !warningAcked;
 
   return (
     <div className={user === null ? "xi-shell xi-shell-gate" : "xi-shell"}>

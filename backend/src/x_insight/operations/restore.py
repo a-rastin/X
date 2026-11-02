@@ -135,9 +135,24 @@ RESTORE_BACKUP_SCHEMA_VERSION = backup_module.BACKUP_MANIFEST_VERSION
 # ``provider_settings``. 0020 makes its key columns nullable (clear).
 # 0021 adds ``capability_status`` (still operational, not clinical).
 # 0017 and 0018 archives omit the table and stay valid via the special
-# case; 0019 and later must include it.
+# case; 0019 and later must include it. 0029 adds users.research_warning_
+# acknowledged_version; older archives restore every account unacknowledged.
 SUPPORTED_APP_SCHEMA_VERSIONS = frozenset(
-    {"0017", "0018", "0019", "0020", "0021", "0022", "0023", "0024", "0025", "0026", "0027", "0028"}
+    {
+        "0017",
+        "0018",
+        "0019",
+        "0020",
+        "0021",
+        "0022",
+        "0023",
+        "0024",
+        "0025",
+        "0026",
+        "0027",
+        "0028",
+        "0029",
+    }
 )
 
 # Bounds (ponytail: 256 MiB expanded / 4096 entries / 100 MiB per file;
@@ -476,18 +491,18 @@ def _check_provider_approvals(tables: dict[str, Any], app_schema: str) -> str | 
         if not isinstance(row, dict):
             return "Provider endpoint approval row is malformed."
         for field in fields:
-            if app_schema in ("0024", "0025", "0026", "0027", "0028"):
+            if app_schema in ("0024", "0025", "0026", "0027", "0028", "0029"):
                 if type(row.get(field)) is not bool:
                     return "Provider endpoint approvals must be explicit JSON booleans."
             elif field in row and row[field] is not False:
                 return "Legacy provider archives cannot grant endpoint approvals."
         mode = row.get("capability_mode")
-        if app_schema in ("0027", "0028") and mode not in ("schema", "json"):
+        if app_schema in ("0027", "0028", "0029") and mode not in ("schema", "json"):
             return "Provider capability_mode must be schema or json."
-        if app_schema not in ("0027", "0028") and mode is not None:
+        if app_schema not in ("0027", "0028", "0029") and mode is not None:
             return "Legacy provider archives cannot set capability_mode."
         detected = row.get("detected_capability_mode")
-        if app_schema == "0028":
+        if app_schema in ("0028", "0029"):
             if "detected_capability_mode" not in row or detected not in (None, "schema", "json"):
                 return "Provider detected_capability_mode must be null, schema or json."
         elif detected is not None:
@@ -502,6 +517,25 @@ def _check_provider_approvals(tables: dict[str, Any], app_schema: str) -> str | 
                 validate_timeout(timeout)
             except ValueError:
                 return "Provider timeout_seconds must be a finite number within [10, 900]."
+    return None
+
+
+def _check_research_warning_acknowledgements(tables: dict[str, Any], app_schema: str) -> str | None:
+    """0029 archives carry each account's acknowledged version (text or null).
+
+    Older archives predate the column: they may not carry an acknowledgement,
+    so every restored account starts unacknowledged (NULL).
+    """
+    field = "research_warning_acknowledged_version"
+    for row in tables.get("users") or []:
+        if not isinstance(row, dict):
+            return "User rows are malformed."
+        if app_schema == "0029":
+            value = row.get(field)
+            if field not in row or (value is not None and not isinstance(value, str)):
+                return "User research-warning acknowledgement must be null or text."
+        elif row.get(field) is not None:
+            return "Legacy archives cannot carry research-warning acknowledgements."
     return None
 
 
@@ -971,6 +1005,9 @@ def validate_archive_bytes(blob: bytes) -> dict[str, Any]:
                     "warnings": [],
                 }
         problem = _check_provider_approvals(db_tables, str(app_schema))
+        if problem is not None:
+            return {"ok": False, "errors": [problem], "warnings": []}
+        problem = _check_research_warning_acknowledgements(db_tables, str(app_schema))
         if problem is not None:
             return {"ok": False, "errors": [problem], "warnings": []}
         problem = _check_provider_key(db_tables)
@@ -1838,6 +1875,11 @@ def commit_restore(
     problem = _check_provider_approvals(staged_tables, str(job.get("app_schema_version")))
     if problem is not None:
         raise contracts.ContractError(409, "RESTORE_PROVIDER_APPROVAL_INVALID", problem)
+    problem = _check_research_warning_acknowledgements(
+        staged_tables, str(job.get("app_schema_version"))
+    )
+    if problem is not None:
+        raise contracts.ContractError(409, "RESTORE_RESEARCH_WARNING_INVALID", problem)
     problem = _check_provider_key(staged_tables)
     if problem is not None:
         raise contracts.ContractError(409, "RESTORE_PROVIDER_KEY_UNAVAILABLE", problem)

@@ -1075,9 +1075,9 @@
         "backend",
         "config"
       ],
-      "purpose": "Engine lifecycle, schema pin (0028), transaction scope, readiness, and the committing route class.",
+      "purpose": "Engine lifecycle, schema pin (0029), transaction scope, readiness, and the committing route class.",
       "summary": "files/backend/src/x_insight/db.py.md",
-      "source_sha256": "3b47fdd94c5ba2ee1ad802a010022b074cde4d8a21060a135acde10c2a5519f4"
+      "source_sha256": "f8aafcd62c9293a6a6311bceb779b651a321c40e2f1cd78892d9e7c5b7561d88"
     },
     {
       "path": "backend/src/x_insight/ddi/__init__.py",
@@ -1195,9 +1195,9 @@
         "backend",
         "identity"
       ],
-      "purpose": null,
-      "summary": null,
-      "source_sha256": null
+      "purpose": "Login, /me, password/preferences, research-warning acknowledgement, and admin physician routes.",
+      "summary": "files/backend/src/x_insight/identity/router.py.md",
+      "source_sha256": "b5b9397f277fc09628a00d101e5d771a08b6268764b4d735fe6d96d23645189c"
     },
     {
       "path": "backend/src/x_insight/identity/service.py",
@@ -1205,9 +1205,9 @@
         "backend",
         "identity"
       ],
-      "purpose": "Sessions, CSRF, admin seeding, login throttling, draft-set revisions, physician deactivation.",
+      "purpose": "Sessions, CSRF, admin seeding, login throttling, research-warning version and state, draft-set revisions, physician deactivation.",
       "summary": "files/backend/src/x_insight/identity/service.py.md",
-      "source_sha256": "0a4104529d65d16ac544ecb1c7fbb197538ca79d95c92abff61b5073539016bb"
+      "source_sha256": "e8ab2a520757a3bfde451449ba59c48e8bc3167d6514c43dd14f157573eccec1"
     },
     {
       "path": "backend/src/x_insight/identity/tables.py",
@@ -1215,9 +1215,9 @@
         "backend",
         "identity"
       ],
-      "purpose": null,
-      "summary": null,
-      "source_sha256": null
+      "purpose": "Identity table definitions: users (with acknowledged research-warning version), sessions, idempotency records.",
+      "summary": "files/backend/src/x_insight/identity/tables.py.md",
+      "source_sha256": "c86377d054dca5c1631ca77ffd4eeb5dc8cf2b6c34f5cb88e2e7405f7ac19311"
     },
     {
       "path": "backend/src/x_insight/mcp_server/__init__.py",
@@ -1405,9 +1405,9 @@
         "backend",
         "operations"
       ],
-      "purpose": "Staged restore: validation, confirmation digest, maintenance lock, phased commit with rollback.",
+      "purpose": "Staged restore: validation, confirmation digest, maintenance lock, phased commit with rollback; schema 0017-0029 compatibility.",
       "summary": "files/backend/src/x_insight/operations/restore.py.md",
-      "source_sha256": "f24379632df730317c4b1b90186a55f2a6df4dda5eeb05f39877e35902de04fc"
+      "source_sha256": "0ece831a1c3dc68134faa656f56c81394ae71fb596d61e7ed40874d02cf53de0"
     },
     {
       "path": "backend/src/x_insight/operations/router.py",
@@ -7744,7 +7744,7 @@
       ],
       "purpose": "Root component: route resolution, role-scoped navigation, and the page switch.",
       "summary": "files/web/src/app/App.tsx.md",
-      "source_sha256": "0fc698a58c811e4eb744d6f206e15094029ad046bb9a2b57b3a10ae41c668e9b"
+      "source_sha256": "84c72914620c7b13201f376ea351fcf1d26ef1f5b4c071cd6aca7a25c8b18d5b"
     },
     {
       "path": "web/src/app/navigationGuard.ts",
@@ -8132,9 +8132,9 @@
         "frontend",
         "identity"
       ],
-      "purpose": "Blocking physician research disclaimer with native modal semantics and tab-session acknowledgment.",
+      "purpose": "Blocking research disclaimer for both roles with native modal semantics and server-persisted versioned acknowledgment.",
       "summary": "files/web/src/features/identity/ResearchWarning.tsx.md",
-      "source_sha256": "3fd12353a9c754ec762de2e5e6b73c7d7d49cce6467d2a93ffad1ba5a5a24921"
+      "source_sha256": "be946e9892b8aefaed841282d92df750422246028d21f1de6b1313bc17f16442"
     },
     {
       "path": "web/src/features/identity/ThemeToggle.tsx",
@@ -8154,7 +8154,7 @@
       ],
       "purpose": "De-facto shared fetch client: ApiError, CSRF in localStorage, If-Match and idempotency headers.",
       "summary": "files/web/src/features/identity/api.ts.md",
-      "source_sha256": "1e27e2ce6d00c7e67c509a4bb4be2e64b16baca10a089b230eba3a844b477ebe"
+      "source_sha256": "fc76e03c325225ddca2254d5ecfd46c9d2d5f89219c08c592aa7bad208763bcd"
     },
     {
       "path": "web/src/features/identity/auth.tsx",

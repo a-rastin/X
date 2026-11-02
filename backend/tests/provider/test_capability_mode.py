@@ -236,3 +236,20 @@ def test_capability_mode_is_accepted_and_validated():
     assert ProviderSettingsWrite(**body, capability_mode="schema").capability_mode == "schema"
     with pytest.raises(ValidationError):
         ProviderSettingsWrite(**body, capability_mode="other")
+
+
+def test_restore_0029_validates_capability_rows_like_0028():
+    # Issue 24 adds only a users column; provider rows keep the 0028 rules.
+    row = {
+        "local_endpoint_approved": False,
+        "trusted_proxy_approved": False,
+        "capability_mode": "json",
+        "detected_capability_mode": None,
+    }
+    assert _check_provider_approvals({"provider_settings": [row]}, "0029") is None
+    row["detected_capability_mode"] = "schema"
+    assert _check_provider_approvals({"provider_settings": [row]}, "0029") is None
+    row["detected_capability_mode"] = "invalid"
+    assert _check_provider_approvals({"provider_settings": [row]}, "0029") is not None
+    del row["detected_capability_mode"]
+    assert _check_provider_approvals({"provider_settings": [row]}, "0029") is not None

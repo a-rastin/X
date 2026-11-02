@@ -6,8 +6,46 @@ import {
   ensurePhysician,
   loginAs,
   acknowledgeWarning,
+  acknowledgeWarningIfPresent,
   signOut,
 } from "./helpers";
+
+test("research warning blocks the administrator first login with the exact server text", async ({
+  page,
+}) => {
+  await loginAs(page, "admin", "admin", "admin");
+  // Wait for the session to be ready before asserting: the gate commits in
+  // the same state update, so a missing dialog after this is a real failure.
+  await expect(page.getByRole("button", { name: "Sign out" })).toBeVisible();
+  await expect(page.getByRole("alertdialog")).toContainText(RESEARCH_WARNING);
+  await expect(
+    page.getByRole("heading", { name: "Administrator dashboard" }),
+  ).toHaveCount(0);
+  await acknowledgeWarning(page);
+  await expect(
+    page.getByRole("heading", { name: "Administrator dashboard" }),
+  ).toBeVisible();
+});
+
+test("research warning blocks the physician first login with the exact server text", async ({
+  page,
+  request,
+}) => {
+  const username = uniqueName("e2efirst");
+  await ensurePhysician(request, username, "secret123");
+  await loginAs(page, "physician", username, "secret123");
+  // Wait for the session to be ready before asserting: the gate commits in
+  // the same state update, so a missing dialog after this is a real failure.
+  await expect(page.getByRole("button", { name: "Sign out" })).toBeVisible();
+  await expect(page.getByRole("alertdialog")).toContainText(RESEARCH_WARNING);
+  await expect(
+    page.getByRole("heading", { name: "Physician dashboard" }),
+  ).toHaveCount(0);
+  await acknowledgeWarning(page);
+  await expect(
+    page.getByRole("heading", { name: "Physician dashboard" }),
+  ).toBeVisible();
+});
 
 for (const role of ["admin", "physician"] as const) {
   test(`login URL: ${role} replaces the login entry and survives reload`, async ({ page, request }) => {
@@ -27,6 +65,10 @@ for (const role of ["admin", "physician"] as const) {
       await expect(page.getByRole("alertdialog")).toContainText(RESEARCH_WARNING);
       await expect(page.getByRole("heading", { name: "Physician dashboard" })).toHaveCount(0);
       await acknowledgeWarning(page);
+    } else {
+      // The administrator gate appears only until the persisted
+      // acknowledgement is stored; later logins show no modal.
+      await acknowledgeWarningIfPresent(page);
     }
     await expect(page.getByRole("heading", { name: role === "admin" ? "Administrator dashboard" : "Physician dashboard" })).toBeVisible();
     await page.reload();
@@ -40,6 +82,7 @@ for (const role of ["admin", "physician"] as const) {
 
 test("login URL: authenticated login route redirects while deep links survive restoration", async ({ page }) => {
   await loginAs(page, "admin", "admin", "admin");
+  await acknowledgeWarningIfPresent(page);
   await expect(page).toHaveURL(/#\/dashboard$/);
   // Changing the query forces a document load and exercises startup restoration.
   await page.goto("/?restore=1#/login");
@@ -64,6 +107,7 @@ test("login URL: login from an anonymous protected route redirects", async ({ pa
 
 test("admin login lands on the administrator dashboard", async ({ page }) => {
   await loginAs(page, "admin", "admin", "admin");
+  await acknowledgeWarningIfPresent(page);
   await expect(
     page.getByRole("heading", { name: "Administrator dashboard" }),
   ).toBeVisible();
@@ -180,6 +224,7 @@ test("research warning acknowledgement persists across a session refresh", async
 
 test("sign-out clears identity and guards the dashboard", async ({ page }) => {
   await loginAs(page, "admin", "admin", "admin");
+  await acknowledgeWarningIfPresent(page);
   await expect(
     page.getByRole("heading", { name: "Administrator dashboard" }),
   ).toBeVisible();
@@ -206,10 +251,11 @@ test("physician changes their own password", async ({ page, request }) => {
   await form.getByRole("button", { name: "Change password" }).click();
   await expect(form.getByText("Password changed.")).toBeVisible();
 
-  // New password works; the old one fails with the generic message.
+  // New password works; the old one fails with the generic message. The
+  // acknowledgement already persisted, so the second login shows no modal.
   await signOut(page);
   await loginAs(page, "physician", username, "newpass456");
-  await acknowledgeWarning(page);
+  await acknowledgeWarningIfPresent(page);
   await expect(
     page.getByRole("heading", { name: "Physician dashboard" }),
   ).toBeVisible();
@@ -241,6 +287,7 @@ test("administrator creates a physician through the browser", async ({
 }) => {
   const username = uniqueName("e2ecreate");
   await loginAs(page, "admin", "admin", "admin");
+  await acknowledgeWarningIfPresent(page);
   await page.getByRole("link", { name: "Physicians" }).click();
   await expect(
     page.getByRole("heading", { name: "Physicians" }),
@@ -266,6 +313,7 @@ test("tabs keep mutation CSRF aligned with the shared session cookie", async ({
   await expect(otherTab.getByRole("button", { name: "Sign in" })).toBeVisible();
 
   await loginAs(page, "admin", "admin", "admin");
+  await acknowledgeWarningIfPresent(page);
   await expect(
     page.getByRole("heading", { name: "Administrator dashboard" }),
   ).toBeVisible();
@@ -303,6 +351,7 @@ test("administrator deactivates and reactivates a physician", async ({
   const username = uniqueName("e2edeact");
   await ensurePhysician(request, username, "deactpass1");
   await loginAs(page, "admin", "admin", "admin");
+  await acknowledgeWarningIfPresent(page);
   await page.getByRole("link", { name: "Physicians" }).click();
 
   const table = page.getByRole("table", { name: "Physicians" });
@@ -323,6 +372,7 @@ test("administrator deactivates and reactivates a physician", async ({
 
   // Reactivate restores login.
   await loginAs(page, "admin", "admin", "admin");
+  await acknowledgeWarningIfPresent(page);
   await page.getByRole("link", { name: "Physicians" }).click();
   const rowAgain = page
     .getByRole("table", { name: "Physicians" })
@@ -331,7 +381,8 @@ test("administrator deactivates and reactivates a physician", async ({
   await expect(page.getByText("Physician reactivated.")).toBeVisible();
   await signOut(page);
   await loginAs(page, "physician", username, "deactpass1");
-  await acknowledgeWarning(page);
+  // Acknowledged long before deactivation, so the gate stays dismissed.
+  await acknowledgeWarningIfPresent(page);
   await expect(
     page.getByRole("heading", { name: "Physician dashboard" }),
   ).toBeVisible();
@@ -351,35 +402,204 @@ test("physician has no governance navigation and is denied the physicians route"
   await expect(page.getByText("Administrator access required.")).toBeVisible();
 });
 
-test("research warning blocks again on the next login", async ({
+test("acknowledged warning stays dismissed across refresh, sign-out, and fresh contexts", async ({
   page,
   request,
+  browser,
 }) => {
-  const username = uniqueName("e2ephys");
+  const username = uniqueName("e2epersist");
   await ensurePhysician(request, username, "secret123");
   await loginAs(page, "physician", username, "secret123");
   await acknowledgeWarning(page);
+
+  // GET /me refresh must not force a second blocking acknowledgement.
+  await page.reload();
+  await expect(page.getByRole("alertdialog")).toHaveCount(0);
   await expect(
     page.getByRole("heading", { name: "Physician dashboard" }),
   ).toBeVisible();
 
-  // Acknowledgement lives in the tab session: sign-out clears it, so the
-  // next login must block on the exact warning again.
+  // The next login needs no modal: the acknowledgement persisted server-side.
   await signOut(page);
   await loginAs(page, "physician", username, "secret123");
+  await expect(
+    page.getByRole("heading", { name: "Physician dashboard" }),
+  ).toBeVisible();
+  await expect(page.getByRole("alertdialog")).toHaveCount(0);
+
+  // A fresh browser context shares no tab or cookie state, yet the committed
+  // acknowledgement still applies.
+  const fresh = await browser.newContext();
+  const second = await fresh.newPage();
+  try {
+    await loginAs(second, "physician", username, "secret123");
+    await expect(
+      second.getByRole("heading", { name: "Physician dashboard" }),
+    ).toBeVisible();
+    await expect(second.getByRole("alertdialog")).toHaveCount(0);
+  } finally {
+    await fresh.close();
+  }
+
+  // Isolation: a different account still gets its own gate.
+  const other = uniqueName("e2eisolate");
+  await ensurePhysician(request, other, "secret123");
+  await signOut(page);
+  await loginAs(page, "physician", other, "secret123");
   await expect(page.getByRole("alertdialog")).toContainText(RESEARCH_WARNING);
   await expect(
     page.getByRole("heading", { name: "Physician dashboard" }),
   ).toHaveCount(0);
+  await acknowledgeWarning(page);
 });
 
-test("administrator never sees the research warning", async ({ page }) => {
-  await loginAs(page, "admin", "admin", "admin");
+test("pending warning survives a direct patient-route reload and withholds route content", async ({
+  page,
+  request,
+}) => {
+  const username = uniqueName("e2eroute");
+  await ensurePhysician(request, username, "secret123");
+  await loginAs(page, "physician", username, "secret123");
+  await expect(page.getByRole("alertdialog")).toContainText(RESEARCH_WARNING);
+
+  // Deep-linking past the gate, then reloading, still blocks on the modal
+  // with no route content or route dialogs above it.
+  await page.goto("/#/patients");
+  await page.reload();
+  await expect(page.getByRole("alertdialog")).toContainText(RESEARCH_WARNING);
   await expect(
-    page.getByRole("heading", { name: "Administrator dashboard" }),
+    page.getByRole("heading", { name: "Patient directory" }),
+  ).toHaveCount(0);
+
+  await acknowledgeWarning(page);
+  await expect(
+    page.getByRole("heading", { name: "Patient directory" }),
   ).toBeVisible();
-  await expect(page.getByRole("alertdialog")).toHaveCount(0);
-  await expect(page.getByText(RESEARCH_WARNING)).toHaveCount(0);
+});
+
+test("research gate keeps native focus, traps Tab, ignores Escape, and acks by keyboard in a short viewport", async ({
+  page,
+  request,
+}) => {
+  const username = uniqueName("e2ekeys");
+  await ensurePhysician(request, username, "secret123");
+  await page.setViewportSize({ width: 360, height: 400 });
+  await loginAs(page, "physician", username, "secret123");
+  const dialog = page.getByRole("alertdialog");
+  await expect(dialog).toContainText(RESEARCH_WARNING);
+
+  // Initial focus lands on the dialog title for long-form reading.
+  const title = page.getByRole("heading", {
+    name: "Research prototype — clinical use disclaimer",
+  });
+  await expect(title).toBeFocused();
+
+  // Escape must not dismiss the blocking gate.
+  await page.keyboard.press("Escape");
+  await expect(dialog).toBeVisible();
+
+  // Tab cycles inside the modal: scrollable body text, then the action.
+  const body = page.locator("#research-warning-text");
+  await page.keyboard.press("Tab");
+  await expect(body).toBeFocused();
+  const ack = dialog.getByRole("button", {
+    name: "Acknowledge and continue",
+  });
+  await page.keyboard.press("Tab");
+  await expect(ack).toBeFocused();
+
+  // Tab past the last control wraps back into the modal, never behind it.
+  await page.keyboard.press("Tab");
+  await expect(body).toBeFocused();
+  await page.keyboard.press("Shift+Tab");
+  await expect(ack).toBeFocused();
+
+  // Keyboard-operate the action: the gate commits and the dashboard opens.
+  await page.keyboard.press("Enter");
+  await expect(dialog).toBeHidden();
+  await expect(
+    page.getByRole("heading", { name: "Physician dashboard" }),
+  ).toBeVisible();
+});
+
+test("failed acknowledgement keeps the gate with an announced retryable error", async ({
+  page,
+  request,
+}) => {
+  const username = uniqueName("e2eackfail");
+  await ensurePhysician(request, username, "secret123");
+  await page.route(
+    "**/api/v1/me/research-warning-acknowledgement",
+    (route) => route.abort(),
+  );
+  await loginAs(page, "physician", username, "secret123");
+  const dialog = page.getByRole("alertdialog");
+  await expect(dialog).toContainText(RESEARCH_WARNING);
+
+  await dialog
+    .getByRole("button", { name: "Acknowledge and continue" })
+    .click();
+  // The failure is announced inline, the gate stays open, and the action
+  // re-enables for a retry: no local success is recorded.
+  await expect(dialog.getByRole("alert")).toBeVisible();
+  await expect(dialog).toBeVisible();
+  await expect(
+    dialog.getByRole("button", { name: "Acknowledge and continue" }),
+  ).toBeEnabled();
+  await expect(
+    page.getByRole("heading", { name: "Physician dashboard" }),
+  ).toHaveCount(0);
+
+  // Retry by keyboard once the endpoint recovers: the committed write
+  // dismisses the gate.
+  await page.unroute("**/api/v1/me/research-warning-acknowledgement");
+  await dialog
+    .getByRole("button", { name: "Acknowledge and continue" })
+    .focus();
+  await page.keyboard.press("Enter");
+  await expect(dialog).toBeHidden();
+  await expect(
+    page.getByRole("heading", { name: "Physician dashboard" }),
+  ).toBeVisible();
+});
+
+test("stale acknowledgement with nothing pending closes the gate without an error", async ({
+  page,
+  request,
+}) => {
+  const username = uniqueName("e2eackstale");
+  await ensurePhysician(request, username, "secret123");
+  // Crafted-request edge: stale version while nothing is pending. The real
+  // backend answers 409 RESEARCH_WARNING_CHANGED with null pending text;
+  // the gate must close quietly with no error announced.
+  await page.route(
+    "**/api/v1/me/research-warning-acknowledgement",
+    (route) =>
+      route.fulfill({
+        status: 409,
+        json: {
+          code: "RESEARCH_WARNING_CHANGED",
+          message:
+            "The research warning changed. Review the current text and acknowledge it.",
+          field_errors: { version: ["Reviewed version is stale."] },
+          research_warning: null,
+          research_warning_version: null,
+        },
+      }),
+  );
+  await loginAs(page, "physician", username, "secret123");
+  const dialog = page.getByRole("alertdialog");
+  await expect(dialog).toContainText(RESEARCH_WARNING);
+
+  await dialog
+    .getByRole("button", { name: "Acknowledge and continue" })
+    .click();
+  await expect(dialog).toBeHidden();
+  await expect(page.getByRole("alert")).toHaveCount(0);
+  await expect(
+    page.getByRole("heading", { name: "Physician dashboard" }),
+  ).toBeVisible();
+  await page.unroute("**/api/v1/me/research-warning-acknowledgement");
 });
 
 test("administrator renames a physician through the browser", async ({
@@ -390,6 +610,7 @@ test("administrator renames a physician through the browser", async ({
   const renamed = uniqueName("e2erenamed");
   await ensurePhysician(request, username, "editpass1");
   await loginAs(page, "admin", "admin", "admin");
+  await acknowledgeWarningIfPresent(page);
   await page.getByRole("link", { name: "Physicians" }).click();
 
   const table = page.getByRole("table", { name: "Physicians" });
@@ -435,6 +656,7 @@ test("physicians table surfaces endpoint failure with Retry and recovers", async
   page,
 }) => {
   await loginAs(page, "admin", "admin", "admin");
+  await acknowledgeWarningIfPresent(page);
   await page.getByRole("link", { name: "Physicians" }).click();
   await expect(
     page.getByRole("table", { name: "Physicians" }),
@@ -461,6 +683,7 @@ test("S61 physician list says when the table is shorter than the total", async (
   page,
 }) => {
   await loginAs(page, "admin", "admin", "admin");
+  await acknowledgeWarningIfPresent(page);
   await page.getByRole("link", { name: "Physicians" }).click();
 
   const heading = page.getByRole("heading", {
@@ -490,7 +713,7 @@ for (const oldResponse of ["success", "failure"] as const) {
 test(`physician creation guards submissions and ignores older ${oldResponse}`, async ({ page }) => {
   await page.route("**/api/v1/me", (route) => route.fulfill({ json: {
     user: { id: "admin", username: "admin", role: "admin", theme: "light" },
-    csrf_token: "test", research_warning: null,
+    csrf_token: "test", research_warning: null, research_warning_version: null,
   } }));
   const physician = (name: string) => ({ id: name, username: name, role: "physician", active: true, theme: "light", revision: 1 });
   const firstPage = Array.from({ length: 100 }, (_, i) => physician(`a${String(i).padStart(3, "0")}`));
@@ -579,7 +802,7 @@ test(`physician creation guards submissions and ignores older ${oldResponse}`, a
 test("an off-page created physician refreshes after an edit conflict", async ({ page }) => {
   await page.route("**/api/v1/me", (route) => route.fulfill({ json: {
     user: { id: "admin", username: "admin", role: "admin", theme: "light" },
-    csrf_token: "test", research_warning: null,
+    csrf_token: "test", research_warning: null, research_warning_version: null,
   } }));
   const physician = (name: string) => ({ id: name, username: name, role: "physician", active: true, theme: "light", revision: 1 });
   const firstPage = Array.from({ length: 100 }, (_, i) => physician(`a${String(i).padStart(3, "0")}`));

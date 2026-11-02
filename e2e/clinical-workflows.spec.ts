@@ -9,6 +9,7 @@ import {
   saveWorkingNoteWithRetry,
   loginAs,
   acknowledgeWarning,
+  acknowledgeWarningIfPresent,
   signOut,
 } from "./helpers";
 
@@ -111,6 +112,7 @@ async function loginPhysician(
 
 async function loginAdmin(page: import("@playwright/test").Page): Promise<void> {
   await loginAs(page, "admin", "admin", "admin");
+  await acknowledgeWarningIfPresent(page);
   await expect(page.getByRole("heading", { name: "Administrator dashboard" })).toBeVisible({
     timeout: 15000,
   });

@@ -7,6 +7,7 @@ import {
   physicianSession,
   loginAs,
   acknowledgeWarning,
+  acknowledgeWarningIfPresent,
   signOut,
 } from "./helpers";
 
@@ -359,10 +360,11 @@ test("resume preserves completeness after reload and re-login", async ({
     "Total 30",
   );
 
-  // Re-login as the same author sees the same complete evaluation.
+  // Re-login as the same author sees the same complete evaluation. The
+  // acknowledgement persisted, so the gate stays dismissed.
   await signOut(page);
   await loginAs(page, "physician", physician.username, physician.password);
-  await acknowledgeWarning(page);
+  await acknowledgeWarningIfPresent(page);
   await gotoPanss(page, draftId);
   await expect(page.locator("#panss-preview-status")).toContainText(
     "Complete — Positive 7",

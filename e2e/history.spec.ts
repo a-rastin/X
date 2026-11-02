@@ -8,6 +8,7 @@ import {
   physicianSession,
   loginAs,
   acknowledgeWarning,
+  acknowledgeWarningIfPresent,
   signOut,
 } from "./helpers";
 
@@ -205,7 +206,8 @@ test("history answers save and keep applicable completeness after reload and re-
 
   await signOut(page);
   await loginAs(page, "physician", physician.username, physician.password);
-  await acknowledgeWarning(page);
+  // Same author already acknowledged: the gate stays dismissed.
+  await acknowledgeWarningIfPresent(page);
   await gotoEncounter(page, draftId);
   await expect(page.locator("#hist-h_exposure_dopamine_blocker-yes")).toBeChecked();
   await expect(page.locator("#history-preview-status")).toContainText("Complete", {

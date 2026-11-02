@@ -7,6 +7,7 @@ import {
   physicianSession,
   loginAs,
   acknowledgeWarning,
+  acknowledgeWarningIfPresent,
   signOut,
 } from "./helpers";
 
@@ -226,6 +227,7 @@ test("shared-read journey: stranger sees demographics and badge but not draft co
   // Administrator reads the same shared chart but cannot start or view drafts.
   await signOut(page);
   await loginAs(page, "admin", "admin", "admin");
+  await acknowledgeWarningIfPresent(page);
   await expect(
     page.getByRole("heading", { name: "Administrator dashboard" }),
   ).toBeVisible({ timeout: 15000 });

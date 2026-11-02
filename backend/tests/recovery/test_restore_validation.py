@@ -70,7 +70,21 @@ TWO_NODE_XML = (
 # archives like sessions); clinical rows are identical to 0017. 0019, 0020,
 # and 0021 are also accepted (a fresh backup reports the current head).
 SUPPORTED_APP_SCHEMAS = frozenset(
-    {"0017", "0018", "0019", "0020", "0021", "0022", "0023", "0024", "0025", "0026", "0027", "0028"}
+    {
+        "0017",
+        "0018",
+        "0019",
+        "0020",
+        "0021",
+        "0022",
+        "0023",
+        "0024",
+        "0025",
+        "0026",
+        "0027",
+        "0028",
+        "0029",
+    }
 )
 
 
@@ -1024,3 +1038,126 @@ def test_legacy_restore_cannot_smuggle_provider_approvals(clean_registry, monkey
     assert staged.status_code == 201, staged.text
     assert staged.json()["status"] == "failed", staged.text
     assert "cannot grant endpoint approvals" in staged.json()["error_message"]
+
+
+# --- Issue 24: research-warning acknowledgement across backup/restore ---
+
+
+def _acknowledged_pair(clean_registry, monkeypatch, tag: str) -> None:
+    """One physician acknowledges the current warning; another stays open."""
+    _new_physician(clean_registry, monkeypatch, f"dr_ack_{tag}")
+    _new_physician(clean_registry, monkeypatch, f"dr_open_{tag}")
+    client, csrf = _login_physician(clean_registry, monkeypatch, f"dr_ack_{tag}")
+    acknowledged = client.post(
+        "/api/v1/me/research-warning-acknowledgement",
+        json={"version": service.RESEARCH_WARNING_VERSION},
+        headers=_auth_headers(csrf),
+    )
+    assert acknowledged.status_code == 200, acknowledged.text
+
+
+def _commit_blob(admin, csrf, blob: bytes) -> dict[str, Any]:
+    staged = _post_restore(admin, csrf, blob)
+    assert staged.status_code == 201, staged.text
+    job = staged.json()
+    assert job["status"] == "succeeded", staged.text
+    committed = admin.post(
+        f"/api/v1/restores/{job['id']}/commit",
+        headers=_auth_headers(csrf),
+        json={"confirmation_digest": job["confirmation_digest"]},
+    )
+    assert committed.status_code == 200, committed.text
+    assert committed.json()["commit_status"] == "succeeded", committed.text
+    return job
+
+
+def _warning_after_sign_in(clean_registry, monkeypatch, username: str) -> dict[str, Any]:
+    monkeypatch.setattr(db_module, "get_engine", lambda: clean_registry)
+    response = TestClient(app).post(
+        "/api/v1/auth/login",
+        json={"username": username, "password": "pw123", "role": "physician"},
+    )
+    assert response.status_code == 200, response.text
+    return {
+        "research_warning": response.json()["research_warning"],
+        "research_warning_version": response.json()["research_warning_version"],
+    }
+
+
+def _pending_warning() -> dict[str, Any]:
+    return {
+        "research_warning": service.RESEARCH_WARNING,
+        "research_warning_version": service.RESEARCH_WARNING_VERSION,
+    }
+
+
+def _drop_acknowledgements(database: dict[str, Any]) -> None:
+    for row in database["tables"]["users"]:
+        row.pop("research_warning_acknowledged_version")
+
+
+def test_new_backup_restores_acknowledged_and_open_accounts(clean_registry, monkeypatch):
+    _acknowledged_pair(clean_registry, monkeypatch, "keep")
+    admin, csrf = _admin_client(clean_registry, monkeypatch)
+    blob, _ = _make_valid_blob(admin, csrf)
+    job = _commit_blob(admin, csrf, blob)
+    assert job["app_schema_version"] == "0029"
+
+    assert _warning_after_sign_in(clean_registry, monkeypatch, "dr_ack_keep") == {
+        "research_warning": None,
+        "research_warning_version": None,
+    }
+    assert _warning_after_sign_in(clean_registry, monkeypatch, "dr_open_keep") == (
+        _pending_warning()
+    )
+
+
+def test_older_0028_archive_restores_every_account_unacknowledged(clean_registry, monkeypatch):
+    _acknowledged_pair(clean_registry, monkeypatch, "legacy")
+    admin, csrf = _admin_client(clean_registry, monkeypatch)
+    blob, _ = _make_valid_blob(admin, csrf)
+    legacy = _mutate_db(blob, _drop_acknowledgements)
+    legacy = _mutate_manifest(legacy, lambda manifest: manifest.update(app_schema_version="0028"))
+
+    job = _commit_blob(admin, csrf, legacy)
+
+    assert job["app_schema_version"] == "0028"
+    assert _warning_after_sign_in(clean_registry, monkeypatch, "dr_ack_legacy") == (
+        _pending_warning()
+    )
+    assert _warning_after_sign_in(clean_registry, monkeypatch, "dr_open_legacy") == (
+        _pending_warning()
+    )
+
+
+def test_legacy_archive_cannot_smuggle_research_warning_acknowledgement(
+    clean_registry, monkeypatch
+):
+    _acknowledged_pair(clean_registry, monkeypatch, "smuggle")
+    admin, csrf = _admin_client(clean_registry, monkeypatch)
+    blob, _ = _make_valid_blob(admin, csrf)
+
+    def smuggle(database):
+        _drop_acknowledgements(database)
+        database["tables"]["users"][0]["research_warning_acknowledged_version"] = (
+            service.RESEARCH_WARNING_VERSION
+        )
+
+    legacy = _mutate_db(blob, smuggle)
+    legacy = _mutate_manifest(legacy, lambda manifest: manifest.update(app_schema_version="0028"))
+    staged = _post_restore(admin, csrf, legacy)
+    assert staged.status_code == 201, staged.text
+    assert staged.json()["status"] == "failed", staged.text
+    assert "cannot carry research-warning acknowledgements" in staged.json()["error_message"]
+
+
+def test_0029_archive_must_carry_the_acknowledgement_column(clean_registry, monkeypatch):
+    _acknowledged_pair(clean_registry, monkeypatch, "missing")
+    admin, csrf = _admin_client(clean_registry, monkeypatch)
+    blob, _ = _make_valid_blob(admin, csrf)
+    incomplete = _mutate_db(blob, _drop_acknowledgements)
+
+    staged = _post_restore(admin, csrf, incomplete)
+    assert staged.status_code == 201, staged.text
+    assert staged.json()["status"] == "failed", staged.text
+    assert "research-warning acknowledgement" in staged.json()["error_message"]

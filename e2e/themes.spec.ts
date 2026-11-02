@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { uniqueName, ensurePhysician, loginAs, acknowledgeWarning } from "./helpers";
+import { uniqueName, ensurePhysician, loginAs, acknowledgeWarning, acknowledgeWarningIfPresent } from "./helpers";
 
 async function themeOf(page: import("@playwright/test").Page): Promise<string | null> {
   return page.evaluate(() => document.documentElement.getAttribute("data-theme"));
@@ -214,6 +214,7 @@ test("reduced-motion kill-switch removes transitions and animation", async ({
 
 test("admin theme preference persists independently", async ({ page }) => {
   await loginAs(page, "admin", "admin", "admin");
+  await acknowledgeWarningIfPresent(page);
   await expect(
     page.getByRole("heading", { name: "Administrator dashboard" }),
   ).toBeVisible();
@@ -234,6 +235,7 @@ test("admin theme preference persists independently", async ({ page }) => {
 test("S61 light-theme success and active text meets 4.5:1", async ({ page }) => {
   const username = uniqueName("e2econtrast");
   await loginAs(page, "admin", "admin", "admin");
+  await acknowledgeWarningIfPresent(page);
   await expect(
     page.getByRole("heading", { name: "Administrator dashboard" }),
   ).toBeVisible();
@@ -270,6 +272,7 @@ test("S61 light-theme success and active text meets 4.5:1", async ({ page }) => 
 test("S61 dark-theme success and active text meets 4.5:1", async ({ page }) => {
   const username = uniqueName("e2econtrast");
   await loginAs(page, "admin", "admin", "admin");
+  await acknowledgeWarningIfPresent(page);
   await expect(
     page.getByRole("heading", { name: "Administrator dashboard" }),
   ).toBeVisible();

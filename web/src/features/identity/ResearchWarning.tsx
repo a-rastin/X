@@ -1,19 +1,25 @@
 import { useEffect, useRef } from "react";
 import { useAuth } from "./auth";
 
-/** Blocking research-use acknowledgement, scoped to the auth tab session. */
+/** Blocking research-use acknowledgement, backed by persisted server state. */
 export function ResearchWarningGate() {
-  const { researchWarning, acknowledgeWarning } = useAuth();
+  const {
+    researchWarning,
+    researchWarningVersion,
+    warningPending,
+    warningError,
+    acknowledgeWarning,
+  } = useAuth();
   const dialogRef = useRef<HTMLDialogElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
-    if (researchWarning !== null) {
+    if (researchWarning !== null && !dialogRef.current?.open) {
       dialogRef.current?.showModal();
       // Start long-form reading at the title; native modal behavior contains focus.
       titleRef.current?.focus({ preventScroll: true });
     }
-  }, [researchWarning]);
+  }, [researchWarning, researchWarningVersion]);
 
   if (researchWarning === null) {
     return null;
@@ -34,7 +40,7 @@ export function ResearchWarningGate() {
       onKeyDown={(event) => {
         if (event.key !== "Tab") return;
         const targets = event.currentTarget.querySelectorAll<HTMLElement>(
-          'button, [tabindex="0"]',
+          'button:not([disabled]), [tabindex="0"]',
         );
         const first = targets[0];
         const last = targets[targets.length - 1];
@@ -85,12 +91,20 @@ export function ResearchWarningGate() {
       </div>
       <footer className="xi-research-footer">
         <p>Review this disclaimer before entering the workspace.</p>
+        {warningError !== null && (
+          <p className="xi-form-error" role="alert">
+            {warningError}
+          </p>
+        )}
         <button
           className="xi-btn xi-btn-primary"
           type="button"
-          onClick={acknowledgeWarning}
+          disabled={warningPending}
+          onClick={() => {
+            void acknowledgeWarning();
+          }}
         >
-          Acknowledge and continue
+          {warningPending ? "Acknowledging…" : "Acknowledge and continue"}
         </button>
       </footer>
     </dialog>

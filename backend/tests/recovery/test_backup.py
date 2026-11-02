@@ -1039,6 +1039,14 @@ def test_backup_includes_full_snapshot_networks_and_policies(
     admin, admin_csrf = _admin_client(clean_registry, monkeypatch)
     imported = _import_network(admin, admin_csrf, "s54-net", TWO_NODE_XML)
     version_id = imported["version"]["id"]
+    # Issue 24: acknowledge before the new backup so a non-null version value
+    # (not just the column) must travel through the fresh archive.
+    acknowledged = fixture["client"].post(
+        "/api/v1/me/research-warning-acknowledgement",
+        json={"version": service.RESEARCH_WARNING_VERSION},
+        headers=_auth_headers(fixture["csrf"]),
+    )
+    assert acknowledged.status_code == 200, acknowledged.text
     # Two backups: a snapshot cannot see its own uncommitted job/idempotency
     # rows (separate REPEATABLE READ connection), so the second archive proves
     # backup_jobs + idempotency_records travel.
@@ -1070,7 +1078,7 @@ def test_backup_includes_full_snapshot_networks_and_policies(
     # tables (sessions never), per-file hashes, deployment + runtime.
     assert manifest["schema_version"] == "backup-v1"
     assert manifest["backup_id"] == backup_id
-    assert manifest["app_schema_version"] == "0028"
+    assert manifest["app_schema_version"] == "0029"
     assert set(manifest["inventory"].keys()) == set(EXPECTED_TABLES)
     assert len(manifest["inventory"]) == 32
     assert "sessions" not in manifest["inventory"]
@@ -1101,6 +1109,13 @@ def test_backup_includes_full_snapshot_networks_and_policies(
 
     # Every required family is present as stored rows (no lifecycle filter).
     assert len(tables["users"]) >= 2
+    # Issue 24: the acknowledged research-warning version travels with each account.
+    assert all("research_warning_acknowledged_version" in row for row in tables["users"])
+    by_username = {row.get("username"): row for row in tables["users"]}
+    assert (
+        by_username[fixture["username"]].get("research_warning_acknowledged_version")
+        == service.RESEARCH_WARNING_VERSION
+    )
     assert len(tables["patients"]) >= 2
     assert any(p.get("identifier") == "0012345678" for p in tables["patients"])
     assert any(p.get("identifier") == "0012345699" for p in tables["patients"])

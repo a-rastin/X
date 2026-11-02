@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { loginAs } from "./helpers";
+import { loginAs, acknowledgeWarningIfPresent } from "./helpers";
 
 test("B01 saved timeout survives reload and appears on Status", async ({ page, request }) => {
   const login = await request.post("/api/v1/auth/login", {
@@ -13,6 +13,7 @@ test("B01 saved timeout survives reload and appears on Status", async ({ page, r
   });
   expect(saved.ok(), await saved.text()).toBeTruthy();
   await loginAs(page, "admin", "admin", "admin");
+  await acknowledgeWarningIfPresent(page);
   await page.goto("/#/provider-settings");
   const timeout = page.getByLabel("Provider timeout (seconds)");
   await expect(timeout).toHaveValue("141");

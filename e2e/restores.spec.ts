@@ -6,6 +6,7 @@ import {
   physicianSession,
   loginAs,
   acknowledgeWarning,
+  acknowledgeWarningIfPresent,
   signOut,
 } from "./helpers";
 
@@ -42,6 +43,7 @@ const API_BASE = "http://127.0.0.1:8000";
 
 async function loginAdmin(page: import("@playwright/test").Page): Promise<void> {
   await loginAs(page, "admin", "admin", "admin");
+  await acknowledgeWarningIfPresent(page);
   await expect(
     page.getByRole("heading", { name: "Administrator dashboard" }),
   ).toBeVisible({ timeout: 15000 });

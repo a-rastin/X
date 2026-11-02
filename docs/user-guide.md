@@ -24,7 +24,7 @@ X-INSIGHT is a research workspace for recording patient encounters, completing s
 
 1. Open the application URL supplied by your administrator. A default local development installation uses `http://localhost:5173`.
 2. Select your **Role** (Physician or Administrator), enter your username and password, and select **Sign in**. Ask your administrator for an account if you do not have one.
-3. If the research/clinical warning dialog appears, read it and select **Acknowledge and continue** to enter the workspace.
+3. If the research/clinical warning dialog appears, read it and select **Acknowledge and continue** to enter the workspace. The acknowledgement is stored per user on the server and persists across logins, and the dialog reappears only when the warning wording changes.
 4. Check the username and role in the header before opening patient records.
 
 The navigation available to you depends on your role:

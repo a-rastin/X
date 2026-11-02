@@ -8,6 +8,7 @@ import {
   physicianSession,
   loginAs,
   acknowledgeWarning,
+  acknowledgeWarningIfPresent,
   signOut,
 } from "./helpers";
 
@@ -63,6 +64,7 @@ async function loginPhysician(
 
 async function loginAdmin(page: import("@playwright/test").Page): Promise<void> {
   await loginAs(page, "admin", "admin", "admin");
+  await acknowledgeWarningIfPresent(page);
 }
 
 async function adminSession(
@@ -624,8 +626,9 @@ test("S51 §1 physician sees no archive buttons and blocked follow-up hint", asy
   });
   expect(archived.status(), await archived.text()).toBe(200);
   // Physician sees the archived badge, no archive panel/buttons, read-only notice.
+  // The same author already acknowledged, so no modal reappears.
   await loginAs(page, "physician", authorCreds.username, authorCreds.password);
-  await acknowledgeWarning(page);
+  await acknowledgeWarningIfPresent(page);
   await gotoChart(page, patientId);
   await expect(page.getByTestId("chart-archived-badge")).toContainText(
     "provisional policy",

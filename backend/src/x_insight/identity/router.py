@@ -2,7 +2,8 @@
 
 ``POST /api/v1/auth/login`` / ``POST /api/v1/auth/logout`` /
 ``GET /api/v1/me`` / ``POST /api/v1/me/password`` /
-``PATCH /api/v1/me/preferences``. All failures use the standard
+``PATCH /api/v1/me/preferences`` /
+``POST /api/v1/me/research-warning-acknowledgement``. All failures use the standard
 ``contracts.ErrorBody`` (never secrets/tracebacks). Sessions are opaque
 HttpOnly/SameSite cookies (Secure under HTTPS); mutations additionally
 require the per-session CSRF token.
@@ -74,6 +75,13 @@ class PreferencesRequest(BaseModel):
     model_config = {"extra": "forbid"}
 
 
+class ResearchWarningAcknowledgementRequest(BaseModel):
+    # The displayed version only; the account is always the session user.
+    version: str = Field(min_length=0, max_length=100)
+
+    model_config = {"extra": "forbid"}
+
+
 def _public_user(user: dict[str, Any]) -> dict[str, Any]:
     return {
         "id": str(user["id"]),
@@ -81,12 +89,6 @@ def _public_user(user: dict[str, Any]) -> dict[str, Any]:
         "role": user["role"],
         "theme": user["theme"],
     }
-
-
-def _warning_for(role: str) -> str | None:
-    if role == "physician":
-        return service.RESEARCH_WARNING
-    return None
 
 
 def _client_ip(request: Request) -> str:
@@ -229,7 +231,7 @@ def login(
     body: dict[str, Any] = {
         "user": _public_user(user),
         "csrf_token": csrf_token,
-        "research_warning": _warning_for(str(user["role"])),
+        **service.research_warning_fields(user),
     }
     json_response = JSONResponse(status_code=200, content=body)
     _set_session_cookie(json_response, request, raw_token)
@@ -280,9 +282,49 @@ def me(request: Request, session: Session = Depends(get_session)) -> JSONRespons
         content={
             "user": _public_user(user),
             "csrf_token": str(session_row["csrf_token"]),
-            "research_warning": _warning_for(str(user["role"])),
+            **service.research_warning_fields(user),
         },
         headers={"Cache-Control": "private, no-store"},
+    )
+
+
+@router.post("/me/research-warning-acknowledgement")
+def acknowledge_research_warning(
+    payload: ResearchWarningAcknowledgementRequest,
+    request: Request,
+    session: Session = Depends(get_session),
+) -> JSONResponse:
+    request_id = get_request_id(request)
+    gate = _check_csrf(request, session)
+    if isinstance(gate, JSONResponse):
+        return gate
+    assert isinstance(gate, dict)
+    user = gate
+    if payload.version == "":
+        raise contracts.ContractError(
+            422,
+            "VALIDATION_FAILED",
+            "Acknowledged version must not be empty.",
+            {"version": ["Must not be empty."]},
+        )
+    if payload.version != service.RESEARCH_WARNING_VERSION:
+        # Stale display: never acknowledge text the user did not see. The body
+        # carries the current pending warning so the client can show it.
+        # Retryable: the client replaces the displayed version with this
+        # body's fresh version, so the user's next acknowledge succeeds.
+        body = contracts.ErrorBody(
+            code="RESEARCH_WARNING_CHANGED",
+            message="The research warning changed. Review the current text and acknowledge it.",
+            field_errors={"version": ["Reviewed version is stale."]},
+            request_id=request_id,
+            retryable=True,
+        ).model_dump()
+        body.update(service.research_warning_fields(user))
+        return JSONResponse(status_code=409, content=body)
+    service.acknowledge_research_warning(session, user["id"])
+    return JSONResponse(
+        status_code=200,
+        content={"research_warning": None, "research_warning_version": None},
     )
 
 

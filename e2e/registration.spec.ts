@@ -8,6 +8,7 @@ import {
   physicianSession,
   loginAs,
   acknowledgeWarning,
+  acknowledgeWarningIfPresent,
 } from "./helpers";
 
 async function loginPhysician(
@@ -326,6 +327,7 @@ test("admin reads the directory but has no registration form", async ({
   await ensurePatient(request, { username, password: "secret123" }, { identifier });
 
   await loginAs(page, "admin", "admin", "admin");
+  await acknowledgeWarningIfPresent(page);
   await expect(
     page.getByRole("heading", { name: "Administrator dashboard" }),
   ).toBeVisible();

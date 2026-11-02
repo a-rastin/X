@@ -4,11 +4,13 @@ import {
   useContext,
   useEffect,
   useMemo,
+  useRef,
   useState,
 } from "react";
 import {
   ApiError,
   me,
+  acknowledgeResearchWarning as apiAcknowledgeWarning,
   login as apiLogin,
   logout as apiLogout,
   setTheme as apiSetTheme,
@@ -18,37 +20,18 @@ import {
   type Theme,
 } from "./api";
 
-const WARNING_ACK_KEY = "xi_warning_ack";
-
-function readAck(): string | null {
-  try {
-    return sessionStorage.getItem(WARNING_ACK_KEY);
-  } catch {
-    return null;
-  }
-}
-
-function writeAck(userId: string | null): void {
-  try {
-    if (userId === null) {
-      sessionStorage.removeItem(WARNING_ACK_KEY);
-    } else {
-      sessionStorage.setItem(WARNING_ACK_KEY, userId);
-    }
-  } catch {
-    /* acknowledgement still tracked in memory below */
-  }
-}
-
 interface AuthContextValue {
   status: "loading" | "anonymous" | "ready";
   user: PublicUser | null;
   researchWarning: string | null;
+  researchWarningVersion: string | null;
   warningAcked: boolean;
+  warningPending: boolean;
+  warningError: string | null;
   login: (username: string, password: string, role: Role) => Promise<void>;
   logout: () => Promise<void>;
   refresh: () => Promise<void>;
-  acknowledgeWarning: () => void;
+  acknowledgeWarning: () => Promise<void>;
   applyTheme: (theme: Theme) => Promise<void>;
   sessionExpired: () => void;
 }
@@ -65,24 +48,47 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   );
   const [user, setUser] = useState<PublicUser | null>(null);
   const [researchWarning, setResearchWarning] = useState<string | null>(null);
-  const [ackedUserId, setAckedUserId] = useState<string | null>(readAck());
+  const [researchWarningVersion, setResearchWarningVersion] = useState<
+    string | null
+  >(null);
+  const [warningPending, setWarningPending] = useState(false);
+  const [warningError, setWarningError] = useState<string | null>(null);
+  // Guards late mutation responses: a sign-out or second login racing the
+  // acknowledgement round trip must not apply its result to another user.
+  const userIdRef = useRef<string | null>(null);
+  useEffect(() => {
+    userIdRef.current = user?.id ?? null;
+  }, [user]);
 
-  const ingestSession = useCallback((next: PublicUser, warning: string | null) => {
-    setUser(next);
-    setResearchWarning(warning);
-    applyDocumentTheme(next.theme);
-    setStatus("ready");
-  }, []);
+  const ingestSession = useCallback(
+    (next: PublicUser, warning: string | null, version: string | null) => {
+      setUser(next);
+      setResearchWarning(warning);
+      setResearchWarningVersion(version);
+      setWarningPending(false);
+      setWarningError(null);
+      applyDocumentTheme(next.theme);
+      setStatus("ready");
+    },
+    [],
+  );
 
   const refresh = useCallback(async () => {
     try {
       const result = await me();
-      ingestSession(result.user, result.research_warning);
+      ingestSession(
+        result.user,
+        result.research_warning,
+        result.research_warning_version,
+      );
     } catch (error) {
       if (error instanceof ApiError && error.status === 401) {
         setCsrfToken(null);
         setUser(null);
         setResearchWarning(null);
+        setResearchWarningVersion(null);
+        setWarningPending(false);
+        setWarningError(null);
         setStatus("anonymous");
         return;
       }
@@ -102,7 +108,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const login = useCallback(
     async (username: string, password: string, role: Role) => {
       const result = await apiLogin(username, password, role);
-      ingestSession(result.user, result.research_warning);
+      ingestSession(
+        result.user,
+        result.research_warning,
+        result.research_warning_version,
+      );
     },
     [ingestSession],
   );
@@ -110,12 +120,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const logout = useCallback(async () => {
     // Fire the server revocation with the current token, then clear local
     // state immediately: a navigation racing the round trip must never
-    // resurrect the previous acknowledgement or identity.
+    // resurrect the previous identity or acknowledgement.
     const revocation = apiLogout().catch(() => undefined);
-    writeAck(null);
-    setAckedUserId(null);
     setUser(null);
     setResearchWarning(null);
+    setResearchWarningVersion(null);
+    setWarningPending(false);
+    setWarningError(null);
     applyDocumentTheme("light");
     setStatus("anonymous");
     await revocation;
@@ -123,20 +134,69 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const sessionExpired = useCallback(() => {
     setCsrfToken(null);
-    writeAck(null);
-    setAckedUserId(null);
     setUser(null);
     setResearchWarning(null);
+    setResearchWarningVersion(null);
+    setWarningPending(false);
+    setWarningError(null);
     applyDocumentTheme("light");
     setStatus("anonymous");
   }, []);
 
-  const acknowledgeWarning = useCallback(() => {
-    if (user) {
-      writeAck(user.id);
-      setAckedUserId(user.id);
+  const acknowledgeWarning = useCallback(async () => {
+    const ackUserId = user?.id ?? null;
+    const displayedVersion = researchWarningVersion;
+    // No-op when the gate is closed or a submission is already in flight:
+    // the button disables while pending, and this covers keyboard
+    // double-submit before React re-renders.
+    if (
+      ackUserId === null ||
+      researchWarning === null ||
+      displayedVersion === null ||
+      warningPending
+    ) {
+      return;
     }
-  }, [user]);
+    setWarningPending(true);
+    setWarningError(null);
+    try {
+      const result = await apiAcknowledgeWarning(displayedVersion);
+      // A sign-out or second login racing the round trip owns the new
+      // session; never apply this user's committed response to it.
+      if (userIdRef.current !== ackUserId) {
+        return;
+      }
+      setResearchWarning(result.research_warning);
+      setResearchWarningVersion(result.research_warning_version);
+    } catch (error) {
+      if (userIdRef.current !== ackUserId) {
+        return;
+      }
+      if (
+        error instanceof ApiError &&
+        error.code === "RESEARCH_WARNING_CHANGED"
+      ) {
+        // Stale display: the wording changed while the dialog was open. Show
+        // the current text/version; nothing was acknowledged.
+        setResearchWarning(error.researchWarning);
+        setResearchWarningVersion(error.researchWarningVersion);
+        if (error.researchWarning === null) {
+          // Stale version submitted while nothing is pending (crafted-request
+          // edge): the gate is already closed, so leave no error against it.
+          return;
+        }
+      }
+      if (error instanceof ApiError) {
+        setWarningError(error.message);
+      } else {
+        setWarningError("Could not save acknowledgement. Check the connection and retry.");
+      }
+    } finally {
+      if (userIdRef.current === ackUserId) {
+        setWarningPending(false);
+      }
+    }
+  }, [user, researchWarning, researchWarningVersion, warningPending]);
 
   const applyTheme = useCallback(
     async (theme: Theme) => {
@@ -152,9 +212,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       status,
       user,
       researchWarning,
-      warningAcked:
-        researchWarning === null ||
-        (user !== null && ackedUserId === user.id),
+      researchWarningVersion,
+      warningAcked: researchWarning === null,
+      warningPending,
+      warningError,
       login,
       logout,
       refresh,
@@ -166,7 +227,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       status,
       user,
       researchWarning,
-      ackedUserId,
+      researchWarningVersion,
+      warningPending,
+      warningError,
       login,
       logout,
       refresh,

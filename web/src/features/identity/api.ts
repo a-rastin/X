@@ -65,18 +65,25 @@ export class ApiError extends Error {
   status: number;
   code: string;
   fieldErrors: Record<string, string[]>;
+  /** Pending warning refresh carried by a 409 RESEARCH_WARNING_CHANGED body. */
+  researchWarning: string | null;
+  researchWarningVersion: string | null;
 
   constructor(
     status: number,
     code: string,
     message: string,
     fieldErrors: Record<string, string[]> = {},
+    researchWarning: string | null = null,
+    researchWarningVersion: string | null = null,
   ) {
     super(message);
     this.name = "ApiError";
     this.status = status;
     this.code = code;
     this.fieldErrors = fieldErrors;
+    this.researchWarning = researchWarning;
+    this.researchWarningVersion = researchWarningVersion;
   }
 }
 
@@ -118,12 +125,18 @@ async function request<T>(path: string, options: RequestOptions = {}): Promise<T
       code?: string;
       message?: string;
       field_errors?: Record<string, string[]>;
+      research_warning?: string | null;
+      research_warning_version?: string | null;
     };
     throw new ApiError(
       response.status,
       body.code ?? "REQUEST_FAILED",
       body.message ?? `Request failed (${response.status}).`,
       body.field_errors ?? {},
+      typeof body.research_warning === "string" ? body.research_warning : null,
+      typeof body.research_warning_version === "string"
+        ? body.research_warning_version
+        : null,
     );
   }
   return (payload ?? {}) as T;
@@ -144,6 +157,7 @@ export interface LoginResult {
   user: PublicUser;
   csrf_token: string;
   research_warning: string | null;
+  research_warning_version: string | null;
 }
 
 export async function login(
@@ -163,12 +177,34 @@ export interface MeResult {
   user: PublicUser;
   csrf_token: string;
   research_warning: string | null;
+  research_warning_version: string | null;
 }
 
 export async function me(): Promise<MeResult> {
   const result = await request<MeResult>("/me");
   setCsrfToken(result.csrf_token);
   return result;
+}
+
+export interface ResearchWarningAckResult {
+  research_warning: string | null;
+  research_warning_version: string | null;
+}
+
+/** Persist the disclaimer acknowledgement for the session user. The client
+ * submits the DISPLAYED version; a 409 RESEARCH_WARNING_CHANGED ApiError
+ * carries the current pending text/version to show instead. */
+export async function acknowledgeResearchWarning(
+  version: string,
+): Promise<ResearchWarningAckResult> {
+  return request<ResearchWarningAckResult>(
+    "/me/research-warning-acknowledgement",
+    {
+      method: "POST",
+      csrf: true,
+      body: { version },
+    },
+  );
 }
 
 export async function logout(): Promise<void> {

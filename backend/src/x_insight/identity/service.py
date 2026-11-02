@@ -38,6 +38,9 @@ RESEARCH_WARNING = (
     "for independently evaluating the patient, verifying relevant information, and "
     "exercising their clinical judgment in accordance with applicable standards of care."
 )
+# Bump whenever RESEARCH_WARNING wording changes: every account whose stored
+# acknowledged version differs (or is NULL) is asked to acknowledge the new text.
+RESEARCH_WARNING_VERSION = "research-warning-v1"
 
 # Login throttling (prototype-basic, plan.md §11): at most 5 failures per
 # 60s window per (client IP, normalized username); the 6th+ attempt is 429.
@@ -232,6 +235,33 @@ def revoke_all_user_sessions(
             tables.sessions.c.revoked_at.is_(None),
         )
         .values(revoked_at=moment)
+    )
+
+
+def research_warning_fields(user: dict) -> dict[str, str | None]:
+    """Pending research warning for one stored account (text and version together).
+
+    Pending when the account's last acknowledged version is NULL or differs from
+    RESEARCH_WARNING_VERSION; then both fields are null. Applies to every role.
+    """
+    if user.get("research_warning_acknowledged_version") == RESEARCH_WARNING_VERSION:
+        return {"research_warning": None, "research_warning_version": None}
+    return {
+        "research_warning": RESEARCH_WARNING,
+        "research_warning_version": RESEARCH_WARNING_VERSION,
+    }
+
+
+def acknowledge_research_warning(session: Session, user_id: uuid.UUID) -> None:
+    """Record the current version for this account only (caller commits).
+
+    Touches only the acknowledgement column: credential and profile revisions
+    stay unchanged and no history row is written.
+    """
+    session.execute(
+        update(tables.users)
+        .where(tables.users.c.id == user_id)
+        .values(research_warning_acknowledged_version=RESEARCH_WARNING_VERSION)
     )
 
 

@@ -5,6 +5,7 @@ import {
   physicianSession,
   loginAs,
   acknowledgeWarning,
+  acknowledgeWarningIfPresent,
 } from "./helpers";
 
 /* S24 model version administration (seam T9 browser; strict validation,
@@ -63,6 +64,7 @@ test("admin import → inspect → version → validate → activate → stale d
 }) => {
   const networkName = uniqueName("e2enet");
   await loginAs(page, "admin", "admin", "admin");
+  await acknowledgeWarningIfPresent(page);
   await expect(
     page.getByRole("heading", { name: "Administrator dashboard" }),
   ).toBeVisible();

@@ -1,13 +1,21 @@
 # backend/src/x_insight/identity/service.py
 
-Source SHA-256: 0a4104529d65d16ac544ecb1c7fbb197538ca79d95c92abff61b5073539016bb
-Source commit: bad418cecdf013317df56751fec2c4a0158b305d
+Source SHA-256: e8ab2a520757a3bfde451449ba59c48e8bc3167d6514c43dd14f157573eccec1
+Source: working tree (includes uncommitted changes)
 
 ## Purpose
 Authentication and account administration primitives: admin seeding, opaque sessions, CSRF
-tokens, login throttling, draft-set revisions, and physician deactivation.
+tokens, login throttling, draft-set revisions, physician deactivation, and the versioned
+research-warning state.
 
 ## Important Symbols
+- `RESEARCH_WARNING` / `RESEARCH_WARNING_VERSION` — the disclaimer text and its version
+  (`research-warning-v1`), kept together; bump the version whenever the wording changes.
+- `research_warning_fields(user)` — the single server contract for login and `GET /me`:
+  pending (text + version) when `research_warning_acknowledged_version` is NULL or differs,
+  otherwise both null. Uses the stored row for either role.
+- `acknowledge_research_warning(session, user_id)` — writes only the acknowledgement column
+  (no revision bump, no audit); the router's request transaction commits it.
 - `ensure_default_admin()` — seeds the singleton admin **once**; exits early if any admin row
   exists, so changing the password never resurrects the default at next startup.
 - `create_session()` / `get_session_user()` — 32-byte opaque cookie token stored only as a

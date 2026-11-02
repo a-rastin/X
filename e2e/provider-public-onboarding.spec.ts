@@ -1,11 +1,12 @@
 import { test, expect } from "@playwright/test";
-import { loginAs } from "./helpers";
+import { loginAs, acknowledgeWarningIfPresent } from "./helpers";
 
 // Run against provider-public-fixture.py + a dedicated fresh PostgreSQL database.
 // The controlled external HTTPS fixture replaces OS DNS/routing only; application
 // transport, TLS verification, browser auth/settings/CSRF/storage execute for real.
 test("fresh public provider onboarding needs no host allowlist", async ({ page }) => {
   await loginAs(page, "admin", "admin", "admin");
+  await acknowledgeWarningIfPresent(page);
   await page.getByRole("link", { name: "Provider", exact: true }).click();
   await expect(page.locator("#provider-key-status")).toHaveText("Key status: absent");
   await expect(page.locator("#provider-secret-action")).toHaveCount(0);

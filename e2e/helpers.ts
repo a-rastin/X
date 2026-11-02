@@ -60,8 +60,27 @@ export async function loginAs(
   await page.getByRole("button", { name: "Sign in" }).click();
 }
 
+/** Strict first-login acknowledgement: the gate must be showing the exact
+ * server disclaimer. The dialog only closes on a committed 200, so a hidden
+ * dialog proves the server persisted the acknowledgement. */
 export async function acknowledgeWarning(page: import("@playwright/test").Page): Promise<void> {
   const dialog = page.getByRole("alertdialog");
+  await expect(dialog).toContainText(RESEARCH_WARNING);
+  await dialog.getByRole("button", { name: "Acknowledge and continue" }).click();
+  await expect(dialog).toBeHidden();
+}
+
+/** Shared-flow acknowledgement: click through the gate only when this login
+ * actually raised it. The acknowledgement persists server-side per user, so
+ * later logins for an acknowledged account show no modal. Dedicated
+ * first-login acceptance keeps the strict helper above so a missing modal
+ * fails loudly instead of passing silently. */
+export async function acknowledgeWarningIfPresent(page: import("@playwright/test").Page): Promise<void> {
+  // The header renders once the session is ready; the gate (if pending) is
+  // committed in the same state update, so a missing dialog here is real.
+  await expect(page.getByRole("button", { name: "Sign out" })).toBeVisible();
+  const dialog = page.getByRole("alertdialog");
+  if ((await dialog.count()) === 0) return;
   await expect(dialog).toContainText(RESEARCH_WARNING);
   await dialog.getByRole("button", { name: "Acknowledge and continue" }).click();
   await expect(dialog).toBeHidden();
