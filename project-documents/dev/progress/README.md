@@ -1,5 +1,7 @@
 # X-INSIGHT progress tracker
 
+[Issue 21 name validation analysis (2026-11-02)](s06.md#follow-up-2026-11-02--issue-21-name-validation-analysis): minimal client/server fix planned; implementation and acceptance remain open.
+
 [Issue 20 status visibility implementation (2026-11-02)](s58.md#follow-up-2026-11-02--issue-20-implementation): focused and coordinator checks pass; live browser and deployed acceptance remain open.
 
 [Issue 19 transparency analysis (2026-11-01)](s48.md#follow-up-2026-11-01--issue-19-transparency-analysis): minimal fix planned; incident and deployed acceptance unverified.
