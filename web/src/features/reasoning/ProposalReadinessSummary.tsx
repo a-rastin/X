@@ -46,13 +46,14 @@ export function ProposalReadinessSummary({ readiness, encounterId, local = false
       <h4 className="xi-section-title">Proposal readiness</h4>
       <p>{blocked ? "Proposal inputs need clarification." : "Ready for proposal generation."}</p>
       <p className="xi-hint">
-        {readiness.answered_count} / {readiness.required_count} required responses answered;{" "}
+        {readiness.answered_count} / {readiness.required_count} answered of currently required;{" "}
         {readiness.execution_ready_count} / {readiness.required_count} execution-ready.
         {" "}Based on saved revision {readiness.source_revision}.{" "}
         {warnings.length > 0 && !blocked
           ? "Uncertain inputs below are estimated with missing context; they do not block generation."
           : "Only the blocking inputs below prevent generation."}
       </p>
+      <p className="xi-hint">The required total can increase or decrease when History answers reveal or remove follow-up questions. Changing answers or saved information can also change the answered count.</p>
       {readiness.questions.filter((question) => question.blockers.length > 0).map((question) => (
         <div key={question.question_key}>
           <h5 className="xi-proposal-subhead">{questionLabel(question.question_key)}</h5>

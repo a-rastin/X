@@ -387,12 +387,15 @@ test("S48 readiness core completion starts generation with uncertainty; warnings
   // complete recent-ideation screen and the one observed input here. The 13
   // missing workflow fields are nonblocking uncertainty, not blockers.
   await expect(summary).toContainText("Ready for proposal generation.");
-  await expect(summary).toContainText("10 / 14 required responses answered; 14 / 14 execution-ready.");
+  await expect(summary).toContainText("10 / 14 answered of currently required; 14 / 14 execution-ready.");
+  await expect(summary).toContainText("The required total can increase or decrease when History answers reveal or remove follow-up questions.");
   await expect(summary).toContainText("Uncertain context (does not block generation)");
   await expect(summary).toContainText("Pharmacotherapy");
   await expect(summary).not.toContainText("pharmacotherapy");
   await expect(summary.getByRole("link")).toHaveCount(13);
   const server = await (await request.get(`/api/v1/encounters/${draftId}/proposal-readiness`)).json();
+  expect(server.answered_count).toBeLessThanOrEqual(server.required_count);
+  for (const question of server.questions) expect(question.answered_count).toBeLessThanOrEqual(question.required_count);
   expect(server.ready).toBe(true);
   expect(server.blockers).toHaveLength(0);
   expect(server.warnings).toHaveLength(13);

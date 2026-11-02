@@ -471,6 +471,7 @@ export function HistorySection({
             </div>
             <span className="xi-diagnosis-count">{responseCount} / {visibleFields.length} responses</span>
           </div>
+          <p className="xi-hint">Follow-up fields can appear or disappear as answers change, so the response count and total can change.</p>
           {visibleGroups.map((group) => {
             const fields = group.fields;
             return (

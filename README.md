@@ -57,6 +57,9 @@ original package approval does not approve these changes.
 The preceding [proposal-readiness fix](project-documents/dev/progress/s48.md#follow-up-2026-10-22--check-proposal-readiness-before-creating-a-run)
 checks saved required context before Step 7 creates a run, lists all blockers
 with links to their History controls, and keeps core History completion separate.
+The [Issue 26 follow-up](project-documents/dev/progress/s48.md#follow-up-2026-11-02--issue-26-readiness-count-implementation)
+explains why the visible History and saved Proposal readiness counts can change
+when conditional inputs appear or disappear.
 See [proposal generation](docs/proposal-generation.md) for recovery and API details.
 
 The preceding bounded follow-up implements the complete supplied DDInter import and
