@@ -1,5 +1,7 @@
 # X-INSIGHT progress tracker
 
+[Issue 23 physician list analysis (2026-11-02)](s04.md#follow-up-2026-11-02--issue-23-physician-list-analysis): root causes and minimal plan recorded; live reproduction and implementation remain open.
+
 [Issue 22 login URL implementation (2026-11-02)](s05.md#follow-up-2026-11-02--issue-22-login-url-implementation): focused browser checks pass on an isolated backend; deployed acceptance remains unverified.
 
 [Issue 21 name validation implementation (2026-11-02)](s06.md#follow-up-2026-11-02--issue-21-name-validation-implementation): focused backend and browser checks passed with a Chromium rerun; deployed acceptance remains unverified.
