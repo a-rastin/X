@@ -629,6 +629,159 @@ test("S60 §1 failed run keeps saves responsive and revisions durable with hones
   }
 });
 
+/** In-page timestamps for the Issue 19 two-second bound: both are the page's
+ *  own performance.now(), never the test runner's clock. */
+type Issue19Timing = { openedAt: number | null; appearedAt: number | null };
+
+// Issue 19 (plan item 4, case 1): a failed question whose persisted review
+// answers promptly with no stored result must say the run failed, inside the
+// 2s acceptance bound measured from opening the panel — never an indefinite
+// "Loading persisted transparency…". Guards the tester-visible symptom.
+test("Issue 19 failed run states no transparency data within 2s of opening the panel", async ({
+  page,
+  request,
+}) => {
+  const physician = await loginPhysician(page, request, "e2es60i19");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  await patchDraft(
+    request,
+    physician,
+    draftId,
+    { history: { values: { h_s60_a: "yes", h_s60_b: "no" } }, gate: "true" },
+    1,
+  );
+
+  const batchId = "s60-batch-i19-1111-4111-8111-111111111111";
+  const run = mockRun("s60-run-i19-2222-4222-8222-222222222222", batchId, "s60_i19_q1");
+  const batchPayload = mockFailedBatch(batchId, draftId, run);
+  const review = mockReview({
+    run,
+    batch: batchPayload.batch,
+    baseline: null,
+    transparency: null,
+    calculationState: "unchanged",
+  });
+  let reviewCount = 0;
+  await page.route("**/api/v1/generation-batches/*", (route) =>
+    route.fulfill({
+      status: 200,
+      contentType: "application/json",
+      body: JSON.stringify(batchPayload),
+    }),
+  );
+  await page.route("**/api/v1/question-runs/*/review", (route) => {
+    reviewCount += 1;
+    return route.fulfill({
+      status: 200,
+      contentType: "application/json",
+      body: JSON.stringify(review),
+    });
+  });
+  try {
+    await seedStoredProposal(page, draftId, {
+      batchId,
+      packages: [{ question_key: run.question_key }],
+      sourceRevision: 2,
+    });
+    await gotoEncounter(page, draftId);
+    await expect(page.getByTestId("proposal-review")).toBeVisible({ timeout: 15000 });
+    const key = run.question_key;
+    await expect(page.getByTestId(`proposal-status-${key}`)).toContainText("Failed", {
+      timeout: 15000,
+    });
+
+    // Issue 19's 2s bound is measured inside the page, not across Playwright
+    // round-trips: the previous form compared Node's Date.now() with an in-page
+    // click timestamp, so harness latency was charged to the UI and could not
+    // be told apart from it (it reported ~2.9s even while the assertion for the
+    // same text passed under its own 2s timeout). Both endpoints now use the
+    // page's own performance.now(): a capture-phase click listener records the
+    // opening, and in-page watchers - every mutation batch and every painted
+    // frame - record the first moment the failure text is in the DOM.
+    await page.evaluate((questionKey) => {
+      const w = window as Window & { __issue19Timing?: Issue19Timing };
+      const timing: Issue19Timing = { openedAt: null, appearedAt: null };
+      w.__issue19Timing = timing;
+      document.addEventListener(
+        "click",
+        (event) => {
+          const label = (event.target as HTMLElement | null)?.closest("button")?.textContent ?? "";
+          if (label.includes(`Show transparency for ${questionKey}`)) {
+            // Capture phase: seen before React's own handler opens the panel.
+            timing.openedAt = performance.now();
+          }
+        },
+        true,
+      );
+      const failureText = "No transparency data because this run failed";
+      const selector = `[data-testid="proposal-transparency-${questionKey}"]`;
+      const appeared = (): boolean =>
+        (document.querySelector(selector)?.textContent ?? "").includes(failureText);
+      const settle = (): void => {
+        if (timing.appearedAt === null) {
+          timing.appearedAt = performance.now();
+        }
+      };
+      const observer = new MutationObserver(() => {
+        if (appeared()) {
+          settle();
+          observer.disconnect();
+        }
+      });
+      observer.observe(document.body, { childList: true, subtree: true, characterData: true });
+      // The same check per painted frame: whichever watcher sees the text first
+      // writes the timestamp, so a coalesced mutation batch cannot lose it.
+      const deadline = performance.now() + 5000;
+      const frame = (): void => {
+        if (appeared()) {
+          settle();
+          return;
+        }
+        if (performance.now() < deadline) {
+          requestAnimationFrame(frame);
+        }
+      };
+      requestAnimationFrame(frame);
+    }, key);
+    await page.getByRole("button", { name: `Show transparency for ${key}` }).click();
+    const region = page.getByTestId(`proposal-transparency-${key}`);
+    // Strict bound: the two-second acceptance, measured from opening the panel
+    // under a prompt mock (not from generation completing).
+    await expect(region).toContainText("No transparency data because this run failed", {
+      timeout: 2000,
+    });
+    // Observer callbacks run as microtasks, so appearedAt is normally set
+    // already; this only covers the not-yet-delivered case.
+    await page.waitForFunction(
+      () =>
+        ((window as Window & { __issue19Timing?: Issue19Timing }).__issue19Timing?.appearedAt ??
+          null) !== null,
+      undefined,
+      { timeout: 2000 },
+    );
+    const timing = await page.evaluate(
+      () => (window as Window & { __issue19Timing?: Issue19Timing }).__issue19Timing ?? null,
+    );
+    if (timing === null || timing.openedAt === null || timing.appearedAt === null) {
+      throw new Error("Issue 19 in-page timing was never recorded");
+    }
+    const latency = timing.appearedAt - timing.openedAt;
+    console.log(`[issue19] in-page transparency latency: ${latency.toFixed(1)}ms`);
+    expect(
+      latency,
+      `in-page transparency latency was ${latency.toFixed(1)}ms (bound 2000ms)`,
+    ).toBeLessThanOrEqual(2000);
+    await expect(region).not.toContainText("Loading persisted transparency");
+    await expect(region).not.toContainText("check the connection and retry");
+    // Still open, and exactly one bounded request answered it.
+    await expect(page.getByRole("button", { name: `Hide transparency for ${key}` })).toBeVisible();
+    expect(reviewCount).toBe(1);
+  } finally {
+    await page.unroute("**/api/v1/generation-batches/*");
+    await page.unroute("**/api/v1/question-runs/*/review");
+  }
+});
+
 // S60 §§2+4 (mocked stale run): batch banner + per-question ◍ fence accept/sign.
 test("S60 §§2+4 stale run fences acceptance and sign-off with exact reasons", async ({
   page,

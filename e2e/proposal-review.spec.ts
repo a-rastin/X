@@ -1712,10 +1712,15 @@ test("S48 §3 transparency shows five fields, distinct CPT/posterior, exact save
     await expect(page.getByTestId("proposal-transparency-s48_q1")).toBeVisible();
     expect(reviewCount).toBe(1);
 
-    // Failed original exposes no baseline (adjustable false).
+    // Failed original exposes no baseline (adjustable false) and now says why:
+    // issue 19 renders the failure-specific empty state for a run joined as
+    // failed, instead of implying it will finish later.
     await page.getByRole("button", { name: "Show transparency for s48_q2" }).click();
     const region2 = page.getByTestId("proposal-transparency-s48_q2");
-    await expect(region2).toContainText("Result details will be available after this question completes successfully.", { timeout: 10000 });
+    await expect(region2).toContainText("No transparency data because this run failed", {
+      timeout: 10000,
+    });
+    await expect(region2).not.toContainText("will be available after this question completes");
     expect(reviewCount).toBe(2);
 
     // No working-note leakage: sentinel stays in the draft, never in proposal/transparency.
@@ -1723,6 +1728,392 @@ test("S48 §3 transparency shows five fields, distinct CPT/posterior, exact save
     await expect(page.getByTestId("proposal-review")).not.toContainText(sentinel);
   } finally {
     await page.unroute("**/api/v1/encounters/*/generation-batches");
+    await page.unroute("**/api/v1/generation-batches/*");
+    await page.unroute("**/api/v1/question-runs/*/review");
+  }
+});
+
+// --- Issue 19: bounded transparency loading fixtures (plan item 4) ---
+// Minimal literals so each regression controls the persisted-review GET itself
+// (prompt, unresolved, delayed, failing) while the joined per-question state
+// still comes from `jobs`/`status`, exactly as the panel derives it. No worker
+// runs in e2e; nothing here posts a generation batch.
+type Issue19Question = {
+  runId: string;
+  questionKey: string;
+  runStatus?: "ready" | "needs_clarification" | "not_applicable";
+  job?: Record<string, unknown> | null;
+  baseline?: ReturnType<typeof mockBaseline> | null;
+  transparency?: ReturnType<typeof mockTransparency> | null;
+};
+
+function issue19Batch(
+  batchId: string,
+  draftId: string,
+  questions: Issue19Question[],
+): Record<string, unknown> {
+  const runs = questions.map((question) => ({
+    id: question.runId,
+    batch_id: batchId,
+    question_key: question.questionKey,
+    status: question.runStatus ?? "ready",
+    gate_reason: "gate true",
+    projection: { variables: [] },
+    projection_hash: "c".repeat(64),
+    fingerprint: "fp-issue19",
+    created_at: "2026-10-09T00:00:00Z",
+  }));
+  return {
+    batch: {
+      id: batchId,
+      encounter_id: draftId,
+      author_id: "a",
+      source_revision: 2,
+      fingerprint: "fp-issue19",
+      status: "ready",
+      pinned_bundle: {},
+      created_at: "2026-10-09T00:00:00Z",
+    },
+    question_runs: runs,
+    freshness: { stale: false, reason: "current", current_fingerprint: "fp-issue19" },
+    job: null,
+    jobs: questions.map((question) => question.job ?? null).filter((job) => job !== null),
+    attempts: questions.length,
+    queue: { busy: false, leased_count: 0, queued_count: 0, max_provider_slots: 2, max_queued_runs: 100, queue_position: null },
+    baseline: questions[0].baseline ?? null,
+    transparency: questions[0].transparency ?? null,
+    baselines: questions.map((question, index) => ({
+      question_run_id: question.runId,
+      question_key: question.questionKey,
+      position: index,
+      status: "ready",
+      baseline: question.baseline ?? null,
+      transparency: question.transparency ?? null,
+    })),
+    proposal: null,
+    workflow: {
+      complete: false,
+      status: "incomplete",
+      pending_question_keys: runs.filter((run) => run.status === "ready").map((run) => run.question_key),
+      needs_clarification: runs.filter((run) => run.status === "needs_clarification").map((run) => run.question_key),
+      skipped: runs.filter((run) => run.status === "not_applicable").map((run) => run.question_key),
+      coverage_warnings: [],
+      ddi_status: "valid",
+    },
+  };
+}
+
+/** Exhausted failed job, the shape the panel joins to `display: "failed"`. */
+function issue19FailedJob(runId: string, batchId: string): Record<string, unknown> {
+  return {
+    id: `job-${runId}`,
+    batch_id: batchId,
+    question_run_id: runId,
+    job_class: "generation",
+    status: "failed",
+    attempt_index: 3,
+    max_attempts: 3,
+    lease_deadline: null,
+    last_heartbeat: null,
+    next_eligible_at: null,
+    result: { error_code: "PROVIDER_TRANSIENT" },
+    created_at: "2026-10-09T00:00:00Z",
+    updated_at: "2026-10-09T00:00:00Z",
+  };
+}
+
+function issue19Review(
+  question: Issue19Question,
+  payload: Record<string, unknown>,
+): Record<string, unknown> {
+  const run = (payload.question_runs as Record<string, unknown>[]).find(
+    (candidate) => candidate.id === question.runId,
+  );
+  return {
+    question_run: run,
+    batch: payload.batch,
+    baseline: question.baseline ?? null,
+    adjustable: (question.baseline ?? null) !== null,
+    transparency: question.transparency ?? null,
+    freshness: payload.freshness,
+    job: question.job ?? null,
+    attempts: 1,
+    queue: payload.queue,
+  };
+}
+
+const NEUTRAL_TRANSPARENCY = "Result details will be available after this question completes successfully.";
+
+// Issue 19 (plan item 4, case 2): a persisted-review GET that never settles
+// must not leave "Loading persisted transparency…" up — the bounded request
+// errors with actionable text, and ONE click on Retry transparency refetches
+// without collapsing the panel (it used to re-toggle and merely close it).
+test("Issue 19 unresolved review GET times out and one retry click recovers in place", async ({
+  page,
+  request,
+}) => {
+  const physician = await loginPhysician(page, request, "e2eiss19hang");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  const batchId = "99999999-9999-4999-8999-000000000001";
+  const runId = "aaaaaaaa-aaaa-4aaa-8aaa-000000000001";
+  const key = "q19_timeout";
+  const baseline = mockBaseline("cccccccc-cccc-4ccc-8ccc-000000000001", runId, batchId, key);
+  const transparency = mockTransparency(key, 2);
+  // No baseline in the batch, so nothing else reads review and the only thing
+  // that can change this region is the retry's own answer.
+  const payload = issue19Batch(batchId, draftId, [{ runId, questionKey: key }]);
+  const fullReview = issue19Review({ runId, questionKey: key, baseline, transparency }, payload);
+  let reviewCount = 0;
+  await page.route("**/api/v1/generation-batches/*", (route) =>
+    route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify(payload) }),
+  );
+  await page.route("**/api/v1/question-runs/*/review", (route) => {
+    reviewCount += 1;
+    if (reviewCount === 1) {
+      // Deliberately unresolved: no fulfill/continue/abort, so even the body
+      // read never completes. Only the deadline can end it.
+      return;
+    }
+    return route.fulfill({
+      status: 200,
+      contentType: "application/json",
+      body: JSON.stringify(fullReview),
+    });
+  });
+  try {
+    await seedStoredProposal(page, draftId, {
+      batchId,
+      packages: [{ question_key: key }],
+      sourceRevision: 2,
+    });
+    await gotoEncounter(page, draftId);
+    await expect(page.getByTestId(`proposal-status-${key}`)).toBeVisible({ timeout: 15000 });
+    await page.getByRole("button", { name: `Show transparency for ${key}` }).click();
+    const region = page.getByTestId(`proposal-transparency-${key}`);
+    await expect(region.getByRole("alert")).toContainText(
+      "Transparency did not load in time — check the connection and retry.",
+      { timeout: 10000 },
+    );
+    expect(reviewCount).toBe(1);
+    // The panel stayed expanded — the retry control belongs to it.
+    await expect(page.getByRole("button", { name: `Hide transparency for ${key}` })).toBeVisible();
+
+    await page.getByRole("button", { name: "Retry transparency" }).click();
+    await expect(region).toContainText("Returned CPT percentages", { timeout: 10000 });
+    await expect(region.getByRole("alert")).toHaveCount(0);
+    // Exactly one extra request, and still open: a single click sufficed.
+    await expect(page.getByRole("button", { name: `Hide transparency for ${key}` })).toBeVisible();
+    expect(reviewCount).toBe(2);
+  } finally {
+    await page.unroute("**/api/v1/generation-batches/*");
+    await page.unroute("**/api/v1/question-runs/*/review");
+  }
+});
+
+// Issue 19 (plan item 4, case 3): a settled request failure (aborted, i.e. what
+// a refused connection looks like) reaches the same actionable error, and one
+// Retry transparency click recovers when the route answers promptly.
+test("Issue 19 failed review request retries in one click and recovers when answered", async ({
+  page,
+  request,
+}) => {
+  const physician = await loginPhysician(page, request, "e2eiss19net");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  const batchId = "99999999-9999-4999-8999-000000000002";
+  const runId = "aaaaaaaa-aaaa-4aaa-8aaa-000000000002";
+  const key = "q19_network";
+  const baseline = mockBaseline("cccccccc-cccc-4ccc-8ccc-000000000002", runId, batchId, key);
+  const transparency = mockTransparency(key, 2);
+  const payload = issue19Batch(batchId, draftId, [{ runId, questionKey: key }]);
+  const fullReview = issue19Review({ runId, questionKey: key, baseline, transparency }, payload);
+  let reviewCount = 0;
+  await page.route("**/api/v1/generation-batches/*", (route) =>
+    route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify(payload) }),
+  );
+  await page.route("**/api/v1/question-runs/*/review", (route) => {
+    reviewCount += 1;
+    if (reviewCount === 1) {
+      return route.abort("failed");
+    }
+    return route.fulfill({
+      status: 200,
+      contentType: "application/json",
+      body: JSON.stringify(fullReview),
+    });
+  });
+  try {
+    await seedStoredProposal(page, draftId, {
+      batchId,
+      packages: [{ question_key: key }],
+      sourceRevision: 2,
+    });
+    await gotoEncounter(page, draftId);
+    await expect(page.getByTestId(`proposal-status-${key}`)).toBeVisible({ timeout: 15000 });
+    await page.getByRole("button", { name: `Show transparency for ${key}` }).click();
+    const region = page.getByTestId(`proposal-transparency-${key}`);
+    await expect(region.getByRole("alert")).toContainText(
+      "Transparency failed to load. Check the connection and retry.",
+      { timeout: 10000 },
+    );
+    expect(reviewCount).toBe(1);
+    await expect(page.getByRole("button", { name: `Hide transparency for ${key}` })).toBeVisible();
+
+    await page.getByRole("button", { name: "Retry transparency" }).click();
+    await expect(region).toContainText("Returned CPT percentages", { timeout: 10000 });
+    await expect(region.getByRole("alert")).toHaveCount(0);
+    await expect(page.getByRole("button", { name: `Hide transparency for ${key}` })).toBeVisible();
+    expect(reviewCount).toBe(2);
+  } finally {
+    await page.unroute("**/api/v1/generation-batches/*");
+    await page.unroute("**/api/v1/question-runs/*/review");
+  }
+});
+
+// Issue 19 (plan item 4, case 4): a pending or clarification/skipped question
+// with a null review keeps the neutral explanation — it is never called failed
+// — and the cached null is dropped once that same run gains a baseline, so the
+// panel follows the run instead of staying unavailable forever.
+test("Issue 19 null review stays neutral for unfinished questions and clears when the run gains a baseline", async ({
+  page,
+  request,
+}) => {
+  const physician = await loginPhysician(page, request, "e2eiss19null");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  const batchId = "99999999-9999-4999-8999-000000000003";
+  const pendingKey = "q19_pending";
+  const clarKey = "q19_clarification";
+  const skippedKey = "q19_skipped";
+  const pendingRunId = "aaaaaaaa-aaaa-4aaa-8aaa-000000000011";
+  const clarRunId = "aaaaaaaa-aaaa-4aaa-8aaa-000000000012";
+  const skippedRunId = "aaaaaaaa-aaaa-4aaa-8aaa-000000000013";
+  const questions: Issue19Question[] = [
+    { runId: pendingRunId, questionKey: pendingKey },
+    { runId: clarRunId, questionKey: clarKey, runStatus: "needs_clarification" },
+    { runId: skippedRunId, questionKey: skippedKey, runStatus: "not_applicable" },
+  ];
+  // The pending run keeps no job, so the panel polls and can observe later
+  // progress without a reload.
+  let served = issue19Batch(batchId, draftId, questions);
+  let withResult = false;
+  const baseline = mockBaseline("cccccccc-cccc-4ccc-8ccc-000000000003", pendingRunId, batchId, pendingKey);
+  const transparency = mockTransparency(pendingKey, 2);
+  await page.route("**/api/v1/generation-batches/*", (route) =>
+    route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify(served) }),
+  );
+  await page.route("**/api/v1/question-runs/*/review", (route) => {
+    const question = route.request().url().includes(pendingRunId) && withResult
+      ? { runId: pendingRunId, questionKey: pendingKey, baseline, transparency }
+      : route.request().url().includes(pendingRunId)
+        ? { runId: pendingRunId, questionKey: pendingKey }
+        : { runId: clarRunId, questionKey: clarKey };
+    return route.fulfill({
+      status: 200,
+      contentType: "application/json",
+      body: JSON.stringify(issue19Review(question, served)),
+    });
+  });
+  try {
+    await seedStoredProposal(page, draftId, {
+      batchId,
+      packages: questions.map((question) => ({ question_key: question.questionKey })),
+      sourceRevision: 2,
+    });
+    await gotoEncounter(page, draftId);
+    await expect(page.getByTestId(`proposal-status-${pendingKey}`)).toBeVisible({ timeout: 15000 });
+
+    for (const key of [pendingKey, clarKey, skippedKey]) {
+      await page.getByRole("button", { name: `Show transparency for ${key}` }).click();
+      const region = page.getByTestId(`proposal-transparency-${key}`);
+      await expect(region).toContainText(NEUTRAL_TRANSPARENCY, { timeout: 10000 });
+      // Not a failure, and not a request error either.
+      await expect(region).not.toContainText("because this run failed");
+      await expect(region.getByRole("alert")).toHaveCount(0);
+    }
+
+    // The same run later retains a baseline: the cached null must be dropped.
+    withResult = true;
+    served = issue19Batch(batchId, draftId, [
+      { runId: pendingRunId, questionKey: pendingKey, baseline, transparency },
+      { runId: clarRunId, questionKey: clarKey, runStatus: "needs_clarification" },
+      { runId: skippedRunId, questionKey: skippedKey, runStatus: "not_applicable" },
+    ]);
+    const pendingRegion = page.getByTestId(`proposal-transparency-${pendingKey}`);
+    await expect(pendingRegion).toContainText("Returned CPT percentages", { timeout: 15000 });
+    // Unfinished questions keep their honest neutral text throughout.
+    await expect(page.getByTestId(`proposal-transparency-${clarKey}`)).toContainText(NEUTRAL_TRANSPARENCY);
+    await expect(page.getByTestId(`proposal-transparency-${skippedKey}`)).not.toContainText("because this run failed");
+  } finally {
+    await page.unroute("**/api/v1/generation-batches/*");
+    await page.unroute("**/api/v1/question-runs/*/review");
+  }
+});
+
+// Issue 19 (plan item 4, case 5): the superseded request answers late with an
+// error; the retried result must survive instead of being overwritten by it.
+test("Issue 19 a late answer from the superseded request does not overwrite the retried result", async ({
+  page,
+  request,
+}) => {
+  const physician = await loginPhysician(page, request, "e2eiss19late");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  const batchId = "99999999-9999-4999-8999-000000000004";
+  const runId = "aaaaaaaa-aaaa-4aaa-8aaa-000000000004";
+  const key = "q19_late";
+  const baseline = mockBaseline("cccccccc-cccc-4ccc-8ccc-000000000004", runId, batchId, key);
+  const transparency = mockTransparency(key, 2);
+  const payload = issue19Batch(batchId, draftId, [{ runId, questionKey: key }]);
+  const fullReview = issue19Review({ runId, questionKey: key, baseline, transparency }, payload);
+  const reviews: number[] = [];
+  // Set once the deliberately late first request has actually been answered,
+  // so the assertions below really run after the stale completion.
+  let staleAnswered = false;
+  await page.route("**/api/v1/generation-batches/*", (route) =>
+    route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify(payload) }),
+  );
+  await page.route("**/api/v1/question-runs/*/review", async (route) => {
+    reviews.push(reviews.length + 1);
+    if (reviews.length === 1) {
+      // Outlives the deadline by design, then answers with an error.
+      await new Promise((resolve) => setTimeout(resolve, 4000));
+      try {
+        await route.fulfill({ status: 503, contentType: "application/json", body: "{}" });
+      } catch {
+        // Already aborted/superseded: exactly what this test is about.
+      }
+      staleAnswered = true;
+      return;
+    }
+    return route.fulfill({
+      status: 200,
+      contentType: "application/json",
+      body: JSON.stringify(fullReview),
+    });
+  });
+  try {
+    await seedStoredProposal(page, draftId, {
+      batchId,
+      packages: [{ question_key: key }],
+      sourceRevision: 2,
+    });
+    await gotoEncounter(page, draftId);
+    await expect(page.getByTestId(`proposal-status-${key}`)).toBeVisible({ timeout: 15000 });
+    await page.getByRole("button", { name: `Show transparency for ${key}` }).click();
+    const region = page.getByTestId(`proposal-transparency-${key}`);
+    await expect(region.getByRole("alert")).toContainText(
+      "Transparency did not load in time — check the connection and retry.",
+      { timeout: 10000 },
+    );
+
+    await page.getByRole("button", { name: "Retry transparency" }).click();
+    await expect(region).toContainText("Returned CPT percentages", { timeout: 10000 });
+    expect(reviews).toHaveLength(2);
+
+    // The stale request settles after the retry; the newer state must win.
+    await expect.poll(() => staleAnswered, { timeout: 15000 }).toBe(true);
+    await expect(region).toContainText("Returned CPT percentages");
+    await expect(region.getByRole("alert")).toHaveCount(0);
+    expect(reviews).toHaveLength(2);
+  } finally {
     await page.unroute("**/api/v1/generation-batches/*");
     await page.unroute("**/api/v1/question-runs/*/review");
   }

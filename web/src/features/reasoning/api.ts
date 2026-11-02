@@ -375,6 +375,9 @@ interface RequestOptions {
   body?: unknown;
   ifMatch?: number;
   idempotencyKey?: string;
+  /** Aborts the request and its body read. Optional: only callers with a
+   * deadline pass one (issue 19 — bounded transparency loading). */
+  signal?: AbortSignal;
 }
 
 async function request<T>(path: string, options: RequestOptions = {}): Promise<T> {
@@ -394,6 +397,7 @@ async function request<T>(path: string, options: RequestOptions = {}): Promise<T
     credentials: "include",
     headers,
     body: options.body === undefined ? undefined : JSON.stringify(options.body),
+    signal: options.signal,
   });
   const text = await response.text();
   let payload: unknown = null;
@@ -456,10 +460,15 @@ export async function getBatch(batchId: string): Promise<BatchPayload> {
   );
 }
 
-/** Author-only per-question review (persisted baseline + transparency). */
-export async function getQuestionReview(runId: string): Promise<QuestionReviewPayload> {
+/** Author-only per-question review (persisted baseline + transparency).
+ * `signal` optionally bounds the request and its body read. */
+export async function getQuestionReview(
+  runId: string,
+  options: { signal?: AbortSignal } = {},
+): Promise<QuestionReviewPayload> {
   return request<QuestionReviewPayload>(
     `/question-runs/${encodeURIComponent(runId)}/review`,
+    { signal: options.signal },
   );
 }
 

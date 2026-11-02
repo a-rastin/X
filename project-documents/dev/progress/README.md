@@ -2,6 +2,8 @@
 
 [Issue 19 transparency analysis (2026-11-01)](s48.md#follow-up-2026-11-01--issue-19-transparency-analysis): minimal fix planned; incident and deployed acceptance unverified.
 
+[Issue 19 implemented and verified (2026-11-02)](s48.md#follow-up-2026-11-02--issue-19-implemented-and-verified-on-the-preview-harness): bounded review request and failed-run empty state pass in Chromium and Firefox on the preview harness; deployed acceptance still unverified.
+
 [Issue 18 verification (2026-11-01)](s43.md#follow-up-2026-11-01--issue-18-focused-backend-verification): backend and synthetic browser checks passed; review and corrected test rerun completed, deployment unknown.
 
 [Issue 17 isolated timing verification (2026-11-01)](s43.md#follow-up-2026-11-01--issue-17-isolated-timing-verification): focused regression passed; incident cause and deployment acceptance remain unknown.

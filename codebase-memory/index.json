@@ -4869,9 +4869,9 @@
         "e2e",
         "test"
       ],
-      "purpose": null,
-      "summary": null,
-      "source_sha256": null
+      "purpose": "Mocked browser regressions for failed-run recovery and Issue 19 transparency timing.",
+      "summary": "files/e2e/failure-recovery.spec.ts.md",
+      "source_sha256": "f7760d5d1299e39d70d97044124d1fbc418e70c0e6ffab3741b34ba484627bd1"
     },
     {
       "path": "e2e/followup.spec.ts",
@@ -4981,7 +4981,7 @@
       ],
       "purpose": null,
       "summary": null,
-      "source_sha256": null
+      "source_sha256": "6560ae12bb6275452796e6f54928bd7671584ab8fcdb82d61ebe3633aae0ca4c"
     },
     {
       "path": "e2e/provider-capability-mode.spec.ts",
@@ -8344,7 +8344,7 @@
       ],
       "purpose": "Step 7 UI: batch start/reuse, per-question polling, transparency and freshness.",
       "summary": "files/web/src/features/reasoning/ProposalReviewPanel.tsx.md",
-      "source_sha256": "4a4f2702e864d96e28c4be82c139cb618fca35d0ee61f7ffbcecc36b06fd0067"
+      "source_sha256": "efcad2f33336f358d5d4242353be290518cefa2c61025c0bf89504205b9dccf0"
     },
     {
       "path": "web/src/features/reasoning/api.ts",
@@ -8354,7 +8354,7 @@
       ],
       "purpose": "Reasoning HTTP surface: batches, runs, readiness, CPT review and acceptance.",
       "summary": null,
-      "source_sha256": null
+      "source_sha256": "dee925946d8e3ba0df3f025c4a7f8642e5c75a9812a2288454bec25755955487"
     },
     {
       "path": "web/src/main.tsx",

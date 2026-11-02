@@ -35,6 +35,10 @@
  * effective_hash} — plus prompt/template versions, hashes, and provenance.
  * CPT tables ("LLM-estimated") and posterior values ("computed") are labeled
  * distinctly. Failed originals expose no baseline (`adjustable` false).
+ * Issue 19: that GET is bounded (~1.5s, including the body read) and never
+ * leaves a loading entry behind — the error's retry calls the loader directly
+ * instead of re-toggling the panel, and a null result reads as failed only for
+ * a question whose joined per-question state failed (not its review `job`).
  *
  * Proposal + sign (S48 §4, S50 §§1-2): final proposal sections (position-ordered) with
  * skipped reasons and DDI coverage_warnings/ddi_report (coverage_unavailable
@@ -146,6 +150,9 @@ type RunDisplay = "pending" | "running" | "skipped" | "clarification" | "failed"
 
 const POLL_MS = 2000;
 const HIDDEN_POLL_MS = 15000;
+/** Transparency deadline (issue 19): shorter than the 2s acceptance bound so
+ * rendering never eats the margin; retry is the recovery, not a longer wait. */
+const REVIEW_TIMEOUT_MS = 1500;
 
 const GLYPH: Record<RunDisplay, string> = {
   pending: "○",
@@ -370,6 +377,34 @@ interface ReviewState {
   message: string | null;
 }
 
+/** Shared read-only review entries: a pending request, and a successful review
+ * that returned no persisted result (its neutral explanation keeps pending,
+ * skipped and clarification runs honest — a failed run gets its own text at
+ * render time from the joined per-question state, never from `review.job`). */
+const LOADING_REVIEW: ReviewState = {
+  status: "loading",
+  transparency: null,
+  baselineId: null,
+  networkVersion: null,
+  promptVersion: null,
+  templateVersion: null,
+  effectiveHash: null,
+  provenance: {},
+  message: null,
+};
+
+const EMPTY_REVIEW: ReviewState = {
+  ...LOADING_REVIEW,
+  status: "ready",
+  message: "Result details will be available after this question completes successfully.",
+};
+
+/** True once the run actually retained a baseline (issue 19): a cached null
+ * review must be refetched for such a run, not shown as unavailable forever. */
+function runHasBaseline(item: JoinedRun): boolean {
+  return item.entry?.baseline !== null && item.entry?.baseline !== undefined;
+}
+
 export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, stepNumber }: ProposalReviewPanelProps) {
   const [phase, setPhase] = useState<Phase>({ kind: "boot" });
   const [batchId, setBatchId] = useState<string | null>(null);
@@ -410,6 +445,11 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
   const attemptedRef = useRef(false);
   const batchIdRef = useRef<string | null>(null);
   const actionErrorRef = useRef<HTMLParagraphElement>(null);
+  // Issue 19: in-flight transparency requests, keyed by run id — an unmount,
+  // a replaced run or a retry aborts the older one, and the per-run sequence
+  // keeps its late response from overwriting the newer request's state.
+  const reviewAbortRef = useRef<Map<string, AbortController>>(new Map());
+  const reviewSeqRef = useRef<Record<string, number>>({});
 
   const failAs = useCallback((err: unknown, fallback: string): string => {
     if (err instanceof ApiError) {
@@ -494,6 +534,11 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
     return () => {
       cancelled = true;
       mountedRef.current = false;
+      // Issue 19: a transparency request must never outlive the panel.
+      for (const controller of reviewAbortRef.current.values()) {
+        controller.abort();
+      }
+      reviewAbortRef.current.clear();
     };
     // Mount-per-encounter only: later autosave revisions must not retrigger
     // entry (no run per keystroke); staleness is shown, refresh is explicit.
@@ -845,49 +890,35 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
     }
   }, [encounterId, prepareStart, onSessionExpired]);
 
-  const toggleTransparency = useCallback(
-    async (questionKey: string, runId: string) => {
-      const open = !(expanded[questionKey] ?? false);
-      setExpanded((previous) => ({ ...previous, [questionKey]: open }));
-      if (!open) {
-        return;
-      }
-      const cached = reviews[runId];
-      if (cached !== undefined && cached.status !== "error") {
-        return;
-      }
-      setReviews((previous) => ({
-        ...previous,
-        [runId]: {
-          status: "loading",
-          transparency: null,
-          baselineId: null,
-          networkVersion: null,
-          promptVersion: null,
-          templateVersion: null,
-          effectiveHash: null,
-          provenance: {},
-          message: null,
-        },
-      }));
+  /** One bounded persisted-review GET (issue 19). Aborts after
+   * REVIEW_TIMEOUT_MS so neither a hanging connection nor an unfinished body
+   * read can leave "Loading persisted transparency…" forever, and never
+   * reuses an in-flight request: each call takes the next sequence number for
+   * its run and only that newest request may write state. Retry calls this
+   * directly, so one click refetches without collapsing the panel. */
+  const loadReview = useCallback(
+    async (runId: string) => {
+      const seq = (reviewSeqRef.current[runId] ?? 0) + 1;
+      reviewSeqRef.current[runId] = seq;
+      reviewAbortRef.current.get(runId)?.abort();
+      const controller = new AbortController();
+      reviewAbortRef.current.set(runId, controller);
+      let timedOut = false;
+      const timer = window.setTimeout(() => {
+        timedOut = true;
+        controller.abort();
+      }, REVIEW_TIMEOUT_MS);
+      // A late or aborted response must not overwrite a newer request.
+      const newest = () => mountedRef.current && reviewSeqRef.current[runId] === seq;
+      setReviews((previous) => ({ ...previous, [runId]: LOADING_REVIEW }));
       try {
         // Persisted review data only — never recomputed from current chart.
-        const review = await getQuestionReview(runId);
+        const review = await getQuestionReview(runId, { signal: controller.signal });
+        if (!newest()) {
+          return;
+        }
         if (review.transparency === null || review.baseline === null) {
-          setReviews((previous) => ({
-            ...previous,
-            [runId]: {
-              status: "ready",
-              transparency: null,
-              baselineId: null,
-              networkVersion: null,
-              promptVersion: null,
-              templateVersion: null,
-              effectiveHash: null,
-              provenance: {},
-              message: "Result details will be available after this question completes successfully.",
-            },
-          }));
+          setReviews((previous) => ({ ...previous, [runId]: EMPTY_REVIEW }));
           return;
         }
         setReviews((previous) => ({
@@ -909,23 +940,52 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
           onSessionExpired();
           return;
         }
+        if (!newest()) {
+          return;
+        }
         setReviews((previous) => ({
           ...previous,
           [runId]: {
+            ...EMPTY_REVIEW,
             status: "error",
-            transparency: null,
-            baselineId: null,
-            networkVersion: null,
-            promptVersion: null,
-            templateVersion: null,
-            effectiveHash: null,
-            provenance: {},
-            message: failAs(err, "Transparency failed to load. Check the connection and retry."),
+            message: timedOut
+              ? "Transparency did not load in time — check the connection and retry."
+              : failAs(err, "Transparency failed to load. Check the connection and retry."),
           },
         }));
+      } finally {
+        window.clearTimeout(timer);
+        if (reviewAbortRef.current.get(runId) === controller) {
+          reviewAbortRef.current.delete(runId);
+        }
       }
     },
-    [expanded, reviews, failAs, onSessionExpired],
+    [failAs, onSessionExpired],
+  );
+
+  const toggleTransparency = useCallback(
+    (questionKey: string, item: JoinedRun) => {
+      const runId = item.run.id;
+      const open = !(expanded[questionKey] ?? false);
+      setExpanded((previous) => ({ ...previous, [questionKey]: open }));
+      if (!open) {
+        return;
+      }
+      const cached = reviews[runId];
+      // Completed successful results stay cached. Everything else is fetched
+      // again: a "loading" entry is never reused (nothing would settle it),
+      // errors retry on open, and a null result refetches once the run has a
+      // baseline so the panel follows the run's own progress.
+      if (
+        cached !== undefined &&
+        cached.status === "ready" &&
+        (cached.transparency !== null || !runHasBaseline(item))
+      ) {
+        return;
+      }
+      void loadReview(runId);
+    },
+    [expanded, reviews, loadReview],
   );
 
   const checkAgain = useCallback(() => {
@@ -965,6 +1025,29 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
 
   const joined = batch !== null ? joinRuns(batch) : [];
   const blockReason = batch !== null ? signBlockReason(batch, joined) : null;
+
+  // Issue 19: a null review kept from before the run succeeded must not stick
+  // — refetch the runs that gained a baseline while their panel is open.
+  // Keyed by run id so the 2s poll does not re-request on every tick.
+  const gainedBaselineKey = joined
+    .filter(
+      (item) =>
+        (expanded[item.run.question_key] ?? false) &&
+        runHasBaseline(item) &&
+        reviews[item.run.id]?.status === "ready" &&
+        reviews[item.run.id]?.transparency === null,
+    )
+    .map((item) => item.run.id)
+    .join(",");
+  useEffect(() => {
+    if (gainedBaselineKey === "") {
+      return;
+    }
+    for (const runId of gainedBaselineKey.split(",")) {
+      void loadReview(runId);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [gainedBaselineKey]);
 
   return (
     <section className="xi-card" aria-labelledby="proposal-review-heading" id="proposal-review" data-testid="proposal-review">
@@ -1103,9 +1186,9 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
                     batchStale={batch.freshness?.stale === true}
                     actionBusy={actionBusy}
                     onSessionExpired={onSessionExpired}
-                    onToggle={() => void toggleTransparency(item.run.question_key, item.run.id)}
+                    onToggle={() => toggleTransparency(item.run.question_key, item)}
                     onRetry={() => void retryRun()}
-                    onReviewRetry={() => void toggleTransparency(item.run.question_key, item.run.id)}
+                    onReviewRetry={() => void loadReview(item.run.id)}
                   />
                 </li>
               ))}
@@ -1313,7 +1396,13 @@ function QuestionBlock({
             </div>
           ) : review.transparency === null ? (
             <p className="xi-hint" role="status">
-              {review.message ?? "Transparency unavailable for this question."}
+              {/* Issue 19: only a question known to have failed gets the
+                failure wording, from the joined per-question state — never
+                `review.job` (the batch's first job) and never a request
+                error, which renders as role="alert" with a retry above. */}
+              {item.display === "failed"
+                ? "No transparency data because this run failed"
+                : review.message ?? "Transparency unavailable for this question."}
             </p>
           ) : (
             <TransparencyView

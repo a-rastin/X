@@ -60,6 +60,18 @@ captures what a future task needs before it re-derives the same conclusions.
   (`context/ui-contrast.md`). Do not "restore" the canonical teal on buttons.
 - **Continue does not require a completed step.** Only registration Diagnosis→PANSS asks for
   confirmation, and it records no bypass sentinel. This is asserted by `e2e/panss.spec.ts`.
+- **Transparency loading is bounded, and "failed" is read from the joined run, never `review.job`.**
+  Issue 19 wrapped the persisted-review GET in a native `AbortController` with a 1500 ms
+  deadline covering the body read (so an unsettled request can never leave "Loading persisted
+  transparency…" up), and renders `No transparency data because this run failed` only when the
+  joined per-question display is `failed`. The review response's `job` field is the batch's
+  *first* job and may belong to another question, so inferring per-question failure from it is
+  wrong. The deadline deliberately trades a slow-but-healthy request for a bounded error plus a
+  one-click retry; it was chosen under the 2 s acceptance, not from measured endpoint latency —
+  revisit only with that evidence (during Firefox runs the deadline itself fired once because the
+  mocked delivery exceeded it; the UI behaved correctly). Full record:
+  [`issues/issue-19.md`](../issues/issue-19.md).
+  Status: current. Evidence: source plus that issue; the tester's incident itself is unverified.
 
 ## Testing and fixtures
 
@@ -67,6 +79,17 @@ captures what a future task needs before it re-derives the same conclusions.
   Migration 0006 added `notes→encounters` FK and the fixture helpers swallow failures, so a wrong
   order silently poisons unrelated suites with 409s. Any new child table with an FK must be added
   to those lists (`context/test-fixtures.md`).
+- **Timing bounds are measured in-page, never across Playwright round-trips.** For Issue 19's
+  two-second transparency bound, `e2e/failure-recovery.spec.ts` records the click and the first
+  appearance of the failure text with the page's own `performance.now()` (capture-phase listener
+  plus mutation/frame watcher) and asserts their difference. The earlier form used the runner's
+  `Date.now()`, which charged harness latency to the UI and reported 2931 ms while the same text
+  already satisfied its own 2000 ms assertion. Status: current. Evidence: measured values and the
+  documented runs in `project-documents/dev/progress/s48.md` (2026-11-02).
+- **Firefox e2e needs per-test runs or a larger timeout on this host.** With ~955 MB RAM and an
+  active OOM killer, Firefox tests sit near Playwright's 30 s default test timeout and fail only
+  by exceeding it; run `-g "<title>"` individually or raise `--timeout`. Status: current,
+  environment-specific.
 - `make test-web` intentionally exits non-zero: there is no web unit suite; browser coverage is
   `e2e/` via `make test-e2e` (Chromium + Firefox).
 
