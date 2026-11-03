@@ -1,3 +1,4 @@
+import AxeBuilder from "@axe-core/playwright";
 import { test, expect } from "@playwright/test";
 import {
   uniqueName,
@@ -95,7 +96,7 @@ test("physician registers a patient; leading-zero ID round-trips with timestamp 
   const family = "Patient Alpha";
   await fillValidForm(page, { given, family, identifier, phone: "+43 699 123456" });
 
-  const register = page.getByRole("button", { name: "Register patient" });
+  const register = page.getByRole("button", { name: "Register", exact: true });
   await expect(register).toBeEnabled();
   const createRequests: string[] = [];
   page.on("request", (req) => {
@@ -143,7 +144,7 @@ test("physician registers a patient; leading-zero ID round-trips with timestamp 
   }
   await expect(page.locator("#draft-save-status")).toHaveCount(0);
   await expect(page.locator("#diagnosis-preview-status")).toContainText("Indeterminate", { timeout: 15000 });
-  await page.getByRole("button", { name: "Continue to PANSS", exact: true }).click();
+  await page.getByRole("button", { name: "Continue", exact: true }).click();
   await expect(page.getByText("Continue without a confirmed diagnosis?")).toBeVisible();
   await expect(page).toHaveURL(/#diagnosis$/);
   await page.getByRole("button", { name: "Return to diagnosis" }).click();
@@ -159,8 +160,8 @@ test("physician registers a patient; leading-zero ID round-trips with timestamp 
   await expect(page.getByLabel("Family name")).toHaveValue(family);
   await expect(page.getByLabel("Patient ID")).toHaveValue(identifier);
   await expect(page.getByLabel("Draft working note")).toBeEnabled();
-  await expect(page.getByRole("button", { name: "Register patient" })).toHaveCount(0);
-  await page.getByRole("link", { name: "Continue to Diagnosis" }).click();
+  await expect(page.getByRole("button", { name: "Register", exact: true })).toHaveCount(0);
+  await page.getByRole("button", { name: "Continue", exact: true }).click();
   await expect(page).toHaveURL(/#diagnosis$/);
   await expect(
     page.getByRole("link", { name: "Open registration draft" }),
@@ -183,7 +184,7 @@ test("Register stays disabled until every demographics field is valid", async ({
   await loginPhysician(page, request, "e2egate");
   await page.goto("/#/patients/new");
 
-  const register = page.getByRole("button", { name: "Register patient" });
+  const register = page.getByRole("button", { name: "Register", exact: true });
   // Empty form: invalid.
   await expect(register).toBeDisabled();
 
@@ -234,7 +235,7 @@ test("duplicate identifier shows a conflict without losing input", async ({
   const given = uniqueLetters("anna");
   const family = uniqueLetters("novak");
   await fillValidForm(page, { given, family, identifier });
-  const register = page.getByRole("button", { name: "Register patient" });
+  const register = page.getByRole("button", { name: "Register", exact: true });
   await expect(register).toBeEnabled();
   await register.click();
 
@@ -409,7 +410,7 @@ test("server field errors render against their labels and keep input", async ({
     }
   });
   try {
-    await page.getByRole("button", { name: "Register patient" }).click();
+    await page.getByRole("button", { name: "Register", exact: true }).click();
 
     const alert = page.getByRole("alert");
     await expect(alert).toContainText("Patient demographics are invalid.");
@@ -438,5 +439,76 @@ test("server field errors render against their labels and keep input", async ({
     await expect(page.getByLabel("Family name")).toHaveValue(family);
   } finally {
     await page.unroute("**/api/v1/patients");
+  }
+});
+
+for (const key of ["Enter", "Space"]) {
+  test(`Register and both Continue actions activate with ${key}`, async ({ page, request }) => {
+    await loginPhysician(page, request, "e2ekeyboard");
+    await page.goto("/#/patients/new");
+    const register = page.getByRole("button", { name: "Register", exact: true });
+    await expect(register).toBeDisabled();
+    let invalidSubmissions = 0;
+    page.on("request", req => {
+      if (req.method() === "POST" && /\/patients\/?$/.test(new URL(req.url()).pathname)) invalidSubmissions += 1;
+    });
+    await register.evaluate((button: HTMLButtonElement) => button.click());
+    await page.getByLabel("Given name").focus();
+    await page.keyboard.press(key);
+    expect(invalidSubmissions).toBe(0);
+    await fillValidForm(page, { given: "Keyboard", family: "Patient", identifier: uniquePatientId() });
+    await expect(register).toBeEnabled();
+    let release!: () => void;
+    let started!: () => void;
+    const held = new Promise<void>(resolve => { release = resolve; });
+    const requested = new Promise<void>(resolve => { started = resolve; });
+    let submissions = 0;
+    await page.route("**/api/v1/patients", async route => {
+      if (route.request().method() === "POST") {
+        submissions += 1;
+        started();
+        await held;
+      }
+      await route.continue();
+    });
+    await register.focus();
+    await page.keyboard.press(key);
+    await requested;
+    await expect(page.getByRole("button", { name: "Registering…", exact: true })).toBeDisabled();
+    await page.keyboard.press(key);
+    expect(submissions).toBe(1);
+    release();
+    await expect(page).toHaveURL(/#diagnosis$/);
+    const next = page.getByRole("button", { name: "Continue", exact: true });
+    await expect(next).toBeEnabled({ timeout: 15000 });
+    await expect(next).toHaveClass(/xi-btn-primary/);
+    await next.focus();
+    await page.keyboard.press(key);
+    await expect(page.getByText("Continue without a confirmed diagnosis?")).toBeVisible();
+    await page.getByRole("button", { name: "Return to diagnosis" }).click();
+    await expect(next).toBeFocused();
+    await page.getByRole("link", { name: "Back to Register patient" }).click();
+    await expect(page).toHaveURL(/#register$/);
+    const ordinary = page.getByRole("button", { name: "Continue", exact: true });
+    await expect(ordinary).toHaveClass(/xi-btn-primary/);
+    await ordinary.focus();
+    await page.keyboard.press(key);
+    await expect(page).toHaveURL(/#diagnosis$/);
+  });
+}
+
+test("registration axe results do not exceed the recorded baseline", async ({ page }) => {
+  await page.route("**/api/v1/me", route => route.fulfill({ json: {
+    user: { id: "synthetic-physician", username: "test", role: "physician", theme: "light" },
+    csrf_token: "synthetic", research_warning: null, research_warning_version: null,
+  } }));
+  await page.goto("/#/patients/new");
+  await expect(page.getByRole("form", { name: "Register patient" })).toBeVisible();
+  for (const valid of [false, true]) {
+    if (valid) await fillValidForm(page, { given: "Test", family: "Patient", identifier: "1234567890" });
+    const results = await new AxeBuilder({ page }).analyze();
+    // Existing baseline: the theme switch's visible icon does not match its accessible name.
+    expect(results.violations.map(v => ({ id: v.id, targets: v.nodes.map(n => n.target) })))
+      .toEqual([{ id: "label-content-name-mismatch", targets: [["button[aria-label=\"Switch to dark theme\"]"]] }]);
   }
 });

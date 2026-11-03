@@ -218,6 +218,36 @@ test("navigation waits for the latest draft edit and preserves it on reload", as
   await expect(page.getByLabel("Draft working note")).toHaveValue("navigation barrier probe");
 });
 
+
+test("Continue waits for the latest draft edit and preserves it on reload", async ({ page, request }) => {
+  const physician = await loginPhysician(page, request, "e2enavguard");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  await page.goto(`/#/encounters/${draftId}#register`);
+  const note = page.getByLabel("Draft working note");
+  await expect(note).toBeVisible();
+  let release!: () => void;
+  const held = new Promise<void>((resolve) => { release = resolve; });
+  let started!: () => void;
+  const patchStarted = new Promise<void>((resolve) => { started = resolve; });
+  await page.route("**/api/v1/encounters/*", async (route) => {
+    if (route.request().method() === "PATCH") {
+      started();
+      await held;
+    }
+    await route.continue();
+  });
+  await note.fill("navigation barrier probe");
+  await page.getByRole("button", { name: "Continue", exact: true }).click();
+  await patchStarted;
+  await expect(note).toHaveValue("navigation barrier probe");
+  await expect(page.getByRole("heading", { name: "Diagnosis (step 2)" })).toHaveCount(0);
+  release();
+  await expect(page).toHaveURL(/#diagnosis$/);
+  await page.unroute("**/api/v1/encounters/*");
+  await page.goto(`/#/encounters/${draftId}#register`);
+  await expect(page.getByLabel("Draft working note")).toHaveValue("navigation barrier probe");
+});
+
 test("edits during a save remain unsaved until the newer revision is acknowledged", async ({ page, request }) => {
   const physician = await loginPhysician(page, request, "e2einflight");
   const { draftId } = await createPatientWithDraft(request, physician);
@@ -511,7 +541,7 @@ test("registration form stays local-only until POST succeeds", async ({
 }) => {
   await loginPhysician(page, request, "e2elocalonly");
   await page.goto("/#/patients/new");
-  await expect(page.getByRole("button", { name: "Register patient" })).toBeDisabled();
+  await expect(page.getByRole("button", { name: "Register", exact: true })).toBeDisabled();
 
   await page.getByLabel("Given name").fill(uniqueLetters("anna"));
   await page.getByLabel("Family name").fill(uniqueLetters("novak"));
@@ -519,7 +549,7 @@ test("registration form stays local-only until POST succeeds", async ({
   await page.getByRole("radio", { name: "M", exact: true }).check();
   await page.getByLabel("Age", { exact: true }).fill("30");
   await page.getByRole("radio", { name: "First-time" }).check();
-  await expect(page.getByRole("button", { name: "Register patient" })).toBeEnabled();
+  await expect(page.getByRole("button", { name: "Register", exact: true })).toBeEnabled();
   // Pre-creation demographics are local only: never advertised as durable.
   await expect(page.locator("body")).not.toContainText("Saved (revision");
 });

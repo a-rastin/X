@@ -21,7 +21,7 @@ import {
  * Completion and acknowledgment govern proposal generation, not page
  * navigation: confirming never calls bypass/acknowledgment and never
  * writes a skip sentinel. Follow-up Diagnosis Continue keeps the plain
- * pager link (no check).
+ * pager button (no check).
  *
  * Selectors used below are the handoff contract for the test agent:
  * - section heading "Diagnosis (step 2)"
@@ -635,6 +635,29 @@ for (const failure of [500, 412]) {
   });
 }
 
+test("Continue is disabled while the diagnosis check is pending", async ({ page, request }) => {
+  const physician = await loginPhysician(page, request, "e2ediagbusy");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  await page.goto(`/#/encounters/${draftId}`);
+  await expect(page.locator("#diagnosis-preview-status")).toContainText("Indeterminate", { timeout: 15000 });
+  let release!: () => void;
+  let started!: () => void;
+  const held = new Promise<void>(resolve => { release = resolve; });
+  const requested = new Promise<void>(resolve => { started = resolve; });
+  await page.route(`**/api/v1/encounters/${draftId}/diagnosis`, async route => {
+    started();
+    await held;
+    await route.continue();
+  });
+  await page.getByRole("button", { name: "Continue", exact: true }).click();
+  await requested;
+  await expect(page.getByRole("button", { name: "Checking diagnosis…", exact: true })).toBeDisabled();
+  release();
+  await expectContinueDialog(page);
+  await page.getByRole("button", { name: "Return to diagnosis" }).click();
+  await expect(page.getByRole("button", { name: "Continue", exact: true })).toBeFocused();
+});
+
 test("diagnosis check failure stays with retry, no navigation", async ({
   page,
   request,
@@ -873,7 +896,7 @@ test("legacy bypass record shows status without a new bypass action", async ({
   ).toBeVisible();
 });
 
-test("follow-up Diagnosis Continue keeps the plain pager link", async ({
+test("follow-up Diagnosis Continue keeps the ordinary pager button", async ({
   page,
   request,
 }) => {

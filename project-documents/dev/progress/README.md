@@ -1,6 +1,6 @@
 # X-INSIGHT progress tracker
 
-[Issue 28 action semantics analysis (2026-11-03)](s07.md#follow-up-2026-11-03--issue-28-action-semantics-analysis): minimal button and accessibility test plan; implementation and acceptance remain open.
+[Issue 28 action semantics implementation (2026-11-03)](s07.md#follow-up-2026-11-03--issue-28-action-semantics-implementation): button semantics implemented; browser and accessibility acceptance remain open.
 
 [Issue 27 autosave work (2026-11-02)](s07.md#follow-up-2026-11-02--issue-27-autosave-work): initial race checks pass; browser history and latency acceptance remain open.
 

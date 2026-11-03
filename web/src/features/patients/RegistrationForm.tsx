@@ -416,7 +416,7 @@ function RegistrationForm() {
               type="submit"
               disabled={!clientValid || busy}
             >
-              {busy ? "Registering…" : "Register patient"}
+              {busy ? "Registering…" : "Register"}
             </button>
           </div>
         </form>

@@ -913,7 +913,7 @@ function EncounterWizard({
           (guardedDiagnosisContinue ? (
             // Registration Diagnosis → PANSS is a guarded action button, not
             // a link: an anchor's modified-click/new-tab would bypass the
-            // confirmation handler. All other transitions keep the pager link.
+            // confirmation handler. Other transitions use the hash-change save guard.
             <button
               id="wizard-continue"
               ref={continueBtnRef}
@@ -924,17 +924,17 @@ function EncounterWizard({
             >
               {diagChecking
                 ? "Checking diagnosis…"
-                : `Continue to ${nextStep.label}`}
+                : "Continue"}
             </button>
           ) : (
-            <a
+            <button
               id="wizard-continue"
               className="xi-btn xi-btn-primary"
-              href={encounterStepHash(encounterId, nextStep.id)}
-              onClick={followStepLink}
+              type="button"
+              onClick={() => { window.location.hash = encounterStepHash(encounterId, nextStep.id); }}
             >
-              Continue to {nextStep.label}
-            </a>
+              Continue
+            </button>
           ))}
       </div>
 
