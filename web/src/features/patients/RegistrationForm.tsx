@@ -359,7 +359,7 @@ function RegistrationForm() {
                   checked={fields.clinicalStatus === "first_time"}
                   onChange={() => setField("clinicalStatus", "first_time")}
                 />
-                First-time
+                New case
               </label>
               <label htmlFor="reg-status-established">
                 <input
@@ -370,7 +370,7 @@ function RegistrationForm() {
                   checked={fields.clinicalStatus === "established"}
                   onChange={() => setField("clinicalStatus", "established")}
                 />
-                Established
+                Known case
               </label>
             </div>
             {clinicalStatusError !== null && (

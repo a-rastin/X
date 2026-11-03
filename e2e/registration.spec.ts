@@ -40,7 +40,7 @@ async function fillValidForm(
   await page.getByLabel("Patient ID").fill(fields.identifier);
   await page.getByRole("radio", { name: "M", exact: true }).check();
   await page.getByLabel("Age", { exact: true }).fill(fields.age ?? "30");
-  await page.getByRole("radio", { name: "First-time" }).check();
+  await page.getByRole("radio", { name: "New case" }).check();
   if (fields.phone !== undefined) {
     await page.getByLabel("Phone").fill(fields.phone);
   }
@@ -197,7 +197,7 @@ test("Register stays disabled until every demographics field is valid", async ({
   // Out-of-range and decimal ages never enable the button.
   await page.getByRole("radio", { name: "M", exact: true }).check();
   await page.getByLabel("Age", { exact: true }).fill("17");
-  await page.getByRole("radio", { name: "First-time" }).check();
+  await page.getByRole("radio", { name: "New case" }).check();
   await expect(register).toBeDisabled();
   await page.getByLabel("Age", { exact: true }).fill("30.5");
   await expect(register).toBeDisabled();

@@ -79,7 +79,7 @@ export function validateDemographics(fields: DemographicsFields): {
     errors.age = "Age must be an integer 18-99.";
   }
   if (fields.clinicalStatus !== "first_time" && fields.clinicalStatus !== "established") {
-    errors.clinicalStatus = "Select first-time or established.";
+    errors.clinicalStatus = "Select new case or known case.";
   }
   // Phone is optional free text with no format validation (plan §2.2).
   return { valid: Object.keys(errors).length === 0, errors };

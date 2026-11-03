@@ -59,7 +59,7 @@ As a physician, select **Register new patient** from the patient directory. The 
    | Patient ID | Exactly 10 digits, using `0`–`9`. Leading zeros are preserved. |
    | Sex | Select M or F from the available choices. |
    | Age | A whole number from 18 through 99. |
-   | Clinical status | Select first-time or established. |
+   | Clinical status | Select new case or known case. |
    | Phone | Optional free text. |
 
 2. Resolve any field errors. **Register patient** remains disabled while the form is invalid.
