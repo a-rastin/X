@@ -1,5 +1,7 @@
 # X-INSIGHT progress tracker
 
+[Issue 32 npm audit analysis (2026-11-03)](s01.md#follow-up-2026-11-03--issue-32-npm-audit-analysis): Vite patch candidate audits clean in isolation; implementation and acceptance remain open.
+
 [Issue 31 implementation (2026-11-03)](issue-31-checkpoint.md#follow-up-2026-11-03--issue-31-implementation): worker supervision and focused checks pass; live job-claim acceptance remains unverified.
 
 [Issue 30 Vite host implementation (2026-11-03)](s01.md#follow-up-2026-11-03--issue-30-vite-host-implementation): IPv4 default and override socket checks pass; clean-host startup and browser acceptance remain unverified.
