@@ -1,6 +1,6 @@
 # X-INSIGHT progress tracker
 
-[Issue 30 Vite host analysis (2026-11-03)](s01.md#follow-up-2026-11-03--issue-30-vite-host-analysis): IPv6-only binding reproduced; minimal fix planned, full startup unverified.
+[Issue 30 Vite host implementation (2026-11-03)](s01.md#follow-up-2026-11-03--issue-30-vite-host-implementation): IPv4 default and override socket checks pass; clean-host startup and browser acceptance remain unverified.
 
 [Issue 29 verification (2026-11-03)](s03.md#follow-up-2026-11-03--issue-29-verification): backend and local Chromium/Firefox checks pass; deployment remains unverified.
 

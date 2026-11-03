@@ -112,7 +112,12 @@ test database names distinct. Tests can replace or clear their database state.
 If ports 5432/5433 are occupied, choose available `DB_PORT`/`TEST_DB_PORT` values
 and update the respective URL ports. `BACKEND_PORT` and `WEB_PORT` select the API
 and Vite ports (defaults 8000 and 5173). Unless explicitly configured,
-`API_PROXY_TARGET` follows the selected backend port.
+`API_PROXY_TARGET` follows the selected backend port. Vite binds to IPv4 loopback
+`127.0.0.1` by default. Set `WEB_HOST` to choose another bind address; for example,
+`WEB_HOST=0.0.0.0 make dev` exposes Vite on network interfaces, so use it deliberately
+on a trusted network. Remote access may also require suitable origin and HTTPS
+configuration. If the root `.env` defines `WEB_HOST`, its value takes precedence
+over the shell for `make dev`; remove or change that entry to use a shell override.
 
 ### 3. Start the API, web server, and databases
 
@@ -161,7 +166,7 @@ return 200 even while the database is unavailable or incompatible.
 
 ### 5. Sign in
 
-Open [http://localhost:5173](http://localhost:5173) and select the administrator
+Open [http://127.0.0.1:5173](http://127.0.0.1:5173) and select the administrator
 role. On a fresh database, use username `admin` and password `admin`. Change the
 password before shared use. This account is seeded once; restarting the app does
 not reset a changed password.
