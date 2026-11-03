@@ -1,6 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { randomUUID } from "node:crypto";
 import {
+  E2E_API_BASE_URL as API_BASE,
   uniqueName,
   ensurePhysician,
   physicianSession,
@@ -39,7 +40,6 @@ import {
  * npx playwright test e2e/restores.spec.ts --project=chromium --project=firefox
  */
 
-const API_BASE = "http://127.0.0.1:8000";
 
 async function loginAdmin(page: import("@playwright/test").Page): Promise<void> {
   await loginAs(page, "admin", "admin", "admin");

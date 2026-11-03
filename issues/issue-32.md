@@ -1,6 +1,6 @@
 # Issue 32 — high-severity npm advisory
 
-Status: **analysis and plan; not fixed**. Audit evidence is from 2026-11-03 and may change as advisories are published.
+Status: **patch implemented; acceptance open**. The 2026-11-03 [S01 implementation](../project-documents/dev/progress/s01.md#follow-up-2026-11-03--issue-32-vite-patch-implementation) and [browser follow-up](../project-documents/dev/progress/s01.md#follow-up-2026-11-03--issue-32-browser-verification-follow-up) record checks and remaining limits. Audit evidence may change as advisories are published; the analysis below describes the pre-fix state.
 
 ## Root cause and impact
 

@@ -17,7 +17,7 @@
 #   mcp 2.3.0 (MCPServer API), pgmpy 1.1.2, pytest 9.1.1,
 #   sqlalchemy 2.1.3, alembic 1.20.0, psycopg 3.3.6 (binary),
 #   ruff 0.16.10, mypy 2.4.0,
-#   react 19.3.0, vite 8.3.2, typescript 7.0.2,
+#   react 19.3.0, vite 8.3.3, typescript 7.0.2,
 #   @vitejs/plugin-react 6.1.1, @playwright/test 1.63.0, @types/node 26.6.4
 
 .PHONY: setup dev stop migrate check test-backend test-web test-e2e test-recovery test-load verify help prod-build prod-up prod-migrate prod-stop prod-logs prod-check

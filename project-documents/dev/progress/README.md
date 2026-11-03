@@ -1,6 +1,6 @@
 # X-INSIGHT progress tracker
 
-[Issue 32 npm audit analysis (2026-11-03)](s01.md#follow-up-2026-11-03--issue-32-npm-audit-analysis): Vite patch candidate audits clean in isolation; implementation and acceptance remain open.
+[Issue 32 browser verification follow-up (2026-11-03)](s01.md#follow-up-2026-11-03--issue-32-browser-verification-follow-up): focused browser checks pass; full suite, full-data backup and walkthrough acceptance remain open.
 
 [Issue 31 implementation (2026-11-03)](issue-31-checkpoint.md#follow-up-2026-11-03--issue-31-implementation): worker supervision and focused checks pass; live job-claim acceptance remains unverified.
 

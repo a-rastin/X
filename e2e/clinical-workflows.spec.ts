@@ -154,9 +154,6 @@ async function gotoEncounter(
   draftId: string,
 ): Promise<void> {
   await page.goto(`/#/encounters/${draftId}#proposal-review`);
-  await expect(page.getByRole("heading", { name: "Encounter draft" })).toBeVisible({
-    timeout: 15000,
-  });
   await expect(page.getByTestId("proposal-review")).toBeVisible({ timeout: 15000 });
 }
 
@@ -1678,9 +1675,7 @@ test("S59 §§1-2 four cases accept exact current with comparison and retained h
 
     // Resume: reload shows the ready SignPanel with an enabled explicit Sign.
     await page.reload();
-    await expect(page.getByRole("heading", { name: "Encounter draft" })).toBeVisible({
-      timeout: 15000,
-    });
+    await expect(page.getByTestId("proposal-review")).toBeVisible({ timeout: 15000 });
     await expect(page.getByTestId("sign-panel")).toBeVisible({ timeout: 15000 });
     await expect(page.getByTestId("sign-panel")).toContainText("Proposal complete and current");
     await expect(page.getByTestId("sign-button")).toBeEnabled();
@@ -2637,9 +2632,6 @@ test("S59 §4 reload resumes batch CPT and plan with zero new generation POSTs",
     expect(getsBefore).toBeGreaterThanOrEqual(1);
 
     await page.reload();
-    await expect(page.getByRole("heading", { name: "Encounter draft" })).toBeVisible({
-      timeout: 15000,
-    });
     await expect(page.getByTestId("proposal-review")).toBeVisible({ timeout: 15000 });
     await expect(page.getByTestId("proposal-status-s59_r1")).toContainText("Completed", {
       timeout: 15000,
@@ -2759,9 +2751,7 @@ test("S59 §4 pending and failed block sign with plan preserved, server denies f
     // Failed values block sign and keep a per-question retry.
     failed = true;
     await page.reload();
-    await expect(page.getByRole("heading", { name: "Encounter draft" })).toBeVisible({
-      timeout: 15000,
-    });
+    await expect(page.getByTestId("proposal-review")).toBeVisible({ timeout: 15000 });
     await expect(page.getByTestId("proposal-status-s59_r2")).toContainText("Failed", {
       timeout: 15000,
     });

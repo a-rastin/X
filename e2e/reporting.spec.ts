@@ -5,6 +5,7 @@ import { dirname, join, resolve } from "node:path";
 import { writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import {
+  E2E_API_BASE_URL as API_BASE,
   uniqueName,
   uniqueLetters,
   uniquePatientId,
@@ -61,7 +62,6 @@ import {
 
 const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const VENV_PYTHON = join(REPO_ROOT, "backend", ".venv", "bin", "python");
-const API_BASE = process.env.E2E_API_BASE_URL ?? "http://127.0.0.1:8000";
 
 const EVIL_PLAN = "<script>alert('plan-xss')</script> Keep monitoring monthly.";
 const EVIL_NOTE = "<img src=x onerror=alert('note-xss')> Proposal looks complete.";

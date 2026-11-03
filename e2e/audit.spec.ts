@@ -328,7 +328,7 @@ test("S52 §3 physician sees no audit nav and direct route is guarded", async ({
 });
 
 // S52 §4 (cheap): dark theme renders the trail; keyboard drives filter+detail.
-test("S52 §4 audit works in dark theme and via keyboard", async ({ page }) => {
+test("S52 §4 audit works in dark theme and via keyboard", async ({ page, request }) => {
   await loginAdmin(page);
   await gotoAuditViaNav(page);
   const themeOf = (): Promise<string | null> =>
@@ -340,22 +340,53 @@ test("S52 §4 audit works in dark theme and via keyboard", async ({ page }) => {
   }
   await expect.poll(themeOf).toBe("dark");
   await expect(page.getByTestId("audit-table")).toBeVisible();
-  // Keyboard-only filter: Enter in the input submits the form (no click).
+  // Put a non-login event immediately before a new login event. The first
+  // unfiltered row is the same as the filtered one and cannot prove refresh alone.
+  for (const name of ["Switch to light theme", "Switch to dark theme"]) {
+    const saved = page.waitForResponse((response) =>
+      response.url().includes("/api/v1/me/preferences") && response.request().method() === "PATCH",
+    );
+    await page.getByRole("button", { name }).click();
+    expect((await saved).ok()).toBeTruthy();
+  }
+  const login = await request.post("/api/v1/auth/login", {
+    data: { username: "admin", password: "admin", role: "admin" },
+  });
+  expect(login.ok()).toBeTruthy();
+
+  // Wait for the filtered rows rather than the previous, still-visible table.
+  const filtered = page.waitForResponse((response) =>
+    response.url().includes("/api/v1/audit-events?") &&
+    new URL(response.url()).searchParams.get("operation") === "auth.login.success" &&
+    response.request().method() === "GET",
+  );
   await page.getByLabel("Action (operation)").fill("auth.login.success");
   await page.keyboard.press("Enter");
-  await expect(page.getByTestId("audit-table")).toContainText(
-    "auth.login.success",
-    { timeout: 15000 },
+  const filteredEvents = (await (await filtered).json()).items as {
+    operation: string;
+    occurred_at: string;
+  }[];
+  await expect(page.getByTestId("audit-table").locator("tbody tr td:nth-child(3)"))
+    .toHaveText(filteredEvents.map((event) => event.operation));
+
+  const refresh = page.waitForResponse((response) =>
+    response.url().includes("/api/v1/audit-events?") &&
+    !new URL(response.url()).searchParams.has("operation") &&
+    response.request().method() === "GET",
   );
-  // Keyboard-only detail: Tab to the first View button, Enter opens it.
   await page.getByRole("button", { name: "Clear" }).click();
-  await expect(page.getByTestId("audit-table")).toBeVisible({
-    timeout: 15000,
-  });
-  const view = page
-    .getByTestId("audit-table")
-    .getByRole("button", { name: /View detail for/ })
-    .first();
+  const events = (await (await refresh).json()).items as {
+    operation: string;
+    occurred_at: string;
+  }[];
+  expect(events[0].operation).toBe("auth.login.success");
+  expect(events[0].occurred_at).toBe(filteredEvents[0].occurred_at);
+  expect(events.some((event) => event.operation !== "auth.login.success")).toBeTruthy();
+  const views = page.getByTestId("audit-table").getByRole("button", { name: /View detail for/ });
+  await expect.poll(() => views.evaluateAll((buttons) =>
+    buttons.map((button) => button.getAttribute("aria-label")),
+  )).toEqual(events.map((event) => `View detail for ${event.operation} at ${event.occurred_at}`));
+  const view = views.first();
   await view.focus();
   await expect(view).toBeFocused();
   await page.keyboard.press("Enter");

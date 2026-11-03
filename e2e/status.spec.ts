@@ -1,5 +1,6 @@
 import { test, expect } from "@playwright/test";
 import {
+  E2E_API_BASE_URL as API_BASE,
   uniqueName,
   ensurePhysician,
   physicianSession,
@@ -57,7 +58,6 @@ async function loginAdmin(page: import("@playwright/test").Page): Promise<void> 
   ).toBeVisible({ timeout: 15000 });
 }
 
-const API_BASE = "http://127.0.0.1:8000";
 
 // S58 §§3-4: admin login → Status nav → live metrics from the real endpoint
 // → manual refresh re-reads without losing the rendered sections.
