@@ -1,6 +1,6 @@
 # Issue 29: Favicon and anonymous session probe
 
-Status: source analysis and implementation plan, 2026-11-03. No application code was changed and no browser reproduction or acceptance test was run.
+Status: implemented and locally verified, 2026-11-03. See the [verification handoff](../project-documents/dev/progress/s03.md#follow-up-2026-11-03--issue-29-verification); deployed acceptance remains unverified.
 
 ## Root cause
 

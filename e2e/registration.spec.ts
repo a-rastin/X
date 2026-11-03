@@ -498,7 +498,7 @@ for (const key of ["Enter", "Space"]) {
 }
 
 test("registration axe results do not exceed the recorded baseline", async ({ page }) => {
-  await page.route("**/api/v1/me", route => route.fulfill({ json: {
+  await page.route("**/api/v1/me?optional=true", route => route.fulfill({ json: {
     user: { id: "synthetic-physician", username: "test", role: "physician", theme: "light" },
     csrf_token: "synthetic", research_warning: null, research_warning_version: null,
   } }));

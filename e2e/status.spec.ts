@@ -159,7 +159,7 @@ test("S58 §§3-4 admin sees live operational status and can refresh it", async 
 });
 
 test("issue 20 shows separate timeouts and clears a generation alert on refresh", async ({ page }) => {
-  await page.route("**/api/v1/me", (route) => route.fulfill({ json: {
+  await page.route("**/api/v1/me?optional=true", (route) => route.fulfill({ json: {
     user: { id: "admin", username: "admin", role: "admin", theme: "light" },
     csrf_token: "test-token", research_warning: null, research_warning_version: null,
   } }));

@@ -13,6 +13,9 @@ PostgreSQL:
 5. Versioned research-warning acknowledgement (issue 24): both roles gated on
    login and /me until the session user acknowledges the current version;
    stale versions are 409 without writes; CSRF/session denial; no revision bump.
+6. Opt-in anonymous /me probe (issue 29): ?optional=true answers
+   {"user": null} with no-store for a missing/invalid/revoked/inactive
+   session; the default path and every other route keep the 401 contract.
 
 Handoff: ``admin_client`` fixture is the authenticated interface (cookies +
 CSRF); revocation is credential-revision + revoked_at, never timeout.
@@ -703,3 +706,161 @@ def test_acknowledgement_leaves_credential_and_profile_revisions_unchanged(
     assert after["revision"] == before["revision"]
     # A credential-revision bump would revoke this live session; it must survive.
     assert client.get("/api/v1/me").status_code == 200
+
+
+# --- Slice 6: opt-in anonymous /me probe (issue 29) ---
+#
+# The browser's startup session check asks `GET /me?optional=true` so a stale
+# or absent session is not recorded as a failed request. With the flag a
+# missing, invalid, revoked or inactive session answers 200 {"user": null}
+# with `Cache-Control: private, no-store`; a valid session answers with the
+# unchanged authenticated payload and cache header. The flag never
+# authenticates: validation stays server-side on the cookie alone, the default
+# path keeps its 401 contract, and no other route reads the flag.
+
+ME_PATH = "/api/v1/me"
+PHYSICIANS_PATH = "/api/v1/physicians"
+
+
+def test_optional_probe_reports_anonymous_without_a_valid_session(
+    clean_identity, monkeypatch
+) -> None:
+    monkeypatch.setattr(db_module, "get_engine", lambda: clean_identity)
+    client = TestClient(app)
+    assert _login(client).status_code == 200
+    # No cookie at all: the startup check of a never-signed-in browser.
+    no_cookie = TestClient(app).get(ME_PATH, params={"optional": True})
+    assert no_cookie.status_code == 200
+    assert no_cookie.json() == {"user": None}
+    assert no_cookie.headers["Cache-Control"] == "private, no-store"
+
+    # A cookie value that matches no stored session.
+    invalid = TestClient(app, cookies={SESSION_COOKIE_NAME: "not-a-session"})
+    forged = invalid.get(ME_PATH, params={"optional": True})
+    assert forged.status_code == 200
+    assert forged.json() == {"user": None}
+    assert forged.headers["Cache-Control"] == "private, no-store"
+
+    # The stored session was revoked (logout/password change path): the cookie
+    # is still present, so this cannot be confused with the missing-cookie case.
+    with db_module.session_scope(clean_identity) as session:
+        session.execute(text("UPDATE sessions SET revoked_at = now()"))
+    revoked = client.get(ME_PATH, params={"optional": True})
+    assert revoked.status_code == 200
+    assert revoked.json() == {"user": None}
+    assert revoked.headers["Cache-Control"] == "private, no-store"
+    # A deactivated account answers the same way; covered separately below.
+
+
+def test_optional_probe_reports_anonymous_for_an_inactive_account(
+    clean_identity, monkeypatch
+) -> None:
+    monkeypatch.setattr(db_module, "get_engine", lambda: clean_identity)
+    client = TestClient(app)
+    assert _login(client).status_code == 200
+    with db_module.session_scope(clean_identity) as session:
+        session.execute(text("UPDATE users SET active = false"))
+    assert client.get(ME_PATH).status_code == 401
+    inactive = client.get(ME_PATH, params={"optional": True})
+    assert inactive.status_code == 200
+    assert inactive.json() == {"user": None}
+    assert inactive.headers["Cache-Control"] == "private, no-store"
+
+
+def test_optional_probe_returns_the_authenticated_payload_for_a_valid_session(
+    clean_identity, monkeypatch
+) -> None:
+    monkeypatch.setattr(db_module, "get_engine", lambda: clean_identity)
+    client = TestClient(app)
+    login = _login(client)
+    assert login.status_code == 200
+    default = client.get(ME_PATH)
+    probe = client.get(ME_PATH, params={"optional": True})
+    assert probe.status_code == 200
+    assert probe.headers["Cache-Control"] == "private, no-store"
+    body = probe.json()
+    # Same payload as the default path: fields and values are unchanged.
+    assert body == default.json()
+    assert set(body) == {
+        "user",
+        "csrf_token",
+        "research_warning",
+        "research_warning_version",
+    }
+    assert body["user"] == login.json()["user"]
+    assert body["csrf_token"] == login.json()["csrf_token"]
+    assert _warning_fields(body) == _pending()
+    # Explicit false is the default path, not the anonymous probe: still the
+    # full authenticated payload, byte-for-byte the un-flagged response. The
+    # theme patch comes after this snapshot so the comparison same-states.
+    explicit_false = client.get(ME_PATH, params={"optional": False})
+    assert explicit_false.status_code == 200
+    assert explicit_false.json() == default.json()
+    # The restored token still authenticates a CSRF-protected mutation.
+    themed = client.patch(
+        "/api/v1/me/preferences", json={"theme": "dark"}, headers=_auth_headers(body["csrf_token"])
+    )
+    assert themed.status_code == 200
+    # The mutation is observable, so the comparison above was not vacuous.
+    assert client.get(ME_PATH).json()["user"]["theme"] == "dark"
+
+
+def test_me_without_flag_or_session_keeps_401(clean_identity, monkeypatch) -> None:
+    monkeypatch.setattr(db_module, "get_engine", lambda: clean_identity)
+    anonymous = TestClient(app)
+    # No flag, explicit false, and an unrelated query parameter all keep 401.
+    for query in ({}, {"optional": False}, {"probe": "1"}):
+        response = anonymous.get(ME_PATH, params=query)
+        assert response.status_code == 401
+        body = response.json()
+        assert set(body) == {
+            "code",
+            "message",
+            "field_errors",
+            "request_id",
+            "retryable",
+        }
+        assert body["code"] == "UNAUTHENTICATED"
+        assert body["message"] == "Authentication required."
+        assert body["field_errors"] == {}
+        assert body["retryable"] is False
+        assert body["request_id"] == response.headers["x-request-id"]
+        # The error body is unchanged: no-store comes only from the probe.
+        assert "Cache-Control" not in response.headers
+
+
+def test_optional_flag_is_not_honored_on_other_routes(clean_identity, monkeypatch) -> None:
+    monkeypatch.setattr(db_module, "get_engine", lambda: clean_identity)
+    anonymous = TestClient(app)
+    # A protected route stays 401 with or without the flag.
+    for query in ({"optional": True}, {}):
+        physicians = anonymous.get(PHYSICIANS_PATH, params=query)
+        assert physicians.status_code == 401
+        assert physicians.json()["code"] == "UNAUTHENTICATED"
+    # Mutations are gated by session + CSRF, never by the flag: the session
+    # check runs before the token check, so no cookie denies 401 UNAUTHENTICATED.
+    no_cookie = anonymous.patch("/api/v1/me/preferences", json={"theme": "dark"})
+    assert no_cookie.status_code == 401
+    assert no_cookie.json()["code"] == "UNAUTHENTICATED"
+    # With a session but no (or a forged) token, the flag-denial is the same
+    # 403 FORBIDDEN every other mutation returns: CSRF is not bypassed.
+    assert _login(anonymous).status_code == 200
+    missing = anonymous.patch(
+        "/api/v1/me/preferences", json={"theme": "dark"}, params={"optional": True}
+    )
+    assert missing.status_code == 403
+    assert missing.json()["code"] == "FORBIDDEN"
+    forged = anonymous.patch(
+        "/api/v1/me/preferences",
+        json={"theme": "dark"},
+        headers=_auth_headers("forged"),
+        params={"optional": True},
+    )
+    assert forged.status_code == 403
+    assert forged.json()["code"] == "FORBIDDEN"
+    # The flag alone also grants no authenticated session for its own route:
+    # a valid session still comes from the cookie only.
+    with db_module.session_scope(clean_identity) as session:
+        session.execute(text("UPDATE sessions SET revoked_at = now()"))
+    assert anonymous.get(ME_PATH, params={"optional": True}).json() == {"user": None}
+    assert anonymous.get(ME_PATH, params={"optional": True}).status_code == 200

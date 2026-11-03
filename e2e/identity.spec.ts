@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect, type Page } from "@playwright/test";
 import {
   RESEARCH_WARNING,
   GENERIC_LOGIN_ERROR,
@@ -711,7 +711,7 @@ test("S61 physician list says when the table is shorter than the total", async (
 
 for (const oldResponse of ["success", "failure"] as const) {
 test(`physician creation guards submissions and ignores older ${oldResponse}`, async ({ page }) => {
-  await page.route("**/api/v1/me", (route) => route.fulfill({ json: {
+  await page.route("**/api/v1/me?optional=true", (route) => route.fulfill({ json: {
     user: { id: "admin", username: "admin", role: "admin", theme: "light" },
     csrf_token: "test", research_warning: null, research_warning_version: null,
   } }));
@@ -800,7 +800,7 @@ test(`physician creation guards submissions and ignores older ${oldResponse}`, a
 }
 
 test("an off-page created physician refreshes after an edit conflict", async ({ page }) => {
-  await page.route("**/api/v1/me", (route) => route.fulfill({ json: {
+  await page.route("**/api/v1/me?optional=true", (route) => route.fulfill({ json: {
     user: { id: "admin", username: "admin", role: "admin", theme: "light" },
     csrf_token: "test", research_warning: null, research_warning_version: null,
   } }));
@@ -846,4 +846,267 @@ test("an off-page created physician refreshes after an edit conflict", async ({ 
   await edit.getByRole("button", { name: "Save changes" }).click();
   await expect(page.getByRole("row").filter({ hasText: "zsaved" })).toContainText("Inactive");
   expect(patches).toBe(2);
+});
+
+// ---- Issue 29: real favicon and the anonymous /me start-up probe ----
+//
+// Every test below is path-agnostic: it only speaks /, relative links and
+// the real API through the same-origin proxy, so the whole block is meant to
+// be exercised twice — once against `vite dev` and once against the built
+// site served by `vite preview` (the static path Caddy serves in production,
+// where a missing path falls back to index.html).
+
+/** A response the browser actually received during the load under test. The
+ * alias keeps the Playwright type out of the assertions without shadowing the
+ * DOM `Response`. */
+type NetworkResponse = import("@playwright/test").Response;
+
+interface StartupTraffic {
+  responses: NetworkResponse[];
+  /** Console messages of type `error`/`warning`, as the browser reported them. */
+  consoleMessages: { type: string; text: string }[];
+}
+
+/** Record every network response and every console error/warning from before
+ * the first document request, so the assertions read the whole set once the
+ * page has settled instead of racing individual events. */
+function recordStartupTraffic(page: Page): StartupTraffic {
+  const responses: NetworkResponse[] = [];
+  const consoleMessages: { type: string; text: string }[] = [];
+  page.on("response", (response) => {
+    responses.push(response);
+  });
+  page.on("console", (message) => {
+    const type = message.type();
+    // Only the levels the browser uses to report a failed request.
+    // verbose/debug/info/log lines carry nothing about a failure.
+    if (type === "error" || type === "warning") {
+      consoleMessages.push({ type, text: message.text() });
+    }
+  });
+  return { responses, consoleMessages };
+}
+
+function responsePath(url: string): string {
+  try {
+    return new URL(url).pathname;
+  } catch {
+    return url;
+  }
+}
+
+function responsesToPath(
+  traffic: StartupTraffic,
+  path: string,
+): NetworkResponse[] {
+  return traffic.responses.filter(
+    (response) => responsePath(response.url()) === path,
+  );
+}
+
+/** The theme the server confirmed, read from the document attribute the app
+ * applies only from the authenticated /me payload or a saved mutation. */
+function documentTheme(page: Page): Promise<string | null> {
+  return page.evaluate(() =>
+    document.documentElement.getAttribute("data-theme"),
+  );
+}
+
+/** Save the theme preference through the real header control and return the
+ * theme the server confirmed. The control is a CSRF-protected
+ * PATCH /me/preferences: a missing, stale or mismatched token is rejected by
+ * the CSRF gate before the handler runs, so this doubles as the proof that a
+ * restored token still authorises a mutation. */
+async function saveThemeThroughHeaderControl(
+  page: Page,
+): Promise<"light" | "dark"> {
+  const before = await documentTheme(page);
+  expect(before, "the session carries a theme").not.toBeNull();
+  const target: "light" | "dark" = before === "dark" ? "light" : "dark";
+  // The control is labelled with the theme it switches to, whatever the
+  // current one happens to be (admin's theme persists across specs).
+  const switchTo = `Switch to ${target} theme`;
+  const switchBack = `Switch to ${before} theme`;
+  await page.getByRole("button", { name: switchTo }).click();
+  // The label and the document follow only the server-confirmed theme; a
+  // rejected save reverts the label and announces its own error instead.
+  await expect(page.getByRole("button", { name: switchBack })).toBeVisible();
+  await expect.poll(() => documentTheme(page)).toBe(target);
+  await expect(
+    page.getByText("Theme preference could not be saved."),
+  ).toHaveCount(0);
+  return target;
+}
+
+test("clean context start-up shows sign-in, serves a real favicon, and asks /me quietly", async ({
+  page,
+}) => {
+  // Playwright gives each test its own context, so this load starts with empty
+  // localStorage and no session cookie: the HttpOnly cookie is the only thing
+  // that could establish a session here, and there is none.
+  const traffic = recordStartupTraffic(page);
+  await page.goto("/");
+  await expect(page.getByRole("heading", { name: "Sign in" })).toBeVisible();
+  await expect(page.getByRole("button", { name: "Sign in" })).toBeVisible();
+
+  // --- favicon: the document declares the icon, and the URL serves one ---
+  // The link is what makes a real browser (with a tab strip) request the icon.
+  expect(
+    await page.evaluate(() => {
+      const link = document.querySelector('link[rel="icon"]');
+      return link === null
+        ? null
+        : new URL((link as HTMLLinkElement).href, document.baseURI).pathname;
+    }),
+    "index.html declares the icon",
+  ).toBe("/favicon.ico");
+
+  // Headless Chromium and headless Firefox make no /favicon.ico request of
+  // their own: both run without the tab strip that asks for one, so the
+  // recorded page traffic usually holds no icon response at all. That is a
+  // browser gap, not an application failure, so the declared URL is requested
+  // from the page itself (the page's own network stack and origin, no
+  // credentials, cache bypassed) and what the server answers with is asserted
+  // there. Any icon response a browser did request on load is still checked
+  // for a failure status below.
+  const icon = await page.evaluate(async () => {
+    const response = await fetch("/favicon.ico", { cache: "no-store" });
+    const bytes = new Uint8Array(await response.arrayBuffer());
+    return {
+      url: response.url,
+      status: response.status,
+      contentType: response.headers.get("content-type") ?? "",
+      // The first bytes decide icon vs. SPA HTML fallback, so they are carried
+      // back as numbers instead of being decoded here.
+      firstBytes: Array.from(bytes.subarray(0, 32)),
+    };
+  });
+  expect(icon.status, `${icon.status} ${icon.url}`).toBe(200);
+  // Vite (dev) and the preview server (the static path Caddy serves) both
+  // answer with the asset's own image type.
+  expect(icon.contentType.toLowerCase()).toMatch(
+    /^image\/(x-icon|vnd\.microsoft\.icon|icon|png|gif)/,
+  );
+  // ICO magic is ICONDIR's reserved-zero count + type-1 marker. An HTML
+  // fallback (index.html) never starts with it, so this is the check that the
+  // status code alone cannot give.
+  expect(icon.firstBytes.slice(0, 4)).toEqual([0x00, 0x00, 0x01, 0x00]);
+  const opening = icon.firstBytes
+    .map((byte) => String.fromCharCode(byte))
+    .join("")
+    .trimStart()
+    .toLowerCase();
+  expect(opening.startsWith("<!doctype")).toBeFalsy();
+  expect(opening.startsWith("<html")).toBeFalsy();
+
+  // --- no favicon failure anywhere in the load ---------------------------
+  const faviconFailures = traffic.responses.filter(
+    (response) =>
+      responsePath(response.url()).endsWith("favicon.ico") &&
+      response.status() >= 400,
+  );
+  expect(faviconFailures.map((r) => `${r.status()} ${r.url()}`)).toEqual([]);
+
+  // --- /me: the opt-in probe is asked and answered 200, never a 401 ------
+  const probes = responsesToPath(traffic, "/api/v1/me");
+  expect(
+    probes.length,
+    "the client probed /api/v1/me on start-up",
+  ).toBeGreaterThan(0);
+  for (const probe of probes) {
+    expect(probe.status(), `${probe.status()} ${probe.url()}`).toBe(200);
+    // The opt-in flag is what keeps this a documented anonymous probe; the
+    // default route keeps its 401 contract for every other client.
+    expect(new URL(probe.url()).searchParams.get("optional")).toBe("true");
+  }
+
+  // --- console: nothing about the icon or the probe was reported ---------
+  // Only what this issue is about is asserted. The framework and the dev
+  // tooling emit unrelated warnings that say nothing about the favicon or the
+  // start-up probe, so they are deliberately not treated as failures here.
+  const probeFailures = traffic.consoleMessages.filter((entry) =>
+    /favicon|\.ico|\/me\b|\b401\b|\b404\b/i.test(entry.text),
+  );
+  expect(probeFailures.map((entry) => `${entry.type}: ${entry.text}`)).toEqual(
+    [],
+  );
+});
+
+test("signed-in reload restores the identity and a working CSRF token", async ({
+  page,
+}) => {
+  await loginAs(page, "admin", "admin", "admin");
+  await acknowledgeWarningIfPresent(page);
+  await expect(
+    page.getByRole("heading", { name: "Administrator dashboard" }),
+  ).toBeVisible();
+
+  await page.reload();
+  // Identity is restored from the cookie alone: the header is back, the route
+  // renders, and the persisted acknowledgement is still committed so the
+  // warning gate does not reopen.
+  await expect(page.getByRole("button", { name: "Sign out" })).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Administrator dashboard" }),
+  ).toBeVisible();
+  await expect(page.getByRole("alertdialog")).toHaveCount(0);
+
+  // /me re-issues the token for that cookie, so localStorage carries one again.
+  await expect
+    .poll(() => page.evaluate(() => localStorage.getItem("xi_csrf_token") ?? ""))
+    .not.toBe("");
+
+  // The restored token authorises a CSRF-protected mutation.
+  const saved = await saveThemeThroughHeaderControl(page);
+  // The save really reached the server, so the confirmed theme is what the
+  // next /me payload restores after another document load.
+  await page.reload();
+  await expect.poll(() => documentTheme(page)).toBe(saved);
+  await expect(
+    page.getByRole("heading", { name: "Administrator dashboard" }),
+  ).toBeVisible();
+  // Return the shared admin singleton to the theme this test found it in.
+  const flippedBack = await saveThemeThroughHeaderControl(page);
+  expect(flippedBack).not.toBe(saved);
+});
+
+test("cleared localStorage keeps the session from the cookie and re-issues the CSRF token", async ({
+  page,
+}) => {
+  await loginAs(page, "admin", "admin", "admin");
+  await acknowledgeWarningIfPresent(page);
+  await expect(
+    page.getByRole("heading", { name: "Administrator dashboard" }),
+  ).toBeVisible();
+
+  // localStorage is not a session authority: drop every key while the
+  // HttpOnly session cookie stays, exactly as a storage eviction would.
+  await page.evaluate(() => {
+    localStorage.clear();
+  });
+  expect(await page.evaluate(() => localStorage.getItem("xi_csrf_token"))).toBeNull();
+
+  await page.reload();
+  // The cookie alone still restores the identity, with no gate re-opened.
+  await expect(page.getByRole("button", { name: "Sign out" })).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Administrator dashboard" }),
+  ).toBeVisible();
+  await expect(page.getByRole("alertdialog")).toHaveCount(0);
+
+  // The start-up probe re-issues the matching token for that cookie, so the
+  // next mutation can present it.
+  await expect
+    .poll(() => page.evaluate(() => localStorage.getItem("xi_csrf_token") ?? ""))
+    .not.toBe("");
+
+  // With storage cleared, the re-issued token still authorises a mutation.
+  const saved = await saveThemeThroughHeaderControl(page);
+  await page.reload();
+  await expect.poll(() => documentTheme(page)).toBe(saved);
+  await expect(
+    page.getByRole("heading", { name: "Administrator dashboard" }),
+  ).toBeVisible();
+  const flippedBack = await saveThemeThroughHeaderControl(page);
+  expect(flippedBack).not.toBe(saved);
 });

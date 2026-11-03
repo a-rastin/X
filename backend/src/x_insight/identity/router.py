@@ -268,11 +268,27 @@ def logout(request: Request, session: Session = Depends(get_session)) -> JSONRes
 
 
 @router.get("/me")
-def me(request: Request, session: Session = Depends(get_session)) -> JSONResponse:
+def me(
+    request: Request,
+    session: Session = Depends(get_session),
+    optional: bool = False,
+) -> JSONResponse:
     request_id = get_request_id(request)
     raw_token = _raw_session_token(request)
     user = service.get_session_user(session, raw_token)
     if user is None:
+        # Opt-in anonymous probe (issue 29): a client that only wants to learn
+        # whether a session exists asks with ?optional=true, so a missing,
+        # invalid, revoked or inactive session answers 200 {"user": null}
+        # instead of a 401 the browser records as a failed request. The flag
+        # never authenticates anything: the cookie is still the only authority
+        # and the default path keeps the 401 contract. No other route reads it.
+        if optional:
+            return JSONResponse(
+                status_code=200,
+                content={"user": None},
+                headers={"Cache-Control": "private, no-store"},
+            )
         return error_response(401, "UNAUTHENTICATED", "Authentication required.", request_id)
     assert raw_token is not None
     session_row = service.get_session_row(session, raw_token)

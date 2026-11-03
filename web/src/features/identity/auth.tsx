@@ -74,9 +74,26 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     [],
   );
 
+  const becomeAnonymous = useCallback(() => {
+    setCsrfToken(null);
+    setUser(null);
+    setResearchWarning(null);
+    setResearchWarningVersion(null);
+    setWarningPending(false);
+    setWarningError(null);
+    setStatus("anonymous");
+  }, []);
+
   const refresh = useCallback(async () => {
     try {
       const result = await me();
+      // ?optional=true answers 200 {"user": null} when no session exists:
+      // same quiet cleanup the 401 branch performs, without the browser
+      // recording a failed request on first paint.
+      if (result.user === null) {
+        becomeAnonymous();
+        return;
+      }
       ingestSession(
         result.user,
         result.research_warning,
@@ -84,18 +101,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       );
     } catch (error) {
       if (error instanceof ApiError && error.status === 401) {
-        setCsrfToken(null);
-        setUser(null);
-        setResearchWarning(null);
-        setResearchWarningVersion(null);
-        setWarningPending(false);
-        setWarningError(null);
-        setStatus("anonymous");
+        becomeAnonymous();
         return;
       }
       throw error;
     }
-  }, [ingestSession]);
+  }, [becomeAnonymous, ingestSession]);
 
   useEffect(() => {
     applyDocumentTheme("light");

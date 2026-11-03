@@ -180,8 +180,24 @@ export interface MeResult {
   research_warning_version: string | null;
 }
 
-export async function me(): Promise<MeResult> {
-  const result = await request<MeResult>("/me");
+/** Opt-in anonymous probe body: `/me` with no valid session answers this
+ * instead of a 401, so a signed-out first paint makes no failed request. */
+export interface AnonymousMeResult {
+  user: null;
+}
+
+export async function me(): Promise<MeResult | AnonymousMeResult> {
+  // ?optional=true is the documented opt-in probe: the server returns
+  // 200 {"user": null} rather than 401 when no session exists. Discriminate
+  // on the server's user field — never on anything the client stored. The
+  // HttpOnly cookie is the only session authority, so only the authenticated
+  // response (which the server derives from that cookie) may write the CSRF
+  // token; localStorage must not decide whether a session exists or hand out
+  // a token for one.
+  const result = await request<MeResult | AnonymousMeResult>("/me?optional=true");
+  if (result.user === null) {
+    return result;
+  }
   setCsrfToken(result.csrf_token);
   return result;
 }
