@@ -181,13 +181,14 @@ in [deploy/](deploy/).
 ## Local development
 
 Follow the [Installation and Running Guide](docs/installation.md) for prerequisites,
-source checkout, local configuration, automatic setup, first login, the separate worker,
+source checkout, local configuration, automatic setup, first login, the background worker,
 and troubleshooting. It also covers Docker deployment on a Linux host.
 
 After configuring `.env`, run `make dev`. It loads the configuration, waits for
-PostgreSQL, prepares schema and approved DDI data, then starts the API and Vite
-on ports 8000/5173 by default. The background worker remains a separate local
-process. For shared deployment, follow the guide's Docker instructions and run
+PostgreSQL, prepares schema and approved DDI data, then starts the API, Vite
+on ports 8000/5173 by default, and the background worker. Stop the foreground
+processes with Ctrl-C, then stop the database containers with `make stop`. For
+shared deployment, follow the guide's Docker instructions and run
 `make prod-up` after building images; production startup prepares data before
 starting the API and worker.
 

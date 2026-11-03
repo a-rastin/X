@@ -8,7 +8,7 @@
 #
 # Environment placeholders live in `.env.example` (copy to `.env`, never commit it).
 # If host PostgreSQL occupies 5432/5433, rerun with overrides: DB_PORT=5442 TEST_DB_PORT=5443 make dev.
-# Stop the stack with `make stop` (== `docker compose down`).
+# Stop foreground processes with Ctrl-C, then containers with `make stop` (== `docker compose down`).
 # Volumes are disposable: `docker compose down -v` drops local and test data.
 #
 # Pinned runtimes (verified by install smoke in S01):
@@ -27,8 +27,8 @@ E2E_BASE_URL ?= http://localhost:5173
 
 help:
 	@echo "make setup        # locked dependencies and development prerequisites"
-	@echo "make dev          # documented local stack (db + backend :8000 + web :5173)"
-	@echo "make stop         # stop the local stack"
+	@echo "make dev          # local stack (db + backend :8000 + web :5173 + worker)"
+	@echo "make stop         # stop local Compose containers"
 	@echo "make migrate      # apply schema + bundled approved DDI data (DATABASE_URL or .env)"
 	@echo "make check        # formatting/lint/types/build, excluding network access"
 	@echo "make test-backend # backend tests (TEST=tests/http/test_health.py for a selector)"
@@ -70,17 +70,17 @@ dev:
 	done; \
 	docker compose up -d --wait db db-test; \
 	(cd backend && uv run python -m x_insight.operations.migrate); \
-	echo "database and approved DDI ready. Starting backend :$$BACKEND_PORT and web :$$WEB_PORT."; \
+	echo "database and approved DDI ready. Starting backend :$$BACKEND_PORT, web :$$WEB_PORT, and worker."; \
 	echo "Stop with 'make stop' (Ctrl-C then 'make stop' if running foreground)."; \
-	api_pid=; web_pid=; \
+	api_pid=; web_pid=; worker_pid=; \
 	cleanup() { \
-	for pid in "$$api_pid" "$$web_pid"; do \
+	for pid in "$$api_pid" "$$web_pid" "$$worker_pid"; do \
 	if [ -n "$$pid" ]; then \
 	kill "$$pid" 2>/dev/null || true; \
 	kill -- "-$$pid" 2>/dev/null || true; \
 	fi; \
 	done; \
-	for pid in "$$api_pid" "$$web_pid"; do \
+	for pid in "$$api_pid" "$$web_pid" "$$worker_pid"; do \
 	if [ -n "$$pid" ]; then wait "$$pid" 2>/dev/null || true; fi; \
 	done; \
 	}; \
@@ -88,7 +88,19 @@ dev:
 	trap 'exit 130' INT; trap 'exit 143' TERM; \
 	setsid bash -c 'cd backend && exec uv run uvicorn x_insight.app:app --host 0.0.0.0 --port "$$BACKEND_PORT" --reload' & api_pid=$$!; \
 	setsid bash -c 'cd web && exec npm run dev -- --port "$$WEB_PORT" --strictPort' & web_pid=$$!; \
-	wait -n "$$api_pid" "$$web_pid"
+	setsid bash -c 'cd backend && exec uv run python -m x_insight.reasoning' & worker_pid=$$!; \
+	while :; do \
+	for pid in "$$api_pid" "$$web_pid" "$$worker_pid"; do \
+	if ! kill -0 "$$pid" 2>/dev/null; then \
+	status=0; wait "$$pid" || status=$$?; \
+	if [ "$$pid" = "$$worker_pid" ]; then \
+	echo 'worker is not running' >&2; [ "$$status" -ne 0 ] || status=1; \
+	fi; \
+	exit "$$status"; \
+	fi; \
+	done; \
+	sleep 0.1; \
+	done
 
 stop:
 	docker compose down

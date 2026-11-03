@@ -131,7 +131,7 @@ make dev
 ports, PostgreSQL credentials and DDI default selection take precedence over
 that file. It starts `db` and `db-test`, waits for database health, then applies
 schema migrations and approved DDI data automatically. Only after setup succeeds
-does it start the reload-enabled API and Vite. It does not start a local worker.
+does it start the reload-enabled API, Vite, and background worker.
 
 The database-port preflight permits this project's already-running database
 containers and rejects unrelated listeners. Stop a different stack or choose
@@ -157,8 +157,8 @@ or a model provider. The first rebuild/import may take several minutes; wait for
 the exact immutable release. Existing released datasets are preserved unless the
 bundled version is explicitly configured; see the [bootstrap rules](ddinter-operations.md#fresh-installation-with-the-bundled-approved-release).
 
-Current schema head is `0026`. Setup failure exits before either local server
-starts; correct the reported error and run `make dev` again. `make migrate`
+Current schema head is `0026`. Setup failure exits before the local processes
+start; correct the reported error and run `make dev` again. `make migrate`
 remains an optional operator tool for setup without launching servers. Plain
 `alembic upgrade head` creates schema without provisioning DDI data; `/ready`
 alone does not prove a DDI release is available. The public liveness endpoint can
@@ -175,25 +175,15 @@ Create physician accounts through administrator account management. Physicians
 use their own accounts; self-registration is unavailable. The initial UI and
 account check does not require a model provider.
 
-### 6. Start the background worker
+### 6. Background worker
 
-To process queued generation and local-calculation work, open another terminal at the
-repository root:
-
-```sh
-set -a
-. ./.env
-set +a
-cd backend
-uv run python -m x_insight.reasoning
-```
-
-Keep this process running. It uses the same application database as the API.
-The worker launches private MCP subprocesses itself; no separately hosted MCP
-server or inbound MCP port is required. Missing endpoint/model configuration
-produces `PROVIDER_NOT_CONFIGURED` for generation. Local calculation does not
-call the provider, but still needs the worker and an eligible successful original
-execution.
+`make dev` starts the worker using the same effective environment and database as
+the API. Its foreground output reports an unexpected process exit, but a running
+process does not establish that it can process jobs. The worker launches private
+MCP subprocesses itself; no separately hosted MCP server or inbound MCP port is
+required. Missing endpoint/model configuration produces `PROVIDER_NOT_CONFIGURED`
+for generation. Local calculation does not call the provider, but still needs the
+worker and an eligible successful original execution.
 
 ## Docker deployment on Linux
 
@@ -435,9 +425,9 @@ checks remain recorded in the [release report](../project-documents/dev/progress
 
 | Task | Local development | Docker deployment |
 | --- | --- | --- |
-| Stop | `Ctrl+C` in API/web/worker terminals, then `make stop` | `make prod-stop PROD_ENV_FILE="$X_INSIGHT_PROD_ENV_FILE"` |
-| Start again | Run `make dev`, then start the separate worker | `make prod-up PROD_ENV_FILE="$X_INSIGHT_PROD_ENV_FILE"` |
-| Inspect services | `docker compose ps`; API/web/worker terminal output | `docker compose -f compose.prod.yaml --env-file "$X_INSIGHT_PROD_ENV_FILE" ps` |
+| Stop | `Ctrl+C` in the `make dev` terminal, then `make stop` | `make prod-stop PROD_ENV_FILE="$X_INSIGHT_PROD_ENV_FILE"` |
+| Start again | Run `make dev` | `make prod-up PROD_ENV_FILE="$X_INSIGHT_PROD_ENV_FILE"` |
+| Inspect services | `docker compose ps`; `make dev` terminal output | `docker compose -f compose.prod.yaml --env-file "$X_INSIGHT_PROD_ENV_FILE" ps` |
 | Application logs | Foreground process terminals | `make prod-logs PROD_ENV_FILE="$X_INSIGHT_PROD_ENV_FILE"` |
 
 Stopping Compose preserves its volumes. Do not use `down -v` on a deployment whose
@@ -445,12 +435,11 @@ records or recovery artifacts must survive. Current production Compose declares
 no automatic restart policy; arrange supervised startup or explicitly run
 `prod-up` after a host restart.
 
-`Ctrl+C`, or either local server exiting, stops the API/web launcher and its owned
-child processes so their ports can be reused. The separately started worker must
-be stopped separately. After changing local environment values, rerun `make dev`
-and reload `.env` for the separate worker. After changing server environment
-values, use `prod-up` to
-reconcile container configuration; `docker compose restart` alone does not apply
+`Ctrl+C`, or any local process exiting, stops the API, web, and worker process
+groups. `make stop` stops the Compose containers; it cannot stop a separately
+running foreground `make dev`. After changing local environment values, rerun
+`make dev`. After changing server environment values, use `prod-up` to reconcile
+container configuration; `docker compose restart` alone does not apply
 new environment values. Rebuild images when source or locked dependencies change.
 
 Before upgrading, download and verify a full backup through the administrator
@@ -477,7 +466,7 @@ again. Do not clear a maintenance lock as a generic startup fix.
 | Admin login fails on a reused database | The original default password is not restored on restart; use the existing account credentials |
 | Migration container exits with an error | Inspect production `logs migrate`; API/worker startup waits for setup success. Follow the runbook's migration-failure procedure, then rerun `prod-up` |
 | Generation reports `PROVIDER_NOT_CONFIGURED` | No provider revision was pinned and no endpoint/model fallback is configured; save provider settings or configure the keyless fallback for newly queued work |
-| Generation or local calculation stays queued | Confirm the separate worker is running, connected to the same database, and not held by restore maintenance |
+| Generation or local calculation stays queued | Inspect the `make dev` worker output or production worker logs, confirm its database connection and check whether restore maintenance is holding work |
 | Provider key cannot be saved | Check the specific URL or key error. Normal startup provisions a deployment key; verify the key file or `X_INSIGHT_PROVIDER_DATA_KEY` override is readable and consistent across API and worker. Public HTTPS destinations need no allowlist entry |
 | Provider destination is denied | Check URL syntax, DNS answers, and whether the destination is public HTTPS. For an intentional local endpoint, explicitly approve that exact endpoint in the Provider page; metadata and link-local destinations remain blocked |
 | Provider settings cannot be decrypted after restore | Restore the original deployment key from secure escrow. The key is excluded from the database archive and is never rotated automatically |

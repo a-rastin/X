@@ -28,6 +28,7 @@ ENV_KEYS = (
     "POSTGRES_PASSWORD",
     "DDI_DEFAULT_DATASET_VERSION",
     "API_PROXY_TARGET",
+    "X_INSIGHT_PROVIDER_DATA_KEY",
 )
 ADAPTER = """import json, os, pathlib, sys, time
 kind = pathlib.Path(sys.argv[0]).name
@@ -48,10 +49,15 @@ if kind == "docker":
 elif kind == "uv" and "x_insight.operations.migrate" in sys.argv:
     record("setup")
     sys.exit(22 if os.environ.get("MIGRATION_FAIL") == "1" else 0)
+elif kind == "uv" and "x_insight.reasoning" in sys.argv:
+    record("worker")
+    time.sleep(10)
 elif kind == "uv":
     record("api")
     for _ in range(200):
-        if log.exists() and '"event": "web"' in log.read_text(): sys.exit(0)
+        expected = ('"event": "web"', '"event": "worker"')
+        if log.exists() and all(x in log.read_text() for x in expected):
+            sys.exit(0)
         time.sleep(.01)
     sys.exit(23)
 elif kind == "npm":
@@ -76,6 +82,7 @@ def checkout(tmp_path):
         "TEST_DATABASE_URL=postgresql://fixture:synthetic@127.0.0.1:64092/fixture_test\n"
         "POSTGRES_PASSWORD=synthetic\nDB_PORT=64091\nTEST_DB_PORT=64092\n"
         "BACKEND_PORT=18091\nWEB_PORT=15091\nDDI_DEFAULT_DATASET_VERSION=ddi-fixture\n"
+        "X_INSIGHT_PROVIDER_DATA_KEY=synthetic-key\n"
     )
     return tmp_path
 
@@ -108,11 +115,12 @@ def test_dev_loads_env_and_waits_for_database_and_ddi_before_servers(checkout):
     assert events[0]["args"] == ["compose", "up", "-d", "--wait", "db", "db-test"]
     assert events[2]["args"] == ["run", "python", "-m", "x_insight.operations.migrate"]
     assert events[2]["cwd"] == "backend"
-    assert {row["event"] for row in events[3:]} == {"api", "web"}
+    assert {row["event"] for row in events[3:]} == {"api", "web", "worker"}
     for row in events:
         assert row["env"]["POSTGRES_PASSWORD"] == "synthetic"
         assert row["env"]["DATABASE_URL"].endswith(":64091/fixture")
         assert row["env"]["DDI_DEFAULT_DATASET_VERSION"] == "ddi-fixture"
+        assert row["env"]["X_INSIGHT_PROVIDER_DATA_KEY"] == "synthetic-key"
     api = next(row for row in events if row["event"] == "api")
     web = next(row for row in events if row["event"] == "web")
     assert api["args"][-2:] == ["18091", "--reload"]
@@ -140,7 +148,14 @@ def test_explicit_urls_and_ports_override_env_file(checkout, method):
         else (),
     )
     assert result.returncode == 0, result.stdout + result.stderr
-    assert {row["event"] for row in events} == {"docker", "db_healthy", "setup", "api", "web"}
+    assert {row["event"] for row in events} == {
+        "docker",
+        "db_healthy",
+        "setup",
+        "api",
+        "web",
+        "worker",
+    }
     for row in events:
         assert {key: row["env"][key] for key in explicit} == explicit
     assert next(row for row in events if row["event"] == "web")["env"]["API_PROXY_TARGET"] == (
@@ -152,7 +167,7 @@ def test_explicit_urls_and_ports_override_env_file(checkout, method):
 def test_failed_setup_never_starts_backend_or_web(checkout, failure):
     result, events = run_make(checkout, overrides={failure: "1"})
     assert result.returncode != 0
-    assert not {"api", "web"} & {row["event"] for row in events}
+    assert not {"api", "web", "worker"} & {row["event"] for row in events}
     assert ("setup" in {row["event"] for row in events}) == (failure == "MIGRATION_FAIL")
 
 
@@ -177,70 +192,131 @@ def test_occupied_database_port_reuses_only_own_running_container(checkout, owne
     assert events[0]["args"] == ["compose", "ps", "--status", "running", "-q", "db"]
     if owned:
         assert result.returncode == 0, result.stdout + result.stderr
-        assert {"setup", "api", "web"} <= {row["event"] for row in events}
+        assert {"setup", "api", "web", "worker"} <= {row["event"] for row in events}
     else:
         assert result.returncode != 0
         assert "is occupied" in result.stderr
         assert len(events) == 1
 
 
-@pytest.mark.parametrize("failed_server", ["uv", "npm"])
-def test_failed_server_stops_sibling_descendants_and_releases_port(checkout, failed_server):
-    marker = checkout / "listener.json"
-    listener_script = checkout / "listener.py"
-    listener_script.write_text(
-        "import json, os, pathlib, socket, sys, time\n"
-        "with socket.socket() as listener:\n"
-        "    listener.bind(('127.0.0.1', 0))\n"
-        "    listener.listen()\n"
-        "    marker = pathlib.Path(sys.argv[1])\n"
-        "    temporary = marker.with_suffix('.tmp')\n"
-        "    temporary.write_text(json.dumps(\n"
-        "        {'pid': os.getpid(), 'port': listener.getsockname()[1]}))\n"
-        "    temporary.replace(marker)\n"
-        "    time.sleep(30)\n"
-    )
-    launcher = (
-        f"#!{sys.executable}\n"
-        "import pathlib, subprocess, sys, time\n"
-        f"marker = pathlib.Path({str(marker)!r})\n"
-        "if 'x_insight.operations.migrate' in sys.argv: sys.exit(0)\n"
-        f"if pathlib.Path(sys.argv[0]).name == {failed_server!r}:\n"
-        "    for _ in range(300):\n"
-        "        if marker.exists(): sys.exit(37)\n"
-        "        time.sleep(.01)\n"
-        "    sys.exit(38)\n"
-        "else:\n"
-        f"    child = subprocess.Popen([sys.executable, {str(listener_script)!r}, str(marker)],\n"
-        "                             stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)\n"
-        "    child.wait()\n"
-    )
+@pytest.mark.parametrize(
+    "failed_role,exit_status", [("api", 37), ("web", 37), ("worker", 37), ("worker", 0)]
+)
+def test_exited_process_stops_sibling_descendants(checkout, failed_role, exit_status):
+    launcher = f"""#!{sys.executable}
+import json, os, pathlib, socket, subprocess, sys, time
+root = pathlib.Path({str(checkout)!r})
+if 'x_insight.operations.migrate' in sys.argv: sys.exit(0)
+role = 'web' if pathlib.Path(sys.argv[0]).name == 'npm' else 'api'
+if 'x_insight.reasoning' in sys.argv: role = 'worker'
+if role == {failed_role!r}:
+    for _ in range(300):
+        siblings = (name for name in ('api', 'web', 'worker') if name != role)
+        if all((root / (name + '.json')).exists() for name in siblings):
+            sys.exit({exit_status})
+        time.sleep(.01)
+    sys.exit(38)
+child = subprocess.Popen([sys.executable, '-c', 'import time; time.sleep(30)'],
+                         stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+(root / (role + '.json')).write_text(json.dumps(child.pid))
+child.wait()
+"""
     for name in ("uv", "npm"):
         (checkout / "bin" / name).write_text(launcher)
-    child = None
+    children = []
     try:
         result, _ = run_make(checkout)
-        assert marker.exists(), result.stdout + result.stderr
-        child = json.loads(marker.read_text())
+        children = [json.loads(p.read_text()) for p in checkout.glob("*.json")]
+        assert len(children) == 2, result.stdout + result.stderr
         assert result.returncode != 0
-        assert "Error 37" in result.stderr, result.stderr
+        if failed_role == "worker":
+            assert "worker is not running" in result.stderr
+        else:
+            assert "Error 37" in result.stderr
+            assert "worker is not running" not in result.stderr
         deadline = time.monotonic() + 2
-        while time.monotonic() < deadline and descendant_running(child["pid"]):
+        while time.monotonic() < deadline and any(descendant_running(pid) for pid in children):
             time.sleep(0.02)
-        assert not descendant_running(child["pid"]), "make dev left its sibling's child running"
-        with socket.socket() as probe:
-            probe.bind(("127.0.0.1", child["port"]))
+        assert not any(descendant_running(pid) for pid in children)
     finally:
-        # The negative control deliberately leaks a child: clean only this unique fixture.
-        if child is None and marker.exists():
-            child = json.loads(marker.read_text())
-        if child and descendant_running(child["pid"]):
-            command = Path(f"/proc/{child['pid']}/cmdline").read_bytes()
-            if str(listener_script).encode() in command:
-                os.kill(child["pid"], signal.SIGKILL)
-                deadline = time.monotonic() + 2
-                while time.monotonic() < deadline and descendant_running(child["pid"]):
-                    time.sleep(0.02)
+        for pid in children:
+            if descendant_running(pid):
+                os.kill(pid, signal.SIGKILL)
+
+
+@pytest.mark.parametrize("abrupt", [False, True])
+def test_worker_exit_before_supervisor_wait_is_reported(checkout, abrupt):
+    makefile = checkout / "Makefile"
+    recipe = makefile.read_text()
+    assert "while :; do" in recipe
+    makefile.write_text(recipe.replace("while :; do", "sleep 1; while :; do"))
+    launcher = f"""#!{sys.executable}
+import os, signal, sys, time
+if 'x_insight.operations.migrate' in sys.argv: sys.exit(0)
+if 'x_insight.reasoning' in sys.argv:
+    if {abrupt!r}: os.kill(os.getpid(), signal.SIGKILL)
+    sys.exit(19)
+time.sleep(30)
+"""
+    for name in ("uv", "npm"):
+        (checkout / "bin" / name).write_text(launcher)
+    result, _ = run_make(checkout)
+    assert result.returncode != 0
+    assert "worker is not running" in result.stderr
+    assert f"Error {137 if abrupt else 19}" in result.stderr
+
+
+@pytest.mark.parametrize("shutdown_signal", [signal.SIGINT, signal.SIGTERM])
+def test_signal_shutdown_cleans_all_process_groups(checkout, shutdown_signal):
+    launcher = f"""#!{sys.executable}
+import json, pathlib, subprocess, sys
+root = pathlib.Path({str(checkout)!r})
+if 'x_insight.operations.migrate' in sys.argv: sys.exit(0)
+role = 'web' if pathlib.Path(sys.argv[0]).name == 'npm' else 'api'
+if 'x_insight.reasoning' in sys.argv: role = 'worker'
+child = subprocess.Popen([sys.executable, '-c', 'import time; time.sleep(30)'],
+                         stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+(root / (role + '.json')).write_text(json.dumps(child.pid))
+child.wait()
+"""
+    for name in ("uv", "npm"):
+        (checkout / "bin" / name).write_text(launcher)
+    env = {
+        "PATH": str(checkout / "bin") + os.pathsep + os.defpath,
+        "HOME": str(checkout),
+        "LANG": "C.UTF-8",
+        "STARTUP_LOG": str(checkout / "events.jsonl"),
+    }
+    process = subprocess.Popen(
+        [shutil.which("make"), "dev"],
+        cwd=checkout,
+        env=env,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True,
+        start_new_session=True,
+    )
+    children = []
+    try:
+        deadline = time.monotonic() + 5
+        while time.monotonic() < deadline and len(list(checkout.glob("*.json"))) < 3:
+            time.sleep(0.02)
+        children = [json.loads(p.read_text()) for p in checkout.glob("*.json")]
+        assert len(children) == 3
+        os.killpg(process.pid, shutdown_signal)
+        _, stderr = process.communicate(timeout=5)
+        assert "worker is not running" not in stderr
+        deadline = time.monotonic() + 2
+        while time.monotonic() < deadline and any(descendant_running(pid) for pid in children):
+            time.sleep(0.02)
+        assert not any(descendant_running(pid) for pid in children)
+    finally:
+        if process.poll() is None:
+            os.killpg(process.pid, signal.SIGKILL)
+            process.wait()
+        for pid in children:
+            if descendant_running(pid):
+                os.kill(pid, signal.SIGKILL)
 
 
 def descendant_running(pid):
