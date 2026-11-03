@@ -1,5 +1,7 @@
 # X-INSIGHT progress tracker
 
+[Issue 30 Vite host analysis (2026-11-03)](s01.md#follow-up-2026-11-03--issue-30-vite-host-analysis): IPv6-only binding reproduced; minimal fix planned, full startup unverified.
+
 [Issue 29 verification (2026-11-03)](s03.md#follow-up-2026-11-03--issue-29-verification): backend and local Chromium/Firefox checks pass; deployment remains unverified.
 
 [Issue 28 action semantics implementation (2026-11-03)](s07.md#follow-up-2026-11-03--issue-28-action-semantics-implementation): button semantics implemented; browser and accessibility acceptance remain open.
