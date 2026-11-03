@@ -59,8 +59,7 @@ test("physician registers a patient; leading-zero ID round-trips with timestamp 
   await expect(
     page.getByRole("heading", { name: "Add New Patient" }),
   ).toBeVisible();
-  // Seven steps, no adverse effects. Demographics and the working note
-  // are step 1; later steps stay closed until a draft exists.
+  // Seven steps, no adverse effects; later steps stay closed until a draft exists.
   await expect(page.locator("#wizard-pages a")).toHaveText([
     "1. Register patient",
     "2. Diagnosis",
@@ -88,7 +87,7 @@ test("physician registers a patient; leading-zero ID round-trips with timestamp 
   ).toHaveCount(0);
   await expect(
     page.getByRole("heading", { name: "Working note (draft only)" }),
-  ).toBeVisible();
+  ).toHaveCount(0);
 
   // Leading zeros are part of the identifier, not a number to normalize.
   const identifier = `00${uniquePatientId().slice(2)}`;
@@ -159,7 +158,7 @@ test("physician registers a patient; leading-zero ID round-trips with timestamp 
   await expect(page.getByLabel("Given name")).toHaveValue(given);
   await expect(page.getByLabel("Family name")).toHaveValue(family);
   await expect(page.getByLabel("Patient ID")).toHaveValue(identifier);
-  await expect(page.getByLabel("Draft working note")).toBeEnabled();
+  await expect(page.getByLabel("Draft working note")).toHaveCount(0);
   await expect(page.getByRole("button", { name: "Register", exact: true })).toHaveCount(0);
   await page.getByRole("button", { name: "Continue", exact: true }).click();
   await expect(page).toHaveURL(/#diagnosis$/);

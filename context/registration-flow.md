@@ -90,7 +90,7 @@ were removed on 2026-10-20; the assessment and autosave restrictions remain.
 **Status:** needs-review
 **Evidence:** unknown
 **Source:** product requirement, 2026-10-20; implementation and verification recorded in `project-documents/dev/progress/s13.md`
-**Verification:** corroborated — page-note UI and routes are removed; the Register patient working note remains
+**Verification:** contradicted — page-note UI and routes remain removed, but the Register patient working note is now hidden at the user’s request
 **Revisit when:** note capture or registration entry requirements change
 **See:** registration-flow.md#registration-opens-on-the-wizard — c6dd360a-d80a-45a2-aa17-7239c4368829 — as of 2026-10-20
 

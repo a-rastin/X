@@ -1,5 +1,7 @@
 # X-INSIGHT progress tracker
 
+[Registration working note hidden (2026-11-03)](s07.md#follow-up-2026-11-03--hide-registration-working-note): UI removed and build passes; older browser probes need migration.
+
 [Registration clinical status labels (2026-11-03)](s07.md#follow-up-2026-11-03--registration-clinical-status-labels): New case and Known case labels implemented; frontend build passes.
 
 [Issue 32 browser verification follow-up (2026-11-03)](s01.md#follow-up-2026-11-03--issue-32-browser-verification-follow-up): focused browser checks pass; full suite, full-data backup and walkthrough acceptance remain open.

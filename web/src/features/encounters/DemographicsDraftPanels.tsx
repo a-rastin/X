@@ -1,9 +1,4 @@
-/* Registration draft working note (plan.md §2.2).
-
-   This belongs on the registration wizard's Register patient step, not on
-   later encounter-draft steps. The save-status line stays available on
-   every step: assessment pages share one autosave fence and one
-   `#draft-save-status`. */
+/* Registration notice and shared draft save status. */
 
 import { useEffect, useRef } from "react";
 import { useAutosave, type SaveState } from "./useAutosave";
@@ -136,47 +131,5 @@ export function DraftSaveStatus({ autosave }: { autosave: AutosaveApi }) {
         </div>
       )}
     </>
-  );
-}
-
-function workingNoteOf(data: Record<string, unknown>): string {
-  const value = data["working_note"];
-  return typeof value === "string" ? value : "";
-}
-
-/** Working note. Register patient only. */
-export function DemographicsDraftPanels({
-  autosave,
-}: {
-  autosave: AutosaveApi;
-}) {
-  const note = workingNoteOf(autosave.localData);
-  return (
-    <section className="xi-card" aria-labelledby="draft-editor-heading">
-      <h3 className="xi-section-title" id="draft-editor-heading">
-        Working note (draft only)
-      </h3>
-      <p className="xi-hint">
-        Autosaves about one second after typing and when leaving the page.
-        Only server-acknowledged saves count as Saved.
-      </p>
-      <div className="xi-field">
-        <label className="xi-label" htmlFor="draft-working-note">
-          Draft working note
-        </label>
-        <textarea
-          className="xi-input"
-          id="draft-working-note"
-          rows={4}
-          autoComplete="off"
-          value={note}
-          onChange={(event) =>
-            autosave.setDraftValue("working_note", event.target.value)
-          }
-          aria-describedby="draft-save-status"
-        />
-      </div>
-      <DraftSaveStatus autosave={autosave} />
-    </section>
   );
 }

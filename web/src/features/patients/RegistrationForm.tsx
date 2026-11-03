@@ -7,8 +7,7 @@
  * focus moved to the summary, and 409 duplicates keep every keystroke. The
  * identifier is handled as text throughout (leading zeros preserved, never
  * stored numerically). This route is step 1 of the registration wizard.
- * The working note is disabled before creation. A valid create opens
- * `#/encounters/:id#diagnosis`; step 1 remains available for the note.
+ * A valid create opens `#/encounters/:id#diagnosis`.
  */
 
 import { useEffect, useMemo, useRef, useState, type MouseEvent } from "react";
@@ -421,7 +420,6 @@ function RegistrationForm() {
           </div>
         </form>
       </section>
-      <PendingRegistrationWorkingNote />
       </div>
     </div>
   );
@@ -441,31 +439,4 @@ function holdStep(event: MouseEvent<HTMLAnchorElement>, current: boolean): void 
   if (!current) {
     return;
   }
-}
-
-/** Working note placeholder until registration creates a draft. */
-function PendingRegistrationWorkingNote() {
-  return (
-    <section className="xi-card" aria-labelledby="draft-editor-heading">
-      <h3 className="xi-section-title" id="draft-editor-heading">
-        Working note (draft only)
-      </h3>
-      <p className="xi-hint">
-        Autosaves after the patient is registered. Leave it empty, or fill
-        it on this step once the draft exists.
-      </p>
-      <div className="xi-field">
-        <label className="xi-label" htmlFor="draft-working-note">
-          Draft working note
-        </label>
-        <textarea
-          className="xi-input"
-          id="draft-working-note"
-          rows={4}
-          disabled
-          autoComplete="off"
-        />
-      </div>
-    </section>
-  );
 }

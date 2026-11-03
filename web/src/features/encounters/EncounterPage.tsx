@@ -2,8 +2,8 @@
  *
  * Route: `#/encounters/:id` (see api.ts for why the encounter id is in the
  * URL). Physician-only guard complements the server 403; the server stays
- * authoritative. No placeholder medical recommendations: the S07 field is an
- * explicit working note stored as `draft_data.working_note`, S09 adds the
+ * authoritative. Existing draft data, including any saved working note, is
+ * preserved. S09 adds the
  * diagnosis checklist (`draft_data.diagnosis`), S10 adds PANSS
  * (`draft_data.panss`), S11 adds C-SSRS (`draft_data.cssrs`), and S12 adds
  * structured history (`draft_data.history`) plus the four adverse effects
@@ -27,8 +27,7 @@
  * which checks the saved server evaluation first and asks for confirmation
  * unless the criteria are satisfied (no bypass/acknowledge is recorded).
  * Registration opens on that same wizard (`#/patients/new` before a draft
- * exists). Saved demographics and the working note are step 1
- * (`#register`) only — not a second page, and not chrome on later steps.
+ * exists). Saved demographics are available on step 1 (`#register`).
  *
  * E2E selector contract (dev-test owns the journey specs; S60
  * e2e/failure-recovery.spec.ts asserts the denied view):
@@ -61,7 +60,6 @@ import { ProposalReviewPanel } from "../reasoning/ProposalReviewPanel";
 import { FollowupBaselinePanel } from "../patients/chart/FollowupBaselinePanel";
 import { useAutosave } from "./useAutosave";
 import {
-  DemographicsDraftPanels,
   DraftSaveStatus,
   registrationNoticeFor,
 } from "./DemographicsDraftPanels";
@@ -811,7 +809,6 @@ function EncounterWizard({
         {currentStep.id === "register" && (
           <>
             <RegisteredDemographics patient={patient} />
-            <DemographicsDraftPanels autosave={autosave} />
           </>
         )}
 

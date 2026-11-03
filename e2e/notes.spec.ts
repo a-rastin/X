@@ -9,8 +9,7 @@ import {
   acknowledgeWarning,
 } from "./helpers";
 
-// T9: page notes are retired throughout both wizard variants. Working-note
-// autosave, failure/retry, conflict, and navigation guards also run in autosave.spec.ts.
+// T9: page notes are retired throughout both wizard variants.
 async function setup(page: Page, request: APIRequestContext) {
   const physician = { username: uniqueName("e2eretirednotes"), password: "secret123" };
   await ensurePhysician(request, physician.username, physician.password);
@@ -53,36 +52,27 @@ async function createDraft(request: APIRequestContext, physician: { username: st
   return response.json();
 }
 
-test("new-patient entry keeps the disabled working note without a page-note placeholder", async ({ page, request }) => {
+test("new-patient entry omits the working note and page-note placeholder", async ({ page, request }) => {
   await setup(page, request);
   const requests = watchRetiredRequests(page);
   await page.goto("/#/patients/new");
   await expect(page.getByRole("heading", { name: "Add New Patient", exact: true })).toBeVisible();
   await expectNoPageNotes(page);
-  await expect(page.getByLabel("Draft working note")).toBeDisabled();
+  await expect(page.getByLabel("Draft working note")).toHaveCount(0);
   expect(requests).toEqual([]);
 });
 
-test("every registration step omits page notes; working-note step navigation saves and reloads", async ({ page, request }) => {
+test("every registration step omits page notes and the working note", async ({ page, request }) => {
   const physician = await setup(page, request);
   const created = await createDraft(request, physician);
   const requests = watchRetiredRequests(page);
   await page.goto(`/#/encounters/${created.draft.id}#register`);
-  await expect(page.getByLabel("Draft working note")).toBeEnabled();
-  const note = "<b>private working note</b> & review next visit";
-  await page.getByLabel("Draft working note").fill(note);
-  // Leave before the debounce fires: the step transition must flush the edit.
-  await page.locator("#wizard-step-diagnosis").click();
-  await expect(page.locator("#draft-save-status")).toContainText("Saved (revision 2)");
   for (const step of ["register", "diagnosis", "panss", "cssrs", "history", "medications", "proposal-review"]) {
     await page.locator(`#wizard-step-${step}`).click();
     await expect(page.locator(`#wizard-step-${step}`)).toHaveAttribute("aria-current", "page");
     await expectNoPageNotes(page);
+    await expect(page.getByLabel("Draft working note")).toHaveCount(0);
   }
-  await page.locator("#wizard-step-register").click();
-  await page.reload();
-  await expect(page.getByLabel("Draft working note")).toHaveValue(note);
-  await expect(page.locator("#wizard-page b")).toHaveCount(0);
   expect(requests).toEqual([]);
 });
 
