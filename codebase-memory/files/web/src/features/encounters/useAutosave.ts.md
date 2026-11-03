@@ -1,6 +1,6 @@
 # web/src/features/encounters/useAutosave.ts
 
-Source SHA-256: c07d35841bddb84960597212f65572f9c1825d41bd99e24d0be5b365db677781
+Source SHA-256: 5117e276b84ab9c10004b19e0435045c62088725c3bae7662a04a6a671df635f
 Source commit: bad418cecdf013317df56751fec2c4a0158b305d
 
 ## Purpose
@@ -8,11 +8,15 @@ The single draft-persistence contract for the wizard: debounced PATCH with revis
 conflict handling that keeps local edits, and a flush barrier before navigation or signing.
 
 ## Important Symbols
-- `AUTOSAVE_DEBOUNCE_MS = 1000`; `SaveState` — `saved | saving | dirty | failed | conflict`.
+- `AUTOSAVE_DEBOUNCE_MS = 250` (was 1000); `SaveState` — `saved | saving | dirty | failed | conflict`.
 - `setDraftValue(key, value)` — new wizard pages add a `draft_data` key rather than a new
   endpoint; always send the whole `draft_data` object.
 - `flush()` / `ensureSaved()` — bounded 5-attempt barrier used before step transitions and
   signing.
+- `attemptRef {key, data, revision, seq}` — replaces the key-only ref: a retry of the same
+  attempt reuses body + base revision + key so a lost response replays instead of
+  double-bumping. 401 surfaces as retriable `failed` ("Sign in in another tab…"), not a
+  session-expired callback.
 - `applyServerSnapshot()`, `applySavedSlice()`, `adoptServerVersion()`, `retryOnFreshRevision()`,
   `reloadTruth()`.
 

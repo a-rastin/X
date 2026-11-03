@@ -1,6 +1,6 @@
 # web/src/features/identity/api.ts
 
-Source SHA-256: fc76e03c325225ddca2254d5ecfd46c9d2d5f89219c08c592aa7bad208763bcd
+Source SHA-256: 926d24d19d7899cd44ed8e27a08c0f7cc839f55cd6441cf97e757052f1f7c401
 
 ## Purpose
 The de-facto shared HTTP client. Every other `features/*/api.ts` (~15 copies) duplicates this
@@ -13,6 +13,10 @@ The de-facto shared HTTP client. Every other `features/*/api.ts` (~15 copies) du
   `research_warning_version`).
 - `LoginResult` / `MeResult` — both carry `research_warning` + `research_warning_version`
   (pending disclaimer text/version, null when acknowledged).
+- `me()` — calls `/me?optional=true` and discriminates on `result.user === null`
+  (`AnonymousMeResult {user: null}`) so a signed-out first paint makes no failed
+  request. Only an authenticated response may write the CSRF token; localStorage
+  never decides whether a session exists.
 - `acknowledgeResearchWarning(version)` — `POST /me/research-warning-acknowledgement` with
   CSRF and `{version}` of the DISPLAYED text; returns the still-pending text/version
   (null/null once acknowledged).

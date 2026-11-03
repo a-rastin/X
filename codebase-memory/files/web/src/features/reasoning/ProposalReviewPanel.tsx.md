@@ -1,6 +1,6 @@
 # web/src/features/reasoning/ProposalReviewPanel.tsx
 
-Source SHA-256: efcad2f33336f358d5d4242353be290518cefa2c61025c0bf89504205b9dccf0
+Source SHA-256: 81e0fd119a2838d85f67141995dddb87f637be34b053bb05a2bc2f806be92dd4
 Source commit: bad418cecdf013317df56751fec2c4a0158b305d
 
 Hash recomputed 2026-11-02 after the Issue 19 change (1818 lines; `index.json`
@@ -11,6 +11,11 @@ Step 7 UI: starts or reuses a generation batch, polls per-question run states, r
 transparency and freshness, and exposes retry/refresh. The largest frontend file (~1818 lines).
 
 ## Important Symbols
+- `questionLabel()` (`features/reasoning/questionLabels.ts`) — readable labels replace raw
+  `question_key` in sign-block reasons, pending tails, and transparency buttons.
+- `advanced` toggle — `BatchHeader`/`QuestionBlock`/`SignPanel` share one `advanced` state;
+  batch/fingerprint/input-contract IDs live inside a collapsed `<details>` instead of the
+  always-visible meta line.
 - Batch caching via the `xi.proposal.<encounterId>` local key holding
   `{batchId, packages, sourceRevision}` — documented as an optimization only; server discovery
   still works without it.

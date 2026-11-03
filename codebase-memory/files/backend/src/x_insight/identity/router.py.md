@@ -1,6 +1,6 @@
 # backend/src/x_insight/identity/router.py
 
-Source SHA-256: b5b9397f277fc09628a00d101e5d771a08b6268764b4d735fe6d96d23645189c
+Source SHA-256: b1d38f2f8d6e52b89649f89416e96038c2bf230986326150acb4e9836f0a8892
 Source: working tree (includes uncommitted changes)
 
 ## Purpose
@@ -10,6 +10,10 @@ acknowledgement, and the admin physician-account routes, all under `/api/v1`.
 ## Important Symbols
 - `login()` / `me()` — return `research_warning` and `research_warning_version` from
   `service.research_warning_fields(user)` for the stored account (both roles).
+- `me(optional)` — `GET /me?optional=true` is the opt-in anonymous probe (issue 29):
+  missing/invalid/revoked/inactive session answers 200 `{"user": null}` instead of 401,
+  so signed-out first paint makes no failed request. Default path keeps the 401 contract;
+  the flag never authenticates anything.
 - `acknowledge_research_warning()` — `POST /me/research-warning-acknowledgement`, body
   `{"version": str}` (`extra` forbidden, max 100 chars). Session + CSRF gate via `_check_csrf`
   (401 `UNAUTHENTICATED` / 403 `FORBIDDEN`). Empty version → 422 `VALIDATION_FAILED`. A version

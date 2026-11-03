@@ -113,12 +113,13 @@ captures what a future task needs before it re-derives the same conclusions.
 
 - **Research prototype, release gate open.** Not clinically validated, not highly available; no
   live paid-provider request, full-repository suite, or clinical validation is claimed anywhere.
-- **The working note is not page notes.** Page notes were removed (2026-10-20); only
-  `draft_data.working_note` survives, and it never enters prompts, projections, applicability,
-  inference, or DDI. Page-note routes no longer exist.
+- **The working note is not page notes.** Page notes were removed (2026-10-20) and the
+  registration working-note panel was removed (2026-11-03); any saved `draft_data.working_note`
+  is preserved but never enters prompts, projections, applicability, inference, or DDI.
+  Page-note routes no longer exist.
 - **Docs lag the code in places.** Example: README and design docs still say new signed snapshots
-  use `signed-encounter-v2`, while `cases/signing.py` sets `signed-encounter-v3`; the progress
-  index says schema head `0022` while `db.EXPECTED_SCHEMA_VERSION` is `0024`. Treat source as
-  authoritative and update the doc rather than the code.
+  use `signed-encounter-v2`, while `cases/signing.py` sets `signed-encounter-v3`. Treat source as
+  authoritative and update the doc rather than the code. Schema head is `0029`
+  (`db.EXPECTED_SCHEMA_VERSION`); older notes naming `0022`/`0024` are historical.
 - **Progress reporting is mandatory per `AGENTS.md`**: record work in the relevant
   `project-documents/dev/progress/sNN.md` and keep `README.md` there short.

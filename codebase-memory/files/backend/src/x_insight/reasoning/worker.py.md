@@ -1,6 +1,6 @@
 # backend/src/x_insight/reasoning/worker.py
 
-Source SHA-256: 5a41053cabf3f7df330443c9c20dd9a7dcd1284027e176a7a21cc5b3442d7152
+Source SHA-256: 863bbfa0441879b06cfde7c5c4e6702c23f547bb2ea75b74eece2bbbe4a6aa4a
 Source commit: bad418cecdf013317df56751fec2c4a0158b305d
 
 ## Purpose
@@ -16,7 +16,8 @@ separate process with `python -m x_insight.reasoning`.
   `idle`/`busy`/`succeeded|failed|cancelled|queued`/`fencing_failed`/`maintenance`.
 - `resolve_production_provider()` — uses the job's pinned settings revision, else the
   environment adapter, else `UnconfiguredProvider`, which fails **closed** with non-retryable
-  `PROVIDER_NOT_CONFIGURED`.
+  `PROVIDER_NOT_CONFIGURED`. Capability comes from `provider_config.runtime_capability_mode`
+  (saved/effective mode), not from the env var directly.
 - `ProductionProvider` — a marker only; `run_once` replaces it with a real adapter bound to
   the claim's per-job grant.
 - `_execute_local_claim()` — hands off to `probability_review.service.execute_local_revision`.

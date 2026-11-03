@@ -1,6 +1,6 @@
 # web/src/features/encounters/EncounterPage.tsx
 
-Source SHA-256: 560ed4b11748b5541365270f1da5186298decdcfb478e50fa4fa64ea5ad2268a
+Source SHA-256: c102990893066a603b233c1b9501cc588b12bc91bb489def3df86d09ab2a6f1e
 Source commit: bad418cecdf013317df56751fec2c4a0158b305d
 
 ## Purpose
@@ -15,6 +15,11 @@ author-only denial view.
 - `diagnosisConfirms()` — registration Diagnosis Continue consults the preview: direct
   navigation only when status is `complete` and overall is `criteria_satisfied`; every other
   state asks for confirmation and records no bypass or skip sentinel.
+- Forward step moves use native `<button>` actions (not anchors) so a modified click cannot
+  bypass the confirmation/flush handler; `saveBeforeNavigation()` flushes before leaving.
+- Registration step 1 shows saved demographics only — the working-note panel was removed
+  (2026-11-03); saved note data is still preserved, never prompted, never sent to
+  prompts/projections/inference/DDI.
 - Two separate `hashchange` listeners — one unsaved-changes guard that restores the previous
   draft hash when the user stays, one for back/forward that also flushes.
 

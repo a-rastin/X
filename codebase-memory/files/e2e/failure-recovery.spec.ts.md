@@ -1,6 +1,6 @@
 # e2e/failure-recovery.spec.ts
 
-Source SHA-256: f7760d5d1299e39d70d97044124d1fbc418e70c0e6ffab3741b34ba484627bd1
+Source SHA-256: 676658422d761f6bbf52e66c5ca6d60cda880b4210c070fe07e9b5b646e0a39b
 
 ## Purpose
 Mocked Playwright coverage of failed-run recovery, acknowledgement and
@@ -8,7 +8,8 @@ transparency presentation for the proposal review UI.
 
 ## Important Symbols
 - `Issue 19 failed run states no transparency data within 2s of opening the panel`: the
-  timing regression for the two-second bound.
+  timing regression for the two-second bound. Button matching uses
+  `questionLabel(key, false)` (readable name), not the raw `question_key`.
 
 ## Behavior and Constraints
 - The two-second bound is measured entirely in-page: a capture-phase click listener

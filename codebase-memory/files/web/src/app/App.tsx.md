@@ -1,6 +1,6 @@
 # web/src/app/App.tsx
 
-Source SHA-256: 84c72914620c7b13201f376ea351fcf1d26ef1f5b4c071cd6aca7a25c8b18d5b
+Source SHA-256: 5767b78e8810a001a8a1d409ceaad79d0fe13eb1c8d845d0bbf6a61b8982e8b6
 
 ## Purpose
 Root component: resolves the hash route, guards roles, renders role-scoped navigation and the
@@ -12,7 +12,9 @@ page switch, and wraps the parametric routes.
   `ResearchWarningGate` mounts and every page stays hidden behind `!showWarningGate`.
 - `warningAcked` from `useAuth()` — true when the server reports no pending warning text for
   the session user (`researchWarning === null`).
-- `NavLink` — blocks navigation through the global unsaved-changes guard.
+- `NavLink` — plain hash navigation; the unsaved-changes barrier lives in
+  `saveBeforeNavigation()` (`app/navigationGuard.ts`), not in the link.
+- Sign-out flushes via `saveBeforeNavigation()` first so draft edits are not stranded.
 - Admin-only nav links: physicians, networks, audit, exports, backups, restores,
   provider-settings, status.
 - Parametric wrappers `EncounterRoute`, `ChartRoute`, `ReportRoute` — each owns its own

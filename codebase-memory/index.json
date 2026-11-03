@@ -38,6 +38,15 @@
       "source_sha256": null
     },
     {
+      "path": ".claude/worktrees/agent-a15a98717e4dc5b1f",
+      "labels": [
+        "repo"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
       "path": ".env.example",
       "labels": [
         "repo"
@@ -524,6 +533,15 @@
       "source_sha256": null
     },
     {
+      "path": ".openidea/.gitignore",
+      "labels": [
+        "repo"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
       "path": "AGENTS.md",
       "labels": [
         "repo"
@@ -615,7 +633,7 @@
         "migration",
         "schema"
       ],
-      "purpose": "Alembic migrations; schema head 0024.",
+      "purpose": "Alembic migrations; schema head 0029.",
       "summary": null,
       "source_sha256": null
     },
@@ -625,7 +643,7 @@
         "migration",
         "schema"
       ],
-      "purpose": "Alembic migrations; schema head 0024.",
+      "purpose": "Alembic migrations; schema head 0029.",
       "summary": null,
       "source_sha256": null
     },
@@ -635,7 +653,7 @@
         "migration",
         "schema"
       ],
-      "purpose": "Alembic migrations; schema head 0024.",
+      "purpose": "Alembic migrations; schema head 0029.",
       "summary": null,
       "source_sha256": null
     },
@@ -645,7 +663,7 @@
         "migration",
         "schema"
       ],
-      "purpose": "Alembic migrations; schema head 0024.",
+      "purpose": "Alembic migrations; schema head 0029.",
       "summary": null,
       "source_sha256": null
     },
@@ -655,7 +673,7 @@
         "migration",
         "schema"
       ],
-      "purpose": "Alembic migrations; schema head 0024.",
+      "purpose": "Alembic migrations; schema head 0029.",
       "summary": null,
       "source_sha256": null
     },
@@ -665,7 +683,7 @@
         "migration",
         "schema"
       ],
-      "purpose": "Alembic migrations; schema head 0024.",
+      "purpose": "Alembic migrations; schema head 0029.",
       "summary": null,
       "source_sha256": null
     },
@@ -675,7 +693,7 @@
         "migration",
         "schema"
       ],
-      "purpose": "Alembic migrations; schema head 0024.",
+      "purpose": "Alembic migrations; schema head 0029.",
       "summary": null,
       "source_sha256": null
     },
@@ -685,7 +703,7 @@
         "migration",
         "schema"
       ],
-      "purpose": "Alembic migrations; schema head 0024.",
+      "purpose": "Alembic migrations; schema head 0029.",
       "summary": null,
       "source_sha256": null
     },
@@ -695,7 +713,7 @@
         "migration",
         "schema"
       ],
-      "purpose": "Alembic migrations; schema head 0024.",
+      "purpose": "Alembic migrations; schema head 0029.",
       "summary": null,
       "source_sha256": null
     },
@@ -705,7 +723,7 @@
         "migration",
         "schema"
       ],
-      "purpose": "Alembic migrations; schema head 0024.",
+      "purpose": "Alembic migrations; schema head 0029.",
       "summary": null,
       "source_sha256": null
     },
@@ -715,7 +733,7 @@
         "migration",
         "schema"
       ],
-      "purpose": "Alembic migrations; schema head 0024.",
+      "purpose": "Alembic migrations; schema head 0029.",
       "summary": null,
       "source_sha256": null
     },
@@ -725,7 +743,7 @@
         "migration",
         "schema"
       ],
-      "purpose": "Alembic migrations; schema head 0024.",
+      "purpose": "Alembic migrations; schema head 0029.",
       "summary": null,
       "source_sha256": null
     },
@@ -735,7 +753,7 @@
         "migration",
         "schema"
       ],
-      "purpose": "Alembic migrations; schema head 0024.",
+      "purpose": "Alembic migrations; schema head 0029.",
       "summary": null,
       "source_sha256": null
     },
@@ -745,7 +763,7 @@
         "migration",
         "schema"
       ],
-      "purpose": "Alembic migrations; schema head 0024.",
+      "purpose": "Alembic migrations; schema head 0029.",
       "summary": null,
       "source_sha256": null
     },
@@ -755,7 +773,7 @@
         "migration",
         "schema"
       ],
-      "purpose": "Alembic migrations; schema head 0024.",
+      "purpose": "Alembic migrations; schema head 0029.",
       "summary": null,
       "source_sha256": null
     },
@@ -765,7 +783,7 @@
         "migration",
         "schema"
       ],
-      "purpose": "Alembic migrations; schema head 0024.",
+      "purpose": "Alembic migrations; schema head 0029.",
       "summary": null,
       "source_sha256": null
     },
@@ -775,7 +793,7 @@
         "migration",
         "schema"
       ],
-      "purpose": "Alembic migrations; schema head 0024.",
+      "purpose": "Alembic migrations; schema head 0029.",
       "summary": null,
       "source_sha256": null
     },
@@ -785,7 +803,7 @@
         "migration",
         "schema"
       ],
-      "purpose": "Alembic migrations; schema head 0024.",
+      "purpose": "Alembic migrations; schema head 0029.",
       "summary": null,
       "source_sha256": null
     },
@@ -795,7 +813,7 @@
         "migration",
         "schema"
       ],
-      "purpose": "Alembic migrations; schema head 0024.",
+      "purpose": "Alembic migrations; schema head 0029.",
       "summary": null,
       "source_sha256": null
     },
@@ -805,7 +823,7 @@
         "migration",
         "schema"
       ],
-      "purpose": "Alembic migrations; schema head 0024.",
+      "purpose": "Alembic migrations; schema head 0029.",
       "summary": null,
       "source_sha256": null
     },
@@ -815,7 +833,7 @@
         "migration",
         "schema"
       ],
-      "purpose": "Alembic migrations; schema head 0024.",
+      "purpose": "Alembic migrations; schema head 0029.",
       "summary": null,
       "source_sha256": null
     },
@@ -825,7 +843,7 @@
         "migration",
         "schema"
       ],
-      "purpose": "Alembic migrations; schema head 0024.",
+      "purpose": "Alembic migrations; schema head 0029.",
       "summary": null,
       "source_sha256": null
     },
@@ -835,7 +853,7 @@
         "migration",
         "schema"
       ],
-      "purpose": "Alembic migrations; schema head 0024.",
+      "purpose": "Alembic migrations; schema head 0029.",
       "summary": null,
       "source_sha256": null
     },
@@ -845,7 +863,57 @@
         "migration",
         "schema"
       ],
-      "purpose": "Alembic migrations; schema head 0024.",
+      "purpose": "Alembic migrations; schema head 0029.",
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "backend/migrations/versions/0025_provider_timeout.py",
+      "labels": [
+        "migration",
+        "schema"
+      ],
+      "purpose": "Alembic migrations; schema head 0029.",
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "backend/migrations/versions/0026_provider_failure_details.py",
+      "labels": [
+        "migration",
+        "schema"
+      ],
+      "purpose": "Alembic migrations; schema head 0029.",
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "backend/migrations/versions/0027_provider_capability_mode.py",
+      "labels": [
+        "migration",
+        "schema"
+      ],
+      "purpose": "Alembic migrations; schema head 0029.",
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "backend/migrations/versions/0028_provider_detected_capability.py",
+      "labels": [
+        "migration",
+        "schema"
+      ],
+      "purpose": "Alembic migrations; schema head 0029.",
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "backend/migrations/versions/0029_research_warning_acknowledgement.py",
+      "labels": [
+        "migration",
+        "schema"
+      ],
+      "purpose": "Alembic migrations; schema head 0029.",
       "summary": null,
       "source_sha256": null
     },
@@ -1195,9 +1263,9 @@
         "backend",
         "identity"
       ],
-      "purpose": "Login, /me, password/preferences, research-warning acknowledgement, and admin physician routes.",
+      "purpose": "Login, /me (incl. ?optional=true anonymous probe), password/preferences, research-warning acknowledgement, and admin physician routes.",
       "summary": "files/backend/src/x_insight/identity/router.py.md",
-      "source_sha256": "b5b9397f277fc09628a00d101e5d771a08b6268764b4d735fe6d96d23645189c"
+      "source_sha256": "b1d38f2f8d6e52b89649f89416e96038c2bf230986326150acb4e9836f0a8892"
     },
     {
       "path": "backend/src/x_insight/identity/service.py",
@@ -1570,6 +1638,16 @@
       "source_sha256": null
     },
     {
+      "path": "backend/src/x_insight/reasoning/provider_timeout.py",
+      "labels": [
+        "backend",
+        "reasoning"
+      ],
+      "purpose": "Shared provider HTTP deadline: saved revision, env override, then default.",
+      "summary": null,
+      "source_sha256": null
+    },
+    {
       "path": "backend/src/x_insight/reasoning/queue.py",
       "labels": [
         "backend",
@@ -1627,7 +1705,7 @@
       ],
       "purpose": "Background worker poll loop and provider/local job dispatch.",
       "summary": "files/backend/src/x_insight/reasoning/worker.py.md",
-      "source_sha256": "5a41053cabf3f7df330443c9c20dd9a7dcd1284027e176a7a21cc5b3442d7152"
+      "source_sha256": "863bbfa0441879b06cfde7c5c4e6702c23f547bb2ea75b74eece2bbbe4a6aa4a"
     },
     {
       "path": "backend/tests/__init__.py",
@@ -1980,6 +2058,26 @@
       "source_sha256": null
     },
     {
+      "path": "backend/tests/http/test_ops_status_coordinator.py",
+      "labels": [
+        "test",
+        "http"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "backend/tests/http/test_ops_status_safe_class.py",
+      "labels": [
+        "test",
+        "http"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
       "path": "backend/tests/http/test_patients.py",
       "labels": [
         "test",
@@ -2300,6 +2398,16 @@
       "source_sha256": null
     },
     {
+      "path": "backend/tests/operations/test_research_warning_migration.py",
+      "labels": [
+        "test",
+        "operations"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
       "path": "backend/tests/operations/test_startup.py",
       "labels": [
         "test",
@@ -2340,6 +2448,16 @@
       "source_sha256": null
     },
     {
+      "path": "backend/tests/provider/test_capability_migration.py",
+      "labels": [
+        "test",
+        "provider"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
       "path": "backend/tests/provider/test_capability_mode.py",
       "labels": [
         "backend",
@@ -2348,7 +2466,7 @@
       ],
       "purpose": "Verify saved, detected, and effective provider capability modes.",
       "summary": "files/backend/tests/provider/test_capability_mode.py.md",
-      "source_sha256": "cbc9b58cca2d9342dc34d7f206c773dd84e89b58d2750efacf8052f72e770324"
+      "source_sha256": "0cc2d14280e54f40bedbab80816828dade2db30cb2c19e8213fb90478df9f50b"
     },
     {
       "path": "backend/tests/provider/test_destination_policy.py",
@@ -2362,6 +2480,66 @@
     },
     {
       "path": "backend/tests/provider/test_estimation.py",
+      "labels": [
+        "test",
+        "provider"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "backend/tests/provider/test_failure_details.py",
+      "labels": [
+        "test",
+        "provider"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "backend/tests/provider/test_response_parsing.py",
+      "labels": [
+        "test",
+        "provider"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "backend/tests/provider/test_retry_settings.py",
+      "labels": [
+        "test",
+        "provider"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "backend/tests/provider/test_timeout.py",
+      "labels": [
+        "test",
+        "provider"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "backend/tests/provider/test_timeout_http.py",
+      "labels": [
+        "test",
+        "provider"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "backend/tests/provider/test_timeout_settings.py",
       "labels": [
         "test",
         "provider"
@@ -2421,7 +2599,67 @@
       "source_sha256": null
     },
     {
+      "path": "backend/tests/support/__init__.py",
+      "labels": [
+        "test",
+        "support"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "backend/tests/support/fake_provider.py",
+      "labels": [
+        "test",
+        "support"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "backend/tests/support/history_defaults.py",
+      "labels": [
+        "test",
+        "support"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "backend/tests/support/streaming_spike.py",
+      "labels": [
+        "test",
+        "support"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "backend/tests/test_database_fixture_lifetime.py",
+      "labels": [
+        "test",
+        "test"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
       "path": "backend/tests/worker/__init__.py",
+      "labels": [
+        "test",
+        "worker"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "backend/tests/worker/test_attempt_timing.py",
       "labels": [
         "test",
         "worker"
@@ -2463,6 +2701,16 @@
     },
     {
       "path": "backend/tests/worker/test_prod_worker.py",
+      "labels": [
+        "test",
+        "worker"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "backend/tests/worker/test_provider_timeout.py",
       "labels": [
         "test",
         "worker"
@@ -4654,6 +4902,16 @@
       "source_sha256": null
     },
     {
+      "path": "docs/BUGFIX_LOG.md",
+      "labels": [
+        "docs",
+        "docs"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
       "path": "docs/ddinter-operations.md",
       "labels": [
         "docs",
@@ -4680,6 +4938,16 @@
         "docs"
       ],
       "purpose": "Proposal readiness, generation, and existing-run recovery contract.",
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "docs/user-guide.md",
+      "labels": [
+        "docs",
+        "docs"
+      ],
+      "purpose": "Physician and administrator workflows.",
       "summary": null,
       "source_sha256": null
     },
@@ -4871,7 +5139,7 @@
       ],
       "purpose": "Mocked browser regressions for failed-run recovery and Issue 19 transparency timing.",
       "summary": "files/e2e/failure-recovery.spec.ts.md",
-      "source_sha256": "f7760d5d1299e39d70d97044124d1fbc418e70c0e6ffab3741b34ba484627bd1"
+      "source_sha256": "676658422d761f6bbf52e66c5ca6d60cda880b4210c070fe07e9b5b646e0a39b"
     },
     {
       "path": "e2e/followup.spec.ts",
@@ -4992,7 +5260,7 @@
       ],
       "purpose": "Exercise provider capability mode display and settings with mocked APIs.",
       "summary": "files/e2e/provider-capability-mode.spec.ts.md",
-      "source_sha256": "6aee9d0bfcf6e1b526466d01608ff341793dd9256b151a725226cd97e7a59d07"
+      "source_sha256": "fbddf662ec2e15e76833b5486151b940ebb272e355b2a1805379ed121ec1fa4b"
     },
     {
       "path": "e2e/provider-public-fixture.py",
@@ -5016,6 +5284,16 @@
     },
     {
       "path": "e2e/provider-settings.spec.ts",
+      "labels": [
+        "e2e",
+        "test"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "e2e/provider-timeout.spec.ts",
       "labels": [
         "e2e",
         "test"
@@ -5227,12 +5505,165 @@
       "source_sha256": null
     },
     {
+      "path": "issues/issue-15.md",
+      "labels": [
+        "issue"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "issues/issue-16.md",
+      "labels": [
+        "issue"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
       "path": "issues/issue-17.md",
       "labels": [
         "issue",
         "attempt-timing"
       ],
       "purpose": "Issue 17 timing verification and incident evidence limits.",
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "issues/issue-18.md",
+      "labels": [
+        "issue"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "issues/issue-19.md",
+      "labels": [
+        "issue"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "issues/issue-20.md",
+      "labels": [
+        "issue"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "issues/issue-21.md",
+      "labels": [
+        "issue"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "issues/issue-22.md",
+      "labels": [
+        "issue"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "issues/issue-23.md",
+      "labels": [
+        "issue"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "issues/issue-24.md",
+      "labels": [
+        "issue"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "issues/issue-25.md",
+      "labels": [
+        "issue"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "issues/issue-26.md",
+      "labels": [
+        "issue"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "issues/issue-27.md",
+      "labels": [
+        "issue"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "issues/issue-28.md",
+      "labels": [
+        "issue"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "issues/issue-29.md",
+      "labels": [
+        "issue"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "issues/issue-30.md",
+      "labels": [
+        "issue"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "issues/issue-31.md",
+      "labels": [
+        "issue"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "issues/issue-32.md",
+      "labels": [
+        "issue"
+      ],
+      "purpose": null,
       "summary": null,
       "source_sha256": null
     },
@@ -5436,12 +5867,22 @@
         "project-docs",
         "progress"
       ],
-      "purpose": "Progress index and current handoff — read this first per AGENTS.md.",
+      "purpose": "Progress index and current handoff \u2014 read this first per AGENTS.md.",
       "summary": null,
       "source_sha256": null
     },
     {
       "path": "project-documents/dev/progress/content-decisions.md",
+      "labels": [
+        "project-docs",
+        "progress"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "project-documents/dev/progress/issue-31-checkpoint.md",
       "labels": [
         "project-docs",
         "progress"
@@ -7737,14 +8178,24 @@
       "source_sha256": null
     },
     {
+      "path": "web/public/favicon.ico",
+      "labels": [
+        "frontend",
+        "config"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
       "path": "web/src/app/App.tsx",
       "labels": [
         "frontend",
         "app-shell"
       ],
-      "purpose": "Root component: route resolution, role-scoped navigation, and the page switch.",
+      "purpose": "Root component: route guards, nav, warning gate, parametric wrappers.",
       "summary": "files/web/src/app/App.tsx.md",
-      "source_sha256": "84c72914620c7b13201f376ea351fcf1d26ef1f5b4c071cd6aca7a25c8b18d5b"
+      "source_sha256": "5767b78e8810a001a8a1d409ceaad79d0fe13eb1c8d845d0bbf6a61b8982e8b6"
     },
     {
       "path": "web/src/app/navigationGuard.ts",
@@ -7772,9 +8223,9 @@
         "frontend",
         "app-shell"
       ],
-      "purpose": "Hand-rolled hash router (no react-router) with parametric encounter/chart/report hashes.",
+      "purpose": "Hand-rolled hash router with replace-navigation support.",
       "summary": "files/web/src/app/router.ts.md",
-      "source_sha256": "d325a96afdbfcbd911c148fa549729e3f44d4194fe8d7a17bdfc530022737e90"
+      "source_sha256": "e5e047d100d366047fae994f9e715c838f8e5c4ba94d69a813f01f742bf48535"
     },
     {
       "path": "web/src/features/admin/audit/AuditPage.tsx",
@@ -8017,6 +8468,16 @@
       "source_sha256": null
     },
     {
+      "path": "web/src/features/assessments/panss/panss.css",
+      "labels": [
+        "frontend",
+        "assessments"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
       "path": "web/src/features/encounters/DemographicsDraftPanels.tsx",
       "labels": [
         "frontend",
@@ -8032,9 +8493,9 @@
         "frontend",
         "encounters"
       ],
-      "purpose": "Wizard shell: step machine, step navigation, discard, author-only denial view.",
+      "purpose": "Wizard shell: step machine, native forward actions, author-only denial; working-note panel removed.",
       "summary": "files/web/src/features/encounters/EncounterPage.tsx.md",
-      "source_sha256": "560ed4b11748b5541365270f1da5186298decdcfb478e50fa4fa64ea5ad2268a"
+      "source_sha256": "c102990893066a603b233c1b9501cc588b12bc91bb489def3df86d09ab2a6f1e"
     },
     {
       "path": "web/src/features/encounters/api.ts",
@@ -8052,9 +8513,9 @@
         "frontend",
         "encounters"
       ],
-      "purpose": "Debounced draft autosave with revision fencing, conflict-safe 412 handling and a flush barrier.",
+      "purpose": "Draft persistence: 250 ms debounce, revision fencing, attempt-object retries, flush barrier.",
       "summary": "files/web/src/features/encounters/useAutosave.ts.md",
-      "source_sha256": "c07d35841bddb84960597212f65572f9c1825d41bd99e24d0be5b365db677781"
+      "source_sha256": "5117e276b84ab9c10004b19e0435045c62088725c3bae7662a04a6a671df635f"
     },
     {
       "path": "web/src/features/history/EffectsSection.tsx",
@@ -8152,9 +8613,9 @@
         "frontend",
         "identity"
       ],
-      "purpose": "De-facto shared fetch client: ApiError, CSRF in localStorage, If-Match and idempotency headers.",
+      "purpose": "Shared HTTP client pattern: CSRF in localStorage, idempotency, warning fields; me() uses the anonymous probe.",
       "summary": "files/web/src/features/identity/api.ts.md",
-      "source_sha256": "fc76e03c325225ddca2254d5ecfd46c9d2d5f89219c08c592aa7bad208763bcd"
+      "source_sha256": "926d24d19d7899cd44ed8e27a08c0f7cc839f55cd6441cf97e757052f1f7c401"
     },
     {
       "path": "web/src/features/identity/auth.tsx",
@@ -8198,6 +8659,16 @@
     },
     {
       "path": "web/src/features/medications/api.ts",
+      "labels": [
+        "frontend",
+        "medications"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "web/src/features/medications/medications.css",
       "labels": [
         "frontend",
         "medications"
@@ -8344,7 +8815,7 @@
       ],
       "purpose": "Step 7 UI: batch start/reuse, per-question polling, transparency and freshness.",
       "summary": "files/web/src/features/reasoning/ProposalReviewPanel.tsx.md",
-      "source_sha256": "efcad2f33336f358d5d4242353be290518cefa2c61025c0bf89504205b9dccf0"
+      "source_sha256": "81e0fd119a2838d85f67141995dddb87f637be34b053bb05a2bc2f806be92dd4"
     },
     {
       "path": "web/src/features/reasoning/api.ts",
@@ -8355,6 +8826,16 @@
       "purpose": "Reasoning HTTP surface: batches, runs, readiness, CPT review and acceptance.",
       "summary": null,
       "source_sha256": "dee925946d8e3ba0df3f025c4a7f8642e5c75a9812a2288454bec25755955487"
+    },
+    {
+      "path": "web/src/features/reasoning/questionLabels.ts",
+      "labels": [
+        "frontend",
+        "reasoning"
+      ],
+      "purpose": "Readable question labels shared by proposal review UI and e2e timing assertions.",
+      "summary": null,
+      "source_sha256": null
     },
     {
       "path": "web/src/main.tsx",
@@ -8381,6 +8862,36 @@
       "labels": [
         "frontend",
         "vite-env.d.ts"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "web/tests/patient-validation.test.mjs",
+      "labels": [
+        "test",
+        "frontend"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "web/tests/question-labels.test.mjs",
+      "labels": [
+        "test",
+        "frontend"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "web/tests/router.test.mjs",
+      "labels": [
+        "test",
+        "frontend"
       ],
       "purpose": null,
       "summary": null,

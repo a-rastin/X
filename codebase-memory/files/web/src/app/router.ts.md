@@ -1,6 +1,6 @@
 # web/src/app/router.ts
 
-Source SHA-256: d325a96afdbfcbd911c148fa549729e3f44d4194fe8d7a17bdfc530022737e90
+Source SHA-256: e5e047d100d366047fae994f9e715c838f8e5c4ba94d69a813f01f742bf48535
 Source commit: bad418cecdf013317df56751fec2c4a0158b305d
 
 ## Purpose
@@ -12,7 +12,8 @@ The hand-rolled hash router — **there is no react-router** (web dependencies a
 - `parseHash()` — also recognises the parametric `#/encounters/:id`,
   `#/patients/:id/chart` and `#/patients/:id/report`.
 - `useRoute()` — listens to `hashchange`; navigation is an assignment to
-  `window.location.hash`.
+  `window.location.hash`, or `history.replaceState` when called with
+  `{ replace: true }` (used to drop the login URL after authentication, issue 22).
 - `encounterHash()`, `chartHash()`, `reportHash()`, `encounterIdFromHash()`,
   `patientIdFromHash()`.
 
