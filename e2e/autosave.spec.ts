@@ -190,44 +190,194 @@ test("failed network save never shows Saved; Retry recovers", async ({
   await expect(status).toContainText("Saved (revision 2)", { timeout: 10000 });
 });
 
-test("navigation warns while unsaved edits remain", async ({
-  page,
-  request,
-}) => {
+test("navigation waits for the latest draft edit and preserves it on reload", async ({ page, request }) => {
   const physician = await loginPhysician(page, request, "e2enavguard");
   const { draftId } = await createPatientWithDraft(request, physician);
-
   await page.goto(`/#/encounters/${draftId}#register`);
+  const note = page.getByLabel("Draft working note");
+  await expect(note).toBeVisible();
+  let release!: () => void;
+  const held = new Promise<void>((resolve) => { release = resolve; });
+  let started!: () => void;
+  const patchStarted = new Promise<void>((resolve) => { started = resolve; });
+  await page.route("**/api/v1/encounters/*", async (route) => {
+    if (route.request().method() === "PATCH") {
+      started();
+      await held;
+    }
+    await route.continue();
+  });
+  await note.fill("navigation barrier probe");
+  await page.getByRole("link", { name: "Patients" }).first().click();
+  await patchStarted;
+  await expect(note).toHaveValue("navigation barrier probe");
+  release();
+  await expect(page.getByRole("heading", { name: "Patients" })).toBeVisible();
+  await page.unroute("**/api/v1/encounters/*");
+  await page.goto(`/#/encounters/${draftId}#register`);
+  await expect(page.getByLabel("Draft working note")).toHaveValue("navigation barrier probe");
+});
+
+test("edits during a save remain unsaved until the newer revision is acknowledged", async ({ page, request }) => {
+  const physician = await loginPhysician(page, request, "e2einflight");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  await page.goto(`/#/encounters/${draftId}#register`);
+  const note = page.getByLabel("Draft working note");
   const status = page.locator("#draft-save-status");
-  await expect(status).toContainText("Saved (revision 1)");
-
-  // Type and navigate before the ~1s debounce can save: the in-app guard
-  // must warn instead of silently dropping the keystrokes.
-  await page.getByLabel("Draft working note").fill("unsaved navigation probe");
-
-  let dialogMessage: string | null = null;
-  page.on("dialog", async (dialog) => {
-    dialogMessage = dialog.message();
-    await dialog.dismiss();
+  let release!: () => void;
+  const held = new Promise<void>((resolve) => { release = resolve; });
+  let started!: () => void;
+  const patchStarted = new Promise<void>((resolve) => { started = resolve; });
+  let first = true;
+  await page.route("**/api/v1/encounters/*", async (route) => {
+    if (route.request().method() === "PATCH" && first) {
+      first = false;
+      started();
+      await held;
+    }
+    await route.continue();
   });
-  await page.getByRole("link", { name: "Patients" }).first().click();
-  await expect
-    .poll(() => dialogMessage, { timeout: 5000 })
-    .toContain("unsaved draft changes");
-  // Dismissing stays on the draft with edits intact.
-  await expect(page.getByLabel("Draft working note")).toHaveValue(
-    "unsaved navigation probe",
-  );
+  await note.fill("first edit");
+  await patchStarted;
+  await note.fill("latest edit");
+  await expect(status).not.toContainText("Saved");
+  release();
+  await expect(status).toContainText("Saved (revision 3)");
+  await page.unroute("**/api/v1/encounters/*");
+  await page.reload();
+  await expect(note).toHaveValue("latest edit");
+});
 
-  // Accepting leaves the draft.
-  page.removeAllListeners("dialog");
-  page.on("dialog", async (dialog) => {
-    await dialog.accept();
-  });
+test("failed navigation keeps the editor and retry permits departure", async ({ page, request }) => {
+  const physician = await loginPhysician(page, request, "e2enavfail");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  await page.goto(`/#/encounters/${draftId}#register`);
+  const note = page.getByLabel("Draft working note");
+  await page.route("**/api/v1/encounters/*", (route) => route.request().method() === "PATCH" ? route.abort() : route.continue());
+  await note.fill("keep this edit");
   await page.getByRole("link", { name: "Patients" }).first().click();
-  await expect(
-    page.getByRole("heading", { name: "Patients" }),
-  ).toBeVisible({ timeout: 5000 });
+  await expect(page.locator("#draft-save-status")).toContainText("Save failed");
+  await expect(note).toHaveValue("keep this edit");
+  await page.unroute("**/api/v1/encounters/*");
+  await page.getByRole("button", { name: "Retry save" }).click();
+  await expect(page.locator("#draft-save-status")).toContainText("Saved (revision 2)");
+  await page.getByRole("link", { name: "Patients" }).first().click();
+  await expect(page.getByRole("heading", { name: "Patients" })).toBeVisible();
+});
+
+test("assessment steps expose the shared draft save status", async ({ page, request }) => {
+  const physician = await loginPhysician(page, request, "e2estatus");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  for (const step of ["diagnosis", "cssrs", "history"]) {
+    await page.goto(`/#/encounters/${draftId}#${step}`);
+    await expect(page.locator("#draft-save-status")).toBeVisible();
+  }
+});
+
+test("an edit arriving as navigation is released is saved before leaving", async ({ page, request }) => {
+  await page.addInitScript(() => {
+    let patientEvents = 0;
+    window.addEventListener("hashchange", () => {
+      if (window.location.hash !== "#/patients") return;
+      patientEvents += 1;
+      if (patientEvents !== 2) return;
+      const note = document.querySelector<HTMLTextAreaElement>("#draft-working-note");
+      if (note === null) return;
+      Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype, "value")?.set?.call(note, "edit after save");
+      note.dispatchEvent(new Event("input", { bubbles: true }));
+    }, true);
+  });
+  const physician = await loginPhysician(page, request, "e2erelease");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  await page.goto(`/#/encounters/${draftId}#register`);
+  await page.getByLabel("Draft working note").fill("first edit");
+  await page.getByRole("link", { name: "Patients" }).first().click();
+  await expect(page.getByRole("heading", { name: "Patients" })).toBeVisible();
+  await page.goto(`/#/encounters/${draftId}#register`);
+  await expect(page.getByLabel("Draft working note")).toHaveValue("edit after save");
+});
+
+test("explicit discard remains available after a failed save", async ({ page, request }) => {
+  const physician = await loginPhysician(page, request, "e2ediscardfail");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  await page.goto(`/#/encounters/${draftId}#register`);
+  await page.route("**/api/v1/encounters/*", (route) => route.request().method() === "PATCH" ? route.abort() : route.continue());
+  await page.getByLabel("Draft working note").fill("discard this failed edit");
+  await expect(page.locator("#draft-save-status")).toContainText("Save failed");
+  await page.getByRole("button", { name: "Discard draft", exact: true }).click();
+  await page.getByText("I understand this discards the draft but keeps the patient.").click();
+  await page.getByRole("button", { name: "Confirm discard" }).click();
+  await expect(page.getByRole("status")).toContainText("Draft discarded");
+});
+
+test("retry replays the original request after a lost response before saving newer edits", async ({ page, request }) => {
+  const physician = await loginPhysician(page, request, "e2elostresponse");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  await page.goto(`/#/encounters/${draftId}#register`);
+  let first = true;
+  await page.route("**/api/v1/encounters/*", async (route) => {
+    if (route.request().method() === "PATCH" && first) {
+      first = false;
+      await route.fetch();
+      await route.abort();
+      return;
+    }
+    await route.continue();
+  });
+  const note = page.getByLabel("Draft working note");
+  await note.fill("committed without response");
+  await expect(page.locator("#draft-save-status")).toContainText("Save failed");
+  await note.fill("newer edit");
+  await page.getByRole("button", { name: "Retry save" }).click();
+  await expect(page.locator("#draft-save-status")).toContainText("Saved (revision 3)");
+  await page.unroute("**/api/v1/encounters/*");
+  await page.reload();
+  await expect(note).toHaveValue("newer edit");
+});
+
+test("switching encounter IDs waits for the original draft save", async ({ page, request }) => {
+  const physician = await loginPhysician(page, request, "e2eswitchdraft");
+  const original = await createPatientWithDraft(request, physician);
+  const destination = await createPatientWithDraft(request, physician);
+  await page.goto(`/#/encounters/${original.draftId}#register`);
+  const note = page.getByLabel("Draft working note");
+  let release!: () => void;
+  const held = new Promise<void>((resolve) => { release = resolve; });
+  let started!: () => void;
+  const patchStarted = new Promise<void>((resolve) => { started = resolve; });
+  await page.route("**/api/v1/encounters/*", async (route) => {
+    if (route.request().method() === "PATCH") { started(); await held; }
+    await route.continue();
+  });
+  await note.fill("original draft edit");
+  await page.evaluate((id) => { window.location.hash = `#/encounters/${id}#register`; }, destination.draftId);
+  await patchStarted;
+  await expect(note).toHaveValue("original draft edit");
+  release();
+  await expect(note).toHaveValue("");
+  await page.unroute("**/api/v1/encounters/*");
+  await page.goto(`/#/encounters/${original.draftId}#register`);
+  await expect(note).toHaveValue("original draft edit");
+});
+
+test("discard does not delete a newer conflicting server revision", async ({ page, request }) => {
+  const physician = await loginPhysician(page, request, "e2ediscardconflict");
+  const { draftId } = await createPatientWithDraft(request, physician);
+  await page.goto(`/#/encounters/${draftId}#register`);
+  await expect(page.locator("#draft-save-status")).toContainText("Saved (revision 1)");
+  const winner = await patchDraftApi(request, physician, draftId, { working_note: "newer server edit" }, 1);
+  expect(winner.status()).toBe(200);
+  await page.getByLabel("Draft working note").fill("stale local edit");
+  await expect(page.locator("#draft-save-status")).toContainText("Conflict");
+  await page.getByRole("button", { name: "Discard draft", exact: true }).click();
+  const dialog = page.getByRole("alertdialog");
+  await dialog.getByText("I understand this discards the draft but keeps the patient.").click();
+  await dialog.getByRole("button", { name: "Confirm discard" }).click();
+  await expect(dialog).toContainText("Reconcile the conflict before discarding");
+  const csrf = await physicianSession(request, physician);
+  const current = await request.get(`/api/v1/encounters/${draftId}`, { headers: { "X-CSRF-Token": csrf } });
+  expect(current.status()).toBe(200);
+  expect((await current.json()).draft_data.working_note).toBe("newer server edit");
 });
 
 test("registration steps show a standalone discard button", async ({ page, request }) => {

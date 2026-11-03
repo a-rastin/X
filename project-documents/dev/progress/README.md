@@ -1,6 +1,6 @@
 # X-INSIGHT progress tracker
 
-[Issue 27 autosave analysis (2026-11-02)](s07.md#follow-up-2026-11-02--issue-27-autosave-analysis): shared debounce, hidden status and navigation races identified; measurements and implementation remain open.
+[Issue 27 autosave work (2026-11-02)](s07.md#follow-up-2026-11-02--issue-27-autosave-work): initial race checks pass; browser history and latency acceptance remain open.
 
 [Issue 26 readiness count implementation (2026-11-02)](s48.md#follow-up-2026-11-02--issue-26-readiness-count-implementation): dynamic totals explained; focused Chromium checks pass, deployed acceptance unverified.
 

@@ -1,3 +1,4 @@
+import { hasUnsavedChanges } from "../../app/navigationGuard";
 import {
   createContext,
   useCallback,
@@ -133,6 +134,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const sessionExpired = useCallback(() => {
+    // Keep an unsaved editor mounted so the same physician can reauthenticate
+    // in another tab and retry the pending write.
+    if (hasUnsavedChanges()) return;
     setCsrfToken(null);
     setUser(null);
     setResearchWarning(null);

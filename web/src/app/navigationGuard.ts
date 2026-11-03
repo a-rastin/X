@@ -1,31 +1,51 @@
-/* In-app hash-route navigation guard (S07).
- *
- * `beforeunload` covers tab close/reload; hash-route changes within the SPA
- * never fire it, so the draft page registers its unsaved state here and
- * every in-app navigation checks `shouldBlockNavigation()` first. The check
- * uses `window.confirm` (testable via Playwright dialogs) and returns true
- * when navigation must be cancelled.
- */
+/* Keep the current route mounted until the draft's latest edits are saved. */
+let guard: { isDirty: () => boolean; save: () => Promise<{ ok: boolean }> } | null = null;
+let acceptedHash = "";
+let pending = false;
+let releasedHash: string | null = null;
 
-let unsavedProvider: (() => boolean) | null = null;
-
-export function registerUnsavedGuard(provider: (() => boolean) | null): void {
-  unsavedProvider = provider;
+export function registerUnsavedGuard(next: typeof guard): void {
+  guard = next;
+  if (next !== null) acceptedHash = window.location.hash;
 }
 
 export function hasUnsavedChanges(): boolean {
+  return guard?.isDirty() === true;
+}
+
+export async function saveBeforeNavigation(): Promise<boolean> {
+  if (guard === null) return true;
+  if (pending) return false;
+  pending = true;
   try {
-    return unsavedProvider?.() === true;
-  } catch {
-    return false;
+    return (await guard.save()).ok;
+  } finally {
+    pending = false;
   }
 }
 
-export function shouldBlockNavigation(): boolean {
-  if (!hasUnsavedChanges()) {
-    return false;
+// Registered before React's hash listeners: restoring synchronously prevents
+// a changed encounter ID or route from unmounting the editor during a save.
+window.addEventListener("hashchange", (event) => {
+  const target = window.location.hash;
+  if (releasedHash === target) {
+    releasedHash = null;
+    // Another edit may arrive between releasing the hash and this event.
+    if (guard === null || !guard.isDirty()) {
+      acceptedHash = target;
+      return;
+    }
   }
-  return !window.confirm(
-    "You have unsaved draft changes. Leave without saving?",
-  );
-}
+  if (guard === null || !guard.isDirty()) {
+    acceptedHash = target;
+    return;
+  }
+  event.stopImmediatePropagation();
+  window.history.replaceState(window.history.state, "", acceptedHash);
+  void saveBeforeNavigation().then((ok) => {
+    if (ok) {
+      releasedHash = target;
+      window.location.hash = target;
+    }
+  });
+}, true);

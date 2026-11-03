@@ -7,7 +7,7 @@ import { EncounterPage } from "../features/encounters/EncounterPage";
 import { ChartPage } from "../features/patients/chart/ChartPage";
 import { PatientsPage } from "../features/patients/DirectoryPage";
 import { RegistrationPage } from "../features/patients/RegistrationForm";
-import { shouldBlockNavigation } from "./navigationGuard";
+import { saveBeforeNavigation } from "./navigationGuard";
 import {
   encounterIdFromHash,
   patientIdFromHash,
@@ -48,10 +48,6 @@ function NavLink({
       aria-current={current === route ? "page" : undefined}
       onClick={(event) => {
         event.preventDefault();
-        // In-app hash-route guard: unsaved draft edits warn before leaving.
-        if (shouldBlockNavigation()) {
-          return;
-        }
         navigate(route);
       }}
     >
@@ -253,7 +249,9 @@ export function App() {
               className="xi-btn xi-btn-secondary"
               type="button"
               onClick={() => {
-                void logout().then(() => navigate("login"));
+                void saveBeforeNavigation().then((ok) => {
+                  if (ok) void logout().then(() => navigate("login"));
+                });
               }}
             >
               Sign out

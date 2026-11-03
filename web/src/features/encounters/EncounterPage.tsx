@@ -16,8 +16,8 @@
  * (412 keeps edits + Reload/Retry reconcile UI, never silent overwrite),
  * error (403 author-only, 404 discarded/missing, transport with Retry).
  * Discard needs explicit confirmation + current revision, releases the slot
- * without deleting the patient. Navigation warns while edits remain
- * (beforeunload + in-app hash guard); flush persists on page transition.
+ * without deleting the patient. In-app navigation waits for saved edits;
+ * beforeunload warns when a tab is closed or reloaded while edits remain.
  * Assessment steps are separate pages (`#/encounters/:id#<step>`), not one
  * stacked form. Registration is seven steps and does not include adverse
  * effects: Register patient, Diagnosis, PANSS, C-SSRS, History, Medications,
@@ -450,7 +450,6 @@ function EncounterWizard({
   const [step, setStep] = useState<WizardStepId>(() =>
     wizardStepFromHash(window.location.hash, encounter.kind),
   );
-  const lastEncounterHashRef = useRef(window.location.hash);
 
   const stepIndex = steps.findIndex((item) => item.id === step);
   const currentStep = steps[stepIndex] ?? steps[0];
@@ -480,14 +479,7 @@ function EncounterWizard({
     if (hash === null || hash === "") {
       return;
     }
-    // Hash change flushes (page transition). Answers live in the parent autosave,
-    // so unmounting this step does not drop them.
-    if (window.location.hash !== hash) {
-      window.location.hash = hash;
-    } else {
-      void autosave.flush();
-    }
-    setStep(wizardStepFromHash(hash, encounter.kind));
+    if (window.location.hash !== hash) window.location.hash = hash;
   }
 
   const guardedDiagnosisContinue =
@@ -602,11 +594,11 @@ function EncounterWizard({
     }
   }
 
-  // Navigation guard: warn while local edits remain (in-app + beforeunload).
+  // Hold in-app navigation until the latest draft edits are saved.
   useEffect(() => {
-    registerUnsavedGuard(() => autosave.hasUnsaved);
+    registerUnsavedGuard({ isDirty: autosave.isDirty, save: autosave.ensureSaved });
     return () => registerUnsavedGuard(null);
-  }, [autosave.hasUnsaved]);
+  }, [autosave.isDirty, autosave.ensureSaved]);
 
   useEffect(() => {
     if (!autosave.hasUnsaved) {
@@ -619,46 +611,16 @@ function EncounterWizard({
     return () => window.removeEventListener("beforeunload", onBeforeUnload);
   }, [autosave.hasUnsaved]);
 
-  // In-app hash-route guard for manual hash edits and back/forward: confirm
-  // before leaving the draft with unsaved edits, restoring the draft hash
-  // (including the open step) when the user stays.
+  // The app guard releases hash changes only after persistence succeeds.
   useEffect(() => {
     const onHashChange = () => {
-      if (window.location.hash.startsWith("#/encounters/")) {
-        lastEncounterHashRef.current = window.location.hash;
-        return;
-      }
-      if (!autosave.hasUnsaved) {
-        void autosave.flush();
-        return;
-      }
-      const stay = !window.confirm(
-        "You have unsaved draft changes. Leave without saving?",
-      );
-      if (stay) {
-        window.location.hash = lastEncounterHashRef.current;
-      } else {
-        void autosave.flush();
+      if (parseEncounterId(window.location.hash) === encounterId) {
+        setStep(wizardStepFromHash(window.location.hash, encounter.kind));
       }
     };
     window.addEventListener("hashchange", onHashChange);
     return () => window.removeEventListener("hashchange", onHashChange);
-  }, [autosave, encounterId]);
-
-  // Browser back/forward and pasted step URLs. Clicks already set the step;
-  // this covers the cases that only change the hash.
-  const flushDraft = autosave.flush;
-  useEffect(() => {
-    const onHashChange = () => {
-      if (!window.location.hash.startsWith("#/encounters/")) {
-        return;
-      }
-      void flushDraft();
-      setStep(wizardStepFromHash(window.location.hash, encounter.kind));
-    };
-    window.addEventListener("hashchange", onHashChange);
-    return () => window.removeEventListener("hashchange", onHashChange);
-  }, [flushDraft, encounter.kind]);
+  }, [encounter.kind, encounterId]);
 
   useEffect(() => {
     if (skipPageFocus.current) {
@@ -721,10 +683,15 @@ function EncounterWizard({
     setDiscardError(null);
     setDiscardBusy(true);
     try {
-      // Flush first so the discard revision fence sees the latest base;
-      // discard itself requires the current revision explicitly.
-      await autosave.flush();
-      const result = await discardEncounter(encounterId, autosave.baseRevision);
+      // A failed local save may still be discarded against the known base.
+      // A conflict needs explicit reconciliation before deleting server data.
+      const saved = await autosave.ensureSaved();
+      if (!saved.ok && saved.reason === "conflict") {
+        setDiscardError("The draft changed in another tab. Reconcile the conflict before discarding.");
+        return;
+      }
+      const revision = saved.ok ? saved.revision : autosave.baseRevision;
+      const result = await discardEncounter(encounterId, revision);
       registerUnsavedGuard(null);
       onDiscarded(result.revision);
     } catch (err) {
@@ -807,11 +774,7 @@ function EncounterWizard({
         />
       )}
 
-      {/* Assessment pages only show save status when recovery is needed. */}
-      {currentStep.id !== "register" &&
-        (!streamlinedStep ||
-          autosave.saveState.kind === "failed" ||
-          autosave.saveState.kind === "conflict") && (
+      {currentStep.id !== "register" && (
         <section className="xi-card" aria-label="Draft save">
           <DraftSaveStatus autosave={autosave} />
         </section>
@@ -838,6 +801,12 @@ function EncounterWizard({
         aria-label={`${currentStep.label}, step ${stepIndex + 1} of ${steps.length}`}
         tabIndex={-1}
         ref={pageRef}
+        onBlur={(event) => {
+          const target = event.target;
+          const next = event.relatedTarget;
+          const editable = (node: EventTarget | null) => node instanceof HTMLInputElement || node instanceof HTMLTextAreaElement || node instanceof HTMLSelectElement;
+          if (editable(target) && !editable(next)) void autosave.ensureSaved();
+        }}
       >
         {currentStep.id === "register" && (
           <>
@@ -1046,19 +1015,7 @@ function EncounterWizard({
         <a
           className="xi-btn xi-btn-secondary"
           href="#/patients"
-          onClick={(event) => {
-            // Page-transition flush: persist pending edits before leaving.
-            void autosave.flush();
-            if (autosave.hasUnsaved) {
-              if (
-                !window.confirm(
-                  "You have unsaved draft changes. Leave without saving?",
-                )
-              ) {
-                event.preventDefault();
-              }
-            }
-          }}
+
         >
           Back to directory
         </a>

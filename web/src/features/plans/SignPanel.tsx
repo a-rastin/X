@@ -98,9 +98,7 @@ export function SignPanel({
     try {
       // Page-transition flush: persist pending draft edits before the sign
       // fence reads the fresh encounter revision.
-      await autosave.flush().catch(() => {
-        /* fence below reads the fresh revision regardless */
-      });
+      await autosave.flush();
       await flushPlan();
       const meta = await getEncounter(encounterId);
       const plan = await getSecondaryPlan(encounterId);
