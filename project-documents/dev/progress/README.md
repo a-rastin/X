@@ -1,5 +1,7 @@
 # X-INSIGHT progress tracker
 
+[Issue 29 startup noise analysis (2026-11-03)](s03.md#follow-up-2026-11-03--issue-29-startup-noise-analysis): minimal plan recorded; runtime acceptance remains open.
+
 [Issue 28 action semantics implementation (2026-11-03)](s07.md#follow-up-2026-11-03--issue-28-action-semantics-implementation): button semantics implemented; browser and accessibility acceptance remain open.
 
 [Issue 27 autosave work (2026-11-02)](s07.md#follow-up-2026-11-02--issue-27-autosave-work): initial race checks pass; browser history and latency acceptance remain open.
