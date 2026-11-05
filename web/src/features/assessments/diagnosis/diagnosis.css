@@ -124,7 +124,7 @@
 .xi-diagnosis-item-hint {
   color: var(--ink-muted);
   font-size: 11px;
-  text-align: right;
+  text-align: end;
 }
 .xi-diagnosis-options {
   display: flex;
@@ -177,8 +177,8 @@
   margin: 0;
 }
 .xi-diagnosis-review {
-  border-left: 1px solid var(--border);
-  padding-left: 24px;
+  border-inline-start: 1px solid var(--border);
+  padding-inline-start: 24px;
 }
 .xi-diagnosis-result {
   padding: 20px;
@@ -210,7 +210,7 @@
   font-weight: 600;
 }
 .xi-diagnosis-missing {
-  padding-left: 18px;
+  padding-inline-start: 18px;
   font-size: 13px;
   line-height: 1.7;
 }
@@ -251,8 +251,8 @@
   grid-template-columns: minmax(0, 1fr);
 }
   .xi-diagnosis-review {
-  border-left: 0;
-  padding-left: 0;
+  border-inline-start: 0;
+  padding-inline-start: 0;
 }
 }
 @media (max-width: 640px) {
@@ -281,7 +281,7 @@
 }
   .xi-diagnosis-criterion-header > .xi-diagnosis-count {
   width: 100%;
-  padding-left: 42px;
+  padding-inline-start: 42px;
 }
   .xi-diagnosis-item {
   grid-template-columns: minmax(0, 1fr);

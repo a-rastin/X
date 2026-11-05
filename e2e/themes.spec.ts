@@ -119,7 +119,7 @@ test("theme toggle is keyboard-focusable, operable, and visibly focused", async 
   await loginAs(page, "physician", username, "secret123");
   await acknowledgeWarning(page);
 
-  // Pure keyboard path: skip link, Dashboard, Patients, Account, theme toggle.
+  // Pure keyboard path: skip, language, Dashboard, Patients, Account, theme.
   await page.reload();
   await expect(page.getByRole("alertdialog")).toHaveCount(0);
   // Wait for the authenticated header before tabbing: the toggle only
@@ -127,9 +127,11 @@ test("theme toggle is keyboard-focusable, operable, and visibly focused", async 
   await expect(
     page.getByRole("heading", { name: "Physician dashboard" }),
   ).toBeVisible();
-  const toggle = page.getByRole("button", { name: /switch to/i });
+  const toggle = page.getByRole("button", { name: /switch to (light|dark) theme/i });
   await page.keyboard.press("Tab"); // skip link
   await expect(page.getByRole("link", { name: "Skip to content" })).toBeFocused();
+  await page.keyboard.press("Tab");
+  await expect(page.getByRole("button", { name: "Switch to Persian" })).toBeFocused();
   await page.keyboard.press("Tab"); // Dashboard
   await page.keyboard.press("Tab"); // Patients (S06 directory navigation)
   await page.keyboard.press("Tab"); // Account
@@ -218,7 +220,7 @@ test("admin theme preference persists independently", async ({ page }) => {
   await expect(
     page.getByRole("heading", { name: "Administrator dashboard" }),
   ).toBeVisible();
-  const toggle = page.getByRole("button", { name: /switch to/i });
+  const toggle = page.getByRole("button", { name: /switch to (light|dark) theme/i });
   const before = await themeOf(page);
   await toggle.click();
   const after = before === "dark" ? "light" : "dark";

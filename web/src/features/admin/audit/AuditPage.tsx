@@ -1,3 +1,4 @@
+import { useLanguage } from "../../../shared/i18n";
 /* Readable admin audit table/detail view (S52 §4, seam T9; plan.md §10.1).
  *
  * Admin-only navigation/route guard lives in app/pages.tsx (complement to
@@ -94,19 +95,23 @@ function shortId(value: string | null): string {
 
 /** `occurred_at` is stored UTC (`Z`); show it verbatim plus the viewer's
  * local rendering (with zone abbreviation) so the timezone is explicit. */
-function formatLocalTime(utcIso: string): string {
+function formatLocalTime(utcIso: string, language: "en" | "fa"): string {
   const moment = new Date(utcIso);
   if (Number.isNaN(moment.getTime())) {
     return utcIso;
   }
   try {
-    return new Intl.DateTimeFormat(undefined, {
-      dateStyle: "medium",
-      timeStyle: "medium",
+    return new Intl.DateTimeFormat(language === "fa" ? "fa-IR-u-ca-gregory" : "en-US", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+      hour: "numeric",
+      minute: "2-digit",
+      second: "2-digit",
       timeZoneName: "short",
     }).format(moment);
   } catch {
-    return moment.toLocaleString();
+    return moment.toLocaleString(language === "fa" ? "fa-IR-u-ca-gregory" : "en-US");
   }
 }
 
@@ -141,6 +146,7 @@ function AuditDetail({
   event: AuditEvent;
   headingRef: React.RefObject<HTMLHeadingElement | null>;
 }) {
+  const { language, t } = useLanguage();
   const details = event.details ?? {};
   const refEntries = REF_KEYS.flatMap((key) => {
     const value = details[key];
@@ -167,37 +173,38 @@ function AuditDetail({
         tabIndex={-1}
         ref={headingRef}
       >
-        Event detail
+        
+        {t("eventDetail")}
       </h3>
       <dl className="xi-proposal-facts">
         <div>
-          <dt>Event id</dt>
+          <dt>{t("eventId")}</dt>
           <dd className="xi-mono">{event.id}</dd>
         </div>
         <div>
-          <dt>Time (UTC, as stored)</dt>
+          <dt>{t("timeUtcAsStored")}</dt>
           <dd className="xi-mono">{event.occurred_at}</dd>
         </div>
         <div>
-          <dt>Time (your timezone)</dt>
-          <dd>{formatLocalTime(event.occurred_at)}</dd>
+          <dt>{t("timeYourTimezone")}</dt>
+          <dd>{formatLocalTime(event.occurred_at, language)}</dd>
         </div>
         <div>
-          <dt>Actor</dt>
+          <dt>{t("actor")}</dt>
           <dd>{event.actor_display ?? event.actor ?? "—"}</dd>
         </div>
         <div>
-          <dt>Action</dt>
+          <dt>{t("action")}</dt>
           <dd className="xi-mono">{event.operation}</dd>
         </div>
         <div>
-          <dt>Request id</dt>
+          <dt>{t("requestId")}</dt>
           <dd className="xi-mono">{event.request_id ?? "—"}</dd>
         </div>
       </dl>
-      <h4 className="xi-proposal-subhead">Correlation references</h4>
+      <h4 className="xi-proposal-subhead">{t("correlationReferences")}</h4>
       {refEntries.length === 0 ? (
-        <p className="xi-hint">No patient/encounter/question/run references on this event.</p>
+        <p className="xi-hint">{t("noPatientEncounterQuestionRunReferencesOn")}</p>
       ) : (
         <dl className="xi-proposal-facts">
           {refEntries.map(([key, value]) => (
@@ -208,16 +215,16 @@ function AuditDetail({
           ))}
         </dl>
       )}
-      <h4 className="xi-proposal-subhead">Metadata (bounded)</h4>
+      <h4 className="xi-proposal-subhead">{t("metadataBounded")}</h4>
       {extraEntries.length === 0 ? (
-        <p className="xi-hint">No additional metadata.</p>
+        <p className="xi-hint">{t("noAdditionalMetadata")}</p>
       ) : (
         <dl className="xi-proposal-facts">
           {extraEntries.map(([key, value]) => (
             <div key={key}>
               <dt>{key}</dt>
               <dd className="xi-mono">
-                {WITHHELD_KEY_PATTERN.test(key) ? "[withheld]" : stringifyBounded(value)}
+                {WITHHELD_KEY_PATTERN.test(key) ? t("withheld") : stringifyBounded(value)}
               </dd>
             </div>
           ))}
@@ -225,11 +232,13 @@ function AuditDetail({
       )}
       {truncatedExtras && (
         <p className="xi-hint">
-          Showing the first {MAX_META_KEYS} metadata keys; the stored event is unchanged.
+          
+          {t("showingTheFirst")} {MAX_META_KEYS}  {t("metadataKeysTheStoredEventIsUnchanged")}
         </p>
       )}
       <p className="xi-hint" style={{ marginBottom: 0 }}>
-        Payload hash (tamper-evidence, not secrecy):{" "}
+        
+        {t("payloadHashTamperEvidenceNotSecrecy")}{" "}
         <span className="xi-mono">{event.payload_hash}</span>
       </p>
     </section>
@@ -237,6 +246,7 @@ function AuditDetail({
 }
 
 export function AuditPage() {
+  const { t, errorText } = useLanguage();
   const { sessionExpired } = useAuth();
   const uid = useId();
   const [draft, setDraft] = useState<AppliedFilters>(EMPTY_FILTERS);
@@ -385,19 +395,18 @@ export function AuditPage() {
   return (
     <div>
       <h2 className="xi-page-title" data-testid="audit-heading" id="audit-heading">
-        Audit trail
-      </h2>
+        {t("auditTrail")}</h2>
       <p className="xi-hint">
-        Append-only administrator inspection. Successful mutations and their events commit
-        together; this view is read-only and never claims tamper-proof storage — a
-        database owner or restore can replace history.
+        
+        {t("appendOnlyAdministratorInspectionSuccessfulMutationsAnd")}
       </p>
       <section className="xi-card" aria-labelledby={`${uid}-filters-heading`}>
         <h3 className="xi-section-title" id={`${uid}-filters-heading`}>
-          Filters
+          
+          {t("filters")}
         </h3>
         <form
-          aria-label="Filter audit events"
+          aria-label={t("filterAuditEvents")}
           data-testid="audit-filters"
           id="audit-filters"
           onSubmit={handleApply}
@@ -411,7 +420,8 @@ export function AuditPage() {
           <div className="xi-form-row">
             <div className="xi-field">
               <label className="xi-label" htmlFor={idFor("since")}>
-                Since (your timezone)
+                
+                {t("sinceYourTimezone")}
               </label>
               <input
                 className="xi-input"
@@ -423,7 +433,8 @@ export function AuditPage() {
             </div>
             <div className="xi-field">
               <label className="xi-label" htmlFor={idFor("until")}>
-                Until (your timezone)
+                
+                {t("untilYourTimezone")}
               </label>
               <input
                 className="xi-input"
@@ -436,7 +447,8 @@ export function AuditPage() {
           </div>
           <fieldset style={{ border: 0, padding: 0, margin: 0 }}>
             <legend className="xi-label" style={{ marginBottom: 8 }}>
-              Target / correlation ids
+              
+              {t("targetCorrelationIds")}
             </legend>
             <div className="xi-form-row">
               {textField("patientId", "Patient id")}
@@ -447,19 +459,21 @@ export function AuditPage() {
           </fieldset>
           {filterError !== null && (
             <p className="xi-form-error" role="alert">
-              {filterError}
+              {errorText(filterError)}
             </p>
           )}
           <div className="xi-row-actions">
             <button className="xi-btn xi-btn-primary" type="submit">
-              Apply filters
+              
+              {t("applyFilters")}
             </button>
             <button
               className="xi-btn xi-btn-secondary"
               type="button"
               onClick={handleClear}
             >
-              Clear
+              
+              {t("clear600")}
             </button>
           </div>
         </form>
@@ -467,15 +481,16 @@ export function AuditPage() {
 
       <section className="xi-card" aria-labelledby={`${uid}-results-heading`}>
         <h3 className="xi-section-title" id={`${uid}-results-heading`}>
-          Events
+          
+          {t("events")}
           {data !== null && ` (${data.total})`}
         </h3>
-        {state.kind === "loading" && <p>Loading audit events…</p>}
+        {state.kind === "loading" && <p>{t("loadingAuditEvents")}</p>}
         {state.kind === "error" && (
           <div>
             <p className="xi-form-error" role="alert">
               {state.forbidden
-                ? "Administrator access required."
+                ? t("administratorRequired")
                 : state.message}
             </p>
             <button
@@ -483,23 +498,22 @@ export function AuditPage() {
               type="button"
               onClick={() => void reload()}
             >
-              Retry
-            </button>
+              {t("retry")}</button>
           </div>
         )}
         {data !== null &&
           (data.total === 0 ? (
-            <p>No audit events found for these filters.</p>
+            <p>{t("noAuditEventsFoundForTheseFilters")}</p>
           ) : (
             <div>
-              <table className="xi-table" aria-label="Audit events" data-testid="audit-table" id="audit-table">
+              <table className="xi-table" aria-label={t("auditEvents")} data-testid="audit-table" id="audit-table">
                 <thead>
                   <tr>
-                    <th scope="col">Time (UTC)</th>
-                    <th scope="col">Actor</th>
-                    <th scope="col">Action</th>
-                    <th scope="col">Target</th>
-                    <th scope="col">Detail</th>
+                    <th scope="col">{t("timeUtc")}</th>
+                    <th scope="col">{t("actor")}</th>
+                    <th scope="col">{t("action")}</th>
+                    <th scope="col">{t("target606")}</th>
+                    <th scope="col">{t("detail")}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -521,7 +535,7 @@ export function AuditPage() {
                             )
                           }
                         >
-                          {selected?.id === event.id ? "Hide" : "View"}
+                          {selected?.id === event.id ? t("hide") : t("view")}
                         </button>
                       </td>
                     </tr>
@@ -529,7 +543,8 @@ export function AuditPage() {
                 </tbody>
               </table>
               <p className="xi-hint" role="status">
-                Showing {from}–{to} of {data.total} (stable time order).
+                
+                {t("showing")} {from}–{to}  {t("of")} {data.total}  {t("stableTimeOrder")}
               </p>
               <div className="xi-row-actions">
                 <button
@@ -542,7 +557,7 @@ export function AuditPage() {
                     setOffset(Math.max(0, data.offset - data.limit));
                   }}
                 >
-                  Previous
+                  {t("previous")}
                 </button>
                 <button
                   className="xi-btn xi-btn-secondary"
@@ -554,7 +569,7 @@ export function AuditPage() {
                     setOffset(data.offset + data.limit);
                   }}
                 >
-                  Next
+                  {t("next")}
                 </button>
               </div>
             </div>

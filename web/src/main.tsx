@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./shared/theme.css";
 import { AuthProvider } from "./features/identity/auth";
 import { App } from "./app/App";
+import { LanguageProvider } from "./shared/i18n";
 
 const rootEl = document.getElementById("root");
 if (!rootEl) {
@@ -11,8 +12,10 @@ if (!rootEl) {
 
 createRoot(rootEl).render(
   <React.StrictMode>
-    <AuthProvider>
-      <App />
-    </AuthProvider>
+    <LanguageProvider>
+      <AuthProvider>
+        <App />
+      </AuthProvider>
+    </LanguageProvider>
   </React.StrictMode>,
 );

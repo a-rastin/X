@@ -1,3 +1,5 @@
+import { clinicalText } from "../../../shared/messages";
+import { useLanguage } from "../../../shared/i18n";
 /* Diagnosis checklist with server-computed threshold preview (S09,
  * plan.md §§2.2, 5; FR-11, FR-16).
  *
@@ -139,6 +141,11 @@ export function DiagnosisSection({
   locked = false,
   onInitializationReady,
 }: DiagnosisSectionProps) {
+  const { t, errorText, text, language } = useLanguage();
+  function translatedPrompt(item: { id: string; prompt: string }): string {
+    return clinicalText(language, definition?.id ?? "diagnosis", definition?.version ?? "unavailable", item.id, item.prompt);
+  }
+
   const [definition, setDefinition] = useState<DiagnosisDefinition | null>(null);
   const [definitionError, setDefinitionError] = useState<string | null>(null);
   const [preview, setPreview] = useState<DiagnosisPreview | null>(null);
@@ -366,54 +373,54 @@ export function DiagnosisSection({
   if (preview === null) {
     verdict = "";
   } else if (preview.bypass_valid) {
-    verdict = "Diagnosis bypassed. Bypass is not a completed assessment.";
+    verdict = t("diagnosisBypassed");
   } else if (evaluation?.status === "complete" && overall === "criteria_satisfied") {
-    verdict = `Every required criterion satisfied (server evaluation ${preview.definition_version}).`;
+    verdict = t("diagnosisCriteriaSatisfied", { version: preview.definition_version });
   } else if (
     evaluation?.status === "complete" &&
     overall === "below_threshold" &&
     preview.requires_acknowledgment
   ) {
     verdict =
-      "Completed below threshold. Proposal generation requires your attributed acknowledgment of this exact assessment — use the acknowledgment action below.";
+      t("diagnosisAckNeeded");
   } else if (
     evaluation?.status === "complete" &&
     overall === "below_threshold" &&
     preview.acknowledgment_valid
   ) {
     verdict =
-      "Completed below threshold and acknowledged.";
+      t("diagnosisAcknowledged");
   } else if (evaluation?.status === "complete") {
     verdict =
-      "Indeterminate: every required item is answered but some criteria are still unknown and none failed. This is incomplete and needs no acknowledgment.";
+      t("diagnosisIndeterminate");
   } else if (evaluation?.status === "partial") {
     const missing = evaluation.missing_item_ids.length;
-    verdict = `Incomplete — ${missing} required item${missing === 1 ? "" : "s"} still need${missing === 1 ? "s" : ""} an answer. Saved as incomplete; this is not a below-threshold result and needs no acknowledgment.`;
+    verdict = t(missing === 1 ? "diagnosisMissingOne" : "diagnosisMissingMany", { missing });
   } else {
     verdict =
-      "No answers yet. Diagnosis is unanswered — not a below-threshold result.";
+      t("diagnosisUnanswered");
   }
 
   return (
     <section className="xi-card xi-diagnosis" aria-labelledby="diagnosis-heading">
       <h3 className="xi-section-title" id="diagnosis-heading">
-        Diagnosis (step {stepNumber})
+        
+        {t("diagnosisStep")} {stepNumber})
       </h3>
 
       {definitionError !== null && (
         <p className="xi-form-error" role="alert">
-          {definitionError}{" "}
+          {errorText(definitionError)}{" "}
           <button
             className="xi-btn xi-btn-secondary"
             type="button"
             onClick={() => window.location.reload()}
           >
-            Retry
-          </button>
+            {t("retry")}</button>
         </p>
       )}
       {definition === null && definitionError === null && (
-        <p>Loading diagnosis form…</p>
+        <p>{t("loadingDiagnosisForm")}</p>
       )}
 
       <div className="xi-diagnosis-workspace">
@@ -421,12 +428,12 @@ export function DiagnosisSection({
         <div className="xi-diagnosis-checklist">
           <div className="xi-diagnosis-overview">
             <div>
-              <h4>Schizophrenia diagnostic criteria</h4>
-              <p>Counts show available responses, not clinician review or criteria met.</p>
+              <h4>{t("schizophreniaCriteria")}</h4>
+              <p>{t("responseCountCaution")}</p>
             </div>
             <span className="xi-diagnosis-count">
               {definition.items.filter((item) => ANSWER_OPTIONS.some((option) => option.value === answers[item.id])).length}
-              {" / "}{definition.items.length} responses
+              {" / "}{definition.items.length}  {t("responses")}
             </span>
           </div>
           {Array.from(new Set(definition.items.map((item) => item.id.split("_")[0].toUpperCase()))).map((criterion) => {
@@ -437,21 +444,21 @@ export function DiagnosisSection({
                 <header className="xi-diagnosis-criterion-header">
                   <span className="xi-diagnosis-letter" aria-hidden="true">{criterion}</span>
                   <h4 id={`diag-group-${criterion}`} tabIndex={-1}>
-                    <span className="xi-sr-only">Criterion {criterion}: </span>
-                    {CRITERION_TITLES[criterion] ?? "Additional criteria"}
+                    <span className="xi-sr-only">{t("criterion")} {criterion}: </span>
+                    {text(CRITERION_TITLES[criterion] ?? "Additional criteria")}
                   </h4>
-                  <span className="xi-diagnosis-count">{answered} / {items.length} answered</span>
+                  <span className="xi-diagnosis-count">{t("answeredCount", { answered, total: items.length })}</span>
                 </header>
                 <div className="xi-diagnosis-items">
                   {items.map((item) => (
                     <fieldset key={item.id} className="xi-diagnosis-item" disabled={busy !== null || locked}>
-                      <legend className="xi-sr-only">{item.prompt}</legend>
-                      <div className="xi-diagnosis-question" aria-hidden="true">{item.prompt}</div>
+                      <legend className="xi-sr-only">{translatedPrompt(item)}</legend>
+                      <div className="xi-diagnosis-question" aria-hidden="true">{translatedPrompt(item)}</div>
                       <div className="xi-diagnosis-answer-row">
                         <span className="xi-diagnosis-item-hint">
                           {item.required
-                            ? (ANSWER_OPTIONS.some((option) => option.value === answers[item.id]) ? "" : "Awaiting response")
-                            : "Required when applicable"}
+                            ? (ANSWER_OPTIONS.some((option) => option.value === answers[item.id]) ? "" : t("awaitingResponse"))
+                            : t("requiredApplicable")}
                         </span>
                         <div className="xi-diagnosis-options">
                           {ANSWER_OPTIONS.map((option) => (
@@ -466,7 +473,7 @@ export function DiagnosisSection({
                                 aria-invalid={itemErrors[item.id] !== undefined || undefined}
                                 aria-describedby={itemErrors[item.id] !== undefined ? `diag-${item.id}-error` : undefined}
                               />
-                              <span>{option.label}</span>
+                              <span>{text(option.label)}</span>
                             </label>
                           ))}
                         </div>
@@ -485,16 +492,16 @@ export function DiagnosisSection({
         </div>
       )}
 
-      <aside className="xi-diagnosis-review" aria-label="Diagnosis review">
+      <aside className="xi-diagnosis-review" aria-label={t("diagnosisReview")}>
       <div className="xi-diagnosis-result">
         <h4 className="xi-section-title">
-          Assessment summary
+          {t("assessmentSummary")}
         </h4>
-        {previewLoading && preview === null && <p>Loading diagnosis preview…</p>}
+        {previewLoading && preview === null && <p>{t("loadingDiagnosisPreview")}</p>}
         {previewError !== null && preview === null && (
           <div>
             <p className="xi-form-error" role="alert">
-              {previewError}
+              {errorText(previewError)}
             </p>
             <div className="xi-row-actions" style={{ marginTop: 8 }}>
               <button
@@ -506,8 +513,7 @@ export function DiagnosisSection({
                   void refreshPreview();
                 }}
               >
-                Retry
-              </button>
+                {t("retry")}</button>
             </div>
           </div>
         )}
@@ -524,8 +530,8 @@ export function DiagnosisSection({
               {verdict}
             </p>
             <p className="xi-hint">
-              Server evaluation · definition {preview.definition_version} ·
-              saved revision {preview.revision}
+              
+              {t("serverEvaluationDefinition")} {preview.definition_version}  {t("savedRevision278")} {preview.revision}
               {answersPending &&
                 " · unsaved answer edits pending — preview reflects the last saved revision"}
               {previewError !== null && " · preview refresh failed; showing last loaded state"}
@@ -533,7 +539,7 @@ export function DiagnosisSection({
 
             {itemErrorIds.length > 0 && (
               <p className="xi-form-error" role="alert">
-                The saved answers contain server-reported problems:{" "}
+                {t("serverAnswerProblems")}{" "}
                 {itemErrorIds
                   .map((id) => `${id}: ${(itemErrors[id] ?? []).join(" ")}`)
                   .join("; ")}
@@ -542,14 +548,14 @@ export function DiagnosisSection({
 
             {evaluation?.status === "partial" && definition !== null && (
               <details className="xi-diagnosis-outstanding">
-                <summary>Still needed: {evaluation.missing_item_ids.length} answers</summary>
+                <summary>{t("stillNeeded")} {evaluation.missing_item_ids.length}  {t("answers")}</summary>
                 <ul className="xi-diagnosis-missing">
                   {evaluation.missing_item_ids.map((id) => (
                     <li key={id}>
                       <a href={`#diag-${id}-yes`} onClick={(event) => {
                         event.preventDefault();
                         document.getElementById(`diag-${id}-yes`)?.focus();
-                      }}>{definition.items.find((item) => item.id === id)?.prompt ?? id}</a>
+                      }}>{translatedPrompt(definition.items.find((item) => item.id === id) ?? { id, prompt: id })}</a>
                     </li>
                   ))}
                 </ul>
@@ -557,19 +563,19 @@ export function DiagnosisSection({
             )}
 
             {criteria !== null && evaluation?.status === "complete" && (
-              <table className="xi-table" id="diagnosis-criteria" aria-label="Criterion states">
+              <table className="xi-table" id="diagnosis-criteria" aria-label={t("criterionStates")}>
                 <thead>
                   <tr>
-                    <th scope="col">Criterion</th>
-                    <th scope="col">State</th>
+                    <th scope="col">{t("criterion")}</th>
+                    <th scope="col">{t("state")}</th>
                   </tr>
                 </thead>
                 <tbody>
                   {Object.entries(criteria).map(([criterion, state]) => (
                     <tr key={criterion}>
-                      <td><strong>{criterion}</strong>{" · "}{CRITERION_TITLES[criterion] ?? "Criterion"}</td>
+                      <td><strong>{criterion}</strong>{" · "}{text(CRITERION_TITLES[criterion] ?? "Criterion")}</td>
                       <td><span className={`xi-diagnosis-state xi-diagnosis-state--${state}`}>
-                        {state === "met" ? "Met" : state === "not_met" ? "Not met" : state === "unknown" ? "Unknown" : state}
+                        {state === "met" ? t("met") : state === "not_met" ? t("notMet") : state === "unknown" ? t("unknown") : state}
                       </span></td>
                     </tr>
                   ))}
@@ -580,15 +586,12 @@ export function DiagnosisSection({
             {preview.requires_acknowledgment && (
               <div className="xi-warning-panel" aria-labelledby="diagnosis-warning-heading">
                 <h5 id="diagnosis-warning-heading" style={{ margin: "0 0 8px" }}>
-                  Warning: completed below threshold
+                  {t("belowThresholdWarning")}
                 </h5>
                 <p style={{ marginTop: 0 }}>
-                  At least one required criterion is not met (server
-                  evaluation {preview.definition_version}, saved revision{" "}
-                  {preview.revision}). Acknowledgment is a separate recorded
-                  action required before proposal generation — continuing to
-                  the next step does not record it. Any later
-                  change to these answers invalidates the acknowledgment.
+                  
+                  {t("atLeastOneRequiredCriterionIsNot")} {preview.definition_version}{t("savedRevision280")}{" "}
+                  {preview.revision}{t("acknowledgmentIsASeparateRecordedActionRequired")}
                 </p>
                 <button
                   className="xi-btn xi-btn-primary"
@@ -597,17 +600,18 @@ export function DiagnosisSection({
                   onClick={() => void handleAcknowledge()}
                 >
                   {busy === "acknowledge"
-                    ? "Acknowledging…"
-                    : "Acknowledge below-threshold result"}
+                    ? t("acknowledging")
+                    : t("acknowledgeBelowThresholdResult")}
                 </button>
               </div>
             )}
 
             {preview.acknowledgment_valid && preview.acknowledgment !== null && (
               <p className="xi-hint">
-                Acknowledged by author {preview.acknowledgment.actor_id} at{" "}
-                {preview.acknowledgment.acknowledged_at} (assessed revision{" "}
-                {preview.acknowledgment.revision}, definition{" "}
+                
+                {t("acknowledgedByAuthor")} {preview.acknowledgment.actor_id}  {t("at")}{" "}
+                {preview.acknowledgment.acknowledged_at}  {t("assessedRevision")}{" "}
+                {preview.acknowledgment.revision}{t("definition285")}{" "}
                 {preview.acknowledgment.definition_version}).
               </p>
             )}
@@ -618,18 +622,17 @@ export function DiagnosisSection({
 
       {preview?.bypass_valid === true && preview.bypass !== null && (
         <p className="xi-hint">
-          Diagnosis bypassed — recorded for author {preview.bypass.actor_id}{" "}
-          at {preview.bypass.bypassed_at} (revision {preview.bypass.revision}).
-          Bypass is distinct from completion: it is not a completed
-          assessment and carries no reason.
+          
+          {t("diagnosisBypassedRecordedForAuthor")} {preview.bypass.actor_id}{" "}
+          
+          {t("at")} {preview.bypass.bypassed_at}  {t("revision287")} {preview.bypass.revision}{t("bypassIsDistinctFromCompletionItIs")}
         </p>
       )}
       {preview !== null &&
         preview.bypass !== null &&
         !preview.bypass_valid && (
         <p className="xi-hint">
-          A previous bypass no longer applies because answers were added
-          afterwards.
+          {t("previousBypassInvalid")}
         </p>
       )}
 
@@ -638,7 +641,7 @@ export function DiagnosisSection({
 
       {notice !== null && (
         <p className="xi-status" role="status">
-          {notice}
+          {text(notice)}
         </p>
       )}
       {actionError !== null && (
@@ -648,7 +651,7 @@ export function DiagnosisSection({
           tabIndex={-1}
           ref={actionErrorRef}
         >
-          {actionError}
+          {errorText(actionError)}
         </p>
       )}
     </section>

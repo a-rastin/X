@@ -1,3 +1,4 @@
+import { useLanguage } from "../../shared/i18n";
 /* Shared patient directory (S06, plan.md §§2.2-2.3, FR-23).
  *
  * Search by name/ID substring plus clinical-status filter with bounded
@@ -38,6 +39,7 @@ function statusLabel(status: Patient["clinical_status"]): string {
 }
 
 export function PatientDirectory() {
+  const { t, errorText } = useLanguage();
   const { user, sessionExpired } = useAuth();
   const uid = useId();
   const searchId = `${uid}-search`;
@@ -143,11 +145,11 @@ export function PatientDirectory() {
   return (
     <section className="xi-card" aria-labelledby={`${uid}-heading`}>
       <h3 className="xi-section-title" id={`${uid}-heading`}>
-        Patient directory
+        {t("patientDirectory")}
         {data !== null && ` (${data.total})`}
       </h3>
       <form
-        aria-label="Search patients"
+        aria-label={t("searchPatients")}
         onSubmit={(event) => {
           // Search already applies live (debounced); submit only resets the
           // page so Enter from the input cannot strand the pager mid-list.
@@ -159,13 +161,13 @@ export function PatientDirectory() {
         <div className="xi-form-row">
           <div className="xi-field">
             <label className="xi-label" htmlFor={searchId}>
-              Search by name or ID
+              {t("searchNameId")}
             </label>
             <input
               className="xi-input"
               id={searchId}
               type="search"
-              placeholder="Enter a patient name or ID…"
+              placeholder={t("searchPlaceholder")}
               autoComplete="off"
               value={query}
               onChange={(event) => {
@@ -176,7 +178,7 @@ export function PatientDirectory() {
           </div>
           <div className="xi-field">
             <label className="xi-label" htmlFor={statusId}>
-              Clinical status
+              {t("clinicalStatus")}
             </label>
             <select
               className="xi-select"
@@ -187,26 +189,25 @@ export function PatientDirectory() {
                 setOffset(0);
               }}
             >
-              <option value="all">All statuses</option>
-              <option value="first_time">First-time</option>
-              <option value="established">Established</option>
+              <option value="all">{t("allStatuses")}</option>
+              <option value="first_time">{t("firstTime")}</option>
+              <option value="established">{t("established")}</option>
             </select>
           </div>
         </div>
       </form>
-      {state.kind === "loading" && <p>Loading patients…</p>}
+      {state.kind === "loading" && <p>{t("loadingPatients")}</p>}
       {state.kind === "error" && (
         <div>
           <p className="xi-form-error" role="alert">
-            {state.message}
+            {errorText(state.message)}
           </p>
           <button
             className="xi-btn xi-btn-secondary"
             type="button"
             onClick={() => void reload()}
           >
-            Retry
-          </button>
+            {t("retry")}</button>
         </div>
       )}
       {draftError !== null && (
@@ -216,44 +217,44 @@ export function PatientDirectory() {
           tabIndex={-1}
           ref={draftErrorRef}
         >
-          {draftError}
+          {errorText(draftError)}
         </p>
       )}
       {data !== null &&
         (data.total === 0 ? (
-          <p>No patients found.</p>
+          <p>{t("noPatients")}</p>
         ) : (
           <div>
-            <table className="xi-table" aria-label="Patients">
+            <table className="xi-table" aria-label={t("patients")}>
               <thead>
                 <tr>
-                  <th scope="col">Patient ID</th>
-                  <th scope="col">Given name</th>
-                  <th scope="col">Family name</th>
-                  <th scope="col">Sex</th>
-                  <th scope="col">Age</th>
-                  <th scope="col">Status</th>
-                  <th scope="col">Archive</th>
-                  <th scope="col">Chart</th>
-                  {canRegister && <th scope="col">Draft</th>}
+                  <th scope="col">{t("patientId")}</th>
+                  <th scope="col">{t("givenName")}</th>
+                  <th scope="col">{t("familyName")}</th>
+                  <th scope="col">{t("sex")}</th>
+                  <th scope="col">{t("age")}</th>
+                  <th scope="col">{t("status")}</th>
+                  <th scope="col">{t("archive")}</th>
+                  <th scope="col">{t("chart")}</th>
+                  {canRegister && <th scope="col">{t("draft")}</th>}
                 </tr>
               </thead>
               <tbody>
                 {data.items.map((patient) => (
                   <tr key={patient.id}>
-                    <td className="xi-mono">{patient.identifier}</td>
-                    <td>{patient.given_name}</td>
-                    <td>{patient.family_name}</td>
+                    <td className="xi-mono"><bdi dir="ltr">{patient.identifier}</bdi></td>
+                    <td><bdi>{patient.given_name}</bdi></td>
+                    <td><bdi>{patient.family_name}</bdi></td>
                     <td>{patient.sex}</td>
                     <td>{patient.age}</td>
                     <td>{statusLabel(patient.clinical_status)}</td>
                     <td>
                       {patient.archived ? (
                         <span className="xi-badge" role="status">
-                          ■ Archived
+                          {t("archivedBadge")}
                         </span>
                       ) : (
-                        <span className="xi-hint">Active</span>
+                        <span className="xi-hint">{t("active")}</span>
                       )}
                     </td>
                     <td>
@@ -262,7 +263,7 @@ export function PatientDirectory() {
                         href={chartHash(patient.id)}
                         aria-label={`View chart for ${patient.identifier}`}
                       >
-                        View chart
+                        {t("viewChart")}
                       </a>
                     </td>
                     {canRegister && (
@@ -276,8 +277,8 @@ export function PatientDirectory() {
                           aria-label={`Start follow-up draft for ${patient.identifier}`}
                         >
                           {draftBusy === patient.id
-                            ? "Starting…"
-                            : "Start follow-up"}
+                            ? t("starting")
+                            : t("startFollowup")}
                         </button>
                       </td>
                     )}
@@ -286,7 +287,8 @@ export function PatientDirectory() {
               </tbody>
             </table>
             <p className="xi-hint" role="status">
-              Showing {from}–{to} of {data.total}.
+              
+              {t("showing")} {from}–{to}  {t("of")} {data.total}.
             </p>
             <div className="xi-row-actions">
               <button
@@ -297,7 +299,7 @@ export function PatientDirectory() {
                   setOffset(Math.max(0, data.offset - data.limit))
                 }
               >
-                Previous
+                {t("previous")}
               </button>
               <button
                 className="xi-btn xi-btn-secondary"
@@ -305,7 +307,7 @@ export function PatientDirectory() {
                 disabled={data.offset + data.items.length >= data.total}
                 onClick={() => setOffset(data.offset + data.limit)}
               >
-                Next
+                {t("next")}
               </button>
             </div>
           </div>
@@ -313,12 +315,12 @@ export function PatientDirectory() {
       {canRegister ? (
         <p style={{ marginBottom: 0 }}>
           <a className="xi-btn xi-btn-primary" href="#/patients/new">
-            Register new patient
+            {t("registerNewPatient")}
           </a>
         </p>
       ) : (
         <p className="xi-hint" style={{ marginBottom: 0 }}>
-          Read-only: administrators do not register patients.
+          {t("adminReadOnly")}
         </p>
       )}
     </section>
@@ -326,9 +328,10 @@ export function PatientDirectory() {
 }
 
 export function PatientsPage() {
+  const { t } = useLanguage();
   return (
     <div>
-      <h2 className="xi-page-title">Patients</h2>
+      <h2 className="xi-page-title">{t("patients")}</h2>
       <PatientDirectory />
     </div>
   );

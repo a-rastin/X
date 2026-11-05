@@ -1,9 +1,11 @@
+import { useLanguage } from "../../shared/i18n";
 import { useState } from "react";
 import { ApiError } from "./api";
 import { useAuth } from "./auth";
 import type { Role } from "./api";
 
 export function LoginPage() {
+  const { t, errorText } = useLanguage();
   const { login } = useAuth();
   const [role, setRole] = useState<Role>("physician");
   const [username, setUsername] = useState("");
@@ -33,54 +35,48 @@ export function LoginPage() {
   return (
     <div className="xi-auth-layout">
       <div className="xi-auth-intro">
-        <span className="xi-eyebrow">A connected research workflow</span>
-        <h2 className="xi-auth-title">Decision support for psychiatrists</h2>
+        <span className="xi-eyebrow">{t("connectedWorkflow")}</span>
+        <h2 className="xi-auth-title">{t("psychiatristSupport")}</h2>
         <p>
-          Bring registration, assessments, medication review, and signed plans
-          together in one workspace.
-        </p>
+          {t("workflowIntroduction")}</p>
         <p>
-          Research prototype. Not a treatment system, and not a substitute for
-          clinical judgment.
-        </p>
-        <ol className="xi-auth-workflow" aria-label="Workspace workflow">
+          {t("prototypeLimitation")}</p>
+        <ol className="xi-auth-workflow" aria-label={t("workspaceWorkflow")}>
           <li>
             <span>01</span>
-            <div><strong>Build the patient record</strong><p>Registration and structured history</p></div>
+            <div><strong>{t("buildPatientRecord")}</strong><p>{t("structuredHistory")}</p></div>
           </li>
           <li>
             <span>02</span>
-            <div><strong>Assess and review</strong><p>Assessments and medication review</p></div>
+            <div><strong>{t("reviewEvidence")}</strong><p>{t("assessmentReview")}</p></div>
           </li>
           <li>
             <span>03</span>
-            <div><strong>Document the plan</strong><p>Clinician review and signed records</p></div>
+            <div><strong>{t("documentPlan")}</strong><p>{t("signedRecords")}</p></div>
           </li>
         </ol>
       </div>
       <div className="xi-auth">
-        <h2 className="xi-section-title">Sign in</h2>
-        <p className="xi-auth-subtitle">Access your X-INSIGHT workspace.</p>
+        <h2 className="xi-section-title">{t("signIn")}</h2>
+        <p className="xi-auth-subtitle">{t("workspaceAccess")}</p>
         <form onSubmit={handleSubmit} noValidate>
         <div className="xi-field">
           <label className="xi-label" htmlFor="login-role">
-            Role
-          </label>
+            {t("role")}</label>
           <select
             className="xi-select"
             id="login-role"
             value={role}
             onChange={(event) => setRole(event.target.value as Role)}
           >
-            <option value="physician">Physician</option>
-            <option value="admin">Administrator</option>
+            <option value="physician">{t("physician")}</option>
+            <option value="admin">{t("administrator")}</option>
           </select>
         </div>
         <div className="xi-field">
           <label className="xi-label" htmlFor="login-username">
-            Username
-          </label>
-          <input
+            {t("username")}</label>
+          <input dir="ltr"
             className="xi-input"
             id="login-username"
             name="username"
@@ -93,8 +89,7 @@ export function LoginPage() {
         </div>
         <div className="xi-field">
           <label className="xi-label" htmlFor="login-password">
-            Password
-          </label>
+            {t("password")}</label>
           <input
             className="xi-input"
             id="login-password"
@@ -109,17 +104,15 @@ export function LoginPage() {
         </div>
         {error !== null && (
           <p className="xi-form-error" role="alert" id="login-error">
-            {error}
+            {errorText(error)}
           </p>
         )}
         <button className="xi-btn xi-btn-primary" type="submit" disabled={busy}>
-          {busy ? "Signing in…" : "Sign in"}
+          {busy ? t("signingIn") : t("signIn")}
         </button>
         </form>
         <p className="xi-hint">
-          To register a new account, contact administrator. There is no
-          self-registration.
-        </p>
+          {t("noSelfRegistration")}</p>
       </div>
     </div>
   );

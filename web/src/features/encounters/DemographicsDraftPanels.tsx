@@ -1,3 +1,5 @@
+import { useLanguage } from "../../shared/i18n";
+import { message, presentError, type Language } from "../../shared/messages";
 /* Registration notice and shared draft save status. */
 
 import { useEffect, useRef } from "react";
@@ -26,33 +28,34 @@ export function registrationNoticeFor(draftId: string): RegistrationNotice | nul
 
 type AutosaveApi = ReturnType<typeof useAutosave>;
 
-function statusOf(saveState: SaveState): { text: string; className: string } {
+function statusOf(saveState: SaveState, language: Language): { text: string; className: string } {
   if (saveState.kind === "saving") {
-    return { text: "Saving…", className: "xi-hint" };
+    return { text: message(language, "saving"), className: "xi-hint" };
   }
   if (saveState.kind === "dirty") {
-    return { text: "Unsaved changes…", className: "xi-hint" };
+    return { text: message(language, "unsavedChanges"), className: "xi-hint" };
   }
   if (saveState.kind === "saved") {
-    let text = `Saved (revision ${saveState.revision})`;
+    let text = message(language, "savedRevision", { revision: saveState.revision });
     if (saveState.serverTimestamp !== null) {
       text += ` · ${saveState.serverTimestamp}`;
     }
     return { text, className: "xi-status" };
   }
   if (saveState.kind === "failed") {
-    return { text: `Save failed: ${saveState.message}`, className: "xi-form-error" };
+    return { text: message(language, "saveFailed", { diagnostic: presentError(language, saveState.message) }), className: "xi-form-error" };
   }
   return {
-    text: `Conflict: ${saveState.message} Your edits are kept.`,
+    text: message(language, "saveConflict", { diagnostic: presentError(language, saveState.message) }),
     className: "xi-form-error",
   };
 }
 
 /** Wizard save status + 412 reconcile. One `#draft-save-status` per page. */
 export function DraftSaveStatus({ autosave }: { autosave: AutosaveApi }) {
+  const { t, language } = useLanguage();
   const saveState = autosave.saveState;
-  const { text, className } = statusOf(saveState);
+  const { text, className } = statusOf(saveState, language);
   const conflictHeadingRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
@@ -74,7 +77,7 @@ export function DraftSaveStatus({ autosave }: { autosave: AutosaveApi }) {
               type="button"
               onClick={() => void autosave.retry()}
             >
-              Retry save
+              {t("retrySave")}
             </button>
           )}
           <button
@@ -82,7 +85,7 @@ export function DraftSaveStatus({ autosave }: { autosave: AutosaveApi }) {
             type="button"
             onClick={() => void autosave.reloadTruth()}
           >
-            Reload server version
+            {t("reloadServer")}
           </button>
         </div>
       )}
@@ -100,15 +103,15 @@ export function DraftSaveStatus({ autosave }: { autosave: AutosaveApi }) {
             ref={conflictHeadingRef}
             style={{ fontSize: 16 }}
           >
-            Another tab saved first — your edits are kept
+            {t("concurrentSave")}
           </h4>
           <p style={{ marginBottom: 8 }}>
-            The server revision moved. Nothing was overwritten. Compare and
-            choose how to reconcile.
+            {t("reconcileRevision")}
           </p>
           {autosave.serverTruth !== null && (
             <p className="xi-hint" style={{ marginBottom: 8 }}>
-              Server revision {autosave.serverTruth.revision}:{" "}
+              
+              {t("serverRevision")} {autosave.serverTruth.revision}:{" "}
               {JSON.stringify(autosave.serverTruth.draftData)}
             </p>
           )}
@@ -118,14 +121,14 @@ export function DraftSaveStatus({ autosave }: { autosave: AutosaveApi }) {
               type="button"
               onClick={() => autosave.adoptServerVersion()}
             >
-              Use server version
+              {t("useServer")}
             </button>
             <button
               className="xi-btn xi-btn-primary"
               type="button"
               onClick={() => void autosave.retryOnFreshRevision()}
             >
-              Keep my edits and retry
+              {t("keepEdits")}
             </button>
           </div>
         </div>

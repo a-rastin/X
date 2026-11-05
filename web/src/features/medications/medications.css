@@ -4,7 +4,7 @@
 .xi-medications .xi-meds-header h3 { margin: 0 0 8px; font-size: 24px; }
 .xi-medications .xi-meds-header p { margin: 0; color: var(--ink-muted); font-size: 14px; }
 .xi-medications .xi-meds-workspace { display: grid; grid-template-columns: minmax(280px, 340px) minmax(0, 1fr); align-items: start; }
-.xi-medications .xi-meds-editor { min-width: 0; padding: 24px; background: var(--surface-1); border-right: 1px solid var(--border); }
+.xi-medications .xi-meds-editor { min-width: 0; padding: 24px; background: var(--surface-1); border-inline-end: 1px solid var(--border); }
 .xi-medications .xi-meds-review { min-width: 0; padding: 24px 28px; }
 .xi-medications .xi-meds-section-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
 .xi-medications .xi-meds-section-heading h4 { font-size: 17px; margin: 0; }
@@ -32,11 +32,11 @@
 .xi-medications #meds-save-status { font-size: 11px; line-height: 1.6; overflow-wrap: anywhere; }
 .xi-medications .xi-ddi-state { font-size: 11px; color: var(--ink-muted); padding: 3px 8px; border: 1px solid var(--border); border-radius: 6px; white-space: nowrap; }
 .xi-medications .xi-ddi-overview { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 24px 0 12px; padding: 18px 0; border-block: 1px solid var(--border); }
-.xi-medications .xi-ddi-overview > div { display: flex; flex-direction: column; gap: 6px; padding: 0 16px; border-left: 1px solid var(--border); }
-.xi-medications .xi-ddi-overview > div:first-child { padding-left: 0; border: 0; }
+.xi-medications .xi-ddi-overview > div { display: flex; flex-direction: column; gap: 6px; padding: 0 16px; border-inline-start: 1px solid var(--border); }
+.xi-medications .xi-ddi-overview > div:first-child { padding-inline-start: 0; border: 0; }
 .xi-medications .xi-ddi-overview strong { font: 600 28px/1.1 var(--font-mono); }
 .xi-medications .xi-ddi-overview span { color: var(--ink-muted); font-size: 11px; line-height: 1.5; }
-.xi-medications .xi-ddi-source-note { padding-left: 12px; border-left: 3px solid var(--border-strong); color: var(--ink-muted); font-size: 12px; line-height: 1.6; margin: 16px 0 24px; }
+.xi-medications .xi-ddi-source-note { padding-inline-start: 12px; border-inline-start: 3px solid var(--border-strong); color: var(--ink-muted); font-size: 12px; line-height: 1.6; margin: 16px 0 24px; }
 .xi-medications .xi-ddi-results-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin: 24px 0 12px; }
 .xi-medications h5 { margin: 0; font-size: 14px; }
 .xi-medications .xi-ddi-results-heading > span { font-size: 11px; color: var(--ink-muted); }
@@ -47,10 +47,10 @@
 .xi-medications .xi-ddi-filters button > span { font-variant-numeric: tabular-nums; font-weight: 700; }
 .xi-medications .xi-ddi-result-count { color: var(--ink-muted); font-size: 11px; margin: 12px 0; }
 .xi-medications .xi-ddi-pairs { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
-.xi-medications .xi-ddi-pair { padding: 16px 18px; border: 1px solid var(--border); border-left: 3px solid var(--border-strong); border-radius: 8px; overflow-wrap: anywhere; }
-.xi-medications .xi-ddi-pair-major { border-left-color: var(--urgent); }
-.xi-medications .xi-ddi-pair-moderate { border-left-color: var(--warning); }
-.xi-medications .xi-ddi-pair-minor { border-left-color: var(--info); }
+.xi-medications .xi-ddi-pair { padding: 16px 18px; border: 1px solid var(--border); border-inline-start: 3px solid var(--border-strong); border-radius: 8px; overflow-wrap: anywhere; }
+.xi-medications .xi-ddi-pair-major { border-inline-start-color: var(--urgent); }
+.xi-medications .xi-ddi-pair-moderate { border-inline-start-color: var(--warning); }
+.xi-medications .xi-ddi-pair-minor { border-inline-start-color: var(--info); }
 .xi-medications .xi-ddi-pair-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 .xi-medications .xi-ddi-pair-heading h6 { font-size: 15px; margin: 0; line-height: 1.5; }
 .xi-medications .xi-ddi-pair-heading h6 > span { color: var(--ink-muted); font-weight: 400; padding: 0 4px; }
@@ -59,14 +59,14 @@
 .xi-medications .xi-ddi-pair-status { margin: 6px 0; color: var(--ink-muted); font-size: 12px; line-height: 1.6; }
 .xi-medications .xi-proposal-details { margin-top: 12px; }
 .xi-medications .xi-proposal-details summary, .xi-medications .xi-ddi-metadata summary { cursor: pointer; color: var(--selected-nav-ink); font-size: 12px; padding: 8px 0; }
-.xi-medications .xi-proposal-details ul { padding-left: 18px; font-size: 12px; }
+.xi-medications .xi-proposal-details ul { padding-inline-start: 18px; font-size: 12px; }
 .xi-medications .xi-proposal-details pre { font-size: 12px; }
 .xi-medications .xi-ddi-empty { padding: 40px 24px; text-align: center; border: 1px dashed var(--border-strong); border-radius: 8px; margin-top: 24px; background: var(--surface-1); }
 .xi-medications .xi-ddi-empty h5 { font-size: 16px; margin: 12px 0; }
 .xi-medications .xi-ddi-empty p { max-width: 48ch; margin: 8px auto; font-size: 13px; line-height: 1.7; color: var(--ink-muted); }
 .xi-medications .xi-ddi-empty-symbol { display: block; color: var(--ink-muted); font-size: 32px; }
 .xi-medications .xi-ddi-limitations { margin-top: 24px; padding: 16px 0; border-block: 1px solid var(--border); }
-.xi-medications .xi-ddi-limitations ul { padding-left: 18px; margin-bottom: 0; color: var(--ink-muted); font-size: 12px; line-height: 1.7; }
+.xi-medications .xi-ddi-limitations ul { padding-inline-start: 18px; margin-bottom: 0; color: var(--ink-muted); font-size: 12px; line-height: 1.7; }
 .xi-medications .xi-ddi-metadata { margin-top: 12px; overflow-wrap: anywhere; }
 .xi-medications .xi-ddi-metadata dl, .xi-medications .xi-ddi-metadata ul { font-size: 12px; }
 .xi-medications .xi-ddi-metadata dl > div { display: grid; grid-template-columns: 90px minmax(0, 1fr); gap: 12px; margin: 8px 0; }
@@ -79,7 +79,7 @@
 @media (max-width: 760px) {
   .xi-medications .xi-meds-header { padding: 20px; }
   .xi-medications .xi-meds-workspace { grid-template-columns: minmax(0, 1fr); }
-  .xi-medications .xi-meds-editor { border-right: 0; border-bottom: 1px solid var(--border); }
+  .xi-medications .xi-meds-editor { border-inline-end: 0; border-bottom: 1px solid var(--border); }
   .xi-medications .xi-meds-review, .xi-medications .xi-meds-editor { padding: 16px; }
   .xi-medications .xi-ddi-overview > div { padding: 0 8px; }
   .xi-medications .xi-ddi-overview strong { font-size: 24px; }

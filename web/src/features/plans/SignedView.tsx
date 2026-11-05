@@ -1,3 +1,4 @@
+import { useLanguage } from "../../shared/i18n";
 /* Read-only signed encounter view + any-physician addenda (S50 §§3-4,
  * plan.md §9.2; FR-20, FR-22, NFR-03).
  *
@@ -60,8 +61,9 @@ function posteriorsSummary(posteriors: Posterior[]): string {
 }
 
 function ReadonlyCptTables({ tables, label }: { tables: CptTable[]; label: string }) {
+  const { t } = useLanguage();
   if (tables.length === 0) {
-    return <p className="xi-hint">No CPT tables recorded.</p>;
+    return <p className="xi-hint">{t("noCptTablesRecorded")}</p>;
   }
   return (
     <div>
@@ -72,16 +74,17 @@ function ReadonlyCptTables({ tables, label }: { tables: CptTable[]; label: strin
               <code className="xi-mono">{table.node_id}</code>
             </strong>{" "}
             <span className="xi-hint">
-              states {(table.states ?? []).join(" / ")}
+              
+              {t("states")} {(table.states ?? []).join(" / ")}
               {(table.parent_ids ?? []).length > 0
                 ? ` · parents ${(table.parent_ids ?? []).join(", ")}`
-                : " · root distribution"}
+                : t("rootDistribution")}
             </span>
           </p>
           <table className="xi-table" aria-label={`${label} for ${table.node_id}`}>
             <thead>
               <tr>
-                <th scope="col">Parent states</th>
+                <th scope="col">{t("parentStates")}</th>
                 {(table.states ?? []).map((state) => (
                   <th scope="col" key={state}>
                     {state} %
@@ -114,6 +117,7 @@ function ReadonlyCptTables({ tables, label }: { tables: CptTable[]; label: strin
 }
 
 function SignedQuestion({ frozen }: { frozen: SignedQuestionFrozen }) {
+  const { t } = useLanguage();
   if (frozen.status !== "ready") {
     return (
       <li>
@@ -121,10 +125,10 @@ function SignedQuestion({ frozen }: { frozen: SignedQuestionFrozen }) {
           <strong>
             <code className="xi-mono">{frozen.question_key}</code>
           </strong>{" "}
-          — <span className="xi-hint">■ Skipped ({frozen.status})</span>
+          — <span className="xi-hint">{t("skipped183")}{frozen.status})</span>
         </p>
         <p className="xi-hint" style={{ marginTop: 0 }}>
-          {frozen.gate_reason !== "" ? frozen.gate_reason : "Not applicable — no acceptance applies."}
+          {frozen.gate_reason !== "" ? frozen.gate_reason : t("notApplicableNoAcceptanceApplies")}
         </p>
       </li>
     );
@@ -139,26 +143,27 @@ function SignedQuestion({ frozen }: { frozen: SignedQuestionFrozen }) {
         </strong>{" "}
         —{" "}
         <span className="xi-hint">
-          ● {adjusted ? "Adjusted then accepted" : "Accepted unchanged"} · revision{" "}
+          ● {adjusted ? t("adjustedThenAccepted") : t("acceptedUnchanged")}  {t("revision")}{" "}
           <code className="xi-mono">{frozen.current_cpt_revision_id ?? "original"}</code>
         </span>
       </p>
       <div className="xi-cpt-compare">
         <div>
           <p style={{ marginBottom: 4 }}>
-            <strong>Original probabilities (LLM-estimated)</strong>{" "}
+            <strong>{t("originalProbabilitiesLlmEstimated")}</strong>{" "}
             <span className="xi-hint">
-              network <code className="xi-mono">{original?.network_version ?? "?"}</code> ·
-              template <code className="xi-mono">{original?.template_version ?? "?"}</code>
+              
+              {t("network188")} <code className="xi-mono">{original?.network_version ?? "?"}</code>  {t("template")} <code className="xi-mono">{original?.template_version ?? "?"}</code>
             </span>
           </p>
           {original === null ? (
-            <p className="xi-hint">No original baseline recorded.</p>
+            <p className="xi-hint">{t("noOriginalBaselineRecorded")}</p>
           ) : (
             <div>
               <ReadonlyCptTables tables={original.validated_tables ?? []} label={`Original CPTs for ${frozen.question_key}`} />
               <p className="xi-hint" style={{ marginTop: 0 }}>
-                Computed result: {posteriorsSummary(original.posteriors ?? [])}
+                
+                {t("computedResult")} {posteriorsSummary(original.posteriors ?? [])}
               </p>
               <p style={{ marginTop: 0 }}>{original.section_text}</p>
             </div>
@@ -166,27 +171,31 @@ function SignedQuestion({ frozen }: { frozen: SignedQuestionFrozen }) {
         </div>
         <div>
           <p style={{ marginBottom: 4 }}>
-            <strong>Final accepted probabilities</strong>{" "}
+            <strong>{t("finalAcceptedProbabilities")}</strong>{" "}
             <span className="xi-hint">
-              result <code className="xi-mono">{frozen.result_id ?? "—"}</code> (
+              
+              {t("result")} <code className="xi-mono">{frozen.result_id ?? "—"}</code> (
               {frozen.result_kind ?? "?"})
             </span>
           </p>
           {frozen.current_tables === null ? (
-            <p className="xi-hint">No final tables recorded.</p>
+            <p className="xi-hint">{t("noFinalTablesRecorded")}</p>
           ) : (
             <div>
               <ReadonlyCptTables tables={frozen.current_tables} label={`Final CPTs for ${frozen.question_key}`} />
               {frozen.current_result !== null && (
                 <div>
                   <p className="xi-hint" style={{ marginTop: 0 }}>
-                    Computed result: {posteriorsSummary(frozen.current_result.posteriors ?? [])}
+                    
+                    {t("computedResult")} {posteriorsSummary(frozen.current_result.posteriors ?? [])}
                     {frozen.current_result.reused_from_baseline_id !== null && (
                       <span>
                         {" "}
-                        · verified reuse of baseline{" "}
+                        
+                        {t("verifiedReuseOfBaseline")}{" "}
                         <code className="xi-mono">{frozen.current_result.reused_from_baseline_id}</code>{" "}
-                        (adjusted then reset — final equality shown, history retained above)
+                        
+                        {t("adjustedThenResetFinalEqualityShownHistory")}
                       </span>
                     )}
                   </p>
@@ -199,13 +208,13 @@ function SignedQuestion({ frozen }: { frozen: SignedQuestionFrozen }) {
       </div>
       {frozen.acceptance !== null ? (
         <p className="xi-hint">
-          <span aria-hidden="true">✓</span> Accepted by {frozen.acceptance.actor_username} at{" "}
-          {frozen.acceptance.created_at} (acceptance{" "}
-          <code className="xi-mono">{frozen.acceptance.id}</code> · review revision{" "}
+          <span aria-hidden="true">✓</span>  {t("acceptedBy")} {frozen.acceptance.actor_username}  {t("at")}{" "}
+          {frozen.acceptance.created_at}  {t("acceptance196")}{" "}
+          <code className="xi-mono">{frozen.acceptance.id}</code>  {t("reviewRevision197")}{" "}
           {frozen.review_revision}).
         </p>
       ) : (
-        <p className="xi-hint">No acceptance recorded.</p>
+        <p className="xi-hint">{t("noAcceptanceRecorded")}</p>
       )}
     </li>
   );
@@ -229,6 +238,7 @@ export function SignedEncounterView({
   /** Reload the chart after a successful append. */
   onChanged: () => void;
 }) {
+  const { t, errorText } = useLanguage();
   const id = snapshot.encounter_id;
   const questions = snapshot.snapshot.questions ?? [];
   const [text, setText] = useState("");
@@ -295,40 +305,45 @@ export function SignedEncounterView({
       id={`signed-view-${id}`}
     >
       <h4 className="xi-section-title" id={`signed-view-heading-${id}`} style={{ fontSize: 16 }}>
-        Signed encounter (read-only)
+        
+        {t("signedEncounterReadOnly")}
       </h4>
       <p style={{ marginTop: 0 }} data-testid={`signed-view-signer-${id}`}>
-        <span aria-hidden="true">✓</span> <strong>Signed</strong> by {snapshot.signer_username} at{" "}
-        {snapshot.signed_at} (encounter revision {snapshot.encounter_revision})
+        <span aria-hidden="true">✓</span> <strong>{t("signed")}</strong>  {t("by")} {snapshot.signer_username}  {t("at")}{" "}
+        {snapshot.signed_at}  {t("encounterRevision")} {snapshot.encounter_revision})
       </p>
       <p className="xi-hint" data-testid={`signed-view-hash-${id}`} style={{ marginTop: 0 }}>
-        Snapshot <code className="xi-mono">{snapshot.id}</code> · hash{" "}
-        <code className="xi-mono">{snapshot.snapshot_hash}</code> · batch{" "}
-        <code className="xi-mono">{snapshot.batch_id}</code> · proposal{" "}
+        
+        {t("snapshot")} <code className="xi-mono">{snapshot.id}</code>  {t("hash")}{" "}
+        <code className="xi-mono">{snapshot.snapshot_hash}</code>  {t("batch")}{" "}
+        <code className="xi-mono">{snapshot.batch_id}</code>  {t("proposal205")}{" "}
         <code className="xi-mono">{snapshot.proposal_id}</code>
       </p>
 
-      <h5 className="xi-proposal-subhead">Frozen secondary plan (revision {snapshot.secondary_plan_revision})</h5>
+      <h5 className="xi-proposal-subhead">{t("frozenSecondaryPlanRevision")} {snapshot.secondary_plan_revision})</h5>
       <div data-testid={`signed-view-plan-${id}`}>
         {snapshot.secondary_plan_text === "" ? (
-          <p className="xi-hint">No plan text recorded.</p>
+          <p className="xi-hint">{t("noPlanTextRecorded")}</p>
         ) : (
           <p className="xi-plan-text">{snapshot.secondary_plan_text}</p>
         )}
       </div>
       <p data-testid={`signed-view-clozapine-${id}`}>
-        Clozapine included in final treatment plan: <strong>
+        
+        {t("clozapineIncludedInFinalTreatmentPlan")} <strong>
           {CLOZAPINE_INCLUDED_LABELS[snapshot.snapshot.secondary_plan?.clozapine_included ?? "unknown"]}
         </strong>
       </p>
 
       <h5 className="xi-proposal-subhead">
-        Questions — original vs final accepted ({questions.length})
+        
+        {t("questionsOriginalVsFinalAccepted")}{questions.length})
       </h5>
       <div data-testid={`signed-view-questions-${id}`}>
         {questions.length === 0 ? (
           <p className="xi-hint" role="status">
-            No questions recorded in this snapshot.
+            
+            {t("noQuestionsRecordedInThisSnapshot")}
           </p>
         ) : (
           <ol className="xi-proposal-sections">
@@ -339,12 +354,12 @@ export function SignedEncounterView({
         )}
       </div>
 
-      <h5 className="xi-proposal-subhead">Addenda ({addenda.length})</h5>
+      <h5 className="xi-proposal-subhead">{t("addenda")}{addenda.length})</h5>
       <div data-testid={`addendum-list-${id}`}>
         {addenda.length === 0 ? (
           <p className="xi-hint" role="status">
-            No addenda yet — any active physician may append an attributed correction below. The
-            original signer and content stay intact.
+            
+            {t("noAddendaYetAnyActivePhysicianMay")}
           </p>
         ) : (
           <ul>
@@ -356,7 +371,8 @@ export function SignedEncounterView({
                 </p>
                 <p style={{ marginTop: 0 }}>{entry.text}</p>
                 {entry.clozapine_included != null && <p>
-                  Clozapine included in final treatment plan: <strong>{CLOZAPINE_INCLUDED_LABELS[entry.clozapine_included]}</strong>
+                  
+                  {t("clozapineIncludedInFinalTreatmentPlan")} <strong>{CLOZAPINE_INCLUDED_LABELS[entry.clozapine_included]}</strong>
                 </p>}
               </li>
             ))}
@@ -368,7 +384,8 @@ export function SignedEncounterView({
         <div>
           <div className="xi-field">
             <label className="xi-label" htmlFor={`addendum-textarea-${id}`}>
-              Append attributed correction
+              
+              {t("appendAttributedCorrection")}
             </label>
             <textarea
               className="xi-input"
@@ -387,22 +404,21 @@ export function SignedEncounterView({
           </div>
           <div className="xi-field">
             <label className="xi-label" htmlFor={`addendum-clozapine-${id}`}>
-              Clozapine included in final treatment plan
+              
+              {t("clozapineIncludedInFinalTreatmentPlan214")}
             </label>
             <select className="xi-input" id={`addendum-clozapine-${id}`} data-testid={`addendum-clozapine-${id}`}
               value={inclusion} disabled={busy}
               onChange={(event) => { setInclusion(event.target.value as ClozapineIncluded | ""); setError(null); }}>
-              <option value="">No structured confirmation</option>
+              <option value="">{t("noStructuredConfirmation")}</option>
               {(Object.entries(CLOZAPINE_INCLUDED_LABELS) as [ClozapineIncluded, string][]).map(([value, label]) => (
                 <option value={value} key={value}>{label}</option>
               ))}
             </select>
-            <p className="xi-hint">Optionally confirm this signed plan alongside your addendum. The original signed choice stays unchanged.</p>
+            <p className="xi-hint">{t("optionallyConfirmThisSignedPlanAlongsideYour")}</p>
           </div>
           <p className="xi-hint" style={{ marginTop: 0 }}>
-            {text.trim().length} of {MAX_ADDENDUM_CHARS} characters · attributed to you with the
-            server date — the signed content above cannot be altered, only corrected by a new
-            dated entry.
+            {text.trim().length}  {t("of")} {MAX_ADDENDUM_CHARS}  {t("charactersAttributedToYouWithTheServer")}
           </p>
           {status !== null && (
             <p className="xi-status" role="status" data-testid={`addendum-status-${id}`} id={`addendum-status-${id}`}>
@@ -411,12 +427,13 @@ export function SignedEncounterView({
           )}
           {error !== null && (
             <p className="xi-form-error" role="alert" tabIndex={-1} ref={errorRef}>
-              {error}
+              {errorText(error)}
             </p>
           )}
           {status === null && error === null && (
             <p className="xi-hint" role="status" data-testid={`addendum-status-${id}`} id={`addendum-status-${id}`}>
-              No addendum submitted yet in this view.
+              
+              {t("noAddendumSubmittedYetInThisView")}
             </p>
           )}
           <div className="xi-row-actions">
@@ -427,13 +444,14 @@ export function SignedEncounterView({
               disabled={busy}
               onClick={() => void submit()}
             >
-              {busy ? "Appending…" : "Append addendum"}
+              {busy ? t("appending") : t("appendAddendum")}
             </button>
           </div>
         </div>
       ) : (
         <p className="xi-hint" style={{ marginBottom: 0 }}>
-          Read-only: only active physicians append addenda to signed encounters.
+          
+          {t("readOnlyOnlyActivePhysiciansAppendAddenda")}
         </p>
       )}
     </section>

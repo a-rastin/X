@@ -1,3 +1,4 @@
+import { useLanguage } from "../../shared/i18n";
 /* Editable secondary plan + proposal comparison (S50 §1, plan.md §9.2;
  * FR-15-16, NFR-03).
  *
@@ -64,6 +65,7 @@ export function SecondaryPlanPanel({
   /** Sign waits for this panel's separately revisioned text and structured choice. */
   flushRef: RefObject<(() => Promise<void>) | null>;
 }) {
+  const { t, errorText } = useLanguage();
   const [load, setLoad] = useState<LoadState>({ kind: "loading" });
   const [revision, setRevision] = useState(1);
   const [savedText, setSavedText] = useState("");
@@ -318,9 +320,10 @@ export function SecondaryPlanPanel({
         data-testid="secondary-plan-panel"
       >
         <h4 className="xi-section-title" id="secondary-plan-heading" style={{ fontSize: 16 }}>
-          Secondary plan (S50)
+          
+          {t("secondaryPlanS50")}
         </h4>
-        <p role="status">Loading saved secondary plan…</p>
+        <p role="status">{t("loadingSavedSecondaryPlan")}</p>
       </section>
     );
   }
@@ -333,7 +336,8 @@ export function SecondaryPlanPanel({
         data-testid="secondary-plan-panel"
       >
         <h4 className="xi-section-title" id="secondary-plan-heading" style={{ fontSize: 16 }}>
-          Secondary plan (S50)
+          
+          {t("secondaryPlanS50")}
         </h4>
         <p className="xi-form-error" role="alert">
           {load.message}
@@ -359,16 +363,18 @@ export function SecondaryPlanPanel({
       data-testid="secondary-plan-panel"
     >
       <h4 className="xi-section-title" id="secondary-plan-heading" style={{ fontSize: 16 }}>
-        Secondary plan (S50)
+        
+        {t("secondaryPlanS50")}
       </h4>
       <p className="xi-hint" style={{ marginTop: 0 }}>
-        The physician-edited secondary plan lands in S50 — edit and save it below. The successful
-        proposal above stays unchanged system output; only acknowledged saves are durable.
+        
+        {t("thePhysicianEditedSecondaryPlanLandsIn")}
       </p>
 
       <div className="xi-field">
         <label className="xi-label" htmlFor="secondary-plan-textarea">
-          Physician secondary plan
+          
+          {t("physicianSecondaryPlan")}
         </label>
         <textarea
           className="xi-input"
@@ -383,7 +389,7 @@ export function SecondaryPlanPanel({
         />
       </div>
       <fieldset className="xi-field" aria-describedby="secondary-plan-clozapine-hint">
-        <legend className="xi-label">Clozapine included in final treatment plan</legend>
+        <legend className="xi-label">{t("clozapineIncludedInFinalTreatmentPlan214")}</legend>
         <div className="xi-row-actions">
           {(Object.entries(CLOZAPINE_INCLUDED_LABELS) as [ClozapineIncluded, string][]).map(([value, label]) => (
             <label key={value} htmlFor={`secondary-plan-clozapine-${value}`}>
@@ -400,18 +406,20 @@ export function SecondaryPlanPanel({
           ))}
         </div>
         <p className="xi-hint" id="secondary-plan-clozapine-hint">
-          This choice is saved with the plan and frozen when signed. A signed Yes enables the established-case questions at follow-up.
+          
+          {t("thisChoiceIsSavedWithThePlan")}
         </p>
       </fieldset>
       <p className="xi-hint" data-testid="secondary-plan-revision" style={{ marginTop: 0 }}>
-        Plan revision {revision} · {draft.length} of {MAX_SECONDARY_PLAN_CHARS} characters
+        
+        {t("planRevision")} {revision} · {draft.length}  {t("of")} {MAX_SECONDARY_PLAN_CHARS}  {t("characters")}
       </p>
       <p className="xi-hint" role="status" id="secondary-plan-status" data-testid="secondary-plan-status">
         {statusText}
       </p>
       {saveError !== null && (
         <p className="xi-form-error" role="alert" tabIndex={-1} ref={errorRef}>
-          {saveError}
+          {errorText(saveError)}
         </p>
       )}
       <div className="xi-row-actions">
@@ -422,42 +430,43 @@ export function SecondaryPlanPanel({
           disabled={saving || (!dirty && !conflict)}
           onClick={() => void saveNow()}
         >
-          {saving ? "Saving…" : "Save secondary plan"}
+          {saving ? t("saving") : t("saveSecondaryPlan")}
         </button>
       </div>
 
       {conflict && (
         <div className="xi-notice" role="alert" style={{ marginTop: 12, marginBottom: 0 }}>
           <p style={{ marginTop: 0 }}>
-            <strong>Another tab saved first — your edits are kept.</strong> The saved plan revision
-            moved. Nothing was overwritten.
+            <strong>{t("anotherTabSavedFirstYourEditsAre")}</strong>  {t("theSavedPlanRevisionMovedNothingWas")}
           </p>
           {serverText !== null && (
             <p className="xi-hint">
-              Saved plan (revision {revision}): {serverText === "" ? "— empty —" : serverText}.
-              Clozapine included: {CLOZAPINE_INCLUDED_LABELS[serverInclusion]}.
+              
+              {t("savedPlanRevision")} {revision}): {serverText === "" ? t("empty") : serverText}{t("clozapineIncluded")} {CLOZAPINE_INCLUDED_LABELS[serverInclusion]}.
             </p>
           )}
           <div className="xi-row-actions">
             <button className="xi-btn xi-btn-secondary" type="button" onClick={adoptServer} disabled={serverText === null}>
-              Use saved version
+              
+              {t("useSavedVersion")}
             </button>
             <button className="xi-btn xi-btn-primary" type="button" onClick={retryKept}>
-              Keep my edits and retry
+              {t("keepEdits")}
             </button>
           </div>
         </div>
       )}
 
-      <h5 className="xi-proposal-subhead">Comparison — proposal vs secondary plan</h5>
+      <h5 className="xi-proposal-subhead">{t("comparisonProposalVsSecondaryPlan")}</h5>
       <div className="xi-cpt-compare">
         <div data-testid="plan-compare-proposal" id="plan-compare-proposal">
           <p style={{ marginBottom: 4 }}>
-            <strong>Proposal (system output, unchanged)</strong>
+            <strong>{t("proposalSystemOutputUnchanged")}</strong>
           </p>
           {proposalText === null ? (
             <p className="xi-hint" role="status">
-              Proposal incomplete — the comparison appears once the proposal is complete.
+              
+              {t("proposalIncompleteTheComparisonAppearsOnceThe")}
             </p>
           ) : (
             <p className="xi-plan-text" style={{ marginTop: 0 }}>
@@ -467,10 +476,10 @@ export function SecondaryPlanPanel({
         </div>
         <div data-testid="plan-compare-plan" id="plan-compare-plan">
           <p style={{ marginBottom: 4 }}>
-            <strong>Secondary plan (physician-edited)</strong>
+            <strong>{t("secondaryPlanPhysicianEdited")}</strong>
           </p>
           {!edited ? (
-            <p className="xi-hint">No secondary plan saved yet.</p>
+            <p className="xi-hint">{t("noSecondaryPlanSavedYet")}</p>
           ) : (
             <p className="xi-plan-text" style={{ marginTop: 0 }}>
               {savedText}
@@ -481,13 +490,12 @@ export function SecondaryPlanPanel({
       <p className="xi-hint" role="status" data-testid="plan-compare-status" id="plan-compare-status">
         {!edited ? (
           <span>
-            <span aria-hidden="true">○</span> No physician edits yet — the proposal above is the
-            whole record so far.
+            <span aria-hidden="true">○</span>  {t("noPhysicianEditsYetTheProposalAbove")}
           </span>
         ) : (
           <span>
-            <span aria-hidden="true">●</span> Physician edits present — saved plan revision{" "}
-            {revision} ({savedText.length} characters). The proposal above stays unchanged.
+            <span aria-hidden="true">●</span>  {t("physicianEditsPresentSavedPlanRevision")}{" "}
+            {revision} ({savedText.length}  {t("charactersTheProposalAboveStaysUnchanged")}
           </span>
         )}
       </p>

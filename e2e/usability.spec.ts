@@ -57,7 +57,7 @@ test("S61 200% zoom keeps every admin nav link on screen", async ({ page }) => {
 
   await expectHorizontallyInside(
     page,
-    page.getByRole("button", { name: /switch to/i }),
+    page.getByRole("button", { name: /switch to (light|dark) theme/i }),
     "theme",
   );
   await expectHorizontallyInside(

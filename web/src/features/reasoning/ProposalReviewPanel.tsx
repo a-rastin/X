@@ -1,3 +1,4 @@
+import { useLanguage } from "../../shared/i18n";
 import { questionLabel } from "./questionLabels";
 /* Automatic proposal review and transparency UI (S48, plan.md §§8-9;
  * FR-15-16, FR-35-36, NFR-03).
@@ -407,6 +408,7 @@ function runHasBaseline(item: JoinedRun): boolean {
 }
 
 export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, stepNumber }: ProposalReviewPanelProps) {
+  const { t, errorText } = useLanguage();
   const [advanced, setAdvanced] = useState(false);
   const [phase, setPhase] = useState<Phase>({ kind: "boot" });
   const [batchId, setBatchId] = useState<string | null>(null);
@@ -1054,39 +1056,38 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
   return (
     <section className="xi-card" aria-labelledby="proposal-review-heading" id="proposal-review" data-testid="proposal-review">
       <h3 className="xi-section-title" id="proposal-review-heading">
-        Proposal review (step {stepNumber})
+        
+        {t("proposalReviewStep")} {stepNumber})
       </h3>
       <p className="xi-hint" style={{ marginTop: 0 }}>
-        Entering this step flushes the draft and starts generation automatically once the draft is
-        saved and blocking proposal inputs, diagnosis and medication checks pass. Uncertain
-        context is estimated with disclosed uncertainty and never blocks the start.
-        Reloads resume the recorded run without a new request.
+        
+        {t("enteringThisStepFlushesTheDraftAnd")}
       </p>
 
       {actionError !== null && (
         <p className="xi-form-error" role="alert" tabIndex={-1} ref={actionErrorRef}>
-          {actionError}
+          {errorText(actionError)}
         </p>
       )}
 
       {(phase.kind === "boot" || phase.kind === "waiting-save") && (
         <p className="xi-hint" role="status">
           {saveKind === "saved" && !hasUnsaved
-            ? "Checking prerequisites…"
-            : "Saving draft changes… generation starts after the save is acknowledged."}
+            ? t("checkingPrerequisites")
+            : t("savingDraftChangesGenerationStartsAfterThe")}
         </p>
       )}
 
       {phase.kind === "blocked" && (
         <div className="xi-warning-panel" role="status">
-          <p style={{ margin: 0 }}>Generation paused: {phase.message}</p>
+          <p style={{ margin: 0 }}>{t("generationPaused")} {phase.message}</p>
           <p className="xi-hint" style={{ marginBottom: 0 }}>
-            Review <a href={`#/encounters/${encounterId}#diagnosis`}>Diagnosis</a>,{" "}
-            <a href={`#/encounters/${encounterId}#medications`}>Medications</a> and the proposal requirements below.
+            {t("review")} <a href={`#/encounters/${encounterId}#diagnosis`}>{t("diagnosis")}</a>,{" "}
+            <a href={`#/encounters/${encounterId}#medications`}>{t("medications")}</a>  {t("andTheProposalRequirementsBelow")}
           </p>
           <div className="xi-row-actions" style={{ marginTop: 8 }}>
             <button className="xi-btn xi-btn-secondary" type="button" onClick={checkAgain}>
-              Check again
+              {t("checkAgain")}
             </button>
           </div>
         </div>
@@ -1094,24 +1095,24 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
 
       {phase.kind === "unavailable" && (
         <div className="xi-notice" role="status">
-          <p style={{ margin: 0 }}>Proposal unavailable — {phase.message}</p>
+          <p style={{ margin: 0 }}>{t("proposalUnavailable")} {phase.message}</p>
           <div className="xi-row-actions" style={{ marginTop: 8 }}>
             <button className="xi-btn xi-btn-secondary" type="button" onClick={checkAgain}>
-              Check again
+              {t("checkAgain")}
             </button>
           </div>
         </div>
       )}
 
-      {phase.kind === "starting" && <p role="status">Starting generation…</p>}
+      {phase.kind === "starting" && <p role="status">{t("startingGeneration")}</p>}
 
-      {readinessError && <p className="xi-form-error" role="alert">{readinessError}</p>}
+      {readinessError && <p className="xi-form-error" role="alert">{errorText(readinessError)}</p>}
       {historyContractChanged && (
         <div className="xi-warning-panel">
-          <p>The current History requirements have changed since this run was recorded. Review current History, then start a new run under the current policy. The recorded run remains available for review.</p>
+          <p>{t("theCurrentHistoryRequirementsHaveChangedSince")}</p>
           <button className="xi-btn xi-btn-secondary" type="button" data-testid="proposal-start-current-history"
             disabled={actionBusy} onClick={() => void retryRun(true)}>
-            {actionBusy ? "Starting…" : "Start new run with current History"}
+            {actionBusy ? t("starting") : t("startNewRunWithCurrentHistory")}
           </button>
         </div>
       )}
@@ -1129,7 +1130,7 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
               disabled={actionBusy}
               onClick={() => void checkAgain()}
             >
-              {actionBusy ? "Retrying…" : "Try again"}
+              {actionBusy ? t("retrying") : t("tryAgain")}
             </button>
           </div>
         </div>
@@ -1145,10 +1146,8 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
           {batch.freshness?.stale === true && (
             <div className="xi-warning-panel" role="status" data-testid="proposal-stale-banner">
               <p style={{ margin: 0 }}>
-                This run is stale — {batch.freshness.reason}. Only affected questions are
-                marked out of date below; unaffected questions stay valid and carry
-                forward with their acceptance intact. New inputs need a new run; this
-                run stays readable history.
+                
+                {t("thisRunIsStale")} {batch.freshness.reason}{t("onlyAffectedQuestionsAreMarkedOutOf")}
               </p>
               <div className="xi-row-actions" style={{ marginTop: 8 }}>
                 <button
@@ -1157,23 +1156,24 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
                   disabled={actionBusy}
                   onClick={() => void retryRun()}
                 >
-                  {actionBusy ? "Starting…" : "Start new run with current inputs"}
+                  {actionBusy ? t("starting") : t("startNewRunWithCurrentInputs")}
                 </button>
               </div>
             </div>
           )}
           {pollError !== null && (
             <p className="xi-form-error" role="alert">
-              {pollError}
+              {errorText(pollError)}
             </p>
           )}
 
           <h4 className="xi-section-title" style={{ fontSize: 16 }}>
-            Questions ({joined.length})
+            
+            {t("questions")}{joined.length})
           </h4>
           {joined.length === 0 ? (
             <p className="xi-hint" role="status">
-              No questions in this run.
+              {t("noRunQuestions")}
             </p>
           ) : (
             <ul className="xi-proposal-runs">
@@ -1208,17 +1208,16 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
               role="status"
             >
               <h4 className="xi-section-title" style={{ fontSize: 16 }}>
-                Sign-off blocked
+                {t("signoffBlocked")}
               </h4>
               <p style={{ marginTop: 0 }}>{blockReason}</p>
               <div className="xi-row-actions">
                 <button className="xi-btn xi-btn-secondary" type="button" disabled>
-                  Sign encounter (blocked)
+                  {t("signEncounterBlocked")}
                 </button>
               </div>
               <p className="xi-hint" style={{ marginBottom: 0 }}>
-                Draft editing stays available, and each failed question keeps its own retry
-                action.
+                {t("retryFailedQuestion")}
               </p>
             </div>
           ) : (
@@ -1258,6 +1257,7 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
 }
 
 function BatchHeader({ batch, advanced, onAdvanced }: { batch: BatchPayload; advanced: boolean; onAdvanced: (open: boolean) => void }) {
+  const { t } = useLanguage();
   const busy = batch.queue?.busy === true;
   const position = batch.queue?.queue_position;
   // ponytail: pinned policy identity is one lookup — the fingerprint already
@@ -1266,25 +1266,24 @@ function BatchHeader({ batch, advanced, onAdvanced }: { batch: BatchPayload; adv
   return (
     <div className="xi-proposal-meta">
       <p className="xi-hint" role="status" style={{ marginBottom: 4 }}>
-        Batch gate {batch.batch.status} ·
-        source revision {batch.batch.source_revision} ·{" "}
-        {batch.workflow?.complete === true ? "complete" : "incomplete"} ·{" "}
-        {batch.freshness?.stale === true ? "stale inputs" : "current inputs"}
+        {t("batchGate")} {batch.batch.status}  {t("sourceRevision")} {batch.batch.source_revision} ·{" "}
+        {batch.workflow?.complete === true ? t("complete") : t("incomplete")} ·{" "}
+        {batch.freshness?.stale === true ? t("staleInputs") : t("currentInputs147")}
       </p>
       <details open={advanced} onToggle={(event) => onAdvanced(event.currentTarget.open)}>
-        <summary>Advanced details</summary>
+        <summary>{t("advancedDetails")}</summary>
         <p className="xi-hint" style={{ marginTop: 0 }}>
-        Run <code className="xi-mono">{batch.batch.id}</code> · Fingerprint <code className="xi-mono">{batch.batch.fingerprint}</code>
+        {t("run")} <code className="xi-mono">{batch.batch.id}</code>  {t("fingerprint148")} <code className="xi-mono">{batch.batch.fingerprint}</code>
         {typeof historyContract === "string" && historyContract !== "" && (
-          <> · inputs <code className="xi-mono">{historyContract}</code></>
+          <>  {t("inputs")} <code className="xi-mono">{historyContract}</code></>
         )}
       </p>
       </details>
       {busy && (
         <p className="xi-warning-panel" role="status">
-          Provider queue is busy
-          {position !== null && position !== undefined ? ` — queue position ${position}` : ""}.
-          This run waits; saved drafts are unaffected.
+          
+          {t("providerQueueIsBusy")}
+          {position !== null && position !== undefined ? ` — queue position ${position}` : ""}{t("thisRunWaitsSavedDraftsAreUnaffected")}
         </p>
       )}
     </div>
@@ -1318,6 +1317,7 @@ function QuestionBlock({
   onRetry: () => void;
   onReviewRetry: () => void;
 }) {
+  const { t, language } = useLanguage();
   const key = item.run.question_key;
   const regionId = `proposal-transparency-region-${key}`;
   // S48d: gate-explained runs (skipped/clarification) keep their gate
@@ -1331,29 +1331,26 @@ function QuestionBlock({
       <p className="xi-proposal-status">
         <span aria-hidden="true">{GLYPH[item.display]}</span>{" "}
         <span>
-          <strong>{questionLabel(key)}</strong> — {LABEL[item.display]}
+          <strong>{questionLabel(key, undefined, undefined, language)}</strong> — {LABEL[item.display]}
         </span>
       </p>
       <p className="xi-hint" style={{ marginTop: 0 }}>
-        Position {item.position} · {item.detail}
+        
+        {t("position")} {item.position} · {item.detail}
       </p>
       {showFresh && (
         <div data-testid={`proposal-freshness-${key}`} role="status">
           {fresh !== null && fresh.stale ? (
             <p className="xi-hint" style={{ marginTop: 0 }}>
-              <span aria-hidden="true">◍</span> Out of date — {fresh.reason}. Only this
-              question needs regeneration; starting a new run above regenerates
-              affected questions while unaffected ones carry forward.
+              <span aria-hidden="true">◍</span>  {t("outOfDate")} {fresh.reason}{t("onlyThisQuestionNeedsRegenerationStartingA")}
             </p>
           ) : fresh !== null ? (
             <p className="xi-hint" style={{ marginTop: 0 }}>
-              <span aria-hidden="true">●</span> Current inputs — this question stays valid
-              and is carried into the next run without recalculation; its acceptance
-              stands.
+              <span aria-hidden="true">●</span>  {t("currentInputsThisQuestionStaysValidAnd")}
             </p>
           ) : !freshDone ? (
             <p className="xi-hint" style={{ marginTop: 0 }}>
-              Checking which questions are affected…
+              {t("checkingAffected")}
             </p>
           ) : null}
         </div>
@@ -1367,7 +1364,7 @@ function QuestionBlock({
             disabled={actionBusy}
             onClick={onRetry}
           >
-            {actionBusy ? "Retrying…" : `Retry ${questionLabel(key)}`}
+            {actionBusy ? t("retrying") : `Retry ${questionLabel(key, undefined, undefined, language)}`}
           </button>
         </div>
       )}
@@ -1379,7 +1376,7 @@ function QuestionBlock({
           aria-controls={regionId}
           onClick={onToggle}
         >
-          {expanded ? `Hide transparency for ${questionLabel(key)}` : `Show transparency for ${questionLabel(key)}`}
+          {expanded ? `Hide transparency for ${questionLabel(key, undefined, undefined, language)}` : `Show transparency for ${questionLabel(key, undefined, undefined, language)}`}
         </button>
       </div>
       {/* S48c complete CPT review (plan.md §9.1; FR-50-57): own lazy toggle +
@@ -1391,7 +1388,7 @@ function QuestionBlock({
       {expanded && (
         <div data-testid={`proposal-transparency-${key}`} id={regionId}>
           {review === null || review.status === "loading" ? (
-            <p role="status">Loading persisted transparency…</p>
+            <p role="status">{t("loadingTransparency")}</p>
           ) : review.status === "error" ? (
             <div>
               <p className="xi-form-error" role="alert">
@@ -1399,7 +1396,7 @@ function QuestionBlock({
               </p>
               <div className="xi-row-actions" style={{ marginTop: 8 }}>
                 <button className="xi-btn xi-btn-secondary" type="button" onClick={onReviewRetry}>
-                  Retry transparency
+                  {t("retryTransparency")}
                 </button>
               </div>
             </div>
@@ -1410,7 +1407,7 @@ function QuestionBlock({
                 `review.job` (the batch's first job) and never a request
                 error, which renders as role="alert" with a retry above. */}
               {item.display === "failed"
-                ? "No transparency data because this run failed"
+                ? t("noTransparencyDataBecauseThisRunFailed")
                 : review.message ?? "Transparency unavailable for this question."}
             </p>
           ) : (
@@ -1450,6 +1447,7 @@ function TransparencyView({
   effectiveHash: string | null;
   provenance: Record<string, unknown>;
 }) {
+  const { t, language } = useLanguage();
   const inputs = transparency.saved_patient_inputs ?? [];
   const tables = transparency.returned_cpt_percentages ?? [];
   const result = transparency.deterministic_result;
@@ -1458,19 +1456,19 @@ function TransparencyView({
     <div className="xi-proposal-transparency">
       <dl className="xi-proposal-facts">
         <div>
-          <dt>Question</dt>
+          <dt>{t("question")}</dt>
           <dd>
-            {questionLabel(transparency.question_key)}
+            {questionLabel(transparency.question_key, undefined, undefined, language)}
           </dd>
         </div>
         <div>
-          <dt>Network version</dt>
+          <dt>{t("networkVersion")}</dt>
           <dd>
             <code className="xi-mono">{networkVersion ?? transparency.network_version}</code>
           </dd>
         </div>
         <div>
-          <dt>Prompt / template</dt>
+          <dt>{t("promptTemplate")}</dt>
           <dd>
             <code className="xi-mono">
               {promptVersion ?? "?"} / {templateVersion ?? "?"}
@@ -1478,13 +1476,13 @@ function TransparencyView({
           </dd>
         </div>
         {advanced && <><div>
-          <dt>Baseline</dt>
+          <dt>{t("baseline")}</dt>
           <dd>
             <code className="xi-mono">{baselineId ?? "—"}</code>
           </dd>
         </div>
         <div>
-          <dt>Effective hash</dt>
+          <dt>{t("effectiveHash")}</dt>
           <dd>
             <code className="xi-mono">{effectiveHash ?? result?.effective_hash ?? "—"}</code>
           </dd>
@@ -1492,18 +1490,18 @@ function TransparencyView({
       </>}
       </dl>
 
-      <h5 className="xi-proposal-subhead">Saved patient inputs (frozen at run start)</h5>
+      <h5 className="xi-proposal-subhead">{t("frozenInputs")}</h5>
       {inputs.length === 0 ? (
-        <p className="xi-hint">No projected inputs.</p>
+        <p className="xi-hint">{t("noProjectedInputs")}</p>
       ) : (
-        <table className="xi-table" aria-label={`Saved patient inputs for ${questionLabel(transparency.question_key)}`}>
+        <table className="xi-table" aria-label={`Saved patient inputs for ${questionLabel(transparency.question_key, undefined, undefined, language)}`}>
           <thead>
             <tr>
-              <th scope="col">Node</th>
-              <th scope="col">Value</th>
-              <th scope="col">Status</th>
-              <th scope="col">Source path</th>
-              <th scope="col">Source rev</th>
+              <th scope="col">{t("node")}</th>
+              <th scope="col">{t("value")}</th>
+              <th scope="col">{t("status")}</th>
+              <th scope="col">{t("sourcePath")}</th>
+              <th scope="col">{t("sourceRev")}</th>
             </tr>
           </thead>
           <tbody>
@@ -1524,9 +1522,9 @@ function TransparencyView({
         </table>
       )}
 
-      <h5 className="xi-proposal-subhead">Returned CPT percentages (LLM-estimated values)</h5>
+      <h5 className="xi-proposal-subhead">{t("returnedCptPercentagesLlmEstimatedValues")}</h5>
       {tables.length === 0 ? (
-        <p className="xi-hint">No returned CPT tables.</p>
+        <p className="xi-hint">{t("noReturnedCptTables")}</p>
       ) : (
         tables.map((table) => (
           <div key={table.node_id} style={{ marginBottom: 8 }}>
@@ -1535,16 +1533,17 @@ function TransparencyView({
                 <code className="xi-mono">{table.node_id}</code>
               </strong>{" "}
               <span className="xi-hint">
-                states {(table.states ?? []).join(" / ")}
+                
+                {t("states")} {(table.states ?? []).join(" / ")}
                 {(table.parent_ids ?? []).length > 0
                   ? ` · parents ${(table.parent_ids ?? []).join(", ")}`
-                  : " · root distribution"}
+                  : t("rootDistribution")}
               </span>
             </p>
             <table className="xi-table" aria-label={`Returned CPT table for ${table.node_id}`}>
               <thead>
                 <tr>
-                  <th scope="col">Parent states</th>
+                  <th scope="col">{t("parentStates")}</th>
                   {(table.states ?? []).map((state) => (
                     <th scope="col" key={state}>
                       {state} %
@@ -1577,18 +1576,18 @@ function TransparencyView({
         ))
       )}
 
-      <h5 className="xi-proposal-subhead">Deterministic network result (computed posteriors)</h5>
+      <h5 className="xi-proposal-subhead">{t("deterministicNetworkResultComputedPosteriors")}</h5>
       {result === null || result === undefined ? (
-        <p className="xi-hint">No deterministic result.</p>
+        <p className="xi-hint">{t("noDeterministicResult")}</p>
       ) : (
         <div>
           {(result.posteriors ?? []).length > 0 && (
-            <table className="xi-table" aria-label={`Posterior probabilities for ${questionLabel(transparency.question_key)}`}>
+            <table className="xi-table" aria-label={`Posterior probabilities for ${questionLabel(transparency.question_key, undefined, undefined, language)}`}>
               <thead>
                 <tr>
-                  <th scope="col">Node</th>
-                  <th scope="col">State</th>
-                  <th scope="col">Posterior %</th>
+                  <th scope="col">{t("node")}</th>
+                  <th scope="col">{t("state")}</th>
+                  <th scope="col">{t("posterior")}</th>
                 </tr>
               </thead>
               <tbody>
@@ -1614,11 +1613,12 @@ function TransparencyView({
             </table>
           )}
           <p className="xi-hint">
-            Query nodes <code className="xi-mono">{(result.query_nodes ?? []).join(", ")}</code>
-            {advanced && <> · effective hash <code className="xi-mono">{result.effective_hash}</code></>}
+            
+            {t("queryNodes")} <code className="xi-mono">{(result.query_nodes ?? []).join(", ")}</code>
+            {advanced && <>  {t("effectiveHash167")} <code className="xi-mono">{result.effective_hash}</code></>}
           </p>
           <p style={{ marginBottom: 4 }}>
-            <strong>Recommendation (templated section):</strong>
+            <strong>{t("recommendationTemplatedSection")}</strong>
           </p>
           <p style={{ marginTop: 0 }}>{result.section_text}</p>
         </div>
@@ -1626,7 +1626,7 @@ function TransparencyView({
 
       {advanced && provenanceEntries.length > 0 && (
         <details className="xi-proposal-details">
-          <summary>Run provenance (persisted)</summary>
+          <summary>{t("runProvenancePersisted")}</summary>
           <ul>
             {provenanceEntries.map(([factKey, factValue]) => (
               <li key={factKey}>
@@ -1638,18 +1638,20 @@ function TransparencyView({
         </details>
       )}
       <p className="xi-hint">
-        Full effective XML is retained server-side; its hash is available in advanced details.
+        
+        {t("fullEffectiveXmlIsRetainedServerSide")}
       </p>
     </div>
   );
 }
 
 function ProposalBlock({ batch }: { batch: BatchPayload }) {
+  const { t, language } = useLanguage();
   const proposal = batch.proposal;
   if (proposal === null) {
     return (
       <div className="xi-notice" role="status" data-testid="proposal-unavailable" id="proposal-unavailable">
-        <p style={{ margin: 0 }}>Proposal unavailable — {incompleteReason(batch)}</p>
+        <p style={{ margin: 0 }}>{t("proposalUnavailable")} {incompleteReason(batch)}</p>
       </div>
     );
   }
@@ -1663,12 +1665,13 @@ function ProposalBlock({ batch }: { batch: BatchPayload }) {
   return (
     <div>
       <h4 className="xi-section-title" style={{ fontSize: 16 }}>
-        Proposal
+        
+        {t("proposal")}
       </h4>
       {sections.length === 0 ? (
         <p className="xi-hint" role="status">
-          No applicable questions produced sections — every question was skipped. Skipped reasons
-          are listed below.
+          
+          {t("noApplicableQuestionsProducedSectionsEveryQuestion")}
         </p>
       ) : (
         <ol className="xi-proposal-sections">
@@ -1676,13 +1679,13 @@ function ProposalBlock({ batch }: { batch: BatchPayload }) {
             <li key={section.question_run_id}>
               <p style={{ marginBottom: 2 }}>
                 <strong>
-                  {questionLabel(section.question_key)}
+                  {questionLabel(section.question_key, undefined, undefined, language)}
                 </strong>
               </p>
               <p style={{ marginTop: 0 }}>{section.section_text}</p>
               <p className="xi-hint" style={{ marginTop: 0 }}>
-                {posteriorSummary(section.posteriors ?? [])} · network{" "}
-                <code className="xi-mono">{section.network_version}</code> · template{" "}
+                {posteriorSummary(section.posteriors ?? [])}  {t("network")}{" "}
+                <code className="xi-mono">{section.network_version}</code>  {t("template")}{" "}
                 <code className="xi-mono">{section.template_version}</code>
               </p>
             </li>
@@ -1691,18 +1694,18 @@ function ProposalBlock({ batch }: { batch: BatchPayload }) {
       )}
       {skipped.length > 0 && (
         <div>
-          <h5 className="xi-proposal-subhead">Skipped questions</h5>
+          <h5 className="xi-proposal-subhead">{t("skippedQuestions")}</h5>
           <ul>
             {skipped.map((entry) => (
               <li key={`${entry.question_key}|${entry.position}`}>
-                {questionLabel(entry.question_key)} — skipped: {entry.reason}
+                {questionLabel(entry.question_key, undefined, undefined, language)}  {t("skipped")} {entry.reason}
               </li>
             ))}
           </ul>
         </div>
       )}
       <div data-testid="proposal-ddi" id="proposal-ddi">
-        <h5 className="xi-proposal-subhead">DDI coverage (pinned report)</h5>
+        <h5 className="xi-proposal-subhead">{t("ddiCoveragePinnedReport")}</h5>
         {(proposal.coverage_warnings ?? []).length > 0 && (
           <div className="xi-warning-panel" role="status">
             <ul style={{ margin: 0, paddingLeft: 20 }}>
@@ -1715,7 +1718,7 @@ function ProposalBlock({ batch }: { batch: BatchPayload }) {
           </div>
         )}
         {report === null || report === undefined ? (
-          <p className="xi-hint">No pinned DDI report.</p>
+          <p className="xi-hint">{t("noPinnedDdiReport")}</p>
         ) : (
           <DdiSummary
             sourceLabel={report.source_label}
@@ -1768,31 +1771,32 @@ function DdiSummary({
   }[];
   limitations: string[];
 }) {
+  const { t } = useLanguage();
   return (
     <div>
       <p className="xi-hint" style={{ marginTop: 0 }}>
-        {sourceLabel ? `${sourceLabel} · ` : ""}Dataset <code className="xi-mono">{datasetVersion}</code> · catalog{" "}
-        <code className="xi-mono">{catalogVersion}</code> · generated {generatedAt}
+        {sourceLabel ? `${sourceLabel} · ` : ""}{t("dataset")} <code className="xi-mono">{datasetVersion}</code>  {t("catalog62")}{" "}
+        <code className="xi-mono">{catalogVersion}</code>  {t("generated179")} {generatedAt}
       </p>
       {detailAvailability === "severity_only" && (
-        <p className="xi-hint">Mechanism and management details were not supplied; this source provides severity assertions only.</p>
+        <p className="xi-hint">{t("mechanismAndManagementDetailsWereNotSupplied")}</p>
       )}
       {uncovered.length > 0 && (
         <div className="xi-warning-panel" role="status">
           <p style={{ margin: "0 0 4px" }}>
-            <strong>Coverage unavailable</strong>
+            <strong>{t("coverageUnavailable")}</strong>
           </p>
           <ul style={{ margin: 0, paddingLeft: 20 }}>
             {uncovered.map((id) => (
               <li key={id}>
-                {id} — coverage unavailable in this dataset
+                {id}  {t("coverageUnavailableInThisDataset180")}
               </li>
             ))}
           </ul>
         </div>
       )}
       {pairs.length === 0 ? (
-        <p className="xi-hint">No pairs to check — fewer than two medications in the frozen list.</p>
+        <p className="xi-hint">{t("noPairsToCheckFewerThanTwo")}</p>
       ) : (
         <ul>
           {pairs.map((pair) => (
@@ -1804,7 +1808,7 @@ function DdiSummary({
               </p>
               {pair.conflicts.length > 0 && (
                 <p className="xi-hint" style={{ margin: "4px 0" }}>
-                  Conflicting severities reported: {pair.conflicts.join(", ")}
+                  {t("conflictingSeverities")} {pair.conflicts.join(", ")}
                 </p>
               )}
               <DdiEvidenceList evidence={pair.evidence} />
@@ -1815,7 +1819,7 @@ function DdiSummary({
       {limitations.length > 0 && (
         <div>
           <p style={{ marginBottom: 4 }}>
-            <strong>Release limitations</strong>
+            <strong>{t("releaseLimitations")}</strong>
           </p>
           <ul style={{ marginTop: 0 }}>
             {limitations.map((entry, index) => (

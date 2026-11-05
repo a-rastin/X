@@ -22,7 +22,7 @@
 .xi-panss .xi-panss-nav-meta { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
 .xi-panss .xi-panss-nav-meta strong { font-size: 13px; font-weight: 600; line-height: 1.4; }
 .xi-panss .xi-panss-nav-meta > span { font-size: 11px; color: var(--ink-muted); line-height: 1.5; font-variant-numeric: tabular-nums; }
-.xi-panss .xi-panss-nav-complete { margin-left: auto; font-size: 13px; color: var(--selected-nav-ink); }
+.xi-panss .xi-panss-nav-complete { margin-inline-start: auto; font-size: 13px; color: var(--selected-nav-ink); }
 .xi-panss .xi-panss-outline nav > .xi-panss-review-link { justify-content: space-between; margin-top: 16px; border-top: 1px solid var(--border); border-radius: 0; padding-top: 20px; font-size: 12px; color: var(--selected-nav-ink); }
 .xi-panss .xi-panss-navigation-hint { margin: 28px 10px 0; padding-top: 20px; border-top: 1px solid var(--border); font-size: 12px; line-height: 1.6; }
 .xi-panss .xi-panss-navigation-hint strong { font-weight: 600; }
@@ -34,11 +34,11 @@
 .xi-panss .xi-assessment-group-heading { padding: 18px 20px; gap: 8px 16px; flex-wrap: wrap; align-items: center; border-bottom: 1px solid var(--border); background: var(--canvas); }
 .xi-panss .xi-assessment-group-heading h4 { font-size: 15px; font-weight: 650; scroll-margin-top: 24px; }
 .xi-panss .xi-assessment-group-heading > span { border: 1px solid var(--border); border-radius: 6px; padding: 3px 7px; font-size: 11px; background: var(--surface-1); }
-.xi-panss .xi-assessment-item { grid-template-columns: minmax(0, 1fr); gap: 14px; padding: 20px; border-left: 3px solid transparent; transition: border-color var(--motion-fast) ease; }
-.xi-panss .xi-assessment-item:focus-within { border-left-color: var(--primary-action); background: var(--selected-nav-bg); }
+.xi-panss .xi-assessment-item { grid-template-columns: minmax(0, 1fr); gap: 14px; padding: 20px; border-inline-start: 3px solid transparent; transition: border-color var(--motion-fast) ease; }
+.xi-panss .xi-assessment-item:focus-within { border-inline-start-color: var(--primary-action); background: var(--selected-nav-bg); }
 .xi-panss .xi-assessment-question { display: flex; align-items: baseline; gap: 10px; grid-row: auto; font-size: 14px; line-height: 1.65; }
 .xi-panss .xi-panss-item-code { flex: 0 0 28px; font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--selected-nav-ink); }
-.xi-panss .xi-assessment-options { gap: 6px; margin-left: 38px; padding: 0; border: 0; border-radius: 0; background: transparent; }
+.xi-panss .xi-assessment-options { gap: 6px; margin-inline-start: 38px; padding: 0; border: 0; border-radius: 0; background: transparent; }
 .xi-panss .xi-assessment-options label { min-height: 44px; padding: 4px; border: 1px solid var(--border-strong); border-radius: 6px; background: var(--canvas); color: var(--ink); font-family: var(--font-mono); font-size: 13px; transition: background-color var(--motion-fast) ease, border-color var(--motion-fast) ease; }
 .xi-panss .xi-assessment-options label:hover { border-color: var(--primary-action); background: var(--surface-1); }
 .xi-panss .xi-assessment-options label:has(input:checked) { border-color: var(--primary-action); background: var(--primary-action); color: var(--on-action); font-weight: 700; }
@@ -52,11 +52,11 @@
 .xi-panss .xi-panss-score-table { margin-top: 16px; }
 .xi-panss .xi-panss-score-table th { background: transparent; font-size: 11px; color: var(--ink-muted); }
 .xi-panss .xi-panss-score-table td { background: transparent; }
-.xi-panss .xi-panss-score-table th:last-child, .xi-panss .xi-panss-score-table td:last-child { text-align: right; }
+.xi-panss .xi-panss-score-table th:last-child, .xi-panss .xi-panss-score-table td:last-child { text-align: end; }
 .xi-panss .xi-panss-score-table td:last-child { font-family: var(--font-mono); font-size: 17px; }
 .xi-panss .xi-panss-score-table .xi-panss-total-row td { border-top: 2px solid var(--border-strong); font-weight: 600; }
 .xi-panss .xi-panss-score-table .xi-panss-total-row td:last-child { font-size: 24px; color: var(--selected-nav-ink); }
-.xi-panss .xi-panss-panel { padding: 12px; border: 1px solid var(--border); border-left: 3px solid var(--primary-action); background: var(--surface-1); }
+.xi-panss .xi-panss-panel { padding: 12px; border: 1px solid var(--border); border-inline-start: 3px solid var(--primary-action); background: var(--surface-1); }
 .xi-panss .xi-assessment-provenance { margin: 12px 0; }
 .xi-panss .xi-assessment-skip { padding: 0 4px; }
 .xi-main:has(.xi-panss) .xi-wizard-pager { position: sticky; bottom: 0; z-index: 10; margin-top: 0; padding: 16px 20px; border: 1px solid var(--border); border-radius: 10px 10px 0 0; background: var(--canvas); box-shadow: 0 -2px 8px rgb(0 0 0 / .03); }
@@ -89,7 +89,7 @@
   .xi-panss .xi-assessment-item { padding: 16px 12px; }
   .xi-panss .xi-assessment-question { gap: 6px; font-size: 13px; }
   .xi-panss .xi-panss-item-code { flex-basis: 25px; }
-  .xi-panss .xi-assessment-options { margin-left: 0; gap: 4px; }
+  .xi-panss .xi-assessment-options { margin-inline-start: 0; gap: 4px; }
   .xi-panss .xi-assessment-options label { min-height: 44px; }
   .xi-main:has(.xi-panss) .xi-wizard-pager { padding: 12px; gap: 8px; }
   .xi-main:has(.xi-panss) .xi-wizard-pager .xi-btn { padding: 10px 12px; font-size: 12px; }

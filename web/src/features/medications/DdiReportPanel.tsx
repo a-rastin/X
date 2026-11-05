@@ -1,3 +1,4 @@
+import { useLanguage } from "../../shared/i18n";
 /* Versioned DDI evidence panel (S20, plan.md §§6.3, 9; FR-14-15).
  *
  * Reads only: GET /encounters/{id}/ddi-report (see ./api.ts). The parent
@@ -91,6 +92,7 @@ export function DdiReportPanel({
   selectedIds,
   onSessionExpired,
 }: DdiReportPanelProps) {
+  const { t, text } = useLanguage();
   const [load, setLoad] = useState<LoadState>({ kind: "loading" });
   const [filter, setFilter] = useState("all");
   const errorRef = useRef<HTMLParagraphElement>(null);
@@ -169,31 +171,31 @@ export function DdiReportPanel({
   const retryButton = (
     <button className="xi-btn xi-btn-secondary" type="button" id="ddi-retry"
       onClick={() => { setLoad({ kind: "loading" }); void refresh(); }}>
-      Retry report
+      {t("retryReport")}
     </button>
   );
 
   return (
-    <div id="ddi-report-panel" aria-label="DDI evidence report" className="xi-ddi-panel">
+    <div id="ddi-report-panel" aria-label={t("ddiEvidenceReport")} className="xi-ddi-panel">
       <div className="xi-meds-section-heading">
-        <h4>Interaction review</h4>
+        <h4>{t("interactionReview")}</h4>
         <span className="xi-ddi-state">{reportStateLabel}</span>
       </div>
-      <p className="xi-hint">Drug–drug interaction evidence for the saved medication list.</p>
-      {load.kind === "loading" && <p className="xi-ddi-empty" aria-live="polite">Loading DDI report…</p>}
+      <p className="xi-hint">{t("ddiIntroduction")}</p>
+      {load.kind === "loading" && <p className="xi-ddi-empty" aria-live="polite">{t("loadingDdi")}</p>}
       {load.kind === "error" && (
         <div className="xi-ddi-empty">
           <p className="xi-form-error" id="ddi-error" role="alert" tabIndex={-1} ref={errorRef}>{load.message}</p>
           {retryButton}
         </div>
       )}
-      {selectionChanged && <p className="xi-warning-panel" id="ddi-pending">Report pending: {pendingText("stale_fingerprint")}</p>}
+      {selectionChanged && <p className="xi-warning-panel" id="ddi-pending">{t("reportPending")} {pendingText("stale_fingerprint")}</p>}
       {load.kind === "ready" && load.payload.report_status !== "current" && (
         load.payload.report_status === "pending" ? (
           <div className="xi-ddi-empty">
             <span className="xi-ddi-empty-symbol" aria-hidden="true">↔</span>
-            <h5>{load.payload.reason === "reconciliation_required" ? "Review copied medications" : "Save the list to review interactions"}</h5>
-            <p id="ddi-pending">Report pending: {pendingText(load.payload.reason)}</p>
+            <h5>{load.payload.reason === "reconciliation_required" ? t("reviewCopiedMedications") : t("saveTheListToReviewInteractions")}</h5>
+            <p id="ddi-pending">{t("reportPending")} {pendingText(load.payload.reason)}</p>
           </div>
         ) : (
           <div className="xi-ddi-empty">
@@ -205,52 +207,53 @@ export function DdiReportPanel({
       {current && report && (
         <div id="ddi-report">
           <div className="xi-ddi-overview">
-            <div><strong>{pairs.filter((pair) => pair.status === "interaction_found").length}</strong><span>Pairs with evidence</span></div>
-            <div><strong>{pairs.filter((pair) => pair.status === "coverage_unavailable").length}</strong><span>Coverage unavailable</span></div>
-            <div><strong>{report.resolved_medications.length}</strong><span>Medications checked</span></div>
+            <div><strong>{pairs.filter((pair) => pair.status === "interaction_found").length}</strong><span>{t("pairsWithEvidence")}</span></div>
+            <div><strong>{pairs.filter((pair) => pair.status === "coverage_unavailable").length}</strong><span>{t("coverageUnavailable")}</span></div>
+            <div><strong>{report.resolved_medications.length}</strong><span>{t("medicationsChecked")}</span></div>
           </div>
           <p className="xi-hint" id="ddi-report-status" aria-live="polite">
-            Current report · dataset {report.dataset_version} · {pairs.length} pair{pairs.length === 1 ? "" : "s"} · {report.source_label ?? "Released interaction dataset"}
+            
+            {t("currentReportDataset")} {report.dataset_version} · {pairs.length}  {t("pair")}{pairs.length === 1 ? "" : "s"} · {report.source_label ?? "Released interaction dataset"}
           </p>
           {report.detail_availability === "severity_only" && (
-            <p className="xi-ddi-source-note">Mechanism and management details were not supplied; this source provides severity assertions only.</p>
+            <p className="xi-ddi-source-note">{t("mechanismAndManagementDetailsWereNotSupplied")}</p>
           )}
           {report.coverage_unavailable_medications.length > 0 && (
             <div className="xi-warning-panel" id="ddi-report-uncovered">
-              <h5>Coverage unavailable</h5>
+              <h5>{t("coverageUnavailable")}</h5>
               <ul>{report.coverage_unavailable_medications.map((med) => (
-                <li key={med.catalog_drug_id}>{med.canonical_name} ({med.catalog_drug_id}) — coverage unavailable in this dataset</li>
+                <li key={med.catalog_drug_id}>{med.canonical_name} ({med.catalog_drug_id}{t("coverageUnavailableInThisDataset")}</li>
               ))}</ul>
             </div>
           )}
           {pairs.length === 0 ? (
-            <div className="xi-ddi-empty"><h5>No medication pairs</h5><p>No pairs to check — fewer than two medications in the saved list.</p></div>
+            <div className="xi-ddi-empty"><h5>{t("noMedicationPairs")}</h5><p>{t("fewerThanTwoMedications")}</p></div>
           ) : (
             <>
-              <div className="xi-ddi-results-heading"><h5>Pair findings</h5><span>Highest known severity first</span></div>
-              <div className="xi-ddi-filters" role="group" aria-label="Filter interaction pairs">
+              <div className="xi-ddi-results-heading"><h5>{t("pairFindings")}</h5><span>{t("highestSeverityFirst")}</span></div>
+              <div className="xi-ddi-filters" role="group" aria-label={t("filterPairs")}>
                 {filters.filter((item) => item.key === "all" || item.count > 0 || item.key === filter).map((item) => (
                   <button key={item.key} type="button" aria-pressed={filter === item.key} onClick={() => setFilter(item.key)}>
-                    {item.label} <span>{item.count}</span>
+                    {text(item.label)} <span>{item.count}</span>
                   </button>
                 ))}
               </div>
-              <p className="xi-ddi-result-count" aria-live="polite">Showing {visiblePairs.length} of {pairs.length} pairs</p>
-              {visiblePairs.length === 0 && <p className="xi-ddi-empty">No pairs match this filter. Select All pairs to review the full list.</p>}
+              <p className="xi-ddi-result-count" aria-live="polite">{t("showing")} {visiblePairs.length}  {t("of")} {pairs.length}  {t("pairs")}</p>
+              {visiblePairs.length === 0 && <p className="xi-ddi-empty">{t("noPairsMatch")}</p>}
               <ul id="ddi-report-pairs" className="xi-ddi-pairs">
                 {visiblePairs.map(({ pair, index }) => (
                   <li key={`${pair.drug_a}|${pair.drug_b}`} id={`ddi-report-pair-${index}`}
                     className={`xi-ddi-pair xi-ddi-pair-${pair.status === "interaction_found" ? (pair.highest_known_severity ?? "unknown").toLowerCase().replace(/[^a-z]/g, "") : "neutral"}`}>
                     <div className="xi-ddi-pair-heading">
                       <h6>{nameOf(pair.drug_a)} <span>+</span> {nameOf(pair.drug_b)}</h6>
-                      <span className="xi-ddi-severity">{pair.status === "interaction_found" ? pair.highest_known_severity ?? "Unknown" : pair.status === "coverage_unavailable" ? "Coverage unavailable" : "No listed interaction"}</span>
+                      <span className="xi-ddi-severity">{pair.status === "interaction_found" ? pair.highest_known_severity ?? "Unknown" : pair.status === "coverage_unavailable" ? t("coverageUnavailable") : t("noListedInteraction")}</span>
                     </div>
                     <p className="xi-ddi-pair-status">{pairStatusText(pair.status)}
                       {pair.highest_known_severity !== null && ` · highest known severity: ${pair.highest_known_severity}`}
                       {pair.has_unknown_severity && " · includes unknown severity"}
                     </p>
-                    {pair.status === "coverage_unavailable" && <p className="xi-hint">An absent record does not establish absence of an interaction.</p>}
-                    {pair.conflicts.length > 0 && <p className="xi-hint">Conflicting severities reported: {pair.conflicts.join(", ")}</p>}
+                    {pair.status === "coverage_unavailable" && <p className="xi-hint">{t("absentRecordCaution")}</p>}
+                    {pair.conflicts.length > 0 && <p className="xi-hint">{t("conflictingSeverities")} {pair.conflicts.join(", ")}</p>}
                     <DdiEvidenceList evidence={pair.evidence} />
                   </li>
                 ))}
@@ -259,17 +262,17 @@ export function DdiReportPanel({
           )}
           {report.limitations.length > 0 && (
             <div className="xi-ddi-limitations" id="ddi-report-limitations">
-              <h5>Release limitations</h5>
+              <h5>{t("releaseLimitations")}</h5>
               <ul>{report.limitations.map((entry, index) => <li key={index}>{String(entry)}</li>)}</ul>
             </div>
           )}
           <details className="xi-ddi-metadata">
-            <summary>Report provenance &amp; checked medications</summary>
+            <summary>{t("reportProvenanceCheckedMedications")}</summary>
             <dl>
-              <div><dt>Dataset</dt><dd>{report.dataset_version}</dd></div>
-              <div><dt>Catalog</dt><dd>{report.catalog_version}</dd></div>
-              <div><dt>Generated</dt><dd>{report.generated_at}</dd></div>
-              <div><dt>Fingerprint</dt><dd><code>{report.medication_fingerprint}</code></dd></div>
+              <div><dt>{t("dataset")}</dt><dd>{report.dataset_version}</dd></div>
+              <div><dt>{t("catalog")}</dt><dd>{report.catalog_version}</dd></div>
+              <div><dt>{t("generated")}</dt><dd>{report.generated_at}</dd></div>
+              <div><dt>{t("fingerprint")}</dt><dd><code>{report.medication_fingerprint}</code></dd></div>
             </dl>
             <ul>{report.resolved_medications.map((med) => <li key={med.catalog_drug_id}>{med.canonical_name} ({med.catalog_drug_id})</li>)}</ul>
           </details>

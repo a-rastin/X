@@ -1,3 +1,5 @@
+import { clinicalText } from "../../../shared/messages";
+import { useLanguage } from "../../../shared/i18n";
 /* C-SSRS recent-ideation worksheet with server-computed preview
  * (S11, plan.md §§2.2, 5; FR-13, FR-20).
  *
@@ -211,6 +213,7 @@ export function CssrsSection({
   onSessionExpired,
   stepNumber,
 }: CssrsSectionProps) {
+  const { t, text, errorText, language } = useLanguage();
   const [definition, setDefinition] = useState<CssrsDefinition | null>(null);
   const [definitionError, setDefinitionError] = useState<string | null>(null);
   const [preview, setPreview] = useState<CssrsPreview | null>(null);
@@ -320,26 +323,32 @@ export function CssrsSection({
   const hasNoPositives = flags.includes("no_positive_items");
   const items = recentItems(definition);
 
+  function translatedPrompt(item: { id: string; prompt: string }): string {
+    return clinicalText(language, definition?.id ?? "cssrs", definition?.version ?? "v2", item.id, item.prompt);
+  }
+
+
+
   let verdict: string;
   if (preview === null) {
     verdict = "";
   } else if (evaluation?.status === "not_assessed") {
     verdict =
-      "C-SSRS skipped — not assessed. No severity is reported for a skipped assessment.";
+      t("cssrsSkipped");
   } else if (evaluation?.status === "complete" && hasNoPositives) {
-    verdict = `Complete — no positive items (recent ideation severity ${formatScore(scores?.ideation_severity_recent)}). A negative screen does not prove absence of risk.`;
+    verdict = t("cssrsNoPositives", { severity: formatScore(scores?.ideation_severity_recent) });
   } else if (evaluation?.status === "complete" && scores !== null) {
-    verdict = `Complete — recent ideation severity ${formatScore(scores.ideation_severity_recent)}.`;
+    verdict = t("cssrsComplete", { severity: formatScore(scores.ideation_severity_recent) });
   } else if (evaluation?.status === "complete") {
-    verdict = "Complete. Severity is currently unavailable.";
+    verdict = t("cssrsUnavailable");
   } else if (evaluation?.status === "partial") {
     const missing = visibleMissing.length;
     verdict =
       missing === 0
-        ? "Recent ideation answers are saved. Severity appears when the server evaluation is complete."
-        : `Incomplete — ${missing} required item${missing === 1 ? "" : "s"} still need${missing === 1 ? "s" : ""} an answer. Severity will appear when all required items are answered.`;
+        ? t("cssrsAnswersSaved")
+        : t(missing === 1 ? "cssrsMissingOne" : "cssrsMissingMany", { missing });
   } else {
-    verdict = "No answers yet. Select responses to begin the assessment.";
+    verdict = t("cssrsUnanswered");
   }
 
   function renderItem(item: { id: string; prompt: string }): ReactNode {
@@ -348,11 +357,11 @@ export function CssrsSection({
     const selected = answerForMode(answers[item.id], isRegistration);
     return (
       <fieldset key={item.id} className="xi-assessment-item">
-        <legend className="xi-assessment-sr-only">{item.prompt}</legend>
+        <legend className="xi-assessment-sr-only">{translatedPrompt(item)}</legend>
         <div className="xi-assessment-question" aria-hidden="true">
-          {item.prompt}
+          {translatedPrompt(item)}
         </div>
-        <div className="xi-assessment-options" aria-label={item.prompt}>
+        <div className="xi-assessment-options" aria-label={translatedPrompt(item)}>
           {ANSWER_OPTIONS.filter((option) => !isRegistration || option.value !== "unknown").map((option) => (
             <label key={option.value} htmlFor={`cssrs-${item.id}-${option.value}`}>
               <input
@@ -365,7 +374,7 @@ export function CssrsSection({
                 disabled={skipped}
                 aria-describedby={errorId}
               />
-              <span>{option.label}</span>
+              <span>{text(option.label)}</span>
             </label>
           ))}
         </div>
@@ -381,22 +390,21 @@ export function CssrsSection({
   return (
     <section className="xi-card xi-assessment" aria-labelledby="cssrs-heading">
       <h3 className="xi-section-title" id="cssrs-heading">
-        C-SSRS (step {stepNumber})
+        
+        {t("cSsrsStep")} {stepNumber})
       </h3>
       <p className="xi-hint">
-        Assess recent suicidal ideation for the past month. Answers save
-        automatically.
+        {t("cssrsWindowGuide")}
       </p>
       {definitionError !== null && (
         <p className="xi-form-error" role="alert">
-          {definitionError}{" "}
+          {errorText(definitionError)}{" "}
           <button
             className="xi-btn xi-btn-secondary"
             type="button"
             onClick={() => window.location.reload()}
           >
-            Retry
-          </button>
+            {t("retry")}</button>
         </p>
       )}
 
@@ -405,17 +413,16 @@ export function CssrsSection({
           <div className="xi-assessment-group">
             <div className="xi-assessment-group-heading">
               <h4 id="cssrs-group-recent-ideation" tabIndex={-1}>
-                Recent ideation — past month
+                {t("recentIdeationMonth")}
               </h4>
               <span>
                 {skipped
-                  ? "Not assessed"
+                  ? t("notAssessed")
                   : `${items.length} / ${items.length} answered`}
               </span>
             </div>
             <p className="xi-hint">
-              Current ideation levels 1–5 for the past month. Each level is
-              asked explicitly; a higher-level yes never fills in lower levels.
+              {t("cssrsExplicitLevels")}
             </p>
             {items.map(renderItem)}
           </div>
@@ -423,13 +430,13 @@ export function CssrsSection({
         <aside className="xi-assessment-review" aria-labelledby="cssrs-review">
           <div className="xi-assessment-result">
             <h4 id="cssrs-review" tabIndex={-1}>
-              Assessment review
+              {t("assessmentReviewTitle")}
             </h4>
-            {previewLoading && preview === null && <p>Loading C-SSRS preview…</p>}
+            {previewLoading && preview === null && <p>{t("loadingCssrsPreview")}</p>}
             {previewError !== null && preview === null && (
               <div>
                 <p className="xi-form-error" role="alert">
-                  {previewError}
+                  {errorText(previewError)}
                 </p>
                 <div className="xi-row-actions" style={{ marginTop: 8 }}>
                   <button
@@ -441,8 +448,7 @@ export function CssrsSection({
                       void refreshPreview();
                     }}
                   >
-                    Retry
-                  </button>
+                    {t("retry")}</button>
                 </div>
               </div>
             )}
@@ -467,16 +473,16 @@ export function CssrsSection({
                   </p>
                 )}
                 <details className="xi-assessment-provenance">
-                  <summary>Assessment details</summary>
+                  <summary>{t("assessmentDetails")}</summary>
                   <p className="xi-hint">
-                    Definition {preview.definition_version}; saved revision{" "}
+                    {t("definition")} {preview.definition_version}{t("savedRevision269")}{" "}
                     {preview.revision}.
                   </p>
                 </details>
 
                 {visibleErrorIds.length > 0 && !skipped && (
                   <p className="xi-form-error" role="alert">
-                    Review these answers:{" "}
+                    {t("reviewAnswers")}{" "}
                     {visibleErrorIds
                       .map((id) => `${id}: ${(itemErrors[id] ?? []).join(" ")}`)
                       .join("; ")}
@@ -496,15 +502,10 @@ export function CssrsSection({
                           id="cssrs-urgent-heading"
                           style={{ margin: "0 0 8px" }}
                         >
-                          Urgent: server reports high-risk findings needing prompt
-                          clinical review
+                          {t("urgentCssrsReview")}
                         </h5>
                         <p style={{ marginTop: 0, marginBottom: 0 }}>
-                          The server evaluation reports high_risk_alert. This
-                          message persists until the server state changes.
-                          Immediate emergency concern (current intent or plan,
-                          attempt in progress, inability to stay safe) is
-                          clinician-determined and is never a calculated flag.
+                          {t("cssrsHighRiskGuide")}
                         </p>
                       </div>
                     )}
@@ -518,11 +519,10 @@ export function CssrsSection({
                           id="cssrs-review-heading"
                           style={{ margin: "0 0 8px" }}
                         >
-                          Clinical review flagged
+                          {t("clinicalReviewFlagged")}
                         </h5>
                         <p style={{ marginTop: 0, marginBottom: 0 }}>
-                          The server evaluation reports clinical_review. This
-                          message persists until the server state changes.
+                          {t("cssrsClinicalReviewGuide")}
                         </p>
                       </div>
                     )}
@@ -536,20 +536,16 @@ export function CssrsSection({
                           id="cssrs-review-heading"
                           style={{ margin: "0 0 8px" }}
                         >
-                          Clinical review also flagged
+                          {t("clinicalReviewAlsoFlagged")}
                         </h5>
                         <p style={{ marginTop: 0, marginBottom: 0 }}>
-                          The server evaluation also reports clinical_review
-                          alongside the urgent finding above. Both messages
-                          persist until the server state changes.
+                          {t("cssrsBothFlagsGuide")}
                         </p>
                       </div>
                     )}
                     {hasNoPositives && (
                       <p className="xi-hint">
-                        Server flags: no_positive_items — complete explicit
-                        negatives (no-ideation result). A negative screen does not
-                        prove absence of risk.
+                        {t("cssrsNegativeGuide")}
                       </p>
                     )}
                   </div>
@@ -563,7 +559,7 @@ export function CssrsSection({
                       className="xi-assessment-outstanding"
                     >
                       <summary>
-                        Still needed: {visibleMissing.length} answers
+                        {t("stillNeeded")} {visibleMissing.length}  {t("answers")}
                       </summary>
                       <ul>
                         {visibleMissing.map((id) => (
@@ -579,7 +575,7 @@ export function CssrsSection({
                                   ?.focus();
                               }}
                             >
-                              {items.find((item) => item.id === id)?.prompt ?? id}
+                              {translatedPrompt(items.find((item) => item.id === id) ?? { id, prompt: id })}
                             </a>
                           </li>
                         ))}
@@ -591,17 +587,17 @@ export function CssrsSection({
                   <table
                     className="xi-table"
                     id="cssrs-scores"
-                    aria-label="C-SSRS ideation severity scores"
+                    aria-label={t("cssrsSeverityScores")}
                   >
                     <thead>
                       <tr>
-                        <th scope="col">Dimension</th>
-                        <th scope="col">Severity</th>
+                        <th scope="col">{t("dimension")}</th>
+                        <th scope="col">{t("severity")}</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Recent ideation severity (past month)</td>
+                        <td>{t("recentIdeationSeverity")}</td>
                         <td>{formatScore(scores.ideation_severity_recent)}</td>
                       </tr>
                     </tbody>
@@ -610,9 +606,7 @@ export function CssrsSection({
                 {evaluation?.status !== "complete" &&
                   evaluation?.status !== "not_assessed" && (
                     <p className="xi-hint">
-                      Recent ideation severity appears when the server
-                      evaluation is complete. A dash means a result is not
-                      available.
+                      {t("cssrsSeverityGuide")}
                     </p>
                   )}
               </div>
@@ -626,11 +620,11 @@ export function CssrsSection({
                   type="button"
                   onClick={handleResume}
                 >
-                  Resume C-SSRS (clear skip)
+                  {t("resumeCssrs")}
                 </button>
               </div>
               <p className="xi-hint">
-                Not assessed. Resume to start answering.
+                {t("notAssessedResume")}
               </p>
             </div>
           )}

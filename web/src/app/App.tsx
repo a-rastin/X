@@ -1,3 +1,4 @@
+import { LanguageButton, useLanguage } from "../shared/i18n";
 import React from "react";
 import { useAuth } from "../features/identity/auth";
 import { LoginPage } from "../features/identity/LoginPage";
@@ -57,6 +58,7 @@ function NavLink({
 }
 
 function EncounterRoute() {
+  const { t } = useLanguage();
   const [hash, setHash] = React.useState(() =>
     typeof window !== "undefined" ? window.location.hash : "",
   );
@@ -69,14 +71,12 @@ function EncounterRoute() {
   if (encounterId === null) {
     return (
       <div>
-        <h2 className="xi-page-title">Encounter draft</h2>
+        <h2 className="xi-page-title">{t("encounterDraft")}</h2>
         <p className="xi-form-error" role="alert">
-          Missing draft id. Open a draft from the patient directory.
-        </p>
+          {t("missingDraft")}</p>
         <p>
           <a className="xi-btn xi-btn-secondary" href="#/patients">
-            Back to directory
-          </a>
+            {t("backToDirectory")}</a>
         </p>
       </div>
     );
@@ -85,6 +85,7 @@ function EncounterRoute() {
 }
 
 function ChartRoute() {
+  const { t } = useLanguage();
   const [hash, setHash] = React.useState(() =>
     typeof window !== "undefined" ? window.location.hash : "",
   );
@@ -98,15 +99,12 @@ function ChartRoute() {
     return (
       <div>
         <h2 className="xi-page-title" data-testid="chart-heading" id="chart-heading">
-          Patient chart
-        </h2>
+          {t("patientChart")}</h2>
         <p className="xi-form-error" role="alert">
-          Missing patient id. Open a chart from the patient directory.
-        </p>
+          {t("missingPatient")}</p>
         <p>
           <a className="xi-btn xi-btn-secondary" href="#/patients">
-            Back to directory
-          </a>
+            {t("backToDirectory")}</a>
         </p>
       </div>
     );
@@ -115,6 +113,7 @@ function ChartRoute() {
 }
 
 function ReportRoute() {
+  const { t } = useLanguage();
   const [hash, setHash] = React.useState(() =>
     typeof window !== "undefined" ? window.location.hash : "",
   );
@@ -128,15 +127,12 @@ function ReportRoute() {
     return (
       <div>
         <h2 className="xi-page-title" data-testid="report-heading" id="report-heading">
-          Longitudinal patient report
-        </h2>
+          {t("longitudinalReport")}</h2>
         <p className="xi-form-error" role="alert">
-          Missing patient id. Open the printable report from the patient chart.
-        </p>
+          {t("missingReportPatient")}</p>
         <p>
           <a className="xi-btn xi-btn-secondary" href="#/patients">
-            Back to directory
-          </a>
+            {t("backToDirectory")}</a>
         </p>
       </div>
     );
@@ -145,6 +141,7 @@ function ReportRoute() {
 }
 
 export function App() {
+  const { t } = useLanguage();
   const { status, user, warningAcked, logout } = useAuth();
   const [hashRoute, navigate] = useRoute();
   const previousStatus = React.useRef(status);
@@ -175,74 +172,63 @@ export function App() {
   return (
     <div className={user === null ? "xi-shell xi-shell-gate" : "xi-shell"}>
       <a className="xi-skip-link" href="#main-content">
-        Skip to content
-      </a>
+        {t("skipToContent")}</a>
       <header className="xi-header">
+        <div className="xi-header-language"><LanguageButton /></div>
         <h1 className="xi-wordmark">
           <span className="xi-mark" aria-hidden="true">X</span>
           <span className="xi-brand-copy">
             X-INSIGHT
-            <span className="xi-brand-caption">Research workspace</span>
+            <span className="xi-brand-caption">{t("researchWorkspace")}</span>
           </span>
         </h1>
         {user !== null && (
-          <nav className="xi-nav" aria-label="Primary">
+          <nav className="xi-nav" aria-label={t("primaryNavigation")}>
             <NavLink route="dashboard" current={route} navigate={navigate}>
-              Dashboard
-            </NavLink>
+              {t("dashboard")}</NavLink>
             <NavLink route="patients" current={route} navigate={navigate}>
-              Patients
-            </NavLink>
+              {t("patients")}</NavLink>
             {user.role === "admin" && (
               <NavLink route="physicians" current={route} navigate={navigate}>
-                Physicians
-              </NavLink>
+                {t("physicians")}</NavLink>
             )}
             {user.role === "admin" && (
               <NavLink route="networks" current={route} navigate={navigate}>
-                Networks
-              </NavLink>
+                {t("networks")}</NavLink>
             )}
             {user.role === "admin" && (
               <NavLink route="audit" current={route} navigate={navigate}>
-                Audit
-              </NavLink>
+                {t("audit")}</NavLink>
             )}
             {user.role === "admin" && (
               <NavLink route="exports" current={route} navigate={navigate}>
-                Exports
-              </NavLink>
+                {t("exports")}</NavLink>
             )}
             {user.role === "admin" && (
               <NavLink route="backups" current={route} navigate={navigate}>
-                Backups
-              </NavLink>
+                {t("backups")}</NavLink>
             )}
             {user.role === "admin" && (
               <NavLink route="restores" current={route} navigate={navigate}>
-                Restores
-              </NavLink>
+                {t("restores")}</NavLink>
             )}
             {user.role === "admin" && (
               <NavLink route="provider-settings" current={route} navigate={navigate}>
-                Provider
-              </NavLink>
+                {t("provider")}</NavLink>
             )}
             {user.role === "admin" && (
               <NavLink route="status" current={route} navigate={navigate}>
-                Status
-              </NavLink>
+                {t("status")}</NavLink>
             )}
             <NavLink route="account" current={route} navigate={navigate}>
-              Account
-            </NavLink>
+              {t("account")}</NavLink>
           </nav>
         )}
         {user !== null && (
           <div className="xi-header-meta">
             <span className="xi-identity">
-              <span className="xi-identity-name">{user.username}</span>
-              <span className="xi-identity-role">{user.role}</span>
+              <bdi className="xi-identity-name">{user.username}</bdi>
+              <span className="xi-identity-role">{t(user.role === "admin" ? "administrator" : "physician")}</span>
             </span>
             <ThemeToggle />
             <button
@@ -254,13 +240,12 @@ export function App() {
                 });
               }}
             >
-              Sign out
-            </button>
+              {t("signOut")}</button>
           </div>
         )}
       </header>
       <main className="xi-main" id="main-content" tabIndex={-1}>
-        {status === "loading" && <p className="xi-hint">Loading…</p>}
+        {status === "loading" && <p className="xi-hint">{t("loading")}</p>}
         {status !== "loading" && route === "login" && <LoginPage />}
         {status === "ready" && user !== null && route !== "login" && (
           <>

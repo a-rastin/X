@@ -1,3 +1,5 @@
+import { clinicalText } from "../../../shared/messages";
+import { useLanguage } from "../../../shared/i18n";
 /* PANSS 30-item form with server-computed preview (S10,
  * plan.md §§2.2, 5; FR-12, FR-20).
  *
@@ -106,6 +108,11 @@ export function PanssSection({
   onSessionExpired,
   stepNumber,
 }: PanssSectionProps) {
+  const { t, errorText, language, text } = useLanguage();
+  function translatedPrompt(item: { id: string; prompt: string }): string {
+    return clinicalText(language, definition?.id ?? "panss", definition?.version ?? "unavailable", item.id, item.prompt);
+  }
+
   const [definition, setDefinition] = useState<PanssDefinition | null>(null);
   const [definitionError, setDefinitionError] = useState<string | null>(null);
   const [preview, setPreview] = useState<PanssPreview | null>(null);
@@ -203,18 +210,18 @@ export function PanssSection({
     verdict = "";
   } else if (evaluation?.status === "not_assessed") {
     verdict =
-      "PANSS skipped — not assessed. No scores are reported for a skipped assessment.";
+      t("panssSkipped");
   } else if (evaluation?.status === "complete" && scores?.total !== null) {
-    verdict = `Complete — Positive ${scores?.positive}, Negative ${scores?.negative}, General ${scores?.general}, Total ${scores?.total}.`;
+    verdict = t("panssComplete", { positive: String(scores?.positive), negative: String(scores?.negative), general: String(scores?.general), total: String(scores?.total) });
   } else if (evaluation?.status === "complete") {
     verdict =
-      "Complete. The total is currently unavailable.";
+      t("panssTotalUnavailable");
   } else if (evaluation?.status === "partial") {
     const missing = evaluation.missing_item_ids.length;
-    verdict = `Incomplete — ${missing} required item${missing === 1 ? "" : "s"} still need${missing === 1 ? "s" : ""} an answer. The total will appear when all items are answered.`;
+    verdict = t(missing === 1 ? "panssMissingOne" : "panssMissingMany", { missing });
   } else {
     verdict =
-      "No answers yet. Answer all 30 items to see the assessment results.";
+      t("panssUnanswered");
   }
 
   function formatScore(value: number | null | undefined): string {
@@ -251,20 +258,20 @@ export function PanssSection({
     return (
       <section className="xi-assessment-group" aria-labelledby={`panss-group-${items[0].id}`}>
         <div className="xi-assessment-group-heading">
-          <h4 id={`panss-group-${items[0].id}`} tabIndex={-1}>{title}</h4>
-          <span>{selectedCount(items)} / {items.length} answered</span>
+          <h4 id={`panss-group-${items[0].id}`} tabIndex={-1}>{text(title)}</h4>
+          <span>{t("answeredCount", { answered: selectedCount(items), total: items.length })}</span>
         </div>
         {items.map((item) => (
           <fieldset key={item.id} className="xi-assessment-item">
-            <legend className="xi-assessment-sr-only">{item.prompt}</legend>
+            <legend className="xi-assessment-sr-only">{translatedPrompt(item)}</legend>
             <div className="xi-assessment-question" aria-hidden="true">
               <span className="xi-panss-item-code">{item.id}</span>
-              <span>{item.prompt.replace(new RegExp(`^${item.id}\\.\\s*`), "")}</span>
+              <span>{translatedPrompt(item).replace(new RegExp(`^${item.id}\\.\\s*`), "")}</span>
             </div>
             <div
               className="xi-assessment-options"
               role="radiogroup"
-              aria-label={item.prompt}
+              aria-label={translatedPrompt(item)}
             >
               {SCALE_VALUES.map((value) => (
                 <label key={value} htmlFor={`panss-${item.id}-${value}`}>
@@ -287,7 +294,7 @@ export function PanssSection({
               ))}
             </div>
             {answers[item.id] !== undefined && (
-              <p className="xi-assessment-answer-state">{`Selected: ${answers[item.id]}`}</p>
+              <p className="xi-assessment-answer-state">{t("selectedRating", { value: String(answers[item.id]) })}</p>
             )}
             {itemErrors[item.id] !== undefined && (
               <p className="xi-field-error" id={`panss-${item.id}-error`}>
@@ -305,40 +312,40 @@ export function PanssSection({
       <header className="xi-panss-header">
         <div>
           <h3 className="xi-section-title" id="panss-heading">
-            PANSS (step {stepNumber})
+            
+            {t("panssStep")} {stepNumber})
           </h3>
-          <p className="xi-panss-subtitle">Positive and Negative Syndrome Scale</p>
-          <p className="xi-hint">Rate symptoms over the previous 7 days using the interview and available collateral information.</p>
+          <p className="xi-panss-subtitle">{t("panssFullName")}</p>
+          <p className="xi-hint">{t("panssWindowGuide")}</p>
         </div>
         {definition !== null && (
           <div className="xi-panss-progress">
-            <div><span>Items selected</span><strong>{selectedTotal} <span>/ {definition.items.length}</span></strong></div>
-            <progress value={selectedTotal} max={definition.items.length} aria-label="PANSS items selected" />
-            <span>Assessment window: previous 7 days</span>
+            <div><span>{t("itemsSelected")}</span><strong>{selectedTotal} <span>/ {definition.items.length}</span></strong></div>
+            <progress value={selectedTotal} max={definition.items.length} aria-label={t("panssItemsSelected")} />
+            <span>{t("panssWindow")}</span>
           </div>
         )}
       </header>
 
       {definitionError !== null && (
         <p className="xi-form-error" role="alert">
-          {definitionError}{" "}
+          {errorText(definitionError)}{" "}
           <button
             className="xi-btn xi-btn-secondary"
             type="button"
             onClick={() => window.location.reload()}
           >
-            Retry
-          </button>
+            {t("retry")}</button>
         </p>
       )}
       {definition === null && definitionError === null && (
-        <p>Loading PANSS form…</p>
+        <p>{t("loadingPanssForm")}</p>
       )}
 
       <div className="xi-assessment-workspace">
       <aside className="xi-panss-outline">
-        <nav aria-label="PANSS subscales">
-          <h4>Subscales</h4>
+        <nav aria-label={t("panssSubscales")}>
+          <h4>{t("subscales")}</h4>
           {subscales.filter(group => group.items.length > 0).map(group => (
             <a key={group.code} href={`#panss-group-${group.items[0].id}`} onClick={event => {
               event.preventDefault();
@@ -346,27 +353,27 @@ export function PanssSection({
             }}>
               <span className="xi-panss-nav-code">{group.code}</span>
               <span className="xi-panss-nav-meta">
-                <strong>{group.title}</strong>
+                <strong>{text(group.title)}</strong>
                 <span>{group.range}</span>
-                <span>{selectedCount(group.items)} / {group.items.length} answered</span>
+                <span>{selectedCount(group.items)} / {group.items.length}  {t("answered")}</span>
               </span>
-              {selectedCount(group.items) === group.items.length && <span className="xi-panss-nav-complete" aria-label="All items selected">✓</span>}
+              {selectedCount(group.items) === group.items.length && <span className="xi-panss-nav-complete" aria-label={t("allItemsSelected")}>✓</span>}
             </a>
           ))}
           <a className="xi-panss-review-link" href="#panss-review" onClick={event => {
             event.preventDefault();
             document.getElementById("panss-review")?.focus();
-          }}>Go to assessment review <span aria-hidden="true">↗</span></a>
+          }}>{t("goAssessmentReview")} <span aria-hidden="true">↗</span></a>
         </nav>
         <div className="xi-panss-navigation-hint">
-          <strong>Keyboard navigation</strong>
-          <p>Use Tab to reach a rating, then arrow keys to choose a value.</p>
+          <strong>{t("keyboardNavigation")}</strong>
+          <p>{t("ratingKeyboardGuide")}</p>
         </div>
       </aside>
       <div className="xi-assessment-worksheet">
         <div className="xi-panss-rating-guide">
-          <span>Choose one rating per item</span>
-          <p className="xi-assessment-window">1 = absent <span aria-hidden="true">—</span> <span>7 = extreme</span></p>
+          <span>{t("oneRatingPerItem")}</span>
+          <p className="xi-assessment-window">{t("ratingAbsent")} <span aria-hidden="true">—</span> <span>{t("ratingExtreme")}</span></p>
         </div>
       {definition !== null && (
         <div>
@@ -383,14 +390,14 @@ export function PanssSection({
       <aside className="xi-assessment-review" aria-labelledby="panss-review">
       <div className="xi-assessment-result">
         <div className="xi-panss-review-heading">
-          <h4 id="panss-review" tabIndex={-1}>Assessment review</h4>
-          <span>Saved assessment results</span>
+          <h4 id="panss-review" tabIndex={-1}>{t("assessmentReviewTitle")}</h4>
+          <span>{t("savedAssessmentResults")}</span>
         </div>
-        {previewLoading && preview === null && <p>Loading PANSS preview…</p>}
+        {previewLoading && preview === null && <p>{t("loadingPanssPreview")}</p>}
         {previewError !== null && preview === null && (
           <div>
             <p className="xi-form-error" role="alert">
-              {previewError}
+              {errorText(previewError)}
             </p>
             <div className="xi-row-actions" style={{ marginTop: 8 }}>
               <button
@@ -402,8 +409,7 @@ export function PanssSection({
                   void refreshPreview();
                 }}
               >
-                Retry
-              </button>
+                {t("retry")}</button>
             </div>
           </div>
         )}
@@ -424,13 +430,13 @@ export function PanssSection({
               {previewError !== null && "Results could not refresh. Showing the last available assessment."}
             </p>}
             <details className="xi-assessment-provenance">
-              <summary>Assessment details</summary>
-              <p className="xi-hint">Definition {preview.definition_version}; saved revision {preview.revision}.</p>
+              <summary>{t("assessmentDetails")}</summary>
+              <p className="xi-hint">{t("definition")} {preview.definition_version}{t("savedRevision269")} {preview.revision}.</p>
             </details>
 
             {itemErrorIds.length > 0 && (
               <p className="xi-form-error" role="alert">
-                Review these answers:{" "}
+                {t("reviewAnswers")}{" "}
                 {itemErrorIds
                   .map((id) => `${id}: ${(itemErrors[id] ?? []).join(" ")}`)
                   .join("; ")}
@@ -439,14 +445,14 @@ export function PanssSection({
 
             {evaluation?.status === "partial" && definition !== null && (
               <details id="panss-still-needed" className="xi-assessment-outstanding">
-                <summary>Still needed: {evaluation.missing_item_ids.length} answers</summary>
+                <summary>{t("stillNeeded")} {evaluation.missing_item_ids.length}  {t("answers")}</summary>
                 <ul>
                   {evaluation.missing_item_ids.map((id) => (
                     <li key={id}>
                       <a href={`#panss-heading`} onClick={event => {
                         event.preventDefault();
                         document.querySelector<HTMLInputElement>(`input[name="panss-${id}"]`)?.focus();
-                      }}>{definition.items.find(item => item.id === id)?.prompt ?? id}</a>
+                      }}>{translatedPrompt(definition.items.find(item => item.id === id) ?? { id, prompt: id })}</a>
                     </li>
                   ))}
                 </ul>
@@ -457,29 +463,29 @@ export function PanssSection({
               <table
                 className="xi-table xi-panss-score-table"
                 id="panss-scores"
-                aria-label="PANSS subscale scores"
+                aria-label={t("panssSubscaleScores")}
               >
                 <thead>
                   <tr>
-                    <th scope="col">Scale</th>
-                    <th scope="col">Score</th>
+                    <th scope="col">{t("scale")}</th>
+                    <th scope="col">{t("score")}</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Positive (P1–P7)</td>
+                    <td>{t("positivePanss")}</td>
                     <td>{formatScore(scores.positive)}</td>
                   </tr>
                   <tr>
-                    <td>Negative (N1–N7)</td>
+                    <td>{t("negativePanss")}</td>
                     <td>{formatScore(scores.negative)}</td>
                   </tr>
                   <tr>
-                    <td>General (G1–G16)</td>
+                    <td>{t("generalPanss")}</td>
                     <td>{formatScore(scores.general)}</td>
                   </tr>
                   <tr className="xi-panss-total-row">
-                    <td>Total (30 items)</td>
+                    <td>{t("totalPanss")}</td>
                     <td>{formatScore(scores.total)}</td>
                   </tr>
                 </tbody>
@@ -488,18 +494,18 @@ export function PanssSection({
             {evaluation?.status !== "complete" &&
               evaluation?.status !== "not_assessed" && (
                 <p className="xi-hint">
-                  The total appears when all 30 items have valid answers. A dash means a score is not available.
+                  {t("panssTotalGuide")}
                 </p>
               )}
 
             {totalBand !== undefined && (
               <div
                 className="xi-panss-panel"
-                aria-label="PANSS total band (informational)"
+                aria-label={t("panssTotalBand")}
               >
                 <p style={{ margin: 0 }}>
-                  Total band {totalBand.range}: {totalBand.label}.
-                  Informational only — not a treatment gate.
+                  
+                  {t("totalBand")} {totalBand.range}: {totalBand.label}{t("informationalOnlyNotATreatmentGate")}
                 </p>
               </div>
             )}
@@ -514,10 +520,10 @@ export function PanssSection({
               type="button"
               onClick={handleResume}
             >
-              Resume PANSS (clear skip)
+              {t("resumePanss")}
             </button>
           </div>
-          <p className="xi-hint">Not assessed. Resume to start answering.</p>
+          <p className="xi-hint">{t("notAssessedResume")}</p>
         </div>
       )}
       </aside>

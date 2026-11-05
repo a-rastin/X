@@ -1,3 +1,4 @@
+import { message, type Language, type MessageKey } from "../../shared/messages";
 /* Authenticated HTTP client for the identity seam (S05, plan.md §4.3).
  *
  * All routes live under /api/v1 at the same origin (dev/preview proxy
@@ -374,21 +375,14 @@ export async function reactivatePhysician(id: string): Promise<SafePhysician> {
  * every sentence is static UI text; the server message stays separate).
  * Returns null when the code has no canned hint — callers then render the
  * server message + code verbatim. */
-export function conflictHint(code: string): string | null {
-  switch (code) {
-    case "PATIENT_ARCHIVED":
-      return "Patient is archived and read-only under the provisional archive policy (not owner-confirmed): creating, editing, or signing drafts is blocked. Nothing was changed.";
-    case "STALE_INPUTS":
-      return "Relevant patient inputs changed — affected results are out of date (◍). Start a new run for the current inputs; nothing was signed.";
-    case "OPEN_DRAFT_EXISTS":
-      return "An open draft already exists for this patient. Ask its author to resume it — no second draft is possible.";
-    case "DRAFT_SET_CHANGED":
-      return "The draft set changed since it was reviewed. Review the current set and confirm again.";
-    case "STALE_REVISION":
-      return "The record changed. Reload and reconcile before retrying — nothing was overwritten.";
-    case "ALREADY_SIGNED":
-      return "This encounter is already signed. The frozen record on the chart is read-only; double-submit is safe and created nothing new.";
-    default:
-      return null;
-  }
+export function conflictHint(code: string, language: Language = "en"): string | null {
+  const keys: Record<string, MessageKey> = {
+    PATIENT_ARCHIVED: "archivedConflict",
+    STALE_INPUTS: "staleInputsConflict",
+    OPEN_DRAFT_EXISTS: "openDraftConflict",
+    DRAFT_SET_CHANGED: "draftSetChanged",
+    STALE_REVISION: "staleRevisionConflict",
+    ALREADY_SIGNED: "alreadySignedConflict",
+  };
+  return Object.hasOwn(keys, code) ? message(language, keys[code]) : null;
 }

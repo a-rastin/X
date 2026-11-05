@@ -1,3 +1,4 @@
+import { useLanguage } from "../../shared/i18n";
 import { questionLabel } from "./questionLabels";
 /* Complete CPT review, comparison, and acceptance UI (S48c §§1-3 + §4
  * frontend half; plan.md §9.1, system-design §§8.1/8.3/8.5, ui-context CPT
@@ -170,6 +171,7 @@ export function CptReviewPanel({
   runId: string;
   onSessionExpired: () => void;
 }) {
+  const { t, language, errorText } = useLanguage();
   const [open, setOpen] = useState(false);
   const [phase, setPhase] = useState<"idle" | "loading" | "ready" | "error">("idle");
   const [review, setReview] = useState<QuestionReviewPayload | null>(null);
@@ -427,7 +429,7 @@ export function CptReviewPanel({
       className="xi-cpt-panel"
       data-testid={`cpt-panel-${questionKey}`}
       id={`cpt-panel-${questionKey}`}
-      aria-label={`CPT review for ${questionLabel(questionKey)}`}
+      aria-label={`CPT review for ${questionLabel(questionKey, undefined, undefined, language)}`}
     >
       <div className="xi-row-actions">
         <button
@@ -438,16 +440,16 @@ export function CptReviewPanel({
           aria-controls={regionId}
           onClick={toggle}
         >
-          {open ? `Hide CPT review for ${questionLabel(questionKey)}` : `Show CPT review for ${questionLabel(questionKey)}`}
+          {open ? `Hide CPT review for ${questionLabel(questionKey, undefined, undefined, language)}` : `Show CPT review for ${questionLabel(questionKey, undefined, undefined, language)}`}
         </button>
       </div>
       {open && (
         <div id={regionId}>
-          {phase === "loading" && <p role="status">Loading persisted CPT review…</p>}
+          {phase === "loading" && <p role="status">{t("loadingCptReview")}</p>}
           {phase === "error" && (
             <div>
               <p className="xi-form-error" role="alert">
-                {loadError}
+                {errorText(loadError)}
               </p>
               <div className="xi-row-actions" style={{ marginTop: 8 }}>
                 <button
@@ -455,7 +457,7 @@ export function CptReviewPanel({
                   type="button"
                   onClick={() => void fetchReview("initial")}
                 >
-                  Retry CPT review
+                  {t("retryCptReview")}
                 </button>
               </div>
             </div>
@@ -515,6 +517,7 @@ function CptReviewBody({
   onRetry: () => void;
   onAccept: () => void;
 }) {
+  const { t, errorText, language } = useLanguage();
   const questionKey = review.question_run.question_key;
   const originals = indexOriginals(review.original_tables);
   const current = review.current_tables;
@@ -558,57 +561,57 @@ function CptReviewBody({
     <div className="xi-cpt-body">
       <dl className="xi-proposal-facts">
         <div>
-          <dt>Calculation state</dt>
+          <dt>{t("calculationState")}</dt>
           <dd>
             <span aria-hidden="true">{CALC_GLYPH[review.calculation_state] ?? "○"}</span>{" "}
             {CALC_LABEL[review.calculation_state] ?? review.calculation_state}
           </dd>
         </div>
         <div>
-          <dt>Input freshness</dt>
+          <dt>{t("inputFreshness")}</dt>
           <dd>
             {stale ? (
               <span>
-                <span aria-hidden="true">◍</span> Out of date — {review.input_freshness.reason}
+                <span aria-hidden="true">◍</span>  {t("outOfDate")} {review.input_freshness.reason}
               </span>
             ) : (
               <span>
-                <span aria-hidden="true">●</span> Current inputs
+                <span aria-hidden="true">●</span>  {t("currentInputs")}
               </span>
             )}
           </dd>
         </div>
         <div>
-          <dt>Review revision</dt>
+          <dt>{t("reviewRevision")}</dt>
           <dd>
             <code className="xi-mono">{review.review_revision}</code>
           </dd>
         </div>
         <div>
-          <dt>Current CPT revision</dt>
+          <dt>{t("currentCptRevision")}</dt>
           <dd>
-            <code className="xi-mono">{advanced ? review.current_cpt_revision_id ?? "original (no edits)" : review.current_cpt_revision_id ? "Adjusted" : "Original (no edits)"}</code>
+            <code className="xi-mono">{advanced ? review.current_cpt_revision_id ?? "original (no edits)" : review.current_cpt_revision_id ? t("adjusted") : t("originalNoEdits")}</code>
           </dd>
         </div>
         <div>
-          <dt>Displayed result revision</dt>
+          <dt>{t("displayedResultRevision")}</dt>
           <dd>
-            <code className="xi-mono">{advanced ? review.displayed_result_revision_id ?? "—" : review.displayed_result_revision_id ? "Adjusted" : "—"}</code>
+            <code className="xi-mono">{advanced ? review.displayed_result_revision_id ?? "—" : review.displayed_result_revision_id ? t("adjusted") : "—"}</code>
             {latestIsEarlier && (
-              <span className="xi-cpt-badge"> earlier revision</span>
+              <span className="xi-cpt-badge">  {t("earlierRevision")}</span>
             )}
           </dd>
         </div>
         <div>
-          <dt>Acceptance</dt>
+          <dt>{t("acceptance")}</dt>
           <dd>
             {review.is_accepted ? (
               <span>
-                <span aria-hidden="true">✓</span> Accepted
+                <span aria-hidden="true">✓</span>  {t("accepted")}
               </span>
             ) : (
               <span>
-                <span aria-hidden="true">○</span> Not accepted
+                <span aria-hidden="true">○</span>  {t("notAccepted")}
               </span>
             )}
           </dd>
@@ -617,15 +620,14 @@ function CptReviewBody({
 
       {review.calculation_state === "recalculating" && (
         <p className="xi-hint" role="status">
-          Recalculating — sliders stay enabled; acceptance and sign-off stay blocked until the
-          successful result lands.
+          
+          {t("recalculatingSlidersStayEnabledAcceptanceAndSign")}
         </p>
       )}
       {stale && (
         <div className="xi-warning-panel" role="status">
           <p style={{ margin: 0 }}>
-            <strong>Out of date ◍</strong> — {review.input_freshness.reason}. Regeneration with
-            current inputs is required; reset cannot make stale inputs current.
+            <strong>{t("outOfDateBadge")}</strong> — {review.input_freshness.reason}{t("regenerationWithCurrentInputsIsRequiredReset")}
           </p>
         </div>
       )}
@@ -637,11 +639,11 @@ function CptReviewBody({
       {saveError !== null && (
         <div>
           <p className="xi-form-error" role="alert">
-            {saveError}
+            {errorText(saveError)}
           </p>
           <div className="xi-row-actions" style={{ marginTop: 8 }}>
             <button className="xi-btn xi-btn-secondary" type="button" onClick={onReload}>
-              Reload current values
+              {t("reloadCurrentValues")}
             </button>
           </div>
         </div>
@@ -649,43 +651,44 @@ function CptReviewBody({
 
       {review.baseline === null || current === null ? (
         <p className="xi-hint" role="status">
-          No adjustable baseline — this question has not completed successfully, so there are no
-          CPTs to review or adjust.
+          
+          {t("noAdjustableBaselineThisQuestionHasNot")}
         </p>
       ) : (
         <div>
-          <h5 className="xi-proposal-subhead">CPT values (exact percentages)</h5>
+          <h5 className="xi-proposal-subhead">{t("cptExactPercentages")}</h5>
           <p className="xi-hint" style={{ marginTop: 0 }}>
-            Original values are LLM-estimated; current values include physician adjustments.
-            Differences are percentage points (current − original). Network outputs below are
-            read-only results, not sliders.
+            
+            {t("originalValuesAreLlmEstimatedCurrentValues")}
           </p>
           <div className="xi-field" style={{ maxWidth: 420 }}>
             <label className="xi-label" htmlFor={`cpt-search-${questionKey}`}>
-              Search CPT rows
+              {t("searchCptRows")}
             </label>
             <input
               className="xi-input"
               id={`cpt-search-${questionKey}`}
               type="search"
               autoComplete="off"
-              placeholder="Filter by node or parent states"
+              placeholder={t("filterNodeParents")}
               value={search}
               onChange={(event) => onSearch(event.target.value)}
             />
           </div>
           <p className="xi-hint" role="status">
-            Showing {shownRows} of {totalRows} rows
+            
+            {t("showing")} {shownRows}  {t("of")} {totalRows}  {t("rows")}
             {query !== "" && (
               <>
                 {" "}
-                for “{search.trim()}” —{" "}
+                
+                {t("for")}{search.trim()}” —{" "}
                 <button
                   className="xi-btn xi-btn-secondary"
                   type="button"
                   onClick={() => onSearch("")}
                 >
-                  Clear search
+                  {t("clearSearch")}
                 </button>
               </>
             )}
@@ -699,31 +702,32 @@ function CptReviewBody({
               <summary>
                 <code className="xi-mono">{table.node_id}</code>{" "}
                 <span className="xi-hint">
-                  states {(table.states ?? []).join(" / ")}
+                  
+                  {t("states")} {(table.states ?? []).join(" / ")}
                   {(table.parent_ids ?? []).length > 0
                     ? ` · parents ${(table.parent_ids ?? []).join(", ")}`
-                    : " · root distribution"}
+                    : t("rootDistribution")}
                 </span>
               </summary>
               {(table.states ?? []).length === 1 ? (
                 <p className="xi-hint" role="status">
-                  Single-state row — this distribution remains at 100% by the probability
-                  constraint; there is nothing to adjust.
+                  
+                  {t("singleStateRowThisDistributionRemainsAt")}
                 </p>
               ) : null}
               <table
                 className="xi-table"
-                aria-label={`CPT review for ${table.node_id} in ${questionLabel(questionKey)}`}
+                aria-label={`CPT review for ${table.node_id} in ${questionLabel(questionKey, undefined, undefined, language)}`}
               >
                 <thead>
                   <tr>
-                    <th scope="col">Parent states</th>
+                    <th scope="col">{t("parentStates")}</th>
                     {(table.states ?? []).map((state) => (
                       <th scope="col" key={state}>
                         {state}
                       </th>
                     ))}
-                    <th scope="col">Row total</th>
+                    <th scope="col">{t("rowTotal")}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -779,18 +783,19 @@ function CptReviewBody({
                                     {shown}%
                                   </code>{" "}
                                   <span className="xi-hint">
-                                    (original{" "}
+                                    
+                                    {t("original")}{" "}
                                     <code className="xi-mono">{original ?? "?"}%</code>
                                     {Number.isFinite(diffUnits) && (
-                                      <> · {formatUnits(diffUnits)} pp</>
+                                      <> · {formatUnits(diffUnits)}  {t("pp")}</>
                                     )}
                                     )
                                   </span>{" "}
                                   {isDirect && (
-                                    <span className="xi-cpt-badge">direct</span>
+                                    <span className="xi-cpt-badge">{t("direct")}</span>
                                   )}
                                   {isRedistributed && (
-                                    <span className="xi-cpt-badge">redistributed</span>
+                                    <span className="xi-cpt-badge">{t("redistributed")}</span>
                                   )}
                                 </label>
                                 {!singleState && (
@@ -832,13 +837,14 @@ function CptReviewBody({
             </details>
           ))}
 
-          <h5 className="xi-proposal-subhead">Outputs and recommendations (read-only)</h5>
+          <h5 className="xi-proposal-subhead">{t("readonlyOutputs")}</h5>
           <div className="xi-cpt-compare">
             <div>
               <p style={{ marginBottom: 4 }}>
-                <strong>Original result</strong>{" "}
+                <strong>{t("originalResult")}</strong>{" "}
                 {advanced && <span className="xi-hint">
-                  baseline{" "}
+                  
+                  {t("baseline91")}{" "}
                   <code className="xi-mono">{review.baseline.id}</code>
                 </span>}
               </p>
@@ -849,31 +855,32 @@ function CptReviewBody({
             </div>
             <div>
               <p style={{ marginBottom: 4 }}>
-                <strong>Latest successful result</strong>{" "}
+                <strong>{t("latestSuccessfulResult")}</strong>{" "}
                 {latestResult !== null ? (
                   <span className="xi-hint">
-                    {advanced && <>result <code className="xi-mono">{latestResult.id}</code> · revision{" "}
+                    {advanced && <>{t("result")} <code className="xi-mono">{latestResult.id}</code>  {t("revision")}{" "}
                     <code className="xi-mono">{latestResult.cpt_revision_id}</code></>}
                     {latestIsEarlier && (
-                      <span className="xi-cpt-badge"> earlier revision</span>
+                      <span className="xi-cpt-badge">  {t("earlierRevision")}</span>
                     )}
                     {latestResult.reused_from_baseline_id !== null && (
                       <span className="xi-hint">
                         {" "}
-                        · verified reuse of the original baseline{" "}
+                        
+                        {t("verifiedReuseOfTheOriginalBaseline")}{" "}
                         {advanced && <code className="xi-mono">{latestResult.reused_from_baseline_id}</code>}
                       </span>
                     )}
                   </span>
                 ) : (
-                  <span className="xi-hint">no successful adjusted result yet</span>
+                  <span className="xi-hint">{t("noAdjustedResult")}</span>
                 )}
               </p>
               {latestResult === null ? (
                 <p className="xi-hint" role="status">
                   {review.calculation_state === "failed"
-                    ? "The current revision failed to calculate — the prior successful result above stays labeled separately. Retry locally or reset."
-                    : "No successful adjusted result exists yet; the original above is the current result."}
+                    ? t("theCurrentRevisionFailedToCalculateThe")
+                    : t("noSuccessfulAdjustedResultExistsYetThe")}
                 </p>
               ) : (
                 <div>
@@ -883,8 +890,8 @@ function CptReviewBody({
                   <p style={{ marginTop: 0 }}>{latestResult.section_text}</p>
                   {wordingUnchanged && (
                     <p className="xi-hint">
-                      Recommendation wording is unchanged — probabilities and provenance still
-                      differ; both sides stay visible.
+                      
+                      {t("recommendationWordingIsUnchangedProbabilitiesAndProvenance")}
                     </p>
                   )}
                 </div>
@@ -895,8 +902,7 @@ function CptReviewBody({
           {review.calculation_state === "failed" && (
             <div className="xi-warning-panel" role="status">
               <p style={{ margin: 0 }}>
-                <strong>Failed ✕</strong> — the current values are preserved but unsolved. Retry
-                the local calculation or reset to original values; acceptance stays blocked.
+                <strong>{t("failedBadge")}</strong>  {t("theCurrentValuesArePreservedButUnsolved")}
               </p>
             </div>
           )}
@@ -909,7 +915,7 @@ function CptReviewBody({
               disabled={actionBusy}
               onClick={onReset}
             >
-              {actionBusy ? "Working…" : "Reset to original values"}
+              {actionBusy ? t("working") : t("resetToOriginalValues")}
             </button>
             {review.calculation_state === "failed" && (
               <button
@@ -919,7 +925,7 @@ function CptReviewBody({
                 disabled={actionBusy}
                 onClick={onRetry}
               >
-                {actionBusy ? "Retrying…" : "Retry local calculation"}
+                {actionBusy ? t("retrying") : t("retryLocalCalculation")}
               </button>
             )}
             <button
@@ -927,45 +933,43 @@ function CptReviewBody({
               type="button"
               onClick={onReload}
             >
-              Reload current values
+              {t("reloadCurrentValues")}
             </button>
           </div>
           <p className="xi-hint">
-            Reset creates an audited baseline-equal revision for this question only — other
-            panels stay unchanged and history is retained. Retry targets exactly the current
-            revision without re-estimation.
+            
+            {t("resetCreatesAnAuditedBaselineEqualRevision")}
           </p>
           {stale && (
             <p className="xi-hint" role="status">
-              This run is out of date — reset and retry apply to superseded inputs and stay
-              out of date. Start a new run from Proposal review for current inputs; the
-              regenerated original needs explicit review before it can be accepted.
+              
+              {t("thisRunIsOutOfDateReset")}
             </p>
           )}
         </div>
       )}
 
-      <h5 className="xi-proposal-subhead">Acceptance</h5>
+      <h5 className="xi-proposal-subhead">{t("acceptance")}</h5>
       {review.is_accepted && review.acceptance !== null ? (
         <div className="xi-notice" role="status">
           <p style={{ margin: 0 }}>
-            <strong>Accepted ✓</strong> by {review.acceptance.actor_username} at{" "}
+            <strong>{t("acceptedBadge")}</strong>  {t("by")} {review.acceptance.actor_username}  {t("at")}{" "}
             {review.acceptance.created_at}
           </p>
           <p className="xi-hint" style={{ marginBottom: 0 }}>
-            {advanced && <>Acceptance <code className="xi-mono">{review.acceptance.id}</code> · baseline{" "}
-            <code className="xi-mono">{review.acceptance.baseline_id}</code> · revision{" "}
+            {advanced && <>{t("acceptance")} <code className="xi-mono">{review.acceptance.id}</code>  {t("baseline107")}{" "}
+            <code className="xi-mono">{review.acceptance.baseline_id}</code>  {t("revision")}{" "}
             <code className="xi-mono">{review.acceptance.cpt_revision_id ?? "original"}</code>{" "}
-            · result <code className="xi-mono">{review.acceptance.result_id}</code> (
-            {review.acceptance.result_kind}) · input{" "}
+            
+            {t("result108")} <code className="xi-mono">{review.acceptance.result_id}</code> (
+            {review.acceptance.result_kind}{t("input")}{" "}
             <code className="xi-mono">{review.acceptance.input_hash}</code>.
-            </>}Editing, reset, or relevant patient
-            changes invalidate this acceptance.
+            </>}{t("acceptanceInvalidation")}
           </p>
         </div>
       ) : blockReason !== null ? (
         <div className="xi-warning-panel" role="status">
-          <p style={{ margin: 0 }}>Acceptance blocked — {blockReason}</p>
+          <p style={{ margin: 0 }}>{t("acceptanceBlocked")} {blockReason}</p>
           <div className="xi-row-actions" style={{ marginTop: 8 }}>
             <button
               className="xi-btn xi-btn-secondary"
@@ -973,18 +977,20 @@ function CptReviewBody({
               data-testid={`cpt-accept-${questionKey}`}
               disabled
             >
-              Accept current result (blocked)
+              {t("acceptBlocked")}
             </button>
           </div>
         </div>
       ) : (
         <div>
           <p className="xi-hint" style={{ marginTop: 0 }}>
-            Accept the exact current{" "}
+            
+            {t("acceptTheExactCurrent")}{" "}
             {review.current_cpt_revision_id === null
-              ? "original baseline"
-              : "adjusted revision"}{" "}
-            and its matching successful result.
+              ? t("originalBaseline")
+              : t("adjustedRevision")}{" "}
+            
+            {t("andItsMatchingSuccessfulResult")}
           </p>
           <div className="xi-row-actions">
             <button
@@ -994,28 +1000,29 @@ function CptReviewBody({
               disabled={actionBusy}
               onClick={onAccept}
             >
-              {actionBusy ? "Accepting…" : "Accept current result"}
+              {actionBusy ? t("accepting") : t("acceptCurrentResult")}
             </button>
           </div>
         </div>
       )}
       {actionError !== null && (
         <p className="xi-form-error" role="alert">
-          {actionError}
+          {errorText(actionError)}
         </p>
       )}
 
       {(review.revisions.length > 0 || review.acceptances.length > 0) && (
         <details className="xi-proposal-details">
           <summary>
-            Revision and acceptance history ({review.revisions.length} revisions,{" "}
-            {review.acceptances.length} acceptances)
+            
+            {t("revisionAndAcceptanceHistory")}{review.revisions.length}  {t("revisions")}{" "}
+            {review.acceptances.length}  {t("acceptances")}
           </summary>
           {review.revisions.length > 0 && (
             <ul>
               {review.revisions.map((revision) => (
                 <li key={revision.id}>
-                  <code className="xi-mono">rev {revision.sequence}</code> · {revision.kind} ·{" "}
+                  <code className="xi-mono">{t("rev")} {revision.sequence}</code> · {revision.kind} ·{" "}
                   {advanced && <><code className="xi-mono">{revision.id}</code> · </>}{revision.actor_username} ·{" "}
                   {revision.created_at}
                 </li>
@@ -1027,7 +1034,7 @@ function CptReviewBody({
               {review.acceptances.map((acceptance) => (
                 <li key={acceptance.id}>
                   {advanced && <><code className="xi-mono">{acceptance.id}</code> · </>}
-                  {acceptance.result_kind} {advanced && <> <code className="xi-mono">{acceptance.result_id}</code> · revision <code className="xi-mono">{acceptance.cpt_revision_id ?? "original"}</code></>}
+                  {acceptance.result_kind} {advanced && <> <code className="xi-mono">{acceptance.result_id}</code>  {t("revision")} <code className="xi-mono">{acceptance.cpt_revision_id ?? "original"}</code></>}
                   · {acceptance.actor_username} · {acceptance.created_at}
                 </li>
               ))}

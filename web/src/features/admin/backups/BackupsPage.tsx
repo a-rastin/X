@@ -1,3 +1,4 @@
+import { useLanguage } from "../../../shared/i18n";
 /* Admin consistent full backups (S54 §§1-4, seam T9; plan.md §10.2, FR-41–42).
  *
  * Admin-only navigation/route guard lives in app/pages.tsx (complement to
@@ -56,6 +57,7 @@ function shortHash(hash: string): string {
 }
 
 export function BackupsPage() {
+  const { t, errorText } = useLanguage();
   const { sessionExpired } = useAuth();
   const [job, setJob] = useState<BackupJob | null>(null);
   const [lastGood, setLastGood] = useState<BackupJob | null>(null);
@@ -240,19 +242,16 @@ export function BackupsPage() {
   return (
     <div>
       <h2 className="xi-page-title" data-testid="backups-heading" id="backups-heading">
-        Full backups
-      </h2>
+        {t("fullBackups")}</h2>
       <p className="xi-hint">
-        Administrator full backups: one consistent database snapshot plus
-        network XML, baselines, CPT revisions/results, acceptances, signed
-        snapshots, audit, and pinned runtime metadata. Usable sessions and the
-        deployment encryption key are never in the archive — migrating without
-        the original key requires key re-entry.
+        
+        {t("administratorFullBackupsOneConsistentDatabaseSnapshot")}
       </p>
 
       <section className="xi-card" aria-labelledby="backups-actions-heading">
         <h3 className="xi-section-title" id="backups-actions-heading">
-          Create backup
+          
+          {t("createBackup")}
         </h3>
         <div className="xi-row-actions xi-no-print">
           <button
@@ -264,14 +263,14 @@ export function BackupsPage() {
             onClick={() => void create()}
           >
             {creating
-              ? "Creating…"
+              ? t("creating")
               : polling
                 ? `In progress… (${pollsUsed}/${MAX_POLLS})`
                 : job?.status === "failed"
-                  ? "Retry new backup"
+                  ? t("retryNewBackup")
                   : job !== null
-                    ? "Create new backup"
-                    : "Create backup"}
+                    ? t("createNewBackup")
+                    : t("createBackup")}
           </button>
           {downloadable !== null && (
             <button
@@ -282,7 +281,7 @@ export function BackupsPage() {
               disabled={busy}
               onClick={() => void download(downloadable)}
             >
-              {downloading ? "Preparing…" : "Download backup zip"}
+              {downloading ? t("preparing") : t("downloadBackupZip")}
             </button>
           )}
         </div>
@@ -298,20 +297,20 @@ export function BackupsPage() {
         )}
         {error !== null && (
           <p className="xi-form-error" role="alert" data-testid="backups-status">
-            {error}
+            {errorText(error)}
           </p>
         )}
         {job !== null && (
           <dl className="xi-hint" style={{ marginBottom: 0 }}>
-            <dt style={{ display: "inline", fontWeight: 600 }}>Backup id: </dt>
+            <dt style={{ display: "inline", fontWeight: 600 }}>{t("backupId")} </dt>
             <dd style={{ display: "inline", margin: 0 }}>{job.id}</dd>
             {" · "}
-            <dt style={{ display: "inline", fontWeight: 600 }}>Status: </dt>
+            <dt style={{ display: "inline", fontWeight: 600 }}>{t("status387")} </dt>
             <dd style={{ display: "inline", margin: 0 }}>{job.status}</dd>
             {job.archive_sha256 !== null && (
               <>
                 {" · "}
-                <dt style={{ display: "inline", fontWeight: 600 }}>SHA-256: </dt>
+                <dt style={{ display: "inline", fontWeight: 600 }}>{t("sha256")} </dt>
                 <dd
                   style={{ display: "inline", margin: 0 }}
                   title={job.archive_sha256}
@@ -332,20 +331,22 @@ export function BackupsPage() {
           id="backups-manifest"
         >
           <h3 className="xi-section-title" id="backups-manifest-heading">
-            Backup manifest
+            
+            {t("backupManifest")}
           </h3>
           <p className="xi-hint">
-            Manifest <code>{manifest.schema_version}</code>, app schema{" "}
-            <code>{manifest.app_schema_version}</code>, created{" "}
-            {manifest.created_at} by {manifest.created_by.username}.{" "}
-            {networkCount} network XML export{networkCount === 1 ? "" : "s"};{" "}
-            {manifest.warnings.length} warning{manifest.warnings.length === 1 ? "" : "s"}.
+            
+            {t("manifest")} <code>{manifest.schema_version}</code>{t("appSchema")}{" "}
+            <code>{manifest.app_schema_version}</code>{t("created")}{" "}
+            {manifest.created_at}  {t("by")} {manifest.created_by.username}.{" "}
+            {networkCount}  {t("networkXmlExport")}{networkCount === 1 ? "" : "s"};{" "}
+            {manifest.warnings.length}  {t("warning")}{manifest.warnings.length === 1 ? "" : "s"}.
           </p>
-          <table className="xi-table" aria-label="Backup table inventory">
+          <table className="xi-table" aria-label={t("backupTableInventory")}>
             <thead>
               <tr>
-                <th scope="col">Table</th>
-                <th scope="col">Rows</th>
+                <th scope="col">{t("table")}</th>
+                <th scope="col">{t("rows397")}</th>
                 <th scope="col">SHA-256</th>
               </tr>
             </thead>
@@ -354,7 +355,7 @@ export function BackupsPage() {
                 <tr key={name}>
                   <td>
                     {name}
-                    {info.missing === true ? " (unreadable — exported empty)" : ""}
+                    {info.missing === true ? t("unreadableExportedEmpty") : ""}
                   </td>
                   <td>{info.rows}</td>
                   <td title={info.sha256}>{shortHash(info.sha256)}</td>
@@ -363,7 +364,8 @@ export function BackupsPage() {
             </tbody>
           </table>
           <h4 className="xi-section-title" style={{ marginTop: 16 }}>
-            Archive files
+            
+            {t("archiveFiles")}
           </h4>
           <ul className="xi-hint" style={{ marginBottom: 8 }}>
             {artifactEntries.map(([name, hash]) => (
@@ -375,7 +377,8 @@ export function BackupsPage() {
           {manifest.warnings.length > 0 && (
             <>
               <h4 className="xi-section-title" style={{ marginTop: 16 }}>
-                Warnings
+                
+                {t("warnings")}
               </h4>
               <ul className="xi-hint" style={{ marginBottom: 8 }}>
                 {manifest.warnings.map((warning, index) => (
@@ -385,7 +388,8 @@ export function BackupsPage() {
             </>
           )}
           <h4 className="xi-section-title" style={{ marginTop: 16 }}>
-            Key re-entry note
+            
+            {t("keyReEntryNote")}
           </h4>
           <p className="xi-hint" style={{ marginBottom: 8 }}>
             {manifest.key_reentry_note}
@@ -398,13 +402,12 @@ export function BackupsPage() {
 
       <section className="xi-card" aria-labelledby="backups-notes-heading">
         <h3 className="xi-section-title" id="backups-notes-heading">
-          Recovery notes
+          
+          {t("recoveryNotes")}
         </h3>
         <p className="xi-hint" style={{ marginBottom: 0 }}>
-          A retry always mints a new archive and never overwrites a good prior
-          backup; interrupted exports leave a failed job with no downloadable
-          archive. Restore staging and commit arrive in a later session — this
-          page creates and inspects backups only.
+          
+          {t("aRetryAlwaysMintsANewArchive")}
         </p>
       </section>
     </div>

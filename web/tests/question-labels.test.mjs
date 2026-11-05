@@ -19,3 +19,11 @@ test('unknown questions have a readable fallback and development warning without
   questionLabel('new_key', false, (message) => warnings.push(message));
   assert.equal(warnings.length, 1);
 });
+
+test('active questions have Persian labels and unknown questions retain readable source', () => {
+  assert.equal(questionLabel('pharmacotherapy', false, console.warn, 'fa'), 'دارودرمانی');
+  for (const key of Object.keys(questionLabels)) {
+    assert.notEqual(questionLabel(key, false, console.warn, 'fa'), questionLabels[key]);
+  }
+  assert.equal(questionLabel('NEW__Question-key', false, console.warn, 'fa'), 'ترجمه در دسترس نیست؛ متن اصلی در ادامه آمده است. New question key');
+});

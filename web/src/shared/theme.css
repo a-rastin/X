@@ -192,6 +192,7 @@ body {
 
 .xi-skip-link:focus-visible {
   top: var(--space-2);
+  left: max(140px, calc((100vw - 1132px) / 2 + 100px));
 }
 
 /* Two-row app bar, not a sidebar. DOM order stays skip → nav links →
@@ -203,6 +204,7 @@ body {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   grid-template-areas:
+    "language language"
     "brand meta"
     "nav nav";
   align-items: center;
@@ -210,6 +212,46 @@ body {
   padding: 0 max(var(--space-6), calc((100vw - 1132px) / 2));
   background: var(--canvas);
   border-bottom: 1px solid var(--border);
+}
+
+.xi-header-language,
+.xi-dialog-language {
+  display: flex;
+  direction: ltr;
+  justify-content: flex-start;
+  padding-block: var(--space-2);
+}
+
+.xi-header-language {
+  grid-area: language;
+}
+
+.xi-dialog-language {
+  flex-shrink: 0;
+  padding-inline: 16px;
+}
+
+.xi-language-button {
+  min-width: 76px;
+}
+
+.xi-language-button:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.xi-mono,
+input[inputmode="numeric"],
+input[type="range"],
+input[type="number"],
+input[type="password"],
+input[type="url"] {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+:root[lang="fa"] {
+  letter-spacing: normal;
 }
 
 :root[data-theme="dark"] .xi-header {
@@ -585,7 +627,7 @@ a.xi-btn-secondary {
 
 .xi-table th,
 .xi-table td {
-  text-align: left;
+  text-align: start;
   padding: 14px var(--space-3);
   border-bottom: 1px solid var(--border);
   vertical-align: middle;
@@ -655,7 +697,7 @@ a.xi-btn-secondary {
   background: var(--canvas);
   color: var(--ink);
   border: 1px solid var(--border-strong);
-  border-left: 4px solid var(--primary-action);
+  border-inline-start: 4px solid var(--primary-action);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-overlay);
   max-width: 520px;
@@ -736,7 +778,7 @@ a.xi-btn-secondary {
 
 .xi-research-body .xi-research-limitation {
   padding: 16px 20px;
-  border-left: 3px solid var(--warning);
+  border-inline-start: 3px solid var(--warning);
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   background: var(--warning-bg);
   font-weight: 550;
@@ -799,7 +841,7 @@ a.xi-btn-secondary {
 
 .xi-notice {
   border: 1px solid var(--info);
-  border-left-width: 6px;
+  border-inline-start-width: 6px;
   background: var(--info-bg);
   color: var(--ink);
   border-radius: var(--radius-md);
@@ -815,7 +857,7 @@ a.xi-btn-secondary {
  * disappears automatically. */
 .xi-warning-panel {
   border: 1px solid var(--warning);
-  border-left-width: 6px;
+  border-inline-start-width: 6px;
   background: var(--warning-bg);
   color: var(--ink);
   border-radius: var(--radius-md);
@@ -830,7 +872,7 @@ a.xi-btn-secondary {
  * informational only, never a treatment gate. */
 .xi-panss-panel {
   border: 1px solid var(--info);
-  border-left-width: 6px;
+  border-inline-start-width: 6px;
   background: var(--info-bg);
   color: var(--ink);
   border-radius: var(--radius-md);
@@ -849,7 +891,7 @@ a.xi-btn-secondary {
  * stay separate; no composite risk score is shown. */
 .xi-urgent-panel {
   border: 1px solid var(--urgent);
-  border-left-width: 6px;
+  border-inline-start-width: 6px;
   background: var(--urgent-bg);
   color: var(--ink);
   border-radius: var(--radius-md);
@@ -861,7 +903,7 @@ a.xi-btn-secondary {
 
 .xi-cssrs-panel {
   border: 1px solid var(--info);
-  border-left-width: 6px;
+  border-inline-start-width: 6px;
   background: var(--info-bg);
   color: var(--ink);
   border-radius: var(--radius-md);
@@ -880,7 +922,7 @@ a.xi-btn-secondary {
  * .xi-urgent-panel and stays independent of these panels. */
 .xi-history-panel {
   border: 1px solid var(--info);
-  border-left-width: 6px;
+  border-inline-start-width: 6px;
   background: var(--info-bg);
   color: var(--ink);
   border-radius: var(--radius-md);
@@ -892,7 +934,7 @@ a.xi-btn-secondary {
 
 .xi-effects-panel {
   border: 1px solid var(--info);
-  border-left-width: 6px;
+  border-inline-start-width: 6px;
   background: var(--info-bg);
   color: var(--ink);
   border-radius: var(--radius-md);
@@ -1038,7 +1080,7 @@ code {
 }
 
 .xi-wizard-pager .xi-btn-primary {
-  margin-left: auto;
+  margin-inline-start: auto;
 }
 
 /* Shared brand and entry-page hierarchy. */
@@ -1128,6 +1170,7 @@ code {
   .xi-header {
     grid-template-columns: minmax(0, 1fr);
     grid-template-areas:
+      "language"
       "brand"
       "meta"
       "nav";
@@ -1253,7 +1296,7 @@ code {
 
 .xi-proposal-sections {
   margin: 0 0 var(--space-4);
-  padding-left: var(--space-6);
+  padding-inline-start: var(--space-6);
 }
 
 .xi-proposal-sections li {
@@ -1369,6 +1412,7 @@ code {
   }
 
   .xi-header,
+  .xi-language-button,
   .xi-nav,
   .xi-wizard-nav,
   .xi-wizard-pager,

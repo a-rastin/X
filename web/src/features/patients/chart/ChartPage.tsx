@@ -1,3 +1,4 @@
+import { useLanguage } from "../../../shared/i18n";
 /* Shared patient chart (S14, plan.md §§2.2-2.3, 9; FR-20-23).
  *
  * Route: `#/patients/:id/chart` (see app/router.ts — patient-scoped shared
@@ -91,6 +92,7 @@ function ArchivePanel({
   onChanged: (done: string | null) => void;
   onSessionExpired: () => void;
 }) {
+  const { t, errorText } = useLanguage();
   const [confirming, setConfirming] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -159,7 +161,7 @@ function ArchivePanel({
   return (
     <section className="xi-card" aria-labelledby="chart-archive-heading" data-testid="archive-panel">
       <h3 className="xi-section-title" id="chart-archive-heading">
-        Archive
+        {t("archive")}
       </h3>
       <p
         className="xi-badge"
@@ -168,22 +170,20 @@ function ArchivePanel({
         role="status"
       >
         {patient.archived
-          ? "■ Archived — read-only under the provisional policy (not owner-confirmed)"
-          : "● Active"}
+          ? t("archivedReadOnlyUnderTheProvisionalPolicy")
+          : t("active612")}
       </p>
       {patient.archived && (
         <div className="xi-notice" role="status">
           <p style={{ margin: 0 }}>
-            Archived patients are read-only under the provisional archive policy (not
-            owner-confirmed): creating, editing, or signing drafts is blocked, while shared reads
-            stay available. Retained private drafts stay author-only with no contents shown here;
-            the author can resume after unarchive.
+            
+            {t("archivedPatientsAreReadOnlyUnderThe")}
           </p>
         </div>
       )}
       {error !== null && (
         <p className="xi-form-error" role="alert" tabIndex={-1} ref={errorRef} data-testid="archive-status">
-          {error}
+          {errorText(error)}
         </p>
       )}
       {done !== null && (
@@ -200,18 +200,18 @@ function ArchivePanel({
             disabled={busy}
             onClick={openConfirm}
           >
-            {patient.archived ? "Unarchive patient" : "Archive patient"}
+            {patient.archived ? t("unarchivePatient") : t("archivePatient")}
           </button>
         </div>
       ) : (
-        <div data-testid="archive-confirm" role="group" aria-label="Confirm archive change">
+        <div data-testid="archive-confirm" role="group" aria-label={t("confirmArchiveChange")}>
           <p role="status">
-            {patient.archived ? "Unarchive" : "Archive"} patient{" "}
-            <code className="xi-mono">{patient.identifier}</code> at revision{" "}
+            {patient.archived ? t("unarchive") : t("archive")}  {t("patient620")}{" "}
+            <code className="xi-mono"><bdi dir="ltr">{patient.identifier}</bdi></code>  {t("atRevision")}{" "}
             {confirmRevision}?{" "}
             {patient.archived
-              ? "Writes resume; the retained draft slot stays with its author."
-              : "Creates, edits, and sign-off block under the provisional policy (not owner-confirmed). This is reversible via Unarchive — nothing is deleted."}
+              ? t("writesResumeTheRetainedDraftSlotStays")
+              : t("createsEditsAndSignOffBlockUnder")}
           </p>
           <div className="xi-row-actions">
             <button
@@ -222,7 +222,7 @@ function ArchivePanel({
               onClick={() => void run()}
             >
               {busy
-                ? "Working…"
+                ? t("working")
                 : `Confirm ${patient.archived ? "unarchive" : "archive"} ${patient.identifier} (rev ${confirmRevision})`}
             </button>
             <button
@@ -231,8 +231,7 @@ function ArchivePanel({
               disabled={busy}
               onClick={() => setConfirming(false)}
             >
-              Cancel
-            </button>
+              {t("cancel")}</button>
           </div>
         </div>
       )}
@@ -259,6 +258,7 @@ function DemographicsForm({
   onChanged: (notice: { message: string; staleRelevant: boolean } | null) => void;
   onSessionExpired: () => void;
 }) {
+  const { t, errorText } = useLanguage();
   const [givenName, setGivenName] = useState(patient.given_name);
   const [familyName, setFamilyName] = useState(patient.family_name);
   const [sex, setSex] = useState(patient.sex);
@@ -372,7 +372,7 @@ function DemographicsForm({
 
   return (
     <form
-      aria-label="Edit demographics"
+      aria-label={t("editDemographics")}
       data-testid="demographics-form"
       onSubmit={(event) => {
         event.preventDefault();
@@ -383,9 +383,9 @@ function DemographicsForm({
       <div className="xi-form-row">
         <div className="xi-field">
           <label className="xi-label" htmlFor="demo-given-name">
-            Given name
+            {t("givenName")}
           </label>
-          <input
+          <input dir="auto"
             className="xi-input"
             id="demo-given-name"
             value={givenName}
@@ -395,9 +395,9 @@ function DemographicsForm({
         </div>
         <div className="xi-field">
           <label className="xi-label" htmlFor="demo-family-name">
-            Family name
+            {t("familyName")}
           </label>
-          <input
+          <input dir="auto"
             className="xi-input"
             id="demo-family-name"
             value={familyName}
@@ -409,7 +409,7 @@ function DemographicsForm({
       <div className="xi-form-row">
         <div className="xi-field">
           <label className="xi-label" htmlFor="demo-sex">
-            Sex
+            {t("sex")}
           </label>
           <select
             className="xi-select"
@@ -423,7 +423,7 @@ function DemographicsForm({
         </div>
         <div className="xi-field">
           <label className="xi-label" htmlFor="demo-age">
-            Age
+            {t("age")}
           </label>
           <input
             className="xi-input"
@@ -436,7 +436,7 @@ function DemographicsForm({
         </div>
         <div className="xi-field">
           <label className="xi-label" htmlFor="demo-status">
-            Clinical status
+            {t("clinicalStatus")}
           </label>
           <select
             className="xi-select"
@@ -444,15 +444,16 @@ function DemographicsForm({
             value={clinicalStatus}
             onChange={(event) => setClinicalStatus(event.target.value as Patient["clinical_status"])}
           >
-            <option value="first_time">First-time</option>
-            <option value="established">Established</option>
+            <option value="first_time">{t("firstTime")}</option>
+            <option value="established">{t("established")}</option>
           </select>
         </div>
         <div className="xi-field">
           <label className="xi-label" htmlFor="demo-phone">
-            Phone (blank keeps current)
+            
+            {t("phoneBlankKeepsCurrent")}
           </label>
-          <input
+          <input dir="ltr"
             className="xi-input"
             id="demo-phone"
             value={phone}
@@ -463,13 +464,14 @@ function DemographicsForm({
       </div>
       {error !== null && (
         <p className="xi-form-error" role="alert" tabIndex={-1} ref={errorRef} data-testid="demographics-status">
-          {error}
+          {errorText(error)}
         </p>
       )}
       {conflictServer !== null && (
         <div className="xi-notice" role="status">
           <p style={{ marginTop: 0 }}>
-            Current server values (revision {conflictServer.revision}): {conflictServer.sex} ·{" "}
+            
+            {t("currentServerValuesRevision")} {conflictServer.revision}): {conflictServer.sex} ·{" "}
             {conflictServer.age} · {statusLabel(conflictServer.clinical_status)} ·{" "}
             {conflictServer.given_name} {conflictServer.family_name} ·{" "}
             {conflictServer.phone ?? "—"}.
@@ -484,7 +486,8 @@ function DemographicsForm({
                 setError(null);
               }}
             >
-              Reload server values
+              
+              {t("reloadServerValues")}
             </button>
             <button
               className="xi-btn xi-btn-secondary"
@@ -497,28 +500,25 @@ function DemographicsForm({
                 void save();
               }}
             >
-              Retry save at revision {conflictServer.revision}
+              
+              {t("retrySaveAtRevision")} {conflictServer.revision}
             </button>
           </div>
         </div>
       )}
       {saved !== null && error === null && (
         <p className="xi-status" role="status" data-testid="demographics-status">
-          {saving ? "Saving…" : saved}
+          {saving ? t("saving") : saved}
         </p>
       )}
       {saving && (
         <p className="xi-hint" role="status">
-          Saving…
-        </p>
+          {t("saving")}</p>
       )}
       {staleRelevant && saved !== null && error === null && (
         <div className="xi-warning-panel" role="status" data-testid="demographics-freshness">
           <p style={{ margin: 0 }}>
-            <span aria-hidden="true">◍</span> Out of date — a relevant demographic (age, sex, or
-            clinical status) changed. Affected questions need a new run for the current inputs;
-            unaffected questions stay valid. Notes never cause this. No draft content is shown
-            here.
+            <span aria-hidden="true">◍</span>  {t("outOfDateARelevantDemographicAge")}
           </p>
         </div>
       )}
@@ -529,19 +529,19 @@ function DemographicsForm({
           data-testid="demographics-save"
           disabled={saving || !dirty}
         >
-          {saving ? "Saving…" : "Save demographics"}
+          {saving ? t("saving") : t("saveDemographics")}
         </button>
       </div>
       <p className="xi-hint" style={{ marginBottom: 0 }}>
-        Shared edit (revision {baseRevision}): any active physician may edit; only acknowledged
-        saves are durable. Age, sex, and clinical status are analysis-visible under the
-        provisional policy; phone and names never mark questions out of date.
+        
+        {t("sharedEditRevision")} {baseRevision}{t("anyActivePhysicianMayEditOnlyAcknowledged")}
       </p>
     </form>
   );
 }
 
 export function ChartPage({ patientId }: { patientId: string }) {
+  const { t, errorText } = useLanguage();
   const { user, sessionExpired } = useAuth();
   const [load, setLoad] = useState<LoadState>({ kind: "loading" });
   const [createBusy, setCreateBusy] = useState(false);
@@ -644,9 +644,8 @@ export function ChartPage({ patientId }: { patientId: string }) {
           data-testid="chart-heading"
           id="chart-heading"
         >
-          Patient chart
-        </h2>
-        <p>Loading chart…</p>
+          {t("patientChart")}</h2>
+        <p>{t("loadingChart")}</p>
       </div>
     );
   }
@@ -659,8 +658,7 @@ export function ChartPage({ patientId }: { patientId: string }) {
           data-testid="chart-heading"
           id="chart-heading"
         >
-          Patient chart
-        </h2>
+          {t("patientChart")}</h2>
         <p className="xi-form-error" role="alert">
           {load.message}
         </p>
@@ -670,11 +668,9 @@ export function ChartPage({ patientId }: { patientId: string }) {
             type="button"
             onClick={() => void reload()}
           >
-            Retry
-          </button>
+            {t("retry")}</button>
           <a className="xi-btn xi-btn-secondary" href="#/patients">
-            Back to directory
-          </a>
+            {t("backToDirectory")}</a>
         </div>
       </div>
     );
@@ -699,41 +695,42 @@ export function ChartPage({ patientId }: { patientId: string }) {
         data-testid="chart-heading"
         id="chart-heading"
       >
-        Patient chart
-      </h2>
+        {t("patientChart")}</h2>
 
       <section className="xi-card" aria-labelledby="chart-demographics-heading">
         <h3 className="xi-section-title" id="chart-demographics-heading">
-          Demographics
+          
+          {t("demographics")}
         </h3>
         <dl className="xi-facts">
           <div>
-            <dt className="xi-hint">Name</dt>
+            <dt className="xi-hint">{t("name")}</dt>
             <dd>
-              {patient.given_name} {patient.family_name}
+              <bdi>{patient.given_name}</bdi> <bdi>{patient.family_name}</bdi>
             </dd>
           </div>
           <div>
-            <dt className="xi-hint">Patient ID</dt>
+            <dt className="xi-hint">{t("patientId")}</dt>
             <dd>
-              <code>{patient.identifier}</code>
+              <code><bdi dir="ltr">{patient.identifier}</bdi></code>
             </dd>
           </div>
           <div>
-            <dt className="xi-hint">Sex · Age · Status</dt>
+            <dt className="xi-hint">{t("sexAgeStatus")}</dt>
             <dd>
               {patient.sex} · {patient.age} ·{" "}
               {statusLabel(patient.clinical_status)}
             </dd>
           </div>
           <div>
-            <dt className="xi-hint">Phone</dt>
+            <dt className="xi-hint">{t("phone")}</dt>
             <dd>{patient.phone ?? "—"}</dd>
           </div>
         </dl>
         <p className="xi-hint">
-          Shared demographics (revision {patient.revision}) ·{" "}
-          <a href={chartLink}>Permalink {chartLink}</a>
+          
+          {t("sharedDemographicsRevision")} {patient.revision}) ·{" "}
+          <a href={chartLink}>{t("permalink")} {chartLink}</a>
         </p>
         {patient.archived && !isAdmin && (
           <p
@@ -742,7 +739,8 @@ export function ChartPage({ patientId }: { patientId: string }) {
             id="chart-archived-badge"
             role="status"
           >
-            ■ Archived — read-only under the provisional policy (not owner-confirmed)
+            
+            {t("archivedReadOnlyUnderTheProvisionalPolicy")}
           </p>
         )}
         {isPhysician && !patient.archived && (
@@ -759,8 +757,8 @@ export function ChartPage({ patientId }: { patientId: string }) {
         {isPhysician && patient.archived && (
           <div className="xi-notice" role="status">
             <p style={{ margin: 0 }}>
-              Archived patients are read-only under the provisional archive policy (not
-              owner-confirmed): demographics editing is blocked. Shared reads stay available.
+              
+              {t("archivedPatientsAreReadOnlyUnderThe639")}
             </p>
           </div>
         )}
@@ -772,9 +770,9 @@ export function ChartPage({ patientId }: { patientId: string }) {
         >
           {open_draft.exists
             ? patient.archived
-              ? "Archived with a retained private draft — no contents shown; its author can resume it after unarchive"
-              : "Open draft exists — ask its author to resume it"
-            : "No open draft"}
+              ? t("archivedWithARetainedPrivateDraftNo")
+              : t("openDraftExistsAskItsAuthorTo")
+            : t("noOpenDraft")}
         </p>
       </section>
 
@@ -792,20 +790,21 @@ export function ChartPage({ patientId }: { patientId: string }) {
 
       <section className="xi-card" aria-labelledby="chart-chronology-heading">
         <h3 className="xi-section-title" id="chart-chronology-heading">
-          Signed chronology ({chronology.length})
+          
+          {t("signedChronology")}{chronology.length})
         </h3>
         {signed_encounters.length === 0 ? (
           <p className="xi-hint" role="status">
-            No signed encounters yet. Signing lands in S49; this list stays
-            empty until then — no draft content appears here.
+            
+            {t("noSignedEncountersYetSigningLandsIn")}
           </p>
         ) : (
-          <table className="xi-table" aria-label="Signed encounters">
+          <table className="xi-table" aria-label={t("signedEncounters")}>
             <thead>
               <tr>
-                <th scope="col">Kind</th>
-                <th scope="col">Signed</th>
-                <th scope="col">Encounter</th>
+                <th scope="col">{t("kind")}</th>
+                <th scope="col">{t("signed")}</th>
+                <th scope="col">{t("encounter")}</th>
               </tr>
             </thead>
             <tbody>
@@ -822,9 +821,8 @@ export function ChartPage({ patientId }: { patientId: string }) {
           </table>
         )}
         <p className="xi-hint">
-          History, medications, and adverse effects for signed encounters will
-          appear here once signing exists. Draft history and effects stay
-          author-only inside the encounter wizard.
+          
+          {t("historyMedicationsAndAdverseEffectsForSigned")}
         </p>
       </section>
 
@@ -839,14 +837,12 @@ export function ChartPage({ patientId }: { patientId: string }) {
       {snapshots.length > 0 && (
         <section className="xi-card" aria-labelledby="chart-signed-heading">
           <h3 className="xi-section-title" id="chart-signed-heading">
-            Signed records ({snapshots.length})
+            
+            {t("signedRecords649")}{snapshots.length})
           </h3>
           <p className="xi-hint" style={{ marginTop: 0 }}>
-            Each record below is immutable — original and final accepted
-            probabilities, the frozen secondary plan, and exact signer/time
-            attribution. Print permission follows the declared provisional
-            policy: administrator printing is allowed; physician printing is
-            provisional and not owner-confirmed.
+            
+            {t("eachRecordBelowIsImmutableOriginalAnd")}
           </p>
           <div className="xi-row-actions xi-no-print">
             <button
@@ -854,7 +850,8 @@ export function ChartPage({ patientId }: { patientId: string }) {
               type="button"
               onClick={() => window.print()}
             >
-              Print signed record
+              
+              {t("printSignedRecord")}
             </button>
             {/* S53 admin printable report: signed records only. No report
               button is rendered for physicians (provisional print policy,
@@ -866,7 +863,8 @@ export function ChartPage({ patientId }: { patientId: string }) {
                 data-testid="chart-report-link"
                 id="chart-report-link"
               >
-                Open printable longitudinal report
+                
+                {t("openPrintableLongitudinalReport")}
               </a>
             )}
           </div>
@@ -886,7 +884,8 @@ export function ChartPage({ patientId }: { patientId: string }) {
 
       <section className="xi-card" aria-labelledby="chart-proposal-heading">
         <h3 className="xi-section-title" id="chart-proposal-heading">
-          Proposal
+          
+          {t("proposal")}
         </h3>
         <div
           className="xi-notice"
@@ -895,24 +894,25 @@ export function ChartPage({ patientId }: { patientId: string }) {
           role="status"
         >
           <p style={{ margin: 0 }}>
-            Proposal {proposal.status}
+            
+            {t("proposal")} {proposal.status}
             {proposal.reason !== undefined && proposal.reason !== ""
               ? ` — ${proposal.reason}`
               : ""}
-            . Reasoning is not implemented yet; no proposal is shown and no
-            successful result is claimed.
+            
+            {t("reasoningIsNotImplementedYetNoProposal")}
           </p>
         </div>
         <p className="xi-hint">
-          Review navigation: the proposal review opens from the author&apos;s
-          encounter draft once generation exists. Until then this honest
-          unavailable state is the whole proposal surface.
+          
+          {t("reviewNavigationTheProposalReviewOpensFrom")}
         </p>
       </section>
 
       <section className="xi-card" aria-labelledby="chart-followup-heading">
         <h3 className="xi-section-title" id="chart-followup-heading">
-          Follow-up
+          
+          {t("followUp")}
         </h3>
         {createError !== null && (
           <p
@@ -921,14 +921,14 @@ export function ChartPage({ patientId }: { patientId: string }) {
             tabIndex={-1}
             ref={createErrorRef}
           >
-            {createError}
+            {errorText(createError)}
           </p>
         )}
         {patient.archived && (
           <div className="xi-notice" role="status">
             <p style={{ margin: 0 }}>
-              Follow-up creation is blocked while archived under the provisional archive policy
-              (not owner-confirmed). Unarchive resumes the retained draft slot.
+              
+              {t("followUpCreationIsBlockedWhileArchived")}
             </p>
           </div>
         )}
@@ -942,25 +942,23 @@ export function ChartPage({ patientId }: { patientId: string }) {
               disabled={createBusy}
               onClick={() => void startFollowUp()}
             >
-              {createBusy ? "Starting…" : "Start follow-up draft"}
+              {createBusy ? t("starting") : t("startFollowUpDraft")}
             </button>
             <a className="xi-btn xi-btn-secondary" href="#/patients">
-              Back to directory
-            </a>
+              {t("backToDirectory")}</a>
           </div>
         ) : (
           <p className="xi-hint" style={{ marginBottom: 0 }}>
-            Read-only: only physicians start follow-up drafts.{" "}
+            
+            {t("readOnlyOnlyPhysiciansStartFollowUp")}{" "}
             <a className="xi-btn xi-btn-secondary" href="#/patients">
-              Back to directory
-            </a>
+              {t("backToDirectory")}</a>
           </p>
         )}
         {open_draft.exists && (
           <p className="xi-hint">
-            A draft already occupies this patient&apos;s single slot — a new
-            follow-up waits until its author resumes or discards it. Other
-            patients keep independent slots.
+            
+            {t("aDraftAlreadyOccupiesThisPatientS")}
           </p>
         )}
       </section>

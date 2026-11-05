@@ -1,3 +1,4 @@
+import { useLanguage } from "../../../shared/i18n";
 /* Admin operational status (S58 §§3-4, seam T9 over T1; plan.md §11, FR-43).
  *
  * Admin-only navigation/route guard lives in app/pages.tsx (complement to
@@ -87,12 +88,13 @@ function MetricTable({
   label: string;
   rows: Array<[string, string]>;
 }) {
+  const { t } = useLanguage();
   return (
     <table className="xi-table" aria-label={label}>
       <thead>
         <tr>
-          <th scope="col">Metric</th>
-          <th scope="col">Value</th>
+          <th scope="col">{t("metric")}</th>
+          <th scope="col">{t("value")}</th>
         </tr>
       </thead>
       <tbody>
@@ -108,6 +110,7 @@ function MetricTable({
 }
 
 export function StatusPage() {
+  const { t, errorText } = useLanguage();
   const { sessionExpired } = useAuth();
   const [snapshot, setSnapshot] = useState<OpsStatus | null>(null);
   const [loading, setLoading] = useState(true);
@@ -192,13 +195,10 @@ export function StatusPage() {
   return (
     <div>
       <h2 className="xi-page-title" data-testid="status-heading" id="status-heading">
-        Operational status
-      </h2>
+        {t("operationalStatus")}</h2>
       <p className="xi-hint">
-        Live service gauges for the operator: queue age and worker heartbeat,
-        provider attempts and authentication failures, inference limits, backup
-        staging disk use, last backup success, and request counts. Counts and
-        timestamps only — never record content or secrets.
+        
+        {t("liveServiceGaugesForTheOperatorQueue")}
       </p>
 
       <div className="xi-row-actions xi-no-print">
@@ -210,13 +210,13 @@ export function StatusPage() {
           disabled={loading || refreshing}
           onClick={() => void load(false)}
         >
-          {refreshing ? "Refreshing…" : "Refresh"}
+          {refreshing ? t("refreshing") : t("refresh")}
         </button>
       </div>
-      {loading && snapshot === null && <p>Loading operational status…</p>}
+      {loading && snapshot === null && <p>{t("loadingOperationalStatus")}</p>}
       {error !== null && (
         <p className="xi-form-error" role="alert">
-          {error}
+          {errorText(error)}
         </p>
       )}
       {snapshot !== null && (
@@ -226,7 +226,8 @@ export function StatusPage() {
           data-testid="status-updated"
           id="status-updated"
         >
-          Checked at {snapshot.checked_at}.
+          
+          {t("checkedAt")} {snapshot.checked_at}.
         </p>
       )}
 
@@ -237,11 +238,13 @@ export function StatusPage() {
             data-testid="status-alerts"
             id="status-alerts"
           >
-            Alerts
+            
+            {t("alerts")}
           </h3>
           {alerts.length === 0 ? (
             <p className="xi-hint" style={{ marginBottom: 0 }}>
-              No active alerts.
+              
+              {t("noActiveAlerts")}
             </p>
           ) : (
             <ul style={{ marginBottom: 0, paddingLeft: 20 }}>
@@ -272,10 +275,11 @@ export function StatusPage() {
             id="status-metrics"
           >
             <h3 className="xi-section-title" id="status-metrics-heading">
-              Metrics
+              
+              {t("metrics")}
             </h3>
 
-            <h4 className="xi-section-title">Queue</h4>
+            <h4 className="xi-section-title">{t("queue")}</h4>
             <MetricTable
               label="Queue"
               rows={[
@@ -295,7 +299,8 @@ export function StatusPage() {
             />
 
             <h4 className="xi-section-title">
-              AI provider
+              
+              {t("aiProvider")}
             </h4>
             <MetricTable
               label="AI provider"
@@ -312,7 +317,8 @@ export function StatusPage() {
             />
 
             <h4 className="xi-section-title">
-              Bayesian inference
+              
+              {t("bayesianInference")}
             </h4>
             <MetricTable
               label="Bayesian inference"
@@ -331,7 +337,8 @@ export function StatusPage() {
             />
 
             <h4 className="xi-section-title">
-              Disk
+              
+              {t("disk")}
             </h4>
             <MetricTable
               label="Disk"
@@ -348,7 +355,8 @@ export function StatusPage() {
             />
 
             <h4 className="xi-section-title">
-              Backup
+              
+              {t("backup")}
             </h4>
             <MetricTable
               label="Backup"
@@ -360,15 +368,16 @@ export function StatusPage() {
             />
 
             <h4 className="xi-section-title">
-              Requests
+              
+              {t("requests")}
             </h4>
-            <table className="xi-table" aria-label="Requests">
+            <table className="xi-table" aria-label={t("requests")}>
               <thead>
                 <tr>
-                  <th scope="col">Group</th>
-                  <th scope="col">Requests</th>
-                  <th scope="col">Errors</th>
-                  <th scope="col">Avg latency</th>
+                  <th scope="col">{t("group")}</th>
+                  <th scope="col">{t("requests")}</th>
+                  <th scope="col">{t("errors")}</th>
+                  <th scope="col">{t("avgLatency")}</th>
                 </tr>
               </thead>
               <tbody>

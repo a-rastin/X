@@ -1,3 +1,4 @@
+import { useLanguage } from "../../shared/i18n";
 import { useState } from "react";
 import { ApiError, changePassword } from "./api";
 import { useAuth } from "./auth";
@@ -10,6 +11,7 @@ function fieldError(errors: Record<string, string[]>, field: string): string | n
 /** Own password change (POST /me/password). Wrong current password yields
  * the generic 401 message; empty new password yields 422 field errors. */
 export function PasswordForm() {
+  const { t, errorText } = useLanguage();
   const { refresh, sessionExpired } = useAuth();
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
@@ -61,13 +63,11 @@ export function PasswordForm() {
   return (
     <section className="xi-card" aria-labelledby="password-heading">
       <h3 className="xi-section-title" id="password-heading">
-        Change password
-      </h3>
-      <form aria-label="Change password" onSubmit={handleSubmit} noValidate>
+        {t("changePassword")}</h3>
+      <form aria-label={t("changePassword")} onSubmit={handleSubmit} noValidate>
         <div className="xi-field">
           <label className="xi-label" htmlFor="password-current">
-            Current password
-          </label>
+            {t("currentPassword")}</label>
           <input
             className="xi-input"
             id="password-current"
@@ -81,8 +81,7 @@ export function PasswordForm() {
         </div>
         <div className="xi-field">
           <label className="xi-label" htmlFor="password-new">
-            New password
-          </label>
+            {t("newPassword")}</label>
           <input
             className="xi-input"
             id="password-new"
@@ -95,22 +94,21 @@ export function PasswordForm() {
           />
           {newError !== null && (
             <p className="xi-field-error" id="password-new-error">
-              {newError}
+              {errorText(newError)}
             </p>
           )}
         </div>
         {formError !== null && (
           <p className="xi-form-error" role="alert" id="password-form-error">
-            {formError}
+            {errorText(formError)}
           </p>
         )}
         {success && (
           <p className="xi-status" role="status">
-            Password changed.
-          </p>
+            {t("passwordUpdated")}</p>
         )}
         <button className="xi-btn xi-btn-primary" type="submit" disabled={busy}>
-          {busy ? "Changing…" : "Change password"}
+          {busy ? t("changingPassword") : t("changePassword")}
         </button>
       </form>
     </section>

@@ -1,3 +1,4 @@
+import { useLanguage } from "../../shared/i18n";
 /* Draft wizard page with autosave (S07, plan.md §§2.3, 9; FR-16, NFR-04).
  *
  * Route: `#/encounters/:id` (see api.ts for why the encounter id is in the
@@ -173,6 +174,7 @@ function RegisteredDemographics({
 }: {
   patient: Patient | null;
 }) {
+  const { t } = useLanguage();
   const status =
     patient === null
       ? ""
@@ -183,14 +185,14 @@ function RegisteredDemographics({
     <>
       <section className="xi-card" aria-labelledby="demographics-heading">
         <h3 className="xi-section-title" id="demographics-heading">
-          Demographics (step 1)
+          {t("stepDemographics")}
         </h3>
         <p className="xi-hint">
-          Registered with this draft. Further demographic edits are on the
-          patient chart.
+          
+          {t("registeredWithThisDraftFurtherDemographicEdits")}
         </p>
         {patient === null ? (
-          <p>Loading demographics…</p>
+          <p>{t("loadingDemographics")}</p>
         ) : (
           <div className="xi-form-grid">
             <ReadOnlyField id="saved-given-name" label="Given name" value={patient.given_name} />
@@ -244,6 +246,7 @@ function ReadOnlyField({
 }
 
 export function EncounterPage({ encounterId }: { encounterId: string }) {
+  const { t } = useLanguage();
   const { user, sessionExpired } = useAuth();
   const [load, setLoad] = useState<LoadState>({ kind: "loading" });
   const [patient, setPatient] = useState<Patient | null>(null);
@@ -304,10 +307,10 @@ export function EncounterPage({ encounterId }: { encounterId: string }) {
   if (user?.role !== "physician") {
     return (
       <div>
-        <h2 className="xi-page-title">Encounter draft</h2>
+        <h2 className="xi-page-title">{t("encounterDraft")}</h2>
         <p className="xi-form-error" role="alert">
-          Physician access required. Only the draft author can view or edit
-          draft content.
+          
+          {t("physicianAccessRequiredOnlyTheDraftAuthor")}
         </p>
       </div>
     );
@@ -316,8 +319,8 @@ export function EncounterPage({ encounterId }: { encounterId: string }) {
   if (load.kind === "loading") {
     return (
       <div>
-        <h2 className="xi-page-title">Encounter draft</h2>
-        <p>Loading draft…</p>
+        <h2 className="xi-page-title">{t("encounterDraft")}</h2>
+        <p>{t("loadingDraft")}</p>
       </div>
     );
   }
@@ -325,18 +328,17 @@ export function EncounterPage({ encounterId }: { encounterId: string }) {
   if (load.kind === "denied") {
     return (
       <div>
-        <h2 className="xi-page-title">Encounter draft</h2>
+        <h2 className="xi-page-title">{t("encounterDraft")}</h2>
         <p className="xi-form-error" role="alert" data-testid="encounter-denied">
           {load.message}
         </p>
         <p className="xi-hint">
-          Draft content is visible only to its author. The patient directory
-          remains shared.
+          
+          {t("draftContentIsVisibleOnlyToIts")}
         </p>
         <p>
           <a className="xi-btn xi-btn-secondary" href="#/patients">
-            Back to directory
-          </a>
+            {t("backToDirectory")}</a>
         </p>
       </div>
     );
@@ -345,7 +347,7 @@ export function EncounterPage({ encounterId }: { encounterId: string }) {
   if (load.kind === "error") {
     return (
       <div>
-        <h2 className="xi-page-title">Encounter draft</h2>
+        <h2 className="xi-page-title">{t("encounterDraft")}</h2>
         <p className="xi-form-error" role="alert" data-testid="encounter-error">
           {load.message}
         </p>
@@ -355,11 +357,9 @@ export function EncounterPage({ encounterId }: { encounterId: string }) {
             type="button"
             onClick={() => void loadEncounter()}
           >
-            Retry
-          </button>
+            {t("retry")}</button>
           <a className="xi-btn xi-btn-secondary" href="#/patients">
-            Back to directory
-          </a>
+            {t("backToDirectory")}</a>
         </div>
       </div>
     );
@@ -368,15 +368,14 @@ export function EncounterPage({ encounterId }: { encounterId: string }) {
   if (load.kind === "discarded") {
     return (
       <div>
-        <h2 className="xi-page-title">Encounter draft</h2>
+        <h2 className="xi-page-title">{t("encounterDraft")}</h2>
         <p className="xi-status" role="status">
-          Draft discarded (revision {load.revision}). The slot is free and the
-          patient record was kept.
+          
+          {t("draftDiscardedRevision")} {load.revision}{t("theSlotIsFreeAndThePatient")}
         </p>
         <p>
           <a className="xi-btn xi-btn-secondary" href="#/patients">
-            Back to directory
-          </a>
+            {t("backToDirectory")}</a>
         </p>
       </div>
     );
@@ -413,6 +412,7 @@ function EncounterWizard({
   patient: Patient | null;
   onDiscarded: (revision: number) => void;
 }) {
+  const { t, text, errorText } = useLanguage();
   const { sessionExpired } = useAuth();
   const autosave = useAutosave({
     encounterId,
@@ -730,7 +730,8 @@ function EncounterWizard({
         setDiscardOpen(true);
       }}
     >
-      Discard draft
+      
+      {t("discardDraft")}
     </button>
   );
 
@@ -739,24 +740,26 @@ function EncounterWizard({
       <h2 className="xi-page-title">{pageTitle}</h2>
       {notice !== null && (
         <p className="xi-status" role="status">
-          Patient {notice.identifier} registered. Server time{" "}
-          {notice.serverTimestamp}, revision {notice.revision}.
+          
+          {t("patient")} {notice.identifier}  {t("registeredServerTime")}{" "}
+          {notice.serverTimestamp}{t("revision435")} {notice.revision}.
         </p>
       )}
       {!streamlinedStep && encounter.kind !== "registration" && (
       <section className="xi-card" aria-labelledby="draft-context-heading">
         <h3 className="xi-section-title" id="draft-context-heading">
-          Draft context
+          
+          {t("draftContext")}
         </h3>
         <p className="xi-hint" style={{ marginTop: 0 }}>
-          {encounter.kind === "registration" ? "Registration" : "Follow-up"} draft
-          {" · "}revision {autosave.baseRevision}
+          {encounter.kind === "registration" ? t("registration437") : t("followUp")}  {t("draft291")}
+          {" · "}{t("revision439")} {autosave.baseRevision}
           {patient !== null &&
             ` · ${patient.given_name} ${patient.family_name} (${patient.identifier})`}
         </p>
         <p className="xi-hint">
-          Later assessment pages extend this same draft through autosave — one
-          persisted object, one revision fence, no separate mechanisms.
+          
+          {t("laterAssessmentPagesExtendThisSameDraft")}
         </p>
       </section>
       )}
@@ -773,12 +776,12 @@ function EncounterWizard({
       )}
 
       {currentStep.id !== "register" && (
-        <section className="xi-card" aria-label="Draft save">
+        <section className="xi-card" aria-label={t("draftSave")}>
           <DraftSaveStatus autosave={autosave} />
         </section>
       )}
 
-      <nav className="xi-wizard-nav" aria-label="Encounter pages" id="wizard-pages">
+      <nav className="xi-wizard-nav" aria-label={t("encounterPages")} id="wizard-pages">
         {steps.map((item, index) => (
           <a
             key={item.id}
@@ -787,7 +790,7 @@ function EncounterWizard({
             aria-current={item.id === currentStep.id ? "page" : undefined}
             onClick={followStepLink}
           >
-            {index + 1}. {item.label}
+            {index + 1}. {text(item.label)}
           </a>
         ))}
       </nav>
@@ -903,7 +906,8 @@ function EncounterWizard({
             href={encounterStepHash(encounterId, previousStep.id)}
             onClick={followStepLink}
           >
-            Back to {previousStep.label}
+            
+            {t("backTo")} {previousStep.label}
           </a>
         )}
         {nextStep !== null &&
@@ -920,8 +924,8 @@ function EncounterWizard({
               onClick={() => void handleGuardedContinue()}
             >
               {diagChecking
-                ? "Checking diagnosis…"
-                : "Continue"}
+                ? t("checkingDiagnosis")
+                : t("continue")}
             </button>
           ) : (
             <button
@@ -930,22 +934,22 @@ function EncounterWizard({
               type="button"
               onClick={() => { window.location.hash = encounterStepHash(encounterId, nextStep.id); }}
             >
-              Continue
+              
+              {t("continue")}
             </button>
           ))}
       </div>
 
       {diagCheckError !== null && guardedDiagnosisContinue && (
         <p className="xi-form-error" role="alert">
-          {diagCheckError}{" "}
+          {errorText(diagCheckError)}{" "}
           <button
             className="xi-btn xi-btn-secondary"
             type="button"
             disabled={diagChecking}
             onClick={() => void handleGuardedContinue()}
           >
-            Retry
-          </button>
+            {t("retry")}</button>
         </p>
       )}
 
@@ -959,11 +963,12 @@ function EncounterWizard({
             aria-describedby="diag-continue-text"
           >
             <h2 className="xi-section-title" id="diag-continue-title">
-              Continue without a confirmed diagnosis?
+              
+              {t("continueWithoutAConfirmedDiagnosis")}
             </h2>
             <p id="diag-continue-text">
-              The current assessment does not confirm the diagnosis. Do you
-              want to continue to PANSS anyway?
+              
+              {t("theCurrentAssessmentDoesNotConfirmThe")}
             </p>
             <div className="xi-row-actions">
               <button
@@ -972,7 +977,8 @@ function EncounterWizard({
                 ref={confirmCancelRef}
                 onClick={closeDiagConfirm}
               >
-                Return to diagnosis
+                
+                {t("returnToDiagnosis")}
               </button>
               <button
                 className="xi-btn xi-btn-primary"
@@ -985,7 +991,8 @@ function EncounterWizard({
                   );
                 }}
               >
-                Continue to PANSS anyway
+                
+                {t("continueToPanssAnyway")}
               </button>
             </div>
           </div>
@@ -997,11 +1004,12 @@ function EncounterWizard({
       ) : (
         <section className="xi-card" aria-labelledby="draft-danger-heading">
           <h3 className="xi-section-title" id="draft-danger-heading">
-            Discard draft
+            
+            {t("discardDraft")}
           </h3>
           <p className="xi-hint">
-            Discarding releases the patient slot without deleting the patient.
-            It needs explicit confirmation and the current revision (
+            
+            {t("discardingReleasesThePatientSlotWithoutDeleting")}
             {autosave.baseRevision}).
           </p>
           {discardButton}
@@ -1014,8 +1022,7 @@ function EncounterWizard({
           href="#/patients"
 
         >
-          Back to directory
-        </a>
+          {t("backToDirectory")}</a>
       </p>
 
       {discardOpen && (
@@ -1029,11 +1036,12 @@ function EncounterWizard({
             ref={discardDialogRef}
           >
             <h2 className="xi-section-title" id="discard-title">
-              Discard this draft?
+              
+              {t("discardThisDraft")}
             </h2>
             <p id="discard-text">
-              This releases the patient slot (revision {autosave.baseRevision})
-              without deleting the patient. This cannot be undone.
+              
+              {t("thisReleasesThePatientSlotRevision")} {autosave.baseRevision}{t("withoutDeletingThePatientThisCannotBe")}
             </p>
             <div className="xi-field">
               <label className="xi-label" htmlFor="discard-confirm">
@@ -1045,12 +1053,13 @@ function EncounterWizard({
                     setDiscardConfirm(event.target.checked)
                   }
                 />{" "}
-                I understand this discards the draft but keeps the patient.
+                
+                {t("iUnderstandThisDiscardsTheDraftBut")}
               </label>
             </div>
             {discardError !== null && (
               <p className="xi-form-error" role="alert">
-                {discardError}
+                {errorText(discardError)}
               </p>
             )}
             <div className="xi-row-actions">
@@ -1059,15 +1068,14 @@ function EncounterWizard({
                 type="button"
                 onClick={() => setDiscardOpen(false)}
               >
-                Cancel
-              </button>
+                {t("cancel")}</button>
               <button
                 className="xi-btn xi-btn-primary"
                 type="button"
                 disabled={!discardConfirm || discardBusy}
                 onClick={() => void handleDiscard()}
               >
-                {discardBusy ? "Discarding…" : "Confirm discard"}
+                {discardBusy ? t("discarding") : t("confirmDiscard")}
               </button>
             </div>
           </div>

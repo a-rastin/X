@@ -1,3 +1,4 @@
+import { useLanguage } from "../../../shared/i18n";
 import { useEffect, useState } from "react";
 import { ApiError, readGraph, type GraphNetwork, type GraphPayload } from "./api";
 import { useAuth } from "../../identity/auth";
@@ -83,6 +84,7 @@ function GraphSvg({ graph, idSuffix }: { graph: GraphNetwork; idSuffix: string }
 
   return (
     <svg
+      direction="ltr"
       role="img"
       tabIndex={0}
       aria-label={`Network ${graph.network_name}: ${graph.nodes.join(", ")}`}
@@ -171,6 +173,7 @@ function GraphSvg({ graph, idSuffix }: { graph: GraphNetwork; idSuffix: string }
 }
 
 export function GraphView({ versionId }: { versionId: string }) {
+  const { t } = useLanguage();
   const { sessionExpired } = useAuth();
   const [state, setState] = useState<LoadState>({ kind: "loading" });
 
@@ -208,9 +211,10 @@ export function GraphView({ versionId }: { versionId: string }) {
     return (
       <section className="xi-card" aria-labelledby="graph-heading" aria-busy="true">
         <h3 className="xi-section-title" id="graph-heading">
-          Read-only graph
+          
+          {t("readOnlyGraph")}
         </h3>
-        <p>Loading graph…</p>
+        <p>{t("loadingGraph")}</p>
       </section>
     );
   }
@@ -219,7 +223,8 @@ export function GraphView({ versionId }: { versionId: string }) {
     return (
       <section className="xi-card" aria-labelledby="graph-heading">
         <h3 className="xi-section-title" id="graph-heading">
-          Read-only graph
+          
+          {t("readOnlyGraph")}
         </h3>
         <p className="xi-form-error" role="alert">
           {state.message}
@@ -239,43 +244,44 @@ export function GraphView({ versionId }: { versionId: string }) {
       id="networks-graph"
     >
       <h3 className="xi-section-title" id="graph-heading">
-        Read-only graph
+        
+        {t("readOnlyGraph")}
       </h3>
       <p className="xi-hint">
-        Version {payload.version_number} · source {payload.source_hash.slice(0, 12)}…
-        Structure is read only; the graph cannot be edited here.
+        
+        {t("version354")} {payload.version_number}  {t("source305")} {payload.source_hash.slice(0, 12)}{t("structureIsReadOnlyTheGraphCannot")}
       </p>
       <p>
         <span className={validation.xsd_valid ? "xi-badge xi-badge-active" : "xi-badge xi-badge-inactive"}>
-          {validation.xsd_valid ? "XSD structurally valid" : "XSD structurally invalid"}
+          {validation.xsd_valid ? t("xsdStructurallyValid") : t("xsdStructurallyInvalid")}
         </span>{" "}
         <span className={validation.semantic_valid ? "xi-badge xi-badge-active" : "xi-badge xi-badge-inactive"}>
-          {validation.semantic_valid ? "Semantics valid" : "Semantics invalid"}
+          {validation.semantic_valid ? t("semanticsValid") : t("semanticsInvalid")}
         </span>{" "}
         <span className="xi-badge">
-          {validation.activatable_v1 ? "Activatable (v1 admission)" : "Not activatable (v1 admission)"}
+          {validation.activatable_v1 ? t("activatableV1Admission") : t("notActivatableV1Admission")}
         </span>
       </p>
       {validation.nonactivatable_reasons.length > 0 && (
-        <ul aria-label="Reasons this version cannot activate">
+        <ul aria-label={t("reasonsThisVersionCannotActivate")}>
           {validation.nonactivatable_reasons.map((reason) => (
             <li key={reason}>{reason}</li>
           ))}
         </ul>
       )}
       {payload.graphs.length === 0 ? (
-        <p>No networks in this version.</p>
+        <p>{t("noNetworksInThisVersion")}</p>
       ) : (
         payload.graphs.map((graph, graphIndex) => (
           <article key={graph.network_name} aria-label={`Network ${graph.network_name}`}>
             <h4>{graph.network_name}</h4>
             <GraphSvg graph={graph} idSuffix={String(graphIndex)} />
-            <h5>Variables in stored order</h5>
+            <h5>{t("variablesInStoredOrder")}</h5>
             <table className="xi-table" aria-label={`Variables of ${graph.network_name}`}>
               <thead>
                 <tr>
-                  <th scope="col">Variable</th>
-                  <th scope="col">Outcomes in stored order</th>
+                  <th scope="col">{t("variable")}</th>
+                  <th scope="col">{t("outcomesInStoredOrder")}</th>
                 </tr>
               </thead>
               <tbody>
@@ -287,9 +293,9 @@ export function GraphView({ versionId }: { versionId: string }) {
                 ))}
               </tbody>
             </table>
-            <h5>Edges in definition order</h5>
+            <h5>{t("edgesInDefinitionOrder")}</h5>
             {graph.edges.length === 0 ? (
-              <p>No edges: all variables are roots.</p>
+              <p>{t("noEdgesAllVariablesAreRoots")}</p>
             ) : (
               <ol>
                 {graph.edges.map(([parent, child], index) => (

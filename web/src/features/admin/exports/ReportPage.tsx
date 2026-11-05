@@ -1,3 +1,4 @@
+import { useLanguage } from "../../../shared/i18n";
 /* Admin printable longitudinal patient report (S53 §§3-4, seam T9;
  * plan.md §10.1, FR-40; ui-context "Complete CPT probability review").
  *
@@ -67,6 +68,7 @@ function sizeFrameToContent(frame: HTMLIFrameElement | null): void {
 }
 
 export function ReportPage({ patientId }: { patientId: string }) {
+  const { t } = useLanguage();
   const { sessionExpired } = useAuth();
   const [state, setState] = useState<LoadState>({ kind: "loading" });
 
@@ -99,8 +101,7 @@ export function ReportPage({ patientId }: { patientId: string }) {
   return (
     <div>
       <h2 className="xi-page-title" data-testid="report-heading" id="report-heading">
-        Longitudinal patient report
-      </h2>
+        {t("longitudinalReport")}</h2>
       <div
         className="xi-notice"
         role="status"
@@ -108,24 +109,24 @@ export function ReportPage({ patientId }: { patientId: string }) {
         id="report-research-label"
       >
         <p style={{ margin: 0 }}>
-          This application is a research prototype and must not be used as the
-          sole basis for treating patients. Signed records only — private
-          drafts are excluded.
+          
+          {t("thisApplicationIsAResearchPrototypeAnd")}
         </p>
       </div>
 
       {state.kind === "loading" && (
         <p role="status" data-testid="report-status" id="report-status">
-          Loading printable report…
+          
+          {t("loadingPrintableReport")}
         </p>
       )}
       {state.kind === "error" && (
         <div>
           <p className="xi-form-error" role="alert" data-testid="report-status">
             {state.forbidden
-              ? "Administrator access required."
+              ? t("administratorRequired")
               : state.missing
-                ? "Patient not found."
+                ? t("patientNotFound")
                 : state.message}
           </p>
           <div className="xi-row-actions">
@@ -134,10 +135,10 @@ export function ReportPage({ patientId }: { patientId: string }) {
               type="button"
               onClick={() => void reload()}
             >
-              Retry
-            </button>
+              {t("retry")}</button>
             <a className="xi-btn xi-btn-secondary" href={`#/patients/${patientId}/chart`}>
-              Back to chart
+              
+              {t("backToChart")}
             </a>
           </div>
         </div>
@@ -145,10 +146,11 @@ export function ReportPage({ patientId }: { patientId: string }) {
       {state.kind === "ready" &&
         (state.html.trim() === "" ? (
           <p role="status" data-testid="report-status">
-            No signed encounters yet — nothing printable for this patient.
+            
+            {t("noSignedEncountersYetNothingPrintableFor")}
           </p>
         ) : (
-          <section className="xi-card" aria-label="Printable signed report">
+          <section className="xi-card" aria-label={t("printableSignedReport")}>
             <div className="xi-row-actions xi-no-print">
               <button
                 className="xi-btn xi-btn-secondary"
@@ -157,19 +159,20 @@ export function ReportPage({ patientId }: { patientId: string }) {
                 id="report-print"
                 onClick={() => window.print()}
               >
-                Print report
+                
+                {t("printReport")}
               </button>
               <a
                 className="xi-btn xi-btn-secondary"
                 href={`#/patients/${patientId}/chart`}
               >
-                Back to chart
+                
+                {t("backToChart")}
               </a>
             </div>
             <p className="xi-hint xi-no-print" role="status" data-testid="report-status">
-              Signed-only printable report loaded. Complete original and
-              accepted CPT tables, versions, adjustment indicators, and
-              attribution render inside the frame below.
+              
+              {t("signedOnlyPrintableReportLoadedCompleteOriginal")}
             </p>
             <iframe
               className="xi-report-frame"

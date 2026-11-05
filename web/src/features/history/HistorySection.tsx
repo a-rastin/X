@@ -1,3 +1,5 @@
+import { clinicalText } from "../../shared/messages";
+import { useLanguage } from "../../shared/i18n";
 import { questionLabel } from "../reasoning/questionLabels";
 /* Structured history in the shared draft autosave body (S12).
  *
@@ -300,6 +302,7 @@ export function HistorySection({
   onSessionExpired,
   stepNumber,
 }: HistorySectionProps) {
+  const { t, language, errorText, text } = useLanguage();
   const [preview, setPreview] = useState<HistoryPreview | null>(null);
   const [previewLoading, setPreviewLoading] = useState(true);
   const [previewError, setPreviewError] = useState<string | null>(null);
@@ -456,37 +459,36 @@ export function HistorySection({
   return (
     <section className="xi-card xi-diagnosis xi-history" aria-labelledby="history-heading">
       <h3 className="xi-section-title" id="history-heading">
-        History (step {stepNumber})
+        
+        {t("historyStep")} {stepNumber})
       </h3>
       <p className="xi-hint">
-        Review medication exposure, prior treatment and movement history.
-        Select Unknown when you cannot determine an answer. Other proposal context
-        may also offer Not assessed when it has not been reviewed. Responses save automatically.
+        {t("historyIntro")}
       </p>
       <div className="xi-diagnosis-workspace">
         <div className="xi-diagnosis-checklist">
           <div className="xi-diagnosis-overview">
             <div>
-              <h4>Past medical history</h4>
+              <h4>{t("pastMedicalHistory")}</h4>
             </div>
-            <span className="xi-diagnosis-count">{responseCount} / {visibleFields.length} responses</span>
+            <span className="xi-diagnosis-count">{responseCount} / {visibleFields.length}  {t("responses")}</span>
           </div>
-          <p className="xi-hint">Follow-up fields can appear or disappear as answers change, so the response count and total can change.</p>
+          <p className="xi-hint">{t("historyCountHint")}</p>
           {visibleGroups.map((group) => {
             const fields = group.fields;
             return (
               <section className="xi-diagnosis-criterion" key={group.id} aria-labelledby={`history-group-${group.id}`}>
                 <header className="xi-diagnosis-criterion-header">
-                  <h4 id={`history-group-${group.id}`} tabIndex={-1}>{group.title}</h4>
+                  <h4 id={`history-group-${group.id}`} tabIndex={-1}>{text(group.title)}</h4>
                 </header>
                 {fields.map((field) => {
                   const errorId = itemErrors[field.id] !== undefined ? `hist-${field.id}-error` : undefined;
                   return (
                     <fieldset key={field.id} className="xi-diagnosis-item xi-history-item" disabled={preview === null}>
-                      <legend className="xi-sr-only">{field.label}</legend>
+                      <legend className="xi-sr-only">{clinicalText(language, "history", preview?.definition_version ?? "v2", field.id, field.label)}</legend>
                       <div className="xi-diagnosis-question">
-                        <div aria-hidden="true">{field.label}</div>
-                        <p className="xi-history-period">{field.period}</p>
+                        <div aria-hidden="true">{clinicalText(language, "history", preview?.definition_version ?? "v2", field.id, field.label)}</div>
+                        <p className="xi-history-period">{text(field.period)}</p>
                       </div>
                       <div className="xi-diagnosis-answer-row">
                         <div className={`xi-diagnosis-options${field.id === "h_onset_timing" ? " xi-history-options-long" : group.id === "treatment" ? " xi-history-options-paired" : ""}`}>
@@ -499,7 +501,7 @@ export function HistorySection({
                                 aria-invalid={errorId !== undefined || undefined}
                                 aria-describedby={errorId}
                               />
-                              <span>{valueLabel(value)}</span>
+                              <span>{text(valueLabel(value))}</span>
                             </label>
                           ))}
                         </div>
@@ -508,7 +510,7 @@ export function HistorySection({
                         <p className="xi-field-error" id={errorId} role="alert">{(itemErrors[field.id] ?? []).join(" ")}</p>
                       )}
                       <details className="xi-history-provenance">
-                        <summary>Response source{previewProvenance[field.id]?.source === "copied_baseline" ? ": copied from baseline" : ""}</summary>
+                        <summary>{t("responseSource")}{previewProvenance[field.id]?.source === "copied_baseline" ? t("copiedFromBaseline") : ""}</summary>
                         <p className="xi-hint" id={`hist-${field.id}-provenance`}>{provenanceText(previewProvenance[field.id])}</p>
                       </details>
                     </fieldset>
@@ -524,30 +526,30 @@ export function HistorySection({
             return (
               <section className="xi-diagnosis-criterion" key={key} aria-labelledby={`history-workflow-${key}`}>
                 <header className="xi-diagnosis-criterion-header">
-                  <h4 id={`history-workflow-${key}`} tabIndex={-1}>{questionLabel(key)}</h4>
+                  <h4 id={`history-workflow-${key}`} tabIndex={-1}>{questionLabel(key, undefined, undefined, language)}</h4>
                 </header>
-                <p className="xi-hint">Review this context for proposal generation. Uncertain context is estimated with disclosed uncertainty and does not block generation; only conflicting, unassessed, invalid or missing prerequisite inputs pause the affected question.</p>
-                {readiness && <p className="xi-hint">Saved required inputs: {readiness.execution_ready_count} / {readiness.required_count} execution-ready.{answersPending && " Changes pending."}</p>}
+                <p className="xi-hint">{t("historyContextHint")}</p>
+                {readiness && <p className="xi-hint">{t("savedRequiredInputs")} {readiness.execution_ready_count} / {readiness.required_count}  {t("executionReady")}{answersPending && " Changes pending."}</p>}
                 {fields.map((field) => (
                   <div className="xi-diagnosis-item xi-history-item" key={field.id}>
-                    <label htmlFor={`hist-${field.id}`}>{field.definition}</label>
+                    <label htmlFor={`hist-${field.id}`}>{clinicalText(language, "workflow", field.id, "definition", field.definition)}</label>
                     <p className="xi-history-period">{field.time_window.replaceAll("_", " ")}</p>
                     <select id={`hist-${field.id}`} className="xi-input"
                       disabled={preview === null}
                       aria-describedby={(preview?.proposal_readiness?.blockers.some((blocker) => blocker.source_path === field.id) || (preview?.proposal_readiness?.warnings ?? []).some((warning) => warning.source_path === field.id)) ? `hist-${field.id}-readiness` : undefined}
                       value={typeof slice.values[field.id] === "string" ? String(slice.values[field.id]) : ""}
                       onChange={(event) => setValue(field.id, event.target.value)}>
-                      {!field.default_value && <option value="">Select a response</option>}
-                      {field.permitted.map((value) => <option key={value} value={value}>{valueLabel(value)}</option>)}
+                      {!field.default_value && <option value="">{t("selectResponse")}</option>}
+                      {field.permitted.map((value) => <option key={value} value={value}>{text(valueLabel(value))}</option>)}
                     </select>
                     {preview?.proposal_readiness?.blockers.filter((blocker) => blocker.source_path === field.id).map((blocker) => (
                       <p className="xi-hint" key={blocker.question_key} id={`hist-${field.id}-readiness`}>{blocker.reason}{answersPending && " Based on saved responses."}</p>
                     ))}
                     {(preview?.proposal_readiness?.warnings ?? []).filter((warning) => warning.source_path === field.id).map((warning) => (
-                      <p className="xi-hint" key={warning.question_key}>Uncertain context — {warning.reason}{answersPending && " Based on saved responses."}</p>
+                      <p className="xi-hint" key={warning.question_key}>{t("uncertainContext")} {warning.reason}{answersPending && " Based on saved responses."}</p>
                     ))}
                     {itemErrors[field.id] && <p className="xi-field-error" role="alert">{itemErrors[field.id].join(" ")}</p>}
-                    {field.operationalization && <details className="xi-history-provenance"><summary>Assessment guidance</summary><p className="xi-hint">{field.operationalization}</p></details>}
+                    {field.operationalization && <details className="xi-history-provenance"><summary>{t("assessmentGuidance")}</summary><p className="xi-hint">{clinicalText(language, "workflow", field.id, "operationalization", field.operationalization)}</p></details>}
                   </div>
                 ))}
               </section>
@@ -556,7 +558,7 @@ export function HistorySection({
 
           <div className="xi-field" style={{ marginTop: 12 }}>
             <label className="xi-label" htmlFor="history-phone-update">
-              Phone update (optional)
+              {t("optionalPhoneUpdate")}
             </label>
             <input
               className="xi-input"
@@ -568,21 +570,21 @@ export function HistorySection({
               onChange={(event) => setPhoneUpdate(event.target.value)}
             />
             <p className="xi-hint">
-              Contact information only; not used in clinical analysis.
+              {t("contactOnly")}
             </p>
           </div>
 
         </div>
-        <aside className="xi-diagnosis-review" aria-label="History review">
+        <aside className="xi-diagnosis-review" aria-label={t("historyReview")}>
           <div className="xi-diagnosis-result">
             <h4 className="xi-section-title">
-              Core history summary
+              {t("coreHistorySummary")}
             </h4>
-            {previewLoading && preview === null && <p>Loading history preview…</p>}
+            {previewLoading && preview === null && <p>{t("loadingHistory")}</p>}
             {previewError !== null && preview === null && (
               <div>
                 <p className="xi-form-error" role="alert">
-                  {previewError}
+                  {errorText(previewError)}
                 </p>
                 <div className="xi-row-actions" style={{ marginTop: 8 }}>
                   <button
@@ -594,8 +596,7 @@ export function HistorySection({
                       void refreshPreview();
                     }}
                   >
-                    Retry
-                  </button>
+                    {t("retry")}</button>
                 </div>
               </div>
             )}
@@ -612,8 +613,8 @@ export function HistorySection({
                   {verdict}
                 </p>
                 <p className="xi-hint">
-                  Based on saved responses.
-                  {" "}Core completion is separate from proposal readiness below.
+                  {t("basedOnSaved")}
+                  {" "}{t("coreCompletionSeparate")}
                   {answersPending &&
                     " Changes pending — summary reflects the last saved responses."}
                   {previewError !== null &&
@@ -622,7 +623,7 @@ export function HistorySection({
 
                 {itemErrorIds.length > 0 && (
                   <p className="xi-form-error" role="alert">
-                    The saved values contain server-reported problems:{" "}
+                    {t("serverValueProblems")}{" "}
                     {itemErrorIds
                       .map((id) => `${id}: ${(itemErrors[id] ?? []).join(" ")}`)
                       .join("; ")}
@@ -631,14 +632,14 @@ export function HistorySection({
 
                 {evaluation?.status === "partial" && (
                   <div id="history-still-needed">
-                    <p className="xi-hint">Still needed:</p>
+                    <p className="xi-hint">{t("stillNeeded")}</p>
                     <ul className="xi-diagnosis-missing">
                       {missingFieldIds.map((id) => {
                         const field = HISTORY_FIELDS.find((candidate) => candidate.id === id);
                         return <li key={id}><a href={`#hist-${id}-${field?.values[0]}`} onClick={(event) => {
                           event.preventDefault();
                           document.getElementById(`hist-${id}-${field?.values[0]}`)?.focus();
-                        }}>{field?.label ?? id}</a></li>;
+                        }}>{field ? clinicalText(language, "history", preview?.definition_version ?? "v2", field.id, field.label) : id}</a></li>;
                       })}
                     </ul>
                   </div>
@@ -649,12 +650,12 @@ export function HistorySection({
           <div className="xi-diagnosis-result">
             {preview?.proposal_readiness && previewError === null ? (
               <>
-                {(answersPending || autosave.hasUnsaved || preview.revision !== autosave.baseRevision) && <p className="xi-hint">Changes pending — proposal readiness reflects the last loaded saved responses.</p>}
+                {(answersPending || autosave.hasUnsaved || preview.revision !== autosave.baseRevision) && <p className="xi-hint">{t("readinessChangesPending")}</p>}
                 <ProposalReadinessSummary readiness={preview.proposal_readiness} encounterId={encounterId} local />
               </>
-            ) : <p className="xi-hint">{previewLoading ? "Loading proposal readiness…" : "Proposal readiness could not be verified."}{previewError && ` ${previewError}`}</p>}
+            ) : <p className="xi-hint">{previewLoading ? t("loadingProposalReadiness") : t("proposalReadinessCouldNotBeVerified")}{previewError && ` ${previewError}`}</p>}
           </div>
-          <p className="xi-hint xi-history-summary-note">Unknown and Not assessed are recorded separately from No. Response counts do not indicate clinical findings.</p>
+          <p className="xi-hint xi-history-summary-note">{t("historySummaryHint")}</p>
         </aside>
       </div>
     </section>

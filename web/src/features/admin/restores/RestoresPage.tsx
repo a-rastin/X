@@ -1,3 +1,4 @@
+import { useLanguage } from "../../../shared/i18n";
 /* Staged restore validation + commit with maintenance, fencing, and
  * rollback (S55 §§1-4 staging, S56 commit; seams T10 over T1, T9 page;
  * plan.md §10.3 steps 1-6; FR-41–42, NFR-03/04).
@@ -100,6 +101,7 @@ function commitStateOf(job: RestoreJob | null): string {
 }
 
 export function RestoresPage() {
+  const { t, errorText } = useLanguage();
   const { sessionExpired } = useAuth();
   const [file, setFile] = useState<File | null>(null);
   const [job, setJob] = useState<RestoreJob | null>(null);
@@ -483,15 +485,10 @@ export function RestoresPage() {
   return (
     <div>
       <h2 className="xi-page-title" data-testid="restores-heading" id="restores-heading">
-        Staged restores
-      </h2>
+        {t("stagedRestores")}</h2>
       <p className="xi-hint">
-        Administrator restore staging and commit: an uploaded backup zip is
-        validated into isolated staging only — live patients, logins, and
-        jobs are never touched until an explicit commit. A succeeded staging
-        reports backup date, schema, content, checksums, replacement impact,
-        and the key-reentry consequence, plus the immutable confirmation
-        digest the commit step below requires exactly.
+        
+        {t("administratorRestoreStagingAndCommitAnUploaded")}
       </p>
 
       {job?.maintenance_active === true && (
@@ -501,20 +498,19 @@ export function RestoresPage() {
           data-testid="restores-maintenance-banner"
           id="restores-maintenance-banner"
         >
-          <strong>Maintenance is active.</strong> Writes are held (503
-          maintenance) except sign-in and restore routes; reads stay
-          available for verification. Verify health, then reopen below —
-          maintenance clears only after verified health.
+          <strong>{t("maintenanceIsActive")}</strong>  {t("writesAreHeld503MaintenanceExceptSign")}
         </div>
       )}
 
       <section className="xi-card" aria-labelledby="restores-upload-heading">
         <h3 className="xi-section-title" id="restores-upload-heading">
-          Upload backup zip to staging
+          
+          {t("uploadBackupZipToStaging")}
         </h3>
         <div className="xi-row-actions xi-no-print">
           <label className="xi-hint" htmlFor="restores-upload">
-            Backup archive (.zip)
+            
+            {t("backupArchiveZip")}
           </label>
           <input
             type="file"
@@ -537,7 +533,7 @@ export function RestoresPage() {
             disabled={busy || file === null}
             onClick={() => void upload()}
           >
-            {uploading ? "Validating…" : "Validate in staging"}
+            {uploading ? t("validating") : t("validateInStaging")}
           </button>
           {job !== null && (
             <button
@@ -546,7 +542,7 @@ export function RestoresPage() {
               disabled={busy}
               onClick={() => void refresh()}
             >
-              {refreshing ? "Re-checking…" : "Re-check status"}
+              {refreshing ? t("reChecking") : t("reCheckStatus")}
             </button>
           )}
         </div>
@@ -567,21 +563,22 @@ export function RestoresPage() {
             data-testid="restores-error"
             id="restores-error"
           >
-            {error}
+            {errorText(error)}
           </p>
         )}
         {job !== null && (
           <dl className="xi-hint" style={{ marginBottom: 0 }}>
-            <dt style={{ display: "inline", fontWeight: 600 }}>Restore id: </dt>
+            <dt style={{ display: "inline", fontWeight: 600 }}>{t("restoreId")} </dt>
             <dd style={{ display: "inline", margin: 0 }}>{job.id}</dd>
             {" · "}
-            <dt style={{ display: "inline", fontWeight: 600 }}>Status: </dt>
+            <dt style={{ display: "inline", fontWeight: 600 }}>{t("status387")} </dt>
             <dd style={{ display: "inline", margin: 0 }}>{job.status}</dd>
             {job.expired && (
               <>
                 {" · "}
                 <dd style={{ display: "inline", margin: 0 }}>
-                  Expired or superseded — confirmation stale.
+                  
+                  {t("expiredOrSupersededConfirmationStale")}
                 </dd>
               </>
             )}
@@ -597,22 +594,22 @@ export function RestoresPage() {
           id="restores-digest"
         >
           <h3 className="xi-section-title" id="restores-digest-heading">
-            Confirmation digest
+            
+            {t("confirmationDigest")}
           </h3>
           <p className="xi-hint">
-            Immutable staging digest — the commit step below must present
-            this same value before expiry.
+            
+            {t("immutableStagingDigestTheCommitStepBelow")}
             {job.expired
-              ? " This digest has expired or been superseded and must not be committed."
+              ? t("thisDigestHasExpiredOrBeenSuperseded")
               : ""}
           </p>
           <p className="xi-hint" style={{ marginBottom: 8 }}>
             <code>{job.confirmation_digest}</code>
           </p>
           <p className="xi-hint" style={{ marginBottom: 0 }}>
-            Staging alone never replaces live data — replacement happens
-            only through the explicit commit step below, which quiesces
-            writes behind maintenance first.
+            
+            {t("stagingAloneNeverReplacesLiveDataReplacement")}
           </p>
         </section>
       )}
@@ -625,28 +622,28 @@ export function RestoresPage() {
           id="restores-commit-section"
         >
           <h3 className="xi-section-title" id="restores-commit-heading">
-            Commit staged restore
+            
+            {t("commitStagedRestore")}
           </h3>
           <p className="xi-hint">
-            Replacement, never a merge: committing quiesces writes and
-            workers behind maintenance, fences the deployment generation,
-            takes a pre-restore backup, swaps the validated database,
-            restarts processes, revokes every session, reconciles pending
-            jobs, audits recovery, and reopens only after verified health.
+            
+            {t("replacementNeverAMergeCommittingQuiescesWrites")}
           </p>
           <p className="xi-hint">
-            Staged digest: <code>{stagedDigest}</code>
+            
+            {t("stagedDigest")} <code>{stagedDigest}</code>
           </p>
           <div className="xi-field">
             <label className="xi-label" htmlFor="restores-commit-digest-input">
-              Confirmation digest — type exactly to enable Commit
+              
+              {t("confirmationDigestTypeExactlyToEnableCommit")}
             </label>
             <input
               className="xi-input"
               type="text"
               autoComplete="off"
               spellCheck={false}
-              placeholder="64-character hex digest"
+              placeholder={t("confirmationHexDigest")}
               data-testid="restores-commit-digest-input"
               id="restores-commit-digest-input"
               disabled={busy}
@@ -658,7 +655,8 @@ export function RestoresPage() {
             />
             {confirmInput !== "" && !digestValid && (
               <p className="xi-field-error">
-                Does not match the staged digest.
+                
+                {t("doesNotMatchTheStagedDigest")}
               </p>
             )}
           </div>
@@ -671,7 +669,7 @@ export function RestoresPage() {
               disabled={!canCommit}
               onClick={() => void commit()}
             >
-              {committing ? "Committing…" : commitPolling ? `Committing… (${pollsUsed}/${MAX_POLLS})` : "Commit restore"}
+              {committing ? t("committing") : commitPolling ? `Committing… (${pollsUsed}/${MAX_POLLS})` : t("commitRestore")}
             </button>
           </div>
           {commitBlockedReason !== null && (
@@ -690,7 +688,8 @@ export function RestoresPage() {
           id="restores-commit-progress"
         >
           <h3 className="xi-section-title" id="restores-commit-progress-heading">
-            Commit progress
+            
+            {t("commitProgress")}
           </h3>
           <p
             className="xi-status"
@@ -698,9 +697,10 @@ export function RestoresPage() {
             data-testid="restores-commit-status"
             id="restores-commit-status"
           >
-            Commit {commitState}
+            
+            {t("commit")} {commitState}
             {job.commit_phase ? ` — phase ${job.commit_phase}` : ""}
-            {job.maintenance_active ? " — maintenance active" : " — maintenance clear"}.
+            {job.maintenance_active ? t("maintenanceActive") : t("maintenanceClear")}.
           </p>
           {(commitState === "failed" || commitState === "rolled_back") && (
             <p
@@ -710,26 +710,25 @@ export function RestoresPage() {
               id="restores-commit-error"
             >
               {job.commit_error_code ? `${job.commit_error_code}: ` : ""}
-              {job.commit_error_message ?? "Restore commit failed."} Prior
-              database restored; maintenance held until verified healthy.
+              {job.commit_error_message ?? "Restore commit failed."}  {t("priorDatabaseRestoredMaintenanceHeldUntilVerified")}
             </p>
           )}
           <dl className="xi-hint" style={{ marginBottom: 8 }}>
-            <dt style={{ display: "inline", fontWeight: 600 }}>Pre-restore backup: </dt>
+            <dt style={{ display: "inline", fontWeight: 600 }}>{t("preRestoreBackup")} </dt>
             <dd style={{ display: "inline", margin: 0 }}>
               {job.pre_restore_backup_id ?? "none yet"}
             </dd>
             {generationText !== null && (
               <>
                 {" · "}
-                <dt style={{ display: "inline", fontWeight: 600 }}>Generation: </dt>
+                <dt style={{ display: "inline", fontWeight: 600 }}>{t("generation")} </dt>
                 <dd style={{ display: "inline", margin: 0 }}>{generationText}</dd>
               </>
             )}
             {report?.committed_at && (
               <>
                 {" · "}
-                <dt style={{ display: "inline", fontWeight: 600 }}>Committed: </dt>
+                <dt style={{ display: "inline", fontWeight: 600 }}>{t("committed")} </dt>
                 <dd style={{ display: "inline", margin: 0 }}>{report.committed_at}</dd>
               </>
             )}
@@ -737,8 +736,8 @@ export function RestoresPage() {
           {commitState === "succeeded" && (
             <div className="xi-hint" style={{ marginBottom: 8 }}>
               <p style={{ margin: "0 0 4px" }}>
-                All sessions revoked — sign in again. Old provider results
-                fail DEPLOYMENT_FENCED after the generation bump
+                
+                {t("allSessionsRevokedSignInAgainOld")}
                 {generationText !== null ? ` (${generationText})` : ""}.
               </p>
               <p style={{ margin: 0 }}>
@@ -749,20 +748,23 @@ export function RestoresPage() {
                 {reconciled !== null
                   ? `Pending jobs reconciled: ${reconciled.requeued} requeued, ${reconciled.cancelled} cancelled, ${reconciled.preserved_terminal} terminal preserved. `
                   : ""}
-                Key re-entry: {report?.key_consequence ?? "see the validation report above."}
+                
+                {t("keyReEntry")} {report?.key_consequence ?? "see the validation report above."}
               </p>
             </div>
           )}
           {(commitState === "failed" || commitState === "rolled_back") && rollback !== null && (
             <p className="xi-hint" style={{ marginBottom: 8 }}>
-              Rollback {rollback.restored ? "restored the prior database" : "found live unswitched"}
+              
+              {t("rollback489")} {rollback.restored ? t("restoredThePriorDatabase") : t("foundLiveUnswitched")}
               {rollback.at ? ` at ${rollback.at}` : ""}: {rollback.reason}
             </p>
           )}
           {history.length > 0 ? (
             <>
               <h4 className="xi-section-title" style={{ marginTop: 12 }}>
-                Phase history
+                
+                {t("phaseHistory")}
               </h4>
               <ul
                 className="xi-hint"
@@ -772,7 +774,7 @@ export function RestoresPage() {
               >
                 {history.map((entry, index) => (
                   <li key={`${entry.phase}-${entry.at ?? index}-${index}`}>
-                    <code>{entry.phase}</code> — {entry.ok ? "ok" : "failed"}
+                    <code>{entry.phase}</code> — {entry.ok ? t("ok") : t("failed")}
                     {entry.at ? ` at ${entry.at}` : ""}
                     {entry.detail ? `: ${entry.detail}` : ""}
                   </li>
@@ -786,7 +788,8 @@ export function RestoresPage() {
               data-testid="restores-commit-history"
               id="restores-commit-history"
             >
-              No commit phases recorded yet.
+              
+              {t("noCommitPhasesRecordedYet")}
             </p>
           )}
         </section>
@@ -800,13 +803,12 @@ export function RestoresPage() {
           id="restores-reopen-section"
         >
           <h3 className="xi-section-title" id="restores-reopen-heading">
-            Verify and reopen
+            
+            {t("verifyAndReopen")}
           </h3>
           <p className="xi-hint">
-            Maintenance is held after the rollback. Reopening first verifies
-            health (sign-in, reads, saved-CPT replay) and clears maintenance
-            only on success — otherwise it stays held so the deployment can
-            be fixed first.
+            
+            {t("maintenanceIsHeldAfterTheRollbackReopening")}
           </p>
           <div className="xi-row-actions xi-no-print">
             <button
@@ -817,7 +819,7 @@ export function RestoresPage() {
               disabled={busy}
               onClick={() => void reopen()}
             >
-              {reopening ? "Verifying…" : "Verify health and reopen"}
+              {reopening ? t("verifying") : t("verifyHealthAndReopen")}
             </button>
           </div>
           <p
@@ -828,8 +830,8 @@ export function RestoresPage() {
             id="restores-reopen-status"
           >
             {job.maintenance_active
-              ? "Maintenance is active — writes held."
-              : "Maintenance is clear."}
+              ? t("maintenanceIsActiveWritesHeld")
+              : t("maintenanceIsClear")}
           </p>
         </section>
       )}
@@ -842,26 +844,29 @@ export function RestoresPage() {
           id="restores-report"
         >
           <h3 className="xi-section-title" id="restores-report-heading">
-            Validation report
+            
+            {t("validationReport")}
           </h3>
           <p className="xi-hint">
-            Backup <code>{report.backup_id}</code>, created{" "}
-            {report.backup_created_at}; manifest{" "}
-            <code>{report.manifest_schema}</code>, app schema{" "}
-            <code>{report.app_schema_version}</code>; archive{" "}
+            
+            {t("backup")} <code>{report.backup_id}</code>{t("created")}{" "}
+            {report.backup_created_at}{t("manifest503")}{" "}
+            <code>{report.manifest_schema}</code>{t("appSchema")}{" "}
+            <code>{report.app_schema_version}</code>{t("archive504")}{" "}
             <span title={report.archive_sha256}>
               {shortHash(report.archive_sha256)}
             </span>{" "}
-            ({report.archive_bytes} bytes).
+            ({report.archive_bytes}  {t("bytes")}
           </p>
           <h4 className="xi-section-title" style={{ marginTop: 16 }}>
-            Staged content
+            
+            {t("stagedContent")}
           </h4>
-          <table className="xi-table" aria-label="Staged table inventory">
+          <table className="xi-table" aria-label={t("stagedTableInventory")}>
             <thead>
               <tr>
-                <th scope="col">Table</th>
-                <th scope="col">Staged rows</th>
+                <th scope="col">{t("table")}</th>
+                <th scope="col">{t("stagedRows")}</th>
                 <th scope="col">SHA-256</th>
               </tr>
             </thead>
@@ -870,7 +875,7 @@ export function RestoresPage() {
                 <tr key={name}>
                   <td>
                     {name}
-                    {info.missing === true ? " (unreadable — exported empty)" : ""}
+                    {info.missing === true ? t("unreadableExportedEmpty") : ""}
                   </td>
                   <td>{info.rows}</td>
                   <td title={info.sha256}>{shortHash(info.sha256)}</td>
@@ -879,7 +884,8 @@ export function RestoresPage() {
             </tbody>
           </table>
           <h4 className="xi-section-title" style={{ marginTop: 16 }}>
-            Archive checksums
+            
+            {t("archiveChecksums")}
           </h4>
           <ul className="xi-hint" style={{ marginBottom: 8 }}>
             {artifactEntries.map(([name, hash]) => (
@@ -889,14 +895,15 @@ export function RestoresPage() {
             ))}
           </ul>
           <h4 className="xi-section-title" style={{ marginTop: 16 }}>
-            Replacement impact (live vs staged — comparison only, no merge)
+            
+            {t("replacementImpactLiveVsStagedComparisonOnly")}
           </h4>
-          <table className="xi-table" aria-label="Replacement impact">
+          <table className="xi-table" aria-label={t("replacementImpact")}>
             <thead>
               <tr>
-                <th scope="col">Table</th>
-                <th scope="col">Live rows</th>
-                <th scope="col">Staged rows</th>
+                <th scope="col">{t("table")}</th>
+                <th scope="col">{t("liveRows")}</th>
+                <th scope="col">{t("stagedRows")}</th>
               </tr>
             </thead>
             <tbody>
@@ -910,12 +917,14 @@ export function RestoresPage() {
             </tbody>
           </table>
           <p className="xi-hint" style={{ marginTop: 8 }}>
-            Deployment generation: live{" "}
-            {report.deployment_generation.live ?? "unknown"}, staged{" "}
+            
+            {t("deploymentGenerationLive")}{" "}
+            {report.deployment_generation.live ?? "unknown"}{t("staged")}{" "}
             {report.deployment_generation.staged ?? "unknown"}.
           </p>
           <h4 className="xi-section-title" style={{ marginTop: 16 }}>
-            Key-reentry consequence
+            
+            {t("keyReentryConsequence")}
           </h4>
           <p className="xi-hint" style={{ marginBottom: 8 }}>
             {report.key_consequence}
@@ -933,43 +942,33 @@ export function RestoresPage() {
         id="restores-recovery-notes"
       >
         <h3 className="xi-section-title" id="restores-recovery-heading">
-          Operator recovery procedure
+          
+          {t("operatorRecoveryProcedure")}
         </h3>
         <ol className="xi-hint" style={{ marginBottom: 0, paddingLeft: 20 }}>
           <li>
-            Back up before switching: create a manual backup on the Backups
-            page before committing. The commit also takes an automatic
-            pre-restore backup — its id in commit progress identifies the
-            rollback source.
+            
+            {t("backUpBeforeSwitchingCreateAManual")}
           </li>
           <li>
-            Commit behind maintenance: writes and workers quiesce (503
-            maintenance except sign-in and restore routes; reads stay
-            available), and the deployment generation is fenced so old
-            workers cannot commit during the switch.
+            
+            {t("commitBehindMaintenanceWritesAndWorkersQuiesce")}
           </li>
           <li>
-            Switch and restart: the validated tables replace live data
-            (never a merge) and connections recycle — no mixed old/new
-            traffic is possible.
+            
+            {t("switchAndRestartTheValidatedTablesReplace")}
           </li>
           <li>
-            Sign in again and re-enter keys: every session is revoked, so
-            sign in again after a commit. Encrypted provider credentials
-            travel without the deployment key — migrating without the
-            original key requires key re-entry (see the report above).
+            
+            {t("signInAgainAndReEnterKeys")}
           </li>
           <li>
-            Verify, then reopen: health checks sign-in, reads, and
-            saved-CPT replay. Reopening clears maintenance only on
-            success. Old provider results fail DEPLOYMENT_FENCED after
-            the generation bump.
+            
+            {t("verifyThenReopenHealthChecksSignIn")}
           </li>
           <li>
-            Rollback path: on failure the prior database is restored and
-            maintenance stays held until verified healthy — fix the
-            deployment, then verify and reopen. The failed commit stays
-            audited with its pre-restore backup id.
+            
+            {t("rollbackPathOnFailureThePriorDatabase")}
           </li>
         </ol>
       </section>

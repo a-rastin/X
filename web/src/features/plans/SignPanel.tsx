@@ -1,3 +1,4 @@
+import { useLanguage } from "../../shared/i18n";
 import { questionLabel } from "../reasoning/questionLabels";
 /* Explicit encounter sign-off (S50 §2, plan.md §9.2; FR-15, FR-57, NFR-03).
  *
@@ -70,6 +71,7 @@ export function SignPanel({
   getBlockReason: () => string | null;
   onSessionExpired: () => void;
 }) {
+  const { t, errorText } = useLanguage();
   const [signing, setSigning] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [signed, setSigned] = useState<{
@@ -185,14 +187,14 @@ export function SignPanel({
     return (
       <div className="xi-notice" role="status" data-testid="sign-panel" id="sign-panel">
         <p style={{ marginTop: 0 }} data-testid="sign-status" id="sign-status">
-          <strong>● Signed ✓</strong> by {signed.signer} at {signed.signedAt} (encounter revision{" "}
-          {signed.revision}). {advanced && <>Snapshot <code className="xi-mono">{signed.snapshotId}</code> · hash <code className="xi-mono">{signed.hash}</code>. </>}The draft slot is released; the
-          frozen record below is read-only.
+          <strong>{t("signed222")}</strong>  {t("by")} {signed.signer}  {t("at")} {signed.signedAt}  {t("encounterRevision")}{" "}
+          {signed.revision}). {advanced && <>{t("snapshot")} <code className="xi-mono">{signed.snapshotId}</code>  {t("hash")} <code className="xi-mono">{signed.hash}</code>. </>}{t("theDraftSlotIsReleasedTheFrozen")}
         </p>
         <p className="xi-hint" style={{ marginBottom: 0 }}>
-          This wizard step is now read-only history.{" "}
+          
+          {t("thisWizardStepIsNowReadOnly")}{" "}
           {patientId !== null && (
-            <a href={chartHash(patientId)}>View the signed chart (read-only + addenda)</a>
+            <a href={chartHash(patientId)}>{t("viewTheSignedChartReadOnlyAddenda")}</a>
           )}
         </p>
       </div>
@@ -202,13 +204,12 @@ export function SignPanel({
   return (
     <div className="xi-notice" role="status" data-testid="sign-panel" id="sign-panel">
       <p style={{ marginTop: 0 }} data-testid="sign-status" id="sign-status">
-        Proposal complete and current — explicit sign-off flushes pending saves, verifies every
-        accepted per-question result and the saved secondary plan, then freezes the record. Sign
-        once; double-click is safe (the button disables while pending).
+        
+        {t("proposalCompleteAndCurrentExplicitSignOff")}
       </p>
       {error !== null && (
         <p className="xi-form-error" role="alert" tabIndex={-1} ref={errorRef}>
-          {error}
+          {errorText(error)}
         </p>
       )}
       <div className="xi-row-actions">
@@ -220,13 +221,14 @@ export function SignPanel({
           disabled={signing}
           onClick={() => void onSign()}
         >
-          {signing ? "Signing…" : "Sign encounter"}
+          {signing ? t("signing") : t("signEncounter")}
         </button>
       </div>
       <p className="xi-hint" style={{ marginBottom: 0 }}>
-        Covers exactly the {readyRunIds.length} ready question{readyRunIds.length === 1 ? "" : "s"}{" "}
-        with their current acceptances. Pending, failed, or stale results block signing without
-        losing plan text.
+        
+        {t("coversExactlyThe")} {readyRunIds.length}  {t("readyQuestion")}{readyRunIds.length === 1 ? "" : "s"}{" "}
+        
+        {t("withTheirCurrentAcceptancesPendingFailedOr")}
       </p>
     </div>
   );

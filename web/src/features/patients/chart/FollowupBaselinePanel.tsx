@@ -1,3 +1,4 @@
+import { useLanguage } from "../../../shared/i18n";
 /* Follow-up baseline panel (S14, plan.md §2.2; FR-20-23).
  *
  * Author-only read of `GET /encounters/{id}/followup-baseline`: copied
@@ -49,6 +50,7 @@ export function FollowupBaselinePanel({
   encounterId: string;
   onSessionExpired: () => void;
 }) {
+  const { t } = useLanguage();
   const [load, setLoad] = useState<LoadState>({ kind: "loading" });
 
   const reload = useCallback(async () => {
@@ -93,9 +95,10 @@ export function FollowupBaselinePanel({
     return (
       <section className="xi-card" aria-labelledby="followup-baseline-heading">
         <h3 className="xi-section-title" id="followup-baseline-heading">
-          Follow-up baseline
+          
+          {t("followUpBaseline")}
         </h3>
-        <p>Loading baseline…</p>
+        <p>{t("loadingBaseline")}</p>
       </section>
     );
   }
@@ -104,7 +107,8 @@ export function FollowupBaselinePanel({
     return (
       <section className="xi-card" aria-labelledby="followup-baseline-heading">
         <h3 className="xi-section-title" id="followup-baseline-heading">
-          Follow-up baseline
+          
+          {t("followUpBaseline")}
         </h3>
         <p className="xi-form-error" role="alert">
           {load.message}
@@ -116,8 +120,7 @@ export function FollowupBaselinePanel({
               type="button"
               onClick={() => void reload()}
             >
-              Retry
-            </button>
+              {t("retry")}</button>
           </div>
         )}
       </section>
@@ -150,56 +153,58 @@ export function FollowupBaselinePanel({
       id="followup-baseline"
     >
       <h3 className="xi-section-title" id="followup-baseline-heading">
-        Follow-up baseline
+        
+        {t("followUpBaseline")}
       </h3>
       <p className="xi-hint">
-        Copied history and medications carry{" "}
-        <code>copied_baseline</code> provenance. PANSS and C-SSRS always start
-        unanswered — prior scores below are historical only, never filled in
-        as answers.
+        
+        {t("copiedHistoryAndMedicationsCarry")}{" "}
+        <code>copied_baseline</code>  {t("provenancePanssAndCSsrsAlwaysStart")}
       </p>
 
       {baseline === null ? (
         <p className="xi-hint" role="status">
-          No copied baseline — review each history field in the history section
-          below. Exposure and treatment responses default to Unknown.
+          
+          {t("noCopiedBaselineReviewEachHistoryField")}
         </p>
       ) : (
         <div>
           <p className="xi-hint">
-            Baseline{" "}
+            {t("baseline")}{" "}
             {baseline.baseline_encounter_id !== null
               ? `from signed encounter ${baseline.baseline_encounter_id}`
-              : "snapshot"}{" "}
-            · {historyIds.length} copied histor
-            {historyIds.length === 1 ? "y field" : "y fields"} ·{" "}
-            {medications.length} copied medication
+              : t("snapshot665")}{" "}
+            · {historyIds.length}  {t("copiedHistor")}
+            {historyIds.length === 1 ? t("yField") : t("yFields")} ·{" "}
+            {medications.length}  {t("copiedMedication")}
             {medications.length === 1 ? "" : "s"}
             {baseline.provenance_note !== null &&
               baseline.provenance_note !== "" &&
               ` · note: ${baseline.provenance_note}`}
           </p>
           {historyIds.length > 0 && (
-            <ul aria-label="Copied history fields">
+            <ul aria-label={t("copiedHistoryFields")}>
               {historyIds.map((id) => (
                 <li key={id}>
                   <code>{id}</code>: {String(baseline.history_values[id])}{" "}
                   <span className="xi-hint">
-                    · provenance copied_baseline
+                    
+                    {t("provenanceCopiedBaseline")}
                   </span>
                 </li>
               ))}
             </ul>
           )}
           {medications.length > 0 && (
-            <ul aria-label="Copied medications">
+            <ul aria-label={t("copiedMedications")}>
               {medications.map((entry, index) => (
                 // ponytail: index key is fine — list is a read-only snapshot
                 // with no reordering, upgrade to stable ids if editable.
                 <li key={`${entry.catalog_drug_id}-${index}`}>
                   {entry.catalog_drug_id}{" "}
                   <span className="xi-hint">
-                    · provenance copied_baseline
+                    
+                    {t("provenanceCopiedBaseline")}
                   </span>
                 </li>
               ))}
@@ -208,9 +213,10 @@ export function FollowupBaselinePanel({
         </div>
       )}
 
-      <div className="xi-history-panel" aria-label="Baseline reconciliation">
+      <div className="xi-history-panel" aria-label={t("baselineReconciliation")}>
         <h4 className="xi-section-title" style={{ fontSize: 15 }}>
-          Reconciliation
+          
+          {t("reconciliation")}
         </h4>
         <p
           className="xi-hint"
@@ -218,7 +224,8 @@ export function FollowupBaselinePanel({
           role="status"
           style={{ marginBottom: 0 }}
         >
-          Status: {reconciliation.status}
+          
+          {t("status387")} {reconciliation.status}
           {reconciliation.baseline_encounter_id !== null &&
           reconciliation.baseline_encounter_id !== undefined &&
           reconciliation.baseline_encounter_id !== ""
@@ -230,31 +237,34 @@ export function FollowupBaselinePanel({
 
       <div style={{ marginTop: 12 }}>
         <h4 className="xi-section-title" style={{ fontSize: 15 }}>
-          Prior scores (historical only)
+          
+          {t("priorScoresHistoricalOnly")}
         </h4>
         {priorKeys.length === 0 ? (
           <p className="xi-hint" role="status">
-            No prior scores.
+            
+            {t("noPriorScores")}
           </p>
         ) : (
           <ul
             data-testid="followup-prior-scores"
             id="followup-prior-scores"
-            aria-label="Prior scores, historical only"
+            aria-label={t("priorScoresHistoricalOnly677")}
           >
             {priorKeys.map((key) => (
               <li key={key}>
                 {scoreLabel(key)}: {String(priorScores[key]?.value)} ·{" "}
                 <span className="xi-hint">
-                  historical — not a current answer
+                  
+                  {t("historicalNotACurrentAnswer")}
                 </span>
               </li>
             ))}
           </ul>
         )}
         <p className="xi-hint">
-          New PANSS and C-SSRS answers start empty in their sections below;
-          these prior values are never filled in as answers.
+          
+          {t("newPanssAndCSsrsAnswersStart")}
         </p>
       </div>
     </section>

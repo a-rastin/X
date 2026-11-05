@@ -1,3 +1,4 @@
+import { useLanguage } from "../../../shared/i18n";
 /* Admin CSV exports (S53 §§1-2, seam T9; plan.md §10.1, FR-03/FR-40).
  *
  * Admin-only navigation/route guard lives in app/pages.tsx (complement to
@@ -35,6 +36,7 @@ import { useAuth } from "../../identity/auth";
 type ExportKey = "patients" | "physicians";
 
 export function ExportsPage() {
+  const { t, errorText } = useLanguage();
   const { sessionExpired } = useAuth();
   const [busy, setBusy] = useState<ExportKey | null>(null);
   const [status, setStatus] = useState<string | null>(null);
@@ -73,16 +75,16 @@ export function ExportsPage() {
   return (
     <div>
       <h2 className="xi-page-title" data-testid="exports-heading" id="exports-heading">
-        Data exports
-      </h2>
+        {t("dataExports")}</h2>
       <p className="xi-hint">
-        Administrator list exports. Downloads are authenticated attachments
-        (private, no-store); physicians are denied by the server.
+        
+        {t("administratorListExportsDownloadsAreAuthenticatedAttachments")}
       </p>
 
       <section className="xi-card" aria-labelledby="exports-actions-heading">
         <h3 className="xi-section-title" id="exports-actions-heading">
-          List downloads
+          
+          {t("listDownloads")}
         </h3>
         <div className="xi-row-actions">
           <button
@@ -94,7 +96,7 @@ export function ExportsPage() {
             disabled={busy !== null}
             onClick={() => void run("patients")}
           >
-            {busy === "patients" ? "Preparing…" : "Download patients CSV"}
+            {busy === "patients" ? t("preparing") : t("downloadPatientsCsv")}
           </button>
           <button
             className="xi-btn xi-btn-primary"
@@ -105,7 +107,7 @@ export function ExportsPage() {
             disabled={busy !== null}
             onClick={() => void run("physicians")}
           >
-            {busy === "physicians" ? "Preparing…" : "Download physicians CSV"}
+            {busy === "physicians" ? t("preparing") : t("downloadPhysiciansCsv")}
           </button>
         </div>
         {status !== null && (
@@ -120,26 +122,23 @@ export function ExportsPage() {
         )}
         {error !== null && (
           <p className="xi-form-error" role="alert" data-testid="exports-status">
-            {error}
+            {errorText(error)}
           </p>
         )}
       </section>
 
       <section className="xi-card" aria-labelledby="exports-notes-heading">
         <h3 className="xi-section-title" id="exports-notes-heading">
-          Spreadsheet notes
+          
+          {t("spreadsheetNotes")}
         </h3>
         <p className="xi-hint" id="exports-import-note" style={{ marginBottom: 8 }}>
-          Import the Patient ID column as Text: the file carries exact
-          10-digit identifiers (e.g. 0012345678) but CSV has no type
-          information, so spreadsheets may otherwise drop leading zeros. No
-          column promises formula typing.
+          
+          {t("importThePatientIdColumnAsText")}
         </p>
         <p className="xi-hint" style={{ marginBottom: 0 }}>
-          Text starting with = + - or @ carries a leading quote so it stays
-          inert when opened directly; quoted commas, quotes, and newlines use
-          standard CSV quoting. Exports contain safe list columns only — no
-          passwords, hashes, or session secrets.
+          
+          {t("textStartingWithOrCarriesALeading")}
         </p>
       </section>
     </div>

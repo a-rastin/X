@@ -1,3 +1,4 @@
+import { useLanguage } from "../../shared/i18n";
 /* Medications section with strict drug-only save + reconciliation (S20,
  * plan.md §§2.2, 6.3, 9; FR-14-16, FR-20).
  *
@@ -194,6 +195,7 @@ export function MedicationsSection({
   onSessionExpired,
   stepNumber,
 }: MedicationsSectionProps) {
+  const { t, errorText } = useLanguage();
   const [serverState, setServerState] = useState<MedicationsPreview | null>(
     null,
   );
@@ -648,28 +650,29 @@ export function MedicationsSection({
       <header className="xi-meds-header">
         <div>
           <h3 className="xi-section-title" id="medications-heading">
-            Medications (step {stepNumber})
+            
+            {t("medicationsStep")} {stepNumber})
           </h3>
-          <p>Build the medication list, then review interactions for the saved selection.</p>
+          <p>{t("medicationIntroduction")}</p>
         </div>
       </header>
       <div className="xi-meds-workspace">
       <div className="xi-meds-editor">
       <div className="xi-meds-section-heading">
-        <h4>Medication list</h4>
+        <h4>{t("medicationList")}</h4>
         <span className="xi-meds-count" aria-label={`${localIds.length} selected medications`}>{localIds.length}</span>
       </div>
-      <p className="xi-hint">Choose from the released catalog. Save medications to refresh the interaction report.</p>
+      <p className="xi-hint">{t("releasedCatalogGuide")}</p>
       <div className="xi-field">
         <label className="xi-label" htmlFor="meds-search">
-          Search medication catalog
+          {t("searchMedicationCatalog")}
         </label>
         <input
           className="xi-input"
           id="meds-search"
           type="search"
           autoComplete="off"
-          placeholder="Search drug name or catalog ID"
+          placeholder={t("searchDrug")}
           value={query}
           onChange={(event) => {
             setQuery(event.target.value);
@@ -680,20 +683,20 @@ export function MedicationsSection({
         />
         {search !== null && (
           <p className="xi-hint" id="meds-catalog-info">
-            {search.source_label ?? "Medication catalog"} · catalog {search.catalog_version} · dataset {search.dataset_version}{" "}
-            · {search.total} drug{search.total === 1 ? "" : "s"}
+            {search.source_label ?? "Medication catalog"}  {t("catalog62")} {search.catalog_version}  {t("dataset63")} {search.dataset_version}{" "}
+            · {search.total}  {t("drug")}{search.total === 1 ? "" : "s"}
           </p>
         )}
       </div>
 
       {searchError !== null && (
         <p className="xi-form-error" role="alert">
-          {searchError}
+          {errorText(searchError)}
         </p>
       )}
-      {searchLoading && <p aria-live="polite">Loading catalog…</p>}
+      {searchLoading && <p aria-live="polite">{t("loadingCatalog")}</p>}
       {search !== null && (
-        <ul id="meds-search-results" aria-label="Catalog search results">
+        <ul id="meds-search-results" aria-label={t("catalogResults")}>
           {search.items.map((drug: CatalogDrug, index: number) => {
             const selected = localIds.includes(drug.catalog_drug_id);
             return (
@@ -710,46 +713,46 @@ export function MedicationsSection({
                   disabled={selected || busy !== null || searchLoading || searchError !== null}
                   onClick={() => addDrug(drug.catalog_drug_id)}
                 >
-                  {selected ? "Added" : "Add"}
+                  {selected ? t("added") : t("add")}
                 </button>
               </li>
             );
           })}
           {search.items.length === 0 && (
-            <li className="xi-hint">No catalog drugs match.</li>
+            <li className="xi-hint">{t("noCatalogMatches")}</li>
           )}
         </ul>
       )}
 
       {search !== null && (
-        <div className="xi-row-actions" aria-label="Catalog pagination">
+        <div className="xi-row-actions" aria-label={t("catalogPagination")}>
           <button className="xi-btn xi-btn-secondary" type="button" id="meds-previous"
             disabled={searchLoading || offset === 0}
-            onClick={() => setOffset(Math.max(0, offset - 25))}>Previous</button>
+            onClick={() => setOffset(Math.max(0, offset - 25))}>{t("previous")}</button>
           <span className="xi-hint" aria-live="polite">
-            {search.total === 0 ? "0 results" : `${search.offset + 1}–${Math.min(search.offset + search.items.length, search.total)} of ${search.total}`}
+            {search.total === 0 ? t("zeroResults") : `${search.offset + 1}–${Math.min(search.offset + search.items.length, search.total)} of ${search.total}`}
           </span>
           <button className="xi-btn xi-btn-secondary" type="button" id="meds-next"
             disabled={searchLoading || offset + 25 >= search.total}
-            onClick={() => setOffset(offset + 25)}>Next</button>
+            onClick={() => setOffset(offset + 25)}>{t("next")}</button>
         </div>
       )}
 
-      <h5 className="xi-meds-selected-heading">Selected medications</h5>
+      <h5 className="xi-meds-selected-heading">{t("selectedMedications")}</h5>
       {localIds.length === 0 ? (
         <p className="xi-hint" id="meds-selected-empty">
-          No medications selected. Search the catalog above to add
-          drugs — saving an empty list records an intentionally empty list.
+          
+          {t("noMedicationsSelectedSearchTheCatalogAbove")}
         </p>
       ) : (
-        <ul id="meds-selected-list" aria-label="Selected medications">
+        <ul id="meds-selected-list" aria-label={t("selectedMedications")}>
           {localIds.map((id, index) => {
             const source = provenanceSource(serverState?.provenance[id]);
             return (
               <li key={id}>
                 <span className="xi-meds-drug-name">
                   <strong>{names[`${datasetVersion}|${id}`] ?? id}</strong>
-                  <span>({id}){source === "copied_baseline" ? " · Copied from baseline" : ""}</span>
+                  <span>({id}){source === "copied_baseline" ? t("copiedFromBaseline69") : ""}</span>
                 </span>
                 <button
                   className="xi-btn xi-btn-secondary"
@@ -759,7 +762,7 @@ export function MedicationsSection({
                   disabled={busy !== null}
                   onClick={() => removeDrug(index)}
                 >
-                  Remove
+                  {t("remove")}
                 </button>
               </li>
             );
@@ -768,20 +771,20 @@ export function MedicationsSection({
       )}
       {nameError && (
         <p className="xi-form-error" role="alert">
-          Some medication names could not be loaded; selected IDs are kept.{" "}
+          {t("medicationNamesUnavailable")}{" "}
           <button className="xi-btn xi-btn-secondary" type="button" onClick={() => setNameRetry((tick) => tick + 1)}>
-            Retry names
+            {t("retryNames")}
           </button>
         </p>
       )}
 
       {serverLoading && serverState === null && serverError === null && (
-        <p>Loading saved medications…</p>
+        <p>{t("loadingSavedMedications")}</p>
       )}
       {serverError !== null && serverState === null && (
         <div>
           <p className="xi-form-error" role="alert">
-            {serverError}
+            {errorText(serverError)}
           </p>
           <div className="xi-row-actions" style={{ marginTop: 8 }}>
             <button
@@ -793,8 +796,7 @@ export function MedicationsSection({
                 void refreshServer();
               }}
             >
-              Retry
-            </button>
+              {t("retry")}</button>
           </div>
         </div>
       )}
@@ -807,7 +809,7 @@ export function MedicationsSection({
           disabled={saveDisabled}
           onClick={() => void handleSave(false)}
         >
-          {busy === "save" ? "Saving…" : "Save medications"}
+          {busy === "save" ? t("saving") : t("saveMedications")}
         </button>
         {(saveState.kind === "failed" || saveState.kind === "conflict") && (
           <>
@@ -817,7 +819,7 @@ export function MedicationsSection({
                 type="button"
                 onClick={() => void handleRetry()}
               >
-                Retry save
+                {t("retrySave")}
               </button>
             )}
             <button
@@ -825,7 +827,7 @@ export function MedicationsSection({
               type="button"
               onClick={() => void refreshServer()}
             >
-              Reload server list
+              {t("reloadServerList")}
             </button>
           </>
         )}
@@ -836,7 +838,7 @@ export function MedicationsSection({
         </p>
       ) : (
         <p className="xi-hint" id="meds-save-status" aria-live="polite">
-          No medication activity yet.
+          {t("noMedicationActivity")}
         </p>
       )}
       {(saveState.kind === "failed" || saveState.kind === "conflict") && (
@@ -865,11 +867,12 @@ export function MedicationsSection({
             id="meds-conflict-heading"
             style={{ margin: "0 0 8px", fontSize: 15 }}
           >
-            Another tab saved first — your list is kept
+            {t("medicationConcurrency")}
           </h5>
           {serverState !== null && (
             <p className="xi-hint" style={{ marginBottom: 8 }}>
-              Server revision {serverState.revision}:{" "}
+              
+              {t("serverRevision")} {serverState.revision}:{" "}
               {entryIds(serverState.entries).join(", ") || "(empty list)"}
             </p>
           )}
@@ -880,7 +883,7 @@ export function MedicationsSection({
               id="meds-conflict-reload"
               onClick={handleReloadServer}
             >
-              Use server list
+              {t("useServerList")}
             </button>
             <button
               className="xi-btn xi-btn-primary"
@@ -888,7 +891,7 @@ export function MedicationsSection({
               id="meds-conflict-retry"
               onClick={() => void handleRetry()}
             >
-              Keep my list and retry
+              {t("keepMyList")}
             </button>
           </div>
         </div>
@@ -897,14 +900,13 @@ export function MedicationsSection({
       {showReconcile && (
         <div className="xi-warning-panel" style={{ marginTop: 12 }}>
           <p id="meds-reconcile-status" style={{ marginTop: 0 }}>
-            Copied medications need reconciliation — review the copied list
-            above
+            {t("copiedMedicationReconciliation")}
             {serverState?.reconciliation?.baseline_encounter_id != null &&
             serverState?.reconciliation?.baseline_encounter_id !== ""
               ? ` (baseline ${serverState?.reconciliation?.baseline_encounter_id})`
               : ""}{" "}
-            and reconcile explicitly. The DDI report stays pending until then;
-            previous signed lists and reports are unchanged.
+            
+            {t("andReconcileExplicitlyTheDdiReportStays")}
           </p>
           <div className="xi-row-actions">
             <button
@@ -915,7 +917,7 @@ export function MedicationsSection({
               onClick={() => void handleSave(true)}
             >
               {busy === "reconcile"
-                ? "Reconciling…"
+                ? t("reconciling")
                 : `Reconcile ${localIds.length} medication${localIds.length === 1 ? "" : "s"}`}
             </button>
           </div>

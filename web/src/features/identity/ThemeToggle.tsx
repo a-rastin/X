@@ -1,3 +1,4 @@
+import { useLanguage } from "../../shared/i18n";
 import { useRef, useState } from "react";
 import { ApiError } from "./api";
 import { useAuth } from "./auth";
@@ -7,6 +8,7 @@ import type { Theme } from "./api";
  * /me/preferences and reflects the server value; a failed save reverts the
  * control label and announces the error instead of sticking. */
 export function ThemeToggle() {
+  const { t, errorText } = useLanguage();
   const { user, applyTheme, sessionExpired } = useAuth();
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
@@ -44,13 +46,13 @@ export function ThemeToggle() {
         type="button"
         onClick={handleToggle}
         disabled={busy}
-        aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
+        aria-label={t(theme === "dark" ? "switchLight" : "switchDark")}
       >
-        <span aria-hidden="true">{theme === "dark" ? "Dark" : "Light"}</span>
+        <span aria-hidden="true">{theme === "dark" ? t("dark") : t("light")}</span>
       </button>{" "}
       {error !== null && (
         <span className="xi-field-error" role="alert">
-          {error}
+          {errorText(error)}
         </span>
       )}
     </span>

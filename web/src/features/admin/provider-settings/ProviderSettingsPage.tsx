@@ -1,3 +1,4 @@
+import { useLanguage } from "../../../shared/i18n";
 /* Admin provider settings form (S42).
  *
  * The route guard in app/pages.tsx hides this from non-admins. Authority
@@ -30,6 +31,7 @@ function messageFor(err: unknown): string {
 }
 
 export function ProviderSettingsPage() {
+  const { t, errorText } = useLanguage();
   const { sessionExpired } = useAuth();
   const [loaded, setLoaded] = useState(false);
   const [ready, setReady] = useState(false);
@@ -184,27 +186,27 @@ export function ProviderSettingsPage() {
   return (
     <div>
       <h2 className="xi-page-title" id="provider-settings-heading">
-        Provider settings
-      </h2>
+        {t("providerSettings")}</h2>
       <p className="xi-hint">
-        Saving does not verify the provider. Capability returns to untested on
-        save. The API key is never shown; status is configured or absent.
+        
+        {t("savingDoesNotVerifyTheProviderCapability")}
       </p>
-      {!loaded && <p>Loading provider settings…</p>}
+      {!loaded && <p>{t("loadingProviderSettings")}</p>}
       {error !== null && (
         <p className="xi-form-error" id="provider-error" role="alert">
-          {error}
+          {errorText(error)}
         </p>
       )}
       {ready && (
         <form className="xi-card" onSubmit={(event) => void save(event)} noValidate>
           <div className="xi-meta-pair">
-            <p id="provider-key-status">Key status: {keyStatus}</p>
-            <p id="provider-capability">Tool probe: {capability}</p>
+            <p id="provider-key-status">{t("keyStatus")} {keyStatus}</p>
+            <p id="provider-capability">{t("toolProbe")} {capability}</p>
           </div>
           <div className="xi-field">
             <label className="xi-label" htmlFor="provider-base-url">
-              Base URL
+              
+              {t("baseUrl")}
             </label>
             <input
               className="xi-input"
@@ -221,9 +223,8 @@ export function ProviderSettingsPage() {
               autoComplete="off"
             />
             <p className="xi-hint" id="provider-base-url-help">
-              Enter an HTTPS origin, a base ending in /v1, or a full chat endpoint.
-              An origin uses /v1/chat/completions; /v1 adds /chat/completions.
-              Custom endpoint paths are preserved.
+              
+              {t("enterAnHttpsOriginABaseEnding")}
             </p>
             {fieldErrors.base_url?.length > 0 && (
               <p className="xi-form-error" id="provider-base-url-error">
@@ -232,13 +233,15 @@ export function ProviderSettingsPage() {
             )}
             {effectiveEndpoint && (
               <p className="xi-hint" id="provider-effective-endpoint">
-                Saved endpoint: {effectiveEndpoint}
+                
+                {t("savedEndpoint")} {effectiveEndpoint}
               </p>
             )}
           </div>
           <div className="xi-field">
             <label className="xi-label" htmlFor="provider-model">
-              Model
+              
+              {t("model")}
             </label>
             <input
               className="xi-input"
@@ -256,7 +259,7 @@ export function ProviderSettingsPage() {
             )}
           </div>
           <div className="xi-field">
-            <label className="xi-label" htmlFor="provider-capability-mode">Capability mode</label>
+            <label className="xi-label" htmlFor="provider-capability-mode">{t("capabilityMode")}</label>
             <select
               className="xi-select"
               id="provider-capability-mode"
@@ -264,20 +267,20 @@ export function ProviderSettingsPage() {
               onChange={(event) => setCapabilityMode(event.target.value as CapabilityMode)}
               aria-describedby="provider-mode-help"
             >
-              <option value="schema">Schema</option>
-              <option value="json">JSON</option>
+              <option value="schema">{t("schema")}</option>
+              <option value="json">{t("json")}</option>
             </select>
             <p className="xi-hint" id="provider-mode-help">
-              {revision === null ? "No saved mode yet." : `Saved mode: ${savedMode}. Effective mode: ${effectiveMode}.`}
+              {revision === null ? t("noSavedModeYet") : `Saved mode: ${savedMode}. Effective mode: ${effectiveMode}.`}
               {revision !== null && overrideActive && ` Deployment override active: ${effectiveMode}.`}
               {detectedMode !== null
                 ? ` Detected provider mode: ${detectedMode} (last test).${detectedMode !== effectiveMode ? " This differs from the effective mode." : ""}`
-                : " Detection result unavailable; test the provider to check the mode."}
-              {" Test uses saved settings; detection does not select a mode."}
+                : t("detectionResultUnavailableTestTheProviderTo")}
+              {t("testUsesSavedSettingsDetectionDoesNot")}
             </p>
           </div>
           <div className="xi-field">
-            <label className="xi-label" htmlFor="provider-timeout">Provider timeout (seconds)</label>
+            <label className="xi-label" htmlFor="provider-timeout">{t("providerTimeoutSeconds")}</label>
             <input
               className="xi-input"
               id="provider-timeout"
@@ -291,8 +294,8 @@ export function ProviderSettingsPage() {
               aria-invalid={Boolean(fieldErrors.timeout_seconds?.length)}
             />
             <p className="xi-hint" id="provider-timeout-help">
-              10–900 seconds per provider request. Leave blank to use the deployment setting
-              (300 seconds by default). The effective value appears on Status.
+              
+              {t("providerTimeoutRange")}
             </p>
             <p className="xi-form-error" id="provider-timeout-error">
               {fieldErrors.timeout_seconds?.join(" ")}
@@ -308,12 +311,12 @@ export function ProviderSettingsPage() {
                 aria-invalid={Boolean(fieldErrors.local_endpoint_approved?.length)}
                 aria-describedby={`provider-local-approval-help${fieldErrors.local_endpoint_approved?.length ? " provider-local-approval-error" : ""}`}
               />{" "}
-              Approve this local endpoint
+              
+              {t("approveThisLocalEndpoint")}
             </label>
             <p className="xi-hint" id="provider-local-approval-help">
-              Allow a self-hosted provider on this saved host and port, including HTTP.
-              Metadata and link-local destinations remain blocked.
-              Changing the URL clears this approval.
+              
+              {t("allowASelfHostedProviderOnThis")}
             </p>
             {fieldErrors.local_endpoint_approved?.length > 0 && (
               <p className="xi-form-error" id="provider-local-approval-error">
@@ -331,12 +334,12 @@ export function ProviderSettingsPage() {
                 aria-invalid={Boolean(fieldErrors.trusted_proxy_approved?.length)}
                 aria-describedby={`provider-proxy-approval-help${fieldErrors.trusted_proxy_approved?.length ? " provider-proxy-approval-error" : ""}`}
               />{" "}
-              Trust this endpoint&apos;s fake-IP proxy
+              
+              {t("trustThisEndpointSFakeIpProxy")}
             </label>
             <p className="xi-hint" id="provider-proxy-approval-help">
-              Allow this saved host to resolve through a trusted proxy using 198.18.0.0/15.
-              Enable only when your network uses that proxy.
-              Changing the URL clears this approval.
+              
+              {t("allowThisSavedHostToResolveThrough")}
             </p>
             {fieldErrors.trusted_proxy_approved?.length > 0 && (
               <p className="xi-form-error" id="provider-proxy-approval-error">
@@ -347,7 +350,8 @@ export function ProviderSettingsPage() {
           {revision !== null && (
             <div className="xi-field">
               <label className="xi-label" htmlFor="provider-secret-action">
-                Saved key
+                
+                {t("savedKey")}
               </label>
               <select
                 className="xi-select"
@@ -359,13 +363,13 @@ export function ProviderSettingsPage() {
                   setSecretAction(event.target.value as SecretAction)
                 }
               >
-                <option value="unchanged">unchanged</option>
-                <option value="replace">replace</option>
-                <option value="clear">clear</option>
+                <option value="unchanged">{t("unchanged")}</option>
+                <option value="replace">{t("replace")}</option>
+                <option value="clear">{t("clear")}</option>
               </select>
               <p className="xi-hint">
-                Unchanged keeps the saved key and does not send a new one.
-                Replace stores the key you type. Clear removes it.
+                
+                {t("unchangedKeepsTheSavedKeyAndDoes")}
               </p>
               {fieldErrors.secret_action?.length > 0 && (
                 <p className="xi-form-error" id="provider-secret-action-error">
@@ -376,7 +380,8 @@ export function ProviderSettingsPage() {
           )}
           <div className="xi-field">
             <label className="xi-label" htmlFor="provider-api-key">
-              API key
+              
+              {t("apiKey")}
             </label>
             <input
               className="xi-input"
@@ -401,7 +406,7 @@ export function ProviderSettingsPage() {
               id="provider-save"
               disabled={busy !== null}
             >
-              {busy === "save" ? "Saving…" : "Save"}
+              {busy === "save" ? t("saving") : t("save")}
             </button>
             <button
               className="xi-btn xi-btn-secondary"
@@ -410,12 +415,13 @@ export function ProviderSettingsPage() {
               disabled={busy !== null || revision === null}
               onClick={() => void test()}
             >
-              {busy === "test" ? "Testing…" : "Test provider"}
+              {busy === "test" ? t("testing") : t("testProvider")}
             </button>
           </div>
           {affectedRuns !== null && (
             <p className="xi-status" id="provider-affected-runs" role="status">
-              Affected runs: {affectedRuns}
+              
+              {t("affectedRuns")} {affectedRuns}
             </p>
           )}
           {diagnostic !== null && (

@@ -1,3 +1,5 @@
+import { clinicalText } from "../../shared/messages";
+import { useLanguage } from "../../shared/i18n";
 /* Four adverse-effect panels with server-computed previews (S12,
  * plan.md §§2.2, 5; FR-20–21).
  *
@@ -292,6 +294,7 @@ export function EffectsSection({
   onSessionExpired,
   stepNumber,
 }: EffectsSectionProps) {
+  const { t, errorText, language, text } = useLanguage();
   const [preview, setPreview] = useState<EffectsPreview | null>(null);
   const [previewLoading, setPreviewLoading] = useState(true);
   const [previewError, setPreviewError] = useState<string | null>(null);
@@ -402,35 +405,35 @@ export function EffectsSection({
     });
 
   function effectClause(key: EffectKey, state: EffectState | null): string {
-    const title = EFFECT_TITLES[key];
+    const title = text(EFFECT_TITLES[key]);
     const local = slices[key];
     const status = state?.status ?? local.status;
     if (status === null) {
-      return `${title}: not recorded`;
+      return t("notRecordedEffect", { title });
     }
     if (status === "absent" || status === "not_assessed") {
-      return `${title}: ${status} (severity null, no questionnaire required)`;
+      return t("nonPresentEffect", { title, status: language === "en" ? status : t(status === "absent" ? "absent" : "notAssessed") });
     }
     const evaluation = state?.questionnaire.evaluation ?? null;
     if (evaluation === null || evaluation.status !== "complete") {
       const missing = evaluation?.missing_item_ids.length ?? 0;
       if (key === "tardive_dyskinesia") {
-        return `${title}: present — AIMS awaiting source, completion undefined (results null)`;
+        return t("awaitingAimsEffect", { title });
       }
-      return `${title}: present — incomplete (${missing} still needed, results null)`;
+      return t("incompleteEffect", { title, missing });
     }
     const scores = evaluation.scores ?? {};
     if (key === "akathisia") {
       const global = scores["global"];
       const label =
         typeof global === "number" ? (BARS_GLOBAL_LABELS[global] ?? "") : "";
-      return `${title}: present — BARS complete, global ${formatScore(global)} ${label}, component total ${formatScore(scores["component_total"])}`;
+      return t("completeBarsEffect", { title, global: formatScore(global), label: text(label), total: formatScore(scores["component_total"]) });
     }
     if (key === "parkinsonism") {
-      return `${title}: present — SAS complete, raw total ${formatScore(scores["raw_total"])}, mean ${formatScore(scores["mean"])} (no severity bands)`;
+      return t("completeSasEffect", { title, total: formatScore(scores["raw_total"]), mean: formatScore(scores["mean"]) });
     }
     const urgent = state?.urgent;
-    return `${title}: present — criteria recorded, urgent ${urgent === true ? "yes" : urgent === false ? "no" : "unknown"} (no total score)`;
+    return t("completeCriteriaEffect", { title, urgent: language === "en" ? urgent === true ? "yes" : urgent === false ? "no" : "unknown" : t(urgent === true ? "yes" : urgent === false ? "no" : "unknown") });
   }
 
   let verdict: string;
@@ -440,7 +443,12 @@ export function EffectsSection({
     const clauses = EFFECT_KEYS.map((key) =>
       effectClause(key, previewEffects?.[key] ?? null),
     );
-    verdict = `Adverse effects (server evaluation): ${clauses.join("; ")}. Severities exist only for present effects; absent and not assessed carry null severity and no completion requirement.`;
+    verdict = t("effectsVerdict", { clauses: clauses.join("; ") });
+  }
+
+  function translatedPrompt(key: EffectKey, item: { id: string; prompt: string }): string {
+    const instrument = key === "akathisia" ? "bars" : key === "parkinsonism" ? "sas" : "acute-dystonia-dx-criteria";
+    return clinicalText(language, instrument, preview?.definition_versions[key] ?? "v1", item.id, item.prompt);
   }
 
   function renderScaleInputs(
@@ -462,11 +470,11 @@ export function EffectsSection({
           }
           return (
             <fieldset key={item.id} className="xi-field">
-              <legend className="xi-label">{item.prompt}</legend>
+              <legend className="xi-label">{translatedPrompt(key, item)}</legend>
               <div
                 className="xi-radio-group"
                 role="radiogroup"
-                aria-label={item.prompt}
+                aria-label={translatedPrompt(key, item)}
               >
                 {options.map((value) => (
                   <label key={value} htmlFor={`${prefix}-${item.id}-${value}`}>
@@ -505,8 +513,10 @@ export function EffectsSection({
       const kept = Object.keys(local.answers).length;
       return (
         <p className="xi-hint">
-          Severity: null (not required for {local.status ?? "unrecorded"}{" "}
-          status).
+          
+          {t("severityNullNotRequiredFor")} {local.status ?? "unrecorded"}{" "}
+          
+          {t("status10")}
           {kept > 0 &&
             ` ${kept} saved answer${kept === 1 ? " is" : "s are"} kept; only the severity was cleared.`}
         </p>
@@ -521,7 +531,7 @@ export function EffectsSection({
       return (
         <div className="xi-field">
           <label className="xi-label" htmlFor="effect-akathisia-severity">
-            Reviewed severity (BARS global score, 0-5)
+            {t("barsReviewedSeverity")}
           </label>
           <select
             className="xi-select"
@@ -532,18 +542,17 @@ export function EffectsSection({
             onChange={(event) => setSeverity(key, event.target.value)}
             aria-describedby="effect-akathisia-severity-hint"
           >
-            <option value="">Not chosen</option>
+            <option value="">{t("notChosen")}</option>
             {[0, 1, 2, 3, 4, 5].map((n) => (
               <option key={n} value={n}>
-                {n} — {BARS_GLOBAL_LABELS[n]}
+                {n} — {text(BARS_GLOBAL_LABELS[n])}
               </option>
             ))}
           </select>
           <p className="xi-hint" id="effect-akathisia-severity-hint">
-            Must equal the recorded BARS global score
-            {typeof global === "number" ? ` (currently ${global})` : ""}; global
-            2 or greater indicates present. The global item is the principal
-            severity measure — no summed severity rule is used.
+            
+            {t("mustEqualTheRecordedBarsGlobalScore")}
+            {typeof global === "number" ? ` (currently ${global})` : ""}{t("global2OrGreaterIndicatesPresentThe")}
           </p>
         </div>
       );
@@ -551,7 +560,7 @@ export function EffectsSection({
     return (
       <div className="xi-field">
         <label className="xi-label" htmlFor={`effect-${key}-severity`}>
-          Reviewed severity (independent clinical judgment)
+          {t("reviewedSeverity")}
         </label>
         <select
           className="xi-select"
@@ -559,7 +568,7 @@ export function EffectsSection({
           value={typeof local.severity === "string" ? local.severity : ""}
           onChange={(event) => setSeverity(key, event.target.value)}
         >
-          <option value="">Not chosen</option>
+          <option value="">{t("notChosen")}</option>
           {REVIEWED_SEVERITIES.map((level) => (
             <option key={level} value={level}>
               {level}
@@ -581,17 +590,9 @@ export function EffectsSection({
 
     if (key === "tardive_dyskinesia") {
       return (
-        <div className="xi-effects-panel" aria-label="AIMS status">
+        <div className="xi-effects-panel" aria-label={t("aimsStatus")}>
           <p style={{ margin: 0 }}>
-            AIMS — complete form awaiting source. The tardive-dyskinesia
-            criteria reference AIMS but do not contain its complete form, so
-            no items are shown and none are invented. Present tardive
-            dyskinesia cannot clear questionnaire completion until the
-            complete source is reviewed. Research thresholds only
-            (Schooler-Kane): a regional score of 3 or greater in one region,
-            or 2 or greater in at least two regions, with at least 3 months
-            cumulative exposure and no alternative cause — never a total
-            score, never a diagnosis.
+            {t("aimsGuidance")}
           </p>
         </div>
       );
@@ -601,9 +602,7 @@ export function EffectsSection({
       return (
         <div>
           <p className="xi-hint">
-            Full BARS: observe seated then standing (2 minutes each, neutral
-            conversation), note other movements, then ask about inner
-            restlessness directly. All 4 items are required when present.
+            {t("barsGuidance")}
           </p>
           {renderScaleInputs(key, BARS_ITEMS, "bars", itemErrors)}
         </div>
@@ -614,13 +613,7 @@ export function EffectsSection({
       return (
         <div>
           <p className="xi-hint">
-            Full SAS: ten-item examination for dopamine-blocking-drug-induced
-            parkinsonian signs (rigidity emphasis). Use the same conditions
-            and, when possible, the same trained rater for serial assessments.
-            All 10 items are required when present. Original convention: mean
-            up to 0.3 within normal; greater than 0.3 abnormal. No
-            mild/moderate/severe bands exist — reviewed severity is
-            independent.
+            {t("sasGuidance")}
           </p>
           {renderScaleInputs(key, SAS_ITEMS, "sas", itemErrors)}
         </div>
@@ -630,11 +623,7 @@ export function EffectsSection({
     return (
       <div>
         <p className="xi-hint">
-          Acute Dystonia Dx Criteria: criteria-based checklist drafted from
-          the supplied criteria. There is no numeric scale and no total
-          score. All 5 criteria are required when present. Screen for
-          stridor or breathing difficulty at once — airway evaluation never
-          waits for this checklist.
+          {t("dystoniaGuidance")}
         </p>
         {ACUTE_ITEMS.map((item) => {
           const errorId =
@@ -643,11 +632,11 @@ export function EffectsSection({
               : undefined;
           return (
             <fieldset key={item.id} className="xi-field">
-              <legend className="xi-label">{item.prompt}</legend>
+              <legend className="xi-label">{translatedPrompt("acute_dystonia", item)}</legend>
               <div
                 className="xi-radio-group"
                 role="radiogroup"
-                aria-label={item.prompt}
+                aria-label={translatedPrompt("acute_dystonia", item)}
               >
                 {ACUTE_OPTIONS.map((value) => (
                   <label key={value} htmlFor={`acute-${item.id}-${value}`}>
@@ -660,7 +649,7 @@ export function EffectsSection({
                       onChange={() => setAnswer(key, item.id, value)}
                       aria-describedby={errorId}
                     />
-                    {value === "yes" ? "Yes" : value === "no" ? "No" : "Unknown"}
+                    {value === "yes" ? t("yes") : value === "no" ? t("no") : t("unknown")}
                   </label>
                 ))}
               </div>
@@ -674,8 +663,8 @@ export function EffectsSection({
         })}
         {missing.length === 0 && evaluation?.status === "complete" && (
           <p className="xi-hint">
-            Checklist complete — recorded per criterion with no total; urgent
-            flag {state?.urgent === true ? "yes" : state?.urgent === false ? "no" : "unknown"}.
+            
+            {t("checklistCompleteRecordedPerCriterionWithNo")} {state?.urgent === true ? t("yes18") : state?.urgent === false ? t("no19") : t("unknown20")}.
           </p>
         )}
       </div>
@@ -691,7 +680,7 @@ export function EffectsSection({
       return (
         <div id={`effect-${key}-results`}>
           <p className="xi-hint">
-            AIMS results: null (awaiting source — never zero, never a total).
+            {t("awaitingAimsResults")}
           </p>
         </div>
       );
@@ -701,11 +690,11 @@ export function EffectsSection({
       return (
         <div id={`effect-${key}-results`}>
           <p className="xi-hint">
-            Results: null (never zero) until every required item is answered.
+            {t("awaitingCompleteResults")}
           </p>
           {missing.length > 0 && slices[key].status === "present" && (
             <div id={`effect-${key}-still-needed`}>
-              <p className="xi-hint">Still needed:</p>
+              <p className="xi-hint">{t("stillNeeded")}</p>
               <ul>
                 {missing.map((id) => (
                   <li key={id}>{id}</li>
@@ -721,32 +710,32 @@ export function EffectsSection({
       const findings = evaluation.findings ?? {};
       return (
         <div id={`effect-${key}-results`}>
-          <table className="xi-table" aria-label="BARS scores">
+          <table className="xi-table" aria-label={t("barsScores")}>
             <thead>
               <tr>
-                <th scope="col">Scale</th>
-                <th scope="col">Score</th>
+                <th scope="col">{t("scale")}</th>
+                <th scope="col">{t("score")}</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Objective /3</td>
+                <td>{t("objectiveScore")}</td>
                 <td>{formatScore(scores["objective"])}</td>
               </tr>
               <tr>
-                <td>Awareness /3</td>
+                <td>{t("awarenessScore")}</td>
                 <td>{formatScore(scores["awareness"])}</td>
               </tr>
               <tr>
-                <td>Distress /3</td>
+                <td>{t("distressScore")}</td>
                 <td>{formatScore(scores["distress"])}</td>
               </tr>
               <tr>
-                <td>Global /5 (principal severity)</td>
+                <td>{t("globalScore")}</td>
                 <td>{formatScore(scores["global"])}</td>
               </tr>
               <tr>
-                <td>Component total (descriptive, 0-9)</td>
+                <td>{t("componentTotal")}</td>
                 <td>{formatScore(scores["component_total"])}</td>
               </tr>
             </tbody>
@@ -754,8 +743,7 @@ export function EffectsSection({
           <p className="xi-hint">
             {typeof findings["global_label"] === "string" &&
               `Global label: ${String(findings["global_label"])}. `}
-            Threshold {findings["threshold_met"] === true ? "met" : "not met"} (global
-            2 or greater indicates present).
+            {t("threshold")} {findings["threshold_met"] === true ? t("met21") : t("notMet22")}  {t("global2OrGreaterIndicatesPresent")}
             {typeof findings["pseudoakathisia_note"] === "string" &&
               ` ${String(findings["pseudoakathisia_note"])}`}
           </p>
@@ -766,27 +754,27 @@ export function EffectsSection({
     if (key === "parkinsonism") {
       return (
         <div id={`effect-${key}-results`}>
-          <table className="xi-table" aria-label="SAS scores">
+          <table className="xi-table" aria-label={t("sasScores")}>
             <thead>
               <tr>
-                <th scope="col">Scale</th>
-                <th scope="col">Score</th>
+                <th scope="col">{t("scale")}</th>
+                <th scope="col">{t("score")}</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Raw total (0-40)</td>
+                <td>{t("rawTotal")}</td>
                 <td>{formatScore(scores["raw_total"])}</td>
               </tr>
               <tr>
-                <td>Mean (0-4)</td>
+                <td>{t("meanScore")}</td>
                 <td>{formatScore(scores["mean"])}</td>
               </tr>
             </tbody>
           </table>
           <p className="xi-hint">
-            No mild/moderate/severe bands are defined from the total — the
-            reviewed severity above is independent clinical judgment.
+            
+            {t("noMildModerateSevereBandsAreDefined")}
           </p>
         </div>
       );
@@ -795,7 +783,7 @@ export function EffectsSection({
     return (
       <div id={`effect-${key}-results`}>
         <p className="xi-hint">
-          Results: criteria recorded per item with no total score (never zero).
+          {t("criteriaResults")}
         </p>
       </div>
     );
@@ -811,16 +799,11 @@ export function EffectsSection({
   return (
     <section className="xi-card" aria-labelledby="effects-heading">
       <h3 className="xi-section-title" id="effects-heading">
-        Adverse effects (step {stepNumber})
+        
+        {t("adverseEffectsStep")} {stepNumber})
       </h3>
       <p className="xi-hint">
-        Each of the four follow-up effects is present, absent, or not
-        assessed. Nothing is pre-filled. Answers autosave through the same
-        draft as the rest of this encounter (about one second after changing
-        an answer). Full questionnaire completion is required only when the
-        corresponding effect is present; absent and not-assessed effects
-        carry null severity with no completion requirement. Every result
-        below is computed by the server.
+        {t("effectsIntro")}
       </p>
 
       {urgent && (
@@ -834,14 +817,10 @@ export function EffectsSection({
             id="effect-urgent-heading"
             style={{ margin: "0 0 8px", fontSize: 16 }}
           >
-            Urgent: possible airway compromise — arrange emergency assessment
-            now
+            {t("urgentAirway")}
           </h4>
           <p style={{ marginTop: 0, marginBottom: 0 }}>
-            Stridor or breathing difficulty was recorded (addx_urgent_airway
-            yes), suggesting possible laryngeal dystonia. Do not delay airway
-            evaluation to complete the checklist or wait for any other
-            result. This warning persists until the answer changes.
+            {t("airwayWarning")}
           </p>
         </div>
       )}
@@ -853,17 +832,17 @@ export function EffectsSection({
           <div
             key={key}
             className="xi-effects-panel"
-            aria-label={EFFECT_TITLES[key]}
+            aria-label={text(EFFECT_TITLES[key])}
           >
             <h4 className="xi-section-title" style={{ fontSize: 16 }}>
-              {EFFECT_TITLES[key]}
+              {text(EFFECT_TITLES[key])}
             </h4>
             <fieldset className="xi-field">
-              <legend className="xi-label">Effect status</legend>
+              <legend className="xi-label">{t("effectStatus")}</legend>
               <div
                 className="xi-radio-group"
                 role="radiogroup"
-                aria-label={`${EFFECT_TITLES[key]} status`}
+                aria-label={`${text(EFFECT_TITLES[key])} status`}
               >
                 {STATUSES.map((status) => (
                   <label key={status} htmlFor={`effect-${key}-${status}`}>
@@ -876,10 +855,10 @@ export function EffectsSection({
                       onChange={() => setStatus(key, status)}
                     />
                     {status === "present"
-                      ? "Present"
+                      ? t("present")
                       : status === "absent"
-                        ? "Absent"
-                        : "Not assessed"}
+                        ? t("absent")
+                        : t("notAssessed")}
                   </label>
                 ))}
               </div>
@@ -887,8 +866,7 @@ export function EffectsSection({
 
             {local.status === null && (
               <p className="xi-hint">
-                Choose present, absent, or not assessed. The questionnaire
-                appears only for present.
+                {t("effectStatusGuide")}
               </p>
             )}
 
@@ -901,15 +879,15 @@ export function EffectsSection({
 
       <div style={{ marginTop: 16 }}>
         <h4 className="xi-section-title" style={{ fontSize: 16 }}>
-          Server effects preview
+          {t("serverEffectsPreview")}
         </h4>
         {previewLoading && preview === null && (
-          <p>Loading adverse-effects preview…</p>
+          <p>{t("loadingEffects")}</p>
         )}
         {previewError !== null && preview === null && (
           <div>
             <p className="xi-form-error" role="alert">
-              {previewError}
+              {errorText(previewError)}
             </p>
             <div className="xi-row-actions" style={{ marginTop: 8 }}>
               <button
@@ -921,8 +899,7 @@ export function EffectsSection({
                   void refreshPreview();
                 }}
               >
-                Retry
-              </button>
+                {t("retry")}</button>
             </div>
           </div>
         )}
@@ -939,12 +916,13 @@ export function EffectsSection({
               {verdict}
             </p>
             <p className="xi-hint">
-              Server evaluation · definitions{" "}
+              
+              {t("serverEvaluationDefinitions")}{" "}
               {EFFECT_KEYS.map(
                 (key) =>
                   `${key} ${preview.definition_versions[key] ?? "?"}`,
               ).join(", ")}
-              {" · "}saved revision {preview.revision}
+              {" · "}{t("savedRevision29")} {preview.revision}
               {answersPending &&
                 " · unsaved edits pending — preview reflects the last saved revision"}
               {previewError !== null &&

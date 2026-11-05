@@ -1,3 +1,4 @@
+import { useLanguage } from "../../../shared/i18n";
 import { useCallback, useEffect, useState } from "react";
 import {
   ApiError,
@@ -58,11 +59,13 @@ function ReviewFields({
   review: ReviewInput;
   onChange: (next: ReviewInput) => void;
 }) {
+  const { t } = useLanguage();
   return (
     <>
       <div className="xi-field">
         <label className="xi-label" htmlFor={`${idPrefix}-reviewer`}>
-          Reviewer
+          
+          {t("reviewer")}
         </label>
         <input
           className="xi-input"
@@ -73,7 +76,8 @@ function ReviewFields({
       </div>
       <div className="xi-field">
         <label className="xi-label" htmlFor={`${idPrefix}-decision`}>
-          Review decision
+          
+          {t("reviewDecision")}
         </label>
         <select
           className="xi-select"
@@ -83,14 +87,15 @@ function ReviewFields({
             onChange({ ...review, decision: event.target.value as ReviewDecision })
           }
         >
-          <option value="draft">draft</option>
-          <option value="awaiting_review">awaiting_review</option>
-          <option value="approved">approved</option>
+          <option value="draft">{t("draft291")}</option>
+          <option value="awaiting_review">{t("awaitingReview")}</option>
+          <option value="approved">{t("approved")}</option>
         </select>
       </div>
       <div className="xi-field">
         <label className="xi-label" htmlFor={`${idPrefix}-date`}>
-          Review date
+          
+          {t("reviewDate")}
         </label>
         <input
           className="xi-input"
@@ -105,6 +110,7 @@ function ReviewFields({
 }
 
 function ImportForm({ onImported }: { onImported: () => void }) {
+  const { t, errorText } = useLanguage();
   const { sessionExpired } = useAuth();
   const [name, setName] = useState("");
   const [xmlText, setXmlText] = useState("");
@@ -151,10 +157,11 @@ function ImportForm({ onImported }: { onImported: () => void }) {
   return (
     <section className="xi-card" aria-labelledby="import-heading">
       <h3 className="xi-section-title" id="import-heading">
-        Import network XML
+        
+        {t("importNetworkXml")}
       </h3>
       <form
-        aria-label="Import network"
+        aria-label={t("importNetwork")}
         data-testid="networks-import-form"
         id="networks-import-form"
         onSubmit={handleSubmit}
@@ -162,7 +169,8 @@ function ImportForm({ onImported }: { onImported: () => void }) {
       >
         <div className="xi-field">
           <label className="xi-label" htmlFor="import-name">
-            Network name
+            
+            {t("networkName")}
           </label>
           <input
             className="xi-input"
@@ -180,7 +188,8 @@ function ImportForm({ onImported }: { onImported: () => void }) {
         </div>
         <div className="xi-field">
           <label className="xi-label" htmlFor="import-xml">
-            XMLBIF XML
+            
+            {t("xmlbifXml")}
           </label>
           <textarea
             className="xi-input"
@@ -201,7 +210,7 @@ function ImportForm({ onImported }: { onImported: () => void }) {
         <ReviewFields idPrefix="import" review={review} onChange={setReview} />
         {formError !== null && (
           <p className="xi-form-error" role="alert">
-            {formError}
+            {errorText(formError)}
           </p>
         )}
         {done !== null && (
@@ -210,7 +219,7 @@ function ImportForm({ onImported }: { onImported: () => void }) {
           </p>
         )}
         <button className="xi-btn xi-btn-primary" type="submit" disabled={busy}>
-          {busy ? "Importing…" : "Import network"}
+          {busy ? t("importing") : t("importNetwork")}
         </button>
       </form>
     </section>
@@ -218,6 +227,7 @@ function ImportForm({ onImported }: { onImported: () => void }) {
 }
 
 function ValidationDetails({ versionId }: { versionId: string }) {
+  const { t } = useLanguage();
   const { sessionExpired } = useAuth();
   const [state, setState] = useState<
     | { kind: "loading" }
@@ -258,15 +268,15 @@ function ValidationDetails({ versionId }: { versionId: string }) {
   if (state.kind === "loading") {
     return (
       <section aria-labelledby="validation-heading" aria-busy="true">
-        <h4 id="validation-heading">Validation details</h4>
-        <p>Loading validation…</p>
+        <h4 id="validation-heading">{t("validationDetails")}</h4>
+        <p>{t("loadingValidation")}</p>
       </section>
     );
   }
   if (state.kind === "error") {
     return (
       <section aria-labelledby="validation-heading">
-        <h4 id="validation-heading">Validation details</h4>
+        <h4 id="validation-heading">{t("validationDetails")}</h4>
         <p className="xi-form-error" role="alert">
           {state.message}
         </p>
@@ -280,47 +290,48 @@ function ValidationDetails({ versionId }: { versionId: string }) {
       data-testid="networks-validation"
       id="networks-validation"
     >
-      <h4 id="validation-heading">Validation details</h4>
+      <h4 id="validation-heading">{t("validationDetails")}</h4>
       <p className="xi-hint">
-        Status {report.status} · review {report.review.decision}
-        {report.review.reviewer ? ` by ${report.review.reviewer}` : ""} · source{" "}
+        {t("status")}{report.status}  {t("review304")} {report.review.decision}
+        {report.review.reviewer ? ` by ${report.review.reviewer}` : ""}  {t("source305")}{" "}
         {report.source_hash.slice(0, 12)}…
       </p>
-      <h5>Structural (XSD)</h5>
+      <h5>{t("structuralXsd")}</h5>
       <p>
         <span className={report.structural.xsd_valid ? "xi-badge xi-badge-active" : "xi-badge xi-badge-inactive"}>
-          {report.structural.xsd_valid ? "XSD structurally valid" : "XSD structurally invalid"}
+          {report.structural.xsd_valid ? t("xsdStructurallyValid") : t("xsdStructurallyInvalid")}
         </span>{" "}
         <span className="xi-badge">
           {report.structural.activatable_v1
-            ? "Activatable (v1 admission)"
-            : "Not activatable (v1 admission)"}
+            ? t("activatableV1Admission")
+            : t("notActivatableV1Admission")}
         </span>
       </p>
       {report.structural.nonactivatable_reasons.length > 0 && (
-        <ul aria-label="Structural reasons this version cannot activate">
+        <ul aria-label={t("structuralReasonsThisVersionCannotActivate")}>
           {report.structural.nonactivatable_reasons.map((reason) => (
             <li key={reason}>{reason}</li>
           ))}
         </ul>
       )}
       {report.structural.xsd_errors.length > 0 && (
-        <ul aria-label="XSD errors">
+        <ul aria-label={t("xsdErrors")}>
           {report.structural.xsd_errors.map((error, index) => (
             <li key={index}>
-              line {error.line}, column {error.column}: {error.message}
+              
+              {t("line")} {error.line}{t("column")} {error.column}: {error.message}
             </li>
           ))}
         </ul>
       )}
-      <h5>Semantic</h5>
+      <h5>{t("semantic")}</h5>
       <p>
         <span className={report.semantic.valid ? "xi-badge xi-badge-active" : "xi-badge xi-badge-inactive"}>
-          {report.semantic.valid ? "Semantics valid" : "Semantics invalid"}
+          {report.semantic.valid ? t("semanticsValid") : t("semanticsInvalid")}
         </span>
       </p>
       {report.semantic.errors.length > 0 && (
-        <ul aria-label="Semantic errors">
+        <ul aria-label={t("semanticErrors")}>
           {report.semantic.errors.map((error, index) => (
             <li key={`${error.code}-${index}`}>
               {error.code}
@@ -329,14 +340,14 @@ function ValidationDetails({ versionId }: { versionId: string }) {
           ))}
         </ul>
       )}
-      <h5>Content (question package)</h5>
+      <h5>{t("contentQuestionPackage")}</h5>
       <p>
         <span className={report.content.valid ? "xi-badge xi-badge-active" : "xi-badge xi-badge-inactive"}>
-          {report.content.valid ? "Content valid" : "Content invalid"}
+          {report.content.valid ? t("contentValid") : t("contentInvalid")}
         </span>
       </p>
       {report.content.errors.length > 0 && (
-        <ul aria-label="Content errors">
+        <ul aria-label={t("contentErrors")}>
           {report.content.errors.map((error, index) => (
             <li key={`${error.code}-${index}`}>
               {error.code}: {error.message}
@@ -344,15 +355,15 @@ function ValidationDetails({ versionId }: { versionId: string }) {
           ))}
         </ul>
       )}
-      <h5>Pipeline admission</h5>
+      <h5>{t("pipelineAdmission")}</h5>
       <p>
         <span className={report.admission.executable ? "xi-badge xi-badge-active" : "xi-badge xi-badge-inactive"}>
-          {report.admission.executable ? "Executable" : "Not executable"}
+          {report.admission.executable ? t("executable") : t("notExecutable")}
         </span>{" "}
-        <span className="xi-hint">Pipeline admission only — never clinical validity.</span>
+        <span className="xi-hint">{t("pipelineAdmissionOnlyNeverClinicalValidity")}</span>
       </p>
       {report.admission.diagnostics.length > 0 && (
-        <ul aria-label="Admission diagnostics">
+        <ul aria-label={t("admissionDiagnostics")}>
           {report.admission.diagnostics.map((diagnostic, index) => (
             <li key={`${diagnostic.code}-${index}`}>
               {diagnostic.code}: {diagnostic.message}
@@ -371,6 +382,7 @@ function BundlePanel({
   network: NetworkItem;
   version: VersionItem;
 }) {
+  const { t, errorText } = useLanguage();
   const { sessionExpired } = useAuth();
   const [workflow, setWorkflow] = useState<Workflow>("registration");
   const [review, setReview] = useState<ReviewInput>({
@@ -434,15 +446,17 @@ function BundlePanel({
       data-testid="networks-activation"
       id="networks-activation"
     >
-      <h4 id="activation-heading">Workflow activation</h4>
+      <h4 id="activation-heading">{t("workflowActivation")}</h4>
       <p className="xi-hint">
-        Target: {network.name} version {version.version_number} ({version.source_hash.slice(0, 12)}
-        …). Activation rejects incomplete or unreviewed bundles; the pointer
-        move is atomic and audited.
+        
+        {t("target")} {network.name}  {t("version")} {version.version_number} ({version.source_hash.slice(0, 12)}
+        
+        {t("activationRejectsIncompleteOrUnreviewedBundlesThe")}
       </p>
       <div className="xi-field">
         <label className="xi-label" htmlFor="bundle-workflow">
-          Workflow
+          
+          {t("workflow")}
         </label>
         <select
           className="xi-select"
@@ -450,14 +464,15 @@ function BundlePanel({
           value={workflow}
           onChange={(event) => setWorkflow(event.target.value as Workflow)}
         >
-          <option value="registration">registration</option>
-          <option value="followup">followup</option>
+          <option value="registration">{t("registration")}</option>
+          <option value="followup">{t("followup")}</option>
         </select>
       </div>
       <ReviewFields idPrefix="bundle" review={review} onChange={setReview} />
       <div className="xi-field">
         <label className="xi-label" htmlFor="bundle-revision">
-          Expected pointer revision (If-Match; blank means no precondition)
+          
+          {t("expectedPointerRevisionIfMatchBlankMeans")}
         </label>
         <input
           className="xi-input"
@@ -479,7 +494,8 @@ function BundlePanel({
               setConfirming("activate");
             }}
           >
-            Activate…
+            
+            {t("activate")}
           </button>
           <button
             className="xi-btn xi-btn-secondary"
@@ -491,21 +507,23 @@ function BundlePanel({
               setConfirming("rollback");
             }}
           >
-            Roll back…
+            
+            {t("rollBack")}
           </button>
         </div>
       ) : (
         <div className="xi-warning-panel" role="alertdialog" aria-labelledby="bundle-confirm-heading" aria-describedby="bundle-confirm-detail">
           <h5 id="bundle-confirm-heading" style={{ marginTop: 0 }}>
-            Confirm {confirming === "activate" ? "activation" : "rollback"}
+            
+            {t("confirm")} {confirming === "activate" ? t("activation") : t("rollback")}
           </h5>
           <p id="bundle-confirm-detail" style={{ marginBottom: 8 }}>
-            {confirming === "activate" ? "Activate" : "Roll back"} workflow{" "}
-            <strong>{workflow}</strong> to {network.name} version{" "}
-            {version.version_number} with review {review.decision}
-            {review.reviewer ? ` by ${review.reviewer}` : ""}. Expected revision:{" "}
+            {confirming === "activate" ? t("activate341") : t("rollBack342")}  {t("workflow343")}{" "}
+            <strong>{workflow}</strong>  {t("to")} {network.name}  {t("version")}{" "}
+            {version.version_number}  {t("withReview")} {review.decision}
+            {review.reviewer ? ` by ${review.reviewer}` : ""}{t("expectedRevision")}{" "}
             {expectedRevision.trim() === ""
-              ? "none (moves unconditionally)"
+              ? t("noneMovesUnconditionally")
               : `If-Match "${expectedRevision.trim()}"`}.
           </p>
           <div className="xi-row-actions">
@@ -515,7 +533,7 @@ function BundlePanel({
               disabled={busy}
               onClick={() => void handleConfirm()}
             >
-              {busy ? "Working…" : `Confirm ${confirming === "activate" ? "activation" : "rollback"}`}
+              {busy ? t("working") : `Confirm ${confirming === "activate" ? t("activation") : t("rollback")}`}
             </button>
             <button
               className="xi-btn xi-btn-secondary"
@@ -523,20 +541,20 @@ function BundlePanel({
               disabled={busy}
               onClick={() => setConfirming(null)}
             >
-              Cancel
-            </button>
+              {t("cancel")}</button>
           </div>
         </div>
       )}
       {error !== null && (
         <p className="xi-form-error" role="alert">
-          {error}
+          {errorText(error)}
         </p>
       )}
       {result !== null && (
         <p className="xi-status" role="status">
-          Pointer revision {result.revision}
-          {result.etag ? ` (ETag ${result.etag})` : " (no ETag returned)"} for workflow{" "}
+          
+          {t("pointerRevision")} {result.revision}
+          {result.etag ? ` (ETag ${result.etag})` : t("noEtagReturned")}  {t("forWorkflow")}{" "}
           {result.workflow}.
         </p>
       )}
@@ -545,6 +563,7 @@ function BundlePanel({
 }
 
 function VersionHistory({ network }: { network: NetworkItem }) {
+  const { t, errorText } = useLanguage();
   const { sessionExpired } = useAuth();
   const [state, setState] = useState<
     | { kind: "loading" }
@@ -654,8 +673,8 @@ function VersionHistory({ network }: { network: NetworkItem }) {
 
   return (
     <div data-testid="networks-versions" id="networks-versions">
-      <h3 className="xi-section-title">Version history: {network.name}</h3>
-      {state.kind === "loading" && <p>Loading versions…</p>}
+      <h3 className="xi-section-title">{t("versionHistory")} {network.name}</h3>
+      {state.kind === "loading" && <p>{t("loadingVersions")}</p>}
       {state.kind === "error" && (
         <div>
           <p className="xi-form-error" role="alert">
@@ -666,22 +685,21 @@ function VersionHistory({ network }: { network: NetworkItem }) {
             type="button"
             onClick={() => void reload()}
           >
-            Retry
-          </button>
+            {t("retry")}</button>
         </div>
       )}
       {state.kind === "ready" &&
         (state.items.length === 0 ? (
-          <p>No versions yet.</p>
+          <p>{t("noVersionsYet")}</p>
         ) : (
           <table className="xi-table" aria-label={`Versions of ${network.name}`}>
             <thead>
               <tr>
-                <th scope="col">Version</th>
-                <th scope="col">Status</th>
-                <th scope="col">Review</th>
-                <th scope="col">Source hash</th>
-                <th scope="col">Actions</th>
+                <th scope="col">{t("version354")}</th>
+                <th scope="col">{t("status")}</th>
+                <th scope="col">{t("review")}</th>
+                <th scope="col">{t("sourceHash")}</th>
+                <th scope="col">{t("actions")}</th>
               </tr>
             </thead>
             <tbody>
@@ -700,7 +718,8 @@ function VersionHistory({ network }: { network: NetworkItem }) {
                         type="button"
                         onClick={() => setSelectedVersionId(version.id)}
                       >
-                        Inspect
+                        
+                        {t("inspect")}
                       </button>
                       <button
                         className="xi-btn xi-btn-secondary"
@@ -709,7 +728,7 @@ function VersionHistory({ network }: { network: NetworkItem }) {
                         disabled={exportingId === version.id}
                         onClick={() => void handleExport(version)}
                       >
-                        {exportingId === version.id ? "Exporting…" : "Export XML"}
+                        {exportingId === version.id ? t("exporting") : t("exportXml")}
                       </button>
                     </div>
                   </td>
@@ -720,19 +739,20 @@ function VersionHistory({ network }: { network: NetworkItem }) {
         ))}
       {exportError !== null && (
         <p className="xi-form-error" role="alert">
-          {exportError}
+          {errorText(exportError)}
         </p>
       )}
       <section className="xi-card" aria-labelledby="new-version-heading">
-        <h4 id="new-version-heading">New immutable version (edit as new row)</h4>
+        <h4 id="new-version-heading">{t("newImmutableVersionEditAsNewRow")}</h4>
         <p className="xi-hint">
-          Editing never rewrites history: the new XML becomes the next version
-          number and prior bytes, hashes, and reports stay intact.
+          
+          {t("editingNeverRewritesHistoryTheNewXml")}
         </p>
-        <form aria-label="Create version" onSubmit={handleNewVersion} noValidate>
+        <form aria-label={t("createVersion")} onSubmit={handleNewVersion} noValidate>
           <div className="xi-field">
             <label className="xi-label" htmlFor={`version-xml-${network.id}`}>
-              XMLBIF XML
+              
+              {t("xmlbifXml")}
             </label>
             <textarea
               className="xi-input"
@@ -750,11 +770,11 @@ function VersionHistory({ network }: { network: NetworkItem }) {
           />
           {editError !== null && (
             <p className="xi-form-error" role="alert">
-              {editError}
+              {errorText(editError)}
             </p>
           )}
           <button className="xi-btn xi-btn-primary" type="submit" disabled={busy}>
-            {busy ? "Saving…" : "Save as new version"}
+            {busy ? t("saving") : t("saveAsNewVersion")}
           </button>
         </form>
       </section>
@@ -772,6 +792,7 @@ function VersionHistory({ network }: { network: NetworkItem }) {
 }
 
 export function NetworksPage() {
+  const { t } = useLanguage();
   const { sessionExpired } = useAuth();
   const [state, setState] = useState<
     | { kind: "loading" }
@@ -821,19 +842,17 @@ export function NetworksPage() {
   return (
     <div>
       <h2 className="xi-page-title" data-testid="networks-heading" id="networks-heading">
-        Model networks
-      </h2>
+        {t("modelNetworks")}</h2>
       <p className="xi-hint">
-        Immutable version administration. No draft network is active by default;
-        activation is an explicit, audited pointer move per workflow.
+        
+        {t("immutableVersionAdministrationNoDraftNetworkIs")}
       </p>
       <ImportForm onImported={() => void reload()} />
       <section className="xi-card" aria-labelledby="network-list-heading">
         <h3 className="xi-section-title" id="network-list-heading">
-          Networks
-          {state.kind === "ready" && ` (${state.total})`}
+          {t("networks")}{state.kind === "ready" && ` (${state.total})`}
         </h3>
-        {state.kind === "loading" && <p>Loading networks…</p>}
+        {state.kind === "loading" && <p>{t("loadingNetworks")}</p>}
         {state.kind === "error" && (
           <div>
             <p className="xi-form-error" role="alert">
@@ -844,25 +863,24 @@ export function NetworksPage() {
               type="button"
               onClick={() => void reload()}
             >
-              Retry
-            </button>
+              {t("retry")}</button>
           </div>
         )}
         {state.kind === "ready" &&
           (state.items.length === 0 ? (
-            <p>No networks yet. Import XML above to create the first version.</p>
+            <p>{t("noNetworksYetImportXmlAboveTo")}</p>
           ) : (
             <table
               className="xi-table"
-              aria-label="Networks"
+              aria-label={t("networks")}
               data-testid="networks-list"
               id="networks-list"
             >
               <thead>
                 <tr>
-                  <th scope="col">Name</th>
-                  <th scope="col">Versions</th>
-                  <th scope="col">Actions</th>
+                  <th scope="col">{t("name")}</th>
+                  <th scope="col">{t("versions")}</th>
+                  <th scope="col">{t("actions")}</th>
                 </tr>
               </thead>
               <tbody>
@@ -876,7 +894,7 @@ export function NetworksPage() {
                         type="button"
                         onClick={() => setSelectedNetworkId(network.id)}
                       >
-                        {network.id === selectedNetworkId ? "Selected" : "Select"}
+                        {network.id === selectedNetworkId ? t("selected") : t("select")}
                       </button>
                     </td>
                   </tr>
@@ -886,7 +904,7 @@ export function NetworksPage() {
           ))}
       </section>
       {selected !== null && (
-        <section className="xi-card" aria-label="Versions">
+        <section className="xi-card" aria-label={t("versions")}>
           <VersionHistory key={selected.id} network={selected} />
         </section>
       )}

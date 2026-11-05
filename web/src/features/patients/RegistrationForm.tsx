@@ -1,3 +1,4 @@
+import { useLanguage } from "../../shared/i18n";
 /* Demographics registration form (S06, plan.md §2.2, FR-10).
  *
  * Physician-only: administrators see a denial (no create button), matching
@@ -38,6 +39,7 @@ const EMPTY: DemographicsFields = {
 type Touched = Partial<Record<DemographicsField, boolean>>;
 
 export function RegistrationPage() {
+  const { t } = useLanguage();
   const { user, sessionExpired } = useAuth();
 
   // Route guards complement the server checks: administrators never get the
@@ -45,10 +47,9 @@ export function RegistrationPage() {
   if (user?.role !== "physician") {
     return (
       <div>
-        <h2 className="xi-page-title">Add New Patient</h2>
+        <h2 className="xi-page-title">{t("addPatient")}</h2>
         <p className="xi-form-error" role="alert">
-          Physician access required. Administrators read the patient directory;
-          they do not register patients.
+          {t("physicianRequired")}
         </p>
       </div>
     );
@@ -58,6 +59,7 @@ export function RegistrationPage() {
 }
 
 function RegistrationForm() {
+  const { t, text, errorText } = useLanguage();
   const { sessionExpired } = useAuth();
   const [fields, setFields] = useState<DemographicsFields>(EMPTY);
   const [touched, setTouched] = useState<Touched>({});
@@ -181,8 +183,8 @@ function RegistrationForm() {
 
   return (
     <div>
-      <h2 className="xi-page-title">Add New Patient</h2>
-      <nav className="xi-wizard-nav" aria-label="Encounter pages" id="wizard-pages">
+      <h2 className="xi-page-title">{t("addPatient")}</h2>
+      <nav className="xi-wizard-nav" aria-label={t("encounterPages")} id="wizard-pages">
         {REGISTRATION_WIZARD_STEPS.map((item, index) => {
           const current = item.id === "register";
           return (
@@ -195,7 +197,7 @@ function RegistrationForm() {
               tabIndex={current ? undefined : -1}
               onClick={(event) => holdStep(event, current)}
             >
-              {index + 1}. {item.label}
+              {index + 1}. {text(item.label)}
             </a>
           );
         })}
@@ -208,26 +210,22 @@ function RegistrationForm() {
       >
       <section className="xi-card" aria-labelledby="demographics-heading">
         <h3 className="xi-section-title" id="demographics-heading">
-          Demographics (step 1)
+          {t("stepDemographics")}
         </h3>
         <p className="xi-hint">
-          Names use 1–100 letters, spaces, hyphens or apostrophes and must
-          include at least one letter, with no leading, trailing or double
-          spaces. The patient ID is exactly 10 ASCII
-          digits and keeps leading zeros. Nothing is sent until the form is
-          valid. Later steps open after the patient is registered.
+          {t("registrationRules")}
         </p>
         <form
           className="xi-form-grid"
-          aria-label="Register patient"
+          aria-label={t("registerPatient")}
           onSubmit={handleSubmit}
           noValidate
         >
           <div className="xi-field">
             <label className="xi-label" htmlFor="reg-given-name">
-              Given name
+              {t("givenName")}
             </label>
-            <input
+            <input dir="auto"
               className="xi-input"
               id="reg-given-name"
               autoComplete="off"
@@ -238,15 +236,15 @@ function RegistrationForm() {
             />
             {givenNameError !== null && (
               <p className="xi-field-error" id="givenName-error">
-                {givenNameError}
+                {errorText(givenNameError)}
               </p>
             )}
           </div>
           <div className="xi-field">
             <label className="xi-label" htmlFor="reg-family-name">
-              Family name
+              {t("familyName")}
             </label>
-            <input
+            <input dir="auto"
               className="xi-input"
               id="reg-family-name"
               autoComplete="off"
@@ -257,15 +255,15 @@ function RegistrationForm() {
             />
             {familyNameError !== null && (
               <p className="xi-field-error" id="familyName-error">
-                {familyNameError}
+                {errorText(familyNameError)}
               </p>
             )}
           </div>
           <div className="xi-field">
             <label className="xi-label" htmlFor="reg-identifier">
-              Patient ID
+              {t("patientId")}
             </label>
-            <input
+            <input dir="ltr"
               className="xi-input xi-mono"
               id="reg-identifier"
               inputMode="numeric"
@@ -278,7 +276,7 @@ function RegistrationForm() {
             />
             {identifierError !== null && (
               <p className="xi-field-error" id="identifier-error">
-                {identifierError}
+                {errorText(identifierError)}
               </p>
             )}
           </div>
@@ -286,8 +284,8 @@ function RegistrationForm() {
             className="xi-field"
             aria-describedby={sexError ? "sex-error" : undefined}
           >
-            <legend className="xi-label">Sex</legend>
-            <div className="xi-radio-group" role="radiogroup" aria-label="Sex">
+            <legend className="xi-label">{t("sex")}</legend>
+            <div className="xi-radio-group" role="radiogroup" aria-label={t("sex")}>
               <label htmlFor="reg-sex-m">
                 <input
                   id="reg-sex-m"
@@ -313,13 +311,13 @@ function RegistrationForm() {
             </div>
             {sexError !== null && (
               <p className="xi-field-error" id="sex-error">
-                {sexError}
+                {errorText(sexError)}
               </p>
             )}
           </fieldset>
           <div className="xi-field">
             <label className="xi-label" htmlFor="reg-age">
-              Age
+              {t("age")}
             </label>
             <input
               className="xi-input"
@@ -333,7 +331,7 @@ function RegistrationForm() {
             />
             {ageError !== null && (
               <p className="xi-field-error" id="age-error">
-                {ageError}
+                {errorText(ageError)}
               </p>
             )}
           </div>
@@ -343,11 +341,11 @@ function RegistrationForm() {
               clinicalStatusError ? "clinicalStatus-error" : undefined
             }
           >
-            <legend className="xi-label">Clinical status</legend>
+            <legend className="xi-label">{t("clinicalStatus")}</legend>
             <div
               className="xi-radio-group"
               role="radiogroup"
-              aria-label="Clinical status"
+              aria-label={t("clinicalStatus")}
             >
               <label htmlFor="reg-status-first">
                 <input
@@ -358,7 +356,7 @@ function RegistrationForm() {
                   checked={fields.clinicalStatus === "first_time"}
                   onChange={() => setField("clinicalStatus", "first_time")}
                 />
-                New case
+                {t("newCase")}
               </label>
               <label htmlFor="reg-status-established">
                 <input
@@ -369,20 +367,20 @@ function RegistrationForm() {
                   checked={fields.clinicalStatus === "established"}
                   onChange={() => setField("clinicalStatus", "established")}
                 />
-                Known case
+                {t("knownCase")}
               </label>
             </div>
             {clinicalStatusError !== null && (
               <p className="xi-field-error" id="clinicalStatus-error">
-                {clinicalStatusError}
+                {errorText(clinicalStatusError)}
               </p>
             )}
           </fieldset>
           <div className="xi-field">
             <label className="xi-label" htmlFor="reg-phone">
-              Phone (optional)
+              {t("optionalPhone")}
             </label>
-            <input
+            <input dir="ltr"
               className="xi-input"
               id="reg-phone"
               type="tel"
@@ -394,7 +392,7 @@ function RegistrationForm() {
             />
             {phoneError !== null && (
               <p className="xi-field-error" id="phone-error">
-                {phoneError}
+                {errorText(phoneError)}
               </p>
             )}
           </div>
@@ -406,7 +404,7 @@ function RegistrationForm() {
               tabIndex={-1}
               ref={summaryRef}
             >
-              {formError}
+              {errorText(formError)}
             </p>
           )}
           <div className="xi-row-actions">
@@ -415,7 +413,7 @@ function RegistrationForm() {
               type="submit"
               disabled={!clientValid || busy}
             >
-              {busy ? "Registering…" : "Register"}
+              {busy ? t("registering") : t("register")}
             </button>
           </div>
         </form>

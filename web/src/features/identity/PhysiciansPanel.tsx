@@ -1,3 +1,4 @@
+import { useLanguage } from "../../shared/i18n";
 import { useCallback, useEffect, useRef, useState } from "react";
 import {
   ApiError,
@@ -22,6 +23,7 @@ type LoadState =
   | { kind: "ready"; items: SafePhysician[]; total: number; additional: boolean };
 
 function CreateForm({ onCreated }: { onCreated: (physician: SafePhysician) => void }) {
+  const { t, errorText } = useLanguage();
   const { sessionExpired } = useAuth();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -68,13 +70,12 @@ function CreateForm({ onCreated }: { onCreated: (physician: SafePhysician) => vo
   return (
     <section className="xi-card" aria-labelledby="create-physician-heading">
       <h3 className="xi-section-title" id="create-physician-heading">
-        Create physician
+        {t("createPhysician")}
       </h3>
-      <form aria-label="Create physician" onSubmit={handleSubmit} noValidate>
+      <form aria-label={t("createPhysician")} onSubmit={handleSubmit} noValidate>
         <div className="xi-field">
           <label className="xi-label" htmlFor="create-username">
-            Username
-          </label>
+            {t("username")}</label>
           <input
             className="xi-input"
             id="create-username"
@@ -85,14 +86,13 @@ function CreateForm({ onCreated }: { onCreated: (physician: SafePhysician) => vo
           />
           {usernameError !== null && (
             <p className="xi-field-error" id="create-username-error">
-              {usernameError}
+              {errorText(usernameError)}
             </p>
           )}
         </div>
         <div className="xi-field">
           <label className="xi-label" htmlFor="create-password">
-            Password
-          </label>
+            {t("password")}</label>
           <input
             className="xi-input"
             id="create-password"
@@ -105,22 +105,22 @@ function CreateForm({ onCreated }: { onCreated: (physician: SafePhysician) => vo
           />
           {passwordError !== null && (
             <p className="xi-field-error" id="create-password-error">
-              {passwordError}
+              {errorText(passwordError)}
             </p>
           )}
         </div>
         {formError !== null && (
           <p className="xi-form-error" role="alert">
-            {formError}
+            {errorText(formError)}
           </p>
         )}
         {created && (
           <p className="xi-status" role="status">
-            Physician created.
+            {t("physicianCreated")}
           </p>
         )}
         <button className="xi-btn xi-btn-primary" type="submit" disabled={busy}>
-          {busy ? "Creating…" : "Create physician"}
+          {busy ? t("creating") : t("createPhysician")}
         </button>
       </form>
     </section>
@@ -138,6 +138,7 @@ function EditForm({
   onCancel: () => void;
   onStale: () => void;
 }) {
+  const { t, errorText } = useLanguage();
   const { sessionExpired } = useAuth();
   const [username, setUsername] = useState(physician.username);
   const [password, setPassword] = useState("");
@@ -195,12 +196,11 @@ function EditForm({
   const passwordError = errors["password"]?.join(" ") ?? null;
 
   return (
-    <form aria-label="Edit physician" onSubmit={handleSubmit} noValidate>
+    <form aria-label={t("editPhysician")} onSubmit={handleSubmit} noValidate>
       <div className="xi-form-row">
         <div className="xi-field">
           <label className="xi-label" htmlFor={`edit-username-${physician.id}`}>
-            Username
-          </label>
+            {t("username")}</label>
           <input
             className="xi-input"
             id={`edit-username-${physician.id}`}
@@ -211,13 +211,13 @@ function EditForm({
           />
           {usernameError !== null && (
             <p className="xi-field-error" id={`edit-username-error-${physician.id}`}>
-              {usernameError}
+              {errorText(usernameError)}
             </p>
           )}
         </div>
         <div className="xi-field">
           <label className="xi-label" htmlFor={`edit-password-${physician.id}`}>
-            New password (blank keeps current)
+            {t("optionalPassword")}
           </label>
           <input
             className="xi-input"
@@ -231,27 +231,26 @@ function EditForm({
           />
           {passwordError !== null && (
             <p className="xi-field-error" id={`edit-password-error-${physician.id}`}>
-              {passwordError}
+              {errorText(passwordError)}
             </p>
           )}
         </div>
       </div>
       {formError !== null && (
         <p className="xi-form-error" role="alert">
-          {formError}
+          {errorText(formError)}
         </p>
       )}
       <div className="xi-row-actions">
         <button className="xi-btn xi-btn-primary" type="submit" disabled={busy}>
-          {busy ? "Saving…" : "Save changes"}
+          {busy ? t("saving") : t("saveChanges")}
         </button>
         <button
           className="xi-btn xi-btn-secondary"
           type="button"
           onClick={onCancel}
         >
-          Cancel
-        </button>
+          {t("cancel")}</button>
       </div>
     </form>
   );
@@ -282,6 +281,7 @@ function DeactivateForm({
   onDeactivated: (message: string) => void;
   onCancel: () => void;
 }) {
+  const { t, errorText } = useLanguage();
   const { sessionExpired } = useAuth();
   const [draftAction, setDraftAction] = useState<DraftAction>("retain");
   const [preview, setPreview] = useState<PreviewState>({ kind: "loading" });
@@ -372,10 +372,10 @@ function DeactivateForm({
   }
 
   return (
-    <form aria-label="Deactivate physician" onSubmit={handleSubmit} noValidate>
+    <form aria-label={t("deactivatePhysician")} onSubmit={handleSubmit} noValidate>
       <div data-testid={`deactivate-preview-${physician.id}`} role="status">
         {preview.kind === "loading" && (
-          <p className="xi-hint">Loading open-draft preview…</p>
+          <p className="xi-hint">{t("loadingOpenDrafts")}</p>
         )}
         {preview.kind === "error" && (
           <div>
@@ -387,26 +387,27 @@ function DeactivateForm({
               type="button"
               onClick={() => void loadPreview()}
             >
-              Retry preview
+              {t("retryPreview")}
             </button>
           </div>
         )}
         {preview.kind === "ready" && (
           <p className="xi-hint" style={{ marginBottom: 4 }}>
-            Open drafts: {preview.preview.reviewed_drafts.length} (set revision{" "}
-            {preview.preview.draft_set_revision}; identifiers only, no draft contents).{" "}
+            
+            {t("openDrafts")} {preview.preview.reviewed_drafts.length}  {t("setRevision")}{" "}
+            {preview.preview.draft_set_revision}{t("identifiersOnlyNoDraftContents")}{" "}
             <button
               className="xi-btn xi-btn-secondary"
               type="button"
               disabled={busy}
               onClick={() => void loadPreview()}
             >
-              Refresh preview
+              {t("refreshPreview")}
             </button>
           </p>
         )}
       </div>
-      <div className="xi-radio-group" role="radiogroup" aria-label="Draft handling">
+      <div className="xi-radio-group" role="radiogroup" aria-label={t("draftHandling")}>
         <label htmlFor={`draft-retain-${physician.id}`}>
           <input
             id={`draft-retain-${physician.id}`}
@@ -416,7 +417,7 @@ function DeactivateForm({
             checked={draftAction === "retain"}
             onChange={() => setDraftAction("retain")}
           />
-          Retain drafts (read-only, still occupy the single-draft slot)
+          {t("retainDrafts")}
         </label>
         <label htmlFor={`draft-discard-${physician.id}`}>
           <input
@@ -427,11 +428,11 @@ function DeactivateForm({
             checked={draftAction === "discard"}
             onChange={() => setDraftAction("discard")}
           />
-          Discard drafts (releases the slots; reactivation never resurrects them)
+          {t("discardDrafts")}
         </label>
       </div>
       {needsReview && (
-        <div className="xi-notice" role="group" aria-label="Confirmed discard">
+        <div className="xi-notice" role="group" aria-label={t("confirmedDiscard")}>
           <label htmlFor={`draft-reviewed-${physician.id}`}>
             <input
               id={`draft-reviewed-${physician.id}`}
@@ -439,8 +440,9 @@ function DeactivateForm({
               checked={reviewed}
               onChange={(event) => setReviewed(event.target.checked)}
             />
-            I reviewed the current set of {draftCount} open draft(s) at revision{" "}
-            {draftRevision} (identifiers only).
+            
+            {t("iReviewedTheCurrentSetOf")} {draftCount}  {t("openDraftSAtRevision")}{" "}
+            {draftRevision}  {t("identifiersOnly")}
           </label>
           <label htmlFor={`draft-confirm-discard-${physician.id}`}>
             <input
@@ -449,22 +451,22 @@ function DeactivateForm({
               checked={confirmedDiscard}
               onChange={(event) => setConfirmedDiscard(event.target.checked)}
             />
-            Confirm discard: the drafts release their slots permanently.
+            {t("confirmPermanentDiscard")}
           </label>
         </div>
       )}
       {formError !== null && (
         <p className="xi-form-error" role="alert">
-          {formError}
+          {errorText(formError)}
         </p>
       )}
       {done && (
         <p className="xi-status" role="status">
-          Physician deactivated.
+          {t("physicianDeactivated")}
         </p>
       )}
       <p className="xi-hint">
-        Deactivation revokes access and cancels queued work immediately.
+        {t("deactivationEffect")}
       </p>
       <div className="xi-row-actions">
         <button
@@ -472,14 +474,14 @@ function DeactivateForm({
           type="submit"
           disabled={!canSubmit}
         >
-          {busy ? "Deactivating…" : "Confirm deactivation"}
+          {busy ? t("deactivating") : t("confirmDeactivation")}
         </button>
         <button
           className="xi-btn xi-btn-secondary"
           type="button"
           onClick={onCancel}
         >
-          {done ? "Close" : "Cancel"}
+          {done ? t("close") : t("cancel")}
         </button>
       </div>
     </form>
@@ -487,6 +489,7 @@ function DeactivateForm({
 }
 
 export function PhysiciansPanel() {
+  const { t, text } = useLanguage();
   const { sessionExpired } = useAuth();
   const [state, setState] = useState<LoadState>({ kind: "loading" });
   const [notice, setNotice] = useState<string | null>(null);
@@ -567,10 +570,10 @@ export function PhysiciansPanel() {
 
   return (
     <div>
-      <h2 className="xi-page-title">Physicians</h2>
+      <h2 className="xi-page-title">{t("physicians")}</h2>
       {notice !== null && (
         <p className="xi-status" role="status">
-          {notice}
+          {text(notice)}
         </p>
       )}
       <CreateForm
@@ -587,18 +590,18 @@ export function PhysiciansPanel() {
       />
       <section className="xi-card" aria-labelledby="physician-list-heading">
         <h3 className="xi-section-title" id="physician-list-heading">
-          Physician accounts
+          {t("physicianAccounts")}
           {(state.kind === "ready" || state.kind === "refreshing") &&
             ` (${state.total})`}
         </h3>
         {(state.kind === "ready" || state.kind === "refreshing") && state.additional && (
-          <p className="xi-hint">Showing the first page and the newly created physician.</p>
+          <p className="xi-hint">{t("firstPageNewPhysician")}</p>
         )}
         {(state.kind === "ready" || state.kind === "refreshing") &&
           state.items.length < state.total && (
             <p className="xi-hint">{`Showing ${state.items.length} of ${state.total}`}</p>
           )}
-        {state.kind === "loading" && <p>Loading physicians…</p>}
+        {state.kind === "loading" && <p>{t("loadingPhysicians")}</p>}
         {state.kind === "error" && (
           <div>
             <p className="xi-form-error" role="alert">
@@ -609,20 +612,19 @@ export function PhysiciansPanel() {
               type="button"
               onClick={() => void reload()}
             >
-              Retry
-            </button>
+              {t("retry")}</button>
           </div>
         )}
         {(state.kind === "ready" || state.kind === "refreshing") &&
           (state.items.length === 0 ? (
-            <p>No physicians yet.</p>
+            <p>{t("noPhysicians")}</p>
           ) : (
-            <table className="xi-table" aria-label="Physicians">
+            <table className="xi-table" aria-label={t("physicians")}>
               <thead>
                 <tr>
-                  <th scope="col">Username</th>
-                  <th scope="col">Status</th>
-                  <th scope="col">Actions</th>
+                  <th scope="col">{t("username")}</th>
+                  <th scope="col">{t("status")}</th>
+                  <th scope="col">{t("actions")}</th>
                 </tr>
               </thead>
               <tbody>
@@ -637,7 +639,7 @@ export function PhysiciansPanel() {
                             : "xi-badge xi-badge-inactive"
                         }
                       >
-                        {physician.active ? "Active" : "Inactive"}
+                        {physician.active ? t("active") : t("inactive")}
                       </span>
                     </td>
                     <td>
@@ -669,7 +671,7 @@ export function PhysiciansPanel() {
                               setEditingId(physician.id);
                             }}
                           >
-                            Edit
+                            {t("edit")}
                           </button>
                           {physician.active ? (
                             <button
@@ -681,7 +683,7 @@ export function PhysiciansPanel() {
                                 setDeactivatingId(physician.id);
                               }}
                             >
-                              Deactivate
+                              {t("deactivate")}
                             </button>
                           ) : (
                             <button
@@ -689,9 +691,9 @@ export function PhysiciansPanel() {
                               type="button"
                               disabled={busyId === physician.id}
                               onClick={() => void handleReactivate(physician)}
-                              title="Reactivation does not resurrect discarded drafts nor old sessions."
+                              title={t("reactivationLimit")}
                             >
-                              Reactivate
+                              {t("reactivate")}
                             </button>
                           )}
                         </div>

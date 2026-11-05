@@ -1,3 +1,4 @@
+import { useLanguage } from "../shared/i18n";
 import { useAuth } from "../features/identity/auth";
 import { PasswordForm } from "../features/identity/PasswordForm";
 import { PhysiciansPanel } from "../features/identity/PhysiciansPanel";
@@ -12,18 +13,16 @@ import { StatusPage } from "../features/admin/status/StatusPage";
 import { PatientDirectory } from "../features/patients/DirectoryPage";
 
 export function AdminDashboard() {
+  const { t } = useLanguage();
   return (
     <div>
-      <h2 className="xi-page-title">Administrator dashboard</h2>
-      <p className="xi-hint">Workspace oversight, account management, and patient records.</p>
+      <h2 className="xi-page-title">{t("adminDashboard")}</h2>
+      <p className="xi-hint">{t("adminIntroduction")}</p>
       <section className="xi-card" aria-labelledby="governance-heading">
         <h3 className="xi-section-title" id="governance-heading">
-          Governance
-        </h3>
+          {t("governance")}</h3>
         <p className="xi-lede">
-          Manage physician accounts, review identity settings, and adjust the
-          workspace theme. The patient directory below is read-only.
-        </p>
+          {t("governanceIntroduction")}</p>
       </section>
       <PatientDirectory />
     </div>
@@ -31,31 +30,31 @@ export function AdminDashboard() {
 }
 
 export function PhysicianDashboard() {
+  const { t } = useLanguage();
   return (
     <div>
-      <h2 className="xi-page-title">Physician dashboard</h2>
-      <p className="xi-hint">Find a patient, resume an encounter, or begin a new registration.</p>
+      <h2 className="xi-page-title">{t("physicianDashboard")}</h2>
+      <p className="xi-hint">{t("physicianIntroduction")}</p>
       <PatientDirectory />
     </div>
   );
 }
 
 export function AccountPage() {
+  const { t } = useLanguage();
   const { user } = useAuth();
   return (
     <div>
-      <h2 className="xi-page-title">Account</h2>
+      <h2 className="xi-page-title">{t("account")}</h2>
       {user !== null && (
         <section className="xi-card" aria-labelledby="identity-heading">
           <h3 className="xi-section-title" id="identity-heading">
-            Identity
-          </h3>
+            {t("identity")}</h3>
           <p>
-            Signed in as <strong>{user.username}</strong> ({user.role}).
+            {t("signedInAs", { username: `\u2068${user.username}\u2069` })} ({t(user.role === "admin" ? "administrator" : "physician")}).
           </p>
           <p className="xi-hint">
-            Theme preference: {user.theme}. Use the theme button in the header
-            to switch; it is saved to your profile.
+            {t("themePreference", { theme: t(user.theme === "dark" ? "dark" : "light") })}
           </p>
         </section>
       )}
@@ -65,16 +64,16 @@ export function AccountPage() {
 }
 
 export function PhysiciansPage() {
+  const { t } = useLanguage();
   const { user } = useAuth();
   if (user?.role !== "admin") {
     // Client-side complement to the server's 403: never grant authority,
     // just avoid rendering governance controls to the wrong role.
     return (
       <div>
-        <h2 className="xi-page-title">Physicians</h2>
+        <h2 className="xi-page-title">{t("physicians")}</h2>
         <p className="xi-form-error" role="alert">
-          Administrator access required.
-        </p>
+          {t("administratorRequired")}</p>
       </div>
     );
   }
@@ -82,16 +81,16 @@ export function PhysiciansPage() {
 }
 
 export function NetworksRoutePage() {
+  const { t } = useLanguage();
   const { user } = useAuth();
   if (user?.role !== "admin") {
     // Client-side complement to the server's 403: never grant authority,
     // just avoid rendering model administration to the wrong role.
     return (
       <div>
-        <h2 className="xi-page-title">Model networks</h2>
+        <h2 className="xi-page-title">{t("modelNetworks")}</h2>
         <p className="xi-form-error" role="alert">
-          Administrator access required.
-        </p>
+          {t("administratorRequired")}</p>
       </div>
     );
   }
@@ -99,16 +98,16 @@ export function NetworksRoutePage() {
 }
 
 export function AuditRoutePage() {
+  const { t } = useLanguage();
   const { user } = useAuth();
   if (user?.role !== "admin") {
     // Client-side complement to the server's 403: never grant authority,
     // just avoid rendering the audit trail to the wrong role.
     return (
       <div>
-        <h2 className="xi-page-title">Audit trail</h2>
+        <h2 className="xi-page-title">{t("auditTrail")}</h2>
         <p className="xi-form-error" role="alert">
-          Administrator access required.
-        </p>
+          {t("administratorRequired")}</p>
       </div>
     );
   }
@@ -116,16 +115,16 @@ export function AuditRoutePage() {
 }
 
 export function ExportsRoutePage() {
+  const { t } = useLanguage();
   const { user } = useAuth();
   if (user?.role !== "admin") {
     // Client-side complement to the server's 403: never grant authority,
     // just avoid rendering the export actions to the wrong role.
     return (
       <div>
-        <h2 className="xi-page-title">Data exports</h2>
+        <h2 className="xi-page-title">{t("dataExports")}</h2>
         <p className="xi-form-error" role="alert">
-          Administrator access required.
-        </p>
+          {t("administratorRequired")}</p>
       </div>
     );
   }
@@ -133,16 +132,16 @@ export function ExportsRoutePage() {
 }
 
 export function BackupsRoutePage() {
+  const { t } = useLanguage();
   const { user } = useAuth();
   if (user?.role !== "admin") {
     // Client-side complement to the server's 401/403 on /backups: never
     // grant authority, just avoid rendering backup actions to the wrong role.
     return (
       <div>
-        <h2 className="xi-page-title">Full backups</h2>
+        <h2 className="xi-page-title">{t("fullBackups")}</h2>
         <p className="xi-form-error" role="alert">
-          Administrator access required.
-        </p>
+          {t("administratorRequired")}</p>
       </div>
     );
   }
@@ -150,16 +149,16 @@ export function BackupsRoutePage() {
 }
 
 export function RestoresRoutePage() {
+  const { t } = useLanguage();
   const { user } = useAuth();
   if (user?.role !== "admin") {
     // Client-side complement to the server's 401/403 on /restores: never
     // grant authority, just avoid rendering staging actions to the wrong role.
     return (
       <div>
-        <h2 className="xi-page-title">Staged restores</h2>
+        <h2 className="xi-page-title">{t("stagedRestores")}</h2>
         <p className="xi-form-error" role="alert">
-          Administrator access required.
-        </p>
+          {t("administratorRequired")}</p>
       </div>
     );
   }
@@ -167,16 +166,16 @@ export function RestoresRoutePage() {
 }
 
 export function ProviderSettingsRoutePage() {
+  const { t } = useLanguage();
   const { user } = useAuth();
   if (user?.role !== "admin") {
     // Client-side complement to the server's 401/403 on /api-settings:
     // never grant authority, just avoid rendering the form to the wrong role.
     return (
       <div>
-        <h2 className="xi-page-title">Provider settings</h2>
+        <h2 className="xi-page-title">{t("providerSettings")}</h2>
         <p className="xi-form-error" role="alert">
-          Administrator access required.
-        </p>
+          {t("administratorRequired")}</p>
       </div>
     );
   }
@@ -184,16 +183,16 @@ export function ProviderSettingsRoutePage() {
 }
 
 export function StatusRoutePage() {
+  const { t } = useLanguage();
   const { user } = useAuth();
   if (user?.role !== "admin") {
     // Client-side complement to the server's 401/403 on /ops/status: never
     // grant authority, just avoid rendering gauges to the wrong role.
     return (
       <div>
-        <h2 className="xi-page-title">Operational status</h2>
+        <h2 className="xi-page-title">{t("operationalStatus")}</h2>
         <p className="xi-form-error" role="alert">
-          Administrator access required.
-        </p>
+          {t("administratorRequired")}</p>
       </div>
     );
   }
@@ -201,6 +200,7 @@ export function StatusRoutePage() {
 }
 
 export function ReportRoutePage({ patientId }: { patientId: string }) {
+  const { t } = useLanguage();
   const { user } = useAuth();
   if (user?.role !== "admin") {
     // Client-side complement to the server 403 on
@@ -208,10 +208,9 @@ export function ReportRoutePage({ patientId }: { patientId: string }) {
     // report content here (provisional print policy, plan §§1.3, 2.1).
     return (
       <div>
-        <h2 className="xi-page-title">Longitudinal patient report</h2>
+        <h2 className="xi-page-title">{t("longitudinalReport")}</h2>
         <p className="xi-form-error" role="alert">
-          Administrator access required.
-        </p>
+          {t("administratorRequired")}</p>
       </div>
     );
   }
