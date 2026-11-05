@@ -1,5 +1,7 @@
 # X-INSIGHT progress tracker
 
+[Issue 37 bilingual UI analysis (2026-11-05)](s61.md#follow-up-2026-11-05--issue-37-bilingual-ui-analysis): root cause and minimal implementation boundary documented; no application changes or runtime verification.
+
 [Bayesian network folder preparation (2026-11-05)](bn-folder-2026-11-05.md): previous networks preserved in `old-BNs`; the experimental antipsychotics model includes an interactive visualization.
 
 [Merge checkpoint (2026-11-05)](merge-2026-11-05.md): `main` fast-forwarded to the locally recorded `origin/dev`.
