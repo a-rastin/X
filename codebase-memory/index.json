@@ -5695,6 +5695,42 @@
       "source_sha256": null
     },
     {
+      "path": "project-documents/BNs-new/PO-Antipsychotic-Recommender/BN-PO-Antipsychotic-Recommender.xml",
+      "labels": [
+        "model-source"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "project-documents/BNs-new/PO-Antipsychotic-Recommender/README-PO-Antipsychotic-Recommender.md",
+      "labels": [
+        "model-source"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "project-documents/BNs-new/PO-Antipsychotic-Recommender/Visualized-PO-Antipsychotic-Recommender.html",
+      "labels": [
+        "model-source"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "project-documents/BNs-new/schema.xml",
+      "labels": [
+        "model-source"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
       "path": "project-documents/bayesian-networks/BN-04.xml",
       "labels": [
         "model-source"
@@ -5872,6 +5908,16 @@
       "source_sha256": null
     },
     {
+      "path": "project-documents/dev/progress/bn-folder-2026-11-05.md",
+      "labels": [
+        "project-docs",
+        "progress"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
       "path": "project-documents/dev/progress/content-decisions.md",
       "labels": [
         "project-docs",
@@ -5883,6 +5929,16 @@
     },
     {
       "path": "project-documents/dev/progress/issue-31-checkpoint.md",
+      "labels": [
+        "project-docs",
+        "progress"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "project-documents/dev/progress/merge-2026-11-05.md",
       "labels": [
         "project-docs",
         "progress"

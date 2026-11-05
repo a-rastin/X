@@ -1,5 +1,7 @@
 # X-INSIGHT progress tracker
 
+[Bayesian network folder preparation (2026-11-05)](bn-folder-2026-11-05.md): previous networks preserved in `old-BNs`; the experimental antipsychotics model includes an interactive visualization.
+
 [Merge checkpoint (2026-11-05)](merge-2026-11-05.md): `main` fast-forwarded to the locally recorded `origin/dev`.
 
 [Registration working note hidden (2026-11-03)](s07.md#follow-up-2026-11-03--hide-registration-working-note): UI removed and build passes; older browser probes need migration.

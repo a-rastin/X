@@ -268,6 +268,11 @@ passes every gate. Recorded failures and unrun checks remain in the
 
 Clinical assets live under [content/](content/); supplied medical references and
 Bayesian-network sources live under [project-documents/](project-documents/).
+The experimental [new antipsychotics network](project-documents/BNs-new/PO-Antipsychotic-Recommender/BN-PO-Antipsychotic-Recommender.xml),
+its [model explanation](project-documents/BNs-new/PO-Antipsychotic-Recommender/README-PO-Antipsychotic-Recommender.md),
+and its [interactive visualization](project-documents/BNs-new/PO-Antipsychotic-Recommender/Visualized-PO-Antipsychotic-Recommender.html)
+describe a 16-factor ranking model; it is not clinically validated or integrated
+into the application workflow.
 Track current approvals in the [content review ledger](content/review-ledger.md)
 and the exact [question-package confirmation
 manifest](content/questions/review-confirmation.s39-v1.json). Package approval,
