@@ -1,5 +1,7 @@
 # X-INSIGHT progress tracker
 
+[Merge checkpoint (2026-11-05)](merge-2026-11-05.md): `main` fast-forwarded to the locally recorded `origin/dev`.
+
 [Registration working note hidden (2026-11-03)](s07.md#follow-up-2026-11-03--hide-registration-working-note): UI removed and build passes; older browser probes need migration.
 
 [Registration clinical status labels (2026-11-03)](s07.md#follow-up-2026-11-03--registration-clinical-status-labels): New case and Known case labels implemented; frontend build passes.

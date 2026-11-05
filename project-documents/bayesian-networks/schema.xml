@@ -41,32 +41,6 @@ children may be interleaved. GIVEN and OUTCOME order remain semantically
 significant. PROPERTY remains arbitrary Unicode text, with no custom tags.
 
 BACKGROUND SOURCES AND EXPERIMENTAL MODELING
-medical-knowledge/02-md/guideline-statement-summary.md, sections Assessment
-and Determination of Treatment Plan, Pharmacotherapy, and Psychosocial
-Interventions, distinguishes 24 statements. Standalone STATEMENT-01.md through
-STATEMENT-14.md cover assessment, quantitative measurement, treatment planning,
-antipsychotic selection/continuation, clozapine, LAIs, and movement adverse
-effects. Appendix-C.md includes evidence sections for statements 1 through 24;
-Appendix-D.md has intervention-specific strength-of-evidence tables. Glossary,
-acronyms, development process and appendices are supporting sources, not each
-a separate question. These sources provide optional background attribution;
-their electronic-decision-support restrictions do not gate experiments in
-this educational application. The schema does not enumerate a fixed set of
-network names, drugs, diagnoses, scales, states or treatment thresholds.
-
-Scenario inputs may be synthetic, manually supplied or simulated. Supporting
-clinical records, instruments, dated assessments and clinician verification
-are optional, rather than input prerequisites. Observations are optional;
-a parameterized model may infer with a subset of observations or none.
-
-Priors and CPTs may be supplied manually, generated for a synthetic example
-or estimated by an LLM, then adjusted for the experiment. Fixed clinician-review
-mappings are not required. Output names describe experimental topics; their
-conditional distributions are supplied per run. Ordered proposed_parent
-properties preserve draft edges until a DEFINITION with corresponding ordered
-GIVEN elements and a complete TABLE is supplied. Generic XMLBIF importers do
-not interpret proposed_parent properties as edges.
-
 Nature, decision and utility variables are all supported. An observed treatment
 is a nature variable; a controllable action in an influence diagram is decision.
 A posterior probability of an action is distinct from an expected-utility
