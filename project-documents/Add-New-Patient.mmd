@@ -1,0 +1,29 @@
+flowchart TB
+  a["Step 1 - Register the Patient"]
+  b["Diagnostic Criteria"]
+  n1>"First Name*<br>Last Name*<br>Code*<br>Sex* (M or F)<br>Year of Birth*<br>Status* (New Case or Known Case)"]
+  n2>"PANSS Questionaire"]
+  n3[\"New node"/]
+  n4((("Blocked")))
+  n5["Schizophrenia Severity"]
+  n6["Agitation Risk"]
+  n7>"CSSRS<br>Risk of Harm to Others"]
+  n8["Hx & Ph/E"]
+  subgraph g1 ["g1"]
+  end
+
+  a --> b
+  a -.- n1
+  b -->|"Not Accepted"| n4
+  b -->|"Accepted"| n5
+  b -->|"Dx is Definite"| n5
+  n5 -.- n2
+  n5 --> n6
+  n6 -.- n7
+  n6 --> n8
+
+  style n4 fill:#f8cecc,stroke:#b85450,color:#111111
+
+%% graph:positions {"g1":{"x":-168,"y":-264,"w":340,"h":240},"a":{"x":12,"y":12},"b":{"x":12,"y":136},"n1":{"x":240,"y":-12,"w":220,"h":102},"n2":{"x":240,"y":300},"n3":{"x":-304,"y":528},"n4":{"x":-240,"y":111},"n5":{"x":12,"y":300},"n6":{"x":12,"y":426},"n7":{"x":240,"y":426},"n8":{"x":12,"y":552}}
+%% graph:waypoints {"b>n5":[[13,210],[13,280]],"b>n5#1":[[173,210],[173,280]]}
+%% graph:edges {"b>n5":{"label":[0,-2]}}
