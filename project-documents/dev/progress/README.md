@@ -1,6 +1,6 @@
 # X-INSIGHT progress tracker
 
-[New case Package A checkpoint (2026-11-09)](new-case-package-a-2026-11-09.md): source copies and structural inventory verified; clinical content and package exit checks remain incomplete.
+[New case packages A/B checkpoint (2026-11-09)](new-case-package-a-2026-11-09.md): SQLAlchemy and pytest installed; patient baseline passes; Package B remains incomplete.
 
 [Issue 37 bilingual UI analysis (2026-11-05)](s61.md#follow-up-2026-11-05--issue-37-bilingual-ui-analysis): root cause and minimal implementation boundary documented; no application changes or runtime verification.
 

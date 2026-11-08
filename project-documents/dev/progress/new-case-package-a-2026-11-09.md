@@ -43,3 +43,55 @@ references, verify all requested drug mappings including absent/qualified
 names, and run the Package A exit checks. Establish an isolated test DB and
 working Python dependencies before recording backend baseline results. Preserve
 the distinction between source integration authorization and clinical review.
+
+## Package B prerequisite recheck — 2026-11-09
+
+At `59ecc39`, the worktree was clean and the latest migration file and
+`EXPECTED_SCHEMA_VERSION` remained `0029`. The new-case directory still
+contained only the oral XML: the workflow manifest and three clinical and
+formulation JSON files were absent. The plan requires Package A's exit checks
+before proceeding in order, and Package B depends on the formulation catalog
+and trusted model profile for settings and restore validation. Package B was not
+started; no schema or application changes were made in this recheck.
+
+## Package B forced start — 2026-11-09
+
+The user explicitly authorized proceeding despite Package A's incomplete exit
+checks. Added standalone new-case name and encounter-year age validation in
+`backend/src/x_insight/cases/new_case_demographics.py`, with boundary and
+Unicode tests. The helpers are not yet connected to any request or persistence
+path; no registration behavior has changed. The test command
+`PYTHONPATH=backend/src backend/.venv/bin/python -m unittest discover -s backend/tests -p test_new_case_demographics.py -v`
+passed (2 tests); `git diff --check` passed. The backend virtual environment
+lacks SQLAlchemy and pytest, so integration and migration tests were not run.
+
+Package B remains incomplete: migration and schema models, recovery and backup
+compatibility, identity/settings routes, patient request and immutable workflow
+assignment, and all integration checks remain to be implemented. The missing
+formulation catalog and trusted oral-model validator remain dependencies; do
+not substitute unverified clinical content or bypass backup validation.
+
+## Package B environment follow-up — 2026-11-09
+
+`uv sync --group dev` and a direct `uv pip install` timed out reaching PyPI.
+The exact locked SQLAlchemy 2.1.3 and pytest 9.1.1 packages and supporting
+backend environment were copied from the existing local Desktop checkout;
+the editable import path was corrected to this checkout. This is a local
+environment repair, not a reproducible network installation.
+
+Using a disposable PostgreSQL 16 container and its isolated database,
+`.venv/bin/python -m pytest tests/http/test_patients.py tests/test_new_case_demographics.py -q --disable-warnings --maxfail=1`
+passed: 48 tests and 14 subtests. The container was stopped afterward. This
+is a baseline only: the demographic helpers are still disconnected, and no
+Package B migration, recovery changes, identity/settings routes or workflow
+assignment have been implemented or verified.
+
+## Dependency installation retry — 2026-11-09
+
+PyPI became reachable. `uv pip install --reinstall --python backend/.venv/bin/python
+'sqlalchemy==2.1.3' 'pytest==9.1.1'` succeeded. Its resolver upgraded
+`iniconfig` and `pluggy`; they were subsequently restored to the versions
+pinned by `backend/uv.lock` (2.3.0 and 1.6.0). Both requested packages import
+successfully, and `backend/.venv/bin/python -m pytest
+backend/tests/test_new_case_demographics.py -q` passed (2 tests, 14 subtests).
+Package B implementation remains incomplete.

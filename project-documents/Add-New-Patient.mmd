@@ -1,5 +1,5 @@
 flowchart TB
-  a["Step 1 - Register the Patient"]
+  a["Register the Patient"]
   b["Diagnostic Criteria"]
   n1>"First Name*<br>Last Name*<br>Code*<br>Sex* (M or F)<br>Year of Birth*<br>Status* (New Case or Known Case)"]
   n2>"PANSS Questionaire"]
@@ -9,6 +9,14 @@ flowchart TB
   n6["Agitation Risk"]
   n7>"CSSRS<br>Risk of Harm to Others"]
   n8["Hx & Ph/E"]
+  n9>"Other Psychiatric Disorders<br>Lab Test Results<br>Hepatic Insufficiency (Yes or No)<br>Renal Insufficiency (Yes or No)<br>Glucose Intolerance (Yes or No)<br>Hyperlipidemia (Yes or No)<br>Hyperprolactinemia (Yes or No)<br>Heart Failure (Yes or No)<br>Smoking (Yes or No)<br>Addiction (Yes or No)<br>BMI<br>Pregnancy (Yes or No)<br>Breastfeeding (Yes or No)<br>FND (Yes or No)<br>Suspicion of Brain Lesions (Yes or No)<br>Suspicion of Autoimmune Encephalitis (Yes or No)"]
+  n10["Current Patient's Medications"]
+  n11["Treatment Considerations"]
+  n13{{"Primary Treatment Plan"}}
+  n14((("Final Treatment Plan")))
+  n15[("Lexicomp Database")]
+  n16("Drug Decision")
+  n17[("Available Drugs")]
   subgraph g1 ["g1"]
   end
 
@@ -21,9 +29,20 @@ flowchart TB
   n5 --> n6
   n6 -.- n7
   n6 --> n8
+  n8 -.- n9
+  n8 --> n10
+  n10 --> n11
+  n11 --> n13
+  n13 --> n14
+  n9 --> a
+  n15 --> n16
+  n17 --> n16
+  n16 <--> n13
+  n16 --> n14
+  n10 --> n16
 
   style n4 fill:#f8cecc,stroke:#b85450,color:#111111
 
-%% graph:positions {"g1":{"x":-168,"y":-264,"w":340,"h":240},"a":{"x":12,"y":12},"b":{"x":12,"y":136},"n1":{"x":240,"y":-12,"w":220,"h":102},"n2":{"x":240,"y":300},"n3":{"x":-304,"y":528},"n4":{"x":-240,"y":111},"n5":{"x":12,"y":300},"n6":{"x":12,"y":426},"n7":{"x":240,"y":426},"n8":{"x":12,"y":552}}
+%% graph:positions {"g1":{"x":-168,"y":-264,"w":340,"h":240},"a":{"x":12,"y":12},"b":{"x":12,"y":136},"n1":{"x":240,"y":-12,"w":220,"h":102},"n2":{"x":240,"y":300},"n3":{"x":-304,"y":528},"n4":{"x":-240,"y":111},"n5":{"x":12,"y":300},"n6":{"x":12,"y":426},"n7":{"x":240,"y":426},"n8":{"x":12,"y":552},"n9":{"x":420,"y":468,"w":304,"h":222},"n10":{"x":12,"y":672},"n11":{"x":12,"y":792},"n13":{"x":12,"y":912},"n14":{"x":44,"y":1020},"n15":{"x":-328,"y":738},"n16":{"x":-240,"y":888},"n17":{"x":-492,"y":912}}
 %% graph:waypoints {"b>n5":[[13,210],[13,280]],"b>n5#1":[[173,210],[173,280]]}
 %% graph:edges {"b>n5":{"label":[0,-2]}}
