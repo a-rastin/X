@@ -34,7 +34,8 @@ import { useLanguage } from "../../../shared/i18n";
  *   errors use role=alert)
  */
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { present, type Language } from "../../../shared/messages";
 import { ApiError, fetchPatientReportHtml } from "./api";
 import { useAuth } from "../../identity/auth";
 
@@ -42,6 +43,28 @@ type LoadState =
   | { kind: "loading" }
   | { kind: "error"; message: string; forbidden: boolean; missing: boolean }
   | { kind: "ready"; html: string };
+
+export function reportPresentation(html: string, language: Language): string {
+  if (language === "en") return html;
+  const document = new DOMParser().parseFromString(html, "text/html");
+  document.documentElement.lang = language;
+  document.documentElement.dir = "rtl";
+  for (const element of document.querySelectorAll("title, h1, h2, h3, h4, h5, p, p > strong")) {
+    if (element.children.length === 0) element.textContent = present(language, element.textContent ?? "");
+  }
+  for (const table of document.querySelectorAll("table")) {
+    const headers = table.querySelectorAll("thead th");
+    if (headers[0]?.textContent === "Parent states") {
+      headers[0].textContent = present(language, "Parent states");
+    } else {
+      for (const header of headers) header.textContent = present(language, header.textContent ?? "");
+    }
+  }
+  for (const element of document.querySelectorAll("pre")) {
+    element.dir = "auto";
+  }
+  return `<!DOCTYPE html>${document.documentElement.outerHTML}`;
+}
 
 /** Grow the frame to its content height (screen + print) once the
  * sandboxed same-origin document is available. */
@@ -68,9 +91,10 @@ function sizeFrameToContent(frame: HTMLIFrameElement | null): void {
 }
 
 export function ReportPage({ patientId }: { patientId: string }) {
-  const { t } = useLanguage();
+  const { t, language, errorText } = useLanguage();
   const { sessionExpired } = useAuth();
   const [state, setState] = useState<LoadState>({ kind: "loading" });
+  const reportHtml = useMemo(() => state.kind === "ready" ? reportPresentation(state.html, language) : "", [state, language]);
 
   const reload = useCallback(async () => {
     setState({ kind: "loading" });
@@ -127,7 +151,7 @@ export function ReportPage({ patientId }: { patientId: string }) {
               ? t("administratorRequired")
               : state.missing
                 ? t("patientNotFound")
-                : state.message}
+                : errorText(state.message)}
           </p>
           <div className="xi-row-actions">
             <button
@@ -178,9 +202,9 @@ export function ReportPage({ patientId }: { patientId: string }) {
               className="xi-report-frame"
               data-testid="report-frame"
               id="report-frame"
-              title={`Printable signed report for patient ${patientId}`}
+              title={t("printableSignedReportForPatientValue1", { value1: patientId })}
               sandbox="allow-same-origin"
-              srcDoc={state.html}
+              srcDoc={reportHtml}
               onLoad={(event) => sizeFrameToContent(event.currentTarget)}
             />
           </section>

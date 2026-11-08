@@ -1,5 +1,6 @@
 import { useLanguage } from "../../shared/i18n";
 import { questionLabel } from "./questionLabels";
+import { present } from "../../shared/messages";
 /* Automatic proposal review and transparency UI (S48, plan.md §§8-9;
  * FR-15-16, FR-35-36, NFR-03).
  *
@@ -278,34 +279,34 @@ function pollActive(batch: BatchPayload, joined: JoinedRun[]): boolean {
   return false;
 }
 
-function signBlockReason(batch: BatchPayload, joined: JoinedRun[]): string | null {
+function signBlockReason(batch: BatchPayload, joined: JoinedRun[], language: "en" | "fa"): string | null {
   if (batch.freshness?.stale === true) {
     return `Run is stale — ${batch.freshness.reason}. Signing is blocked; start a new run for the current inputs. Draft editing stays available.`;
   }
-  const failed = joined.filter((item) => item.display === "failed").map((item) => questionLabel(item.run.question_key));
+  const failed = joined.filter((item) => item.display === "failed").map((item) => questionLabel(item.run.question_key, undefined, undefined, language));
   if (failed.length > 0) {
-    return `Signing is blocked — ${failed.length} question${failed.length === 1 ? " has" : "s have"} failed (${failed.join(", ")}). Retry the failed question below; draft editing stays available.`;
+    return `Signing is blocked — ${failed.length} question${language === "fa" ? "" : failed.length === 1 ? " has" : "s have"} failed (${failed.join(", ")}). Retry the failed question below; draft editing stays available.`;
   }
-  const clarification = joined.filter((item) => item.display === "clarification").map((item) => questionLabel(item.run.question_key));
+  const clarification = joined.filter((item) => item.display === "clarification").map((item) => questionLabel(item.run.question_key, undefined, undefined, language));
   if (clarification.length > 0) {
-    return `Signing is blocked — ${clarification.join(", ")} need${clarification.length === 1 ? "s" : ""} clarification. Correct the draft inputs, then start a new run.`;
+    return `Signing is blocked — ${clarification.join(", ")} need${language === "fa" ? "" : clarification.length === 1 ? "s" : ""} clarification. Correct the draft inputs, then start a new run.`;
   }
   if (batch.proposal === null || batch.workflow?.complete !== true) {
     const pending = batch.workflow?.pending_question_keys ?? [];
-    const tail = pending.length > 0 ? ` Waiting on: ${pending.map((key) => questionLabel(key)).join(", ")}.` : "";
+    const tail = pending.length > 0 ? present(language, ` Waiting on: ${pending.map((key) => questionLabel(key, undefined, undefined, language)).join(", ")}.`) : "";
     return `Signing is blocked — the proposal is incomplete (not review-ready).${tail} Partial sections above stay readable.`;
   }
   return null;
 }
 
-function incompleteReason(batch: BatchPayload): string {
+function incompleteReason(batch: BatchPayload, language: "en" | "fa"): string {
   const pending = batch.workflow?.pending_question_keys ?? [];
   const clarification = batch.workflow?.needs_clarification ?? [];
   if (clarification.length > 0) {
-    return `needs clarification for ${clarification.map((key) => questionLabel(key)).join(", ")} — correct the draft inputs, then start a new run.`;
+    return `needs clarification for ${clarification.map((key) => questionLabel(key, undefined, undefined, language)).join(", ")} — correct the draft inputs, then start a new run.`;
   }
   if (pending.length > 0) {
-    return `waiting on ${pending.map((key) => questionLabel(key)).join(", ")}.`;
+    return `waiting on ${pending.map((key) => questionLabel(key, undefined, undefined, language)).join(", ")}.`;
   }
   if (batch.workflow !== undefined && batch.workflow.ddi_status !== "valid") {
     return `the pinned DDI report is ${batch.workflow.ddi_status}.`;
@@ -408,7 +409,7 @@ function runHasBaseline(item: JoinedRun): boolean {
 }
 
 export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, stepNumber }: ProposalReviewPanelProps) {
-  const { t, errorText } = useLanguage();
+  const { text: uiText, t, errorText, language } = useLanguage();
   const [advanced, setAdvanced] = useState(false);
   const [phase, setPhase] = useState<Phase>({ kind: "boot" });
   const [batchId, setBatchId] = useState<string | null>(null);
@@ -1028,7 +1029,7 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
   }, [batchId, encounterId, autosave, onSessionExpired]);
 
   const joined = batch !== null ? joinRuns(batch) : [];
-  const blockReason = batch !== null ? signBlockReason(batch, joined) : null;
+  const blockReason = batch !== null ? signBlockReason(batch, joined, language) : null;
 
   // Issue 19: a null review kept from before the run succeeded must not stick
   // — refetch the runs that gained a baseline while their panel is open.
@@ -1080,7 +1081,7 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
 
       {phase.kind === "blocked" && (
         <div className="xi-warning-panel" role="status">
-          <p style={{ margin: 0 }}>{t("generationPaused")} {phase.message}</p>
+          <p style={{ margin: 0 }}>{t("generationPaused")} {uiText(phase.message)}</p>
           <p className="xi-hint" style={{ marginBottom: 0 }}>
             {t("review")} <a href={`#/encounters/${encounterId}#diagnosis`}>{t("diagnosis")}</a>,{" "}
             <a href={`#/encounters/${encounterId}#medications`}>{t("medications")}</a>  {t("andTheProposalRequirementsBelow")}
@@ -1095,7 +1096,7 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
 
       {phase.kind === "unavailable" && (
         <div className="xi-notice" role="status">
-          <p style={{ margin: 0 }}>{t("proposalUnavailable")} {phase.message}</p>
+          <p style={{ margin: 0 }}>{t("proposalUnavailable")} {uiText(phase.message)}</p>
           <div className="xi-row-actions" style={{ marginTop: 8 }}>
             <button className="xi-btn xi-btn-secondary" type="button" onClick={checkAgain}>
               {t("checkAgain")}
@@ -1121,7 +1122,7 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
       {phase.kind === "error" && (
         <div>
           <p className="xi-form-error" role="alert">
-            {phase.message}
+            {uiText(phase.message)}
           </p>
           <div className="xi-row-actions" style={{ marginTop: 8 }}>
             <button
@@ -1137,7 +1138,7 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
       )}
 
       {phase.kind === "tracking" && batch === null && (
-        <p role="status">{pollError ?? "Loading run…"}</p>
+        <p role="status">{pollError ?? t("loadingRun")}</p>
       )}
 
       {phase.kind === "tracking" && batch !== null && (
@@ -1147,7 +1148,7 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
             <div className="xi-warning-panel" role="status" data-testid="proposal-stale-banner">
               <p style={{ margin: 0 }}>
                 
-                {t("thisRunIsStale")} {batch.freshness.reason}{t("onlyAffectedQuestionsAreMarkedOutOf")}
+                {t("thisRunIsStale")} {uiText(batch.freshness.reason)}{t("onlyAffectedQuestionsAreMarkedOutOf")}
               </p>
               <div className="xi-row-actions" style={{ marginTop: 8 }}>
                 <button
@@ -1210,7 +1211,7 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
               <h4 className="xi-section-title" style={{ fontSize: 16 }}>
                 {t("signoffBlocked")}
               </h4>
-              <p style={{ marginTop: 0 }}>{blockReason}</p>
+              <p style={{ marginTop: 0 }}>{uiText(blockReason)}</p>
               <div className="xi-row-actions">
                 <button className="xi-btn xi-btn-secondary" type="button" disabled>
                   {t("signEncounterBlocked")}
@@ -1234,7 +1235,7 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
               readyRunIds={joined
                 .filter((item) => item.run.status === "ready")
                 .map((item) => item.run.id)}
-              getBlockReason={() => signBlockReason(batch, joinRuns(batch))}
+              getBlockReason={() => signBlockReason(batch, joinRuns(batch), language)}
               onSessionExpired={onSessionExpired}
             />
           )}
@@ -1257,7 +1258,7 @@ export function ProposalReviewPanel({ encounterId, autosave, onSessionExpired, s
 }
 
 function BatchHeader({ batch, advanced, onAdvanced }: { batch: BatchPayload; advanced: boolean; onAdvanced: (open: boolean) => void }) {
-  const { t } = useLanguage();
+  const { text: uiText, t } = useLanguage();
   const busy = batch.queue?.busy === true;
   const position = batch.queue?.queue_position;
   // ponytail: pinned policy identity is one lookup — the fingerprint already
@@ -1283,7 +1284,7 @@ function BatchHeader({ batch, advanced, onAdvanced }: { batch: BatchPayload; adv
         <p className="xi-warning-panel" role="status">
           
           {t("providerQueueIsBusy")}
-          {position !== null && position !== undefined ? ` — queue position ${position}` : ""}{t("thisRunWaitsSavedDraftsAreUnaffected")}
+          {position !== null && position !== undefined ? t("queuePositionValue1", { value1: position }) : ""}{t("thisRunWaitsSavedDraftsAreUnaffected")}
         </p>
       )}
     </div>
@@ -1317,7 +1318,7 @@ function QuestionBlock({
   onRetry: () => void;
   onReviewRetry: () => void;
 }) {
-  const { t, language } = useLanguage();
+  const { text: uiText, t, language } = useLanguage();
   const key = item.run.question_key;
   const regionId = `proposal-transparency-region-${key}`;
   // S48d: gate-explained runs (skipped/clarification) keep their gate
@@ -1331,18 +1332,18 @@ function QuestionBlock({
       <p className="xi-proposal-status">
         <span aria-hidden="true">{GLYPH[item.display]}</span>{" "}
         <span>
-          <strong>{questionLabel(key, undefined, undefined, language)}</strong> — {LABEL[item.display]}
+          <strong>{questionLabel(key, undefined, undefined, language)}</strong> — {uiText(LABEL[item.display])}
         </span>
       </p>
       <p className="xi-hint" style={{ marginTop: 0 }}>
         
-        {t("position")} {item.position} · {item.detail}
+        {t("position")} {item.position} · {uiText(item.detail)}
       </p>
       {showFresh && (
         <div data-testid={`proposal-freshness-${key}`} role="status">
           {fresh !== null && fresh.stale ? (
             <p className="xi-hint" style={{ marginTop: 0 }}>
-              <span aria-hidden="true">◍</span>  {t("outOfDate")} {fresh.reason}{t("onlyThisQuestionNeedsRegenerationStartingA")}
+              <span aria-hidden="true">◍</span>  {t("outOfDate")} {uiText(fresh.reason)}{t("onlyThisQuestionNeedsRegenerationStartingA")}
             </p>
           ) : fresh !== null ? (
             <p className="xi-hint" style={{ marginTop: 0 }}>
@@ -1364,7 +1365,7 @@ function QuestionBlock({
             disabled={actionBusy}
             onClick={onRetry}
           >
-            {actionBusy ? t("retrying") : `Retry ${questionLabel(key, undefined, undefined, language)}`}
+            {actionBusy ? t("retrying") : t("retryValue1", { value1: questionLabel(key, undefined, undefined, language) })}
           </button>
         </div>
       )}
@@ -1376,7 +1377,7 @@ function QuestionBlock({
           aria-controls={regionId}
           onClick={onToggle}
         >
-          {expanded ? `Hide transparency for ${questionLabel(key, undefined, undefined, language)}` : `Show transparency for ${questionLabel(key, undefined, undefined, language)}`}
+          {expanded ? t("hideTransparencyForValue1", { value1: questionLabel(key, undefined, undefined, language) }) : t("showTransparencyForValue1", { value1: questionLabel(key, undefined, undefined, language) })}
         </button>
       </div>
       {/* S48c complete CPT review (plan.md §9.1; FR-50-57): own lazy toggle +
@@ -1392,7 +1393,7 @@ function QuestionBlock({
           ) : review.status === "error" ? (
             <div>
               <p className="xi-form-error" role="alert">
-                {review.message}
+                {uiText(review.message ?? "")}
               </p>
               <div className="xi-row-actions" style={{ marginTop: 8 }}>
                 <button className="xi-btn xi-btn-secondary" type="button" onClick={onReviewRetry}>
@@ -1408,7 +1409,7 @@ function QuestionBlock({
                 error, which renders as role="alert" with a retry above. */}
               {item.display === "failed"
                 ? t("noTransparencyDataBecauseThisRunFailed")
-                : review.message ?? "Transparency unavailable for this question."}
+                : review.message ?? t("transparencyUnavailableForThisQuestion")}
             </p>
           ) : (
             <TransparencyView
@@ -1494,7 +1495,7 @@ function TransparencyView({
       {inputs.length === 0 ? (
         <p className="xi-hint">{t("noProjectedInputs")}</p>
       ) : (
-        <table className="xi-table" aria-label={`Saved patient inputs for ${questionLabel(transparency.question_key, undefined, undefined, language)}`}>
+        <table className="xi-table" aria-label={t("savedPatientInputsForValue1", { value1: questionLabel(transparency.question_key, undefined, undefined, language) })}>
           <thead>
             <tr>
               <th scope="col">{t("node")}</th>
@@ -1536,11 +1537,11 @@ function TransparencyView({
                 
                 {t("states")} {(table.states ?? []).join(" / ")}
                 {(table.parent_ids ?? []).length > 0
-                  ? ` · parents ${(table.parent_ids ?? []).join(", ")}`
+                  ? t("parentsValue1", { value1: (table.parent_ids ?? []).join(", ") })
                   : t("rootDistribution")}
               </span>
             </p>
-            <table className="xi-table" aria-label={`Returned CPT table for ${table.node_id}`}>
+            <table className="xi-table" aria-label={t("returnedCptTableForValue1", { value1: table.node_id })}>
               <thead>
                 <tr>
                   <th scope="col">{t("parentStates")}</th>
@@ -1582,7 +1583,7 @@ function TransparencyView({
       ) : (
         <div>
           {(result.posteriors ?? []).length > 0 && (
-            <table className="xi-table" aria-label={`Posterior probabilities for ${questionLabel(transparency.question_key, undefined, undefined, language)}`}>
+            <table className="xi-table" aria-label={t("posteriorProbabilitiesForValue1", { value1: questionLabel(transparency.question_key, undefined, undefined, language) })}>
               <thead>
                 <tr>
                   <th scope="col">{t("node")}</th>
@@ -1646,12 +1647,12 @@ function TransparencyView({
 }
 
 function ProposalBlock({ batch }: { batch: BatchPayload }) {
-  const { t, language } = useLanguage();
+  const { text: uiText, t, language } = useLanguage();
   const proposal = batch.proposal;
   if (proposal === null) {
     return (
       <div className="xi-notice" role="status" data-testid="proposal-unavailable" id="proposal-unavailable">
-        <p style={{ margin: 0 }}>{t("proposalUnavailable")} {incompleteReason(batch)}</p>
+        <p style={{ margin: 0 }}>{t("proposalUnavailable")} {uiText(incompleteReason(batch, language))}</p>
       </div>
     );
   }
@@ -1698,7 +1699,7 @@ function ProposalBlock({ batch }: { batch: BatchPayload }) {
           <ul>
             {skipped.map((entry) => (
               <li key={`${entry.question_key}|${entry.position}`}>
-                {questionLabel(entry.question_key, undefined, undefined, language)}  {t("skipped")} {entry.reason}
+                {questionLabel(entry.question_key, undefined, undefined, language)}  {t("skipped")} {uiText(entry.reason)}
               </li>
             ))}
           </ul>
@@ -1771,7 +1772,7 @@ function DdiSummary({
   }[];
   limitations: string[];
 }) {
-  const { t } = useLanguage();
+  const { text: uiText, t } = useLanguage();
   return (
     <div>
       <p className="xi-hint" style={{ marginTop: 0 }}>
@@ -1802,9 +1803,9 @@ function DdiSummary({
           {pairs.map((pair) => (
             <li key={pair.label}>
               <p style={{ marginBottom: 2 }}>
-                <strong>{pair.label}</strong> — {pair.status}
-                {pair.severity !== null && ` · highest known severity: ${pair.severity}`}
-                {pair.unknown && " · includes unknown severity"}
+                <strong>{pair.label}</strong> — {uiText(pair.status)}
+                {pair.severity !== null && t("highestKnownSeverityValue1", { value1: pair.severity })}
+                {pair.unknown && t("includesUnknownSeverity")}
               </p>
               {pair.conflicts.length > 0 && (
                 <p className="xi-hint" style={{ margin: "4px 0" }}>

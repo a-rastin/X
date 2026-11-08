@@ -246,7 +246,7 @@ function AuditDetail({
 }
 
 export function AuditPage() {
-  const { t, errorText } = useLanguage();
+  const { text: uiText, t, errorText } = useLanguage();
   const { sessionExpired } = useAuth();
   const uid = useId();
   const [draft, setDraft] = useState<AppliedFilters>(EMPTY_FILTERS);
@@ -377,7 +377,7 @@ export function AuditPage() {
   ) => (
     <div className="xi-field">
       <label className="xi-label" htmlFor={idFor(field)}>
-        {label}
+        {uiText(label)}
       </label>
       <input
         className="xi-input"
@@ -388,7 +388,7 @@ export function AuditPage() {
         value={draft[field]}
         onChange={(event) => setDraftField(field, event.target.value)}
       />
-      {hint !== undefined && <p className="xi-hint" style={{ margin: 0 }}>{hint}</p>}
+      {hint !== undefined && <p className="xi-hint" style={{ margin: 0 }}>{uiText(hint)}</p>}
     </div>
   );
 
@@ -528,7 +528,7 @@ export function AuditPage() {
                           className="xi-btn xi-btn-secondary"
                           type="button"
                           aria-expanded={selected?.id === event.id}
-                          aria-label={`View detail for ${event.operation} at ${event.occurred_at}`}
+                          aria-label={t("viewDetailForValue1AtValue2", { value1: event.operation, value2: event.occurred_at })}
                           onClick={() =>
                             setSelectedId((previous) =>
                               previous === event.id ? null : event.id,

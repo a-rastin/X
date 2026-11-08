@@ -227,7 +227,7 @@ function ImportForm({ onImported }: { onImported: () => void }) {
 }
 
 function ValidationDetails({ versionId }: { versionId: string }) {
-  const { t } = useLanguage();
+  const { text: uiText, t } = useLanguage();
   const { sessionExpired } = useAuth();
   const [state, setState] = useState<
     | { kind: "loading" }
@@ -278,7 +278,7 @@ function ValidationDetails({ versionId }: { versionId: string }) {
       <section aria-labelledby="validation-heading">
         <h4 id="validation-heading">{t("validationDetails")}</h4>
         <p className="xi-form-error" role="alert">
-          {state.message}
+          {uiText(state.message)}
         </p>
       </section>
     );
@@ -292,8 +292,8 @@ function ValidationDetails({ versionId }: { versionId: string }) {
     >
       <h4 id="validation-heading">{t("validationDetails")}</h4>
       <p className="xi-hint">
-        {t("status")}{report.status}  {t("review304")} {report.review.decision}
-        {report.review.reviewer ? ` by ${report.review.reviewer}` : ""}  {t("source305")}{" "}
+        {t("status")}{uiText(report.status)}  {t("review304")} {uiText(report.review.decision)}
+        {report.review.reviewer ? t("byValue1", { value1: report.review.reviewer }) : ""}  {t("source305")}{" "}
         {report.source_hash.slice(0, 12)}…
       </p>
       <h5>{t("structuralXsd")}</h5>
@@ -310,7 +310,7 @@ function ValidationDetails({ versionId }: { versionId: string }) {
       {report.structural.nonactivatable_reasons.length > 0 && (
         <ul aria-label={t("structuralReasonsThisVersionCannotActivate")}>
           {report.structural.nonactivatable_reasons.map((reason) => (
-            <li key={reason}>{reason}</li>
+            <li key={reason}>{uiText(reason)}</li>
           ))}
         </ul>
       )}
@@ -319,7 +319,7 @@ function ValidationDetails({ versionId }: { versionId: string }) {
           {report.structural.xsd_errors.map((error, index) => (
             <li key={index}>
               
-              {t("line")} {error.line}{t("column")} {error.column}: {error.message}
+              {t("line")} {error.line}{t("column")} {error.column}: {uiText(error.message)}
             </li>
           ))}
         </ul>
@@ -335,7 +335,7 @@ function ValidationDetails({ versionId }: { versionId: string }) {
           {report.semantic.errors.map((error, index) => (
             <li key={`${error.code}-${index}`}>
               {error.code}
-              {error.node ? ` (${error.node})` : ""}: {error.message}
+              {error.node ? ` (${error.node})` : ""}: {uiText(error.message)}
             </li>
           ))}
         </ul>
@@ -350,7 +350,7 @@ function ValidationDetails({ versionId }: { versionId: string }) {
         <ul aria-label={t("contentErrors")}>
           {report.content.errors.map((error, index) => (
             <li key={`${error.code}-${index}`}>
-              {error.code}: {error.message}
+              {error.code}: {uiText(error.message)}
             </li>
           ))}
         </ul>
@@ -366,7 +366,7 @@ function ValidationDetails({ versionId }: { versionId: string }) {
         <ul aria-label={t("admissionDiagnostics")}>
           {report.admission.diagnostics.map((diagnostic, index) => (
             <li key={`${diagnostic.code}-${index}`}>
-              {diagnostic.code}: {diagnostic.message}
+              {diagnostic.code}: {uiText(diagnostic.message)}
             </li>
           ))}
         </ul>
@@ -521,10 +521,10 @@ function BundlePanel({
             {confirming === "activate" ? t("activate341") : t("rollBack342")}  {t("workflow343")}{" "}
             <strong>{workflow}</strong>  {t("to")} {network.name}  {t("version")}{" "}
             {version.version_number}  {t("withReview")} {review.decision}
-            {review.reviewer ? ` by ${review.reviewer}` : ""}{t("expectedRevision")}{" "}
+            {review.reviewer ? t("byValue1", { value1: review.reviewer }) : ""}{t("expectedRevision")}{" "}
             {expectedRevision.trim() === ""
               ? t("noneMovesUnconditionally")
-              : `If-Match "${expectedRevision.trim()}"`}.
+              : t("ifMatchValue1", { value1: expectedRevision.trim() })}.
           </p>
           <div className="xi-row-actions">
             <button
@@ -533,7 +533,7 @@ function BundlePanel({
               disabled={busy}
               onClick={() => void handleConfirm()}
             >
-              {busy ? t("working") : `Confirm ${confirming === "activate" ? t("activation") : t("rollback")}`}
+              {busy ? t("working") : t("confirmValue1", { value1: confirming === "activate" ? t("activation") : t("rollback") })}
             </button>
             <button
               className="xi-btn xi-btn-secondary"
@@ -554,7 +554,7 @@ function BundlePanel({
         <p className="xi-status" role="status">
           
           {t("pointerRevision")} {result.revision}
-          {result.etag ? ` (ETag ${result.etag})` : t("noEtagReturned")}  {t("forWorkflow")}{" "}
+          {result.etag ? t("etagValue1", { value1: result.etag }) : t("noEtagReturned")}  {t("forWorkflow")}{" "}
           {result.workflow}.
         </p>
       )}
@@ -563,7 +563,7 @@ function BundlePanel({
 }
 
 function VersionHistory({ network }: { network: NetworkItem }) {
-  const { t, errorText } = useLanguage();
+  const { text: uiText, t, errorText } = useLanguage();
   const { sessionExpired } = useAuth();
   const [state, setState] = useState<
     | { kind: "loading" }
@@ -678,7 +678,7 @@ function VersionHistory({ network }: { network: NetworkItem }) {
       {state.kind === "error" && (
         <div>
           <p className="xi-form-error" role="alert">
-            {state.message}
+            {uiText(state.message)}
           </p>
           <button
             className="xi-btn xi-btn-secondary"
@@ -692,7 +692,7 @@ function VersionHistory({ network }: { network: NetworkItem }) {
         (state.items.length === 0 ? (
           <p>{t("noVersionsYet")}</p>
         ) : (
-          <table className="xi-table" aria-label={`Versions of ${network.name}`}>
+          <table className="xi-table" aria-label={t("versionsOfValue1", { value1: network.name })}>
             <thead>
               <tr>
                 <th scope="col">{t("version354")}</th>
@@ -706,7 +706,7 @@ function VersionHistory({ network }: { network: NetworkItem }) {
               {state.items.map((version) => (
                 <tr key={version.id}>
                   <td>v{version.version_number}</td>
-                  <td>{version.status}</td>
+                  <td>{uiText(version.status)}</td>
                   <td>{version.review.decision}</td>
                   <td style={{ fontFamily: "var(--font-mono)", fontSize: 12 }}>
                     {version.source_hash.slice(0, 12)}…
@@ -792,7 +792,7 @@ function VersionHistory({ network }: { network: NetworkItem }) {
 }
 
 export function NetworksPage() {
-  const { t } = useLanguage();
+  const { text: uiText, t } = useLanguage();
   const { sessionExpired } = useAuth();
   const [state, setState] = useState<
     | { kind: "loading" }
@@ -856,7 +856,7 @@ export function NetworksPage() {
         {state.kind === "error" && (
           <div>
             <p className="xi-form-error" role="alert">
-              {state.message}
+              {uiText(state.message)}
             </p>
             <button
               className="xi-btn xi-btn-secondary"

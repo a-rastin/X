@@ -302,7 +302,7 @@ export function HistorySection({
   onSessionExpired,
   stepNumber,
 }: HistorySectionProps) {
-  const { t, language, errorText, text } = useLanguage();
+  const { text: uiText, t, language, errorText, text } = useLanguage();
   const [preview, setPreview] = useState<HistoryPreview | null>(null);
   const [previewLoading, setPreviewLoading] = useState(true);
   const [previewError, setPreviewError] = useState<string | null>(null);
@@ -442,7 +442,7 @@ export function HistorySection({
     verdict = `Complete — all ${savedFields.length} applicable history fields answered.`;
   } else if (evaluation?.status === "partial") {
     const missing = missingFieldIds.length;
-    verdict = `Incomplete — ${missing} of ${savedFields.length} applicable fields still need${missing === 1 ? "s" : ""} an answer.`;
+    verdict = t("incompleteValue1OfValue2ApplicableFieldsStill", { value1: missing, value2: savedFields.length, value3: language === "en" && missing === 1 ? "s" : "" });
   } else {
     verdict =
       `No answers yet. ${savedFields.length} applicable history fields need review.`;
@@ -511,7 +511,7 @@ export function HistorySection({
                       )}
                       <details className="xi-history-provenance">
                         <summary>{t("responseSource")}{previewProvenance[field.id]?.source === "copied_baseline" ? t("copiedFromBaseline") : ""}</summary>
-                        <p className="xi-hint" id={`hist-${field.id}-provenance`}>{provenanceText(previewProvenance[field.id])}</p>
+                        <p className="xi-hint" id={`hist-${field.id}-provenance`}>{uiText(provenanceText(previewProvenance[field.id]))}</p>
                       </details>
                     </fieldset>
                   );
@@ -529,24 +529,24 @@ export function HistorySection({
                   <h4 id={`history-workflow-${key}`} tabIndex={-1}>{questionLabel(key, undefined, undefined, language)}</h4>
                 </header>
                 <p className="xi-hint">{t("historyContextHint")}</p>
-                {readiness && <p className="xi-hint">{t("savedRequiredInputs")} {readiness.execution_ready_count} / {readiness.required_count}  {t("executionReady")}{answersPending && " Changes pending."}</p>}
+                {readiness && <p className="xi-hint">{t("savedRequiredInputs")} {readiness.execution_ready_count} / {readiness.required_count}  {t("executionReady")}{answersPending && t("changesPending")}</p>}
                 {fields.map((field) => (
                   <div className="xi-diagnosis-item xi-history-item" key={field.id}>
                     <label htmlFor={`hist-${field.id}`}>{clinicalText(language, "workflow", field.id, "definition", field.definition)}</label>
-                    <p className="xi-history-period">{field.time_window.replaceAll("_", " ")}</p>
+                    <p className="xi-history-period">{text(field.time_window.replaceAll("_", " "))}</p>
                     <select id={`hist-${field.id}`} className="xi-input"
                       disabled={preview === null}
                       aria-describedby={(preview?.proposal_readiness?.blockers.some((blocker) => blocker.source_path === field.id) || (preview?.proposal_readiness?.warnings ?? []).some((warning) => warning.source_path === field.id)) ? `hist-${field.id}-readiness` : undefined}
                       value={typeof slice.values[field.id] === "string" ? String(slice.values[field.id]) : ""}
                       onChange={(event) => setValue(field.id, event.target.value)}>
                       {!field.default_value && <option value="">{t("selectResponse")}</option>}
-                      {field.permitted.map((value) => <option key={value} value={value}>{text(valueLabel(value))}</option>)}
+                      {field.permitted.map((value) => <option key={value} value={value}>{value === "Established" ? t("associationEstablished") : text(valueLabel(value))}</option>)}
                     </select>
                     {preview?.proposal_readiness?.blockers.filter((blocker) => blocker.source_path === field.id).map((blocker) => (
-                      <p className="xi-hint" key={blocker.question_key} id={`hist-${field.id}-readiness`}>{blocker.reason}{answersPending && " Based on saved responses."}</p>
+                      <p className="xi-hint" key={blocker.question_key} id={`hist-${field.id}-readiness`}>{uiText(blocker.reason)}{answersPending && t("basedOnSavedResponses")}</p>
                     ))}
                     {(preview?.proposal_readiness?.warnings ?? []).filter((warning) => warning.source_path === field.id).map((warning) => (
-                      <p className="xi-hint" key={warning.question_key}>{t("uncertainContext")} {warning.reason}{answersPending && " Based on saved responses."}</p>
+                      <p className="xi-hint" key={warning.question_key}>{t("uncertainContext")} {uiText(warning.reason)}{answersPending && t("basedOnSavedResponses")}</p>
                     ))}
                     {itemErrors[field.id] && <p className="xi-field-error" role="alert">{itemErrors[field.id].join(" ")}</p>}
                     {field.operationalization && <details className="xi-history-provenance"><summary>{t("assessmentGuidance")}</summary><p className="xi-hint">{clinicalText(language, "workflow", field.id, "operationalization", field.operationalization)}</p></details>}
@@ -610,15 +610,15 @@ export function HistorySection({
                   id="history-preview-status"
                   aria-live="polite"
                 >
-                  {verdict}
+                  {uiText(verdict)}
                 </p>
                 <p className="xi-hint">
                   {t("basedOnSaved")}
                   {" "}{t("coreCompletionSeparate")}
                   {answersPending &&
-                    " Changes pending — summary reflects the last saved responses."}
+                    t("changesPendingSummaryReflectsTheLastSaved")}
                   {previewError !== null &&
-                    " Summary refresh failed; showing the last loaded responses."}
+                    t("summaryRefreshFailedShowingTheLastLoaded")}
                 </p>
 
                 {itemErrorIds.length > 0 && (

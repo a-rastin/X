@@ -39,7 +39,7 @@ function statusLabel(status: Patient["clinical_status"]): string {
 }
 
 export function PatientDirectory() {
-  const { t, errorText } = useLanguage();
+  const { text: uiText, t, errorText } = useLanguage();
   const { user, sessionExpired } = useAuth();
   const uid = useId();
   const searchId = `${uid}-search`;
@@ -247,7 +247,7 @@ export function PatientDirectory() {
                     <td><bdi>{patient.family_name}</bdi></td>
                     <td>{patient.sex}</td>
                     <td>{patient.age}</td>
-                    <td>{statusLabel(patient.clinical_status)}</td>
+                    <td>{uiText(statusLabel(patient.clinical_status))}</td>
                     <td>
                       {patient.archived ? (
                         <span className="xi-badge" role="status">
@@ -261,7 +261,7 @@ export function PatientDirectory() {
                       <a
                         className="xi-btn xi-btn-secondary"
                         href={chartHash(patient.id)}
-                        aria-label={`View chart for ${patient.identifier}`}
+                        aria-label={t("viewChartForValue1", { value1: patient.identifier })}
                       >
                         {t("viewChart")}
                       </a>
@@ -274,7 +274,7 @@ export function PatientDirectory() {
                           data-testid="directory-create-followup"
                           disabled={draftBusy !== null}
                           onClick={() => void startFollowUp(patient.id)}
-                          aria-label={`Start follow-up draft for ${patient.identifier}`}
+                          aria-label={t("startFollowUpDraftForValue1", { value1: patient.identifier })}
                         >
                           {draftBusy === patient.id
                             ? t("starting")

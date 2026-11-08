@@ -61,7 +61,7 @@ function posteriorsSummary(posteriors: Posterior[]): string {
 }
 
 function ReadonlyCptTables({ tables, label }: { tables: CptTable[]; label: string }) {
-  const { t } = useLanguage();
+  const { text: uiText, t } = useLanguage();
   if (tables.length === 0) {
     return <p className="xi-hint">{t("noCptTablesRecorded")}</p>;
   }
@@ -77,11 +77,11 @@ function ReadonlyCptTables({ tables, label }: { tables: CptTable[]; label: strin
               
               {t("states")} {(table.states ?? []).join(" / ")}
               {(table.parent_ids ?? []).length > 0
-                ? ` · parents ${(table.parent_ids ?? []).join(", ")}`
+                ? t("parentsValue1", { value1: (table.parent_ids ?? []).join(", ") })
                 : t("rootDistribution")}
             </span>
           </p>
-          <table className="xi-table" aria-label={`${label} for ${table.node_id}`}>
+          <table className="xi-table" aria-label={t("value1ForValue2", { value1: label, value2: table.node_id })}>
             <thead>
               <tr>
                 <th scope="col">{t("parentStates")}</th>
@@ -117,7 +117,7 @@ function ReadonlyCptTables({ tables, label }: { tables: CptTable[]; label: strin
 }
 
 function SignedQuestion({ frozen }: { frozen: SignedQuestionFrozen }) {
-  const { t } = useLanguage();
+  const { text: uiText, t } = useLanguage();
   if (frozen.status !== "ready") {
     return (
       <li>
@@ -125,10 +125,10 @@ function SignedQuestion({ frozen }: { frozen: SignedQuestionFrozen }) {
           <strong>
             <code className="xi-mono">{frozen.question_key}</code>
           </strong>{" "}
-          — <span className="xi-hint">{t("skipped183")}{frozen.status})</span>
+          — <span className="xi-hint">{t("skipped183")}{uiText(frozen.status)})</span>
         </p>
         <p className="xi-hint" style={{ marginTop: 0 }}>
-          {frozen.gate_reason !== "" ? frozen.gate_reason : t("notApplicableNoAcceptanceApplies")}
+          {frozen.gate_reason !== "" ? uiText(frozen.gate_reason) : t("notApplicableNoAcceptanceApplies")}
         </p>
       </li>
     );
@@ -238,7 +238,7 @@ export function SignedEncounterView({
   /** Reload the chart after a successful append. */
   onChanged: () => void;
 }) {
-  const { t, errorText } = useLanguage();
+  const { text: uiText, t, errorText } = useLanguage();
   const id = snapshot.encounter_id;
   const questions = snapshot.snapshot.questions ?? [];
   const [text, setText] = useState("");
@@ -331,7 +331,7 @@ export function SignedEncounterView({
       <p data-testid={`signed-view-clozapine-${id}`}>
         
         {t("clozapineIncludedInFinalTreatmentPlan")} <strong>
-          {CLOZAPINE_INCLUDED_LABELS[snapshot.snapshot.secondary_plan?.clozapine_included ?? "unknown"]}
+          {uiText(CLOZAPINE_INCLUDED_LABELS[snapshot.snapshot.secondary_plan?.clozapine_included ?? "unknown"])}
         </strong>
       </p>
 
@@ -372,7 +372,7 @@ export function SignedEncounterView({
                 <p style={{ marginTop: 0 }}>{entry.text}</p>
                 {entry.clozapine_included != null && <p>
                   
-                  {t("clozapineIncludedInFinalTreatmentPlan")} <strong>{CLOZAPINE_INCLUDED_LABELS[entry.clozapine_included]}</strong>
+                  {t("clozapineIncludedInFinalTreatmentPlan")} <strong>{uiText(CLOZAPINE_INCLUDED_LABELS[entry.clozapine_included])}</strong>
                 </p>}
               </li>
             ))}
@@ -412,7 +412,7 @@ export function SignedEncounterView({
               onChange={(event) => { setInclusion(event.target.value as ClozapineIncluded | ""); setError(null); }}>
               <option value="">{t("noStructuredConfirmation")}</option>
               {(Object.entries(CLOZAPINE_INCLUDED_LABELS) as [ClozapineIncluded, string][]).map(([value, label]) => (
-                <option value={value} key={value}>{label}</option>
+                <option value={value} key={value}>{uiText(label)}</option>
               ))}
             </select>
             <p className="xi-hint">{t("optionallyConfirmThisSignedPlanAlongsideYour")}</p>
@@ -422,7 +422,7 @@ export function SignedEncounterView({
           </p>
           {status !== null && (
             <p className="xi-status" role="status" data-testid={`addendum-status-${id}`} id={`addendum-status-${id}`}>
-              {status}
+              {uiText(status)}
             </p>
           )}
           {error !== null && (

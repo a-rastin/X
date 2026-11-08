@@ -92,7 +92,7 @@ export function DdiReportPanel({
   selectedIds,
   onSessionExpired,
 }: DdiReportPanelProps) {
-  const { t, text } = useLanguage();
+  const { language, text: uiText, t, text } = useLanguage();
   const [load, setLoad] = useState<LoadState>({ kind: "loading" });
   const [filter, setFilter] = useState("all");
   const errorRef = useRef<HTMLParagraphElement>(null);
@@ -185,7 +185,7 @@ export function DdiReportPanel({
       {load.kind === "loading" && <p className="xi-ddi-empty" aria-live="polite">{t("loadingDdi")}</p>}
       {load.kind === "error" && (
         <div className="xi-ddi-empty">
-          <p className="xi-form-error" id="ddi-error" role="alert" tabIndex={-1} ref={errorRef}>{load.message}</p>
+          <p className="xi-form-error" id="ddi-error" role="alert" tabIndex={-1} ref={errorRef}>{uiText(load.message)}</p>
           {retryButton}
         </div>
       )}
@@ -213,7 +213,7 @@ export function DdiReportPanel({
           </div>
           <p className="xi-hint" id="ddi-report-status" aria-live="polite">
             
-            {t("currentReportDataset")} {report.dataset_version} · {pairs.length}  {t("pair")}{pairs.length === 1 ? "" : "s"} · {report.source_label ?? "Released interaction dataset"}
+            {t("currentReportDataset")} {report.dataset_version} · {pairs.length}  {t("pair")}{(language === "fa" ? "" : pairs.length === 1 ? "" : "s")} · {report.source_label ?? t("releasedInteractionDataset")}
           </p>
           {report.detail_availability === "severity_only" && (
             <p className="xi-ddi-source-note">{t("mechanismAndManagementDetailsWereNotSupplied")}</p>
@@ -246,11 +246,11 @@ export function DdiReportPanel({
                     className={`xi-ddi-pair xi-ddi-pair-${pair.status === "interaction_found" ? (pair.highest_known_severity ?? "unknown").toLowerCase().replace(/[^a-z]/g, "") : "neutral"}`}>
                     <div className="xi-ddi-pair-heading">
                       <h6>{nameOf(pair.drug_a)} <span>+</span> {nameOf(pair.drug_b)}</h6>
-                      <span className="xi-ddi-severity">{pair.status === "interaction_found" ? pair.highest_known_severity ?? "Unknown" : pair.status === "coverage_unavailable" ? t("coverageUnavailable") : t("noListedInteraction")}</span>
+                      <span className="xi-ddi-severity">{pair.status === "interaction_found" ? pair.highest_known_severity ?? t("unknown") : pair.status === "coverage_unavailable" ? t("coverageUnavailable") : t("noListedInteraction")}</span>
                     </div>
                     <p className="xi-ddi-pair-status">{pairStatusText(pair.status)}
-                      {pair.highest_known_severity !== null && ` · highest known severity: ${pair.highest_known_severity}`}
-                      {pair.has_unknown_severity && " · includes unknown severity"}
+                      {pair.highest_known_severity !== null && t("highestKnownSeverityValue1", { value1: pair.highest_known_severity })}
+                      {pair.has_unknown_severity && t("includesUnknownSeverity")}
                     </p>
                     {pair.status === "coverage_unavailable" && <p className="xi-hint">{t("absentRecordCaution")}</p>}
                     {pair.conflicts.length > 0 && <p className="xi-hint">{t("conflictingSeverities")} {pair.conflicts.join(", ")}</p>}

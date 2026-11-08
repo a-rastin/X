@@ -1,6 +1,7 @@
 import { useLanguage } from "../../shared/i18n";
 import { questionLabel } from "./questionLabels";
 import type { ProposalBlocker, ProposalReadiness } from "./api";
+import { clinicalText, present, type Language } from "../../shared/messages";
 
 export function historyControlId(sourcePath: string): string {
   return `hist-${sourcePath}`;
@@ -12,8 +13,12 @@ export function focusHistoryControl(sourcePath: string): void {
   control?.focus();
 }
 
-function blockerLink(blocker: ProposalBlocker, encounterId: string, local: boolean) {
-  const label = blocker.label === blocker.question_label ? questionLabel(blocker.question_key) : blocker.label;
+function blockerLink(blocker: ProposalBlocker, encounterId: string, local: boolean, language: Language) {
+  const label = blocker.label === blocker.question_label
+    ? questionLabel(blocker.question_key, undefined, undefined, language)
+    : blocker.source_path?.startsWith("candidate/history/")
+      ? clinicalText(language, "workflow", blocker.source_path, "definition", blocker.label)
+      : present(language, blocker.label);
   if (blocker.source_path?.startsWith("candidate/history/")) {
     return (
       <a href={local ? `#${historyControlId(blocker.source_path)}` : `#/encounters/${encounterId}#history?field=${encodeURIComponent(blocker.source_path)}`}
@@ -39,7 +44,7 @@ export function ProposalReadinessSummary({ readiness, encounterId, local = false
   encounterId: string;
   local?: boolean;
 }) {
-  const { t, language } = useLanguage();
+  const { text: uiText, t, language } = useLanguage();
   const blocked = !readiness.ready || readiness.blockers.length > 0;
   const warnings = readiness.warnings ?? [];
   const warnedQuestions = readiness.questions.filter((question) => (question.warnings ?? []).length > 0);
@@ -62,8 +67,8 @@ export function ProposalReadinessSummary({ readiness, encounterId, local = false
           <ul className="xi-diagnosis-missing">
             {question.blockers.map((blocker, index) => (
               <li key={`${blocker.source_path ?? "gate"}-${index}`}>
-                {blockerLink(blocker, encounterId, local)}
-                {" — "}{blocker.reason}
+                {blockerLink(blocker, encounterId, local, language)}
+                {" — "}{uiText(blocker.reason)}
               </li>
             ))}
           </ul>
@@ -82,8 +87,8 @@ export function ProposalReadinessSummary({ readiness, encounterId, local = false
               <ul className="xi-diagnosis-missing">
                 {(question.warnings ?? []).map((warning, index) => (
                   <li key={`${warning.source_path ?? "gate"}-${index}`}>
-                    {blockerLink(warning, encounterId, local)}
-                    {" — "}{warning.reason}
+                    {blockerLink(warning, encounterId, local, language)}
+                    {" — "}{uiText(warning.reason)}
                   </li>
                 ))}
               </ul>

@@ -429,7 +429,7 @@ export function CptReviewPanel({
       className="xi-cpt-panel"
       data-testid={`cpt-panel-${questionKey}`}
       id={`cpt-panel-${questionKey}`}
-      aria-label={`CPT review for ${questionLabel(questionKey, undefined, undefined, language)}`}
+      aria-label={t("cptReviewForValue1", { value1: questionLabel(questionKey, undefined, undefined, language) })}
     >
       <div className="xi-row-actions">
         <button
@@ -440,7 +440,7 @@ export function CptReviewPanel({
           aria-controls={regionId}
           onClick={toggle}
         >
-          {open ? `Hide CPT review for ${questionLabel(questionKey, undefined, undefined, language)}` : `Show CPT review for ${questionLabel(questionKey, undefined, undefined, language)}`}
+          {open ? t("hideCptReviewForValue1", { value1: questionLabel(questionKey, undefined, undefined, language) }) : t("showCptReviewForValue1", { value1: questionLabel(questionKey, undefined, undefined, language) })}
         </button>
       </div>
       {open && (
@@ -517,7 +517,7 @@ function CptReviewBody({
   onRetry: () => void;
   onAccept: () => void;
 }) {
-  const { t, errorText, language } = useLanguage();
+  const { text: uiText, t, errorText, language } = useLanguage();
   const questionKey = review.question_run.question_key;
   const originals = indexOriginals(review.original_tables);
   const current = review.current_tables;
@@ -564,7 +564,7 @@ function CptReviewBody({
           <dt>{t("calculationState")}</dt>
           <dd>
             <span aria-hidden="true">{CALC_GLYPH[review.calculation_state] ?? "○"}</span>{" "}
-            {CALC_LABEL[review.calculation_state] ?? review.calculation_state}
+            {uiText(CALC_LABEL[review.calculation_state] ?? review.calculation_state)}
           </dd>
         </div>
         <div>
@@ -572,7 +572,7 @@ function CptReviewBody({
           <dd>
             {stale ? (
               <span>
-                <span aria-hidden="true">◍</span>  {t("outOfDate")} {review.input_freshness.reason}
+                <span aria-hidden="true">◍</span>  {t("outOfDate")} {uiText(review.input_freshness.reason)}
               </span>
             ) : (
               <span>
@@ -590,7 +590,7 @@ function CptReviewBody({
         <div>
           <dt>{t("currentCptRevision")}</dt>
           <dd>
-            <code className="xi-mono">{advanced ? review.current_cpt_revision_id ?? "original (no edits)" : review.current_cpt_revision_id ? t("adjusted") : t("originalNoEdits")}</code>
+            <code className="xi-mono">{advanced ? review.current_cpt_revision_id ?? t("originalNoEdits94") : review.current_cpt_revision_id ? t("adjusted") : t("originalNoEdits")}</code>
           </dd>
         </div>
         <div>
@@ -627,13 +627,13 @@ function CptReviewBody({
       {stale && (
         <div className="xi-warning-panel" role="status">
           <p style={{ margin: 0 }}>
-            <strong>{t("outOfDateBadge")}</strong> — {review.input_freshness.reason}{t("regenerationWithCurrentInputsIsRequiredReset")}
+            <strong>{t("outOfDateBadge")}</strong> — {uiText(review.input_freshness.reason)}{t("regenerationWithCurrentInputsIsRequiredReset")}
           </p>
         </div>
       )}
       {saveStatus !== null && (
         <p className="xi-hint" role="status">
-          {saveStatus}
+          {uiText(saveStatus)}
         </p>
       )}
       {saveError !== null && (
@@ -705,7 +705,7 @@ function CptReviewBody({
                   
                   {t("states")} {(table.states ?? []).join(" / ")}
                   {(table.parent_ids ?? []).length > 0
-                    ? ` · parents ${(table.parent_ids ?? []).join(", ")}`
+                    ? t("parentsValue1", { value1: (table.parent_ids ?? []).join(", ") })
                     : t("rootDistribution")}
                 </span>
               </summary>
@@ -717,7 +717,7 @@ function CptReviewBody({
               ) : null}
               <table
                 className="xi-table"
-                aria-label={`CPT review for ${table.node_id} in ${questionLabel(questionKey, undefined, undefined, language)}`}
+                aria-label={t("cptReviewForValue1InValue2", { value1: table.node_id, value2: questionLabel(questionKey, undefined, undefined, language) })}
               >
                 <thead>
                   <tr>
@@ -747,7 +747,7 @@ function CptReviewBody({
                       return (
                         <tr key={rowIndex}>
                           <td>
-                            <code className="xi-mono">{label}</code>
+                            <code className="xi-mono">{parents.length > 0 ? label : t("rootParentLabel")}</code>
                           </td>
                           {(table.states ?? []).map((state, stateIndex) => {
                             const original = originals.byCell.get(
@@ -779,7 +779,7 @@ function CptReviewBody({
                                   className="xi-cpt-cell-label"
                                   htmlFor={sliderId}
                                 >
-                                  <code className="xi-mono" aria-label={`Current ${state} percentage`}>
+                                  <code className="xi-mono" aria-label={t("currentValue1Percentage", { value1: state })}>
                                     {shown}%
                                   </code>{" "}
                                   <span className="xi-hint">
@@ -812,7 +812,7 @@ function CptReviewBody({
                                         ? Math.min(100, Math.max(0, sliderValue))
                                         : 0
                                     }
-                                    aria-label={`${table.node_id}, parents ${label}, ${state} percentage (original ${original ?? "?"} percent)`}
+                                    aria-label={t("value1ParentsValue2Value3PercentageOriginalValue4", { value1: table.node_id, value2: label, value3: state, value4: original ?? "?" })}
                                     onChange={(event) =>
                                       onSlider(
                                         table.node_id,
@@ -969,7 +969,7 @@ function CptReviewBody({
         </div>
       ) : blockReason !== null ? (
         <div className="xi-warning-panel" role="status">
-          <p style={{ margin: 0 }}>{t("acceptanceBlocked")} {blockReason}</p>
+          <p style={{ margin: 0 }}>{t("acceptanceBlocked")} {uiText(blockReason)}</p>
           <div className="xi-row-actions" style={{ marginTop: 8 }}>
             <button
               className="xi-btn xi-btn-secondary"

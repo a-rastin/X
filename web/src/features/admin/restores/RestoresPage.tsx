@@ -101,7 +101,7 @@ function commitStateOf(job: RestoreJob | null): string {
 }
 
 export function RestoresPage() {
-  const { t, errorText } = useLanguage();
+  const { text: uiText, t, errorText } = useLanguage();
   const { sessionExpired } = useAuth();
   const [file, setFile] = useState<File | null>(null);
   const [job, setJob] = useState<RestoreJob | null>(null);
@@ -553,7 +553,7 @@ export function RestoresPage() {
             data-testid="restores-status"
             id="restores-status"
           >
-            {status}
+            {uiText(status)}
           </p>
         )}
         {error !== null && (
@@ -572,7 +572,7 @@ export function RestoresPage() {
             <dd style={{ display: "inline", margin: 0 }}>{job.id}</dd>
             {" · "}
             <dt style={{ display: "inline", fontWeight: 600 }}>{t("status387")} </dt>
-            <dd style={{ display: "inline", margin: 0 }}>{job.status}</dd>
+            <dd style={{ display: "inline", margin: 0 }}>{uiText(job.status)}</dd>
             {job.expired && (
               <>
                 {" · "}
@@ -669,7 +669,7 @@ export function RestoresPage() {
               disabled={!canCommit}
               onClick={() => void commit()}
             >
-              {committing ? t("committing") : commitPolling ? `Committing… (${pollsUsed}/${MAX_POLLS})` : t("commitRestore")}
+              {committing ? t("committing") : commitPolling ? t("committingValue1Value2", { value1: pollsUsed, value2: MAX_POLLS }) : t("commitRestore")}
             </button>
           </div>
           {commitBlockedReason !== null && (
@@ -699,7 +699,7 @@ export function RestoresPage() {
           >
             
             {t("commit")} {commitState}
-            {job.commit_phase ? ` — phase ${job.commit_phase}` : ""}
+            {job.commit_phase ? t("phaseValue1", { value1: job.commit_phase }) : ""}
             {job.maintenance_active ? t("maintenanceActive") : t("maintenanceClear")}.
           </p>
           {(commitState === "failed" || commitState === "rolled_back") && (
@@ -710,13 +710,13 @@ export function RestoresPage() {
               id="restores-commit-error"
             >
               {job.commit_error_code ? `${job.commit_error_code}: ` : ""}
-              {job.commit_error_message ?? "Restore commit failed."}  {t("priorDatabaseRestoredMaintenanceHeldUntilVerified")}
+              {job.commit_error_message ?? t("restoreCommitFailed")}  {t("priorDatabaseRestoredMaintenanceHeldUntilVerified")}
             </p>
           )}
           <dl className="xi-hint" style={{ marginBottom: 8 }}>
             <dt style={{ display: "inline", fontWeight: 600 }}>{t("preRestoreBackup")} </dt>
             <dd style={{ display: "inline", margin: 0 }}>
-              {job.pre_restore_backup_id ?? "none yet"}
+              {job.pre_restore_backup_id ?? t("noneYet")}
             </dd>
             {generationText !== null && (
               <>
@@ -743,13 +743,13 @@ export function RestoresPage() {
               <p style={{ margin: 0 }}>
                 {report?.sessions_revoked !== null &&
                 report?.sessions_revoked !== undefined
-                  ? `${report.sessions_revoked} session(s) revoked. `
+                  ? t("value1SessionSRevoked", { value1: report.sessions_revoked })
                   : ""}
                 {reconciled !== null
-                  ? `Pending jobs reconciled: ${reconciled.requeued} requeued, ${reconciled.cancelled} cancelled, ${reconciled.preserved_terminal} terminal preserved. `
+                  ? t("pendingJobsReconciledValue1RequeuedValue2Cancelled", { value1: reconciled.requeued, value2: reconciled.cancelled, value3: reconciled.preserved_terminal })
                   : ""}
                 
-                {t("keyReEntry")} {report?.key_consequence ?? "see the validation report above."}
+                {t("keyReEntry")} {report?.key_consequence ?? t("seeTheValidationReportAbove")}
               </p>
             </div>
           )}
@@ -757,7 +757,7 @@ export function RestoresPage() {
             <p className="xi-hint" style={{ marginBottom: 8 }}>
               
               {t("rollback489")} {rollback.restored ? t("restoredThePriorDatabase") : t("foundLiveUnswitched")}
-              {rollback.at ? ` at ${rollback.at}` : ""}: {rollback.reason}
+              {rollback.at ? t("atValue1", { value1: rollback.at }) : ""}: {uiText(rollback.reason)}
             </p>
           )}
           {history.length > 0 ? (
@@ -775,7 +775,7 @@ export function RestoresPage() {
                 {history.map((entry, index) => (
                   <li key={`${entry.phase}-${entry.at ?? index}-${index}`}>
                     <code>{entry.phase}</code> — {entry.ok ? t("ok") : t("failed")}
-                    {entry.at ? ` at ${entry.at}` : ""}
+                    {entry.at ? t("atValue1", { value1: entry.at }) : ""}
                     {entry.detail ? `: ${entry.detail}` : ""}
                   </li>
                 ))}
@@ -919,8 +919,8 @@ export function RestoresPage() {
           <p className="xi-hint" style={{ marginTop: 8 }}>
             
             {t("deploymentGenerationLive")}{" "}
-            {report.deployment_generation.live ?? "unknown"}{t("staged")}{" "}
-            {report.deployment_generation.staged ?? "unknown"}.
+            {report.deployment_generation.live ?? t("unknown20")}{t("staged")}{" "}
+            {report.deployment_generation.staged ?? t("unknown20")}.
           </p>
           <h4 className="xi-section-title" style={{ marginTop: 16 }}>
             

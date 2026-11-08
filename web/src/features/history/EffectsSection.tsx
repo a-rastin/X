@@ -294,7 +294,7 @@ export function EffectsSection({
   onSessionExpired,
   stepNumber,
 }: EffectsSectionProps) {
-  const { t, errorText, language, text } = useLanguage();
+  const { text: uiText, t, errorText, language, text } = useLanguage();
   const [preview, setPreview] = useState<EffectsPreview | null>(null);
   const [previewLoading, setPreviewLoading] = useState(true);
   const [previewError, setPreviewError] = useState<string | null>(null);
@@ -514,11 +514,11 @@ export function EffectsSection({
       return (
         <p className="xi-hint">
           
-          {t("severityNullNotRequiredFor")} {local.status ?? "unrecorded"}{" "}
+          {t("severityNullNotRequiredFor")} {text(local.status ?? "unrecorded")}{" "}
           
           {t("status10")}
           {kept > 0 &&
-            ` ${kept} saved answer${kept === 1 ? " is" : "s are"} kept; only the severity was cleared.`}
+            t("value1SavedAnswerValue2KeptOnlyThe", { value1: kept, value2: language === "fa" ? "" : kept === 1 ? " is" : "s are" })}
         </p>
       );
     }
@@ -552,7 +552,7 @@ export function EffectsSection({
           <p className="xi-hint" id="effect-akathisia-severity-hint">
             
             {t("mustEqualTheRecordedBarsGlobalScore")}
-            {typeof global === "number" ? ` (currently ${global})` : ""}{t("global2OrGreaterIndicatesPresentThe")}
+            {typeof global === "number" ? t("currentlyValue1", { value1: global }) : ""}{t("global2OrGreaterIndicatesPresentThe")}
           </p>
         </div>
       );
@@ -742,7 +742,7 @@ export function EffectsSection({
           </table>
           <p className="xi-hint">
             {typeof findings["global_label"] === "string" &&
-              `Global label: ${String(findings["global_label"])}. `}
+              t("globalLabelValue1", { value1: String(findings["global_label"]) })}
             {t("threshold")} {findings["threshold_met"] === true ? t("met21") : t("notMet22")}  {t("global2OrGreaterIndicatesPresent")}
             {typeof findings["pseudoakathisia_note"] === "string" &&
               ` ${String(findings["pseudoakathisia_note"])}`}
@@ -842,7 +842,7 @@ export function EffectsSection({
               <div
                 className="xi-radio-group"
                 role="radiogroup"
-                aria-label={`${text(EFFECT_TITLES[key])} status`}
+                aria-label={t("effectStatusLabel", { effect: text(EFFECT_TITLES[key]) })}
               >
                 {STATUSES.map((status) => (
                   <label key={status} htmlFor={`effect-${key}-${status}`}>
@@ -913,7 +913,7 @@ export function EffectsSection({
               id="effects-preview-status"
               aria-live="polite"
             >
-              {verdict}
+              {uiText(verdict)}
             </p>
             <p className="xi-hint">
               
@@ -924,9 +924,9 @@ export function EffectsSection({
               ).join(", ")}
               {" · "}{t("savedRevision29")} {preview.revision}
               {answersPending &&
-                " · unsaved edits pending — preview reflects the last saved revision"}
+                t("unsavedEditsPendingPreviewReflectsTheLast")}
               {previewError !== null &&
-                " · preview refresh failed; showing last loaded state"}
+                t("previewRefreshFailedShowingLastLoadedState")}
             </p>
           </div>
         )}

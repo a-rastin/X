@@ -65,7 +65,7 @@ export function SecondaryPlanPanel({
   /** Sign waits for this panel's separately revisioned text and structured choice. */
   flushRef: RefObject<(() => Promise<void>) | null>;
 }) {
-  const { t, errorText } = useLanguage();
+  const { text: uiText, t, errorText } = useLanguage();
   const [load, setLoad] = useState<LoadState>({ kind: "loading" });
   const [revision, setRevision] = useState(1);
   const [savedText, setSavedText] = useState("");
@@ -340,7 +340,7 @@ export function SecondaryPlanPanel({
           {t("secondaryPlanS50")}
         </h4>
         <p className="xi-form-error" role="alert">
-          {load.message}
+          {uiText(load.message)}
         </p>
       </section>
     );
@@ -401,7 +401,7 @@ export function SecondaryPlanPanel({
                   setDirty(draftRef.current !== savedText || value !== savedInclusion);
                   setSaveError(null);
                   schedule();
-                }} /> {label}
+                }} /> {uiText(label)}
             </label>
           ))}
         </div>
@@ -415,7 +415,7 @@ export function SecondaryPlanPanel({
         {t("planRevision")} {revision} · {draft.length}  {t("of")} {MAX_SECONDARY_PLAN_CHARS}  {t("characters")}
       </p>
       <p className="xi-hint" role="status" id="secondary-plan-status" data-testid="secondary-plan-status">
-        {statusText}
+        {uiText(statusText)}
       </p>
       {saveError !== null && (
         <p className="xi-form-error" role="alert" tabIndex={-1} ref={errorRef}>
@@ -442,7 +442,7 @@ export function SecondaryPlanPanel({
           {serverText !== null && (
             <p className="xi-hint">
               
-              {t("savedPlanRevision")} {revision}): {serverText === "" ? t("empty") : serverText}{t("clozapineIncluded")} {CLOZAPINE_INCLUDED_LABELS[serverInclusion]}.
+              {t("savedPlanRevision")} {revision}): {serverText === "" ? t("empty") : serverText}{t("clozapineIncluded")} {uiText(CLOZAPINE_INCLUDED_LABELS[serverInclusion])}.
             </p>
           )}
           <div className="xi-row-actions">

@@ -57,7 +57,7 @@ function shortHash(hash: string): string {
 }
 
 export function BackupsPage() {
-  const { t, errorText } = useLanguage();
+  const { language, text: uiText, t, errorText } = useLanguage();
   const { sessionExpired } = useAuth();
   const [job, setJob] = useState<BackupJob | null>(null);
   const [lastGood, setLastGood] = useState<BackupJob | null>(null);
@@ -265,7 +265,7 @@ export function BackupsPage() {
             {creating
               ? t("creating")
               : polling
-                ? `In progress… (${pollsUsed}/${MAX_POLLS})`
+                ? t("inProgressValue1Value2", { value1: pollsUsed, value2: MAX_POLLS })
                 : job?.status === "failed"
                   ? t("retryNewBackup")
                   : job !== null
@@ -292,7 +292,7 @@ export function BackupsPage() {
             data-testid="backups-status"
             id="backups-status"
           >
-            {status}
+            {uiText(status)}
           </p>
         )}
         {error !== null && (
@@ -306,7 +306,7 @@ export function BackupsPage() {
             <dd style={{ display: "inline", margin: 0 }}>{job.id}</dd>
             {" · "}
             <dt style={{ display: "inline", fontWeight: 600 }}>{t("status387")} </dt>
-            <dd style={{ display: "inline", margin: 0 }}>{job.status}</dd>
+            <dd style={{ display: "inline", margin: 0 }}>{uiText(job.status)}</dd>
             {job.archive_sha256 !== null && (
               <>
                 {" · "}
@@ -339,8 +339,8 @@ export function BackupsPage() {
             {t("manifest")} <code>{manifest.schema_version}</code>{t("appSchema")}{" "}
             <code>{manifest.app_schema_version}</code>{t("created")}{" "}
             {manifest.created_at}  {t("by")} {manifest.created_by.username}.{" "}
-            {networkCount}  {t("networkXmlExport")}{networkCount === 1 ? "" : "s"};{" "}
-            {manifest.warnings.length}  {t("warning")}{manifest.warnings.length === 1 ? "" : "s"}.
+            {networkCount}  {t("networkXmlExport")}{(language === "fa" ? "" : networkCount === 1 ? "" : "s")};{" "}
+            {manifest.warnings.length}  {t("warning")}{(language === "fa" ? "" : manifest.warnings.length === 1 ? "" : "s")}.
           </p>
           <table className="xi-table" aria-label={t("backupTableInventory")}>
             <thead>

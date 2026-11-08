@@ -108,7 +108,7 @@ export function PanssSection({
   onSessionExpired,
   stepNumber,
 }: PanssSectionProps) {
-  const { t, errorText, language, text } = useLanguage();
+  const { text: uiText, t, errorText, language, text } = useLanguage();
   function translatedPrompt(item: { id: string; prompt: string }): string {
     return clinicalText(language, definition?.id ?? "panss", definition?.version ?? "unavailable", item.id, item.prompt);
   }
@@ -423,11 +423,11 @@ export function PanssSection({
               id="panss-preview-status"
               aria-live="polite"
             >
-              {verdict}
+              {uiText(verdict)}
             </p>
             {(answersPending || previewError !== null) && <p className="xi-hint" aria-live="polite">
-              {answersPending && "Answers have changed. Results reflect the last saved assessment. "}
-              {previewError !== null && "Results could not refresh. Showing the last available assessment."}
+              {answersPending && t("answersHaveChangedResultsReflectTheLast")}
+              {previewError !== null && t("resultsCouldNotRefreshShowingTheLast")}
             </p>}
             <details className="xi-assessment-provenance">
               <summary>{t("assessmentDetails")}</summary>
@@ -505,7 +505,7 @@ export function PanssSection({
               >
                 <p style={{ margin: 0 }}>
                   
-                  {t("totalBand")} {totalBand.range}: {totalBand.label}{t("informationalOnlyNotATreatmentGate")}
+                  {t("totalBand")} {totalBand.range}: {text(totalBand.label)}{t("informationalOnlyNotATreatmentGate")}
                 </p>
               </div>
             )}

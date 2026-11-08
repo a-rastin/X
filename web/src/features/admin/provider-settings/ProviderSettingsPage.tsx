@@ -31,7 +31,7 @@ function messageFor(err: unknown): string {
 }
 
 export function ProviderSettingsPage() {
-  const { t, errorText } = useLanguage();
+  const { text: uiText, t, errorText } = useLanguage();
   const { sessionExpired } = useAuth();
   const [loaded, setLoaded] = useState(false);
   const [ready, setReady] = useState(false);
@@ -200,7 +200,7 @@ export function ProviderSettingsPage() {
       {ready && (
         <form className="xi-card" onSubmit={(event) => void save(event)} noValidate>
           <div className="xi-meta-pair">
-            <p id="provider-key-status">{t("keyStatus")} {keyStatus}</p>
+            <p id="provider-key-status">{t("keyStatus")} {uiText(keyStatus)}</p>
             <p id="provider-capability">{t("toolProbe")} {capability}</p>
           </div>
           <div className="xi-field">
@@ -271,10 +271,10 @@ export function ProviderSettingsPage() {
               <option value="json">{t("json")}</option>
             </select>
             <p className="xi-hint" id="provider-mode-help">
-              {revision === null ? t("noSavedModeYet") : `Saved mode: ${savedMode}. Effective mode: ${effectiveMode}.`}
-              {revision !== null && overrideActive && ` Deployment override active: ${effectiveMode}.`}
+              {revision === null ? t("noSavedModeYet") : t("savedModeValue1EffectiveModeValue2", { value1: savedMode, value2: effectiveMode })}
+              {revision !== null && overrideActive && t("deploymentOverrideActiveValue1", { value1: effectiveMode })}
               {detectedMode !== null
-                ? ` Detected provider mode: ${detectedMode} (last test).${detectedMode !== effectiveMode ? " This differs from the effective mode." : ""}`
+                ? t("detectedProviderModeValue1LastTestValue2", { value1: detectedMode, value2: detectedMode !== effectiveMode ? t("thisDiffersFromTheEffectiveMode") : "" })
                 : t("detectionResultUnavailableTestTheProviderTo")}
               {t("testUsesSavedSettingsDetectionDoesNot")}
             </p>

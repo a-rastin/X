@@ -50,7 +50,7 @@ export function FollowupBaselinePanel({
   encounterId: string;
   onSessionExpired: () => void;
 }) {
-  const { t } = useLanguage();
+  const { language, text: uiText, t } = useLanguage();
   const [load, setLoad] = useState<LoadState>({ kind: "loading" });
 
   const reload = useCallback(async () => {
@@ -111,7 +111,7 @@ export function FollowupBaselinePanel({
           {t("followUpBaseline")}
         </h3>
         <p className="xi-form-error" role="alert">
-          {load.message}
+          {uiText(load.message)}
         </p>
         {load.kind === "error" && (
           <div className="xi-row-actions" style={{ marginTop: 8 }}>
@@ -172,15 +172,15 @@ export function FollowupBaselinePanel({
           <p className="xi-hint">
             {t("baseline")}{" "}
             {baseline.baseline_encounter_id !== null
-              ? `from signed encounter ${baseline.baseline_encounter_id}`
+              ? t("fromSignedEncounterValue1", { value1: baseline.baseline_encounter_id })
               : t("snapshot665")}{" "}
             · {historyIds.length}  {t("copiedHistor")}
             {historyIds.length === 1 ? t("yField") : t("yFields")} ·{" "}
             {medications.length}  {t("copiedMedication")}
-            {medications.length === 1 ? "" : "s"}
+            {(language === "fa" ? "" : medications.length === 1 ? "" : "s")}
             {baseline.provenance_note !== null &&
               baseline.provenance_note !== "" &&
-              ` · note: ${baseline.provenance_note}`}
+              t("noteValue1", { value1: baseline.provenance_note })}
           </p>
           {historyIds.length > 0 && (
             <ul aria-label={t("copiedHistoryFields")}>
@@ -229,9 +229,9 @@ export function FollowupBaselinePanel({
           {reconciliation.baseline_encounter_id !== null &&
           reconciliation.baseline_encounter_id !== undefined &&
           reconciliation.baseline_encounter_id !== ""
-            ? ` · baseline ${reconciliation.baseline_encounter_id}`
+            ? t("baselineValue1", { value1: reconciliation.baseline_encounter_id })
             : ""}{" "}
-          — {reconciliationHint}
+          — {uiText(reconciliationHint)}
         </p>
       </div>
 
@@ -253,7 +253,7 @@ export function FollowupBaselinePanel({
           >
             {priorKeys.map((key) => (
               <li key={key}>
-                {scoreLabel(key)}: {String(priorScores[key]?.value)} ·{" "}
+                {uiText(scoreLabel(key))}: {String(priorScores[key]?.value)} ·{" "}
                 <span className="xi-hint">
                   
                   {t("historicalNotACurrentAnswer")}

@@ -229,10 +229,11 @@ function ReadOnlyField({
   value: string;
   mono?: boolean;
 }) {
+  const { text: uiText } = useLanguage();
   return (
     <div className="xi-field">
       <label className="xi-label" htmlFor={id}>
-        {label}
+        {uiText(label)}
       </label>
       <input
         className={mono ? "xi-input xi-mono" : "xi-input"}
@@ -246,7 +247,7 @@ function ReadOnlyField({
 }
 
 export function EncounterPage({ encounterId }: { encounterId: string }) {
-  const { t } = useLanguage();
+  const { text: uiText, t } = useLanguage();
   const { user, sessionExpired } = useAuth();
   const [load, setLoad] = useState<LoadState>({ kind: "loading" });
   const [patient, setPatient] = useState<Patient | null>(null);
@@ -330,7 +331,7 @@ export function EncounterPage({ encounterId }: { encounterId: string }) {
       <div>
         <h2 className="xi-page-title">{t("encounterDraft")}</h2>
         <p className="xi-form-error" role="alert" data-testid="encounter-denied">
-          {load.message}
+          {uiText(load.message)}
         </p>
         <p className="xi-hint">
           
@@ -349,7 +350,7 @@ export function EncounterPage({ encounterId }: { encounterId: string }) {
       <div>
         <h2 className="xi-page-title">{t("encounterDraft")}</h2>
         <p className="xi-form-error" role="alert" data-testid="encounter-error">
-          {load.message}
+          {uiText(load.message)}
         </p>
         <div className="xi-row-actions">
           <button
@@ -799,7 +800,7 @@ function EncounterWizard({
         className="xi-wizard-page"
         id="wizard-page"
         role="region"
-        aria-label={`${currentStep.label}, step ${stepIndex + 1} of ${steps.length}`}
+        aria-label={t("value1StepValue2OfValue3", { value1: text(currentStep.label), value2: stepIndex + 1, value3: steps.length })}
         tabIndex={-1}
         ref={pageRef}
         onBlur={(event) => {
@@ -907,7 +908,7 @@ function EncounterWizard({
             onClick={followStepLink}
           >
             
-            {t("backTo")} {previousStep.label}
+            {t("backTo")} {text(previousStep.label)}
           </a>
         )}
         {nextStep !== null &&

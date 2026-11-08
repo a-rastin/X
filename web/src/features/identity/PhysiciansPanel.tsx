@@ -281,7 +281,7 @@ function DeactivateForm({
   onDeactivated: (message: string) => void;
   onCancel: () => void;
 }) {
-  const { t, errorText } = useLanguage();
+  const { text: uiText, t, errorText } = useLanguage();
   const { sessionExpired } = useAuth();
   const [draftAction, setDraftAction] = useState<DraftAction>("retain");
   const [preview, setPreview] = useState<PreviewState>({ kind: "loading" });
@@ -380,7 +380,7 @@ function DeactivateForm({
         {preview.kind === "error" && (
           <div>
             <p className="xi-form-error" role="alert">
-              {preview.message}
+              {uiText(preview.message)}
             </p>
             <button
               className="xi-btn xi-btn-secondary"
@@ -489,7 +489,7 @@ function DeactivateForm({
 }
 
 export function PhysiciansPanel() {
-  const { t, text } = useLanguage();
+  const { text: uiText, t, text } = useLanguage();
   const { sessionExpired } = useAuth();
   const [state, setState] = useState<LoadState>({ kind: "loading" });
   const [notice, setNotice] = useState<string | null>(null);
@@ -599,13 +599,13 @@ export function PhysiciansPanel() {
         )}
         {(state.kind === "ready" || state.kind === "refreshing") &&
           state.items.length < state.total && (
-            <p className="xi-hint">{`Showing ${state.items.length} of ${state.total}`}</p>
+            <p className="xi-hint">{t("showingValue1OfValue2", { value1: state.items.length, value2: state.total })}</p>
           )}
         {state.kind === "loading" && <p>{t("loadingPhysicians")}</p>}
         {state.kind === "error" && (
           <div>
             <p className="xi-form-error" role="alert">
-              {state.message}
+              {uiText(state.message)}
             </p>
             <button
               className="xi-btn xi-btn-secondary"

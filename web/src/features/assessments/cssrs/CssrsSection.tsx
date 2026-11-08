@@ -213,7 +213,7 @@ export function CssrsSection({
   onSessionExpired,
   stepNumber,
 }: CssrsSectionProps) {
-  const { t, text, errorText, language } = useLanguage();
+  const { text: uiText, t, text, errorText, language } = useLanguage();
   const [definition, setDefinition] = useState<CssrsDefinition | null>(null);
   const [definitionError, setDefinitionError] = useState<string | null>(null);
   const [preview, setPreview] = useState<CssrsPreview | null>(null);
@@ -462,14 +462,14 @@ export function CssrsSection({
                   id="cssrs-preview-status"
                   aria-live="polite"
                 >
-                  {verdict}
+                  {uiText(verdict)}
                 </p>
                 {(answersPending || previewError !== null) && (
                   <p className="xi-hint" aria-live="polite">
                     {answersPending &&
-                      "Answers have changed. Results reflect the last saved assessment. "}
+                      t("answersHaveChangedResultsReflectTheLast")}
                     {previewError !== null &&
-                      "Results could not refresh. Showing the last available assessment."}
+                      t("resultsCouldNotRefreshShowingTheLast")}
                   </p>
                 )}
                 <details className="xi-assessment-provenance">

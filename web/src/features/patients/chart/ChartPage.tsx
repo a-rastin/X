@@ -92,7 +92,7 @@ function ArchivePanel({
   onChanged: (done: string | null) => void;
   onSessionExpired: () => void;
 }) {
-  const { t, errorText } = useLanguage();
+  const { text: uiText, t, errorText } = useLanguage();
   const [confirming, setConfirming] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -188,7 +188,7 @@ function ArchivePanel({
       )}
       {done !== null && (
         <p className="xi-status" role="status" data-testid="archive-status">
-          {done}
+          {uiText(done)}
         </p>
       )}
       {!confirming ? (
@@ -223,7 +223,7 @@ function ArchivePanel({
             >
               {busy
                 ? t("working")
-                : `Confirm ${patient.archived ? "unarchive" : "archive"} ${patient.identifier} (rev ${confirmRevision})`}
+                : t("confirmValue1Value2RevValue3", { value1: patient.archived ? "unarchive" : "archive", value2: patient.identifier, value3: confirmRevision })}
             </button>
             <button
               className="xi-btn xi-btn-secondary"
@@ -258,7 +258,7 @@ function DemographicsForm({
   onChanged: (notice: { message: string; staleRelevant: boolean } | null) => void;
   onSessionExpired: () => void;
 }) {
-  const { t, errorText } = useLanguage();
+  const { text: uiText, t, errorText } = useLanguage();
   const [givenName, setGivenName] = useState(patient.given_name);
   const [familyName, setFamilyName] = useState(patient.family_name);
   const [sex, setSex] = useState(patient.sex);
@@ -472,7 +472,7 @@ function DemographicsForm({
           <p style={{ marginTop: 0 }}>
             
             {t("currentServerValuesRevision")} {conflictServer.revision}): {conflictServer.sex} ·{" "}
-            {conflictServer.age} · {statusLabel(conflictServer.clinical_status)} ·{" "}
+            {conflictServer.age} · {uiText(statusLabel(conflictServer.clinical_status))} ·{" "}
             {conflictServer.given_name} {conflictServer.family_name} ·{" "}
             {conflictServer.phone ?? "—"}.
           </p>
@@ -541,7 +541,7 @@ function DemographicsForm({
 }
 
 export function ChartPage({ patientId }: { patientId: string }) {
-  const { t, errorText } = useLanguage();
+  const { text: uiText, t, errorText } = useLanguage();
   const { user, sessionExpired } = useAuth();
   const [load, setLoad] = useState<LoadState>({ kind: "loading" });
   const [createBusy, setCreateBusy] = useState(false);
@@ -660,7 +660,7 @@ export function ChartPage({ patientId }: { patientId: string }) {
         >
           {t("patientChart")}</h2>
         <p className="xi-form-error" role="alert">
-          {load.message}
+          {uiText(load.message)}
         </p>
         <div className="xi-row-actions">
           <button
@@ -719,7 +719,7 @@ export function ChartPage({ patientId }: { patientId: string }) {
             <dt className="xi-hint">{t("sexAgeStatus")}</dt>
             <dd>
               {patient.sex} · {patient.age} ·{" "}
-              {statusLabel(patient.clinical_status)}
+              {uiText(statusLabel(patient.clinical_status))}
             </dd>
           </div>
           <div>

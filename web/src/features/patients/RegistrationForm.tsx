@@ -206,7 +206,7 @@ function RegistrationForm() {
         className="xi-wizard-page"
         id="wizard-page"
         role="region"
-        aria-label={`Register patient, step 1 of ${REGISTRATION_WIZARD_STEPS.length}`}
+        aria-label={t("registerPatientStep1OfValue1", { value1: REGISTRATION_WIZARD_STEPS.length })}
       >
       <section className="xi-card" aria-labelledby="demographics-heading">
         <h3 className="xi-section-title" id="demographics-heading">

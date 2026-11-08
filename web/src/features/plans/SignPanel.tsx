@@ -71,7 +71,7 @@ export function SignPanel({
   getBlockReason: () => string | null;
   onSessionExpired: () => void;
 }) {
-  const { t, errorText } = useLanguage();
+  const { language, t, errorText } = useLanguage();
   const [signing, setSigning] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [signed, setSigned] = useState<{
@@ -226,7 +226,7 @@ export function SignPanel({
       </div>
       <p className="xi-hint" style={{ marginBottom: 0 }}>
         
-        {t("coversExactlyThe")} {readyRunIds.length}  {t("readyQuestion")}{readyRunIds.length === 1 ? "" : "s"}{" "}
+        {t("coversExactlyThe")} {readyRunIds.length}  {t("readyQuestion")}{(language === "fa" ? "" : readyRunIds.length === 1 ? "" : "s")}{" "}
         
         {t("withTheirCurrentAcceptancesPendingFailedOr")}
       </p>

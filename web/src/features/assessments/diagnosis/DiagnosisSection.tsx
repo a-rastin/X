@@ -141,7 +141,7 @@ export function DiagnosisSection({
   locked = false,
   onInitializationReady,
 }: DiagnosisSectionProps) {
-  const { t, errorText, text, language } = useLanguage();
+  const { text: uiText, t, errorText, text, language } = useLanguage();
   function translatedPrompt(item: { id: string; prompt: string }): string {
     return clinicalText(language, definition?.id ?? "diagnosis", definition?.version ?? "unavailable", item.id, item.prompt);
   }
@@ -445,7 +445,7 @@ export function DiagnosisSection({
                   <span className="xi-diagnosis-letter" aria-hidden="true">{criterion}</span>
                   <h4 id={`diag-group-${criterion}`} tabIndex={-1}>
                     <span className="xi-sr-only">{t("criterion")} {criterion}: </span>
-                    {text(CRITERION_TITLES[criterion] ?? "Additional criteria")}
+                    {text(CRITERION_TITLES[criterion] ?? t("additionalCriteria"))}
                   </h4>
                   <span className="xi-diagnosis-count">{t("answeredCount", { answered, total: items.length })}</span>
                 </header>
@@ -527,14 +527,14 @@ export function DiagnosisSection({
               id="diagnosis-preview-status"
               aria-live="polite"
             >
-              {verdict}
+              {uiText(verdict)}
             </p>
             <p className="xi-hint">
               
               {t("serverEvaluationDefinition")} {preview.definition_version}  {t("savedRevision278")} {preview.revision}
               {answersPending &&
-                " · unsaved answer edits pending — preview reflects the last saved revision"}
-              {previewError !== null && " · preview refresh failed; showing last loaded state"}
+                t("unsavedAnswerEditsPendingPreviewReflectsThe")}
+              {previewError !== null && t("previewRefreshFailedShowingLastLoadedState")}
             </p>
 
             {itemErrorIds.length > 0 && (
@@ -573,7 +573,7 @@ export function DiagnosisSection({
                 <tbody>
                   {Object.entries(criteria).map(([criterion, state]) => (
                     <tr key={criterion}>
-                      <td><strong>{criterion}</strong>{" · "}{text(CRITERION_TITLES[criterion] ?? "Criterion")}</td>
+                      <td><strong>{criterion}</strong>{" · "}{text(CRITERION_TITLES[criterion] ?? t("criterion"))}</td>
                       <td><span className={`xi-diagnosis-state xi-diagnosis-state--${state}`}>
                         {state === "met" ? t("met") : state === "not_met" ? t("notMet") : state === "unknown" ? t("unknown") : state}
                       </span></td>

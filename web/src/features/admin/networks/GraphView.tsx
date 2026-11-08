@@ -51,6 +51,7 @@ function layoutDepths(graph: GraphNetwork): Map<string, number> {
 }
 
 function GraphSvg({ graph, idSuffix }: { graph: GraphNetwork; idSuffix: string }) {
+  const { t } = useLanguage();
   const depths = layoutDepths(graph);
   const columns = new Map<number, string[]>();
   for (const node of graph.nodes) {
@@ -87,7 +88,7 @@ function GraphSvg({ graph, idSuffix }: { graph: GraphNetwork; idSuffix: string }
       direction="ltr"
       role="img"
       tabIndex={0}
-      aria-label={`Network ${graph.network_name}: ${graph.nodes.join(", ")}`}
+      aria-label={t("networkValue1Value2", { value1: graph.network_name, value2: graph.nodes.join(", ") })}
       viewBox={`0 0 ${width} ${height}`}
       style={{ width: "100%", maxWidth: width, height: "auto", display: "block" }}
     >
@@ -173,7 +174,7 @@ function GraphSvg({ graph, idSuffix }: { graph: GraphNetwork; idSuffix: string }
 }
 
 export function GraphView({ versionId }: { versionId: string }) {
-  const { t } = useLanguage();
+  const { text: uiText, t } = useLanguage();
   const { sessionExpired } = useAuth();
   const [state, setState] = useState<LoadState>({ kind: "loading" });
 
@@ -227,7 +228,7 @@ export function GraphView({ versionId }: { versionId: string }) {
           {t("readOnlyGraph")}
         </h3>
         <p className="xi-form-error" role="alert">
-          {state.message}
+          {uiText(state.message)}
         </p>
       </section>
     );
@@ -265,7 +266,7 @@ export function GraphView({ versionId }: { versionId: string }) {
       {validation.nonactivatable_reasons.length > 0 && (
         <ul aria-label={t("reasonsThisVersionCannotActivate")}>
           {validation.nonactivatable_reasons.map((reason) => (
-            <li key={reason}>{reason}</li>
+            <li key={reason}>{uiText(reason)}</li>
           ))}
         </ul>
       )}
@@ -273,11 +274,11 @@ export function GraphView({ versionId }: { versionId: string }) {
         <p>{t("noNetworksInThisVersion")}</p>
       ) : (
         payload.graphs.map((graph, graphIndex) => (
-          <article key={graph.network_name} aria-label={`Network ${graph.network_name}`}>
+          <article key={graph.network_name} aria-label={t("networkValue1", { value1: graph.network_name })}>
             <h4>{graph.network_name}</h4>
             <GraphSvg graph={graph} idSuffix={String(graphIndex)} />
             <h5>{t("variablesInStoredOrder")}</h5>
-            <table className="xi-table" aria-label={`Variables of ${graph.network_name}`}>
+            <table className="xi-table" aria-label={t("variablesOfValue1", { value1: graph.network_name })}>
               <thead>
                 <tr>
                   <th scope="col">{t("variable")}</th>

@@ -88,9 +88,9 @@ function MetricTable({
   label: string;
   rows: Array<[string, string]>;
 }) {
-  const { t } = useLanguage();
+  const { text: uiText, t } = useLanguage();
   return (
-    <table className="xi-table" aria-label={label}>
+    <table className="xi-table" aria-label={uiText(label)}>
       <thead>
         <tr>
           <th scope="col">{t("metric")}</th>
@@ -100,7 +100,7 @@ function MetricTable({
       <tbody>
         {rows.map(([metric, value]) => (
           <tr key={metric}>
-            <td>{metric}</td>
+            <td>{uiText(metric)}</td>
             <td>{value}</td>
           </tr>
         ))}
@@ -110,7 +110,7 @@ function MetricTable({
 }
 
 export function StatusPage() {
-  const { t, errorText } = useLanguage();
+  const { text: uiText, t, errorText } = useLanguage();
   const { sessionExpired } = useAuth();
   const [snapshot, setSnapshot] = useState<OpsStatus | null>(null);
   const [loading, setLoading] = useState(true);
@@ -250,9 +250,9 @@ export function StatusPage() {
             <ul style={{ marginBottom: 0, paddingLeft: 20 }}>
               {alerts.map((alert) => (
                 <li key={alert.name} className="xi-warning-panel">
-                  <strong>{alert.name}</strong>: {alert.message}
+                  <strong>{alert.name}</strong>: {uiText(alert.message)}
                   {alertDetail(alert) !== null && (
-                    <> ({alertDetail(alert)})</>
+                    <> ({uiText(alertDetail(alert) ?? "")})</>
                   )}
                 </li>
               ))}

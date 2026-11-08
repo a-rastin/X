@@ -36,7 +36,7 @@ import { useAuth } from "../../identity/auth";
 type ExportKey = "patients" | "physicians";
 
 export function ExportsPage() {
-  const { t, errorText } = useLanguage();
+  const { text: uiText, t, errorText } = useLanguage();
   const { sessionExpired } = useAuth();
   const [busy, setBusy] = useState<ExportKey | null>(null);
   const [status, setStatus] = useState<string | null>(null);
@@ -117,7 +117,7 @@ export function ExportsPage() {
             data-testid="exports-status"
             id="exports-status"
           >
-            {status}
+            {uiText(status)}
           </p>
         )}
         {error !== null && (

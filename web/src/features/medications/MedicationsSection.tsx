@@ -195,7 +195,7 @@ export function MedicationsSection({
   onSessionExpired,
   stepNumber,
 }: MedicationsSectionProps) {
-  const { t, errorText } = useLanguage();
+  const { language, text: uiText, t, errorText } = useLanguage();
   const [serverState, setServerState] = useState<MedicationsPreview | null>(
     null,
   );
@@ -660,7 +660,7 @@ export function MedicationsSection({
       <div className="xi-meds-editor">
       <div className="xi-meds-section-heading">
         <h4>{t("medicationList")}</h4>
-        <span className="xi-meds-count" aria-label={`${localIds.length} selected medications`}>{localIds.length}</span>
+        <span className="xi-meds-count" aria-label={t("value1SelectedMedications", { value1: localIds.length })}>{localIds.length}</span>
       </div>
       <p className="xi-hint">{t("releasedCatalogGuide")}</p>
       <div className="xi-field">
@@ -683,8 +683,8 @@ export function MedicationsSection({
         />
         {search !== null && (
           <p className="xi-hint" id="meds-catalog-info">
-            {search.source_label ?? "Medication catalog"}  {t("catalog62")} {search.catalog_version}  {t("dataset63")} {search.dataset_version}{" "}
-            · {search.total}  {t("drug")}{search.total === 1 ? "" : "s"}
+            {search.source_label ?? t("medicationCatalog")}  {t("catalog62")} {search.catalog_version}  {t("dataset63")} {search.dataset_version}{" "}
+            · {search.total}  {t("drug")}{(language === "fa" ? "" : search.total === 1 ? "" : "s")}
           </p>
         )}
       </div>
@@ -709,7 +709,7 @@ export function MedicationsSection({
                   className="xi-btn xi-btn-secondary"
                   type="button"
                   id={`meds-add-${index}`}
-                  aria-label={`Add ${drug.canonical_name}`}
+                  aria-label={t("addValue1", { value1: drug.canonical_name })}
                   disabled={selected || busy !== null || searchLoading || searchError !== null}
                   onClick={() => addDrug(drug.catalog_drug_id)}
                 >
@@ -730,7 +730,7 @@ export function MedicationsSection({
             disabled={searchLoading || offset === 0}
             onClick={() => setOffset(Math.max(0, offset - 25))}>{t("previous")}</button>
           <span className="xi-hint" aria-live="polite">
-            {search.total === 0 ? t("zeroResults") : `${search.offset + 1}–${Math.min(search.offset + search.items.length, search.total)} of ${search.total}`}
+            {search.total === 0 ? t("zeroResults") : t("value1Value2OfValue3", { value1: search.offset + 1, value2: Math.min(search.offset + search.items.length, search.total), value3: search.total })}
           </span>
           <button className="xi-btn xi-btn-secondary" type="button" id="meds-next"
             disabled={searchLoading || offset + 25 >= search.total}
@@ -758,7 +758,7 @@ export function MedicationsSection({
                   className="xi-btn xi-btn-secondary"
                   type="button"
                   id={`meds-remove-${index}`}
-                  aria-label={`Remove ${id}`}
+                  aria-label={t("removeValue1", { value1: id })}
                   disabled={busy !== null}
                   onClick={() => removeDrug(index)}
                 >
@@ -834,7 +834,7 @@ export function MedicationsSection({
       </div>
       {statusText !== "" ? (
         <p className={statusClass} id="meds-save-status" aria-live="polite">
-          {statusText}
+          {uiText(statusText)}
         </p>
       ) : (
         <p className="xi-hint" id="meds-save-status" aria-live="polite">
@@ -850,8 +850,8 @@ export function MedicationsSection({
           ref={alertRef}
         >
           {saveState.kind === "failed"
-            ? `Medication save failed — your list is kept. ${saveState.message}`
-            : `Another tab saved first — your list is kept. ${saveState.message}`}
+            ? t("medicationSaveFailedYourListIsKept", { value1: saveState.message })
+            : t("anotherTabSavedFirstYourListIs", { value1: saveState.message })}
         </p>
       )}
 
@@ -873,7 +873,7 @@ export function MedicationsSection({
             <p className="xi-hint" style={{ marginBottom: 8 }}>
               
               {t("serverRevision")} {serverState.revision}:{" "}
-              {entryIds(serverState.entries).join(", ") || "(empty list)"}
+              {entryIds(serverState.entries).join(", ") || t("emptyList")}
             </p>
           )}
           <div className="xi-row-actions">
@@ -903,7 +903,7 @@ export function MedicationsSection({
             {t("copiedMedicationReconciliation")}
             {serverState?.reconciliation?.baseline_encounter_id != null &&
             serverState?.reconciliation?.baseline_encounter_id !== ""
-              ? ` (baseline ${serverState?.reconciliation?.baseline_encounter_id})`
+              ? t("baselineValue180", { value1: serverState?.reconciliation?.baseline_encounter_id })
               : ""}{" "}
             
             {t("andReconcileExplicitlyTheDdiReportStays")}
@@ -918,7 +918,7 @@ export function MedicationsSection({
             >
               {busy === "reconcile"
                 ? t("reconciling")
-                : `Reconcile ${localIds.length} medication${localIds.length === 1 ? "" : "s"}`}
+                : t("reconcileValue1MedicationValue2", { value1: localIds.length, value2: (language === "fa" ? "" : localIds.length === 1 ? "" : "s") })}
             </button>
           </div>
         </div>
