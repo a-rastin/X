@@ -1,0 +1,17 @@
+{
+  "source_file": "Lexicomp-cleaned.csv",
+  "sha256": "31ce2fb78b0bbf364786e25b2c5f26ccca29ea50657f7faba02bb9fd18828255",
+  "bytes": 24960703,
+  "columns": ["Drug_1", "Drug_2", "Lexicomp_level", "Lexicomp_note"],
+  "profile": "lexicomp-explicit-pairs/1",
+  "parser_version": "1",
+  "encoding": "utf-8-sig",
+  "normalization": "NFKC, outer trim, casefold",
+  "counts": {
+    "rows": 127756,
+    "catalog_names": 1632,
+    "ratings": {"A": 81808, "B": 3394, "C": 25726, "D": 10235, "X": 6593}
+  },
+  "coverage": "explicit rows only; absent pairs have unavailable coverage",
+  "authorization": "User-selected source for new-case integration; structural verification is not clinical review."
+}

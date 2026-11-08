@@ -1,0 +1,45 @@
+# New case Package A checkpoint — 2026-11-09
+
+## Status: incomplete
+
+The requested plan is `/home/amirali/.t3/userdata/artifacts/new-case-registration-plan-2026-11-09.md`.
+Package A has not met its exit criteria. Do not begin Package B on the basis of
+this checkpoint. The three clinical/formulation JSON files and the new-case
+manifest, including its deterministic content hash, still need to be created
+and validated against sections 4 and 10–13 of the plan. In particular, the
+BP-lowering membership and injectable formulation labels require exact,
+source-backed catalog matching; do not substitute guessed entries. No
+clinical validation or deployment was performed.
+
+## Baseline and completed work
+
+- Before changes: clean `main` at `dc9c1ea5401d12eceea81961180396ccaa0ed12e`;
+  expected migration head `0029`, matching the latest migration filename.
+- Copied the supplied CSV and documented oral model byte-for-byte to the plan's
+  runtime paths, added path-specific `-text` attributes, and added the
+  Lexicomp source manifest. The original model remains intact.
+- `python3 -c 'import runpy; runpy.run_path("backend/tests/models/test_new_case_sources.py")["test_new_case_bundled_source_inventory"]()'`
+  passed. It checks both hashes, CSV size/header, 127,756 unique non-self
+  pairs, 1,632 normalized names, all five rating counts and exact normalized
+  coverage of all 22 model outcomes. It does not validate the model CPT or
+  clinical content.
+- Expected and observed CSV SHA-256: `31ce2fb78b0bbf364786e25b2c5f26ccca29ea50657f7faba02bb9fd18828255`.
+  Expected and observed XML SHA-256: `f2f68f970b2fd13ec9ec14bc7d6163dbf859c43d2ba379b7543563bce530b18a`.
+- `make test-web` passed: 19 tests. `make check` stopped before checks because
+  `uv` could not fetch `hatchling` from PyPI (connection timeout). Backend
+  pytest likewise could not initialize its environment and was interrupted;
+  baseline backend failures remain unknown. `git diff --check` passed.
+- `.env.example` describes disposable `db-test` at localhost:5433; no `.env`
+  is present, that port was unreachable, and `docker compose ps` could not
+  interpolate the required `POSTGRES_PASSWORD`. No database was started or
+  migrated. The actual database schema head was therefore not queried.
+- Prior handoffs flag old Bayesian-network paths and browser tests using the
+  removed working-note control. Those issues were not repaired or retested.
+
+## Handoff
+
+Finish the content files and manifests, assert all typed fields and source
+references, verify all requested drug mappings including absent/qualified
+names, and run the Package A exit checks. Establish an isolated test DB and
+working Python dependencies before recording backend baseline results. Preserve
+the distinction between source integration authorization and clinical review.
