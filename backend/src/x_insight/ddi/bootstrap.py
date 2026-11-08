@@ -15,6 +15,7 @@ from pathlib import Path
 from typing import Any
 
 from x_insight.contracts import canonical_hash
+from x_insight.ddi.checker import get_release_row, source_details
 from x_insight.ddi.ddinter import FORMAT, build_ddinter
 from x_insight.ddi.publish import PublishRejected, list_releases, publish_release
 
@@ -39,6 +40,8 @@ def bootstrap_release(engine: Any, bundle: str | Path | None = None) -> dict[str
         row
         for row in list_releases(engine)
         if row["status"] in ("released_complete", "released_limited")
+        and source_details(get_release_row(engine, row["version"])).get("source_profile")
+        != "lexicomp-explicit-pairs/1"
     ]
     if any(row["content_hash"] == content_hash for row in releases):
         return {"version": version, "content_hash": content_hash, "reused": True, "skipped": False}

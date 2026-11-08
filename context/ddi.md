@@ -203,6 +203,26 @@ hash/location reference and explicit acceptance of severity-only data and
 unavailable pair coverage. Successful parsing is not clinical review. The
 operational approval procedure is in the [runbook](../docs/ddinter-operations.md#2-complete-explicit-owner-review).
 
+## Lexicomp explicit pairs are not DDInter severity assertions
+
+**Id:** cb5a7307-7168-46ae-9d8d-249228e18ce2
+**Type:** decision
+**Status:** active
+**Evidence:** confirmed
+**Source:** user-provided new-case registration plan, 2026-11-09
+
+The user-selected Lexicomp CSV is a separate, limited-coverage profile. Its
+explicit A rows are retained as source records; absent rows remain unavailable,
+not A. Its A/B/C/D/X ratings and source notes are not DDInter severities, and
+structural validation does not constitute clinical review. Lexicomp is installed
+alongside historical releases without changing the legacy default: new-case
+callers must explicitly pin its content-derived version.
+
+**Reason:** the supplied CSV covers only a fraction of the possible catalog
+pairs, and an automatic default switch would alter existing workflows and pins.
+The source includes management qualifications that cannot be reduced to a
+formulation-specific prescribing decision without information not collected here.
+
 ## Release association survives default changes without legacy conversion
 
 **Id:** 1c054d08-2d65-42b1-94da-c1fffe7dce14

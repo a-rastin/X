@@ -143,26 +143,33 @@ export function DdiReportPanel({
   const reportStateLabel = current ? "Current report" : load.kind === "loading" ? "Loading" :
     load.kind === "error" || (load.kind === "ready" && load.payload.report_status === "error") ? "Report unavailable" : "Review pending";
   const pairs = report?.pairs ?? [];
+  const lexicomp = report?.source_profile === "lexicomp-explicit-pairs/1";
+  const ratingLabels: Record<string, string> = language === "fa" ? {
+    A: "تداخل شناخته‌شده‌ای وجود ندارد", B: "اقدامی لازم نیست", C: "درمان را پایش کنید",
+    D: "تغییر درمان را در نظر بگیرید", X: "از مصرف همزمان خودداری کنید",
+  } : { A: "No known interaction", B: "No action needed", C: "Monitor therapy",
+    D: "Consider therapy modification", X: "Avoid combination" };
   const nameOf = (id: string) => report?.resolved_medications.find(
     (med) => med.catalog_drug_id === id || med.concept_id === id,
   )?.canonical_name ?? id;
   const filters = [
     { key: "all", label: "All pairs", count: pairs.length },
-    ...["Major", "Moderate", "Minor", "Unknown"].map((severity) => ({
+    ...(lexicomp ? ["X", "D", "C", "B", "A"] : ["Major", "Moderate", "Minor", "Unknown"]).map((severity) => ({
       key: severity.toLowerCase(), label: severity,
       count: pairs.filter((pair) => pair.status === "interaction_found" && (
-        (pair.highest_known_severity ?? "Unknown").toLowerCase() === severity.toLowerCase()
+        (pair.risk_rating ?? pair.highest_known_severity ?? "Unknown").toLowerCase() === severity.toLowerCase()
       )).length,
     })),
     { key: "unavailable", label: "Coverage unavailable", count: pairs.filter((pair) => pair.status === "coverage_unavailable").length },
   ];
   const matchesFilter = (pair: DdiPair) => filter === "all" || (
     filter === "unavailable" ? pair.status === "coverage_unavailable" :
-    pair.status === "interaction_found" && (pair.highest_known_severity ?? "Unknown").toLowerCase() === filter
+    pair.status === "interaction_found" && (pair.risk_rating ?? pair.highest_known_severity ?? "Unknown").toLowerCase() === filter
   );
   const rank = (pair: DdiPair) => {
     if (pair.status === "coverage_unavailable") return 90;
     if (pair.status === "covered_no_listed_interaction") return 100;
+    if (pair.risk_rating) return ["X", "D", "C", "B", "A"].indexOf(pair.risk_rating);
     return ({ contraindicated: 0, serious: 1, major: 1, monitor_closely: 2, moderate: 2, minor: 3, unknown: 4 } as Record<string, number>)[(pair.highest_known_severity ?? "unknown").toLowerCase()] ?? 4;
   };
   const visiblePairs = pairs.map((pair, index) => ({ pair, index })).filter(({ pair }) => matchesFilter(pair))
@@ -182,6 +189,9 @@ export function DdiReportPanel({
         <span className="xi-ddi-state">{reportStateLabel}</span>
       </div>
       <p className="xi-hint">{t("ddiIntroduction")}</p>
+      {lexicomp && <details><summary>{language === "fa" ? "معنی رتبه‌های Lexicomp" : "Lexicomp rating meanings"}</summary>
+        <ul>{Object.entries(ratingLabels).map(([rating, label]) => <li key={rating}>{rating} — {label}</li>)}</ul>
+      </details>}
       {load.kind === "loading" && <p className="xi-ddi-empty" aria-live="polite">{t("loadingDdi")}</p>}
       {load.kind === "error" && (
         <div className="xi-ddi-empty">
@@ -246,9 +256,9 @@ export function DdiReportPanel({
                     className={`xi-ddi-pair xi-ddi-pair-${pair.status === "interaction_found" ? (pair.highest_known_severity ?? "unknown").toLowerCase().replace(/[^a-z]/g, "") : "neutral"}`}>
                     <div className="xi-ddi-pair-heading">
                       <h6>{nameOf(pair.drug_a)} <span>+</span> {nameOf(pair.drug_b)}</h6>
-                      <span className="xi-ddi-severity">{pair.status === "interaction_found" ? pair.highest_known_severity ?? t("unknown") : pair.status === "coverage_unavailable" ? t("coverageUnavailable") : t("noListedInteraction")}</span>
+                      <span className="xi-ddi-severity">{pair.risk_rating ? `${pair.risk_rating} — ${ratingLabels[pair.risk_rating]}` : pair.status === "interaction_found" ? pair.highest_known_severity ?? t("unknown") : pair.status === "coverage_unavailable" ? t("coverageUnavailable") : t("noListedInteraction")}</span>
                     </div>
-                    <p className="xi-ddi-pair-status">{pairStatusText(pair.status)}
+                    <p className="xi-ddi-pair-status">{lexicomp && pair.risk_rating ? (language === "fa" ? "رکورد موجود در منبع" : "Explicit source record") : pairStatusText(pair.status)}
                       {pair.highest_known_severity !== null && t("highestKnownSeverityValue1", { value1: pair.highest_known_severity })}
                       {pair.has_unknown_severity && t("includesUnknownSeverity")}
                     </p>

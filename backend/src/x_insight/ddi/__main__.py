@@ -87,6 +87,7 @@ def _cmd_publish(args: argparse.Namespace) -> int:
 def _cmd_bootstrap(args: argparse.Namespace) -> int:
     from x_insight import db as db_module
     from x_insight.ddi.bootstrap import bootstrap_release
+    from x_insight.ddi.lexicomp import install
 
     engine = db_module.build_engine(args.database_url or db_module.get_database_url())
     try:
@@ -95,6 +96,8 @@ def _cmd_bootstrap(args: argparse.Namespace) -> int:
             print("SKIPPED: existing DDI release preserved")
         else:
             print(f"READY: {result['version']} (reused={result['reused']})")
+        lexicomp = install(engine)
+        print(f"LEXICOMP READY: {lexicomp['version']} (reused={lexicomp['reused']})")
         return 0
     except Exception as exc:  # noqa: BLE001 - explicit setup must fail on unavailable data
         print(f"DDI bootstrap FAILED: {exc}", file=sys.stderr)

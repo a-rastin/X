@@ -451,7 +451,7 @@ def build_patient_report_html(data: dict[str, Any], *, generated_at: str) -> str
         if pairs:
             out.append(
                 '<h4>DDI pairs</h4><table border="1"><thead><tr><th>Drug A</th>'
-                "<th>Drug B</th><th>Status</th><th>Highest severity</th>"
+                "<th>Drug B</th><th>Status</th><th>Severity / risk rating</th>"
                 "<th>Coverage basis</th></tr></thead><tbody>"
             )
             for pair in pairs:
@@ -463,13 +463,21 @@ def build_patient_report_html(data: dict[str, Any], *, generated_at: str) -> str
                     + "</td><td>"
                     + _e(pair.get("drug_b", ""))
                     + "</td><td>"
-                    + _e(pair.get("status", ""))
+                    + _e("explicit_row" if pair.get("risk_rating") else pair.get("status", ""))
                     + "</td><td>"
-                    + _e(pair.get("highest_known_severity", ""))
+                    + _e(pair.get("risk_rating") or pair.get("highest_known_severity", ""))
                     + "</td><td>"
                     + _e(pair.get("coverage_basis", ""))
                     + "</td></tr>"
                 )
+                if pair.get("risk_rating"):
+                    for evidence in _as_list(pair.get("evidence")):
+                        if isinstance(evidence, dict) and evidence.get("raw_text"):
+                            out.append(
+                                '<tr><td colspan="5"><pre>'
+                                + _e(evidence["raw_text"])
+                                + "</pre></td></tr>"
+                            )
             out.append("</tbody></table>")
         history_values: Any = None
         medications_values: Any = None

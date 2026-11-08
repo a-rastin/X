@@ -27,6 +27,8 @@ COPY content/assessments ./content/assessments
 COPY content/history ./content/history
 COPY content/questions ./content/questions
 COPY content/bundles ./content/bundles
+COPY content/ddi/lexicomp ./content/ddi/lexicomp
+COPY content/new-case ./content/new-case
 # Original sources and approval are ordinary Git files; the archived LFS
 # evidence JSONL is deterministically rebuilt only during initial provisioning.
 COPY content/ddi/ddinter/2026-10-21/sources ./content/ddi/ddinter/2026-10-21/sources

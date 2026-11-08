@@ -215,6 +215,12 @@ def search_concepts(
 
 def source_details(release: dict[str, Any]) -> dict[str, Any]:
     manifest = release.get("manifest") or {}
+    if manifest.get("source_profile") == "lexicomp-explicit-pairs/1":
+        return {
+            "source_label": "Lexicomp supplied CSV",
+            "source_profile": manifest["source_profile"],
+            "detail_availability": "rating_and_note",
+        }
     if manifest.get("source_profile") == "ddinter-positive-assertions/1":
         return {
             "source_label": "DDInter supplied CSV exports",
@@ -241,7 +247,9 @@ def latest_release_version(engine: Any) -> str | None:
         with engine.connect() as connection:
             value = connection.execute(
                 text(
-                    "SELECT version FROM ddi_dataset_releases ORDER BY created_at "
+                    "SELECT version FROM ddi_dataset_releases WHERE "
+                    "COALESCE(manifest->>'source_profile','') <> 'lexicomp-explicit-pairs/1' "
+                    "ORDER BY created_at "
                     "DESC,version DESC LIMIT 1"
                 )
             ).scalar()
@@ -307,6 +315,24 @@ def _aggregate_pair(
     release_status: str,
     source_profile: str | None = None,
 ) -> dict[str, Any]:
+    if source_profile == "lexicomp-explicit-pairs/1":
+        evidence = [_evidence_entry(row) for row in rows]
+        for entry in evidence:
+            entry["risk_rating"] = entry.pop("source_severity")
+        return {
+            "drug_a": drug_a,
+            "drug_b": drug_b,
+            "status": "interaction_found" if rows else "coverage_unavailable",
+            "risk_rating": rows[0]["source_severity"] if rows else None,
+            "highest_known_severity": None,
+            "has_unknown_severity": False,
+            "conflicts": [],
+            "evidence": evidence,
+            "coverage_basis": {
+                "basis": "explicit_row" if rows else "limited_coverage_unavailable",
+                "release_status": release_status,
+            },
+        }
     evidence = [_evidence_entry(row) for row in rows]
     severities = [row.get("source_severity") for row in rows]
     order = (
@@ -379,7 +405,13 @@ class DDIChecker:
         return check(self._engine, medications, dataset_version)
 
 
-def check(engine: Any, medications: list[str], dataset_version: str) -> dict[str, Any]:
+def check(
+    engine: Any,
+    medications: list[str],
+    dataset_version: str,
+    *,
+    candidate_pairs: set[tuple[str, str]] | None = None,
+) -> dict[str, Any]:
     """Check one medication list against one pinned dataset release.
 
     ``medications`` is drug-only catalog IDs (no free text, no dose/route).
@@ -461,6 +493,8 @@ def check(engine: Any, medications: list[str], dataset_version: str) -> dict[str
             first_catalog = catalog_by_concept[first_concept]
             second_catalog = catalog_by_concept[second_concept]
             drug_a, drug_b = sorted((first_catalog, second_catalog))
+            if candidate_pairs is not None and (drug_a, drug_b) not in candidate_pairs:
+                continue
             # Pair lookup key is canonical over concept IDs (matches publish).
             pair_key = _pair_key_for(first_concept, second_concept)
             pairs_keys.append((drug_a, drug_b, pair_key))
@@ -499,3 +533,15 @@ def check(engine: Any, medications: list[str], dataset_version: str) -> dict[str
         "generated_at": serialize_utc(utcnow()),
         **source_details(release),
     }
+
+
+def check_candidates(
+    engine: Any, candidates: list[str], medications: list[str], dataset_version: str
+) -> dict[str, Any]:
+    pairs = {
+        (min(candidate, medication), max(candidate, medication))
+        for candidate in candidates
+        for medication in medications
+        if candidate != medication
+    }
+    return check(engine, candidates + medications, dataset_version, candidate_pairs=pairs)

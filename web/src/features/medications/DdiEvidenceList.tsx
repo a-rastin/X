@@ -21,9 +21,9 @@ export function DdiEvidenceList({ evidence }: { evidence: DdiEvidence[] }) {
           {evidence.map((item, index) => (
             <li key={`${item.source_path}:${String(item.span_start)}:${index}`}>
               <p style={{ marginBottom: 2 }}>
-                {t("ddiSeverityDirection", { severity: item.source_severity ?? t("unknown"), direction: item.direction ?? t("unknown") })}
+                {item.risk_rating ? `Lexicomp: ${String(item.risk_rating)}` : t("ddiSeverityDirection", { severity: item.source_severity ?? t("unknown"), direction: item.direction ?? t("unknown") })}
               </p>
-              {item.raw_text && <pre style={{ whiteSpace: "pre-wrap", overflowWrap: "anywhere" }}>{item.raw_text}</pre>}
+              {item.raw_text && <pre dir="ltr" style={{ whiteSpace: "pre-wrap", overflowWrap: "anywhere" }}>{item.raw_text}</pre>}
               {item.management && <p>{t("ddiManagement", { management: item.management })}</p>}
               {item.source_record && (
                 <dl>

@@ -120,6 +120,7 @@ export interface DdiPair {
     | "covered_no_listed_interaction"
     | "coverage_unavailable";
   highest_known_severity: string | null;
+  risk_rating?: "A" | "B" | "C" | "D" | "X" | null;
   has_unknown_severity: boolean;
   conflicts: string[];
   evidence: DdiEvidence[];

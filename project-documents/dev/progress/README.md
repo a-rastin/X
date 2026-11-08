@@ -1,5 +1,7 @@
 # X-INSIGHT progress tracker
 
+[New case Package C checkpoint (2026-11-09)](new-case-package-c-2026-11-09.md): Lexicomp import and profile-aware lookup implemented; new-case integration and full acceptance remain open.
+
 [New case packages A/B checkpoint (2026-11-09)](new-case-package-a-2026-11-09.md): SQLAlchemy and pytest installed; patient baseline passes; Package B remains incomplete.
 
 [Issue 37 bilingual UI analysis (2026-11-05)](s61.md#follow-up-2026-11-05--issue-37-bilingual-ui-analysis): root cause and minimal implementation boundary documented; no application changes or runtime verification.
