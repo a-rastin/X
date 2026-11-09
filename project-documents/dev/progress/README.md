@@ -1,5 +1,7 @@
 # X-INSIGHT progress tracker
 
+[New case Package F partial checkpoint (2026-11-09)](new-case-package-f-2026-11-09.md): candidate calculation seam tested; settings prerequisite, persistence, signing and integration remain open.
+
 [New case Package E checkpoint (2026-11-09)](new-case-package-e-2026-11-09.md): typed state, content pins, autosave, diagnosis gates and previews wired; focused checks pass; remaining B settings and F/G work are separate.
 
 [New case Package D checkpoint (2026-11-09)](new-case-package-d-2026-11-09.md): fixed oral-model lookup and immutable registry bootstrap implemented; integration and legacy schema-path issue remain open.
