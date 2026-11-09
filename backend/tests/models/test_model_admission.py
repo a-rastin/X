@@ -278,7 +278,7 @@ def test_utility_nodes_stay_drafts_never_executable() -> None:
 
 
 def test_all_eleven_supplied_bns_remain_inactive() -> None:
-    paths = sorted((_repo_root() / "project-documents/bayesian-networks").glob("BN-*.xml"))
+    paths = sorted((_repo_root() / "project-documents/old-BNs").glob("BN-*.xml"))
 
     assert len(paths) == 11
     for path in paths:

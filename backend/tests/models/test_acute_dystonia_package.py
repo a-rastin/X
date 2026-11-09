@@ -33,7 +33,7 @@ CANDIDATE_SOURCE_PATHS = (
     f"{PREFIX}h_ad_recurrence_prevention_need",
     f"{PREFIX}h_ad_continuation_preference_concern",
 )
-SOURCE_BN = ROOT / "project-documents/bayesian-networks/BN-11.xml"
+SOURCE_BN = ROOT / "project-documents/old-BNs/BN-11.xml"
 DECLARED_ORDER = (
     "AirwayConcern",
     "AcuteDystoniaEpisodePhase",

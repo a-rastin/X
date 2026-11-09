@@ -38,7 +38,7 @@ CANDIDATE_SOURCE_PATHS = (
     f"{PREFIX}h_ak_propranolol_bp_concern",
     f"{PREFIX}h_ak_propranolol_exposure_concern",
 )
-SOURCE_BN = ROOT / "project-documents/bayesian-networks/BN-13.xml"
+SOURCE_BN = ROOT / "project-documents/old-BNs/BN-13.xml"
 STATEMENT = ROOT / "project-documents/medical-documents/guideline/STATEMENT-13.md"
 DECLARED_ORDER = (
     "AkathisiaAssessment",

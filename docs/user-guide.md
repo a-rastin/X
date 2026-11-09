@@ -1,6 +1,6 @@
 # X-INSIGHT User Guide
 
-Last updated: 2026-10-30. This guide describes the current application for physicians and administrators. For installation and startup, use the [Installation and Running Guide](installation.md).
+Last updated: 2026-11-09. This guide describes the current application for physicians and administrators. For installation and startup, use the [Installation and Running Guide](installation.md).
 
 X-INSIGHT is a research workspace for recording patient encounters, completing structured assessments, reviewing medication interactions, generating proposals, and signing physician plans. Its research status and clinical-content review limitations still apply; a generated proposal requires physician review. This guide explains application controls and does not provide treatment advice.
 
@@ -9,6 +9,7 @@ X-INSIGHT is a research workspace for recording patient encounters, completing s
 - [Sign in and manage your account](#sign-in-and-manage-your-account)
 - [Find a patient and open their chart](#find-a-patient-and-open-their-chart)
 - [Register a new patient](#register-a-new-patient)
+- [New case (experimental, backend-only)](#new-case-experimental-backend-only)
 - [Complete the registration assessments](#complete-the-registration-assessments)
 - [Select medications and review interactions](#select-medications-and-review-interactions)
 - [Generate and review a proposal](#generate-and-review-a-proposal)
@@ -83,6 +84,35 @@ The registration wizard has seven steps:
 Use the numbered wizard links or **Back to…** and **Continue to…** controls to move between pages. Moving forward does not certify that an assessment is complete. Adverse effects are collected during follow-up, rather than as a registration step.
 
 The **Working note** becomes editable once a draft exists and autosaves. It is a workspace note: its text does not enter proposal prompts, probability estimation, inference, applicability decisions, or interaction checking. Enter information needed for those functions in the corresponding structured fields.
+
+## New case (experimental, backend-only)
+
+The registration form described above is the current physician workflow: it uses
+age 18–99 and creates the legacy registration draft. A separate `new-case-v1`
+workflow for a first registration with clinical status **New case** (`first_time`)
+is being implemented in stages and is **not yet available as a physician wizard**.
+Until its dedicated UI, proposal persistence and confirmation routes are finished,
+continue to use the documented legacy flow above; a `new-case-v1` draft opened in
+the application shows an explicit unavailable message rather than legacy controls.
+
+Where it is implemented, the New case workflow is deliberately different from the
+legacy pipeline described in this guide:
+
+- It does **not** call an LLM, a provider, a background generation job, a private
+  MCP projection, or a probability slider. There is no CPT estimation, no
+  per-question probability acceptance and no worker dependency.
+- Oral antipsychotic ranking uses a fixed, hash-pinned Bayesian network through an
+  exact fully observed conditional-row lookup; interaction annotations come from
+  the pinned Lexicomp dataset, where a missing pair is reported as unavailable
+  coverage rather than "no interaction".
+- Its clinical content is experimental and not clinically validated. The supplied
+  medical reference values are versioned, source-backed defaults, not diagnostic
+  thresholds.
+
+The backend state/validation API, content pins, startup installation and
+backup/restore behavior are documented in [New-case state](new-case-state.md).
+The legacy LLM/CPT workflow, probability review and signing described in the rest
+of this guide remain unchanged for Known case and follow-up.
 
 ## Complete the registration assessments
 

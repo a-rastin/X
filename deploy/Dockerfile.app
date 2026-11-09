@@ -33,6 +33,10 @@ COPY content/new-case ./content/new-case
 # evidence JSONL is deterministically rebuilt only during initial provisioning.
 COPY content/ddi/ddinter/2026-10-21/sources ./content/ddi/ddinter/2026-10-21/sources
 COPY content/ddi/ddinter/2026-10-21/candidate_dataset.json content/ddi/ddinter/2026-10-21/owner-reviewed-manifest.json ./content/ddi/ddinter/2026-10-21/
+# Generic XMLBIF admission schema (the former bayesian-networks dir was renamed
+# to old-BNs). It is a runtime asset for the admin network-import route and is
+# not part of content/, so it needs its own copy into the image.
+COPY project-documents/old-BNs/schema.xml ./project-documents/old-BNs/schema.xml
 ENV X_INSIGHT_CONTENT_DIR=/srv/app/content \
     X_INSIGHT_ASSESSMENTS_DIR=/srv/app/content/assessments
 # Sources are copied before sync so the locked project install sees the real

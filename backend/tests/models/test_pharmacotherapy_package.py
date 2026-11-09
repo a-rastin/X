@@ -34,7 +34,7 @@ CANDIDATE_SOURCE_PATHS = (
     "candidate/history/pharmacotherapy.v2/h_urgent_safety_concern",
     "candidate/history/pharmacotherapy.v2/h_monitoring_gap",
 )
-SOURCE_BN = ROOT / "project-documents/bayesian-networks/BN-04.xml"
+SOURCE_BN = ROOT / "project-documents/old-BNs/BN-04.xml"
 STATEMENT = ROOT / "project-documents/medical-documents/guideline/STATEMENT-04.md"
 LOOKUP_NODES = (
     "AkathisiaSourceCategory",

@@ -7,11 +7,19 @@ structured assessments, Bayesian networks, and physician review.**
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 X-INSIGHT combines patient and encounter records with versioned clinical content,
-drug–drug interaction (DDI) checks, and a traceable reasoning pipeline. An LLM
-estimates conditional probability tables (CPTs); the application validates those
-tables, executes the Bayesian networks, and renders recommendations from templates.
-Physicians can inspect and adjust probabilities, compare results, and sign a
-separate final treatment plan while retaining the original system proposal.
+drug–drug interaction (DDI) checks, and a traceable reasoning pipeline. In the
+legacy registration and follow-up workflow, an LLM estimates conditional
+probability tables (CPTs); the application validates those tables, executes the
+Bayesian networks, and renders recommendations from templates. Physicians can
+inspect and adjust probabilities, compare results, and sign a separate final
+treatment plan while retaining the original system proposal.
+
+A separate, experimental `new-case-v1` workflow for first-time registration is
+built around a fixed, hash-pinned oral-antipsychotic ranking model (an exact,
+fully observed conditional-row lookup) and a pinned Lexicomp interaction dataset.
+It uses no LLM, provider call, background generation job or probability slider;
+the legacy LLM/CPT pipeline is retained unchanged for Known case and follow-up.
+New case is backend-only at present — see [New-case state](docs/new-case-state.md).
 
 The application has an English desktop interface for one administrator and a small
 physician team sharing a patient pool. It is designed for self-hosted Linux or VPS
@@ -121,8 +129,11 @@ The core record and reasoning rules are:
 - A patient has at most one open draft across all physicians and encounter types.
   Only its author can access its clinical content or edit, adjust, accept, discard,
   or sign it.
-- Patient variables inform LLM estimation of every CPT, including root-node
-  distributions. Bayesian inference then runs with an **empty evidence set**.
+- In the legacy registration/follow-up workflow, patient variables inform LLM
+  estimation of every CPT, including root-node distributions. Bayesian inference
+  then runs with an **empty evidence set**. The experimental `new-case-v1`
+  workflow does not estimate CPTs with an LLM or marginalize unknown factors; it
+  reads one exact conditional row from a fixed, fully observed, hash-pinned model.
 - The Register patient working note autosaves once a draft exists and does not
   enter prompts, patient projections, applicability rules, inference, or DDI
   checks. Page-note controls and routes have been removed. Unanswered assessments
@@ -257,8 +268,9 @@ npx playwright install chromium firefox
 
 `make test-e2e` starts a Vite preview on port `5173`, which must be free. Its API
 proxy defaults to port `8000`; set `API_PROXY_TARGET` for an isolated API.
-`E2E_BASE_URL` changes the browser destination only. `make test-web` currently exits
-with an explicit unimplemented-suite message.
+`E2E_BASE_URL` changes the browser destination only. `make test-web` runs the Node
+test runner over `web/tests/*.test.mjs` (shared i18n, routing, patient-validation
+and encounter-workflow unit tests).
 
 These are the available verification commands, not a claim that the current tree
 passes every gate. Recorded failures and unrun checks remain in the
@@ -271,15 +283,22 @@ Bayesian-network sources live under [project-documents/](project-documents/).
 The experimental [new antipsychotics network](project-documents/BNs-new/PO-Antipsychotic-Recommender/BN-PO-Antipsychotic-Recommender.xml),
 its [model explanation](project-documents/BNs-new/PO-Antipsychotic-Recommender/README-PO-Antipsychotic-Recommender.md),
 and its [interactive visualization](project-documents/BNs-new/PO-Antipsychotic-Recommender/Visualized-PO-Antipsychotic-Recommender.html)
-describe a 16-factor ranking model; it is not clinically validated or integrated
-into the application workflow.
+describe a 16-factor ranking model. A byte-for-byte, SHA-256-pinned copy is now
+bundled under [content/new-case/v1/](content/new-case/v1/) and installed at startup
+as the fixed oral-ranking model for the experimental `new-case-v1` workflow (a
+fully observed, deterministic conditional-row lookup). It is not clinically
+validated and is not used by the legacy workflow, which keeps its own
+LLM-estimated networks; see [New-case state](docs/new-case-state.md).
 Track current approvals in the [content review ledger](content/review-ledger.md)
 and the exact [question-package confirmation
 manifest](content/questions/review-confirmation.s39-v1.json). Package approval,
 workflow-bundle release, activation, and clinical validation are separate states.
 
-Normal setup installs the existing owner-approved DDInter release automatically;
-the DDI CLI also builds offline candidates independently of runtime lookup.
+Normal setup installs the existing owner-approved DDInter release automatically,
+alongside the pinned Lexicomp interaction release and the fixed oral model used by
+`new-case-v1`. None of these setup steps requires a provider credential or a
+capability check; the DDI CLI also builds offline candidates independently of
+runtime lookup.
 
 For the complete supplied DDInter CSV release, follow the
 [DDInter operations runbook](docs/ddinter-operations.md) for build, owner review,

@@ -367,8 +367,8 @@ def test_xsd_errors_bounded_to_max() -> None:
 
 # --- Slice 3: supplied drafts stay storable/inspectable; no PROPERTY->edge ---
 
-BN04_RELATIVE = Path("project-documents/bayesian-networks/BN-04.xml")
-BN08_RELATIVE = Path("project-documents/bayesian-networks/BN-08.xml")
+BN04_RELATIVE = Path("project-documents/old-BNs/BN-04.xml")
+BN08_RELATIVE = Path("project-documents/old-BNs/BN-08.xml")
 
 
 def _read_draft(relative: Path) -> bytes:

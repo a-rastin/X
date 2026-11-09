@@ -40,7 +40,7 @@ CANDIDATE_SOURCE_PATHS = (
     f"{PREFIX}h_clozapine_trial_adequate",
     f"{PREFIX}h_residual_symptoms",
 )
-SOURCE_BN = ROOT / "project-documents/bayesian-networks/BN-07.xml"
+SOURCE_BN = ROOT / "project-documents/old-BNs/BN-07.xml"
 STATEMENT = ROOT / "project-documents/medical-documents/guideline/STATEMENT-07.md"
 T1 = (
     "AdequateSuboptimalResponse",

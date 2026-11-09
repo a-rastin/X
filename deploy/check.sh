@@ -24,6 +24,19 @@ grep -Eq '^FROM [^ ]+@sha256:[0-9a-f]{64}' deploy/Dockerfile.edge \
 ! grep -Ei 'POSTGRES_PASSWORD=.{0,3}[^$:{]|JWT|API_KEY=.+|password.+admin' deploy/Dockerfile.app deploy/Dockerfile.edge \
   || fail "Dockerfiles must not embed credentials"
 
+# --- §1: New-case content and content-path wiring (Package H) ----------------
+# The fixed oral model and the pinned Lexicomp CSV must ship in the app image,
+# and every content reader must resolve through the same X_INSIGHT_CONTENT_DIR.
+grep -Eq '^COPY content/new-case ' deploy/Dockerfile.app \
+  || fail "Dockerfile.app must bundle content/new-case (fixed oral model + clinical JSON)"
+grep -Eq '^COPY content/ddi/lexicomp ' deploy/Dockerfile.app \
+  || fail "Dockerfile.app must bundle content/ddi/lexicomp (pinned New case interaction dataset)"
+grep -Eq 'X_INSIGHT_CONTENT_DIR=' deploy/Dockerfile.app \
+  || fail "Dockerfile.app must set X_INSIGHT_CONTENT_DIR for content readers"
+grep -Eq '^COPY project-documents/old-BNs/schema\.xml ' deploy/Dockerfile.app \
+  || fail "Dockerfile.app must bundle the XMLBIF schema for generic network admission"
+pass "new-case content, X_INSIGHT_CONTENT_DIR and XMLBIF schema are packaged"
+
 # --- §1: Compose topology ----------------------------------------------------
 [ -f compose.prod.yaml ] || fail "compose.prod.yaml is missing"
 for svc in edge app worker db; do

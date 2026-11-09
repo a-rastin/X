@@ -99,9 +99,16 @@ from x_insight.operations import audit as audit_module
 # bump only with a migration, per plan.md §4.2 versioning discipline).
 BACKUP_MANIFEST_VERSION = "backup-v1"
 
-# ponytail: 100 MiB ceiling; S58 measures real CPT/snapshot sizes first.
+# ponytail: 100 MiB compressed ceiling; S58 measures real snapshot sizes first.
 MAX_ARCHIVE_BYTES = 100 * 1024 * 1024
-MAX_FILE_BYTES = 256 * 1024 * 1024
+# A full backup of a database holding both the owner-approved DDInter release
+# and the pinned Lexicomp release (350,139 ddi_interaction_evidence rows) has a
+# 403,534,237-byte database.json; the old 256 MiB per-file cap rejected it
+# (Package H measurement, 2026-11-09). 512 MiB admits that measured entry with
+# headroom, and equals MAX_EXPANDED_BYTES, so the total-expansion zip-bomb guard
+# (unchanged) remains the effective cap. Do NOT omit the 16 MB oral model or
+# 25 MB Lexicomp CSV to fit instead; raise a bound only on measured content.
+MAX_FILE_BYTES = 512 * 1024 * 1024
 MAX_EXPANDED_BYTES = 512 * 1024 * 1024
 
 # Tables captured in stable FK-dependency order (deterministic inventory AND

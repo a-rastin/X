@@ -35,7 +35,7 @@ CANDIDATE_SOURCE_PATHS = (
     f"{PREFIX}h_td_vmat2_preference",
     f"{PREFIX}h_td_anticholinergic_exposure",
 )
-SOURCE_BN = ROOT / "project-documents/bayesian-networks/BN-14.xml"
+SOURCE_BN = ROOT / "project-documents/old-BNs/BN-14.xml"
 STATEMENT = ROOT / "project-documents/medical-documents/guideline/STATEMENT-14.md"
 DECLARED_ORDER = (
     "TardiveDyskinesiaAssessment",

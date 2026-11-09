@@ -353,8 +353,18 @@ def test_name_contract_for_registration_and_patch(
         assert readback.json()["patient"]["family_name"] == expected
 
     invalid = [
-        "", "---'", " A", "A ", "A  B", "A\tB", "A\nB", "A\u00a0B",
-        "A1", "A@", "𐐀" * 101, "A\u0338",
+        "",
+        "---'",
+        " A",
+        "A ",
+        "A  B",
+        "A\tB",
+        "A\nB",
+        "A\u00a0B",
+        "A1",
+        "A@",
+        "𐐀" * 101,
+        "A\u0338",
     ]
     for field, label in (("given_name", "Given name"), ("family_name", "Family name")):
         message = (

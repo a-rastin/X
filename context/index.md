@@ -57,6 +57,8 @@
 
 ## N
 
+- [new-case.md](new-case.md) — Fully observed fixed BN row lookup without an LLM, and the additive v4 signed-snapshot shape that preserves historical bytes.
+
 ## O
 
 ## P

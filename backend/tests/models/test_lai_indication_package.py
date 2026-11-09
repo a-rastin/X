@@ -34,7 +34,7 @@ CANDIDATE_SOURCE_PATHS = (
     f"{PREFIX}h_delivery_barriers",
     f"{PREFIX}h_lai_treatment_status",
 )
-SOURCE_BN = ROOT / "project-documents/bayesian-networks/BN-10.xml"
+SOURCE_BN = ROOT / "project-documents/old-BNs/BN-10.xml"
 STATEMENT = ROOT / "project-documents/medical-documents/guideline/STATEMENT-10.md"
 DECLARED_ORDER = (
     "SchizophreniaEstablished",

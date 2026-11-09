@@ -37,9 +37,9 @@ CANDIDATE_SOURCE_PATHS = (
     f"{PREFIX}h_baseline_encounter_ref",
     f"{PREFIX}h_baseline_window_validity",
 )
-SOURCE_BN06 = ROOT / "project-documents/bayesian-networks/BN-06.xml"
-SOURCE_BN04 = ROOT / "project-documents/bayesian-networks/BN-04.xml"
-SOURCE_BN05 = ROOT / "project-documents/bayesian-networks/BN-05.xml"
+SOURCE_BN06 = ROOT / "project-documents/old-BNs/BN-06.xml"
+SOURCE_BN04 = ROOT / "project-documents/old-BNs/BN-04.xml"
+SOURCE_BN05 = ROOT / "project-documents/old-BNs/BN-05.xml"
 DECLARED_ORDER = (
     "SchizophreniaEstablished",
     "SymptomImprovementOnCurrentAntipsychotic",

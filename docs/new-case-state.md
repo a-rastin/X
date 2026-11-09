@@ -2,8 +2,10 @@
 
 This is the backend-only `new-case-v1` contract. Proposal persistence/signing
 (Package F), physician unavailable-drug settings and the new wizard (Package G)
-are not implemented by this change. The clinical content is experimental, not
-clinical approval. The existing age-based UI continues to create legacy drafts.
+are not implemented by this change; packaging, startup compatibility and final
+verification (Package H) are recorded below. The clinical content is
+experimental, not clinical approval. The existing age-based UI continues to
+create legacy drafts.
 
 ## Installation and identity
 
@@ -98,3 +100,34 @@ Restore validates new-case structure, frozen year, attribution, diagnosis record
 catalog membership and content relationships. Only the exact bundled oral-model
 SHA uses its bounded dedicated validator; uploaded profile metadata cannot grant
 that exception. Older archives retain legacy defaults on import.
+
+## Packaging, startup compatibility and verification (Package H)
+
+The app image copies `content/new-case/` and `content/ddi/lexicomp/` and sets
+`X_INSIGHT_CONTENT_DIR` (plus `X_INSIGHT_ASSESSMENTS_DIR` for assessment JSON).
+Every content reader — `models/workflow_release.content_root`,
+`ddi/lexicomp.content_directory`, `ddi/bootstrap.bundled_directory`,
+`models/registry.install_bundled_oral_model` and `cases/new_case` — resolves
+through that one variable, falling back to the repository `content/` directory
+for local `make dev`. The packing self-check asserts these copies and the env var.
+
+Normal `make dev` / production `migrate` runs
+`python -m x_insight.operations.migrate`: Alembic head `0030`, the owner-approved
+DDInter release, the pinned Lexicomp release, the SHA-256-pinned oral model and
+the deployment encryption key, all idempotently. Lexicomp and the oral model are
+installed unconditionally — they do not depend on `DDI_DEFAULT_DATASET_VERSION`,
+a provider API key, an endpoint/model, or a successful capability check. Missing
+credentials for the optional legacy provider therefore cannot block the
+deterministic New case path; `PROVIDER_NOT_CONFIGURED` remains a legacy-only,
+job-time failure. New case readiness is gated only on the pinned model and
+dataset identities (`NEW_CASE_CONTENT_UNAVAILABLE`).
+
+Full backups carry the new bytes through existing tables (the oral XML in
+`model_network_versions`, the Lexicomp CSV/evidence in `ddi_source_documents` and
+`ddi_interaction_evidence`), so the 16 MB model and 25 MB CSV are not omitted to
+fit an archive. Restore keeps historical DDInter and signed bytes readable, uses
+`signed-encounter-v4` only for New case signatures, and preserves previous
+archive versions. Measured archive sizes and the exact checks are recorded in the
+Package H progress checkpoint. New case proposal rows and v4 signed snapshots,
+and restore-over-live, remain unverified until Packages F/G are implemented; no
+archive bound was relaxed to force those not-yet-existing rows to fit.

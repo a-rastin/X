@@ -62,7 +62,11 @@ MAX_XSD_ERRORS = 20
 MAX_MESSAGE_CHARS = 500
 MAX_REASON_ITEMS = 10
 
-SCHEMA_RELATIVE = Path("project-documents/bayesian-networks/schema.xml")
+# The former project-documents/bayesian-networks directory was renamed to
+# old-BNs; schema.xml was copied byte-identically into old-BNs and BNs-new.
+# Generic XMLBIF admission resolves it from the repo root (dev/tests) or from
+# the path bundled into the production image by deploy/Dockerfile.app.
+SCHEMA_RELATIVE = Path("project-documents/old-BNs/schema.xml")
 
 
 class XmlValidationError(ValueError):

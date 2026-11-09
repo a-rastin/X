@@ -44,7 +44,7 @@ CANDIDATE_SOURCE_PATHS = (
     f"{PREFIX}h_panss_baseline_status",
     f"{PREFIX}h_panss_followup_status",
 )
-SOURCE_BN = ROOT / "project-documents/bayesian-networks/BN-07.xml"
+SOURCE_BN = ROOT / "project-documents/old-BNs/BN-07.xml"
 T1 = (
     "AdequateSuboptimalResponse",
     "AdequateSatisfactoryResponse",

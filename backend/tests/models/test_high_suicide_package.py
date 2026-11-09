@@ -35,7 +35,7 @@ CANDIDATE_SOURCE_PATHS = (
     f"{PREFIX}h_monitoring_plan",
     f"{PREFIX}h_medical_review",
 )
-SOURCE_BN = ROOT / "project-documents/bayesian-networks/BN-08.xml"
+SOURCE_BN = ROOT / "project-documents/old-BNs/BN-08.xml"
 STATEMENT = ROOT / "project-documents/medical-documents/guideline/STATEMENT-08.md"
 DECLARED_ORDER = (
     "SchizophreniaEstablished",

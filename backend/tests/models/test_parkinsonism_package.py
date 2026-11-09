@@ -43,7 +43,7 @@ CANDIDATE_SOURCE_PATHS = (
 # CPT-estimation context; the urgent NMS-triage path gates applicability and
 # drives a parallel banner from saved inputs with no network mapping.
 MAPPED_SOURCE_PATHS = CANDIDATE_SOURCE_PATHS[:-1]
-SOURCE_BN = ROOT / "project-documents/bayesian-networks/BN-12.xml"
+SOURCE_BN = ROOT / "project-documents/old-BNs/BN-12.xml"
 STATEMENT = ROOT / "project-documents/medical-documents/guideline/STATEMENT-12.md"
 DECLARED_ORDER = (
     "ParkinsonismAssessment",

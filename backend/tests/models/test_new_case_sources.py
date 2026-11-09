@@ -6,7 +6,6 @@ import xml.etree.ElementTree as ET
 from collections import Counter
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[3]
 CSV_DIR = ROOT / "content/ddi/lexicomp/v1"
 MODEL = ROOT / "content/new-case/v1/oral-antipsychotic.xml"
@@ -45,7 +44,9 @@ def test_new_case_bundled_source_inventory() -> None:
     assert ratings == manifest["counts"]["ratings"]
 
     root = ET.parse(MODEL).getroot()
-    targets = [node for node in root.findall(".//VARIABLE") if node.findtext("NAME") == "Antipsychotic"]
+    targets = [
+        node for node in root.findall(".//VARIABLE") if node.findtext("NAME") == "Antipsychotic"
+    ]
     assert len(targets) == 1
     outcomes = [node.text for node in targets[0].findall("OUTCOME")]
     assert len(outcomes) == 22

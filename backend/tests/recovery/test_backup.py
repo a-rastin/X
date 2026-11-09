@@ -137,12 +137,38 @@ EXPECTED_TABLES: tuple[str, ...] = (
 def test_backup_enforces_recovery_capacity_bounds(tmp_path, monkeypatch, bound, message):
     from x_insight.operations import backup, restore
 
-    assert backup.MAX_FILE_BYTES == restore.MAX_FILE_BYTES == 256 * 1024 * 1024
+    assert backup.MAX_FILE_BYTES == restore.MAX_FILE_BYTES == 512 * 1024 * 1024
     assert backup.MAX_EXPANDED_BYTES == restore.MAX_EXPANDED_BYTES == 512 * 1024 * 1024
     assert backup.MAX_ARCHIVE_BYTES == restore.MAX_ARCHIVE_BYTES == 100 * 1024 * 1024
     monkeypatch.setattr(backup, bound, 1)
     with pytest.raises(ValueError, match=message):
         backup.write_archive(tmp_path / "rejected.zip.part", {"database.json": b"{}"}, {})
+
+
+def test_per_file_bound_fits_measured_full_ddinter_plus_lexicomp_backup():
+    """Package H measurement (2026-11-09), a regression guard on the bound.
+
+    A real full backup of a database holding the owner-approved DDInter release
+    and the pinned Lexicomp release (350,139 ddi_interaction_evidence rows, the
+    16,126,022-byte oral XML and the 24,960,703-byte Lexicomp CSV) produced:
+    database.json 403,534,237 B, total expanded 419,665,856 B, compressed
+    archive 43,735,171 B. The old 256 MiB per-file cap rejected it; 512 MiB
+    (equal to the unchanged total-expansion zip-bomb guard) admits it with
+    headroom. No content is dropped to fit.
+    """
+    from x_insight.operations import backup, restore
+
+    measured_database_json = 403_534_237
+    measured_expanded = 419_665_856
+    measured_compressed = 43_735_171
+
+    assert backup.MAX_FILE_BYTES == restore.MAX_FILE_BYTES == 512 * 1024 * 1024
+    assert backup.MAX_FILE_BYTES == backup.MAX_EXPANDED_BYTES
+    assert measured_database_json <= backup.MAX_FILE_BYTES
+    assert measured_expanded <= backup.MAX_EXPANDED_BYTES
+    assert measured_compressed <= backup.MAX_ARCHIVE_BYTES
+    # The real zip-bomb guard is the total expansion cap, left unchanged.
+    assert backup.MAX_EXPANDED_BYTES == restore.MAX_EXPANDED_BYTES == 512 * 1024 * 1024
 
 
 def _package(question_key: str, field_a: str, field_b: str) -> dict[str, Any]:

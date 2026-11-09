@@ -12,7 +12,7 @@ take precedence over `.env`; keep each database URL aligned with its host port.
 `make migrate` remains an optional operator command for the same setup operation
 (`python -m x_insight.operations.migrate`: Alembic, then DDI bootstrap).
 Plain `alembic upgrade head` applies schema only.
-S21 models validation (T5-only, no DB/HTTP/migration): from `backend/`, `uv run pytest tests/models -q` (`lxml==6.1.3` explicit safe parser); existing schema checks via `python3 ../project-documents/bayesian-networks/test_schema.py`. See [S21](../project-documents/dev/progress/s21.md).
+S21 models validation (T5-only, no DB/HTTP/migration): from `backend/`, `uv run pytest tests/models -q` (`lxml==6.1.3` explicit safe parser); existing schema checks via `python3 ../project-documents/old-BNs/test_schema.py` (the former `bayesian-networks` directory was renamed to `old-BNs`, with a byte-identical copy in `BNs-new`). See [S21](../project-documents/dev/progress/s21.md).
 
 DDI tooling runs from `backend/`: `uv run python -m x_insight.ddi build-ddinter
 --sources ~/ddinter --output /tmp/ddinter-candidate` builds the complete supplied

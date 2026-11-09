@@ -43,9 +43,14 @@ then the one-shot `migrate` service prepares schema and approved DDI data. API a
 worker require its successful completion; direct production Compose startup uses
 the same dependencies. Check both health and readiness through the edge.
 The setup service uses source files included in the app image without Git LFS. First
-setup may take several minutes. Wait for `READY: ddi-c45e2051cf16` on a fresh database
-and verify the Medications catalog. Repeats reuse the exact immutable release.
-These instructions do not close the S62 release gate.
+setup may take several minutes. Wait for `READY: ddi-c45e2051cf16` and
+`LEXICOMP READY: ddi-2adbb775258d` on a fresh database; the fixed oral model
+(SHA `f2f68f97…b18a`) is installed in the same pass. Repeats reuse each exact
+immutable release. `content/new-case/` and `content/ddi/lexicomp/` are copied into
+the image and resolved through `X_INSIGHT_CONTENT_DIR`. None of these steps needs
+a provider credential or a capability check, and the pinned Lexicomp/oral assets
+are installed regardless of `DDI_DEFAULT_DATASET_VERSION` (or an existing DDInter
+release). These instructions do not close the S62 release gate.
 
 Login with `admin` / `admin` once, then change the password: the singleton
 seed runs one time at app startup and a changed password is never recreated
@@ -58,7 +63,10 @@ Missing provider or content bundle: with no saved provider revision and no
 `X_INSIGHT_PROVIDER_ENDPOINT` / `X_INSIGHT_PROVIDER_MODEL`, generation jobs
 fail closed with `PROVIDER_NOT_CONFIGURED` (no retries consumed, draft
 retained) while patient charts, search, and every admin surface stay usable.
-No test/stub provider is ever enabled in production.
+No test/stub provider is ever enabled in production. This is a legacy
+generation-path failure only: the deterministic `new-case-v1` path never calls
+the provider, worker or MCP, so missing provider credentials cannot block its
+content installation or readiness.
 
 HTTPS outside localhost: set `SITE_ADDRESS=https://<public-host>`; Caddy
 terminates TLS with automatic certificates and redirects `:80` to https.
